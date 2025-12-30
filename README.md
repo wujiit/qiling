@@ -1,6 +1,7 @@
 # Qi Ling Theme
 
-一款由AI主导适合新人开发学习的现代化、模块化、可复用的 WordPress 企业主题。支持多语言、SEO 友好、高性能、响应式设计。
+一款由AI主导适合新人开发学习的现代化、模块化、可复用的 WordPress 企业主题。支持多语言、SEO 友好、高性能、响应式设计。  
+
 有问题请自行解决，这里的Issues不处理。
 
 ## 功能特性
@@ -87,4 +88,5 @@ developer-starter-theme/
 ## License
 
 GPL v2 or later
+
 
