@@ -184,6 +184,11 @@ require_once DEVELOPER_STARTER_INC . '/core/class-announcement-manager.php';
 require_once DEVELOPER_STARTER_INC . '/core/class-careers-manager.php';
 
 /**
+ * 分类管理器
+ */
+require_once DEVELOPER_STARTER_INC . '/core/class-category-manager.php';
+
+/**
  * 表单管理系统
  */
 require_once DEVELOPER_STARTER_INC . '/forms/class-form-manager.php';
@@ -266,6 +271,9 @@ function developer_starter_init() {
     
     // 初始化FAQ管理
     new Developer_Starter\Core\FAQ_Manager();
+    
+    // 初始化分类管理器
+    new Developer_Starter\Core\Category_Manager();
     
     // 初始化表单系统
     Developer_Starter\Forms\Form_Manager::get_instance();
@@ -1201,6 +1209,63 @@ function developer_starter_image_optimizations() {
     }
 }
 add_action( 'after_setup_theme', 'developer_starter_image_optimizations', 999 );
+
+/**
+ * 博客页面分页支持
+ * 只为使用博客模板的静态页面添加分页规则
+ */
+function developer_starter_blog_page_pagination_support() {
+    // 查找所有使用博客模板的页面
+    $blog_pages = get_posts( array(
+        'post_type'      => 'page',
+        'posts_per_page' => -1,
+        'meta_key'       => '_wp_page_template',
+        'meta_value'     => 'templates/template-blog.php',
+        'fields'         => 'ids',
+    ) );
+    
+    // 为每个博客页面添加分页规则
+    foreach ( $blog_pages as $page_id ) {
+        $page = get_post( $page_id );
+        if ( $page ) {
+            $slug = $page->post_name;
+            // 添加特定页面的分页规则
+            add_rewrite_rule( 
+                $slug . '/page/?([0-9]{1,})/?$', 
+                'index.php?pagename=' . $slug . '&paged=$matches[1]', 
+                'top' 
+            );
+        }
+    }
+}
+add_action( 'init', 'developer_starter_blog_page_pagination_support', 1 );
+
+/**
+ * 当博客模板页面保存时刷新重写规则
+ */
+function developer_starter_flush_blog_page_rules( $post_id ) {
+    if ( get_post_type( $post_id ) !== 'page' ) {
+        return;
+    }
+    
+    $template = get_post_meta( $post_id, '_wp_page_template', true );
+    if ( $template === 'templates/template-blog.php' ) {
+        // 标记需要刷新重写规则
+        update_option( 'developer_starter_flush_rules', '1' );
+    }
+}
+add_action( 'save_post', 'developer_starter_flush_blog_page_rules' );
+
+/**
+ * 延迟刷新重写规则
+ */
+function developer_starter_delayed_flush_rules() {
+    if ( get_option( 'developer_starter_flush_rules' ) === '1' ) {
+        flush_rewrite_rules();
+        delete_option( 'developer_starter_flush_rules' );
+    }
+}
+add_action( 'init', 'developer_starter_delayed_flush_rules', 999 );
 
 /**
  * 分类链接去除 category 前缀

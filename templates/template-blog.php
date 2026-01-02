@@ -26,8 +26,13 @@ get_header();
 $modules = get_post_meta( get_the_ID(), '_developer_starter_modules', true );
 $has_modules = ! empty( $modules ) && is_array( $modules );
 
-// 获取当前分页
-$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+// 获取当前分页 - 静态页面使用 'page'，归档页面使用 'paged'
+$paged = 1;
+if ( get_query_var( 'paged' ) ) {
+    $paged = absint( get_query_var( 'paged' ) );
+} elseif ( get_query_var( 'page' ) ) {
+    $paged = absint( get_query_var( 'page' ) );
+}
 ?>
 
 <div class="page-template template-blog-page">

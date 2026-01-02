@@ -105,11 +105,13 @@ if ( $header_bg && ! ( $is_home && $transparent_home ) ) {
                         
                         // 构建背景样式
                         $bg_style = strpos( $initial_bg, 'gradient' ) !== false ? "background: {$initial_bg};" : "background: {$initial_bg};";
+                        // 清理电话号码用于tel链接
+                        $phone_clean = preg_replace( '/[^0-9+]/', '', $phone );
                     ?>
-                        <div class="header-phone" style="<?php echo esc_attr( $bg_style ); ?> color: <?php echo esc_attr( $initial_text ); ?>;">
+                        <a href="tel:<?php echo esc_attr( $phone_clean ); ?>" class="header-phone" style="<?php echo esc_attr( $bg_style ); ?> color: <?php echo esc_attr( $initial_text ); ?>;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                             <span><?php echo esc_html( $phone ); ?></span>
-                        </div>
+                        </a>
                     <?php endif; ?>
 
                     <?php 
@@ -242,18 +244,55 @@ if ( $header_bg && ! ( $is_home && $transparent_home ) ) {
         </div>
         
         <div class="mobile-menu" id="mobile-menu">
-            <div class="container">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-logo">
+                    <?php 
+                    $site_logo = developer_starter_get_option( 'site_logo', '' );
+                    if ( $site_logo ) :
+                    ?>
+                        <img src="<?php echo esc_url( $site_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
+                    <?php elseif ( has_custom_logo() ) : ?>
+                        <?php the_custom_logo(); ?>
+                    <?php else : ?>
+                        <span class="site-name"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></span>
+                    <?php endif; ?>
+                </div>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="<?php esc_attr_e( '关闭菜单', 'developer-starter' ); ?>">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
                 <?php
-                if ( has_nav_menu( 'primary' ) ) {
+                // 优先使用移动端菜单，如果没有设置则使用主导航菜单
+                $mobile_menu_location = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
+                
+                if ( has_nav_menu( $mobile_menu_location ) ) {
                     wp_nav_menu( array(
-                        'theme_location' => 'primary',
-                        'menu_id' => 'mobile-nav-menu',
-                        'container' => false,
+                        'theme_location' => $mobile_menu_location,
+                        'menu_id'        => 'mobile-nav-menu',
+                        'container'      => false,
+                        'depth'          => 3,
                     ) );
                 }
                 ?>
+            </nav>
+            <?php 
+            // 移动端底部操作按钮
+            $phone = developer_starter_get_option( 'company_phone', '' );
+            ?>
+            <div class="mobile-menu-footer">
+                <?php if ( $phone ) : ?>
+                    <a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $phone ) ); ?>" class="mobile-phone-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <?php echo esc_html( $phone ); ?>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
     </header>
 
     <main id="primary" class="site-main">

@@ -100,16 +100,16 @@ $min_width = $grid_columns == 4 ? '250px' : ( $grid_columns == 2 ? '400px' : '30
                 
             </div>
             
-            <div class="pagination" style="margin-top: 50px; text-align: center;">
+            <nav class="ds-pagination" style="margin-top: 50px;">
                 <?php
                 echo paginate_links( array(
-                    'total'   => $products_query->max_num_pages,
-                    'current' => $paged,
-                    'prev_text' => '&laquo; 上一页',
-                    'next_text' => '下一页 &raquo;',
+                    'total'     => $products_query->max_num_pages,
+                    'current'   => $paged,
+                    'prev_text' => '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg> 上一页',
+                    'next_text' => '下一页 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>',
                 ) );
                 ?>
-            </div>
+            </nav>
             
             <?php wp_reset_postdata(); ?>
             
