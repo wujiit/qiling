@@ -145,7 +145,50 @@ class News_Module extends Module_Base {
                     </div>
                     
                     <div class="text-center mt-lg" style="margin-top: 30px;">
-                        <a href="<?php echo get_post_type_archive_link( 'post' ); ?>" class="btn btn-outline" style="display: inline-block; padding: 10px 30px; border: 2px solid var(--color-primary); color: var(--color-primary); text-decoration: none; border-radius: 25px;">
+                        <?php
+                        // 确定"查看更多"链接
+                        $more_link = '';
+                        
+                        // 如果设置了分类，链接到第一个分类
+                        if ( ! empty( $cat_ids ) ) {
+                            $more_link = get_category_link( $cat_ids[0] );
+                        }
+                        
+                        // 如果没有分类，尝试获取博客页面
+                        if ( empty( $more_link ) ) {
+                            // 1. 先查找使用博客模板的页面
+                            $blog_pages = get_posts( array(
+                                'post_type'      => 'page',
+                                'posts_per_page' => 1,
+                                'meta_key'       => '_wp_page_template',
+                                'meta_value'     => 'templates/template-blog.php',
+                                'fields'         => 'ids',
+                            ) );
+                            
+                            if ( ! empty( $blog_pages ) ) {
+                                $more_link = get_permalink( $blog_pages[0] );
+                            } else {
+                                // 2. 获取WordPress设置的博客页面（设置 > 阅读 > 文章页）
+                                $blog_page_id = get_option( 'page_for_posts' );
+                                if ( $blog_page_id ) {
+                                    $more_link = get_permalink( $blog_page_id );
+                                }
+                            }
+                        }
+                        
+                        // 3. 最终fallback：使用WordPress默认的文章归档链接
+                        if ( empty( $more_link ) ) {
+                            // 如果首页显示最新文章，则链接到首页，否则用默认归档规则
+                            $show_on_front = get_option( 'show_on_front' );
+                            if ( $show_on_front === 'posts' ) {
+                                $more_link = home_url( '/' );
+                            } else {
+                                // 使用WordPress默认归档链接格式
+                                $more_link = home_url( '/page/1/' );
+                            }
+                        }
+                        ?>
+                        <a href="<?php echo esc_url( $more_link ); ?>" class="btn btn-outline" style="display: inline-block; padding: 10px 30px; border: 2px solid var(--color-primary); color: var(--color-primary); text-decoration: none; border-radius: 25px;">
                             <?php _e( '查看更多', 'developer-starter' ); ?>
                         </a>
                     </div>

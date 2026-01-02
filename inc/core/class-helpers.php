@@ -548,3 +548,66 @@ if ( ! function_exists( 'developer_starter_login_error_message' ) ) {
         return $error;
     }
 }
+
+/**
+ * 颜色加深函数
+ * 用于生成渐变色的深色部分
+ *
+ * @param string $hex HEX颜色值
+ * @param int $percent 加深百分比
+ * @return string 加深后的HEX颜色
+ */
+if ( ! function_exists( 'developer_starter_darken_color' ) ) {
+    function developer_starter_darken_color( $hex, $percent = 20 ) {
+        // 移除 # 符号
+        $hex = ltrim( $hex, '#' );
+        
+        // 确保是6位
+        if ( strlen( $hex ) === 3 ) {
+            $hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+        }
+        
+        // 转换为 RGB
+        $r = hexdec( substr( $hex, 0, 2 ) );
+        $g = hexdec( substr( $hex, 2, 2 ) );
+        $b = hexdec( substr( $hex, 4, 2 ) );
+        
+        // 加深
+        $r = max( 0, $r - ( $r * $percent / 100 ) );
+        $g = max( 0, $g - ( $g * $percent / 100 ) );
+        $b = max( 0, $b - ( $b * $percent / 100 ) );
+        
+        return sprintf( '#%02x%02x%02x', $r, $g, $b );
+    }
+}
+
+/**
+ * 颜色变亮函数
+ *
+ * @param string $hex HEX颜色值
+ * @param int $percent 变亮百分比
+ * @return string 变亮后的HEX颜色
+ */
+if ( ! function_exists( 'developer_starter_lighten_color' ) ) {
+    function developer_starter_lighten_color( $hex, $percent = 20 ) {
+        // 移除 # 符号
+        $hex = ltrim( $hex, '#' );
+        
+        // 确保是6位
+        if ( strlen( $hex ) === 3 ) {
+            $hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+        }
+        
+        // 转换为 RGB
+        $r = hexdec( substr( $hex, 0, 2 ) );
+        $g = hexdec( substr( $hex, 2, 2 ) );
+        $b = hexdec( substr( $hex, 4, 2 ) );
+        
+        // 变亮
+        $r = min( 255, $r + ( ( 255 - $r ) * $percent / 100 ) );
+        $g = min( 255, $g + ( ( 255 - $g ) * $percent / 100 ) );
+        $b = min( 255, $b + ( ( 255 - $b ) * $percent / 100 ) );
+        
+        return sprintf( '#%02x%02x%02x', $r, $g, $b );
+    }
+}

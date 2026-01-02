@@ -727,7 +727,7 @@ class Meta_Boxes {
                     array( 'id' => 'blog_read_more_text', 'label' => '阅读更多按钮文字', 'type' => 'text', 'default' => '阅读全文' ),
                     
                     // 分页配置
-                    array( 'id' => 'blog_enable_pagination', 'label' => '启用分页(博客页面模板)', 'type' => 'select', 'options' => array( 'no' => '否', 'yes' => '是' ), 'default' => 'no' ),
+                    array( 'id' => 'blog_enable_pagination', 'label' => '启用分页(博客页面模板)', 'type' => 'select', 'options' => array( 'no' => '否', 'yes' => '是' ), 'default' => 'yes' ),
                 ),
             ),
             

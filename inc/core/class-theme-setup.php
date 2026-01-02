@@ -115,11 +115,8 @@ class Theme_Setup {
      */
     public function register_menus() {
         register_nav_menus( array(
-            'primary'   => esc_html__( '主导航菜单', 'developer-starter' ),
-            'secondary' => esc_html__( '顶部导航菜单', 'developer-starter' ),
-            'footer'    => esc_html__( '页脚导航菜单', 'developer-starter' ),
-            'mobile'    => esc_html__( '移动端导航菜单', 'developer-starter' ),
-            'social'    => esc_html__( '社交媒体菜单', 'developer-starter' ),
+            'primary' => esc_html__( '主导航菜单', 'developer-starter' ),
+            'mobile'  => esc_html__( '移动端导航菜单（可选，默认使用主导航）', 'developer-starter' ),
         ) );
     }
 

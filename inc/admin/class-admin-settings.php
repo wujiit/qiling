@@ -2080,7 +2080,7 @@ class Admin_Settings {
                         <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 20px;">
                             <h4 style="margin: 0 0 12px; color: #0369a1;">主题信息</h4>
                             <p style="margin: 0; color: #334155; line-height: 1.8;">
-                                <strong>主题名称:</strong> Qi Ling (启灵)<br>
+                                <strong>主题名称:</strong> Qi Ling (企灵)<br>
                                 <strong>版本号:</strong> <?php echo DEVELOPER_STARTER_VERSION; ?><br>
                                 <strong>适用于:</strong> WordPress 6.0+
                             </p>

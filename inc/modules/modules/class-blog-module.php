@@ -71,14 +71,17 @@ class Blog_Module extends Module_Base {
         $sidebar_position = $page_layout === 'sidebar-left' ? 'left' : 'right';
         $sidebar_source = isset( $data['blog_sidebar_source'] ) ? $data['blog_sidebar_source'] : 'widget';
         
-        // 获取当前分页
+        // 获取当前分页 - 支持静态页面和归档页面
         $paged = 1;
         if ( $enable_pagination ) {
             global $blog_page_paged;
             if ( isset( $blog_page_paged ) && $blog_page_paged > 0 ) {
                 $paged = $blog_page_paged;
-            } else {
-                $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+            } elseif ( get_query_var( 'paged' ) ) {
+                $paged = absint( get_query_var( 'paged' ) );
+            } elseif ( get_query_var( 'page' ) ) {
+                // 静态页面使用 'page' 而不是 'paged'
+                $paged = absint( get_query_var( 'page' ) );
             }
         }
         
@@ -587,13 +590,23 @@ class Blog_Module extends Module_Base {
             return;
         }
         
-        // 获取当前页面URL用于分页
-        $base_url = get_pagenum_link( 1 );
+        // 获取当前页面ID用于生成分页URL
+        $page_id = get_queried_object_id();
+        $page_url = get_permalink( $page_id );
+        
+        // 生成分页URL的辅助函数
+        $get_page_url = function( $page_num ) use ( $page_url ) {
+            if ( $page_num <= 1 ) {
+                return $page_url;
+            }
+            // 使用 trailingslashit 确保URL格式正确
+            return trailingslashit( $page_url ) . 'page/' . $page_num . '/';
+        };
         
         ?>
         <nav class="blog-pagination" role="navigation" aria-label="<?php _e( '文章分页导航', 'developer-starter' ); ?>">
             <?php if ( $paged > 1 ) : ?>
-                <a href="<?php echo get_pagenum_link( $paged - 1 ); ?>" class="page-numbers prev">
+                <a href="<?php echo esc_url( $get_page_url( $paged - 1 ) ); ?>" class="page-numbers prev">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     <?php _e( '上一页', 'developer-starter' ); ?>
                 </a>
@@ -602,12 +615,11 @@ class Blog_Module extends Module_Base {
             <?php
             // 显示页码
             $range = 2; // 当前页两边显示的页码数
-            $showitems = ( $range * 2 ) + 1;
             
             if ( $total_pages > 1 ) {
                 // 第一页
                 if ( $paged > $range + 1 ) {
-                    echo '<a href="' . get_pagenum_link( 1 ) . '" class="page-numbers">1</a>';
+                    echo '<a href="' . esc_url( $get_page_url( 1 ) ) . '" class="page-numbers">1</a>';
                     if ( $paged > $range + 2 ) {
                         echo '<span class="page-numbers dots">...</span>';
                     }
@@ -618,7 +630,7 @@ class Blog_Module extends Module_Base {
                     if ( $i == $paged ) {
                         echo '<span class="page-numbers current" aria-current="page">' . $i . '</span>';
                     } else {
-                        echo '<a href="' . get_pagenum_link( $i ) . '" class="page-numbers">' . $i . '</a>';
+                        echo '<a href="' . esc_url( $get_page_url( $i ) ) . '" class="page-numbers">' . $i . '</a>';
                     }
                 }
                 
@@ -627,13 +639,13 @@ class Blog_Module extends Module_Base {
                     if ( $paged < $total_pages - $range - 1 ) {
                         echo '<span class="page-numbers dots">...</span>';
                     }
-                    echo '<a href="' . get_pagenum_link( $total_pages ) . '" class="page-numbers">' . $total_pages . '</a>';
+                    echo '<a href="' . esc_url( $get_page_url( $total_pages ) ) . '" class="page-numbers">' . $total_pages . '</a>';
                 }
             }
             ?>
             
             <?php if ( $paged < $total_pages ) : ?>
-                <a href="<?php echo get_pagenum_link( $paged + 1 ); ?>" class="page-numbers next">
+                <a href="<?php echo esc_url( $get_page_url( $paged + 1 ) ); ?>" class="page-numbers next">
                     <?php _e( '下一页', 'developer-starter' ); ?>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </a>
