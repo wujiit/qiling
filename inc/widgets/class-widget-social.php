@@ -8,6 +8,10 @@
 
 namespace Developer_Starter\Widgets;
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 class Widget_Social extends \WP_Widget {
 
     public function __construct() {
@@ -19,7 +23,7 @@ class Widget_Social extends \WP_Widget {
     }
 
     public function widget( $args, $instance ) {
-        $options = get_option( 'developer_starter_options', array() );
+        $options = \developer_starter_get_options_cache();
         
         echo $args['before_widget'];
         
@@ -30,13 +34,13 @@ class Widget_Social extends \WP_Widget {
         <div class="social-widget-content">
             <?php if ( ! empty( $options['weibo_url'] ) ) : ?>
                 <a href="<?php echo esc_url( $options['weibo_url'] ); ?>" target="_blank" rel="noopener" class="social-link social-weibo">
-                    <?php _e( '微博', 'developer-starter' ); ?>
+                    <?php esc_html_e( '微博', 'developer-starter' ); ?>
                 </a>
             <?php endif; ?>
 
             <?php if ( ! empty( $options['wechat_qrcode'] ) ) : ?>
                 <div class="social-wechat">
-                    <span><?php _e( '微信公众号', 'developer-starter' ); ?></span>
+                    <span><?php esc_html_e( '微信公众号', 'developer-starter' ); ?></span>
                     <img src="<?php echo esc_url( $options['wechat_qrcode'] ); ?>" alt="<?php esc_attr_e( '微信二维码', 'developer-starter' ); ?>" />
                 </div>
             <?php endif; ?>
@@ -49,7 +53,7 @@ class Widget_Social extends \WP_Widget {
         $title = ! empty( $instance['title'] ) ? $instance['title'] : __( '关注我们', 'developer-starter' );
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( '标题:', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( '标题:', 'developer-starter' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
         <?php
