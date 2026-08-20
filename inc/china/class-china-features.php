@@ -13,12 +13,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class China_Features {
 
+    /**
+     * 从百度统计配置中提取统计 ID
+     *
+     * @param string $value 原始配置值.
+     * @return string
+     */
+    private function extract_baidu_analytics_id( $value ) {
+        $value = trim( (string) $value );
+        if ( '' === $value ) {
+            return '';
+        }
+
+        if ( preg_match( '#hm\.js\?([a-zA-Z0-9]+)#i', $value, $matches ) ) {
+            return (string) $matches[1];
+        }
+
+        if ( preg_match( '/^[a-zA-Z0-9]+$/', $value ) ) {
+            return $value;
+        }
+
+        return '';
+    }
+
     public function __construct() {
         add_action( 'wp_footer', array( $this, 'render_float_widgets' ), 10 );
         add_action( 'wp_head', array( $this, 'render_baidu_analytics' ), 999 );
     }
 
     public function render_float_widgets() {
+        // 未开启浮动栏时不输出
+        if ( ! developer_starter_get_option( 'float_widget_enable', '1' ) ) {
+            return;
+        }
         $phone = developer_starter_get_option( 'float_phone', '' );
         $qq = developer_starter_get_option( 'float_qq', '' );
         $wechat_qrcode = developer_starter_get_option( 'float_wechat_qrcode', '' );
@@ -80,7 +107,7 @@ class China_Features {
                     <?php if ( ! empty( $item_url ) ) : ?>
                         <a href="<?php echo esc_url( $item_url ); ?>" class="widget-icon" title="<?php echo esc_attr( $item_title ); ?>" target="_blank">
                             <?php if ( ! empty( $item_icon ) ) : ?>
-                                <?php echo wp_kses_post( $item_icon ); ?>
+                                <?php echo developer_starter_get_icon_html( $item_icon ); ?>
                             <?php else : ?>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
                             <?php endif; ?>
@@ -88,7 +115,7 @@ class China_Features {
                     <?php else : ?>
                         <span class="widget-icon">
                             <?php if ( ! empty( $item_icon ) ) : ?>
-                                <?php echo wp_kses_post( $item_icon ); ?>
+                                <?php echo developer_starter_get_icon_html( $item_icon ); ?>
                             <?php else : ?>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
                             <?php endif; ?>
@@ -113,36 +140,73 @@ class China_Features {
     }
 
     public function render_baidu_analytics() {
-        $baidu_id = developer_starter_get_option( 'baidu_analytics', '' );
-        if ( empty( $baidu_id ) ) {
+        $baidu_analytics = developer_starter_get_option( 'baidu_analytics', '' );
+        if ( empty( $baidu_analytics ) ) {
+            return;
+        }
+
+        $analytics_id = $this->extract_baidu_analytics_id( $baidu_analytics );
+        if ( '' !== $analytics_id ) {
+            $script_src = 'https://hm.baidu.com/hm.js?' . rawurlencode( $analytics_id );
+
+            if ( function_exists( 'wp_get_inline_script_tag' ) ) {
+                echo wp_get_inline_script_tag( 'window._hmt = window._hmt || [];', array( 'id' => 'qiling-baidu-analytics-init' ) );
+            } else {
+                echo '<script id="qiling-baidu-analytics-init">window._hmt = window._hmt || [];</script>';
+            }
+
+            if ( function_exists( 'wp_get_script_tag' ) ) {
+                echo wp_get_script_tag(
+                    array(
+                        'id'    => 'qiling-baidu-analytics',
+                        'src'   => esc_url( $script_src ),
+                        'async' => true,
+                    )
+                );
+            } else {
+                echo '<script id="qiling-baidu-analytics" async src="' . esc_url( $script_src ) . '"></script>';
+            }
+
+            return;
+        }
+
+        echo $baidu_analytics; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Admin-provided analytics snippet from theme settings.
+    }
+
+    /**
+     * 渲染页脚备案信息（ICP + 公安备案）
+     */
+    public static function render_footer_filings() {
+        $icp = developer_starter_get_option( 'icp_number', '' );
+        $police = developer_starter_get_option( 'police_number', '' );
+        $police_icon = developer_starter_get_option( 'police_icon', '' );
+        
+        if ( empty( $icp ) && empty( $police ) ) {
             return;
         }
         
-        if ( strpos( $baidu_id, '<script' ) !== false || strpos( $baidu_id, 'hm.js' ) !== false ) {
-            echo $baidu_id;
-        } else {
-            ?>
-            <script>
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?<?php echo esc_js( $baidu_id ); ?>";
-                var s = document.getElementsByTagName("script")[0]; 
-                s.parentNode.insertBefore(hm, s);
-            })();
-            </script>
-            <?php
+        echo '<div class="footer-filing footer-filing--items">';
+        
+        // ICP 备案
+        if ( $icp ) {
+            echo '<a class="footer-filing-link" href="https://beian.miit.gov.cn/" target="_blank" rel="external nofollow noopener noreferrer">' . esc_html( $icp ) . '</a>';
         }
-    }
-
-    public static function get_police_link( $police_number ) {
-        if ( empty( $police_number ) ) {
-            return '';
+        
+        // 公安备案
+        if ( $police ) {
+            // 自动识别公安备案号中的数字
+            preg_match( '/(\d+)/', $police, $matches );
+            $police_record_code = ! empty( $matches[1] ) ? $matches[1] : '';
+            $police_url = $police_record_code ? 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' . $police_record_code : '#';
+            
+            echo '<a class="footer-filing-link footer-filing-link--police" href="' . esc_url( $police_url ) . '" target="_blank" rel="external nofollow noopener noreferrer">';
+            if ( $police_icon ) {
+                echo '<img class="footer-filing-icon" src="' . esc_url( $police_icon ) . '" alt="" />';
+            }
+            echo esc_html( $police );
+            echo '</a>';
         }
-        preg_match( '/(\d+)/', $police_number, $matches );
-        if ( ! empty( $matches[1] ) ) {
-            return 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' . $matches[1];
-        }
-        return '';
+        
+        echo '</div>';
     }
 }

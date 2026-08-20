@@ -50,7 +50,8 @@ if ( ! function_exists( 'developer_starter_entry_categories' ) ) {
  */
 if ( ! function_exists( 'developer_starter_entry_footer' ) ) {
     function developer_starter_entry_footer() {
-        if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+        $comments_enabled = function_exists( 'developer_starter_comments_feature_enabled' ) ? developer_starter_comments_feature_enabled() : true;
+        if ( $comments_enabled && ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
             echo '<span class="comments-link">';
             comments_popup_link( __( '发表评论', 'developer-starter' ), __( '1条评论', 'developer-starter' ), __( '%条评论', 'developer-starter' ) );
             echo '</span>';

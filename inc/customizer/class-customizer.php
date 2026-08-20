@@ -16,24 +16,10 @@ class Customizer {
 
     public function __construct() {
         add_action( 'customize_register', array( $this, 'register' ) );
+        add_action( 'customize_save_after', array( $this, 'sync_legacy_primary_color_to_theme_options' ) );
     }
 
     public function register( $wp_customize ) {
-        // Colors Section
-        $wp_customize->add_section( 'developer_starter_colors', array(
-            'title'    => __( '主题颜色', 'developer-starter' ),
-            'priority' => 30,
-        ) );
-
-        $wp_customize->add_setting( 'developer_starter_primary_color', array(
-            'default'           => '#2563eb',
-            'sanitize_callback' => 'sanitize_hex_color',
-        ) );
-        $wp_customize->add_control( new \WP_Customize_Color_Control( $wp_customize, 'developer_starter_primary_color', array(
-            'label'   => __( '主色调', 'developer-starter' ),
-            'section' => 'developer_starter_colors',
-        ) ) );
-
         // Header Section
         $wp_customize->add_section( 'developer_starter_header', array(
             'title'    => __( '头部设置', 'developer-starter' ),
@@ -65,6 +51,47 @@ class Customizer {
             'label'   => __( '版权信息', 'developer-starter' ),
             'section' => 'developer_starter_footer',
         ) );
+    }
+
+    /**
+     * Keep the legacy Customizer primary color in sync with the theme option store.
+     *
+     * @return void
+     */
+    public function sync_legacy_primary_color_to_theme_options() {
+        if ( ! isset( $_POST['customized'] ) ) {
+            return;
+        }
+
+        $customized = json_decode( wp_unslash( (string) $_POST['customized'] ), true );
+        if ( ! is_array( $customized ) || ! array_key_exists( 'developer_starter_primary_color', $customized ) ) {
+            return;
+        }
+
+        $primary = sanitize_hex_color( (string) $customized['developer_starter_primary_color'] );
+        if ( ! $primary ) {
+            return;
+        }
+
+        $existing_options = get_option( 'developer_starter_options', array() );
+        if ( ! is_array( $existing_options ) ) {
+            $existing_options = array();
+        }
+
+        $sync_input = array(
+            'primary_color'        => $primary,
+            'design_primary_color' => $primary,
+        );
+
+        if ( class_exists( '\Developer_Starter\Core\Design_Tokens' ) ) {
+            $sync_input = \Developer_Starter\Core\Design_Tokens::sanitize_options( $sync_input, $existing_options );
+        }
+
+        if ( ! is_array( $sync_input ) ) {
+            return;
+        }
+
+        update_option( 'developer_starter_options', array_merge( $existing_options, $sync_input ) );
     }
 }
 
