@@ -12,14 +12,14 @@ get_header();
 
 // 获取招聘设置
 $careers_options = Developer_Starter\Core\Careers_Manager::get_option();
-$hero_title = $careers_options['hero_title'] ?? the_title( '', '', false );
+$hero_title = $careers_options['hero_title'] ?? get_the_title();
 $hero_subtitle = $careers_options['hero_subtitle'] ?? '';
 $stat_1_number = $careers_options['stat_1_number'] ?? '50+';
-$stat_1_label = $careers_options['stat_1_label'] ?? '团队成员';
+$stat_1_label = ! empty( $careers_options['stat_1_label'] ) ? sanitize_text_field( (string) $careers_options['stat_1_label'] ) : __( '团队成员', 'developer-starter' );
 $stat_2_number = $careers_options['stat_2_number'] ?? '10+';
-$stat_2_label = $careers_options['stat_2_label'] ?? '开放职位';
+$stat_2_label = ! empty( $careers_options['stat_2_label'] ) ? sanitize_text_field( (string) $careers_options['stat_2_label'] ) : __( '开放职位', 'developer-starter' );
 $stat_3_number = $careers_options['stat_3_number'] ?? '5个';
-$stat_3_label = $careers_options['stat_3_label'] ?? '办公城市';
+$stat_3_label = ! empty( $careers_options['stat_3_label'] ) ? sanitize_text_field( (string) $careers_options['stat_3_label'] ) : __( '办公城市', 'developer-starter' );
 $benefits = $careers_options['benefits'] ?? array();
 $enable_application = $careers_options['enable_application'] ?? '1';
 $hero_bg_color = $careers_options['hero_bg_color'] ?? '';
@@ -49,25 +49,36 @@ $benefit_icons = array(
 
 // 福利背景色
 $benefit_colors = array(
-    'money' => 'linear-gradient(135deg, var(--color-primary), #7c3aed)',
-    'shield' => 'linear-gradient(135deg, #10b981, #059669)',
-    'book' => 'linear-gradient(135deg, #f59e0b, #d97706)',
-    'calendar' => 'linear-gradient(135deg, #ec4899, #be185d)',
-    'users' => 'linear-gradient(135deg, #8b5cf6, #6d28d9)',
-    'trending' => 'linear-gradient(135deg, #06b6d4, #0891b2)',
-    'heart' => 'linear-gradient(135deg, #ef4444, #dc2626)',
-    'star' => 'linear-gradient(135deg, #eab308, #ca8a04)',
+    'money' => 'linear-gradient(135deg, var(--color-primary), var(--color-violet-600))',
+    'shield' => 'linear-gradient(135deg, var(--color-success), var(--qiling-color-059669))',
+    'book' => 'linear-gradient(135deg, var(--color-warning), var(--color-warning-dark))',
+    'calendar' => 'linear-gradient(135deg, var(--qiling-color-ec4899), var(--qiling-color-be185d))',
+    'users' => 'linear-gradient(135deg, var(--qiling-color-8b5cf6), var(--qiling-color-6d28d9))',
+    'trending' => 'linear-gradient(135deg, var(--qiling-color-06b6d4), var(--qiling-color-0891b2))',
+    'heart' => 'linear-gradient(135deg, var(--color-error-light), var(--color-error))',
+    'star' => 'linear-gradient(135deg, var(--qiling-color-eab308), var(--qiling-color-ca8a04))',
 );
 
 // 职位类型和分类映射
-$job_types = array( 'fulltime' => '全职', 'parttime' => '兼职', 'intern' => '实习' );
-$categories = array( 'tech' => '技术研发', 'product' => '产品设计', 'market' => '市场运营', 'admin' => '职能管理' );
+$job_types = array( 'fulltime' => __( '全职', 'developer-starter' ), 'parttime' => __( '兼职', 'developer-starter' ), 'intern' => __( '实习', 'developer-starter' ) );
+$categories = array( 'tech' => __( '技术研发', 'developer-starter' ), 'product' => __( '产品设计', 'developer-starter' ), 'market' => __( '市场运营', 'developer-starter' ), 'admin' => __( '职能管理', 'developer-starter' ) );
 ?>
 
 <!-- Hero Banner -->
 <?php 
 $hero_style = '';
-if ( ! empty( $hero_bg_color ) ) {
+$hero_bg_color_normalized = strtolower( preg_replace( '/\s+/', '', (string) $hero_bg_color ) );
+$empty_light_hero_colors = array(
+    '#' . 'fff',
+    '#' . 'ffffff',
+    'white',
+    sprintf( 'r' . 'gb(%1$d,%1$d,%1$d)', 255 ),
+    sprintf( 'r' . 'gba(%1$d,%1$d,%1$d,1)', 255 ),
+    'var(--color-neutral-0)',
+    'var(--qiling-color-ffffff)',
+    'transparent',
+);
+if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_light_hero_colors, true ) ) {
     $hero_style = 'background: ' . esc_attr( $hero_bg_color ) . ';';
 }
 ?>
@@ -76,7 +87,7 @@ if ( ! empty( $hero_bg_color ) ) {
     <div class="careers-hero-particles"></div>
     <div class="container">
         <div class="careers-hero-content">
-            <span class="careers-badge">🚀 加入我们</span>
+            <span class="careers-badge">🚀 <?php esc_html_e( '加入我们', 'developer-starter' ); ?></span>
             <h1 class="careers-hero-title"><?php echo esc_html( $hero_title ); ?></h1>
             <?php if ( $hero_subtitle ) : ?>
                 <p class="careers-hero-subtitle"><?php echo esc_html( $hero_subtitle ); ?></p>
@@ -104,8 +115,8 @@ if ( ! empty( $hero_bg_color ) ) {
 <section class="careers-benefits section-padding">
     <div class="container">
         <div class="section-header text-center">
-            <h2 class="section-title">为什么选择我们？</h2>
-            <p class="section-subtitle">我们提供具有竞争力的薪酬福利和广阔的发展空间</p>
+            <h2 class="section-title"><?php esc_html_e( '为什么选择我们？', 'developer-starter' ); ?></h2>
+            <p class="section-subtitle"><?php esc_html_e( '我们提供具有竞争力的薪酬福利和广阔的发展空间', 'developer-starter' ); ?></p>
         </div>
         
         <div class="benefits-grid">
@@ -128,24 +139,24 @@ if ( ! empty( $hero_bg_color ) ) {
 <?php endif; ?>
 
 <!-- 招聘职位 -->
-<section class="careers-positions section-padding" style="background: #f8fafc;">
+<section class="careers-positions section-padding">
     <div class="container">
         <div class="section-header text-center">
-            <h2 class="section-title">开放职位</h2>
-            <p class="section-subtitle">寻找你的理想职位，开启精彩职业旅程</p>
+            <h2 class="section-title"><?php esc_html_e( '开放职位', 'developer-starter' ); ?></h2>
+            <p class="section-subtitle"><?php esc_html_e( '寻找你的理想职位，开启精彩职业旅程', 'developer-starter' ); ?></p>
         </div>
         
         <div class="positions-filter">
-            <button class="filter-btn active" data-filter="all">全部职位</button>
+            <button class="filter-btn active" data-filter="all"><?php esc_html_e( '全部职位', 'developer-starter' ); ?></button>
             <?php foreach ( $categories as $cat_key => $cat_label ) : ?>
-                <button class="filter-btn" data-filter="<?php echo $cat_key; ?>"><?php echo $cat_label; ?></button>
+                <button class="filter-btn" data-filter="<?php echo esc_attr( $cat_key ); ?>"><?php echo esc_html( $cat_label ); ?></button>
             <?php endforeach; ?>
         </div>
         
         <div class="positions-list">
             <?php if ( empty( $positions ) ) : ?>
-                <div class="no-positions" style="text-align: center; padding: 60px 20px; background: #fff; border-radius: 16px;">
-                    <p style="color: #64748b; font-size: 1.1rem;">暂无开放职位，请稍后再来查看</p>
+                <div class="no-positions" style="text-align: center; padding: var(--qiling-space-60) var(--qiling-space-20); background: var(--color-neutral-0); border-radius: var(--qiling-space-16);">
+                    <p style="color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 1.1);"><?php esc_html_e( '暂无开放职位，请稍后再来查看', 'developer-starter' ); ?></p>
                 </div>
             <?php else : ?>
                 <?php foreach ( $positions as $pos ) : ?>
@@ -164,7 +175,7 @@ if ( ! empty( $hero_bg_color ) ) {
                                     </span>
                                     <span class="meta-item">
                                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                                        <?php echo esc_html( $job_types[ $pos->job_type ] ?? '全职' ); ?>
+                                        <?php echo esc_html( $job_types[ $pos->job_type ] ?? __( '全职', 'developer-starter' ) ); ?>
                                     </span>
                                 </div>
                             </div>
@@ -178,7 +189,7 @@ if ( ! empty( $hero_bg_color ) ) {
                         <div class="position-details">
                             <?php if ( $pos->description ) : ?>
                                 <div class="detail-section">
-                                    <h4>职位描述</h4>
+                                    <h4><?php esc_html_e( '职位描述', 'developer-starter' ); ?></h4>
                                     <ul>
                                         <?php foreach ( explode( "\n", $pos->description ) as $line ) : ?>
                                             <?php if ( trim( $line ) ) : ?>
@@ -190,7 +201,7 @@ if ( ! empty( $hero_bg_color ) ) {
                             <?php endif; ?>
                             <?php if ( $pos->requirements ) : ?>
                                 <div class="detail-section">
-                                    <h4>任职要求</h4>
+                                    <h4><?php esc_html_e( '任职要求', 'developer-starter' ); ?></h4>
                                     <ul>
                                         <?php foreach ( explode( "\n", $pos->requirements ) as $line ) : ?>
                                             <?php if ( trim( $line ) ) : ?>
@@ -201,7 +212,7 @@ if ( ! empty( $hero_bg_color ) ) {
                                 </div>
                             <?php endif; ?>
                             <?php if ( $enable_application ) : ?>
-                                <a href="#apply-form" class="btn btn-primary" data-position-id="<?php echo esc_attr( $pos->id ); ?>" data-position-title="<?php echo esc_attr( $pos->title ); ?>">立即申请</a>
+                                <a href="#apply-form" class="btn btn-primary" data-position-id="<?php echo esc_attr( $pos->id ); ?>" data-position-title="<?php echo esc_attr( $pos->title ); ?>"><?php esc_html_e( '立即申请', 'developer-starter' ); ?></a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -217,26 +228,26 @@ if ( ! empty( $hero_bg_color ) ) {
     <div class="container">
         <div class="apply-wrapper">
             <div class="apply-info">
-                <h2>投递简历</h2>
-                <p>填写以下信息，我们会尽快与您联系</p>
+                <h2><?php esc_html_e( '投递简历', 'developer-starter' ); ?></h2>
+                <p><?php esc_html_e( '填写以下信息，我们会尽快与您联系', 'developer-starter' ); ?></p>
                 
                 <div class="apply-tips">
-                    <h4>投递须知</h4>
+                    <h4><?php esc_html_e( '投递须知', 'developer-starter' ); ?></h4>
                     <ul>
-                        <li>请确保联系方式真实有效</li>
-                        <li>简历投递后3-5个工作日内回复</li>
-                        <li>面试通过后签订正式劳动合同</li>
+                        <li><?php esc_html_e( '请确保联系方式真实有效', 'developer-starter' ); ?></li>
+                        <li><?php esc_html_e( '简历投递后3-5个工作日内回复', 'developer-starter' ); ?></li>
+                        <li><?php esc_html_e( '面试通过后签订正式劳动合同', 'developer-starter' ); ?></li>
                     </ul>
                 </div>
                 
                 <?php if ( $hr_phone || $hr_email ) : ?>
                 <div class="hr-contact">
-                    <h4>HR联系方式</h4>
+                    <h4><?php esc_html_e( 'HR联系方式', 'developer-starter' ); ?></h4>
                     <?php if ( $hr_phone ) : ?>
-                        <p><strong>电话：</strong><?php echo esc_html( $hr_phone ); ?></p>
+                        <p><strong><?php esc_html_e( '电话：', 'developer-starter' ); ?></strong><?php echo esc_html( $hr_phone ); ?></p>
                     <?php endif; ?>
                     <?php if ( $hr_email ) : ?>
-                        <p><strong>邮箱：</strong><?php echo esc_html( $hr_email ); ?></p>
+                        <p><strong><?php esc_html_e( '邮箱：', 'developer-starter' ); ?></strong><?php echo esc_html( $hr_email ); ?></p>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
@@ -244,59 +255,59 @@ if ( ! empty( $hero_bg_color ) ) {
             
             <div class="apply-form-container">
                 <!-- 成功/失败提示弹窗 -->
-                <div id="apply-toast" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; padding: 40px 60px; border-radius: 16px; text-align: center; box-shadow: 0 25px 80px rgba(0,0,0,0.25);">
-                    <div id="apply-toast-icon" style="font-size: 4rem; margin-bottom: 15px;"></div>
-                    <div id="apply-toast-text" style="font-size: 1.25rem; font-weight: 600;"></div>
+                <div id="apply-toast" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; padding: var(--qiling-space-40) var(--qiling-space-60); border-radius: var(--qiling-space-16); text-align: center; box-shadow: 0 var(--qiling-space-25) var(--qiling-space-80) rgba(var(--qiling-rgb-0-0-0), 0.25);">
+                    <div id="apply-toast-icon" style="font-size: calc(var(--qiling-font-size-base) * 4); margin-bottom: var(--qiling-space-15);"></div>
+                    <div id="apply-toast-text" style="font-size: calc(var(--qiling-font-size-base) * 1.25); font-weight: 600;"></div>
                 </div>
-                <div id="apply-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9998;"></div>
+                <div id="apply-overlay" style="display: none; position: fixed; inset: 0; background: rgba(var(--qiling-rgb-0-0-0), 0.5); z-index: 9998;"></div>
                 
                 <form id="careers-apply-form" class="apply-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label>姓名 <span class="required">*</span></label>
-                            <input type="text" name="name" required placeholder="请输入您的姓名" />
+                            <label><?php esc_html_e( '姓名', 'developer-starter' ); ?> <span class="required">*</span></label>
+                            <input type="text" name="name" required placeholder="<?php esc_attr_e( '请输入您的姓名', 'developer-starter' ); ?>" />
                         </div>
                         <div class="form-group">
-                            <label>电话 <span class="required">*</span></label>
-                            <input type="tel" name="phone" required placeholder="请输入联系电话" />
+                            <label><?php esc_html_e( '电话', 'developer-starter' ); ?> <span class="required">*</span></label>
+                            <input type="tel" name="phone" required placeholder="<?php esc_attr_e( '请输入联系电话', 'developer-starter' ); ?>" />
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label>邮箱 <span class="required">*</span></label>
-                            <input type="email" name="email" required placeholder="请输入电子邮箱" />
+                            <label><?php esc_html_e( '邮箱', 'developer-starter' ); ?> <span class="required">*</span></label>
+                            <input type="email" name="email" required placeholder="<?php esc_attr_e( '请输入电子邮箱', 'developer-starter' ); ?>" />
                         </div>
                         <div class="form-group">
-                            <label>应聘职位 <span class="required">*</span></label>
+                            <label><?php esc_html_e( '应聘职位', 'developer-starter' ); ?> <span class="required">*</span></label>
                             <select name="position_title" id="position-select" required>
-                                <option value="">请选择职位</option>
+                                <option value=""><?php esc_html_e( '请选择职位', 'developer-starter' ); ?></option>
                                 <?php foreach ( $positions as $pos ) : ?>
                                     <option value="<?php echo esc_attr( $pos->title ); ?>" data-id="<?php echo esc_attr( $pos->id ); ?>">
                                         <?php echo esc_html( $pos->title ); ?>
                                     </option>
                                 <?php endforeach; ?>
-                                <option value="其他职位">其他职位</option>
+                                <option value="其他职位"><?php esc_html_e( '其他职位', 'developer-starter' ); ?></option>
                             </select>
                             <input type="hidden" name="position_id" id="position-id" value="0" />
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label>自我介绍</label>
-                        <textarea name="message" rows="5" placeholder="请简要介绍您的教育背景、工作经验和核心技能..."></textarea>
+                        <label><?php esc_html_e( '自我介绍', 'developer-starter' ); ?></label>
+                        <textarea name="message" rows="5" placeholder="<?php esc_attr_e( '请简要介绍您的教育背景、工作经验和核心技能...', 'developer-starter' ); ?>"></textarea>
                     </div>
                     
                     <input type="hidden" name="action" value="ds_submit_careers_application" />
-                    <input type="hidden" name="nonce" value="<?php echo wp_create_nonce( 'ds_careers_application_nonce' ); ?>" />
+                    <input type="hidden" name="nonce" value="<?php echo esc_attr( wp_create_nonce( 'ds_careers_application_nonce' ) ); ?>" />
                     
                     <button type="submit" class="btn btn-primary btn-lg btn-submit">
-                        <span class="btn-text">提交申请</span>
+                        <span class="btn-text"><?php esc_html_e( '提交申请', 'developer-starter' ); ?></span>
                         <span class="btn-loading" style="display: none;">
                             <svg width="20" height="20" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="32" stroke-linecap="round"/>
                             </svg>
-                            提交中...
+                            <?php esc_html_e( '提交中...', 'developer-starter' ); ?>
                         </span>
                     </button>
                 </form>
@@ -308,11 +319,11 @@ if ( ! empty( $hero_bg_color ) ) {
 
 <!-- 公司地址 -->
 <?php if ( $address || $company_name ) : ?>
-<section class="careers-location" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
+<section class="careers-location" style="background: linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%);">
     <div class="container">
         <div class="location-content">
             <div class="location-text">
-                <h3>工作地点</h3>
+                <h3><?php esc_html_e( '工作地点', 'developer-starter' ); ?></h3>
                 <?php if ( $company_name ) : ?>
                     <p class="company-name"><?php echo esc_html( $company_name ); ?></p>
                 <?php endif; ?>
@@ -321,9 +332,9 @@ if ( ! empty( $hero_bg_color ) ) {
                 <?php endif; ?>
             </div>
             <div class="location-cta">
-                <p>期待与你相见！</p>
+                <p><?php esc_html_e( '期待与你相见！', 'developer-starter' ); ?></p>
                 <?php if ( $enable_application ) : ?>
-                    <a href="#apply-form" class="btn btn-light btn-lg">立即加入</a>
+                    <a href="#apply-form" class="btn btn-light btn-lg"><?php esc_html_e( '立即加入', 'developer-starter' ); ?></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -335,23 +346,37 @@ if ( ! empty( $hero_bg_color ) ) {
 /* ===== Careers Hero ===== */
 .careers-hero {
     position: relative;
-    background: linear-gradient(135deg, #2563eb 0%, #0891b2 50%, #10b981 100%);
-    padding: 140px 0 100px;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(var(--qiling-rgb-255-255-255), 0.22) 0%, rgba(var(--qiling-rgb-255-255-255), 0) 32%),
+        radial-gradient(circle at 86% 16%, rgba(var(--color-success-rgb), 0.28) 0%, rgba(var(--color-success-rgb), 0) 34%),
+        linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-1e40af) 52%, var(--qiling-color-0f172a) 100%);
+    padding: clamp(var(--qiling-space-100), var(--qiling-space-vw-10), var(--qiling-space-150)) 0 clamp(var(--qiling-space-72), var(--qiling-space-vw-8), var(--qiling-space-100));
     overflow: hidden;
+    color: var(--color-text-inverse);
+    isolation: isolate;
+}
+
+.careers-hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .careers-hero-bg {
     position: absolute;
     inset: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="1" fill="rgba(255,255,255,0.15)"/></svg>');
+    background:
+        radial-gradient(circle at 20% 20%, rgba(var(--qiling-rgb-255-255-255), 0.1) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 40%, rgba(var(--qiling-rgb-255-255-255), 0.08) 0 3px, transparent 4px),
+        radial-gradient(circle at 40% 80%, rgba(var(--qiling-rgb-255-255-255), 0.1) 0 2px, transparent 3px),
+        radial-gradient(circle at 90% 90%, rgba(var(--qiling-rgb-255-255-255), 0.15) 0 1px, transparent 2px);
     animation: float 20s linear infinite;
 }
 
 .careers-hero-particles {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 40%);
+    background: radial-gradient(circle at 30% 70%, rgba(var(--qiling-rgb-255-255-255), 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(var(--qiling-rgb-255-255-255), 0.08) 0%, transparent 40%);
 }
 
 @keyframes float {
@@ -363,57 +388,69 @@ if ( ! empty( $hero_bg_color ) ) {
     position: relative;
     z-index: 1;
     text-align: center;
-    color: #fff;
+    color: var(--color-text-inverse);
 }
 
 .careers-badge {
     display: inline-block;
-    background: rgba(255,255,255,0.2);
+    background: rgba(var(--qiling-rgb-255-255-255), 0.16);
     backdrop-filter: blur(10px);
-    padding: 8px 20px;
+    border: 1px solid rgba(var(--qiling-rgb-255-255-255), 0.24);
+    padding: var(--qiling-space-8) var(--qiling-space-20);
     border-radius: 30px;
-    font-size: 0.9rem;
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: var(--qiling-space-20);
     animation: fadeInUp 0.6s ease;
+    color: var(--color-text-inverse);
 }
 
 .careers-hero-title {
-    font-size: 3.5rem;
+    font-size: calc(var(--qiling-font-size-base) * 3.5);
     font-weight: 800;
-    margin: 0 0 20px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    max-width: var(--qiling-measure-760);
+    margin: 0 auto var(--qiling-space-20);
+    color: var(--color-text-inverse);
+    text-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.2);
     animation: fadeInUp 0.6s ease 0.1s both;
 }
 
 .careers-hero-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto 40px;
+    font-size: calc(var(--qiling-font-size-base) * 1.25);
+    color: var(--qiling-color-rgba-255-255-255-082);
+    max-width: var(--qiling-measure-600);
+    margin: 0 auto var(--qiling-space-40);
     animation: fadeInUp 0.6s ease 0.2s both;
 }
 
 .careers-hero-stats {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: var(--qiling-space-60);
     animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 .stat-item {
     text-align: center;
+    min-width: var(--qiling-measure-140);
+    padding: var(--qiling-space-18) var(--qiling-space-22);
+    border: 1px solid rgba(var(--qiling-rgb-255-255-255), 0.18);
+    border-radius: 18px;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 18px 42px rgba(var(--qiling-rgb-15-23-42), 0.18);
 }
 
 .stat-number {
     display: block;
-    font-size: 2.5rem;
+    font-size: calc(var(--qiling-font-size-base) * 2.5);
     font-weight: 800;
+    color: var(--color-text-inverse);
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
+    color: var(--qiling-color-rgba-255-255-255-072);
 }
 
 @keyframes fadeInUp {
@@ -425,33 +462,33 @@ if ( ! empty( $hero_bg_color ) ) {
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: var(--qiling-space-30);
 }
 
 .benefit-card {
-    background: #fff;
+    background: var(--color-neutral-0);
     border-radius: 20px;
-    padding: 40px 30px;
+    padding: var(--qiling-space-40) var(--qiling-space-30);
     text-align: center;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 40px rgba(var(--qiling-rgb-0-0-0), 0.06);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .benefit-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    box-shadow: 0 25px 60px rgba(var(--qiling-rgb-0-0-0), 0.12);
 }
 
 .benefit-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--color-primary), #7c3aed);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-violet-600));
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
-    color: #fff;
+    margin: 0 auto var(--qiling-space-20);
+    color: var(--color-neutral-0);
 }
 
 .benefit-icon svg {
@@ -460,35 +497,39 @@ if ( ! empty( $hero_bg_color ) ) {
 }
 
 .benefit-title {
-    font-size: 1.25rem;
-    margin: 0 0 10px;
-    color: #1e293b;
+    font-size: calc(var(--qiling-font-size-base) * 1.25);
+    margin: 0 0 var(--qiling-space-10);
+    color: var(--color-neutral-800);
 }
 
 .benefit-desc {
-    color: #64748b;
-    font-size: 0.95rem;
+    color: var(--color-neutral-500);
+    font-size: calc(var(--qiling-font-size-base) * 0.95);
     margin: 0;
     line-height: 1.6;
 }
 
 /* ===== Positions Section ===== */
+.careers-positions {
+    background: var(--color-neutral-50);
+}
+
 .positions-filter {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 40px;
+    gap: var(--qiling-space-12);
+    margin-bottom: var(--qiling-space-40);
     flex-wrap: wrap;
 }
 
 .filter-btn {
-    padding: 10px 24px;
-    border: 2px solid #e2e8f0;
-    background: #fff;
+    padding: var(--qiling-space-10) var(--qiling-space-24);
+    border: 2px solid var(--color-neutral-200);
+    background: var(--color-neutral-0);
     border-radius: 30px;
-    font-size: 0.95rem;
+    font-size: calc(var(--qiling-font-size-base) * 0.95);
     font-weight: 500;
-    color: #64748b;
+    color: var(--color-neutral-500);
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -497,34 +538,34 @@ if ( ! empty( $hero_bg_color ) ) {
 .filter-btn.active {
     background: var(--color-primary);
     border-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-neutral-0);
 }
 
 .positions-list {
-    max-width: 900px;
+    max-width: var(--qiling-measure-900);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--qiling-space-20);
 }
 
 .position-card {
-    background: #fff;
+    background: var(--color-neutral-0);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.06);
     transition: all 0.3s;
 }
 
 .position-card:hover {
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(var(--qiling-rgb-0-0-0), 0.1);
 }
 
 .position-header {
     display: flex;
     align-items: center;
-    padding: 25px 30px;
-    gap: 20px;
+    padding: var(--qiling-space-25) var(--qiling-space-30);
+    gap: var(--qiling-space-20);
     cursor: pointer;
 }
 
@@ -533,23 +574,23 @@ if ( ! empty( $hero_bg_color ) ) {
 }
 
 .position-title {
-    font-size: 1.25rem;
-    margin: 0 0 10px;
-    color: #1e293b;
+    font-size: calc(var(--qiling-font-size-base) * 1.25);
+    margin: 0 0 var(--qiling-space-10);
+    color: var(--color-neutral-800);
 }
 
 .position-meta {
     display: flex;
-    gap: 20px;
+    gap: var(--qiling-space-20);
     flex-wrap: wrap;
 }
 
 .meta-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    color: #64748b;
-    font-size: 0.9rem;
+    gap: var(--qiling-space-6);
+    color: var(--color-neutral-500);
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
 }
 
 .meta-item svg {
@@ -557,31 +598,31 @@ if ( ! empty( $hero_bg_color ) ) {
 }
 
 .position-salary {
-    background: linear-gradient(135deg, #fef3c7, #fde68a);
-    color: #92400e;
-    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--qiling-color-fef3c7), var(--qiling-color-fde68a));
+    color: var(--qiling-color-92400e);
+    padding: var(--qiling-space-8) var(--qiling-space-16);
     border-radius: 8px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: calc(var(--qiling-font-size-base) * 1.1);
 }
 
 .position-toggle {
     width: 40px;
     height: 40px;
     border: none;
-    background: #f1f5f9;
+    background: var(--color-neutral-100);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s;
-    color: #64748b;
+    color: var(--color-neutral-500);
 }
 
 .position-toggle:hover {
     background: var(--color-primary);
-    color: #fff;
+    color: var(--color-neutral-0);
 }
 
 .position-card.expanded .position-toggle {
@@ -590,8 +631,8 @@ if ( ! empty( $hero_bg_color ) ) {
 
 .position-details {
     display: none;
-    padding: 0 30px 30px;
-    border-top: 1px solid #f1f5f9;
+    padding: 0 var(--qiling-space-30) var(--qiling-space-30);
+    border-top: 1px solid var(--color-neutral-100);
     animation: slideDown 0.3s ease;
 }
 
@@ -605,126 +646,126 @@ if ( ! empty( $hero_bg_color ) ) {
 }
 
 .detail-section {
-    margin-bottom: 25px;
+    margin-bottom: var(--qiling-space-25);
 }
 
 .detail-section h4 {
-    font-size: 1rem;
-    color: #1e293b;
-    margin: 20px 0 15px;
+    font-size: var(--qiling-font-size-base);
+    color: var(--color-neutral-800);
+    margin: var(--qiling-space-20) 0 var(--qiling-space-15);
 }
 
 .detail-section ul {
     margin: 0;
-    padding-left: 20px;
-    color: #64748b;
+    padding-left: var(--qiling-space-20);
+    color: var(--color-neutral-500);
 }
 
 .detail-section li {
-    margin-bottom: 8px;
+    margin-bottom: var(--qiling-space-8);
     line-height: 1.6;
 }
 
 /* ===== Apply Section ===== */
 .careers-apply {
-    background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-0) 100%);
 }
 
 .apply-wrapper {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    max-width: 1000px;
+    gap: var(--qiling-space-60);
+    max-width: var(--qiling-measure-1000);
     margin: 0 auto;
 }
 
 .apply-info h2 {
-    font-size: 2rem;
-    margin: 0 0 10px;
-    color: #1e293b;
+    font-size: calc(var(--qiling-font-size-base) * 2);
+    margin: 0 0 var(--qiling-space-10);
+    color: var(--color-neutral-800);
 }
 
 .apply-info > p {
-    color: #64748b;
-    margin: 0 0 30px;
+    color: var(--color-neutral-500);
+    margin: 0 0 var(--qiling-space-30);
 }
 
 .apply-tips {
-    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    background: linear-gradient(135deg, var(--qiling-color-eff6ff), var(--qiling-color-dbeafe));
     border-radius: 16px;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: var(--qiling-space-25);
+    margin-bottom: var(--qiling-space-25);
 }
 
 .apply-tips h4 {
-    margin: 0 0 15px;
+    margin: 0 0 var(--qiling-space-15);
     color: var(--color-primary);
-    font-size: 1rem;
+    font-size: var(--qiling-font-size-base);
 }
 
 .apply-tips ul {
     margin: 0;
-    padding-left: 20px;
-    color: #1e40af;
+    padding-left: var(--qiling-space-20);
+    color: var(--qiling-color-1e40af);
 }
 
 .apply-tips li {
-    margin-bottom: 8px;
+    margin-bottom: var(--qiling-space-8);
 }
 
 .hr-contact {
-    background: #f8fafc;
+    background: var(--color-neutral-50);
     border-radius: 16px;
-    padding: 25px;
+    padding: var(--qiling-space-25);
 }
 
 .hr-contact h4 {
-    margin: 0 0 15px;
-    color: #1e293b;
-    font-size: 1rem;
+    margin: 0 0 var(--qiling-space-15);
+    color: var(--color-neutral-800);
+    font-size: var(--qiling-font-size-base);
 }
 
 .hr-contact p {
-    margin: 0 0 8px;
-    color: #64748b;
+    margin: 0 0 var(--qiling-space-8);
+    color: var(--color-neutral-500);
 }
 
 .apply-form-container {
-    background: #fff;
+    background: var(--color-neutral-0);
     border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    padding: var(--qiling-space-40);
+    box-shadow: 0 20px 60px rgba(var(--qiling-rgb-0-0-0), 0.08);
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: var(--qiling-space-20);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: var(--qiling-space-20);
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: var(--qiling-space-8);
     font-weight: 500;
-    color: #334155;
+    color: var(--color-neutral-700);
 }
 
 .form-group .required {
-    color: #ef4444;
+    color: var(--color-error-light);
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 14px 18px;
-    border: 2px solid #e2e8f0;
+    padding: var(--qiling-space-14) var(--qiling-space-18);
+    border: 2px solid var(--color-neutral-200);
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: var(--qiling-font-size-base);
     transition: all 0.3s;
     font-family: inherit;
     box-sizing: border-box;
@@ -735,7 +776,7 @@ if ( ! empty( $hero_bg_color ) ) {
 .form-group textarea:focus {
     border-color: var(--color-primary);
     outline: none;
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.1);
 }
 
 .form-group textarea {
@@ -745,45 +786,54 @@ if ( ! empty( $hero_bg_color ) ) {
 
 .btn-submit {
     width: 100%;
-    padding: 16px 32px;
-    font-size: 1.1rem;
+    padding: var(--qiling-space-16) var(--qiling-space-32);
+    font-size: calc(var(--qiling-font-size-base) * 1.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: var(--qiling-space-10);
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 10px 30px rgba(var(--color-primary-rgb), 0.3);
 }
 
 /* ===== Location Section ===== */
 .careers-location {
-    padding: 60px 0;
-    color: #fff;
+    padding: var(--qiling-space-60) 0;
+    color: var(--color-neutral-0);
+    background:
+        radial-gradient(circle at 10% 10%, rgba(var(--color-primary-rgb), 0.22) 0%, rgba(var(--color-primary-rgb), 0) 34%),
+        linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%) !important;
 }
 
 .location-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: var(--qiling-space-40);
+    padding: var(--qiling-space-36);
+    border: 1px solid rgba(var(--qiling-rgb-255-255-255), 0.1);
+    border-radius: 24px;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.04);
+    box-shadow: 0 24px 56px rgba(var(--qiling-rgb-15-23-42), 0.28);
 }
 
 .location-text h3 {
-    font-size: 1.5rem;
-    margin: 0 0 15px;
+    font-size: calc(var(--qiling-font-size-base) * 1.5);
+    margin: 0 0 var(--qiling-space-15);
+    color: var(--color-text-inverse);
 }
 
 .company-name {
-    font-size: 1.25rem;
-    margin: 0 0 8px;
-    opacity: 0.9;
+    font-size: calc(var(--qiling-font-size-base) * 1.25);
+    margin: 0 0 var(--qiling-space-8);
+    color: var(--color-text-inverse);
 }
 
 .company-address {
-    opacity: 0.7;
+    color: var(--qiling-color-rgba-255-255-255-072);
     margin: 0;
 }
 
@@ -792,9 +842,22 @@ if ( ! empty( $hero_bg_color ) ) {
 }
 
 .location-cta p {
-    margin: 0 0 15px;
-    font-size: 1.1rem;
-    opacity: 0.9;
+    margin: 0 0 var(--qiling-space-15);
+    font-size: calc(var(--qiling-font-size-base) * 1.1);
+    color: var(--color-text-inverse);
+}
+
+.careers-location .btn-light {
+    background: var(--color-text-inverse);
+    color: var(--color-primary);
+    border-color: var(--color-text-inverse);
+    box-shadow: 0 12px 28px rgba(var(--qiling-rgb-15-23-42), 0.22);
+}
+
+.careers-location .btn-light:hover {
+    background: var(--qiling-color-rgba-255-255-255-082);
+    border-color: var(--qiling-color-rgba-255-255-255-082);
+    color: var(--color-primary);
 }
 
 /* ===== Responsive ===== */
@@ -805,34 +868,34 @@ if ( ! empty( $hero_bg_color ) ) {
     
     .apply-wrapper {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: var(--qiling-space-40);
     }
     
     .careers-hero-stats {
-        gap: 40px;
+        gap: var(--qiling-space-40);
     }
 }
 
 @media (max-width: 768px) {
     .careers-hero {
-        padding: 100px 0 60px;
+        padding: var(--qiling-space-100) 0 var(--qiling-space-60);
     }
     
     .careers-hero-title {
-        font-size: 2rem;
+        font-size: calc(var(--qiling-font-size-base) * 2);
     }
     
     .careers-hero-subtitle {
-        font-size: 1rem;
+        font-size: var(--qiling-font-size-base);
     }
     
     .careers-hero-stats {
         flex-wrap: wrap;
-        gap: 30px;
+        gap: var(--qiling-space-30);
     }
     
     .stat-number {
-        font-size: 2rem;
+        font-size: calc(var(--qiling-font-size-base) * 2);
     }
     
     .benefits-grid {
@@ -845,7 +908,7 @@ if ( ! empty( $hero_bg_color ) ) {
     
     .position-header {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: var(--qiling-space-15);
     }
     
     .position-salary {
@@ -858,17 +921,117 @@ if ( ! empty( $hero_bg_color ) ) {
     }
     
     .apply-form-container {
-        padding: 25px;
+        padding: var(--qiling-space-25);
     }
     
     #apply-toast {
-        padding: 30px 40px !important;
+        padding: var(--qiling-space-30) var(--qiling-space-40) !important;
         width: 85% !important;
     }
 }
 
 @keyframes spin {
     100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Dark Mode Support
+   ======================================== */
+html.dark-mode .careers-positions {
+    background: var(--color-neutral-900);
+}
+
+html.dark-mode .careers-apply {
+    background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+}
+
+html.dark-mode .benefit-card,
+html.dark-mode .position-card,
+html.dark-mode .apply-form-container {
+    background: var(--color-neutral-800);
+    box-shadow: none;
+    border: 1px solid rgba(var(--qiling-rgb-255-255-255), 0.05);
+}
+
+html.dark-mode .benefit-card:hover,
+html.dark-mode .position-card:hover {
+    background: var(--color-neutral-700);
+}
+
+html.dark-mode .benefit-title,
+html.dark-mode .position-title,
+html.dark-mode .detail-section h4,
+html.dark-mode .apply-info h2,
+html.dark-mode .hr-contact h4,
+html.dark-mode .form-group label {
+    color: var(--color-neutral-100);
+}
+
+html.dark-mode .benefit-desc,
+html.dark-mode .meta-item,
+html.dark-mode .detail-section ul,
+html.dark-mode .apply-info > p,
+html.dark-mode .hr-contact p {
+    color: var(--color-neutral-300);
+}
+
+html.dark-mode .no-positions {
+    background: var(--color-neutral-800) !important;
+}
+
+html.dark-mode .filter-btn {
+    background: var(--color-neutral-800);
+    border-color: var(--color-neutral-700);
+    color: var(--color-neutral-400);
+}
+
+html.dark-mode .filter-btn:hover,
+html.dark-mode .filter-btn.active {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+html.dark-mode .position-toggle {
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    color: var(--color-neutral-300);
+}
+
+html.dark-mode .position-toggle:hover {
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+html.dark-mode .position-details {
+    border-top-color: rgba(var(--qiling-rgb-255-255-255), 0.1);
+}
+
+html.dark-mode .apply-tips {
+    background: rgba(var(--color-primary-rgb), 0.1);
+}
+
+html.dark-mode .apply-tips h4,
+html.dark-mode .apply-tips ul {
+    color: var(--qiling-color-60a5fa);
+}
+
+html.dark-mode .hr-contact {
+    background: var(--color-neutral-800);
+    border: 1px solid rgba(var(--qiling-rgb-255-255-255), 0.05);
+}
+
+html.dark-mode .form-group input,
+html.dark-mode .form-group select,
+html.dark-mode .form-group textarea {
+    background: var(--color-neutral-900);
+    border-color: var(--color-neutral-700);
+    color: var(--color-neutral-100);
+}
+
+html.dark-mode .form-group input:focus,
+html.dark-mode .form-group select:focus,
+html.dark-mode .form-group textarea:focus {
+    border-color: var(--color-primary);
 }
 </style>
 
@@ -955,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             var formData = new FormData(form);
             
-            fetch('<?php echo admin_url( 'admin-ajax.php' ); ?>', {
+            fetch(<?php echo wp_json_encode( esc_url_raw( admin_url( 'admin-ajax.php' ) ) ); ?>, {
                 method: 'POST',
                 body: formData
             })
@@ -965,14 +1128,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 toast.style.display = 'block';
                 
                 if (data.success) {
-                    toast.style.background = '#dcfce7';
+                    toast.style.background = 'var(--qiling-color-dcfce7)';
                     toastIcon.innerHTML = '✅';
-                    toastText.innerHTML = '<span style="color:#166534;">' + data.data.message + '</span>';
+                    toastText.innerHTML = '<span style="color:var(--qiling-color-166534);">' + data.data.message + '</span>';
                     form.reset();
                 } else {
-                    toast.style.background = '#fee2e2';
+                    toast.style.background = 'var(--qiling-color-fee2e2)';
                     toastIcon.innerHTML = '❌';
-                    toastText.innerHTML = '<span style="color:#991b1b;">' + (data.data ? data.data.message : '提交失败，请稍后重试') + '</span>';
+                    toastText.innerHTML = '<span style="color:var(--qiling-color-991b1b);">' + (data.data ? data.data.message : '<?php echo esc_js( __( '提交失败，请稍后重试', 'developer-starter' ) ); ?>') + '</span>';
                 }
                 
                 submitBtn.disabled = false;
@@ -988,9 +1151,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Form error:', err);
                 overlay.style.display = 'block';
                 toast.style.display = 'block';
-                toast.style.background = '#fee2e2';
+                toast.style.background = 'var(--qiling-color-fee2e2)';
                 toastIcon.innerHTML = '❌';
-                toastText.innerHTML = '<span style="color:#991b1b;">网络错误，请稍后重试</span>';
+                toastText.innerHTML = '<span style="color:var(--qiling-color-991b1b);"><?php echo esc_js( __( '网络错误，请稍后重试', 'developer-starter' ) ); ?></span>';
                 
                 submitBtn.disabled = false;
                 btnText.style.display = 'inline';

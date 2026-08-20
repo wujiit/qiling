@@ -17,17 +17,7 @@ $all_faqs = FAQ_Manager::get_faqs();
 ?>
 
 <main class="faq-page">
-    <!-- 页面头部 -->
-    <section class="faq-header">
-        <div class="container">
-            <h1 class="faq-title"><?php the_title(); ?></h1>
-            <?php if ( has_excerpt() ) : ?>
-                <p class="faq-subtitle"><?php echo get_the_excerpt(); ?></p>
-            <?php else : ?>
-                <p class="faq-subtitle">查找常见问题答案，下载相关文档资料</p>
-            <?php endif; ?>
-        </div>
-    </section>
+    <?php \Developer_Starter\Core\Page_Header::render( 'default' ); ?>
 
     <!-- FAQ 内容区 -->
     <section class="faq-content">
@@ -40,7 +30,7 @@ $all_faqs = FAQ_Manager::get_faqs();
                         <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
                         <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
                     </svg>
-                    全部
+                    <?php esc_html_e( '全部', 'developer-starter' ); ?>
                 </button>
                 <?php foreach ( $categories as $cat ) : ?>
                     <button type="button" class="faq-cat-btn" data-category="<?php echo esc_attr( $cat->term_id ); ?>">
@@ -104,7 +94,7 @@ $all_faqs = FAQ_Manager::get_faqs();
                                                 <polyline points="7 10 12 15 17 10"/>
                                                 <line x1="12" y1="15" x2="12" y2="3"/>
                                             </svg>
-                                            下载
+                                            <?php esc_html_e( '下载', 'developer-starter' ); ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -118,63 +108,12 @@ $all_faqs = FAQ_Manager::get_faqs();
                             <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
                             <line x1="12" y1="17" x2="12.01" y2="17"/>
                         </svg>
-                        <p>暂无常见问题</p>
+                        <p><?php esc_html_e( '暂无常见问题', 'developer-starter' ); ?></p>
                     </div>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 分类筛选
-    var catBtns = document.querySelectorAll('.faq-cat-btn');
-    var faqItems = document.querySelectorAll('.faq-item');
-    
-    catBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var category = this.dataset.category;
-            
-            // 更新按钮状态
-            catBtns.forEach(function(b) { b.classList.remove('active'); });
-            this.classList.add('active');
-            
-            // 筛选 FAQ
-            faqItems.forEach(function(item) {
-                var itemCats = item.dataset.categories.split(',');
-                if (category === 'all' || itemCats.includes(category)) {
-                    item.style.display = 'block';
-                    setTimeout(function() { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 10);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(-10px)';
-                    setTimeout(function() { item.style.display = 'none'; }, 300);
-                }
-            });
-        });
-    });
-    
-    // 手风琴展开/折叠
-    var questions = document.querySelectorAll('.faq-question');
-    
-    questions.forEach(function(question) {
-        question.addEventListener('click', function() {
-            var item = this.closest('.faq-item');
-            var isActive = item.classList.contains('active');
-            
-            // 关闭其他
-            document.querySelectorAll('.faq-item.active').forEach(function(activeItem) {
-                if (activeItem !== item) {
-                    activeItem.classList.remove('active');
-                }
-            });
-            
-            // 切换当前
-            item.classList.toggle('active');
-        });
-    });
-});
-</script>
 
 <?php get_footer(); ?>

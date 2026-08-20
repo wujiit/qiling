@@ -23,7 +23,9 @@ add_action( 'wp_enqueue_scripts', function() {
 get_header();
 
 // 获取页面模块
-$modules = get_post_meta( get_the_ID(), '_developer_starter_modules', true );
+$modules = function_exists( 'developer_starter_get_page_modules_data' )
+    ? developer_starter_get_page_modules_data( get_the_ID() )
+    : get_post_meta( get_the_ID(), '_developer_starter_modules', true );
 $has_modules = ! empty( $modules ) && is_array( $modules );
 
 // 获取当前分页 - 静态页面使用 'page'，归档页面使用 'paged'
@@ -51,7 +53,7 @@ if ( get_query_var( 'paged' ) ) {
             <?php if ( get_the_content() ) : ?>
                 <!-- 如果有页面内容，显示内容 -->
                 <div class="blog-page-content section-padding">
-                    <div class="container" style="max-width: 1200px;">
+                    <div class="container" style="max-width: var(--qiling-measure-1200);">
                         <div class="entry-content">
                             <?php the_content(); ?>
                         </div>
@@ -61,18 +63,18 @@ if ( get_query_var( 'paged' ) ) {
                 <!-- 没有内容时的显示 -->
                 <section class="blog-empty-state" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
                     <div class="container text-center">
-                        <span style="font-size: 4rem; display: block; margin-bottom: 20px;">📝</span>
-                        <h2 style="font-size: 2rem; margin-bottom: 15px; color: #1e293b;"><?php _e( '开始构建您的博客', 'developer-starter' ); ?></h2>
+                        <span style="font-size: var(--qiling-text-rem-4); display: block; margin-bottom: var(--qiling-space-20);">📝</span>
+                        <h2 style="font-size: var(--qiling-text-rem-2); margin-bottom: var(--qiling-space-15); color: var(--color-neutral-800);"><?php esc_html_e( '开始构建您的博客', 'developer-starter' ); ?></h2>
                         <?php if ( current_user_can( 'edit_pages' ) ) : ?>
-                            <p style="color: #64748b; font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px;">
-                                <?php _e( '通过模块构建器添加「博客置顶推荐」和「博客布局」模块，快速创建专业的博客首页', 'developer-starter' ); ?>
+                            <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1); max-width: var(--qiling-measure-500); margin: 0 auto var(--qiling-space-30);">
+                                <?php esc_html_e( '通过模块构建器添加「博客置顶推荐」和「博客布局」模块，快速创建专业的博客首页', 'developer-starter' ); ?>
                             </p>
-                            <a href="<?php echo admin_url( 'post.php?post=' . get_the_ID() . '&action=edit' ); ?>" class="btn btn-primary btn-lg">
-                                <?php _e( '编辑页面模块', 'developer-starter' ); ?>
+                            <a href="<?php echo esc_url( admin_url( 'post.php?post=' . get_the_ID() . '&action=edit' ) ); ?>" class="btn btn-primary btn-lg">
+                                <?php esc_html_e( '编辑页面模块', 'developer-starter' ); ?>
                             </a>
                         <?php else : ?>
-                            <p style="color: #64748b; font-size: 1.1rem;">
-                                <?php _e( '博客内容正在建设中，敬请期待...', 'developer-starter' ); ?>
+                            <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1);">
+                                <?php esc_html_e( '博客内容正在建设中，敬请期待...', 'developer-starter' ); ?>
                             </p>
                         <?php endif; ?>
                     </div>

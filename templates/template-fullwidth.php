@@ -1,9 +1,9 @@
 <?php
 /**
- * Template Name: 全屏模式
+ * Template Name: 全宽模式
  * Template Post Type: page
  * 
- * 全屏页面模板 - 无侧边栏的全宽页面
+ * 全宽页面模板 - 无侧边栏的全宽页面
  *
  * @package Developer_Starter
  */
@@ -11,19 +11,15 @@
 get_header();
 ?>
 
-<div class="page-header" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); padding: 100px 0 60px;">
-    <div class="container">
-        <h1 class="page-title" style="color: #fff; text-align: center; font-size: 2.5rem; margin: 0;">
-            <?php the_title(); ?>
-        </h1>
-    </div>
-</div>
+<?php \Developer_Starter\Core\Page_Header::render( 'fullwidth' ); ?>
 
 <article class="page-content section-padding fullwidth-page">
     <div class="container">
         <?php
         // 检查是否有模块配置
-        $modules = get_post_meta( get_the_ID(), '_developer_starter_modules', true );
+        $modules = function_exists( 'developer_starter_get_page_modules_data' )
+            ? developer_starter_get_page_modules_data( get_the_ID() )
+            : get_post_meta( get_the_ID(), '_developer_starter_modules', true );
         
         if ( ! empty( $modules ) && is_array( $modules ) ) :
             // 渲染模块
