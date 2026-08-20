@@ -1,5 +1,5 @@
 /**
- * Blog Page Template Styles
+ * 博客页面模板样式 (Blog Page Template Styles)
  * 博客页面模板专用样式 - 现代化、科技感设计
  *
  * @package Developer_Starter
@@ -7,32 +7,32 @@
  */
 
 /* ==========================================================================
-   Blog Page Container
+   博客页面容器 (Blog Page Container)
    ========================================================================== */
 
 .template-blog-page {
     min-height: 100vh;
-    background: var(--bg-secondary, #f8fafc);
+    background: var(--bg-secondary, var(--color-neutral-50));
 }
 
 /* ==========================================================================
-   Empty State
+   空状态 (Empty State)
    ========================================================================== */
 
 .blog-empty-state {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-neutral-200) 100%);
 }
 
 /* ==========================================================================
-   Pagination
+   分页 (Pagination)
    ========================================================================== */
 
 .blog-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    padding: 40px 0;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-40) 0;
     flex-wrap: wrap;
 }
 
@@ -40,60 +40,60 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 44px;
+    min-width: var(--qiling-measure-44);
     height: 44px;
-    padding: 0 16px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
+    padding: 0 var(--qiling-space-16);
+    background: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
     border-radius: 10px;
-    color: #475569;
+    color: var(--color-neutral-600);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: calc(var(--qiling-font-size-base) * 0.95);
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 2px 4px rgba(var(--qiling-rgb-0-0-0), 0.02);
 }
 
 .blog-pagination .page-numbers:hover {
-    background: #f1f5f9;
-    border-color: #cbd5e1;
-    color: #1e293b;
+    background: var(--color-neutral-100);
+    border-color: var(--color-neutral-300);
+    color: var(--color-neutral-800);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(var(--qiling-rgb-0-0-0), 0.08);
 }
 
 .blog-pagination .page-numbers.current {
-    background: linear-gradient(135deg, var(--color-primary, #2563eb) 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
     border-color: transparent;
-    color: #fff;
+    color: var(--color-neutral-0);
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
 }
 
 .blog-pagination .page-numbers.dots {
     background: transparent;
     border: none;
-    color: #94a3b8;
+    color: var(--color-neutral-400);
     pointer-events: none;
     min-width: auto;
-    padding: 0 8px;
+    padding: 0 var(--qiling-space-8);
 }
 
 .blog-pagination .prev.page-numbers,
 .blog-pagination .next.page-numbers {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background: linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-neutral-700) 100%);
     border-color: transparent;
-    color: #fff;
+    color: var(--color-neutral-0);
     min-width: auto;
-    padding: 0 20px;
-    gap: 6px;
+    padding: 0 var(--qiling-space-20);
+    gap: var(--qiling-space-6);
 }
 
 .blog-pagination .prev.page-numbers:hover,
 .blog-pagination .next.page-numbers:hover {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(var(--qiling-rgb-0-0-0), 0.15);
 }
 
 .blog-pagination .prev.page-numbers svg,
@@ -103,18 +103,18 @@
 }
 
 /* ==========================================================================
-   Pagination Info
+   分页信息 (Pagination Info)
    ========================================================================== */
 
 .pagination-info {
     text-align: center;
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-top: 16px;
+    color: var(--color-neutral-500);
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
+    margin-top: var(--qiling-space-16);
 }
 
 /* ==========================================================================
-   Blog Module Enhancements (when in blog page template)
+   博客模块增强功能（在博客页面模板中时） (Blog Module Enhancements when in blog page template)
    ========================================================================== */
 
 .template-blog-page .module-blog {
@@ -139,68 +139,75 @@
     display: block;
     width: 60px;
     height: 4px;
-    background: linear-gradient(135deg, var(--color-primary, #2563eb) 0%, #7c3aed 100%);
-    margin: 16px auto 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
+    margin: var(--qiling-space-16) auto 0;
     border-radius: 2px;
 }
 
 /* ==========================================================================
-   Dark Mode Support
+   暗黑模式支持 (Dark Mode Support)
    ========================================================================== */
 
+html.dark-mode .template-blog-page,
 [data-theme="dark"] .template-blog-page {
-    background: var(--dark-bg-primary, #0f172a);
+    background: var(--dark-bg-primary, var(--color-neutral-900));
 }
 
+html.dark-mode .blog-pagination .page-numbers,
 [data-theme="dark"] .blog-pagination .page-numbers {
-    background: var(--dark-bg-secondary, #1e293b);
-    border-color: var(--dark-border, #334155);
-    color: var(--dark-text-secondary, #94a3b8);
+    background: var(--dark-bg-secondary, var(--color-neutral-800));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-secondary, var(--color-neutral-400));
 }
 
+html.dark-mode .blog-pagination .page-numbers:hover,
 [data-theme="dark"] .blog-pagination .page-numbers:hover {
-    background: var(--dark-bg-tertiary, #334155);
-    border-color: #475569;
-    color: #f1f5f9;
+    background: var(--dark-bg-tertiary, var(--color-neutral-700));
+    border-color: var(--color-neutral-600);
+    color: var(--color-neutral-100);
 }
 
+html.dark-mode .blog-pagination .page-numbers.current,
 [data-theme="dark"] .blog-pagination .page-numbers.current {
-    background: linear-gradient(135deg, var(--color-primary, #2563eb) 0%, #7c3aed 100%);
-    color: #fff;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
+    color: var(--color-neutral-0);
 }
 
+html.dark-mode .blog-empty-state,
 [data-theme="dark"] .blog-empty-state {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
 }
 
+html.dark-mode .blog-empty-state h2,
 [data-theme="dark"] .blog-empty-state h2 {
-    color: #f1f5f9 !important;
+    color: var(--color-neutral-100) !important;
 }
 
+html.dark-mode .blog-empty-state p,
 [data-theme="dark"] .blog-empty-state p {
-    color: #94a3b8 !important;
+    color: var(--color-neutral-400) !important;
 }
 
 /* ==========================================================================
-   Responsive
+   响应式 (Responsive)
    ========================================================================== */
 
 @media (max-width: 768px) {
     .blog-pagination {
-        gap: 6px;
-        padding: 30px 15px;
+        gap: var(--qiling-space-6);
+        padding: var(--qiling-space-30) var(--qiling-space-15);
     }
 
     .blog-pagination .page-numbers {
-        min-width: 40px;
+        min-width: var(--qiling-measure-40);
         height: 40px;
-        padding: 0 12px;
-        font-size: 0.9rem;
+        padding: 0 var(--qiling-space-12);
+        font-size: calc(var(--qiling-font-size-base) * 0.9);
     }
 
     .blog-pagination .prev.page-numbers,
     .blog-pagination .next.page-numbers {
-        padding: 0 14px;
+        padding: 0 var(--qiling-space-14);
     }
 
     .blog-pagination .page-numbers.dots {
@@ -208,11 +215,11 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: calc(var(--qiling-measure-500) - var(--qiling-space-20))) {
     .blog-pagination .page-numbers {
-        min-width: 36px;
+        min-width: var(--qiling-measure-36);
         height: 36px;
-        padding: 0 10px;
-        font-size: 0.85rem;
+        padding: 0 var(--qiling-space-10);
+        font-size: calc(var(--qiling-font-size-base) * 0.85);
     }
 }

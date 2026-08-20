@@ -1,0 +1,984 @@
+/**
+ * Resource detail skins
+ *
+ * Scoped visual polish for shop resources, gallery posts and QiApp software
+ * detail pages. Business logic remains in the existing plugins.
+ *
+ * @package Developer_Starter
+ */
+
+.qiling-resource-detail {
+    --qiling-resource-detail-bg: #f6f8fb;
+    --qiling-resource-detail-surface: #ffffff;
+    --qiling-resource-detail-surface-soft: #f8fafc;
+    --qiling-resource-detail-line: rgba(15, 23, 42, 0.1);
+    --qiling-resource-detail-line-strong: rgba(15, 23, 42, 0.16);
+    --qiling-resource-detail-text: #0f172a;
+    --qiling-resource-detail-muted: #64748b;
+    --qiling-resource-detail-primary: #2563eb;
+    --qiling-resource-detail-primary-soft: rgba(37, 99, 235, 0.1);
+    --qiling-resource-detail-accent: #10b981;
+    --qiling-resource-detail-accent-soft: rgba(16, 185, 129, 0.12);
+    --qiling-resource-detail-warn: #f59e0b;
+    --qiling-resource-detail-warn-soft: rgba(245, 158, 11, 0.14);
+    --qiling-resource-detail-radius: 14px;
+    --qiling-resource-detail-radius-sm: 10px;
+    --qiling-resource-detail-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.qiling-resource-detail-header {
+    --qiling-single-header-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 54%, #155e75 100%);
+}
+
+.qiling-resource-detail-header--gallery {
+    --qiling-single-header-bg: linear-gradient(135deg, #111827 0%, #263244 52%, #365314 100%);
+}
+
+.qiling-resource-detail-header .single-post-breadcrumb {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.qiling-resource-detail-header .post-header-category-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #dbeafe;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.qiling-resource-detail-header .single-post-title {
+    letter-spacing: 0;
+}
+
+.qiling-resource-detail-header .single-post-header__resource-layout {
+    gap: 28px;
+}
+
+.qiling-resource-detail-header .single-post-header__cover {
+    flex-basis: 300px;
+}
+
+.qiling-resource-detail-header .single-post-header__cover img {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.qiling-resource-detail-header .single-post-header__content {
+    gap: 22px;
+}
+
+.qiling-resource-detail-header .single-post-meta-stats--resource,
+.qiling-resource-detail-header .single-post-meta-stats--centered {
+    gap: 10px;
+}
+
+.qiling-resource-detail-header .single-post-meta-stats--resource .meta-stat,
+.qiling-resource-detail-header .single-post-meta-stats--centered .meta-stat {
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.76);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.qiling-resource-detail-layout {
+    align-items: flex-start;
+}
+
+.qiling-resource-detail-layout.no-sidebar .post-main-content,
+.qiling-resource-detail-layout.is-full-width-mode .post-main-content {
+    max-width: 1080px;
+}
+
+.qiling-resource-detail .post-main-content {
+    border-radius: 18px;
+    border-color: var(--qiling-resource-detail-line);
+    background: var(--qiling-resource-detail-surface);
+    box-shadow: var(--qiling-resource-detail-shadow);
+}
+
+.qiling-resource-detail .entry-content {
+    color: var(--qiling-resource-detail-text);
+}
+
+.qiling-resource-detail .post-tags,
+.qiling-resource-detail .copyright-notice,
+.qiling-resource-detail .author-box,
+.qiling-resource-detail .post-navigation,
+.qiling-resource-detail .single-post-comments {
+    border-radius: var(--qiling-resource-detail-radius);
+}
+
+/* 商店资源详情 (Shop resource detail) */
+
+.qiling-resource-detail--shop .post-main-content > .entry-content {
+    font-size: var(--qiling-text-17);
+    line-height: 1.78;
+}
+
+.qiling-resource-detail--shop .entry-content h2,
+.qiling-resource-detail--shop .entry-content h3 {
+    letter-spacing: 0;
+}
+
+.single-post-header__resource-box {
+    align-self: stretch;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-wrap {
+    height: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-header,
+.qiling-resource-detail--shop .qls-download-content-tb-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(16, 185, 129, 0.08));
+}
+
+.single-post-header__resource-box .qls-download-title-hd-badge,
+.qiling-resource-detail--shop .qls-download-content-tb-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    color: #1d4ed8;
+    background: #dbeafe;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-badge.success,
+.qiling-resource-detail--shop .qls-download-content-tb-badge.success {
+    color: #047857;
+    background: #d1fae5;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-body,
+.qiling-resource-detail--shop .qls-download-content-tb-body {
+    padding: 16px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-price-area,
+.qiling-resource-detail--shop .qls-download-content-tb-price-area {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-price-label,
+.qiling-resource-detail--shop .qls-download-content-tb-price-label,
+.single-post-header__resource-box .qls-download-title-hd-tips,
+.qiling-resource-detail--shop .qls-download-content-tb-tips {
+    color: var(--qiling-resource-detail-muted);
+    font-size: 13px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-price-val,
+.qiling-resource-detail--shop .qls-download-content-tb-price-val {
+    color: #0f172a;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-scope-tag,
+.qiling-resource-detail--shop .qls-download-content-tb-scope-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0 8px;
+    border-radius: 999px;
+    color: #0369a1;
+    background: #e0f2fe;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-vip-grid,
+.qiling-resource-detail--shop .qls-download-content-tb-vip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-vip-item,
+.qiling-resource-detail--shop .qls-download-content-tb-vip-item {
+    padding: 10px;
+    border: 1px solid rgba(245, 158, 11, 0.18);
+    border-radius: 12px;
+    background: var(--qiling-resource-detail-warn-soft);
+}
+
+.single-post-header__resource-box .qls-download-title-hd-vip-name,
+.qiling-resource-detail--shop .qls-download-content-tb-vip-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #92400e;
+    font-size: 12px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-vip-price,
+.qiling-resource-detail--shop .qls-download-content-tb-vip-price {
+    margin-top: 4px;
+    color: #111827;
+    font-weight: 800;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-btn-group,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-group {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-btn-buy,
+.single-post-header__resource-box .qls-download-title-hd-btn-pay,
+.single-post-header__resource-box .qls-download-title-hd-btn-login,
+.single-post-header__resource-box .qls-download-title-hd-btn-recharge,
+.single-post-header__resource-box .qls-download-title-hd-btn-vip,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-buy,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-pay,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-login,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-recharge,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-vip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-btn-buy,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-buy {
+    color: #ffffff;
+    background: #2563eb;
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+}
+
+.single-post-header__resource-box .qls-download-title-hd-btn-pay,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-pay {
+    color: #ffffff;
+    background: #059669;
+    box-shadow: 0 12px 24px rgba(5, 150, 105, 0.2);
+}
+
+.single-post-header__resource-box .qls-download-title-hd-btn-login,
+.single-post-header__resource-box .qls-download-title-hd-btn-recharge,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-login,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-recharge {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-btn-vip,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-vip {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-btn-buy.disabled,
+.qiling-resource-detail--shop .qls-download-content-tb-btn-buy.disabled {
+    color: #94a3b8;
+    background: #e2e8f0;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-balance-row,
+.qiling-resource-detail--shop .qls-download-content-tb-balance-row {
+    margin-bottom: 10px;
+    color: var(--qiling-resource-detail-muted);
+    font-size: 13px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-service-tags,
+.qiling-resource-detail--shop .qls-download-content-tb-service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.single-post-header__resource-box .qls-service-tag,
+.qiling-resource-detail--shop .qls-service-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 26px;
+    padding: 0 9px;
+    border-radius: 999px;
+    color: #475569;
+    background: #f1f5f9;
+    font-size: 12px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-download-list,
+.qiling-resource-detail--shop .qls-download-content-tb-download-list {
+    display: grid;
+    gap: 10px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-download-item,
+.qiling-resource-detail--shop .qls-download-content-tb-download-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--qiling-resource-detail-line);
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-download-name,
+.qiling-resource-detail--shop .qls-download-content-tb-download-name {
+    display: block;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-download-code,
+.qiling-resource-detail--shop .qls-download-content-tb-download-code {
+    display: block;
+    margin-top: 4px;
+    color: var(--qiling-resource-detail-muted);
+    font-size: 12px;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-download-go-btn,
+.single-post-header__resource-box .qls-download-title-hd-link-page-main,
+.qiling-resource-detail--shop .qls-download-content-tb-download-go-btn,
+.qiling-resource-detail--shop .qls-download-content-tb-link-page-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 10px;
+    color: #ffffff;
+    background: #2563eb;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.single-post-header__resource-box .qls-download-title-hd-footer,
+.qiling-resource-detail--shop .qls-download-content-tb-footer {
+    margin-top: 12px;
+}
+
+.qiling-resource-detail--shop .entry-content .qls-download-content-tb-wrap {
+    margin: 24px 0;
+    border-radius: 16px;
+    border: 1px solid var(--qiling-resource-detail-line);
+    background: var(--qiling-resource-detail-surface);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+/* 图库资源详情 (Gallery resource detail) */
+
+.qiling-resource-detail--gallery .post-main-content {
+    max-width: 1180px;
+    padding: clamp(18px, 3vw, 34px);
+    background: #111827;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.qiling-resource-detail--gallery .entry-content {
+    color: #e5e7eb;
+}
+
+.qiling-resource-detail--gallery .gallery-mode-viewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: min(72vh, 760px);
+    margin: 0 auto;
+    padding: clamp(14px, 2.4vw, 28px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: #0b1120;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 28px 80px rgba(0, 0, 0, 0.32);
+}
+
+.qiling-resource-detail--gallery .gallery-mode-viewer figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qiling-resource-detail--gallery .gallery-mode-viewer img {
+    max-height: min(72vh, 760px);
+    border-radius: 12px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.42);
+    background: #020617;
+}
+
+.qiling-resource-detail--gallery .gallery-mode-viewer figcaption,
+.qiling-resource-detail--gallery .gallery-mode-viewer .wp-element-caption {
+    color: rgba(226, 232, 240, 0.78);
+}
+
+.qiling-resource-detail--gallery .gallery-nav-btn {
+    width: 46px;
+    height: 46px;
+    color: #e5e7eb;
+    background: rgba(15, 23, 42, 0.78);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.qiling-resource-detail--gallery .gallery-nav-btn:hover {
+    color: #111827;
+    background: #bef264;
+    box-shadow: 0 16px 34px rgba(190, 242, 100, 0.24);
+}
+
+.qiling-resource-detail--gallery .gallery-pagination {
+    margin-top: 24px;
+}
+
+.qiling-resource-detail--gallery .gallery-page-item {
+    min-width: 34px;
+    height: 34px;
+    color: rgba(226, 232, 240, 0.82);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.qiling-resource-detail--gallery .gallery-page-item:hover {
+    color: #ffffff;
+    border-color: rgba(190, 242, 100, 0.5);
+    background: rgba(190, 242, 100, 0.14);
+}
+
+.qiling-resource-detail--gallery .gallery-page-item.current {
+    color: #111827;
+    border-color: #bef264;
+    background: #bef264;
+    box-shadow: 0 12px 28px rgba(190, 242, 100, 0.22);
+}
+
+.qiling-resource-detail--gallery span.gallery-page-item {
+    color: rgba(226, 232, 240, 0.55);
+    background: transparent;
+}
+
+.qiling-resource-detail--gallery .gallery-text-content {
+    color: rgba(226, 232, 240, 0.82);
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.qiling-resource-detail--gallery .post-tags,
+.qiling-resource-detail--gallery .copyright-notice,
+.qiling-resource-detail--gallery .author-box,
+.qiling-resource-detail--gallery .post-navigation,
+.qiling-resource-detail--gallery .single-post-comments {
+    color: var(--qiling-resource-detail-text);
+    background: #ffffff;
+}
+
+/* 启应用软件详情 (QiApp software detail) */
+
+.qiling-resource-detail-template--software {
+    background: #f6f8fb;
+}
+
+.qiling-resource-detail-section--software {
+    padding-top: clamp(28px, 5vw, 56px);
+}
+
+.qiling-resource-detail--software {
+    --qiling-resource-detail-primary: #2563eb;
+    --qiling-resource-detail-accent: #14b8a6;
+}
+
+.qiling-resource-detail--software.qiapp-software-article {
+    overflow: visible;
+}
+
+.qiling-resource-detail--software .entry-content {
+    max-width: 1160px;
+    font-size: 16px;
+}
+
+.qiling-resource-detail--software .qiapp_plugin_wrapper {
+    display: grid;
+    gap: 22px;
+}
+
+.qiling-resource-detail--software .qiapp_software_header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 22px;
+    align-items: stretch;
+    padding: clamp(20px, 3vw, 30px);
+    border: 1px solid var(--qiling-resource-detail-line);
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 58%, #eff6ff 100%);
+    box-shadow: var(--qiling-resource-detail-shadow);
+}
+
+.qiling-resource-detail--software .qiapp_header_left,
+.qiling-resource-detail--software .qiapp_header_right {
+    min-width: 0;
+}
+
+.qiling-resource-detail--software .qiapp_header_left {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.qiling-resource-detail--software .qiapp_software_icon img,
+.qiling-resource-detail--software .qiapp_software_icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 22px;
+}
+
+.qiling-resource-detail--software .qiapp_software_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 92px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+}
+
+.qiling-resource-detail--software .qiapp_software_icon img {
+    object-fit: cover;
+    margin: 0;
+    box-shadow: none;
+}
+
+.qiling-resource-detail--software .qiapp_software_name {
+    margin: 0;
+    color: #0f172a;
+    font-size: clamp(26px, 3.4vw, 40px);
+    line-height: 1.16;
+    letter-spacing: 0;
+}
+
+.qiling-resource-detail--software .qiapp_software_summary {
+    margin: 10px 0 0;
+    color: var(--qiling-resource-detail-muted);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.qiling-resource-detail--software .qiapp_software_meta_line,
+.qiling-resource-detail--software .qiapp_software_taxonomies,
+.qiling-resource-detail--software .qiapp_software_rating_wrapper,
+.qiling-resource-detail--software .qiapp_software_badges {
+    margin-top: 12px;
+}
+
+.qiling-resource-detail--software .qiapp_taxonomy_chip,
+.qiling-resource-detail--software .qiapp_badge,
+.qiling-resource-detail--software .qiapp-badge,
+.qiling-resource-detail--software .qiapp-taxonomy-chip,
+.qiling-resource-detail--software .qiapp_tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid var(--qiling-resource-detail-line);
+    background: var(--qiling-qiapp-badge-neutral-bg, var(--qiling-color-ffffff));
+    color: var(--qiling-qiapp-badge-neutral-text, var(--qiling-color-475569));
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.qiling-resource-detail--software .qiapp_badge_free,
+.qiling-resource-detail--software .qiapp_badge_opensource,
+.qiling-resource-detail--software .qiapp-badge-free,
+.qiling-resource-detail--software .qiapp-badge-opensource {
+    color: var(--qiling-qiapp-badge-free-text, var(--qiling-color-047857));
+    background: var(--qiling-qiapp-badge-free-bg, var(--qiling-color-d1fae5));
+    border-color: rgba(var(--qiling-rgb-16-185-129), 0.25);
+}
+
+.qiling-resource-detail--software .qiapp_badge_paid,
+.qiling-resource-detail--software .qiapp_badge_subscription,
+.qiling-resource-detail--software .qiapp-badge-paid,
+.qiling-resource-detail--software .qiapp-badge-subscription {
+    color: var(--qiling-qiapp-badge-paid-text, var(--qiling-color-1d4ed8));
+    background: var(--qiling-qiapp-badge-paid-bg, var(--qiling-color-dbeafe));
+    border-color: rgba(var(--qiling-rgb-37-99-235), 0.25);
+}
+
+.qiling-resource-detail--software .qiapp_badge_trial,
+.qiling-resource-detail--software .qiapp_badge_freemium,
+.qiling-resource-detail--software .qiapp_badge_ad,
+.qiling-resource-detail--software .qiapp-badge-trial,
+.qiling-resource-detail--software .qiapp-badge-freemium,
+.qiling-resource-detail--software .qiapp-badge-ad {
+    color: var(--qiling-qiapp-badge-trial-text, var(--qiling-color-7c2d12));
+    background: var(--qiling-qiapp-badge-trial-bg, var(--qiling-color-ffedd5));
+    border-color: rgba(var(--qiling-rgb-249-115-22), 0.24);
+}
+
+.qiling-resource-detail--software .qiapp_badge_version,
+.qiling-resource-detail--software .qiapp-badge-version {
+    color: var(--qiling-qiapp-badge-trial-text, var(--qiling-color-7c2d12));
+    background: var(--qiling-qiapp-badge-trial-bg, var(--qiling-color-ffedd5));
+    border-color: rgba(var(--qiling-rgb-249-115-22), 0.24);
+}
+
+.qiling-resource-detail--software .qiapp_software_screenshot {
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid var(--qiling-resource-detail-line);
+    background: #0f172a;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16);
+}
+
+.qiling-resource-detail--software .qiapp_software_screenshot img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.qiling-resource-detail--software .qiapp_software_actions {
+    margin-top: 14px;
+}
+
+.qiling-resource-detail--software .qiapp_actions_primary,
+.qiling-resource-detail--software .qiapp_actions_secondary {
+    display: grid;
+    gap: 10px;
+}
+
+.qiling-resource-detail--software .qiapp_actions_secondary {
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    margin-top: 10px;
+}
+
+.qiling-resource-detail--software .qiapp_btn,
+.qiling-resource-detail--software .qiapp_history_popup_trigger,
+.qiling-resource-detail--software .qiapp_history_load_more,
+.qiling-resource-detail--software .qiapp_download_link,
+.qiling-resource-detail--software .qiapp_smart_download_link,
+.qiling-resource-detail--software .qiapp_history_popup_link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.qiling-resource-detail--software .qiapp_btn_primary,
+.qiling-resource-detail--software .qiapp_download_link,
+.qiling-resource-detail--software .qiapp_smart_download_link,
+.qiling-resource-detail--software .qiapp_history_popup_link {
+    color: #ffffff;
+    background: #2563eb;
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.2);
+}
+
+.qiling-resource-detail--software .qiapp_btn_secondary {
+    color: #0f766e;
+    background: #ccfbf1;
+}
+
+.qiling-resource-detail--software .qiapp_btn_outline {
+    color: #334155;
+    border-color: var(--qiling-resource-detail-line);
+    background: #ffffff;
+}
+
+.qiling-resource-detail--software .qiapp_software_details,
+.qiling-resource-detail--software .qiapp_post_content,
+.qiling-resource-detail--software .qiapp_history_versions,
+.qiling-resource-detail--software .qiapp_related_articles {
+    padding: clamp(18px, 2.8vw, 28px);
+    border: 1px solid var(--qiling-resource-detail-line);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.06);
+}
+
+.qiling-resource-detail--software .qiapp_details_grid,
+.qiling-resource-detail--software .qiapp_pro_info_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+}
+
+.qiling-resource-detail--software .qiapp_detail_item,
+.qiling-resource-detail--software .qiapp_pro_info_card,
+.qiling-resource-detail--software .qiapp_changelog {
+    padding: 14px;
+    border: 1px solid var(--qiling-resource-detail-line);
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.qiling-resource-detail--software .qiapp_detail_label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--qiling-resource-detail-muted);
+    font-size: 12px;
+}
+
+.qiling-resource-detail--software .qiapp_detail_value {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.qiling-resource-detail--software .qiapp_post_content {
+    color: #1f2937;
+    line-height: 1.78;
+}
+
+.qiling-resource-detail--software .qiapp_history_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--qiling-resource-detail-line);
+    border-radius: 12px;
+}
+
+.qiling-resource-detail--software .qiapp_history_table th,
+.qiling-resource-detail--software .qiapp_history_table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--qiling-resource-detail-line);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.qiling-resource-detail--software .qiapp_history_table th {
+    color: #475569;
+    background: #f8fafc;
+    font-size: 12px;
+}
+
+.qiling-resource-detail--software .qiapp_history_table tr:last-child td {
+    border-bottom: 0;
+}
+
+.qiling-resource-detail--software .qiapp_related_header h3,
+.qiling-resource-detail--software .qiapp_history_title {
+    margin-top: 0;
+    color: #0f172a;
+    letter-spacing: 0;
+}
+
+.qiling-resource-detail--software .qiapp_primary_article_card,
+.qiling-resource-detail--software .qiapp_related_article_card {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid var(--qiling-resource-detail-line);
+    border-radius: 14px;
+    color: #0f172a;
+    background: #f8fafc;
+    text-decoration: none;
+}
+
+.qiling-resource-detail--software .qiapp_related_article_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+/* 暗黑模式 (Dark mode) */
+
+html.dark-mode .qiling-resource-detail,
+[data-theme="dark"] .qiling-resource-detail,
+html.dark-mode .qiling-resource-detail-template--software,
+[data-theme="dark"] .qiling-resource-detail-template--software {
+    --qiling-resource-detail-bg: #0f172a;
+    --qiling-resource-detail-surface: #111827;
+    --qiling-resource-detail-surface-soft: #1f2937;
+    --qiling-resource-detail-line: rgba(255, 255, 255, 0.1);
+    --qiling-resource-detail-line-strong: rgba(255, 255, 255, 0.16);
+    --qiling-resource-detail-text: #e5e7eb;
+    --qiling-resource-detail-muted: #94a3b8;
+    background: #0f172a;
+}
+
+html.dark-mode .qiling-resource-detail .post-main-content,
+[data-theme="dark"] .qiling-resource-detail .post-main-content,
+html.dark-mode .qiling-resource-detail--software .qiapp_software_header,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_software_header,
+html.dark-mode .qiling-resource-detail--software .qiapp_software_details,
+html.dark-mode .qiling-resource-detail--software .qiapp_post_content,
+html.dark-mode .qiling-resource-detail--software .qiapp_history_versions,
+html.dark-mode .qiling-resource-detail--software .qiapp_related_articles,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_software_details,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_post_content,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_history_versions,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_related_articles {
+    color: #e5e7eb;
+    background: #111827;
+    border-color: var(--qiling-resource-detail-line);
+}
+
+html.dark-mode .single-post-header__resource-box .qls-download-title-hd-wrap,
+[data-theme="dark"] .single-post-header__resource-box .qls-download-title-hd-wrap {
+    color: #e5e7eb;
+    background: #111827;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark-mode .single-post-header__resource-box .qls-download-title-hd-price-val,
+html.dark-mode .qiling-resource-detail--shop .qls-download-content-tb-price-val,
+html.dark-mode .single-post-header__resource-box .qls-download-title-hd-download-name,
+html.dark-mode .qiling-resource-detail--shop .qls-download-content-tb-download-name,
+html.dark-mode .qiling-resource-detail--software .qiapp_software_name,
+html.dark-mode .qiling-resource-detail--software .qiapp_detail_value,
+html.dark-mode .qiling-resource-detail--software .qiapp_related_header h3,
+html.dark-mode .qiling-resource-detail--software .qiapp_history_title,
+[data-theme="dark"] .single-post-header__resource-box .qls-download-title-hd-price-val,
+[data-theme="dark"] .qiling-resource-detail--shop .qls-download-content-tb-price-val,
+[data-theme="dark"] .single-post-header__resource-box .qls-download-title-hd-download-name,
+[data-theme="dark"] .qiling-resource-detail--shop .qls-download-content-tb-download-name,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_software_name,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_detail_value,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_related_header h3,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_history_title {
+    color: #f8fafc;
+}
+
+html.dark-mode .single-post-header__resource-box .qls-download-title-hd-download-item,
+html.dark-mode .qiling-resource-detail--shop .qls-download-content-tb-download-item,
+html.dark-mode .qiling-resource-detail--software .qiapp_detail_item,
+html.dark-mode .qiling-resource-detail--software .qiapp_pro_info_card,
+html.dark-mode .qiling-resource-detail--software .qiapp_changelog,
+html.dark-mode .qiling-resource-detail--software .qiapp_primary_article_card,
+html.dark-mode .qiling-resource-detail--software .qiapp_related_article_card,
+html.dark-mode .qiling-resource-detail--gallery .post-tags,
+html.dark-mode .qiling-resource-detail--gallery .copyright-notice,
+html.dark-mode .qiling-resource-detail--gallery .author-box,
+html.dark-mode .qiling-resource-detail--gallery .post-navigation,
+html.dark-mode .qiling-resource-detail--gallery .single-post-comments,
+[data-theme="dark"] .single-post-header__resource-box .qls-download-title-hd-download-item,
+[data-theme="dark"] .qiling-resource-detail--shop .qls-download-content-tb-download-item,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_detail_item,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_pro_info_card,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_changelog,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_primary_article_card,
+[data-theme="dark"] .qiling-resource-detail--software .qiapp_related_article_card,
+[data-theme="dark"] .qiling-resource-detail--gallery .post-tags,
+[data-theme="dark"] .qiling-resource-detail--gallery .copyright-notice,
+[data-theme="dark"] .qiling-resource-detail--gallery .author-box,
+[data-theme="dark"] .qiling-resource-detail--gallery .post-navigation,
+[data-theme="dark"] .qiling-resource-detail--gallery .single-post-comments {
+    color: #e5e7eb;
+    background: #1f2937;
+    border-color: var(--qiling-resource-detail-line);
+}
+
+@media (max-width: 980px) {
+    .qiling-resource-detail-header .single-post-header__resource-layout,
+    .qiling-resource-detail--software .qiapp_software_header {
+        grid-template-columns: 1fr;
+    }
+
+    .qiling-resource-detail-header .single-post-header__cover {
+        flex-basis: 220px;
+        max-width: 220px;
+    }
+
+    .qiling-resource-detail--software .qiapp_software_header {
+        display: grid;
+    }
+}
+
+@media (max-width: 768px) {
+    .qiling-resource-detail-header .single-post-header__resource-layout {
+        display: grid;
+        gap: 18px;
+    }
+
+    .qiling-resource-detail-header .single-post-header__cover {
+        max-width: 180px;
+    }
+
+    .qiling-resource-detail-header .single-post-title {
+        font-size: 28px;
+    }
+
+    .single-post-header__resource-box .qls-download-title-hd-vip-grid,
+    .qiling-resource-detail--shop .qls-download-content-tb-vip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .single-post-header__resource-box .qls-download-title-hd-download-item,
+    .qiling-resource-detail--shop .qls-download-content-tb-download-item {
+        grid-template-columns: 1fr;
+    }
+
+    .qiling-resource-detail--gallery .post-main-content {
+        padding: 12px;
+    }
+
+    .qiling-resource-detail--gallery .gallery-mode-viewer {
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .qiling-resource-detail--software .qiapp_header_left {
+        align-items: flex-start;
+    }
+
+    .qiling-resource-detail--software .qiapp_software_icon,
+    .qiling-resource-detail--software .qiapp_software_icon img {
+        width: 72px;
+        height: 72px;
+        border-radius: 18px;
+        flex-basis: 72px;
+    }
+
+    .qiling-resource-detail--software .qiapp_history_table {
+        display: block;
+        overflow-x: auto;
+    }
+}

@@ -11,6 +11,7 @@
 .template-solutions .page-header {
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .template-solutions .page-header::before {
@@ -20,12 +21,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image:
+        radial-gradient(circle at 6px 6px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px),
+        radial-gradient(circle at 36px 36px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px);
+    background-size: 60px 60px;
     pointer-events: none;
 }
 
 .template-solutions .page-header .page-title {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.2);
+}
+
+.template-solutions .page-header__description {
+    text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.18);
 }
 
 /* ========================================
@@ -36,7 +44,7 @@
 }
 
 .template-solutions .module:nth-child(even) {
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-0) 100%);
 }
 
 /* ========================================
@@ -47,12 +55,12 @@
 }
 
 .template-solutions .module-image-text .image-text-grid {
-    gap: 80px !important;
+    gap: var(--qiling-space-80) !important;
 }
 
 .template-solutions .module-image-text .image-text-content h2 {
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: var(--qiling-space-20);
 }
 
 .template-solutions .module-image-text .image-text-content h2::after {
@@ -62,31 +70,31 @@
     left: 0;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), #7c3aed);
+    background: linear-gradient(90deg, var(--color-primary), var(--color-violet-600));
     border-radius: 2px;
 }
 
 .template-solutions .module-image-text .image-text-content ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    margin: var(--qiling-space-20) 0;
 }
 
 .template-solutions .module-image-text .image-text-content ul li {
-    padding: 8px 0;
-    color: var(--color-gray-700);
+    padding: var(--qiling-space-8) 0;
+    color: var(--color-neutral-700);
     font-weight: 500;
 }
 
 /* 图片占位符增强 */
 .template-solutions .module-image-text .image-text-image>div {
-    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%) !important;
+    background: linear-gradient(135deg, var(--qiling-color-e0e7ff) 0%, var(--qiling-color-c7d2fe) 100%) !important;
     min-height: 350px;
 }
 
 .template-solutions .module-image-text .image-text-image>div::before {
     content: '📊';
-    font-size: 4rem;
+    font-size: calc(var(--qiling-font-size-base) * 4);
 }
 
 /* ========================================
@@ -99,27 +107,27 @@
 
 .template-solutions .module-columns .column-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 20px 40px rgba(var(--qiling-rgb-0-0-0), 0.1) !important;
     border-color: var(--color-primary);
 }
 
 .template-solutions .module-columns .column-item h3 {
     color: var(--color-dark);
-    font-size: 1.25rem !important;
+    font-size: calc(var(--qiling-font-size-base) * 1.25) !important;
     font-weight: 600;
 }
 
 .template-solutions .module-columns .column-item ul {
     list-style: none;
     padding: 0;
-    margin-top: 15px;
+    margin-top: var(--qiling-space-15);
 }
 
 .template-solutions .module-columns .column-item ul li {
-    padding: 5px 0;
+    padding: var(--qiling-space-5) 0;
     color: var(--color-gray-600);
     position: relative;
-    padding-left: 20px;
+    padding-left: var(--qiling-space-20);
 }
 
 .template-solutions .module-columns .column-item ul li::before {
@@ -134,8 +142,8 @@
    合作流程模块增强
    ======================================== */
 .template-solutions .module-process {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: var(--qiling-space-80);
+    padding-bottom: var(--qiling-space-80);
 }
 
 .template-solutions .module-process .process-item {
@@ -162,7 +170,7 @@
     left: 0;
     width: 4px;
     height: 0;
-    background: linear-gradient(180deg, var(--color-primary), #7c3aed);
+    background: linear-gradient(180deg, var(--color-primary), var(--color-violet-600));
     transition: height 0.3s ease;
 }
 
@@ -189,7 +197,7 @@
     right: -10%;
     width: 400px;
     height: 400px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
     border-radius: 50%;
     animation: pulse-slow 4s ease-in-out infinite;
 }
@@ -201,7 +209,7 @@
     left: -5%;
     width: 300px;
     height: 300px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(var(--qiling-rgb-255-255-255), 0.08);
     border-radius: 50%;
     animation: pulse-slow 4s ease-in-out infinite 2s;
 }
@@ -232,12 +240,12 @@
    ======================================== */
 @media (max-width: 991px) {
     .template-solutions .page-header .page-title {
-        font-size: 2rem;
+        font-size: calc(var(--qiling-font-size-base) * 2);
     }
 
     .template-solutions .module-image-text .image-text-grid {
         grid-template-columns: 1fr !important;
-        gap: 40px !important;
+        gap: var(--qiling-space-40) !important;
         direction: ltr !important;
     }
 
@@ -249,11 +257,7 @@
 
 @media (max-width: 768px) {
     .template-solutions .page-header .page-title {
-        font-size: 1.75rem;
-    }
-
-    .template-solutions .page-header {
-        padding: 80px 0 40px !important;
+        font-size: calc(var(--qiling-font-size-base) * 1.75);
     }
 
     .template-solutions .module-columns .columns-grid {
@@ -263,4 +267,19 @@
     .template-solutions .module-columns .column-item:hover {
         transform: none;
     }
+}
+
+/* ========================================
+   暗黑模式支持 (Dark Mode Support)
+   ======================================== */
+html.dark-mode .template-solutions .module-columns .column-item h3 {
+    color: var(--color-neutral-100) !important;
+}
+
+html.dark-mode .template-solutions .module-columns .column-item ul li {
+    color: var(--color-neutral-300);
+}
+
+html.dark-mode .template-solutions .module:nth-child(even) {
+    background: linear-gradient(180deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%);
 }

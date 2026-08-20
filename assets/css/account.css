@@ -9,21 +9,66 @@
    页面头部
    ======================================== */
 .account-page {
-    background: #f8fafc;
+    --account-page-bg: var(--color-surface-alt);
+    --account-header-bg: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--qiling-color-eef6ff) 48%, var(--qiling-color-ecfdf5) 100%);
+    --account-header-name-color: var(--color-neutral-900);
+    --account-header-text-color: var(--color-neutral-700);
+    --account-header-muted-color: var(--color-neutral-500);
+    --account-avatar-border-color: var(--qiling-color-rgba-15-23-42-008);
+    --account-public-id-bg: var(--qiling-color-rgba-15-23-42-006);
+    --account-public-id-text: var(--color-neutral-700);
+    --account-public-id-border: var(--qiling-color-rgba-15-23-42-012);
+    --account-public-id-label-bg: var(--color-neutral-900);
+    --account-public-id-label-text: var(--color-neutral-0);
+    --account-home-button-bg: var(--qiling-color-rgba-15-23-42-008);
+    --account-home-button-text: var(--color-neutral-900);
+    --account-home-button-hover-bg: var(--qiling-color-rgba-15-23-42-014);
+    --account-card-bg: var(--color-surface);
+    --account-card-text: var(--color-neutral-700);
+    --account-muted-text: var(--color-neutral-500);
+    --account-border-color: var(--color-neutral-200);
+    --account-card-radius: 16px;
+    --account-card-shadow: 0 10px 40px var(--qiling-color-rgba-0-0-0-008);
+    --account-sidebar-width: 260px;
+    --account-layout-gap: var(--qiling-space-30);
+    --account-section-padding: var(--qiling-space-30);
+    --account-nav-item-padding: var(--qiling-space-14) var(--qiling-space-18);
+    --account-nav-bg: var(--account-card-bg);
+    --account-nav-text: var(--color-neutral-600);
+    --account-nav-hover-bg: var(--qiling-color-rgba-15-23-42-006);
+    --account-nav-hover-text: var(--color-neutral-900);
+    --account-nav-active-bg: var(--color-neutral-900);
+    --account-nav-active-text: var(--color-neutral-0);
+    --account-nav-active-shadow: 0 10px 24px var(--qiling-color-rgba-15-23-42-016);
+    --account-nav-logout-text: var(--color-error);
+    --account-nav-logout-hover-bg: var(--qiling-color-error-alpha-01);
+    --account-nav-badge-bg: var(--qiling-color-ef4444);
+    --account-nav-badge-text: var(--color-neutral-0);
+    --account-button-bg: var(--color-neutral-900);
+    --account-button-text: var(--color-neutral-0);
+    --account-button-radius: 10px;
+    --account-button-hover-shadow: 0 10px 26px var(--qiling-color-rgba-15-23-42-022);
+    --account-field-bg: var(--color-surface);
+    --account-field-text: var(--color-neutral-900);
+    --account-field-border: var(--account-border-color);
+    --account-field-focus-color: var(--color-primary);
+    --account-avatar-size: 100px;
+    --account-avatar-border-width: 4px;
+    background: var(--account-page-bg);
     min-height: 100vh;
 }
 
 .account-header {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%);
-    padding: 60px 0 40px;
+    background: var(--account-header-bg);
+    padding: var(--qiling-space-60) 0 var(--qiling-space-40);
     margin-top: 0;
 }
 
 .account-user-card {
     display: flex;
     align-items: center;
-    gap: 25px;
-    color: #fff;
+    gap: var(--qiling-space-25);
+    color: var(--account-header-text-color);
 }
 
 .user-avatar {
@@ -31,10 +76,10 @@
 }
 
 .user-avatar img {
-    width: 100px;
-    height: 100px;
+    width: var(--account-avatar-size);
+    height: var(--account-avatar-size);
     border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
+    border: var(--account-avatar-border-width) solid var(--account-avatar-border-color);
     object-fit: cover;
 }
 
@@ -43,20 +88,90 @@
 }
 
 .user-name {
-    font-size: 1.75rem;
+    font-size: var(--qiling-text-rem-1p75);
     font-weight: 600;
-    margin: 0 0 8px;
+    color: var(--account-header-name-color);
+    margin: 0 0 var(--qiling-space-8);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: var(--qiling-space-14);
+    row-gap: var(--qiling-space-10);
+}
+
+.qiling-user-display-name {
+    display: inline-block;
+    line-height: 1.2;
+    color: var(--account-header-name-color);
+}
+
+.qiling-user-public-id {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-4) var(--qiling-space-12) var(--qiling-space-4) var(--qiling-space-10);
+    border-radius: 999px;
+    font-size: var(--qiling-text-rem-0p78);
+    font-weight: 500;
+    letter-spacing: var(--qiling-tracking-em-0p01);
+    color: var(--account-public-id-text);
+    background: var(--account-public-id-bg);
+    border: 1px solid var(--account-public-id-border);
+    transform: translateY(1px);
+}
+
+.qiling-user-public-id-label {
+    display: inline-block;
+    padding: var(--qiling-space-2) var(--qiling-space-6);
+    border-radius: 999px;
+    font-size: var(--qiling-text-rem-0p68);
+    font-weight: 700;
+    letter-spacing: var(--qiling-tracking-em-0p08);
+    text-transform: uppercase;
+    color: var(--account-public-id-label-text);
+    background: var(--account-public-id-label-bg);
+}
+
+.qiling-user-public-id-value {
+    font-weight: 700;
+    letter-spacing: var(--qiling-tracking-em-0p05);
+    font-variant-numeric: tabular-nums;
+}
+
+.qiling-user-home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--account-home-button-bg);
+    border-radius: 50%;
+    color: var(--account-home-button-text);
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.qiling-user-home-btn:hover {
+    background: var(--account-home-button-hover-bg);
+    transform: translateY(-2px);
+    color: var(--account-home-button-text);
+}
+
+.qiling-user-home-btn svg {
+    width: 15px;
+    height: 15px;
 }
 
 .user-email {
-    opacity: 0.9;
-    margin: 0 0 5px;
-    font-size: 0.95rem;
+    color: var(--account-header-text-color);
+    margin: 0 0 var(--qiling-space-5);
+    font-size: var(--qiling-text-rem-0p95);
 }
 
 .user-meta {
-    opacity: 0.7;
-    font-size: 0.85rem;
+    color: var(--account-header-muted-color);
+    font-size: var(--qiling-text-rem-0p85);
     margin: 0;
 }
 
@@ -65,8 +180,8 @@
    ======================================== */
 .account-layout {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 30px;
+    grid-template-columns: var(--account-sidebar-width) 1fr;
+    gap: var(--account-layout-gap);
     align-items: start;
 }
 
@@ -79,19 +194,19 @@
 }
 
 .account-nav {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    padding: 15px;
+    background: var(--account-nav-bg);
+    border-radius: var(--account-card-radius);
+    box-shadow: var(--account-card-shadow);
+    padding: var(--qiling-space-15);
     overflow: hidden;
 }
 
 .account-nav-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    color: var(--color-gray-600);
+    gap: var(--qiling-space-12);
+    padding: var(--account-nav-item-padding);
+    color: var(--account-nav-text);
     text-decoration: none;
     border-radius: 10px;
     transition: all 0.2s ease;
@@ -99,26 +214,26 @@
 }
 
 .account-nav-item:hover {
-    background: rgba(var(--color-primary-rgb, 37, 99, 235), 0.05);
-    color: var(--color-primary);
+    background: var(--account-nav-hover-bg);
+    color: var(--account-nav-hover-text);
 }
 
 .account-nav-item.active {
-    background: linear-gradient(135deg, var(--color-primary), #7c3aed);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    background: var(--account-nav-active-bg);
+    color: var(--account-nav-active-text);
+    box-shadow: var(--account-nav-active-shadow);
 }
 
 .account-nav-item.active .nav-icon svg {
-    stroke: #fff;
+    stroke: currentColor;
 }
 
 .account-nav-item.logout {
-    color: #ef4444;
+    color: var(--account-nav-logout-text);
 }
 
 .account-nav-item.logout:hover {
-    background: rgba(239, 68, 68, 0.1);
+    background: var(--account-nav-logout-hover-bg);
 }
 
 .nav-icon {
@@ -129,10 +244,31 @@
     height: 24px;
 }
 
+.nav-label.has-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+}
+
+.nav-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--qiling-measure-18);
+    height: 18px;
+    padding: 0 var(--qiling-space-6);
+    border-radius: 999px;
+    background: var(--account-nav-badge-bg);
+    color: var(--account-nav-badge-text);
+    font-size: var(--qiling-text-11);
+    font-weight: 700;
+    line-height: 1;
+}
+
 .nav-divider {
     height: 1px;
-    background: #e2e8f0;
-    margin: 10px 0;
+    background: var(--account-border-color);
+    margin: var(--qiling-space-10) 0;
 }
 
 /* ========================================
@@ -143,79 +279,521 @@
 }
 
 .account-section {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-    margin-bottom: 25px;
+    background: var(--account-card-bg);
+    color: var(--account-card-text);
+    border-radius: var(--account-card-radius);
+    box-shadow: var(--account-card-shadow);
+    padding: var(--account-section-padding);
+    margin-bottom: var(--qiling-space-25);
 }
 
 .section-title {
-    font-size: 1.25rem;
+    font-size: var(--qiling-text-rem-1p25);
     font-weight: 600;
-    color: var(--color-dark);
-    margin: 0 0 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #e2e8f0;
+    color: var(--account-field-text);
+    margin: 0 0 var(--qiling-space-25);
+    padding-bottom: var(--qiling-space-15);
+    border-bottom: 1px solid var(--account-border-color);
 }
 
 /* ========================================
    消息提示
    ======================================== */
 .account-message {
-    padding: 15px 20px;
+    padding: var(--qiling-space-15) var(--qiling-space-20);
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: var(--qiling-space-20);
     font-weight: 500;
+    background: var(--qiling-component-alert-bg, var(--color-neutral-50));
+    color: var(--qiling-component-alert-text, var(--color-neutral-700));
+    border: 1px solid var(--qiling-component-alert-border, var(--account-border-color));
 }
 
 .account-message.success {
-    background: #ecfdf5;
-    color: #059669;
-    border: 1px solid #a7f3d0;
+    background: rgba(var(--color-success-rgb), 0.08);
+    color: var(--color-success);
+    border-color: rgba(var(--color-success-rgb), 0.28);
 }
 
 .account-message.error {
-    background: #fef2f2;
-    color: #dc2626;
-    border: 1px solid #fecaca;
+    background: rgba(var(--color-error-rgb), 0.08);
+    color: var(--color-error);
+    border-color: rgba(var(--color-error-rgb), 0.28);
+}
+
+/* ========================================
+   站内通知
+   ======================================== */
+.notice-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--qiling-space-12);
+    margin-bottom: var(--qiling-space-10);
+}
+
+.notice-toolbar .section-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.notice-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-10);
+}
+
+.notice-action-form {
+    margin: 0;
+}
+
+.notice-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-10);
+    margin-bottom: var(--qiling-space-20);
+}
+
+.notice-filter-item {
+    padding: var(--qiling-space-6) var(--qiling-space-14);
+    border-radius: 999px;
+    border: 1px solid var(--account-border-color);
+    color: var(--account-muted-text);
+    font-size: var(--qiling-text-13);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.notice-filter-item.active,
+.notice-filter-item:hover {
+    border-color: var(--account-field-focus-color);
+    background: var(--account-nav-hover-bg);
+    color: var(--account-nav-hover-text);
+}
+
+.notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--qiling-space-16);
+}
+
+.notice-item {
+    border: 1px solid var(--account-border-color);
+    border-radius: 14px;
+    padding: var(--qiling-space-18);
+    background: var(--color-surface-alt);
+    transition: all 0.2s;
+}
+
+.notice-item.unread {
+    background: var(--color-surface);
+    border-color: rgba(var(--color-primary-rgb, 37, 99, 235), 0.25);
+    box-shadow: 0 8px 20px var(--qiling-color-primary-alpha-008);
+}
+
+.notice-item[data-type="success"] {
+    border-color: var(--qiling-color-rgba-16-185-129-03);
+}
+
+.notice-item[data-type="warning"] {
+    border-color: var(--qiling-color-warning-alpha-03);
+}
+
+.notice-item[data-type="error"] {
+    border-color: var(--qiling-color-rgba-239-68-68-03);
+}
+
+.notice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--qiling-space-12);
+}
+
+.notice-title {
+    font-size: var(--qiling-text-rem-1);
+    font-weight: 600;
+    color: var(--account-field-text);
+}
+
+.notice-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--qiling-space-2) var(--qiling-space-8);
+    border-radius: 999px;
+    font-size: var(--qiling-text-12);
+    font-weight: 600;
+    background: var(--account-nav-badge-bg);
+    color: var(--account-nav-badge-text);
+}
+
+.notice-content {
+    margin-top: var(--qiling-space-10);
+    color: var(--account-card-text);
+    font-size: var(--qiling-text-14);
+    line-height: 1.6;
+}
+
+.notice-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--qiling-space-12);
+    margin-top: var(--qiling-space-12);
+    font-size: var(--qiling-text-12);
+    color: var(--account-muted-text);
+}
+
+.notice-link {
+    color: var(--account-field-focus-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.notice-link:hover {
+    text-decoration: underline;
+}
+
+.notice-btn {
+    border: none;
+    background: var(--account-nav-hover-bg);
+    color: var(--account-nav-hover-text);
+    font-size: var(--qiling-text-12);
+    font-weight: 600;
+    padding: var(--qiling-space-6) var(--qiling-space-12);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.notice-btn:hover {
+    background: var(--account-home-button-hover-bg);
+}
+
+.notice-btn-secondary {
+    background: var(--color-neutral-900);
+    color: var(--color-text-inverse);
+}
+
+.notice-btn-secondary:hover {
+    background: var(--color-neutral-800);
+}
+
+.notice-btn-danger {
+    background: var(--color-error);
+    color: var(--color-text-inverse);
+}
+
+.notice-btn-danger:hover {
+    background: var(--color-error-dark);
+}
+
+.notice-empty {
+    text-align: center;
+    padding: var(--qiling-space-60) var(--qiling-space-20);
+    border-radius: 12px;
+    border: 1px dashed var(--account-border-color);
+    color: var(--account-muted-text);
+}
+
+.notice-empty-icon {
+    color: var(--account-muted-text);
+    margin-bottom: var(--qiling-space-10);
+}
+
+.notice-pagination {
+    margin-top: var(--qiling-space-24);
+}
+
+.notice-pagination .page-numbers {
+    border-radius: 8px;
+}
+
+/* ========================================
+   账号注销申请
+   ======================================== */
+.account-deletion-section {
+    margin-top: var(--qiling-space-40);
+}
+
+.account-deletion-section .section-desc {
+    color: var(--account-muted-text);
+    margin-bottom: var(--qiling-space-20);
+    line-height: 1.7;
+}
+
+.account-delete-status {
+    border: 1px solid var(--account-border-color);
+    border-left-width: 4px;
+    border-radius: 12px;
+    background: var(--color-surface-alt);
+    padding: var(--qiling-space-14) var(--qiling-space-16);
+    margin-bottom: var(--qiling-space-18);
+}
+
+.account-delete-status__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--qiling-space-4) var(--qiling-space-10);
+    border-radius: 999px;
+    font-size: var(--qiling-text-12);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.account-delete-status__meta {
+    margin-top: var(--qiling-space-8);
+    color: var(--account-muted-text);
+    font-size: var(--qiling-text-13);
+}
+
+.account-delete-status__note {
+    margin-top: var(--qiling-space-8);
+    color: var(--color-error);
+    font-size: var(--qiling-text-13);
+}
+
+.account-delete-status.is-pending {
+    border-left-color: var(--qiling-color-eab308);
+}
+
+.account-delete-status.is-pending .account-delete-status__badge {
+    background: var(--qiling-color-fef9c3);
+    color: var(--qiling-color-92400e);
+}
+
+.account-delete-status.is-approved {
+    border-left-color: var(--color-primary-light);
+}
+
+.account-delete-status.is-approved .account-delete-status__badge {
+    background: var(--qiling-color-dbeafe);
+    color: var(--color-primary-hover);
+}
+
+.account-delete-status.is-rejected {
+    border-left-color: var(--qiling-color-ef4444);
+}
+
+.account-delete-status.is-rejected .account-delete-status__badge {
+    background: var(--qiling-color-fee2e2);
+    color: var(--qiling-color-991b1b);
+}
+
+.account-delete-status.is-processed {
+    border-left-color: var(--qiling-color-22c55e);
+}
+
+.account-delete-status.is-processed .account-delete-status__badge {
+    background: var(--qiling-color-dcfce7);
+    color: var(--qiling-color-166534);
+}
+
+.ds-account-deletion-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 120000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--qiling-space-16);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.16s ease;
+}
+
+.ds-account-deletion-modal.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ds-account-deletion-modal[hidden] {
+    display: none !important;
+}
+
+.ds-account-deletion-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--qiling-color-rgba-15-23-42-056);
+}
+
+.ds-account-deletion-modal__dialog {
+    position: relative;
+    z-index: 1;
+    width: 92vw;
+    width: min(92vw, 560px);
+    max-height: 82vh;
+    max-height: min(82vh, 680px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--account-card-bg);
+    border: 1px solid var(--account-border-color);
+    border-radius: 14px;
+    box-shadow: 0 22px 48px var(--qiling-color-rgba-15-23-42-026);
+    padding: var(--qiling-space-20);
+    margin: 0 auto;
+    transform: translateY(8px) scale(0.98);
+    transition: transform 0.16s ease;
+}
+
+.ds-account-deletion-modal.is-active .ds-account-deletion-modal__dialog {
+    transform: translateY(0) scale(1);
+}
+
+.ds-account-deletion-modal__title {
+    margin: 0;
+    font-size: var(--qiling-text-18);
+    font-weight: 600;
+    color: var(--account-field-text);
+}
+
+.ds-account-deletion-modal__agreement {
+    margin-top: var(--qiling-space-14);
+    max-height: 40vh;
+    overflow-y: auto;
+    border: 1px solid var(--account-border-color);
+    border-radius: 10px;
+    background: var(--color-surface-alt);
+    padding: var(--qiling-space-14);
+    color: var(--account-card-text);
+    line-height: 1.7;
+    font-size: var(--qiling-text-14);
+}
+
+.ds-account-deletion-modal__agreement p {
+    margin: 0 0 var(--qiling-space-10);
+}
+
+.ds-account-deletion-modal__agreement p:last-child {
+    margin-bottom: 0;
+}
+
+.ds-account-deletion-modal__form {
+    margin-top: var(--qiling-space-14);
+}
+
+.ds-account-deletion-modal__agree {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--qiling-space-10);
+    color: var(--account-card-text);
+    line-height: 1.6;
+    font-size: var(--qiling-text-14);
+}
+
+.ds-account-deletion-modal__agree input[type="checkbox"] {
+    margin-top: var(--qiling-space-2);
+}
+
+.ds-account-deletion-modal__actions {
+    margin-top: var(--qiling-space-16);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--qiling-space-10);
+}
+
+.ds-account-confirm {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.16s ease;
+}
+
+.ds-account-confirm.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ds-account-confirm[hidden] {
+    display: none !important;
+}
+
+.ds-account-confirm__backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--qiling-color-rgba-15-23-42-05);
+}
+
+.ds-account-confirm__dialog {
+    position: relative;
+    width: min(92vw, 420px);
+    background: var(--account-card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--account-border-color);
+    box-shadow: 0 18px 40px var(--qiling-color-rgba-15-23-42-024);
+    padding: var(--qiling-space-20);
+    transform: translateY(8px) scale(0.98);
+    transition: transform 0.16s ease;
+}
+
+.ds-account-confirm.is-active .ds-account-confirm__dialog {
+    transform: translateY(0) scale(1);
+}
+
+.ds-account-confirm__title {
+    margin: 0;
+    font-size: var(--qiling-text-18);
+    font-weight: 600;
+    color: var(--account-field-text);
+}
+
+.ds-account-confirm__message {
+    margin: var(--qiling-space-12) 0 0;
+    color: var(--account-card-text);
+    line-height: 1.7;
+    font-size: var(--qiling-text-14);
+}
+
+.ds-account-confirm__actions {
+    margin-top: var(--qiling-space-20);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--qiling-space-10);
 }
 
 /* ========================================
    表单样式
    ======================================== */
 .account-form {
-    max-width: 700px;
+    max-width: var(--qiling-measure-700);
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: var(--qiling-space-20);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: var(--qiling-space-20);
 }
 
 .form-group label {
     display: block;
     font-weight: 500;
-    color: var(--color-dark);
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+    color: var(--account-field-text);
+    margin-bottom: var(--qiling-space-8);
+    font-size: var(--qiling-text-rem-0p9);
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #e2e8f0;
+    padding: var(--qiling-space-12) var(--qiling-space-16);
+    border: 1px solid var(--account-field-border);
     border-radius: 10px;
-    font-size: 0.95rem;
-    color: var(--color-dark);
-    background: #fff;
+    font-size: var(--qiling-text-rem-0p95);
+    color: var(--account-field-text);
+    background: var(--account-field-bg);
     transition: all 0.2s ease;
 }
 
@@ -223,13 +801,13 @@
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: var(--color-primary);
+    border-color: var(--account-field-focus-color);
     box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 37, 99, 235), 0.1);
 }
 
 .form-group input:disabled {
-    background: #f1f5f9;
-    color: #94a3b8;
+    background: var(--color-neutral-100);
+    color: var(--account-muted-text);
     cursor: not-allowed;
 }
 
@@ -239,27 +817,27 @@
 }
 
 .form-hint {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    margin-top: 5px;
+    font-size: var(--qiling-text-rem-0p8);
+    color: var(--account-muted-text);
+    margin-top: var(--qiling-space-5);
 }
 
 .form-actions {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
+    margin-top: var(--qiling-space-30);
+    padding-top: var(--qiling-space-20);
+    border-top: 1px solid var(--account-border-color);
 }
 
 .btn-primary {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 14px 30px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%);
-    color: #fff;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-14) var(--qiling-space-30);
+    background: var(--account-button-bg);
+    color: var(--account-button-text);
     border: none;
-    border-radius: 10px;
-    font-size: 0.95rem;
+    border-radius: var(--account-button-radius);
+    font-size: var(--qiling-text-rem-0p95);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -267,7 +845,7 @@
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+    box-shadow: var(--account-button-hover-shadow);
 }
 
 /* ========================================
@@ -283,88 +861,382 @@
 }
 
 .account-section .woocommerce table.shop_table {
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--account-border-color);
     border-radius: 10px;
     overflow: hidden;
 }
 
 .account-section .woocommerce table.shop_table th {
-    background: #f8fafc;
+    background: var(--color-surface-alt);
     font-weight: 600;
 }
 
 .account-section .woocommerce .button {
-    background: var(--color-primary) !important;
-    color: #fff !important;
+    background: var(--account-button-bg) !important;
+    color: var(--account-button-text) !important;
     border-radius: 8px !important;
+}
+
+/* ========================================
+   个人中心装修：桌面布局扩展
+   ======================================== */
+@media (min-width: 992px) {
+    .account-page.account-layout-mode-top .account-layout {
+        display: block;
+    }
+
+    .account-page.account-layout-mode-top .account-sidebar {
+        position: static;
+        top: auto;
+        margin-bottom: var(--qiling-space-24);
+    }
+
+    .account-page.account-layout-mode-top .account-nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--qiling-space-10);
+        padding: var(--qiling-space-12);
+    }
+
+    .account-page.account-layout-mode-top .account-nav-item {
+        margin: 0;
+    }
+
+    .account-page.account-layout-mode-top .nav-divider {
+        display: none;
+    }
+
+    .account-page.account-layout-mode-top .account-nav-item.logout {
+        margin-left: auto;
+    }
+}
+
+/* ========================================
+   个人中心装修：紧凑密度
+   ======================================== */
+.account-page.account-density-compact {
+    --account-layout-gap: var(--qiling-space-20);
+    --account-section-padding: var(--qiling-space-22);
+    --account-nav-item-padding: var(--qiling-space-10) var(--qiling-space-14);
+}
+
+.account-page.account-density-compact .account-section {
+    margin-bottom: var(--qiling-space-18);
+}
+
+.account-page.account-density-compact .form-group {
+    margin-bottom: var(--qiling-space-14);
 }
 
 /* ========================================
    响应式
    ======================================== */
+/* ========================================
+   移动端响应式重构 (Mobile Refactor)
+   ======================================== */
+
+/* 汉堡菜单按钮 (默认隐藏) */
+.account-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 32px;
+    background: var(--qiling-color-transparent);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100;
+}
+
+.account-mobile-toggle span {
+    width: 32px;
+    height: 3px;
+    background: var(--color-surface);
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    transform-origin: 1px;
+}
+
+/* 汉堡按钮动画状态 */
+.account-mobile-toggle.active span:first-child {
+    transform: rotate(45deg);
+}
+
+.account-mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.account-mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* 遮罩层 */
+.account-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--qiling-color-rgba-0-0-0-05);
+    z-index: 1099;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.account-sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (max-width: 991px) {
     .account-layout {
-        grid-template-columns: 1fr;
+        display: block;
+        /* 取消 Grid，改为 Block */
+        position: relative;
     }
 
+    /* 侧边栏改为 Off-canvas 抽屉 */
     .account-sidebar {
-        position: static;
+        position: fixed;
+        top: 0;
+        left: -280px;
+        /* 默认隐藏在左侧屏幕外 */
+        width: 280px;
+        height: 100vh;
+        background: var(--color-surface);
+        z-index: 1100;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 4px 0 24px var(--qiling-color-rgba-0-0-0-01);
+        padding: var(--qiling-space-20);
+        /* 顶部留出给关闭按钮的空间，或者自然留白 */
+        overflow-y: auto;
+        margin: 0;
     }
 
+    .account-sidebar.active {
+        transform: translateX(280px);
+    }
+
+    /* 恢复垂直列表样式，而不是之前的横向滚动 */
     .account-nav {
-        display: flex;
-        overflow-x: auto;
-        padding: 10px;
-        gap: 5px;
-        -webkit-overflow-scrolling: touch;
+        display: block;
+        padding: 0;
+        box-shadow: none;
+        overflow-x: visible;
+        background: var(--qiling-color-transparent);
     }
 
     .account-nav-item {
-        flex-shrink: 0;
-        padding: 12px 16px;
+        padding: var(--qiling-space-15);
+        margin-bottom: var(--qiling-space-8);
+        background: var(--color-surface-alt);
     }
 
-    .nav-label {
-        white-space: nowrap;
+    .account-nav-item.active {
+        box-shadow: none;
     }
 
     .nav-divider {
-        width: 1px;
-        height: 30px;
-        margin: 0 5px;
-        background: #e2e8f0;
+        width: 100%;
+        height: 1px;
+        margin: var(--qiling-space-15) 0;
+    }
+
+    /* 显示汉堡菜单 */
+    .account-mobile-toggle {
+        display: flex;
+    }
+
+    /* 头部布局优化 */
+    .account-user-card {
+        flex-direction: row;
+        /* 保持水平排列 */
+        align-items: center;
+        gap: var(--qiling-space-15);
+        text-align: left;
+    }
+
+    .user-avatar img {
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
+    }
+
+    .user-name {
+        font-size: var(--qiling-text-rem-1p25);
+        margin-bottom: var(--qiling-space-4);
+    }
+
+    .qiling-user-public-id {
+        padding: var(--qiling-space-3) var(--qiling-space-9);
+        gap: var(--qiling-space-6);
+        font-size: var(--qiling-text-rem-0p72);
+    }
+
+    .qiling-user-public-id-label {
+        padding: var(--qiling-space-1) var(--qiling-space-5);
+        font-size: var(--qiling-text-rem-0p62);
+    }
+
+    .qiling-user-home-btn {
+        width: 26px;
+        height: 26px;
+    }
+
+    .user-email {
+        font-size: var(--qiling-text-rem-0p85);
+    }
+
+    /* 内容区域自适应 */
+    .account-main {
+        width: 100%;
+        margin-top: var(--qiling-space-20);
+    }
+
+    .account-section {
+        padding: var(--qiling-space-20);
+        margin-bottom: var(--qiling-space-20);
+        border-radius: 12px;
     }
 }
 
 @media (max-width: 768px) {
     .account-header {
-        padding: 40px 0 30px;
+        padding: var(--qiling-space-80) 0 var(--qiling-space-30);
+        /* 适配移动端 Header 高度 */
     }
 
-    .account-user-card {
-        flex-direction: column;
-        text-align: center;
+    /* 确保容器没有多余的 padding */
+    .container {
+        padding: 0 var(--qiling-space-16);
     }
 
-    .user-avatar img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .user-name {
-        font-size: 1.5rem;
-    }
-
-    .account-section {
-        padding: 20px;
-    }
-
+    /* 强制表单单列 */
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    .account-nav-item .nav-label {
-        font-size: 0.85rem;
+    /* 表格横向滚动 */
+    .account-section table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        border: none;
+    }
+
+    /* 重置 Woo 表格边框 */
+    .account-section .woocommerce table.shop_table {
+        border: 0;
+    }
+
+    .ds-account-deletion-modal__dialog {
+        width: min(94vw, 560px);
+        padding: var(--qiling-space-16);
+    }
+
+    .ds-account-deletion-modal__agreement {
+        max-height: 46vh;
+    }
+
+    .ds-account-deletion-modal__actions {
+        justify-content: stretch;
+        flex-direction: column;
+    }
+
+    .ds-account-deletion-modal__actions .notice-btn {
+        width: 100%;
+    }
+}
+
+/* 暗黑模式细节覆盖 (Dark mode detail coverage) */
+:is(html.dark-mode, [data-theme="dark"]) .notice-filter-item,
+:is(html.dark-mode, [data-theme="dark"]) .notice-empty,
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status,
+:is(html.dark-mode, [data-theme="dark"]) .ds-account-confirm__dialog {
+    border-color: var(--dm-border, var(--color-neutral-700));
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .notice-content,
+:is(html.dark-mode, [data-theme="dark"]) .notice-meta,
+:is(html.dark-mode, [data-theme="dark"]) .notice-empty,
+:is(html.dark-mode, [data-theme="dark"]) .notice-empty-icon,
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status__meta,
+:is(html.dark-mode, [data-theme="dark"]) .ds-account-confirm__message {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .notice-filter-item {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .notice-filter-item.active,
+:is(html.dark-mode, [data-theme="dark"]) .notice-filter-item:hover {
+    background: rgba(var(--color-primary-rgb, 37, 99, 235), 0.14);
+    border-color: rgba(var(--color-primary-rgb, 37, 99, 235), 0.34);
+    color: var(--qiling-color-bfdbfe);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .notice-btn-secondary {
+    background: var(--qiling-color-rgba-15-23-42-072);
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .notice-btn-secondary:hover {
+    background: var(--qiling-color-rgba-30-41-59-092);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status,
+:is(html.dark-mode, [data-theme="dark"]) .ds-account-confirm__dialog {
+    background: var(--dm-bg-card, var(--color-neutral-800));
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status__note {
+    color: var(--qiling-color-fca5a5);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status.is-pending .account-delete-status__badge {
+    background: var(--qiling-color-rgba-234-179-8-016);
+    color: var(--qiling-color-fde68a);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status.is-approved .account-delete-status__badge {
+    background: var(--qiling-color-rgba-59-130-246-016);
+    color: var(--qiling-color-bfdbfe);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status.is-rejected .account-delete-status__badge {
+    background: var(--qiling-color-rgba-239-68-68-016);
+    color: var(--qiling-color-fecaca);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .account-delete-status.is-processed .account-delete-status__badge {
+    background: var(--qiling-color-rgba-34-197-94-016);
+    color: var(--qiling-color-bbf7d0);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .ds-account-confirm__title {
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .form-group input:disabled {
+    background: var(--qiling-color-rgba-15-23-42-072);
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+@media (max-width: 991px) {
+    :is(html.dark-mode, [data-theme="dark"]) .account-sidebar {
+        background: var(--dm-bg-card, var(--color-neutral-800));
+        box-shadow: 4px 0 24px var(--qiling-color-rgba-0-0-0-032);
+    }
+
+    :is(html.dark-mode, [data-theme="dark"]) .account-nav-item {
+        background: var(--qiling-color-rgba-15-23-42-055);
     }
 }

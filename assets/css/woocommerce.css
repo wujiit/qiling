@@ -1,0 +1,2799 @@
+/**
+ * WooCommerce 主题兼容样式
+ *
+ * 所有样式限定在 .woocommerce 命名空间内
+ * 不破坏 WooCommerce 核心功能
+ *
+ * @package Developer_Starter
+ * @since 2.1.0
+ */
+
+/* ========================================
+   布局容器
+   ======================================== */
+.wc-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: var(--qiling-space-40) 0;
+}
+
+/* 自定义面包屑 */
+.qiling-wc-breadcrumb {
+    font-size: var(--qiling-text-rem-0p95);
+}
+
+.qiling-wc-breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.qiling-wc-breadcrumb .separator {
+    margin: 0 var(--qiling-space-8);
+}
+
+.wc-content-wrapper.wc-with-sidebar {
+    grid-template-columns: 1fr 280px;
+}
+
+.wc-main-content {
+    min-width: 0;
+    /* 防止网格溢出 */
+}
+
+.wc-sidebar {
+    border-radius: 12px;
+    padding: var(--qiling-space-24);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.wc-sidebar .widget {
+    margin-bottom: var(--qiling-space-24);
+}
+
+.wc-sidebar .widget:last-child {
+    margin-bottom: 0;
+}
+
+.wc-sidebar .widget-title {
+    font-size: var(--qiling-text-rem-1);
+    font-weight: 600;
+    margin: 0 0 var(--qiling-space-16);
+    padding-bottom: var(--qiling-space-12);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* ========================================
+   商品网格 (Modern Card Design)
+   ======================================== */
+.woocommerce ul.products {
+    display: grid !important;
+    /* 必须保留以覆盖主题浮动布局 */
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: var(--qiling-space-40);
+    padding: 0 !important;
+    /* 清除默认内边距 */
+}
+
+/* 响应式列数 */
+@media (max-width: 1024px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.woocommerce ul.products li.product {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    margin: 0 !important;
+    /* 清除主题外边距 */
+}
+
+.woocommerce ul.products li.product:hover {
+    border-color: var(--qiling-color-primary-alpha-02);
+    z-index: 10;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__link {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.woocommerce ul.products li.product img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover !important;
+    margin: 0 !important;
+    transition: transform 0.5s ease;
+}
+
+.woocommerce ul.products li.product:hover img {
+    transform: scale(1.05);
+    /* 图片微缩放 */
+}
+
+/* 内容区域美化 */
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.woocommerce ul.products li.product .price {
+    padding: 0 var(--qiling-space-16);
+    font-size: var(--qiling-text-rem-1p15);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+}
+
+.woocommerce ul.products li.product .price del {
+    font-size: var(--qiling-text-rem-0p9);
+    color: var(--color-neutral-400);
+    opacity: 0.8;
+}
+
+.woocommerce ul.products li.product .price ins {
+    text-decoration: none;
+}
+
+/* 促销标签 (Premium Badge) */
+.woocommerce ul.products li.product .onsale,
+.woocommerce span.onsale {
+    background: var(--qiling-gradient-warning);
+    /* 活力橙 */
+}
+
+/* 加入购物车按钮 - 修复透明度与样式 */
+.woocommerce ul.products li.product .button,
+.woocommerce ul.products li.product .add_to_cart_button {
+    margin: 0 var(--qiling-space-16) var(--qiling-space-16) !important;
+    /* 强制覆盖 */
+    width: calc(100% - 32px);
+    padding: var(--qiling-space-12) 0;
+    text-align: center;
+    font-weight: 600;
+    display: block;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+
+.woocommerce ul.products li.product .button:hover,
+.woocommerce ul.products li.product .add_to_cart_button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px -3px var(--qiling-color-primary-alpha-03);
+}
+
+/* 已加入购物车提示 */
+.woocommerce ul.products li.product .added_to_cart {
+    padding-bottom: var(--qiling-space-12);
+    font-size: var(--qiling-text-rem-0p9);
+    font-weight: 500;
+}
+
+/* ========================================
+   排序和结果计数
+   ======================================== */
+
+.woocommerce .woocommerce-ordering select {
+    padding: var(--qiling-space-10) var(--qiling-space-16);
+    border: 1px solid var(--color-neutral-200);
+    font-size: var(--qiling-text-rem-0p9);
+    background: var(--color-surface);
+    cursor: pointer;
+}
+
+.woocommerce .woocommerce-ordering select:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-primary));
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01);
+}
+
+/* ========================================
+   分页
+   ======================================== */
+.woocommerce nav.woocommerce-pagination {
+    text-align: center;
+    margin-top: var(--qiling-space-30);
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--qiling-space-8);
+    border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+    margin: 0;
+    border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--qiling-measure-40);
+    height: 40px;
+    padding: 0 var(--qiling-space-12);
+    border-radius: 8px;
+    font-size: var(--qiling-text-rem-0p9);
+    font-weight: 500;
+    border: 1px solid var(--color-neutral-200);
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+
+/* ========================================
+   单品页面 (Premium Page Styling)
+   ======================================== */
+.woocommerce div.product {
+    padding: var(--qiling-space-40);
+    margin-bottom: var(--qiling-space-40);
+    position: relative;
+    overflow: visible;
+    /* 允许阴影溢出 */
+}
+
+/* 移动端调整 */
+@media (max-width: 768px) {
+
+    .woocommerce div.product div.images,
+    .woocommerce div.product div.summary {
+        width: 100% !important;
+        float: none !important;
+        padding: 0 !important;
+    }
+}
+
+/* 图片区域 */
+.woocommerce div.product div.images {
+    margin-bottom: var(--qiling-space-30);
+}
+
+.woocommerce div.product div.images img {
+    transition: transform 0.3s ease;
+}
+
+.woocommerce div.product div.images img:hover {
+    transform: scale(1.02);
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger {
+    background: var(--color-surface);
+    color: var(--qiling-color-333333);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px var(--qiling-color-rgba-0-0-0-01);
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: var(--qiling-leading-40);
+}
+
+/* 文本摘要区域 */
+
+.woocommerce div.product .product_title {
+    font-weight: 800;
+    margin-bottom: var(--qiling-space-16);
+    line-height: 1.2;
+    letter-spacing: var(--qiling-tracking-neg-em-0p01);
+}
+
+.woocommerce div.product p.price {
+    font-size: var(--qiling-text-rem-1p75);
+    font-weight: 700;
+    margin-bottom: var(--qiling-space-24);
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-12);
+}
+
+.woocommerce div.product p.price del {
+    font-size: var(--qiling-text-rem-1p1);
+    color: var(--color-neutral-400);
+    opacity: 0.7;
+    margin-right: var(--qiling-space-8);
+}
+
+.woocommerce div.product p.price ins {
+    text-decoration: none;
+    background: none;
+}
+
+.woocommerce div.product .woocommerce-product-details__short-description {
+    color: var(--qiling-color-4b5563);
+    line-height: 1.8;
+    margin-bottom: var(--qiling-space-30);
+    font-size: var(--qiling-text-rem-1);
+    padding: var(--qiling-space-20);
+    background: var(--color-surface-alt);
+}
+
+/* 变体表单 */
+.woocommerce div.product form.cart {
+    margin-bottom: var(--qiling-space-30);
+    padding: var(--qiling-space-24);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-16);
+    align-items: center;
+}
+
+.woocommerce div.product table.variations {
+    border: none;
+    margin-bottom: var(--qiling-space-16);
+    width: 100%;
+}
+
+.woocommerce div.product table.variations td {
+    padding: var(--qiling-space-8) 0;
+    background: var(--qiling-color-transparent);
+    border: none;
+}
+
+.woocommerce div.product table.variations label {
+    font-weight: 600;
+    color: var(--color-dark, var(--color-text));
+}
+
+.woocommerce div.product table.variations select {
+    width: 100%;
+    padding: var(--qiling-space-10) var(--qiling-space-14);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    background: var(--color-surface);
+    cursor: pointer;
+}
+
+/* 数量输入 */
+.woocommerce div.product .quantity .qty {
+    width: 80px;
+    height: 50px;
+    padding: 0;
+    border: 2px solid var(--color-neutral-200);
+    border-radius: 10px;
+    font-size: var(--qiling-text-rem-1p1);
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-dark, var(--color-text));
+    background: var(--color-surface);
+}
+
+/* 单品添加购物车按钮 */
+.woocommerce div.product .single_add_to_cart_button {
+    /* flex-grow: 1; 为了防止全宽而移除 (Removed to prevent full width) */
+    width: auto !important;
+    min-width: var(--qiling-measure-180);
+    padding: 0 var(--qiling-space-32);
+    height: 50px;
+    background: var(--qiling-gradient-brand);
+    color: var(--color-text-inverse);
+    border: none;
+    font-size: var(--qiling-text-rem-1p1);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px var(--qiling-color-primary-alpha-02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.woocommerce div.product .single_add_to_cart_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px var(--qiling-color-primary-alpha-04);
+    background: var(--gradient-primary-strong);
+}
+
+/* 商品标签页 (Modern Pills) */
+.woocommerce div.product .woocommerce-tabs {
+    margin-top: var(--qiling-space-50);
+    background: var(--qiling-color-transparent);
+    border: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    display: flex;
+    list-style: none;
+    margin: 0 0 var(--qiling-space-30);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    background: var(--qiling-color-transparent);
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after {
+    display: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    display: block;
+    font-weight: 600;
+    font-size: var(--qiling-text-rem-1p05);
+    text-decoration: none;
+    transition: all 0.2s;
+    position: relative;
+}
+
+
+.woocommerce div.product .woocommerce-tabs .panel {
+    padding: var(--qiling-space-30);
+    line-height: 1.8;
+    color: var(--qiling-color-4b5563);
+}
+
+.woocommerce div.product .woocommerce-tabs .panel h2 {
+    font-size: var(--qiling-text-rem-1p5);
+    margin-bottom: var(--qiling-space-20);
+}
+
+/* ========================================
+   购物车页面
+   ======================================== */
+.woocommerce-cart .woocommerce {
+    padding: var(--qiling-space-30);
+}
+
+.woocommerce table.shop_table {
+    border: 1px solid var(--color-neutral-200) !important;
+    border-collapse: separate !important;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.woocommerce table.shop_table th,
+.woocommerce table.shop_table td {
+    padding: var(--qiling-space-16) !important;
+    border-color: var(--color-neutral-200) !important;
+    vertical-align: middle;
+}
+
+.woocommerce table.shop_table thead th {
+    background: var(--color-surface-alt);
+    font-weight: 600;
+    color: var(--color-dark, var(--color-text));
+}
+
+.woocommerce table.shop_table tbody td {
+    border-top: 1px solid var(--color-neutral-200);
+}
+
+/* 购物车商品图片 */
+.woocommerce table.shop_table .product-thumbnail img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 移除商品按钮 */
+.woocommerce table.shop_table td.product-remove a.remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--qiling-color-fef2f2);
+    color: var(--qiling-color-ef4444) !important;
+    font-size: var(--qiling-text-rem-1p2);
+    transition: all 0.2s;
+}
+
+.woocommerce table.shop_table td.product-remove a.remove:hover {
+    background: var(--qiling-color-ef4444);
+    color: var(--color-text-inverse) !important;
+}
+
+/* 购物车合计 */
+.woocommerce-cart .cart-collaterals {
+    margin-top: var(--qiling-space-30);
+}
+
+.woocommerce-cart .cart_totals {
+    background: var(--color-surface-alt);
+    padding: var(--qiling-space-24);
+}
+
+.woocommerce-cart .cart_totals h2 {
+    font-size: var(--qiling-text-rem-1p25);
+    margin-bottom: var(--qiling-space-16);
+}
+
+.woocommerce-cart .cart_totals table {
+    border: none !important;
+}
+
+.woocommerce-cart .cart_totals th,
+.woocommerce-cart .cart_totals td {
+    background: none !important;
+    border: none !important;
+    padding: var(--qiling-space-12) 0 !important;
+}
+
+/* ========================================
+   结账页面（高优先级保护）
+   ======================================== */
+.woocommerce-checkout .woocommerce {
+    padding: var(--qiling-space-30);
+}
+
+.woocommerce-checkout .woocommerce h3 {
+    font-size: var(--qiling-text-rem-1p25);
+    font-weight: 600;
+    margin-bottom: var(--qiling-space-20);
+    color: var(--color-dark, var(--color-text));
+}
+
+/* 表单字段 - 不覆盖 WC 默认行为 */
+.woocommerce form.woocommerce-checkout .form-row {
+    margin-bottom: var(--qiling-space-16);
+}
+
+.woocommerce form.woocommerce-checkout .form-row label {
+    display: block;
+    margin-bottom: var(--qiling-space-6);
+    font-weight: 500;
+    color: var(--color-dark, var(--color-text));
+}
+
+.woocommerce form.woocommerce-checkout .form-row input.input-text,
+.woocommerce form.woocommerce-checkout .form-row select,
+.woocommerce form.woocommerce-checkout .form-row textarea {
+    width: 100%;
+    padding: var(--qiling-space-14) var(--qiling-space-16);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    font-size: var(--qiling-text-rem-1);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: var(--color-surface);
+}
+
+.woocommerce form.woocommerce-checkout .form-row input.input-text:focus,
+.woocommerce form.woocommerce-checkout .form-row select:focus,
+.woocommerce form.woocommerce-checkout .form-row textarea:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-primary));
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01);
+}
+
+/* 必填字段高亮 - 修复双星号：隐藏 WC 默认的 abbr.required，使用 CSS 伪元素控制 */
+.woocommerce form.woocommerce-checkout .form-row.validate-required>label>.required {
+    display: none;
+}
+
+.woocommerce form.woocommerce-checkout .form-row.validate-required>label::after {
+    content: " *";
+    color: var(--qiling-color-ef4444);
+    font-weight: bold;
+}
+
+/* 错误状态 */
+.woocommerce form.woocommerce-checkout .form-row.woocommerce-invalid input.input-text,
+.woocommerce form.woocommerce-checkout .form-row.woocommerce-invalid select {
+    border-color: var(--qiling-color-ef4444) !important;
+    box-shadow: 0 0 0 3px var(--qiling-color-rgba-239-68-68-01) !important;
+}
+
+/* 错误提示可见 */
+.woocommerce-error,
+.woocommerce-message,
+.woocommerce-info {
+    padding: var(--qiling-space-16) var(--qiling-space-20);
+    margin-bottom: var(--qiling-space-20);
+    list-style: none;
+}
+
+.woocommerce-error {
+    border-left: 4px solid var(--qiling-color-ef4444);
+}
+
+.woocommerce-message {
+    border-left: 4px solid var(--qiling-color-10b981);
+}
+
+.woocommerce-info {
+    border-left: 4px solid var(--color-primary-light);
+}
+
+.woocommerce-error li,
+.woocommerce-message li,
+.woocommerce-info li {
+    margin: 0;
+}
+
+/* 订单审核区域 */
+.woocommerce-checkout #order_review_heading {
+    margin-top: var(--qiling-space-30);
+    font-size: var(--qiling-text-rem-1p5);
+    font-weight: 700;
+    color: var(--color-dark, var(--color-text));
+    margin-bottom: var(--qiling-space-20);
+}
+
+.woocommerce-checkout #order_review {
+    background: var(--color-surface);
+    padding: var(--qiling-space-30);
+    margin-top: var(--qiling-space-20);
+}
+
+/* 支付方式区域美化 */
+#payment {
+    margin-top: var(--qiling-space-20);
+}
+
+
+#payment ul.payment_methods li {
+    padding-left: 0 !important;
+    margin-bottom: var(--qiling-space-15) !important;
+}
+
+#payment ul.payment_methods li input {
+    margin-right: var(--qiling-space-10);
+}
+
+#payment ul.payment_methods li label {
+    font-weight: 600;
+    color: var(--color-dark, var(--color-text));
+    font-size: var(--qiling-text-rem-1p05);
+}
+
+#payment div.payment_box {
+    box-shadow: 0 2px 4px var(--qiling-color-rgba-0-0-0-005);
+}
+
+
+/* 下单按钮美化 */
+#place_order {
+    color: var(--color-text-inverse);
+    cursor: pointer;
+    margin-top: var(--qiling-space-20);
+}
+
+
+.woocommerce-terms-and-conditions-wrapper {
+    margin-bottom: var(--qiling-space-20);
+}
+
+/* 支付方式 */
+.woocommerce-checkout #payment {
+    background: var(--color-surface);
+    border-radius: 12px;
+    border: 1px solid var(--color-neutral-200);
+    overflow: hidden;
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.woocommerce-checkout #payment ul.payment_methods li {
+    padding: var(--qiling-space-16) var(--qiling-space-20);
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.woocommerce-checkout #payment ul.payment_methods li:last-child {
+    border-bottom: none;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li label {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-10);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.woocommerce-checkout #payment .payment_box {
+    background: var(--color-surface-alt);
+    padding: var(--qiling-space-16) var(--qiling-space-20);
+    margin-top: var(--qiling-space-12);
+    border-radius: 8px;
+    color: var(--color-gray-600, var(--color-neutral-600));
+    font-size: var(--qiling-text-rem-0p9);
+}
+
+/* 提交按钮 */
+.woocommerce #place_order {
+    display: block;
+    width: 100%;
+    padding: var(--qiling-space-18) var(--qiling-space-30);
+    background: var(--gradient-primary-violet);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: 10px;
+    font-size: var(--qiling-text-rem-1p1);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: var(--qiling-space-20);
+}
+
+.woocommerce #place_order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--qiling-color-primary-alpha-035);
+}
+
+.woocommerce #place_order:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   我的账户页面
+   ======================================== */
+.woocommerce-account .woocommerce {
+    padding: var(--qiling-space-30);
+}
+
+.woocommerce-MyAccount-navigation {
+    margin-bottom: var(--qiling-space-30);
+}
+
+.woocommerce-MyAccount-navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--qiling-space-8);
+    border-bottom: 1px solid var(--color-neutral-200);
+    padding-bottom: var(--qiling-space-16);
+}
+
+.woocommerce-MyAccount-navigation ul li {
+    margin: 0;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+    display: block;
+    padding: var(--qiling-space-10) var(--qiling-space-18);
+    background: var(--color-neutral-100);
+    color: var(--color-gray-600, var(--qiling-color-4b5563));
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: var(--qiling-text-rem-0p9);
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active a,
+.woocommerce-MyAccount-navigation ul li a:hover {
+    background: var(--color-primary, var(--color-primary));
+    color: var(--color-text-inverse);
+}
+
+.woocommerce-MyAccount-content {
+    min-height: 300px;
+}
+
+/* 订单表格 */
+.woocommerce-MyAccount-content .woocommerce-orders-table {
+    margin-top: 0;
+}
+
+/* 地址卡片 */
+.woocommerce-MyAccount-content .woocommerce-Addresses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--qiling-space-24);
+}
+
+.woocommerce-MyAccount-content .woocommerce-Address {
+    background: var(--color-surface-alt);
+    border-radius: 12px;
+    padding: var(--qiling-space-24);
+}
+
+.woocommerce-MyAccount-content .woocommerce-Address header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--qiling-space-16);
+    padding-bottom: var(--qiling-space-12);
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.woocommerce-MyAccount-content .woocommerce-Address h3 {
+    margin: 0;
+    font-size: var(--qiling-text-rem-1);
+}
+
+/* ========================================
+   迷你购物车（小工具）
+   ======================================== */
+.woocommerce.widget_shopping_cart .cart_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.woocommerce.widget_shopping_cart .cart_list li {
+    display: flex;
+    gap: var(--qiling-space-12);
+    padding: var(--qiling-space-12) 0;
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.woocommerce.widget_shopping_cart .cart_list li:last-child {
+    border-bottom: none;
+}
+
+.woocommerce.widget_shopping_cart .cart_list li img {
+    width: 50px;
+
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ========================================
+   响应式
+   ======================================== */
+@media (max-width: 992px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .wc-with-sidebar .woocommerce ul.products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wc-content-wrapper.wc-with-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .wc-sidebar {
+        position: static;
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wc-content-wrapper {
+        padding: var(--qiling-space-20) 0;
+    }
+
+    .woocommerce div.product,
+    .woocommerce-cart .woocommerce,
+    .woocommerce-checkout .woocommerce,
+    .woocommerce-account .woocommerce {
+        padding: var(--qiling-space-20);
+        border-radius: 12px;
+    }
+
+    .woocommerce div.product .product_title {
+        font-size: var(--qiling-text-rem-1p5);
+    }
+
+    .woocommerce div.product p.price {
+        font-size: var(--qiling-text-rem-1p25);
+    }
+
+    /* 购物车表格响应式 */
+    .woocommerce table.shop_table.cart {
+        display: block;
+        border: none !important;
+    }
+
+    .woocommerce table.shop_table.cart thead {
+        display: none;
+    }
+
+    .woocommerce table.shop_table.cart tbody {
+        display: block;
+    }
+
+    .woocommerce table.shop_table.cart tr {
+        display: block;
+        margin-bottom: var(--qiling-space-16);
+        padding: var(--qiling-space-16);
+        border: 1px solid var(--color-neutral-200);
+        border-radius: 12px;
+        background: var(--color-surface);
+    }
+
+    .woocommerce table.shop_table.cart td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--qiling-space-8) 0 !important;
+        border: none !important;
+    }
+
+    .woocommerce table.shop_table.cart td::before {
+        content: attr(data-title);
+        font-weight: 600;
+        color: var(--color-dark, var(--color-text));
+    }
+
+    .woocommerce table.shop_table.cart td.product-thumbnail {
+        justify-content: center;
+    }
+
+    .woocommerce table.shop_table.cart td.product-thumbnail::before {
+        display: none;
+    }
+
+    /* 结账页响应式 */
+    .woocommerce-checkout .col2-set {
+        display: block;
+    }
+
+    .woocommerce-checkout .col2-set .col-1,
+    .woocommerce-checkout .col2-set .col-2 {
+        width: 100%;
+        margin-bottom: var(--qiling-space-24);
+    }
+
+    /* 我的账户响应式 */
+    .woocommerce-MyAccount-navigation ul {
+        flex-direction: column;
+    }
+
+    .woocommerce-MyAccount-navigation ul li a {
+        display: block;
+    }
+
+    .woocommerce-MyAccount-content .woocommerce-Addresses {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .woocommerce ul.products {
+        grid-template-columns: 1fr;
+    }
+
+    .woocommerce ul.products li.product .woocommerce-loop-product__title {
+        font-size: var(--qiling-text-rem-0p95);
+    }
+
+    .woocommerce ul.products li.product .button {
+        width: calc(100% - 24px);
+        margin: 0 var(--qiling-space-12) var(--qiling-space-12) !important;
+        padding: var(--qiling-space-10) var(--qiling-space-16);
+        font-size: var(--qiling-text-rem-0p85);
+    }
+}
+
+/* ========================================
+   暗黑模式支持
+   ======================================== */
+.dark-mode .woocommerce ul.products li.product,
+.dark-mode .woocommerce div.product,
+.dark-mode .woocommerce-cart .woocommerce,
+.dark-mode .woocommerce-checkout .woocommerce,
+.dark-mode .woocommerce-account .woocommerce,
+.dark-mode .wc-sidebar {
+    background: var(--dark-bg-secondary, var(--color-neutral-800));
+}
+
+.dark-mode .woocommerce ul.products li.product .woocommerce-loop-product__title,
+.dark-mode .woocommerce div.product .product_title,
+.dark-mode .woocommerce-checkout .woocommerce h3,
+.dark-mode .wc-sidebar .widget-title {
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+.dark-mode .woocommerce table.shop_table {
+    border-color: var(--dark-border, var(--color-neutral-700)) !important;
+}
+
+
+.dark-mode .woocommerce-checkout #order_review,
+.dark-mode .woocommerce-cart .cart_totals,
+.dark-mode .woocommerce-checkout #payment .payment_box,
+.dark-mode .woocommerce-MyAccount-content .woocommerce-Address {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+}
+
+.dark-mode .woocommerce form.woocommerce-checkout .form-row input.input-text,
+.dark-mode .woocommerce form.woocommerce-checkout .form-row select,
+.dark-mode .woocommerce form.woocommerce-checkout .form-row textarea,
+.dark-mode .woocommerce div.product table.variations select {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+
+/* ========================================
+   悬浮购物车
+   ======================================== */
+.qiling-floating-cart {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.qiling-floating-cart .floating-cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--qiling-gradient-brand);
+    color: var(--color-text-inverse);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px var(--qiling-color-primary-alpha-04);
+    transition: all 0.3s;
+    text-decoration: none;
+    position: relative;
+}
+
+.qiling-floating-cart .floating-cart-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px var(--qiling-color-primary-alpha-05);
+    color: var(--color-text-inverse);
+}
+
+.qiling-floating-cart .floating-cart-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.qiling-floating-cart .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: var(--qiling-measure-22);
+    height: 22px;
+    padding: 0 var(--qiling-space-6);
+    background: var(--qiling-color-ef4444);
+    color: var(--color-text-inverse);
+    font-size: var(--qiling-text-12);
+    font-weight: 700;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: cartBounce 0.3s ease;
+}
+
+.qiling-floating-cart .cart-count.hidden {
+    display: none;
+}
+
+@keyframes cartBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* ========================================
+   商品评论
+   ======================================== */
+.woocommerce #reviews {
+    margin-top: var(--qiling-space-30);
+}
+
+.woocommerce #reviews h2 {
+    font-size: var(--qiling-text-rem-1p25);
+    font-weight: 600;
+    margin-bottom: var(--qiling-space-24);
+}
+
+.woocommerce #reviews .commentlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.woocommerce #reviews .commentlist li.review {
+    padding: var(--qiling-space-24);
+    margin-bottom: var(--qiling-space-16);
+    background: var(--color-surface-alt);
+    border-radius: 12px;
+}
+
+.woocommerce #reviews .commentlist li.review .comment_container {
+    display: flex;
+    gap: var(--qiling-space-16);
+}
+
+.woocommerce #reviews .commentlist li.review img.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.woocommerce #reviews .commentlist li.review .comment-text {
+    flex: 1;
+}
+
+.woocommerce #reviews .commentlist li.review .meta {
+    margin-bottom: var(--qiling-space-12);
+}
+
+.woocommerce #reviews .commentlist li.review .meta strong.woocommerce-review__author {
+    color: var(--color-dark, var(--color-text));
+    font-weight: 600;
+}
+
+.woocommerce #reviews .commentlist li.review .meta .woocommerce-review__published-date {
+    color: var(--color-gray-500, var(--qiling-color-6b7280));
+    font-size: var(--qiling-text-rem-0p85);
+}
+
+.woocommerce #reviews .commentlist li.review .star-rating {
+    margin-bottom: var(--qiling-space-12);
+}
+
+.woocommerce #reviews .commentlist li.review .description p {
+    margin: 0;
+    color: var(--color-gray-600, var(--qiling-color-4b5563));
+    line-height: 1.6;
+}
+
+/* 评论表单 */
+.woocommerce #review_form #respond {
+    background: var(--color-surface);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 12px;
+    padding: var(--qiling-space-24);
+    margin-top: var(--qiling-space-30);
+}
+
+.woocommerce #review_form #respond .comment-reply-title {
+    font-size: var(--qiling-text-rem-1p1);
+    font-weight: 600;
+    margin-bottom: var(--qiling-space-20);
+}
+
+.woocommerce #review_form #respond .comment-form-rating {
+    margin-bottom: var(--qiling-space-20);
+}
+
+.woocommerce #review_form #respond .comment-form-rating label {
+    display: block;
+    margin-bottom: var(--qiling-space-8);
+    font-weight: 500;
+}
+
+.woocommerce #review_form #respond .stars {
+    display: flex;
+    gap: var(--qiling-space-4);
+}
+
+.woocommerce #review_form #respond .stars a {
+    color: var(--qiling-color-fbbf24);
+    font-size: var(--qiling-text-rem-1p5);
+    text-decoration: none;
+}
+
+.woocommerce #review_form #respond .comment-form-comment textarea {
+    width: 100%;
+    padding: var(--qiling-space-14) var(--qiling-space-16);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    font-size: var(--qiling-text-rem-1);
+    resize: vertical;
+    min-height: 120px;
+}
+
+.woocommerce #review_form #respond .comment-form-comment textarea:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-primary));
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01);
+}
+
+.woocommerce #review_form #respond .form-submit input[type="submit"] {
+    padding: var(--qiling-space-14) var(--qiling-space-30);
+    background: var(--gradient-primary-violet);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.woocommerce #review_form #respond .form-submit input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--qiling-color-primary-alpha-04);
+}
+
+/* ========================================
+   账户子页面完整样式
+   ======================================== */
+
+/* 订单详情页 */
+.woocommerce-order-details {
+    margin-top: var(--qiling-space-30);
+}
+
+.woocommerce-order-details .woocommerce-order-details__title {
+    font-size: var(--qiling-text-rem-1p25);
+    font-weight: 600;
+    margin-bottom: var(--qiling-space-20);
+}
+
+.woocommerce-order-details .order_details {
+    margin-bottom: var(--qiling-space-30);
+}
+
+/* 账户详情编辑表单 */
+.woocommerce-EditAccountForm {
+    max-width: var(--qiling-measure-600);
+}
+
+.woocommerce-EditAccountForm .form-row {
+    margin-bottom: var(--qiling-space-20);
+}
+
+.woocommerce-EditAccountForm .form-row label {
+    display: block;
+    margin-bottom: var(--qiling-space-8);
+    font-weight: 500;
+    color: var(--color-dark, var(--color-text));
+}
+
+.woocommerce-EditAccountForm .form-row input {
+    width: 100%;
+    padding: var(--qiling-space-14) var(--qiling-space-16);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    font-size: var(--qiling-text-rem-1);
+}
+
+.woocommerce-EditAccountForm .form-row input:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-primary));
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01);
+}
+
+.woocommerce-EditAccountForm fieldset {
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 12px;
+    padding: var(--qiling-space-24);
+    margin: var(--qiling-space-24) 0;
+}
+
+.woocommerce-EditAccountForm fieldset legend {
+    font-weight: 600;
+    padding: 0 var(--qiling-space-12);
+    color: var(--color-dark, var(--color-text));
+}
+
+.woocommerce-EditAccountForm .button {
+    padding: var(--qiling-space-14) var(--qiling-space-30);
+    background: var(--gradient-primary-violet);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.woocommerce-EditAccountForm .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--qiling-color-primary-alpha-04);
+}
+
+/* 下载页面 */
+.woocommerce-MyAccount-downloads {
+    margin-top: var(--qiling-space-20);
+}
+
+.woocommerce-MyAccount-downloads .woocommerce-table--order-downloads {
+    margin-bottom: 0;
+}
+
+.woocommerce-MyAccount-downloads .button {
+    padding: var(--qiling-space-10) var(--qiling-space-20);
+    background: var(--color-primary, var(--color-primary));
+    color: var(--color-text-inverse);
+    border-radius: 6px;
+    font-size: var(--qiling-text-rem-0p9);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.woocommerce-MyAccount-downloads .button:hover {
+    background: var(--color-primary-hover);
+}
+
+/* 支付方式 */
+.woocommerce-MyAccount-paymentmethods {
+    margin-top: var(--qiling-space-20);
+}
+
+.woocommerce-PaymentMethods {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.woocommerce-PaymentMethod {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--qiling-space-16) var(--qiling-space-20);
+    background: var(--color-surface-alt);
+    border-radius: 10px;
+    margin-bottom: var(--qiling-space-12);
+}
+
+.woocommerce-PaymentMethod .button {
+    padding: var(--qiling-space-8) var(--qiling-space-16);
+    font-size: var(--qiling-text-rem-0p85);
+}
+
+/* ========================================
+   相关商品 / 追加销售
+   ======================================== */
+.woocommerce .related.products,
+.woocommerce .upsells.products,
+.woocommerce .cross-sells {
+    margin-top: var(--qiling-space-50);
+    padding-top: var(--qiling-space-40);
+    border-top: 1px solid var(--color-neutral-200);
+}
+
+.woocommerce .related.products>h2,
+.woocommerce .upsells.products>h2,
+.woocommerce .cross-sells>h2 {
+    font-size: var(--qiling-text-rem-1p5);
+    font-weight: 700;
+    margin-bottom: var(--qiling-space-24);
+    color: var(--color-dark, var(--color-text));
+}
+
+/* ========================================
+   优惠券区域
+   ======================================== */
+.woocommerce .coupon {
+    display: flex;
+    gap: var(--qiling-space-12);
+    flex-wrap: wrap;
+}
+
+.woocommerce .coupon input.input-text {
+    flex: 1;
+    min-width: var(--qiling-measure-200);
+    padding: var(--qiling-space-12) var(--qiling-space-16);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    font-size: var(--qiling-text-rem-1);
+}
+
+.woocommerce .coupon input.input-text:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-primary));
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01);
+}
+
+.woocommerce .coupon .button {
+    padding: var(--qiling-space-12) var(--qiling-space-24);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.woocommerce .coupon .button:hover {
+    background: var(--color-neutral-200);
+}
+
+/* ========================================
+   订单确认页 / 感谢页
+   ======================================== */
+.woocommerce-order-received .woocommerce {
+    text-align: center;
+}
+
+.woocommerce-order-received .woocommerce-thankyou-order-received {
+    font-size: var(--qiling-text-rem-1p5);
+    font-weight: 700;
+    color: var(--qiling-color-10b981);
+    margin-bottom: var(--qiling-space-24);
+}
+
+.woocommerce-order-received .woocommerce-order-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--qiling-space-24);
+    list-style: none;
+    padding: var(--qiling-space-24);
+    margin: 0 0 var(--qiling-space-30);
+    background: var(--color-surface-alt);
+    border-radius: 12px;
+}
+
+.woocommerce-order-received .woocommerce-order-overview li {
+    text-align: center;
+}
+
+.woocommerce-order-received .woocommerce-order-overview li strong {
+    display: block;
+    font-size: var(--qiling-text-rem-1p25);
+    color: var(--color-primary, var(--color-primary));
+}
+
+/* ========================================
+   空购物车
+   ======================================== */
+.woocommerce-cart .cart-empty {
+    text-align: center;
+    padding: var(--qiling-space-60) var(--qiling-space-20);
+}
+
+.woocommerce-cart .cart-empty.woocommerce-info {
+    background: var(--color-surface-alt);
+    border-left: none;
+    border-radius: 16px;
+    font-size: var(--qiling-text-rem-1p1);
+    color: var(--color-gray-600, var(--color-neutral-600));
+}
+
+.woocommerce-cart .cart-empty+.return-to-shop {
+    text-align: center;
+    margin-top: var(--qiling-space-24);
+}
+
+.woocommerce-cart .return-to-shop .button {
+    display: inline-block;
+    padding: var(--qiling-space-16) var(--qiling-space-40);
+    background: var(--gradient-primary-violet);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: 10px;
+    font-size: var(--qiling-text-rem-1p1);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.woocommerce-cart .return-to-shop .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--qiling-color-primary-alpha-035);
+}
+
+/* ========================================
+   加载动画
+   ======================================== */
+.woocommerce .blockUI.blockOverlay {
+    background: rgba(var(--color-surface-rgb), 0.8) !important;
+}
+
+.woocommerce .blockUI.blockOverlay::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-neutral-200);
+    border-top-color: var(--color-primary, var(--color-primary));
+    border-radius: 50%;
+    animation: wcSpin 0.8s linear infinite;
+}
+
+@keyframes wcSpin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ========================================
+   悬浮购物车暗黑模式
+   ======================================== */
+.dark-mode .qiling-floating-cart .floating-cart-btn {
+    box-shadow: 0 4px 20px var(--qiling-color-rgba-0-0-0-04);
+}
+
+.dark-mode .woocommerce #reviews .commentlist li.review {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+}
+
+.dark-mode .woocommerce #review_form #respond {
+    background: var(--dark-bg-secondary, var(--color-neutral-800));
+    border-color: var(--dark-border, var(--color-neutral-700));
+}
+
+.dark-mode .woocommerce #review_form #respond .comment-form-comment textarea {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+.dark-mode .woocommerce-EditAccountForm .form-row input,
+.dark-mode .woocommerce-EditAccountForm fieldset {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+.dark-mode .woocommerce-PaymentMethod {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+}
+
+.dark-mode .woocommerce-order-received .woocommerce-order-overview {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+}
+
+.dark-mode .woocommerce-cart .cart-empty.woocommerce-info {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    color: var(--dark-text-secondary, var(--color-neutral-400));
+}
+
+.dark-mode .woocommerce .coupon input.input-text {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+.dark-mode .woocommerce .coupon .button {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+
+.woocommerce abbr.required,
+.woocommerce span.required,
+.woocommerce .required {
+    display: inline-block !important;
+    color: var(--qiling-color-ef4444) !important;
+    /* 红色 */
+    text-decoration: none !important;
+    border: none !important;
+    font-weight: bold !important;
+    margin-left: var(--qiling-space-4) !important;
+    visibility: visible !important;
+}
+
+/* 移除以前可能添加的 ::after，防止重复 */
+.woocommerce .form-row.validate-required>label::after,
+.woocommerce-page .form-row.validate-required>label::after {
+    content: "" !important;
+    display: none !important;
+}
+
+/* 账户页面 - 彻底隐藏姓氏字段 (核弹级隐藏) */
+.woocommerce-account input[name="account_last_name"],
+.woocommerce-account label[for="account_last_name"],
+.woocommerce-account p.woocommerce-form-row:has(input[name="account_last_name"]),
+.woocommerce-account .woocommerce-form-row.woocommerce-form-row--last,
+.woocommerce-account #account_last_name_field,
+.woocommerce-account .account-last-name-field {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    width: 0 !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+}
+
+/* 调整名字字段宽度 */
+
+/* 移动端响应式调整 */
+@media (max-width: 768px) {
+
+    .qiling-floating-cart {
+        top: auto;
+        /* 重置之前规则的 top 属性 (Reset top property from previous rule) */
+        transform: none;
+        /* 重置之前规则的 transform 属性 (Reset transform property from previous rule) */
+    }
+
+
+}
+
+/* ========================================
+   账单/配送地址编辑表单
+   ======================================== */
+
+
+/* 我的账户地址编辑页标题 */
+
+
+/* 暗黑模式地址表单 */
+
+
+/* ========================================
+   极简结账体验优化 (Premium Styling)
+   ======================================== */
+
+
+/* 输入框通用美化 (包括优惠券输入框) */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce input[type="text"],
+.woocommerce input[type="email"],
+.woocommerce input[type="tel"],
+.woocommerce input[type="password"] {
+    padding: var(--qiling-space-12) var(--qiling-space-16) !important;
+    border: 1px solid var(--color-neutral-200) !important;
+    border-radius: 6px !important;
+    font-size: var(--qiling-text-rem-1) !important;
+    box-shadow: 0 1px 2px var(--qiling-color-rgba-0-0-0-005);
+    transition: all 0.3s ease;
+    min-height: 48px;
+}
+
+.woocommerce form .form-row input.input-text:focus,
+.woocommerce form .form-row textarea:focus,
+.woocommerce input:focus {
+    border-color: var(--color-primary, var(--color-primary)) !important;
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01) !important;
+    outline: none;
+}
+
+/* 全局按钮美化 (Coupon, Cart, Checkout) */
+.woocommerce .button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+    padding: var(--qiling-space-12) var(--qiling-space-24) !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: var(--qiling-text-rem-0p95) !important;
+    border: none !important;
+    background: var(--color-neutral-100) !important;
+    /* 默认浅灰背景 */
+    color: var(--color-neutral-600) !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 2px 4px var(--qiling-color-rgba-0-0-0-005) !important;
+    line-height: normal !important;
+    min-height: 48px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.woocommerce .button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+    background: var(--color-neutral-200) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px var(--qiling-color-rgba-0-0-0-008) !important;
+    color: var(--color-neutral-700) !important;
+}
+
+/* 主要按钮 (Primary: Place Order, Checkout) */
+.woocommerce .button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce-checkout #place_order {
+    background: var(--qiling-gradient-brand) !important;
+    color: var(--color-text-inverse) !important;
+}
+
+.woocommerce .button.alt:hover,
+.woocommerce-checkout #place_order:hover {
+    background: var(--gradient-primary-strong) !important;
+    box-shadow: 0 8px 15px -3px var(--qiling-color-primary-alpha-04) !important;
+    color: var(--color-text-inverse) !important;
+}
+
+/* 下单按钮特别调整 */
+.woocommerce-checkout #place_order {
+    width: 100% !important;
+    max-width: var(--qiling-measure-400);
+    /* 限制最大宽度，不再傻大 */
+    margin: var(--qiling-space-20) auto 0 !important;
+    display: block !important;
+    font-size: var(--qiling-text-rem-1p1) !important;
+}
+
+/* 优惠券按钮调整 */
+.woocommerce .coupon .button {
+    background: var(--color-primary, var(--color-primary)) !important;
+    color: var(--color-text-inverse) !important;
+    margin-left: var(--qiling-space-8) !important;
+}
+
+/* 订单概览美化 */
+
+
+/* 支付方式美化 */
+
+
+/* 暗黑模式适配 */
+
+
+/* 调整名字字段宽度 */
+.woocommerce-account .woocommerce-form-row.woocommerce-form-row--first {
+    width: 100% !important;
+    float: none !important;
+    margin-right: 0 !important;
+}
+
+/* 移动端响应式调整 */
+@media (max-width: 768px) {
+
+    .qiling-floating-cart {
+        bottom: 80px;
+        right: 16px;
+        top: auto;
+        /* 重置之前规则的 top 属性 (Reset top property from previous rule) */
+        transform: none;
+        /* 重置之前规则的 transform 属性 (Reset transform property from previous rule) */
+    }
+
+    .qiling-floating-cart .floating-cart-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-cart-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .qiling-floating-cart .floating-cart-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .qiling-floating-cart .cart-count {
+        min-width: var(--qiling-measure-18);
+        height: 18px;
+        font-size: var(--qiling-text-10);
+    }
+}
+
+/* ========================================
+   账单/配送地址编辑表单
+   ======================================== */
+.woocommerce-address-fields {
+    max-width: var(--qiling-measure-600);
+}
+
+.woocommerce-address-fields .form-row {
+    margin-bottom: var(--qiling-space-20);
+}
+
+.woocommerce-address-fields .form-row label {
+    display: block;
+    margin-bottom: var(--qiling-space-8);
+    font-weight: 500;
+    color: var(--color-dark, var(--color-text));
+}
+
+.woocommerce-address-fields .form-row input,
+.woocommerce-address-fields .form-row select {
+    width: 100%;
+    padding: var(--qiling-space-14) var(--qiling-space-16);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    font-size: var(--qiling-text-rem-1);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.woocommerce-address-fields .form-row input:focus,
+.woocommerce-address-fields .form-row select:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-primary));
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01);
+}
+
+.woocommerce-address-fields .form-row.form-row-wide {
+    width: 100%;
+}
+
+.woocommerce-address-fields .form-row.form-row-first,
+.woocommerce-address-fields .form-row.form-row-last {
+    width: 48%;
+    display: inline-block;
+}
+
+.woocommerce-address-fields button[type="submit"] {
+    display: inline-block;
+    margin-top: var(--qiling-space-10);
+    padding: var(--qiling-space-14) var(--qiling-space-30);
+    background: var(--gradient-primary-violet);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: var(--qiling-text-rem-1);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.woocommerce-address-fields button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--qiling-color-primary-alpha-04);
+}
+
+/* 我的账户地址编辑页标题 */
+.woocommerce-MyAccount-content .u-column1,
+.woocommerce-MyAccount-content .u-column2 {
+    width: 100%;
+    max-width: var(--qiling-measure-600);
+}
+
+.woocommerce-MyAccount-content .u-column1 h2,
+.woocommerce-MyAccount-content .u-column2 h2 {
+    font-size: var(--qiling-text-rem-1p25);
+    font-weight: 600;
+    margin-bottom: var(--qiling-space-20);
+    color: var(--color-dark, var(--color-text));
+}
+
+/* 暗黑模式地址表单 */
+.dark-mode .woocommerce-address-fields .form-row input,
+.dark-mode .woocommerce-address-fields .form-row select {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+.dark-mode .woocommerce-address-fields .form-row label {
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+@media (max-width: 768px) {
+
+    .woocommerce-address-fields .form-row.form-row-first,
+    .woocommerce-address-fields .form-row.form-row-last {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* ========================================
+   极简结账体验优化 (Premium Styling)
+   ======================================== */
+.woocommerce-checkout #customer_details {
+    margin-bottom: var(--qiling-space-30);
+}
+
+.woocommerce-checkout .woocommerce-billing-fields h3 {
+    font-size: var(--qiling-text-rem-1p5);
+    font-weight: 700;
+    margin-bottom: var(--qiling-space-24);
+    color: var(--color-dark, var(--color-text));
+    border-left: 4px solid var(--color-primary, var(--color-primary));
+    padding-left: var(--qiling-space-12);
+}
+
+/* 输入框美化 */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea {
+    padding: var(--qiling-space-14) var(--qiling-space-16) !important;
+    border: 1px solid var(--color-neutral-200) !important;
+    font-size: var(--qiling-text-rem-1) !important;
+    box-shadow: 0 1px 2px var(--qiling-color-rgba-0-0-0-005);
+    transition: all 0.3s ease;
+}
+
+.woocommerce form .form-row input.input-text:focus,
+.woocommerce form .form-row textarea:focus {
+    border-color: var(--color-primary, var(--color-primary)) !important;
+    box-shadow: 0 0 0 3px var(--qiling-color-primary-alpha-01) !important;
+    outline: none;
+}
+
+/* 订单概览美化 */
+#order_review_heading {
+    margin-top: var(--qiling-space-40);
+    margin-bottom: var(--qiling-space-20);
+    font-size: var(--qiling-text-rem-1p5);
+    font-weight: 700;
+}
+
+.woocommerce-checkout-review-order-table {
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--qiling-space-30);
+}
+
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+    padding: var(--qiling-space-16) var(--qiling-space-20);
+    border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.woocommerce-checkout-review-order-table th {
+    background: var(--color-surface-alt);
+    font-weight: 600;
+    color: var(--color-neutral-600);
+}
+
+.woocommerce-checkout-review-order-table tfoot th {
+    background: var(--color-surface);
+    border-top: 2px solid var(--color-neutral-200);
+}
+
+.woocommerce-checkout-review-order-table .order-total th,
+.woocommerce-checkout-review-order-table .order-total td {
+    font-size: var(--qiling-text-rem-1p1);
+    font-weight: 700;
+    color: var(--color-dark, var(--color-text));
+    background: var(--color-surface-alt);
+}
+
+/* 支付方式美化 */
+#payment {
+    background: var(--color-surface) !important;
+    border: 1px solid var(--color-neutral-200) !important;
+    border-radius: 12px !important;
+    padding: var(--qiling-space-24) !important;
+    box-shadow: 0 4px 6px -1px var(--qiling-color-rgba-0-0-0-005) !important;
+}
+
+#payment ul.payment_methods {
+    border-bottom: 1px solid var(--color-neutral-200) !important;
+    padding-bottom: var(--qiling-space-20) !important;
+    margin-bottom: var(--qiling-space-20) !important;
+}
+
+#payment div.payment_box {
+    background-color: var(--color-neutral-100) !important;
+    color: var(--color-neutral-600) !important;
+    border-radius: 6px !important;
+    padding: var(--qiling-space-12) !important;
+    margin: var(--qiling-space-12) 0 var(--qiling-space-20) !important;
+    font-size: var(--qiling-text-rem-0p9) !important;
+}
+
+#payment div.payment_box::before {
+    border-bottom-color: var(--color-neutral-100) !important;
+}
+
+/* 下单按钮美化 */
+#place_order {
+    width: 100%;
+    padding: var(--qiling-space-16) !important;
+    font-size: var(--qiling-text-rem-1p1) !important;
+    font-weight: 700 !important;
+    background: var(--gradient-primary-violet) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px -1px var(--qiling-color-primary-alpha-03) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+#place_order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px var(--qiling-color-primary-alpha-04) !important;
+    background: linear-gradient(135deg, var(--color-primary, var(--color-primary-light)) 0%, var(--qiling-color-8b5cf6) 100%) !important;
+}
+
+/* 暗黑模式适配 */
+.dark-mode .woocommerce-checkout-review-order-table,
+.dark-mode #payment {
+    background: var(--dark-bg-secondary, var(--color-neutral-800)) !important;
+    border-color: var(--dark-border, var(--color-neutral-700)) !important;
+}
+
+.dark-mode .woocommerce-checkout-review-order-table th {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    color: var(--dark-text-secondary, var(--color-neutral-400));
+}
+
+.dark-mode .woocommerce-checkout-review-order-table td {
+    border-bottom-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-primary, var(--color-neutral-100));
+}
+
+.dark-mode #payment div.payment_box {
+    background-color: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+    color: var(--dark-text-secondary, var(--color-neutral-400)) !important;
+}
+
+.dark-mode #payment div.payment_box::before {
+    border-bottom-color: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+}
+
+/* ========================================
+   极致美化与暗黑模式 (Premium Polish)
+   ======================================== */
+
+/* 1. 存档页头部 (Archive Header) */
+.woocommerce-products-header {
+    background: var(--color-surface);
+    border-radius: 16px;
+    padding: var(--qiling-space-30);
+    margin-bottom: var(--qiling-space-40);
+    box-shadow: 0 2px 10px var(--qiling-color-rgba-0-0-0-003);
+    border-left: 5px solid var(--color-primary, var(--color-primary));
+    position: relative;
+    overflow: hidden;
+}
+
+.woocommerce-products-header::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(var(--color-surface-rgb), 0) 0%, rgba(var(--color-surface-rgb), 0.8) 100%);
+    pointer-events: none;
+}
+
+.woocommerce-products-header__title {
+    font-size: var(--qiling-text-rem-1p75);
+    font-weight: 800;
+    color: var(--color-dark, var(--color-text));
+    margin: 0;
+}
+
+.woocommerce-products-header__term-description {
+    margin-top: var(--qiling-space-10);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* 2. 面包屑强制覆盖 (Breadcrumb Override) */
+.qiling-wc-breadcrumb {
+    margin-bottom: var(--qiling-space-30) !important;
+    padding: var(--qiling-space-10) var(--qiling-space-20) !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 10px var(--qiling-color-rgba-0-0-0-003) !important;
+    font-weight: 600 !important;
+    border: 1px solid var(--color-neutral-100) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--qiling-space-10);
+}
+
+.qiling-wc-breadcrumb a {
+    text-decoration: none !important;
+    transition: all 0.2s !important;
+}
+
+.qiling-wc-breadcrumb a:hover {
+    transform: translateY(-1px);
+}
+
+
+/* 3. 促销标签 (Gradient Sticker) */
+.woocommerce ul.products li.product .onsale,
+.woocommerce span.onsale {
+    top: 12px;
+    left: 12px;
+    right: auto;
+    font-size: var(--qiling-text-rem-0p75);
+    font-weight: 700;
+    z-index: 9;
+    min-height: auto;
+    min-width: auto;
+    line-height: 1.5;
+    letter-spacing: var(--qiling-tracking-0p5);
+}
+
+/* 4. 全面暗黑模式适配 (Dark Mode) */
+.dark-mode .woocommerce ul.products li.product,
+.dark-mode .woocommerce div.product,
+.dark-mode .woocommerce-cart .woocommerce,
+.dark-mode .woocommerce-checkout .woocommerce,
+.dark-mode .woocommerce-products-header,
+.dark-mode .qiling-wc-breadcrumb,
+.dark-mode .woocommerce div.product .woocommerce-tabs .panel {
+    background: var(--dark-bg-secondary, var(--color-neutral-800)) !important;
+    border-color: var(--dark-border, var(--color-neutral-700)) !important;
+    box-shadow: 0 4px 20px var(--qiling-color-rgba-0-0-0-02) !important;
+    color: var(--dark-text-primary, var(--color-neutral-100)) !important;
+}
+
+.dark-mode .woocommerce ul.products li.product:hover {
+    border-color: var(--color-primary, var(--color-primary)) !important;
+    background: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+}
+
+.dark-mode .woocommerce div.product .product_title,
+.dark-mode .woocommerce-products-header__title,
+.dark-mode .woocommerce-checkout .woocommerce h3,
+.dark-mode .woocommerce table.shop_table thead th,
+.dark-mode .woocommerce div.product .woocommerce-tabs .panel h2 {
+    color: var(--dark-text-primary, var(--color-neutral-100)) !important;
+}
+
+.dark-mode .woocommerce div.product .woocommerce-product-details__short-description,
+.dark-mode .woocommerce-products-header__term-description,
+.dark-mode .qiling-wc-breadcrumb,
+.dark-mode .qiling-wc-breadcrumb a {
+    color: var(--dark-text-secondary, var(--color-neutral-400)) !important;
+}
+
+.dark-mode .woocommerce div.product .woocommerce-product-details__short-description {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+}
+
+.dark-mode .woocommerce div.product form.cart,
+.dark-mode .woocommerce-cart .cart_totals {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+}
+
+.dark-mode .woocommerce div.product .quantity .qty,
+.dark-mode .woocommerce div.product table.variations select,
+.dark-mode .woocommerce form .form-row input.input-text,
+.dark-mode .woocommerce form .form-row textarea {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+    border-color: var(--dark-border, var(--color-neutral-700)) !important;
+    color: var(--dark-text-primary, var(--color-neutral-100)) !important;
+}
+
+.dark-mode .woocommerce table.shop_table th,
+.dark-mode .woocommerce table.shop_table td {
+    border-color: var(--dark-border, var(--color-neutral-700)) !important;
+}
+
+.dark-mode .woocommerce table.shop_table thead th {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+}
+
+.dark-mode .woocommerce-products-header::after {
+    background: linear-gradient(90deg, var(--qiling-color-rgba-30-41-59-0) 0%, var(--qiling-color-rgba-30-41-59-08) 100%);
+}
+
+/* 5. 分类过滤器美化 (Sidebar/Widget) */
+.wc-sidebar .widget .product-categories li {
+    padding: var(--qiling-space-8) 0;
+    border-bottom: 1px dashed var(--color-neutral-200);
+}
+
+.wc-sidebar .widget .product-categories li a {
+    color: var(--qiling-color-4b5563);
+    transition: all 0.2s;
+}
+
+.wc-sidebar .widget .product-categories li:hover a {
+    color: var(--color-primary, var(--color-primary));
+    padding-left: var(--qiling-space-4);
+}
+
+.dark-mode .wc-sidebar .widget .product-categories li {
+    border-bottom-color: var(--dark-border, var(--color-neutral-700));
+}
+
+.dark-mode .wc-sidebar .widget .product-categories li a {
+    color: var(--dark-text-secondary, var(--color-neutral-400));
+}
+
+/* ========================================
+   商店首页 Banner (Carousel) & 导航
+   ======================================== */
+/* 隐藏商店首页默认头部 (只在首页隐藏，分类页保留) */
+.post-type-archive-product:not(.tax-product_cat) .woocommerce-products-header {
+    display: none !important;
+}
+
+.qiling-shop-banner {
+    margin-bottom: var(--qiling-space-30);
+    overflow: hidden;
+    position: relative;
+    /* 调整高度比例，避免过高 */
+    aspect-ratio: 32/9;
+    max-height: 400px;
+    transform: translateZ(0);
+    /* 修复 Safari 圆角裁剪问题 (Fix Safari radius clipping) */
+}
+
+@media (max-width: 768px) {
+    .qiling-shop-banner {
+        aspect-ratio: 2/1;
+        /* 移动端稍高一点 */
+        max-height: 300px;
+        margin-bottom: var(--qiling-space-20);
+    }
+}
+
+.qiling-shop-banner .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.qiling-shop-banner .banner-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.qiling-shop-banner img,
+.qiling-shop-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.qiling-shop-banner .swiper-pagination-bullet {
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.qiling-shop-banner .swiper-pagination-bullet-active {
+    opacity: 1;
+    border-radius: 4px;
+}
+
+/* 商店分类导航 (Category Ribbon) */
+.qiling-category-ribbon {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--qiling-space-4);
+    /* 留出阴影空间 (Space for shadow) */
+    margin-left: var(--qiling-space-neg-4);
+    margin-right: var(--qiling-space-neg-4);
+    /* 隐藏滚动条 (Hide Scrollbar) */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.qiling-category-ribbon::-webkit-scrollbar {
+    display: none;
+}
+
+.qiling-category-ribbon ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.qiling-category-ribbon li {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.qiling-category-ribbon li a {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid var(--color-neutral-200);
+    font-size: var(--qiling-text-rem-0p95);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.qiling-category-ribbon li.active a,
+.qiling-category-ribbon li a:hover {
+    background: var(--color-primary, var(--color-primary));
+    color: var(--color-text-inverse);
+    border-color: var(--color-primary, var(--color-primary));
+}
+
+/* 暗黑模式 (Dark Mode) */
+.dark-mode .qiling-shop-banner {
+    box-shadow: 0 4px 12px var(--qiling-color-rgba-0-0-0-03);
+}
+
+.dark-mode .qiling-category-ribbon li a {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-secondary, var(--color-neutral-400));
+}
+
+.dark-mode .qiling-category-ribbon li.active a,
+.dark-mode .qiling-category-ribbon li a:hover {
+    background: var(--color-primary, var(--color-primary));
+    border-color: var(--color-primary, var(--color-primary));
+    color: var(--color-text-inverse);
+}
+
+/* ========================================
+   Global Component Design Hooks
+   ======================================== */
+.qiling-wc-breadcrumb {
+    background: var(--qiling-component-breadcrumb-bg, var(--color-surface)) !important;
+    color: var(--qiling-component-breadcrumb-text, var(--color-text-muted)) !important;
+    border-color: var(--qiling-component-breadcrumb-text, var(--color-neutral-200)) !important;
+}
+
+.qiling-wc-breadcrumb a {
+    color: var(--qiling-component-breadcrumb-link, var(--color-dark)) !important;
+}
+
+.qiling-wc-breadcrumb a:hover {
+    color: var(--qiling-component-breadcrumb-link, var(--color-primary)) !important;
+}
+
+.qiling-wc-breadcrumb .separator {
+    color: var(--qiling-component-breadcrumb-text, var(--color-neutral-300)) !important;
+}
+
+.wc-sidebar {
+    background: var(--qiling-component-sidebar-bg, var(--color-surface));
+    border: 1px solid var(--qiling-component-sidebar-border, var(--color-border));
+    box-shadow: var(--qiling-component-sidebar-shadow, 0 2px 10px var(--qiling-color-rgba-0-0-0-005));
+}
+
+.wc-sidebar .widget-title {
+    color: var(--qiling-component-sidebar-title, var(--color-heading));
+}
+
+.woocommerce ul.products li.product,
+.woocommerce div.product,
+.woocommerce-cart .woocommerce,
+.woocommerce-checkout .woocommerce,
+.woocommerce-account .woocommerce {
+    background: var(--qiling-component-woo-card-bg, var(--color-surface));
+    border: 1px solid var(--qiling-component-woo-card-border, var(--color-neutral-100));
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce div.product .product_title,
+.woocommerce div.product .woocommerce-tabs .panel h2 {
+    color: var(--qiling-component-woo-card-title, var(--color-dark));
+}
+
+.woocommerce ul.products li.product .price,
+.woocommerce ul.products li.product .price ins,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+    color: var(--qiling-component-woo-card-price, var(--color-primary));
+}
+
+.woocommerce ul.products li.product .button,
+.woocommerce ul.products li.product .add_to_cart_button {
+    background: var(--qiling-component-button-bg, var(--color-primary)) !important;
+    color: var(--qiling-component-button-text, var(--color-text-inverse)) !important;
+    border: 1px solid var(--qiling-component-button-border, var(--color-primary)) !important;
+    box-shadow: var(--qiling-component-button-shadow, none);
+}
+
+.woocommerce ul.products li.product .button:hover,
+.woocommerce ul.products li.product .add_to_cart_button:hover {
+    background: var(--qiling-component-button-hover-bg, var(--color-primary-hover)) !important;
+    color: var(--qiling-component-button-hover-text, var(--color-text-inverse)) !important;
+    border-color: var(--qiling-component-button-border, var(--color-primary)) !important;
+}
+
+.woocommerce ul.products li.product .onsale,
+.woocommerce span.onsale {
+    background: var(--qiling-component-badge-bg, var(--qiling-gradient-warning));
+    color: var(--qiling-component-badge-text, var(--color-text-inverse));
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+    background: var(--qiling-component-pagination-bg, var(--color-surface));
+    color: var(--qiling-component-pagination-text, var(--color-neutral-600));
+    border-color: var(--qiling-component-pagination-border, var(--color-neutral-200));
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    background: var(--qiling-component-pagination-active-bg, var(--color-primary));
+    color: var(--qiling-component-pagination-active-text, var(--color-text-inverse));
+    border-color: var(--qiling-component-pagination-border, var(--color-neutral-200));
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    border-bottom-color: var(--qiling-component-tabs-border, var(--color-neutral-200));
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    color: var(--qiling-component-tabs-text, var(--color-text-muted));
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    color: var(--qiling-component-tabs-active-text, var(--color-primary));
+    border-bottom-color: var(--qiling-component-tabs-active-border, var(--color-primary));
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+    background: var(--qiling-component-woo-card-bg, var(--color-surface));
+}
+
+.woocommerce-error,
+.woocommerce-message,
+.woocommerce-info {
+    border: 1px solid var(--qiling-component-alert-border, var(--color-neutral-200));
+}
+
+.woocommerce-error {
+    background: rgba(var(--color-error-rgb), 0.08);
+    color: var(--color-error);
+    border-color: rgba(var(--color-error-rgb), 0.28);
+    border-left-color: var(--color-error);
+}
+
+.woocommerce-message {
+    background: rgba(var(--color-success-rgb), 0.08);
+    color: var(--color-success);
+    border-color: rgba(var(--color-success-rgb), 0.28);
+    border-left-color: var(--color-success);
+}
+
+.woocommerce-info {
+    background: rgba(var(--color-info-rgb), 0.08);
+    color: var(--color-info);
+    border-color: rgba(var(--color-info-rgb), 0.28);
+    border-left-color: var(--color-info);
+}
+
+/* ========================================
+   WooCommerce 轻量视觉兼容增强
+   只优化展示质感，不改 WooCommerce 业务流程。
+   ======================================== */
+.woocommerce,
+.woocommerce-page {
+    --qiling-woo-radius: 10px;
+    --qiling-woo-radius-lg: 14px;
+    --qiling-woo-border: var(--color-border, var(--color-neutral-200));
+    --qiling-woo-muted-border: var(--color-neutral-100);
+    --qiling-woo-shadow-soft: 0 12px 30px var(--qiling-color-rgba-0-0-0-006);
+    --qiling-woo-shadow-hover: 0 18px 42px var(--qiling-color-rgba-0-0-0-012);
+}
+
+.wc-content-wrapper {
+    gap: var(--qiling-space-32);
+}
+
+.qiling-shop-banner {
+    border: 1px solid var(--qiling-woo-muted-border);
+    border-radius: var(--qiling-woo-radius-lg);
+    box-shadow: var(--qiling-woo-shadow-soft);
+    background:
+        linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.08), rgba(var(--color-success-rgb), 0.08)),
+        var(--color-surface-alt);
+}
+
+.qiling-shop-banner::before,
+.qiling-shop-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.qiling-shop-banner::before {
+    background:
+        linear-gradient(90deg, var(--qiling-color-rgba-15-23-42-022), var(--qiling-color-rgba-15-23-42-003) 54%, var(--qiling-color-rgba-15-23-42-008)),
+        linear-gradient(0deg, var(--qiling-color-rgba-15-23-42-018), var(--qiling-color-rgba-15-23-42-0) 42%);
+}
+
+.qiling-shop-banner::after {
+    inset: auto 18px 18px 18px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--qiling-color-rgba-255-255-255-054), var(--qiling-color-rgba-255-255-255-008));
+}
+
+.qiling-shop-banner img,
+.qiling-shop-banner video {
+    transform: scale(1.01);
+    transition: transform 0.55s ease, filter 0.55s ease;
+}
+
+.qiling-shop-banner:hover img,
+.qiling-shop-banner:hover video {
+    transform: scale(1.035);
+    filter: saturate(1.04) contrast(1.02);
+}
+
+.qiling-shop-banner .swiper-pagination {
+    z-index: 4;
+    bottom: 14px !important;
+}
+
+.qiling-shop-banner .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--qiling-color-rgba-255-255-255-072);
+    background: var(--qiling-color-rgba-255-255-255-072);
+}
+
+.qiling-shop-banner .swiper-pagination-bullet-active {
+    width: 26px;
+    background: var(--color-neutral-0);
+}
+
+.qiling-category-ribbon {
+    margin-bottom: var(--qiling-space-28);
+    padding: var(--qiling-space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--qiling-woo-muted-border);
+    border-radius: var(--qiling-woo-radius-lg);
+    box-shadow: 0 8px 22px var(--qiling-color-rgba-0-0-0-004);
+}
+
+.qiling-category-ribbon ul {
+    gap: var(--qiling-space-6);
+}
+
+.qiling-category-ribbon li a {
+    border-radius: 8px;
+    border-color: transparent;
+    box-shadow: none;
+    padding: var(--qiling-space-9) var(--qiling-space-16);
+}
+
+.qiling-category-ribbon li.active a,
+.qiling-category-ribbon li a:hover {
+    transform: none;
+    box-shadow: 0 8px 18px var(--qiling-color-primary-alpha-02);
+}
+
+.woocommerce .woocommerce-result-count,
+.woocommerce .woocommerce-ordering {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    margin-bottom: var(--qiling-space-22);
+}
+
+.woocommerce .woocommerce-result-count {
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.woocommerce .woocommerce-ordering select {
+    min-height: 42px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--qiling-color-rgba-0-0-0-003);
+}
+
+.woocommerce ul.products {
+    gap: var(--qiling-space-24);
+}
+
+.woocommerce ul.products li.product {
+    border-radius: var(--qiling-woo-radius-lg);
+    border-color: var(--qiling-woo-muted-border);
+    box-shadow: 0 8px 22px var(--qiling-color-rgba-0-0-0-004);
+}
+
+.woocommerce ul.products li.product:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--qiling-woo-shadow-hover);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.woocommerce ul.products li.product img {
+    background: var(--color-surface-alt);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    min-height: 3.1em;
+    padding: var(--qiling-space-15) var(--qiling-space-16) var(--qiling-space-7);
+    font-size: var(--qiling-text-rem-1);
+}
+
+.woocommerce ul.products li.product .star-rating {
+    margin: 0 var(--qiling-space-16) var(--qiling-space-10);
+    color: var(--color-warning);
+}
+
+.woocommerce ul.products li.product .price {
+    min-height: 28px;
+    margin-bottom: var(--qiling-space-16);
+}
+
+.woocommerce ul.products li.product .button,
+.woocommerce ul.products li.product .add_to_cart_button {
+    min-height: 42px;
+    border-radius: 8px;
+}
+
+.woocommerce ul.products li.product .added_to_cart {
+    margin: calc(var(--qiling-space-6) * -1) var(--qiling-space-16) var(--qiling-space-16);
+    color: var(--color-primary);
+    text-align: center;
+    text-decoration: none;
+}
+
+.woocommerce ul.products li.product .onsale,
+.woocommerce span.onsale {
+    border-radius: 8px;
+    padding: var(--qiling-space-5) var(--qiling-space-10);
+    box-shadow: 0 8px 18px var(--qiling-color-warning-alpha-018);
+    text-transform: none;
+}
+
+.woocommerce div.product {
+    border-radius: var(--qiling-woo-radius-lg);
+    border-color: var(--qiling-woo-muted-border);
+    box-shadow: var(--qiling-woo-shadow-soft);
+}
+
+.woocommerce div.product div.images img {
+    border-radius: var(--qiling-woo-radius);
+    box-shadow: 0 10px 24px var(--qiling-color-rgba-0-0-0-006);
+}
+
+.woocommerce div.product div.summary {
+    padding-left: var(--qiling-space-36);
+}
+
+.woocommerce div.product .product_title {
+    font-size: clamp(1.55rem, 2.1vw, 2.15rem);
+}
+
+.woocommerce div.product .woocommerce-product-details__short-description {
+    border-left: 0;
+    border: 1px solid var(--qiling-woo-muted-border);
+    border-radius: var(--qiling-woo-radius);
+}
+
+.woocommerce div.product form.cart {
+    border: 1px solid var(--qiling-woo-muted-border);
+    border-radius: var(--qiling-woo-radius);
+    background: var(--color-surface-alt);
+}
+
+.woocommerce div.product .single_add_to_cart_button {
+    border-radius: 8px;
+}
+
+.woocommerce div.product .product_meta {
+    padding-top: var(--qiling-space-16);
+    border-top: 1px solid var(--qiling-woo-muted-border);
+    color: var(--color-text-muted);
+    font-size: var(--qiling-text-rem-0p95);
+}
+
+.woocommerce div.product .product_meta a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    gap: var(--qiling-space-8);
+    border-bottom: 0;
+    padding: var(--qiling-space-6);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--qiling-woo-muted-border);
+    border-radius: var(--qiling-woo-radius);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    top: 0;
+    padding: var(--qiling-space-10) var(--qiling-space-16);
+    border-radius: 8px;
+    border-bottom: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    background: var(--color-surface);
+    box-shadow: 0 6px 16px var(--qiling-color-rgba-0-0-0-005);
+}
+
+.woocommerce div.product .woocommerce-tabs .panel,
+.woocommerce-cart .woocommerce,
+.woocommerce-checkout .woocommerce,
+.woocommerce-account .woocommerce,
+.woocommerce-checkout #order_review,
+.woocommerce-cart .cart_totals {
+    border-radius: var(--qiling-woo-radius-lg);
+    border: 1px solid var(--qiling-woo-muted-border);
+    box-shadow: var(--qiling-woo-shadow-soft);
+}
+
+.woocommerce table.shop_table {
+    border-radius: var(--qiling-woo-radius) !important;
+}
+
+.woocommerce table.shop_table .product-name a {
+    color: var(--color-heading, var(--color-text));
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.woocommerce table.shop_table .product-name a:hover {
+    color: var(--color-primary);
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row select,
+.woocommerce form .form-row textarea {
+    border-radius: 8px;
+}
+
+.woocommerce .button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce a.button {
+    border-radius: 8px;
+}
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+    border-radius: var(--qiling-woo-radius);
+    box-shadow: 0 8px 22px var(--qiling-color-rgba-0-0-0-004);
+}
+
+@media (max-width: 768px) {
+    .wc-content-wrapper {
+        padding-top: var(--qiling-space-24);
+    }
+
+    .qiling-shop-banner {
+        border-radius: 12px;
+    }
+
+    .qiling-category-ribbon {
+        border-radius: 12px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .woocommerce ul.products {
+        gap: var(--qiling-space-16);
+    }
+
+    .woocommerce ul.products li.product:hover {
+        transform: none;
+    }
+
+    .woocommerce div.product div.summary {
+        padding-left: 0;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.dark-mode .qiling-shop-banner,
+.dark-mode .qiling-category-ribbon,
+.dark-mode .woocommerce div.product .woocommerce-tabs ul.tabs {
+    background: var(--dark-bg-secondary, var(--color-neutral-800)) !important;
+    border-color: var(--dark-border, var(--color-neutral-700)) !important;
+}
+
+.dark-mode .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+.dark-mode .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    background: var(--dark-bg-tertiary, var(--color-neutral-900)) !important;
+}

@@ -1,0 +1,991 @@
+body.qiling-page-skin-cloud-canvas,
+body.page-template-template-qiling-cloud-canvas {
+    --qcc-ink: #3f3268;
+    --qcc-muted: #776f8f;
+    --qcc-coral: #ff836f;
+    --qcc-coral-soft: #ffe1d5;
+    --qcc-blue: #4f7dff;
+    --qcc-blue-soft: #e8efff;
+    --qcc-mint: #38c9a6;
+    --qcc-panel: rgba(255, 255, 255, 0.78);
+    --qcc-panel-strong: rgba(255, 255, 255, 0.92);
+    --qcc-border: rgba(90, 72, 134, 0.12);
+    --qcc-shadow: 0 22px 56px rgba(70, 55, 120, 0.13);
+    --qcc-search-placeholder: rgba(63, 50, 104, 0.54);
+    --qiling-page-accent: var(--qcc-blue);
+    --qiling-page-accent-2: var(--qcc-coral);
+    --qiling-page-accent-contrast: #ffffff;
+    --color-primary: #4f7dff;
+    --color-primary-hover: #315fdc;
+    --color-primary-dark: #274bb8;
+    --color-primary-light: #86a4ff;
+    --color-primary-rgb: 79, 125, 255;
+    --color-accent: #ff836f;
+    --color-accent-rgb: 255, 131, 111;
+    --qiling-gradient-brand: linear-gradient(135deg, var(--qcc-blue) 0%, var(--qcc-coral) 100%);
+    --qiling-gradient-brand-soft: linear-gradient(135deg, rgba(79, 125, 255, 0.14) 0%, rgba(255, 131, 111, 0.08) 100%);
+    --qiling-component-button-bg: linear-gradient(135deg, var(--qcc-blue) 0%, var(--qcc-coral) 100%);
+    --qiling-component-button-text: #ffffff;
+    --qiling-component-button-border: rgba(79, 125, 255, 0.88);
+    --qiling-component-button-hover-bg: linear-gradient(135deg, #315fdc 0%, #f2644e 100%);
+    --qiling-component-button-hover-text: #ffffff;
+    --qiling-component-button-shadow: 0 16px 32px rgba(79, 125, 255, 0.22);
+    --qiling-component-border-accent: var(--qcc-blue);
+    --qiling-component-badge-bg: linear-gradient(135deg, var(--qcc-blue) 0%, var(--qcc-coral) 100%);
+    --qiling-component-badge-text: #ffffff;
+    --qiling-component-badge-border: rgba(79, 125, 255, 0.88);
+    --qiling-component-title-bar-bg: var(--qiling-gradient-brand-soft);
+    --qiling-component-title-bar-text: var(--qcc-ink);
+    --qiling-component-title-bar-border: rgba(79, 125, 255, 0.18);
+    --qiling-component-list-header-bg: var(--qcc-blue-soft);
+    --qiling-component-list-header-text: var(--qcc-ink);
+    --qiling-component-list-header-border: rgba(79, 125, 255, 0.18);
+    --qiling-component-highlight-bg: var(--qiling-gradient-brand);
+    --qiling-component-highlight-text: #ffffff;
+    --qiling-component-highlight-border: var(--qcc-blue);
+    --qiling-component-highlight-soft-bg: rgba(79, 125, 255, 0.08);
+    background: #fff8f1;
+}
+
+body.qiling-page-skin-tech-canvas {
+    --qcc-ink: #25365f;
+    --qcc-muted: #667085;
+    --qcc-coral: #38c9a6;
+    --qcc-coral-soft: #dff7ff;
+    --qcc-blue: #4f7dff;
+    --qcc-blue-soft: #e8efff;
+    --qcc-mint: #38c9a6;
+    --qcc-panel: rgba(255, 255, 255, 0.8);
+    --qcc-panel-strong: rgba(255, 255, 255, 0.94);
+    --qcc-border: rgba(79, 125, 255, 0.14);
+    --qcc-shadow: 0 22px 56px rgba(37, 54, 95, 0.14);
+    --qcc-search-placeholder: rgba(37, 54, 95, 0.52);
+    --qiling-page-accent: #4f7dff;
+    --qiling-page-accent-2: #38c9a6;
+    --qiling-page-accent-contrast: #ffffff;
+    --color-primary: #4f7dff;
+    --color-primary-hover: #315fdc;
+    --color-primary-dark: #274bb8;
+    --color-primary-light: #86a4ff;
+    --color-primary-rgb: 79, 125, 255;
+    --color-accent: #38c9a6;
+    --color-accent-rgb: 56, 201, 166;
+    --qiling-gradient-brand: linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%);
+    --qiling-gradient-brand-soft: linear-gradient(135deg, rgba(79, 125, 255, 0.14) 0%, rgba(56, 201, 166, 0.08) 100%);
+    --qiling-component-button-bg: linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%);
+    --qiling-component-button-text: #ffffff;
+    --qiling-component-button-border: rgba(79, 125, 255, 0.88);
+    --qiling-component-button-hover-bg: linear-gradient(135deg, #315fdc 0%, #119f81 100%);
+    --qiling-component-button-hover-text: #ffffff;
+    --qiling-component-button-shadow: 0 16px 32px rgba(79, 125, 255, 0.22);
+    --qiling-component-border-accent: #4f7dff;
+    --qiling-component-badge-bg: linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%);
+    --qiling-component-badge-text: #ffffff;
+    --qiling-component-badge-border: rgba(79, 125, 255, 0.88);
+    --qiling-component-title-bar-bg: var(--qiling-gradient-brand-soft);
+    --qiling-component-title-bar-text: #25365f;
+    --qiling-component-title-bar-border: rgba(79, 125, 255, 0.18);
+    --qiling-component-list-header-bg: #e8efff;
+    --qiling-component-list-header-text: #25365f;
+    --qiling-component-list-header-border: rgba(79, 125, 255, 0.18);
+    --qiling-component-highlight-bg: var(--qiling-gradient-brand);
+    --qiling-component-highlight-text: #ffffff;
+    --qiling-component-highlight-border: #4f7dff;
+    --qiling-component-highlight-soft-bg: rgba(79, 125, 255, 0.08);
+    background: #f7fbff;
+}
+
+body.qiling-page-skin-hosting-canvas {
+    --qcc-ink: #134e4a;
+    --qcc-muted: rgba(19, 78, 74, 0.72);
+    --qcc-coral: #059669;
+    --qcc-coral-soft: #d1fae5;
+    --qcc-blue: #2563eb;
+    --qcc-blue-soft: #dbeafe;
+    --qcc-mint: #34d399;
+    --qcc-panel: rgba(255, 255, 255, 0.78);
+    --qcc-panel-strong: rgba(255, 255, 255, 0.94);
+    --qcc-border: rgba(5, 150, 105, 0.18);
+    --qcc-shadow: 0 22px 56px rgba(19, 78, 74, 0.13);
+    --qcc-search-placeholder: rgba(19, 78, 74, 0.56);
+    --qiling-page-accent: #059669;
+    --qiling-page-accent-2: #2563eb;
+    --qiling-page-accent-contrast: #ffffff;
+    --color-primary: #059669;
+    --color-primary-hover: #047857;
+    --color-primary-dark: #065f46;
+    --color-primary-light: #10b981;
+    --color-primary-rgb: 5, 150, 105;
+    --color-accent: #2563eb;
+    --color-accent-rgb: 37, 99, 235;
+    --qiling-gradient-brand: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+    --qiling-gradient-brand-soft: linear-gradient(135deg, rgba(5, 150, 105, 0.14) 0%, rgba(37, 99, 235, 0.08) 100%);
+    --qiling-component-button-bg: #059669;
+    --qiling-component-button-text: #ffffff;
+    --qiling-component-button-border: #059669;
+    --qiling-component-button-hover-bg: #047857;
+    --qiling-component-button-hover-text: #ffffff;
+    --qiling-component-button-shadow: 0 16px 32px rgba(5, 150, 105, 0.22);
+    --qiling-component-border-accent: #059669;
+    --qiling-component-badge-bg: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+    --qiling-component-badge-text: #ffffff;
+    --qiling-component-badge-border: #059669;
+    --qiling-component-nav-hover-bg: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+    --qiling-component-nav-hover-text: #ffffff;
+    --qiling-component-title-bar-bg: linear-gradient(135deg, rgba(5, 150, 105, 0.14) 0%, rgba(37, 99, 235, 0.08) 100%);
+    --qiling-component-title-bar-text: #134e4a;
+    --qiling-component-title-bar-border: rgba(5, 150, 105, 0.18);
+    --qiling-component-list-header-bg: #ecfdf5;
+    --qiling-component-list-header-text: #134e4a;
+    --qiling-component-list-header-border: rgba(5, 150, 105, 0.18);
+    --qiling-component-highlight-bg: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+    --qiling-component-highlight-text: #ffffff;
+    --qiling-component-highlight-border: #059669;
+    --qiling-component-highlight-soft-bg: rgba(5, 150, 105, 0.08);
+    --comparison-highlight-bg: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+    --comparison-highlight-text: #ffffff;
+    --comparison-highlight-column-bg: rgba(5, 150, 105, 0.08);
+    --comparison-highlight-column-hover-bg: rgba(5, 150, 105, 0.14);
+    --comparison-product-header-bg: #ecfdf5;
+    --comparison-product-header-text: #134e4a;
+    --comparison-feature-header-bg: #f0fdf9;
+    --comparison-feature-header-text: rgba(19, 78, 74, 0.76);
+    background: #f0fdf9;
+}
+
+body.qiling-page-skin-hosting-canvas .site-footer-wave {
+    height: var(--qiling-footer-wave-height, 64px);
+    margin-top: var(--qiling-footer-wave-overlap, -4px);
+    background: var(--qiling-footer-wave-backdrop, #f0fdf9);
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro {
+    --bbp-title-color: #5a2a16 !important;
+    --bbp-title-gradient: linear-gradient(135deg, #9a3412 0%, #ff7a45 52%, #ffb36b 100%) !important;
+    --bbp-text-color: rgba(90, 42, 22, 0.76) !important;
+    --bbp-primary-btn-bg: linear-gradient(135deg, #ff7a45 0%, #f4511e 100%) !important;
+    --bbp-primary-btn-border: rgba(255, 122, 69, 0.92) !important;
+    --bbp-primary-btn-text: #ffffff !important;
+    --bbp-primary-btn-hover-bg: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
+    --bbp-primary-btn-hover-border: #c2410c !important;
+    --bbp-primary-btn-hover-text: #ffffff !important;
+    --bbp-light-btn-bg: #fff3ea !important;
+    --bbp-light-btn-border: rgba(249, 115, 22, 0.28) !important;
+    --bbp-light-btn-text: #7c2d12 !important;
+    --bbp-light-btn-hover-bg: #ffe2d4 !important;
+    --bbp-light-btn-hover-border: rgba(249, 115, 22, 0.42) !important;
+    --bbp-light-btn-hover-text: #c2410c !important;
+    background:
+        radial-gradient(circle at 16% 18%, rgba(255, 122, 69, 0.24) 0%, rgba(255, 122, 69, 0) 34%),
+        radial-gradient(circle at 84% 24%, rgba(255, 179, 107, 0.36) 0%, rgba(255, 179, 107, 0) 30%),
+        linear-gradient(135deg, #fff3ea 0%, #fff8f3 42%, #ffd9c9 100%) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-media-wrap {
+    border-color: rgba(249, 115, 22, 0.18) !important;
+    box-shadow: 0 24px 60px rgba(194, 65, 12, 0.14) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-main-image {
+    filter: saturate(1.08) sepia(0.08) hue-rotate(-8deg) contrast(1.02);
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-primary {
+    border-color: var(--bbp-primary-btn-border) !important;
+    box-shadow: 0 18px 34px rgba(194, 65, 12, 0.22) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-primary:hover {
+    border-color: var(--bbp-primary-btn-hover-border) !important;
+    box-shadow: 0 24px 38px rgba(154, 52, 18, 0.26) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-light,
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-outline {
+    border-color: var(--bbp-light-btn-border) !important;
+    box-shadow: 0 14px 28px rgba(194, 65, 12, 0.12) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-light:hover,
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-outline:hover {
+    border-color: var(--bbp-light-btn-hover-border) !important;
+}
+
+body.qiling-page-skin-cloud-canvas .site-header.header-transparent:not(.header-scrolled),
+body.qiling-page-skin-tech-canvas .site-header.header-transparent:not(.header-scrolled),
+body.qiling-page-skin-hosting-canvas .site-header.header-transparent:not(.header-scrolled),
+body.page-template-template-qiling-cloud-canvas .site-header.header-transparent:not(.header-scrolled) {
+    --qiling-header-text-current: var(--qiling-header-transparent-text, #ffffff);
+    --qiling-header-nav-current: var(--qiling-header-transparent-nav-link, var(--qiling-header-text-current, #ffffff));
+    --qiling-header-nav-hover-current: var(--qiling-header-transparent-nav-link, var(--qiling-header-text-current, #ffffff));
+    --qiling-header-nav-hover-bg-current: linear-gradient(135deg, var(--qcc-coral) 0%, var(--qcc-blue) 100%);
+    --qiling-header-logo-current-fill: linear-gradient(90deg, var(--qcc-coral) 0%, var(--qcc-blue) 100%);
+    --qiling-header-phone-current-bg: var(--qiling-header-phone-transparent-bg, rgba(255, 255, 255, 0.16));
+    --qiling-header-phone-current-text: var(--qiling-header-phone-transparent-text, #ffffff);
+    --qiling-header-search-current-bg: var(--qiling-header-search-transparent-bg, rgba(255, 255, 255, 0.14));
+    --qiling-header-search-current-border: var(--qiling-header-search-transparent-border, rgba(255, 255, 255, 0.28));
+    --qiling-header-search-current-text: var(--qiling-header-search-transparent-text, #ffffff);
+    --qiling-header-search-current-placeholder: var(--qiling-header-search-transparent-placeholder, rgba(255, 255, 255, 0.72));
+    --qiling-header-search-current-icon: var(--qiling-header-search-transparent-icon, #ffffff);
+    --qiling-header-search-current-shadow: var(--qiling-header-search-transparent-shadow, 0 16px 36px rgba(15, 23, 42, 0.12));
+    --qiling-header-search-submit-current-border: var(--qiling-header-search-transparent-submit-border, rgba(255, 255, 255, 0.18));
+}
+
+body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .header-actions,
+body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle {
+    color: var(--qiling-header-transparent-text) !important;
+}
+
+.qiling-page-skin {
+    --qps-section-overlap: 0px;
+}
+
+.qiling-page-skin--cloud-canvas,
+.template-qiling-cloud-canvas {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(156deg, rgba(255, 131, 111, 0.16) 0%, rgba(255, 248, 241, 0) 34%),
+        linear-gradient(180deg, #fff1e6 0%, #fff8f1 42%, #f7fbff 78%, #ffffff 100%);
+}
+
+.qiling-page-skin--hosting-canvas {
+    background:
+        linear-gradient(156deg, rgba(255, 122, 69, 0.18) 0%, rgba(255, 248, 243, 0) 34%),
+        linear-gradient(180deg, #fff3ea 0%, #fff8f3 44%, #ffe9dc 72%, #ffffff 100%);
+}
+
+.qiling-page-skin--tech-canvas {
+    background:
+        linear-gradient(156deg, rgba(79, 125, 255, 0.18) 0%, rgba(247, 251, 255, 0) 36%),
+        linear-gradient(180deg, #e8efff 0%, #f7fbff 44%, #dff7ff 74%, #f7fbff 100%);
+}
+
+.qiling-page-skin--cloud-canvas::before,
+.template-qiling-cloud-canvas::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -190px;
+    left: -8vw;
+    width: 118vw;
+    height: 760px;
+    background: linear-gradient(132deg, rgba(255, 131, 111, 0.2) 0%, rgba(255, 226, 213, 0.78) 45%, rgba(232, 239, 255, 0.64) 100%);
+    border-bottom-left-radius: 30% 18%;
+    border-bottom-right-radius: 44% 24%;
+    transform: rotate(-5deg);
+    transform-origin: 50% 0;
+}
+
+.qiling-page-skin--hosting-canvas::before {
+    background: linear-gradient(132deg, rgba(255, 122, 69, 0.22) 0%, rgba(255, 226, 212, 0.84) 46%, rgba(255, 243, 234, 0.72) 100%);
+}
+
+.qiling-page-skin--tech-canvas::before {
+    background: linear-gradient(132deg, rgba(79, 125, 255, 0.24) 0%, rgba(232, 239, 255, 0.82) 46%, rgba(223, 247, 255, 0.72) 100%);
+}
+
+.qiling-page-skin--cloud-canvas::after,
+.template-qiling-cloud-canvas::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 520px;
+    right: -12vw;
+    width: 56vw;
+    height: 220px;
+    background: linear-gradient(100deg, rgba(79, 125, 255, 0), rgba(79, 125, 255, 0.14));
+    border-radius: 999px 0 0 999px;
+    transform: rotate(-10deg);
+}
+
+.qiling-page-skin--hosting-canvas::after {
+    background: linear-gradient(100deg, rgba(255, 122, 69, 0), rgba(255, 122, 69, 0.16));
+}
+
+.qiling-page-skin--tech-canvas::after {
+    background: linear-gradient(100deg, rgba(79, 125, 255, 0), rgba(56, 201, 166, 0.18));
+}
+
+.qiling-page-skin--integrated .module {
+    margin-top: calc(var(--qps-section-overlap) * -1);
+}
+
+.qiling-page-skin--cloud-canvas .module,
+.template-qiling-cloud-canvas .module {
+    background: transparent;
+}
+
+body.qiling-page-skin-integrated :is(
+    .module-features,
+    .module-services,
+    .module-service-cards,
+    .module-stats,
+    .module-process,
+    .module-comparison,
+    .module-pricing,
+    .module-testimonials,
+    .module-faq
+):not(.has-bg-image):not(.bg-type-image) {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+body.qiling-page-skin-integrated :is(
+    .module-features,
+    .module-services,
+    .module-service-cards,
+    .module-stats,
+    .module-process,
+    .module-comparison,
+    .module-pricing,
+    .module-testimonials,
+    .module-faq
+)::before {
+    background: none !important;
+}
+
+body.qiling-page-skin-integrated .module-cta :is(.cta-title, .cta-subtitle) {
+    color: #ffffff !important;
+    opacity: 1;
+}
+
+.qiling-page-skin--cloud-canvas .module:not(.module-brand-banner-pro) {
+    isolation: isolate;
+}
+
+.qiling-page-skin--cloud-canvas :is(.module-features, .module-services, .module-service-cards, .module-stats, .module-process, .module-comparison, .module-pricing, .module-testimonials, .module-faq)::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -72px max(-4vw, -64px);
+    pointer-events: none;
+    background: linear-gradient(122deg, rgba(255, 255, 255, 0.62) 0%, rgba(232, 239, 255, 0.34) 54%, rgba(255, 225, 213, 0.2) 100%);
+    border-radius: 38px;
+}
+
+.qiling-page-skin--cloud-canvas .module-service-cards::before,
+.qiling-page-skin--cloud-canvas .module-services::before,
+.qiling-page-skin--cloud-canvas .module-stats::before,
+.qiling-page-skin--cloud-canvas .module-comparison::before,
+.qiling-page-skin--cloud-canvas .module-pricing::before {
+    background: linear-gradient(118deg, rgba(232, 239, 255, 0.56) 0%, rgba(255, 255, 255, 0.46) 48%, rgba(255, 225, 213, 0.3) 100%);
+}
+
+.qiling-page-skin--hosting-canvas .module-service-cards::before,
+.qiling-page-skin--hosting-canvas .module-services::before,
+.qiling-page-skin--hosting-canvas .module-stats::before,
+.qiling-page-skin--hosting-canvas .module-comparison::before,
+.qiling-page-skin--hosting-canvas .module-pricing::before {
+    background: linear-gradient(118deg, rgba(255, 226, 212, 0.7) 0%, rgba(255, 255, 255, 0.5) 48%, rgba(255, 243, 234, 0.44) 100%);
+}
+
+.qiling-page-skin--cloud-canvas :is(.module-features, .module-services, .module-service-cards, .module-stats, .module-process, .module-comparison, .module-pricing, .module-testimonials, .module-faq) > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro,
+.template-qiling-cloud-canvas .module-brand-banner-pro {
+    min-height: 92vh;
+    color: var(--qcc-ink);
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-stage,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-stage {
+    padding-top: max(var(--bbp-pt, 112px), 112px);
+    padding-bottom: 92px;
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-title,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-title {
+    letter-spacing: 0;
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-subtitle,
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-desc,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-subtitle,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-desc {
+    color: var(--qcc-muted);
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-media-wrap,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-media-wrap {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.56));
+    border: 1px solid rgba(255, 255, 255, 0.84);
+    box-shadow: var(--qcc-shadow);
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-main-image,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-main-image {
+    filter: saturate(1.04) contrast(1.02);
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-btn-primary,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-btn-primary {
+    background: linear-gradient(90deg, var(--qiling-page-accent, var(--qcc-blue)) 0%, var(--qiling-page-accent-2, var(--qcc-coral)) 100%);
+    color: #ffffff;
+    box-shadow: var(--qiling-component-button-shadow, 0 18px 34px rgba(79, 125, 255, 0.24));
+}
+
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-btn-light,
+.qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-btn-outline,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-btn-light,
+.template-qiling-cloud-canvas .module-brand-banner-pro .bbp-btn-outline {
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--qcc-ink);
+    border-color: rgba(79, 125, 255, 0.18);
+    box-shadow: 0 14px 28px rgba(79, 125, 255, 0.12);
+}
+
+.qiling-page-skin--cloud-canvas .module-features,
+.qiling-page-skin--cloud-canvas .module-services,
+.qiling-page-skin--cloud-canvas .module-service-cards,
+.qiling-page-skin--cloud-canvas .module-stats,
+.qiling-page-skin--cloud-canvas .module-process,
+.qiling-page-skin--cloud-canvas .module-comparison,
+.qiling-page-skin--cloud-canvas .module-pricing,
+.qiling-page-skin--cloud-canvas .module-testimonials,
+.qiling-page-skin--cloud-canvas .module-faq,
+.qiling-page-skin--cloud-canvas .module-cta,
+.template-qiling-cloud-canvas .module-features,
+.template-qiling-cloud-canvas .module-service-cards,
+.template-qiling-cloud-canvas .module-process,
+.template-qiling-cloud-canvas .module-pricing,
+.template-qiling-cloud-canvas .module-faq,
+.template-qiling-cloud-canvas .module-cta {
+    position: relative;
+}
+
+.qiling-page-skin--cloud-canvas .module-features,
+.template-qiling-cloud-canvas .module-features {
+    margin-top: -54px;
+    --qps-section-overlap: 0px;
+}
+
+.qiling-page-skin--cloud-canvas .module-service-cards,
+.qiling-page-skin--cloud-canvas .module-services,
+.qiling-page-skin--cloud-canvas .module-stats,
+.qiling-page-skin--cloud-canvas .module-process,
+.qiling-page-skin--cloud-canvas .module-comparison,
+.qiling-page-skin--cloud-canvas .module-pricing,
+.qiling-page-skin--cloud-canvas .module-testimonials,
+.qiling-page-skin--cloud-canvas .module-faq,
+.template-qiling-cloud-canvas .module-service-cards,
+.template-qiling-cloud-canvas .module-process,
+.template-qiling-cloud-canvas .module-pricing,
+.template-qiling-cloud-canvas .module-faq {
+    --qps-section-overlap: 18px;
+}
+
+.qiling-page-skin--cloud-canvas .feature-card,
+.qiling-page-skin--cloud-canvas .features-card,
+.qiling-page-skin--cloud-canvas .service-item,
+.qiling-page-skin--cloud-canvas .sc-card,
+.qiling-page-skin--cloud-canvas .stat-item,
+.qiling-page-skin--cloud-canvas .comparison-table-wrapper,
+.qiling-page-skin--cloud-canvas .pricing-card,
+.qiling-page-skin--cloud-canvas .testimonial-card,
+.qiling-page-skin--cloud-canvas .ql-testimonial-summary,
+.qiling-page-skin--cloud-canvas .faq-item,
+.template-qiling-cloud-canvas .feature-card,
+.template-qiling-cloud-canvas .features-card,
+.template-qiling-cloud-canvas .sc-card,
+.template-qiling-cloud-canvas .pricing-card,
+.template-qiling-cloud-canvas .faq-item {
+    background: var(--comparison-table-bg, var(--qcc-panel)) !important;
+    border: 1px solid var(--comparison-table-border, var(--qcc-border)) !important;
+    box-shadow: 0 14px 38px rgba(70, 55, 120, 0.08) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.qiling-page-skin--cloud-canvas .feature-card:hover,
+.qiling-page-skin--cloud-canvas .features-card:hover,
+.qiling-page-skin--cloud-canvas .service-item:hover,
+.qiling-page-skin--cloud-canvas .sc-card:hover,
+.qiling-page-skin--cloud-canvas .stat-item:hover,
+.qiling-page-skin--cloud-canvas .comparison-table-wrapper:hover,
+.qiling-page-skin--cloud-canvas .pricing-card:hover,
+.qiling-page-skin--cloud-canvas .testimonial-card:hover,
+.qiling-page-skin--cloud-canvas .ql-testimonial-summary:hover,
+.qiling-page-skin--cloud-canvas .faq-item:hover,
+.template-qiling-cloud-canvas .feature-card:hover,
+.template-qiling-cloud-canvas .features-card:hover,
+.template-qiling-cloud-canvas .sc-card:hover,
+.template-qiling-cloud-canvas .pricing-card:hover,
+.template-qiling-cloud-canvas .faq-item:hover {
+    border-color: color-mix(in srgb, var(--qiling-page-accent, var(--qcc-blue)) 28%, transparent) !important;
+    box-shadow: 0 18px 44px rgba(70, 55, 120, 0.12) !important;
+}
+
+.qiling-page-skin--cloud-canvas .feature-icon,
+.qiling-page-skin--cloud-canvas .features-icon,
+.qiling-page-skin--cloud-canvas .service-icon,
+.qiling-page-skin--cloud-canvas .sc-icon,
+.template-qiling-cloud-canvas .feature-icon,
+.template-qiling-cloud-canvas .features-icon,
+.template-qiling-cloud-canvas .sc-icon {
+    background: linear-gradient(135deg, var(--qcc-coral) 0%, var(--qcc-blue) 100%) !important;
+}
+
+.qiling-page-skin--cloud-canvas :is(.module-title, .section-title, h1, h2, h3),
+.template-qiling-cloud-canvas :is(.module-title, .section-title, h1, h2, h3) {
+    color: var(--qcc-ink);
+}
+
+.qiling-page-skin--cloud-canvas :is(.module-desc, .section-subtitle, .features-subtitle, .services-subtitle, .stats-subtitle, .comparison-subtitle, .process-subtitle, .pricing-subtitle, .testimonials-subtitle, .faq-subtitle, p),
+.template-qiling-cloud-canvas :is(.module-desc, .section-subtitle, .features-subtitle, .process-subtitle, .pricing-subtitle, .faq-subtitle, p) {
+    color: var(--qcc-muted);
+}
+
+.qiling-page-skin--cloud-canvas .btn-primary,
+.qiling-page-skin--cloud-canvas .pricing-btn,
+.qiling-page-skin--cloud-canvas .cta-button,
+.template-qiling-cloud-canvas .btn-primary,
+.template-qiling-cloud-canvas .pricing-btn,
+.template-qiling-cloud-canvas .cta-button {
+    background: linear-gradient(90deg, var(--qiling-page-accent, var(--qcc-blue)) 0%, var(--qiling-page-accent-2, #6c8dff) 100%) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+}
+
+.qiling-page-skin--cloud-canvas .tab-btn,
+.qiling-page-skin--cloud-canvas :is(.cat-btn, .category-btn, .filter-btn) {
+    border-color: rgba(79, 125, 255, 0.22) !important;
+    background: rgba(255, 255, 255, 0.68) !important;
+    color: var(--qcc-ink) !important;
+}
+
+.qiling-page-skin--cloud-canvas .tab-btn:hover,
+.qiling-page-skin--cloud-canvas .tab-btn.active,
+.qiling-page-skin--cloud-canvas :is(.cat-btn, .category-btn, .filter-btn):hover,
+.qiling-page-skin--cloud-canvas :is(.cat-btn, .category-btn, .filter-btn).active,
+.qiling-page-skin--cloud-canvas :is(.cat-btn, .category-btn, .filter-btn).is-active {
+    border-color: transparent !important;
+    background: linear-gradient(135deg, var(--qiling-page-accent, var(--qcc-blue)) 0%, var(--qiling-page-accent-2, var(--qcc-coral)) 100%) !important;
+    color: var(--qiling-page-accent-contrast, #ffffff) !important;
+}
+
+.qiling-page-skin--cloud-canvas .module-cta,
+.template-qiling-cloud-canvas .module-cta {
+    margin: 40px min(4vw, 64px) 0;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 28px 64px rgba(63, 50, 104, 0.14);
+}
+
+.qiling-page-skin--hosting-canvas .module-stats {
+    color: var(--qcc-ink) !important;
+}
+
+.qiling-page-skin--hosting-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label) {
+    color: var(--qcc-ink) !important;
+    opacity: 1 !important;
+}
+
+.qiling-page-skin--hosting-canvas .module-stats .stats-subtitle,
+.qiling-page-skin--hosting-canvas .module-stats .stat-label {
+    color: var(--qcc-muted) !important;
+}
+
+.qiling-page-skin--hosting-canvas .module-stats .stat-item {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border-color: rgba(255, 122, 69, 0.16) !important;
+    box-shadow: 0 16px 38px rgba(88, 70, 140, 0.1) !important;
+}
+
+.qiling-page-skin--hosting-canvas .module-cta:not(.has-bg-image) {
+    background: linear-gradient(135deg, #ff7a45 0%, #ffb36b 100%) !important;
+    color: #ffffff !important;
+}
+
+.qiling-page-skin--hosting-canvas .module-cta .cta-overlay {
+    background: rgba(88, 70, 140, 0.12) !important;
+    opacity: 1 !important;
+}
+
+.qiling-page-skin--hosting-canvas .module-cta :is(.cta-title, .cta-subtitle) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 12px rgba(154, 52, 18, 0.18);
+}
+
+.qiling-page-skin--hosting-canvas .module-cta .btn-cta,
+.qiling-page-skin--hosting-canvas .module-cta .cta-button {
+    background: linear-gradient(135deg, #ff7a45 0%, #f4511e 100%) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 122, 69, 0.92) !important;
+    box-shadow: 0 16px 32px rgba(194, 65, 12, 0.24) !important;
+}
+
+.qiling-page-skin--hosting-canvas .module-cta .btn-cta:hover,
+.qiling-page-skin--hosting-canvas .module-cta .cta-button:hover {
+    background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
+    color: #ffffff !important;
+    border-color: #c2410c !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats {
+    color: #5a2a16 !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label) {
+    color: #5a2a16 !important;
+    opacity: 1 !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats .stats-title {
+    color: #7c2d12 !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats .stats-subtitle,
+body.qiling-page-skin-hosting-canvas .module-stats .stat-label {
+    color: rgba(90, 42, 22, 0.76) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats .stat-number,
+body.qiling-page-skin-hosting-canvas .module-stats .stat-plus {
+    color: #f97316 !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats .stat-item {
+    background: linear-gradient(180deg, #fff8f3 0%, #ffe2d4 100%) !important;
+    border-color: rgba(249, 115, 22, 0.26) !important;
+    box-shadow: 0 18px 42px rgba(194, 65, 12, 0.12) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta:not(.has-bg-image) {
+    --qiling-cta-button-bg: linear-gradient(135deg, #ff7a45 0%, #f4511e 100%) !important;
+    --qiling-cta-button-text: #ffffff !important;
+    --qiling-cta-button-border: rgba(255, 122, 69, 0.92) !important;
+    --qiling-cta-button-hover-bg: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
+    --qiling-cta-button-hover-text: #ffffff !important;
+    --qiling-cta-button-hover-border: #c2410c !important;
+    background: linear-gradient(135deg, #ff7a45 0%, #ffb36b 100%) !important;
+    background-image: linear-gradient(135deg, #ff7a45 0%, #ffb36b 100%) !important;
+    color: #ffffff !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: var(--qiling-cta-radius, 0) !important;
+    box-shadow: none !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta--layout-card {
+    margin: 40px min(4vw, 64px) 0 !important;
+    border-radius: var(--qiling-cta-radius, 28px) !important;
+    box-shadow: 0 28px 64px rgba(194, 65, 12, 0.14) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta--layout-seamless_footer,
+body.qiling-page-skin-hosting-canvas .module-cta--bridge-on {
+    margin-bottom: var(--qiling-cta-footer-overlap, -4px) !important;
+    position: relative;
+    z-index: 2;
+}
+
+body.qiling-page-skin-hosting-canvas .module-wrapper:last-child:has(.module-cta--bridge-auto),
+body.qiling-page-skin-hosting-canvas .module-wrapper:last-child:has(.module-cta--layout-standard.module-cta) {
+    margin-bottom: -4px !important;
+    padding-bottom: 0 !important;
+    position: relative;
+    z-index: 2;
+}
+
+body.qiling-page-skin-hosting-canvas .module-wrapper:last-child .module-cta--bridge-auto,
+body.qiling-page-skin-hosting-canvas .module-wrapper:last-child .module-cta--layout-standard.module-cta {
+    margin-bottom: -4px !important;
+    border-radius: 0 !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* 清除 CTA 外层 module-wrapper 的底部间距 */
+body.qiling-page-skin-hosting-canvas .module-wrapper:last-child:has(.module-cta--bridge-on),
+body.qiling-page-skin-hosting-canvas .module-wrapper:last-child:has(.module-cta--layout-seamless_footer) {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* 清除 hosting-canvas 模板容器与 footer 之间的间距 */
+body.qiling-page-skin-hosting-canvas .page-template:has(.module-cta--bridge-on),
+body.qiling-page-skin-hosting-canvas .page-template:has(.module-cta--layout-seamless_footer) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta .cta-overlay {
+    background: rgba(154, 52, 18, 0.1) !important;
+    opacity: 1 !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta :is(.cta-title, .cta-subtitle) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 12px rgba(154, 52, 18, 0.18);
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta .btn-cta,
+body.qiling-page-skin-hosting-canvas .module-cta .cta-button {
+    background: linear-gradient(135deg, #ff7a45 0%, #f4511e 100%) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 122, 69, 0.92) !important;
+    box-shadow: 0 16px 32px rgba(194, 65, 12, 0.24) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta .btn-cta:hover,
+body.qiling-page-skin-hosting-canvas .module-cta .cta-button:hover {
+    background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
+    color: #ffffff !important;
+    border-color: #c2410c !important;
+}
+
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn) {
+    border-color: rgba(249, 115, 22, 0.28) !important;
+    background: #fff3ea !important;
+    color: #7c2d12 !important;
+}
+
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn):hover,
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn).active,
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn).is-active {
+    border-color: transparent !important;
+    background: linear-gradient(135deg, #ff7a45 0%, #f97316 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Keep the hosting canvas on the green/blue palette declared by its package. */
+.qiling-page-skin--hosting-canvas {
+    background:
+        linear-gradient(156deg, rgba(5, 150, 105, 0.18) 0%, rgba(240, 253, 249, 0) 34%),
+        linear-gradient(180deg, #d1fae5 0%, #f0fdf9 44%, #dbeafe 74%, #f0fdf9 100%);
+}
+
+.qiling-page-skin--hosting-canvas::before {
+    background: linear-gradient(132deg, rgba(5, 150, 105, 0.22) 0%, rgba(209, 250, 229, 0.84) 46%, rgba(219, 234, 254, 0.72) 100%);
+}
+
+.qiling-page-skin--hosting-canvas::after {
+    background: linear-gradient(100deg, rgba(5, 150, 105, 0), rgba(37, 99, 235, 0.16));
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro {
+    --bbp-title-color: #134e4a !important;
+    --bbp-title-gradient: linear-gradient(135deg, #134e4a 0%, #059669 52%, #2563eb 100%) !important;
+    --bbp-text-color: rgba(19, 78, 74, 0.76) !important;
+    --bbp-primary-btn-bg: linear-gradient(135deg, #059669 0%, #2563eb 100%) !important;
+    --bbp-primary-btn-border: rgba(5, 150, 105, 0.92) !important;
+    --bbp-primary-btn-hover-bg: linear-gradient(135deg, #047857 0%, #1d4ed8 100%) !important;
+    --bbp-primary-btn-hover-border: #047857 !important;
+    --bbp-light-btn-bg: #ecfdf5 !important;
+    --bbp-light-btn-border: rgba(5, 150, 105, 0.28) !important;
+    --bbp-light-btn-text: #065f46 !important;
+    --bbp-light-btn-hover-bg: #d1fae5 !important;
+    --bbp-light-btn-hover-border: rgba(5, 150, 105, 0.42) !important;
+    --bbp-light-btn-hover-text: #047857 !important;
+    background:
+        radial-gradient(circle at 16% 18%, rgba(5, 150, 105, 0.2) 0%, rgba(5, 150, 105, 0) 34%),
+        radial-gradient(circle at 84% 24%, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0) 30%),
+        linear-gradient(135deg, #ecfdf5 0%, #f0fdf9 42%, #dbeafe 100%) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-media-wrap {
+    border-color: rgba(5, 150, 105, 0.18) !important;
+    box-shadow: 0 24px 60px rgba(19, 78, 74, 0.14) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-main-image {
+    filter: saturate(1.04) contrast(1.02);
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-primary {
+    box-shadow: 0 18px 34px rgba(5, 150, 105, 0.22) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-light,
+body.qiling-page-skin-hosting-canvas .module-brand-banner-pro .bbp-btn-outline {
+    box-shadow: 0 14px 28px rgba(19, 78, 74, 0.12) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats,
+body.qiling-page-skin-hosting-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label) {
+    color: #134e4a !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats .stat-number,
+body.qiling-page-skin-hosting-canvas .module-stats .stat-plus {
+    color: #059669 !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-stats .stat-item {
+    background: linear-gradient(180deg, #f0fdf9 0%, #dbeafe 100%) !important;
+    border-color: rgba(5, 150, 105, 0.24) !important;
+    box-shadow: 0 18px 42px rgba(19, 78, 74, 0.12) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta:not(.has-bg-image) {
+    --qiling-cta-button-bg: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+    --qiling-cta-button-border: #059669 !important;
+    --qiling-cta-button-hover-bg: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+    --qiling-cta-button-hover-border: #047857 !important;
+    background: linear-gradient(135deg, #059669 0%, #2563eb 100%) !important;
+    background-image: linear-gradient(135deg, #059669 0%, #2563eb 100%) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta .cta-overlay {
+    background: rgba(19, 78, 74, 0.12) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta .btn-cta,
+body.qiling-page-skin-hosting-canvas .module-cta .cta-button {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+    color: #ffffff !important;
+    border-color: #059669 !important;
+    box-shadow: 0 16px 32px rgba(5, 150, 105, 0.24) !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta .btn-cta:hover,
+body.qiling-page-skin-hosting-canvas .module-cta .cta-button:hover {
+    background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+    color: #ffffff !important;
+    border-color: #047857 !important;
+}
+
+body.qiling-page-skin-hosting-canvas .module-cta :is(.cta-title, .cta-subtitle) {
+    text-shadow: 0 2px 12px rgba(19, 78, 74, 0.2);
+}
+
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn) {
+    border-color: rgba(5, 150, 105, 0.28) !important;
+    background: #ecfdf5 !important;
+    color: #065f46 !important;
+}
+
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn):hover,
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn).active,
+body.qiling-page-skin-hosting-canvas :is(.cat-btn, .category-btn, .filter-btn, .tab-btn).is-active {
+    background: linear-gradient(135deg, #059669 0%, #2563eb 100%) !important;
+    color: #ffffff !important;
+}
+
+.qiling-cloud-canvas-empty-state {
+    min-height: 58vh;
+    display: flex;
+    align-items: center;
+}
+
+.qiling-cloud-canvas-empty-state__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 18px;
+    border-radius: 22px;
+    color: #ffffff;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--qcc-coral) 0%, var(--qcc-blue) 100%);
+    box-shadow: var(--qcc-shadow);
+}
+
+.qiling-cloud-canvas-empty-state__title {
+    margin-bottom: 12px;
+    color: var(--qcc-ink);
+}
+
+.qiling-cloud-canvas-empty-state__desc {
+    max-width: 620px;
+    margin: 0 auto 24px;
+    color: var(--qcc-muted);
+}
+
+@media (max-width: 1024px) {
+    .qiling-page-skin--cloud-canvas::before,
+    .template-qiling-cloud-canvas::before {
+        height: 640px;
+    }
+
+    .qiling-page-skin--cloud-canvas .module-brand-banner-pro,
+    .template-qiling-cloud-canvas .module-brand-banner-pro {
+        min-height: auto;
+    }
+
+    .qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-stage,
+    .template-qiling-cloud-canvas .module-brand-banner-pro .bbp-stage {
+        padding-top: max(var(--bbp-pt, 96px), 96px);
+    }
+}
+
+@media (max-width: 767px) {
+    .qiling-page-skin--cloud-canvas,
+    .template-qiling-cloud-canvas {
+        background: linear-gradient(180deg, #fff2e8 0%, #fff8f1 46%, #ffffff 100%);
+    }
+
+    .qiling-page-skin--tech-canvas {
+        background: linear-gradient(180deg, #eef6ff 0%, #f7fbff 48%, #ffffff 100%);
+    }
+
+    .qiling-page-skin--hosting-canvas {
+        background: linear-gradient(180deg, #d1fae5 0%, #f0fdf9 48%, #dbeafe 100%);
+    }
+
+    .qiling-page-skin--cloud-canvas::before,
+    .template-qiling-cloud-canvas::before {
+        top: -150px;
+        left: -24vw;
+        width: 150vw;
+        height: 560px;
+        border-bottom-left-radius: 28% 12%;
+        border-bottom-right-radius: 36% 18%;
+    }
+
+    .qiling-page-skin--cloud-canvas::after,
+    .template-qiling-cloud-canvas::after {
+        display: none;
+    }
+
+    .qiling-page-skin--cloud-canvas :is(.module-features, .module-services, .module-service-cards, .module-stats, .module-process, .module-comparison, .module-pricing, .module-testimonials, .module-faq)::before {
+        inset: -42px -18px;
+        border-radius: 24px;
+    }
+
+    .qiling-page-skin--cloud-canvas .module-service-cards,
+    .qiling-page-skin--cloud-canvas .module-services,
+    .qiling-page-skin--cloud-canvas .module-stats,
+    .qiling-page-skin--cloud-canvas .module-process,
+    .qiling-page-skin--cloud-canvas .module-comparison,
+    .qiling-page-skin--cloud-canvas .module-pricing,
+    .qiling-page-skin--cloud-canvas .module-testimonials,
+    .qiling-page-skin--cloud-canvas .module-faq,
+    .template-qiling-cloud-canvas .module-service-cards,
+    .template-qiling-cloud-canvas .module-process,
+    .template-qiling-cloud-canvas .module-pricing,
+    .template-qiling-cloud-canvas .module-faq {
+        --qps-section-overlap: 0px;
+    }
+
+    .qiling-page-skin--cloud-canvas .module-brand-banner-pro .bbp-stage,
+    .template-qiling-cloud-canvas .module-brand-banner-pro .bbp-stage {
+        padding-top: max(var(--bbp-pt, 88px), 88px);
+        padding-bottom: 56px;
+    }
+
+    .qiling-page-skin--cloud-canvas .module-features,
+    .template-qiling-cloud-canvas .module-features {
+        margin-top: 0;
+    }
+
+    .qiling-page-skin--cloud-canvas .module-cta,
+    .template-qiling-cloud-canvas .module-cta {
+        margin-left: 18px;
+        margin-right: 18px;
+        border-radius: 20px;
+    }
+}

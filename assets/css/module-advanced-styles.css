@@ -1,0 +1,242 @@
+[data-qds-advanced="1"] {
+    display: var(--qds-display-desktop, block);
+    margin-top: var(--qds-margin-top-desktop) !important;
+    margin-right: var(--qds-margin-right-desktop) !important;
+    margin-bottom: var(--qds-margin-bottom-desktop) !important;
+    margin-left: var(--qds-margin-left-desktop) !important;
+    padding-top: var(--qds-padding-top-desktop);
+    padding-right: var(--qds-padding-right-desktop);
+    padding-bottom: var(--qds-padding-bottom-desktop);
+    padding-left: var(--qds-padding-left-desktop);
+    border-width: var(--qds-border-width);
+    border-style: var(--qds-border-style);
+    border-color: var(--qds-border-color);
+    border-radius: var(--qds-radius-desktop);
+    box-shadow: var(--qds-shadow-default);
+    background-color: var(--qds-background-color);
+    background-image: var(--qds-background-image);
+    background-size: var(--qds-background-size);
+    background-position: var(--qds-background-position);
+    background-repeat: var(--qds-background-repeat);
+    transition: background-color .24s ease, border-color .24s ease, box-shadow .24s ease, color .24s ease, transform .24s ease;
+}
+
+[data-qds-advanced="1"] :is(.module-title, .section-title, .block-title, .entry-title, .banner-title, .hero-title),
+[data-qds-advanced="1"] :is(.module-title, .section-title, .block-title, .entry-title, .banner-title, .hero-title) > a {
+    color: var(--qds-title-color, var(--qiling-module-title));
+    font-size: var(--qds-title-size-desktop);
+    font-weight: var(--qds-title-weight);
+    line-height: var(--qds-title-line-height);
+    transition: color .24s ease;
+}
+
+[data-qds-advanced="1"] :is(h1, h2, h3, h4, h5, h6),
+[data-qds-advanced="1"] :is(h1, h2, h3, h4, h5, h6) > a {
+    color: var(--qds-title-color, var(--qiling-module-title));
+}
+
+[data-qds-advanced="1"] :is(.subtitle, .section-subtitle, .banner-subtitle, .module-subtitle, .section-desc) {
+    color: var(--qds-subtitle-color, var(--qiling-module-subtitle));
+    font-size: var(--qds-subtitle-size-desktop);
+    font-weight: var(--qds-subtitle-weight);
+    line-height: var(--qds-subtitle-line-height);
+}
+
+[data-qds-advanced="1"] :is(p, li, .desc, .description, .excerpt, .entry-excerpt, .module-desc, .content-text):not(.subtitle):not(.section-subtitle):not(.banner-subtitle):not(.module-subtitle):not(.section-desc) {
+    color: var(--qds-text-color, var(--qiling-module-text));
+    font-size: var(--qds-text-size-desktop);
+    font-weight: var(--qds-text-weight);
+    line-height: var(--qds-text-line-height);
+}
+
+[data-qds-advanced="1"][data-qds-button-color="1"] :is(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .pm-inquire-btn, .qw-detail-cta, .pricing-btn, .countdown-btn, .post-read-more, .qiling-query-loop-card__read-more, .am-btn, .ch-link, .ct-link, .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .btn-load-more, .qil-ml-link, .qil-mjs-link, .qil-rw-post, .qil-kc-link, .ps-small-btn, .ps-cta-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .qvr-more, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn) {
+    color: var(--qds-button-color, #ffffff);
+}
+
+[data-qds-advanced="1"][data-qds-button-hover-color="1"] :is(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .pm-inquire-btn, .qw-detail-cta, .pricing-btn, .countdown-btn, .post-read-more, .qiling-query-loop-card__read-more, .am-btn, .ch-link, .ct-link, .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .btn-load-more, .qil-ml-link, .qil-mjs-link, .qil-rw-post, .qil-kc-link, .ps-small-btn, .ps-cta-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .qvr-more, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn):hover {
+    color: var(--qds-button-hover-color, #ffffff);
+}
+
+[data-qds-advanced="1"][data-qds-button-size="1"] :is(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .pm-inquire-btn, .qw-detail-cta, .pricing-btn, .countdown-btn, .post-read-more, .qiling-query-loop-card__read-more, .am-btn, .ch-link, .ct-link, .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .btn-load-more, .qil-ml-link, .qil-mjs-link, .qil-rw-post, .qil-kc-link, .ps-small-btn, .ps-cta-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .qvr-more, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn) {
+    font-size: var(--qds-button-size-desktop);
+}
+
+[data-qds-advanced="1"][data-qds-button-weight="1"] :is(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .pm-inquire-btn, .qw-detail-cta, .pricing-btn, .countdown-btn, .post-read-more, .qiling-query-loop-card__read-more, .am-btn, .ch-link, .ct-link, .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .btn-load-more, .qil-ml-link, .qil-mjs-link, .qil-rw-post, .qil-kc-link, .ps-small-btn, .ps-cta-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .qvr-more, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn) {
+    font-weight: var(--qds-button-weight);
+}
+
+[data-qds-advanced="1"][data-qds-button-line-height="1"] :is(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .pm-inquire-btn, .qw-detail-cta, .pricing-btn, .countdown-btn, .post-read-more, .qiling-query-loop-card__read-more, .am-btn, .ch-link, .ct-link, .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .btn-load-more, .qil-ml-link, .qil-mjs-link, .qil-rw-post, .qil-kc-link, .ps-small-btn, .ps-cta-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .qvr-more, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn) {
+    line-height: var(--qds-button-line-height);
+}
+
+[data-qds-advanced="1"]:hover {
+    background-color: var(--qds-hover-background-color, var(--qds-background-color));
+    border-color: var(--qds-hover-border-color, var(--qds-border-color));
+    box-shadow: var(--qds-shadow-hover, var(--qds-shadow-default));
+}
+
+[data-qds-advanced="1"]:hover :is(.module-title, .section-title, .block-title, .entry-title, .banner-title, .hero-title) {
+    color: var(--qds-hover-title-color, var(--qds-title-color));
+}
+
+[data-qds-visual="1"] {
+    background: var(--qiling-module-bg);
+}
+
+[data-qds-visual="1"] > :is(.module, section[class*="module-"], .developer-starter-module):not(.qds-local-bg-style) {
+    background: var(--qiling-module-bg);
+}
+
+[data-qds-visual="1"]:not([data-qds-advanced="1"]) :is(.module-title, .section-title, .block-title, .entry-title, .banner-title, .hero-title),
+[data-qds-visual="1"]:not([data-qds-advanced="1"]) :is(.module-title, .section-title, .block-title, .entry-title, .banner-title, .hero-title) > a {
+    color: var(--qiling-module-title);
+}
+
+[data-qds-visual="1"]:not([data-qds-advanced="1"]) :is(h1, h2, h3, h4, h5, h6),
+[data-qds-visual="1"]:not([data-qds-advanced="1"]) :is(h1, h2, h3, h4, h5, h6) > a {
+    color: var(--qiling-module-title);
+}
+
+[data-qds-visual="1"] :is(.subtitle, .section-subtitle, .banner-subtitle, .module-subtitle, .section-desc) {
+    color: var(--qiling-module-subtitle);
+}
+
+[data-qds-visual="1"] :is(p, li, .desc, .description, .excerpt, .entry-excerpt, .module-desc, .content-text):not(.subtitle):not(.section-subtitle):not(.banner-subtitle):not(.module-subtitle):not(.section-desc) {
+    color: var(--qiling-module-text);
+}
+
+[data-qds-visual="1"] :is(.muted, .meta, .eyebrow, .tagline, .small-text, .card-desc, .service-desc, .feature-desc) {
+    color: var(--qiling-module-muted);
+}
+
+[data-qds-visual="1"] :where(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .post-read-more, .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn, .branch-map-btn, .branch-book-btn, .ct-link, .ch-link, .qil-ml-link, .qil-kc-link, .qil-mjs-link, .qil-rw-post, .qiling-query-loop-card__read-more, .qvr-more, .qw-detail-cta, .visual-tabs-panel-cta, .am-btn, .countdown-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn) {
+    background: var(--qiling-module-button-bg, var(--qiling-button-bg, var(--color-primary)));
+    color: var(--qiling-module-button-text, var(--qiling-button-text, #ffffff));
+    border-color: var(--qiling-module-button-bg, var(--qiling-button-bg, var(--color-primary)));
+}
+
+[data-qds-visual="1"] :where(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .post-read-more, .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn, .branch-map-btn, .branch-book-btn, .ct-link, .ch-link, .qil-ml-link, .qil-kc-link, .qil-mjs-link, .qil-rw-post, .qiling-query-loop-card__read-more, .qvr-more, .qw-detail-cta, .visual-tabs-panel-cta, .am-btn, .countdown-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn):hover {
+    background: var(--qiling-module-button-hover-bg, var(--qiling-button-hover-bg, var(--color-primary-hover)));
+    color: var(--qiling-module-button-hover-text, var(--qiling-button-hover-text, #ffffff));
+    border-color: var(--qiling-module-button-hover-bg, var(--qiling-button-hover-bg, var(--color-primary-hover)));
+}
+
+[data-qds-visual="1"] :is(.card, .module-card, .feature-card, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card) {
+    background: var(--qiling-module-card-bg);
+    border-color: var(--qiling-module-card-border);
+    box-shadow: var(--qiling-module-card-shadow);
+}
+
+[data-qds-visual="1"] :is(.banner-stats-bar) {
+    background: var(--qiling-module-card-bg, rgba(var(--qiling-rgb-255-255-255), 0.14));
+    border-color: var(--qiling-module-card-border, rgba(var(--qiling-rgb-255-255-255), 0.24));
+    box-shadow: var(--qiling-module-card-shadow, 0 12px 34px rgba(var(--qiling-rgb-15-23-42), 0.08));
+}
+
+
+@media (max-width: 991px) {
+    [data-qds-advanced="1"] {
+        display: var(--qds-display-tablet, var(--qds-display-desktop, block));
+        margin-top: var(--qds-margin-top-tablet, var(--qds-margin-top-desktop)) !important;
+        margin-right: var(--qds-margin-right-tablet, var(--qds-margin-right-desktop)) !important;
+        margin-bottom: var(--qds-margin-bottom-tablet, var(--qds-margin-bottom-desktop)) !important;
+        margin-left: var(--qds-margin-left-tablet, var(--qds-margin-left-desktop)) !important;
+        padding-top: var(--qds-padding-top-tablet, var(--qds-padding-top-desktop));
+        padding-right: var(--qds-padding-right-tablet, var(--qds-padding-right-desktop));
+        padding-bottom: var(--qds-padding-bottom-tablet, var(--qds-padding-bottom-desktop));
+        padding-left: var(--qds-padding-left-tablet, var(--qds-padding-left-desktop));
+        border-radius: var(--qds-radius-tablet, var(--qds-radius-desktop));
+    }
+
+    [data-qds-advanced="1"] :is(.module-title, .section-title, .block-title, .entry-title, .banner-title, .hero-title) {
+        font-size: var(--qds-title-size-tablet, var(--qds-title-size-desktop)) !important;
+    }
+
+    [data-qds-advanced="1"] :is(.subtitle, .section-subtitle, .banner-subtitle, .module-subtitle, .section-desc) {
+        font-size: var(--qds-subtitle-size-tablet, var(--qds-subtitle-size-desktop)) !important;
+    }
+
+    [data-qds-advanced="1"] :is(p, li, .desc, .description, .excerpt, .entry-excerpt, .module-desc, .content-text):not(.subtitle):not(.section-subtitle):not(.banner-subtitle):not(.module-subtitle):not(.section-desc) {
+        font-size: var(--qds-text-size-tablet, var(--qds-text-size-desktop)) !important;
+    }
+
+    [data-qds-advanced="1"][data-qds-button-size="1"] :is(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .pm-inquire-btn, .qw-detail-cta, .pricing-btn, .countdown-btn, .post-read-more, .qiling-query-loop-card__read-more, .am-btn, .ch-link, .ct-link, .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .btn-load-more, .qil-ml-link, .qil-mjs-link, .qil-rw-post, .qil-kc-link, .ps-small-btn, .ps-cta-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .qvr-more, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn) {
+        font-size: var(--qds-button-size-tablet, var(--qds-button-size-desktop)) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    [data-qds-advanced="1"] {
+        display: var(--qds-display-mobile, var(--qds-display-tablet, var(--qds-display-desktop, block)));
+        margin-top: var(--qds-margin-top-mobile, var(--qds-margin-top-tablet, var(--qds-margin-top-desktop))) !important;
+        margin-right: var(--qds-margin-right-mobile, var(--qds-margin-right-tablet, var(--qds-margin-right-desktop))) !important;
+        margin-bottom: var(--qds-margin-bottom-mobile, var(--qds-margin-bottom-tablet, var(--qds-margin-bottom-desktop))) !important;
+        margin-left: var(--qds-margin-left-mobile, var(--qds-margin-left-tablet, var(--qds-margin-left-desktop))) !important;
+        padding-top: var(--qds-padding-top-mobile, var(--qds-padding-top-tablet, var(--qds-padding-top-desktop)));
+        padding-right: var(--qds-padding-right-mobile, var(--qds-padding-right-tablet, var(--qds-padding-right-desktop)));
+        padding-bottom: var(--qds-padding-bottom-mobile, var(--qds-padding-bottom-tablet, var(--qds-padding-bottom-desktop)));
+        padding-left: var(--qds-padding-left-mobile, var(--qds-padding-left-tablet, var(--qds-padding-left-desktop)));
+        border-radius: var(--qds-radius-mobile, var(--qds-radius-tablet, var(--qds-radius-desktop)));
+    }
+
+    [data-qds-advanced="1"] :is(.module-title, .section-title, .block-title, .entry-title, .banner-title, .hero-title) {
+        font-size: var(--qds-title-size-mobile, var(--qds-title-size-tablet, var(--qds-title-size-desktop))) !important;
+    }
+
+    [data-qds-advanced="1"] :is(.subtitle, .section-subtitle, .banner-subtitle, .module-subtitle, .section-desc) {
+        font-size: var(--qds-subtitle-size-mobile, var(--qds-subtitle-size-tablet, var(--qds-subtitle-size-desktop))) !important;
+    }
+
+    [data-qds-advanced="1"] :is(p, li, .desc, .description, .excerpt, .entry-excerpt, .module-desc, .content-text):not(.subtitle):not(.section-subtitle):not(.banner-subtitle):not(.module-subtitle):not(.section-desc) {
+        font-size: var(--qds-text-size-mobile, var(--qds-text-size-tablet, var(--qds-text-size-desktop))) !important;
+    }
+
+    [data-qds-advanced="1"][data-qds-button-size="1"] :is(.banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn, .btn-cta, .news-more-link, .pm-inquire-btn, .qw-detail-cta, .pricing-btn, .countdown-btn, .post-read-more, .qiling-query-loop-card__read-more, .am-btn, .ch-link, .ct-link, .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .btn-load-more, .qil-ml-link, .qil-mjs-link, .qil-rw-post, .qil-kc-link, .ps-small-btn, .ps-cta-btn, .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link, .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn, .qvph-play-btn, .qvph-search-submit, .qvr-more, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn) {
+        font-size: var(--qds-button-size-mobile, var(--qds-button-size-tablet, var(--qds-button-size-desktop))) !important;
+    }
+}
+
+.qfb-advanced-section {
+    margin-top: var(--qiling-space-14);
+    padding-top: var(--qiling-space-14);
+    border-top: 1px solid var(--color-neutral-200);
+}
+
+.qfb-advanced-section-title {
+    margin: 0 0 var(--qiling-space-10);
+    font-size: calc(var(--qiling-font-size-base) * 0.8125);
+    font-weight: 700;
+    color: var(--color-neutral-900);
+}
+
+.qfb-advanced-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--qiling-space-10);
+}
+
+.qfb-advanced-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--qiling-text-rem-0p75);
+}
+
+.qfb-advanced-table th,
+.qfb-advanced-table td {
+    border: 1px solid var(--color-neutral-200);
+    padding: var(--qiling-space-6);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.qfb-advanced-table th {
+    background: var(--color-neutral-50);
+    color: var(--color-neutral-700);
+    font-weight: 600;
+}
+
+.qfb-advanced-inline-note {
+    margin-top: var(--qiling-space-6);
+    color: var(--color-neutral-500);
+    font-size: var(--qiling-text-rem-0p75);
+}

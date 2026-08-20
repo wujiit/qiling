@@ -1,0 +1,405 @@
+/**
+ * 用户投稿页面样式
+ * @package Developer_Starter
+ */
+
+/* 投稿页面容器 */
+.submit-post-page {
+    padding: var(--qiling-space-60) 0;
+    min-height: 70vh;
+}
+
+.submit-post-page .container {
+    max-width: var(--qiling-measure-900);
+}
+
+/* 功能禁用/登录提示 */
+.submit-post-disabled,
+.submit-post-login-required {
+    text-align: center;
+    padding: var(--qiling-space-80) var(--qiling-space-40);
+    background: var(--color-neutral-0);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.05);
+}
+
+.submit-post-disabled .disabled-icon,
+.submit-post-login-required .login-icon {
+    margin-bottom: var(--qiling-space-24);
+    color: var(--color-gray-400);
+}
+
+.submit-post-disabled h2,
+.submit-post-login-required h2 {
+    font-size: calc(var(--qiling-font-size-base) * 1.75);
+    font-weight: 700;
+    margin-bottom: var(--qiling-space-12);
+    color: var(--color-gray-800);
+}
+
+.submit-post-disabled p,
+.submit-post-login-required p {
+    color: var(--color-gray-500);
+    margin-bottom: var(--qiling-space-24);
+    font-size: var(--qiling-font-size-base);
+}
+
+.submit-post-disabled .btn-primary,
+.submit-post-login-required .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-12) var(--qiling-space-28);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    color: var(--color-neutral-0);
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.submit-post-disabled .btn-primary:hover,
+.submit-post-login-required .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* 投稿表单容器 */
+.submit-post-form-wrapper {
+    background: var(--color-neutral-0);
+    border-radius: 16px;
+    padding: var(--qiling-space-40);
+    box-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.05);
+}
+
+/* 表单头部 */
+.form-header {
+    margin-bottom: var(--qiling-space-32);
+    padding-bottom: var(--qiling-space-24);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.form-title {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-12);
+    font-size: calc(var(--qiling-font-size-base) * 1.75);
+    font-weight: 700;
+    color: var(--color-gray-800);
+    margin-bottom: var(--qiling-space-8);
+}
+
+.form-title svg {
+    color: var(--color-primary);
+}
+
+.form-desc {
+    color: var(--color-gray-500);
+    font-size: calc(var(--qiling-font-size-base) * 0.95);
+}
+
+/* 表单组 */
+.submit-post-form .form-group {
+    margin-bottom: var(--qiling-space-24);
+}
+
+.submit-post-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    margin-bottom: var(--qiling-space-8);
+    font-size: calc(var(--qiling-font-size-base) * 0.95);
+}
+
+.submit-post-form .required {
+    color: var(--color-error);
+}
+
+.submit-post-form .label-hint {
+    font-weight: 400;
+    color: var(--color-gray-400);
+    font-size: calc(var(--qiling-font-size-base) * 0.85);
+}
+
+/* 输入框 */
+.submit-post-form input[type="text"],
+.submit-post-form select {
+    width: 100%;
+    padding: var(--qiling-space-14) var(--qiling-space-16);
+    border: 2px solid var(--color-gray-200);
+    border-radius: 10px;
+    font-size: var(--qiling-font-size-base);
+    transition: all 0.3s ease;
+    background: var(--color-neutral-0);
+}
+
+.submit-post-form input[type="text"]:focus,
+.submit-post-form select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.submit-post-form input::placeholder {
+    color: var(--color-gray-400);
+}
+
+/* 字数统计 */
+.char-count {
+    display: block;
+    text-align: right;
+    font-size: calc(var(--qiling-font-size-base) * 0.8);
+    color: var(--color-gray-400);
+    margin-top: var(--qiling-space-6);
+}
+
+/* 编辑器包装 */
+.editor-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.editor-wrapper .wp-editor-container {
+    border: 2px solid var(--color-gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.editor-wrapper .mce-panel {
+    border-color: var(--color-gray-200) !important;
+}
+
+.editor-wrapper .mce-toolbar-grp {
+    background: var(--color-gray-50) !important;
+    border-bottom: 1px solid var(--color-gray-200) !important;
+}
+
+.editor-wrapper .quicktags-toolbar {
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-gray-200);
+    padding: var(--qiling-space-8);
+}
+
+.editor-wrapper .wp-switch-editor {
+    background: var(--color-gray-100);
+    border-color: var(--color-gray-200);
+}
+
+.editor-wrapper .html-active .switch-html,
+.editor-wrapper .tmce-active .switch-tmce {
+    background: var(--color-neutral-0);
+}
+
+/* 标签预览 */
+.tags-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-8);
+    margin-top: var(--qiling-space-10);
+}
+
+.tag-item {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--qiling-space-6) var(--qiling-space-12);
+    background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.1) 0%, rgba(var(--qiling-rgb-124-58-237), 0.1) 100%);
+    color: var(--color-primary);
+    border-radius: 20px;
+    font-size: calc(var(--qiling-font-size-base) * 0.85);
+    font-weight: 500;
+}
+
+/* 提交按钮 */
+.form-actions {
+    margin-top: var(--qiling-space-32);
+    padding-top: var(--qiling-space-24);
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--qiling-space-10);
+    padding: var(--qiling-space-16) var(--qiling-space-40);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    color: var(--color-neutral-0);
+    border: none;
+    border-radius: 10px;
+    font-size: var(--qiling-font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--color-primary-rgb), 0.35);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-submit .spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 提交消息 */
+.submit-message {
+    margin-top: var(--qiling-space-20);
+    padding: var(--qiling-space-16) var(--qiling-space-20);
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.submit-message.success {
+    background: var(--qiling-color-ecfdf5);
+    color: var(--qiling-color-047857);
+    border: 1px solid var(--qiling-color-a7f3d0);
+}
+
+.submit-message.error {
+    background: var(--qiling-color-fef2f2);
+    color: var(--qiling-color-b91c1c);
+    border: 1px solid var(--qiling-color-fecaca);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .submit-post-page {
+        padding: var(--qiling-space-30) 0;
+    }
+    
+    .submit-post-form-wrapper {
+        padding: var(--qiling-space-24);
+        border-radius: 12px;
+    }
+    
+    .form-title {
+        font-size: calc(var(--qiling-font-size-base) * 1.5);
+    }
+    
+    .submit-post-disabled,
+    .submit-post-login-required {
+        padding: var(--qiling-space-50) var(--qiling-space-24);
+    }
+    
+    .btn-submit {
+        width: 100%;
+        padding: var(--qiling-space-14) var(--qiling-space-30);
+    }
+}
+
+/* ===== 暗黑模式 ===== */
+html.dark-mode .submit-post-disabled,
+html.dark-mode .submit-post-login-required,
+html.dark-mode .submit-post-form-wrapper {
+    background: var(--color-neutral-800);
+    box-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.2);
+}
+
+html.dark-mode .submit-post-disabled h2,
+html.dark-mode .submit-post-login-required h2,
+html.dark-mode .form-title {
+    color: var(--color-neutral-100);
+}
+
+html.dark-mode .submit-post-disabled p,
+html.dark-mode .submit-post-login-required p,
+html.dark-mode .form-desc {
+    color: var(--color-neutral-400);
+}
+
+html.dark-mode .form-header {
+    border-bottom-color: var(--color-neutral-700);
+}
+
+html.dark-mode .submit-post-form label {
+    color: var(--color-neutral-200);
+}
+
+html.dark-mode .submit-post-form .label-hint {
+    color: var(--color-text-muted);
+}
+
+html.dark-mode .submit-post-form input[type="text"],
+html.dark-mode .submit-post-form select {
+    background: var(--color-neutral-900);
+    border-color: var(--color-neutral-700);
+    color: var(--color-neutral-100);
+}
+
+html.dark-mode .submit-post-form input::placeholder {
+    color: var(--color-text-muted);
+}
+
+html.dark-mode .submit-post-form input[type="text"]:focus,
+html.dark-mode .submit-post-form select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.2);
+}
+
+html.dark-mode .char-count {
+    color: var(--color-text-muted);
+}
+
+html.dark-mode .editor-wrapper .wp-editor-container {
+    border-color: var(--color-neutral-700);
+}
+
+html.dark-mode .editor-wrapper .mce-panel {
+    border-color: var(--color-neutral-700) !important;
+    background: var(--color-neutral-900) !important;
+}
+
+html.dark-mode .editor-wrapper .mce-toolbar-grp,
+html.dark-mode .editor-wrapper .quicktags-toolbar {
+    background: var(--color-neutral-800) !important;
+    border-bottom-color: var(--color-neutral-700) !important;
+}
+
+html.dark-mode .editor-wrapper .mce-btn button {
+    color: var(--color-neutral-200) !important;
+}
+
+html.dark-mode .editor-wrapper iframe {
+    background: var(--color-neutral-900);
+}
+
+html.dark-mode .editor-wrapper .wp-switch-editor {
+    background: var(--color-neutral-700);
+    border-color: var(--color-neutral-600);
+    color: var(--color-neutral-200);
+}
+
+html.dark-mode .editor-wrapper .html-active .switch-html,
+html.dark-mode .editor-wrapper .tmce-active .switch-tmce {
+    background: var(--color-neutral-800);
+}
+
+html.dark-mode .tag-item {
+    background: rgba(var(--color-primary-rgb), 0.2);
+}
+
+html.dark-mode .form-actions {
+    border-top-color: var(--color-neutral-700);
+}
+
+html.dark-mode .submit-message.success {
+    background: rgba(var(--color-success-rgb), 0.2);
+    color: var(--qiling-color-34d399);
+    border-color: rgba(var(--color-success-rgb), 0.3);
+}
+
+html.dark-mode .submit-message.error {
+    background: rgba(var(--color-error-rgb), 0.2);
+    color: var(--color-error);
+    border-color: rgba(var(--color-error-rgb), 0.3);
+}

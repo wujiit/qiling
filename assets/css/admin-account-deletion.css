@@ -1,0 +1,113 @@
+/**
+ * Account deletion admin page styles
+ *
+ * @package Developer_Starter
+ */
+
+.qiling-account-deletion-admin {
+    max-width: calc(var(--qiling-measure-1200) + var(--qiling-measure-200));
+}
+
+.qiling-account-deletion-admin__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-10);
+    margin: var(--qiling-space-16) 0;
+}
+
+.qiling-account-deletion-admin .stat-item {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--qiling-space-6) var(--qiling-space-12);
+    border-radius: 999px;
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-700);
+    font-weight: 600;
+    font-size: calc(var(--qiling-font-size-base) * 0.75);
+}
+
+.qiling-account-deletion-admin .stat-pending {
+    background: var(--qiling-color-fef9c3);
+    color: var(--qiling-color-92400e);
+}
+
+.qiling-account-deletion-admin .stat-processed {
+    background: var(--qiling-color-dcfce7);
+    color: var(--qiling-color-166534);
+}
+
+.qiling-account-deletion-admin .stat-rejected {
+    background: var(--qiling-color-fee2e2);
+    color: var(--qiling-color-991b1b);
+}
+
+.qiling-account-deletion-admin__filters {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-10);
+    margin: var(--qiling-space-12) 0 var(--qiling-space-16);
+}
+
+.qiling-account-deletion-admin__filters input[type="search"] {
+    min-width: var(--qiling-measure-260);
+}
+
+.qiling-account-deletion-admin .muted {
+    color: var(--color-neutral-500);
+    font-size: calc(var(--qiling-font-size-base) * 0.75);
+    line-height: 1.45;
+}
+
+.qiling-account-deletion-admin .muted.is-danger {
+    color: var(--color-error);
+}
+
+.qiling-account-deletion-admin .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--qiling-space-3) var(--qiling-space-10);
+    border-radius: 999px;
+    font-size: calc(var(--qiling-font-size-base) * 0.75);
+    font-weight: 700;
+    border: 1px solid transparent;
+}
+
+.qiling-account-deletion-admin .status-pending {
+    background: var(--qiling-color-fef9c3);
+    color: var(--qiling-color-92400e);
+    border-color: var(--qiling-color-fde68a);
+}
+
+.qiling-account-deletion-admin .status-approved {
+    background: var(--qiling-color-dbeafe);
+    color: var(--color-primary-dark);
+    border-color: var(--qiling-color-bfdbfe);
+}
+
+.qiling-account-deletion-admin .status-rejected {
+    background: var(--qiling-color-fee2e2);
+    color: var(--qiling-color-991b1b);
+    border-color: var(--qiling-color-fecaca);
+}
+
+.qiling-account-deletion-admin .status-processed {
+    background: var(--qiling-color-dcfce7);
+    color: var(--qiling-color-166534);
+    border-color: var(--qiling-color-86efac);
+}
+
+.qiling-account-deletion-admin .text-danger {
+    color: var(--color-error);
+}
+
+@media (max-width: 782px) {
+    .qiling-account-deletion-admin__filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .qiling-account-deletion-admin__filters input[type="search"] {
+        min-width: 0;
+        width: 100%;
+    }
+}

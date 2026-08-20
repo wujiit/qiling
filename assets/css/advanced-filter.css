@@ -1,0 +1,267 @@
+/**
+ * 高级分类筛选样式
+ * 与 category.css 风格统一
+ * @package Developer_Starter
+ */
+
+/* ==========================================
+   高级分类筛选区域
+   ========================================== */
+
+.adv-filter-section {
+    background: var(--color-neutral-0);
+    border-bottom: 1px solid var(--color-neutral-200);
+    padding: var(--qiling-space-20) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.04);
+}
+
+/* 筛选行 */
+.adv-filter-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-12);
+    margin-bottom: var(--qiling-space-12);
+}
+
+.adv-filter-row:last-child {
+    margin-bottom: 0;
+}
+
+/* 筛选标签 */
+.adv-filter-label {
+    font-weight: 600;
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
+    color: var(--color-neutral-800);
+    min-width: var(--qiling-measure-70);
+    flex-shrink: 0;
+}
+
+/* 筛选按钮组 */
+.adv-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-10);
+}
+
+/* 筛选按钮 - 与分类标签风格统一 */
+.adv-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--qiling-space-8) var(--qiling-space-20);
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
+    font-weight: 500;
+    color: var(--color-neutral-500);
+    background: var(--color-neutral-100);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.adv-filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.adv-filter-btn span,
+.adv-filter-btn {
+    position: relative;
+    z-index: 1;
+}
+
+.adv-filter-btn:hover {
+    color: var(--color-neutral-800);
+    background: var(--color-neutral-200);
+    border-color: var(--color-neutral-300);
+    transform: translateY(-1px);
+}
+
+.adv-filter-btn.active {
+    color: var(--color-neutral-0);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.adv-filter-btn.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--color-primary-rgb), 0.4);
+}
+
+/* 加载状态 */
+.adv-filter-loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--qiling-space-40);
+    color: var(--color-neutral-400);
+}
+
+.adv-filter-loading.show {
+    display: flex;
+}
+
+.adv-filter-loading .spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--color-neutral-200);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: adv-filter-spin 0.8s linear infinite;
+    margin-right: var(--qiling-space-10);
+}
+
+@keyframes adv-filter-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 筛选结果统计 */
+.adv-filter-result-info {
+    text-align: center;
+    padding: var(--qiling-space-12) var(--qiling-space-20);
+    margin-bottom: var(--qiling-space-20);
+    background: var(--color-neutral-50);
+    border-radius: 10px;
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
+    color: var(--color-neutral-500);
+    border: 1px solid var(--color-neutral-200);
+}
+
+.adv-filter-result-info strong {
+    color: var(--color-primary);
+}
+
+/* 无结果提示 */
+.adv-filter-no-results {
+    text-align: center;
+    padding: var(--qiling-space-80) var(--qiling-space-20);
+    color: var(--color-neutral-400);
+}
+
+.adv-filter-no-results svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--qiling-space-20);
+    opacity: 0.5;
+}
+
+.adv-filter-no-results p {
+    font-size: calc(var(--qiling-font-size-base) * 1.1);
+    margin: 0;
+}
+
+/* ==========================================
+   响应式适配
+   ========================================== */
+
+@media (max-width: 992px) {
+    .adv-filter-section {
+        padding: var(--qiling-measure-16) 0;
+    }
+
+    .adv-filter-row {
+        gap: var(--qiling-space-10);
+    }
+
+    .adv-filter-btn {
+        padding: var(--qiling-space-7) var(--qiling-space-16);
+        font-size: calc(var(--qiling-font-size-base) * 0.85);
+    }
+}
+
+@media (max-width: 768px) {
+    .adv-filter-section {
+        padding: var(--qiling-space-14) 0;
+        position: relative;
+        top: auto;
+    }
+
+    .adv-filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--qiling-space-10);
+    }
+
+    .adv-filter-label {
+        min-width: auto;
+        font-size: calc(var(--qiling-font-size-base) * 0.85);
+    }
+
+    .adv-filter-buttons {
+        width: 100%;
+        gap: var(--qiling-space-8);
+    }
+
+    .adv-filter-btn {
+        padding: var(--qiling-space-6) var(--qiling-space-14);
+        font-size: calc(var(--qiling-font-size-base) * 0.8);
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .adv-filter-btn {
+        padding: var(--qiling-space-5) var(--qiling-space-12);
+        font-size: calc(var(--qiling-font-size-base) * 0.75);
+    }
+}
+
+/* ==========================================
+   暗黑模式 - 与 category.css 保持一致
+   ========================================== */
+
+html.dark-mode .adv-filter-section {
+    background: var(--dm-bg-card, var(--color-neutral-800));
+    border-color: var(--dm-border, var(--color-neutral-700));
+    box-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.2);
+}
+
+html.dark-mode .adv-filter-label {
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+html.dark-mode .adv-filter-btn {
+    background: var(--dm-bg-card, var(--color-neutral-800));
+    color: var(--dm-text-muted, var(--color-neutral-400));
+    border-color: var(--dm-border, var(--color-neutral-700));
+}
+
+html.dark-mode .adv-filter-btn:hover {
+    background: var(--color-neutral-700);
+    color: var(--dm-text, var(--color-neutral-200));
+    border-color: var(--color-neutral-600);
+}
+
+html.dark-mode .adv-filter-btn.active {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-neutral-0);
+    border-color: transparent;
+}
+
+html.dark-mode .adv-filter-result-info {
+    background: rgba(var(--qiling-rgb-30-41-59), 0.5);
+    border-color: var(--dm-border, var(--color-neutral-700));
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+html.dark-mode .adv-filter-no-results {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}

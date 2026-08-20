@@ -1,0 +1,356 @@
+/**
+ * Speech controls for single posts and comments.
+ */
+
+.qiling-post-speech {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--qiling-space-12);
+    margin: 0 0 var(--qiling-space-20);
+    padding: var(--qiling-space-12);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+}
+
+.qiling-post-speech__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-8);
+}
+
+.qiling-post-speech__button,
+.qiling-comment-speech-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--qiling-space-6);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.qiling-post-speech__button {
+    min-height: 34px;
+    padding: var(--qiling-space-7) var(--qiling-space-12);
+    border-color: var(--color-neutral-200);
+    border-radius: 8px;
+    background: var(--color-surface, var(--color-neutral-0));
+    color: var(--color-neutral-700);
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    font-weight: 500;
+}
+
+.qiling-post-speech__button:hover:not(:disabled),
+.qiling-post-speech.is-playing [data-speech-action="play"] {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+.qiling-post-speech__button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.qiling-post-speech__meta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+    gap: var(--qiling-space-8);
+    min-width: 0;
+}
+
+.qiling-post-speech__status {
+    flex: 0 0 auto;
+    color: var(--color-neutral-500, var(--color-text-muted));
+    font-size: calc(var(--qiling-font-size-base) * 0.82);
+    white-space: nowrap;
+}
+
+.qiling-post-speech__progress,
+.qiling-speech-player__progress-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--qiling-space-44);
+    padding: var(--qiling-space-3) var(--qiling-space-8);
+    border-radius: 999px;
+    background: rgba(var(--color-primary-rgb), 0.08);
+    color: var(--color-primary);
+    font-size: calc(var(--qiling-font-size-base) * 0.78);
+    font-weight: 600;
+}
+
+.qiling-post-speech.is-unsupported .qiling-post-speech__status {
+    color: var(--color-warning-dark);
+}
+
+.qiling-comment-speech-trigger {
+    min-height: 26px;
+    margin-left: var(--qiling-space-8);
+    padding: var(--qiling-space-4) var(--qiling-space-12);
+    border-radius: 999px;
+    background: rgba(var(--qiling-rgb-0-0-0), 0.04);
+    color: var(--color-text-muted);
+    font-size: calc(var(--qiling-font-size-base) * 0.8);
+    line-height: 1.2;
+}
+
+.comment-actions .qiling-comment-speech-trigger:first-child {
+    margin-left: 0;
+}
+
+.qiling-comment-speech-trigger:hover,
+.qiling-comment-speech-trigger.is-speaking {
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+.qiling-speech-current {
+    background: rgba(var(--color-primary-rgb), 0.08);
+    border-radius: 6px;
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.08);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comment-item.qiling-speech-current > .comment-body {
+    border-color: rgba(var(--color-primary-rgb), 0.36);
+    box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.12);
+}
+
+.qiling-speech-player {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    z-index: 999;
+    width: min(360px, calc(100vw - 32px));
+    padding: var(--qiling-space-14);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 10px;
+    background: var(--color-surface, var(--color-neutral-0));
+    box-shadow: 0 20px 50px rgba(var(--qiling-rgb-15-23-42), 0.18);
+    color: var(--color-neutral-800);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.qiling-speech-player.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.qiling-speech-player__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--qiling-space-12);
+}
+
+.qiling-speech-player__title {
+    color: var(--color-neutral-800);
+    font-size: calc(var(--qiling-font-size-base) * 0.95);
+    font-weight: 700;
+}
+
+.qiling-speech-player__status {
+    margin-top: var(--qiling-space-2);
+    color: var(--color-neutral-500, var(--color-text-muted));
+    font-size: calc(var(--qiling-font-size-base) * 0.8);
+}
+
+.qiling-speech-player__progress-track {
+    height: 4px;
+    margin: var(--qiling-space-12) 0;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(var(--color-primary-rgb), 0.12);
+}
+
+.qiling-speech-player__progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-primary);
+    transition: width 0.2s ease;
+}
+
+.qiling-speech-player__actions,
+.qiling-speech-player__settings {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-8);
+}
+
+.qiling-speech-player__actions button {
+    min-height: 30px;
+    padding: var(--qiling-space-6) var(--qiling-space-10);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    background: var(--color-surface-alt);
+    color: var(--color-neutral-700);
+    cursor: pointer;
+    font-size: calc(var(--qiling-font-size-base) * 0.82);
+}
+
+.qiling-speech-player__actions button:hover:not(:disabled) {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+.qiling-speech-player__actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.qiling-speech-player__settings {
+    margin-top: var(--qiling-space-10);
+}
+
+.qiling-speech-player__settings label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-6);
+    color: var(--color-neutral-500, var(--color-text-muted));
+    font-size: calc(var(--qiling-font-size-base) * 0.78);
+}
+
+.qiling-speech-player__settings input[type="range"] {
+    width: 82px;
+    accent-color: var(--color-primary);
+}
+
+.qiling-speech-player__settings span {
+    min-width: var(--qiling-space-34);
+    color: var(--color-neutral-700);
+    font-variant-numeric: tabular-nums;
+}
+
+html.dark-mode .qiling-post-speech,
+[data-theme="dark"] .qiling-post-speech {
+    background: var(--dm-bg, rgba(var(--qiling-rgb-15-23-42), 0.65));
+    border-color: var(--dm-border, rgba(var(--qiling-rgb-255-255-255), 0.1));
+}
+
+html.dark-mode .qiling-post-speech__button,
+[data-theme="dark"] .qiling-post-speech__button {
+    border-color: var(--dm-border, rgba(var(--qiling-rgb-255-255-255), 0.12));
+    background: rgba(var(--qiling-rgb-255-255-255), 0.06);
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+html.dark-mode .qiling-post-speech__status,
+[data-theme="dark"] .qiling-post-speech__status {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+html.dark-mode .qiling-post-speech__progress,
+html.dark-mode .qiling-speech-player__progress-text,
+[data-theme="dark"] .qiling-post-speech__progress,
+[data-theme="dark"] .qiling-speech-player__progress-text {
+    background: rgba(var(--color-primary-rgb), 0.16);
+    color: var(--qiling-color-93c5fd);
+}
+
+html.dark-mode .qiling-speech-current,
+[data-theme="dark"] .qiling-speech-current {
+    background: rgba(var(--color-primary-rgb), 0.16);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.12);
+}
+
+html.dark-mode .qiling-comment-speech-trigger,
+[data-theme="dark"] .qiling-comment-speech-trigger {
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+html.dark-mode .qiling-comment-speech-trigger:hover,
+html.dark-mode .qiling-comment-speech-trigger.is-speaking,
+[data-theme="dark"] .qiling-comment-speech-trigger:hover,
+[data-theme="dark"] .qiling-comment-speech-trigger.is-speaking {
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+html.dark-mode .qiling-speech-player,
+[data-theme="dark"] .qiling-speech-player {
+    border-color: var(--dm-border, rgba(var(--qiling-rgb-255-255-255), 0.1));
+    background: var(--dark-bg-secondary, var(--color-heading));
+    color: var(--dm-text, var(--color-neutral-200));
+    box-shadow: 0 24px 60px rgba(var(--qiling-rgb-0-0-0), 0.38);
+}
+
+html.dark-mode .qiling-speech-player__title,
+html.dark-mode .qiling-speech-player__settings span,
+[data-theme="dark"] .qiling-speech-player__title,
+[data-theme="dark"] .qiling-speech-player__settings span {
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+html.dark-mode .qiling-speech-player__status,
+html.dark-mode .qiling-speech-player__settings label,
+[data-theme="dark"] .qiling-speech-player__status,
+[data-theme="dark"] .qiling-speech-player__settings label {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+html.dark-mode .qiling-speech-player__actions button,
+[data-theme="dark"] .qiling-speech-player__actions button {
+    border-color: var(--dm-border, rgba(var(--qiling-rgb-255-255-255), 0.12));
+    background: rgba(var(--qiling-rgb-255-255-255), 0.06);
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+@media (max-width: 640px) {
+    .qiling-post-speech {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .qiling-post-speech__actions {
+        width: 100%;
+    }
+
+    .qiling-post-speech__button {
+        flex: 1 1 calc(50% - 8px);
+    }
+
+    .qiling-post-speech__status {
+        white-space: normal;
+    }
+
+    .qiling-post-speech__meta {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .qiling-speech-player {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100vw - 24px);
+    }
+
+    .qiling-speech-player__settings {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .qiling-speech-player__settings label {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .qiling-speech-player__settings input[type="range"] {
+        flex: 1 1 auto;
+        width: auto;
+    }
+}

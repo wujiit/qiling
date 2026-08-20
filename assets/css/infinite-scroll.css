@@ -1,0 +1,76 @@
+.qiling-infinite-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 72px;
+    margin-top: var(--qiling-space-28);
+    text-align: center;
+}
+
+.qiling-infinite-control[hidden] {
+    display: none;
+}
+
+.qiling-infinite-load-more {
+    border: 1px solid var(--color-border, var(--color-neutral-200));
+    border-radius: 999px;
+    background: var(--color-surface, var(--color-neutral-0));
+    color: var(--color-text);
+    padding: var(--qiling-space-10) var(--qiling-space-22);
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.qiling-infinite-load-more:hover,
+.qiling-infinite-load-more:focus-visible {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+    transform: translateY(-1px);
+}
+
+.qiling-infinite-load-more[disabled] {
+    cursor: wait;
+    opacity: .65;
+    transform: none;
+    box-shadow: none;
+}
+
+.qiling-infinite-status {
+    display: none;
+    align-items: center;
+    gap: var(--qiling-space-10);
+    color: var(--color-text-muted, var(--color-neutral-500));
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+}
+
+.qiling-infinite-control.is-loading .qiling-infinite-load-more,
+.qiling-infinite-control.is-done .qiling-infinite-load-more {
+    display: none;
+}
+
+.qiling-infinite-control.is-loading .qiling-infinite-status--loading,
+.qiling-infinite-control.is-done .qiling-infinite-status--done,
+.qiling-infinite-control.is-error .qiling-infinite-status--error {
+    display: inline-flex;
+}
+
+.qiling-infinite-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(var(--color-primary-rgb), 0.18);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: qiling-infinite-spin .8s linear infinite;
+}
+
+html.qiling-infinite-ready .qiling-infinite-pagination-fallback {
+    display: none;
+}
+
+@keyframes qiling-infinite-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

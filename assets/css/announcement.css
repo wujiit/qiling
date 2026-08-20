@@ -14,26 +14,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: var(--qiling-space-20);
 }
 
 .announcement-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(var(--qiling-rgb-0-0-0), 0.6);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
 
 .announcement-modal {
     position: relative;
-    background: #fff;
+    background: var(--color-neutral-0);
     border-radius: 16px;
-    max-width: 480px;
+    max-width: calc(var(--qiling-measure-500) - var(--qiling-space-20));
     width: 100%;
     max-height: 90vh;
     overflow: hidden;
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 80px rgba(var(--qiling-rgb-0-0-0), 0.3);
     animation: announcementSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -55,42 +55,46 @@
     right: 12px;
     width: 32px;
     height: 32px;
-    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--qiling-rgb-0-0-0), 0.1);
     border: none;
     border-radius: 50%;
-    font-size: 20px;
-    line-height: 30px;
-    color: #64748b;
+    font-size: calc(var(--qiling-font-size-base) * 1.25);
+    line-height: 1;
+    padding: 0;
+    color: var(--color-neutral-500);
     cursor: pointer;
     transition: all 0.2s;
     z-index: 10;
 }
 
 .announcement-close:hover {
-    background: rgba(0, 0, 0, 0.2);
-    color: #1e293b;
+    background: rgba(var(--qiling-rgb-0-0-0), 0.2);
+    color: var(--color-neutral-800);
 }
 
 .announcement-body {
-    padding: 30px;
+    padding: var(--qiling-space-30);
 }
 
 .announcement-title {
-    font-size: 1.5rem;
+    font-size: calc(var(--qiling-font-size-base) * 1.5);
     font-weight: 700;
-    color: #1e293b;
-    margin: 0 0 15px 0;
+    color: var(--color-neutral-800);
+    margin: 0 0 var(--qiling-space-15) 0;
     line-height: 1.3;
 }
 
 .announcement-content {
-    color: #475569;
-    font-size: 1rem;
+    color: var(--color-neutral-600);
+    font-size: var(--qiling-font-size-base);
     line-height: 1.7;
 }
 
 .announcement-content p {
-    margin: 0 0 12px 0;
+    margin: 0 0 var(--qiling-space-12) 0;
 }
 
 .announcement-content p:last-child {
@@ -98,15 +102,15 @@
 }
 
 .announcement-action {
-    margin-top: 25px;
+    margin-top: var(--qiling-space-25);
     text-align: center;
 }
 
 .announcement-btn {
     display: inline-block;
-    padding: 12px 28px;
-    background: var(--color-primary, #2563eb);
-    color: #fff;
+    padding: var(--qiling-space-12) var(--qiling-space-28);
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
@@ -114,71 +118,71 @@
 }
 
 .announcement-btn:hover {
-    color: #fff;
-    background: var(--color-primary-dark, #1d4ed8);
+    color: var(--color-neutral-0);
+    background: var(--color-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 20px rgba(var(--color-primary-rgb), 0.3);
 }
 
 .announcement-dismiss {
-    padding: 15px 30px;
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
+    padding: var(--qiling-space-15) var(--qiling-space-30);
+    background: var(--color-neutral-50);
+    border-top: 1px solid var(--color-neutral-200);
 }
 
 .announcement-dismiss label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--qiling-space-8);
     cursor: pointer;
-    font-size: 0.9rem;
-    color: #64748b;
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
+    color: var(--color-neutral-500);
 }
 
 .announcement-dismiss input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: var(--color-primary, #2563eb);
+    accent-color: var(--color-primary);
 }
 
 /* ========================================
    普通公告样式
    ======================================== */
 .announcement-normal .announcement-modal {
-    border-top: 4px solid var(--color-primary, #2563eb);
+    border-top: 4px solid var(--color-primary);
 }
 
 /* ========================================
    营销活动公告样式
    ======================================== */
 .announcement-marketing .announcement-modal {
-    background: linear-gradient(135deg, #ff416c 0%, #ff8a00 100%);
+    background: var(--qiling-announcement-marketing-bg, linear-gradient(135deg, var(--color-error) 0%, var(--color-accent) 100%));
     overflow: visible;
 }
 
 .announcement-marketing .announcement-close {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.2);
+    color: var(--color-neutral-0);
 }
 
 .announcement-marketing .announcement-close:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(var(--qiling-rgb-255-255-255), 0.3);
 }
 
 .announcement-marketing .announcement-body {
     text-align: center;
-    padding: 40px 30px;
+    padding: var(--qiling-space-40) var(--qiling-space-30);
 }
 
 .announcement-marketing .announcement-badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    font-size: 0.85rem;
+    padding: var(--qiling-space-6) var(--qiling-space-16);
+    background: rgba(var(--qiling-rgb-255-255-255), 0.2);
+    color: var(--color-neutral-0);
+    font-size: calc(var(--qiling-font-size-base) * 0.85);
     font-weight: 600;
     border-radius: 20px;
-    margin-bottom: 15px;
+    margin-bottom: var(--qiling-space-15);
     animation: pulse 2s infinite;
 }
 
@@ -195,34 +199,34 @@
 }
 
 .announcement-marketing .announcement-title {
-    color: #fff;
-    font-size: 1.75rem;
+    color: var(--color-neutral-0);
+    font-size: calc(var(--qiling-font-size-base) * 1.75);
 }
 
 .announcement-marketing .announcement-content {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(var(--qiling-rgb-255-255-255), 0.9);
 }
 
 .announcement-marketing .announcement-btn {
-    background: #fff;
-    color: #764ba2;
-    padding: 14px 36px;
-    font-size: 1.1rem;
+    background: var(--color-neutral-0);
+    color: var(--qiling-announcement-marketing-button-text, var(--color-error));
+    padding: var(--qiling-space-14) var(--qiling-space-36);
+    font-size: calc(var(--qiling-font-size-base) * 1.1);
 }
 
 .announcement-marketing .announcement-btn:hover {
-    background: #f8fafc;
+    background: var(--color-neutral-50);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(var(--qiling-rgb-0-0-0), 0.2);
 }
 
 .announcement-marketing .announcement-dismiss {
-    background: rgba(0, 0, 0, 0.1);
-    border-top-color: rgba(255, 255, 255, 0.1);
+    background: rgba(var(--qiling-rgb-0-0-0), 0.1);
+    border-top-color: rgba(var(--qiling-rgb-255-255-255), 0.1);
 }
 
 .announcement-marketing .announcement-dismiss label {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(var(--qiling-rgb-255-255-255), 0.8);
     justify-content: center;
 }
 
@@ -230,7 +234,7 @@
    图片公告样式
    ======================================== */
 .announcement-image .announcement-modal {
-    max-width: 520px;
+    max-width: var(--qiling-measure-520);
     padding: 0;
 }
 
@@ -241,27 +245,27 @@
 }
 
 .announcement-image .announcement-close {
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background: rgba(var(--qiling-rgb-0-0-0), 0.5);
+    color: var(--color-neutral-0);
 }
 
 .announcement-image .announcement-close:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(var(--qiling-rgb-0-0-0), 0.7);
 }
 
 .announcement-image .announcement-body {
-    padding: 25px 30px;
+    padding: var(--qiling-space-25) var(--qiling-space-30);
 }
 
 /* ========================================
    图文混排公告样式
    ======================================== */
 .announcement-image_text .announcement-modal {
-    max-width: 520px;
+    max-width: var(--qiling-measure-520);
 }
 
 .announcement-image_text .announcement-inline-image {
-    margin: 15px 0;
+    margin: var(--qiling-space-15) 0;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -278,34 +282,34 @@
 html.dark-mode .announcement-normal .announcement-modal,
 html.dark-mode .announcement-image .announcement-modal,
 html.dark-mode .announcement-image_text .announcement-modal {
-    background: #1e293b;
+    background: var(--color-neutral-800);
 }
 
 html.dark-mode .announcement-title {
-    color: #f1f5f9;
+    color: var(--color-neutral-100);
 }
 
 html.dark-mode .announcement-content {
-    color: #94a3b8;
+    color: var(--color-neutral-400);
 }
 
 html.dark-mode .announcement-close {
-    background: rgba(255, 255, 255, 0.1);
-    color: #94a3b8;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    color: var(--color-neutral-400);
 }
 
 html.dark-mode .announcement-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #f1f5f9;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.2);
+    color: var(--color-neutral-100);
 }
 
 html.dark-mode .announcement-dismiss {
-    background: #0f172a;
-    border-top-color: #334155;
+    background: var(--color-neutral-900);
+    border-top-color: var(--color-neutral-700);
 }
 
 html.dark-mode .announcement-dismiss label {
-    color: #94a3b8;
+    color: var(--color-neutral-400);
 }
 
 /* ========================================
@@ -313,7 +317,7 @@ html.dark-mode .announcement-dismiss label {
    ======================================== */
 @media (max-width: 768px) {
     .ds-announcement {
-        padding: 15px;
+        padding: var(--qiling-space-15);
     }
 
     .announcement-modal {
@@ -321,22 +325,44 @@ html.dark-mode .announcement-dismiss label {
     }
 
     .announcement-body {
-        padding: 25px 20px;
+        padding: var(--qiling-space-25) var(--qiling-space-20);
     }
 
     .announcement-title {
-        font-size: 1.25rem;
+        font-size: calc(var(--qiling-font-size-base) * 1.25);
     }
 
     .announcement-marketing .announcement-title {
-        font-size: 1.4rem;
+        font-size: calc(var(--qiling-font-size-base) * 1.4);
     }
 
     .announcement-marketing .announcement-body {
-        padding: 30px 20px;
+        padding: var(--qiling-space-30) var(--qiling-space-20);
     }
 
     .announcement-dismiss {
-        padding: 12px 20px;
+        padding: var(--qiling-space-12) var(--qiling-space-20);
     }
+}
+
+/* ========================================
+   底部横幅公告样式覆盖
+   ======================================== */
+.ds-announcement.announcement-bottom_banner {
+    position: fixed !important;
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block !important;
+    padding: 0 !important;
+    background: transparent !important;
+    pointer-events: auto;
+}
+
+.ds-announcement.announcement-bottom_banner .announcement-overlay {
+    display: none !important;
 }

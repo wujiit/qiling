@@ -1,0 +1,388 @@
+/**
+ * 软件首页模板专用样式
+ * 
+ * 仅在使用"软件首页"模板的页面加载
+ * 
+ * @package Developer_Starter
+ * @since 1.0.0
+ */
+
+/* ========================================
+   软件首页通用样式
+   ======================================== */
+
+.template-software-home {
+    --sw-primary: var(--color-primary-light);
+    --sw-secondary: var(--color-primary);
+    --sw-success: var(--color-success);
+    --sw-warning: var(--color-warning);
+    --sw-danger: var(--qiling-color-ef4444);
+}
+
+.template-software-home .software-home-empty-state {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-primary) 100%);
+}
+
+.template-software-home .software-home-empty-state__icon {
+    font-size: var(--qiling-text-rem-4);
+    margin-bottom: var(--qiling-space-20);
+}
+
+.template-software-home .software-home-empty-state__title {
+    color: var(--color-neutral-0);
+    font-size: var(--qiling-text-rem-2);
+    margin-bottom: var(--qiling-space-20);
+}
+
+.template-software-home .software-home-empty-state__desc {
+    color: var(--color-neutral-100);
+    font-size: var(--qiling-text-rem-1p1);
+    margin-bottom: var(--qiling-space-30);
+}
+
+.template-software-home .software-home-empty-state__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--qiling-space-16);
+}
+
+.template-software-home .software-home-empty-state__button {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: var(--color-neutral-0);
+    padding: var(--qiling-space-14) var(--qiling-space-32);
+    border-radius: var(--qiling-radius-lg);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.template-software-home .software-home-empty-state__hint {
+    color: var(--color-neutral-200);
+    font-size: var(--qiling-text-rem-0p9);
+    margin-top: var(--qiling-space-30);
+}
+
+/* 模块间距优化 */
+.template-software-home .module {
+    position: relative;
+}
+
+.template-software-home .module+.module {
+    margin-top: 0;
+}
+
+/* ========================================
+   软件卡片增强效果
+   ======================================== */
+
+/* 软件轮播卡片增强 */
+.template-software-home .software-item,
+.template-software-home .sc-card,
+.template-software-home .sr-item,
+.template-software-home .sr-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 渐变边框效果（鼠标悬停） */
+.template-software-home .sc-card-grid::before,
+.template-software-home .sr-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: var(--qiling-space-2);
+    background: linear-gradient(135deg, var(--sw-primary), var(--sw-secondary));
+    -webkit-mask:
+        linear-gradient(var(--color-neutral-0) 0 0) content-box,
+        linear-gradient(var(--color-neutral-0) 0 0);
+    mask:
+        linear-gradient(var(--color-neutral-0) 0 0) content-box,
+        linear-gradient(var(--color-neutral-0) 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.template-software-home .sc-card-grid:hover::before,
+.template-software-home .sr-card:hover::before {
+    opacity: 1;
+}
+
+/* ========================================
+   排行榜徽章动画
+   ======================================== */
+
+.template-software-home .sr-medal,
+.template-software-home .sr-rank-badge {
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.05);
+    }
+}
+
+.template-software-home .sr-col-item .sr-rank-badge {
+    animation: none;
+}
+
+/* TOP3 特殊效果 (TOP3 Special Effects) */
+.template-software-home .sr-card-top1 {
+    background: linear-gradient(145deg, var(--color-neutral-0) 0%, var(--qiling-color-fffbeb) 100%) !important;
+}
+
+.template-software-home .sr-card-top2 {
+    background: linear-gradient(145deg, var(--color-neutral-0) 0%, var(--color-neutral-50) 100%) !important;
+}
+
+.template-software-home .sr-card-top3 {
+    background: linear-gradient(145deg, var(--color-neutral-0) 0%, var(--qiling-color-fef3c7) 100%) !important;
+}
+
+/* ========================================
+   软件图标效果
+   ======================================== */
+
+.template-software-home .sc-icon,
+.template-software-home .sr-icon,
+.template-software-home .software-item img {
+    transition: transform 0.3s ease;
+}
+
+.template-software-home .sc-card:hover .sc-icon,
+.template-software-home .sr-item:hover .sr-icon,
+.template-software-home .sr-card:hover .sr-icon,
+.template-software-home .software-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ========================================
+   版本徽章样式
+   ======================================== */
+
+.template-software-home .sc-version,
+.template-software-home .sr-version,
+.template-software-home .software-version {
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    letter-spacing: calc(1em * 0.02);
+}
+
+/* ========================================
+   下载统计效果
+   ======================================== */
+
+.template-software-home .sc-downloads,
+.template-software-home .sr-stat-value {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ========================================
+   搜索区域增强
+   ======================================== */
+
+.template-software-home .module-hero-search {
+    position: relative;
+}
+
+/* 热门标签动画 */
+.template-software-home .hs-tag {
+    transition: all 0.3s ease;
+}
+
+.template-software-home .hs-tag:hover {
+    transform: translateY(-2px);
+    background: rgba(var(--qiling-rgb-255-255-255), 0.25) !important;
+}
+
+/* ========================================
+   统计模块增强
+   ======================================== */
+
+.template-software-home .module-stats .stat-number {
+    background: linear-gradient(135deg, var(--sw-primary), var(--sw-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   FAQ 模块样式
+   ======================================== */
+
+.template-software-home .module-faq {
+    background: linear-gradient(180deg, var(--color-neutral-0) 0%, var(--color-neutral-50) 100%);
+}
+
+/* ========================================
+   CTA 模块增强
+   ======================================== */
+
+.template-software-home .module-cta .cta-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.template-software-home .module-cta .cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(var(--qiling-rgb-255-255-255), 0.2),
+            transparent);
+    transition: left 0.5s ease;
+}
+
+.template-software-home .module-cta .cta-btn:hover::after {
+    left: 100%;
+}
+
+/* ========================================
+   暗黑模式适配
+   ======================================== */
+
+html.dark-mode .template-software-home {
+    --sw-primary: var(--qiling-color-60a5fa);
+    --sw-secondary: var(--qiling-color-818cf8);
+}
+
+html.dark-mode .template-software-home .sr-card-top1 {
+    background: linear-gradient(145deg, var(--color-neutral-800) 0%, var(--color-neutral-800) 100%) !important;
+}
+
+html.dark-mode .template-software-home .sr-card-top2,
+html.dark-mode .template-software-home .sr-card-top3 {
+    background: var(--color-neutral-800) !important;
+}
+
+html.dark-mode .template-software-home .module-faq {
+    background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+}
+
+/* ========================================
+   响应式适配
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .template-software-home .sr-top3 {
+        gap: var(--qiling-measure-16);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 移动端排行榜卡片 */
+    .template-software-home .sr-card-top1 {
+        transform: none !important;
+    }
+
+    /* 移动端徽章动画暂停 */
+    .template-software-home .sr-medal {
+        animation: none;
+    }
+
+    /* 移动端模块间距 */
+    .template-software-home .module {
+        padding-top: var(--qiling-space-40) !important;
+        padding-bottom: var(--qiling-space-40) !important;
+    }
+
+    /* 移动端首屏 */
+    .template-software-home .module-hero-search {
+        padding-top: var(--qiling-space-60) !important;
+        padding-bottom: var(--qiling-space-80) !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* 小屏幕软件卡片 */
+    .template-software-home .sc-card-grid {
+        padding: var(--qiling-measure-20) var(--qiling-measure-16) !important;
+    }
+
+    .template-software-home .sc-icon,
+    .template-software-home .sr-icon {
+        width: 48px !important;
+        height: 48px !important;
+    }
+}
+
+/* ========================================
+   加载动画
+   ======================================== */
+
+.template-software-home .module {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.template-software-home .module:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.template-software-home .module:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.template-software-home .module:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.template-software-home .module:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.template-software-home .module:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.template-software-home .module:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.template-software-home .module:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.template-software-home .module:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.template-software-home .module:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+
+/* 减少动画偏好用户 */
+@media (prefers-reduced-motion: reduce) {
+    .template-software-home .module {
+        animation: none;
+        opacity: 1;
+    }
+
+    .template-software-home .sr-medal,
+    .template-software-home .sr-rank-badge {
+        animation: none;
+    }
+}

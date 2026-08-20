@@ -1,0 +1,86 @@
+/**
+ * Reading progress indicator.
+ *
+ * Loaded only when the article reading progress option is enabled.
+ */
+
+.qiling-reading-progress {
+    --qiling-reading-progress-percent: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+    height: 4px;
+    pointer-events: none;
+}
+
+.admin-bar .qiling-reading-progress {
+    top: 32px;
+}
+
+.qiling-reading-progress__track {
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--color-neutral-400-rgb), 0.2);
+}
+
+.qiling-reading-progress__fill {
+    width: var(--qiling-reading-progress-percent);
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    box-shadow: 0 0 14px rgba(var(--color-primary-rgb), 0.35);
+    transition: width 0.12s linear;
+}
+
+.qiling-reading-progress__value {
+    position: absolute;
+    top: 9px;
+    right: 16px;
+    min-width: var(--qiling-measure-42);
+    padding: var(--qiling-space-5) var(--qiling-space-8);
+    border-radius: 999px;
+    background: rgba(var(--qiling-rgb-15-23-42), 0.76);
+    color: var(--color-neutral-0);
+    font-size: var(--qiling-text-rem-0p75);
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    box-shadow: 0 8px 22px rgba(var(--qiling-rgb-15-23-42), 0.18);
+}
+
+.qiling-reading-progress.is-visible .qiling-reading-progress__value {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.qiling-reading-progress.is-complete .qiling-reading-progress__fill {
+    background: linear-gradient(90deg, var(--color-success), var(--color-primary));
+}
+
+html.dark-mode .qiling-reading-progress__track,
+[data-theme="dark"] .qiling-reading-progress__track {
+    background: rgba(var(--qiling-rgb-203-213-225), 0.16);
+}
+
+@media (max-width: 782px) {
+    .admin-bar .qiling-reading-progress {
+        top: 46px;
+    }
+}
+
+@media (max-width: 640px) {
+    .qiling-reading-progress__value {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .qiling-reading-progress__fill,
+    .qiling-reading-progress__value {
+        transition: none;
+    }
+}

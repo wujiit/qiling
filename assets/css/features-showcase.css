@@ -7,82 +7,36 @@
  */
 
 /* ========================================
-   Hero 区域
+   统一页面头部
    ======================================== */
-.features-showcase-hero {
+.template-features-showcase .page-header {
     position: relative;
-    padding: 140px 0 100px;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 50%, #ec4899 100%);
+    isolation: isolate;
 }
 
-.hero-bg-effects {
+.template-features-showcase .page-header::before {
+    content: '';
     position: absolute;
     inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(var(--qiling-rgb-255-255-255), 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(var(--qiling-rgb-0-0-0), 0.2) 0%, transparent 50%);
     pointer-events: none;
 }
 
-.hero-gradient {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+.template-features-showcase .page-header .page-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 800;
+    text-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.2);
+    letter-spacing: calc(1em * -0.02);
 }
 
-.hero-particles {
-    position: absolute;
-    inset: 0;
-}
-
-.hero-particles span {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
-}
-
-.hero-particles span:nth-child(1) {
-    left: 10%;
-    top: 20%;
-    animation-delay: 0s;
-}
-
-.hero-particles span:nth-child(2) {
-    left: 30%;
-    top: 60%;
-    animation-delay: 1s;
-    width: 15px;
-    height: 15px;
-}
-
-.hero-particles span:nth-child(3) {
-    left: 50%;
-    top: 30%;
-    animation-delay: 2s;
-}
-
-.hero-particles span:nth-child(4) {
-    left: 70%;
-    top: 70%;
-    animation-delay: 3s;
-    width: 8px;
-    height: 8px;
-}
-
-.hero-particles span:nth-child(5) {
-    left: 85%;
-    top: 25%;
-    animation-delay: 4s;
-}
-
-.hero-particles span:nth-child(6) {
-    left: 90%;
-    top: 55%;
-    animation-delay: 5s;
-    width: 12px;
-    height: 12px;
+.template-features-showcase .page-header__description {
+    font-size: calc(var(--qiling-font-size-base) * 1.35);
+    line-height: 1.7;
+    max-width: var(--qiling-measure-600);
+    margin: var(--qiling-space-20) auto 0;
 }
 
 @keyframes float {
@@ -103,28 +57,28 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    color: #fff;
+    color: var(--color-neutral-0);
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: calc(var(--qiling-font-size-base) * 3.5);
     font-weight: 800;
-    margin: 0 0 20px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    letter-spacing: -0.02em;
+    margin: 0 0 var(--qiling-space-20);
+    text-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.2);
+    letter-spacing: calc(1em * -0.02);
 }
 
 .hero-subtitle {
-    font-size: 1.35rem;
+    font-size: calc(var(--qiling-font-size-base) * 1.35);
     opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto 40px;
+    max-width: var(--qiling-measure-600);
+    margin: 0 auto var(--qiling-space-40);
     line-height: 1.7;
 }
 
 .hero-actions {
     display: flex;
-    gap: 16px;
+    gap: var(--qiling-space-16);
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -132,71 +86,71 @@
 .hero-actions .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 16px 32px;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-16) var(--qiling-space-32);
     font-weight: 600;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-actions .btn-light {
-    background: #fff;
+    background: var(--color-neutral-0);
     color: var(--color-primary);
 }
 
 .hero-actions .btn-light:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(var(--qiling-rgb-0-0-0), 0.2);
 }
 
 .hero-actions .btn-outline-light {
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
+    border: 2px solid rgba(var(--qiling-rgb-255-255-255), 0.5);
+    color: var(--color-neutral-0);
 }
 
 .hero-actions .btn-outline-light:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    border-color: var(--color-neutral-0);
 }
 
 /* ========================================
    功能清单主区域增强
    ======================================== */
 .features-showcase-main {
-    background: #fff;
+    background: var(--color-neutral-0);
 }
 
 .features-showcase-main .section-title {
-    font-size: 2.5rem;
+    font-size: calc(var(--qiling-font-size-base) * 2.5);
 }
 
 /* ========================================
    亮点展示区域
    ======================================== */
 .features-showcase-highlights {
-    background: #fff;
+    background: var(--color-neutral-0);
 }
 
 .highlights-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-top: 50px;
+    gap: var(--qiling-space-40);
+    margin-top: var(--qiling-space-50);
 }
 
 .highlight-item {
     text-align: center;
-    padding: 40px 30px;
-    background: #f8fafc;
+    padding: var(--qiling-space-40) var(--qiling-space-30);
+    background: var(--color-neutral-50);
     border-radius: 20px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .highlight-item:hover {
     transform: translateY(-10px);
-    background: #fff;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    background: var(--color-neutral-0);
+    box-shadow: 0 20px 60px rgba(var(--qiling-rgb-0-0-0), 0.1);
 }
 
 .highlight-icon {
@@ -205,29 +159,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 24px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+    margin: 0 auto var(--qiling-space-24);
+    background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.1), rgba(var(--qiling-rgb-124-58-237), 0.1));
     border-radius: 20px;
     color: var(--color-primary);
     transition: all 0.3s;
 }
 
 .highlight-item:hover .highlight-icon {
-    background: linear-gradient(135deg, var(--color-primary), #7c3aed);
-    color: #fff;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-violet-600));
+    color: var(--color-neutral-0);
     transform: scale(1.1) rotate(5deg);
 }
 
 .highlight-title {
-    font-size: 1.35rem;
+    font-size: calc(var(--qiling-font-size-base) * 1.35);
     font-weight: 700;
-    color: #1e293b;
-    margin: 0 0 12px;
+    color: var(--color-neutral-800);
+    margin: 0 0 var(--qiling-space-12);
 }
 
 .highlight-desc {
-    font-size: 1rem;
-    color: #64748b;
+    font-size: var(--qiling-font-size-base);
+    color: var(--color-neutral-500);
     line-height: 1.7;
     margin: 0;
 }
@@ -241,7 +195,7 @@
 
 .features-showcase-faq .faq-item:hover {
     border-color: var(--color-primary);
-    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 5px 20px rgba(var(--color-primary-rgb), 0.1);
 }
 
 .features-showcase-faq .faq-question:hover {
@@ -257,49 +211,49 @@
 
 .features-showcase-cta .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(var(--qiling-rgb-255-255-255), 0.2);
 }
 
 /* ========================================
    暗黑模式
    ======================================== */
 html.dark-mode .features-showcase-highlights {
-    background: var(--dm-bg, #0f172a);
+    background: var(--dm-bg, var(--color-neutral-900));
 }
 
 html.dark-mode .highlight-item {
-    background: var(--dm-bg-card, #1e293b);
+    background: var(--dm-bg-card, var(--color-neutral-800));
 }
 
 html.dark-mode .highlight-item:hover {
-    background: var(--dm-bg-card, #1e293b);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: var(--dm-bg-card, var(--color-neutral-800));
+    box-shadow: 0 20px 60px rgba(var(--qiling-rgb-0-0-0), 0.3);
 }
 
 html.dark-mode .highlight-title {
-    color: var(--dm-text, #e2e8f0);
+    color: var(--dm-text, var(--color-neutral-200));
 }
 
 html.dark-mode .highlight-desc {
-    color: var(--dm-text-muted, #94a3b8);
+    color: var(--dm-text-muted, var(--color-neutral-400));
 }
 
 html.dark-mode .features-showcase-faq {
-    background: var(--dm-bg, #0f172a);
+    background: var(--dm-bg, var(--color-neutral-900));
 }
 
 html.dark-mode .features-showcase-faq .faq-item {
-    background: var(--dm-bg-card, #1e293b);
-    border-color: var(--dm-border, #334155);
+    background: var(--dm-bg-card, var(--color-neutral-800));
+    border-color: var(--dm-border, var(--color-neutral-700));
 }
 
 html.dark-mode .features-showcase-faq .faq-question {
-    background: var(--dm-bg-card, #1e293b);
-    color: var(--dm-text, #e2e8f0);
+    background: var(--dm-bg-card, var(--color-neutral-800));
+    color: var(--dm-text, var(--color-neutral-200));
 }
 
 html.dark-mode .features-showcase-faq .faq-answer {
-    background: var(--dm-bg-card, #1e293b);
+    background: var(--dm-bg-card, var(--color-neutral-800));
 }
 
 /* ========================================
@@ -308,32 +262,17 @@ html.dark-mode .features-showcase-faq .faq-answer {
 @media (max-width: 1024px) {
     .highlights-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        gap: var(--qiling-space-24);
     }
 }
 
 @media (max-width: 768px) {
-    .features-showcase-hero {
-        padding: 100px 0 70px;
+    .template-features-showcase .page-header .page-title {
+        font-size: calc(var(--qiling-font-size-base) * 2.25);
     }
 
-    .hero-title {
-        font-size: 2.25rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-actions .btn {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
+    .template-features-showcase .page-header__description {
+        font-size: calc(var(--qiling-font-size-base) * 1.1);
     }
 
     .highlights-grid {
@@ -341,25 +280,25 @@ html.dark-mode .features-showcase-faq .faq-answer {
     }
 
     .highlight-item {
-        padding: 30px 24px;
+        padding: var(--qiling-space-30) var(--qiling-space-24);
     }
 
     .features-showcase-main .section-title {
-        font-size: 2rem;
+        font-size: calc(var(--qiling-font-size-base) * 2);
     }
 
     .features-showcase-cta h2 {
-        font-size: 1.75rem !important;
+        font-size: calc(var(--qiling-font-size-base) * 1.75) !important;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 1.875rem;
+    .template-features-showcase .page-header .page-title {
+        font-size: calc(var(--qiling-font-size-base) * 1.875);
     }
 
-    .hero-subtitle {
-        font-size: 1rem;
+    .template-features-showcase .page-header__description {
+        font-size: var(--qiling-font-size-base);
     }
 
     .highlight-icon {
