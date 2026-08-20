@@ -23,17 +23,7 @@ get_header();
 ?>
 
 <div class="page-template template-solutions">
-    <!-- Page Header -->
-    <div class="page-header" style="background: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%); padding: 100px 0 60px;">
-        <div class="container">
-            <h1 class="page-title" style="color: #fff; text-align: center; font-size: 2.5rem; margin: 0;" data-aos="fade-up">
-                <?php the_title(); ?>
-            </h1>
-            <p style="text-align: center; color: rgba(255,255,255,0.8); margin-top: 15px; font-size: 1.1rem;" data-aos="fade-up" data-aos-delay="100">
-                为您提供专业的行业解决方案
-            </p>
-        </div>
-    </div>
+    <?php \Developer_Starter\Core\Page_Header::render( 'default' ); ?>
 
     <div class="page-content">
         <?php developer_starter_render_page_modules(); ?>

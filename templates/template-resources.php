@@ -17,23 +17,20 @@ add_action( 'wp_enqueue_scripts', function() {
         array( 'developer-starter-main' ),
         developer_starter_get_assets_version()
     );
+
+    wp_enqueue_style(
+        'developer-starter-resource-template-skins',
+        DEVELOPER_STARTER_ASSETS . '/css/resource-template-skins.css',
+        array( 'developer-starter-resources' ),
+        developer_starter_get_assets_version()
+    );
 }, 20 );
 
 get_header();
 ?>
 
-<div class="page-template template-resources">
-    <!-- Page Header -->
-    <div class="page-header" style="background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #7c3aed 100%); padding: 100px 0 60px;">
-        <div class="container">
-            <h1 class="page-title" style="color: #fff; text-align: center; font-size: 2.5rem; margin: 0;" data-aos="fade-up">
-                <?php the_title(); ?>
-            </h1>
-            <p style="text-align: center; color: rgba(255,255,255,0.8); margin-top: 15px; font-size: 1.1rem;" data-aos="fade-up" data-aos-delay="100">
-                下载我们的APP、软件工具和企业资料
-            </p>
-        </div>
-    </div>
+<div class="page-template template-resources qiling-resource-template qiling-resource-template--downloads">
+    <?php \Developer_Starter\Core\Page_Header::render( 'default' ); ?>
 
     <div class="page-content">
         <?php developer_starter_render_page_modules(); ?>
