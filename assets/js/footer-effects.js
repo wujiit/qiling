@@ -1,5 +1,5 @@
 /**
- * Footer Effects - 页脚动画特效
+ * 启灵主题页脚动画特效脚本
  * 
  * 支持的特效类型:
  * - particles: 粒子飘动
@@ -10,8 +10,6 @@
  * - snow: 雪花飘落
  * - aurora: 极光效果
  * - fireflies: 萤火虫
- *
- * @package Developer_Starter
  */
 
 (function() {

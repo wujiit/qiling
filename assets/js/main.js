@@ -1,160 +1,423 @@
 /**
- * Qi Ling Theme - Main JavaScript
+ * 启灵主题前端主脚本
+ *
+ * 负责站点通用交互、按需脚本加载与基础动效初始化。
  */
+
+(function (window, document) {
+    'use strict';
+
+    function getGlobalData() {
+        return window.developerStarterData || {};
+    }
+
+    function loadScriptOnce(url, marker) {
+        return new Promise(function (resolve, reject) {
+            if (!url) {
+                resolve(false);
+                return;
+            }
+
+            var existing = null;
+            if (marker) {
+                existing = document.querySelector('script[' + marker + '="1"]');
+            }
+
+            if (!existing) {
+                var scriptNodes = document.querySelectorAll('script[src]');
+                for (var i = 0; i < scriptNodes.length; i++) {
+                    if ((scriptNodes[i].getAttribute('src') || '') === url) {
+                        existing = scriptNodes[i];
+                        break;
+                    }
+                }
+            }
+
+            if (existing) {
+                if (
+                    existing.getAttribute('data-ds-loaded') === '1'
+                    || existing.readyState === 'complete'
+                    || existing.readyState === 'loaded'
+                ) {
+                    resolve(true);
+                    return;
+                }
+                var settled = false;
+                var onLoaded = function () {
+                    if (settled) {
+                        return;
+                    }
+                    settled = true;
+                    existing.setAttribute('data-ds-loaded', '1');
+                    resolve(true);
+                };
+                var onError = function () {
+                    if (settled) {
+                        return;
+                    }
+                    settled = true;
+                    reject(new Error('script load failed'));
+                };
+
+                existing.addEventListener('load', onLoaded, { once: true });
+                existing.addEventListener('error', onError, { once: true });
+
+                if (document.readyState !== 'loading') {
+                    setTimeout(onLoaded, 0);
+                }
+                return;
+            }
+
+            var script = document.createElement('script');
+            script.src = url;
+            script.defer = true;
+            if (marker) {
+                script.setAttribute(marker, '1');
+            }
+            script.onload = function () {
+                script.setAttribute('data-ds-loaded', '1');
+                resolve(true);
+            };
+            script.onerror = function () {
+                reject(new Error('script load failed'));
+            };
+            document.head.appendChild(script);
+        });
+    }
+
+    window.DSLoadScriptOnce = function (url, marker) {
+        return loadScriptOnce(url, marker);
+    };
+
+    if (typeof window.DSLoadCaptchaProvider !== 'function') {
+        window.DSLoadCaptchaProvider = function (scene) {
+            if (window.DSProviderCaptcha) {
+                return Promise.resolve(true);
+            }
+
+            var globalData = getGlobalData();
+            var captchaData = globalData.captcha || {};
+            var provider = String(captchaData.provider || 'theme');
+            if (provider !== 'aliyun') {
+                return Promise.resolve(false);
+            }
+
+            var scriptUrl = String(globalData.captchaProviderScript || '');
+            if (!scriptUrl) {
+                return Promise.resolve(false);
+            }
+
+            if (window.__dsCaptchaProviderPromise) {
+                return window.__dsCaptchaProviderPromise;
+            }
+
+            window.__dsCaptchaProviderLastScene = String(scene || '');
+            window.__dsCaptchaProviderPromise = loadScriptOnce(scriptUrl, 'data-ds-captcha-provider-script')
+                .then(function () {
+                    if (window.DSProviderCaptcha) {
+                        return true;
+                    }
+                    window.__dsCaptchaProviderPromise = null;
+                    return false;
+                })
+                .catch(function () {
+                    window.__dsCaptchaProviderPromise = null;
+                    return false;
+                });
+
+            return window.__dsCaptchaProviderPromise;
+        };
+    }
+})(window, document);
 
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // ===== User Auth Status Check (Cache-Safe) =====
-    // 确保已登录用户不受页面缓存影响，始终显示正确的登录状态
-    (function checkUserAuthStatus() {
-        var authWrapper = document.getElementById('header-auth-wrapper');
-        if (!authWrapper) return;
+    function getGlobalData() {
+        return window.developerStarterData || {};
+    }
 
-        var loginArea = document.getElementById('header-login-area');
-        var userArea = document.getElementById('header-user-area');
+    var mobileMenuConfig = (typeof developerStarterData !== 'undefined' && developerStarterData.mobileMenu)
+        ? developerStarterData.mobileMenu
+        : {};
+    var mobileMenuEnabled = !!mobileMenuConfig.enabled;
+    var mobileMenuScript = String(mobileMenuConfig.script || '');
+    var mobileMenuBreakpoint = parseInt(mobileMenuConfig.breakpoint, 10);
+    var mobileMenuLoaded = !!window.__dsMobileMenuInitialized;
+    var mobileMenuLoadingPromise = null;
 
-        if (!loginArea || !userArea) return;
+    if (!mobileMenuBreakpoint || mobileMenuBreakpoint < 1) {
+        mobileMenuBreakpoint = 992;
+    }
 
-        // 通过AJAX获取真实的用户登录状态（不受页面缓存影响）
-        var ajaxUrl = typeof developerStarterData !== 'undefined' ? developerStarterData.ajaxUrl : '/wp-admin/admin-ajax.php';
+    function hasMobileMenuTargets() {
+        return !!(
+            document.querySelector('.mobile-menu-toggle')
+            || document.getElementById('mobile-menu')
+            || document.querySelector('.mobile-bottom-menu')
+        );
+    }
 
-        // 添加时间戳防止CDN和浏览器缓存
-        var timestamp = new Date().getTime();
+    function shouldLoadMobileMenu() {
+        if (!mobileMenuEnabled || !hasMobileMenuTargets()) {
+            return false;
+        }
 
-        fetch(ajaxUrl + '?_=' + timestamp, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Cache-Control': 'no-cache, no-store, must-revalidate',
-                'Pragma': 'no-cache'
-            },
-            body: 'action=developer_starter_user_status&_nocache=' + timestamp,
-            credentials: 'same-origin', // 确保发送cookies
-            cache: 'no-store' // 强制不使用缓存
-        })
-            .then(function (response) { return response.json(); })
-            .then(function (data) {
-                if (!data.success) return;
+        if (window.matchMedia) {
+            return window.matchMedia('(max-width: ' + mobileMenuBreakpoint + 'px)').matches;
+        }
 
-                var userData = data.data;
+        return window.innerWidth <= mobileMenuBreakpoint;
+    }
 
-                if (userData.logged_in) {
-                    // 用户已登录：显示用户菜单，隐藏登录按钮
-                    loginArea.style.display = 'none';
-                    userArea.style.display = '';
+    function loadMobileMenuScript() {
+        if (!mobileMenuEnabled || mobileMenuLoaded || !mobileMenuScript) {
+            return Promise.resolve(mobileMenuLoaded);
+        }
 
-                    // 更新用户信息（如果是从缓存页面加载的）
-                    var userAvatar = document.getElementById('header-user-avatar');
-                    var dropdownAvatar = document.getElementById('dropdown-user-avatar');
-                    var userName = document.getElementById('dropdown-user-name');
-                    var userEmail = document.getElementById('dropdown-user-email');
-                    var accountLink = document.getElementById('dropdown-account-link');
-                    var adminLink = document.getElementById('dropdown-admin-link');
-                    var logoutLink = document.getElementById('dropdown-logout-link');
-                    var userToggle = document.getElementById('header-user-toggle');
+        if (mobileMenuLoadingPromise) {
+            return mobileMenuLoadingPromise;
+        }
 
-                    // 更新头像 - 查找所有可能的头像元素
-                    if (userAvatar) {
-                        userAvatar.src = userData.avatar_32;
-                        userAvatar.alt = userData.display_name;
-                    }
-                    if (dropdownAvatar) {
-                        dropdownAvatar.src = userData.avatar_48;
-                        dropdownAvatar.alt = userData.display_name;
-                    }
-
-                    // 更新主按钮的头像（查找任何空src或没有正确src的img）
-                    if (userToggle) {
-                        var toggleImgs = userToggle.querySelectorAll('img');
-                        toggleImgs.forEach(function (img) {
-                            if (!img.src || img.src === '' || img.src === window.location.href) {
-                                img.src = userData.avatar_32;
-                                img.alt = userData.display_name;
-                            }
-                        });
-                    }
-
-                    // 更新下拉菜单中的头像
-                    var dropdown = document.getElementById('user-dropdown');
-                    if (dropdown) {
-                        var dropdownImgs = dropdown.querySelectorAll('.dropdown-header img');
-                        dropdownImgs.forEach(function (img) {
-                            if (!img.src || img.src === '' || img.src === window.location.href) {
-                                img.src = userData.avatar_48;
-                                img.alt = userData.display_name;
-                            }
-                        });
-                    }
-
-                    // 更新用户名和邮箱（强制更新，不检查是否为空）
-                    if (userName) userName.textContent = userData.display_name;
-                    if (userEmail) userEmail.textContent = userData.email;
-
-                    // 更新链接
-                    if (accountLink && userData.account_url) accountLink.href = userData.account_url;
-                    if (userToggle && userData.account_url) userToggle.href = userData.account_url;
-                    if (adminLink) {
-                        if (userData.can_access_admin && userData.admin_url) {
-                            adminLink.href = userData.admin_url;
-                            adminLink.style.display = '';
-                        } else {
-                            adminLink.style.display = 'none';
-                        }
-                    }
-                    if (logoutLink && userData.logout_url) logoutLink.href = userData.logout_url;
-
-                } else {
-                    // 用户未登录：显示登录按钮，隐藏用户菜单
-                    loginArea.style.display = '';
-                    userArea.style.display = 'none';
-                }
-
-                // 标记状态检查完成
-                authWrapper.setAttribute('data-auth-ready', 'true');
+        mobileMenuLoadingPromise = window.DSLoadScriptOnce(mobileMenuScript, 'data-ds-mobile-menu-script')
+            .then(function (loaded) {
+                mobileMenuLoadingPromise = null;
+                mobileMenuLoaded = !!loaded;
+                return mobileMenuLoaded;
             })
-            .catch(function (error) {
-                // 网络错误时保持服务器端渲染的状态
-                console.warn('User status check failed:', error);
-                authWrapper.setAttribute('data-auth-ready', 'true');
+            .catch(function () {
+                mobileMenuLoadingPromise = null;
+                return false;
             });
-    })();
 
+        return mobileMenuLoadingPromise;
+    }
+
+    if (mobileMenuEnabled && hasMobileMenuTargets()) {
+        if (shouldLoadMobileMenu()) {
+            loadMobileMenuScript();
+        }
+
+        if (window.matchMedia) {
+            var mobileMenuViewport = window.matchMedia('(max-width: ' + mobileMenuBreakpoint + 'px)');
+            if (typeof mobileMenuViewport.addEventListener === 'function') {
+                mobileMenuViewport.addEventListener('change', function (event) {
+                    if (event.matches) {
+                        loadMobileMenuScript();
+                    }
+                });
+            } else if (typeof mobileMenuViewport.addListener === 'function') {
+                mobileMenuViewport.addListener(function (event) {
+                    if (event.matches) {
+                        loadMobileMenuScript();
+                    }
+                });
+            }
+        } else {
+            window.addEventListener('resize', function () {
+                if (shouldLoadMobileMenu()) {
+                    loadMobileMenuScript();
+                }
+            });
+            window.addEventListener('orientationchange', function () {
+                if (shouldLoadMobileMenu()) {
+                    loadMobileMenuScript();
+                }
+            });
+        }
+    }
 
     // ===== Dark Mode Toggle =====
     var darkModeToggle = document.getElementById('darkmode-toggle');
-    if (darkModeToggle) {
-        var iconSun = darkModeToggle.querySelector('.icon-sun');
-        var iconMoon = darkModeToggle.querySelector('.icon-moon');
+    var darkModeConfig = window.qilingDarkModeConfig || getGlobalData().darkMode || {};
+    if (darkModeToggle || darkModeConfig.enabled) {
+        var root = document.documentElement;
+        var iconSun = darkModeToggle ? darkModeToggle.querySelector('.icon-sun') : null;
+        var iconMoon = darkModeToggle ? darkModeToggle.querySelector('.icon-moon') : null;
+        var storageKey = darkModeConfig.storageKey || 'qiling-theme-preference';
+        var legacyStorageKey = darkModeConfig.legacyStorageKey || 'theme';
+        var scheduleTimer = null;
+        var mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
-        // 检查本地存储或系统偏好
-        var savedTheme = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        function setDarkMode(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark-mode');
-                if (iconSun) iconSun.style.display = 'none';
-                if (iconMoon) iconMoon.style.display = 'block';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.classList.remove('dark-mode');
-                if (iconSun) iconSun.style.display = 'block';
-                if (iconMoon) iconMoon.style.display = 'none';
-                localStorage.setItem('theme', 'light');
+        function readThemeStorage(key) {
+            try {
+                return window.localStorage ? localStorage.getItem(key) : null;
+            } catch (error) {
+                return null;
             }
         }
 
-        // 初始化
-        if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
-            setDarkMode(true);
+        function writeThemeStorage(key, value) {
+            try {
+                if (window.localStorage) {
+                    localStorage.setItem(key, value);
+                }
+            } catch (error) {
+                // Storage can be blocked in private modes; the theme still applies for this page.
+            }
         }
 
-        // 切换事件
-        darkModeToggle.addEventListener('click', function () {
-            var isDark = document.documentElement.classList.contains('dark-mode');
-            setDarkMode(!isDark);
-        });
+        function timeToMinutes(value, fallback) {
+            var match = /^([01]?\d|2[0-3]):([0-5]\d)$/.exec(String(value || fallback || '00:00'));
+            if (!match) {
+                return 0;
+            }
+
+            return parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
+        }
+
+        function scheduleWantsDark() {
+            var sunrise = timeToMinutes(darkModeConfig.sunriseTime, '06:00');
+            var sunset = timeToMinutes(darkModeConfig.sunsetTime, '18:00');
+            var now = new Date();
+            var minutes = now.getHours() * 60 + now.getMinutes();
+
+            if (sunrise === sunset) {
+                return false;
+            }
+
+            return sunset > sunrise
+                ? (minutes >= sunset || minutes < sunrise)
+                : (minutes >= sunset && minutes < sunrise);
+        }
+
+        function systemWantsDark() {
+            return !!(mediaQuery && mediaQuery.matches);
+        }
+
+        function autoWantsDark() {
+            var mode = darkModeConfig.mode || 'system_schedule';
+
+            if (mode === 'system') {
+                return systemWantsDark();
+            }
+
+            if (mode === 'schedule') {
+                return scheduleWantsDark();
+            }
+
+            return mediaQuery ? systemWantsDark() : scheduleWantsDark();
+        }
+
+        function getPreference() {
+            var preference = readThemeStorage(storageKey);
+            if (preference === 'dark' || preference === 'light' || preference === 'auto') {
+                return preference;
+            }
+
+            if (!darkModeConfig.autoEnabled) {
+                var legacyTheme = readThemeStorage(legacyStorageKey);
+                if (legacyTheme === 'dark' || legacyTheme === 'light') {
+                    return legacyTheme;
+                }
+            }
+
+            return '';
+        }
+
+        function resolveTheme() {
+            var preference = getPreference();
+
+            if (darkModeConfig.autoEnabled) {
+                if (preference === 'dark' || preference === 'light') {
+                    return { theme: preference, source: 'manual' };
+                }
+
+                return { theme: autoWantsDark() ? 'dark' : 'light', source: 'auto' };
+            }
+
+            if (preference === 'dark' || preference === 'light') {
+                return { theme: preference, source: 'manual' };
+            }
+
+            return { theme: 'light', source: 'default' };
+        }
+
+        function updateDarkModeIcons(isDark) {
+            if (iconSun) {
+                iconSun.style.display = isDark ? 'none' : 'block';
+            }
+
+            if (iconMoon) {
+                iconMoon.style.display = isDark ? 'block' : 'none';
+            }
+        }
+
+        function applyTheme(theme, source, persist) {
+            var isDark = theme === 'dark';
+            var transitionEnabled = !!darkModeConfig.transition;
+
+            if (transitionEnabled) {
+                root.classList.add('qiling-theme-transitioning');
+            }
+
+            root.classList.toggle('dark-mode', isDark);
+            root.classList.toggle('qiling-dark-auto', !!darkModeConfig.autoEnabled);
+            root.classList.toggle('qiling-dark-image-dim', !!darkModeConfig.imageDim);
+            root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            root.setAttribute('data-theme-source', source || 'default');
+            updateDarkModeIcons(isDark);
+
+            if (persist) {
+                writeThemeStorage(storageKey, isDark ? 'dark' : 'light');
+                writeThemeStorage(legacyStorageKey, isDark ? 'dark' : 'light');
+            }
+
+            if (transitionEnabled) {
+                window.clearTimeout(applyTheme.transitionTimer);
+                applyTheme.transitionTimer = window.setTimeout(function () {
+                    root.classList.remove('qiling-theme-transitioning');
+                }, 360);
+            }
+        }
+
+        function refreshAutoTheme() {
+            var resolved = resolveTheme();
+            applyTheme(resolved.theme, resolved.source, false);
+        }
+
+        function hasManualPreference() {
+            var preference = getPreference();
+            return preference === 'dark' || preference === 'light';
+        }
+
+        function scheduleAutoRefresh() {
+            if (scheduleTimer) {
+                window.clearInterval(scheduleTimer);
+                scheduleTimer = null;
+            }
+
+            if (!darkModeConfig.autoEnabled || hasManualPreference()) {
+                return;
+            }
+
+            scheduleTimer = window.setInterval(refreshAutoTheme, 60000);
+        }
+
+        refreshAutoTheme();
+        scheduleAutoRefresh();
+
+        if (mediaQuery && darkModeConfig.autoEnabled) {
+            var mediaListener = function () {
+                if (!hasManualPreference()) {
+                    refreshAutoTheme();
+                }
+            };
+
+            if (typeof mediaQuery.addEventListener === 'function') {
+                mediaQuery.addEventListener('change', mediaListener);
+            } else if (typeof mediaQuery.addListener === 'function') {
+                mediaQuery.addListener(mediaListener);
+            }
+        }
+
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', function () {
+                var isDark = root.classList.contains('dark-mode');
+                applyTheme(isDark ? 'light' : 'dark', 'manual', true);
+                scheduleAutoRefresh();
+            });
+        }
     }
 
     // ===== Native Scroll Animation (替代 AOS 库) =====
@@ -192,6 +455,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof Swiper !== 'undefined') {
         var bannerSwipers = document.querySelectorAll('.banner-swiper');
         bannerSwipers.forEach(function (el) {
+            if (el.classList.contains('swiper-initialized')) {
+                return;
+            }
             new Swiper(el, {
                 loop: true,
                 autoplay: {
@@ -212,229 +478,506 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Mobile Menu Toggle =====
-    var menuToggle = document.querySelector('.mobile-menu-toggle');
-    var mobileMenu = document.getElementById('mobile-menu');
-    var mobileMenuClose = document.getElementById('mobile-menu-close');
-    var mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-
-    function openMobileMenu() {
-        if (mobileMenu) {
-            mobileMenu.classList.add('is-open');
-            if (mobileMenuOverlay) mobileMenuOverlay.classList.add('is-open');
-            if (menuToggle) menuToggle.classList.add('is-active');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    function closeMobileMenu() {
-        if (mobileMenu) {
-            mobileMenu.classList.remove('is-open');
-            if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('is-open');
-            if (menuToggle) menuToggle.classList.remove('is-active');
-            document.body.style.overflow = '';
-        }
-    }
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            if (mobileMenu && mobileMenu.classList.contains('is-open')) {
-                closeMobileMenu();
-            } else {
-                openMobileMenu();
-            }
-        });
-    }
-
-    if (mobileMenuClose) {
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-    }
-
-    if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-    }
-
-    // Mobile submenu toggle
-    var mobileMenuNav = document.querySelector('.mobile-menu-nav');
-    if (mobileMenuNav) {
-        var menuItemsWithChildren = mobileMenuNav.querySelectorAll('.menu-item-has-children');
-        menuItemsWithChildren.forEach(function(item) {
-            var link = item.querySelector(':scope > a');
-            if (link) {
-                link.addEventListener('click', function(e) {
-                    // If it's a parent item, toggle submenu instead of navigating
-                    var submenu = item.querySelector(':scope > .sub-menu');
-                    if (submenu) {
-                        e.preventDefault();
-                        item.classList.toggle('is-open');
-                    }
-                });
-            }
-        });
-    }
-
-    // ESC key to close mobile menu
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('is-open')) {
-            closeMobileMenu();
-        }
-    });
-
-    // ===== Search Overlay =====
+    // ===== Search Overlay (Lazy Load) =====
     var searchToggle = document.getElementById('search-toggle');
-    var searchOverlay = document.getElementById('search-overlay');
-    var searchClose = document.getElementById('search-close');
+    var searchOverlayScript = (typeof developerStarterData !== 'undefined' && developerStarterData.searchOverlayScript)
+        ? developerStarterData.searchOverlayScript
+        : '';
+    var searchCaptchaLazyLoad = !!(typeof developerStarterData !== 'undefined' && developerStarterData.searchCaptchaLazyLoad);
+    var searchCaptchaAssets = (typeof developerStarterData !== 'undefined' && developerStarterData.searchCaptchaAssets)
+        ? developerStarterData.searchCaptchaAssets
+        : {};
+    var searchScriptLoaded = false;
+    var searchScriptLoading = false;
+    var searchCaptchaLoaded = !!window.__dsSearchCaptchaInitialized;
+    var searchCaptchaLoadingPromise = null;
 
-    if (searchToggle && searchOverlay) {
-        searchToggle.addEventListener('click', function () {
-            searchOverlay.classList.add('active');
-            var input = searchOverlay.querySelector('input');
-            if (input) input.focus();
-        });
-    }
-
-    if (searchClose && searchOverlay) {
-        searchClose.addEventListener('click', function () {
-            searchOverlay.classList.remove('active');
-        });
-
-        searchOverlay.addEventListener('click', function (e) {
-            if (e.target === searchOverlay) {
-                searchOverlay.classList.remove('active');
-            }
-        });
-    }
-
-    // ESC key to close search
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && searchOverlay && searchOverlay.classList.contains('active')) {
-            searchOverlay.classList.remove('active');
+    var loadScript = function (url, marker) {
+        if (typeof window.DSLoadScriptOnce === 'function') {
+            return window.DSLoadScriptOnce(url, marker);
         }
-    });
+        return Promise.resolve(false);
+    };
 
-    // ===== Header Scroll Effect =====
-    var header = document.querySelector('.site-header');
-    if (header) {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 50) {
-                header.classList.add('is-scrolled');
-            } else {
-                header.classList.remove('is-scrolled');
-            }
-        });
+    var loadStyle = function (url, marker) {
+        if (!url) {
+            return;
+        }
+
+        var existing = document.querySelector('link[' + marker + '="1"]');
+        if (existing) {
+            return;
+        }
+
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        link.setAttribute(marker, '1');
+        document.head.appendChild(link);
+    };
+
+    // ===== Search enhance runtime moved to feature-search-enhance.js =====
+
+    var loginModalConfig = (typeof developerStarterData !== 'undefined' && developerStarterData.loginModal)
+        ? developerStarterData.loginModal
+        : {};
+    var loginModalEnabled = !!loginModalConfig.enabled;
+    var loginModalEndpoint = String(loginModalConfig.endpoint || '');
+    var loginModalStyle = String(loginModalConfig.style || '');
+    var loginModalAuthFlowScript = String(loginModalConfig.authFlowScript || '');
+    var loginModalScript = String(loginModalConfig.script || '');
+    var loginModalFallbackUrl = String(loginModalConfig.fallbackUrl || '');
+    var loginModalLoaded = !!document.getElementById('login-modal');
+    var loginModalLoadingPromise = null;
+    var pendingLoginModalView = 'login';
+    var pendingLoginModalFallbackUrl = '';
+    var headerLoginToggle = document.getElementById('header-login-toggle');
+    var headerLoginClickHandler = null;
+
+    function markLoginModalLoaded() {
+        loginModalLoaded = !!document.getElementById('login-modal');
+        window.__dsLoginModalLoaded = loginModalLoaded;
+
+        if (loginModalLoaded && headerLoginToggle && headerLoginClickHandler) {
+            headerLoginToggle.removeEventListener('click', headerLoginClickHandler);
+            headerLoginClickHandler = null;
+        }
+
+        return loginModalLoaded;
     }
 
-    // ===== FAQ Accordion =====
-    var faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var item = this.closest('.faq-item');
-            var answer = item.querySelector('.faq-answer');
-            var icon = this.querySelector('.faq-icon');
+    function appendLoginModalNode(node) {
+        if (!node) {
+            return;
+        }
 
-            // Close all others
-            document.querySelectorAll('.faq-item').forEach(function (other) {
-                if (other !== item) {
-                    var otherAnswer = other.querySelector('.faq-answer');
-                    if (otherAnswer) otherAnswer.style.display = 'none';
-                    var otherIcon = other.querySelector('.faq-icon');
-                    if (otherIcon) otherIcon.textContent = '+';
+        if (node.nodeType === 3 && !String(node.textContent || '').trim()) {
+            return;
+        }
+
+        if (node.nodeName === 'SCRIPT') {
+            var script = document.createElement('script');
+            var attrs = node.attributes || [];
+            for (var i = 0; i < attrs.length; i++) {
+                script.setAttribute(attrs[i].name, attrs[i].value);
+            }
+            if (node.src) {
+                script.src = node.src;
+            } else {
+                script.text = node.textContent || '';
+            }
+            (document.body || document.documentElement).appendChild(script);
+            return;
+        }
+
+        if (node.nodeName === 'STYLE' || (node.nodeName === 'LINK' && node.getAttribute('rel') === 'stylesheet')) {
+            document.head.appendChild(node);
+            return;
+        }
+
+        (document.body || document.documentElement).appendChild(node);
+    }
+
+    function injectLoginModalMarkup(html) {
+        if (!html) {
+            return false;
+        }
+
+        var template = document.createElement('template');
+        template.innerHTML = String(html);
+
+        var sourceNodes = template.content ? template.content.childNodes : template.childNodes;
+        var nodes = [];
+        for (var i = 0; i < sourceNodes.length; i++) {
+            nodes.push(sourceNodes[i]);
+        }
+
+        nodes.forEach(function (node) {
+            appendLoginModalNode(node);
+        });
+
+        return markLoginModalLoaded();
+    }
+
+    function loadLoginModalAuthFlow() {
+        if (window.DSAuthFlow) {
+            return Promise.resolve(true);
+        }
+        if (!loginModalAuthFlowScript || typeof window.DSLoadScriptOnce !== 'function') {
+            return Promise.resolve(false);
+        }
+        return window.DSLoadScriptOnce(loginModalAuthFlowScript, 'data-ds-auth-flow-script')
+            .then(function () {
+                return !!window.DSAuthFlow;
+            })
+            .catch(function () {
+                return false;
+            });
+    }
+
+    function initLoadedLoginModal() {
+        if (window.DSLoginModal && typeof window.DSLoginModal.init === 'function') {
+            return !!window.DSLoginModal.init();
+        }
+        return typeof window.developerStarterShowLoginModal === 'function'
+            && window.developerStarterShowLoginModal !== lazyLoginModalProxy;
+    }
+
+    function loadLoginModalScript() {
+        if (initLoadedLoginModal()) {
+            return Promise.resolve(true);
+        }
+        if (!loginModalScript || typeof window.DSLoadScriptOnce !== 'function') {
+            return Promise.resolve(initLoadedLoginModal());
+        }
+        return window.DSLoadScriptOnce(loginModalScript, 'data-ds-login-modal-script')
+            .then(function () {
+                return initLoadedLoginModal();
+            })
+            .catch(function () {
+                return initLoadedLoginModal();
+            });
+    }
+
+    function loadLoginModalMarkup() {
+        if (!loginModalEnabled || !loginModalEndpoint) {
+            return Promise.resolve(false);
+        }
+
+        if (markLoginModalLoaded()) {
+            return loadLoginModalScript();
+        }
+
+        if (loginModalLoadingPromise) {
+            return loginModalLoadingPromise;
+        }
+
+        loadStyle(loginModalStyle, 'data-ds-login-modal-style');
+
+        loginModalLoadingPromise = loadLoginModalAuthFlow()
+            .then(function () {
+                return fetch(loginModalEndpoint + '&_=' + Date.now(), {
+                    credentials: 'same-origin',
+                    cache: 'no-store'
+                });
+            })
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('login modal request failed');
                 }
+                return response.json();
+            })
+            .then(function (data) {
+                if (!data || !data.success || !data.data || !data.data.html) {
+                    throw new Error('invalid login modal response');
+                }
+                return injectLoginModalMarkup(data.data.html);
+            })
+            .then(function (loaded) {
+                if (!loaded) {
+                    return false;
+                }
+                return loadLoginModalScript();
+            })
+            .then(function (loaded) {
+                loginModalLoadingPromise = null;
+                return !!loaded;
+            })
+            .catch(function () {
+                loginModalLoadingPromise = null;
+                return false;
             });
 
-            // Toggle current
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                if (icon) icon.textContent = '+';
-            } else {
-                answer.style.display = 'block';
-                if (icon) icon.textContent = '-';
+        return loginModalLoadingPromise;
+    }
+
+    var lazyLoginModalProxy = function (view, fallbackUrl) {
+        pendingLoginModalView = view === 'register' ? 'register' : 'login';
+        pendingLoginModalFallbackUrl = String(fallbackUrl || loginModalFallbackUrl || '');
+
+        if (!loginModalEnabled) {
+            return false;
+        }
+
+        if (
+            markLoginModalLoaded()
+            && typeof window.developerStarterShowLoginModal === 'function'
+            && window.developerStarterShowLoginModal !== lazyLoginModalProxy
+        ) {
+            window.developerStarterShowLoginModal(pendingLoginModalView);
+            return true;
+        }
+
+        loadLoginModalMarkup().then(function (loaded) {
+            if (
+                loaded
+                && typeof window.developerStarterShowLoginModal === 'function'
+                && window.developerStarterShowLoginModal !== lazyLoginModalProxy
+            ) {
+                window.developerStarterShowLoginModal(pendingLoginModalView);
+                return;
+            }
+
+            var modalFallbackUrl = pendingLoginModalFallbackUrl || loginModalFallbackUrl;
+            if (modalFallbackUrl) {
+                window.location.href = modalFallbackUrl;
             }
         });
+
+        return true;
+    };
+
+    if (typeof window.developerStarterShowLoginModal !== 'function') {
+        window.developerStarterShowLoginModal = lazyLoginModalProxy;
+    }
+
+    window.dsOpenLoginModal = function (view, fallbackUrl) {
+        return lazyLoginModalProxy(view || 'login', fallbackUrl);
+    };
+
+    document.addEventListener('click', function (event) {
+        var trigger = event.target && event.target.closest
+            ? event.target.closest('[data-ds-login-trigger="modal"], .contact-form-login-hint a')
+            : null;
+
+        if (!trigger || !loginModalEnabled) {
+            return;
+        }
+
+        var fallbackUrl = trigger.getAttribute('data-login-url') || trigger.getAttribute('href') || loginModalFallbackUrl;
+        event.preventDefault();
+
+        if (!lazyLoginModalProxy('login', fallbackUrl) && fallbackUrl) {
+            window.location.href = fallbackUrl;
+        }
     });
 
-    // ===== Stats Counter Animation =====
-    var statNumbers = document.querySelectorAll('.stat-number');
-    if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
-        var animateCounter = function (el) {
-            var text = el.textContent.replace(/[^0-9]/g, '');
-            var target = parseInt(text) || 0;
-            if (target === 0) return;
-
-            var duration = 2000;
-            var startTime = null;
-
-            function animate(timestamp) {
-                if (!startTime) startTime = timestamp;
-                var progress = Math.min((timestamp - startTime) / duration, 1);
-                var current = Math.floor(progress * target);
-                el.textContent = current + '+';
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    el.textContent = target + '+';
-                }
+    if (loginModalEnabled && headerLoginToggle) {
+        headerLoginClickHandler = function (event) {
+            if (markLoginModalLoaded()) {
+                return;
             }
 
-            requestAnimationFrame(animate);
+            event.preventDefault();
+            lazyLoginModalProxy('login');
         };
 
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    observer.unobserve(entry.target);
+        headerLoginToggle.addEventListener('click', headerLoginClickHandler);
+    }
+
+    var loadSearchCaptchaAssets = function () {
+        if (!searchCaptchaLazyLoad) {
+            return Promise.resolve(false);
+        }
+
+        if (window.__dsSearchCaptchaInitialized) {
+            searchCaptchaLoaded = true;
+            return Promise.resolve(true);
+        }
+
+        if (searchCaptchaLoaded) {
+            return Promise.resolve(true);
+        }
+
+        if (searchCaptchaLoadingPromise) {
+            return searchCaptchaLoadingPromise;
+        }
+
+        var cssUrl = searchCaptchaAssets.style || '';
+        var jsUrl = searchCaptchaAssets.script || '';
+        var jqueryUrl = searchCaptchaAssets.jquery || '';
+        loadStyle(cssUrl, 'data-ds-search-captcha-style');
+
+        var ensureProvider = (typeof window.DSLoadCaptchaProvider === 'function')
+            ? window.DSLoadCaptchaProvider('search')
+            : Promise.resolve(false);
+
+        searchCaptchaLoadingPromise = ensureProvider
+            .catch(function () {
+                return false;
+            })
+            .then(function () {
+                if (window.jQuery) {
+                    return true;
                 }
+                return loadScript(jqueryUrl, 'data-ds-search-captcha-jquery')
+                    .then(function () {
+                        return true;
+                    })
+                    .catch(function () {
+                        return false;
+                    });
+            })
+            .then(function (jqueryReady) {
+                if (!jqueryReady || !jsUrl) {
+                    return false;
+                }
+                return loadScript(jsUrl, 'data-ds-search-captcha-script')
+                    .then(function () {
+                        searchCaptchaLoaded = !!window.__dsSearchCaptchaInitialized;
+                        return searchCaptchaLoaded;
+                    })
+                    .catch(function () {
+                        return false;
+                    });
+            })
+            .then(function (loaded) {
+                searchCaptchaLoadingPromise = null;
+                return loaded;
             });
-        }, { threshold: 0.5 });
 
-        statNumbers.forEach(function (el) {
-            observer.observe(el);
-        });
-    }
+        return searchCaptchaLoadingPromise;
+    };
 
-    // ===== Back to Top =====
-    var backToTop = document.getElementById('back-to-top');
-    if (backToTop) {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 300) {
-                backToTop.style.display = 'flex';
-            } else {
-                backToTop.style.display = 'none';
+    var formNeedsSearchCaptcha = function (form) {
+        if (!form || form.tagName !== 'FORM') {
+            return false;
+        }
+
+        if (form.matches('.ds-enable-captcha')) {
+            return true;
+        }
+
+        if (form.matches('form[role="search"]') || form.matches('form.search-form')) {
+            return true;
+        }
+
+        if (form.classList.contains('contact-form') || form.id === 'ds-contact-form') {
+            return true;
+        }
+
+        return !!(form.closest && form.closest('.widget_search'));
+    };
+
+    if (searchCaptchaLazyLoad) {
+        document.addEventListener('submit', function (e) {
+            var form = e.target;
+            if (!formNeedsSearchCaptcha(form)) {
+                return;
             }
-        });
 
-        backToTop.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
+            if (form.dataset.dsSearchCaptchaBootstrap === '1') {
+                delete form.dataset.dsSearchCaptchaBootstrap;
+                return;
+            }
 
-    // Float widget hover is now handled by CSS
+            if (form.dataset.dsSearchCaptchaSkipOnce === '1') {
+                delete form.dataset.dsSearchCaptchaSkipOnce;
+                return;
+            }
 
-    // ===== Contact Form =====
-    var contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+            if (window.__dsSearchCaptchaInitialized) {
+                searchCaptchaLoaded = true;
+                return;
+            }
+
             e.preventDefault();
+            e.stopPropagation();
+            if (typeof e.stopImmediatePropagation === 'function') {
+                e.stopImmediatePropagation();
+            }
 
-            var submitBtn = this.querySelector('button[type="submit"]');
-            var originalText = submitBtn.textContent;
+            var submitter = typeof e.submitter !== 'undefined' ? e.submitter : null;
+            loadSearchCaptchaAssets().then(function (loaded) {
+                if (!loaded) {
+                    if (typeof form.requestSubmit === 'function') {
+                        form.dataset.dsSearchCaptchaSkipOnce = '1';
+                        setTimeout(function () {
+                            if (submitter && submitter.isConnected) {
+                                form.requestSubmit(submitter);
+                            } else {
+                                form.requestSubmit();
+                            }
+                        }, 0);
+                        return;
+                    }
 
-            submitBtn.textContent = '发送中...';
-            submitBtn.disabled = true;
+                    setTimeout(function () {
+                        form.submit();
+                    }, 0);
+                    return;
+                }
 
-            // 实际AJAX请求可在此处添加
-            setTimeout(function () {
-                alert('感谢您的留言，我们会尽快与您联系！');
-                contactForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1000);
-        });
+                form.dataset.dsSearchCaptchaBootstrap = '1';
+                setTimeout(function () {
+                    if (typeof form.requestSubmit === 'function') {
+                        if (submitter && submitter.isConnected) {
+                            form.requestSubmit(submitter);
+                        } else {
+                            form.requestSubmit();
+                        }
+                        return;
+                    }
+
+                    form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+                }, 0);
+            });
+        }, true);
     }
 
-    // ===== Smooth Scroll for Anchor Links =====
+    if (searchToggle) {
+        var loadSearchScriptAndOpen = function (e) {
+            if (e) e.preventDefault();
+
+            if (searchScriptLoaded && window.developerStarterSearchOverlay && typeof window.developerStarterSearchOverlay.open === 'function') {
+                window.developerStarterSearchOverlay.open();
+                return;
+            }
+
+            if (!searchOverlayScript) {
+                var fallbackOverlayNoScript = document.getElementById('search-overlay');
+                if (fallbackOverlayNoScript) {
+                    fallbackOverlayNoScript.classList.add('active');
+                    var fallbackInputNoScript = fallbackOverlayNoScript.querySelector('input[type="search"], input[name="s"]');
+                    if (fallbackInputNoScript) fallbackInputNoScript.focus();
+                }
+                return;
+            }
+
+            if (searchScriptLoading) {
+                return;
+            }
+
+            searchScriptLoading = true;
+            var script = document.createElement('script');
+            script.src = searchOverlayScript;
+            script.defer = true;
+
+            script.onload = function () {
+                searchScriptLoading = false;
+                searchScriptLoaded = true;
+                if (window.developerStarterSearchOverlay && typeof window.developerStarterSearchOverlay.open === 'function') {
+                    window.developerStarterSearchOverlay.open();
+                }
+            };
+
+            script.onerror = function () {
+                searchScriptLoading = false;
+                // 回退：即使懒加载失败，也尽量保证搜索弹层可用
+                var fallbackOverlay = document.getElementById('search-overlay');
+                if (fallbackOverlay) {
+                    fallbackOverlay.classList.add('active');
+                    var input = fallbackOverlay.querySelector('input[type="search"], input[name="s"]');
+                    if (input) input.focus();
+                }
+            };
+
+            document.head.appendChild(script);
+        };
+
+        searchToggle.addEventListener('click', loadSearchScriptAndOpen);
+    }
+
+    // ===== Lazy embed runtime moved to feature-lazy-embeds.js =====
+
+    // ===== FAQ runtime moved to feature-faq.js =====
+
+    // ===== Stats counter runtime moved to feature-stats-counter.js =====
+
+    // ===== Back to top runtime moved to feature-back-to-top.js =====
+
+    // ===== Contact form runtime moved to feature-contact-form.js =====
+
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
             var href = this.getAttribute('href');
@@ -458,76 +1001,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ===== Language Switcher Modal =====
-    function openTranslateModal() {
-        var modal = document.getElementById('translate-modal');
-        var overlay = document.getElementById('translate-modal-overlay');
-        if (modal && overlay) {
-            modal.classList.add('show');
-            overlay.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    function closeTranslateModal() {
-        var modal = document.getElementById('translate-modal');
-        var overlay = document.getElementById('translate-modal-overlay');
-        if (modal && overlay) {
-            modal.classList.remove('show');
-            overlay.classList.remove('show');
-            document.body.style.overflow = '';
-        }
-    }
-
-    // Toggle button click - use event delegation
-    document.addEventListener('click', function (e) {
-        // Open modal
-        if (e.target.closest('#translate-toggle')) {
-            e.stopPropagation();
-            openTranslateModal();
-            return;
-        }
-
-        // Close button
-        if (e.target.closest('#translate-modal-close')) {
-            closeTranslateModal();
-            return;
-        }
-
-        // Overlay click
-        if (e.target.id === 'translate-modal-overlay') {
-            closeTranslateModal();
-            return;
-        }
-
-        // Language item click
-        var langItem = e.target.closest('.translate-lang-item');
-        if (langItem) {
-            e.preventDefault();
-            var lang = langItem.getAttribute('data-lang');
-
-            // Call translate.js to change language
-            if (typeof translate !== 'undefined' && translate.changeLanguage) {
-                translate.changeLanguage(lang);
-            }
-
-            // Update active state
-            document.querySelectorAll('.translate-lang-item').forEach(function (opt) {
-                opt.classList.remove('active');
-            });
-            langItem.classList.add('active');
-
-            // Close modal
-            closeTranslateModal();
-        }
-    });
-
-    // ESC key to close modal
-    document.addEventListener('keydown', function (e) {
-        var modal = document.getElementById('translate-modal');
-        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
-            closeTranslateModal();
-        }
-    });
+    // ===== Language switcher runtime moved to feature-language-switcher.js =====
 
 });
