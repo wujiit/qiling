@@ -1,0 +1,434 @@
+.qiling-module-scope-work_library .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-work_library .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-work_library .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-work_library .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-work_library .features-tab-btn .tab-icon,
+.qiling-module-scope-work_library .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-work_library .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-work_library .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-work_library .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-work_library .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-work_library .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-work_library .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-work_library .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-work_library .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-work_library .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-work_library .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-work_library .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-work_library .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-work_library .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-work_library .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-work_library .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-work_library .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-work_library .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-work_library .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-work_library .features-grid-2,
+.qiling-module-scope-work_library .features-grid-3,
+.qiling-module-scope-work_library .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-work_library /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-work_library .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-work_library .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-work_library .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-work_library /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-work_library .module-decor svg path,
+.qiling-module-scope-work_library .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-work_library /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-work_library .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-work_library .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-work_library .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-work_library .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-work_library .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-work_library .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-work_library /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-work_library .ql-travel-cols-2,
+.qiling-module-scope-work_library .ql-travel-cols-3,
+.qiling-module-scope-work_library .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-work_library .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-work_library /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-work_library /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-work_library .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-work_library .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-work_library .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-work_library .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-work_library .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-work_library .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-work_library /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-work_library /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-work_library .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-work_library /* ===== 作品库模块 (Module Work Library) ===== */
+.module-work-library {
+  background: var(--qw-lib-bg, var(--color-surface-alt));
+  padding-top: var(--qw-lib-padding-top, var(--qiling-space-64));
+  padding-bottom: var(--qw-lib-padding-bottom, var(--qiling-space-64));
+}.qiling-module-scope-work_library .module-work-library .qw-lib-head {
+  margin: 0 0 var(--qiling-space-40);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-title {
+  margin: 0;
+  font-size: clamp(
+    var(--qiling-text-rem-1p6),
+    var(--qiling-text-vw-2p4),
+    var(--qiling-text-rem-2p3)
+  );
+  line-height: 1.25;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-subtitle {
+  margin: var(--qiling-space-10) 0 0;
+  color: var(--color-text-muted);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-empty {
+  padding: var(--qiling-space-22);
+  border: 1px dashed var(--color-neutral-300);
+  border-radius: 14px;
+  background: rgba(var(--color-surface-rgb), 0.66);
+  color: var(--color-neutral-600);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-grid {
+  display: grid;
+  gap: var(--qiling-space-28);
+  grid-template-columns: var(--qw-lib-grid-template, repeat(3, minmax(0, 1fr)));
+}.qiling-module-scope-work_library .module-work-library.module-work-library .qw-lib-grid .qw-lib-card {
+  overflow: hidden;
+  border-radius: var(--qiling-card-radius);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.035) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qw-lib-card-bg, var(--qiling-component-post-card-bg));
+  border: 1px solid var(--qiling-component-post-card-border);
+  box-shadow: var(--qiling-component-post-card-shadow);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}.qiling-module-scope-work_library .module-work-library.module-work-library .qw-lib-grid .qw-lib-card:hover {
+  box-shadow: var(--qiling-component-post-card-shadow);
+  transform: translateY(-6px);
+  border-color: rgba(var(--color-primary-rgb), 0.18);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-cover {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: var(--qw-lib-cover-ratio, var(--qiling-space-pct-75));
+  background: var(--qiling-component-surface-alt-bg, var(--color-neutral-100));
+}.qiling-module-scope-work_library .module-work-library .qw-lib-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-cover-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-13);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-card-body {
+  padding: var(--qiling-space-20) var(--qiling-space-20) var(--qiling-space-22);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-type {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: var(--qiling-space-10);
+  padding: var(--qiling-space-5) var(--qiling-space-10);
+  border-radius: 999px;
+  background: var(--qiling-component-badge-bg);
+  color: var(--qiling-component-badge-text);
+  border: 1px solid var(--qiling-color-transparent);
+  font-size: var(--qiling-text-rem-0p76);
+  font-weight: 600;
+  line-height: 1;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-item-title {
+  margin: 0;
+  color: var(--qiling-component-post-card-title-color);
+  font-size: var(--qiling-text-rem-1p08);
+  font-weight: 700;
+  line-height: 1.45;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-excerpt {
+  display: -webkit-box;
+  margin: var(--qiling-space-12) 0 0;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-0p92);
+  line-height: 1.72;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  flex: 1;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-10) var(--qiling-space-14);
+  margin-top: var(--qiling-space-14);
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-0p82);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-price {
+  color: var(--color-warning-dark);
+  font-weight: 600;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-8);
+  margin-top: var(--qiling-space-14);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-term {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--qiling-space-5) var(--qiling-space-10);
+  border-radius: 999px;
+  background: var(--qiling-component-badge-bg);
+  color: var(--qiling-component-badge-text);
+  border: 1px solid var(--qiling-color-transparent);
+  font-size: var(--qiling-text-rem-0p76);
+  font-weight: 600;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-10);
+  justify-content: center;
+  margin-top: var(--qiling-space-32);
+}.qiling-module-scope-work_library .module-work-library .qw-lib-pager a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-38);
+  height: 38px;
+  border: 1px solid var(--qiling-component-tabs-border);
+  border-radius: var(--qiling-button-radius);
+  background: var(--qiling-component-card-bg);
+  color: var(--qiling-component-tabs-text);
+  font-size: var(--qiling-text-rem-0p84);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}.qiling-module-scope-work_library .module-work-library .qw-lib-pager a:hover,
+.qiling-module-scope-work_library .module-work-library .qw-lib-pager a.is-active {
+  border-color: var(--qiling-component-tabs-active-border);
+  background: var(--qiling-component-tabs-active-bg);
+  color: var(--qiling-component-tabs-active-text);
+}.qiling-module-scope-work_library html.dark-mode
+  .module-work-library.module-work-library
+  .qw-lib-grid
+  .qw-lib-card {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(
+      --qiling-component-post-card-bg-dark,
+      var(--qiling-component-post-card-bg)
+    );
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--qiling-component-post-card-border)
+  );
+}html.dark-mode .qiling-module-scope-work_library .module-work-library .qw-lib-pager a {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(--qiling-component-tabs-border);
+  color: var(--qiling-component-tabs-text);
+}@media (max-width: 1024px){.qiling-module-scope-work_library .module-work-library .qw-lib-grid {
+    grid-template-columns: var(
+      --qw-lib-grid-template-tablet,
+      repeat(2, minmax(0, 1fr))
+    );
+  }
+}@media (max-width: 767px){.qiling-module-scope-work_library .module-work-library .qw-lib-grid {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-16);
+  }.qiling-module-scope-work_library .module-work-library .qw-lib-card-body {
+    padding: var(--qiling-space-18) var(--qiling-space-16)
+      var(--qiling-space-20);
+  }
+}

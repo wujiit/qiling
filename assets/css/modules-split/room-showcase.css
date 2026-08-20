@@ -1,0 +1,504 @@
+.qiling-module-scope-room-showcase .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-room-showcase .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-room-showcase .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-room-showcase .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-room-showcase .features-tab-btn .tab-icon,
+.qiling-module-scope-room-showcase .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-room-showcase .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-room-showcase .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-room-showcase .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-room-showcase .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-room-showcase .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-room-showcase .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-room-showcase .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-room-showcase .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-room-showcase .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-room-showcase .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-room-showcase .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-room-showcase .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-room-showcase .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-room-showcase .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-room-showcase .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-room-showcase .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-room-showcase .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-room-showcase .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-room-showcase .features-grid-2,
+.qiling-module-scope-room-showcase .features-grid-3,
+.qiling-module-scope-room-showcase .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-room-showcase /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-room-showcase .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-room-showcase .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-room-showcase .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-room-showcase /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-room-showcase .module-decor svg path,
+.qiling-module-scope-room-showcase .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-room-showcase /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-room-showcase .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-room-showcase .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-room-showcase .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-room-showcase .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-room-showcase .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-room-showcase .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-room-showcase /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-room-showcase .ql-travel-cols-2,
+.qiling-module-scope-room-showcase .ql-travel-cols-3,
+.qiling-module-scope-room-showcase .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-room-showcase .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-room-showcase /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-room-showcase /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-room-showcase .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-room-showcase .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-room-showcase .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-room-showcase .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-room-showcase .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-room-showcase .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-room-showcase /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-room-showcase /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-room-showcase .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-room-showcase /* ============================================
+ * 酒店模块样式 - Hotel Modules
+ * 前缀: ql-hotel-
+ * ============================================ */
+
+/* ----------------------------------------
+ * 房型展示模块 - Room Showcase Module
+ * ---------------------------------------- */
+
+/* 房型网格 */
+.module-room-showcase .section-header {
+  margin-bottom: var(--qiling-space-42);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-room-showcase /* 房型卡片 */
+.module-room-showcase .ql-hotel-room-card {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.04) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: var(--qiling-card-radius);
+  overflow: hidden;
+  box-shadow: var(--qiling-component-post-card-shadow);
+  transition:
+    all 0.3s ease,
+    border-color 0.3s ease;
+  animation: ql-hotel-fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--color-primary-rgb), 0.22);
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-room-showcase /* 房型图片 */
+.module-room-showcase .ql-hotel-room-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-card:hover .ql-hotel-room-image img {
+  transform: scale(1.08);
+}.qiling-module-scope-room-showcase /* 房型标签 */
+.module-room-showcase .ql-hotel-room-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--qiling-space-7) var(--qiling-space-14);
+  border-radius: 999px;
+  font-size: var(--qiling-text-rem-0p75);
+  font-weight: 600;
+  color: var(--color-text-inverse);
+  line-height: 1;
+  letter-spacing: var(--qiling-tracking-em-0p02);
+  border: 1px solid rgba(var(--color-surface-rgb), 0.18);
+  z-index: 2;
+  box-shadow: 0 10px 22px var(--qiling-color-rgba-15-23-42-014);
+}.qiling-module-scope-room-showcase .ql-hotel-badge-luxury {
+  background: linear-gradient(
+    135deg,
+    var(--qiling-color-b8860b),
+    var(--qiling-color-ffd700)
+  );
+}.qiling-module-scope-room-showcase .ql-hotel-badge-seaview {
+  background: linear-gradient(
+    135deg,
+    var(--qiling-color-0077b6),
+    var(--qiling-color-00b4d8)
+  );
+}.qiling-module-scope-room-showcase .ql-hotel-badge-cityview {
+  background: linear-gradient(
+    135deg,
+    var(--qiling-color-6c757d),
+    var(--qiling-color-adb5bd)
+  );
+}.qiling-module-scope-room-showcase .ql-hotel-badge-garden {
+  background: linear-gradient(
+    135deg,
+    var(--qiling-color-2d6a4f),
+    var(--qiling-color-52b788)
+  );
+}.qiling-module-scope-room-showcase .ql-hotel-badge-discount {
+  background: var(--qiling-gradient-error);
+}.qiling-module-scope-room-showcase .ql-hotel-badge-recommend {
+  background: var(--qiling-gradient-accent);
+}.qiling-module-scope-room-showcase /* 房型内容 */
+.module-room-showcase .ql-hotel-room-content {
+  padding: var(--qiling-space-24) var(--qiling-space-24) var(--qiling-space-26);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-name {
+  font-size: var(--qiling-text-rem-1p25);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-heading);
+  margin: 0 0 var(--qiling-space-14) 0;
+}.qiling-module-scope-room-showcase /* 房型信息 */
+.module-room-showcase .ql-hotel-room-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-12) var(--qiling-space-16);
+  margin-bottom: var(--qiling-space-14);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qiling-space-6);
+  font-size: var(--qiling-text-rem-0p875);
+  color: var(--color-text-muted);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-meta svg {
+  color: var(--color-neutral-400);
+}.qiling-module-scope-room-showcase /* 房型描述 */
+.module-room-showcase .ql-hotel-room-desc {
+  font-size: var(--qiling-text-rem-0p875);
+  color: var(--color-text-muted);
+  line-height: 1.72;
+  margin-bottom: var(--qiling-space-18);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}.qiling-module-scope-room-showcase /* 房间设施 */
+.module-room-showcase .ql-hotel-room-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-10);
+  margin-bottom: var(--qiling-space-22);
+  padding-bottom: var(--qiling-space-22);
+  border-bottom: 1px solid var(--qiling-component-post-card-border);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-amenities .ql-hotel-amenity-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qiling-space-6);
+  padding: var(--qiling-space-7) var(--qiling-space-11);
+  background: var(--qiling-component-surface-alt-bg, var(--color-neutral-100));
+  border: 1px solid rgba(var(--color-primary-rgb), 0.08);
+  border-radius: 999px;
+  font-size: var(--qiling-text-rem-0p78);
+  color: var(--color-text-muted);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-amenities .ql-hotel-amenity-item svg,
+.qiling-module-scope-room-showcase .module-room-showcase
+  .ql-hotel-room-amenities
+  .ql-hotel-amenity-item
+  .ql-hotel-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--color-primary);
+  fill: var(--color-primary);
+}.qiling-module-scope-room-showcase /* 房型底部 */
+.module-room-showcase .ql-hotel-room-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--qiling-space-16);
+}.qiling-module-scope-room-showcase /* 价格显示 */
+.module-room-showcase .ql-hotel-room-price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--qiling-space-4);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-price-current {
+  font-size: var(--qiling-text-rem-1p5);
+  font-weight: 700;
+  color: var(--color-error);
+  line-height: 1;
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-price-unit {
+  font-size: var(--qiling-text-rem-0p875);
+  color: var(--color-neutral-400);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-price-original {
+  font-size: var(--qiling-text-rem-0p875);
+  color: var(--color-neutral-400);
+  text-decoration: line-through;
+  margin-left: var(--qiling-space-8);
+}.qiling-module-scope-room-showcase /* 预订按钮 */
+.module-room-showcase .ql-hotel-room-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--qiling-component-button-padding);
+  background: var(--ql-room-btn-bg, var(--qiling-component-button-bg));
+  border: 1px solid
+    var(--ql-room-btn-border, var(--qiling-component-button-border));
+  color: var(
+    --ql-room-btn-text,
+    var(--qiling-component-button-text)
+  );
+  font-size: var(--qiling-text-rem-0p875);
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-btn:hover {
+  background: var(
+    --ql-room-btn-hover-bg,
+    var(--qiling-component-button-hover-bg)
+  );
+  border-color: var(
+    --ql-room-btn-hover-border,
+    var(--qiling-component-button-hover-bg)
+  );
+  color: var(
+    --ql-room-btn-hover-text,
+    var(--qiling-component-button-hover-text)
+  );
+  transform: translateY(-2px);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-room-showcase /* 横向布局 */
+.module-room-showcase .ql-hotel-style-horizontal .ql-hotel-room-card {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-style-horizontal .ql-hotel-room-image {
+  aspect-ratio: auto;
+  height: 100%;
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-style-horizontal .ql-hotel-room-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}.qiling-module-scope-room-showcase /* ========================================
+ * 暗黑模式支持
+ * ======================================== */
+
+/* 房型展示 - 暗黑模式 */
+html.dark-mode .module-room-showcase .ql-hotel-room-card {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.08) 0%,
+      var(--qiling-color-rgba-15-23-42-0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--color-neutral-800));
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--color-neutral-700)
+  );
+  box-shadow: var(--qiling-component-post-card-shadow);
+}html.dark-mode .qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-card:hover {
+  box-shadow: var(--qiling-component-post-card-shadow);
+}html.dark-mode .qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-name {
+  color: var(--color-neutral-100);
+}html.dark-mode .qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-meta span {
+  color: var(--color-neutral-400);
+}html.dark-mode .qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-desc {
+  color: var(--color-neutral-400);
+}html.dark-mode .qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-amenities {
+  border-bottom-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--color-neutral-700)
+  );
+}html.dark-mode .qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-price-current {
+  color: var(--color-error);
+}.qiling-module-scope-room-showcase html.dark-mode
+  .module-room-showcase
+  .ql-hotel-room-amenities
+  .ql-hotel-amenity-item {
+  background: var(--qiling-color-rgba-30-41-59-078);
+  border-color: rgba(var(--color-primary-rgb), 0.16);
+}.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-btn { color: var(--ql-room-btn-text, #ffffff); }.qiling-module-scope-room-showcase .module-room-showcase .ql-hotel-room-btn:hover { color: var(--ql-room-btn-hover-text, #ffffff); }

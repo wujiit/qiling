@@ -1,0 +1,585 @@
+.qiling-module-scope-dynamic_banner .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-dynamic_banner .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-dynamic_banner .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-dynamic_banner .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-dynamic_banner .features-tab-btn .tab-icon,
+.qiling-module-scope-dynamic_banner .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-dynamic_banner .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-dynamic_banner .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-dynamic_banner .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-dynamic_banner .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-dynamic_banner .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-dynamic_banner .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-dynamic_banner .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-dynamic_banner .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-dynamic_banner .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-dynamic_banner .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-dynamic_banner .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-dynamic_banner .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-dynamic_banner .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-dynamic_banner .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-dynamic_banner .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-dynamic_banner .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-dynamic_banner .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-dynamic_banner .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-dynamic_banner .features-grid-2,
+.qiling-module-scope-dynamic_banner .features-grid-3,
+.qiling-module-scope-dynamic_banner .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-dynamic_banner /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-dynamic_banner .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-dynamic_banner .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-dynamic_banner .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-dynamic_banner /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-dynamic_banner .module-decor svg path,
+.qiling-module-scope-dynamic_banner .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-dynamic_banner /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-dynamic_banner .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-dynamic_banner .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-dynamic_banner .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-dynamic_banner .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-dynamic_banner .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-dynamic_banner .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-dynamic_banner /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-dynamic_banner .ql-travel-cols-2,
+.qiling-module-scope-dynamic_banner .ql-travel-cols-3,
+.qiling-module-scope-dynamic_banner .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-dynamic_banner .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-dynamic_banner /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-dynamic_banner /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-dynamic_banner .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-dynamic_banner .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-dynamic_banner .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-dynamic_banner .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-dynamic_banner .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-dynamic_banner .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-dynamic_banner /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-dynamic_banner /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-dynamic_banner .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-primary { color: var(--db-primary-btn-text, #ffffff); }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-primary:hover,
+.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-primary:focus-visible { color: var(--db-primary-btn-hover-text, #ffffff); }.qiling-module-scope-dynamic_banner /* ===== 动态横幅 (dynamic_banner) ===== */
+.module-dynamic-banner {
+  background: var(--db-bg);
+  padding: clamp(
+      var(--qiling-space-72),
+      var(--qiling-space-vw-8),
+      var(--qiling-space-104)
+    )
+    0;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  --db-primary-btn-default-bg: var(
+    --qiling-component-button-bg,
+    linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--qiling-color-4f46e5) 100%
+    )
+  );
+  --db-primary-btn-default-text: var(
+    --qiling-component-button-text,
+    var(--color-text-inverse)
+  );
+  --db-primary-btn-default-border: var(
+    --qiling-component-button-border,
+    var(--qiling-color-transparent)
+  );
+  --db-secondary-btn-default-bg: var(
+    --qiling-component-button-secondary-bg,
+    var(--qiling-color-rgba-241-245-249-095)
+  );
+  --db-secondary-btn-default-text: var(
+    --qiling-component-button-secondary-text,
+    var(--color-neutral-800, var(--color-neutral-800))
+  );
+  --db-secondary-btn-default-border: var(
+    --qiling-component-button-secondary-border,
+    var(--qiling-color-rgba-203-213-225-08)
+  );
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner.db-has-fixed-height {
+  min-height: var(--db-min-height);
+  display: flex;
+  align-items: center;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: min(var(--qiling-space-vw-6), var(--qiling-space-76));
+  align-items: center;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-content {
+  max-width: var(--qiling-measure-620);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-title {
+  font-size: var(--qiling-text-rem-3p5);
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: var(--qiling-space-24);
+  color: var(--db-title-color);
+  letter-spacing: var(--qiling-tracking-neg-em-0p03);
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-title-typing {
+  color: var(--db-highlight-color);
+  position: relative;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-cursor {
+  display: inline-block;
+  color: var(--db-highlight-color);
+  animation: db-blink 1s step-end infinite;
+  margin-left: var(--qiling-space-2);
+  font-weight: 300;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-subtitle {
+  font-size: var(--qiling-text-rem-1p5);
+  font-weight: 600;
+  margin-bottom: var(--qiling-space-18);
+  color: var(--db-text-color);
+  opacity: 0.9;
+  max-width: min(var(--qiling-measure-pct-100), var(--qiling-measure-rem-46));
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-desc {
+  font-size: var(--qiling-text-rem-1p1);
+  line-height: 1.8;
+  color: var(--db-text-color);
+  opacity: 0.8;
+  margin-bottom: var(--qiling-space-38);
+  max-width: 58ch;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-actions {
+  display: flex;
+  gap: var(--qiling-space-16);
+  flex-wrap: wrap;
+  align-items: center;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-14) var(--qiling-space-28);
+  min-height: 54px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--qiling-color-transparent);
+  box-shadow: var(
+    --qiling-component-button-shadow,
+    0 18px 38px var(--qiling-color-rgba-15-23-42-012)
+  );
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px var(--qiling-color-rgba-15-23-42-016);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-primary {
+  background: var(--db-primary-btn-bg, var(--db-primary-btn-default-bg));
+  color: var(--db-primary-btn-text, var(--db-primary-btn-default-text));
+  border-color: var(
+    --db-primary-btn-border,
+    var(--db-primary-btn-default-border)
+  );
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-primary:hover,
+.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-primary:focus-visible {
+  background: var(
+    --db-primary-btn-hover-bg,
+    var(--db-primary-btn-bg, var(--db-primary-btn-default-bg))
+  );
+  color: var(
+    --db-primary-btn-hover-text,
+    var(--db-primary-btn-text, var(--db-primary-btn-default-text))
+  );
+  border-color: var(
+    --db-primary-btn-hover-border,
+    var(--db-primary-btn-border, var(--db-primary-btn-default-border))
+  );
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-secondary {
+  background: var(--db-secondary-btn-bg, var(--db-secondary-btn-default-bg));
+  color: var(--db-secondary-btn-text, var(--db-secondary-btn-default-text));
+  border-color: var(
+    --db-secondary-btn-border,
+    var(--db-secondary-btn-default-border)
+  );
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-secondary:hover,
+.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-secondary:focus-visible {
+  background: var(
+    --db-secondary-btn-hover-bg,
+    var(--db-secondary-btn-bg, var(--db-secondary-btn-default-bg))
+  );
+  color: var(
+    --db-secondary-btn-hover-text,
+    var(--db-secondary-btn-text, var(--db-secondary-btn-default-text))
+  );
+  border-color: var(
+    --db-secondary-btn-hover-border,
+    var(--db-secondary-btn-border, var(--db-secondary-btn-default-border))
+  );
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-outline {
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--db-outline-color, var(--db-title-color));
+  color: var(--db-outline-color, var(--db-title-color));
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-btn-outline:hover {
+  background: var(--qiling-color-rgba-255-255-255-074);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-visual-inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--qiling-measure-600);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-main-image {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  border-radius: 26px;
+  border: 1px solid var(--qiling-color-rgba-255-255-255-026);
+  background: var(--qiling-color-rgba-255-255-255-084);
+  transition: transform 0.3s ease;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-visual:hover .db-main-image {
+  transform: scale(1.02);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .shadow-soft {
+  box-shadow: 0 20px 50px -12px var(--qiling-color-rgba-0-0-0-01);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .shadow-strong {
+  box-shadow: 0 25px 50px -12px var(--qiling-color-rgba-0-0-0-025);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .shadow-glow {
+  box-shadow: 0 0 60px -12px var(--qiling-color-rgba-79-70-229-03);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-float-card {
+  position: absolute;
+  z-index: 2;
+  background: var(
+    --qiling-component-card-bg,
+    var(--qiling-color-rgba-255-255-255-094)
+  );
+  border-radius: 20px;
+  border: 1px solid
+    var(--qiling-component-card-border, var(--qiling-color-rgba-226-232-240-09));
+  box-shadow: var(
+    --qiling-component-card-shadow,
+    0 20px 40px var(--qiling-color-rgba-15-23-42-012)
+  );
+  padding: var(--qiling-space-14) var(--qiling-space-20);
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-12);
+  transform-origin: center center;
+  white-space: nowrap;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .type-badge {
+  padding: var(--qiling-space-8) var(--qiling-space-16);
+  border-radius: 100px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--qiling-color-10b981);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: var(--qiling-space-6);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--qiling-text-18);
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-card-title {
+  font-weight: 700;
+  font-size: var(--qiling-text-16);
+  color: var(--color-neutral-800);
+  line-height: 1.2;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-card-subtitle {
+  font-size: var(--qiling-text-12);
+  color: var(--color-text-muted);
+  margin-top: var(--qiling-space-2);
+}
+@keyframes db-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes db-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes db-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--qiling-color-rgba-255-255-255-07);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px var(--qiling-color-rgba-255-255-255-0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--qiling-color-rgba-255-255-255-0);
+  }
+}
+@keyframes db-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .anim-float {
+  animation: db-float 6s ease-in-out infinite;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .anim-pulse {
+  animation: db-pulse 3s infinite;
+}.qiling-module-scope-dynamic_banner .module-dynamic-banner .anim-shake {
+  animation: db-shake 4s ease-in-out infinite;
+}html.dark-mode .qiling-module-scope-dynamic_banner .module-dynamic-banner {
+  --db-secondary-btn-default-bg: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-color-rgba-15-23-42-092)
+  );
+  --db-secondary-btn-default-border: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-color-neutral-400-alpha-02)
+  );
+}html.dark-mode .qiling-module-scope-dynamic_banner .module-dynamic-banner .db-float-card {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-color-rgba-15-23-42-092)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-color-neutral-400-alpha-02)
+  );
+}html.dark-mode .qiling-module-scope-dynamic_banner .module-dynamic-banner .db-main-image {
+  background: var(--qiling-color-rgba-15-23-42-076);
+  border-color: var(--qiling-color-neutral-400-alpha-02);
+}html.dark-mode .qiling-module-scope-dynamic_banner .module-dynamic-banner .db-card-title {
+  color: var(--color-text-inverse);
+}html.dark-mode .qiling-module-scope-dynamic_banner .module-dynamic-banner .db-card-subtitle {
+  color: var(--qiling-color-rgba-255-255-255-07);
+}@media (max-width: 991px){.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-title {
+    font-size: var(--qiling-text-rem-2p8);
+  }
+}@media (max-width: 768px){.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--qiling-space-40);
+  }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-title {
+    font-size: var(--qiling-text-rem-2p2);
+  }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-desc {
+    margin: 0 auto var(--qiling-space-30);
+  }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-actions {
+    justify-content: center;
+  }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-visual {
+    order: 2;
+    min-height: auto;
+    padding: var(--qiling-space-20);
+  }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-float-card {
+    transform: scale(0.8);
+  }
+}

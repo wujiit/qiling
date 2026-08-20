@@ -1,0 +1,716 @@
+.qiling-module-scope-app_hero .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-app_hero .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-app_hero .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-app_hero .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-app_hero .features-tab-btn .tab-icon,
+.qiling-module-scope-app_hero .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-app_hero .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-app_hero .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-app_hero .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-app_hero .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-app_hero .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-app_hero .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-app_hero .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-app_hero .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-app_hero .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-app_hero .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-app_hero .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-app_hero .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-app_hero .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-app_hero .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-app_hero .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-app_hero .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-app_hero .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-app_hero .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-app_hero .features-grid-2,
+.qiling-module-scope-app_hero .features-grid-3,
+.qiling-module-scope-app_hero .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-app_hero /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-app_hero .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-app_hero .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-app_hero .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-app_hero /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-app_hero .module-decor svg path,
+.qiling-module-scope-app_hero .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-app_hero /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-app_hero .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-app_hero .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-app_hero .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-app_hero .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-app_hero .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-app_hero .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-app_hero /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-app_hero .ql-travel-cols-2,
+.qiling-module-scope-app_hero .ql-travel-cols-3,
+.qiling-module-scope-app_hero .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-app_hero .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-app_hero /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-app_hero /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-app_hero .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-app_hero .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-app_hero .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-app_hero .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-app_hero .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-app_hero .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-app_hero /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-app_hero /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-app_hero .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-app_hero /* ===== 应用主视觉模块 (App Hero Module) ===== */
+.module-app-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text-inverse);
+  isolation: isolate;
+}.qiling-module-scope-app_hero .module-app-hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-color-000000);
+  z-index: 1;
+}.qiling-module-scope-app_hero .module-app-hero .container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-app_hero .app-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: min(var(--qiling-space-vw-6), var(--qiling-space-72));
+  align-items: center;
+}.qiling-module-scope-app_hero /* 内容侧 (Content Side) */
+.app-hero-content {
+  max-width: var(--qiling-measure-620);
+}.qiling-module-scope-app_hero .app-hero-content .hero-title {
+  font-size: var(--qiling-text-rem-3);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--qiling-space-24);
+  color: inherit;
+  letter-spacing: var(--qiling-tracking-neg-em-0p02);
+  max-width: var(--qiling-measure-pct-100);
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
+}.qiling-module-scope-app_hero .app-hero-content .hero-desc {
+  font-size: var(--qiling-text-rem-1p125);
+  line-height: 1.6;
+  opacity: 0.88;
+  margin-bottom: var(--qiling-space-36);
+  font-weight: 400;
+  max-width: 54ch;
+}.qiling-module-scope-app_hero /* 按钮 (Buttons) */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-18);
+  align-items: center;
+  margin-bottom: var(--qiling-space-40);
+}.qiling-module-scope-app_hero .app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--qiling-space-12);
+  flex: 0 1 auto;
+  max-width: var(--qiling-measure-260);
+  padding: var(--qiling-space-12) var(--qiling-space-18);
+  border-radius: var(--qiling-space-18);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: var(--qiling-measure-160);
+  min-height: var(--qiling-measure-64);
+  border: 1px solid var(--qiling-color-rgba-255-255-255-016);
+  box-shadow: 0 18px 42px var(--qiling-color-rgba-15-23-42-022);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}.qiling-module-scope-app_hero .app-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 52px var(--qiling-color-rgba-15-23-42-028);
+}.qiling-module-scope-app_hero .app-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}.qiling-module-scope-app_hero .app-btn-icon svg,
+.qiling-module-scope-app_hero .app-btn-icon i {
+  width: 28px;
+  height: 28px;
+  font-size: var(--qiling-text-28);
+}.qiling-module-scope-app_hero .app-btn-icon svg {
+  fill: currentColor;
+}.qiling-module-scope-app_hero .app-btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}.qiling-module-scope-app_hero .app-btn-text .btn-sub {
+  font-size: var(--qiling-text-rem-0p7);
+  text-transform: uppercase;
+  opacity: 0.8;
+  letter-spacing: var(--qiling-tracking-0p5);
+}.qiling-module-scope-app_hero .app-btn-text .btn-main {
+  font-size: var(--qiling-text-rem-1p1);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}.qiling-module-scope-app_hero /* 按钮样式 (Button Styles) */
+.app-btn.style-light {
+  background: var(--qiling-color-rgba-255-255-255-096);
+  color: var(--qiling-component-button-secondary-text, var(--color-neutral-900));
+  border-color: var(--app-btn-border, var(--qiling-color-rgba-255-255-255-028));
+}.qiling-module-scope-app_hero .app-btn.style-light:hover {
+  border-color: var(--app-btn-hover-border, var(--app-btn-border, var(--qiling-color-rgba-255-255-255-028)));
+  box-shadow: 0 20px 42px var(--qiling-color-rgba-255-255-255-024);
+}.qiling-module-scope-app_hero .app-btn.style-dark {
+  background: var(--qiling-color-rgba-15-23-42-088);
+  color: var(--color-text-inverse);
+  border-color: var(--app-btn-border, var(--qiling-color-rgba-255-255-255-012));
+}.qiling-module-scope-app_hero .app-btn.style-dark:hover {
+  border-color: var(--app-btn-hover-border, var(--app-btn-border, var(--qiling-color-rgba-255-255-255-012)));
+  box-shadow: 0 20px 42px var(--qiling-color-rgba-15-23-42-038);
+  background: var(--qiling-color-rgba-15-23-42-096);
+}.qiling-module-scope-app_hero .app-btn.style-outline {
+  background: var(--qiling-color-rgba-255-255-255-008);
+  color: var(--color-text-inverse);
+  border: 1px solid var(--app-btn-border, var(--qiling-color-rgba-255-255-255-024));
+}.qiling-module-scope-app_hero .app-btn.style-outline:hover {
+  background: var(--qiling-color-rgba-255-255-255-094);
+  color: var(--color-neutral-900);
+  border-color: var(--app-btn-hover-border, var(--app-btn-border, var(--qiling-color-rgba-255-255-255-03)));
+}.qiling-module-scope-app_hero /* 二维码卡片 (QR Card) */
+.hero-qr-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--qiling-space-24);
+  background: linear-gradient(
+    135deg,
+    var(--qiling-color-rgba-255-255-255-018) 0%,
+    var(--qiling-color-rgba-255-255-255-008) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--qiling-color-rgba-255-255-255-022);
+  border-radius: 24px;
+  padding: var(--qiling-space-22);
+  box-shadow: 0 24px 54px var(--qiling-color-rgba-15-23-42-018);
+  width: 100%;
+  max-width: var(--qiling-measure-450);
+}.qiling-module-scope-app_hero .qr-card-info {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-16);
+  flex: 1;
+  min-width: 0;
+}.qiling-module-scope-app_hero .qr-icon-wrap {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--qiling-color-rgba-255-255-255-016);
+  border-radius: 16px;
+  border: 1px solid var(--qiling-color-rgba-255-255-255-02);
+  color: var(--color-text-inverse);
+  font-size: var(--qiling-text-24);
+  box-shadow: inset 0 1px 0 var(--qiling-color-rgba-255-255-255-014);
+}.qiling-module-scope-app_hero .qr-text-wrap {
+  display: flex;
+  flex-direction: column;
+}.qiling-module-scope-app_hero .qr-sub {
+  font-size: var(--qiling-text-rem-0p7);
+  opacity: 0.7;
+  letter-spacing: var(--qiling-tracking-1);
+  text-transform: uppercase;
+  margin-bottom: var(--qiling-space-4);
+  display: block;
+}.qiling-module-scope-app_hero .qr-title {
+  font-size: var(--qiling-text-rem-1p1);
+  font-weight: 700;
+  margin: 0 0 var(--qiling-space-2);
+  color: var(--color-text-inverse);
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
+}.qiling-module-scope-app_hero .qr-desc {
+  font-size: var(--qiling-text-rem-0p85);
+  opacity: 0.8;
+  margin: 0;
+  max-width: 26ch;
+}.qiling-module-scope-app_hero .qr-code-img {
+  width: 80px;
+  height: 80px;
+  background: var(--qiling-color-rgba-255-255-255-096);
+  padding: var(--qiling-space-4);
+  border-radius: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 14px 28px var(--qiling-color-rgba-15-23-42-014);
+}.qiling-module-scope-app_hero .qr-code-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}.qiling-module-scope-app_hero /* 媒体侧 (Media Side) */
+.app-hero-media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}.qiling-module-scope-app_hero .media-wrapper {
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  width: 100%;
+  max-width: var(--qiling-measure-560);
+}.qiling-module-scope-app_hero .media-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 132%;
+  height: 132%;
+  background: radial-gradient(
+    circle,
+    var(--qiling-color-rgba-255-255-255-02) 0%,
+    var(--qiling-color-rgba-96-165-250-018) 34%,
+    var(--qiling-color-rgba-255-255-255-0) 74%
+  );
+  filter: blur(56px);
+  z-index: -1;
+  pointer-events: none;
+}.qiling-module-scope-app_hero .device-mockup {
+  position: relative;
+  z-index: 2;
+  transform: rotateY(-10deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+  animation: heroFloat 6s ease-in-out infinite;
+  padding: var(--qiling-space-18);
+  border-radius: 36px;
+  background: linear-gradient(
+    180deg,
+    var(--qiling-color-rgba-255-255-255-024) 0%,
+    var(--qiling-color-rgba-255-255-255-006) 100%
+  );
+  border: 1px solid var(--qiling-color-rgba-255-255-255-022);
+  box-shadow: 0 30px 70px var(--qiling-color-rgba-15-23-42-03);
+}.qiling-module-scope-app_hero .device-mockup:hover {
+  transform: rotateY(0) rotateX(0);
+}.qiling-module-scope-app_hero .device-mockup img,
+.qiling-module-scope-app_hero .device-mockup video {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+  border-radius: 26px;
+  border: 1px solid var(--qiling-color-rgba-255-255-255-016);
+  box-shadow: 0 25px 50px -12px var(--qiling-color-rgba-0-0-0-05);
+}.qiling-module-scope-app_hero .floating-badge {
+  position: absolute;
+  background: var(--qiling-color-rgba-255-255-255-09);
+  border-radius: 50%;
+  box-shadow: 0 10px 20px var(--qiling-color-rgba-0-0-0-01);
+  animation: heroFloat 5s ease-in-out infinite reverse;
+}.qiling-module-scope-app_hero /* 动画 (Animations) */
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateY(-10deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotateY(-10deg);
+  }
+}.qiling-module-scope-app_hero /* 响应式 (Responsive) */
+@media (max-width: 992px) {
+  .app-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-40);
+    text-align: center;
+  }
+
+  .app-hero-content {
+    max-width: var(--qiling-measure-pct-100);
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-qr-card {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .app-hero-media {
+    margin-top: var(--qiling-space-20);
+  }
+
+  .device-mockup {
+    transform: none;
+    /* 在移动端简化 (Simplify on mobile) */
+    animation: none;
+  }
+}@media (max-width: 576px){.qiling-module-scope-app_hero .hero-title {
+    font-size: var(--qiling-text-rem-2p2) !important;
+  }.qiling-module-scope-app_hero .app-btn {
+    width: 100%;
+    justify-content: center;
+  }.qiling-module-scope-app_hero .hero-qr-card {
+    flex-direction: column;
+    gap: var(--qiling-space-20);
+    text-align: center;
+  }.qiling-module-scope-app_hero .qr-card-info {
+    flex-direction: column;
+  }.qiling-module-scope-app_hero .qr-text-wrap {
+    align-items: center;
+  }
+}.qiling-module-scope-app_hero /* 暗黑模式适配 - 如果模块未设置背景（透明），则适配文字 (Dark Mode Adaptation - If module has no background set, adapt text) */
+html.dark-mode .module-app-hero:not([style*="background"]) .hero-title,
+html.dark-mode .qiling-module-scope-app_hero .module-app-hero:not([style*="background"]) .hero-desc {
+  color: var(--color-text-inverse);
+  /* 如果主视觉通常为深色，则保留反色文字，或进行适配 (Keep inverse text if hero is usually dark, or adapt) */
+}.qiling-module-scope-app_hero /* Note: usually Hero sections have their own backgrounds,
+.qiling-module-scope-app_hero so text color inherits from that. 
+   The default style assumes a dark/gradient background with inverse text. */
+
+/* 悬浮徽章 (Floating Badges App Hero) */
+.module-app-hero .floating-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-12);
+  background: var(--qiling-color-rgba-255-255-255-094);
+  padding: var(--qiling-space-12) var(--qiling-space-16);
+  border-radius: var(--qiling-space-20);
+  border: 1px solid var(--qiling-color-rgba-226-232-240-09);
+  box-shadow: 0 22px 46px var(--qiling-color-rgba-15-23-42-015);
+  z-index: 5;
+  min-width: 0;
+  max-width: min(var(--qiling-measure-260), var(--qiling-measure-pct-90));
+  transition: transform 0.3s ease;
+  animation: floatBadge 4s ease-in-out infinite;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge .float-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: 14px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge .float-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  /* 重置主图阴影 (Reset hero img shadow) */
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge .float-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge .float-title {
+  font-size: var(--qiling-text-rem-0p9);
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge .float-desc {
+  font-size: var(--qiling-text-rem-0p75);
+  color: var(--color-text-muted);
+  margin-top: var(--qiling-space-2);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}.qiling-module-scope-app_hero /* 位置 (Positions) */
+.module-app-hero .floating-badge.pos-top-left {
+  top: 10%;
+  left: 0;
+  animation-delay: 0s;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-top-right {
+  top: 15%;
+  right: 0;
+  animation-delay: 1.5s;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-center-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation: floatBadgeVertical 5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-center-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  animation: floatBadgeVertical 5s ease-in-out infinite;
+  animation-delay: 2s;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-bottom-left {
+  bottom: 20%;
+  left: 0;
+  animation-delay: 1s;
+}.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-bottom-right {
+  bottom: 25%;
+  right: 0;
+  animation-delay: 2.5s;
+}.qiling-module-scope-app_hero /* 特定的徽章动画 (Specific Badge Animations) */
+@keyframes floatBadge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatBadgeVertical {
+  0%,
+  100% {
+    transform: translate(0, -50%);
+  }
+
+  50% {
+    transform: translate(0, calc(-50% - 10px));
+  }
+}.qiling-module-scope-app_hero /* 移动端：如果过于拥挤则调整或隐藏悬浮徽章 (Mobile: Adjust or hide floating badges if too crowded) */
+@media (max-width: 576px) {
+  .module-app-hero .floating-badge {
+    transform: scale(0.8) !important;
+    /* 缩小缩放 (Scale down) */
+    animation: none !important;
+    /* 特定的动画可能重叠 (specific animation might overlap) */
+  }
+
+  .module-app-hero .floating-badge.pos-top-left {
+    left: 0;
+    top: 0;
+  }
+
+  .module-app-hero .floating-badge.pos-top-right {
+    right: 0;
+    top: 5%;
+  }
+
+  .module-app-hero .floating-badge.pos-center-left {
+    display: none;
+  }
+
+  /* 在移动端隐藏居中的部分 (Hide center ones on mobile) */
+  .module-app-hero .floating-badge.pos-center-right {
+    display: none;
+  }
+
+  .module-app-hero .floating-badge.pos-bottom-left {
+    display: none;
+  }
+
+  .module-app-hero .floating-badge.pos-bottom-right {
+    right: 0;
+    bottom: 0;
+  }
+}html.dark-mode .qiling-module-scope-app_hero .module-app-hero .app-btn.style-light {
+  background: var(--qiling-color-rgba-15-23-42-088);
+  color: var(--color-text-inverse);
+  border-color: var(--qiling-color-rgba-255-255-255-016);
+}html.dark-mode .qiling-module-scope-app_hero .module-app-hero .hero-qr-card {
+  background: linear-gradient(
+    135deg,
+    var(--qiling-color-rgba-15-23-42-076) 0%,
+    var(--qiling-color-rgba-30-41-59-062) 100%
+  );
+  border-color: var(--qiling-color-neutral-400-alpha-024);
+}html.dark-mode .qiling-module-scope-app_hero .module-app-hero .qr-code-img,
+html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-color-rgba-15-23-42-092)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-color-neutral-400-alpha-018)
+  );
+}html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge .float-title {
+  color: var(--color-text-inverse);
+}html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge .float-desc {
+  color: var(--qiling-color-rgba-255-255-255-072);
+}

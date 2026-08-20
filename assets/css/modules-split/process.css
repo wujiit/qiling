@@ -1,0 +1,461 @@
+.qiling-module-scope-process .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-process .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-process .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-process .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-process .features-tab-btn .tab-icon,
+.qiling-module-scope-process .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-process .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-process .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-process .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-process .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-process .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-process .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-process .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-process .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-process .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-process .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-process .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-process .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-process .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-process .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-process .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-process .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-process .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-process .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-process .features-grid-2,
+.qiling-module-scope-process .features-grid-3,
+.qiling-module-scope-process .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-process /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-process .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-process .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-process .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-process /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-process .module-decor svg path,
+.qiling-module-scope-process .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-process /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-process .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-process .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-process .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-process .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-process .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-process .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-process /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-process .ql-travel-cols-2,
+.qiling-module-scope-process .ql-travel-cols-3,
+.qiling-module-scope-process .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-process .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-process /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-process /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-process .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-process .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-process .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-process .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-process .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-process .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-process /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-process /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-process .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-process /* 流程模块 (Process Module) */
+.module-process {
+  position: relative;
+  /* 默认背景由主题或特定设置处理 (Default background handled by theme or specific settings) */
+}.qiling-module-scope-process .module-process .section-header {
+  margin-bottom: var(--qiling-space-46);
+}.qiling-module-scope-process .module-process .module-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-card-bg-dark, var(--color-heading));
+  z-index: 1;
+}.qiling-module-scope-process .process-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-24);
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-process .process-item {
+  flex: 1;
+  min-width: var(--qiling-measure-250);
+  max-width: var(--qiling-measure-300);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--qiling-space-36) var(--qiling-space-24) var(--qiling-space-28);
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: var(--qiling-card-radius);
+  border: 1px solid var(--qiling-component-card-border);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.035) 0%,
+      rgba(var(--color-primary-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  box-shadow: var(--qiling-component-card-shadow);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}.qiling-module-scope-process .process-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--color-primary-rgb), 0.18);
+}.qiling-module-scope-process .process-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--qiling-space-20);
+  border-radius: 50%;
+  /* 背景是动态的 (background is dynamic) */
+  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--qiling-text-rem-2);
+  font-weight: 700;
+  box-shadow: var(--qiling-component-card-shadow);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-process .process-item:hover .process-icon {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-process .process-arrow {
+  position: absolute;
+  top: 72px;
+  right: -30px;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--qiling-color-transparent)
+  );
+  z-index: 1;
+}.qiling-module-scope-process .process-arrow div {
+  position: absolute;
+  right: 0;
+  top: -4px;
+  border: solid var(--color-primary);
+  border-width: 0 2px 2px 0;
+  padding: var(--qiling-space-4);
+  transform: rotate(-45deg);
+}.qiling-module-scope-process .process-title {
+  font-size: var(--qiling-text-rem-1p25);
+  font-weight: 700;
+  margin: 0 0 var(--qiling-space-10);
+  min-height: calc(1.45em * 2);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--color-heading);
+  /* 亮色模式默认值 (Default for light mode) */
+}.qiling-module-scope-process .process-desc {
+  color: var(--color-text-muted);
+  /* 柔和的正文文本替换 (Muted body text replacement) */
+  font-size: var(--qiling-text-rem-0p9);
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 22ch;
+  min-height: calc(1.7em * 2.15);
+  flex: 1 1 auto;
+}.qiling-module-scope-process .process-stage-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--qiling-space-8);
+  padding: var(--qiling-space-4) var(--qiling-space-10);
+  border-radius: 999px;
+  background: var(--qiling-component-badge-bg);
+  color: var(--qiling-component-badge-text);
+  border: 1px solid var(--qiling-color-transparent);
+  font-size: var(--qiling-text-12);
+  font-weight: 600;
+}.qiling-module-scope-process .process-meta {
+  margin-top: var(--qiling-space-14);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--qiling-space-8);
+}.qiling-module-scope-process .process-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qiling-space-4);
+  padding: var(--qiling-space-5) var(--qiling-space-10);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: 999px;
+  font-size: var(--qiling-text-12);
+  color: var(--qiling-component-badge-text);
+  background: var(--qiling-component-badge-bg);
+}.qiling-module-scope-process /* 工业流程风格 (Industrial process style) */
+.module-process.process-mode-industrial .process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--qiling-space-20);
+}.qiling-module-scope-process .module-process.process-mode-industrial .process-item {
+  max-width: none;
+  min-width: 0;
+  text-align: left;
+  padding: var(--qiling-space-16) var(--qiling-space-16) var(--qiling-space-18);
+  border-radius: var(--qiling-card-radius);
+  border: 1px solid var(--qiling-component-card-border);
+  background: var(--qiling-component-card-bg);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-process .module-process.process-mode-industrial .process-image-wrap {
+  margin: var(--qiling-space-neg-16) var(--qiling-space-neg-16)
+    var(--qiling-space-14);
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--qiling-component-card-bg);
+}.qiling-module-scope-process .module-process.process-mode-industrial .process-step-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}.qiling-module-scope-process .module-process.process-mode-industrial .process-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 0 var(--qiling-space-12);
+  font-size: var(--qiling-text-rem-1p2);
+}.qiling-module-scope-process .module-process.process-mode-industrial .process-arrow {
+  display: none;
+}.qiling-module-scope-process .module-process.process-mode-industrial .process-title {
+  margin-bottom: var(--qiling-space-8);
+}@media (max-width: 1024px){.qiling-module-scope-process .module-process.process-mode-industrial .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}@media (max-width: 768px){.qiling-module-scope-process .process-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+  }.qiling-module-scope-process .process-item {
+    max-width: var(--qiling-measure-pct-100) !important;
+  }.qiling-module-scope-process .process-arrow {
+    display: none !important;
+  }.qiling-module-scope-process .module-process.process-mode-industrial .process-grid {
+    grid-template-columns: 1fr;
+  }
+}.qiling-module-scope-process /* 暗黑模式 (Dark Mode) */
+html.dark-mode .module-process {
+  background-color: var(--dm-bg) !important;
+}html.dark-mode .qiling-module-scope-process .process-title {
+  color: var(--color-heading);
+}html.dark-mode .qiling-module-scope-process .process-desc {
+  color: var(--color-text-muted);
+}html.dark-mode .qiling-module-scope-process .process-stage-tag {
+  background: var(--qiling-component-badge-bg);
+  color: var(--qiling-component-badge-text);
+}html.dark-mode .qiling-module-scope-process .process-chip {
+  border-color: var(--qiling-color-transparent);
+  background: var(--qiling-component-badge-bg);
+  color: var(--qiling-component-badge-text);
+}html.dark-mode .qiling-module-scope-process .module-process .process-item {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-process .module-process.process-mode-industrial .process-item {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  box-shadow: var(--qiling-component-card-shadow);
+}html.dark-mode .qiling-module-scope-process .module-process .section-title {
+  color: var(--qiling-component-module-title-color-dark, var(--color-heading));
+}html.dark-mode .qiling-module-scope-process .module-process .section-subtitle {
+  color: var(--color-text-muted);
+}

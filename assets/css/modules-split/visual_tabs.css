@@ -1,0 +1,542 @@
+.qiling-module-scope-visual_tabs .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-visual_tabs .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-visual_tabs .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-visual_tabs .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-visual_tabs .features-tab-btn .tab-icon,
+.qiling-module-scope-visual_tabs .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-visual_tabs .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-visual_tabs .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-visual_tabs .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-visual_tabs .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-visual_tabs .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-visual_tabs .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-visual_tabs .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-visual_tabs .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-visual_tabs .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-visual_tabs .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-visual_tabs .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-visual_tabs .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-visual_tabs .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-visual_tabs .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-visual_tabs .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-visual_tabs .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-visual_tabs .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-visual_tabs .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-visual_tabs .features-grid-2,
+.qiling-module-scope-visual_tabs .features-grid-3,
+.qiling-module-scope-visual_tabs .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-visual_tabs /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-visual_tabs .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-visual_tabs .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-visual_tabs .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-visual_tabs /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-visual_tabs .module-decor svg path,
+.qiling-module-scope-visual_tabs .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-visual_tabs /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-visual_tabs .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-visual_tabs .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-visual_tabs .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-visual_tabs .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-visual_tabs .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-visual_tabs .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-visual_tabs /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-visual_tabs .ql-travel-cols-2,
+.qiling-module-scope-visual_tabs .ql-travel-cols-3,
+.qiling-module-scope-visual_tabs .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-visual_tabs .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-visual_tabs /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-visual_tabs /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-visual_tabs .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-visual_tabs .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-visual_tabs .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-visual_tabs .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-visual_tabs .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-visual_tabs .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-visual_tabs /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-visual_tabs /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-visual_tabs .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-visual_tabs /* ===== 可视化选项卡 (visual_tabs) ===== */
+.module-visual-tabs {
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-visual_tabs .module-visual-tabs .module-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-color-000000);
+  z-index: 1;
+}.qiling-module-scope-visual_tabs .module-visual-tabs .container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-visual_tabs .module-visual-tabs .section-header {
+  margin-bottom: var(--qiling-space-42);
+}.qiling-module-scope-visual_tabs .visual-tabs-shell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--qiling-space-32);
+}.qiling-module-scope-visual_tabs .visual-tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--vt-columns, 4), minmax(0, 1fr));
+  gap: var(--qiling-space-20);
+}.qiling-module-scope-visual_tabs .visual-tabs-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0;
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: var(--qiling-card-radius);
+  overflow: hidden;
+  background: var(--vt-card-bg, var(--color-surface));
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  box-shadow: var(--qiling-component-post-card-shadow);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}.qiling-module-scope-visual_tabs .visual-tabs-card[type="button"] {
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+}.qiling-module-scope-visual_tabs .visual-tabs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-visual_tabs .visual-tabs-card.is-active {
+  border-color: var(--vt-accent, var(--color-primary));
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.04) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--vt-card-active-bg, rgba(var(--color-primary-rgb), 0.08));
+  box-shadow: 0 20px 52px rgba(var(--color-primary-rgb), 0.16);
+}.qiling-module-scope-visual_tabs .visual-tabs-card-static {
+  cursor: default;
+}.qiling-module-scope-visual_tabs .visual-tabs-card-static:hover {
+  transform: none;
+}.qiling-module-scope-visual_tabs .visual-tabs-card-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--vt-card-image-height, 160px);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-primary-rgb), 0.1) 0%,
+    rgba(var(--color-surface-rgb), 0.96) 100%
+  );
+}.qiling-module-scope-visual_tabs .visual-tabs-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}.qiling-module-scope-visual_tabs .visual-tabs-card-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: calc(var(--qiling-card-radius) - 6px);
+  background: rgba(var(--color-surface-rgb), 0.72);
+  color: var(--vt-accent, var(--color-primary));
+  font-size: var(--qiling-text-rem-2);
+  font-weight: 700;
+  letter-spacing: var(--qiling-tracking-em-0p04);
+}.qiling-module-scope-visual_tabs .visual-tabs-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-42);
+  padding: var(--qiling-space-6) var(--qiling-space-10);
+  border-radius: 999px;
+  background: var(--vt-accent, var(--color-primary));
+  color: var(--color-text-inverse);
+  font-size: var(--qiling-text-rem-0p78);
+  font-weight: 700;
+  letter-spacing: var(--qiling-tracking-em-0p04);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.24);
+}.qiling-module-scope-visual_tabs .visual-tabs-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-18) var(--qiling-space-18) var(--qiling-space-20);
+}.qiling-module-scope-visual_tabs .visual-tabs-card-title {
+  margin: 0;
+  color: var(--color-neutral-900);
+  font-size: var(--qiling-text-rem-1p08);
+  font-weight: 700;
+  line-height: 1.35;
+}.qiling-module-scope-visual_tabs .visual-tabs-card-subtitle {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-0p92);
+  line-height: 1.7;
+}.qiling-module-scope-visual_tabs .visual-tabs-card-mode {
+  margin-top: auto;
+  color: var(--vt-accent, var(--color-primary));
+  font-size: var(--qiling-text-rem-0p84);
+  font-weight: 600;
+}.qiling-module-scope-visual_tabs .visual-tabs-stage,
+.qiling-module-scope-visual_tabs .visual-tabs-empty {
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: var(--qiling-card-radius);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--vt-panel-bg, var(--qiling-component-card-bg));
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-visual_tabs .visual-tabs-stage {
+  padding: var(--qiling-space-30);
+}.qiling-module-scope-visual_tabs .visual-tabs-empty {
+  padding: var(--qiling-space-22) var(--qiling-space-24);
+  color: var(--color-text-muted);
+}.qiling-module-scope-visual_tabs .visual-tabs-empty p {
+  margin: 0;
+  line-height: 1.75;
+}.qiling-module-scope-visual_tabs .visual-tabs-pane {
+  display: none;
+}.qiling-module-scope-visual_tabs .visual-tabs-pane.is-active {
+  display: block;
+  animation: fadeIn 0.28s ease;
+}.qiling-module-scope-visual_tabs .visual-tabs-pane-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--qiling-space-18);
+}.qiling-module-scope-visual_tabs .visual-tabs-pane-grid.has-secondary {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-visual_tabs .visual-tabs-panel {
+  height: 100%;
+  padding: var(--qiling-space-24);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: calc(var(--qiling-card-radius) - 4px);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-surface-alt-bg, var(--color-surface-alt));
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  margin-bottom: var(--qiling-space-14);
+  padding: var(--qiling-space-6) var(--qiling-space-12);
+  border-radius: 999px;
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--vt-accent, var(--color-primary));
+  font-size: var(--qiling-text-rem-0p82);
+  font-weight: 700;
+  letter-spacing: var(--qiling-tracking-em-0p02);
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-title,
+.qiling-module-scope-visual_tabs .visual-tabs-panel-subtitle {
+  margin: 0 0 var(--qiling-space-12);
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.35;
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-title {
+  font-size: var(--qiling-text-rem-1p35);
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-subtitle {
+  font-size: var(--qiling-text-rem-1p08);
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-content {
+  color: var(--color-text-muted);
+  line-height: 1.85;
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-content > *:first-child {
+  margin-top: 0;
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-content > *:last-child {
+  margin-bottom: 0;
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--qiling-space-18);
+  padding: var(--qiling-component-button-padding);
+  border-radius: var(--qiling-button-radius);
+  background: var(--vt-btn-bg, var(--vt-accent, var(--color-primary)));
+  color: var(--vt-btn-text, var(--color-text-inverse));
+  border: 1px solid var(--vt-btn-border, var(--vt-accent, var(--color-primary)));
+  font-size: var(--qiling-text-rem-0p92);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--qiling-component-button-shadow);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}.qiling-module-scope-visual_tabs .visual-tabs-panel-cta:hover {
+  background: var(
+    --vt-btn-hover-bg,
+    var(--vt-btn-bg, var(--vt-accent, var(--color-primary)))
+  );
+  color: var(
+    --vt-btn-hover-text,
+    var(--vt-btn-text, var(--color-text-inverse))
+  );
+  border-color: var(
+    --vt-btn-hover-border,
+    var(
+      --vt-btn-hover-bg,
+      var(--vt-btn-bg, var(--vt-accent, var(--color-primary)))
+    )
+  );
+  transform: translateY(-2px);
+  opacity: 0.92;
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-card {
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--qiling-component-post-card-border)
+  );
+  background: var(--qiling-component-post-card-bg-dark, var(--vt-card-bg));
+  box-shadow: var(--qiling-component-post-card-shadow);
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-card.is-active {
+  border-color: var(--vt-accent, var(--color-primary));
+  background: rgba(var(--color-primary-rgb), 0.14);
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-card-media {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-primary-rgb), 0.22),
+    var(--qiling-color-rgba-15-23-42-055)
+  );
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-card-placeholder {
+  background: var(--qiling-color-rgba-15-23-42-068);
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-card-title,
+html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-panel-title,
+html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-panel-subtitle {
+  color: var(--color-neutral-50);
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-card-subtitle,
+html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty,
+html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-panel-content {
+  color: var(--dm-text-muted);
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-stage,
+html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--vt-panel-bg));
+  box-shadow: var(--qiling-component-card-shadow);
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-panel {
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.06) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+}html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-panel-meta {
+  background: rgba(var(--color-primary-rgb), 0.16);
+}@media (max-width: 1100px){.qiling-module-scope-visual_tabs .visual-tabs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }.qiling-module-scope-visual_tabs .visual-tabs-pane-grid.has-secondary {
+    grid-template-columns: 1fr;
+  }
+}@media (max-width: 767px){.qiling-module-scope-visual_tabs .visual-tabs-grid {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-visual_tabs .visual-tabs-card-media {
+    height: min(52vw, 220px);
+  }.qiling-module-scope-visual_tabs .visual-tabs-stage {
+    padding: var(--qiling-space-18);
+  }.qiling-module-scope-visual_tabs .visual-tabs-panel {
+    padding: var(--qiling-space-20);
+  }.qiling-module-scope-visual_tabs .visual-tabs-panel-title {
+    font-size: var(--qiling-text-rem-1p18);
+  }
+}

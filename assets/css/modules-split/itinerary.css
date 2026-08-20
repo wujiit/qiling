@@ -1,0 +1,516 @@
+.qiling-module-scope-itinerary .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-itinerary .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-itinerary .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-itinerary .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-itinerary .features-tab-btn .tab-icon,
+.qiling-module-scope-itinerary .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-itinerary .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-itinerary .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-itinerary .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-itinerary .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-itinerary .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-itinerary .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-itinerary .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-itinerary .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-itinerary .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-itinerary .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-itinerary .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-itinerary .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-itinerary .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-itinerary .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-itinerary .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-itinerary .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-itinerary .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-itinerary .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-itinerary .features-grid-2,
+.qiling-module-scope-itinerary .features-grid-3,
+.qiling-module-scope-itinerary .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-itinerary /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-itinerary .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-itinerary .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-itinerary .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-itinerary /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-itinerary .module-decor svg path,
+.qiling-module-scope-itinerary .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-itinerary /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-itinerary .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-itinerary .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-itinerary .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-itinerary .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-itinerary .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-itinerary .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-itinerary /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-itinerary .ql-travel-cols-2,
+.qiling-module-scope-itinerary .ql-travel-cols-3,
+.qiling-module-scope-itinerary .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-itinerary .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-itinerary /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-itinerary /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-itinerary .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-itinerary .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-itinerary .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-itinerary .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-itinerary .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-itinerary .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-itinerary /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-itinerary /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-itinerary .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-itinerary /* ----------------------------------------
+   行程规划模块 (itinerary)
+   ---------------------------------------- */
+.module-itinerary .section-header {
+  margin-bottom: var(--qiling-space-42);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary {
+  position: relative;
+  padding-left: var(--qiling-space-50);
+}.qiling-module-scope-itinerary /* 时间线 */
+.module-itinerary .ql-travel-itinerary-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary, var(--color-primary)) 0%,
+    var(--color-accent, var(--color-accent)) 100%
+  );
+  border-radius: 3px;
+}.qiling-module-scope-itinerary /* 单日卡片 */
+.module-itinerary .ql-travel-itinerary-day {
+  position: relative;
+  margin-bottom: var(--qiling-space-30);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-day:last-child {
+  margin-bottom: 0;
+}.qiling-module-scope-itinerary /* 时间点标记 */
+.module-itinerary .ql-travel-itinerary-marker {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--qiling-gradient-brand);
+  border: 3px solid var(--qiling-component-card-bg);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 14px 28px rgba(var(--color-primary-rgb), 0.22);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-day-num {
+  font-size: var(--qiling-text-rem-0p7);
+  font-weight: 700;
+  color: var(--color-text-inverse);
+  text-transform: uppercase;
+}.qiling-module-scope-itinerary /* 内容卡片 */
+.module-itinerary .ql-travel-itinerary-content {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.035) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: var(--qiling-card-radius);
+  padding: var(--qiling-space-24);
+  box-shadow: var(--qiling-component-post-card-shadow);
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s,
+    border-color 0.3s;
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-content:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--color-primary-rgb), 0.22);
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-itinerary /* 卡片头部 */
+.module-itinerary .ql-travel-itinerary-header {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-12);
+  margin-bottom: var(--qiling-space-18);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-day-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--qiling-space-7) var(--qiling-space-14);
+  background: var(--qiling-gradient-brand);
+  border: 1px solid rgba(var(--color-surface-rgb), 0.18);
+  color: var(--color-text-inverse);
+  font-size: var(--qiling-text-rem-0p75);
+  font-weight: 600;
+  letter-spacing: var(--qiling-tracking-em-0p02);
+  line-height: 1;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px var(--qiling-color-rgba-15-23-42-014);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-title {
+  margin: 0;
+  font-size: var(--qiling-text-rem-1p15);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-heading);
+}.qiling-module-scope-itinerary /* 当日配图 */
+.module-itinerary .ql-travel-itinerary-image {
+  margin-bottom: var(--qiling-space-20);
+  border-radius: calc(var(--qiling-card-radius) - 6px);
+  overflow: hidden;
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}.qiling-module-scope-itinerary /* 日程安排 */
+.module-itinerary .ql-travel-itinerary-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--qiling-space-16);
+  margin-bottom: var(--qiling-space-20);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-schedule-item {
+  padding-left: var(--qiling-space-16);
+  border-left: 3px solid var(--qiling-component-post-card-border);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-schedule-time {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-6);
+  font-size: var(--qiling-text-rem-0p8);
+  font-weight: 600;
+  color: var(--color-primary, var(--color-primary));
+  margin-bottom: var(--qiling-space-7);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-schedule-time svg {
+  opacity: 0.8;
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-schedule-desc {
+  margin: 0;
+  font-size: var(--qiling-text-rem-0p9);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}.qiling-module-scope-itinerary /* 途经景点 */
+.module-itinerary .ql-travel-itinerary-attractions {
+  margin-bottom: var(--qiling-space-20);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-attractions-label {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-6);
+  font-size: var(--qiling-text-rem-0p8);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: var(--qiling-space-10);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-attractions-label svg {
+  color: var(--color-primary, var(--color-primary));
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-attractions-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-8);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-attraction-tag {
+  padding: var(--qiling-space-6) var(--qiling-space-14);
+  background: var(--qiling-component-badge-bg);
+  border: 1px solid var(--qiling-color-transparent);
+  color: var(--qiling-component-badge-text);
+  font-size: var(--qiling-text-rem-0p8);
+  font-weight: 500;
+  border-radius: 999px;
+}.qiling-module-scope-itinerary /* 餐饮住宿 */
+.module-itinerary .ql-travel-itinerary-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-20);
+  padding-top: var(--qiling-space-16);
+  border-top: 1px solid var(--qiling-component-post-card-border);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-footer-item {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  font-size: var(--qiling-text-rem-0p85);
+  color: var(--color-text-muted);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-footer-item svg {
+  color: var(--color-primary, var(--color-primary));
+  opacity: 0.8;
+}.qiling-module-scope-itinerary /* 交替布局 */
+.module-itinerary .ql-travel-layout-alternate {
+  padding-left: 0;
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-layout-alternate .ql-travel-itinerary-line {
+  left: 50%;
+  transform: translateX(-50%);
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-layout-alternate .ql-travel-itinerary-day {
+  width: 50%;
+  padding-right: var(--qiling-space-50);
+}.qiling-module-scope-itinerary .module-itinerary
+  .ql-travel-layout-alternate
+  .ql-travel-itinerary-day.ql-travel-left {
+  margin-left: 0;
+}.qiling-module-scope-itinerary .module-itinerary
+  .ql-travel-layout-alternate
+  .ql-travel-itinerary-day.ql-travel-right {
+  margin-left: var(--qiling-space-pct-50);
+  padding-right: 0;
+  padding-left: var(--qiling-space-50);
+}.qiling-module-scope-itinerary .module-itinerary
+  .ql-travel-layout-alternate
+  .ql-travel-itinerary-day
+  .ql-travel-itinerary-marker {
+  left: auto;
+  right: -20px;
+}.qiling-module-scope-itinerary .module-itinerary
+  .ql-travel-layout-alternate
+  .ql-travel-itinerary-day.ql-travel-right
+  .ql-travel-itinerary-marker {
+  right: auto;
+  left: -20px;
+}.qiling-module-scope-itinerary /* 卡片列表布局 */
+.module-itinerary .ql-travel-layout-cards {
+  padding-left: 0;
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-layout-cards .ql-travel-itinerary-line {
+  display: none;
+}.qiling-module-scope-itinerary .module-itinerary .ql-travel-layout-cards .ql-travel-itinerary-day {
+  display: inline-block;
+  width: calc(33.333% - 20px);
+  margin-right: var(--qiling-space-30);
+  margin-bottom: var(--qiling-space-30);
+  vertical-align: top;
+}.qiling-module-scope-itinerary .module-itinerary
+  .ql-travel-layout-cards
+  .ql-travel-itinerary-day:nth-child(3n) {
+  margin-right: 0;
+}html.dark-mode .qiling-module-scope-itinerary .module-itinerary .ql-travel-schedule-item {
+  border-left-color: var(--dm-border, var(--color-neutral-700));
+}html.dark-mode .qiling-module-scope-itinerary .module-itinerary .ql-travel-attraction-tag {
+  background: var(--qiling-component-badge-bg);
+  color: var(--qiling-component-badge-text);
+  border-color: var(--qiling-color-transparent);
+}html.dark-mode .qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-content {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.08) 0%,
+      var(--qiling-color-rgba-15-23-42-0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--color-neutral-800));
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--color-neutral-700)
+  );
+}html.dark-mode .qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-marker {
+  border-color: var(--qiling-component-card-bg-dark, var(--color-neutral-800));
+}html.dark-mode .qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-title {
+  color: var(--color-neutral-100);
+}html.dark-mode .qiling-module-scope-itinerary .module-itinerary .ql-travel-itinerary-footer {
+  border-top-color: var(--dm-border, var(--color-neutral-700));
+}.qiling-module-scope-itinerary /* ----------------------------------------
+   旅行社模块响应式
+   ---------------------------------------- */
+@media (max-width: 1024px) {
+  .ql-travel-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ql-travel-layout-alternate .ql-travel-itinerary-day {
+    width: 100%;
+    padding-right: 0;
+    padding-left: var(--qiling-space-50);
+    margin-left: 0 !important;
+  }
+
+  .ql-travel-layout-alternate .ql-travel-itinerary-line {
+    left: 20px;
+    transform: none;
+  }
+
+  .ql-travel-layout-alternate
+    .ql-travel-itinerary-day
+    .ql-travel-itinerary-marker {
+    left: -30px;
+    right: auto;
+  }
+
+  .ql-travel-layout-cards .ql-travel-itinerary-day {
+    width: calc(50% - 15px);
+  }
+
+  .ql-travel-layout-cards .ql-travel-itinerary-day:nth-child(3n) {
+    margin-right: var(--qiling-space-30);
+  }
+
+  .ql-travel-layout-cards .ql-travel-itinerary-day:nth-child(2n) {
+    margin-right: 0;
+  }
+}

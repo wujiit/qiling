@@ -1,0 +1,583 @@
+.qiling-module-scope-products .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-products .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-products .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-products .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-products .features-tab-btn .tab-icon,
+.qiling-module-scope-products .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-products .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-products .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-products .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-products .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-products .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-products .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-products .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-products .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-products .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-products .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-products .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-products .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-products .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-products .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-products .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-products .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-products .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-products .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-products .features-grid-2,
+.qiling-module-scope-products .features-grid-3,
+.qiling-module-scope-products .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-products /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-products .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-products .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-products .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-products /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-products .module-decor svg path,
+.qiling-module-scope-products .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-products /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-products .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-products .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-products .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-products .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-products .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-products .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-products /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-products .ql-travel-cols-2,
+.qiling-module-scope-products .ql-travel-cols-3,
+.qiling-module-scope-products .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-products .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-products /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-products /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-products .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-products .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-products .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-products .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-products .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-products .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-products /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-products /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-products .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-products /* --- 产品模块 (手动) 样式 (Products Module Manual Styles) --- */
+.module-products-manual .section-header {
+  margin-bottom: var(--qiling-space-42) !important;
+}.qiling-module-scope-products .module-products-manual.module-products-manual .pm-card.pm-card {
+  background: var(--qiling-component-post-card-bg);
+  border-radius: var(--qiling-card-radius);
+  border: 1px solid var(--qiling-component-post-card-border);
+  overflow: hidden;
+  box-shadow: var(--qiling-component-post-card-shadow);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}.qiling-module-scope-products .module-products-manual.module-products-manual .pm-card.pm-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--color-primary-rgb), 0.18);
+}.qiling-module-scope-products .pm-thumb {
+  position: relative;
+  padding-top: var(--qiling-space-pct-75);
+  overflow: hidden;
+  background: var(--qiling-component-surface-alt-bg, var(--color-neutral-100));
+}.qiling-module-scope-products .pm-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s;
+}.qiling-module-scope-products .pm-card:hover .pm-bg {
+  transform: scale(1.06);
+}.qiling-module-scope-products .pm-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--qiling-color-rgba-15-23-42-012) 0%,
+    var(--qiling-color-rgba-15-23-42-056) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}.qiling-module-scope-products .pm-card:hover .pm-overlay {
+  opacity: 1;
+}.qiling-module-scope-products .pm-btn {
+  border: 1px solid var(--qiling-component-button-border);
+  background: var(--qiling-component-button-bg);
+  color: var(--qiling-component-button-text);
+  padding: var(--qiling-component-button-padding);
+  border-radius: var(--qiling-button-radius);
+  font-weight: 600;
+  cursor: pointer;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  box-shadow: var(--qiling-component-button-shadow);
+  min-width: var(--qiling-measure-120);
+  text-align: center;
+}.qiling-module-scope-products .pm-card:hover .pm-btn {
+  transform: translateY(0);
+}.qiling-module-scope-products .pm-info {
+  padding: var(--qiling-space-24) var(--qiling-space-20) var(--qiling-space-22);
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--qiling-space-10);
+}.qiling-module-scope-products .pm-name {
+  margin: 0;
+  font-size: var(--qiling-text-rem-1p125);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-heading);
+}.qiling-module-scope-products .pm-desc {
+  margin: 0;
+  font-size: var(--qiling-text-rem-0p92);
+  color: var(--color-text-muted);
+  line-height: 1.72;
+  flex: 1;
+}.qiling-module-scope-products .pm-grid {
+  display: grid;
+  gap: var(--qiling-space-32);
+}.qiling-module-scope-products .pm-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}.qiling-module-scope-products .pm-grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}.qiling-module-scope-products .pm-carousel-wrapper {
+  overflow: hidden;
+  padding: var(--qiling-space-8) 0 var(--qiling-space-44);
+}.qiling-module-scope-products .pm-swiper {
+  padding: var(--qiling-space-10) var(--qiling-space-4) var(--qiling-space-14);
+  margin: var(--qiling-space-neg-10) var(--qiling-space-neg-4)
+    var(--qiling-space-neg-14);
+}html.dark-mode .qiling-module-scope-products .module-products-manual.module-products-manual .pm-card.pm-card {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(
+      --qiling-component-post-card-bg-dark,
+      var(--qiling-component-post-card-bg)
+    );
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--qiling-component-post-card-border)
+  );
+}.qiling-module-scope-products /* --- 新模态框样式 (NEW MODAL STYLES) --- */
+.pm-modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--qiling-color-rgba-0-0-0-08);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}.qiling-module-scope-products .pm-modal-mask.open {
+  display: flex;
+  animation: pmFadeIn 0.3s;
+}.qiling-module-scope-products .pm-modal-box {
+  width: 95%;
+  max-width: var(--qiling-measure-1100);
+  height: 90vh;
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: var(--qiling-card-radius);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-products .pm-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(var(--color-surface-rgb), 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: var(--qiling-text-24);
+  line-height: var(--qiling-leading-32);
+  color: var(--qiling-color-333333);
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}.qiling-module-scope-products .pm-close:hover {
+  background: var(--qiling-color-ff0000);
+  color: var(--color-text-inverse);
+}.qiling-module-scope-products /* Flex 布局 (Flex Layout) */
+.pm-modal-layout {
+  display: flex;
+  height: 100%;
+}.qiling-module-scope-products /* 侧边栏 (左侧) (Sidebar Left) */
+.pm-modal-sidebar {
+  width: 380px;
+  flex-shrink: 0;
+  background: var(--qiling-component-card-bg);
+  border-right: 1px solid var(--qiling-component-card-border);
+  padding: var(--qiling-space-30);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}.qiling-module-scope-products .pm-ms-thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--qiling-card-radius);
+  overflow: hidden;
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  margin-bottom: var(--qiling-space-20);
+}.qiling-module-scope-products .pm-mh-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}.qiling-module-scope-products .pm-mh-title {
+  font-size: var(--qiling-text-24);
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 0 0 var(--qiling-space-10);
+}.qiling-module-scope-products .pm-mh-desc {
+  font-size: var(--qiling-text-14);
+  color: var(--color-text-muted);
+  margin-bottom: var(--qiling-space-20);
+  line-height: 1.6;
+}.qiling-module-scope-products .pm-mh-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--qiling-space-25);
+  background: var(--qiling-component-card-bg);
+  border-radius: var(--qiling-card-radius);
+  border: 1px solid var(--qiling-component-card-border);
+}.qiling-module-scope-products .pm-mh-specs li {
+  padding: var(--qiling-space-10) var(--qiling-space-15);
+  border-bottom: 1px solid var(--color-neutral-100);
+  font-size: var(--qiling-text-13);
+  color: var(--color-text-muted);
+  display: flex;
+  justify-content: space-between;
+}.qiling-module-scope-products .pm-mh-specs li:last-child {
+  border-bottom: none;
+}.qiling-module-scope-products .pm-mh-specs strong {
+  color: var(--color-heading);
+  font-weight: 600;
+  margin-right: var(--qiling-space-10);
+}.qiling-module-scope-products .pm-mh-actions {
+  margin-top: auto;
+}.qiling-module-scope-products .pm-inquire-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: var(--qiling-space-14) 0;
+  background: var(--products-inquire-btn-bg, var(--qiling-component-button-bg));
+  color: var(--products-inquire-btn-text, var(--qiling-component-button-text));
+  border: 1px solid
+    var(--products-inquire-btn-border, var(--qiling-component-button-border));
+  border-radius: var(--qiling-button-radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--qiling-text-16);
+  transition: all 0.2s;
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-products .pm-inquire-btn:hover {
+  background: var(
+    --products-inquire-btn-hover-bg,
+    var(--qiling-component-button-hover-bg)
+  );
+  color: var(
+    --products-inquire-btn-hover-text,
+    var(--qiling-component-button-hover-text)
+  );
+  border-color: var(
+    --products-inquire-btn-hover-border,
+    var(--qiling-component-button-hover-bg)
+  );
+  transform: translateY(-2px);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-products /* 主内容 (右侧) (Main Content Right) */
+.pm-modal-main {
+  flex: 1;
+  padding: var(--qiling-space-40);
+  overflow-y: auto;
+  background: var(--color-surface);
+  position: relative;
+}.qiling-module-scope-products /* 加载器 (Loader) */
+.pm-loader {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--qiling-color-999999);
+  display: none;
+}.qiling-module-scope-products .pm-spinner {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto var(--qiling-space-10);
+  border: 3px solid var(--qiling-color-eeeeee);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: pmSpin 0.8s linear infinite;
+}.qiling-module-scope-products /* 响应式 (Responsive) */
+@media (max-width: 992px) {
+  .pm-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pm-modal-sidebar {
+    width: 300px;
+    padding: var(--qiling-space-20);
+  }
+}@media (max-width: 768px){.qiling-module-scope-products /* 移动端布局切换 (Mobile Layout Switch) */
+  .pm-grid.cols-3,
+.qiling-module-scope-products .pm-grid.cols-4 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-products .pm-modal-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }.qiling-module-scope-products .pm-modal-layout {
+    flex-direction: column;
+  }.qiling-module-scope-products .pm-modal-sidebar {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--qiling-component-card-border);
+    padding: var(--qiling-space-20);
+  }.qiling-module-scope-products .pm-ms-thumb {
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin-bottom: var(--qiling-space-10);
+    margin-right: var(--qiling-space-15);
+  }.qiling-module-scope-products .pm-ms-info {
+    overflow: hidden;
+    /* 清除浮动格式 (clear float format) */
+  }.qiling-module-scope-products .pm-mh-title {
+    font-size: var(--qiling-text-20);
+    margin-top: 0;
+  }.qiling-module-scope-products .pm-mh-actions {
+    margin-top: var(--qiling-space-15);
+    clear: both;
+  }.qiling-module-scope-products .pm-modal-main {
+    padding: var(--qiling-space-20);
+  }
+}.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn {
+  background: var(--products-inquire-btn-bg, var(--qiling-component-button-bg));
+  color: var(--products-inquire-btn-text, var(--qiling-component-button-text));
+  border-color: var(
+    --products-inquire-btn-border,
+    var(--qiling-component-button-border)
+  );
+}.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn:hover {
+  background: var(
+    --products-inquire-btn-hover-bg,
+    var(--qiling-component-button-hover-bg)
+  );
+  color: var(
+    --products-inquire-btn-hover-text,
+    var(--qiling-component-button-hover-text)
+  );
+  border-color: var(
+    --products-inquire-btn-hover-border,
+    var(--qiling-component-button-hover-bg)
+  );
+}.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn { color: var(--products-inquire-btn-text, #ffffff) !important; }.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn:hover { color: var(--products-inquire-btn-hover-text, #ffffff) !important; }.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn { color: var(--products-inquire-btn-text, #ffffff); }.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn:hover { color: var(--products-inquire-btn-hover-text, #ffffff); }

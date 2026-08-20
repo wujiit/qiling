@@ -1,0 +1,247 @@
+.qiling-module-scope-github_activity .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-github_activity .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-github_activity .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-github_activity .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-github_activity .features-tab-btn .tab-icon,
+.qiling-module-scope-github_activity .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-github_activity .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-github_activity .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-github_activity .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-github_activity .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-github_activity .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-github_activity .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-github_activity .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-github_activity .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-github_activity .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-github_activity .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-github_activity .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-github_activity .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-github_activity .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-github_activity .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-github_activity .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-github_activity .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-github_activity .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-github_activity .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-github_activity .features-grid-2,
+.qiling-module-scope-github_activity .features-grid-3,
+.qiling-module-scope-github_activity .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-github_activity /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-github_activity .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-github_activity .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-github_activity .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-github_activity /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-github_activity .module-decor svg path,
+.qiling-module-scope-github_activity .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-github_activity /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-github_activity .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-github_activity .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-github_activity .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-github_activity .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-github_activity .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-github_activity .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-github_activity /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-github_activity .ql-travel-cols-2,
+.qiling-module-scope-github_activity .ql-travel-cols-3,
+.qiling-module-scope-github_activity .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-github_activity .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-github_activity /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-github_activity /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-github_activity .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-github_activity .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-github_activity .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-github_activity .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-github_activity .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-github_activity .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-github_activity /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-github_activity /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-github_activity .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-github_activity /* @qiling-keep-standalone-split: GitHub Activity owns this stylesheet. */
+.module-github-activity .qga-header {display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}.qiling-module-scope-github_activity .module-github-activity .qga-kicker {display:inline-flex;margin-bottom:10px;color:#0369a1;font-size:12px;font-weight:700;letter-spacing:0;text-transform:uppercase}.qiling-module-scope-github_activity .module-github-activity .qga-title {margin:0;color:#0f172a;font-size:clamp(28px,4vw,44px);line-height:1.15;letter-spacing:0}.qiling-module-scope-github_activity .module-github-activity .qga-subtitle {max-width:720px;margin:12px 0 0;color:#475569;font-size:16px;line-height:1.75}.qiling-module-scope-github_activity .module-github-activity .qga-repo-link {display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid #cbd5e1;border-radius:8px;color:#0f172a;background:#fff;text-decoration:none;font-weight:700}.qiling-module-scope-github_activity .module-github-activity .qga-layout {display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;align-items:stretch}.qiling-module-scope-github_activity .module-github-activity .qga-main {display:grid;gap:16px}.qiling-module-scope-github_activity .module-github-activity .qga-repo-card,
+.qiling-module-scope-github_activity .module-github-activity .qga-release,
+.qiling-module-scope-github_activity .module-github-activity .qga-commits,
+.qiling-module-scope-github_activity .module-github-activity .qga-stat {border:1px solid #e2e8f0;border-radius:8px;background:#fff;box-shadow:0 16px 40px rgba(15,23,42,.06)}.qiling-module-scope-github_activity .module-github-activity .qga-repo-card {padding:24px}.qiling-module-scope-github_activity .module-github-activity .qga-repo-name {color:#0f172a;font-size:20px;font-weight:800;line-height:1.3}.qiling-module-scope-github_activity .module-github-activity .qga-repo-desc {margin:10px 0 0;color:#475569;line-height:1.7}.qiling-module-scope-github_activity .module-github-activity .qga-pills {display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.qiling-module-scope-github_activity .module-github-activity .qga-pills span {display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;background:#f1f5f9;color:#334155;font-size:12px;font-weight:700}.qiling-module-scope-github_activity .module-github-activity .qga-stats {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.qiling-module-scope-github_activity .module-github-activity .qga-stat {padding:20px}.qiling-module-scope-github_activity .module-github-activity .qga-stat-value {color:#0f172a;font-size:30px;font-weight:850;line-height:1}.qiling-module-scope-github_activity .module-github-activity .qga-stat-label {margin-top:8px;color:#64748b;font-size:13px;font-weight:700}.qiling-module-scope-github_activity .module-github-activity .qga-release {padding:24px;display:flex;flex-direction:column;justify-content:center}.qiling-module-scope-github_activity .module-github-activity .qga-card-label {color:#0369a1;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0;margin-bottom:12px}.qiling-module-scope-github_activity .module-github-activity .qga-release-version {color:#0f172a;text-decoration:none;font-size:28px;font-weight:850;line-height:1.15;word-break:break-word}.qiling-module-scope-github_activity .module-github-activity .qga-release-name {margin-top:10px;color:#334155;font-weight:700}.qiling-module-scope-github_activity .module-github-activity .qga-muted {color:#64748b;font-size:14px;line-height:1.6}.qiling-module-scope-github_activity .module-github-activity .qga-commits {margin-top:16px;padding:8px}.qiling-module-scope-github_activity .module-github-activity .qga-commits>.qga-card-label {padding:14px 16px 4px}.qiling-module-scope-github_activity .module-github-activity .qga-commit {display:grid;grid-template-columns:80px minmax(0,1fr) 190px;gap:14px;align-items:center;padding:14px 16px;border-radius:6px;color:#0f172a;text-decoration:none}.qiling-module-scope-github_activity .module-github-activity .qga-commit:hover {background:#f8fafc}.qiling-module-scope-github_activity .module-github-activity .qga-commit-sha {font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#0369a1;font-weight:800}.qiling-module-scope-github_activity .module-github-activity .qga-commit-message {overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}.qiling-module-scope-github_activity .module-github-activity .qga-commit-meta {color:#64748b;font-size:13px;text-align:right;white-space:nowrap}.qiling-module-scope-github_activity .module-github-activity .qga-admin-note,
+.qiling-module-scope-github_activity .module-github-activity .qga-empty {margin-top:16px;padding:12px 14px;border:1px solid #fde68a;border-radius:8px;background:#fffbeb;color:#92400e;font-size:14px}@media (max-width:900px){.qiling-module-scope-github_activity .module-github-activity .qga-header {display:block}.qiling-module-scope-github_activity .module-github-activity .qga-repo-link {margin-top:18px}.qiling-module-scope-github_activity .module-github-activity .qga-layout {grid-template-columns:1fr}.qiling-module-scope-github_activity .module-github-activity .qga-commit {grid-template-columns:68px minmax(0,1fr)}.qiling-module-scope-github_activity .module-github-activity .qga-commit-meta {grid-column:2;text-align:left}}@media (max-width:640px){.qiling-module-scope-github_activity .module-github-activity .qga-stats {grid-template-columns:1fr}.qiling-module-scope-github_activity .module-github-activity .qga-title {font-size:28px}.qiling-module-scope-github_activity .module-github-activity .qga-commit {grid-template-columns:1fr;gap:6px}.qiling-module-scope-github_activity .module-github-activity .qga-commit-meta {grid-column:auto}}

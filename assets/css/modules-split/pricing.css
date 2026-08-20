@@ -1,0 +1,428 @@
+.qiling-module-scope-pricing .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-pricing .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-pricing .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-pricing .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-pricing .features-tab-btn .tab-icon,
+.qiling-module-scope-pricing .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-pricing .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-pricing .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-pricing .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-pricing .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-pricing .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-pricing .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-pricing .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-pricing .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-pricing .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-pricing .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-pricing .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-pricing .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-pricing .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-pricing .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-pricing .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-pricing .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-pricing .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-pricing .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-pricing .features-grid-2,
+.qiling-module-scope-pricing .features-grid-3,
+.qiling-module-scope-pricing .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-pricing /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-pricing .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-pricing .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-pricing .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-pricing /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-pricing .module-decor svg path,
+.qiling-module-scope-pricing .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-pricing /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-pricing .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-pricing .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-pricing .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-pricing .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-pricing .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-pricing .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-pricing /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-pricing .ql-travel-cols-2,
+.qiling-module-scope-pricing .ql-travel-cols-3,
+.qiling-module-scope-pricing .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-pricing .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-pricing /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-pricing /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-pricing .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-pricing .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-pricing .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-pricing .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-pricing .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-pricing .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-pricing /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-pricing /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-pricing .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-pricing /* ===== 定价模块 (Pricing Module) ===== */
+.module-pricing {
+  overflow: hidden;
+}.qiling-module-scope-pricing .module-pricing .section-header {
+  margin-bottom: var(--qiling-space-46);
+}.qiling-module-scope-pricing .pricing-grid {
+  display: grid;
+  gap: var(--qiling-space-32);
+  align-items: stretch;
+}.qiling-module-scope-pricing /* Col 类通常是共享的，但在这里定义以便在需要时具有特殊性 (Col classes are generally shared, but defined here for specificity if needed) */
+.pricing-grid.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}.qiling-module-scope-pricing .pricing-grid.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}.qiling-module-scope-pricing .pricing-card {
+  border-radius: var(--qiling-card-radius);
+  padding: var(--qiling-space-44) var(--qiling-space-28) var(--qiling-space-32);
+  text-align: center;
+  box-shadow: var(--qiling-component-card-shadow);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.035) 0%,
+      rgba(var(--color-primary-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+}.qiling-module-scope-pricing .pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--qiling-component-card-shadow);
+  z-index: 10;
+}.qiling-module-scope-pricing .pricing-card.pricing-featured {
+  transform: scale(1.03);
+  z-index: 5;
+  box-shadow: var(--qiling-component-card-shadow);
+  border: 2px solid var(--qiling-component-button-border, var(--color-primary));
+}.qiling-module-scope-pricing .pricing-card.pricing-featured:hover {
+  transform: scale(1.03) translateY(-10px);
+}.qiling-module-scope-pricing .pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--qiling-component-badge-text);
+  padding: var(--qiling-space-6) var(--qiling-space-20);
+  border-radius: 999px;
+  font-size: var(--qiling-text-rem-0p85);
+  font-weight: 600;
+  background: var(--qiling-component-badge-bg);
+  box-shadow: none;
+}.qiling-module-scope-pricing .pricing-name {
+  font-size: var(--qiling-text-rem-1p5);
+  font-weight: 700;
+  margin-bottom: var(--qiling-space-12);
+  color: var(--color-heading);
+}.qiling-module-scope-pricing .pricing-desc {
+  font-size: var(--qiling-text-rem-0p9);
+  margin-bottom: var(--qiling-space-22);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}.qiling-module-scope-pricing .pricing-price-box {
+  margin-bottom: var(--qiling-space-28);
+}.qiling-module-scope-pricing .pricing-price {
+  font-size: var(--qiling-text-rem-3);
+  font-weight: 700;
+  line-height: 1;
+}.qiling-module-scope-pricing .pricing-period {
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-1);
+  margin-left: var(--qiling-space-5);
+}.qiling-module-scope-pricing .pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--qiling-space-30);
+  text-align: left;
+  flex-grow: 1;
+}.qiling-module-scope-pricing .pricing-features li {
+  padding: var(--qiling-space-12) 0;
+  border-bottom: 1px solid var(--qiling-component-card-border);
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-10);
+  /* 颜色：由下面的内联旧代码或暗黑模式处理 (color: handled by inline legacy or dark mode below) */
+}.qiling-module-scope-pricing .pricing-features li:last-child {
+  border-bottom: none;
+}.qiling-module-scope-pricing .pricing-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+}.qiling-module-scope-pricing .pricing-btn {
+  display: inline-block;
+  width: 100%;
+  margin-top: auto;
+  padding: var(--qiling-component-button-padding);
+  background: var(--qiling-component-button-bg);
+  color: var(--pricing-button-text, #ffffff);
+  border: 1px solid var(--qiling-component-button-border);
+  border-radius: var(--qiling-button-radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-pricing .pricing-btn.btn-featured {
+  /* 渐变回退由内联处理 (Gradient fallback handled inline) */
+  color: var(--color-text-inverse);
+}.qiling-module-scope-pricing .pricing-btn:hover {
+  background: var(--qiling-component-button-hover-bg);
+  color: var(--pricing-button-hover-text, #ffffff);
+  border-color: var(--qiling-component-button-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-pricing /* 响应式 (Responsive) */
+@media (max-width: 992px) {
+  .pricing-grid.grid-cols-3,
+  .pricing-grid.grid-cols-4 {
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: var(--qiling-space-40) !important;
+  }
+
+  .pricing-card.pricing-featured {
+    transform: none !important;
+    margin: var(--qiling-space-10) 0;
+  }
+
+  .pricing-card:hover,
+  .pricing-card.pricing-featured:hover {
+    transform: translateY(-5px) !important;
+  }
+}.qiling-module-scope-pricing /* 暗黑模式 (Dark Mode) */
+html.dark-mode .module-pricing {
+  border-color: var(--color-neutral-800);
+}.qiling-module-scope-pricing /* 定价模块暗黑模式背景和排版覆盖 (Pricing Module Dark Mode Background & Typography Overrides) */
+html.dark-mode .module-pricing.bg-type-color {
+  background: var(--dm-bg) !important;
+  /* 强制深蓝色背景 (Force Dark Blue Background) */
+}html.dark-mode .qiling-module-scope-pricing .module-pricing .section-title {
+  color: var(
+    --qds-title-color,
+    var(--qiling-module-title, var(--qiling-component-module-title-color-dark, var(--color-heading)))
+  );
+}html.dark-mode .qiling-module-scope-pricing .module-pricing .section-subtitle {
+  color: var(--qds-subtitle-color, var(--qiling-module-subtitle, var(--color-text-muted)));
+}html.dark-mode .qiling-module-scope-pricing .pricing-card {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  ) !important;
+  box-shadow: var(--qiling-component-card-shadow);
+  border: 1px solid
+    var(
+      --qiling-component-card-border-dark,
+      var(--qiling-component-card-border)
+    );
+}html.dark-mode .qiling-module-scope-pricing .pricing-card:hover {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  ) !important;
+  box-shadow: var(--qiling-component-card-shadow);
+}html.dark-mode .qiling-module-scope-pricing .pricing-name {
+  color: var(--color-heading) !important;
+}html.dark-mode .qiling-module-scope-pricing .pricing-desc {
+  color: var(--color-text-muted) !important;
+}html.dark-mode .qiling-module-scope-pricing .pricing-period {
+  color: var(--color-text-muted) !important;
+}html.dark-mode .qiling-module-scope-pricing .pricing-features li {
+  border-bottom-color: rgba(var(--color-surface-rgb), 0.06);
+  color: var(--dm-text);
+  /* 暗黑模式下的默认文本颜色 (Default text color in dark mode) */
+}.qiling-module-scope-pricing /* 如果需要，通过透明度或特定颜色覆盖处理暗黑模式下的排除项逻辑，
+   但通用颜色更安全。(Handle excluded items logic in dark mode via opacity or specific color override if needed) */
+
+html.dark-mode .pricing-btn {
+  background-color: rgba(var(--color-surface-rgb), 0.1);
+  color: var(--color-text-inverse);
+}html.dark-mode .qiling-module-scope-pricing .pricing-btn:hover {
+  background-color: rgba(var(--color-surface-rgb), 0.2);
+}.qiling-module-scope-pricing .module-pricing.module-pricing .pricing-btn {
+  color: var(--pricing-button-text, #ffffff);
+}.qiling-module-scope-pricing .module-pricing.module-pricing .pricing-btn:hover {
+  color: var(--pricing-button-hover-text, #ffffff);
+}

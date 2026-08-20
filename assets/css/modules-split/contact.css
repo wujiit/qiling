@@ -1,0 +1,740 @@
+.qiling-module-scope-contact .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-contact .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-contact .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-contact .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-contact .features-tab-btn .tab-icon,
+.qiling-module-scope-contact .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-contact .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-contact .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-contact .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-contact .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-contact .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-contact .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-contact .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-contact .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-contact .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-contact .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-contact .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-contact .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-contact .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-contact .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-contact .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-contact .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-contact .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-contact .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-contact .features-grid-2,
+.qiling-module-scope-contact .features-grid-3,
+.qiling-module-scope-contact .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-contact /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-contact .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-contact .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-contact .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-contact /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-contact .module-decor svg path,
+.qiling-module-scope-contact .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-contact /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-contact .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-contact .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-contact .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-contact .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-contact .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-contact .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-contact /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-contact .ql-travel-cols-2,
+.qiling-module-scope-contact .ql-travel-cols-3,
+.qiling-module-scope-contact .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-contact .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-contact /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-contact /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-contact .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-contact .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-contact .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-contact .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-contact .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-contact .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-contact /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-contact /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-contact .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-contact .module-contact {
+  position: relative;
+}.qiling-module-scope-contact .module-contact .module-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-color-000000);
+  z-index: 1;
+}.qiling-module-scope-contact .module-contact .module-contact-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-contact .module-contact .section-header {
+  margin-bottom: var(--qiling-space-44);
+}.qiling-module-scope-contact .module-contact .contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+  gap: clamp(
+    var(--qiling-space-24),
+    var(--qiling-space-vw-4),
+    var(--qiling-space-40)
+  );
+  max-width: var(--qiling-measure-1040);
+  margin: 0 auto;
+}.qiling-module-scope-contact .module-contact .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--qiling-space-12);
+}.qiling-module-scope-contact .module-contact .contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-14);
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-radius: calc(var(--qiling-card-radius) - 2px);
+  border: 1px solid var(--qiling-component-card-border);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.035) 0%,
+      rgba(var(--color-primary-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-contact .module-contact .contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}.qiling-module-scope-contact .module-contact .contact-icon svg {
+  width: 18px;
+  height: 18px;
+}.qiling-module-scope-contact .module-contact .contact-item-content {
+  min-height: 40px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--qiling-space-2);
+}.qiling-module-scope-contact .module-contact .contact-icon.icon-company {
+  background: var(--qiling-gradient-brand);
+}.qiling-module-scope-contact .module-contact .contact-icon.icon-phone {
+  background: var(--qiling-gradient-success);
+}.qiling-module-scope-contact .module-contact .contact-icon.icon-qq {
+  background: var(--qiling-gradient-cool);
+}.qiling-module-scope-contact .module-contact .contact-icon.icon-wechat {
+  background: var(--qiling-gradient-success);
+}.qiling-module-scope-contact .module-contact .contact-icon.icon-email {
+  background: var(--qiling-gradient-warning);
+}.qiling-module-scope-contact .module-contact .contact-icon.icon-address {
+  background: var(--qiling-gradient-accent);
+}.qiling-module-scope-contact .module-contact .contact-icon.icon-hours {
+  background: var(--qiling-gradient-info);
+}.qiling-module-scope-contact .module-contact .contact-item-content h4 {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-0p8);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: var(--qiling-tracking-em-0p01);
+}.qiling-module-scope-contact .module-contact .contact-item-content p {
+  margin: 0;
+  color: var(--color-heading);
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: var(--qiling-text-rem-0p95);
+}.qiling-module-scope-contact .module-contact .contact-item-content a {
+  color: var(--color-heading);
+  font-weight: 600;
+  font-size: var(--qiling-text-rem-0p95);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}.qiling-module-scope-contact .module-contact .contact-item-content a:hover {
+  color: var(--color-primary, var(--color-primary));
+}.qiling-module-scope-contact .module-contact .contact-wechat-qr {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--qiling-space-4);
+  margin-top: var(--qiling-space-6);
+  padding: var(--qiling-space-6);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: calc(var(--qiling-card-radius) - 6px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-contact .module-contact .contact-wechat-qr img {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 8px;
+}.qiling-module-scope-contact .module-contact .contact-wechat-qr span {
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-0p78);
+}.qiling-module-scope-contact .module-contact .contact-right {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--qiling-space-12);
+}.qiling-module-scope-contact .module-contact .contact-right > * {
+  width: 100%;
+}.qiling-module-scope-contact .module-contact .contact-form {
+  background: var(--qiling-component-card-bg);
+  padding: var(--qiling-space-28);
+  border-radius: var(--qiling-card-radius);
+  border: 1px solid var(--qiling-component-card-border);
+  box-shadow: var(--qiling-component-card-shadow);
+  min-height: 100%;
+}.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--qiling-measure-pct-100);
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  padding: var(--qiling-space-24);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .form-title {
+  margin-bottom: var(--qiling-space-18);
+  padding-bottom: var(--qiling-space-14);
+}.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .form-fields {
+  gap: var(--qiling-space-14);
+}.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .field-width-50 {
+  width: calc(50% - 8px);
+}.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .field-width-33 {
+  width: calc(33.333% - 10.67px);
+}.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .form-submit {
+  margin-top: var(--qiling-space-18);
+  padding-top: var(--qiling-space-16);
+}.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .btn-submit {
+  width: 100%;
+}.qiling-module-scope-contact .module-contact .contact-form .form-group {
+  margin-bottom: 0;
+}.qiling-module-scope-contact .module-contact .contact-form .form-row {
+  display: block;
+  margin-bottom: var(--qiling-space-14);
+}.qiling-module-scope-contact .module-contact .contact-form .form-row.form-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--qiling-space-14);
+}.qiling-module-scope-contact .module-contact .contact-form input,
+.qiling-module-scope-contact .module-contact .contact-form textarea {
+  width: 100%;
+  padding: var(--qiling-space-13) var(--qiling-space-14);
+  border: 1px solid var(--qiling-component-form-input-border);
+  border-radius: var(--qiling-input-radius);
+  font-size: var(--qiling-text-rem-1);
+  line-height: 1.5;
+  box-sizing: border-box;
+  background: var(--qiling-component-form-input-bg);
+  color: var(--qiling-component-form-input-text);
+  box-shadow: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}.qiling-module-scope-contact .module-contact .contact-form input:focus,
+.qiling-module-scope-contact .module-contact .contact-form textarea:focus {
+  outline: none;
+  border-color: var(--qiling-component-form-focus-border);
+  background: var(--qiling-component-form-input-bg);
+  box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-contact .module-contact .contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}.qiling-module-scope-contact .module-contact .contact-form .form-message {
+  margin-bottom: var(--qiling-space-14);
+}.qiling-module-scope-contact .module-contact .contact-form .btn-submit {
+  width: 100%;
+  padding: var(--qiling-component-button-padding);
+  background: var(--qiling-component-button-bg);
+  color: var(--contact-submit-text, #ffffff);
+  border: 1px solid var(--qiling-component-button-border);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-1p05);
+  font-weight: 600;
+  letter-spacing: var(--qiling-tracking-em-0p02);
+  cursor: pointer;
+  box-shadow: var(--qiling-component-button-shadow);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}.qiling-module-scope-contact .module-contact .contact-form .btn-submit:hover {
+  transform: translateY(-2px);
+  background: var(--qiling-component-button-hover-bg);
+  color: var(--contact-submit-hover-text, #ffffff);
+  border-color: var(--qiling-component-button-hover-bg);
+  box-shadow: var(--qiling-component-button-shadow);
+  filter: none;
+}.qiling-module-scope-contact .module-contact .contact-form .btn-submit:disabled {
+  cursor: wait;
+  opacity: 0.8;
+  transform: none;
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-contact .module-contact .contact-image {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-contact .module-contact .contact-placeholder {
+  background: var(--qiling-gradient-brand);
+  border-radius: var(--qiling-card-radius);
+  padding: var(--qiling-space-48) var(--qiling-space-34);
+  text-align: center;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}.qiling-module-scope-contact .module-contact .contact-placeholder-icon {
+  font-size: var(--qiling-text-rem-3p5);
+  margin-bottom: var(--qiling-space-16);
+}.qiling-module-scope-contact .module-contact .contact-placeholder h3 {
+  color: var(--color-text-inverse);
+  font-weight: 600;
+  margin: 0 0 var(--qiling-space-8);
+}.qiling-module-scope-contact .module-contact .contact-placeholder p {
+  color: rgba(var(--color-surface-rgb), 0.8);
+  margin: 0;
+}.qiling-module-scope-contact .module-contact .contact-form-login-hint {
+  width: 100%;
+  margin: 0;
+  padding: var(--qiling-space-10) var(--qiling-space-12);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.18);
+  border-radius: calc(var(--qiling-input-radius) + 2px);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary, var(--color-primary));
+  font-size: var(--qiling-text-rem-0p92);
+  line-height: 1.5;
+  font-weight: 500;
+  box-sizing: border-box;
+}.qiling-module-scope-contact .module-contact .contact-form-login-hint a {
+  color: inherit;
+  font-weight: 600;
+}.qiling-module-scope-contact .module-contact .form-toast {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: var(--qiling-space-40) var(--qiling-space-60);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-contact .module-contact .form-toast-icon {
+  font-size: var(--qiling-text-rem-4);
+  margin-bottom: var(--qiling-space-15);
+}.qiling-module-scope-contact .module-contact .form-toast-text {
+  font-size: var(--qiling-text-rem-1p25);
+  font-weight: 600;
+}.qiling-module-scope-contact .module-contact .form-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(var(--color-primary-rgb), 0.32);
+  z-index: 9998;
+}@media (max-width: 980px){.qiling-module-scope-contact .module-contact .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-28);
+    max-width: var(--qiling-measure-720);
+  }
+}@media (max-width: 768px){.qiling-module-scope-contact .module-contact .contact-grid {
+    gap: var(--qiling-space-24);
+  }.qiling-module-scope-contact .module-contact .section-header {
+    margin-bottom: var(--qiling-space-32);
+  }.qiling-module-scope-contact .module-contact .contact-item {
+    padding: var(--qiling-space-12) var(--qiling-space-13);
+    gap: var(--qiling-space-12);
+  }.qiling-module-scope-contact .module-contact .contact-icon {
+    width: 38px;
+    height: 38px;
+  }.qiling-module-scope-contact .module-contact .contact-item-content {
+    min-height: 38px;
+  }.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap {
+    padding: var(--qiling-space-18);
+  }.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .field-width-50,
+.qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap .field-width-33 {
+    width: 100%;
+  }.qiling-module-scope-contact .module-contact .contact-form {
+    padding: var(--qiling-space-20);
+  }.qiling-module-scope-contact .module-contact .contact-form .form-row.form-row-2 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-contact .module-contact .contact-form textarea {
+    min-height: 144px;
+  }.qiling-module-scope-contact .module-contact .contact-placeholder {
+    padding: var(--qiling-space-36) var(--qiling-space-24);
+    min-height: 280px;
+  }.qiling-module-scope-contact .module-contact .form-toast {
+    padding: var(--qiling-space-30) var(--qiling-space-40);
+    width: 85%;
+  }
+}html.dark-mode .qiling-module-scope-contact .module-contact {
+  background: var(--dm-bg) !important;
+}html.dark-mode .qiling-module-scope-contact .module-contact .section-title {
+  color: var(--qiling-component-module-title-color-dark, var(--color-heading));
+}html.dark-mode .qiling-module-scope-contact .module-contact .section-subtitle {
+  color: var(--color-text-muted);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-item-content h4 {
+  color: var(--color-text-muted);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-item-content p,
+html.dark-mode .qiling-module-scope-contact .module-contact .contact-item-content a {
+  color: var(--color-heading);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-wechat-qr {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-item {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-wechat-qr span {
+  color: var(--color-text-muted);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-form {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  box-shadow: var(--qiling-component-card-shadow);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-right > .developer-form-wrap {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  box-shadow: var(--qiling-component-card-shadow);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-form input,
+html.dark-mode .qiling-module-scope-contact .module-contact .contact-form textarea {
+  background: var(
+    --qiling-component-form-input-bg-dark,
+    var(--qiling-component-form-input-bg)
+  );
+  border-color: var(
+    --qiling-component-form-input-border-dark,
+    var(--qiling-component-form-input-border)
+  );
+  color: var(
+    --qiling-component-form-input-text-dark,
+    var(--qiling-component-form-input-text)
+  );
+  box-shadow: none;
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-form input:focus,
+html.dark-mode .qiling-module-scope-contact .module-contact .contact-form textarea:focus {
+  border-color: var(--qiling-component-form-focus-border);
+  background: var(
+    --qiling-component-form-input-bg-dark,
+    var(--qiling-component-form-input-bg)
+  );
+  box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.18);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-form input::placeholder,
+html.dark-mode .qiling-module-scope-contact .module-contact .contact-form textarea::placeholder {
+  color: var(--color-text-muted);
+}html.dark-mode .qiling-module-scope-contact .module-contact .contact-form-login-hint {
+  background: rgba(var(--color-primary-rgb), 0.16);
+  border-color: rgba(var(--color-primary-rgb), 0.28);
+  color: var(--color-primary-light, var(--color-primary));
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}.qiling-module-scope-contact .module-contact.module-contact .contact-form input,
+.qiling-module-scope-contact .module-contact.module-contact .contact-form textarea,
+.qiling-module-scope-contact .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not(
+    [type="button"]
+  ):not([type="reset"]):not([type="range"]):not([type="file"]),
+.qiling-module-scope-contact .module-contact.module-contact .contact-right > .developer-form-wrap select,
+.qiling-module-scope-contact .module-contact.module-contact .contact-right > .developer-form-wrap textarea {
+  background: var(--qiling-component-form-input-bg);
+  color: var(--qiling-component-form-input-text);
+  border: 1px solid var(--qiling-component-form-input-border);
+  border-radius: var(--qiling-input-radius);
+  box-shadow: none;
+}.qiling-module-scope-contact .module-contact.module-contact .contact-form input:focus,
+.qiling-module-scope-contact .module-contact.module-contact .contact-form textarea:focus,
+.qiling-module-scope-contact .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not(
+    [type="button"]
+  ):not([type="reset"]):not([type="range"]):not([type="file"]):focus,
+.qiling-module-scope-contact .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  select:focus,
+.qiling-module-scope-contact .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  textarea:focus {
+  background: var(--qiling-component-form-input-bg);
+  border-color: var(--qiling-component-form-focus-border);
+  box-shadow: none;
+  outline: 2px solid var(--qiling-component-form-focus-border);
+  outline-offset: 0;
+}.qiling-module-scope-contact .module-contact.module-contact .contact-form input::placeholder,
+.qiling-module-scope-contact .module-contact.module-contact .contact-form textarea::placeholder,
+.qiling-module-scope-contact .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  input::placeholder,
+.qiling-module-scope-contact .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  textarea::placeholder {
+  color: var(--color-text-muted);
+}.qiling-module-scope-contact .module-contact.module-contact .contact-form .contact-submit-btn {
+  background: var(--contact-submit-bg, var(--qiling-module-button-bg, var(--qiling-component-button-bg)));
+  color: var(--contact-submit-text, #ffffff);
+  border: 1px solid var(--contact-submit-border, var(--contact-submit-bg, var(--qiling-component-button-border)));
+  border-radius: var(--qiling-button-radius);
+  box-shadow: var(--qiling-component-button-shadow);
+  padding: var(--qiling-component-button-padding);
+  width: auto;
+  max-width: var(--qiling-measure-pct-100);
+}.qiling-module-scope-contact .module-contact.module-contact .contact-form .contact-submit-btn:hover {
+  background: var(--contact-submit-hover-bg, var(--qiling-module-button-hover-bg, var(--qiling-component-button-hover-bg)));
+  color: var(--contact-submit-hover-text, #ffffff);
+  border-color: var(--contact-submit-hover-border, var(--contact-submit-hover-bg, var(--qiling-component-button-hover-bg)));
+}html.dark-mode .qiling-module-scope-contact .module-contact.module-contact .contact-form input,
+html.dark-mode .qiling-module-scope-contact .module-contact.module-contact .contact-form textarea,
+.qiling-module-scope-contact html.dark-mode
+  .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not(
+    [type="button"]
+  ):not([type="reset"]):not([type="range"]):not([type="file"]),
+.qiling-module-scope-contact html.dark-mode
+  .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  select,
+.qiling-module-scope-contact html.dark-mode
+  .module-contact.module-contact
+  .contact-right
+  > .developer-form-wrap
+  textarea {
+  background: var(
+    --qiling-component-form-input-bg-dark,
+    var(--qiling-component-form-input-bg)
+  );
+  color: var(
+    --qiling-component-form-input-text-dark,
+    var(--qiling-component-form-input-text)
+  );
+  border-color: var(
+    --qiling-component-form-input-border-dark,
+    var(--qiling-component-form-input-border)
+  );
+}

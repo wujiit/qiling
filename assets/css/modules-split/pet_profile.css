@@ -1,0 +1,518 @@
+.qiling-module-scope-pet_profile .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-pet_profile .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-pet_profile .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-pet_profile .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-pet_profile .features-tab-btn .tab-icon,
+.qiling-module-scope-pet_profile .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-pet_profile .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-pet_profile .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-pet_profile .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-pet_profile .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-pet_profile .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-pet_profile .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-pet_profile .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-pet_profile .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-pet_profile .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-pet_profile .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-pet_profile .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-pet_profile .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-pet_profile .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-pet_profile .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-pet_profile .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-pet_profile .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-pet_profile .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-pet_profile .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-pet_profile .features-grid-2,
+.qiling-module-scope-pet_profile .features-grid-3,
+.qiling-module-scope-pet_profile .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-pet_profile /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-pet_profile .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-pet_profile .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-pet_profile .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-pet_profile /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-pet_profile .module-decor svg path,
+.qiling-module-scope-pet_profile .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-pet_profile /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-pet_profile .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-pet_profile .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-pet_profile .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-pet_profile .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-pet_profile .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-pet_profile .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-pet_profile /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-pet_profile .ql-travel-cols-2,
+.qiling-module-scope-pet_profile .ql-travel-cols-3,
+.qiling-module-scope-pet_profile .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-pet_profile .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-pet_profile /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-pet_profile /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-pet_profile .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-pet_profile .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-pet_profile .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-pet_profile .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-pet_profile .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-pet_profile .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-pet_profile /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-pet_profile /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-pet_profile .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-pet_profile /* =========================================
+   新模块：宠物资料 / 领养
+   ========================================= */
+.module-pet-profile {
+  padding: var(--module-padding, var(--qiling-space-80) 0);
+  position: relative;
+}.qiling-module-scope-pet_profile .module-pet-profile .section-header {
+  margin-bottom: var(--qiling-space-42);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-grid.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-grid.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}.qiling-module-scope-pet_profile /* 宠物卡片 (Pet Card) */
+.module-pet-profile .qiling-pet-card {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.04) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--pet-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: var(--qiling-card-radius);
+  overflow: hidden;
+  box-shadow: var(--qiling-component-post-card-shadow);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  text-decoration: none;
+  /* 如果是锚点 (If anchor) */
+  display: flex;
+  flex-direction: column;
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--color-primary-rgb), 0.22);
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-pet_profile /* 图片区域 (Image Area) */
+.module-pet-profile .qiling-pet-image {
+  position: relative;
+  width: 100%;
+  padding-top: var(--qiling-space-pct-100);
+  /* 1:1 宽高比 (方形) 通常在个人资料网格中看起来最好 (1:1 Aspect Ratio Square usually looks best for profile grids) */
+  background: var(
+    --qiling-component-surface-alt-bg,
+    var(--qiling-color-f8f8f8)
+  );
+  overflow: hidden;
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-card:hover .qiling-pet-image img {
+  transform: scale(1.05);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(var(--color-neutral-400-rgb), 0.5);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-placeholder .dashicons {
+  font-size: var(--qiling-text-48);
+  width: 48px;
+  height: 48px;
+}.qiling-module-scope-pet_profile /* 状态徽章 (Status Badge) */
+.module-pet-profile .qiling-pet-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: var(--qiling-space-5) var(--qiling-space-11);
+  border-radius: 999px;
+  font-size: var(--qiling-text-rem-0p75);
+  font-weight: 600;
+  color: var(--color-text-inverse);
+  background: var(--qiling-color-rgba-0-0-0-05);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  box-shadow: 0 10px 20px var(--qiling-color-rgba-15-23-42-016);
+}.qiling-module-scope-pet_profile .module-pet-profile .status-available .qiling-pet-status {
+  background: var(--pet-primary, var(--color-accent));
+}.qiling-module-scope-pet_profile .module-pet-profile .status-reserved .qiling-pet-status {
+  background: var(--color-warning);
+  /* 琥珀色 (Amber) */
+}.qiling-module-scope-pet_profile .module-pet-profile .status-adopted .qiling-pet-status {
+  background: var(--qiling-color-9ca3af);
+  /* 灰色 (Grey) */
+}.qiling-module-scope-pet_profile /* 内容区域 (Content Area) */
+.module-pet-profile .qiling-pet-content {
+  padding: var(--qiling-space-20);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--qiling-space-8);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-name {
+  margin: 0;
+  font-size: var(--qiling-text-rem-1p25);
+  font-weight: 700;
+  color: var(--color-heading);
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-6);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-gender {
+  font-size: var(--qiling-text-rem-1);
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-text-inverse);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-gender.male {
+  background: var(--color-info);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-gender.female {
+  background: var(--color-accent);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-price {
+  font-weight: 700;
+  color: var(--pet-primary, var(--color-accent));
+  font-size: var(--qiling-text-rem-1p1);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-meta {
+  display: flex;
+  gap: var(--qiling-space-15);
+  font-size: var(--qiling-text-rem-0p875);
+  color: var(--color-text-muted);
+  margin-bottom: var(--qiling-space-15);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-meta .meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-4);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-meta .dashicons {
+  font-size: var(--qiling-text-16);
+  width: 16px;
+  height: 16px;
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-tags {
+  margin-top: auto;
+  /* 推到底部 (Push to bottom) */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-6);
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-tag {
+  display: inline-block;
+  padding: var(--qiling-space-4) var(--qiling-space-10);
+  background: var(--qiling-component-badge-bg);
+  border: 1px solid var(--qiling-color-transparent);
+  color: var(--qiling-component-badge-text);
+  font-size: var(--qiling-text-rem-0p75);
+  border-radius: 999px;
+}.qiling-module-scope-pet_profile /* 已领养状态：使卡片略微变暗 (Adopted State: Dim the card slightly) */
+.module-pet-profile .qiling-pet-card.status-adopted {
+  opacity: 0.8;
+}.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-card.status-adopted .qiling-pet-image img {
+  filter: grayscale(100%);
+}html.dark-mode .qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-card {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.08) 0%,
+      var(--qiling-color-rgba-15-23-42-0) 100%
+    ),
+    var(
+      --pet-card-bg,
+      var(--qiling-component-card-bg-dark, var(--color-neutral-800))
+    );
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--color-neutral-700)
+  );
+}html.dark-mode .qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-tag {
+  background: var(--qiling-component-badge-bg);
+  border-color: var(--qiling-color-transparent);
+  color: var(--qiling-component-badge-text);
+}.qiling-module-scope-pet_profile /* 响应式 (Responsive) */
+@media (max-width: 1024px) {
+  .module-pet-profile .qiling-pet-grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .module-pet-profile .qiling-pet-grid.grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}@media (max-width: 640px){.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-grid.grid-cols-4,
+.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-grid.grid-cols-3 {
+    grid-template-columns: 1fr;
+    /* 移动端单列 (Single column on mobile) */
+  }.qiling-module-scope-pet_profile .module-pet-profile .qiling-pet-card {
+    flex-direction: column;
+  }
+}.qiling-module-scope-pet_profile .swiper-pagination-bullet-active {
+  background: var(--color-primary);
+}
+
+@keyframes pmFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pmSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}.qiling-module-scope-pet_profile /* ========================================
+   旅行社专用模块样式 (v1.0.3)
+   前缀: ql-travel- 确保不与其他模块冲突
+   ======================================== */
+
+/* ----------------------------------------
+   通用网格布局
+   ---------------------------------------- */
+.ql-travel-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--qiling-space-30);
+}.qiling-module-scope-pet_profile .ql-travel-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--qiling-space-30);
+}.qiling-module-scope-pet_profile .ql-travel-cols-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-pet_profile .ql-travel-badge-hot {
+  background: var(--qiling-gradient-error);
+}.qiling-module-scope-pet_profile .ql-travel-badge-recommend {
+  background: var(--qiling-gradient-accent);
+}.qiling-module-scope-pet_profile .ql-travel-badge-discount {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-dark) 100%
+  );
+}.qiling-module-scope-pet_profile .ql-travel-badge-new {
+  background: var(--qiling-gradient-success);
+}.qiling-module-scope-pet_profile /* 简约风格 */
+.ql-travel-style-minimal {
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: none;
+}.qiling-module-scope-pet_profile .ql-travel-style-minimal:hover {
+  border-color: var(--color-primary, var(--color-primary));
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}html.dark-mode .qiling-module-scope-pet_profile .ql-travel-style-minimal {
+  border-color: var(--dm-border, var(--color-neutral-700));
+}.qiling-module-scope-pet_profile .ql-hotel-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}.qiling-module-scope-pet_profile .ql-hotel-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@keyframes ql-hotel-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

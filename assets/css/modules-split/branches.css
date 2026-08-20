@@ -1,0 +1,540 @@
+.qiling-module-scope-branches .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-branches .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-branches .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-branches .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-branches .features-tab-btn .tab-icon,
+.qiling-module-scope-branches .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-branches .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-branches .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-branches .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-branches .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-branches .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-branches .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-branches .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-branches .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-branches .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-branches .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-branches .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-branches .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-branches .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-branches .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-branches .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-branches .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-branches .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-branches .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-branches .features-grid-2,
+.qiling-module-scope-branches .features-grid-3,
+.qiling-module-scope-branches .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-branches /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-branches .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-branches .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-branches .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-branches /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-branches .module-decor svg path,
+.qiling-module-scope-branches .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-branches /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-branches .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-branches .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-branches .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-branches .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-branches .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-branches .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-branches /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-branches .ql-travel-cols-2,
+.qiling-module-scope-branches .ql-travel-cols-3,
+.qiling-module-scope-branches .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-branches .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-branches /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-branches /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-branches .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-branches .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-branches .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-branches .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-branches .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-branches .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-branches /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-branches /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-branches .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-branches /* ===== 分支机构模块 (Branches Module) ===== */
+.module-branches {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}.qiling-module-scope-branches .module-branches .module-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-color-000000);
+  z-index: 1;
+}.qiling-module-scope-branches .module-branches-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-branches .module-branches .section-header {
+  margin-bottom: var(--qiling-space-44);
+}.qiling-module-scope-branches .branches-city-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--qiling-space-12);
+  margin: 0 0 var(--qiling-space-34);
+}.qiling-module-scope-branches .branches-city-btn {
+  border: 1px solid var(--qiling-component-tabs-border);
+  background: var(--qiling-color-transparent);
+  color: var(--qiling-component-tabs-text);
+  border-radius: var(--qiling-button-radius);
+  padding: var(--qiling-space-10) var(--qiling-space-16);
+  font-size: var(--qiling-text-rem-0p86);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}.qiling-module-scope-branches .branches-city-btn:hover,
+.qiling-module-scope-branches .branches-city-btn.is-active {
+  border-color: var(--qiling-component-tabs-active-border);
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+}.qiling-module-scope-branches .branches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--qiling-space-32);
+  align-items: stretch;
+}.qiling-module-scope-branches .branches-grid.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-branches .branches-grid.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}.qiling-module-scope-branches .module-branches.module-branches .branches-grid .branch-card {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.035) 0%,
+      rgba(var(--color-primary-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border-radius: var(--qiling-card-radius);
+  overflow: hidden;
+  border: 1px solid var(--qiling-component-card-border);
+  box-shadow: var(--qiling-component-card-shadow);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}.qiling-module-scope-branches .branch-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--color-primary-rgb), 0.16);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-branches .branch-image-wrapper {
+  height: 160px;
+  overflow: hidden;
+}.qiling-module-scope-branches .branch-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}.qiling-module-scope-branches .branch-card:hover .branch-image {
+  transform: scale(1.05);
+}.qiling-module-scope-branches .branch-bar {
+  height: 8px;
+  background: var(--qiling-gradient-brand);
+}.qiling-module-scope-branches .branch-content {
+  padding: var(--qiling-space-26) var(--qiling-space-24) var(--qiling-space-24);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}.qiling-module-scope-branches .branch-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--qiling-space-10);
+  margin-bottom: var(--qiling-space-12);
+}.qiling-module-scope-branches .branch-name {
+  margin: 0;
+  font-size: var(--qiling-text-rem-1p25);
+  font-weight: 700;
+  color: var(--color-heading);
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-10);
+}.qiling-module-scope-branches .branch-icon-pin {
+  font-size: var(--qiling-text-em-1p3);
+}.qiling-module-scope-branches .branch-status {
+  font-size: var(--qiling-text-12);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: var(--qiling-space-4) var(--qiling-space-10);
+  white-space: nowrap;
+}.qiling-module-scope-branches .branch-status.status-open {
+  background: rgba(var(--color-success-rgb), 0.14);
+  color: var(--color-success-dark);
+}.qiling-module-scope-branches .branch-status.status-busy {
+  background: rgba(var(--color-warning-rgb), 0.16);
+  color: var(--color-warning-dark);
+}.qiling-module-scope-branches .branch-status.status-closed {
+  background: rgba(var(--color-error-rgb), 0.14);
+  color: var(--color-error-dark);
+}.qiling-module-scope-branches .branch-status.status-coming {
+  background: rgba(var(--color-primary-rgb), 0.14);
+  color: var(--color-primary);
+}.qiling-module-scope-branches .branch-city {
+  margin: 0 0 var(--qiling-space-14);
+  font-size: var(--qiling-text-13);
+  color: var(--color-text-muted);
+}.qiling-module-scope-branches .branch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-8);
+  margin-bottom: var(--qiling-space-14);
+}.qiling-module-scope-branches .branch-tag {
+  border-radius: 999px;
+  background: var(--qiling-component-badge-bg);
+  border: 1px solid var(--qiling-color-transparent);
+  color: var(--qiling-component-badge-text);
+  font-size: var(--qiling-text-12);
+  padding: var(--qiling-space-3) var(--qiling-space-10);
+}.qiling-module-scope-branches .branch-info-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--qiling-space-14);
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-0p9);
+  line-height: 1.65;
+}.qiling-module-scope-branches .branch-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--qiling-space-10);
+}.qiling-module-scope-branches .branch-icon {
+  flex-shrink: 0;
+  margin-top: var(--qiling-space-2);
+}.qiling-module-scope-branches .branch-info-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}.qiling-module-scope-branches .branch-info-item a:hover {
+  color: var(--color-primary, var(--color-primary));
+  text-decoration: underline;
+}.qiling-module-scope-branches .branch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qiling-space-10);
+  margin-top: var(--qiling-space-22);
+}.qiling-module-scope-branches .branch-map-btn,
+.qiling-module-scope-branches .branch-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--qiling-space-6);
+  padding: var(--qiling-component-button-padding);
+  border-radius: var(--qiling-button-radius);
+  text-decoration: none;
+  font-size: var(--qiling-text-rem-0p9);
+  font-weight: 600;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: var(--qiling-measure-140);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-branches .branch-map-btn {
+  background: var(--branches-map-btn-bg, var(--qiling-component-button-bg));
+  color: var(--branches-map-btn-text, var(--qiling-component-button-text));
+  border: 1px solid
+    var(--branches-map-btn-border, var(--qiling-component-button-border));
+}.qiling-module-scope-branches .branch-book-btn {
+  background: var(--branches-book-btn-bg, var(--qiling-component-button-bg));
+  color: var(--branches-book-btn-text, var(--qiling-component-button-text));
+  border: 1px solid
+    var(--branches-book-btn-border, var(--qiling-component-button-border));
+}.qiling-module-scope-branches .branch-map-btn:hover {
+  background: var(
+    --branches-map-btn-hover-bg,
+    var(--qiling-component-button-hover-bg)
+  );
+  border-color: var(
+    --branches-map-btn-hover-border,
+    var(--qiling-component-button-hover-bg)
+  );
+  color: var(
+    --branches-map-btn-hover-text,
+    var(--qiling-component-button-hover-text)
+  );
+  transform: translateY(-2px);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-branches .branch-book-btn:hover {
+  background: var(
+    --branches-book-btn-hover-bg,
+    var(--qiling-component-button-hover-bg)
+  );
+  border-color: var(
+    --branches-book-btn-hover-border,
+    var(--qiling-component-button-hover-bg)
+  );
+  color: var(
+    --branches-book-btn-hover-text,
+    var(--qiling-component-button-hover-text)
+  );
+  transform: translateY(-2px);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-branches /* 响应式 (Responsive) */
+@media (max-width: 1200px) {
+  .branches-grid.grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}@media (max-width: 768px){.qiling-module-scope-branches .branches-grid,
+.qiling-module-scope-branches .branches-grid.grid-cols-2,
+.qiling-module-scope-branches .branches-grid.grid-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }.qiling-module-scope-branches .branches-grid {
+    gap: var(--qiling-space-20);
+  }.qiling-module-scope-branches .branch-card {
+    border-radius: var(--qiling-card-radius);
+  }.qiling-module-scope-branches .branch-content {
+    padding: var(--qiling-space-18);
+  }.qiling-module-scope-branches .branch-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }.qiling-module-scope-branches .branch-actions {
+    flex-direction: column;
+  }
+}.qiling-module-scope-branches /* 暗黑模式 (Dark Mode) */
+html.dark-mode .module-branches {
+  background-color: var(--dm-bg);
+}html.dark-mode .qiling-module-scope-branches .module-branches .section-title {
+  color: var(--qiling-component-module-title-color-dark, var(--color-heading));
+}html.dark-mode .qiling-module-scope-branches .module-branches .section-subtitle {
+  color: var(--color-text-muted);
+}html.dark-mode .qiling-module-scope-branches .branch-card {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  box-shadow: var(--qiling-component-card-shadow);
+  border: 1px solid
+    var(
+      --qiling-component-card-border-dark,
+      var(--qiling-component-card-border)
+    );
+}html.dark-mode .qiling-module-scope-branches .module-branches.module-branches .branches-grid .branch-card {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-branches .branch-name {
+  color: var(--color-heading);
+}html.dark-mode .qiling-module-scope-branches .branch-info-list {
+  color: var(--color-text-muted);
+}html.dark-mode .qiling-module-scope-branches .branch-info-item a:hover {
+  color: var(--color-primary-light, var(--qiling-color-60a5fa));
+}html.dark-mode .qiling-module-scope-branches .branches-city-btn {
+  border-color: var(--qiling-component-tabs-border);
+  background: var(--qiling-color-transparent);
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-branches .branch-status.status-open {
+  background: rgba(var(--color-success-rgb), 0.2);
+  color: var(--color-success);
+}html.dark-mode .qiling-module-scope-branches .branch-status.status-busy {
+  background: rgba(var(--color-warning-rgb), 0.2);
+  color: var(--color-warning);
+}html.dark-mode .qiling-module-scope-branches .branch-status.status-closed {
+  background: rgba(var(--color-error-rgb), 0.2);
+  color: var(--color-error);
+}html.dark-mode .qiling-module-scope-branches .branch-status.status-coming {
+  background: rgba(var(--color-info-rgb), 0.2);
+  color: var(--color-info);
+}html.dark-mode .qiling-module-scope-branches .branch-city {
+  color: var(--color-neutral-400);
+}html.dark-mode .qiling-module-scope-branches .branch-tag {
+  background: var(--qiling-component-badge-bg);
+  border-color: var(--qiling-color-transparent);
+  color: var(--qiling-component-badge-text);
+}.qiling-module-scope-branches .module-branches.module-branches .branch-status.status-closed {
+  background: rgba(var(--color-error-rgb), 0.14);
+  color: var(--color-error-dark);
+}

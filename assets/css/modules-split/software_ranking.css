@@ -1,0 +1,633 @@
+.qiling-module-scope-software_ranking .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-software_ranking .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-software_ranking .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-software_ranking .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-software_ranking .features-tab-btn .tab-icon,
+.qiling-module-scope-software_ranking .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-software_ranking .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-software_ranking .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-software_ranking .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-software_ranking .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-software_ranking .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-software_ranking .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-software_ranking .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-software_ranking .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-software_ranking .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-software_ranking .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-software_ranking .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-software_ranking .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-software_ranking .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-software_ranking .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-software_ranking .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-software_ranking .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-software_ranking .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-software_ranking .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-software_ranking .features-grid-2,
+.qiling-module-scope-software_ranking .features-grid-3,
+.qiling-module-scope-software_ranking .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-software_ranking /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-software_ranking .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-software_ranking .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-software_ranking .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-software_ranking /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-software_ranking .module-decor svg path,
+.qiling-module-scope-software_ranking .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-software_ranking /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-software_ranking .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-software_ranking .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-software_ranking .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-software_ranking .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-software_ranking .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-software_ranking .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-software_ranking /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-software_ranking .ql-travel-cols-2,
+.qiling-module-scope-software_ranking .ql-travel-cols-3,
+.qiling-module-scope-software_ranking .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-software_ranking .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-software_ranking /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-software_ranking /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-software_ranking .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-software_ranking .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-software_ranking .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-software_ranking .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-software_ranking .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-software_ranking .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-software_ranking /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-software_ranking /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-software_ranking .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-software_ranking /* ===== 软件排行榜模块 (Software Ranking Module) ===== */
+.module-software-ranking {
+  position: relative;
+  /* padding 动态处理，回退方案： (padding handles dynamically, fallback) */
+  /* Padding 由模块间距 token 动态处理。(Padding is handled dynamically by the module spacing token) */
+}.qiling-module-scope-software_ranking .module-software-ranking .module-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-color: var(--qiling-color-000000);
+}.qiling-module-scope-software_ranking /* 头部 (Header) */
+.module-software-ranking .sr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--qiling-space-20);
+  margin-bottom: var(--qiling-space-42);
+}.qiling-module-scope-software_ranking .module-software-ranking .section-title {
+  margin: 0;
+  font-size: var(--qiling-text-rem-1p5);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--color-heading);
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-type-badge {
+  font-size: var(--qiling-text-rem-0p75);
+  padding: var(--qiling-space-4) var(--qiling-space-10);
+  background: var(--qiling-component-badge-bg);
+  color: var(--qiling-component-badge-text);
+  border-radius: 999px;
+  font-weight: 600;
+  margin-left: var(--qiling-space-12);
+}.qiling-module-scope-software_ranking .module-software-ranking .section-subtitle {
+  margin: var(--qiling-space-8) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--qiling-text-rem-0p95);
+  line-height: 1.72;
+  max-width: var(--qiling-measure-680);
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qiling-space-6);
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--qiling-component-button-padding);
+  background: var(--sr-btn-bg, var(--qiling-component-button-bg));
+  color: var(--sr-btn-text, var(--qiling-component-button-text));
+  border: 1px solid var(--sr-btn-border, var(--qiling-component-button-border));
+  border-radius: var(--qiling-button-radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--qiling-text-rem-0p9);
+  transition: all 0.3s;
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-more-btn:hover {
+  background: var(--sr-btn-hover-bg, var(--qiling-component-button-hover-bg));
+  color: var(--sr-btn-hover-text, var(--qiling-component-button-hover-text));
+  border-color: var(
+    --sr-btn-hover-border,
+    var(--qiling-component-button-hover-bg)
+  );
+  transform: translateY(-2px);
+}.qiling-module-scope-software_ranking /* 列表布局 (List Layout) */
+.module-software-ranking.layout-list .sr-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--qiling-space-14);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-list .sr-item {
+  display: flex;
+  align-items: center;
+  padding: var(--qiling-space-18) var(--qiling-space-22);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border-radius: var(--qiling-card-radius);
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: var(--qiling-component-post-card-shadow);
+  border: 1px solid var(--qiling-component-post-card-border);
+  gap: var(--qiling-space-16);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-list .sr-item:hover {
+  transform: translateX(4px);
+  border-color: rgba(var(--color-primary-rgb), 0.2);
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-info {
+  flex: 1;
+  min-width: 0;
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-name {
+  margin: 0 0 var(--qiling-space-4);
+  font-size: var(--qiling-text-rem-0p98);
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.45;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-12);
+  flex-wrap: wrap;
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-version {
+  font-size: var(--qiling-text-rem-0p75);
+  color: var(--qiling-component-badge-text);
+  background: var(--qiling-component-badge-bg);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: 999px;
+  padding: var(--qiling-space-4) var(--qiling-space-10);
+  font-weight: 600;
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-category {
+  font-size: var(--qiling-text-rem-0p75);
+  color: var(--color-text-muted);
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-stat {
+  text-align: right;
+  flex-shrink: 0;
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-stat-value {
+  font-size: var(--qiling-text-rem-1);
+  font-weight: 700;
+  color: var(--color-heading);
+  display: block;
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-stat-label {
+  font-size: var(--qiling-text-rem-0p7);
+  color: var(--color-text-muted);
+  display: block;
+}.qiling-module-scope-software_ranking /* 排名徽章 (Rank Badge) */
+.module-software-ranking .sr-rank-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}.qiling-module-scope-software_ranking /* 卡片布局的包装器 (Wrapper for Cards Layout) */
+.module-software-ranking.layout-cards .sr-top3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--qiling-space-24);
+  margin-bottom: var(--qiling-space-24);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-others {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--qiling-space-14);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-card-wrapper {
+  position: relative;
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-medal {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-inverse);
+  font-weight: 700;
+  font-size: var(--qiling-text-rem-0p8);
+  box-shadow: 0 2px 8px var(--qiling-color-rgba-0-0-0-02);
+  z-index: 10;
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--qiling-space-30) var(--qiling-space-22) var(--qiling-space-24);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border-radius: var(--qiling-card-radius);
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 1px solid var(--qiling-component-post-card-border);
+  position: relative;
+  height: 100%;
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--color-primary-rgb), 0.2);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-card-top1 {
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-card-top1:hover {
+  transform: translateY(-8px);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-item-other {
+  display: flex;
+  align-items: center;
+  padding: var(--qiling-space-14) var(--qiling-space-16);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border-radius: calc(var(--qiling-card-radius) - 6px);
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: var(--qiling-component-post-card-shadow);
+  border: 1px solid var(--qiling-component-post-card-border);
+  gap: var(--qiling-space-12);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-rank-num {
+  width: 24px;
+  height: 24px;
+  background: var(--qiling-component-surface-alt-bg, var(--color-neutral-100));
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--qiling-text-rem-0p8);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-item-other:hover {
+  transform: translateX(4px);
+  border-color: rgba(var(--color-primary-rgb), 0.2);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-stat-mini {
+  font-size: var(--qiling-text-rem-0p8);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-version-badge {
+  font-size: var(--qiling-text-rem-0p75);
+  color: var(--qiling-component-badge-text);
+  background: var(--qiling-component-badge-bg);
+  border: 1px solid var(--qiling-color-transparent);
+  padding: var(--qiling-space-4) var(--qiling-space-10);
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: var(--qiling-space-8);
+}.qiling-module-scope-software_ranking /* 编号布局 (Numbered Layout) */
+.module-software-ranking.layout-numbered .sr-numbered-list {
+  border-radius: var(--qiling-card-radius);
+  padding: var(--qiling-space-8);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-post-card-border);
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-numbered .sr-numbered-item {
+  display: flex;
+  align-items: center;
+  padding: var(--qiling-space-14) var(--qiling-space-16);
+  text-decoration: none;
+  transition: all 0.3s;
+  border-radius: 10px;
+  gap: var(--qiling-space-14);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-numbered .sr-numbered-item + .sr-numbered-item {
+  border-top: 1px solid var(--qiling-color-rgba-0-0-0-004);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-numbered .sr-numbered-item:hover {
+  background: var(--qiling-component-surface-alt-bg, var(--color-surface-alt));
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-numbered .sr-arrow {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-numbered .sr-numbered-item:hover .sr-arrow {
+  color: var(--color-primary, var(--color-primary));
+  transform: translateX(4px);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-numbered .sr-big-rank {
+  font-weight: 800;
+  width: 36px;
+  text-align: center;
+  flex-shrink: 0;
+}.qiling-module-scope-software_ranking /* 多列布局 (Multi-column Layout) */
+.module-software-ranking.layout-multi-column .sr-multi-column {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-multi-column .sr-column {
+  border-radius: var(--qiling-card-radius);
+  padding: var(--qiling-space-18);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-post-card-border);
+  box-shadow: var(--qiling-component-post-card-shadow);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-multi-column .sr-col-item {
+  display: flex;
+  align-items: center;
+  padding: var(--qiling-space-10) var(--qiling-space-8);
+  text-decoration: none;
+  transition: all 0.3s;
+  border-radius: 8px;
+  gap: var(--qiling-space-10);
+}.qiling-module-scope-software_ranking .module-software-ranking.layout-multi-column .sr-col-item:hover {
+  background: var(--qiling-component-surface-alt-bg, var(--color-surface-alt));
+}.qiling-module-scope-software_ranking /* 图标 (Icons) */
+.module-software-ranking .sr-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-icon-placeholder {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-primary-rgb), 0.08),
+    rgba(var(--color-surface-rgb), 0.92)
+  );
+  border: 1px solid rgba(var(--color-primary-rgb), 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}.qiling-module-scope-software_ranking /* 暗黑模式 (Dark Mode) */
+html.dark-mode .module-software-ranking .sr-item,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-card,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-item-other,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-numbered-list,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-column {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg)) !important;
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--qiling-component-post-card-border)
+  );
+}html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-name,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-stat-value {
+  color: var(--color-neutral-100) !important;
+}.qiling-module-scope-software_ranking html.dark-mode
+  .module-software-ranking.layout-numbered
+  .sr-numbered-item:hover {
+  background: rgba(var(--color-surface-rgb), 0.04);
+}html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-rank-num {
+  background: var(--qiling-component-surface-alt-bg, var(--color-neutral-700));
+  color: var(--dm-text-muted);
+}.qiling-module-scope-software_ranking /* 响应式 (Responsive) */
+@media (max-width: 768px) {
+  .module-software-ranking .sr-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: var(--qiling-space-12);
+  }
+
+  .module-software-ranking.layout-list .sr-item {
+    padding: var(--qiling-space-12) var(--qiling-space-14) !important;
+  }
+
+  .module-software-ranking.layout-cards .sr-top3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .module-software-ranking.layout-cards .sr-others {
+    grid-template-columns: 1fr !important;
+  }
+
+  .module-software-ranking.layout-cards .sr-card-top1 {
+    transform: none !important;
+  }
+
+  .module-software-ranking.layout-multi-column .sr-multi-column {
+    grid-template-columns: 1fr !important;
+  }
+}.qiling-module-scope-software_ranking /* ===== 软件排行榜模块 (Module Software Ranking) ===== */
+.module-software-ranking {
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-software_ranking /* 排行榜暗黑模式 (Ranking Dark Mode) */
+html.dark-mode .module-software-ranking {
+  background: var(--dm-bg) !important;
+  /* 覆盖内联样式 (Override inline styles) */
+}html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .section-title {
+  color: var(--qds-title-color, var(--qiling-module-title, var(--color-neutral-100)));
+}html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .section-subtitle {
+  color: var(--qds-subtitle-color, var(--qiling-module-subtitle, var(--color-neutral-400)));
+}html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-item,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-card,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-item-other,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-numbered-list,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-column {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg)) !important;
+  border-color: var(
+    --qiling-component-post-card-border-dark,
+    var(--qiling-component-post-card-border)
+  ) !important;
+}html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-name {
+  color: var(--color-neutral-100);
+}html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-meta,
+html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-desc {
+  color: var(--dm-text-muted);
+}.qiling-module-scope-software_ranking .module-software-ranking .sr-more-btn { color: var(--sr-btn-text, #ffffff); }.qiling-module-scope-software_ranking .module-software-ranking .sr-more-btn:hover { color: var(--sr-btn-hover-text, #ffffff); }

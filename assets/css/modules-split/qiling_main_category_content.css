@@ -1,0 +1,547 @@
+.qiling-module-scope-qiling_main_category_content .module-features-list-container {
+  position: relative;
+  z-index: 2;
+}.qiling-module-scope-qiling_main_category_content .features-tabs {
+  display: flex;
+  gap: var(--qiling-space-12);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto var(--qiling-space-42);
+  padding: var(--qiling-space-10);
+  width: fit-content;
+  max-width: var(--qiling-measure-pct-100);
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.03) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-8);
+  padding: var(--qiling-space-11) var(--qiling-space-20);
+  background: var(--qiling-color-transparent);
+  border: 1px solid var(--qiling-color-transparent);
+  border-radius: var(--qiling-button-radius);
+  font-size: var(--qiling-text-rem-0p95);
+  font-weight: 600;
+  color: var(--qiling-component-tabs-text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--qiling-component-tabs-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--qiling-button-radius);
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn .tab-icon,
+.qiling-module-scope-qiling_main_category_content .features-tab-btn .tab-text {
+  position: relative;
+  z-index: 1;
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn .tab-icon {
+  font-size: var(--qiling-text-rem-1p25);
+  transition: transform 0.3s;
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--qiling-component-tabs-border);
+  box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn:hover .tab-icon {
+  transform: scale(1.1);
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+  border-color: var(--qiling-component-tabs-active-border);
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-qiling_main_category_content .features-tab-btn.active::before {
+  opacity: 1;
+}.qiling-module-scope-qiling_main_category_content .features-tabs-content {
+  position: relative;
+}.qiling-module-scope-qiling_main_category_content .features-tab-pane {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}.qiling-module-scope-qiling_main_category_content .features-tab-pane.active {
+  display: block;
+}.qiling-module-scope-qiling_main_category_content .features-grid {
+  display: grid;
+  gap: var(--qiling-space-24);
+}.qiling-module-scope-qiling_main_category_content .features-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}.qiling-module-scope-qiling_main_category_content .features-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}.qiling-module-scope-qiling_main_category_content .features-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}html.dark-mode .qiling-module-scope-qiling_main_category_content .features-tabs {
+  background: linear-gradient(
+      180deg,
+      rgba(var(--color-primary-rgb), 0.05) 0%,
+      rgba(var(--color-surface-rgb), 0) 100%
+    ),
+    var(--qiling-component-card-bg-dark, var(--qiling-component-card-bg));
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+}html.dark-mode .qiling-module-scope-qiling_main_category_content .features-tab-btn {
+  color: var(--qiling-component-tabs-text);
+}html.dark-mode .qiling-module-scope-qiling_main_category_content .features-tab-btn.active {
+  color: var(--qiling-component-tabs-active-text);
+}@media (max-width: 1024px){.qiling-module-scope-qiling_main_category_content .features-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }}@media (max-width: 480px){.qiling-module-scope-qiling_main_category_content .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }.qiling-module-scope-qiling_main_category_content .features-tab-btn {
+    justify-content: center;
+  }.qiling-module-scope-qiling_main_category_content .features-grid-2,
+.qiling-module-scope-qiling_main_category_content .features-grid-3,
+.qiling-module-scope-qiling_main_category_content .features-grid-4 {
+    grid-template-columns: 1fr;
+  }}.qiling-module-scope-qiling_main_category_content /* ===== 模块装饰 (SVGs) ===== */
+.module-decor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  /* 依赖 SVG 透明度 (Rely on SVG opacity) */
+  color: currentColor;
+  /* 继承文本颜色以进行混合 (Inherit text color for blending) */
+  transition: all 0.5s ease;
+}.qiling-module-scope-qiling_main_category_content .module-decor.d-left {
+  left: 0;
+}.qiling-module-scope-qiling_main_category_content .module-decor.d-right {
+  right: 0;
+}.qiling-module-scope-qiling_main_category_content .module-decor svg {
+  display: block;
+  max-width: var(--qiling-measure-pct-100);
+  height: auto;
+}.qiling-module-scope-qiling_main_category_content /* 动画 (Animations) */
+.module-decor svg circle,
+.qiling-module-scope-qiling_main_category_content .module-decor svg path,
+.qiling-module-scope-qiling_main_category_content .module-decor svg rect {
+  transform-origin: center;
+  transition: all 1s ease;
+}.qiling-module-scope-qiling_main_category_content /* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px) {.module-decor {
+    opacity: 0.05 !important;
+    transform: translateY(-50%) scale(0.7);
+  }}@media (max-width: 768px){.qiling-module-scope-qiling_main_category_content .module-decor {
+    display: none !important;
+  }}.qiling-module-scope-qiling_main_category_content .cat-tab-post-item .video-cover-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.qiling-module-scope-qiling_main_category_content .cat-tab-post-item .video-poster {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s;
+}.qiling-module-scope-qiling_main_category_content .cat-tab-post-item:hover .video-poster {
+  opacity: 0;
+}.qiling-module-scope-qiling_main_category_content .cat-tab-post-item .video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}.qiling-module-scope-qiling_main_category_content .cat-tab-post-item:hover .video-play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}.qiling-module-scope-qiling_main_category_content /* 视频特定样机样式 (Video specific mockup style) */
+.device-mockup.video-mode video {
+  border: 8px solid var(--qiling-color-000000);
+  background: var(--qiling-color-000000);
+}@media (max-width: 768px){.qiling-module-scope-qiling_main_category_content .ql-travel-cols-2,
+.qiling-module-scope-qiling_main_category_content .ql-travel-cols-3,
+.qiling-module-scope-qiling_main_category_content .ql-travel-cols-4 {
+    grid-template-columns: 1fr;
+    gap: var(--qiling-space-20);
+  }}.qiling-module-scope-qiling_main_category_content .ql-hotel-booking-form .btn-submit {
+  width: 100%;
+}.qiling-module-scope-qiling_main_category_content /* ========================================
+ * 响应式布局
+ * ======================================== */
+
+@media (max-width: 1024px) {/* 房型展示 */
+  .ql-hotel-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }}@media (max-width: 768px){.qiling-module-scope-qiling_main_category_content /* 房型展示 */
+  .ql-hotel-cols-2,
+.qiling-module-scope-qiling_main_category_content .ql-hotel-cols-3 {
+    grid-template-columns: 1fr;
+  }.qiling-module-scope-qiling_main_category_content .ql-hotel-amenity-item {
+    padding: var(--qiling-space-20) var(--qiling-space-15);
+  }}.qiling-module-scope-qiling_main_category_content .qiling-query-loop__pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--qiling-measure-40);
+  height: 40px;
+  padding: 0 var(--qiling-space-12);
+  color: var(--color-text-muted);
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: 8px;
+  font-size: var(--qiling-text-14);
+  font-weight: 600;
+  text-decoration: none;
+}.qiling-module-scope-qiling_main_category_content .qiling-query-loop__pagination .page-numbers:hover {
+  color: var(--qiling-component-tabs-active-text);
+  background: var(--qiling-component-tabs-active-bg);
+  border-color: var(--qiling-component-tabs-active-border);
+}.qiling-module-scope-qiling_main_category_content .qiling-query-loop__pagination .page-numbers.current {
+  color: var(--qiling-component-button-text);
+  background: var(--qiling-component-button-bg);
+  border-color: var(--qiling-component-button-border);
+}html.dark-mode .qiling-module-scope-qiling_main_category_content .qiling-query-loop__pagination .page-numbers {
+  background: var(
+    --qiling-component-card-bg-dark,
+    var(--qiling-component-card-bg)
+  );
+  border-color: var(
+    --qiling-component-card-border-dark,
+    var(--qiling-component-card-border)
+  );
+  color: var(
+    --qiling-component-post-card-meta-color-dark,
+    var(--qiling-component-post-card-meta-color)
+  );
+}.qiling-module-scope-qiling_main_category_content /* 为分类选项卡提供视频封面支持 (Video Cover Support for Category Tabs) */
+.cat-tab-post-item .post-media.has-video-cover .post-thumbnail-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}.qiling-module-scope-qiling_main_category_content /* ===== 新闻模块 (Module News) ===== */
+.qiling-module-admin-notice.notice.notice-warning {
+  margin: var(--qiling-space-12) 0;
+  padding: var(--qiling-space-12) var(--qiling-space-14);
+  border-left: 4px solid var(--color-warning, var(--color-warning));
+  border-radius: 12px;
+  background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
+  color: var(--qiling-color-9a3412);
+}.qiling-module-scope-qiling_main_category_content .ql-ih-media-wrapper.anim-float {
+  animation:
+    ql_ih_fadeLeft 1s ease-out 0.2s forwards,
+    ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-qiling_main_category_content /* ===== 启灵主分类内容 (qiling_main_category_content) ===== */
+
+/* 头部布局 (Header Layout) */
+.qiling-main-cat-module .qmcc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--qiling-space-24);
+  padding-bottom: var(--qiling-space-15); /* 添加底部边距和分割线，参考图示 */
+  border-bottom: 1px solid rgba(var(--color-surface-rgb), 0.1);
+}.qiling-module-scope-qiling_main_category_content .qmcc-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--qiling-space-12);
+  flex: 1; /* 让左侧占据剩余空间 */
+  min-width: 0; /* 防止溢出 */
+}.qiling-module-scope-qiling_main_category_content /* 图标 (Icon) */
+.qmcc-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}.qiling-module-scope-qiling_main_category_content /* 标题 (Title) */
+.qmcc-title {
+  margin: 0;
+  font-size: var(--qiling-text-24);
+  font-weight: 700;
+  line-height: 1.2;
+}.qiling-module-scope-qiling_main_category_content .qmcc-title a {
+  color: inherit;
+  text-decoration: none;
+}.qiling-module-scope-qiling_main_category_content /* 子分类 (Subcategories) */
+.qmcc-subcats {
+  display: flex;
+  align-items: center;
+  margin-left: var(--qiling-space-20);
+  gap: var(--qiling-space-15);
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* 隐藏 IE/Edge 滚动条 (Hide scrollbar IE/Edge) */
+  scrollbar-width: none; /* 隐藏 Firefox 滚动条 (Hide scrollbar Firefox) */
+}.qiling-module-scope-qiling_main_category_content .qmcc-subcats::-webkit-scrollbar {
+  display: none;
+}.qiling-module-scope-qiling_main_category_content .qmcc-subcat-link {
+  color: rgba(var(--color-surface-rgb), 0.6); /* 默认淡色 */
+  text-decoration: none;
+  font-size: var(--qiling-text-14);
+  transition: color 0.2s;
+}.qiling-module-scope-qiling_main_category_content /* 如果不在暗黑模式下，颜色可能需要调整，这里假设主体是暗色或有适配 */
+:root:not(.dark-mode) .qmcc-subcat-link {
+  color: var(--qiling-color-666666);
+}.qiling-module-scope-qiling_main_category_content:not(.dark-mode) .qmcc-header {
+  border-bottom: 1px solid var(--qiling-color-eeeeee);
+}.qiling-module-scope-qiling_main_category_content .qmcc-subcat-link:hover {
+  color: var(--primary-color, var(--color-primary));
+}.qiling-module-scope-qiling_main_category_content /* 更多按钮 (More Button) */
+.qmcc-header-right {
+  margin-left: var(--qiling-space-20);
+  flex-shrink: 0;
+}.qiling-module-scope-qiling_main_category_content .qmcc-more-btn {
+  padding: var(--qiling-space-6) var(--qiling-space-16);
+  background: rgba(var(--color-surface-rgb), 0.1);
+  border-radius: 4px;
+  color: inherit;
+  text-decoration: none;
+  font-size: var(--qiling-text-13);
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+}.qiling-module-scope-qiling_main_category_content .qmcc-more-btn:hover {
+  background: var(--primary-color, var(--color-primary));
+  color: var(--color-text-inverse);
+}.qiling-module-scope-qiling_main_category_content:not(.dark-mode) .qmcc-more-btn {
+  background: var(--qiling-color-f0f0f1);
+  color: var(--qiling-color-333333);
+}.qiling-module-scope-qiling_main_category_content:not(.dark-mode) .qmcc-more-btn:hover {
+  background: var(--primary-color, var(--color-primary));
+  color: var(--color-text-inverse);
+}.qiling-module-scope-qiling_main_category_content /* 网格布局 (Grid Layout) */
+.qmcc-grid {
+  display: grid;
+  gap: var(--qiling-space-20);
+}.qiling-module-scope-qiling_main_category_content .qmcc-grid.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}.qiling-module-scope-qiling_main_category_content .qmcc-grid.grid-cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}.qiling-module-scope-qiling_main_category_content .qmcc-grid.grid-cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}.qiling-module-scope-qiling_main_category_content /* 响应式 (Responsive) */
+@media (max-width: 1024px) {
+  .qmcc-grid.grid-cols-6,
+  .qmcc-grid.grid-cols-5 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}@media (max-width: 768px){.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-grid.grid-cols-6,
+.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-grid.grid-cols-5,
+.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-grid.grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-header {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--qiling-space-10);
+    min-height: 42px;
+  }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-header-left {
+    flex: 1;
+    min-width: 0;
+  }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-title {
+    overflow: hidden;
+    font-size: var(--qiling-text-20);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-header-right {
+    position: static;
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+    text-align: left;
+  }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-more-btn {
+    min-height: 32px;
+    padding: 0 var(--qiling-space-10);
+    white-space: nowrap;
+  }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-subcats {
+    display: none;
+  }
+}@media (max-width: 480px){.qiling-module-scope-qiling_main_category_content .qmcc-grid.grid-cols-6,
+.qiling-module-scope-qiling_main_category_content .qmcc-grid.grid-cols-5,
+.qiling-module-scope-qiling_main_category_content .qmcc-grid.grid-cols-4,
+.qiling-module-scope-qiling_main_category_content .qmcc-grid.grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--qiling-space-10);
+  }
+}.qiling-module-scope-qiling_main_category_content /* 卡片样式 (Card Styles) */
+.qmcc-item {
+  position: relative;
+}.qiling-module-scope-qiling_main_category_content .qmcc-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--qiling-color-222222);
+}.qiling-module-scope-qiling_main_category_content /* 宽高比 (Aspect Ratios) */
+.ratio-16-9 .qmcc-thumb-wrapper {
+  padding-bottom: var(--qiling-space-pct-56p25);
+}.qiling-module-scope-qiling_main_category_content .ratio-4-3 .qmcc-thumb-wrapper {
+  padding-bottom: var(--qiling-space-pct-75);
+}.qiling-module-scope-qiling_main_category_content .ratio-3-4 .qmcc-thumb-wrapper {
+  padding-bottom: var(--qiling-space-pct-133p33);
+}.qiling-module-scope-qiling_main_category_content .ratio-1-1 .qmcc-thumb-wrapper {
+  padding-bottom: var(--qiling-space-pct-100);
+}.qiling-module-scope-qiling_main_category_content .ratio-2-3 .qmcc-thumb-wrapper {
+  padding-bottom: var(--qiling-space-pct-150);
+}.qiling-module-scope-qiling_main_category_content .qmcc-thumb-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}.qiling-module-scope-qiling_main_category_content .qmcc-item:hover .qmcc-thumb-wrapper img {
+  transform: scale(1.05);
+}.qiling-module-scope-qiling_main_category_content /* 播放按钮 (Play Button) */
+.qmcc-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 48px;
+  height: 48px;
+  background: rgba(var(--color-surface-rgb), 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 5;
+  box-shadow: 0 4px 15px var(--qiling-color-rgba-0-0-0-02);
+  color: var(--qiling-color-333333);
+}.qiling-module-scope-qiling_main_category_content .qmcc-item:hover .qmcc-play-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}.qiling-module-scope-qiling_main_category_content .qmcc-play-btn svg {
+  width: 20px;
+  height: 20px;
+  margin-left: var(--qiling-space-2); /* 视觉中心 (Visual center) */
+}.qiling-module-scope-qiling_main_category_content /* 徽章 (Badges) */
+.qmcc-thumb-badges {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: var(--qiling-space-6);
+  z-index: 2;
+  pointer-events: none;
+}.qiling-module-scope-qiling_main_category_content .qmcc-badge-rating {
+  background: var(--qiling-gradient-accent);
+  color: var(--color-text-inverse);
+  font-size: var(--qiling-text-11);
+  padding: var(--qiling-space-3) var(--qiling-space-6);
+  border-radius: 4px;
+  font-weight: 700;
+  line-height: 1.25;
+}.qiling-module-scope-qiling_main_category_content .qmcc-badge-hd {
+  background: linear-gradient(
+    135deg,
+    var(--color-warning) 0%,
+    var(--color-warning-dark) 100%
+  ); /* 琥珀金 (Amber Gold) */
+  color: var(--color-text-inverse);
+  font-size: var(--qiling-text-11);
+  padding: var(--qiling-space-3) var(--qiling-space-6);
+  border-radius: 4px;
+  font-weight: 800;
+  line-height: 1.25;
+}.qiling-module-scope-qiling_main_category_content .qmcc-badge-episode {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--qiling-color-rgba-0-0-0-08),
+    var(--qiling-color-rgba-0-0-0-0)
+  );
+  color: var(--color-text-inverse);
+  font-size: var(--qiling-text-11);
+  padding: var(--qiling-space-4) var(--qiling-space-8);
+  border-bottom-left-radius: 8px; /* 匹配容器圆角 */
+  border-top-right-radius: 8px;
+  z-index: 2;
+  pointer-events: none;
+  text-shadow: 0 1px 2px var(--qiling-color-rgba-0-0-0-05);
+  width: 100%; /* 占满底部一行，背景渐变过渡 */
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.qiling-module-scope-qiling_main_category_content .qmcc-badge-count {
+  color: var(
+    --qiling-color-ffc107
+  ); /* 琥珀色/金色在深色背景下突出 (Amber/Gold color to pop against dark background) */
+  font-weight: bold;
+  margin: 0 var(--qiling-space-1);
+}.qiling-module-scope-qiling_main_category_content /* 信息 (Info) */
+.qmcc-info {
+  padding-top: var(--qiling-space-10);
+}.qiling-module-scope-qiling_main_category_content .qmcc-post-title {
+  font-size: var(--qiling-text-15);
+  margin: 0 0 var(--qiling-space-5);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.qiling-module-scope-qiling_main_category_content .qmcc-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--qiling-text-12);
+  color: rgba(var(--color-surface-rgb), 0.5);
+}.qiling-module-scope-qiling_main_category_content:not(.dark-mode) .qmcc-meta {
+  color: var(--qiling-color-888888);
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-more-btn { color: var(--qmcc-more-btn-text, #ffffff); }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-more-btn:hover { color: var(--qmcc-more-btn-hover-text, #ffffff); }.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-header {
+  margin-bottom: var(--qiling-space-28);
+  padding-bottom: var(--qiling-space-18);
+  border-bottom-color: var(--qiling-component-card-border);
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-subcat-link {
+  padding: var(--qiling-space-6) var(--qiling-space-12);
+  border-radius: 999px;
+  background: rgba(var(--color-primary-rgb), 0.06);
+  color: var(--color-text-muted);
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-subcat-link:hover {
+  background: var(--qiling-component-tabs-active-bg);
+  color: var(--qiling-component-tabs-active-text);
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-more-btn {
+  border-radius: 999px;
+  background: var(--qmcc-more-btn-bg, var(--qiling-component-button-bg));
+  color: var(--qmcc-more-btn-text, var(--qiling-component-button-text));
+  border: 1px solid var(--qmcc-more-btn-border, var(--qiling-component-button-border));
+  box-shadow: var(--qiling-component-button-shadow);
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-more-btn:hover {
+  background: var(--qmcc-more-btn-hover-bg, var(--qiling-component-button-hover-bg));
+  color: var(--qmcc-more-btn-hover-text, var(--qiling-component-button-hover-text));
+  border-color: var(--qmcc-more-btn-hover-border, var(--qiling-component-button-hover-bg));
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-thumb-wrapper {
+  border-radius: 22px;
+  box-shadow: 0 22px 44px var(--qiling-color-rgba-15-23-42-012);
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-info {
+  padding-top: var(--qiling-space-14);
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-post-title {
+  color: var(--color-heading);
+  font-weight: 700;
+}.qiling-module-scope-qiling_main_category_content .qiling-main-cat-module .qmcc-meta {
+  color: var(--color-text-muted);
+}.qiling-module-scope-qiling_main_category_content .qmcc-config-notice {
+  display: grid;
+  gap: 6px;
+  max-width: 680px;
+  margin: 24px auto;
+  padding: 18px 20px;
+  border: 1px dashed var(--color-border, rgba(148, 163, 184, 0.45));
+  border-radius: 12px;
+  background: var(--color-surface, #fff);
+  color: var(--color-text, #1f2937);
+  text-align: center;
+}.qiling-module-scope-qiling_main_category_content .qmcc-config-notice span {
+  color: var(--color-text-muted, #64748b);
+  font-size: 14px;
+}
