@@ -7,11 +7,28 @@
  */
 
 get_header();
+
+$loop_settings = class_exists( '\Developer_Starter\Core\Blog_Visual_Manager' )
+    ? \Developer_Starter\Core\Blog_Visual_Manager::get_native_loop_settings()
+    : array(
+        'grid_classes'      => 'news-grid grid-cols-3 qiling-native-blog-grid qiling-native-blog-grid-default',
+        'card_classes'      => 'news-card qiling-native-blog-card qiling-native-blog-card-default',
+        'show_thumb'        => true,
+        'show_excerpt'      => true,
+        'show_date'         => true,
+        'show_author'       => true,
+        'show_category'     => true,
+        'show_reading_time' => false,
+        'show_views'        => function_exists( 'developer_starter_get_option' ) ? (bool) developer_starter_get_option( 'post_views_enable', '' ) : false,
+        'excerpt_length'    => 25,
+        'thumb_height'      => 220,
+        'thumb_fit'         => function_exists( 'developer_starter_get_thumbnail_display_mode' ) ? developer_starter_get_thumbnail_display_mode() : 'cover',
+    );
 ?>
 
 <div class="content-area">
     <div class="container">
-        <div class="content-wrapper <?php echo is_active_sidebar( 'sidebar-main' ) ? 'has-sidebar' : ''; ?>">
+        <div class="content-wrapper <?php echo apply_filters( 'qiling_show_sidebar', is_active_sidebar( 'sidebar-main' ), 'index' ) ? 'has-sidebar' : ''; ?>">
             <div class="main-content">
                 <?php if ( have_posts() ) : ?>
                     
@@ -21,24 +38,15 @@ get_header();
                         </header>
                     <?php endif; ?>
 
-                    <div class="posts-grid">
-                        <?php while ( have_posts() ) : the_post(); ?>
-                            <?php get_template_part( 'template-parts/content/content', get_post_type() ); ?>
-                        <?php endwhile; ?>
-                    </div>
-
-                    <?php the_posts_pagination( array(
-                        'mid_size'  => 2,
-                        'prev_text' => __( '← 上一页', 'developer-starter' ),
-                        'next_text' => __( '下一页 →', 'developer-starter' ),
-                    ) ); ?>
+                    <?php get_template_part( 'template-parts/blog/post-loop', null, array( 'settings' => $loop_settings ) ); ?>
+                    <?php get_template_part( 'template-parts/blog/pagination' ); ?>
 
                 <?php else : ?>
                     <?php get_template_part( 'template-parts/content/content', 'none' ); ?>
                 <?php endif; ?>
             </div>
 
-            <?php if ( is_active_sidebar( 'sidebar-main' ) ) : ?>
+            <?php if ( apply_filters( 'qiling_show_sidebar', is_active_sidebar( 'sidebar-main' ), 'index' ) ) : ?>
                 <aside id="secondary" class="widget-area">
                     <?php dynamic_sidebar( 'sidebar-main' ); ?>
                 </aside>
