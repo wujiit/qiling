@@ -30,8 +30,42 @@ class News_Module extends Module_Base {
         return __( '新闻列表', 'developer-starter' );
     }
 
+    public function get_fields() {
+        return array(
+            array( 'id' => 'news_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => __( '新闻动态', 'developer-starter' ) ),
+            array( 'id' => 'news_title_color', 'type' => 'color', 'label' => __( '模块标题颜色', 'developer-starter' ), 'description' => __( '控制“新闻动态”等模块顶部主标题的颜色；留空时跟随页面标题颜色。', 'developer-starter' ) ),
+            array( 'id' => 'news_card_title_color', 'type' => 'color', 'label' => __( '新闻标题颜色', 'developer-starter' ), 'description' => __( '控制每张新闻卡片内文章标题及标题链接的颜色。', 'developer-starter' ) ),
+            array( 'id' => 'news_count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '6' ),
+            array( 'id' => 'news_columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array( '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ) ), 'default' => '3' ),
+            array( 'id' => 'news_categories', 'type' => 'text', 'label' => __( '分类ID (逗号分隔)', 'developer-starter' ) ),
+            array( 'id' => 'news_show_image', 'type' => 'select', 'label' => __( '显示图片', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
+            array( 'id' => 'news_image_height', 'type' => 'text', 'label' => __( '图片高度', 'developer-starter' ), 'default' => '200px' ),
+            array( 'id' => 'news_show_excerpt', 'type' => 'select', 'label' => __( '显示摘要', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
+            array( 'id' => 'news_button_bg_color', 'type' => 'color', 'label' => __( '查看更多按钮背景颜色', 'developer-starter' ), 'description' => __( '留空时跟随当前页面的主按钮颜色。', 'developer-starter' ) ),
+            array( 'id' => 'news_button_text', 'type' => 'text', 'label' => __( '查看更多按钮文案', 'developer-starter' ), 'default' => __( '查看更多', 'developer-starter' ) ),
+            array( 'id' => 'news_button_text_color', 'type' => 'color', 'label' => __( '查看更多按钮文字颜色', 'developer-starter' ), 'description' => __( '控制按钮正常状态的文字颜色。', 'developer-starter' ) ),
+            array( 'id' => 'news_button_hover_bg_color', 'type' => 'color', 'label' => __( '查看更多按钮悬停背景颜色', 'developer-starter' ) ),
+            array( 'id' => 'news_button_hover_text_color', 'type' => 'color', 'label' => __( '查看更多按钮悬停文字颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'news_button_border_color', __( '查看更多按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'news_button_hover_border_color', __( '查看更多按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
+            array(
+                'id' => 'enable_staggered_animation',
+                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array(
+                    'yes' => __( '开启', 'developer-starter' ),
+                    'no' => __( '关闭', 'developer-starter' ),
+                ),
+                'default' => 'yes',
+                'description' => __( '开启后，新闻卡片将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+            ),
+        );
+    }
+
     public function render( $data = array() ) {
-        $title = isset( $data['news_title'] ) && $data['news_title'] !== '' ? $data['news_title'] : __( '新闻动态', 'developer-starter' );
+        $title = isset( $data['news_title'] ) && $data['news_title'] !== ''
+            ? $data['news_title']
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新闻动态', 'Latest News' ) : __( '新闻动态', 'developer-starter' ) );
         $count = isset( $data['news_count'] ) && $data['news_count'] !== '' ? intval( $data['news_count'] ) : 6;
         $columns = isset( $data['news_columns'] ) && $data['news_columns'] !== '' ? $data['news_columns'] : '3';
         $categories = isset( $data['news_categories'] ) ? $data['news_categories'] : '';
@@ -40,6 +74,7 @@ class News_Module extends Module_Base {
         $show_image = ! isset( $data['news_show_image'] ) || $data['news_show_image'] !== '0';
         $image_height = isset( $data['news_image_height'] ) && $data['news_image_height'] !== '' ? $data['news_image_height'] : '200px';
         $show_excerpt = ! isset( $data['news_show_excerpt'] ) || $data['news_show_excerpt'] !== '0';
+        $button_text = isset( $data['news_button_text'] ) && '' !== trim( (string) $data['news_button_text'] ) ? (string) $data['news_button_text'] : __( '查看更多', 'developer-starter' );
         
         // 解析分类（支持多个，逗号分隔）
         $cat_ids = array();
@@ -74,23 +109,54 @@ class News_Module extends Module_Base {
             $args['cat'] = $cat_ids[0];
         }
         
-        $query = new \WP_Query( $args );
+        $query = \developer_starter_run_cached_query(
+            $args,
+            'module_news',
+            array(
+                'needs_pagination' => false,
+            )
+        );
         $module_id = 'news-module-' . uniqid();
+        $desktop_columns = max( 1, min( 4, (int) $columns ) );
+        $tablet_columns  = min( $desktop_columns, 2 );
+        $section_style   = sprintf(
+            '--news-image-height:%1$s;--news-grid-template:repeat(%2$d, minmax(0, 1fr));--news-grid-template-tablet:repeat(%3$d, minmax(0, 1fr));--news-button-text:#ffffff;--news-button-hover-text:#ffffff;',
+            $image_height,
+            $desktop_columns,
+            max( 1, $tablet_columns )
+        );
+        $style_map = array(
+            'news_title_color'               => '--news-section-title-color',
+            'news_card_title_color'          => '--news-card-title-color',
+            'news_button_bg_color'           => '--news-button-bg',
+            'news_button_text_color'         => '--news-button-text',
+            'news_button_border_color'       => '--news-button-border',
+            'news_button_hover_bg_color'     => '--news-button-hover-bg',
+            'news_button_hover_text_color'   => '--news-button-hover-text',
+            'news_button_hover_border_color' => '--news-button-hover-border',
+        );
+        foreach ( $style_map as $field_id => $css_var ) {
+            if ( isset( $data[ $field_id ] ) && '' !== trim( (string) $data[ $field_id ] ) ) {
+                $section_style .= $css_var . ':' . trim( (string) $data[ $field_id ] ) . ';';
+            }
+        }
+        
+        // Animation Setting
+        $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
-        <section class="module module-news section-padding" id="<?php echo esc_attr( $module_id ); ?>">
+        <section class="module module-news section-padding" id="<?php echo esc_attr( $module_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
             <div class="container">
                 <div class="section-header text-center">
                     <h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
                 </div>
                 
                 <?php if ( count( $category_list ) > 1 ) : ?>
-                    <div class="category-tabs" style="text-align: center; margin-bottom: 30px;">
+                    <div class="category-tabs">
                         <?php foreach ( $category_list as $index => $cat ) : ?>
                             <button type="button" 
                                     class="tab-btn <?php echo $index === 0 ? 'active' : ''; ?>" 
                                     data-category="<?php echo esc_attr( $cat['id'] ); ?>"
-                                    data-module="<?php echo esc_attr( $module_id ); ?>"
-                                    style="padding: 8px 20px; margin: 5px; border: 1px solid var(--color-primary); background: <?php echo $index === 0 ? 'var(--color-primary)' : 'transparent'; ?>; color: <?php echo $index === 0 ? '#fff' : 'var(--color-primary)'; ?>; border-radius: 20px; cursor: pointer;">
+                                    data-module="<?php echo esc_attr( $module_id ); ?>">
                                 <?php echo esc_html( $cat['name'] ); ?>
                             </button>
                         <?php endforeach; ?>
@@ -100,51 +166,57 @@ class News_Module extends Module_Base {
                 <?php if ( $query->have_posts() ) : ?>
                     <div class="news-grid grid-cols-<?php echo esc_attr( $columns ); ?>">
                         <?php while ( $query->have_posts() ) : $query->the_post(); 
-                            // 获取封面图片 - 优先特色图片，其次文章第一张图片
+                            // 获取封面图片 - 使用主题缩略图优化函数
                             $image_url = '';
-                            if ( has_post_thumbnail() ) {
+                            if ( function_exists( 'developer_starter_get_thumbnail_url' ) ) {
+                                $image_url = developer_starter_get_thumbnail_url( get_the_ID(), 'medium' );
+                            } elseif ( function_exists( 'developer_starter_get_featured_image_url' ) ) {
+                                $image_url = developer_starter_get_featured_image_url( get_the_ID(), 'large' );
+                            } elseif ( has_post_thumbnail() ) {
                                 $image_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
-                            }
-                            if ( empty( $image_url ) ) {
-                                // 从文章内容中获取第一张图片
-                                $post_content = get_the_content();
-                                if ( preg_match( '/<img[^>]+src=[\'"]([^\'"]+)[\'"][^>]*>/i', $post_content, $matches ) ) {
-                                    $image_url = $matches[1];
-                                }
                             }
                             if ( empty( $image_url ) && function_exists( 'developer_starter_get_first_image' ) ) {
                                 $image_url = developer_starter_get_first_image( get_the_ID() );
                             }
+                            if ( empty( $image_url ) && function_exists( 'developer_starter_get_first_image' ) ) {
+                                $image_url = developer_starter_get_first_image( get_the_ID() );
+                            }
+                            
+                            // Calculate Staggered Animation
+                            $anim_attr = '';
+                            if ( $enable_anim === 'yes' ) {
+                                $anim_attr = $this->get_staggered_animation_attr( $query->current_post );
+                            }
                         ?>
-                            <article class="news-card" style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <article class="news-card" <?php echo $anim_attr; ?>>
                                 <?php if ( $show_image ) : ?>
-                                    <a href="<?php the_permalink(); ?>" class="news-thumb" style="display: block; height: <?php echo esc_attr( $image_height ); ?>; overflow: hidden;">
+                                    <a href="<?php echo esc_url( get_permalink() ); ?>" class="news-thumb">
                                         <?php if ( $image_url ) : ?>
-                                            <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" style="width: 100%; height: 100%; object-fit: cover;" />
+                                            <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" />
                                         <?php else : ?>
-                                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%); display: flex; align-items: center; justify-content: center; color: #999;">
-                                                <span class="dashicons dashicons-format-image" style="font-size: 3rem;"></span>
+                                            <div class="news-thumb-placeholder">
+                                                <span class="dashicons dashicons-format-image"></span>
                                             </div>
                                         <?php endif; ?>
                                     </a>
                                 <?php endif; ?>
                                 
-                                <div class="news-content" style="padding: 15px;">
-                                    <span class="news-date" style="color: #999; font-size: 0.85rem;"><?php echo get_the_date(); ?></span>
+                                <div class="news-content">
+                                    <span class="news-date"><?php echo get_the_date(); ?></span>
                                     
-                                    <h3 class="news-title" style="margin: 8px 0; font-size: 1rem;">
-                                        <a href="<?php the_permalink(); ?>" style="color: #333; text-decoration: none;"><?php the_title(); ?></a>
+                                    <h3 class="news-title">
+                                        <a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
                                     </h3>
                                     
                                     <?php if ( $show_excerpt ) : ?>
-                                        <p class="news-excerpt" style="margin: 0; color: #666; font-size: 0.9rem; line-height: 1.5;"><?php echo wp_trim_words( get_the_excerpt(), 30 ); ?></p>
+                                        <p class="news-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 30 ); ?></p>
                                     <?php endif; ?>
                                 </div>
                             </article>
                         <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                     
-                    <div class="text-center mt-lg" style="margin-top: 30px;">
+                    <div class="text-center mt-lg news-more-wrap">
                         <?php
                         // 确定"查看更多"链接
                         $more_link = '';
@@ -163,15 +235,20 @@ class News_Module extends Module_Base {
                                 'meta_key'       => '_wp_page_template',
                                 'meta_value'     => 'templates/template-blog.php',
                                 'fields'         => 'ids',
+                                'suppress_filters' => false,
                             ) );
                             
                             if ( ! empty( $blog_pages ) ) {
-                                $more_link = get_permalink( $blog_pages[0] );
+                                $more_link = function_exists( 'developer_starter_get_post_url_for_frontend_lang' )
+                                    ? developer_starter_get_post_url_for_frontend_lang( $blog_pages[0] )
+                                    : get_permalink( $blog_pages[0] );
                             } else {
                                 // 2. 获取WordPress设置的博客页面（设置 > 阅读 > 文章页）
                                 $blog_page_id = get_option( 'page_for_posts' );
                                 if ( $blog_page_id ) {
-                                    $more_link = get_permalink( $blog_page_id );
+                                    $more_link = function_exists( 'developer_starter_get_post_url_for_frontend_lang' )
+                                        ? developer_starter_get_post_url_for_frontend_lang( $blog_page_id )
+                                        : get_permalink( $blog_page_id );
                                 }
                             }
                         }
@@ -188,12 +265,12 @@ class News_Module extends Module_Base {
                             }
                         }
                         ?>
-                        <a href="<?php echo esc_url( $more_link ); ?>" class="btn btn-outline" style="display: inline-block; padding: 10px 30px; border: 2px solid var(--color-primary); color: var(--color-primary); text-decoration: none; border-radius: 25px;">
-                            <?php _e( '查看更多', 'developer-starter' ); ?>
+                        <a href="<?php echo esc_url( $more_link ); ?>" class="btn btn-outline news-more-link">
+                            <?php echo esc_html( $button_text ); ?>
                         </a>
                     </div>
                 <?php else : ?>
-                    <p class="text-center text-muted"><?php _e( '暂无新闻', 'developer-starter' ); ?></p>
+                    <p class="text-center text-muted"><?php esc_html_e( '暂无新闻', 'developer-starter' ); ?></p>
                 <?php endif; ?>
             </div>
         </section>

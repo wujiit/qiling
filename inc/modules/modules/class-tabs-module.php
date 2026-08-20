@@ -18,7 +18,7 @@ class Tabs_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-index-card';
-        $this->description = '多标签页内容切换';
+        $this->description = __( '多标签页内容切换', 'developer-starter' );
     }
 
     public function get_id() {
@@ -26,36 +26,120 @@ class Tabs_Module extends Module_Base {
     }
 
     public function get_name() {
-        return '标签切换';
+        return __( '标签切换', 'developer-starter' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'tabs_title', 'label' => '标题', 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'tabs_subtitle', 'label' => '副标题', 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'tabs_bg_color', 'label' => '背景颜色', 'type' => 'text', 'description' => '支持渐变色' ),
-            array( 'id' => 'tabs_title_color', 'label' => '标题颜色', 'type' => 'color' ),
-            array( 'id' => 'tabs_style', 'label' => '标签样式', 'type' => 'select', 'options' => array( 
-                'default' => '默认样式', 
-                'pills' => '胶囊样式', 
-                'underline' => '下划线样式',
-                'boxed' => '卡片样式',
+            array( 'id' => 'tabs_title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'tabs_subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
+            
+            // Typography Settings
+            array(
+                'id' => 'tabs_title_size',
+                'label' => __( '标题字体大小', 'developer-starter' ),
+                'type' => 'text',
+                'default' => '',
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+            ),
+            array(
+                'id' => 'tabs_title_color',
+                'label' => __( '标题颜色', 'developer-starter' ),
+                'type' => 'color',
+                'default' => '',
+            ),
+            array(
+                'id' => 'tabs_subtitle_size',
+                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'type' => 'text',
+                'default' => '',
+                'description' => __( '如 1.1rem，留空使用默认', 'developer-starter' ),
+            ),
+            array(
+                'id' => 'tabs_subtitle_color',
+                'label' => __( '副标题颜色', 'developer-starter' ),
+                'type' => 'color',
+                'default' => '',
+            ),
+            
+            array( 'id' => 'tabs_style', 'label' => __( '标签样式', 'developer-starter' ), 'type' => 'select', 'options' => array( 
+                'default' => __( '默认样式', 'developer-starter' ), 
+                'pills' => __( '胶囊样式', 'developer-starter' ), 
+                'underline' => __( '下划线样式', 'developer-starter' ),
+                'boxed' => __( '卡片样式', 'developer-starter' ),
             ), 'default' => 'default' ),
-            array( 'id' => 'tabs_align', 'label' => '标签对齐', 'type' => 'select', 'options' => array( 
-                'left' => '左对齐', 
-                'center' => '居中', 
-                'right' => '右对齐',
+            array( 'id' => 'tabs_align', 'label' => __( '标签对齐', 'developer-starter' ), 'type' => 'select', 'options' => array( 
+                'left' => __( '左对齐', 'developer-starter' ), 
+                'center' => __( '居中', 'developer-starter' ), 
+                'right' => __( '右对齐', 'developer-starter' ),
             ), 'default' => 'center' ),
             array(
                 'id' => 'tabs_items',
-                'label' => '标签页',
+                'label' => __( '标签页', 'developer-starter' ),
                 'type' => 'repeater',
-                'description' => '添加标签页，内容支持HTML',
+                'description' => __( '添加标签页，内容支持HTML', 'developer-starter' ),
                 'fields' => array(
-                    array( 'id' => 'title', 'label' => '标签标题', 'type' => 'text' ),
-                    array( 'id' => 'icon', 'label' => '图标(emoji或留空)', 'type' => 'text' ),
-                    array( 'id' => 'content', 'label' => '标签内容(支持HTML)', 'type' => 'textarea' ),
+                    array( 'id' => 'title', 'label' => __( '标签标题', 'developer-starter' ), 'type' => 'text' ),
+                    array( 'id' => 'icon', 'label' => __( '图标(emoji或留空)', 'developer-starter' ), 'type' => 'text' ),
+                    array( 'id' => 'content', 'label' => __( '标签内容(支持HTML)', 'developer-starter' ), 'type' => 'textarea' ),
                 ),
+            ),
+            
+            // Background Settings
+            array(
+                'id' => 'module_bg_type',
+                'label' => __( '背景类型', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array(
+                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
+                    'image' => __( '图片背景', 'developer-starter' ),
+                ),
+                'default' => 'color',
+            ),
+            array(
+                'id' => 'module_bg_color',
+                'label' => __( '背景颜色', 'developer-starter' ),
+                'type' => 'color',
+                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'dependency' => array( 'module_bg_type', '==', 'color' ),
+            ),
+            array(
+                'id' => 'module_bg_image',
+                'label' => __( '背景图片', 'developer-starter' ),
+                'type' => 'image',
+                'dependency' => array( 'module_bg_type', '==', 'image' ),
+            ),
+            array(
+                'id' => 'module_bg_overlay',
+                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array(
+                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0.1' => '10%',
+                    '0.2' => '20%',
+                    '0.3' => '30%',
+                    '0.4' => '40%',
+                    '0.5' => '50%',
+                    '0.6' => '60%',
+                    '0.7' => '70%',
+                    '0.8' => '80%',
+                    '0.9' => '90%',
+                ),
+                'default' => '0',
+                'dependency' => array( 'module_bg_type', '==', 'image' ),
+            ),
+            
+            array(
+                'id' => 'module_padding_top',
+                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'type' => 'text',
+                'default' => '60px',
+            ),
+            array(
+                'id' => 'module_padding_bottom',
+                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'type' => 'text',
+                'default' => '60px',
             ),
         );
     }
@@ -63,8 +147,6 @@ class Tabs_Module extends Module_Base {
     public function render( $data = array() ) {
         $title = isset( $data['tabs_title'] ) ? $data['tabs_title'] : '';
         $subtitle = isset( $data['tabs_subtitle'] ) ? $data['tabs_subtitle'] : '';
-        $bg_color = isset( $data['tabs_bg_color'] ) && ! empty( $data['tabs_bg_color'] ) ? $data['tabs_bg_color'] : '';
-        $title_color = isset( $data['tabs_title_color'] ) && ! empty( $data['tabs_title_color'] ) ? $data['tabs_title_color'] : '';
         $style = isset( $data['tabs_style'] ) ? $data['tabs_style'] : 'default';
         $align = isset( $data['tabs_align'] ) ? $data['tabs_align'] : 'center';
         $items = isset( $data['tabs_items'] ) ? $data['tabs_items'] : array();
@@ -73,44 +155,81 @@ class Tabs_Module extends Module_Base {
         if ( empty( $items ) ) {
             $items = array(
                 array( 
-                    'title' => '产品介绍', 
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品介绍', 'Overview' ) : __( '产品介绍', 'developer-starter' ),
                     'icon' => '📦',
-                    'content' => '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>',
+                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', '<p>Use this area to introduce the product, highlight strengths, and explain the core value.</p><ul><li>Benefit one: reliable performance</li><li>Benefit two: easy to use</li><li>Benefit three: safe and dependable</li></ul>' ) : __( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', 'developer-starter' ),
                 ),
                 array( 
-                    'title' => '技术规格', 
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术规格', 'Specifications' ) : __( '技术规格', 'developer-starter' ),
                     'icon' => '⚙️',
-                    'content' => '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:10px;border:1px solid #e2e8f0;">尺寸</td><td style="padding:10px;border:1px solid #e2e8f0;">100 x 50 x 30 mm</td></tr><tr><td style="padding:10px;border:1px solid #e2e8f0;">重量</td><td style="padding:10px;border:1px solid #e2e8f0;">500g</td></tr></table>',
+                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', '<p>Technical specifications and key product details.</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Size</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Weight</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>' ) : __( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', 'developer-starter' ),
                 ),
                 array( 
-                    'title' => '使用说明', 
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '使用说明', 'How to Use' ) : __( '使用说明', 'developer-starter' ),
                     'icon' => '📖',
-                    'content' => '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>',
+                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', '<p>Setup steps and usage guidance.</p><ol><li>Step 1: unpack the product</li><li>Step 2: review the instructions</li><li>Step 3: follow the setup steps</li></ol>' ) : __( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', 'developer-starter' ),
                 ),
             );
         }
         
-        // 背景样式
-        $bg_style = '';
-        if ( ! empty( $bg_color ) ) {
-            $bg_style = strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
+        // Typography Logic
+        $title_size = isset( $data['tabs_title_size'] ) ? $data['tabs_title_size'] : '';
+        $title_color = isset( $data['tabs_title_color'] ) ? $data['tabs_title_color'] : '';
+        $subtitle_size = isset( $data['tabs_subtitle_size'] ) ? $data['tabs_subtitle_size'] : '';
+        $subtitle_color = isset( $data['tabs_subtitle_color'] ) ? $data['tabs_subtitle_color'] : '';
+
+        $title_style = '';
+        if ( $title_size ) $title_style .= "font-size: {$title_size};";
+        
+        // 兼容旧版标题颜色
+        if ( empty( $title_color ) && isset( $data['tabs_title_color_old'] ) ) {
+             $title_color = $data['tabs_title_color_old'];
+        }
+        if ( $title_color ) $title_style .= "color: {$title_color};";
+
+        $subtitle_style = '';
+        if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
+        if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";
+        
+        // Background Logic
+        $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
+        $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
+        $bg_image = isset( $data['module_bg_image'] ) ? $data['module_bg_image'] : '';
+        $bg_overlay = isset( $data['module_bg_overlay'] ) ? $data['module_bg_overlay'] : '0';
+        $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '60px';
+        $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '60px';
+        
+        // 兼容旧版背景
+        if ( empty( $bg_color ) && isset( $data['tabs_bg_color'] ) ) {
+            $bg_color = $data['tabs_bg_color'];
+        }
+
+        $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
+        
+        if ( $bg_type === 'image' && $bg_image ) {
+            $section_style .= "background-image: url('" . esc_url( $bg_image ) . "'); background-size: cover; background-position: center;";
+        } elseif ( $bg_color ) {
+            $section_style .= strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
         }
         
-        $title_style_attr = ! empty( $title_color ) ? "color: {$title_color};" : '';
         $tabs_id = 'tabs-' . uniqid();
         
         // 对齐样式
-        $align_style = 'justify-content: center;';
-        if ( $align === 'left' ) $align_style = 'justify-content: flex-start;';
-        if ( $align === 'right' ) $align_style = 'justify-content: flex-end;';
+        $align_class = 'align-center';
+        if ( $align === 'left' ) $align_class = 'align-left';
+        if ( $align === 'right' ) $align_class = 'align-right';
         ?>
-        <section class="module module-tabs section-padding" style="<?php echo esc_attr( $bg_style ); ?>">
+        <section class="module module-tabs" style="<?php echo esc_attr( $section_style ); ?>">
+            <?php if ( $bg_type === 'image' && $bg_image && $bg_overlay > 0 ) : ?>
+                <div class="module-overlay" style="opacity: <?php echo esc_attr( $bg_overlay ); ?>;"></div>
+            <?php endif; ?>
+            
             <div class="container">
                 <?php if ( $title ) : ?>
                     <div class="section-header text-center">
-                        <h2 class="section-title" style="<?php echo esc_attr( $title_style_attr ); ?>"><?php echo esc_html( $title ); ?></h2>
+                        <h2 class="section-title"<?php echo $title_style ? ' style="' . esc_attr( $title_style ) . '"' : ''; ?>><?php echo wp_kses_post( $title ); ?></h2>
                         <?php if ( $subtitle ) : ?>
-                            <p class="section-subtitle"><?php echo esc_html( $subtitle ); ?></p>
+                            <p class="section-subtitle"<?php echo $subtitle_style ? ' style="' . esc_attr( $subtitle_style ) . '"' : ''; ?>><?php echo wp_kses_post( $subtitle ); ?></p>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -118,67 +237,27 @@ class Tabs_Module extends Module_Base {
                 <?php if ( ! empty( $items ) ) : ?>
                     <div id="<?php echo esc_attr( $tabs_id ); ?>" class="tabs-wrapper tabs-style-<?php echo esc_attr( $style ); ?>">
                         <!-- 标签导航 -->
-                        <div class="tabs-nav" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; <?php echo esc_attr( $align_style ); ?>">
+                        <div class="tabs-nav <?php echo esc_attr( $align_class ); ?>">
                             <?php foreach ( $items as $index => $item ) : 
-                                $tab_title = isset( $item['title'] ) ? $item['title'] : '标签';
+                                $tab_title = isset( $item['title'] ) ? $item['title'] : __( '标签', 'developer-starter' );
                                 $icon = isset( $item['icon'] ) ? $item['icon'] : '';
                             ?>
-                                <button type="button" class="tab-btn <?php echo $index === 0 ? 'active' : ''; ?>" data-tab="<?php echo esc_attr( $index ); ?>" style="
-                                    display: inline-flex;
-                                    align-items: center;
-                                    gap: 8px;
-                                    padding: 12px 24px;
-                                    border: none;
-                                    cursor: pointer;
-                                    font-size: 0.95rem;
-                                    font-weight: 500;
-                                    transition: all 0.3s;
-                                    <?php if ( $style === 'default' ) : ?>
-                                        background: <?php echo $index === 0 ? 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)' : '#f1f5f9'; ?>;
-                                        color: <?php echo $index === 0 ? '#fff' : '#64748b'; ?>;
-                                        border-radius: 10px;
-                                    <?php elseif ( $style === 'pills' ) : ?>
-                                        background: <?php echo $index === 0 ? 'var(--color-primary)' : 'transparent'; ?>;
-                                        color: <?php echo $index === 0 ? '#fff' : '#64748b'; ?>;
-                                        border-radius: 50px;
-                                        border: 2px solid <?php echo $index === 0 ? 'var(--color-primary)' : '#e2e8f0'; ?>;
-                                    <?php elseif ( $style === 'underline' ) : ?>
-                                        background: transparent;
-                                        color: <?php echo $index === 0 ? 'var(--color-primary)' : '#64748b'; ?>;
-                                        border-radius: 0;
-                                        border-bottom: 3px solid <?php echo $index === 0 ? 'var(--color-primary)' : 'transparent'; ?>;
-                                        padding-bottom: 10px;
-                                    <?php elseif ( $style === 'boxed' ) : ?>
-                                        background: <?php echo $index === 0 ? '#fff' : '#f8fafc'; ?>;
-                                        color: <?php echo $index === 0 ? 'var(--color-primary)' : '#64748b'; ?>;
-                                        border-radius: 10px 10px 0 0;
-                                        box-shadow: <?php echo $index === 0 ? '0 -5px 20px rgba(0,0,0,0.05)' : 'none'; ?>;
-                                        border: 1px solid <?php echo $index === 0 ? '#e2e8f0' : 'transparent'; ?>;
-                                        border-bottom: <?php echo $index === 0 ? 'none' : '1px solid #e2e8f0'; ?>;
-                                        margin-bottom: -1px;
-                                    <?php endif; ?>
-                                ">
+                                <button type="button" class="tab-btn <?php echo $index === 0 ? 'active' : ''; ?>" data-tab="<?php echo esc_attr( $index ); ?>">
                                     <?php if ( $icon ) : ?>
-                                        <span style="font-size: 1.1em;"><?php echo esc_html( $icon ); ?></span>
+                                        <span><?php echo developer_starter_get_icon_html( $icon ); ?></span>
                                     <?php endif; ?>
-                                    <?php echo esc_html( $tab_title ); ?>
+                                    <?php echo wp_kses_post( $tab_title ); ?>
                                 </button>
                             <?php endforeach; ?>
                         </div>
                         
                         <!-- 标签内容 -->
-                        <div class="tabs-content" style="
-                            background: #fff;
-                            padding: 35px;
-                            border-radius: <?php echo $style === 'boxed' ? '0 10px 10px 10px' : '16px'; ?>;
-                            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-                            <?php echo $style === 'boxed' ? 'border: 1px solid #e2e8f0;' : ''; ?>
-                        ">
+                        <div class="tabs-content">
                             <?php foreach ( $items as $index => $item ) : 
                                 $content = isset( $item['content'] ) ? $item['content'] : '';
                             ?>
-                                <div class="tab-pane" data-tab="<?php echo esc_attr( $index ); ?>" style="display: <?php echo $index === 0 ? 'block' : 'none'; ?>;">
-                                    <div class="tab-content-inner" style="color: #475569; line-height: 1.8;">
+                                <div class="tab-pane <?php echo $index === 0 ? 'active' : ''; ?>" data-tab="<?php echo esc_attr( $index ); ?>">
+                                    <div class="tab-content-inner">
                                         <?php echo wp_kses_post( $content ); ?>
                                     </div>
                                 </div>
@@ -189,35 +268,6 @@ class Tabs_Module extends Module_Base {
             </div>
         </section>
         
-        <style>
-        #<?php echo esc_attr( $tabs_id ); ?> .tab-btn:hover {
-            opacity: 0.85;
-        }
-        #<?php echo esc_attr( $tabs_id ); ?> .tab-content-inner table {
-            margin: 15px 0;
-        }
-        #<?php echo esc_attr( $tabs_id ); ?> .tab-content-inner ul,
-        #<?php echo esc_attr( $tabs_id ); ?> .tab-content-inner ol {
-            padding-left: 20px;
-            margin: 15px 0;
-        }
-        #<?php echo esc_attr( $tabs_id ); ?> .tab-content-inner li {
-            margin-bottom: 8px;
-        }
-        @media (max-width: 768px) {
-            #<?php echo esc_attr( $tabs_id ); ?> .tabs-nav {
-                justify-content: center !important;
-            }
-            #<?php echo esc_attr( $tabs_id ); ?> .tab-btn {
-                padding: 10px 16px !important;
-                font-size: 0.85rem !important;
-            }
-            #<?php echo esc_attr( $tabs_id ); ?> .tabs-content {
-                padding: 25px !important;
-            }
-        }
-        </style>
-        
         <script>
         (function() {
             var tabsId = '<?php echo esc_js( $tabs_id ); ?>';
@@ -226,7 +276,6 @@ class Tabs_Module extends Module_Base {
             
             var btns = wrapper.querySelectorAll('.tab-btn');
             var panes = wrapper.querySelectorAll('.tab-pane');
-            var style = '<?php echo esc_js( $style ); ?>';
             
             btns.forEach(function(btn) {
                 btn.addEventListener('click', function() {
@@ -235,45 +284,16 @@ class Tabs_Module extends Module_Base {
                     // 更新按钮状态
                     btns.forEach(function(b) {
                         b.classList.remove('active');
-                        // 重置样式
-                        if (style === 'default') {
-                            b.style.background = '#f1f5f9';
-                            b.style.color = '#64748b';
-                        } else if (style === 'pills') {
-                            b.style.background = 'transparent';
-                            b.style.color = '#64748b';
-                            b.style.borderColor = '#e2e8f0';
-                        } else if (style === 'underline') {
-                            b.style.color = '#64748b';
-                            b.style.borderBottomColor = 'transparent';
-                        } else if (style === 'boxed') {
-                            b.style.background = '#f8fafc';
-                            b.style.color = '#64748b';
-                            b.style.boxShadow = 'none';
-                        }
                     });
-                    
                     this.classList.add('active');
-                    // 激活样式
-                    if (style === 'default') {
-                        this.style.background = 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)';
-                        this.style.color = '#fff';
-                    } else if (style === 'pills') {
-                        this.style.background = 'var(--color-primary)';
-                        this.style.color = '#fff';
-                        this.style.borderColor = 'var(--color-primary)';
-                    } else if (style === 'underline') {
-                        this.style.color = 'var(--color-primary)';
-                        this.style.borderBottomColor = 'var(--color-primary)';
-                    } else if (style === 'boxed') {
-                        this.style.background = '#fff';
-                        this.style.color = 'var(--color-primary)';
-                        this.style.boxShadow = '0 -5px 20px rgba(0,0,0,0.05)';
-                    }
                     
-                    // 显示对应内容
+                    // 更新内容显示
                     panes.forEach(function(pane) {
-                        pane.style.display = pane.getAttribute('data-tab') === tabIndex ? 'block' : 'none';
+                        if (pane.getAttribute('data-tab') === tabIndex) {
+                            pane.classList.add('active');
+                        } else {
+                            pane.classList.remove('active');
+                        }
                     });
                 });
             });
