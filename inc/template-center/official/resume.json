@@ -1,0 +1,317 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "个人简历",
+  "page_template": "templates/template-resume.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "resume",
+    "label": "个人简历",
+    "category": "personal",
+    "category_label": "个人品牌",
+    "industry": "personal",
+    "scenario": "个人品牌与作品展示页",
+    "description": "适合个人简历、作品集、自由职业者主页和个人品牌展示。",
+    "badges": [
+      "简历",
+      "作品集"
+    ],
+    "order": 610,
+    "thumbnail": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "个人简历模板 - 启灵官方页面包",
+    "description": "适合个人简历、作品集、自由职业者主页和个人品牌展示。",
+    "keywords": "个人简历,个人品牌与作品展示页,简历,作品集",
+    "og_title": "个人简历",
+    "og_description": "适合个人简历、作品集、自由职业者主页和个人品牌展示。"
+  },
+  "modules": [
+    {
+      "type": "resume_hero",
+      "data": {
+        "rh_style_variant": "classic",
+        "rh_layout": "center",
+        "rh_height": "100vh",
+        "rh_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 58%, #065f46 100%)",
+        "rh_bg_image": "",
+        "rh_overlay_color": "",
+        "rh_intro_badge": "HELLO",
+        "rh_accent_color": "#34d399",
+        "rh_avatar": "",
+        "rh_avatar_style": "circle",
+        "rh_avatar_size": "150px",
+        "rh_name": "张三",
+        "rh_name_color": "#ffffff",
+        "rh_titles": "前端开发工程师\n全栈开发者\nUI/UX设计师",
+        "rh_title_color": "",
+        "rh_typewriter": "1",
+        "rh_bio": "热爱技术，专注于Web前端开发和用户体验设计。5年以上开发经验，熟练掌握React、Vue等主流框架。",
+        "rh_bio_color": "rgba(255,255,255,0.8)",
+        "rh_location": "北京市",
+        "rh_email": "example@email.com",
+        "rh_phone": "+86 138 8888 8888",
+        "rh_website": "",
+        "rh_profile_facts": [],
+        "rh_socials": [
+          {
+            "name": "GitHub",
+            "icon": "github",
+            "link": "#"
+          },
+          {
+            "name": "LinkedIn",
+            "icon": "linkedin",
+            "link": "#"
+          },
+          {
+            "name": "微博",
+            "icon": "weibo",
+            "link": "#"
+          }
+        ],
+        "rh_btn1_text": "下载简历",
+        "rh_btn1_link": "#",
+        "rh_btn1_style": "solid",
+        "rh_btn2_text": "联系我",
+        "rh_btn2_link": "#contact",
+        "rh_btn2_style": "outline"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "我能做什么",
+        "services_subtitle": "专业技能服务",
+        "services_items": [
+          {
+            "icon": "💻",
+            "title": "Web前端开发",
+            "desc": "精通HTML5、CSS3、JavaScript，熟练使用React、Vue等框架进行企业级应用开发"
+          },
+          {
+            "icon": "🎨",
+            "title": "UI/UX设计",
+            "desc": "具备良好的审美和用户体验意识，能够使用Figma、Sketch进行界面设计"
+          },
+          {
+            "icon": "📱",
+            "title": "响应式开发",
+            "desc": "构建适配各种设备的响应式网站，确保在手机、平板、电脑上都有良好体验"
+          },
+          {
+            "icon": "⚡",
+            "title": "性能优化",
+            "desc": "专注于Web性能优化，包括代码分割、懒加载、缓存策略等技术提升用户体验"
+          }
+        ]
+      }
+    },
+    {
+      "type": "skills",
+      "data": {
+        "skills_title": "专业技能",
+        "skills_subtitle": "技术栈与熟练程度",
+        "skills_layout": "double",
+        "skills_style": "bar",
+        "skills_bar_height": "10px",
+        "skills_bar_color": "linear-gradient(135deg, #2563eb, #10b981)",
+        "skills_bar_bg": "#e2e8f0",
+        "skills_show_percent": "1",
+        "skills_animate": "1",
+        "skills_group1_title": "前端技术",
+        "skills_group1": [
+          {
+            "name": "HTML5 / CSS3",
+            "percent": "95"
+          },
+          {
+            "name": "JavaScript / TypeScript",
+            "percent": "90"
+          },
+          {
+            "name": "React / Vue",
+            "percent": "85"
+          },
+          {
+            "name": "Node.js",
+            "percent": "75"
+          }
+        ],
+        "skills_group2_title": "设计工具",
+        "skills_group2": [
+          {
+            "name": "Figma",
+            "percent": "90"
+          },
+          {
+            "name": "Photoshop",
+            "percent": "80"
+          },
+          {
+            "name": "Illustrator",
+            "percent": "70"
+          },
+          {
+            "name": "After Effects",
+            "percent": "60"
+          }
+        ]
+      }
+    },
+    {
+      "type": "experience_timeline",
+      "data": {
+        "exp_title": "教育与工作经历",
+        "exp_subtitle": "",
+        "exp_layout": "double",
+        "exp_line_color": "var(--color-primary, #3b82f6)",
+        "exp_dot_style": "dot",
+        "exp_group1_title": "教育经历",
+        "exp_group1_icon": "🎓",
+        "exp_group1": [
+          {
+            "period": "2016 - 2020",
+            "title": "计算机科学与技术 学士",
+            "company": "清华大学",
+            "company_link": "",
+            "desc": "GPA 3.8/4.0，获得优秀毕业生称号，主修软件工程方向",
+            "tags": "数据结构,算法,软件工程"
+          },
+          {
+            "period": "2020 - 2022",
+            "title": "软件工程 硕士",
+            "company": "北京大学",
+            "company_link": "",
+            "desc": "专注于Web前端技术研究，发表SCI论文2篇",
+            "tags": "前端架构,性能优化"
+          }
+        ],
+        "exp_group2_title": "工作经验",
+        "exp_group2_icon": "💼",
+        "exp_group2": [
+          {
+            "period": "2022 - 至今",
+            "title": "高级前端工程师",
+            "company": "字节跳动",
+            "company_link": "https://bytedance.com",
+            "desc": "负责抖音Web端核心业务开发，带领5人前端团队，完成多个重点项目的技术攻关",
+            "tags": "React,TypeScript,Node.js,微前端"
+          },
+          {
+            "period": "2020 - 2022",
+            "title": "前端开发工程师",
+            "company": "阿里巴巴",
+            "company_link": "https://alibaba.com",
+            "desc": "参与淘宝商家后台开发，优化页面性能，将首屏加载时间降低40%",
+            "tags": "Vue,Webpack,小程序"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "",
+        "stats_bg_color": "linear-gradient(135deg, #1d4ed8 0%, #059669 100%)",
+        "stats_items": [
+          {
+            "number": "5+",
+            "label": "年工作经验"
+          },
+          {
+            "number": "50+",
+            "label": "完成项目"
+          },
+          {
+            "number": "20+",
+            "label": "合作客户"
+          },
+          {
+            "number": "99%",
+            "label": "客户满意度"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "精选作品",
+        "gallery_subtitle": "部分代表性项目展示",
+        "gallery_columns": "3",
+        "gallery_items": [
+          {
+            "image": "",
+            "title": "电商平台设计",
+            "desc": "React + Node.js",
+            "url": "#"
+          },
+          {
+            "image": "",
+            "title": "企业官网开发",
+            "desc": "Vue + WordPress",
+            "url": "#"
+          },
+          {
+            "image": "",
+            "title": "移动端App设计",
+            "desc": "React Native",
+            "url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户评价",
+        "testimonials_subtitle": "合作伙伴的真实反馈",
+        "testimonials_items": [
+          {
+            "avatar": "",
+            "name": "李经理",
+            "title": "某科技公司 产品总监",
+            "content": "张三是我合作过的最专业的前端开发者之一，代码质量高，交付准时，沟通顺畅。",
+            "rating": "5"
+          },
+          {
+            "avatar": "",
+            "name": "王总",
+            "title": "某电商平台 CEO",
+            "content": "项目完成得非常出色，页面性能优化后用户留存率提升了30%，强烈推荐！",
+            "rating": "5"
+          },
+          {
+            "avatar": "",
+            "name": "刘设计",
+            "title": "某设计工作室 创始人",
+            "content": "对UI设计有独到的见解，能够很好地将设计稿还原，并提出有价值的改进建议。",
+            "rating": "5"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "联系我",
+        "contact_subtitle": "有项目合作或工作机会？欢迎联系",
+        "contact_show_form": "yes",
+        "contact_show_info": "yes",
+        "contact_show_map": "no",
+        "contact_email": "example@email.com",
+        "contact_phone": "+86 138 8888 8888",
+        "contact_address": "北京市朝阳区xxx街道xxx号",
+        "contact_bg_color": "#f8fafc"
+      }
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "资源搜索",
+  "page_template": "templates/template-resource-search.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "resource-search",
+    "label": "资源搜索",
+    "category": "resource",
+    "category_label": "数字资源",
+    "industry": "digital_resource",
+    "industry_label": "数字资源",
+    "scenario": "资源搜索、素材检索、软件和文档聚合入口",
+    "description": "适合模板素材、软件资源、文档资料和会员内容的检索入口。",
+    "badges": [
+      "搜索",
+      "资源",
+      "数字资源"
+    ],
+    "order": 160,
+    "thumbnail": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "资源搜索模板 - 启灵官方页面包",
+    "description": "适合资料库、文档中心和资源检索入口。",
+    "keywords": "资源搜索,资源搜索页,搜索,资源",
+    "og_title": "资源搜索",
+    "og_description": "适合资料库、文档中心和资源检索入口。"
+  },
+  "modules": [
+    {
+      "type": "hero_search",
+      "data": {
+        "hs_height": "medium",
+        "hs_title": "发现优质资源",
+        "hs_subtitle": "海量素材、模板、工具，一键搜索，即刻获取",
+        "hs_bg_items": [
+          {
+            "type": "image",
+            "image": "",
+            "video_url": ""
+          }
+        ],
+        "hs_bg_overlay": "yes",
+        "hs_overlay_opacity": "50",
+        "hs_search_placeholder": "搜索你想要的资源...",
+        "hs_search_btn_bg": "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
+        "hs_tags": [
+          {
+            "text": "WordPress主题"
+          },
+          {
+            "text": "网站模板"
+          },
+          {
+            "text": "UI素材"
+          },
+          {
+            "text": "图标资源"
+          },
+          {
+            "text": "免费资源"
+          }
+        ],
+        "hs_title_color": "#ffffff",
+        "hs_subtitle_color": "rgba(255,255,255,0.8)",
+        "hs_tags_bg": "rgba(255,255,255,0.15)",
+        "hs_tags_color": "#ffffff"
+      }
+    },
+    {
+      "type": "service_cards",
+      "data": {
+        "sc_bg_color": "",
+        "sc_padding": "20",
+        "sc_columns": "4",
+        "sc_gap": "20px",
+        "sc_card_bg": "rgba(255, 255, 255, 1)",
+        "sc_card_radius": "16px",
+        "sc_card_shadow": "strong",
+        "sc_icon_size": "48px",
+        "sc_icon_bg": "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
+        "sc_icon_radius": "12px",
+        "sc_badge_bg": "linear-gradient(135deg, #2563eb 0%, #059669 100%)",
+        "sc_cards": [
+          {
+            "icon": "🎨",
+            "icon_image": "",
+            "title": "WordPress主题",
+            "badge": "Hot",
+            "description": "精选企业级主题模板",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "🧩",
+            "icon_image": "",
+            "title": "插件扩展",
+            "badge": "",
+            "description": "功能增强插件合集",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "📦",
+            "icon_image": "",
+            "title": "UI素材包",
+            "badge": "New",
+            "description": "设计师必备素材库",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "📚",
+            "icon_image": "",
+            "title": "教程文档",
+            "badge": "",
+            "description": "从入门到精通指南",
+            "url": "#",
+            "target": "_self"
+          }
+        ],
+        "module_margin_top": "-80px",
+        "module_margin_bottom": "40px"
+      }
+    },
+    {
+      "type": "blog",
+      "data": {
+        "blog_title": "最新资源",
+        "blog_subtitle": "精选优质内容，持续更新",
+        "blog_bg_color": "#f8fafc",
+        "blog_page_layout": "full",
+        "blog_layout_style": "card",
+        "blog_columns": "4",
+        "blog_data_source": "latest",
+        "blog_count": "8",
+        "blog_orderby": "date",
+        "blog_show_image": "yes",
+        "blog_image_height": "180px",
+        "blog_show_excerpt": "yes",
+        "blog_excerpt_length": "40",
+        "blog_show_author": "no",
+        "blog_show_date": "yes",
+        "blog_show_category": "yes",
+        "blog_show_tags": "no",
+        "blog_read_more_text": "",
+        "blog_enable_pagination": "no"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_bg_image": "",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "1000+",
+            "label": "优质资源"
+          },
+          {
+            "number": "50+",
+            "label": "资源分类"
+          },
+          {
+            "number": "10000+",
+            "label": "下载次数"
+          },
+          {
+            "number": "24/7",
+            "label": "在线服务"
+          }
+        ]
+      }
+    },
+    {
+      "type": "blog",
+      "data": {
+        "blog_title": "热门推荐",
+        "blog_subtitle": "用户最喜爱的资源合集",
+        "blog_bg_color": "",
+        "blog_page_layout": "full",
+        "blog_layout_style": "list",
+        "blog_columns": "1",
+        "blog_data_source": "latest",
+        "blog_count": "5",
+        "blog_orderby": "comment_count",
+        "blog_show_image": "yes",
+        "blog_image_height": "200px",
+        "blog_show_excerpt": "yes",
+        "blog_excerpt_length": "80",
+        "blog_show_author": "yes",
+        "blog_show_date": "yes",
+        "blog_show_category": "yes",
+        "blog_show_tags": "yes",
+        "blog_read_more_text": "查看详情",
+        "blog_enable_pagination": "no"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "找不到想要的资源？",
+        "cta_subtitle": "告诉我们您的需求，我们帮您找到或定制",
+        "cta_button_text": "提交需求",
+        "cta_button_url": "/contact/",
+        "cta_bg_type": "gradient"
+      }
+    }
+  ]
+}

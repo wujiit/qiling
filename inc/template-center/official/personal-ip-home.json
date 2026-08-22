@@ -1,0 +1,226 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "个人 IP 主页",
+  "page_template": "templates/template-personal-ip-home.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "personal-ip-home",
+    "label": "个人 IP 主页",
+    "category": "personal",
+    "category_label": "个人品牌",
+    "industry": "personal",
+    "industry_label": "个人IP",
+    "scenario": "个人介绍、作品展示、咨询转化",
+    "description": "适合创始人、顾问、讲师、博主、设计师和自由职业者，内置个人首屏、服务能力、作品案例、经历、评价和咨询入口。",
+    "badges": [
+      "个人品牌",
+      "作品展示"
+    ],
+    "order": 511,
+    "thumbnail": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "个人 IP 主页模板 - 个人品牌与作品展示",
+    "description": "适合创始人、顾问、讲师和自由职业者的个人主页，包含个人介绍、服务能力、作品案例、经历、客户评价和咨询入口。",
+    "keywords": "个人IP主页,个人品牌,作品集,顾问主页,自由职业者官网",
+    "og_title": "个人 IP 主页",
+    "og_description": "用个人介绍、作品展示和咨询入口快速搭建个人品牌主页。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #334155 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80",
+            "title": "把你的经验变成可被信任的个人品牌",
+            "subtitle": "适合顾问、讲师、创作者和自由职业者展示服务、作品与合作入口。",
+            "btn_text": "预约沟通",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#334155"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "10",
+            "number": "10年+",
+            "label": "专业经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "120",
+            "number": "120+",
+            "label": "服务案例",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "36",
+            "number": "36场",
+            "label": "公开分享",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "客户评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "我能提供什么",
+        "services_subtitle": "把能力拆成清晰服务，让访客快速判断是否合适",
+        "services_columns": "4",
+        "services_bg_color": "#ffffff",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "顾问咨询",
+            "desc": "围绕战略、增长、产品或个人品牌提供诊断建议。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "课程培训",
+            "desc": "面向企业团队或公开学员提供主题课程。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "项目陪跑",
+            "desc": "按阶段拆解目标、复盘进度并给出改进路径。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "内容合作",
+            "desc": "演讲、访谈、专栏、播客或品牌内容合作。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "精选作品与案例",
+        "cases_subtitle": "用结果、过程和角色说明你的专业价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
+            "title": "品牌增长咨询",
+            "desc": "帮助新消费品牌梳理定位与内容增长路径。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+            "title": "企业内训课程",
+            "desc": "为团队搭建从认知到执行的训练营体系。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+            "title": "个人品牌陪跑",
+            "desc": "协助创始人沉淀内容资产和公开表达体系。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "timeline",
+      "data": {
+        "timeline_title": "经历路径",
+        "timeline_items": [
+          {
+            "year": "2016",
+            "title": "进入行业一线",
+            "desc": "从项目执行开始，积累真实业务经验。"
+          },
+          {
+            "year": "2019",
+            "title": "负责核心项目",
+            "desc": "带领团队完成多个增长和品牌升级项目。"
+          },
+          {
+            "year": "2023",
+            "title": "开启顾问服务",
+            "desc": "面向企业和个人品牌提供咨询、课程和陪跑。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "300+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "王先生",
+            "position": "创业者",
+            "content": "沟通后方向更清楚，下一步执行动作也更具体。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "李女士",
+            "position": "品牌负责人",
+            "content": "课程内容能落到项目里，团队复盘效率明显提高。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "陈女士",
+            "position": "自由职业者",
+            "content": "个人品牌定位和作品表达终于顺起来了。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "开启一次合作沟通",
+        "contact_subtitle": "提交合作目标、当前阶段、预期成果和预算范围，再判断是否适合进一步沟通。",
+        "contact_phone": "400-168-2026",
+        "contact_email": "contact@example.com",
+        "contact_address": "可远程合作 / 可预约线下沟通",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#f8fafc"
+      }
+    }
+  ]
+}

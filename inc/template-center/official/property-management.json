@@ -1,0 +1,273 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "物业/社区服务官网",
+  "page_template": "templates/template-property-management.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "property-management",
+    "label": "物业/社区服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "property_management",
+    "industry_label": "物业社区",
+    "scenario": "物业服务、社区运营、报修咨询",
+    "description": "适合物业公司、社区服务、园区运营、商业物业和城市服务官网，内置服务项目、项目覆盖、服务流程、评价和报修入口。",
+    "badges": [
+      "物业社区",
+      "报修服务"
+    ],
+    "order": 710,
+    "thumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "物业社区服务官网模板 - 报修服务与项目展示",
+    "description": "适合物业公司和社区服务品牌的官网页面，包含服务项目、项目覆盖、服务流程、客户评价、FAQ 和报修咨询入口。",
+    "keywords": "物业官网,社区服务官网,物业公司,报修服务,园区物业",
+    "og_title": "物业/社区服务官网",
+    "og_description": "用服务项目、项目覆盖和报修入口快速搭建物业社区服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80",
+            "title": "让社区服务更及时、更安心",
+            "subtitle": "物业服务、项目覆盖、报修流程和客户评价集中展示，提升业主与客户信任。",
+            "btn_text": "提交报修咨询",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#2563eb"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "80",
+            "number": "80+",
+            "label": "服务项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "24h",
+            "number": "24h",
+            "label": "响应机制",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "96",
+            "number": "96%",
+            "label": "工单闭环率",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.8",
+            "number": "4.8",
+            "label": "服务评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "物业服务范围",
+        "services_subtitle": "覆盖住宅、商业、园区和公共空间的日常运营服务",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "客服管家",
+            "desc": "业主沟通、报事报修和日常服务协调。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "工程维修",
+            "desc": "设施巡检、维修处理和设备维护。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "环境秩序",
+            "desc": "保洁绿化、秩序维护和公共空间管理。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "社区运营",
+            "desc": "社群活动、便民服务和增值服务运营。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "服务项目覆盖",
+        "branches_subtitle": "展示住宅、商业和园区项目服务范围",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看项目",
+        "booking_button_text": "联系服务",
+        "branches_list": [
+          {
+            "name": "城市花园社区",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市浦东新区示例路 88 号",
+            "phone": "021-80000001",
+            "email": "community@example.com",
+            "hours": "全天候服务",
+            "services": "住宅物业,社区运营",
+            "transport": "近地铁站",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "商务中心项目",
+            "city": "杭州",
+            "status": "open",
+            "address": "杭州市滨江区示例大道 66 号",
+            "phone": "0571-80000002",
+            "email": "office@example.com",
+            "hours": "全天候服务",
+            "services": "商业物业,工程维护",
+            "transport": "商务区核心位置",
+            "lat": "30.2741",
+            "lng": "120.1551",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "产业园服务中心",
+            "city": "苏州",
+            "status": "open",
+            "address": "苏州市工业园区示例路 99 号",
+            "phone": "0512-80000003",
+            "email": "park-service@example.com",
+            "hours": "全天候服务",
+            "services": "园区物业,企业服务",
+            "transport": "园区主入口",
+            "lat": "31.2989",
+            "lng": "120.5853",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "报事报修流程",
+        "process_subtitle": "让用户清楚知道提交、派单、处理和回访节点",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "提交工单",
+            "desc": "填写项目、问题类型、位置和联系方式。",
+            "stage_tag": "提交"
+          },
+          {
+            "icon": "02",
+            "title": "客服派单",
+            "desc": "客服确认问题并分配对应服务人员。",
+            "stage_tag": "派单"
+          },
+          {
+            "icon": "03",
+            "title": "现场处理",
+            "desc": "服务人员按约定时间处理并记录结果。",
+            "stage_tag": "处理"
+          },
+          {
+            "icon": "04",
+            "title": "回访闭环",
+            "desc": "确认满意度并沉淀后续改进建议。",
+            "stage_tag": "回访"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户与业主反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "5000+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "业主代表",
+            "position": "住宅社区",
+            "content": "报修响应比较及时，回访也能跟进。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "行政负责人",
+            "position": "商务办公",
+            "content": "工程维护和前台服务比较稳定，沟通效率高。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "园区企业",
+            "position": "产业园",
+            "content": "企业服务入口清楚，公共空间维护也比较规范。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "提交服务或报修咨询",
+        "booking_subtitle": "提交项目名称、问题类型和联系方式，服务团队会安排后续处理。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "服务提示",
+        "sidebar_content": "紧急问题请优先拨打服务电话\n请在表单里填写清晰位置和问题描述\n处理时效以具体项目服务约定为准",
+        "contact_phone": "400-900-2026",
+        "contact_hours": "7x24 小时",
+        "module_bg_image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

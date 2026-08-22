@@ -1,0 +1,212 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "农业/食品品牌官网",
+  "page_template": "templates/template-agriculture-food.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "food_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "agriculture-food",
+    "label": "农业/食品品牌官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "agriculture_food",
+    "industry_label": "农业食品",
+    "scenario": "产地展示、产品目录、采购咨询",
+    "description": "适合农产品品牌、食品企业、农场基地、供应链和区域公用品牌官网，内置产地溯源、产品矩阵、质量标准、案例和采购入口。",
+    "badges": [
+      "农业食品",
+      "产地溯源"
+    ],
+    "order": 670,
+    "thumbnail": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "农业食品品牌官网模板 - 产地溯源与采购咨询",
+    "description": "适合农产品和食品品牌的官网页面，包含产地展示、产品目录、质量标准、渠道案例、FAQ 和采购咨询入口。",
+    "keywords": "农业官网,食品品牌官网,农产品官网,产地溯源,采购咨询",
+    "og_title": "农业/食品品牌官网",
+    "og_description": "用产地、产品和溯源信任快速搭建农业食品品牌官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.55",
+        "db_title_prefix": "把好产地和好产品讲清楚",
+        "db_typing_mode": "loop",
+        "db_typing_text": "基地种植与源头供应\n食品加工与质量检测\n面向渠道和采购的品牌官网",
+        "db_highlight_color": "#bbf7d0",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "展示产地、品控、产品和渠道合作能力，让采购客户更快建立信任。",
+        "db_desc": "适合农场基地、农产品品牌、食品加工企业和区域公用品牌。",
+        "db_text_color": "rgba(248,250,252,0.9)",
+        "db_buttons": [
+          {
+            "text": "提交采购需求",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看产品目录",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "产地与供应数据",
+        "stats_subtitle": "用规模、检测和交付表现建立采购信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "3000亩",
+            "label": "标准化基地"
+          },
+          {
+            "number": "12项",
+            "label": "质量检测节点"
+          },
+          {
+            "number": "48h",
+            "label": "采购响应时效"
+          },
+          {
+            "number": "60+",
+            "label": "渠道合作客户"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "核心供应能力",
+        "services_subtitle": "从种植、加工、包装到渠道履约的完整链路",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "产地直供",
+            "desc": "基地种植、采收分级和稳定供货。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "食品加工",
+            "desc": "清洗、分拣、包装和初加工服务。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "质量溯源",
+            "desc": "批次记录、检测报告和源头追踪。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "渠道配送",
+            "desc": "商超、团餐、电商和社区渠道供货。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "采购合作流程",
+        "process_subtitle": "把询价、样品、签约和交付流程讲清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求沟通",
+            "desc": "确认品类、规格、包装、数量和交期。",
+            "stage_tag": "沟通"
+          },
+          {
+            "icon": "02",
+            "title": "样品确认",
+            "desc": "提供样品、检测资料和报价方案。",
+            "stage_tag": "样品"
+          },
+          {
+            "icon": "03",
+            "title": "订单排期",
+            "desc": "确定采收、加工、包装和物流计划。",
+            "stage_tag": "排期"
+          },
+          {
+            "icon": "04",
+            "title": "交付复盘",
+            "desc": "跟踪收货反馈、损耗和复购计划。",
+            "stage_tag": "交付"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "渠道合作案例",
+        "cases_subtitle": "展示产品进入不同渠道的合作方式",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1498579397066-22750a3cb424?auto=format&fit=crop&w=900&q=80",
+            "title": "商超生鲜供应",
+            "desc": "按周排产、分级包装和门店配送。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=900&q=80",
+            "title": "团餐食材合作",
+            "desc": "稳定供货、批次检测和配送协同。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=900&q=80",
+            "title": "电商品牌包装",
+            "desc": "定制包装、溯源码和售后反馈机制。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "获取采购报价",
+        "contact_subtitle": "提交采购品类、数量、交付城市、包装要求和合作周期，供应顾问会进行初步沟通。",
+        "contact_phone": "400-518-2026",
+        "contact_email": "supply@example.com",
+        "contact_address": "农业示范基地 / 支持渠道合作沟通",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

@@ -15,40 +15,487 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Auth_Manager {
 
     private $option_name = 'developer_starter_options';
+    private $register_email_service = null;
+    private $captcha_service = null;
+    private $pages_service = null;
+    private $flow_service = null;
+    private $profile_service = null;
+    const CAPTCHA_CHALLENGE_TTL = 180;
+    const CAPTCHA_TOKEN_TTL = 300;
+    const REGISTER_EMAIL_CODE_DIGITS = 6;
+    const REGISTER_EMAIL_CODE_VERIFY_MAX_ATTEMPTS = 6;
+    const REGISTER_EMAIL_CODE_VERIFY_LOCK_SECONDS = 900;
+
+    /**
+     * 获取传递给 hooks/filters 的安全请求载荷（脱敏后）。
+     *
+     * @return array
+     */
+    private function get_safe_hook_request_payload() {
+        static $safe_payload = null;
+        if ( is_array( $safe_payload ) ) {
+            return $safe_payload;
+        }
+
+        $raw = isset( $_POST ) && is_array( $_POST ) ? wp_unslash( $_POST ) : array();
+        if ( ! is_array( $raw ) ) {
+            $safe_payload = array();
+            return $safe_payload;
+        }
+
+        $safe_payload = $this->mask_sensitive_request_fields( $raw );
+        return $safe_payload;
+    }
+
+    /**
+     * 脱敏请求中的敏感字段，避免密码/重置密钥等进入外部 hooks 日志。
+     *
+     * @param mixed  $data     请求数据。
+     * @param string $field_key 当前字段名。
+     * @return mixed
+     */
+    private function mask_sensitive_request_fields( $data, $field_key = '' ) {
+        if ( is_array( $data ) ) {
+            $masked = array();
+            foreach ( $data as $key => $value ) {
+                $masked[ $key ] = $this->mask_sensitive_request_fields( $value, (string) $key );
+            }
+            return $masked;
+        }
+
+        $normalized_key = strtolower( sanitize_key( (string) $field_key ) );
+        $sensitive_keys = array(
+            'password',
+            'password_confirm',
+            'current_password',
+            'new_password',
+            'new_password_confirm',
+            'user_password',
+            'user_pass',
+            'pass',
+            'pass1',
+            'pass2',
+            'pwd',
+            'reset_key',
+            'key',
+            'captcha_verified',
+        );
+
+        if ( in_array( $normalized_key, $sensitive_keys, true ) || strpos( $normalized_key, 'password' ) !== false ) {
+            return '[REDACTED]';
+        }
+
+        return $data;
+    }
+
+    /**
+     * 速率限制检查 (固定窗口算法)
+     *
+     * 使用固定时间窗口算法，避免滑动窗口导致的永久锁定问题。
+     * 存储结构: array( 'count' => int, 'window_start' => int )
+     *
+     * @param string $action 动作标识
+     * @param int $limit 限制次数
+     * @param int $duration 时间窗口（秒）
+     * @return bool|string true表示通过，string表示错误信息
+     */
+    private function check_rate_limit( $action, $limit, $duration ) {
+        $ip = developer_starter_get_client_ip();
+        $transient_key = 'ds_auth_limit_' . $action . '_' . md5( $ip );
+        $lock_key = 'ds_auth_lock_' . $action . '_' . md5( $ip );
+        $current_time = time();
+        
+        // 1. 首先检查是否处于锁定状态
+        $lock_data = get_transient( $lock_key );
+        if ( $lock_data !== false ) {
+            $remaining = $lock_data - $current_time;
+            if ( $remaining > 0 ) {
+                return sprintf( 
+                    __( '操作过于频繁，请%s后再试', 'developer-starter' ), 
+                    human_time_diff( $current_time, $lock_data ) 
+                );
+            }
+            // 锁定已过期，删除它
+            delete_transient( $lock_key );
+        }
+        
+        // 2. 获取当前窗口数据
+        $data = get_transient( $transient_key );
+        
+        if ( $data === false || ! is_array( $data ) ) {
+            // 新窗口开始
+            $data = array(
+                'count'        => 1,
+                'window_start' => $current_time,
+            );
+            set_transient( $transient_key, $data, $duration );
+            return true;
+        }
+        
+        // 3. 检查窗口是否已过期（固定窗口）
+        $window_end = $data['window_start'] + $duration;
+        if ( $current_time >= $window_end ) {
+            // 窗口已过期，重新开始
+            $data = array(
+                'count'        => 1,
+                'window_start' => $current_time,
+            );
+            set_transient( $transient_key, $data, $duration );
+            return true;
+        }
+        
+        // 4. 在当前窗口内，检查是否超过限制
+        if ( $data['count'] >= $limit ) {
+            // 触发锁定，锁定时间 = 剩余窗口时间 + 额外惩罚时间
+            $lock_until = $current_time + $duration;
+            set_transient( $lock_key, $lock_until, $duration );
+            delete_transient( $transient_key );
+            return sprintf( 
+                __( '操作过于频繁，请%s后再试', 'developer-starter' ), 
+                human_time_diff( $current_time, $lock_until ) 
+            );
+        }
+        
+        // 5. 增加计数，保持原窗口起始时间
+        $remaining_time = $window_end - $current_time;
+        $data['count']++;
+        set_transient( $transient_key, $data, $remaining_time );
+        
+        return true;
+    }
+
+    /**
+     * 获取注册邮箱验证码服务。
+     *
+     * @return Auth_Register_Email_Service
+     */
+    private function get_register_email_service() {
+        if ( null === $this->register_email_service ) {
+            $this->register_email_service = new Auth_Register_Email_Service(
+                array(
+                    'option_callback'    => function ( $key, $default = '' ) {
+                        return $this->get_option( $key, $default );
+                    },
+                    'client_ip_callback' => function () {
+                        return developer_starter_get_client_ip();
+                    },
+                )
+            );
+        }
+
+        return $this->register_email_service;
+    }
+
+    /**
+     * 获取验证码服务。
+     *
+     * @return Auth_Captcha_Service
+     */
+    private function get_captcha_service() {
+        if ( null === $this->captcha_service ) {
+            $this->captcha_service = new Auth_Captcha_Service(
+                array(
+                    'option_callback'    => function ( $key, $default = '' ) {
+                        return $this->get_option( $key, $default );
+                    },
+                    'client_ip_callback' => function () {
+                        return developer_starter_get_client_ip();
+                    },
+                    'challenge_ttl'      => self::CAPTCHA_CHALLENGE_TTL,
+                    'token_ttl'          => self::CAPTCHA_TOKEN_TTL,
+                )
+            );
+        }
+
+        return $this->captcha_service;
+    }
+
+    /**
+     * 获取认证页面生命周期服务。
+     *
+     * @return Auth_Pages_Service
+     */
+    private function get_pages_service() {
+        if ( null === $this->pages_service ) {
+            $this->pages_service = new Auth_Pages_Service(
+                array(
+                    'option_callback' => function ( $key, $default = '' ) {
+                        return $this->get_option( $key, $default );
+                    },
+                    'option_name'     => $this->option_name,
+                )
+            );
+        }
+
+        return $this->pages_service;
+    }
+
+    /**
+     * 获取认证业务流程服务。
+     *
+     * @return Auth_Flow_Service
+     */
+    private function get_flow_service() {
+        if ( null === $this->flow_service ) {
+            $this->flow_service = new Auth_Flow_Service(
+                array(
+                    'option_callback'                     => function ( $key, $default = '' ) {
+                        return $this->get_option( $key, $default );
+                    },
+                    'client_ip_callback'                  => function () {
+                        return developer_starter_get_client_ip();
+                    },
+                    'safe_payload_callback'               => function () {
+                        return $this->get_safe_hook_request_payload();
+                    },
+                    'rate_limit_callback'                 => function ( $action, $limit, $duration ) {
+                        return $this->check_rate_limit( $action, $limit, $duration );
+                    },
+                    'captcha_consume_callback'            => function ( $token ) {
+                        return $this->consume_captcha_token( $token );
+                    },
+                    'register_email_enabled_callback'     => function () {
+                        return $this->is_register_email_code_enabled();
+                    },
+                    'verify_register_email_code_callback' => function ( $email, $code ) {
+                        return $this->verify_register_email_code( $email, $code );
+                    },
+                    'clear_register_email_code_callback'  => function ( $email ) {
+                        $this->clear_register_email_code( $email );
+                    },
+                )
+            );
+        }
+
+        return $this->flow_service;
+    }
+
+    /**
+     * 获取认证资料与响应服务。
+     *
+     * @return Auth_Profile_Service
+     */
+    private function get_profile_service() {
+        if ( null === $this->profile_service ) {
+            $this->profile_service = new Auth_Profile_Service(
+                array(
+                    'option_callback' => function ( $key, $default = '' ) {
+                        return $this->get_option( $key, $default );
+                    },
+                )
+            );
+        }
+
+        return $this->profile_service;
+    }
+
+    /**
+     * 是否启用邮箱注册验证码。
+     *
+     * @return bool
+     */
+    private function is_register_email_code_enabled() {
+        return $this->get_register_email_service()->is_enabled();
+    }
+
+    /**
+     * 获取邮箱注册验证码有效期（分钟）。
+     *
+     * @return int
+     */
+    private function get_register_email_code_expire_minutes() {
+        return $this->get_register_email_service()->get_expire_minutes();
+    }
+
+    /**
+     * 获取邮箱注册验证码每日 IP 发送限制。
+     *
+     * @return int
+     */
+    private function get_register_email_code_daily_ip_limit() {
+        return $this->get_register_email_service()->get_daily_ip_limit();
+    }
+
+    /**
+     * 获取邮箱注册验证码单邮箱每日发送限制。
+     *
+     * @return int
+     */
+    private function get_register_email_code_daily_email_limit() {
+        return $this->get_register_email_service()->get_daily_email_limit();
+    }
+
+    /**
+     * 标准化邮箱字符串。
+     *
+     * @param string $email 邮箱。
+     * @return string
+     */
+    private function normalize_register_email( $email ) {
+        return $this->get_register_email_service()->normalize_email( $email );
+    }
+
+    /**
+     * 检查 SMTP 配置是否完整。
+     *
+     * @return bool
+     */
+    private function is_register_email_smtp_ready() {
+        return $this->get_register_email_service()->is_smtp_ready();
+    }
+
+    /**
+     * 生成固定长度数字验证码。
+     *
+     * @return string
+     */
+    private function generate_register_email_code() {
+        return $this->get_register_email_service()->generate_code();
+    }
+
+    /**
+     * 设置邮箱验证码发送间隔锁。
+     *
+     * @param string $email 邮箱。
+     * @param string $ip    IP 地址。
+     * @return int 锁定截止时间戳。
+     */
+    private function set_register_email_send_lock( $email, $ip ) {
+        return $this->get_register_email_service()->set_send_lock( $email, $ip );
+    }
+
+    /**
+     * 检查邮箱验证码发送间隔锁。
+     *
+     * @param string $email 邮箱。
+     * @param string $ip    IP 地址。
+     * @return true|\WP_Error
+     */
+    private function check_register_email_send_lock( $email, $ip ) {
+        return $this->get_register_email_service()->check_send_lock( $email, $ip );
+    }
+
+    /**
+     * 检查每日发送限制。
+     *
+     * @param string $scope      作用域。
+     * @param string $identifier 标识。
+     * @param int    $limit      限额。
+     * @return bool
+     */
+    private function check_register_email_daily_limit( $scope, $identifier, $limit ) {
+        return $this->get_register_email_service()->check_daily_limit( $scope, $identifier, $limit );
+    }
+
+    /**
+     * 增加每日发送计数。
+     *
+     * @param string $scope      作用域。
+     * @param string $identifier 标识。
+     * @return void
+     */
+    private function increment_register_email_daily_counter( $scope, $identifier ) {
+        $this->get_register_email_service()->increment_daily_counter( $scope, $identifier );
+    }
+
+    /**
+     * 存储邮箱注册验证码（哈希）。
+     *
+     * @param string $email 邮箱。
+     * @param string $code  验证码。
+     * @return void
+     */
+    private function store_register_email_code( $email, $code ) {
+        $this->get_register_email_service()->store_code( $email, $code );
+    }
+
+    /**
+     * 清理邮箱注册验证码相关状态。
+     *
+     * @param string $email 邮箱。
+     * @return void
+     */
+    private function clear_register_email_code( $email ) {
+        $this->get_register_email_service()->clear_code( $email );
+    }
+
+    /**
+     * 校验邮箱注册验证码。
+     *
+     * @param string $email 邮箱。
+     * @param string $code  验证码。
+     * @return true|\WP_Error
+     */
+    private function verify_register_email_code( $email, $code ) {
+        return $this->get_register_email_service()->verify_code( $email, $code );
+    }
+
+    /**
+     * 发送注册邮箱验证码邮件。
+     *
+     * @param string $email 邮箱。
+     * @param string $code  验证码。
+     * @return true|\WP_Error
+     */
+    private function send_register_email_code_email( $email, $code ) {
+        return $this->get_register_email_service()->send_code_email( $email, $code );
+    }
+
 
     public function __construct() {
         // AJAX 处理 - 未登录用户
         add_action( 'wp_ajax_nopriv_developer_starter_login', array( $this, 'ajax_login' ) );
         add_action( 'wp_ajax_nopriv_developer_starter_register', array( $this, 'ajax_register' ) );
+        add_action( 'wp_ajax_nopriv_developer_starter_send_register_email_code', array( $this, 'ajax_send_register_email_code' ) );
         add_action( 'wp_ajax_nopriv_developer_starter_forgot_password', array( $this, 'ajax_forgot_password' ) );
         add_action( 'wp_ajax_nopriv_developer_starter_reset_password', array( $this, 'ajax_reset_password' ) );
+        
+        // 刷新 Nonce
+        add_action( 'wp_ajax_developer_starter_refresh_nonce', array( $this, 'ajax_refresh_nonce' ) );
+        add_action( 'wp_ajax_nopriv_developer_starter_refresh_nonce', array( $this, 'ajax_refresh_nonce' ) );
         
         // AJAX 处理 - 已登录用户（防止已登录用户访问认证页面时的问题）
         add_action( 'wp_ajax_developer_starter_login', array( $this, 'ajax_already_logged_in' ) );
         add_action( 'wp_ajax_developer_starter_register', array( $this, 'ajax_already_logged_in' ) );
+        add_action( 'wp_ajax_developer_starter_send_register_email_code', array( $this, 'ajax_send_register_email_code' ) );
         
         // AJAX 获取用户状态（用于缓存兼容 - 已登录用户不受缓存影响）
         add_action( 'wp_ajax_developer_starter_user_status', array( $this, 'ajax_get_user_status' ) );
         add_action( 'wp_ajax_nopriv_developer_starter_user_status', array( $this, 'ajax_get_user_status' ) );
+
         
         // 重定向默认登录页面
         add_action( 'init', array( $this, 'redirect_default_auth_pages' ) );
+        add_filter( 'register_url', array( $this, 'filter_register_url' ), 10, 1 );
         
-        // 自动创建认证页面
-        add_action( 'after_switch_theme', array( $this, 'create_auth_pages' ) );
+        // 兜底：已启用站点若缺少个人中心页面，在后台自动补建
+        add_action( 'admin_init', array( $this, 'maybe_backfill_account_page' ) );
+        
+        // 监听页面保存，如果更新了会员中心页面，同步更新 Option ID
+        add_action( 'save_post', array( $this, 'update_account_page_option' ), 10, 2 );
         
         // AJAX 头像上传
         add_action( 'wp_ajax_developer_starter_upload_avatar', array( $this, 'ajax_upload_avatar' ) );
+
+        // AJAX 验证码获取令牌
+        add_action( 'wp_ajax_nopriv_developer_starter_captcha_challenge', array( $this, 'ajax_captcha_challenge' ) );
+        add_action( 'wp_ajax_developer_starter_captcha_challenge', array( $this, 'ajax_captcha_challenge' ) );
+        add_action( 'wp_ajax_nopriv_developer_starter_captcha_verify', array( $this, 'ajax_verify_captcha' ) );
+        add_action( 'wp_ajax_developer_starter_captcha_verify', array( $this, 'ajax_verify_captcha' ) );
+    }
+    
+    /**
+     * 更新会员中心页面 ID Option
+     */
+    public function update_account_page_option( $post_id, $post ) {
+        $this->get_pages_service()->update_account_page_option( $post_id, $post );
     }
     
     /**
      * 已登录用户尝试登录/注册时的响应
      */
     public function ajax_already_logged_in() {
-        wp_send_json_success( array(
-            'message' => '您已经登录，正在刷新页面...',
-            'redirect' => home_url()
-        ) );
+        wp_send_json_success( $this->get_profile_service()->get_already_logged_in_payload() );
     }
     
     /**
@@ -56,49 +503,11 @@ class Auth_Manager {
      * 已登录用户不受任何缓存影响，始终返回真实状态
      */
     public function ajax_get_user_status() {
-        // 设置严格的不缓存响应头，确保不被任何缓存层拦截
-        nocache_headers();
-        
-        // 添加额外的缓存控制头（防止CDN和代理缓存）
-        header( 'Cache-Control: no-cache, no-store, must-revalidate, private, max-age=0' );
-        header( 'Pragma: no-cache' );
-        header( 'Expires: Thu, 01 Jan 1970 00:00:00 GMT' );
-        header( 'X-Accel-Expires: 0' ); // Nginx 特定
-        header( 'Vary: Cookie' ); // 根据Cookie变化
-        
-        if ( is_user_logged_in() ) {
-            $current_user = wp_get_current_user();
-            
-            // 获取个人中心页面URL
-            $account_url = get_transient( 'developer_starter_account_url' );
-            if ( false === $account_url ) {
-                $account_page = get_pages( array(
-                    'meta_key' => '_wp_page_template',
-                    'meta_value' => 'templates/template-account.php',
-                    'number' => 1,
-                ) );
-                $account_url = ! empty( $account_page ) ? get_permalink( $account_page[0]->ID ) : admin_url( 'profile.php' );
-                set_transient( 'developer_starter_account_url', $account_url, DAY_IN_SECONDS );
-            }
-            
-            wp_send_json_success( array(
-                'logged_in' => true,
-                'user_id' => $current_user->ID,
-                'display_name' => $current_user->display_name,
-                'email' => $current_user->user_email,
-                'avatar_32' => get_avatar_url( $current_user->ID, array( 'size' => 32 ) ),
-                'avatar_48' => get_avatar_url( $current_user->ID, array( 'size' => 48 ) ),
-                'account_url' => $account_url,
-                'admin_url' => current_user_can( 'read' ) ? admin_url() : '',
-                'logout_url' => wp_logout_url( home_url() ),
-                'can_access_admin' => current_user_can( 'read' ),
-            ) );
-        } else {
-            wp_send_json_success( array(
-                'logged_in' => false,
-            ) );
-        }
+        $this->get_profile_service()->send_no_store_headers();
+        $this->guard_public_ajax_rate_limit( 'auth_user_status', 60, 60 );
+        wp_send_json_success( $this->get_profile_service()->get_user_status_payload() );
     }
+
 
     /**
      * 获取选项
@@ -108,90 +517,79 @@ class Auth_Manager {
     }
 
     /**
+     * 兼容消费滑动验证码令牌回调。
+     *
+     * @param mixed $token 令牌。
+     * @return bool
+     */
+    private function consume_captcha_token( $token ) {
+        return $this->get_captcha_service()->consume_token( $token );
+    }
+
+    /**
+     * 发送禁止缓存响应头（用于认证相关 AJAX）
+     */
+    private function send_no_store_ajax_headers() {
+        $this->get_profile_service()->send_no_store_headers();
+    }
+
+    /**
+     * 统一公共认证 AJAX 限流。
+     *
+     * @param string $scope 作用域。
+     * @param int    $max_requests 窗口请求数。
+     * @param int    $window_seconds 窗口秒数。
+     * @return void
+     */
+    private function guard_public_ajax_rate_limit( $scope, $max_requests, $window_seconds = 60 ) {
+        if (
+            function_exists( 'developer_starter_is_public_ajax_rate_limited' )
+            && developer_starter_is_public_ajax_rate_limited( $scope, $max_requests, $window_seconds )
+        ) {
+            if ( function_exists( 'developer_starter_send_public_ajax_rate_limited' ) ) {
+                developer_starter_send_public_ajax_rate_limited();
+            }
+
+            wp_send_json_error(
+                array(
+                    'message' => __( '请求过于频繁，请稍后再试', 'developer-starter' ),
+                    'code'    => 'rate_limited',
+                ),
+                429
+            );
+        }
+    }
+
+    /**
      * 重定向默认登录注册页面
      */
     public function redirect_default_auth_pages() {
-        if ( ! $this->get_option( 'custom_auth_enable', '' ) ) {
-            return;
-        }
+        $this->get_pages_service()->redirect_default_auth_pages();
+    }
 
-        global $pagenow;
-        
-        if ( $pagenow === 'wp-login.php' && ! is_user_logged_in() ) {
-            $action = isset( $_GET['action'] ) ? sanitize_text_field( $_GET['action'] ) : 'login';
-            
-            switch ( $action ) {
-                case 'register':
-                    $page_id = $this->get_option( 'register_page_id', '' );
-                    if ( $page_id ) {
-                        wp_redirect( get_permalink( $page_id ) );
-                        exit;
-                    }
-                    break;
-                case 'lostpassword':
-                    $page_id = $this->get_option( 'forgot_password_page_id', '' );
-                    if ( $page_id ) {
-                        wp_redirect( get_permalink( $page_id ) );
-                        exit;
-                    }
-                    break;
-                default:
-                    $page_id = $this->get_option( 'login_page_id', '' );
-                    if ( $page_id ) {
-                        wp_redirect( get_permalink( $page_id ) );
-                        exit;
-                    }
-                    break;
-            }
-        }
+    /**
+     * 将系统注册 URL 统一替换为主题注册页。
+     *
+     * @param string $register_url WordPress 默认注册 URL。
+     * @return string
+     */
+    public function filter_register_url( $register_url ) {
+        return $this->get_pages_service()->filter_register_url( $register_url );
     }
 
     /**
      * 自动创建认证页面
      */
     public function create_auth_pages() {
-        $pages = array(
-            'login' => array(
-                'title' => '用户登录',
-                'template' => 'templates/template-login.php',
-                'option_key' => 'login_page_id'
-            ),
-            'register' => array(
-                'title' => '用户注册',
-                'template' => 'templates/template-register.php',
-                'option_key' => 'register_page_id'
-            ),
-            'forgot-password' => array(
-                'title' => '找回密码',
-                'template' => 'templates/template-forgot-password.php',
-                'option_key' => 'forgot_password_page_id'
-            )
-        );
+        $this->get_pages_service()->create_auth_pages();
+    }
 
-        $options = get_option( $this->option_name, array() );
-
-        foreach ( $pages as $slug => $page ) {
-            // 检查页面是否已存在
-            $existing = get_page_by_path( $slug );
-            if ( ! $existing ) {
-                $page_id = wp_insert_post( array(
-                    'post_title'   => $page['title'],
-                    'post_name'    => $slug,
-                    'post_status'  => 'publish',
-                    'post_type'    => 'page',
-                    'post_content' => '',
-                ) );
-
-                if ( $page_id && ! is_wp_error( $page_id ) ) {
-                    update_post_meta( $page_id, '_wp_page_template', $page['template'] );
-                    $options[ $page['option_key'] ] = $page_id;
-                }
-            } else {
-                $options[ $page['option_key'] ] = $existing->ID;
-            }
-        }
-
-        update_option( $this->option_name, $options );
+    /**
+     * 兜底检查：缺少个人中心页面时自动补建。
+     * 说明：用于兼容“主题已启用但历史版本未自动创建个人中心”的站点。
+     */
+    public function maybe_backfill_account_page() {
+        $this->get_pages_service()->maybe_backfill_account_page();
     }
 
     /**
@@ -200,40 +598,100 @@ class Auth_Manager {
     public function ajax_login() {
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
-        $username = isset( $_POST['username'] ) ? sanitize_user( $_POST['username'] ) : '';
-        $password = isset( $_POST['password'] ) ? $_POST['password'] : '';
-        $remember = isset( $_POST['remember'] ) && $_POST['remember'] === 'true';
-
-        if ( empty( $username ) || empty( $password ) ) {
-            wp_send_json_error( array( 'message' => '请填写用户名和密码' ) );
+        $result = $this->get_flow_service()->handle_login( $_POST );
+        if ( is_wp_error( $result ) ) {
+            wp_send_json_error( array( 'message' => $result->get_error_message() ) );
         }
 
-        // 验证滑动验证码
+        wp_send_json_success( $result );
+    }
+
+    /**
+     * AJAX 发送邮箱注册验证码。
+     */
+    public function ajax_send_register_email_code() {
+        $this->send_no_store_ajax_headers();
+        check_ajax_referer( 'developer_starter_auth', 'nonce' );
+
+        if ( is_user_logged_in() ) {
+            wp_send_json_error( array( 'message' => __( '您已登录，无需获取注册验证码', 'developer-starter' ) ) );
+        }
+        if ( ! $this->is_register_email_code_enabled() ) {
+            wp_send_json_error( array( 'message' => __( '邮箱注册验证码未开启', 'developer-starter' ) ) );
+        }
+        if ( ! get_option( 'users_can_register' ) ) {
+            wp_send_json_error( array( 'message' => __( '网站已关闭注册功能', 'developer-starter' ) ) );
+        }
+        if ( function_exists( 'developer_starter_is_email_registration_allowed' ) && ! developer_starter_is_email_registration_allowed() ) {
+            wp_send_json_error( array( 'message' => __( '当前站点未开启邮箱注册', 'developer-starter' ) ) );
+        }
+
+        $email = isset( $_POST['email'] ) ? $this->normalize_register_email( wp_unslash( $_POST['email'] ) ) : '';
+        if ( ! is_email( $email ) ) {
+            wp_send_json_error( array( 'message' => __( '请输入有效的邮箱地址', 'developer-starter' ) ) );
+        }
+
+        if ( function_exists( 'developer_starter_is_email_domain_allowed' ) && ! developer_starter_is_email_domain_allowed( $email ) ) {
+            $allowed_suffixes = function_exists( 'developer_starter_get_email_domain_whitelist_text' )
+                ? developer_starter_get_email_domain_whitelist_text( '、' )
+                : '';
+            $message = $allowed_suffixes !== ''
+                ? sprintf( __( '当前仅支持以下邮箱后缀：%s', 'developer-starter' ), $allowed_suffixes )
+                : __( '当前邮箱后缀不在允许范围内', 'developer-starter' );
+            wp_send_json_error( array( 'message' => $message ) );
+        }
+
+        if ( email_exists( $email ) ) {
+            wp_send_json_error( array( 'message' => __( '该邮箱已被注册，请直接登录', 'developer-starter' ) ) );
+        }
+
         if ( $this->get_option( 'auth_captcha_enable', '' ) ) {
-            $captcha = isset( $_POST['captcha_verified'] ) ? $_POST['captcha_verified'] : '';
-            if ( $captcha !== 'true' ) {
-                wp_send_json_error( array( 'message' => '请完成滑动验证' ) );
+            $captcha = isset( $_POST['captcha_verified'] ) ? sanitize_text_field( wp_unslash( $_POST['captcha_verified'] ) ) : '';
+            if ( ! $this->consume_captcha_token( $captcha ) ) {
+                wp_send_json_error( array( 'message' => __( '请先完成验证，再获取验证码', 'developer-starter' ) ) );
             }
         }
 
-        $user = wp_signon( array(
-            'user_login'    => $username,
-            'user_password' => $password,
-            'remember'      => $remember
-        ) );
-
-        if ( is_wp_error( $user ) ) {
-            wp_send_json_error( array( 'message' => '用户名或密码错误' ) );
+        if ( ! $this->is_register_email_smtp_ready() ) {
+            wp_send_json_error( array( 'message' => __( '邮箱服务未配置完整，请先在主题设置中完成 SMTP 配置', 'developer-starter' ) ) );
         }
 
-        $redirect = $this->get_option( 'login_redirect_url', '' );
-        if ( empty( $redirect ) ) {
-            $redirect = home_url();
+        $rate_check = $this->check_rate_limit( 'register_email_code_send', 20, 3600 );
+        if ( $rate_check !== true ) {
+            wp_send_json_error( array( 'message' => $rate_check ) );
         }
+
+        $ip = developer_starter_get_client_ip();
+        $send_lock_check = $this->check_register_email_send_lock( $email, $ip );
+        if ( is_wp_error( $send_lock_check ) ) {
+            wp_send_json_error( array( 'message' => $send_lock_check->get_error_message() ) );
+        }
+
+        $daily_ip_limit = $this->get_register_email_code_daily_ip_limit();
+        if ( ! $this->check_register_email_daily_limit( 'ip', $ip, $daily_ip_limit ) ) {
+            wp_send_json_error( array( 'message' => __( '当前 IP 今日发送次数已达上限，请明天再试', 'developer-starter' ) ) );
+        }
+
+        $daily_email_limit = $this->get_register_email_code_daily_email_limit();
+        if ( ! $this->check_register_email_daily_limit( 'email', $email, $daily_email_limit ) ) {
+            wp_send_json_error( array( 'message' => __( '该邮箱今日验证码发送次数已达上限，请明天再试', 'developer-starter' ) ) );
+        }
+
+        $code = $this->generate_register_email_code();
+        $send_result = $this->send_register_email_code_email( $email, $code );
+        if ( is_wp_error( $send_result ) ) {
+            wp_send_json_error( array( 'message' => $send_result->get_error_message() ) );
+        }
+
+        $this->store_register_email_code( $email, $code );
+        $lock_until = $this->set_register_email_send_lock( $email, $ip );
+        $this->increment_register_email_daily_counter( 'ip', $ip );
+        $this->increment_register_email_daily_counter( 'email', $email );
 
         wp_send_json_success( array(
-            'message' => '登录成功，正在跳转...',
-            'redirect' => $redirect
+            'message'       => __( '验证码已发送，请查收邮箱（含垃圾邮箱）', 'developer-starter' ),
+            'retry_after'   => max( 1, $lock_until - time() ),
+            'expire_minutes'=> $this->get_register_email_code_expire_minutes(),
         ) );
     }
 
@@ -243,122 +701,12 @@ class Auth_Manager {
     public function ajax_register() {
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
-        if ( ! get_option( 'users_can_register' ) ) {
-            wp_send_json_error( array( 'message' => '网站已关闭注册功能' ) );
+        $result = $this->get_flow_service()->handle_register( $_POST );
+        if ( is_wp_error( $result ) ) {
+            wp_send_json_error( array( 'message' => $result->get_error_message() ) );
         }
 
-        $username = isset( $_POST['username'] ) ? sanitize_user( $_POST['username'] ) : '';
-        $email = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
-        $password = isset( $_POST['password'] ) ? $_POST['password'] : '';
-        $password_confirm = isset( $_POST['password_confirm'] ) ? $_POST['password_confirm'] : '';
-
-        // 基本验证
-        if ( empty( $username ) || empty( $email ) || empty( $password ) ) {
-            wp_send_json_error( array( 'message' => '请填写所有必填项' ) );
-        }
-
-        if ( strlen( $username ) < 3 ) {
-            wp_send_json_error( array( 'message' => '用户名至少需要3个字符' ) );
-        }
-
-        if ( ! is_email( $email ) ) {
-            wp_send_json_error( array( 'message' => '请输入有效的邮箱地址' ) );
-        }
-
-        if ( $password !== $password_confirm ) {
-            wp_send_json_error( array( 'message' => '两次输入的密码不一致' ) );
-        }
-
-        // 密码强度验证
-        $strength = $this->get_option( 'password_strength', 'medium' );
-        $strength_check = $this->check_password_strength( $password, $strength );
-        if ( ! $strength_check['valid'] ) {
-            wp_send_json_error( array( 'message' => $strength_check['message'] ) );
-        }
-
-        // 验证滑动验证码
-        if ( $this->get_option( 'auth_captcha_enable', '' ) ) {
-            $captcha = isset( $_POST['captcha_verified'] ) ? $_POST['captcha_verified'] : '';
-            if ( $captcha !== 'true' ) {
-                wp_send_json_error( array( 'message' => '请完成滑动验证' ) );
-            }
-        }
-
-        // 验证注册协议
-        if ( $this->get_option( 'register_agreement_enable', '' ) ) {
-            $agreement = isset( $_POST['agreement'] ) ? $_POST['agreement'] : '';
-            if ( empty( $agreement ) ) {
-                wp_send_json_error( array( 'message' => '请阅读并同意用户服务协议' ) );
-            }
-        }
-
-        // 检查用户名和邮箱是否已存在
-        if ( username_exists( $username ) ) {
-            wp_send_json_error( array( 'message' => '该用户名已被注册' ) );
-        }
-
-        if ( email_exists( $email ) ) {
-            wp_send_json_error( array( 'message' => '该邮箱已被注册' ) );
-        }
-
-        // 创建用户
-        $user_id = wp_create_user( $username, $password, $email );
-
-        if ( is_wp_error( $user_id ) ) {
-            wp_send_json_error( array( 'message' => '注册失败：' . $user_id->get_error_message() ) );
-        }
-
-        // 自动登录
-        wp_set_current_user( $user_id );
-        wp_set_auth_cookie( $user_id, true );
-
-        $redirect = $this->get_option( 'register_redirect_url', '' );
-        if ( empty( $redirect ) ) {
-            $redirect = home_url();
-        }
-
-        wp_send_json_success( array(
-            'message' => '注册成功，正在跳转...',
-            'redirect' => $redirect
-        ) );
-    }
-
-    /**
-     * 检查密码强度
-     */
-    private function check_password_strength( $password, $required_strength ) {
-        $length = strlen( $password );
-        
-        if ( $required_strength === 'weak' ) {
-            if ( $length < 6 ) {
-                return array( 'valid' => false, 'message' => '密码至少需要6个字符' );
-            }
-        } elseif ( $required_strength === 'medium' ) {
-            if ( $length < 8 ) {
-                return array( 'valid' => false, 'message' => '密码至少需要8个字符' );
-            }
-            if ( ! preg_match( '/[A-Za-z]/', $password ) || ! preg_match( '/[0-9]/', $password ) ) {
-                return array( 'valid' => false, 'message' => '密码必须包含字母和数字' );
-            }
-        } elseif ( $required_strength === 'strong' ) {
-            if ( $length < 10 ) {
-                return array( 'valid' => false, 'message' => '密码至少需要10个字符' );
-            }
-            if ( ! preg_match( '/[A-Z]/', $password ) ) {
-                return array( 'valid' => false, 'message' => '密码必须包含大写字母' );
-            }
-            if ( ! preg_match( '/[a-z]/', $password ) ) {
-                return array( 'valid' => false, 'message' => '密码必须包含小写字母' );
-            }
-            if ( ! preg_match( '/[0-9]/', $password ) ) {
-                return array( 'valid' => false, 'message' => '密码必须包含数字' );
-            }
-            if ( ! preg_match( '/[!@#$%^&*(),.?":{}|<>]/', $password ) ) {
-                return array( 'valid' => false, 'message' => '密码必须包含特殊字符' );
-            }
-        }
-
-        return array( 'valid' => true, 'message' => '' );
+        wp_send_json_success( $result );
     }
 
     /**
@@ -367,53 +715,12 @@ class Auth_Manager {
     public function ajax_forgot_password() {
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
-        $email = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
-
-        if ( empty( $email ) || ! is_email( $email ) ) {
-            wp_send_json_error( array( 'message' => '请输入有效的邮箱地址' ) );
+        $result = $this->get_flow_service()->handle_forgot_password( $_POST );
+        if ( is_wp_error( $result ) ) {
+            wp_send_json_error( array( 'message' => $result->get_error_message() ) );
         }
 
-        // 验证滑动验证码
-        if ( $this->get_option( 'auth_captcha_enable', '' ) ) {
-            $captcha = isset( $_POST['captcha_verified'] ) ? $_POST['captcha_verified'] : '';
-            if ( $captcha !== 'true' ) {
-                wp_send_json_error( array( 'message' => '请完成滑动验证' ) );
-            }
-        }
-
-        $user = get_user_by( 'email', $email );
-        if ( ! $user ) {
-            // 出于安全考虑，不透露邮箱是否存在
-            wp_send_json_success( array( 'message' => '如果该邮箱已注册，您将收到重置密码的邮件' ) );
-        }
-
-        // 生成重置链接
-        $key = get_password_reset_key( $user );
-        if ( is_wp_error( $key ) ) {
-            wp_send_json_error( array( 'message' => '发送重置邮件失败，请稍后再试' ) );
-        }
-
-        // 获取重置密码页面
-        $reset_page_id = $this->get_option( 'forgot_password_page_id', '' );
-        $reset_url = $reset_page_id ? add_query_arg( array( 'action' => 'reset', 'key' => $key, 'login' => rawurlencode( $user->user_login ) ), get_permalink( $reset_page_id ) ) : '';
-
-        // 发送邮件
-        $site_name = get_bloginfo( 'name' );
-        $subject = "[{$site_name}] 密码重置请求";
-        $message = "您好，{$user->display_name}！\n\n";
-        $message .= "我们收到了您的密码重置请求。如果这不是您本人的操作，请忽略此邮件。\n\n";
-        $message .= "点击以下链接重置您的密码：\n";
-        $message .= $reset_url . "\n\n";
-        $message .= "此链接将在24小时后失效。\n\n";
-        $message .= "—— {$site_name}";
-
-        $sent = wp_mail( $email, $subject, $message );
-
-        if ( $sent ) {
-            wp_send_json_success( array( 'message' => '重置密码邮件已发送，请查收您的邮箱' ) );
-        } else {
-            wp_send_json_error( array( 'message' => '邮件发送失败，请稍后再试' ) );
-        }
+        wp_send_json_success( $result );
     }
 
     /**
@@ -422,128 +729,88 @@ class Auth_Manager {
     public function ajax_reset_password() {
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
-        $key = isset( $_POST['key'] ) ? sanitize_text_field( $_POST['key'] ) : '';
-        $login = isset( $_POST['login'] ) ? sanitize_user( $_POST['login'] ) : '';
-        $password = isset( $_POST['password'] ) ? $_POST['password'] : '';
-        $password_confirm = isset( $_POST['password_confirm'] ) ? $_POST['password_confirm'] : '';
-
-        if ( empty( $key ) || empty( $login ) ) {
-            wp_send_json_error( array( 'message' => '无效的重置链接' ) );
+        $result = $this->get_flow_service()->handle_reset_password( $_POST );
+        if ( is_wp_error( $result ) ) {
+            wp_send_json_error( array( 'message' => $result->get_error_message() ) );
         }
 
-        if ( empty( $password ) ) {
-            wp_send_json_error( array( 'message' => '请输入新密码' ) );
-        }
-
-        if ( $password !== $password_confirm ) {
-            wp_send_json_error( array( 'message' => '两次输入的密码不一致' ) );
-        }
-
-        // 验证密码强度
-        $strength = $this->get_option( 'password_strength', 'medium' );
-        $strength_check = $this->check_password_strength( $password, $strength );
-        if ( ! $strength_check['valid'] ) {
-            wp_send_json_error( array( 'message' => $strength_check['message'] ) );
-        }
-
-        $user = check_password_reset_key( $key, $login );
-
-        if ( is_wp_error( $user ) ) {
-            wp_send_json_error( array( 'message' => '重置链接已失效，请重新申请' ) );
-        }
-
-        // 重置密码
-        reset_password( $user, $password );
-
-        $login_page_id = $this->get_option( 'login_page_id', '' );
-        $redirect = $login_page_id ? get_permalink( $login_page_id ) : wp_login_url();
-
-        wp_send_json_success( array(
-            'message' => '密码重置成功，请使用新密码登录',
-            'redirect' => $redirect
-        ) );
+        wp_send_json_success( $result );
     }
     
     /**
      * AJAX 上传用户头像
      */
     public function ajax_upload_avatar() {
-        // 验证用户登录状态
-        if ( ! is_user_logged_in() ) {
-            wp_send_json_error( array( 'message' => '请先登录' ) );
+        $result = $this->get_profile_service()->handle_avatar_upload( $_POST, $_FILES );
+        if ( is_wp_error( $result ) ) {
+            wp_send_json_error( array( 'message' => $result->get_error_message() ) );
         }
-        
-        // 检查是否启用头像上传
-        $avatar_upload_enable = $this->get_option( 'user_avatar_upload_enable', '' );
-        if ( ! $avatar_upload_enable ) {
-            wp_send_json_error( array( 'message' => '头像上传功能未启用' ) );
+
+        wp_send_json_success( $result );
+    }
+
+    /**
+     * AJAX 刷新 Nonce
+     */
+    public function ajax_refresh_nonce() {
+        $this->send_no_store_ajax_headers();
+        $this->guard_public_ajax_rate_limit( 'auth_refresh_nonce', 30, 60 );
+        wp_send_json_success( $this->get_profile_service()->get_refresh_nonce_payload() );
+    }
+
+    /**
+     * AJAX: 获取滑动验证码挑战
+     */
+    public function ajax_captcha_challenge() {
+        $this->send_no_store_ajax_headers();
+        check_ajax_referer( 'developer_starter_auth', 'nonce' );
+
+        $rate_check = $this->check_rate_limit( 'captcha_challenge', 60, 60 );
+        if ( $rate_check !== true ) {
+            wp_send_json_error( array( 'message' => $rate_check ) );
         }
-        
-        // 验证nonce
-        if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'developer_starter_avatar_upload' ) ) {
-            wp_send_json_error( array( 'message' => '安全验证失败，请刷新页面重试' ) );
+
+        wp_send_json_success( $this->get_captcha_service()->create_challenge() );
+    }
+
+    /**
+     * AJAX: 验证滑动验证码并生成令牌
+     */
+    public function ajax_verify_captcha() {
+        $this->send_no_store_ajax_headers();
+        check_ajax_referer( 'developer_starter_auth', 'nonce' );
+
+        $rate_check = $this->check_rate_limit( 'captcha_verify', 60, 60 );
+        if ( $rate_check !== true ) {
+            wp_send_json_error( array( 'message' => $rate_check ) );
         }
-        
-        // 检查文件是否上传
-        if ( empty( $_FILES['avatar'] ) || $_FILES['avatar']['error'] !== UPLOAD_ERR_OK ) {
-            wp_send_json_error( array( 'message' => '文件上传失败，请重试' ) );
+
+        if ( 'aliyun' === $this->get_captcha_service()->get_provider() ) {
+            $captcha_verify_param = isset( $_POST['captcha_verify_param'] ) ? wp_unslash( (string) $_POST['captcha_verify_param'] ) : '';
+            $scene_id = isset( $_POST['scene'] ) ? sanitize_text_field( wp_unslash( (string) $_POST['scene'] ) ) : '';
+            $verify_result = $this->get_captcha_service()->verify_aliyun( $captcha_verify_param, $scene_id );
+            if ( is_wp_error( $verify_result ) ) {
+                wp_send_json_error( array( 'message' => $verify_result->get_error_message() ) );
+            }
+
+            wp_send_json_success( $this->get_captcha_service()->issue_token() );
         }
-        
-        $file = $_FILES['avatar'];
-        
-        // 验证文件类型
-        $allowed_types = array( 'image/jpeg', 'image/png', 'image/gif', 'image/webp' );
-        $finfo = finfo_open( FILEINFO_MIME_TYPE );
-        $file_type = finfo_file( $finfo, $file['tmp_name'] );
-        finfo_close( $finfo );
-        
-        if ( ! in_array( $file_type, $allowed_types ) ) {
-            wp_send_json_error( array( 'message' => '只允许上传 JPG、PNG、GIF、WebP 格式的图片' ) );
+
+        $verify_result = $this->get_captcha_service()->verify_theme_challenge(
+            array(
+                'challenge_id'        => isset( $_POST['challenge_id'] ) ? sanitize_text_field( wp_unslash( $_POST['challenge_id'] ) ) : '',
+                'challenge_signature' => isset( $_POST['challenge_signature'] ) ? sanitize_text_field( wp_unslash( $_POST['challenge_signature'] ) ) : '',
+                'challenge_issued'    => isset( $_POST['challenge_issued'] ) ? absint( wp_unslash( $_POST['challenge_issued'] ) ) : 0,
+                'drag_duration'       => isset( $_POST['drag_duration'] ) ? absint( wp_unslash( $_POST['drag_duration'] ) ) : 0,
+                'move_count'          => isset( $_POST['move_count'] ) ? absint( wp_unslash( $_POST['move_count'] ) ) : 0,
+                'drag_distance'       => isset( $_POST['drag_distance'] ) ? absint( wp_unslash( $_POST['drag_distance'] ) ) : 0,
+            )
+        );
+
+        if ( is_wp_error( $verify_result ) ) {
+            wp_send_json_error( array( 'message' => $verify_result->get_error_message() ) );
         }
-        
-        // 验证文件大小（最大2MB）
-        $max_size = 2 * 1024 * 1024;
-        if ( $file['size'] > $max_size ) {
-            wp_send_json_error( array( 'message' => '图片大小不能超过 2MB' ) );
-        }
-        
-        // 使用WordPress媒体库处理上传
-        require_once ABSPATH . 'wp-admin/includes/image.php';
-        require_once ABSPATH . 'wp-admin/includes/file.php';
-        require_once ABSPATH . 'wp-admin/includes/media.php';
-        
-        // 设置文件名（使用用户ID作为前缀）
-        $user_id = get_current_user_id();
-        $ext = pathinfo( $file['name'], PATHINFO_EXTENSION );
-        $new_filename = 'avatar-' . $user_id . '-' . time() . '.' . $ext;
-        $file['name'] = $new_filename;
-        
-        // 上传到媒体库
-        $attachment_id = media_handle_sideload( $file, 0, null, array(
-            'test_form' => false,
-            'test_size' => true,
-        ) );
-        
-        if ( is_wp_error( $attachment_id ) ) {
-            wp_send_json_error( array( 'message' => '头像上传失败：' . $attachment_id->get_error_message() ) );
-        }
-        
-        // 获取附件URL
-        $avatar_url = wp_get_attachment_url( $attachment_id );
-        
-        // 删除旧头像附件（可选：清理存储空间）
-        $old_avatar_id = get_user_meta( $user_id, 'custom_avatar_attachment_id', true );
-        if ( $old_avatar_id ) {
-            wp_delete_attachment( $old_avatar_id, true );
-        }
-        
-        // 保存到用户meta
-        update_user_meta( $user_id, 'custom_avatar', $avatar_url );
-        update_user_meta( $user_id, 'custom_avatar_attachment_id', $attachment_id );
-        
-        wp_send_json_success( array(
-            'message' => '头像上传成功！',
-            'avatar_url' => $avatar_url
-        ) );
+
+        wp_send_json_success( $this->get_captcha_service()->issue_token() );
     }
 }

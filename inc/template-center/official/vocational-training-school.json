@@ -1,0 +1,293 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "职业培训学校官网",
+  "page_template": "templates/template-vocational-training-school.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "education_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "vocational-training-school",
+    "label": "职业培训学校官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "vocational_training",
+    "industry_label": "职业培训",
+    "scenario": "技能培训、考证招生、就业辅导、企业内训、实操课程、报名咨询",
+    "description": "适合职业培训学校、考证培训机构、技能实训基地、就业辅导中心和企业内训机构，内置搜索首屏、课程大纲、班型价格、学习流程、学员评价、FAQ 和报名 CTA。",
+    "badges": [
+      "中文高频",
+      "职业培训",
+      "招生转化"
+    ],
+    "order": 595,
+    "thumbnail": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "职业培训学校官网模板 - 技能培训与考证招生",
+    "description": "适合职业培训、技能实训、考证报名和企业内训机构的官网页面，包含课程搜索、课程大纲、班型价格、学习流程、学员评价、FAQ 和报名入口。",
+    "keywords": "职业培训官网,职业培训学校,技能培训,考证培训,企业内训,就业辅导,课程报名",
+    "og_title": "职业培训学校官网",
+    "og_description": "用课程搜索、班型价格和学习流程快速搭建职业培训学校官网。"
+  },
+  "modules": [
+    {
+      "type": "hero_search",
+      "data": {
+        "hs_height": "80vh",
+        "hs_overlay_color": "rgba(17, 24, 39, 0.62)",
+        "hs_content_align": "center",
+        "hs_bg_items": [
+          {
+            "type": "image",
+            "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
+            "video_url": ""
+          }
+        ],
+        "hs_bg_autoplay": "yes",
+        "hs_bg_interval": "5000",
+        "hs_title": "职业技能课程，报名到拿证一条线",
+        "hs_title_color": "#ffffff",
+        "hs_title_size": "3.3rem",
+        "hs_subtitle": "面向技能提升、考证备考、转岗就业和企业内训，集中展示热门课程、实操训练、班型费用、学习流程和报名咨询入口。",
+        "hs_subtitle_color": "rgba(255,255,255,0.88)",
+        "hs_show_search": "yes",
+        "hs_search_placeholder": "搜索电工、会计、人力资源、新媒体、企业内训课程",
+        "hs_search_btn_text": "查找课程",
+        "hs_search_btn_bg": "linear-gradient(135deg, #2563eb 0%, #f59e0b 100%)",
+        "hs_search_btn_text_color": "#ffffff",
+        "hs_search_btn_hover_bg": "linear-gradient(135deg, #1d4ed8 0%, #d97706 100%)",
+        "hs_search_btn_hover_text_color": "#ffffff",
+        "hs_search_width": "720px",
+        "hs_tags_label": "热门方向：",
+        "hs_tags": [
+          {
+            "text": "电工培训"
+          },
+          {
+            "text": "会计实操"
+          },
+          {
+            "text": "人力资源"
+          },
+          {
+            "text": "新媒体运营"
+          }
+        ],
+        "hs_tags_bg": "rgba(255,255,255,0.16)",
+        "hs_tags_color": "#ffffff"
+      }
+    },
+    {
+      "type": "curriculum",
+      "data": {
+        "curriculum_title": "课程学习路径",
+        "curriculum_subtitle": "把报名测评、理论基础、实操训练、证书辅导和就业支持拆成清晰阶段",
+        "curriculum_bg_color": "#f8fafc",
+        "curriculum_primary_color": "#2563eb",
+        "curriculum_items": [
+          {
+            "title": "阶段一：入学测评与职业定位",
+            "meta": "第1周 | 基础评估",
+            "content": "<p>了解基础水平、目标岗位、学习时间和证书需求，匹配适合的班型和学习计划。</p>",
+            "open": "yes"
+          },
+          {
+            "title": "阶段二：理论基础与工具入门",
+            "meta": "第2-4周 | 系统课程",
+            "content": "<p>围绕岗位能力和考试要求梳理核心知识点、操作规范、工具流程和典型案例。</p>",
+            "open": "no"
+          },
+          {
+            "title": "阶段三：实操训练与项目演练",
+            "meta": "第5-8周 | 实训强化",
+            "content": "<p>通过实训设备、业务场景、模拟任务或项目作业，强化动手能力和问题处理能力。</p>",
+            "open": "no"
+          },
+          {
+            "title": "阶段四：考证冲刺与就业辅导",
+            "meta": "第9周起 | 拿证就业",
+            "content": "<p>安排题库训练、考前串讲、简历优化、面试演练和岗位推荐等延伸服务。</p>",
+            "open": "no"
+          }
+        ],
+        "module_margin_top": "80px",
+        "module_margin_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "热门班型与费用",
+        "pricing_subtitle": "正式上线时替换成你的城市价格、开班周期和报名优惠",
+        "pricing_columns": "3",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "pricing_items": [
+          {
+            "name": "技能提升班",
+            "price": "¥1980",
+            "period": "/期起",
+            "desc": "适合已有基础、想补齐岗位技能的学员",
+            "features": "核心知识梳理\n线上录播回看\n阶段作业点评\n结课学习证明",
+            "btn_text": "咨询提升班",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "考证就业班",
+            "price": "¥3980",
+            "period": "/期起",
+            "desc": "适合目标明确、需要考证和就业辅导的学员",
+            "features": "理论课程\n实操训练\n题库冲刺\n简历与面试辅导\n证书报考提醒",
+            "btn_text": "咨询就业班",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "热门班型",
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #f59e0b 100%)"
+          },
+          {
+            "name": "企业内训班",
+            "price": "按需报价",
+            "period": "",
+            "desc": "适合企业团队技能提升、转岗培训和岗位认证",
+            "features": "企业需求访谈\n定制课程大纲\n线下/线上混合授课\n阶段考核报告\n团队学习数据复盘",
+            "btn_text": "预约内训方案",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从咨询到结课拿证",
+        "process_subtitle": "把招生、学习、实训、考证和就业辅导串成家长或学员能理解的路径",
+        "process_mode": "standard",
+        "module_bg_color": "#f8fafc",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "咨询测评",
+            "desc": "确认学习基础、目标岗位、证书需求、上课时间和预算范围。",
+            "stage_tag": "测评"
+          },
+          {
+            "icon": "02",
+            "title": "选择班型",
+            "desc": "根据目标匹配技能提升、考证就业、周末班、晚班或企业内训方案。",
+            "stage_tag": "班型"
+          },
+          {
+            "icon": "03",
+            "title": "理论与实训",
+            "desc": "完成课程学习、实操训练、阶段作业和老师点评，形成可追踪进度。",
+            "stage_tag": "学习"
+          },
+          {
+            "icon": "04",
+            "title": "考证就业支持",
+            "desc": "提供报考提醒、考前冲刺、简历优化、面试辅导和岗位推荐。",
+            "stage_tag": "转化"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "学员反馈",
+        "testimonials_subtitle": "用真实学习目标、课程体验和结果反馈降低报名顾虑",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "2600+",
+        "average_rating": "4.8",
+        "testimonials_bg_color": "#ffffff",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "王同学",
+            "position": "电工考证班",
+            "content": "实操课比自己看视频有效很多，老师会按考试要求拆动作细节。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-03-20",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "刘女士",
+            "position": "会计实操班",
+            "content": "从凭证到报表流程终于串起来了，结课后做账不再只会背概念。",
+            "rating": "5",
+            "source": "google",
+            "date": "2026-02-18",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "赵先生",
+            "position": "企业内训负责人",
+            "content": "课程按岗位任务做了定制，培训后还给了团队学习报告。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-01-28",
+            "verified": "verified"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "报名常见问题",
+        "faq_subtitle": "提前说明报名条件、上课方式、证书报考和就业支持，让咨询更高效",
+        "faq_items": [
+          {
+            "question": "零基础可以报名职业培训课程吗？",
+            "answer": "可以。建议先做入学测评，老师会根据基础、目标岗位和证书需求推荐适合的班型。"
+          },
+          {
+            "question": "课程是线上还是线下？",
+            "answer": "可按机构实际情况配置。常见方式包括线下面授、线上直播、录播回看和实训基地集中训练。"
+          },
+          {
+            "question": "培训后一定能拿证或就业吗？",
+            "answer": "证书和就业结果受个人基础、学习投入、考试政策和岗位市场影响。官网建议说明辅导范围，不承诺无法保证的结果。"
+          },
+          {
+            "question": "企业内训可以定制课程吗？",
+            "answer": "可以。可根据企业岗位能力模型、团队人数、培训周期和考核目标定制课程大纲与交付报告。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "先做一次课程测评，再决定适合哪种班型",
+        "cta_subtitle": "提交目标岗位、学习基础、可上课时间和证书需求，课程顾问会给出初步学习路径和班型建议。",
+        "cta_button_text": "预约课程测评",
+        "cta_button_url": "#",
+        "cta_button_bg_color": "#ffffff",
+        "cta_button_text_color": "#2563eb",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58",
+        "module_padding_top": "90px",
+        "module_padding_bottom": "90px"
+      }
+    }
+  ]
+}

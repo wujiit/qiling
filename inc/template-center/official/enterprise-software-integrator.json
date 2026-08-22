@@ -1,0 +1,291 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "企业软件/SI 集成商官网",
+  "page_template": "templates/template-enterprise-software-integrator.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "enterprise-software-integrator",
+    "label": "企业软件/SI 集成商官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "enterprise_software_integrator",
+    "industry_label": "企业软件/SI 集成商",
+    "scenario": "企业软件定制、系统集成、ERP/CRM/OA、数据中台、API 对接、项目交付、运维服务",
+    "description": "适合企业软件公司、SI 系统集成商、数字化转型服务商、ERP/CRM/OA 实施团队、数据中台和 API 集成服务商官网，内置集成能力、方案产品、案例、交付流程、FAQ 和咨询入口。",
+    "badges": [
+      "企业软件",
+      "系统集成",
+      "数字化转型"
+    ],
+    "order": 728,
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "企业软件 SI 集成商官网模板 - 系统集成与数字化项目咨询",
+    "description": "适合企业软件、系统集成、ERP、CRM、OA、数据中台、API 对接和数字化转型服务商的官网页面，包含能力介绍、方案产品、客户案例、交付流程、FAQ 和咨询表单。",
+    "keywords": "企业软件官网,SI集成商官网,系统集成,企业数字化,ERP实施,CRM实施,OA系统,数据中台,API对接",
+    "og_title": "企业软件/SI 集成商官网",
+    "og_description": "用集成能力、方案产品、交付流程和客户案例快速搭建企业软件集成商官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #e0f2fe 45%, #dcfce7 100%)",
+        "bb_title": "把企业系统、数据和流程<br><strong>集成成一张业务网</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)",
+        "bb_subtitle": "企业软件定制、系统集成与数字化项目交付官网方案",
+        "bb_desc": "围绕 ERP、CRM、OA、数据中台、API 对接、低代码流程和私有化部署，把技术能力、行业方案、客户案例和项目咨询入口组织成客户能快速判断的官网页面。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "提交项目需求",
+            "link": "#",
+            "style": "primary",
+            "icon": "项"
+          },
+          {
+            "text": "查看解决方案",
+            "link": "#",
+            "style": "light",
+            "icon": "案"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#2563eb",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#1d4ed8",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#eff6ff",
+        "bb_light_btn_hover_text_color": "#2563eb",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "企业级集成能力",
+        "features_subtitle": "从业务流程、数据治理到系统对接，减少信息孤岛和重复建设",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#dbeafe",
+        "features_icon_color": "#2563eb",
+        "features_items": [
+          {
+            "icon": "流",
+            "title": "业务流程梳理",
+            "desc": "把销售、交付、财务、采购、仓储和售后流程拆成可配置、可审计的系统流程。",
+            "link": "#"
+          },
+          {
+            "icon": "接",
+            "title": "系统接口集成",
+            "desc": "通过 API、Webhook、中间表和消息队列连接 ERP、CRM、OA、MES、WMS 和第三方平台。",
+            "link": "#"
+          },
+          {
+            "icon": "数",
+            "title": "数据治理与报表",
+            "desc": "统一主数据、指标口径和权限边界，让经营数据从报表走向可复盘决策。",
+            "link": "#"
+          },
+          {
+            "icon": "运",
+            "title": "私有化与运维",
+            "desc": "支持私有化部署、权限审计、日志监控、备份恢复、版本升级和长期技术支持。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "企业软件解决方案",
+        "products_subtitle": "SOFTWARE & INTEGRATION SOLUTIONS",
+        "columns": "4",
+        "modal_inquire_text": "咨询实施方案",
+        "modal_inquire_url": "#",
+        "modal_inquire_btn_bg_color": "#2563eb",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_hover_bg_color": "#1d4ed8",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
+            "title": "ERP/进销存集成",
+            "desc": "围绕采购、库存、销售、财务和生产业务打通核心经营链路。",
+            "specs": "场景：多组织、多仓库、多渠道\n能力：订单、库存、采购、财务对账\n集成：电商、WMS、MES、财务系统\n交付：流程梳理、数据迁移、权限配置",
+            "post_id": "",
+            "btn_text": "查看方案"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80",
+            "title": "CRM/客户成功系统",
+            "desc": "沉淀线索、商机、合同、回款、服务和客户生命周期管理。",
+            "specs": "场景：销售团队、售前、客服、客户成功\n能力：线索分配、商机阶段、合同回款\n集成：官网表单、企微、呼叫中心、工单\n交付：字段建模、流程自动化、看板配置",
+            "post_id": "",
+            "btn_text": "咨询配置"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+            "title": "数据中台与 BI 看板",
+            "desc": "统一数据口径，输出经营看板、部门报表和异常预警。",
+            "specs": "场景：老板驾驶舱、经营分析、项目复盘\n能力：ETL、指标口径、权限、报表订阅\n集成：数据库、SaaS、ERP、CRM、埋点数据\n交付：数据建模、看板设计、权限审计",
+            "post_id": "",
+            "btn_text": "看数据架构"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+            "title": "开放平台/API 网关",
+            "desc": "为合作伙伴、内部系统和移动端提供统一接口与安全接入。",
+            "specs": "场景：生态接入、移动应用、上下游协同\n能力：鉴权、限流、Webhook、调用日志\n集成：订单、商品、客户、库存、支付接口\n交付：接口文档、沙箱联调、上线审核",
+            "post_id": "",
+            "btn_text": "查看接口"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "企业数字化项目案例",
+        "cases_subtitle": "用行业、系统边界和交付结果说明集成价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
+            "title": "制造企业 ERP + WMS 集成",
+            "desc": "打通销售订单、生产计划、仓储出入库和财务对账，减少重复录入和库存差异。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80",
+            "title": "企业服务 CRM 项目",
+            "desc": "统一线索来源、销售阶段、合同回款和客户成功跟进，提升商机可视化管理。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+            "title": "集团经营数据驾驶舱",
+            "desc": "整合多系统数据，形成经营指标、部门看板和异常预警机制。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "系统集成项目交付流程",
+        "process_subtitle": "从业务调研到上线运维，控制需求变更和交付风险",
+        "process_mode": "standard",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "业务调研",
+            "desc": "梳理组织、角色、流程、数据、系统边界、接口清单和项目优先级。",
+            "stage_tag": "调研"
+          },
+          {
+            "icon": "02",
+            "title": "蓝图设计",
+            "desc": "输出流程蓝图、字段模型、权限方案、接口方案、里程碑和验收口径。",
+            "stage_tag": "设计"
+          },
+          {
+            "icon": "03",
+            "title": "开发联调",
+            "desc": "完成配置开发、数据迁移、接口联调、测试环境验证和关键用户培训。",
+            "stage_tag": "实施"
+          },
+          {
+            "icon": "04",
+            "title": "上线运维",
+            "desc": "完成上线切换、问题响应、运行监控、版本迭代和阶段复盘。",
+            "stage_tag": "运维"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "企业软件集成常见问题",
+        "faq_subtitle": "提前说明需求边界、接口联调、数据迁移和运维责任",
+        "faq_items": [
+          {
+            "question": "项目启动前需要准备哪些资料？",
+            "answer": "建议准备组织架构、业务流程、现有系统清单、账号权限、数据样例、接口文档、历史痛点、目标指标和预计上线时间。"
+          },
+          {
+            "question": "系统集成项目怎么控制需求变更？",
+            "answer": "建议在蓝图阶段明确范围、流程、字段、权限、接口和验收标准。新增需求进入变更清单，评估工期、费用和影响后再排期。"
+          },
+          {
+            "question": "旧系统数据可以迁移吗？",
+            "answer": "可以。需要先确认数据来源、字段口径、数据质量、清洗规则和迁移批次，关键数据建议先做试迁移和业务抽检。"
+          },
+          {
+            "question": "上线后是否提供长期运维？",
+            "answer": "可以展示版本升级、接口监控、故障响应、权限审计、备份恢复和二次开发服务，正式承诺按服务等级协议或运维合同约定。"
+          }
+        ],
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交企业软件集成需求",
+        "contact_subtitle": "填写行业、现有系统、集成目标、上线时间、预算范围和联系方式，解决方案顾问会协助判断实施路径。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "留学移民服务官网",
+  "page_template": "templates/template-study-abroad-immigration.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "education_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "study-abroad-immigration",
+    "label": "留学移民服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "study_abroad",
+    "industry_label": "留学移民",
+    "scenario": "留学规划、院校申请、签证材料、移民咨询、海外服务、预约评估",
+    "description": "适合留学中介、移民顾问、国际教育、海外升学规划和签证服务机构，内置首屏、国家方案、申请流程、案例入口、客户评价、FAQ 和预约评估入口。",
+    "badges": [
+      "中文高频",
+      "留学移民",
+      "预约评估"
+    ],
+    "order": 593,
+    "thumbnail": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "留学移民服务官网模板 - 院校申请与签证规划咨询",
+    "description": "适合留学申请、移民咨询、国际教育和签证服务机构的官网页面，包含国家方案、申请流程、成功案例、客户评价、FAQ 和预约评估入口。",
+    "keywords": "留学官网,移民服务官网,留学中介,院校申请,签证服务,海外升学规划,移民顾问",
+    "og_title": "留学移民服务官网",
+    "og_description": "用国家方案、申请流程和预约评估快速搭建留学移民服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 48%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=80",
+            "title": "从升学规划到签证落地，给家庭一条清晰路径",
+            "subtitle": "覆盖英美澳加、新加坡、欧洲和中国香港等热门方向，提供背景评估、院校定位、文书申请、签证材料和海外衔接服务。",
+            "btn_text": "预约免费评估",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1d4ed8"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "12年+",
+            "label": "规划申请经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "30+",
+            "label": "热门国家/地区",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "1v1",
+            "label": "顾问跟进",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "全流程",
+            "label": "材料进度管理",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "热门留学移民服务",
+        "services_subtitle": "围绕家庭决策、申请材料、签证风险和海外适应，拆成可理解的服务模块",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "留学申请规划",
+            "desc": "背景评估、国家选择、院校定位、专业建议和申请时间线规划。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "文书与材料指导",
+            "desc": "个人陈述、推荐信、简历、成绩材料和作品集方向协同准备。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "签证与入境服务",
+            "desc": "签证材料清单、资金证明建议、面签辅导和入境前准备。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "移民身份咨询",
+            "desc": "按家庭资产、职业背景、教育规划和长期居留目标评估路径。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从评估到入学落地",
+        "process_subtitle": "把复杂申请拆成清楚节点，让学生和家长知道每一步要准备什么",
+        "process_mode": "standard",
+        "module_bg_color": "#f8fafc",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "背景评估",
+            "desc": "梳理成绩、语言、专业、预算、家庭目标和时间窗口。",
+            "stage_tag": "评估"
+          },
+          {
+            "icon": "02",
+            "title": "方案定位",
+            "desc": "确定国家地区、院校梯度、专业方向、申请批次和备选路径。",
+            "stage_tag": "方案"
+          },
+          {
+            "icon": "03",
+            "title": "材料递交",
+            "desc": "推进文书、推荐信、成绩单、作品集、申请表和费用缴纳等事项。",
+            "stage_tag": "申请"
+          },
+          {
+            "icon": "04",
+            "title": "签证与行前",
+            "desc": "准备签证材料、住宿、保险、机票、入境提醒和海外适应清单。",
+            "stage_tag": "落地"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "申请案例与录取故事",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "220px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "学生与家长反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "1600+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "陈同学",
+            "position": "英国硕士申请",
+            "content": "顾问把院校梯度和时间线拆得很清楚，文书修改节奏也稳定。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林女士",
+            "position": "本科家长",
+            "content": "签证材料和行前清单帮我们避开了很多细节问题。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "周先生",
+            "position": "移民咨询客户",
+            "content": "先评估家庭目标和预算，再讲可行路径，没有一上来就推项目。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "留学移民常见问题",
+        "faq_subtitle": "提前说明申请周期、材料准备、签证风险和服务边界，降低首次咨询成本",
+        "faq_items": [
+          {
+            "question": "什么时候开始准备留学申请比较合适？",
+            "answer": "不同国家和阶段差异很大。一般建议至少提前 12 到 18 个月规划语言、成绩、活动、文书和资金证明等关键事项。"
+          },
+          {
+            "question": "没有明确目标国家怎么办？",
+            "answer": "可以先做背景评估，结合成绩、预算、专业目标、移民倾向和家庭偏好，筛选 2 到 3 条可比较路径。"
+          },
+          {
+            "question": "签证一定能通过吗？",
+            "answer": "任何机构都不能保证签证结果。专业服务能帮助你整理真实、完整、逻辑一致的材料，并提前识别资金、学习目的和入境风险。"
+          },
+          {
+            "question": "移民咨询和留学申请可以一起规划吗？",
+            "answer": "可以。很多家庭会把升学、毕业后工签、就业机会和长期居留路径一起评估，但需要按国家政策和个人背景动态调整。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约留学移民初步评估",
+        "booking_subtitle": "提交目标国家、学历阶段、成绩背景、预算范围和计划时间，顾问会给出初步路径建议。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "评估前建议准备",
+        "sidebar_content": "请准备成绩单、语言成绩或目标考试计划\n说明目标国家、专业方向和预算范围\n如涉及移民，请同步说明家庭成员和长期居留目标",
+        "contact_phone": "400-920-2026",
+        "contact_hours": "09:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "民宿官网",
+  "page_template": "templates/template-homestay.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "homestay",
+    "label": "民宿官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "hospitality",
+    "industry_label": "酒店民宿",
+    "scenario": "房型展示、设施介绍、在线预订",
+    "description": "适合民宿、精品酒店、度假庄园和客栈官网，内置房型、设施、相册、评价和预订入口。",
+    "badges": [
+      "房型展示",
+      "在线预订"
+    ],
+    "order": 481,
+    "thumbnail": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "民宿官网模板 - 房型展示与在线预订",
+    "description": "适合民宿、精品酒店和度假庄园的官网页面，包含房型展示、设施服务、环境相册、住客评价和在线预订。",
+    "keywords": "民宿官网,精品酒店,房型展示,在线预订",
+    "og_title": "民宿官网",
+    "og_description": "带房型图片、设施和预订入口的民宿官网模板。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #0369a1 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80",
+            "title": "把假期交给一间舒服的房子",
+            "subtitle": "山景、庭院、亲子与情侣房型，支持在线查询和预订。",
+            "btn_text": "查看房型",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0369a1"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "12",
+            "number": "12间",
+            "label": "精选客房",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4",
+            "number": "4类",
+            "label": "主题房型",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "住客评分",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "24",
+            "number": "24h",
+            "label": "管家响应",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "room-showcase",
+      "data": {
+        "room_title": "精选房型",
+        "room_subtitle": "按入住人数、景观和预算选择适合的房间",
+        "room_columns": "3",
+        "room_card_style": "standard",
+        "room_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+            "name": "庭院大床房",
+            "area": "42㎡",
+            "bed_type": "king",
+            "capacity": "2人",
+            "price": "¥688",
+            "original_price": "¥888",
+            "badge": "recommend",
+            "amenities": "icon-wifi|免费 WiFi\nicon-coffee|早餐\nicon-parking|免费停车",
+            "desc": "独立庭院和舒适大床，适合情侣和短途度假。",
+            "btn_text": "立即预订",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
+            "name": "山景套房",
+            "area": "58㎡",
+            "bed_type": "king",
+            "capacity": "2-3人",
+            "price": "¥988",
+            "original_price": "¥1288",
+            "badge": "luxury",
+            "amenities": "icon-wifi|免费 WiFi\nicon-mountain|山景阳台\nicon-bath|浴缸",
+            "desc": "带山景阳台和独立浴缸，适合纪念日和慢旅行。",
+            "btn_text": "立即预订",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
+            "name": "亲子家庭房",
+            "area": "65㎡",
+            "bed_type": "family",
+            "capacity": "3-4人",
+            "price": "¥1188",
+            "original_price": "¥1488",
+            "badge": "recommend",
+            "amenities": "icon-wifi|免费 WiFi\nicon-kids|儿童用品\nicon-breakfast|早餐",
+            "desc": "多床布局和儿童用品，适合家庭出游。",
+            "btn_text": "立即预订",
+            "btn_link": "#"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "hotel-amenities",
+      "data": {
+        "amenity_title": "配套设施",
+        "amenity_subtitle": "让入住体验从到店前就更明确",
+        "amenity_columns": "4",
+        "amenity_layout": "card",
+        "amenity_items": [
+          {
+            "icon": "icon-breakfast",
+            "fallback_image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80",
+            "name": "在地早餐",
+            "desc": "每日提供本地食材早餐",
+            "time": "08:00-10:00"
+          },
+          {
+            "icon": "icon-coffee",
+            "fallback_image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
+            "name": "咖啡休息区",
+            "desc": "公共区域可阅读和休息",
+            "time": "全天"
+          },
+          {
+            "icon": "icon-parking",
+            "fallback_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80",
+            "name": "免费停车",
+            "desc": "自驾游客可提前预留车位",
+            "time": "全天"
+          },
+          {
+            "icon": "icon-service",
+            "fallback_image": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=600&q=80",
+            "name": "管家服务",
+            "desc": "路线、餐饮和活动建议",
+            "time": "09:00-22:00"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "民宿环境",
+        "gallery_subtitle": "从房间到公共空间，提前感受入住氛围",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "enable_filter": "yes",
+        "filter_categories": "客房,庭院,餐饮",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+            "title": "庭院大床房",
+            "desc": "安静舒适",
+            "category": "客房"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+            "title": "户外庭院",
+            "desc": "自然景观",
+            "category": "庭院"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80",
+            "title": "在地早餐",
+            "desc": "本地食材",
+            "category": "餐饮"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "住客评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "5,600+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "周女士",
+            "position": "亲子入住",
+            "content": "房间干净，管家推荐的周边路线很适合带孩子。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林先生",
+            "position": "情侣度假",
+            "content": "山景房视野很好，晚上很安静。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "陈女士",
+            "position": "朋友出游",
+            "content": "公共空间舒服，早餐也很有当地特色。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "在线预订",
+        "booking_subtitle": "提交入住日期、人数和房型偏好，管家会确认可订情况。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预订须知",
+        "sidebar_content": "入住时间 14:00 后，退房时间 12:00 前\n节假日价格以确认结果为准\n可在表单里备注接送、早餐和亲子需求",
+        "contact_phone": "400-520-1314",
+        "contact_hours": "08:00-23:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "预订常见问题",
+        "module_bg_color": "#f8fafc",
+        "faq_items": [
+          {
+            "question": "是否支持加床或亲子用品？",
+            "answer": "可在预订备注中说明，管家会根据房型和库存确认。"
+          },
+          {
+            "question": "价格会随节假日变化吗？",
+            "answer": "节假日和旺季价格可能调整，建议通过预订表单或电话确认。"
+          },
+          {
+            "question": "可以接入真实预订表单吗？",
+            "answer": "可以，预订入口模块可填写 qiling-forms 表单 ID，对接实际预约流程。"
+          }
+        ]
+      }
+    }
+  ]
+}

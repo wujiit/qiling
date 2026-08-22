@@ -1,0 +1,243 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "工业机器人/自动化官网",
+  "page_template": "templates/template-industrial-automation-robotics.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "industrial-automation-robotics",
+    "label": "工业机器人/自动化官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "industrial_automation_robotics",
+    "industry_label": "工业机器人/自动化",
+    "scenario": "工业机器人、自动化产线、系统集成、设备选型、项目案例、资料下载",
+    "description": "适合工业机器人厂商、自动化设备商、系统集成商、智能工厂服务商和产线改造团队官网，内置机器人产品、整线集成、运行视频、项目案例、资料下载和方案咨询入口。",
+    "badges": [
+      "工业机器人",
+      "自动化产线",
+      "智能制造"
+    ],
+    "order": 721,
+    "thumbnail": "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  },
+  "seo": {
+    "title": "工业机器人自动化官网模板 - 智能制造与产线集成",
+    "description": "适合工业机器人、自动化设备、柔性产线、机器视觉、智能工厂和系统集成商的官网页面，包含产品中心、整线方案、案例、视频、资料下载和咨询表单。",
+    "keywords": "工业机器人官网,自动化官网,智能制造,系统集成,柔性产线,机器视觉,自动化设备,产线改造",
+    "og_title": "工业机器人/自动化官网",
+    "og_description": "用机器人产品、整线方案和运行视频快速搭建自动化官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #dbeafe 45%, #fef3c7 100%)",
+        "bb_title": "从单机机器人到整线集成<br><strong>让产线更稳定</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #1d4ed8 0%, #f59e0b 100%)",
+        "bb_subtitle": "工业机器人与自动化集成官网方案",
+        "bb_desc": "围绕上下料、焊接、搬运、码垛、视觉检测、柔性输送和整线改造，把设备能力、调试经验、项目案例和方案咨询入口组织成客户能快速判断的官网页面。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "提交产线需求",
+            "link": "#",
+            "style": "primary",
+            "icon": "臂"
+          },
+          {
+            "text": "查看设备选型",
+            "link": "#",
+            "style": "light",
+            "icon": "线"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#1d4ed8",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#1e40af",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#eff6ff",
+        "bb_light_btn_hover_text_color": "#1d4ed8",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "机器人与自动化产品线",
+        "products_subtitle": "ROBOTICS CATALOG",
+        "columns": "4",
+        "modal_inquire_text": "咨询设备选型",
+        "modal_inquire_url": "#",
+        "modal_inquire_btn_bg_color": "#1d4ed8",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_hover_bg_color": "#1e40af",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "items": [
+          {
+            "image": "https://images.pexels.com/photos/34207359/pexels-photo-34207359.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "六轴工业机器人",
+            "desc": "适用于搬运、上下料、焊接、打磨和装配等标准工位。",
+            "specs": "负载：6kg / 12kg / 25kg\n臂展：900mm ~ 1800mm\n重复定位：±0.03mm\n交付：本体、控制柜、夹具与调试服务",
+            "post_id": "",
+            "btn_text": "查看型号"
+          },
+          {
+            "image": "https://images.pexels.com/photos/34194567/pexels-photo-34194567.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "高速分拣机器人",
+            "desc": "面向食品、医药、3C 和轻工包装的高速抓取与分拣。",
+            "specs": "结构：Delta / SCARA\n节拍：最高 120 次/分钟\n识别：视觉定位与来料追踪\n接口：PLC、MES、扫码系统联动",
+            "post_id": "",
+            "btn_text": "获取方案"
+          },
+          {
+            "image": "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "机器视觉检测单元",
+            "desc": "用于尺寸检测、缺陷识别、字符读取和装配防错。",
+            "specs": "相机：面阵 / 线扫 / 3D\n光源：环形、条形、背光、同轴\n算法：定位、测量、缺陷分类\n输出：OK/NG、报表、追溯图片",
+            "post_id": "",
+            "btn_text": "看检测项"
+          },
+          {
+            "image": "https://images.pexels.com/photos/34207359/pexels-photo-34207359.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "柔性自动化工作站",
+            "desc": "围绕工装夹具、输送、机器人和安全围栏配置可复制工位。",
+            "specs": "组成：机器人、输送线、夹具、传感器\n控制：PLC、HMI、伺服、气动\n安全：光栅、门锁、急停、围栏\n服务：设计、装配、调试、验收",
+            "post_id": "",
+            "btn_text": "咨询工位"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image_text",
+      "data": {
+        "image_text_layout": "right",
+        "image_text_image": "https://images.pexels.com/photos/34194567/pexels-photo-34194567.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image_text_title": "从单机设备到整线自动化集成",
+        "image_text_subtitle": "先理解现场节拍、工艺和良率，再配置机器人、视觉、输送和控制系统。",
+        "image_text_content": "<p>工业自动化项目不是简单堆设备。页面默认按客户最关心的产能、节拍、占地、人员替代、良率提升和回本周期组织说明。</p><ul><li>现场评估：梳理工艺流程、瓶颈工位、来料状态和上下游接口。</li><li>方案设计：输出设备布局、节拍测算、安全边界、预算和实施周期。</li><li>交付验收：完成装配调试、试运行、培训、备件清单和验收文档。</li></ul>",
+        "image_text_button": "预约现场评估",
+        "image_text_url": "#",
+        "image_text_btn_bg_color": "#1d4ed8",
+        "image_text_btn_text_color": "#ffffff",
+        "image_text_btn_hover_bg_color": "#1e40af",
+        "image_text_btn_hover_text_color": "#ffffff",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "自动化项目案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "220px",
+        "cases_padding_top": "80px",
+        "cases_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "video",
+      "data": {
+        "video_title": "产线调试与设备运行视频",
+        "video_subtitle": "用运行画面展示机器人节拍、动作稳定性和安全边界",
+        "video_bg_color": "#f8fafc",
+        "video_width": "100%",
+        "video_height": "520px",
+        "video_url": "https://videos.pexels.com/video-files/32386522/13814785_3840_2160_50fps.mp4",
+        "video_poster": "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "方案资料与评估清单",
+        "downloads_subtitle": "把设备选型、现场评估和项目验收资料集中给客户下载",
+        "downloads_bg_color": "#ffffff",
+        "downloads_columns": "3",
+        "downloads_btn_bg_color": "#1d4ed8",
+        "downloads_btn_text_color": "#ffffff",
+        "downloads_btn_hover_bg_color": "#1e40af",
+        "downloads_btn_hover_text_color": "#ffffff",
+        "downloads_items": [
+          {
+            "title": "工业机器人选型手册",
+            "size": "Catalog",
+            "file": "#",
+            "icon": "臂",
+            "format": "PDF",
+            "date": "2026-04-25",
+            "btn_text": "下载手册",
+            "description": "按负载、臂展、重复定位、应用场景和末端夹具整理常见型号选型口径。"
+          },
+          {
+            "title": "产线自动化评估表",
+            "size": "Checklist",
+            "file": "#",
+            "icon": "表",
+            "format": "XLSX",
+            "date": "2026-04-25",
+            "btn_text": "查看评估表",
+            "description": "用于收集产能、节拍、人员、良率、场地、供电气源、安全要求和预算范围。"
+          },
+          {
+            "title": "项目验收与培训清单",
+            "size": "Runbook",
+            "file": "#",
+            "icon": "验",
+            "format": "DOC",
+            "date": "2026-04-25",
+            "btn_text": "获取清单",
+            "description": "包含 FAT/SAT、试运行、备件、操作培训、维护计划和交付文档目录。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交产线自动化需求",
+        "contact_subtitle": "填写行业、工艺流程、当前产能、目标节拍、现场空间和预算范围，工程顾问会给出初步改造建议。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

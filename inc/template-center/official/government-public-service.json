@@ -1,0 +1,284 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "政务/公共机构官网",
+  "page_template": "templates/template-government-public-service.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "law_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "government-public-service",
+    "label": "政务/公共机构官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "government",
+    "industry_label": "政务机构",
+    "scenario": "机构介绍、服务事项、公开信息",
+    "description": "适合公共机构、园区服务中心、协会机构和政务服务类官网，内置服务事项、流程说明、公开信息、FAQ 和联系入口。",
+    "badges": [
+      "公共服务",
+      "事项办理"
+    ],
+    "order": 660,
+    "thumbnail": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "政务公共机构官网模板 - 服务事项与公开信息",
+    "description": "适合政务公共机构和园区服务中心的官网页面，包含机构介绍、服务事项、办理流程、公开信息、FAQ 和联系入口。",
+    "keywords": "政务官网,公共机构官网,服务事项,园区服务,政务公开",
+    "og_title": "政务/公共机构官网",
+    "og_description": "用服务事项、办理流程和公开信息快速搭建公共机构官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80",
+            "title": "让公共服务更清晰、更便捷",
+            "subtitle": "机构介绍、服务事项、办理流程和联系方式集中展示，降低公众查询成本。",
+            "btn_text": "查看服务事项",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1e40af"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "24h",
+            "number": "24h",
+            "label": "线上咨询",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "30",
+            "number": "30+",
+            "label": "服务事项",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "6",
+            "number": "6类",
+            "label": "服务对象",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "1",
+            "number": "一站式",
+            "label": "流程指引",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "常用服务事项",
+        "services_subtitle": "按公众、企业、机构和园区用户组织服务入口",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "业务咨询",
+            "desc": "提供政策、流程和材料准备说明。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "事项办理",
+            "desc": "展示办理条件、材料清单和办理方式。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "园区服务",
+            "desc": "企业入驻、空间申请和配套服务指引。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "公开信息",
+            "desc": "机构动态、公开文件和联系方式汇总。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "事项办理流程",
+        "process_subtitle": "把准备材料、提交方式和办理反馈讲清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "查看指南",
+            "desc": "确认服务对象、办理条件和材料清单。",
+            "stage_tag": "指南"
+          },
+          {
+            "icon": "02",
+            "title": "提交材料",
+            "desc": "按线上或线下要求提交申请资料。",
+            "stage_tag": "提交"
+          },
+          {
+            "icon": "03",
+            "title": "受理审核",
+            "desc": "工作人员按事项规则进行受理和反馈。",
+            "stage_tag": "审核"
+          },
+          {
+            "icon": "04",
+            "title": "结果反馈",
+            "desc": "获取办理结果、补正意见或后续指引。",
+            "stage_tag": "反馈"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "服务运行数据",
+        "stats_subtitle": "用公开数据说明服务范围和响应效率",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "30+",
+            "label": "服务事项"
+          },
+          {
+            "number": "12个",
+            "label": "服务窗口"
+          },
+          {
+            "number": "3日",
+            "label": "平均反馈周期"
+          },
+          {
+            "number": "98%",
+            "label": "咨询响应率"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见事项问题",
+        "faq_subtitle": "集中回答公众和企业常见疑问",
+        "faq_items": [
+          {
+            "question": "办理事项需要哪些材料？",
+            "answer": "不同事项材料不同，建议先查看对应事项指南，再按清单准备。"
+          },
+          {
+            "question": "是否支持线上咨询？",
+            "answer": "可通过页面表单、电话或指定线上渠道提交咨询，具体以机构安排为准。"
+          },
+          {
+            "question": "办理进度如何查询？",
+            "answer": "请保留申请编号或联系方式，工作人员会按事项流程反馈办理进度。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "服务窗口与联系点",
+        "branches_subtitle": "展示线下窗口、办公时间和服务范围",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看位置",
+        "booking_button_text": "咨询事项",
+        "branches_list": [
+          {
+            "name": "综合服务窗口",
+            "city": "主城区",
+            "status": "open",
+            "address": "示例大道 100 号公共服务中心",
+            "phone": "010-60000001",
+            "email": "service@example.gov",
+            "hours": "09:00-17:00",
+            "services": "咨询,受理,反馈",
+            "transport": "公共交通便利",
+            "lat": "39.9042",
+            "lng": "116.4074",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "企业服务窗口",
+            "city": "园区",
+            "status": "open",
+            "address": "示例园区服务中心 2 楼",
+            "phone": "010-60000002",
+            "email": "business@example.gov",
+            "hours": "09:00-17:00",
+            "services": "企业咨询,入驻服务",
+            "transport": "近园区主路",
+            "lat": "39.9841",
+            "lng": "116.3074",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "便民服务点",
+            "city": "社区",
+            "status": "open",
+            "address": "示例社区党群服务中心",
+            "phone": "010-60000003",
+            "email": "community@example.gov",
+            "hours": "09:00-17:00",
+            "services": "便民咨询,资料指引",
+            "transport": "社区步行可达",
+            "lat": "39.9142",
+            "lng": "116.3974",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "联系公共服务窗口",
+        "contact_subtitle": "提交咨询事项、服务对象、所在区域和联系方式，工作人员会按流程反馈。",
+        "contact_phone": "010-6000-2026",
+        "contact_email": "service@example.gov",
+        "contact_address": "示例大道 100 号公共服务中心",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

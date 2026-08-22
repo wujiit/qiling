@@ -1,0 +1,368 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "产品品牌官网",
+  "page_template": "templates/template-ai-product-brand.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "ai-product-brand",
+    "label": "产品品牌官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "technology",
+    "scenario": "AI 产品品牌官网",
+    "description": "适合 AI 产品、Agent 平台、智能工具和企业级 AI 服务。",
+    "badges": [
+      "AI",
+      "SaaS"
+    ],
+    "order": 310,
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "产品品牌官网模板 - 启灵官方页面包",
+    "description": "适合 AI 产品、Agent 平台、智能工具和企业级 AI 服务。",
+    "keywords": "产品品牌官网,AI 产品品牌官网,AI,SaaS",
+    "og_title": "产品品牌官网",
+    "og_description": "适合 AI 产品、Agent 平台、智能工具和企业级 AI 服务。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "gradient",
+        "db_bg_gradient": "linear-gradient(135deg, #0b1020 0%, #1d4ed8 45%, #0ea5e9 100%)",
+        "db_title_prefix": "产品品牌官网",
+        "db_typing_mode": "loop",
+        "db_typing_text": "多场景 AI Agent 工作流\n企业级知识问答与自动化协作\n从 PoC 到生产快速落地",
+        "db_highlight_color": "#67e8f9",
+        "db_title_color": "#e2e8f0",
+        "db_subtitle": "围绕增长、效率与稳定性，构建可持续迭代的 AI 产品体系。",
+        "db_desc": "该模板已内置品牌官网常用区块：能力介绍、实施流程、案例、客户评价、合规信任与转化入口。",
+        "db_text_color": "rgba(226,232,240,0.88)",
+        "db_buttons": [
+          {
+            "text": "申请产品演示",
+            "link": "#contact-section",
+            "style": "primary",
+            "icon": "🚀"
+          },
+          {
+            "text": "查看能力清单",
+            "link": "#features-section",
+            "style": "outline",
+            "icon": "🧠"
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "",
+        "db_image_shadow": "soft",
+        "db_floating_cards": [
+          {
+            "content_type": "badge",
+            "title": "支持私有化部署",
+            "pos_top": "8%",
+            "pos_right": "-2%",
+            "animation": "float",
+            "delay": "0s"
+          },
+          {
+            "content_type": "badge",
+            "title": "分钟级迭代发布",
+            "pos_bottom": "10%",
+            "pos_left": "-4%",
+            "animation": "pulse",
+            "delay": "0.4s"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "title": "AI 核心能力矩阵",
+        "subtitle": "覆盖模型接入、数据治理、应用编排与运维保障",
+        "columns": "3",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "tabs": [
+          {
+            "tab_id": "ai_engine",
+            "tab_title": "AI 引擎",
+            "tab_icon": "🧠",
+            "features": "🤖|多模型接入|统一接入主流大模型，支持策略路由与回退\n🧩|Prompt工程|提示词版本化管理，支持灰度与A/B测试\n⚙️|工具调用|函数调用与外部系统连接，打通业务流程"
+          },
+          {
+            "tab_id": "data_layer",
+            "tab_title": "数据层",
+            "tab_icon": "📚",
+            "features": "📖|知识库检索|文档切片、向量检索与语义召回一体化\n🔒|权限隔离|按组织、部门、角色进行数据访问控制\n🧹|数据治理|内容清洗、标注与更新策略可配置"
+          },
+          {
+            "tab_id": "ops",
+            "tab_title": "可观测运维",
+            "tab_icon": "📈",
+            "features": "📊|调用监控|时延、成本、成功率实时可视化\n🛡️|安全防护|敏感词过滤、越权检测与审计追踪\n🚀|弹性伸缩|高峰流量自动扩容，保障稳定交付"
+          }
+        ]
+      }
+    },
+    {
+      "type": "service_cards",
+      "data": {
+        "sc_bg_color": "#f8fafc",
+        "sc_padding": "72",
+        "sc_columns": "4",
+        "sc_gap": "20px",
+        "sc_card_bg": "#ffffff",
+        "sc_icon_bg": "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
+        "sc_cards": [
+          {
+            "icon": "🧪",
+            "title": "PoC快速验证",
+            "badge": "2-4周",
+            "description": "聚焦单场景验证价值，快速建立可量化成果。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "🏗️",
+            "title": "平台化建设",
+            "badge": "标准化",
+            "description": "搭建统一AI中台，支持多业务线复用。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "🔄",
+            "title": "业务流程自动化",
+            "badge": "高效率",
+            "description": "将高频任务转为自动执行，提升团队产能。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "🎯",
+            "title": "持续优化运营",
+            "badge": "闭环",
+            "description": "基于数据反馈持续优化模型效果与交互体验。",
+            "url": "#",
+            "target": "_self"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "项目落地流程",
+        "process_subtitle": "从业务目标到线上运营的标准化实施路径",
+        "process_mode": "standard",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "业务诊断",
+            "stage_tag": "梳理",
+            "desc": "识别高价值场景、核心指标与现有流程瓶颈。"
+          },
+          {
+            "icon": "02",
+            "title": "方案设计",
+            "stage_tag": "设计",
+            "desc": "完成模型策略、数据方案与交互流程设计。"
+          },
+          {
+            "icon": "03",
+            "title": "开发集成",
+            "stage_tag": "实施",
+            "desc": "打通业务系统与AI能力，进行联调与压测。"
+          },
+          {
+            "icon": "04",
+            "title": "上线运营",
+            "stage_tag": "优化",
+            "desc": "按业务反馈持续优化效果、成本与稳定性。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "AI 实战案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "220px",
+        "cases_padding_top": "80px",
+        "cases_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户反馈",
+        "testimonials_subtitle": "来自产品、运营与技术团队的一线评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "120+",
+        "average_rating": "4.9",
+        "testimonials_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "testimonials_items": [
+          {
+            "avatar": "",
+            "name": "陈总监",
+            "position": "某零售品牌 · 数字化负责人",
+            "content": "上线 2 个月后，客服工单分流率和首响效率显著提升。",
+            "rating": "5",
+            "source": "企业客户"
+          },
+          {
+            "avatar": "",
+            "name": "吴经理",
+            "position": "某SaaS公司 · 产品经理",
+            "content": "模板化交付能力很强，内部多团队可以快速复用。",
+            "rating": "5",
+            "source": "SaaS 团队"
+          },
+          {
+            "avatar": "",
+            "name": "赵架构师",
+            "position": "某金融科技公司 · 技术负责人",
+            "content": "在稳定性和权限隔离方面达到了企业级要求。",
+            "rating": "5",
+            "source": "技术团队"
+          }
+        ]
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "ct_title": "安全与合规能力",
+        "ct_subtitle": "通过标准化控制体系与持续审计，确保企业数据安全与服务可靠。",
+        "ct_layout": "grid",
+        "ct_columns": "3",
+        "ct_enable_filter": "yes",
+        "ct_card_style": "solid",
+        "ct_accent_color": "#2563eb",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "ct_items": [
+          {
+            "icon": "🛡️",
+            "title": "SOC 2 Type II",
+            "short_name": "SOC2",
+            "category": "安全控制",
+            "status": "active",
+            "issuer": "第三方审计机构",
+            "scope": "平台应用与运维流程",
+            "valid_until": "年度滚动审计",
+            "description": "覆盖访问控制、变更管理和日志审计等关键控制项。",
+            "report_url": "#",
+            "report_text": "查看审计说明"
+          },
+          {
+            "icon": "🔐",
+            "title": "ISO/IEC 27001",
+            "short_name": "ISO27001",
+            "category": "信息安全",
+            "status": "active",
+            "issuer": "国际认证机构",
+            "scope": "信息安全管理体系",
+            "valid_until": "2028-12-31",
+            "description": "基于风险评估构建安全管理体系并持续改进。",
+            "report_url": "#",
+            "report_text": "查看认证范围"
+          },
+          {
+            "icon": "🌍",
+            "title": "GDPR",
+            "short_name": "GDPR",
+            "category": "隐私合规",
+            "status": "active",
+            "issuer": "法务与合规团队",
+            "scope": "欧盟用户数据处理流程",
+            "valid_until": "持续监测",
+            "description": "支持数据主体权利响应与跨境处理合规流程。",
+            "report_url": "#",
+            "report_text": "查看隐私承诺"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见问题",
+        "faq_subtitle": "关于部署、数据和计费的高频问题说明",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "faq_items": [
+          {
+            "question": "是否支持私有化部署？",
+            "answer": "支持私有化和专有云部署，可根据企业安全策略定制方案。"
+          },
+          {
+            "question": "能否对接现有业务系统？",
+            "answer": "支持通过 API/Webhook 与 CRM、工单、OA 等系统集成。"
+          },
+          {
+            "question": "如何保障模型输出稳定性？",
+            "answer": "提供多模型路由、提示词版本管理、监控告警和回退机制。"
+          },
+          {
+            "question": "是否提供实施与培训服务？",
+            "answer": "提供从方案设计到上线运营的实施陪跑与团队培训。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约 AI 方案咨询",
+        "contact_subtitle": "提交需求后，我们会在 1 个工作日内联系你。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备把 AI 能力真正跑进业务？",
+        "cta_subtitle": "从场景诊断到上线运营，我们帮助你更快获得可量化增长。",
+        "cta_button_text": "立即预约演示",
+        "cta_button_url": "#contact-section",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #0b1020 0%, #1e3a8a 100%)",
+        "module_padding_top": "96px",
+        "module_padding_bottom": "96px"
+      }
+    }
+  ]
+}

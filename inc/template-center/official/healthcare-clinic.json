@@ -1,0 +1,244 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "医疗健康机构官网",
+  "page_template": "templates/template-healthcare-clinic.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "healthcare-clinic",
+    "label": "医疗健康机构官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "healthcare",
+    "industry_label": "医疗健康",
+    "scenario": "科室服务、专家介绍、预约咨询",
+    "description": "适合综合门诊、专科机构、体检中心、健康管理和医疗服务品牌官网，内置科室服务、专家信任、就诊流程、评价和预约入口。",
+    "badges": [
+      "医疗健康",
+      "预约咨询"
+    ],
+    "order": 620,
+    "thumbnail": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "医疗健康机构官网模板 - 科室服务与预约咨询",
+    "description": "适合医疗健康机构和体检中心的官网页面，包含科室服务、专家信任、就诊流程、客户评价、FAQ 和预约入口。",
+    "keywords": "医疗官网,健康机构,体检中心,门诊官网,预约咨询",
+    "og_title": "医疗健康机构官网",
+    "og_description": "用科室服务、专家信任和预约入口快速搭建医疗健康机构官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.55",
+        "db_title_prefix": "让专业健康服务更好预约",
+        "db_typing_mode": "loop",
+        "db_typing_text": "专科门诊与健康管理\n体检筛查与长期随访\n清晰流程、安心就诊",
+        "db_highlight_color": "#bbf7d0",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "面向患者、家庭和企业客户，展示科室服务、专家团队和预约流程。",
+        "db_desc": "适合门诊机构、体检中心、健康管理中心和专科医疗服务品牌。",
+        "db_text_color": "rgba(248,250,252,0.88)",
+        "db_buttons": [
+          {
+            "text": "预约咨询",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看服务项目",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "核心健康服务",
+        "services_subtitle": "按人群、场景和就诊需求组织服务入口",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "专科门诊",
+            "desc": "围绕常见疾病和专科问题提供诊疗建议。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "健康体检",
+            "desc": "基础体检、专项筛查和企业体检方案。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "慢病管理",
+            "desc": "长期随访、指标监测和生活方式指导。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "企业健康",
+            "desc": "员工体检、健康讲座和职业健康支持。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "机构服务数据",
+        "stats_subtitle": "用服务规模和响应效率建立初步信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "30+",
+            "label": "专业医护团队"
+          },
+          {
+            "number": "12项",
+            "label": "重点服务项目"
+          },
+          {
+            "number": "48h",
+            "label": "报告解读响应"
+          },
+          {
+            "number": "4.8",
+            "label": "服务满意评分"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "预约就诊流程",
+        "process_subtitle": "让首次访问用户清楚知道下一步该做什么",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "在线预约",
+            "desc": "选择服务项目、到诊时间和联系方式。",
+            "stage_tag": "预约"
+          },
+          {
+            "icon": "02",
+            "title": "客服确认",
+            "desc": "确认医生档期、资料准备和注意事项。",
+            "stage_tag": "确认"
+          },
+          {
+            "icon": "03",
+            "title": "到院服务",
+            "desc": "按预约时间完成问诊、检查或咨询。",
+            "stage_tag": "服务"
+          },
+          {
+            "icon": "04",
+            "title": "报告随访",
+            "desc": "提供报告解读、复诊建议和随访提醒。",
+            "stage_tag": "随访"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "患者与客户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "1200+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "刘女士",
+            "position": "体检客户",
+            "content": "预约和报告解读都比较清楚，复查建议也很具体。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "王先生",
+            "position": "企业行政负责人",
+            "content": "员工体检安排顺畅，现场引导和报告交付都比较稳定。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "陈女士",
+            "position": "健康管理客户",
+            "content": "随访提醒很及时，指标变化能被持续关注。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见预约问题",
+        "faq_subtitle": "提前说明就诊前最常见的信息",
+        "faq_items": [
+          {
+            "question": "是否需要提前预约？",
+            "answer": "建议提前预约，以便确认医生档期、服务项目和到诊时间。"
+          },
+          {
+            "question": "体检前需要注意什么？",
+            "answer": "不同项目要求不同，预约确认时会说明空腹、用药和资料准备事项。"
+          },
+          {
+            "question": "报告如何获取？",
+            "answer": "可按机构流程领取纸质报告或电子报告，并预约报告解读服务。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约健康咨询",
+        "booking_subtitle": "提交服务项目、期望时间和联系方式，顾问会确认预约安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约提示",
+        "sidebar_content": "请填写真实联系方式和期望时间\n如有既往报告可在表单备注说明\n具体诊疗以医生面诊意见为准",
+        "contact_phone": "400-168-2026",
+        "contact_hours": "08:30-18:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

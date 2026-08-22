@@ -1,0 +1,107 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "视频首屏页面",
+  "page_template": "templates/template-video-hero.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "video-hero",
+    "label": "视频首屏页面",
+    "category": "conversion",
+    "category_label": "落地页/转化",
+    "industry": "enterprise",
+    "scenario": "视频首屏页",
+    "description": "适合品牌大片、活动首屏和高视觉冲击的转化入口。",
+    "badges": [
+      "视频",
+      "首屏"
+    ],
+    "order": 230,
+    "thumbnail": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "视频首屏页面模板 - 启灵官方页面包",
+    "description": "适合品牌大片、活动首屏和高视觉冲击的转化入口。",
+    "keywords": "视频首屏页面,视频首屏页,视频,首屏",
+    "og_title": "视频首屏页面",
+    "og_description": "适合品牌大片、活动首屏和高视觉冲击的转化入口。"
+  },
+  "modules": [
+    {
+      "type": "fullscreen_video",
+      "data": {
+        "fsv_title": "启灵主题 · <strong>超乎想象</strong>",
+        "fsv_subtitle": "极速开发 · 优雅设计 · 极致体验",
+        "fsv_glow_intensity": "medium",
+        "fsv_overlay_opacity": "0.3",
+        "fsv_nav_items": [
+          {
+            "item_label": "快速入门",
+            "item_icon": "🚀",
+            "item_type": "link",
+            "item_link": "#"
+          },
+          {
+            "item_label": "功能特性",
+            "item_icon": "⚡",
+            "item_type": "link",
+            "item_link": "#"
+          },
+          {
+            "item_label": "扫码体验",
+            "item_icon": "📱",
+            "item_type": "qr",
+            "item_qr_desc": "扫码查看移动端",
+            "item_qr": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "核心优势",
+        "features_subtitle": "为什么选择启灵主题？",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "⚡",
+            "title": "极致性能",
+            "desc": "底层代码优化，秒开体验"
+          },
+          {
+            "icon": "📱",
+            "title": "全端适配",
+            "desc": "完美兼容手机、平板和PC"
+          },
+          {
+            "icon": "🛡️",
+            "title": "安全稳定",
+            "desc": "企业级安全防护标准"
+          },
+          {
+            "icon": "🔄",
+            "title": "持续更新",
+            "desc": "源源不断的新功能支持"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备好开始了吗？",
+        "cta_subtitle": "立即体验功能强大的企业级 WordPress 主题",
+        "cta_button_text": "🔥 立即购买",
+        "cta_button_url": "#"
+      }
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "医美机构官网",
+  "page_template": "templates/template-medical-beauty.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "beauty_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "medical-beauty",
+    "label": "医美机构官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "medical_beauty",
+    "industry_label": "医美",
+    "scenario": "项目介绍、医生团队、到店咨询",
+    "description": "适合医美机构、皮肤管理中心、轻医美门诊和抗衰项目官网，内置项目、医生、流程、案例和咨询入口。",
+    "badges": [
+      "项目咨询",
+      "医生团队"
+    ],
+    "order": 521,
+    "thumbnail": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "医美机构官网模板 - 项目介绍与到店咨询",
+    "description": "适合医美机构和皮肤管理中心的官网页面，包含项目介绍、医生团队、服务流程、环境相册、FAQ 和咨询入口。",
+    "keywords": "医美官网,皮肤管理,轻医美,项目咨询,医生团队",
+    "og_title": "医美机构官网",
+    "og_description": "用项目图片、医生团队和咨询入口快速搭建医美机构官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #831843 0%, #be123c 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=80",
+            "title": "更专业地管理每一次变美期待",
+            "subtitle": "项目评估、医生面诊、术后随访与周期护理，用清晰流程建立信任。",
+            "btn_text": "预约面诊",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#be123c"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "12",
+            "number": "12年",
+            "label": "机构经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "30",
+            "number": "30+",
+            "label": "医生顾问",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "40",
+            "number": "40+",
+            "label": "护理项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "用户评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "热门项目方向",
+        "services_subtitle": "按皮肤状态、改善目标和恢复周期选择项目",
+        "services_columns": "4",
+        "services_bg_color": "#ffffff",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "皮肤管理",
+            "desc": "清洁补水、舒缓修护、屏障管理。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "抗衰紧致",
+            "desc": "面部年轻化评估与周期护理方案。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "轮廓管理",
+            "desc": "面部比例评估和个性化改善建议。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "术后修护",
+            "desc": "恢复期护理、复诊提醒和随访记录。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "menu",
+      "data": {
+        "menu_title": "项目咨询参考",
+        "menu_subtitle": "仅作为展示示例，实际项目以机构资质和面诊评估为准",
+        "menu_layout": "grid",
+        "menu_accent_color": "#be123c",
+        "menu_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+            "title": "水光管理",
+            "desc": "补水提亮与肤质改善咨询",
+            "price": "咨询",
+            "badge": "皮肤管理",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80",
+            "title": "抗衰评估",
+            "desc": "松弛、皱纹与轮廓综合评估",
+            "price": "预约面诊",
+            "badge": "抗衰",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+            "title": "痘肌管理",
+            "desc": "痘痘、痘印与屏障修护建议",
+            "price": "咨询",
+            "badge": "问题肌",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+            "title": "恢复期护理",
+            "desc": "项目后修护与复诊提醒",
+            "price": "预约",
+            "badge": "随访",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "医生与顾问团队",
+        "team_subtitle": "用专业背景、擅长方向和服务流程降低新客顾虑",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+            "name": "林医生",
+            "position": "皮肤科医生",
+            "desc": "擅长问题肌、屏障修护和项目后管理。",
+            "email": "doctor1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
+            "name": "周医生",
+            "position": "抗衰项目医生",
+            "desc": "专注面部年轻化评估与联合方案设计。",
+            "email": "doctor2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
+            "name": "陈顾问",
+            "position": "美学咨询顾问",
+            "desc": "负责初诊沟通、档案管理和复诊提醒。",
+            "email": "consultant@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#fff1f2"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "咨询服务流程",
+        "process_subtitle": "先评估、再方案、后随访，避免盲目决策",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "在线咨询",
+            "desc": "了解基础诉求、禁忌事项和期望效果。",
+            "stage_tag": "咨询"
+          },
+          {
+            "icon": "02",
+            "title": "到店面诊",
+            "desc": "医生面诊评估，确认适合项目和恢复周期。",
+            "stage_tag": "面诊"
+          },
+          {
+            "icon": "03",
+            "title": "项目执行",
+            "desc": "按机构标准执行，关键事项提前告知。",
+            "stage_tag": "执行"
+          },
+          {
+            "icon": "04",
+            "title": "复诊随访",
+            "desc": "记录恢复状态，提醒护理和复诊时间。",
+            "stage_tag": "随访"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "环境与服务场景",
+        "gallery_subtitle": "展示机构空间、咨询室和护理环境",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "enable_filter": "yes",
+        "filter_categories": "环境,咨询,护理",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80",
+            "title": "咨询空间",
+            "desc": "独立沟通",
+            "category": "咨询"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+            "title": "护理环境",
+            "desc": "舒适安心",
+            "category": "护理"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+            "title": "专业评估",
+            "desc": "医生面诊",
+            "category": "咨询"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约项目咨询",
+        "booking_subtitle": "提交意向项目、既往项目和期望时间，顾问会确认预约安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "咨询提醒",
+        "sidebar_content": "未成年人需监护人陪同\n请在表单里说明既往项目和禁忌情况\n项目适应性以医生面诊意见为准",
+        "contact_phone": "400-915-2026",
+        "contact_hours": "10:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.58"
+      }
+    }
+  ]
+}

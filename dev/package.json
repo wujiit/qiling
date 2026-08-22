@@ -1,0 +1,23 @@
+{
+  "name": "qiling-theme-tooling",
+  "private": true,
+  "description": "Development scripts for the Qi Ling WordPress theme.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build:release": "node ./tools/build-release.mjs",
+    "build:css": "node ./tools/minify-css.mjs",
+    "audit:design": "node ./tools/audit-design-token-coverage.mjs",
+    "audit:modules-design": "node ./tools/audit-module-design-surfaces.mjs",
+    "audit:modules-isolation": "node ./tools/audit-module-isolation.mjs",
+    "audit:customization": "node ./tools/audit-customization-readiness.mjs",
+    "sync:i18n": "node ./tools/sync-i18n.mjs",
+    "check:eol": "node ./tools/check-eol.mjs",
+    "fix:eol": "node ./tools/check-eol.mjs --fix",
+    "check:js": "node ./tools/check-js-syntax.mjs",
+    "split:modules": "node ../tools/rebuild-modules-split.js",
+    "test:smoke": "node ./tests/smoke/run-smoke.mjs",
+    "check": "npm run check:eol && npm run check:js && npm run audit:modules-isolation && npm run audit:customization && npm run test:smoke"
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "一体式官网",
+  "page_template": "templates/template-qiling-cloud-canvas.php",
+  "visual_skin": "cloud_canvas",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "cloud_canvas"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "footer": {
+    "mode": "page_skin",
+    "wave": "on",
+    "preset": "cloud_canvas",
+    "inherit_skin_colors": true
+  },
+  "metadata": {
+    "id": "qiling-cloud-canvas",
+    "label": "一体式官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "cloud_storage",
+    "industry_label": "云服务",
+    "scenario": "云服务、SaaS、对象存储、技术产品官网",
+    "description": "适合云服务、SaaS、对象存储、图床工具和技术产品官网，内置连续画布首屏、能力矩阵、服务入口、上线流程、套餐摘要、FAQ 和转化入口。",
+    "badges": [
+      "一体式视觉",
+      "云服务",
+      "SaaS"
+    ],
+    "order": 380,
+    "visual_skin": "cloud_canvas",
+    "layout_system": "integrated_canvas",
+    "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "一体式官网模板 - 云服务与 SaaS 产品展示",
+    "description": "适合云服务、SaaS、对象存储、图床工具和技术产品官网，使用连续画布视觉组织首屏、能力、流程、套餐、FAQ 和转化入口。",
+    "keywords": "云服务官网,SaaS官网,对象存储,图床工具,技术产品官网,一体式官网",
+    "og_title": "一体式官网",
+    "og_description": "用连续画布视觉搭建云服务和 SaaS 产品官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "minimal",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)",
+        "bb_title": "把云端能力<br><strong>放进一张连续画布</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#3f3268",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #3f3268 0%, #4f7dff 54%, #ff836f 100%)",
+        "bb_subtitle": "云服务与 SaaS 产品官网",
+        "bb_desc": "用一页讲清楚产品价值、核心能力、交付流程、套餐方案和咨询入口。视觉上保持同一张画布，让首屏、卡片和转化区自然衔接。",
+        "bb_text_color": "#776f8f",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "预约演示",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看方案",
+            "link": "#solutions",
+            "style": "light",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "#ff836f",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#f66d5c",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#3f3268",
+        "bb_light_btn_hover_bg_color": "#eef3ff",
+        "bb_light_btn_hover_text_color": "#4f7dff",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "lifted",
+        "bb_media_radius": "24px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "0",
+        "bb_padding_top": "112px",
+        "bb_padding_bottom": "92px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "一页覆盖购买前的核心问题",
+        "features_subtitle": "从价值、能力、信任到转化，模块信息按照技术产品官网的阅读路径排列",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "transparent",
+        "features_card_style": "border",
+        "features_card_radius": "18px",
+        "features_icon_style": "square",
+        "features_icon_bg": "linear-gradient(135deg, #ff836f 0%, #4f7dff 100%)",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "清晰价值主张",
+            "desc": "首屏直接说明产品定位、核心收益和下一步动作，减少用户理解成本。"
+          },
+          {
+            "icon": "02",
+            "title": "能力矩阵展示",
+            "desc": "把云存储、权限、安全、数据、集成等能力拆成可扫描的卡片。"
+          },
+          {
+            "icon": "03",
+            "title": "交付流程说明",
+            "desc": "用阶段化流程解释接入、配置、迁移、验收和持续运营。"
+          },
+          {
+            "icon": "04",
+            "title": "转化入口集中",
+            "desc": "让演示预约、方案咨询、套餐选择和资料下载保持同一条路径。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "service_cards",
+      "data": {
+        "sc_bg_color": "transparent",
+        "sc_padding": "60",
+        "sc_columns": "4",
+        "sc_gap": "22px",
+        "sc_card_bg": "rgba(255, 255, 255, 0.78)",
+        "sc_card_radius": "18px",
+        "sc_card_shadow": "medium",
+        "sc_card_border": "1px solid rgba(90, 72, 134, 0.12)",
+        "sc_icon_size": "48px",
+        "sc_icon_bg": "linear-gradient(135deg, #ff836f 0%, #4f7dff 100%)",
+        "sc_icon_radius": "14px",
+        "sc_title_color": "#3f3268",
+        "sc_badge_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)",
+        "sc_desc_color": "#776f8f",
+        "sc_cards": [
+          {
+            "icon": "云",
+            "icon_image": "",
+            "title": "云端接入",
+            "badge": "Core",
+            "description": "对象存储、CDN、访问域名和权限策略集中配置。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "盾",
+            "icon_image": "",
+            "title": "安全治理",
+            "badge": "",
+            "description": "密钥管理、访问控制、日志审计和异常提醒。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "链",
+            "icon_image": "",
+            "title": "开放集成",
+            "badge": "",
+            "description": "通过 API、Webhook 和插件连接现有业务系统。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "图",
+            "icon_image": "",
+            "title": "数据看板",
+            "badge": "Live",
+            "description": "汇总上传、流量、命中率、成本和业务转化指标。",
+            "url": "#",
+            "target": "_self"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从体验到上线的标准路径",
+        "process_subtitle": "把技术产品的交付过程拆成客户能理解、团队能执行的步骤",
+        "process_mode": "standard",
+        "module_bg_color": "transparent",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "确认业务场景",
+            "desc": "梳理官网、图床、下载、媒体库或 SaaS 产品的真实使用路径。",
+            "stage_tag": "诊断"
+          },
+          {
+            "icon": "02",
+            "title": "配置基础能力",
+            "desc": "完成存储、域名、权限、缓存、通知和第三方集成配置。",
+            "stage_tag": "配置"
+          },
+          {
+            "icon": "03",
+            "title": "迁移与联调",
+            "desc": "导入历史数据，验证链路稳定性，并完成前台页面联调。",
+            "stage_tag": "联调"
+          },
+          {
+            "icon": "04",
+            "title": "上线与运营",
+            "desc": "发布官网入口，结合数据看板持续优化转化和使用体验。",
+            "stage_tag": "上线"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "套餐摘要",
+        "pricing_subtitle": "先给客户明确选择，再把详细权益放到后续咨询或价格页",
+        "pricing_columns": "3",
+        "module_bg_color": "transparent",
+        "pricing_items": [
+          {
+            "name": "启动版",
+            "price": "¥199",
+            "period": "/月",
+            "desc": "适合轻量工具站",
+            "features": "基础页面模板\n基础模块组合\n单站点部署\n邮件支持",
+            "btn_text": "开始体验",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "增长版",
+            "price": "¥699",
+            "period": "/月",
+            "desc": "适合成长型产品官网",
+            "features": "一体式视觉模板\n高级模块组合\n数据与转化区块\n优先技术支持",
+            "btn_text": "选择增长版",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)"
+          },
+          {
+            "name": "企业版",
+            "price": "联系销售",
+            "period": "",
+            "desc": "适合定制化交付",
+            "features": "品牌视觉定制\n多页面模板体系\n私有化交付支持\n专属实施服务",
+            "btn_text": "预约演示",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见问题",
+        "faq_subtitle": "提前解释模板、一体式视觉和后续定制的边界",
+        "faq_items": [
+          {
+            "question": "这个模板会影响其他页面吗？",
+            "answer": "不会。皮肤样式只作用于一体式官网模板，其他模板继续使用原来的样式。"
+          },
+          {
+            "question": "模块内容可以继续编辑吗？",
+            "answer": "可以。导入后仍然是启灵模块数据，首屏、卡片、流程、价格和 FAQ 都能在页面编辑器中调整。"
+          },
+          {
+            "question": "可以改成自己的品牌色吗？",
+            "answer": "可以。一阶段提供默认色彩和布局，后续可以结合页面级设计变量扩展成可配置皮肤。"
+          }
+        ],
+        "module_bg_color": "transparent"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把产品官网做成连续画布",
+        "cta_subtitle": "替换真实产品名称、主视觉图片、套餐和咨询入口，就能快速搭建一张有整体感的技术产品官网。",
+        "cta_button_text": "开始配置页面",
+        "cta_button_url": "#",
+        "cta_bg_type": "gradient",
+        "cta_bg_gradient": "linear-gradient(135deg, #3f3268 0%, #4f7dff 58%, #38c9a6 100%)",
+        "cta_bg_overlay": "0.18"
+      }
+    }
+  ]
+}

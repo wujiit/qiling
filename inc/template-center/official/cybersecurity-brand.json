@@ -1,0 +1,230 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "网络安全品牌官网",
+  "page_template": "templates/template-cybersecurity-brand.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "cybersecurity-brand",
+    "label": "网络安全品牌官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "technology",
+    "industry_label": "科技",
+    "scenario": "安全产品、合规方案、咨询转化",
+    "description": "适合网络安全、风控平台、等保合规、数据安全和企业安全服务官网，内置安全能力、合规信任、流程、案例和咨询入口。",
+    "badges": [
+      "网络安全",
+      "合规信任"
+    ],
+    "order": 361,
+    "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "网络安全品牌官网模板 - 安全方案与合规咨询",
+    "description": "适合网络安全和企业风控服务的官网页面，包含安全能力、合规信任、服务流程、案例评价、FAQ 和咨询入口。",
+    "keywords": "网络安全官网,数据安全,等保合规,风控平台,安全服务",
+    "og_title": "网络安全品牌官网",
+    "og_description": "用安全能力、合规信任和咨询入口快速搭建网络安全品牌官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1800&q=80",
+            "title": "让企业安全从被动响应变成持续防护",
+            "subtitle": "覆盖资产识别、风险检测、合规整改和安全运营的完整方案。",
+            "btn_text": "预约安全评估",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "7x24",
+            "number": "7x24",
+            "label": "监控响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "300",
+            "number": "300+",
+            "label": "企业客户",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "99.9",
+            "number": "99.9%",
+            "label": "平台可用性",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "ISO",
+            "number": "ISO",
+            "label": "合规体系",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "安全服务能力",
+        "services_subtitle": "从风险发现到持续运营，覆盖企业核心安全需求",
+        "services_columns": "4",
+        "services_bg_color": "#ffffff",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "资产与风险识别",
+            "desc": "梳理公网资产、系统边界和高危暴露点。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "威胁检测响应",
+            "desc": "持续监控攻击行为、异常登录和风险事件。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "数据安全治理",
+            "desc": "识别敏感数据、权限风险和合规缺口。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "等保合规整改",
+            "desc": "围绕测评要求输出整改计划和落地支持。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "安全评估流程",
+        "process_subtitle": "先发现真实风险，再制定可执行整改路径",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "资产盘点",
+            "desc": "确认业务系统、云资源、账号和公网入口。",
+            "stage_tag": "盘点"
+          },
+          {
+            "icon": "02",
+            "title": "风险检测",
+            "desc": "扫描漏洞、配置、权限和异常行为线索。",
+            "stage_tag": "检测"
+          },
+          {
+            "icon": "03",
+            "title": "方案输出",
+            "desc": "按风险等级生成整改清单和优先级建议。",
+            "stage_tag": "方案"
+          },
+          {
+            "icon": "04",
+            "title": "持续运营",
+            "desc": "建立监控、响应、复盘和周期巡检机制。",
+            "stage_tag": "运营"
+          }
+        ],
+        "module_bg_color": "#f0fdfa"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "合规与信任",
+        "features_subtitle": "面向企业采购需要的安全背书",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "等保支持",
+            "desc": "支持等保测评准备、整改和复核流程。"
+          },
+          {
+            "icon": "02",
+            "title": "审计记录",
+            "desc": "关键操作和风险处置过程可追踪。"
+          },
+          {
+            "icon": "03",
+            "title": "数据加密",
+            "desc": "支持传输加密、密钥管理和访问控制。"
+          },
+          {
+            "icon": "04",
+            "title": "应急响应",
+            "desc": "提供安全事件响应、溯源和复盘建议。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "安全服务案例",
+        "cases_subtitle": "覆盖云上业务、数据平台和集团化系统",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=900&q=80",
+            "title": "云上资产风险治理",
+            "desc": "统一发现公网暴露资产和高危配置问题。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80",
+            "title": "数据安全合规整改",
+            "desc": "梳理敏感数据流转和访问权限缺口。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+            "title": "安全运营中心建设",
+            "desc": "建立告警、响应、复盘和运营报表机制。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约安全评估",
+        "contact_subtitle": "提交系统规模、云环境、合规目标和安全痛点，安全顾问会给出初步评估建议。",
+        "contact_phone": "400-119-2026",
+        "contact_email": "security@example.com",
+        "contact_address": "支持远程评估 / 可预约线下方案会",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "产业园区/招商官网",
+  "page_template": "templates/template-industrial-park.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "industrial-park",
+    "label": "产业园区/招商官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "industrial_park",
+    "industry_label": "产业园区",
+    "scenario": "园区介绍、空间载体、招商咨询",
+    "description": "适合产业园区、科技园、孵化器、写字楼招商和产业运营机构官网，内置区位优势、载体空间、政策服务、案例和招商入口。",
+    "badges": [
+      "产业园区",
+      "招商咨询"
+    ],
+    "order": 700,
+    "thumbnail": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "产业园区招商官网模板 - 载体空间与政策服务",
+    "description": "适合产业园区和孵化器的招商官网页面，包含区位优势、空间载体、产业服务、入驻流程、案例和咨询入口。",
+    "keywords": "产业园区官网,园区招商,孵化器官网,写字楼招商,产业运营",
+    "og_title": "产业园区/招商官网",
+    "og_description": "用载体空间、政策服务和招商入口快速搭建产业园区官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
+            "title": "为成长企业提供产业空间和服务",
+            "subtitle": "区位、载体、政策、服务和产业生态集中展示，提升招商转化效率。",
+            "btn_text": "预约招商顾问",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "50万",
+            "number": "50万㎡",
+            "label": "产业载体",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "300",
+            "number": "300+",
+            "label": "入驻企业",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "12",
+            "number": "12项",
+            "label": "企业服务",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "24h",
+            "number": "24h",
+            "label": "招商响应",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "园区服务能力",
+        "services_subtitle": "围绕空间、政策、人才、融资和运营提供持续服务",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "空间载体",
+            "desc": "办公、研发、中试、展示和配套空间。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "政策申报",
+            "desc": "产业政策、项目申报和资质辅导。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "企业服务",
+            "desc": "工商财税、人才招聘和融资对接。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "产业生态",
+            "desc": "活动交流、供需对接和资源合作。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "载体空间展示",
+        "cases_subtitle": "用真实空间和配套设施帮助企业判断适配度",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+            "title": "总部办公空间",
+            "desc": "适合成长型企业总部、销售和运营团队。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+            "title": "研发中试空间",
+            "desc": "支持研发办公、实验测试和样品展示。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
+            "title": "产业服务中心",
+            "desc": "集中承载政策服务、会议活动和接待展示。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "企业入驻流程",
+        "process_subtitle": "从需求沟通到签约入驻，关键节点清晰可控",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "提交需求",
+            "desc": "说明行业、人数、面积、预算和入驻时间。",
+            "stage_tag": "需求"
+          },
+          {
+            "icon": "02",
+            "title": "匹配载体",
+            "desc": "匹配空间、政策和配套服务方案。",
+            "stage_tag": "匹配"
+          },
+          {
+            "icon": "03",
+            "title": "现场看园",
+            "desc": "安排参观路线、载体介绍和政策沟通。",
+            "stage_tag": "看园"
+          },
+          {
+            "icon": "04",
+            "title": "签约入驻",
+            "desc": "完成合同、装修、入驻和企业服务对接。",
+            "stage_tag": "入驻"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "clients",
+      "data": {
+        "clients_title": "适合入驻企业",
+        "clients_columns": "4",
+        "clients_show_name": "1",
+        "clients_items": [
+          {
+            "name": "科技研发企业",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "智能制造团队",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "企业服务机构",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "区域总部项目",
+            "logo": "",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约园区招商顾问",
+        "contact_subtitle": "提交企业行业、团队人数、需求面积、预算和入驻时间，招商顾问会推荐合适载体。",
+        "contact_phone": "400-889-2026",
+        "contact_email": "park@example.com",
+        "contact_address": "示例产业园招商中心",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "实验室设备/科研仪器官网",
+  "page_template": "templates/template-lab-instrument.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "lab-instrument",
+    "label": "实验室设备/科研仪器官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "lab_instrument",
+    "industry_label": "实验室设备/科研仪器",
+    "scenario": "实验室设备、科研仪器、参数选型、资料下载、型号对比、采购询盘",
+    "description": "适合实验室设备厂商、科研仪器品牌、检测设备供应商、耗材试剂配套和高校/科研院所采购官网，内置产品中心、资料下载、型号对比、应用案例、FAQ 和询盘入口。",
+    "badges": [
+      "实验室设备",
+      "科研仪器",
+      "型号选型"
+    ],
+    "order": 723,
+    "thumbnail": "https://images.pexels.com/photos/8325755/pexels-photo-8325755.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  },
+  "seo": {
+    "title": "实验室设备科研仪器官网模板 - 参数选型与采购询盘",
+    "description": "适合实验室设备、科研仪器、分析仪器、样本前处理设备、恒温培养设备和检测仪器品牌的官网页面，包含产品中心、资料下载、型号对比、案例、FAQ 和询盘表单。",
+    "keywords": "实验室设备官网,科研仪器官网,分析仪器,检测设备,实验室仪器,仪器选型,资料下载,采购询盘",
+    "og_title": "实验室设备/科研仪器官网",
+    "og_description": "用产品参数、资料下载和型号对比快速搭建科研仪器官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #e0f2fe 48%, #ede9fe 100%)",
+        "bb_title": "把仪器参数、资料下载<br><strong>变成采购线索</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #0e7490 0%, #059669 100%)",
+        "bb_subtitle": "实验室设备与科研仪器官网方案",
+        "bb_desc": "面向高校实验室、科研院所、第三方检测机构和企业研发中心，把仪器型号、核心参数、应用场景、资料下载和采购询盘入口组织成客户能快速判断的官网页面。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "提交采购需求",
+            "link": "#",
+            "style": "primary",
+            "icon": "采"
+          },
+          {
+            "text": "下载选型资料",
+            "link": "#",
+            "style": "light",
+            "icon": "表"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#0e7490",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#155e75",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#ecfeff",
+        "bb_light_btn_hover_text_color": "#0e7490",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.pexels.com/photos/8325755/pexels-photo-8325755.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "科研仪器与实验室设备",
+        "products_subtitle": "LAB INSTRUMENT CATALOG",
+        "columns": "4",
+        "modal_inquire_text": "咨询型号与报价",
+        "modal_inquire_url": "#",
+        "modal_inquire_btn_bg_color": "#0e7490",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_hover_bg_color": "#155e75",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "items": [
+          {
+            "image": "https://images.pexels.com/photos/24293768/pexels-photo-24293768.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "高精度分析仪器",
+            "desc": "用于成分分析、浓度检测、光谱测量和实验数据采集的核心仪器。",
+            "specs": "应用：科研实验、质量检测、第三方检测\n指标：高灵敏度、低噪声、稳定重复性\n数据：本地导出、软件报表、接口扩展\n服务：安装调试、方法培训、年度校准",
+            "post_id": "",
+            "btn_text": "查看参数"
+          },
+          {
+            "image": "https://images.pexels.com/photos/4033019/pexels-photo-4033019.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "样本前处理设备",
+            "desc": "覆盖离心、混匀、加热、萃取和自动化样本前处理流程。",
+            "specs": "类型：离心、振荡、均质、消解、移液\n容量：小批量到多通道高通量\n安全：防护盖、过温保护、异常报警\n交付：设备、耗材、方法包、培训资料",
+            "post_id": "",
+            "btn_text": "获取方案"
+          },
+          {
+            "image": "https://images.pexels.com/photos/8539810/pexels-photo-8539810.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "恒温培养与环境控制",
+            "desc": "用于细胞培养、微生物实验、稳定性测试和环境模拟。",
+            "specs": "温控：恒温、恒湿、CO2、光照可选\n空间：台式、立式、组合式配置\n记录：温湿度曲线、报警日志、数据导出\n验证：IQ/OQ/PQ 文件可按需配置",
+            "post_id": "",
+            "btn_text": "咨询配置"
+          },
+          {
+            "image": "https://images.pexels.com/photos/8325755/pexels-photo-8325755.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "实验室基础设备",
+            "desc": "适配高校、企业研发、检验检测和生产质控实验室的常用设备。",
+            "specs": "品类：纯水、冷藏、通风、天平、移液\n场景：新实验室建设、设备替换、扩容采购\n资料：选型表、安装条件、验收清单\n售后：备件耗材、维保计划、远程支持",
+            "post_id": "",
+            "btn_text": "查看清单"
+          }
+        ]
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "产品资料与选型文件",
+        "downloads_subtitle": "把客户采购前最需要的参数表、安装条件和验收资料集中展示",
+        "downloads_bg_color": "#f8fafc",
+        "downloads_columns": "3",
+        "downloads_btn_bg_color": "#0e7490",
+        "downloads_btn_text_color": "#ffffff",
+        "downloads_btn_hover_bg_color": "#155e75",
+        "downloads_btn_hover_text_color": "#ffffff",
+        "downloads_items": [
+          {
+            "title": "产品选型手册",
+            "size": "Catalog",
+            "file": "#",
+            "icon": "册",
+            "format": "PDF",
+            "date": "2026-04-25",
+            "btn_text": "下载手册",
+            "description": "按仪器类型、核心指标、适用场景、扩展模块和售后服务整理常见选型口径。"
+          },
+          {
+            "title": "技术参数表",
+            "size": "Specification",
+            "file": "#",
+            "icon": "参",
+            "format": "XLSX",
+            "date": "2026-04-25",
+            "btn_text": "查看参数",
+            "description": "用于展示型号、量程、精度、通量、数据接口、安装条件和可选配置。"
+          },
+          {
+            "title": "安装验收清单",
+            "size": "Checklist",
+            "file": "#",
+            "icon": "验",
+            "format": "DOC",
+            "date": "2026-04-25",
+            "btn_text": "获取清单",
+            "description": "包含到货验收、安装环境、电源气源、培训记录、校准报告和维护计划。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "常用型号选型对比",
+        "comparison_subtitle": "帮助采购和实验室负责人快速判断型号差异",
+        "comparison_features": "适合场景\n核心指标\n通量/容量\n数据导出\n校准与验证\n售后支持",
+        "comparison_products": [
+          {
+            "name": "基础型",
+            "values": "教学实验、常规检测\n标准精度\n小通量\nUSB/CSV\n出厂校准\n远程指导"
+          },
+          {
+            "name": "标准型",
+            "values": "科研实验、日常检测\n高精度\n中等通量\nUSB/CSV/软件\n年度校准\n工程师安装培训"
+          },
+          {
+            "name": "专业型",
+            "values": "重点实验室、第三方检测\n高精度与高稳定性\n高通量\nLIMS/软件/API\nIQ/OQ/PQ 验证\n专属技术支持"
+          }
+        ],
+        "comparison_highlight": "2",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "科研与检测应用案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "220px",
+        "cases_padding_top": "80px",
+        "cases_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "实验室设备采购常见问题",
+        "faq_subtitle": "提前说明选型资料、安装条件、校准验证和售后服务",
+        "faq_items": [
+          {
+            "question": "采购前需要提供哪些实验需求？",
+            "answer": "建议提供样本类型、检测指标、通量要求、精度要求、实验室环境、预算范围和是否需要软件或 LIMS 对接，便于判断型号和配置。"
+          },
+          {
+            "question": "资料下载里的参数可以直接用于招投标吗？",
+            "answer": "模板中的文件为占位示例。正式上线时应替换为企业真实产品彩页、技术参数表、安装条件、验收清单和项目要求的文件版本。"
+          },
+          {
+            "question": "仪器安装验收通常包含哪些内容？",
+            "answer": "常见内容包括到货检查、安装环境确认、电源气源连接、空载运行、样品测试、人员培训、验收记录、校准报告和维护计划。"
+          },
+          {
+            "question": "是否支持校准、验证和年度维保？",
+            "answer": "可以在官网明确展示出厂校准、年度校准、IQ/OQ/PQ 验证、备件耗材、远程诊断和工程师上门服务等能力，具体承诺应按实际服务范围填写。"
+          }
+        ],
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交实验室设备采购需求",
+        "contact_subtitle": "填写仪器类型、应用场景、样本数量、目标指标、安装环境和预算范围，产品顾问会协助确认型号、资料和报价。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

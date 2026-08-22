@@ -1,0 +1,291 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "养老院/康养机构官网",
+  "page_template": "templates/template-senior-care-center.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "senior-care-center",
+    "label": "养老院/康养机构官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "senior_care",
+    "industry_label": "养老康养",
+    "scenario": "养老院、护理院、康养中心、长者照护、康复护理、预约参观",
+    "description": "适合养老院、护理院、康养中心、长者公寓和医养结合机构，内置首屏、照护服务、长者居住房型、入住流程、照护团队、FAQ 和预约参观入口。",
+    "badges": [
+      "中文高频",
+      "养老康养",
+      "预约参观"
+    ],
+    "order": 597,
+    "thumbnail": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "养老院康养机构官网模板 - 长者照护与预约参观",
+    "description": "适合养老院、护理院和康养机构的官网页面，包含照护服务、长者居住房型、入住流程、照护团队、常见问题和预约参观入口。",
+    "keywords": "养老院官网,康养机构官网,护理院官网,长者照护,医养结合,养老公寓,预约参观",
+    "og_title": "养老院/康养机构官网",
+    "og_description": "用照护服务、居住房型和预约参观快速搭建养老康养机构官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #14532d 0%, #0f766e 52%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80",
+            "title": "把照护能力、居住空间和入住流程讲清楚",
+            "subtitle": "适合养老院、护理院、康养中心和长者公寓展示照护服务、适老房型、团队配置、评估入住和预约参观入口。",
+            "btn_text": "预约参观机构",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "24h",
+            "label": "照护响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "4类",
+            "label": "照护等级",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "1人1档",
+            "label": "长者评估档案",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "每日",
+            "label": "生活记录反馈",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "核心养老康养服务",
+        "services_subtitle": "围绕生活照料、护理支持、康复活动和家属沟通形成稳定照护闭环",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "生活照料",
+            "desc": "协助起居、餐食、清洁、洗护、活动陪伴和日常安全巡视。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "护理支持",
+            "desc": "按评估结果安排护理等级、用药提醒、体征观察和异常反馈。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "康复活动",
+            "desc": "提供基础康复训练、手工活动、认知互动和社交陪伴安排。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "家属沟通",
+            "desc": "同步长者生活记录、阶段评估和探访预约，降低家属信息焦虑。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "room-showcase",
+      "data": {
+        "room_title": "长者居住空间",
+        "room_subtitle": "按自理能力、护理需求和家属预算展示可选择的适老化房型",
+        "room_columns": "3",
+        "room_card_style": "standard",
+        "room_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+            "name": "舒适单人间",
+            "area": "28㎡",
+            "bed_type": "queen",
+            "capacity": "1人",
+            "price": "¥4800/月起",
+            "original_price": "",
+            "badge": "recommend",
+            "amenities": "icon-call|紧急呼叫\nicon-bath|适老卫浴\nicon-sun|自然采光",
+            "desc": "适合生活基本自理、希望拥有独立空间的长者。",
+            "btn_text": "预约参观",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
+            "name": "护理双人间",
+            "area": "38㎡",
+            "bed_type": "twin",
+            "capacity": "2人",
+            "price": "¥3800/月起",
+            "original_price": "",
+            "badge": "garden",
+            "amenities": "icon-nurse|护理巡视\nicon-food|营养餐食\nicon-clean|日常清洁",
+            "desc": "适合需要日常照护、希望兼顾社交陪伴和费用预算的长者。",
+            "btn_text": "了解床位",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
+            "name": "康复护理套房",
+            "area": "52㎡",
+            "bed_type": "king",
+            "capacity": "1-2人",
+            "price": "按评估报价",
+            "original_price": "",
+            "badge": "luxury",
+            "amenities": "icon-rehab|康复训练\nicon-safe|防滑扶手\nicon-family|家属陪护",
+            "desc": "适合术后恢复、慢病管理或需要更高护理支持的长者。",
+            "btn_text": "预约评估",
+            "btn_link": "#"
+          }
+        ],
+        "room_btn_bg_color": "#0f766e",
+        "room_btn_text_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "评估入住流程",
+        "process_subtitle": "让长者和家属知道从咨询到入住每一步需要准备什么",
+        "process_mode": "standard",
+        "module_bg_color": "#ffffff",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "预约参观",
+            "desc": "了解机构环境、房型床位、服务内容、费用构成和探访安排。",
+            "stage_tag": "参观"
+          },
+          {
+            "icon": "02",
+            "title": "长者能力评估",
+            "desc": "评估自理能力、慢病情况、护理需求、饮食禁忌和风险因素。",
+            "stage_tag": "评估"
+          },
+          {
+            "icon": "03",
+            "title": "制定照护方案",
+            "desc": "确定房型、护理等级、康复活动、餐食安排和入住物品清单。",
+            "stage_tag": "方案"
+          },
+          {
+            "icon": "04",
+            "title": "入住与阶段复盘",
+            "desc": "入住后持续同步生活记录，按阶段复盘照护计划并与家属沟通。",
+            "stage_tag": "复盘"
+          }
+        ]
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "照护团队",
+        "team_subtitle": "展示院长、护理主任、康复师和生活照护团队，让家属看见真实服务承接能力",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+            "name": "王院长",
+            "position": "机构负责人",
+            "desc": "负责入住评估、服务质控、家属沟通机制和机构安全管理。",
+            "email": "care1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
+            "name": "李主任",
+            "position": "护理主任",
+            "desc": "负责护理等级评估、护理计划执行、异常情况反馈和团队培训。",
+            "email": "care2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
+            "name": "陈老师",
+            "position": "康复活动师",
+            "desc": "负责基础康复训练、认知活动、兴趣小组和长者社交陪伴。",
+            "email": "care3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#f0fdfa",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "入住常见问题",
+        "faq_subtitle": "提前说明评估、费用、护理边界和探访安排，降低首次咨询成本",
+        "faq_items": [
+          {
+            "question": "入住前为什么需要做长者能力评估？",
+            "answer": "评估用于了解自理能力、慢病情况、护理风险、饮食禁忌和活动需求，方便匹配房型、护理等级和照护计划。"
+          },
+          {
+            "question": "费用一般由哪些部分组成？",
+            "answer": "常见费用包括床位费、护理费、餐费、耗材费和个性化服务费。正式官网建议按机构所在地政策和实际收费标准展示。"
+          },
+          {
+            "question": "机构是否可以替代医院治疗？",
+            "answer": "养老康养机构主要提供生活照护、护理支持和康复活动，不替代医院诊断、治疗和急危处理。遇到紧急情况应按机构流程及时转诊或呼叫急救。"
+          },
+          {
+            "question": "家属探访和生活反馈如何安排？",
+            "answer": "可按机构制度预约探访，并通过生活记录、阶段评估和顾问沟通了解长者日常状态。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约参观与入住评估",
+        "booking_subtitle": "提交长者年龄、自理情况、护理需求、期望房型和到访时间，顾问会联系确认参观安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "参观前建议准备",
+        "sidebar_content": "说明长者自理能力、慢病情况和用药情况\n如有近期病历或评估报告可到访携带\n建议家属和长者一起参观并了解入住流程",
+        "contact_phone": "400-510-2026",
+        "contact_hours": "08:30-20:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

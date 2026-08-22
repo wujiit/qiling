@@ -1,0 +1,212 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "能源/环保服务官网",
+  "page_template": "templates/template-energy-environment.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "energy-environment",
+    "label": "能源/环保服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "energy_environment",
+    "industry_label": "能源环保",
+    "scenario": "解决方案、项目案例、咨询转化",
+    "description": "适合新能源、节能改造、环保工程、碳管理和绿色科技服务官网，内置方案能力、项目数据、流程、案例和咨询入口。",
+    "badges": [
+      "能源环保",
+      "方案咨询"
+    ],
+    "order": 680,
+    "thumbnail": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "能源环保服务官网模板 - 绿色方案与项目案例",
+    "description": "适合能源环保和绿色科技企业的官网页面，包含解决方案、项目数据、实施流程、案例、FAQ 和咨询入口。",
+    "keywords": "能源环保官网,新能源官网,节能改造,环保工程,碳管理",
+    "og_title": "能源/环保服务官网",
+    "og_description": "用绿色方案、项目数据和咨询入口快速搭建能源环保官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.52",
+        "db_title_prefix": "让绿色方案更容易落地",
+        "db_typing_mode": "loop",
+        "db_typing_text": "新能源项目建设与运维\n节能降碳和环保工程服务\n从评估到交付的一体化方案",
+        "db_highlight_color": "#a7f3d0",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "展示方案、数据、案例和服务流程，帮助企业判断合作价值。",
+        "db_desc": "适合新能源、环保工程、节能改造、双碳咨询和绿色科技服务企业。",
+        "db_text_color": "rgba(248,250,252,0.9)",
+        "db_buttons": [
+          {
+            "text": "预约方案评估",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看项目案例",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "绿色解决方案",
+        "services_subtitle": "围绕能源、环保、节能和碳管理的综合服务",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "新能源建设",
+            "desc": "光伏、储能、充电和能源站方案。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "节能改造",
+            "desc": "能耗诊断、设备改造和运营优化。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "环保工程",
+            "desc": "废气、污水、固废和环境治理项目。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "碳管理咨询",
+            "desc": "碳盘查、减排路径和绿色认证支持。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "项目交付数据",
+        "stats_subtitle": "用真实指标呈现节能、减排和运行价值",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "120+",
+            "label": "项目经验"
+          },
+          {
+            "number": "18%",
+            "label": "平均节能优化"
+          },
+          {
+            "number": "30天",
+            "label": "方案评估周期"
+          },
+          {
+            "number": "7x24",
+            "label": "运维响应"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "项目实施流程",
+        "process_subtitle": "从现场评估到运营复盘，降低项目不确定性",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "现场评估",
+            "desc": "采集能耗、设备、场地和运营数据。",
+            "stage_tag": "评估"
+          },
+          {
+            "icon": "02",
+            "title": "方案测算",
+            "desc": "输出技术路线、投资测算和收益评估。",
+            "stage_tag": "测算"
+          },
+          {
+            "icon": "03",
+            "title": "项目交付",
+            "desc": "完成设计、施工、验收和上线运行。",
+            "stage_tag": "交付"
+          },
+          {
+            "icon": "04",
+            "title": "运营优化",
+            "desc": "持续监测指标并进行阶段复盘优化。",
+            "stage_tag": "运维"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "代表项目案例",
+        "cases_subtitle": "用场景、方案和结果说明服务价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80",
+            "title": "园区光伏能源项目",
+            "desc": "屋顶光伏、储能和用能优化组合方案。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80",
+            "title": "工厂节能改造",
+            "desc": "设备诊断、能耗监控和运营策略优化。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80",
+            "title": "环保治理工程",
+            "desc": "现场勘测、方案设计和验收交付闭环。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约绿色方案评估",
+        "contact_subtitle": "提交项目类型、场地规模、目标诉求和当前能耗情况，顾问会安排初步评估。",
+        "contact_phone": "400-860-2026",
+        "contact_email": "green@example.com",
+        "contact_address": "支持远程评估 / 可预约现场勘测",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

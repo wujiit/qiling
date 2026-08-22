@@ -1,0 +1,452 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "云主机SaaS官网（一体式）",
+  "page_template": "templates/template-hosting-saas-home.php",
+  "visual_skin": "hosting_canvas",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "hosting_canvas",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#2563eb",
+      "background": "#f0fdf9",
+      "text": "#134e4a"
+    },
+    "header": {
+      "background": "rgba(255,255,255,0.94)",
+      "text": "#134e4a",
+      "transparent_text": "#134e4a",
+      "nav_hover_bg": "linear-gradient(135deg,#059669 0%,#2563eb 100%)",
+      "nav_hover_text": "#ffffff",
+      "search_bg": "rgba(255,255,255,0.82)",
+      "search_text": "#134e4a",
+      "search_placeholder": "rgba(19,78,74,0.56)",
+      "search_icon": "#059669",
+      "phone_bg": "rgba(255,255,255,0.86)",
+      "phone_text": "#134e4a"
+    },
+    "footer": {
+      "background": "linear-gradient(180deg,#087f69 0%,#07645e 52%,#064e3b 100%)",
+      "text": "rgba(255,255,255,0.94)",
+      "bottom_background": "#064e3b",
+      "bottom_text": "rgba(255,255,255,0.82)",
+      "wave_backdrop": "var(--qiling-page-bg,#f0fdf9)",
+      "wave_height": "64px",
+      "wave_color": "#087f69",
+      "wave_layer_color": "#55a49a",
+      "wave_layer_opacity": "0.26"
+    },
+    "buttons": {
+      "background": "linear-gradient(135deg,#059669 0%,#2563eb 100%)",
+      "text": "#ffffff",
+      "hover_background": "linear-gradient(135deg,#047857 0%,#1d4ed8 100%)",
+      "hover_text": "#ffffff"
+    }
+  },
+  "footer": {
+    "mode": "page_skin",
+    "wave": "on",
+    "preset": "hosting_canvas",
+    "inherit_skin_colors": true
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "hosting-saas-home",
+    "label": "云主机SaaS官网（一体式）",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "cloud_storage",
+    "industry_label": "云服务",
+    "scenario": "云主机、虚拟主机、托管服务、CDN、安全加速、套餐转化",
+    "description": "适合云主机、虚拟主机、企业托管、CDN 加速和云服务 SaaS 官网，内置蓝绿色连续画布首屏、服务能力、上线流程、套餐价格、客户评价、FAQ 和转化入口。",
+    "badges": [
+      "一体式视觉",
+      "Hosting",
+      "云服务",
+      "SaaS"
+    ],
+    "order": 326,
+    "visual_skin": "hosting_canvas",
+    "layout_system": "integrated_canvas",
+    "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "云主机SaaS官网（一体式）模板 - 托管服务与主机套餐转化",
+    "description": "适合云主机、虚拟主机、企业托管、CDN 加速和云服务 SaaS 的一体式官网页面，包含服务能力、上线流程、价格套餐、客户评价、FAQ 和咨询入口。",
+    "keywords": "云主机官网,主机官网,Hosting官网,SaaS官网,虚拟主机,云托管,CDN加速,主机套餐,一体式官网",
+    "og_title": "云主机SaaS官网（一体式）",
+    "og_description": "用蓝绿色连续画布搭建云主机和托管服务官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "minimal",
+        "bb_height": "86vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "radial-gradient(circle at 16% 18%, rgba(5,150,105,0.2) 0%, rgba(5,150,105,0) 34%), radial-gradient(circle at 84% 24%, rgba(37,99,235,0.2) 0%, rgba(37,99,235,0) 30%), linear-gradient(135deg,#ecfdf5 0%,#f8fafc 42%,#dbeafe 100%)",
+        "bb_title": "高速云主机<br><strong>让网站稳定起飞</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#134e4a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #047857 0%, #059669 52%, #2563eb 100%)",
+        "bb_subtitle": "云主机与托管服务官网",
+        "bb_desc": "用一页讲清楚云服务器、虚拟主机、CDN、安全防护、备份迁移和套餐价格。适合主机商、云服务团队和企业托管服务做演示站或正式官网。",
+        "bb_text_color": "rgba(19,78,74,0.72)",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "查看主机套餐",
+            "link": "#pricing",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "预约迁移评估",
+            "link": "#contact",
+            "style": "light",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "linear-gradient(135deg,#059669 0%,#2563eb 100%)",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "linear-gradient(135deg,#047857 0%,#1d4ed8 100%)",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ecfdf5",
+        "bb_light_btn_text_color": "#134e4a",
+        "bb_light_btn_hover_bg_color": "#d1fae5",
+        "bb_light_btn_hover_text_color": "#059669",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "104px",
+        "bb_padding_bottom": "90px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "从主机到托管的一站式能力",
+        "features_subtitle": "把客户最关心的稳定性、速度、安全和迁移服务放在第一屏之后",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "transparent",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#fff3ea",
+        "module_padding_top": "86px",
+        "module_padding_bottom": "76px",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "弹性云主机",
+            "desc": "按 CPU、内存、带宽和磁盘灵活组合，支持中小网站、企业官网、独立应用和活动站点快速上线。"
+          },
+          {
+            "icon": "02",
+            "title": "CDN 与边缘加速",
+            "desc": "静态资源分发、图片加速、缓存策略和 HTTPS 证书统一配置，让访问速度更稳定。"
+          },
+          {
+            "icon": "03",
+            "title": "安全防护",
+            "desc": "提供 WAF、防爆破、黑白名单、日志审计和异常告警，减少站点暴露后的运维压力。"
+          },
+          {
+            "icon": "04",
+            "title": "迁移与备份",
+            "desc": "支持整站迁移、数据库迁移、定时备份、快照回滚和上线检查，降低换主机的风险。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "稳定服务的关键指标",
+        "stats_subtitle": "适合替换成你的真实 SLA、节点数和客户数据",
+        "stats_bg_color": "transparent",
+        "module_padding_top": "70px",
+        "module_padding_bottom": "70px",
+        "stats_items": [
+          {
+            "number": "99.95%",
+            "label": "服务可用性",
+            "icon": "SLA"
+          },
+          {
+            "number": "30min",
+            "label": "迁移评估响应",
+            "icon": "UP"
+          },
+          {
+            "number": "12+",
+            "label": "可选线路区域",
+            "icon": "NET"
+          },
+          {
+            "number": "7x24",
+            "label": "监控与告警",
+            "icon": "OPS"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "适合这些托管场景",
+        "services_subtitle": "不用让客户猜自己该买什么，把场景拆成可点击的服务入口",
+        "services_columns": "4",
+        "services_bg_color": "transparent",
+        "module_padding_top": "82px",
+        "module_padding_bottom": "82px",
+        "services_items": [
+          {
+            "icon": "云",
+            "title": "企业官网托管",
+            "desc": "官网、落地页、招商页和内容站点托管，适合稳定访问、快速备案和日常维护。",
+            "link": "#"
+          },
+          {
+            "icon": "商",
+            "title": "电商活动站",
+            "desc": "支持促销活动、商品专题、会员入口和支付链路，重点保障高峰访问。",
+            "link": "#"
+          },
+          {
+            "icon": "开",
+            "title": "开发测试环境",
+            "desc": "给研发团队准备独立测试、预发布和演示环境，支持快速扩容与回滚。",
+            "link": "#"
+          },
+          {
+            "icon": "迁",
+            "title": "老站迁移加速",
+            "desc": "从旧主机迁移到云端，顺带完成 HTTPS、CDN、备份和性能优化。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从咨询到上线的托管流程",
+        "process_subtitle": "让非技术客户也能看懂购买、迁移、验收和运维怎么走",
+        "process_mode": "standard",
+        "module_bg_color": "transparent",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "评估站点与流量",
+            "desc": "确认当前站点规模、访问量、插件、数据库、带宽和备份情况，给出主机规格建议。",
+            "stage_tag": "评估"
+          },
+          {
+            "icon": "02",
+            "title": "创建云主机环境",
+            "desc": "配置系统、运行环境、数据库、SSL、缓存、CDN 和基础安全策略。",
+            "stage_tag": "部署"
+          },
+          {
+            "icon": "03",
+            "title": "迁移数据并联调",
+            "desc": "迁移文件和数据库，检查链接、表单、支付、邮件、上传和后台权限。",
+            "stage_tag": "迁移"
+          },
+          {
+            "icon": "04",
+            "title": "切换域名并持续运维",
+            "desc": "切换 DNS 后进入监控、备份、日志和安全巡检周期，保障长期稳定运行。",
+            "stage_tag": "上线"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "自管服务器和托管云主机怎么选",
+        "comparison_subtitle": "把选择标准讲明白，客户更容易做决策",
+        "comparison_features": "上线速度\n日常维护\n安全巡检\n备份回滚\n访问加速\n适合团队",
+        "comparison_products": [
+          {
+            "name": "自管服务器",
+            "values": "需要自行配置\n团队自己处理\n依赖内部经验\n需要自行设计\n需要额外接入\n有专职运维团队"
+          },
+          {
+            "name": "托管云主机",
+            "values": "快速开通交付\n托管团队协助\n默认安全策略\n内置备份方案\nCDN 一体接入\n中小企业和项目团队"
+          },
+          {
+            "name": "企业专属方案",
+            "values": "按项目排期上线\n专属运维流程\n定制安全基线\n多副本容灾\n全球线路优化\n高流量和多站点企业"
+          }
+        ],
+        "comparison_highlight": "2",
+        "module_bg_type": "color",
+        "module_bg_color": "transparent",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "主机套餐示例",
+        "pricing_subtitle": "导入后把价格、规格和按钮链接替换成你的真实套餐",
+        "pricing_columns": "3",
+        "module_bg_type": "color",
+        "module_bg_color": "transparent",
+        "module_padding_top": "86px",
+        "module_padding_bottom": "86px",
+        "pricing_items": [
+          {
+            "name": "轻量官网",
+            "price": "¥99",
+            "period": "/月",
+            "desc": "适合企业官网、展示页和小型内容站",
+            "features": "2 核 CPU\n2G 内存\n50G SSD\nHTTPS 证书\n基础备份\n邮件支持",
+            "btn_text": "选择轻量版",
+            "btn_link": "#",
+            "card_bg": "#ffffff",
+            "featured": ""
+          },
+          {
+            "name": "增长托管",
+            "price": "¥299",
+            "period": "/月",
+            "desc": "适合业务增长期的网站和营销活动",
+            "features": "4 核 CPU\n8G 内存\n150G SSD\nCDN 加速\n每日备份\n在线优先支持",
+            "btn_text": "选择增长版",
+            "btn_link": "#",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg,#059669 0%,#2563eb 100%)"
+          },
+          {
+            "name": "企业专属",
+            "price": "联系顾问",
+            "period": "",
+            "desc": "适合多站点、高访问量和定制化运维",
+            "features": "专属资源池\n多区域容灾\n安全巡检\n性能优化\n迁移服务\n客户成功经理",
+            "btn_text": "预约方案",
+            "btn_link": "#contact",
+            "card_bg": "#ffffff",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户如何评价托管体验",
+        "testimonials_subtitle": "用真实客户口吻展示稳定性、迁移和响应速度",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "80+",
+        "average_rating": "4.9",
+        "testimonials_bg_color": "transparent",
+        "module_padding_top": "82px",
+        "module_padding_bottom": "82px",
+        "testimonials_items": [
+          {
+            "avatar": "",
+            "name": "李经理",
+            "position": "跨境电商团队 · 运营负责人",
+            "content": "活动前完成迁移和 CDN 配置，高峰期访问明显更稳，售后响应也很快。",
+            "rating": "5",
+            "source": "托管客户"
+          },
+          {
+            "avatar": "",
+            "name": "周总",
+            "position": "制造企业 · 信息化负责人",
+            "content": "原来服务器靠内部同事临时维护，现在备份、安全和监控都有固定流程。",
+            "rating": "5",
+            "source": "企业官网"
+          },
+          {
+            "avatar": "",
+            "name": "王工程师",
+            "position": "SaaS 产品 · 技术负责人",
+            "content": "预发布环境和生产环境拆分后，测试、上线、回滚都更清楚。",
+            "rating": "5",
+            "source": "产品团队"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "购买前常见问题",
+        "faq_subtitle": "关于迁移、备案、备份、安全和套餐升级",
+        "module_bg_color": "transparent",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "faq_items": [
+          {
+            "question": "现有网站可以无缝迁移吗？",
+            "answer": "可以。建议先做文件和数据库备份，再在新环境完成联调，确认页面、表单、邮件和支付都正常后再切换域名解析。"
+          },
+          {
+            "question": "套餐后期可以升级吗？",
+            "answer": "可以。CPU、内存、磁盘和带宽可以根据业务增长调整，升级前建议先确认峰值流量和缓存策略。"
+          },
+          {
+            "question": "是否包含 HTTPS 和 CDN？",
+            "answer": "模板文案默认按包含 HTTPS 和 CDN 展示，实际使用时请根据你的产品套餐决定是否保留这些权益。"
+          },
+          {
+            "question": "托管服务包含安全处理吗？",
+            "answer": "可以包含基础安全策略、登录防护、日志巡检、漏洞提醒和备份回滚。高等级安全服务建议单独配置企业专属方案。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备把网站迁到更稳定的云端？",
+        "cta_subtitle": "先做一次免费迁移评估，确认规格、预算、风险和上线时间。",
+        "cta_button_text": "预约迁移评估",
+        "cta_button_url": "#contact",
+        "cta_button_bg_color": "linear-gradient(135deg,#059669 0%,#047857 100%)",
+        "cta_button_text_color": "#ffffff",
+        "cta_button_hover_bg_color": "linear-gradient(135deg,#047857 0%,#065f46 100%)",
+        "cta_button_hover_text_color": "#ffffff",
+        "cta_layout_mode": "seamless_footer",
+        "cta_footer_bridge": "on",
+        "cta_border_radius": "0",
+        "cta_content_max_width": "780px",
+        "cta_button_style": "pill",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg,#059669 0%,#2563eb 100%)",
+        "cta_bg_image": "",
+        "cta_bg_overlay": "0.12",
+        "module_padding_top": "96px",
+        "module_padding_bottom": "96px"
+      }
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "数据智能/BI 官网",
+  "page_template": "templates/template-data-intelligence-bi.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "data-intelligence-bi",
+    "label": "数据智能/BI 官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "software",
+    "industry_label": "软件",
+    "scenario": "数据看板、BI 平台、智能决策",
+    "description": "适合 BI 平台、数据分析、经营看板、数据中台和智能决策产品，内置数据能力、应用场景、流程、案例和咨询入口。",
+    "badges": [
+      "BI",
+      "数据智能"
+    ],
+    "order": 371,
+    "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "数据智能 BI 官网模板 - 看板展示与咨询转化",
+    "description": "适合 BI 平台和数据智能产品的官网页面，包含数据看板、分析能力、应用场景、实施流程、客户案例和咨询入口。",
+    "keywords": "BI官网,数据智能,数据分析,经营看板,数据中台",
+    "og_title": "数据智能/BI 官网",
+    "og_description": "用数据看板、分析场景和咨询入口快速搭建 BI 产品官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #1e40af 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80",
+            "title": "把分散数据变成经营判断",
+            "subtitle": "统一指标、实时看板、智能分析和预警订阅，帮助团队更快发现问题。",
+            "btn_text": "预约演示",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1d4ed8"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "80",
+            "number": "80+",
+            "label": "指标模板",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "20",
+            "number": "20+",
+            "label": "数据连接器",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "5",
+            "number": "5分钟",
+            "label": "看板刷新",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "99.9",
+            "number": "99.9%",
+            "label": "服务可用性",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "数据智能能力",
+        "features_subtitle": "从采集、治理、分析到行动闭环",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "多源接入",
+            "desc": "连接数据库、表格、业务系统和第三方平台。"
+          },
+          {
+            "icon": "02",
+            "title": "指标治理",
+            "desc": "统一口径、维度和权限，减少报表争议。"
+          },
+          {
+            "icon": "03",
+            "title": "可视化看板",
+            "desc": "拖拽式搭建经营看板和专题分析页。"
+          },
+          {
+            "icon": "04",
+            "title": "智能预警",
+            "desc": "关键指标异常时自动通知负责人。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "典型应用场景",
+        "services_subtitle": "按业务团队常见需求组织页面内容",
+        "services_columns": "4",
+        "services_bg_color": "#f8fafc",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "销售看板",
+            "desc": "线索、转化、回款和客户分层追踪。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "运营分析",
+            "desc": "活动效果、用户行为和留存变化分析。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "财务指标",
+            "desc": "收入、成本、利润和预算执行监控。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "供应链监控",
+            "desc": "库存、履约、交付和异常风险预警。",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "实施路径",
+        "process_subtitle": "数据项目先控口径，再做看板，最后进入行动闭环",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "数据盘点",
+            "desc": "梳理系统、数据表、指标和使用角色。",
+            "stage_tag": "盘点"
+          },
+          {
+            "icon": "02",
+            "title": "指标建模",
+            "desc": "统一指标口径，建立维度和权限规则。",
+            "stage_tag": "建模"
+          },
+          {
+            "icon": "03",
+            "title": "看板搭建",
+            "desc": "按业务场景搭建可视化页面和筛选条件。",
+            "stage_tag": "看板"
+          },
+          {
+            "icon": "04",
+            "title": "预警闭环",
+            "desc": "配置异常提醒、负责人和处理流程。",
+            "stage_tag": "行动"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "数据应用案例",
+        "cases_subtitle": "展示不同部门如何通过数据看板提升效率",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+            "title": "经营驾驶舱",
+            "desc": "统一展示收入、利润、客户和库存指标。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+            "title": "营销转化分析",
+            "desc": "拆解渠道投放、线索质量和成交路径。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=900&q=80",
+            "title": "供应链预警",
+            "desc": "监控库存周转、缺货风险和履约效率。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约数据诊断",
+        "contact_subtitle": "提交当前数据系统、核心指标、团队角色和建设目标，顾问会给出初步建设建议。",
+        "contact_phone": "400-810-2026",
+        "contact_email": "bi@example.com",
+        "contact_address": "支持远程演示 / 可预约线下方案会",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

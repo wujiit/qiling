@@ -1,0 +1,272 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "宠物官网",
+  "page_template": "templates/template-pet.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "pet",
+    "label": "宠物官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "pet",
+    "industry_label": "宠物",
+    "scenario": "宠物服务、宠物档案、预约咨询",
+    "description": "适合宠物店、宠物医院、宠物美容、领养机构和猫舍犬舍，内置宠物档案、服务项目、相册和预约入口。",
+    "badges": [
+      "宠物图片",
+      "档案展示",
+      "预约转化"
+    ],
+    "order": 471,
+    "thumbnail": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "宠物官网模板 - 宠物档案与服务预约",
+    "description": "适合宠物店、宠物医院、宠物美容和领养机构的官网页面，包含宠物档案、服务项目、客户评价和预约入口。",
+    "keywords": "宠物官网,宠物店,宠物美容,宠物领养",
+    "og_title": "宠物官网",
+    "og_description": "带宠物照片和预约入口的宠物行业官网模板。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #164e63 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1800&q=80",
+            "title": "给毛孩子一个更安心的照顾方式",
+            "subtitle": "宠物美容、寄养、医疗咨询与领养档案展示，支持在线预约。",
+            "btn_text": "预约服务",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "1200",
+            "number": "1200+",
+            "label": "服务宠物",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "18",
+            "number": "18+",
+            "label": "护理项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "主人评分",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "7",
+            "number": "7天",
+            "label": "寄养服务",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "pet_profile",
+      "data": {
+        "pet_title": "等待回家的小伙伴",
+        "pet_subtitle": "每一只都经过健康检查和性格评估，可替换为门店宠物、领养档案或种猫种犬展示。",
+        "pet_columns": "3",
+        "pet_bg_color": "#ecfeff",
+        "pet_card_bg": "#ffffff",
+        "pet_primary_color": "#0f766e",
+        "pet_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80",
+            "name": "布丁",
+            "breed": "金毛犬",
+            "gender": "female",
+            "age": "8个月",
+            "status": "available",
+            "tags": "亲人, 已疫苗, 会握手",
+            "price": "咨询"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80",
+            "name": "汤圆",
+            "breed": "布偶猫",
+            "gender": "female",
+            "age": "4个月",
+            "status": "reserved",
+            "tags": "粘人, 爆毛, 会用猫砂",
+            "price": "已预订"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80",
+            "name": "奥利奥",
+            "breed": "边境牧羊犬",
+            "gender": "male",
+            "age": "3个月",
+            "status": "available",
+            "tags": "聪明, 活泼, 训练中",
+            "price": "咨询"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "宠物服务",
+        "services_subtitle": "从日常护理到短期寄养，覆盖主人高频需求",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "宠物美容",
+            "desc": "洗护、修剪、造型和基础皮毛护理。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "短期寄养",
+            "desc": "独立空间、定时喂养和日常观察记录。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "健康咨询",
+            "desc": "疫苗、驱虫、营养和基础健康建议。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "领养服务",
+            "desc": "档案展示、适配沟通和回访跟踪。",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "宠物相册",
+        "gallery_subtitle": "用真实照片展示服务结果和宠物状态",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "enable_filter": "yes",
+        "filter_categories": "狗狗,猫咪,护理",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80",
+            "title": "金毛犬",
+            "desc": "亲人活泼",
+            "category": "狗狗"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80",
+            "title": "布偶猫",
+            "desc": "温顺粘人",
+            "category": "猫咪"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=900&q=80",
+            "title": "洗护服务",
+            "desc": "干净舒适",
+            "category": "护理"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "主人反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "3,200+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "小米妈妈",
+            "position": "宠物美容",
+            "content": "洗护后毛发很蓬松，店员还提醒了皮肤护理注意事项。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "豆豆爸爸",
+            "position": "短期寄养",
+            "content": "每天都有照片反馈，出差时安心很多。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "花花姐姐",
+            "position": "领养咨询",
+            "content": "沟通很细，领养前把性格和注意事项讲得很清楚。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约宠物服务",
+        "booking_subtitle": "提交宠物类型、体重和服务需求，门店会确认服务安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约提醒",
+        "sidebar_content": "美容服务请在表单里说明毛发情况\n寄养需确认疫苗和驱虫记录\n领养咨询建议先预约到店沟通",
+        "contact_phone": "400-168-2026",
+        "contact_hours": "09:30-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "宠物服务常见问题",
+        "module_bg_color": "#ecfeff",
+        "faq_items": [
+          {
+            "question": "宠物寄养需要准备什么？",
+            "answer": "建议准备疫苗记录、常吃粮食、牵引绳或熟悉的小物件，降低环境变化压力。"
+          },
+          {
+            "question": "美容服务需要多久？",
+            "answer": "根据体型、毛量和服务项目不同，一般 1-3 小时，可在预约确认时说明。"
+          },
+          {
+            "question": "宠物档案可以改成商品展示吗？",
+            "answer": "可以，宠物档案模块可替换图片、标签和状态，用于猫舍犬舍或领养机构展示。"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "AI 写作工作台官网",
+  "page_template": "templates/template-qiling-ai-writing-studio.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-ai-writing-studio",
+    "label": "AI 写作工作台官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "ai_writing",
+    "industry_label": "AI 写作",
+    "scenario": "AI 写作、内容生产、公众号排版、企业知识助手",
+    "description": "适合启灵 AI 写作、AI 助手、内容工具站和企业内容工作台官网，内置产品首屏、功能能力、工作台展示、套餐、FAQ 和转化入口。",
+    "badges": [
+      "启灵生态",
+      "AI 写作",
+      "内容工具"
+    ],
+    "order": 375,
+    "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "AI 写作工作台官网模板 - 内容生产与智能助手转化",
+    "description": "适合 AI 写作、智能文案、公众号排版和企业知识助手的官网页面，包含写作能力、内容流程、插件入口、套餐和 FAQ。",
+    "keywords": "AI写作官网,智能文案,公众号排版,启灵AI写作,AI助手,内容工具",
+    "og_title": "AI 写作工作台官网",
+    "og_description": "用产品能力、工作台入口和内容流程快速搭建 AI 写作工具官网。"
+  },
+  "modules": [
+    {
+      "type": "app_hero",
+      "data": {
+        "hero_title": "把选题、写作、排版和助手放进一个工作台",
+        "hero_desc": "面向内容团队、企业公众号、SEO 站点和创作者工具的 AI 写作官网模板，可承接启灵AI写作与启灵Ai助手的产品入口。",
+        "hero_buttons": [
+          {
+            "btn_type": "custom",
+            "btn_text": "进入写作工作台",
+            "btn_subtext": "Open Studio",
+            "btn_icon": "AI",
+            "btn_link": "#",
+            "btn_style": "light"
+          },
+          {
+            "btn_type": "custom",
+            "btn_text": "查看能力清单",
+            "btn_subtext": "Features",
+            "btn_icon": "DOC",
+            "btn_link": "#",
+            "btn_style": "outline"
+          }
+        ],
+        "show_qr_card": "1",
+        "qr_icon": "QL",
+        "qr_sub": "启灵生态适配",
+        "qr_title": "支持 AI 写作与 AI 助手插件",
+        "qr_desc": "未启用插件时使用占位入口，启用后可改为真实工作台链接",
+        "qr_image": "",
+        "media_type": "image",
+        "hero_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+        "floating_elements": [
+          {
+            "float_icon": "SEO",
+            "float_title": "SEO 草稿",
+            "float_desc": "标题与结构建议",
+            "float_pos": "top-left"
+          },
+          {
+            "float_icon": "WX",
+            "float_title": "公众号排版",
+            "float_desc": "一键整理格式",
+            "float_pos": "bottom-right"
+          }
+        ],
+        "bg_type": "color",
+        "bg_color": "linear-gradient(135deg, #111827 0%, #0f766e 52%, #2563eb 100%)",
+        "padding_top": "110px",
+        "padding_bottom": "110px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "AI 内容工作台能力",
+        "features_subtitle": "围绕真实写作链路组织卖点，不只展示一个聊天框",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "文章与文案生成",
+            "desc": "支持文章初稿、产品文案、活动文案和多版本改写。"
+          },
+          {
+            "icon": "02",
+            "title": "公众号排版",
+            "desc": "把长文整理成更适合公众号发布的标题、层级和样式。"
+          },
+          {
+            "icon": "03",
+            "title": "内容工具箱",
+            "desc": "覆盖润色、扩写、摘要、事实核查和选题辅助等高频任务。"
+          },
+          {
+            "icon": "04",
+            "title": "AI 助手与知识库",
+            "desc": "可承接对话助手、提示词库、知识库问答和文章生成入口。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "product_showcase",
+      "data": {
+        "ps_bg_color": "#f8fafc",
+        "ps_padding": "80",
+        "ps_layout": "left",
+        "ps_media_items": [
+          {
+            "type": "image",
+            "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+            "video_url": "",
+            "video_poster": ""
+          },
+          {
+            "type": "image",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+            "video_url": "",
+            "video_poster": ""
+          },
+          {
+            "type": "image",
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+            "video_url": "",
+            "video_poster": ""
+          }
+        ],
+        "ps_media_height": "460px",
+        "ps_media_radius": "16px",
+        "ps_left_buttons": [
+          {
+            "text": "写作记录",
+            "url": "#",
+            "icon": "TXT",
+            "target": "_self"
+          },
+          {
+            "text": "文案广场",
+            "url": "#",
+            "icon": "DOC",
+            "target": "_self"
+          }
+        ],
+        "ps_title": "启灵 AI 内容套件",
+        "ps_subtitle": "把 qilingtxt 的写作、排版、工具箱能力与 wp-ai-chat 的助手、知识库、AI PPT 能力放在同一个产品故事里。",
+        "ps_show_price": "no",
+        "ps_price": "",
+        "ps_original_price": "",
+        "ps_cta_text": "配置工作台入口",
+        "ps_cta_url": "#",
+        "ps_cta_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "ps_cta_color": "#ffffff",
+        "ps_cta_target": "_self",
+        "ps_description": "启灵AI写作：文章创作 / 文案广场 / 公众号排版\n启灵Ai助手：对话助手 / 提示词 / 知识库 / AI PPT\n站点入口：支持把工作台、套餐、教程放在同一官网页\n适配场景：内容团队、企业公众号、SEO 站点、创作者工具"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从素材到发布的内容闭环",
+        "process_subtitle": "让访问者理解 AI 写作不是单次生成，而是一套可复用流程",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "输入选题与素材",
+            "desc": "沉淀关键词、产品资料、客户问题和参考资料。",
+            "stage_tag": "输入"
+          },
+          {
+            "icon": "02",
+            "title": "生成结构化初稿",
+            "desc": "按文章、文案、公众号或短内容场景生成可编辑草稿。",
+            "stage_tag": "生成"
+          },
+          {
+            "icon": "03",
+            "title": "润色与排版",
+            "desc": "进行扩写、摘要、事实核查、公众号排版和多平台适配。",
+            "stage_tag": "优化"
+          },
+          {
+            "icon": "04",
+            "title": "发布与复用",
+            "desc": "将历史记录、提示词和高质量文案沉淀为团队资产。",
+            "stage_tag": "沉淀"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "套餐与服务包装",
+        "pricing_subtitle": "价格只是占位，可按实际插件额度、会员权益或企业服务继续编辑",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "体验版",
+            "price": "免费体验",
+            "period": "",
+            "desc": "适合个人试用",
+            "features": "基础写作模板\n历史记录\n公众号排版体验\n基础提示词",
+            "btn_text": "开始体验",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "团队版",
+            "price": "¥199",
+            "period": "/月起",
+            "desc": "适合内容团队",
+            "features": "更多生成额度\n文案广场\n工具箱能力\n知识库助手\n优先支持",
+            "btn_text": "选择团队版",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)"
+          },
+          {
+            "name": "企业版",
+            "price": "联系顾问",
+            "period": "",
+            "desc": "适合品牌与私有化",
+            "features": "企业知识库\n专属提示词\n工作台定制\n权限与审计\n培训交付",
+            "btn_text": "预约演示",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "AI 写作常见问题",
+        "faq_subtitle": "提前回答客户关于插件、内容质量、发布流程和套餐的疑问",
+        "faq_items": [
+          {
+            "question": "这个模板必须安装启灵AI写作插件吗？",
+            "answer": "不必须。模板本身可以正常导入和展示，插件启用后再把 CTA 链接改成真实写作工作台、AI 助手或 AI PPT 页面即可。"
+          },
+          {
+            "question": "可以用于企业公众号和 SEO 内容站吗？",
+            "answer": "可以。页面文案已经覆盖选题、生成、润色、排版、发布和复用流程，适合企业公众号、SEO 站点和内容团队展示。"
+          },
+          {
+            "question": "套餐价格能否接入会员或积分体系？",
+            "answer": "可以把套餐按钮改为会员购买、积分充值或企业咨询入口。主题模板只负责展示和引流，不直接写订单或积分逻辑。"
+          },
+          {
+            "question": "是否支持知识库或多轮对话助手？",
+            "answer": "模板文案已预留启灵Ai助手的对话、提示词、知识库和文章生成入口，具体能力以插件实际配置为准。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把 AI 写作入口做成自己的产品官网",
+        "cta_subtitle": "替换为你的插件页面、会员套餐和案例内容，就能把内容工具从功能入口升级成可转化的官网。",
+        "cta_button_text": "编辑工作台入口",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

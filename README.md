@@ -1,41 +1,199 @@
-# Qi Ling Theme
+<div align="center">
 
-这是目前全宇宙最强大的 Wordpress 开源主题，没有之一！    
+# 🌟 启灵 (Qi Ling) WordPress 主题
 
-商用需要授权。
+**目前功能最强、生态最完善的 100% 全开源 WordPress 现代化企业级/出海建站主题**
 
-github上面可能文件不齐全，也有一些多余文件，因为主题过于强大，文件太多了，所以同步就没那么仔细了。  
+[![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg?style=flat-square&logo=wordpress)](https://wordpress.org)
+[![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg?style=flat-square&logo=php)](https://php.net)
+[![License: GPL-2.0](https://img.shields.io/badge/License-GPL--2.0-green.svg?style=flat-square)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![Open Source](https://img.shields.io/badge/Open%20Source-100%25-brightgreen.svg?style=flat-square)](#)
+[![Multi-language](https://img.shields.io/badge/i18n-8%2B%20Languages-orange.svg?style=flat-square)](#)
 
-github 上面的源码缺少阿里云短信SDK，自己安装下就行。    
+<p align="center">
+  <a href="#-核心亮点">核心亮点</a> •
+  <a href="#-四大装修模式">四大装修模式</a> •
+  <a href="#-80-功能模块">80+ 功能模块</a> •
+  <a href="#-100-行业页面风格">100+ 页面风格</a> •
+  <a href="#-快速上手">快速上手</a> •
+  <a href="#-企业级生态">企业级生态</a> •
+  <a href="#-开源协议">开源协议</a>
+</p>
 
-也可以直接联系我，发完整版本。  
+</div>
 
-用户QQ群：16966111    
+---
 
-文档：www.jingxialai.com/docs/qiling
+## 📖 简介
 
+**启灵（Qi Ling）** 是一套专为企业官网、外贸出海、SaaS 软件、品牌展示、垂直门户、内容运营等场景打造的**生态级现代化 WordPress 主题**。
 
-全开源、多语言、自定义模块、自定义装修、可视化装修、JSON装修等等。
-实在是过于强大，就不一一介绍了。
+坚持 **100% 全开源、零加密、零后门**，彻底打破传统商业主题的垄断与绑架。启灵不仅提供了极致灵活的**可视化与 AI 智能建站**体验，更深度内置了 **80+ 高度可复用功能模块** 与 **100+ 行业页面风格预设**，帮助开发者、企业主与个人站长以极低的成本构建高性能、国际化、高转化率的高端站点。
 
+---
 
-1.0.6之后的版本因为加入了授权机制，所以还需要授权。
-当然代码是开源的，你可以删掉授权，但是我发现了，还是会公告下。
+## ✨ 核心亮点
 
+- 🚀 **100% 全开源 (Fully Open Source)**：代码开源无加密，完全遵循 GPL-2.0 协议，随心二开与私有化部署。
+- 🎨 **四大装修体系 (Quad-Building System)**：支持**可视化装修**、**AI 智能装修**、**JSON 装修**与**自定义器 (Customizer)**，满足不同层次建站需求。
+- 🧩 **80+ 现代化功能模块**：涵盖 Banner、Hero、产品展示、服务卡片、价格表、客户评价、流程步骤、FAQ、招聘中心等，像搭积木一样轻松组合。
+- 🏛️ **100+ 行业页面风格**：内置外贸 B2B、SaaS 软件、数码科技、AI 智能体、医疗美容、企业财税、教育培训、餐饮连锁等百余款行业模板，一键导入即用。
+- 🌍 **全球化与出海多语言 (i18n)**：支持中简、中繁、英语、日语、韩语、法语、德语、西语等多国语言，自带语言切换器与国家国旗展示，完全兼容出海场景。
+- ⚡ **极致性能与极致 SEO**：内置 Industry Schema 结构化数据引擎、SEO 诊断系统、百度自动推送、响应式图片优化与资源按需加载，秒开加载、Google/百度友好。
+- 🛡️ **企业级生态套件**：涵盖会员中心、VIP 权限控制、登录/回复可见限制、短信/邮件验证码、GDPR Cookie 合规管理、全站公告、超级菜单等完整生态能力。
 
-## License
-教育、公益组织、和个人可以免费使用，但不能商用。
+---
 
-源码遵循 GPL v2。  
-本项目采用双授权。  
-商业使用需另行购买授权。  
-License: GPL v2 + Commercial License  
-Commercial use requires a separate license.  
+## 🛠️ 四大装修模式
 
+启灵打破了传统 WordPress 笨重 Page Builder 的束缚，创新性地提供了四位一体的装修引擎：
 
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      启灵主题装修生态体系                    │
+├──────────────┬──────────────┬──────────────┬────────────────┤
+│ 👁️ 可视化装修 │ 🤖 AI 智能装修 │ 📄 JSON 装修  │ ⚙️ 自定义器装修 │
+│ 所见即所得   │ 提示词一键生成│ 模板导出导入 │ Design Tokens  │
+│ 拖拽/实时预览 │ 智能布局文案  │ 模板中心套用 │ 全局风格/色系  │
+└──────────────┴──────────────┴──────────────┴────────────────┘
+```
 
+### 1. 👁️ 可视化前台装修 (Frontend Visual Builder)
+- **所见即所得**：前台直接点击编辑文字、更换图标、调整模块参数。
+- **拖拽排序**：模块自由拖拽上下排序，灵活开启/关闭。
+- **版本快照**：支持装修历史快照与一键回滚，告别误操作烦恼。
 
+### 2. 🤖 AI 智能装修 (AI Decorator)
+- **提示词一键生站**：只需输入企业类型与核心诉求（例如：“生成一个现代风格的新能源汽车出海官网”），AI 即可自动编排模块、设计文案与布局结构。
+- **开放模型接口**：支持接入各大主流大模型 API，自由配置 Endpoint 与 API Key。
 
+### 3. 📄 JSON 装修与模板中心 (JSON Template Center)
+- **结构化资产管理**：所有页面布局与模块配置均支持 100% JSON 化。
+- **一键导入/导出**：支持单页模板、整站方案的一键备份、导出分享与跨站点无缝导入。
+- **官方模板库**：内置 100+ 行业 JSON 预设，在后台模板中心点击即可一键生成独立页面。
 
+### 4. ⚙️ 自定义器与设计令牌 (Design Tokens)
+- 基于现代 CSS 变量（Design Tokens）体系，统一管理主色调、辅助色、字体家族、圆角大小、阴影层次与间距。
+- 深度整合 WordPress 实时 Customizer，全站风格秒级切换。
 
+---
 
+## 🧩 80+ 现代化功能模块
+
+启灵将企业建站的高频元素拆解为 80 多个独立、解耦、高颜值的模块，支持自由嵌套与组合：
+
+| 模块分类 | 代表性功能模块 |
+| :--- | :--- |
+| **首屏与引导** | Brand Banner Pro、Hero Search、Dynamic Banner、Fullscreen Video、App Hero、Video Portal Hero、Interact Hero 等 |
+| **企业与品牌** | About Me / 品牌介绍、Team 团队风采、Certificate 证书资质、Branches 全球分支、Compliance 信任背书、Clients 合作伙伴等 |
+| **产品与服务** | Product Showcase、Qiling Shop 橱窗、Services 服务矩阵、Service Cards、Software Ranking 软件排行/下载、Pricing 价格套餐等 |
+| **内容与动态** | Blog 流、News 资讯、Featured Posts 焦点文章、Breaking News 滚动播报、Category Tabs 分类选项卡、Query Loop 动态循环等 |
+| **转化与互动** | Contact 联系列表、Booking 预约表单、CTA 行动号召、Promotion 优惠活动、Countdown 倒计时、FAQ 折叠问答、Testimonials 客户评价等 |
+| **特色与垂直** | Room Showcase 房型展示、Tour Package 旅游套餐、GitHub Activity 动态、Pet Profile 宠物档案、Image Comparison 图片对比等 |
+
+---
+
+## 🏛️ 100+ 行业页面风格
+
+启灵官方模板中心内置超过 100 种针对垂直行业的精细化落地页预设（JSON 一键载入）：
+
+- **科技与软件**：SaaS 官网、开发者平台、开源 DevTools、AI 智能体、数据智能 BI、网络安全
+- **制造与工业**：工业自动化/机器人、半导体电子、新能源/储能、水处理环保、智能制造工厂
+- **商业与外贸**：外贸 B2B 独立站、跨境电商服务、海外仓供应链、财税会计、知识产权、法律咨询
+- **消费与生活**：餐饮连锁、酒店民宿、房产经纪、家政服务、装修设计、婚纱摄影、宠物医院
+- **教育与医疗**：职业技能培训、留学移民、早教幼教、综合门诊、齿科诊所、医疗美容、心理咨询
+- **个人与创意**：个人 IP 官网、在线求职简历、设计工作室、摄影集、影视发布门户
+
+---
+
+## 🌍 全球化与本地化支持
+
+### 出海与国际化 (i18n & Global)
+- **多语言内置**：英语 (`en_US`)、德语 (`de_DE`)、法语 (`fr_FR`)、西语 (`es_ES`)、日语 (`ja_JP`)、韩语 (`ko_KR`)、繁体中文 (`zh_TW`) 等。
+- **语言切换器**：优雅的顶部/底部多语言弹窗与国旗标识组件。
+- **GDPR 合规**：内置 Cookie Consent 管理器，满足海外数据隐私合规要求。
+- **第三方脚本整合**：便捷接入 Google Analytics 4、Google Tag Manager、Facebook Pixel、Clarity 等海外分析工具。
+
+### 中文本地化优化
+- **拼音别名**：文章/分类自动转换拼音 Slug，提升 SEO 规范性。
+- **百度快速收录**：内置百度 API 自动推送机制。
+- **短信验证码**：整合国内主流短信服务接口，保障用户注册安全性。
+
+---
+
+## 🚀 快速上手
+
+### 环境要求
+- **WordPress**：5.8 或更高版本（推荐 6.x）
+- **PHP**：7.4 / 8.0 / 8.1 / 8.2 / 8.3
+- **MySQL**：5.7+ / MariaDB 10.3+
+
+### 安装步骤
+
+1. **下载主题**：
+   从 GitHub Releases 下载最新的 `qiling.zip` 主题包，或直接克隆本仓库到主题目录：
+   ```bash
+   cd wp-content/themes/
+   git clone https://github.com/your-org/qiling.git
+   ```
+
+2. **启用主题**：
+   登录 WordPress 后台 -> `外观` -> `主题` -> 找到 **启灵 (Qi Ling)** 并点击 **启用**。
+
+3. **初始化向导 (Setup Wizard)**：
+   启用后将自动跳转至启灵主题安装向导：
+   - 快速选择站点预设风格
+   - 一键生成常用页面（首页、关于、服务、联系等）
+   - 配置基础 SEO、Logo、主题色系
+
+4. **开启可视化建站**：
+   访问前台任意页面，点击顶部管理工具栏的 **「启灵可视化装修」**，即可开启所见即所得编辑之旅！
+
+---
+
+## 📂 目录结构简析
+
+```text
+qiling/
+├── assets/                  # 静态资源（CSS、JS、字体、图表、图标库）
+├── inc/                     # 核心业务逻辑
+│   ├── admin/               # 后台控制面板、MetaBoxes、模板中心、安装向导
+│   ├── ai/                  # AI 智能装修引擎（Prompt 生成器、连接调度）
+│   ├── china/               # 中文本地化增强能力（拼音、百度推送等）
+│   ├── core/                # 页面创建器、Design Tokens、权限控制、性能优化
+│   ├── customizer/          # WordPress 自定义器配置
+│   ├── international/       # 多语言、Cookie 授权、Typography 字体引擎
+│   ├── modules/             # 80+ 独立功能模块实现类与注册中心
+│   ├── seo/                 # Schema 结构化数据引擎、SEO 健康检查
+│   └── woocommerce/         # WooCommerce 电商整合
+├── languages/               # 多国语言翻译包 (.mo / .po / .pot)
+├── template-parts/          # 局部模板切片（页头、页脚、文章卡片、评论等）
+├── templates/               # 页面模板（空白页、左右侧边栏、全宽页等）
+├── style.css                # 主题主样式表与元信息
+└── functions.php            # 主题入口核心引导文件
+```
+
+---
+
+## 🤝 贡献与反馈
+
+启灵是一个充满活力的开源项目，欢迎全球开发者与站长共同参与维护与建设：
+
+1. **Fork** 本仓库并创建您的特性分支 (`git checkout -b feature/AmazingFeature`)。
+2. 提交您的修改 (`git commit -m 'feat: Add some AmazingFeature'`)。
+3. 推送到远程分支 (`git push origin feature/AmazingFeature`)。
+4. 在 GitHub 上发起一个 **Pull Request**。
+5. 发现 Bug 或有功能建议？欢迎提交 [Issues](https://github.com/your-org/qiling/issues)。
+
+---
+
+## 📄 开源协议
+
+本项目采用 **[GNU General Public License v2.0 (GPL-2.0)](https://www.gnu.org/licenses/gpl-2.0.html)** 开源协议。
+您可以自由使用、修改、分发本主题，无任何商业版权暗锁与域名限制。
+
+---
+
+<div align="center">
+  <sub>Made with ❤️ by Summer & Qi Ling Community</sub>
+</div>

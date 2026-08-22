@@ -1,0 +1,277 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "婚礼摄影官网",
+  "page_template": "templates/template-wedding-photography.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "wedding-photography",
+    "label": "婚礼摄影官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "wedding",
+    "industry_label": "婚礼摄影",
+    "scenario": "作品集、档期预约、套餐咨询",
+    "description": "适合婚礼摄影、婚纱照工作室、跟拍团队和婚礼策划品牌，突出作品氛围与档期预约。",
+    "badges": [
+      "作品集",
+      "档期预约"
+    ],
+    "order": 451,
+    "thumbnail": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "婚礼摄影官网模板 - 作品集与档期预约",
+    "description": "适合婚礼摄影和婚纱照工作室的官网页面，包含首屏、服务套餐、作品相册、客户评价和预约入口。",
+    "keywords": "婚礼摄影官网,婚纱照,婚礼跟拍,档期预约",
+    "og_title": "婚礼摄影官网",
+    "og_description": "带作品相册和预约入口的婚礼摄影官网模板。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #be123c 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80",
+            "title": "记录那些只发生一次的瞬间",
+            "subtitle": "婚礼跟拍、婚纱旅拍、订婚仪式与家庭纪实，支持在线预约档期。",
+            "btn_text": "查询档期",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#be123c"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "800",
+            "number": "800+",
+            "label": "拍摄婚礼",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "12",
+            "number": "12城",
+            "label": "服务城市",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "新人评分",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "30",
+            "number": "30天",
+            "label": "交付周期",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "拍摄服务",
+        "services_subtitle": "按婚礼阶段和预算自由组合",
+        "services_bg_color": "#fff1f2",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "婚礼全天跟拍",
+            "desc": "从接亲、仪式到晚宴完整记录。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "婚纱旅拍",
+            "desc": "城市、海边和目的地主题拍摄。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "订婚仪式",
+            "desc": "轻量化记录仪式和亲友互动。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "婚礼短片",
+            "desc": "动态影像剪辑，适合现场和社媒发布。",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "精选作品",
+        "gallery_subtitle": "用图片呈现风格、情绪和细节",
+        "gallery_columns": "3",
+        "gallery_style": "masonry",
+        "enable_filter": "yes",
+        "filter_categories": "仪式,婚纱,细节",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
+            "title": "户外仪式",
+            "desc": "自然光纪实",
+            "category": "仪式"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=80",
+            "title": "婚纱肖像",
+            "desc": "浪漫人物氛围",
+            "category": "婚纱"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=900&q=80",
+            "title": "婚礼细节",
+            "desc": "戒指、手捧花和布置",
+            "category": "细节"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
+            "title": "亲友瞬间",
+            "desc": "真实情绪记录",
+            "category": "仪式"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "拍摄套餐",
+        "pricing_subtitle": "价格可按城市、摄影师级别和拍摄时长调整",
+        "pricing_columns": "3",
+        "module_bg_color": "#fff7ed",
+        "pricing_items": [
+          {
+            "name": "订婚记录",
+            "price": "¥2999",
+            "period": "/场",
+            "desc": "轻量仪式和亲友合影",
+            "features": "3小时拍摄\n精修 40 张\n电子相册",
+            "btn_text": "咨询档期",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "婚礼全天",
+            "price": "¥8999",
+            "period": "/场",
+            "desc": "接亲到晚宴完整跟拍",
+            "features": "双机位拍摄\n精修 120 张\n快剪短片",
+            "btn_text": "咨询档期",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "热门"
+          },
+          {
+            "name": "目的地旅拍",
+            "price": "按需报价",
+            "period": "",
+            "desc": "城市或海外定制拍摄",
+            "features": "路线策划\n造型建议\n多场景拍摄",
+            "btn_text": "定制咨询",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "新人评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "2,600+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "林女士",
+            "position": "婚礼跟拍",
+            "content": "摄影师很会抓情绪，交付照片比预期更自然。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "许先生",
+            "position": "订婚仪式",
+            "content": "沟通顺畅，现场不打扰流程，照片氛围很好。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "王女士",
+            "position": "旅拍",
+            "content": "路线建议很实用，成片风格和样片一致。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "查询档期",
+        "booking_subtitle": "提交婚期、城市和拍摄需求，我们会尽快确认是否可接档。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "档期提醒",
+        "sidebar_content": "热门日期建议提前 3-6 个月预约\n可在表单里备注喜欢的作品风格\n异地拍摄需确认交通住宿安排",
+        "contact_phone": "400-520-2026",
+        "contact_hours": "10:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "拍摄常见问题",
+        "module_bg_color": "#fff1f2",
+        "faq_items": [
+          {
+            "question": "多久可以交付照片？",
+            "answer": "可根据工作室流程调整，一般预告片 7 天内，完整精修 30-45 天。"
+          },
+          {
+            "question": "是否可以选择摄影师？",
+            "answer": "可以在档期允许时指定摄影师，价格和排期可单独配置。"
+          },
+          {
+            "question": "是否支持异地拍摄？",
+            "answer": "支持，需提前确认城市、交通、住宿和拍摄天数。"
+          }
+        ]
+      }
+    }
+  ]
+}

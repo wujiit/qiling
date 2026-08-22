@@ -1,0 +1,256 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "知识产权/商标专利官网",
+  "page_template": "templates/template-intellectual-property-service.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "law_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "intellectual-property-service",
+    "label": "知识产权/商标专利官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "intellectual_property",
+    "industry_label": "知识产权",
+    "scenario": "商标注册、专利申请、版权登记、品牌保护、侵权维权、咨询转化",
+    "description": "适合知识产权代理机构、商标专利服务、版权登记、品牌保护和企业法务咨询官网，内置首屏、服务范围、申请流程、案例入口、资质荣誉、FAQ 和咨询表单。",
+    "badges": [
+      "中文高频",
+      "知识产权",
+      "商标专利"
+    ],
+    "order": 592,
+    "thumbnail": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "知识产权商标专利官网模板 - 商标注册与专利申请咨询",
+    "description": "适合知识产权代理、商标注册、专利申请、版权登记和品牌维权服务的官网页面，包含服务项目、申请流程、案例展示、资质荣誉、FAQ 和咨询入口。",
+    "keywords": "知识产权官网,商标注册官网,专利申请,版权登记,软著申请,商标维权,品牌保护",
+    "og_title": "知识产权/商标专利官网",
+    "og_description": "用服务范围、申请流程和专业资质快速搭建知识产权服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #334155 52%, #7c2d12 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80",
+            "title": "从商标注册到专利布局，保护企业核心资产",
+            "subtitle": "商标查询、专利申请、版权登记、软著申请、品牌监测和侵权维权，帮助企业把名称、技术、作品和品牌权益管起来。",
+            "btn_text": "免费查询能否注册",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#334155"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "12年+",
+            "label": "知识产权服务经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "3000+",
+            "label": "商标专利案例",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "1v1",
+            "label": "顾问检索建议",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "全流程",
+            "label": "申请进度跟进",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "知识产权服务范围",
+        "services_subtitle": "覆盖企业品牌、技术成果、内容作品和侵权风险的常见保护场景",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "商标注册",
+            "desc": "商标近似查询、类别建议、材料准备、提交申请和驳回复审咨询。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "专利申请",
+            "desc": "发明、实用新型、外观专利申请，协助技术交底和布局建议。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "版权/软著登记",
+            "desc": "作品版权、软件著作权、内容版权登记和材料规范整理。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "品牌监测与维权",
+            "desc": "商标监测、侵权线索梳理、证据固定、异议无效和维权策略建议。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "申请与保护流程",
+        "process_subtitle": "先做检索评估，再提交申请，后续持续跟进审查、补正和维护",
+        "process_mode": "standard",
+        "module_bg_color": "#f8fafc",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求诊断",
+            "desc": "确认企业名称、产品线、技术成果、作品类型和当前风险点。",
+            "stage_tag": "诊断"
+          },
+          {
+            "icon": "02",
+            "title": "检索与方案",
+            "desc": "进行商标近似、专利新颖性或版权材料评估，给出类别和布局建议。",
+            "stage_tag": "检索"
+          },
+          {
+            "icon": "03",
+            "title": "材料提交",
+            "desc": "整理主体资质、图样、技术交底、源代码或作品材料，并按流程提交。",
+            "stage_tag": "申请"
+          },
+          {
+            "icon": "04",
+            "title": "审查跟进与维护",
+            "desc": "跟进受理、补正、审查意见、公告、授权和后续续展/年费/监测事项。",
+            "stage_tag": "维护"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "典型服务案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "220px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "ch_title": "资质与专业背书",
+        "ch_subtitle": "知识产权服务强依赖专业资质、代理经验和流程规范，建议导入后替换为真实证书或荣誉",
+        "ch_columns": "3",
+        "ch_enable_filter": "yes",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "ch_items": [
+          {
+            "image": "",
+            "title": "知识产权代理机构备案",
+            "category": "行业备案",
+            "badge": "专业备案",
+            "cert_no": "IPR-2026-001",
+            "issuer": "知识产权主管机构",
+            "issue_date": "2026-01-12",
+            "expiry_date": "年度更新",
+            "file_url": "#"
+          },
+          {
+            "image": "",
+            "title": "商标代理服务规范认证",
+            "category": "服务认证",
+            "badge": "流程规范",
+            "cert_no": "TM-2026-108",
+            "issuer": "行业服务认证机构",
+            "issue_date": "2026-02-20",
+            "expiry_date": "2029-02-19",
+            "file_url": "#"
+          },
+          {
+            "image": "",
+            "title": "中小企业品牌保护服务机构",
+            "category": "荣誉奖项",
+            "badge": "客户认可",
+            "cert_no": "BRAND-2026-036",
+            "issuer": "企业服务协会",
+            "issue_date": "2026-03-18",
+            "expiry_date": "",
+            "file_url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "知识产权服务常见问题",
+        "faq_subtitle": "把客户最关心的查询、周期、驳回和维护边界提前讲清楚",
+        "faq_items": [
+          {
+            "question": "商标查询通过就一定能注册成功吗？",
+            "answer": "不能保证。查询可以降低近似风险，但最终结果仍取决于审查规则、在先权利、显著性和公告异议等因素。"
+          },
+          {
+            "question": "商标和专利申请周期大概多久？",
+            "answer": "不同业务周期差异很大。商标通常经历受理、审查、公告和注册；专利则根据发明、实用新型、外观类型和审查意见不同而变化。"
+          },
+          {
+            "question": "企业应该先注册商标还是先申请专利？",
+            "answer": "通常品牌名称、产品名称和核心类别应尽早做商标布局；技术方案、结构设计或外观设计则按公开前后的保护要求尽快评估专利申请。"
+          },
+          {
+            "question": "申请完成后还需要维护吗？",
+            "answer": "需要。商标有续展、变更、监测和异议无效等后续事项；专利可能涉及年费、权利要求维护和侵权风险监测。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约知识产权顾问评估",
+        "contact_subtitle": "提交品牌名称、产品类别、技术方向或作品类型，顾问会先做初步检索和保护路径建议。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

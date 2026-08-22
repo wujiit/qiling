@@ -15,7 +15,7 @@
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -30,7 +30,7 @@
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -39,7 +39,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -57,7 +57,7 @@
 }.qiling-module-scope-process .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-process .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-process .features-tab-btn.active::before {
@@ -270,13 +270,13 @@
   position: relative;
   box-sizing: border-box;
   border-radius: var(--qiling-card-radius);
-  border: 1px solid var(--qiling-component-card-border);
+  border: 1px solid var(--process-card-border, var(--qiling-component-card-border));
   background: linear-gradient(
       180deg,
       rgba(var(--color-primary-rgb), 0.035) 0%,
       rgba(var(--color-primary-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--process-card-bg, var(--qiling-component-card-bg));
   box-shadow: var(--qiling-component-card-shadow);
   transition:
     transform 0.3s ease,
@@ -284,14 +284,14 @@
     box-shadow 0.3s ease;
 }.qiling-module-scope-process .process-item:hover {
   transform: translateY(-6px);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--process-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
 }.qiling-module-scope-process .process-icon {
   width: 80px;
   height: 80px;
   margin: 0 auto var(--qiling-space-20);
   border-radius: 50%;
   /* 背景是动态的 (background is dynamic) */
-  color: var(--color-text-inverse);
+  color: var(--process-icon-color, var(--color-text-inverse));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,7 +314,7 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    var(--color-primary),
+    var(--process-arrow, var(--color-primary)),
     var(--qiling-color-transparent)
   );
   z-index: 1;
@@ -322,7 +322,7 @@
   position: absolute;
   right: 0;
   top: -4px;
-  border: solid var(--color-primary);
+  border: solid var(--process-arrow, var(--color-primary));
   border-width: 0 2px 2px 0;
   padding: var(--qiling-space-4);
   transform: rotate(-45deg);
@@ -353,7 +353,7 @@
   padding: var(--qiling-space-4) var(--qiling-space-10);
   border-radius: 999px;
   background: var(--qiling-component-badge-bg);
-  color: var(--qiling-component-badge-text);
+  color: var(--process-badge-text, var(--qiling-component-badge-text));
   border: 1px solid var(--qiling-color-transparent);
   font-size: var(--qiling-text-12);
   font-weight: 600;
@@ -458,4 +458,12 @@ html.dark-mode .module-process {
   color: var(--qiling-component-module-title-color-dark, var(--color-heading));
 }html.dark-mode .qiling-module-scope-process .module-process .section-subtitle {
   color: var(--color-text-muted);
+}.qiling-module-scope-process .module-process.module-process .process-item {
+  background: var(--process-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--process-card-border, var(--qiling-component-card-border));
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-process .module-process.module-process .process-item:hover {
+  border-color: var(--process-card-hover-border, var(--process-card-border, var(--qiling-component-card-border)));
+  box-shadow: var(--qiling-component-card-shadow);
 }

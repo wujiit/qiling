@@ -1,0 +1,279 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "社区工单官网",
+  "page_template": "templates/template-qiling-bbs-support-community.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-bbs-support-community",
+    "label": "社区工单官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "community_support",
+    "industry_label": "社区工单",
+    "scenario": "微社区、问答讨论、圈子订阅、工单系统、SLA、审核治理",
+    "description": "适合启灵bbs、产品社区、用户问答、工单支持和客户成功入口，内置社区首屏、能力矩阵、数据指标、知识点卡、落地流程、FAQ 和 CTA。",
+    "badges": [
+      "启灵生态",
+      "社区工单",
+      "用户治理"
+    ],
+    "order": 385,
+    "thumbnail": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "社区工单官网模板 - 产品社区与客户支持",
+    "description": "适合启灵bbs的官网页面，覆盖社区首页、圈子、动态流、问答、最佳答案、审核队列、举报管理、用户徽章、工单分类、SLA 预警、搜索索引和积分联动。",
+    "keywords": "社区官网,工单系统,产品社区,启灵bbs,用户问答,圈子订阅,工单SLA,社区治理",
+    "og_title": "社区工单官网",
+    "og_description": "用启灵bbs搭建产品社区、问答讨论和工单支持的一体化入口。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #020617 0%, #312e81 52%, #0f766e 100%)",
+        "bb_title": "社区讨论和工单支持<br><strong>放进同一个入口</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#ffffff",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #5eead4 100%)",
+        "bb_subtitle": "启灵bbs 社区工单方案",
+        "bb_desc": "围绕社区首页、圈子、动态流、问答、最佳答案、审核队列、举报管理、通知偏好、私信、工单分类、SLA 预警和社区看板，把用户讨论和客户支持合并成可运营的服务中心。",
+        "bb_text_color": "#dbeafe",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "进入社区首页",
+            "link": "#",
+            "style": "primary",
+            "icon": "社"
+          },
+          {
+            "text": "提交支持工单",
+            "link": "#",
+            "style": "light",
+            "icon": "单"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#4f46e5",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#4338ca",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#eef2ff",
+        "bb_light_btn_hover_text_color": "#4338ca",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "社区和工单一体化能力",
+        "features_subtitle": "启灵bbs 不只是发帖，还包含问答沉淀、治理审核、通知偏好和客服工单",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#e0e7ff",
+        "features_items": [
+          {
+            "icon": "圈",
+            "title": "圈子与动态流",
+            "desc": "支持社区首页、圈子、普通帖、提问帖、经验帖、公告帖、活动帖和圈子订阅通知。"
+          },
+          {
+            "icon": "答",
+            "title": "问答解决体系",
+            "desc": "提问可进入讨论中、已解决、已关闭状态，支持最佳答案、优质回复置顶、楼主追问和重开。"
+          },
+          {
+            "icon": "单",
+            "title": "工单与 SLA",
+            "desc": "内置工单系统、工单分类、首响 SLA、解决 SLA、待分配工单和工单公开到社区能力。"
+          },
+          {
+            "icon": "治",
+            "title": "社区治理",
+            "desc": "提供审核队列、举报管理、圈子版主、版主日志、用户徽章、黑名单、风控中心和搜索索引重建。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "把社区运营指标集中起来",
+        "stats_subtitle": "从活跃、问答解决率到待审、举报、风险和工单 SLA，管理员能快速看到异常",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "3",
+            "label": "自动初始化页面"
+          },
+          {
+            "number": "5",
+            "label": "动态内容类型"
+          },
+          {
+            "number": "16+",
+            "label": "后台运营入口"
+          },
+          {
+            "number": "SLA",
+            "label": "工单响应预警"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#eef2ff",
+        "module_padding_top": "76px",
+        "module_padding_bottom": "76px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "knowledge_cards",
+      "data": {
+        "kc_title": "上线社区工单前先讲清楚这些概念",
+        "kc_subtitle": "把容易混淆的社区、问答、工单和治理规则变成客户能理解的卡片",
+        "kc_columns": "3",
+        "kc_show_number": "yes",
+        "kc_show_example": "yes",
+        "kc_show_mistake": "yes",
+        "kc_show_link": "yes",
+        "kc_card_bg": "#ffffff",
+        "kc_bg_color": "#f8fafc",
+        "kc_accent_color": "#4f46e5",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "kc_items": [
+          {
+            "term": "圈子订阅",
+            "definition": "用户订阅某个圈子后，圈子有新动态时可以收到通知。",
+            "importance": "medium",
+            "example": "产品问答、经验分享、活动公告可以拆成不同圈子。",
+            "mistake": "一开始把圈子分得过细，导致内容冷清。",
+            "link_text": "配置圈子",
+            "link_url": "#"
+          },
+          {
+            "term": "问答解决率",
+            "definition": "提问帖从讨论中进入已解决状态的比例，用于判断社区答疑质量。",
+            "importance": "high",
+            "example": "最佳答案和优质回复置顶能帮助新用户快速找到结果。",
+            "mistake": "只追求发帖量，不追踪问题是否被解决。",
+            "link_text": "查看问答规则",
+            "link_url": "#"
+          },
+          {
+            "term": "工单 SLA",
+            "definition": "客服对工单首响和解决时限的承诺，用于后台预警和优先处理。",
+            "importance": "high",
+            "example": "按工单分类设置首响 SLA 和解决 SLA，再在工单管理里处理超时。",
+            "mistake": "把工单公开到社区却没有设置分类和响应责任人。",
+            "link_text": "提交工单",
+            "link_url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "社区工单落地流程",
+        "process_subtitle": "从圈子规划到客服闭环，避免只开入口没有运营规则",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "规划圈子和内容类型",
+            "desc": "先确定公告、问答、经验、活动和产品反馈的承载方式，再配置圈子、发帖类型和订阅通知。",
+            "stage_tag": "规划"
+          },
+          {
+            "icon": "02",
+            "title": "配置工单分类和 SLA",
+            "desc": "按售前、售后、技术支持、账号问题等分类设置首响和解决时限，明确客服处理责任。",
+            "stage_tag": "配置"
+          },
+          {
+            "icon": "03",
+            "title": "沉淀问答和知识卡片",
+            "desc": "把高频问题转成问答帖、最佳答案和知识点卡片，让新用户优先自助解决。",
+            "stage_tag": "沉淀"
+          },
+          {
+            "icon": "04",
+            "title": "复盘待审、举报和超时工单",
+            "desc": "运营人员定期查看待审、举报、风险用户和 SLA 超时提醒，持续优化社区规则。",
+            "stage_tag": "运营"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "社区工单常见问题",
+        "faq_subtitle": "提前解释社区页、私信通知、工单系统和治理审核的边界",
+        "faq_items": [
+          {
+            "question": "启灵bbs 启用后会自动创建哪些页面？",
+            "answer": "插件会自动创建社区页、私信页和通知页，默认 slug 分别为 community、messages、notifications，页面内容包含对应短代码。"
+          },
+          {
+            "question": "社区和工单是什么关系？",
+            "answer": "社区用于公开讨论、问答沉淀和圈子运营；工单用于一对一支持、分类分配、首响/解决 SLA 和客服处理。部分工单可公开到社区。"
+          },
+          {
+            "question": "新站应该先开审核吗？",
+            "answer": "新站、活动站和容易被灌水的站建议先启用审核；成熟社区可以根据运营人力改用举报、风控和版主治理。"
+          },
+          {
+            "question": "不使用启灵主题还能运行吗？",
+            "answer": "主功能仍可运行，但个人中心联动、入口体验和部分页面衔接可能会降级。模板面向启灵主题下的最佳展示效果。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "让产品支持从聊天群回到可沉淀的社区",
+        "cta_subtitle": "替换社区页、私信页、通知页、工单提交页和后台工单分类说明，就能把启灵bbs包装成用户自助和客服支持中心。",
+        "cta_button_text": "配置社区工单入口",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

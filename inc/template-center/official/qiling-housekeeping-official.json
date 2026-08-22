@@ -1,0 +1,337 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "家政服务官网",
+  "page_template": "templates/template-qiling-housekeeping-official.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-housekeeping-official",
+    "label": "家政服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "housekeeping",
+    "industry_label": "家政服务",
+    "scenario": "服务上架、预约下单、门店派单",
+    "description": "适合家政清洁、保姆月嫂、收纳整理、维修养护和本地上门服务团队，内置服务项目、门店覆盖、价格套餐、预约流程、评价和预约入口，可承接启灵家政服务插件。",
+    "badges": [
+      "启灵生态",
+      "家政预约",
+      "派单履约"
+    ],
+    "order": 616,
+    "thumbnail": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "家政服务官网模板 - 上门服务预约与派单",
+    "description": "适合家政服务品牌和本地上门服务团队的官网页面，包含服务项目、门店覆盖、价格套餐、预约流程、客户评价、FAQ 和预约入口。",
+    "keywords": "家政服务官网,家政预约,上门保洁,深度清洁,收纳整理,家政派单",
+    "og_title": "家政服务官网",
+    "og_description": "用服务项目、价格套餐和预约入口快速搭建家政上门服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80",
+            "title": "让家政上门服务更好预约、更好交付",
+            "subtitle": "服务项目、门店覆盖、价格套餐、派单履约和客户回访，一页讲清家政服务闭环。",
+            "btn_text": "立即预约家政服务",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "8 类",
+            "label": "常用服务",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "24h",
+            "label": "预约响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "3 步",
+            "label": "派单履约",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "4.9",
+            "label": "客户评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "热门家政服务",
+        "services_subtitle": "覆盖日常保洁、深度清洁、收纳整理、家电清洗和陪护照料等高频到家服务",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "日常保洁",
+            "desc": "家庭日常清洁、厨房卫生间清理和地面养护。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "深度清洁",
+            "desc": "开荒保洁、玻璃清洁、油污处理和全屋精细清洁。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "收纳整理",
+            "desc": "衣橱整理、储物规划和搬家前后空间复位。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "家电清洗",
+            "desc": "空调、油烟机、洗衣机和冰箱拆洗保养。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "门店与服务区域",
+        "branches_subtitle": "展示可预约门店、服务片区和上门服务时间",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看门店",
+        "booking_button_text": "预约上门",
+        "branches_list": [
+          {
+            "name": "市中心家政服务站",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市静安区示例路 88 号",
+            "phone": "021-61000001",
+            "email": "home@example.com",
+            "hours": "08:00-21:00",
+            "services": "日常保洁,深度清洁,收纳整理",
+            "transport": "覆盖核心城区",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "社区上门服务中心",
+            "city": "杭州",
+            "status": "open",
+            "address": "杭州市西湖区示例街 66 号",
+            "phone": "0571-61000002",
+            "email": "hangzhou-home@example.com",
+            "hours": "08:00-21:00",
+            "services": "家电清洗,保姆月嫂,老人陪护",
+            "transport": "覆盖周边社区",
+            "lat": "30.2741",
+            "lng": "120.1551",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "东区家政调度站",
+            "city": "苏州",
+            "status": "coming",
+            "address": "苏州市工业园区示例大道 99 号",
+            "phone": "0512-61000003",
+            "email": "suzhou-home@example.com",
+            "hours": "预约制上门",
+            "services": "周期保洁,企业保洁,搬家整理",
+            "transport": "预约制派单",
+            "lat": "31.2989",
+            "lng": "120.5853",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "预约派单流程",
+        "process_subtitle": "把下单、确认、派单、上门和验收流程讲清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "选择服务",
+            "desc": "客户选择服务项目、面积、地址和期望上门时间。",
+            "stage_tag": "预约"
+          },
+          {
+            "icon": "02",
+            "title": "确认订单",
+            "desc": "客服确认范围、报价、上门规则和特殊需求。",
+            "stage_tag": "确认"
+          },
+          {
+            "icon": "03",
+            "title": "派单上门",
+            "desc": "系统或调度员安排服务人员按时上门履约。",
+            "stage_tag": "派单"
+          },
+          {
+            "icon": "04",
+            "title": "验收回访",
+            "desc": "客户确认服务结果，平台沉淀评价和复购提醒。",
+            "stage_tag": "回访"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "服务套餐",
+        "pricing_subtitle": "可按城市、门店和服务时长自由调整价格",
+        "pricing_columns": "3",
+        "module_bg_color": "#f0fdfa",
+        "pricing_items": [
+          {
+            "name": "日常保洁",
+            "price": "¥99",
+            "period": "/次起",
+            "desc": "适合常规家庭清洁",
+            "features": "2 小时起约\n厨房卫生间重点清洁\n服务完成后在线回访",
+            "btn_text": "预约保洁",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "深度清洁",
+            "price": "¥399",
+            "period": "/次起",
+            "desc": "适合开荒和阶段性深清",
+            "features": "全屋精细清洁\n玻璃和顽固污渍处理\n可按面积确认报价",
+            "btn_text": "咨询深清",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "热门"
+          },
+          {
+            "name": "周期服务",
+            "price": "¥699",
+            "period": "/月起",
+            "desc": "适合固定家庭和企业保洁",
+            "features": "固定阿姨或服务团队\n周期排班提醒\n客户档案和复购跟进",
+            "btn_text": "咨询周期",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "3000+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "周女士",
+            "position": "家庭保洁客户",
+            "content": "预约和上门时间都很明确，服务完成后还有回访。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林先生",
+            "position": "办公室负责人",
+            "content": "周期保洁排班稳定，临时调整也能及时处理。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "许女士",
+            "position": "深度清洁客户",
+            "content": "油污和玻璃清理得很仔细，验收流程也清楚。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "家政预约常见问题",
+        "module_bg_color": "#eff6ff",
+        "faq_items": [
+          {
+            "question": "预约后会自动派单吗？",
+            "answer": "可根据门店和员工设置自动派单，也可以由调度员手动确认服务人员和上门时间。"
+          },
+          {
+            "question": "价格可以按城市和服务面积调整吗？",
+            "answer": "可以，页面展示的是示例套餐，正式上线时可在启灵家政服务插件中维护真实服务、时长和价格。"
+          },
+          {
+            "question": "客户能查看订单进度吗？",
+            "answer": "启灵家政服务插件支持个人中心和匿名订单查询，客户可以跟进订单、改期、评价和售后反馈。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约家政上门服务",
+        "booking_subtitle": "提交服务项目、上门地址和期望时间，客服会确认报价并安排服务人员。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约须知",
+        "sidebar_content": "请说明服务面积、重点清洁区域和特殊需求\n最终费用以服务范围和城市价格为准\n启用启灵家政服务插件后可承接真实下单和订单跟踪",
+        "contact_phone": "400-830-2026",
+        "contact_hours": "08:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

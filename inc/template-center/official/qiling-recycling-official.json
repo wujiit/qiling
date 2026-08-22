@@ -1,0 +1,295 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "回收服务官网",
+  "page_template": "templates/template-qiling-recycling-official.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-recycling-official",
+    "label": "回收服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "recycling",
+    "industry_label": "回收服务",
+    "scenario": "多品类估价、门店服务、预约转化",
+    "description": "适合数码、家电、奢品、金属和旧物回收服务商，内置回收品类、估价流程、服务网点、客户评价和预约入口，可承接启灵回收插件估价订单。",
+    "badges": [
+      "启灵生态",
+      "回收估价",
+      "预约转化"
+    ],
+    "order": 615,
+    "thumbnail": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "回收服务官网模板 - 估价预约与门店回收",
+    "description": "适合回收服务品牌的官网页面，包含回收品类、估价流程、服务网点、客户评价、FAQ 和预约入口。",
+    "keywords": "回收服务官网,旧物回收,数码回收,家电回收,上门回收,回收估价",
+    "og_title": "回收服务官网",
+    "og_description": "用回收品类、估价流程和预约入口快速搭建回收服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1800&q=80",
+            "title": "让闲置物品回收更透明、更好预约",
+            "subtitle": "多品类估价、上门到店邮寄三种交付方式、复核结算和订单跟进，一页完成客户信任建立。",
+            "btn_text": "立即估价预约",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#047857"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "6 类",
+            "label": "热门回收品类",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "30 分钟",
+            "label": "初步响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "3 种",
+            "label": "交付方式",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "100%",
+            "label": "明细报价",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "热门回收品类",
+        "services_subtitle": "覆盖数码、家电、奢品、金属和企业闲置资产等高频回收场景",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "数码回收",
+            "desc": "手机、平板、电脑、相机和智能设备估价回收。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "家电回收",
+            "desc": "空调、冰箱、洗衣机、电视和厨电上门回收。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "奢品回收",
+            "desc": "箱包、腕表、首饰和潮流单品鉴定回收。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "企业闲置",
+            "desc": "办公设备、批量旧货和库存资产统一评估处理。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "标准回收流程",
+        "process_subtitle": "把估价、交付、复核和结算流程讲清楚，减少客户咨询成本",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "在线估价",
+            "desc": "选择品类、品牌、型号和成色，获得初步参考价。",
+            "stage_tag": "估价"
+          },
+          {
+            "icon": "02",
+            "title": "选择方式",
+            "desc": "支持上门、到店、邮寄和批量回收服务安排。",
+            "stage_tag": "预约"
+          },
+          {
+            "icon": "03",
+            "title": "质检复核",
+            "desc": "门店或质检人员按标准核验外观、功能和配件。",
+            "stage_tag": "复核"
+          },
+          {
+            "icon": "04",
+            "title": "确认结算",
+            "desc": "客户确认最终报价后完成结算，并同步订单状态。",
+            "stage_tag": "结算"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "服务网点与覆盖区域",
+        "branches_subtitle": "展示门店、上门城市和可承接的回收方式",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看网点",
+        "booking_button_text": "预约回收",
+        "branches_list": [
+          {
+            "name": "市中心回收门店",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市静安区示例路 88 号",
+            "phone": "021-60000001",
+            "email": "recycle@example.com",
+            "hours": "09:00-20:00",
+            "services": "数码,奢品,到店回收",
+            "transport": "地铁 2 号线步行 8 分钟",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "社区上门服务站",
+            "city": "杭州",
+            "status": "open",
+            "address": "杭州市西湖区示例街 66 号",
+            "phone": "0571-60000002",
+            "email": "hangzhou@example.com",
+            "hours": "09:00-19:00",
+            "services": "家电,旧物,上门回收",
+            "transport": "覆盖主城区上门服务",
+            "lat": "30.2741",
+            "lng": "120.1551",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "企业批量回收中心",
+            "city": "苏州",
+            "status": "coming",
+            "address": "苏州市工业园区示例大道 99 号",
+            "phone": "0512-60000003",
+            "email": "business@example.com",
+            "hours": "预约制服务",
+            "services": "办公设备,库存资产,批量回收",
+            "transport": "支持企业预约评估",
+            "lat": "31.2989",
+            "lng": "120.5853",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "5000+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "周女士",
+            "position": "数码回收客户",
+            "content": "估价和复核说明都很清楚，最终报价也有明细。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林先生",
+            "position": "门店客户",
+            "content": "到店检测速度很快，订单状态能及时看到。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "许女士",
+            "position": "家电回收客户",
+            "content": "上门时间准，搬运和结算流程都比较规范。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "回收服务常见问题",
+        "module_bg_color": "#ecfdf5",
+        "faq_items": [
+          {
+            "question": "在线估价就是最终回收价吗？",
+            "answer": "在线估价是参考价，最终价格会根据实物成色、功能状态、配件和市场行情复核确认。"
+          },
+          {
+            "question": "支持上门、到店和邮寄三种方式吗？",
+            "answer": "可以按城市和品类配置不同交付方式，门店回收、预约上门和邮寄回收都可以在页面中承接。"
+          },
+          {
+            "question": "批量回收怎么处理？",
+            "answer": "企业闲置资产和批量旧货可先提交清单，服务顾问会安排专人评估、报价和交付计划。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约回收估价",
+        "booking_subtitle": "提交回收品类、型号、成色和服务城市，回收顾问会确认估价与交付安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "服务承诺",
+        "sidebar_content": "估价明细透明可核对\n支持上门、到店和邮寄交付\n订单状态和结算记录可持续跟进",
+        "contact_phone": "400-620-2026",
+        "contact_hours": "09:00-20:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

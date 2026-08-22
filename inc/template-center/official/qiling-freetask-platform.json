@@ -1,0 +1,274 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "悬赏任务众包官网",
+  "page_template": "templates/template-qiling-freetask-platform.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-freetask-platform",
+    "label": "悬赏任务众包官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "freelance_task",
+    "industry_label": "悬赏众包",
+    "scenario": "任务大厅、任务审核、积分托管、投标交付、奖励发放、争议仲裁",
+    "description": "适合启灵悬赏任务、启灵积分商城和任务众包平台，内置搜索首屏、数据看板、能力清单、交付流程、任务频道、评价和 CTA。",
+    "badges": [
+      "启灵生态",
+      "悬赏任务",
+      "积分托管"
+    ],
+    "order": 383,
+    "thumbnail": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "悬赏任务众包官网模板 - 任务大厅与积分托管",
+    "description": "适合启灵悬赏任务的官网页面，覆盖任务审核、预算积分和手续费扣除、方案投标、多人中标、成果提交、平台发放奖励、争议仲裁和任务积分转余额。",
+    "keywords": "悬赏任务官网,众包平台,任务大厅,积分托管,启灵悬赏任务,任务投标,奖励发放,争议仲裁",
+    "og_title": "悬赏任务众包官网",
+    "og_description": "用任务大厅、积分托管和交付流程搭建启灵悬赏任务平台入口。"
+  },
+  "modules": [
+    {
+      "type": "hero_search",
+      "data": {
+        "hs_height": "85vh",
+        "hs_overlay_color": "rgba(15, 23, 42, 0.62)",
+        "hs_content_align": "center",
+        "hs_bg_items": [
+          {
+            "type": "image",
+            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80",
+            "video_url": ""
+          }
+        ],
+        "hs_bg_autoplay": "yes",
+        "hs_bg_interval": "5000",
+        "hs_title": "发布任务、托管预算、按成果发奖",
+        "hs_title_color": "#ffffff",
+        "hs_title_size": "3.4rem",
+        "hs_subtitle": "适合悬赏任务、招标外包、创意征集和轻量众包场景，把任务审核、积分托管、方案投标、成果验收、奖励发放和争议仲裁放进一个清晰平台。",
+        "hs_subtitle_color": "rgba(255,255,255,0.88)",
+        "hs_show_search": "yes",
+        "hs_search_placeholder": "搜索设计、开发、文案、数据、同城服务任务",
+        "hs_search_btn_text": "查找任务",
+        "hs_search_btn_bg": "linear-gradient(135deg, #2563eb 0%, #059669 100%)",
+        "hs_search_btn_text_color": "#ffffff",
+        "hs_search_btn_hover_bg": "linear-gradient(135deg, #6d28d9 0%, #0e7490 100%)",
+        "hs_search_btn_hover_text_color": "#ffffff",
+        "hs_search_width": "720px",
+        "hs_tags_label": "热门任务：",
+        "hs_tags": [
+          {
+            "text": "Logo 设计"
+          },
+          {
+            "text": "WordPress 二开"
+          },
+          {
+            "text": "短视频剪辑"
+          },
+          {
+            "text": "数据采集"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "把任务交付数据放在台面上",
+        "stats_subtitle": "任务、投标、成果、奖励和手续费都有独立链路，方便平台持续运营",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "6",
+            "label": "前台短代码"
+          },
+          {
+            "number": "12",
+            "label": "二开事件钩子"
+          },
+          {
+            "number": "5",
+            "label": "后台审核入口"
+          },
+          {
+            "number": "100%",
+            "label": "预算托管记录"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "linear-gradient(135deg, #111827 0%, #4c1d95 52%, #0e7490 100%)",
+        "stats_title_color": "#ffffff",
+        "module_padding_top": "82px",
+        "module_padding_bottom": "82px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "title": "悬赏任务平台能力",
+        "subtitle": "按招标人、服务者和平台管理员三类角色组织功能说明",
+        "columns": "3",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "82px",
+        "module_padding_bottom": "82px",
+        "tabs": [
+          {
+            "tab_id": "publisher",
+            "tab_title": "招标人",
+            "tab_icon": "发",
+            "features": "审|任务先审核|发布后进入平台审核，避免垃圾任务直接出现在大厅。\n托|预算积分托管|发布时扣除预算积分和手续费，预算进入托管池。\n选|单人/多人中标|可从投标方案中选择一个或多个中标人。\n验|成果审核|对文字、截图、附件、视频、联系方式或线下位置等成果进行审核。"
+          },
+          {
+            "tab_id": "worker",
+            "tab_title": "服务者",
+            "tab_icon": "接",
+            "features": "投|提交投标方案|服务者可在任务详情页提交方案和报价说明。\n交|提交成果|中标后按任务要求提交成果资料和附件。\n奖|奖励发放|成果通过后由平台管理员统一发放任务积分。\n转|积分转余额|支持前台提交任务积分转换可提现余额申请。"
+          },
+          {
+            "tab_id": "operator",
+            "tab_title": "平台运营",
+            "tab_icon": "管",
+            "features": "账|手续费台账|平台记录手续费收入逻辑项，并提供月度统计报表。\n裁|争议仲裁|成果驳回后可申诉，平台可维持驳回或做仲裁。\n通|站内通知|对接启灵主题通知中心，覆盖任务发布、审核、投标、选标和发奖。\n钩|二开钩子|提供任务创建、审核、投标、中标、成果、发奖、取消和争议事件。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从发布任务到奖励发放",
+        "process_subtitle": "把预算、投标、成果、发奖和退款拆成可运营的流程",
+        "process_mode": "standard",
+        "module_bg_color": "#f8fafc",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "发布并审核任务",
+            "desc": "招标人填写任务需求、预算和交付标准，平台先审核再展示。",
+            "stage_tag": "发布"
+          },
+          {
+            "icon": "02",
+            "title": "扣除预算与手续费",
+            "desc": "发布时自动扣预算积分和手续费，预算积分进入托管池，手续费进入平台收入逻辑项。",
+            "stage_tag": "托管"
+          },
+          {
+            "icon": "03",
+            "title": "投标、选标与交付",
+            "desc": "参与者提交投标方案，招标人选择中标人，中标人提交文字、截图、附件、视频或线下位置等成果。",
+            "stage_tag": "交付"
+          },
+          {
+            "icon": "04",
+            "title": "审核、发奖与仲裁",
+            "desc": "成果通过后后台统一发奖；驳回后可申诉，平台根据材料进行争议仲裁。",
+            "stage_tag": "结算"
+          }
+        ]
+      }
+    },
+    {
+      "type": "category_tabs",
+      "data": {
+        "tabs_title": "任务频道示例",
+        "tabs_subtitle": "导入后可把这些频道绑定到真实文章分类、任务专题或任务大厅筛选入口",
+        "tabs_source_mode": "manual",
+        "columns": "4",
+        "post_count": "8",
+        "image_aspect_ratio": "16:9",
+        "show_date": "yes",
+        "show_author": "no",
+        "show_views": "yes",
+        "show_category_badge": "yes",
+        "padding_top": "80px",
+        "padding_bottom": "80px",
+        "more_btn_type": "link",
+        "bg_color": "#ffffff",
+        "tabs_list": [
+          {
+            "tab_name": "设计创意",
+            "source_type": "category",
+            "source_id": ""
+          },
+          {
+            "tab_name": "开发技术",
+            "source_type": "category",
+            "source_id": ""
+          },
+          {
+            "tab_name": "内容运营",
+            "source_type": "category",
+            "source_id": ""
+          },
+          {
+            "tab_name": "同城服务",
+            "source_type": "category",
+            "source_id": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "平台用户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "1200+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "任务发布方",
+            "position": "本地服务品牌",
+            "content": "预算先托管，投标方案集中看，交付审核也有记录。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "设计接单人",
+            "position": "自由职业者",
+            "content": "中标、交付、发奖节点清楚，任务积分转换也方便。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "平台运营",
+            "position": "众包平台管理员",
+            "content": "审核、手续费台账、争议仲裁这些后台入口很适合做平台治理。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把需求发布和人才交付做成一个闭环平台",
+        "cta_subtitle": "替换任务大厅、任务发布、我的任务、我的投标和积分转换页面链接，就能把启灵悬赏任务包装成可运营的众包官网。",
+        "cta_button_text": "配置任务大厅入口",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

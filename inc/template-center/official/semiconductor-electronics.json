@@ -1,0 +1,300 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "半导体/电子元器件官网",
+  "page_template": "templates/template-semiconductor-electronics.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "semiconductor-electronics",
+    "label": "半导体/电子元器件官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "semiconductor_electronics",
+    "industry_label": "半导体/电子元器件",
+    "scenario": "芯片器件、电子元器件、参数选型、资料下载、资质认证、BOM 询盘",
+    "description": "适合半导体厂商、电子元器件代理商、工业电子供应商、IC 方案商和连接器传感器企业官网，内置产品器件、技术参数、资料下载、认证资质、案例和询盘入口。",
+    "badges": [
+      "半导体",
+      "电子元器件",
+      "BOM 询盘"
+    ],
+    "order": 720,
+    "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "半导体电子元器件官网模板 - 产品选型与BOM询盘",
+    "description": "适合半导体、芯片器件、电子元器件、连接器、传感器和工业电子供应商的官网页面，包含产品中心、技术优势、资料下载、资质认证、案例和询盘表单。",
+    "keywords": "半导体官网,电子元器件官网,芯片器件,IC方案,连接器,传感器,BOM询盘,资料下载",
+    "og_title": "半导体/电子元器件官网",
+    "og_description": "用产品参数、资料下载和资质认证快速搭建电子元器件官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #ccfbf1 46%, #fef3c7 100%)",
+        "bb_title": "让器件选型、资料下载<br><strong>更快进入询盘</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #0f766e 0%, #a16207 100%)",
+        "bb_subtitle": "半导体与电子元器件官网方案",
+        "bb_desc": "围绕芯片器件、连接器、传感器模组、工业电子配套和 BOM 需求，把产品参数、认证资质、技术文档和询盘入口组织成采购客户能快速判断的官网页面。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "提交 BOM 询盘",
+            "link": "#",
+            "style": "primary",
+            "icon": "芯"
+          },
+          {
+            "text": "下载选型资料",
+            "link": "#",
+            "style": "light",
+            "icon": "表"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#0f766e",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#115e59",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#ecfeff",
+        "bb_light_btn_hover_text_color": "#0f766e",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "核心器件与产品线",
+        "products_subtitle": "DEVICE CATALOG",
+        "columns": "4",
+        "modal_inquire_text": "咨询选型与报价",
+        "modal_inquire_url": "#",
+        "modal_inquire_btn_bg_color": "#0f766e",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_hover_bg_color": "#115e59",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1751887687718-8256ef13a653?auto=format&fit=crop&w=900&q=80",
+            "title": "工业控制 MCU",
+            "desc": "面向仪表、控制板和边缘设备的低功耗主控系列。",
+            "specs": "封装：QFN / LQFP\n工作温度：-40C ~ 105C\n接口：UART / SPI / I2C / ADC\n供货：样品、小批量、批量交付",
+            "post_id": "",
+            "btn_text": "查看参数"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1755016388369-62f9c1a5133d?auto=format&fit=crop&w=900&q=80",
+            "title": "车规级功率器件",
+            "desc": "适配电源管理、驱动控制和新能源配套场景。",
+            "specs": "品类：MOSFET / IGBT / TVS\n认证：AEC-Q 适配资料\n应用：车载电源、BMS、工业驱动\n支持：选型替代与样品测试",
+            "post_id": "",
+            "btn_text": "获取替代表"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1725173349947-390a9168656e?auto=format&fit=crop&w=900&q=80",
+            "title": "高速连接器",
+            "desc": "覆盖板对板、线对板、工业接口和定制线束需求。",
+            "specs": "间距：0.5mm / 1.0mm / 2.54mm\n规格：直插、贴片、锁扣、防呆结构\n资料：2D/3D 图纸、可靠性报告\n服务：样品寄送与批量排产",
+            "post_id": "",
+            "btn_text": "下载图纸"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+            "title": "传感器模组",
+            "desc": "用于工业采集、环境监测、智能硬件和设备状态感知。",
+            "specs": "类型：温湿度、压力、电流、位置\n输出：模拟量、I2C、RS485\n校准：出厂标定与批次追溯\n交付：模块、方案板、定制固件",
+            "post_id": "",
+            "btn_text": "咨询方案"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "让采购更放心的交付能力",
+        "features_subtitle": "把电子元器件官网最需要说明的货源、参数、测试和追溯能力放在前台",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#ccfbf1",
+        "features_icon_color": "#0f766e",
+        "features_items": [
+          {
+            "icon": "源",
+            "title": "原厂与授权渠道",
+            "desc": "按品牌、批次和供货周期建立器件档案，减少非授权渠道带来的供应风险。",
+            "link": "#"
+          },
+          {
+            "icon": "选",
+            "title": "参数选型支持",
+            "desc": "围绕封装、温度、接口、功耗、替代料和生命周期给出选型建议。",
+            "link": "#"
+          },
+          {
+            "icon": "测",
+            "title": "样品测试协同",
+            "desc": "支持样品寄送、测试报告、失效分析和小批量试产前的技术确认。",
+            "link": "#"
+          },
+          {
+            "icon": "追",
+            "title": "批次追溯与质检",
+            "desc": "记录批号、来料检测、包装标签和出货单据，方便项目复盘与售后追踪。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "选型资料与技术文档",
+        "downloads_subtitle": "把客户最常找的数据手册、替代表和认证文件集中展示",
+        "downloads_bg_color": "#f8fafc",
+        "downloads_columns": "3",
+        "downloads_btn_bg_color": "#0f766e",
+        "downloads_btn_text_color": "#ffffff",
+        "downloads_btn_hover_bg_color": "#115e59",
+        "downloads_btn_hover_text_color": "#ffffff",
+        "downloads_items": [
+          {
+            "title": "核心产品选型手册",
+            "size": "Catalog",
+            "file": "#",
+            "icon": "册",
+            "format": "PDF",
+            "date": "2026-04-25",
+            "btn_text": "下载手册",
+            "description": "整理 MCU、功率器件、连接器和传感器的型号、封装、参数范围和应用建议。"
+          },
+          {
+            "title": "BOM 替代料建议表",
+            "size": "Spreadsheet",
+            "file": "#",
+            "icon": "表",
+            "format": "XLSX",
+            "date": "2026-04-25",
+            "btn_text": "查看替代表",
+            "description": "用于展示常见缺货型号、替代料、风险提示、交期和价格区间。"
+          },
+          {
+            "title": "质量与认证资料包",
+            "size": "Archive",
+            "file": "#",
+            "icon": "证",
+            "format": "ZIP",
+            "date": "2026-04-25",
+            "btn_text": "获取资料",
+            "description": "包含 RoHS、REACH、来料检验、可靠性测试和批次追溯说明。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "ch_title": "认证资质与质量信任",
+        "ch_subtitle": "用体系认证、环保合规和渠道资质降低采购顾虑",
+        "ch_columns": "3",
+        "ch_enable_filter": "yes",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "ch_items": [
+          {
+            "image": "",
+            "title": "ISO9001 质量管理体系",
+            "category": "体系认证",
+            "badge": "质量体系",
+            "cert_no": "ISO-9001-2026-IC01",
+            "issuer": "认证机构",
+            "issue_date": "2026-01-08",
+            "expiry_date": "2029-01-07",
+            "file_url": "#"
+          },
+          {
+            "image": "",
+            "title": "RoHS / REACH 合规声明",
+            "category": "环保合规",
+            "badge": "出口资料",
+            "cert_no": "ECO-2026-0425",
+            "issuer": "第三方检测机构",
+            "issue_date": "2026-04-25",
+            "expiry_date": "年度更新",
+            "file_url": "#"
+          },
+          {
+            "image": "",
+            "title": "授权代理与供应链备案",
+            "category": "渠道资质",
+            "badge": "货源保障",
+            "cert_no": "AUTH-2026-118",
+            "issuer": "品牌/渠道方",
+            "issue_date": "2026-03-18",
+            "expiry_date": "2027-03-17",
+            "file_url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "典型应用案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "220px",
+        "cases_padding_top": "80px",
+        "cases_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交 BOM 或样品需求",
+        "contact_subtitle": "填写型号、数量、目标应用、交期和联系方式，产品顾问会协助确认库存、替代料、样品和报价。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

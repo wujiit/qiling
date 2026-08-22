@@ -1,0 +1,306 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "家电维修/水电维修官网",
+  "page_template": "templates/template-appliance-repair-service.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "appliance-repair-service",
+    "label": "家电维修/水电维修官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "appliance_repair",
+    "industry_label": "维修安装",
+    "scenario": "家电维修、水电快修、上门报价、区域预约",
+    "description": "适合家电维修、水电维修、家居安装、管道疏通和本地快修服务品牌官网，内置首屏、维修服务、价格套餐、服务网点、上门流程、FAQ 和预约入口。",
+    "badges": [
+      "维修安装",
+      "上门预约",
+      "价格套餐"
+    ],
+    "order": 603,
+    "thumbnail": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "家电维修水电维修官网模板 - 上门预约与明码报价",
+    "description": "适合家电维修、水电快修和本地上门服务的官网页面，包含服务项目、价格套餐、区域网点、上门流程、FAQ 和预约入口。",
+    "keywords": "家电维修官网,水电维修官网,上门维修,本地快修,维修安装,预约维修",
+    "og_title": "家电维修/水电维修官网",
+    "og_description": "用维修服务、价格套餐和预约入口快速搭建家电维修官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 48%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1800&q=80",
+            "title": "让维修上门更快、更清楚、更放心",
+            "subtitle": "覆盖家电维修、水电快修、安装更换和紧急故障处理，用明码报价和区域覆盖提升客户信任。",
+            "btn_text": "立即预约上门",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1d4ed8"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "30m",
+            "number": "30min",
+            "label": "快速响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "20",
+            "number": "20+",
+            "label": "服务区域",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "客户评分",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "100",
+            "number": "100%",
+            "label": "明码报价",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "常见维修服务",
+        "services_subtitle": "适配空调、冰箱、洗衣机、热水器、水电线路和日常安装快修场景",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "家电故障维修",
+            "desc": "空调、冰箱、洗衣机、热水器和厨电的常见故障检测与维修。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "水电快修",
+            "desc": "跳闸断电、漏水渗水、开关插座和照明线路等家庭快修服务。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "安装更换",
+            "desc": "家电安装、龙头花洒更换、灯具面板安装和小型五金更换。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "管道疏通与检测",
+            "desc": "厨房卫浴堵塞、排水异常和局部管道检测处理。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "维修服务套餐",
+        "pricing_subtitle": "正式上线时可按城市、故障类型和材料成本替换成你的真实报价规则",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "上门检测",
+            "price": "¥59",
+            "period": "/次起",
+            "desc": "适合先判断故障和维修范围",
+            "features": "技师上门检测\n基础故障判断\n确认维修方案\n报价后再决定是否维修",
+            "btn_text": "预约检测",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "常规快修",
+            "price": "¥129",
+            "period": "/次起",
+            "desc": "适合常见家电与水电问题处理",
+            "features": "常见故障快速处理\n标准工时说明\n维修前确认价格\n支持售后回访",
+            "btn_text": "预约快修",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "热门",
+            "featured_bg": "linear-gradient(135deg, #1d4ed8 0%, #0f766e 100%)"
+          },
+          {
+            "name": "安装换新",
+            "price": "按项目报价",
+            "period": "",
+            "desc": "适合家电安装、线路整理和局部改造",
+            "features": "支持新装与更换\n材料与配件单独确认\n可预约指定时间\n适合家庭和门店场景",
+            "btn_text": "咨询安装",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "服务区域与站点",
+        "branches_subtitle": "展示覆盖城市、门店站点和可上门区域，帮助客户快速匹配最近的维修师傅",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看位置",
+        "booking_button_text": "预约上门",
+        "branches_list": [
+          {
+            "name": "浦东维修服务站",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市浦东新区示例路88号",
+            "phone": "021-62000001",
+            "email": "shanghai@example.com",
+            "hours": "08:00-21:00",
+            "services": "家电维修,水电快修,安装换新",
+            "transport": "覆盖浦东核心片区",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "城西上门维修点",
+            "city": "杭州",
+            "status": "open",
+            "address": "杭州市西湖区示例街66号",
+            "phone": "0571-62000002",
+            "email": "hangzhou@example.com",
+            "hours": "08:30-20:30",
+            "services": "水电快修,热水器维修,管道疏通",
+            "transport": "覆盖西湖与周边社区",
+            "lat": "30.2741",
+            "lng": "120.1551",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "园区快修服务站",
+            "city": "苏州",
+            "status": "busy",
+            "address": "苏州市工业园区示例大道99号",
+            "phone": "0512-62000003",
+            "email": "suzhou@example.com",
+            "hours": "09:00-20:00",
+            "services": "空调维修,洗衣机维修,家居安装",
+            "transport": "预约制上门覆盖园区",
+            "lat": "31.2989",
+            "lng": "120.5853",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "上门维修流程",
+        "process_subtitle": "把预约、报价、上门、维修和回访流程讲清楚，减少客户等待和沟通成本",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "提交故障信息",
+            "desc": "填写故障现象、家电型号、所在区域和期望上门时间。",
+            "stage_tag": "预约"
+          },
+          {
+            "icon": "02",
+            "title": "客服确认与报价",
+            "desc": "确认故障范围、基础费用、上门规则和是否需要携带配件。",
+            "stage_tag": "确认"
+          },
+          {
+            "icon": "03",
+            "title": "技师上门处理",
+            "desc": "按约定时间到场检测维修，关键费用先确认再施工。",
+            "stage_tag": "上门"
+          },
+          {
+            "icon": "04",
+            "title": "验收与售后回访",
+            "desc": "客户确认维修结果，平台保留订单记录并进行售后回访。",
+            "stage_tag": "回访"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "维修预约常见问题",
+        "faq_subtitle": "提前说明上门费、材料费、夜间服务和售后范围，让客户咨询更顺畅",
+        "module_bg_color": "#ffffff",
+        "faq_items": [
+          {
+            "question": "上门检测后不维修会收费吗？",
+            "answer": "通常会收取基础上门检测费，正式上线时可以按城市和故障类型调整规则，并在页面中明确说明。"
+          },
+          {
+            "question": "维修材料和配件费用怎么算？",
+            "answer": "页面里的套餐只是示例锚点，真实费用通常需要根据故障、品牌型号和是否更换配件来确认。"
+          },
+          {
+            "question": "夜间或节假日可以预约吗？",
+            "answer": "可以根据门店排班和服务区域设置夜间或节假日档期，建议在页面和预约表单中写清楚服务时间。"
+          },
+          {
+            "question": "维修后有售后保障吗？",
+            "answer": "可以按服务项目设置售后说明、回访方式和再次上门规则，实际条款建议在后台和页面里同步明确。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约家电上门维修",
+        "booking_subtitle": "提交故障类型、地址和期望时间，客服会确认上门安排并给出初步处理建议。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约须知",
+        "sidebar_content": "请在表单中说明故障现象、品牌型号和所在区域\n最终费用以故障检测和配件确认结果为准\n启用本地服务或维修插件后可承接真实预约和订单跟踪",
+        "contact_phone": "400-620-2026",
+        "contact_hours": "08:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

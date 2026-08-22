@@ -15,7 +15,7 @@
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -30,7 +30,7 @@
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -39,7 +39,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -57,7 +57,7 @@
 }.qiling-module-scope-faq .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-faq .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-faq .features-tab-btn.active::before {
@@ -251,8 +251,8 @@
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
-  border: 1px solid var(--qiling-component-card-border);
+    var(--faq-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--faq-card-border, var(--qiling-component-card-border));
   border-radius: var(--qiling-card-radius);
   margin-bottom: var(--qiling-space-18);
   overflow: hidden;
@@ -263,7 +263,7 @@
   box-shadow: var(--qiling-component-card-shadow);
 }.qiling-module-scope-faq .module-faq.module-faq .faq-list .faq-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--faq-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
   box-shadow: var(--qiling-component-card-shadow);
 }.qiling-module-scope-faq .module-faq .faq-question {
   width: 100%;
@@ -278,7 +278,7 @@
   text-align: left;
   font-size: var(--qiling-text-rem-1p08);
   font-weight: 600;
-  color: var(--qiling-component-accordion-title, var(--color-heading));
+  color: var(--faq-question, var(--qiling-component-accordion-title, var(--color-heading)));
   transition: all 0.3s;
 }.qiling-module-scope-faq .module-faq .faq-question > span:first-child {
   flex: 1;
@@ -292,23 +292,23 @@
   height: 38px;
   flex-shrink: 0;
   border-radius: 999px;
-  background: rgba(var(--color-primary-rgb), 0.08);
-  color: var(--color-primary);
+  background: var(--faq-icon-bg, rgba(var(--color-primary-rgb), 0.08));
+  color: var(--faq-icon-color, var(--color-primary));
   transition: transform 0.3s ease;
 }.qiling-module-scope-faq .module-faq .faq-item.active .faq-icon {
   transform: rotate(45deg);
-  color: var(--color-primary);
-  background: rgba(var(--color-primary-rgb), 0.14);
+  color: var(--faq-icon-color, var(--color-primary));
+  background: var(--faq-icon-bg, rgba(var(--color-primary-rgb), 0.14));
 }.qiling-module-scope-faq .module-faq .faq-item.active .faq-question {
-  color: var(--color-heading);
+  color: var(--faq-question, var(--color-heading));
 }.qiling-module-scope-faq .module-faq .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  background: var(--qiling-component-card-bg);
+  background: var(--faq-card-bg, var(--qiling-component-card-bg));
 }.qiling-module-scope-faq .module-faq .faq-answer-content {
   padding: 0 var(--qiling-space-26) var(--qiling-space-26);
-  color: var(--color-text-muted);
+  color: var(--faq-answer, var(--color-text-muted));
   font-size: var(--qiling-text-rem-0p96);
   line-height: 1.72;
 }.qiling-module-scope-faq /* 暗黑模式 (Dark Mode) */
@@ -342,4 +342,12 @@ html.dark-mode .module-faq {
   color: var(--qiling-component-module-title-color-dark, var(--color-heading));
 }html.dark-mode .qiling-module-scope-faq .module-faq .section-subtitle {
   color: var(--color-text-muted);
+}.qiling-module-scope-faq .module-faq.module-faq .faq-item {
+  background: var(--faq-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--faq-card-border, var(--qiling-component-card-border));
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-faq .module-faq.module-faq .faq-item:hover {
+  border-color: var(--faq-card-hover-border, var(--faq-card-border, var(--qiling-component-card-border)));
+  box-shadow: var(--qiling-component-card-shadow);
 }

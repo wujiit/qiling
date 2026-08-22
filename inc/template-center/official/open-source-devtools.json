@@ -1,0 +1,244 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "开源开发工具官网",
+  "page_template": "templates/template-open-source-devtools.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "open-source-devtools",
+    "label": "开源开发工具官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "software",
+    "industry_label": "软件",
+    "scenario": "开源项目、开发工具、文档下载",
+    "description": "适合开源项目、开发工具、SDK、框架和技术社区官网，内置项目介绍、功能能力、安装流程、资源下载和社区入口。",
+    "badges": [
+      "开源项目",
+      "开发工具"
+    ],
+    "order": 391,
+    "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "开源开发工具官网模板 - 项目介绍与文档下载",
+    "description": "适合开源项目和开发工具的官网页面，包含项目卖点、安装步骤、资源下载、案例、FAQ 和社区入口。",
+    "keywords": "开源项目官网,开发工具,SDK,技术文档,GitHub项目",
+    "og_title": "开源开发工具官网",
+    "og_description": "用项目介绍、安装流程和下载入口快速搭建开源工具官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #2563eb 58%, #059669 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
+            "title": "给开发团队一套更顺手的工具链",
+            "subtitle": "开源、可扩展、文档清晰，适合展示框架、SDK、CLI 和技术社区。",
+            "btn_text": "查看文档",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#6d28d9"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "18k",
+            "number": "18k+",
+            "label": "GitHub 星标",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "120",
+            "number": "120+",
+            "label": "贡献者",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "6",
+            "number": "6种",
+            "label": "安装方式",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "MIT",
+            "number": "MIT",
+            "label": "开源协议",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "工具能力",
+        "features_subtitle": "突出开发者真正关心的效率、扩展和稳定性",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "快速初始化",
+            "desc": "一条命令完成项目脚手架和基础配置。"
+          },
+          {
+            "icon": "02",
+            "title": "插件扩展",
+            "desc": "通过插件机制扩展构建、发布和检查流程。"
+          },
+          {
+            "icon": "03",
+            "title": "类型友好",
+            "desc": "提供完整类型提示和示例，减少接入成本。"
+          },
+          {
+            "icon": "04",
+            "title": "CI 适配",
+            "desc": "可接入主流 CI/CD 流程和团队规范。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "三步开始使用",
+        "process_subtitle": "让新开发者最快跑通第一个示例",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "安装工具",
+            "desc": "通过 npm、pnpm、composer 或二进制包安装。",
+            "stage_tag": "Install"
+          },
+          {
+            "icon": "02",
+            "title": "初始化项目",
+            "desc": "选择模板和功能，生成项目基础结构。",
+            "stage_tag": "Init"
+          },
+          {
+            "icon": "03",
+            "title": "运行示例",
+            "desc": "启动开发服务，检查示例页面和 API。",
+            "stage_tag": "Run"
+          },
+          {
+            "icon": "04",
+            "title": "接入发布",
+            "desc": "根据文档接入构建、测试和发布流程。",
+            "stage_tag": "Ship"
+          }
+        ],
+        "module_bg_color": "#f5f3ff"
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "资源下载",
+        "downloads_subtitle": "集中提供文档、示例和版本包",
+        "downloads_items": [
+          {
+            "title": "快速开始文档",
+            "size": "PDF",
+            "file": "#",
+            "format": "PDF",
+            "date": "2026-04-16",
+            "btn_text": "下载"
+          },
+          {
+            "title": "示例项目源码",
+            "size": "ZIP",
+            "file": "#",
+            "format": "ZIP",
+            "date": "2026-04-16",
+            "btn_text": "下载"
+          },
+          {
+            "title": "CLI 二进制包",
+            "size": "Release",
+            "file": "#",
+            "format": "Release",
+            "date": "2026-04-16",
+            "btn_text": "下载"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "github_activity",
+      "data": {
+        "gha_title": "GitHub 项目动态",
+        "gha_subtitle": "填入公开仓库地址后，自动展示 Star、Fork、最新 Release 与最近 Commit。",
+        "gha_enable": "no",
+        "gha_repository_url": "",
+        "gha_show_stats": "yes",
+        "gha_show_release": "yes",
+        "gha_show_commits": "yes",
+        "gha_commit_count": "5",
+        "gha_cache_hours": "6",
+        "gha_bg_color": "#f8fafc",
+        "gha_padding_top": "80px",
+        "gha_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "社区实践",
+        "cases_subtitle": "展示工具在真实项目里的使用方式",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
+            "title": "前端工程化",
+            "desc": "统一脚手架、检查、构建和发布流程。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+            "title": "SDK 示例库",
+            "desc": "帮助开发者快速理解核心 API 使用方式。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=900&q=80",
+            "title": "团队规范落地",
+            "desc": "把代码规范和发布流程沉淀为可复用工具。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "加入开源社区",
+        "cta_subtitle": "提交 Issue、贡献插件或把你的实践案例加入文档。",
+        "cta_button_text": "前往 GitHub",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

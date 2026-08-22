@@ -1,0 +1,275 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "口腔诊所官网",
+  "page_template": "templates/template-dental-clinic.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "dental-clinic",
+    "label": "口腔诊所官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "dental",
+    "industry_label": "牙科",
+    "scenario": "诊疗项目、医生团队、初诊预约",
+    "description": "适合口腔诊所、牙科连锁、正畸中心和种植中心，内置诊疗项目、医生团队、流程和预约入口。",
+    "badges": [
+      "医疗预约",
+      "医生团队"
+    ],
+    "order": 421,
+    "thumbnail": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "口腔诊所官网模板 - 牙科项目与初诊预约",
+    "description": "适合口腔诊所和牙科机构的官网页面，包含诊疗项目、医生团队、诊疗流程、患者评价和在线预约。",
+    "keywords": "口腔诊所官网,牙科预约,正畸,种植牙",
+    "og_title": "口腔诊所官网",
+    "og_description": "带诊疗图片和预约入口的口腔诊所官网模板。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1800&q=80",
+            "title": "数字化口腔诊疗中心",
+            "subtitle": "正畸、种植、修复与儿童齿科一站式诊疗，支持在线预约初诊。",
+            "btn_text": "预约初诊",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1d4ed8"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "10",
+            "number": "10年+",
+            "label": "临床经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "20",
+            "number": "20+",
+            "label": "执业医生",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "患者评分",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "24",
+            "number": "24h",
+            "label": "预约响应",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "口腔诊疗项目",
+        "services_subtitle": "覆盖常见口腔问题，提供分阶段治疗与复诊跟踪",
+        "services_bg_color": "#ffffff",
+        "services_padding": "normal",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "种植修复",
+            "desc": "数字化种植评估与修复，兼顾功能与美观。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "牙齿正畸",
+            "desc": "金属托槽和隐形矫正方案，按阶段复诊调整。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "儿童齿科",
+            "desc": "涂氟、窝沟封闭与早期干预，关注成长发育。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "牙周治疗",
+            "desc": "基础治疗与维护计划，降低炎症复发风险。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "核心医师团队",
+        "team_subtitle": "持证执业，分科协作，保障诊疗质量与沟通体验",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+            "name": "王主任",
+            "position": "种植中心负责人",
+            "desc": "擅长数字化种植和复杂修复方案设计。",
+            "email": "doctor1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+            "name": "陈医生",
+            "position": "正畸医生",
+            "desc": "关注面型管理与隐形矫正长期稳定。",
+            "email": "doctor2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
+            "name": "林医生",
+            "position": "儿童齿科医生",
+            "desc": "擅长儿童沟通、预防护理和早期干预。",
+            "email": "doctor3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#eff6ff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "初诊流程",
+        "process_subtitle": "从检查到方案确认，每一步都清楚可追踪",
+        "process_mode": "industrial",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "预约建档",
+            "desc": "登记基础信息，确认主诉和就诊时间。",
+            "stage_tag": "预约",
+            "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "icon": "02",
+            "title": "口腔检查",
+            "desc": "口扫、影像和牙周基础检查，形成诊断依据。",
+            "stage_tag": "检查",
+            "image": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "icon": "03",
+            "title": "方案沟通",
+            "desc": "解释治疗方案、周期、费用和复诊安排。",
+            "stage_tag": "方案",
+            "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "患者评价",
+        "testimonials_subtitle": "真实就诊反馈，帮助新患者了解服务体验",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "6,800+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "张女士",
+            "position": "正畸患者",
+            "content": "医生把矫正步骤讲得很清楚，复诊提醒也很及时。",
+            "rating": "5",
+            "source": "clinic",
+            "date": "2026-03-01",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "刘先生",
+            "position": "种植修复",
+            "content": "方案和费用透明，术后跟踪比较放心。",
+            "rating": "5",
+            "source": "clinic",
+            "date": "2026-03-08",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "李妈妈",
+            "position": "儿童齿科",
+            "content": "小朋友第一次看牙没有太紧张，医生很有耐心。",
+            "rating": "5",
+            "source": "clinic",
+            "date": "2026-03-12",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约初诊",
+        "booking_subtitle": "提交基础信息、主诉和期望时间，诊所会确认预约安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "就诊准备",
+        "sidebar_content": "可在表单里填写症状、期望时间和联系方式\n携带既往片子或检查资料\n急性疼痛请电话优先联系",
+        "contact_phone": "400-120-2026",
+        "contact_hours": "09:00-20:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55",
+        "module_padding_top": "90px",
+        "module_padding_bottom": "90px"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "就诊常见问题",
+        "module_bg_color": "#f8fafc",
+        "faq_items": [
+          {
+            "question": "初诊需要多长时间？",
+            "answer": "一般建议预留 30-60 分钟，用于检查、沟通方案和确认后续安排。"
+          },
+          {
+            "question": "是否可以医保或商保？",
+            "answer": "可根据当地政策和门店资质配置说明，具体以机构实际支持为准。"
+          },
+          {
+            "question": "治疗价格如何展示？",
+            "answer": "可在菜单或服务模块中补充项目价格区间，也可引导用户预约面诊后确认。"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "云存储图床官网",
+  "page_template": "templates/template-qiling-cloud-storage-hosting.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-cloud-storage-hosting",
+    "label": "云存储图床官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "cloud_storage",
+    "industry_label": "云存储图床",
+    "scenario": "对象存储、附件同步、图床上传、CDN 加速、媒体迁移",
+    "description": "适合启灵云存储、启灵图床、图片上传站、媒体 CDN 加速和对象存储迁移服务，内置品牌首屏、能力矩阵、迁移流程、插件对比、资料下载、FAQ 和转化入口。",
+    "badges": [
+      "启灵生态",
+      "云存储",
+      "图床工具"
+    ],
+    "order": 379,
+    "thumbnail": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "云存储图床官网模板 - OSS/COS 附件同步与图片直链",
+    "description": "适合启灵云存储和启灵图床的官网页面，覆盖阿里云 OSS、腾讯云 COS、WordPress 附件同步、历史媒体迁移、远端一致性校验、主题资源 CDN、前台多图上传和直链复制。",
+    "keywords": "云存储官网,WordPress图床,对象存储,阿里云OSS,腾讯云COS,图片直链,附件同步,CDN加速,启灵云存储,启灵图床",
+    "og_title": "云存储图床官网",
+    "og_description": "用启灵云存储和启灵图床搭建附件同步、图片直链和 CDN 加速服务入口。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #e0f2fe 48%, #dcfce7 100%)",
+        "bb_title": "附件上云、图床直链<br><strong>一套页面讲清楚</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #0369a1 0%, #059669 100%)",
+        "bb_subtitle": "启灵生态云存储与图床入口",
+        "bb_desc": "围绕 WordPress 附件同步、阿里云 OSS、腾讯云 COS、历史媒体迁移、远端校验、主题 assets CDN、前台多图上传和直链复制，把技术配置包装成可交付、可运营的存储服务官网。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "配置云存储",
+            "link": "#",
+            "style": "primary",
+            "icon": "云"
+          },
+          {
+            "text": "进入图床上传",
+            "link": "#",
+            "style": "light",
+            "icon": "图"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#0369a1",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#075985",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#f0f9ff",
+        "bb_light_btn_hover_text_color": "#0369a1",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "从媒体库到图床的完整能力",
+        "features_subtitle": "页面文案按 qilingstorage 与 qiling-image-uploader 的实际功能组织，导入后替换成真实入口即可",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#e0f2fe",
+        "features_items": [
+          {
+            "icon": "云",
+            "title": "阿里云 OSS / 腾讯云 COS",
+            "desc": "启灵云存储可在一个插件内切换云厂商，配置 bucket、地域、访问域名、CNAME 和密钥后接管附件同步。"
+          },
+          {
+            "icon": "链",
+            "title": "附件 URL 自动改写",
+            "desc": "上传成功后同步对象存储，并改写 wp_get_attachment_url、图片 srcset 和文章媒体地址，适合做媒体 CDN 加速。"
+          },
+          {
+            "icon": "迁",
+            "title": "历史附件迁移",
+            "desc": "支持已有 uploads 附件分批同步、断点续跑、远端一致性校验、缺失对象修复和 URL 替换预演。"
+          },
+          {
+            "icon": "图",
+            "title": "前台图床上传",
+            "desc": "启灵图床提供多图拖拽上传、格式和大小限制、游客文件夹、角色权限、直链/Markdown/BBCode 复制和我的图片管理。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "上线云存储图床的标准流程",
+        "process_subtitle": "把对象存储配置、媒体迁移和前台图床运营拆成可执行步骤",
+        "process_mode": "standard",
+        "module_bg_color": "#f8fafc",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "选择云厂商与访问域名",
+            "desc": "在启灵云存储中选择阿里云 OSS 或腾讯云 COS，填写 bucket、地域、密钥和媒体访问域名，可按需要启用 CNAME。",
+            "stage_tag": "配置"
+          },
+          {
+            "icon": "02",
+            "title": "上传自检与新附件同步",
+            "desc": "先执行云厂商连通与上传自检，确认对象可写可读；之后 WordPress 新上传附件会进入对象存储同步流程。",
+            "stage_tag": "自检"
+          },
+          {
+            "icon": "03",
+            "title": "历史媒体迁移与 URL 替换",
+            "desc": "对已有附件分批同步，使用远端一致性校验确认对象存在，再把文章内容和元数据中的本地媒体 URL 替换为云端域名。",
+            "stage_tag": "迁移"
+          },
+          {
+            "icon": "04",
+            "title": "开放图床上传入口",
+            "desc": "启用图片上传页和图片管理页，按游客、登录角色、格式白名单、文件大小和公告说明配置前台图床运营规则。",
+            "stage_tag": "运营"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "两个插件的分工",
+        "comparison_subtitle": "云存储解决媒体底座，图床解决前台上传和直链分发",
+        "comparison_features": "核心定位\n主要入口\n云厂商/存储位置\n关键能力\n权限与运营\n适合场景",
+        "comparison_products": [
+          {
+            "name": "启灵云存储",
+            "values": "WordPress 附件上云与 CDN\n后台：设置 -> 启灵云存储\n阿里云 OSS、腾讯云 COS、媒体访问域名\n新附件同步、缩略图同步、URL 改写、srcset 改写、历史附件同步、远端校验、缺失修复、主题 assets CDN\n管理员配置，面向整站媒体链路\n媒体库迁移、图片加速、对象存储接入、站点交付"
+          },
+          {
+            "name": "启灵图床",
+            "values": "前台图片上传与直链复制\n页面：[image_upload_form]、[image_manage_page]\nWordPress uploads，可与远程对象存储联动\n多图拖拽上传、进度提示、直链复制、Markdown/BBCode、我的图片、后台按用户查询和删除\n游客开关、游客文件夹、角色权限、格式白名单、最大上传大小、公告\n图片外链站、素材提交、论坛贴图、用户内容上传"
+          }
+        ],
+        "comparison_highlight": "1",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "交付资料与配置清单",
+        "downloads_subtitle": "把技术配置变成客户能看懂、团队能执行的上线资料",
+        "downloads_bg_color": "#f8fafc",
+        "downloads_columns": "3",
+        "downloads_btn_bg_color": "#0369a1",
+        "downloads_btn_text_color": "#ffffff",
+        "downloads_btn_hover_bg_color": "#075985",
+        "downloads_btn_hover_text_color": "#ffffff",
+        "downloads_items": [
+          {
+            "title": "对象存储配置清单",
+            "size": "Checklist",
+            "file": "#",
+            "icon": "云",
+            "format": "清单",
+            "date": "2026-04-25",
+            "btn_text": "查看清单",
+            "description": "列出 bucket、地域、访问域名、CNAME、密钥权限、上传自检和回滚项。"
+          },
+          {
+            "title": "媒体迁移执行表",
+            "size": "Runbook",
+            "file": "#",
+            "icon": "迁",
+            "format": "流程",
+            "date": "2026-04-25",
+            "btn_text": "查看流程",
+            "description": "说明历史附件同步、远端校验、缺失修复、URL 替换预演和正式替换步骤。"
+          },
+          {
+            "title": "图床运营说明",
+            "size": "Guide",
+            "file": "#",
+            "icon": "图",
+            "format": "说明",
+            "date": "2026-04-25",
+            "btn_text": "查看说明",
+            "description": "用于配置游客上传、角色权限、格式白名单、文件大小、公告和图片管理页。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "云存储图床常见问题",
+        "faq_subtitle": "提前解释云存储、图床和对象存储迁移的边界，减少上线后的沟通成本",
+        "faq_items": [
+          {
+            "question": "这个模板必须安装启灵云存储和启灵图床吗？",
+            "answer": "不必须。模板本身可以正常导入和展示；启用插件后，把按钮链接改成云存储设置页、[image_upload_form] 上传页、[image_manage_page] 管理页或你自己的服务入口即可。"
+          },
+          {
+            "question": "启灵云存储和启灵图床是同一个功能吗？",
+            "answer": "不是。启灵云存储处理 WordPress 媒体库与对象存储/CDN 的底层链路；启灵图床处理前台用户上传、链接复制和图片管理。"
+          },
+          {
+            "question": "历史附件能迁移到对象存储吗？",
+            "answer": "启灵云存储提供历史附件分批同步、断点状态、远端一致性校验和缺失修复。正式替换文章内容和元数据 URL 前，建议先使用预演方式检查命中范围。"
+          },
+          {
+            "question": "图床上传的图片能走云存储域名吗？",
+            "answer": "图床使用 WordPress 上传体系写入附件；如果站点同时启用云存储同步和媒体访问域名，上传后的附件 URL 可以由云存储插件统一改写为云端域名。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把媒体加速和图床上传做成可交付服务",
+        "cta_subtitle": "替换真实云存储设置页、图床上传页、图片管理页和迁移服务说明，就能把对象存储配置从后台功能变成客户看得懂的产品官网。",
+        "cta_button_text": "配置云存储图床入口",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

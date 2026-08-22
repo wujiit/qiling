@@ -1,0 +1,291 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "AI 图像处理官网",
+  "page_template": "templates/template-qiling-image-studio.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-image-studio",
+    "label": "AI 图像处理官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "ai_image",
+    "industry_label": "AI 图像",
+    "scenario": "图像修复、智能抠图、AI 生图、创意图片工作台",
+    "description": "适合启灵图像处理、启灵抠图、启灵AI图像和创意图片工具站，内置交互首屏、能力展示、效果画廊、插件对比、套餐、FAQ 和转化入口。",
+    "badges": [
+      "启灵生态",
+      "AI 图像",
+      "创意工具"
+    ],
+    "order": 378,
+    "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "AI 图像处理官网模板 - 修复增强、抠图与 AI 生图",
+    "description": "适合启灵图像处理、启灵抠图和启灵AI图像的官网页面，覆盖老照片修复、画质增强、五种抠图模式、文生图、图像编辑、多图融合、风格模板和公众广场。",
+    "keywords": "AI图像处理官网,老照片修复,智能抠图,AI生图,文生图,图像编辑,启灵AI图像,启灵抠图",
+    "og_title": "AI 图像处理官网",
+    "og_description": "用启灵图像生态搭建修复增强、抠图、生图和创意图片工具站。"
+  },
+  "modules": [
+    {
+      "type": "interact_hero",
+      "data": {
+        "badge_text": "启灵生态 AI 图像工作台",
+        "hero_title_content": "修复、抠图、生图<br><span style=\"color:#0f766e\">一套图像工具官网讲清楚</span>",
+        "hero_subtitle_content": "面向照片修复、电商商品图、营销海报、AI 创意生成和设计工具站，把启灵图像处理、启灵抠图、启灵AI图像包装成可运营的产品入口。",
+        "btn_primary_content": "进入图像工具",
+        "btn_primary_link": "#",
+        "btn_primary_bg_color": "#0f172a",
+        "btn_primary_text_color": "#ffffff",
+        "btn_secondary_content": "查看效果案例",
+        "btn_secondary_link": "#",
+        "btn_secondary_bg_color": "#ffffff",
+        "btn_secondary_text_color": "#0f172a",
+        "media_type": "image",
+        "hero_image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+        "enable_float_anim": "yes",
+        "bg_color": "linear-gradient(135deg, #f8fafc 0%, #ecfeff 52%, #fff1f2 100%)",
+        "text_color": "#0f172a",
+        "highlight_color": "#0f766e",
+        "padding_top": "108px",
+        "padding_bottom": "88px",
+        "feature_items": [
+          {
+            "f_icon_type": "class",
+            "f_icon_class": "01",
+            "f_title_content": "图像修复增强",
+            "f_desc": "老照片上色、去雾、清晰度、对比度、无损放大和去摩尔纹。",
+            "f_link": "#"
+          },
+          {
+            "f_icon_type": "class",
+            "f_icon_class": "02",
+            "f_title_content": "五种抠图模式",
+            "f_desc": "普通、高清、人体、食品、商品抠图，结果可下载透明 PNG。",
+            "f_link": "#"
+          },
+          {
+            "f_icon_type": "class",
+            "f_icon_class": "03",
+            "f_title_content": "AI 创意生图",
+            "f_desc": "文生图、主图专版、图像编辑、多图融合和风格模板。",
+            "f_link": "#"
+          },
+          {
+            "f_icon_type": "class",
+            "f_icon_class": "04",
+            "f_title_content": "积分/VIP 运营",
+            "f_desc": "免费次数、积分付费、VIP 等级额度和使用记录可组合配置。",
+            "f_link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "三套插件组成完整图像能力",
+        "features_subtitle": "分别承接修复增强、抠图去背景和创意生成，不把所有能力混成一个黑盒",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#ccfbf1",
+        "features_items": [
+          {
+            "icon": "FIX",
+            "title": "老照片与画质增强",
+            "desc": "启灵图像处理支持对比度增强、清晰度增强、无损放大、去雾、色彩增强、黑白上色、拉伸恢复和去摩尔纹。"
+          },
+          {
+            "icon": "CUT",
+            "title": "智能抠图工作台",
+            "desc": "启灵抠图提供普通、高清、人体、食品、商品五种模式，并按格式、尺寸、免费次数、积分和 VIP 权益控制使用。"
+          },
+          {
+            "icon": "GEN",
+            "title": "AI 创意图像生成",
+            "desc": "启灵AI图像支持 OpenRouter、豆包、阿里通义等提供方，覆盖文生图、主图专版、图像编辑和多图融合。"
+          },
+          {
+            "icon": "PUB",
+            "title": "作品展示与运营",
+            "desc": "支持风格模板、手办风格、海报风格、时光照相馆、结果下载、公众广场和使用统计，适合做工具站产品矩阵。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "图像效果展示",
+        "gallery_subtitle": "用真实视觉案例解释修复、抠图和创意生成的价值",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "gallery_gap": "18",
+        "enable_filter": "yes",
+        "filter_categories": "修复增强,抠图去背景,创意生图",
+        "gallery_lightbox": "1",
+        "show_counter": "yes",
+        "module_bg_color": "#f8fafc",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80",
+            "title": "旧照清晰增强",
+            "desc": "适合展示清晰度、对比度和色彩增强效果",
+            "category": "修复增强"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+            "title": "人物主体分割",
+            "desc": "适合人体抠图、透明背景和社媒头像处理",
+            "category": "抠图去背景"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+            "title": "商品白底图",
+            "desc": "适合电商商品图、主图专版和商品抠图",
+            "category": "抠图去背景"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=900&q=80",
+            "title": "AI 风格海报",
+            "desc": "适合文生图、海报风格和创意投放素材",
+            "category": "创意生图"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=900&q=80",
+            "title": "品牌主图创作",
+            "desc": "适合商品主图、营销视觉和模板化出图",
+            "category": "创意生图"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80",
+            "title": "照片质感优化",
+            "desc": "适合去雾、色彩增强和素材二次加工",
+            "category": "修复增强"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "三个图像插件的分工",
+        "comparison_subtitle": "让客户知道每个入口解决什么问题，后台也更容易配置套餐与权限",
+        "comparison_features": "核心定位\n输入方式\n主要能力\n适合场景\n计费/权益\n前台入口",
+        "comparison_products": [
+          {
+            "name": "启灵图像处理",
+            "values": "修复增强\n上传图片\n对比度、清晰度、无损放大、去雾、上色、拉伸恢复、去摩尔纹\n老照片修复、画质增强、素材优化\n免费次数、积分、VIP、步骤记录\n[qilingimage_tool]"
+          },
+          {
+            "name": "启灵抠图",
+            "values": "去背景与透明 PNG\n上传图片\n普通、高清、人体、食品、商品五种抠图模式\n电商商品图、人物头像、食品图、素材抠图\n游客试用、登录额度、积分、VIP\n[qilingcut]"
+          },
+          {
+            "name": "启灵AI图像",
+            "values": "AI 创意生成\n提示词、上传图片、多图\n文生图、主图专版、图像编辑、多图融合、风格模板、公众广场\n营销海报、商品主图、创意图片、风格玩法\n默认额度、VIP 免费次数、积分付费\n[xb_aicytxgj_form]"
+          }
+        ],
+        "comparison_highlight": "3",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "图像工具套餐包装",
+        "pricing_subtitle": "价格为展示占位，可按实际免费额度、积分单价、VIP 等级和企业服务继续编辑",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "体验版",
+            "price": "免费试用",
+            "period": "",
+            "desc": "适合新用户体验",
+            "features": "基础图片上传\n少量免费处理\n基础抠图体验\n生图模板体验\n结果下载入口",
+            "btn_text": "开始体验",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "创作者版",
+            "price": "积分付费",
+            "period": "",
+            "desc": "适合日常修图和内容创作",
+            "features": "更多处理额度\n积分充值入口\n修复/抠图/生图组合\n公众广场展示\n历史记录统计",
+            "btn_text": "充值积分",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #0f766e 0%, #e11d48 100%)"
+          },
+          {
+            "name": "工作室版",
+            "price": "联系顾问",
+            "period": "",
+            "desc": "适合团队工具站和私有化交付",
+            "features": "VIP 等级额度\n专属风格模板\n企业素材处理\n批量运营方案\n部署与培训支持",
+            "btn_text": "预约演示",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "AI 图像工具常见问题",
+        "faq_subtitle": "提前说明插件边界和运营方式，避免把修复、抠图、生图混成一个入口",
+        "faq_items": [
+          {
+            "question": "这个模板必须安装三个图像插件吗？",
+            "answer": "不必须。模板本身可以正常导入和展示；启用插件后，把按钮链接改成 [qilingimage_tool]、[qilingcut]、[xb_aicytxgj_form] 或公众广场页面即可。"
+          },
+          {
+            "question": "启灵图像处理和启灵AI图像有什么区别？",
+            "answer": "启灵图像处理偏向已有图片的修复增强，例如上色、去雾、清晰度和无损放大；启灵AI图像偏向创意生成和编辑，例如文生图、图像编辑、多图融合和风格模板。"
+          },
+          {
+            "question": "抠图结果能用于电商商品图吗？",
+            "answer": "启灵抠图包含商品抠图模式，并支持透明 PNG 结果下载，适合商品主图、详情页素材和营销图二次处理。实际可用格式、尺寸和大小以插件后台配置为准。"
+          },
+          {
+            "question": "积分和 VIP 是主题模板直接处理吗？",
+            "answer": "不是。主题模板负责展示、说明和引流；免费次数、积分扣费、VIP 等级额度、记录统计由对应插件和启灵商城能力处理。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把图像插件入口做成可售卖的工具平台官网",
+        "cta_subtitle": "替换真实工具页、公众广场、积分充值页和 VIP 套餐页，就能把修复、抠图、生图能力包装成一套可运营产品。",
+        "cta_button_text": "配置图像工具入口",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

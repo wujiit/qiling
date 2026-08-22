@@ -1,0 +1,242 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "软件介绍",
+  "page_template": "templates/template-software-intro.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "software-intro",
+    "label": "软件介绍",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "software",
+    "scenario": "软件介绍页",
+    "description": "适合软件能力说明、版本介绍、试用引导和咨询转化。",
+    "badges": [
+      "软件",
+      "介绍"
+    ],
+    "order": 340,
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "软件介绍模板 - 启灵官方页面包",
+    "description": "适合软件能力说明、版本介绍、试用引导和咨询转化。",
+    "keywords": "软件介绍,软件介绍页,软件,介绍",
+    "og_title": "软件介绍",
+    "og_description": "适合软件能力说明、版本介绍、试用引导和咨询转化。"
+  },
+  "modules": [
+    {
+      "type": "product_showcase",
+      "data": {
+        "ps_bg_color": "linear-gradient(135deg, #14b8ff 0%, #2563eb 100%)",
+        "ps_padding": "80",
+        "ps_layout": "left",
+        "ps_title": "启灵主题",
+        "ps_subtitle": "专业级WordPress企业主题",
+        "ps_media_items": [
+          {
+            "type": "image",
+            "image": "",
+            "video_url": "",
+            "video_poster": ""
+          }
+        ],
+        "ps_media_height": "450px",
+        "ps_media_radius": "16px",
+        "ps_show_price": "yes",
+        "ps_price": "¥399",
+        "ps_original_price": "¥299",
+        "ps_cta_text": "前往购买",
+        "ps_cta_url": "#",
+        "ps_cta_bg": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "ps_cta_color": "#ffffff",
+        "ps_cta_target": "_self",
+        "ps_description": "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新"
+      }
+    },
+    {
+      "type": "service_cards",
+      "data": {
+        "sc_bg_color": "#f8fafc",
+        "sc_padding": "60",
+        "sc_columns": "4",
+        "sc_gap": "20px",
+        "sc_card_bg": "rgba(255, 255, 255, 1)",
+        "sc_card_radius": "16px",
+        "sc_card_shadow": "medium",
+        "sc_icon_size": "48px",
+        "sc_icon_bg": "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
+        "sc_icon_radius": "12px",
+        "sc_badge_bg": "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
+        "sc_cards": [
+          {
+            "icon": "📦",
+            "icon_image": "",
+            "title": "50+ 功能模块",
+            "badge": "",
+            "description": "开箱即用的页面构建模块",
+            "url": "#features",
+            "target": "_self"
+          },
+          {
+            "icon": "🎨",
+            "icon_image": "",
+            "title": "高度自定义",
+            "badge": "Hot",
+            "description": "每个模块都支持深度定制",
+            "url": "#customize",
+            "target": "_self"
+          },
+          {
+            "icon": "⚡",
+            "icon_image": "",
+            "title": "极致性能",
+            "badge": "",
+            "description": "优化加载，秒开体验",
+            "url": "#performance",
+            "target": "_self"
+          },
+          {
+            "icon": "🔒",
+            "icon_image": "",
+            "title": "安全可靠",
+            "badge": "",
+            "description": "代码规范，安全防护",
+            "url": "#security",
+            "target": "_self"
+          }
+        ],
+        "module_margin_top": "-60px",
+        "module_margin_bottom": ""
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "title": "强大的功能特性",
+        "subtitle": "50+ 内置模块，覆盖企业网站建设的各个方面",
+        "bg_color": "",
+        "columns": "3",
+        "tabs": [
+          {
+            "tab_id": "modules",
+            "tab_title": "页面模块",
+            "tab_icon": "📦",
+            "features": "🎯|横幅模块|支持轮播、视频背景的Banner展示\n📦|图文视频轮播|左右布局展示产品，支持视频媒体\n💼|服务标签卡片|快速导航入口，图标+标题+描述\n📰|博客布局|自动获取文章，多种布局风格\n💰|价格套餐|可定制的定价表，支持渐变色\n📋|功能清单|Tab切换的功能卡片展示"
+          },
+          {
+            "tab_id": "user",
+            "tab_title": "用户系统",
+            "tab_icon": "👤",
+            "features": "🔐|登录注册|完整的用户认证系统，支持弹窗登录\n👤|会员中心|个人资料管理，头像上传\n🔑|密码找回|邮件验证重置密码\n📧|邮件系统|SMTP邮件发送支持\n🛡️|表单验证|前后端双重验证\n⏱️|滑块验证|防止恶意提交，保护安全"
+          },
+          {
+            "tab_id": "customize",
+            "tab_title": "个性化定制",
+            "tab_icon": "🎨",
+            "features": "🎨|主题色定制|一建立切换主题色，支持渐变色\n🌙|暗黑模式|完整的深色主题支持\n📱|悬浮工具栏|可定制的悬浮按钮\n📢|公告系统|多类型公告展示\n🖼️|Logo定制|支持双Logo配置\n📐|模块间距|每个模块可自定义间距"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_bg_image": "",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "50+",
+            "label": "功能模块"
+          },
+          {
+            "number": "30+",
+            "label": "页面模板"
+          },
+          {
+            "number": "100%",
+            "label": "响应式"
+          },
+          {
+            "number": "24/7",
+            "label": "技术支持"
+          }
+        ]
+      }
+    },
+    {
+      "type": "multi_image_text",
+      "data": {
+        "multi_image_text_title": "为什么选择我们？",
+        "multi_image_text_subtitle": "精心设计的每一个细节，只为给您最好的体验",
+        "multi_image_text_layout": "left",
+        "multi_image_text_items": [
+          {
+            "icon": "🧩",
+            "title": "模块化设计",
+            "desc": "50+ 可复用模块，拖拽式页面构建，无需编码即可创建专业网站",
+            "image": "",
+            "link": ""
+          },
+          {
+            "icon": "🎯",
+            "title": "响应式布局",
+            "desc": "完美适配桌面、平板、手机等各种设备，确保最佳浏览体验",
+            "image": "",
+            "link": ""
+          },
+          {
+            "icon": "🌙",
+            "title": "暗黑模式",
+            "desc": "内置智能暗黑模式切换，保护用户眼睛，提升夜间浏览舒适度",
+            "image": "",
+            "link": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见问题",
+        "faq_items": [
+          {
+            "question": "主题购买后包含哪些服务？",
+            "answer": "购买后您将获得：完整源代码、详细使用文档、终身免费更新、以及专业的技术支持服务。"
+          },
+          {
+            "question": "如何自定义页面模块？",
+            "answer": "在后台编辑页面时，找到「页面模块配置」区域，点击「添加模块」选择需要的模块，然后填写内容即可。支持拖拽排序。"
+          },
+          {
+            "question": "主题支持多少个功能模块？",
+            "answer": "主题内置50+功能模块，包括：横幅、服务、产品、案例、新闻、价格表、视频、客户评价等，覆盖企业网站的各个需求。"
+          },
+          {
+            "question": "是否支持暗黑模式？",
+            "answer": "是的，主题内置完整的暗黑模式支持，用户可以手动切换或跟随系统设置自动切换。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备好开始了吗？",
+        "cta_subtitle": "立即体验专业级WordPress企业主题",
+        "cta_button_text": "立即购买",
+        "cta_button_url": "#",
+        "cta_bg_type": "gradient"
+      }
+    }
+  ]
+}

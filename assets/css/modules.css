@@ -16,7 +16,7 @@
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -31,7 +31,7 @@
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -40,7 +40,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -58,7 +58,7 @@
 }.qiling-module-scope-about_me_card .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-about_me_card .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-about_me_card .features-tab-btn.active::before {
@@ -434,7 +434,7 @@ html.dark-mode .qiling-module-scope-about_me_card .module-about-me-card .qil-abo
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -449,7 +449,7 @@ html.dark-mode .qiling-module-scope-about_me_card .module-about-me-card .qil-abo
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -458,7 +458,7 @@ html.dark-mode .qiling-module-scope-about_me_card .module-about-me-card .qil-abo
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -476,7 +476,7 @@ html.dark-mode .qiling-module-scope-about_me_card .module-about-me-card .qil-abo
 }.qiling-module-scope-accordion .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-accordion .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-accordion .features-tab-btn.active::before {
@@ -709,7 +709,7 @@ html.dark-mode .qiling-module-scope-about_me_card .module-about-me-card .qil-abo
   .accordion-style-bordered
   .accordion-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--f-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
 }.qiling-module-scope-accordion /* 极简样式 (Minimal Style) */
 .module-accordion .accordion-style-minimal .accordion-item {
   background: var(--qiling-color-transparent);
@@ -856,7 +856,7 @@ html.dark-mode .qiling-module-scope-accordion .module-accordion .accordion-style
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -871,7 +871,7 @@ html.dark-mode .qiling-module-scope-accordion .module-accordion .accordion-style
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -880,7 +880,7 @@ html.dark-mode .qiling-module-scope-accordion .module-accordion .accordion-style
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -898,7 +898,7 @@ html.dark-mode .qiling-module-scope-accordion .module-accordion .accordion-style
 }.qiling-module-scope-app_hero .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-app_hero .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-app_hero .features-tab-btn.active::before {
@@ -1573,7 +1573,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -1588,7 +1588,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -1597,7 +1597,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -1615,7 +1615,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
 }.qiling-module-scope-author_matrix .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-author_matrix .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-author_matrix .features-tab-btn.active::before {
@@ -1849,13 +1849,13 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
   font-size: var(--qiling-text-rem-1p08);
   line-height: 1.4;
 }.qiling-module-scope-author_matrix .module-author-matrix .am-name a {
-  color: var(--color-heading);
+  color: var(--f-item-title, var(--color-heading));
   text-decoration: none;
 }.qiling-module-scope-author_matrix .module-author-matrix .am-name a:hover {
   color: var(--color-primary, var(--qiling-color-4f46e5));
 }.qiling-module-scope-author_matrix .module-author-matrix .am-bio {
   margin: 0 0 var(--qiling-space-10);
-  color: var(--color-text-muted);
+  color: var(--f-item-desc, var(--color-text-muted));
   font-size: var(--qiling-text-rem-0p92);
   line-height: 1.72;
   min-height: 48px;
@@ -1942,7 +1942,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -1957,7 +1957,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -1966,7 +1966,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -1984,7 +1984,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
 }.qiling-module-scope-banner .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-banner .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-banner .features-tab-btn.active::before {
@@ -2264,7 +2264,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -2279,7 +2279,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -2288,7 +2288,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -2306,7 +2306,7 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero .floating-badge {
 }.qiling-module-scope-blog .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-blog .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-blog .features-tab-btn.active::before {
@@ -3014,7 +3014,7 @@ html.dark-mode .qiling-module-scope-blog .module-blog .post-meta {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -3029,7 +3029,7 @@ html.dark-mode .qiling-module-scope-blog .module-blog .post-meta {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -3038,7 +3038,7 @@ html.dark-mode .qiling-module-scope-blog .module-blog .post-meta {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -3056,7 +3056,7 @@ html.dark-mode .qiling-module-scope-blog .module-blog .post-meta {
 }.qiling-module-scope-booking-entry .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-booking-entry .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-booking-entry .features-tab-btn.active::before {
@@ -3535,7 +3535,7 @@ html.dark-mode .module-booking-entry .ql-hotel-booking-form {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -3550,7 +3550,7 @@ html.dark-mode .module-booking-entry .ql-hotel-booking-form {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -3559,7 +3559,7 @@ html.dark-mode .module-booking-entry .ql-hotel-booking-form {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -3577,7 +3577,7 @@ html.dark-mode .module-booking-entry .ql-hotel-booking-form {
 }.qiling-module-scope-branches .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-branches .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-branches .features-tab-btn.active::before {
@@ -4076,7 +4076,7 @@ html.dark-mode .module-branches {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -4091,7 +4091,7 @@ html.dark-mode .module-branches {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -4100,7 +4100,7 @@ html.dark-mode .module-branches {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -4118,7 +4118,7 @@ html.dark-mode .module-branches {
 }.qiling-module-scope-brand_banner_pro .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-brand_banner_pro .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-brand_banner_pro .features-tab-btn.active::before {
@@ -4999,7 +4999,7 @@ html.dark-mode .module-branches {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -5014,7 +5014,7 @@ html.dark-mode .module-branches {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -5023,7 +5023,7 @@ html.dark-mode .module-branches {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -5041,7 +5041,7 @@ html.dark-mode .module-branches {
 }.qiling-module-scope-breaking_news_ticker .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-breaking_news_ticker .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-breaking_news_ticker .features-tab-btn.active::before {
@@ -5348,7 +5348,7 @@ html.dark-mode .module-branches {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -5363,7 +5363,7 @@ html.dark-mode .module-branches {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -5372,7 +5372,7 @@ html.dark-mode .module-branches {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -5390,7 +5390,7 @@ html.dark-mode .module-branches {
 }.qiling-module-scope-cases .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-cases .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-cases .features-tab-btn.active::before {
@@ -5673,7 +5673,7 @@ html.dark-mode .module-branches {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -5688,7 +5688,7 @@ html.dark-mode .module-branches {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -5697,7 +5697,7 @@ html.dark-mode .module-branches {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -5715,7 +5715,7 @@ html.dark-mode .module-branches {
 }.qiling-module-scope-category_tabs .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-category_tabs .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-category_tabs .features-tab-btn.active::before {
@@ -6196,7 +6196,7 @@ html.dark-mode .module-branches {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -6211,7 +6211,7 @@ html.dark-mode .module-branches {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -6220,7 +6220,7 @@ html.dark-mode .module-branches {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -6238,7 +6238,7 @@ html.dark-mode .module-branches {
 }.qiling-module-scope-certificate_honors .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-certificate_honors .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-certificate_honors .features-tab-btn.active::before {
@@ -6604,7 +6604,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -6619,7 +6619,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -6628,7 +6628,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -6646,7 +6646,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
 }.qiling-module-scope-chart .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-chart .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-chart .features-tab-btn.active::before {
@@ -6886,7 +6886,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -6901,7 +6901,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -6910,7 +6910,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -6928,7 +6928,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
 }.qiling-module-scope-circle_wheel .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-circle_wheel .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-circle_wheel .features-tab-btn.active::before {
@@ -7400,7 +7400,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -7415,7 +7415,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -7424,7 +7424,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -7442,7 +7442,7 @@ html.dark-mode .qiling-module-scope-certificate_honors .module-certificate-honor
 }.qiling-module-scope-clients .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-clients .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-clients .features-tab-btn.active::before {
@@ -7785,7 +7785,7 @@ html.dark-mode .qiling-module-scope-clients .module-clients .client-name-placeho
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -7800,7 +7800,7 @@ html.dark-mode .qiling-module-scope-clients .module-clients .client-name-placeho
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -7809,7 +7809,7 @@ html.dark-mode .qiling-module-scope-clients .module-clients .client-name-placeho
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -7827,7 +7827,7 @@ html.dark-mode .qiling-module-scope-clients .module-clients .client-name-placeho
 }.qiling-module-scope-columns .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-columns .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-columns .features-tab-btn.active::before {
@@ -8027,7 +8027,7 @@ html.dark-mode .qiling-module-scope-clients .module-clients .client-name-placeho
       rgba(var(--color-primary-rgb), 0.035) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--columns-card-bg, var(--qiling-component-card-bg));
   padding: var(--qiling-space-30) var(--qiling-space-28) var(--qiling-space-28);
   border-radius: var(--qiling-card-radius);
   box-shadow: var(--qiling-component-card-shadow);
@@ -8038,12 +8038,12 @@ html.dark-mode .qiling-module-scope-clients .module-clients .client-name-placeho
   display: block;
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--qiling-component-card-border);
+  border: 1px solid var(--columns-card-border, var(--qiling-component-card-border));
   height: 100%;
 }.qiling-module-scope-columns .module-columns a.column-item:hover {
   transform: translateY(-6px);
   box-shadow: var(--qiling-component-card-shadow);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--columns-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
 }.qiling-module-scope-columns .module-columns .column-image {
   margin-bottom: var(--qiling-space-22);
   overflow: hidden;
@@ -8062,10 +8062,10 @@ html.dark-mode .qiling-module-scope-clients .module-clients .client-name-placeho
   margin: 0 0 var(--qiling-space-10);
   font-size: var(--qiling-text-rem-1p18);
   font-weight: 700;
-  color: var(--color-heading);
+  color: var(--columns-item-title, var(--color-heading));
   line-height: 1.4;
 }.qiling-module-scope-columns .module-columns .column-content {
-  color: var(--color-text-muted);
+  color: var(--columns-item-text, var(--color-text-muted));
   line-height: 1.72;
 }.qiling-module-scope-columns /* 列暗黑模式 (Columns Dark Mode) */
 html.dark-mode .module-columns {
@@ -8122,7 +8122,7 @@ html.dark-mode .module-columns {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -8137,7 +8137,7 @@ html.dark-mode .module-columns {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -8146,7 +8146,7 @@ html.dark-mode .module-columns {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -8164,7 +8164,7 @@ html.dark-mode .module-columns {
 }.qiling-module-scope-comparison .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-comparison .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-comparison .features-tab-btn.active::before {
@@ -8527,7 +8527,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -8542,7 +8542,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -8551,7 +8551,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -8569,7 +8569,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
 }.qiling-module-scope-compliance_trust .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-compliance_trust .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-compliance_trust .features-tab-btn.active::before {
@@ -8976,7 +8976,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -8991,7 +8991,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -9000,7 +9000,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -9018,7 +9018,7 @@ html.dark-mode .qiling-module-scope-comparison .comparison-table tr:nth-child(ev
 }.qiling-module-scope-contact .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-contact .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-contact .features-tab-btn.active::before {
@@ -9717,7 +9717,7 @@ html.dark-mode .qiling-module-scope-contact .module-contact.module-contact .cont
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -9732,7 +9732,7 @@ html.dark-mode .qiling-module-scope-contact .module-contact.module-contact .cont
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -9741,7 +9741,7 @@ html.dark-mode .qiling-module-scope-contact .module-contact.module-contact .cont
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -9759,7 +9759,7 @@ html.dark-mode .qiling-module-scope-contact .module-contact.module-contact .cont
 }.qiling-module-scope-countdown .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-countdown .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-countdown .features-tab-btn.active::before {
@@ -10168,7 +10168,7 @@ html.dark-mode .qiling-module-scope-countdown .countdown-unit {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -10183,7 +10183,7 @@ html.dark-mode .qiling-module-scope-countdown .countdown-unit {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -10192,7 +10192,7 @@ html.dark-mode .qiling-module-scope-countdown .countdown-unit {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -10210,7 +10210,7 @@ html.dark-mode .qiling-module-scope-countdown .countdown-unit {
 }.qiling-module-scope-cta .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-cta .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-cta .features-tab-btn.active::before {
@@ -10582,7 +10582,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -10597,7 +10597,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -10606,7 +10606,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -10624,7 +10624,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
 }.qiling-module-scope-curriculum .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-curriculum .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-curriculum .features-tab-btn.active::before {
@@ -10944,7 +10944,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -10959,7 +10959,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -10968,7 +10968,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -10986,7 +10986,7 @@ html.dark-mode .module-cta.has-bg-image .cta-overlay {
 }.qiling-module-scope-double_column_carousel .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-double_column_carousel .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-double_column_carousel .features-tab-btn.active::before {
@@ -11309,7 +11309,7 @@ html.dark-mode .qiling-module-scope-double_column_carousel .module-double-column
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -11324,7 +11324,7 @@ html.dark-mode .qiling-module-scope-double_column_carousel .module-double-column
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -11333,7 +11333,7 @@ html.dark-mode .qiling-module-scope-double_column_carousel .module-double-column
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -11351,7 +11351,7 @@ html.dark-mode .qiling-module-scope-double_column_carousel .module-double-column
 }.qiling-module-scope-downloads .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-downloads .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-downloads .features-tab-btn.active::before {
@@ -11753,7 +11753,7 @@ html.dark-mode .module-downloads {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -11768,7 +11768,7 @@ html.dark-mode .module-downloads {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -11777,7 +11777,7 @@ html.dark-mode .module-downloads {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -11795,7 +11795,7 @@ html.dark-mode .module-downloads {
 }.qiling-module-scope-dynamic_banner .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-dynamic_banner .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-dynamic_banner .features-tab-btn.active::before {
@@ -12052,7 +12052,7 @@ html.dark-mode .module-downloads {
   font-size: var(--qiling-text-rem-1p5);
   font-weight: 600;
   margin-bottom: var(--qiling-space-18);
-  color: var(--db-text-color);
+  color: var(--db-subtitle-color);
   opacity: 0.9;
   max-width: min(var(--qiling-measure-pct-100), var(--qiling-measure-rem-46));
   overflow-wrap: normal;
@@ -12061,7 +12061,7 @@ html.dark-mode .module-downloads {
 }.qiling-module-scope-dynamic_banner .module-dynamic-banner .db-desc {
   font-size: var(--qiling-text-rem-1p1);
   line-height: 1.8;
-  color: var(--db-text-color);
+  color: var(--db-desc-color);
   opacity: 0.8;
   margin-bottom: var(--qiling-space-38);
   max-width: 58ch;
@@ -12339,7 +12339,7 @@ html.dark-mode .module-downloads {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -12354,7 +12354,7 @@ html.dark-mode .module-downloads {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -12363,7 +12363,7 @@ html.dark-mode .module-downloads {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -12381,7 +12381,7 @@ html.dark-mode .module-downloads {
 }.qiling-module-scope-experience_timeline .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-experience_timeline .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-experience_timeline .features-tab-btn.active::before {
@@ -12778,7 +12778,7 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -12793,7 +12793,7 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -12802,7 +12802,7 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -12820,7 +12820,7 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
 }.qiling-module-scope-faq .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-faq .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-faq .features-tab-btn.active::before {
@@ -13014,8 +13014,8 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
-  border: 1px solid var(--qiling-component-card-border);
+    var(--faq-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--faq-card-border, var(--qiling-component-card-border));
   border-radius: var(--qiling-card-radius);
   margin-bottom: var(--qiling-space-18);
   overflow: hidden;
@@ -13026,7 +13026,7 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
   box-shadow: var(--qiling-component-card-shadow);
 }.qiling-module-scope-faq .module-faq.module-faq .faq-list .faq-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--faq-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
   box-shadow: var(--qiling-component-card-shadow);
 }.qiling-module-scope-faq .module-faq .faq-question {
   width: 100%;
@@ -13041,7 +13041,7 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
   text-align: left;
   font-size: var(--qiling-text-rem-1p08);
   font-weight: 600;
-  color: var(--qiling-component-accordion-title, var(--color-heading));
+  color: var(--faq-question, var(--qiling-component-accordion-title, var(--color-heading)));
   transition: all 0.3s;
 }.qiling-module-scope-faq .module-faq .faq-question > span:first-child {
   flex: 1;
@@ -13055,23 +13055,23 @@ html.dark-mode .qiling-module-scope-experience_timeline .module-experience-timel
   height: 38px;
   flex-shrink: 0;
   border-radius: 999px;
-  background: rgba(var(--color-primary-rgb), 0.08);
-  color: var(--color-primary);
+  background: var(--faq-icon-bg, rgba(var(--color-primary-rgb), 0.08));
+  color: var(--faq-icon-color, var(--color-primary));
   transition: transform 0.3s ease;
 }.qiling-module-scope-faq .module-faq .faq-item.active .faq-icon {
   transform: rotate(45deg);
-  color: var(--color-primary);
-  background: rgba(var(--color-primary-rgb), 0.14);
+  color: var(--faq-icon-color, var(--color-primary));
+  background: var(--faq-icon-bg, rgba(var(--color-primary-rgb), 0.14));
 }.qiling-module-scope-faq .module-faq .faq-item.active .faq-question {
-  color: var(--color-heading);
+  color: var(--faq-question, var(--color-heading));
 }.qiling-module-scope-faq .module-faq .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  background: var(--qiling-component-card-bg);
+  background: var(--faq-card-bg, var(--qiling-component-card-bg));
 }.qiling-module-scope-faq .module-faq .faq-answer-content {
   padding: 0 var(--qiling-space-26) var(--qiling-space-26);
-  color: var(--color-text-muted);
+  color: var(--faq-answer, var(--color-text-muted));
   font-size: var(--qiling-text-rem-0p96);
   line-height: 1.72;
 }.qiling-module-scope-faq /* 暗黑模式 (Dark Mode) */
@@ -13105,6 +13105,14 @@ html.dark-mode .module-faq {
   color: var(--qiling-component-module-title-color-dark, var(--color-heading));
 }html.dark-mode .qiling-module-scope-faq .module-faq .section-subtitle {
   color: var(--color-text-muted);
+}.qiling-module-scope-faq .module-faq.module-faq .faq-item {
+  background: var(--faq-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--faq-card-border, var(--qiling-component-card-border));
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-faq .module-faq.module-faq .faq-item:hover {
+  border-color: var(--faq-card-hover-border, var(--faq-card-border, var(--qiling-component-card-border)));
+  box-shadow: var(--qiling-component-card-shadow);
 }
 
 .qiling-module-scope-featured_posts .module-features-list-container {
@@ -13124,7 +13132,7 @@ html.dark-mode .module-faq {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -13139,7 +13147,7 @@ html.dark-mode .module-faq {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -13148,7 +13156,7 @@ html.dark-mode .module-faq {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -13166,7 +13174,7 @@ html.dark-mode .module-faq {
 }.qiling-module-scope-featured_posts .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-featured_posts .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-featured_posts .features-tab-btn.active::before {
@@ -13671,7 +13679,7 @@ html.dark-mode .module-featured-posts .fp-empty {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -13686,7 +13694,7 @@ html.dark-mode .module-featured-posts .fp-empty {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -13695,7 +13703,7 @@ html.dark-mode .module-featured-posts .fp-empty {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -13713,7 +13721,7 @@ html.dark-mode .module-featured-posts .fp-empty {
 }.qiling-module-scope-features_list .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-features_list .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-features_list .features-tab-btn.active::before {
@@ -13949,10 +13957,10 @@ html.dark-mode .module-featured-posts .fp-empty {
       rgba(var(--color-primary-rgb), 0.035) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-card-bg, var(--qiling-component-card-bg));
   border-radius: var(--qiling-card-radius);
   padding: var(--qiling-space-34) var(--qiling-space-26) var(--qiling-space-30);
-  border: 1px solid var(--qiling-component-card-border);
+  border: 1px solid var(--fl-card-border, var(--qiling-component-card-border));
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -13985,11 +13993,12 @@ html.dark-mode .module-featured-posts .fp-empty {
   align-items: center;
   justify-content: center;
   font-size: var(--qiling-text-rem-2);
-  background: linear-gradient(
+  background: var(--fl-icon-bg, linear-gradient(
     135deg,
     rgba(var(--color-primary-rgb), 0.1),
     rgba(var(--color-success-rgb), 0.1)
-  );
+  ));
+  color: var(--fl-icon-color, var(--color-primary));
   border-radius: 18px;
   margin-bottom: var(--qiling-space-22);
   transition: all 0.3s;
@@ -13997,20 +14006,16 @@ html.dark-mode .module-featured-posts .fp-empty {
   box-shadow: 0 14px 32px rgba(var(--color-primary-rgb), 0.14);
 }.qiling-module-scope-features_list .module-features-list .feature-card:hover .feature-icon {
   transform: scale(1.1) rotate(5deg);
-  background: linear-gradient(
-    135deg,
-    rgba(var(--color-primary-rgb), 0.2),
-    rgba(var(--color-success-rgb), 0.2)
-  );
-}.qiling-module-scope-features_list .feature-title {
+  background: var(--fl-icon-bg, rgba(var(--color-primary-rgb), 0.18));
+}.qiling-module-scope-features_list .module-features-list .feature-title {
   font-size: var(--qiling-text-rem-1p25);
   font-weight: 700;
-  color: var(--color-heading);
+  color: var(--fl-item-title, var(--color-heading));
   margin: 0 0 var(--qiling-space-12) 0;
   line-height: 1.4;
-}.qiling-module-scope-features_list .feature-desc {
+}.qiling-module-scope-features_list .module-features-list .feature-desc {
   font-size: var(--qiling-text-rem-0p95);
-  color: var(--color-text-muted);
+  color: var(--fl-item-desc, var(--color-text-muted));
   line-height: 1.7;
   margin: 0;
 }html.dark-mode .qiling-module-scope-features_list .module-features-list.module-features-list .feature-card {
@@ -14039,6 +14044,14 @@ html.dark-mode .module-featured-posts .fp-empty {
 }.qiling-module-scope-features_list .module-features-list .feature-desc {
   margin: 0;
   line-height: 1.72;
+}.qiling-module-scope-features_list .module-features-list.module-features-list .feature-card {
+  background: var(--fl-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--fl-card-border, var(--qiling-component-card-border));
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-features_list .module-features-list.module-features-list .feature-card:hover {
+  border-color: var(--fl-card-hover-border, var(--fl-card-border, var(--qiling-component-card-border)));
+  box-shadow: var(--qiling-component-card-shadow);
 }
 
 .qiling-module-scope-features .module-features-list-container {
@@ -14058,7 +14071,7 @@ html.dark-mode .module-featured-posts .fp-empty {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -14073,7 +14086,7 @@ html.dark-mode .module-featured-posts .fp-empty {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -14082,7 +14095,7 @@ html.dark-mode .module-featured-posts .fp-empty {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -14100,7 +14113,7 @@ html.dark-mode .module-featured-posts .fp-empty {
 }.qiling-module-scope-features .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-features .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-features .features-tab-btn.active::before {
@@ -14309,7 +14322,7 @@ html.dark-mode .module-featured-posts .fp-empty {
       rgba(var(--color-primary-rgb), 0) 100%
     ),
     var(--f-card-bg, var(--qiling-component-card-bg));
-  border: 1px solid var(--qiling-component-card-border);
+  border: 1px solid var(--f-card-border, var(--qiling-component-card-border));
   box-shadow: var(--qiling-component-card-shadow);
 }.qiling-module-scope-features .module-features .feature-item.style-border {
   border: 1px solid var(--qiling-component-card-border);
@@ -14320,7 +14333,7 @@ html.dark-mode .module-featured-posts .fp-empty {
 .module-features .feature-item.hover-lift:hover {
   transform: translateY(-8px);
   box-shadow: var(--qiling-component-card-shadow);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--f-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
 }.qiling-module-scope-features .module-features .feature-item.hover-scale:hover {
   transform: scale(1.03);
 }.qiling-module-scope-features /* 图标位置：顶部 (垂直) (Icon Position: TOP Vertical) */
@@ -14377,10 +14390,10 @@ html.dark-mode .module-featured-posts .fp-empty {
 }.qiling-module-scope-features .module-features .feature-title {
   font-size: var(--qiling-text-rem-1p25);
   font-weight: 700;
-  color: var(--color-heading);
+  color: var(--f-item-title, var(--color-heading));
   margin: 0 0 var(--qiling-space-10);
 }.qiling-module-scope-features .module-features .feature-desc {
-  color: var(--color-text-muted);
+  color: var(--f-item-desc, var(--color-text-muted));
   font-size: var(--qiling-text-rem-0p95);
   line-height: 1.6;
   margin: 0;
@@ -14441,6 +14454,15 @@ html.dark-mode .module-features {
   color: var(--qiling-component-module-title-color-dark, var(--color-heading));
 }html.dark-mode .qiling-module-scope-features .module-features .section-subtitle {
   color: var(--color-text-muted);
+}.qiling-module-scope-features .module-features.module-features .feature-item.style-card,
+.qiling-module-scope-features .module-features.module-features .feature-item.style-border {
+  background: var(--f-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--f-card-border, var(--qiling-component-card-border));
+  border-radius: var(--f-card-radius, var(--qiling-card-radius));
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-features .module-features.module-features .feature-item.style-card:hover {
+  border-color: var(--f-card-hover-border, var(--f-card-border, var(--qiling-component-card-border)));
+  box-shadow: var(--qiling-component-card-shadow);
 }
 
 .qiling-module-scope-footer_suite .module-features-list-container {
@@ -14460,7 +14482,7 @@ html.dark-mode .module-features {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -14475,7 +14497,7 @@ html.dark-mode .module-features {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -14484,7 +14506,7 @@ html.dark-mode .module-features {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -14502,7 +14524,7 @@ html.dark-mode .module-features {
 }.qiling-module-scope-footer_suite .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-footer_suite .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-footer_suite .features-tab-btn.active::before {
@@ -15143,7 +15165,7 @@ body.qiling-video-portal-page .qiling-module-scope-footer_suite #primary.site-ma
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -15158,7 +15180,7 @@ body.qiling-video-portal-page .qiling-module-scope-footer_suite #primary.site-ma
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -15167,7 +15189,7 @@ body.qiling-video-portal-page .qiling-module-scope-footer_suite #primary.site-ma
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -15185,7 +15207,7 @@ body.qiling-video-portal-page .qiling-module-scope-footer_suite #primary.site-ma
 }.qiling-module-scope-friendly_links .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-friendly_links .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-friendly_links .features-tab-btn.active::before {
@@ -15497,7 +15519,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -15512,7 +15534,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -15521,7 +15543,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -15539,7 +15561,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
 }.qiling-module-scope-fullscreen_video .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-fullscreen_video .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-fullscreen_video .features-tab-btn.active::before {
@@ -15797,6 +15819,9 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
   position: relative;
   z-index: 10;
   text-align: center;
+  width: min(100% - 48px, 1100px);
+  max-width: 1100px;
+  box-sizing: border-box;
   margin-bottom: var(--qiling-space-50);
 }.qiling-module-scope-fullscreen_video .fsv-title {
   font-size: var(--qiling-text-rem-5);
@@ -15804,6 +15829,10 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
   margin: 0;
   line-height: 1.2;
   color: var(--color-text-inverse);
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: balance;
   /* 呼吸光晕动画在这里应用 */
 }.qiling-module-scope-fullscreen_video .fsv-subtitle {
   font-size: var(--qiling-text-rem-1p5);
@@ -15811,6 +15840,10 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
   margin-bottom: var(--qiling-space-30);
   opacity: 0.9;
   font-weight: 300;
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
 }.qiling-module-scope-fullscreen_video /* 呼吸光晕动画 */
 .glow-animation {
   animation: glow-breathe 4s ease-in-out infinite;
@@ -15983,7 +16016,9 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
 }.qiling-module-scope-fullscreen_video .module-fullscreen-video {
   isolation: isolate;
 }.qiling-module-scope-fullscreen_video .module-fullscreen-video .fsv-content {
-  width: min(100%, 920px);
+  width: min(calc(100% - 48px), 1100px);
+  max-width: 1100px;
+  box-sizing: border-box;
   padding: 0 var(--qiling-space-24);
 }.qiling-module-scope-fullscreen_video .module-fullscreen-video .fsv-title {
   letter-spacing: var(--qiling-tracking-neg-em-0p04);
@@ -16041,7 +16076,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -16056,7 +16091,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -16065,7 +16100,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -16083,7 +16118,7 @@ html.dark-mode .qiling-module-scope-friendly_links .module-friendly-links .qil-f
 }.qiling-module-scope-gallery .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-gallery .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-gallery .features-tab-btn.active::before {
@@ -16536,7 +16571,7 @@ html.dark-mode .module-gallery {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -16551,7 +16586,7 @@ html.dark-mode .module-gallery {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -16560,7 +16595,7 @@ html.dark-mode .module-gallery {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -16578,7 +16613,7 @@ html.dark-mode .module-gallery {
 }.qiling-module-scope-github_activity .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-github_activity .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-github_activity .features-tab-btn.active::before {
@@ -16784,7 +16819,7 @@ html.dark-mode .module-gallery {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -16799,7 +16834,7 @@ html.dark-mode .module-gallery {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -16808,7 +16843,7 @@ html.dark-mode .module-gallery {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -16826,7 +16861,7 @@ html.dark-mode .module-gallery {
 }.qiling-module-scope-hero_search .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-hero_search .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-hero_search .features-tab-btn.active::before {
@@ -17292,7 +17327,7 @@ html.dark-mode .module-gallery {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -17307,7 +17342,7 @@ html.dark-mode .module-gallery {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -17316,7 +17351,7 @@ html.dark-mode .module-gallery {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -17334,7 +17369,7 @@ html.dark-mode .module-gallery {
 }.qiling-module-scope-hotel-amenities .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-hotel-amenities .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-hotel-amenities .features-tab-btn.active::before {
@@ -17690,7 +17725,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -17705,7 +17740,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -17714,7 +17749,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -17732,7 +17767,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
 }.qiling-module-scope-image_comparison .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-image_comparison .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-image_comparison .features-tab-btn.active::before {
@@ -18047,7 +18082,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -18062,7 +18097,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -18071,7 +18106,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -18089,7 +18124,7 @@ html.dark-mode .module-hotel-amenities .ql-hotel-amenity-item {
 }.qiling-module-scope-image_text .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-image_text .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-image_text .features-tab-btn.active::before {
@@ -18420,7 +18455,7 @@ html.dark-mode .module-image-text {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -18435,7 +18470,7 @@ html.dark-mode .module-image-text {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -18444,7 +18479,7 @@ html.dark-mode .module-image-text {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -18462,7 +18497,7 @@ html.dark-mode .module-image-text {
 }.qiling-module-scope-interact_hero .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-interact_hero .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-interact_hero .features-tab-btn.active::before {
@@ -18967,7 +19002,7 @@ html.dark-mode .module-image-text {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -18982,7 +19017,7 @@ html.dark-mode .module-image-text {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -18991,7 +19026,7 @@ html.dark-mode .module-image-text {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -19009,7 +19044,7 @@ html.dark-mode .module-image-text {
 }.qiling-module-scope-itinerary .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-itinerary .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-itinerary .features-tab-btn.active::before {
@@ -19484,7 +19519,7 @@ html.dark-mode .module-image-text {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -19499,7 +19534,7 @@ html.dark-mode .module-image-text {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -19508,7 +19543,7 @@ html.dark-mode .module-image-text {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -19526,7 +19561,7 @@ html.dark-mode .module-image-text {
 }.qiling-module-scope-knowledge_cards .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-knowledge_cards .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-knowledge_cards .features-tab-btn.active::before {
@@ -19836,7 +19871,7 @@ html.dark-mode .module-image-text {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -19851,7 +19886,7 @@ html.dark-mode .module-image-text {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -19860,7 +19895,7 @@ html.dark-mode .module-image-text {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -19878,7 +19913,7 @@ html.dark-mode .module-image-text {
 }.qiling-module-scope-lookbook .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-lookbook .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-lookbook .features-tab-btn.active::before {
@@ -20385,7 +20420,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -20400,7 +20435,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -20409,7 +20444,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -20427,7 +20462,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
 }.qiling-module-scope-magic_layout .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-magic_layout .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-magic_layout .features-tab-btn.active::before {
@@ -20901,7 +20936,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -20916,7 +20951,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -20925,7 +20960,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -20943,7 +20978,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
 }.qiling-module-scope-media_list .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-media_list .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-media_list .features-tab-btn.active::before {
@@ -21274,7 +21309,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -21289,7 +21324,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -21298,7 +21333,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -21316,7 +21351,7 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
 }.qiling-module-scope-menu .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-menu .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-menu .features-tab-btn.active::before {
@@ -21666,7 +21701,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -21681,7 +21716,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -21690,7 +21725,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -21708,7 +21743,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
 }.qiling-module-scope-micro_journal_stream .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-micro_journal_stream .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-micro_journal_stream .features-tab-btn.active::before {
@@ -22016,7 +22051,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -22031,7 +22066,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -22040,7 +22075,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -22058,7 +22093,7 @@ html.dark-mode .qiling-module-scope-menu .module-menu .qiling-menu-list .qiling-
 }.qiling-module-scope-multi_image_text .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-multi_image_text .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-multi_image_text .features-tab-btn.active::before {
@@ -22437,7 +22472,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -22452,7 +22487,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -22461,7 +22496,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -22479,7 +22514,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
 }.qiling-module-scope-news .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-news .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-news .features-tab-btn.active::before {
@@ -22816,7 +22851,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -22831,7 +22866,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -22840,7 +22875,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -22858,7 +22893,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
 }.qiling-module-scope-pet_profile .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-pet_profile .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-pet_profile .features-tab-btn.active::before {
@@ -23335,7 +23370,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -23350,7 +23385,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -23359,7 +23394,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -23377,7 +23412,7 @@ html.dark-mode .qiling-module-scope-multi_image_text .mit-item:hover {
 }.qiling-module-scope-pricing .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-pricing .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-pricing .features-tab-btn.active::before {
@@ -23764,7 +23799,7 @@ html.dark-mode .pricing-btn {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -23779,7 +23814,7 @@ html.dark-mode .pricing-btn {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -23788,7 +23823,7 @@ html.dark-mode .pricing-btn {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -23806,7 +23841,7 @@ html.dark-mode .pricing-btn {
 }.qiling-module-scope-process .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-process .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-process .features-tab-btn.active::before {
@@ -24019,13 +24054,13 @@ html.dark-mode .pricing-btn {
   position: relative;
   box-sizing: border-box;
   border-radius: var(--qiling-card-radius);
-  border: 1px solid var(--qiling-component-card-border);
+  border: 1px solid var(--process-card-border, var(--qiling-component-card-border));
   background: linear-gradient(
       180deg,
       rgba(var(--color-primary-rgb), 0.035) 0%,
       rgba(var(--color-primary-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--process-card-bg, var(--qiling-component-card-bg));
   box-shadow: var(--qiling-component-card-shadow);
   transition:
     transform 0.3s ease,
@@ -24033,14 +24068,14 @@ html.dark-mode .pricing-btn {
     box-shadow 0.3s ease;
 }.qiling-module-scope-process .process-item:hover {
   transform: translateY(-6px);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--process-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
 }.qiling-module-scope-process .process-icon {
   width: 80px;
   height: 80px;
   margin: 0 auto var(--qiling-space-20);
   border-radius: 50%;
   /* 背景是动态的 (background is dynamic) */
-  color: var(--color-text-inverse);
+  color: var(--process-icon-color, var(--color-text-inverse));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24063,7 +24098,7 @@ html.dark-mode .pricing-btn {
   height: 2px;
   background: linear-gradient(
     90deg,
-    var(--color-primary),
+    var(--process-arrow, var(--color-primary)),
     var(--qiling-color-transparent)
   );
   z-index: 1;
@@ -24071,7 +24106,7 @@ html.dark-mode .pricing-btn {
   position: absolute;
   right: 0;
   top: -4px;
-  border: solid var(--color-primary);
+  border: solid var(--process-arrow, var(--color-primary));
   border-width: 0 2px 2px 0;
   padding: var(--qiling-space-4);
   transform: rotate(-45deg);
@@ -24102,7 +24137,7 @@ html.dark-mode .pricing-btn {
   padding: var(--qiling-space-4) var(--qiling-space-10);
   border-radius: 999px;
   background: var(--qiling-component-badge-bg);
-  color: var(--qiling-component-badge-text);
+  color: var(--process-badge-text, var(--qiling-component-badge-text));
   border: 1px solid var(--qiling-color-transparent);
   font-size: var(--qiling-text-12);
   font-weight: 600;
@@ -24207,6 +24242,14 @@ html.dark-mode .module-process {
   color: var(--qiling-component-module-title-color-dark, var(--color-heading));
 }html.dark-mode .qiling-module-scope-process .module-process .section-subtitle {
   color: var(--color-text-muted);
+}.qiling-module-scope-process .module-process.module-process .process-item {
+  background: var(--process-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--process-card-border, var(--qiling-component-card-border));
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-process .module-process.module-process .process-item:hover {
+  border-color: var(--process-card-hover-border, var(--process-card-border, var(--qiling-component-card-border)));
+  box-shadow: var(--qiling-component-card-shadow);
 }
 
 .qiling-module-scope-product_showcase .module-features-list-container {
@@ -24226,7 +24269,7 @@ html.dark-mode .module-process {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -24241,7 +24284,7 @@ html.dark-mode .module-process {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -24250,7 +24293,7 @@ html.dark-mode .module-process {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -24268,7 +24311,7 @@ html.dark-mode .module-process {
 }.qiling-module-scope-product_showcase .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-product_showcase .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-product_showcase .features-tab-btn.active::before {
@@ -24753,7 +24796,7 @@ html.dark-mode .module-product-showcase .ps-title {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -24768,7 +24811,7 @@ html.dark-mode .module-product-showcase .ps-title {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -24777,7 +24820,7 @@ html.dark-mode .module-product-showcase .ps-title {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -24795,7 +24838,7 @@ html.dark-mode .module-product-showcase .ps-title {
 }.qiling-module-scope-products .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-products .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-products .features-tab-btn.active::before {
@@ -25337,7 +25380,7 @@ html.dark-mode .module-product-showcase .ps-title {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -25352,7 +25395,7 @@ html.dark-mode .module-product-showcase .ps-title {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -25361,7 +25404,7 @@ html.dark-mode .module-product-showcase .ps-title {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -25379,7 +25422,7 @@ html.dark-mode .module-product-showcase .ps-title {
 }.qiling-module-scope-promotion .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-promotion .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-promotion .features-tab-btn.active::before {
@@ -25908,7 +25951,7 @@ html.dark-mode .module-ql-promotion.ql-promo-layout-cards {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -25923,7 +25966,7 @@ html.dark-mode .module-ql-promotion.ql-promo-layout-cards {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -25932,7 +25975,7 @@ html.dark-mode .module-ql-promotion.ql-promo-layout-cards {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -25950,7 +25993,7 @@ html.dark-mode .module-ql-promotion.ql-promo-layout-cards {
 }.qiling-module-scope-qiling_image_guide .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-qiling_image_guide .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-qiling_image_guide .features-tab-btn.active::before {
@@ -26296,7 +26339,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -26311,7 +26354,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -26320,7 +26363,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -26338,7 +26381,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
 }.qiling-module-scope-qiling_main_category_content .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-qiling_main_category_content .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-qiling_main_category_content .features-tab-btn.active::before {
@@ -26844,7 +26887,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -26859,7 +26902,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -26868,7 +26911,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -26886,7 +26929,7 @@ html.dark-mode .qiling-module-scope-qiling_image_guide .qiling-main-cat-module .
 }.qiling-module-scope-qiling_shop_showcase .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-qiling_shop_showcase .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-qiling_shop_showcase .features-tab-btn.active::before {
@@ -27319,7 +27362,7 @@ html.dark-mode .module-qiling-shop-showcase {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -27334,7 +27377,7 @@ html.dark-mode .module-qiling-shop-showcase {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -27343,7 +27386,7 @@ html.dark-mode .module-qiling-shop-showcase {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -27361,7 +27404,7 @@ html.dark-mode .module-qiling-shop-showcase {
 }.qiling-module-scope-qiling_universal_recommend .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-qiling_universal_recommend .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-qiling_universal_recommend .features-tab-btn.active::before {
@@ -27894,7 +27937,7 @@ html.dark-mode .module-qiling-shop-showcase {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -27909,7 +27952,7 @@ html.dark-mode .module-qiling-shop-showcase {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -27918,7 +27961,7 @@ html.dark-mode .module-qiling-shop-showcase {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -27936,7 +27979,7 @@ html.dark-mode .module-qiling-shop-showcase {
 }.qiling-module-scope-qiling_video_portal_hero .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-qiling_video_portal_hero .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-qiling_video_portal_hero .features-tab-btn.active::before {
@@ -28928,7 +28971,7 @@ html.dark-mode .module-qiling-shop-showcase {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -28943,7 +28986,7 @@ html.dark-mode .module-qiling-shop-showcase {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -28952,7 +28995,7 @@ html.dark-mode .module-qiling-shop-showcase {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -28970,7 +29013,7 @@ html.dark-mode .module-qiling-shop-showcase {
 }.qiling-module-scope-qiling_video_ranking .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-qiling_video_ranking .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-qiling_video_ranking .features-tab-btn.active::before {
@@ -29510,7 +29553,7 @@ body.qiling-video-portal-page .qiling-module-scope-qiling_video_ranking .qiling-
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -29525,7 +29568,7 @@ body.qiling-video-portal-page .qiling-module-scope-qiling_video_ranking .qiling-
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -29534,7 +29577,7 @@ body.qiling-video-portal-page .qiling-module-scope-qiling_video_ranking .qiling-
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -29552,7 +29595,7 @@ body.qiling-video-portal-page .qiling-module-scope-qiling_video_ranking .qiling-
 }.qiling-module-scope-query_loop .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-query_loop .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-query_loop .features-tab-btn.active::before {
@@ -29921,7 +29964,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -29936,7 +29979,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -29945,7 +29988,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -29963,7 +30006,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
 }.qiling-module-scope-reader_wall .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-reader_wall .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-reader_wall .features-tab-btn.active::before {
@@ -30263,7 +30306,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -30278,7 +30321,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -30287,7 +30330,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -30305,7 +30348,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
 }.qiling-module-scope-resource_hero_pro .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-resource_hero_pro .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-resource_hero_pro .features-tab-btn.active::before {
@@ -31281,7 +31324,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -31296,7 +31339,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -31305,7 +31348,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -31323,7 +31366,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
 }.qiling-module-scope-resource_stats .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-resource_stats .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-resource_stats .features-tab-btn.active::before {
@@ -31674,7 +31717,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -31689,7 +31732,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -31698,7 +31741,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -31716,7 +31759,7 @@ html.dark-mode .qiling-module-scope-query_loop .qiling-query-loop-card__excerpt 
 }.qiling-module-scope-resume_hero .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-resume_hero .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-resume_hero .features-tab-btn.active::before {
@@ -32322,7 +32365,7 @@ html.dark-mode .qiling-module-scope-resume_hero .module-resume-hero.style-card .
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -32337,7 +32380,7 @@ html.dark-mode .qiling-module-scope-resume_hero .module-resume-hero.style-card .
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -32346,7 +32389,7 @@ html.dark-mode .qiling-module-scope-resume_hero .module-resume-hero.style-card .
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -32364,7 +32407,7 @@ html.dark-mode .qiling-module-scope-resume_hero .module-resume-hero.style-card .
 }.qiling-module-scope-room-showcase .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-room-showcase .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-room-showcase .features-tab-btn.active::before {
@@ -32827,7 +32870,7 @@ html.dark-mode .module-room-showcase .ql-hotel-room-card {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -32842,7 +32885,7 @@ html.dark-mode .module-room-showcase .ql-hotel-room-card {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -32851,7 +32894,7 @@ html.dark-mode .module-room-showcase .ql-hotel-room-card {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -32869,7 +32912,7 @@ html.dark-mode .module-room-showcase .ql-hotel-room-card {
 }.qiling-module-scope-service_cards .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-service_cards .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-service_cards .features-tab-btn.active::before {
@@ -33164,6 +33207,8 @@ html.dark-mode .module-service-cards {
   }.qiling-module-scope-service_cards .module-service-cards .sc-card {
     padding: var(--qiling-space-16);
   }
+}.qiling-module-scope-service_cards .module-service-cards.module-service-cards .sc-card {
+  border-radius: var(--qiling-card-radius);
 }
 
 .qiling-module-scope-services .module-features-list-container {
@@ -33183,7 +33228,7 @@ html.dark-mode .module-service-cards {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -33198,7 +33243,7 @@ html.dark-mode .module-service-cards {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -33207,7 +33252,7 @@ html.dark-mode .module-service-cards {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -33225,7 +33270,7 @@ html.dark-mode .module-service-cards {
 }.qiling-module-scope-services .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-services .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-services .features-tab-btn.active::before {
@@ -33410,10 +33455,17 @@ html.dark-mode .module-service-cards {
 }.qiling-module-scope-services /* ===== 服务模块 (增强版) (Module Services Enhanced) ===== */
 .module-services {
   background: var(--s-bg-color, var(--color-surface));
+  padding: var(--s-padding, var(--qiling-space-80) 0);
 }.qiling-module-scope-services .module-services.section-padding {
   padding: var(--s-padding, var(--qiling-space-80) 0);
 }.qiling-module-scope-services .module-services .section-header {
   margin-bottom: var(--qiling-space-44);
+}.qiling-module-scope-services .module-services .section-title {
+  font-size: var(--s-heading-size, var(--qiling-section-title-size));
+  color: var(--s-heading-color, var(--color-heading));
+}.qiling-module-scope-services .module-services .section-subtitle {
+  font-size: var(--s-heading-sub-size, var(--qiling-text-rem-1p05));
+  color: var(--s-heading-sub-color, var(--color-text-muted));
 }.qiling-module-scope-services .services-grid {
   display: grid;
   grid-template-columns: repeat(var(--s-cols, 4), 1fr);
@@ -33424,10 +33476,10 @@ html.dark-mode .module-service-cards {
       rgba(var(--color-primary-rgb), 0.04) 0%,
       rgba(var(--color-primary-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--s-card-bg, var(--qiling-component-card-bg));
   border-radius: var(--qiling-card-radius);
   padding: var(--qiling-space-36) var(--qiling-space-28) var(--qiling-space-32);
-  border: 1px solid var(--qiling-component-card-border);
+  border: 1px solid var(--s-card-border, var(--qiling-component-card-border));
   text-align: center;
   transition:
     transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -33447,8 +33499,8 @@ html.dark-mode .module-service-cards {
   height: 4px;
   background: linear-gradient(
     90deg,
-    var(--color-primary, var(--color-primary)),
-    var(--color-primary-light, var(--qiling-color-60a5fa))
+    var(--s-accent, var(--color-primary)),
+    var(--s-accent, var(--color-primary-light, var(--qiling-color-60a5fa)))
   );
   transform: scaleX(0);
   transform-origin: left;
@@ -33457,31 +33509,31 @@ html.dark-mode .module-service-cards {
 }.qiling-module-scope-services .module-services .service-item:hover {
   transform: translateY(-8px);
   box-shadow: var(--qiling-component-card-shadow);
-  border-color: rgba(var(--color-primary-rgb), 0.18);
+  border-color: var(--s-card-hover-border, rgba(var(--color-primary-rgb), 0.18));
 }.qiling-module-scope-services .module-services .service-item:hover::before {
   transform: scaleX(1);
 }.qiling-module-scope-services .module-services .service-icon {
   font-size: var(--qiling-text-rem-2p5);
   margin-bottom: var(--qiling-space-22);
-  color: var(--color-primary);
+  color: var(--s-icon-color, var(--color-primary));
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 64px;
   height: 64px;
-  background: linear-gradient(
+  background: var(--s-icon-bg, linear-gradient(
     135deg,
     rgba(var(--color-primary-rgb), 0.14) 0%,
     rgba(var(--color-accent-rgb), 0.1) 100%
-  );
+  ));
   border: 1px solid rgba(var(--color-primary-rgb), 0.08);
   border-radius: calc(var(--qiling-card-radius) - 2px);
 }.qiling-module-scope-services .module-services .service-title {
-  font-size: var(--s-title-size, var(--qiling-text-rem-1p125));
+  font-size: var(--qiling-text-rem-1p125);
   margin-bottom: var(--qiling-space-12);
   font-weight: 700;
   line-height: 1.4;
-  color: var(--s-title-color, var(--color-heading));
+  color: var(--s-item-title, var(--color-heading));
 }.qiling-module-scope-services .module-services .service-title a {
   color: inherit;
   text-decoration: none;
@@ -33489,8 +33541,8 @@ html.dark-mode .module-service-cards {
 }.qiling-module-scope-services .module-services .service-title a:hover {
   color: var(--color-primary);
 }.qiling-module-scope-services .module-services .service-desc {
-  color: var(--s-sub-color, var(--color-text-muted));
-  font-size: var(--s-sub-size, var(--qiling-text-rem-0p9));
+  color: var(--s-item-desc, var(--color-text-muted));
+  font-size: var(--qiling-text-rem-0p9);
   line-height: 1.7;
   margin: 0;
 }.qiling-module-scope-services /* 响应式 (Responsive) */
@@ -33519,6 +33571,14 @@ html.dark-mode .module-services {
   color: var(--s-title-color, var(--color-heading));
 }html.dark-mode .qiling-module-scope-services .service-desc {
   color: var(--s-sub-color, var(--color-text-muted));
+}.qiling-module-scope-services .module-services.module-services .service-item {
+  background: var(--s-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--s-card-border, var(--qiling-component-card-border));
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-services .module-services.module-services .service-item:hover {
+  border-color: var(--s-card-hover-border, var(--s-card-border, var(--qiling-component-card-border)));
+  box-shadow: var(--qiling-component-card-shadow);
 }
 
 .qiling-module-scope-skills .module-features-list-container {
@@ -33538,7 +33598,7 @@ html.dark-mode .module-services {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -33553,7 +33613,7 @@ html.dark-mode .module-services {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -33562,7 +33622,7 @@ html.dark-mode .module-services {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -33580,7 +33640,7 @@ html.dark-mode .module-services {
 }.qiling-module-scope-skills .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-skills .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-skills .features-tab-btn.active::before {
@@ -33961,7 +34021,7 @@ html.dark-mode .qiling-module-scope-skills .module-skills .skills-group-title {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -33976,7 +34036,7 @@ html.dark-mode .qiling-module-scope-skills .module-skills .skills-group-title {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -33985,7 +34045,7 @@ html.dark-mode .qiling-module-scope-skills .module-skills .skills-group-title {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -34003,7 +34063,7 @@ html.dark-mode .qiling-module-scope-skills .module-skills .skills-group-title {
 }.qiling-module-scope-software_carousel .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-software_carousel .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-software_carousel .features-tab-btn.active::before {
@@ -34396,7 +34456,7 @@ html.dark-mode .module-software-carousel {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -34411,7 +34471,7 @@ html.dark-mode .module-software-carousel {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -34420,7 +34480,7 @@ html.dark-mode .module-software-carousel {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -34438,7 +34498,7 @@ html.dark-mode .module-software-carousel {
 }.qiling-module-scope-software_category .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-software_category .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-software_category .features-tab-btn.active::before {
@@ -35061,7 +35121,7 @@ html.dark-mode .qiling-module-scope-software_category .module-software-category 
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -35076,7 +35136,7 @@ html.dark-mode .qiling-module-scope-software_category .module-software-category 
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -35085,7 +35145,7 @@ html.dark-mode .qiling-module-scope-software_category .module-software-category 
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -35103,7 +35163,7 @@ html.dark-mode .qiling-module-scope-software_category .module-software-category 
 }.qiling-module-scope-software_ranking .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-software_ranking .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-software_ranking .features-tab-btn.active::before {
@@ -35695,7 +35755,7 @@ html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .s
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -35710,7 +35770,7 @@ html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .s
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -35719,7 +35779,7 @@ html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .s
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -35737,7 +35797,7 @@ html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .s
 }.qiling-module-scope-stats .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-stats .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-stats .features-tab-btn.active::before {
@@ -36138,7 +36198,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -36153,7 +36213,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -36162,7 +36222,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -36180,7 +36240,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
 }.qiling-module-scope-tabbed_carousel .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-tabbed_carousel .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-tabbed_carousel .features-tab-btn.active::before {
@@ -36552,7 +36612,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -36567,7 +36627,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -36576,7 +36636,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -36594,7 +36654,7 @@ html.dark-mode .qiling-module-scope-stats .module-stats:not(.has-bg-image) .stat
 }.qiling-module-scope-tabs .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-tabs .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-tabs .features-tab-btn.active::before {
@@ -37008,7 +37068,7 @@ html.dark-mode .module-tabs.module-tabs .tabs-content {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -37023,7 +37083,7 @@ html.dark-mode .module-tabs.module-tabs .tabs-content {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -37032,7 +37092,7 @@ html.dark-mode .module-tabs.module-tabs .tabs-content {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -37050,7 +37110,7 @@ html.dark-mode .module-tabs.module-tabs .tabs-content {
 }.qiling-module-scope-team .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-team .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-team .features-tab-btn.active::before {
@@ -37438,7 +37498,7 @@ html.dark-mode .module-team {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -37453,7 +37513,7 @@ html.dark-mode .module-team {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -37462,7 +37522,7 @@ html.dark-mode .module-team {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -37480,7 +37540,7 @@ html.dark-mode .module-team {
 }.qiling-module-scope-testimonials .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-testimonials .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-testimonials .features-tab-btn.active::before {
@@ -38089,7 +38149,7 @@ html.dark-mode .ql-testimonial-summary {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -38104,7 +38164,7 @@ html.dark-mode .ql-testimonial-summary {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -38113,7 +38173,7 @@ html.dark-mode .ql-testimonial-summary {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -38131,7 +38191,7 @@ html.dark-mode .ql-testimonial-summary {
 }.qiling-module-scope-ticket-showcase .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-ticket-showcase .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-ticket-showcase .features-tab-btn.active::before {
@@ -38547,7 +38607,7 @@ html.dark-mode .ql-testimonial-summary {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -38562,7 +38622,7 @@ html.dark-mode .ql-testimonial-summary {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -38571,7 +38631,7 @@ html.dark-mode .ql-testimonial-summary {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -38589,7 +38649,7 @@ html.dark-mode .ql-testimonial-summary {
 }.qiling-module-scope-timeline .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-timeline .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-timeline .features-tab-btn.active::before {
@@ -38930,7 +38990,7 @@ html.dark-mode .module-timeline {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -38945,7 +39005,7 @@ html.dark-mode .module-timeline {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -38954,7 +39014,7 @@ html.dark-mode .module-timeline {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -38972,7 +39032,7 @@ html.dark-mode .module-timeline {
 }.qiling-module-scope-tour-package .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-tour-package .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-tour-package .features-tab-btn.active::before {
@@ -39371,7 +39431,7 @@ html.dark-mode .module-timeline {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -39386,7 +39446,7 @@ html.dark-mode .module-timeline {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -39395,7 +39455,7 @@ html.dark-mode .module-timeline {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -39413,7 +39473,7 @@ html.dark-mode .module-timeline {
 }.qiling-module-scope-video .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-video .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-video .features-tab-btn.active::before {
@@ -39739,7 +39799,7 @@ html.dark-mode .video-container {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -39754,7 +39814,7 @@ html.dark-mode .video-container {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -39763,7 +39823,7 @@ html.dark-mode .video-container {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -39781,7 +39841,7 @@ html.dark-mode .video-container {
 }.qiling-module-scope-visual_tabs .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-visual_tabs .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-visual_tabs .features-tab-btn.active::before {
@@ -40282,7 +40342,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -40297,7 +40357,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -40306,7 +40366,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -40324,7 +40384,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
 }.qiling-module-scope-work_detail .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-work_detail .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-work_detail .features-tab-btn.active::before {
@@ -40731,7 +40791,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -40746,7 +40806,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -40755,7 +40815,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -40773,7 +40833,7 @@ html.dark-mode .qiling-module-scope-visual_tabs .visual-tabs-empty {
 }.qiling-module-scope-work_library .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-work_library .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-work_library .features-tab-btn.active::before {

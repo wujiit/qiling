@@ -1,0 +1,242 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "建筑设计事务所官网",
+  "page_template": "templates/template-architecture-design-studio.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "architecture-design-studio",
+    "label": "建筑设计事务所官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "architecture_design",
+    "industry_label": "建筑设计",
+    "scenario": "建筑方案展示、主创团队、项目咨询、设计流程",
+    "description": "适合建筑设计事务所、规划设计公司、城市更新团队、商业空间设计和建筑顾问机构官网，内置品牌首屏、代表项目、设计方法、主创团队、服务流程、FAQ 和咨询表单。",
+    "badges": [
+      "建筑设计",
+      "方案作品",
+      "项目咨询"
+    ],
+    "order": 599,
+    "thumbnail": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "建筑设计事务所官网模板 - 方案作品与项目咨询",
+    "description": "适合建筑设计事务所、规划设计公司和商业空间顾问的官网页面，包含代表项目、设计方法、主创团队、服务流程、FAQ 和咨询表单。",
+    "keywords": "建筑设计官网,建筑设计事务所,规划设计公司,建筑方案,城市更新,商业空间设计",
+    "og_title": "建筑设计事务所官网",
+    "og_description": "用建筑作品、设计方法和项目咨询表单快速搭建专业建筑设计官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "editorial",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #111827 0%, #7c2d12 46%, #365314 100%)",
+        "bb_title_mode": "text",
+        "bb_title": "从城市界面到空间体验<br><strong>让建筑方案真正可落地</strong>",
+        "bb_title_size_max": "72px",
+        "bb_subtitle": "建筑设计事务所与空间顾问官网",
+        "bb_desc": "面向住宅、公建、商业、园区和城市更新项目，用清晰的设计逻辑、项目经验和交付流程，帮助业主在第一次沟通前看见事务所的专业边界。",
+        "bb_text_align": "left",
+        "bb_title_color": "#ffffff",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #fed7aa 48%, #bef264 100%)",
+        "bb_text_color": "#f8fafc",
+        "bb_buttons": [
+          {
+            "text": "预约方案沟通",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看代表项目",
+            "link": "#",
+            "style": "light",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "#f97316",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#ea580c",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#1f2937",
+        "bb_light_btn_hover_bg_color": "#fef3c7",
+        "bb_light_btn_hover_text_color": "#7c2d12",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "lifted",
+        "bb_media_radius": "10px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "0",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "代表项目案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "260px",
+        "cases_padding_top": "80px",
+        "cases_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "image_text",
+      "data": {
+        "image_text_layout": "right",
+        "image_text_image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+        "image_text_title": "把设计表达拆成可执行的交付系统",
+        "image_text_subtitle": "从场地关系、功能组织、形体策略到材料和施工配合，每个阶段都留下可沟通、可审阅、可推进的成果。",
+        "image_text_content": "<p>适合用来说明事务所的服务边界：规划咨询、概念方案、方案深化、报批配合、施工图协调、室内与景观协同。</p><p>页面上线后可继续补充项目类别、服务城市、主创履历和真实案例文章，让客户在提交咨询前完成第一轮判断。</p>",
+        "image_text_button": "了解设计服务",
+        "image_text_url": "#",
+        "image_text_btn_bg_color": "#7c2d12",
+        "image_text_btn_text_color": "#ffffff",
+        "image_text_btn_hover_bg_color": "#365314",
+        "image_text_btn_hover_text_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "主创与项目团队",
+        "team_subtitle": "展示主持建筑师、方案主创和项目经理，让客户知道每个阶段由谁负责",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "周启明",
+            "position": "主持建筑师",
+            "desc": "负责建筑概念、总体策略和关键节点把控，关注城市界面与长期运营价值。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "林若溪",
+            "position": "方案主创",
+            "desc": "擅长住宅、公建与商业空间方案推演，重视平面效率、光环境和材料叙事。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=300&q=80",
+            "name": "陈言",
+            "position": "项目经理",
+            "desc": "负责进度、沟通、资料提交和多专业协同，帮助设计成果顺利进入落地阶段。"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "建筑设计服务流程",
+        "process_subtitle": "把前期判断、方案推演、深化协同和落地配合拆成清楚节点",
+        "process_mode": "industrial",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "场地与目标研判",
+            "desc": "梳理地块条件、功能诉求、投资边界、法规限制和运营目标。",
+            "stage_tag": "研判",
+            "deliverable": "需求简报 / 场地分析"
+          },
+          {
+            "icon": "02",
+            "title": "概念方案推演",
+            "desc": "形成多方向体量、动线、立面和空间体验方案，便于业主快速比较。",
+            "stage_tag": "概念",
+            "deliverable": "概念文本 / 体量模型"
+          },
+          {
+            "icon": "03",
+            "title": "方案深化协同",
+            "desc": "结合结构、机电、景观、室内和造价反馈，稳定关键设计决策。",
+            "stage_tag": "深化",
+            "deliverable": "深化图纸 / 材料建议"
+          },
+          {
+            "icon": "04",
+            "title": "报批与落地配合",
+            "desc": "配合报批、施工图交底、现场问题反馈和关键节点复盘。",
+            "stage_tag": "落地",
+            "deliverable": "汇报材料 / 配合记录"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "建筑设计咨询常见问题",
+        "faq_subtitle": "提前说明设计阶段、资料准备、费用边界和落地配合方式，减少首次沟通成本",
+        "faq_items": [
+          {
+            "question": "第一次咨询需要准备哪些资料？",
+            "answer": "建议准备项目位置、用地或房屋基础资料、面积规模、功能诉求、预算区间、时间节点和已有参考案例。资料不完整也可以先做初步判断。"
+          },
+          {
+            "question": "建筑方案和施工图是同一项服务吗？",
+            "answer": "不是。建筑方案更偏概念、空间和表达，施工图涉及更完整的技术图纸和专业协同。实际服务范围需要在合同里明确。"
+          },
+          {
+            "question": "是否可以只做概念方案或前期顾问？",
+            "answer": "可以。很多项目会先做场地研判、产品定位或概念方案，再决定是否进入深化、报批和施工配合。"
+          },
+          {
+            "question": "项目费用如何评估？",
+            "answer": "通常会结合项目类型、面积规模、阶段范围、出图深度、汇报次数和协同复杂度评估，页面可按事务所实际报价方式继续补充。"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约建筑方案沟通",
+        "contact_subtitle": "提交项目位置、建筑类型、面积规模、当前阶段和目标时间，我们会先判断设计服务范围与推进路径。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "contact_image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    }
+  ]
+}

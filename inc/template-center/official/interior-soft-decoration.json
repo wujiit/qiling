@@ -1,0 +1,281 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "室内设计/软装设计官网",
+  "page_template": "templates/template-interior-soft-decoration.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "interior-soft-decoration",
+    "label": "室内设计/软装设计官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "interior_design",
+    "industry_label": "室内软装",
+    "scenario": "室内设计作品、软装搭配、方案对比、设计咨询",
+    "description": "适合室内设计工作室、软装设计公司、全案设计品牌、私宅设计和商业空间设计官网，内置沉浸视频首屏、案例展示、软装画册、方案对比、设计流程、客户评价和咨询表单。",
+    "badges": [
+      "室内设计",
+      "软装画册",
+      "沉浸视频"
+    ],
+    "order": 601,
+    "thumbnail": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "室内设计软装官网模板 - 沉浸视频与软装画册",
+    "description": "适合室内设计工作室、软装设计公司和全案设计品牌的官网页面，包含视频首屏、案例展示、软装搭配、方案对比、设计流程、客户评价和咨询表单。",
+    "keywords": "室内设计官网,软装设计官网,全案设计,私宅设计,商业空间设计,软装搭配",
+    "og_title": "室内设计/软装设计官网",
+    "og_description": "用沉浸视频首屏、软装画册和咨询表单快速搭建室内设计官网。"
+  },
+  "modules": [
+    {
+      "type": "fullscreen_video",
+      "data": {
+        "fsv_video_url": "https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4",
+        "fsv_overlay_opacity": "0.45",
+        "fsv_title": "把家的气质<br><strong>设计成可落地的生活场景</strong>",
+        "fsv_subtitle": "室内设计 / 软装搭配 / 全案落地",
+        "fsv_glow_color": "#fef3c7",
+        "fsv_glow_intensity": "medium",
+        "fsv_nav_items": [
+          {
+            "item_label": "预约量房",
+            "item_icon": "01",
+            "item_type": "link",
+            "item_link": "#"
+          },
+          {
+            "item_label": "查看案例",
+            "item_icon": "02",
+            "item_type": "link",
+            "item_link": "#"
+          },
+          {
+            "item_label": "软装清单",
+            "item_icon": "03",
+            "item_type": "link",
+            "item_link": "#"
+          }
+        ],
+        "fsv_show_controls": "1"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "精选空间案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "260px",
+        "cases_padding_top": "84px",
+        "cases_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "软装搭配画册",
+        "lookbook_columns": "3",
+        "module_bg_color": "#fff7ed",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes",
+        "lookbook_items": [
+          {
+            "cover_image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
+            "video_360": "",
+            "name": "自然木色客厅 · LOOK 01",
+            "desc": "用木色、亚麻、暖光和低饱和绿植建立松弛感，适合改善型住宅和亲子家庭。",
+            "btn_text": "查看搭配清单",
+            "item_1_img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80",
+            "item_1_title": "模块沙发",
+            "item_1_price": "按选型报价",
+            "item_1_link": "#",
+            "item_1_spec_name": "米白织物",
+            "item_1_btn_bg": "#9a3412",
+            "item_2_img": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=600&q=80",
+            "item_2_title": "落地灯与边几",
+            "item_2_price": "按选型报价",
+            "item_2_link": "#",
+            "item_2_spec_name": "暖光铜色",
+            "item_2_btn_bg": "#166534"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=900&q=80",
+            "video_360": "",
+            "name": "城市精装改造 · LOOK 02",
+            "desc": "通过墙面色彩、收纳柜体、窗帘和艺术画调整精装房气质，不大拆也能焕新。",
+            "btn_text": "查看改造建议",
+            "item_1_img": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80",
+            "item_1_title": "主卧软装组合",
+            "item_1_price": "按选型报价",
+            "item_1_link": "#",
+            "item_1_spec_name": "静谧暖灰",
+            "item_1_btn_bg": "#9a3412",
+            "item_2_img": "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=600&q=80",
+            "item_2_title": "艺术挂画",
+            "item_2_price": "按选型报价",
+            "item_2_link": "#",
+            "item_2_spec_name": "抽象系列",
+            "item_2_btn_bg": "#166534"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80",
+            "video_360": "",
+            "name": "商业会客空间 · LOOK 03",
+            "desc": "强调品牌质感、接待动线和视觉记忆点，适合展厅、办公室和服务型门店。",
+            "btn_text": "查看空间清单",
+            "item_1_img": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80",
+            "item_1_title": "会客区家具",
+            "item_1_price": "按项目报价",
+            "item_1_link": "#",
+            "item_1_spec_name": "商务深色",
+            "item_1_btn_bg": "#9a3412",
+            "item_2_img": "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=600&q=80",
+            "item_2_title": "展示陈列",
+            "item_2_price": "按项目报价",
+            "item_2_link": "#",
+            "item_2_spec_name": "定制组合",
+            "item_2_btn_bg": "#166534"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "服务方案对比",
+        "comparison_subtitle": "把客户常问的半案、软装和全案服务边界讲清楚",
+        "comparison_features": "适合阶段\n空间规划\n软装清单\n主材选型\n施工配合\n落地采购建议",
+        "comparison_products": [
+          {
+            "name": "软装搭配",
+            "values": "精装房/局部焕新\n基础动线建议\n完整提供\n按需建议\n不含施工管理\n提供采购清单"
+          },
+          {
+            "name": "半案设计",
+            "values": "局部改造/预算明确\n重点空间规划\n提供\n重点主材建议\n节点配合\n可按清单落地"
+          },
+          {
+            "name": "全案设计",
+            "values": "毛坯/大改造/高要求项目\n完整规划\n完整提供\n完整选型\n全程协同\n可做整体落地"
+          }
+        ],
+        "comparison_highlight": "3",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "设计到落地流程",
+        "process_subtitle": "从量房沟通到软装进场，把审美、预算和工期放在同一张路线图里",
+        "process_mode": "industrial",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "量房与生活访谈",
+            "desc": "记录户型、采光、收纳、家庭成员、生活习惯和预算边界。",
+            "stage_tag": "沟通",
+            "deliverable": "需求清单 / 现场照片"
+          },
+          {
+            "icon": "02",
+            "title": "风格与平面方案",
+            "desc": "输出风格方向、平面调整、家具尺寸和关键空间效果建议。",
+            "stage_tag": "方案",
+            "deliverable": "风格板 / 平面图"
+          },
+          {
+            "icon": "03",
+            "title": "主材软装清单",
+            "desc": "细化家具、灯具、窗帘、墙面、艺术品和预算分配。",
+            "stage_tag": "选型",
+            "deliverable": "采购清单 / 预算表"
+          },
+          {
+            "icon": "04",
+            "title": "进场陈设与验收",
+            "desc": "协调安装、摆场、软装进场和局部调整，保证最终效果完整。",
+            "stage_tag": "落地",
+            "deliverable": "摆场记录 / 验收建议"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户反馈",
+        "testimonials_subtitle": "真实客户更关心沟通、预算和落地效果，这里可以替换为项目复盘评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "320+",
+        "average_rating": "4.9",
+        "testimonials_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "许女士",
+            "position": "精装房软装客户",
+            "content": "没有大拆大改，但客厅和主卧的气质变得很完整，采购清单也很清楚。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林先生",
+            "position": "私宅全案客户",
+            "content": "预算拆分和施工节点都有人跟进，最终效果和前期方案比较一致。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=300&q=80",
+            "name": "陈总",
+            "position": "商业空间业主",
+            "content": "品牌会客区更有记忆点，软装进场节奏也没有影响开业时间。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约设计咨询",
+        "contact_subtitle": "提交城市、户型面积、房屋状态、预算区间和期望入住时间，设计顾问会先判断适合的服务方式。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "contact_image": "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    }
+  ]
+}

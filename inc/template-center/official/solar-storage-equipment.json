@@ -1,0 +1,346 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "光伏储能设备官网",
+  "page_template": "templates/template-solar-storage-equipment.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "solar-storage-equipment",
+    "label": "光伏储能设备官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "solar_storage_equipment",
+    "industry_label": "光伏储能设备",
+    "scenario": "光伏组件、储能系统、逆变器、工商业项目、案例、资料下载、项目询盘",
+    "description": "适合光伏组件厂商、储能系统集成商、逆变器品牌、工商业能源项目服务商和新能源设备代理商官网，内置设备产品、项目数据、案例、合规信任、资料下载和询盘入口。",
+    "badges": [
+      "光伏储能",
+      "工商业项目",
+      "设备选型"
+    ],
+    "order": 724,
+    "thumbnail": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "光伏储能设备官网模板 - 工商业项目与设备询盘",
+    "description": "适合光伏组件、储能柜、逆变器、EMS 能源管理系统和工商业新能源项目的官网页面，包含产品中心、项目数据、案例、合规信任、资料下载和询盘表单。",
+    "keywords": "光伏储能官网,光伏设备,储能设备,工商业储能,光伏组件,储能柜,逆变器,EMS能源管理,项目询盘",
+    "og_title": "光伏储能设备官网",
+    "og_description": "用设备产品、项目数据和合规资料快速搭建光伏储能官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #d1fae5 45%, #fef3c7 100%)",
+        "bb_title": "把光伏储能设备方案<br><strong>讲成项目价值</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #047857 0%, #ca8a04 100%)",
+        "bb_subtitle": "光伏组件、储能系统与工商业能源项目官网方案",
+        "bb_desc": "围绕光伏组件、储能柜、逆变器、EMS 能源管理、并网资料和运维服务，把设备参数、项目收益测算、交付案例和商务询盘入口组织成客户能快速判断的官网页面。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "提交项目需求",
+            "link": "#",
+            "style": "primary",
+            "icon": "光"
+          },
+          {
+            "text": "下载设备资料",
+            "link": "#",
+            "style": "light",
+            "icon": "表"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#047857",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#065f46",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#ecfdf5",
+        "bb_light_btn_hover_text_color": "#047857",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "光伏储能核心设备",
+        "products_subtitle": "PV & STORAGE EQUIPMENT",
+        "columns": "4",
+        "modal_inquire_text": "咨询设备选型",
+        "modal_inquire_url": "#",
+        "modal_inquire_btn_bg_color": "#047857",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_hover_bg_color": "#065f46",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80",
+            "title": "高效光伏组件",
+            "desc": "适用于工商业屋顶、园区、厂房和分布式电站的组件方案。",
+            "specs": "类型：单晶 / 双玻 / BIPV 可选\n功率：按项目容量配置\n场景：屋顶、车棚、园区、地面电站\n资料：组件参数、质保口径、安装建议",
+            "post_id": "",
+            "btn_text": "查看组件"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80",
+            "title": "工商业储能柜",
+            "desc": "面向削峰填谷、需量管理、备电和新能源消纳的储能系统。",
+            "specs": "配置：电芯、PCS、BMS、温控、消防\n容量：按 2h / 4h 场景组合\n部署：户外柜、集装箱、模块化扩容\n服务：方案测算、安装调试、运维监控",
+            "post_id": "",
+            "btn_text": "咨询配置"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80",
+            "title": "组串式逆变器",
+            "desc": "用于分布式光伏和工商业项目的发电转换与并网控制。",
+            "specs": "功率：多规格组串配置\n效率：高转换效率与多路 MPPT\n防护：户外防护、智能散热、故障告警\n接口：监控平台、并网设备、EMS 联动",
+            "post_id": "",
+            "btn_text": "查看型号"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80",
+            "title": "EMS 能源管理系统",
+            "desc": "统一管理发电、储能、负荷、电价策略和项目运行数据。",
+            "specs": "能力：发电监测、储能调度、负荷分析\n策略：削峰填谷、需量控制、备电模式\n数据：报表、告警、收益测算、远程运维\n对接：逆变器、PCS、BMS、电表、平台 API",
+            "post_id": "",
+            "btn_text": "获取方案"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "项目能力与交付数据",
+        "stats_subtitle": "用装机、储能配置、测算周期和运维响应说明项目可靠性",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "120MW+",
+            "label": "累计光伏项目经验"
+          },
+          {
+            "number": "2h/4h",
+            "label": "常用储能配置"
+          },
+          {
+            "number": "7天",
+            "label": "初步测算周期"
+          },
+          {
+            "number": "7x24",
+            "label": "监控与运维响应"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "光伏储能项目案例",
+        "cases_subtitle": "用场景、设备组合和交付结果说明项目价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80",
+            "title": "工商业屋顶光伏项目",
+            "desc": "厂房屋顶光伏组件、逆变器、并网接入和发电监控一体化交付。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80",
+            "title": "园区光储充一体化",
+            "desc": "光伏、储能、充电桩和 EMS 调度联动，提升新能源消纳和用能灵活性。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80",
+            "title": "制造工厂储能改造",
+            "desc": "围绕峰谷电价、需量管理和备电需求配置储能柜与监控平台。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "ct_title": "设备交付与<span style=\"color:#047857\">并网安全信任</span>",
+        "ct_subtitle": "把认证资料、并网接入、安全设计和运维记录前置展示，降低项目采购顾虑。",
+        "ct_note": "以下为光伏储能官网常用合规与交付信息占位，正式上线时请按实际产品认证、项目所在地并网要求、消防要求和合同承诺替换。",
+        "ct_layout": "grid",
+        "ct_columns": "4",
+        "ct_enable_filter": "yes",
+        "ct_card_style": "solid",
+        "ct_accent_color": "#047857",
+        "ct_status_chip_bg": "#ecfdf5",
+        "ct_status_chip_text": "#047857",
+        "ct_action_btn_bg": "linear-gradient(135deg, #047857 0%, #ca8a04 100%)",
+        "ct_action_btn_text": "#ffffff",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes",
+        "ct_items": [
+          {
+            "icon": "证",
+            "title": "组件与逆变器认证",
+            "short_name": "PV",
+            "category": "产品认证",
+            "status": "active",
+            "status_text": "按型号展示",
+            "issuer": "认证机构/检测机构",
+            "scope": "组件、逆变器、线缆、支架等核心设备",
+            "valid_until": "以证书为准",
+            "description": "官网可集中展示产品认证、检测报告、质保口径和适用型号，便于客户初步判断设备准入。",
+            "checklist": "型号一致\n认证有效\n质保口径清晰\n检测报告可查",
+            "report_url": "#",
+            "report_text": "查看认证资料",
+            "highlight": "yes"
+          },
+          {
+            "icon": "储",
+            "title": "储能系统安全设计",
+            "short_name": "BESS",
+            "category": "储能安全",
+            "status": "active",
+            "status_text": "按方案配置",
+            "issuer": "企业技术/安全团队",
+            "scope": "电芯、BMS、PCS、温控、消防、隔离和监控策略",
+            "valid_until": "项目持续运维",
+            "description": "储能项目应说明安全边界、温控消防、异常告警、远程监控和维护策略，避免只展示容量价格。",
+            "checklist": "BMS 保护\n温控消防\n隔离设计\n异常告警",
+            "report_url": "#",
+            "report_text": "查看安全方案",
+            "highlight": "yes"
+          },
+          {
+            "icon": "网",
+            "title": "并网接入资料",
+            "short_name": "Grid",
+            "category": "并网",
+            "status": "active",
+            "status_text": "按地区确认",
+            "issuer": "项目所在地电网/设计单位",
+            "scope": "接入方案、计量、电能质量、保护配置和验收资料",
+            "valid_until": "按项目节点",
+            "description": "用于说明项目从现场勘察、接入条件、设计资料、施工验收到并网运行的资料准备流程。",
+            "checklist": "接入条件\n设计图纸\n计量配置\n验收记录",
+            "report_url": "#",
+            "report_text": "查看并网流程",
+            "highlight": "no"
+          },
+          {
+            "icon": "维",
+            "title": "运维监控与质保",
+            "short_name": "O&M",
+            "category": "运维",
+            "status": "active",
+            "status_text": "持续服务",
+            "issuer": "企业运维团队",
+            "scope": "发电监测、储能运行、告警处理、巡检和备件维护",
+            "valid_until": "合同期内",
+            "description": "把运行监控、定期巡检、故障响应、备件策略和收益复盘写清楚，增强项目长期合作信任。",
+            "checklist": "在线监控\n巡检计划\n故障响应\n收益复盘",
+            "report_url": "#",
+            "report_text": "查看运维说明",
+            "highlight": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "设备资料与项目文件",
+        "downloads_subtitle": "把客户立项、设计、并网和采购前需要的资料集中下载",
+        "downloads_bg_color": "#ffffff",
+        "downloads_columns": "3",
+        "downloads_btn_bg_color": "#047857",
+        "downloads_btn_text_color": "#ffffff",
+        "downloads_btn_hover_bg_color": "#065f46",
+        "downloads_btn_hover_text_color": "#ffffff",
+        "downloads_items": [
+          {
+            "title": "光伏储能设备选型手册",
+            "size": "Catalog",
+            "file": "#",
+            "icon": "册",
+            "format": "PDF",
+            "date": "2026-04-25",
+            "btn_text": "下载手册",
+            "description": "整理组件、逆变器、储能柜、EMS 和常见项目配置的选型口径。"
+          },
+          {
+            "title": "项目收益测算清单",
+            "size": "Spreadsheet",
+            "file": "#",
+            "icon": "算",
+            "format": "XLSX",
+            "date": "2026-04-25",
+            "btn_text": "查看清单",
+            "description": "用于收集屋顶面积、用电负荷、峰谷电价、并网条件、投资预算和回收测算参数。"
+          },
+          {
+            "title": "并网验收资料目录",
+            "size": "Runbook",
+            "file": "#",
+            "icon": "网",
+            "format": "DOC",
+            "date": "2026-04-25",
+            "btn_text": "获取目录",
+            "description": "包含设计图纸、设备资料、保护配置、施工记录、验收单和运维移交文件。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交光伏储能项目需求",
+        "contact_subtitle": "填写项目所在地、屋顶或场地面积、年用电量、峰谷电价、是否需要储能、预算范围和联系方式，项目顾问会协助做初步测算。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

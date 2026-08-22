@@ -1,0 +1,287 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 2,
+  "title": "虚拟资源下载站",
+  "page_template": "templates/template-resources.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "resources",
+    "label": "虚拟资源下载站",
+    "category": "resource",
+    "category_label": "数字资源",
+    "industry": "digital_resource",
+    "industry_label": "数字资源",
+    "scenario": "模板素材、课程文档、付费资源、会员下载",
+    "description": "适合搭建模板、素材、文档、课程、插件等虚拟资源门户；页面包只负责展示和转化氛围，购买、VIP、积分和下载权限由启灵商城等插件处理。",
+    "badges": [
+      "资源门户",
+      "虚拟资源",
+      "会员下载"
+    ],
+    "order": 150,
+    "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "虚拟资源下载站模板 - 启灵官方页面包",
+    "description": "面向模板素材、课程文档、插件资源和会员下载场景的资源门户页面包，适合配合启灵商城做虚拟资源展示。",
+    "keywords": "虚拟资源,资源下载,会员下载,付费资源,模板素材,启灵商城",
+    "og_title": "虚拟资源下载站",
+    "og_description": "用资源首屏、资源卡片、统计和下载分区快速搭建数字资源站首页。"
+  },
+  "modules": [
+    {
+      "type": "resource_hero_pro",
+      "data": {
+        "rh_layout": "left_right",
+        "rh_height": "78vh",
+        "rh_bg_type": "gradient",
+        "rh_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 46%, #0f766e 100%)",
+        "rh_style_preset": "premium",
+        "rh_enable_motion": "1",
+        "rh_motion_level": "soft",
+        "rh_badge": "数字资源会员站",
+        "rh_title": "把模板、素材、课程和文档<br><strong>做成更有转化力的资源首页</strong>",
+        "rh_subtitle": "资源展示、会员权益、付费引导和下载入口在一个页面里讲清楚",
+        "rh_desc": "主题负责页面视觉和资源卡片呈现；启灵商城继续负责积分、VIP、订单、权限和下载交付。",
+        "rh_visual_slides": [
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+            "link": "#",
+            "alt": "数字资源工作台"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+            "link": "#",
+            "alt": "资源站资源展示"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+            "link": "#",
+            "alt": "资源数据看板"
+          }
+        ],
+        "rh_visual_position": "right",
+        "rh_visual_height": "340px",
+        "rh_visual_radius": "18px",
+        "rh_visual_fit": "cover",
+        "rh_visual_shadow": "soft",
+        "rh_visual_shine": "1",
+        "rh_visual_autoplay": "1",
+        "rh_visual_interval": "4",
+        "rh_visual_show_dots": "1",
+        "rh_benefits": [
+          {
+            "text": "适合模板、素材、课程、文档、插件等虚拟资源"
+          },
+          {
+            "text": "可读取启灵商城资源文章的价格、下载和会员状态"
+          },
+          {
+            "text": "页面视觉独立启用，不影响企业官网模板"
+          }
+        ],
+        "rh_stats": [
+          {
+            "value": "1,200+",
+            "label": "资源内容"
+          },
+          {
+            "value": "48",
+            "label": "专题分类"
+          },
+          {
+            "value": "VIP",
+            "label": "会员权益"
+          }
+        ],
+        "rh_primary_text": "查看会员资源",
+        "rh_primary_link": "#",
+        "rh_secondary_text": "搜索资源",
+        "rh_secondary_link": "/resource-search/",
+        "rh_enable_feed": "1",
+        "rh_feed_direction": "vertical",
+        "rh_feed_source": "latest",
+        "rh_feed_filter": "resource_only",
+        "rh_feed_orderby": "date",
+        "rh_feed_count": "10",
+        "rh_feed_duration": "28",
+        "rh_feed_pause_hover": "1",
+        "rh_feed_show_excerpt": "1",
+        "rh_feed_excerpt_length": "34",
+        "rh_feed_show_price": "1",
+        "rh_feed_show_download_count": "1",
+        "rh_feed_show_date": "0",
+        "rh_enable_bottom_strip": "1",
+        "rh_strip_duration": "36"
+      }
+    },
+    {
+      "type": "resource_stats",
+      "data": {
+        "rs_title": "资源站运营数据",
+        "rs_subtitle": "用真实内容和轻量虚拟数值共同营造资源站规模感",
+        "rs_bg_color": "#f6f8fb",
+        "rs_padding_top": "64px",
+        "rs_padding_bottom": "40px",
+        "rs_stats_list": [
+          {
+            "stat_label": "资源文章",
+            "stat_icon": "dashicons-media-document",
+            "data_source": "total_posts",
+            "source_id": "",
+            "virtual_num": "300",
+            "show_plus": "yes"
+          },
+          {
+            "stat_label": "注册用户",
+            "stat_icon": "dashicons-groups",
+            "data_source": "total_users",
+            "source_id": "",
+            "virtual_num": "1200",
+            "show_plus": "yes"
+          },
+          {
+            "stat_label": "会员用户",
+            "stat_icon": "dashicons-star-filled",
+            "data_source": "vip_users",
+            "source_id": "",
+            "virtual_num": "180",
+            "show_plus": "yes"
+          },
+          {
+            "stat_label": "稳定运行",
+            "stat_icon": "dashicons-performance",
+            "data_source": "site_days",
+            "source_id": "",
+            "virtual_num": "0",
+            "show_plus": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "blog",
+      "data": {
+        "blog_title": "最新资源",
+        "blog_subtitle": "按文章资源持续更新，可与启灵商城资源文章联动",
+        "blog_bg_color": "#f6f8fb",
+        "blog_page_layout": "full",
+        "blog_layout_style": "card",
+        "blog_columns": "4",
+        "blog_data_source": "latest",
+        "blog_count": "8",
+        "blog_orderby": "date",
+        "blog_show_image": "yes",
+        "blog_image_height": "190px",
+        "blog_show_excerpt": "yes",
+        "blog_excerpt_length": "46",
+        "blog_show_author": "no",
+        "blog_show_date": "yes",
+        "blog_show_category": "yes",
+        "blog_show_tags": "yes",
+        "blog_read_more_text": "查看资源",
+        "blog_enable_pagination": "no"
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "免费资源入口",
+        "downloads_subtitle": "适合放置公开资料、演示包、安装包或引导下载；付费交付仍建议交给启灵商城资源文章",
+        "downloads_columns": "3",
+        "downloads_items": [
+          {
+            "title": "新手资源包",
+            "size": "18.6 MB",
+            "file": "#",
+            "icon": "ZIP",
+            "format": "ZIP",
+            "date": "2026-06-01",
+            "description": "适合公开下载的新手素材、说明文档或演示文件。"
+          },
+          {
+            "title": "安装与使用手册",
+            "size": "4.2 MB",
+            "file": "#",
+            "icon": "PDF",
+            "format": "PDF",
+            "date": "2026-06-01",
+            "description": "适合放置用户手册、资源使用说明和版权声明。"
+          },
+          {
+            "title": "示例模板文件",
+            "size": "32.8 MB",
+            "file": "#",
+            "icon": "TPL",
+            "format": "ZIP",
+            "date": "2026-06-01",
+            "description": "公开演示文件，可引导用户继续查看付费资源详情。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "blog",
+      "data": {
+        "blog_title": "热门推荐",
+        "blog_subtitle": "用列表式资源流承接更多长尾内容",
+        "blog_bg_color": "#ffffff",
+        "blog_page_layout": "full",
+        "blog_layout_style": "list",
+        "blog_columns": "1",
+        "blog_data_source": "latest",
+        "blog_count": "6",
+        "blog_orderby": "comment_count",
+        "blog_show_image": "yes",
+        "blog_image_height": "210px",
+        "blog_show_excerpt": "yes",
+        "blog_excerpt_length": "80",
+        "blog_show_author": "no",
+        "blog_show_date": "yes",
+        "blog_show_category": "yes",
+        "blog_show_tags": "yes",
+        "blog_read_more_text": "查看详情",
+        "blog_enable_pagination": "no"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "资源站常见问题",
+        "faq_subtitle": "提前说明主题和插件的分工，减少用户理解成本",
+        "faq_items": [
+          {
+            "question": "这个页面包会自带购买、订单和下载记录吗？",
+            "answer": "不会。页面包只负责展示样式、资源首屏和资源列表；购买、订单、积分、VIP、下载权限和下载记录仍由启灵商城处理。"
+          },
+          {
+            "question": "付费资源应该放在哪里管理？",
+            "answer": "建议继续在文章中配置启灵商城虚拟资源字段，主题会根据已有资源状态做视觉展示，不会重复保存一套资源数据。"
+          },
+          {
+            "question": "可以同时保留企业官网页面吗？",
+            "answer": "可以。资源化视觉只在选择对应页面模板、资源详情上下文或相关页面包后生效，不会影响普通企业官网模板。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备把内容做成会员资源站？",
+        "cta_subtitle": "先用页面包搭好资源首页，再用启灵商城配置积分、VIP和下载权限。",
+        "cta_button_text": "配置资源文章",
+        "cta_button_url": "#",
+        "cta_bg_type": "gradient",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 55%, #0f766e 100%)"
+      }
+    }
+  ]
+}

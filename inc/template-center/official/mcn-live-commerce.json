@@ -1,0 +1,280 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "MCN/直播电商机构官网",
+  "page_template": "templates/template-mcn-live-commerce.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "mcn-live-commerce",
+    "label": "MCN/直播电商机构官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "mcn_live_commerce",
+    "industry_label": "MCN/直播电商",
+    "scenario": "达人孵化、直播代运营、短视频内容、电商转化、品牌投放",
+    "description": "适合 MCN 机构、直播电商代运营、达人孵化、品牌内容营销和短视频投放团队官网，内置动态首屏、服务矩阵、增长案例、运营数据、团队介绍、FAQ 和商务咨询表单。",
+    "badges": [
+      "MCN",
+      "直播电商",
+      "达人矩阵"
+    ],
+    "order": 605,
+    "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "MCN直播电商机构官网模板 - 达人孵化与直播代运营",
+    "description": "适合 MCN、直播电商、短视频内容和品牌投放服务机构的官网页面，包含动态首屏、服务项目、增长案例、运营数据、核心团队、FAQ 和商务咨询入口。",
+    "keywords": "MCN官网,直播电商官网,直播代运营,达人孵化,短视频运营,品牌投放,电商转化",
+    "og_title": "MCN/直播电商机构官网",
+    "og_description": "用达人矩阵、直播案例和商务咨询入口快速搭建 MCN 直播电商机构官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "80vh",
+        "db_bg_type": "gradient",
+        "db_bg_gradient": "linear-gradient(135deg, #111827 0%, #7f1d1d 48%, #0f766e 100%)",
+        "db_title_prefix": "让内容和直播",
+        "db_typing_mode": "loop",
+        "db_typing_text": "从曝光走向成交\n从达人走向矩阵\n从单场爆发走向稳定增长",
+        "db_highlight_color": "#5eead4",
+        "db_title_color": "#ffffff",
+        "db_subtitle": "MCN 机构与直播电商代运营官网",
+        "db_desc": "覆盖达人孵化、直播间代运营、短视频内容、品牌投放和店铺转化，让品牌方在首次沟通前看见团队能力与合作边界。",
+        "db_text_color": "rgba(255,255,255,0.88)",
+        "db_buttons": [
+          {
+            "text": "预约商务沟通",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看增长案例",
+            "link": "#",
+            "style": "secondary",
+            "icon": ""
+          }
+        ],
+        "db_primary_btn_bg_color": "#f97316",
+        "db_primary_btn_text_color": "#ffffff",
+        "db_primary_btn_hover_bg_color": "#fb923c",
+        "db_primary_btn_hover_text_color": "#ffffff",
+        "db_secondary_btn_bg_color": "#ffffff",
+        "db_secondary_btn_text_color": "#7f1d1d",
+        "db_secondary_btn_hover_bg_color": "#ccfbf1",
+        "db_secondary_btn_hover_text_color": "#0f766e",
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80",
+        "db_image_shadow": "strong",
+        "db_floating_cards": [
+          {
+            "content_type": "badge",
+            "title": "月度 GMV 3.2亿+",
+            "pos_top": "8%",
+            "pos_right": "6%",
+            "animation": "float"
+          },
+          {
+            "content_type": "icon_text",
+            "icon": "01",
+            "title": "达人矩阵",
+            "subtitle": "120+ 签约达人",
+            "pos_bottom": "12%",
+            "pos_left": "4%",
+            "animation": "pulse"
+          },
+          {
+            "content_type": "badge",
+            "title": "直播间转化提升",
+            "pos_bottom": "4%",
+            "pos_right": "12%",
+            "animation": "float"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "直播电商服务矩阵",
+        "services_subtitle": "从内容、达人、直播间到投放和复盘，打通品牌增长链路",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "达人孵化与签约",
+            "desc": "达人定位、账号诊断、内容选题、商业报价和长期成长规划。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "直播间代运营",
+            "desc": "货盘规划、脚本话术、场控排班、主播培训和单场复盘。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "短视频内容制作",
+            "desc": "种草视频、品牌素材、达人共创和平台内容节奏设计。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "投流与成交转化",
+            "desc": "投放策略、流量承接、店铺转化、数据看板和 ROI 复盘。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "直播增长案例",
+        "cases_subtitle": "用品牌目标、内容动作和转化结果说明服务价值",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "240px",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
+            "title": "美妆品牌新品首发",
+            "desc": "达人种草、直播承接和私域复购联动，完成新品心智建立。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=900&q=80",
+            "title": "食品品牌月度直播",
+            "desc": "优化货盘结构和场控节奏，提升整月直播间成交稳定性。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+            "title": "家清品牌内容投放",
+            "desc": "短视频素材测试、达人分层投放和店铺承接路径优化。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "运营能力数据",
+        "stats_subtitle": "用可量化的团队能力和项目表现，帮助品牌方快速评估合作基础",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "120+",
+            "label": "签约/合作达人"
+          },
+          {
+            "number": "3000+",
+            "label": "累计直播场次"
+          },
+          {
+            "number": "28个",
+            "label": "服务细分品类"
+          },
+          {
+            "number": "48h",
+            "label": "复盘报告交付"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "核心运营团队",
+        "team_subtitle": "展示商务、内容、直播和投放负责人，让客户知道项目由谁推进",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "林若溪",
+            "position": "直播运营负责人",
+            "desc": "负责直播间货盘、脚本、主播排班和单场复盘，关注成交效率和复购承接。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "周启明",
+            "position": "内容策略负责人",
+            "desc": "负责账号定位、短视频选题、达人共创和平台内容节奏，擅长新品种草。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "陈言",
+            "position": "投流增长顾问",
+            "desc": "负责投放测试、素材迭代、流量承接和 ROI 复盘，让内容资产转化为增长数据。"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "直播电商合作常见问题",
+        "faq_subtitle": "把品牌方关心的合作周期、费用边界、素材归属和数据复盘提前讲清楚",
+        "faq_items": [
+          {
+            "question": "你们更适合品牌自播还是达人带货？",
+            "answer": "两类都可以承接。品牌自播更适合长期稳定运营，达人带货更适合新品种草、节点爆发和内容测试，具体会结合品类、预算和货盘判断。"
+          },
+          {
+            "question": "合作前需要准备哪些资料？",
+            "answer": "建议准备品牌介绍、目标品类、主推商品、价格体系、历史直播数据、素材资产、预算范围和目标节点。"
+          },
+          {
+            "question": "是否能保证 GMV 或 ROI？",
+            "answer": "直播电商受货盘、价格、内容、主播、平台流量和履约体验共同影响。可以约定过程指标、复盘机制和阶段目标，但不建议承诺绝对结果。"
+          },
+          {
+            "question": "短视频素材和直播脚本归谁所有？",
+            "answer": "素材、脚本、账号数据和授权边界需要在合同里明确。页面导入后建议补充真实合作条款和素材使用规则。"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约直播电商方案沟通",
+        "contact_subtitle": "提交品牌品类、主推货盘、预算范围和目标节点，我们会先判断适合的内容、达人和直播运营组合。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "contact_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    }
+  ]
+}

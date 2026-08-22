@@ -1,0 +1,276 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "物流供应链官网",
+  "page_template": "templates/template-logistics-supply-chain.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "logistics-supply-chain",
+    "label": "物流供应链官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "logistics",
+    "industry_label": "物流供应链",
+    "scenario": "仓配运输、网络覆盖、报价咨询",
+    "description": "适合物流公司、仓配服务、冷链运输、跨境物流和供应链服务官网，内置服务能力、仓储网络、流程、案例和报价入口。",
+    "badges": [
+      "物流供应链",
+      "仓配运输"
+    ],
+    "order": 630,
+    "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "物流供应链官网模板 - 仓配运输与报价咨询",
+    "description": "适合物流供应链企业的官网页面，包含运输仓配、服务网络、交付流程、客户案例、FAQ 和报价咨询入口。",
+    "keywords": "物流官网,供应链官网,仓配服务,冷链运输,物流报价",
+    "og_title": "物流供应链官网",
+    "og_description": "用仓配能力、服务网络和报价入口快速搭建物流供应链官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.58",
+        "db_title_prefix": "让货物流转更稳定可控",
+        "db_typing_mode": "loop",
+        "db_typing_text": "全国运输与城市配送\n仓储管理与订单履约\n供应链方案与节点追踪",
+        "db_highlight_color": "#99f6e4",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "面向品牌、工厂、渠道和电商客户，展示仓配运输能力和服务网络。",
+        "db_desc": "适合综合物流、仓配一体、冷链运输、跨境物流和供应链服务企业。",
+        "db_text_color": "rgba(248,250,252,0.88)",
+        "db_buttons": [
+          {
+            "text": "获取物流报价",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看服务网络",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "履约服务数据",
+        "stats_subtitle": "用网络、时效和稳定性建立合作信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "80+",
+            "label": "服务城市"
+          },
+          {
+            "number": "25万㎡",
+            "label": "仓储面积"
+          },
+          {
+            "number": "98%",
+            "label": "准时履约率"
+          },
+          {
+            "number": "24h",
+            "label": "异常响应"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "供应链服务能力",
+        "services_subtitle": "覆盖入库、仓储、运输、配送和售后逆向物流",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "干线运输",
+            "desc": "跨城运输、整车零担和时效路由规划。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "仓配一体",
+            "desc": "入库、分拣、包装、出库和末端配送。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "冷链服务",
+            "desc": "温控仓储、冷链运输和节点记录。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "逆向物流",
+            "desc": "退换货、质检、重入库和售后协同。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "仓配网络节点",
+        "branches_subtitle": "展示核心仓、转运中心和服务覆盖城市",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看网点",
+        "booking_button_text": "咨询报价",
+        "branches_list": [
+          {
+            "name": "华东中心仓",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市浦东新区示例园区",
+            "phone": "021-70000001",
+            "email": "sh@example.com",
+            "hours": "全天候运营",
+            "services": "仓配,干线,城配",
+            "transport": "近高速与港口",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "华南转运中心",
+            "city": "广州",
+            "status": "open",
+            "address": "广州市黄埔区示例路",
+            "phone": "020-70000002",
+            "email": "gz@example.com",
+            "hours": "全天候运营",
+            "services": "干线,分拨,跨境",
+            "transport": "近港口与机场",
+            "lat": "23.1291",
+            "lng": "113.2644",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "西南配送中心",
+            "city": "成都",
+            "status": "open",
+            "address": "成都市新都区示例大道",
+            "phone": "028-70000003",
+            "email": "cd@example.com",
+            "hours": "全天候运营",
+            "services": "仓储,城配,逆向",
+            "transport": "覆盖西南区域",
+            "lat": "30.5728",
+            "lng": "104.0668",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "合作交付流程",
+        "process_subtitle": "从需求评估到日常履约，关键节点清晰可追踪",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求评估",
+            "desc": "确认货品类型、线路、体量、时效和服务边界。",
+            "stage_tag": "评估"
+          },
+          {
+            "icon": "02",
+            "title": "方案报价",
+            "desc": "输出仓储、运输、配送和异常处理方案。",
+            "stage_tag": "报价"
+          },
+          {
+            "icon": "03",
+            "title": "系统对接",
+            "desc": "完成订单、库存、轨迹和回单数据协同。",
+            "stage_tag": "对接"
+          },
+          {
+            "icon": "04",
+            "title": "履约复盘",
+            "desc": "按周期复盘时效、成本、异常和改进建议。",
+            "stage_tag": "复盘"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "行业服务案例",
+        "cases_subtitle": "用场景、节点和结果说明供应链服务价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=900&q=80",
+            "title": "电商仓配一体项目",
+            "desc": "旺季订单分拣、出库和末端配送稳定履约。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80",
+            "title": "冷链门店配送",
+            "desc": "温控运输和城市配送保障鲜品品质。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80",
+            "title": "工厂全国干线运输",
+            "desc": "多仓调拨、路由规划和异常响应协同。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "获取物流方案报价",
+        "contact_subtitle": "提交货品类型、发货地、目的地、月均体量和时效要求，顾问会评估合作方案。",
+        "contact_phone": "400-808-2026",
+        "contact_email": "logistics@example.com",
+        "contact_address": "全国多仓协同 / 支持远程沟通",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

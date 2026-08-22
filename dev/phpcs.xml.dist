@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ruleset name="Qi Ling Theme">
+    <description>PHPCS rules for first-party Qi Ling WordPress theme runtime surfaces.</description>
+
+    <arg name="basepath" value=".."/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="4"/>
+    <arg name="cache" value=".cache/phpcs.cache"/>
+    <arg value="sp"/>
+
+    <config name="minimum_supported_wp_version" value="5.8"/>
+    <config name="testVersion" value="7.4-"/>
+
+    <rule ref="WordPress-Core"/>
+    <rule ref="WordPress-Extra"/>
+    <rule ref="WordPress-Docs"/>
+
+    <exclude-pattern>*/assets/*</exclude-pattern>
+    <exclude-pattern>*/dev/vendor/*</exclude-pattern>
+    <exclude-pattern>*/dev/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/dist/*</exclude-pattern>
+    <exclude-pattern>*/docs/*</exclude-pattern>
+    <exclude-pattern>*/inc/vendor/*</exclude-pattern>
+    <exclude-pattern>*/languages/*</exclude-pattern>
+    <exclude-pattern>*/sms/vendor/*</exclude-pattern>
+    <exclude-pattern>*/translate/*</exclude-pattern>
+
+    <file>../404.php</file>
+    <file>../archive.php</file>
+    <file>../archive-qiapp_software.php</file>
+    <file>../author.php</file>
+    <file>../category.php</file>
+    <file>../comments.php</file>
+    <file>../functions.php</file>
+    <file>../footer.php</file>
+    <file>../header.php</file>
+    <file>../home.php</file>
+    <file>../index.php</file>
+    <file>../page.php</file>
+    <file>../search.php</file>
+    <file>../sidebar.php</file>
+    <file>../single.php</file>
+    <file>../single-qiapp_software.php</file>
+    <file>../taxonomy-qiapp_software_category.php</file>
+    <file>../taxonomy-qiapp_software_tag.php</file>
+    <file>../inc</file>
+    <file>../template-parts</file>
+    <file>../templates</file>
+</ruleset>

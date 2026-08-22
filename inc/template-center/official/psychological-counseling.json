@@ -1,0 +1,280 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "心理咨询中心官网",
+  "page_template": "templates/template-psychological-counseling.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "psychological-counseling",
+    "label": "心理咨询中心官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "psychological_counseling",
+    "industry_label": "心理咨询",
+    "scenario": "心理咨询、情绪压力、亲子家庭、伴侣关系、职场支持、预约初谈",
+    "description": "适合心理咨询中心、心理工作室、家庭咨询、青少年支持、职场心理服务和线上预约机构，内置首屏、服务方向、咨询师团队、预约流程、FAQ、来访反馈和预约初谈入口。",
+    "badges": [
+      "中文高频",
+      "心理咨询",
+      "预约初谈"
+    ],
+    "order": 596,
+    "thumbnail": "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "心理咨询中心官网模板 - 情绪压力与预约初谈",
+    "description": "适合心理咨询中心和心理工作室的官网页面，包含咨询服务、咨询师团队、预约流程、常见问题、来访反馈和预约初谈入口。",
+    "keywords": "心理咨询官网,心理咨询中心,心理工作室,情绪压力咨询,亲子家庭咨询,预约心理咨询",
+    "og_title": "心理咨询中心官网",
+    "og_description": "用服务方向、咨询师团队和预约初谈快速搭建心理咨询中心官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 52%, #059669 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1800&q=80",
+            "title": "让来访者在预约前先获得清晰和安全感",
+            "subtitle": "展示咨询方向、咨询师背景、预约流程、保密原则和咨询边界，适合心理咨询中心、心理工作室和家庭支持机构。",
+            "btn_text": "预约初谈",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "1v1",
+            "label": "个体咨询",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "4类",
+            "label": "重点咨询方向",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "严格",
+            "label": "隐私保密流程",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "线上/线下",
+            "label": "灵活预约方式",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "心理咨询服务方向",
+        "services_subtitle": "按常见来访需求组织入口，帮助用户在首次咨询前判断适合的支持方向",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "情绪压力咨询",
+            "desc": "围绕焦虑、压力、低落、失眠和长期紧绷状态进行支持与梳理。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "亲子与青少年支持",
+            "desc": "关注亲子沟通、学习压力、青春期困扰和家庭互动模式。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "伴侣与家庭关系",
+            "desc": "协助伴侣沟通、边界建立、关系冲突和家庭议题探索。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "职场心理支持",
+            "desc": "面对职业倦怠、转型压力、人际协作和自我效能议题。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "咨询师团队",
+        "team_subtitle": "展示受训背景、擅长方向和工作方式，让来访者更容易选择合适咨询师",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+            "name": "许老师",
+            "position": "个体咨询师",
+            "desc": "关注情绪压力、自我探索和亲密关系议题，重视稳定、尊重的咨询关系。",
+            "email": "counselor1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+            "name": "林老师",
+            "position": "家庭咨询师",
+            "desc": "服务亲子沟通、青少年支持和家庭系统议题，擅长结构化访谈。",
+            "email": "counselor2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
+            "name": "周老师",
+            "position": "职场心理顾问",
+            "desc": "关注职业压力、团队关系、倦怠恢复和个人成长规划。",
+            "email": "counselor3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#f0fdfa",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "预约与咨询流程",
+        "process_subtitle": "让首次来访知道每一步会发生什么，也清楚咨询服务的边界",
+        "process_mode": "standard",
+        "module_bg_color": "#ffffff",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "提交初谈预约",
+            "desc": "填写主要困扰、期望时间、咨询方式和联系方式。",
+            "stage_tag": "预约"
+          },
+          {
+            "icon": "02",
+            "title": "初步沟通与匹配",
+            "desc": "由顾问了解基本情况，匹配合适咨询方向和咨询师。",
+            "stage_tag": "匹配"
+          },
+          {
+            "icon": "03",
+            "title": "首次咨询",
+            "desc": "围绕当前困扰、目标和咨询边界建立初步工作框架。",
+            "stage_tag": "初谈"
+          },
+          {
+            "icon": "04",
+            "title": "阶段复盘",
+            "desc": "按咨询目标和实际进展定期复盘，必要时建议转介或就医评估。",
+            "stage_tag": "复盘"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "心理咨询常见问题",
+        "faq_subtitle": "提前说明咨询边界、保密原则、预约方式和危机情况处理建议",
+        "faq_items": [
+          {
+            "question": "心理咨询和精神科诊疗有什么区别？",
+            "answer": "心理咨询主要通过谈话工作支持情绪、关系和成长议题，不替代精神科诊断、处方和急危处理。如出现自伤他伤风险，请及时联系当地急救、精神专科或危机干预热线。"
+          },
+          {
+            "question": "咨询内容会被保密吗？",
+            "answer": "咨询服务通常遵循保密原则。涉及法律要求或自伤他伤等安全风险时，机构会按专业伦理和当地规定处理。"
+          },
+          {
+            "question": "第一次咨询前需要准备什么？",
+            "answer": "可以简单记录当前困扰、持续时间、近期变化、期待目标和可咨询时间。无需准备完整答案，咨询师会在初谈中共同梳理。"
+          },
+          {
+            "question": "线上咨询和线下咨询如何选择？",
+            "answer": "可根据所在城市、时间安排、隐私环境和议题需求选择。重要的是保证稳定网络、安静空间和不被打扰的时间。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "来访者反馈",
+        "testimonials_subtitle": "反馈仅代表个人体验，正式页面请按机构合规要求展示并做好隐私脱敏",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "860+",
+        "average_rating": "4.8",
+        "testimonials_bg_color": "#ffffff",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "匿名来访者",
+            "position": "情绪压力咨询",
+            "content": "预约前就能看到流程和边界，第一次见面没有那么紧张。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-03-12",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "匿名家长",
+            "position": "亲子沟通咨询",
+            "content": "老师没有简单评判谁对谁错，而是帮我们看见沟通模式。",
+            "rating": "5",
+            "source": "google",
+            "date": "2026-02-20",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "匿名来访者",
+            "position": "职场压力支持",
+            "content": "阶段复盘很清楚，能看到自己在压力应对上的一些变化。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-01-26",
+            "verified": "verified"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约心理咨询初谈",
+        "booking_subtitle": "提交主要困扰、咨询方式、期望时间和联系方式，咨询顾问会联系确认初谈安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约前请了解",
+        "sidebar_content": "心理咨询不替代精神科诊断和急危处理\n如有自伤他伤风险，请立即联系当地急救或精神专科\n请尽量选择安静、私密、不被打扰的咨询时间",
+        "contact_phone": "400-360-2026",
+        "contact_hours": "09:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.58"
+      }
+    }
+  ]
+}

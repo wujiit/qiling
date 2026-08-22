@@ -1,0 +1,255 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "教育培训官网",
+  "page_template": "templates/template-course-enrollment.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "education_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "course-enrollment",
+    "label": "教育培训官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "education",
+    "industry_label": "教育培训",
+    "scenario": "课程介绍、师资展示、报名转化",
+    "description": "适合教育培训机构、职业课程、少儿培训、训练营和线上课程招生，内置课程大纲、师资、流程、评价和报名入口。",
+    "badges": [
+      "课程报名",
+      "师资展示"
+    ],
+    "order": 571,
+    "thumbnail": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "教育培训官网模板 - 课程介绍与在线报名",
+    "description": "适合教育培训机构和课程招生的官网页面，包含课程卖点、课程大纲、师资团队、学习流程、学员评价和报名入口。",
+    "keywords": "教育培训官网,课程报名,职业培训,少儿培训,在线课程",
+    "og_title": "教育培训官网",
+    "og_description": "用课程大纲、师资展示和报名入口快速搭建教育培训官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=80",
+            "title": "让学习成果可以被看见",
+            "subtitle": "系统课程、实战项目、导师辅导和阶段测评，帮助学员完成从报名到交付作品的闭环。",
+            "btn_text": "立即报名",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1d4ed8"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "48",
+            "number": "48节",
+            "label": "系统课程",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "8",
+            "number": "8个",
+            "label": "实战项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "1v1",
+            "number": "1v1",
+            "label": "导师答疑",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "92",
+            "number": "92%",
+            "label": "完课率",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "课程适合人群",
+        "services_subtitle": "用清晰人群定位降低报名决策成本",
+        "services_columns": "4",
+        "services_bg_color": "#ffffff",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "零基础入门",
+            "desc": "从基础概念、工具链和学习路径开始。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "职场提升",
+            "desc": "围绕岗位能力、项目经验和作品集提升。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "转行求职",
+            "desc": "配套项目实战、简历指导和面试复盘。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "团队内训",
+            "desc": "可按企业目标定制课程和考核任务。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "curriculum",
+      "data": {
+        "curriculum_title": "课程大纲",
+        "curriculum_subtitle": "从基础到实战，按阶段建立可落地能力",
+        "curriculum_bg_color": "#ffffff",
+        "curriculum_primary_color": "#2563eb",
+        "curriculum_items": [
+          {
+            "title": "阶段一：核心基础与工具链",
+            "meta": "第1-2周 | 8节",
+            "content": "<p>掌握核心概念、学习路径、工具使用和基础案例拆解。</p>",
+            "open": "yes"
+          },
+          {
+            "title": "阶段二：案例拆解与模块化实践",
+            "meta": "第3-5周 | 16节",
+            "content": "<p>围绕真实业务案例完成模块搭建、页面编排和数据配置。</p>",
+            "open": "no"
+          },
+          {
+            "title": "阶段三：项目实战与复盘优化",
+            "meta": "第6-8周 | 24节",
+            "content": "<p>完成结课项目，进行导师评审、问题复盘和作品打磨。</p>",
+            "open": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "导师团队",
+        "team_subtitle": "用真实背景、授课方向和项目经验建立报名信任",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
+            "name": "许老师",
+            "position": "课程负责人",
+            "desc": "多年课程研发和企业内训经验，负责学习路径设计。",
+            "email": "teacher1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+            "name": "林老师",
+            "position": "项目导师",
+            "desc": "专注项目实战、作品集打磨和问题诊断。",
+            "email": "teacher2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+            "name": "周老师",
+            "position": "就业顾问",
+            "desc": "负责简历优化、面试准备和阶段复盘。",
+            "email": "teacher3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#eff6ff"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "学习路径",
+        "process_subtitle": "从报名测评到作品交付，过程清晰可追踪",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "报名测评",
+            "desc": "了解基础水平、学习目标和时间安排。",
+            "stage_tag": "测评"
+          },
+          {
+            "icon": "02",
+            "title": "分班学习",
+            "desc": "按目标进入对应班型并完成阶段任务。",
+            "stage_tag": "学习"
+          },
+          {
+            "icon": "03",
+            "title": "项目实战",
+            "desc": "完成真实项目演练和导师点评。",
+            "stage_tag": "实战"
+          },
+          {
+            "icon": "04",
+            "title": "作品交付",
+            "desc": "输出作品集、学习报告和后续提升建议。",
+            "stage_tag": "交付"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "提交报名申请",
+        "booking_subtitle": "提交学习目标、基础情况和期望班型，课程顾问会确认班型和开课安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "报名须知",
+        "sidebar_content": "建议先完成入学测评\n企业内训可在表单里备注团队人数\n课程顾问会在工作时间内联系",
+        "contact_phone": "400-900-2026",
+        "contact_hours": "09:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "报名常见问题",
+        "module_bg_color": "#eff6ff",
+        "faq_items": [
+          {
+            "question": "零基础可以报名吗？",
+            "answer": "可以，建议先完成入学测评，课程顾问会按基础推荐合适班型。"
+          },
+          {
+            "question": "是否支持企业内训？",
+            "answer": "支持，可根据企业业务目标定制课程、项目任务和考核方式。"
+          },
+          {
+            "question": "课程内容可以改吗？",
+            "answer": "可以，课程大纲、导师、报名表单和图片都可以在装修器中替换。"
+          }
+        ]
+      }
+    }
+  ]
+}

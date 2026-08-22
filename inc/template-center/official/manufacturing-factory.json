@@ -1,0 +1,243 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "制造业/工厂官网",
+  "page_template": "templates/template-manufacturing-factory.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "manufacturing-factory",
+    "label": "制造业/工厂官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "manufacturing",
+    "industry_label": "制造业",
+    "scenario": "工厂实力、产品目录、B2B 询盘",
+    "description": "适合制造工厂、设备厂商、零部件供应商和工业品牌官网，内置工厂实力、产品能力、质检流程、案例和询盘入口。",
+    "badges": [
+      "制造业",
+      "B2B 询盘"
+    ],
+    "order": 570,
+    "thumbnail": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "制造业工厂官网模板 - 产品实力与询盘转化",
+    "description": "适合制造业和工业品牌的官网页面，包含工厂实力、产品能力、质检流程、客户案例、资质信任和询盘入口。",
+    "keywords": "制造业官网,工厂官网,工业品牌,B2B询盘,产品目录",
+    "og_title": "制造业/工厂官网",
+    "og_description": "用工厂实力、产品能力和询盘入口快速搭建制造业官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.58",
+        "db_title_prefix": "让制造实力更容易被客户看见",
+        "db_typing_mode": "loop",
+        "db_typing_text": "精密加工与稳定交付\n工业设备与零部件定制\n从打样到批量生产的全流程服务",
+        "db_highlight_color": "#fbbf24",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "面向采购、代理商和项目客户，展示工厂实力、产品能力和交付保障。",
+        "db_desc": "适合机械设备、五金加工、电子制造、工业材料和 OEM/ODM 工厂。",
+        "db_text_color": "rgba(248,250,252,0.88)",
+        "db_buttons": [
+          {
+            "text": "提交采购需求",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看产品能力",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "工厂核心数据",
+        "stats_subtitle": "用生产、质检和交付数据建立采购信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "12年",
+            "label": "行业制造经验"
+          },
+          {
+            "number": "18条",
+            "label": "自动化产线"
+          },
+          {
+            "number": "98.6%",
+            "label": "一次质检通过率"
+          },
+          {
+            "number": "36h",
+            "label": "快速报价响应"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "产品与制造能力",
+        "services_subtitle": "围绕研发、打样、量产和售后的工业交付体系",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "标准产品供应",
+            "desc": "覆盖常用规格、配件和批量采购需求。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "定制加工",
+            "desc": "按图纸、样品和应用场景提供定制方案。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "质量检测",
+            "desc": "关键尺寸、性能、外观和包装多环节检验。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "交付协同",
+            "desc": "排产、物流、验收和售后支持全程跟进。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "项目合作流程",
+        "process_subtitle": "让采购沟通、打样确认和批量交付更清晰",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求评估",
+            "desc": "确认应用场景、规格参数、数量和交期目标。",
+            "stage_tag": "评估"
+          },
+          {
+            "icon": "02",
+            "title": "方案报价",
+            "desc": "输出材料、工艺、包装、交付周期和报价。",
+            "stage_tag": "报价"
+          },
+          {
+            "icon": "03",
+            "title": "打样确认",
+            "desc": "样品测试、尺寸确认和批量生产准备。",
+            "stage_tag": "打样"
+          },
+          {
+            "icon": "04",
+            "title": "量产交付",
+            "desc": "排产、质检、出货和售后资料交付。",
+            "stage_tag": "交付"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "行业应用案例",
+        "cases_subtitle": "用真实场景说明产品稳定性和交付能力",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=900&q=80",
+            "title": "自动化设备配套项目",
+            "desc": "为设备厂提供批量零部件和交付协同。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80",
+            "title": "出口订单质检方案",
+            "desc": "按出口标准完成生产检测和包装追溯。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=900&q=80",
+            "title": "OEM 定制开发",
+            "desc": "从样品优化到批量排产完成定制交付。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "clients",
+      "data": {
+        "clients_title": "服务客户类型",
+        "clients_columns": "4",
+        "clients_show_name": "1",
+        "clients_items": [
+          {
+            "name": "设备集成商",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "海外采购商",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "工程承包商",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "品牌 OEM 客户",
+            "logo": "",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "获取产品报价",
+        "contact_subtitle": "提交产品规格、采购数量、应用场景和交付城市，工程顾问会给出初步建议。",
+        "contact_phone": "400-800-2026",
+        "contact_email": "sales@example.com",
+        "contact_address": "工业园区示例路 88 号",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

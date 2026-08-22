@@ -1,0 +1,257 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "园林景观/庭院设计官网",
+  "page_template": "templates/template-landscape-garden-design.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "landscape-garden-design",
+    "label": "园林景观/庭院设计官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "landscape_garden",
+    "industry_label": "园林景观",
+    "scenario": "庭院规划、景观营造、花园案例、设计咨询",
+    "description": "适合园林景观公司、庭院设计工作室、别墅花园营造、商业景观提升和屋顶花园项目官网，内置首屏、景观服务、庭院相册、案例模块、设计流程、FAQ 和咨询表单。",
+    "badges": [
+      "园林景观",
+      "庭院设计",
+      "花园案例"
+    ],
+    "order": 602,
+    "thumbnail": "https://images.pexels.com/photos/33551395/pexels-photo-33551395.jpeg"
+  },
+  "seo": {
+    "title": "园林景观庭院设计官网模板 - 花园案例与咨询入口",
+    "description": "适合园林景观公司、庭院设计工作室和别墅花园营造项目的官网页面，包含景观服务、庭院相册、案例模块、设计流程、FAQ 和咨询表单。",
+    "keywords": "园林景观官网,庭院设计官网,花园设计,别墅花园,景观营造,屋顶花园",
+    "og_title": "园林景观/庭院设计官网",
+    "og_description": "用庭院案例、景观服务和咨询入口快速搭建园林景观官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #14532d 0%, #365314 46%, #9a3412 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.pexels.com/photos/33551395/pexels-photo-33551395.jpeg",
+            "title": "把庭院和景观做成值得长期生活的空间",
+            "subtitle": "覆盖庭院规划、植物与水景、别墅花园营造和商业景观提升，帮助客户在第一次咨询前看懂设计方向与落地方式。",
+            "btn_text": "预约现场勘测",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#166534"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "180",
+            "number": "180+",
+            "label": "完成项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "12",
+            "number": "12年+",
+            "label": "景观经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "72h",
+            "number": "72h",
+            "label": "方案响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "客户评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "景观服务模块",
+        "services_subtitle": "从前期规划到植物、水景、铺装和落地施工配合，覆盖常见庭院与景观场景",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "私家庭院规划",
+            "desc": "结合户型动线、采光和家庭生活方式，输出可落地的花园布局。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "植物与水景设计",
+            "desc": "按气候、维护频率和空间气质配置植物群落、跌水和镜面水景。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "别墅花园营造",
+            "desc": "处理地形、铺装、灯光、户外家具与节点景观，保证整体体验完整。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "商业景观提升",
+            "desc": "用于会所、民宿、示范区和商业庭院，提升品牌辨识度与停留体验。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "庭院与花园相册",
+        "gallery_subtitle": "用真实景观图片展示动线、水景、植物层次和庭院氛围，降低客户第一次沟通成本",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "gallery_gap": "16",
+        "enable_filter": "yes",
+        "filter_categories": "现代庭院,水景花园,禅意景观",
+        "gallery_lightbox": "1",
+        "show_counter": "yes",
+        "gallery_images": [
+          {
+            "image": "https://images.pexels.com/photos/33450506/pexels-photo-33450506.jpeg",
+            "title": "中轴水景庭院",
+            "desc": "适合高端住宅和会所项目，用对称水景建立秩序与仪式感。",
+            "category": "水景花园"
+          },
+          {
+            "image": "https://images.pexels.com/photos/30982643/pexels-photo-30982643.jpeg",
+            "title": "现代禅意花园",
+            "desc": "以石景、木作和留白营造安静克制的庭院气质。",
+            "category": "禅意景观"
+          },
+          {
+            "image": "https://images.pexels.com/photos/35381750/pexels-photo-35381750.jpeg",
+            "title": "桥景园林空间",
+            "desc": "适合东方气质庭院和文化空间，把游览动线做得更有层次。",
+            "category": "禅意景观"
+          },
+          {
+            "image": "https://images.pexels.com/photos/33551395/pexels-photo-33551395.jpeg",
+            "title": "现代绿植庭院",
+            "desc": "把石景、竹影和现代建筑立面组织成更完整的停留空间。",
+            "category": "现代庭院"
+          }
+        ],
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "代表景观项目",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "250px",
+        "cases_padding_top": "84px",
+        "cases_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "庭院设计服务流程",
+        "process_subtitle": "从现场勘测到方案深化与施工配合，把景观审美、预算和养护难度一起考虑清楚",
+        "process_mode": "industrial",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "现场勘测",
+            "desc": "记录场地尺寸、排水、日照、周边视线、现状植物和使用需求。",
+            "stage_tag": "勘测"
+          },
+          {
+            "icon": "02",
+            "title": "概念方案",
+            "desc": "确定动线分区、景观主题、水景节点、植物风格和预算方向。",
+            "stage_tag": "方案"
+          },
+          {
+            "icon": "03",
+            "title": "深化与选材",
+            "desc": "细化铺装、灯光、植物清单、户外家具和关键节点做法。",
+            "stage_tag": "深化"
+          },
+          {
+            "icon": "04",
+            "title": "施工与养护建议",
+            "desc": "配合现场落地、节点验收和后续养护，让景观效果更稳定。",
+            "stage_tag": "落地"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "景观咨询常见问题",
+        "faq_subtitle": "提前说明施工范围、预算边界、植物养护和外地项目配合方式，让第一次咨询更高效",
+        "module_bg_color": "#f8fafc",
+        "faq_items": [
+          {
+            "question": "庭院设计一定包含施工吗？",
+            "answer": "不一定。可以只做前期规划和图纸方案，也可以继续进入深化、施工配合和后期养护建议，具体按项目范围确认。"
+          },
+          {
+            "question": "植物和水景后期维护复杂吗？",
+            "answer": "方案阶段就应把养护频率纳入设计，按客户可接受的维护强度选择植物群落、水景系统和硬质铺装。"
+          },
+          {
+            "question": "外地项目可以接吗？",
+            "answer": "可以。通常先远程沟通需求和现状资料，再根据项目规模安排现场勘测或与本地施工团队协同。"
+          },
+          {
+            "question": "报价一般看哪些因素？",
+            "answer": "通常会结合庭院面积、地形复杂度、设计深度、水景与灯光配置、植物数量以及是否需要施工配合来评估。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约庭院方案咨询",
+        "contact_subtitle": "提交城市、庭院面积、房屋类型、预算区间和偏好风格，我们会先判断适合的设计路径和推进节奏。",
+        "contact_phone": "400-628-2026",
+        "contact_email": "garden@example.com",
+        "contact_address": "支持现场勘测 / 可预约远程初步沟通",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "contact_image": "https://images.pexels.com/photos/33450506/pexels-photo-33450506.jpeg",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

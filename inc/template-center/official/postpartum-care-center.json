@@ -1,0 +1,302 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "月子中心/产康中心官网",
+  "page_template": "templates/template-postpartum-care-center.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "postpartum-care-center",
+    "label": "月子中心/产康中心官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "postpartum_care",
+    "industry_label": "月子产康",
+    "scenario": "月子中心、产后康复、母婴护理、新生儿照护、月子餐、预约参观",
+    "description": "适合月子中心、产康中心、母婴护理机构和产后修复门店，内置首屏、母婴照护服务、月子套房、护理团队、客户评价、FAQ 和预约参观入口。",
+    "badges": [
+      "中文高频",
+      "月子产康",
+      "预约参观"
+    ],
+    "order": 598,
+    "thumbnail": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "月子中心产康中心官网模板 - 母婴照护与预约参观",
+    "description": "适合月子中心、产康中心和母婴护理机构的官网页面，包含母婴照护、月子套房、护理团队、客户评价、常见问题和预约参观入口。",
+    "keywords": "月子中心官网,产康中心官网,母婴护理,月子会所,产后康复,新生儿护理,预约参观",
+    "og_title": "月子中心/产康中心官网",
+    "og_description": "用母婴照护、月子套房和预约参观快速搭建月子产康机构官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #0f766e 48%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1800&q=80",
+            "title": "把母婴照护、房型套餐和产康服务讲清楚",
+            "subtitle": "适合月子中心、产康中心和母婴护理机构展示月子套房、护理团队、新生儿照护、月子餐、产后恢复和预约参观入口。",
+            "btn_text": "预约参观月子中心",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#be123c"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "24h",
+            "label": "母婴照护响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "1对1",
+            "label": "入住顾问跟进",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "每日",
+            "label": "宝宝护理记录",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "多学科",
+            "label": "产康营养协作",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "母婴照护服务",
+        "services_subtitle": "围绕妈妈恢复、宝宝照护、营养餐食和家属沟通形成入住服务闭环",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "妈妈产后照护",
+            "desc": "关注休息恢复、伤口观察、情绪支持、哺乳协助和日常护理。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "新生儿护理",
+            "desc": "提供喂养记录、洗护、抚触、黄疸观察和宝宝作息反馈。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "产后康复服务",
+            "desc": "按评估结果安排基础体态、盆底、腹直肌和运动恢复建议。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "营养月子餐",
+            "desc": "结合阶段恢复、口味偏好和禁忌情况制定餐食搭配。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "room-showcase",
+      "data": {
+        "room_title": "月子套房与套餐",
+        "room_subtitle": "按居住空间、护理深度和家庭预算展示适合的入住方案",
+        "room_columns": "3",
+        "room_card_style": "standard",
+        "room_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+            "name": "温馨母婴房",
+            "area": "32㎡",
+            "bed_type": "queen",
+            "capacity": "妈妈+宝宝",
+            "price": "¥1280/天起",
+            "original_price": "",
+            "badge": "recommend",
+            "amenities": "icon-baby|宝宝照护\nicon-food|营养月子餐\nicon-call|护理呼叫",
+            "desc": "适合基础入住需求，兼顾休息、宝宝照护和日常护理记录。",
+            "btn_text": "预约参观",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
+            "name": "高阶产康套房",
+            "area": "45㎡",
+            "bed_type": "king",
+            "capacity": "妈妈+宝宝+陪护",
+            "price": "¥1880/天起",
+            "original_price": "",
+            "badge": "luxury",
+            "amenities": "icon-rehab|产康评估\nicon-nurse|专属护理\nicon-family|家属陪护",
+            "desc": "适合希望加入产后康复评估、护理跟进和家属陪护的家庭。",
+            "btn_text": "了解套餐",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
+            "name": "家庭陪护套房",
+            "area": "58㎡",
+            "bed_type": "family",
+            "capacity": "2-3人陪护",
+            "price": "按需报价",
+            "original_price": "",
+            "badge": "garden",
+            "amenities": "icon-space|独立会客\nicon-food|定制餐食\nicon-safe|私密空间",
+            "desc": "适合重视家属陪伴、空间私密性和定制照护安排的家庭。",
+            "btn_text": "预约顾问",
+            "btn_link": "#"
+          }
+        ],
+        "room_btn_bg_color": "#be123c",
+        "room_btn_text_color": "#ffffff",
+        "module_bg_color": "#fff7ed",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "母婴护理与产康团队",
+        "team_subtitle": "展示护理长、产康师、营养师和顾问团队，让家庭清楚服务由谁承接",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+            "name": "周护理长",
+            "position": "母婴护理负责人",
+            "desc": "负责入住评估、宝宝护理记录、护理质控和家属沟通。",
+            "email": "postpartum1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
+            "name": "林老师",
+            "position": "产后康复师",
+            "desc": "关注体态恢复、盆底训练、腹直肌评估和阶段运动建议。",
+            "email": "postpartum2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+            "name": "陈营养师",
+            "position": "月子餐营养顾问",
+            "desc": "负责阶段餐单、饮食禁忌、口味偏好和恢复目标沟通。",
+            "email": "postpartum3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "入住家庭反馈",
+        "testimonials_subtitle": "用真实照护体验、沟通效率和空间感受降低首次参观前的不确定感",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "1300+",
+        "average_rating": "4.9",
+        "testimonials_bg_color": "#fff7ed",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "安安妈妈",
+            "position": "28天入住家庭",
+            "content": "宝宝护理记录很细，喂养和睡眠情况每天都能同步到家属。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-03-16",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "可可爸爸",
+            "position": "家庭陪护套房",
+            "content": "参观时把房型、护理项目和费用拆得清楚，入住后沟通也比较稳定。",
+            "rating": "5",
+            "source": "google",
+            "date": "2026-02-22",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
+            "name": "小橙妈妈",
+            "position": "产康服务客户",
+            "content": "产康评估和训练建议比较循序渐进，没有一上来就推很多项目。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-01-29",
+            "verified": "verified"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "月子产康常见问题",
+        "faq_subtitle": "提前说明入住评估、费用构成、护理边界和医疗转诊，减少家属反复沟通",
+        "faq_items": [
+          {
+            "question": "月子中心是否可以替代医院诊疗？",
+            "answer": "月子中心主要提供生活照护、母婴护理、营养餐食和产康支持，不替代医院诊断、治疗和急危处理。妈妈或宝宝出现异常情况时应及时就医。"
+          },
+          {
+            "question": "入住前需要准备哪些信息？",
+            "answer": "建议准备预产期或生产日期、分娩方式、妈妈恢复情况、宝宝喂养方式、过敏禁忌和陪护需求，方便中心匹配房型和护理方案。"
+          },
+          {
+            "question": "产康项目是否所有人都适合？",
+            "answer": "不一定。产康项目需要结合生产方式、恢复阶段、医生建议和现场评估安排，正式页面建议按机构资质和服务边界清楚说明。"
+          },
+          {
+            "question": "费用一般包括哪些内容？",
+            "answer": "常见费用包括房间、月子餐、妈妈护理、宝宝护理、基础耗材和可选产康项目。正式价格应按机构实际套餐展示。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约参观与入住评估",
+        "booking_subtitle": "提交预产期、期望入住时间、目标房型和照护需求，顾问会联系确认参观安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "参观前建议准备",
+        "sidebar_content": "说明预产期或生产日期、分娩方式和喂养计划\n如有饮食禁忌、过敏或特殊护理需求请提前备注\n建议家属一起参观房型、餐食和护理动线",
+        "contact_phone": "400-520-2026",
+        "contact_hours": "09:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.56"
+      }
+    }
+  ]
+}

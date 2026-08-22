@@ -1,0 +1,273 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "本地生活服务官网",
+  "page_template": "templates/template-local-service-official.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "local-service-official",
+    "label": "本地生活服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "local_service",
+    "industry_label": "本地服务",
+    "scenario": "服务项目、区域覆盖、预约转化",
+    "description": "适合家政清洁、维修安装、到家服务、门店服务和社区服务品牌官网，内置服务项目、网点区域、流程、评价和预约入口。",
+    "badges": [
+      "本地服务",
+      "预约转化"
+    ],
+    "order": 610,
+    "thumbnail": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "本地生活服务官网模板 - 服务项目与预约转化",
+    "description": "适合本地生活服务和到家服务品牌的官网页面，包含服务项目、区域网点、服务流程、客户评价、FAQ 和预约入口。",
+    "keywords": "本地服务官网,家政官网,维修服务,到家服务,预约服务",
+    "og_title": "本地生活服务官网",
+    "og_description": "用服务项目、区域覆盖和预约入口快速搭建本地生活服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80",
+            "title": "让本地服务更可靠、更好预约",
+            "subtitle": "服务项目、区域覆盖、标准流程和真实评价，一页完成客户信任建立。",
+            "btn_text": "立即预约服务",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#2563eb"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "24h",
+            "number": "24h",
+            "label": "服务响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "30",
+            "number": "30+",
+            "label": "覆盖区域",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "客户评分",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "100",
+            "number": "100%",
+            "label": "明码报价",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "热门服务项目",
+        "services_subtitle": "适配清洁、维修、安装、养护和上门服务等本地生活场景",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "家政清洁",
+            "desc": "日常保洁、深度清洁和开荒服务。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "维修安装",
+            "desc": "水电维修、家电安装和小修小补。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "空间养护",
+            "desc": "家具护理、空气治理和定期养护。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "门店服务",
+            "desc": "到店体验、会员服务和售后处理。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "服务区域与网点",
+        "branches_subtitle": "展示覆盖城市、门店网点和可预约区域",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看网点",
+        "booking_button_text": "预约服务",
+        "branches_list": [
+          {
+            "name": "市中心服务站",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市静安区示例路 88 号",
+            "phone": "021-60000001",
+            "email": "service@example.com",
+            "hours": "08:00-21:00",
+            "services": "清洁,维修,安装",
+            "transport": "覆盖核心城区",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "社区服务中心",
+            "city": "杭州",
+            "status": "open",
+            "address": "杭州市西湖区示例街 66 号",
+            "phone": "0571-60000002",
+            "email": "hangzhou@example.com",
+            "hours": "08:00-21:00",
+            "services": "到家服务,门店服务",
+            "transport": "覆盖周边社区",
+            "lat": "30.2741",
+            "lng": "120.1551",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "东区服务站",
+            "city": "苏州",
+            "status": "coming",
+            "address": "苏州市工业园区示例大道 99 号",
+            "phone": "0512-60000003",
+            "email": "suzhou@example.com",
+            "hours": "即将开放",
+            "services": "清洁,维修,养护",
+            "transport": "预约制上门",
+            "lat": "31.2989",
+            "lng": "120.5853",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "标准服务流程",
+        "process_subtitle": "把预约、上门、验收和售后流程讲清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "在线预约",
+            "desc": "选择服务项目、时间、地址和联系方式。",
+            "stage_tag": "预约"
+          },
+          {
+            "icon": "02",
+            "title": "确认报价",
+            "desc": "客服确认需求、范围、费用和注意事项。",
+            "stage_tag": "确认"
+          },
+          {
+            "icon": "03",
+            "title": "上门服务",
+            "desc": "服务人员按约定时间到达并规范执行。",
+            "stage_tag": "服务"
+          },
+          {
+            "icon": "04",
+            "title": "验收售后",
+            "desc": "完成验收、评价和售后问题处理。",
+            "stage_tag": "售后"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "3000+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "周女士",
+            "position": "家庭用户",
+            "content": "预约方便，服务时间和价格都提前确认，很省心。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林先生",
+            "position": "门店负责人",
+            "content": "维修响应比较快，售后也能跟进。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "许女士",
+            "position": "社区客户",
+            "content": "服务人员很准时，流程和验收都比较规范。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约本地服务",
+        "booking_subtitle": "提交服务项目、地址和期望时间，服务顾问会确认预约安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约须知",
+        "sidebar_content": "请在表单里说明服务面积和特殊需求\n最终费用以确认服务范围为准\n部分区域可能需要提前预约档期",
+        "contact_phone": "400-520-2026",
+        "contact_hours": "08:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

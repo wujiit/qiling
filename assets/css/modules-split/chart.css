@@ -15,7 +15,7 @@
       rgba(var(--color-primary-rgb), 0.03) 0%,
       rgba(var(--color-surface-rgb), 0) 100%
     ),
-    var(--qiling-component-card-bg);
+    var(--fl-tabs-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--qiling-component-card-border);
   border-radius: 18px;
   backdrop-filter: blur(10px);
@@ -30,7 +30,7 @@
   border-radius: var(--qiling-button-radius);
   font-size: var(--qiling-text-rem-0p95);
   font-weight: 600;
-  color: var(--qiling-component-tabs-text);
+  color: var(--fl-tab-text, var(--qiling-component-tabs-text));
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -39,7 +39,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--qiling-component-tabs-active-bg);
+  background: var(--fl-tab-active-bg, var(--qiling-component-tabs-active-bg));
   opacity: 0;
   transition: opacity 0.3s;
   border-radius: var(--qiling-button-radius);
@@ -57,7 +57,7 @@
 }.qiling-module-scope-chart .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
 }.qiling-module-scope-chart .features-tab-btn.active {
-  color: var(--qiling-component-tabs-active-text);
+  color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);
   box-shadow: var(--qiling-component-button-shadow);
 }.qiling-module-scope-chart .features-tab-btn.active::before {

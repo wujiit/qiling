@@ -1,0 +1,229 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "开发者平台官网",
+  "page_template": "templates/template-developer-platform.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "developer-platform",
+    "label": "开发者平台官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "software",
+    "industry_label": "软件",
+    "scenario": "API 平台、开发文档、生态接入",
+    "description": "适合开放平台、API 服务、SDK、开发工具和技术生态官网，内置能力介绍、接入流程、文档入口、案例和 CTA。",
+    "badges": [
+      "API",
+      "开发者生态"
+    ],
+    "order": 351,
+    "thumbnail": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "开发者平台官网模板 - API 文档与生态接入",
+    "description": "适合开放平台和开发者工具的官网页面，包含 API 能力、接入流程、SDK、文档入口、客户案例和技术支持。",
+    "keywords": "开发者平台,API平台,开放平台,SDK,技术文档",
+    "og_title": "开发者平台官网",
+    "og_description": "用 API 能力、接入流程和文档入口快速搭建开发者平台官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
+            "title": "把核心能力开放给更多开发者",
+            "subtitle": "API、SDK、Webhook 和文档中心，帮助合作伙伴更快完成集成。",
+            "btn_text": "查看文档",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "99.9",
+            "number": "99.9%",
+            "label": "API 可用性",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "80",
+            "number": "80+",
+            "label": "开放接口",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "12",
+            "number": "12种",
+            "label": "SDK 示例",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "24",
+            "number": "24h",
+            "label": "技术支持",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "平台能力",
+        "services_subtitle": "按开发者接入路径组织核心能力",
+        "services_columns": "4",
+        "services_bg_color": "#ffffff",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "REST API",
+            "desc": "覆盖核心数据、业务动作和查询能力。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "Webhook",
+            "desc": "实时推送订单、事件、任务和状态变化。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "SDK 示例",
+            "desc": "提供多语言示例，降低接入和调试成本。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "权限与审计",
+            "desc": "支持密钥、角色、配额和调用记录管理。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "接入流程",
+        "process_subtitle": "从申请到上线，开发团队有清晰路径",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "创建应用",
+            "desc": "申请开发者账号，创建应用并获取测试密钥。",
+            "stage_tag": "申请"
+          },
+          {
+            "icon": "02",
+            "title": "阅读文档",
+            "desc": "按业务场景选择接口、SDK 和回调方式。",
+            "stage_tag": "开发"
+          },
+          {
+            "icon": "03",
+            "title": "联调测试",
+            "desc": "使用沙箱环境验证鉴权、数据和异常处理。",
+            "stage_tag": "测试"
+          },
+          {
+            "icon": "04",
+            "title": "审核上线",
+            "desc": "通过安全审核后切换生产环境。",
+            "stage_tag": "上线"
+          }
+        ],
+        "module_bg_color": "#f0fdfa"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "开发者体验",
+        "features_subtitle": "让 API 不只可用，也更容易被正确使用",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "在线调试",
+            "desc": "在文档页直接构造请求并查看响应。"
+          },
+          {
+            "icon": "02",
+            "title": "错误码手册",
+            "desc": "错误原因、修复建议和重试策略清楚可查。"
+          },
+          {
+            "icon": "03",
+            "title": "沙箱数据",
+            "desc": "提供稳定测试数据，避免影响生产环境。"
+          },
+          {
+            "icon": "04",
+            "title": "状态订阅",
+            "desc": "服务异常、版本更新和接口变更及时通知。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "生态接入案例",
+        "cases_subtitle": "展示平台能力在不同业务中的应用",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
+            "title": "企业系统集成",
+            "desc": "通过 API 打通 CRM、订单和售后系统。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+            "title": "移动应用接入",
+            "desc": "SDK 支持移动端快速接入账号和消息能力。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+            "title": "数据同步服务",
+            "desc": "Webhook 推送关键事件，减少轮询和延迟。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备开始接入？",
+        "cta_subtitle": "从沙箱环境开始，把第一个接口跑通。",
+        "cta_button_text": "创建开发者应用",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

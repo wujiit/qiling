@@ -1,0 +1,92 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "博客页面",
+  "page_template": "templates/template-blog.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "blog",
+    "label": "博客页面",
+    "category": "content",
+    "category_label": "博客/杂志/内容",
+    "industry": "blog",
+    "scenario": "博客页面",
+    "description": "博客、专栏、知识库和内容营销入口。",
+    "badges": [
+      "博客",
+      "内容"
+    ],
+    "order": 110,
+    "thumbnail": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "博客页面模板 - 启灵官方页面包",
+    "description": "博客、专栏、知识库和内容营销入口。",
+    "keywords": "博客页面,博客页面,博客,内容",
+    "og_title": "博客页面",
+    "og_description": "博客、专栏、知识库和内容营销入口。"
+  },
+  "modules": [
+    {
+      "type": "featured_posts",
+      "data": {
+        "fp_title": "",
+        "fp_bg_color": "",
+        "fp_layout": "magazine",
+        "fp_slider_ratio": "70",
+        "fp_slider_height": "420px",
+        "fp_autoplay": "yes",
+        "fp_interval": "5000",
+        "fp_effect": "fade",
+        "fp_show_arrows": "yes",
+        "fp_show_dots": "yes",
+        "fp_slider_source": "latest",
+        "fp_slider_count": "5",
+        "fp_list_source": "latest",
+        "fp_list_count": "6",
+        "fp_deduplicate": "yes",
+        "fp_badge_type": "recommend",
+        "fp_badge_position": "left",
+        "fp_show_category": "yes",
+        "fp_show_date": "yes",
+        "fp_show_excerpt": "yes",
+        "fp_show_views": "yes",
+        "fp_show_reading_time": "yes"
+      }
+    },
+    {
+      "type": "blog",
+      "data": {
+        "blog_title": "",
+        "blog_subtitle": "",
+        "blog_bg_color": "",
+        "blog_page_layout": "full",
+        "blog_visual_preset": "inherit",
+        "blog_layout_style": "magazine",
+        "blog_columns": "3",
+        "blog_data_source": "latest",
+        "blog_count": "12",
+        "blog_orderby": "date",
+        "blog_show_image": "yes",
+        "blog_image_height": "200px",
+        "blog_show_excerpt": "yes",
+        "blog_excerpt_length": "60",
+        "blog_show_author": "no",
+        "blog_show_date": "yes",
+        "blog_show_category": "yes",
+        "blog_show_tags": "no",
+        "blog_show_views": "yes",
+        "blog_show_reading_time": "yes",
+        "blog_read_more_text": "阅读全文",
+        "blog_enable_pagination": "yes"
+      }
+    }
+  ]
+}

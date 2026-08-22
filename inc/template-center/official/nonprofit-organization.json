@@ -1,0 +1,234 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "公益组织官网",
+  "page_template": "templates/template-nonprofit-organization.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "education_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "nonprofit-organization",
+    "label": "公益组织官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "nonprofit",
+    "industry_label": "公益组织",
+    "scenario": "项目展示、影响力公开、志愿参与",
+    "description": "适合公益组织、基金会、社会服务机构和公益项目官网，内置使命愿景、项目行动、影响力数据、透明公开和参与入口。",
+    "badges": [
+      "公益组织",
+      "透明公开"
+    ],
+    "order": 650,
+    "thumbnail": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "公益组织官网模板 - 项目影响力与参与入口",
+    "description": "适合公益组织和基金会的官网页面，包含使命愿景、公益项目、影响力数据、公开透明、志愿者参与和联系入口。",
+    "keywords": "公益组织官网,基金会官网,公益项目,志愿者招募,透明公开",
+    "og_title": "公益组织官网",
+    "og_description": "用公益项目、影响力数据和参与入口快速搭建公益组织官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.55",
+        "db_title_prefix": "让每一次善意都有清晰去向",
+        "db_typing_mode": "loop",
+        "db_typing_text": "公益项目展示与行动记录\n影响力数据与透明公开\n志愿者、伙伴和支持者参与入口",
+        "db_highlight_color": "#bbf7d0",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "用清楚的项目、数据和公开信息，建立公益组织的长期信任。",
+        "db_desc": "适合基金会、社会服务组织、公益项目和公共倡议团队。",
+        "db_text_color": "rgba(248,250,252,0.88)",
+        "db_buttons": [
+          {
+            "text": "参与公益行动",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看项目进展",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "公益影响力数据",
+        "stats_subtitle": "用可理解的数据说明项目覆盖和行动结果",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "36",
+            "label": "公益项目"
+          },
+          {
+            "number": "12城",
+            "label": "服务覆盖"
+          },
+          {
+            "number": "8万+",
+            "label": "受益人次"
+          },
+          {
+            "number": "2600+",
+            "label": "志愿者参与"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "项目行动方向",
+        "services_subtitle": "按议题、对象和行动方式组织公益项目信息",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "儿童关怀",
+            "desc": "围绕教育、陪伴和成长支持开展项目。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "社区服务",
+            "desc": "社区互助、老年关怀和基层支持行动。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "环境保护",
+            "desc": "公众倡导、绿色行动和志愿活动。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "应急援助",
+            "desc": "物资协调、救助支持和灾后恢复项目。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "代表公益项目",
+        "cases_subtitle": "展示项目目标、行动过程和阶段成果",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80",
+            "title": "乡村儿童阅读计划",
+            "desc": "建设阅读角、组织志愿陪伴和阅读活动。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=900&q=80",
+            "title": "社区长者关怀",
+            "desc": "开展探访、健康提醒和社区互助活动。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=80",
+            "title": "城市环保志愿行动",
+            "desc": "组织公众参与清洁、回收和绿色倡导。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "参与公益的方式",
+        "process_subtitle": "把志愿者、伙伴和支持者的参与路径讲清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "了解项目",
+            "desc": "查看项目目标、服务对象和阶段进展。",
+            "stage_tag": "了解"
+          },
+          {
+            "icon": "02",
+            "title": "提交意向",
+            "desc": "选择志愿服务、机构合作或资源支持方式。",
+            "stage_tag": "报名"
+          },
+          {
+            "icon": "03",
+            "title": "参与行动",
+            "desc": "按项目安排完成培训、活动和记录。",
+            "stage_tag": "行动"
+          },
+          {
+            "icon": "04",
+            "title": "查看反馈",
+            "desc": "通过公开信息了解项目进展和影响力结果。",
+            "stage_tag": "反馈"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见参与问题",
+        "faq_subtitle": "让支持者提前了解参与规则",
+        "faq_items": [
+          {
+            "question": "如何成为志愿者？",
+            "answer": "可提交报名信息，项目负责人会根据活动排期和服务要求进行沟通。"
+          },
+          {
+            "question": "项目信息如何公开？",
+            "answer": "可通过项目进展、阶段数据和公开报告展示项目执行情况。"
+          },
+          {
+            "question": "企业可以参与合作吗？",
+            "answer": "可以，可围绕资源支持、员工志愿、联合项目等方式沟通合作。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "联系公益项目团队",
+        "contact_subtitle": "提交参与方式、所在城市、可投入时间和联系方式，项目团队会与你沟通。",
+        "contact_phone": "400-119-2026",
+        "contact_email": "impact@example.org",
+        "contact_address": "公益服务中心 / 支持线上沟通",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

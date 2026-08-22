@@ -1,0 +1,112 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "案例展示",
+  "page_template": "templates/template-cases.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "cases",
+    "label": "案例展示",
+    "category": "corporate",
+    "category_label": "官网通用",
+    "industry": "enterprise",
+    "scenario": "案例展示",
+    "description": "适合沉淀客户案例、项目作品和行业实践。",
+    "badges": [
+      "案例",
+      "信任"
+    ],
+    "order": 40,
+    "thumbnail": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "案例展示模板 - 启灵官方页面包",
+    "description": "适合沉淀客户案例、项目作品和行业实践。",
+    "keywords": "案例展示,案例展示,案例,信任",
+    "og_title": "案例展示",
+    "og_description": "适合沉淀客户案例、项目作品和行业实践。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "medium",
+        "banner_bg_color": "linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "",
+            "title": "案例中心",
+            "subtitle": "真实案例见证成效与口碑",
+            "btn_text": "咨询合作",
+            "btn_url": "/contact",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f172a"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "成功案例",
+        "cases_count": "9",
+        "cases_columns": "3",
+        "cases_categories": "",
+        "cases_show_image": "1",
+        "cases_image_height": "240px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "案例成果",
+        "stats_subtitle": "持续交付可量化的增长结果",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "120+",
+            "label": "行业客户"
+          },
+          {
+            "number": "300%",
+            "label": "平均转化提升"
+          },
+          {
+            "number": "98%",
+            "label": "客户满意度"
+          },
+          {
+            "number": "24h",
+            "label": "响应时间"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "想打造下一个标杆案例？",
+        "cta_subtitle": "联系我们，获取行业定制方案",
+        "cta_button_text": "开始咨询",
+        "cta_button_url": "/contact",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 4,
+  "title": "影视门户首页",
+  "page_template": "templates/template-video-portal.php",
+  "search_mode": "video",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "video_entertainment"
+  },
+  "footer": {
+    "mode": "hidden",
+    "wave": "off",
+    "preset": "video_entertainment",
+    "inherit_skin_colors": true
+  },
+  "page_design": {
+    "palette": {
+      "primary": "#2563eb",
+      "secondary": "#059669",
+      "accent": "#f59e0b",
+      "background": "#090b12",
+      "surface": "#111522",
+      "surface_alt": "#0d1019",
+      "text": "#e5e7eb",
+      "text_muted": "#94a3b8",
+      "heading": "#ffffff",
+      "border": "rgba(255,255,255,0.10)",
+      "dark_bg": "#070910",
+      "dark_surface": "#111522",
+      "dark_text": "#e5e7eb",
+      "dark_text_muted": "#94a3b8",
+      "dark_border": "rgba(255,255,255,0.10)"
+    },
+    "layout": {
+      "container_width": {
+        "desktop": "1440px",
+        "tablet": "100%",
+        "mobile": "100%"
+      },
+      "section_spacing": {
+        "desktop": "72px",
+        "tablet": "56px",
+        "mobile": "40px"
+      },
+      "grid_gap": {
+        "desktop": "24px",
+        "tablet": "18px",
+        "mobile": "12px"
+      },
+      "layout_mode": "wide"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "video-portal",
+    "label": "影视门户首页",
+    "category": "entertainment",
+    "category_label": "娱乐/影视",
+    "industry": "entertainment_video",
+    "industry_label": "娱乐影视",
+    "scenario": "电影、电视剧、动漫、综艺和纪录片内容门户首页",
+    "description": "适用于电影、电视剧、动漫、综艺等视频内容门户，内置影视 Banner、频道海报流、影视排行榜和精选专题模块。",
+    "badges": [
+      "影视门户",
+      "深色影院",
+      "播放器联动"
+    ],
+    "order": 125,
+    "thumbnail": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "影视门户首页 - 热播电影、剧集与动漫",
+    "description": "聚合正在热播的电影、电视剧、动漫和精选专题，支持影视搜索、频道海报流和热门排行榜。",
+    "keywords": "影视门户,在线电影,热门电视剧,动漫,影视排行榜,影视搜索",
+    "og_title": "影视门户首页",
+    "og_description": "发现热播电影、剧集、动漫和精选影视专题。"
+  },
+  "modules": [
+    {
+      "type": "qiling_video_portal_hero",
+      "data": {
+        "content_source": "manual",
+        "autoplay": "yes",
+        "height_desktop": "720",
+        "height_mobile": "590",
+        "show_search": "yes",
+        "search_mode": "video",
+        "search_placeholder": "搜索影片、演员或导演",
+        "search_button_text": "搜索",
+        "show_hot_keywords": "yes",
+        "hot_keywords": "热播电影,最新电视剧,热门动漫,高分影片",
+        "search_style": "cinema",
+        "slides": [
+          {
+            "bg_image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=85",
+            "poster_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=85",
+            "title": "银幕之夜",
+            "title_color": "#ffffff",
+            "title_image": "",
+            "subtitle": "本周热映",
+            "tags": "剧情 / 悬疑",
+            "desc": "跟随镜头进入光影交错的城市，发现被时间掩藏的真相。",
+            "link": "#",
+            "btn_text": "立即播放",
+            "badge": "4K",
+            "badge_bg_color": "#2563eb"
+          },
+          {
+            "bg_image": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1920&q=85",
+            "poster_image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=85",
+            "title": "远方来信",
+            "title_color": "#ffffff",
+            "title_image": "",
+            "subtitle": "更新至 12 集",
+            "tags": "都市 / 情感",
+            "desc": "一封跨越多年才抵达的信，让几段人生重新产生交集。",
+            "link": "#",
+            "btn_text": "观看正片",
+            "badge": "热播",
+            "badge_bg_color": "#059669"
+          },
+          {
+            "bg_image": "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=1920&q=85",
+            "poster_image": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=600&q=85",
+            "title": "星海旅人",
+            "title_color": "#ffffff",
+            "title_image": "",
+            "subtitle": "全 24 集",
+            "tags": "动画 / 冒险",
+            "desc": "少年与伙伴穿越未知星域，在失落文明中寻找回家的方向。",
+            "link": "#",
+            "btn_text": "开始观看",
+            "badge": "动漫",
+            "badge_bg_color": "#2563eb"
+          },
+          {
+            "bg_image": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1920&q=85",
+            "poster_image": "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=600&q=85",
+            "title": "山河回响",
+            "title_color": "#ffffff",
+            "title_image": "",
+            "subtitle": "高清全集",
+            "tags": "纪录片 / 人文",
+            "desc": "从河流到群山，用真实影像记录土地、人物与时代的回声。",
+            "link": "#",
+            "btn_text": "查看详情",
+            "badge": "9.2 分",
+            "badge_bg_color": "#f59e0b"
+          }
+        ],
+        "bottom_cats": [
+          { "text": "电影", "link": "#", "badge": "热", "badge_color": "red", "badge_bg_color": "" },
+          { "text": "电视剧", "link": "#", "badge": "新", "badge_color": "orange", "badge_bg_color": "" },
+          { "text": "动漫", "link": "#", "badge": "", "badge_color": "blue", "badge_bg_color": "" },
+          { "text": "综艺", "link": "#", "badge": "", "badge_color": "blue", "badge_bg_color": "" }
+        ],
+        "bottom_icons": [],
+        "bottom_trends": [
+          { "text": "本周高分榜", "link": "#ranking", "info": "TOP 10" },
+          { "text": "最新上线", "link": "#", "info": "每日更新" }
+        ]
+      }
+    },
+    {
+      "type": "qiling_main_category_content",
+      "data": {
+        "target_category": "",
+        "category_match": "trending",
+        "custom_title": "正在热播",
+        "more_btn_text": "查看全部",
+        "enable_artplayer_data": "yes",
+        "show_episode_count": "yes",
+        "show_subcategories": "yes",
+        "post_count": "12",
+        "columns": "6",
+        "image_aspect_ratio": "2:3",
+        "bg_color": "#0d1019",
+        "padding_top": "64px",
+        "padding_bottom": "48px"
+      }
+    },
+    {
+      "type": "qiling_main_category_content",
+      "data": {
+        "target_category": "",
+        "category_match": "movie",
+        "custom_title": "最新电影",
+        "more_btn_text": "更多电影",
+        "enable_artplayer_data": "yes",
+        "show_episode_count": "no",
+        "show_subcategories": "yes",
+        "post_count": "12",
+        "columns": "6",
+        "image_aspect_ratio": "2:3",
+        "bg_color": "#090b12",
+        "padding_top": "48px",
+        "padding_bottom": "48px"
+      }
+    },
+    {
+      "type": "qiling_main_category_content",
+      "data": {
+        "target_category": "",
+        "category_match": "tv",
+        "custom_title": "热播剧集",
+        "more_btn_text": "更多剧集",
+        "enable_artplayer_data": "yes",
+        "show_episode_count": "yes",
+        "show_subcategories": "yes",
+        "post_count": "12",
+        "columns": "6",
+        "image_aspect_ratio": "2:3",
+        "bg_color": "#0d1019",
+        "padding_top": "48px",
+        "padding_bottom": "48px"
+      }
+    },
+    {
+      "type": "qiling_main_category_content",
+      "data": {
+        "target_category": "",
+        "category_match": "anime",
+        "custom_title": "热门动漫",
+        "more_btn_text": "更多动漫",
+        "enable_artplayer_data": "yes",
+        "show_episode_count": "yes",
+        "show_subcategories": "yes",
+        "post_count": "12",
+        "columns": "6",
+        "image_aspect_ratio": "2:3",
+        "bg_color": "#090b12",
+        "padding_top": "48px",
+        "padding_bottom": "64px"
+      }
+    },
+    {
+      "type": "qiling_video_ranking",
+      "data": {
+        "vr_title": "影视排行榜",
+        "vr_title_color": "#ffffff",
+        "vr_subtitle": "按真实发布、更新、评论和浏览数据生成",
+        "vr_subtitle_color": "#cbd5e1",
+        "vr_bg_color": "#090b12",
+        "vr_more_text": "查看全部",
+        "vr_more_url": "",
+        "vr_count": "10",
+        "vr_source": "latest",
+        "vr_category": "0",
+        "vr_manual_ids": "",
+        "vr_layout": "featured",
+        "vr_boards": [
+          { "label": "总榜", "category": "0", "source": "latest", "count": "10", "manual_ids": "" },
+          { "label": "电影榜", "category": "0", "category_match": "movie", "source": "comments", "count": "10", "manual_ids": "" },
+          { "label": "电视剧榜", "category": "0", "category_match": "tv", "source": "modified", "count": "10", "manual_ids": "" },
+          { "label": "动漫榜", "category": "0", "category_match": "anime", "source": "latest", "count": "10", "manual_ids": "" },
+          { "label": "综艺榜", "category": "0", "category_match": "variety", "source": "latest", "count": "10", "manual_ids": "" }
+        ],
+        "vr_show_rating": "yes",
+        "vr_show_quality": "yes",
+        "vr_show_episodes": "yes",
+        "vr_show_category": "yes",
+        "vr_show_date": "no",
+        "vr_show_views": "no"
+      }
+    },
+    {
+      "type": "tabbed_carousel",
+      "data": {
+        "tc_title": "精选专题",
+        "tc_subtitle": "从类型、创作者和主题出发，发现更多值得观看的内容",
+        "tc_items": [
+          {
+            "tab_title": "高分佳作",
+            "tab_icon": "★",
+            "image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=85",
+            "desc": "汇集口碑与评分表现突出的影视内容"
+          },
+          {
+            "tab_title": "经典回顾",
+            "tab_icon": "◉",
+            "image": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1400&q=85",
+            "desc": "重新发现那些经得住时间考验的作品"
+          },
+          {
+            "tab_title": "动画世界",
+            "tab_icon": "◇",
+            "image": "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=1400&q=85",
+            "desc": "进入充满想象力的动画与冒险世界"
+          }
+        ],
+        "tc_tab_color": "#94a3b8",
+        "tc_tab_active_color": "#ffffff",
+        "tc_tab_bar_color": "#2563eb",
+        "tc_effect": "coverflow",
+        "tc_autoplay": "1",
+        "tc_autoplay_delay": "4000",
+        "tc_image_width": "860px",
+        "tc_image_shadow": "strong",
+        "tc_slide_bg": "#111522",
+        "module_bg_type": "color",
+        "module_bg_color": "#0d1019",
+        "pt": "72px",
+        "pb": "88px"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "wide",
+        "qfs_variant": "cinema",
+        "qfs_brand_title": "启灵影视",
+        "qfs_brand_desc": "发现正在热播的电影、剧集、动漫与精选专题。持续更新优质影视内容，让每一次观看都有新的发现。",
+        "qfs_link_groups": [
+          {
+            "title": "服务支持",
+            "links": "播放帮助|#||意见反馈|#||版权投诉|#||内容合作|#"
+          }
+        ],
+        "qfs_link_columns": "1",
+        "qfs_contact_title": "平台说明",
+        "qfs_contact_items": "内容合作|欢迎优质影视内容合作||版权声明|本站内容信息由平台维护",
+        "qfs_social_title": "关注平台",
+        "qfs_social_links": "最新上线|#||本周热榜|#||精选专题|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 启灵影视 · 好内容，值得被看见",
+        "qfs_bottom_links": "用户协议|#||隐私政策|#||版权投诉|#",
+        "qfs_show_filings": "yes",
+        "qfs_bg": "#070910",
+        "qfs_text_color": "#e5e7eb",
+        "qfs_muted_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#059669",
+        "qfs_badge_bg": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.10)",
+        "module_padding_top": "72px",
+        "module_padding_bottom": "28px"
+      }
+    }
+  ]
+}

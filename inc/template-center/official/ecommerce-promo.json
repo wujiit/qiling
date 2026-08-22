@@ -1,0 +1,232 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "电商零售活动页",
+  "page_template": "templates/template-ecommerce-promo.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "ecommerce-promo",
+    "label": "电商零售活动页",
+    "category": "conversion",
+    "category_label": "落地页/转化",
+    "industry": "ecommerce",
+    "industry_label": "电商零售",
+    "scenario": "活动会场、爆款商品、下单转化",
+    "description": "适合电商大促、品牌零售、活动会场、新品促销和专题售卖页，内置活动首屏、商品专区、卖点、评价和 CTA。",
+    "badges": [
+      "电商大促",
+      "商品转化"
+    ],
+    "order": 221,
+    "thumbnail": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "电商大促页面模板 - 商品专区与活动转化",
+    "description": "适合电商促销和品牌零售活动的页面模板，包含大促首屏、商品卡片、优惠规则、用户评价、FAQ 和行动转化。",
+    "keywords": "电商大促,活动会场,商品促销,零售活动页,专题售卖",
+    "og_title": "电商零售活动页",
+    "og_description": "用商品图片、活动权益和 CTA 快速搭建电商大促会场。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #059669 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1800&q=80",
+            "title": "限时会场，爆款直降",
+            "subtitle": "精选好物、满减叠加、限量秒杀，适合品牌大促和专题售卖。",
+            "btn_text": "立即抢购",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#dc2626"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "1200",
+            "number": "1200+",
+            "label": "活动商品",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "60",
+            "number": "60%",
+            "label": "最高直降",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "24",
+            "number": "24h",
+            "label": "限时抢购",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "0",
+            "number": "包邮",
+            "label": "指定专区",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "爆款商品专区",
+        "products_subtitle": "可替换为真实商品、优惠价和购买链接",
+        "columns": "4",
+        "modal_inquire_text": "立即购买",
+        "modal_inquire_url": "#",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
+            "title": "旗舰耳机 Pro",
+            "desc": "主动降噪与长续航",
+            "specs": "活动价：¥799\n原价：¥1299\n限时立减500",
+            "post_id": "",
+            "btn_text": "立即购买"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
+            "title": "智能手表 X",
+            "desc": "健康监测与 NFC",
+            "specs": "活动价：¥999\n赠送表带\n爆款 5 折起",
+            "post_id": "",
+            "btn_text": "立即购买"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
+            "title": "轻薄笔记本 Air",
+            "desc": "轻办公与高效续航",
+            "specs": "活动价：¥4699\n16GB 内存\n券后再减300",
+            "post_id": "",
+            "btn_text": "立即购买"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+            "title": "运动鞋新品",
+            "desc": "轻量缓震与日常百搭",
+            "specs": "活动价：¥399\n第二件 8 折\n会员包邮",
+            "post_id": "",
+            "btn_text": "立即购买"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "活动权益",
+        "features_subtitle": "把优惠规则讲清楚，减少用户犹豫",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "限时直降",
+            "desc": "核心商品直接降价，价格信息清晰可见。"
+          },
+          {
+            "icon": "02",
+            "title": "满减叠加",
+            "desc": "跨品类满减、券包和会员权益可组合。"
+          },
+          {
+            "icon": "03",
+            "title": "快速发货",
+            "desc": "指定城市和仓库支持更快履约时效。"
+          },
+          {
+            "icon": "04",
+            "title": "售后无忧",
+            "desc": "活动商品同样支持退换和客服咨询。"
+          }
+        ],
+        "module_bg_color": "#fff7ed"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "买家反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "32,000+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "小周",
+            "position": "会员用户",
+            "content": "活动价格清楚，凑单规则也比较好理解。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "阿杰",
+            "position": "数码买家",
+            "content": "抢到耳机和手表，页面里的优惠入口很直接。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "Lily",
+            "position": "零售用户",
+            "content": "商品图和卖点展示比较完整，适合活动专题。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "活动常见问题",
+        "module_bg_color": "#fff7ed",
+        "faq_items": [
+          {
+            "question": "活动商品能换成真实商品吗？",
+            "answer": "可以，商品图片、价格、规格和按钮都可以在装修器中替换。"
+          },
+          {
+            "question": "能不能用于新品发布？",
+            "answer": "可以，把大促文案调整为新品卖点、首发权益和预约购买即可。"
+          },
+          {
+            "question": "是否能接商城链接？",
+            "answer": "可以，按钮链接可填写站内商品页、外部商城或表单入口。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把活动流量导向成交",
+        "cta_subtitle": "一屏说明权益，一屏展示商品，一键进入购买路径。",
+        "cta_button_text": "进入活动会场",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

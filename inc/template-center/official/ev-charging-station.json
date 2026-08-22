@@ -1,0 +1,319 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "充电桩/新能源充电运营官网",
+  "page_template": "templates/template-ev-charging-station.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "ev-charging-station",
+    "label": "充电桩/新能源充电运营官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "energy_environment",
+    "industry_label": "能源环保",
+    "scenario": "充电站招商、场地合作、设备方案、运营服务",
+    "description": "适合充电桩运营商、新能源补能服务商、园区/商超充电站建设、设备集成和场地合作招商官网，内置场站首屏、服务能力、合作流程、应用场景、资质背书、FAQ 和咨询入口。",
+    "badges": [
+      "新能源充电",
+      "场站合作",
+      "招商线索"
+    ],
+    "order": 681,
+    "thumbnail": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "充电桩运营官网模板 - 场站建设与合作招商",
+    "description": "适合充电桩运营商和新能源补能服务商的官网页面，包含场站方案、设备能力、合作流程、应用场景、资质背书、常见问题和咨询入口。",
+    "keywords": "充电桩官网,新能源充电站,充电桩运营,场站建设,场地合作,充电设备",
+    "og_title": "充电桩/新能源充电运营官网",
+    "og_description": "用场站方案、运营能力和合作入口快速搭建新能源充电服务官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "tech",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #042f2e 0%, #0f766e 48%, #22c55e 100%)",
+        "bb_title_mode": "text",
+        "bb_title": "让停车场变成稳定收益的<br><strong>新能源补能站点</strong>",
+        "bb_title_size_max": "72px",
+        "bb_subtitle": "充电桩运营与场站建设服务官网",
+        "bb_desc": "面向园区、商超、酒店、社区、物流基地和公共停车场，提供选址评估、设备部署、平台运营、运维巡检和收益分成方案。",
+        "bb_text_align": "left",
+        "bb_title_color": "#ffffff",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #bbf7d0 52%, #67e8f9 100%)",
+        "bb_text_color": "rgba(240,253,244,0.92)",
+        "bb_buttons": [
+          {
+            "text": "提交场地评估",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看建设方案",
+            "link": "#",
+            "style": "light",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "#22c55e",
+        "bb_primary_btn_text_color": "#052e16",
+        "bb_primary_btn_hover_bg_color": "#86efac",
+        "bb_primary_btn_hover_text_color": "#052e16",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#064e3b",
+        "bb_light_btn_hover_bg_color": "#dcfce7",
+        "bb_light_btn_hover_text_color": "#052e16",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "lifted",
+        "bb_media_radius": "12px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "0",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "用数据说明场站运营能力",
+        "stats_subtitle": "把已投运点位、平均响应、平台接入和运维覆盖放在首屏后，方便场地方快速判断合作价值。",
+        "stats_bg_type": "color",
+        "stats_bg_color": "linear-gradient(135deg, #064e3b 0%, #0f766e 100%)",
+        "stats_title_color": "#ffffff",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "300+",
+            "label": "合作充电点位"
+          },
+          {
+            "number": "7x24",
+            "label": "运维响应"
+          },
+          {
+            "number": "99.5%",
+            "label": "平台在线率"
+          },
+          {
+            "number": "15天",
+            "label": "最快部署周期"
+          }
+        ],
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "一站式充电场站服务",
+        "services_subtitle": "从场地评估到长期运营，减少业主、物业和运营方之间的信息差",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "场地评估",
+            "desc": "评估车流、人流、电容、动线、消防和收益模型，判断是否适合建设。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "设备部署",
+            "desc": "匹配快充、慢充、液冷超充和配电方案，完成施工协同。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "平台运营",
+            "desc": "接入小程序、支付、会员、优惠券、对账和订单管理能力。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "运维巡检",
+            "desc": "提供远程监控、故障响应、设备保养和运营数据复盘。",
+            "link": "#"
+          }
+        ],
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "场地合作流程",
+        "process_subtitle": "把从咨询到上线运营的关键节点讲清楚，降低招商和签约沟通成本",
+        "process_mode": "industrial",
+        "module_bg_type": "color",
+        "module_bg_color": "#f0fdf4",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "提交场地信息",
+            "desc": "提供位置、车位数量、用电条件、停车时长和业态类型。",
+            "stage_tag": "提交",
+            "deliverable": "场地信息表"
+          },
+          {
+            "icon": "02",
+            "title": "收益测算评估",
+            "desc": "结合客流、车流、周边补能密度和电价规则测算可行性。",
+            "stage_tag": "评估",
+            "deliverable": "测算报告"
+          },
+          {
+            "icon": "03",
+            "title": "方案设计施工",
+            "desc": "明确设备类型、施工范围、验收标准、平台接入和安全边界。",
+            "stage_tag": "建设",
+            "deliverable": "建设方案"
+          },
+          {
+            "icon": "04",
+            "title": "上线运营复盘",
+            "desc": "上线后持续关注使用率、故障率、用户反馈和活动转化。",
+            "stage_tag": "运营",
+            "deliverable": "运营月报"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "典型应用场景",
+        "cases_subtitle": "用场地类型和建设目标帮助客户快速对号入座",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80",
+            "title": "商超停车场快充站",
+            "desc": "提升停车场配套能力，联动餐饮、零售和会员权益。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=900&q=80",
+            "title": "园区员工慢充网络",
+            "desc": "满足员工长时停放补能需求，支持统一结算和权限管理。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80",
+            "title": "物流基地专用补能",
+            "desc": "围绕配送车辆、运营班次和峰谷电价设计专属充电方案。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "ch_title": "安全合规与资质背书",
+        "ch_subtitle": "展示施工、电气、安全、平台和运维相关资质，让场地方放心进入合作评估。",
+        "ch_columns": "3",
+        "ch_enable_filter": "yes",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "ch_items": [
+          {
+            "title": "充电设备检测报告",
+            "category": "设备合规",
+            "badge": "检测报告",
+            "cert_no": "EV-TEST-2026-001",
+            "issuer": "第三方检测机构",
+            "issue_date": "2026-01-18",
+            "expiry_date": "2029-01-17",
+            "file_url": "#"
+          },
+          {
+            "title": "电力施工合作资质",
+            "category": "施工资质",
+            "badge": "合作单位",
+            "cert_no": "POWER-2026-089",
+            "issuer": "施工合作单位",
+            "issue_date": "2026-03-05",
+            "expiry_date": "2029-03-04",
+            "file_url": "#"
+          },
+          {
+            "title": "平台数据安全承诺",
+            "category": "平台安全",
+            "badge": "运营规范",
+            "cert_no": "OPS-2026-021",
+            "issuer": "运营管理中心",
+            "issue_date": "2026-06-21",
+            "expiry_date": "",
+            "file_url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "充电站合作常见问题",
+        "faq_subtitle": "提前说明场地条件、建设周期、收益模式和运维边界，减少首次咨询反复确认。",
+        "faq_items": [
+          {
+            "question": "什么样的场地适合建设充电站？",
+            "answer": "通常需要稳定车流、合适停车时长、明确电容条件和可施工区域。商超、园区、酒店、社区、物流基地和公共停车场都可以先做初步评估。"
+          },
+          {
+            "question": "场地方需要承担哪些成本？",
+            "answer": "可按自投、联营、租赁或收益分成等方式设计。实际成本取决于电力容量、设备类型、施工范围和合作周期。"
+          },
+          {
+            "question": "从评估到上线通常需要多久？",
+            "answer": "资料齐全且电力条件明确时，小型场站可在数周内完成方案、施工和平台接入；复杂场站需要结合报装、施工和验收周期评估。"
+          },
+          {
+            "question": "上线后的故障和用户咨询谁处理？",
+            "answer": "模板默认按运营方负责平台监控、订单处理、设备巡检和故障响应，具体 SLA 与责任边界可在合作协议中明确。"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交场地合作评估",
+        "contact_subtitle": "填写场地位置、车位数量、电力条件、业态类型和联系方式，运营顾问会先判断建设可行性。",
+        "contact_phone": "400-520-2026",
+        "contact_email": "ev@example.com",
+        "contact_address": "支持远程评估 / 可预约现场勘察",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#f0fdf4"
+      }
+    }
+  ]
+}

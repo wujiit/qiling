@@ -1,0 +1,234 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "外贸/B2B 出海官网",
+  "page_template": "templates/template-foreign-trade-b2b.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "foreign-trade-b2b",
+    "label": "外贸/B2B 出海官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "b2b",
+    "industry_label": "B2B",
+    "scenario": "产品出海、询盘转化、全球交付",
+    "description": "适合外贸企业、跨境 B2B、出口工厂和全球供应商官网，内置产品优势、出口能力、合作流程、案例和询盘入口。",
+    "badges": [
+      "外贸出海",
+      "询盘转化"
+    ],
+    "order": 580,
+    "thumbnail": "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "外贸 B2B 官网模板 - 产品出海与询盘转化",
+    "description": "适合外贸企业和全球供应商的官网页面，包含产品优势、出口能力、交付流程、客户案例、FAQ 和询盘入口。",
+    "keywords": "外贸官网,B2B官网,出海官网,出口工厂,询盘转化",
+    "og_title": "外贸/B2B 出海官网",
+    "og_description": "用产品能力、出口服务和询盘入口快速搭建外贸 B2B 官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.6",
+        "db_title_prefix": "面向全球客户展示供应能力",
+        "db_typing_mode": "loop",
+        "db_typing_text": "多语言产品介绍与询盘转化\n出口资质、交期和包装标准展示\n从样品到批量订单的全球交付",
+        "db_highlight_color": "#99f6e4",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "适合出口工厂、跨境 B2B、品牌供应商和全球代理业务。",
+        "db_desc": "用清晰产品、可信资质和快速联系入口提升海外客户询盘质量。",
+        "db_text_color": "rgba(248,250,252,0.88)",
+        "db_buttons": [
+          {
+            "text": "Request a Quote",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "View Capabilities",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "出海服务能力",
+        "services_subtitle": "围绕产品、订单、物流和售后的外贸交付链路",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "产品目录",
+            "desc": "按品类、规格和应用场景组织产品信息。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "样品支持",
+            "desc": "提供样品、测试资料和包装建议。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "出口交付",
+            "desc": "配合贸易条款、报关资料和物流安排。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "售后协同",
+            "desc": "订单追踪、技术答疑和长期合作支持。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "全球业务数据",
+        "stats_subtitle": "用业务覆盖和交付表现增强海外客户信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "35+",
+            "label": "出口国家/地区"
+          },
+          {
+            "number": "7天",
+            "label": "样品交付周期"
+          },
+          {
+            "number": "96%",
+            "label": "订单准时出货率"
+          },
+          {
+            "number": "24h",
+            "label": "询盘响应时效"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "询盘到交付流程",
+        "process_subtitle": "让海外客户快速理解合作步骤",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "Inquiry",
+            "desc": "确认产品、数量、目标市场和交付条款。",
+            "stage_tag": "询盘"
+          },
+          {
+            "icon": "02",
+            "title": "Quotation",
+            "desc": "提供规格、价格、包装和交期建议。",
+            "stage_tag": "报价"
+          },
+          {
+            "icon": "03",
+            "title": "Sample",
+            "desc": "样品确认、测试资料和订单条款确认。",
+            "stage_tag": "样品"
+          },
+          {
+            "icon": "04",
+            "title": "Shipment",
+            "desc": "量产、质检、包装、出货和售后跟进。",
+            "stage_tag": "交付"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "全球合作案例",
+        "cases_subtitle": "展示出口市场、应用场景和交付价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80",
+            "title": "欧洲代理商年度供货",
+            "desc": "稳定产品规格、包装和备货节奏。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80",
+            "title": "北美工程客户定制",
+            "desc": "围绕项目参数完成样品和批量订单。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80",
+            "title": "东南亚渠道合作",
+            "desc": "配合渠道资料、售后支持和长期供货。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见询盘问题",
+        "faq_subtitle": "把客户下单前最关心的问题前置说明",
+        "faq_items": [
+          {
+            "question": "是否支持 OEM/ODM？",
+            "answer": "支持按图纸、样品、包装和品牌要求进行定制，具体以评估结果为准。"
+          },
+          {
+            "question": "可以提供哪些出口资料？",
+            "answer": "可根据订单需要提供装箱单、发票、检测报告和基础产品资料。"
+          },
+          {
+            "question": "最小起订量是多少？",
+            "answer": "不同产品的起订量不同，建议在询盘时说明型号、数量和目标市场。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "发送采购询盘",
+        "contact_subtitle": "提交产品型号、采购数量、目标国家和贸易条款，外贸顾问会尽快跟进。",
+        "contact_phone": "+86 400-900-2026",
+        "contact_email": "export@example.com",
+        "contact_address": "China Manufacturing Base",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

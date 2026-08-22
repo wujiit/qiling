@@ -1,0 +1,302 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "SaaS 行业官网",
+  "page_template": "templates/template-saas-home.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "saas-home",
+    "label": "SaaS 行业官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "saas",
+    "industry_label": "SaaS",
+    "scenario": "订阅产品、试用转化、客户成功",
+    "description": "适合 SaaS 产品、订阅服务、协作工具、客户成功平台和企业级在线软件官网，内置产品首屏、能力模块、应用场景、上线流程、套餐摘要、客户评价和转化入口。",
+    "badges": [
+      "SaaS",
+      "订阅产品"
+    ],
+    "order": 325,
+    "thumbnail": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "SaaS 行业官网模板 - 订阅产品与试用转化",
+    "description": "适合 SaaS 和订阅软件产品的官网页面，包含产品价值、核心能力、应用场景、上线流程、套餐摘要、客户评价和试用 CTA。",
+    "keywords": "SaaS官网,订阅软件,企业SaaS,协作工具,试用转化",
+    "og_title": "SaaS 行业官网",
+    "og_description": "用产品能力、客户场景和试用入口快速搭建 SaaS 行业官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
+            "title": "把团队增长装进一套在线系统",
+            "subtitle": "面向订阅产品、协作工具和企业 SaaS 的官网模板，清楚展示价值、场景、套餐和试用路径。",
+            "btn_text": "开始免费试用",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1d4ed8"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "99.9",
+            "number": "99.9%",
+            "label": "服务可用性",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "30",
+            "number": "30天",
+            "label": "试用周期",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "200",
+            "number": "200+",
+            "label": "客户团队",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "7x24",
+            "number": "7x24",
+            "label": "在线支持",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "SaaS 核心能力",
+        "features_subtitle": "围绕客户购买前最关心的问题组织信息",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "账户与权限",
+            "desc": "支持团队、角色、部门和项目维度的权限配置。"
+          },
+          {
+            "icon": "02",
+            "title": "流程自动化",
+            "desc": "把审批、提醒、分派和状态变更配置成标准流程。"
+          },
+          {
+            "icon": "03",
+            "title": "数据看板",
+            "desc": "集中展示使用数据、业务指标和团队效率变化。"
+          },
+          {
+            "icon": "04",
+            "title": "开放集成",
+            "desc": "通过 API、Webhook 和第三方插件连接现有系统。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "适用业务场景",
+        "services_subtitle": "让客户快速找到自己所在的使用场景",
+        "services_columns": "4",
+        "services_bg_color": "#f8fafc",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "销售团队",
+            "desc": "管理线索、客户、跟进节奏和成交预测。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "运营团队",
+            "desc": "沉淀任务流程、活动执行和复盘数据。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "客户成功",
+            "desc": "追踪客户健康度、续费风险和服务进度。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "管理驾驶舱",
+            "desc": "把核心指标、团队状态和异常提醒汇总呈现。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从试用到上线",
+        "process_subtitle": "SaaS 官网需要把低门槛试用和正式上线路径讲清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "创建试用账号",
+            "desc": "填写基础信息即可进入演示空间。",
+            "stage_tag": "试用"
+          },
+          {
+            "icon": "02",
+            "title": "导入示例数据",
+            "desc": "用样例数据理解流程、看板和权限。",
+            "stage_tag": "体验"
+          },
+          {
+            "icon": "03",
+            "title": "配置团队流程",
+            "desc": "按部门、角色和业务节点调整配置。",
+            "stage_tag": "配置"
+          },
+          {
+            "icon": "04",
+            "title": "正式上线运营",
+            "desc": "完成成员培训、数据迁移和客户成功交接。",
+            "stage_tag": "上线"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "订阅套餐摘要",
+        "pricing_subtitle": "先给客户一个清晰价格锚点，详细权益可继续编辑",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "启动版",
+            "price": "¥199",
+            "period": "/月",
+            "desc": "适合小团队试用",
+            "features": "5 个成员席位\n基础流程模板\n基础数据看板\n邮件支持",
+            "btn_text": "开始试用",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "增长版",
+            "price": "¥699",
+            "period": "/月",
+            "desc": "适合增长型团队",
+            "features": "30 个成员席位\n自动化流程\n高级权限\nAPI 集成\n在线优先支持",
+            "btn_text": "选择增长版",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)"
+          },
+          {
+            "name": "企业版",
+            "price": "联系销售",
+            "period": "",
+            "desc": "适合集团与定制部署",
+            "features": "不限成员席位\nSSO 与审计\n私有化部署选项\n专属客户成功\n定制集成",
+            "btn_text": "联系销售",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户怎么评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "860+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "运营负责人",
+            "position": "客户成功团队",
+            "content": "上线后，流程状态和客户风险比以前清楚很多。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "产品经理",
+            "position": "成长型 SaaS",
+            "content": "套餐、场景和试用入口放在一页里，转化路径更短。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "信息化主管",
+            "position": "集团企业",
+            "content": "权限和审计能力适合企业内部推广。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "SaaS 常见问题",
+        "faq_subtitle": "回答客户在试用、采购和上线前最常见的问题",
+        "faq_items": [
+          {
+            "question": "可以先试用再购买吗？",
+            "answer": "可以，试用期内可体验核心流程、权限和看板能力，正式购买后保留配置。"
+          },
+          {
+            "question": "是否支持企业内部系统集成？",
+            "answer": "可以通过 API、Webhook 或导入导出方式连接 CRM、工单、财务和数据系统。"
+          },
+          {
+            "question": "套餐和权益能改成自己的价格吗？",
+            "answer": "可以，价格、权益、按钮链接和套餐说明都可以在装修器中编辑。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "让客户从这一页开始试用",
+        "cta_subtitle": "替换成你的产品名称、核心场景和试用入口，就能快速搭建 SaaS 官网。",
+        "cta_button_text": "开始免费试用",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

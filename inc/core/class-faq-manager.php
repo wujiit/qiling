@@ -29,17 +29,17 @@ class FAQ_Manager {
      */
     public function register_post_type() {
         $labels = array(
-            'name'               => '常见问题',
-            'singular_name'      => '常见问题',
-            'menu_name'          => '常见问题',
-            'add_new'            => '添加问题',
-            'add_new_item'       => '添加新问题',
-            'edit_item'          => '编辑问题',
-            'new_item'           => '新问题',
-            'view_item'          => '查看问题',
-            'search_items'       => '搜索问题',
-            'not_found'          => '未找到问题',
-            'not_found_in_trash' => '回收站中无问题',
+            'name'               => __( '常见问题', 'developer-starter' ),
+            'singular_name'      => __( '常见问题', 'developer-starter' ),
+            'menu_name'          => __( '常见问题', 'developer-starter' ),
+            'add_new'            => __( '添加问题', 'developer-starter' ),
+            'add_new_item'       => __( '添加新问题', 'developer-starter' ),
+            'edit_item'          => __( '编辑问题', 'developer-starter' ),
+            'new_item'           => __( '新问题', 'developer-starter' ),
+            'view_item'          => __( '查看问题', 'developer-starter' ),
+            'search_items'       => __( '搜索问题', 'developer-starter' ),
+            'not_found'          => __( '未找到问题', 'developer-starter' ),
+            'not_found_in_trash' => __( '回收站中无问题', 'developer-starter' ),
         );
 
         $args = array(
@@ -63,17 +63,17 @@ class FAQ_Manager {
      */
     public function register_taxonomy() {
         $labels = array(
-            'name'              => '问题分类',
-            'singular_name'     => '问题分类',
-            'search_items'      => '搜索分类',
-            'all_items'         => '所有分类',
-            'parent_item'       => '父分类',
-            'parent_item_colon' => '父分类:',
-            'edit_item'         => '编辑分类',
-            'update_item'       => '更新分类',
-            'add_new_item'      => '添加新分类',
-            'new_item_name'     => '新分类名称',
-            'menu_name'         => '问题分类',
+            'name'              => __( '问题分类', 'developer-starter' ),
+            'singular_name'     => __( '问题分类', 'developer-starter' ),
+            'search_items'      => __( '搜索分类', 'developer-starter' ),
+            'all_items'         => __( '所有分类', 'developer-starter' ),
+            'parent_item'       => __( '父分类', 'developer-starter' ),
+            'parent_item_colon' => __( '父分类:', 'developer-starter' ),
+            'edit_item'         => __( '编辑分类', 'developer-starter' ),
+            'update_item'       => __( '更新分类', 'developer-starter' ),
+            'add_new_item'      => __( '添加新分类', 'developer-starter' ),
+            'new_item_name'     => __( '新分类名称', 'developer-starter' ),
+            'menu_name'         => __( '问题分类', 'developer-starter' ),
         );
 
         $args = array(
@@ -94,7 +94,7 @@ class FAQ_Manager {
     public function add_meta_boxes() {
         add_meta_box(
             'faq_document_meta',
-            '文档信息',
+            __( '文档信息', 'developer-starter' ),
             array( $this, 'render_meta_box' ),
             'ds_faq',
             'normal',
@@ -124,44 +124,44 @@ class FAQ_Manager {
         </style>
         <table class="faq-meta-table">
             <tr>
-                <th>排序</th>
+                <th><?php esc_html_e( '排序', 'developer-starter' ); ?></th>
                 <td>
                     <input type="number" name="faq_order" value="<?php echo esc_attr( $faq_order ? $faq_order : '0' ); ?>" style="width: 80px;" min="0" />
-                    <p class="faq-meta-desc">数字越大越靠前显示，默认为0</p>
+                    <p class="faq-meta-desc"><?php esc_html_e( '数字越大越靠前显示，默认为0', 'developer-starter' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th>文档名称</th>
+                <th><?php esc_html_e( '文档名称', 'developer-starter' ); ?></th>
                 <td>
-                    <input type="text" name="faq_doc_name" value="<?php echo esc_attr( $doc_name ); ?>" placeholder="例如：产品使用手册" />
-                    <p class="faq-meta-desc">可选，留空则不显示文档下载</p>
+                    <input type="text" name="faq_doc_name" value="<?php echo esc_attr( $doc_name ); ?>" placeholder="<?php esc_attr_e( '例如：产品使用手册', 'developer-starter' ); ?>" />
+                    <p class="faq-meta-desc"><?php esc_html_e( '可选，留空则不显示文档下载', 'developer-starter' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th>文档格式</th>
+                <th><?php esc_html_e( '文档格式', 'developer-starter' ); ?></th>
                 <td>
                     <select name="faq_doc_format">
-                        <option value="">-- 选择格式 --</option>
+                        <option value=""><?php esc_html_e( '-- 选择格式 --', 'developer-starter' ); ?></option>
                         <option value="pdf" <?php selected( $doc_format, 'pdf' ); ?>>PDF</option>
                         <option value="word" <?php selected( $doc_format, 'word' ); ?>>Word</option>
                         <option value="excel" <?php selected( $doc_format, 'excel' ); ?>>Excel</option>
                         <option value="ppt" <?php selected( $doc_format, 'ppt' ); ?>>PPT</option>
                         <option value="zip" <?php selected( $doc_format, 'zip' ); ?>>ZIP</option>
-                        <option value="other" <?php selected( $doc_format, 'other' ); ?>>其他</option>
+                        <option value="other" <?php selected( $doc_format, 'other' ); ?>><?php esc_html_e( '其他', 'developer-starter' ); ?></option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <th>文档大小</th>
+                <th><?php esc_html_e( '文档大小', 'developer-starter' ); ?></th>
                 <td>
-                    <input type="text" name="faq_doc_size" value="<?php echo esc_attr( $doc_size ); ?>" placeholder="例如：2.5MB" style="width: 150px;" />
+                    <input type="text" name="faq_doc_size" value="<?php echo esc_attr( $doc_size ); ?>" placeholder="<?php esc_attr_e( '例如：2.5MB', 'developer-starter' ); ?>" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
-                <th>下载链接</th>
+                <th><?php esc_html_e( '下载链接', 'developer-starter' ); ?></th>
                 <td>
                     <input type="text" name="faq_doc_url" value="<?php echo esc_attr( $doc_url ); ?>" placeholder="https://..." />
-                    <p class="faq-meta-desc">文档下载地址，可使用媒体库链接或外部链接</p>
+                    <p class="faq-meta-desc"><?php esc_html_e( '文档下载地址，可使用媒体库链接或外部链接', 'developer-starter' ); ?></p>
                 </td>
             </tr>
         </table>
@@ -172,8 +172,8 @@ class FAQ_Manager {
      * 保存 Meta 数据
      */
     public function save_meta( $post_id ) {
-        if ( ! isset( $_POST['faq_document_nonce'] ) || 
-             ! wp_verify_nonce( $_POST['faq_document_nonce'], 'faq_document_meta' ) ) {
+        $nonce = isset( $_POST['faq_document_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['faq_document_nonce'] ) ) : '';
+        if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'faq_document_meta' ) ) {
             return;
         }
 
@@ -195,7 +195,7 @@ class FAQ_Manager {
 
         foreach ( $fields as $post_field => $meta_key ) {
             if ( isset( $_POST[ $post_field ] ) ) {
-                $value = sanitize_text_field( $_POST[ $post_field ] );
+                $value = sanitize_text_field( wp_unslash( $_POST[ $post_field ] ) );
                 update_post_meta( $post_id, $meta_key, $value );
             }
         }

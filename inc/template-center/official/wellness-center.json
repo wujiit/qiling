@@ -1,0 +1,287 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "康养中心官网",
+  "page_template": "templates/template-wellness-center.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "wellness-center",
+    "label": "康养中心官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "wellness",
+    "industry_label": "康养",
+    "scenario": "健康评估、康复理疗、预约咨询",
+    "description": "适合康养中心、中医调理、康复理疗、睡眠管理和营养干预机构，内置服务、专家、套餐、流程和预约入口。",
+    "badges": [
+      "健康评估",
+      "康复理疗"
+    ],
+    "order": 541,
+    "thumbnail": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "康养中心官网模板 - 健康评估与预约咨询",
+    "description": "适合康养中心和康复理疗机构的官网页面，包含服务项目、专家团队、套餐参考、服务流程、用户反馈和预约入口。",
+    "keywords": "康养中心官网,康复理疗,中医调理,健康评估,睡眠管理",
+    "og_title": "康养中心官网",
+    "og_description": "用康养服务、专家团队和评估预约快速搭建康养机构官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #14532d 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80",
+            "title": "从一次评估开始管理长期健康",
+            "subtitle": "中医调理、康复理疗、睡眠管理与营养干预，形成持续跟踪服务。",
+            "btn_text": "预约健康评估",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "15",
+            "number": "15年+",
+            "label": "康养经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "40",
+            "number": "40+",
+            "label": "医护顾问",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "3",
+            "number": "3家",
+            "label": "服务中心",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "用户评价",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "核心康养服务",
+        "services_subtitle": "围绕评估、干预、复评形成长期健康管理闭环",
+        "services_columns": "4",
+        "services_bg_color": "#ffffff",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "中医调理",
+            "desc": "体质辨识、亚健康调理与周期性干预。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "康复理疗",
+            "desc": "颈肩腰腿痛、术后康复与功能训练支持。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "营养管理",
+            "desc": "按健康目标制定饮食建议与执行计划。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "睡眠干预",
+            "desc": "睡眠评估、行为调整与习惯建立方案。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "康养专家团队",
+        "team_subtitle": "多学科协作，提供更稳定的长期健康管理体验",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+            "name": "孙医生",
+            "position": "康复医学主任",
+            "desc": "擅长运动损伤康复与慢性疼痛管理。",
+            "email": "wellness1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
+            "name": "李医师",
+            "position": "中医调理师",
+            "desc": "长期服务亚健康与体质调理人群。",
+            "email": "wellness2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
+            "name": "郑营养师",
+            "position": "营养管理顾问",
+            "desc": "聚焦体重管理与慢病膳食干预。",
+            "email": "wellness3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#f0fdfa"
+      }
+    },
+    {
+      "type": "menu",
+      "data": {
+        "menu_title": "康养套餐参考",
+        "menu_subtitle": "可按门店实际项目、周期和服务人群调整",
+        "menu_layout": "grid",
+        "menu_accent_color": "#0f766e",
+        "menu_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80",
+            "title": "基础评估包",
+            "desc": "体态/睡眠/饮食初评与报告解读",
+            "price": "¥299",
+            "badge": "新客推荐",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80",
+            "title": "康复理疗包",
+            "desc": "理疗、训练指导和周度复盘",
+            "price": "¥1680起",
+            "badge": "热门",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80",
+            "title": "中医调理月度包",
+            "desc": "辨证调理与周期跟踪建议",
+            "price": "¥1280起",
+            "badge": "慢病管理",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1499728603263-13726abce5fd?auto=format&fit=crop&w=900&q=80",
+            "title": "睡眠修复计划",
+            "desc": "睡眠干预、行为训练和持续反馈",
+            "price": "¥980起",
+            "badge": "周期方案",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "服务流程",
+        "process_subtitle": "从初评到复评，全流程可视化管理",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "健康评估",
+            "desc": "收集身体状态、作息与目标，建立个人档案。",
+            "stage_tag": "初评"
+          },
+          {
+            "icon": "02",
+            "title": "方案制定",
+            "desc": "由医师与顾问联合输出康养干预计划。",
+            "stage_tag": "计划"
+          },
+          {
+            "icon": "03",
+            "title": "执行干预",
+            "desc": "按周执行理疗、训练和营养建议。",
+            "stage_tag": "执行"
+          },
+          {
+            "icon": "04",
+            "title": "阶段复评",
+            "desc": "评估效果并迭代下一阶段健康目标。",
+            "stage_tag": "复评"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "用户反馈",
+        "testimonials_subtitle": "长期康养效果来自持续执行与专业跟踪",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "2,300+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "陈女士",
+            "position": "睡眠管理用户",
+            "content": "执行两个月后入睡更稳定，白天精神状态改善明显。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林先生",
+            "position": "康复理疗用户",
+            "content": "腰背不适缓解明显，训练动作也有人持续纠正。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "吴女士",
+            "position": "营养管理用户",
+            "content": "饮食方案可执行性强，体重和作息都更可控。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约健康评估",
+        "booking_subtitle": "提交健康目标、主要困扰和期望时间，康养顾问会联系确认到店评估安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约须知",
+        "sidebar_content": "请在表单里描述主要困扰和健康目标\n如有检查报告可到店携带\n首次评估建议预留 60 分钟",
+        "contact_phone": "400-320-2026",
+        "contact_hours": "09:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

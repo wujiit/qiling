@@ -27,9 +27,15 @@ class Menu_Protector {
     public function __construct() {
         // 删除页面/文章前的钩子
         add_action( 'before_delete_post', array( $this, 'protect_menu_on_post_delete' ), 10, 1 );
+        // 页面/文章移入回收站时也要保护（用户常见操作）
+        add_action( 'wp_trash_post', array( $this, 'protect_menu_on_post_delete' ), 10, 1 );
         
         // 删除分类/标签前的钩子
         add_action( 'pre_delete_term', array( $this, 'protect_menu_on_term_delete' ), 10, 2 );
+
+        if ( (bool) apply_filters( 'developer_starter_enable_menu_history_repair', false ) ) {
+            add_action( 'admin_init', array( $this, 'maybe_repair_invalid_menu_items' ), 20 );
+        }
         
         // 过滤菜单项，添加标记类
         add_filter( 'nav_menu_css_class', array( $this, 'add_menu_item_classes' ), 10, 4 );
@@ -59,7 +65,7 @@ class Menu_Protector {
         
         // 将每个菜单项转换为自定义链接
         foreach ( $menu_items as $menu_item ) {
-            $this->convert_to_custom_link( $menu_item, $post->post_title, get_permalink( $post_id ) );
+            $this->convert_to_custom_link( $menu_item, $post->post_title, '#' );
         }
     }
 
@@ -83,16 +89,82 @@ class Menu_Protector {
             return;
         }
         
-        // 保存原始链接
-        $term_link = get_term_link( $term );
-        if ( is_wp_error( $term_link ) ) {
-            $term_link = '#';
-        }
-        
         // 将每个菜单项转换为自定义链接
         foreach ( $menu_items as $menu_item ) {
-            $this->convert_to_custom_link( $menu_item, $term->name, $term_link );
+            $this->convert_to_custom_link( $menu_item, $term->name, '#' );
         }
+    }
+
+    /**
+     * 修复历史遗留的无效菜单项
+     *
+     * 场景：
+     * - 菜单引用的页面已被删除/回收站，导致父级项被前台过滤掉，子级错位。
+     * - 将这类菜单项转为自定义链接 #，保留层级结构与显示标题。
+     *
+     * @return void
+     */
+    public function maybe_repair_invalid_menu_items() {
+        $cache_key = 'ds_menu_protector_repair_done';
+        if ( get_transient( $cache_key ) ) {
+            return;
+        }
+
+        $menu_items = get_posts(
+            array(
+                'post_type'      => 'nav_menu_item',
+                'post_status'    => 'publish',
+                'posts_per_page' => -1,
+                'fields'         => 'all',
+                'no_found_rows'  => true,
+            )
+        );
+
+        if ( empty( $menu_items ) ) {
+            set_transient( $cache_key, '1', 10 * MINUTE_IN_SECONDS );
+            return;
+        }
+
+        foreach ( $menu_items as $menu_item ) {
+            if ( ! $menu_item instanceof \WP_Post ) {
+                continue;
+            }
+
+            $item_type = (string) get_post_meta( $menu_item->ID, '_menu_item_type', true );
+            if ( 'post_type' !== $item_type && 'taxonomy' !== $item_type ) {
+                continue;
+            }
+
+            $object_id = (int) get_post_meta( $menu_item->ID, '_menu_item_object_id', true );
+            if ( $object_id <= 0 ) {
+                continue;
+            }
+
+            $title = (string) $menu_item->post_title;
+            if ( '' === $title ) {
+                $title = __( '未命名菜单', 'developer-starter' );
+            }
+
+            if ( 'post_type' === $item_type ) {
+                $target_post = get_post( $object_id );
+                if ( ! $target_post instanceof \WP_Post || 'publish' !== $target_post->post_status ) {
+                    $this->convert_to_custom_link( $menu_item, $title, '#' );
+                }
+                continue;
+            }
+
+            $taxonomy = (string) get_post_meta( $menu_item->ID, '_menu_item_object', true );
+            if ( '' === $taxonomy ) {
+                continue;
+            }
+
+            $target_term = get_term( $object_id, $taxonomy );
+            if ( ! $target_term || is_wp_error( $target_term ) ) {
+                $this->convert_to_custom_link( $menu_item, $title, '#' );
+            }
+        }
+
+        set_transient( $cache_key, '1', 10 * MINUTE_IN_SECONDS );
     }
 
     /**
@@ -163,6 +235,11 @@ class Menu_Protector {
      * @param string  $url       URL
      */
     private function convert_to_custom_link( $menu_item, $title, $url ) {
+        $url = trim( (string) $url );
+        if ( '' === $url ) {
+            $url = '#';
+        }
+
         // 更新菜单项类型为自定义链接
         update_post_meta( $menu_item->ID, '_menu_item_type', 'custom' );
         update_post_meta( $menu_item->ID, '_menu_item_object', 'custom' );
@@ -213,16 +290,13 @@ class Menu_Protector {
         $is_deleted = get_post_meta( $item->ID, '_menu_item_deleted_content', true );
         
         if ( $is_deleted ) {
-            // 检查原URL是否仍然有效（可能内容被恢复了）
-            $url = isset( $atts['href'] ) ? $atts['href'] : '';
-            
-            // 如果URL无效或返回404，可以将其改为 # 或保持原样
-            // 这里我们保持原URL，让用户可以在后台修改
+            // 删除对象保留占位，避免点击到无效链接。
+            $atts['href'] = '#';
             
             // 添加提示属性
             $atts['title'] = isset( $atts['title'] ) ? $atts['title'] : '';
             if ( current_user_can( 'edit_theme_options' ) ) {
-                $atts['title'] .= ' (原内容已删除)';
+                $atts['title'] .= ' ' . __( '(原内容已删除)', 'developer-starter' );
             }
         }
         

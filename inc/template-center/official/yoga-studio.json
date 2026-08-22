@@ -1,0 +1,270 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "瑜伽馆官网",
+  "page_template": "templates/template-yoga-studio.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "beauty_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "yoga-studio",
+    "label": "瑜伽馆官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "wellness",
+    "industry_label": "康养",
+    "scenario": "瑜伽课程、导师团队、体验预约",
+    "description": "适合瑜伽馆、普拉提馆、身心疗愈工作室和女性健康空间，突出课程体验和导师信任感。",
+    "badges": [
+      "课程预约",
+      "导师展示"
+    ],
+    "order": 462,
+    "thumbnail": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "瑜伽馆官网模板 - 课程预约与导师展示",
+    "description": "适合瑜伽馆和普拉提工作室的官网页面，包含课程项目、导师团队、课程安排、会员套餐和预约入口。",
+    "keywords": "瑜伽馆官网,普拉提,瑜伽课程,体验预约",
+    "og_title": "瑜伽馆官网",
+    "og_description": "适合瑜伽与身心疗愈空间的图片版官网模板。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1800&q=80",
+            "title": "在呼吸里找回身体的秩序",
+            "subtitle": "瑜伽、普拉提、冥想和身心疗愈课程，支持在线预约体验。",
+            "btn_text": "预约体验课",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "32",
+            "number": "32+",
+            "label": "每周课程",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "12",
+            "number": "12+",
+            "label": "认证导师",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "1800",
+            "number": "1800+",
+            "label": "会员练习",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "体验评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "身心课程",
+        "services_subtitle": "从初学入门到进阶练习，按身体状态选择课程",
+        "services_bg_color": "#ecfdf5",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "哈他瑜伽",
+            "desc": "基础体式、呼吸和稳定练习。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "流瑜伽",
+            "desc": "节奏连贯，提升力量和柔韧。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "普拉提",
+            "desc": "核心控制、体态改善和线条管理。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "冥想疗愈",
+            "desc": "放松压力，建立长期练习习惯。",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "curriculum",
+      "data": {
+        "curriculum_title": "本周课程",
+        "curriculum_subtitle": "可替换为门店真实课表和导师安排",
+        "curriculum_bg_color": "#ffffff",
+        "curriculum_primary_color": "#0f766e",
+        "curriculum_items": [
+          {
+            "title": "周二：晨间哈他",
+            "meta": "08:30 - 09:30 | Nina",
+            "content": "<p>适合初学者，用稳定节奏唤醒身体。</p>",
+            "open": "yes"
+          },
+          {
+            "title": "周四：普拉提核心",
+            "meta": "19:30 - 20:30 | Emma",
+            "content": "<p>核心控制和体态改善课程，适合久坐人群。</p>",
+            "open": "no"
+          },
+          {
+            "title": "周日：冥想放松",
+            "meta": "16:00 - 17:00 | Zoe",
+            "content": "<p>呼吸、伸展和静坐练习，帮助恢复能量。</p>",
+            "open": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "导师团队",
+        "team_subtitle": "每位导师都有清晰的课程方向和陪伴方式",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80",
+            "name": "Nina",
+            "position": "哈他瑜伽导师",
+            "desc": "擅长初学者引导与呼吸控制。",
+            "email": "yoga1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+            "name": "Emma",
+            "position": "普拉提导师",
+            "desc": "专注核心训练和体态改善。",
+            "email": "yoga2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+            "name": "Zoe",
+            "position": "冥想导师",
+            "desc": "擅长压力管理与身心疗愈课程。",
+            "email": "yoga3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#f0fdfa"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "练习空间",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=900&q=80",
+            "title": "晨间练习",
+            "desc": "自然光空间",
+            "category": "课程"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80",
+            "title": "冥想课堂",
+            "desc": "放松练习",
+            "category": "课程"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=900&q=80",
+            "title": "瑜伽空间",
+            "desc": "安静舒适",
+            "category": "空间"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "课程套餐",
+        "pricing_subtitle": "按练习频率选择合适的会员方式",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "体验课",
+            "price": "¥39",
+            "period": "/次",
+            "desc": "新客体验",
+            "features": "1 次体验课\n导师评估\n课程建议",
+            "btn_text": "预约体验",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "月卡",
+            "price": "¥599",
+            "period": "/月",
+            "desc": "规律练习",
+            "features": "团课预约\n每周 3 次\n会员活动",
+            "btn_text": "咨询月卡",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "热门"
+          },
+          {
+            "name": "私教课",
+            "price": "¥2999",
+            "period": "/10节",
+            "desc": "一对一练习",
+            "features": "体态评估\n定制计划\n阶段复盘",
+            "btn_text": "咨询私教",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约体验课",
+        "booking_subtitle": "提交练习目标、身体情况和可到馆时间，顾问会推荐合适课程。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "体验提醒",
+        "sidebar_content": "建议提前 10 分钟到馆\n穿着舒适运动服\n如有孕产、伤病或康复需求请在表单里说明",
+        "contact_phone": "400-880-2026",
+        "contact_hours": "08:00-21:30",
+        "module_bg_image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "APP 下载落地页",
+  "page_template": "templates/template-app-download-landing.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "app-download-landing",
+    "label": "APP 下载落地页",
+    "category": "conversion",
+    "category_label": "落地页/转化",
+    "industry": "app",
+    "industry_label": "APP",
+    "scenario": "应用介绍、下载引导、功能转化",
+    "description": "适合移动应用、工具 App、SaaS 客户端、会员应用和活动下载页，内置应用首屏、功能卖点、截图、评价和下载 CTA。",
+    "badges": [
+      "下载转化",
+      "移动应用"
+    ],
+    "order": 261,
+    "thumbnail": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "APP 下载落地页模板 - 应用介绍与下载转化",
+    "description": "适合移动应用和工具 App 的下载落地页，包含应用首屏、下载按钮、功能介绍、界面截图、用户评价和 FAQ。",
+    "keywords": "APP下载页,应用落地页,移动应用推广,下载转化,App Store",
+    "og_title": "APP 下载落地页",
+    "og_description": "用应用截图、功能卖点和下载按钮快速搭建 APP 推广页。"
+  },
+  "modules": [
+    {
+      "type": "app_hero",
+      "data": {
+        "hero_title": "把高频任务装进手机里",
+        "hero_desc": "适用于应用下载推广场景，支持 iOS / Android 双端引导、二维码直达和多卖点展示。",
+        "hero_buttons": [
+          {
+            "btn_type": "apple",
+            "btn_text": "App Store",
+            "btn_subtext": "Download on the",
+            "btn_link": "#",
+            "btn_style": "light"
+          },
+          {
+            "btn_type": "android",
+            "btn_text": "Google Play",
+            "btn_subtext": "GET IT ON",
+            "btn_link": "#",
+            "btn_style": "dark"
+          }
+        ],
+        "show_qr_card": "1",
+        "qr_icon": "APP",
+        "qr_sub": "扫码下载",
+        "qr_title": "手机快速安装",
+        "qr_desc": "免手动搜索，扫码即可直达下载页",
+        "qr_image": "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=600&q=80",
+        "media_type": "image",
+        "hero_image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+        "bg_type": "color",
+        "bg_color": "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #38bdf8 100%)",
+        "padding_top": "100px",
+        "padding_bottom": "100px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "核心功能",
+        "features_subtitle": "用清晰卖点解释为什么值得下载",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "智能首页",
+            "desc": "关键数据、待办和提醒在首页集中呈现。"
+          },
+          {
+            "icon": "02",
+            "title": "离线可用",
+            "desc": "弱网环境下也能继续处理核心任务。"
+          },
+          {
+            "icon": "03",
+            "title": "消息中心",
+            "desc": "重要通知、订单、进度和提醒不错过。"
+          },
+          {
+            "icon": "04",
+            "title": "多端同步",
+            "desc": "手机、网页和客户端数据保持一致。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "应用界面",
+        "gallery_subtitle": "展示关键页面，降低下载前的不确定感",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "enable_filter": "yes",
+        "filter_categories": "首页,任务,数据",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80",
+            "title": "智能首页",
+            "desc": "关键入口集中",
+            "category": "首页"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80",
+            "title": "任务看板",
+            "desc": "进度清晰",
+            "category": "任务"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+            "title": "数据概览",
+            "desc": "状态可视化",
+            "category": "数据"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "应用增长数据",
+        "stats_subtitle": "用真实运营指标强化下载信心",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "300万+",
+            "label": "累计用户"
+          },
+          {
+            "number": "4.8",
+            "label": "应用评分"
+          },
+          {
+            "number": "99.9%",
+            "label": "服务可用性"
+          },
+          {
+            "number": "12",
+            "label": "核心场景"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#eff6ff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "用户评价",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "86,000+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "Mia",
+            "position": "日常用户",
+            "content": "首页信息很集中，常用功能不用来回找。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "Allen",
+            "position": "团队管理员",
+            "content": "消息提醒和多端同步让协作顺很多。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "Nina",
+            "position": "会员用户",
+            "content": "扫码下载入口明显，活动页转化路径很短。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "现在下载，立即开始使用",
+        "cta_subtitle": "把高频任务、消息提醒和数据看板放进手机里。",
+        "cta_button_text": "立即下载",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

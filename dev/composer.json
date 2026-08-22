@@ -1,0 +1,36 @@
+{
+    "name": "summer/qiling-theme",
+    "description": "Development tooling and static analysis for the Qi Ling WordPress theme.",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "php-parallel-lint/php-parallel-lint": "^1.4",
+        "php-stubs/wordpress-stubs": "^6.8",
+        "phpstan/phpstan": "^1.12",
+        "szepeviktor/phpstan-wordpress": "^1.4",
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.0"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint:php:syntax": "parallel-lint .. --exclude ../dev/vendor --exclude ../dev/node_modules --exclude ../dist --exclude ../inc/vendor --exclude ../sms/vendor --exclude ../assets --exclude ../docs --exclude ../languages --exclude ../translate",
+        "lint:php": "phpcs --standard=phpcs.xml.dist",
+        "analyse:php": "phpstan analyse --configuration=phpstan.neon.dist --memory-limit=1G",
+        "analyse:php:baseline": "phpstan analyse --configuration=phpstan.neon.dist --memory-limit=1G --generate-baseline=phpstan-baseline.neon",
+        "check": [
+            "@lint:php:syntax",
+            "@lint:php",
+            "@analyse:php"
+        ]
+    }
+}

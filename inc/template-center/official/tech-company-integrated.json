@@ -1,0 +1,306 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "科技公司官网（一体式）",
+  "page_template": "templates/template-tech-company-integrated.php",
+  "visual_skin": "tech_canvas",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "tech_canvas"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "footer": {
+    "mode": "page_skin",
+    "wave": "on",
+    "preset": "tech_canvas",
+    "inherit_skin_colors": true
+  },
+  "metadata": {
+    "id": "tech-company-integrated",
+    "label": "科技公司官网（一体式）",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "technology",
+    "industry_label": "科技公司",
+    "scenario": "AI、云计算、数据平台、企业软件、研发服务和技术咨询官网",
+    "description": "适合科技公司、AI 团队、云服务商、数据平台和研发服务公司，用一张连续画布展示品牌定位、核心能力、解决方案、交付流程、合作方式、FAQ 和咨询入口。",
+    "badges": [
+      "一体式视觉",
+      "科技公司",
+      "产品官网"
+    ],
+    "order": 386,
+    "visual_skin": "tech_canvas",
+    "layout_system": "integrated_canvas",
+    "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "科技公司官网（一体式）模板 - AI、云计算与数据平台展示",
+    "description": "适合科技公司、AI 团队、云服务商、数据平台和研发服务公司，用连续画布组织首屏、能力矩阵、方案入口、交付流程、合作套餐、FAQ 和转化入口。",
+    "keywords": "科技公司官网,AI官网,云计算官网,数据平台官网,企业软件官网,一体式官网",
+    "og_title": "科技公司官网（一体式）",
+    "og_description": "用一体式连续画布搭建科技公司官网，让复杂技术能力更容易被客户理解。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "minimal",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)",
+        "bb_title": "用一张连续画布<br><strong>讲清科技公司的能力与信任</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#25365f",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #25365f 0%, #4f7dff 52%, #38c9a6 100%)",
+        "bb_subtitle": "科技公司一体式官网",
+        "bb_desc": "适合 AI、云计算、数据平台和企业软件团队，把产品价值、技术能力、解决方案、交付路径和咨询转化压缩到一页里讲清楚。",
+        "bb_text_color": "#667085",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "预约方案演示",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看能力组合",
+            "link": "#solutions",
+            "style": "light",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "#4f7dff",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#345eea",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#25365f",
+        "bb_light_btn_hover_bg_color": "#edf6ff",
+        "bb_light_btn_hover_text_color": "#4f7dff",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "lifted",
+        "bb_media_radius": "24px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "0",
+        "bb_padding_top": "112px",
+        "bb_padding_bottom": "92px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "科技公司官网常用模块组合",
+        "features_subtitle": "从品牌定位到咨询转化，按 B2B 技术客户的阅读路径组织页面",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "transparent",
+        "features_card_style": "border",
+        "features_card_radius": "18px",
+        "features_icon_style": "square",
+        "features_icon_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "首屏价值主张",
+            "desc": "用一句话说明公司定位、核心客户、关键价值和下一步动作。"
+          },
+          {
+            "icon": "02",
+            "title": "能力矩阵",
+            "desc": "把 AI、云原生、数据、集成、安全和运维能力拆成可扫描卡片。"
+          },
+          {
+            "icon": "03",
+            "title": "交付流程",
+            "desc": "解释从需求诊断、原型验证到开发集成、上线运维的项目路径。"
+          },
+          {
+            "icon": "04",
+            "title": "咨询转化",
+            "desc": "把预约演示、方案沟通、合作方式和常见问题集中到一条路径。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "service_cards",
+      "data": {
+        "sc_bg_color": "transparent",
+        "sc_padding": "60",
+        "sc_columns": "4",
+        "sc_gap": "22px",
+        "sc_card_bg": "rgba(255, 255, 255, 0.78)",
+        "sc_card_radius": "18px",
+        "sc_card_shadow": "medium",
+        "sc_card_border": "1px solid rgba(79, 125, 255, 0.14)",
+        "sc_icon_size": "48px",
+        "sc_icon_bg": "linear-gradient(135deg, #25365f 0%, #4f7dff 100%)",
+        "sc_icon_radius": "14px",
+        "sc_title_color": "#25365f",
+        "sc_badge_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)",
+        "sc_desc_color": "#667085",
+        "sc_cards": [
+          {
+            "icon": "AI",
+            "icon_image": "",
+            "title": "AI 应用落地",
+            "badge": "Hot",
+            "description": "企业知识库、智能客服、流程 Agent、内容生成和业务助手。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "云",
+            "icon_image": "",
+            "title": "云原生平台",
+            "badge": "",
+            "description": "应用容器化、弹性部署、微服务治理、CI/CD 和可观测性。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "数",
+            "icon_image": "",
+            "title": "数据智能中台",
+            "badge": "",
+            "description": "指标体系、数据看板、业务分析、异常预警和数据资产治理。",
+            "url": "#",
+            "target": "_self"
+          },
+          {
+            "icon": "盾",
+            "icon_image": "",
+            "title": "安全与运维",
+            "badge": "SLA",
+            "description": "权限审计、日志监控、告警响应、备份恢复和持续技术支持。",
+            "url": "#",
+            "target": "_self"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从想法到上线的技术交付路径",
+        "process_subtitle": "科技公司官网需要讲清产品，也要让客户相信团队有方法把项目交付出来",
+        "process_mode": "standard",
+        "module_bg_color": "transparent",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "业务诊断",
+            "desc": "梳理客户行业、现有系统、数据边界、关键角色和优先落地场景。",
+            "stage_tag": "诊断"
+          },
+          {
+            "icon": "02",
+            "title": "方案原型",
+            "desc": "输出产品蓝图、技术架构、页面原型、接口清单和里程碑计划。",
+            "stage_tag": "方案"
+          },
+          {
+            "icon": "03",
+            "title": "开发集成",
+            "desc": "完成模块开发、数据接入、第三方系统联调、测试验证和上线准备。",
+            "stage_tag": "实施"
+          },
+          {
+            "icon": "04",
+            "title": "上线增长",
+            "desc": "上线后持续监控性能、稳定性和转化数据，按阶段迭代能力与内容。",
+            "stage_tag": "运营"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "合作方式",
+        "pricing_subtitle": "科技公司官网不一定直接卖套餐，也可以用价格模块表达合作层级",
+        "pricing_columns": "3",
+        "module_bg_color": "transparent",
+        "pricing_items": [
+          {
+            "name": "咨询诊断",
+            "price": "¥9,800",
+            "period": "起",
+            "desc": "适合先明确方向",
+            "features": "业务场景梳理\n技术路线评估\n官网内容结构建议\n1 次方案复盘会",
+            "btn_text": "预约诊断",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "项目交付",
+            "price": "按项目评估",
+            "period": "",
+            "desc": "适合完整系统建设",
+            "features": "产品原型与视觉设计\n前后端开发与集成\n数据看板与权限体系\n上线培训与交付文档",
+            "btn_text": "沟通项目",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)"
+          },
+          {
+            "name": "长期共创",
+            "price": "年度服务",
+            "period": "",
+            "desc": "适合持续迭代团队",
+            "features": "专属技术顾问\n月度迭代计划\n稳定性与安全巡检\n增长数据复盘",
+            "btn_text": "了解共创",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见问题",
+        "faq_subtitle": "提前说明一体式科技官网的适用边界和可编辑范围",
+        "faq_items": [
+          {
+            "question": "这个页面适合哪些科技公司？",
+            "answer": "适合 AI 应用、云计算、数据平台、企业软件、系统集成、研发外包和技术咨询公司。你可以把业务板块、流程和合作方式替换成自己的内容。"
+          },
+          {
+            "question": "为什么不用很多独立页面？",
+            "answer": "一体式官网适合先把价值、能力和转化路径集中讲清楚。后续有大量案例、文档、价格或资源时，再拆成独立栏目页。"
+          },
+          {
+            "question": "这些功能模块可以删改吗？",
+            "answer": "可以。导入后仍然是启灵模块数据，首屏、能力卡片、服务卡、流程、价格、FAQ 和 CTA 都能继续在页面编辑器里调整。"
+          }
+        ],
+        "module_bg_color": "transparent"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把复杂技术能力讲得更轻一些",
+        "cta_subtitle": "替换公司名称、产品截图、业务板块和咨询入口，就能快速得到一个适合科技公司的连续画布官网。",
+        "cta_button_text": "开始创建科技官网",
+        "cta_button_url": "#",
+        "cta_bg_type": "gradient",
+        "cta_bg_gradient": "linear-gradient(135deg, #25365f 0%, #4f7dff 58%, #38c9a6 100%)",
+        "cta_bg_overlay": "0.18"
+      }
+    }
+  ]
+}

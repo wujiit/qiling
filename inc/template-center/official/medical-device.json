@@ -1,0 +1,325 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "医疗器械官网",
+  "page_template": "templates/template-medical-device.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "medical-device",
+    "label": "医疗器械官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "medical_device",
+    "industry_label": "医疗器械",
+    "scenario": "医疗器械产品、注册证资质、合规声明、医院渠道、经销询盘",
+    "description": "适合医疗器械生产企业、医用设备品牌、院内设备供应商、耗材器械公司和渠道经销官网，内置产品中心、合规信任、资质证书、应用案例、FAQ 和询盘入口。",
+    "badges": [
+      "医疗器械",
+      "合规资质",
+      "经销询盘"
+    ],
+    "order": 722,
+    "thumbnail": "https://images.pexels.com/photos/13697729/pexels-photo-13697729.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  },
+  "seo": {
+    "title": "医疗器械官网模板 - 注册证资质与产品询盘",
+    "description": "适合医疗器械、医用设备、监护设备、检验设备、康复设备和医疗耗材品牌的官网页面，包含产品中心、合规资质、注册证展示、应用案例、FAQ 和询盘表单。",
+    "keywords": "医疗器械官网,医用设备官网,医疗设备,医疗器械注册证,ISO13485,医疗耗材,经销询盘",
+    "og_title": "医疗器械官网",
+    "og_description": "用产品中心、注册证资质和合规说明快速搭建医疗器械官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #0e7490 55%, #16a34a 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.pexels.com/photos/13697729/pexels-photo-13697729.jpeg?auto=compress&cs=tinysrgb&w=1800",
+            "title": "让医疗器械产品与资质被客户快速看懂",
+            "subtitle": "面向医院、渠道商和项目采购，集中展示产品线、注册证、生产许可、质量体系和售后培训能力。",
+            "btn_text": "提交产品询盘",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0e7490"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "12+",
+            "label": "核心产品系列",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "ISO",
+            "label": "质量体系可展示",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "48h",
+            "label": "渠道响应时效",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "可追溯",
+            "label": "批次与售后资料",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "医疗器械产品中心",
+        "products_subtitle": "MEDICAL DEVICE CATALOG",
+        "columns": "4",
+        "modal_inquire_text": "咨询注册资料与报价",
+        "modal_inquire_url": "#",
+        "modal_inquire_btn_bg_color": "#0e7490",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_hover_bg_color": "#155e75",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "items": [
+          {
+            "image": "https://images.pexels.com/photos/13697729/pexels-photo-13697729.jpeg?auto=compress&cs=tinysrgb&w=900",
+            "title": "多参数监护设备",
+            "desc": "面向病区、急诊和护理场景的基础生命体征监测设备。",
+            "specs": "显示：高清触控屏\n参数：心电、血氧、血压、呼吸、体温\n适用：病区、急诊、转运场景\n资料：注册证、说明书、维护手册",
+            "post_id": "",
+            "btn_text": "查看参数"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+            "title": "医用影像辅助设备",
+            "desc": "用于影像检查、诊断工作站和院内信息化配套的设备方案。",
+            "specs": "场景：影像科、门诊、体检中心\n接口：DICOM、PACS、HIS 对接\n交付：硬件、软件、安装培训\n资料：技术白皮书、接口说明",
+            "post_id": "",
+            "btn_text": "获取方案"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80",
+            "title": "检验与样本处理设备",
+            "desc": "覆盖样本采集、预处理、检测流程和结果管理的基础设备。",
+            "specs": "类型：离心、恒温、检测、样本处理\n管理：条码识别、批次记录\n适用：检验科、实验室、基层医疗\n支持：安装、校准、培训",
+            "post_id": "",
+            "btn_text": "查看应用"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
+            "title": "康复理疗设备",
+            "desc": "适合康复科、护理机构和家庭康复场景的训练与理疗设备。",
+            "specs": "品类：训练设备、理疗设备、评估工具\n服务：安装调试、人员培训、耗材补给\n资料：适用范围、禁忌说明、维护计划\n渠道：医院、康复中心、经销商",
+            "post_id": "",
+            "btn_text": "咨询配置"
+          }
+        ]
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "ct_title": "医疗器械合规与<span style=\"color:#0e7490\">质量信任</span>",
+        "ct_subtitle": "把注册证、质量体系、生产过程、售后培训和宣传边界说清楚，减少采购和渠道的合规顾虑。",
+        "ct_note": "以下为医疗器械官网常用合规信息占位，正式上线时请按实际注册证、生产许可、说明书和法规审核结果替换。",
+        "ct_layout": "grid",
+        "ct_columns": "4",
+        "ct_enable_filter": "yes",
+        "ct_card_style": "solid",
+        "ct_accent_color": "#0e7490",
+        "ct_status_chip_bg": "#ecfeff",
+        "ct_status_chip_text": "#0e7490",
+        "ct_action_btn_bg": "linear-gradient(135deg, #0e7490 0%, #16a34a 100%)",
+        "ct_action_btn_text": "#ffffff",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes",
+        "ct_items": [
+          {
+            "icon": "证",
+            "title": "医疗器械注册证",
+            "short_name": "NMPA",
+            "category": "注册资质",
+            "status": "active",
+            "status_text": "按品类展示",
+            "issuer": "药监主管部门",
+            "scope": "对应产品名称、型号规格和适用范围",
+            "valid_until": "以证书为准",
+            "description": "官网产品页应展示与实际销售产品一致的注册证信息，避免跨型号、跨适用范围宣传。",
+            "checklist": "产品名称一致\n型号规格一致\n适用范围一致\n证书有效期可查",
+            "report_url": "#",
+            "report_text": "查看注册资料",
+            "highlight": "yes"
+          },
+          {
+            "icon": "质",
+            "title": "ISO 13485 质量体系",
+            "short_name": "QMS",
+            "category": "质量体系",
+            "status": "active",
+            "status_text": "可展示",
+            "issuer": "第三方认证机构",
+            "scope": "研发、生产、质检、售后服务流程",
+            "valid_until": "年度审核",
+            "description": "用于说明医疗器械质量管理体系、文件控制、过程验证、供应商管理和不良事件反馈机制。",
+            "checklist": "文件受控\n过程验证\n供应商审核\n售后反馈闭环",
+            "report_url": "#",
+            "report_text": "查看体系说明",
+            "highlight": "no"
+          },
+          {
+            "icon": "溯",
+            "title": "UDI 与批次追溯",
+            "short_name": "Trace",
+            "category": "追溯",
+            "status": "active",
+            "status_text": "按产品配置",
+            "issuer": "企业质量部门",
+            "scope": "生产批次、出货记录、售后维修和召回协同",
+            "valid_until": "持续维护",
+            "description": "帮助医院和经销渠道确认产品批次、出库记录、售后维修记录和必要的召回沟通链路。",
+            "checklist": "批号记录\n出库记录\n维修记录\n召回通知链路",
+            "report_url": "#",
+            "report_text": "查看追溯流程",
+            "highlight": "no"
+          },
+          {
+            "icon": "宣",
+            "title": "宣传合规边界",
+            "short_name": "Claim",
+            "category": "合规宣传",
+            "status": "active",
+            "status_text": "需审核",
+            "issuer": "企业法规/市场部门",
+            "scope": "官网文案、产品图片、应用场景和案例内容",
+            "valid_until": "每次发布审核",
+            "description": "医疗器械官网应避免超适用范围、绝对化疗效、夸大临床效果和未批准用途宣传。",
+            "checklist": "不超注册范围\n不用绝对化表述\n案例不替代临床结论\n说明书口径一致",
+            "report_url": "#",
+            "report_text": "查看发布规范",
+            "highlight": "yes"
+          }
+        ]
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "ch_title": "注册证与企业资质",
+        "ch_subtitle": "集中展示采购、医院和渠道商最关心的准入材料",
+        "ch_columns": "3",
+        "ch_enable_filter": "yes",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "ch_items": [
+          {
+            "image": "",
+            "title": "二类医疗器械注册证",
+            "category": "注册证",
+            "badge": "核心资质",
+            "cert_no": "械注准 2026-0001",
+            "issuer": "药监主管部门",
+            "issue_date": "2026-02-20",
+            "expiry_date": "2031-02-19",
+            "file_url": "#"
+          },
+          {
+            "image": "",
+            "title": "医疗器械生产许可证",
+            "category": "生产许可",
+            "badge": "生产准入",
+            "cert_no": "械生产许 2026-010",
+            "issuer": "药监主管部门",
+            "issue_date": "2026-01-16",
+            "expiry_date": "2031-01-15",
+            "file_url": "#"
+          },
+          {
+            "image": "",
+            "title": "ISO 13485 质量管理体系",
+            "category": "体系认证",
+            "badge": "质量体系",
+            "cert_no": "ISO13485-2026-MD",
+            "issuer": "第三方认证机构",
+            "issue_date": "2026-03-08",
+            "expiry_date": "2029-03-07",
+            "file_url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "医院与渠道应用案例",
+        "cases_count": "6",
+        "cases_columns": "3",
+        "cases_show_image": "1",
+        "cases_image_height": "220px",
+        "cases_padding_top": "80px",
+        "cases_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "医疗器械采购常见问题",
+        "faq_subtitle": "提前说明注册资料、售后培训、渠道合作和宣传边界",
+        "faq_items": [
+          {
+            "question": "产品资料可以直接用于招投标吗？",
+            "answer": "模板中的资料为占位示例。正式使用时应替换为企业真实注册证、检测报告、说明书、彩页、售后服务承诺和招投标要求的文件版本。"
+          },
+          {
+            "question": "官网能否宣传治疗效果？",
+            "answer": "医疗器械宣传应严格匹配注册证适用范围和说明书，不建议使用绝对化疗效、保证性承诺、超范围适应症或未经审核的临床表述。"
+          },
+          {
+            "question": "经销商询盘需要提供哪些信息？",
+            "answer": "建议收集所在区域、目标渠道、采购品类、预计数量、资质情况、售后能力和联系人信息，便于判断授权合作方式。"
+          },
+          {
+            "question": "售后服务怎么展示更可信？",
+            "answer": "可以展示安装调试、操作培训、定期维护、故障响应、备件耗材、维修记录和召回协同流程，具体承诺应与企业实际服务能力一致。"
+          }
+        ],
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交医疗器械产品询盘",
+        "contact_subtitle": "填写产品类型、应用科室、采购数量、项目阶段、是否需要注册资料和联系方式，产品顾问会协助确认资料、配置和报价。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

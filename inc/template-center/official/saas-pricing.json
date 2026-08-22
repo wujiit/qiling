@@ -1,0 +1,238 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "SaaS价格对比页",
+  "page_template": "templates/template-saas-pricing.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "saas-pricing",
+    "label": "SaaS价格对比页",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "software",
+    "scenario": "SaaS 价格对比页",
+    "description": "价格表、套餐对比、权益说明和购买咨询。",
+    "badges": [
+      "价格",
+      "SaaS"
+    ],
+    "order": 330,
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "SaaS价格对比页模板 - 启灵官方页面包",
+    "description": "价格表、套餐对比、权益说明和购买咨询。",
+    "keywords": "SaaS价格对比页,SaaS 价格对比页,价格,SaaS",
+    "og_title": "SaaS价格对比页",
+    "og_description": "价格表、套餐对比、权益说明和购买咨询。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "80vh",
+        "db_bg_type": "gradient",
+        "db_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #0ea5e9 100%)",
+        "db_title_prefix": "SaaS价格对比页",
+        "db_typing_mode": "loop",
+        "db_typing_text": "灵活计费，按需升级\n从个人团队到企业级部署\n7 天免费试用，随时取消",
+        "db_highlight_color": "#38bdf8",
+        "db_title_color": "#e2e8f0",
+        "db_subtitle": "<strong>清晰价格</strong> + <strong style=\"color:#60a5fa;\">功能对比</strong>，帮助用户快速决策",
+        "db_desc": "预设包含套餐表、功能对比、常见问题与行动召唤模块。用户可直接替换文案和价格，快速搭建专业 SaaS 定价页面。",
+        "db_text_color": "rgba(226,232,240,0.88)",
+        "db_buttons": [
+          {
+            "text": "开始免费试用",
+            "link": "#pricing-section",
+            "style": "primary",
+            "icon": "🚀"
+          },
+          {
+            "text": "查看功能对比",
+            "link": "#comparison-section",
+            "style": "outline",
+            "icon": "📊"
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "",
+        "db_image_shadow": "soft",
+        "db_floating_cards": [
+          {
+            "content_type": "badge",
+            "title": "14天试用",
+            "pos_top": "8%",
+            "pos_right": "-2%",
+            "animation": "float",
+            "delay": "0s"
+          },
+          {
+            "content_type": "badge",
+            "title": "支持月付/年付",
+            "pos_bottom": "10%",
+            "pos_left": "-4%",
+            "animation": "pulse",
+            "delay": "0.4s"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "title": "核心能力一目了然",
+        "subtitle": "围绕增长型 SaaS 场景设计，开箱即可用于商业落地",
+        "columns": "3",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "tabs": [
+          {
+            "tab_id": "growth",
+            "tab_title": "增长能力",
+            "tab_icon": "📈",
+            "features": "🚀|快速上线|内置模块化页面结构，按需组合即可发布\n🎯|转化追踪|支持关键行为埋点与渠道成效分析\n💳|灵活付费|支持月付/年付与优惠活动配置"
+          },
+          {
+            "tab_id": "team",
+            "tab_title": "团队协作",
+            "tab_icon": "🤝",
+            "features": "👥|多角色权限|支持管理员、运营、客服等多角色协作\n📂|工作流管理|从线索到成交的流程可视化追踪\n🔔|通知机制|关键操作实时提醒，避免信息遗漏"
+          },
+          {
+            "tab_id": "security",
+            "tab_title": "稳定与安全",
+            "tab_icon": "🛡️",
+            "features": "🔐|数据隔离|租户级数据隔离，确保业务安全\n⚡|高可用架构|弹性扩展，应对业务高峰流量\n🧰|运维支持|监控告警与故障处理机制完善"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "版本功能对比",
+        "comparison_subtitle": "按团队规模与业务阶段选择最合适的版本",
+        "comparison_features": "成员席位\n自动化流程\n数据看板\n开放 API\n专属客服\nSLA 服务保障",
+        "comparison_products": [
+          {
+            "name": "基础版",
+            "values": "5 人\n基础流程\n基础看板\n✗\n邮件支持\n✗"
+          },
+          {
+            "name": "专业版",
+            "values": "30 人\n高级流程\n高级看板\n✓\n在线支持\n✓"
+          },
+          {
+            "name": "企业版",
+            "values": "无限制\n高级流程+定制\n企业级看板\n✓\n专属客户成功经理\n✓"
+          }
+        ],
+        "comparison_highlight": "2",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "透明套餐价格",
+        "pricing_subtitle": "支持月付与年付，随时升级，不影响历史数据",
+        "pricing_columns": "3",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "pricing_items": [
+          {
+            "name": "基础版",
+            "price": "¥199",
+            "period": "/月",
+            "desc": "适合个人开发者与小型团队",
+            "features": "✓ 5 个成员席位\n✓ 基础自动化流程\n✓ 基础数据看板\n✗ 开放 API\n✗ 专属客户成功",
+            "btn_text": "立即试用",
+            "btn_link": "#",
+            "card_bg": "#ffffff",
+            "featured": ""
+          },
+          {
+            "name": "专业版",
+            "price": "¥699",
+            "period": "/月",
+            "desc": "适合成长型团队与业务部门",
+            "features": "✓ 30 个成员席位\n✓ 高级自动化流程\n✓ 高级数据看板\n✓ 开放 API\n✓ 在线优先支持",
+            "btn_text": "开始使用",
+            "btn_link": "#",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)"
+          },
+          {
+            "name": "企业版",
+            "price": "¥2999",
+            "period": "/月",
+            "desc": "适合中大型企业与集团化部署",
+            "features": "✓ 无限成员席位\n✓ 定制流程与报表\n✓ 专属部署方案\n✓ 企业级 API 与 SSO\n✓ 客户成功经理",
+            "btn_text": "联系销售",
+            "btn_link": "/contact/",
+            "card_bg": "#ffffff",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "购买前常见问题",
+        "faq_subtitle": "关于计费、升级、数据迁移与售后支持",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "faq_items": [
+          {
+            "question": "支持免费试用吗？",
+            "answer": "支持。默认提供 14 天免费试用，试用期可体验主要功能，确认后再升级付费版本。"
+          },
+          {
+            "question": "套餐升级会影响现有数据吗？",
+            "answer": "不会。升级仅调整可用功能与额度，原有业务数据和配置会完整保留。"
+          },
+          {
+            "question": "是否支持开票和对公付款？",
+            "answer": "支持。可根据企业采购流程提供对公合同、发票与付款信息。"
+          },
+          {
+            "question": "企业版可以私有化部署吗？",
+            "answer": "可以。企业版支持私有化部署与定制化安全策略，请联系销售评估实施方案。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备好提升你的业务效率了吗？",
+        "cta_subtitle": "立即开启免费试用，或联系销售获取企业级解决方案与专属报价。",
+        "cta_button_text": "免费试用 14 天",
+        "cta_button_url": "#",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%)",
+        "module_padding_top": "96px",
+        "module_padding_bottom": "96px"
+      }
+    }
+  ]
+}

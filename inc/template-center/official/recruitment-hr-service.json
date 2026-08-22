@@ -1,0 +1,249 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "人力资源/招聘服务官网",
+  "page_template": "templates/template-recruitment-hr-service.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "finance_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "recruitment-hr-service",
+    "label": "人力资源/招聘服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "human_resources",
+    "industry_label": "人力资源",
+    "scenario": "招聘交付、人才服务、企业咨询",
+    "description": "适合招聘公司、人力资源服务、猎头顾问、灵活用工和企业人才咨询官网，内置服务范围、交付流程、案例和咨询入口。",
+    "badges": [
+      "人力资源",
+      "招聘交付"
+    ],
+    "order": 640,
+    "thumbnail": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "人力资源招聘服务官网模板 - 人才交付与企业咨询",
+    "description": "适合人力资源服务和招聘机构的官网页面，包含招聘服务、交付流程、行业案例、客户评价、FAQ 和咨询入口。",
+    "keywords": "招聘公司官网,人力资源官网,猎头服务,灵活用工,人才咨询",
+    "og_title": "人力资源/招聘服务官网",
+    "og_description": "用招聘服务、交付流程和咨询入口快速搭建人力资源服务官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.56",
+        "db_title_prefix": "帮企业更快找到合适的人",
+        "db_typing_mode": "loop",
+        "db_typing_text": "中高端人才寻访\n批量招聘与交付管理\n组织诊断与用工方案",
+        "db_highlight_color": "#a7f3d0",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "围绕岗位画像、候选人触达、面试协同和入职跟进提升招聘效率。",
+        "db_desc": "适合招聘机构、猎头顾问、人力资源外包和灵活用工服务团队。",
+        "db_text_color": "rgba(248,250,252,0.88)",
+        "db_buttons": [
+          {
+            "text": "发布招聘需求",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看服务流程",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "人才服务范围",
+        "services_subtitle": "覆盖招聘、用工、组织和雇主品牌等关键场景",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "猎头寻访",
+            "desc": "中高端岗位画像、候选人触达和面试推动。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "批量招聘",
+            "desc": "门店、销售、客服和蓝领岗位规模化交付。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "灵活用工",
+            "desc": "短期项目、人力外包和周期性用工支持。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "人才咨询",
+            "desc": "组织诊断、薪酬调研和招聘流程优化。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "招聘交付数据",
+        "stats_subtitle": "用速度、覆盖和留存表现说明服务能力",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "60+",
+            "label": "覆盖城市"
+          },
+          {
+            "number": "14天",
+            "label": "平均推荐周期"
+          },
+          {
+            "number": "85%",
+            "label": "面试到场率"
+          },
+          {
+            "number": "6月",
+            "label": "入职跟进周期"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "招聘交付流程",
+        "process_subtitle": "岗位、候选人、面试和入职每一步都有清晰节点",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "岗位诊断",
+            "desc": "确认岗位职责、候选人画像、薪酬和面试流程。",
+            "stage_tag": "诊断"
+          },
+          {
+            "icon": "02",
+            "title": "人才触达",
+            "desc": "多渠道搜索、沟通意向和初步筛选。",
+            "stage_tag": "触达"
+          },
+          {
+            "icon": "03",
+            "title": "面试协同",
+            "desc": "推进面试安排、反馈收集和 offer 沟通。",
+            "stage_tag": "面试"
+          },
+          {
+            "icon": "04",
+            "title": "入职跟进",
+            "desc": "跟进入职、试用期反馈和岗位复盘。",
+            "stage_tag": "入职"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "企业招聘案例",
+        "cases_subtitle": "展示行业、岗位和交付结果",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+            "title": "连锁门店批量招聘",
+            "desc": "围绕开店节奏完成多城市岗位交付。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80",
+            "title": "技术团队关键岗位",
+            "desc": "为成长型企业补齐研发和产品负责人。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80",
+            "title": "销售团队搭建",
+            "desc": "从岗位画像到面试节奏建立招聘漏斗。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "300+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "HRD",
+            "position": "科技公司",
+            "content": "岗位理解比较快，候选人质量和反馈节奏都稳定。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "运营负责人",
+            "position": "连锁品牌",
+            "content": "批量招聘节点清晰，开店前人员到位率高。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "创始人",
+            "position": "创业公司",
+            "content": "关键岗位推荐很精准，也帮我们调整了岗位表达。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交招聘需求",
+        "contact_subtitle": "提交岗位、城市、预算、招聘数量和期望到岗时间，顾问会评估交付方式。",
+        "contact_phone": "400-366-2026",
+        "contact_email": "talent@example.com",
+        "contact_address": "支持远程沟通 / 可预约企业拜访",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

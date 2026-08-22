@@ -1553,7 +1553,7 @@ html.dark-mode .module-app-hero .floating-badge .float-desc {
   font-size: var(--qiling-text-rem-1p5);
   font-weight: 600;
   margin-bottom: var(--qiling-space-18);
-  color: var(--db-text-color);
+  color: var(--db-subtitle-color);
   opacity: 0.9;
   max-width: min(var(--qiling-measure-pct-100), var(--qiling-measure-rem-46));
   overflow-wrap: normal;
@@ -1563,7 +1563,7 @@ html.dark-mode .module-app-hero .floating-badge .float-desc {
 .module-dynamic-banner .db-desc {
   font-size: var(--qiling-text-rem-1p1);
   line-height: 1.8;
-  color: var(--db-text-color);
+  color: var(--db-desc-color);
   opacity: 0.8;
   margin-bottom: var(--qiling-space-38);
   max-width: 58ch;
@@ -1960,6 +1960,9 @@ html.dark-mode .module-dynamic-banner .db-card-subtitle {
   position: relative;
   z-index: 10;
   text-align: center;
+  width: min(100% - 48px, 1100px);
+  max-width: 1100px;
+  box-sizing: border-box;
   margin-bottom: var(--qiling-space-50);
 }
 
@@ -1969,6 +1972,10 @@ html.dark-mode .module-dynamic-banner .db-card-subtitle {
   margin: 0;
   line-height: 1.2;
   color: var(--color-text-inverse);
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: balance;
   /* 呼吸光晕动画在这里应用 */
 }
 
@@ -1978,6 +1985,10 @@ html.dark-mode .module-dynamic-banner .db-card-subtitle {
   margin-bottom: var(--qiling-space-30);
   opacity: 0.9;
   font-weight: 300;
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
 }
 
 /* 呼吸光晕动画 */
@@ -5282,7 +5293,9 @@ html.dark-mode .module-resume-hero.style-card .rh-card-fact-label {
 }
 
 .module-fullscreen-video .fsv-content {
-  width: min(100%, 920px);
+  width: min(calc(100% - 48px), 1100px);
+  max-width: 1100px;
+  box-sizing: border-box;
   padding: 0 var(--qiling-space-24);
 }
 

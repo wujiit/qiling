@@ -1,0 +1,299 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "幼儿园/早教中心官网",
+  "page_template": "templates/template-early-childhood-education.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "education_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "early-childhood-education",
+    "label": "幼儿园/早教中心官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "early_childhood",
+    "industry_label": "幼儿早教",
+    "scenario": "托育招生、早教体验、幼儿园参观、分龄课程、师资照护、家园共育",
+    "description": "适合幼儿园、托育中心、早教中心、亲子成长馆和幼小衔接机构，内置首屏、分龄课程、师资照护、园区相册、家长评价、FAQ 和预约参观入口。",
+    "badges": [
+      "中文高频",
+      "幼儿早教",
+      "预约参观"
+    ],
+    "order": 594,
+    "thumbnail": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "幼儿园早教中心官网模板 - 托育招生与预约参观",
+    "description": "适合幼儿园、托育中心和早教中心的官网页面，包含分龄课程、师资照护、园区环境、家长评价、FAQ 和预约参观入口。",
+    "keywords": "幼儿园官网,早教中心官网,托育中心官网,亲子成长,幼小衔接,预约参观,儿童课程",
+    "og_title": "幼儿园/早教中心官网",
+    "og_description": "用分龄课程、园区环境和预约参观快速搭建幼儿早教机构官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 50%, #10b981 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=80",
+            "title": "把安全照护、分龄课程和成长反馈讲清楚",
+            "subtitle": "适合幼儿园、托育中心和早教机构展示园区环境、课程体系、师资团队与预约参观入口，让家长快速建立信任。",
+            "btn_text": "预约参观园区",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "01",
+            "number": "18月+",
+            "label": "托育启蒙覆盖",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "02",
+            "number": "1:6",
+            "label": "小班照护比例",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "03",
+            "number": "4类",
+            "label": "分龄课程体系",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "04",
+            "number": "每日",
+            "label": "成长反馈记录",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "curriculum",
+      "data": {
+        "curriculum_title": "分龄成长课程",
+        "curriculum_subtitle": "从生活自理、语言表达、感统运动到探究学习，按年龄段安排成长目标",
+        "curriculum_bg_color": "#fff7ed",
+        "curriculum_primary_color": "#0f766e",
+        "curriculum_items": [
+          {
+            "title": "托小班：安全适应与生活自理",
+            "meta": "18-30个月 | 托育启蒙",
+            "content": "<p>围绕入园适应、作息建立、情绪安抚、生活自理和基础社交进行温和过渡。</p>",
+            "open": "yes"
+          },
+          {
+            "title": "小班：感统运动与语言表达",
+            "meta": "2-3岁 | 早教基础",
+            "content": "<p>通过感统游戏、音乐律动、绘本共读和表达练习，帮助孩子建立参与感和表达意愿。</p>",
+            "open": "no"
+          },
+          {
+            "title": "中班：主题探究与同伴协作",
+            "meta": "3-4岁 | 主题课程",
+            "content": "<p>结合自然、艺术、科学和角色游戏，让孩子在观察、提问和协作中发展专注力。</p>",
+            "open": "no"
+          },
+          {
+            "title": "大班：幼小衔接与学习习惯",
+            "meta": "5-6岁 | 入学准备",
+            "content": "<p>关注任务意识、规则理解、表达展示、阅读兴趣和基础学习习惯，平稳衔接小学生活。</p>",
+            "open": "no"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "照护与教学团队",
+        "team_subtitle": "展示园长、主班老师和保育老师的经验背景，让家长看见稳定而专业的陪伴",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+            "name": "周园长",
+            "position": "园区负责人",
+            "desc": "负责课程体系、园区安全、师资培训和家园沟通机制。",
+            "email": "principal@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
+            "name": "林老师",
+            "position": "主班教师",
+            "desc": "擅长绘本阅读、语言表达和主题探究课程组织。",
+            "email": "teacher1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
+            "name": "陈老师",
+            "position": "保育照护老师",
+            "desc": "关注日常照护、饮食午休、情绪安抚和安全细节。",
+            "email": "care@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "园区环境与一日生活",
+        "gallery_subtitle": "用真实空间、活动场景和餐点午休展示，降低家长第一次到访前的不确定感",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "gallery_gap": "16",
+        "enable_filter": "yes",
+        "filter_categories": "活动室,户外活动,午休餐点,家园共育",
+        "gallery_lightbox": "1",
+        "show_counter": "yes",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80",
+            "title": "明亮活动室",
+            "desc": "低龄友好的阅读、桌面操作和主题活动空间。",
+            "category": "活动室"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80",
+            "title": "艺术涂鸦课",
+            "desc": "通过颜色、材料和手部动作训练表达与专注。",
+            "category": "活动室"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80",
+            "title": "户外探索",
+            "desc": "跑跳、攀爬、观察自然，培养身体协调和好奇心。",
+            "category": "户外活动"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=900&q=80",
+            "title": "同伴协作",
+            "desc": "小组游戏和任务合作，帮助孩子建立规则感。",
+            "category": "户外活动"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
+            "title": "阅读角",
+            "desc": "安静的绘本角落，适合亲子阅读和晨间阅读。",
+            "category": "家园共育"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80",
+            "title": "课堂展示",
+            "desc": "定期展示主题作品和成长记录，方便家长了解过程。",
+            "category": "家园共育"
+          }
+        ],
+        "module_bg_color": "#f8fafc",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "家长反馈",
+        "testimonials_subtitle": "把安全感、沟通效率和孩子变化说具体",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "980+",
+        "average_rating": "4.9",
+        "testimonials_bg_color": "#ffffff",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "乐乐妈妈",
+            "position": "托育班家长",
+            "content": "每天能看到饮食、午休和活动反馈，刚入园那段时间老师沟通很细。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-03-18",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "小禾爸爸",
+            "position": "小班家长",
+            "content": "孩子从不愿表达，到现在会主动讲今天做了什么，变化很明显。",
+            "rating": "5",
+            "source": "google",
+            "date": "2026-02-26",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "安安妈妈",
+            "position": "幼小衔接家长",
+            "content": "课程没有只强调知识点，更多是习惯、表达和规则意识，比较放心。",
+            "rating": "5",
+            "source": "dianping",
+            "date": "2026-01-30",
+            "verified": "verified"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "家长常见问题",
+        "faq_subtitle": "提前说明入园适应、师生配比、餐点安全和请假沟通，让咨询更高效",
+        "faq_items": [
+          {
+            "question": "孩子第一次入园不适应怎么办？",
+            "answer": "建议先预约参观和短时体验，老师会根据孩子情绪、作息和分离焦虑情况制定过渡方案，并同步给家长反馈。"
+          },
+          {
+            "question": "托育班和早教体验课有什么区别？",
+            "answer": "托育更强调稳定照护、作息建立和日常陪伴；早教体验课更偏短时课程，适合亲子互动、感统启蒙和兴趣观察。"
+          },
+          {
+            "question": "如何了解孩子每天在园情况？",
+            "answer": "可通过成长记录、照片反馈、接送沟通和阶段观察报告了解饮食、午休、情绪、活动参与和课程表现。"
+          },
+          {
+            "question": "可以先参观再决定报名吗？",
+            "answer": "可以。建议先预约参观园区、了解班型名额、师资安排和入园流程，再根据孩子状态安排体验或试读。"
+          }
+        ],
+        "module_bg_color": "#fff7ed"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约参观或体验课",
+        "booking_subtitle": "提交孩子年龄、目标班型、期望到访时间和家长联系方式，园区老师会确认参观安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "到访前建议准备",
+        "sidebar_content": "说明孩子年龄、作息和入园计划\n如有过敏或特殊照护需求请提前备注\n建议家长带孩子一起参观体验",
+        "contact_phone": "400-930-2026",
+        "contact_hours": "09:00-20:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "数据展示",
+  "page_template": "templates/template-data-showcase.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "data-showcase",
+    "label": "数据展示",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "technology",
+    "scenario": "数据展示页",
+    "description": "适合数据产品、指标大屏、可视化能力和案例展示。",
+    "badges": [
+      "数据",
+      "展示"
+    ],
+    "order": 380,
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "数据展示模板 - 启灵官方页面包",
+    "description": "适合数据产品、指标大屏、可视化能力和案例展示。",
+    "keywords": "数据展示,数据展示页,数据,展示",
+    "og_title": "数据展示",
+    "og_description": "适合数据产品、指标大屏、可视化能力和案例展示。"
+  },
+  "modules": [
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "关键数据总览",
+        "stats_items": [
+          {
+            "number": "500+",
+            "label": "服务客户"
+          },
+          {
+            "number": "10+",
+            "label": "年行业经验"
+          },
+          {
+            "number": "99%",
+            "label": "客户满意度"
+          },
+          {
+            "number": "24/7",
+            "label": "在线支持"
+          }
+        ]
+      }
+    },
+    {
+      "type": "chart",
+      "data": {
+        "chart_type": "bar",
+        "chart_title": "季度业绩增长 (2024)",
+        "chart_height": "400",
+        "chart_data": [
+          {
+            "label": "Q1",
+            "value": "1200",
+            "color": "#3b82f6"
+          },
+          {
+            "label": "Q2",
+            "value": "1900",
+            "color": "#8b5cf6"
+          },
+          {
+            "label": "Q3",
+            "value": "3000",
+            "color": "#10b981"
+          },
+          {
+            "label": "Q4",
+            "value": "5000",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    },
+    {
+      "type": "chart",
+      "data": {
+        "chart_type": "pie",
+        "chart_title": "市场份额分布",
+        "chart_height": "400",
+        "chart_data": [
+          {
+            "label": "品牌 A",
+            "value": "300",
+            "color": "#ef4444"
+          },
+          {
+            "label": "品牌 B",
+            "value": "50",
+            "color": "#3b82f6"
+          },
+          {
+            "label": "品牌 C",
+            "value": "100",
+            "color": "#eab308"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "版本对比",
+        "comparison_subtitle": "选择最适合您的方案",
+        "comparison_features": "基础功能\n高级功能\n技术支持\nAPI接口\n数据导出\n自定义域名",
+        "comparison_products": [
+          {
+            "name": "基础版",
+            "values": "✓\n✗\n邮件支持\n✗\n✗\n✗"
+          },
+          {
+            "name": "专业版",
+            "values": "✓\n✓\n在线客服\n✓\n✓\n✗"
+          },
+          {
+            "name": "企业版",
+            "values": "✓\n✓\n7×24专属\n✓\n✓\n✓"
+          }
+        ],
+        "comparison_highlight": "2"
+      }
+    }
+  ]
+}

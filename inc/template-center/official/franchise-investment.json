@@ -1,0 +1,299 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "加盟招商官网",
+  "page_template": "templates/template-franchise-investment.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "food_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "franchise-investment",
+    "label": "加盟招商官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "franchise",
+    "industry_label": "招商加盟",
+    "scenario": "品牌加盟、区域代理、合作模式、样板店考察、招商咨询",
+    "description": "适合连锁品牌、招商加盟项目、区域代理合作、城市合伙人招募和联营招商官网，内置品牌首屏、增长数据、合作流程、模式对比、样板店网络、FAQ 和咨询表单。",
+    "badges": [
+      "招商加盟",
+      "合作模式",
+      "样板店网络"
+    ],
+    "order": 604,
+    "thumbnail": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "加盟招商官网模板 - 品牌加盟与合作模式咨询",
+    "description": "适合连锁品牌和招商加盟项目的官网页面，包含品牌首屏、增长数据、合作模式、加盟流程、样板店网络、FAQ 和招商咨询入口。",
+    "keywords": "招商加盟官网,加盟招商模板,连锁加盟官网,品牌加盟,区域代理,加盟咨询,合作模式",
+    "og_title": "加盟招商官网",
+    "og_description": "用合作模式、加盟流程和样板店网络快速搭建品牌招商官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "editorial",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #4338ca 46%, #b45309 100%)",
+        "bb_title_mode": "text",
+        "bb_title": "把品牌方法论复制到更多城市<br><strong>让加盟增长更快、更稳、更可落地</strong>",
+        "bb_title_size_max": "72px",
+        "bb_subtitle": "加盟招商与区域拓展官网",
+        "bb_desc": "适合连锁品牌、区域代理、城市合伙人和联营项目的招商页面，用合作模式、开店支持、样板店网络和咨询表单把意向客户先筛一轮。",
+        "bb_text_align": "left",
+        "bb_title_color": "#ffffff",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #ddd6fe 46%, #fde68a 100%)",
+        "bb_text_color": "#eef2ff",
+        "bb_buttons": [
+          {
+            "text": "提交加盟意向",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看合作模式",
+            "link": "#",
+            "style": "light",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "#f59e0b",
+        "bb_primary_btn_text_color": "#111827",
+        "bb_primary_btn_hover_bg_color": "#fbbf24",
+        "bb_primary_btn_hover_text_color": "#111827",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#312e81",
+        "bb_light_btn_hover_bg_color": "#e0e7ff",
+        "bb_light_btn_hover_text_color": "#312e81",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "lifted",
+        "bb_media_radius": "10px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "0",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "加盟增长关键数据",
+        "stats_subtitle": "把品牌标准、样板店表现和城市拓展节奏说清楚，帮助意向客户快速判断合作匹配度",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "128+",
+            "label": "签约合作门店"
+          },
+          {
+            "number": "36城",
+            "label": "意向拓展城市"
+          },
+          {
+            "number": "45天",
+            "label": "平均筹建周期"
+          },
+          {
+            "number": "92%",
+            "label": "开业三月达标率"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "加盟合作推进流程",
+        "process_subtitle": "从意向沟通到开业落地，把每一步需要的资料、支持和节奏提前说清楚",
+        "process_mode": "industrial",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "提交合作意向",
+            "desc": "填写意向城市、预算区间、资源背景和经营经验，招商顾问做第一轮沟通。",
+            "stage_tag": "意向",
+            "deliverable": "意向资料表"
+          },
+          {
+            "icon": "02",
+            "title": "城市与资质评估",
+            "desc": "综合评估商圈基础、团队能力、门店资源、合作模式和可落地节奏。",
+            "stage_tag": "评估",
+            "deliverable": "评估建议 / 模式匹配"
+          },
+          {
+            "icon": "03",
+            "title": "签约筹建启动",
+            "desc": "明确合作区域、开店计划、选址设计、物料清单和培训安排。",
+            "stage_tag": "筹建",
+            "deliverable": "签约文件 / 筹建计划"
+          },
+          {
+            "icon": "04",
+            "title": "培训开业运营",
+            "desc": "完成门店培训、试营业、开业活动和首月经营陪跑，缩短爬坡周期。",
+            "stage_tag": "开业",
+            "deliverable": "培训记录 / 开业复盘"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "合作模式对比",
+        "comparison_subtitle": "用单店加盟、区域代理和联营合作三种模式，帮不同资源条件的投资人快速找到匹配路径",
+        "comparison_features": "适合对象\n适合阶段\n建店与设计支持\n培训与督导\n区域保护\n收益结构",
+        "comparison_products": [
+          {
+            "name": "单店加盟",
+            "values": "门店经营者 / 创业团队\n成熟商圈与社区门店\n✓ 标准 SI、选址评估、开店物料\n✓ 店长店员培训与驻店辅导\n单店半径保护\n门店营业收益"
+          },
+          {
+            "name": "区域代理",
+            "values": "城市运营合伙人\n新城市拓展或多店布局\n✓ 样板店打造、筹建辅导、区域招商素材\n✓ 招商培训、巡店督导、经营复盘\n城市 / 区县授权保护\n区域加盟收益 + 门店收益"
+          },
+          {
+            "name": "联营合作",
+            "values": "资源型投资方 / 商业体合作\n重点商圈或大型项目\n✓ 联合选址、投资模型与项目共建\n✓ 驻场运营支持与阶段复盘\n项目级合作约定\n分成或保底 + 分成"
+          }
+        ],
+        "comparison_highlight": "2",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "样板店与签约城市",
+        "branches_subtitle": "展示直营样板店、重点签约城市和即将开业区域，提升品牌可信度",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "到店路线",
+        "booking_button_text": "预约考察",
+        "branches_list": [
+          {
+            "name": "上海品牌样板店",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市静安区示例路168号",
+            "phone": "021-68880001",
+            "email": "shanghai@example.com",
+            "hours": "10:00-21:00",
+            "services": "品牌体验,样板店参观,加盟面谈",
+            "transport": "地铁站步行 6 分钟",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "成都城市运营中心",
+            "city": "成都",
+            "status": "open",
+            "address": "成都市锦江区示例街88号",
+            "phone": "028-68880002",
+            "email": "chengdu@example.com",
+            "hours": "09:30-20:00",
+            "services": "区域运营,加盟培训,样板店考察",
+            "transport": "商圈停车便利",
+            "lat": "30.5728",
+            "lng": "104.0668",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "武汉筹建示范店",
+            "city": "武汉",
+            "status": "coming",
+            "address": "武汉市东湖高新区示例大道99号",
+            "phone": "027-68880003",
+            "email": "wuhan@example.com",
+            "hours": "即将开业",
+            "services": "签约筹建,城市考察,合作面谈",
+            "transport": "近主干道",
+            "lat": "30.5928",
+            "lng": "114.3055",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "加盟合作常见问题",
+        "faq_subtitle": "先把费用、选址、区域政策和总部支持说清楚，减少无效沟通",
+        "faq_items": [
+          {
+            "question": "加盟费是否包含装修、设备和首批物料？",
+            "answer": "不同合作模式包含内容不同。页面建议先展示合作模式边界，正式沟通时再结合城市、店型和面积给出详细预算清单。"
+          },
+          {
+            "question": "没有行业经验也可以加盟吗？",
+            "answer": "可以，但通常需要更完整的培训和陪跑支持。总部会结合经营经验、团队配置和当地资源判断适合的合作模式。"
+          },
+          {
+            "question": "是否提供区域保护和城市授权？",
+            "answer": "会根据合作模式、城市等级、门店密度和开发计划设定保护政策，最终以合同和区域授权约定为准。"
+          },
+          {
+            "question": "开业后总部会继续提供哪些支持？",
+            "answer": "一般会提供开业活动支持、巡店督导、经营复盘、物料更新、培训迭代和会员营销建议，帮助门店缩短爬坡周期。"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "提交加盟合作意向",
+        "contact_subtitle": "填写意向城市、预算区间、门店资源和过往经营经验，招商顾问会进行初步评估。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "contact_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px"
+      }
+    }
+  ]
+}

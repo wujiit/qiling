@@ -1,0 +1,274 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "企业 AI Agent 官网",
+  "page_template": "templates/template-ai-agent-enterprise.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "ai-agent-enterprise",
+    "label": "企业 AI Agent 官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "ai_agent_enterprise",
+    "industry_label": "企业 AI Agent",
+    "scenario": "企业智能体、知识库问答、流程自动化、多 Agent 协作、权限审计、私有化部署、演示咨询",
+    "description": "适合企业 AI Agent 平台、智能助手、知识库问答、流程自动化、AI Copilot、私有化大模型应用和行业智能体解决方案官网，内置能力模块、方案对比、客户案例、套餐、FAQ 和 CTA。",
+    "badges": [
+      "AI Agent",
+      "企业智能体",
+      "私有化部署"
+    ],
+    "order": 729,
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "企业 AI Agent 官网模板 - 智能体平台与企业私有化咨询",
+    "description": "适合企业 AI Agent、知识库问答、智能助手、流程自动化、多 Agent 协作和私有化大模型应用的官网页面，包含能力模块、方案对比、案例、套餐、FAQ 和 CTA。",
+    "keywords": "企业AI Agent官网,AI智能体,企业智能助手,知识库问答,AI Copilot,流程自动化,多Agent协作,私有化大模型",
+    "og_title": "企业 AI Agent 官网",
+    "og_description": "用能力模块、方案对比、客户案例和套餐快速搭建企业 AI Agent 官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #ede9fe 45%, #ccfbf1 100%)",
+        "bb_title": "把企业知识、流程和工具<br><strong>交给 AI Agent 协同执行</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)",
+        "bb_subtitle": "企业 AI Agent 平台、知识库问答与流程自动化官网方案",
+        "bb_desc": "围绕企业知识库、RAG 检索、多智能体协作、工具调用、审批流、权限审计和私有化部署，把 AI 能力包装成客户能快速理解、评估和预约演示的官网页面。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "预约 Agent 演示",
+            "link": "#",
+            "style": "primary",
+            "icon": "演"
+          },
+          {
+            "text": "查看应用场景",
+            "link": "#",
+            "style": "light",
+            "icon": "景"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#2563eb",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#6d28d9",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#f5f3ff",
+        "bb_light_btn_hover_text_color": "#2563eb",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "企业级 AI Agent 能力",
+        "features_subtitle": "从知识理解、工具调用到流程执行，构建可控可审计的智能体系统",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#ede9fe",
+        "features_icon_color": "#059669",
+        "features_items": [
+          {
+            "icon": "知",
+            "title": "企业知识库问答",
+            "desc": "连接文档、网页、数据库和业务系统，基于权限进行检索增强问答和引用溯源。",
+            "link": "#"
+          },
+          {
+            "icon": "工",
+            "title": "工具调用与任务执行",
+            "desc": "让 Agent 调用 API、表单、工单、CRM、ERP 和自动化脚本，完成可追踪业务动作。",
+            "link": "#"
+          },
+          {
+            "icon": "协",
+            "title": "多 Agent 协作",
+            "desc": "按客服、销售、运营、数据、法务等角色拆分智能体，让复杂任务分工处理。",
+            "link": "#"
+          },
+          {
+            "icon": "审",
+            "title": "权限审计与安全控制",
+            "desc": "支持角色权限、敏感词、审批确认、日志审计、知识边界和私有化部署策略。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "AI Agent 落地模式对比",
+        "comparison_subtitle": "帮助企业按阶段选择问答助手、流程智能体或私有化平台",
+        "comparison_features": "适合阶段\n核心目标\n关键能力\n上线周期\n数据与权限\n交付方式",
+        "comparison_products": [
+          {
+            "name": "知识库助手",
+            "values": "先验证 AI 入口与企业资料质量\n让员工和客户快速找到答案\n文档导入、RAG 检索、引用来源、基础问答、多渠道入口\n1-2 周试点\n按资料库和用户角色控制访问\nSaaS 或轻量私有化"
+          },
+          {
+            "name": "流程 Agent",
+            "values": "已有明确业务流程和系统接口\n让 AI 协助提交、查询、流转和提醒\n工具调用、工单/CRM/ERP 对接、流程编排、人工确认、异常回退\n3-6 周项目\n按动作权限、审批节点和日志审计控制\n项目实施 + 持续优化"
+          },
+          {
+            "name": "企业 Agent 平台",
+            "values": "多部门、多系统、多场景规模化落地\n统一管理智能体、知识、权限和审计\n多 Agent 编排、模型路由、私有知识库、API 网关、监控看板、SLA\n2-3 个月起\nSSO、私有化、审计、脱敏和合规策略\n私有化部署 + 专属运维"
+          }
+        ],
+        "comparison_highlight": "2",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "企业 AI Agent 应用案例",
+        "cases_subtitle": "用部门场景、系统边界和执行结果说明智能体价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
+            "title": "售前知识助手",
+            "desc": "连接产品手册、报价规则和案例库，辅助销售快速生成方案初稿和客户答疑。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+            "title": "经营数据分析 Agent",
+            "desc": "对接 BI 指标和业务数据库，按自然语言生成查询、解释异常并推送复盘建议。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+            "title": "工单处理自动化",
+            "desc": "识别客户问题、补全工单字段、调用系统查询进度，并把高风险任务转人工确认。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "AI Agent 服务套餐",
+        "pricing_subtitle": "价格为展示占位，可按模型额度、用户席位、私有化部署和实施服务继续编辑",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "试点版",
+            "price": "¥9,800",
+            "period": "/项目起",
+            "desc": "适合单场景验证",
+            "features": "1 个 Agent 场景\n基础知识库接入\n标准问答入口\n试点报告\n远程上线支持",
+            "btn_text": "预约试点",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "业务版",
+            "price": "¥39,800",
+            "period": "/项目起",
+            "desc": "适合流程型应用",
+            "features": "3-5 个 Agent 场景\n工具调用与流程编排\n系统接口联调\n权限与日志\n月度优化复盘",
+            "btn_text": "咨询业务版",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)"
+          },
+          {
+            "name": "企业版",
+            "price": "联系顾问",
+            "period": "",
+            "desc": "适合私有化和规模化落地",
+            "features": "私有化部署\n多 Agent 管理\nSSO 与审计\n模型与知识治理\n专属运维与培训",
+            "btn_text": "预约演示",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "企业 AI Agent 常见问题",
+        "faq_subtitle": "提前说明数据安全、系统对接、上线周期和效果边界",
+        "faq_items": [
+          {
+            "question": "AI Agent 和普通聊天机器人有什么区别？",
+            "answer": "普通聊天机器人主要回答问题，AI Agent 更强调连接企业知识、调用工具、执行流程和记录结果。正式落地时应明确可执行动作、人工确认节点和异常回退方式。"
+          },
+          {
+            "question": "企业数据会不会泄露？",
+            "answer": "可以按企业要求配置私有化部署、权限隔离、敏感信息脱敏、调用日志、知识库访问控制和模型使用策略。具体安全边界需要结合部署方式和合同约定。"
+          },
+          {
+            "question": "上线前需要准备哪些资料？",
+            "answer": "建议准备业务场景说明、知识库资料、系统接口文档、角色权限、历史问答样本、流程 SOP、验收指标和试点部门联系人。"
+          },
+          {
+            "question": "AI Agent 能否替代员工？",
+            "answer": "更合理的定位是辅助员工处理查询、整理、草拟、流转和提醒等任务。涉及审批、合同、金额、合规和客户承诺的动作建议保留人工确认。"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "从一个可验证场景开始落地 AI Agent",
+        "cta_subtitle": "替换为你的真实演示入口、试点套餐和案例内容，就能把企业智能体能力包装成可咨询、可交付的官网页面。",
+        "cta_button_text": "预约 Agent 场景诊断",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "美容美发美甲官网",
+  "page_template": "templates/template-beauty-salon.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "beauty_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "beauty-salon",
+    "label": "美容美发美甲官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "beauty",
+    "industry_label": "美容美发美甲",
+    "scenario": "门店预约、项目展示、造型团队",
+    "description": "适合美容院、美发沙龙、美甲美睫、皮肤管理门店，内置项目价目、团队、相册和预约入口。",
+    "badges": [
+      "预约转化",
+      "门店服务"
+    ],
+    "order": 411,
+    "thumbnail": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "美容美发美甲官网模板 - 在线预约与项目展示",
+    "description": "适合美容院、美发沙龙、美甲美睫门店的官网页面，包含服务项目、价目套餐、造型团队、作品相册和预约入口。",
+    "keywords": "美容院官网,美发沙龙,美甲美睫,在线预约",
+    "og_title": "美容美发美甲官网",
+    "og_description": "用带图片的行业模块快速搭建可预约的美业官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #7f1d1d 0%, #be185d 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80",
+            "title": "让每一次到店都值得期待",
+            "subtitle": "美容护理、发型设计、美甲美睫一站式服务，支持在线预约到店。",
+            "btn_text": "预约到店",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#9f1239"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "30+",
+            "number": "30+",
+            "label": "服务项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "20+",
+            "number": "20+",
+            "label": "资深造型师",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "8",
+            "number": "8家",
+            "label": "城市门店",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "用户评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "热门服务项目",
+        "services_subtitle": "覆盖日常护理、造型设计与节日焕新场景",
+        "services_bg_color": "#ffffff",
+        "services_padding": "normal",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "面部护理",
+            "desc": "清洁补水、舒缓修护与肌肤管理方案。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "发型设计",
+            "desc": "剪发、染烫、造型定制与日常打理建议。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "美甲美睫",
+            "desc": "款式设计、甲面护理与睫毛精细化服务。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "新娘妆造",
+            "desc": "妆发搭配与重要场景形象焕新。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "menu",
+      "data": {
+        "menu_title": "人气价目参考",
+        "menu_subtitle": "可按门店等级、造型师级别和活动档期自由调整",
+        "menu_layout": "grid",
+        "menu_accent_color": "#db2777",
+        "menu_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
+            "title": "基础洗剪吹",
+            "desc": "含头皮清洁与发型打理建议",
+            "price": "¥128",
+            "badge": "日常热门",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
+            "title": "染发护理套餐",
+            "desc": "发色定制 + 护理修护",
+            "price": "¥598起",
+            "badge": "形象升级",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
+            "title": "轻奢美甲套餐",
+            "desc": "款式设计 + 手部护理",
+            "price": "¥298起",
+            "badge": "节日推荐",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+            "title": "面部深层护理",
+            "desc": "清洁补水 + 舒缓导入",
+            "price": "¥368",
+            "badge": "回购高",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "明星造型团队",
+        "team_subtitle": "按风格和需求匹配造型师，提升到店体验与复购率",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+            "name": "Mia",
+            "position": "发型总监",
+            "desc": "擅长轻奢染烫与脸型修饰设计。",
+            "email": "beauty1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
+            "name": "Luna",
+            "position": "护肤顾问",
+            "desc": "专注敏感肌舒缓与周期护理管理。",
+            "email": "beauty2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+            "name": "Yuki",
+            "position": "美甲主理人",
+            "desc": "擅长节日和婚礼场景款式设计。",
+            "email": "beauty3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#fff1f2",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "作品与空间",
+        "gallery_subtitle": "从服务结果到门店氛围，让新客更快建立信任",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "gallery_gap": "16",
+        "enable_filter": "yes",
+        "filter_categories": "发型,美甲,护理,空间",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80",
+            "title": "轻奢沙龙空间",
+            "desc": "舒适到店体验",
+            "category": "空间"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
+            "title": "节日款美甲",
+            "desc": "细节设计",
+            "category": "美甲"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80",
+            "title": "造型护理",
+            "desc": "发色与发质管理",
+            "category": "发型"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约到店体验",
+        "booking_subtitle": "提交项目、门店和到店时间，顾问会确认预约安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约须知",
+        "sidebar_content": "可选择门店、服务项目和到店时间\n节假日建议提前 2 天预约\n如需指定造型师请在表单备注说明",
+        "contact_phone": "400-888-2026",
+        "contact_hours": "10:00-21:30",
+        "module_bg_image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55",
+        "module_padding_top": "90px",
+        "module_padding_bottom": "90px"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "预约常见问题",
+        "faq_subtitle": "先了解流程，再放心到店",
+        "module_bg_color": "#fff7ed",
+        "faq_items": [
+          {
+            "question": "可以指定造型师吗？",
+            "answer": "可以，在预约备注中填写偏好的造型师或风格，门店会二次确认排期。"
+          },
+          {
+            "question": "价格是否会浮动？",
+            "answer": "染烫、护理等项目会根据发量、发长、门店活动略有差异，到店前会先沟通确认。"
+          },
+          {
+            "question": "是否支持团购或会员卡？",
+            "answer": "支持门店活动、会员储值和次卡套餐，可在页面中替换为实际规则。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备换一个更适合你的状态？",
+        "cta_subtitle": "从发型、妆容到护理方案，给新客一个明确的第一步。",
+        "cta_button_text": "立即预约",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.55",
+        "module_padding_top": "90px",
+        "module_padding_bottom": "90px"
+      }
+    }
+  ]
+}

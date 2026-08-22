@@ -1,0 +1,179 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "解决方案",
+  "page_template": "templates/template-solutions.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "solutions",
+    "label": "解决方案",
+    "category": "corporate",
+    "category_label": "官网通用",
+    "industry": "enterprise",
+    "scenario": "解决方案页",
+    "description": "适合行业方案、服务方案和客户问题解决路径展示。",
+    "badges": [
+      "服务",
+      "方案"
+    ],
+    "order": 20,
+    "thumbnail": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "解决方案模板 - 启灵官方页面包",
+    "description": "适合行业方案、服务方案和客户问题解决路径展示。",
+    "keywords": "解决方案,解决方案页,服务,方案",
+    "og_title": "解决方案",
+    "og_description": "适合行业方案、服务方案和客户问题解决路径展示。"
+  },
+  "modules": [
+    {
+      "type": "image_text",
+      "data": {
+        "image_text_layout": "left",
+        "image_text_title": "全方位解决方案",
+        "image_text_content": "<p>我们提供专业、高效、定制化的解决方案，帮助企业应对数字化转型过程中的各种挑战。</p><p>基于多年行业经验和技术积累，我们的解决方案已成功服务于数百家企业，涵盖制造、金融、医疗、教育等多个领域。</p><ul><li>✓ 深度定制，贴合业务需求</li><li>✓ 快速部署，降低实施风险</li><li>✓ 持续迭代，保持技术领先</li></ul>",
+        "image_text_button": "了解详情",
+        "image_text_url": "#features",
+        "image_text_image": ""
+      }
+    },
+    {
+      "type": "columns",
+      "data": {
+        "columns_count": "3",
+        "columns_items": [
+          {
+            "title": "🔍 智能分析",
+            "content": "<p>利用AI和大数据技术，对业务数据进行深度分析，挖掘潜在价值，为决策提供数据支撑。</p><ul><li>实时数据监控</li><li>智能预警系统</li><li>可视化报表</li></ul>",
+            "image": ""
+          },
+          {
+            "title": "⚡ 高效协同",
+            "content": "<p>打通部门壁垒，实现信息共享和流程协同，大幅提升团队协作效率和项目交付速度。</p><ul><li>跨部门协作</li><li>流程自动化</li><li>移动办公支持</li></ul>",
+            "image": ""
+          },
+          {
+            "title": "🛡️ 安全可靠",
+            "content": "<p>采用企业级安全架构，多层防护机制确保数据安全，让您的业务运行无后忧之忧。</p><ul><li>数据加密存储</li><li>权限精细管理</li><li>灾备恢复机制</li></ul>",
+            "image": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "解决方案实施流程",
+        "process_subtitle": "科学规范的实施流程，确保项目顺利落地",
+        "process_bg_color": "#f8fafc",
+        "process_items": [
+          {
+            "icon": "📋",
+            "title": "需求调研",
+            "desc": "深入了解企业现状和痛点，明确项目目标和范围",
+            "icon_bg": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          },
+          {
+            "icon": "📐",
+            "title": "方案设计",
+            "desc": "根据调研结果，定制专属解决方案和实施计划",
+            "icon_bg": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+          },
+          {
+            "icon": "🔧",
+            "title": "开发部署",
+            "desc": "敏捷开发模式，快速迭代，分阶段交付成果",
+            "icon_bg": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+          },
+          {
+            "icon": "🚀",
+            "title": "培训上线",
+            "desc": "完善的培训体系和上线支持，确保平稳过渡",
+            "icon_bg": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image_text",
+      "data": {
+        "image_text_layout": "right",
+        "image_text_title": "领先的技术架构",
+        "image_text_content": "<p>采用微服务架构设计，具备高可用、高并发、易扩展的特性，支持私有化部署和混合云方案。</p><p><strong>技术亮点：</strong></p><ul><li>🔹 云原生架构，弹性伸缩</li><li>🔹 微服务设计，模块解耦</li><li>🔹 容器化部署，运维简便</li><li>🔹 多租户支持，资源隔离</li><li>🔹 开放API接口，无缝集成</li></ul>",
+        "image_text_button": "技术白皮书",
+        "image_text_url": "#",
+        "image_text_image": ""
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "为什么选择我们的解决方案",
+        "features_subtitle": "专业团队 + 成熟产品 + 优质服务 = 成功保障",
+        "features_items": [
+          {
+            "icon": "🏆",
+            "title": "行业领先",
+            "desc": "10+年行业深耕，服务500+企业客户"
+          },
+          {
+            "icon": "👥",
+            "title": "专业团队",
+            "desc": "200+技术专家，提供全程专业支持"
+          },
+          {
+            "icon": "📈",
+            "title": "效果显著",
+            "desc": "平均提升30%运营效率，降低20%成本"
+          },
+          {
+            "icon": "🤝",
+            "title": "贴心服务",
+            "desc": "7×24小时响应，专属客户成功经理"
+          }
+        ]
+      }
+    },
+    {
+      "type": "columns",
+      "data": {
+        "columns_count": "3",
+        "columns_items": [
+          {
+            "title": "制造业数字化转型",
+            "content": "<p style=\"color: #64748b; font-size: 0.9rem;\">帮助某大型制造企业实现生产全流程数字化管理，生产效率提升35%，库存周转率提高28%。</p><a href=\"#\" style=\"color: var(--color-primary); font-weight: 500;\">查看详情 →</a>",
+            "image": ""
+          },
+          {
+            "title": "金融风控系统升级",
+            "content": "<p style=\"color: #64748b; font-size: 0.9rem;\">为某银行打造智能风控平台，实现风险识别准确率98%，审批效率提升50%。</p><a href=\"#\" style=\"color: var(--color-primary); font-weight: 500;\">查看详情 →</a>",
+            "image": ""
+          },
+          {
+            "title": "医疗信息化建设",
+            "content": "<p style=\"color: #64748b; font-size: 0.9rem;\">助力某三甲医院建设智慧医疗系统，患者等待时间减少60%，医疗差错率降低75%。</p><a href=\"#\" style=\"color: var(--color-primary); font-weight: 500;\">查看详情 →</a>",
+            "image": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "开启您的数字化转型之旅",
+        "cta_subtitle": "立即联系我们，获取免费需求评估和专属解决方案",
+        "cta_btn_text": "预约咨询",
+        "cta_btn_url": "/contact/",
+        "cta_bg_color": "linear-gradient(135deg, #2563eb 0%, #059669 100%)"
+      }
+    }
+  ]
+}

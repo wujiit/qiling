@@ -1,0 +1,252 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "餐饮官网",
+  "page_template": "templates/template-restaurant.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "food_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "restaurant",
+    "label": "餐饮官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "restaurant",
+    "industry_label": "餐饮",
+    "scenario": "餐厅品牌、菜单展示、包间预约",
+    "description": "适合餐厅、咖啡馆、烘焙店、私房菜和连锁餐饮门店，内置菜单、门店服务、空间相册与订位入口。",
+    "badges": [
+      "菜单展示",
+      "订位预约"
+    ],
+    "order": 412,
+    "thumbnail": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "餐饮官网模板 - 菜单展示与在线订位",
+    "description": "适合餐厅、咖啡馆和连锁餐饮品牌的官网页面，包含首屏、招牌菜单、门店服务、环境相册、预约订位与 FAQ。",
+    "keywords": "餐厅官网,餐饮品牌,菜单展示,在线订位",
+    "og_title": "餐饮官网",
+    "og_description": "用带图片菜单和订位入口快速搭建餐饮官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #b45309 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80",
+            "title": "城市里的烟火好味道",
+            "subtitle": "精选食材，现点现做，支持在线预约到店。",
+            "btn_text": "立即订位",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#92400e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "24",
+            "number": "24+",
+            "label": "招牌菜品",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "6",
+            "number": "6间",
+            "label": "主题包间",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.8",
+            "number": "4.8",
+            "label": "顾客评分",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "30",
+            "number": "30分钟",
+            "label": "高峰响应",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "menu",
+      "data": {
+        "menu_title": "招牌菜单",
+        "menu_subtitle": "人气菜品与套餐推荐，可按门店口味自行调整",
+        "menu_layout": "grid",
+        "menu_accent_color": "#f59e0b",
+        "menu_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+            "title": "季节沙拉",
+            "desc": "时令蔬果、坚果与低脂酱汁",
+            "price": "¥58",
+            "badge": "轻食",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80",
+            "title": "主厨意面",
+            "desc": "慢炖番茄肉酱与帕玛森芝士",
+            "price": "¥88",
+            "badge": "热卖",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80",
+            "title": "炙烤牛排",
+            "desc": "精选部位、现点现煎、搭配时蔬",
+            "price": "¥188",
+            "badge": "推荐",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
+            "title": "手作甜品",
+            "desc": "每日限量，适合餐后分享",
+            "price": "¥42",
+            "badge": "新品",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "门店服务",
+        "services_subtitle": "不仅有好吃的，也要让到店体验更顺畅",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "到店堂食",
+            "desc": "适合约会、家庭聚餐和商务接待。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "包场活动",
+            "desc": "生日会、团建和小型发布会场地预订。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "轻食定制",
+            "desc": "低卡、健身与过敏原提示菜品支持。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "外带打包",
+            "desc": "支持电话或线上预约取餐。",
+            "link": "#"
+          }
+        ],
+        "services_bg_color": "#fff7ed"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "环境与菜品",
+        "gallery_subtitle": "用真实图片呈现门店氛围和出品标准",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "enable_filter": "yes",
+        "filter_categories": "环境,菜品,甜品",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+            "title": "开放式用餐区",
+            "desc": "适合聚会和商务接待",
+            "category": "环境"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80",
+            "title": "炙烤主菜",
+            "desc": "现点现做",
+            "category": "菜品"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80",
+            "title": "手作甜品",
+            "desc": "每日新鲜供应",
+            "category": "甜品"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "在线订位",
+        "booking_subtitle": "提交用餐日期、人数和座位偏好，门店会确认订位信息。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "订位须知",
+        "sidebar_content": "高峰时段建议提前预订\n包间需电话二次确认\n忌口、生日布置或儿童椅可写入表单备注",
+        "contact_phone": "400-600-2026",
+        "contact_hours": "11:00-22:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.5",
+        "module_padding_top": "90px",
+        "module_padding_bottom": "90px"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "订位常见问题",
+        "module_bg_color": "#fffbeb",
+        "faq_items": [
+          {
+            "question": "是否支持包间预订？",
+            "answer": "支持，可在预约备注中填写包间需求，门店会根据当天排期电话确认。"
+          },
+          {
+            "question": "菜单价格可以改吗？",
+            "answer": "可以，JSON 中的菜单图、菜名、描述和价格都可以在装修器中直接替换。"
+          },
+          {
+            "question": "能否用于咖啡馆或烘焙店？",
+            "answer": "可以，只需把菜单、服务和图片替换为对应品类即可。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "今晚想吃点不一样的？",
+        "cta_subtitle": "一键订位，让好味道有一个确定的位置。",
+        "cta_button_text": "预约餐位",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.55",
+        "module_padding_top": "90px",
+        "module_padding_bottom": "90px"
+      }
+    }
+  ]
+}

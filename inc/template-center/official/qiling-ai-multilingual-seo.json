@@ -1,0 +1,253 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "AI 多语言出海官网",
+  "page_template": "templates/template-qiling-ai-multilingual-seo.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-ai-multilingual-seo",
+    "label": "AI 多语言出海官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "multilingual_seo",
+    "industry_label": "多语言 SEO",
+    "scenario": "AI 翻译、多语言 URL、SEO 出海、多语言 Sitemap",
+    "description": "适合启灵AI多语言、多语言内容站、外贸出海官网和跨境 SEO 服务页，内置品牌首屏、翻译能力、出海指标、发布流程、方案对比、FAQ 和咨询入口。",
+    "badges": [
+      "启灵生态",
+      "AI 多语言",
+      "SEO 出海"
+    ],
+    "order": 376,
+    "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "AI 多语言出海官网模板 - 翻译、URL 与 SEO 协作",
+    "description": "适合启灵AI多语言和跨境 SEO 服务的官网页面，包含模块翻译、文章页面翻译、多语言 URL、SEO 数据协作、Sitemap 和咨询入口。",
+    "keywords": "AI多语言官网,多语言SEO,启灵AI多语言,网站翻译,跨境SEO,多语言Sitemap",
+    "og_title": "AI 多语言出海官网",
+    "og_description": "用 AI 翻译、启灵模块适配和多语言 SEO 数据协作快速搭建出海官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #052e2b 0%, #0f766e 48%, #4338ca 100%)",
+        "bb_title_mode": "text",
+        "bb_title": "AI 多语言出海<br><strong>让内容和 SEO 一起翻译</strong>",
+        "bb_title_size_max": "78px",
+        "bb_subtitle": "启灵主题专用的 AI 多语言官网方案",
+        "bb_desc": "围绕启灵主题页面模块、文章页面、SEO 元数据、多语言 URL 和 Sitemap 建立出海内容链路。插件只替换文字与提供 SEO 数据，页面结构仍由启灵主题稳定渲染。",
+        "bb_orbit_text": "AI TRANSLATION - MULTILINGUAL SEO - QILING -",
+        "bb_orbit_anchor": "title",
+        "bb_orbit_size": "112px",
+        "bb_orbit_color": "#a7f3d0",
+        "bb_orbit_center_type": "text",
+        "bb_orbit_center_symbol": "SEO",
+        "bb_text_align": "left",
+        "bb_title_color": "#ffffff",
+        "bb_title_effect": "glow",
+        "bb_text_color": "#d1fae5",
+        "bb_buttons": [
+          {
+            "text": "查看出海方案",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "了解插件能力",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "#ffffff",
+        "bb_primary_btn_text_color": "#0f766e",
+        "bb_primary_btn_hover_bg_color": "#ecfeff",
+        "bb_primary_btn_hover_text_color": "#0f172a",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "22px",
+        "bb_media_max_width": "560px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "96px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "启灵主题专用多语言能力",
+        "features_subtitle": "不做通用翻译平台，而是深度适配启灵页面、模块和 SEO 输出",
+        "features_columns": "4",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "文章与页面翻译",
+            "desc": "支持文章标题、摘要、正文，以及页面标题、正文和 SEO 文案翻译。"
+          },
+          {
+            "icon": "02",
+            "title": "模块文字提取",
+            "desc": "读取 _developer_starter_modules，只翻译可见文字，不改布局、图片、视频和结构。"
+          },
+          {
+            "icon": "03",
+            "title": "多语言 URL",
+            "desc": "默认语言保留原链接，非默认语言可使用 /en/、/jp/ 等语言前缀。"
+          },
+          {
+            "icon": "04",
+            "title": "SEO 数据协作",
+            "desc": "翻译标题、描述、关键词与 OG 文案，由启灵主题统一输出 canonical、hreflang 和 schema。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "多语言出海先看这些指标",
+        "stats_subtitle": "把语言版本、内容对象、SEO 数据和收录入口讲清楚，客户更容易判断实施范围",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "12+",
+            "label": "常用目标语言可规划"
+          },
+          {
+            "number": "3类",
+            "label": "文章、页面、模块文字"
+          },
+          {
+            "number": "SEO",
+            "label": "标题描述关键词译文"
+          },
+          {
+            "number": "Sitemap",
+            "label": "多语言收录入口"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#ecfeff",
+        "module_padding_top": "76px",
+        "module_padding_bottom": "76px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从中文内容到多语言收录",
+        "process_subtitle": "把配置、翻译、发布和搜索引擎收录路径讲清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "配置语言与 AI 平台",
+            "desc": "在启灵主题配置语言简码与 locale，在插件里配置 AI 平台和默认翻译模式。",
+            "stage_tag": "配置"
+          },
+          {
+            "icon": "02",
+            "title": "翻译文章与页面",
+            "desc": "文章可批量翻译，页面回到编辑页处理模块文字、正文和 SEO 译文。",
+            "stage_tag": "翻译"
+          },
+          {
+            "icon": "03",
+            "title": "生成语言 URL",
+            "desc": "按语言前缀或独立语言版本生成可访问链接，语言切换优先跳到对应版本。",
+            "stage_tag": "发布"
+          },
+          {
+            "icon": "04",
+            "title": "同步 SEO 与 Sitemap",
+            "desc": "多语言 Sitemap 收录首页、文章、页面和已生成语言版本，主题统一输出 SEO 标签。",
+            "stage_tag": "收录"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "为什么用启灵生态做多语言",
+        "comparison_subtitle": "和手工翻译、通用多语言插件相比，启灵AI多语言更适合启灵主题页面装修站",
+        "comparison_features": "启灵页面模块文字\n文章与页面内容翻译\nSEO 标题/描述/关键词/OG\n多语言 URL 和语言切换\n多语言 Sitemap\n只翻译文字不改结构",
+        "comparison_products": [
+          {
+            "name": "手工翻译",
+            "values": "人工逐项处理\n人工逐篇处理\n容易遗漏\n需要手动维护\n需要额外工具\n取决于执行人"
+          },
+          {
+            "name": "通用多语言插件",
+            "values": "不一定识别启灵模块\n通常可处理正文\n可能重复输出 SEO\n插件规则复杂\n依赖插件能力\n可能改动结构"
+          },
+          {
+            "name": "启灵AI多语言",
+            "values": "深度适配\n支持\n提供译文数据给主题\n支持\n基于 WP Sitemap\n坚持只替换文字"
+          }
+        ],
+        "comparison_highlight": "3",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "多语言出海常见问题",
+        "faq_subtitle": "提前解释插件边界，减少客户把它误解成通用翻译系统",
+        "faq_items": [
+          {
+            "question": "启灵AI多语言是 WPML 或 Polylang 的替代品吗？",
+            "answer": "不是。它的定位是启灵主题专用多语言能力，优先适配启灵主题的页面模块、SEO 数据、URL 规则和 Sitemap。"
+          },
+          {
+            "question": "页面模块翻译会改变页面结构吗？",
+            "answer": "不会。插件读取启灵主题模块数据，只提取和替换可见文字，不修改模块结构、布局配置、图片、图标、视频或代码。"
+          },
+          {
+            "question": "SEO 标签由插件输出还是主题输出？",
+            "answer": "SEO 输出保留一套，以启灵主题为准。插件负责提供翻译后的 SEO 标题、描述、关键词和 OG 数据，主题负责输出 canonical、hreflang、og 和 schema。"
+          },
+          {
+            "question": "页面翻译在哪里操作？",
+            "answer": "页面翻译依赖启灵主题模块结构，应进入对应页面编辑页，在译文编辑区域处理页面正文、SEO 文案和模块文字。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "规划多语言 SEO 出海方案",
+        "contact_subtitle": "提交目标语言、站点类型、内容规模和主要市场，评估 AI 翻译、URL 规则、SEO 数据和 Sitemap 的上线路径。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

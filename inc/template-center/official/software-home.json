@@ -1,0 +1,270 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 2,
+  "title": "启灵软件库首页",
+  "page_template": "templates/template-software-home.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "software-home",
+    "label": "启灵软件库首页",
+    "category": "resource",
+    "category_label": "数字资源",
+    "industry": "software_resource",
+    "industry_label": "软件资源",
+    "scenario": "App 下载站、软件库、版本更新、软件下载聚合",
+    "description": "适合配合启灵软件库插件搭建软件下载资源站；页面包只负责首页视觉和模块组合，软件版本、下载源、下载统计由启灵软件库插件维护。",
+    "badges": [
+      "软件库",
+      "App 下载",
+      "插件联动"
+    ],
+    "order": 321,
+    "thumbnail": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "启灵软件库首页模板 - 软件下载资源站",
+    "description": "适合 App 下载站、软件资源站和版本更新聚合页，默认调用启灵软件库的软件轮播、分类展示和排行榜模块。",
+    "keywords": "启灵软件库,软件下载,App下载,软件资源站,版本更新,下载排行榜",
+    "og_title": "启灵软件库首页",
+    "og_description": "用软件轮播、分类展示和排行榜快速搭建软件资源首页。"
+  },
+  "modules": [
+    {
+      "type": "hero_search",
+      "data": {
+        "hs_height": "large",
+        "hs_title": "发现好用的软件和 App",
+        "hs_subtitle": "集中展示软件版本、适配平台、下载入口和更新内容",
+        "hs_bg_items": [
+          {
+            "type": "image",
+            "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
+            "video_url": ""
+          }
+        ],
+        "hs_bg_overlay": "yes",
+        "hs_overlay_opacity": "62",
+        "hs_search_placeholder": "搜索软件名、平台、功能关键词...",
+        "hs_search_btn_bg": "linear-gradient(135deg, #2563eb 0%, #14b8a6 100%)",
+        "hs_tags": [
+          {
+            "text": "Windows"
+          },
+          {
+            "text": "macOS"
+          },
+          {
+            "text": "Android"
+          },
+          {
+            "text": "效率工具"
+          },
+          {
+            "text": "热门更新"
+          }
+        ],
+        "hs_title_color": "#ffffff",
+        "hs_subtitle_color": "rgba(255,255,255,0.82)",
+        "hs_tags_bg": "rgba(255,255,255,0.14)",
+        "hs_tags_color": "#ffffff"
+      }
+    },
+    {
+      "type": "software_carousel",
+      "data": {
+        "software_carousel_title": "最新上架",
+        "software_carousel_subtitle": "自动调用启灵软件库中的软件数据，适合展示最新版本和重点软件",
+        "software_carousel_bg_type": "color",
+        "software_carousel_bg_color": "#f6f8fb",
+        "software_carousel_title_color": "#0f172a",
+        "software_carousel_title_size": "2rem",
+        "software_carousel_subtitle_color": "#64748b",
+        "software_carousel_subtitle_size": "1rem",
+        "software_carousel_categories": "",
+        "software_carousel_count": "10",
+        "software_carousel_speed": "32",
+        "software_carousel_card_bg": "#ffffff",
+        "software_carousel_icon_size": "64px",
+        "software_carousel_show_btn": "1",
+        "software_carousel_btn_text": "查看全部软件",
+        "software_carousel_btn_link": "/software/"
+      }
+    },
+    {
+      "type": "software_category",
+      "data": {
+        "sc_title": "按分类浏览软件",
+        "sc_subtitle": "把工具、系统、插件、移动端应用按分类展示，降低用户查找成本",
+        "sc_bg_type": "color",
+        "sc_bg_color": "#ffffff",
+        "sc_title_color": "#0f172a",
+        "sc_title_size": "2rem",
+        "sc_subtitle_color": "#64748b",
+        "sc_subtitle_size": "1rem",
+        "sc_layout": "grid",
+        "sc_columns": "4",
+        "sc_categories": "",
+        "sc_count": "8",
+        "sc_orderby": "modified",
+        "sc_card_bg": "#ffffff",
+        "sc_icon_size": "58px",
+        "sc_show_version": "1",
+        "sc_show_date": "1",
+        "sc_show_downloads": "1",
+        "sc_show_desc": "1",
+        "sc_show_btn": "1",
+        "sc_btn_text": "进入软件库",
+        "sc_btn_link": "/software/"
+      }
+    },
+    {
+      "type": "software_ranking",
+      "data": {
+        "sr_title": "下载排行榜",
+        "sr_title_size": "2rem",
+        "sr_title_color": "#0f172a",
+        "sr_subtitle": "按下载量、浏览量或更新时间生成榜单，适合做资源站的高点击区域",
+        "sr_subtitle_size": "1rem",
+        "sr_subtitle_color": "#64748b",
+        "sr_bg_type": "color",
+        "sr_bg_color": "#f6f8fb",
+        "sr_padding_top": "72px",
+        "sr_padding_bottom": "72px",
+        "sr_layout": "cards",
+        "sr_columns": "3",
+        "sr_ranking_type": "downloads",
+        "sr_categories": "",
+        "sr_count": "9",
+        "sr_card_bg": "#ffffff",
+        "sr_icon_size": "54px",
+        "sr_show_rank_badge": "1",
+        "sr_show_stats": "1",
+        "sr_show_version": "1",
+        "sr_show_btn": "1",
+        "sr_btn_text": "查看完整榜单",
+        "sr_btn_link": "/software/"
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "常用客户端下载",
+        "downloads_subtitle": "适合放置公开安装器、企业版客户端或引导下载；软件详情页仍由启灵软件库维护版本和下载源",
+        "downloads_columns": "3",
+        "downloads_items": [
+          {
+            "title": "Windows 客户端",
+            "size": "128 MB",
+            "file": "#",
+            "icon": "WIN",
+            "format": "EXE",
+            "date": "2026-06-01",
+            "description": "公开安装包入口，详细版本记录建议在软件详情页维护。"
+          },
+          {
+            "title": "macOS 客户端",
+            "size": "146 MB",
+            "file": "#",
+            "icon": "MAC",
+            "format": "DMG",
+            "date": "2026-06-01",
+            "description": "适合展示桌面端下载入口，可继续链接到软件详情页。"
+          },
+          {
+            "title": "Android 安装包",
+            "size": "86 MB",
+            "file": "#",
+            "icon": "APK",
+            "format": "APK",
+            "date": "2026-06-01",
+            "description": "适合移动端应用官网或软件下载站的公开入口。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "resource_stats",
+      "data": {
+        "rs_title": "软件站运营数据",
+        "rs_subtitle": "展示软件数量、用户规模和运行时间，强化资源站信任感",
+        "rs_bg_color": "#ffffff",
+        "rs_padding_top": "64px",
+        "rs_padding_bottom": "64px",
+        "rs_stats_list": [
+          {
+            "stat_label": "软件内容",
+            "stat_icon": "dashicons-desktop",
+            "data_source": "total_posts",
+            "source_id": "",
+            "virtual_num": "80",
+            "show_plus": "yes"
+          },
+          {
+            "stat_label": "注册用户",
+            "stat_icon": "dashicons-groups",
+            "data_source": "total_users",
+            "source_id": "",
+            "virtual_num": "900",
+            "show_plus": "yes"
+          },
+          {
+            "stat_label": "会员用户",
+            "stat_icon": "dashicons-star-filled",
+            "data_source": "vip_users",
+            "source_id": "",
+            "virtual_num": "120",
+            "show_plus": "yes"
+          },
+          {
+            "stat_label": "稳定运行",
+            "stat_icon": "dashicons-performance",
+            "data_source": "site_days",
+            "source_id": "",
+            "virtual_num": "0",
+            "show_plus": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "软件库模板常见问题",
+        "faq_subtitle": "明确主题页面包和启灵软件库插件的分工",
+        "faq_items": [
+          {
+            "question": "软件版本和下载链接在哪里维护？",
+            "answer": "继续在启灵软件库插件里维护。主题页面包只调用软件库模块做展示，不会重复保存版本号、下载源、MD5 或下载统计。"
+          },
+          {
+            "question": "没有安装启灵软件库插件会怎样？",
+            "answer": "页面包可以导入，软件轮播、分类和排行榜模块会显示插件提示或空状态；安装并录入软件后会自动显示真实数据。"
+          },
+          {
+            "question": "这个软件首页会影响企业官网吗？",
+            "answer": "不会。它只绑定软件首页页面模板和对应页面包，普通企业官网模板仍保持原样。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "让软件下载站先有完整首页",
+        "cta_subtitle": "首页负责浏览和转化，软件详情页负责版本、平台、下载源和历史版本。",
+        "cta_button_text": "进入软件库",
+        "cta_button_url": "/software/",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.62"
+      }
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "文档解析转换官网",
+  "page_template": "templates/template-qiling-doc-ocr-converter.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-doc-ocr-converter",
+    "label": "文档解析转换官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "document_ocr",
+    "industry_label": "文档 OCR",
+    "scenario": "文档解析、OCR、PDF 转换、办公文件处理",
+    "description": "适合启灵文档解析、启灵文档转换、OCR 工具站、PDF 转 Office 和办公文件处理平台，内置资源首屏、能力展示、结果下载、处理流程、套餐、FAQ 和转化入口。",
+    "badges": [
+      "启灵生态",
+      "文档解析",
+      "PDF 转换"
+    ],
+    "order": 377,
+    "thumbnail": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "文档解析转换官网模板 - OCR、PDF 与办公文件处理",
+    "description": "适合启灵文档解析和启灵文档转换的官网页面，覆盖 PaddleOCR、MinerU、PDF 转 Word/PPT/Excel、文档转 PDF、额度套餐和下载入口。",
+    "keywords": "文档解析官网,OCR工具站,PDF转Word,文档转PDF,启灵文档解析,启灵文档转换,MinerU",
+    "og_title": "文档解析转换官网",
+    "og_description": "用启灵文档解析和文档转换能力搭建可转化的办公工具官网。"
+  },
+  "modules": [
+    {
+      "type": "resource_hero_pro",
+      "data": {
+        "rh_layout": "top_bottom",
+        "rh_height": "auto",
+        "rh_bg_type": "image",
+        "rh_bg_image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80",
+        "rh_bg_overlay": "0.58",
+        "rh_style_preset": "premium",
+        "rh_enable_motion": "1",
+        "rh_motion_level": "soft",
+        "rh_badge": "启灵生态文档工具站",
+        "rh_title": "把 OCR 与 PDF 转换<br><strong>做成可商业化的文档平台</strong>",
+        "rh_subtitle": "启灵文档解析 + 启灵文档转换的官网入口方案",
+        "rh_desc": "围绕上传解析、URL 解析、MinerU 多格式解析、PDF 转 Word/PPT/Excel、文档转 PDF、额度限制、积分与会员权益，把工具能力包装成清晰可购买的产品页面。",
+        "rh_visual_slides": [
+          {
+            "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
+            "link": "#",
+            "alt": "办公文档解析与转换"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+            "link": "#",
+            "alt": "在线文档工具界面"
+          }
+        ],
+        "rh_visual_position": "right",
+        "rh_visual_height": "360px",
+        "rh_visual_radius": "18px",
+        "rh_visual_fit": "cover",
+        "rh_visual_shadow": "glow",
+        "rh_visual_shine": "1",
+        "rh_visual_autoplay": "1",
+        "rh_visual_interval": "5",
+        "rh_visual_show_dots": "1",
+        "rh_visual_caption": "支持文档解析、结果预览、Markdown/ZIP 下载与 Office/PDF 转换入口。",
+        "rh_benefits": [
+          {
+            "text": "PaddleOCR 与 MinerU 两种解析路径"
+          },
+          {
+            "text": "PDF 转 Word/PPT/Excel 与文档转 PDF"
+          },
+          {
+            "text": "游客额度、登录额度、积分和 VIP 可组合运营"
+          }
+        ],
+        "rh_stats": [
+          {
+            "value": "2",
+            "label": "生态插件"
+          },
+          {
+            "value": "10+",
+            "label": "常用格式"
+          },
+          {
+            "value": "50MB+",
+            "label": "可配置大小"
+          }
+        ],
+        "rh_primary_text": "进入文档工具",
+        "rh_primary_link": "#",
+        "rh_primary_btn_bg_color": "#ffffff",
+        "rh_primary_btn_text_color": "#0f766e",
+        "rh_primary_btn_hover_bg_color": "#ecfeff",
+        "rh_primary_btn_hover_text_color": "#0f172a",
+        "rh_secondary_text": "查看套餐",
+        "rh_secondary_link": "#",
+        "rh_enable_feed": "0",
+        "rh_enable_bottom_strip": "0"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "真实可落地的文档处理能力",
+        "features_subtitle": "页面文案按 qilingdococr 与 qi-pdftwpe 的实际功能组织，导入后只需替换成你的真实入口",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#dbeafe",
+        "features_items": [
+          {
+            "icon": "OCR",
+            "title": "PDF/图片解析",
+            "desc": "启灵文档解析支持 PDF、JPG、PNG、BMP、TIFF、WEBP 等上传解析，并可把结果沉淀为 Markdown。"
+          },
+          {
+            "icon": "VL",
+            "title": "MinerU 多格式解析",
+            "desc": "可开启 MinerU 路径处理 PDF、DOC、DOCX、PPT、PPTX 和图片，支持表格、公式与版面解析配置。"
+          },
+          {
+            "icon": "PDF",
+            "title": "PDF 转 Office",
+            "desc": "启灵文档转换提供 PDF 转 Word、PPT、Excel，并支持回调、轮询和统一前台转换表单。"
+          },
+          {
+            "icon": "DOC",
+            "title": "文档转 PDF",
+            "desc": "支持 Word、Excel、PPT、TXT 等办公文档转 PDF，适合做一站式办公文件处理入口。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "结果与资料下载",
+        "downloads_subtitle": "把解析结果、转换结果和使用说明集中展示，客户更容易理解工具交付物",
+        "downloads_bg_color": "#f8fafc",
+        "downloads_columns": "3",
+        "downloads_btn_bg_color": "#0f766e",
+        "downloads_btn_text_color": "#ffffff",
+        "downloads_btn_hover_bg_color": "#115e59",
+        "downloads_btn_hover_text_color": "#ffffff",
+        "downloads_items": [
+          {
+            "title": "OCR Markdown 示例",
+            "size": "MD",
+            "file": "#",
+            "format": "Markdown",
+            "date": "2026-04-24",
+            "btn_text": "查看示例",
+            "description": "展示 PDF/图片解析后的标题、段落、表格和可复制文本。"
+          },
+          {
+            "title": "MinerU 导出包示例",
+            "size": "ZIP",
+            "file": "#",
+            "format": "ZIP",
+            "date": "2026-04-24",
+            "btn_text": "查看示例",
+            "description": "用于说明 docx、html、latex 等额外导出格式的交付方式。"
+          },
+          {
+            "title": "PDF 转换结果示例",
+            "size": "Office",
+            "file": "#",
+            "format": "DOCX/PPTX/XLSX",
+            "date": "2026-04-24",
+            "btn_text": "查看示例",
+            "description": "用于展示 PDF 转 Word、PPT、Excel 或文档转 PDF 的下载结果。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从上传到下载的处理路径",
+        "process_subtitle": "把两个插件的前台体验讲成一条用户能理解的流程",
+        "process_mode": "standard",
+        "module_bg_color": "#ffffff",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "选择解析或转换",
+            "desc": "用户进入文档工具入口，按 PDF/图片解析、MinerU 多格式解析、PDF 转 Office 或文档转 PDF 选择任务类型。",
+            "stage_tag": "选择"
+          },
+          {
+            "icon": "02",
+            "title": "上传文件或提交 URL",
+            "desc": "按插件配置校验格式、大小、游客权限、登录额度、积分余额或 VIP 权益。",
+            "stage_tag": "提交"
+          },
+          {
+            "icon": "03",
+            "title": "任务执行与轮询",
+            "desc": "远程服务处理任务，前台通过轮询或回调获取任务状态，减少用户刷新页面的成本。",
+            "stage_tag": "处理"
+          },
+          {
+            "icon": "04",
+            "title": "预览、复制与下载",
+            "desc": "OCR 结果可预览和下载，转换结果可直接下载，后台继续沉淀使用统计和异常记录。",
+            "stage_tag": "交付"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "额度、积分与会员包装",
+        "pricing_subtitle": "价格为展示占位，可按实际站点的游客额度、积分单价、VIP 等级和企业服务改写",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "体验额度",
+            "price": "免费体验",
+            "period": "",
+            "desc": "适合游客和新用户试用",
+            "features": "游客每日额度\n基础 PDF/图片解析\n基础转换体验\n结果下载入口",
+            "btn_text": "开始体验",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "积分套餐",
+            "price": "按次扣费",
+            "period": "",
+            "desc": "适合常规工具站运营",
+            "features": "登录用户额度\n积分充值入口\nOCR 与转换共用包装\n使用记录统计\n失败任务可追踪",
+            "btn_text": "充值积分",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)"
+          },
+          {
+            "name": "企业服务",
+            "price": "联系顾问",
+            "period": "",
+            "desc": "适合批量文档处理和私有部署",
+            "features": "更高文件大小限制\n专属格式配置\n处理流程定制\n会员权益设计\n交付与培训支持",
+            "btn_text": "预约演示",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "文档工具常见问题",
+        "faq_subtitle": "提前解释插件边界、支持格式和套餐逻辑，减少上线后的沟通成本",
+        "faq_items": [
+          {
+            "question": "这个模板必须安装启灵文档解析和启灵文档转换吗？",
+            "answer": "不必须。模板本身可以正常导入和展示；启用插件后，把按钮链接改成 [qilingocr] 页面、[xb_pdftwpe_convert_form] 页面或你自己的工具入口即可。"
+          },
+          {
+            "question": "OCR 解析和 PDF 转换是同一个插件吗？",
+            "answer": "不是。启灵文档解析负责 PDF/图片 OCR、MinerU 多格式解析和结果下载；启灵文档转换负责 PDF 转 Word/PPT/Excel 和文档转 PDF。"
+          },
+          {
+            "question": "游客能不能使用？",
+            "answer": "两个插件都提供游客相关配置。实际是否开放、每日额度、文件大小和格式白名单，需要在对应插件后台按运营策略配置。"
+          },
+          {
+            "question": "积分和 VIP 是主题模板直接处理吗？",
+            "answer": "不是。主题模板只负责展示和转化入口，积分扣费、VIP 权益、使用次数和日志统计由对应插件以及启灵商城能力处理。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把文档处理入口升级成自己的产品官网",
+        "cta_subtitle": "替换为真实解析页、转换页、积分充值页和 VIP 套餐页，就能把工具能力变成可售卖、可解释、可运营的站点入口。",
+        "cta_button_text": "配置文档工具入口",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

@@ -5554,11 +5554,17 @@
                 return;
             }
             var fields = schema.fields || [];
-            var html = '<div class="qfb-settings-title">' + escapeHtml(schema.name || selectedModuleType) + '</div>';
-            html += renderModuleGovernanceCard(schema);
+            var html = '<div class="qfb-module-settings-title">' + escapeHtml(schema.name || selectedModuleType) + '设置</div>';
+            var currentFieldGroup = '';
 
             for (var i = 0; i < fields.length; i++) {
                 var field = fields[i];
+                var fieldGroup = field.builderGroup || selectedModuleType + ':other';
+                if (fieldGroup !== currentFieldGroup) {
+                    if (currentFieldGroup) html += '</div></section>';
+                    currentFieldGroup = fieldGroup;
+                    html += '<section class="qfb-module-settings-card" data-qfb-module-settings-card="' + escapeHtml(fieldGroup) + '"><div class="qfb-module-settings-card__header"><span class="qfb-module-settings-card__rule"></span><h3>' + escapeHtml(field.builderGroupLabel || '模块设置') + '</h3><span class="qfb-module-settings-card__rule"></span></div><div class="qfb-module-settings-card__body">';
+                }
                 var value = '';
                 if (field.id && current.data && Object.prototype.hasOwnProperty.call(current.data, field.id)) {
                     value = current.data[field.id];
@@ -5569,6 +5575,7 @@
                 }
                 html += renderFieldControl(field, value);
             }
+            if (currentFieldGroup) html += '</div></section>';
 
             els.settings.className = 'qfb-settings';
             els.settings.innerHTML = html;

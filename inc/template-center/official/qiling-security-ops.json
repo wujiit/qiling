@@ -1,0 +1,328 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "安全防护运维官网",
+  "page_template": "templates/template-qiling-security-ops.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-security-ops",
+    "label": "安全防护运维官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "security_ops",
+    "industry_label": "安全运维",
+    "scenario": "WordPress 安全巡检、主动防护、REST 隔离、流量统计、飞书钉钉告警",
+    "description": "适合启灵安全防护、启灵数据统计、启灵消息推送和 WordPress 安全运维服务，内置安全首屏、态势数据、能力矩阵、合规信任、处置流程、FAQ 和咨询表单。",
+    "badges": [
+      "启灵生态",
+      "安全运维",
+      "告警闭环"
+    ],
+    "order": 381,
+    "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "安全防护运维官网模板 - WordPress 巡检、防护与告警",
+    "description": "适合启灵安全防护、启灵数据统计和启灵消息推送的官网页面，覆盖全盘安全体检、主动防火墙、REST 路由隔离、操作审计、动态封禁、IP 风险画像、站内统计和飞书钉钉告警。",
+    "keywords": "WordPress安全防护,安全运维官网,启灵安全防护,REST路由隔离,操作审计日志,IP风险画像,飞书钉钉告警,站内流量统计",
+    "og_title": "安全防护运维官网",
+    "og_description": "用启灵安全生态搭建巡检、防护、统计和告警闭环的安全运维官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #020617 0%, #0f172a 44%, #0f766e 100%)",
+        "bb_title": "巡检、防护、统计、告警<br><strong>做成站点安全运维闭环</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#ffffff",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #67e8f9 48%, #34d399 100%)",
+        "bb_subtitle": "启灵生态安全防护运维方案",
+        "bb_desc": "围绕全盘安全体检、主动防护防火墙、REST 路由隔离、地区限制、操作审计、IP 风险画像、轻量流量统计和飞书/钉钉推送，把后台能力包装成可交付、可持续运营的安全服务入口。",
+        "bb_text_color": "#dbeafe",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "预约安全巡检",
+            "link": "#",
+            "style": "primary",
+            "icon": "盾"
+          },
+          {
+            "text": "查看防护流程",
+            "link": "#",
+            "style": "light",
+            "icon": "看"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#14b8a6",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#0f766e",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#ecfeff",
+        "bb_light_btn_hover_text_color": "#0f766e",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "把风险变化放进日常看板",
+        "stats_subtitle": "从安全体检、审计日志、动态封禁到访问趋势，帮助管理员先看见问题再处理问题",
+        "stats_text_align": "center",
+        "stats_bg_type": "color",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #064e3b 100%)",
+        "stats_title_color": "#ffffff",
+        "module_padding_top": "82px",
+        "module_padding_bottom": "82px",
+        "enable_staggered_animation": "yes",
+        "stats_items": [
+          {
+            "number": "11",
+            "label": "安全业务表"
+          },
+          {
+            "number": "7x24",
+            "label": "告警通道可用"
+          },
+          {
+            "number": "90天",
+            "label": "统计留存可配"
+          },
+          {
+            "number": "100+",
+            "label": "日志列表查看"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "三套插件组成安全运营底座",
+        "features_subtitle": "安全防护负责风险处置，数据统计负责访问态势，消息推送负责告警触达",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#ccfbf1",
+        "features_items": [
+          {
+            "icon": "巡",
+            "title": "全盘安全体检",
+            "desc": "启灵安全防护可扫描恶意代码、敏感文件、上传目录后门、异常账号、异常 Cron、数据库风险和文件完整性。"
+          },
+          {
+            "icon": "防",
+            "title": "主动防护防火墙",
+            "desc": "支持基础加固、真实 IP 识别、WAF 规则、上传防护、登录限速、动态封禁、地区限制和安全响应头。"
+          },
+          {
+            "icon": "统",
+            "title": "轻量流量统计",
+            "desc": "启灵数据统计通过前端异步采集写入 hits 表，按日聚合 PV/UV、新用户、新文章、来源、设备、浏览器和系统分布。"
+          },
+          {
+            "icon": "告",
+            "title": "飞书/钉钉推送",
+            "desc": "启灵消息推送提供多通道管理、HTTPS Webhook、加签/关键词/IP 白名单模式、测试发送和发送日志，承接安全告警中心。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "ct_title": "安全运营的<span style=\"color:#0f766e\">可审计闭环</span>",
+        "ct_subtitle": "不把安全写成口号，而是拆成可配置、可记录、可追踪、可通知的站点治理机制",
+        "ct_note": "以下为启灵生态安全能力和运营机制展示，占位内容可按实际服务交付、等保材料或客户审计要求继续编辑。",
+        "ct_layout": "grid",
+        "ct_columns": "4",
+        "ct_enable_filter": "yes",
+        "ct_card_style": "solid",
+        "ct_accent_color": "#0f766e",
+        "ct_status_chip_bg": "#ecfeff",
+        "ct_status_chip_text": "#0f766e",
+        "ct_action_btn_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "ct_action_btn_text": "#ffffff",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes",
+        "ct_items": [
+          {
+            "icon": "审",
+            "title": "关键操作审计",
+            "short_name": "Audit",
+            "category": "审计",
+            "status": "active",
+            "status_text": "已接入",
+            "issuer": "启灵安全防护",
+            "scope": "后台关键动作、登录成功/失败、设置更新、清理动作",
+            "valid_until": "持续运营",
+            "description": "通过独立审计表记录关键事件，配合安全态势分析和数据清理策略，方便复盘与追责。",
+            "checklist": "真实 IP 识别\n可信来源跳过\n审计日志留存\n高危事件归档",
+            "report_url": "#",
+            "report_text": "查看审计说明",
+            "highlight": "yes"
+          },
+          {
+            "icon": "隔",
+            "title": "REST 路由隔离",
+            "short_name": "REST",
+            "category": "隔离",
+            "status": "active",
+            "status_text": "可配置",
+            "issuer": "启灵安全防护 + MU Loader",
+            "scope": "指定 REST 路由按需加载必要插件",
+            "valid_until": "规则可维护",
+            "description": "通过规则把路由和必要插件绑定，减少无关插件加载，并可写入独立监控日志。",
+            "checklist": "路由前缀规则\n核心常驻插件\n隔离监控日志\n独立日志清理",
+            "report_url": "#",
+            "report_text": "查看规则格式",
+            "highlight": "no"
+          },
+          {
+            "icon": "风",
+            "title": "IP 风险画像",
+            "short_name": "Risk",
+            "category": "防护",
+            "status": "active",
+            "status_text": "按需开启",
+            "issuer": "启灵安全防护",
+            "scope": "登录成功/失败来源 IP 分析",
+            "valid_until": "缓存可配置",
+            "description": "面向登录链路分析 IP 来源风险，支持外部任务、异步和同步模式，适合高并发站点分级启用。",
+            "checklist": "登录事件触发\n多来源查询\n缓存 TTL\n风险事件表",
+            "report_url": "#",
+            "report_text": "查看画像策略",
+            "highlight": "no"
+          },
+          {
+            "icon": "推",
+            "title": "告警推送闭环",
+            "short_name": "Alert",
+            "category": "告警",
+            "status": "active",
+            "status_text": "可联动",
+            "issuer": "启灵安全防护 + 启灵消息推送",
+            "scope": "扫描风险、登录封禁、限速、WAF、上传拦截、地区限制",
+            "valid_until": "通道可维护",
+            "description": "安全告警中心可联动邮件和飞书/钉钉通道，推送插件记录每次发送状态、HTTP 返回和错误信息。",
+            "checklist": "事件白名单\n冷却时间\n通道测试\n发送日志",
+            "report_url": "#",
+            "report_text": "查看告警通道",
+            "highlight": "yes"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从首次巡检到持续运营",
+        "process_subtitle": "按启灵安全防护的推荐顺序，把安全能力落成可执行运维流程",
+        "process_mode": "standard",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "确认真实 IP",
+            "desc": "站点在 CDN、WAF 或反向代理后面时，先配置可信代理和真实 IP 请求头，避免封禁、审计和限速误判。",
+            "stage_tag": "准备"
+          },
+          {
+            "icon": "02",
+            "title": "开启基础加固与审计",
+            "desc": "启用 XML-RPC、版本暴露、用户枚举、文件编辑、应用密码、REST 防护、操作审计等基础策略。",
+            "stage_tag": "加固"
+          },
+          {
+            "icon": "03",
+            "title": "执行全盘安全体检",
+            "desc": "扫描恶意代码、敏感文件、uploads 风险、异常账号、异常 Cron、数据库风险和文件基线，按高危优先处理。",
+            "stage_tag": "巡检"
+          },
+          {
+            "icon": "04",
+            "title": "接入限速、统计与告警",
+            "desc": "按业务风险逐步启用登录限速、行为限速、地区限制、IP 风险画像、流量统计和飞书/钉钉告警。",
+            "stage_tag": "运营"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "安全防护运维常见问题",
+        "faq_subtitle": "提前说明插件边界和上线节奏，避免把安全插件误当成服务器级 WAF",
+        "faq_items": [
+          {
+            "question": "这个模板必须安装三个插件吗？",
+            "answer": "不必须。模板本身可以正常导入和展示；启用插件后，把按钮链接改成启灵安全防护后台、安全统计看板、消息推送设置页或你的服务咨询入口即可。"
+          },
+          {
+            "question": "启灵安全防护能替代服务器防火墙吗？",
+            "answer": "不能。它是 WordPress 站点侧安全层，适合做巡检、主动防护、审计、REST 隔离、登录风险和告警，不替代服务器防火墙、CDN、云 WAF、安全组和主机安全策略。"
+          },
+          {
+            "question": "为什么第一步要配置真实 IP？",
+            "answer": "如果站点在 CDN、WAF 或反向代理后面，WordPress 默认看到的可能是代理出口 IP。真实 IP 不准会影响动态封禁、地区限制、WAF 审计、登录限速和 IP 风险画像。"
+          },
+          {
+            "question": "启灵数据统计会不会很重？",
+            "answer": "它是轻量站内统计：前端异步采集，服务端写入访问明细表，再通过 REST 定时任务聚合到每日统计表，并按保留天数清理过期明细。"
+          },
+          {
+            "question": "飞书/钉钉告警怎么联动？",
+            "answer": "先在启灵消息推送里配置 HTTPS Webhook 通道并测试发送，再在启灵安全防护的安全告警中心启用推送通道、选择告警事件和冷却时间。"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约一次安全巡检与运维方案评估",
+        "contact_subtitle": "提交站点规模、插件数量、登录场景、CDN/WAF 架构和当前安全痛点，我们会按真实风险给出启用顺序和处置建议。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

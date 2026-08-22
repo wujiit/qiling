@@ -1,0 +1,82 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "新闻中心",
+  "page_template": "templates/template-news.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "news",
+    "label": "新闻中心",
+    "category": "content",
+    "category_label": "博客/杂志/内容",
+    "industry": "media",
+    "scenario": "新闻中心",
+    "description": "适合资讯、公告、企业动态和行业新闻栏目。",
+    "badges": [
+      "新闻",
+      "杂志"
+    ],
+    "order": 120,
+    "thumbnail": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "新闻中心模板 - 启灵官方页面包",
+    "description": "适合资讯、公告、企业动态和行业新闻栏目。",
+    "keywords": "新闻中心,新闻中心,新闻,杂志",
+    "og_title": "新闻中心",
+    "og_description": "适合资讯、公告、企业动态和行业新闻栏目。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "medium",
+        "banner_bg_color": "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "",
+            "title": "新闻中心",
+            "subtitle": "聚合最新动态与行业洞察",
+            "btn_text": "查看最新",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f172a"
+          }
+        ]
+      }
+    },
+    {
+      "type": "news",
+      "data": {
+        "news_title": "最新新闻",
+        "news_count": "9",
+        "news_columns": "3",
+        "news_categories": "",
+        "news_show_image": "1",
+        "news_image_height": "220px",
+        "news_show_excerpt": "1",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "订阅我们的动态",
+        "cta_subtitle": "获取产品更新、活动与行业趋势",
+        "cta_button_text": "联系我们",
+        "cta_button_url": "/contact",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)"
+      }
+    }
+  ]
+}

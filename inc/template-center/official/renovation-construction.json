@@ -1,0 +1,261 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "装修工装官网",
+  "page_template": "templates/template-renovation-construction.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "renovation-construction",
+    "label": "装修工装官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "renovation",
+    "industry_label": "装修建筑",
+    "scenario": "装修案例、工艺流程、报价咨询",
+    "description": "适合家装、工装、设计工作室和工程施工公司，内置服务、流程、案例相册和报价咨询入口。",
+    "badges": [
+      "案例展示",
+      "报价咨询"
+    ],
+    "order": 441,
+    "thumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "装修工装官网模板 - 案例展示与报价咨询",
+    "description": "适合装修公司、设计工作室和工装工程公司的官网页面，包含服务项目、施工流程、案例相册、客户评价和报价咨询。",
+    "keywords": "装修公司官网,工装官网,室内设计,装修报价",
+    "og_title": "装修工装官网",
+    "og_description": "带案例相册和报价咨询入口的装修行业官网模板。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #64748b 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80",
+            "title": "把空间改造成生意和生活的答案",
+            "subtitle": "家装、工装、设计与施工一体化交付，支持在线报价咨询。",
+            "btn_text": "获取报价",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#334155"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "600",
+            "number": "600+",
+            "label": "交付项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "15",
+            "number": "15年+",
+            "label": "工程经验",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "48",
+            "number": "48h",
+            "label": "报价响应",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "客户评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "空间服务",
+        "services_subtitle": "从设计、施工到软装落地，覆盖常见装修场景",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "住宅整装",
+            "desc": "户型规划、施工管理与主材配置。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "办公室工装",
+            "desc": "动线、工位、会议室与品牌空间一体化。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "商业空间",
+            "desc": "门店、展厅、餐饮和零售空间设计施工。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "旧房改造",
+            "desc": "拆改、水电、收纳和局部焕新方案。",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "标准交付流程",
+        "process_subtitle": "节点清晰、进度可追踪，减少装修不确定性",
+        "process_mode": "industrial",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "量房沟通",
+            "desc": "收集需求、测量空间、确认预算范围。",
+            "stage_tag": "需求",
+            "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "icon": "02",
+            "title": "方案报价",
+            "desc": "输出平面方案、主材建议和分项报价。",
+            "stage_tag": "方案",
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "icon": "03",
+            "title": "施工验收",
+            "desc": "节点巡检、隐蔽工程验收与竣工交付。",
+            "stage_tag": "交付",
+            "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "精选案例",
+        "gallery_subtitle": "用真实空间图片建立信任感",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "enable_filter": "yes",
+        "filter_categories": "住宅,办公室,商业",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+            "title": "现代住宅",
+            "desc": "开放式客餐厅",
+            "category": "住宅"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+            "title": "办公空间",
+            "desc": "高效协作场景",
+            "category": "办公室"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=900&q=80",
+            "title": "商业空间",
+            "desc": "品牌展示区域",
+            "category": "商业"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "1,200+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "周先生",
+            "position": "办公室改造",
+            "content": "报价拆得清楚，施工节点也有人主动同步。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "陈女士",
+            "position": "住宅整装",
+            "content": "从收纳到灯光都考虑得比较细，入住效果不错。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=300&q=80",
+            "name": "刘总",
+            "position": "门店装修",
+            "content": "工期控制稳定，开业前按时完成交付。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "获取装修报价",
+        "contact_subtitle": "提交房屋面积、所在城市、装修风格、预算和开工时间，设计顾问会提供初步报价区间。",
+        "contact_phone": "400-600-2026",
+        "contact_email": "design@example.com",
+        "contact_address": "支持上门量房 / 可预约线上方案沟通",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "contact_image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "报价常见问题",
+        "module_bg_color": "#f8fafc",
+        "faq_items": [
+          {
+            "question": "报价是否包含主材？",
+            "answer": "可按半包、全包或整装不同模式配置，建议在页面中写清楚报价包含项。"
+          },
+          {
+            "question": "多久可以出方案？",
+            "answer": "通常量房后 3-5 个工作日可提供初版方案和预算范围。"
+          },
+          {
+            "question": "是否支持异地项目？",
+            "answer": "可根据服务范围调整城市和门店信息，跨城项目建议先电话确认。"
+          }
+        ]
+      }
+    }
+  ]
+}

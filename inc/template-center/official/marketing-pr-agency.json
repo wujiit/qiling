@@ -1,0 +1,252 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "营销公关机构官网",
+  "page_template": "templates/template-marketing-pr-agency.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "marketing-pr-agency",
+    "label": "营销公关机构官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "b2b",
+    "industry_label": "B2B",
+    "scenario": "服务介绍、案例展示、线索咨询",
+    "description": "适合营销公司、公关机构、品牌咨询、内容增长和企业服务团队，内置服务矩阵、项目流程、案例、客户评价和咨询入口。",
+    "badges": [
+      "B2B 服务",
+      "案例展示"
+    ],
+    "order": 561,
+    "thumbnail": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "营销公关机构官网模板 - 服务介绍与线索咨询",
+    "description": "适合营销公关、品牌咨询和企业服务机构的官网页面，包含服务矩阵、项目流程、案例展示、客户评价和咨询入口。",
+    "keywords": "营销公司官网,公关机构,品牌咨询,B2B服务,线索咨询",
+    "og_title": "营销公关机构官网",
+    "og_description": "用服务矩阵、案例图片和咨询入口快速搭建营销公关机构官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.58",
+        "db_title_prefix": "让品牌传播更有结果",
+        "db_typing_mode": "loop",
+        "db_typing_text": "品牌战略咨询与定位升级\n整合营销传播与内容增长\n公关声量管理与口碑运营",
+        "db_highlight_color": "#67e8f9",
+        "db_title_color": "#e2e8f0",
+        "db_subtitle": "帮助品牌在竞争市场中获得持续关注、有效转化和长期资产沉淀。",
+        "db_desc": "适合营销、公关、品牌咨询和企业服务团队，用于展示服务、案例、流程和咨询入口。",
+        "db_text_color": "rgba(226,232,240,0.88)",
+        "db_buttons": [
+          {
+            "text": "预约策略沟通",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看项目案例",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "核心服务模块",
+        "services_subtitle": "覆盖战略、传播、执行到复盘的全链路营销服务",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "品牌战略咨询",
+            "desc": "定位诊断、竞品分析与年度增长路线规划。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "整合营销传播",
+            "desc": "多平台协同传播，提升曝光、互动与线索转化。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "内容创意制作",
+            "desc": "品牌内容策划、素材制作与传播节奏设计。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "公关传播管理",
+            "desc": "媒体关系维护、议题策划与舆情响应机制。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "项目合作流程",
+        "process_subtitle": "从诊断到复盘，减少沟通损耗和交付不确定性",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "业务诊断",
+            "desc": "梳理品牌现状、目标用户、渠道表现和增长瓶颈。",
+            "stage_tag": "诊断"
+          },
+          {
+            "icon": "02",
+            "title": "策略共创",
+            "desc": "明确传播主题、内容结构、渠道节奏和转化路径。",
+            "stage_tag": "策略"
+          },
+          {
+            "icon": "03",
+            "title": "执行落地",
+            "desc": "完成内容制作、投放协同、公关传播和活动执行。",
+            "stage_tag": "执行"
+          },
+          {
+            "icon": "04",
+            "title": "复盘优化",
+            "desc": "按数据和业务反馈调整下一阶段方案。",
+            "stage_tag": "复盘"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "代表项目案例",
+        "cases_subtitle": "用行业、目标、动作和结果说明服务价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
+            "title": "新消费品牌上市传播",
+            "desc": "围绕新品定位、内容种草和首发活动建立声量。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+            "title": "B2B 线索增长项目",
+            "desc": "搭建内容漏斗、投放路径和销售跟进素材。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80",
+            "title": "品牌年度传播规划",
+            "desc": "完成年度议题、内容资产和节点活动规划。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "clients",
+      "data": {
+        "clients_title": "服务客户类型",
+        "clients_columns": "4",
+        "clients_show_name": "1",
+        "clients_items": [
+          {
+            "name": "新消费品牌",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "企业服务",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "连锁门店",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "科技产品",
+            "logo": "",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "260+",
+        "average_rating": "4.9",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "品牌负责人",
+            "position": "消费品牌",
+            "content": "策略、内容和活动能连起来，执行节奏比较稳定。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "市场总监",
+            "position": "企业服务",
+            "content": "线索质量和销售跟进素材都有明显改善。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "创始人",
+            "position": "初创公司",
+            "content": "品牌表达更清楚，内容选题也更容易持续输出。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约策略沟通",
+        "contact_subtitle": "提交品牌阶段、业务目标、预算范围和上线时间，我们会判断适合的合作方式。",
+        "contact_phone": "400-600-2026",
+        "contact_email": "strategy@example.com",
+        "contact_address": "支持远程沟通 / 可预约线下会议",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

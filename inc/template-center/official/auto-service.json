@@ -1,0 +1,301 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "汽车服务官网",
+  "page_template": "templates/template-auto-service.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "auto-service",
+    "label": "汽车服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "automotive",
+    "industry_label": "汽车服务",
+    "scenario": "车型展示、维修保养、门店预约",
+    "description": "适合汽车4S店、汽修保养、汽车美容、钣喷维修和连锁门店，内置服务包、门店网点、流程和预约入口。",
+    "badges": [
+      "门店预约",
+      "服务包"
+    ],
+    "order": 531,
+    "thumbnail": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "汽车服务官网模板 - 车型展示与维修预约",
+    "description": "适合汽车4S店、汽修保养和汽车美容门店的官网页面，包含车型服务包、门店网点、维修流程、客户评价和预约入口。",
+    "keywords": "汽车服务官网,汽修保养,汽车美容,4S店官网,在线预约",
+    "og_title": "汽车服务官网",
+    "og_description": "用车型图片、服务包和门店预约快速搭建汽车服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #1d4ed8 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80",
+            "title": "让每一次用车都更安心",
+            "subtitle": "新车咨询、维修保养、钣喷美容与道路救援一站式服务。",
+            "btn_text": "预约到店",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#1d4ed8"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "5000",
+            "number": "5000+",
+            "label": "服务车主",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "40",
+            "number": "40+",
+            "label": "认证技师",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "12",
+            "number": "12家",
+            "label": "直营网点",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.8",
+            "number": "4.8",
+            "label": "车主评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "热门车型与服务包",
+        "products_subtitle": "从新车到售后，覆盖车主核心用车场景",
+        "columns": "4",
+        "modal_inquire_text": "预约咨询",
+        "modal_inquire_url": "#",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80",
+            "title": "城市SUV 2026款",
+            "desc": "智能辅助驾驶与高效动力组合",
+            "specs": "排量：2.0T\n变速箱：8AT\n质保：3年/10万公里",
+            "post_id": "",
+            "btn_text": "查看详情"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80",
+            "title": "年度保养套餐",
+            "desc": "基础保养、全车检测与耗材更换",
+            "specs": "机油机滤更换\n刹车系统检查\n空调滤芯检测",
+            "post_id": "",
+            "btn_text": "查看详情"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80",
+            "title": "事故钣喷修复",
+            "desc": "快速评估、车漆匹配与交付质检",
+            "specs": "钣金修复\n局部补漆\n保险协助",
+            "post_id": "",
+            "btn_text": "查看详情"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80",
+            "title": "道路救援服务",
+            "desc": "拖车、搭电、换胎与故障应急",
+            "specs": "24小时接入\n同城就近派单\n进度实时通知",
+            "post_id": "",
+            "btn_text": "查看详情"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "门店服务项目",
+        "services_subtitle": "透明报价、标准流程、关键节点可追踪",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "新车销售",
+            "desc": "车型讲解、金融方案与试驾服务。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "维修保养",
+            "desc": "标准维保流程，关键项目透明报价。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "钣喷美容",
+            "desc": "事故修复、局部补漆与精细美容养护。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "道路救援",
+            "desc": "拖车、电瓶应急和故障到场处理支持。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "门店网点",
+        "branches_subtitle": "支持城市筛选与导航到店，快速匹配最近服务点",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "导航到店",
+        "booking_button_text": "预约服务",
+        "branches_list": [
+          {
+            "name": "上海浦东旗舰店",
+            "city": "上海",
+            "status": "open",
+            "address": "上海市浦东新区示例路88号",
+            "phone": "021-69990001",
+            "email": "shanghai@example.com",
+            "hours": "周一至周日 09:00-20:00",
+            "services": "新车销售,维保,钣喷",
+            "transport": "地铁站步行约8分钟",
+            "lat": "31.2304",
+            "lng": "121.4737",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "杭州城西服务店",
+            "city": "杭州",
+            "status": "open",
+            "address": "杭州市西湖区示例路66号",
+            "phone": "0571-89990002",
+            "email": "hangzhou@example.com",
+            "hours": "周一至周日 09:00-19:30",
+            "services": "维保,事故快修,保险代办",
+            "transport": "高架出口 5 分钟",
+            "lat": "30.2741",
+            "lng": "120.1551",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "苏州园区体验店",
+            "city": "苏州",
+            "status": "busy",
+            "address": "苏州市工业园区示例大道188号",
+            "phone": "0512-89990003",
+            "email": "suzhou@example.com",
+            "hours": "周一至周日 09:30-19:00",
+            "services": "试驾,美容,精品加装",
+            "transport": "停车位充足",
+            "lat": "31.2989",
+            "lng": "120.5853",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "服务流程",
+        "process_subtitle": "从预约到交付，每一步都有明确节点",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "在线预约",
+            "desc": "提交车型、里程与服务需求，门店确认时段。",
+            "stage_tag": "预约"
+          },
+          {
+            "icon": "02",
+            "title": "到店检测",
+            "desc": "技师完成基础检测并同步报价方案。",
+            "stage_tag": "检测"
+          },
+          {
+            "icon": "03",
+            "title": "维修施工",
+            "desc": "按标准流程执行维修保养，关键节点可追踪。",
+            "stage_tag": "施工"
+          },
+          {
+            "icon": "04",
+            "title": "质检交付",
+            "desc": "完成复检、清洁和使用建议后交付。",
+            "stage_tag": "交付"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约汽车服务",
+        "booking_subtitle": "提交车型、里程和服务需求，门店顾问会确认服务安排。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约须知",
+        "sidebar_content": "保养请在表单里填写车型和当前里程\n事故维修建议备注问题位置和照片说明\n试驾需携带有效驾驶证",
+        "contact_phone": "400-808-2026",
+        "contact_hours": "09:00-20:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "汽车服务常见问题",
+        "module_bg_color": "#eff6ff",
+        "faq_items": [
+          {
+            "question": "可以在线估价吗？",
+            "answer": "可以先提交车型、里程和项目需求，门店会给出初步报价，到店检测后确认最终方案。"
+          },
+          {
+            "question": "是否支持保险理赔协助？",
+            "answer": "支持，可在预约时说明保险公司和事故情况，门店会协助准备理赔资料。"
+          },
+          {
+            "question": "门店信息可以换成真实地址吗？",
+            "answer": "可以，门店机构模块支持城市、电话、地址、地图坐标和预约链接配置。"
+          }
+        ]
+      }
+    }
+  ]
+}

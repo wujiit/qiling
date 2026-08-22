@@ -1,0 +1,238 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "房地产/楼盘服务官网",
+  "page_template": "templates/template-real-estate-service.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "renovation_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "real-estate-service",
+    "label": "房地产/楼盘服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "real_estate",
+    "industry_label": "房地产",
+    "scenario": "项目展示、空间图片、看房咨询",
+    "description": "适合楼盘项目、房产中介、商业空间、长租公寓和园区招商官网，内置项目亮点、空间展示、服务流程、案例和看房入口。",
+    "badges": [
+      "房地产",
+      "看房咨询"
+    ],
+    "order": 600,
+    "thumbnail": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "房地产服务官网模板 - 楼盘展示与看房咨询",
+    "description": "适合房地产和空间服务的官网页面，包含项目亮点、户型空间、服务流程、客户评价、FAQ 和看房咨询入口。",
+    "keywords": "房地产官网,楼盘官网,房产中介,看房预约,空间招商",
+    "og_title": "房地产/楼盘服务官网",
+    "og_description": "用空间图片、项目亮点和看房入口快速搭建房地产服务官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #1f2937 0%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=80",
+            "title": "找到更适合的空间与生活方式",
+            "subtitle": "项目亮点、空间图片、配套服务和看房咨询，一页完成核心信息展示。",
+            "btn_text": "预约看房",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "30",
+            "number": "30+",
+            "label": "在售/在租项目",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "12",
+            "number": "12城",
+            "label": "服务覆盖",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "98",
+            "number": "98%",
+            "label": "客户响应率",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "1v1",
+            "number": "1v1",
+            "label": "顾问服务",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "服务场景",
+        "services_subtitle": "覆盖新房、二手房、租赁、商业空间和园区招商",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "新房项目",
+            "desc": "项目亮点、户型、配套和看房咨询。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "二手房服务",
+            "desc": "房源评估、带看、交易流程和贷款建议。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "租赁公寓",
+            "desc": "长租空间、配套服务和入住预约。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "商业招商",
+            "desc": "写字楼、商铺、园区和品牌招商咨询。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "精选空间展示",
+        "cases_subtitle": "用图片、位置和亮点快速建立项目印象",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+            "title": "城市改善住宅",
+            "desc": "成熟配套、舒适户型和低密度社区。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=900&q=80",
+            "title": "核心商务办公",
+            "desc": "交通便利、灵活面积和品牌展示面。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+            "title": "品质长租公寓",
+            "desc": "拎包入住、公共配套和管家服务。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "看房服务流程",
+        "process_subtitle": "从需求沟通到实地看房，减少无效奔波",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求沟通",
+            "desc": "确认预算、区域、面积、用途和时间安排。",
+            "stage_tag": "沟通"
+          },
+          {
+            "icon": "02",
+            "title": "匹配项目",
+            "desc": "筛选合适房源或空间，发送项目资料。",
+            "stage_tag": "匹配"
+          },
+          {
+            "icon": "03",
+            "title": "预约带看",
+            "desc": "规划路线、确认时间并安排顾问陪同。",
+            "stage_tag": "带看"
+          },
+          {
+            "icon": "04",
+            "title": "方案跟进",
+            "desc": "协助比较项目、报价和后续手续。",
+            "stage_tag": "跟进"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "500+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "张女士",
+            "position": "改善购房客户",
+            "content": "顾问先筛了一轮项目，看房效率比自己找高很多。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "陈先生",
+            "position": "企业行政负责人",
+            "content": "办公空间信息整理清楚，比较和决策更快。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "李女士",
+            "position": "长租客户",
+            "content": "图片、配套和入住流程都能提前了解，沟通顺畅。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约看房咨询",
+        "booking_subtitle": "提交意向区域、预算和看房时间，置业顾问会帮你匹配项目。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "预约提示",
+        "sidebar_content": "请在表单里填写真实预算和意向区域\n临时看房需以项目档期为准\n房源状态和价格以实时沟通为准",
+        "contact_phone": "400-618-2026",
+        "contact_hours": "09:00-21:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

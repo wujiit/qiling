@@ -1,0 +1,234 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "金融/财税服务官网",
+  "page_template": "templates/template-finance-consulting.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "finance_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "finance-consulting",
+    "label": "金融/财税服务官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "finance",
+    "industry_label": "金融保险",
+    "scenario": "服务咨询、合规信任、线索转化",
+    "description": "适合财税公司、金融服务、保险顾问、企业咨询和合规服务官网，内置服务矩阵、信任背书、流程、案例和咨询入口。",
+    "badges": [
+      "金融财税",
+      "合规信任"
+    ],
+    "order": 590,
+    "thumbnail": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "金融财税服务官网模板 - 合规信任与咨询转化",
+    "description": "适合金融财税和企业咨询服务的官网页面，包含服务项目、资质信任、合作流程、客户案例、FAQ 和咨询入口。",
+    "keywords": "财税官网,金融服务官网,企业咨询,合规服务,保险顾问",
+    "og_title": "金融/财税服务官网",
+    "og_description": "用服务矩阵、合规背书和咨询入口快速搭建金融财税服务官网。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.56",
+        "db_title_prefix": "让企业决策更稳妥",
+        "db_typing_mode": "loop",
+        "db_typing_text": "财税筹划与合规顾问\n企业金融服务与风险评估\n从咨询到执行的长期陪伴",
+        "db_highlight_color": "#bbf7d0",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "面向成长型企业、门店品牌和高净值客户，提供清晰、可信、可执行的专业服务。",
+        "db_desc": "适合财税、金融、保险、企业咨询和合规服务团队。",
+        "db_text_color": "rgba(248,250,252,0.88)",
+        "db_buttons": [
+          {
+            "text": "预约顾问沟通",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "查看服务范围",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "专业服务范围",
+        "services_subtitle": "围绕企业经营、资金规划和合规管理提供持续支持",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "财税顾问",
+            "desc": "账务规范、税务筹划和申报事项支持。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "金融规划",
+            "desc": "融资建议、资金结构和风险评估。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "保险配置",
+            "desc": "企业保障、员工福利和家庭保障建议。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "合规咨询",
+            "desc": "合同、流程、资质和经营风险梳理。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "服务信任数据",
+        "stats_subtitle": "用经验、响应和续约表现建立专业信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "800+",
+            "label": "服务企业客户"
+          },
+          {
+            "number": "15年",
+            "label": "团队专业经验"
+          },
+          {
+            "number": "2h",
+            "label": "顾问响应时效"
+          },
+          {
+            "number": "92%",
+            "label": "年度续约率"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "咨询服务流程",
+        "process_subtitle": "先判断问题，再确定服务边界和执行节奏",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求沟通",
+            "desc": "了解企业阶段、经营目标和当前风险点。",
+            "stage_tag": "沟通"
+          },
+          {
+            "icon": "02",
+            "title": "资料诊断",
+            "desc": "梳理账务、合同、流程和历史资料。",
+            "stage_tag": "诊断"
+          },
+          {
+            "icon": "03",
+            "title": "方案确认",
+            "desc": "明确服务范围、时间表和交付资料。",
+            "stage_tag": "方案"
+          },
+          {
+            "icon": "04",
+            "title": "执行复盘",
+            "desc": "按节点推进事项，并持续跟踪优化。",
+            "stage_tag": "执行"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "典型服务案例",
+        "cases_subtitle": "用企业阶段和结果说明专业服务价值",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+            "title": "连锁品牌财务规范",
+            "desc": "统一门店账务流程和经营数据口径。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=900&q=80",
+            "title": "成长企业融资准备",
+            "desc": "梳理报表、合同和融资材料基础。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
+            "title": "企业合规体检",
+            "desc": "识别合同、资质和流程中的关键风险。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见咨询问题",
+        "faq_subtitle": "降低初次沟通前的信息不确定性",
+        "faq_items": [
+          {
+            "question": "是否适合初创企业？",
+            "answer": "适合，服务会根据企业阶段拆分为基础合规、财税规范和经营支持。"
+          },
+          {
+            "question": "能否远程服务？",
+            "answer": "多数资料诊断和顾问沟通支持远程完成，重要事项可预约线下会议。"
+          },
+          {
+            "question": "如何保护客户资料？",
+            "answer": "资料只用于服务评估和执行，具体保密边界会在服务协议中明确。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约专业顾问",
+        "contact_subtitle": "提交企业阶段、主要问题、期望目标和沟通时间，顾问会安排初步沟通。",
+        "contact_phone": "400-188-2026",
+        "contact_email": "consult@example.com",
+        "contact_address": "支持线上会议 / 可预约线下沟通",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_color": "#ffffff"
+      }
+    }
+  ]
+}

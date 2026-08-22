@@ -1,0 +1,268 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "本地相亲婚恋官网",
+  "page_template": "templates/template-qiling-friends-matchmaking.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "beauty_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-friends-matchmaking",
+    "label": "本地相亲婚恋官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "matchmaking",
+    "industry_label": "相亲婚恋",
+    "scenario": "资料审核、推荐筛选、互赞匹配、受限私信、举报拉黑、安全认证",
+    "description": "适合启灵相亲、本地婚恋、会员资料审核和线下相亲活动服务，内置首屏、运营数据、服务能力、匹配流程、用户反馈、FAQ 和报名入口。",
+    "badges": [
+      "启灵生态",
+      "本地相亲",
+      "安全匹配"
+    ],
+    "order": 384,
+    "thumbnail": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "本地相亲婚恋官网模板 - 资料审核与安全匹配",
+    "description": "适合启灵相亲的官网页面，覆盖资料中心、推荐筛选、互赞匹配、受限私信、访客记录、图片审核、资料认证、举报拉黑、运营看板和审核员角色。",
+    "keywords": "相亲官网,婚恋平台,本地相亲,启灵相亲,资料审核,互赞匹配,受限私信,资料认证",
+    "og_title": "本地相亲婚恋官网",
+    "og_description": "用资料审核、互赞匹配和受限私信搭建可信的本地相亲婚恋服务入口。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #831843 0%, #be123c 52%, #0f766e 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80",
+            "title": "把本地相亲做得更真实、更克制、更安全",
+            "subtitle": "资料审核、互赞匹配、受限私信、认证中心、举报拉黑和运营看板，一页讲清婚恋平台的信任机制。",
+            "btn_text": "完善资料开始匹配",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#be123c"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "11",
+            "number": "11 张",
+            "label": "核心数据表",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "20",
+            "number": "20 条",
+            "label": "默认私信上限",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "60%",
+            "number": "60%",
+            "label": "私信资料门槛",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "2",
+            "number": "2 套",
+            "label": "前台界面风格",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "平台把安全规则写进产品流程",
+        "stats_subtitle": "匹配前先审核，私信前有门槛，异常行为可举报、拉黑和治理",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "7",
+            "label": "REST 控制器"
+          },
+          {
+            "number": "4",
+            "label": "前台短代码页"
+          },
+          {
+            "number": "7",
+            "label": "后台权限能力"
+          },
+          {
+            "number": "90天",
+            "label": "运营看板窗口"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#fff1f2",
+        "module_padding_top": "76px",
+        "module_padding_bottom": "76px",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "相亲婚恋核心服务",
+        "services_subtitle": "把启灵相亲的资料、匹配、私信、认证和安全中心组织成用户能理解的服务入口",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "资料中心",
+            "desc": "用户可创建资料、上传图片、查看审核状态、访客记录和认证中心。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "推荐匹配",
+            "desc": "支持性别、年龄、城市、学历和关键词筛选，互相喜欢后形成匹配。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "受限私信",
+            "desc": "仅匹配用户可发私信，并受每日上限、冷却、首轮联系和资料完整度门槛限制。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "安全中心",
+            "desc": "提供拉黑、举报、证据上传、举报记录和后台治理，保护正常用户体验。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "从资料审核到匹配沟通",
+        "process_subtitle": "相亲平台的核心不是无限聊天，而是把真实资料和安全边界先建立起来",
+        "process_mode": "standard",
+        "module_bg_color": "#fff7ed",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "完善资料并提交审核",
+            "desc": "填写昵称、城市、学历、介绍和择偶意向，资料保存后进入待审核。",
+            "stage_tag": "资料"
+          },
+          {
+            "icon": "02",
+            "title": "上传照片与认证材料",
+            "desc": "图片进入审核记录，认证中心可提交学历、职业、收入、房产或车辆材料。",
+            "stage_tag": "审核"
+          },
+          {
+            "icon": "03",
+            "title": "筛选推荐并互赞匹配",
+            "desc": "通过推荐筛选器发现用户，喜欢对方后等待回赞，匹配成功后双方收到通知。",
+            "stage_tag": "匹配"
+          },
+          {
+            "icon": "04",
+            "title": "受限私信与安全治理",
+            "desc": "匹配后才可私信；异常用户可拉黑或举报，后台支持举报审核和用户封禁。",
+            "stage_tag": "沟通"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "用户反馈",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "2600+",
+        "average_rating": "4.8",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
+            "name": "陈女士",
+            "position": "本地用户",
+            "content": "资料审核和认证入口比较清楚，沟通前能先看对方信息完整度。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+            "name": "林先生",
+            "position": "匹配用户",
+            "content": "互赞之后才能私信，节奏比开放式聊天更舒服。",
+            "rating": "5",
+            "verified": "verified"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+            "name": "平台审核员",
+            "position": "婚恋运营",
+            "content": "资料、图片、认证、举报和用户治理分开管理，运营动作很清晰。",
+            "rating": "5",
+            "verified": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "相亲婚恋常见问题",
+        "faq_subtitle": "提前说明审核、私信、认证和安全治理边界",
+        "faq_items": [
+          {
+            "question": "资料保存后会直接展示吗？",
+            "answer": "不会。启灵相亲会把资料置为待审核，只有审核通过并上架的资料才会进入资料列表和匹配流。"
+          },
+          {
+            "question": "可以随便给陌生人发私信吗？",
+            "answer": "不可以。插件默认仅双方匹配后才能创建会话，并受每日发送上限、冷却时间、首次接触上限和资料完整度门槛限制。"
+          },
+          {
+            "question": "实名认证是插件自己做的吗？",
+            "answer": "认证总览会复用启灵主题实名状态；插件侧还提供学历、职业、收入、房产、车辆等资料认证材料上传和审核记录。"
+          },
+          {
+            "question": "如果遇到骚扰或虚假资料怎么办？",
+            "answer": "用户可拉黑或举报，并上传图片/PDF 证据。后台支持举报审核、用户封禁和封禁后自动下架资料。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "报名加入本地相亲匹配",
+        "booking_subtitle": "提交城市、年龄、择偶意向和当前资料状态，运营人员会引导你完善资料、认证和安全设置。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "报名说明",
+        "sidebar_content": "请优先完善真实资料和照片\n资料审核通过后才会进入推荐流\n启用启灵相亲后可承接资料中心、匹配页、消息页和安全中心",
+        "contact_phone": "400-520-2026",
+        "contact_hours": "10:00-22:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

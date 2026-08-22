@@ -1,0 +1,214 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "会展/活动平台招商页",
+  "page_template": "templates/template-event-exhibition.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "event-exhibition",
+    "label": "会展/活动平台招商页",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "event",
+    "industry_label": "活动 / 展会 / 票务",
+    "scenario": "活动介绍、嘉宾议程、报名招商",
+    "description": "适合会展、峰会、发布会、行业大会和活动平台招商页面，内置亮点、议程、嘉宾、票务、招商权益和报名入口。",
+    "badges": [
+      "会展活动",
+      "报名招商"
+    ],
+    "order": 690,
+    "thumbnail": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "会展活动平台招商模板 - 报名招商与议程嘉宾",
+    "description": "适合会展活动和行业大会的招商报名页面，包含活动亮点、议程嘉宾、票务权益、赞助合作、FAQ 和报名入口。",
+    "keywords": "会展官网,活动招商,峰会官网,活动报名,展会招商",
+    "og_title": "会展/活动平台招商页",
+    "og_description": "用议程、嘉宾、权益和报名入口快速搭建会展活动招商页。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "82vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.58",
+        "db_title_prefix": "让活动报名和招商更集中",
+        "db_typing_mode": "loop",
+        "db_typing_text": "行业峰会与品牌发布\n嘉宾议程与现场体验\n票务报名、赞助招商一页完成",
+        "db_highlight_color": "#fecdd3",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "适合峰会、展会、发布会、城市活动和行业大会的对外招商报名页面。",
+        "db_desc": "集中展示活动价值、参会人群、合作权益和报名路径。",
+        "db_text_color": "rgba(248,250,252,0.9)",
+        "db_buttons": [
+          {
+            "text": "立即报名",
+            "link": "#",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "下载招商资料",
+            "link": "#",
+            "style": "outline",
+            "icon": ""
+          }
+        ],
+        "db_media_type": "image",
+        "db_main_image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "活动规模亮点",
+        "stats_subtitle": "用参会、嘉宾、曝光和合作数据增强信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "3000+",
+            "label": "预计参会人次"
+          },
+          {
+            "number": "80+",
+            "label": "演讲嘉宾"
+          },
+          {
+            "number": "120+",
+            "label": "参展品牌"
+          },
+          {
+            "number": "20+",
+            "label": "媒体合作"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "参会与合作权益",
+        "services_subtitle": "面向观众、参展商、赞助商和媒体伙伴的权益说明",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "观众报名",
+            "desc": "议程参与、展区参观和社群交流。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "品牌参展",
+            "desc": "展位展示、产品体验和商务对接。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "赞助合作",
+            "desc": "品牌露出、主题冠名和现场权益。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "媒体合作",
+            "desc": "内容报道、直播传播和联合推广。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "报名合作流程",
+        "process_subtitle": "把报名、确认、支付和现场权益交代清楚",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "提交意向",
+            "desc": "选择报名、参展或赞助合作类型。",
+            "stage_tag": "提交"
+          },
+          {
+            "icon": "02",
+            "title": "顾问确认",
+            "desc": "确认参会资格、权益、席位和资料需求。",
+            "stage_tag": "确认"
+          },
+          {
+            "icon": "03",
+            "title": "完成报名",
+            "desc": "完成费用、资料和参会凭证确认。",
+            "stage_tag": "报名"
+          },
+          {
+            "icon": "04",
+            "title": "现场执行",
+            "desc": "按权益安排签到、布展、演讲或对接。",
+            "stage_tag": "现场"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "活动现场与合作场景",
+        "cases_subtitle": "用图片和结果展示活动影响力",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80",
+            "title": "行业主题峰会",
+            "desc": "聚焦趋势分享、圆桌讨论和商务社交。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80",
+            "title": "品牌展区体验",
+            "desc": "产品展示、客户互动和媒体曝光。",
+            "link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80",
+            "title": "城市路演活动",
+            "desc": "小规模精准邀约和项目对接。",
+            "link": "#"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "提交报名或招商意向",
+        "booking_subtitle": "提交参与身份、公司信息和合作诉求，活动顾问会进行确认。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "报名提示",
+        "sidebar_content": "不同票种和权益以活动规则为准\n赞助、参展和团体报名可在表单里说明\n最终议程可能按现场安排调整",
+        "contact_phone": "400-700-2026",
+        "contact_hours": "09:00-20:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}

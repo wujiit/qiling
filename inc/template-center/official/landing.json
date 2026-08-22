@@ -1,0 +1,225 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "落地页",
+  "page_template": "templates/template-landing.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "landing",
+    "label": "落地页",
+    "category": "conversion",
+    "category_label": "落地页/转化",
+    "industry": "general",
+    "scenario": "落地页",
+    "description": "面向投放、获客、表单线索和单页转化。",
+    "badges": [
+      "转化",
+      "线索"
+    ],
+    "order": 210,
+    "thumbnail": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "落地页模板 - 启灵官方页面包",
+    "description": "面向投放、获客、表单线索和单页转化。",
+    "keywords": "落地页,落地页,转化,线索",
+    "og_title": "落地页",
+    "og_description": "面向投放、获客、表单线索和单页转化。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_title": "落地页",
+        "banner_subtitle": "专业团队 · 定制方案 · 快速交付 · 全程服务",
+        "banner_btn_text": "立即咨询",
+        "banner_btn_url": "#contact-form",
+        "banner_btn2_text": "了解更多",
+        "banner_btn2_url": "#features",
+        "banner_bg_image": "",
+        "banner_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #2563eb 52%, #059669 100%)",
+        "banner_height": "600"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "",
+        "stats_subtitle": "",
+        "stats_bg_color": "#ffffff",
+        "stats_items": [
+          {
+            "number": "10+",
+            "label": "年行业经验",
+            "icon": "🏆"
+          },
+          {
+            "number": "500+",
+            "label": "成功案例",
+            "icon": "📈"
+          },
+          {
+            "number": "98%",
+            "label": "客户满意度",
+            "icon": "⭐"
+          },
+          {
+            "number": "24h",
+            "label": "响应时间",
+            "icon": "⚡"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "我们的核心优势",
+        "services_subtitle": "选择我们，就是选择专业与可靠",
+        "services_bg_color": "#f8fafc",
+        "services_items": [
+          {
+            "icon": "🎯",
+            "title": "精准定位",
+            "desc": "深入了解您的需求，提供量身定制的解决方案，确保每一分投入都能产生最大价值"
+          },
+          {
+            "icon": "⚡",
+            "title": "高效执行",
+            "desc": "专业团队协同作业，标准化流程管理，确保项目按时高质量交付"
+          },
+          {
+            "icon": "🛡️",
+            "title": "安全可靠",
+            "desc": "采用业界领先的安全技术和标准，全方位保障您的数据和业务安全"
+          },
+          {
+            "icon": "🤝",
+            "title": "全程陪伴",
+            "desc": "从咨询到售后，专属客户经理一对一服务，让您全程无忧"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image_text",
+      "data": {
+        "image_text_layout": "left",
+        "image_text_title": "为什么选择我们？",
+        "image_text_content": "<p>我们不只是服务提供商，更是您的长期战略合作伙伴。凭借多年的行业积累和持续创新，我们已帮助数百家企业实现业务突破。</p><ul><li>✓ <strong>专业团队</strong> - 100+ 资深专家，平均从业经验 8 年以上</li><li>✓ <strong>技术领先</strong> - 持续研发投入，保持技术和方案的先进性</li><li>✓ <strong>服务保障</strong> - 7×24 小时技术支持，快速响应需求</li><li>✓ <strong>效果导向</strong> - 以客户成功为目标，用数据说话</li></ul>",
+        "image_text_button": "查看案例",
+        "image_text_url": "#cases",
+        "image_text_image": ""
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "合作流程",
+        "process_subtitle": "简单四步，开启您的成功之旅",
+        "process_bg_color": "#ffffff",
+        "process_items": [
+          {
+            "icon": "📞",
+            "title": "免费咨询",
+            "desc": "联系我们，详细沟通您的需求 and 目标",
+            "icon_bg": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          },
+          {
+            "icon": "📋",
+            "title": "方案制定",
+            "desc": "根据需求分析，制定专属解决方案",
+            "icon_bg": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+          },
+          {
+            "icon": "🚀",
+            "title": "快速落地",
+            "desc": "专业团队高效执行，按时高质交付",
+            "icon_bg": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+          },
+          {
+            "icon": "📈",
+            "title": "持续优化",
+            "desc": "定期复盘，持续优化，确保长期成功",
+            "icon_bg": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户好评",
+        "testimonials_subtitle": "听听他们怎么说",
+        "testimonials_bg_color": "#f8fafc",
+        "testimonials_items": [
+          {
+            "content": "与他们合作是我们做过最正确的决定之一。专业的团队、高效的执行、贴心的服务，让我们的项目顺利上线并取得了超预期的效果。",
+            "author": "张总",
+            "company": "某科技公司 CEO",
+            "avatar": ""
+          },
+          {
+            "content": "他们不仅提供了优质的产品，更重要的是真正理解我们的业务需求。在整个合作过程中，沟通顺畅，响应及时，非常专业。",
+            "author": "李经理",
+            "company": "某制造企业 IT总监",
+            "avatar": ""
+          },
+          {
+            "content": "从前期咨询到后期维护，每一个环节都让人放心。特别是售后服务，有问题随时响应，真正做到了客户至上。",
+            "author": "王女士",
+            "company": "某电商平台 运营总监",
+            "avatar": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "我们的承诺",
+        "features_subtitle": "用专业 and 诚信赢得您的信任",
+        "features_bg_color": "#ffffff",
+        "features_items": [
+          {
+            "icon": "💯",
+            "title": "品质保证",
+            "desc": "严格的质量管控体系，确保交付物达到最高标准"
+          },
+          {
+            "icon": "💰",
+            "title": "透明报价",
+            "desc": "明确的价格体系，无隐藏费用，物超所值"
+          },
+          {
+            "icon": "🔒",
+            "title": "保密协议",
+            "desc": "严格的保密措施，全方位保护您的商业机密"
+          },
+          {
+            "icon": "🎁",
+            "title": "增值服务",
+            "desc": "免费提供培训、文档等增值服务，助您快速上手"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "立即行动，抢占先机",
+        "cta_subtitle": "填写表单，我们的专家顾问将在 24 小时内与您联系，为您提供免费咨询服务",
+        "cta_btn_text": "立即咨询",
+        "cta_btn_url": "/contact/",
+        "cta_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #059669 100%)"
+      }
+    }
+  ]
+}

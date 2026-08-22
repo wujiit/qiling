@@ -1,0 +1,299 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "海外仓/跨境供应链官网",
+  "page_template": "templates/template-overseas-warehouse-supply-chain.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "manufacturing_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "overseas-warehouse-supply-chain",
+    "label": "海外仓/跨境供应链官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "overseas_warehouse_supply_chain",
+    "industry_label": "海外仓/跨境供应链",
+    "scenario": "海外仓、FBA 备货、一件代发、退换货、头程物流、跨境库存、履约报价",
+    "description": "适合海外仓服务商、跨境物流公司、FBA 头程团队、跨境 3PL、退换货处理中心和品牌出海供应链服务商官网，内置服务能力、海外仓网点、履约流程、服务数据、FAQ 和报价入口。",
+    "badges": [
+      "海外仓",
+      "跨境供应链",
+      "履约报价"
+    ],
+    "order": 727,
+    "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "海外仓跨境供应链官网模板 - 海外仓履约与物流报价",
+    "description": "适合海外仓、跨境物流、FBA 头程、一件代发、退换货处理和跨境供应链服务商的官网页面，包含服务矩阵、海外仓网点、履约流程、服务数据、FAQ 和报价表单。",
+    "keywords": "海外仓官网,跨境供应链,海外仓服务,FBA头程,一件代发,跨境物流,退换货处理,海外仓报价",
+    "og_title": "海外仓/跨境供应链官网",
+    "og_description": "用海外仓网点、履约流程和服务数据快速搭建跨境供应链官网。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #ccfbf1 45%, #dbeafe 100%)",
+        "bb_title": "把海外仓履约节点<br><strong>变成可追踪服务</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "bb_subtitle": "海外仓、FBA 头程、一件代发与跨境供应链官网方案",
+        "bb_desc": "面向跨境卖家、品牌出海团队和平台店铺，把海外仓节点、入库上架、订单履约、退换货处理、头程协同和报价入口组织成客户能快速判断的官网页面。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "获取仓配报价",
+            "link": "#",
+            "style": "primary",
+            "icon": "仓"
+          },
+          {
+            "text": "查看海外仓网点",
+            "link": "#",
+            "style": "light",
+            "icon": "点"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#0f766e",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#115e59",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#ecfeff",
+        "bb_light_btn_hover_text_color": "#0f766e",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "跨境仓配与供应链服务",
+        "services_subtitle": "覆盖头程、入仓、库存、订单、退换货和异常处理",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "FBA 头程与备货",
+            "desc": "支持海运、空运、卡派、预约送仓、标签换标、箱规核对和入仓异常跟进。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "海外仓一件代发",
+            "desc": "提供收货、质检、上架、拣货、包装、发货和轨迹回传，适配多平台订单履约。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "退换货与维修检测",
+            "desc": "承接退货签收、质检分级、重新上架、换标换包、维修检测和销毁处理。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "库存与系统协同",
+            "desc": "对接 ERP、店铺、WMS 和物流渠道，提供库存预警、费用报表和异常工单。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "海外仓与服务节点",
+        "branches_subtitle": "展示核心海外仓、退换货中心和头程协同节点",
+        "branches_columns": "3",
+        "enable_city_filter": "yes",
+        "map_provider": "gaode",
+        "show_booking_button": "yes",
+        "navigation_button_text": "查看仓点",
+        "booking_button_text": "咨询报价",
+        "branches_list": [
+          {
+            "name": "美西洛杉矶仓",
+            "city": "Los Angeles",
+            "status": "open",
+            "address": "Los Angeles, CA, United States",
+            "phone": "+1 000-7000-1001",
+            "email": "lax@example.com",
+            "hours": "Mon-Fri 09:00-18:00",
+            "services": "FBA中转,一件代发,退货处理",
+            "transport": "覆盖美西港口与快递渠道",
+            "lat": "34.0522",
+            "lng": "-118.2437",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "德国法兰克福仓",
+            "city": "Frankfurt",
+            "status": "open",
+            "address": "Frankfurt am Main, Germany",
+            "phone": "+49 000-7000-1002",
+            "email": "fra@example.com",
+            "hours": "Mon-Fri 09:00-18:00",
+            "services": "欧盟仓配,换标,退换货",
+            "transport": "辐射德国、法国、荷兰和周边市场",
+            "lat": "50.1109",
+            "lng": "8.6821",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80"
+          },
+          {
+            "name": "英国伯明翰退货中心",
+            "city": "Birmingham",
+            "status": "open",
+            "address": "Birmingham, United Kingdom",
+            "phone": "+44 000-7000-1003",
+            "email": "bhx@example.com",
+            "hours": "Mon-Fri 09:00-18:00",
+            "services": "退货签收,质检,重入库",
+            "transport": "支持英国本地派送和退换货处理",
+            "lat": "52.4862",
+            "lng": "-1.8904",
+            "map_url": "",
+            "booking_url": "#",
+            "image": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=80"
+          }
+        ],
+        "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "海外仓履约流程",
+        "process_subtitle": "从头程入仓到订单出库，关键节点清晰可追踪",
+        "process_mode": "standard",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求与渠道评估",
+            "desc": "确认国家、平台、SKU、体积重量、月单量、时效、退货率和系统对接方式。",
+            "stage_tag": "评估"
+          },
+          {
+            "icon": "02",
+            "title": "头程与入仓计划",
+            "desc": "规划发货批次、箱规标签、清关资料、预约入仓和上架质检标准。",
+            "stage_tag": "入仓"
+          },
+          {
+            "icon": "03",
+            "title": "订单履约出库",
+            "desc": "同步订单、拣货复核、包装发货、渠道分配、轨迹回传和异常工单处理。",
+            "stage_tag": "履约"
+          },
+          {
+            "icon": "04",
+            "title": "库存与费用复盘",
+            "desc": "按周期复盘库存周转、仓储费、尾程成本、退货原因和补货建议。",
+            "stage_tag": "复盘"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "跨境履约服务数据",
+        "stats_subtitle": "用仓网、时效、库存和异常响应建立服务信任",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "8+",
+            "label": "海外仓服务节点"
+          },
+          {
+            "number": "48h",
+            "label": "入库上架时效"
+          },
+          {
+            "number": "99%",
+            "label": "订单轨迹回传率"
+          },
+          {
+            "number": "24h",
+            "label": "异常工单响应"
+          }
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "海外仓服务常见问题",
+        "faq_subtitle": "提前说明入仓要求、费用口径、系统对接和退换货边界",
+        "faq_items": [
+          {
+            "question": "报价前需要提供哪些信息？",
+            "answer": "建议提供目的国家、平台类型、SKU 数量、货品尺寸重量、月单量、入仓批次、尾程渠道、是否需要退货处理和系统对接方式。"
+          },
+          {
+            "question": "海外仓费用通常包含哪些项目？",
+            "answer": "常见包含入库费、上架费、仓储费、拣货打包费、尾程运费、换标换包、退货质检、销毁和增值服务费，具体以仓点报价表为准。"
+          },
+          {
+            "question": "可以对接 ERP 或店铺系统吗？",
+            "answer": "可以按服务能力展示订单、库存、轨迹、费用和工单接口。正式对接前需要确认平台、ERP、字段口径、数据频率和异常处理机制。"
+          },
+          {
+            "question": "退换货是否可以重新上架？",
+            "answer": "可按货品状态做质检分级，符合标准的商品可换标、换包并重新上架，不符合标准的可维修、退回、销毁或按客户要求处理。"
+          }
+        ],
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "获取海外仓履约报价",
+        "contact_subtitle": "填写目的国家、平台、SKU、月单量、货品尺寸重量、是否需要退换货和系统对接，供应链顾问会协助确认仓点和报价方案。",
+        "contact_show_form": "1",
+        "contact_form_id": "",
+        "module_bg_type": "color",
+        "module_bg_color": "#f8fafc",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "模块化首页",
+  "page_template": "templates/template-home.php",
+  "visual_skin": "tech_canvas",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "tech_canvas"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "footer": {
+    "mode": "page_skin",
+    "wave": "on",
+    "preset": "tech_canvas",
+    "inherit_skin_colors": true
+  },
+  "metadata": {
+    "id": "home",
+    "label": "模块化首页",
+    "category": "corporate",
+    "category_label": "官网通用",
+    "industry": "enterprise",
+    "scenario": "企业官网首页",
+    "description": "一体化企业官网首页，包含品牌首屏、核心能力、服务方案、数据实力、合作流程、客户评价、新闻、常见问题和咨询入口。",
+    "badges": [
+      "一体式视觉",
+      "企业官网",
+      "模块化首页"
+    ],
+    "order": 10,
+    "visual_skin": "tech_canvas",
+    "layout_system": "integrated_canvas",
+    "thumbnail": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "模块化企业官网首页 - 启灵官方页面包",
+    "description": "一体化企业官网首页模板，集中展示品牌定位、核心服务、企业实力、合作流程、客户口碑和咨询入口。",
+    "keywords": "模块化首页,企业官网首页,一体式官网,品牌官网,启灵主题",
+    "og_title": "模块化企业官网首页",
+    "og_description": "用一张连续画布讲清企业价值、服务能力、合作流程和客户信任。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "minimal",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)",
+        "bb_title": "让值得信赖的服务，<br><strong>成为增长的确定性</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#203052",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #203052 0%, #4f6df5 52%, #20b486 100%)",
+        "bb_subtitle": "专业企业服务与数字化解决方案",
+        "bb_desc": "从业务洞察、方案设计到项目交付与持续支持，用清晰的方法和可靠的执行，帮助企业把想法变成可衡量的成果。",
+        "bb_text_color": "#667085",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "获取专属方案",
+            "link": "#contact",
+            "style": "primary",
+            "icon": ""
+          },
+          {
+            "text": "了解核心服务",
+            "link": "#services",
+            "style": "light",
+            "icon": ""
+          }
+        ],
+        "bb_primary_btn_bg_color": "#4f6df5",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#3854d8",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "rgba(255,255,255,0.82)",
+        "bb_light_btn_text_color": "#203052",
+        "bb_light_btn_hover_bg_color": "#ffffff",
+        "bb_light_btn_hover_text_color": "#4f6df5",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85",
+        "bb_media_shadow": "lifted",
+        "bb_media_radius": "24px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "0",
+        "bb_padding_top": "112px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "把复杂业务，转化为清晰成果",
+        "features_subtitle": "围绕企业真正关心的效率、体验、数据与长期价值构建服务",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "transparent",
+        "features_padding": "normal",
+        "features_card_style": "border",
+        "features_card_bg": "rgba(255,255,255,0.72)",
+        "features_card_border": "rgba(79,109,245,0.14)",
+        "features_card_hover_border": "#4f6df5",
+        "features_card_radius": "16px",
+        "features_hover_effect": "lift",
+        "features_icon_style": "square",
+        "features_icon_size": "48px",
+        "features_icon_color": "#ffffff",
+        "features_icon_bg": "linear-gradient(135deg, #4f6df5 0%, #20b486 100%)",
+        "features_item_title_color": "#203052",
+        "features_item_desc_color": "#667085",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "业务洞察",
+            "desc": "从目标、用户和场景出发，先找到真正值得解决的问题。"
+          },
+          {
+            "icon": "02",
+            "title": "方案共创",
+            "desc": "把策略、内容、体验和技术组织成可执行的完整方案。"
+          },
+          {
+            "icon": "03",
+            "title": "可靠交付",
+            "desc": "明确里程碑与验收标准，让项目进度和结果始终可控。"
+          },
+          {
+            "icon": "04",
+            "title": "持续增长",
+            "desc": "基于运营数据持续优化，让一次合作沉淀为长期价值。"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "覆盖企业成长的关键环节",
+        "services_subtitle": "灵活组合专业能力，为不同阶段的企业提供恰到好处的支持",
+        "services_columns": "4",
+        "services_bg_color": "transparent",
+        "services_padding": "normal",
+        "services_card_bg": "rgba(255,255,255,0.78)",
+        "services_card_border": "rgba(32,48,82,0.10)",
+        "services_card_hover_border": "#20b486",
+        "services_item_title_color": "#203052",
+        "services_item_desc_color": "#667085",
+        "services_icon_color": "#ffffff",
+        "services_icon_bg": "linear-gradient(135deg, #203052 0%, #4f6df5 100%)",
+        "services_accent_color": "#20b486",
+        "services_items": [
+          {
+            "icon": "策",
+            "title": "战略与咨询",
+            "desc": "梳理业务定位、竞争机会和实施路径，为关键决策提供依据。",
+            "link": "#"
+          },
+          {
+            "icon": "创",
+            "title": "品牌与体验",
+            "desc": "建立统一的品牌表达与数字体验，让价值被客户快速理解。",
+            "link": "#"
+          },
+          {
+            "icon": "数",
+            "title": "数字化建设",
+            "desc": "围绕实际业务搭建高效、稳定并且易于持续迭代的系统。",
+            "link": "#"
+          },
+          {
+            "icon": "增",
+            "title": "运营与增长",
+            "desc": "连接内容、渠道与数据分析，持续改善获客效率和客户体验。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "经得起验证的专业能力",
+        "stats_subtitle": "以下为模板演示数据，导入后可替换为企业真实经营指标",
+        "stats_text_align": "center",
+        "stats_bg_type": "color",
+        "stats_bg_color": "transparent",
+        "stats_title_color": "#203052",
+        "module_padding_top": "76px",
+        "module_padding_bottom": "76px",
+        "stats_items": [
+          {
+            "number": "12",
+            "label": "年行业实践",
+            "number_color": "#4f6df5",
+            "label_color": "#667085"
+          },
+          {
+            "number": "500",
+            "label": "企业客户选择",
+            "number_color": "#4f6df5",
+            "label_color": "#667085"
+          },
+          {
+            "number": "1200",
+            "label": "项目成功交付",
+            "number_color": "#4f6df5",
+            "label_color": "#667085"
+          },
+          {
+            "number": "98",
+            "label": "客户满意指数",
+            "number_color": "#4f6df5",
+            "label_color": "#667085"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "每一步，都让合作更确定",
+        "process_subtitle": "用透明的流程、明确的交付物和持续的沟通推进项目",
+        "process_mode": "standard",
+        "module_bg_type": "color",
+        "module_bg_color": "transparent",
+        "module_padding_top": "86px",
+        "module_padding_bottom": "86px",
+        "process_card_bg": "rgba(255,255,255,0.76)",
+        "process_card_border": "rgba(79,109,245,0.14)",
+        "process_card_hover_border": "#4f6df5",
+        "process_arrow_color": "#9aadef",
+        "process_icon_color": "#ffffff",
+        "process_badge_bg": "linear-gradient(135deg, #4f6df5 0%, #20b486 100%)",
+        "process_badge_text": "#ffffff",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "需求诊断",
+            "stage_tag": "理解",
+            "desc": "明确业务目标、目标客户、现状难点和项目成功标准。",
+            "deliverable": "需求诊断与目标清单"
+          },
+          {
+            "icon": "02",
+            "title": "方案设计",
+            "stage_tag": "规划",
+            "desc": "形成实施范围、内容结构、体验方向和阶段里程碑。",
+            "deliverable": "整体方案与项目计划"
+          },
+          {
+            "icon": "03",
+            "title": "执行交付",
+            "stage_tag": "落地",
+            "desc": "按计划推进制作、评审、测试和优化，及时同步关键进展。",
+            "deliverable": "阶段成果与验收版本"
+          },
+          {
+            "icon": "04",
+            "title": "持续优化",
+            "stage_tag": "增长",
+            "desc": "结合反馈和数据复盘效果，持续迭代内容与业务体验。",
+            "deliverable": "运营建议与优化计划"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "客户信任，来自每一次认真交付",
+        "testimonials_subtitle": "以下为可直接替换的评价内容示例",
+        "testimonials_layout": "grid",
+        "testimonials_columns": "3",
+        "show_rating_summary": "yes",
+        "total_reviews": "300+",
+        "average_rating": "4.9",
+        "testimonials_bg_color": "transparent",
+        "testimonials_badge_bg": "#e8f7f3",
+        "module_padding_top": "82px",
+        "module_padding_bottom": "82px",
+        "testimonials_items": [
+          {
+            "avatar": "",
+            "name": "业务负责人",
+            "position": "成长型企业",
+            "content": "团队不只是完成需求，还帮助我们重新梳理了业务重点。整个过程沟通清晰，最后的成果也真正能够投入使用。",
+            "rating": "5",
+            "verified": "verified",
+            "card_bg": "rgba(255,255,255,0.82)",
+            "name_color": "#203052",
+            "content_color": "#667085"
+          },
+          {
+            "avatar": "",
+            "name": "市场总监",
+            "position": "企业服务品牌",
+            "content": "从品牌表达到账户转化路径都更清楚了。项目节奏透明，每个阶段都有明确成果，内部协作也顺畅很多。",
+            "rating": "5",
+            "verified": "verified",
+            "card_bg": "rgba(255,255,255,0.82)",
+            "name_color": "#203052",
+            "content_color": "#667085"
+          },
+          {
+            "avatar": "",
+            "name": "项目负责人",
+            "position": "数字化团队",
+            "content": "方案兼顾了当前落地和后续扩展，遇到问题时响应迅速。上线后团队仍然持续跟进数据和优化建议。",
+            "rating": "5",
+            "verified": "verified",
+            "card_bg": "rgba(255,255,255,0.82)",
+            "name_color": "#203052",
+            "content_color": "#667085"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "news",
+      "data": {
+        "news_title": "洞察与企业动态",
+        "news_count": "3",
+        "news_columns": "3",
+        "news_show_image": "1",
+        "news_image_height": "220px",
+        "news_show_excerpt": "1",
+        "news_button_text": "查看更多内容",
+        "news_title_color": "#203052",
+        "news_card_title_color": "#203052",
+        "news_button_bg_color": "#4f6df5",
+        "news_button_text_color": "#ffffff",
+        "news_button_hover_bg_color": "#3854d8",
+        "news_button_hover_text_color": "#ffffff",
+        "news_button_border_color": "#4f6df5",
+        "news_button_hover_border_color": "#3854d8",
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "合作前，您可能还想了解",
+        "faq_subtitle": "关于服务方式、项目周期和后续支持的常见问题",
+        "module_bg_color": "transparent",
+        "module_padding_top": "82px",
+        "module_padding_bottom": "82px",
+        "faq_card_bg": "rgba(255,255,255,0.78)",
+        "faq_card_border": "rgba(32,48,82,0.10)",
+        "faq_card_hover_border": "#4f6df5",
+        "faq_question_color": "#203052",
+        "faq_answer_color": "#667085",
+        "faq_icon_bg": "#e8f0ff",
+        "faq_icon_color": "#4f6df5",
+        "faq_items": [
+          {
+            "question": "你们通常服务哪些类型的企业？",
+            "answer": "我们可以服务处于品牌建设、业务升级、数字化转型和增长阶段的企业。导入模板后，请根据自身行业和服务范围替换此处内容。"
+          },
+          {
+            "question": "一个完整项目通常需要多长时间？",
+            "answer": "周期取决于项目范围、内容准备和协作效率。正式开始前会明确阶段计划、交付物和验收节点，让双方对进度保持一致。"
+          },
+          {
+            "question": "能否只选择其中一项服务？",
+            "answer": "可以。既可以选择单项咨询或执行服务，也可以根据目标组合成完整方案，避免为当前阶段不需要的内容增加成本。"
+          },
+          {
+            "question": "项目交付后是否提供持续支持？",
+            "answer": "可以根据实际需要安排维护、运营复盘和阶段优化。具体支持范围与响应方式会在合作方案中提前约定。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "从一次坦诚的沟通开始",
+        "cta_subtitle": "告诉我们您的目标与现状，我们会一起判断最合适的下一步。",
+        "cta_button_text": "预约方案沟通",
+        "cta_button_url": "#contact",
+        "cta_bg_type": "gradient",
+        "cta_bg_gradient": "linear-gradient(135deg, #203052 0%, #4f6df5 56%, #20b486 100%)",
+        "cta_bg_overlay": "0.12"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "联系我们",
+        "contact_subtitle": "留下您的需求，我们会尽快与您联系并提供有针对性的建议",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交合作需求",
+        "contact_submit_bg_color": "#4f6df5",
+        "contact_submit_text_color": "#ffffff",
+        "contact_submit_border_color": "#4f6df5",
+        "contact_submit_hover_bg_color": "#3854d8",
+        "contact_submit_hover_text_color": "#ffffff",
+        "contact_submit_hover_border_color": "#3854d8",
+        "module_bg_type": "color",
+        "module_bg_color": "transparent",
+        "module_padding_top": "88px",
+        "module_padding_bottom": "104px"
+      }
+    }
+  ]
+}

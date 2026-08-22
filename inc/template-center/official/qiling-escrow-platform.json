@@ -1,0 +1,266 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "担保交易平台官网",
+  "page_template": "templates/template-qiling-escrow-platform.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "finance_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-escrow-platform",
+    "label": "担保交易平台官网",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "escrow_trading",
+    "industry_label": "担保交易",
+    "scenario": "托管支付、双方确认、争议仲裁、手续费说明、平台风控",
+    "description": "适合启灵担保交易、启灵积分商城和中介担保交易服务，内置托管交易首屏、能力说明、交易流程、对比解释、费率套餐、FAQ 和转化入口。",
+    "badges": [
+      "启灵生态",
+      "担保交易",
+      "资金托管"
+    ],
+    "order": 382,
+    "thumbnail": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "担保交易平台官网模板 - 托管支付与争议仲裁",
+    "description": "适合启灵担保交易的官网页面，覆盖卖家发布担保单、买家托管支付、双方确认放款、争议仲裁、证据上传、手续费配置、风险拦截和对账补偿。",
+    "keywords": "担保交易官网,托管支付,积分商城担保,启灵担保交易,争议仲裁,交易风控,可提现余额",
+    "og_title": "担保交易平台官网",
+    "og_description": "用启灵担保交易和积分商城能力搭建托管支付、双方确认和争议仲裁服务入口。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "left_right",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #dbeafe 48%, #ccfbf1 100%)",
+        "bb_title": "交易先托管<br><strong>确认无误再放款</strong>",
+        "bb_title_size_max": "72px",
+        "bb_title_color": "#0f172a",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #1d4ed8 0%, #0f766e 100%)",
+        "bb_subtitle": "启灵生态担保交易平台",
+        "bb_desc": "围绕卖家发布担保单、买家托管支付、双方确认、自动放款、争议举证、平台仲裁、手续费和对账补偿，把积分商城支付能力包装成可运营的中介担保交易入口。",
+        "bb_text_color": "#334155",
+        "bb_text_align": "left",
+        "bb_buttons": [
+          {
+            "text": "发布担保单",
+            "link": "#",
+            "style": "primary",
+            "icon": "单"
+          },
+          {
+            "text": "查看交易流程",
+            "link": "#",
+            "style": "light",
+            "icon": "流"
+          }
+        ],
+        "bb_primary_btn_bg_color": "#1d4ed8",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#1e40af",
+        "bb_primary_btn_hover_text_color": "#ffffff",
+        "bb_light_btn_bg_color": "#ffffff",
+        "bb_light_btn_text_color": "#0f172a",
+        "bb_light_btn_hover_bg_color": "#eff6ff",
+        "bb_light_btn_hover_text_color": "#1d4ed8",
+        "bb_media_type": "image",
+        "bb_main_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+        "bb_media_shadow": "glow",
+        "bb_media_radius": "18px",
+        "bb_media_max_width": "720px",
+        "bb_intro_anim": "fade_up",
+        "bb_media_anim": "float",
+        "bb_show_glow": "1",
+        "bb_padding_top": "96px",
+        "bb_padding_bottom": "88px"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "把交易信任拆成可执行节点",
+        "features_subtitle": "页面文案按 qilingescrow 与 qilingshop 的实际能力组织，导入后替换成真实担保首页和个人中心入口即可",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_card_style": "border",
+        "features_card_radius": "8px",
+        "features_icon_style": "square",
+        "features_icon_bg": "#dbeafe",
+        "features_items": [
+          {
+            "icon": "托",
+            "title": "托管支付",
+            "desc": "买家通过启灵积分商城支付能力完成托管，担保单从 pending_payment 流转到 funded，资金进入托管链路。"
+          },
+          {
+            "icon": "认",
+            "title": "双方确认放款",
+            "desc": "卖家和买家都确认无误后，系统计算手续费和卖家应得金额，放款到可提现余额。"
+          },
+          {
+            "icon": "证",
+            "title": "证据与争议",
+            "desc": "交易双方可上传图片、PDF、文档等证据；争议状态下由平台在后台查看证据和操作日志后裁决。"
+          },
+          {
+            "icon": "巡",
+            "title": "对账补偿",
+            "desc": "支付回跳和定时巡检会补偿已支付未入托管、放款失败、退款失败等异常状态，降低资金状态不一致风险。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "担保交易标准流程",
+        "process_subtitle": "让买卖双方清楚知道每一步钱在哪里、谁确认、平台什么时候介入",
+        "process_mode": "standard",
+        "module_bg_color": "#f8fafc",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "卖家发布担保单",
+            "desc": "填写标题、金额、交易说明和公开范围，可生成固定详情链接发给交易对方。",
+            "stage_tag": "发布"
+          },
+          {
+            "icon": "02",
+            "title": "买家托管支付",
+            "desc": "买家确认服务协议后发起托管支付，支付完成后订单进入托管中状态。",
+            "stage_tag": "托管"
+          },
+          {
+            "icon": "03",
+            "title": "双方确认或发起争议",
+            "desc": "无争议时双方确认自动放款；有问题时提交证据并进入平台仲裁。",
+            "stage_tag": "确认"
+          },
+          {
+            "icon": "04",
+            "title": "放款、退款与对账",
+            "desc": "平台按状态机完成放款或退款，定时任务持续处理超时、补偿和异常账务。",
+            "stage_tag": "结算"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "担保交易和直接转账的区别",
+        "comparison_subtitle": "把用户最关心的资金安全、证据留存和平台介入讲明白",
+        "comparison_features": "付款时机\n资金去向\n交易确认\n争议处理\n证据留存\n适合场景",
+        "comparison_products": [
+          {
+            "name": "启灵担保交易",
+            "values": "买家先托管支付，确认后再放款\n资金进入托管链路，未确认前不直接给卖家\n买卖双方都可在订单详情确认或发起争议\n平台后台可查看证据与日志，裁决放款或退款\n支持交易证据上传、操作日志和争议 SLA\n适合虚拟服务、二手交易、项目交付、线下撮合"
+          },
+          {
+            "name": "普通直接转账",
+            "values": "双方自行约定付款时间\n资金直接到对方账户，平台难以追踪\n确认过程依赖聊天记录或人工沟通\n发生纠纷后平台证据不足，处理成本高\n证据分散在聊天、网盘或线下材料里\n适合高度信任、金额低、无需平台介入的交易"
+          }
+        ],
+        "comparison_highlight": "1",
+        "module_bg_color": "#ffffff",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "平台服务费说明",
+        "pricing_subtitle": "示例费率可按后台 qles_fee_rate、最低金额和最高金额继续调整",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "轻量撮合",
+            "price": "1%",
+            "period": "服务费",
+            "desc": "适合低频交易和早期冷启动",
+            "features": "公开/私密担保单\n托管支付\n双方确认放款\n基础争议处理",
+            "btn_text": "创建担保单",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "标准担保",
+            "price": "3%",
+            "period": "服务费",
+            "desc": "适合常规交易平台运营",
+            "features": "证据上传\n争议 SLA\n后台裁决\n对账巡检\n站内通知提醒",
+            "btn_text": "使用标准担保",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "推荐",
+            "featured_bg": "linear-gradient(135deg, #1d4ed8 0%, #0f766e 100%)"
+          },
+          {
+            "name": "行业定制",
+            "price": "联系平台",
+            "period": "",
+            "desc": "适合行业撮合和高客单项目",
+            "features": "协议模板\n风控关键词\n频率限制\n运营报表\n定制流程说明",
+            "btn_text": "咨询方案",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "担保交易常见问题",
+        "faq_subtitle": "提前说明支付依赖、确认规则和争议边界",
+        "faq_items": [
+          {
+            "question": "这个模板必须安装启灵担保交易吗？",
+            "answer": "不必须。模板本身可以正常导入和展示；启用 qilingescrow 后，把按钮链接改成担保首页、担保单发布页或个人中心订单页即可。"
+          },
+          {
+            "question": "为什么还需要启灵积分商城？",
+            "answer": "担保交易的支付和可提现余额能力依赖启灵积分商城。若积分商城未启用，插件仍可加载，但发布、支付和发放等核心操作会被拦截并提示。"
+          },
+          {
+            "question": "双方都确认后一定会自动放款吗？",
+            "answer": "插件会进入 releasing 临时状态并计算手续费，余额入账成功后变为 released；若入账失败，会回滚到待处理状态并由补偿任务重试。"
+          },
+          {
+            "question": "争议时平台能看到什么？",
+            "answer": "后台订单详情可查看争议证据、状态流转和操作日志，并按实际情况裁决放款给卖家或退款给买家。"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "把交易信任做成平台能力",
+        "cta_subtitle": "替换真实担保首页、发布页、个人中心和服务协议链接，就能把启灵担保交易从后台功能变成用户看得懂的托管交易入口。",
+        "cta_button_text": "配置担保交易入口",
+        "cta_button_url": "#",
+        "cta_bg_type": "image",
+        "cta_bg_image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.58"
+      }
+    }
+  ]
+}

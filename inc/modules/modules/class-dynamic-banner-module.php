@@ -426,9 +426,7 @@ class Dynamic_Banner_Module extends Module_Base {
         $highlight_color = isset( $data['db_highlight_color'] ) ? $data['db_highlight_color'] : 'var(--color-error)';
         $title_color = isset( $data['db_title_color'] ) ? $data['db_title_color'] : 'var(--color-neutral-900)';
         $text_color = isset( $data['db_text_color'] ) ? $data['db_text_color'] : 'var(--color-neutral-600)';
-        $desc_color = isset( $data['db_desc_color'] ) && '' !== trim( (string) $data['db_desc_color'] )
-            ? $data['db_desc_color']
-            : $text_color;
+        $desc_color = $this->sanitize_color_value( isset( $data['db_desc_color'] ) ? $data['db_desc_color'] : '', 'var(--color-neutral-600)' );
 
         // 按钮
         $buttons = isset( $data['db_buttons'] ) ? $data['db_buttons'] : array();
@@ -456,7 +454,7 @@ class Dynamic_Banner_Module extends Module_Base {
 
         $module_id = 'db-' . uniqid();
         $section_classes = 'module module-dynamic-banner';
-        $section_style = "--db-bg: {$bg_value}; --db-title-color: {$title_color}; --db-subtitle-color: {$text_color}; --db-desc-color: {$desc_color}; --db-outline-color: {$title_color};";
+        $section_style = "--db-bg: {$bg_value}; --db-title-color: {$title_color}; --db-highlight-color: {$highlight_color}; --db-subtitle-color: {$text_color}; --db-desc-color: {$desc_color}; --db-outline-color: {$title_color};";
         if ( '' !== $primary_btn_bg_color ) {
             $section_style .= "--db-primary-btn-bg: {$primary_btn_bg_color}; --db-primary-btn-border: {$primary_btn_bg_color};";
         }
@@ -517,7 +515,7 @@ class Dynamic_Banner_Module extends Module_Base {
                         <?php endif; ?>
                         
                         <?php if ( $desc ) : ?>
-                            <p class="db-desc"><?php echo nl2br( wp_kses_post( $desc ) ); ?></p>
+                            <p class="db-desc" style="color: <?php echo esc_attr( $desc_color ); ?>;"><?php echo nl2br( wp_kses_post( $desc ) ); ?></p>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $buttons ) ) : ?>

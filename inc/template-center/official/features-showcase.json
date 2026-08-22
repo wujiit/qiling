@@ -1,0 +1,162 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "功能清单",
+  "page_template": "templates/template-features-showcase.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company"
+  },
+  "hide_page_header": false,
+  "transparent_header": false,
+  "enable_scroll_reveal": false,
+  "metadata": {
+    "id": "features-showcase",
+    "label": "功能清单",
+    "category": "product",
+    "category_label": "产品/SaaS/技术",
+    "industry": "technology",
+    "scenario": "功能展示页",
+    "description": "适合产品功能、能力矩阵和核心卖点集中呈现。",
+    "badges": [
+      "功能",
+      "产品"
+    ],
+    "order": 140,
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "功能清单模板 - 启灵官方页面包",
+    "description": "适合产品功能、能力矩阵和核心卖点集中呈现。",
+    "keywords": "功能清单,功能展示页,功能,产品",
+    "og_title": "功能清单",
+    "og_description": "适合产品功能、能力矩阵和核心卖点集中呈现。"
+  },
+  "modules": [
+    {
+      "type": "features_list",
+      "data": {
+        "title": "强大的功能特性",
+        "subtitle": "22+ 内置模块，覆盖企业网站建设的各个方面",
+        "bg_color": "",
+        "columns": "3",
+        "tabs": [
+          {
+            "tab_id": "modules",
+            "tab_title": "页面模块",
+            "tab_icon": "📦",
+            "features": "🎯|横幅模块|支持轮播、视频背景的Banner展示，多种动画效果可选\n📦|产品中心|分类展示产品，自动获取封面图，多种布局风格\n💼|成功案例|客户案例展示，支持多种卡片风格切换\n📰|新闻动态|自动获取文章列表，多布局展示新闻资讯\n💰|价格套餐|可定制的定价表模块，支持渐变色和特性列表\n📋|功能清单|Tab切换的功能卡片展示，现代化设计\n🔄|流程展示|时间线/步骤式流程展示，多种样式可选\n🎥|视频模块|支持本地视频 and B站视频嵌入播放\n💬|客户评价|多种样式的客户见证模块，增强可信度"
+          },
+          {
+            "tab_id": "user",
+            "tab_title": "用户系统",
+            "tab_icon": "👤",
+            "features": "🔐|登录注册|完整的用户认证系统，支持邮箱验证\n👤|会员中心|个人资料管理，头像上传，密码修改\n🔑|密码找回|邮件验证重置密码，安全可靠\n📧|邮件系统|SMTP邮件发送支持，加密存储凭证\n🛡️|表单验证|前后端双重验证，防止恶意提交\n⏱️|频率限制|防止暴力破解，保护用户账户安全"
+          },
+          {
+            "tab_id": "customize",
+            "tab_title": "个性化定制",
+            "tab_icon": "🎨",
+            "features": "🎨|主题色定制|一键切换主题色，支持渐变色配置\n🌙|暗黑模式|完整的深色主题支持，自动适配所有模块\n📱|悬浮工具栏|可定制的悬浮按钮，联系方式快捷入口\n📢|公告系统|多类型公告展示，文字/图文/弹窗模式\n🖼️|Logo定制|支持普通/暗色模式双Logo配置\n📐|页脚配置|多栏页脚布局，社交媒体图标，动画效果"
+          },
+          {
+            "tab_id": "performance",
+            "tab_title": "性能与安全",
+            "tab_icon": "⚡",
+            "features": "⚡|性能优化|图片懒加载，资源按需加载，极速体验\n🛡️|安全防护|XSS防护，数据转义，安全输出\n📊|后台管理|简洁直观的设置面板，分组配置项\n🔧|模块管理|拖拽可视化配置，实时预览效果\n📱|响应式设计|完美适配各种屏幕尺寸，移动端优化\n🔍|SEO优化|语义化标签，结构化数据，搜索引擎友好"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_bg_image": "",
+        "stats_text_align": "center",
+        "stats_items": [
+          {
+            "number": "22",
+            "label": "内置模块"
+          },
+          {
+            "number": "50",
+            "label": "功能特性"
+          },
+          {
+            "number": "100",
+            "label": "响应式"
+          },
+          {
+            "number": "0",
+            "label": "代码要求"
+          }
+        ]
+      }
+    },
+    {
+      "type": "multi_image_text",
+      "data": {
+        "multi_image_text_title": "更多亮点",
+        "multi_image_text_subtitle": "精心设计的细节，让您的网站与众不同",
+        "multi_image_text_layout": "left",
+        "multi_image_text_items": [
+          {
+            "icon": "📦",
+            "title": "模块化架构",
+            "desc": "采用面向对象的模块化设计，代码结构清晰，易于扩展和维护。每个模块独立运作，互不干扰。",
+            "image": "",
+            "link": ""
+          },
+          {
+            "icon": "🎨",
+            "title": "可视化配置",
+            "desc": "后台拖拽式模块配置，所见即所得。无需编写代码，轻松构建专业页面。",
+            "image": "",
+            "link": ""
+          },
+          {
+            "icon": "🛡️",
+            "title": "安全可靠",
+            "desc": "遵循WordPress安全最佳实践，数据转义、权限验证、CSRF保护，让您高枕无忧。",
+            "image": "",
+            "link": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见问题",
+        "faq_items": [
+          {
+            "question": "如何添加自定义模块到页面？",
+            "answer": "在后台编辑页面时，找到「页面模块配置」区域，点击「添加模块」按钮选择需要的模块类型，然后填写模块内容即可。支持拖拽排序和实时预览。"
+          },
+          {
+            "question": "主题支持哪些页面模板？",
+            "answer": "主题内置多种页面模板：模块化首页、关于我们、产品中心、成功案例、新闻动态、解决方案、落地页、功能清单展示、常见问题、联系我们等，满足企业网站的各种需求。"
+          },
+          {
+            "question": "如何自定义主题色？",
+            "answer": "进入「外观」→「主题设置」，在「基础设置」选项卡中可以配置主题主色调、辅助色等，支持颜色选择器 and 渐变色配置，修改后全站自动应用。"
+          },
+          {
+            "question": "主题对SEO优化有帮助吗？",
+            "answer": "是的，主题采用语义化HTML5标签、合理的标题层级结构、图片懒加载优化、快速加载性能等，都有助于搜索引擎优化。建议配合专业SEO插件使用效果更佳。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "准备好开始了吗？",
+        "cta_subtitle": "立即体验功能强大的企业级WordPress主题",
+        "cta_button_text": "联系我们",
+        "cta_button_url": "/contact/"
+      }
+    }
+  ]
+}

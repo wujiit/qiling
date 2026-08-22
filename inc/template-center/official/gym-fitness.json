@@ -1,0 +1,270 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "健身房官网",
+  "page_template": "templates/template-gym-fitness.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "beauty_company"
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "gym-fitness",
+    "label": "健身房官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "fitness",
+    "industry_label": "健身",
+    "scenario": "健身课程、私教团队、体验预约",
+    "description": "适合健身房、私教工作室、功能训练馆和运动康复机构，突出课程、教练、价格套餐与体验预约。",
+    "badges": [
+      "课程预约",
+      "私教转化"
+    ],
+    "order": 461,
+    "thumbnail": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "健身房官网模板 - 课程私教与体验预约",
+    "description": "适合健身房和私教工作室的官网页面，包含课程项目、教练团队、会员套餐、场馆相册和体验预约。",
+    "keywords": "健身房官网,私教工作室,团课预约,健身体验课",
+    "og_title": "健身房官网",
+    "og_description": "带课程、教练和预约入口的健身行业官网模板。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #16a34a 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80",
+            "title": "从第一次训练开始，看到改变",
+            "subtitle": "团课、私教、体测和训练计划一体化，支持预约体验课。",
+            "btn_text": "预约体验课",
+            "btn_url": "#",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#166534"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_data": [
+          {
+            "icon": "40",
+            "number": "40+",
+            "label": "周课程",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "18",
+            "number": "18+",
+            "label": "认证教练",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "3000",
+            "number": "3000+",
+            "label": "活跃会员",
+            "color": "#ffffff"
+          },
+          {
+            "icon": "4.9",
+            "number": "4.9",
+            "label": "体验评分",
+            "color": "#ffffff"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "训练项目",
+        "services_subtitle": "从新手入门到进阶塑形，匹配不同阶段目标",
+        "services_bg_color": "#ffffff",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "01",
+            "title": "私教训练",
+            "desc": "体测评估、动作纠正和阶段计划。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "燃脂团课",
+            "desc": "HIIT、搏击、有氧操等高互动课程。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "力量塑形",
+            "desc": "器械训练、核心力量和线条管理。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "运动康复",
+            "desc": "姿态评估、拉伸放松与功能训练。",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "curriculum",
+      "data": {
+        "curriculum_title": "本周课程安排",
+        "curriculum_subtitle": "可替换为门店真实课表或体验课排期",
+        "curriculum_bg_color": "#f0fdf4",
+        "curriculum_primary_color": "#16a34a",
+        "curriculum_items": [
+          {
+            "title": "周一：燃脂 HIIT",
+            "meta": "19:00 - 20:00 | Alex",
+            "content": "<p>高强度间歇训练，适合有基础的燃脂用户。</p>",
+            "open": "yes"
+          },
+          {
+            "title": "周三：力量入门",
+            "meta": "20:00 - 21:00 | Ken",
+            "content": "<p>学习深蹲、硬拉、推举等基础动作模式。</p>",
+            "open": "no"
+          },
+          {
+            "title": "周六：体态改善",
+            "meta": "10:00 - 11:00 | Mia",
+            "content": "<p>肩颈、髋部和核心稳定训练，适合久坐人群。</p>",
+            "open": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "认证教练团队",
+        "team_subtitle": "按训练目标匹配教练和计划",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=600&q=80",
+            "name": "Alex",
+            "position": "力量训练教练",
+            "desc": "擅长增肌、体态和基础动作纠正。",
+            "email": "coach1@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=600&q=80",
+            "name": "Ken",
+            "position": "功能训练教练",
+            "desc": "擅长减脂、体能和运动表现提升。",
+            "email": "coach2@example.com"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1609899537878-88d5ba429bdb?auto=format&fit=crop&w=600&q=80",
+            "name": "Mia",
+            "position": "体态改善教练",
+            "desc": "专注久坐人群姿态与灵活性训练。",
+            "email": "coach3@example.com"
+          }
+        ],
+        "module_bg_type": "color",
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "会员套餐",
+        "pricing_subtitle": "可按门店价格和权益自由调整",
+        "pricing_columns": "3",
+        "module_bg_color": "#f8fafc",
+        "pricing_items": [
+          {
+            "name": "体验课",
+            "price": "¥49",
+            "period": "/次",
+            "desc": "新客体测和课程体验",
+            "features": "基础体测\n1 次团课\n训练建议",
+            "btn_text": "预约体验",
+            "btn_link": "#",
+            "featured": ""
+          },
+          {
+            "name": "月卡",
+            "price": "¥699",
+            "period": "/月",
+            "desc": "适合规律训练会员",
+            "features": "不限次入场\n团课预约\n储物柜权益",
+            "btn_text": "咨询月卡",
+            "btn_link": "#",
+            "featured": "1",
+            "featured_text": "热门"
+          },
+          {
+            "name": "私教包",
+            "price": "¥3999",
+            "period": "/10节",
+            "desc": "一对一目标训练",
+            "features": "体测评估\n训练计划\n动作纠正",
+            "btn_text": "咨询私教",
+            "btn_link": "#",
+            "featured": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "训练空间",
+        "gallery_columns": "3",
+        "gallery_style": "grid",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80",
+            "title": "自由力量区",
+            "desc": "器械完善",
+            "category": "场馆"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80",
+            "title": "有氧训练区",
+            "desc": "燃脂课程",
+            "category": "场馆"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80",
+            "title": "团课空间",
+            "desc": "高互动训练",
+            "category": "课程"
+          }
+        ],
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约体验课",
+        "booking_subtitle": "提交训练目标、基础情况和可到店时间，顾问会匹配体验课程。",
+        "form_id": "",
+        "booking_layout": "sidebar",
+        "sidebar_title": "体验须知",
+        "sidebar_content": "首次体验请提前 10 分钟到店\n建议穿运动服和训练鞋\n如有伤病史请在表单里提前说明",
+        "contact_phone": "400-900-2026",
+        "contact_hours": "08:00-22:00",
+        "module_bg_image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1600&q=80",
+        "bg_overlay": "0.55"
+      }
+    }
+  ]
+}
