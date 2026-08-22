@@ -2,25 +2,38 @@
 
 # 🌟 启灵 (Qi Ling) WordPress 主题
 
-**目前功能最强、生态最完善的 100% 全开源 WordPress 现代化企业级/出海建站主题**
+**目前功能最强、生态最完善的现代化开源企业级/出海建站主题**
 
 [![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg?style=flat-square&logo=wordpress)](https://wordpress.org)
 [![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg?style=flat-square&logo=php)](https://php.net)
-[![License: GPL-2.0](https://img.shields.io/badge/License-GPL--2.0-green.svg?style=flat-square)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Open Source](https://img.shields.io/badge/Open%20Source-100%25-brightgreen.svg?style=flat-square)](#)
-[![Multi-language](https://img.shields.io/badge/i18n-8%2B%20Languages-orange.svg?style=flat-square)](#)
+[![Source Code](https://img.shields.io/badge/Source-Open%20Source-brightgreen.svg?style=flat-square)](#)
+[![License](https://img.shields.io/badge/License-Commercial%20%26%20Non--Profit-orange.svg?style=flat-square)](#-开源与授权协议说明)
+[![QQ Group](https://img.shields.io/badge/QQ%E4%BA%A4%E6%B5%81%E7%BE%A4-16966111-blue?style=flat-square&logo=tencent-qq)](https://qm.qq.com)
+[![Multi-language](https://img.shields.io/badge/i18n-8%2B%20Languages-blue.svg?style=flat-square)](#)
 
 <p align="center">
+  <a href="https://qiling.jingxialai.com">🌐 官方网站</a> •
+  <a href="https://demo.jingxialai.com">🖥️ 在线演示</a> •
+  <a href="https://www.jingxialai.com/docs/qiling">📚 使用文档</a> •
   <a href="#-核心亮点">核心亮点</a> •
   <a href="#-四大装修模式">四大装修模式</a> •
   <a href="#-80-功能模块">80+ 功能模块</a> •
-  <a href="#-100-行业页面风格">100+ 页面风格</a> •
-  <a href="#-快速上手">快速上手</a> •
-  <a href="#-企业级生态">企业级生态</a> •
-  <a href="#-开源协议">开源协议</a>
+  <a href="#-开源与授权协议说明">授权协议</a> •
+  <a href="#-商业授权与联系交流">联系我们</a>
 </p>
 
 </div>
+
+---
+
+## 🔗 官方资源直达
+
+| 资源名称 | 访问地址 | 描述 |
+| :--- | :--- | :--- |
+| 🌐 **官方网站** | [qiling.jingxialai.com](https://qiling.jingxialai.com) | 主题最新动态、生态服务与商业授权购买 |
+| 🖥️ **在线演示** | [demo.jingxialai.com](https://demo.jingxialai.com) | 真实站点效果、可视化装修体验与模块预览 |
+| 📚 **官方文档** | [www.jingxialai.com/docs/qiling](https://www.jingxialai.com/docs/qiling) | 详尽的主题安装、模块配置、AI 装修与开发文档 |
+| 💬 **官方 QQ 群** | **`16966111`** | 站长交流、问题反馈、版本更新与技术探讨 |
 
 ---
 
@@ -28,13 +41,13 @@
 
 **启灵（Qi Ling）** 是一套专为企业官网、外贸出海、SaaS 软件、品牌展示、垂直门户、内容运营等场景打造的**生态级现代化 WordPress 主题**。
 
-坚持 **100% 全开源、零加密、零后门**，彻底打破传统商业主题的垄断与绑架。启灵不仅提供了极致灵活的**可视化与 AI 智能建站**体验，更深度内置了 **80+ 高度可复用功能模块** 与 **100+ 行业页面风格预设**，帮助开发者、企业主与个人站长以极低的成本构建高性能、国际化、高转化率的高端站点。
+启灵采用 **源码全开放（Source-Available）** 理念，代码完全透明、无加密、无后门。启灵不仅提供了极致灵活的**可视化与 AI 智能建站**体验，更深度内置了 **80+ 高度可复用功能模块** 与 **100+ 行业页面风格预设**，帮助开发者、企业主与建站服务商以极高效率构建高性能、国际化、高转化率的高端站点。
 
 ---
 
 ## ✨ 核心亮点
 
-- 🚀 **100% 全开源 (Fully Open Source)**：代码开源无加密，完全遵循 GPL-2.0 协议，随心二开与私有化部署。
+- 🚀 **源码全开放 (100% Open Code)**：全开源代码架构，无任何代码混淆与加密，方便安全审计、学习研究与深度二开。
 - 🎨 **四大装修体系 (Quad-Building System)**：支持**可视化装修**、**AI 智能装修**、**JSON 装修**与**自定义器 (Customizer)**，满足不同层次建站需求。
 - 🧩 **80+ 现代化功能模块**：涵盖 Banner、Hero、产品展示、服务卡片、价格表、客户评价、流程步骤、FAQ、招聘中心等，像搭积木一样轻松组合。
 - 🏛️ **100+ 行业页面风格**：内置外贸 B2B、SaaS 软件、数码科技、AI 智能体、医疗美容、企业财税、教育培训、餐饮连锁等百余款行业模板，一键导入即用。
@@ -175,25 +188,35 @@ qiling/
 
 ---
 
-## 🤝 贡献与反馈
+## 📜 开源与授权协议说明
 
-启灵是一个充满活力的开源项目，欢迎全球开发者与站长共同参与维护与建设：
+启灵主题虽开放全部源码供学习与评估，但**实际部署与使用需遵循以下授权协议条款**：
 
-1. **Fork** 本仓库并创建您的特性分支 (`git checkout -b feature/AmazingFeature`)。
-2. 提交您的修改 (`git commit -m 'feat: Add some AmazingFeature'`)。
-3. 推送到远程分支 (`git push origin feature/AmazingFeature`)。
-4. 在 GitHub 上发起一个 **Pull Request**。
-5. 发现 Bug 或有功能建议？欢迎提交 [Issues](https://github.com/your-org/qiling/issues)。
+### 1. 💼 商业使用（必须购买商业授权）
+- **任何涉及商业营利、企业官网、商业项目交付、客户建站服务、电商销售、品牌营销等商用行为，均必须购买官方正式商业授权**。
+- 未经授权不得将本主题用于任何盈利性生产环境或对外商业交付。
+
+### 2. 🎓 教育机构与公益组织（免费授权）
+- **适用对象**：公立/非营利性学校、教育机构、非营利组织（NPO / NGO）、公益慈善基金会。
+- **政策说明**：上述机构可**免费使用**启灵主题，**但仍需联系作者进行登记并获取正式的免费授权许可（授权过程完全免费）**。
+
+### 3. 🚫 严禁与限制行为
+- **严禁转售/倒卖**：严禁将本主题（包含源码、修改版、打包衍生版）在任何平台进行二次倒卖、破解转售、捆绑销售或收费分发。
+- **版权标识保护**：未经书面许可，不得擅自抹除或伪造主题作者与版权归属信息。
 
 ---
 
-## 📄 开源协议
+## 📞 商业授权与联系交流
 
-本项目采用 **[GNU General Public License v2.0 (GPL-2.0)](https://www.gnu.org/licenses/gpl-2.0.html)** 开源协议。
-您可以自由使用、修改、分发本主题，无任何商业版权暗锁与域名限制。
+如果您需要获取**商业授权**、申请**教育/公益免费授权**，或加入站长交流群交流技术：
+
+- 🌐 **官方网站**：[qiling.jingxialai.com](https://qiling.jingxialai.com)
+- 🖥️ **在线演示**：[demo.jingxialai.com](https://demo.jingxialai.com)
+- 📚 **官方文档**：[www.jingxialai.com/docs/qiling](https://www.jingxialai.com/docs/qiling)
+- 💬 **官方 QQ 交流群**：**`16966111`**
 
 ---
 
 <div align="center">
-  <sub>Made with ❤️ by Summer & Qi Ling Community</sub>
+  <sub>Copyright &copy; Summer & Qi Ling. All Rights Reserved.</sub>
 </div>
