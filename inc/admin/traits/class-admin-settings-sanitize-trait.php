@@ -805,20 +805,111 @@ trait Admin_Settings_Sanitize_Trait {
             );
         } elseif ( function_exists( 'developer_starter_get_dangerous_runtime_optimization_keys' ) ) {
             $enabled_runtime_risky_keys = array();
+            $runtime_risky_labels       = array(
+                'disable_embeds'                 => __( '禁用嵌入内容', 'developer-starter' ),
+                'disable_xmlrpc'                 => __( '禁用 XML-RPC', 'developer-starter' ),
+                'disable_rest_api'               => __( '限制 REST API', 'developer-starter' ),
+                'restrict_rest_api_important'    => __( '限制 REST API 敏感接口', 'developer-starter' ),
+                'restrict_rest_users'            => __( '限制 REST API 用户信息', 'developer-starter' ),
+                'disable_application_passwords'  => __( '禁用应用密码', 'developer-starter' ),
+                'disable_core_auto_update'       => __( '禁用核心自动更新', 'developer-starter' ),
+                'disable_plugin_auto_update'     => __( '禁用插件自动更新', 'developer-starter' ),
+                'disable_theme_auto_update'      => __( '禁用主题自动更新', 'developer-starter' ),
+                'disable_translation_auto_update' => __( '禁用翻译包自动更新', 'developer-starter' ),
+                'disable_update_emails'          => __( '禁用更新通知邮件', 'developer-starter' ),
+                'disable_gutenberg'               => __( '禁用 Gutenberg 编辑器', 'developer-starter' ),
+                'disable_block_widgets'           => __( '禁用区块小工具', 'developer-starter' ),
+                'remove_json_api_link'            => __( '移除 JSON API 链接', 'developer-starter' ),
+                'remove_gutenberg_css'            => __( '移除 Gutenberg 样式', 'developer-starter' ),
+                'remove_global_styles'            => __( '移除全局样式', 'developer-starter' ),
+                'disable_jquery_migrate'          => __( '禁用 jQuery Migrate', 'developer-starter' ),
+                'disable_external_google_fonts'   => __( '禁用外部 Google Fonts', 'developer-starter' ),
+                'disable_wp_core_ai'              => __( '禁用 WordPress AI', 'developer-starter' ),
+            );
             foreach ( developer_starter_get_dangerous_runtime_optimization_keys() as $runtime_risky_key ) {
                 if ( ! empty( $sanitized[ $runtime_risky_key ] ) ) {
                     $enabled_runtime_risky_keys[] = $runtime_risky_key;
                 }
             }
             if ( ! empty( $enabled_runtime_risky_keys ) ) {
+                $enabled_runtime_risky_labels = array();
+                foreach ( $enabled_runtime_risky_keys as $runtime_risky_key ) {
+                    $enabled_runtime_risky_labels[] = isset( $runtime_risky_labels[ $runtime_risky_key ] )
+                        ? $runtime_risky_labels[ $runtime_risky_key ]
+                        : $runtime_risky_key;
+                }
+
+                $whitelist_requirements = array(
+                    'disable_rest_api' => array(
+                        'option' => 'runtime_rest_whitelist_prefixes',
+                        'label'  => __( 'REST API 白名单', 'developer-starter' ),
+                    ),
+                    'disable_application_passwords' => array(
+                        'option' => 'runtime_application_passwords_allowlist',
+                        'label'  => __( '应用密码白名单', 'developer-starter' ),
+                    ),
+                    'disable_gutenberg' => array(
+                        'option' => 'runtime_block_editor_allowlist',
+                        'label'  => __( '区块编辑器/小工具白名单', 'developer-starter' ),
+                    ),
+                    'disable_block_widgets' => array(
+                        'option' => 'runtime_block_editor_allowlist',
+                        'label'  => __( '区块编辑器/小工具白名单', 'developer-starter' ),
+                    ),
+                    'remove_gutenberg_css' => array(
+                        'option' => 'runtime_style_output_allowlist',
+                        'label'  => __( '前端样式白名单', 'developer-starter' ),
+                    ),
+                    'remove_global_styles' => array(
+                        'option' => 'runtime_style_output_allowlist',
+                        'label'  => __( '前端样式白名单', 'developer-starter' ),
+                    ),
+                    'disable_core_auto_update' => array(
+                        'option' => 'runtime_auto_update_allowlist',
+                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                    ),
+                    'disable_plugin_auto_update' => array(
+                        'option' => 'runtime_auto_update_allowlist',
+                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                    ),
+                    'disable_theme_auto_update' => array(
+                        'option' => 'runtime_auto_update_allowlist',
+                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                    ),
+                    'disable_translation_auto_update' => array(
+                        'option' => 'runtime_auto_update_allowlist',
+                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                    ),
+                );
+                $whitelist_status = array();
+                foreach ( $whitelist_requirements as $risky_key => $requirement ) {
+                    if ( ! in_array( $risky_key, $enabled_runtime_risky_keys, true ) ) {
+                        continue;
+                    }
+
+                    $raw_entries = array_key_exists( $requirement['option'], $sanitized )
+                        ? $sanitized[ $requirement['option'] ]
+                        : ( function_exists( 'developer_starter_get_option' ) ? developer_starter_get_option( $requirement['option'], '' ) : '' );
+                    $entries = function_exists( 'developer_starter_sanitize_runtime_whitelist_field' )
+                        ? developer_starter_sanitize_runtime_whitelist_field( $requirement['option'], $raw_entries )
+                        : trim( sanitize_textarea_field( (string) $raw_entries ) );
+                    $status = ! empty( $entries ) ? __( '已配置', 'developer-starter' ) : __( '未配置', 'developer-starter' );
+                    $whitelist_status[ $requirement['option'] ] = $requirement['label'] . '：' . $status;
+                }
+
+                $warning = sprintf(
+                    /* translators: 1: enabled setting count, 2: setting names, 3: whitelist status or no whitelist note */
+                    __( '已启用 %1$d 个可能影响兼容性的运行优化：%2$s。%3$s', 'developer-starter' ),
+                    count( $enabled_runtime_risky_keys ),
+                    implode( '、', $enabled_runtime_risky_labels ),
+                    ! empty( $whitelist_status )
+                        ? __( '相关白名单状态：', 'developer-starter' ) . implode( '、', array_values( $whitelist_status ) )
+                        : __( '这些设置没有对应的白名单配置，无需额外填写。', 'developer-starter' )
+                );
                 add_settings_error(
                     'developer_starter_settings',
                     'runtime_dangerous_optimizations_enabled',
-                    sprintf(
-                        /* translators: %d: enabled risky runtime optimization count */
-                        __( '已启用 %d 个高兼容风险运行优化。请确认白名单已配置，并保留“兼容回滚模式”作为排障入口。', 'developer-starter' ),
-                        count( $enabled_runtime_risky_keys )
-                    ),
+                    $warning,
                     'warning'
                 );
             }

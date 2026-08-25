@@ -217,12 +217,41 @@ $woo_active = class_exists( 'WooCommerce' );
 // 定义可用标签
 $tabs = array(
     'profile' => array( 'icon' => 'user', 'label' => __( '我的资料', 'developer-starter' ) ),
-    'social' => array( 'icon' => 'share', 'label' => __( '社交媒体', 'developer-starter' ) ),
     'posts'    => array( 'icon' => 'file-text', 'label' => __( '投稿管理', 'developer-starter' ) ),
     'history'  => array( 'icon' => 'clock', 'label' => __( '互动记录', 'developer-starter' ) ),
     'notifications' => array( 'icon' => 'bell', 'label' => __( '站内通知', 'developer-starter' ) ),
     'security' => array( 'icon' => 'lock', 'label' => __( '账户安全', 'developer-starter' ) ),
 );
+
+$user_social_option_keys = array(
+    'user_social_weibo',
+    'user_social_twitter',
+    'user_social_wechat',
+    'user_social_github',
+    'user_social_bilibili',
+    'user_social_zhihu',
+    'user_social_website',
+    'user_social_linkedin',
+    'user_social_youtube',
+    'user_social_instagram',
+    'user_social_tiktok',
+    'user_social_wechat_mp',
+    'user_social_qq',
+    'user_social_custom',
+);
+$user_social_enabled = false;
+foreach ( $user_social_option_keys as $user_social_option_key ) {
+    if ( developer_starter_get_option( $user_social_option_key, '' ) ) {
+        $user_social_enabled = true;
+        break;
+    }
+}
+if ( $user_social_enabled ) {
+    $tabs['social'] = array( 'icon' => 'share', 'label' => __( '社交媒体', 'developer-starter' ) );
+} elseif ( 'social' === $active_tab ) {
+    // 未开启任何社交字段时，禁止通过 URL 直接访问空的社交设置页。
+    $active_tab = 'profile';
+}
 
 // WooCommerce 标签
 if ( $woo_active ) {
