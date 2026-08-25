@@ -6,7 +6,13 @@
   "page_template": "templates/template-study-abroad-immigration.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "education_company"
+    "preset": "education_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 48%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 50%, #b45309 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,8 +56,8 @@
             "subtitle": "覆盖英美澳加、新加坡、欧洲和中国香港等热门方向，提供背景评估、院校定位、文书申请、签证材料和海外衔接服务。",
             "btn_text": "预约免费评估",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_bg_color": "#0284c7",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -163,7 +169,8 @@
         "cases_columns": "3",
         "cases_show_image": "1",
         "cases_image_height": "220px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -200,7 +207,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#f8fafc"
       }
     },
     {
@@ -241,7 +249,8 @@
         "contact_phone": "400-920-2026",
         "contact_hours": "09:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f8fafc"
       }
     }
   ]

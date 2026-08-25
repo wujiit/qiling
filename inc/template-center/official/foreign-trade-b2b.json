@@ -6,7 +6,13 @@
   "page_template": "templates/template-foreign-trade-b2b.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "面向全球客户展示供应能力",
         "db_typing_mode": "loop",
         "db_typing_text": "多语言产品介绍与询盘转化\n出口资质、交期和包装标准展示\n从样品到批量订单的全球交付",
-        "db_highlight_color": "#99f6e4",
-        "db_title_color": "#f8fafc",
+        "db_highlight_color": "#60a5fa",
+        "db_title_color": "#ffffff",
         "db_subtitle": "适合出口工厂、跨境 B2B、品牌供应商和全球代理业务。",
         "db_desc": "用清晰产品、可信资质和快速联系入口提升海外客户询盘质量。",
         "db_text_color": "rgba(248,250,252,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #1e40af 50%, #047857 100%)"
       }
     },
     {
@@ -113,23 +120,32 @@
         "stats_items": [
           {
             "number": "35+",
-            "label": "出口国家/地区"
+            "label": "出口国家/地区",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "7天",
-            "label": "样品交付周期"
+            "label": "样品交付周期",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "96%",
-            "label": "订单准时出货率"
+            "label": "订单准时出货率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24h",
-            "label": "询盘响应时效"
+            "label": "询盘响应时效",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #059669 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -227,7 +243,7 @@
         "contact_address": "China Manufacturing Base",
         "contact_show_form": "1",
         "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f8fafc"
       }
     }
   ]

@@ -49,11 +49,11 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                                 <?php esc_html_e( '通过模块构建器为此页面添加内容模块，创建专业的落地页', 'developer-starter' ); ?>
                             </p>
                             <a href="<?php echo esc_url( admin_url( 'post.php?post=' . get_the_ID() . '&action=edit' ) ); ?>" class="btn btn-light btn-lg">
-                                <?php esc_html_e( '编辑页面模块', 'developer-starter' ); ?>
+                                <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
                             </a>
                         <?php else : ?>
                             <p style="font-size: var(--qiling-text-rem-1p25); opacity: 0.9; max-width: var(--qiling-measure-600); margin: 0 auto;">
-                                <?php esc_html_e( '页面内容正在建设中，敬请期待...', 'developer-starter' ); ?>
+                                <?php esc_html_e( '暂无内容。', 'developer-starter' ); ?>
                             </p>
                         <?php endif; ?>
                     </div>

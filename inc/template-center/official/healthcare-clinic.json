@@ -6,7 +6,13 @@
   "page_template": "templates/template-healthcare-clinic.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "healthcare_company"
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#0e7490",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "让专业健康服务更好预约",
         "db_typing_mode": "loop",
         "db_typing_text": "专科门诊与健康管理\n体检筛查与长期随访\n清晰流程、安心就诊",
-        "db_highlight_color": "#bbf7d0",
-        "db_title_color": "#f8fafc",
+        "db_highlight_color": "#67e8f9",
+        "db_title_color": "#ffffff",
         "db_subtitle": "面向患者、家庭和企业客户，展示科室服务、专家团队和预约流程。",
         "db_desc": "适合门诊机构、体检中心、健康管理中心和专科医疗服务品牌。",
         "db_text_color": "rgba(248,250,252,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #083344 0%, #0e7490 52%, #059669 100%)"
       }
     },
     {
@@ -113,23 +120,32 @@
         "stats_items": [
           {
             "number": "30+",
-            "label": "专业医护团队"
+            "label": "专业医护团队",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "12项",
-            "label": "重点服务项目"
+            "label": "重点服务项目",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "48h",
-            "label": "报告解读响应"
+            "label": "报告解读响应",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "4.8",
-            "label": "服务满意评分"
+            "label": "服务满意评分",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #083344 0%, #0e7490 55%, #059669 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -200,7 +216,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#f0fdfa"
       }
     },
     {
@@ -222,7 +239,7 @@
             "answer": "可按机构流程领取纸质报告或电子报告，并预约报告解读服务。"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -237,7 +254,8 @@
         "contact_phone": "400-168-2026",
         "contact_hours": "08:30-18:00",
         "module_bg_image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f8fafc"
       }
     }
   ]

@@ -6,7 +6,13 @@
   "page_template": "templates/template-logistics-supply-chain.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "让货物流转更稳定可控",
         "db_typing_mode": "loop",
         "db_typing_text": "全国运输与城市配送\n仓储管理与订单履约\n供应链方案与节点追踪",
-        "db_highlight_color": "#99f6e4",
-        "db_title_color": "#f8fafc",
+        "db_highlight_color": "#38bdf8",
+        "db_title_color": "#ffffff",
         "db_subtitle": "面向品牌、工厂、渠道和电商客户，展示仓配运输能力和服务网络。",
         "db_desc": "适合综合物流、仓配一体、冷链运输、跨境物流和供应链服务企业。",
         "db_text_color": "rgba(248,250,252,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #0369a1 50%, #047857 100%)"
       }
     },
     {
@@ -77,23 +84,32 @@
         "stats_items": [
           {
             "number": "80+",
-            "label": "服务城市"
+            "label": "服务城市",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "25万㎡",
-            "label": "仓储面积"
+            "label": "仓储面积",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "98%",
-            "label": "准时履约率"
+            "label": "准时履约率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24h",
-            "label": "异常响应"
+            "label": "异常响应",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #0284c7 52%, #059669 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {

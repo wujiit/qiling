@@ -26,11 +26,11 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                 <div style="font-size: 3rem; margin-bottom: 20px; color: #ffffff; font-weight: 700; letter-spacing: 0;">EV</div>
                 <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '充电桩/新能源充电运营官网页', 'developer-starter' ); ?></h2>
                 <p style="color: rgba(255,255,255,0.85); margin-bottom: 24px; font-size: 1.05rem;">
-                    <?php esc_html_e( '保存页面后会自动填充充电场站首屏、服务能力、建设流程、场景方案、资质背书、常见问题和合作入口。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
                 </p>
                 <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                     <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary" style="background: #ffffff; color: #047857; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                        <?php esc_html_e( '编辑此页面', 'developer-starter' ); ?>
+                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
                     </a>
                 <?php endif; ?>
             </div>

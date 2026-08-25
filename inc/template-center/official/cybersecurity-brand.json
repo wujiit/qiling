@@ -6,7 +6,13 @@
   "page_template": "templates/template-cybersecurity-brand.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#10b981",
+      "accent": "#2563eb",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0f172a 50%, #064e3b 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "覆盖资产识别、风险检测、合规整改和安全运营的完整方案。",
             "btn_text": "预约安全评估",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_bg_color": "#059669",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -150,7 +156,7 @@
             "stage_tag": "运营"
           }
         ],
-        "module_bg_color": "#f0fdfa"
+        "module_bg_color": "#f8fafc"
       }
     },
     {

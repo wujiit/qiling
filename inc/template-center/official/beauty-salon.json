@@ -6,7 +6,13 @@
   "page_template": "templates/template-beauty-salon.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "beauty_company"
+    "preset": "beauty_company",
+    "colors": {
+      "primary": "#be185d",
+      "accent": "#f43f5e",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #7f1d1d 0%, #be185d 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be185d 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,7 +56,7 @@
             "btn_text": "预约到店",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#9f1239"
+            "btn_text_color": "#be185d"
           }
         ],
         "show_stats_bar": "1",
@@ -126,7 +132,7 @@
         "menu_title": "人气价目参考",
         "menu_subtitle": "可按门店等级、造型师级别和活动档期自由调整",
         "menu_layout": "grid",
-        "menu_accent_color": "#db2777",
+        "menu_accent_color": "#be185d",
         "menu_items": [
           {
             "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
@@ -161,7 +167,8 @@
             "link": "#"
           }
         ],
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#fff1f2"
       }
     },
     {
@@ -194,7 +201,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#fff1f2",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "enable_staggered_animation": "yes"
@@ -230,7 +237,7 @@
             "category": "发型"
           }
         ],
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#fff1f2",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -249,7 +256,8 @@
         "module_bg_image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
         "bg_overlay": "0.55",
         "module_padding_top": "90px",
-        "module_padding_bottom": "90px"
+        "module_padding_bottom": "90px",
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -257,7 +265,7 @@
       "data": {
         "faq_title": "预约常见问题",
         "faq_subtitle": "先了解流程，再放心到店",
-        "module_bg_color": "#fff7ed",
+        "module_bg_color": "#fff1f2",
         "faq_items": [
           {
             "question": "可以指定造型师吗？",
@@ -281,11 +289,16 @@
         "cta_subtitle": "从发型、妆容到护理方案，给新客一个明确的第一步。",
         "cta_button_text": "立即预约",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80",
         "cta_bg_overlay": "0.55",
         "module_padding_top": "90px",
-        "module_padding_bottom": "90px"
+        "module_padding_bottom": "90px",
+        "cta_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 60%, #be185d 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#f43f5e",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

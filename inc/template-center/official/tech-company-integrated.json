@@ -140,7 +140,7 @@
         "sc_padding": "60",
         "sc_columns": "4",
         "sc_gap": "22px",
-        "sc_card_bg": "rgba(255, 255, 255, 0.78)",
+        "sc_card_bg": "rgba(255, 255, 255, 0.82)",
         "sc_card_radius": "18px",
         "sc_card_shadow": "medium",
         "sc_card_border": "1px solid rgba(79, 125, 255, 0.14)",
@@ -297,9 +297,13 @@
         "cta_subtitle": "替换公司名称、产品截图、业务板块和咨询入口，就能快速得到一个适合科技公司的连续画布官网。",
         "cta_button_text": "开始创建科技官网",
         "cta_button_url": "#",
-        "cta_bg_type": "gradient",
+        "cta_bg_type": "color",
         "cta_bg_gradient": "linear-gradient(135deg, #25365f 0%, #4f7dff 58%, #38c9a6 100%)",
-        "cta_bg_overlay": "0.18"
+        "cta_bg_overlay": "0.18",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

@@ -130,6 +130,50 @@ class Category_Tabs_Module extends Module_Base {
             array( 'id' => 'show_author', 'label' => __( '显示作者', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
             array( 'id' => 'show_views', 'label' => __( '显示浏览量', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
             array( 'id' => 'show_category_badge', 'label' => __( '显示分类标识', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
+            array(
+                'id' => 'card_style',
+                'label' => __( '卡片风格', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array(
+                    'default' => __( '默认文章卡片', 'developer-starter' ),
+                    'wallpaper' => __( '图片素材卡片', 'developer-starter' ),
+                ),
+                'default' => 'default',
+            ),
+            array( 'id' => 'show_title', 'label' => __( '显示标题', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
+            array( 'id' => 'show_image_dimensions', 'label' => __( '显示图片尺寸', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
+            array( 'id' => 'show_image_format', 'label' => __( '显示图片格式', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
+            array(
+                'id' => 'show_resource_badges',
+                'label' => __( '显示商城资源角标', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'default' => 'no',
+                'description' => __( '仅在文章配置了启灵商城资源且全局角标已启用时显示；普通图片文章不受影响。', 'developer-starter' ),
+            ),
+            array(
+                'id' => 'show_resource_price',
+                'label' => __( '显示商城价格', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'default' => 'no',
+                'description' => __( '价格只读取启灵商城资源状态，不需要商城的普通文章会自动忽略。', 'developer-starter' ),
+            ),
+            array(
+                'id' => 'show_download_button',
+                'label' => __( '显示获取图片按钮', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'default' => 'no',
+                'description' => __( '按钮进入文章详情；如文章使用启灵商城，购买和下载权限仍由商城在详情页处理。', 'developer-starter' ),
+            ),
+            array( 'id' => 'download_button_text', 'label' => __( '获取图片按钮文案', 'developer-starter' ), 'type' => 'text', 'default' => __( '获取图片', 'developer-starter' ), 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            array( 'id' => 'download_button_bg_color', 'label' => __( '获取图片按钮背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            array( 'id' => 'download_button_text_color', 'label' => __( '获取图片按钮文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            $this->get_button_border_color_field( 'download_button_border_color', __( '获取图片按钮边框颜色', 'developer-starter' ), '', array( 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ) ),
+            array( 'id' => 'download_button_hover_bg_color', 'label' => __( '获取图片按钮悬停背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            array( 'id' => 'download_button_hover_text_color', 'label' => __( '获取图片按钮悬停文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            $this->get_button_border_color_field( 'download_button_hover_border_color', __( '获取图片按钮悬停边框颜色', 'developer-starter' ), '', array( 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ) ),
             array( 'id' => 'tabs_badge_bg', 'label' => __( '分类标识背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'desc' => __( '控制封面分类标识，留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ) ),
 
             // 标准间距和背景
@@ -223,6 +267,12 @@ class Category_Tabs_Module extends Module_Base {
             'more_button_hover_bg_color'     => '--category-tabs-more-hover-bg',
             'more_button_hover_text_color'   => '--category-tabs-more-hover-text',
             'more_button_hover_border_color' => '--category-tabs-more-hover-border',
+            'download_button_bg_color'           => '--category-tabs-action-bg',
+            'download_button_text_color'         => '--category-tabs-action-text',
+            'download_button_border_color'       => '--category-tabs-action-border',
+            'download_button_hover_bg_color'     => '--category-tabs-action-hover-bg',
+            'download_button_hover_text_color'   => '--category-tabs-action-hover-text',
+            'download_button_hover_border_color' => '--category-tabs-action-hover-border',
         );
         foreach ( $button_style_map as $field_id => $css_var ) {
             $value = isset( $data[ $field_id ] ) ? $clean_css_value( $data[ $field_id ] ) : '';
@@ -243,6 +293,14 @@ class Category_Tabs_Module extends Module_Base {
             'show_author' => isset( $data['show_author'] ) ? $data['show_author'] : 'no',
             'show_views' => isset( $data['show_views'] ) ? $data['show_views'] : 'yes',
             'show_category_badge' => isset( $data['show_category_badge'] ) ? $data['show_category_badge'] : 'no',
+            'card_style' => isset( $data['card_style'] ) ? $data['card_style'] : 'default',
+            'show_title' => isset( $data['show_title'] ) ? $data['show_title'] : 'yes',
+            'show_image_dimensions' => isset( $data['show_image_dimensions'] ) ? $data['show_image_dimensions'] : 'no',
+            'show_image_format' => isset( $data['show_image_format'] ) ? $data['show_image_format'] : 'no',
+            'show_resource_badges' => isset( $data['show_resource_badges'] ) ? $data['show_resource_badges'] : 'no',
+            'show_resource_price' => isset( $data['show_resource_price'] ) ? $data['show_resource_price'] : 'no',
+            'show_download_button' => isset( $data['show_download_button'] ) ? $data['show_download_button'] : 'no',
+            'download_button_text' => isset( $data['download_button_text'] ) ? $data['download_button_text'] : __( '获取图片', 'developer-starter' ),
             'columns' => $columns,
             'more_btn_type' => isset( $data['more_btn_type'] ) ? $data['more_btn_type'] : 'ajax',
         );
@@ -637,7 +695,29 @@ class Category_Tabs_Module extends Module_Base {
         ) );
 
         if ( is_wp_error( $terms ) || empty( $terms ) ) {
-            return array();
+            $terms = get_terms( array(
+                'taxonomy'   => 'category',
+                'hide_empty' => true,
+                'number'     => $tag_count,
+                'orderby'    => 'count',
+                'order'      => 'DESC',
+            ) );
+            if ( is_wp_error( $terms ) || empty( $terms ) ) {
+                return array();
+            }
+
+            $tabs = array();
+            foreach ( $terms as $term ) {
+                if ( ! isset( $term->count ) || (int) $term->count < $min_count ) {
+                    continue;
+                }
+                $tabs[] = array(
+                    'tab_name' => $term->name,
+                    'source_type' => 'category',
+                    'source_id' => (string) $term->term_id,
+                );
+            }
+            return $tabs;
         }
 
         $tabs = array();

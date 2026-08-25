@@ -77,7 +77,7 @@ class Auth_Profile_Service {
             'avatar_48'        => get_avatar_url( $current_user->ID, array( 'size' => 48 ) ),
             'account_url'      => $account_url,
             'admin_url'        => current_user_can( 'read' ) ? admin_url() : '',
-            'logout_url'       => wp_logout_url( home_url() ),
+            'logout_url'       => function_exists( 'developer_starter_get_front_logout_url' ) ? developer_starter_get_front_logout_url() : wp_logout_url( home_url() ),
             'can_access_admin' => current_user_can( 'read' ),
         );
     }

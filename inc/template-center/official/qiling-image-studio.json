@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-image-studio.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#a855f7",
+      "accent": "#f43f5e",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -44,18 +50,18 @@
         "hero_subtitle_content": "面向照片修复、电商商品图、营销海报、AI 创意生成和设计工具站，把启灵图像处理、启灵抠图、启灵AI图像包装成可运营的产品入口。",
         "btn_primary_content": "进入图像工具",
         "btn_primary_link": "#",
-        "btn_primary_bg_color": "#0f172a",
+        "btn_primary_bg_color": "#a855f7",
         "btn_primary_text_color": "#ffffff",
         "btn_secondary_content": "查看效果案例",
         "btn_secondary_link": "#",
-        "btn_secondary_bg_color": "#ffffff",
-        "btn_secondary_text_color": "#0f172a",
+        "btn_secondary_bg_color": "rgba(255, 255, 255, 0.12)",
+        "btn_secondary_text_color": "#ffffff",
         "media_type": "image",
         "hero_image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
         "enable_float_anim": "yes",
-        "bg_color": "linear-gradient(135deg, #f8fafc 0%, #ecfeff 52%, #fff1f2 100%)",
-        "text_color": "#0f172a",
-        "highlight_color": "#0f766e",
+        "bg_color": "linear-gradient(135deg, #090d16 0%, #3b0764 50%, #0f172a 100%)",
+        "text_color": "#ffffff",
+        "highlight_color": "#c084fc",
         "padding_top": "108px",
         "padding_bottom": "88px",
         "feature_items": [
@@ -99,10 +105,10 @@
         "features_icon_position": "top",
         "features_text_align": "left",
         "features_bg_color": "#ffffff",
-        "features_card_style": "border",
-        "features_card_radius": "8px",
+        "features_card_style": "elevated",
+        "features_card_radius": "16px",
         "features_icon_style": "square",
-        "features_icon_bg": "#ccfbf1",
+        "features_icon_bg": "#faf5ff",
         "features_items": [
           {
             "icon": "FIX",
@@ -124,7 +130,8 @@
             "title": "作品展示与运营",
             "desc": "支持风格模板、手办风格、海报风格、时光照相馆、结果下载、公众广场和使用统计，适合做工具站产品矩阵。"
           }
-        ]
+        ],
+        "features_icon_color": "#9333ea"
       }
     },
     {
@@ -234,7 +241,7 @@
             "btn_link": "#",
             "featured": "1",
             "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #0f766e 0%, #e11d48 100%)"
+            "featured_bg": "linear-gradient(135deg, #a855f7 0%, #f43f5e 100%)"
           },
           {
             "name": "工作室版",
@@ -282,9 +289,14 @@
         "cta_subtitle": "替换真实工具页、公众广场、积分充值页和 VIP 套餐页，就能把修复、抠图、生图能力包装成一套可运营产品。",
         "cta_button_text": "配置图像工具入口",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #3b0764 60%, #701a75 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#f43f5e",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

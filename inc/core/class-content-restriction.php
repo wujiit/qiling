@@ -52,16 +52,17 @@ class Developer_Starter_Content_Restriction {
             $login_url = add_query_arg( 'redirect_to', get_permalink(), get_permalink( $login_page_id ) );
         }
         
-        // 检查是否启用了顶部登录弹窗
-        $header_login_enable = developer_starter_get_option( 'header_login_enable', '' );
+        $login_modal_enable = function_exists( 'developer_starter_is_login_modal_enabled' )
+            ? developer_starter_is_login_modal_enabled()
+            : (bool) developer_starter_get_option( 'header_login_enable', '' );
         
         $html = '<div class="content-restriction-box login-required">';
         $html .= '<div class="restriction-icon">🔒</div>';
         $html .= '<div class="restriction-title">' . __( '登录后可见', 'developer-starter' ) . '</div>';
         $html .= '<div class="restriction-desc">' . __( '此部分内容需要登录后才能查看', 'developer-starter' ) . '</div>';
         
-        if ( $header_login_enable ) {
-            $html .= '<button type="button" class="restriction-btn trigger-login-modal">' . __( '立即登录', 'developer-starter' ) . '</button>';
+        if ( $login_modal_enable ) {
+            $html .= '<button type="button" class="restriction-btn trigger-login-modal" data-ds-login-trigger="modal" data-login-url="' . esc_url( $login_url ) . '">' . __( '立即登录', 'developer-starter' ) . '</button>';
         } else {
             $html .= '<a href="' . esc_url( $login_url ) . '" class="restriction-btn">' . __( '立即登录', 'developer-starter' ) . '</a>';
         }
@@ -184,15 +185,17 @@ class Developer_Starter_Content_Restriction {
                 $login_url = add_query_arg( 'redirect_to', get_permalink(), get_permalink( $login_page_id ) );
             }
             
-            $header_login_enable = developer_starter_get_option( 'header_login_enable', '' );
+            $login_modal_enable = function_exists( 'developer_starter_is_login_modal_enabled' )
+                ? developer_starter_is_login_modal_enabled()
+                : (bool) developer_starter_get_option( 'header_login_enable', '' );
             
             $html = '<div class="content-restriction-box login-required full-post">';
             $html .= '<div class="restriction-icon">🔒</div>';
             $html .= '<div class="restriction-title">' . __( '登录后阅读全文', 'developer-starter' ) . '</div>';
             $html .= '<div class="restriction-desc">' . __( '请登录后查看完整文章内容', 'developer-starter' ) . '</div>';
             
-            if ( $header_login_enable ) {
-                $html .= '<button type="button" class="restriction-btn trigger-login-modal">' . __( '立即登录', 'developer-starter' ) . '</button>';
+            if ( $login_modal_enable ) {
+                $html .= '<button type="button" class="restriction-btn trigger-login-modal" data-ds-login-trigger="modal" data-login-url="' . esc_url( $login_url ) . '">' . __( '立即登录', 'developer-starter' ) . '</button>';
             } else {
                 $html .= '<a href="' . esc_url( $login_url ) . '" class="restriction-btn">' . __( '立即登录', 'developer-starter' ) . '</a>';
             }
@@ -491,24 +494,6 @@ class Developer_Starter_Content_Restriction {
         }
         </style>
         
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 弹窗登录按钮触发
-            var triggerBtns = document.querySelectorAll('.trigger-login-modal');
-            var loginBtn = document.getElementById('header-login-toggle');
-            
-            triggerBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    if (loginBtn) {
-                        loginBtn.click();
-                    } else {
-                        // 如果没有顶部登录按钮，跳转到登录页
-                        window.location.href = '<?php echo esc_url( wp_login_url( get_permalink() ) ); ?>';
-                    }
-                });
-            });
-        });
-        </script>
         <?php
     }
 }

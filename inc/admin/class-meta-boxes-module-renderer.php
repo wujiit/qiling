@@ -49,14 +49,20 @@ class Meta_Boxes_Module_Renderer {
                 $data = $builder_data_service->prepare_module_data_for_editor( $type, $data, $schema );
             }
         }
+        $module_is_hidden = class_exists( '\Developer_Starter\Core\Module_Advanced_Style_Service' )
+            && \Developer_Starter\Core\Module_Advanced_Style_Service::get_instance()->module_is_hidden( $data );
         ?>
-        <div class="dsm-item dsm-item-<?php echo esc_attr( sanitize_html_class( $type ) ); ?> qiling-module-editor-scope-<?php echo esc_attr( sanitize_html_class( $type ) ); ?>" data-type="<?php echo esc_attr( $type ); ?>" data-qiling-module-editor-scope="<?php echo esc_attr( $type ); ?>">
+        <div class="dsm-item dsm-item-<?php echo esc_attr( sanitize_html_class( $type ) ); ?> qiling-module-editor-scope-<?php echo esc_attr( sanitize_html_class( $type ) ); ?><?php echo $module_is_hidden ? ' is-temporarily-hidden' : ''; ?>" data-type="<?php echo esc_attr( $type ); ?>" data-qiling-module-editor-scope="<?php echo esc_attr( $type ); ?>">
             <div class="dsm-item-header">
                 <span class="dsm-handle">::</span>
                 <span class="dsm-title"><?php echo esc_html( $title ); ?></span>
+                <?php if ( $module_is_hidden ) : ?><span class="dsm-hidden-badge"><?php esc_html_e( '已隐藏', 'developer-starter' ); ?></span><?php endif; ?>
                 <span class="dsm-toggle">v</span>
-                <a href="#" class="dsm-save-template" title="<?php echo esc_attr__( '保存为模版', 'developer-starter' ); ?>">💾</a>
-                <a href="#" class="dsm-remove">x</a>
+                <span class="dsm-item-actions">
+                    <a href="#" class="dsm-save-template" title="<?php echo esc_attr__( '保存为模版', 'developer-starter' ); ?>">💾</a>
+                    <button type="button" class="button-link dsm-toggle-hidden" title="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'developer-starter' ) : __( '暂时隐藏', 'developer-starter' ) ); ?>" aria-label="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'developer-starter' ) : __( '暂时隐藏', 'developer-starter' ) ); ?>" aria-pressed="<?php echo $module_is_hidden ? 'true' : 'false'; ?>" data-hidden-label="<?php echo esc_attr__( '暂时隐藏', 'developer-starter' ); ?>" data-show-label="<?php echo esc_attr__( '恢复显示', 'developer-starter' ); ?>"><span class="dashicons <?php echo $module_is_hidden ? 'dashicons-visibility' : 'dashicons-hidden'; ?>" aria-hidden="true"></span></button>
+                    <a href="#" class="dsm-remove" title="<?php echo esc_attr__( '删除模块', 'developer-starter' ); ?>">x</a>
+                </span>
             </div>
             <div class="dsm-content">
                 <input type="hidden" name="modules[<?php echo esc_attr( (string) $idx ); ?>][type]" value="<?php echo esc_attr( $type ); ?>"/>
@@ -76,6 +82,7 @@ class Meta_Boxes_Module_Renderer {
                 <?php
                 if ( class_exists( '\Developer_Starter\Core\Module_Advanced_Style_Service' ) ) {
                     $capabilities = \Developer_Starter\Modules\Module_Standards::get_design_capabilities( $type );
+                    $capabilities = \Developer_Starter\Modules\Module_Standards::enrich_design_capabilities_from_fields( $fields, $capabilities );
                     \Developer_Starter\Core\Module_Advanced_Style_Service::get_instance()->render_admin_controls( $idx, $data, $capabilities );
                 }
                 if ( class_exists( '\Developer_Starter\Core\Module_Visual_Style_Service' ) ) {

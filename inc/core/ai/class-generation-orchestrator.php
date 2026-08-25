@@ -225,7 +225,7 @@ class Generation_Orchestrator {
 
         $current_module_schema_map = $this->decorator->get_selected_module_prompt_schemas( array( $current_module_type ) );
         if ( empty( $current_module_schema_map[ $current_module_type ] ) ) {
-            return new \WP_Error( 'invalid_module_schema', __( '当前模块 schema 不存在，无法继续生成。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'developer-starter' ) );
         }
         $current_module_schema = $current_module_schema_map[ $current_module_type ];
 

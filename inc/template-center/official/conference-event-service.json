@@ -6,7 +6,13 @@
   "page_template": "templates/template-conference-event-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#be123c",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -112,7 +118,7 @@
         "process_subtitle": "把创意、物料、人员、场地和现场风险拆成可推进的节点",
         "process_mode": "industrial",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#fff1f2",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "process_items": [
@@ -233,7 +239,7 @@
             "category": "品牌发布"
           }
         ],
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#fff1f2",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "enable_staggered_animation": "yes"
@@ -276,7 +282,7 @@
         "contact_form_id": "",
         "contact_image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#fff1f2",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }

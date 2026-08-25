@@ -6,7 +6,13 @@
   "page_template": "templates/template-data-showcase.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -41,21 +47,31 @@
         "stats_items": [
           {
             "number": "500+",
-            "label": "服务客户"
+            "label": "服务客户",
+            "number_color": "#2563eb",
+            "label_color": "#475569"
           },
           {
             "number": "10+",
-            "label": "年行业经验"
+            "label": "年行业经验",
+            "number_color": "#2563eb",
+            "label_color": "#475569"
           },
           {
             "number": "99%",
-            "label": "客户满意度"
+            "label": "客户满意度",
+            "number_color": "#2563eb",
+            "label_color": "#475569"
           },
           {
             "number": "24/7",
-            "label": "在线支持"
+            "label": "在线支持",
+            "number_color": "#2563eb",
+            "label_color": "#475569"
           }
-        ]
+        ],
+        "stats_bg_type": "color",
+        "stats_title_color": "#0f172a"
       }
     },
     {

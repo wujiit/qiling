@@ -153,15 +153,47 @@
           }
         ],
         "bottom_cats": [
-          { "text": "电影", "link": "#", "badge": "热", "badge_color": "red", "badge_bg_color": "" },
-          { "text": "电视剧", "link": "#", "badge": "新", "badge_color": "orange", "badge_bg_color": "" },
-          { "text": "动漫", "link": "#", "badge": "", "badge_color": "blue", "badge_bg_color": "" },
-          { "text": "综艺", "link": "#", "badge": "", "badge_color": "blue", "badge_bg_color": "" }
+          {
+            "text": "电影",
+            "link": "#",
+            "badge": "热",
+            "badge_color": "red",
+            "badge_bg_color": ""
+          },
+          {
+            "text": "电视剧",
+            "link": "#",
+            "badge": "新",
+            "badge_color": "orange",
+            "badge_bg_color": ""
+          },
+          {
+            "text": "动漫",
+            "link": "#",
+            "badge": "",
+            "badge_color": "blue",
+            "badge_bg_color": ""
+          },
+          {
+            "text": "综艺",
+            "link": "#",
+            "badge": "",
+            "badge_color": "blue",
+            "badge_bg_color": ""
+          }
         ],
         "bottom_icons": [],
         "bottom_trends": [
-          { "text": "本周高分榜", "link": "#ranking", "info": "TOP 10" },
-          { "text": "最新上线", "link": "#", "info": "每日更新" }
+          {
+            "text": "本周高分榜",
+            "link": "#ranking",
+            "info": "TOP 10"
+          },
+          {
+            "text": "最新上线",
+            "link": "#",
+            "info": "每日更新"
+          }
         ]
       }
     },
@@ -253,11 +285,45 @@
         "vr_manual_ids": "",
         "vr_layout": "featured",
         "vr_boards": [
-          { "label": "总榜", "category": "0", "source": "latest", "count": "10", "manual_ids": "" },
-          { "label": "电影榜", "category": "0", "category_match": "movie", "source": "comments", "count": "10", "manual_ids": "" },
-          { "label": "电视剧榜", "category": "0", "category_match": "tv", "source": "modified", "count": "10", "manual_ids": "" },
-          { "label": "动漫榜", "category": "0", "category_match": "anime", "source": "latest", "count": "10", "manual_ids": "" },
-          { "label": "综艺榜", "category": "0", "category_match": "variety", "source": "latest", "count": "10", "manual_ids": "" }
+          {
+            "label": "总榜",
+            "category": "0",
+            "source": "latest",
+            "count": "10",
+            "manual_ids": ""
+          },
+          {
+            "label": "电影榜",
+            "category": "0",
+            "category_match": "movie",
+            "source": "comments",
+            "count": "10",
+            "manual_ids": ""
+          },
+          {
+            "label": "电视剧榜",
+            "category": "0",
+            "category_match": "tv",
+            "source": "modified",
+            "count": "10",
+            "manual_ids": ""
+          },
+          {
+            "label": "动漫榜",
+            "category": "0",
+            "category_match": "anime",
+            "source": "latest",
+            "count": "10",
+            "manual_ids": ""
+          },
+          {
+            "label": "综艺榜",
+            "category": "0",
+            "category_match": "variety",
+            "source": "latest",
+            "count": "10",
+            "manual_ids": ""
+          }
         ],
         "vr_show_rating": "yes",
         "vr_show_quality": "yes",
@@ -342,5 +408,6 @@
         "module_padding_bottom": "28px"
       }
     }
-  ]
+  ],
+  "visual_skin": "video_entertainment"
 }

@@ -507,7 +507,7 @@ trait Admin_Settings_Config_Trait {
 
             // ========== 模型中心选项卡 ==========
             'models' => array(
-                array( 'type' => 'section', 'title' => __( '通用内容模型中心', 'developer-starter' ), 'desc' => __( '统一管理服务、产品、案例、团队、资源、课程、活动等内容模型。模型会向后台、REST、前台装修器、AI 装修和后续站点包提供同一份结构。', 'developer-starter' ) ),
+                array( 'type' => 'section', 'title' => __( '通用内容模型中心', 'developer-starter' ), 'desc' => __( '统一管理服务、产品、案例、团队、资源、课程和活动等内容，供页面装修、AI 装修及内容接口使用。', 'developer-starter' ) ),
                 array( 'id' => 'content_model_center_enable', 'type' => 'checkbox', 'label' => __( '启用模型中心', 'developer-starter' ), 'desc' => __( '开启后主题会按下方选择注册通用内容类型和字段。', 'developer-starter' ), 'default' => '1' ),
                 array( 'id' => 'local_business_features_enable', 'type' => 'checkbox', 'label' => __( '启用本地门店/网点功能', 'developer-starter' ), 'desc' => __( '开启后显示门店/分支内容类型、门店机构模块和本地商家结构。', 'developer-starter' ) ),
                 array(
@@ -563,10 +563,11 @@ trait Admin_Settings_Config_Trait {
                     'icon' => __( '搜索图标（默认）', 'developer-starter' ),
                     'form' => __( '顶部搜索框', 'developer-starter' ),
                 ) ),
-                array( 'id' => 'hide_phone_header', 'type' => 'checkbox', 'label' => __( '隐藏电话号码', 'developer-starter' ) ),
-                array( 'id' => 'header_login_enable', 'type' => 'checkbox', 'label' => __( '显示登录按钮', 'developer-starter' ) ),
-                array( 'id' => 'header_login_text', 'type' => 'text', 'label' => __( '登录按钮文字', 'developer-starter' ) ),
-                array( 'id' => 'darkmode_enable', 'type' => 'checkbox', 'label' => __( '启用暗黑模式', 'developer-starter' ) ),
+                 array( 'id' => 'hide_phone_header', 'type' => 'checkbox', 'label' => __( '隐藏电话号码', 'developer-starter' ) ),
+                 array( 'id' => 'header_login_enable', 'type' => 'checkbox', 'label' => __( '显示登录按钮', 'developer-starter' ) ),
+                 array( 'id' => 'header_login_text', 'type' => 'text', 'label' => __( '登录按钮文字', 'developer-starter' ) ),
+                 array( 'id' => 'header_account_enable', 'type' => 'checkbox', 'label' => __( '显示个人中心', 'developer-starter' ), 'default' => '1', 'desc' => __( '开启后，用户登录后在顶部显示个人中心头像入口；与“显示登录按钮”相互独立。', 'developer-starter' ) ),
+                 array( 'id' => 'darkmode_enable', 'type' => 'checkbox', 'label' => __( '启用暗黑模式', 'developer-starter' ) ),
                 array( 'id' => 'darkmode_auto_enable', 'type' => 'checkbox', 'label' => __( '启用自动暗黑模式', 'developer-starter' ), 'desc' => __( '开启后可跟随系统或按日出/日落时间自动切换；用户手动点击暗黑按钮后，以用户偏好优先。', 'developer-starter' ), 'search_terms' => array( '自动暗黑', '自动深色', '跟随系统', '日落切换' ) ),
                 array( 'id' => 'darkmode_auto_mode', 'type' => 'select', 'label' => __( '自动切换方式', 'developer-starter' ), 'default' => 'system_schedule', 'choices' => array(
                     'system_schedule' => __( '跟随系统，无法检测时按时间', 'developer-starter' ),
@@ -1547,42 +1548,42 @@ trait Admin_Settings_Config_Trait {
                     'content' => __( '风险提示：这里粘贴的第三方代码会按配置在前台页面执行。请只使用可信平台提供的统计、广告或客服代码，避免粘贴来源不明的脚本。', 'developer-starter' ),
                     'style'   => 'color:#92400e;background:#fffbeb;border-left:4px solid #f59e0b;padding:10px 12px;border-radius:4px;',
                 ),
-                array( 'type' => 'note', 'content' => __( '提示：Google Analytics、GTM、Google Ads、Meta Pixel、TikTok Pixel 等直接把对应平台提供的代码粘贴到下方即可。验证码、支付、短信、邮件服务商不在本阶段范围内。', 'developer-starter' ) ),
+                array( 'type' => 'note', 'content' => __( '提示：Google Analytics、GTM、Google Ads、Meta Pixel、TikTok Pixel 等可直接粘贴对应平台提供的代码。验证码、支付、短信和邮件服务请在各自设置中配置。', 'developer-starter' ) ),
 
                 array( 'type' => 'section', 'title' => __( '头部代码', 'developer-starter' ), 'desc' => __( '适合放站点验证、需要尽早加载的统计基础代码。', 'developer-starter' ) ),
                 array( 'id' => 'international_code_head_enable', 'type' => 'checkbox', 'label' => __( '启用头部代码', 'developer-starter' ), 'default' => '' ),
                 array( 'id' => 'international_code_head_content', 'type' => 'textarea', 'label' => __( '代码内容', 'developer-starter' ), 'desc' => __( '支持粘贴 script、noscript、iframe、img、link、meta 等常见第三方代码。', 'developer-starter' ), 'attrs' => array( 'rows' => '8', 'spellcheck' => 'false' ) ),
                 array( 'id' => 'international_code_head_position', 'type' => 'select', 'label' => __( '输出位置', 'developer-starter' ), 'default' => 'head', 'choices' => array( 'head' => 'wp_head', 'footer' => 'wp_footer' ) ),
                 array( 'id' => 'international_code_head_category', 'type' => 'select', 'label' => __( 'Cookie 分类', 'developer-starter' ), 'default' => 'necessary', 'choices' => $international_cookie_category_choices, 'desc' => __( '必要分类会直接输出；其他分类会等待访客授权。头部代码默认按站点验证等必要代码处理。', 'developer-starter' ) ),
-                array( 'id' => 'international_code_head_require_consent', 'type' => 'checkbox', 'label' => __( '兼容旧版 Cookie 同意', 'developer-starter' ), 'desc' => __( '仅用于兼容旧配置；Cookie 2.0 优先按上方分类判断，非必要分类会等待访客授权。', 'developer-starter' ), 'default' => '' ),
+                array( 'id' => 'international_code_head_require_consent', 'type' => 'checkbox', 'label' => __( '访客同意后加载', 'developer-starter' ), 'desc' => __( '非必要分类会等待访客授权，实际规则以上方 Cookie 分类为准。', 'developer-starter' ), 'default' => '' ),
 
                 array( 'type' => 'section', 'title' => __( '底部代码', 'developer-starter' ), 'desc' => __( '适合放延迟加载、客服、热力图或不要求首屏执行的代码。', 'developer-starter' ) ),
                 array( 'id' => 'international_code_footer_enable', 'type' => 'checkbox', 'label' => __( '启用底部代码', 'developer-starter' ), 'default' => '' ),
                 array( 'id' => 'international_code_footer_content', 'type' => 'textarea', 'label' => __( '代码内容', 'developer-starter' ), 'desc' => __( '默认输出到 wp_footer。', 'developer-starter' ), 'attrs' => array( 'rows' => '8', 'spellcheck' => 'false' ) ),
                 array( 'id' => 'international_code_footer_position', 'type' => 'select', 'label' => __( '输出位置', 'developer-starter' ), 'default' => 'footer', 'choices' => array( 'head' => 'wp_head', 'footer' => 'wp_footer' ) ),
                 array( 'id' => 'international_code_footer_category', 'type' => 'select', 'label' => __( 'Cookie 分类', 'developer-starter' ), 'default' => 'custom', 'choices' => $international_cookie_category_choices, 'desc' => __( '非必要分类会在访客授权后再执行。', 'developer-starter' ) ),
-                array( 'id' => 'international_code_footer_require_consent', 'type' => 'checkbox', 'label' => __( '兼容旧版 Cookie 同意', 'developer-starter' ), 'desc' => __( '仅用于兼容旧配置；Cookie 2.0 优先按上方分类判断，非必要分类会等待访客授权。', 'developer-starter' ), 'default' => '' ),
+                array( 'id' => 'international_code_footer_require_consent', 'type' => 'checkbox', 'label' => __( '访客同意后加载', 'developer-starter' ), 'desc' => __( '非必要分类会等待访客授权，实际规则以上方 Cookie 分类为准。', 'developer-starter' ), 'default' => '' ),
 
                 array( 'type' => 'section', 'title' => __( '统计代码', 'developer-starter' ), 'desc' => __( '适合放 Google Analytics、Microsoft Clarity 等统计代码。', 'developer-starter' ) ),
                 array( 'id' => 'international_code_analytics_enable', 'type' => 'checkbox', 'label' => __( '启用统计代码', 'developer-starter' ), 'default' => '' ),
                 array( 'id' => 'international_code_analytics_content', 'type' => 'textarea', 'label' => __( '代码内容', 'developer-starter' ), 'attrs' => array( 'rows' => '8', 'spellcheck' => 'false' ) ),
                 array( 'id' => 'international_code_analytics_position', 'type' => 'select', 'label' => __( '输出位置', 'developer-starter' ), 'default' => 'head', 'choices' => array( 'head' => 'wp_head', 'footer' => 'wp_footer' ) ),
                 array( 'id' => 'international_code_analytics_category', 'type' => 'select', 'label' => __( 'Cookie 分类', 'developer-starter' ), 'default' => 'statistics', 'choices' => $international_cookie_category_choices, 'desc' => __( 'GA4、Clarity、Plausible 等默认归入统计。', 'developer-starter' ) ),
-                array( 'id' => 'international_code_analytics_require_consent', 'type' => 'checkbox', 'label' => __( '兼容旧版 Cookie 同意', 'developer-starter' ), 'desc' => __( '仅用于兼容旧配置；统计代码已默认归入统计分类，会按 Cookie 2.0 分类授权执行。', 'developer-starter' ), 'default' => '' ),
+                array( 'id' => 'international_code_analytics_require_consent', 'type' => 'checkbox', 'label' => __( '访客同意后加载', 'developer-starter' ), 'desc' => __( '统计代码默认归入统计分类，并按 Cookie 分类授权执行。', 'developer-starter' ), 'default' => '' ),
 
                 array( 'type' => 'section', 'title' => __( '广告转化代码', 'developer-starter' ), 'desc' => __( '适合放 Google Ads、Meta Pixel、TikTok Pixel 等广告追踪或转化代码。', 'developer-starter' ) ),
                 array( 'id' => 'international_code_ads_enable', 'type' => 'checkbox', 'label' => __( '启用广告转化代码', 'developer-starter' ), 'default' => '' ),
                 array( 'id' => 'international_code_ads_content', 'type' => 'textarea', 'label' => __( '代码内容', 'developer-starter' ), 'attrs' => array( 'rows' => '8', 'spellcheck' => 'false' ) ),
                 array( 'id' => 'international_code_ads_position', 'type' => 'select', 'label' => __( '输出位置', 'developer-starter' ), 'default' => 'footer', 'choices' => array( 'head' => 'wp_head', 'footer' => 'wp_footer' ) ),
                 array( 'id' => 'international_code_ads_category', 'type' => 'select', 'label' => __( 'Cookie 分类', 'developer-starter' ), 'default' => 'advertising', 'choices' => $international_cookie_category_choices, 'desc' => __( 'Google Ads、Meta Pixel、TikTok Pixel 等默认归入广告。', 'developer-starter' ) ),
-                array( 'id' => 'international_code_ads_require_consent', 'type' => 'checkbox', 'label' => __( '兼容旧版 Cookie 同意', 'developer-starter' ), 'desc' => __( '仅用于兼容旧配置；广告代码已默认归入广告分类，会按 Cookie 2.0 分类授权执行。', 'developer-starter' ), 'default' => '' ),
+                array( 'id' => 'international_code_ads_require_consent', 'type' => 'checkbox', 'label' => __( '访客同意后加载', 'developer-starter' ), 'desc' => __( '广告代码默认归入广告分类，并按 Cookie 分类授权执行。', 'developer-starter' ), 'default' => '' ),
 
                 array( 'type' => 'section', 'title' => __( '自定义代码', 'developer-starter' ), 'desc' => __( '用于其他平台提供的第三方代码。', 'developer-starter' ) ),
                 array( 'id' => 'international_code_custom_enable', 'type' => 'checkbox', 'label' => __( '启用自定义代码', 'developer-starter' ), 'default' => '' ),
                 array( 'id' => 'international_code_custom_content', 'type' => 'textarea', 'label' => __( '代码内容', 'developer-starter' ), 'attrs' => array( 'rows' => '8', 'spellcheck' => 'false' ) ),
                 array( 'id' => 'international_code_custom_position', 'type' => 'select', 'label' => __( '输出位置', 'developer-starter' ), 'default' => 'footer', 'choices' => array( 'head' => 'wp_head', 'footer' => 'wp_footer' ) ),
                 array( 'id' => 'international_code_custom_category', 'type' => 'select', 'label' => __( 'Cookie 分类', 'developer-starter' ), 'default' => 'custom', 'choices' => $international_cookie_category_choices, 'desc' => __( '不确定用途的第三方代码默认归入自定义，建议上线前复核。', 'developer-starter' ) ),
-                array( 'id' => 'international_code_custom_require_consent', 'type' => 'checkbox', 'label' => __( '兼容旧版 Cookie 同意', 'developer-starter' ), 'desc' => __( '仅用于兼容旧配置；Cookie 2.0 优先按上方分类判断，非必要分类会等待访客授权。', 'developer-starter' ), 'default' => '' ),
+                array( 'id' => 'international_code_custom_require_consent', 'type' => 'checkbox', 'label' => __( '访客同意后加载', 'developer-starter' ), 'desc' => __( '非必要分类会等待访客授权，实际规则以上方 Cookie 分类为准。', 'developer-starter' ), 'default' => '' ),
 
                 array(
                     'type'  => 'section',
@@ -2147,12 +2148,13 @@ trait Admin_Settings_Config_Trait {
                 array( 'id' => 'search_captcha_wait', 'type' => 'number', 'label' => __( '等待时间(秒)', 'developer-starter' ), 'desc' => __( '默认: 3', 'developer-starter' ) ),
 
                 array( 'type' => 'section', 'title' => __( '登录设置', 'developer-starter' ) ),
+                array( 'id' => 'auth_modal_login_enable', 'type' => 'checkbox', 'label' => __( '启用默认弹窗登录', 'developer-starter' ), 'desc' => __( '开启后，评论、内容限制、投稿等位置的登录入口使用弹窗登录；与“显示登录按钮”相互独立。', 'developer-starter' ) ),
                 array( 'id' => 'login_remember_me_enable', 'type' => 'checkbox', 'label' => __( '记住登录', 'developer-starter' ), 'desc' => __( '允许用户勾选“记住我”（有效期 14 天、仅限用户名登录）', 'developer-starter' ) ),
                 array( 'id' => 'weixin_login_enable', 'type' => 'checkbox', 'label' => __( '微信登录', 'developer-starter' ), 'desc' => __( '在登录弹窗与登录页面显示微信扫码登录入口（需启用启灵微信登录插件）', 'developer-starter' ) ),
                 array( 'id' => 'weixin_login_icon', 'type' => 'text', 'label' => __( '微信登录图标', 'developer-starter' ), 'desc' => __( '支持阿里巴巴 Iconfont Symbol 类名（如：icon-wechat）。留空则使用 assets/images/weixin.png。', 'developer-starter' ), 'attrs' => array( 'placeholder' => 'icon-wechat' ) ),
                 array( 'id' => 'weixin_login_default', 'type' => 'checkbox', 'label' => __( '默认微信登录', 'developer-starter' ), 'desc' => __( '进入登录弹窗/登录页时默认展示微信二维码（若已启用“默认手机号登录”，手机号优先）', 'developer-starter' ) ),
 
-                array( 'type' => 'section', 'title' => __( '第三方社交登录', 'developer-starter' ), 'desc' => __( '微信登录继续由 qiling-weixin 插件负责；QQ、GitHub、Google 等 OAuth 登录由主题统一框架接入，便于后续扩展。', 'developer-starter' ) ),
+                array( 'type' => 'section', 'title' => __( '第三方社交登录', 'developer-starter' ), 'desc' => __( '微信登录需要启用对应插件；QQ、GitHub 和 Google 登录可在下方分别配置。', 'developer-starter' ) ),
                 array( 'id' => 'social_login_qq_enable', 'type' => 'checkbox', 'label' => __( 'QQ 登录', 'developer-starter' ), 'desc' => __( '在登录弹窗与登录页面显示 QQ 登录入口。', 'developer-starter' ) ),
                 array( 'id' => 'social_login_qq_app_id', 'type' => 'text', 'label' => __( 'QQ App ID', 'developer-starter' ), 'desc' => __( 'QQ互联网站应用的 appid / oauth_consumer_key。', 'developer-starter' ), 'attrs' => array( 'autocomplete' => 'off', 'placeholder' => '100000000' ) ),
                 array( 'id' => 'social_login_qq_app_key', 'type' => 'text', 'label' => __( 'QQ App Key', 'developer-starter' ), 'desc' => __( 'QQ互联网站应用的 appkey / client_secret，请妥善保管。', 'developer-starter' ), 'input_type' => 'password', 'attrs' => array( 'autocomplete' => 'off' ) ),

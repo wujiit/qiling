@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-housekeeping-official.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#0284c7",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 50%, #0284c7 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -51,7 +57,7 @@
             "btn_text": "立即预约家政服务",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_text_color": "#059669"
           }
         ],
         "show_stats_bar": "1",
@@ -181,7 +187,7 @@
             "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#f0fdf4"
       }
     },
     {
@@ -224,7 +230,7 @@
         "pricing_title": "服务套餐",
         "pricing_subtitle": "可按城市、门店和服务时长自由调整价格",
         "pricing_columns": "3",
-        "module_bg_color": "#f0fdfa",
+        "module_bg_color": "#f0fdf4",
         "pricing_items": [
           {
             "name": "日常保洁",
@@ -245,7 +251,8 @@
             "btn_text": "咨询深清",
             "btn_link": "#",
             "featured": "1",
-            "featured_text": "热门"
+            "featured_text": "热门",
+            "featured_bg": "linear-gradient(135deg, #059669 0%, #0284c7 100%)"
           },
           {
             "name": "周期服务",
@@ -301,7 +308,7 @@
       "type": "faq",
       "data": {
         "faq_title": "家政预约常见问题",
-        "module_bg_color": "#eff6ff",
+        "module_bg_color": "#ffffff",
         "faq_items": [
           {
             "question": "预约后会自动派单吗？",
@@ -330,7 +337,8 @@
         "contact_phone": "400-830-2026",
         "contact_hours": "08:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f0fdf4"
       }
     }
   ]

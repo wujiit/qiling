@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-doc-ocr-converter.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#0284c7",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "rh_layout": "top_bottom",
         "rh_height": "auto",
-        "rh_bg_type": "image",
+        "rh_bg_type": "gradient",
         "rh_bg_image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80",
         "rh_bg_overlay": "0.58",
         "rh_style_preset": "premium",
@@ -100,14 +106,17 @@
         ],
         "rh_primary_text": "进入文档工具",
         "rh_primary_link": "#",
-        "rh_primary_btn_bg_color": "#ffffff",
-        "rh_primary_btn_text_color": "#0f766e",
-        "rh_primary_btn_hover_bg_color": "#ecfeff",
-        "rh_primary_btn_hover_text_color": "#0f172a",
+        "rh_primary_btn_bg_color": "#3b82f6",
+        "rh_primary_btn_text_color": "#ffffff",
+        "rh_primary_btn_hover_bg_color": "#2563eb",
+        "rh_primary_btn_hover_text_color": "#ffffff",
         "rh_secondary_text": "查看套餐",
         "rh_secondary_link": "#",
         "rh_enable_feed": "0",
-        "rh_enable_bottom_strip": "0"
+        "rh_enable_bottom_strip": "0",
+        "rh_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #1e40af 55%, #0369a1 100%)",
+        "rh_title_color": "#ffffff",
+        "rh_desc_color": "rgba(255, 255, 255, 0.82)"
       }
     },
     {
@@ -119,10 +128,10 @@
         "features_icon_position": "top",
         "features_text_align": "left",
         "features_bg_color": "#ffffff",
-        "features_card_style": "border",
-        "features_card_radius": "8px",
+        "features_card_style": "elevated",
+        "features_card_radius": "16px",
         "features_icon_style": "square",
-        "features_icon_bg": "#dbeafe",
+        "features_icon_bg": "#eff6ff",
         "features_items": [
           {
             "icon": "OCR",
@@ -144,7 +153,8 @@
             "title": "文档转 PDF",
             "desc": "支持 Word、Excel、PPT、TXT 等办公文档转 PDF，适合做一站式办公文件处理入口。"
           }
-        ]
+        ],
+        "features_icon_color": "#2563eb"
       }
     },
     {
@@ -154,9 +164,9 @@
         "downloads_subtitle": "把解析结果、转换结果和使用说明集中展示，客户更容易理解工具交付物",
         "downloads_bg_color": "#f8fafc",
         "downloads_columns": "3",
-        "downloads_btn_bg_color": "#0f766e",
+        "downloads_btn_bg_color": "#2563eb",
         "downloads_btn_text_color": "#ffffff",
-        "downloads_btn_hover_bg_color": "#115e59",
+        "downloads_btn_hover_bg_color": "#1d4ed8",
         "downloads_btn_hover_text_color": "#ffffff",
         "downloads_items": [
           {
@@ -252,7 +262,7 @@
             "btn_link": "#",
             "featured": "1",
             "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)"
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)"
           },
           {
             "name": "企业服务",
@@ -300,9 +310,14 @@
         "cta_subtitle": "替换为真实解析页、转换页、积分充值页和 VIP 套餐页，就能把工具能力变成可售卖、可解释、可运营的站点入口。",
         "cta_button_text": "配置文档工具入口",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#0284c7",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

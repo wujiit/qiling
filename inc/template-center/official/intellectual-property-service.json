@@ -6,7 +6,13 @@
   "page_template": "templates/template-intellectual-property-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "law_company"
+    "preset": "law_company",
+    "colors": {
+      "primary": "#1e3a8a",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #334155 52%, #7c2d12 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #b45309 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,8 +56,8 @@
             "subtitle": "商标查询、专利申请、版权登记、软著申请、品牌监测和侵权维权，帮助企业把名称、技术、作品和品牌权益管起来。",
             "btn_text": "免费查询能否注册",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#334155"
+            "btn_bg_color": "#1e3a8a",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -163,7 +169,8 @@
         "cases_columns": "3",
         "cases_show_image": "1",
         "cases_image_height": "220px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -173,7 +180,7 @@
         "ch_subtitle": "知识产权服务强依赖专业资质、代理经验和流程规范，建议导入后替换为真实证书或荣誉",
         "ch_columns": "3",
         "ch_enable_filter": "yes",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "ch_items": [
@@ -236,7 +243,7 @@
             "answer": "需要。商标有续展、变更、监测和异议无效等后续事项；专利可能涉及年费、权利要求维护和侵权风险监测。"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -247,7 +254,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

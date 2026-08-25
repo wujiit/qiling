@@ -6,7 +6,13 @@
   "page_template": "templates/template-software-home.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -73,7 +79,8 @@
         "hs_title_color": "#ffffff",
         "hs_subtitle_color": "rgba(255,255,255,0.82)",
         "hs_tags_bg": "rgba(255,255,255,0.14)",
-        "hs_tags_color": "#ffffff"
+        "hs_tags_color": "#ffffff",
+        "hs_overlay_color": "rgba(15, 23, 42, 0.72)"
       }
     },
     {
@@ -82,7 +89,7 @@
         "software_carousel_title": "最新上架",
         "software_carousel_subtitle": "自动调用启灵软件库中的软件数据，适合展示最新版本和重点软件",
         "software_carousel_bg_type": "color",
-        "software_carousel_bg_color": "#f6f8fb",
+        "software_carousel_bg_color": "#f8fafc",
         "software_carousel_title_color": "#0f172a",
         "software_carousel_title_size": "2rem",
         "software_carousel_subtitle_color": "#64748b",
@@ -134,7 +141,7 @@
         "sr_subtitle_size": "1rem",
         "sr_subtitle_color": "#64748b",
         "sr_bg_type": "color",
-        "sr_bg_color": "#f6f8fb",
+        "sr_bg_color": "#f8fafc",
         "sr_padding_top": "72px",
         "sr_padding_bottom": "72px",
         "sr_layout": "cards",

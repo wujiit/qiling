@@ -121,16 +121,48 @@
     border-color: var(--qiling-module-button-hover-bg, var(--qiling-button-hover-bg, var(--color-primary-hover)));
 }
 
-[data-qds-visual="1"] :is(.card, .module-card, .feature-card, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card) {
-    background: var(--qiling-module-card-bg);
-    border-color: var(--qiling-module-card-border);
-    box-shadow: var(--qiling-module-card-shadow);
+[data-qds-card-mode="independent"] :is(.card, .module-card, .feature-card, .feature-item, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card, .branch-card, .am-card, .qil-about-card, .pm-card, .qil-kc-card, .ch-card, .ct-card, .client-item, .column-item, .contact-item, .download-item, .exp-item, .qil-fl-card, .ql-hotel-amenity-item, .qiling-menu-item, .rs-stat-item, .skill-item, .skill-circle-item, .stat-item) {
+    background: var(--qiling-module-card-bg, var(--qiling-component-card-bg, var(--color-surface, #ffffff)));
+    border: 1px solid var(--qiling-module-card-border, var(--qiling-component-card-border, var(--color-border, rgba(15,23,42,.12))));
+    box-shadow: var(--qiling-module-card-shadow, var(--qiling-component-card-shadow, 0 12px 30px rgba(15,23,42,.08)));
+    border-radius: var(--qiling-module-card-radius, 12px);
+    padding: var(--qiling-module-card-padding, 24px);
+}
+
+[data-qds-card-mode="independent"] :is(.card, .module-card, .feature-card, .feature-item, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card, .branch-card, .am-card, .qil-about-card, .pm-card, .qil-kc-card, .ch-card, .ct-card, .client-item, .column-item, .contact-item, .download-item, .exp-item, .qil-fl-card, .ql-hotel-amenity-item, .qiling-menu-item, .rs-stat-item, .skill-item, .skill-circle-item, .stat-item) :is(h2, h3, h4, h5, .card-title, .item-title, [class$="-title"]) { color: var(--qiling-module-card-title); }
+[data-qds-card-mode="independent"] :is(.card, .module-card, .feature-card, .feature-item, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card, .branch-card, .am-card, .qil-about-card, .pm-card, .qil-kc-card, .ch-card, .ct-card, .client-item, .column-item, .contact-item, .download-item, .exp-item, .qil-fl-card, .ql-hotel-amenity-item, .qiling-menu-item, .rs-stat-item, .skill-item, .skill-circle-item, .stat-item) :is(p, li, .card-desc, .item-desc, .description, .excerpt, [class$="-desc"], [class$="-description"]) { color: var(--qiling-module-card-text); }
+[data-qds-card-mode="independent"] :is(.card, .module-card, .feature-card, .feature-item, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card, .branch-card, .am-card, .qil-about-card, .pm-card, .qil-kc-card, .ch-card, .ct-card, .client-item, .column-item, .contact-item, .download-item, .exp-item, .qil-fl-card, .ql-hotel-amenity-item, .qiling-menu-item, .rs-stat-item, .skill-item, .skill-circle-item, .stat-item) img { border-radius: var(--qiling-module-card-image-radius, 10px); }
+[data-qds-card-mode="independent"][data-qds-card-gap="1"] :is(.grid, [class$="-grid"], [class*="-grid "], [class$="-cards"], [class*="-cards "], .ql-promo-items, .features-list, .services-list) { gap: var(--qiling-module-component-gap); }
+
+[data-qds-card-background="1"] :is(.card, .module-card, .feature-card, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card) { background: var(--qiling-module-card-bg); }
+[data-qds-card-border="1"] :is(.card, .module-card, .feature-card, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card) { border-color: var(--qiling-module-card-border); }
+[data-qds-card-shadow="1"] :is(.card, .module-card, .feature-card, .service-card, .service-item, .pricing-card, .case-card, .post-card, .team-card, .faq-item, .testimonial-card, .solution-card, .process-card) { box-shadow: var(--qiling-module-card-shadow); }
+
+[data-qds-card-mode="connected"] :is(.grid, [class$="-grid"], [class*="-grid "], [class$="-cards"], [class*="-cards "], .ql-promo-items, .features-list, .services-list) { gap: 0; }
+[data-qds-card-mode="connected"] :is(.feature-card, .feature-item, .service-item, .process-card, .process-item, .team-card, .ch-card, .ct-card, .client-item, .column-item, .contact-item, .download-item, .exp-item, .qil-fl-card, .ql-hotel-amenity-item, .qiling-menu-item, .rs-stat-item, .skill-item, .skill-circle-item, .stat-item) {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 [data-qds-visual="1"] :is(.banner-stats-bar) {
     background: var(--qiling-module-card-bg, rgba(var(--qiling-rgb-255-255-255), 0.14));
     border-color: var(--qiling-module-card-border, rgba(var(--qiling-rgb-255-255-255), 0.24));
     box-shadow: var(--qiling-module-card-shadow, 0 12px 34px rgba(var(--qiling-rgb-15-23-42), 0.08));
+}
+
+body.qiling-continuous-canvas,
+body.qiling-continuous-canvas #page,
+body.qiling-continuous-canvas .site-main {
+    background: var(--qiling-canvas-bg, var(--qiling-page-bg, var(--color-background)));
+}
+
+body.qiling-continuous-canvas #colophon.site-footer,
+body.qiling-continuous-canvas .site-footer {
+    margin-top: 0;
+    --qiling-footer-wave-backdrop: var(--qiling-canvas-footer-transition, var(--qiling-canvas-bg, var(--qiling-page-bg)));
+    --qiling-footer-wave-transition-from: var(--qiling-canvas-footer-transition, var(--qiling-canvas-bg, var(--qiling-page-bg)));
 }
 
 

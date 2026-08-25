@@ -349,10 +349,59 @@ if ( ! function_exists( 'developer_starter_comments_feature_enabled' ) ) {
      *
      * @return bool
      */
-    function developer_starter_comments_feature_enabled() {
+function developer_starter_comments_feature_enabled() {
         return ! (bool) developer_starter_get_option( 'disable_comments', '' );
     }
 }
+
+/**
+ * Respect WordPress's global discussion default on the frontend.
+ * The option normally affects newly created posts only; the theme also uses it
+ * as the site's explicit global comment visibility switch.
+ *
+ * @param bool $open    Whether comments are open.
+ * @param int  $post_id Post ID.
+ * @return bool
+ */
+function developer_starter_filter_global_comments_open( $open, $post_id ) {
+    $post_id = absint( $post_id );
+
+    if ( is_admin() ) {
+        return $open;
+    }
+
+    $per_post_setting = $post_id > 0 ? get_post_meta( $post_id, '_qiling_comments_enabled', true ) : '';
+    // Existing posts are comment opt-in, so historical comment_status=open
+    // values cannot reopen a post unless its switch is explicitly enabled.
+    return '1' === (string) $per_post_setting && developer_starter_comments_feature_enabled();
+}
+// 放在最后，确保历史文章自身的 comment_status=open 不会覆盖全局关闭设置。
+add_filter( 'comments_open', 'developer_starter_filter_global_comments_open', PHP_INT_MAX, 2 );
+
+function developer_starter_register_late_comment_filters() {
+    if ( is_admin() ) {
+        return;
+    }
+
+    add_filter( 'comments_open', 'developer_starter_filter_global_comments_open', PHP_INT_MAX, 2 );
+    add_filter(
+        'comments_array',
+        static function( $comments, $post_id ) {
+            return developer_starter_filter_global_comments_open( true, $post_id ) ? $comments : array();
+        },
+        PHP_INT_MAX,
+        2
+    );
+    add_filter(
+        'get_comments_number',
+        static function( $count, $post_id ) {
+            return developer_starter_filter_global_comments_open( true, $post_id ) ? $count : 0;
+        },
+        PHP_INT_MAX,
+        2
+    );
+}
+add_action( 'wp', 'developer_starter_register_late_comment_filters', PHP_INT_MAX );
 
 function developer_starter_comment_optimizations() {
     // 完全禁用评论

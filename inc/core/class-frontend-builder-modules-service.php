@@ -41,6 +41,7 @@ class Frontend_Builder_Modules_Service {
         $fields = ( $module && method_exists( $module, 'get_fields' ) ) ? $module->get_fields() : array();
         if ( class_exists( '\Developer_Starter\Core\Module_Advanced_Style_Service' ) ) {
             $design_capabilities = Module_Standards::get_design_capabilities( $module_id );
+            $design_capabilities = Module_Standards::enrich_design_capabilities_from_fields( $fields, $design_capabilities );
             if ( $this->module_has_native_button_controls( $fields ) ) {
                 $design_capabilities['buttons'] = false;
             }
@@ -85,6 +86,17 @@ class Frontend_Builder_Modules_Service {
             }
         }
         $sanitized_fields = $this->sort_builder_module_fields( $module_fields, $module_id );
+        if ( class_exists( '\Developer_Starter\Modules\Module_Standards' ) && 'native' === Module_Standards::get_card_layout_strategy( $module_id ) ) {
+            foreach ( $visual_fields as &$visual_field ) {
+                if ( ! is_array( $visual_field ) || '_ds_visual' !== ( isset( $visual_field['id'] ) ? $visual_field['id'] : '' ) ) {
+                    continue;
+                }
+                if ( isset( $visual_field['groups']['cards']['fields']['mode'] ) ) {
+                    unset( $visual_field['groups']['cards']['fields']['mode'] );
+                }
+            }
+            unset( $visual_field );
+        }
         $sanitized_fields = array_merge( $sanitized_fields, $style_fields, $visual_fields, $visibility_fields );
 
         return array(
@@ -274,6 +286,15 @@ class Frontend_Builder_Modules_Service {
         $manager = Module_Manager::get_instance();
         if ( ! $manager->get_module( $module_id ) ) {
             return '';
+        }
+
+        if (
+            class_exists( '\Developer_Starter\Core\Module_Advanced_Style_Service' )
+            && Module_Advanced_Style_Service::get_instance()->module_is_hidden( $module_data )
+        ) {
+            $module = $manager->get_module( $module_id );
+            $module_name = $module && method_exists( $module, 'get_name' ) ? $module->get_name() : $module_id;
+            return '<div class="module-wrapper qiling-builder-module qfb-hidden-module-placeholder" data-builder-index="' . esc_attr( (string) $index ) . '" data-module-id="' . esc_attr( $module_id ) . '"><div class="qfb-hidden-module-placeholder__inner"><strong>' . esc_html( $module_name ) . '</strong><span>' . esc_html__( '当前模块已暂时隐藏，点击可编辑并恢复显示。', 'developer-starter' ) . '</span></div></div>';
         }
 
         $hero_modules = Module_Manager::get_hero_module_ids( 'builder_preview' );

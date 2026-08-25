@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-ai-multilingual-seo.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#0ea5e9",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -43,7 +49,7 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #052e2b 0%, #0f766e 48%, #4338ca 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090d16 0%, #0369a1 52%, #0f172a 100%)",
         "bb_title_mode": "text",
         "bb_title": "AI 多语言出海<br><strong>让内容和 SEO 一起翻译</strong>",
         "bb_title_size_max": "78px",
@@ -57,8 +63,8 @@
         "bb_orbit_center_symbol": "SEO",
         "bb_text_align": "left",
         "bb_title_color": "#ffffff",
-        "bb_title_effect": "glow",
-        "bb_text_color": "#d1fae5",
+        "bb_title_effect": "gradient",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_buttons": [
           {
             "text": "查看出海方案",
@@ -73,10 +79,10 @@
             "icon": ""
           }
         ],
-        "bb_primary_btn_bg_color": "#ffffff",
-        "bb_primary_btn_text_color": "#0f766e",
-        "bb_primary_btn_hover_bg_color": "#ecfeff",
-        "bb_primary_btn_hover_text_color": "#0f172a",
+        "bb_primary_btn_bg_color": "#0284c7",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#0369a1",
+        "bb_primary_btn_hover_text_color": "#ffffff",
         "bb_media_type": "image",
         "bb_main_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
         "bb_media_shadow": "glow",
@@ -86,7 +92,9 @@
         "bb_media_anim": "float",
         "bb_show_glow": "1",
         "bb_padding_top": "96px",
-        "bb_padding_bottom": "96px"
+        "bb_padding_bottom": "96px",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #34d399 100%)",
+        "bb_light_btn_text_color": "#0f172a"
       }
     },
     {
@@ -129,26 +137,35 @@
         "stats_items": [
           {
             "number": "12+",
-            "label": "常用目标语言可规划"
+            "label": "常用目标语言可规划",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "3类",
-            "label": "文章、页面、模块文字"
+            "label": "文章、页面、模块文字",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "SEO",
-            "label": "标题描述关键词译文"
+            "label": "标题描述关键词译文",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "Sitemap",
-            "label": "多语言收录入口"
+            "label": "多语言收录入口",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#ecfeff",
+        "stats_bg_color": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 60%, #059669 100%)",
         "module_padding_top": "76px",
         "module_padding_bottom": "76px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -182,7 +199,7 @@
             "stage_tag": "收录"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -206,7 +223,7 @@
           }
         ],
         "comparison_highlight": "3",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -234,7 +251,7 @@
             "answer": "页面翻译依赖启灵主题模块结构，应进入对应页面编辑页，在译文编辑区域处理页面正文、SEO 文案和模块文字。"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -244,7 +261,7 @@
         "contact_subtitle": "提交目标语言、站点类型、内容规模和主要市场，评估 AI 翻译、URL 规则、SEO 数据和 Sitemap 的上线路径。",
         "contact_show_form": "1",
         "contact_form_id": "",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

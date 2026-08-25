@@ -6,7 +6,13 @@
   "page_template": "templates/template-franchise-investment.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "food_company"
+    "preset": "food_company",
+    "colors": {
+      "primary": "#d97706",
+      "accent": "#4f46e5",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -43,7 +49,7 @@
         "bb_style_mode": "editorial",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #4338ca 46%, #b45309 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090e17 0%, #1e1b4b 50%, #78350f 100%)",
         "bb_title_mode": "text",
         "bb_title": "把品牌方法论复制到更多城市<br><strong>让加盟增长更快、更稳、更可落地</strong>",
         "bb_title_size_max": "72px",
@@ -52,8 +58,8 @@
         "bb_text_align": "left",
         "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #ddd6fe 46%, #fde68a 100%)",
-        "bb_text_color": "#eef2ff",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #fde68a 50%, #c7d2fe 100%)",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_buttons": [
           {
             "text": "提交加盟意向",
@@ -68,12 +74,12 @@
             "icon": ""
           }
         ],
-        "bb_primary_btn_bg_color": "#f59e0b",
-        "bb_primary_btn_text_color": "#111827",
-        "bb_primary_btn_hover_bg_color": "#fbbf24",
-        "bb_primary_btn_hover_text_color": "#111827",
+        "bb_primary_btn_bg_color": "#d97706",
+        "bb_primary_btn_text_color": "#ffffff",
+        "bb_primary_btn_hover_bg_color": "#b45309",
+        "bb_primary_btn_hover_text_color": "#ffffff",
         "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#312e81",
+        "bb_light_btn_text_color": "#0f172a",
         "bb_light_btn_hover_bg_color": "#e0e7ff",
         "bb_light_btn_hover_text_color": "#312e81",
         "bb_media_type": "image",
@@ -97,26 +103,35 @@
         "stats_items": [
           {
             "number": "128+",
-            "label": "签约合作门店"
+            "label": "签约合作门店",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "36城",
-            "label": "意向拓展城市"
+            "label": "意向拓展城市",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "45天",
-            "label": "平均筹建周期"
+            "label": "平均筹建周期",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "92%",
-            "label": "开业三月达标率"
+            "label": "开业三月达标率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#ffffff",
+        "stats_bg_color": "linear-gradient(135deg, #1c1917 0%, #292524 50%, #78350f 100%)",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -126,7 +141,7 @@
         "process_subtitle": "从意向沟通到开业落地，把每一步需要的资料、支持和节奏提前说清楚",
         "process_mode": "industrial",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "process_items": [
@@ -184,7 +199,7 @@
         ],
         "comparison_highlight": "2",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#fffbeb",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }
@@ -250,7 +265,7 @@
             "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -276,7 +291,7 @@
             "answer": "一般会提供开业活动支持、巡店督导、经营复盘、物料更新、培训迭代和会员营销建议，帮助门店缩短爬坡周期。"
           }
         ],
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#fffbeb",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }
@@ -290,7 +305,7 @@
         "contact_form_id": "",
         "contact_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }

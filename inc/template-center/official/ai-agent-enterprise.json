@@ -6,7 +6,13 @@
   "page_template": "templates/template-ai-agent-enterprise.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#6366f1",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,38 +49,38 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #ede9fe 45%, #ccfbf1 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090d1a 0%, #1e1b4b 52%, #0f172a 100%)",
         "bb_title": "把企业知识、流程和工具<br><strong>交给 AI Agent 协同执行</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #38bdf8 100%)",
         "bb_subtitle": "企业 AI Agent 平台、知识库问答与流程自动化官网方案",
         "bb_desc": "围绕企业知识库、RAG 检索、多智能体协作、工具调用、审批流、权限审计和私有化部署，把 AI 能力包装成客户能快速理解、评估和预约演示的官网页面。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
             "text": "预约 Agent 演示",
             "link": "#",
             "style": "primary",
-            "icon": "演"
+            "icon": ""
           },
           {
             "text": "查看应用场景",
             "link": "#",
             "style": "light",
-            "icon": "景"
+            "icon": ""
           }
         ],
-        "bb_primary_btn_bg_color": "#2563eb",
+        "bb_primary_btn_bg_color": "#6366f1",
         "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#6d28d9",
+        "bb_primary_btn_hover_bg_color": "#4f46e5",
         "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#f5f3ff",
-        "bb_light_btn_hover_text_color": "#2563eb",
+        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.12)",
+        "bb_light_btn_text_color": "#ffffff",
+        "bb_light_btn_hover_bg_color": "rgba(255, 255, 255, 0.22)",
+        "bb_light_btn_hover_text_color": "#ffffff",
         "bb_media_type": "image",
         "bb_main_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
         "bb_media_shadow": "glow",
@@ -96,11 +102,11 @@
         "features_icon_position": "top",
         "features_text_align": "left",
         "features_bg_color": "#ffffff",
-        "features_card_style": "border",
-        "features_card_radius": "8px",
+        "features_card_style": "elevated",
+        "features_card_radius": "16px",
         "features_icon_style": "square",
-        "features_icon_bg": "#ede9fe",
-        "features_icon_color": "#059669",
+        "features_icon_bg": "#eef2ff",
+        "features_icon_color": "#4f46e5",
         "features_items": [
           {
             "icon": "知",
@@ -215,7 +221,7 @@
             "btn_link": "#",
             "featured": "1",
             "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)"
+            "featured_bg": "linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%)"
           },
           {
             "name": "企业版",
@@ -265,9 +271,14 @@
         "cta_subtitle": "替换为你的真实演示入口、试点套餐和案例内容，就能把企业智能体能力包装成可咨询、可交付的官网页面。",
         "cta_button_text": "预约 Agent 场景诊断",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #090d1a 0%, #1e1b4b 60%, #312e81 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#6366f1",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

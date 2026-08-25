@@ -163,8 +163,28 @@ class Module_Visual_Style_Service {
             ),
             'cards'   => array(
                 'label'       => __( '卡片', 'developer-starter' ),
-                'description' => __( '覆盖当前模块里的卡片背景、边框和阴影。', 'developer-starter' ),
+                'description' => __( '统一控制当前模块内重复卡片的文字、背景、边框、圆角、间距和图片。', 'developer-starter' ),
                 'fields'      => array(
+                    'mode'       => array(
+                        'label'       => __( '卡片布局模式', 'developer-starter' ),
+                        'type'        => 'select',
+                        'options'     => array(
+                            'native'      => __( '跟随模块原生样式', 'developer-starter' ),
+                            'connected'   => __( '连体内容', 'developer-starter' ),
+                            'independent' => __( '独立卡片', 'developer-starter' ),
+                        ),
+                        'description' => __( '默认保留模块原来的设计。选择“独立卡片”后，才会启用下面的卡片分离和视觉设置。', 'developer-starter' ),
+                    ),
+                    'title'      => array(
+                        'label'       => __( '卡片标题颜色', 'developer-starter' ),
+                        'type'        => 'css',
+                        'placeholder' => 'var(--qiling-page-text)',
+                    ),
+                    'text'       => array(
+                        'label'       => __( '卡片正文颜色', 'developer-starter' ),
+                        'type'        => 'css',
+                        'placeholder' => 'var(--color-text-muted)',
+                    ),
                     'background' => array(
                         'label'       => __( '卡片背景', 'developer-starter' ),
                         'type'        => 'css',
@@ -183,6 +203,27 @@ class Module_Visual_Style_Service {
                         'placeholder' => '0 18px 48px rgba(15,23,42,.12)',
                         'description' => __( '控制当前模块内卡片的阴影；填写 none 可关闭阴影。', 'developer-starter' ),
                     ),
+                    'radius'     => array(
+                        'label'       => __( '卡片圆角', 'developer-starter' ),
+                        'type'        => 'css',
+                        'placeholder' => '12px',
+                    ),
+                    'padding'    => array(
+                        'label'       => __( '卡片内边距', 'developer-starter' ),
+                        'type'        => 'css',
+                        'placeholder' => '24px',
+                    ),
+                    'gap'        => array(
+                        'label'       => __( '组件间距', 'developer-starter' ),
+                        'type'        => 'css',
+                        'placeholder' => '24px',
+                        'description' => __( '控制卡片网格、列表项或重复组件之间的距离。', 'developer-starter' ),
+                    ),
+                    'image_radius' => array(
+                        'label'       => __( '卡片图片圆角', 'developer-starter' ),
+                        'type'        => 'css',
+                        'placeholder' => '10px',
+                    ),
                 ),
             ),
         );
@@ -190,7 +231,14 @@ class Module_Visual_Style_Service {
             return $groups;
         }
 
+        $module = \Developer_Starter\Modules\Module_Manager::get_instance()->get_module( $module_id );
+        $fields = $module && method_exists( $module, 'get_fields' ) ? $module->get_fields() : array();
         $capabilities = Module_Standards::get_design_capabilities( $module_id );
+        $capabilities = Module_Standards::enrich_design_capabilities_from_fields( $fields, $capabilities );
+        $card_layout_strategy = Module_Standards::get_card_layout_strategy( $module_id );
+        if ( in_array( $card_layout_strategy, array( 'shell', 'native' ), true ) && isset( $groups['cards']['fields']['mode'] ) ) {
+            unset( $groups['cards']['fields']['mode'] );
+        }
         if ( empty( $capabilities['title'] ) ) {
             unset( $groups['content']['fields']['title'] );
         }
@@ -287,6 +335,16 @@ class Module_Visual_Style_Service {
                 'description' => __( '控制鼠标移到主按钮上时的文字颜色。', 'developer-starter' ),
             ),
             array(
+                'path'        => 'cards.title',
+                'label'       => __( '卡片标题颜色', 'developer-starter' ),
+                'placeholder' => 'var(--qiling-page-text)',
+            ),
+            array(
+                'path'        => 'cards.text',
+                'label'       => __( '卡片正文颜色', 'developer-starter' ),
+                'placeholder' => 'var(--color-text-muted)',
+            ),
+            array(
                 'path'        => 'cards.background',
                 'label'       => __( '卡片背景', 'developer-starter' ),
                 'placeholder' => '#ffffff',
@@ -295,6 +353,31 @@ class Module_Visual_Style_Service {
                 'path'        => 'cards.border',
                 'label'       => __( '卡片边框', 'developer-starter' ),
                 'placeholder' => 'rgba(15,23,42,.1)',
+            ),
+            array(
+                'path'        => 'cards.shadow',
+                'label'       => __( '卡片阴影', 'developer-starter' ),
+                'placeholder' => '0 18px 48px rgba(15,23,42,.12)',
+            ),
+            array(
+                'path'        => 'cards.radius',
+                'label'       => __( '卡片圆角', 'developer-starter' ),
+                'placeholder' => '12px',
+            ),
+            array(
+                'path'        => 'cards.padding',
+                'label'       => __( '卡片内边距', 'developer-starter' ),
+                'placeholder' => '24px',
+            ),
+            array(
+                'path'        => 'cards.gap',
+                'label'       => __( '组件间距', 'developer-starter' ),
+                'placeholder' => '24px',
+            ),
+            array(
+                'path'        => 'cards.image_radius',
+                'label'       => __( '卡片图片圆角', 'developer-starter' ),
+                'placeholder' => '10px',
             ),
         );
         $allowed_paths = array();
@@ -462,13 +545,28 @@ class Module_Visual_Style_Service {
      * @return string
      */
     public function filter_wrapper_attr( $attr, $module_id, $module_data, $post_id ) {
-        unset( $module_id, $post_id );
+        unset( $post_id );
 
         if ( ! $this->has_visual_configuration( $module_data ) ) {
             return (string) $attr;
         }
 
-        return (string) $attr . ' data-qds-visual="1"';
+        $attr .= ' data-qds-visual="1"';
+        $payload = $this->get_visual_payload( $module_data );
+        $card_mode = sanitize_key( $this->get_nested_string( $payload, 'cards.mode', 'native' ) );
+        $card_layout_strategy = Module_Standards::get_card_layout_strategy( $module_id );
+        if ( 'independent' === $card_mode ) {
+            $attr .= ' data-qds-card-mode="independent"';
+        } elseif ( 'connected' === $card_mode && 'flat' === $card_layout_strategy ) {
+            $attr .= ' data-qds-card-mode="connected"';
+        }
+        foreach ( array( 'title', 'text', 'background', 'border', 'shadow', 'radius', 'padding', 'gap', 'image_radius' ) as $card_field ) {
+            if ( 'connected' !== $card_mode && '' !== $this->sanitize_visual_value( $this->get_nested_string( $payload, 'cards.' . $card_field ) ) ) {
+                $attr .= ' data-qds-card-' . esc_attr( $card_field ) . '="1"';
+            }
+        }
+
+        return $attr;
     }
 
     /**
@@ -526,6 +624,12 @@ class Module_Visual_Style_Service {
             'cards.background'          => array( '--qiling-module-card-bg', '--qiling-card-bg', '--qiling-component-card-bg' ),
             'cards.border'              => array( '--qiling-module-card-border', '--qiling-card-border', '--qiling-component-card-border' ),
             'cards.shadow'              => array( '--qiling-module-card-shadow', '--qiling-component-card-shadow' ),
+            'cards.title'               => array( '--qiling-module-card-title' ),
+            'cards.text'                => array( '--qiling-module-card-text' ),
+            'cards.radius'              => array( '--qiling-module-card-radius' ),
+            'cards.padding'             => array( '--qiling-module-card-padding' ),
+            'cards.gap'                 => array( '--qiling-module-component-gap' ),
+            'cards.image_radius'        => array( '--qiling-module-card-image-radius' ),
         );
 
         foreach ( $map as $path => $css_vars ) {

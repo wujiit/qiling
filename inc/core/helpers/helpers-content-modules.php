@@ -1391,6 +1391,9 @@ if ( ! function_exists( 'developer_starter_get_page_template_default_modules_map
             'templates/template-qiling-image-studio.php' => array(
                 'flag' => '_qiling_image_studio_modules_filled',
             ),
+            'templates/template-qiling-wallpaper-gallery.php' => array(
+                'flag' => '_qiling_wallpaper_gallery_modules_filled',
+            ),
             'templates/template-qiling-cloud-storage-hosting.php' => array(
                 'flag' => '_qiling_cloud_storage_hosting_modules_filled',
             ),
@@ -1608,6 +1611,15 @@ if ( ! function_exists( 'developer_starter_get_page_template_default_modules_map
                 'flag'   => '_wellness_center_modules_filled',
                 'class'  => '\Developer_Starter\Core\Wellness_Center_Page_Creator',
                 'method' => 'set_default_modules',
+            ),
+            'templates/template-health-supplements.php' => array(
+                'flag' => '_health_supplements_modules_filled',
+            ),
+            'templates/template-intimate-wellness.php' => array(
+                'flag' => '_intimate_wellness_modules_filled',
+            ),
+            'templates/template-fashion-brand.php' => array(
+                'flag' => '_fashion_brand_modules_filled',
             ),
             'templates/template-yoga-studio.php' => array(
                 'flag'   => '_yoga_studio_modules_filled',

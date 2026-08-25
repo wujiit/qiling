@@ -6,7 +6,13 @@
   "page_template": "templates/template-resume.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -40,12 +46,12 @@
         "rh_style_variant": "classic",
         "rh_layout": "center",
         "rh_height": "100vh",
-        "rh_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 58%, #065f46 100%)",
+        "rh_bg_color": "linear-gradient(135deg, #090d16 0%, #1e3a8a 52%, #047857 100%)",
         "rh_bg_image": "",
         "rh_overlay_color": "",
         "rh_intro_badge": "HELLO",
         "rh_accent_color": "#34d399",
-        "rh_avatar": "",
+        "rh_avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
         "rh_avatar_style": "circle",
         "rh_avatar_size": "150px",
         "rh_name": "张三",
@@ -220,25 +226,35 @@
       "type": "stats",
       "data": {
         "stats_title": "",
-        "stats_bg_color": "linear-gradient(135deg, #1d4ed8 0%, #059669 100%)",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #059669 100%)",
         "stats_items": [
           {
             "number": "5+",
-            "label": "年工作经验"
+            "label": "年工作经验",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "50+",
-            "label": "完成项目"
+            "label": "完成项目",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "20+",
-            "label": "合作客户"
+            "label": "合作客户",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "99%",
-            "label": "客户满意度"
+            "label": "客户满意度",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
-        ]
+        ],
+        "stats_bg_type": "color",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -249,21 +265,21 @@
         "gallery_columns": "3",
         "gallery_items": [
           {
-            "image": "",
-            "title": "电商平台设计",
-            "desc": "React + Node.js",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+            "title": "电商数据可视化大屏",
+            "desc": "React 18 + TypeScript + ECharts 商业化交付",
             "url": "#"
           },
           {
-            "image": "",
-            "title": "企业官网开发",
-            "desc": "Vue + WordPress",
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+            "title": "品牌官网与前端架构",
+            "desc": "Next.js + Tailwind CSS 响应式与 SEO 优化",
             "url": "#"
           },
           {
-            "image": "",
-            "title": "移动端App设计",
-            "desc": "React Native",
+            "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+            "title": "移动端电商应用 App",
+            "desc": "React Native + Expo 跨平台高性能体验",
             "url": "#"
           }
         ]
@@ -276,24 +292,24 @@
         "testimonials_subtitle": "合作伙伴的真实反馈",
         "testimonials_items": [
           {
-            "avatar": "",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
             "name": "李经理",
-            "title": "某科技公司 产品总监",
-            "content": "张三是我合作过的最专业的前端开发者之一，代码质量高，交付准时，沟通顺畅。",
+            "title": "某科技上市公司 产品总监",
+            "content": "专业素质极高，代码架构严谨，交付准时且具有极强的业务理解与跨端沟通能力。",
             "rating": "5"
           },
           {
-            "avatar": "",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
             "name": "王总",
-            "title": "某电商平台 CEO",
-            "content": "项目完成得非常出色，页面性能优化后用户留存率提升了30%，强烈推荐！",
+            "title": "某新零售电商平台 CEO",
+            "content": "主导的前端性能攻坚让核心页面首屏加载时间缩短了 40% 以上，转化率显著提高，强烈推荐！",
             "rating": "5"
           },
           {
-            "avatar": "",
+            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
             "name": "刘设计",
-            "title": "某设计工作室 创始人",
-            "content": "对UI设计有独到的见解，能够很好地将设计稿还原，并提出有价值的改进建议。",
+            "title": "某国际设计工作室 联合创始人",
+            "content": "对 UI/UX 细节还原度极为挑剔，能够精准还原 Figma 动效与设计精髓，合作非常顺畅！",
             "rating": "5"
           }
         ]

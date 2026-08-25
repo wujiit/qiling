@@ -469,6 +469,10 @@ class Builder_Data_Service {
             $data = $this->migrate_magic_layout_module_data( $data );
         }
 
+        if ( 'qiling_universal_recommend' === $module_id ) {
+            $data = $this->migrate_universal_recommend_module_data( $data );
+        }
+
         /**
          * Filters module data before schema sanitization.
          *
@@ -485,6 +489,55 @@ class Builder_Data_Service {
         $data     = is_array( $migrated ) ? $migrated : $data;
 
         return $this->sync_protocol_compatibility_fields_to_legacy_common_fields( $module_id, $data );
+    }
+
+    /**
+     * 将旧版通用查询字段收敛为普通文章分类 ID。
+     */
+    private function migrate_universal_recommend_module_data( $data ) {
+        if ( ! is_array( $data ) || ! empty( $data['qur_category_ids'] ) ) {
+            return is_array( $data ) ? $data : array();
+        }
+
+        $taxonomy = isset( $data['qur_auto_taxonomy'] ) ? sanitize_key( (string) $data['qur_auto_taxonomy'] ) : '';
+        $terms_raw = isset( $data['qur_auto_terms'] ) && is_scalar( $data['qur_auto_terms'] ) ? trim( (string) $data['qur_auto_terms'] ) : '';
+        if ( 'category' !== $taxonomy || '' === $terms_raw ) {
+            return $data;
+        }
+
+        $category_ids = array();
+        $slugs = array();
+        foreach ( array_filter( array_map( 'trim', explode( ',', $terms_raw ) ) ) as $term ) {
+            if ( ctype_digit( $term ) ) {
+                $category_ids[] = absint( $term );
+            } else {
+                $slugs[] = sanitize_title( $term );
+            }
+        }
+
+        if ( ! empty( $slugs ) ) {
+            $terms = get_terms(
+                array(
+                    'taxonomy'   => 'category',
+                    'hide_empty' => false,
+                    'slug'       => array_values( array_unique( $slugs ) ),
+                )
+            );
+            if ( ! is_wp_error( $terms ) ) {
+                foreach ( $terms as $term ) {
+                    if ( $term instanceof \WP_Term ) {
+                        $category_ids[] = (int) $term->term_id;
+                    }
+                }
+            }
+        }
+
+        $category_ids = array_values( array_unique( array_filter( array_map( 'absint', $category_ids ) ) ) );
+        if ( ! empty( $category_ids ) ) {
+            $data['qur_category_ids'] = implode( ',', $category_ids );
+        }
+
+        return $data;
     }
 
     /**
@@ -818,9 +871,16 @@ class Builder_Data_Service {
                 'type'                 => 'group',
                 'allowUnknownChildren' => true,
                 'fields'               => array(
+                    'mode'       => array( 'id' => 'mode', 'type' => 'select', 'options' => array( 'native', 'connected', 'independent' ) ),
+                    'title'      => array( 'id' => 'title', 'type' => 'text' ),
+                    'text'       => array( 'id' => 'text', 'type' => 'text' ),
                     'background' => array( 'id' => 'background', 'type' => 'text' ),
                     'border'     => array( 'id' => 'border', 'type' => 'text' ),
                     'shadow'     => array( 'id' => 'shadow', 'type' => 'text' ),
+                    'radius'     => array( 'id' => 'radius', 'type' => 'text' ),
+                    'padding'    => array( 'id' => 'padding', 'type' => 'text' ),
+                    'gap'        => array( 'id' => 'gap', 'type' => 'text' ),
+                    'image_radius' => array( 'id' => 'image_radius', 'type' => 'text' ),
                 ),
             ),
         );
@@ -1048,6 +1108,15 @@ class Builder_Data_Service {
      */
     private function get_stage_one_visibility_schema_map() {
         return array(
+            'status' => array(
+                'id'      => 'status',
+                'type'    => 'select',
+                'options' => array(
+                    ''       => '',
+                    'show'   => 'show',
+                    'hidden' => 'hidden',
+                ),
+            ),
             'desktop' => array(
                 'id'      => 'desktop',
                 'type'    => 'select',

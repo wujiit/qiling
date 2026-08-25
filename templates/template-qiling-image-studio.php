@@ -35,11 +35,11 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                 <div class="qiling-resource-empty-state__icon">IMG</div>
                 <h2 class="qiling-resource-empty-state__title"><?php esc_html_e( 'AI 图像处理官网页', 'developer-starter' ); ?></h2>
                 <p class="qiling-resource-empty-state__desc">
-                    <?php esc_html_e( '保存页面后会自动填充 AI 图像处理模块，可继续编辑修复增强、智能抠图、AI 生图和套餐入口。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
                 </p>
                 <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                     <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary qiling-resource-empty-state__button">
-                        <?php esc_html_e( '编辑此页面', 'developer-starter' ); ?>
+                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
                     </a>
                 <?php endif; ?>
             </div>

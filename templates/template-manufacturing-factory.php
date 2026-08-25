@@ -26,11 +26,11 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                 <div style="font-size: 3rem; margin-bottom: 20px;">MFG</div>
                 <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '制造业/工厂官网页', 'developer-starter' ); ?></h2>
                 <p style="color: rgba(255,255,255,0.85); margin-bottom: 24px; font-size: 1.05rem;">
-                    <?php esc_html_e( '保存页面后会自动填充制造业官网模块，可继续编辑产品能力、工厂实力、案例和询盘入口。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
                 </p>
                 <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                     <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary" style="background: #ffffff; color: #334155; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                        <?php esc_html_e( '编辑此页面', 'developer-starter' ); ?>
+                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
                     </a>
                 <?php endif; ?>
             </div>

@@ -6,7 +6,13 @@
   "page_template": "templates/template-solar-storage-equipment.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #d1fae5 45%, #fef3c7 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090e17 0%, #064e3b 50%, #78350f 100%)",
         "bb_title": "把光伏储能设备方案<br><strong>讲成项目价值</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #047857 0%, #ca8a04 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #6ee7b7 50%, #fde68a 100%)",
         "bb_subtitle": "光伏组件、储能系统与工商业能源项目官网方案",
         "bb_desc": "围绕光伏组件、储能柜、逆变器、EMS 能源管理、并网资料和运维服务，把设备参数、项目收益测算、交付案例和商务询盘入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -67,7 +73,7 @@
             "icon": "表"
           }
         ],
-        "bb_primary_btn_bg_color": "#047857",
+        "bb_primary_btn_bg_color": "#059669",
         "bb_primary_btn_text_color": "#ffffff",
         "bb_primary_btn_hover_bg_color": "#065f46",
         "bb_primary_btn_hover_text_color": "#ffffff",
@@ -95,7 +101,7 @@
         "columns": "4",
         "modal_inquire_text": "咨询设备选型",
         "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#047857",
+        "modal_inquire_btn_bg_color": "#059669",
         "modal_inquire_btn_text_color": "#ffffff",
         "modal_inquire_btn_hover_bg_color": "#065f46",
         "modal_inquire_btn_hover_text_color": "#ffffff",
@@ -132,7 +138,8 @@
             "post_id": "",
             "btn_text": "获取方案"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -144,25 +151,34 @@
         "stats_items": [
           {
             "number": "120MW+",
-            "label": "累计光伏项目经验"
+            "label": "累计光伏项目经验",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "2h/4h",
-            "label": "常用储能配置"
+            "label": "常用储能配置",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "7天",
-            "label": "初步测算周期"
+            "label": "初步测算周期",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "7x24",
-            "label": "监控与运维响应"
+            "label": "监控与运维响应",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc",
+        "stats_bg_color": "linear-gradient(135deg, #064e3b 0%, #047857 50%, #78350f 100%)",
         "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "module_padding_bottom": "80px",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -206,13 +222,13 @@
         "ct_columns": "4",
         "ct_enable_filter": "yes",
         "ct_card_style": "solid",
-        "ct_accent_color": "#047857",
+        "ct_accent_color": "#059669",
         "ct_status_chip_bg": "#ecfdf5",
-        "ct_status_chip_text": "#047857",
+        "ct_status_chip_text": "#059669",
         "ct_action_btn_bg": "linear-gradient(135deg, #047857 0%, #ca8a04 100%)",
         "ct_action_btn_text": "#ffffff",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#f0fdf4",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "enable_staggered_animation": "yes",
@@ -291,7 +307,7 @@
         "downloads_subtitle": "把客户立项、设计、并网和采购前需要的资料集中下载",
         "downloads_bg_color": "#ffffff",
         "downloads_columns": "3",
-        "downloads_btn_bg_color": "#047857",
+        "downloads_btn_bg_color": "#059669",
         "downloads_btn_text_color": "#ffffff",
         "downloads_btn_hover_bg_color": "#065f46",
         "downloads_btn_hover_text_color": "#ffffff",
@@ -337,7 +353,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#f0fdf4",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

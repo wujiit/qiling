@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-ai-writing-studio.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#8b5cf6",
+      "accent": "#ec4899",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -82,9 +88,13 @@
           }
         ],
         "bg_type": "color",
-        "bg_color": "linear-gradient(135deg, #111827 0%, #0f766e 52%, #2563eb 100%)",
+        "bg_color": "linear-gradient(135deg, #0b0f19 0%, #2e1065 50%, #0f172a 100%)",
         "padding_top": "110px",
-        "padding_bottom": "110px"
+        "padding_bottom": "110px",
+        "btn_primary_bg": "#8b5cf6",
+        "btn_primary_color": "#ffffff",
+        "btn_secondary_bg": "rgba(255, 255, 255, 0.12)",
+        "btn_secondary_color": "#ffffff"
       }
     },
     {
@@ -167,7 +177,7 @@
         "ps_original_price": "",
         "ps_cta_text": "配置工作台入口",
         "ps_cta_url": "#",
-        "ps_cta_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "ps_cta_bg": "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
         "ps_cta_color": "#ffffff",
         "ps_cta_target": "_self",
         "ps_description": "启灵AI写作：文章创作 / 文案广场 / 公众号排版\n启灵Ai助手：对话助手 / 提示词 / 知识库 / AI PPT\n站点入口：支持把工作台、套餐、教程放在同一官网页\n适配场景：内容团队、企业公众号、SEO 站点、创作者工具"
@@ -235,7 +245,7 @@
             "btn_link": "#",
             "featured": "1",
             "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)"
+            "featured_bg": "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)"
           },
           {
             "name": "企业版",
@@ -283,9 +293,14 @@
         "cta_subtitle": "替换为你的插件页面、会员套餐和案例内容，就能把内容工具从功能入口升级成可转化的官网。",
         "cta_button_text": "编辑工作台入口",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #2e1065 60%, #4c1d95 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#ec4899",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

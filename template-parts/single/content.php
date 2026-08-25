@@ -276,7 +276,7 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
                     </nav>
                 <?php endif; ?>
 
-                <?php if ( empty( $args['hide_post_comments'] ) && ( function_exists( 'developer_starter_comments_feature_enabled' ) ? developer_starter_comments_feature_enabled() : true ) && ( comments_open() || get_comments_number() ) ) : ?>
+                <?php if ( empty( $args['hide_post_comments'] ) && ( function_exists( 'developer_starter_comments_feature_enabled' ) ? developer_starter_comments_feature_enabled() : true ) && comments_open() ) : ?>
                     <div class="single-post-comments">
                         <?php comments_template(); ?>
                     </div>

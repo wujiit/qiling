@@ -254,6 +254,57 @@ class Meta_Boxes {
             }
         }
 
+        // 双栏轮播文章来源字段上线后，清理仍缺少新字段的 24 小时缓存。
+        if ( ! isset( $fields['double_column_carousel']['fields'] ) || ! is_array( $fields['double_column_carousel']['fields'] ) ) {
+            return false;
+        }
+        $double_carousel_field_ids = array();
+        foreach ( $fields['double_column_carousel']['fields'] as $field ) {
+            if ( is_array( $field ) && ! empty( $field['id'] ) ) {
+                $double_carousel_field_ids[] = (string) $field['id'];
+            }
+        }
+        foreach ( array( 'dcc_slide_source', 'dcc_post_count', 'dcc_exclude_categories', 'dcc_post_ids' ) as $field_id ) {
+            if ( ! in_array( $field_id, $double_carousel_field_ids, true ) ) {
+                return false;
+            }
+        }
+
+        // 图片视频搜索模块字段版本校验：宽度模式上线后清理旧的 24 小时字段缓存。
+        if ( ! isset( $fields['hero_search']['fields'] ) || ! is_array( $fields['hero_search']['fields'] ) ) {
+            return false;
+        }
+        $hero_search_field_ids = array();
+        foreach ( $fields['hero_search']['fields'] as $field ) {
+            if ( is_array( $field ) && ! empty( $field['id'] ) ) {
+                $hero_search_field_ids[] = (string) $field['id'];
+            }
+        }
+        foreach ( array( 'hs_width_mode', 'hs_custom_width', 'hs_border_radius', 'hs_custom_radius' ) as $field_id ) {
+            if ( ! in_array( $field_id, $hero_search_field_ids, true ) ) {
+                return false;
+            }
+        }
+
+        // 通用推荐模块已简化为普通文章分类 ID，清理仍暴露旧通用查询字段的缓存。
+        if ( ! isset( $fields['qiling_universal_recommend']['fields'] ) || ! is_array( $fields['qiling_universal_recommend']['fields'] ) ) {
+            return false;
+        }
+        $recommend_field_ids = array();
+        foreach ( $fields['qiling_universal_recommend']['fields'] as $field ) {
+            if ( is_array( $field ) && ! empty( $field['id'] ) ) {
+                $recommend_field_ids[] = (string) $field['id'];
+            }
+        }
+        if ( ! in_array( 'qur_category_ids', $recommend_field_ids, true ) ) {
+            return false;
+        }
+        foreach ( array( 'qur_auto_post_type', 'qur_auto_taxonomy', 'qur_auto_terms', 'qur_auto_orderby', 'qur_auto_order', 'qur_auto_exclude_ids' ) as $legacy_field_id ) {
+            if ( in_array( $legacy_field_id, $recommend_field_ids, true ) ) {
+                return false;
+            }
+        }
+
         return true;
     }
 
@@ -480,6 +531,38 @@ class Meta_Boxes {
             'side',
             'default'
         );
+
+        add_meta_box(
+            'qiling_post_comments_settings',
+            __( '评论设置', 'developer-starter' ),
+            array( $this, 'render_post_comments_meta_box' ),
+            'post',
+            'side',
+            'default'
+        );
+    }
+
+    /**
+     * Render the per-post comment visibility switch.
+     *
+     * @param \WP_Post $post Current post.
+     * @return void
+     */
+    public function render_post_comments_meta_box( $post ) {
+        wp_nonce_field( 'qiling_post_comments_settings', 'qiling_post_comments_nonce' );
+        $setting = get_post_meta( $post->ID, '_qiling_comments_enabled', true );
+        $global_closed = 'closed' === get_option( 'default_comment_status', 'open' );
+        ?>
+        <p>
+            <label>
+                <input type="checkbox" name="qiling_comments_enabled" value="1" <?php checked( '1', (string) $setting ); ?> />
+                <?php esc_html_e( '允许此文章显示并接收评论', 'developer-starter' ); ?>
+            </label>
+        </p>
+        <p class="description">
+            <?php echo esc_html( $global_closed ? __( '全站默认已关闭评论；勾选后仅此文章开启评论。', 'developer-starter' ) : __( '未勾选时沿用 WordPress 的文章评论状态。', 'developer-starter' ) ); ?>
+        </p>
+        <?php
     }
 
     public function render_modules_meta_box( $post ) {
@@ -886,6 +969,14 @@ class Meta_Boxes {
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
         if ( ! current_user_can( 'edit_post', $post_id ) ) return;
 
+        if ( 'post' === get_post_type( $post_id ) && isset( $_POST['qiling_post_comments_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['qiling_post_comments_nonce'] ) ), 'qiling_post_comments_settings' ) ) {
+            if ( isset( $_POST['qiling_comments_enabled'] ) && '1' === wp_unslash( (string) $_POST['qiling_comments_enabled'] ) ) {
+                update_post_meta( $post_id, '_qiling_comments_enabled', '1' );
+            } else {
+                update_post_meta( $post_id, '_qiling_comments_enabled', '0' );
+            }
+        }
+
         $this->get_modules_save_service()->handle_modules_save(
             $post_id,
             $_POST,
@@ -920,6 +1011,9 @@ class Meta_Boxes {
         );
 
         $this->get_post_settings_service()->save_post_meta_boxes( $post_id, $_POST );
+
+        // 模板页面包最后应用，避免旧页面设置覆盖新模板的模块和视觉配置。
+        $this->get_modules_save_service()->maybe_replace_modules_from_selected_template( $post_id, $_POST, $_REQUEST );
     }
 
     /**

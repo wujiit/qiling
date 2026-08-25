@@ -204,7 +204,7 @@ trait Admin_Settings_Domain_Trait {
         }
 
         if ( ! empty( $risk_rows ) ) {
-            echo '<div style="margin:18px 0 12px;font-weight:600;">' . sprintf( esc_html__( '域名依赖项（%d 项，仅供以后迁移参考）', 'developer-starter' ), count( $risk_rows ) ) . '</div>';
+            echo '<div style="margin:18px 0 12px;font-weight:600;">' . sprintf( esc_html__( '域名依赖项（%d 项）', 'developer-starter' ), count( $risk_rows ) ) . '</div>';
             echo '<div style="margin-bottom:12px;"><strong>' . esc_html__( '依赖位置', 'developer-starter' ) . '</strong><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">';
             foreach ( array_keys( $risk_path_labels ) as $display_path ) {
                 echo '<span style="display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:#fff7ed;color:#9a3412;border:1px solid #fdba74;">' . esc_html( $display_path ) . '</span>';

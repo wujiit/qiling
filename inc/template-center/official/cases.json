@@ -6,7 +6,13 @@
   "page_template": "templates/template-cases.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#10b981",
+      "accent": "#0284c7",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -39,7 +45,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "medium",
-        "banner_bg_color": "linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #064e3b 50%, #0369a1 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -48,8 +54,8 @@
             "subtitle": "真实案例见证成效与口碑",
             "btn_text": "咨询合作",
             "btn_url": "/contact",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f172a"
+            "btn_bg_color": "#059669",
+            "btn_text_color": "#ffffff"
           }
         ]
       }
@@ -75,26 +81,35 @@
         "stats_items": [
           {
             "number": "120+",
-            "label": "行业客户"
+            "label": "行业客户",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "300%",
-            "label": "平均转化提升"
+            "label": "平均转化提升",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "98%",
-            "label": "客户满意度"
+            "label": "客户满意度",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24h",
-            "label": "响应时间"
+            "label": "响应时间",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+        "stats_bg_color": "linear-gradient(135deg, #090e17 0%, #064e3b 50%, #0f172a 100%)",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -105,7 +120,11 @@
         "cta_button_text": "开始咨询",
         "cta_button_url": "/contact",
         "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)"
+        "cta_bg_color": "linear-gradient(135deg, #090e17 0%, #064e3b 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#0284c7",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

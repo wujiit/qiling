@@ -723,7 +723,7 @@ class Page_Package_Admin {
                 $binding_token = $this->create_preview_binding_token( $raw_json, $selected_page_keys, $state['selected_conflict_strategy'] );
                 if ( '' !== $binding_token ) {
                     $state['preview_binding_token'] = $binding_token;
-                    $state['request_notice'] = __( '已生成临时预览；本次预览页面选择已绑定到后续导入。', 'developer-starter' );
+                    $state['request_notice'] = __( '预览已生成，页面选择已保存。', 'developer-starter' );
                 }
                 return $state;
             }

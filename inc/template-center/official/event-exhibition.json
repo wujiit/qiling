@@ -6,7 +6,13 @@
   "page_template": "templates/template-event-exhibition.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -77,23 +83,32 @@
         "stats_items": [
           {
             "number": "3000+",
-            "label": "预计参会人次"
+            "label": "预计参会人次",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "80+",
-            "label": "演讲嘉宾"
+            "label": "演讲嘉宾",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "120+",
-            "label": "参展品牌"
+            "label": "参展品牌",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "20+",
-            "label": "媒体合作"
+            "label": "媒体合作",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #78350f 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -163,7 +178,7 @@
             "stage_tag": "现场"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -192,7 +207,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -207,7 +222,8 @@
         "contact_phone": "400-700-2026",
         "contact_hours": "09:00-20:00",
         "module_bg_image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f8fafc"
       }
     }
   ]

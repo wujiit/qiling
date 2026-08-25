@@ -13,9 +13,34 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php echo esc_html( sprintf( __( '功能模块：%d 个', 'developer-starter' ), (int) $available_module_count ) ); ?>
             </span>
         </div>
+        <div class="dsm-template-apply-row">
+            <input type="hidden" id="developer-starter-selected-page-template" name="developer_starter_selected_page_template" value="<?php echo esc_attr( (string) get_post_meta( $post->ID, '_wp_page_template', true ) ); ?>" />
+            <label>
+                <input type="checkbox" id="developer-starter-apply-selected-template-package" name="developer_starter_apply_selected_template_package" value="1" />
+                <span><?php esc_html_e( '保存时应用所选页面模板的默认装修', 'developer-starter' ); ?></span>
+            </label>
+            <p><?php esc_html_e( '仅在需要替换当前模块时勾选。原装修会先备份；不勾选时，切换页面模板只改变模板外壳并保留现有模块。', 'developer-starter' ); ?></p>
+        </div>
         <style>
             #developer_starter_modules .inside { padding: 0; margin: 0; }
             .dsm-wrap { background: #f0f0f1; }
+            .dsm-template-apply-row {
+                padding: 12px 16px;
+                border-bottom: 1px solid #dcdcde;
+                background: #fff8e5;
+            }
+            .dsm-template-apply-row label {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: #7a4b00;
+                font-weight: 600;
+            }
+            .dsm-template-apply-row p {
+                margin: 6px 0 0 26px;
+                color: #646970;
+                font-size: 12px;
+            }
             .dsm-toolbar { 
                 display: flex; 
                 flex-wrap: wrap; 
@@ -107,8 +132,41 @@ if ( ! defined( 'ABSPATH' ) ) {
             .dsm-item-header:hover { background: #f0f0f1; }
             .dsm-handle { margin-right: 12px; color: #787c82; cursor: move; font-size: 14px; }
             .dsm-title { flex: 1; font-weight: 600; font-size: 14px; }
-            .dsm-toggle { margin-right: 12px; color: #787c82; }
-            .dsm-save-template { margin-right: 12px; color: #2271b1; text-decoration: none; font-size: 16px; padding: 4px 8px; display: none; }
+            .dsm-hidden-badge {
+                margin-right: 12px;
+                padding: 3px 8px;
+                border-radius: 999px;
+                background: #f0f0f1;
+                color: #646970;
+                font-size: 11px;
+                font-weight: 700;
+            }
+            .dsm-item-actions {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                margin-left: 12px;
+                padding-left: 10px;
+                border-left: 1px solid #dcdcde;
+            }
+            .dsm-toggle-hidden {
+                display: inline-flex;
+                width: 30px;
+                height: 30px;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                color: #646970;
+                cursor: pointer;
+            }
+            .dsm-toggle-hidden:hover { color: #2271b1; }
+            .dsm-toggle-hidden .dashicons { width: 18px; height: 18px; font-size: 18px; }
+            .dsm-item.is-temporarily-hidden .dsm-item-header {
+                opacity: 0.78;
+                background: #f6f7f7;
+            }
+            .dsm-toggle { margin-left: 4px; color: #787c82; }
+            .dsm-save-template { margin-right: 0; color: #2271b1; text-decoration: none; font-size: 16px; padding: 4px 8px; display: none; }
             .dsm-item:hover .dsm-save-template { display: inline-block; }
             .dsm-save-template:hover { background: #eef; border-radius: 3px; }
             
@@ -532,6 +590,51 @@ if ( ! defined( 'ABSPATH' ) ) {
             var pendingAiPackageJson = '';
             var pendingAiPackageSuccessMessage = '';
             var lastAiApplySnapshot = null;
+            var initialPageTemplate = <?php echo wp_json_encode( (string) get_post_meta( $post->ID, '_wp_page_template', true ) ); ?> || 'default';
+            var appliedPackageTemplate = <?php echo wp_json_encode( (string) get_post_meta( $post->ID, '_qiling_template_center_template', true ) ); ?> || '';
+            var lastObservedPageTemplate = appliedPackageTemplate && appliedPackageTemplate !== initialPageTemplate
+                ? appliedPackageTemplate
+                : (initialPageTemplate || 'default');
+            var templateChangePromptedFor = '';
+
+            function normalizeObservedTemplate(template) {
+                template = String(template || '');
+                return template && template !== '' ? template : 'default';
+            }
+
+            function offerTemplatePresetReplacement(template) {
+                if (template === null || typeof template === 'undefined' || String(template) === '') {
+                    return;
+                }
+                template = normalizeObservedTemplate(template);
+                $('#developer-starter-selected-page-template').val(template);
+                if (template === lastObservedPageTemplate || template === templateChangePromptedFor) {
+                    return;
+                }
+                lastObservedPageTemplate = template;
+                templateChangePromptedFor = template;
+                var shouldReplace = window.confirm(<?php echo wp_json_encode( __( "检测到页面模板已切换。是否在保存时用新模板的默认装修替换当前模块？\n\n选择“确定”会先备份当前装修再替换；选择“取消”则只切换模板外壳并保留当前模块。", 'developer-starter' ) ); ?>);
+                $('#developer-starter-apply-selected-template-package').prop('checked', shouldReplace);
+            }
+
+            $('#page_template').on('change', function() {
+                offerTemplatePresetReplacement($(this).val());
+            });
+            if ($('#page_template').length) {
+                window.setTimeout(function() {
+                    offerTemplatePresetReplacement($('#page_template').val());
+                }, 0);
+            }
+
+            if (window.wp && wp.data && typeof wp.data.subscribe === 'function') {
+                wp.data.subscribe(function() {
+                    var editorStore = wp.data.select('core/editor');
+                    if (!editorStore || typeof editorStore.getEditedPostAttribute !== 'function') {
+                        return;
+                    }
+                    offerTemplatePresetReplacement(editorStore.getEditedPostAttribute('template'));
+                });
+            }
 
             function isBlockEditorPage() {
                 return !!(document.body && document.body.classList.contains('block-editor-page'));
@@ -1319,7 +1422,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 var postId = resolveCurrentPostId();
                 var payload = $('#developer-starter-modules-payload').val() || '';
 
-                if (!modulesUiLoaded || postId <= 0 || !payload) {
+                if ($('#developer-starter-apply-selected-template-package').prop('checked') || !modulesUiLoaded || postId <= 0 || !payload) {
                     return;
                 }
 
@@ -1359,6 +1462,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                     var saveSucceeded = typeof editorStore.didPostSaveRequestSucceed === 'function' && !!editorStore.didPostSaveRequestSucceed();
 
                     if (wasSavingPost && !isSavingPost && !isAutosaving && saveSucceeded) {
+                        if ($('#developer-starter-apply-selected-template-package').prop('checked')) {
+                            // 服务端已从官方 JSON 重建装修，不能再用当前界面的旧模块覆盖它。
+                            window.setTimeout(function() {
+                                window.location.reload();
+                            }, 1000);
+                            wasSavingPost = isSavingPost;
+                            return;
+                        }
                         renumberModuleInputs();
                         saveModulesEditorState();
                     }
@@ -1372,6 +1483,26 @@ if ( ! defined( 'ABSPATH' ) ) {
                 modulesUiRequested = false;
                 modulesUiRetryCount = 0;
                 loadModulesEditorUI();
+            });
+
+            $(document).on('click', '.dsm-toggle-hidden', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var $button = $(this);
+                var $item = $button.closest('.dsm-item');
+                var $status = $item.find('select[name*="[_ds_visibility][status]"]').first();
+                if (!$status.length) return;
+                var hidden = $status.val() === 'hidden';
+                $status.val(hidden ? '' : 'hidden').trigger('change');
+                var nextLabel = hidden ? $button.data('hidden-label') : $button.data('show-label');
+                $button.attr({ 'aria-pressed': hidden ? 'false' : 'true', 'aria-label': nextLabel, 'title': nextLabel });
+                $button.find('.dashicons').toggleClass('dashicons-hidden', hidden).toggleClass('dashicons-visibility', !hidden);
+                $item.toggleClass('is-temporarily-hidden', !hidden);
+                if (hidden) {
+                    $item.find('.dsm-hidden-badge').remove();
+                } else if (!$item.find('.dsm-hidden-badge').length) {
+                    $('<span class="dsm-hidden-badge"><?php echo esc_js( __( '已隐藏', 'developer-starter' ) ); ?></span>').insertBefore($button);
+                }
             });
 
             // Add module
@@ -1416,7 +1547,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             // Toggle module
             $(document).on('click', '.dsm-item-header', function(e){
-                if($(e.target).closest('.dsm-remove, .dsm-save-template').length) return;
+                if($(e.target).closest('.dsm-remove, .dsm-save-template, .dsm-toggle-hidden').length) return;
                 $(this).closest('.dsm-item').toggleClass('open');
             });
 

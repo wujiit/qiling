@@ -6,7 +6,13 @@
   "page_template": "templates/template-resource-search.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -73,13 +79,14 @@
         "hs_title_color": "#ffffff",
         "hs_subtitle_color": "rgba(255,255,255,0.8)",
         "hs_tags_bg": "rgba(255,255,255,0.15)",
-        "hs_tags_color": "#ffffff"
+        "hs_tags_color": "#ffffff",
+        "hs_overlay_color": "rgba(15, 23, 42, 0.72)"
       }
     },
     {
       "type": "service_cards",
       "data": {
-        "sc_bg_color": "",
+        "sc_bg_color": "#f8fafc",
         "sc_padding": "20",
         "sc_columns": "4",
         "sc_gap": "20px",
@@ -164,21 +171,32 @@
         "stats_items": [
           {
             "number": "1000+",
-            "label": "优质资源"
+            "label": "优质资源",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "50+",
-            "label": "资源分类"
+            "label": "资源分类",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "10000+",
-            "label": "下载次数"
+            "label": "下载次数",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24/7",
-            "label": "在线服务"
+            "label": "在线服务",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
-        ]
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #047857 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -212,7 +230,7 @@
         "cta_subtitle": "告诉我们您的需求，我们帮您找到或定制",
         "cta_button_text": "提交需求",
         "cta_button_url": "/contact/",
-        "cta_bg_type": "gradient"
+        "cta_bg_type": "color"
       }
     }
   ]

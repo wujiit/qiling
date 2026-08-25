@@ -543,7 +543,7 @@ $user_public_profile_id = function_exists( 'developer_starter_get_user_public_pr
                         
                         <div class="nav-divider"></div>
                         
-                        <a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>" class="account-nav-item logout">
+                        <a href="<?php echo esc_url( function_exists( 'developer_starter_get_front_logout_url' ) ? developer_starter_get_front_logout_url() : wp_logout_url( home_url() ) ); ?>" class="account-nav-item logout">
                             <span class="nav-icon"><?php echo developer_starter_account_icon( 'logout' ); ?></span>
                             <span class="nav-label"><?php esc_html_e( '退出登录', 'developer-starter' ); ?></span>
                         </a>

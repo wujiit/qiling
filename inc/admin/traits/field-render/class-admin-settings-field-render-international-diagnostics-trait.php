@@ -29,7 +29,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         echo '<button type="button" class="button button-secondary ds-i18n-snapshot-copy" data-ds-copy-target="' . esc_attr( $textarea_id ) . '">' . esc_html__( '复制摘要', 'developer-starter' ) . '</button>';
         echo '</div>';
         echo '<textarea id="' . esc_attr( $textarea_id ) . '" class="large-text code ds-i18n-snapshot-textarea" rows="18" readonly="readonly">' . esc_textarea( $snapshot ) . '</textarea>';
-        echo '<p class="description">' . esc_html__( '第 7 阶段仅提供后台只读快照，方便交付和排查；不会向前台输出任何新内容。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . esc_html__( '此处提供后台只读快照，便于核对配置和排查问题；不会向前台输出任何新内容。', 'developer-starter' ) . '</p>';
         echo '</div>';
         echo '</td></tr>';
     }
@@ -170,7 +170,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         }
         $lines[] = '';
         $lines[] = '五、边界';
-        $lines[] = '- 本阶段只生成后台只读摘要，不新增前台输出。';
+        $lines[] = '- 此功能只生成后台只读摘要，不新增前台输出。';
         $lines[] = '- 现有中文站、百度统计、阿里云验证码、备案、旧隐私提示、语言切换和既有 SEO 输出不受影响。';
 
         return implode( PHP_EOL, $lines );
@@ -626,7 +626,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $items[] = array(
             'status' => 'pass',
             'title'  => __( '现有功能隔离', 'developer-starter' ),
-            'detail' => __( '第 6 阶段仍然只读取和汇总国际化新增字段，不接管百度统计、阿里云验证码、备案、旧隐私提示、语言切换或既有 SEO 输出。', 'developer-starter' ),
+            'detail' => __( '国际化检查只读取和汇总相关配置，不会改动百度统计、阿里云验证码、备案、隐私提示、语言切换或现有 SEO 输出。', 'developer-starter' ),
             'badge'  => __( '已隔离', 'developer-starter' ),
         );
         $items[] = array(
@@ -826,7 +826,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
             );
             $raw = isset( $legacy_map[ $group_id ] ) ? $legacy_map[ $group_id ] : $default;
             $source = 'legacy';
-            $detail = __( '来自旧版“需要 Cookie 同意”配置，建议重新确认分类。', 'developer-starter' );
+            $detail = __( '此代码尚未明确 Cookie 分类，建议重新确认。', 'developer-starter' );
         } elseif ( '' === $raw ) {
             $raw = $default;
             $source = 'default';
@@ -1245,7 +1245,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $summary_cards = array(
             array( 'label' => __( '语言模式', 'developer-starter' ), 'value' => $mode_label ),
             array( 'label' => __( '默认语言', 'developer-starter' ), 'value' => $default_lang ),
-            array( 'label' => __( 'SEO Provider', 'developer-starter' ), 'value' => $provider_label ),
+            array( 'label' => __( 'SEO 数据来源', 'developer-starter' ), 'value' => $provider_label ),
             array( 'label' => __( 'Schema 币种', 'developer-starter' ), 'value' => $currency ),
             array( 'label' => __( '检查项', 'developer-starter' ), 'value' => sprintf( __( '%1$d 正常 / %2$d 提示 / %3$d 复核', 'developer-starter' ), $ok_count, $info_count, $warning_count ) ),
         );
@@ -1332,10 +1332,10 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         echo '<div class="ds-i18n-seo-panel__head">';
         echo '<div>';
         echo '<strong>' . esc_html__( '多语言 SEO 增强扫描', 'developer-starter' ) . '</strong>';
-        echo '<p>' . esc_html__( '基于启灵AI多语言 provider 聚合每个公开页面和每个语言的 SEO、OG、hreflang、x-default 与 sitemap 缺口。', 'developer-starter' ) . '</p>';
+        echo '<p>' . esc_html__( '通过启灵AI多语言汇总各公开页面及语言的 SEO、OG、hreflang、x-default 与 sitemap 缺失项。', 'developer-starter' ) . '</p>';
         echo '</div>';
         echo '<span class="ds-i18n-seo-score ' . esc_attr( $available && 0 === $issue_count ? 'is-success' : 'is-warning' ) . '">';
-        echo esc_html( $available ? sprintf( __( '%d 个问题', 'developer-starter' ), $issue_count ) : __( 'Provider 不可用', 'developer-starter' ) );
+        echo esc_html( $available ? sprintf( __( '%d 个问题', 'developer-starter' ), $issue_count ) : __( '扫描服务不可用', 'developer-starter' ) );
         echo '</span>';
         echo '</div>';
 
@@ -1346,7 +1346,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         }
 
         if ( ! $available ) {
-            echo '<p class="description">' . esc_html__( '未检测到启灵AI多语言全站扫描 wrapper。主题会保留基础检查，但增强扫描、批量生成和导出报告需要启用新版 xb-aifanyi provider。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '启灵AI多语言的全站扫描功能当前不可用。基础检查仍可使用；增强扫描、批量生成和报告导出需要启用并更新启灵AI多语言插件。', 'developer-starter' ) . '</p>';
             echo '</div></td></tr>';
             return;
         }
@@ -1474,7 +1474,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         check_admin_referer( 'developer_starter_export_i18n_seo_report' );
 
         if ( ! function_exists( 'xb_aifanyi_export_site_seo_diagnostics' ) ) {
-            wp_die( esc_html__( '启灵AI多语言 provider 不可用。', 'developer-starter' ) );
+            wp_die( esc_html__( '启灵AI多语言报告服务不可用。', 'developer-starter' ) );
         }
 
         $report = xb_aifanyi_export_site_seo_diagnostics( array(
@@ -1591,9 +1591,9 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
             'status' => $has_aifanyi_provider ? 'pass' : ( 'multilingual_content' === $mode ? 'warning' : 'info' ),
             'title'  => __( '启灵AI多语言协作状态', 'developer-starter' ),
             'detail' => $has_aifanyi_provider
-                ? __( '已检测到启灵AI多语言 provider，主题通过公开 wrapper 读取译文、URL、hreflang、canonical 和 sitemap 诊断；SEO 标签仍由主题 SEO_Manager 输出。', 'developer-starter' )
-                : __( '未检测到启灵AI多语言 provider，当前面板降级为主题自身语言配置检查。', 'developer-starter' ),
-            'badge'  => $has_aifanyi_provider ? __( '第一 provider', 'developer-starter' ) : __( '降级检查', 'developer-starter' ),
+                ? __( '已检测到启灵AI多语言，可读取译文、URL、hreflang、canonical 和 sitemap 状态；SEO 标签仍由主题统一输出。', 'developer-starter' )
+                : __( '未检测到启灵AI多语言，当前仅检查主题自身的语言配置。', 'developer-starter' ),
+            'badge'  => $has_aifanyi_provider ? __( '已连接', 'developer-starter' ) : __( '基础检查', 'developer-starter' ),
         );
 
         $missing_language_packs = 0;
@@ -1669,8 +1669,8 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
             'title'  => __( 'Sitemap 覆盖', 'developer-starter' ),
             'detail' => $has_aifanyi_provider
                 ? ( $sitemap_provider_registered
-                    ? sprintf( __( '启灵AI多语言 sitemap provider 已注册：%s。', 'developer-starter' ), $sitemap_provider_name )
-                    : __( '已检测到启灵AI多语言，但 sitemap provider 当前未注册或 WordPress 原生 sitemap 未启用。', 'developer-starter' ) )
+                    ? sprintf( __( '启灵AI多语言 sitemap 已接入：%s。', 'developer-starter' ), $sitemap_provider_name )
+                    : __( '已检测到启灵AI多语言，但 sitemap 功能当前不可用或 WordPress 原生 sitemap 未启用。', 'developer-starter' ) )
                 : __( '插件未启用时不读取插件 sitemap；当前只做主题配置级提示。', 'developer-starter' ),
             'badge'  => $has_aifanyi_provider ? ( $sitemap_provider_registered ? __( '已注册', 'developer-starter' ) : __( '待确认', 'developer-starter' ) ) : __( '降级', 'developer-starter' ),
         );
@@ -2114,7 +2114,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         echo '<div class="ds-schema-preview-panel__head">';
         echo '<div>';
         echo '<strong>' . esc_html__( 'Schema 结构化数据预览', 'developer-starter' ) . '</strong>';
-        echo '<p>' . esc_html__( '预览由 Industry_Schema_Engine 按当前已保存配置生成，前台仍由 SEO_Manager 输出。', 'developer-starter' ) . '</p>';
+        echo '<p>' . esc_html__( '预览根据当前已保存的 Schema 配置生成，前台由主题统一输出。', 'developer-starter' ) . '</p>';
         echo '</div>';
         echo '<span class="ds-schema-preview-score ' . esc_attr( $warning_count > 0 || ! $enabled ? 'is-warning' : 'is-success' ) . '">';
         echo esc_html( ! $enabled ? __( '引擎未启用', 'developer-starter' ) : ( $warning_count > 0 ? sprintf( __( '%d 项需补齐', 'developer-starter' ), $warning_count ) : __( '基础字段完整', 'developer-starter' ) ) );

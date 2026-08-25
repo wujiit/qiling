@@ -6,7 +6,13 @@
   "page_template": "templates/template-topic.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#4f46e5",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,

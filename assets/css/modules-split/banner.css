@@ -235,10 +235,67 @@
   border-radius: 12px;
   background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
   color: var(--qiling-color-9a3412);
+}.qiling-module-scope-banner /* ===== 设计表面组件 (design_surface_components) ===== */
+/* @qiling-design-surface-bridge
+ * 第三阶段：把常用模块的卡片、按钮、表单、标签接回全局设计变量。
+ * 这些规则放在模块样式末尾，保证旧模块的局部样式不再压过装修面板。
+ */
+
+[data-qds-card-mode="independent"] :is(
+  .module-contact.module-contact .contact-form,
+  .module-contact.module-contact .contact-right > .developer-form-wrap,
+  .module-product-showcase.module-product-showcase .ps-media-carousel,
+  .module-product-showcase.module-product-showcase .ps-description,
+  .module-products-manual.module-products-manual .pm-modal-box,
+  .module-products-manual.module-products-manual .pm-modal-sidebar,
+  .module-products-manual.module-products-manual .pm-mh-specs,
+  .module-products-manual.module-products-manual .pm-ms-thumb,
+  .module-media-list.module-media-list .qil-ml-card,
+  .module-accordion.module-accordion .accordion-style-default .accordion-item,
+  .module-accordion.module-accordion .accordion-style-bordered .accordion-item,
+  .module-tabs.module-tabs .tabs-content,
+  .module-testimonials.module-testimonials .testimonial-card,
+  .module-testimonials.module-testimonials .ql-testimonial-summary,
+  .module-team.module-team .team-card,
+  .module-branches.module-branches .branch-card,
+  .module-footer-suite.module-footer-suite .qfs-qr-card
+) {
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-banner [data-qds-card-mode="independent"] :is(
+.module-products-manual.module-products-manual .pm-card,
+.module-cases.module-cases .case-card,
+.module-work-library.module-work-library .qw-lib-card,
+.module-blog.module-blog .blog-post-item,
+.module-news.module-news .news-card,
+.module-featured-posts.module-featured-posts .fp-list-item,
+.module-featured-posts.module-featured-posts .fp-slider,
+.module-category-tabs.module-category-tabs .cat-tab-post-item
+) {
+  background: var(--qiling-component-post-card-bg);
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-post-card-shadow);
 }.qiling-module-scope-banner .ql-ih-media-wrapper.anim-float {
   animation:
     ql_ih_fadeLeft 1s ease-out 0.2s forwards,
     ql_ih_float 6s ease-in-out infinite 1.2s;
+}.qiling-module-scope-banner /* ===== 首屏数据项 (banner) ===== */
+.module-banner .banner-stats-bar.stats-layout-independent {
+  gap: var(--qiling-banner-stats-gap, var(--qiling-space-16));
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}.qiling-module-scope-banner .module-banner .banner-stats-bar.stats-layout-independent .stat-item {
+  background: var(--qiling-module-card-bg, rgba(var(--qiling-rgb-255-255-255), 0.14));
+  border: 1px solid var(--qiling-module-card-border, rgba(var(--qiling-rgb-255-255-255), 0.2));
+  border-radius: 12px;
+  padding: var(--qiling-space-16);
+  box-shadow: var(--qiling-module-card-shadow, 0 12px 30px rgba(var(--qiling-rgb-15-23-42), 0.12));
 }.qiling-module-scope-banner .banner-wave {
   position: absolute;
   bottom: 0;

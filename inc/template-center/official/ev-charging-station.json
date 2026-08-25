@@ -6,7 +6,13 @@
   "page_template": "templates/template-ev-charging-station.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#0284c7",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -68,12 +74,12 @@
             "icon": ""
           }
         ],
-        "bb_primary_btn_bg_color": "#22c55e",
-        "bb_primary_btn_text_color": "#052e16",
+        "bb_primary_btn_bg_color": "#059669",
+        "bb_primary_btn_text_color": "#ffffff",
         "bb_primary_btn_hover_bg_color": "#86efac",
         "bb_primary_btn_hover_text_color": "#052e16",
         "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#064e3b",
+        "bb_light_btn_text_color": "#0f172a",
         "bb_light_btn_hover_bg_color": "#dcfce7",
         "bb_light_btn_hover_text_color": "#052e16",
         "bb_media_type": "image",
@@ -94,25 +100,33 @@
         "stats_title": "用数据说明场站运营能力",
         "stats_subtitle": "把已投运点位、平均响应、平台接入和运维覆盖放在首屏后，方便场地方快速判断合作价值。",
         "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #064e3b 0%, #0f766e 100%)",
+        "stats_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 52%, #0284c7 100%)",
         "stats_title_color": "#ffffff",
         "stats_text_align": "center",
         "stats_items": [
           {
             "number": "300+",
-            "label": "合作充电点位"
+            "label": "合作充电点位",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "7x24",
-            "label": "运维响应"
+            "label": "运维响应",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "99.5%",
-            "label": "平台在线率"
+            "label": "平台在线率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "15天",
-            "label": "最快部署周期"
+            "label": "最快部署周期",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "module_padding_top": "84px",
@@ -165,7 +179,7 @@
         "process_subtitle": "把从咨询到上线运营的关键节点讲清楚，降低招商和签约沟通成本",
         "process_mode": "industrial",
         "module_bg_type": "color",
-        "module_bg_color": "#f0fdf4",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "process_items": [
@@ -227,7 +241,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -312,7 +326,7 @@
         "contact_address": "支持远程评估 / 可预约现场勘察",
         "contact_show_form": "1",
         "contact_form_id": "",
-        "module_bg_color": "#f0fdf4"
+        "module_bg_color": "#ffffff"
       }
     }
   ]

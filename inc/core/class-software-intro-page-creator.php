@@ -221,7 +221,7 @@ class Software_Intro_Page_Creator extends Page_Creator_Base {
                         ),
                         array(
                             'question' => __( '如何自定义页面模块？', 'developer-starter' ),
-                            'answer'   => __( '在后台编辑页面时，找到「页面模块配置」区域，点击「添加模块」选择需要的模块，然后填写内容即可。支持拖拽排序。', 'developer-starter' ),
+                            'answer'   => __( '选择需要展示的内容模块并填写内容即可，也可以调整模块顺序。', 'developer-starter' ),
                         ),
                         array(
                             'question' => __( '主题支持多少个功能模块？', 'developer-starter' ),

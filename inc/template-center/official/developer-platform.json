@@ -6,7 +6,13 @@
   "page_template": "templates/template-developer-platform.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#10b981",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #064e3b 50%, #0c4a6e 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "API、SDK、Webhook 和文档中心，帮助合作伙伴更快完成集成。",
             "btn_text": "查看文档",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_bg_color": "#059669",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -220,9 +226,14 @@
         "cta_subtitle": "从沙箱环境开始，把第一个接口跑通。",
         "cta_button_text": "创建开发者应用",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #090e17 0%, #064e3b 60%, #0c4a6e 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

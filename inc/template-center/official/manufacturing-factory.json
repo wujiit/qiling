@@ -6,7 +6,13 @@
   "page_template": "templates/template-manufacturing-factory.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#1e3a8a",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "让制造实力更容易被客户看见",
         "db_typing_mode": "loop",
         "db_typing_text": "精密加工与稳定交付\n工业设备与零部件定制\n从打样到批量生产的全流程服务",
-        "db_highlight_color": "#fbbf24",
-        "db_title_color": "#f8fafc",
+        "db_highlight_color": "#fcd34d",
+        "db_title_color": "#ffffff",
         "db_subtitle": "面向采购、代理商和项目客户，展示工厂实力、产品能力和交付保障。",
         "db_desc": "适合机械设备、五金加工、电子制造、工业材料和 OEM/ODM 工厂。",
         "db_text_color": "rgba(248,250,252,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #78350f 100%)"
       }
     },
     {
@@ -77,23 +84,32 @@
         "stats_items": [
           {
             "number": "12年",
-            "label": "行业制造经验"
+            "label": "行业制造经验",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "18条",
-            "label": "自动化产线"
+            "label": "自动化产线",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "98.6%",
-            "label": "一次质检通过率"
+            "label": "一次质检通过率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "36h",
-            "label": "快速报价响应"
+            "label": "快速报价响应",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #78350f 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {

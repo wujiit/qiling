@@ -1214,12 +1214,13 @@
             mode: mode,
             preset: mode === 'custom' ? String(settings.preset || settings.visual_skin || settings.visualSkin || '') : '',
             colors: {},
+            canvas: {},
             header: {},
             footer: {},
             buttons: {}
         };
 
-        ['colors', 'header', 'footer', 'buttons'].forEach(function(groupKey) {
+        ['colors', 'canvas', 'header', 'footer', 'buttons'].forEach(function(groupKey) {
             var group = settings[groupKey] && typeof settings[groupKey] === 'object' ? settings[groupKey] : {};
             Object.keys(group).forEach(function(fieldKey) {
                 if (group[fieldKey] === null || typeof group[fieldKey] === 'undefined') {
@@ -1549,6 +1550,7 @@
         ensurePageSettingsState();
         var visualStyle = normalizePageVisualStyleSettings(state.pageSettings.visualStyle || {});
         visualStyle.colors = {};
+        visualStyle.canvas = {};
         visualStyle.header = {};
         visualStyle.footer = {};
         visualStyle.buttons = {};
@@ -1975,6 +1977,8 @@
         if (!styleEl) {
             return;
         }
+        var settings = normalizePageVisualStyleSettings(ensurePageSettingsState().visualStyle || {});
+        document.body.classList.toggle('qiling-continuous-canvas', settings.mode === 'custom' && settings.canvas.mode === 'continuous');
         styleEl.textContent = buildPageVisualPreviewCss();
     }
 
@@ -2551,6 +2555,28 @@
         }
     }
 
+    function scrollSelectedWrapperIntoView() {
+        if (state.selectedScope !== 'module' || state.selectedIndex < 0) {
+            return;
+        }
+
+        var wrapper = state.domWrappers[state.selectedIndex];
+        if (!wrapper || typeof wrapper.scrollIntoView !== 'function') {
+            return;
+        }
+
+        window.requestAnimationFrame(function() {
+            if (!wrapper || !wrapper.isConnected) {
+                return;
+            }
+            wrapper.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest'
+            });
+        });
+    }
+
     function createPlaceholderWrapper(moduleId, moduleName) {
         if (!state.wrapperParent || !state.endMarker) {
             return null;
@@ -2890,11 +2916,17 @@
         for (var i = 0; i < state.modules.length; i++) {
             var item = state.modules[i];
             var activeClass = state.selectedScope === 'module' && i === state.selectedIndex ? ' is-active' : '';
-            html += '<li class="qfb-page-item' + activeClass + '" data-index="' + i + '" data-scope="module" data-sortable="1">';
+            var visibility = item && item.data && item.data._ds_visibility && typeof item.data._ds_visibility === 'object' ? item.data._ds_visibility : {};
+            var isHidden = String(visibility.status || '') === 'hidden';
+            html += '<li class="qfb-page-item' + activeClass + (isHidden ? ' is-temporarily-hidden' : '') + '" data-index="' + i + '" data-scope="module" data-sortable="1">';
             html += '<span class="qfb-drag" title="' + escapeHtml(getText('dragSort', '拖拽排序')) + '">⋮⋮</span>';
             html += '<span class="qfb-page-title">' + escapeHtml(getModuleName(item.type)) + '</span>';
+            if (isHidden) {
+                html += '<span class="qfb-hidden-badge">' + escapeHtml(getText('hiddenBadge', '已隐藏')) + '</span>';
+            }
             html += '<div class="qfb-page-actions">';
             html += '<button type="button" class="button-link qfb-page-select">' + escapeHtml(getText('settingsAction', '设置')) + '</button>';
+            html += '<button type="button" class="button-link qfb-module-visibility-toggle" aria-pressed="' + (isHidden ? 'true' : 'false') + '">' + escapeHtml(isHidden ? getText('showOption', '恢复') : getText('hideOption', '隐藏')) + '</button>';
             html += '<button type="button" class="button-link qfb-page-duplicate">' + escapeHtml(getText('duplicateAction', '复制')) + '</button>';
             html += '<button type="button" class="button-link-delete qfb-page-delete">' + escapeHtml(getText('deleteAction', '删除')) + '</button>';
             html += '</div>';
@@ -3171,6 +3203,9 @@
                 items = Array.isArray(data.hs_bg_items) ? data.hs_bg_items : [];
                 return items.length > 1;
             case 'double_column_carousel':
+                if (String(data.dcc_slide_source || 'manual') !== 'manual') {
+                    return true;
+                }
                 slides = Array.isArray(data.dcc_slides) ? data.dcc_slides : [];
                 return slides.length > 1;
             case 'product_showcase':
@@ -4622,7 +4657,14 @@
     function renderAdvancedVisibilityField(value) {
         var rootValue = value && typeof value === 'object' ? value : {};
         var html = '';
-        html += '<div class="qfb-advanced-inline-note">' + escapeHtml(getText('advancedVisibilityTip', '按设备控制当前模块显示状态。')) + '</div>';
+        html += '<div class="qfb-advanced-inline-note">' + escapeHtml(getText('advancedVisibilityTip', '暂时隐藏会保留模块的全部内容和样式设置，可随时恢复。')) + '</div>';
+        html += '<div class="qfb-advanced-section"><div class="qfb-advanced-grid">';
+        html += renderAdvancedSelectControl('_ds_visibility', 'status', getText('moduleStatusLabel', '模块状态'), getAdvancedInputValue(rootValue, 'status', ''), {
+            '': getText('inheritVisibleOption', '默认显示'),
+            'show': getText('showOption', '显示'),
+            'hidden': getText('temporarilyHiddenOption', '暂时隐藏（保留全部设置）')
+        });
+        html += '</div></div>';
         html += '<div class="qfb-advanced-section"><div class="qfb-advanced-grid">';
         html += renderAdvancedSelectControl('_ds_visibility', 'desktop', getText('desktopLabel', '桌面端'), getAdvancedInputValue(rootValue, 'desktop', ''), {
             '': getText('inheritVisibleOption', '默认显示'),
@@ -4851,8 +4893,16 @@
             { path: 'buttons.text', label: getText('moduleVisualAdvancedButtonText', '按钮文字'), placeholder: '#ffffff', description: getText('moduleVisualAdvancedButtonTextDesc', '控制主按钮正常状态的文字颜色。') },
             { path: 'buttons.hover_background', label: getText('moduleVisualAdvancedButtonHover', '按钮悬停背景'), placeholder: 'var(--qiling-button-hover-bg)', description: getText('moduleVisualAdvancedButtonHoverDesc', '控制鼠标移到主按钮上时的背景。') },
             { path: 'buttons.hover_text', label: getText('moduleVisualAdvancedButtonHoverText', '按钮悬停文字'), placeholder: '#ffffff', description: getText('moduleVisualAdvancedButtonHoverTextDesc', '控制鼠标移到主按钮上时的文字颜色。') },
+            { path: 'cards.mode', label: getText('moduleVisualCardMode', '卡片布局模式'), type: 'select', options: { native: getText('moduleVisualCardModeNative', '跟随模块原生样式'), connected: getText('moduleVisualCardModeConnected', '连体内容'), independent: getText('moduleVisualCardModeIndependent', '独立卡片') }, description: getText('moduleVisualCardModeDesc', '默认保留模块原来的设计；选择独立卡片后，才启用卡片分离和视觉设置。') },
+            { path: 'cards.title', label: getText('moduleVisualCardTitle', '卡片标题颜色'), placeholder: 'var(--qiling-page-text)' },
+            { path: 'cards.text', label: getText('moduleVisualCardText', '卡片正文颜色'), placeholder: 'var(--color-text-muted)' },
             { path: 'cards.background', label: getText('moduleVisualAdvancedCard', '卡片背景'), placeholder: '#ffffff', description: getText('moduleVisualAdvancedCardDesc', '控制当前模块内卡片的背景。') },
-            { path: 'cards.border', label: getText('moduleVisualAdvancedCardBorder', '卡片边框'), placeholder: 'rgba(15,23,42,.1)', description: getText('moduleVisualAdvancedCardBorderDesc', '控制当前模块内卡片的边框。') }
+            { path: 'cards.border', label: getText('moduleVisualAdvancedCardBorder', '卡片边框'), placeholder: 'rgba(15,23,42,.1)', description: getText('moduleVisualAdvancedCardBorderDesc', '控制当前模块内卡片的边框。') },
+            { path: 'cards.shadow', label: getText('moduleVisualCardShadow', '卡片阴影'), placeholder: '0 18px 48px rgba(15,23,42,.12)' },
+            { path: 'cards.radius', label: getText('moduleVisualCardRadius', '卡片圆角'), placeholder: '12px', description: getText('moduleVisualCardRadiusDesc', '填写 0px 为直角，填写 12px、20px 等为圆角。') },
+            { path: 'cards.padding', label: getText('moduleVisualCardPadding', '卡片内边距'), placeholder: '24px' },
+            { path: 'cards.gap', label: getText('moduleVisualCardGap', '卡片间距'), placeholder: '24px' },
+            { path: 'cards.image_radius', label: getText('moduleVisualCardImageRadius', '卡片图片圆角'), placeholder: '10px' }
         ].filter(function(item) {
             return allowedPaths[item.path] === true;
         });
@@ -4895,7 +4945,14 @@
         html += '<summary>' + escapeHtml(getText('moduleVisualAdvancedTitleText', '高级设置')) + '</summary>';
         html += '<div class="qfb-advanced-grid">';
         advancedFields.forEach(function(item) {
-            html += renderAdvancedTextControl('_ds_visual', item.path, item.label, getAdvancedInputValue(rootValue, item.path, ''), item.placeholder, item.description);
+            if (item.type === 'select') {
+                html += renderAdvancedSelectControl('_ds_visual', item.path, item.label, getAdvancedInputValue(rootValue, item.path, 'native'), item.options || {});
+                if (item.description) {
+                    html += '<p class="qfb-field-desc">' + escapeHtml(item.description) + '</p>';
+                }
+            } else {
+                html += renderAdvancedTextControl('_ds_visual', item.path, item.label, getAdvancedInputValue(rootValue, item.path, ''), item.placeholder, item.description);
+            }
         });
         html += '</div>';
         html += '</details>';
@@ -5080,18 +5137,27 @@
                     : '';
                 var presetValue = getPageVisualFieldEffectivePresetValue(field, settings);
                 var placeholder = presetValue || field.placeholder || '';
-                var inputType = field.type === 'opacity' ? 'number' : 'text';
+                var inputType = field.type === 'opacity' ? 'number' : (field.type === 'select' ? 'select' : 'text');
                 var path = 'visualStyle.' + groupKey + '.' + fieldKey;
 
                 html += '<div class="qfb-field qfb-page-visual-field">';
                 html += '<label class="qfb-label">' + escapeHtml(field.label || fieldKey) + '</label>';
-                html += '<input class="qfb-input qfb-page-setting-input" type="' + escapeHtml(inputType) + '" data-page-setting-path="' + escapeHtml(path) + '" data-page-setting-type="' + escapeHtml(inputType) + '" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(placeholder) + '"';
-                if (field.type === 'opacity') {
-                    html += ' min="0" max="1" step="0.01"';
+                if (field.type === 'select') {
+                    html += '<select class="qfb-input qfb-select qfb-page-setting-input" data-page-setting-path="' + escapeHtml(path) + '" data-page-setting-type="select">';
+                    html += '<option value="">' + escapeHtml(getText('pageSettingInherited', '跟随默认')) + '</option>';
+                    Object.keys(field.options || {}).forEach(function(optionValue) {
+                        html += '<option value="' + escapeHtml(optionValue) + '"' + (String(value || '') === optionValue ? ' selected' : '') + '>' + escapeHtml(field.options[optionValue]) + '</option>';
+                    });
+                    html += '</select>';
+                } else {
+                    html += '<input class="qfb-input qfb-page-setting-input" type="' + escapeHtml(inputType) + '" data-page-setting-path="' + escapeHtml(path) + '" data-page-setting-type="' + escapeHtml(inputType) + '" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(placeholder) + '"';
+                    if (field.type === 'opacity') {
+                        html += ' min="0" max="1" step="0.01"';
+                    }
+                    html += ' />';
                 }
-                html += ' />';
                 html += renderPageVisualPresetValue(presetValue, field.type || inputType);
-                if (field.type !== 'opacity') {
+                if (field.type !== 'opacity' && field.type !== 'select') {
                     html += renderDesignTokenPicker(path, field.type || inputType, 'page');
                 }
                 html += '</div>';
@@ -8292,10 +8358,24 @@
                     duplicateModule(index);
                     return;
                 }
+                if (event.target.closest('.qfb-module-visibility-toggle')) {
+                    var selectedModule = state.modules[index];
+                    selectedModule.data = selectedModule.data && typeof selectedModule.data === 'object' ? selectedModule.data : {};
+                    selectedModule.data._ds_visibility = selectedModule.data._ds_visibility && typeof selectedModule.data._ds_visibility === 'object' ? selectedModule.data._ds_visibility : {};
+                    var currentlyHidden = String(selectedModule.data._ds_visibility.status || '') === 'hidden';
+                    selectedModule.data._ds_visibility.status = currentlyHidden ? '' : 'hidden';
+                    markDirty();
+                    renderPageList();
+                    queueModulePreviewRender(index, false);
+                    renderSettings();
+                    return;
+                }
                 state.selectedScope = 'module';
                 state.selectedIndex = index;
                 renderPageList();
                 renderSettings();
+                highlightSelectedWrapper();
+                scrollSelectedWrapperIntoView();
             });
         }
 

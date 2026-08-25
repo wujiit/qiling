@@ -88,6 +88,9 @@ class Category_Tabs_Ajax {
         }
 
         if ( $query->have_posts() ) {
+            if ( function_exists( 'update_post_thumbnail_cache' ) ) {
+                update_post_thumbnail_cache( $query );
+            }
             ob_start();
             
             while ( $query->have_posts() ) {
@@ -153,7 +156,14 @@ class Category_Tabs_Ajax {
         $show_author = $this->get_config_string( $config, 'show_author', 'no' );
         $show_views = $this->get_config_string( $config, 'show_views', 'yes' );
         $show_category_badge = $this->get_config_string( $config, 'show_category_badge', 'no' );
+        $show_title = $this->get_config_string( $config, 'show_title', 'yes' );
+        $show_image_dimensions = $this->get_config_string( $config, 'show_image_dimensions', 'no' );
+        $show_image_format = $this->get_config_string( $config, 'show_image_format', 'no' );
+        $show_resource_badges = $this->get_config_string( $config, 'show_resource_badges', 'no' );
+        $show_resource_price = $this->get_config_string( $config, 'show_resource_price', 'no' );
+        $show_download_button = $this->get_config_string( $config, 'show_download_button', 'no' );
         $image_aspect_ratio = $this->get_config_string( $config, 'image_aspect_ratio', '16:9' );
+        $card_style = $this->get_config_string( $config, 'card_style', 'default' );
 
         return array(
             'show_date' => in_array( $show_date, $yes_no, true )
@@ -168,6 +178,17 @@ class Category_Tabs_Ajax {
             'show_category_badge' => in_array( $show_category_badge, $yes_no, true )
                 ? $show_category_badge
                 : 'no',
+            'card_style' => in_array( $card_style, array( 'default', 'wallpaper' ), true ) ? $card_style : 'default',
+            'show_title' => in_array( $show_title, $yes_no, true ) ? $show_title : 'yes',
+            'show_image_dimensions' => in_array( $show_image_dimensions, $yes_no, true ) ? $show_image_dimensions : 'no',
+            'show_image_format' => in_array( $show_image_format, $yes_no, true ) ? $show_image_format : 'no',
+            'show_resource_badges' => in_array( $show_resource_badges, $yes_no, true ) ? $show_resource_badges : 'no',
+            'show_resource_price' => in_array( $show_resource_price, $yes_no, true ) ? $show_resource_price : 'no',
+            'show_download_button' => in_array( $show_download_button, $yes_no, true ) ? $show_download_button : 'no',
+            'download_button_text' => $this->truncate_config_text(
+                $this->get_config_string( $config, 'download_button_text', __( '获取图片', 'developer-starter' ) ),
+                40
+            ),
             'image_aspect_ratio' => in_array( $image_aspect_ratio, $aspect_ratios, true )
                 ? $image_aspect_ratio
                 : '16:9',
@@ -200,6 +221,15 @@ class Category_Tabs_Ajax {
         }
 
         return sanitize_text_field( (string) $config[ $key ] );
+    }
+
+    /**
+     * 限制公开接口文案长度，同时避免截断多字节字符。
+     */
+    private function truncate_config_text( $value, $length ) {
+        $value = (string) $value;
+        $length = max( 1, absint( $length ) );
+        return function_exists( 'mb_substr' ) ? mb_substr( $value, 0, $length, 'UTF-8' ) : substr( $value, 0, $length );
     }
 
     /**
@@ -264,6 +294,16 @@ class Category_Tabs_Ajax {
         $show_author = isset($config['show_author']) && $config['show_author'] === 'yes';
         $show_views = isset($config['show_views']) && $config['show_views'] === 'yes';
         $show_category_badge = isset($config['show_category_badge']) && $config['show_category_badge'] === 'yes';
+        $show_title = ! isset( $config['show_title'] ) || $config['show_title'] === 'yes';
+        $show_image_dimensions = isset( $config['show_image_dimensions'] ) && $config['show_image_dimensions'] === 'yes';
+        $show_image_format = isset( $config['show_image_format'] ) && $config['show_image_format'] === 'yes';
+        $show_resource_badges = isset( $config['show_resource_badges'] ) && $config['show_resource_badges'] === 'yes';
+        $show_resource_price = isset( $config['show_resource_price'] ) && $config['show_resource_price'] === 'yes';
+        $show_download_button = isset( $config['show_download_button'] ) && $config['show_download_button'] === 'yes';
+        $download_button_text = isset( $config['download_button_text'] ) && '' !== trim( (string) $config['download_button_text'] )
+            ? (string) $config['download_button_text']
+            : __( '获取图片', 'developer-starter' );
+        $card_style = isset( $config['card_style'] ) && 'wallpaper' === $config['card_style'] ? 'wallpaper' : 'default';
         $aspect_ratio = isset($config['image_aspect_ratio']) ? $config['image_aspect_ratio'] : '16:9';
         $custom_height = isset($config['image_height']) ? $config['image_height'] : '200px';
 
@@ -302,6 +342,36 @@ class Category_Tabs_Ajax {
         if ( $has_video_cover && ! empty( $video_data['poster'] ) ) {
             $thumbnail_url = $video_data['poster'];
         }
+        $thumbnail_id = get_post_thumbnail_id( $post_id );
+        $image_meta = $thumbnail_id ? wp_get_attachment_metadata( $thumbnail_id ) : array();
+        $image_width = is_array( $image_meta ) && ! empty( $image_meta['width'] ) ? absint( $image_meta['width'] ) : 0;
+        $image_height = is_array( $image_meta ) && ! empty( $image_meta['height'] ) ? absint( $image_meta['height'] ) : 0;
+        $image_format = '';
+        if ( $thumbnail_id ) {
+            $mime_type = (string) get_post_mime_type( $thumbnail_id );
+            if ( 0 === strpos( $mime_type, 'image/' ) ) {
+                $image_format = strtoupper( substr( $mime_type, 6 ) );
+                if ( 'JPEG' === $image_format ) {
+                    $image_format = 'JPG';
+                }
+            }
+        }
+
+        $resource = array();
+        if ( ( $show_resource_badges || $show_resource_price ) && function_exists( 'developer_starter_get_qilingshop_resource_snapshot' ) ) {
+            $resource = developer_starter_get_qilingshop_resource_snapshot( $post_id );
+        }
+        $has_resource = ! empty( $resource['has_resource'] );
+        $resource_price_text = '';
+        if ( $show_resource_price && $has_resource ) {
+            if ( ! empty( $resource['is_free'] ) ) {
+                $resource_price_text = __( '免费', 'developer-starter' );
+            } elseif ( ! empty( $resource['has_price'] ) && isset( $resource['points_price'] ) ) {
+                $resource_price_text = sprintf( __( '%s 积分', 'developer-starter' ), number_format_i18n( (float) $resource['points_price'], 0 ) );
+            } elseif ( ! empty( $resource['is_vip'] ) ) {
+                $resource_price_text = __( 'VIP权益', 'developer-starter' );
+            }
+        }
         $video_preview_src = ( $has_video_cover && ! empty( $video_data['preview_src'] ) ) ? $video_data['preview_src'] : ( $video_data['url'] ?? '' );
         $video_badges = function_exists( 'developer_starter_get_post_cover_badges' )
             ? developer_starter_get_post_cover_badges(
@@ -322,16 +392,19 @@ class Category_Tabs_Ajax {
                 )
             )
             : array();
-        $category_badges = function_exists( 'developer_starter_get_post_cover_badges' )
+        $category_badges = ( $show_category_badge || $show_resource_badges ) && function_exists( 'developer_starter_get_post_cover_badges' )
             ? developer_starter_get_post_cover_badges(
                 $post_id,
                 array(
                     'context'                => 'category_tabs',
                     'ignore_max_count'       => true,
-                    'include_types'          => array( 'category' ),
+                    'include_types'          => array_merge(
+                        $show_category_badge ? array( 'category' ) : array(),
+                        $show_resource_badges ? array( 'free', 'vip' ) : array()
+                    ),
                     'include_app_badge'      => false,
                     'include_album_badge'    => false,
-                    'include_resource_badges' => false,
+                    'include_resource_badges' => $show_resource_badges,
                     'include_category_badge' => $show_category_badge,
                     'category_badge_class'   => 'post-cat-badge',
                 )
@@ -344,7 +417,7 @@ class Category_Tabs_Ajax {
         // }
 
         ?>
-        <article class="cat-tab-post-item <?php echo 'ratio-' . esc_attr( str_replace( ':', '-', $aspect_ratio ) ); ?>">
+        <article class="cat-tab-post-item card-style-<?php echo esc_attr( $card_style ); ?> <?php echo 'ratio-' . esc_attr( str_replace( ':', '-', $aspect_ratio ) ); ?>">
             <div class="post-media<?php echo $has_video_cover ? ' has-video-cover' : ''; ?>">
                 <?php if ( $has_video_cover ) : ?>
                     <a href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail-link video-cover-link" <?php echo $aspect_ratio === 'custom' ? 'style="height:' . esc_attr($custom_height) . '"' : ''; ?>>
@@ -376,15 +449,35 @@ class Category_Tabs_Ajax {
             </div>
 
             <div class="post-body">
-                <h3 class="post-title">
-                    <a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
-                </h3>
+                <?php if ( $show_title ) : ?>
+                    <h3 class="post-title">
+                        <a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
+                    </h3>
+                <?php endif; ?>
+
+                <?php if ( ( $show_image_dimensions && $image_width && $image_height ) || ( $show_image_format && $image_format ) || '' !== $resource_price_text ) : ?>
+                    <div class="post-image-facts">
+                        <?php if ( $show_image_dimensions && $image_width && $image_height ) : ?>
+                            <span><?php echo esc_html( $image_width . ' × ' . $image_height ); ?></span>
+                        <?php endif; ?>
+                        <?php if ( $show_image_format && $image_format ) : ?>
+                            <span><?php echo esc_html( $image_format ); ?></span>
+                        <?php endif; ?>
+                        <?php if ( '' !== $resource_price_text ) : ?>
+                            <span class="resource-price"><?php echo esc_html( $resource_price_text ); ?></span>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
                 
                 <div class="post-meta">
                     <?php if ( $show_date ) : ?>
                         <span class="meta-item meta-date">
                            <?php echo get_the_date(); ?>
                         </span>
+                    <?php endif; ?>
+
+                    <?php if ( $show_author ) : ?>
+                        <span class="meta-item meta-author"><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></span>
                     <?php endif; ?>
                     
                     <?php if ( $show_views && function_exists('developer_starter_get_post_views') ) : ?>
@@ -394,6 +487,13 @@ class Category_Tabs_Ajax {
                         </span>
                     <?php endif; ?>
                 </div>
+
+                <?php if ( $show_download_button ) : ?>
+                    <a class="cat-tab-resource-action" href="<?php echo esc_url( get_permalink( $post_id ) ); ?>">
+                        <span><?php echo esc_html( $download_button_text ); ?></span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+                    </a>
+                <?php endif; ?>
             </div>
         </article>
         <?php

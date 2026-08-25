@@ -6,7 +6,13 @@
   "page_template": "templates/template-finance-consulting.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "finance_company"
+    "preset": "finance_company",
+    "colors": {
+      "primary": "#047857",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "让企业决策更稳妥",
         "db_typing_mode": "loop",
         "db_typing_text": "财税筹划与合规顾问\n企业金融服务与风险评估\n从咨询到执行的长期陪伴",
-        "db_highlight_color": "#bbf7d0",
-        "db_title_color": "#f8fafc",
+        "db_highlight_color": "#fcd34d",
+        "db_title_color": "#ffffff",
         "db_subtitle": "面向成长型企业、门店品牌和高净值客户，提供清晰、可信、可执行的专业服务。",
         "db_desc": "适合财税、金融、保险、企业咨询和合规服务团队。",
         "db_text_color": "rgba(248,250,252,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #064e3b 50%, #78350f 100%)"
       }
     },
     {
@@ -113,23 +120,32 @@
         "stats_items": [
           {
             "number": "800+",
-            "label": "服务企业客户"
+            "label": "服务企业客户",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "15年",
-            "label": "团队专业经验"
+            "label": "团队专业经验",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "2h",
-            "label": "顾问响应时效"
+            "label": "顾问响应时效",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "92%",
-            "label": "年度续约率"
+            "label": "年度续约率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #064e3b 0%, #047857 50%, #78350f 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -227,7 +243,7 @@
         "contact_address": "支持线上会议 / 可预约线下沟通",
         "contact_show_form": "1",
         "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f8fafc"
       }
     }
   ]

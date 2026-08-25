@@ -63,7 +63,8 @@ if ( $phone && $show_phone ) :
 
 <?php
 $header_login_enable = developer_starter_get_option( 'header_login_enable', '' );
-if ( $header_login_enable ) :
+$header_account_enable = developer_starter_get_option( 'header_account_enable', '1' );
+if ( $header_login_enable || ( $header_account_enable && is_user_logged_in() ) ) :
     $login_text = developer_starter_get_option( 'header_login_text', '' );
     $login_text = ! empty( $login_text ) ? $login_text : __( '登录', 'developer-starter' );
     $is_logged_in = is_user_logged_in();
@@ -122,16 +123,19 @@ if ( $header_login_enable ) :
         || wp_script_is( 'developer-starter-header-auth', 'done' );
     ?>
     <div class="header-auth" id="header-auth-wrapper">
-        <div class="header-login" id="header-login-area" style="<?php echo $is_logged_in ? 'display:none;' : ''; ?>">
-            <button type="button" class="header-login-btn" id="header-login-toggle" title="<?php echo esc_attr( $login_text ); ?>">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                </svg>
-                <span><?php echo esc_html( $login_text ); ?></span>
-            </button>
-        </div>
-        <div class="header-user-menu" id="header-user-area" style="<?php echo $is_logged_in ? '' : 'display:none;'; ?>">
+        <?php if ( $header_login_enable ) : ?>
+            <div class="header-login" id="header-login-area" style="<?php echo $is_logged_in ? 'display:none;' : ''; ?>">
+                <button type="button" class="header-login-btn" id="header-login-toggle" title="<?php echo esc_attr( $login_text ); ?>">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <span><?php echo esc_html( $login_text ); ?></span>
+                </button>
+            </div>
+        <?php endif; ?>
+        <?php if ( $header_account_enable ) : ?>
+            <div class="header-user-menu" id="header-user-area" style="<?php echo $is_logged_in ? '' : 'display:none;'; ?>">
             <a href="<?php echo esc_url( $account_url ); ?>" class="header-user-btn" id="header-user-toggle" title="<?php esc_attr_e( '个人中心', 'developer-starter' ); ?>">
                 <img id="header-user-avatar" src="<?php echo esc_url( get_avatar_url( $current_user->ID, array( 'size' => 32 ) ) ); ?>" alt="<?php echo esc_attr( $current_user->display_name ); ?>" width="32" height="32" loading="lazy" decoding="async" />
                 <?php if ( $unread_notice_count > 0 ) : ?>
@@ -161,10 +165,11 @@ if ( $header_login_enable ) :
                 <?php do_action( 'qiling_user_dropdown_items' ); ?>
 
                 <div class="dropdown-divider"></div>
-                <a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>" class="logout-link" id="dropdown-logout-link">
+                <a href="<?php echo esc_url( function_exists( 'developer_starter_get_front_logout_url' ) ? developer_starter_get_front_logout_url() : wp_logout_url( home_url() ) ); ?>" class="logout-link" id="dropdown-logout-link">
                     <?php esc_html_e( '退出登录', 'developer-starter' ); ?>
                 </a>
             </div>
+        <?php endif; ?>
         </div>
     </div>
     <?php if ( ! $header_auth_script_enqueued ) : ?>
@@ -174,7 +179,7 @@ if ( $header_login_enable ) :
             if (!authWrapper) return;
             var loginArea = document.getElementById('header-login-area');
             var userArea = document.getElementById('header-user-area');
-            if (!loginArea || !userArea) return;
+            if (!loginArea && !userArea) return;
             if (!window.__dsHeaderAuthInitialized && !window.__dsHeaderAuthLoading) {
                 var existing = document.querySelector('script[src*="/js/header-auth.js"],script[data-ds-header-auth-inline="1"]');
                 if (!existing) {

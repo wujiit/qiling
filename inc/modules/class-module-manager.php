@@ -1030,6 +1030,19 @@ class Module_Manager {
                 continue;
             }
 
+            $module_is_hidden = class_exists( '\Developer_Starter\Core\Module_Advanced_Style_Service' )
+                && \Developer_Starter\Core\Module_Advanced_Style_Service::get_instance()->module_is_hidden( $data );
+            if ( $module_is_hidden && ! $builder_mode ) {
+                continue;
+            }
+            if ( $module_is_hidden && $builder_mode ) {
+                echo '<div class="module-wrapper qiling-builder-module qfb-hidden-module-placeholder" data-builder-index="' . esc_attr( (string) $builder_index ) . '" data-module-id="' . esc_attr( $module_id ) . '">';
+                echo '<div class="qfb-hidden-module-placeholder__inner"><strong>' . esc_html( $this->get_module( $module_id ) ? $this->get_module( $module_id )->get_name() : $module_id ) . '</strong><span>' . esc_html__( '当前模块已暂时隐藏，点击可编辑并恢复显示。', 'developer-starter' ) . '</span></div>';
+                echo '</div>';
+                $builder_index++;
+                continue;
+            }
+
             // 获取间距设置（非首屏模块）
             $margin_top = '';
             $margin_bottom = '';

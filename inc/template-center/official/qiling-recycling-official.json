@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-recycling-official.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#0284c7",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 50%, #0284c7 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -51,7 +57,7 @@
             "btn_text": "立即估价预约",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#047857"
+            "btn_text_color": "#059669"
           }
         ],
         "show_stats_bar": "1",
@@ -151,7 +157,7 @@
             "stage_tag": "结算"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#f0fdf4"
       }
     },
     {
@@ -259,7 +265,7 @@
       "type": "faq",
       "data": {
         "faq_title": "回收服务常见问题",
-        "module_bg_color": "#ecfdf5",
+        "module_bg_color": "#f0fdf4",
         "faq_items": [
           {
             "question": "在线估价就是最终回收价吗？",
@@ -288,7 +294,8 @@
         "contact_phone": "400-620-2026",
         "contact_hours": "09:00-20:00",
         "module_bg_image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#ffffff"
       }
     }
   ]

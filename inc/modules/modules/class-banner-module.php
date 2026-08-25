@@ -8,6 +8,7 @@
 namespace Developer_Starter\Modules\Modules;
 
 use Developer_Starter\Modules\Module_Base;
+use Developer_Starter\Modules\Module_Manager;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -105,6 +106,25 @@ class Banner_Module extends Module_Base {
                 'dependency' => array( 'show_stats_bar', '==', '1' ),
             ),
             array(
+                'id' => 'stats_items_layout',
+                'label' => __( '数据项布局', 'developer-starter' ),
+                'type' => 'select',
+                'options' => array(
+                    'connected' => __( '连体数据条', 'developer-starter' ),
+                    'independent' => __( '独立数据卡片', 'developer-starter' ),
+                ),
+                'default' => 'connected',
+                'dependency' => array( 'show_stats_bar', '==', '1' ),
+            ),
+            array(
+                'id' => 'stats_items_gap',
+                'label' => __( '独立卡片间距', 'developer-starter' ),
+                'type' => 'text',
+                'default' => '16px',
+                'desc' => __( '如 12px、16px、24px，仅独立数据卡片生效。', 'developer-starter' ),
+                'dependency' => array( 'stats_items_layout', '==', 'independent' ),
+            ),
+            array(
                 'id' => 'stats_data',
                 'label' => __( '数据项配置', 'developer-starter' ),
                 'type' => 'repeater',
@@ -115,6 +135,11 @@ class Banner_Module extends Module_Base {
                     array( 'id' => 'label', 'label' => __( '描述文本', 'developer-starter' ), 'type' => 'text', 'default' => __( '活跃用户', 'developer-starter' ) ),
                     array( 'id' => 'color', 'label' => __( '图标/数值颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
                     array( 'id' => 'label_color', 'label' => __( '描述文本颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'card_bg', 'label' => __( '单卡片背景', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'card_border', 'label' => __( '单卡片边框', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'card_radius', 'label' => __( '单卡片圆角', 'developer-starter' ), 'type' => 'text', 'default' => '12px', 'desc' => __( '填写 0px 为直角，填写 12px、20px 等为圆角。', 'developer-starter' ) ),
+                    array( 'id' => 'card_padding', 'label' => __( '单卡片内边距', 'developer-starter' ), 'type' => 'text', 'default' => '16px', 'desc' => __( '如 12px、16px、24px。', 'developer-starter' ) ),
+                    array( 'id' => 'card_shadow', 'label' => __( '单卡片阴影', 'developer-starter' ), 'type' => 'text', 'default' => '', 'desc' => __( '如 0 12px 30px rgba(15,23,42,.12)，填写 none 可关闭。', 'developer-starter' ) ),
                 ),
             ),
             
@@ -606,6 +631,8 @@ class Banner_Module extends Module_Base {
         // 布局特定样式
         $container_style = '';
         $item_style = '';
+        $items_layout = isset( $data['stats_items_layout'] ) && 'independent' === sanitize_key( (string) $data['stats_items_layout'] ) ? 'independent' : 'connected';
+        $items_gap = isset( $data['stats_items_gap'] ) ? Module_Manager::sanitize_spacing_value( $data['stats_items_gap'] ) : '';
         $stats_bar_bg_color = isset( $data['stats_bar_bg_color'] ) && is_scalar( $data['stats_bar_bg_color'] )
             ? trim( (string) $data['stats_bar_bg_color'] )
             : '';
@@ -652,16 +679,35 @@ class Banner_Module extends Module_Base {
             ';
             $item_color_default = 'var(--qiling-module-button-text, var(--qiling-module-text, var(--color-neutral-0)))';
         }
+        if ( 'independent' === $items_layout && '' !== $items_gap ) {
+            $container_style .= '--qiling-banner-stats-gap:' . $items_gap . ';';
+        }
         ?>
-        <div class="banner-stats-bar" style="<?php echo esc_attr( $container_style ); ?>">
+        <div class="banner-stats-bar stats-layout-<?php echo esc_attr( $items_layout ); ?>" style="<?php echo esc_attr( $container_style ); ?>">
             <?php foreach ( $stats as $index => $stat ) : 
                 $icon = isset( $stat['icon'] ) ? $stat['icon'] : '';
                 $number = isset( $stat['number'] ) ? $stat['number'] : '';
                 $label = isset( $stat['label'] ) ? $stat['label'] : '';
                 $color = isset( $stat['color'] ) && ! empty( $stat['color'] ) ? $stat['color'] : $item_color_default;
                 $label_color = isset( $stat['label_color'] ) && ! empty( $stat['label_color'] ) ? $stat['label_color'] : 'var(--qiling-module-muted, ' . $color . ')';
+                $stat_card_style = '';
+                if ( 'independent' === $items_layout ) {
+                    $card_bg = isset( $stat['card_bg'] ) && is_scalar( $stat['card_bg'] ) ? trim( (string) $stat['card_bg'] ) : '';
+                    $card_border = isset( $stat['card_border'] ) && is_scalar( $stat['card_border'] ) ? trim( (string) $stat['card_border'] ) : '';
+                    $card_radius = isset( $stat['card_radius'] ) ? Module_Manager::sanitize_spacing_value( $stat['card_radius'] ) : '';
+                    $card_padding = isset( $stat['card_padding'] ) ? Module_Manager::sanitize_spacing_value( $stat['card_padding'] ) : '';
+                    $card_shadow = isset( $stat['card_shadow'] ) && is_scalar( $stat['card_shadow'] ) ? trim( wp_strip_all_tags( (string) $stat['card_shadow'] ) ) : '';
+                    if ( '' !== $card_bg && function_exists( 'developer_starter_sanitize_page_visual_style_css_value' ) ) $card_bg = developer_starter_sanitize_page_visual_style_css_value( $card_bg );
+                    if ( '' !== $card_border && function_exists( 'developer_starter_sanitize_page_visual_style_css_value' ) ) $card_border = developer_starter_sanitize_page_visual_style_css_value( $card_border );
+                    if ( '' !== $card_shadow && function_exists( 'developer_starter_sanitize_page_visual_style_css_value' ) ) $card_shadow = developer_starter_sanitize_page_visual_style_css_value( $card_shadow );
+                    $stat_card_style .= '' !== $card_bg ? 'background:' . $card_bg . ';' : '';
+                    $stat_card_style .= '' !== $card_border ? 'border-color:' . $card_border . ';' : '';
+                    $stat_card_style .= '' !== $card_radius ? 'border-radius:' . $card_radius . ';' : '';
+                    $stat_card_style .= '' !== $card_padding ? 'padding:' . $card_padding . ';' : '';
+                    $stat_card_style .= '' !== $card_shadow ? 'box-shadow:' . $card_shadow . ';' : '';
+                }
             ?>
-                <div class="stat-item" style="display: flex; align-items: center; gap: var(--qiling-space-12); flex: 1; justify-content: center;">
+                <div class="stat-item" style="display:flex;align-items:center;gap:var(--qiling-space-12);flex:1;justify-content:center;<?php echo esc_attr( $stat_card_style ); ?>">
                     <?php if ( $icon ) : ?>
                         <div class="stat-icon" style="
                             font-size: var(--qiling-text-rem-1p5); 
@@ -684,7 +730,7 @@ class Banner_Module extends Module_Base {
                         <div class="stat-label" style="font-size: var(--qiling-text-rem-0p85); opacity: 0.8; color: <?php echo esc_attr( $label_color ); ?>;"><?php echo esc_html( $label ); ?></div>
                     </div>
                 </div>
-                <?php if ( $index < count( $stats ) - 1 ) : ?>
+                <?php if ( 'connected' === $items_layout && $index < count( $stats ) - 1 ) : ?>
                     <div class="stat-divider" style="width: 1px; height: 30px; background: rgba(var(--qiling-rgb-255-255-255), 0.2);"></div>
                 <?php endif; ?>
             <?php endforeach; ?>

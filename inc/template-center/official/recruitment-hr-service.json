@@ -6,7 +6,13 @@
   "page_template": "templates/template-recruitment-hr-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "finance_company"
+    "preset": "finance_company",
+    "colors": {
+      "primary": "#4f46e5",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "帮企业更快找到合适的人",
         "db_typing_mode": "loop",
         "db_typing_text": "中高端人才寻访\n批量招聘与交付管理\n组织诊断与用工方案",
-        "db_highlight_color": "#a7f3d0",
-        "db_title_color": "#f8fafc",
+        "db_highlight_color": "#a5b4fc",
+        "db_title_color": "#ffffff",
         "db_subtitle": "围绕岗位画像、候选人触达、面试协同和入职跟进提升招聘效率。",
         "db_desc": "适合招聘机构、猎头顾问、人力资源外包和灵活用工服务团队。",
         "db_text_color": "rgba(248,250,252,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #090d1a 0%, #312e81 50%, #047857 100%)"
       }
     },
     {
@@ -113,23 +120,32 @@
         "stats_items": [
           {
             "number": "60+",
-            "label": "覆盖城市"
+            "label": "覆盖城市",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "14天",
-            "label": "平均推荐周期"
+            "label": "平均推荐周期",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "85%",
-            "label": "面试到场率"
+            "label": "面试到场率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "6月",
-            "label": "入职跟进周期"
+            "label": "入职跟进周期",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #1e1b4b 0%, #3730a3 50%, #059669 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {

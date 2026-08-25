@@ -35933,8 +35933,8 @@ msgid "第三方社交登录"
 msgstr "Social Login"
 
 #: inc/admin/traits/class-admin-settings-config-trait.php:1886
-msgid "微信登录继续由 qiling-weixin 插件负责；QQ、GitHub、Google 等 OAuth 登录由主题统一框架接入，便于后续扩展。"
-msgstr "WeChat login remains handled by the qiling-weixin plugin; QQ, GitHub, Google and future OAuth providers are handled by the theme social login framework."
+msgid "微信登录由 qiling-weixin 插件负责；QQ、GitHub、Google 等 OAuth 登录由主题统一框架接入。"
+msgstr "WeChat login is handled by the qiling-weixin plugin; QQ, GitHub, Google and other OAuth providers are handled by the theme social login framework."
 
 #: inc/admin/traits/class-admin-settings-config-trait.php:1887
 msgid "QQ 登录"

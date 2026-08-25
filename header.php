@@ -76,9 +76,17 @@ if ( $enable_transparent_header && is_singular( 'page' ) ) {
                     continue;
                 }
 
+                $candidate_data = isset( $module_entry['data'] ) && is_array( $module_entry['data'] ) ? $module_entry['data'] : array();
+                if (
+                    class_exists( '\Developer_Starter\Core\Module_Advanced_Style_Service' )
+                    && \Developer_Starter\Core\Module_Advanced_Style_Service::get_instance()->module_is_hidden( $candidate_data )
+                ) {
+                    continue;
+                }
+
                 $first_module_type                 = sanitize_key( (string) $module_entry['type'] );
                 $has_transparent_header_hero_first = in_array( $first_module_type, $hero_module_ids, true );
-                $first_module_data                 = isset( $module_entry['data'] ) && is_array( $module_entry['data'] ) ? $module_entry['data'] : array();
+                $first_module_data                 = $candidate_data;
 
                 $title_color_fields = array(
                     'brand_banner_pro' => 'bb_title_color',

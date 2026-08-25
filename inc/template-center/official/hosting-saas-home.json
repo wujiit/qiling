@@ -92,7 +92,7 @@
         "bb_bg_gradient": "radial-gradient(circle at 16% 18%, rgba(5,150,105,0.2) 0%, rgba(5,150,105,0) 34%), radial-gradient(circle at 84% 24%, rgba(37,99,235,0.2) 0%, rgba(37,99,235,0) 30%), linear-gradient(135deg,#ecfdf5 0%,#f8fafc 42%,#dbeafe 100%)",
         "bb_title": "高速云主机<br><strong>让网站稳定起飞</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#134e4a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
         "bb_title_gradient": "linear-gradient(135deg, #047857 0%, #059669 52%, #2563eb 100%)",
         "bb_subtitle": "云主机与托管服务官网",
@@ -118,7 +118,7 @@
         "bb_primary_btn_hover_bg_color": "linear-gradient(135deg,#047857 0%,#1d4ed8 100%)",
         "bb_primary_btn_hover_text_color": "#ffffff",
         "bb_light_btn_bg_color": "#ecfdf5",
-        "bb_light_btn_text_color": "#134e4a",
+        "bb_light_btn_text_color": "#0f172a",
         "bb_light_btn_hover_bg_color": "#d1fae5",
         "bb_light_btn_hover_text_color": "#059669",
         "bb_media_type": "image",
@@ -184,24 +184,34 @@
           {
             "number": "99.95%",
             "label": "服务可用性",
-            "icon": "SLA"
+            "icon": "SLA",
+            "number_color": "#059669",
+            "label_color": "#475569"
           },
           {
             "number": "30min",
             "label": "迁移评估响应",
-            "icon": "UP"
+            "icon": "UP",
+            "number_color": "#059669",
+            "label_color": "#475569"
           },
           {
             "number": "12+",
             "label": "可选线路区域",
-            "icon": "NET"
+            "icon": "NET",
+            "number_color": "#059669",
+            "label_color": "#475569"
           },
           {
             "number": "7x24",
             "label": "监控与告警",
-            "icon": "OPS"
+            "icon": "OPS",
+            "number_color": "#059669",
+            "label_color": "#475569"
           }
-        ]
+        ],
+        "stats_bg_type": "color",
+        "stats_title_color": "#0f172a"
       }
     },
     {
@@ -445,7 +455,9 @@
         "cta_bg_image": "",
         "cta_bg_overlay": "0.12",
         "module_padding_top": "96px",
-        "module_padding_bottom": "96px"
+        "module_padding_bottom": "96px",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
       }
     }
   ]

@@ -6,7 +6,13 @@
   "page_template": "templates/template-open-source-devtools.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#6366f1",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #2563eb 58%, #059669 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #064e3b 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "开源、可扩展、文档清晰，适合展示框架、SDK、CLI 和技术社区。",
             "btn_text": "查看文档",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#6d28d9"
+            "btn_bg_color": "#6366f1",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -145,7 +151,7 @@
             "stage_tag": "Ship"
           }
         ],
-        "module_bg_color": "#f5f3ff"
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -179,7 +185,8 @@
             "btn_text": "下载"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#ffffff",
+        "downloads_bg_color": "#ffffff"
       }
     },
     {
@@ -225,7 +232,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -235,9 +242,14 @@
         "cta_subtitle": "提交 Issue、贡献插件或把你的实践案例加入文档。",
         "cta_button_text": "前往 GitHub",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #312e81 60%, #064e3b 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#6366f1",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

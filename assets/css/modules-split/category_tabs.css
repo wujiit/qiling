@@ -235,6 +235,49 @@
   border-radius: 12px;
   background: rgba(var(--color-warning-rgb, 245, 158, 11), 0.12);
   color: var(--qiling-color-9a3412);
+}.qiling-module-scope-category_tabs /* ===== 设计表面组件 (design_surface_components) ===== */
+/* @qiling-design-surface-bridge
+ * 第三阶段：把常用模块的卡片、按钮、表单、标签接回全局设计变量。
+ * 这些规则放在模块样式末尾，保证旧模块的局部样式不再压过装修面板。
+ */
+
+[data-qds-card-mode="independent"] :is(
+  .module-contact.module-contact .contact-form,
+  .module-contact.module-contact .contact-right > .developer-form-wrap,
+  .module-product-showcase.module-product-showcase .ps-media-carousel,
+  .module-product-showcase.module-product-showcase .ps-description,
+  .module-products-manual.module-products-manual .pm-modal-box,
+  .module-products-manual.module-products-manual .pm-modal-sidebar,
+  .module-products-manual.module-products-manual .pm-mh-specs,
+  .module-products-manual.module-products-manual .pm-ms-thumb,
+  .module-media-list.module-media-list .qil-ml-card,
+  .module-accordion.module-accordion .accordion-style-default .accordion-item,
+  .module-accordion.module-accordion .accordion-style-bordered .accordion-item,
+  .module-tabs.module-tabs .tabs-content,
+  .module-testimonials.module-testimonials .testimonial-card,
+  .module-testimonials.module-testimonials .ql-testimonial-summary,
+  .module-team.module-team .team-card,
+  .module-branches.module-branches .branch-card,
+  .module-footer-suite.module-footer-suite .qfs-qr-card
+) {
+  background: var(--qiling-component-card-bg);
+  border: 1px solid var(--qiling-component-card-border);
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-card-shadow);
+}.qiling-module-scope-category_tabs [data-qds-card-mode="independent"] :is(
+.module-products-manual.module-products-manual .pm-card,
+.module-cases.module-cases .case-card,
+.module-work-library.module-work-library .qw-lib-card,
+.module-blog.module-blog .blog-post-item,
+.module-news.module-news .news-card,
+.module-featured-posts.module-featured-posts .fp-list-item,
+.module-featured-posts.module-featured-posts .fp-slider,
+.module-category-tabs.module-category-tabs .cat-tab-post-item
+) {
+  background: var(--qiling-component-post-card-bg);
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: var(--qiling-card-radius);
+  box-shadow: var(--qiling-component-post-card-shadow);
 }.qiling-module-scope-category_tabs .ql-ih-media-wrapper.anim-float {
   animation:
     ql_ih_fadeLeft 1s ease-out 0.2s forwards,
@@ -415,6 +458,55 @@
   display: flex;
   align-items: center;
   gap: var(--qiling-space-4);
+}.qiling-module-scope-category_tabs .module-category-tabs .post-image-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--qiling-space-6);
+  margin: 0 0 var(--qiling-space-12);
+}.qiling-module-scope-category_tabs .module-category-tabs .post-image-facts span {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: var(--qiling-space-4) var(--qiling-space-9);
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: 999px;
+  background: var(--qiling-component-surface-alt-bg, var(--color-surface-alt));
+  color: var(--qiling-component-post-card-meta-color);
+  font-size: var(--qiling-text-12);
+  line-height: 1;
+}.qiling-module-scope-category_tabs .module-category-tabs .post-image-facts .resource-price {
+  border-color: rgba(var(--color-primary-rgb), 0.18);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+  font-weight: 700;
+}.qiling-module-scope-category_tabs .module-category-tabs .cat-tab-resource-action {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--qiling-space-7);
+  margin-top: var(--qiling-space-14);
+  padding: var(--qiling-space-9) var(--qiling-space-14);
+  border: 1px solid var(--category-tabs-action-border, var(--category-tabs-action-bg, var(--qiling-component-button-border)));
+  border-radius: var(--qiling-button-radius);
+  background: var(--category-tabs-action-bg, var(--qiling-component-button-bg));
+  color: var(--category-tabs-action-text, var(--qiling-component-button-text));
+  font-size: var(--qiling-text-14);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}.qiling-module-scope-category_tabs .module-category-tabs .cat-tab-resource-action:hover {
+  border-color: var(--category-tabs-action-hover-border, var(--category-tabs-action-hover-bg, var(--qiling-component-button-hover-border, var(--color-primary-hover))));
+  background: var(--category-tabs-action-hover-bg, var(--qiling-component-button-hover-bg, var(--color-primary-hover)));
+  color: var(--category-tabs-action-hover-text, var(--qiling-component-button-hover-text, var(--color-text-inverse)));
+  transform: translateY(-1px);
+}.qiling-module-scope-category_tabs .module-category-tabs .card-style-wallpaper .post-body {
+  padding: var(--qiling-space-14) var(--qiling-space-14) var(--qiling-space-16);
+}.qiling-module-scope-category_tabs .module-category-tabs .card-style-wallpaper .post-title {
+  margin-bottom: var(--qiling-space-9);
+}.qiling-module-scope-category_tabs .module-category-tabs .card-style-wallpaper .post-meta {
+  font-size: var(--qiling-text-12);
 }.qiling-module-scope-category_tabs /* 加载更多 (Load More) */
 .module-category-tabs .cat-tabs-load-more {
   text-align: center;

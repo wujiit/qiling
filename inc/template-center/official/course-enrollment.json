@@ -6,7 +6,13 @@
   "page_template": "templates/template-course-enrollment.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "education_company"
+    "preset": "education_company",
+    "colors": {
+      "primary": "#4338ca",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #0284c7 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "系统课程、实战项目、导师辅导和阶段测评，帮助学员完成从报名到交付作品的闭环。",
             "btn_text": "立即报名",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_bg_color": "#4338ca",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -124,8 +130,8 @@
       "data": {
         "curriculum_title": "课程大纲",
         "curriculum_subtitle": "从基础到实战，按阶段建立可落地能力",
-        "curriculum_bg_color": "#ffffff",
-        "curriculum_primary_color": "#2563eb",
+        "curriculum_bg_color": "#eef2ff",
+        "curriculum_primary_color": "#4338ca",
         "curriculum_items": [
           {
             "title": "阶段一：核心基础与工具链",
@@ -178,7 +184,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#eff6ff"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -212,7 +218,7 @@
             "stage_tag": "交付"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#eef2ff"
       }
     },
     {
@@ -227,14 +233,15 @@
         "contact_phone": "400-900-2026",
         "contact_hours": "09:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#ffffff"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "报名常见问题",
-        "module_bg_color": "#eff6ff",
+        "module_bg_color": "#eef2ff",
         "faq_items": [
           {
             "question": "零基础可以报名吗？",

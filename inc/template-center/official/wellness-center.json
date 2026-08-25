@@ -6,7 +6,13 @@
   "page_template": "templates/template-wellness-center.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "healthcare_company"
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#065f46",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #14532d 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #022c22 0%, #065f46 50%, #047857 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,7 +56,7 @@
             "btn_text": "预约健康评估",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_text_color": "#065f46"
           }
         ],
         "show_stats_bar": "1",
@@ -149,7 +155,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#f0fdfa"
+        "module_bg_color": "#f0fdf4"
       }
     },
     {
@@ -158,7 +164,7 @@
         "menu_title": "康养套餐参考",
         "menu_subtitle": "可按门店实际项目、周期和服务人群调整",
         "menu_layout": "grid",
-        "menu_accent_color": "#0f766e",
+        "menu_accent_color": "#065f46",
         "menu_items": [
           {
             "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80",
@@ -193,7 +199,8 @@
             "link": "#"
           }
         ],
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -227,7 +234,7 @@
             "stage_tag": "复评"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f0fdf4"
       }
     },
     {
@@ -265,7 +272,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#ffffff"
       }
     },
     {
@@ -280,7 +288,8 @@
         "contact_phone": "400-320-2026",
         "contact_hours": "09:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f0fdf4"
       }
     }
   ]

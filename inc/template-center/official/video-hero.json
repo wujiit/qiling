@@ -6,7 +6,13 @@
   "page_template": "templates/template-video-hero.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -91,7 +97,8 @@
             "title": "持续更新",
             "desc": "源源不断的新功能支持"
           }
-        ]
+        ],
+        "features_bg_color": "#ffffff"
       }
     },
     {
@@ -100,7 +107,13 @@
         "cta_title": "准备好开始了吗？",
         "cta_subtitle": "立即体验功能强大的企业级 WordPress 主题",
         "cta_button_text": "🔥 立即购买",
-        "cta_button_url": "#"
+        "cta_button_url": "#",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

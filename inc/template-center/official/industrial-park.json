@@ -6,7 +6,13 @@
   "page_template": "templates/template-industrial-park.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#1e3a8a",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #0f766e 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "区位、载体、政策、服务和产业生态集中展示，提升招商转化效率。",
             "btn_text": "预约招商顾问",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_bg_color": "#1e3a8a",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",

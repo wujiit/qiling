@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-security-ops.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#22c55e",
+      "accent": "#3b82f6",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #020617 0%, #0f172a 44%, #0f766e 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #080d18 0%, #0f2744 52%, #052e16 100%)",
         "bb_title": "巡检、防护、统计、告警<br><strong>做成站点安全运维闭环</strong>",
         "bb_title_size_max": "72px",
         "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #67e8f9 48%, #34d399 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #4ade80 50%, #60a5fa 100%)",
         "bb_subtitle": "启灵生态安全防护运维方案",
         "bb_desc": "围绕全盘安全体检、主动防护防火墙、REST 路由隔离、地区限制、操作审计、IP 风险画像、轻量流量统计和飞书/钉钉推送，把后台能力包装成可交付、可持续运营的安全服务入口。",
-        "bb_text_color": "#dbeafe",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -67,14 +73,14 @@
             "icon": "看"
           }
         ],
-        "bb_primary_btn_bg_color": "#14b8a6",
+        "bb_primary_btn_bg_color": "#059669",
         "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#0f766e",
+        "bb_primary_btn_hover_bg_color": "#16a34a",
         "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#ecfeff",
-        "bb_light_btn_hover_text_color": "#0f766e",
+        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.12)",
+        "bb_light_btn_text_color": "#ffffff",
+        "bb_light_btn_hover_bg_color": "rgba(255, 255, 255, 0.22)",
+        "bb_light_btn_hover_text_color": "#ffffff",
         "bb_media_type": "image",
         "bb_main_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
         "bb_media_shadow": "glow",
@@ -94,7 +100,7 @@
         "stats_subtitle": "从安全体检、审计日志、动态封禁到访问趋势，帮助管理员先看见问题再处理问题",
         "stats_text_align": "center",
         "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #064e3b 100%)",
+        "stats_bg_color": "linear-gradient(135deg, #022c22 0%, #064e3b 55%, #0f172a 100%)",
         "stats_title_color": "#ffffff",
         "module_padding_top": "82px",
         "module_padding_bottom": "82px",
@@ -102,19 +108,27 @@
         "stats_items": [
           {
             "number": "11",
-            "label": "安全业务表"
+            "label": "安全业务表",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "7x24",
-            "label": "告警通道可用"
+            "label": "告警通道可用",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "90天",
-            "label": "统计留存可配"
+            "label": "统计留存可配",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "100+",
-            "label": "日志列表查看"
+            "label": "日志列表查看",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ]
       }
@@ -153,7 +167,8 @@
             "title": "飞书/钉钉推送",
             "desc": "启灵消息推送提供多通道管理、HTTPS Webhook、加签/关键词/IP 白名单模式、测试发送和发送日志，承接安全告警中心。"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -166,7 +181,7 @@
         "ct_columns": "4",
         "ct_enable_filter": "yes",
         "ct_card_style": "solid",
-        "ct_accent_color": "#0f766e",
+        "ct_accent_color": "#16a34a",
         "ct_status_chip_bg": "#ecfeff",
         "ct_status_chip_text": "#0f766e",
         "ct_action_btn_bg": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",

@@ -6,7 +6,13 @@
   "page_template": "templates/template-personal-ip-home.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#6366f1",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #334155 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #78350f 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "适合顾问、讲师、创作者和自由职业者展示服务、作品与合作入口。",
             "btn_text": "预约沟通",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#334155"
+            "btn_bg_color": "#6366f1",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",

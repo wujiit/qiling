@@ -6,7 +6,13 @@
   "page_template": "templates/template-homestay.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#b45309",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #0369a1 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #1c1917 0%, #44403c 50%, #92400e 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,7 +56,7 @@
             "btn_text": "查看房型",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0369a1"
+            "btn_text_color": "#b45309"
           }
         ],
         "show_stats_bar": "1",
@@ -134,7 +140,9 @@
             "btn_link": "#"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#ffffff",
+        "room_btn_bg_color": "#b45309",
+        "room_btn_text_color": "#ffffff"
       }
     },
     {
@@ -174,7 +182,7 @@
             "time": "09:00-22:00"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#fefce8"
       }
     },
     {
@@ -243,7 +251,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#fefce8"
       }
     },
     {
@@ -258,14 +267,15 @@
         "contact_phone": "400-520-1314",
         "contact_hours": "08:00-23:00",
         "module_bg_image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#ffffff"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "预订常见问题",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#fefce8",
         "faq_items": [
           {
             "question": "是否支持加床或亲子用品？",

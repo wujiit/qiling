@@ -24,9 +24,9 @@ if ( post_password_required() ) {
     return;
 }
 
-// 主题设置：完全禁用评论
+// 关闭评论时不向任何访客输出评论区，包括历史评论和登录提示。
 $theme_disable_comments = developer_starter_get_option( 'disable_comments', '' );
-if ( $theme_disable_comments ) {
+if ( $theme_disable_comments || ! comments_open() ) {
     return;
 }
 
@@ -164,7 +164,7 @@ $comments_avatar_size = min( 96, max( 24, $comments_avatar_size ) );
             $logged_in_as = '<div class="logged-user-info">' . get_avatar( get_current_user_id(), 36 ) . '<span class="user-name">' . esc_html( $current_user->display_name ) . '</span><a href="' . esc_url( wp_logout_url( get_permalink() ) ) . '" class="logout-link">' . esc_html__( '登出', 'developer-starter' ) . '</a></div>';
         }
 
-        $must_log_in = '<div class="comment-login-required"><span class="login-required-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span><p class="login-required-text">' . esc_html( $comments_login_required_text ) . '</p><a href="' . esc_url( $login_url ) . '" class="btn-login js-comment-login" data-login-url="' . esc_url( $login_url ) . '">' . esc_html( $comments_login_button_label ) . '</a></div>';
+        $must_log_in = '<div class="comment-login-required"><span class="login-required-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span><p class="login-required-text">' . esc_html( $comments_login_required_text ) . '</p><a href="' . esc_url( $login_url ) . '" class="btn-login js-comment-login" data-login-url="' . esc_url( $login_url ) . '">' . esc_html( $comments_login_button_label ) . '</a></div>';
 
         comment_form(
             array(

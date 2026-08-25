@@ -6,7 +6,13 @@
   "page_template": "templates/template-property-management.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #047857 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "物业服务、项目覆盖、报修流程和客户评价集中展示，提升业主与客户信任。",
             "btn_text": "提交报修咨询",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#2563eb"
+            "btn_bg_color": "#0284c7",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -266,7 +272,8 @@
         "contact_phone": "400-900-2026",
         "contact_hours": "7x24 小时",
         "module_bg_image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f8fafc"
       }
     }
   ]

@@ -6,7 +6,13 @@
   "page_template": "templates/template-senior-care-center.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "healthcare_company"
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #14532d 0%, #0f766e 52%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 50%, #d97706 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -51,7 +57,7 @@
             "btn_text": "预约参观机构",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_text_color": "#059669"
           }
         ],
         "show_stats_bar": "1",
@@ -171,9 +177,9 @@
             "btn_link": "#"
           }
         ],
-        "room_btn_bg_color": "#0f766e",
+        "room_btn_bg_color": "#059669",
         "room_btn_text_color": "#ffffff",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#f0fdf4",
         "enable_staggered_animation": "yes"
       }
     },
@@ -242,7 +248,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#f0fdfa",
+        "module_bg_color": "#f0fdf4",
         "enable_staggered_animation": "yes"
       }
     },
@@ -284,7 +290,8 @@
         "contact_phone": "400-510-2026",
         "contact_hours": "08:30-20:00",
         "module_bg_image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f0fdf4"
       }
     }
   ]

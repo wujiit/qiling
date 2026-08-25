@@ -6,7 +6,13 @@
   "page_template": "templates/template-agriculture-food.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "food_company"
+    "preset": "food_company",
+    "colors": {
+      "primary": "#15803d",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -77,23 +83,32 @@
         "stats_items": [
           {
             "number": "3000亩",
-            "label": "标准化基地"
+            "label": "标准化基地",
+            "number_color": "#15803d",
+            "label_color": "#475569"
           },
           {
             "number": "12项",
-            "label": "质量检测节点"
+            "label": "质量检测节点",
+            "number_color": "#15803d",
+            "label_color": "#475569"
           },
           {
             "number": "48h",
-            "label": "采购响应时效"
+            "label": "采购响应时效",
+            "number_color": "#15803d",
+            "label_color": "#475569"
           },
           {
             "number": "60+",
-            "label": "渠道合作客户"
+            "label": "渠道合作客户",
+            "number_color": "#15803d",
+            "label_color": "#475569"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "#f8fafc",
+        "stats_title_color": "#0f172a"
       }
     },
     {
@@ -205,7 +220,7 @@
         "contact_address": "农业示范基地 / 支持渠道合作沟通",
         "contact_show_form": "1",
         "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f0fdf4"
       }
     }
   ]

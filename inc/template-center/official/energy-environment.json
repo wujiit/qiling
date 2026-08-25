@@ -6,7 +6,13 @@
   "page_template": "templates/template-energy-environment.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#047857",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -113,23 +119,32 @@
         "stats_items": [
           {
             "number": "120+",
-            "label": "项目经验"
+            "label": "项目经验",
+            "number_color": "#047857",
+            "label_color": "#475569"
           },
           {
             "number": "18%",
-            "label": "平均节能优化"
+            "label": "平均节能优化",
+            "number_color": "#047857",
+            "label_color": "#475569"
           },
           {
             "number": "30天",
-            "label": "方案评估周期"
+            "label": "方案评估周期",
+            "number_color": "#047857",
+            "label_color": "#475569"
           },
           {
             "number": "7x24",
-            "label": "运维响应"
+            "label": "运维响应",
+            "number_color": "#047857",
+            "label_color": "#475569"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "#f8fafc",
+        "stats_title_color": "#0f172a"
       }
     },
     {
@@ -163,7 +178,7 @@
             "stage_tag": "运维"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f0fdf4"
       }
     },
     {
@@ -192,7 +207,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -205,7 +220,7 @@
         "contact_address": "支持远程评估 / 可预约现场勘测",
         "contact_show_form": "1",
         "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f0fdf4"
       }
     }
   ]

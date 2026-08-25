@@ -6,7 +6,13 @@
   "page_template": "templates/template-mcn-live-commerce.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#e11d48",
+      "accent": "#8b5cf6",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,11 +47,11 @@
       "data": {
         "db_height": "80vh",
         "db_bg_type": "gradient",
-        "db_bg_gradient": "linear-gradient(135deg, #111827 0%, #7f1d1d 48%, #0f766e 100%)",
+        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #4c0519 50%, #3b0764 100%)",
         "db_title_prefix": "让内容和直播",
         "db_typing_mode": "loop",
         "db_typing_text": "从曝光走向成交\n从达人走向矩阵\n从单场爆发走向稳定增长",
-        "db_highlight_color": "#5eead4",
+        "db_highlight_color": "#fb7185",
         "db_title_color": "#ffffff",
         "db_subtitle": "MCN 机构与直播电商代运营官网",
         "db_desc": "覆盖达人孵化、直播间代运营、短视频内容、品牌投放和店铺转化，让品牌方在首次沟通前看见团队能力与合作边界。",
@@ -167,7 +173,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#fdf2f8"
       }
     },
     {
@@ -179,26 +185,35 @@
         "stats_items": [
           {
             "number": "120+",
-            "label": "签约/合作达人"
+            "label": "签约/合作达人",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "3000+",
-            "label": "累计直播场次"
+            "label": "累计直播场次",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "28个",
-            "label": "服务细分品类"
+            "label": "服务细分品类",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "48h",
-            "label": "复盘报告交付"
+            "label": "复盘报告交付",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#ffffff",
+        "stats_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #3b0764 100%)",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -228,7 +243,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "enable_staggered_animation": "yes"
@@ -257,7 +272,7 @@
             "answer": "素材、脚本、账号数据和授权边界需要在合同里明确。页面导入后建议补充真实合作条款和素材使用规则。"
           }
         ],
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#fdf2f8",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }
@@ -271,7 +286,7 @@
         "contact_form_id": "",
         "contact_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }

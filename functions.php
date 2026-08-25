@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * 主题常量
  */
-define( 'DEVELOPER_STARTER_VERSION', '2.6.5' );
+define( 'DEVELOPER_STARTER_VERSION', '2.6.6' );
 define( 'DEVELOPER_STARTER_DIR', get_template_directory() );
 define( 'DEVELOPER_STARTER_URI', get_template_directory_uri() );
 define( 'DEVELOPER_STARTER_INC', DEVELOPER_STARTER_DIR . '/inc' );

@@ -6,7 +6,13 @@
   "page_template": "templates/template-app-download-landing.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -65,9 +71,11 @@
         "media_type": "image",
         "hero_image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
         "bg_type": "color",
-        "bg_color": "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #38bdf8 100%)",
+        "bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 50%, #0284c7 100%)",
         "padding_top": "100px",
-        "padding_bottom": "100px"
+        "padding_bottom": "100px",
+        "btn_primary_bg": "#2563eb",
+        "btn_primary_color": "#ffffff"
       }
     },
     {
@@ -142,23 +150,32 @@
         "stats_items": [
           {
             "number": "300万+",
-            "label": "累计用户"
+            "label": "累计用户",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "4.8",
-            "label": "应用评分"
+            "label": "应用评分",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "99.9%",
-            "label": "服务可用性"
+            "label": "服务可用性",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "12",
-            "label": "核心场景"
+            "label": "核心场景",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#eff6ff"
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0284c7 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -195,7 +212,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#ffffff"
       }
     },
     {
@@ -205,9 +223,14 @@
         "cta_subtitle": "把高频任务、消息提醒和数据看板放进手机里。",
         "cta_button_text": "立即下载",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

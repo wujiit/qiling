@@ -6,7 +6,13 @@
   "page_template": "templates/template-saas-pricing.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -39,12 +45,12 @@
       "data": {
         "db_height": "80vh",
         "db_bg_type": "gradient",
-        "db_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #0ea5e9 100%)",
+        "db_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0369a1 100%)",
         "db_title_prefix": "SaaS价格对比页",
         "db_typing_mode": "loop",
         "db_typing_text": "灵活计费，按需升级\n从个人团队到企业级部署\n7 天免费试用，随时取消",
         "db_highlight_color": "#38bdf8",
-        "db_title_color": "#e2e8f0",
+        "db_title_color": "#ffffff",
         "db_subtitle": "<strong>清晰价格</strong> + <strong style=\"color:#60a5fa;\">功能对比</strong>，帮助用户快速决策",
         "db_desc": "预设包含套餐表、功能对比、常见问题与行动召唤模块。用户可直接替换文案和价格，快速搭建专业 SaaS 定价页面。",
         "db_text_color": "rgba(226,232,240,0.88)",
@@ -177,7 +183,7 @@
             "card_bg": "#ffffff",
             "featured": "1",
             "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)"
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)"
           },
           {
             "name": "企业版",
@@ -229,9 +235,13 @@
         "cta_button_text": "免费试用 14 天",
         "cta_button_url": "#",
         "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%)",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0284c7 100%)",
         "module_padding_top": "96px",
-        "module_padding_bottom": "96px"
+        "module_padding_bottom": "96px",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

@@ -410,7 +410,10 @@ class Assets {
      * @return bool
      */
     private function needs_jquery_for_login_compatibility() {
-        $login_modal_enabled = developer_starter_get_option( 'header_login_enable', '' ) && ! is_user_logged_in();
+        $login_modal_setting_enabled = function_exists( 'developer_starter_is_login_modal_enabled' )
+            ? developer_starter_is_login_modal_enabled()
+            : (bool) developer_starter_get_option( 'header_login_enable', '' );
+        $login_modal_enabled = $login_modal_setting_enabled && ! is_user_logged_in();
         $needs_jquery = (bool) $login_modal_enabled;
 
         return (bool) apply_filters( 'developer_starter_login_compatibility_needs_jquery', $needs_jquery, $login_modal_enabled );
@@ -648,7 +651,7 @@ class Assets {
      * 避免被文章增强样式里的通用评论选择器覆盖。
      */
     public function enqueue_comments_styles() {
-        if ( ! is_singular() || ( ! comments_open() && ! get_comments_number() ) ) {
+        if ( ! is_singular() || ! comments_open() ) {
             return;
         }
 
@@ -822,11 +825,15 @@ class Assets {
         $should_enqueue_mobile_menu = (bool) apply_filters( 'developer_starter_enqueue_mobile_menu_script', $should_enqueue_mobile_menu );
 
         $header_login_enabled      = (bool) developer_starter_get_option( 'header_login_enable', '' );
-        $login_modal_enabled       = $header_login_enabled && ! is_user_logged_in();
+        $header_account_enabled    = (bool) developer_starter_get_option( 'header_account_enable', '1' );
+        $login_modal_setting_enabled = function_exists( 'developer_starter_is_login_modal_enabled' )
+            ? developer_starter_is_login_modal_enabled()
+            : $header_login_enabled;
+        $login_modal_enabled       = $login_modal_setting_enabled && ! is_user_logged_in();
         $should_enqueue_header_auth = function_exists( 'developer_starter_is_auth_template_page' ) && developer_starter_is_auth_template_page();
         $has_header_search         = ! developer_starter_get_option( 'hide_search_button', '' );
         $needs_search_runtime      = $has_header_search || is_search() || is_404();
-        $needs_auth_runtime        = $should_enqueue_header_auth || ( $search_captcha_enabled && $needs_search_runtime );
+        $needs_auth_runtime        = $should_enqueue_header_auth || $header_account_enabled || ( $search_captcha_enabled && $needs_search_runtime );
         $language_switcher_enabled = function_exists( 'developer_starter_get_frontend_language_switcher_enabled' )
             ? developer_starter_get_frontend_language_switcher_enabled()
             : false;
@@ -842,7 +849,7 @@ class Assets {
         $current_module_types      = $this->get_current_page_module_types();
         $module_search_matches     = array_intersect( $current_module_types, array( 'hero_search', 'qiling_video_portal_hero' ) );
         $needs_search_runtime      = $needs_search_runtime || ! empty( $module_search_matches );
-        $needs_auth_runtime        = $should_enqueue_header_auth || ( $search_captcha_enabled && $needs_search_runtime );
+        $needs_auth_runtime        = $should_enqueue_header_auth || $header_account_enabled || ( $search_captcha_enabled && $needs_search_runtime );
         $needs_contact_form_config = is_page_template( 'templates/template-contact.php' ) || in_array( 'contact', $current_module_types, true );
         $needs_contact_form_config = (bool) apply_filters( 'developer_starter_contact_form_script_data_needed', $needs_contact_form_config, $current_module_types );
         $needs_search_enhance_script = (bool) apply_filters( 'developer_starter_needs_search_enhance_script', $needs_search_runtime, $current_module_types );
@@ -869,7 +876,7 @@ class Assets {
             'themeUrl'  => DEVELOPER_STARTER_URI,
         );
 
-        if ( $header_login_enabled || $should_enqueue_header_auth ) {
+        if ( $login_modal_setting_enabled || $should_enqueue_header_auth ) {
             $script_data['userStatusNonce'] = wp_create_nonce( 'developer_starter_user_status' );
         }
 
@@ -1149,11 +1156,13 @@ class Assets {
                 $version,
                 true
             );
+        }
 
+        if ( $should_enqueue_header_auth || $header_account_enabled ) {
             wp_enqueue_script(
                 'developer-starter-header-auth',
                 DEVELOPER_STARTER_ASSETS . '/js/header-auth.js',
-                array( 'developer-starter-auth-pages' ),
+                $should_enqueue_header_auth ? array( 'developer-starter-auth-pages' ) : array( 'developer-starter-main' ),
                 $version,
                 true
             );
@@ -1228,7 +1237,7 @@ class Assets {
                 array(), DEVELOPER_STARTER_VERSION, true );
         }
 
-        if ( is_singular() && ( comments_open() || get_comments_number() ) ) {
+        if ( is_singular() && comments_open() ) {
             $comments_js_file = DEVELOPER_STARTER_DIR . '/assets/js/comments.js';
             wp_enqueue_script(
                 'developer-starter-comments',
@@ -1534,6 +1543,14 @@ class Assets {
         if ( is_array( $modules ) ) {
             foreach ( $modules as $module ) {
                 if ( ! is_array( $module ) || empty( $module['type'] ) ) {
+                    continue;
+                }
+                $module_data = isset( $module['data'] ) && is_array( $module['data'] ) ? $module['data'] : array();
+                if (
+                    ! Frontend_Builder::is_builder_mode()
+                    && class_exists( '\Developer_Starter\Core\Module_Advanced_Style_Service' )
+                    && Module_Advanced_Style_Service::get_instance()->module_is_hidden( $module_data )
+                ) {
                     continue;
                 }
                 $module_type = sanitize_key( (string) $module['type'] );

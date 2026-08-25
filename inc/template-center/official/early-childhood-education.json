@@ -6,7 +6,13 @@
   "page_template": "templates/template-early-childhood-education.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "education_company"
+    "preset": "education_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 50%, #10b981 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 50%, #d97706 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -51,7 +57,7 @@
             "btn_text": "预约参观园区",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_text_color": "#0284c7"
           }
         ],
         "show_stats_bar": "1",
@@ -89,8 +95,8 @@
       "data": {
         "curriculum_title": "分龄成长课程",
         "curriculum_subtitle": "从生活自理、语言表达、感统运动到探究学习，按年龄段安排成长目标",
-        "curriculum_bg_color": "#fff7ed",
-        "curriculum_primary_color": "#0f766e",
+        "curriculum_bg_color": "#fffbeb",
+        "curriculum_primary_color": "#d97706",
         "curriculum_items": [
           {
             "title": "托小班：安全适应与生活自理",
@@ -204,7 +210,7 @@
             "category": "家园共育"
           }
         ],
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#fffbeb",
         "enable_staggered_animation": "yes"
       }
     },
@@ -277,7 +283,7 @@
             "answer": "可以。建议先预约参观园区、了解班型名额、师资安排和入园流程，再根据孩子状态安排体验或试读。"
           }
         ],
-        "module_bg_color": "#fff7ed"
+        "module_bg_color": "#fffbeb"
       }
     },
     {
@@ -292,7 +298,8 @@
         "contact_phone": "400-930-2026",
         "contact_hours": "09:00-20:00",
         "module_bg_image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.5"
+        "bg_overlay": "0.5",
+        "module_bg_color": "#ffffff"
       }
     }
   ]

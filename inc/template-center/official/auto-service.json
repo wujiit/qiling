@@ -6,7 +6,13 @@
   "page_template": "templates/template-auto-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#1d4ed8",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #1d4ed8 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #1d4ed8 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "新车咨询、维修保养、钣喷美容与道路救援一站式服务。",
             "btn_text": "预约到店",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_bg_color": "#1d4ed8",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -124,7 +130,8 @@
             "post_id": "",
             "btn_text": "查看详情"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -132,7 +139,7 @@
       "data": {
         "services_title": "门店服务项目",
         "services_subtitle": "透明报价、标准流程、关键节点可追踪",
-        "services_bg_color": "#ffffff",
+        "services_bg_color": "#f8fafc",
         "services_columns": "4",
         "services_items": [
           {
@@ -224,7 +231,7 @@
             "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -258,7 +265,7 @@
             "stage_tag": "交付"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -273,14 +280,15 @@
         "contact_phone": "400-808-2026",
         "contact_hours": "09:00-20:00",
         "module_bg_image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#ffffff"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "汽车服务常见问题",
-        "module_bg_color": "#eff6ff",
+        "module_bg_color": "#f8fafc",
         "faq_items": [
           {
             "question": "可以在线估价吗？",

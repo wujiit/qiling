@@ -81,6 +81,15 @@ trait Admin_Settings_Admin_Trait {
             false
         );
 
+        $settings_repeater_js = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/admin-settings-repeater.js';
+        wp_enqueue_script(
+            'developer-starter-admin-settings-repeater',
+            DEVELOPER_STARTER_ASSETS . '/js/admin-settings-repeater.js',
+            array(),
+            file_exists( $settings_repeater_js ) ? (string) filemtime( $settings_repeater_js ) : DEVELOPER_STARTER_VERSION,
+            false
+        );
+
         add_action( 'admin_footer', array( $this, 'admin_footer_js' ) );
     }
 
@@ -90,7 +99,10 @@ trait Admin_Settings_Admin_Trait {
         jQuery(document).ready(function($) {
             var dsAjaxUrl = typeof window.ajaxurl !== 'undefined' ? window.ajaxurl : '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
             var dsFavoriteNonce = <?php echo wp_json_encode( wp_create_nonce( "favorite_setting_nonce" ) ); ?>;
-            $('.ds-color-picker').wpColorPicker();
+
+            if ($.fn && typeof $.fn.wpColorPicker === 'function') {
+                $('.ds-color-picker').wpColorPicker();
+            }
             
             // 优化颜色选择器体验：利用事件捕获阶段拦截 focus 和 click 事件
             // 这样浏览器原生仍然能让输入框获得焦点并输入，但 wpColorPicker 绑定的弹出事件不会被触发
@@ -154,21 +166,6 @@ trait Admin_Settings_Admin_Trait {
             $(document).on('click', '.ds-remove-file-btn', function(e) {
                 e.preventDefault();
                 $(this).siblings('.ds-file-url').val('').trigger('change');
-            });
-
-            $(document).on('click', '.ds-repeater-add', function() {
-                var $wrap = $(this).closest('.ds-repeater-wrap');
-                var $list = $wrap.find('.ds-repeater-list');
-                var $tpl = $wrap.find('.ds-repeater-tpl');
-                var tpl = $tpl.attr('data-template');
-                var idx = $list.children().length;
-                tpl = tpl.replace(/__IDX__/g, idx);
-                $list.append(tpl);
-            });
-
-            $(document).on('click', '.ds-repeater-remove', function(e) {
-                e.preventDefault();
-                $(this).closest('.ds-repeater-item').remove();
             });
 
             // 一键刷新版本号
@@ -1420,17 +1417,58 @@ trait Admin_Settings_Admin_Trait {
                 var data = {};
                 var formData = form.serializeArray();
                 var isSettingsForm = false;
+
+                function setNestedValue(target, path, value) {
+                    var current = target;
+                    for (var index = 0; index < path.length; index++) {
+                        var part = path[index];
+                        var isLast = index === path.length - 1;
+                        var nextPart = path[index + 1];
+
+                        if (isLast) {
+                            if (part === '') {
+                                if (!Array.isArray(current)) {
+                                    return;
+                                }
+                                current.push(value);
+                            } else {
+                                current[part] = value;
+                            }
+                            return;
+                        }
+
+                        if (part === '') {
+                            if (!Array.isArray(current)) {
+                                return;
+                            }
+                            current = current[current.length - 1];
+                            continue;
+                        }
+
+                        if (typeof current[part] !== 'object' || current[part] === null) {
+                            current[part] = (/^\d+$/.test(nextPart) || nextPart === '') ? [] : {};
+                        }
+                        current = current[part];
+                    }
+                }
                 
                 $.each(formData, function(i, field) {
-                    var match = field.name.match(/^developer_starter_options\[(.*?)\](\[\])?$/);
+                    var match = field.name.match(/^developer_starter_options((?:\[[^\]]*\])+)?$/);
                     if (match) {
-                        var key = match[1];
-                        var isArray = match[2] !== undefined;
-                        if (isArray) {
-                            if (!Array.isArray(data[key])) data[key] = [];
-                            data[key].push(field.value);
+                        var path = [];
+                        var pathMatch;
+                        var pathPattern = /\[([^\]]*)\]/g;
+                        while ((pathMatch = pathPattern.exec(match[1] || '')) !== null) {
+                            path.push(pathMatch[1]);
+                        }
+
+                        if (path.length > 1) {
+                            setNestedValue(data, path, field.value);
                         } else {
-                            data[key] = field.value; // 后出现的值覆盖先出现的值，完美兼容复选框的隐藏域机制
+                            var key = path[0] || '';
+                            if (key) {
+                                data[key] = field.value; // 后出现的值覆盖先出现的值，兼容复选框隐藏域
+                            }
                         }
                         isSettingsForm = true;
                     }

@@ -78,33 +78,17 @@ $categories = get_categories( $cat_args );
             <?php
             $login_page_id = developer_starter_get_option( 'login_page_id', '' );
             $login_url = $login_page_id ? get_permalink( $login_page_id ) : wp_login_url( get_permalink() );
-            $header_login_enable = developer_starter_get_option( 'header_login_enable', '' );
+            $login_modal_enable = function_exists( 'developer_starter_is_login_modal_enabled' )
+                ? developer_starter_is_login_modal_enabled()
+                : (bool) developer_starter_get_option( 'header_login_enable', '' );
             
-            // 如果顶部登录按钮开启，则尝试调用弹窗登录
-            $login_btn_atts = '';
             $login_btn_class = 'btn-primary';
             
-            if ( $header_login_enable ) {
+            if ( $login_modal_enable ) {
                 $login_btn_class .= ' trigger-login-modal';
             }
             ?>
-            <a href="<?php echo esc_url( $login_url ); ?>" class="<?php echo esc_attr( $login_btn_class ); ?>"><?php esc_html_e( '立即登录', 'developer-starter' ); ?></a>
-            
-            <?php if ( $header_login_enable ) : ?>
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var triggerBtn = document.querySelector('.trigger-login-modal');
-                var headerLoginBtn = document.getElementById('header-login-toggle');
-                
-                if (triggerBtn && headerLoginBtn) {
-                    triggerBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        headerLoginBtn.click();
-                    });
-                }
-            });
-            </script>
-            <?php endif; ?>
+            <a href="<?php echo esc_url( $login_url ); ?>" class="<?php echo esc_attr( $login_btn_class ); ?>"<?php echo $login_modal_enable ? ' data-ds-login-trigger="modal"' : ''; ?>><?php esc_html_e( '立即登录', 'developer-starter' ); ?></a>
         </div>
         
     <?php else : ?>

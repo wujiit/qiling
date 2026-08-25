@@ -392,9 +392,13 @@
         "cta_subtitle": "告诉我们您的目标与现状，我们会一起判断最合适的下一步。",
         "cta_button_text": "预约方案沟通",
         "cta_button_url": "#contact",
-        "cta_bg_type": "gradient",
+        "cta_bg_type": "color",
         "cta_bg_gradient": "linear-gradient(135deg, #203052 0%, #4f6df5 56%, #20b486 100%)",
-        "cta_bg_overlay": "0.12"
+        "cta_bg_overlay": "0.12",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     },
     {

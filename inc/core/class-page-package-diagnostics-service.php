@@ -659,7 +659,7 @@ class Page_Package_Diagnostics_Service {
         if ( ! empty( $missing_split_css ) && 'split' === $this->get_module_css_load_mode() ) {
             $warnings[] = sprintf(
                 /* translators: %s: module types */
-                __( '当前站点启用了拆包模块样式，但这些模块缺少独立 CSS：%s。前台会自动回退到整包 modules.css，样式一般不会丢失，但建议后续补齐拆包文件。', 'developer-starter' ),
+                __( '当前站点启用了拆包模块样式，但这些模块缺少独立 CSS：%s。前台会自动使用完整模块样式文件，通常不会影响显示效果。', 'developer-starter' ),
                 implode( '、', $missing_split_css )
             );
         }

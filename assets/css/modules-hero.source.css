@@ -2190,7 +2190,7 @@ html.dark-mode .module-dynamic-banner .db-card-subtitle {
 
 /* ===== 搜索主视觉 (hero_search) ===== */
 
-/* 模块整体 - 全宽 */
+/* 模块整体宽度 */
 .module-hero-search {
   position: relative;
   width: 100vw;
@@ -2201,6 +2201,23 @@ html.dark-mode .module-dynamic-banner .db-card-subtitle {
   overflow: hidden;
   isolation: isolate;
   color: var(--color-text-inverse);
+}
+
+.module-hero-search.hs-width-container,
+.module-hero-search.hs-width-custom {
+  left: auto;
+  right: auto;
+  width: calc(100% - (var(--qiling-space-20) * 2));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.module-hero-search.hs-width-container {
+  max-width: calc(var(--qiling-container-width, 1200px) - (var(--qiling-space-20) * 2));
+}
+
+.module-hero-search.hs-width-custom {
+  max-width: var(--hs-module-max-width, 1400px);
 }
 /* 背景层 */
 .module-hero-search .hs-bg-layer {

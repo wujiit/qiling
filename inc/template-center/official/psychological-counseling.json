@@ -6,7 +6,13 @@
   "page_template": "templates/template-psychological-counseling.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "healthcare_company"
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#0f766e",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 52%, #059669 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #042f2e 0%, #0f766e 50%, #0d9488 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -212,7 +218,7 @@
             "answer": "可根据所在城市、时间安排、隐私环境和议题需求选择。重要的是保证稳定网络、安静空间和不被打扰的时间。"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#f0fdfa"
       }
     },
     {
@@ -273,7 +279,8 @@
         "contact_phone": "400-360-2026",
         "contact_hours": "09:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.58"
+        "bg_overlay": "0.58",
+        "module_bg_color": "#f0fdfa"
       }
     }
   ]

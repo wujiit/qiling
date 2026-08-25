@@ -32,7 +32,7 @@ get_header();
                         </div>
                     </article>
 
-                    <?php if ( comments_open() || get_comments_number() ) : ?>
+                    <?php if ( comments_open() ) : ?>
                         <div class="qiapp-software-comments">
                             <?php comments_template(); ?>
                         </div>

@@ -594,6 +594,8 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                     'templates/template-healthcare-clinic.php',
                     'templates/template-medical-device.php',
                     'templates/template-wellness-center.php',
+                    'templates/template-health-supplements.php',
+                    'templates/template-intimate-wellness.php',
                     'templates/template-senior-care-center.php',
                     'templates/template-postpartum-care-center.php',
                     'templates/template-pet.php',
@@ -639,6 +641,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 'templates'   => array(
                     'templates/template-beauty-salon.php',
                     'templates/template-medical-beauty.php',
+                    'templates/template-fashion-brand.php',
                     'templates/template-yoga-studio.php',
                     'templates/template-gym-fitness.php',
                     'templates/template-qiling-friends-matchmaking.php',
@@ -725,6 +728,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                     'templates/template-mcn-live-commerce.php',
                     'templates/template-news.php',
                     'templates/template-qiling-image-studio.php',
+                    'templates/template-qiling-wallpaper-gallery.php',
                     'templates/template-resume.php',
                     'templates/template-topic.php',
                     'templates/template-travel.php',
@@ -1499,6 +1503,30 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_fields' ) ) {
                         ),
                     ),
                 ),
+                'canvas' => array(
+                    'label'       => __( '页面连续画布', 'developer-starter' ),
+                    'description' => __( '控制正文模块之间以及正文与页脚之间的整体衔接。标准分区保持各模块原有布局；连续画布适合一体化页面。', 'developer-starter' ),
+                    'fields'      => array(
+                        'mode' => array(
+                            'label'       => __( '画布模式', 'developer-starter' ),
+                            'type'        => 'select',
+                            'options'     => array(
+                                'standard'   => __( '标准分区', 'developer-starter' ),
+                                'continuous' => __( '一体化连续画布', 'developer-starter' ),
+                            ),
+                        ),
+                        'background' => array(
+                            'label'       => __( '画布背景', 'developer-starter' ),
+                            'placeholder' => 'var(--qiling-page-bg)',
+                            'vars'        => array( '--qiling-canvas-bg' ),
+                        ),
+                        'footer_transition' => array(
+                            'label'       => __( '正文到页脚衔接色', 'developer-starter' ),
+                            'placeholder' => 'var(--qiling-canvas-bg)',
+                            'vars'        => array( '--qiling-canvas-footer-transition', '--qiling-footer-wave-backdrop', '--qiling-footer-wave-transition-from' ),
+                        ),
+                    ),
+                ),
                 'header'  => array(
                     'label'       => __( '顶部菜单栏', 'developer-starter' ),
                     'description' => __( '分别控制常规/滚动状态和首屏透明状态。透明状态文字留空时，会根据首屏标题明暗自动选择深色或白色。', 'developer-starter' ),
@@ -1707,6 +1735,7 @@ if ( ! function_exists( 'developer_starter_sanitize_page_visual_style_settings' 
             'mode'    => $mode,
             'preset'  => 'custom' === $mode ? $preset : '',
             'colors'  => array(),
+            'canvas'  => array(),
             'header'  => array(),
             'footer'  => array(),
             'buttons' => array(),
@@ -1740,6 +1769,9 @@ if ( ! function_exists( 'developer_starter_sanitize_page_visual_style_settings' 
                     $opacity = is_numeric( $value ) ? (float) $value : 0;
                     $opacity = max( 0, min( 1, $opacity ) );
                     $value   = rtrim( rtrim( number_format( $opacity, 2, '.', '' ), '0' ), '.' );
+                } elseif ( 'select' === $type ) {
+                    $options = isset( $field['options'] ) && is_array( $field['options'] ) ? array_map( 'strval', array_keys( $field['options'] ) ) : array();
+                    $value = in_array( $value, $options, true ) ? $value : '';
                 } else {
                     $value = developer_starter_sanitize_page_visual_style_css_value( $value );
                 }
@@ -1803,7 +1835,7 @@ if ( ! function_exists( 'developer_starter_page_visual_style_has_custom_values' 
             return true;
         }
 
-        foreach ( array( 'colors', 'header', 'footer', 'buttons' ) as $group_key ) {
+        foreach ( array( 'colors', 'canvas', 'header', 'footer', 'buttons' ) as $group_key ) {
             if ( ! empty( $settings[ $group_key ] ) && is_array( $settings[ $group_key ] ) ) {
                 return true;
             }
@@ -2179,7 +2211,9 @@ if ( ! function_exists( 'developer_starter_filter_page_visual_style_body_classes
 
         $resolved = developer_starter_resolve_page_visual_style( $post_id );
         $vars     = isset( $resolved['vars'] ) && is_array( $resolved['vars'] ) ? $resolved['vars'] : array();
-        if ( empty( $vars ) ) {
+        $settings = isset( $resolved['settings'] ) && is_array( $resolved['settings'] ) ? $resolved['settings'] : array();
+        $canvas_mode = isset( $settings['canvas']['mode'] ) ? sanitize_key( (string) $settings['canvas']['mode'] ) : '';
+        if ( empty( $vars ) && 'continuous' !== $canvas_mode ) {
             return $classes;
         }
 
@@ -2188,6 +2222,9 @@ if ( ! function_exists( 'developer_starter_filter_page_visual_style_body_classes
 
         if ( ! empty( $resolved['is_custom'] ) ) {
             $classes[] = 'qiling-page-visual-custom';
+        }
+        if ( 'continuous' === $canvas_mode ) {
+            $classes[] = 'qiling-continuous-canvas';
         }
 
         if ( ! empty( $resolved['skin_key'] ) ) {

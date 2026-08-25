@@ -6,7 +6,13 @@
   "page_template": "templates/template-chain-store-official.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "food_company"
+    "preset": "food_company",
+    "colors": {
+      "primary": "#d97706",
+      "accent": "#b45309",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #b45309 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "全国门店网络、统一会员体系和加盟支持，让品牌增长更可复制。",
             "btn_text": "查看附近门店",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_bg_color": "#d97706",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -92,23 +98,32 @@
         "stats_items": [
           {
             "number": "95%",
-            "label": "门店标准执行率"
+            "label": "门店标准执行率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "82%",
-            "label": "老客复购率"
+            "label": "老客复购率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24h",
-            "label": "售后闭环时效"
+            "label": "售后闭环时效",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "200+",
-            "label": "城市服务网络"
+            "label": "城市服务网络",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #1c1917 0%, #292524 50%, #78350f 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -208,7 +223,7 @@
             "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#fffbeb"
       }
     },
     {
@@ -294,7 +309,8 @@
         "contact_phone": "400-777-2026",
         "contact_hours": "09:00-20:00",
         "module_bg_image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#fffbeb"
       }
     }
   ]

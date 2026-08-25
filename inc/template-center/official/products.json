@@ -6,7 +6,13 @@
   "page_template": "templates/template-products.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -39,7 +45,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "medium",
-        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 52%, #0284c7 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -48,8 +54,8 @@
             "subtitle": "精选产品与解决方案展示",
             "btn_text": "获取报价",
             "btn_url": "/contact",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#111827"
+            "btn_bg_color": "#3b82f6",
+            "btn_text_color": "#ffffff"
           }
         ]
       }
@@ -95,7 +101,8 @@
         ],
         "columns": "4",
         "modal_inquire_text": "立即咨询",
-        "modal_inquire_url": "/contact"
+        "modal_inquire_url": "/contact",
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -106,7 +113,11 @@
         "cta_button_text": "预约演示",
         "cta_button_url": "/contact",
         "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)"
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

@@ -6,7 +6,13 @@
   "page_template": "templates/template-saas-home.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#4f46e5",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 52%, #312e81 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "面向订阅产品、协作工具和企业 SaaS 的官网模板，清楚展示价值、场景、套餐和试用路径。",
             "btn_text": "开始免费试用",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_bg_color": "#3b82f6",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -212,7 +218,7 @@
             "btn_link": "#",
             "featured": "1",
             "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)"
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)"
           },
           {
             "name": "企业版",
@@ -261,7 +267,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#ffffff"
       }
     },
     {
@@ -283,7 +290,7 @@
             "answer": "可以，价格、权益、按钮链接和套餐说明都可以在装修器中编辑。"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -293,9 +300,14 @@
         "cta_subtitle": "替换成你的产品名称、核心场景和试用入口，就能快速搭建 SaaS 官网。",
         "cta_button_text": "开始免费试用",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #312e81 100%)",
+        "cta_button_bg_color": "#3b82f6",
+        "cta_button_text_color": "#ffffff",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
       }
     }
   ]

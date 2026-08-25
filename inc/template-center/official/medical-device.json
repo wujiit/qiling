@@ -6,7 +6,13 @@
   "page_template": "templates/template-medical-device.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "healthcare_company"
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #0e7490 55%, #16a34a 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 52%, #047857 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,8 +56,8 @@
             "subtitle": "面向医院、渠道商和项目采购，集中展示产品线、注册证、生产许可、质量体系和售后培训能力。",
             "btn_text": "提交产品询盘",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0e7490"
+            "btn_bg_color": "#0284c7",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -92,7 +98,7 @@
         "columns": "4",
         "modal_inquire_text": "咨询注册资料与报价",
         "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#0e7490",
+        "modal_inquire_btn_bg_color": "#0284c7",
         "modal_inquire_btn_text_color": "#ffffff",
         "modal_inquire_btn_hover_bg_color": "#155e75",
         "modal_inquire_btn_hover_text_color": "#ffffff",
@@ -142,7 +148,7 @@
         "ct_columns": "4",
         "ct_enable_filter": "yes",
         "ct_card_style": "solid",
-        "ct_accent_color": "#0e7490",
+        "ct_accent_color": "#0284c7",
         "ct_status_chip_bg": "#ecfeff",
         "ct_status_chip_text": "#0e7490",
         "ct_action_btn_bg": "linear-gradient(135deg, #0e7490 0%, #16a34a 100%)",
@@ -277,7 +283,8 @@
         "cases_image_height": "220px",
         "cases_padding_top": "80px",
         "cases_padding_bottom": "80px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -303,7 +310,7 @@
             "answer": "可以展示安装调试、操作培训、定期维护、故障响应、备件耗材、维修记录和召回协同流程，具体承诺应与企业实际服务能力一致。"
           }
         ],
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -316,7 +323,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

@@ -6,7 +6,13 @@
   "page_template": "templates/template-features-showcase.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#4f46e5",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -66,7 +72,8 @@
             "tab_icon": "⚡",
             "features": "⚡|性能优化|图片懒加载，资源按需加载，极速体验\n🛡️|安全防护|XSS防护，数据转义，安全输出\n📊|后台管理|简洁直观的设置面板，分组配置项\n🔧|模块管理|拖拽可视化配置，实时预览效果\n📱|响应式设计|完美适配各种屏幕尺寸，移动端优化\n🔍|SEO优化|语义化标签，结构化数据，搜索引擎友好"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -77,21 +84,32 @@
         "stats_items": [
           {
             "number": "22",
-            "label": "内置模块"
+            "label": "内置模块",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "50",
-            "label": "功能特性"
+            "label": "功能特性",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "100",
-            "label": "响应式"
+            "label": "响应式",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "0",
-            "label": "代码要求"
+            "label": "代码要求",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
-        ]
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #312e81 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -122,7 +140,8 @@
             "image": "",
             "link": ""
           }
-        ]
+        ],
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -146,7 +165,8 @@
             "question": "主题对SEO优化有帮助吗？",
             "answer": "是的，主题采用语义化HTML5标签、合理的标题层级结构、图片懒加载优化、快速加载性能等，都有助于搜索引擎优化。建议配合专业SEO插件使用效果更佳。"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -155,7 +175,13 @@
         "cta_title": "准备好开始了吗？",
         "cta_subtitle": "立即体验功能强大的企业级WordPress主题",
         "cta_button_text": "联系我们",
-        "cta_button_url": "/contact/"
+        "cta_button_url": "/contact/",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #312e81 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#4f46e5",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

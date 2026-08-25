@@ -609,11 +609,11 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 'overrideGroupClean' => __( '当前分组还在跟随全局。', 'developer-starter' ),
                 'overrideMore'       => __( '其余 %d 项可在对应设置区继续查看。', 'developer-starter' ),
                 'missingClean'       => __( '当前关键字段没有发现明显缺项。', 'developer-starter' ),
-                'missingWarn'        => __( '建议补齐', 'developer-starter' ),
+                'missingWarn'        => __( '建议完善', 'developer-starter' ),
                 'missingPaletteScope' => __( '全局色板', 'developer-starter' ),
                 'missingTypographyScope' => __( '响应式排版', 'developer-starter' ),
                 'missingLayoutScope' => __( '响应式布局', 'developer-starter' ),
-                'missingDetail'      => __( '当前为空，建议补齐后再观察联动效果。', 'developer-starter' ),
+                'missingDetail'      => __( '当前为空，建议完善后再观察联动效果。', 'developer-starter' ),
                 'focusField'         => __( '定位设置', 'developer-starter' ),
                 'focusBaseUrl'       => $focus_base_url,
                 'impactHigh'         => __( '高影响', 'developer-starter' ),
@@ -627,11 +627,11 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 'riskMobile'         => __( '移动端关注点', 'developer-starter' ),
                 'riskMobileDescription' => __( '重点检查手机排版、移动导航和断点联动。', 'developer-starter' ),
                 'riskDark'           => __( '暗色提醒', 'developer-starter' ),
-                'riskDarkDescription' => __( '主要给后续扩展暗色风格时参考，普通使用可以先忽略。', 'developer-starter' ),
+                'riskDarkDescription' => __( '用于检查暗色风格的显示效果，普通使用可以先忽略。', 'developer-starter' ),
                 'riskBreakdown'      => __( '覆盖 %1$d / 缺项 %2$d / 诊断 %3$d', 'developer-starter' ),
                 'riskEmpty'          => __( '当前分区没有对应项目：%s。', 'developer-starter' ),
                 'ratioPrefix'        => __( 'Ratio ', 'developer-starter' ),
-                'coverageCommand'    => 'npm --prefix dev run audit:design',
+                'coverageCommand'    => __( '可在下方查看详细检查结果。', 'developer-starter' ),
             ),
         );
 
@@ -706,7 +706,7 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                         </article>
                         <article class="ds-design-workbench__summary-card">
                             <strong><?php echo esc_html__( '深入检查', 'developer-starter' ); ?></strong>
-                            <code>npm --prefix dev run audit:design</code>
+                            <span><?php echo esc_html__( '查看下方详细检查结果', 'developer-starter' ); ?></span>
                         </article>
                     </div>
                 </section>
@@ -1111,12 +1111,11 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '深入检查（开发用）', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '普通使用可以忽略；只有继续排查老样式时再看这里。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '样式详细检查', 'developer-starter' ); ?></strong>
+                        <span><?php echo esc_html__( '用于进一步检查样式一致性和潜在显示问题。', 'developer-starter' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__script-box">
-                        <code>npm --prefix dev run audit:design</code>
-                        <p><?php echo esc_html__( '脚本会继续扫描主题里的旧样式写法，主要给开发排查时用。', 'developer-starter' ); ?></p>
+                        <p><?php echo esc_html__( '请结合上方对比度、覆盖明细和空值提醒逐项检查。', 'developer-starter' ); ?></p>
                     </div>
                 </section>
             </div>
@@ -1407,7 +1406,7 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 {
                     key: "dark",
                     label: messages.riskDark || "暗色风险",
-                    description: messages.riskDarkDescription || "优先检查暗色全局样式、暗色组件与映射补齐。",
+                            description: messages.riskDarkDescription || "优先检查暗色全局样式、暗色组件与颜色映射。",
                     scopeKeywords: ["暗色"],
                     textKeywords: ["dark"]
                 }

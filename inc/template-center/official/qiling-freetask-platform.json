@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-freetask-platform.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#6366f1",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "type": "hero_search",
       "data": {
         "hs_height": "85vh",
-        "hs_overlay_color": "rgba(15, 23, 42, 0.62)",
+        "hs_overlay_color": "rgba(15, 23, 42, 0.72)",
         "hs_content_align": "center",
         "hs_bg_items": [
           {
@@ -55,7 +61,7 @@
         "hs_title_color": "#ffffff",
         "hs_title_size": "3.4rem",
         "hs_subtitle": "适合悬赏任务、招标外包、创意征集和轻量众包场景，把任务审核、积分托管、方案投标、成果验收、奖励发放和争议仲裁放进一个清晰平台。",
-        "hs_subtitle_color": "rgba(255,255,255,0.88)",
+        "hs_subtitle_color": "rgba(255, 255, 255, 0.88)",
         "hs_show_search": "yes",
         "hs_search_placeholder": "搜索设计、开发、文案、数据、同城服务任务",
         "hs_search_btn_text": "查找任务",
@@ -90,23 +96,31 @@
         "stats_items": [
           {
             "number": "6",
-            "label": "前台短代码"
+            "label": "前台短代码",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "12",
-            "label": "二开事件钩子"
+            "label": "二开事件钩子",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "5",
-            "label": "后台审核入口"
+            "label": "后台审核入口",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "100%",
-            "label": "预算托管记录"
+            "label": "预算托管记录",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #111827 0%, #4c1d95 52%, #0e7490 100%)",
+        "stats_bg_color": "linear-gradient(135deg, #1e1b4b 0%, #4338ca 52%, #0284c7 100%)",
         "stats_title_color": "#ffffff",
         "module_padding_top": "82px",
         "module_padding_bottom": "82px",
@@ -255,7 +269,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#f8fafc"
       }
     },
     {
@@ -265,9 +280,14 @@
         "cta_subtitle": "替换任务大厅、任务发布、我的任务、我的投标和积分转换页面链接，就能把启灵悬赏任务包装成可运营的众包官网。",
         "cta_button_text": "配置任务大厅入口",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #1e1b4b 0%, #4338ca 60%, #312e81 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#4338ca",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

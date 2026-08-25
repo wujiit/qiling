@@ -50,6 +50,48 @@ class Hero_Search_Module extends Module_Base {
                 'default' => '80vh',
             ),
             array(
+                'id'      => 'hs_width_mode',
+                'type'    => 'select',
+                'label'   => __( '前台显示宽度', 'developer-starter' ),
+                'options' => array(
+                    'full'      => __( '浏览器全屏宽度', 'developer-starter' ),
+                    'container' => __( '跟随页面内容宽度', 'developer-starter' ),
+                    'custom'    => __( '自定义最大宽度', 'developer-starter' ),
+                ),
+                'default' => 'full',
+                'description' => __( '只控制模块整体宽度，不影响下方搜索框最大宽度设置。', 'developer-starter' ),
+            ),
+            array(
+                'id'      => 'hs_custom_width',
+                'type'    => 'text',
+                'label'   => __( '模块自定义最大宽度', 'developer-starter' ),
+                'default' => '1400px',
+                'description' => __( '例如 1400px、90vw 或 80rem。移动端会自动保留安全边距。', 'developer-starter' ),
+                'dependency' => array( 'id' => 'hs_width_mode', 'value' => 'custom' ),
+            ),
+            array(
+                'id'      => 'hs_border_radius',
+                'type'    => 'select',
+                'label'   => __( '模块图片/视频圆角', 'developer-starter' ),
+                'options' => array(
+                    'none'   => __( '直角', 'developer-starter' ),
+                    'small'  => __( '小圆角（8px）', 'developer-starter' ),
+                    'medium' => __( '中圆角（16px）', 'developer-starter' ),
+                    'large'  => __( '大圆角（24px）', 'developer-starter' ),
+                    'custom' => __( '自定义圆角', 'developer-starter' ),
+                ),
+                'default' => 'none',
+                'description' => __( '背景图片、背景视频和遮罩会随整个模块一起裁切。', 'developer-starter' ),
+            ),
+            array(
+                'id'      => 'hs_custom_radius',
+                'type'    => 'text',
+                'label'   => __( '自定义圆角大小', 'developer-starter' ),
+                'default' => '16px',
+                'description' => __( '例如 12px、1rem 或 2vw。', 'developer-starter' ),
+                'dependency' => array( 'id' => 'hs_border_radius', 'value' => 'custom' ),
+            ),
+            array(
                 'id'      => 'hs_overlay_color',
                 'type'    => 'text',
                 'label'   => __( '背景遮罩颜色（如 var(--qiling-color-rgba-0-0-0-05)）', 'developer-starter' ),
@@ -256,6 +298,24 @@ class Hero_Search_Module extends Module_Base {
     public function render( $data = array() ) {
         // 获取配置
         $height = isset( $data['hs_height'] ) ? $data['hs_height'] : '80vh';
+        $width_mode = isset( $data['hs_width_mode'] ) ? sanitize_key( (string) $data['hs_width_mode'] ) : 'full';
+        if ( ! in_array( $width_mode, array( 'full', 'container', 'custom' ), true ) ) {
+            $width_mode = 'full';
+        }
+        $custom_width = $this->sanitize_css_length_value( isset( $data['hs_custom_width'] ) ? $data['hs_custom_width'] : '', '1400px' );
+        $border_radius_mode = isset( $data['hs_border_radius'] ) ? sanitize_key( (string) $data['hs_border_radius'] ) : 'none';
+        $border_radius_map = array(
+            'none'   => '0',
+            'small'  => '8px',
+            'medium' => '16px',
+            'large'  => '24px',
+        );
+        if ( 'custom' === $border_radius_mode ) {
+            $border_radius = $this->sanitize_css_length_value( isset( $data['hs_custom_radius'] ) ? $data['hs_custom_radius'] : '', '16px', true );
+        } else {
+            $border_radius_mode = isset( $border_radius_map[ $border_radius_mode ] ) ? $border_radius_mode : 'none';
+            $border_radius = $border_radius_map[ $border_radius_mode ];
+        }
         $overlay_color = isset( $data['hs_overlay_color'] ) && '' !== trim( (string) $data['hs_overlay_color'] )
             ? $data['hs_overlay_color']
             : '';
@@ -301,6 +361,10 @@ class Hero_Search_Module extends Module_Base {
         $search_mode = function_exists( 'developer_starter_resolve_search_mode' ) ? developer_starter_resolve_search_mode( $search_mode_setting ) : 'all';
         $search_btn_border_default = false === stripos( $search_btn_bg, 'gradient(' ) ? $search_btn_bg : 'var(--color-primary)';
         $section_style = 'height: ' . $height . '; --hs-search-btn-bg: ' . $search_btn_bg . ';';
+        $section_style .= ' border-radius: ' . $border_radius . ';';
+        if ( 'custom' === $width_mode ) {
+            $section_style .= ' --hs-module-max-width: ' . $custom_width . ';';
+        }
         $section_style .= ' --hs-search-btn-border: ' . ( '' !== $search_btn_border_color ? $search_btn_border_color : $search_btn_border_default ) . ';';
         if ( '' !== $search_btn_text_color ) {
             $section_style .= ' --hs-search-btn-text: ' . $search_btn_text_color . ';';
@@ -317,7 +381,7 @@ class Hero_Search_Module extends Module_Base {
             $section_style .= ' --hs-search-btn-hover-border: ' . $search_btn_hover_border_color . ';';
         }
         ?>
-        <section class="module module-hero-search" id="<?php echo esc_attr( $module_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
+        <section class="module module-hero-search hs-width-<?php echo esc_attr( $width_mode ); ?>" id="<?php echo esc_attr( $module_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
             <!-- 背景层 -->
             <div class="hs-bg-layer">
                 <?php if ( ! empty( $bg_items ) && count( $bg_items ) > 1 ) : ?>
@@ -472,5 +536,19 @@ class Hero_Search_Module extends Module_Base {
         $hex = sanitize_hex_color( $value );
 
         return $hex ? $hex : $default;
+    }
+
+    private function sanitize_css_length_value( $value, $default, $allow_zero = false ) {
+        $value = is_scalar( $value ) ? trim( (string) $value ) : '';
+        if ( $allow_zero && '0' === $value ) {
+            return '0';
+        }
+        if ( preg_match( '/^(?:\d+(?:\.\d+)?)(?:px|rem|em|vw|vh|%)$/i', $value ) ) {
+            return $value;
+        }
+        if ( preg_match( '/^var\(--[a-zA-Z0-9_-]+\)$/', $value ) ) {
+            return $value;
+        }
+        return $default;
     }
 }

@@ -43,8 +43,8 @@ $has_modules = is_array( $modules ) && ! empty( $modules );
         <section class="section-padding qiling-video-portal-empty">
             <div class="container text-center">
                 <h1><?php esc_html_e( '影视门户首页', 'developer-starter' ); ?></h1>
-                <p><?php esc_html_e( '当前页面还没有模块。请从模板中心重新创建影视门户首页，或进入页面装修器添加模块。', 'developer-starter' ); ?></p>
-                <a class="btn btn-primary" href="<?php echo esc_url( get_edit_post_link( $page_id ) ); ?>"><?php esc_html_e( '编辑此页面', 'developer-starter' ); ?></a>
+                <p><?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?></p>
+                <a class="btn btn-primary" href="<?php echo esc_url( get_edit_post_link( $page_id ) ); ?>"><?php esc_html_e( '编辑页面', 'developer-starter' ); ?></a>
             </div>
         </section>
     <?php endif; ?>

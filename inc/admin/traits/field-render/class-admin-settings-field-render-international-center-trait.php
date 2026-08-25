@@ -25,7 +25,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
         echo '<strong>' . esc_html__( '国际化中心', 'developer-starter' ) . '</strong>';
         echo '<p>' . esc_html__( '把 Cookie 合规、AI 本地化装修、多语言 SEO 和 Schema 结构化数据收拢到同一个入口；当前只读取现有配置，不新增数据表。', 'developer-starter' ) . '</p>';
         echo '</div>';
-        echo '<span>' . esc_html__( '阶段 1 MVP', 'developer-starter' ) . '</span>';
+        echo '<span>' . esc_html__( '配置概览', 'developer-starter' ) . '</span>';
         echo '</div>';
 
         echo '<div class="ds-i18n-center__grid">';
@@ -198,7 +198,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
             $description = sprintf( __( 'SEO 基础检查有 %d 项建议复核。', 'developer-starter' ), $warning_count );
         } elseif ( 'multilingual_content' === $mode && ! empty( $seo_summary['has_aifanyi_provider'] ) ) {
             $status = 'normal';
-            $description = __( '启灵AI多语言 provider 已接入，主题可读取多语言 SEO 诊断。', 'developer-starter' );
+            $description = __( '启灵AI多语言已接入，可读取多语言 SEO 诊断。', 'developer-starter' );
         } elseif ( 'multilingual_content' === $mode && $has_hreflang_provider ) {
             $status = 'normal';
             $description = __( '多语言模式和 hreflang 来源已就绪。', 'developer-starter' );
@@ -207,7 +207,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
             $description = __( '已检测到部分多语言 SEO 基础能力，建议继续核对诊断项。', 'developer-starter' );
         } else {
             $status = 'not_configured';
-            $description = __( '尚未启用多语言内容模式或 hreflang provider。', 'developer-starter' );
+            $description = __( '尚未启用多语言内容模式或配置 hreflang 来源。', 'developer-starter' );
         }
 
         return array(
@@ -215,7 +215,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
             'status'      => $status,
             'description' => $description,
             'meta'        => ! empty( $seo_summary['has_aifanyi_provider'] )
-                ? sprintf( __( 'Provider：%s', 'developer-starter' ), __( '启灵AI多语言', 'developer-starter' ) )
+                ? sprintf( __( '多语言服务：%s', 'developer-starter' ), __( '启灵AI多语言', 'developer-starter' ) )
                 : sprintf( __( '语言模式：%s', 'developer-starter' ), $mode_label ),
             'href'        => '#setting-row-international_seo_diagnostics',
             'action'      => __( '查看 SEO 检查', 'developer-starter' ),
@@ -243,7 +243,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
             $description = __( 'Schema 默认币种不是三位 ISO 货币代码。', 'developer-starter' );
         } elseif ( '' === $company_name || ! $has_logo ) {
             $status = 'partial';
-            $description = __( 'Schema 引擎已开启，建议补齐企业名称和 Logo。', 'developer-starter' );
+            $description = __( 'Schema 功能已开启，建议完善企业名称和 Logo。', 'developer-starter' );
         } else {
             $status = 'normal';
             $description = __( 'Schema 引擎已开启，站点级组织信息基础可用。', 'developer-starter' );

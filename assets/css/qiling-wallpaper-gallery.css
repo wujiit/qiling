@@ -1,0 +1,245 @@
+/**
+ * Qiling wallpaper gallery page skin.
+ * All selectors are scoped to the dedicated page template root.
+ */
+
+.template-qiling-wallpaper-gallery {
+  --qwg-ink: #182028;
+  --qwg-muted: #66717d;
+  --qwg-line: #dfe4e8;
+  --qwg-paper: #ffffff;
+  --qwg-canvas: #f4f7f8;
+  --qwg-accent: #e43d30;
+  --qwg-green: #16785f;
+  color: var(--qwg-ink);
+  background: var(--qwg-canvas);
+}
+
+.template-qiling-wallpaper-gallery .module-double-column-carousel {
+  padding: 28px 0 18px;
+  background: var(--qwg-paper);
+}
+
+.template-qiling-wallpaper-gallery .module-double-column-carousel :is(.dcc-left, .dcc-right-top, .dcc-right-bottom-left, .dcc-right-bottom-right) {
+  border-color: rgba(24, 32, 40, 0.12);
+  box-shadow: 0 12px 34px rgba(24, 32, 40, 0.1);
+}
+
+.template-qiling-wallpaper-gallery .module-double-column-carousel .dcc-slide-title {
+  letter-spacing: 0;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.38);
+}
+
+.template-qiling-wallpaper-gallery .module-hero-search {
+  min-height: 500px;
+}
+
+.template-qiling-wallpaper-gallery .module-hero-search .hs-content {
+  width: min(920px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.template-qiling-wallpaper-gallery .module-hero-search .hs-title {
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.template-qiling-wallpaper-gallery .module-hero-search .hs-subtitle {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.template-qiling-wallpaper-gallery .module-hero-search .hs-search-box {
+  min-height: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  box-shadow: 0 16px 42px rgba(17, 24, 39, 0.24);
+}
+
+.template-qiling-wallpaper-gallery .module-hero-search .hs-search-input {
+  font-size: 16px;
+}
+
+.template-qiling-wallpaper-gallery .module-qiling-universal-recommend {
+  border-block: 1px solid var(--qwg-line);
+}
+
+.template-qiling-wallpaper-gallery .module-qiling-universal-recommend .ql-ur-card {
+  overflow: hidden;
+}
+
+.template-qiling-wallpaper-gallery .module-qiling-universal-recommend img,
+.template-qiling-wallpaper-gallery .module-blog img {
+  object-fit: cover;
+}
+
+.template-qiling-wallpaper-gallery .module-resource-stats .rs-stats-grid {
+  border-block: 1px solid var(--qwg-line);
+}
+
+.template-qiling-wallpaper-gallery .module-resource-stats .rs-stat-item {
+  background: transparent;
+}
+
+.template-qiling-wallpaper-gallery .module-resource-stats .rs-stat-number,
+.template-qiling-wallpaper-gallery .module-resource-stats .rs-stat-plus {
+  color: var(--qwg-accent);
+}
+
+.template-qiling-wallpaper-gallery .module-blog .blog-posts {
+  align-items: stretch;
+}
+
+.template-qiling-wallpaper-gallery .module-blog .blog-post-item {
+  border: 1px solid var(--qwg-line);
+  border-radius: 6px;
+  background: var(--qwg-paper);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.template-qiling-wallpaper-gallery .module-blog .post-thumbnail {
+  background: #e8edef;
+}
+
+.template-qiling-wallpaper-gallery .module-blog .post-title {
+  letter-spacing: 0;
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state {
+  min-height: 68vh;
+  display: flex;
+  align-items: center;
+  padding: 72px 0;
+  background: var(--qwg-paper);
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 96px);
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__visual {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-rows: repeat(2, minmax(150px, 1fr));
+  gap: 12px;
+  min-height: 430px;
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__tile {
+  display: block;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__tile--portrait {
+  grid-row: 1 / 3;
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80");
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__tile--landscape {
+  background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80");
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__tile--square {
+  background-image: url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=80");
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--qwg-green);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__title {
+  max-width: 12ch;
+  margin: 0 0 20px;
+  color: var(--qwg-ink);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__desc {
+  max-width: 540px;
+  margin: 0 0 28px;
+  color: var(--qwg-muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border: 1px solid var(--qwg-ink);
+  border-radius: 4px;
+  color: #ffffff;
+  background: var(--qwg-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__button:hover {
+  border-color: var(--qwg-accent);
+  color: #ffffff;
+  background: var(--qwg-accent);
+}
+
+@media (max-width: 900px) {
+  .template-qiling-wallpaper-gallery .module-double-column-carousel {
+    padding-top: 20px;
+  }
+
+  .template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state .container {
+    grid-template-columns: 1fr;
+  }
+
+  .template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__visual {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .template-qiling-wallpaper-gallery .module-double-column-carousel .dcc-left {
+    height: 240px;
+  }
+
+  .template-qiling-wallpaper-gallery .module-double-column-carousel .dcc-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .template-qiling-wallpaper-gallery .module-hero-search {
+    min-height: 460px;
+  }
+
+  .template-qiling-wallpaper-gallery .module-hero-search .hs-title {
+    font-size: 2.2rem;
+  }
+
+  .template-qiling-wallpaper-gallery .module-hero-search .hs-search-box {
+    min-height: 52px;
+  }
+
+  .template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state {
+    padding: 42px 0 56px;
+  }
+
+  .template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__visual {
+    grid-template-rows: repeat(2, minmax(105px, 1fr));
+    min-height: 270px;
+  }
+
+  .template-qiling-wallpaper-gallery .qiling-wallpaper-empty-state__title {
+    font-size: 38px;
+  }
+}

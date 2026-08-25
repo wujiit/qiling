@@ -61,6 +61,9 @@ class Official_Template_Package_Service {
 		'templates/template-medical-beauty.php'            => 'medical-beauty.json',
 		'templates/template-auto-service.php'              => 'auto-service.json',
 		'templates/template-wellness-center.php'           => 'wellness-center.json',
+		'templates/template-health-supplements.php'         => 'health-supplements.json',
+		'templates/template-intimate-wellness.php'          => 'intimate-wellness.json',
+		'templates/template-fashion-brand.php'              => 'fashion-brand.json',
 		'templates/template-chain-store-official.php'      => 'chain-store-official.json',
 		'templates/template-course-enrollment.php'         => 'course-enrollment.json',
 		'templates/template-ecommerce-promo.php'           => 'ecommerce-promo.json',
@@ -119,6 +122,7 @@ class Official_Template_Package_Service {
 		'templates/template-qiling-ai-multilingual-seo.php' => 'qiling-ai-multilingual-seo.json',
 		'templates/template-qiling-doc-ocr-converter.php' => 'qiling-doc-ocr-converter.json',
 		'templates/template-qiling-image-studio.php'      => 'qiling-image-studio.json',
+		'templates/template-qiling-wallpaper-gallery.php' => 'qiling-wallpaper-gallery.json',
 		'templates/template-qiling-cloud-storage-hosting.php' => 'qiling-cloud-storage-hosting.json',
 		'templates/template-qiling-cloud-canvas.php'      => 'qiling-cloud-canvas.json',
 		'templates/template-tech-company-integrated.php'  => 'tech-company-integrated.json',
@@ -235,10 +239,11 @@ class Official_Template_Package_Service {
 	 * Apply an official JSON package to a page.
 	 *
 	 * @param int   $post_id  Page ID.
-	 * @param mixed $template Template slug.
+	 * @param mixed $template         Template slug.
+	 * @param bool  $replace_existing Whether to replace existing page modules.
 	 * @return bool|\WP_Error
 	 */
-	public function apply_package_to_page( $post_id, $template ) {
+	public function apply_package_to_page( $post_id, $template, $replace_existing = false ) {
 		$post_id = absint( $post_id );
 		$post = get_post( $post_id );
 		if ( ! $post instanceof \WP_Post || 'page' !== $post->post_type ) {
@@ -253,7 +258,7 @@ class Official_Template_Package_Service {
 		$modules = function_exists( 'developer_starter_get_raw_page_modules_meta' )
 			? developer_starter_get_raw_page_modules_meta( $post_id )
 			: get_post_meta( $post_id, '_developer_starter_modules', true );
-		if ( ! empty( $modules ) ) {
+		if ( ! $replace_existing && ! empty( $modules ) ) {
 			return false;
 		}
 

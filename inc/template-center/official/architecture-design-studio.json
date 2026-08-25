@@ -6,7 +6,13 @@
   "page_template": "templates/template-architecture-design-studio.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#1e293b",
+      "accent": "#78350f",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -43,7 +49,7 @@
         "bb_style_mode": "editorial",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #111827 0%, #7c2d12 46%, #365314 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #0a0a0c 0%, #1e293b 50%, #0a0a0c 100%)",
         "bb_title_mode": "text",
         "bb_title": "从城市界面到空间体验<br><strong>让建筑方案真正可落地</strong>",
         "bb_title_size_max": "72px",
@@ -52,8 +58,8 @@
         "bb_text_align": "left",
         "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #fed7aa 48%, #bef264 100%)",
-        "bb_text_color": "#f8fafc",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #fed7aa 100%)",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_buttons": [
           {
             "text": "预约方案沟通",
@@ -68,12 +74,12 @@
             "icon": ""
           }
         ],
-        "bb_primary_btn_bg_color": "#f97316",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#ea580c",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#1f2937",
+        "bb_primary_btn_bg_color": "#ffffff",
+        "bb_primary_btn_text_color": "#0f172a",
+        "bb_primary_btn_hover_bg_color": "#f1f5f9",
+        "bb_primary_btn_hover_text_color": "#0f172a",
+        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.15)",
+        "bb_light_btn_text_color": "#ffffff",
         "bb_light_btn_hover_bg_color": "#fef3c7",
         "bb_light_btn_hover_text_color": "#7c2d12",
         "bb_media_type": "image",
@@ -98,7 +104,8 @@
         "cases_image_height": "260px",
         "cases_padding_top": "80px",
         "cases_padding_bottom": "80px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -111,7 +118,7 @@
         "image_text_content": "<p>适合用来说明事务所的服务边界：规划咨询、概念方案、方案深化、报批配合、施工图协调、室内与景观协同。</p><p>页面上线后可继续补充项目类别、服务城市、主创履历和真实案例文章，让客户在提交咨询前完成第一轮判断。</p>",
         "image_text_button": "了解设计服务",
         "image_text_url": "#",
-        "image_text_btn_bg_color": "#7c2d12",
+        "image_text_btn_bg_color": "#1e293b",
         "image_text_btn_text_color": "#ffffff",
         "image_text_btn_hover_bg_color": "#365314",
         "image_text_btn_hover_text_color": "#ffffff",
@@ -147,7 +154,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "enable_staggered_animation": "yes"
@@ -160,7 +167,7 @@
         "process_subtitle": "把前期判断、方案推演、深化协同和落地配合拆成清楚节点",
         "process_mode": "industrial",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "process_items": [
@@ -219,7 +226,7 @@
             "answer": "通常会结合项目类型、面积规模、阶段范围、出图深度、汇报次数和协同复杂度评估，页面可按事务所实际报价方式继续补充。"
           }
         ],
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }
@@ -233,7 +240,7 @@
         "contact_form_id": "",
         "contact_image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }

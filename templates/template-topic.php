@@ -64,7 +64,7 @@ if ( get_query_var( 'paged' ) ) {
                             </a>
                         <?php else : ?>
                             <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1);">
-                                <?php esc_html_e( '专题内容正在建设中，敬请期待...', 'developer-starter' ); ?>
+                                <?php esc_html_e( '暂无内容。', 'developer-starter' ); ?>
                             </p>
                         <?php endif; ?>
                     </div>

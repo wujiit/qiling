@@ -15,15 +15,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * 判断前台是否启用登录弹窗。
+ * 顶部登录入口和业务场景的登录触发共用此能力，但互不控制显示入口。
+ *
+ * @return bool
+ */
+function developer_starter_is_login_modal_enabled() {
+    return (bool) (
+        developer_starter_get_option( 'header_login_enable', '' )
+        || developer_starter_get_option( 'auth_modal_login_enable', '' )
+    );
+}
+
+/**
  * 输出顶部登录弹窗内容
  *
  * 供 Ajax 按需返回登录弹窗的 HTML 与 JSON 配置。
  */
 function developer_starter_output_login_modal() {
-    $header_login_enable = developer_starter_get_option( 'header_login_enable', '' );
+    $login_modal_enabled = developer_starter_is_login_modal_enabled();
     
-    // 只有启用了顶部登录按钮且用户未登录时才输出
-    if ( ! $header_login_enable || is_user_logged_in() ) {
+    if ( ! $login_modal_enabled || is_user_logged_in() ) {
         return;
     }
     
@@ -561,7 +573,7 @@ function developer_starter_ajax_get_login_modal() {
 
     nocache_headers();
 
-    if ( is_user_logged_in() || ! developer_starter_get_option( 'header_login_enable', '' ) ) {
+    if ( is_user_logged_in() || ! developer_starter_is_login_modal_enabled() ) {
         wp_send_json_error( array( 'message' => 'disabled' ), 404 );
     }
 

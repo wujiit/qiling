@@ -6,7 +6,13 @@
   "page_template": "templates/template-landing.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -44,7 +50,7 @@
         "banner_btn2_text": "了解更多",
         "banner_btn2_url": "#features",
         "banner_bg_image": "",
-        "banner_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #2563eb 52%, #059669 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 50%, #047857 100%)",
         "banner_height": "600"
       }
     },
@@ -53,29 +59,39 @@
       "data": {
         "stats_title": "",
         "stats_subtitle": "",
-        "stats_bg_color": "#ffffff",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #059669 100%)",
         "stats_items": [
           {
             "number": "10+",
             "label": "年行业经验",
-            "icon": "🏆"
+            "icon": "🏆",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "500+",
             "label": "成功案例",
-            "icon": "📈"
+            "icon": "📈",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "98%",
             "label": "客户满意度",
-            "icon": "⭐"
+            "icon": "⭐",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24h",
             "label": "响应时间",
-            "icon": "⚡"
+            "icon": "⚡",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
-        ]
+        ],
+        "stats_bg_type": "color",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -83,7 +99,7 @@
       "data": {
         "services_title": "我们的核心优势",
         "services_subtitle": "选择我们，就是选择专业与可靠",
-        "services_bg_color": "#f8fafc",
+        "services_bg_color": "#ffffff",
         "services_items": [
           {
             "icon": "🎯",
@@ -124,7 +140,7 @@
       "data": {
         "process_title": "合作流程",
         "process_subtitle": "简单四步，开启您的成功之旅",
-        "process_bg_color": "#ffffff",
+        "process_bg_color": "#f8fafc",
         "process_items": [
           {
             "icon": "📞",
@@ -158,7 +174,7 @@
       "data": {
         "testimonials_title": "客户好评",
         "testimonials_subtitle": "听听他们怎么说",
-        "testimonials_bg_color": "#f8fafc",
+        "testimonials_bg_color": "#ffffff",
         "testimonials_items": [
           {
             "content": "与他们合作是我们做过最正确的决定之一。专业的团队、高效的执行、贴心的服务，让我们的项目顺利上线并取得了超预期的效果。",
@@ -186,7 +202,7 @@
       "data": {
         "features_title": "我们的承诺",
         "features_subtitle": "用专业 and 诚信赢得您的信任",
-        "features_bg_color": "#ffffff",
+        "features_bg_color": "#f8fafc",
         "features_items": [
           {
             "icon": "💯",
@@ -218,7 +234,12 @@
         "cta_subtitle": "填写表单，我们的专家顾问将在 24 小时内与您联系，为您提供免费咨询服务",
         "cta_btn_text": "立即咨询",
         "cta_btn_url": "/contact/",
-        "cta_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #059669 100%)"
+        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #059669 100%)",
+        "cta_bg_type": "color",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#059669",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

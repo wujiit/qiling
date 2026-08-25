@@ -6,7 +6,13 @@
   "page_template": "templates/template-restaurant.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "food_company"
+    "preset": "food_company",
+    "colors": {
+      "primary": "#b91c1c",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #b45309 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #1c1917 0%, #451a03 50%, #991b1b 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "精选食材，现点现做，支持在线预约到店。",
             "btn_text": "立即订位",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#92400e"
+            "btn_bg_color": "#b91c1c",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -89,7 +95,7 @@
         "menu_title": "招牌菜单",
         "menu_subtitle": "人气菜品与套餐推荐，可按门店口味自行调整",
         "menu_layout": "grid",
-        "menu_accent_color": "#f59e0b",
+        "menu_accent_color": "#b91c1c",
         "menu_items": [
           {
             "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
@@ -124,7 +130,8 @@
             "link": "#"
           }
         ],
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#fffbeb"
       }
     },
     {
@@ -159,7 +166,7 @@
             "link": "#"
           }
         ],
-        "services_bg_color": "#fff7ed"
+        "services_bg_color": "#ffffff"
       }
     },
     {
@@ -210,7 +217,8 @@
         "module_bg_image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80",
         "bg_overlay": "0.5",
         "module_padding_top": "90px",
-        "module_padding_bottom": "90px"
+        "module_padding_bottom": "90px",
+        "module_bg_color": "#ffffff"
       }
     },
     {

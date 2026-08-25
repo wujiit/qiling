@@ -6,7 +6,13 @@
   "page_template": "templates/template-medical-beauty.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "beauty_company"
+    "preset": "beauty_company",
+    "colors": {
+      "primary": "#be123c",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #831843 0%, #be123c 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be123c 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -160,7 +166,8 @@
             "link": "#"
           }
         ],
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#fff1f2"
       }
     },
     {
@@ -193,7 +200,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#fff1f2"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -227,7 +234,7 @@
             "stage_tag": "随访"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#fff1f2"
       }
     },
     {
@@ -274,7 +281,8 @@
         "contact_phone": "400-915-2026",
         "contact_hours": "10:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.58"
+        "bg_overlay": "0.58",
+        "module_bg_color": "#fff1f2"
       }
     }
   ]

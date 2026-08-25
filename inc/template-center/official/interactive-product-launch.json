@@ -6,7 +6,13 @@
   "page_template": "templates/template-interactive-product-launch.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#6366f1",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -77,11 +83,13 @@
             "f_link": "#"
           }
         ],
-        "bg_color": "#eef7ff",
-        "text_color": "#1e293b",
-        "highlight_color": "#2563eb",
+        "bg_color": "linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #0369a1 100%)",
+        "text_color": "#ffffff",
+        "highlight_color": "#38bdf8",
         "padding_top": "96px",
-        "padding_bottom": "86px"
+        "padding_bottom": "86px",
+        "btn_primary_bg_color": "#6366f1",
+        "btn_primary_text_color": "#ffffff"
       }
     },
     {
@@ -90,9 +98,9 @@
         "wheel_title": "发布版本核心能力",
         "wheel_subtitle": "通过 <span style=\"color:#4ffbdf;\">交互轮盘</span> 快速浏览每个核心亮点",
         "wheel_bg_type": "color",
-        "wheel_bg_color": "#0f172a",
+        "wheel_bg_color": "#0a0f1d",
         "wheel_bg_overlay": "0.75",
-        "highlight_color": "#4ffbdf",
+        "highlight_color": "#38bdf8",
         "wheel_padding_top": "96px",
         "wheel_padding_bottom": "96px",
         "wheel_items": [
@@ -218,9 +226,13 @@
         "cta_button_text": "预约演示",
         "cta_button_url": "/contact/",
         "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%)",
+        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e1b4b 60%, #0369a1 100%)",
         "module_padding_top": "96px",
-        "module_padding_bottom": "96px"
+        "module_padding_bottom": "96px",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

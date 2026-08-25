@@ -54,6 +54,59 @@ class Meta_Boxes_Modules_Save_Service {
         update_post_meta( $post_id, '_developer_starter_enable_scroll_reveal', $enable_scroll_reveal );
     }
 
+    /**
+     * 在用户明确确认后，用所选官方页面模板的预设替换现有装修。
+     *
+     * @return array<int,array<string,mixed>>|null
+     */
+    public function maybe_replace_modules_from_selected_template( $post_id, $post_data, $request_data ) {
+        $should_replace = isset( $post_data['developer_starter_apply_selected_template_package'] )
+            && '1' === wp_unslash( (string) $post_data['developer_starter_apply_selected_template_package'] );
+        if ( ! $should_replace || ! class_exists( '\Developer_Starter\Core\Official_Template_Package_Service' ) ) {
+            return null;
+        }
+
+        $template = $this->resolve_requested_page_template( $post_id, $post_data, $request_data );
+        if ( ! is_string( $template ) || '' === $template || 'default' === $template ) {
+            return null;
+        }
+
+        $service = new \Developer_Starter\Core\Official_Template_Package_Service();
+        if ( ! $service->has_package_for_template( $template ) ) {
+            return null;
+        }
+
+        $existing_modules = function_exists( 'developer_starter_get_raw_page_modules_meta' )
+            ? developer_starter_get_raw_page_modules_meta( $post_id )
+            : get_post_meta( $post_id, '_developer_starter_modules', true );
+        if ( is_array( $existing_modules ) && ! empty( $existing_modules ) ) {
+            update_post_meta( $post_id, '_developer_starter_modules_before_template_replace', $existing_modules );
+            update_post_meta( $post_id, '_developer_starter_modules_before_template_replace_at', current_time( 'mysql' ) );
+        }
+
+        $result = $service->apply_package_to_page( $post_id, $template, true );
+        if ( is_wp_error( $result ) || ! $result ) {
+            if ( function_exists( 'developer_starter_log' ) ) {
+                developer_starter_log(
+                    'content_modules',
+                    'Replace modules from selected page template failed.',
+                    array(
+                        'post_id'  => (int) $post_id,
+                        'template' => $template,
+                        'error'    => is_wp_error( $result ) ? $result : null,
+                    ),
+                    'error'
+                );
+            }
+            return null;
+        }
+
+        $modules = get_post_meta( $post_id, '_developer_starter_modules', true );
+        $modules = is_array( $modules ) ? $modules : array();
+        do_action( 'developer_starter_modules_saved', $post_id, $modules );
+        return $modules;
+    }
+
     public function persist_imported_page_package_settings( $post_id, $post_data = array(), $callbacks = array() ) {
         $post_data = is_array( $post_data ) ? $post_data : array();
         $callbacks = is_array( $callbacks ) ? $callbacks : array();
@@ -172,20 +225,18 @@ class Meta_Boxes_Modules_Save_Service {
 
     private function resolve_requested_page_template( $post_id, $post_data, $request_data ) {
         $template = get_post_meta( $post_id, '_wp_page_template', true );
+        $has_selected_template = false;
 
-        if ( ( ! is_string( $template ) || '' === trim( $template ) || 'default' === $template ) && function_exists( 'wp_unslash' ) ) {
-            if ( isset( $post_data['meta_input'] ) && is_array( $post_data['meta_input'] ) && isset( $post_data['meta_input']['_wp_page_template'] ) ) {
-                $raw_meta_template = wp_unslash( $post_data['meta_input']['_wp_page_template'] );
-                if ( is_scalar( $raw_meta_template ) && '' !== trim( (string) $raw_meta_template ) ) {
-                    $template = (string) $raw_meta_template;
-                }
+        if ( isset( $post_data['developer_starter_selected_page_template'] ) ) {
+            $selected_template = wp_unslash( $post_data['developer_starter_selected_page_template'] );
+            if ( is_scalar( $selected_template ) && '' !== trim( (string) $selected_template ) ) {
+                $template = (string) $selected_template;
+                $has_selected_template = true;
             }
+        }
 
+        if ( ! $has_selected_template ) {
             foreach ( array( 'page_template', '_wp_page_template', 'template' ) as $request_key ) {
-                if ( is_string( $template ) && '' !== trim( $template ) && 'default' !== $template ) {
-                    break;
-                }
-
                 if ( ! isset( $request_data[ $request_key ] ) ) {
                     continue;
                 }
@@ -196,6 +247,16 @@ class Meta_Boxes_Modules_Save_Service {
                     break;
                 }
             }
+        }
+
+        if ( ( ! is_string( $template ) || '' === trim( $template ) || 'default' === $template ) && function_exists( 'wp_unslash' ) ) {
+            if ( isset( $post_data['meta_input'] ) && is_array( $post_data['meta_input'] ) && isset( $post_data['meta_input']['_wp_page_template'] ) ) {
+                $raw_meta_template = wp_unslash( $post_data['meta_input']['_wp_page_template'] );
+                if ( is_scalar( $raw_meta_template ) && '' !== trim( (string) $raw_meta_template ) ) {
+                    $template = (string) $raw_meta_template;
+                }
+            }
+
         }
 
         if ( function_exists( 'developer_starter_normalize_page_template_slug' ) ) {

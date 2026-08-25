@@ -58,6 +58,96 @@ class Module_Standards {
     }
 
     /**
+     * How connected content should be rendered for a module.
+     * Shell modules provide their own shared outer frame; flat modules remove
+     * individual card surfaces; native modules keep their own layout controls.
+     *
+     * @param string $module_id Module id.
+     * @return string shell|flat|native
+     */
+    public static function get_card_layout_strategy( $module_id ) {
+        $strategies = array(
+            'pricing'       => 'shell',
+            'banner'        => 'native',
+            'certificate_honors' => 'flat',
+            'clients'       => 'flat',
+            'columns'       => 'flat',
+            'compliance_trust' => 'flat',
+            'contact'       => 'flat',
+            'downloads'     => 'flat',
+            'experience_timeline' => 'flat',
+            'features'      => 'flat',
+            'features_list' => 'flat',
+            'friendly_links' => 'flat',
+            'hotel-amenities' => 'flat',
+            'menu'          => 'flat',
+            'process'       => 'flat',
+            'resource_stats' => 'flat',
+            'services'      => 'flat',
+            'skills'        => 'flat',
+            'stats'         => 'flat',
+            'team'          => 'flat',
+        );
+        $module_id = sanitize_key( (string) $module_id );
+
+        return isset( $strategies[ $module_id ] ) ? $strategies[ $module_id ] : 'native';
+    }
+
+    /**
+     * Add capabilities only when the module actually declares matching fields.
+     * Existing manual declarations remain authoritative and are never disabled.
+     *
+     * @param array<int,array<string,mixed>> $fields       Module fields.
+     * @param array<string,bool>             $capabilities Capability flags.
+     * @return array<string,bool>
+     */
+    public static function enrich_design_capabilities_from_fields( $fields, $capabilities ) {
+        $capabilities = is_array( $capabilities ) ? $capabilities : array();
+        foreach ( array( 'title', 'subtitle', 'text', 'buttons', 'cards' ) as $capability ) {
+            $capabilities[ $capability ] = ! empty( $capabilities[ $capability ] );
+        }
+        self::infer_design_capabilities_from_fields( $fields, $capabilities );
+
+        return $capabilities;
+    }
+
+    private static function infer_design_capabilities_from_fields( $fields, &$capabilities ) {
+        if ( ! is_array( $fields ) ) {
+            return;
+        }
+
+        foreach ( $fields as $field ) {
+            if ( ! is_array( $field ) ) {
+                continue;
+            }
+
+            $field_id   = isset( $field['id'] ) ? sanitize_key( (string) $field['id'] ) : '';
+            $field_type = isset( $field['type'] ) ? sanitize_key( (string) $field['type'] ) : 'text';
+            if ( '' !== $field_id && 0 !== strpos( $field_id, '_ds_' ) && ! preg_match( '/(?:^|_)(?:color|size|weight|line_height|spacing|margin|padding|radius|shadow|background|border|opacity|style)$/', $field_id ) ) {
+                if ( preg_match( '/(?:^|_)(?:title|heading)(?:_|$)/', $field_id ) ) {
+                    $capabilities['title'] = true;
+                }
+                if ( preg_match( '/(?:^|_)(?:subtitle|tagline|eyebrow)(?:_|$)/', $field_id ) ) {
+                    $capabilities['subtitle'] = true;
+                }
+                if ( preg_match( '/(?:^|_)(?:desc|description|content|text|excerpt|intro|summary|answer)(?:_|$)/', $field_id ) ) {
+                    $capabilities['text'] = true;
+                }
+                if ( preg_match( '/(?:^|_)(?:button|buttons|btn|cta)(?:_|$)/', $field_id ) ) {
+                    $capabilities['buttons'] = true;
+                }
+            }
+
+            if ( 'repeater' === $field_type ) {
+                $capabilities['cards'] = true;
+            }
+            if ( ! empty( $field['fields'] ) && is_array( $field['fields'] ) ) {
+                self::infer_design_capabilities_from_fields( $field['fields'], $capabilities );
+            }
+        }
+    }
+
+    /**
      * Get catalog schema version.
      *
      * @return string
@@ -224,6 +314,8 @@ class Module_Standards {
             'human_resources' => array( 'label' => __( '人力资源', 'developer-starter' ), 'group' => 'service', 'schemaTypes' => array( 'Organization', 'Service' ) ),
             'healthcare'     => array( 'label' => __( '医疗健康', 'developer-starter' ), 'group' => 'health', 'schemaTypes' => array( 'MedicalOrganization', 'MedicalBusiness' ) ),
             'medical_device' => array( 'label' => __( '医疗器械', 'developer-starter' ), 'group' => 'health', 'schemaTypes' => array( 'Organization', 'Product', 'Service' ) ),
+            'health_supplements' => array( 'label' => __( '健康保健用品', 'developer-starter' ), 'group' => 'health', 'schemaTypes' => array( 'Organization', 'Product', 'OnlineStore' ) ),
+            'intimate_wellness' => array( 'label' => __( '情趣用品', 'developer-starter' ), 'group' => 'health', 'schemaTypes' => array( 'Organization', 'Product', 'OnlineStore' ) ),
             'lab_instrument' => array( 'label' => __( '实验室设备/科研仪器', 'developer-starter' ), 'group' => 'business', 'schemaTypes' => array( 'Organization', 'Product', 'Service' ) ),
             'dental'         => array( 'label' => __( '牙科', 'developer-starter' ), 'group' => 'health', 'schemaTypes' => array( 'Dentist', 'MedicalClinic' ) ),
             'medical_beauty' => array( 'label' => __( '医美', 'developer-starter' ), 'group' => 'health', 'schemaTypes' => array( 'MedicalBusiness', 'HealthAndBeautyBusiness' ) ),
@@ -241,6 +333,7 @@ class Module_Standards {
             'appliance_repair' => array( 'label' => __( '维修安装', 'developer-starter' ), 'group' => 'local', 'schemaTypes' => array( 'HomeAndConstructionBusiness', 'LocalBusiness' ) ),
             'renovation'     => array( 'label' => __( '装修建筑', 'developer-starter' ), 'group' => 'property', 'schemaTypes' => array( 'HomeAndConstructionBusiness', 'ProfessionalService' ) ),
             'ecommerce'      => array( 'label' => __( '电商零售', 'developer-starter' ), 'group' => 'commerce', 'schemaTypes' => array( 'OnlineStore', 'Product' ) ),
+            'fashion'        => array( 'label' => __( '服装时尚', 'developer-starter' ), 'group' => 'commerce', 'schemaTypes' => array( 'Organization', 'OnlineStore', 'Product' ) ),
             'cross_border_ecommerce_service' => array( 'label' => __( '跨境电商服务', 'developer-starter' ), 'group' => 'commerce', 'schemaTypes' => array( 'Organization', 'Service' ) ),
             'mcn_live_commerce' => array( 'label' => __( 'MCN/直播电商', 'developer-starter' ), 'group' => 'commerce', 'schemaTypes' => array( 'Organization', 'Service' ) ),
             'media'          => array( 'label' => __( '媒体资讯', 'developer-starter' ), 'group' => 'content', 'schemaTypes' => array( 'NewsMediaOrganization', 'Article' ) ),
@@ -274,6 +367,12 @@ class Module_Standards {
         foreach ( self::get_industry_standards() as $key => $config ) {
             $labels[ $key ] = isset( $config['label'] ) && is_scalar( $config['label'] ) ? (string) $config['label'] : self::humanize_key( $key );
         }
+
+        $labels['entertainment_video'] = __( '影视娱乐', 'developer-starter' );
+        $labels['digital_resource'] = __( '数字资源', 'developer-starter' );
+        $labels['photography'] = __( '摄影图片', 'developer-starter' );
+        $labels['software_resource'] = __( '软件资源', 'developer-starter' );
+        $labels['event'] = __( '活动会展', 'developer-starter' );
 
         return $labels;
     }

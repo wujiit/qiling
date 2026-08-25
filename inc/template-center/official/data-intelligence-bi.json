@@ -6,7 +6,13 @@
   "page_template": "templates/template-data-intelligence-bi.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#3b82f6",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #1e40af 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #1e3a8a 52%, #1e1b4b 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "统一指标、实时看板、智能分析和预警订阅，帮助团队更快发现问题。",
             "btn_text": "预约演示",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_bg_color": "#3b82f6",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",

@@ -139,12 +139,12 @@ class Meta_Boxes_Post_Settings_Service {
             : array();
 
         if ( empty( $languages ) ) {
-            echo '<p class="description">' . esc_html__( '启灵AI多语言 provider 暂未返回语言诊断数据。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '启灵AI多语言暂未提供语言诊断数据。', 'developer-starter' ) . '</p>';
             echo '</div>';
             return;
         }
 
-        echo '<p class="description">' . esc_html__( 'canonical 与 hreflang 优先按启灵AI多语言 URL 规则判断；OG image、noindex、nofollow 第一阶段继承原页面，不作为译文缺失项。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . esc_html__( 'canonical 与 hreflang 按启灵AI多语言 URL 规则判断；OG image、noindex 和 nofollow 默认继承原页面，不计入译文缺失项。', 'developer-starter' ) . '</p>';
         echo '<div class="qiling-ml-seo-matrix__scroll">';
         echo '<table class="widefat striped qiling-ml-seo-matrix__table">';
         echo '<thead><tr>';
@@ -331,7 +331,7 @@ class Meta_Boxes_Post_Settings_Service {
         echo '<hr style="margin: 18px 0;">';
         echo '<div class="qiling-schema-override">';
         echo '<h4>' . esc_html__( '页面级 Schema 覆盖', 'developer-starter' ) . '</h4>';
-        echo '<p class="description">' . esc_html__( '覆盖数据会进入 Industry_Schema_Engine 的同一份 @graph，不会单独输出第二份 JSON-LD。留空字段会尽量回退当前页面标题、描述、特色图或站点组织。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . esc_html__( '页面设置会合并到同一份 Schema 结构化数据中，不会重复输出 JSON-LD。留空字段会优先使用当前页面标题、描述、特色图或站点组织信息。', 'developer-starter' ) . '</p>';
 
         echo '<p><label><input type="checkbox" name="qiling_schema_override[enabled]" value="1" ' . checked( $enabled, true, false ) . '> ' . esc_html__( '启用当前页面 Schema 覆盖', 'developer-starter' ) . '</label></p>';
         echo '<p><label><strong>' . esc_html__( '页面主类型', 'developer-starter' ) . '</strong></label><br>';
@@ -596,7 +596,7 @@ class Meta_Boxes_Post_Settings_Service {
             </p>
             <p class="description" style="color: #666; font-size: 12px; margin-top: 8px;">
                 <?php esc_html_e( '勾选后将不显示页面顶部的标题横幅区域。', 'developer-starter' ); ?><br>
-                <?php printf( __( '第三方插件也可通过 %s Filter 控制此设置。', 'developer-starter' ), '<code>qiling_show_page_header</code>' ); ?>
+                <?php esc_html_e( '此设置也支持与第三方插件协同控制。', 'developer-starter' ); ?>
             </p>
 
             <p style="margin-top: 15px; border-top: 1px dashed #eee; padding-top: 15px;">
@@ -957,6 +957,13 @@ class Meta_Boxes_Post_Settings_Service {
                                         <span><?php echo esc_html( isset( $field['label'] ) ? (string) $field['label'] : $field_key ); ?></span>
                                         <?php if ( 'opacity' === $field_type ) : ?>
                                             <input type="number" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $field_value ); ?>" class="widefat" min="0" max="1" step="0.01" placeholder="<?php echo esc_attr( isset( $field['placeholder'] ) ? (string) $field['placeholder'] : '' ); ?>" data-qiling-page-visual-input data-qiling-page-visual-group="<?php echo esc_attr( $group_key ); ?>" data-qiling-page-visual-key="<?php echo esc_attr( $field_key ); ?>">
+                                        <?php elseif ( 'select' === $field_type && ! empty( $field['options'] ) && is_array( $field['options'] ) ) : ?>
+                                            <select name="<?php echo esc_attr( $input_name ); ?>" class="widefat" data-qiling-page-visual-input data-qiling-page-visual-group="<?php echo esc_attr( $group_key ); ?>" data-qiling-page-visual-key="<?php echo esc_attr( $field_key ); ?>">
+                                                <option value=""><?php esc_html_e( '跟随默认', 'developer-starter' ); ?></option>
+                                                <?php foreach ( $field['options'] as $option_value => $option_label ) : ?>
+                                                    <option value="<?php echo esc_attr( (string) $option_value ); ?>" <?php selected( $field_value, (string) $option_value ); ?>><?php echo esc_html( (string) $option_label ); ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
                                         <?php else : ?>
                                             <input type="text" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $field_value ); ?>" class="widefat" placeholder="<?php echo esc_attr( isset( $field['placeholder'] ) ? (string) $field['placeholder'] : '' ); ?>" data-qiling-page-visual-input data-qiling-page-visual-group="<?php echo esc_attr( $group_key ); ?>" data-qiling-page-visual-key="<?php echo esc_attr( $field_key ); ?>">
                                         <?php endif; ?>
@@ -3340,7 +3347,7 @@ class Meta_Boxes_Post_Settings_Service {
             return false;
         }
 
-        foreach ( array( 'colors', 'header', 'footer', 'buttons' ) as $group_key ) {
+        foreach ( array( 'colors', 'canvas', 'header', 'footer', 'buttons' ) as $group_key ) {
             if ( $this->page_visual_style_group_has_values( $settings, $group_key ) ) {
                 return true;
             }

@@ -6,7 +6,13 @@
   "page_template": "templates/template-dental-clinic.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "healthcare_company"
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#0d9488",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 52%, #0d9488 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,7 +56,7 @@
             "btn_text": "预约初诊",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_text_color": "#0284c7"
           }
         ],
         "show_stats_bar": "1",
@@ -150,7 +156,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#eff6ff",
+        "module_bg_color": "#f0f9ff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "enable_staggered_animation": "yes"
@@ -230,7 +236,8 @@
             "date": "2026-03-12",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#f8fafc"
       }
     },
     {
@@ -247,14 +254,15 @@
         "module_bg_image": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1600&q=80",
         "bg_overlay": "0.55",
         "module_padding_top": "90px",
-        "module_padding_bottom": "90px"
+        "module_padding_bottom": "90px",
+        "module_bg_color": "#ffffff"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "就诊常见问题",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#f0f9ff",
         "faq_items": [
           {
             "question": "初诊需要多长时间？",

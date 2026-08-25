@@ -6,7 +6,13 @@
   "page_template": "templates/template-renovation-construction.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#d97706",
+      "accent": "#1e293b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #64748b 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #334155 50%, #78350f 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "家装、工装、设计与施工一体化交付，支持在线报价咨询。",
             "btn_text": "获取报价",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#334155"
+            "btn_bg_color": "#d97706",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -147,7 +153,7 @@
             "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#fffbeb"
       }
     },
     {
@@ -233,14 +239,14 @@
         "contact_form_id": "",
         "contact_image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#fffbeb"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "报价常见问题",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "faq_items": [
           {
             "question": "报价是否包含主材？",

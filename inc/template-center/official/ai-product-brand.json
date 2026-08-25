@@ -6,7 +6,13 @@
   "page_template": "templates/template-ai-product-brand.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -39,12 +45,12 @@
       "data": {
         "db_height": "82vh",
         "db_bg_type": "gradient",
-        "db_bg_gradient": "linear-gradient(135deg, #0b1020 0%, #1d4ed8 45%, #0ea5e9 100%)",
+        "db_bg_gradient": "linear-gradient(135deg, #090e1a 0%, #1e40af 50%, #0284c7 100%)",
         "db_title_prefix": "产品品牌官网",
         "db_typing_mode": "loop",
         "db_typing_text": "多场景 AI Agent 工作流\n企业级知识问答与自动化协作\n从 PoC 到生产快速落地",
-        "db_highlight_color": "#67e8f9",
-        "db_title_color": "#e2e8f0",
+        "db_highlight_color": "#38bdf8",
+        "db_title_color": "#ffffff",
         "db_subtitle": "围绕增长、效率与稳定性，构建可持续迭代的 AI 产品体系。",
         "db_desc": "该模板已内置品牌官网常用区块：能力介绍、实施流程、案例、客户评价、合规信任与转化入口。",
         "db_text_color": "rgba(226,232,240,0.88)",
@@ -209,7 +215,8 @@
         "cases_show_image": "1",
         "cases_image_height": "220px",
         "cases_padding_top": "80px",
-        "cases_padding_bottom": "80px"
+        "cases_padding_bottom": "80px",
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -222,7 +229,7 @@
         "show_rating_summary": "yes",
         "total_reviews": "120+",
         "average_rating": "4.9",
-        "testimonials_bg_color": "#f8fafc",
+        "testimonials_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "testimonials_items": [
@@ -264,7 +271,7 @@
         "ct_card_style": "solid",
         "ct_accent_color": "#2563eb",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "ct_items": [
@@ -315,7 +322,7 @@
       "data": {
         "faq_title": "常见问题",
         "faq_subtitle": "关于部署、数据和计费的高频问题说明",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "faq_items": [
@@ -346,7 +353,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -359,9 +366,13 @@
         "cta_button_text": "立即预约演示",
         "cta_button_url": "#contact-section",
         "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #0b1020 0%, #1e3a8a 100%)",
+        "cta_bg_color": "linear-gradient(135deg, #090e1a 0%, #1e3a8a 60%, #0284c7 100%)",
         "module_padding_top": "96px",
-        "module_padding_bottom": "96px"
+        "module_padding_bottom": "96px",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

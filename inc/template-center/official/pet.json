@@ -6,7 +6,13 @@
   "page_template": "templates/template-pet.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "healthcare_company"
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#d97706",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #164e63 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #78350f 0%, #d97706 50%, #059669 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -51,7 +57,7 @@
             "btn_text": "预约服务",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_text_color": "#d97706"
           }
         ],
         "show_stats_bar": "1",
@@ -90,9 +96,9 @@
         "pet_title": "等待回家的小伙伴",
         "pet_subtitle": "每一只都经过健康检查和性格评估，可替换为门店宠物、领养档案或种猫种犬展示。",
         "pet_columns": "3",
-        "pet_bg_color": "#ecfeff",
+        "pet_bg_color": "#fffbeb",
         "pet_card_bg": "#ffffff",
-        "pet_primary_color": "#0f766e",
+        "pet_primary_color": "#d97706",
         "pet_items": [
           {
             "image": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80",
@@ -192,7 +198,7 @@
             "category": "护理"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#fffbeb"
       }
     },
     {
@@ -229,7 +235,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#ffffff"
       }
     },
     {
@@ -244,14 +251,15 @@
         "contact_phone": "400-168-2026",
         "contact_hours": "09:30-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#fffbeb"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "宠物服务常见问题",
-        "module_bg_color": "#ecfeff",
+        "module_bg_color": "#ffffff",
         "faq_items": [
           {
             "question": "宠物寄养需要准备什么？",

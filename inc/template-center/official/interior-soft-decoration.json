@@ -6,7 +6,13 @@
   "page_template": "templates/template-interior-soft-decoration.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#78350f",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -78,7 +84,8 @@
         "cases_image_height": "260px",
         "cases_padding_top": "84px",
         "cases_padding_bottom": "84px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -86,7 +93,7 @@
       "data": {
         "lookbook_title": "软装搭配画册",
         "lookbook_columns": "3",
-        "module_bg_color": "#fff7ed",
+        "module_bg_color": "#fefce8",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "enable_staggered_animation": "yes",
@@ -185,7 +192,7 @@
         "process_subtitle": "从量房沟通到软装进场，把审美、预算和工期放在同一张路线图里",
         "process_mode": "industrial",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#fefce8",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px",
         "process_items": [
@@ -272,7 +279,7 @@
         "contact_form_id": "",
         "contact_image": "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "84px",
         "module_padding_bottom": "84px"
       }

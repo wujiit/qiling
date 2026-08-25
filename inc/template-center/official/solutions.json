@@ -6,7 +6,13 @@
   "page_template": "templates/template-solutions.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -172,7 +178,12 @@
         "cta_subtitle": "立即联系我们，获取免费需求评估和专属解决方案",
         "cta_btn_text": "预约咨询",
         "cta_btn_url": "/contact/",
-        "cta_bg_color": "linear-gradient(135deg, #2563eb 0%, #059669 100%)"
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 55%, #059669 100%)",
+        "cta_bg_type": "color",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#059669",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

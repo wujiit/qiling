@@ -6,7 +6,13 @@
   "page_template": "templates/template-travel.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f766e 0%, #0369a1 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 50%, #0d9488 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,7 +56,7 @@
             "btn_text": "咨询线路",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_text_color": "#0284c7"
           }
         ],
         "show_stats_bar": "1",
@@ -124,7 +130,7 @@
         "itinerary_title": "经典三日行程",
         "itinerary_subtitle": "用清晰日程降低用户决策成本，可替换为任意目的地线路",
         "itinerary_layout": "cards",
-        "itinerary_line_color": "#0f766e",
+        "itinerary_line_color": "#0284c7",
         "itinerary_days": [
           {
             "day_number": "Day 1",
@@ -160,7 +166,7 @@
             "attractions": "海边咖啡\n伴手礼街区"
           }
         ],
-        "module_bg_color": "#f0fdfa"
+        "module_bg_color": "#f0f9ff"
       }
     },
     {
@@ -229,7 +235,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#f0f9ff"
       }
     },
     {
@@ -244,14 +251,15 @@
         "contact_phone": "400-517-2026",
         "contact_hours": "09:00-22:00",
         "module_bg_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#ffffff"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "旅行咨询常见问题",
-        "module_bg_color": "#ecfeff",
+        "module_bg_color": "#f0f9ff",
         "faq_items": [
           {
             "question": "线路可以定制吗？",

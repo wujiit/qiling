@@ -48,7 +48,7 @@ trait Admin_Settings_Repair_Trait {
 
         echo '<tr><th scope="row">' . esc_html__( '主题设置数据修复', 'developer-starter' ) . '</th><td>';
         echo '<div style="padding:16px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;">';
-        echo '<p class="description" style="margin:0 0 12px;">' . esc_html__( '用于检测并修复主题设置（developer_starter_options）因 SQL 直接替换域名导致的序列化损坏。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin:0 0 12px;">' . esc_html__( '用于检测并修复因直接替换数据库域名导致的主题设置数据损坏。', 'developer-starter' ) . '</p>';
         echo '<div style="margin:0 0 12px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#f9fafb;border:1px solid #e5e7eb;color:' . esc_attr( $status_color ) . ';font-weight:600;">' . esc_html( $status_label ) . '</span></div>';
         echo '<div class="description" style="margin:0 0 12px;">' . esc_html__( '这里仅检测主题设置的序列化损坏，不判断是否含旧域名。旧域名差异请使用上方“域名设置检查”；该检查现已改为手动触发，不会在后台常驻扫描。', 'developer-starter' ) . '</div>';
         echo '<div style="margin:0 0 12px;"><a class="button button-secondary" href="' . esc_url( $domain_scan_url ) . '">' . esc_html__( '手动执行域名检查', 'developer-starter' ) . '</a></div>';
@@ -83,7 +83,6 @@ trait Admin_Settings_Repair_Trait {
         }
         echo '<button type="button" class="button button-primary" id="ds-repair-theme-options-btn">' . esc_html__( '扫描并修复主题设置', 'developer-starter' ) . '</button>';
         echo '<a class="button button-secondary" style="margin-left:8px;" href="' . esc_url( $action_url ) . '" onclick="return confirm(\'' . esc_js( __( '确定要开始扫描并修复主题设置吗？建议先备份数据库。', 'developer-starter' ) ) . '\');">' . esc_html__( '备用入口（无 JS）', 'developer-starter' ) . '</a>';
-        echo '<div class="description" style="margin-top:10px;">' . esc_html__( '请求地址：', 'developer-starter' ) . '<code style="margin-left:6px;word-break:break-all;">' . esc_html( $action_url ) . '</code></div>';
         echo '<script>
         (function(){
             var btn = document.getElementById("ds-repair-theme-options-btn");
@@ -141,10 +140,9 @@ trait Admin_Settings_Repair_Trait {
             esc_html__( '用于修复 %s 因 SQL 直接替换域名导致的序列化损坏（常见表现：页面装修模块在前台/后台看起来被清空）。', 'developer-starter' ),
             esc_html( $targets_text )
         ) . '</p>';
-        echo '<div class="description" style="margin:0 0 12px;">' . esc_html__( '当前会扫描主题页面模块 `_developer_starter_modules`、启灵积分商城页面装修 `_qls_shop_layout`，以及商城旧版全局布局 `qls_shop_home_layout`。', 'developer-starter' ) . '</div>';
+        echo '<div class="description" style="margin:0 0 12px;">' . esc_html__( '当前会扫描主题页面模块和启灵积分商城页面装修数据。', 'developer-starter' ) . '</div>';
         echo '<button type="button" class="button button-primary" id="ds-repair-modules-meta-btn">' . esc_html__( '扫描并修复页面模块', 'developer-starter' ) . '</button>';
         echo '<a class="button button-secondary" style="margin-left:8px;" href="' . esc_url( $action_url ) . '" onclick="return confirm(\'' . esc_js( __( '确定要开始扫描并修复页面模块数据吗？建议先备份数据库。', 'developer-starter' ) ) . '\');">' . esc_html__( '备用入口（无 JS）', 'developer-starter' ) . '</a>';
-        echo '<div class="description" style="margin-top:10px;">' . esc_html__( '请求地址：', 'developer-starter' ) . '<code style="margin-left:6px;word-break:break-all;">' . esc_html( $action_url ) . '</code></div>';
         echo '<script>
         (function(){
             var btn = document.getElementById("ds-repair-modules-meta-btn");

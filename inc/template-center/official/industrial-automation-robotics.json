@@ -6,7 +6,13 @@
   "page_template": "templates/template-industrial-automation-robotics.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#1d4ed8",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #dbeafe 45%, #fef3c7 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #78350f 100%)",
         "bb_title": "从单机机器人到整线集成<br><strong>让产线更稳定</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #1d4ed8 0%, #f59e0b 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #fcd34d 100%)",
         "bb_subtitle": "工业机器人与自动化集成官网方案",
         "bb_desc": "围绕上下料、焊接、搬运、码垛、视觉检测、柔性输送和整线改造，把设备能力、调试经验、项目案例和方案咨询入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -132,7 +138,8 @@
             "post_id": "",
             "btn_text": "咨询工位"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -164,7 +171,8 @@
         "cases_image_height": "220px",
         "cases_padding_top": "80px",
         "cases_padding_bottom": "80px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -172,7 +180,7 @@
       "data": {
         "video_title": "产线调试与设备运行视频",
         "video_subtitle": "用运行画面展示机器人节拍、动作稳定性和安全边界",
-        "video_bg_color": "#f8fafc",
+        "video_bg_color": "#ffffff",
         "video_width": "100%",
         "video_height": "520px",
         "video_url": "https://videos.pexels.com/video-files/32386522/13814785_3840_2160_50fps.mp4",
@@ -186,7 +194,7 @@
       "data": {
         "downloads_title": "方案资料与评估清单",
         "downloads_subtitle": "把设备选型、现场评估和项目验收资料集中给客户下载",
-        "downloads_bg_color": "#ffffff",
+        "downloads_bg_color": "#f8fafc",
         "downloads_columns": "3",
         "downloads_btn_bg_color": "#1d4ed8",
         "downloads_btn_text_color": "#ffffff",
@@ -234,7 +242,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

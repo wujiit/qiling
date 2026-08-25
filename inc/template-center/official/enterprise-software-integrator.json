@@ -6,7 +6,13 @@
   "page_template": "templates/template-enterprise-software-integrator.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #e0f2fe 45%, #dcfce7 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090d1a 0%, #1e1b4b 50%, #0284c7 100%)",
         "bb_title": "把企业系统、数据和流程<br><strong>集成成一张业务网</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #2563eb 0%, #0f766e 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #38bdf8 100%)",
         "bb_subtitle": "企业软件定制、系统集成与数字化项目交付官网方案",
         "bb_desc": "围绕 ERP、CRM、OA、数据中台、API 对接、低代码流程和私有化部署，把技术能力、行业方案、客户案例和项目咨询入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -204,7 +210,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -215,7 +221,7 @@
         "process_title": "系统集成项目交付流程",
         "process_subtitle": "从业务调研到上线运维，控制需求变更和交付风险",
         "process_mode": "standard",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "process_items": [
@@ -269,7 +275,7 @@
             "answer": "可以展示版本升级、接口监控、故障响应、权限审计、备份恢复和二次开发服务，正式承诺按服务等级协议或运维合同约定。"
           }
         ],
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -282,7 +288,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

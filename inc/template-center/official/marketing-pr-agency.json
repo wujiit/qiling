@@ -6,7 +6,13 @@
   "page_template": "templates/template-marketing-pr-agency.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#6366f1",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "让品牌传播更有结果",
         "db_typing_mode": "loop",
         "db_typing_text": "品牌战略咨询与定位升级\n整合营销传播与内容增长\n公关声量管理与口碑运营",
-        "db_highlight_color": "#67e8f9",
-        "db_title_color": "#e2e8f0",
+        "db_highlight_color": "#a5b4fc",
+        "db_title_color": "#ffffff",
         "db_subtitle": "帮助品牌在竞争市场中获得持续关注、有效转化和长期资产沉淀。",
         "db_desc": "适合营销、公关、品牌咨询和企业服务团队，用于展示服务、案例、流程和咨询入口。",
         "db_text_color": "rgba(226,232,240,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #090d1a 0%, #312e81 50%, #0369a1 100%)"
       }
     },
     {

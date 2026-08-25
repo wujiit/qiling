@@ -290,13 +290,18 @@ if ( ! function_exists( 'developer_starter_enqueue_child_theme_core_bridge' ) ) 
             return;
         }
 
+        $login_modal_enabled = function_exists( 'developer_starter_is_login_modal_enabled' )
+            ? developer_starter_is_login_modal_enabled()
+            : ( function_exists( 'developer_starter_get_option' )
+                ? (bool) developer_starter_get_option( 'header_login_enable', '' )
+                : true );
         $header_login_enabled = function_exists( 'developer_starter_get_option' )
             ? (bool) developer_starter_get_option( 'header_login_enable', '' )
             : true;
         $is_auth_template_page = function_exists( 'developer_starter_is_auth_template_page' )
             && developer_starter_is_auth_template_page();
 
-        $should_enqueue = $header_login_enabled || $is_auth_template_page;
+        $should_enqueue = $login_modal_enabled || $is_auth_template_page;
         $should_enqueue = (bool) apply_filters(
             'developer_starter_child_theme_enqueue_header_auth_bridge',
             $should_enqueue,

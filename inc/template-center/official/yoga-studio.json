@@ -6,7 +6,13 @@
   "page_template": "templates/template-yoga-studio.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "beauty_company"
+    "preset": "beauty_company",
+    "colors": {
+      "primary": "#9f1239",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #9f1239 50%, #065f46 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,7 +56,7 @@
             "btn_text": "预约体验课",
             "btn_url": "#",
             "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_text_color": "#9f1239"
           }
         ],
         "show_stats_bar": "1",
@@ -88,7 +94,7 @@
       "data": {
         "services_title": "身心课程",
         "services_subtitle": "从初学入门到进阶练习，按身体状态选择课程",
-        "services_bg_color": "#ecfdf5",
+        "services_bg_color": "#ffffff",
         "services_columns": "4",
         "services_items": [
           {
@@ -123,8 +129,8 @@
       "data": {
         "curriculum_title": "本周课程",
         "curriculum_subtitle": "可替换为门店真实课表和导师安排",
-        "curriculum_bg_color": "#ffffff",
-        "curriculum_primary_color": "#0f766e",
+        "curriculum_bg_color": "#fff1f2",
+        "curriculum_primary_color": "#9f1239",
         "curriculum_items": [
           {
             "title": "周二：晨间哈他",
@@ -177,7 +183,7 @@
           }
         ],
         "module_bg_type": "color",
-        "module_bg_color": "#f0fdfa"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -206,7 +212,7 @@
             "category": "空间"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#fff1f2"
       }
     },
     {
@@ -215,7 +221,7 @@
         "pricing_title": "课程套餐",
         "pricing_subtitle": "按练习频率选择合适的会员方式",
         "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "pricing_items": [
           {
             "name": "体验课",
@@ -236,7 +242,8 @@
             "btn_text": "咨询月卡",
             "btn_link": "#",
             "featured": "1",
-            "featured_text": "热门"
+            "featured_text": "热门",
+            "featured_bg": "linear-gradient(135deg, #9f1239 0%, #e11d48 100%)"
           },
           {
             "name": "私教课",
@@ -263,7 +270,8 @@
         "contact_phone": "400-880-2026",
         "contact_hours": "08:00-21:30",
         "module_bg_image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#fff1f2"
       }
     }
   ]

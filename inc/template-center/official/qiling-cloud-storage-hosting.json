@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-cloud-storage-hosting.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #e0f2fe 48%, #dcfce7 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #080f1d 0%, #0369a1 52%, #0f172a 100%)",
         "bb_title": "附件上云、图床直链<br><strong>一套页面讲清楚</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #0369a1 0%, #059669 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 52%, #67e8f9 100%)",
         "bb_subtitle": "启灵生态云存储与图床入口",
         "bb_desc": "围绕 WordPress 附件同步、阿里云 OSS、腾讯云 COS、历史媒体迁移、远端校验、主题 assets CDN、前台多图上传和直链复制，把技术配置包装成可交付、可运营的存储服务官网。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -67,14 +73,14 @@
             "icon": "图"
           }
         ],
-        "bb_primary_btn_bg_color": "#0369a1",
+        "bb_primary_btn_bg_color": "#0284c7",
         "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#075985",
+        "bb_primary_btn_hover_bg_color": "#0369a1",
         "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#f0f9ff",
-        "bb_light_btn_hover_text_color": "#0369a1",
+        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.12)",
+        "bb_light_btn_text_color": "#ffffff",
+        "bb_light_btn_hover_bg_color": "rgba(255, 255, 255, 0.22)",
+        "bb_light_btn_hover_text_color": "#ffffff",
         "bb_media_type": "image",
         "bb_main_image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
         "bb_media_shadow": "glow",
@@ -121,7 +127,8 @@
             "title": "前台图床上传",
             "desc": "启灵图床提供多图拖拽上传、格式和大小限制、游客文件夹、角色权限、直链/Markdown/BBCode 复制和我的图片管理。"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -188,9 +195,9 @@
         "downloads_subtitle": "把技术配置变成客户能看懂、团队能执行的上线资料",
         "downloads_bg_color": "#f8fafc",
         "downloads_columns": "3",
-        "downloads_btn_bg_color": "#0369a1",
+        "downloads_btn_bg_color": "#0284c7",
         "downloads_btn_text_color": "#ffffff",
-        "downloads_btn_hover_bg_color": "#075985",
+        "downloads_btn_hover_bg_color": "#0369a1",
         "downloads_btn_hover_text_color": "#ffffff",
         "downloads_items": [
           {
@@ -259,9 +266,14 @@
         "cta_subtitle": "替换真实云存储设置页、图床上传页、图片管理页和迁移服务说明，就能把对象存储配置从后台功能变成客户看得懂的产品官网。",
         "cta_button_text": "配置云存储图床入口",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #080f1d 0%, #0369a1 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

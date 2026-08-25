@@ -6,7 +6,13 @@
   "page_template": "templates/template-government-public-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "law_company"
+    "preset": "law_company",
+    "colors": {
+      "primary": "#1e3a8a",
+      "accent": "#b91c1c",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #991b1b 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "机构介绍、服务事项、办理流程和联系方式集中展示，降低公众查询成本。",
             "btn_text": "查看服务事项",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1e40af"
+            "btn_bg_color": "#1e3a8a",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -162,23 +168,32 @@
         "stats_items": [
           {
             "number": "30+",
-            "label": "服务事项"
+            "label": "服务事项",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "12个",
-            "label": "服务窗口"
+            "label": "服务窗口",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "3日",
-            "label": "平均反馈周期"
+            "label": "平均反馈周期",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "98%",
-            "label": "咨询响应率"
+            "label": "咨询响应率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#ffffff"
+        "stats_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #991b1b 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -200,7 +215,7 @@
             "answer": "请保留申请编号或联系方式，工作人员会按事项流程反馈办理进度。"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -264,7 +279,7 @@
             "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "module_bg_color": "#f8fafc"
       }
     },
     {

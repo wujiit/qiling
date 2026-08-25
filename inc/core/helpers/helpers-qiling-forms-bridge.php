@@ -115,6 +115,21 @@ add_filter( 'qiling_forms_validation_errors', 'developer_starter_restrict_contac
 
 if ( ! function_exists( 'developer_starter_handle_logout_redirect' ) ) {
     /**
+     * 获取前台快捷退出地址。
+     *
+     * @return string
+     */
+    function developer_starter_get_front_logout_url() {
+        return add_query_arg(
+            array(
+                'ds_logout' => '1',
+                '_wpnonce'  => wp_create_nonce( 'developer_starter_front_logout' ),
+            ),
+            home_url( '/' )
+        );
+    }
+
+    /**
      * 处理前台快捷退出登录。
      *
      * @return void
@@ -123,11 +138,19 @@ if ( ! function_exists( 'developer_starter_handle_logout_redirect' ) ) {
         if ( isset( $_GET['ds_logout'] ) && '1' === (string) wp_unslash( $_GET['ds_logout'] ) ) {
             $nonce = isset( $_GET['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) : '';
             if ( ! wp_verify_nonce( $nonce, 'developer_starter_front_logout' ) ) {
-                return;
+                // 页面缓存中的旧链接也必须完成注销，不能落入 WordPress 默认确认页。
+                wp_logout();
+                wp_safe_redirect( home_url( '/' ) );
+                exit;
+            }
+
+            if ( ! is_user_logged_in() ) {
+                wp_safe_redirect( home_url( '/' ) );
+                exit;
             }
 
             wp_logout();
-            wp_safe_redirect( home_url() );
+            wp_safe_redirect( home_url( '/' ) );
             exit;
         }
     }
@@ -137,9 +160,6 @@ add_action( 'init', 'developer_starter_handle_logout_redirect', 9 );
 if ( ! function_exists( 'developer_starter_force_logout_without_confirm' ) ) {
     /**
      * 兼容默认注销入口：仅在 nonce 合法时直接退出。
-     *
-     * 无 nonce 或 nonce 非法时，回退到 WordPress 核心默认流程，
-     * 以保留官方确认链路并避免被动登出（CSRF）。
      *
      * @return void
      */

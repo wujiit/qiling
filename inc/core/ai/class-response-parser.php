@@ -274,7 +274,7 @@ class Response_Parser {
 
         $schemas = $this->decorator->get_module_schema_map( array( $module_type ) );
         if ( empty( $schemas[ $module_type ] ) ) {
-            return new \WP_Error( 'missing_module_schema', __( '当前模块 schema 未找到，无法解析返回结果。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'developer-starter' ) );
         }
 
         $module = $decoded;
@@ -357,7 +357,7 @@ class Response_Parser {
 
         $schemas = $this->decorator->get_module_schema_map( array( $module_type ) );
         if ( empty( $schemas[ $module_type ] ) ) {
-            return new \WP_Error( 'missing_module_schema', __( '当前模块 schema 未找到，无法解析返回结果。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'developer-starter' ) );
         }
 
         $module = $decoded;
@@ -857,7 +857,7 @@ class Response_Parser {
             } else {
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 未在当前模块 schema 中注册，已自动忽略。', 'developer-starter' ),
+                        __( '部分不支持的内容已忽略。', 'developer-starter' ),
                     '' === $path ? $key : $path . '.' . $key
                 );
                 continue;

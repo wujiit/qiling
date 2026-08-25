@@ -6,7 +6,13 @@
   "page_template": "templates/template-ecommerce-promo.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "beauty_company",
+    "colors": {
+      "primary": "#dc2626",
+      "accent": "#ea580c",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #1e3a8a 0%, #059669 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #450a0a 0%, #991b1b 50%, #ea580c 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -124,7 +130,10 @@
             "post_id": "",
             "btn_text": "立即购买"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff",
+        "modal_inquire_btn_bg_color": "#dc2626",
+        "modal_inquire_btn_text_color": "#ffffff"
       }
     },
     {
@@ -155,7 +164,7 @@
             "desc": "活动商品同样支持退换和客服咨询。"
           }
         ],
-        "module_bg_color": "#fff7ed"
+        "module_bg_color": "#fff1f2"
       }
     },
     {
@@ -192,14 +201,15 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#ffffff"
       }
     },
     {
       "type": "faq",
       "data": {
         "faq_title": "活动常见问题",
-        "module_bg_color": "#fff7ed",
+        "module_bg_color": "#fff1f2",
         "faq_items": [
           {
             "question": "活动商品能换成真实商品吗？",
@@ -223,9 +233,14 @@
         "cta_subtitle": "一屏说明权益，一屏展示商品，一键进入购买路径。",
         "cta_button_text": "进入活动会场",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #450a0a 0%, #991b1b 55%, #ea580c 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#ea580c",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

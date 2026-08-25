@@ -6,7 +6,13 @@
   "page_template": "templates/template-local-service-official.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #047857 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "服务项目、区域覆盖、标准流程和真实评价，一页完成客户信任建立。",
             "btn_text": "立即预约服务",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#2563eb"
+            "btn_bg_color": "#0284c7",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -266,7 +272,8 @@
         "contact_phone": "400-520-2026",
         "contact_hours": "08:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f8fafc"
       }
     }
   ]

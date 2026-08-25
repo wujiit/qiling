@@ -6,7 +6,13 @@
   "page_template": "templates/template-law-firm.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "law_company"
+    "preset": "law_company",
+    "colors": {
+      "primary": "#1e3a8a",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #334155 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #78350f 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "民商事争议、企业合规与法律顾问服务，提供可落地的法律支持。",
             "btn_text": "咨询律师",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#111827"
+            "btn_bg_color": "#d97706",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -192,7 +198,7 @@
         "contact_form_id": "",
         "contact_image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -202,7 +208,7 @@
       "data": {
         "faq_title": "法律咨询常见问题",
         "faq_subtitle": "先把关键问题讲清楚，再进入正式委托",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "faq_items": [
           {
             "question": "初次咨询需要准备哪些资料？",
@@ -226,11 +232,16 @@
         "cta_subtitle": "一对一沟通案情，明确处理路径与时间预期。",
         "cta_button_text": "立即咨询律师",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80",
         "cta_bg_overlay": "0.6",
         "module_padding_top": "90px",
-        "module_padding_bottom": "90px"
+        "module_padding_bottom": "90px",
+        "cta_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 60%, #78350f 100%)",
+        "cta_button_bg_color": "#d97706",
+        "cta_button_text_color": "#ffffff",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
       }
     }
   ]

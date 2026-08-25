@@ -86,13 +86,18 @@
             }
             var loginArea = document.getElementById('header-login-area');
             var userArea = document.getElementById('header-user-area');
-            if (!loginArea || !userArea) {
+            if (!userArea) {
+                if (loginArea) {
+                    loginArea.style.display = userData.logged_in ? 'none' : '';
+                }
                 authWrapper.setAttribute('data-auth-ready', 'true');
                 return;
             }
 
             if (userData.logged_in) {
-                loginArea.style.display = 'none';
+                if (loginArea) {
+                    loginArea.style.display = 'none';
+                }
                 userArea.style.display = '';
 
                 var userAvatar = document.getElementById('header-user-avatar');
@@ -154,11 +159,13 @@
                         adminLink.style.display = 'none';
                     }
                 }
-                if (logoutLink && userData.logout_url) {
+                if (logoutLink && userData.logout_url && userData.logout_url.indexOf('ds_logout=1') !== -1) {
                     logoutLink.href = userData.logout_url;
                 }
             } else {
-                loginArea.style.display = '';
+                if (loginArea) {
+                    loginArea.style.display = '';
+                }
                 userArea.style.display = 'none';
             }
 

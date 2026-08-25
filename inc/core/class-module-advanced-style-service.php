@@ -59,8 +59,8 @@ class Module_Advanced_Style_Service {
             array(
                 'id'          => '_ds_visibility',
                 'type'        => 'advanced_visibility',
-                'label'       => __( '设备显隐', 'developer-starter' ),
-                'description' => __( '按桌面、平板、手机分别控制当前模块是否显示。', 'developer-starter' ),
+                'label'       => __( '模块显隐', 'developer-starter' ),
+                'description' => __( '可以暂时隐藏整个模块，也可以按桌面、平板、手机分别控制显示。', 'developer-starter' ),
             ),
         );
     }
@@ -221,7 +221,23 @@ class Module_Advanced_Style_Service {
             </div>
 
             <div style="margin-top:var(--qiling-space-18);">
-                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '设备显隐', 'developer-starter' ); ?></p>
+                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '模块显隐', 'developer-starter' ); ?></p>
+                <div style="margin-bottom:var(--qiling-space-12);">
+                    <?php
+                    $this->render_select_input(
+                        $idx,
+                        '_ds_visibility',
+                        'status',
+                        __( '模块状态', 'developer-starter' ),
+                        $this->get_nested_string( $visibility_payload, 'status', '' ),
+                        array(
+                            ''       => __( '默认显示', 'developer-starter' ),
+                            'show'   => __( '显示', 'developer-starter' ),
+                            'hidden' => __( '暂时隐藏（保留全部设置）', 'developer-starter' ),
+                        )
+                    );
+                    ?>
+                </div>
                 <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:var(--qiling-space-12);">
                     <?php
                     $this->render_select_input(
@@ -365,6 +381,11 @@ class Module_Advanced_Style_Service {
      */
     public function module_requires_wrapper( $module_data ) {
         return $this->has_advanced_configuration( $module_data );
+    }
+
+    public function module_is_hidden( $module_data ) {
+        $visibility = $this->get_visibility_payload( $module_data );
+        return 'hidden' === $this->get_nested_string( $visibility, 'status', '' );
     }
 
     /**

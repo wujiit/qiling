@@ -415,8 +415,8 @@ class Setup_Wizard_Admin {
             </div>
 
             <div class="qsw-feature-grid">
-                <div><strong><?php esc_html_e( '不锁死配置', 'developer-starter' ); ?></strong><span><?php esc_html_e( '后续所有设置都能回到主题设置、页面和菜单里单独修改。', 'developer-starter' ); ?></span></div>
-                <div><strong><?php esc_html_e( '默认不覆盖', 'developer-starter' ); ?></strong><span><?php esc_html_e( '已有首页、页面和菜单会在后续阶段优先复用。', 'developer-starter' ); ?></span></div>
+                <div><strong><?php esc_html_e( '可随时调整', 'developer-starter' ); ?></strong><span><?php esc_html_e( '所有设置都能在主题设置、页面和菜单中单独修改。', 'developer-starter' ); ?></span></div>
+                <div><strong><?php esc_html_e( '默认不覆盖', 'developer-starter' ); ?></strong><span><?php esc_html_e( '已有首页、页面和菜单会优先复用。', 'developer-starter' ); ?></span></div>
                 <div><strong><?php esc_html_e( '插件只提示', 'developer-starter' ); ?></strong><span><?php esc_html_e( 'WooCommerce、积分商城、微信登录等只检测状态，不安装不配置。', 'developer-starter' ); ?></span></div>
             </div>
 
@@ -524,7 +524,7 @@ class Setup_Wizard_Admin {
             <div class="qsw-panel-head">
                 <span><?php esc_html_e( '步骤 3', 'developer-starter' ); ?></span>
                 <h2><?php esc_html_e( '生成页面结构', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '默认优先复用已有页面，同 slug、同标题或同模板页面不会重复创建；只有缺失的页面才会新建。', 'developer-starter' ); ?></p>
+                <p><?php esc_html_e( '默认优先复用已有页面，网址别名、标题或模板相同的页面不会重复创建；只有缺失的页面才会新建。', 'developer-starter' ); ?></p>
             </div>
 
             <?php $this->render_last_run_card( $state ); ?>
@@ -573,7 +573,7 @@ class Setup_Wizard_Admin {
                 <div class="qsw-option-list">
                     <label>
                         <input type="checkbox" name="include_auth_pages" value="1" <?php checked( $include_auth_pages ); ?> />
-                        <span><?php esc_html_e( '补齐登录、注册、个人中心页面', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '创建缺少的登录、注册和个人中心页面', 'developer-starter' ); ?></span>
                     </label>
                     <label>
                         <input type="checkbox" name="set_front_page" value="1" <?php checked( $set_front_page ); ?> />
@@ -586,7 +586,7 @@ class Setup_Wizard_Admin {
                 </div>
 
                 <div class="qsw-note">
-                    <?php esc_html_e( '三阶段不会创建菜单、不会写入品牌/SEO/页脚设置，也不会覆盖已有页面内容。菜单和基础设置会放到下一阶段继续做。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '生成页面不会创建菜单、写入品牌、SEO 或页脚设置，也不会覆盖已有页面内容。菜单和基础信息可在下一步配置。', 'developer-starter' ); ?>
                 </div>
 
                 <div class="qsw-actions">
@@ -619,7 +619,7 @@ class Setup_Wizard_Admin {
             <div class="qsw-panel-head">
                 <span><?php esc_html_e( '步骤 4', 'developer-starter' ); ?></span>
                 <h2><?php esc_html_e( '菜单与基础设置', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '四阶段会创建或绑定主菜单，并把品牌、联系、页脚和 SEO 基础信息写入主题已有设置；默认只填空项。', 'developer-starter' ); ?></p>
+                <p><?php esc_html_e( '此步骤可创建或绑定主菜单，并保存品牌、联系、页脚和 SEO 基础信息；默认只填写尚未设置的内容。', 'developer-starter' ); ?></p>
             </div>
 
             <?php $this->render_last_run_card( $state ); ?>
@@ -776,7 +776,7 @@ class Setup_Wizard_Admin {
             <?php if ( ! empty( $other_plugins ) ) : ?>
                 <div class="qsw-plugin-section">
                     <h3><?php esc_html_e( '其他可选能力', 'developer-starter' ); ?></h3>
-                    <p class="qsw-muted"><?php esc_html_e( '下面这些不是当前方案必需项，只显示安装状态，方便后续扩展时参考。', 'developer-starter' ); ?></p>
+                    <p class="qsw-muted"><?php esc_html_e( '下面这些不是当前方案必需项，仅显示安装状态，供扩展站点功能时参考。', 'developer-starter' ); ?></p>
                     <div class="qsw-plugin-list qsw-plugin-list-compact">
                         <?php foreach ( $other_plugins as $plugin ) : ?>
                             <?php $this->render_plugin_detection_item( $plugin, false ); ?>
@@ -786,7 +786,7 @@ class Setup_Wizard_Admin {
             <?php endif; ?>
 
             <div class="qsw-note">
-                <?php esc_html_e( '检测只读取插件文件、启用状态和运行时标识；向导不会安装插件、启用插件、停用插件，也不会写入 WooCommerce、积分商城、微信登录或表单插件的配置。完成向导时只保存一份很小的状态快照，且不自动加载。', 'developer-starter' ); ?>
+                <?php esc_html_e( '检测只读取插件的安装和启用状态；向导不会安装、启用或停用插件，也不会更改 WooCommerce、积分商城、微信登录或表单插件的配置。', 'developer-starter' ); ?>
             </div>
 
             <div class="qsw-actions">
@@ -826,9 +826,6 @@ class Setup_Wizard_Admin {
                 </strong>
                 <?php if ( '' !== $description ) : ?>
                     <span><?php echo esc_html( $description ); ?></span>
-                <?php endif; ?>
-                <?php if ( ! empty( $plugin['basename'] ) ) : ?>
-                    <small><?php echo esc_html( sprintf( __( '已检测到文件：%s', 'developer-starter' ), $plugin['basename'] ) ); ?></small>
                 <?php endif; ?>
             </div>
             <em><?php echo esc_html( $this->get_plugin_status_label( $status ) ); ?></em>
@@ -945,7 +942,7 @@ class Setup_Wizard_Admin {
             <div class="qsw-panel-head">
                 <span><?php esc_html_e( '步骤 6', 'developer-starter' ); ?></span>
                 <h2><?php esc_html_e( '基础建站已准备好', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '这里汇总本次向导的交付结果和后续入口。点击完成只记录向导状态和插件检测快照；第三方插件仍然只检测和提示，不会安装、启用或配置。', 'developer-starter' ); ?></p>
+                <p><?php esc_html_e( '这里汇总本次向导的配置结果和常用管理入口。点击完成只记录向导完成状态；第三方插件仍然只检测和提示，不会安装、启用或配置。', 'developer-starter' ); ?></p>
             </div>
 
             <div class="qsw-summary-grid">
@@ -983,7 +980,7 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-finish-card">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '交付清单', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '配置结果', 'developer-starter' ); ?></h3>
                 <p><?php esc_html_e( '绿色表示已经具备，黄色表示可继续补充；这些状态只读展示，不会触发额外写入。', 'developer-starter' ); ?></p>
             </div>
             <div class="qsw-finish-grid">
@@ -1011,12 +1008,12 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-finish-card">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '可选插件检测快照', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '可选插件状态', 'developer-starter' ); ?></h3>
                 <p>
                     <?php
                     echo esc_html(
                         sprintf(
-                            __( '已启用 %1$d 项，已安装未启用 %2$d 项，未安装 %3$d 项。这里只保存小型状态快照，不写第三方插件配置。', 'developer-starter' ),
+                            __( '已启用 %1$d 项，已安装未启用 %2$d 项，未安装 %3$d 项。向导不会更改第三方插件配置。', 'developer-starter' ),
                             isset( $counts['active'] ) ? absint( $counts['active'] ) : 0,
                             isset( $counts['inactive'] ) ? absint( $counts['inactive'] ) : 0,
                             isset( $counts['missing'] ) ? absint( $counts['missing'] ) : 0
@@ -1054,7 +1051,7 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-finish-card">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '后续入口', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '常用管理入口', 'developer-starter' ); ?></h3>
                 <p><?php esc_html_e( '完成向导后，通常从这些入口继续微调内容、菜单、样式和模板。', 'developer-starter' ); ?></p>
             </div>
             <div class="qsw-next-grid">
@@ -1392,7 +1389,7 @@ class Setup_Wizard_Admin {
             ),
             array(
                 'label'  => __( '模板中心', 'developer-starter' ),
-                'detail' => __( '后续可以继续导入或替换页面模板。', 'developer-starter' ),
+                'detail' => __( '继续导入或替换页面模板。', 'developer-starter' ),
                 'url'    => admin_url( 'admin.php?page=developer-starter-template-center' ),
             ),
         );
@@ -1455,7 +1452,7 @@ class Setup_Wizard_Admin {
             <?php if ( ! empty( $plugins ) ) : ?>
                 <div class="qsw-plugin-hints">
                     <h4><?php esc_html_e( '可选插件提示', 'developer-starter' ); ?></h4>
-                    <p><?php esc_html_e( '这些插件只会在下一步做状态检测和提示，向导不会安装、启用或配置它们。', 'developer-starter' ); ?></p>
+                    <p><?php esc_html_e( '向导仅检测并提示这些插件的状态，不会安装、启用或配置它们。', 'developer-starter' ); ?></p>
                     <div class="qsw-chip-row">
                         <?php foreach ( $plugins as $plugin ) : ?>
                             <span class="qsw-chip"><?php echo esc_html( isset( $plugin['label'] ) ? $plugin['label'] : '' ); ?></span>

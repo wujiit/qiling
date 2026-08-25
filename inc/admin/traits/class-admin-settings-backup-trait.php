@@ -23,7 +23,7 @@ trait Admin_Settings_Backup_Trait {
         echo '<input type="hidden" name="action" value="ds_export_settings" />';
         wp_nonce_field( 'ds_export_settings_nonce', 'ds_export_settings_nonce' );
         echo '<button type="submit" class="button button-secondary">' . __( '导出当前设置 (JSON)', 'developer-starter' ) . '</button>';
-        echo '<p class="description">' . __( '导出一个包含主题主设置和招聘设置的 JSON 文件，兼容后续恢复导入。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . __( '导出包含主题设置和招聘设置的 JSON 文件，可用于备份或恢复。', 'developer-starter' ) . '</p>';
         echo '</form>';
         echo '</td></tr>';
 

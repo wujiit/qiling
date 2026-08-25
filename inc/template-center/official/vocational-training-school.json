@@ -6,7 +6,13 @@
   "page_template": "templates/template-vocational-training-school.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "education_company"
+    "preset": "education_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "type": "hero_search",
       "data": {
         "hs_height": "80vh",
-        "hs_overlay_color": "rgba(17, 24, 39, 0.62)",
+        "hs_overlay_color": "rgba(15, 23, 42, 0.72)",
         "hs_content_align": "center",
         "hs_bg_items": [
           {
@@ -55,7 +61,7 @@
         "hs_title_color": "#ffffff",
         "hs_title_size": "3.3rem",
         "hs_subtitle": "面向技能提升、考证备考、转岗就业和企业内训，集中展示热门课程、实操训练、班型费用、学习流程和报名咨询入口。",
-        "hs_subtitle_color": "rgba(255,255,255,0.88)",
+        "hs_subtitle_color": "rgba(255, 255, 255, 0.88)",
         "hs_show_search": "yes",
         "hs_search_placeholder": "搜索电工、会计、人力资源、新媒体、企业内训课程",
         "hs_search_btn_text": "查找课程",
@@ -150,7 +156,7 @@
             "btn_link": "#",
             "featured": "1",
             "featured_text": "热门班型",
-            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #f59e0b 100%)"
+            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)"
           },
           {
             "name": "企业内训班",
@@ -280,13 +286,16 @@
         "cta_subtitle": "提交目标岗位、学习基础、可上课时间和证书需求，课程顾问会给出初步学习路径和班型建议。",
         "cta_button_text": "预约课程测评",
         "cta_button_url": "#",
-        "cta_button_bg_color": "#ffffff",
-        "cta_button_text_color": "#2563eb",
-        "cta_bg_type": "image",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
         "cta_bg_overlay": "0.58",
         "module_padding_top": "90px",
-        "module_padding_bottom": "90px"
+        "module_padding_bottom": "90px",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #312e81 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
       }
     }
   ]

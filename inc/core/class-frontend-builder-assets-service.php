@@ -254,6 +254,10 @@ class Frontend_Builder_Assets_Service {
                 return count( $bg_items ) > 1;
 
             case 'double_column_carousel':
+                $source = isset( $data['dcc_slide_source'] ) ? (string) $data['dcc_slide_source'] : 'manual';
+                if ( 'manual' !== $source ) {
+                    return true;
+                }
                 $slides = ( isset( $data['dcc_slides'] ) && is_array( $data['dcc_slides'] ) ) ? $data['dcc_slides'] : array();
                 return count( $slides ) > 1;
 

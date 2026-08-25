@@ -6,7 +6,13 @@
   "page_template": "templates/template-wedding-photography.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "photography_company"
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#be123c",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #be123c 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be123c 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -88,7 +94,7 @@
       "data": {
         "services_title": "拍摄服务",
         "services_subtitle": "按婚礼阶段和预算自由组合",
-        "services_bg_color": "#fff1f2",
+        "services_bg_color": "#ffffff",
         "services_columns": "4",
         "services_items": [
           {
@@ -153,7 +159,7 @@
             "category": "仪式"
           }
         ],
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#fff1f2",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -164,7 +170,7 @@
         "pricing_title": "拍摄套餐",
         "pricing_subtitle": "价格可按城市、摄影师级别和拍摄时长调整",
         "pricing_columns": "3",
-        "module_bg_color": "#fff7ed",
+        "module_bg_color": "#ffffff",
         "pricing_items": [
           {
             "name": "订婚记录",
@@ -185,7 +191,8 @@
             "btn_text": "咨询档期",
             "btn_link": "#",
             "featured": "1",
-            "featured_text": "热门"
+            "featured_text": "热门",
+            "featured_bg": "linear-gradient(135deg, #be123c 0%, #f43f5e 100%)"
           },
           {
             "name": "目的地旅拍",
@@ -234,7 +241,8 @@
             "rating": "5",
             "verified": "verified"
           }
-        ]
+        ],
+        "testimonials_bg_color": "#fff1f2"
       }
     },
     {
@@ -249,7 +257,8 @@
         "contact_phone": "400-520-2026",
         "contact_hours": "10:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#ffffff"
       }
     },
     {

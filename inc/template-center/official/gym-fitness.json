@@ -6,7 +6,13 @@
   "page_template": "templates/template-gym-fitness.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "beauty_company"
+    "preset": "beauty_company",
+    "colors": {
+      "primary": "#ea580c",
+      "accent": "#16a34a",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #16a34a 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #c2410c 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "团课、私教、体测和训练计划一体化，支持预约体验课。",
             "btn_text": "预约体验课",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#166534"
+            "btn_bg_color": "#ea580c",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -123,8 +129,8 @@
       "data": {
         "curriculum_title": "本周课程安排",
         "curriculum_subtitle": "可替换为门店真实课表或体验课排期",
-        "curriculum_bg_color": "#f0fdf4",
-        "curriculum_primary_color": "#16a34a",
+        "curriculum_bg_color": "#fff7ed",
+        "curriculum_primary_color": "#ea580c",
         "curriculum_items": [
           {
             "title": "周一：燃脂 HIIT",
@@ -207,7 +213,8 @@
             "btn_text": "咨询月卡",
             "btn_link": "#",
             "featured": "1",
-            "featured_text": "热门"
+            "featured_text": "热门",
+            "featured_bg": "linear-gradient(135deg, #ea580c 0%, #f97316 100%)"
           },
           {
             "name": "私教包",
@@ -263,7 +270,8 @@
         "contact_phone": "400-900-2026",
         "contact_hours": "08:00-22:00",
         "module_bg_image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#fff7ed"
       }
     }
   ]

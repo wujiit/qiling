@@ -6,7 +6,13 @@
   "page_template": "templates/template-cross-border-ecommerce-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -126,7 +132,7 @@
         "process_title": "跨境增长合作流程",
         "process_subtitle": "先诊断，再启动，按数据复盘持续优化",
         "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "process_items": [

@@ -70,11 +70,11 @@ if ( get_query_var( 'paged' ) ) {
                                 <?php esc_html_e( '通过模块构建器添加「博客置顶推荐」和「博客布局」模块，快速创建专业的博客首页', 'developer-starter' ); ?>
                             </p>
                             <a href="<?php echo esc_url( admin_url( 'post.php?post=' . get_the_ID() . '&action=edit' ) ); ?>" class="btn btn-primary btn-lg">
-                                <?php esc_html_e( '编辑页面模块', 'developer-starter' ); ?>
+                                <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
                             </a>
                         <?php else : ?>
                             <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1);">
-                                <?php esc_html_e( '博客内容正在建设中，敬请期待...', 'developer-starter' ); ?>
+                                <?php esc_html_e( '暂无内容。', 'developer-starter' ); ?>
                             </p>
                         <?php endif; ?>
                     </div>

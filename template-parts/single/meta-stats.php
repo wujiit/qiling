@@ -42,7 +42,7 @@ $author_url = $author_id > 0 ? get_author_posts_url( $author_id ) : '';
 $show_publish_date = empty( $args['hide_post_publish_date'] );
 $show_author = empty( $args['hide_post_author'] );
 $show_modified_date = $args['post_modified_date_enable'] && '' !== trim( (string) $args['post_modified_date'] );
-$show_comment_count = empty( $args['hide_post_comment_count'] ) && $comments_enabled && ( comments_open() || get_comments_number() );
+$show_comment_count = empty( $args['hide_post_comment_count'] ) && $comments_enabled && comments_open();
 $has_meta_items = $show_publish_date
     || $show_author
     || $show_modified_date

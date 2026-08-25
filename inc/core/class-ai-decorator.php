@@ -154,7 +154,7 @@ class AI_Decorator {
         );
 
         if ( 'client' === $mode ) {
-            $context['notice'] = __( '高级协议保留字段当前只做底座兼容，未配置时可省略。', 'developer-starter' );
+            $context['notice'] = __( '高级设置可保持默认，无需额外填写。', 'developer-starter' );
         } else {
             $context['rules'] = array(
                 '如需输出高级协议字段，只能使用 reserved_field_ids 里给出的根字段',
@@ -307,7 +307,7 @@ class AI_Decorator {
             'defaultCurrency'     => 'USD',
             'rules'               => array(
                 __( '支持单模块和整页本地化；整页模式仍只改已有页面包中的文案字段。', 'developer-starter' ),
-                __( '只允许改文案字段，布局、样式、图片、图标、链接和数据源字段会被服务端拦截。', 'developer-starter' ),
+                __( '本次仅优化文字内容，布局、样式、图片、图标、链接和数据连接保持不变。', 'developer-starter' ),
                 __( '可选择同步到启灵AI多语言译文记录，并生成对应语言页面。', 'developer-starter' ),
                 __( '生成结果会先进入 diff 待应用状态，确认后才会修改当前页面。', 'developer-starter' ),
             ),
@@ -1487,7 +1487,7 @@ class AI_Decorator {
             return array(
                 'success' => false,
                 'provider' => 'xb-aifanyi-translator',
-                'message' => __( '缺少内容 ID，无法同步到启灵AI多语言。', 'developer-starter' ),
+                'message' => __( '未找到需要同步的内容。', 'developer-starter' ),
             );
         }
 
@@ -1518,7 +1518,7 @@ class AI_Decorator {
         return is_array( $result ) ? $result : array(
             'success' => false,
             'provider' => 'xb-aifanyi-translator',
-            'message' => __( '启灵AI多语言 provider 返回异常。', 'developer-starter' ),
+            'message' => __( '多语言服务暂时无法完成同步，请稍后重试。', 'developer-starter' ),
         );
     }
 
@@ -1536,7 +1536,7 @@ class AI_Decorator {
             return array(
                 'success' => false,
                 'provider' => 'xb-aifanyi-translator',
-                'message' => __( '缺少内容 ID，无法同步到启灵AI多语言。', 'developer-starter' ),
+                'message' => __( '未找到需要同步的内容。', 'developer-starter' ),
             );
         }
 
@@ -1565,7 +1565,7 @@ class AI_Decorator {
         return is_array( $result ) ? $result : array(
             'success' => false,
             'provider' => 'xb-aifanyi-translator',
-            'message' => __( '启灵AI多语言 provider 返回异常。', 'developer-starter' ),
+            'message' => __( '多语言服务暂时无法完成同步，请稍后重试。', 'developer-starter' ),
         );
     }
 

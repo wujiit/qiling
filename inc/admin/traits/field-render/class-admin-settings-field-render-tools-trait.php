@@ -289,7 +289,7 @@ trait Admin_Settings_Field_Render_Tools_Trait {
         echo '<td>';
         echo '<button type="button" id="generate-min-css" class="button button-secondary">' . __( '⚡ 立即生成压缩文件 (.min.css)', 'developer-starter' ) . '</button>';
         echo '<p id="generate-css-result" style="margin-top: 8px; font-weight: 600;"></p>';
-        echo '<p class="description">' . __( '推荐在发布前使用 npm run build:css 生成压缩文件。后台按钮仅作为管理员手动兼容入口，且只允许写入 main.min.css、modules.min.css 和 modules-hero.min.css。原文件不会被修改。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . __( '点击后生成前台所需的 CSS 压缩文件，可用于更新正式环境中的样式资源；原始样式文件不会被修改。', 'developer-starter' ) . '</p>';
         echo '</td></tr>';
     }
 
@@ -298,7 +298,7 @@ trait Admin_Settings_Field_Render_Tools_Trait {
         echo '<td>';
         echo '<button type="button" id="check-split-css-integrity" class="button button-secondary">' . __( '🧪 检查拆分 CSS 完整性', 'developer-starter' ) . '</button>';
         echo '<p id="check-split-css-result" style="margin-top: 8px; font-weight: 600;"></p>';
-        echo '<p class="description">' . __( '校验 modules.css、_manifest.txt 与 modules-split 目录是否一致，可快速发现缺失文件、过期拆分或历史空文件。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . __( '检查拆分后的 CSS 资源是否完整一致，可快速发现文件缺失、内容过期或空文件。', 'developer-starter' ) . '</p>';
         echo '</td></tr>';
     }
 
@@ -373,7 +373,7 @@ trait Admin_Settings_Field_Render_Tools_Trait {
         echo '<tr><th scope="row">' . esc_html__( '主题定时清理', 'developer-starter' ) . '</th>';
         echo '<td>';
         echo '<p style="margin:0 0 8px;font-weight:600;">' . esc_html__( '后台手动执行', 'developer-starter' ) . '</p>';
-        echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '管理员在后台直接点按钮即可，不需要手动处理 nonce 或打开 REST 地址。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '管理员可在此直接执行清理，无需配置外部任务。', 'developer-starter' ) . '</p>';
         echo '<button type="button" class="button button-secondary" id="run-theme-scheduled-cleanup" data-scope="all">' . esc_html__( '立即执行主题清理', 'developer-starter' ) . '</button>';
         echo '<span id="theme-scheduled-cleanup-result" style="margin-left:8px;color:#64748b;"></span>';
 
@@ -390,10 +390,10 @@ trait Admin_Settings_Field_Render_Tools_Trait {
         echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '访问地址：', 'developer-starter' ) . '<code id="cleanup-cron-header-url" style="display:inline-block;margin-left:6px;max-width:100%;white-space:normal;word-break:break-all;">' . esc_html( $cron_header_url ) . '</code></p>';
         echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '请求头：', 'developer-starter' ) . '<code id="cleanup-cron-header" style="display:inline-block;margin-left:6px;max-width:100%;white-space:normal;word-break:break-all;">' . esc_html( $cron_header ) . '</code></p>';
         echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( 'cURL 示例：', 'developer-starter' ) . '<code id="cleanup-cron-header-curl" style="display:inline-block;margin-left:6px;max-width:100%;white-space:normal;word-break:break-all;">' . esc_html( $cron_header_curl ) . '</code></p>';
-        echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '当前 token：', 'developer-starter' ) . '<code id="cleanup-cron-token" style="margin-left:6px;">' . esc_html( $cron_token ) . '</code> ';
+        echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '当前访问密钥：', 'developer-starter' ) . '<code id="cleanup-cron-token" style="margin-left:6px;">' . esc_html( $cron_token ) . '</code> ';
         echo '<button type="button" class="button button-small" id="regenerate-cleanup-cron-token">' . esc_html__( '重新生成', 'developer-starter' ) . '</button>';
         echo '<span id="cleanup-cron-token-result" style="margin-left:8px;color:#64748b;"></span></p>';
-        echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '可选 scope：', 'developer-starter' ) . '<code style="margin-left:6px;">auto</code> <code>all</code> <code>revisions</code> <code>misc</code></p>';
+        echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '支持自动清理、全部清理、修订记录和其他临时数据等范围。', 'developer-starter' ) . '</p>';
 
         if ( $cron_last_run ) {
             echo '<p class="description" style="margin:0 0 8px;">' . esc_html__( '最近外部任务触发：', 'developer-starter' ) . '<strong style="margin-left:6px;">' . esc_html( $cron_last_run ) . '</strong></p>';
@@ -510,8 +510,8 @@ trait Admin_Settings_Field_Render_Tools_Trait {
         echo '<button type="button" class="button button-secondary" id="run-db-cleanup" style="margin-right: 10px;">' . __( '🧹 一键清理数据库', 'developer-starter' ) . '</button>';
         echo '<span id="db-cleanup-result" style="color: #10b981;"></span>';
         echo '<p class="description" style="margin-top: 10px; color: #ef4444;">' . __( '⚠️ 此操作不可逆，请确保已备份数据库！', 'developer-starter' ) . '</p>';
-        echo '<p class="description" style="margin-top: 8px;">' . __( '清空全站文章浏览量会删除 postmeta 中的浏览量统计字段，包括当前字段和兼容旧版的历史字段。', 'developer-starter' ) . '</p>';
-        echo '<p class="description" style="margin-top: 8px;">' . __( '数据包页面只统计和处理带有 _qiling_site_package_id 标记的页面。彻底删除回收站中的数据包页面时，对应页面模块数据也会跟着一并清理。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin-top: 8px;">' . __( '清空全站文章浏览量会删除所有文章的浏览量统计记录。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin-top: 8px;">' . __( '数据包页面只统计和处理由站点数据包创建的页面。彻底删除回收站中的数据包页面时，对应页面模块数据也会一并清理。', 'developer-starter' ) . '</p>';
         echo '</td></tr>';
     }
 

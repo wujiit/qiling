@@ -6,7 +6,13 @@
   "page_template": "templates/template-semiconductor-electronics.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #ccfbf1 46%, #fef3c7 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #78350f 100%)",
         "bb_title": "让器件选型、资料下载<br><strong>更快进入询盘</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #0f766e 0%, #a16207 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #fcd34d 100%)",
         "bb_subtitle": "半导体与电子元器件官网方案",
         "bb_desc": "围绕芯片器件、连接器、传感器模组、工业电子配套和 BOM 需求，把产品参数、认证资质、技术文档和询盘入口组织成采购客户能快速判断的官网页面。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -67,7 +73,7 @@
             "icon": "表"
           }
         ],
-        "bb_primary_btn_bg_color": "#0f766e",
+        "bb_primary_btn_bg_color": "#0284c7",
         "bb_primary_btn_text_color": "#ffffff",
         "bb_primary_btn_hover_bg_color": "#115e59",
         "bb_primary_btn_hover_text_color": "#ffffff",
@@ -95,7 +101,7 @@
         "columns": "4",
         "modal_inquire_text": "咨询选型与报价",
         "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#0f766e",
+        "modal_inquire_btn_bg_color": "#0284c7",
         "modal_inquire_btn_text_color": "#ffffff",
         "modal_inquire_btn_hover_bg_color": "#115e59",
         "modal_inquire_btn_hover_text_color": "#ffffff",
@@ -132,7 +138,8 @@
             "post_id": "",
             "btn_text": "咨询方案"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -143,12 +150,12 @@
         "features_columns": "4",
         "features_icon_position": "top",
         "features_text_align": "left",
-        "features_bg_color": "#ffffff",
+        "features_bg_color": "#f8fafc",
         "features_card_style": "border",
         "features_card_radius": "8px",
         "features_icon_style": "square",
-        "features_icon_bg": "#ccfbf1",
-        "features_icon_color": "#0f766e",
+        "features_icon_bg": "#e0f2fe",
+        "features_icon_color": "#0284c7",
         "features_items": [
           {
             "icon": "源",
@@ -183,9 +190,9 @@
       "data": {
         "downloads_title": "选型资料与技术文档",
         "downloads_subtitle": "把客户最常找的数据手册、替代表和认证文件集中展示",
-        "downloads_bg_color": "#f8fafc",
+        "downloads_bg_color": "#ffffff",
         "downloads_columns": "3",
-        "downloads_btn_bg_color": "#0f766e",
+        "downloads_btn_bg_color": "#0284c7",
         "downloads_btn_text_color": "#ffffff",
         "downloads_btn_hover_bg_color": "#115e59",
         "downloads_btn_hover_text_color": "#ffffff",
@@ -230,7 +237,7 @@
         "ch_subtitle": "用体系认证、环保合规和渠道资质降低采购顾虑",
         "ch_columns": "3",
         "ch_enable_filter": "yes",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "ch_items": [
@@ -291,7 +298,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

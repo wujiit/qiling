@@ -108,6 +108,18 @@ class Pricing_Module extends Module_Base {
             ),
             
             array( 'id' => 'pricing_columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array( '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ) ), 'default' => '3' ),
+            array(
+                'id'      => 'pricing_cards_mode',
+                'type'    => 'select',
+                'label'   => __( '方案布局模式', 'developer-starter' ),
+                'options' => array(
+                    'native'      => __( '跟随原有样式', 'developer-starter' ),
+                    'connected'   => __( '连体方案', 'developer-starter' ),
+                    'independent' => __( '独立卡片', 'developer-starter' ),
+                ),
+                'default' => 'native',
+                'desc'    => __( '连体方案使用一个共同外框，方案之间没有空白；独立卡片让每个方案单独成卡并保留间距。', 'developer-starter' ),
+            ),
             array( 'id' => 'pricing_items', 'type' => 'repeater', 'label' => __( '方案列表', 'developer-starter' ), 'fields' => array(
                 array( 'id' => 'name', 'type' => 'text', 'label' => __( '方案名称', 'developer-starter' ) ),
                 array( 'id' => 'name_color', 'type' => 'color', 'label' => __( '名称颜色', 'developer-starter' ) ),
@@ -174,6 +186,15 @@ class Pricing_Module extends Module_Base {
         
         $columns = isset( $data['pricing_columns'] ) && ! empty( $data['pricing_columns'] ) ? intval( $data['pricing_columns'] ) : 3;
         $items = isset( $data['pricing_items'] ) ? $data['pricing_items'] : array();
+        $cards_mode = isset( $data['pricing_cards_mode'] )
+            ? sanitize_key( (string) $data['pricing_cards_mode'] )
+            : '';
+        if ( '' === $cards_mode && isset( $data['_ds_visual']['cards']['mode'] ) ) {
+            $cards_mode = sanitize_key( (string) $data['_ds_visual']['cards']['mode'] );
+        }
+        if ( ! in_array( $cards_mode, array( 'native', 'connected', 'independent' ), true ) ) {
+            $cards_mode = 'native';
+        }
         
         // 默认示例数据
         if ( empty( $items ) ) {
@@ -237,6 +258,15 @@ class Pricing_Module extends Module_Base {
         
         // 网格类
         $grid_class = 'pricing-grid grid-cols-' . $columns;
+        if ( 'connected' === $cards_mode ) {
+            $grid_class .= ' pricing-cards-connected';
+        }
+        $grid_layout_style = '';
+        if ( 'connected' === $cards_mode ) {
+            $grid_layout_style = 'gap:0;';
+        } elseif ( 'independent' === $cards_mode ) {
+            $grid_layout_style = 'gap:var(--qiling-module-component-gap,var(--qiling-space-32));';
+        }
         
         // Animation Setting
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
@@ -255,7 +285,10 @@ class Pricing_Module extends Module_Base {
                 </div>
                 
                 <?php if ( ! empty( $items ) ) : ?>
-                    <div class="<?php echo esc_attr( $grid_class ); ?>">
+                    <?php if ( 'connected' === $cards_mode ) : ?>
+                        <div class="pricing-connected-shell" data-pricing-connected-shell="1">
+                    <?php endif; ?>
+                    <div class="<?php echo esc_attr( $grid_class ); ?>" data-pricing-cards-mode="<?php echo esc_attr( $cards_mode ); ?>" style="<?php echo esc_attr( $grid_layout_style ); ?>">
                         <?php foreach ( $items as $index => $item ) : 
                             $name = isset( $item['name'] ) ? $item['name'] : '';
                             $name_color = isset( $item['name_color'] ) && ! empty( $item['name_color'] ) ? $item['name_color'] : '';
@@ -272,14 +305,26 @@ class Pricing_Module extends Module_Base {
                                     $btn_link = isset( $item['btn_link'] ) ? $item['btn_link'] : '#';
                                     $btn_bg = isset( $item['btn_bg'] ) && ! empty( $item['btn_bg'] ) ? $item['btn_bg'] : '';
                                     $btn_text_color = isset( $item['btn_text_color'] ) && ! empty( $item['btn_text_color'] ) ? $item['btn_text_color'] : '';
-                                    $btn_border_color = isset( $item['btn_border_color'] ) && ! empty( $item['btn_border_color'] ) ? $item['btn_border_color'] : '';
-                                    $card_bg = isset( $item['card_bg'] ) && ! empty( $item['card_bg'] ) ? $item['card_bg'] : 'var(--color-neutral-0)';
-                            $is_featured = isset( $item['featured'] ) && $item['featured'];
+                                     $btn_border_color = isset( $item['btn_border_color'] ) && ! empty( $item['btn_border_color'] ) ? $item['btn_border_color'] : '';
+                                     $card_bg = isset( $item['card_bg'] ) && ! empty( $item['card_bg'] ) ? $item['card_bg'] : 'var(--color-neutral-0)';
+                            $normalized_card_bg = strtolower( preg_replace( '/\s+/', '', (string) $card_bg ) );
+                            $normalized_features_color = strtolower( preg_replace( '/\s+/', '', (string) $features_color ) );
+                            $light_card_backgrounds = array( '#fff', '#ffffff', 'white', 'rgb(255,255,255)', 'rgba(255,255,255,1)', 'var(--color-neutral-0)' );
+                            $white_text_colors = array( '#fff', '#ffffff', 'white', 'rgb(255,255,255)', 'rgba(255,255,255,1)' );
+                            if ( in_array( $normalized_card_bg, $light_card_backgrounds, true ) && in_array( $normalized_features_color, $white_text_colors, true ) ) {
+                                $features_color = 'var(--color-text, #334155)';
+                            }
+                             $is_featured = isset( $item['featured'] ) && $item['featured'];
                             $featured_text = isset( $item['featured_text'] ) && ! empty( $item['featured_text'] ) ? $item['featured_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'developer-starter' ) );
                             $featured_bg = isset( $item['featured_bg'] ) && ! empty( $item['featured_bg'] ) ? $item['featured_bg'] : 'var(--qiling-component-badge-bg)';
                             
                             // 卡片背景样式
-                            $card_bg_style = strpos( $card_bg, 'gradient' ) !== false ? "background: {$card_bg};" : "background-color: {$card_bg};";
+                            $card_bg_style = '';
+                            if ( 'connected' !== $cards_mode ) {
+                                $card_bg_style = strpos( $card_bg, 'gradient' ) !== false ? "background: {$card_bg};" : "background-color: {$card_bg};";
+                            } else {
+                                $card_bg_style = 'background:transparent;border-radius:0;box-shadow:none;transform:none;';
+                            }
                             
                             // 特性列表转数组
                             $features = str_replace( array( "\r\n", "\r" ), "\n", $features );
@@ -348,7 +393,9 @@ class Pricing_Module extends Module_Base {
                                             if ( ! empty( $features_color ) ) {
                                                 $text_style = "color: {$features_color};";
                                             } else {
-                                                $text_style = $is_excluded ? 'color: var(--color-gray-400, var(--color-neutral-400));' : '';
+                                                $text_style = $is_excluded
+                                                    ? 'color: var(--color-gray-400, var(--color-neutral-400));'
+                                                    : 'color: var(--qiling-module-card-text, var(--color-text, #334155));';
                                             }
                                             
                                             $icon_color = $is_included ? 'var(--color-success)' : ( $is_excluded ? 'var(--color-error)' : 'var(--color-primary)' );
@@ -400,6 +447,9 @@ class Pricing_Module extends Module_Base {
                             </div>
                         <?php endforeach; ?>
                     </div>
+                    <?php if ( 'connected' === $cards_mode ) : ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
         </section>

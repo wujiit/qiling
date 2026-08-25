@@ -6,7 +6,13 @@
   "page_template": "templates/template-nonprofit-organization.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "education_company"
+    "preset": "education_company",
+    "colors": {
+      "primary": "#e11d48",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -45,8 +51,8 @@
         "db_title_prefix": "让每一次善意都有清晰去向",
         "db_typing_mode": "loop",
         "db_typing_text": "公益项目展示与行动记录\n影响力数据与透明公开\n志愿者、伙伴和支持者参与入口",
-        "db_highlight_color": "#bbf7d0",
-        "db_title_color": "#f8fafc",
+        "db_highlight_color": "#fda4af",
+        "db_title_color": "#ffffff",
         "db_subtitle": "用清楚的项目、数据和公开信息，建立公益组织的长期信任。",
         "db_desc": "适合基金会、社会服务组织、公益项目和公共倡议团队。",
         "db_text_color": "rgba(248,250,252,0.88)",
@@ -65,7 +71,8 @@
           }
         ],
         "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80"
+        "db_main_image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80",
+        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #881337 50%, #047857 100%)"
       }
     },
     {
@@ -77,23 +84,32 @@
         "stats_items": [
           {
             "number": "36",
-            "label": "公益项目"
+            "label": "公益项目",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "12城",
-            "label": "服务覆盖"
+            "label": "服务覆盖",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "8万+",
-            "label": "受益人次"
+            "label": "受益人次",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "2600+",
-            "label": "志愿者参与"
+            "label": "志愿者参与",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc"
+        "stats_bg_color": "linear-gradient(135deg, #4c0519 0%, #9f1239 50%, #047857 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -158,7 +174,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#fff1f2"
       }
     },
     {
@@ -214,7 +230,7 @@
             "answer": "可以，可围绕资源支持、员工志愿、联合项目等方式沟通合作。"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#fff1f2"
       }
     },
     {

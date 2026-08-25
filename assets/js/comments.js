@@ -8,8 +8,7 @@
         }
 
         if (typeof window.dsOpenLoginModal === 'function') {
-            window.dsOpenLoginModal();
-            return true;
+            return window.dsOpenLoginModal('login', loginUrl) === true;
         }
 
         var headerLoginBtn = document.getElementById('header-login-toggle');

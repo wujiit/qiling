@@ -27756,7 +27756,7 @@ msgid "第三方社交登录"
 msgstr ""
 
 #: inc/admin/traits/class-admin-settings-config-trait.php:1886
-msgid "微信登录继续由 qiling-weixin 插件负责；QQ、GitHub、Google 等 OAuth 登录由主题统一框架接入，便于后续扩展。"
+msgid "微信登录由 qiling-weixin 插件负责；QQ、GitHub、Google 等 OAuth 登录由主题统一框架接入。"
 msgstr ""
 
 #: inc/admin/traits/class-admin-settings-config-trait.php:1887

@@ -6,7 +6,13 @@
   "page_template": "templates/template-lab-instrument.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #e0f2fe 48%, #ede9fe 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090d16 0%, #075985 50%, #0f172a 100%)",
         "bb_title": "把仪器参数、资料下载<br><strong>变成采购线索</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #0e7490 0%, #059669 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 52%, #34d399 100%)",
         "bb_subtitle": "实验室设备与科研仪器官网方案",
         "bb_desc": "面向高校实验室、科研院所、第三方检测机构和企业研发中心，把仪器型号、核心参数、应用场景、资料下载和采购询盘入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -67,9 +73,9 @@
             "icon": "表"
           }
         ],
-        "bb_primary_btn_bg_color": "#0e7490",
+        "bb_primary_btn_bg_color": "#0284c7",
         "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#155e75",
+        "bb_primary_btn_hover_bg_color": "#0369a1",
         "bb_primary_btn_hover_text_color": "#ffffff",
         "bb_light_btn_bg_color": "#ffffff",
         "bb_light_btn_text_color": "#0f172a",
@@ -95,7 +101,7 @@
         "columns": "4",
         "modal_inquire_text": "咨询型号与报价",
         "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#0e7490",
+        "modal_inquire_btn_bg_color": "#0284c7",
         "modal_inquire_btn_text_color": "#ffffff",
         "modal_inquire_btn_hover_bg_color": "#155e75",
         "modal_inquire_btn_hover_text_color": "#ffffff",
@@ -132,7 +138,8 @@
             "post_id": "",
             "btn_text": "查看清单"
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -142,7 +149,7 @@
         "downloads_subtitle": "把客户采购前最需要的参数表、安装条件和验收资料集中展示",
         "downloads_bg_color": "#f8fafc",
         "downloads_columns": "3",
-        "downloads_btn_bg_color": "#0e7490",
+        "downloads_btn_bg_color": "#0284c7",
         "downloads_btn_text_color": "#ffffff",
         "downloads_btn_hover_bg_color": "#155e75",
         "downloads_btn_hover_text_color": "#ffffff",
@@ -216,7 +223,8 @@
         "cases_image_height": "220px",
         "cases_padding_top": "80px",
         "cases_padding_bottom": "80px",
-        "enable_staggered_animation": "yes"
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -242,7 +250,7 @@
             "answer": "可以在官网明确展示出厂校准、年度校准、IQ/OQ/PQ 验证、备件耗材、远程诊断和工程师上门服务等能力，具体承诺应按实际服务范围填写。"
           }
         ],
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#ffffff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }
@@ -255,7 +263,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
+        "module_bg_color": "#f8fafc",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

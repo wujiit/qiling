@@ -95,7 +95,7 @@ if ( $has_modules ) {
                         ?>
                     </div>
 
-                    <?php if ( $basic_page_comments_enabled && ( function_exists( 'developer_starter_comments_feature_enabled' ) ? developer_starter_comments_feature_enabled() : true ) && ( comments_open() || get_comments_number() ) ) : ?>
+                    <?php if ( $basic_page_comments_enabled && ( function_exists( 'developer_starter_comments_feature_enabled' ) ? developer_starter_comments_feature_enabled() : true ) && comments_open() ) : ?>
                         <div class="basic-page-comments">
                             <?php comments_template(); ?>
                         </div>

@@ -6,7 +6,13 @@
   "page_template": "templates/template-qiling-escrow-platform.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "finance_company"
+    "preset": "finance_company",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#2563eb",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #dbeafe 48%, #ccfbf1 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090e18 0%, #064e3b 50%, #0f172a 100%)",
         "bb_title": "交易先托管<br><strong>确认无误再放款</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #1d4ed8 0%, #0f766e 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #34d399 50%, #60a5fa 100%)",
         "bb_subtitle": "启灵生态担保交易平台",
         "bb_desc": "围绕卖家发布担保单、买家托管支付、双方确认、自动放款、争议举证、平台仲裁、手续费和对账补偿，把积分商城支付能力包装成可运营的中介担保交易入口。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -67,14 +73,14 @@
             "icon": "流"
           }
         ],
-        "bb_primary_btn_bg_color": "#1d4ed8",
+        "bb_primary_btn_bg_color": "#059669",
         "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#1e40af",
+        "bb_primary_btn_hover_bg_color": "#047857",
         "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#eff6ff",
-        "bb_light_btn_hover_text_color": "#1d4ed8",
+        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.12)",
+        "bb_light_btn_text_color": "#ffffff",
+        "bb_light_btn_hover_bg_color": "rgba(255, 255, 255, 0.22)",
+        "bb_light_btn_hover_text_color": "#ffffff",
         "bb_media_type": "image",
         "bb_main_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
         "bb_media_shadow": "glow",
@@ -99,7 +105,7 @@
         "features_card_style": "border",
         "features_card_radius": "8px",
         "features_icon_style": "square",
-        "features_icon_bg": "#dbeafe",
+        "features_icon_bg": "#ecfdf5",
         "features_items": [
           {
             "icon": "托",
@@ -121,7 +127,8 @@
             "title": "对账补偿",
             "desc": "支付回跳和定时巡检会补偿已支付未入托管、放款失败、退款失败等异常状态，降低资金状态不一致风险。"
           }
-        ]
+        ],
+        "features_icon_color": "#059669"
       }
     },
     {
@@ -209,7 +216,7 @@
             "btn_link": "#",
             "featured": "1",
             "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #1d4ed8 0%, #0f766e 100%)"
+            "featured_bg": "linear-gradient(135deg, #059669 0%, #2563eb 100%)"
           },
           {
             "name": "行业定制",
@@ -257,9 +264,14 @@
         "cta_subtitle": "替换真实担保首页、发布页、个人中心和服务协议链接，就能把启灵担保交易从后台功能变成用户看得懂的托管交易入口。",
         "cta_button_text": "配置担保交易入口",
         "cta_button_url": "#",
-        "cta_bg_type": "image",
+        "cta_bg_type": "color",
         "cta_bg_image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58"
+        "cta_bg_overlay": "0.58",
+        "cta_bg_color": "linear-gradient(135deg, #090e18 0%, #064e3b 60%, #0f172a 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

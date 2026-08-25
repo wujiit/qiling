@@ -39,7 +39,7 @@ class Magic_Layout_Module extends Module_Base {
                 'id'          => 'magic_layout_notice',
                 'type'        => 'info',
                 'label'       => __( '使用说明', 'developer-starter' ),
-                'description' => __( '现在一个“魔方布局”模块里可以放多个容器段，每个容器段各自配置列数、列宽、面板风格和元素归属。旧版单区块数据会自动兼容。', 'developer-starter' ),
+                'description' => __( '一个模块可添加多个容器段，并分别设置列数、列宽、面板风格和元素归属。', 'developer-starter' ),
             ),
             array(
                 'id'            => 'magic_layout_sections',
@@ -173,13 +173,13 @@ class Magic_Layout_Module extends Module_Base {
             array(
                 'id'          => 'magic_layout_legacy_notice',
                 'type'        => 'info',
-                'label'       => __( '旧版单区块兼容', 'developer-starter' ),
-                'description' => __( '下面这组字段保留给旧版单区块魔方布局兼容使用。新项目优先配置上面的“容器层”。', 'developer-starter' ),
+                'label'       => __( '其他布局设置', 'developer-starter' ),
+                'description' => __( '设置模块的列数、列宽、间距、对齐方式和容器样式。', 'developer-starter' ),
             ),
             array(
                 'id'      => 'magic_layout_columns',
                 'type'    => 'select',
-                'label'   => __( '列数（旧版兼容）', 'developer-starter' ),
+                'label'   => __( '列数', 'developer-starter' ),
                 'default' => '2',
                 'options' => array(
                     '1' => __( '1列', 'developer-starter' ),
@@ -191,7 +191,7 @@ class Magic_Layout_Module extends Module_Base {
             array(
                 'id'          => 'magic_layout_preset',
                 'type'        => 'select',
-                'label'       => __( '列宽预设（旧版兼容）', 'developer-starter' ),
+                'label'       => __( '列宽预设', 'developer-starter' ),
                 'default'     => 'equal',
                 'description' => __( '主要在 2 列或 3 列时明显生效。', 'developer-starter' ),
                 'options'     => array(
@@ -206,14 +206,14 @@ class Magic_Layout_Module extends Module_Base {
             array(
                 'id'          => 'magic_layout_gap',
                 'type'        => 'text',
-                'label'       => __( '列间距（旧版兼容）', 'developer-starter' ),
+                'label'       => __( '列间距', 'developer-starter' ),
                 'default'     => '28px',
                 'description' => __( '如 24px、2rem、clamp(...)', 'developer-starter' ),
             ),
             array(
                 'id'      => 'magic_layout_vertical_align',
                 'type'    => 'select',
-                'label'   => __( '列内纵向对齐（旧版兼容）', 'developer-starter' ),
+                'label'   => __( '列内纵向对齐', 'developer-starter' ),
                 'default' => 'start',
                 'options' => array(
                     'start'  => __( '顶部对齐', 'developer-starter' ),
@@ -224,7 +224,7 @@ class Magic_Layout_Module extends Module_Base {
             array(
                 'id'      => 'magic_layout_container_width',
                 'type'    => 'select',
-                'label'   => __( '容器宽度（旧版兼容）', 'developer-starter' ),
+                'label'   => __( '容器宽度', 'developer-starter' ),
                 'default' => 'default',
                 'options' => array(
                     'narrow'  => __( '窄容器', 'developer-starter' ),
@@ -236,7 +236,7 @@ class Magic_Layout_Module extends Module_Base {
             array(
                 'id'      => 'magic_layout_surface',
                 'type'    => 'select',
-                'label'   => __( '列面板风格（旧版兼容）', 'developer-starter' ),
+                'label'   => __( '列面板风格', 'developer-starter' ),
                 'default' => 'none',
                 'options' => array(
                     'none'    => __( '无', 'developer-starter' ),
@@ -249,7 +249,7 @@ class Magic_Layout_Module extends Module_Base {
             array(
                 'id'          => 'magic_layout_column_padding',
                 'type'        => 'text',
-                'label'       => __( '列内边距（旧版兼容）', 'developer-starter' ),
+                'label'       => __( '列内边距', 'developer-starter' ),
                 'default'     => '24px',
                 'description' => __( '当列面板风格不是“无”时最明显。', 'developer-starter' ),
             ),

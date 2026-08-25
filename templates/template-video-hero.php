@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="container text-center">
                     <h2 class="glow-animation"><?php esc_html_e( '正在构建全屏体验...', 'developer-starter' ); ?></h2>
                     <p style="color: #ccc; margin-top: 20px;">
-                        <?php esc_html_e( '请在后台保存页面以加载默认演示模块，或手动添加「全屏视频首屏」模块。', 'developer-starter' ); ?>
+                        <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
                     </p>
                 </div>
             </section>

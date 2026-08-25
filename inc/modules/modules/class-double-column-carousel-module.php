@@ -67,9 +67,41 @@ class Double_Column_Carousel_Module extends Module_Base {
                 'default' => '16',
             ),
             array(
+                'id'      => 'dcc_slide_source',
+                'type'    => 'select',
+                'label'   => __( '左侧内容来源', 'developer-starter' ),
+                'options' => array(
+                    'manual' => __( '自定义图片', 'developer-starter' ),
+                    'latest' => __( '最新文章', 'developer-starter' ),
+                    'random' => __( '随机文章', 'developer-starter' ),
+                    'ids'    => __( '指定文章ID', 'developer-starter' ),
+                ),
+                'default' => 'manual',
+            ),
+            array(
+                'id'          => 'dcc_post_count',
+                'type'        => 'number',
+                'label'       => __( '读取文章数量', 'developer-starter' ),
+                'default'     => '5',
+                'description' => __( '用于最新文章和随机文章，建议填写 2-10。', 'developer-starter' ),
+            ),
+            array(
+                'id'          => 'dcc_exclude_categories',
+                'type'        => 'text',
+                'label'       => __( '排除分类 ID', 'developer-starter' ),
+                'description' => __( '仅用于随机文章，多个分类 ID 用英文逗号分隔，例如：3,8,15。', 'developer-starter' ),
+                'dependency'  => array( 'dcc_slide_source', '==', 'random' ),
+            ),
+            array(
+                'id'          => 'dcc_post_ids',
+                'type'        => 'text',
+                'label'       => __( '文章ID', 'developer-starter' ),
+                'description' => __( '仅用于指定文章ID，多个ID用英文逗号分隔，并按填写顺序展示。', 'developer-starter' ),
+            ),
+            array(
                 'id'         => 'dcc_slides',
                 'type'       => 'repeater',
-                'label'      => __( '左侧轮播图', 'developer-starter' ),
+                'label'      => __( '自定义左侧轮播图', 'developer-starter' ),
                 'add_button' => __( '添加轮播图', 'developer-starter' ),
                 'fields'     => array(
                     array(
@@ -126,7 +158,10 @@ class Double_Column_Carousel_Module extends Module_Base {
         $layout = isset( $data['dcc_layout'] ) ? $data['dcc_layout'] : '2';
         $height = isset( $data['dcc_height'] ) ? intval( $data['dcc_height'] ) : 500;
         $gap = isset( $data['dcc_gap'] ) ? intval( $data['dcc_gap'] ) : 16;
-        $slides = isset( $data['dcc_slides'] ) ? $data['dcc_slides'] : array();
+        $slide_source = isset( $data['dcc_slide_source'] ) ? (string) $data['dcc_slide_source'] : 'manual';
+        $slides = 'manual' === $slide_source
+            ? ( isset( $data['dcc_slides'] ) && is_array( $data['dcc_slides'] ) ? $data['dcc_slides'] : array() )
+            : $this->get_post_slides( $data, $slide_source );
         
         // 右侧图片
         $right_1_image = isset( $data['dcc_right_1_image'] ) ? $data['dcc_right_1_image'] : '';
@@ -301,5 +336,92 @@ class Double_Column_Carousel_Module extends Module_Base {
             })();
         </script>
         <?php
+    }
+
+    /**
+     * 将已发布文章映射为轮播项，图片直接使用文章正文中的第一张图片。
+     */
+    private function get_post_slides( $data, $source ) {
+        $allowed_sources = array( 'latest', 'random', 'ids' );
+        if ( ! in_array( $source, $allowed_sources, true ) ) {
+            return array();
+        }
+
+        $count = isset( $data['dcc_post_count'] ) ? absint( $data['dcc_post_count'] ) : 5;
+        $count = min( 10, max( 2, $count ) );
+        $exclude_categories = array();
+        if ( 'random' === $source && isset( $data['dcc_exclude_categories'] ) ) {
+            $exclude_categories = array_values(
+                array_filter(
+                    array_map( 'absint', array_map( 'trim', explode( ',', (string) $data['dcc_exclude_categories'] ) ) )
+                )
+            );
+        }
+        $args = array(
+            'post_type'              => 'post',
+            'post_status'            => 'publish',
+            'posts_per_page'         => $count,
+            'ignore_sticky_posts'    => true,
+            'no_found_rows'          => true,
+            'update_post_meta_cache' => false,
+            'update_post_term_cache' => false,
+            'orderby'                => 'date',
+            'order'                  => 'DESC',
+        );
+
+        if ( 'random' === $source ) {
+            $args['orderby'] = 'rand';
+            if ( ! empty( $exclude_categories ) ) {
+                $args['category__not_in'] = $exclude_categories;
+            }
+            unset( $args['order'] );
+        } elseif ( 'ids' === $source ) {
+            $ids_raw = isset( $data['dcc_post_ids'] ) ? (string) $data['dcc_post_ids'] : '';
+            $ids = array_values( array_unique( array_filter( array_map( 'absint', array_map( 'trim', explode( ',', $ids_raw ) ) ) ) ) );
+            if ( empty( $ids ) ) {
+                return array();
+            }
+            $args['post__in'] = $ids;
+            $args['posts_per_page'] = min( 10, count( $ids ) );
+            $args['orderby'] = 'post__in';
+            unset( $args['order'] );
+        }
+
+        if ( function_exists( 'developer_starter_run_cached_query' ) ) {
+            $query = \developer_starter_run_cached_query(
+                $args,
+                'module_double_column_carousel',
+                array( 'needs_pagination' => false )
+            );
+        } else {
+            $query = new \WP_Query( $args );
+        }
+
+        $slides = array();
+        if ( ! ( $query instanceof \WP_Query ) ) {
+            return $slides;
+        }
+
+        foreach ( $query->posts as $post ) {
+            if ( ! ( $post instanceof \WP_Post ) ) {
+                continue;
+            }
+            $image = function_exists( 'developer_starter_extract_first_image_url_from_content' )
+                ? \developer_starter_extract_first_image_url_from_content( $post->post_content )
+                : '';
+            if ( '' === $image && preg_match( '/<img[^>]+(?:src|data-src|data-original)\s*=\s*["\']([^"\']+)["\']/i', $post->post_content, $matches ) ) {
+                $image = esc_url_raw( $matches[1] );
+            }
+            if ( '' === $image ) {
+                continue;
+            }
+            $slides[] = array(
+                'image' => $image,
+                'url'   => get_permalink( $post ),
+                'title' => get_the_title( $post ),
+            );
+        }
+
+        return $slides;
     }
 }

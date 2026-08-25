@@ -6,7 +6,13 @@
   "page_template": "templates/template-software-intro.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": false,
   "transparent_header": false,
@@ -37,7 +43,7 @@
     {
       "type": "product_showcase",
       "data": {
-        "ps_bg_color": "linear-gradient(135deg, #14b8ff 0%, #2563eb 100%)",
+        "ps_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 55%, #0284c7 100%)",
         "ps_padding": "80",
         "ps_layout": "left",
         "ps_title": "启灵主题",
@@ -57,7 +63,7 @@
         "ps_original_price": "¥299",
         "ps_cta_text": "前往购买",
         "ps_cta_url": "#",
-        "ps_cta_bg": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "ps_cta_bg": "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
         "ps_cta_color": "#ffffff",
         "ps_cta_target": "_self",
         "ps_description": "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新"
@@ -66,15 +72,15 @@
     {
       "type": "service_cards",
       "data": {
-        "sc_bg_color": "#f8fafc",
+        "sc_bg_color": "#ffffff",
         "sc_padding": "60",
         "sc_columns": "4",
         "sc_gap": "20px",
-        "sc_card_bg": "rgba(255, 255, 255, 1)",
+        "sc_card_bg": "#ffffff",
         "sc_card_radius": "16px",
         "sc_card_shadow": "medium",
         "sc_icon_size": "48px",
-        "sc_icon_bg": "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
+        "sc_icon_bg": "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
         "sc_icon_radius": "12px",
         "sc_badge_bg": "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
         "sc_cards": [
@@ -145,7 +151,8 @@
             "tab_icon": "🎨",
             "features": "🎨|主题色定制|一建立切换主题色，支持渐变色\n🌙|暗黑模式|完整的深色主题支持\n📱|悬浮工具栏|可定制的悬浮按钮\n📢|公告系统|多类型公告展示\n🖼️|Logo定制|支持双Logo配置\n📐|模块间距|每个模块可自定义间距"
           }
-        ]
+        ],
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -156,21 +163,32 @@
         "stats_items": [
           {
             "number": "50+",
-            "label": "功能模块"
+            "label": "功能模块",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "30+",
-            "label": "页面模板"
+            "label": "页面模板",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "100%",
-            "label": "响应式"
+            "label": "响应式",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24/7",
-            "label": "技术支持"
+            "label": "技术支持",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
-        ]
+        ],
+        "stats_bg_type": "color",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #0284c7 100%)",
+        "stats_title_color": "#ffffff"
       }
     },
     {
@@ -201,7 +219,8 @@
             "image": "",
             "link": ""
           }
-        ]
+        ],
+        "module_bg_color": "#ffffff"
       }
     },
     {
@@ -225,7 +244,8 @@
             "question": "是否支持暗黑模式？",
             "answer": "是的，主题内置完整的暗黑模式支持，用户可以手动切换或跟随系统设置自动切换。"
           }
-        ]
+        ],
+        "module_bg_color": "#f8fafc"
       }
     },
     {
@@ -235,7 +255,12 @@
         "cta_subtitle": "立即体验专业级WordPress企业主题",
         "cta_button_text": "立即购买",
         "cta_button_url": "#",
-        "cta_bg_type": "gradient"
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#2563eb",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

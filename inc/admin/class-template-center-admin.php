@@ -111,7 +111,7 @@ class Template_Center_Admin {
                 </div>
                 <div class="qtc-summary-card">
                     <strong><?php echo esc_html( number_format_i18n( $stats['missing_industries'] ) ); ?></strong>
-                    <span><?php esc_html_e( '待补行业', 'developer-starter' ); ?></span>
+                    <span><?php esc_html_e( '暂无模板行业', 'developer-starter' ); ?></span>
                 </div>
                 <div class="qtc-summary-card">
                     <strong><?php echo esc_html( number_format_i18n( $stats['created_pages'] ) ); ?></strong>
@@ -686,7 +686,7 @@ class Template_Center_Admin {
                     <dd><?php echo esc_html( number_format_i18n( $usage_count ) ); ?></dd>
                 </div>
             </dl>
-            <code class="qtc-template-file"><?php echo esc_html( $template_file ); ?></code>
+            <span class="qtc-template-file"><?php esc_html_e( '启灵官方页面模板', 'developer-starter' ); ?></span>
             <?php if ( ! empty( $usage_pages ) ) : ?>
                 <details class="qtc-usage-details">
                     <summary><?php echo esc_html( sprintf( __( '查看 %s 个使用页面', 'developer-starter' ), number_format_i18n( $usage_count ) ) ); ?></summary>
@@ -854,6 +854,7 @@ class Template_Center_Admin {
             'templates/template-qiling-ai-multilingual-seo.php' => $this->meta( 'product', 'multilingual_seo', __( 'AI 多语言出海官网', 'developer-starter' ), __( '适合启灵AI多语言、多语言 SEO、跨境内容站和外贸出海官网。', 'developer-starter' ), array( __( '启灵生态', 'developer-starter' ), __( '多语言 SEO', 'developer-starter' ) ), 376 ),
             'templates/template-qiling-doc-ocr-converter.php' => $this->meta( 'product', 'document_ocr', __( '文档解析转换官网', 'developer-starter' ), __( '适合启灵文档解析、PDF 转 Office、文档转 PDF 和办公文件处理工具官网。', 'developer-starter' ), array( __( '启灵生态', 'developer-starter' ), __( '文档解析', 'developer-starter' ) ), 377 ),
             'templates/template-qiling-image-studio.php' => $this->meta( 'product', 'ai_image', __( 'AI 图像处理官网', 'developer-starter' ), __( '适合启灵图像处理、启灵AI图像和创意图片工具站官网。', 'developer-starter' ), array( __( '启灵生态', 'developer-starter' ), __( 'AI 图像', 'developer-starter' ) ), 378 ),
+            'templates/template-qiling-wallpaper-gallery.php' => $this->meta( 'content', 'photography', __( '图片素材壁纸站', 'developer-starter' ), __( '适合高清壁纸、摄影作品、设计配图和图片素材聚合站。', 'developer-starter' ), array( __( '图片素材', 'developer-starter' ), __( '高清壁纸', 'developer-starter' ) ), 155 ),
             'templates/template-qiling-cloud-storage-hosting.php' => $this->meta( 'product', 'cloud_storage', __( '云存储图床官网', 'developer-starter' ), __( '适合启灵云存储、启灵图床、对象存储迁移和图片直链工具官网。', 'developer-starter' ), array( __( '启灵生态', 'developer-starter' ), __( '云存储', 'developer-starter' ) ), 379 ),
             'templates/template-qiling-cloud-canvas.php' => $this->meta( 'product', 'cloud_storage', __( '一体式官网', 'developer-starter' ), __( '适合云服务、SaaS、对象存储和技术产品官网，强调整页连续画布视觉。', 'developer-starter' ), array( __( '一体式视觉', 'developer-starter' ), __( '云服务', 'developer-starter' ) ), 380 ),
             'templates/template-tech-company-integrated.php' => $this->meta( 'product', 'technology', __( '科技公司官网（一体式）', 'developer-starter' ), __( '适合 AI、云计算、数据平台、研发服务和技术咨询公司官网，用连续画布组合首屏、能力、方案、流程、套餐和转化入口。', 'developer-starter' ), array( __( '一体式视觉', 'developer-starter' ), __( '科技公司', 'developer-starter' ) ), 386 ),
@@ -878,6 +879,9 @@ class Template_Center_Admin {
             'templates/template-medical-beauty.php' => $this->meta( 'industry', 'medical_beauty', __( '医美机构官网', 'developer-starter' ), __( '医美机构、皮肤管理、项目介绍和到店咨询。', 'developer-starter' ), array( __( '医美', 'developer-starter' ), __( '咨询', 'developer-starter' ) ), 520 ),
             'templates/template-auto-service.php' => $this->meta( 'industry', 'automotive', __( '汽车服务官网', 'developer-starter' ), __( '汽修保养、汽车美容、门店服务和预约到店。', 'developer-starter' ), array( __( '汽车', 'developer-starter' ), __( '门店', 'developer-starter' ) ), 530 ),
             'templates/template-wellness-center.php' => $this->meta( 'industry', 'wellness', __( '康养中心官网', 'developer-starter' ), __( '康养中心、理疗馆、健康管理和体验预约。', 'developer-starter' ), array( __( '康养', 'developer-starter' ), __( '健康', 'developer-starter' ) ), 540 ),
+            'templates/template-health-supplements.php' => $this->meta( 'industry', 'health_supplements', __( '健康保健用品官网', 'developer-starter' ), __( '营养补充、日常保健用品、合规信息和产品咨询。', 'developer-starter' ), array( __( '健康用品', 'developer-starter' ), __( '合规展示', 'developer-starter' ) ), 548 ),
+            'templates/template-intimate-wellness.php' => $this->meta( 'industry', 'intimate_wellness', __( '情趣用品商城', 'developer-starter' ), __( '成人情趣用品、材质说明、隐私配送和清洁养护。', 'developer-starter' ), array( __( '18+ 成人适用', 'developer-starter' ), __( '隐私配送', 'developer-starter' ) ), 549 ),
+            'templates/template-fashion-brand.php' => $this->meta( 'industry', 'fashion', __( '服装品牌官网', 'developer-starter' ), __( '服装品牌、当季系列、搭配画册、精选单品和品牌服务。', 'developer-starter' ), array( __( '服装时尚', 'developer-starter' ), __( '搭配画册', 'developer-starter' ) ), 550 ),
             'templates/template-chain-store-official.php' => $this->meta( 'industry', 'franchise', __( '连锁门店官网', 'developer-starter' ), __( '连锁品牌、门店矩阵、加盟政策和咨询留资。', 'developer-starter' ), array( __( '连锁', 'developer-starter' ), __( '加盟', 'developer-starter' ) ), 550 ),
             'templates/template-marketing-pr-agency.php' => $this->meta( 'industry', 'b2b', __( '营销公关机构官网', 'developer-starter' ), __( '营销策划、公关传播、品牌服务和案例展示。', 'developer-starter' ), array( __( '营销', 'developer-starter' ), __( 'B2B', 'developer-starter' ) ), 560 ),
             'templates/template-manufacturing-factory.php' => $this->meta( 'industry', 'manufacturing', __( '制造业工厂官网', 'developer-starter' ), __( '制造工厂、设备厂商、零部件供应商和工业品牌官网。', 'developer-starter' ), array( __( '制造业', 'developer-starter' ), __( '询盘', 'developer-starter' ) ), 570 ),
@@ -1117,11 +1121,11 @@ class Template_Center_Admin {
             <div class="qtc-section-heading">
                 <div>
                     <h2 id="qtc-coverage-title"><?php esc_html_e( '行业模板覆盖', 'developer-starter' ); ?></h2>
-                    <p><?php esc_html_e( '按统一行业标准检查官方模板供给。已有模板可直接点击筛选，0 个模板的行业会进入后续补齐清单。', 'developer-starter' ); ?></p>
+                    <p><?php esc_html_e( '按行业查看官方模板覆盖情况。已有模板的行业可直接点击筛选，暂无模板的行业会清晰标注。', 'developer-starter' ); ?></p>
                 </div>
                 <div class="qtc-coverage-meter" aria-label="<?php esc_attr_e( '行业覆盖进度', 'developer-starter' ); ?>">
                     <strong><?php echo esc_html( sprintf( '%s%%', number_format_i18n( $percent ) ) ); ?></strong>
-                    <span><?php echo esc_html( sprintf( __( '已覆盖 %1$s / %2$s，待补 %3$s', 'developer-starter' ), number_format_i18n( $covered ), number_format_i18n( $total ), number_format_i18n( $missing ) ) ); ?></span>
+                    <span><?php echo esc_html( sprintf( __( '已覆盖 %1$s / %2$s，暂无模板 %3$s', 'developer-starter' ), number_format_i18n( $covered ), number_format_i18n( $total ), number_format_i18n( $missing ) ) ); ?></span>
                     <i><b style="width: <?php echo esc_attr( (string) $percent ); ?>%;"></b></i>
                 </div>
             </div>
@@ -1153,7 +1157,7 @@ class Template_Center_Admin {
                     <a class="<?php echo esc_attr( implode( ' ', $class_names ) ); ?>" href="<?php echo esc_url( $url ); ?>">
                         <span class="qtc-coverage-main">
                             <strong><?php echo esc_html( $label ); ?></strong>
-                            <em><?php echo esc_html( $count > 0 ? sprintf( __( '%s 个模板', 'developer-starter' ), number_format_i18n( $count ) ) : __( '待补模板', 'developer-starter' ) ); ?></em>
+                            <em><?php echo esc_html( $count > 0 ? sprintf( __( '%s 个模板', 'developer-starter' ), number_format_i18n( $count ) ) : __( '暂无模板', 'developer-starter' ) ); ?></em>
                         </span>
                         <?php if ( ! empty( $templates ) ) : ?>
                             <span class="qtc-coverage-sample"><?php echo esc_html( implode( ' / ', $templates ) ); ?></span>

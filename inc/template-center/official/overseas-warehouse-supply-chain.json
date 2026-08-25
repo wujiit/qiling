@@ -6,7 +6,13 @@
   "page_template": "templates/template-overseas-warehouse-supply-chain.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": false,
@@ -43,15 +49,15 @@
         "bb_style_mode": "glow",
         "bb_height": "85vh",
         "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #f8fafc 0%, #ccfbf1 45%, #dbeafe 100%)",
+        "bb_bg_gradient": "linear-gradient(135deg, #090d16 0%, #0369a1 50%, #047857 100%)",
         "bb_title": "把海外仓履约节点<br><strong>变成可追踪服务</strong>",
         "bb_title_size_max": "72px",
-        "bb_title_color": "#0f172a",
+        "bb_title_color": "#ffffff",
         "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #0f766e 0%, #2563eb 100%)",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #34d399 100%)",
         "bb_subtitle": "海外仓、FBA 头程、一件代发与跨境供应链官网方案",
         "bb_desc": "面向跨境卖家、品牌出海团队和平台店铺，把海外仓节点、入库上架、订单履约、退换货处理、头程协同和报价入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "#334155",
+        "bb_text_color": "rgba(255, 255, 255, 0.82)",
         "bb_text_align": "left",
         "bb_buttons": [
           {
@@ -67,7 +73,7 @@
             "icon": "点"
           }
         ],
-        "bb_primary_btn_bg_color": "#0f766e",
+        "bb_primary_btn_bg_color": "#0284c7",
         "bb_primary_btn_text_color": "#ffffff",
         "bb_primary_btn_hover_bg_color": "#115e59",
         "bb_primary_btn_hover_text_color": "#ffffff",
@@ -233,25 +239,34 @@
         "stats_items": [
           {
             "number": "8+",
-            "label": "海外仓服务节点"
+            "label": "海外仓服务节点",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "48h",
-            "label": "入库上架时效"
+            "label": "入库上架时效",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "99%",
-            "label": "订单轨迹回传率"
+            "label": "订单轨迹回传率",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           },
           {
             "number": "24h",
-            "label": "异常工单响应"
+            "label": "异常工单响应",
+            "number_color": "#ffffff",
+            "label_color": "rgba(255, 255, 255, 0.85)"
           }
         ],
         "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc",
+        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #0284c7 52%, #059669 100%)",
         "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "module_padding_bottom": "80px",
+        "stats_title_color": "#ffffff"
       }
     },
     {

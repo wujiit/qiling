@@ -6,7 +6,13 @@
   "page_template": "templates/template-water-treatment-environmental.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "manufacturing_company"
+    "preset": "manufacturing_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #0369a1 52%, #059669 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #047857 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,8 +56,8 @@
             "subtitle": "面向工业园区、制造工厂、市政配套和环保改造项目，集中展示工艺路线、设备能力、工程案例、资质证书和咨询入口。",
             "btn_text": "提交项目需求",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0369a1"
+            "btn_bg_color": "#0284c7",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -126,7 +132,7 @@
         "process_title": "环保工程实施流程",
         "process_subtitle": "从水质诊断到调试验收，降低工程不确定性",
         "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#f0f9ff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "process_items": [
@@ -195,7 +201,7 @@
         "ch_subtitle": "集中展示客户立项、采购和验收前关心的资质材料",
         "ch_columns": "3",
         "ch_enable_filter": "yes",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#f0f9ff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px",
         "ch_items": [
@@ -271,7 +277,7 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
+        "module_bg_color": "#f0f9ff",
         "module_padding_top": "80px",
         "module_padding_bottom": "80px"
       }

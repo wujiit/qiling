@@ -129,7 +129,7 @@ class Features_Showcase_Page_Creator extends Page_Creator_Base {
                     'faq_items' => array(
                         array(
                             'question' => __( '如何添加自定义模块到页面？', 'developer-starter' ),
-                            'answer'   => __( '在后台编辑页面时，找到「页面模块配置」区域，点击「添加模块」按钮选择需要的模块类型，然后填写模块内容即可。支持拖拽排序和实时预览。', 'developer-starter' ),
+                            'answer'   => __( '选择需要展示的功能模块并填写内容即可，支持调整顺序和实时预览。', 'developer-starter' ),
                         ),
                         array(
                             'question' => __( '主题支持哪些页面模板？', 'developer-starter' ),

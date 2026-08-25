@@ -6,7 +6,13 @@
   "page_template": "templates/template-real-estate-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#b45309",
+      "accent": "#1e3a8a",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -40,7 +46,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #1f2937 0%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #78350f 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -49,8 +55,8 @@
             "subtitle": "项目亮点、空间图片、配套服务和看房咨询，一页完成核心信息展示。",
             "btn_text": "预约看房",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "btn_bg_color": "#b45309",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -145,7 +151,7 @@
             "link": "#"
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "module_bg_color": "#fefce8"
       }
     },
     {
@@ -231,7 +237,8 @@
         "contact_phone": "400-618-2026",
         "contact_hours": "09:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#fefce8"
       }
     }
   ]

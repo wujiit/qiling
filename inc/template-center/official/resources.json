@@ -6,7 +6,13 @@
   "page_template": "templates/template-resources.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company"
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -42,7 +48,7 @@
         "rh_layout": "left_right",
         "rh_height": "78vh",
         "rh_bg_type": "gradient",
-        "rh_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 46%, #0f766e 100%)",
+        "rh_bg_gradient": "linear-gradient(135deg, #090d16 0%, #1e3a8a 50%, #047857 100%)",
         "rh_style_preset": "premium",
         "rh_enable_motion": "1",
         "rh_motion_level": "soft",
@@ -119,7 +125,10 @@
         "rh_feed_show_download_count": "1",
         "rh_feed_show_date": "0",
         "rh_enable_bottom_strip": "1",
-        "rh_strip_duration": "36"
+        "rh_strip_duration": "36",
+        "rh_title_color": "#ffffff",
+        "rh_primary_btn_bg_color": "#2563eb",
+        "rh_primary_btn_text_color": "#ffffff"
       }
     },
     {
@@ -127,7 +136,7 @@
       "data": {
         "rs_title": "资源站运营数据",
         "rs_subtitle": "用真实内容和轻量虚拟数值共同营造资源站规模感",
-        "rs_bg_color": "#f6f8fb",
+        "rs_bg_color": "#f8fafc",
         "rs_padding_top": "64px",
         "rs_padding_bottom": "40px",
         "rs_stats_list": [
@@ -279,8 +288,12 @@
         "cta_subtitle": "先用页面包搭好资源首页，再用启灵商城配置积分、VIP和下载权限。",
         "cta_button_text": "配置资源文章",
         "cta_button_url": "#",
-        "cta_bg_type": "gradient",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #2563eb 55%, #0f766e 100%)"
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #0284c7 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_bg_color": "#d97706",
+        "cta_button_text_color": "#ffffff"
       }
     }
   ]

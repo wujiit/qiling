@@ -85,57 +85,11 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
             array( 'id' => 'qur_total_count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '9' ),
 
             array(
-                'id' => 'qur_auto_post_type',
+                'id' => 'qur_category_ids',
                 'type' => 'text',
-                'label' => __( '自动获取-内容类型', 'developer-starter' ),
-                'default' => 'post',
-                'description' => __( '支持多个类型，逗号分隔，例如：post,page,product', 'developer-starter' ),
-                'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'auto', 'mixed' ) ),
-            ),
-            array(
-                'id' => 'qur_auto_taxonomy',
-                'type' => 'text',
-                'label' => __( '自动获取-分类法', 'developer-starter' ),
-                'description' => __( '例如 category 或自定义 taxonomy', 'developer-starter' ),
-                'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'auto', 'mixed' ) ),
-            ),
-            array(
-                'id' => 'qur_auto_terms',
-                'type' => 'text',
-                'label' => __( '自动获取-分类/标签ID或Slug', 'developer-starter' ),
-                'description' => __( '多个用逗号分隔，例如：12,15 或 design,news', 'developer-starter' ),
-                'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'auto', 'mixed' ) ),
-            ),
-            array(
-                'id' => 'qur_auto_orderby',
-                'type' => 'select',
-                'label' => __( '自动获取-排序字段', 'developer-starter' ),
-                'options' => array(
-                    'date' => __( '发布时间', 'developer-starter' ),
-                    'modified' => __( '更新时间', 'developer-starter' ),
-                    'title' => __( '标题', 'developer-starter' ),
-                    'rand' => __( '随机', 'developer-starter' ),
-                    'comment_count' => __( '评论数', 'developer-starter' ),
-                ),
-                'default' => 'date',
-                'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'auto', 'mixed' ) ),
-            ),
-            array(
-                'id' => 'qur_auto_order',
-                'type' => 'select',
-                'label' => __( '自动获取-排序方式', 'developer-starter' ),
-                'options' => array(
-                    'DESC' => __( '降序', 'developer-starter' ),
-                    'ASC' => __( '升序', 'developer-starter' ),
-                ),
-                'default' => 'DESC',
-                'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'auto', 'mixed' ) ),
-            ),
-            array(
-                'id' => 'qur_auto_exclude_ids',
-                'type' => 'text',
-                'label' => __( '自动获取-排除ID', 'developer-starter' ),
-                'description' => __( '多个用逗号分隔', 'developer-starter' ),
+                'label' => __( '文章分类 ID', 'developer-starter' ),
+                'default' => '',
+                'description' => __( '填写要推荐的文章分类 ID；多个 ID 用英文逗号分隔。留空时显示全部分类的最新文章。', 'developer-starter' ),
                 'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'auto', 'mixed' ) ),
             ),
 
@@ -851,49 +805,27 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
     }
 
     private function query_auto_items( $data, $count, $exclude_ids ) {
-        $post_type = isset( $data['qur_auto_post_type'] ) && $data['qur_auto_post_type'] !== '' ? $data['qur_auto_post_type'] : 'post';
-        $post_types = array_filter( array_map( 'trim', explode( ',', $post_type ) ) );
-        if ( empty( $post_types ) ) {
-            $post_types = array( 'post' );
-        }
-
         $args = array(
-            'post_type' => $post_types,
+            'post_type' => 'post',
             'posts_per_page' => $count,
             'post_status' => 'publish',
             'ignore_sticky_posts' => true,
+            'orderby' => 'date',
+            'order' => 'DESC',
         );
-
-        $orderby = isset( $data['qur_auto_orderby'] ) ? $data['qur_auto_orderby'] : 'date';
-        $order = isset( $data['qur_auto_order'] ) ? $data['qur_auto_order'] : 'DESC';
-        $args['orderby'] = $orderby;
-        $args['order'] = $order;
 
         $exclude_ids = array_filter( array_map( 'intval', $exclude_ids ) );
         if ( ! empty( $exclude_ids ) ) {
             $args['post__not_in'] = $exclude_ids;
         }
 
-        $extra_exclude = isset( $data['qur_auto_exclude_ids'] ) ? $data['qur_auto_exclude_ids'] : '';
-        if ( $extra_exclude ) {
-            $exclude_more = array_filter( array_map( 'intval', explode( ',', $extra_exclude ) ) );
-            $args['post__not_in'] = array_merge( isset( $args['post__not_in'] ) ? $args['post__not_in'] : array(), $exclude_more );
+        $category_ids_raw = isset( $data['qur_category_ids'] ) ? trim( (string) $data['qur_category_ids'] ) : '';
+        if ( '' === $category_ids_raw && isset( $data['qur_auto_taxonomy'], $data['qur_auto_terms'] ) && 'category' === trim( (string) $data['qur_auto_taxonomy'] ) ) {
+            $category_ids_raw = trim( (string) $data['qur_auto_terms'] );
         }
-
-        $taxonomy = isset( $data['qur_auto_taxonomy'] ) ? trim( $data['qur_auto_taxonomy'] ) : '';
-        $terms_raw = isset( $data['qur_auto_terms'] ) ? trim( $data['qur_auto_terms'] ) : '';
-        if ( $taxonomy && $terms_raw ) {
-            $terms = array_filter( array_map( 'trim', explode( ',', $terms_raw ) ) );
-            if ( ! empty( $terms ) ) {
-                $all_numeric = count( $terms ) === count( array_filter( $terms, 'is_numeric' ) );
-                $args['tax_query'] = array(
-                    array(
-                        'taxonomy' => $taxonomy,
-                        'field' => $all_numeric ? 'term_id' : 'slug',
-                        'terms' => $all_numeric ? array_map( 'intval', $terms ) : $terms,
-                    ),
-                );
-            }
+        $category_ids = array_values( array_unique( array_filter( array_map( 'absint', explode( ',', $category_ids_raw ) ) ) ) );
+        if ( ! empty( $category_ids ) ) {
+            $args['category__in'] = $category_ids;
         }
 
         if ( function_exists( 'developer_starter_run_cached_query' ) ) {
@@ -949,14 +881,6 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
     }
 
     private function get_post_primary_term( $post_id, $data ) {
-        $taxonomy = isset( $data['qur_auto_taxonomy'] ) ? trim( $data['qur_auto_taxonomy'] ) : '';
-        if ( $taxonomy ) {
-            $terms = get_the_terms( $post_id, $taxonomy );
-            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                return $terms[0]->name;
-            }
-        }
-
         $categories = get_the_category( $post_id );
         if ( ! empty( $categories ) ) {
             return $categories[0]->name;

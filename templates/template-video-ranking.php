@@ -165,9 +165,9 @@ get_header();
         <?php elseif ( current_user_can( 'edit_pages' ) ) : ?>
             <div class="container">
                 <div class="video-ranking-page__empty">
-                    <strong><?php esc_html_e( '排行榜模块尚未添加', 'developer-starter' ); ?></strong>
-                    <p><?php esc_html_e( '进入页面装修器，添加“影视排行榜”模块并配置榜单标签。', 'developer-starter' ); ?></p>
-                    <a href="<?php echo esc_url( get_edit_post_link( $page_id ) ); ?>"><?php esc_html_e( '编辑排行榜页面', 'developer-starter' ); ?></a>
+                    <strong><?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?></strong>
+                    <p><?php esc_html_e( '暂无内容。', 'developer-starter' ); ?></p>
+                    <a href="<?php echo esc_url( get_edit_post_link( $page_id ) ); ?>"><?php esc_html_e( '编辑页面', 'developer-starter' ); ?></a>
                 </div>
             </div>
         <?php endif; ?>

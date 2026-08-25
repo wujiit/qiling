@@ -3462,6 +3462,71 @@ html.dark-mode .module-cases.module-cases .cases-grid .case-card {
   gap: var(--qiling-space-4);
 }
 
+.module-category-tabs .post-image-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--qiling-space-6);
+  margin: 0 0 var(--qiling-space-12);
+}
+
+.module-category-tabs .post-image-facts span {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: var(--qiling-space-4) var(--qiling-space-9);
+  border: 1px solid var(--qiling-component-post-card-border);
+  border-radius: 999px;
+  background: var(--qiling-component-surface-alt-bg, var(--color-surface-alt));
+  color: var(--qiling-component-post-card-meta-color);
+  font-size: var(--qiling-text-12);
+  line-height: 1;
+}
+
+.module-category-tabs .post-image-facts .resource-price {
+  border-color: rgba(var(--color-primary-rgb), 0.18);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.module-category-tabs .cat-tab-resource-action {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--qiling-space-7);
+  margin-top: var(--qiling-space-14);
+  padding: var(--qiling-space-9) var(--qiling-space-14);
+  border: 1px solid var(--category-tabs-action-border, var(--category-tabs-action-bg, var(--qiling-component-button-border)));
+  border-radius: var(--qiling-button-radius);
+  background: var(--category-tabs-action-bg, var(--qiling-component-button-bg));
+  color: var(--category-tabs-action-text, var(--qiling-component-button-text));
+  font-size: var(--qiling-text-14);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.module-category-tabs .cat-tab-resource-action:hover {
+  border-color: var(--category-tabs-action-hover-border, var(--category-tabs-action-hover-bg, var(--qiling-component-button-hover-border, var(--color-primary-hover))));
+  background: var(--category-tabs-action-hover-bg, var(--qiling-component-button-hover-bg, var(--color-primary-hover)));
+  color: var(--category-tabs-action-hover-text, var(--qiling-component-button-hover-text, var(--color-text-inverse)));
+  transform: translateY(-1px);
+}
+
+.module-category-tabs .card-style-wallpaper .post-body {
+  padding: var(--qiling-space-14) var(--qiling-space-14) var(--qiling-space-16);
+}
+
+.module-category-tabs .card-style-wallpaper .post-title {
+  margin-bottom: var(--qiling-space-9);
+}
+
+.module-category-tabs .card-style-wallpaper .post-meta {
+  font-size: var(--qiling-text-12);
+}
+
 /* 加载更多 (Load More) */
 .module-category-tabs .cat-tabs-load-more {
   text-align: center;
@@ -10457,6 +10522,19 @@ html.dark-mode
   align-items: stretch;
 }
 
+.pricing-connected-shell {
+  position: relative;
+  overflow: visible;
+  background: var(--qiling-module-card-bg, var(--qiling-component-card-bg));
+  border: 1px solid var(--qiling-module-card-border, var(--qiling-component-card-border));
+  border-radius: var(--qiling-module-card-radius, var(--qiling-card-radius));
+  box-shadow: var(--qiling-module-card-shadow, var(--qiling-component-card-shadow));
+}
+
+.pricing-connected-shell .pricing-grid {
+  gap: 0;
+}
+
 /* Col 类通常是共享的，但在这里定义以便在需要时具有特殊性 (Col classes are generally shared, but defined here for specificity if needed) */
 .pricing-grid.grid-cols-3 {
   grid-template-columns: repeat(3, 1fr);
@@ -10486,6 +10564,20 @@ html.dark-mode
   border: 1px solid var(--qiling-component-card-border);
 }
 
+.pricing-connected-shell .pricing-card {
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--qiling-module-card-border, var(--qiling-component-card-border));
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+.pricing-connected-shell .pricing-card:last-child {
+  border-right: 0;
+}
+
 .pricing-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--qiling-component-card-shadow);
@@ -10501,6 +10593,19 @@ html.dark-mode
 
 .pricing-card.pricing-featured:hover {
   transform: scale(1.03) translateY(-10px);
+}
+
+.pricing-connected-shell .pricing-card.pricing-featured {
+  background: color-mix(in srgb, var(--qiling-module-primary, var(--color-primary)) 7%, transparent);
+  border-top: 3px solid var(--qiling-module-primary, var(--color-primary));
+  transform: none;
+}
+
+.pricing-connected-shell .pricing-card:hover,
+.pricing-connected-shell .pricing-card.pricing-featured:hover {
+  background: color-mix(in srgb, var(--qiling-module-primary, var(--color-primary)) 5%, transparent);
+  box-shadow: none;
+  transform: none;
 }
 
 .pricing-badge {
@@ -10610,6 +10715,20 @@ html.dark-mode
     gap: var(--qiling-space-40) !important;
   }
 
+  .pricing-connected-shell .pricing-grid.grid-cols-3,
+  .pricing-connected-shell .pricing-grid.grid-cols-4 {
+    gap: 0 !important;
+  }
+
+  .pricing-connected-shell .pricing-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--qiling-module-card-border, var(--qiling-component-card-border));
+  }
+
+  .pricing-connected-shell .pricing-card:last-child {
+    border-bottom: 0;
+  }
+
   .pricing-card.pricing-featured {
     transform: none !important;
     margin: var(--qiling-space-10) 0;
@@ -10618,6 +10737,13 @@ html.dark-mode
   .pricing-card:hover,
   .pricing-card.pricing-featured:hover {
     transform: translateY(-5px) !important;
+  }
+
+  .pricing-connected-shell .pricing-card.pricing-featured,
+  .pricing-connected-shell .pricing-card:hover,
+  .pricing-connected-shell .pricing-card.pricing-featured:hover {
+    margin: 0;
+    transform: none !important;
   }
 }
 
@@ -10643,7 +10769,7 @@ html.dark-mode .module-pricing .section-subtitle {
   color: var(--qds-subtitle-color, var(--qiling-module-subtitle, var(--color-text-muted)));
 }
 
-html.dark-mode .pricing-card {
+html.dark-mode .module-pricing > .container > .pricing-grid .pricing-card {
   background: var(
     --qiling-component-card-bg-dark,
     var(--qiling-component-card-bg)
@@ -10656,7 +10782,7 @@ html.dark-mode .pricing-card {
     );
 }
 
-html.dark-mode .pricing-card:hover {
+html.dark-mode .module-pricing > .container > .pricing-grid .pricing-card:hover {
   background: var(
     --qiling-component-card-bg-dark,
     var(--qiling-component-card-bg)
@@ -15914,6 +16040,24 @@ html.dark-mode .module-software-ranking .sr-desc {
   color: var(--dm-text-muted);
 }
 
+/* ===== 首屏数据项 (banner) ===== */
+.module-banner .banner-stats-bar.stats-layout-independent {
+  gap: var(--qiling-banner-stats-gap, var(--qiling-space-16));
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.module-banner .banner-stats-bar.stats-layout-independent .stat-item {
+  background: var(--qiling-module-card-bg, rgba(var(--qiling-rgb-255-255-255), 0.14));
+  border: 1px solid var(--qiling-module-card-border, rgba(var(--qiling-rgb-255-255-255), 0.2));
+  border-radius: 12px;
+  padding: var(--qiling-space-16);
+  box-shadow: var(--qiling-module-card-shadow, 0 12px 30px rgba(var(--qiling-rgb-15-23-42), 0.12));
+}
+
 /* ===== 统计模块 (Module Statistics) ===== */
 .module-stats {
   background-size: cover;
@@ -20222,70 +20366,72 @@ html.dark-mode .visual-tabs-panel-meta {
  * 这些规则放在模块样式末尾，保证旧模块的局部样式不再压过装修面板。
  */
 
-.module-contact.module-contact .contact-form,
-.module-contact.module-contact .contact-right > .developer-form-wrap,
-.module-product-showcase.module-product-showcase .ps-media-carousel,
-.module-product-showcase.module-product-showcase .ps-description,
-.module-products-manual.module-products-manual .pm-modal-box,
-.module-products-manual.module-products-manual .pm-modal-sidebar,
-.module-products-manual.module-products-manual .pm-mh-specs,
-.module-products-manual.module-products-manual .pm-ms-thumb,
-.module-media-list.module-media-list .qil-ml-card,
-.module-accordion.module-accordion .accordion-style-default .accordion-item,
-.module-accordion.module-accordion .accordion-style-bordered .accordion-item,
-.module-tabs.module-tabs .tabs-content,
-.module-pricing.module-pricing .pricing-card,
-.module-testimonials.module-testimonials .testimonial-card,
-.module-testimonials.module-testimonials .ql-testimonial-summary,
-.module-team.module-team .team-card,
-.module-branches.module-branches .branch-card,
-.module-footer-suite.module-footer-suite .qfs-qr-card {
+[data-qds-card-mode="independent"] :is(
+  .module-contact.module-contact .contact-form,
+  .module-contact.module-contact .contact-right > .developer-form-wrap,
+  .module-product-showcase.module-product-showcase .ps-media-carousel,
+  .module-product-showcase.module-product-showcase .ps-description,
+  .module-products-manual.module-products-manual .pm-modal-box,
+  .module-products-manual.module-products-manual .pm-modal-sidebar,
+  .module-products-manual.module-products-manual .pm-mh-specs,
+  .module-products-manual.module-products-manual .pm-ms-thumb,
+  .module-media-list.module-media-list .qil-ml-card,
+  .module-accordion.module-accordion .accordion-style-default .accordion-item,
+  .module-accordion.module-accordion .accordion-style-bordered .accordion-item,
+  .module-tabs.module-tabs .tabs-content,
+  .module-testimonials.module-testimonials .testimonial-card,
+  .module-testimonials.module-testimonials .ql-testimonial-summary,
+  .module-team.module-team .team-card,
+  .module-branches.module-branches .branch-card,
+  .module-footer-suite.module-footer-suite .qfs-qr-card
+) {
   background: var(--qiling-component-card-bg);
   border: 1px solid var(--qiling-component-card-border);
   border-radius: var(--qiling-card-radius);
   box-shadow: var(--qiling-component-card-shadow);
 }
 
-.module-features.module-features .feature-item.style-card,
-.module-features.module-features .feature-item.style-border {
+[data-qds-card-mode="independent"] :is(.module-features.module-features .feature-item.style-card,
+.module-features.module-features .feature-item.style-border) {
   background: var(--f-card-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--f-card-border, var(--qiling-component-card-border));
   border-radius: var(--f-card-radius, var(--qiling-card-radius));
   box-shadow: var(--qiling-component-card-shadow);
 }
 
-.module-features-list.module-features-list .feature-card {
+[data-qds-card-mode="independent"] .module-features-list.module-features-list .feature-card {
   background: var(--fl-card-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--fl-card-border, var(--qiling-component-card-border));
   border-radius: var(--qiling-card-radius);
   box-shadow: var(--qiling-component-card-shadow);
 }
 
-.module-services.module-services .service-item {
+[data-qds-card-mode="independent"] .module-services.module-services .service-item {
   background: var(--s-card-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--s-card-border, var(--qiling-component-card-border));
   border-radius: var(--qiling-card-radius);
   box-shadow: var(--qiling-component-card-shadow);
 }
 
-.module-service-cards.module-service-cards .sc-card {
+[data-qds-card-mode="independent"] .module-service-cards.module-service-cards .sc-card {
   border-radius: var(--qiling-card-radius);
 }
 
-.module-faq.module-faq .faq-item {
+[data-qds-card-mode="independent"] .module-faq.module-faq .faq-item {
   background: var(--faq-card-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--faq-card-border, var(--qiling-component-card-border));
   border-radius: var(--qiling-card-radius);
   box-shadow: var(--qiling-component-card-shadow);
 }
 
-.module-process.module-process .process-item {
+[data-qds-card-mode="independent"] .module-process.module-process .process-item {
   background: var(--process-card-bg, var(--qiling-component-card-bg));
   border: 1px solid var(--process-card-border, var(--qiling-component-card-border));
   border-radius: var(--qiling-card-radius);
   box-shadow: var(--qiling-component-card-shadow);
 }
 
+[data-qds-card-mode="independent"] :is(
 .module-products-manual.module-products-manual .pm-card,
 .module-cases.module-cases .case-card,
 .module-work-library.module-work-library .qw-lib-card,
@@ -20293,7 +20439,8 @@ html.dark-mode .visual-tabs-panel-meta {
 .module-news.module-news .news-card,
 .module-featured-posts.module-featured-posts .fp-list-item,
 .module-featured-posts.module-featured-posts .fp-slider,
-.module-category-tabs.module-category-tabs .cat-tab-post-item {
+.module-category-tabs.module-category-tabs .cat-tab-post-item
+) {
   background: var(--qiling-component-post-card-bg);
   border: 1px solid var(--qiling-component-post-card-border);
   border-radius: var(--qiling-card-radius);
@@ -20309,7 +20456,6 @@ html.dark-mode .visual-tabs-panel-meta {
 .module-featured-posts.module-featured-posts .fp-list-item:hover,
 .module-media-list.module-media-list .qil-ml-card:hover,
 .module-category-tabs.module-category-tabs .cat-tab-post-item:hover,
-.module-pricing.module-pricing .pricing-card:hover,
 .module-testimonials.module-testimonials .testimonial-card:hover,
 .module-team.module-team .team-card:hover,
 .module-branches.module-branches .branch-card:hover {
@@ -20680,7 +20826,6 @@ html.dark-mode
   .accordion-style-bordered
   .accordion-item,
 html.dark-mode .module-tabs.module-tabs .tabs-content,
-html.dark-mode .module-pricing.module-pricing .pricing-card,
 html.dark-mode .module-testimonials.module-testimonials .testimonial-card,
 html.dark-mode .module-testimonials.module-testimonials .ql-testimonial-summary,
 html.dark-mode .module-team.module-team .team-card,

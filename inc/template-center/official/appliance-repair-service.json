@@ -6,7 +6,13 @@
   "page_template": "templates/template-appliance-repair-service.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "renovation_company"
+    "preset": "renovation_company",
+    "colors": {
+      "primary": "#0284c7",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
   },
   "hide_page_header": true,
   "transparent_header": true,
@@ -41,7 +47,7 @@
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 48%, #0f766e 100%)",
+        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #d97706 100%)",
         "banner_slides": [
           {
             "media_type": "image",
@@ -50,8 +56,8 @@
             "subtitle": "覆盖家电维修、水电快修、安装更换和紧急故障处理，用明码报价和区域覆盖提升客户信任。",
             "btn_text": "立即预约上门",
             "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#1d4ed8"
+            "btn_bg_color": "#0284c7",
+            "btn_text_color": "#ffffff"
           }
         ],
         "show_stats_bar": "1",
@@ -299,7 +305,8 @@
         "contact_phone": "400-620-2026",
         "contact_hours": "08:00-21:00",
         "module_bg_image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55"
+        "bg_overlay": "0.55",
+        "module_bg_color": "#f8fafc"
       }
     }
   ]
