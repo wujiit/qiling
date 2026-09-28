@@ -1,7 +1,7 @@
 /**
- * Article reading progress indicator.
+ * 文章阅读进度指示器。
  *
- * Loaded only when the article reading progress option is enabled.
+ * 仅在开启文章阅读进度条选项时加载。
  */
 (function () {
     'use strict';

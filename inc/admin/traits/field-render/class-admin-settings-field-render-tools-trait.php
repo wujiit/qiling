@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin settings operational tools field render trait.
+ * 后台设置运维工具字段渲染 Trait。
  *
  * @package Developer_Starter
  */

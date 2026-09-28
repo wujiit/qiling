@@ -1,6 +1,6 @@
 <?php
 /**
- * Breaking News Ticker Module - 热点快讯滚动条
+ * 热点快讯滚动条模块
  *
  * @package Developer_Starter
  */

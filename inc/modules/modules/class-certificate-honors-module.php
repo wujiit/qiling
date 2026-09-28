@@ -1,6 +1,6 @@
 <?php
 /**
- * Certificate Honors Module - 独立资质荣誉模块
+ * 资质荣誉展示模块
  *
  * @package Developer_Starter
  */
@@ -106,6 +106,35 @@ class Certificate_Honors_Module extends Module_Base {
                     array( 'id' => 'expiry_date', 'type' => 'text', 'label' => __( '有效期至', 'developer-starter' ) ),
                     array( 'id' => 'file_url', 'type' => 'text', 'label' => __( '附件链接(PDF/原图)', 'developer-starter' ) ),
                 ),
+                'default_items' => array(
+                    array(
+                        'title'      => __( 'ISO9001质量管理体系认证', 'developer-starter' ),
+                        'category'   => __( '体系认证', 'developer-starter' ),
+                        'badge'      => __( '权威认证', 'developer-starter' ),
+                        'cert_no'    => 'ISO-9001-2025-001',
+                        'issuer'     => __( '中国质量认证中心', 'developer-starter' ),
+                        'issue_date' => '2025-01-18',
+                        'expiry_date'=> '2028-01-17',
+                    ),
+                    array(
+                        'title'      => __( '高新技术企业认定', 'developer-starter' ),
+                        'category'   => __( '企业资质', 'developer-starter' ),
+                        'badge'      => __( '国家级', 'developer-starter' ),
+                        'cert_no'    => 'GR2025-88991',
+                        'issuer'     => __( '科技主管部门', 'developer-starter' ),
+                        'issue_date' => '2025-03-05',
+                        'expiry_date'=> '2028-03-04',
+                    ),
+                    array(
+                        'title'      => __( '行业创新奖', 'developer-starter' ),
+                        'category'   => __( '荣誉奖项', 'developer-starter' ),
+                        'badge'      => __( '年度奖项', 'developer-starter' ),
+                        'cert_no'    => 'AWARD-2025-021',
+                        'issuer'     => __( '行业协会', 'developer-starter' ),
+                        'issue_date' => '2025-09-21',
+                        'expiry_date'=> '',
+                    ),
+                ),
             ),
         );
     }
@@ -124,7 +153,7 @@ class Certificate_Honors_Module extends Module_Base {
         $pb            = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '60px';
         $module_id     = 'ch-module-' . wp_rand( 1000, 999999 );
 
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['ch_items'] ) ) {
             $items = array(
                 array(
                     'title'      => __( 'ISO9001质量管理体系认证', 'developer-starter' ),

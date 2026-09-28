@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for palette preset token keys.
+ * 调色板预设令牌键名数据配置。
  *
  * @package Developer_Starter
  */

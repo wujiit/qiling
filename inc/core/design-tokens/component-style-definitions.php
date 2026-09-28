@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for component style definitions.
+ * 组件样式定义数据配置。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Native sitemap helpers split from functions.php.
+ * 从 functions.php 拆分出的原生站点地图辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

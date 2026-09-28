@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Category Content Display Module - 主分类内容展示
+ * 主分类内容展示模块
  * 
  * @package Developer_Starter
  */
@@ -373,7 +373,7 @@ class Main_Category_Content_Module extends Module_Base {
     }
 
     /**
-     * Only expose configuration guidance inside an authorized builder preview.
+     * 仅在已授权的构建器预览中展示配置指引。
      *
      * @return bool
      */

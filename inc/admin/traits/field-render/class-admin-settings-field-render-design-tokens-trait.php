@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin settings design token preview field render trait.
+ * 后台设置设计令牌预览字段渲染 Trait。
  *
  * @package Developer_Starter
  */

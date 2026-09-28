@@ -1,6 +1,6 @@
 <?php
 /**
- * Backward-compatible domain URL migration helper entry.
+ * 向后兼容的域名 URL 迁移辅助函数入口。
  *
  * @deprecated 2.5.8 Use helpers-url-i18n-routing.php instead.
  *

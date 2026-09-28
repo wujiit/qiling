@@ -1,8 +1,8 @@
 <?php
 /**
- * Setup wizard admin shell.
+ * 安装引导向导后台管理外壳。
  *
- * Phase 7 adds safe cleanup for setup-wizard generated records.
+ * 第 7 阶段支持安全清理引导向导生成的数据记录。
  *
  * @package Developer_Starter
  */
@@ -40,7 +40,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Register submenu under theme settings.
+     * 在主题设置下注册向导子菜单项。
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Add lightweight admin bar entry.
+     * 在顶部工具栏添加快捷向导入口。
      *
      * @param \WP_Admin_Bar $wp_admin_bar Admin bar.
      * @return void
@@ -82,7 +82,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Redirect once after theme activation.
+     * 主题激活后单次重定向至向导页面。
      *
      * @return void
      */
@@ -126,7 +126,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Handle POST actions before render.
+     * 页面渲染前处理向导表单提交。
      *
      * @return void
      */
@@ -169,7 +169,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render wizard page.
+     * 渲染安装向导主页面。
      *
      * @return void
      */
@@ -220,7 +220,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Handle draft save.
+     * 处理草稿保存请求。
      *
      * @return void
      */
@@ -251,7 +251,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Handle phase 3 page generation.
+     * 处理第 3 阶段页面批量生成。
      *
      * @return void
      */
@@ -287,7 +287,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Handle phase 4 menu and basic settings.
+     * 处理第 4 阶段菜单与基础设置。
      *
      * @return void
      */
@@ -327,7 +327,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Handle skip.
+     * 处理步骤跳过逻辑。
      *
      * @return void
      */
@@ -342,7 +342,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Handle completion.
+     * 处理向导完成逻辑。
      *
      * @return void
      */
@@ -369,7 +369,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Handle phase 7 safe cleanup.
+     * 处理第 7 阶段数据安全清理。
      *
      * @return void
      */
@@ -400,7 +400,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render welcome step.
+     * 渲染欢迎步骤界面。
      *
      * @param array<string,mixed> $site_summary Existing site summary.
      * @return void
@@ -442,7 +442,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render site type step.
+     * 渲染站点类型选择步骤。
      *
      * @param array<string,mixed> $draft Draft.
      * @return void
@@ -500,7 +500,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render page generation step.
+     * 渲染页面生成步骤。
      *
      * @param array<string,mixed> $draft Draft.
      * @param array<string,mixed> $state State.
@@ -600,7 +600,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render menu and basic settings step.
+     * 渲染菜单与基础配置步骤。
      *
      * @param array<string,mixed> $draft Draft.
      * @param array<string,mixed> $state State.
@@ -726,7 +726,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render plugin detection step.
+     * 渲染插件检测步骤。
      *
      * @return void
      */
@@ -798,7 +798,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render a single read-only plugin detection row.
+     * 渲染单行插件检测只读状态。
      *
      * @param array<string,mixed> $plugin Plugin render data.
      * @param bool                $recommended Whether this plugin is recommended for the current preset.
@@ -834,7 +834,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Build the read-only plugin detection context for phase 5.
+     * 构建第 5 阶段插件检测上下文数据。
      *
      * @return array<string,mixed>
      */
@@ -926,7 +926,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render finish step.
+     * 渲染向导完成步骤。
      *
      * @param array<string,mixed> $state State.
      * @param array<string,mixed> $draft Draft.
@@ -971,7 +971,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render the final delivery checklist.
+     * 渲染最终交付核对清单。
      *
      * @param array<int,array<string,string>> $items Checklist items.
      * @return void
@@ -997,7 +997,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render the final plugin status snapshot.
+     * 渲染插件状态快照。
      *
      * @param array<string,mixed> $plugins Plugin summary.
      * @return void
@@ -1042,7 +1042,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render post-wizard shortcuts.
+     * 渲染向导后续快捷操作入口。
      *
      * @param array<int,array<string,string>> $steps Next step links.
      * @return void
@@ -1073,7 +1073,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render phase 7 cleanup panel.
+     * 渲染第 7 阶段清理面板。
      *
      * @return void
      */
@@ -1187,7 +1187,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Build the read-only final summary.
+     * 构建只读的向导最终汇总数据。
      *
      * @param array<string,mixed> $state State.
      * @param array<string,mixed> $draft Draft.
@@ -1414,7 +1414,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render preset recommendation preview.
+     * 渲染预设推荐方案预览。
      *
      * @param array<string,mixed> $preset Resolved preset.
      * @return void
@@ -1515,7 +1515,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render progress nav.
+     * 渲染向导进度步骤条。
      *
      * @param string $current Current step.
      * @return void
@@ -1534,7 +1534,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render current state card.
+     * 渲染当前状态展示卡片。
      *
      * @param array<string,mixed> $state State.
      * @return void
@@ -1554,7 +1554,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render last page-generation run summary.
+     * 渲染上次页面生成执行摘要。
      *
      * @param array<string,mixed> $state State.
      * @return void
@@ -1586,7 +1586,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Populate page-generation draft from POST.
+     * 从 POST 请求中填充页面生成草稿数据。
      *
      * @param array<string,mixed> $draft Draft.
      * @return array<string,mixed>
@@ -1610,7 +1610,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Populate menu/basic settings draft from POST.
+     * 从 POST 请求中填充菜单与基础配置草稿数据。
      *
      * @param array<string,mixed> $draft Draft.
      * @return array<string,mixed>
@@ -1766,7 +1766,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render action form.
+     * 渲染表单操作区域。
      *
      * @param string $action Action.
      * @param string $label Label.
@@ -1784,7 +1784,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render step link.
+     * 渲染步骤跳转链接。
      *
      * @param string $step Step.
      * @param string $label Label.
@@ -1796,7 +1796,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render notices.
+     * 渲染提示消息通知。
      *
      * @return void
      */
@@ -2031,7 +2031,7 @@ class Setup_Wizard_Admin {
     }
 
     /**
-     * Render scoped CSS.
+     * 渲染局部作用域 CSS 样式。
      *
      * @return void
      */

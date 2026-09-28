@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin settings AI connections field render trait.
+ * 后台设置 AI 模型连接字段渲染 Trait。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Helpers grouped split from class-helpers.php.
+ * 从 class-helpers.php 拆分出的分组辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -218,10 +218,10 @@ if ( ! function_exists( 'developer_starter_notify_method_has_push' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_email_design_css_value' ) ) {
     /**
-     * Resolve a design-token CSS variable to an email-safe static CSS value.
+     * 将设计令牌 CSS 变量解析为邮件客户端兼容的静态 CSS 属性值。
      *
-     * Email clients rarely support CSS custom properties, so notification templates
-     * should resolve tokens before writing inline styles.
+     * 邮件客户端通常不支持 CSS 变量，因此通知模板在生成内联样式前
+     * 需提前将设计令牌解析为静态 CSS 样式值。
      *
      * @param string $css_var  CSS variable name.
      * @param string $fallback Static fallback value.

@@ -1,10 +1,10 @@
 <?php
 /**
- * Setup wizard safe cleanup service.
+ * 安装向导安全清理服务。
  *
- * Phase 7 provides an explicit, confirmed cleanup path for content recorded
- * by the setup wizard. It never installs, activates, deactivates or configures
- * third-party plugins.
+ * 阶段 7 针对向导记录的内容提供受确认的清理流程，
+ * 绝不影响第三方插件状态
+ * 或其配置。
  *
  * @package Developer_Starter
  */
@@ -32,7 +32,7 @@ class Setup_Wizard_Cleanup_Service {
     }
 
     /**
-     * Build a read-only cleanup preview.
+     * 构建只读的内容清理预览数据。
      *
      * @return array<string,mixed>
      */
@@ -65,7 +65,7 @@ class Setup_Wizard_Cleanup_Service {
     }
 
     /**
-     * Execute selected cleanup actions after explicit confirmation.
+     * 在经由明确确认后执行选定的清理动作。
      *
      * @param array<string,mixed> $args Cleanup args.
      * @return array<string,mixed>
@@ -253,7 +253,7 @@ class Setup_Wizard_Cleanup_Service {
     }
 
     /**
-     * Remove a deleted menu from assigned theme locations.
+     * 从已分配的主题位置中移除被删除的菜单。
      *
      * @param int $menu_id Menu id.
      * @return void
@@ -279,7 +279,7 @@ class Setup_Wizard_Cleanup_Service {
     }
 
     /**
-     * Clear only setup-wizard tracking records.
+     * 仅清理安装向导生成的追踪记录。
      *
      * @param array<int,int> $removed_page_ids Removed page ids.
      * @param array<int,int> $removed_menu_ids Removed menu ids.

@@ -1,6 +1,6 @@
 <?php
 /**
- * VIP Access Control
+ * VIP 访问控制
  *
  * 控制 VIP 权限：分类限制、菜单隐藏与提示框展示
  *
@@ -132,12 +132,35 @@ class VIP_Access {
             return $items;
         }
         $filtered = array();
+        $hidden_item_ids = array();
         foreach ( $items as $item ) {
             $required_vip_level = (int) get_post_meta( $item->ID, '_ds_menu_vip_level', true );
             if ( $required_vip_level > 0 ) {
                 if ( ! $this->check_user_vip_level( $required_vip_level ) ) {
+                    $hidden_item_ids[ (int) $item->ID ] = true;
                     continue; // 权限不足，直接过滤掉该菜单项
                 }
+            }
+
+            // 隐藏父项时同步隐藏全部后代，避免子菜单脱离父级后单独显示。
+            $parent_id = (int) $item->menu_item_parent;
+            while ( $parent_id > 0 ) {
+                if ( isset( $hidden_item_ids[ $parent_id ] ) ) {
+                    $hidden_item_ids[ (int) $item->ID ] = true;
+                    continue 2;
+                }
+
+                $parent_item = null;
+                foreach ( $items as $candidate ) {
+                    if ( (int) $candidate->ID === $parent_id ) {
+                        $parent_item = $candidate;
+                        break;
+                    }
+                }
+                if ( ! $parent_item ) {
+                    break;
+                }
+                $parent_id = (int) $parent_item->menu_item_parent;
             }
             $filtered[] = $item;
         }

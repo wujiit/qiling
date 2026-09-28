@@ -1,7 +1,7 @@
 /**
- * Language switcher runtime
+ * 语言切换交互运行时
  *
- * Split from main.js so page-specific interactions can load only when needed.
+ * 从 main.js 独立拆分，支持按需加载。
  */
 (function (window, document) {
     'use strict';
@@ -20,7 +20,7 @@
     }
 
     onReady(function () {
-    // ===== Language Switcher Modal =====
+    // ===== 多语言切换弹窗 =====
     var translateConfig = (typeof developerStarterData !== 'undefined' && developerStarterData.translate)
         ? developerStarterData.translate
         : {};
@@ -387,9 +387,9 @@
         }
     }
 
-    // Toggle button click - use event delegation
+    // 切换按钮点击事件（事件委托）
     document.addEventListener('click', function (e) {
-        // Open modal
+        // 打开弹窗
         var toggleBtn = e.target.closest('#translate-toggle');
         if (toggleBtn) {
             var currentMode = translateConfig.mode || languageSwitcherConfig.mode || '';
@@ -404,19 +404,19 @@
             return;
         }
 
-        // Close button
+        // 关闭按钮
         if (e.target.closest('#translate-modal-close')) {
             closeTranslateModal();
             return;
         }
 
-        // Overlay click
+        // 遮罩层点击
         if (e.target.id === 'translate-modal-overlay') {
             closeTranslateModal();
             return;
         }
 
-        // Language item click
+        // 语言项点击
         var langItem = e.target.closest('.translate-lang-item');
         if (langItem) {
             var targetUrl = langItem.getAttribute('href');
@@ -498,20 +498,20 @@
                     translate.changeLanguage(lang);
                 }
 
-                // Update active state
+                // 更新激活状态
                 document.querySelectorAll('.translate-lang-item').forEach(function (opt) {
                     opt.classList.remove('active');
                 });
                 langItem.classList.add('active');
 
-                // Close modal
+                // 关闭弹窗
                 closeTranslateModal();
             });
             return;
         }
     });
 
-    // ESC key to close modal
+    // ESC 键关闭弹窗
     document.addEventListener('keydown', function (e) {
         var modal = document.getElementById('translate-modal');
         if (e.key === 'Escape' && modal && modal.classList.contains('show')) {

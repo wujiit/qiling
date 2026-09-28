@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom footer modules.
+ * 自定义页脚模块渲染模板。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend Builder qilingshop adapter service.
+ * 前台页面构建器 QilingShop 适配服务。
  *
  * @package Developer_Starter
  */

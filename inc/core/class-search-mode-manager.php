@@ -1,6 +1,6 @@
 <?php
 /**
- * Extensible front-end search mode registry and query integration.
+ * 可扩展的前台搜索模式注册中心与查询集成。
  *
  * @package Developer_Starter
  */

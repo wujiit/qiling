@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme lifecycle helpers split from functions.php.
+ * 从 functions.php 拆分出的主题生命周期辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

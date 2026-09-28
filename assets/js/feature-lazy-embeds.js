@@ -1,7 +1,7 @@
 /**
- * Lazy embed runtime
+ * 外部嵌入内容延迟加载运行时
  *
- * Split from main.js so page-specific interactions can load only when needed.
+ * 从 main.js 独立拆分，支持按需加载。
  */
 (function (window, document) {
     'use strict';
@@ -20,7 +20,7 @@
     }
 
     onReady(function () {
-    // ===== Third-party Video Embed (Lazy Inject) =====
+    // ===== 第三方视频嵌入（延迟加载注入） =====
     (function initLazyEmbedVideos() {
         var lazyEmbeds = document.querySelectorAll('.ds-lazy-embed[data-src]');
         if (lazyEmbeds.length === 0) return;

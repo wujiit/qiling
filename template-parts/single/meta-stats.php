@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post meta statistics and interaction buttons.
+ * 文章统计数据与互动按钮模板。
  *
  * @package Developer_Starter
  */

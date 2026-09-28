@@ -1,6 +1,6 @@
 <?php
 /**
- * Tabbed Carousel Module - Tab切换轮播
+ * 分类切换轮播模块
  *
  * @package Developer_Starter
  */
@@ -46,6 +46,12 @@ class Tabbed_Carousel_Module extends Module_Base {
                     array( 'id' => 'tab_icon', 'label' => __( 'Tab图标 (可选)', 'developer-starter' ), 'type' => 'text', 'desc' => __( '支持 Emoji (如 🔥) 或 Symbol类名 (如 icon-home)', 'developer-starter' ) ),
                     array( 'id' => 'image', 'label' => __( '轮播图片', 'developer-starter' ), 'type' => 'image' ),
                     array( 'id' => 'desc', 'label' => __( '图片描述/标题 (可选)', 'developer-starter' ), 'type' => 'text' ),
+                ),
+                'default_items' => array(
+                    array( 'tab_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极速开发', 'Fast Setup' ) : __( '极速开发', 'developer-starter' ), 'tab_icon' => '⚡', 'image' => '', 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基于模块化开发，快速搭建现代化网站', 'Launch polished pages quickly with modular building blocks.' ) : __( '基于模块化开发，快速搭建现代化网站', 'developer-starter' ) ),
+                    array( 'tab_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '响应式设计', 'Responsive Design' ) : __( '响应式设计', 'developer-starter' ), 'tab_icon' => '📱', 'image' => '', 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '完美适配桌面、平板和移动设备', 'Designed to feel consistent across desktop, tablet, and mobile.' ) : __( '完美适配桌面、平板和移动设备', 'developer-starter' ) ),
+                    array( 'tab_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '高度定制', 'Flexible Control' ) : __( '高度定制', 'developer-starter' ), 'tab_icon' => '🎨', 'image' => '', 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '灵活的后台配置，满足各种个性化需求', 'Adjust layouts, content, and styles with flexible admin options.' ) : __( '灵活的后台配置，满足各种个性化需求', 'developer-starter' ) ),
+                    array( 'tab_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SEO友好', 'SEO Friendly' ) : __( 'SEO友好', 'developer-starter' ), 'tab_icon' => '🔍', 'image' => '', 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内置SEO优化机制，提升搜索引擎排名', 'Built with search-friendly structure and content presentation.' ) : __( '内置SEO优化机制，提升搜索引擎排名', 'developer-starter' ) ),
                 ),
             ),
 
@@ -161,7 +167,7 @@ class Tabbed_Carousel_Module extends Module_Base {
         $subtitle = isset( $data['tc_subtitle'] ) ? $data['tc_subtitle'] : '';
         $items = isset( $data['tc_items'] ) ? $data['tc_items'] : array();
 
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['tc_items'] ) ) {
             // 默认演示数据
             $items = array(
                 array( 'tab_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极速开发', 'Fast Setup' ) : __( '极速开发', 'developer-starter' ), 'tab_icon' => '⚡', 'image' => '', 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基于模块化开发，快速搭建现代化网站', 'Launch polished pages quickly with modular building blocks.' ) : __( '基于模块化开发，快速搭建现代化网站', 'developer-starter' ) ),

@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for page structure field definitions.
+ * 页面结构字段定义数据配置。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Repair Trait
+ * 主题后台设置数据修复 Trait
  *
  * @package Developer_Starter
  */
@@ -432,5 +432,148 @@ trait Admin_Settings_Repair_Trait {
 
         wp_safe_redirect( $redirect );
         exit;
+    }
+
+    /**
+     * 渲染系统认证页面去重与修复字段。
+     *
+     * @param array<string,mixed> $options Theme options.
+     * @return void
+     */
+    public function render_auth_pages_cleanup_field( $options ) {
+        unset( $options );
+
+        if ( ! class_exists( '\Developer_Starter\Core\Auth_Pages_Service' ) ) {
+            $service_file = DEVELOPER_STARTER_INC . '/core/class-auth-pages-service.php';
+            if ( file_exists( $service_file ) ) {
+                require_once $service_file;
+            }
+        }
+
+        $auth_service = class_exists( '\Developer_Starter\Core\Auth_Pages_Service' )
+            ? new \Developer_Starter\Core\Auth_Pages_Service()
+            : null;
+
+        $duplicate_count = $auth_service ? $auth_service->count_duplicate_auth_pages() : 0;
+        $nonce = wp_create_nonce( 'developer_starter_auth_cleanup_nonce' );
+
+        echo '<tr><th scope="row">' . esc_html__( '系统认证页面状态', 'developer-starter' ) . '</th><td>';
+        echo '<div style="padding:16px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;max-width:820px;">';
+        echo '<p class="description" style="margin:0 0 12px;">' . esc_html__( '检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。系统会自动保留最早创建的主页面，将多余的重复项安全移至回收站并重新校准设置绑定。', 'developer-starter' ) . '</p>';
+
+        if ( $duplicate_count > 0 ) {
+            echo '<div style="margin:0 0 12px;">';
+            echo '<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-weight:600;font-size:13px;">';
+            echo '<span class="dashicons dashicons-warning" style="font-size:18px;width:18px;height:18px;"></span>';
+            echo sprintf( esc_html__( '检测到 %d 个冗余重复的系统认证页面', 'developer-starter' ), $duplicate_count );
+            echo '</span>';
+            echo '</div>';
+
+            echo '<div style="margin:0 0 12px;">';
+            echo '<button type="button" class="button button-primary" id="ds-cleanup-auth-pages-btn">' . esc_html__( '一键清理冗余重复页面', 'developer-starter' ) . '</button>';
+            echo '<span id="ds-cleanup-auth-pages-msg" style="margin-left:10px;font-weight:600;"></span>';
+            echo '</div>';
+            echo '<p class="description" style="margin:0;font-size:12px;color:#64748b;">' . esc_html__( '注意：清理操作会将多余的重复页面移入 WordPress 回收站，不会彻底物理删除，如有需要随时可从回收站恢复。', 'developer-starter' ) . '</p>';
+        } else {
+            echo '<div style="margin:0 0 12px;">';
+            echo '<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-weight:600;font-size:13px;">';
+            echo '<span class="dashicons dashicons-yes-alt" style="font-size:18px;width:18px;height:18px;"></span>';
+            echo esc_html__( '系统认证页面状态正常，未检测到重复页面', 'developer-starter' );
+            echo '</span>';
+            echo '</div>';
+
+            echo '<button type="button" class="button button-secondary" id="ds-cleanup-auth-pages-btn">' . esc_html__( '重新扫描并校准认证页面', 'developer-starter' ) . '</button>';
+            echo '<span id="ds-cleanup-auth-pages-msg" style="margin-left:10px;font-weight:600;"></span>';
+        }
+
+        echo '<input type="hidden" id="ds-cleanup-auth-pages-nonce" value="' . esc_attr( $nonce ) . '" />';
+        ?>
+        <script>
+        (function() {
+            var btn = document.getElementById('ds-cleanup-auth-pages-btn');
+            var msg = document.getElementById('ds-cleanup-auth-pages-msg');
+            var nonceInput = document.getElementById('ds-cleanup-auth-pages-nonce');
+            if (!btn) return;
+            btn.addEventListener('click', function() {
+                if (btn.disabled) return;
+                btn.disabled = true;
+                if (msg) {
+                    msg.style.color = '#2563eb';
+                    msg.textContent = '正在执行安全清理与校准，请稍候...';
+                }
+                var data = new FormData();
+                data.append('action', 'developer_starter_cleanup_duplicate_auth_pages');
+                data.append('nonce', nonceInput ? nonceInput.value : '');
+
+                fetch(ajaxurl, { method: 'POST', body: data, credentials: 'same-origin' })
+                    .then(function(res) { return res.json(); })
+                    .then(function(res) {
+                        if (res && res.success) {
+                            if (msg) {
+                                msg.style.color = '#16a34a';
+                                msg.textContent = (res.data && res.data.message) ? res.data.message : '清理完成！';
+                            }
+                            window.setTimeout(function() { window.location.reload(); }, 1200);
+                        } else {
+                            if (msg) {
+                                msg.style.color = '#dc2626';
+                                var errMsg = '清理失败，请重试';
+                                if (res && res.data) {
+                                    if (typeof res.data === 'string') {
+                                        errMsg = res.data;
+                                    } else if (res.data.message) {
+                                        errMsg = res.data.message;
+                                    }
+                                }
+                                msg.textContent = errMsg;
+                            }
+                            btn.disabled = false;
+                        }
+                    })
+                    .catch(function() {
+                        if (msg) {
+                            msg.style.color = '#dc2626';
+                            msg.textContent = '请求异常，请刷新后重试';
+                        }
+                        btn.disabled = false;
+                    });
+            });
+        })();
+        </script>
+        <?php
+        echo '</div></td></tr>';
+    }
+
+    /**
+     * AJAX 处理清理重复系统认证页面请求。
+     *
+     * @return void
+     */
+    public function ajax_cleanup_duplicate_auth_pages() {
+        check_ajax_referer( 'developer_starter_auth_cleanup_nonce', 'nonce' );
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+        }
+
+        if ( ! class_exists( '\Developer_Starter\Core\Auth_Pages_Service' ) ) {
+            $service_file = DEVELOPER_STARTER_INC . '/core/class-auth-pages-service.php';
+            if ( file_exists( $service_file ) ) {
+                require_once $service_file;
+            }
+        }
+
+        if ( ! class_exists( '\Developer_Starter\Core\Auth_Pages_Service' ) ) {
+            wp_send_json_error( array( 'message' => __( '认证服务类未加载', 'developer-starter' ) ) );
+        }
+
+        $service = new \Developer_Starter\Core\Auth_Pages_Service();
+        $result  = $service->cleanup_duplicate_auth_pages();
+
+        if ( ! empty( $result['success'] ) ) {
+            wp_send_json_success( $result );
+        } else {
+            $message = ! empty( $result['message'] ) ? $result['message'] : __( '清理失败，请重试', 'developer-starter' );
+            wp_send_json_error( array( 'message' => $message ) );
+        }
     }
 }

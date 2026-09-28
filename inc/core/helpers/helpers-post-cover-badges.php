@@ -1,6 +1,6 @@
 <?php
 /**
- * Post cover badge helpers.
+ * 文章封面角标辅助函数。
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_post_cover_badge_options' ) ) {
     /**
-     * Get theme options used by cover badges.
+     * 获取封面角标相关的主题配置选项。
      *
      * @return array
      */
@@ -27,7 +27,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badge_options' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_post_cover_badge_default_priorities' ) ) {
     /**
-     * Badge display priorities. Lower numbers render first.
+     * 角标展示优先级，数值越小越靠前显示。
      *
      * @return array
      */
@@ -50,7 +50,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badge_default_prioriti
 
 if ( ! function_exists( 'developer_starter_get_post_cover_badge_label' ) ) {
     /**
-     * Get a configurable badge label.
+     * 获取可配置的角标文案。
      *
      * @param string $type Badge type.
      * @param string $default Default label.
@@ -71,7 +71,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badge_label' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_post_cover_badge_class_list' ) ) {
     /**
-     * Sanitize a space-separated CSS class list.
+     * 清理空格分隔的 CSS 类名列表。
      *
      * @param string $class_list Class list.
      * @return string
@@ -93,7 +93,7 @@ if ( ! function_exists( 'developer_starter_sanitize_post_cover_badge_class_list'
 
 if ( ! function_exists( 'developer_starter_normalize_post_cover_badge' ) ) {
     /**
-     * Normalize a badge item before sorting/rendering.
+     * 在排序与渲染前规范化角标条目结构。
      *
      * @param array $badge Raw badge item.
      * @param array $priorities Priority map.
@@ -124,7 +124,7 @@ if ( ! function_exists( 'developer_starter_normalize_post_cover_badge' ) ) {
 
 if ( ! function_exists( 'developer_starter_apply_post_cover_badge_order' ) ) {
     /**
-     * Apply custom order text such as "video,app,album,free,vip".
+     * 应用自定义排序配置（例如 "video,app,album,free,vip"）。
      *
      * @param array $badges Badge list.
      * @param array $options Theme options.
@@ -162,7 +162,7 @@ if ( ! function_exists( 'developer_starter_apply_post_cover_badge_order' ) ) {
 
 if ( ! function_exists( 'developer_starter_sort_post_cover_badges' ) ) {
     /**
-     * Sort badges by priority and original position.
+     * 按优先级与原始定义顺序对角标进行排序。
      *
      * @param array $badges Badge list.
      * @return array
@@ -198,7 +198,7 @@ if ( ! function_exists( 'developer_starter_sort_post_cover_badges' ) ) {
 
 if ( ! function_exists( 'developer_starter_limit_post_cover_badges' ) ) {
     /**
-     * Limit badges by context or global option.
+     * 根据上下文或全局选项限制角标显示数量。
      *
      * @param array $badges Badge list.
      * @param array $context Render context.
@@ -224,7 +224,7 @@ if ( ! function_exists( 'developer_starter_limit_post_cover_badges' ) ) {
 
 if ( ! function_exists( 'developer_starter_filter_post_cover_badges_by_type' ) ) {
     /**
-     * Filter badges by include/exclude types from context.
+     * 根据上下文包含/排除规则筛选角标。
      *
      * @param array $badges Badge list.
      * @param array $context Render context.
@@ -265,7 +265,7 @@ if ( ! function_exists( 'developer_starter_filter_post_cover_badges_by_type' ) )
 
 if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
     /**
-     * Build cover badges for a post.
+     * 构建指定文章的封面角标数据。
      *
      * @param int   $post_id Post ID.
      * @param array $context Context flags and precomputed data.
@@ -439,7 +439,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_post_cover_badge_icon_html' ) ) {
     /**
-     * Get built-in badge icon HTML.
+     * 获取内置角标图标 HTML。
      *
      * @param string $type Badge type.
      * @return string
@@ -458,7 +458,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badge_icon_html' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_post_cover_badge_position_class' ) ) {
     /**
-     * Get wrapper position class from context or option.
+     * 根据上下文或选项获取外层容器定位 CSS 类名。
      *
      * @param array $context Render context.
      * @return string
@@ -480,7 +480,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badge_position_class' 
 
 if ( ! function_exists( 'developer_starter_get_post_cover_badges_html' ) ) {
     /**
-     * Render badge list HTML.
+     * 渲染角标列表 HTML。
      *
      * @param array $badges Badge list.
      * @param array $context Render context.
@@ -560,7 +560,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges_html' ) ) {
 
 if ( ! function_exists( 'developer_starter_render_post_cover_badges' ) ) {
     /**
-     * Build and echo cover badge HTML for a post.
+     * 构建并直接输出文章封面角标 HTML。
      *
      * @param int   $post_id Post ID.
      * @param array $context Context flags and render options.

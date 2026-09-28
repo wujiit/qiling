@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for default palette tokens.
+ * 默认调色板设计令牌（Tokens）数据配置。
  *
  * @package Developer_Starter
  */

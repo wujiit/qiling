@@ -1,6 +1,6 @@
 <?php
 /**
- * Generation connection manager.
+ * AI 生成连接管理器。
  *
  * @package Developer_Starter
  */

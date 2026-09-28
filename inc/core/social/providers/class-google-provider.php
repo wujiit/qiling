@@ -1,6 +1,6 @@
 <?php
 /**
- * Google OAuth social login provider.
+ * Google OAuth 社交登录提供者。
  *
  * @package Developer_Starter
  */

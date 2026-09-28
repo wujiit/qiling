@@ -1,8 +1,7 @@
 /**
- * Header login modal behavior.
+ * 页头登录弹窗交互行为逻辑。
  *
- * PHP prints only inert JSON configuration. This file owns the executable
- * modal flow so the AJAX template does not need inline JavaScript.
+ * 服务端仅输出静态 JSON 配置，所有弹窗与认证交互逻辑由此脚本统一调度。
  */
 (function (window, document) {
     'use strict';

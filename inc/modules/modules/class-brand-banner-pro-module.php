@@ -1,6 +1,6 @@
 <?php
 /**
- * Brand Banner Pro Module - 品牌旗舰 Banner
+ * 品牌旗舰首屏 Banner 模块
  *
  * 支持上下/左右/反向左右/叠加四种布局，适配品牌首屏视觉。
  *
@@ -302,11 +302,12 @@ class Brand_Banner_Pro_Module extends Module_Base {
             ),
 
             array(
-                'id'         => 'bb_buttons',
-                'type'       => 'repeater',
-                'label'      => __( '按钮组', 'developer-starter' ),
-                'add_button' => __( '添加按钮', 'developer-starter' ),
-                'fields'     => array(
+                'id'            => 'bb_buttons',
+                'type'          => 'repeater',
+                'label'         => __( '按钮组', 'developer-starter' ),
+                'add_button'    => __( '添加按钮', 'developer-starter' ),
+                'default_items' => $this->get_default_buttons(),
+                'fields'        => array(
                     array(
                         'id'    => 'text',
                         'type'  => 'text',
@@ -592,8 +593,8 @@ class Brand_Banner_Pro_Module extends Module_Base {
 
         $buttons = isset( $data['bb_buttons'] ) && is_array( $data['bb_buttons'] )
             ? $data['bb_buttons']
-            : $this->get_default_buttons();
-        if ( empty( $buttons ) ) {
+            : ( ! isset( $data['bb_buttons'] ) ? $this->get_default_buttons() : array() );
+        if ( empty( $buttons ) && ! isset( $data['bb_buttons'] ) ) {
             $buttons = $this->get_default_buttons();
         }
 

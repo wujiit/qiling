@@ -1,6 +1,6 @@
 <?php
 /**
- * Qiling Image Guide Module - 小图引导模块
+ * 引导图示导航模块
  *
  * @package Developer_Starter
  */
@@ -55,7 +55,7 @@ class Qiling_Image_Guide_Module extends Module_Base {
                 'default' => '40px',
             ),
             
-            array( 'id' => 'guide_items', 'type' => 'repeater', 'label' => __( '图片列表', 'developer-starter' ), 'fields' => array(
+            array( 'id' => 'guide_items', 'type' => 'repeater', 'label' => __( '图片列表', 'developer-starter' ), 'default_items' => $this->get_default_items(), 'fields' => array(
                 array( 'id' => 'image', 'type' => 'image', 'label' => __( '背景图片', 'developer-starter' ) ),
                 array( 'id' => 'title', 'type' => 'text', 'label' => __( '主标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '标题文本', 'Demo Title' ) : __( '标题文本', 'developer-starter' ) ),
                 array( 'id' => 'subtitle', 'type' => 'text', 'label' => __( '副标题 (可选)', 'developer-starter' ), 'default' => '' ),
@@ -78,14 +78,9 @@ class Qiling_Image_Guide_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '40px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '40px';
         
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['guide_items'] ) ) {
             // 默认演示数据
-            $items = array_fill( 0, 4, array( 
-                'image' => '', 
-                'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示标题', 'Demo Title' ) : __( '演示标题', 'developer-starter' ),
-                'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示副标题', 'Demo Subtitle' ) : __( '演示副标题', 'developer-starter' ),
-                'link' => '#' 
-            ) );
+            $items = $this->get_default_items();
         }
         
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
@@ -144,5 +139,19 @@ class Qiling_Image_Guide_Module extends Module_Base {
             </div>
         </section>
         <?php
+    }
+
+    /**
+     * 获取默认引导项。
+     *
+     * @return array
+     */
+    private function get_default_items() {
+        return array_fill( 0, 4, array( 
+            'image' => '', 
+            'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示标题', 'Demo Title' ) : __( '演示标题', 'developer-starter' ),
+            'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示副标题', 'Demo Subtitle' ) : __( '演示副标题', 'developer-starter' ),
+            'link' => '#' 
+        ) );
     }
 }

@@ -1,9 +1,8 @@
 /**
- * Shared auth flow helpers.
+ * 通用认证流程辅助工具函数。
  *
- * Keeps the normal auth pages and the header modal as separate entry points,
- * while sharing nonce refresh, request helpers, device fingerprinting and
- * captcha lifecycle code.
+ * 独立认证页面与页头登录弹窗共用底层逻辑，
+ * 统一调度 Nonce 刷新、请求封装、设备指纹及验证码生命周期。
  */
 (function (window, document) {
     'use strict';

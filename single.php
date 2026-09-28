@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post template.
+ * 文章详情页面模板
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Shared native blog loop.
+ * 原生博客文章循环列表模板。
  *
  * @package Developer_Starter
  */

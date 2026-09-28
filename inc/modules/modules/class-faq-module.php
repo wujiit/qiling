@@ -1,6 +1,6 @@
 <?php
 /**
- * FAQ Module - 常见问题
+ * 常见问题 (FAQ) 模块
  *
  * @package Developer_Starter
  */
@@ -70,9 +70,27 @@ class FAQ_Module extends Module_Base {
             array( 'id' => 'faq_items', 'type' => 'repeater', 'label' => __( '问题列表', 'developer-starter' ), 'fields' => array(
                 array( 'id' => 'question', 'type' => 'text', 'label' => __( '问题', 'developer-starter' ) ),
                 array( 'id' => 'answer', 'type' => 'textarea', 'label' => __( '解答', 'developer-starter' ) ),
+            ),
+            'default_items' => array(
+                array(
+                    'question' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '你们的服务范围是什么？', 'What services do you provide?' ) : __( '你们的服务范围是什么？', 'developer-starter' ),
+                    'answer'   => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '我们提供全国范围内的服务，包括产品研发、技术咨询、解决方案定制等。', 'We provide product delivery, consulting, and tailored solutions for a wide range of business needs.' ) : __( '我们提供全国范围内的服务，包括产品研发、技术咨询、解决方案定制等。', 'developer-starter' ),
+                ),
+                array(
+                    'question' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '如何与你们取得联系？', 'How can I contact you?' ) : __( '如何与你们取得联系？', 'developer-starter' ),
+                    'answer'   => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '您可以通过页面底部的联系方式与我们取得联系，或直接拨打客服热线。', 'You can reach us through the contact details on the page or call the customer support line directly.' ) : __( '您可以通过页面底部的联系方式与我们取得联系，或直接拨打客服热线。', 'developer-starter' ),
+                ),
+                array(
+                    'question' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '付款方式有哪些？', 'Which payment methods do you support?' ) : __( '付款方式有哪些？', 'developer-starter' ),
+                    'answer'   => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '我们支持对公转账、支付宝、微信等多种付款方式。', 'We support common bank transfer and online payment methods depending on the service arrangement.' ) : __( '我们支持对公转账、支付宝、微信等多种付款方式。', 'developer-starter' ),
+                ),
+                array(
+                    'question' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '售后服务如何保障？', 'How is after-sales support handled?' ) : __( '售后服务如何保障？', 'developer-starter' ),
+                    'answer'   => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '我们提供7x24小时技术支持，并有完善的售后服务体系。', 'We provide responsive follow-up support and a structured after-sales service process.' ) : __( '我们提供7x24小时技术支持，并有完善的售后服务体系。', 'developer-starter' ),
+                ),
             ) ),
             
-            // Style Settings
+            // 样式配置
             array(
                 'id' => 'module_bg_color',
                 'label' => __( '背景颜色', 'developer-starter' ),
@@ -120,7 +138,8 @@ class FAQ_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '60px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '60px';
         
-        if ( empty( $items ) ) {
+        // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['faq_items'] ) ) {
             $items = array(
                 array(
                     'question' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '你们的服务范围是什么？', 'What services do you provide?' ) : __( '你们的服务范围是什么？', 'developer-starter' ),
@@ -141,7 +160,7 @@ class FAQ_Module extends Module_Base {
             );
         }
         
-        // Dynamic Styles
+        // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         
         if ( $bg_color ) {

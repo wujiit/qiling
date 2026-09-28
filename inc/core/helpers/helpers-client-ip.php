@@ -1,6 +1,6 @@
 <?php
 /**
- * Client IP helper functions.
+ * 客户端 IP 提取与检测辅助函数。
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_ip_in_cidr' ) ) {
     /**
-     * Check whether an IP address is inside a CIDR range.
+     * 检查 IP 地址是否位于指定的 CIDR 网段内。
      *
      * @param string $ip   IP address.
      * @param string $cidr CIDR range or exact IP.
@@ -60,7 +60,7 @@ if ( ! function_exists( 'developer_starter_ip_in_cidr' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_trusted_proxy_list' ) ) {
     /**
-     * Get trusted proxy IP/CIDR ranges.
+     * 获取受信任代理服务器的 IP/CIDR 网段范围。
      *
      * @return array<int,string>
      */
@@ -95,7 +95,7 @@ if ( ! function_exists( 'developer_starter_get_trusted_proxy_list' ) ) {
 
 if ( ! function_exists( 'developer_starter_is_trusted_proxy_ip' ) ) {
     /**
-     * Whether an address belongs to a trusted proxy.
+     * 检测 IP 地址是否属于受信任代理服务器。
      *
      * @param string $remote_addr Remote address.
      * @return bool
@@ -122,7 +122,7 @@ if ( ! function_exists( 'developer_starter_is_trusted_proxy_ip' ) ) {
 
 if ( ! function_exists( 'developer_starter_should_trust_forwarded_headers' ) ) {
     /**
-     * Decide whether forwarded IP headers should be trusted.
+     * 判断代理转发的 IP 标头（如 X-Forwarded-For）是否可信。
      *
      * @param string $mode        Trust mode.
      * @param string $remote_addr Remote address.
@@ -157,7 +157,7 @@ if ( ! function_exists( 'developer_starter_should_trust_forwarded_headers' ) ) {
 
 if ( ! function_exists( 'developer_starter_parse_ip_candidates' ) ) {
     /**
-     * Parse IP candidates from a proxy header.
+     * 从代理标头中解析候选 IP 地址列表。
      *
      * @param string $raw_value Header value.
      * @return array<int,string>
@@ -208,7 +208,7 @@ if ( ! function_exists( 'developer_starter_parse_ip_candidates' ) ) {
 
 if ( ! function_exists( 'developer_starter_is_public_ip' ) ) {
     /**
-     * Whether an IP is public routable.
+     * 检测 IP 是否为公网可路由地址。
      *
      * @param string $ip IP address.
      * @return bool
@@ -224,7 +224,7 @@ if ( ! function_exists( 'developer_starter_is_public_ip' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_client_ip' ) ) {
     /**
-     * Get the normalized client IP address for the current request.
+     * 获取当前请求规范化的客户端 IP 地址。
      *
      * @return string
      */
@@ -282,7 +282,7 @@ if ( ! function_exists( 'developer_starter_get_client_ip' ) ) {
 
 if ( ! function_exists( 'developer_starter_resolve_client_ip' ) ) {
     /**
-     * Resolve a client IP, optionally honoring a test/integration callback.
+     * 解析客户端 IP 地址（支持集成测试自定义回调）。
      *
      * @param callable|null $callback Optional IP callback.
      * @return string

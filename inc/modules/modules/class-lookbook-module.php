@@ -1,6 +1,6 @@
 <?php
 /**
- * Lookbook Module - 搭配画册/场景购
+ * 搭配画册与场景购模块
  *
  * @package Developer_Starter
  */
@@ -33,7 +33,7 @@ class Lookbook_Module extends Module_Base {
         return array(
             array( 'id' => 'lookbook_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => __( '当季精选搭配', 'developer-starter' ) ),
             
-            // Lookbook Repeater
+            // 搭配画册中继器
             array(
                 'id' => 'lookbook_items',
                 'label' => __( '搭配列表', 'developer-starter' ),
@@ -46,11 +46,7 @@ class Lookbook_Module extends Module_Base {
                     array( 'id' => 'desc', 'label' => __( '搭配描述', 'developer-starter' ), 'type' => 'textarea', 'rows' => 2 ),
                     array( 'id' => 'btn_text', 'label' => __( '按钮文案', 'developer-starter' ), 'type' => 'text', 'default' => __( '查看详情', 'developer-starter' ), 'description' => __( '默认为“查看详情”', 'developer-starter' ) ),
                     
-                    // Connected Products (Nested Repeater simulated by simple array structure or simplified fields for now. 
-                    // Since nested repeaters might be complex in this framework, we'll use a fixed set or a text area for parsing, 
-                    // BUT for better UX, let's assume the framework handles basic flat structures. 
-                    // To keep it simple and robust, let's allow up to 6 items per look using a predefined set of fields or a simplified approach.)
-                    // *Strategy Adjustment*: To avoid complex nested repeaters which might not be supported, we will define "Item 1", "Item 2"... "Item 4".
+                    // 关联单品配置（最多支持 4 组单品信息）
                     
                     array( 'type' => 'header', 'label' => __( '单品 1', 'developer-starter' ) ),
                     array( 'id' => 'item_1_img', 'label' => __( '单品1 图片', 'developer-starter' ), 'type' => 'image' ),
@@ -157,7 +153,7 @@ class Lookbook_Module extends Module_Base {
         
         $style_vars = "background-color: {$bg_color}; padding-top: {$pt}; padding-bottom: {$pb};";
         
-        // CSS for Modal and Grid (Inline for portability as requested)
+        // 弹窗与网格样式
         ?>
 <section id="<?php echo esc_attr( $module_uid ); ?>" class="module module-lookbook" style="<?php echo esc_attr( $style_vars ); ?>">
             <div class="container">
@@ -177,16 +173,16 @@ class Lookbook_Module extends Module_Base {
                             $btn_text = $btn_text_raw !== '' ? $btn_text_raw : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'View Details' ) : __( '查看详情', 'developer-starter' ) );
                             $video = isset( $item['video_360'] ) ? esc_url_raw( (string) $item['video_360'] ) : '';
                             
-                            // Collect Items for JSON
+                            // 收集条目数据用于 JSON 输出
                             $look_items = array();
                             for ( $i = 1; $i <= 5; $i++ ) {
                                 $item_title = isset( $item["item_{$i}_title"] ) ? sanitize_text_field( (string) $item["item_{$i}_title"] ) : '';
                                 if ( $item_title !== '' ) {
                                     $item_image = isset( $item["item_{$i}_img"] ) ? esc_url_raw( (string) $item["item_{$i}_img"] ) : '';
-                                    // Collect Specs
+                                    // 收集规格数据
                                     $specs = array();
                                     
-                                    // Main Spec (Default)
+                                    // 默认主规格
                                     $main_spec_name = isset( $item["item_{$i}_spec_name"] ) && ! empty( $item["item_{$i}_spec_name"] ) ? sanitize_text_field( (string) $item["item_{$i}_spec_name"] ) : '';
                                     if ( ! empty( $item_image ) ) {
                                          $specs[] = array(
@@ -196,7 +192,7 @@ class Lookbook_Module extends Module_Base {
                                          );
                                     }
                                     
-                                    // Extra Specs
+                                    // 附加规格
                                     for ( $s = 2; $s <= 3; $s++ ) {
                                         if ( ! empty( $item["item_{$i}_spec_{$s}_name"] ) && ! empty( $item["item_{$i}_spec_{$s}_img"] ) ) {
                                             $specs[] = array(
@@ -581,7 +577,7 @@ class Lookbook_Module extends Module_Base {
             }
         }
 
-        // Close on click outside.
+        // 点击外部遮罩关闭弹窗
         (function() {
             var root = document.getElementById('<?php echo esc_js( $module_uid ); ?>');
             if (!root) {

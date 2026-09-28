@@ -1,6 +1,6 @@
 <?php
 /**
- * Micro Journal Stream Module - 时间流/日记流
+ * 动态时间流与随记模块
  *
  * @package Developer_Starter
  */
@@ -60,10 +60,11 @@ class Micro_Journal_Stream_Module extends Module_Base {
             ),
             array( 'id' => 'mjs_link_text', 'type' => 'text', 'label' => __( '外部链接文案', 'developer-starter' ), 'default' => __( '查看相关链接', 'developer-starter' ) ),
             array(
-                'id'     => 'mjs_items',
-                'type'   => 'repeater',
-                'label'  => __( '时间流条目', 'developer-starter' ),
-                'fields' => array(
+                'id'            => 'mjs_items',
+                'type'          => 'repeater',
+                'label'         => __( '时间流条目', 'developer-starter' ),
+                'default_items' => $this->get_default_items(),
+                'fields'        => array(
                     array(
                         'id'    => 'date',
                         'type'  => 'text',
@@ -143,37 +144,8 @@ class Micro_Journal_Stream_Module extends Module_Base {
         $link_text = isset( $data['mjs_link_text'] ) && '' !== trim( (string) $data['mjs_link_text'] ) ? (string) $data['mjs_link_text'] : __( '查看相关链接', 'developer-starter' );
 
         $items = isset( $data['mjs_items'] ) && is_array( $data['mjs_items'] ) ? $data['mjs_items'] : array();
-        if ( empty( $items ) ) {
-            $date_format = function_exists( 'developer_starter_get_date_time_format' ) ? developer_starter_get_date_time_format( false ) : get_option( 'date_format' );
-            $items = array(
-                array(
-                    'date'     => date_i18n( $date_format ),
-                    'time'     => date_i18n( 'H:i' ),
-                    'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '今天把首页模块又简化了一轮，加载速度更稳。', 'Simplified the homepage modules again today and improved load consistency.' ) : __( '今天把首页模块又简化了一轮，加载速度更稳。', 'developer-starter' ),
-                    'mood'     => '⚡',
-                    'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作室', 'Studio' ) : __( '工作室', 'developer-starter' ),
-                    'image'    => '',
-                    'link'     => '',
-                ),
-                array(
-                    'date'     => date_i18n( $date_format, strtotime( '-1 day' ) ),
-                    'time'     => '22:10',
-                    'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读完一本关于写作的书，准备把灵感整理成新文章。', 'Finished a book on writing and started shaping the ideas into a new article.' ) : __( '读完一本关于写作的书，准备把灵感整理成新文章。', 'developer-starter' ),
-                    'mood'     => '📚',
-                    'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '书房', 'Study' ) : __( '书房', 'developer-starter' ),
-                    'image'    => '',
-                    'link'     => '',
-                ),
-                array(
-                    'date'     => date_i18n( $date_format, strtotime( '-2 day' ) ),
-                    'time'     => '09:40',
-                    'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '测试了新的评论交互，准备继续优化读者体验。', 'Tested a new comment interaction flow and will keep refining the reader experience.' ) : __( '测试了新的评论交互，准备继续优化读者体验。', 'developer-starter' ),
-                    'mood'     => '🛠️',
-                    'location' => '',
-                    'image'    => '',
-                    'link'     => '',
-                ),
-            );
+        if ( empty( $items ) && ! isset( $data['mjs_items'] ) ) {
+            $items = $this->get_default_items();
         }
 
         $items = array_slice( $items, 0, $limit );
@@ -243,5 +215,43 @@ class Micro_Journal_Stream_Module extends Module_Base {
             </div>
         </section>
         <?php
+    }
+
+    /**
+     * 获取默认时间流条目。
+     *
+     * @return array
+     */
+    private function get_default_items() {
+        $date_format = function_exists( 'developer_starter_get_date_time_format' ) ? developer_starter_get_date_time_format( false ) : get_option( 'date_format' );
+        return array(
+            array(
+                'date'     => date_i18n( $date_format ),
+                'time'     => date_i18n( 'H:i' ),
+                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '今天把首页模块又简化了一轮，加载速度更稳。', 'Simplified the homepage modules again today and improved load consistency.' ) : __( '今天把首页模块又简化了一轮，加载速度更稳。', 'developer-starter' ),
+                'mood'     => '⚡',
+                'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作室', 'Studio' ) : __( '工作室', 'developer-starter' ),
+                'image'    => '',
+                'link'     => '',
+            ),
+            array(
+                'date'     => date_i18n( $date_format, strtotime( '-1 day' ) ),
+                'time'     => '22:10',
+                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读完一本关于写作的书，准备把灵感整理成新文章。', 'Finished a book on writing and started shaping the ideas into a new article.' ) : __( '读完一本关于写作的书，准备把灵感整理成新文章。', 'developer-starter' ),
+                'mood'     => '📚',
+                'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '书房', 'Study' ) : __( '书房', 'developer-starter' ),
+                'image'    => '',
+                'link'     => '',
+            ),
+            array(
+                'date'     => date_i18n( $date_format, strtotime( '-2 day' ) ),
+                'time'     => '09:40',
+                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '测试了新的评论交互，准备继续优化读者体验。', 'Tested a new comment interaction flow and will keep refining the reader experience.' ) : __( '测试了新的评论交互，准备继续优化读者体验。', 'developer-starter' ),
+                'mood'     => '🛠️',
+                'location' => '',
+                'image'    => '',
+                'link'     => '',
+            ),
+        );
     }
 }

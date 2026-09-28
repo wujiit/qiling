@@ -1,6 +1,6 @@
 <?php
 /**
- * Services Module - 服务展示
+ * 核心服务展示模块
  *
  * @package Developer_Starter
  */
@@ -112,6 +112,12 @@ class Services_Module extends Module_Base {
                     array( 'id' => 'desc', 'label' => __( '服务描述', 'developer-starter' ), 'type' => 'textarea' ),
                     array( 'id' => 'link', 'label' => __( '详情链接', 'developer-starter' ), 'type' => 'text' ),
                 ),
+                'default_items' => array(
+                    array( 'icon' => '01', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品研发', 'Product Development' ) : __( '产品研发', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '提供专业的产品研发服务，从需求分析到产品上线全流程支持。', 'Support the full path from discovery and planning to launch.' ) : __( '提供专业的产品研发服务，从需求分析到产品上线全流程支持。', 'developer-starter' ), 'link' => '#' ),
+                    array( 'icon' => '02', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '解决方案', 'Custom Solutions' ) : __( '解决方案', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '针对不同行业提供定制化解决方案，满足企业个性化需求。', 'Tailored delivery for different industries, goals, and workflows.' ) : __( '针对不同行业提供定制化解决方案，满足企业个性化需求。', 'developer-starter' ), 'link' => '#' ),
+                    array( 'icon' => '03', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术支持', 'Technical Support' ) : __( '技术支持', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '7x24小时技术支持服务，快速响应解决技术问题。', 'Responsive support to resolve issues and keep projects running smoothly.' ) : __( '7x24小时技术支持服务，快速响应解决技术问题。', 'developer-starter' ), 'link' => '#' ),
+                    array( 'icon' => '04', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '数据分析', 'Data Insights' ) : __( '数据分析', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业数据分析团队，助力企业数据驱动决策。', 'Turn data into practical reporting and business decisions.' ) : __( '专业数据分析团队，助力企业数据驱动决策。', 'developer-starter' ), 'link' => '#' ),
+                ),
             ),
             array(
                 'id' => 'enable_staggered_animation',
@@ -136,8 +142,8 @@ class Services_Module extends Module_Base {
             : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '为企业提供全方位的专业服务', 'Professional services built around modern business needs.' ) : __( '为企业提供全方位的专业服务', 'developer-starter' ) );
         $items = isset( $data['services_items'] ) ? $data['services_items'] : array();
         
-        // Items Default
-        if ( empty( $items ) ) {
+        // 子项默认值（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['services_items'] ) ) {
             $items = array(
                 array( 'icon' => '01', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品研发', 'Product Development' ) : __( '产品研发', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '提供专业的产品研发服务，从需求分析到产品上线全流程支持。', 'Support the full path from discovery and planning to launch.' ) : __( '提供专业的产品研发服务，从需求分析到产品上线全流程支持。', 'developer-starter' ), 'link' => '#' ),
                 array( 'icon' => '02', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '解决方案', 'Custom Solutions' ) : __( '解决方案', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '针对不同行业提供定制化解决方案，满足企业个性化需求。', 'Tailored delivery for different industries, goals, and workflows.' ) : __( '针对不同行业提供定制化解决方案，满足企业个性化需求。', 'developer-starter' ), 'link' => '#' ),
@@ -158,7 +164,7 @@ class Services_Module extends Module_Base {
         $subtitle_size = isset( $data['services_subtitle_size'] ) ? $data['services_subtitle_size'] : '';
         $subtitle_color = isset( $data['services_subtitle_color'] ) ? $data['services_subtitle_color'] : '';
 
-        // CSS Variables
+        // CSS 变量配置
         $css_vars = array();
         if ( $bg_color ) $css_vars[] = "--s-bg-color: {$bg_color}";
         $css_vars[] = "--s-padding: {$padding}";
@@ -181,7 +187,7 @@ class Services_Module extends Module_Base {
 
         $style_attr = ! empty( $css_vars ) ? 'style="' . esc_attr( implode( '; ', $css_vars ) ) . '"' : '';
 
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-services" <?php echo $style_attr; ?>>
@@ -201,7 +207,7 @@ class Services_Module extends Module_Base {
                             $desc = isset( $item['desc'] ) ? $item['desc'] : '';
                             $link = isset( $item['link'] ) ? $item['link'] : '';
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

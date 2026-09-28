@@ -1,6 +1,6 @@
 <?php
 /**
- * QilingShop resource display helpers.
+ * QilingShop 资源展示辅助函数。
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_qilingshop_parse_structured_value' ) ) {
     /**
-     * Parse JSON/serialized arrays while leaving scalar values intact.
+     * 解析 JSON 或序列化数组，保留普通标量值不变。
      *
      * @param mixed $value Raw value.
      * @return mixed
@@ -48,7 +48,7 @@ if ( ! function_exists( 'developer_starter_qilingshop_parse_structured_value' ) 
 
 if ( ! function_exists( 'developer_starter_qilingshop_value_has_content' ) ) {
     /**
-     * Determine whether a mixed resource field contains meaningful content.
+     * 判断混合资源字段中是否包含有效内容。
      *
      * @param mixed $value Raw value.
      * @return bool
@@ -90,7 +90,7 @@ if ( ! function_exists( 'developer_starter_qilingshop_value_has_content' ) ) {
 
 if ( ! function_exists( 'developer_starter_count_qilingshop_download_items' ) ) {
     /**
-     * Count meaningful download entries from array/JSON/serialized/plain values.
+     * 统计数组/JSON/序列化数据中的有效下载资源数量。
      *
      * @param mixed $downloads_raw Raw download field value.
      * @return int
@@ -144,7 +144,7 @@ if ( ! function_exists( 'developer_starter_count_qilingshop_download_items' ) ) 
 
 if ( ! function_exists( 'developer_starter_get_qilingshop_resource_snapshot' ) ) {
     /**
-     * Resolve a strict display-only resource snapshot for a post.
+     * 为文章解析严格仅供展示的资源快照数据。
      *
      * @param int $post_id Post ID.
      * @return array<string,mixed>
@@ -240,7 +240,7 @@ if ( ! function_exists( 'developer_starter_get_qilingshop_resource_snapshot' ) )
 
 if ( ! function_exists( 'developer_starter_get_qilingshop_box_allowed_html' ) ) {
     /**
-     * Allowed HTML for QilingShop-rendered action boxes.
+     * QilingShop 动作框允许的 HTML 标签定义。
      *
      * @return array<string,array<string,bool>>
      */
@@ -378,7 +378,7 @@ if ( ! function_exists( 'developer_starter_get_qilingshop_box_allowed_html' ) ) 
 
 if ( ! function_exists( 'developer_starter_kses_qilingshop_box' ) ) {
     /**
-     * Sanitize QilingShop box markup without stripping expected controls.
+     * 清理 QilingShop 内容框结构并安全保留其功能控件。
      *
      * @param string $html Box HTML.
      * @return string

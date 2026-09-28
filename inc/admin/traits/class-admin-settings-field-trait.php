@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Field Trait
+ * 主题后台设置字段注册 Trait
  *
  * @package Developer_Starter
  */
@@ -144,7 +144,7 @@ trait Admin_Settings_Field_Trait {
         return '<div class="ds-field-label-wrap">' . $button . $label_html . '</div>';
     }
     
-    // ===== Field Renderers =====
+    // ===== 字段渲染器 =====
     private function field_text( $id, $label, $options, $desc = '', $default = '', $input_type = 'text', $attrs = array(), $row_attr = '' ) {
         $value = isset( $options[ $id ] ) ? $options[ $id ] : $default;
         $attrs = is_array( $attrs ) ? $attrs : array();

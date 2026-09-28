@@ -1,6 +1,6 @@
 <?php
 /**
- * China Features Class - 右侧浮动栏
+ * 国内网络与合规优化特性类 - 右侧浮动栏
  *
  * @package Developer_Starter
  */

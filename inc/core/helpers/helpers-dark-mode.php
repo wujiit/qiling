@@ -1,6 +1,6 @@
 <?php
 /**
- * Dark mode runtime helpers.
+ * 暗黑模式运行时辅助函数。
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_normalize_dark_mode_time' ) ) {
     /**
-     * Normalize a HH:MM time value for the front-end dark mode scheduler.
+     * 规范化暗黑模式计划时间的 HH:MM 格式。
      *
      * @param mixed  $value Time value.
      * @param string $default Default HH:MM value.
@@ -30,7 +30,7 @@ if ( ! function_exists( 'developer_starter_normalize_dark_mode_time' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_dark_mode_runtime_config' ) ) {
     /**
-     * Build the shared front-end dark mode configuration.
+     * 构建前台共享暗黑模式配置。
      *
      * @return array<string,mixed>
      */

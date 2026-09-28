@@ -1,6 +1,6 @@
 <?php
 /**
- * Decoration generation service facade.
+ * 排版与视觉装饰生成服务门面类。
  *
  * @package Developer_Starter
  */
@@ -286,7 +286,7 @@ class AI_Decorator {
     }
 
     /**
-     * Get client-safe localization controls.
+     * 获取前端安全的本地化控制参数。
      *
      * @return array<string,mixed>
      */
@@ -315,7 +315,7 @@ class AI_Decorator {
     }
 
     /**
-     * Supported AI localization target languages.
+     * AI 本地化支持的目标语言列表。
      *
      * @return array<string,string>
      */
@@ -331,7 +331,7 @@ class AI_Decorator {
     }
 
     /**
-     * Supported AI localization tone presets.
+     * AI 本地化支持的语气风格预设。
      *
      * @return array<string,string>
      */
@@ -346,7 +346,7 @@ class AI_Decorator {
     }
 
     /**
-     * Industry-specific tone packs for localization.
+     * 用于本地化翻译的行业专属语气包。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -380,7 +380,7 @@ class AI_Decorator {
     }
 
     /**
-     * Batch localization content types.
+     * 批量本地化支持的内容类型列表。
      *
      * @return array<string,string>
      */
@@ -393,7 +393,7 @@ class AI_Decorator {
     }
 
     /**
-     * Normalize localization request params.
+     * 规范化本地化请求参数。
      *
      * @param mixed $value Raw request value.
      * @return array<string,mixed>
@@ -491,7 +491,7 @@ class AI_Decorator {
     }
 
     /**
-     * Normalize a term list from array, JSON, comma separated or line separated text.
+     * 将数组、JSON、逗号或换行分隔的文本规范化为术语列表。
      *
      * @param mixed $value Raw value.
      * @return array<int,string>
@@ -527,7 +527,7 @@ class AI_Decorator {
     }
 
     /**
-     * Normalize fixed translations from map, JSON or line-based "source=target" text.
+     * 将映射表、JSON 或行式 "原文=译文" 规范化为固定词典映射。
      *
      * @param mixed $value Raw value.
      * @return array<int,array{source:string,target:string}>
@@ -587,7 +587,7 @@ class AI_Decorator {
     }
 
     /**
-     * Build a text-only schema subset for AI localization.
+     * 构建供 AI 翻译本地化的纯文本字段模式子集。
      *
      * @param string $module_type Module type.
      * @return array<string,array<string,mixed>>
@@ -607,7 +607,7 @@ class AI_Decorator {
     }
 
     /**
-     * Filter a field schema down to localizable text fields.
+     * 将字段模式筛选为仅包含可本地化的文本字段。
      *
      * @param array<string,array<string,mixed>> $schema Field schema map.
      * @return array<string,array<string,mixed>>
@@ -664,7 +664,7 @@ class AI_Decorator {
     }
 
     /**
-     * Whether a schema field may be localized as text.
+     * 检测模式字段是否可作为文本进行本地化。
      *
      * @param string              $key Field key.
      * @param array<string,mixed> $field_schema Field schema.
@@ -681,7 +681,7 @@ class AI_Decorator {
     }
 
     /**
-     * Whether a field is blocked from AI localization.
+     * 检测字段是否禁止进行 AI 本地化。
      *
      * @param string $key Field key.
      * @return bool
@@ -1125,7 +1125,7 @@ class AI_Decorator {
     }
 
     /**
-     * Ajax: localize the current page package.
+     * Ajax：本地化当前页面包。
      *
      * @return void
      */
@@ -1164,7 +1164,7 @@ class AI_Decorator {
     }
 
     /**
-     * Ajax: batch localize existing content.
+     * Ajax：批量本地化存量内容。
      *
      * @return void
      */
@@ -1227,7 +1227,7 @@ class AI_Decorator {
     }
 
     /**
-     * Localize a full page package.
+     * 本地化整套页面包数据。
      *
      * @param array<string,mixed> $args Request args.
      * @return array<string,mixed>|\WP_Error
@@ -1237,7 +1237,7 @@ class AI_Decorator {
     }
 
     /**
-     * Batch localize existing content.
+     * 批量本地化存量内容。
      *
      * @param array<string,mixed> $args Request args.
      * @return array<string,mixed>|\WP_Error
@@ -1247,7 +1247,7 @@ class AI_Decorator {
     }
 
     /**
-     * Get default connection/model values for server-side integrations.
+     * 获取服务端集成的默认连接与模型参数。
      *
      * @return array{connection_id:string,model:string}
      */
@@ -1351,7 +1351,7 @@ class AI_Decorator {
     }
 
     /**
-     * Build a normalized page package from request input or the saved post state.
+     * 从请求输入或存储的文章状态构建规范化页面包。
      *
      * @param int   $post_id Current post ID.
      * @param mixed $value Request page package.
@@ -1429,7 +1429,7 @@ class AI_Decorator {
     }
 
     /**
-     * Build text-only schema maps for every module in a page package.
+     * 为页面包中的每个模块构建纯文本模式映射。
      *
      * @param array<int,array<string,mixed>> $modules Modules.
      * @return array<int,array<string,mixed>>
@@ -1456,7 +1456,7 @@ class AI_Decorator {
     }
 
     /**
-     * Get unique module IDs from a page package.
+     * 从页面包中提取所有不重复的模块 ID。
      *
      * @param array<string,mixed> $package Page package.
      * @return array<int,string>
@@ -1474,7 +1474,7 @@ class AI_Decorator {
     }
 
     /**
-     * Sync a localized page package to the xb-aifanyi provider when available.
+     * 当可用时将本地化的页面包数据同步至 xb-aifanyi。
      *
      * @param int                 $post_id Current post ID.
      * @param array<string,mixed> $package Localized package.
@@ -1523,7 +1523,7 @@ class AI_Decorator {
     }
 
     /**
-     * Sync localized plain post/article content to xb-aifanyi.
+     * 将本地化的普通文章内容同步至 xb-aifanyi。
      *
      * @param int                 $post_id Current post ID.
      * @param array<string,mixed> $content Localized content payload.

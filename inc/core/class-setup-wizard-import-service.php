@@ -1,11 +1,11 @@
 <?php
 /**
- * Setup wizard page generation service.
+ * 安装向导页面生成服务。
  *
- * Phase 3 creates/reuses pages, sets the front page when the site has no
- * static front page yet, binds page templates for newly created pages and
- * imports homepage modules through the existing official template package
- * service. It does not create menus or touch third-party plugin settings.
+ * 阶段 3 创建或复用页面，当站点无静态首页时绑定首页，
+ * 为新页面绑定模板，
+ * 并通过现有官方页面包服务导入首页模块，
+ * 不创建菜单或修改第三方插件设置。
  *
  * @package Developer_Starter
  */
@@ -55,7 +55,7 @@ class Setup_Wizard_Import_Service {
     }
 
     /**
-     * Generate the selected pages.
+     * 批量生成选定的页面。
      *
      * @param array<string,mixed> $args Import arguments.
      * @return array<string,mixed>

@@ -12,7 +12,7 @@ function initQilingMobileMenu() {
     }
     window.__dsMobileMenuInitialized = true;
 
-    // ===== Mobile Menu Toggle =====
+    // ===== 移动端菜单切换 =====
     var masthead = document.getElementById('masthead');
     var menuToggle = document.getElementById('mobile-menu-toggle') || document.querySelector('.mobile-menu-toggle');
     var mobileMenu = document.getElementById('mobile-menu');
@@ -224,7 +224,7 @@ function initQilingMobileMenu() {
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     }
 
-    // Mobile submenu toggle
+    // 移动端子菜单展开/收起
     var mobileMenuNav = document.querySelector('.mobile-menu-nav');
     if (mobileMenuNav) {
         var menuItemsWithChildren = mobileMenuNav.querySelectorAll('.menu-item-has-children');
@@ -327,7 +327,7 @@ function initQilingMobileMenu() {
     }
     syncMobileMenuA11y(isMobileMenuOpen());
 
-    // ESC key to close mobile menu
+    // ESC 键关闭移动端菜单
     document.addEventListener('keydown', function (e) {
         if (!isMobileMenuOpen()) {
             return;
@@ -363,7 +363,7 @@ function initQilingMobileMenu() {
         }
     });
 
-    // ===== Mobile Bottom Navigation =====
+    // ===== 移动端底部快捷导航 =====
     var mobileBottomMenu = document.querySelector('.mobile-bottom-menu');
     if (mobileBottomMenu) {
         mobileBottomMenu.addEventListener('click', function (e) {
@@ -372,7 +372,7 @@ function initQilingMobileMenu() {
                 return;
             }
 
-            // Keep native anchor behavior when directly tapping links.
+            // 点击直接链接时保留原生锚点跳转行为。
             if (e.target.closest('a')) {
                 return;
             }

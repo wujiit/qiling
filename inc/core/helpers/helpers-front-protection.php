@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend protection and comment optimization helpers split from functions.php.
+ * 从 functions.php 拆分出的前台安全防护与评论优化辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -355,9 +355,9 @@ function developer_starter_comments_feature_enabled() {
 }
 
 /**
- * Respect WordPress's global discussion default on the frontend.
- * The option normally affects newly created posts only; the theme also uses it
- * as the site's explicit global comment visibility switch.
+ * 在前台遵循 WordPress 全局讨论开关设置。
+ * 该配置除影响新文章外，主题将其兼作
+ * 站点全局评论可见性控制总开关。
  *
  * @param bool $open    Whether comments are open.
  * @param int  $post_id Post ID.
@@ -371,8 +371,8 @@ function developer_starter_filter_global_comments_open( $open, $post_id ) {
     }
 
     $per_post_setting = $post_id > 0 ? get_post_meta( $post_id, '_qiling_comments_enabled', true ) : '';
-    // Existing posts are comment opt-in, so historical comment_status=open
-    // values cannot reopen a post unless its switch is explicitly enabled.
+    // 存量文章遵循评论显式开启原则，避免历史 comment_status=open
+    // 默认值意外打开评论，必须显式开启对应开关。
     return '1' === (string) $per_post_setting && developer_starter_comments_feature_enabled();
 }
 // 放在最后，确保历史文章自身的 comment_status=open 不会覆盖全局关闭设置。

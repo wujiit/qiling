@@ -1,6 +1,6 @@
 <?php
 /**
- * Interact Hero Module - 交互首屏Banner
+ * 交互式首屏 Banner 模块
  *
  * @package Developer_Starter
  */
@@ -162,6 +162,7 @@ class Interact_Hero_Module extends Module_Base {
                 'id' => 'feature_items',
                 'type' => 'repeater',
                 'label' => __( '特性卡片列表 (建议4-5项)', 'developer-starter' ),
+                'default_items' => $this->get_demo_data()['feature_items'],
                 'fields' => array(
                     array( 
                         'id' => 'f_icon_type', 
@@ -252,7 +253,7 @@ class Interact_Hero_Module extends Module_Base {
         $badge = isset($data['badge_text']) ? $data['badge_text'] : '';
         $title = isset($data['hero_title_content']) ? $data['hero_title_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题 · 全新一代', 'Qiling Theme, a new generation' ) : __( '启灵主题 · 全新一代', 'developer-starter' ) );
         $subtitle = isset($data['hero_subtitle_content']) ? $data['hero_subtitle_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '不仅是好看，更是强大的生产力工具。', 'More than beautiful, it is built to help teams ship faster.' ) : __( '不仅是好看，更是强大的生产力工具。', 'developer-starter' ) );
-        // Fallback for old data key
+        // 兼容旧版数据字段名
         if(empty($title) && isset($data['hero_title'])) $title = $data['hero_title'];
         if(empty($subtitle) && isset($data['hero_subtitle'])) $subtitle = $data['hero_subtitle'];
         
@@ -280,6 +281,9 @@ class Interact_Hero_Module extends Module_Base {
         $anim = isset($data['enable_float_anim']) ? $data['enable_float_anim'] : 'yes';
 
         $features = isset($data['feature_items']) && is_array($data['feature_items']) ? $data['feature_items'] : array();
+        if ( empty( $features ) && ! isset( $data['feature_items'] ) ) {
+            $features = $this->get_demo_data()['feature_items'];
+        }
 
         // 样式提取
         $bg_color = isset($data['bg_color']) ? $data['bg_color'] : 'var(--qiling-color-ebf7f8)';
@@ -288,7 +292,7 @@ class Interact_Hero_Module extends Module_Base {
         $pt = isset($data['padding_top']) ? $data['padding_top'] : '100px';
         $pb = isset($data['padding_bottom']) ? $data['padding_bottom'] : '80px';
         
-        // Button Styles
+        // 按钮样式
         $btn1_style = '';
         if($btn1_bg) $btn1_style .= "background: {$btn1_bg}; border-color: {$btn1_bg};";
         if($btn1_color) $btn1_style .= "color: {$btn1_color};";

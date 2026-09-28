@@ -1,6 +1,6 @@
 <?php
 /**
- * Header search overlay.
+ * 页头全屏搜索浮层模板。
  *
  * @package Developer_Starter
  */

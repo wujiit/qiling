@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for responsive device definitions.
+ * 响应式设备定义数据配置。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Module - 联系我们
+ * 联系我们模块
  *
  * @package Developer_Starter
  */
@@ -70,6 +70,24 @@ class Contact_Module extends Module_Base {
                 'type'        => 'color',
                 'default'     => '',
                 'description' => __( '留空使用默认颜色', 'developer-starter' ),
+            ),
+            array(
+                'id'          => 'contact_phone',
+                'label'       => __( '联系电话', 'developer-starter' ),
+                'type'        => 'text',
+                'description' => __( '当前页面专属电话，留空时使用主题设置中的公司电话', 'developer-starter' ),
+            ),
+            array(
+                'id'          => 'contact_email',
+                'label'       => __( '联系邮箱', 'developer-starter' ),
+                'type'        => 'text',
+                'description' => __( '当前页面专属邮箱，留空时使用主题设置中的公司邮箱', 'developer-starter' ),
+            ),
+            array(
+                'id'          => 'contact_address',
+                'label'       => __( '联系地址', 'developer-starter' ),
+                'type'        => 'text',
+                'description' => __( '当前页面专属地址，留空时使用主题设置中的公司地址', 'developer-starter' ),
             ),
             array(
                 'id'      => 'contact_show_form',
@@ -198,12 +216,12 @@ class Contact_Module extends Module_Base {
         $subtitle_color = isset( $data['contact_subtitle_color'] ) && $data['contact_subtitle_color'] ? $data['contact_subtitle_color'] : '';
 
         $company_name  = developer_starter_get_option( 'company_name', '' );
-        $phone         = developer_starter_get_option( 'company_phone', '' );
+        $phone         = ( isset( $data['contact_phone'] ) && '' !== trim( (string) $data['contact_phone'] ) ) ? trim( (string) $data['contact_phone'] ) : developer_starter_get_option( 'company_phone', '' );
         $qq            = developer_starter_get_option( 'company_qq', '' );
         $qq_link       = function_exists( 'developer_starter_get_qq_contact_link' ) ? developer_starter_get_qq_contact_link( $qq ) : '';
         $wechat_qrcode = developer_starter_get_option( 'company_wechat_qrcode', '' );
-        $email         = developer_starter_get_option( 'company_email', '' );
-        $address       = developer_starter_get_option( 'company_address', '' );
+        $email         = ( isset( $data['contact_email'] ) && '' !== trim( (string) $data['contact_email'] ) ) ? trim( (string) $data['contact_email'] ) : developer_starter_get_option( 'company_email', '' );
+        $address       = ( isset( $data['contact_address'] ) && '' !== trim( (string) $data['contact_address'] ) ) ? trim( (string) $data['contact_address'] ) : developer_starter_get_option( 'company_address', '' );
         $working_hours = developer_starter_get_option( 'company_working_hours', '' );
         $login_required = developer_starter_get_option( 'contact_message_login_required', '' ) === '1';
         $custom_login_page = (int) developer_starter_get_option( 'login_page_id', '' );

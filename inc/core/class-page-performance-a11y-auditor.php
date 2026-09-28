@@ -1,6 +1,6 @@
 <?php
 /**
- * Front-end page resource manifest and quality auditor.
+ * 前台页面资源清单与质量审计器。
  *
  * @package Developer_Starter
  */
@@ -12,11 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Generates a current-page resource manifest and lightweight performance/a11y audit.
+ * 生成当前页面的资源清单与轻量性能/无障碍审计报告。
  *
- * The auditor is intentionally admin-only by default so public visitors do not pay
- * for HTML inspection. It complements the existing dual resource loading modes
- * without changing their behavior.
+ * 审计器默认仅对管理员启用，避免普通访客
+ * 产生额外的 HTML 解析开销。它与现有的双资源加载模式互补
+ * 且不改变原有运行逻辑。
  */
 class Page_Performance_A11y_Auditor {
 
@@ -36,7 +36,7 @@ class Page_Performance_A11y_Auditor {
     private $last_report = array();
 
     /**
-     * Get singleton instance.
+     * 获取单例实例。
      *
      * @return Page_Performance_A11y_Auditor
      */
@@ -49,7 +49,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Sanitize admin options owned by this auditor.
+     * 清理该审计器所属的后台配置选项。
      *
      * @param array<string,mixed> $options Submitted options.
      * @param array<string,mixed> $existing_options Existing options.
@@ -66,7 +66,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Build design-token diagnostics for the admin workbench.
+     * 为后台工作台构建设计令牌诊断数据。
      *
      * @param array<string,mixed> $payload Design token payload.
      * @return array<string,mixed>
@@ -268,14 +268,14 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Constructor.
+     * 构造函数.
      */
     private function __construct() {
         add_action( 'template_redirect', array( $this, 'maybe_start_buffer' ), 99 );
     }
 
     /**
-     * Start output inspection buffer when safe and useful.
+     * 在适当时机启动输出缓冲以进行代码审计检查。
      *
      * @return void
      */
@@ -288,7 +288,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Return the last generated report for integrations/tests.
+     * 返回最后生成的诊断报告供集成与测试使用。
      *
      * @return array<string,mixed>
      */
@@ -297,7 +297,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Analyze completed HTML and optionally append JSON payloads for admins.
+     * 分析输出的 HTML 并在管理员模式下追加诊断 JSON 载荷。
      *
      * @param string $html Full page HTML.
      * @return string
@@ -312,7 +312,7 @@ class Page_Performance_A11y_Auditor {
         $GLOBALS['developer_starter_last_page_quality_report'] = $report;
 
         /**
-         * Fires after the front-end quality report has been generated.
+         * 前台页面质量报告生成后触发。
          *
          * @param array<string,mixed> $report Current page report.
          * @param string              $html   Raw HTML inspected by the auditor.
@@ -327,7 +327,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Build a full report from HTML.
+     * 基于 HTML 构建完整的页面质量诊断报告。
      *
      * @param string $html Full page HTML.
      * @return array<string,mixed>
@@ -358,7 +358,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Build a resource manifest from final HTML plus page module metadata.
+     * 从最终 HTML 和页面模块元数据构建静态资源清单。
      *
      * @param string $html Full page HTML.
      * @return array<string,mixed>
@@ -495,7 +495,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Audit LCP-related image hints.
+     * 审计 LCP 最大内容绘制相关的图片预加载提示。
      *
      * @param array<string,mixed> $manifest Resource manifest.
      * @return array<string,mixed>
@@ -549,7 +549,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Audit image attributes and modern format coverage.
+     * 审计图片宽高属性与现代图片格式覆盖率。
      *
      * @param array<string,mixed> $manifest Resource manifest.
      * @return array<string,mixed>
@@ -632,7 +632,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Audit heading hierarchy.
+     * 审计标题层级结构（H1-H6 顺规）。
      *
      * @param string $html Full page HTML.
      * @return array<string,mixed>
@@ -714,7 +714,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Audit forms and interactive controls.
+     * 审计表单与交互控件的可访问性。
      *
      * @param string $html Full page HTML.
      * @return array<string,mixed>
@@ -796,7 +796,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Audit design-token and inline color contrast.
+     * 审计设计令牌与内联样式的文本颜色对比度。
      *
      * @param string $html Full page HTML.
      * @return array<string,mixed>
@@ -867,7 +867,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Audit common mobile overflow patterns.
+     * 审计移动端常见的横向溢出问题。
      *
      * @param string $html Full page HTML.
      * @return array<string,mixed>
@@ -929,7 +929,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Audit likely CLS contributors.
+     * 审计可能导致 CLS 累积布局偏移的元素。
      *
      * @param array<string,mixed> $manifest Resource manifest.
      * @return array<string,mixed>
@@ -997,7 +997,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Extract HTML tags and attributes.
+     * 提取 HTML 标签与属性列表。
      *
      * @param string $html Full page HTML.
      * @param string $tag_name Tag name.
@@ -1022,7 +1022,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Parse HTML attributes from one tag string.
+     * 从单个标签字符串中解析 HTML 属性。
      *
      * @param string $tag HTML tag.
      * @return array<string,string|bool>
@@ -1061,7 +1061,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Get module summary for the current queried page.
+     * 获取当前查询页面的模块摘要概览。
      *
      * @return array<string,mixed>
      */
@@ -1107,7 +1107,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Detect known optional vendors from the final page.
+     * 检测页面中加载的已知可选第三方库。
      *
      * @param string                  $html Full page HTML.
      * @param array<int,array>        $scripts Script assets.
@@ -1129,7 +1129,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Summarize image format usage.
+     * 汇总页面图片格式使用分布。
      *
      * @param array<int,array> $images Image assets.
      * @param array<int,array> $sources Source assets.
@@ -1189,7 +1189,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Deduplicate assets by URL key.
+     * 通过 URL 键名对静态资源进行去重。
      *
      * @param array<int,array<string,mixed>> $assets Assets.
      * @param string                         $key URL key.
@@ -1222,7 +1222,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Make a normalized audit result.
+     * 生成规范化审计结果对象。
      *
      * @param array<int,array<string,mixed>> $issues Issues.
      * @param array<string,mixed>            $extra Extra payload.
@@ -1252,7 +1252,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Make a normalized issue payload.
+     * 生成规范化的问题条目载荷。
      *
      * @param string              $code Issue code.
      * @param string              $message Issue message.
@@ -1270,7 +1270,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Summarize report counts.
+     * 统计审计报告各类指标数量。
      *
      * @param array<string,mixed> $manifest Resource manifest.
      * @param array<string,mixed> $audits Audit results.
@@ -1302,7 +1302,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Inject JSON report payload before </body>.
+     * 在 </body> 闭合标签前注入 JSON 诊断报告载荷。
      *
      * @param string              $html Full page HTML.
      * @param array<string,mixed> $report Report.
@@ -1336,7 +1336,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether the auditor should collect this request.
+     * 检测审计器是否应采集当前请求数据。
      *
      * @return bool
      */
@@ -1361,7 +1361,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether to embed JSON report in the final HTML.
+     * 检测是否需要在最终 HTML 中嵌入 JSON 报告。
      *
      * @return bool
      */
@@ -1378,7 +1378,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether the debug query variable is active.
+     * 检测调试查询变量是否处于激活状态。
      *
      * @return bool
      */
@@ -1396,7 +1396,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Normalize a URL-ish HTML attribute value.
+     * 规范化 URL 类型的 HTML 属性值。
      *
      * @param string $value Raw value.
      * @return string
@@ -1411,7 +1411,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Current request URL.
+     * 当前请求 URL。
      *
      * @return string
      */
@@ -1428,7 +1428,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Strip tags and produce a short readable sample.
+     * 去除 HTML 标签并截取简明易读的文字片段。
      *
      * @param string $value Raw HTML/text.
      * @param int    $length Max length.
@@ -1454,7 +1454,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether an input/select/textarea is wrapped by a label.
+     * 检测表单输入控件是否包含关联的 label 标签。
      *
      * @param string $html Full page HTML.
      * @param int    $offset Control offset.
@@ -1469,7 +1469,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Extract color/background hex values from inline style.
+     * 从内联样式中提取颜色与背景十六进制数值。
      *
      * @param string $style Inline style.
      * @return array<string,string>
@@ -1503,7 +1503,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether the component definition is color-like.
+     * 检测组件定义是否为颜色相关类型。
      *
      * @param array<string,mixed> $definition Component definition.
      * @return bool
@@ -1514,7 +1514,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether a style value is driven by CSS variables.
+     * 检测样式值是否由 CSS 变量驱动。
      *
      * @param string $value Style value.
      * @return bool
@@ -1524,7 +1524,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether a style value contains a literal color token.
+     * 检测样式值中是否包含字面颜色令牌。
      *
      * @param string $value Style value.
      * @return bool
@@ -1539,7 +1539,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Resolve simple CSS variable references for diagnostics.
+     * 解析简单的 CSS 变量引用以进行诊断分析。
      *
      * @param string              $value Raw value.
      * @param array<string,mixed> $variables Variable map.
@@ -1573,7 +1573,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Calculate WCAG contrast ratio for supported CSS colors.
+     * 计算支持的 CSS 颜色之间的 WCAG 对比度。
      *
      * @param string $foreground Foreground color.
      * @param string $background Background color.
@@ -1595,7 +1595,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Convert a supported CSS color to RGB.
+     * 将支持的 CSS 颜色转换为 RGB 数组。
      *
      * @param string              $color CSS color.
      * @param array<int,int>|null $background_rgb Optional background for alpha blending.
@@ -1631,7 +1631,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Convert hex color to RGB.
+     * 将十六进制颜色转换为 RGB 数组。
      *
      * @param string $color Color.
      * @return array<int,int>|null
@@ -1655,7 +1655,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Calculate relative luminance.
+     * 计算相对亮度值。
      *
      * @param array<int,int> $rgb RGB channels.
      * @return float
@@ -1673,7 +1673,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Normalize a single RGB channel.
+     * 规范化单个 RGB 颜色通道值。
      *
      * @param string $channel Channel value.
      * @return int
@@ -1690,7 +1690,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Alpha-blend an RGB foreground over an RGB background.
+     * 对 RGB 前景色与背景色执行 Alpha 透明度混合计算。
      *
      * @param array<int,int> $foreground_rgb Foreground RGB.
      * @param array<int,int> $background_rgb Background RGB.
@@ -1708,7 +1708,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Get extension from URL.
+     * 从 URL 中提取文件后缀扩展名。
      *
      * @param string $url URL.
      * @return string
@@ -1724,7 +1724,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether the image source should be ignored by image audits.
+     * 检测图片地址是否应在图片审计中忽略。
      *
      * @param string $src Image URL.
      * @return bool
@@ -1735,7 +1735,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Whether image is vector-like.
+     * 检测图片是否为矢量图形格式。
      *
      * @param string $src Image URL.
      * @return bool
@@ -1745,7 +1745,7 @@ class Page_Performance_A11y_Auditor {
     }
 
     /**
-     * Shorten URL for report context.
+     * 为报告展示精简 URL 长度。
      *
      * @param string $url URL.
      * @return string

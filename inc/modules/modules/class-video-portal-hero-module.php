@@ -1,6 +1,6 @@
 <?php
 /**
- * Video Portal Hero Module - 视频门户首屏Banner
+ * 视频门户专属首屏模块
  * 
  * @package Developer_Starter
  */

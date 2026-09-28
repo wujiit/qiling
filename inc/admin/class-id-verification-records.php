@@ -1,6 +1,6 @@
 <?php
 /**
- * ID Verification Records Admin Page - 身份证验证记录管理
+ * 实名身份验证记录管理页面
  *
  * @package Developer_Starter
  * @since 1.0.0

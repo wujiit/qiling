@@ -1,6 +1,6 @@
 <?php
 /**
- * Stats Module - 数据统计
+ * 数据统计与指标展示模块
  *
  * @package Developer_Starter
  */
@@ -77,9 +77,15 @@ class Stats_Module extends Module_Base {
                     array( 'id' => 'number_color', 'label' => __( '数字颜色', 'developer-starter' ), 'type' => 'color', 'description' => __( '留空使用模块默认颜色', 'developer-starter' ) ),
                     array( 'id' => 'label_color', 'label' => __( '标签颜色', 'developer-starter' ), 'type' => 'color', 'description' => __( '留空使用模块默认颜色', 'developer-starter' ) ),
                 ),
+                'default_items' => array(
+                    array( 'number' => '500', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '服务客户', 'Clients Served' ) : __( '服务客户', 'developer-starter' ) ),
+                    array( 'number' => '10', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '年行业经验', 'Years of Experience' ) : __( '年行业经验', 'developer-starter' ) ),
+                    array( 'number' => '50', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队', 'Team Members' ) : __( '专业团队', 'developer-starter' ) ),
+                    array( 'number' => '99', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户满意度', 'Client Satisfaction' ) : __( '客户满意度', 'developer-starter' ) ),
+                ),
             ),
             
-            // Background Settings
+            // 背景配置
             array(
                 'id' => 'stats_bg_type',
                 'label' => __( '背景类型', 'developer-starter' ),
@@ -113,7 +119,7 @@ class Stats_Module extends Module_Base {
                 'dependency' => array( 'stats_bg_type', '==', 'image' ),
             ),
 
-            // Featured Layout Settings (Side Image)
+            // 特色布局配置（侧边图片）
             array(
                 'id' => 'stats_side_image',
                 'label' => __( '侧边配图 (3项数据时生效)', 'developer-starter' ),
@@ -184,7 +190,8 @@ class Stats_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '80px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '80px';
         
-        if ( empty( $items ) ) {
+        // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['stats_items'] ) ) {
             $items = array(
                 array( 'number' => '500', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '服务客户', 'Clients Served' ) : __( '服务客户', 'developer-starter' ) ),
                 array( 'number' => '10', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '年行业经验', 'Years of Experience' ) : __( '年行业经验', 'developer-starter' ) ),
@@ -193,7 +200,7 @@ class Stats_Module extends Module_Base {
             );
         }
         
-        // Dynamic Styles
+        // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb}; text-align: {$text_align};";
         
         if ( $bg_type === 'color' && $bg_color ) {
@@ -201,7 +208,7 @@ class Stats_Module extends Module_Base {
         } elseif ( $bg_type === 'image' && $bg_image ) {
             $section_style .= "background-image: url('{$bg_image}');";
         } elseif ( $bg_type === 'image' && ! $bg_image ) {
-             // Fallback default gradient if image mode selected but no image (or legacy fallback)
+             // 若选择了图片模式但未填图片则兜底使用默认渐变
              $section_style .= "background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark, var(--color-primary-dark)) 100%);";
         }
         
@@ -209,26 +216,26 @@ class Stats_Module extends Module_Base {
         if ( $title_size ) $title_style .= "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
         
-        // Grid Justify
+        // 网格对齐方式
         $justify = 'center';
         if ( $text_align === 'left' ) $justify = 'flex-start';
         if ( $text_align === 'right' ) $justify = 'flex-end';
 
-        // Check for Featured Layout
+        // 检查是否为特色布局
         $side_image = isset( $data['stats_side_image'] ) ? $data['stats_side_image'] : '';
         $is_featured_layout = ( count($items) === 3 && ! empty($side_image) );
 
-        // Check for Featured Layout
+        // 检查是否为特色布局
         $side_image = isset( $data['stats_side_image'] ) ? $data['stats_side_image'] : '';
         $is_featured_layout = ( count($items) === 3 && ! empty($side_image) );
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
 
         if ( $is_featured_layout ) {
             $this->render_featured_layout( $items, $side_image, $title, $subtitle, $title_style, $section_style, $text_align, $module_id = 'stats-' . uniqid(), $enable_anim );
         } else {
-            // Default Layout
+            // 默认布局
             ?>
             <section class="module module-stats <?php echo $bg_type === 'image' && $bg_image ? 'has-bg-image' : ''; ?>" style="<?php echo esc_attr( $section_style ); ?>">
                 <?php if ( $bg_type === 'image' && $bg_image ) : ?>
@@ -277,7 +284,7 @@ class Stats_Module extends Module_Base {
                             $number_style = $this->build_color_style_attr( isset( $item['number_color'] ) ? $item['number_color'] : '' );
                             $label_style = $this->build_color_style_attr( isset( $item['label_color'] ) ? $item['label_color'] : '' );
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );
@@ -296,10 +303,10 @@ class Stats_Module extends Module_Base {
     }
 
     /**
-     * Render the special Featured Layout (Left Image + Right Stats Card)
+     * 渲染特色布局（左侧图片 + 右侧数据统计卡片）
      */
     /**
-     * Render the special Featured Layout (Left Image + Right Stats Card)
+     * 渲染特色布局（左侧图片 + 右侧数据统计卡片）
      */
     private function render_featured_layout( $items, $side_image, $title, $subtitle, $title_style, $section_style, $text_align, $module_id, $enable_anim = 'yes' ) {
         $section_style .= '--stats-featured-text-align:' . sanitize_text_field( $text_align ) . ';';
@@ -335,7 +342,7 @@ class Stats_Module extends Module_Base {
                             $number_style = $this->build_color_style_attr( isset( $item['number_color'] ) ? $item['number_color'] : '' );
                             $label_style = $this->build_color_style_attr( isset( $item['label_color'] ) ? $item['label_color'] : '' );
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

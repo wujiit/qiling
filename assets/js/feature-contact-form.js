@@ -1,7 +1,7 @@
 /**
- * Contact form runtime
+ * 联系表单交互运行时
  *
- * Split from main.js so page-specific interactions can load only when needed.
+ * 从 main.js 独立拆分，支持按需加载。
  */
 (function (window, document) {
     'use strict';
@@ -20,7 +20,7 @@
     }
 
     onReady(function () {
-    // ===== Contact Form =====
+    // ===== 联系表单 =====
     var mainStrings = (typeof developerStarterData !== 'undefined' && developerStarterData.strings)
         ? developerStarterData.strings
         : {};
@@ -154,6 +154,6 @@
             });
     });
 
-    // ===== Smooth Scroll for Anchor Links =====
+    // ===== 锚点平滑滚动 =====
     });
 })(window, document);

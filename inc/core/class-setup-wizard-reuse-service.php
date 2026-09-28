@@ -1,9 +1,8 @@
 <?php
 /**
- * Setup wizard reuse checks for pages and menus.
+ * 安装向导页面与菜单复用检查服务。
  *
- * This service is read-only. It helps later wizard stages avoid
- * duplicate pages and menus before any creation happens.
+ * 该服务为只读检查，用于在向导后续阶段创建内容前避免生成重复的页面和菜单。
  *
  * @package Developer_Starter
  */
@@ -17,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Setup_Wizard_Reuse_Service {
 
     /**
-     * Find an existing page that the wizard should reuse.
+     * 查找安装向导可复用的现有页面。
      *
      * @param array<string,mixed> $args Lookup args.
      * @return array<string,mixed>
@@ -51,7 +50,7 @@ class Setup_Wizard_Reuse_Service {
     }
 
     /**
-     * Find an existing nav menu that the wizard should reuse.
+     * 查找安装向导可复用的现有导航菜单。
      *
      * @param array<string,mixed> $args Lookup args.
      * @return array<string,mixed>
@@ -82,7 +81,7 @@ class Setup_Wizard_Reuse_Service {
     }
 
     /**
-     * Check whether a menu already contains a page item.
+     * 检查菜单中是否已包含该页面项。
      *
      * @param int $menu_id Menu term id.
      * @param int $page_id Page id.
@@ -110,7 +109,7 @@ class Setup_Wizard_Reuse_Service {
     }
 
     /**
-     * Return only page ids that are not yet present in the menu.
+     * 仅返回尚未添加到菜单中的页面 ID 列表。
      *
      * @param int               $menu_id Menu term id.
      * @param array<string,int> $page_ids_by_key Page map.

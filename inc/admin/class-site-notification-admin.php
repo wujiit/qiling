@@ -1,6 +1,6 @@
 <?php
 /**
- * Site Notification Admin - 后台站内通知发送
+ * 全站通知发布管理页面
  *
  * @package Developer_Starter
  */

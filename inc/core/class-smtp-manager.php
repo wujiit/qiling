@@ -428,7 +428,7 @@ class SMTP_Manager {
             try {
                 return random_bytes( $length );
             } catch ( \Exception $e ) {
-                // Fallback below.
+                // 下方为兜底逻辑。
             }
         }
 

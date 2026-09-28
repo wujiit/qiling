@@ -1,6 +1,6 @@
 <?php
 /**
- * Official Template Package Service
+ * 官方页面模板包服务
  *
  * 负责读取启灵官方内置行业模板 JSON，并写入页面模块数据。
  *
@@ -16,14 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Official_Template_Package_Service {
 
 	/**
-	 * Official package directory under inc/.
+	 * 位于 inc/ 目录下的官方包资源路径。
 	 *
 	 * @var string
 	 */
 	private $package_dir = 'template-center/official';
 
 	/**
-	 * Exact templates migrated to official JSON packages.
+	 * 已迁移至官方 JSON 页面包的精确模板列表。
 	 *
 	 * @var array<string,string>
 	 */
@@ -133,10 +133,13 @@ class Official_Template_Package_Service {
 		'templates/template-qiling-bbs-support-community.php' => 'qiling-bbs-support-community.json',
 		'templates/template-open-source-devtools.php'      => 'open-source-devtools.json',
 		'templates/template-cybersecurity-brand.php'       => 'cybersecurity-brand.json',
+		'templates/template-esports-team.php'             => 'esports-team.json',
+		'templates/template-esports-hotel.php'            => 'esports-hotel.json',
+		'templates/template-game-studio.php'              => 'game-studio.json',
 	);
 
 	/**
-	 * Get templates backed by official JSON packages.
+	 * 获取具备官方 JSON 页面包支持的模板列表。
 	 *
 	 * @return array<int,string>
 	 */
@@ -145,7 +148,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Check whether a template has an official JSON package.
+	 * 检查指定页面模板是否存在官方配套 JSON 页面包。
 	 *
 	 * @param mixed $template Template slug.
 	 * @return bool
@@ -156,7 +159,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Load and parse an official JSON package.
+	 * 加载并解析官方 JSON 页面包文件。
 	 *
 	 * @param mixed $template Template slug.
 	 * @return array<string,mixed>|\WP_Error
@@ -200,7 +203,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Build catalog metadata for the admin Template Center.
+	 * 为后台模板中心构建分类与模版目录元数据。
 	 *
 	 * @param mixed $template Template slug.
 	 * @return array<string,mixed>|\WP_Error
@@ -236,7 +239,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Apply an official JSON package to a page.
+	 * 将官方 JSON 页面包应用到目标页面。
 	 *
 	 * @param int   $post_id  Page ID.
 	 * @param mixed $template         Template slug.
@@ -296,7 +299,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Upgrade an existing official video portal without replacing edited modules.
+	 * 升级现有的官方视频门户模板且不覆盖已编辑模块。
 	 *
 	 * @param int $post_id Page ID.
 	 * @return bool
@@ -370,7 +373,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Resolve explicit category match hints while a package is first applied.
+	 * 在初次应用模板包时解析显式分类匹配提示。
 	 *
 	 * @param array<int,array<string,mixed>> $modules Package modules.
 	 * @return array<int,array<string,mixed>>
@@ -465,7 +468,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Resolve one empty category field from a named match rule.
+	 * 根据指定匹配规则填充单个空白分类字段。
 	 *
 	 * @param array<string,mixed>              $data          Module or repeater data.
 	 * @param string                           $field         Category field.
@@ -498,7 +501,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Remove internal package hints when no categories are available.
+	 * 在无可用分类时移除模板包内部的匹配提示。
 	 *
 	 * @param array<int,array<string,mixed>> $modules Package modules.
 	 * @return array<int,array<string,mixed>>
@@ -525,7 +528,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Get strict aliases for a video portal category role.
+	 * 获取视频门户分类角色的精确别名列表。
 	 *
 	 * @param string $match_key Match rule key.
 	 * @return array<int,string>
@@ -543,7 +546,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Normalize category slugs and names for exact comparisons.
+	 * 规范化分类别名与名称以便精确比对。
 	 *
 	 * @param mixed $value Category slug, name, or alias.
 	 * @return string
@@ -555,7 +558,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Normalize a template slug.
+	 * 规范化页面模板标识 Slug。
 	 *
 	 * @param mixed $template Template slug.
 	 * @return string
@@ -572,7 +575,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Get package path by template.
+	 * 根据模板文件名获取官方页面包文件路径。
 	 *
 	 * @param string $template Template slug.
 	 * @return string
@@ -583,7 +586,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Get stable package ID.
+	 * 获取稳定的页面包标识 ID。
 	 *
 	 * @param string $template Template slug.
 	 * @return string
@@ -594,7 +597,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Sanitize package metadata.
+	 * 清理页面包元数据。
 	 *
 	 * @param array<string,mixed> $metadata Raw metadata.
 	 * @param string              $template Template slug.
@@ -645,7 +648,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Apply page settings and SEO metadata from parsed package.
+	 * 从解析的页面包中应用页面基础设置与 SEO 元数据。
 	 *
 	 * @param int                 $post_id Page ID.
 	 * @param array<string,mixed> $package Parsed package.
@@ -698,7 +701,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Category label fallback.
+	 * 分类名称兜底文案。
 	 *
 	 * @param string $category Category key.
 	 * @return string
@@ -713,7 +716,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Industry label fallback.
+	 * 行业标签兜底文案。
 	 *
 	 * @param string $industry Industry key.
 	 * @return string
@@ -728,7 +731,7 @@ class Official_Template_Package_Service {
 	}
 
 	/**
-	 * Normalize an industry key through the shared standard.
+	 * 通过统一规范标准格式化行业标识。
 	 *
 	 * @param mixed $industry Industry key.
 	 * @return string

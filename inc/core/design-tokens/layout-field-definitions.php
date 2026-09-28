@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for layout field definitions.
+ * 布局字段定义数据配置。
  *
  * @package Developer_Starter
  */

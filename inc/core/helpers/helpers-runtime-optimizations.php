@@ -1,6 +1,6 @@
 <?php
 /**
- * Runtime optimization helpers split from functions.php.
+ * 从 functions.php 拆分出的运行时优化辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

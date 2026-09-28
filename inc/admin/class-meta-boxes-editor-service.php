@@ -1,6 +1,6 @@
 <?php
 /**
- * Meta Boxes Editor Service
+ * 模块编辑器数据适配服务类
  *
  * 负责后台模块编辑器的 HTML 片段和页面 JSON 预览/导出响应数据构建。
  *
@@ -80,7 +80,7 @@ class Meta_Boxes_Editor_Service {
     }
 
     /**
-     * Normalize legacy editor rows before rendering.
+     * 在渲染前规范化历史版本编辑器行数据。
      *
      * @param mixed $module Module row.
      * @return array{type:string,data:array<string,mixed>}
@@ -111,7 +111,7 @@ class Meta_Boxes_Editor_Service {
     }
 
     /**
-     * Render a fallback item so one legacy/bad module cannot block adding new modules.
+     * 渲染兜底项目，防止个别历史异常模块阻塞新模块的添加。
      *
      * @param int                         $idx           Module index.
      * @param string                      $type          Module type.
@@ -154,7 +154,7 @@ class Meta_Boxes_Editor_Service {
     }
 
     /**
-     * Preserve scalar legacy module data in fallback rows.
+     * 在兜底数据中保留历史标量模块数据。
      *
      * @param string $name  Input name prefix.
      * @param mixed  $value Value.

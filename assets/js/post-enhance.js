@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // ===== Video Cover Hover Play =====
+    // ===== 视频封面悬停自动播放 =====
     // 视频封面悬停自动播放功能
     (function initVideoCoverHover() {
         var videoCovers = document.querySelectorAll('.post-video-cover');

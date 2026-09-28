@@ -1,6 +1,6 @@
 <?php
 /**
- * Cookie consent manager for international basics.
+ * 国际化基础 Cookie 授权管理器。
  *
  * @package Developer_Starter
  */
@@ -12,22 +12,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Controls the lightweight international Cookie notice and gated snippets.
+ * 控制轻量级国际化 Cookie 授权提示框及受控代码片段。
  */
 class Cookie_Consent_Manager {
 
     /**
-     * Cookie notice enable option.
+     * Cookie 提示开关配置选项。
      */
     const OPTION_ENABLE = 'international_cookie_notice_enable';
 
     /**
-     * Browser cookie name.
+     * 浏览器 Cookie 存储键名。
      */
     const COOKIE_NAME = 'qiling_international_cookie_consent';
 
     /**
-     * Consent payload version.
+     * 授权数据版本号。
      */
     const CONSENT_VERSION = '2.0';
 
@@ -45,7 +45,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Get supported consent categories.
+     * 获取支持的授权分类。
      *
      * @return array<string,array{label:string,description:string,required:bool}>
      */
@@ -80,7 +80,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Normalize a category key.
+     * 规范化授权分类键名。
      *
      * @param string $category Raw category.
      * @param string $default Default category.
@@ -99,7 +99,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Whether the international Cookie notice is enabled.
+     * 检查国际化 Cookie 提示功能是否开启。
      *
      * @return bool
      */
@@ -108,7 +108,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Enqueue frontend assets.
+     * 加载前台资源文件。
      *
      * @return void
      */
@@ -153,7 +153,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Render the Cookie notice.
+     * 渲染 Cookie 提示弹窗 HTML。
      *
      * @return void
      */
@@ -236,7 +236,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Render the footer Cookie settings button.
+     * 渲染页脚 Cookie 设置按钮。
      *
      * @return void
      */
@@ -256,7 +256,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Shortcode for reopening Cookie settings.
+     * 用于重新打开 Cookie 设置面板的短代码。
      *
      * @param array<string,mixed>|string $atts Shortcode attributes.
      * @return string
@@ -286,7 +286,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Build a settings button markup.
+     * 构建设置按钮 HTML 结构。
      *
      * @param string $text Button text.
      * @param string $context Render context.
@@ -310,7 +310,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Prevent consent-gated snippets from direct output before acceptance.
+     * 在用户接受前阻止受控代码片段直接输出。
      *
      * @param bool   $allowed          Current allowed flag.
      * @param string $group_id         Code group id.
@@ -333,7 +333,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Defer consent-gated snippets while the visitor has not chosen yet.
+     * 在访客做出选择前推迟加载受控代码片段。
      *
      * @param bool   $defer            Current defer flag.
      * @param string $group_id         Code group id.
@@ -355,7 +355,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Whether the visitor has already made a consent choice.
+     * 检查访问者是否已做出授权选择。
      *
      * @return bool
      */
@@ -364,7 +364,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Get current consent payload from browser cookie.
+     * 从浏览器 Cookie 中获取当前授权数据。
      *
      * @return array<string,mixed>|null
      */
@@ -405,7 +405,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Build a 2.0-shaped payload from old accepted/rejected cookies.
+     * 从旧版同意/拒绝 Cookie 平滑兼容构建新版授权数据。
      *
      * @param string $state Legacy accepted/rejected state.
      * @return array<string,mixed>
@@ -425,7 +425,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Whether a category is allowed by a consent payload.
+     * 判断指定分类是否被当前授权数据允许。
      *
      * @param string                   $category Category key.
      * @param array<string,mixed>|null $consent Consent payload.
@@ -445,7 +445,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Build frontend category config.
+     * 构建前端分类配置。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -463,7 +463,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Get current consent version from theme options.
+     * 从主题配置中获取当前授权版本号。
      *
      * @return string
      */
@@ -475,7 +475,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Get the configured regional preset.
+     * 获取已配置的区域预设方案。
      *
      * @return string
      */
@@ -487,7 +487,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Whether optional categories should be preselected in the custom panel.
+     * 自定义面板中可选分类是否默认勾选。
      *
      * @return bool
      */
@@ -496,7 +496,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Normalize notice position.
+     * 规范化提示弹窗位置参数。
      *
      * @param string $position Raw position.
      * @return string
@@ -509,7 +509,7 @@ class Cookie_Consent_Manager {
     }
 
     /**
-     * Read a theme option safely.
+     * 安全读取主题配置选项。
      *
      * @param string $key Option key.
      * @param mixed  $default Default value.

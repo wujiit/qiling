@@ -1,6 +1,6 @@
 <?php
 /**
- * Meta Boxes - Modules save service.
+ * 模块元数据保存服务类。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Multi Image Text Module - 多图文模块
+ * 多图文排版展示模块
  *
  * 鼠标悬停切换图片的交互式图文展示模块
  *
@@ -80,9 +80,33 @@ class Multi_Image_Text_Module extends Module_Base {
                 array( 'id' => 'desc_color', 'type' => 'color', 'label' => __( '描述颜色', 'developer-starter' ) ),
                 array( 'id' => 'image', 'type' => 'image', 'label' => __( '对应图片', 'developer-starter' ) ),
                 array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接', 'developer-starter' ) ),
-            ) ),
-        );
-    }
+            ),
+            'default_items' => array(
+                array(
+                    'icon'  => '🚀',
+                    'title' => __( '快速部署', 'developer-starter' ),
+                    'desc'  => __( '采用自动化部署流程，5分钟即可完成系统上线，大幅降低运维成本和时间投入。', 'developer-starter' ),
+                    'image' => '',
+                    'link'  => '',
+                ),
+                array(
+                    'icon'  => '🛡️',
+                    'title' => __( '安全可靠', 'developer-starter' ),
+                    'desc'  => __( '企业级安全架构，多层防护机制，数据加密存储，确保您的业务数据安全无虞。', 'developer-starter' ),
+                    'image' => '',
+                    'link'  => '',
+                ),
+                array(
+                    'icon'  => '📊',
+                    'title' => __( '数据分析', 'developer-starter' ),
+                    'desc'  => __( '强大的数据分析引擎，实时监控业务指标，智能报表助力精准决策。', 'developer-starter' ),
+                    'image' => '',
+                    'link'  => '',
+                ),
+            ),
+        ),
+    );
+}
 
     public function render( $data = array() ) {
         // 获取模块配置
@@ -99,7 +123,7 @@ class Multi_Image_Text_Module extends Module_Base {
         
         // Background
         $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
-        // Legacy support
+        // 兼容历史版本配置
         if ( empty( $bg_color ) && isset( $data['multi_image_text_bg_color'] ) ) {
             $bg_color = $data['multi_image_text_bg_color'];
         }
@@ -113,7 +137,7 @@ class Multi_Image_Text_Module extends Module_Base {
         $items = isset( $data['multi_image_text_items'] ) ? $data['multi_image_text_items'] : array();
         
         // 默认数据
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['multi_image_text_items'] ) ) {
             $items = array(
                 array(
                     'icon'  => '🚀',
@@ -215,7 +239,7 @@ class Multi_Image_Text_Module extends Module_Base {
                             
                             $icon = trim( $icon_raw );
                             
-                            // Item Styles
+                            // 子项样式
                             $item_title_style = "font-size: {$item_title_size};";
                             if ( $item_title_color ) $item_title_style .= "color: {$item_title_color};";
                             
@@ -265,13 +289,13 @@ class Multi_Image_Text_Module extends Module_Base {
                 item.addEventListener('mouseenter', function() {
                     var index = this.getAttribute('data-index');
                     
-                    // Update text items
+                    // 更新文本项
                     items.forEach(function(i) {
                         i.classList.remove('active');
                     });
                     this.classList.add('active');
                     
-                    // Update images
+                    // 更新图片项
                     images.forEach(function(img) {
                         if (img.getAttribute('data-index') === index) {
                             img.classList.add('active');

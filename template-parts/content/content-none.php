@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for no content found
+ * 无内容状态提示模板。
  *
  * @package Developer_Starter
  * @since 1.0.0

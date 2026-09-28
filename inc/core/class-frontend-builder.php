@@ -1534,7 +1534,7 @@ class Frontend_Builder {
     }
 
     /**
-     * Validate builder modules payload before preview/save work.
+     * 在预览或保存前校验页面构建器模块载荷结构。
      *
      * @param string           $raw_payload Raw JSON payload.
      * @param array<int,mixed> $modules Parsed modules.

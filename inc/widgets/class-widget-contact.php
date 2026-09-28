@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Widget
+ * 联系方式小工具
  *
  * @package Developer_Starter
  * @since 1.0.0

@@ -1,6 +1,6 @@
 <?php
 /**
- * Native blog post card.
+ * 原生博客文章卡片模板。
  *
  * @package Developer_Starter
  */

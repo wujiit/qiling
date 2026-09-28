@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin settings governance field render trait.
+ * 后台设置治理规则字段渲染 Trait。
  *
  * @package Developer_Starter
  */

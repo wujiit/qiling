@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Admin Trait
+ * 主题后台设置主管理 Trait
  *
  * @package Developer_Starter
  */
@@ -1475,10 +1475,10 @@ trait Admin_Settings_Admin_Trait {
                 });
 
                 if (isSettingsForm) {
-                    // Disable original inputs to prevent max_input_vars truncation
+                    // 禁用原始表单字段以防超出 max_input_vars 限制
                     form.find(':input[name^="developer_starter_options["]').prop('disabled', true);
                     
-                    // Re-enable or append the JSON payload
+                    // 重新启用或附加 JSON 数据载荷
                     $('<input>').attr({
                         type: 'hidden',
                         name: 'developer_starter_options[__json_payload]',

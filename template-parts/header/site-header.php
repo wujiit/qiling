@@ -1,6 +1,6 @@
 <?php
 /**
- * Site header shell.
+ * 全站页头外层框架模板。
  *
  * @package Developer_Starter
  */

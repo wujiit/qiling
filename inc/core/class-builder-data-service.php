@@ -1,6 +1,6 @@
 <?php
 /**
- * Builder Data Service
+ * 页面构建器数据服务
  *
  * 负责前后台装修共用的模块数据 schema 与清洗逻辑。
  *
@@ -474,10 +474,10 @@ class Builder_Data_Service {
         }
 
         /**
-         * Filters module data before schema sanitization.
+         * 在模式过滤前对模块数据进行预处理。
          *
-         * This is the future migration entry point for old module payloads. Return the
-         * original data when no migration is needed.
+         * 该入口用于旧模块载荷的数据迁移，
+         * 无需迁移时直接返回原始数据。
          *
          * @param array<string,mixed>               $data 原始模块数据。
          * @param string                            $module_id 模块 ID。
@@ -541,7 +541,7 @@ class Builder_Data_Service {
     }
 
     /**
-     * Keep banner stats-bar data stable across legacy payloads and builder saves.
+     * 在旧版数据和构建器保存流中保持横幅统计栏数据结构稳定。
      *
      * @param array<string,mixed> $data Module data.
      * @return array<string,mixed>
@@ -826,7 +826,7 @@ class Builder_Data_Service {
     }
 
     /**
-     * Module-level visual override schema.
+     * 模块级视觉覆盖模式定义。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -1657,7 +1657,7 @@ class Builder_Data_Service {
                 continue;
             }
 
-            // Numeric-looking option keys like '0'/'1' become integers in PHP; keep keys as the saved values.
+            // 数字型选项键在 PHP 中会转为整型，此处保留键名对应存储值。
             if ( is_scalar( $option_key ) ) {
                 $normalized[ (string) $option_key ] = wp_strip_all_tags( (string) $option_label );
             }

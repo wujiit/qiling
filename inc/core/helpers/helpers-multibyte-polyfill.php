@@ -1,8 +1,8 @@
 <?php
 /**
- * Local mbstring polyfills for hosts where the extension is unavailable.
+ * 针对未安装 mbstring 扩展主机的轻量兼容补丁。
  *
- * These are intentionally minimal and only cover the subset used by the theme.
+ * 补丁实现保持轻量，仅覆盖主题所需的最小函数子集。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_mb_polyfill_chars' ) ) {
     /**
-     * Split a string into characters, preferring UTF-8 aware parsing.
+     * 将字符串拆分为单字符数组（优先使用 UTF-8 安全模式）。
      *
      * @param mixed       $value    Source string.
      * @param string|null $encoding Requested encoding.
@@ -41,7 +41,7 @@ if ( ! function_exists( 'developer_starter_mb_polyfill_chars' ) ) {
 
 if ( ! function_exists( 'mb_strlen' ) ) {
     /**
-     * Polyfill for mb_strlen().
+     * mb_strlen() 兼容垫片实现。
      *
      * @param mixed       $string   Source string.
      * @param string|null $encoding Requested encoding.
@@ -54,7 +54,7 @@ if ( ! function_exists( 'mb_strlen' ) ) {
 
 if ( ! function_exists( 'mb_substr' ) ) {
     /**
-     * Polyfill for mb_substr().
+     * mb_substr() 兼容垫片实现。
      *
      * @param mixed       $string   Source string.
      * @param int         $start    Character offset.
@@ -84,7 +84,7 @@ if ( ! function_exists( 'mb_substr' ) ) {
 
 if ( ! function_exists( 'mb_strtolower' ) ) {
     /**
-     * Polyfill for mb_strtolower().
+     * mb_strtolower() 兼容垫片实现。
      *
      * @param mixed       $string   Source string.
      * @param string|null $encoding Requested encoding.

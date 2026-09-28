@@ -1,6 +1,6 @@
 <?php
 /**
- * Backward-compatible video notifications helper entry.
+ * 向后兼容的视频通知辅助函数入口。
  *
  * @deprecated 2.5.8 Use helpers-media-security-video.php instead.
  *

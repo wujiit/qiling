@@ -1,6 +1,6 @@
 <?php
 /**
- * Columns Module - 多列布局
+ * 多列排版布局模块
  *
  * @package Developer_Starter
  */
@@ -78,9 +78,14 @@ class Columns_Module extends Module_Base {
                 array( 'id' => 'content', 'type' => 'textarea', 'label' => __( '内容', 'developer-starter' ) ),
                 array( 'id' => 'image', 'type' => 'image', 'label' => __( '图片', 'developer-starter' ) ),
                 array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接(可选)', 'developer-starter' ) ),
+            ),
+            'default_items' => array(
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第一列', 'Column One' ) : __( '第一列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第二列', 'Column Two' ) : __( '第二列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第三列', 'Column Three' ) : __( '第三列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
             ) ),
             
-            // Style Settings
+            // 样式配置
             array(
                 'id' => 'module_bg_color',
                 'label' => __( '背景颜色', 'developer-starter' ),
@@ -125,7 +130,7 @@ class Columns_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '60px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '60px';
         
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['columns_items'] ) ) {
             $items = array(
                 array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第一列', 'Column One' ) : __( '第一列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
                 array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第二列', 'Column Two' ) : __( '第二列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
@@ -133,7 +138,7 @@ class Columns_Module extends Module_Base {
             );
         }
         
-        // Dynamic Styles
+        // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         
         if ( $bg_color ) {

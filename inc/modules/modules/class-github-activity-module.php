@@ -1,6 +1,6 @@
 <?php
 /**
- * GitHub Activity Module.
+ * GitHub 动态展示模块。
  *
  * @package Developer_Starter
  */

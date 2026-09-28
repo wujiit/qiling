@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer friend links.
+ * 页脚友情链接模板。
  *
  * @package Developer_Starter
  */

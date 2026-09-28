@@ -1,6 +1,6 @@
 <?php
 /**
- * Search and search-rate-limit helpers split from functions.php.
+ * 从 functions.php 拆分出的搜索与搜索限流辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -98,7 +98,7 @@ function developer_starter_get_search_pretty_url( $search, $args = array() ) {
 }
 
 /**
- * Normalize the front-end search scope.
+ * 规范化前台搜索作用域范围。
  *
  * @param string $scope Raw scope.
  * @return string
@@ -110,7 +110,7 @@ function developer_starter_normalize_search_scope( $scope ) {
 }
 
 /**
- * Search scope labels used by the native search template.
+ * 原生搜索模板使用的作用域标签映射。
  *
  * @return array<string,string>
  */
@@ -124,7 +124,7 @@ function developer_starter_get_search_scope_choices() {
 }
 
 /**
- * Resolve the current search scope from query vars or GET params.
+ * 从查询变量或 GET 参数中解析当前搜索作用域。
  *
  * @return string
  */
@@ -139,7 +139,7 @@ function developer_starter_get_current_search_scope() {
 }
 
 /**
- * Register the search_scope query var for pagination and pretty-search URLs.
+ * 注册 search_scope 查询变量用于分页和伪静态搜索 URL。
  *
  * @param string[] $public_query_vars Public query vars.
  * @return string[]
@@ -547,7 +547,7 @@ function developer_starter_get_search_match_fields( $query = null ) {
 }
 
 /**
- * Build a SQL condition for post tag matches.
+ * 构建文章标签匹配的 SQL 查询条件。
  *
  * @param string $term Search term.
  * @return string
@@ -612,7 +612,7 @@ function developer_starter_get_search_query_terms( $search_term ) {
 }
 
 /**
- * Highlight search terms in escaped display text.
+ * 在已转义的展示文本中高亮搜索关键词。
  *
  * @param string        $text Text to render.
  * @param string[]|null $terms Search terms.

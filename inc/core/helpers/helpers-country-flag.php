@@ -1,6 +1,6 @@
 <?php
 /**
- * Country flag helpers.
+ * 国家国旗图标辅助函数。
  *
  * @package Developer_Starter
  */

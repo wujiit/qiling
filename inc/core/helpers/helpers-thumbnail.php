@@ -1,6 +1,6 @@
 <?php
 /**
- * Thumbnail helpers split from functions.php.
+ * 从 functions.php 拆分出的缩略图辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

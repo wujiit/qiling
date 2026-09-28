@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * 文章列表条目展示模板。
  *
  * @package Developer_Starter
  * @since 1.0.0

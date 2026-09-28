@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ===== Dark Mode Toggle =====
+    // ===== 暗黑模式切换 =====
     var darkModeToggle = document.getElementById('darkmode-toggle');
     var darkModeConfig = window.qilingDarkModeConfig || getGlobalData().darkMode || {};
     if (darkModeToggle || darkModeConfig.enabled) {
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     localStorage.setItem(key, value);
                 }
             } catch (error) {
-                // Storage can be blocked in private modes; the theme still applies for this page.
+                // 隐私模式下存储可能受阻，本页仍可正常应用主题配色。
             }
         }
 
@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ===== Native Scroll Animation (替代 AOS 库) =====
+    // ===== 原生滚动动画（替代 AOS 库） =====
     if ('IntersectionObserver' in window) {
         var aosElements = document.querySelectorAll('[data-aos]');
         if (aosElements.length > 0) {
@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Initialize Swiper =====
+    // ===== 初始化 Swiper 轮播 =====
     if (typeof Swiper !== 'undefined') {
         var bannerSwipers = document.querySelectorAll('.banner-swiper');
         bannerSwipers.forEach(function (el) {
@@ -478,7 +478,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Search Overlay (Lazy Load) =====
+    // ===== 搜索浮层（按需加载） =====
     var searchToggle = document.getElementById('search-toggle');
     var searchOverlayScript = (typeof developerStarterData !== 'undefined' && developerStarterData.searchOverlayScript)
         ? developerStarterData.searchOverlayScript
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.head.appendChild(link);
     };
 
-    // ===== Search enhance runtime moved to feature-search-enhance.js =====
+    // ===== 搜索增强逻辑已迁移至 feature-search-enhance.js ===== 
 
     var loginModalConfig = (typeof developerStarterData !== 'undefined' && developerStarterData.loginModal)
         ? developerStarterData.loginModal
@@ -968,15 +968,15 @@ document.addEventListener('DOMContentLoaded', function () {
         searchToggle.addEventListener('click', loadSearchScriptAndOpen);
     }
 
-    // ===== Lazy embed runtime moved to feature-lazy-embeds.js =====
+    // ===== 延迟嵌入逻辑已迁移至 feature-lazy-embeds.js =====
 
-    // ===== FAQ runtime moved to feature-faq.js =====
+    // ===== FAQ 交互逻辑已迁移至 feature-faq.js =====
 
-    // ===== Stats counter runtime moved to feature-stats-counter.js =====
+    // ===== 统计计数逻辑已迁移至 feature-stats-counter.js =====
 
-    // ===== Back to top runtime moved to feature-back-to-top.js =====
+    // ===== 返回顶部逻辑已迁移至 feature-back-to-top.js =====
 
-    // ===== Contact form runtime moved to feature-contact-form.js =====
+    // ===== 联系表单逻辑已迁移至 feature-contact-form.js ===== 
 
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
@@ -996,11 +996,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             } catch (err) {
-                // Invalid selector
+                // 无效的选择器兜底忽略
             }
         });
     });
 
-    // ===== Language switcher runtime moved to feature-language-switcher.js =====
+    // ===== 语言切换逻辑已迁移至 feature-language-switcher.js =====
 
 });

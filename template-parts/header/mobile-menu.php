@@ -1,6 +1,6 @@
 <?php
 /**
- * Header mobile menu.
+ * 页头移动端导航抽屉菜单模板。
  *
  * @package Developer_Starter
  */

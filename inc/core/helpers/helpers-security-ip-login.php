@@ -1,6 +1,6 @@
 <?php
 /**
- * Backward-compatible security IP login helper entry.
+ * 向后兼容的安全 IP 登录辅助函数入口。
  *
  * @deprecated 2.5.8 Use helpers-media-security-video.php instead.
  *

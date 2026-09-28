@@ -1,6 +1,6 @@
 <?php
 /**
- * Features Module - 企业优势
+ * 企业核心优势模块
  *
  * @package Developer_Starter
  */
@@ -70,6 +70,12 @@ class Features_Module extends Module_Base {
                     array( 'id' => 'title', 'label' => __( '优势标题', 'developer-starter' ), 'type' => 'text' ),
                     array( 'id' => 'desc', 'label' => __( '优势描述', 'developer-starter' ), 'type' => 'textarea' ),
                     array( 'id' => 'link', 'label' => __( '链接 (可选)', 'developer-starter' ), 'type' => 'text' ),
+                ),
+                'default_items' => array(
+                    array( 'icon' => '+', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队', 'Experienced Team' ) : __( '专业团队', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '拥有10年行业经验的专业团队。', 'A skilled team with years of hands-on delivery experience.' ) : __( '拥有10年行业经验的专业团队。', 'developer-starter' ) ),
+                    array( 'icon' => '+', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '优质服务', 'Reliable Service' ) : __( '优质服务', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '7x24小时全天候服务支持。', 'Responsive communication and dependable follow-through.' ) : __( '7x24小时全天候服务支持。', 'developer-starter' ) ),
+                    array( 'icon' => '+', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '价格透明', 'Transparent Pricing' ) : __( '价格透明', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无隐形消费，明码标价。', 'Clear pricing with no hidden fees or surprise add-ons.' ) : __( '无隐形消费，明码标价。', 'developer-starter' ) ),
+                    array( 'icon' => '+', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '品质保障', 'Quality Assurance' ) : __( '品质保障', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'ISO9001质量管理体系认证。', 'A process-focused approach to quality and consistency.' ) : __( 'ISO9001质量管理体系认证。', 'developer-starter' ) ),
                 ),
             ),
             
@@ -277,8 +283,8 @@ class Features_Module extends Module_Base {
         $icon_color = isset( $data['features_icon_color'] ) && !empty($data['features_icon_color']) ? $data['features_icon_color'] : 'var(--color-primary)';
         $icon_bg = isset( $data['features_icon_bg'] ) && !empty($data['features_icon_bg']) ? $data['features_icon_bg'] : 'var(--qiling-color-e0e7ff)';
         
-        // 默认数据
-        if ( empty( $items ) ) {
+        // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['features_items'] ) ) {
             $items = array(
                 array( 'icon' => '+', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队', 'Experienced Team' ) : __( '专业团队', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '拥有10年行业经验的专业团队。', 'A skilled team with years of hands-on delivery experience.' ) : __( '拥有10年行业经验的专业团队。', 'developer-starter' ) ),
                 array( 'icon' => '+', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '优质服务', 'Reliable Service' ) : __( '优质服务', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '7x24小时全天候服务支持。', 'Responsive communication and dependable follow-through.' ) : __( '7x24小时全天候服务支持。', 'developer-starter' ) ),
@@ -303,7 +309,7 @@ class Features_Module extends Module_Base {
             if ( ! empty( $data[ $field ] ) ) $css_vars[] = $variable . ': ' . $data[ $field ];
         }
         
-        // Title/Subtitle Styles
+        // 标题与副标题样式
         $title_style = '';
         if ( $title_size ) $title_style .= "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
@@ -336,7 +342,7 @@ class Features_Module extends Module_Base {
 
         $card_classes[] = 'hover-' . $hover_effect;
 
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-features" id="<?php echo esc_attr( $unique_id ); ?>" style="background: <?php echo esc_attr( $bg_color ); ?>; padding: <?php echo esc_attr( $padding ); ?>;">
@@ -363,7 +369,7 @@ class Features_Module extends Module_Base {
                             $href = $link ? ' href="' . esc_url( $link ) . '"' : '';
                             $link_class = $link ? ' has-link' : '';
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

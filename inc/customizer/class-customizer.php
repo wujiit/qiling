@@ -1,6 +1,6 @@
 <?php
 /**
- * Customizer Class
+ * 主题自定义器配置类
  *
  * @package Developer_Starter
  * @since 1.0.0
@@ -20,7 +20,7 @@ class Customizer {
     }
 
     public function register( $wp_customize ) {
-        // Header Section
+        // 页头配置区块
         $wp_customize->add_section( 'developer_starter_header', array(
             'title'    => __( '头部设置', 'developer-starter' ),
             'priority' => 40,
@@ -36,7 +36,7 @@ class Customizer {
             'section' => 'developer_starter_header',
         ) );
 
-        // Footer Section
+        // 页脚配置区块
         $wp_customize->add_section( 'developer_starter_footer', array(
             'title'    => __( '页脚设置', 'developer-starter' ),
             'priority' => 50,
@@ -54,7 +54,7 @@ class Customizer {
     }
 
     /**
-     * Keep the legacy Customizer primary color in sync with the theme option store.
+     * 保持旧版自定义器主题主色与设计令牌配置同步。
      *
      * @return void
      */

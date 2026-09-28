@@ -1,6 +1,6 @@
 <?php
 /**
- * Qiling forms bridge and frontend logout helpers split from functions.php.
+ * 从 functions.php 拆分出的启灵表单桥接与前台注销辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

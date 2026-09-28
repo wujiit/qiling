@@ -1,6 +1,6 @@
 <?php
 /**
- * Database schema migration service.
+ * 数据库表结构迁移服务。
  *
  * @package Developer_Starter
  */
@@ -12,17 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Shared service for theme-owned custom table migrations.
+ * 主题专属数据表迁移共享服务。
  */
 class Database_Schema_Migration_Service {
 
     /**
-     * Default migration lock TTL in seconds.
+     * 默认迁移锁超时时间（秒）。
      */
     const DEFAULT_LOCK_TTL = 300;
 
     /**
-     * Whether the current admin request may run schema migrations.
+     * 检测当前后台请求是否有权执行表结构迁移。
      *
      * @return bool
      */
@@ -31,7 +31,7 @@ class Database_Schema_Migration_Service {
     }
 
     /**
-     * Run a locked schema migration and persist the target schema version.
+     * 在加锁保护下执行数据库结构迁移并记录目标版本号。
      *
      * @param array<string,mixed> $args Migration arguments.
      * @return bool Whether the migration callback ran.
@@ -89,7 +89,7 @@ class Database_Schema_Migration_Service {
     }
 
     /**
-     * Apply one or more dbDelta table schemas.
+     * 应用一个或多个 dbDelta 数据表结构升级。
      *
      * @param string|array<int,string> $schemas SQL schema string(s).
      * @return void
@@ -116,7 +116,7 @@ class Database_Schema_Migration_Service {
     }
 
     /**
-     * Decide whether a stored schema version should be migrated.
+     * 判断当前存储的表结构版本是否需要执行迁移。
      *
      * @param mixed  $installed_version Installed version.
      * @param string $target_version    Target version.
@@ -134,7 +134,7 @@ class Database_Schema_Migration_Service {
     }
 
     /**
-     * Acquire a non-autoloaded option lock.
+     * 获取非自动加载（autoload=off）的选项锁。
      *
      * @param string $lock_option Lock option name.
      * @param int    $lock_ttl    Lock TTL in seconds.
@@ -156,7 +156,7 @@ class Database_Schema_Migration_Service {
     }
 
     /**
-     * Release a migration lock.
+     * 释放数据库迁移锁。
      *
      * @param string $lock_option Lock option name.
      * @return void
@@ -166,7 +166,7 @@ class Database_Schema_Migration_Service {
     }
 
     /**
-     * Normalize option names used by the migration service.
+     * 规范化迁移服务使用的配置选项名称。
      *
      * @param mixed $option Option name.
      * @return string

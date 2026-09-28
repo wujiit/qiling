@@ -1,6 +1,6 @@
 <?php
 /**
- * Central runtime logging helpers.
+ * 集中式运行时日志记录辅助函数。
  *
  * @package Developer_Starter
  */

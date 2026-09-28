@@ -1,6 +1,6 @@
 <?php
 /**
- * Cases Module - 成功案例模块
+ * 成功案例展示模块
  *
  * @package Developer_Starter
  * @since 1.0.0
@@ -33,6 +33,21 @@ class Cases_Module extends Module_Base {
     public function get_fields() {
         return array(
             array( 'id' => 'cases_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => __( '成功案例', 'developer-starter' ) ),
+            array( 'id' => 'cases_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'cases_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'cases_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array(
+                'id'          => 'cases_items',
+                'type'        => 'repeater',
+                'label'       => __( '案例列表 (手动版)', 'developer-starter' ),
+                'description' => __( '填写后优先展示自定义案例列表；留空时自动读取案例文章。', 'developer-starter' ),
+                'fields'      => array(
+                    array( 'id' => 'image', 'type' => 'image', 'label' => __( '案例图片', 'developer-starter' ) ),
+                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '案例标题', 'developer-starter' ) ),
+                    array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '案例描述', 'developer-starter' ) ),
+                    array( 'id' => 'link', 'type' => 'text', 'label' => __( '跳转链接', 'developer-starter' ), 'default' => '#' ),
+                ),
+            ),
             array( 'id' => 'module_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ), 'default' => '' ),
             array( 'id' => 'cases_padding_top', 'type' => 'text', 'label' => __( '上边距', 'developer-starter' ), 'default' => '80px' ),
             array( 'id' => 'cases_padding_bottom', 'type' => 'text', 'label' => __( '下边距', 'developer-starter' ), 'default' => '80px' ),
@@ -64,6 +79,11 @@ class Cases_Module extends Module_Base {
         $title = isset( $data['cases_title'] ) && $data['cases_title'] !== ''
             ? $data['cases_title']
             : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '成功案例', 'Case Studies' ) : __( '成功案例', 'developer-starter' ) );
+        $subtitle = isset( $data['cases_subtitle'] ) ? $data['cases_subtitle'] : '';
+        $title_color = isset( $data['cases_title_color'] ) ? $data['cases_title_color'] : '';
+        $subtitle_color = isset( $data['cases_subtitle_color'] ) ? $data['cases_subtitle_color'] : '';
+        $manual_items = isset( $data['cases_items'] ) && is_array( $data['cases_items'] ) ? $data['cases_items'] : array();
+        
         $count = isset( $data['cases_count'] ) && $data['cases_count'] !== '' ? intval( $data['cases_count'] ) : 6;
         $columns = isset( $data['cases_columns'] ) && $data['cases_columns'] !== '' ? $data['cases_columns'] : '3';
         $categories = isset( $data['cases_categories'] ) ? $data['cases_categories'] : '';
@@ -79,6 +99,9 @@ class Cases_Module extends Module_Base {
         if ( '' !== $bg_color ) {
             $section_style .= false !== strpos( $bg_color, 'gradient' ) ? "background:{$bg_color};" : "background-color:{$bg_color};";
         }
+        
+        $title_style = $title_color ? "color:{$title_color};" : '';
+        $subtitle_style = $subtitle_color ? "color:{$subtitle_color};" : '';
         
         // 解析分类
         $cat_ids = array();
@@ -129,13 +152,16 @@ class Cases_Module extends Module_Base {
         }
         $module_id = 'cases-module-' . uniqid();
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-cases" id="<?php echo esc_attr( $module_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
+                    <h2 class="section-title"<?php echo $title_style ? ' style="' . esc_attr( $title_style ) . '"' : ''; ?>><?php echo esc_html( $title ); ?></h2>
+                    <?php if ( $subtitle ) : ?>
+                        <p class="section-subtitle"<?php echo $subtitle_style ? ' style="' . esc_attr( $subtitle_style ) . '"' : ''; ?>><?php echo esc_html( $subtitle ); ?></p>
+                    <?php endif; ?>
                 </div>
                 
                 <?php if ( count( $category_list ) > 1 ) : ?>
@@ -151,7 +177,46 @@ class Cases_Module extends Module_Base {
                     </div>
                 <?php endif; ?>
 
-                <?php if ( $query->have_posts() ) : ?>
+                <?php if ( ! empty( $manual_items ) ) : ?>
+                    <div class="cases-grid grid-cols-<?php echo esc_attr( $columns ); ?>">
+                        <?php foreach ( $manual_items as $index => $item ) : 
+                            $image_url = isset( $item['image'] ) ? $item['image'] : '';
+                            $item_title = isset( $item['title'] ) ? $item['title'] : '';
+                            $item_desc = isset( $item['desc'] ) ? $item['desc'] : '';
+                            $item_link = isset( $item['link'] ) && '' !== $item['link'] ? $item['link'] : '#';
+                            $anim_attr = '';
+                            if ( $enable_anim === 'yes' ) {
+                                $anim_attr = $this->get_staggered_animation_attr( $index );
+                            }
+                        ?>
+                            <div class="case-card" style="background: var(--color-neutral-0); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px var(--qiling-color-rgba-0-0-0-005);" <?php echo $anim_attr; ?>>
+                                <?php if ( $show_image ) : ?>
+                                    <a href="<?php echo esc_url( $item_link ); ?>" class="case-thumb" style="display: block; height: <?php echo esc_attr( $image_height ); ?>; overflow: hidden; position: relative;">
+                                        <?php if ( $image_url ) : ?>
+                                            <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $item_title ); ?>" style="width: 100%; height: 100%; object-fit: cover;" />
+                                        <?php else : ?>
+                                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-neutral-200) 100%); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
+                                                <span class="dashicons dashicons-format-image" style="font-size: var(--qiling-text-rem-3);"></span>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="case-overlay" style="position: absolute; inset: 0; background: var(--qiling-color-rgba-0-0-0-04); opacity: 0; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center;">
+                                            <span style="color: var(--color-text-inverse); font-size: var(--qiling-text-rem-0p9);"><?php echo esc_html( $detail_text ); ?></span>
+                                        </div>
+                                    </a>
+                                <?php endif; ?>
+                                
+                                <div class="case-info" style="padding: var(--qiling-space-15);">
+                                    <h3 class="case-title" style="margin: 0; font-size: var(--qiling-text-rem-1);">
+                                        <a href="<?php echo esc_url( $item_link ); ?>" style="color: var(--qiling-component-post-card-title-color); text-decoration: none;"><?php echo esc_html( $item_title ); ?></a>
+                                    </h3>
+                                    <?php if ( $item_desc ) : ?>
+                                        <p class="case-desc" style="margin: 8px 0 0; font-size: var(--qiling-text-rem-0p9); color: var(--color-text-muted); line-height: 1.5;"><?php echo esc_html( $item_desc ); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php elseif ( $query->have_posts() ) : ?>
                     <div class="cases-grid grid-cols-<?php echo esc_attr( $columns ); ?>">
                         <?php while ( $query->have_posts() ) : $query->the_post(); 
                             // 获取封面图片 - 优先特色图片，其次文章第一张图片
@@ -174,7 +239,7 @@ class Cases_Module extends Module_Base {
                                 $image_url = developer_starter_get_first_image( get_the_ID() );
                             }
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $query->current_post );

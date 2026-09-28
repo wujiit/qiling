@@ -1,6 +1,6 @@
 <?php
 /**
- * Cache-control helpers split from functions.php.
+ * 从 functions.php 拆分出的缓存控制辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -38506,3 +38506,471 @@ msgstr ""
 #: inc/admin/traits/field-render/class-admin-settings-field-render-tools-trait.php:294
 msgid "wp-cron.php 文件可用，且未检测到 DISABLE_WP_CRON=true。"
 msgstr ""
+
+#: inc/modules/modules/class-features-module.php:157 inc/modules/modules/class-services-module.php:99 inc/modules/modules/class-columns-module.php:98
+msgid "卡片悬停边框颜色"
+msgstr "Card Hover Border Color"
+
+#: inc/modules/modules/class-features-module.php:158 inc/modules/modules/class-columns-module.php:99
+msgid "卡片标题颜色"
+msgstr "Card Title Color"
+
+#: inc/modules/modules/class-features-module.php:159
+msgid "卡片描述颜色"
+msgstr "Card Description Color"
+
+#: inc/modules/modules/class-services-module.php:97 inc/modules/modules/class-columns-module.php:96
+msgid "卡片背景颜色"
+msgstr "Card Background Color"
+
+#: inc/modules/modules/class-services-module.php:100
+msgid "项目标题颜色"
+msgstr "Item Title Color"
+
+#: inc/modules/modules/class-services-module.php:101
+msgid "项目描述颜色"
+msgstr "Item Description Color"
+
+#: inc/modules/modules/class-services-module.php:102
+msgid "图标文字颜色"
+msgstr "Icon Text Color"
+
+#: inc/modules/modules/class-services-module.php:103
+msgid "图标背景颜色"
+msgstr "Icon Background Color"
+
+#: inc/modules/modules/class-services-module.php:104
+msgid "顶部强调色"
+msgstr "Top Accent Color"
+
+#: inc/modules/modules/class-pricing-module.php:114
+msgid "方案布局模式"
+msgstr "Plan Layout Mode"
+
+#: inc/modules/modules/class-pricing-module.php:116
+msgid "跟随原有样式"
+msgstr "Inherit Original Style"
+
+#: inc/modules/modules/class-pricing-module.php:117
+msgid "连体方案"
+msgstr "Connected Plans"
+
+#: inc/modules/modules/class-pricing-module.php:118
+msgid "独立卡片"
+msgstr "Separate Cards"
+
+#: inc/modules/modules/class-pricing-module.php:121
+msgid "连体方案使用一个共同外框，方案之间没有空白；独立卡片让每个方案单独成卡并保留间距。"
+msgstr "Connected plans share an outer frame with no gaps; separate cards display each plan independently with spacing."
+
+#: inc/modules/modules/class-pricing-module.php:144
+msgid "留空时跟随页面预设/全局徽章颜色。"
+msgstr "Leave blank to inherit the page preset or global badge color."
+
+msgid ""
+"✓ 基础功能支持\n"
+"✓ 5GB 存储空间\n"
+"✓ 邮件支持\n"
+"✗ 高级分析\n"
+"✗ API 接口"
+msgstr ""
+"✓ Basic Features Supported\n"
+"✓ 5GB Cloud Storage\n"
+"✓ Email Support\n"
+"✗ Advanced Analytics\n"
+"✗ API Access"
+
+msgid ""
+"✓ 全部基础功能\n"
+"✓ 50GB 存储空间\n"
+"✓ 优先技术支持\n"
+"✓ 高级数据分析\n"
+"✓ API 接口"
+msgstr ""
+"✓ All Basic Features\n"
+"✓ 50GB Cloud Storage\n"
+"✓ Priority Technical Support\n"
+"✓ Advanced Analytics\n"
+"✓ API Access"
+
+msgid ""
+"✓ 全部专业功能\n"
+"✓ 无限存储空间\n"
+"✓ 7×24专属客服\n"
+"✓ 定制化开发\n"
+"✓ 专属客户经理"
+msgstr ""
+"✓ All Pro Features\n"
+"✓ Unlimited Storage\n"
+"✓ 24/7 Dedicated Support\n"
+"✓ Custom Development\n"
+"✓ Dedicated Account Manager"
+
+#: inc/modules/modules/class-faq-module.php:101
+msgid "问题卡片背景"
+msgstr "Question Card Background"
+
+#: inc/modules/modules/class-faq-module.php:102
+msgid "问题卡片边框"
+msgstr "Question Card Border"
+
+#: inc/modules/modules/class-faq-module.php:104
+msgid "问题文字颜色"
+msgstr "Question Text Color"
+
+#: inc/modules/modules/class-faq-module.php:105
+msgid "回答文字颜色"
+msgstr "Answer Text Color"
+
+msgid "卡片边框颜色"
+msgstr "Card Border Color"
+
+#: inc/modules/modules/class-process-module.php:53
+msgid "步骤卡片背景"
+msgstr "Step Card Background"
+
+#: inc/modules/modules/class-process-module.php:54
+msgid "步骤卡片边框"
+msgstr "Step Card Border"
+
+msgid "卡片悬停背景"
+msgstr "Card Hover Background"
+
+#: inc/modules/modules/class-faq-module.php:103 inc/modules/modules/class-process-module.php:55
+msgid "卡片悬停边框"
+msgstr "Card Hover Border"
+
+msgid "序号文字颜色"
+msgstr "Index Number Text Color"
+
+msgid "序号背景颜色"
+msgstr "Index Number Background Color"
+
+msgid "步骤标题颜色"
+msgstr "Step Title Color"
+
+msgid "步骤描述颜色"
+msgstr "Step Description Color"
+
+#: inc/modules/modules/class-banner-module.php:150
+msgid "单卡片背景"
+msgstr "Single Card Background"
+
+#: inc/modules/modules/class-banner-module.php:151
+msgid "单卡片边框"
+msgstr "Single Card Border"
+
+msgid "微件背景颜色"
+msgstr "Widget Background Color"
+
+msgid "微件边框颜色"
+msgstr "Widget Border Color"
+
+msgid "微件主色调"
+msgstr "Widget Primary Accent Color"
+
+msgid "微件辅色调"
+msgstr "Widget Secondary Accent Color"
+
+msgid "微件文字颜色"
+msgstr "Widget Text Color"
+
+msgid "微件数字颜色"
+msgstr "Widget Number Color"
+
+msgid "主按钮背景颜色"
+msgstr "Primary Button Background Color"
+
+msgid "主按钮文字颜色"
+msgstr "Primary Button Text Color"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:351 inc/modules/modules/class-interact-hero-module.php:91
+msgid "主按钮边框颜色"
+msgstr "Primary Button Border Color"
+
+msgid "主按钮悬停背景颜色"
+msgstr "Primary Button Hover Background Color"
+
+msgid "主按钮悬停文字颜色"
+msgstr "Primary Button Hover Text Color"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:364
+msgid "主按钮悬停边框颜色"
+msgstr "Primary Button Hover Border Color"
+
+msgid "次按钮背景颜色"
+msgstr "Secondary Button Background Color"
+
+msgid "次按钮文字颜色"
+msgstr "Secondary Button Text Color"
+
+msgid "次按钮边框颜色"
+msgstr "Secondary Button Border Color"
+
+msgid "次按钮悬停背景颜色"
+msgstr "Secondary Button Hover Background Color"
+
+msgid "次按钮悬停文字颜色"
+msgstr "Secondary Button Hover Text Color"
+
+msgid "次按钮悬停边框颜色"
+msgstr "Secondary Button Hover Border Color"
+
+msgid "统计数字颜色"
+msgstr "Stats Number Color"
+
+msgid "统计标签颜色"
+msgstr "Stats Label Color"
+
+msgid "卡片悬停上移距离 (px)"
+msgstr "Card Hover Lift Distance (px)"
+
+msgid "单卡片背景颜色"
+msgstr "Single Card Background Color"
+
+msgid "单卡片边框颜色"
+msgstr "Single Card Border Color"
+
+msgid "数字颜色"
+msgstr "Number Color"
+
+msgid "留空时跟随项目标题颜色。"
+msgstr "Leave blank to follow item title color."
+
+msgid "留空时跟随项目描述颜色。"
+msgstr "Leave blank to follow item description color."
+
+msgid "留空时跟随主按钮背景颜色。"
+msgstr "Leave blank to follow primary button background color."
+
+msgid "留空时跟随主按钮文字颜色。"
+msgstr "Leave blank to follow primary button text color."
+
+msgid "留空时跟随主按钮边框颜色。"
+msgstr "Leave blank to follow primary button border color."
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:364
+msgid "留空时跟随主按钮悬停背景颜色。"
+msgstr "Leave blank to follow primary button hover background color."
+
+msgid "留空时跟随主按钮悬停文字颜色。"
+msgstr "Leave blank to follow primary button hover text color."
+
+msgid "留空时跟随主按钮悬停边框颜色。"
+msgstr "Leave blank to follow primary button hover border color."
+
+msgid "下载按钮背景颜色"
+msgstr "Download Button Background Color"
+
+msgid "下载按钮文字颜色"
+msgstr "Download Button Text Color"
+
+#: inc/modules/modules/class-downloads-module.php:95
+msgid "下载按钮边框颜色"
+msgstr "Download Button Border Color"
+
+msgid "下载按钮悬停背景颜色"
+msgstr "Download Button Hover Background Color"
+
+msgid "下载按钮悬停文字颜色"
+msgstr "Download Button Hover Text Color"
+
+#: inc/modules/modules/class-downloads-module.php:110
+msgid "下载按钮悬停边框颜色"
+msgstr "Download Button Hover Border Color"
+
+msgid "活动按钮背景颜色"
+msgstr "Event Button Background Color"
+
+msgid "活动按钮文字颜色"
+msgstr "Event Button Text Color"
+
+#: inc/modules/modules/class-promotion-module.php:262
+msgid "活动按钮边框颜色"
+msgstr "Event Button Border Color"
+
+msgid "活动按钮悬停背景颜色"
+msgstr "Event Button Hover Background Color"
+
+msgid "活动按钮悬停文字颜色"
+msgstr "Event Button Hover Text Color"
+
+#: inc/modules/modules/class-promotion-module.php:277
+msgid "活动按钮悬停边框颜色"
+msgstr "Event Button Hover Border Color"
+
+msgid "预订按钮背景颜色"
+msgstr "Booking Button Background Color"
+
+msgid "预订按钮文字颜色"
+msgstr "Booking Button Text Color"
+
+#: inc/modules/modules/class-room-showcase-module.php:276
+msgid "预订按钮边框颜色"
+msgstr "Booking Button Border Color"
+
+msgid "预订按钮悬停背景颜色"
+msgstr "Booking Button Hover Background Color"
+
+msgid "预订按钮悬停文字颜色"
+msgstr "Booking Button Hover Text Color"
+
+#: inc/modules/modules/class-room-showcase-module.php:291
+msgid "预订按钮悬停边框颜色"
+msgstr "Booking Button Hover Border Color"
+
+msgid "购票按钮背景颜色"
+msgstr "Ticket Button Background Color"
+
+msgid "购票按钮文字颜色"
+msgstr "Ticket Button Text Color"
+
+#: inc/modules/modules/class-ticket-showcase-module.php:271
+msgid "购票按钮边框颜色"
+msgstr "Ticket Button Border Color"
+
+msgid "购票按钮悬停背景颜色"
+msgstr "Ticket Button Hover Background Color"
+
+msgid "购票按钮悬停文字颜色"
+msgstr "Ticket Button Hover Text Color"
+
+#: inc/modules/modules/class-ticket-showcase-module.php:286
+msgid "购票按钮悬停边框颜色"
+msgstr "Ticket Button Hover Border Color"
+
+msgid "面板按钮背景颜色"
+msgstr "Panel Button Background Color"
+
+msgid "面板按钮文字颜色"
+msgstr "Panel Button Text Color"
+
+#: inc/modules/modules/class-visual-tabs-module.php:139
+msgid "面板按钮边框颜色"
+msgstr "Panel Button Border Color"
+
+msgid "面板按钮悬停背景颜色"
+msgstr "Panel Button Hover Background Color"
+
+msgid "面板按钮悬停文字颜色"
+msgstr "Panel Button Hover Text Color"
+
+#: inc/modules/modules/class-visual-tabs-module.php:154
+msgid "面板按钮悬停边框颜色"
+msgstr "Panel Button Hover Border Color"
+
+#: inc/modules/modules/class-contact-module.php:110
+msgid "内置表单提交按钮背景颜色"
+msgstr "Built-in Form Submit Button Background Color"
+
+#: inc/modules/modules/class-contact-module.php:111
+msgid "内置表单提交按钮文字颜色"
+msgstr "Built-in Form Submit Button Text Color"
+
+#: inc/modules/modules/class-contact-module.php:112
+msgid "内置表单提交按钮边框颜色"
+msgstr "Built-in Form Submit Button Border Color"
+
+#: inc/modules/modules/class-contact-module.php:113
+msgid "内置表单提交按钮悬停背景颜色"
+msgstr "Built-in Form Submit Button Hover Background Color"
+
+#: inc/modules/modules/class-contact-module.php:114
+msgid "内置表单提交按钮悬停文字颜色"
+msgstr "Built-in Form Submit Button Hover Text Color"
+
+#: inc/modules/modules/class-contact-module.php:115
+msgid "内置表单提交按钮悬停边框颜色"
+msgstr "Built-in Form Submit Button Hover Border Color"
+
+msgid "浅色按钮背景颜色"
+msgstr "Light Button Background Color"
+
+msgid "浅色按钮文字颜色"
+msgstr "Light Button Text Color"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:377
+msgid "浅色按钮边框颜色"
+msgstr "Light Button Border Color"
+
+msgid "浅色按钮悬停背景颜色"
+msgstr "Light Button Hover Background Color"
+
+msgid "浅色按钮悬停文字颜色"
+msgstr "Light Button Hover Text Color"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:390
+msgid "浅色按钮悬停边框颜色"
+msgstr "Light Button Hover Border Color"
+
+msgid "操作按钮背景颜色"
+msgstr "Action Button Background Color"
+
+msgid "操作按钮文字颜色"
+msgstr "Action Button Text Color"
+
+#: inc/modules/modules/class-compliance-trust-module.php:124
+msgid "操作按钮边框颜色"
+msgstr "Action Button Border Color"
+
+msgid "操作按钮悬停背景颜色"
+msgstr "Action Button Hover Background Color"
+
+msgid "操作按钮悬停文字颜色"
+msgstr "Action Button Hover Text Color"
+
+msgid "操作按钮悬停边框颜色"
+msgstr "Action Button Hover Border Color"
+
+msgid "按钮文字颜色"
+msgstr "Button Text Color"
+
+msgid "按钮背景颜色"
+msgstr "Button Background Color"
+
+msgid "按钮悬停背景颜色"
+msgstr "Button Hover Background Color"
+
+msgid "按钮悬停文字颜色"
+msgstr "Button Hover Text Color"
+
+#: inc/modules/modules/class-cases-module.php:42
+msgid "案例列表 (手动版)"
+msgstr "Cases List (Manual Edition)"
+
+msgid "如果配置了此列表，将优先展示这里设置的案例；若为空则自动展示文章/案例分类。"
+msgstr "If configured, cases listed here will take priority; if empty, posts/cases will be displayed automatically."
+
+#: inc/modules/modules/class-cases-module.php:45
+msgid "案例图片"
+msgstr "Case Image"
+
+#: inc/modules/modules/class-cases-module.php:46
+msgid "案例标题"
+msgstr "Case Title"
+
+#: inc/modules/modules/class-cases-module.php:47
+msgid "案例描述"
+msgstr "Case Description"
+
+msgid "案例链接"
+msgstr "Case URL"
+
+msgid "案例分类/标签"
+msgstr "Case Category / Tag"
+
+msgid "例如：Web前端 / UI设计"
+msgstr "e.g. Web Frontend / UI Design"
+
+msgid "专属联系页面"
+msgstr "Dedicated Contact Page"
+
+msgid "选择预设的联系页面（例如联系我们页面），用户点击联系卡片或更多方式时将跳转至此页面。"
+msgstr "Select a predefined contact page (e.g. Contact Us page); users will be redirected here when clicking cards."
+
+msgid "选择联系页面..."
+msgstr "Select Contact Page..."
+
+msgid "徽章背景颜色"
+msgstr "Badge Background Color"
+

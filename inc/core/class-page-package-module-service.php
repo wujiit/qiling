@@ -1,6 +1,6 @@
 <?php
 /**
- * Page Package Module Service
+ * 页面包模块服务
  *
  * 负责多页面数据包里的模块 schema 构建、白名单过滤与导入前清洗。
  *

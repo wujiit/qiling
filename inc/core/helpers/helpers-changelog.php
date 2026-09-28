@@ -1,6 +1,6 @@
 <?php
 /**
- * Changelog template helpers.
+ * 更新日志页面模板辅助函数。
  *
  * @package Developer_Starter
  * @since 2.5.0
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_resolve_page_template_slug' ) ) {
     /**
-     * Resolve a page template slug from the current request or stored post meta.
+     * 从当前请求或存储的文章 Meta 中解析页面模板标识。
      *
      * @param int         $post_id  Post ID.
      * @param string|null $template Optional template slug.
@@ -53,7 +53,7 @@ if ( ! function_exists( 'developer_starter_resolve_page_template_slug' ) ) {
 
 if ( ! function_exists( 'developer_starter_is_changelog_template_page' ) ) {
     /**
-     * Whether the post is using the changelog template.
+     * 检测当前文章/页面是否正在使用更新日志模板。
      *
      * @param int         $post_id  Post ID.
      * @param string|null $template Optional template slug.
@@ -71,7 +71,7 @@ if ( ! function_exists( 'developer_starter_is_changelog_template_page' ) ) {
 
 if ( ! function_exists( 'developer_starter_cleanup_changelog_markup' ) ) {
     /**
-     * Remove editor-only artifacts while keeping visible changelog HTML intact.
+     * 清理编辑器专用的临时属性，保持前台可见更新日志内容完整。
      *
      * @param string $html Source HTML.
      * @return string
@@ -96,7 +96,7 @@ if ( ! function_exists( 'developer_starter_cleanup_changelog_markup' ) ) {
 
 if ( ! function_exists( 'developer_starter_cleanup_changelog_section_html' ) ) {
     /**
-     * Remove empty wrappers left behind by editor normalization.
+     * 清理编辑器规范化过程中残留的空白外层容器。
      *
      * @param string $html Section HTML.
      * @return string
@@ -126,7 +126,7 @@ if ( ! function_exists( 'developer_starter_cleanup_changelog_section_html' ) ) {
 
 if ( ! function_exists( 'developer_starter_extract_changelog_date_from_title' ) ) {
     /**
-     * Extract the changelog date from a heading title.
+     * 从标题文本中提取更新日志日期。
      *
      * @param string $title Entry title.
      * @return string
@@ -144,7 +144,7 @@ if ( ! function_exists( 'developer_starter_extract_changelog_date_from_title' ) 
 
 if ( ! function_exists( 'developer_starter_get_changelog_dom_load_flags' ) ) {
     /**
-     * Build libxml flags used for changelog fragment parsing.
+     * 构建用于更新日志片段解析的 libxml 标志。
      *
      * @return int
      */
@@ -165,7 +165,7 @@ if ( ! function_exists( 'developer_starter_get_changelog_dom_load_flags' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_changelog_dom_node_html' ) ) {
     /**
-     * Serialize a DOM node back to HTML.
+     * 将 DOM 节点序列化回 HTML 字符串。
      *
      * @param DOMNode $node DOM node.
      * @return string
@@ -182,7 +182,7 @@ if ( ! function_exists( 'developer_starter_get_changelog_dom_node_html' ) ) {
 
 if ( ! function_exists( 'developer_starter_changelog_node_has_headings' ) ) {
     /**
-     * Whether a DOM node contains any heading elements.
+     * 检测 DOM 节点是否包含任何标题标签（H1-H6）。
      *
      * @param DOMNode $node DOM node.
      * @return bool
@@ -208,7 +208,7 @@ if ( ! function_exists( 'developer_starter_changelog_node_has_headings' ) ) {
 
 if ( ! function_exists( 'developer_starter_is_changelog_transparent_wrapper' ) ) {
     /**
-     * Whether a tag should be flattened when it only wraps changelog headings/body nodes.
+     * 检测标签是否仅为更新日志标题或内容的纯容器，若是则展平剥离。
      *
      * @param string $tag_name Element tag name.
      * @return bool
@@ -224,7 +224,7 @@ if ( ! function_exists( 'developer_starter_is_changelog_transparent_wrapper' ) )
 
 if ( ! function_exists( 'developer_starter_collect_changelog_dom_chunks' ) ) {
     /**
-     * Flatten changelog DOM nodes into headings and body chunks in document order.
+     * 按文档流顺序将更新日志 DOM 节点展平为标题与内容块。
      *
      * @param DOMNode                                       $node   Root node.
      * @param array<int,array<string,string>>               $chunks Parsed chunks.
@@ -299,7 +299,7 @@ if ( ! function_exists( 'developer_starter_collect_changelog_dom_chunks' ) ) {
 
 if ( ! function_exists( 'developer_starter_split_changelog_sections_with_dom' ) ) {
     /**
-     * Split changelog content with DOM parsing first so pasted classic-editor HTML can be repaired.
+     * 优先通过 DOM 解析切分更新日志，自动修复经典编辑器粘贴的异常结构。
      *
      * @param string $content Raw post content.
      * @return array<int,array<string,mixed>>
@@ -402,7 +402,7 @@ if ( ! function_exists( 'developer_starter_split_changelog_sections_with_dom' ) 
 
 if ( ! function_exists( 'developer_starter_split_changelog_sections_with_regex' ) ) {
     /**
-     * Legacy regex splitter kept as a fallback when DOM parsing is unavailable.
+     * 在无法使用 DOM 解析时作为兜底的历史正则分节器。
      *
      * @param string $content Raw post content.
      * @return array<int,array<string,mixed>>
@@ -458,7 +458,7 @@ if ( ! function_exists( 'developer_starter_split_changelog_sections_with_regex' 
 
 if ( ! function_exists( 'developer_starter_get_changelog_sections_score' ) ) {
     /**
-     * Score parsed sections so we can prefer the more complete changelog split result.
+     * 对解析后的分节评分，优先选取结构更完整的更新日志切分结果。
      *
      * @param array<int,array<string,mixed>> $sections Parsed sections.
      * @return int
@@ -483,7 +483,7 @@ if ( ! function_exists( 'developer_starter_get_changelog_sections_score' ) ) {
 
 if ( ! function_exists( 'developer_starter_split_changelog_sections' ) ) {
     /**
-     * Split changelog content into heading-based sections.
+     * 将更新日志内容按标题分节切分。
      *
      * @param string $content Raw post content.
      * @return array<int,array<string,mixed>>
@@ -515,7 +515,7 @@ if ( ! function_exists( 'developer_starter_split_changelog_sections' ) ) {
 
 if ( ! function_exists( 'developer_starter_normalize_changelog_sections' ) ) {
     /**
-     * Collapse duplicate changelog versions while preferring the latest edited body.
+     * 合并更新日志中的重复版本条目，优先保留最新正文。
      *
      * @param array<int,array<string,mixed>> $sections Parsed sections.
      * @return array<int,array<string,mixed>>
@@ -581,7 +581,7 @@ if ( ! function_exists( 'developer_starter_normalize_changelog_sections' ) ) {
 
 if ( ! function_exists( 'developer_starter_extract_changelog_downloads' ) ) {
     /**
-     * Extract download links from a changelog section.
+     * 从更新日志分节中提取下载链接。
      *
      * @param string $html Section HTML.
      * @return array<int,array<string,string>>
@@ -610,7 +610,7 @@ if ( ! function_exists( 'developer_starter_extract_changelog_downloads' ) ) {
 
 if ( ! function_exists( 'developer_starter_remove_changelog_download_markup' ) ) {
     /**
-     * Remove standalone download link paragraphs from displayed content.
+     * 从前台展示内容中移除单独成段的下载链接段落。
      *
      * @param string $html Section HTML.
      * @return string
@@ -627,7 +627,7 @@ if ( ! function_exists( 'developer_starter_remove_changelog_download_markup' ) )
 
 if ( ! function_exists( 'developer_starter_render_changelog_section_html' ) ) {
     /**
-     * Apply normal content filters after the section structure has been stabilized.
+     * 在分节结构稳定后应用常规内容过滤器。
      *
      * @param string $html Section HTML.
      * @return string
@@ -645,7 +645,7 @@ if ( ! function_exists( 'developer_starter_render_changelog_section_html' ) ) {
 
 if ( ! function_exists( 'developer_starter_parse_changelog' ) ) {
     /**
-     * Parse changelog content for front-end rendering.
+     * 解析更新日志内容用于前台分节渲染。
      *
      * @param string $content Raw post content.
      * @return array<int,array<string,mixed>>
@@ -674,7 +674,7 @@ if ( ! function_exists( 'developer_starter_parse_changelog' ) ) {
 
 if ( ! function_exists( 'developer_starter_build_changelog_content' ) ) {
     /**
-     * Rebuild normalized changelog HTML for storage.
+     * 重建规范化后的更新日志 HTML 用于数据库存储。
      *
      * @param array<int,array<string,mixed>> $sections Normalized changelog sections.
      * @return string
@@ -716,7 +716,7 @@ if ( ! function_exists( 'developer_starter_build_changelog_content' ) ) {
 
 if ( ! function_exists( 'developer_starter_normalize_changelog_source_content' ) ) {
     /**
-     * Normalize changelog source content before storing it back to the database.
+     * 在存入数据库前规范化更新日志源码内容。
      *
      * @param string $content Raw post content.
      * @return string
@@ -734,7 +734,7 @@ if ( ! function_exists( 'developer_starter_normalize_changelog_source_content' )
 
 if ( ! function_exists( 'developer_starter_changelog_contains_classic_editor_artifacts' ) ) {
     /**
-     * Detect TinyMCE/classic-editor markers that should never be kept in source content.
+     * 检测并清理正文中残留的经典编辑器/TinyMCE 标记。
      *
      * @param string $content Raw post content.
      * @return bool
@@ -751,7 +751,7 @@ if ( ! function_exists( 'developer_starter_changelog_contains_classic_editor_art
 
 if ( ! function_exists( 'developer_starter_changelog_has_duplicate_sections' ) ) {
     /**
-     * Detect duplicate changelog headings, which usually indicates classic-editor residue.
+     * 检测重复的更新日志标题标记（通常因经典编辑器粘贴产生）。
      *
      * @param string $content Raw post content.
      * @return bool
@@ -784,7 +784,7 @@ if ( ! function_exists( 'developer_starter_changelog_has_duplicate_sections' ) )
 
 if ( ! function_exists( 'developer_starter_should_normalize_changelog_source_content' ) ) {
     /**
-     * Only normalize stored changelog HTML when we detect classic-editor corruption signals.
+     * 仅在检测到经典编辑器混入的格式标记时规范化存储的更新日志 HTML。
      *
      * @param string $content Raw post content.
      * @return bool
@@ -797,7 +797,7 @@ if ( ! function_exists( 'developer_starter_should_normalize_changelog_source_con
 
 if ( ! function_exists( 'developer_starter_normalize_changelog_compare_string' ) ) {
     /**
-     * Normalize strings before comparing stored changelog content.
+     * 在比对存储的更新日志内容前规范化字符串。
      *
      * @param string $content Changelog content.
      * @return string
@@ -811,7 +811,7 @@ if ( ! function_exists( 'developer_starter_normalize_changelog_compare_string' )
 
 if ( ! function_exists( 'developer_starter_normalize_changelog_page_content_on_save' ) ) {
     /**
-     * Stabilize classic-editor changelog HTML after saving the page.
+     * 在保存页面后稳定经典编辑器更新日志 HTML 结构。
      *
      * @param int      $post_id Post ID.
      * @param WP_Post  $post    Saved post object.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog visual preset manager.
+ * 博客视觉预设管理器。
  *
  * @package Developer_Starter
  */
@@ -14,49 +14,49 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Blog_Visual_Manager {
 
     /**
-     * Global theme option key.
+     * 全局主题配置选项键名。
      *
      * @var string
      */
     private const OPTION_KEY = 'blog_visual_preset';
 
     /**
-     * Page-level preset override meta key.
+     * 页面级预设覆盖的 Meta 键名。
      *
      * @var string
      */
     private const PAGE_META_KEY = '_qiling_blog_visual_preset';
 
     /**
-     * Category-level preset override meta key.
+     * 分类级预设覆盖的 Meta 键名。
      *
      * @var string
      */
     private const CATEGORY_META_KEY = 'ds_category_blog_visual_preset';
 
     /**
-     * Template Center variant slug for the developer blog entry.
+     * 模板中心开发者博客变体的标识 Slug。
      *
      * @var string
      */
     private const TEMPLATE_CENTER_VARIANT_DEVELOPER = 'developer_blog';
 
     /**
-     * Template Center variant slug for the minimal blog entry.
+     * 模板中心极简博客变体的标识 Slug。
      *
      * @var string
      */
     private const TEMPLATE_CENTER_VARIANT_MINIMAL = 'minimal_blog';
 
     /**
-     * Template Center variant slug for the artist blog entry.
+     * 模板中心艺术博客变体的标识 Slug。
      *
      * @var string
      */
     private const TEMPLATE_CENTER_VARIANT_ARTIST = 'artist_blog';
 
     /**
-     * Register hooks once.
+     * 仅注册一次钩子。
      *
      * @return void
      */
@@ -76,7 +76,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get frontend preset choices.
+     * 获取前台博客预设选项列表。
      *
      * @return array<string,string>
      */
@@ -90,7 +90,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get presets that support extra per-style customization.
+     * 获取支持独立深度自定义的预设列表。
      *
      * @return array<string,string>
      */
@@ -102,7 +102,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get module preset choices.
+     * 获取模块预设选项列表。
      *
      * @return array<string,string>
      */
@@ -113,7 +113,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get visibility override choices for preset customization.
+     * 获取预设自定义中的可见性开关选项。
      *
      * @return array<string,string>
      */
@@ -126,7 +126,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get category layout choices for preset customization.
+     * 获取预设自定义中的分类布局选项。
      *
      * @param bool $include_auto Whether to include the auto option.
      * @return array<string,string>
@@ -150,7 +150,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get column choices for preset customization.
+     * 获取预设自定义中的列数布局选项。
      *
      * @param bool $include_auto Whether to include the auto option.
      * @return array<string,string>
@@ -172,7 +172,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get the admin schema for per-preset customization fields.
+     * 获取独立预设自定义字段的后台字段模式。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -338,7 +338,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Build a preset customization option key.
+     * 构建预设自定义配置的选项键名。
      *
      * @param string $preset Preset slug.
      * @param string $field  Schema field key.
@@ -349,7 +349,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Sanitize preset identifier.
+     * 清理并验证预设标识符。
      *
      * @param mixed $preset Preset value.
      * @param bool  $allow_inherit Whether inherit is allowed.
@@ -371,7 +371,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Sanitize per-preset customization options.
+     * 清理独立预设的自定义配置选项。
      *
      * @param array<string,mixed> $sanitized Submitted options.
      * @param array<string,mixed> $existing_options Existing saved options.
@@ -401,7 +401,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get current page-level preset override.
+     * 获取当前页面级别的预设覆盖值。
      *
      * @param int|null $post_id Optional post ID.
      * @return string
@@ -419,7 +419,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get current category-level preset override.
+     * 获取当前分类级别的预设覆盖值。
      *
      * @param int|null $term_id Optional term ID.
      * @return string
@@ -441,7 +441,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Set page-level preset override.
+     * 设置页面级预设覆盖值。
      *
      * @param int   $post_id Page ID.
      * @param mixed $preset Preset value.
@@ -457,7 +457,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Resolve the current active preset for blog-like contexts.
+     * 解析博客相关上下文中当前生效的视觉预设。
      *
      * @return string
      */
@@ -485,7 +485,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Resolve a module preset value, supporting inherit.
+     * 解析模块预设值（支持 inherit 继承选项）。
      *
      * @param mixed $preset Preset value from module data.
      * @return string
@@ -497,7 +497,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Build a reusable settings array for native post loops.
+     * 构建用于原生文章主循环的可复用设置数组。
      *
      * @param array<string,mixed> $overrides Optional overrides.
      * @return array<string,mixed>
@@ -544,7 +544,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get preset defaults for category archive rhythm.
+     * 获取分类归档展示节奏的预设默认值。
      *
      * @param string|null $preset Optional preset slug.
      * @return array<string,mixed>
@@ -559,7 +559,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Resolve category archive settings from preset defaults and term overrides.
+     * 根据预设默认配置与分类覆盖项解析分类归档配置。
      *
      * @param int                $term_id Category term ID.
      * @param array<string,mixed> $settings Optional category settings array.
@@ -643,7 +643,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Add blog preset class to the body in blog-related contexts.
+     * 在博客相关上下文中为 body 标签添加博客预设样式类名。
      *
      * @param array<int,string> $classes Existing classes.
      * @return array<int,string>
@@ -659,7 +659,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get the dedicated inline override handle for blog preset custom CSS.
+     * 获取博客预设自定义内联 CSS 的专用样式句柄。
      *
      * @return string
      */
@@ -668,7 +668,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get the frontend stylesheet handle for a blog visual preset.
+     * 获取博客视觉预设前台样式表的资源句柄。
      *
      * @param mixed $preset Preset value.
      * @return string
@@ -691,7 +691,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Append per-preset custom CSS after the preset stylesheet stack is loaded.
+     * 在预设样式表加载完毕后追加单个预设的自定义 CSS。
      *
      * @param string|null $version Optional style version passed by the asset loader.
      * @return void
@@ -729,7 +729,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Append a Template Center virtual entry for the developer blog.
+     * 为模板中心追加开发者博客的虚拟条目。
      *
      * @param array<int,array<string,mixed>> $catalog Existing catalog.
      * @return array<int,array<string,mixed>>
@@ -795,7 +795,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Apply Template Center variant-specific metadata.
+     * 应用模板中心特定变体的元数据。
      *
      * @param int    $post_id Page ID.
      * @param string $template Template slug.
@@ -829,7 +829,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Resolve the current page source ID for preset inheritance.
+     * 解析预设继承链中的当前页面来源 ID。
      *
      * @return int
      */
@@ -846,7 +846,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Resolve the current category source ID for preset inheritance.
+     * 解析预设继承链中的当前分类来源 ID。
      *
      * @return int
      */
@@ -863,13 +863,13 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Resolve the most relevant category source for a single post.
+     * 为单篇文章解析最相关的分类来源。
      *
-     * Preference order:
-     * 1. SEO primary category if available and valid.
-     * 2. First category that explicitly uses a blog preset.
-     * 3. First advanced-filter category.
-     * 4. First assigned category.
+     * 优先级匹配顺序：
+     * 1. SEO 主分类（若已设置且有效）。
+     * 2. 首个显式配置了博客预设的分类。
+     * 3. 首个高级筛选分类。
+     * 4. 首个所属文章分类。
      *
      * @param int $post_id Post ID.
      * @return int
@@ -917,11 +917,11 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Decide whether a category should bypass blog presets and fall back to the
-     * default archive rhythm.
+     * 判断分类是否跳过博客预设并回退到
+     * 遵循默认归档节奏。
      *
-     * Advanced category filtering is intentionally kept on the stable default
-     * visual chain instead of the blog preset chain.
+     * 高级分类筛选默认保留在基础展示链条中，
+     * 而非切换到博客专属预设链条。
      *
      * @param int                $term_id Category term ID.
      * @param array<string,mixed> $settings Optional category settings array.
@@ -941,7 +941,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Decide whether the body preset class should be added for the request.
+     * 判断当前请求是否应在 body 上添加预设类名。
      *
      * @return bool
      */
@@ -957,7 +957,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get Template Center variant definitions for blog presets.
+     * 获取模板中心博客预设的变体定义。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -1003,7 +1003,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get preset-specific defaults for native loops.
+     * 获取原生循环在指定预设下的默认配置。
      *
      * @param string              $preset Preset slug.
      * @param array<string,mixed> $settings Current settings.
@@ -1017,7 +1017,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get built-in native preset defaults before user customization is applied.
+     * 获取用户自定义前内置的原生预设默认配置。
      *
      * @param string              $preset Preset slug.
      * @param array<string,mixed> $settings Base runtime settings.
@@ -1062,7 +1062,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Get built-in category archive defaults before user customization is applied.
+     * 获取用户自定义前内置的分类归档默认配置。
      *
      * @param string $preset Preset slug.
      * @return array<string,mixed>
@@ -1113,7 +1113,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Apply user customization to native preset defaults.
+     * 将用户自定义配置合并至原生预设默认值中。
      *
      * @param string              $preset   Preset slug.
      * @param array<string,mixed> $settings Runtime settings.
@@ -1160,7 +1160,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Apply user customization to category preset defaults.
+     * 将用户自定义配置合并至分类预设默认值中。
      *
      * @param string              $preset   Preset slug.
      * @param array<string,mixed> $defaults Category defaults.
@@ -1214,7 +1214,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Load the current customization values for a preset.
+     * 加载指定预设当前的自定义配置值。
      *
      * @param string $preset Preset slug.
      * @return array<string,mixed>
@@ -1241,7 +1241,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Sanitize a preset customization field by schema.
+     * 依据字段模式清理预设自定义字段值。
      *
      * @param mixed               $value Raw field value.
      * @param array<string,mixed> $field_schema Field schema.
@@ -1288,7 +1288,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Apply a term-meta-based boolean override to the resolved archive settings.
+     * 根据分类 Term Meta 布尔覆盖值更新归档配置。
      *
      * @param array<string,mixed> $resolved Resolved settings array.
      * @param int                 $term_id Term ID.
@@ -1305,7 +1305,7 @@ class Blog_Visual_Manager {
     }
 
     /**
-     * Sanitize raw CSS entered for a preset.
+     * 清理为预设输入的原始 CSS 代码。
      *
      * @param mixed $css CSS source.
      * @return string

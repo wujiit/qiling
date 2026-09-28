@@ -1,8 +1,8 @@
 <?php
 /**
- * Admin Settings Field Render Trait.
+ * 主题后台设置字段渲染 Trait。
  *
- * Aggregates focused field-render traits to keep the settings renderer maintainable.
+ * 聚合各业务模块的字段渲染 Trait，保持设置渲染器结构清晰易维护。
  *
  * @package Developer_Starter
  */

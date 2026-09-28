@@ -184,12 +184,19 @@ class Homepage_Creator {
     }
 
     /**
-     * 设置默认模块
+     * 设置默认模块（优先应用启灵官方最新完整首页页面包，失败时平滑降级至既有预设）。
      *
      * @param int $page_id 页面ID
      * @return void
      */
-    private function set_default_modules( $page_id ) {
+    public function set_default_modules( $page_id ) {
+        if ( function_exists( 'developer_starter_maybe_fill_official_template_package_for_page_template' ) ) {
+            $applied = developer_starter_maybe_fill_official_template_package_for_page_template( $page_id, 'templates/template-home.php' );
+            if ( $applied ) {
+                return;
+            }
+        }
+
         Page_Creator_Base::persist_default_modules_for_creator(
             $page_id,
             $this->get_default_modules( $page_id ),
@@ -244,145 +251,23 @@ class Homepage_Creator {
     /**
      * 获取默认模块
      *
+     * 优先直接读取启灵官方首页 JSON 页面包（SSOT 单一事实源），避免代码硬编码冗余与双轨漂移。
+     *
      * @param int $page_id 页面ID
      * @return array
      */
     private function get_default_modules( $page_id ) {
-        $default_modules = array(
-            // Banner横幅模块
-            array(
-                'type' => 'banner',
-                'data' => array(
-                    'banner_layout'   => 'slider',
-                    'banner_height'   => 'full',
-                    'banner_bg_color' => 'linear-gradient(135deg, #2563eb 0%, #059669 100%)',
-                    'banner_slides'   => array(
-                        array(
-                            'media_type' => 'image',
-                            'title'      => __( '专业企业解决方案', 'developer-starter' ),
-                            'subtitle'   => __( '助力企业数字化转型，提供一站式服务', 'developer-starter' ),
-                            'btn_text'   => __( '了解更多', 'developer-starter' ),
-                            'btn_url'    => '#services',
-                        ),
-                    ),
-                ),
-            ),
-            // 服务模块
-            array(
-                'type' => 'services',
-                'data' => array(
-                    'services_title'    => __( '我们的服务', 'developer-starter' ),
-                    'services_subtitle' => __( '为企业提供全方位的专业服务', 'developer-starter' ),
-                    'services_items'    => array(
-                        array(
-                            'icon'  => '01',
-                            'title' => __( '产品研发', 'developer-starter' ),
-                            'desc'  => __( '提供专业的产品研发服务，从需求分析到产品上线全流程支持。', 'developer-starter' ),
-                            'link'  => '#',
-                        ),
-                        array(
-                            'icon'  => '02',
-                            'title' => __( '解决方案', 'developer-starter' ),
-                            'desc'  => __( '针对不同行业提供定制化解决方案，满足企业个性化需求。', 'developer-starter' ),
-                            'link'  => '#',
-                        ),
-                        array(
-                            'icon'  => '03',
-                            'title' => __( '技术支持', 'developer-starter' ),
-                            'desc'  => __( '7x24小时技术支持服务，快速响应解决技术问题。', 'developer-starter' ),
-                            'link'  => '#',
-                        ),
-                        array(
-                            'icon'  => '04',
-                            'title' => __( '数据分析', 'developer-starter' ),
-                            'desc'  => __( '专业数据分析团队，助力企业数据驱动决策。', 'developer-starter' ),
-                            'link'  => '#',
-                        ),
-                    ),
-                ),
-            ),
-            // 特性模块
-            array(
-                'type' => 'features',
-                'data' => array(
-                    'features_title'    => __( '为什么选择我们', 'developer-starter' ),
-                    'features_subtitle' => __( '多年行业经验，值得信赖', 'developer-starter' ),
-                    'features_items'    => array(
-                        array(
-                            'icon'  => '+',
-                            'title' => __( '专业团队', 'developer-starter' ),
-                            'desc'  => __( '拥有经验丰富的专业团队', 'developer-starter' ),
-                        ),
-                        array(
-                            'icon'  => '+',
-                            'title' => __( '品质保障', 'developer-starter' ),
-                            'desc'  => __( '严格的质量控制体系', 'developer-starter' ),
-                        ),
-                        array(
-                            'icon'  => '+',
-                            'title' => __( '贴心服务', 'developer-starter' ),
-                            'desc'  => __( '全程跟踪的客户服务', 'developer-starter' ),
-                        ),
-                    ),
-                ),
-            ),
-            // 数据统计模块
-            array(
-                'type' => 'stats',
-                'data' => array(
-                    'stats_items' => array(
-                        array(
-                            'number' => '10+',
-                            'label'  => __( '年行业经验', 'developer-starter' ),
-                        ),
-                        array(
-                            'number' => '500+',
-                            'label'  => __( '服务客户', 'developer-starter' ),
-                        ),
-                        array(
-                            'number' => '1000+',
-                            'label'  => __( '成功案例', 'developer-starter' ),
-                        ),
-                        array(
-                            'number' => '99%',
-                            'label'  => __( '客户满意度', 'developer-starter' ),
-                        ),
-                    ),
-                ),
-            ),
-            // CTA行动召唤模块
-            array(
-                'type' => 'cta',
-                'data' => array(
-                    'cta_title'       => __( '准备好开始了吗？', 'developer-starter' ),
-                    'cta_subtitle'    => __( '立即联系我们，获取专属解决方案', 'developer-starter' ),
-                    'cta_button_text' => __( '立即咨询', 'developer-starter' ),
-                    'cta_button_url'  => '#contact',
-                    'cta_bg_type'     => 'color',
-                    'cta_bg_color'    => 'linear-gradient(135deg, #2563eb 0%, #059669 100%)',
-                ),
-            ),
-            // 新闻模块
-            array(
-                'type' => 'news',
-                'data' => array(
-                    'news_title'   => __( '最新动态', 'developer-starter' ),
-                    'news_count'   => '3',
-                    'news_columns' => '3',
-                ),
-            ),
-            // 联系模块
-            array(
-                'type' => 'contact',
-                'data' => array(
-                    'contact_title'     => __( '联系我们', 'developer-starter' ),
-                    'contact_subtitle'  => __( '有任何问题，欢迎随时联系', 'developer-starter' ),
-                    'contact_show_form' => '1',
-                ),
-            ),
-        );
+        unset( $page_id );
 
-        return $default_modules;
+        if ( class_exists( '\Developer_Starter\Core\Official_Template_Package_Service' ) ) {
+            $service = new Official_Template_Package_Service();
+            $package = $service->load_package_for_template( 'templates/template-home.php' );
+            if ( ! is_wp_error( $package ) && ! empty( $package['modules'] ) && is_array( $package['modules'] ) ) {
+                return $package['modules'];
+            }
+        }
+
+        return array();
     }
 
     /**

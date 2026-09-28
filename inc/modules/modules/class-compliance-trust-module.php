@@ -1,6 +1,6 @@
 <?php
 /**
- * Compliance Trust Module - 安全合规模块
+ * 安全合规信任背书模块
  *
  * @package Developer_Starter
  */
@@ -177,11 +177,12 @@ class Compliance_Trust_Module extends Module_Base {
                 'default' => '80px',
             ),
             array(
-                'id'         => 'ct_items',
-                'type'       => 'repeater',
-                'label'      => __( '合规条目', 'developer-starter' ),
-                'add_button' => __( '添加条目', 'developer-starter' ),
-                'fields'     => array(
+                'id'            => 'ct_items',
+                'type'          => 'repeater',
+                'label'         => __( '合规条目', 'developer-starter' ),
+                'add_button'    => __( '添加条目', 'developer-starter' ),
+                'default_items' => $this->get_default_items(),
+                'fields'        => array(
                     array( 'id' => 'logo', 'type' => 'image', 'label' => __( '徽章/logo', 'developer-starter' ) ),
                     array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (emoji 或文本)', 'developer-starter' ) ),
                     array( 'id' => 'title', 'type' => 'text', 'label' => __( '名称', 'developer-starter' ) ),
@@ -328,68 +329,8 @@ class Compliance_Trust_Module extends Module_Base {
         $pb             = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? (string) $data['module_padding_bottom'] : 'var(--qiling-space-80)';
 
         $items = isset( $data['ct_items'] ) && is_array( $data['ct_items'] ) ? $data['ct_items'] : array();
-        if ( empty( $items ) ) {
-            $items = array(
-                array(
-                    'icon'        => '🛡️',
-                    'title'       => 'SOC 2 Type II',
-                    'short_name'  => 'SOC2',
-                    'category'    => __( '安全控制', 'developer-starter' ),
-                    'status'      => 'active',
-                    'issuer'      => __( '独立第三方审计机构', 'developer-starter' ),
-                    'cert_no'     => 'SOC2-2026-Q1',
-                    'scope'       => __( '云平台与生产运营控制', 'developer-starter' ),
-                    'valid_until' => __( '年度滚动审计', 'developer-starter' ),
-                    'description' => __( '围绕安全性、可用性、保密性建立控制体系并持续审计。', 'developer-starter' ),
-                    'checklist'   => __( "访问控制策略\n变更管理审计\n日志留存与告警", 'developer-starter' ),
-                    'report_url'  => '#',
-                    'report_text' => __( '查看审计说明', 'developer-starter' ),
-                    'highlight'   => 'yes',
-                ),
-                array(
-                    'icon'        => '🔐',
-                    'title'       => 'ISO/IEC 27001',
-                    'short_name'  => 'ISO27001',
-                    'category'    => __( '信息安全', 'developer-starter' ),
-                    'status'      => 'active',
-                    'issuer'      => __( '国际认证机构', 'developer-starter' ),
-                    'cert_no'     => 'ISO27001-2026-11',
-                    'scope'       => __( '信息安全管理体系', 'developer-starter' ),
-                    'valid_until' => '2028-11-30',
-                    'description' => __( '基于风险评估持续改进信息安全管理流程。', 'developer-starter' ),
-                    'checklist'   => __( "风险分级管控\n供应商安全评估\n员工安全培训", 'developer-starter' ),
-                    'report_url'  => '#',
-                    'report_text' => __( '查看认证范围', 'developer-starter' ),
-                ),
-                array(
-                    'icon'        => '🌍',
-                    'title'       => 'GDPR',
-                    'short_name'  => 'GDPR',
-                    'category'    => __( '隐私合规', 'developer-starter' ),
-                    'status'      => 'active',
-                    'issuer'      => __( '内部法务与外部顾问联合评估', 'developer-starter' ),
-                    'scope'       => __( '欧盟用户数据处理流程', 'developer-starter' ),
-                    'valid_until' => __( '持续合规监测', 'developer-starter' ),
-                    'description' => __( '提供数据主体权利响应机制与跨境数据处理合规流程。', 'developer-starter' ),
-                    'checklist'   => __( "数据处理记录\nDPA协议支持\n删除与导出流程", 'developer-starter' ),
-                    'report_url'  => '#',
-                    'report_text' => __( '查看隐私承诺', 'developer-starter' ),
-                ),
-                array(
-                    'icon'        => '📋',
-                    'title'       => __( '等保三级', 'developer-starter' ),
-                    'short_name'  => __( '等保3级', 'developer-starter' ),
-                    'category'    => __( '本地监管', 'developer-starter' ),
-                    'status'      => 'progress',
-                    'issuer'      => __( '测评机构进行中', 'developer-starter' ),
-                    'scope'       => __( '核心业务系统安全防护', 'developer-starter' ),
-                    'valid_until' => __( '预计 2026 Q4 完成', 'developer-starter' ),
-                    'description' => __( '按等保要求完善技术与管理制度，推进正式测评。', 'developer-starter' ),
-                    'checklist'   => __( "主机与网络加固\n制度与流程补齐\n测评整改闭环", 'developer-starter' ),
-                    'report_url'  => '#',
-                    'report_text' => __( '查看进展', 'developer-starter' ),
-                ),
-            );
+        if ( empty( $items ) && ! isset( $data['ct_items'] ) ) {
+            $items = $this->get_default_items();
         }
 
         $status_map = array(
@@ -892,5 +833,74 @@ class Compliance_Trust_Module extends Module_Base {
             <?php endif; ?>
         </section>
         <?php
+    }
+
+    /**
+     * 获取默认合规条目。
+     *
+     * @return array
+     */
+    private function get_default_items() {
+        return array(
+            array(
+                'icon'        => '🛡️',
+                'title'       => 'SOC 2 Type II',
+                'short_name'  => 'SOC2',
+                'category'    => __( '安全控制', 'developer-starter' ),
+                'status'      => 'active',
+                'issuer'      => __( '独立第三方审计机构', 'developer-starter' ),
+                'cert_no'     => 'SOC2-2026-Q1',
+                'scope'       => __( '云平台与生产运营控制', 'developer-starter' ),
+                'valid_until' => __( '年度滚动审计', 'developer-starter' ),
+                'description' => __( '围绕安全性、可用性、保密性建立控制体系并持续审计。', 'developer-starter' ),
+                'checklist'   => __( "访问控制策略\n变更管理审计\n日志留存与告警", 'developer-starter' ),
+                'report_url'  => '#',
+                'report_text' => __( '查看审计说明', 'developer-starter' ),
+                'highlight'   => 'yes',
+            ),
+            array(
+                'icon'        => '🔐',
+                'title'       => 'ISO/IEC 27001',
+                'short_name'  => 'ISO27001',
+                'category'    => __( '信息安全', 'developer-starter' ),
+                'status'      => 'active',
+                'issuer'      => __( '国际认证机构', 'developer-starter' ),
+                'cert_no'     => 'ISO27001-2026-11',
+                'scope'       => __( '信息安全管理体系', 'developer-starter' ),
+                'valid_until' => '2028-11-30',
+                'description' => __( '基于风险评估持续改进信息安全管理流程。', 'developer-starter' ),
+                'checklist'   => __( "风险分级管控\n供应商安全评估\n员工安全培训", 'developer-starter' ),
+                'report_url'  => '#',
+                'report_text' => __( '查看认证范围', 'developer-starter' ),
+            ),
+            array(
+                'icon'        => '🌍',
+                'title'       => 'GDPR',
+                'short_name'  => 'GDPR',
+                'category'    => __( '隐私合规', 'developer-starter' ),
+                'status'      => 'active',
+                'issuer'      => __( '内部法务与外部顾问联合评估', 'developer-starter' ),
+                'scope'       => __( '欧盟用户数据处理流程', 'developer-starter' ),
+                'valid_until' => __( '持续合规监测', 'developer-starter' ),
+                'description' => __( '提供数据主体权利响应机制与跨境数据处理合规流程。', 'developer-starter' ),
+                'checklist'   => __( "数据处理记录\nDPA协议支持\n删除与导出流程", 'developer-starter' ),
+                'report_url'  => '#',
+                'report_text' => __( '查看隐私承诺', 'developer-starter' ),
+            ),
+            array(
+                'icon'        => '📋',
+                'title'       => __( '等保三级', 'developer-starter' ),
+                'short_name'  => __( '等保3级', 'developer-starter' ),
+                'category'    => __( '本地监管', 'developer-starter' ),
+                'status'      => 'progress',
+                'issuer'      => __( '测评机构进行中', 'developer-starter' ),
+                'scope'       => __( '核心业务系统安全防护', 'developer-starter' ),
+                'valid_until' => __( '预计 2026 Q4 完成', 'developer-starter' ),
+                'description' => __( '按等保要求完善技术与管理制度，推进正式测评。', 'developer-starter' ),
+                'checklist'   => __( "主机与网络加固\n制度与流程补齐\n测评整改闭环", 'developer-starter' ),
+                'report_url'  => '#',
+                'report_text' => __( '查看进展', 'developer-starter' ),
+            ),
+        );
     }
 }

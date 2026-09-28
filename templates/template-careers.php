@@ -343,7 +343,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
 <?php endif; ?>
 
 <style>
-/* ===== Careers Hero ===== */
+/* ===== 招聘横幅区域 ===== */
 .careers-hero {
     position: relative;
     background:
@@ -458,7 +458,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Benefits Section ===== */
+/* ===== 福利待遇区域 ===== */
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -509,7 +509,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
     line-height: 1.6;
 }
 
-/* ===== Positions Section ===== */
+/* ===== 招聘职位区域 ===== */
 .careers-positions {
     background: var(--color-neutral-50);
 }
@@ -666,7 +666,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
     line-height: 1.6;
 }
 
-/* ===== Apply Section ===== */
+/* ===== 应聘申请区域 ===== */
 .careers-apply {
     background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-0) 100%);
 }
@@ -799,7 +799,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
     box-shadow: 0 10px 30px rgba(var(--color-primary-rgb), 0.3);
 }
 
-/* ===== Location Section ===== */
+/* ===== 工作地点区域 ===== */
 .careers-location {
     padding: var(--qiling-space-60) 0;
     color: var(--color-neutral-0);
@@ -935,7 +935,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
 }
 
 /* ========================================
-   Dark Mode Support
+   暗黑模式适配支持
    ======================================== */
 html.dark-mode .careers-positions {
     background: var(--color-neutral-900);

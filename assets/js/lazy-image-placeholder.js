@@ -1,7 +1,7 @@
 /**
- * Progressive placeholder behavior for native lazy-loaded images.
+ * 原生图片懒加载渐进式占位图交互逻辑。
  *
- * Loaded only when image lazy loading and progressive placeholders are enabled.
+ * 仅在开启图片懒加载与渐进占位图时加载。
  */
 (function () {
     'use strict';

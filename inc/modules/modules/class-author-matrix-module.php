@@ -1,6 +1,6 @@
 <?php
 /**
- * Author Matrix Module - 作者矩阵/专栏页
+ * 作者矩阵专栏模块
  *
  * @package Developer_Starter
  */

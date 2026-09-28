@@ -1,6 +1,6 @@
 <?php
 /**
- * Privacy/Cookie banner.
+ * 隐私政策与 Cookie 授权横幅模板。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme service bootstrap helpers.
+ * 主题业务服务引导辅助函数。
  *
  * @package Developer_Starter
  */
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Get the current AJAX action name.
+ * 获取当前 AJAX 请求的 action 操作名。
  *
  * @return string
  */
@@ -23,7 +23,7 @@ function developer_starter_get_ajax_action_name() {
 }
 
 /**
- * Whether the Weixin login manager needs to be initialized.
+ * 检测当前请求是否需要初始化微信登录服务。
  *
  * @return bool
  */
@@ -35,7 +35,7 @@ function developer_starter_should_init_weixin_manager() {
 }
 
 /**
- * Whether third-party social login needs to be initialized.
+ * 检测当前请求是否需要初始化第三方社交登录。
  *
  * @return bool
  */
@@ -50,7 +50,7 @@ function developer_starter_should_init_social_login_manager() {
 }
 
 /**
- * Whether search autocomplete needs to be initialized.
+ * 检测当前请求是否需要初始化搜索自动补全。
  *
  * @return bool
  */
@@ -62,7 +62,7 @@ function developer_starter_should_init_search_autocomplete() {
 }
 
 /**
- * Whether announcements are enabled for the current request.
+ * 检测当前请求是否启用了公告功能。
  *
  * @return bool
  */
@@ -71,7 +71,7 @@ function developer_starter_should_init_announcement_manager() {
 }
 
 /**
- * Whether the careers admin menu is enabled.
+ * 检测招聘管理后台菜单是否已启用。
  *
  * @return bool
  */
@@ -80,7 +80,7 @@ function developer_starter_is_careers_admin_menu_enabled() {
 }
 
 /**
- * Whether the WooCommerce admin menu is enabled.
+ * 检测后台 WooCommerce 管理菜单是否已启用。
  *
  * @return bool
  */
@@ -89,7 +89,7 @@ function developer_starter_is_woocommerce_admin_menu_enabled() {
 }
 
 /**
- * Whether the careers manager needs to be initialized.
+ * 检测当前请求是否需要初始化招聘管理服务。
  *
  * @return bool
  */
@@ -108,7 +108,7 @@ function developer_starter_should_init_careers_manager() {
 }
 
 /**
- * Hide feature admin menus that are disabled in theme settings.
+ * 在主题设置中关闭对应功能时隐藏后台管理菜单。
  *
  * @return void
  */
@@ -141,7 +141,7 @@ function developer_starter_maybe_hide_disabled_feature_admin_menus() {
 add_action( 'admin_menu', 'developer_starter_maybe_hide_disabled_feature_admin_menus', 999 );
 
 /**
- * Whether ID verification needs to be initialized.
+ * 检测当前请求是否需要初始化实名认证服务。
  *
  * @return bool
  */
@@ -150,19 +150,18 @@ function developer_starter_should_init_id_verification_manager() {
 }
 
 /**
- * Whether the SMS manager needs to be initialized.
+ * 检测当前请求是否需要初始化短信管理服务。
  *
  * @return bool
  */
 function developer_starter_should_init_sms_manager() {
     $ajax_action = developer_starter_get_ajax_action_name();
-    return is_admin()
-        || ( class_exists( 'Developer_Starter\\Core\\SMS_Manager' ) && Developer_Starter\Core\SMS_Manager::is_enabled() )
+    return ( class_exists( 'Developer_Starter\\Core\\SMS_Manager' ) && Developer_Starter\Core\SMS_Manager::is_enabled() )
         || strpos( $ajax_action, 'sms_' ) === 0;
 }
 
 /**
- * Whether theme license checks need to be initialized.
+ * 检测当前请求是否需要初始化主题授权检查。
  *
  * @return bool
  */
@@ -171,7 +170,7 @@ function developer_starter_should_init_theme_license_manager() {
 }
 
 /**
- * Get the thumbnail optimizer instance.
+ * 获取缩略图优化器实例。
  *
  * @return Developer_Starter\Core\Thumbnail_Optimizer
  */
@@ -186,7 +185,7 @@ function developer_starter_get_thumbnail_optimizer_instance() {
 }
 
 /**
- * Get setup wizard state storage.
+ * 获取安装向导状态存储实例。
  *
  * @return Developer_Starter\Core\Setup_Wizard_State
  */
@@ -195,7 +194,7 @@ function developer_starter_get_setup_wizard_state_service() {
 }
 
 /**
- * Get setup wizard optional plugin detector.
+ * 获取安装向导可选插件检测器实例。
  *
  * @return Developer_Starter\Core\Setup_Wizard_Plugin_Detector
  */
@@ -210,7 +209,7 @@ function developer_starter_get_setup_wizard_plugin_detector() {
 }
 
 /**
- * Get setup wizard reuse checks.
+ * 获取安装向导内容复用检查服务实例。
  *
  * @return Developer_Starter\Core\Setup_Wizard_Reuse_Service
  */
@@ -225,7 +224,7 @@ function developer_starter_get_setup_wizard_reuse_service() {
 }
 
 /**
- * Get setup wizard recommendation presets.
+ * 获取安装向导行业推荐预设实例。
  *
  * @return Developer_Starter\Core\Setup_Wizard_Presets
  */
@@ -234,7 +233,7 @@ function developer_starter_get_setup_wizard_presets() {
 }
 
 /**
- * Get setup wizard page generation service.
+ * 获取安装向导页面生成服务实例。
  *
  * @return Developer_Starter\Core\Setup_Wizard_Import_Service
  */
@@ -253,7 +252,7 @@ function developer_starter_get_setup_wizard_import_service() {
 }
 
 /**
- * Get setup wizard menu and basic settings service.
+ * 获取安装向导菜单与基础设置服务实例。
  *
  * @return Developer_Starter\Core\Setup_Wizard_Settings_Service
  */
@@ -272,7 +271,7 @@ function developer_starter_get_setup_wizard_settings_service() {
 }
 
 /**
- * Get setup wizard safe cleanup service.
+ * 获取安装向导安全清理服务实例。
  *
  * @return Developer_Starter\Core\Setup_Wizard_Cleanup_Service
  */
@@ -289,7 +288,7 @@ function developer_starter_get_setup_wizard_cleanup_service() {
 }
 
 /**
- * Bootstrap foundational frontend and shared services.
+ * 引导加载基础前台与公共共享服务。
  *
  * @return void
  */
@@ -308,9 +307,13 @@ function developer_starter_boot_foundation_services() {
     }
 
     new Developer_Starter\Core\Assets();
-    new Developer_Starter\International\Third_Party_Code_Manager();
-    new Developer_Starter\International\Cookie_Consent_Manager();
-    new Developer_Starter\International\Typography_Engine();
+
+    // 纯前台页面渲染组件：在常规后台管理请求中跳过初始化，节省内存与钩子开销
+    if ( ! is_admin() || wp_doing_ajax() ) {
+        new Developer_Starter\International\Third_Party_Code_Manager();
+        new Developer_Starter\International\Cookie_Consent_Manager();
+        new Developer_Starter\International\Typography_Engine();
+    }
 
     if ( developer_starter_should_init_weixin_manager() ) {
         new Developer_Starter\Core\Weixin_Manager();
@@ -330,7 +333,7 @@ function developer_starter_boot_foundation_services() {
 }
 
 /**
- * Bootstrap admin-only services.
+ * 引导加载管理后台专用服务。
  *
  * @return void
  */
@@ -345,6 +348,10 @@ function developer_starter_boot_admin_services() {
         developer_starter_get_admin_settings_instance();
     }
 
+    // 页面装修设置与快照修订（延迟至此统一规范初始化）
+    new Developer_Starter\Admin\Page_Region_Decoration_Meta_Box();
+    new Developer_Starter\Admin\Builder_Revision_Manager();
+
     new Developer_Starter\Admin\Advanced_Category_Metabox();
     new Developer_Starter\Admin\Setup_Wizard_Admin();
     new Developer_Starter\Admin\Dashboard_User_Stats();
@@ -355,7 +362,7 @@ function developer_starter_boot_admin_services() {
 }
 
 /**
- * Bootstrap builder, module, and page composition services.
+ * 引导加载页面构建器、模块与排版服务。
  *
  * @return void
  */
@@ -369,19 +376,22 @@ function developer_starter_boot_builder_services() {
 }
 
 /**
- * Bootstrap SEO, region, and quality tools.
+ * 引导加载 SEO、区域网络与质量检测服务。
  *
  * @return void
  */
 function developer_starter_boot_discovery_services() {
     new Developer_Starter\China\China_Features();
-    new Developer_Starter\SEO\SEO_Manager();
 
-    Developer_Starter\Core\Page_Performance_A11y_Auditor::get_instance();
+    // 纯前台 HTML 标签输出与页面性能审计：后台常规管理中免初始化
+    if ( ! is_admin() || wp_doing_ajax() ) {
+        new Developer_Starter\SEO\SEO_Manager();
+        Developer_Starter\Core\Page_Performance_A11y_Auditor::get_instance();
+    }
 }
 
 /**
- * Bootstrap content, account, and interaction services.
+ * 引导加载内容、用户账号与交互服务。
  *
  * @return void
  */
@@ -428,7 +438,7 @@ function developer_starter_boot_content_services() {
 }
 
 /**
- * Bootstrap taxonomy, AJAX, and commerce integrations.
+ * 引导加载分类法、AJAX 与商城集成服务。
  *
  * @return void
  */
@@ -446,7 +456,7 @@ function developer_starter_boot_taxonomy_and_commerce_services() {
 }
 
 /**
- * Initialize theme business services after WordPress reaches init.
+ * 在 WordPress 执行 init 动作后初始化主题业务服务。
  *
  * @return void
  */

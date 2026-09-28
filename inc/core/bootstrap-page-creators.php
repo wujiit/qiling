@@ -1,6 +1,6 @@
 <?php
 /**
- * Page creator bootstrap helpers.
+ * 页面创建器引导加载辅助函数。
  *
  * @package Developer_Starter
  */
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Page creator class to file map.
+ * 页面创建器类名与文件路径映射表。
  *
  * @return array<string,string>
  */
@@ -43,7 +43,7 @@ function developer_starter_get_page_creator_class_file_map() {
 }
 
 /**
- * Load the page creator base class.
+ * 加载页面创建器基类。
  *
  * @return void
  */
@@ -58,7 +58,7 @@ function developer_starter_include_page_creator_base_file() {
 }
 
 /**
- * Load all page creator files when a request needs them.
+ * 当请求需要时批量加载所有页面创建器类文件。
  *
  * @return void
  */
@@ -80,7 +80,7 @@ function developer_starter_include_page_creators_files() {
 }
 
 /**
- * Load one page creator file by class name.
+ * 根据类名加载单个页面创建器类文件。
  *
  * @param string $class Fully-qualified class name, with or without a leading slash.
  * @return bool
@@ -112,7 +112,7 @@ function developer_starter_maybe_load_page_creator_class( $class ) {
 }
 
 /**
- * Whether the current request needs page creator objects.
+ * 检测当前请求是否需要实例化页面创建器。
  *
  * @return bool
  */
@@ -137,7 +137,7 @@ function developer_starter_should_init_page_creators() {
 }
 
 /**
- * Initialize page creator objects only when needed.
+ * 仅在按需时初始化页面创建器对象。
  *
  * @return void
  */

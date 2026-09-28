@@ -1,6 +1,6 @@
 <?php
 /**
- * Promotion Module - 特价促销模块
+ * 特价促销活动模块
  * 
  * 展示限时优惠、特价活动、促销套餐等营销内容
  * 倒计时基于设置的截止时间，非刷新重置
@@ -209,6 +209,41 @@ class Promotion_Module extends Module_Base {
                         'label' => __( '按钮链接', 'developer-starter' ),
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华海景套房', 'Ocean View Suite' ) : __( '豪华海景套房', 'developer-starter' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '270°无敌海景，私人阳台', '270-degree ocean views with a private terrace.' ) : __( '270°无敌海景，私人阳台', 'developer-starter' ),
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2999 ) : '¥2999',
+                        'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1499 ) : '¥1499',
+                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时5折', '50% Off' ) : __( '限时5折', 'developer-starter' ),
+                        'badge_color'    => 'var(--color-error)',
+                        'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '双人SPA套餐', 'Couples Spa Package' ) : __( '双人SPA套餐', 'developer-starter' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '90分钟精油按摩 + 茶点', '90-minute aromatherapy session with refreshments.' ) : __( '90分钟精油按摩 + 茶点', 'developer-starter' ),
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1280 ) : '¥1280',
+                        'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 699 ) : '¥699',
+                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '买一送一', 'Buy 1 Get 1' ) : __( '买一送一', 'developer-starter' ),
+                        'badge_color'    => 'var(--color-success)',
+                        'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '自助海鲜晚餐', 'Seafood Dinner Buffet' ) : __( '自助海鲜晚餐', 'developer-starter' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无限畅吃龙虾、帝王蟹', 'Unlimited lobster and king crab specialties.' ) : __( '无限畅吃龙虾、帝王蟹', 'developer-starter' ),
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 598 ) : '¥598',
+                        'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 398 ) : '¥398',
+                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立减200', 'Save $200' ) : __( '立减200', 'developer-starter' ),
+                        'badge_color'    => 'var(--color-warning)',
+                        'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                ),
             ),
             array(
                 'id'      => 'ql_promo_btn_bg_color',
@@ -344,7 +379,7 @@ class Promotion_Module extends Module_Base {
         // ========================================
         // 默认示例数据
         // ========================================
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['ql_promo_items'] ) ) {
             $items = array(
                 array(
                     'image'          => '',

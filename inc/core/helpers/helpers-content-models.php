@@ -1,6 +1,6 @@
 <?php
 /**
- * Content model center helper functions.
+ * 通用内容模型中心辅助函数。
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_content_model_center' ) ) {
     /**
-     * Get the universal content model center instance.
+     * 获取通用内容模型中心单例实例。
      *
      * @return \Developer_Starter\Core\Content_Model_Center|null
      */
@@ -26,7 +26,7 @@ if ( ! function_exists( 'developer_starter_get_content_model_center' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_content_model_definitions' ) ) {
     /**
-     * Get all content model definitions.
+     * 获取所有内容模型定义。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -38,7 +38,7 @@ if ( ! function_exists( 'developer_starter_get_content_model_definitions' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_content_model_client_payload' ) ) {
     /**
-     * Get content model payload for builders.
+     * 获取供页面构建器使用的内容模型数据载荷。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return array<string,mixed>
@@ -54,7 +54,7 @@ if ( ! function_exists( 'developer_starter_get_content_model_client_payload' ) )
 
 if ( ! function_exists( 'developer_starter_get_content_model_prompt_context' ) ) {
     /**
-     * Get compact content model context for generation requests.
+     * 获取用于生成请求的紧凑内容模型上下文。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return array<string,mixed>
@@ -70,7 +70,7 @@ if ( ! function_exists( 'developer_starter_get_content_model_prompt_context' ) )
 
 if ( ! function_exists( 'developer_starter_query_content_model_items' ) ) {
     /**
-     * Query published items for one content model.
+     * 查询指定内容模型下已发布的文章项。
      *
      * @param string              $model_id Content model id.
      * @param array<string,mixed> $args WP_Query args.

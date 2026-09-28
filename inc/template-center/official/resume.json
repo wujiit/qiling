@@ -263,7 +263,7 @@
         "gallery_title": "精选作品",
         "gallery_subtitle": "部分代表性项目展示",
         "gallery_columns": "3",
-        "gallery_items": [
+        "gallery_images": [
           {
             "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
             "title": "电商数据可视化大屏",

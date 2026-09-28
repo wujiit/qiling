@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme business notification event bridge.
+ * 主题业务通知事件桥接器。
  *
  * @package Developer_Starter
  */
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Connect theme-owned business events to the unified mail / push notification settings.
+ * 将主题业务事件接入统一的邮件与推送通知配置中心。
  */
 class Theme_Notification_Events {
 
@@ -23,7 +23,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Notify admins when a frontend submission is saved for review.
+     * 前台投稿提交进入待审时通知管理员。
      *
      * @param int   $post_id   Post ID.
      * @param array $raw_input Raw submitted payload.
@@ -64,7 +64,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Notify admins when a new comment is created.
+     * 产生新评论时通知管理员。
      *
      * @param int        $comment_id       Comment ID.
      * @param int|string $comment_approved Comment approval state.
@@ -128,7 +128,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Notify admins when a user requests account deletion.
+     * 用户提交账号注销申请时通知管理员。
      *
      * @param int      $request_id Request row ID.
      * @param int      $user_id    User ID.
@@ -167,7 +167,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Send notification according to scene settings.
+     * 根据业务场景配置发送对应通知。
      *
      * @param string $scene       Notification scene.
      * @param string $title       Notification title.
@@ -217,7 +217,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Send an HTML admin email with a plain text fallback.
+     * 发送带纯文本兜底的 HTML 格式管理员邮件。
      *
      * @param string $title       Notification title.
      * @param string $intro       Intro text.
@@ -265,7 +265,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Get configured comment notification scope.
+     * 获取已配置的评论通知发送范围。
      *
      * @return string
      */
@@ -279,7 +279,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Get category names for a post.
+     * 获取文章所属分类名称列表。
      *
      * @param int $post_id Post ID.
      * @return string
@@ -294,7 +294,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Resolve a post status label.
+     * 解析文章状态的可读标签文案。
      *
      * @param string $status Post status.
      * @return string
@@ -309,7 +309,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Trim text safely for push messages.
+     * 为推送消息安全截断文本内容。
      *
      * @param string $text      Source text.
      * @param int    $max_chars Max chars.
@@ -334,7 +334,7 @@ class Theme_Notification_Events {
     }
 
     /**
-     * Get account deletion admin page slug.
+     * 获取账号注销后台管理页面 Slug。
      *
      * @return string
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Tour Package Module - 旅游线路模块
+ * 旅游线路推荐模块
  * 
  * 展示旅游线路/套餐卡片，适用于旅行社官网
  * 支持行程天数、价格、目的地、出发城市等信息展示
@@ -190,6 +190,44 @@ class Tour_Package_Module extends Module_Base {
                         'default' => '#',
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'image'          => '',
+                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚阳光海岸5日游', 'Sunny Coast Escape · 5 Days' ) : __( '三亚阳光海岸5日游', 'developer-starter' ),
+                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚', 'Coastal Resort' ) : __( '三亚', 'developer-starter' ),
+                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '北京', 'Beijing' ) : __( '北京', 'developer-starter' ),
+                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '5天4晚', '5 days / 4 nights' ) : __( '5天4晚', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2999 ) : '¥2999',
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 3999 ) : '¥3999',
+                        'badge'          => 'hot',
+                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", "Oceanfront resort\nSignature coastal landmarks\nMeals included" ) : __( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", 'developer-starter' ),
+                        'link'           => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南丽江大理双飞6日', 'Lijiang & Dali Discovery · 6 Days' ) : __( '云南丽江大理双飞6日', 'developer-starter' ),
+                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南', 'Yunnan' ) : __( '云南', 'developer-starter' ),
+                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '上海', 'Shanghai' ) : __( '上海', 'developer-starter' ),
+                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '6天5晚', '6 days / 5 nights' ) : __( '6天5晚', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 3599 ) : '¥3599',
+                        'original_price' => '',
+                        'badge'          => 'recommend',
+                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "丽江古城\n玉龙雪山\n洱海游船", "Old town walks\nSnow mountain views\nLake cruise" ) : __( "丽江古城\n玉龙雪山\n洱海游船", 'developer-starter' ),
+                        'link'           => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林山水甲天下4日', 'Guilin Landscape Highlights · 4 Days' ) : __( '桂林山水甲天下4日', 'developer-starter' ),
+                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林', 'Guilin' ) : __( '桂林', 'developer-starter' ),
+                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '广州', 'Guangzhou' ) : __( '广州', 'developer-starter' ),
+                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '4天3晚', '4 days / 3 nights' ) : __( '4天3晚', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1999 ) : '¥1999',
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2599 ) : '¥2599',
+                        'badge'          => 'discount',
+                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "漓江竹筏\n阳朔西街\n象鼻山", "Li River raft ride\nYangshuo strolls\nLandmark viewpoints" ) : __( "漓江竹筏\n阳朔西街\n象鼻山", 'developer-starter' ),
+                        'link'           => '#',
+                    ),
+                ),
             ),
 
             // ========================================
@@ -290,7 +328,7 @@ class Tour_Package_Module extends Module_Base {
         // ========================================
         // 默认示例数据（方便预览）
         // ========================================
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['tour_items'] ) ) {
             $items = array(
                 array(
                     'image'          => '',

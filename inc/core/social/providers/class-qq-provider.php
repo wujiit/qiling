@@ -1,6 +1,6 @@
 <?php
 /**
- * QQ Connect social login provider.
+ * QQ 互联社交登录提供者。
  *
  * @package Developer_Starter
  */

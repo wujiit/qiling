@@ -1,6 +1,6 @@
 <?php
 /**
- * Hotel Amenities Module - 酒店设施模块
+ * 酒店与场所设施模块
  * 
  * 展示酒店配套设施和服务
  * 支持阿里巴巴 iconfont Symbol/JS 图标方式
@@ -172,6 +172,56 @@ class Hotel_Amenities_Module extends Module_Base {
                         'desc'  => __( '如：06:00-22:00', 'developer-starter' ),
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'icon' => 'icon-swimming',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '室内恒温泳池', 'Indoor Heated Pool' ) : __( '室内恒温泳池', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '25米标准泳道，全年恒温', '25-meter lap pool with year-round temperature control.' ) : __( '25米标准泳道，全年恒温', 'developer-starter' ),
+                        'time' => '06:00-22:00',
+                    ),
+                    array(
+                        'icon' => 'icon-gym',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '健身中心', 'Fitness Center' ) : __( '健身中心', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业器械，24小时开放', 'Professional equipment with around-the-clock access.' ) : __( '专业器械，24小时开放', 'developer-starter' ),
+                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                    ),
+                    array(
+                        'icon' => 'icon-spa',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SPA水疗', 'Spa & Wellness' ) : __( 'SPA水疗', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业理疗师，放松身心', 'Relax with treatments from professional therapists.' ) : __( '专业理疗师，放松身心', 'developer-starter' ),
+                        'time' => '10:00-22:00',
+                    ),
+                    array(
+                        'icon' => 'icon-restaurant',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '中西餐厅', 'Dining Room' ) : __( '中西餐厅', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选美食，环球风味', 'A curated menu with regional and international flavors.' ) : __( '精选美食，环球风味', 'developer-starter' ),
+                        'time' => '06:30-22:00',
+                    ),
+                    array(
+                        'icon' => 'icon-bar',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '大堂酒吧', 'Lobby Bar' ) : __( '大堂酒吧', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选酒水，惬意时光', 'Signature drinks and a relaxed lounge atmosphere.' ) : __( '精选酒水，惬意时光', 'developer-starter' ),
+                        'time' => '14:00-02:00',
+                    ),
+                    array(
+                        'icon' => 'icon-meeting',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '会议中心', 'Meeting Center' ) : __( '会议中心', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '多功能会议室，专业设备', 'Flexible meeting rooms with business-ready equipment.' ) : __( '多功能会议室，专业设备', 'developer-starter' ),
+                        'time' => '08:00-20:00',
+                    ),
+                    array(
+                        'icon' => 'icon-parking',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '停车场', 'Parking' ) : __( '停车场', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '地下车位，24小时安保', 'Underground parking with 24-hour security.' ) : __( '地下车位，24小时安保', 'developer-starter' ),
+                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                    ),
+                    array(
+                        'icon' => 'icon-wifi',
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全覆盖高速无线网络', 'High-speed wireless coverage throughout the property.' ) : __( '全覆盖高速无线网络', 'developer-starter' ),
+                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                    ),
+                ),
             ),
 
             // ========================================
@@ -262,7 +312,7 @@ class Hotel_Amenities_Module extends Module_Base {
         // ========================================
         // 默认示例数据
         // ========================================
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['amenity_items'] ) ) {
             $items = array(
                 array(
                     'icon' => 'icon-swimming',

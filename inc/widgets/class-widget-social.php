@@ -1,6 +1,6 @@
 <?php
 /**
- * Social Links Widget
+ * 社交媒体链接小工具
  *
  * @package Developer_Starter
  * @since 1.0.0

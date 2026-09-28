@@ -1,6 +1,6 @@
 <?php
 /**
- * Language switcher UI helpers split from functions.php.
+ * 从 functions.php 拆分出的语言切换器 UI 辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Default page creator registry.
+ * 默认页面创建器注册表。
  *
  * @package Developer_Starter
  */

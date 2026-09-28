@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer Suite Module.
+ * 组合式页脚套件模块。
  *
  * @package Developer_Starter
  */

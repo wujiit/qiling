@@ -1,6 +1,6 @@
 <?php
 /**
- * Qiling Universal Recommend Module - 通用推荐/专题模块
+ * 通用推荐与专题展示模块
  *
  * 支持自动/手动/混合数据来源，适用于推荐位与专题入口。
  *

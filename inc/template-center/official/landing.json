@@ -232,8 +232,8 @@
       "data": {
         "cta_title": "立即行动，抢占先机",
         "cta_subtitle": "填写表单，我们的专家顾问将在 24 小时内与您联系，为您提供免费咨询服务",
-        "cta_btn_text": "立即咨询",
-        "cta_btn_url": "/contact/",
+        "cta_button_text": "立即咨询",
+        "cta_button_url": "/contact/",
         "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #059669 100%)",
         "cta_bg_type": "color",
         "cta_title_color": "#ffffff",

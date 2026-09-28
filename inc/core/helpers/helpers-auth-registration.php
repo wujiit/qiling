@@ -1,8 +1,8 @@
 <?php
 /**
- * Backward-compat wrapper.
+ * 向后兼容包装文件。
  *
- * This file now delegates to grouped helpers.
+ * 当前文件已委托给分组辅助函数处理。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

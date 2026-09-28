@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for design component schema.
+ * 设计组件模式定义数据配置。
  *
  * @package Developer_Starter
  */

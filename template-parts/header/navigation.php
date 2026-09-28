@@ -1,6 +1,6 @@
 <?php
 /**
- * Header primary navigation.
+ * 页头主导航菜单模板。
  *
  * @package Developer_Starter
  */

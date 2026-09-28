@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post like/favorite inline behaviour.
+ * 文章点赞与收藏内联交互脚本。
  *
  * @package Developer_Starter
  */

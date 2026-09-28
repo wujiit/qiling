@@ -1,6 +1,6 @@
 <?php
 /**
- * Left navigation helpers split from functions.php.
+ * 从 functions.php 拆分出的左侧导航辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

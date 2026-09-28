@@ -1,6 +1,6 @@
 <?php
 /**
- * Poster grid for video-mode search results.
+ * 视频模式搜索结果海报网格模板。
  *
  * @package Developer_Starter
  */

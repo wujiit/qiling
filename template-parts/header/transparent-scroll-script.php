@@ -1,6 +1,6 @@
 <?php
 /**
- * Transparent header scroll behavior.
+ * 透明页头滚动交互逻辑脚本。
  *
  * @package Developer_Starter
  */

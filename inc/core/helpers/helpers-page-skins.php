@@ -1,6 +1,6 @@
 <?php
 /**
- * Page-level visual skin helpers.
+ * 页面级视觉皮肤辅助函数。
  *
  * @package Developer_Starter
  * @since 2.5.17
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_page_visual_skins' ) ) {
     /**
-     * Get registered page-level visual skins.
+     * 获取已注册的页面级视觉皮肤列表。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -274,7 +274,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skins' ) ) {
 
 if ( ! function_exists( 'developer_starter_build_industry_page_visual_skin' ) ) {
     /**
-     * Build a reusable industry visual preset from a compact palette spec.
+     * 基于调色板规范构建可复用的行业视觉预设。
      *
      * @param string              $key  Preset key.
      * @param array<string,mixed> $spec Preset spec.
@@ -427,7 +427,7 @@ if ( ! function_exists( 'developer_starter_build_industry_page_visual_skin' ) ) 
 
 if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets' ) ) {
     /**
-     * Get reusable industry visual presets for page-level one-click styling.
+     * 获取可用于一键应用的行业视觉预设。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -747,7 +747,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
 
 if ( ! function_exists( 'developer_starter_get_page_visual_skin' ) ) {
     /**
-     * Resolve a visual skin config by key.
+     * 根据预设键名解析视觉皮肤配置。
      *
      * @param string $skin_key Skin key.
      * @return array<string,mixed>|null
@@ -772,7 +772,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skin' ) ) {
 
 if ( ! function_exists( 'developer_starter_normalize_page_skin_class_list' ) ) {
     /**
-     * Sanitize a CSS class list.
+     * 清理并过滤 CSS 类名列表。
      *
      * @param array<int,string>|string $classes Class list.
      * @return array<int,string>
@@ -800,7 +800,7 @@ if ( ! function_exists( 'developer_starter_normalize_page_skin_class_list' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_page_visual_skin_for_template' ) ) {
     /**
-     * Resolve the visual skin config for a page template.
+     * 解析页面模板对应的视觉皮肤配置。
      *
      * @param string $template Page template path.
      * @return array<string,mixed>|null
@@ -836,7 +836,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skin_for_template' ) 
 
 if ( ! function_exists( 'developer_starter_get_current_page_visual_skin' ) ) {
     /**
-     * Resolve the visual skin config for the current queried page.
+     * 解析当前查询页面对应的视觉皮肤配置。
      *
      * @return array<string,mixed>|null
      */
@@ -876,7 +876,7 @@ if ( ! function_exists( 'developer_starter_get_current_page_visual_skin' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_page_visual_style_meta_key' ) ) {
     /**
-     * Get the single post meta key used for page-level visual overrides.
+     * 获取页面级视觉覆盖的 Meta 键名。
      *
      * @return string
      */
@@ -887,7 +887,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_meta_key' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_page_visual_rest_flag' ) ) {
     /**
-     * Sanitize simple page visual toggle meta values used by the editor REST API.
+     * 过滤编辑器 REST API 使用的页面视觉开关 Meta 值。
      *
      * @param mixed $value Raw meta value.
      * @return string
@@ -903,10 +903,10 @@ if ( ! function_exists( 'developer_starter_sanitize_page_visual_rest_flag' ) ) {
 
 if ( ! function_exists( 'developer_starter_register_page_visual_rest_meta' ) ) {
     /**
-     * Register page-level visual settings so the block editor can persist them.
+     * 注册页面级视觉设置 Meta 字段以供块编辑器持久化。
      *
-     * Classic meta boxes still save through save_post; this REST registration keeps
-     * the same controls reliable in the block editor's autosave/update flow.
+     * 传统元数据框仍通过 save_post 保存，此处通过 REST 字段注册确保
+     * 块编辑器在自动保存和更新流中正常生效。
      *
      * @return void
      */
@@ -969,7 +969,7 @@ add_action( 'init', 'developer_starter_register_page_visual_rest_meta', 20 );
 
 if ( ! function_exists( 'developer_starter_get_page_visual_custom_presets_option_key' ) ) {
     /**
-     * Get the option key used to store user-created page visual presets.
+     * 获取存储用户自建页面视觉预设的配置键名。
      *
      * @return string
      */
@@ -980,7 +980,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_custom_presets_option
 
 if ( ! function_exists( 'developer_starter_filter_page_visual_vars_by_scope' ) ) {
     /**
-     * Filter page visual CSS variables for a preview/runtime scope.
+     * 为预览或运行时作用域筛选页面视觉 CSS 变量。
      *
      * @param array<string,string> $vars  CSS variables.
      * @param string               $scope Scope key.
@@ -1028,7 +1028,7 @@ if ( ! function_exists( 'developer_starter_filter_page_visual_vars_by_scope' ) )
 
 if ( ! function_exists( 'developer_starter_normalize_page_visual_custom_preset_skin' ) ) {
     /**
-     * Sanitize a reusable visual skin snapshot stored with user presets.
+     * 过滤用户预设中存储的复用视觉皮肤快照数据。
      *
      * @param mixed  $skin       Raw skin data.
      * @param string $preset_key Custom preset key.
@@ -1120,7 +1120,7 @@ if ( ! function_exists( 'developer_starter_normalize_page_visual_custom_preset_s
 
 if ( ! function_exists( 'developer_starter_normalize_page_visual_custom_presets' ) ) {
     /**
-     * Normalize user-created page visual presets from the options table.
+     * 从 options 表规范化读取用户自建页面视觉预设。
      *
      * @param mixed $raw Raw option value.
      * @return array<string,array<string,mixed>>
@@ -1180,7 +1180,7 @@ if ( ! function_exists( 'developer_starter_normalize_page_visual_custom_presets'
 
 if ( ! function_exists( 'developer_starter_get_page_visual_custom_presets' ) ) {
     /**
-     * Get user-created page visual presets.
+     * 获取所有用户自建的页面视觉预设。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -1192,7 +1192,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_custom_presets' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset' ) ) {
     /**
-     * Get one user-created page visual preset.
+     * 获取单个用户自建的页面视觉预设。
      *
      * @param string $preset_key Preset key.
      * @return array<string,mixed>|null
@@ -1214,7 +1214,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset_skin' ) ) {
     /**
-     * Get the reusable skin snapshot for a user-created page visual preset.
+     * 获取用户自建视觉预设的皮肤快照数据。
      *
      * @param string $preset_key Preset key.
      * @return array<string,mixed>|null
@@ -1234,7 +1234,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset_skin' )
 
 if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset_key_from_label' ) ) {
     /**
-     * Build a stable preset key from a user-facing label.
+     * 根据预设名称生成稳定的预设键名。
      *
      * @param string $label Preset label.
      * @return string
@@ -1256,7 +1256,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset_key_fro
 
 if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset_vars_array' ) ) {
     /**
-     * Get CSS variables stored for a user-created visual preset.
+     * 获取用户自建视觉预设存储的 CSS 变量。
      *
      * @param string $preset_key Preset key.
      * @param string $scope      Optional scope key.
@@ -1287,7 +1287,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_custom_preset_vars_ar
 
 if ( ! function_exists( 'developer_starter_get_page_visual_preset_vars_array' ) ) {
     /**
-     * Get CSS variables for a built-in or user-created visual preset.
+     * 获取内置或用户自建视觉预设的 CSS 变量。
      *
      * @param string $preset_key Preset key.
      * @param string $scope      Optional scope key.
@@ -1310,7 +1310,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_preset_vars_array' ) 
 
 if ( ! function_exists( 'developer_starter_page_visual_preset_exists' ) ) {
     /**
-     * Check whether a built-in or user-created visual preset exists.
+     * 检查内置或用户自定义视觉预设是否存在。
      *
      * @param string $preset_key Preset key.
      * @return bool
@@ -1327,7 +1327,7 @@ if ( ! function_exists( 'developer_starter_page_visual_preset_exists' ) ) {
 
 if ( ! function_exists( 'developer_starter_save_page_visual_custom_preset' ) ) {
     /**
-     * Save current page visual settings as a reusable preset.
+     * 将当前页面视觉配置保存为可复用的预设方案。
      *
      * @param string $label    Preset label.
      * @param mixed  $settings Raw page visual settings.
@@ -1389,7 +1389,7 @@ if ( ! function_exists( 'developer_starter_save_page_visual_custom_preset' ) ) {
 
 if ( ! function_exists( 'developer_starter_update_page_visual_custom_preset_label' ) ) {
     /**
-     * Update the label for a user-created page visual preset.
+     * 更新用户自建页面视觉预设的名称标签。
      *
      * @param string $preset_key Preset key.
      * @param string $label      New label.
@@ -1418,7 +1418,7 @@ if ( ! function_exists( 'developer_starter_update_page_visual_custom_preset_labe
 
 if ( ! function_exists( 'developer_starter_delete_page_visual_custom_preset' ) ) {
     /**
-     * Delete a user-created page visual preset.
+     * 删除用户自建的页面视觉预设。
      *
      * @param string $preset_key Preset key.
      * @return bool
@@ -1443,7 +1443,7 @@ if ( ! function_exists( 'developer_starter_delete_page_visual_custom_preset' ) )
 
 if ( ! function_exists( 'developer_starter_sanitize_page_visual_style_css_value' ) ) {
     /**
-     * Sanitize a page visual CSS value.
+     * 过滤页面视觉 CSS 属性值。
      *
      * @param mixed  $value    Raw value.
      * @param string $fallback Fallback.
@@ -1469,7 +1469,7 @@ if ( ! function_exists( 'developer_starter_sanitize_page_visual_style_css_value'
 
 if ( ! function_exists( 'developer_starter_get_page_visual_style_fields' ) ) {
     /**
-     * Get page-level visual fields and CSS variable mappings.
+     * 获取页面级视觉字段与 CSS 变量的映射关系。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -1713,7 +1713,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_fields' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_page_visual_style_settings' ) ) {
     /**
-     * Sanitize page-level visual settings.
+     * 清理并过滤页面级视觉设置。
      *
      * @param mixed $settings Raw settings.
      * @return array<string,mixed>
@@ -1788,7 +1788,7 @@ if ( ! function_exists( 'developer_starter_sanitize_page_visual_style_settings' 
 
 if ( ! function_exists( 'developer_starter_get_post_page_visual_style' ) ) {
     /**
-     * Read page-level visual settings from post meta.
+     * 从文章 Meta 中读取页面级视觉设置。
      *
      * @param int $post_id Post ID.
      * @return array<string,mixed>
@@ -1813,7 +1813,7 @@ if ( ! function_exists( 'developer_starter_get_post_page_visual_style' ) ) {
 
 if ( ! function_exists( 'developer_starter_page_visual_style_has_custom_values' ) ) {
     /**
-     * Check whether a sanitized page visual settings array has custom values.
+     * 检查页面视觉设置是否包含自定义值。
      *
      * @param array<string,mixed> $settings Settings.
      * @return bool
@@ -1847,7 +1847,7 @@ if ( ! function_exists( 'developer_starter_page_visual_style_has_custom_values' 
 
 if ( ! function_exists( 'developer_starter_persist_post_page_visual_style' ) ) {
     /**
-     * Persist page-level visual settings.
+     * 持久化保存页面级视觉设置。
      *
      * @param int   $post_id  Post ID.
      * @param mixed $settings Raw settings.
@@ -1875,7 +1875,7 @@ if ( ! function_exists( 'developer_starter_persist_post_page_visual_style' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_page_visual_style_presets' ) ) {
     /**
-     * Get preset choices for page-level visual settings.
+     * 获取页面级视觉设置的预设选项列表。
      *
      * @return array<string,string>
      */
@@ -1913,7 +1913,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_presets' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_page_visual_skin_vars_array' ) ) {
     /**
-     * Get sanitized CSS variables from a skin.
+     * 从皮肤中提取经过滤的 CSS 变量。
      *
      * @param array<string,mixed>|null $skin  Skin config.
      * @param string                   $scope Optional scope.
@@ -1955,7 +1955,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skin_vars_array' ) ) 
 
 if ( ! function_exists( 'developer_starter_get_page_visual_style_custom_vars_array' ) ) {
     /**
-     * Build CSS variables from custom page visual settings.
+     * 根据自定义页面视觉配置构建 CSS 变量。
      *
      * @param array<string,mixed> $settings Sanitized settings.
      * @param string              $scope    Optional scope key.
@@ -2002,7 +2002,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_custom_vars_arr
             }
         }
 
-        // Older page styles used one footer background/text pair for both the main and friend-link regions.
+        // 兼容旧版样式：为主页脚区域与友情链接区域应用统一背景与文字配色。
         if ( isset( $settings['footer']['background'] ) && empty( $settings['footer']['friend_background'] ) ) {
             $vars['--qiling-footer-friend-bg'] = (string) $settings['footer']['background'];
         }
@@ -2021,7 +2021,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_custom_vars_arr
 
 if ( ! function_exists( 'developer_starter_resolve_page_visual_style' ) ) {
     /**
-     * Resolve page visual vars in priority order: template preset, selected preset, custom values.
+     * 按优先级顺序解析页面视觉变量：模板预设、选定预设、自定义配置。
      *
      * @param int $post_id Post ID.
      * @return array<string,mixed>
@@ -2075,7 +2075,7 @@ if ( ! function_exists( 'developer_starter_resolve_page_visual_style' ) ) {
 
 if ( ! function_exists( 'developer_starter_build_page_visual_style_vars' ) ) {
     /**
-     * Build a style attribute value from CSS variables.
+     * 基于 CSS 变量构建 style 内联样式属性字符串。
      *
      * @param array<string,string> $vars CSS vars.
      * @return string
@@ -2104,7 +2104,7 @@ if ( ! function_exists( 'developer_starter_build_page_visual_style_vars' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_current_page_visual_style_post_id' ) ) {
     /**
-     * Get current singular page ID for visual style resolution.
+     * 获取用于视觉样式解析的当前独立页面 ID。
      *
      * @return int
      */
@@ -2119,7 +2119,7 @@ if ( ! function_exists( 'developer_starter_get_current_page_visual_style_post_id
 
 if ( ! function_exists( 'developer_starter_get_current_page_visual_style_vars_array' ) ) {
     /**
-     * Get current page visual style vars.
+     * 获取当前页面视觉样式变量数组。
      *
      * @param string $scope Reserved scope key.
      * @return array<string,string>
@@ -2159,7 +2159,7 @@ if ( ! function_exists( 'developer_starter_get_current_page_visual_style_vars_ar
 
 if ( ! function_exists( 'developer_starter_get_current_page_visual_style_vars' ) ) {
     /**
-     * Get current page visual style vars as a style attribute fragment.
+     * 获取当前页面视觉样式变量的 style 属性字符串片段。
      *
      * @param string $scope Reserved scope key.
      * @return string
@@ -2171,7 +2171,7 @@ if ( ! function_exists( 'developer_starter_get_current_page_visual_style_vars' )
 
 if ( ! function_exists( 'developer_starter_output_current_page_visual_style_inline_css' ) ) {
     /**
-     * Output page-level visual variables after enqueued styles.
+     * 在已加载的样式表后输出页面级视觉 CSS 变量。
      *
      * @return void
      */
@@ -2198,7 +2198,7 @@ add_action( 'wp_head', 'developer_starter_output_current_page_visual_style_inlin
 
 if ( ! function_exists( 'developer_starter_filter_page_visual_style_body_classes' ) ) {
     /**
-     * Add page visual style classes to body_class().
+     * 为 body_class() 添加页面视觉样式类名。
      *
      * @param array<int,string> $classes Body classes.
      * @return array<int,string>
@@ -2240,7 +2240,7 @@ add_filter( 'body_class', 'developer_starter_filter_page_visual_style_body_class
 
 if ( ! function_exists( 'developer_starter_get_page_visual_skin_wrapper_classes' ) ) {
     /**
-     * Build wrapper classes for a page-level visual skin.
+     * 构建页面级视觉皮肤外层容器 CSS 类名。
      *
      * @param array<int,string>|string $base_classes Base wrapper classes.
      * @param string                   $template     Optional page template path.
@@ -2265,7 +2265,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skin_wrapper_classes'
 
 if ( ! function_exists( 'developer_starter_get_page_visual_skin_style_vars' ) ) {
     /**
-     * Build sanitized CSS custom properties for one page skin scope.
+     * 为页面皮肤作用域构建过滤后的 CSS 自定义属性。
      *
      * @param array<string,mixed>|null $skin  Page skin config.
      * @param string                   $scope Scope key such as header/footer.
@@ -2314,7 +2314,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skin_style_vars' ) ) 
 
 if ( ! function_exists( 'developer_starter_filter_page_visual_skin_body_classes' ) ) {
     /**
-     * Add active page skin classes to body_class().
+     * 为 body_class() 添加当前生效的页面皮肤类名。
      *
      * @param array<int,string> $classes Body classes.
      * @return array<int,string>
@@ -2337,7 +2337,7 @@ add_filter( 'body_class', 'developer_starter_filter_page_visual_skin_body_classe
 
 if ( ! function_exists( 'developer_starter_enqueue_current_page_visual_skin_styles' ) ) {
     /**
-     * Enqueue styles for the active page-level visual skin.
+     * 加载当前页面生效视觉皮肤对应的样式表。
      *
      * @param string $fallback_version Fallback asset version.
      * @return void

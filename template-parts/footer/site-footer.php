@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer shell.
+ * 全站页脚外层框架模板。
  *
  * @package Developer_Starter
  */

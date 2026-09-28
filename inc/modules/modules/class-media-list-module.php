@@ -1,6 +1,6 @@
 <?php
 /**
- * Media List Module - 读书/观影/听歌清单
+ * 媒体与书影音清单模块
  *
  * @package Developer_Starter
  */
@@ -150,6 +150,41 @@ class Media_List_Module extends Module_Base {
                         'label' => __( '短评', 'developer-starter' ),
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'type'     => 'book',
+                        'cover'    => '',
+                        'title'    => __( '纳瓦尔宝典', 'developer-starter' ),
+                        'creator'  => __( 'Eric Jorgenson', 'developer-starter' ),
+                        'status'   => 'done',
+                        'score'    => '9',
+                        'progress' => __( '已读', 'developer-starter' ),
+                        'note'     => __( '对杠杆与长期主义的阐述很实用。', 'developer-starter' ),
+                        'link'     => '',
+                    ),
+                    array(
+                        'type'     => 'movie',
+                        'cover'    => '',
+                        'title'    => __( '沙丘', 'developer-starter' ),
+                        'creator'  => __( 'Denis Villeneuve', 'developer-starter' ),
+                        'status'   => 'doing',
+                        'score'    => '8',
+                        'progress' => __( '看到第二部', 'developer-starter' ),
+                        'note'     => __( '世界观宏大，视听质感优秀。', 'developer-starter' ),
+                        'link'     => '',
+                    ),
+                    array(
+                        'type'     => 'music',
+                        'cover'    => '',
+                        'title'    => __( 'Random Access Memories', 'developer-starter' ),
+                        'creator'  => 'Daft Punk',
+                        'status'   => 'wish',
+                        'score'    => '9',
+                        'progress' => __( '准备重听', 'developer-starter' ),
+                        'note'     => __( '复古与未来感融合得很自然。', 'developer-starter' ),
+                        'link'     => '',
+                    ),
+                ),
             ),
             array(
                 'id'      => 'ml_card_bg',
@@ -206,7 +241,7 @@ class Media_List_Module extends Module_Base {
         $link_text = isset( $data['ml_link_text'] ) && '' !== trim( (string) $data['ml_link_text'] ) ? (string) $data['ml_link_text'] : __( '查看详情', 'developer-starter' );
 
         $items = isset( $data['ml_items'] ) && is_array( $data['ml_items'] ) ? $data['ml_items'] : array();
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['ml_items'] ) ) {
             $items = array(
                 array(
                     'type'     => 'book',

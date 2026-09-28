@@ -1,6 +1,6 @@
 <?php
 /**
- * Reader Wall Module - 评论精选/读者墙
+ * 读者墙与精选评论模块
  *
  * @package Developer_Starter
  */
@@ -90,10 +90,11 @@ class Reader_Wall_Module extends Module_Base {
                 'default' => 'yes',
             ),
             array(
-                'id'     => 'rw_manual_items',
-                'type'   => 'repeater',
-                'label'  => __( '手动评论列表', 'developer-starter' ),
-                'fields' => array(
+                'id'            => 'rw_manual_items',
+                'type'          => 'repeater',
+                'label'         => __( '手动评论列表', 'developer-starter' ),
+                'default_items' => $this->get_default_items(),
+                'fields'        => array(
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
@@ -298,26 +299,8 @@ class Reader_Wall_Module extends Module_Base {
 
     private function collect_manual_items( $data, $count ) {
         $rows = isset( $data['rw_manual_items'] ) && is_array( $data['rw_manual_items'] ) ? $data['rw_manual_items'] : array();
-        if ( empty( $rows ) ) {
-            $date_format = function_exists( 'developer_starter_get_date_time_format' ) ? developer_starter_get_date_time_format( false ) : get_option( 'date_format' );
-            $rows = array(
-                array(
-                    'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者A', 'Reader A' ) : __( '读者A', 'developer-starter' ),
-                    'avatar'     => '',
-                    'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '文章非常实用，解决了我很多实际问题。', 'Very practical article. It helped solve several real project issues for me.' ) : __( '文章非常实用，解决了我很多实际问题。', 'developer-starter' ),
-                    'date'       => date_i18n( $date_format ),
-                    'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '主题模块实战经验', 'Practical Theme Module Notes' ) : __( '主题模块实战经验', 'developer-starter' ),
-                    'url'        => '',
-                ),
-                array(
-                    'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者B', 'Reader B' ) : __( '读者B', 'developer-starter' ),
-                    'avatar'     => '',
-                    'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '希望后续能有更多案例拆解，学习成本更低。', 'Would love to see more case studies like this. They make the learning curve much easier.' ) : __( '希望后续能有更多案例拆解，学习成本更低。', 'developer-starter' ),
-                    'date'       => date_i18n( $date_format, strtotime( '-1 day' ) ),
-                    'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '性能优化指南', 'Performance Optimization Guide' ) : __( '性能优化指南', 'developer-starter' ),
-                    'url'        => '',
-                ),
-            );
+        if ( empty( $rows ) && ! isset( $data['rw_manual_items'] ) ) {
+            $rows = $this->get_default_items();
         }
 
         $items = array();
@@ -357,5 +340,32 @@ class Reader_Wall_Module extends Module_Base {
         }
 
         return strtoupper( substr( $name, 0, 1 ) );
+    }
+
+    /**
+     * 获取默认手动评论条目。
+     *
+     * @return array
+     */
+    private function get_default_items() {
+        $date_format = function_exists( 'developer_starter_get_date_time_format' ) ? developer_starter_get_date_time_format( false ) : get_option( 'date_format' );
+        return array(
+            array(
+                'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者A', 'Reader A' ) : __( '读者A', 'developer-starter' ),
+                'avatar'     => '',
+                'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '文章非常实用，解决了我很多实际问题。', 'Very practical article. It helped solve several real project issues for me.' ) : __( '文章非常实用，解决了我很多实际问题。', 'developer-starter' ),
+                'date'       => date_i18n( $date_format ),
+                'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '主题模块实战经验', 'Practical Theme Module Notes' ) : __( '主题模块实战经验', 'developer-starter' ),
+                'url'        => '',
+            ),
+            array(
+                'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者B', 'Reader B' ) : __( '读者B', 'developer-starter' ),
+                'avatar'     => '',
+                'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '希望后续能有更多案例拆解，学习成本更低。', 'Would love to see more case studies like this. They make the learning curve much easier.' ) : __( '希望后续能有更多案例拆解，学习成本更低。', 'developer-starter' ),
+                'date'       => date_i18n( $date_format, strtotime( '-1 day' ) ),
+                'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '性能优化指南', 'Performance Optimization Guide' ) : __( '性能优化指南', 'developer-starter' ),
+                'url'        => '',
+            ),
+        );
     }
 }

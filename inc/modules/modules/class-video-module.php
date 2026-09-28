@@ -1,6 +1,6 @@
 <?php
 /**
- * Video Module - 视频展示
+ * 视频播放展示模块
  *
  * @package Developer_Starter
  */
@@ -92,26 +92,26 @@ class Video_Module extends Module_Base {
         $video_url = isset( $data['video_url'] ) ? trim( $data['video_url'] ) : '';
         $video_width = isset( $data['video_width'] ) && ! empty( $data['video_width'] ) ? $data['video_width'] : '100%';
         $video_height = isset( $data['video_height'] ) && ! empty( $data['video_height'] ) ? $data['video_height'] : '500px';
-        $video_poster = isset( $data['video_poster'] ) ? $data['video_poster'] : '';
+        $video_poster = isset( $data['video_poster'] ) && '' !== $data['video_poster'] ? $data['video_poster'] : ( isset( $data['video_cover'] ) ? $data['video_cover'] : '' );
         
         if ( empty( $video_url ) ) {
             return;
         }
         
-        // Section Styles
+        // 区块样式配置
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         if ( ! empty( $bg_color ) ) {
             $section_style .= strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
         }
         
-        // Typography Styles
+        // 文本样式配置
         $title_style = "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
         
         $subtitle_style = "font-size: {$subtitle_size};";
         if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";
         
-        // Video Container Style
+        // 视频容器样式
         $container_style = "max-width: {$video_width};";
         
         // 检测视频类型

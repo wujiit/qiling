@@ -18,7 +18,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 get_header();
 
-// Get settings
+// 获取页面配置项
 $show_timeline = developer_starter_get_option( 'about_show_timeline', '' );
 $show_team = developer_starter_get_option( 'about_show_team', '' );
 $show_certificates = developer_starter_get_option( 'about_show_certificates', '' );
@@ -215,7 +215,7 @@ $has_tabs = count( $tabs ) > 1;
 </div>
 
 <?php
-// Contact Info Section
+// 联系信息展示区域
 $company_name = developer_starter_get_option( 'company_name', '' );
 $phone = developer_starter_get_option( 'company_phone', '' );
 $qq = developer_starter_get_option( 'company_qq', '' );

@@ -1,6 +1,6 @@
 <?php
 /**
- * Default search result list.
+ * 默认搜索结果列表模板。
  *
  * @package Developer_Starter
  */

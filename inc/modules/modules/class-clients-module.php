@@ -1,6 +1,6 @@
 <?php
 /**
- * Clients Module - 合作客户（增强版）
+ * 合作客户展示模块
  *
  * @package Developer_Starter
  */
@@ -49,6 +49,7 @@ class Clients_Module extends Module_Base {
                 'default' => '',
                 'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
             ),
+            array( 'id' => 'clients_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
             
             array( 'id' => 'clients_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ), 'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ) ),
             
@@ -57,6 +58,7 @@ class Clients_Module extends Module_Base {
             array( 'id' => 'clients_auto_scroll', 'type' => 'select', 'label' => __( '自动滚动', 'developer-starter' ), 'options' => array( '' => __( '否', 'developer-starter' ), '1' => __( '是', 'developer-starter' ) ) ),
             array( 'id' => 'clients_scroll_speed', 'type' => 'number', 'label' => __( '滚动速度 (秒)', 'developer-starter' ), 'default' => '30', 'dependency' => array( 'clients_auto_scroll', '==', '1' ) ),
             array( 'id' => 'clients_card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'developer-starter' ), 'default' => 'var(--color-neutral-0)' ),
+            array( 'id' => 'clients_card_text_color', 'type' => 'color', 'label' => __( '卡片文字颜色', 'developer-starter' ), 'desc' => __( '控制占位文字与客户名称颜色，支持深浅色自主设置', 'developer-starter' ) ),
             array( 'id' => 'clients_logo_height', 'type' => 'text', 'label' => __( 'Logo高度', 'developer-starter' ), 'default' => '50px' ),
             array( 'id' => 'clients_show_name', 'type' => 'select', 'label' => __( '显示名称', 'developer-starter' ), 'options' => array( '' => __( '否', 'developer-starter' ), '1' => __( '是', 'developer-starter' ) ) ),
             
@@ -74,11 +76,24 @@ class Clients_Module extends Module_Base {
                 'default' => '80px',
             ),
             
-            array( 'id' => 'clients_items', 'type' => 'repeater', 'label' => __( '客户列表', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'name', 'type' => 'text', 'label' => __( '客户名称', 'developer-starter' ) ),
-                array( 'id' => 'logo', 'type' => 'image', 'label' => __( 'Logo图片', 'developer-starter' ) ),
-                array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接 (可选)', 'developer-starter' ) ),
-            ) ),
+            array(
+                'id'            => 'clients_items',
+                'type'          => 'repeater',
+                'label'         => __( '客户列表', 'developer-starter' ),
+                'fields'        => array(
+                    array( 'id' => 'name', 'type' => 'text', 'label' => __( '客户名称', 'developer-starter' ) ),
+                    array( 'id' => 'logo', 'type' => 'image', 'label' => __( 'Logo图片', 'developer-starter' ) ),
+                    array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接 (可选)', 'developer-starter' ) ),
+                ),
+                'default_items' => array(
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '华为', 'Acme Corp' ) : __( '华为', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阿里巴巴', 'Northwind' ) : __( '阿里巴巴', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '腾讯', 'BrightLabs' ) : __( '腾讯', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '百度', 'Vertex Studio' ) : __( '百度', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '京东', 'BluePeak' ) : __( '京东', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '字节跳动', 'NovaWorks' ) : __( '字节跳动', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                ),
+            ),
             array(
                 'id' => 'enable_staggered_animation',
                 'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
@@ -107,7 +122,12 @@ class Clients_Module extends Module_Base {
         $card_bg = isset( $data['clients_card_bg'] ) && ! empty( $data['clients_card_bg'] ) ? $data['clients_card_bg'] : 'var(--color-neutral-0)';
         $logo_height = isset( $data['clients_logo_height'] ) && ! empty( $data['clients_logo_height'] ) ? $data['clients_logo_height'] : '50px';
         $show_name = isset( $data['clients_show_name'] ) ? $data['clients_show_name'] : '';
-        $items = isset( $data['clients_items'] ) ? $data['clients_items'] : array();
+        $card_text_color = isset( $data['clients_card_text_color'] ) && ! empty( $data['clients_card_text_color'] ) ? $data['clients_card_text_color'] : '';
+        $subtitle_color = isset( $data['clients_subtitle_color'] ) && ! empty( $data['clients_subtitle_color'] ) ? $data['clients_subtitle_color'] : '';
+        
+        $items = isset( $data['clients_items'] ) && is_array( $data['clients_items'] )
+            ? $data['clients_items']
+            : ( isset( $data['clients_logos'] ) && is_array( $data['clients_logos'] ) ? $data['clients_logos'] : array() );
         
         // Typography & Spacing
         $title_size = isset( $data['clients_title_size'] ) ? $data['clients_title_size'] : '';
@@ -115,18 +135,30 @@ class Clients_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '80px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '80px';
         
-        if ( empty( $items ) ) {
-            $items = array(
-                array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '华为', 'Acme Corp' ) : __( '华为', 'developer-starter' ), 'logo' => '' ),
-                array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阿里巴巴', 'Northwind' ) : __( '阿里巴巴', 'developer-starter' ), 'logo' => '' ),
-                array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '腾讯', 'BrightLabs' ) : __( '腾讯', 'developer-starter' ), 'logo' => '' ),
-                array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '百度', 'Vertex Studio' ) : __( '百度', 'developer-starter' ), 'logo' => '' ),
-                array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '京东', 'BluePeak' ) : __( '京东', 'developer-starter' ), 'logo' => '' ),
-                array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '字节跳动', 'NovaWorks' ) : __( '字节跳动', 'developer-starter' ), 'logo' => '' ),
-            );
+        // 默认示例数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['clients_items'] ) && ! isset( $data['clients_logos'] ) ) {
+            if ( ( ! empty( $title ) && ( false !== strpos( $title, '电竞' ) || false !== strpos( $title, '战队' ) || false !== strpos( $title, '赞助商' ) ) ) || ( ! empty( $subtitle ) && false !== strpos( $subtitle, '电竞' ) ) ) {
+                $items = array(
+                    array( 'name' => 'NVIDIA GeForce', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Logitech G', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Intel Core', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Secretlab', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Razer', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Red Bull', 'logo' => '', 'link' => '#' ),
+                );
+            } else {
+                $items = array(
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '华为', 'Acme Corp' ) : __( '华为', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阿里巴巴', 'Northwind' ) : __( '阿里巴巴', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '腾讯', 'BrightLabs' ) : __( '腾讯', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '百度', 'Vertex Studio' ) : __( '百度', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '京东', 'BluePeak' ) : __( '京东', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '字节跳动', 'NovaWorks' ) : __( '字节跳动', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                );
+            }
         }
         
-        // Dynamic Styles
+        // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         if ( ! empty( $bg_color ) ) {
             $section_style .= strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
@@ -138,20 +170,22 @@ class Clients_Module extends Module_Base {
         
         $subtitle_style = '';
         if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
+        if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";
         
-        // Client Item Styles (Card BG)
+        // 合作客户项卡片背景样式
         $item_style = "background: {$card_bg};";
+        if ( $card_text_color ) $item_style .= "color: {$card_text_color};";
         
-        // Logo Style Class
+        // 品牌 Logo 样式类名
         $logo_class = "client-logo";
         if ( $logo_style === 'grayscale' ) {
             $logo_class .= " is-grayscale";
         }
         
-        // Scroll Animation Duration
+        // 滚动动画时长计算
         $scroll_style = $auto_scroll === '1' ? "animation-duration: {$scroll_speed}s;" : "";
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-clients" style="<?php echo esc_attr( $section_style ); ?>">
@@ -173,22 +207,25 @@ class Clients_Module extends Module_Base {
                         <div class="clients-scroll-wrapper">
                             <div class="clients-scroll-track" style="<?php echo esc_attr( $scroll_style ); ?>">
                                 <?php 
-                                // Duplicate for infinite scroll
+                                // 复制子项实现无缝无限滚动
                                 for ( $loop = 0; $loop < 2; $loop++ ) :
                                     foreach ( $items as $item ) : 
                                         $logo = isset( $item['logo'] ) ? $item['logo'] : '';
                                         $name = isset( $item['name'] ) ? $item['name'] : '';
+                                        $link = isset( $item['link'] ) && '' !== $item['link'] ? $item['link'] : ( isset( $item['url'] ) ? $item['url'] : '' );
+                                        $tag = $link ? 'a' : 'div';
+                                        $href = $link ? ' href="' . esc_url( $link ) . '" target="_blank"' : '';
                                 ?>
-                                    <div class="client-item" style="<?php echo esc_attr( $item_style ); ?>">
+                                    <<?php echo $tag . $href; ?> class="client-item" style="<?php echo esc_attr( $item_style ); ?>">
                                         <?php if ( $logo ) : ?>
                                             <img src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( $name ); ?>" style="height: <?php echo esc_attr( $logo_height ); ?>;" class="<?php echo esc_attr( $logo_class ); ?>" />
                                         <?php else : ?>
-                                            <span class="client-name-placeholder"><?php echo esc_html( $name ); ?></span>
+                                            <span class="client-name-placeholder"<?php echo $card_text_color ? ' style="color:' . esc_attr( $card_text_color ) . ';"' : ''; ?>><?php echo esc_html( $name ); ?></span>
                                         <?php endif; ?>
                                         <?php if ( $show_name === '1' && $logo && $name ) : ?>
-                                            <span class="client-name"><?php echo esc_html( $name ); ?></span>
+                                            <span class="client-name"<?php echo $card_text_color ? ' style="color:' . esc_attr( $card_text_color ) . ';"' : ''; ?>><?php echo esc_html( $name ); ?></span>
                                         <?php endif; ?>
-                                    </div>
+                                    </<?php echo $tag; ?>>
                                 <?php 
                                     endforeach;
                                 endfor;
@@ -201,12 +238,12 @@ class Clients_Module extends Module_Base {
                             <?php foreach ( $items as $index => $item ) : 
                                 $logo = isset( $item['logo'] ) ? $item['logo'] : '';
                                 $name = isset( $item['name'] ) ? $item['name'] : '';
-                                $link = isset( $item['link'] ) ? $item['link'] : '';
+                                $link = isset( $item['link'] ) && '' !== $item['link'] ? $item['link'] : ( isset( $item['url'] ) ? $item['url'] : '' );
                                 
                                 $tag = $link ? 'a' : 'div';
                                 $href = $link ? ' href="' . esc_url( $link ) . '" target="_blank"' : '';
                                 
-                                // Calculate Staggered Animation
+                                // 计算交错动画延迟
                                 $anim_attr = '';
                                 if ( $enable_anim === 'yes' ) {
                                     $anim_attr = $this->get_staggered_animation_attr( $index );
@@ -216,10 +253,10 @@ class Clients_Module extends Module_Base {
                                     <?php if ( $logo ) : ?>
                                         <img src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( $name ); ?>" style="height: <?php echo esc_attr( $logo_height ); ?>;" class="<?php echo esc_attr( $logo_class ); ?>" />
                                     <?php else : ?>
-                                        <span class="client-name-placeholder"><?php echo esc_html( $name ); ?></span>
+                                        <span class="client-name-placeholder"<?php echo $card_text_color ? ' style="color:' . esc_attr( $card_text_color ) . ';"' : ''; ?>><?php echo esc_html( $name ); ?></span>
                                     <?php endif; ?>
                                     <?php if ( $show_name === '1' && $logo && $name ) : ?>
-                                        <span class="client-name"><?php echo esc_html( $name ); ?></span>
+                                        <span class="client-name"<?php echo $card_text_color ? ' style="color:' . esc_attr( $card_text_color ) . ';"' : ''; ?>><?php echo esc_html( $name ); ?></span>
                                     <?php endif; ?>
                                 </<?php echo $tag; ?>>
                             <?php endforeach; ?>

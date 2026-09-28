@@ -1,6 +1,6 @@
 <?php
 /**
- * Timeline Module - 时间轴
+ * 发展历程时间轴模块
  *
  * @package Developer_Starter
  */
@@ -51,9 +51,15 @@ class Timeline_Module extends Module_Base {
                 array( 'id' => 'year', 'type' => 'text', 'label' => __( '年份/时间点', 'developer-starter' ) ),
                 array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
                 array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '描述', 'developer-starter' ) ),
+            ),
+            'default_items' => array(
+                array( 'year' => '2020', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '公司成立', 'Company Founded' ) : __( '公司成立', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '正式成立，开始创业之旅', 'The team launched with a clear product vision and first clients.' ) : __( '正式成立，开始创业之旅', 'developer-starter' ) ),
+                array( 'year' => '2021', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务扩展', 'Team Expansion' ) : __( '业务扩展', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队规模扩大至50人', 'Operations expanded and the team grew to support more projects.' ) : __( '团队规模扩大至50人', 'developer-starter' ) ),
+                array( 'year' => '2022', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品升级', 'Product Upgrade' ) : __( '产品升级', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发布2.0版本产品', 'A major release introduced a more polished and flexible platform.' ) : __( '发布2.0版本产品', 'developer-starter' ) ),
+                array( 'year' => '2023', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全国布局', 'Wider Reach' ) : __( '全国布局', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务覆盖全国20个省市', 'The business reached a broader market footprint and more industries.' ) : __( '业务覆盖全国20个省市', 'developer-starter' ) ),
             ) ),
             
-            // Style Settings
+            // 样式配置
             array(
                 'id' => 'module_bg_color',
                 'label' => __( '背景颜色', 'developer-starter' ),
@@ -102,7 +108,8 @@ class Timeline_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '60px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '60px';
         
-        if ( empty( $items ) ) {
+        // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['timeline_items'] ) ) {
             $items = array(
                 array( 'year' => '2020', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '公司成立', 'Company Founded' ) : __( '公司成立', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '正式成立，开始创业之旅', 'The team launched with a clear product vision and first clients.' ) : __( '正式成立，开始创业之旅', 'developer-starter' ) ),
                 array( 'year' => '2021', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务扩展', 'Team Expansion' ) : __( '业务扩展', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队规模扩大至50人', 'Operations expanded and the team grew to support more projects.' ) : __( '团队规模扩大至50人', 'developer-starter' ) ),
@@ -111,7 +118,7 @@ class Timeline_Module extends Module_Base {
             );
         }
         
-        // Dynamic Styles
+        // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         
         if ( $bg_color ) {
@@ -122,7 +129,7 @@ class Timeline_Module extends Module_Base {
         if ( $title_size ) $title_style .= "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-timeline" style="<?php echo esc_attr( $section_style ); ?>">
@@ -142,7 +149,7 @@ class Timeline_Module extends Module_Base {
                         $is_left = $i % 2 === 0;
                         $item_class = $is_left ? 'timeline-left' : 'timeline-right';
                         
-                        // Calculate Staggered Animation
+                        // 计算交错动画延迟
                         $anim_attr = '';
                         if ( $enable_anim === 'yes' ) {
                             $anim_attr = $this->get_staggered_animation_attr( $i );

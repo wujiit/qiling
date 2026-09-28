@@ -1,6 +1,6 @@
 <?php
 /**
- * Curriculum Module - 课程/日程表
+ * 课程与日程表展示模块
  *
  * @package Developer_Starter
  */
@@ -124,7 +124,7 @@ class Curriculum_Module extends Module_Base {
             $style_vars .= "--qiling-component-badge-bg: {$badge_bg};";
         }
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-curriculum" style="<?php echo esc_attr( $style_vars ); ?>">
@@ -151,7 +151,7 @@ class Curriculum_Module extends Module_Base {
                             $item_class = 'qiling-accordion-item';
                             if ( $is_open ) $item_class .= ' is-open';
 
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

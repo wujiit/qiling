@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Class
+ * 主题后台设置管理类
  *
  * @package Developer_Starter
  */
@@ -73,11 +73,12 @@ class Admin_Settings {
         add_action( 'wp_ajax_developer_starter_seo_health_scan', array( $this, 'ajax_seo_health_scan' ) );
         add_action( 'wp_ajax_developer_starter_seo_health_clear', array( $this, 'ajax_seo_health_clear' ) );
         add_action( 'wp_ajax_developer_starter_detect_ecosystem_plugins', array( $this, 'ajax_detect_ecosystem_plugins' ) );
+        add_action( 'wp_ajax_developer_starter_cleanup_duplicate_auth_pages', array( $this, 'ajax_cleanup_duplicate_auth_pages' ) );
 
         // 备份与恢复
         add_action( 'admin_post_ds_export_settings', array( $this, 'handle_export_settings' ) );
         add_action( 'admin_post_ds_import_settings', array( $this, 'handle_import_settings' ) );
-        // Repair admin-post actions are registered by admin-bootstrap.php so they are available before settings lazy-load.
+        // 数据修复等 admin-post 动作由 admin-bootstrap.php 提前注册，确保在设置懒加载前即可响应。
         add_action( 'admin_post_ds_create_theme_table', array( $this, 'handle_create_theme_table' ) );
         add_action( 'admin_post_developer_starter_export_i18n_seo_report', array( $this, 'handle_international_seo_report_export' ) );
         add_action( 'admin_post_developer_starter_generate_i18n_seo_meta', array( $this, 'handle_international_seo_meta_generation' ) );

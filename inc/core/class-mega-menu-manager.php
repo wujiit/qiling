@@ -1,6 +1,6 @@
 <?php
 /**
- * Mega Menu Manager Class - 超级菜单管理系统
+ * 超级菜单管理器 - Mega Menu 管理系统
  *
  * @package Developer_Starter
  */
@@ -18,7 +18,7 @@ class Mega_Menu_Manager {
     const ACTIVE_CACHE_VERSION_OPTION = 'developer_starter_mega_menu_cache_version';
 
     /**
-     * Request-local cache for primary menu mega state.
+     * 主菜单超级菜单状态的请求级本地静态缓存。
      *
      * @var array<string,bool>
      */
@@ -236,7 +236,7 @@ class Mega_Menu_Manager {
     }
 
     /**
-     * Get cache version for primary mega-menu detection.
+     * 获取主超级菜单检测的缓存版本号。
      *
      * @return string
      */
@@ -251,7 +251,7 @@ class Mega_Menu_Manager {
     }
 
     /**
-     * Build persistent cache key for the current primary menu assignment.
+     * 为当前主菜单关联构建持久化缓存键。
      *
      * @param int $primary_menu_id Primary menu term ID.
      * @return string
@@ -261,7 +261,7 @@ class Mega_Menu_Manager {
     }
 
     /**
-     * Read persistent primary menu mega state.
+     * 读取持久化存储的主菜单超级菜单状态。
      *
      * @param string $cache_key Cache key.
      * @return bool|null
@@ -283,7 +283,7 @@ class Mega_Menu_Manager {
     }
 
     /**
-     * Store persistent primary menu mega state.
+     * 持久化保存主菜单超级菜单状态。
      *
      * @param string $cache_key Cache key.
      * @param bool   $active    Whether primary menu has active mega item.
@@ -303,7 +303,7 @@ class Mega_Menu_Manager {
     }
 
     /**
-     * Invalidate primary mega-menu detection cache.
+     * 使主超级菜单（Mega Menu）状态检测缓存失效。
      *
      * @return void
      */
@@ -313,7 +313,7 @@ class Mega_Menu_Manager {
     }
 
     /**
-     * Flush cache when menu location assignments change.
+     * 菜单分配位置变更时刷新菜单缓存。
      *
      * @param mixed $value     New theme mod value.
      * @param mixed $old_value Previous theme mod value.
@@ -748,7 +748,7 @@ class Walker_Nav_Menu_Mega extends \Walker_Nav_Menu {
     private $menu_image_dimension_cache = array();
 
     /**
-     * Mega Menu image fallback dimensions by visual slot.
+     * 超级菜单媒体位兜底尺寸映射。
      *
      * @param string $context Image context.
      * @return array<string,int>
@@ -768,7 +768,7 @@ class Walker_Nav_Menu_Mega extends \Walker_Nav_Menu {
     }
 
     /**
-     * Resolve image dimensions without touching remote URLs.
+     * 解析图片宽高尺寸（不发起远程网络请求）。
      *
      * @param string $image_url Image URL.
      * @param string $context   Visual slot context.
@@ -808,7 +808,7 @@ class Walker_Nav_Menu_Mega extends \Walker_Nav_Menu {
     }
 
     /**
-     * Build a lazy image tag for Mega Menu media.
+     * 为超级菜单（Mega Menu）媒体资源构建懒加载 img 标签。
      *
      * @param string $image_url Image URL.
      * @param string $context   Visual slot context.
@@ -826,7 +826,7 @@ class Walker_Nav_Menu_Mega extends \Walker_Nav_Menu {
     }
 
     /**
-     * Build dimension data attributes for JS-created preview images.
+     * 为前端预览图片构建宽高尺寸 data 属性。
      *
      * @param string $image_url Image URL.
      * @param string $context   Visual slot context.

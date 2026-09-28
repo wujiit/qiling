@@ -1,6 +1,6 @@
 <?php
 /**
- * Process Module - 合作流程
+ * 合作流程与服务步骤模块
  *
  * @package Developer_Starter
  */
@@ -133,6 +133,32 @@ class Process_Module extends Module_Base {
                 array( 'id' => 'deliverable', 'type' => 'text', 'label' => __( '交付物(可选)', 'developer-starter' ) ),
                 array( 'id' => 'image', 'type' => 'image', 'label' => __( '工序图片(工业流程推荐)', 'developer-starter' ) ),
                 array( 'id' => 'icon_bg', 'type' => 'color', 'label' => __( '图标背景色', 'developer-starter' ) ),
+            ),
+            'default_items' => array(
+                array( 
+                    'icon' => '01', 
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '需求沟通', 'Discovery Call' ) : __( '需求沟通', 'developer-starter' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深入了解您的业务需求和目标。', 'Understand your goals, audience, and project requirements.' ) : __( '深入了解您的业务需求和目标。', 'developer-starter' ),
+                    'icon_bg' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)'
+                ),
+                array( 
+                    'icon' => '02', 
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '方案设计', 'Solution Planning' ) : __( '方案设计', 'developer-starter' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '根据需求制定专属解决方案。', 'Shape a tailored plan with structure, milestones, and deliverables.' ) : __( '根据需求制定专属解决方案。', 'developer-starter' ),
+                    'icon_bg' => 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-error) 100%)'
+                ),
+                array( 
+                    'icon' => '03', 
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '开发实施', 'Production' ) : __( '开发实施', 'developer-starter' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队高效执行项目开发。', 'Build and refine the project with efficient execution and reviews.' ) : __( '专业团队高效执行项目开发。', 'developer-starter' ),
+                    'icon_bg' => 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-info) 100%)'
+                ),
+                array( 
+                    'icon' => '04', 
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '交付上线', 'Launch & Support' ) : __( '交付上线', 'developer-starter' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '严格测试后交付，并提供持续支持。', 'Launch after testing and keep the experience supported over time.' ) : __( '严格测试后交付，并提供持续支持。', 'developer-starter' ),
+                    'icon_bg' => 'linear-gradient(135deg, var(--color-success) 0%, var(--color-info) 100%)'
+                ),
             ) ),
             array(
                 'id' => 'enable_staggered_animation',
@@ -172,7 +198,7 @@ class Process_Module extends Module_Base {
         
         $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
         $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
-        // Fallback for old field if exists (though strictly following new structure here)
+        // 兼容历史配置字段
         if ( empty( $bg_color ) && isset( $data['process_bg_color'] ) ) {
              $bg_color = $data['process_bg_color'];
         }
@@ -184,8 +210,8 @@ class Process_Module extends Module_Base {
         
         $items = isset( $data['process_items'] ) ? $data['process_items'] : array();
         
-        // 默认示例数据
-        if ( empty( $items ) ) {
+        // 默认示例数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['process_items'] ) ) {
             $items = array(
                 array( 
                     'icon' => '01', 
@@ -214,7 +240,7 @@ class Process_Module extends Module_Base {
             );
         }
         
-        // Section Styles
+        // 区块样式配置
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         if ( $bg_type === 'image' && ! empty( $bg_image ) ) {
             $section_style .= "position: relative; background-image: url('" . esc_url( $bg_image ) . "'); background-size: cover; background-position: center;";
@@ -228,7 +254,7 @@ class Process_Module extends Module_Base {
             if ( ! empty( $data[ $field ] ) ) $section_style .= $variable . ':' . $clean_css_value( $data[ $field ] ) . ';';
         }
         
-        // Typography Styles
+        // 文本样式配置
         $title_style = '';
         if ( $title_size ) $title_style .= "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
@@ -240,7 +266,7 @@ class Process_Module extends Module_Base {
         $desc_style_global = '';
         if ( $desc_color ) $desc_style_global = "color: {$desc_color};";
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
 
         $get_media_url = function( $value ) {
@@ -299,7 +325,7 @@ class Process_Module extends Module_Base {
                             
                             $icon = trim( $icon_raw );
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

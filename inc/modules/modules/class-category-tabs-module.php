@@ -1,6 +1,6 @@
 <?php
 /**
- * Category Tabs Module - 分类标签切换模块
+ * 分类标签切换展示模块
  *
  * @package Developer_Starter
  */

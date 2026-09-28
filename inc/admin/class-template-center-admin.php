@@ -1,6 +1,6 @@
 <?php
 /**
- * Official template center admin page.
+ * 官方模板中心后台页面。
  *
  * @package Developer_Starter
  */
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Template_Center_Admin {
 
     /**
-     * Admin page slug.
+     * 后台页面 Slug 标识。
      *
      * @var string
      */
@@ -28,7 +28,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Register submenu under theme settings.
+     * 在主题设置下注册向导子菜单项。
      *
      * @return void
      */
@@ -48,7 +48,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Handle create request before the admin page starts rendering.
+     * 在后台页面开始渲染前处理页面创建请求。
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Render admin template center.
+     * 渲染官方模板中心后台界面。
      *
      * @return void
      */
@@ -183,7 +183,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Handle page creation request.
+     * 处理模板页面创建业务请求。
      *
      * @return void
      */
@@ -324,7 +324,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Render page notice after redirect.
+     * 重定向后渲染操作提示消息。
      *
      * @return void
      */
@@ -373,7 +373,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Redirect with error message.
+     * 携带错误提示信息重定向。
      *
      * @param string $message Error message.
      * @return void
@@ -391,7 +391,7 @@ class Template_Center_Admin {
 	}
 
     /**
-     * Localize a newly created template page through AI Decorator.
+     * 通过 AI Decorator 为新建模板页面进行本地化装饰。
      *
      * @param int    $post_id         Created page ID.
      * @param string $target_language Target language.
@@ -434,7 +434,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Template import localization languages.
+     * 模板导入本地化语言选项列表。
      *
      * @return array<string,string>
      */
@@ -450,7 +450,7 @@ class Template_Center_Admin {
     }
 
 	/**
-	 * Get official JSON template package service.
+	 * 获取官方 JSON 模板包服务实例。
 	 *
 	 * @return \Developer_Starter\Core\Official_Template_Package_Service|null
 	 */
@@ -463,7 +463,7 @@ class Template_Center_Admin {
 	}
 
 	/**
-	 * Get current filters from query string.
+	 * 从 URL 查询参数中获取当前筛选条件。
 	 *
 	 * @return array<string,string>
      */
@@ -477,7 +477,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Build official template catalog.
+     * 构建官方模板目录数据。
      *
      * @return array<int,array<string,mixed>>
      */
@@ -541,10 +541,10 @@ class Template_Center_Admin {
         );
 
         /**
-         * Filter the official template center catalog.
+         * 过滤官方模板中心目录数据。
          *
-         * This hook is for first-party/local extension. It is not a marketplace
-         * feed and does not imply third-party author listing.
+         * 此钩子用于本地拓展，不涉及第三方外部接口，
+         * 也不涉及第三方作者列表展示。
          *
          * @param array<int,array<string,mixed>> $catalog Template entries.
          */
@@ -552,7 +552,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Filter catalog by admin query.
+     * 根据后台筛选条件过滤模板目录。
      *
      * @param array<int,array<string,mixed>> $catalog Catalog.
      * @param array<string,string>           $filters Filters.
@@ -612,7 +612,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Render one template card.
+     * 渲染单个模板卡片组件。
      *
      * @param array<string,mixed> $template Template entry.
      * @param int                 $card_index Card index in the current result set.
@@ -763,7 +763,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Template metadata.
+     * 模板元数据定义。
      *
      * @param string              $template Template file.
      * @param string              $label Template label.
@@ -817,7 +817,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Specific first-party metadata.
+     * 官方特定元数据定义。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -931,7 +931,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Build metadata item.
+     * 构建单项元数据结构。
      *
      * @param string            $category Category.
      * @param string            $industry Industry.
@@ -957,7 +957,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Get category choices.
+     * 获取分类选项列表。
      *
      * @param array<int,array<string,mixed>> $catalog Catalog.
      * @return array<string,string>
@@ -976,7 +976,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Get industry choices.
+     * 获取行业选项列表。
      *
      * @param array<int,array<string,mixed>> $catalog Catalog.
      * @return array<string,string>
@@ -997,7 +997,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Catalog stats.
+     * 模板目录统计信息。
      *
      * @param array<int,array<string,mixed>> $catalog Catalog.
      * @param array<string,mixed>            $industry_coverage Industry coverage.
@@ -1029,7 +1029,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Build industry coverage from the official catalog.
+     * 根据官方目录构建行业覆盖率数据。
      *
      * @param array<int,array<string,mixed>> $catalog Catalog.
      * @return array<string,mixed>
@@ -1099,7 +1099,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Render the standard industry coverage matrix.
+     * 渲染标准行业覆盖度矩阵。
      *
      * @param array<string,mixed>  $coverage Coverage data.
      * @param array<string,string> $filters Current filters.
@@ -1175,7 +1175,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Get pages already using official templates.
+     * 获取已应用官方模板的页面列表。
      *
      * @param array<int,string> $templates Templates.
      * @return array<string,array{count:int,pages:array<int,array<string,mixed>>}>
@@ -1250,7 +1250,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Check template exists.
+     * 检查模板文件是否存在。
      *
      * @param string               $template Template file.
      * @param array<string,string> $page_templates WP theme page templates.
@@ -1265,7 +1265,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Get template label.
+     * 获取模板显示名称。
      *
      * @param string               $template Template file.
      * @param array<string,string> $page_templates WP theme page templates.
@@ -1286,7 +1286,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Read Template Name header from theme file.
+     * 从主题文件中读取 Template Name 文件头信息。
      *
      * @param string $template Template file.
      * @return string
@@ -1306,7 +1306,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Category label.
+     * 获取分类显示名称。
      *
      * @param string $category Category.
      * @return string
@@ -1326,7 +1326,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Category order base.
+     * 获取分类排序权重。
      *
      * @param string $category Category.
      * @return int
@@ -1346,7 +1346,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Standard industry definitions.
+     * 标准行业类型定义。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -1406,7 +1406,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Standard industry choices for filters.
+     * 用于筛选的标准行业选项列表。
      *
      * @return array<string,string>
      */
@@ -1423,7 +1423,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Industry label.
+     * 获取行业显示名称。
      *
      * @param string $industry Industry.
      * @return string
@@ -1438,7 +1438,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Normalize an industry key through the shared standard.
+     * 通过统一标准规范化行业键名。
      *
      * @param mixed $industry Industry key.
      * @return string
@@ -1472,7 +1472,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Safely read a scalar request value.
+     * 安全读取标量请求参数。
      *
      * @param array<string,mixed> $source Request source.
      * @param string              $key Request key.
@@ -1488,7 +1488,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Render scoped CSS.
+     * 渲染局部作用域 CSS 样式。
      *
      * @return void
      */
@@ -2014,7 +2014,7 @@ class Template_Center_Admin {
     }
 
     /**
-     * Render scoped scripts.
+     * 渲染局部作用域交互脚本。
      *
      * @return void
      */

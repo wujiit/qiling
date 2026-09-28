@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Backup Trait
+ * 主题后台设置备份与还原 Trait
  *
  * @package Developer_Starter
  */
@@ -193,7 +193,7 @@ trait Admin_Settings_Backup_Trait {
             update_option( 'developer_starter_careers_options', $restored_careers_options );
         }
 
-        // Redirect back to settings page
+        // 重定向返回主题设置页面
         wp_safe_redirect( add_query_arg( 'settings-updated', 'true', admin_url( 'admin.php?page=developer-starter-settings' ) ) );
         exit;
     }

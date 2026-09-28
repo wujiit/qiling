@@ -2920,10 +2920,12 @@
             var isHidden = String(visibility.status || '') === 'hidden';
             html += '<li class="qfb-page-item' + activeClass + (isHidden ? ' is-temporarily-hidden' : '') + '" data-index="' + i + '" data-scope="module" data-sortable="1">';
             html += '<span class="qfb-drag" title="' + escapeHtml(getText('dragSort', '拖拽排序')) + '">⋮⋮</span>';
+            html += '<span class="qfb-page-title-wrap">';
             html += '<span class="qfb-page-title">' + escapeHtml(getModuleName(item.type)) + '</span>';
             if (isHidden) {
                 html += '<span class="qfb-hidden-badge">' + escapeHtml(getText('hiddenBadge', '已隐藏')) + '</span>';
             }
+            html += '</span>';
             html += '<div class="qfb-page-actions">';
             html += '<button type="button" class="button-link qfb-page-select">' + escapeHtml(getText('settingsAction', '设置')) + '</button>';
             html += '<button type="button" class="button-link qfb-module-visibility-toggle" aria-pressed="' + (isHidden ? 'true' : 'false') + '">' + escapeHtml(isHidden ? getText('showOption', '恢复') : getText('hideOption', '隐藏')) + '</button>';
@@ -4149,7 +4151,7 @@
                     return parsed;
                 }
             } catch (e) {
-                // ignore invalid legacy JSON
+                // 忽略无效的历史版本 JSON 数据
             }
         }
         if (field && Array.isArray(field.default_items)) {

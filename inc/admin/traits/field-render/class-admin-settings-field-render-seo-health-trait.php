@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO health check settings field renderer.
+ * SEO 健康检查设置字段渲染类。
  *
  * @package Developer_Starter
  */
@@ -13,7 +13,132 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 trait Admin_Settings_Field_Render_SEO_Health_Trait {
     /**
-     * Render lightweight SEO health check panel.
+     * 渲染首页 SEO 模式与生效状态指引面板。
+     *
+     * 当全站将某个页面设置为静态首页时，页面定制的 SEO 优先于主题全站设置；
+     * 此面板向管理员清晰呈现当前首页模式、生效链路、各要素状态及快速编辑/回退操作。
+     *
+     * @param array<string,mixed> $options Theme options.
+     * @return void
+     */
+    private function render_home_seo_status_notice_field( $options ) {
+        unset( $options );
+
+        $show_on_front = get_option( 'show_on_front', 'posts' );
+        $page_on_front = absint( get_option( 'page_on_front', 0 ) );
+        $is_static_home = ( 'page' === $show_on_front && $page_on_front > 0 );
+        $front_page     = $is_static_home ? get_post( $page_on_front ) : null;
+        $has_valid_front_page = ( $front_page instanceof \WP_Post && 'page' === $front_page->post_type );
+
+        echo '<tr class="ds-home-seo-status-row"><th scope="row">' . esc_html__( '首页 SEO 生效状态', 'developer-starter' ) . '</th><td>';
+        echo '<div class="ds-home-seo-status-card" style="background: #fff; border: 1px solid #dcdcde; border-left: 4px solid ' . ( $has_valid_front_page ? '#2271b1' : '#10b981' ) . '; border-radius: 6px; padding: 16px; max-width: 820px; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">';
+
+        if ( $has_valid_front_page ) {
+            $page_title = get_the_title( $front_page );
+            if ( '' === trim( $page_title ) ) {
+                $page_title = sprintf( __( '无标题页面 #%d', 'developer-starter' ), $page_on_front );
+            }
+            $edit_link = get_edit_post_link( $page_on_front );
+            $view_link = get_permalink( $page_on_front );
+
+            $page_seo_title = get_post_meta( $page_on_front, '_developer_starter_seo_title', true );
+            $page_seo_desc  = get_post_meta( $page_on_front, '_developer_starter_seo_description', true );
+            $page_seo_kw    = get_post_meta( $page_on_front, '_developer_starter_seo_keywords', true );
+
+            $has_custom_title = ! empty( trim( (string) $page_seo_title ) );
+            $has_custom_desc  = ! empty( trim( (string) $page_seo_desc ) );
+            $has_custom_kw    = ! empty( trim( (string) $page_seo_kw ) );
+
+            echo '<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f1;">';
+            echo '<div style="display: flex; align-items: center; gap: 8px;">';
+            echo '<span class="dashicons dashicons-admin-home" style="font-size: 20px; width: 20px; height: 20px; color: #2271b1;"></span>';
+            echo '<strong style="font-size: 14px; color: #1d2327;">' . esc_html__( '当前首页：静态页面定制模式', 'developer-starter' ) . '</strong>';
+            echo '<span style="background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600;">' . esc_html__( '页面独立定制优先', 'developer-starter' ) . '</span>';
+            echo '</div>';
+            echo '<div style="font-size: 12px; color: #646970;">' . sprintf( esc_html__( '首页页面 ID: %d', 'developer-starter' ), $page_on_front ) . '</div>';
+            echo '</div>';
+
+            echo '<div style="margin-bottom: 12px; font-size: 13px; line-height: 1.6; color: #3c434a;">';
+            echo sprintf(
+                __( '网站当前已将页面【<strong>%s</strong>】设为站点首页。启灵主题自带的 100+ 页面模版及自定义页面均支持<strong>专属的独立 SEO 设置</strong>，因此前台访问首页时将<strong>优先读取该页面中配置的 SEO 标题、描述与关键词</strong>。', 'developer-starter' ),
+                esc_html( $page_title )
+            );
+            echo '</div>';
+
+            echo '<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; margin-bottom: 14px;">';
+            echo '<div style="font-weight: 600; font-size: 12px; color: #475569; margin-bottom: 8px;">' . esc_html__( '当前首页三大要素生效状态：', 'developer-starter' ) . '</div>';
+            echo '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">';
+
+            // Title status
+            echo '<div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px;">';
+            echo '<div style="color: #64748b; margin-bottom: 4px; font-weight: 500;">' . esc_html__( 'SEO 标题', 'developer-starter' ) . '</div>';
+            if ( $has_custom_title ) {
+                echo '<div style="color: #0369a1; font-weight: 600;">' . esc_html__( '页面已单独定制', 'developer-starter' ) . '</div>';
+                echo '<div style="color: #64748b; font-size: 11px; margin-top: 2px; word-break: break-all;">' . esc_html( mb_substr( (string) $page_seo_title, 0, 30 ) ) . ( mb_strlen( (string) $page_seo_title ) > 30 ? '...' : '' ) . '</div>';
+            } else {
+                echo '<div style="color: #166534; font-weight: 600;">' . esc_html__( '生效下方全站默认标题', 'developer-starter' ) . '</div>';
+                echo '<div style="color: #94a3b8; font-size: 11px; margin-top: 2px;">' . esc_html__( '（页面字段留空）', 'developer-starter' ) . '</div>';
+            }
+            echo '</div>';
+
+            // Desc status
+            echo '<div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px;">';
+            echo '<div style="color: #64748b; margin-bottom: 4px; font-weight: 500;">' . esc_html__( 'SEO 描述', 'developer-starter' ) . '</div>';
+            if ( $has_custom_desc ) {
+                echo '<div style="color: #0369a1; font-weight: 600;">' . esc_html__( '页面已单独定制', 'developer-starter' ) . '</div>';
+                echo '<div style="color: #64748b; font-size: 11px; margin-top: 2px; word-break: break-all;">' . esc_html( mb_substr( (string) $page_seo_desc, 0, 30 ) ) . ( mb_strlen( (string) $page_seo_desc ) > 30 ? '...' : '' ) . '</div>';
+            } else {
+                echo '<div style="color: #166534; font-weight: 600;">' . esc_html__( '生效下方全站默认描述', 'developer-starter' ) . '</div>';
+                echo '<div style="color: #94a3b8; font-size: 11px; margin-top: 2px;">' . esc_html__( '（页面字段留空）', 'developer-starter' ) . '</div>';
+            }
+            echo '</div>';
+
+            // Keywords status
+            echo '<div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px;">';
+            echo '<div style="color: #64748b; margin-bottom: 4px; font-weight: 500;">' . esc_html__( 'SEO 关键词', 'developer-starter' ) . '</div>';
+            if ( $has_custom_kw ) {
+                echo '<div style="color: #0369a1; font-weight: 600;">' . esc_html__( '页面已单独定制', 'developer-starter' ) . '</div>';
+                echo '<div style="color: #64748b; font-size: 11px; margin-top: 2px; word-break: break-all;">' . esc_html( mb_substr( (string) $page_seo_kw, 0, 30 ) ) . ( mb_strlen( (string) $page_seo_kw ) > 30 ? '...' : '' ) . '</div>';
+            } else {
+                echo '<div style="color: #166534; font-weight: 600;">' . esc_html__( '生效下方全站默认关键词', 'developer-starter' ) . '</div>';
+                echo '<div style="color: #94a3b8; font-size: 11px; margin-top: 2px;">' . esc_html__( '（页面字段留空）', 'developer-starter' ) . '</div>';
+            }
+            echo '</div>';
+
+            echo '</div>';
+            echo '</div>';
+
+            echo '<div style="margin-bottom: 14px; font-size: 12px; color: #64748b; line-height: 1.6;">';
+            echo '<strong>' . esc_html__( '如何选择配置方式？', 'developer-starter' ) . '</strong><br>';
+            echo '• <strong>' . esc_html__( '个性化定制首页', 'developer-starter' ) . '</strong>：' . esc_html__( '点击下方按钮前往该页面编辑，在底部【SEO 设置】面板中直接填写您期望的首页标题、描述与关键词。', 'developer-starter' ) . '<br>';
+            echo '• <strong>' . esc_html__( '统一采用全站设置', 'developer-starter' ) . '</strong>：' . esc_html__( '若您希望直接使用下方配置的内容，只需前往该页面编辑，将对应 SEO 字段清空留空保存即可，系统将自动无缝回退！', 'developer-starter' );
+            echo '</div>';
+
+            echo '<div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">';
+            if ( ! empty( $edit_link ) ) {
+                echo '<a href="' . esc_url( $edit_link ) . '" class="button button-primary" target="_blank">' . esc_html__( '前往编辑首页专属 SEO', 'developer-starter' ) . ' &rarr;</a>';
+            }
+            if ( ! empty( $view_link ) ) {
+                echo '<a href="' . esc_url( $view_link ) . '" class="button button-secondary" target="_blank">' . esc_html__( '预览全站首页', 'developer-starter' ) . '</a>';
+            }
+            echo '</div>';
+
+        } else {
+            // Latest posts mode
+            echo '<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">';
+            echo '<span class="dashicons dashicons-welcome-write-blog" style="font-size: 20px; width: 20px; height: 20px; color: #10b981;"></span>';
+            echo '<strong style="font-size: 14px; color: #1d2327;">' . esc_html__( '当前首页：最新文章模式（全局控制）', 'developer-starter' ) . '</strong>';
+            echo '<span style="background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600;">' . esc_html__( '全局 SEO 直接生效', 'developer-starter' ) . '</span>';
+            echo '</div>';
+            echo '<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #475569;">' . esc_html__( '当前站点未指定静态首页页面（使用默认最新文章模式），下方配置的【默认标题】、【默认描述】与【默认关键词】将直接作为全站首页的完整 SEO 元标签对外输出。', 'developer-starter' ) . '</p>';
+        }
+
+        echo '</div>';
+        echo '</td></tr>';
+    }
+
+    /**
+     * 渲染轻量级 SEO 健康度检查面板。
      *
      * @param array<string,mixed> $options Theme options.
      * @return void
@@ -59,7 +184,7 @@ trait Admin_Settings_Field_Render_SEO_Health_Trait {
     }
 
     /**
-     * Render compact scan summary.
+     * 渲染紧凑的扫描汇总统计。
      *
      * @param array<string,mixed> $snapshot Snapshot.
      * @return void
@@ -98,7 +223,7 @@ trait Admin_Settings_Field_Render_SEO_Health_Trait {
     }
 
     /**
-     * Render issue lists.
+     * 渲染诊断问题清单。
      *
      * @param array<string,mixed> $snapshot Snapshot.
      * @return void
@@ -144,7 +269,7 @@ trait Admin_Settings_Field_Render_SEO_Health_Trait {
     }
 
     /**
-     * Render sitemap diagnostics.
+     * 渲染 Sitemap 诊断信息。
      *
      * @param array<string,mixed> $sitemap Sitemap diagnostics.
      * @return void
@@ -166,7 +291,7 @@ trait Admin_Settings_Field_Render_SEO_Health_Trait {
     }
 
     /**
-     * Render robots.txt preview.
+     * 渲染 robots.txt 规则预览。
      *
      * @param array<string,mixed> $robots Robots preview.
      * @return void
@@ -187,7 +312,7 @@ trait Admin_Settings_Field_Render_SEO_Health_Trait {
     }
 
     /**
-     * Render one summary card.
+     * 渲染单张汇总指标卡片。
      *
      * @param string $label Label.
      * @param string $value Value.
@@ -202,7 +327,7 @@ trait Admin_Settings_Field_Render_SEO_Health_Trait {
     }
 
     /**
-     * Render one issue row.
+     * 渲染单行问题诊断数据。
      *
      * @param array<string,mixed> $issue Issue.
      * @return void
@@ -218,7 +343,7 @@ trait Admin_Settings_Field_Render_SEO_Health_Trait {
     }
 
     /**
-     * Render CSS/JS once.
+     * 渲染单例 CSS 与 JS 交互脚本。
      *
      * @return void
      */

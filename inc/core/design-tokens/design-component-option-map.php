@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for design component option map.
+ * 设计组件选项映射数据配置。
  *
  * @package Developer_Starter
  */

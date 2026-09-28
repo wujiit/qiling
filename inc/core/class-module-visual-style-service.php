@@ -1,8 +1,8 @@
 <?php
 /**
- * Module Visual Style Service
+ * 模块视觉样式服务
  *
- * Provides the module-level visual override protocol.
+ * 提供模块级视觉样式覆盖协议。
  *
  * @package Developer_Starter
  */
@@ -43,7 +43,7 @@ class Module_Visual_Style_Service {
     }
 
     /**
-     * Frontend Builder field definition.
+     * 前台页面构建器字段定义。
      *
      * @return array<int,array<string,mixed>>
      */
@@ -262,7 +262,7 @@ class Module_Visual_Style_Service {
     }
 
     /**
-     * Render classic admin controls.
+     * 渲染经典后台控件界面。
      *
      * @param int                 $idx  Module index.
      * @param array<string,mixed> $data Module data.

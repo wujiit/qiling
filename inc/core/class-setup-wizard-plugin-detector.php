@@ -1,8 +1,8 @@
 <?php
 /**
- * Read-only optional plugin detector for the setup wizard.
+ * 安装向导可选插件只读检测器。
  *
- * This class never installs, activates, deactivates, or configures plugins.
+ * 该类绝不安装、启用、停用或配置插件。
  *
  * @package Developer_Starter
  */
@@ -21,7 +21,7 @@ class Setup_Wizard_Plugin_Detector {
     const STATUS_UNKNOWN  = 'unknown';
 
     /**
-     * Detect all known optional integrations.
+     * 检测所有已知的可选插件集成。
      *
      * @return array<string,array<string,string>>
      */
@@ -37,7 +37,7 @@ class Setup_Wizard_Plugin_Detector {
     }
 
     /**
-     * Build a compact status snapshot suitable for wizard state.
+     * 构建适合向导状态存储的紧凑状态快照。
      *
      * @return array<string,string>
      */
@@ -94,7 +94,7 @@ class Setup_Wizard_Plugin_Detector {
     }
 
     /**
-     * Detect one optional plugin without modifying it.
+     * 安全检测单个可选插件状态（不修改其配置）。
      *
      * @param string              $key Plugin key.
      * @param array<string,mixed> $plugin Plugin definition.

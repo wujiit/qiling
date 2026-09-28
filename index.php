@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * 主模板文件
  *
  * @package Developer_Starter
  * @since 1.0.0

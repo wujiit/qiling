@@ -1,6 +1,6 @@
 <?php
 /**
- * Menu Module - 菜单/价目表
+ * 菜单与价目表模块
  *
  * @package Developer_Starter
  */
@@ -68,7 +68,7 @@ class Menu_Module extends Module_Base {
                 'default' => 'var(--qiling-color-eab308)',
             ),
             
-            // Items Repeater
+            // 子项中继器列表
             array(
                 'id' => 'menu_items',
                 'label' => __( '菜单/价目列表', 'developer-starter' ),
@@ -137,7 +137,7 @@ class Menu_Module extends Module_Base {
     }
 
     public function render( $data = array() ) {
-        // Data Extraction
+        // 数据提取与处理
         $title = isset( $data['menu_title'] ) && $data['menu_title'] !== ''
             ? $data['menu_title']
             : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'Featured <span style="color:var(--qiling-color-eab308)">Menu</span>' ) : __( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'developer-starter' ) );
@@ -149,14 +149,14 @@ class Menu_Module extends Module_Base {
         $accent_color = isset( $data['menu_accent_color'] ) ? $data['menu_accent_color'] : 'var(--qiling-color-eab308)';
         $items = isset( $data['menu_items'] ) ? $data['menu_items'] : array();
         
-        // CSS Vars
+        // CSS 变量计算
         $style_vars = "background-color: {$bg_color};";
         $style_vars .= "--menu-accent: {$accent_color};";
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         
-        // Check Layout
+        // 布局检查
         $grid_class = $layout === 'grid' ? 'qiling-menu-grid-2' : 'qiling-menu-list';
         ?>
         <section class="module module-menu" style="<?php echo esc_attr( $style_vars ); ?>">
@@ -185,7 +185,7 @@ class Menu_Module extends Module_Base {
                             $tag = $link ? 'a' : 'div';
                             $href = $link ? ' href="' . esc_url( $link ) . '"' : '';
 
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

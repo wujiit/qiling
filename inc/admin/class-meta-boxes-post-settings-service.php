@@ -1,6 +1,6 @@
 <?php
 /**
- * Meta Boxes - Post/Page settings service.
+ * 文章/页面元数据框设置服务类。
  *
  * @package Developer_Starter
  */
@@ -25,10 +25,71 @@ class Meta_Boxes_Post_Settings_Service {
         $og_title = get_post_meta( $post->ID, '_developer_starter_og_title', true );
         $og_desc = get_post_meta( $post->ID, '_developer_starter_og_description', true );
         $og_image = get_post_meta( $post->ID, '_developer_starter_og_image', true );
+
+        $show_on_front = get_option( 'show_on_front', 'posts' );
+        $page_on_front = absint( get_option( 'page_on_front', 0 ) );
+        $page_for_posts = absint( get_option( 'page_for_posts', 0 ) );
+        $is_front_page = ( 'page' === $show_on_front && $page_on_front === (int) $post->ID && 'page' === $post->post_type );
+        $is_posts_page = ( 'page' === $show_on_front && $page_for_posts === (int) $post->ID && 'page' === $post->post_type );
+
+        $theme_default_title = function_exists( 'developer_starter_get_option' ) ? developer_starter_get_option( 'default_title', '' ) : '';
+        $theme_default_desc  = function_exists( 'developer_starter_get_option' ) ? developer_starter_get_option( 'default_description', '' ) : '';
+        $theme_default_kw    = function_exists( 'developer_starter_get_option' ) ? developer_starter_get_option( 'default_keywords', '' ) : '';
         ?>
-        <p><label><strong><?php esc_html_e( 'SEO标题', 'developer-starter' ); ?></strong></label><br><input type="text" name="seo_title" value="<?php echo esc_attr( $t ); ?>" class="large-text"/></p>
-        <p><label><strong><?php esc_html_e( 'SEO描述', 'developer-starter' ); ?></strong></label><br><textarea name="seo_description" rows="2" class="large-text"><?php echo esc_textarea( $d ); ?></textarea></p>
-        <p><label><strong><?php esc_html_e( 'SEO关键词', 'developer-starter' ); ?></strong></label><br><input type="text" name="seo_keywords" value="<?php echo esc_attr( $k ); ?>" class="large-text"/></p>
+        <?php if ( $is_front_page ) : ?>
+            <div class="qiling-seo-frontpage-notice" style="background: #f0f7ff; border: 1px solid #bae0fd; border-left: 4px solid #2271b1; border-radius: 6px; padding: 12px 14px; margin-bottom: 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <span class="dashicons dashicons-admin-home" style="color: #2271b1; font-size: 18px; width: 18px; height: 18px;"></span>
+                        <strong style="font-size: 13px; color: #1d2327;"><?php esc_html_e( '此页面当前已被设置为【网站静态首页】', 'developer-starter' ); ?></strong>
+                    </div>
+                    <span style="background: #2271b1; color: #fff; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px;"><?php esc_html_e( '全站首页生效中', 'developer-starter' ); ?></span>
+                </div>
+                <p style="margin: 0 0 8px; font-size: 12px; line-height: 1.6; color: #3c434a;">
+                    <?php esc_html_e( '启灵主题支持首页专属定制：页面模版内置预设或您在下方填写的 SEO 标题、描述与关键词将直接生效于网站首页，优先级高于主题后台的默认配置。', 'developer-starter' ); ?>
+                </p>
+                <div style="background: #fff; border: 1px dashed #cbd5e1; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #475569; line-height: 1.6;">
+                    <span class="dashicons dashicons-info" style="color: #2271b1; font-size: 15px; width: 15px; height: 15px; vertical-align: -2px; margin-right: 2px;"></span>
+                    <strong><?php esc_html_e( '全站回退提示：', 'developer-starter' ); ?></strong>
+                    <?php esc_html_e( '若您希望该首页采用【主题设置 - 高级 - SEO 设置】中的全站统一默认配置，只需将下方对应字段清空留空保存即可，系统将自动无缝回退。', 'developer-starter' ); ?>
+                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-settings#tab-advanced' ) ); ?>" target="_blank" style="margin-left: 4px; text-decoration: none;"><?php esc_html_e( '查看全站 SEO 设置 &rarr;', 'developer-starter' ); ?></a>
+                </div>
+            </div>
+        <?php elseif ( $is_posts_page ) : ?>
+            <div class="qiling-seo-postspage-notice" style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #0ea5e9; border-radius: 6px; padding: 12px 14px; margin-bottom: 16px;">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                    <span class="dashicons dashicons-welcome-write-blog" style="color: #0ea5e9; font-size: 18px; width: 18px; height: 18px;"></span>
+                    <strong style="font-size: 13px; color: #1d2327;"><?php esc_html_e( '此页面当前已被设置为【文章列表页】', 'developer-starter' ); ?></strong>
+                </div>
+                <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #475569;">
+                    <?php esc_html_e( '您在此处配置的 SEO 标题、描述与关键词将作用于博客文章列表归档页。留空时将自动采用全站默认配置。', 'developer-starter' ); ?>
+                </p>
+            </div>
+        <?php endif; ?>
+        <p>
+            <label><strong><?php esc_html_e( 'SEO标题', 'developer-starter' ); ?></strong></label>
+            <?php if ( $is_front_page && ! empty( $theme_default_title ) ) : ?>
+                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局标题: %s', 'developer-starter' ), $theme_default_title ) ); ?>)</span>
+            <?php endif; ?>
+            <br>
+            <input type="text" name="seo_title" value="<?php echo esc_attr( $t ); ?>" class="large-text" placeholder="<?php echo $is_front_page && ! empty( $theme_default_title ) ? esc_attr( $theme_default_title ) : ''; ?>"/>
+        </p>
+        <p>
+            <label><strong><?php esc_html_e( 'SEO描述', 'developer-starter' ); ?></strong></label>
+            <?php if ( $is_front_page && ! empty( $theme_default_desc ) ) : ?>
+                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局描述: %s', 'developer-starter' ), mb_substr( $theme_default_desc, 0, 30 ) . ( mb_strlen( $theme_default_desc ) > 30 ? '...' : '' ) ) ); ?>)</span>
+            <?php endif; ?>
+            <br>
+            <textarea name="seo_description" rows="2" class="large-text" placeholder="<?php echo $is_front_page && ! empty( $theme_default_desc ) ? esc_attr( $theme_default_desc ) : ''; ?>"><?php echo esc_textarea( $d ); ?></textarea>
+        </p>
+        <p>
+            <label><strong><?php esc_html_e( 'SEO关键词', 'developer-starter' ); ?></strong></label>
+            <?php if ( $is_front_page && ! empty( $theme_default_kw ) ) : ?>
+                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局关键词: %s', 'developer-starter' ), $theme_default_kw ) ); ?>)</span>
+            <?php endif; ?>
+            <br>
+            <input type="text" name="seo_keywords" value="<?php echo esc_attr( $k ); ?>" class="large-text" placeholder="<?php echo $is_front_page && ! empty( $theme_default_kw ) ? esc_attr( $theme_default_kw ) : ''; ?>"/>
+        </p>
         <hr style="margin: 16px 0;">
         <p><label><strong><?php esc_html_e( 'Canonical URL（可选）', 'developer-starter' ); ?></strong></label><br><input type="url" name="seo_canonical" value="<?php echo esc_url( $canonical ); ?>" class="large-text" placeholder="https://example.com/custom-canonical/" /></p>
         <p>
@@ -47,7 +108,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render read-only rule-based SEO score.
+     * 渲染基于规则计算的只读 SEO 评分。
      *
      * @param \WP_Post $post Current post.
      * @return void
@@ -111,7 +172,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render the multilingual SEO status matrix powered by 启灵AI多语言.
+     * 渲染多语言 SEO 状态矩阵。
      *
      * @param \WP_Post $post Current post.
      * @return void
@@ -191,7 +252,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render matrix CSS once.
+     * 渲染多语言状态矩阵单例 CSS 样式。
      *
      * @return void
      */
@@ -249,7 +310,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Build SEO/OG status label.
+     * 构建 SEO 与 Open Graph 状态标签。
      *
      * @param array<string,mixed> $group Field group diagnostics.
      * @param array<int,string>   $fields Fields to inspect.
@@ -279,7 +340,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Build a status badge.
+     * 构建状态徽标 HTML。
      *
      * @param string $status Status key.
      * @param string $label Label.
@@ -292,7 +353,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Truncate long URLs for table display.
+     * 截断过长 URL 以适配表格展示。
      *
      * @param string $url URL.
      * @return string
@@ -307,7 +368,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render page-level Schema override controls.
+     * 渲染页面级 Schema 自定义覆盖配置控件。
      *
      * @param \WP_Post $post Current post.
      * @return void
@@ -395,7 +456,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render a Schema override text input.
+     * 渲染 Schema 覆盖单行文本输入框。
      *
      * @param string              $key Field key.
      * @param string              $label Field label.
@@ -415,7 +476,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render a Schema override textarea.
+     * 渲染 Schema 覆盖多行文本框。
      *
      * @param string              $key Field key.
      * @param string              $label Field label.
@@ -435,7 +496,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render visual Schema diagnostics.
+     * 渲染可视化 Schema 诊断信息。
      *
      * @param array<string,mixed> $diagnostics Diagnostics payload.
      * @return void
@@ -463,7 +524,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Format FAQ rows for textarea editing.
+     * 格式化 FAQ 列表供多行文本框编辑。
      *
      * @param array<int,array<string,mixed>> $items FAQ rows.
      * @return string
@@ -485,7 +546,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Format HowTo rows for textarea editing.
+     * 格式化 HowTo 步骤列表供多行文本框编辑。
      *
      * @param array<int,array<string,mixed>> $items HowTo rows.
      * @return string
@@ -506,7 +567,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render Schema override CSS once.
+     * 渲染 Schema 覆盖设置的单例 CSS 样式。
      *
      * @return void
      */
@@ -2747,7 +2808,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Build preset and current-page CSS vars for the small admin preview.
+     * 为后台微缩预览构建预设与当前页面的 CSS 变量。
      *
      * @param \WP_Post             $post    Current post.
      * @param array<string,string> $presets Preset choices.
@@ -2814,7 +2875,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Build reusable style usage data for the stage-four management panel.
+     * 为阶段四管理面板构建可复用样式使用统计。
      *
      * @param \WP_Post                   $post           Current post.
      * @param array<string,mixed>        $settings       Sanitized page visual settings.
@@ -2899,7 +2960,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Collect page usage grouped by visual style target.
+     * 按视觉样式目标分组收集页面使用数据。
      *
      * @param array<string,string>       $presets        Preset choices.
      * @param array<string,array<mixed>> $custom_presets User-created presets.
@@ -2955,7 +3016,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Resolve a page's reusable style target.
+     * 解析页面的可复用样式目标。
      *
      * @param int                        $post_id        Page ID.
      * @param array<string,mixed>        $settings       Sanitized page visual settings.
@@ -3005,7 +3066,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Resolve the template-default style target for a page.
+     * 解析页面模板默认的样式目标。
      *
      * @param int $post_id Page ID.
      * @return array<string,string>
@@ -3046,7 +3107,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Build a compact editable page item for usage cards.
+     * 为使用卡片构建紧凑的可编辑页面数据项。
      *
      * @param int $page_id Page ID.
      * @return array<string,string|int>
@@ -3066,7 +3127,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render style usage cards for the stage-four management panel.
+     * 渲染样式使用状态卡片。
      *
      * @param array<string,mixed> $state Reuse state.
      * @return void
@@ -3137,7 +3198,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Build the read-only state shown by the page style manager.
+     * 构建页面样式管理器展示的只读状态。
      *
      * @param \WP_Post                   $post           Current post.
      * @param array<string,mixed>        $settings       Sanitized page visual settings.
@@ -3232,7 +3293,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Render the first-stage page style manager dashboard.
+     * 渲染阶段一页面样式管理看板。
      *
      * @param array<string,mixed> $state Manager state.
      * @return void
@@ -3608,7 +3669,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Ensure "save as my preset" can capture inherited template styles too.
+     * 确保“保存为我的预设”也能捕获继承自模板的样式。
      *
      * @param int                 $post_id  Post ID.
      * @param array<string,mixed> $settings Raw page visual settings.
@@ -3862,7 +3923,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Resolve the selected stage-four bulk style source into persistable settings.
+     * 将批量样式来源解析为可持久化的配置数据。
      *
      * @param array<string,mixed> $raw_settings Current form settings.
      * @param array<string,mixed> $post_data    Raw posted data.
@@ -3928,7 +3989,7 @@ class Meta_Boxes_Post_Settings_Service {
     }
 
     /**
-     * Save page-level Schema override fields.
+     * 保存页面级 Schema 自定义覆盖字段。
      *
      * @param int                 $post_id Post id.
      * @param array<string,mixed> $post_data Raw request data.

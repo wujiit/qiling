@@ -451,7 +451,7 @@ class Module_Manager {
     }
 
     /**
-     * Whether a module should be visible in builder catalogs.
+     * 检查模块在构建器目录中是否可见。
      *
      * @param string $module_id Module id.
      * @return bool

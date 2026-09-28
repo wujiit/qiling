@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme social login manager.
+ * 主题社交登录管理器。
  *
  * @package Developer_Starter
  */
@@ -20,14 +20,14 @@ class Manager {
     const STATE_TRANSIENT_PREFIX = 'ds_social_login_state_';
 
     /**
-     * Singleton instance.
+     * 单例实例。
      *
      * @var Manager|null
      */
     private static $instance = null;
 
     /**
-     * Provider cache.
+     * 提供者实例缓存。
      *
      * @var array<string,Provider_Interface>|null
      */
@@ -45,7 +45,7 @@ class Manager {
     }
 
     /**
-     * Register WordPress hooks.
+     * 注册 WordPress 钩子。
      *
      * @return void
      */
@@ -107,7 +107,7 @@ class Manager {
     }
 
     /**
-     * Render enabled social login buttons.
+     * 渲染已启用的社交登录按钮。
      *
      * @param string              $context Render context.
      * @param array<string,mixed> $args Arguments.
@@ -135,7 +135,7 @@ class Manager {
     }
 
     /**
-     * Start OAuth login.
+     * 发起 OAuth 授权登录流程。
      *
      * @return void
      */
@@ -179,7 +179,7 @@ class Manager {
     }
 
     /**
-     * Complete OAuth login.
+     * 处理并完成 OAuth 回调登录。
      *
      * @return void
      */
@@ -283,7 +283,7 @@ class Manager {
     }
 
     /**
-     * Resolve a local provider icon from assets/images/{provider}.{ext}.
+     * 解析本地提供者图标资源（位于 assets/images/ 目录）。
      *
      * @param string $provider_key Provider key.
      * @return string

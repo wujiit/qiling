@@ -1,6 +1,6 @@
 <?php
 /**
- * Maintenance and cleanup helpers split from functions.php.
+ * 从 functions.php 拆分出的系统维护与数据清理辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

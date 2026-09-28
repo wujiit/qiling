@@ -1,6 +1,6 @@
 <?php
 /**
- * Testimonials Module - 客户评价（增强版）
+ * 客户评价与口碑背书模块
  * 
  * 支持多种布局样式、评价来源、日期、认证标识和评分统计
  *
@@ -242,6 +242,47 @@ class Testimonials_Module extends Module_Base {
                         'label' => __( '内容颜色', 'developer-starter' ),
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'avatar'        => '',
+                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张先生', 'Michael Z.' ) : __( '张先生', 'developer-starter' ),
+                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'CEO · 某科技公司', 'CEO · Technology Company' ) : __( 'CEO · 某科技公司', 'developer-starter' ),
+                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'A very professional team. Delivery was on time and the quality exceeded expectations.' ) : __( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'developer-starter' ),
+                        'rating'        => '5',
+                        'source'        => 'google',
+                        'date'          => '2024-01-15',
+                        'verified'      => 'verified',
+                        'card_bg'       => 'var(--color-neutral-0)',
+                        'name_color'    => '',
+                        'content_color' => '',
+                    ),
+                    array(
+                        'avatar'        => '',
+                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李女士', 'Sophia L.' ) : __( '李女士', 'developer-starter' ),
+                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'developer-starter' ),
+                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'The collaboration was smooth, communication was clear, and the final direction matched our goals perfectly.' ) : __( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'developer-starter' ),
+                        'rating'        => '5',
+                        'source'        => 'dianping',
+                        'date'          => '2024-01-10',
+                        'verified'      => 'guest',
+                        'card_bg'       => 'var(--color-neutral-0)',
+                        'name_color'    => '',
+                        'content_color' => '',
+                    ),
+                    array(
+                        'avatar'        => '',
+                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王总', 'David W.' ) : __( '王总', 'developer-starter' ),
+                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '创始人', 'Founder' ) : __( '创始人', 'developer-starter' ),
+                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'From discovery to delivery, every step felt thoughtful and well executed. A strong long-term partner.' ) : __( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'developer-starter' ),
+                        'rating'        => '5',
+                        'source'        => 'ctrip',
+                        'date'          => '2024-01-05',
+                        'verified'      => 'vip',
+                        'card_bg'       => 'var(--color-neutral-0)',
+                        'name_color'    => '',
+                        'content_color' => '',
+                    ),
+                ),
             ),
 
             // ========================================
@@ -297,13 +338,15 @@ class Testimonials_Module extends Module_Base {
         // ========================================
         $title       = isset( $data['testimonials_title'] ) && $data['testimonials_title'] !== '' 
                        ? $data['testimonials_title'] 
-                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户评价', 'Client Reviews' ) : __( '客户评价', 'developer-starter' ) );
+                       : ( isset( $data['testimonial_title'] ) && $data['testimonial_title'] !== ''
+                           ? $data['testimonial_title']
+                           : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户评价', 'Client Reviews' ) : __( '客户评价', 'developer-starter' ) ) );
         $title_size  = isset( $data['testimonials_title_size'] ) && $data['testimonials_title_size'] !== '' 
                        ? $data['testimonials_title_size'] 
                        : '2rem';
         $title_color = isset( $data['testimonials_title_color'] ) ? $data['testimonials_title_color'] : '';
         
-        $subtitle       = isset( $data['testimonials_subtitle'] ) ? $data['testimonials_subtitle'] : '';
+        $subtitle       = isset( $data['testimonials_subtitle'] ) ? $data['testimonials_subtitle'] : ( isset( $data['testimonial_subtitle'] ) ? $data['testimonial_subtitle'] : '' );
         $subtitle_size  = isset( $data['testimonials_subtitle_size'] ) && $data['testimonials_subtitle_size'] !== '' 
                           ? $data['testimonials_subtitle_size'] 
                           : '1rem';
@@ -336,7 +379,7 @@ class Testimonials_Module extends Module_Base {
         // ========================================
         // 默认示例数据
         // ========================================
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['testimonials_items'] ) && empty( $title ) && empty( $subtitle ) ) {
             $items = array(
                 array(
                     'avatar'        => '',

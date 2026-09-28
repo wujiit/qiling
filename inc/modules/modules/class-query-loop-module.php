@@ -1,6 +1,6 @@
 <?php
 /**
- * Query Loop Module.
+ * 查询循环内容列表模块。
  *
  * @package Developer_Starter
  */
@@ -364,7 +364,7 @@ class Query_Loop_Module extends Module_Base {
     }
 
     /**
-     * Resolve current loop item fields through Dynamic Data when available.
+     * 优先通过动态数据解析当前循环条目字段。
      *
      * @param \WP_Post            $post     Current post.
      * @param array<string,mixed> $settings Module settings.

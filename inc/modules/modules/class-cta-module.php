@@ -1,6 +1,6 @@
 <?php
 /**
- * CTA Module - 行动号召
+ * 行动号召 (CTA) 模块
  *
  * @package Developer_Starter
  */
@@ -96,7 +96,7 @@ class CTA_Module extends Module_Base {
             ),
             $this->get_button_border_color_field( 'cta_button_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
             
-            // Background Settings
+            // 背景配置
             array(
                 'id' => 'cta_bg_type',
                 'label' => __( '背景类型', 'developer-starter' ),
@@ -261,7 +261,7 @@ class CTA_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $clean_css_value( $data['module_padding_top'] ) : '80px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $clean_css_value( $data['module_padding_bottom'] ) : '80px';
         
-        // CSS Generation
+        // 生成 CSS 样式
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         
         if ( in_array( $bg_type, array( 'color', 'gradient' ), true ) && $bg_color ) {

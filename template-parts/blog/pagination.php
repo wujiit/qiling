@@ -1,6 +1,6 @@
 <?php
 /**
- * Shared native blog pagination.
+ * 原生博客通用分页模板。
  *
  * @package Developer_Starter
  */

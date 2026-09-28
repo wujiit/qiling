@@ -1,6 +1,6 @@
 <?php
 /**
- * 404 redirect helpers.
+ * 404 重定向辅助函数。
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_404_redirect_get_option' ) ) {
     /**
-     * Read a theme option with a fallback for unusual helper load order.
+     * 读取主题选项配置（带异常加载顺序兜底）。
      *
      * @param string $key     Option key.
      * @param mixed  $default Default value.
@@ -33,7 +33,7 @@ if ( ! function_exists( 'developer_starter_404_redirect_get_option' ) ) {
 
 if ( ! function_exists( 'developer_starter_404_redirect_get_home_host' ) ) {
     /**
-     * Get normalized site host.
+     * 获取规范化后的站点域名 Host。
      *
      * @return string
      */
@@ -45,7 +45,7 @@ if ( ! function_exists( 'developer_starter_404_redirect_get_home_host' ) ) {
 
 if ( ! function_exists( 'developer_starter_404_redirect_host_matches_site' ) ) {
     /**
-     * Check whether a host belongs to the current site.
+     * 检查指定 Host 是否属于当前站点。
      *
      * @param string $host Host to check.
      * @return bool
@@ -62,7 +62,7 @@ if ( ! function_exists( 'developer_starter_404_redirect_host_matches_site' ) ) {
 
 if ( ! function_exists( 'developer_starter_404_redirect_strip_home_path' ) ) {
     /**
-     * Strip the WordPress home path from a request path on subdirectory installs.
+     * 针对子目录安装环境，从请求路径中剥离 WordPress 安装目录前缀。
      *
      * @param string $path Raw path.
      * @return string
@@ -86,7 +86,7 @@ if ( ! function_exists( 'developer_starter_404_redirect_strip_home_path' ) ) {
 
 if ( ! function_exists( 'developer_starter_normalize_404_redirect_path' ) ) {
     /**
-     * Normalize a source path for exact 404 redirect matching.
+     * 规范化用于 404 重定向精确匹配的来源路径。
      *
      * @param mixed $value Raw source path or same-site URL.
      * @return string
@@ -138,7 +138,7 @@ if ( ! function_exists( 'developer_starter_normalize_404_redirect_path' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_404_redirect_target' ) ) {
     /**
-     * Sanitize a redirect target. Only same-site absolute URLs and relative paths are accepted.
+     * 过滤重定向目标地址，仅允许本站绝对 URL 或相对路径。
      *
      * @param mixed $value Raw target.
      * @return string
@@ -192,7 +192,7 @@ if ( ! function_exists( 'developer_starter_sanitize_404_redirect_target' ) ) {
 
 if ( ! function_exists( 'developer_starter_parse_404_redirect_rules' ) ) {
     /**
-     * Parse 404 redirect rules from textarea content.
+     * 从多行文本框内容中解析 404 重定向规则。
      *
      * @param mixed $raw Raw rules.
      * @return array<int,array{source:string,target:string}>
@@ -234,7 +234,7 @@ if ( ! function_exists( 'developer_starter_parse_404_redirect_rules' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_404_redirect_rules' ) ) {
     /**
-     * Sanitize redirect rules for storage.
+     * 过滤用于持久化存储的重定向规则列表。
      *
      * @param mixed $raw Raw rules.
      * @return string
@@ -256,7 +256,7 @@ if ( ! function_exists( 'developer_starter_sanitize_404_redirect_rules' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_current_404_redirect_path' ) ) {
     /**
-     * Get normalized current request path.
+     * 获取规范化后的当前请求路径。
      *
      * @return string
      */
@@ -268,7 +268,7 @@ if ( ! function_exists( 'developer_starter_get_current_404_redirect_path' ) ) {
 
 if ( ! function_exists( 'developer_starter_build_404_redirect_target_url' ) ) {
     /**
-     * Build a safe absolute URL for a sanitized target.
+     * 为经过滤的目标路径构建安全的绝对 URL。
      *
      * @param string $target Sanitized target path.
      * @return string
@@ -285,7 +285,7 @@ if ( ! function_exists( 'developer_starter_build_404_redirect_target_url' ) ) {
 
 if ( ! function_exists( 'developer_starter_maybe_redirect_404' ) ) {
     /**
-     * Redirect known deleted URLs before rendering the 404 template.
+     * 在渲染 404 模板前对已确认删除的 URL 执行重定向。
      *
      * @return void
      */

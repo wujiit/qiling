@@ -1,6 +1,6 @@
 <?php
 /**
- * Request message builder.
+ * AI 请求提示词与消息构建器。
  *
  * @package Developer_Starter
  */
@@ -195,7 +195,7 @@ class Prompt_Builder {
     }
 
     /**
-     * Build full-page localization messages.
+     * 构建整页本地化请求消息。
      *
      * @param int                              $post_id Page ID.
      * @param string                           $prompt User notes.
@@ -267,7 +267,7 @@ class Prompt_Builder {
     }
 
     /**
-     * Build post/article/FAQ content localization messages.
+     * 构建文章/FAQ 内容本地化请求消息。
      *
      * @param int                 $post_id Post ID.
      * @param string              $prompt User notes.

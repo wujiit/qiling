@@ -1,6 +1,6 @@
 <?php
 /**
- * About Me Card Module - About 我是谁
+ * 关于我卡片模块
  *
  * @package Developer_Starter
  */
@@ -119,6 +119,23 @@ class About_Me_Card_Module extends Module_Base {
                         'default' => '🔗',
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'label' => 'GitHub',
+                        'url'   => 'https://github.com/',
+                        'icon'  => '🐙',
+                    ),
+                    array(
+                        'label' => 'X',
+                        'url'   => 'https://x.com/',
+                        'icon'  => '𝕏',
+                    ),
+                    array(
+                        'label' => 'RSS',
+                        'url'   => home_url( '/feed/' ),
+                        'icon'  => '📡',
+                    ),
+                ),
             ),
             array(
                 'id'      => 'about_card_bg',
@@ -172,17 +189,17 @@ class About_Me_Card_Module extends Module_Base {
         $avatar = isset( $data['about_avatar'] ) ? $data['about_avatar'] : '';
         $name = isset( $data['about_name'] ) && $data['about_name'] !== '' ? $data['about_name'] : __( '启灵站长', 'developer-starter' );
         $role = isset( $data['about_role'] ) ? $data['about_role'] : '';
-        $intro = isset( $data['about_intro'] ) ? $data['about_intro'] : '';
-        $now = isset( $data['about_now'] ) ? $data['about_now'] : '';
+        $intro = isset( $data['about_intro'] ) && '' !== $data['about_intro'] ? $data['about_intro'] : ( isset( $data['about_bio'] ) ? $data['about_bio'] : '' );
+        $now = isset( $data['about_now'] ) && '' !== $data['about_now'] ? $data['about_now'] : ( isset( $data['about_status_text'] ) ? $data['about_status_text'] : '' );
         $show_now = ! isset( $data['about_show_now'] ) || $data['about_show_now'] === 'yes';
         $location = isset( $data['about_location'] ) ? $data['about_location'] : '';
-        $website = isset( $data['about_website'] ) ? $data['about_website'] : '';
-        $website_text = isset( $data['about_website_text'] ) && '' !== trim( (string) $data['about_website_text'] ) ? (string) $data['about_website_text'] : __( '个人网站', 'developer-starter' );
+        $website = isset( $data['about_website'] ) && '' !== $data['about_website'] ? $data['about_website'] : ( isset( $data['about_btn_url'] ) ? $data['about_btn_url'] : '' );
+        $website_text = isset( $data['about_website_text'] ) && '' !== trim( (string) $data['about_website_text'] ) ? (string) $data['about_website_text'] : ( isset( $data['about_btn_text'] ) && '' !== trim( (string) $data['about_btn_text'] ) ? (string) $data['about_btn_text'] : __( '个人网站', 'developer-starter' ) );
         $email = isset( $data['about_email'] ) ? $data['about_email'] : '';
         $safe_email = sanitize_email( $email );
 
         $socials = isset( $data['about_socials'] ) && is_array( $data['about_socials'] ) ? $data['about_socials'] : array();
-        if ( empty( $socials ) ) {
+        if ( empty( $socials ) && ! isset( $data['about_socials'] ) ) {
             $socials = array(
                 array(
                     'label' => 'GitHub',

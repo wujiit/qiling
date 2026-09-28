@@ -1,6 +1,6 @@
 <?php
 /**
- * Category base rewrite helpers.
+ * 分类基础重写辅助函数。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Branches Module - 门店/分支机构
+ * 门店与分支机构展示模块
  *
  * @package Developer_Starter
  */
@@ -318,8 +318,10 @@ class Branches_Module extends Module_Base {
             $map_provider = 'auto';
         }
 
-        $branches = isset( $data['branches_list'] ) && is_array( $data['branches_list'] ) ? $data['branches_list'] : array();
-        if ( empty( $branches ) ) {
+        $branches = isset( $data['branches_list'] ) && is_array( $data['branches_list'] ) 
+            ? $data['branches_list'] 
+            : ( isset( $data['branches_items'] ) && is_array( $data['branches_items'] ) ? $data['branches_items'] : array() );
+        if ( empty( $branches ) && empty( $title ) && empty( $subtitle ) ) {
             $branches = array(
                 array(
                     'name' => __( '北京总部店', 'developer-starter' ),

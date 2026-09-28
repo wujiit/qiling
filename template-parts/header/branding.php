@@ -1,6 +1,6 @@
 <?php
 /**
- * Header branding.
+ * 页头品牌与 Logo 区域模板。
  *
  * @package Developer_Starter
  */

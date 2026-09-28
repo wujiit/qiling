@@ -1,6 +1,6 @@
 <?php
 /**
- * Helpers grouped split from class-helpers.php.
+ * 从 class-helpers.php 拆分出的分组辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -724,7 +724,7 @@ if ( ! function_exists( 'developer_starter_lazy_load_iframes' ) ) {
 }
 
 /**
- * SVG upload support.
+ * SVG 媒体文件上传支持。
  */
 add_filter( 'upload_mimes', 'developer_starter_allow_svg_upload_mime' );
 add_filter( 'wp_check_filetype_and_ext', 'developer_starter_fix_svg_upload_filetype', 10, 5 );

@@ -1,6 +1,6 @@
 <?php
 /**
- * Full Screen Video Module - 全屏沉浸式视频首屏
+ * 全屏沉浸式视频首屏模块
  *
  * @package Developer_Starter
  */

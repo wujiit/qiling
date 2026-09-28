@@ -114,13 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.classList.add('video-hero-scrolled');
                 header.classList.add('header-scrolled');
                 
-                // Force inline styles to ensure visibility over any theme defaults
+                // 应用内联样式确保优先级高于主题默认样式
                 header.style.setProperty('background-color', '#ffffff', 'important');
                 header.style.setProperty('color', '#333333', 'important');
                 header.style.setProperty('box-shadow', '0 2px 10px rgba(0,0,0,0.1)', 'important');
                 
-                // Handle links color if needed via a helper class on body or just relying on CSS. 
-                // The CSS for .video-hero-scrolled should handle children, but we rely on CSS for children.
+                // 通过 CSS 或 body 辅助类统一处理链接颜色 
+                // 子元素样式由 .video-hero-scrolled 的 CSS 规则统一样式
                 
                 scrolled = true;
             }
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.classList.remove('video-hero-scrolled');
                 header.classList.remove('header-scrolled');
                 
-                // Remove inline overrides to let CSS (transparent) take over
+                // 移除内联覆盖样式，交由透明背景 CSS 规则控制
                 header.style.removeProperty('background-color');
                 header.style.removeProperty('color');
                 header.style.removeProperty('box-shadow');
@@ -139,10 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Check initially
+    // 初始化检查
     checkScroll();
     
-    // Add scroll listener
+    // 添加滚动事件监听
     window.addEventListener('scroll', checkScroll);
 });
 </script>

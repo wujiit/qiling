@@ -1,6 +1,6 @@
 <?php
 /**
- * Resource Stats Module - 博客资源统计
+ * 资源与博客数据统计模块
  *
  * @package Developer_Starter
  */

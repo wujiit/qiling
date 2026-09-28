@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Page Render Trait
+ * 主题后台设置页面渲染 Trait
  *
  * @package Developer_Starter
  */

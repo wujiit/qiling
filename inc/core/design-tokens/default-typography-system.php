@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for default typography system.
+ * 默认排版系统数据配置。
  *
  * @package Developer_Starter
  */

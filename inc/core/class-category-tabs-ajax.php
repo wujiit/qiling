@@ -1,6 +1,6 @@
 <?php
 /**
- * Category Tabs Module AJAX Handler
+ * 分类选项卡模块 AJAX 处理器
  *
  * @package Developer_Starter
  */
@@ -55,7 +55,7 @@ class Category_Tabs_Ajax {
             'ignore_sticky_posts' => true,
         );
 
-        // Parse IDs (comma separated)
+        // 解析文章与分类 ID 列表（逗号分隔）
         $ids = array_slice( array_filter( array_map( 'intval', explode( ',', $id_str ) ) ), 0, 20 );
 
         if ( empty( $ids ) ) {
@@ -289,7 +289,7 @@ class Category_Tabs_Ajax {
     }
 
     private function render_post_item( $post_id, $config ) {
-        // Extract config
+        // 提取模块配置参数
         $show_date = isset($config['show_date']) && $config['show_date'] === 'yes';
         $show_author = isset($config['show_author']) && $config['show_author'] === 'yes';
         $show_views = isset($config['show_views']) && $config['show_views'] === 'yes';
@@ -307,20 +307,18 @@ class Category_Tabs_Ajax {
         $aspect_ratio = isset($config['image_aspect_ratio']) ? $config['image_aspect_ratio'] : '16:9';
         $custom_height = isset($config['image_height']) ? $config['image_height'] : '200px';
 
-        // Calculate height style based on aspect ratio
+        // 根据宽高比配置计算高度样式
         $wrapper_style = '';
         $img_style = '';
         
-        // This class setup relies on CSS for aspect ratio usually, but inline style works for custom
+        // 常规预设宽高比由 CSS 样式表处理，自定义比例通过内联高度样式适配
         if ( $aspect_ratio === 'custom' ) {
             $img_style = 'height: ' . esc_attr( $custom_height ) . '; object-fit: cover;';
         } else {
-            // Apply a class or style for aspect ratio. 
-            // For simplicity in this AJAX handler, we'll try to use a padding-hack wrapper or simple object-fit
-            // Assuming the CSS will handle .ratio-16-9 etc.
+            // 预设宽高比交由对应的 CSS 类（如 .ratio-16-9 等）渲染
         }
 
-        // Check for video
+        // 检测关联视频信息
         $video_data = false;
         $has_video_cover = false;
         if ( function_exists( 'developer_starter_get_first_video' ) ) {
@@ -330,7 +328,7 @@ class Category_Tabs_Ajax {
              }
         }
 
-        // Get Thumbnail
+        // 获取缩略图
         $thumbnail_url = '';
         if ( function_exists( 'developer_starter_get_thumbnail_url' ) ) {
             $thumbnail_url = developer_starter_get_thumbnail_url( $post_id, 'medium' );
@@ -338,7 +336,7 @@ class Category_Tabs_Ajax {
             $thumbnail_url = get_the_post_thumbnail_url( $post_id, 'medium' );
         }
         
-        // If has video poster, use it
+        // 若存在视频封面图，则优先使用
         if ( $has_video_cover && ! empty( $video_data['poster'] ) ) {
             $thumbnail_url = $video_data['poster'];
         }
@@ -410,11 +408,7 @@ class Category_Tabs_Ajax {
                 )
             )
             : array();
-
-        // Fallback image - REMOVED as per user request to not show broken icon
-        // if ( empty( $thumbnail_url ) ) {
-        //    $thumbnail_url = DEVELOPER_STARTER_URI . '/assets/images/no-image.png'; 
-        // }
+        // 无封面缩略图时不显示占位图，保持页面整洁
 
         ?>
         <article class="cat-tab-post-item card-style-<?php echo esc_attr( $card_style ); ?> <?php echo 'ratio-' . esc_attr( str_replace( ':', '-', $aspect_ratio ) ); ?>">

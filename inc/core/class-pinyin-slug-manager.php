@@ -1,6 +1,6 @@
 <?php
 /**
- * Convert Chinese post and term slugs to pinyin.
+ * 将中文文章和分类标签的别名自动转换为拼音。
  *
  * @package Developer_Starter
  */
@@ -16,21 +16,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Pinyin_Slug_Manager {
 
     /**
-     * Singleton instance.
+     * 单例实例。
      *
      * @var self|null
      */
     private static $instance = null;
 
     /**
-     * Pinyin converter instance.
+     * 拼音转换器实例。
      *
      * @var Pinyin|null
      */
     private $pinyin = null;
 
     /**
-     * Get singleton instance.
+     * 获取单例实例。
      *
      * @return self
      */
@@ -43,7 +43,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Register WordPress hooks.
+     * 注册 WordPress 钩子。
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Whether the feature is enabled.
+     * 检测该功能是否已开启。
      *
      * @return bool
      */
@@ -67,7 +67,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Convert post/page slugs during first publish.
+     * 文章/页面首次发布时自动将标题转为拼音别名。
      *
      * @param string $slug          Generated slug.
      * @param int    $post_id       Post ID.
@@ -91,7 +91,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Convert category/tag slugs when no manual slug is submitted.
+     * 创建分类/标签且未手动填写别名时转为拼音。
      *
      * @param array<string,mixed> $data     Term data.
      * @param string              $taxonomy Taxonomy.
@@ -113,7 +113,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Convert category/tag slugs on update when the submitted slug is empty.
+     * 更新分类/标签时若未提交别名则自动生成拼音别名。
      *
      * @param array<string,mixed> $data     Term data.
      * @param int                 $term_id  Term ID.
@@ -136,7 +136,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Determine whether a post slug should be converted.
+     * 判断指定文章别名是否需要执行拼音转换。
      *
      * @param int    $post_id       Post ID.
      * @param string $post_status   Post status.
@@ -176,7 +176,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Determine whether a term slug should be converted.
+     * 判断指定分类/标签别名是否需要执行拼音转换。
      *
      * @param string              $taxonomy Taxonomy.
      * @param array<string,mixed> $args     Term args.
@@ -199,7 +199,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Convert a string to a sanitized pinyin slug.
+     * 将字符串转换为合法的拼音别名 Slug。
      *
      * @param string $source  Source text.
      * @param string $context Conversion context.
@@ -235,7 +235,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Load the bundled pinyin library.
+     * 加载内置的拼音转换库。
      *
      * @return bool
      */
@@ -266,7 +266,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Check whether a string contains Chinese characters.
+     * 检查字符串中是否包含中文字符。
      *
      * @param string $value Value.
      * @return bool
@@ -276,7 +276,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Get conversion mode.
+     * 获取拼音转换模式。
      *
      * @return string
      */
@@ -287,7 +287,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Get pinyin divider.
+     * 获取拼音分隔符。
      *
      * @return string
      */
@@ -298,7 +298,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Get maximum slug length.
+     * 获取别名 Slug 最大允许长度。
      *
      * @return int
      */
@@ -309,7 +309,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Trim slug without cutting a pinyin segment when possible.
+     * 截取别名时尽量不切断完整的拼音片段。
      *
      * @param string $input   Slug.
      * @param int    $length  Max length.
@@ -337,7 +337,7 @@ class Pinyin_Slug_Manager {
     }
 
     /**
-     * Build a unique term slug.
+     * 生成唯一的分类/标签别名 Slug。
      *
      * @param string              $slug     Slug.
      * @param string              $taxonomy Taxonomy.

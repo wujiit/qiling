@@ -1,6 +1,6 @@
 <?php
 /**
- * Double Column Carousel Module - 双栏轮播
+ * 双栏图文轮播模块
  *
  * @package Developer_Starter
  */

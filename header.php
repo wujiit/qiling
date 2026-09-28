@@ -1,9 +1,8 @@
 <?php
 /**
- * The header for the Qi Ling theme.
+ * 启灵主题通用页头模板
  *
- * Header markup is composed from child-theme-overridable template parts so
- * child themes can customize small regions without copying this whole file.
+ * 页头结构由可被子主题覆盖的模板片段组成，便于子主题按需自定义局部区域。
  *
  * @package Developer_Starter
  */

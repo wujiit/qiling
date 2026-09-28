@@ -1,6 +1,6 @@
 <?php
 /**
- * Image Text Module - 图文模块
+ * 图文排版展示模块
  *
  * @package Developer_Starter
  */
@@ -101,7 +101,7 @@ class Image_Text_Module extends Module_Base {
             ),
             $this->get_button_border_color_field( 'image_text_btn_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
             
-            // Style Settings
+            // 样式配置
             array(
                 'id' => 'module_bg_color',
                 'label' => __( '背景颜色', 'developer-starter' ),
@@ -156,7 +156,7 @@ class Image_Text_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '60px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '60px';
         
-        // Dynamic Styles
+        // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         
         if ( $bg_color ) {

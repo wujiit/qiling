@@ -1,6 +1,6 @@
 <?php
 /**
- * Pricing Module - 价格方案
+ * 价格方案与套餐对比模块
  *
  * @package Developer_Starter
  */
@@ -142,6 +142,47 @@ class Pricing_Module extends Module_Base {
                 array( 'id' => 'featured_text', 'type' => 'text', 'label' => __( '推荐标签文字', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'developer-starter' ), 'dependency' => array( 'featured', '==', '1' ) ),
 
                 array( 'id' => 'featured_bg', 'type' => 'color', 'label' => __( '推荐标签背景', 'developer-starter' ), 'desc' => __( '留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ), 'dependency' => array( 'featured', '==', '1' ) ),
+            ),
+            'default_items' => array(
+                array( 
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'developer-starter' ),
+                    'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 99 ) : '¥99',
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合个人用户和小型项目', 'Best for individuals and small projects.' ) : __( '适合个人用户和小型项目', 'developer-starter' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", "✓ Core feature access\n✓ 5GB storage\n✓ Email support\n✗ Advanced analytics\n✗ API access" ) : __( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", 'developer-starter' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ),
+                    'btn_link' => '#',
+                    'card_bg' => 'var(--color-neutral-0)',
+                    'featured' => '',
+                    'featured_text' => '',
+                    'featured_bg' => ''
+                ),
+                array( 
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业版', 'Professional' ) : __( '专业版', 'developer-starter' ),
+                    'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 299 ) : '¥299',
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合成长型企业', 'Built for growing teams and active businesses.' ) : __( '适合成长型企业', 'developer-starter' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", "✓ Everything in Starter\n✓ 50GB storage\n✓ Priority support\n✓ Advanced analytics\n✓ API access" ) : __( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", 'developer-starter' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ),
+                    'btn_link' => '#',
+                    'card_bg' => 'var(--color-neutral-0)',
+                    'featured' => '1',
+                    'featured_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'developer-starter' ),
+                    'featured_bg' => ''
+                ),
+                array( 
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '企业版', 'Enterprise' ) : __( '企业版', 'developer-starter' ),
+                    'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 999 ) : '¥999',
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合大型企业定制需求', 'For custom enterprise requirements and larger delivery scope.' ) : __( '适合大型企业定制需求', 'developer-starter' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", "✓ Everything in Professional\n✓ Unlimited storage\n✓ Dedicated support\n✓ Custom development\n✓ Account manager" ) : __( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", 'developer-starter' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '联系我们', 'Contact Sales' ) : __( '联系我们', 'developer-starter' ),
+                    'btn_link' => '#',
+                    'card_bg' => 'var(--color-neutral-0)',
+                    'featured' => '',
+                    'featured_text' => '',
+                    'featured_bg' => ''
+                ),
             ) ),
             array(
                 'id' => 'enable_staggered_animation',
@@ -170,7 +211,7 @@ class Pricing_Module extends Module_Base {
         
         $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
         $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
-        // Fallback for old field
+        // 兼容历史配置字段
         if ( empty( $bg_color ) && isset( $data['pricing_bg_color'] ) ) {
             $bg_color = $data['pricing_bg_color'];
         }
@@ -196,8 +237,8 @@ class Pricing_Module extends Module_Base {
             $cards_mode = 'native';
         }
         
-        // 默认示例数据
-        if ( empty( $items ) ) {
+        // 默认示例数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['pricing_items'] ) ) {
             $items = array(
                 array( 
                     'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'developer-starter' ),
@@ -241,7 +282,7 @@ class Pricing_Module extends Module_Base {
             );
         }
         
-        // Section Styles
+        // 区块样式配置
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         if ( $bg_type === 'color' && ! empty( $bg_color ) ) {
             $section_style .= strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
@@ -249,7 +290,7 @@ class Pricing_Module extends Module_Base {
             $section_style .= "position: relative; background-image: url('{$bg_image}'); background-size: cover; background-position: center;";
         }
         
-        // Typography Styles
+        // 文本样式配置
         $title_style = "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
         
@@ -268,7 +309,7 @@ class Pricing_Module extends Module_Base {
             $grid_layout_style = 'gap:var(--qiling-module-component-gap,var(--qiling-space-32));';
         }
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-pricing bg-type-<?php echo esc_attr( $bg_type ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
@@ -330,7 +371,7 @@ class Pricing_Module extends Module_Base {
                             $features = str_replace( array( "\r\n", "\r" ), "\n", $features );
                             $feature_list = array_filter( array_map( 'trim', explode( "\n", $features ) ) );
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

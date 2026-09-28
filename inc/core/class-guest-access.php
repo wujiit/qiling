@@ -1,6 +1,6 @@
 <?php
 /**
- * Guest Access Control
+ * 访客访问控制
  *
  * 控制游客访问权限：全站登录、分类限制、菜单隐藏与提示框展示
  *
@@ -194,23 +194,48 @@ class Guest_Access {
         }
 
         $filtered = array();
+        $hidden_item_ids = array();
         foreach ( $items as $item ) {
             if ( ! is_user_logged_in() ) {
                 $login_only = get_post_meta( $item->ID, '_ds_menu_login_required', true );
                 if ( $login_only === '1' ) {
+                    $hidden_item_ids[ (int) $item->ID ] = true;
                     continue;
                 }
             }
             if ( ! empty( $restricted_paths ) ) {
                 if ( $item->object === 'category' && in_array( (int) $item->object_id, $restricted, true ) ) {
+                    $hidden_item_ids[ (int) $item->ID ] = true;
                     continue;
                 }
                 if ( ! empty( $item->url ) ) {
                     $path = trim( (string) parse_url( $item->url, PHP_URL_PATH ), '/' );
                     if ( $path && in_array( $path, $restricted_paths, true ) ) {
+                        $hidden_item_ids[ (int) $item->ID ] = true;
                         continue;
                     }
                 }
+            }
+
+            // 隐藏父项时同步隐藏全部后代，避免子菜单脱离父级后单独显示。
+            $parent_id = (int) $item->menu_item_parent;
+            while ( $parent_id > 0 ) {
+                if ( isset( $hidden_item_ids[ $parent_id ] ) ) {
+                    $hidden_item_ids[ (int) $item->ID ] = true;
+                    continue 2;
+                }
+
+                $parent_item = null;
+                foreach ( $items as $candidate ) {
+                    if ( (int) $candidate->ID === $parent_id ) {
+                        $parent_item = $candidate;
+                        break;
+                    }
+                }
+                if ( ! $parent_item ) {
+                    break;
+                }
+                $parent_id = (int) $parent_item->menu_item_parent;
             }
             $filtered[] = $item;
         }

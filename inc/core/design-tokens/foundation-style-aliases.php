@@ -1,6 +1,6 @@
 <?php
 /**
- * Foundation style aliases for audited legacy design literals.
+ * 历史设计字面量的基础样式别名映射。
  *
  * @package Developer_Starter
  */

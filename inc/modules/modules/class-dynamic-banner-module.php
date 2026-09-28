@@ -1,6 +1,6 @@
 <?php
 /**
- * Dynamic Banner Module - 动态SaaS风格首屏
+ * 动态 SaaS 风格首屏模块
  *
  * 包含打字特效、悬浮卡片、动态背景等
  * 参考风格：https://www.dcxh7.com/

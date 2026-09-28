@@ -1,6 +1,6 @@
 <?php
 /**
- * Module Base Class
+ * 模块基类
  *
  * @package Developer_Starter
  */

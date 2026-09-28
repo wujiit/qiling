@@ -86,7 +86,7 @@ class Chart_Module extends Module_Base {
             return;
         }
 
-        // Prepare data for Chart.js
+        // 准备 Chart.js 所需数据结构
         $labels = array();
         $values = array();
         $colors = array();
@@ -100,17 +100,17 @@ class Chart_Module extends Module_Base {
             $labels[] = isset( $item['label'] ) ? $item['label'] : 'Item ' . ($index + 1);
             $values[] = isset( $item['value'] ) ? floatval( $item['value'] ) : 0;
             
-            // Handle Color
+            // 处理图表配色
             if ( ! empty( $item['color'] ) ) {
                 $bg_color = $item['color'];
             } else {
                 $bg_color = $default_colors[ $index % count( $default_colors ) ];
             }
             $colors[] = $bg_color;
-            // Add some transparency/variation if needed, or keep simple
+            // 配置图表颜色与透明度
         }
 
-        // Get Chart.js from the centralized resolver so CDN URLs keep whitelist and version rules.
+        // 从统一资源解析器获取 Chart.js 脚本
         $chart_asset = function_exists( 'developer_starter_get_third_party_asset' )
             ? developer_starter_get_third_party_asset( 'chart_js' )
             : array(
@@ -155,8 +155,7 @@ class Chart_Module extends Module_Base {
             )
         );
         
-        // Remove legend for Bar/Line if it's just one dataset usually (optional UI choice)
-        // But for consistency let's keep it or hide it if no title.
+        // 图例显示逻辑：未设置标题时自动隐藏图例以保持界面整洁
         
         // 优化: 使用 wp_enqueue_script 按需加载资源，避免重复输出 script 标签
         if ( ! wp_script_is( 'chart-js', 'registered' ) ) {

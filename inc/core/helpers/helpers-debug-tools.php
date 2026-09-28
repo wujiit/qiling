@@ -1,6 +1,6 @@
 <?php
 /**
- * Debug and misc frontend tool helpers split from functions.php.
+ * 从 functions.php 拆分出的调试与前端工具辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

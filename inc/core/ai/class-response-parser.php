@@ -1,6 +1,6 @@
 <?php
 /**
- * Response parser.
+ * AI 响应结果解析器。
  *
  * @package Developer_Starter
  */
@@ -336,7 +336,7 @@ class Response_Parser {
     }
 
     /**
-     * Extract a localized single module and merge only whitelisted text fields.
+     * 提取已本地化的单个模块并仅合并白名单文本字段。
      *
      * @param string                            $content AI response content.
      * @param string                            $module_type Target module type.
@@ -423,7 +423,7 @@ class Response_Parser {
     }
 
     /**
-     * Extract a localized full-page package and merge only whitelisted text fields.
+     * 提取已本地化的整页包并仅合并白名单文本字段。
      *
      * @param string                          $content AI response content.
      * @param array<string,mixed>             $current_package Current page package.
@@ -575,7 +575,7 @@ class Response_Parser {
     }
 
     /**
-     * Extract localized post/article content.
+     * 提取已本地化的文章内容。
      *
      * @param string              $content AI response content.
      * @param array<string,mixed> $source_payload Source content.
@@ -1083,7 +1083,7 @@ class Response_Parser {
     }
 
     /**
-     * Merge localized values into current data using only the text-only whitelist.
+     * 仅依据纯文本白名单将本地化结果合并入当前数据。
      *
      * @param array<string,mixed>               $base_data Current module data.
      * @param array<string,mixed>               $localized_data AI localized data.
@@ -1200,7 +1200,7 @@ class Response_Parser {
     }
 
     /**
-     * Normalize AI self-review for localization scoring.
+     * 规范化 AI 自评数据以进行本地化评分。
      *
      * @param mixed $review Raw review.
      * @return array<string,mixed>
@@ -1247,7 +1247,7 @@ class Response_Parser {
     }
 
     /**
-     * Build a lightweight localization score from AI review and deterministic checks.
+     * 基于 AI 自评与确定性规则构建轻量本地化评分。
      *
      * @param array<string,mixed> $review AI review.
      * @param array<string,mixed> $package Localized package.

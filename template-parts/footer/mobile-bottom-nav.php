@@ -1,6 +1,6 @@
 <?php
 /**
- * Mobile bottom navigation.
+ * 移动端底部快捷导航栏模板。
  *
  * @package Developer_Starter
  */

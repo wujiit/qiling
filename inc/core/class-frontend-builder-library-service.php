@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend Builder library and catalog service.
+ * 前台页面构建器组件库与目录服务。
  *
  * @package Developer_Starter
  */

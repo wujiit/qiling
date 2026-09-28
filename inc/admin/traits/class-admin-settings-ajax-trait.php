@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Ajax Trait
+ * 主题后台设置 AJAX 处理 Trait
  *
  * @package Developer_Starter
  */

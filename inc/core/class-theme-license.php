@@ -44,7 +44,7 @@ class Theme_License {
     const CHECK_INTERVAL = 1296000;
 
     /**
-     * Option Keys
+     * 选项键名定义
      */
     const OPTION_KEY = 'theme_license_key';
     const OPTION_STATUS = 'theme_license_status';
@@ -580,7 +580,7 @@ class Theme_License {
         }
         $version = self::get_theme_version();
 
-        // 准备请求体 (Telemetry Data)
+        // 准备请求体（授权验证数据）
         $body = array(
             'domain' => $domain,
             'key'    => $key,

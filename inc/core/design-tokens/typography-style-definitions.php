@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for typography style definitions.
+ * 排版样式定义数据配置。
  *
  * @package Developer_Starter
  */

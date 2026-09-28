@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for token definitions.
+ * 令牌定义数据配置。
  *
  * @package Developer_Starter
  */

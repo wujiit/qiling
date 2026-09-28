@@ -1,6 +1,6 @@
 <?php
 /**
- * Universal content model center.
+ * 通用内容模型中心。
  *
  * @package Developer_Starter
  */
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers and describes reusable content models for industry sites.
+ * 注册并定义适用于行业站点的可复用内容模型。
  */
 class Content_Model_Center {
 
@@ -52,7 +52,7 @@ class Content_Model_Center {
     private $definitions = null;
 
     /**
-     * Get singleton instance.
+     * 获取单例实例。
      *
      * @return self
      */
@@ -72,7 +72,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Check whether the content model center is enabled.
+     * 检查内容模型中心是否已启用。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return bool
@@ -85,7 +85,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Default enabled models.
+     * 默认启用的内容模型列表。
      *
      * @return array<int,string>
      */
@@ -99,7 +99,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Check whether local store/branch features are enabled.
+     * 检查是否启用了门店/分支机构功能。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return bool
@@ -112,7 +112,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get choices for settings UI.
+     * 获取后台设置界面的选项列表。
      *
      * @return array<string,string>
      */
@@ -126,7 +126,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Sanitize theme option values owned by this service.
+     * 清理本服务管理的配置选项值。
      *
      * @param array<string,mixed> $sanitized Sanitized option draft.
      * @param array<string,mixed> $existing_options Existing options.
@@ -175,7 +175,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Register active custom post types, taxonomies and model meta fields.
+     * 注册当前激活的自定义文章类型、分类法与模型元数据字段。
      *
      * @return void
      */
@@ -199,7 +199,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get active model definitions for runtime use.
+     * 获取运行时已启用的内容模型定义。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return array<string,array<string,mixed>>
@@ -222,7 +222,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get all model definitions.
+     * 获取全部内容模型定义。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -244,7 +244,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get one model definition.
+     * 获取指定内容模型的定义。
      *
      * @param string $model_id Model id.
      * @return array<string,mixed>
@@ -259,7 +259,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get enabled model ids from options.
+     * 从主题选项中读取已启用的模型 ID 列表。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return array<int,string>
@@ -294,7 +294,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Check whether a model belongs to local store/branch features.
+     * 检查模型是否属于线下门店/分支机构业务。
      *
      * @param string $model_id Model id.
      * @return bool
@@ -304,7 +304,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Payload for builders and admin previews.
+     * 供页面构建器与后台预览使用的数据载荷。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return array<string,mixed>
@@ -343,7 +343,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Compact generation context.
+     * 生成请求所需的紧凑上下文数据。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return array<string,mixed>
@@ -394,7 +394,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Query model posts for future modules and package tools.
+     * 查询内容模型文章数据供模块与页面包工具使用。
      *
      * @param string              $model_id Model id.
      * @param array<string,mixed> $args Query args.
@@ -425,7 +425,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Register admin meta boxes for enabled model post types.
+     * 为启用的模型文章类型注册后台编辑 Meta Box。
      *
      * @return void
      */
@@ -451,7 +451,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Render model field meta box.
+     * 渲染模型字段 Meta Box 界面。
      *
      * @param \WP_Post $post Post object.
      * @return void
@@ -476,7 +476,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Save model meta fields.
+     * 保存模型元数据字段。
      *
      * @param int      $post_id Post id.
      * @param \WP_Post $post Post object.
@@ -536,7 +536,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Flush rewrite rules when model registration options change.
+     * 当模型注册选项发生变更时刷新重写规则。
      *
      * @return void
      */
@@ -566,7 +566,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get model meta key.
+     * 获取模型存储的 Meta 键名。
      *
      * @param string $field_id Field id.
      * @return string
@@ -576,7 +576,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get static model definitions.
+     * 获取静态注册的内容模型定义列表。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -606,7 +606,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Build one static model definition.
+     * 构建单个静态内容模型定义。
      *
      * @param string            $id Model id.
      * @param string            $label Label.
@@ -671,7 +671,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get reusable field definition.
+     * 获取可复用的模型字段定义。
      *
      * @param string $field_id Field id.
      * @return array<string,mixed>
@@ -724,7 +724,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Register one model post type.
+     * 注册单个模型对应的自定义文章类型。
      *
      * @param array<string,mixed> $model Model definition.
      * @return void
@@ -779,7 +779,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Register taxonomies for one model.
+     * 为单个模型注册关联分类法。
      *
      * @param array<string,mixed> $model Model definition.
      * @return void
@@ -831,7 +831,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Register meta fields for one model.
+     * 为单个内容模型注册元数据字段。
      *
      * @param array<string,mixed> $model Model definition.
      * @return void
@@ -867,7 +867,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Render one model meta field.
+     * 渲染单个模型元数据字段输入控件。
      *
      * @param int                 $post_id Post id.
      * @param array<string,mixed> $field Field definition.
@@ -899,7 +899,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Find active model by post type.
+     * 根据文章类型查找已启用的内容模型。
      *
      * @param string $post_type Post type.
      * @return array<string,mixed>
@@ -916,7 +916,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Normalize definition for runtime payloads.
+     * 规范化模型定义以用于运行时载荷。
      *
      * @param array<string,mixed> $definition Definition.
      * @return array<string,mixed>
@@ -947,7 +947,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Format model for client payload.
+     * 将模型定义格式化为前端所需的载荷结构。
      *
      * @param array<string,mixed> $model Runtime model.
      * @param bool                $include_fields Include fields.
@@ -981,7 +981,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Sanitize one model field.
+     * 清理单个内容模型字段数据。
      *
      * @param mixed               $value Raw value.
      * @param array<string,mixed> $field Field definition.
@@ -1017,7 +1017,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get REST meta type.
+     * 获取 REST API 元数据类型。
      *
      * @param array<string,mixed> $field Field definition.
      * @return string
@@ -1035,7 +1035,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Get archive base.
+     * 获取归档页面基础路径 Slug。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return string
@@ -1048,7 +1048,7 @@ class Content_Model_Center {
     }
 
     /**
-     * REST enabled flag.
+     * 是否启用 REST API 暴露。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return bool
@@ -1059,7 +1059,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Archive enabled flag.
+     * 是否启用归档页标识。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return bool
@@ -1070,7 +1070,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Meta box enabled flag.
+     * 是否启用 Meta Box 界面。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return bool
@@ -1081,7 +1081,7 @@ class Content_Model_Center {
     }
 
     /**
-     * Resolve theme options.
+     * 解析主题配置选项。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return array<string,mixed>

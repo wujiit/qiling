@@ -442,7 +442,7 @@ class Assets {
     }
 
     /**
-     * Enqueue a feature chunk that depends on the small main runtime.
+     * 加载依赖核心主脚本的功能分块脚本。
      *
      * @param string       $slug    Feature slug.
      * @param string       $file    JS file name in assets/js.
@@ -2281,7 +2281,7 @@ class Assets {
             opacity: 0.6;
         }";
 
-        // Menu Badge Styles (Allows <t> tag in navigation label)
+        // 菜单角标样式（支持导航标签内的角标标记）
         $css .= "
         .primary-navigation > ul > li.qiling-menu-item-has-badge {
             z-index: 30;
@@ -2321,7 +2321,7 @@ class Assets {
             font-weight: normal;
             pointer-events: none;
         }
-        /* Fix for mobile menu */
+        /* 移动端菜单适配 */
         .mobile-menu-nav li a t,
         .mobile-menu-nav li a .menu-badge {
             display: inline-block;
@@ -2343,7 +2343,7 @@ class Assets {
     }
 
     /**
-     * Build optional CSS variables for post cover badges and QiApp badges.
+     * 构建文章封面角标与启灵App角标的 CSS 变量。
      *
      * @return string
      */
@@ -2404,7 +2404,7 @@ class Assets {
     }
 
     /**
-     * Sanitize a CSS color/paint value before writing it into custom properties.
+     * 在写入自定义属性前清理 CSS 颜色与色值。
      *
      * @param mixed $value Raw setting value.
      * @return string

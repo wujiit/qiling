@@ -1,6 +1,6 @@
 <?php
 /**
- * App Hero Module - APP推广首屏
+ * App 推广首屏模块
  *
  * @package Developer_Starter
  */

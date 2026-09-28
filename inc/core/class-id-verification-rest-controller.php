@@ -1,6 +1,6 @@
 <?php
 /**
- * ID verification REST controller.
+ * 实名认证 REST 控制器。
  *
  * @package Developer_Starter
  */
@@ -12,19 +12,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * REST API surface for ID verification.
+ * 实名认证 REST API 接口层。
  */
 class ID_Verification_REST_Controller extends \WP_REST_Controller {
 
     /**
-     * ID verification business manager.
+     * 实名认证业务管理器。
      *
      * @var ID_Verification_Manager
      */
     private $manager;
 
     /**
-     * Constructor.
+     * 构造函数.
      *
      * @param ID_Verification_Manager $manager Business manager.
      */
@@ -35,7 +35,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Register REST routes.
+     * 注册 REST API 路由。
      *
      * @return void
      */
@@ -83,7 +83,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Verify current user can submit verification.
+     * 校验当前用户是否有权提交实名认证申请。
      *
      * @param \WP_REST_Request $request Request object.
      * @return bool
@@ -94,7 +94,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Verify current user can read their status.
+     * 校验当前用户是否有权读取实名认证状态。
      *
      * @param \WP_REST_Request $request Request object.
      * @return bool
@@ -105,7 +105,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Verify current user can delete verification records.
+     * 校验当前用户是否有权删除实名认证记录。
      *
      * @param \WP_REST_Request $request Request object.
      * @return bool
@@ -116,7 +116,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Submit an ID verification request.
+     * 提交实名认证申请请求。
      *
      * @param \WP_REST_Request $request Request object.
      * @return \WP_REST_Response|\WP_Error
@@ -126,7 +126,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Get the current user's verification status.
+     * 获取当前登录用户的实名认证状态。
      *
      * @param \WP_REST_Request $request Request object.
      * @return \WP_REST_Response|\WP_Error
@@ -136,7 +136,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Delete a verification record.
+     * 删除实名认证记录。
      *
      * @param \WP_REST_Request $request Request object.
      * @return \WP_REST_Response|\WP_Error
@@ -146,7 +146,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Get verify endpoint args.
+     * 获取提交认证接口的参数规则。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -177,7 +177,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Get delete endpoint args.
+     * 获取删除接口的请求参数规则。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -194,7 +194,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Get the default item schema for controller discovery.
+     * 获取控制器接口探测所需的默认数据模式。
      *
      * @return array<string,mixed>
      */
@@ -203,7 +203,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Get verify response schema.
+     * 获取提交认证接口的响应模式定义。
      *
      * @return array<string,mixed>
      */
@@ -249,7 +249,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Get status response schema.
+     * 获取认证状态接口的响应结构模式。
      *
      * @return array<string,mixed>
      */
@@ -284,7 +284,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     }
 
     /**
-     * Get delete response schema.
+     * 获取删除接口的响应结构模式。
      *
      * @return array<string,mixed>
      */

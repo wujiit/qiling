@@ -62,10 +62,7 @@ class SMS_Manager {
      * 构造函数
      */
     public function __construct() {
-        // 加载阿里云SDK
-        $this->load_sdk();
-        
-        // 注册AJAX处理器
+        // 注册AJAX处理器（SDK 改为在发送短信时按需懒加载）
         add_action( 'wp_ajax_sms_send_code', array( $this, 'ajax_send_code' ) );
         add_action( 'wp_ajax_nopriv_sms_send_code', array( $this, 'ajax_send_code' ) );
         
@@ -83,13 +80,37 @@ class SMS_Manager {
     }
 
     /**
-     * 加载阿里云SDK
+     * 加载阿里云SDK（按需懒加载）
+     *
+     * @return bool 是否成功加载 SDK
      */
     private function load_sdk() {
+        if ( class_exists( 'AlibabaCloud\SDK\Dysmsapi\V20170525\Dysmsapi' ) ) {
+            return true;
+        }
+
+        // 防御低版本 PHP 环境，防止触发 Composer platform_check 的未捕获 RuntimeException
+        if ( version_compare( PHP_VERSION, '8.1.0', '<' ) ) {
+            if ( function_exists( 'developer_starter_log' ) ) {
+                developer_starter_log( 'sms', '阿里云短信 SDK 依赖 PHP 8.1.0 或更高版本，当前版本：' . PHP_VERSION, array(), 'error' );
+            }
+            return false;
+        }
+
         $autoload = get_template_directory() . '/sms/vendor/autoload.php';
         if ( file_exists( $autoload ) ) {
-            require_once $autoload;
+            try {
+                require_once $autoload;
+                return class_exists( 'AlibabaCloud\SDK\Dysmsapi\V20170525\Dysmsapi' );
+            } catch ( \Throwable $e ) {
+                if ( function_exists( 'developer_starter_log' ) ) {
+                    developer_starter_log( 'sms', '加载短信 SDK 失败：' . $e->getMessage(), array( 'exception' => $e ), 'error' );
+                }
+                return false;
+            }
         }
+
+        return false;
     }
 
     /**
@@ -147,7 +168,7 @@ class SMS_Manager {
         try {
             return str_pad( random_int( 0, 999999 ), 6, '0', STR_PAD_LEFT );
         } catch ( \Exception $e ) {
-            // Fallback to mt_rand if random_int fails (unlikely on modern PHP)
+            // 若 random_int 异常则兜底使用 mt_rand
             return str_pad( mt_rand( 0, 999999 ), 6, '0', STR_PAD_LEFT );
         }
     }
@@ -470,6 +491,13 @@ class SMS_Manager {
      * 发送自定义模板短信（如通知类）
      */
     public function send_custom_sms( $phone, $template_code, $template_params = array() ) {
+        if ( ! $this->load_sdk() ) {
+            return array(
+                'success' => false,
+                'message' => __( '短信服务环境不可用（需 PHP 8.1 或更高版本）', 'developer-starter' ),
+            );
+        }
+
         $access_key_id = developer_starter_get_option( 'sms_access_key_id', '' );
         $access_key_secret = developer_starter_get_option( 'sms_access_key_secret', '' );
         $sign_name = developer_starter_get_option( 'sms_sign_name', '' );
@@ -526,7 +554,7 @@ class SMS_Manager {
                     'message' => $this->get_error_message( $body->code ),
                 );
             }
-        } catch ( \Exception $e ) {
+        } catch ( \Throwable $e ) {
             developer_starter_log( 'sms', 'Custom send exception.', array( 'exception' => $e ), 'error' );
             return array(
                 'success' => false,
@@ -540,6 +568,13 @@ class SMS_Manager {
      * 发送短信验证码
      */
     public function send_sms( $phone, $code ) {
+        if ( ! $this->load_sdk() ) {
+            return array(
+                'success' => false,
+                'message' => __( '短信服务环境不可用（需 PHP 8.1 或更高版本）', 'developer-starter' ),
+            );
+        }
+
         $access_key_id = developer_starter_get_option( 'sms_access_key_id', '' );
         $access_key_secret = developer_starter_get_option( 'sms_access_key_secret', '' );
         $sign_name = developer_starter_get_option( 'sms_sign_name', '' );
@@ -592,7 +627,7 @@ class SMS_Manager {
                     'message' => $this->get_error_message( $body->code ),
                 );
             }
-        } catch ( \Exception $e ) {
+        } catch ( \Throwable $e ) {
             developer_starter_log( 'sms', 'Send exception.', array( 'exception' => $e ), 'error' );
             return array(
                 'success' => false,

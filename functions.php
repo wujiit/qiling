@@ -12,9 +12,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * 运行环境检查：检测 PHP 最低版本要求 (PHP 8.1.0+)
+ * 若环境不满足要求，立即加载兼容守护逻辑并中止后续所有代码的加载，防止后台卡死与致命错误。
+ */
+if ( version_compare( PHP_VERSION, '8.1.0', '<' ) ) {
+    require_once get_template_directory() . '/inc/back-compat.php';
+    return;
+}
+
+/**
  * 主题常量
  */
-define( 'DEVELOPER_STARTER_VERSION', '2.6.6' );
+define( 'DEVELOPER_STARTER_VERSION', '2.6.7' );
 define( 'DEVELOPER_STARTER_DIR', get_template_directory() );
 define( 'DEVELOPER_STARTER_URI', get_template_directory_uri() );
 define( 'DEVELOPER_STARTER_INC', DEVELOPER_STARTER_DIR . '/inc' );
@@ -23,7 +32,7 @@ if ( ! is_string( $developer_starter_assets_base ) || trim( $developer_starter_a
     $developer_starter_assets_base = DEVELOPER_STARTER_URI . '/assets';
 }
 define( 'DEVELOPER_STARTER_ASSETS', rtrim( (string) $developer_starter_assets_base, '/' ) );
-define( 'DEVELOPER_STARTER_DB_VERSION', '2.6.5' );
+define( 'DEVELOPER_STARTER_DB_VERSION', '2.6.7' );
 
 /**
  * 辅助函数
@@ -44,18 +53,12 @@ require_once DEVELOPER_STARTER_INC . '/core/helpers/helpers-content-models.php';
  */
 require_once DEVELOPER_STARTER_INC . '/class-autoloader.php';
 
-// 页面级区域装修使用独立后台类，避免与全局页头、页脚设置保存逻辑混用。
-if ( is_admin() ) {
-    new Developer_Starter\Admin\Page_Region_Decoration_Meta_Box();
-    new Developer_Starter\Admin\Builder_Revision_Manager();
-}
-
 /**
- * 组件实例化改为钩子阶段执行，避免在 functions.php 加载期提前初始化。
+ * 组件实例化统一在 init 钩子阶段执行（developer_starter_init / developer_starter_boot_admin_services），避免在 functions.php 加载期提前初始化。
  */
 
 /**
- * 检查后发现 class-china-features.php 应该是类 Developer_Starter\China\China_Features
+ * 国内网络与合规优化功能
  */
 require_once DEVELOPER_STARTER_INC . '/china/class-china-features.php';
 

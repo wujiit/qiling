@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog-like static page pagination rewrite helpers.
+ * 博客风格静态页面分页重写辅助函数。
  *
  * @package Developer_Starter
  */

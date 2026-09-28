@@ -1,8 +1,8 @@
 <?php
 /**
- * The footer for the Qi Ling theme.
+ * 启灵主题通用页脚模板
  *
- * Footer markup is composed from child-theme-overridable template parts.
+ * 页脚结构由可被子主题覆盖的模板片段组成。
  *
  * @package Developer_Starter
  */

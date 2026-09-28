@@ -1,8 +1,7 @@
 /**
- * Authentication page behavior.
+ * 认证页面交互行为逻辑。
  *
- * Keeps login/register/forgot-password templates mostly as markup and routes
- * shared flow work through assets/js/auth-flow.js.
+ * 登录、注册、找回密码页面通过 assets/js/auth-flow.js 共享统一认证流程。
  */
 (function (window, document) {
     'use strict';

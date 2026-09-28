@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Sanitize Trait
+ * 主题后台设置数据清理校验 Trait
  *
  * @package Developer_Starter
  */
@@ -1298,10 +1298,10 @@ trait Admin_Settings_Sanitize_Trait {
     }
 
     /**
-     * Sanitize international third-party code snippets.
+     * 清理并校验国际化第三方代码片段。
      *
-     * Administrators with unfiltered_html can save platform-provided snippets
-     * unchanged. Other users are limited to common non-event third-party tags.
+     * 具备 unfiltered_html 权限的管理员可直接保存平台代码，
+     * 其他用户则受限于安全的常见第三方标签白名单。
      *
      * @param mixed $value Raw snippet.
      * @return string

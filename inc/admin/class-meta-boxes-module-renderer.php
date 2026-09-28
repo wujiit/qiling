@@ -1,6 +1,6 @@
 <?php
 /**
- * Meta Boxes Module Renderer
+ * 模块元数据框渲染器
  *
  * 负责后台模块表单项的 HTML 渲染。
  *
@@ -148,6 +148,20 @@ class Meta_Boxes_Module_Renderer {
         $fid  = (string) $field['id'];
         $def  = isset( $field['default'] ) ? $field['default'] : '';
         $val  = isset( $data[ $fid ] ) ? $data[ $fid ] : $def;
+        if ( 'clients_items' === $fid && empty( $val ) ) {
+            if ( isset( $data['clients_logos'] ) && is_array( $data['clients_logos'] ) && ! empty( $data['clients_logos'] ) ) {
+                $val = $data['clients_logos'];
+            } elseif ( ( isset( $data['clients_title'] ) && ( false !== strpos( $data['clients_title'], '电竞' ) || false !== strpos( $data['clients_title'], '战队' ) || false !== strpos( $data['clients_title'], '赞助商' ) ) ) || ( isset( $data['clients_subtitle'] ) && false !== strpos( $data['clients_subtitle'], '电竞' ) ) ) {
+                $val = array(
+                    array( 'name' => 'NVIDIA GeForce', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Logitech G', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Intel Core', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Secretlab', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Razer', 'logo' => '', 'link' => '#' ),
+                    array( 'name' => 'Red Bull', 'logo' => '', 'link' => '#' ),
+                );
+            }
+        }
         $name = "modules[{$idx}][data][{$fid}]";
 
         $dep_attr = '';

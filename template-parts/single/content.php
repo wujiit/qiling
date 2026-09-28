@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post body, gallery mode, tags, navigation, comments and sidebar.
+ * 文章详情正文、画廊模式、标签、上下篇导航与侧边栏模板。
  *
  * @package Developer_Starter
  */

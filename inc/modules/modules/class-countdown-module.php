@@ -1,6 +1,6 @@
 <?php
 /**
- * Countdown Module - 产品上线倒计时
+ * 产品上线倒计时模块
  *
  * @package Developer_Starter
  */
@@ -193,7 +193,7 @@ class Countdown_Module extends Module_Base {
             $target_timestamp = time() + ( 30 * 24 * 60 * 60 );
         }
         
-        // Dynamic Styles
+        // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         $section_style .= strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
         

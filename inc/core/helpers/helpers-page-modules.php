@@ -1,6 +1,6 @@
 <?php
 /**
- * Backward-compatible page modules helper entry.
+ * 向后兼容的页面模块辅助函数入口。
  *
  * @deprecated 2.5.8 Use helpers-content-modules.php instead.
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * News Module - 新闻动态模块
+ * 新闻动态展示模块
  *
  * @package Developer_Starter
  * @since 1.0.0
@@ -141,7 +141,7 @@ class News_Module extends Module_Base {
             }
         }
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-news section-padding" id="<?php echo esc_attr( $module_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
@@ -182,7 +182,7 @@ class News_Module extends Module_Base {
                                 $image_url = developer_starter_get_first_image( get_the_ID() );
                             }
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $query->current_post );

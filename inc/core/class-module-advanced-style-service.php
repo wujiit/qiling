@@ -1,6 +1,6 @@
 <?php
 /**
- * Module Advanced Style Service
+ * 模块高级样式服务
  *
  * 统一处理模块高级样式协议在后台、前台渲染与前台 Builder 的接入。
  *

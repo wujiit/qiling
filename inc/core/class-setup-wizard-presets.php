@@ -1,10 +1,10 @@
 <?php
 /**
- * Setup wizard recommendation presets.
+ * 安装向导推荐预设。
  *
- * Phase 2 only resolves lightweight recommendations for templates, pages,
- * content models and optional plugin hints. It does not create content,
- * install plugins, activate plugins or write third-party configuration.
+ * 阶段 2 仅解析模板、页面、内容模型和可选插件的轻量推荐建议，
+ * 不创建实际内容，
+ * 不安装插件或写入第三方配置。
  *
  * @package Developer_Starter
  */
@@ -53,7 +53,7 @@ class Setup_Wizard_Presets {
     }
 
     /**
-     * Get the sanitized template catalog for setup/import services.
+     * 获取用于安装导入服务的模板目录清单。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -62,7 +62,7 @@ class Setup_Wizard_Presets {
     }
 
     /**
-     * Get the sanitized page catalog for setup/import services.
+     * 获取用于安装导入服务的页面目录清单。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -296,7 +296,7 @@ class Setup_Wizard_Presets {
     }
 
     /**
-     * Resolve a site type and industry into one recommendation payload.
+     * 将站点类型与所属行业解析为推荐预设载荷。
      *
      * @param string $site_type Site type key.
      * @param string $industry Industry key.

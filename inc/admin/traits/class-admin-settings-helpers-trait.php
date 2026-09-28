@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Helpers Trait
+ * 主题后台设置辅助函数 Trait
  *
  * @package Developer_Starter
  */

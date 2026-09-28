@@ -1,6 +1,6 @@
 <?php
 /**
- * Skills Module - 技能进度条模块
+ * 专业技能进度条模块
  *
  * 用于展示专业技能，支持进度条样式和分组显示
  *
@@ -95,6 +95,12 @@ class Skills_Module extends Module_Base {
             array( 'id' => 'skills_group1', 'type' => 'repeater', 'label' => __( '分组1技能列表', 'developer-starter' ), 'fields' => array(
                 array( 'id' => 'name', 'type' => 'text', 'label' => __( '技能名称', 'developer-starter' ) ),
                 array( 'id' => 'percent', 'type' => 'number', 'label' => __( '百分比 (0-100)', 'developer-starter' ) ),
+            ),
+            'default_items' => array(
+                array( 'name' => 'HTML/CSS', 'percent' => '95' ),
+                array( 'name' => 'JavaScript', 'percent' => '85' ),
+                array( 'name' => 'React/Vue', 'percent' => '80' ),
+                array( 'name' => 'PHP/WordPress', 'percent' => '75' ),
             ) ),
             
             array( 'id' => 'skills_group2_title', 'type' => 'text', 'label' => __( '分组2标题 (双列布局有效)', 'developer-starter' ) ),
@@ -138,6 +144,14 @@ class Skills_Module extends Module_Base {
         // 技能分组1
         $group1_title = isset( $data['skills_group1_title'] ) ? $data['skills_group1_title'] : '';
         $skills1 = isset( $data['skills_group1'] ) && is_array( $data['skills_group1'] ) ? $data['skills_group1'] : array();
+        if ( empty( $skills1 ) && ! isset( $data['skills_group1'] ) ) {
+            $skills1 = array(
+                array( 'name' => 'HTML/CSS', 'percent' => '95' ),
+                array( 'name' => 'JavaScript', 'percent' => '85' ),
+                array( 'name' => 'React/Vue', 'percent' => '80' ),
+                array( 'name' => 'PHP/WordPress', 'percent' => '75' ),
+            );
+        }
         
         // 技能分组2
         $group2_title = isset( $data['skills_group2_title'] ) ? $data['skills_group2_title'] : '';
@@ -258,13 +272,7 @@ class Skills_Module extends Module_Base {
      */
     private function render_skills( $skills, $style, $bar_height, $bar_color, $bar_bg, $show_percent, $gradient_id ) {
         if ( empty( $skills ) ) {
-            // 默认技能数据
-            $skills = array(
-                array( 'name' => 'HTML/CSS', 'percent' => '95' ),
-                array( 'name' => 'JavaScript', 'percent' => '85' ),
-                array( 'name' => 'React/Vue', 'percent' => '80' ),
-                array( 'name' => 'PHP/WordPress', 'percent' => '75' ),
-            );
+            return;
         }
         
         if ( $style === 'circle' ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Auth Register Email Service
+ * 用户注册邮件通知服务
  *
  * 负责注册邮箱验证码的配置、存储、校验与邮件发送。
  *

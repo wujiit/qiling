@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post header.
+ * 文章详情头部标题与元信息模板。
  *
  * @package Developer_Starter
  */

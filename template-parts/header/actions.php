@@ -1,6 +1,6 @@
 <?php
 /**
- * Header actions.
+ * 页头快捷操作区域模板。
  *
  * @package Developer_Starter
  */

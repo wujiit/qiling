@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for default layout system.
+ * 默认布局系统数据配置。
  *
  * @package Developer_Starter
  */

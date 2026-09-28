@@ -1,6 +1,6 @@
 <?php
 /**
- * Itinerary Module - 行程规划模块
+ * 旅游行程规划模块
  * 
  * 按天展示旅游行程时间线，包含景点、餐饮、住宿安排
  * 适用于旅行社官网详细展示行程规划
@@ -175,6 +175,41 @@ class Itinerary_Module extends Module_Base {
                         'rows'  => 3,
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'day_number'    => 'Day 1',
+                        'day_title'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '抵达三亚，入住酒店', 'Arrival and Hotel Check-in' ) : __( '抵达三亚，入住酒店', 'developer-starter' ),
+                        'day_image'     => '',
+                        'morning'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '乘坐航班抵达三亚凤凰国际机场，接机后前往酒店', 'Arrive at the airport and transfer to the hotel.' ) : __( '乘坐航班抵达三亚凤凰国际机场，接机后前往酒店', 'developer-starter' ),
+                        'afternoon'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '入住五星级海景酒店，自由活动', 'Check in to the resort and enjoy free time.' ) : __( '入住五星级海景酒店，自由活动', 'developer-starter' ),
+                        'evening'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '海边漫步，享用海鲜晚餐', 'Take a seaside walk and enjoy a signature seafood dinner.' ) : __( '海边漫步，享用海鲜晚餐', 'developer-starter' ),
+                        'meals'         => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '晚餐', 'Dinner' ) : __( '晚餐', 'developer-starter' ),
+                        'accommodation' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚湾希尔顿酒店', 'Bayfront Resort Hotel' ) : __( '三亚湾希尔顿酒店', 'developer-starter' ),
+                        'attractions'   => '',
+                    ),
+                    array(
+                        'day_number'    => 'Day 2',
+                        'day_title'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '亚龙湾一日游', 'Bay Discovery Day' ) : __( '亚龙湾一日游', 'developer-starter' ),
+                        'day_image'     => '',
+                        'morning'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '前往亚龙湾热带天堂森林公园，欣赏热带雨林风光', 'Visit the rainforest park for scenic trails and viewpoints.' ) : __( '前往亚龙湾热带天堂森林公园，欣赏热带雨林风光', 'developer-starter' ),
+                        'afternoon'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '亚龙湾沙滩自由活动，畅享阳光沙滩', 'Spend the afternoon on the beach with free leisure time.' ) : __( '亚龙湾沙滩自由活动，畅享阳光沙滩', 'developer-starter' ),
+                        'evening'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '返回酒店休息', 'Return to the hotel for the evening.' ) : __( '返回酒店休息', 'developer-starter' ),
+                        'meals'         => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '早餐/午餐/晚餐', 'Breakfast/Lunch/Dinner' ) : __( '早餐/午餐/晚餐', 'developer-starter' ),
+                        'accommodation' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚湾希尔顿酒店', 'Bayfront Resort Hotel' ) : __( '三亚湾希尔顿酒店', 'developer-starter' ),
+                        'attractions'   => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "亚龙湾热带天堂森林公园\n亚龙湾沙滩", "Rainforest Park\nBay Beach" ) : __( "亚龙湾热带天堂森林公园\n亚龙湾沙滩", 'developer-starter' ),
+                    ),
+                    array(
+                        'day_number'    => 'Day 3',
+                        'day_title'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '天涯海角/南山文化', 'Coastal Landmarks and Culture' ) : __( '天涯海角/南山文化', 'developer-starter' ),
+                        'day_image'     => '',
+                        'morning'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '游览天涯海角风景区，打卡经典地标', 'Visit iconic coastal viewpoints and signature landmarks.' ) : __( '游览天涯海角风景区，打卡经典地标', 'developer-starter' ),
+                        'afternoon'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '前往南山文化旅游区，参观南海观音', 'Continue to the cultural park for an afternoon tour.' ) : __( '前往南山文化旅游区，参观南海观音', 'developer-starter' ),
+                        'evening'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '品尝当地特色美食', 'Enjoy local specialties for dinner.' ) : __( '品尝当地特色美食', 'developer-starter' ),
+                        'meals'         => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '早餐/午餐/晚餐', 'Breakfast/Lunch/Dinner' ) : __( '早餐/午餐/晚餐', 'developer-starter' ),
+                        'accommodation' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚湾希尔顿酒店', 'Bayfront Resort Hotel' ) : __( '三亚湾希尔顿酒店', 'developer-starter' ),
+                        'attractions'   => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "天涯海角\n南山文化旅游区\n南海观音", "Coastal Landmark Park\nCultural Heritage Park\nOceanfront monument" ) : __( "天涯海角\n南山文化旅游区\n南海观音", 'developer-starter' ),
+                    ),
+                ),
             ),
 
             // ========================================
@@ -254,7 +289,7 @@ class Itinerary_Module extends Module_Base {
         // ========================================
         // 默认示例数据
         // ========================================
-        if ( empty( $days ) ) {
+        if ( empty( $days ) && ! isset( $data['itinerary_days'] ) ) {
             $days = array(
                 array(
                     'day_number'    => 'Day 1',

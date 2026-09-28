@@ -1,6 +1,6 @@
 <?php
 /**
- * Meta Boxes - Page Modules Builder
+ * 页面模块可视化构建器元数据框
  * 
  * @package Developer_Starter
  */
@@ -29,7 +29,7 @@ class Meta_Boxes {
         add_action( 'save_post', array( $this, 'save_meta_boxes' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         
-        // Template System AJAX
+        // 模板体系 AJAX 交互处理
         add_action( 'wp_ajax_qiling_load_template_html', array( $this, 'ajax_load_template_html' ) );
         add_action( 'wp_ajax_qiling_render_module_item', array( $this, 'ajax_render_module_item' ) );
         add_action( 'wp_ajax_qiling_load_modules_editor_ui', array( $this, 'ajax_load_modules_editor_ui' ) );
@@ -543,7 +543,7 @@ class Meta_Boxes {
     }
 
     /**
-     * Render the per-post comment visibility switch.
+     * 渲染单篇文章评论可见性控制开关。
      *
      * @param \WP_Post $post Current post.
      * @return void
@@ -678,7 +678,7 @@ class Meta_Boxes {
         $data = json_decode( $json, true );
         $type = get_post_meta( $id, '_ql_template_type', true );
         
-        // Ensure fields are loaded
+        // 确保配置字段已加载
         $this->init_module_fields();
 
         $html = $this->get_editor_service()->render_module_item_html(

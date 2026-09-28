@@ -1,6 +1,6 @@
 <?php
 /**
- * Work Library Module - 作品库展示模块
+ * 作品库展示模块
  *
  * @package Developer_Starter
  */
@@ -367,7 +367,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Build root section style variables.
+     * 构建根区块 CSS 变量。
      *
      * @param string $bg_color Background color.
      * @param string $card_bg Card background.
@@ -392,7 +392,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Normalize SQL identifiers returned by the work library plugin.
+     * 规范化作品库插件返回的 SQL 标识符。
      *
      * @param string $identifier Table or column identifier.
      * @return string
@@ -403,7 +403,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Quote a whitelisted SQL identifier.
+     * 转义白名单 SQL 标识符。
      *
      * @param string $identifier Table or column identifier.
      * @return string
@@ -414,7 +414,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Query published items with optional taxonomy filters.
+     * 按分类筛选条件查询已发布的作品条目。
      *
      * @param array<string,mixed> $args Query args.
      * @return array<string,mixed>
@@ -498,7 +498,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Batch query term names by item ids.
+     * 批量查询条目关联的分类名称。
      *
      * @param int[] $item_ids Item IDs.
      * @return array<int,array<string,array<int,string>>>
@@ -558,7 +558,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Parse term IDs.
+     * 解析分类 ID 列表。
      *
      * @param string $raw Raw csv.
      * @return int[]
@@ -578,7 +578,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Ratio to padding-top percent.
+     * 宽高比转换为 padding-top 百分比。
      *
      * @param string $ratio Ratio string.
      * @return string
@@ -598,7 +598,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Format price text.
+     * 格式化价格文本。
      *
      * @param mixed $price Price.
      * @param mixed $currency Currency.
@@ -620,7 +620,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Get current page url.
+     * 获取当前页面 URL。
      *
      * @return string
      */
@@ -637,7 +637,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     /**
-     * Render admin-only missing plugin notice.
+     * 渲染仅管理员可见的依赖插件未激活提示。
      *
      * @return void
      */

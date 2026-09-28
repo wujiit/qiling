@@ -82,7 +82,7 @@
             try {
                 rawId = decodeURIComponent(rawId);
             } catch (error) {
-                // Keep the raw id when decoding fails.
+                // 解码失败时保留原始 ID
             }
 
             return document.getElementById(rawId);

@@ -1,10 +1,10 @@
 <?php
 /**
- * Setup wizard state storage.
+ * 安装向导状态存储类。
  *
- * Keeps the setup wizard database footprint intentionally small:
- * one persistent state option and one temporary draft option, both
- * created with autoload disabled.
+ * 严格控制安装向导在数据库中的存储占用：
+ * 仅使用一个持久化状态选项和一个临时草稿选项，
+ * 且均关闭 autoload 自动加载。
  *
  * @package Developer_Starter
  */
@@ -42,7 +42,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Get persistent wizard state.
+     * 读取持久化的安装向导状态。
      *
      * @return array<string,mixed>
      */
@@ -52,7 +52,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Get temporary wizard draft.
+     * 读取安装向导的临时草稿数据。
      *
      * @return array<string,mixed>
      */
@@ -62,7 +62,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Save persistent wizard state.
+     * 保存持久化的安装向导状态。
      *
      * @param array<string,mixed> $state State patch or full state.
      * @param bool                $merge Whether to merge with current state.
@@ -78,7 +78,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Save temporary wizard draft. Draft is deleted on complete/skip.
+     * 保存安装向导临时草稿（完成或跳过时自动清理）。
      *
      * @param array<string,mixed> $draft Draft data.
      * @return bool
@@ -88,7 +88,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Delete temporary wizard draft.
+     * 删除向导临时草稿数据。
      *
      * @return bool
      */
@@ -97,7 +97,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Start a new run and reset only last-run tracking buckets.
+     * 开启新一轮运行并仅重置上次运行的追踪桶数据。
      *
      * @param string $run_id Optional caller-provided run id.
      * @return string
@@ -121,7 +121,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Mark the wizard as pending after theme activation.
+     * 在主题启用后将安装向导标记为待运行。
      *
      * @return bool
      */
@@ -136,7 +136,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Whether an activation redirect is pending.
+     * 检测主题激活重定向是否处于挂起状态。
      *
      * @return bool
      */
@@ -146,7 +146,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Consume the activation redirect flag.
+     * 消费并清除主题激活重定向标记。
      *
      * @return bool
      */
@@ -161,7 +161,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Mark wizard as completed and remove draft.
+     * 将安装向导标记为已完成并清理草稿数据。
      *
      * @param array<string,mixed> $state Completion data.
      * @return bool
@@ -185,7 +185,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Mark wizard as skipped and remove draft.
+     * 将安装向导标记为已跳过并清理草稿数据。
      *
      * @param array<string,mixed> $state Skip context.
      * @return bool
@@ -209,7 +209,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Record a page created by the wizard.
+     * 记录安装向导创建的页面。
      *
      * @param string $page_key Page key.
      * @param int    $post_id Page id.
@@ -235,7 +235,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Record a menu created by the wizard.
+     * 记录安装向导创建的导航菜单。
      *
      * @param string $menu_key Menu key or location.
      * @param int    $menu_id Menu term id.
@@ -261,7 +261,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Get content that is eligible for an optional last-run cleanup preview.
+     * 获取上次运行中可供清理的内容预览列表。
      *
      * @return array<string,mixed>
      */
@@ -280,7 +280,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Persist an option with autoload disabled.
+     * 持久化写入非自动加载（autoload=off）的配置选项。
      *
      * @param string $option Option name.
      * @param mixed  $value Option value.
@@ -300,7 +300,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Normalize persistent state and drop unknown/heavy payloads.
+     * 规范化持久状态并剔除未知或过大的冗余字段。
      *
      * @param array<string,mixed> $state State.
      * @return array<string,mixed>
@@ -334,7 +334,7 @@ class Setup_Wizard_State {
     }
 
     /**
-     * Normalize temporary draft. Draft may hold current step choices only.
+     * 规范化临时草稿（仅允许保留当前步骤的选择项）。
      *
      * @param array<string,mixed> $draft Draft.
      * @return array<string,mixed>

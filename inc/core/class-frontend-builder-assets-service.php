@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend Builder assets and dependency service.
+ * 前台页面构建器资源与依赖管理服务。
  *
  * @package Developer_Starter
  */

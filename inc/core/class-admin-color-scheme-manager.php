@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress admin color scheme compatibility.
+ * WordPress 管理后台配色方案兼容性处理。
  *
  * @package Developer_Starter
  */
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Admin_Color_Scheme_Manager {
 
     /**
-     * Register hooks once.
+     * 仅注册一次钩子。
      *
      * @return void
      */
@@ -31,7 +31,7 @@ class Admin_Color_Scheme_Manager {
     }
 
     /**
-     * Keep the classic admin color when WordPress defaults to the new blue scheme.
+     * 当 WordPress 默认使用新配色时保留经典管理后台配色方案。
      *
      * @param mixed   $result Stored user option value.
      * @param string  $option User option name.
@@ -53,7 +53,7 @@ class Admin_Color_Scheme_Manager {
     }
 
     /**
-     * Whether the compatibility switch is enabled.
+     * 检测兼容性开关是否已开启。
      *
      * @return bool
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Advanced category filter AJAX helpers split from functions.php.
+ * 从 functions.php 拆分出的高级分类筛选 AJAX 辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

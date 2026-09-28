@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend Builder modules service.
+ * 前台页面构建器模块服务。
  *
  * @package Developer_Starter
  */
@@ -113,10 +113,10 @@ class Frontend_Builder_Modules_Service {
     }
 
     /**
-     * Determine whether a module already exposes its own button controls.
+     * 判断模块是否已包含独立的按钮控件。
      *
-     * Native button fields must take precedence over the generic module button
-     * typography control, otherwise the builder shows two competing settings.
+     * 模块原生按钮字段优先于通用按钮排版控件，
+     * 避免构建器界面出现冲突的重复设置。
      *
      * @param array<int,array<string,mixed>> $fields Module fields.
      * @return bool
@@ -151,8 +151,8 @@ class Frontend_Builder_Modules_Service {
     }
 
     /**
-     * Group fields by the setting object they belong to. Typography and visual
-     * properties stay beside their object's copy field in the builder UI.
+     * 按所属设置对象对字段分组，使排版与视觉属性
+     * 紧随对应字段展示在构建器界面中。
      *
      * @param array<int,array<string,mixed>> $fields Module fields.
      * @param string                         $module_id Module ID.

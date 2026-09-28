@@ -1,6 +1,6 @@
 <?php
 /**
- * Ticket Showcase Module - 景点门票模块
+ * 票务门票展示模块
  * 
  * 展示景点门票类型、价格、有效期等信息
  * 适用于旅行社和景区官网
@@ -209,6 +209,50 @@ class Ticket_Showcase_Module extends Module_Base {
                         'default' => '#',
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '亚龙湾热带天堂森林公园', 'Rainforest Park Pass' ) : __( '亚龙湾热带天堂森林公园', 'developer-starter' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热带雨林探秘，俯瞰亚龙湾全景', 'Explore the rainforest with panoramic bay views.' ) : __( '热带雨林探秘，俯瞰亚龙湾全景', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 158 ) : '¥158',
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 198 ) : '¥198',
+                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                        'ticket_type'    => 'e-ticket',
+                        'audience'       => 'adult',
+                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n玻璃栈道\n滑索体验", "Park admission\nGlass skywalk\nZipline experience" ) : __( "景区大门票\n玻璃栈道\n滑索体验", 'developer-starter' ),
+                        'badge'          => 'hot',
+                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南山文化旅游区', 'Cultural Heritage Park' ) : __( '南山文化旅游区', 'developer-starter' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南海观音圣像，祈福圣地', 'An iconic cultural destination with coastal landmarks.' ) : __( '南海观音圣像，祈福圣地', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 129 ) : '¥129',
+                        'original_price' => '',
+                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                        'ticket_type'    => 'e-ticket',
+                        'audience'       => 'adult',
+                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n南海观音\n长寿谷", "Park admission\nCultural monuments\nScenic valley route" ) : __( "景区大门票\n南海观音\n长寿谷", 'developer-starter' ),
+                        'badge'          => 'recommend',
+                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '天涯海角风景区', 'Coastal Landmark Ticket' ) : __( '天涯海角风景区', 'developer-starter' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '经典地标，浪漫海滨', 'A classic seaside stop for scenic coastal photos.' ) : __( '经典地标，浪漫海滨', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 68 ) : '¥68',
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 81 ) : '¥81',
+                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                        'ticket_type'    => 'e-ticket',
+                        'audience'       => 'adult',
+                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n天涯石\n海角石", "Park admission\nSignature rock landmark\nSeaside viewpoint" ) : __( "景区大门票\n天涯石\n海角石", 'developer-starter' ),
+                        'badge'          => 'limited',
+                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                ),
             ),
             array(
                 'id'      => 'ticket_btn_bg_color',
@@ -327,7 +371,7 @@ class Ticket_Showcase_Module extends Module_Base {
         // ========================================
         // 默认示例数据
         // ========================================
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['ticket_items'] ) ) {
             $items = array(
                 array(
                     'image'          => '',

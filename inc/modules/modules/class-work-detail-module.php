@@ -1,6 +1,6 @@
 <?php
 /**
- * Work Detail Module - 作品详情模块
+ * 作品案例详情模块
  *
  * @package Developer_Starter
  */
@@ -372,7 +372,7 @@ class Work_Detail_Module extends Module_Base {
     }
 
     /**
-     * Render empty state.
+     * 渲染空内容提示状态。
      *
      * @param string $module_id Module id.
      * @param string $bg_color Background.
@@ -405,7 +405,7 @@ class Work_Detail_Module extends Module_Base {
     }
 
     /**
-     * Render metadata card.
+     * 渲染元数据卡片。
      *
      * @param string               $title Title.
      * @param array<string,string> $rows Rows.
@@ -440,7 +440,7 @@ class Work_Detail_Module extends Module_Base {
     }
 
     /**
-     * Format price text.
+     * 格式化价格文本。
      *
      * @param mixed $price Price.
      * @param mixed $currency Currency.
@@ -462,7 +462,7 @@ class Work_Detail_Module extends Module_Base {
     }
 
     /**
-     * Build root section style variables.
+     * 构建根区块 CSS 变量。
      *
      * @param string $bg_color Background color.
      * @param string $padding_top Top padding.
@@ -479,7 +479,7 @@ class Work_Detail_Module extends Module_Base {
     }
 
     /**
-     * Current URL helper.
+     * 获取当前页面 URL 辅助函数。
      *
      * @return string
      */
@@ -496,7 +496,7 @@ class Work_Detail_Module extends Module_Base {
     }
 
     /**
-     * Render plugin missing notice for admins.
+     * 仅对管理员渲染依赖插件未激活提示。
      *
      * @return void
      */

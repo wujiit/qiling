@@ -1,6 +1,6 @@
 <?php
 /**
- * Image Comparison Module - 图片对比滑块
+ * 图片前后对比滑块模块
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Visual Tabs Module - 图卡切换
+ * 可视化图卡切换模块
  *
  * @package Developer_Starter
  */
@@ -236,6 +236,48 @@ class Visual_Tabs_Module extends Module_Base {
                         'type' => 'text',
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'card_title'              => 'S版主图',
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合品牌主入口', 'Best for primary hero entry' ) : __( '适合品牌主入口', 'developer-starter' ),
+                        'card_badge'              => 'S',
+                        'card_action'             => 'switch',
+                        'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 1', 'Display Block 1' ) : __( '展示内容 1', 'developer-starter' ),
+                        'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", "Use this area for the S-card headline, CTA, and supporting copy." ) : __( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", 'developer-starter' ),
+                        'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 2', 'Display Block 2' ) : __( '展示内容 2', 'developer-starter' ),
+                        'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", "Use the second panel for specs, quick links, or supplemental content." ) : __( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", 'developer-starter' ),
+                        'content_button_text'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'Learn More' ) : __( '查看详情', 'developer-starter' ),
+                        'content_button_url'      => '#',
+                    ),
+                    array(
+                        'card_title'              => 'T版主图',
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合专题聚合', 'Good for topic collections' ) : __( '适合专题聚合', 'developer-starter' ),
+                        'card_badge'              => 'T',
+                        'card_action'             => 'switch',
+                        'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'T 版内容区', 'T Panel' ) : __( 'T 版内容区', 'developer-starter' ),
+                        'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", "Switch to another content set for topic navigation or grouped highlights." ) : __( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", 'developer-starter' ),
+                        'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '补充面板', 'Secondary Panel' ) : __( '补充面板', 'developer-starter' ),
+                        'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'Use this area for extra notes, quick lists, or supporting CTA copy.' ) : __( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'developer-starter' ),
+                    ),
+                    array(
+                        'card_title'              => 'E版主图',
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以设置成跳转', 'Can also work as a link card' ) : __( '也可以设置成跳转', 'developer-starter' ),
+                        'card_badge'              => 'E',
+                        'card_action'             => 'link',
+                        'card_link'               => '#',
+                        'card_link_target'        => '_self',
+                        'content_title'           => '',
+                        'content_text'            => '',
+                    ),
+                    array(
+                        'card_title'              => 'M版主图',
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以只做展示', 'Can remain display-only' ) : __( '也可以只做展示', 'developer-starter' ),
+                        'card_badge'              => 'M',
+                        'card_action'             => 'static',
+                        'content_title'           => '',
+                        'content_text'            => '',
+                    ),
+                ),
             ),
             array(
                 'id' => 'module_bg_type',
@@ -329,7 +371,7 @@ class Visual_Tabs_Module extends Module_Base {
         $btn_hover_border_color = isset( $data['visual_tabs_btn_hover_border_color'] ) ? $clean_css_value( $data['visual_tabs_btn_hover_border_color'] ) : '';
         $items = isset( $data['visual_tabs_items'] ) ? $data['visual_tabs_items'] : array();
 
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['visual_tabs_items'] ) ) {
             $items = array(
                 array(
                     'card_title'              => 'S版主图',

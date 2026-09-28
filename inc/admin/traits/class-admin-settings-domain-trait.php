@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Domain Trait
+ * 主题后台设置域名与授权 Trait
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Dashboard User Stats - 仪表盘用户统计组件
+ * 仪表盘用户统计管理组件
  *
  * @package Developer_Starter
  */

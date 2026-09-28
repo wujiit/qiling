@@ -1,6 +1,6 @@
 <?php
 /**
- * Experience Timeline Module - 经历时间线模块
+ * 履历时间线展示模块
  *
  * 专为个人简历设计的教育/工作经历展示，垂直单列布局
  *
@@ -181,11 +181,12 @@ class Experience_Timeline_Module extends Module_Base {
                 'default' => '🎓',
             ),
             array(
-                'id'         => 'exp_group1',
-                'type'       => 'repeater',
-                'label'      => __( '分组1 内容列表', 'developer-starter' ),
-                'add_button' => __( '添加经历', 'developer-starter' ),
-                'fields'     => array(
+                'id'            => 'exp_group1',
+                'type'          => 'repeater',
+                'label'         => __( '分组1 内容列表', 'developer-starter' ),
+                'add_button'    => __( '添加经历', 'developer-starter' ),
+                'default_items' => $this->get_default_education_items(),
+                'fields'        => array(
                     array(
                         'id'    => 'period',
                         'type'  => 'text',
@@ -233,11 +234,12 @@ class Experience_Timeline_Module extends Module_Base {
                 'default' => '💼',
             ),
             array(
-                'id'         => 'exp_group2',
-                'type'       => 'repeater',
-                'label'      => __( '分组2 内容列表', 'developer-starter' ),
-                'add_button' => __( '添加经历', 'developer-starter' ),
-                'fields'     => array(
+                'id'            => 'exp_group2',
+                'type'          => 'repeater',
+                'label'         => __( '分组2 内容列表', 'developer-starter' ),
+                'add_button'    => __( '添加经历', 'developer-starter' ),
+                'default_items' => $this->get_default_work_items(),
+                'fields'        => array(
                     array(
                         'id'    => 'period',
                         'type'  => 'text',
@@ -305,11 +307,17 @@ class Experience_Timeline_Module extends Module_Base {
         $group1_title = isset( $data['exp_group1_title'] ) ? $data['exp_group1_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '教育经历', 'Education' ) : __( '教育经历', 'developer-starter' ) );
         $group1_icon = isset( $data['exp_group1_icon'] ) ? $data['exp_group1_icon'] : '🎓';
         $experiences1 = isset( $data['exp_group1'] ) && is_array( $data['exp_group1'] ) ? $data['exp_group1'] : array();
+        if ( empty( $experiences1 ) && ! isset( $data['exp_group1'] ) ) {
+            $experiences1 = $this->get_default_education_items();
+        }
         
         // 经历分组2（工作经验）
         $group2_title = isset( $data['exp_group2_title'] ) ? $data['exp_group2_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作经验', 'Experience' ) : __( '工作经验', 'developer-starter' ) );
         $group2_icon = isset( $data['exp_group2_icon'] ) ? $data['exp_group2_icon'] : '💼';
         $experiences2 = isset( $data['exp_group2'] ) && is_array( $data['exp_group2'] ) ? $data['exp_group2'] : array();
+        if ( empty( $experiences2 ) && ! isset( $data['exp_group2'] ) ) {
+            $experiences2 = $this->get_default_work_items();
+        }
         
         $unique_id = 'exp-timeline-' . uniqid();
         
@@ -402,46 +410,7 @@ class Experience_Timeline_Module extends Module_Base {
      */
     private function render_experiences( $experiences, $dot_style, $line_color, $type = 'work' ) {
         if ( empty( $experiences ) ) {
-            // 默认数据
-            if ( $type === 'education' ) {
-                $experiences = array(
-                    array( 
-                        'period' => '2016 - 2020', 
-                        'title' => __( '计算机科学与技术 学士', 'developer-starter' ), 
-                        'company' => __( '清华大学', 'developer-starter' ),
-                        'company_link' => '',
-                        'desc' => __( '主修软件工程 direction，GPA 3.8/4.0，获得优秀毕业生称号', 'developer-starter' ),
-                        'tags' => __( '数据结构,算法,软件工程', 'developer-starter' )
-                    ),
-                    array( 
-                        'period' => '2020 - 2022', 
-                        'title' => __( '软件工程 硕士', 'developer-starter' ), 
-                        'company' => __( '北京大学', 'developer-starter' ),
-                        'company_link' => '',
-                        'desc' => __( '专注于Web前端技术研究，发表SCI论文2篇', 'developer-starter' ),
-                        'tags' => __( '前端架构,性能优化', 'developer-starter' )
-                    ),
-                );
-            } else {
-                $experiences = array(
-                    array( 
-                        'period' => '2022 - ' . __( '至今', 'developer-starter' ), 
-                        'title' => __( '高级前端工程师', 'developer-starter' ), 
-                        'company' => __( '字节跳动', 'developer-starter' ),
-                        'company_link' => 'https://bytedance.com',
-                        'desc' => __( '负责抖音Web端核心业务开发，带领5人团队完成多个重点项目', 'developer-starter' ),
-                        'tags' => 'React,TypeScript,Node.js'
-                    ),
-                    array( 
-                        'period' => '2020 - 2022', 
-                        'title' => __( '前端开发工程师', 'developer-starter' ), 
-                        'company' => __( '阿里巴巴', 'developer-starter' ),
-                        'company_link' => 'https://alibaba.com',
-                        'desc' => __( '参与淘宝商家后台开发，优化页面性能，加载速度提升40%', 'developer-starter' ),
-                        'tags' => __( 'Vue,Webpack,小程序', 'developer-starter' )
-                    ),
-                );
-            }
+            return;
         }
         
         foreach ( $experiences as $exp ) :
@@ -499,5 +468,53 @@ class Experience_Timeline_Module extends Module_Base {
             </div>
         <?php
         endforeach;
+    }
+
+    /**
+     * 获取默认教育经历条目
+     */
+    public function get_default_education_items() {
+        return array(
+            array( 
+                'period' => '2016 - 2020', 
+                'title' => __( '计算机科学与技术 学士', 'developer-starter' ), 
+                'company' => __( '清华大学', 'developer-starter' ),
+                'company_link' => '',
+                'desc' => __( '主修软件工程 direction，GPA 3.8/4.0，获得优秀毕业生称号', 'developer-starter' ),
+                'tags' => __( '数据结构,算法,软件工程', 'developer-starter' )
+            ),
+            array( 
+                'period' => '2020 - 2022', 
+                'title' => __( '软件工程 硕士', 'developer-starter' ), 
+                'company' => __( '北京大学', 'developer-starter' ),
+                'company_link' => '',
+                'desc' => __( '专注于Web前端技术研究，发表SCI论文2篇', 'developer-starter' ),
+                'tags' => __( '前端架构,性能优化', 'developer-starter' )
+            ),
+        );
+    }
+
+    /**
+     * 获取默认工作经验条目
+     */
+    public function get_default_work_items() {
+        return array(
+            array( 
+                'period' => '2022 - ' . __( '至今', 'developer-starter' ), 
+                'title' => __( '高级前端工程师', 'developer-starter' ), 
+                'company' => __( '字节跳动', 'developer-starter' ),
+                'company_link' => 'https://bytedance.com',
+                'desc' => __( '负责抖音Web端核心业务开发，带领5人团队完成多个重点项目', 'developer-starter' ),
+                'tags' => 'React,TypeScript,Node.js'
+            ),
+            array( 
+                'period' => '2020 - 2022', 
+                'title' => __( '前端开发工程师', 'developer-starter' ), 
+                'company' => __( '阿里巴巴', 'developer-starter' ),
+                'company_link' => 'https://alibaba.com',
+                'desc' => __( '参与淘宝商家后台开发，优化页面性能，加载速度提升40%', 'developer-starter' ),
+                'tags' => __( 'Vue,Webpack,小程序', 'developer-starter' )
+            ),
+        );
     }
 }

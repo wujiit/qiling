@@ -1,6 +1,6 @@
 <?php
 /**
- * Booking Entry Module - 预订入口模块
+ * 预订入口模块
  * 
  * 展示酒店预订入口，对接启灵表单插件（qiling-forms）
  * 支持选择已创建的表单进行渲染

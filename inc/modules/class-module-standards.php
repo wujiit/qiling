@@ -1,6 +1,6 @@
 <?php
 /**
- * Module standards and catalog metadata helpers.
+ * 模块标准与目录元数据辅助工具类。
  *
  * @package Developer_Starter
  */
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Central vocabulary for module catalog, builder selection and future site packages.
+ * 模块目录、可视化构建器选择与站点包的统一词汇表。
  */
 class Module_Standards {
 
@@ -20,8 +20,8 @@ class Module_Standards {
     const MODULE_DATA_SCHEMA_VERSION = '2.0.0';
 
     /**
-     * Visual controls supported by each module's actual render tree.
-     * Functional controls such as tabs, carousel arrows and media controls are not buttons here.
+     * 各模块实际渲染树所支持的视觉控制按钮。
+     * 选项卡切换、轮播箭头及媒体播放等功能性控件在此不计入按钮。
      *
      * @param string $module_id Module id.
      * @return array<string,bool>
@@ -58,9 +58,9 @@ class Module_Standards {
     }
 
     /**
-     * How connected content should be rendered for a module.
-     * Shell modules provide their own shared outer frame; flat modules remove
-     * individual card surfaces; native modules keep their own layout controls.
+     * 定义模块关联内容的渲染包装模式。
+     * 外壳模块提供共享外框；扁平模块移除独立卡片背景；
+     * 原生模块保留其独立的布局控件。
      *
      * @param string $module_id Module id.
      * @return string shell|flat|native
@@ -94,8 +94,8 @@ class Module_Standards {
     }
 
     /**
-     * Add capabilities only when the module actually declares matching fields.
-     * Existing manual declarations remain authoritative and are never disabled.
+     * 仅在模块实际声明了对应字段时添加能力标记。
+     * 既有的手动声明保持最高优先级，绝不强制覆盖禁用。
      *
      * @param array<int,array<string,mixed>> $fields       Module fields.
      * @param array<string,bool>             $capabilities Capability flags.
@@ -148,7 +148,7 @@ class Module_Standards {
     }
 
     /**
-     * Get catalog schema version.
+     * 获取目录规范版本号。
      *
      * @return string
      */
@@ -157,7 +157,7 @@ class Module_Standards {
     }
 
     /**
-     * Get module data schema version.
+     * 获取模块数据结构版本号。
      *
      * @return string
      */
@@ -166,7 +166,7 @@ class Module_Standards {
     }
 
     /**
-     * Metadata taxonomy exposed to builders and package tools.
+     * 暴露给构建器与打包工具的元数据分类系统。
      *
      * @return array<string,array<string,string>>
      */
@@ -269,7 +269,7 @@ class Module_Standards {
     }
 
     /**
-     * Canonical industry standards shared by modules, templates and packages.
+     * 模块、模板与页面包共用的标准行业分类规范。
      *
      * @return array<string,array<string,mixed>>
      */
@@ -354,11 +354,14 @@ class Module_Standards {
             'recycling'      => array( 'label' => __( '回收服务', 'developer-starter' ), 'group' => 'local', 'schemaTypes' => array( 'LocalBusiness', 'Service' ) ),
             'housekeeping'   => array( 'label' => __( '家政服务', 'developer-starter' ), 'group' => 'local', 'schemaTypes' => array( 'LocalBusiness', 'Service' ) ),
             'local_service'  => array( 'label' => __( '本地服务', 'developer-starter' ), 'group' => 'local', 'schemaTypes' => array( 'LocalBusiness', 'Service' ) ),
+            'esports'        => array( 'label' => __( '电竞赛事/战队', 'developer-starter' ), 'group' => 'entertainment', 'schemaTypes' => array( 'SportsTeam', 'Organization' ) ),
+            'esports_hotel'  => array( 'label' => __( '电竞酒店/场馆', 'developer-starter' ), 'group' => 'local', 'schemaTypes' => array( 'LodgingBusiness', 'Hotel' ) ),
+            'game_studio'    => array( 'label' => __( '游戏研发/发行', 'developer-starter' ), 'group' => 'technology', 'schemaTypes' => array( 'Organization', 'SoftwareApplication' ) ),
         );
     }
 
     /**
-     * Get canonical industry labels.
+     * 获取标准行业名称字典。
      *
      * @return array<string,string>
      */
@@ -378,7 +381,7 @@ class Module_Standards {
     }
 
     /**
-     * Legacy industry key aliases.
+     * 历史行业别名映射字典。
      *
      * @return array<string,string>
      */
@@ -648,7 +651,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize an industry key to the canonical vocabulary.
+     * 将行业标识规范化为标准词汇表键名。
      *
      * @param mixed $industry Industry key.
      * @return string
@@ -668,7 +671,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize a list of industry keys.
+     * 批量规范化行业标识列表。
      *
      * @param mixed $value Raw value.
      * @return array<int,string>
@@ -688,7 +691,7 @@ class Module_Standards {
     }
 
     /**
-     * Get a canonical industry label.
+     * 获取标准行业显示名称。
      *
      * @param mixed $industry Industry key.
      * @return string
@@ -701,7 +704,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize explicit manifest metadata.
+     * 规范化显式声明的清单元数据。
      *
      * @param array<string,mixed> $entry Manifest entry.
      * @return array<string,mixed>
@@ -726,7 +729,7 @@ class Module_Standards {
     }
 
     /**
-     * Infer metadata from module id, group and existing labels.
+     * 根据模块 ID、分组及既有名称智能推断元数据。
      *
      * @param string              $module_id Module id.
      * @param object              $module Module instance.
@@ -840,7 +843,7 @@ class Module_Standards {
     }
 
     /**
-     * Merge inferred metadata with explicit manifest metadata.
+     * 将推断元数据与清单显式声明元数据安全合并。
      *
      * @param array<string,mixed> $inferred Inferred metadata.
      * @param array<string,mixed> $explicit Explicit metadata.
@@ -893,7 +896,7 @@ class Module_Standards {
     }
 
     /**
-     * Build a catalog audit report for module governance.
+     * 构建模块治理目录审计报告。
      *
      * @param array<int,array<string,mixed>> $catalog Module catalog.
      * @return array<string,mixed>
@@ -1001,7 +1004,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize a list of key-like tags.
+     * 规范化标签键名列表。
      *
      * @param mixed $value Raw value.
      * @return array<int,string>
@@ -1025,7 +1028,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize schema.org type names.
+     * 规范化 Schema.org 类型名称。
      *
      * @param mixed $value Raw value.
      * @return array<int,string>
@@ -1067,7 +1070,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize a text list for generation hints.
+     * 规范化生成提示文本列表。
      *
      * @param mixed $value Raw value.
      * @return array<int,string>
@@ -1091,7 +1094,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize module catalog role.
+     * 规范化模块目录角色。
      *
      * @param mixed  $value Raw value.
      * @param string $fallback Fallback role.
@@ -1112,7 +1115,7 @@ class Module_Standards {
     }
 
     /**
-     * Infer catalog role from group.
+     * 根据模块分组推断目录角色。
      *
      * @param string $group Module group.
      * @return string
@@ -1139,7 +1142,7 @@ class Module_Standards {
     }
 
     /**
-     * Whether a manifest entry declares catalog metadata explicitly.
+     * 检查清单条目是否显式声明了目录元数据。
      *
      * @param array<string,mixed> $entry Entry.
      * @return bool
@@ -1159,7 +1162,7 @@ class Module_Standards {
     }
 
     /**
-     * Calculate metadata completeness from required catalog fields.
+     * 根据必填目录字段计算元数据完整度得分。
      *
      * @param array<string,mixed> $metadata Module metadata.
      * @return int
@@ -1194,7 +1197,7 @@ class Module_Standards {
     }
 
     /**
-     * Check whether generation hints include usable author guidance.
+     * 检查生成提示中是否包含可用的指引说明。
      *
      * @param mixed $ai_hints Generation hints.
      * @return bool
@@ -1214,7 +1217,7 @@ class Module_Standards {
     }
 
     /**
-     * Increment an audit counter.
+     * 自增审计计数器。
      *
      * @param array<string,int> $bucket Counter bucket.
      * @param string            $key Counter key.
@@ -1234,7 +1237,7 @@ class Module_Standards {
     }
 
     /**
-     * Build a coarse module signature for crowded capability detection.
+     * 构建模块能力特征签名用于检测冗余重叠。
      *
      * @param array<string,mixed> $item Catalog item.
      * @return string
@@ -1256,7 +1259,7 @@ class Module_Standards {
     }
 
     /**
-     * Read the first available entry value.
+     * 读取首个可用的条目配置值。
      *
      * @param array<string,mixed> $entry Entry.
      * @param array<int,string>   $keys  Candidate keys.
@@ -1273,7 +1276,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize module status.
+     * 规范化模块可用状态。
      *
      * @param mixed $value Raw value.
      * @return string
@@ -1284,7 +1287,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize version string.
+     * 规范化版本号字符串。
      *
      * @param mixed  $value Raw value.
      * @param string $fallback Fallback version.
@@ -1300,7 +1303,7 @@ class Module_Standards {
     }
 
     /**
-     * Normalize generation hints.
+     * 规范化生成提示信息。
      *
      * @param mixed $value Raw value.
      * @return array<string,mixed>
@@ -1349,7 +1352,7 @@ class Module_Standards {
     }
 
     /**
-     * Merge generation hints.
+     * 合并生成提示信息。
      *
      * @param array<string,mixed> $base Base hints.
      * @param array<string,mixed> $override Override hints.
@@ -1380,7 +1383,7 @@ class Module_Standards {
     }
 
     /**
-     * Check if text contains any needle.
+     * 检查文本中是否包含指定关键词列表。
      *
      * @param string           $haystack Text.
      * @param array<int,mixed> $needles Needles.
@@ -1397,7 +1400,7 @@ class Module_Standards {
     }
 
     /**
-     * Humanize a key for fallback labels.
+     * 将键名转换为友好的兜底显示标签。
      *
      * @param mixed $key Raw key.
      * @return string

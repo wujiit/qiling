@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin settings international center field render trait.
+ * 后台设置国际化中心字段渲染 Trait。
  *
  * @package Developer_Starter
  */
@@ -65,7 +65,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
     }
 
     /**
-     * Build card data for the international center.
+     * 构建国际化中心展示卡片数据。
      *
      * @param array<string,mixed> $options Theme options.
      * @return array<int,array<string,string>>
@@ -260,7 +260,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
     }
 
     /**
-     * Count enabled AI model connections that look usable.
+     * 统计已启用且配置有效的 AI 模型连接数。
      *
      * @param array<string,mixed> $options Theme options.
      * @return int
@@ -305,7 +305,7 @@ trait Admin_Settings_Field_Render_International_Center_Trait {
     }
 
     /**
-     * Render CSS for international center cards once.
+     * 渲染国际化中心卡片的单例 CSS 样式。
      *
      * @return void
      */

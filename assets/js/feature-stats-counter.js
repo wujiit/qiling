@@ -1,7 +1,7 @@
 /**
- * Stats counter runtime
+ * 数据统计计数器运行时
  *
- * Split from main.js so page-specific interactions can load only when needed.
+ * 从 main.js 独立拆分，支持按需加载。
  */
 (function (window, document) {
     'use strict';
@@ -20,7 +20,7 @@
     }
 
     onReady(function () {
-    // ===== Stats Counter Animation =====
+    // ===== 统计数字滚动动画 =====
     var statNumbers = document.querySelectorAll('.stat-number');
     if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
         var animateCounter = function (el) {

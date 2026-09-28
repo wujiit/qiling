@@ -1,6 +1,6 @@
 <?php
 /**
- * Social login provider contract.
+ * 社交登录提供者接口契约。
  *
  * @package Developer_Starter
  */
@@ -14,35 +14,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 interface Provider_Interface {
 
     /**
-     * Provider key, for example qq/github/google.
+     * 提供者标识符，例如 qq、github、google。
      *
      * @return string
      */
     public function get_key();
 
     /**
-     * Provider display label.
+     * 提供者前台展示名称。
      *
      * @return string
      */
     public function get_label();
 
     /**
-     * Whether this provider is configured and enabled.
+     * 检测当前提供者是否已配置并启用。
      *
      * @return bool
      */
     public function is_available();
 
     /**
-     * OAuth callback URL registered for this provider.
+     * 当前提供者注册的 OAuth 回调 URL。
      *
      * @return string
      */
     public function get_callback_url();
 
     /**
-     * Build authorization URL for a newly created state token.
+     * 为新生成的 state 安全令牌构建授权跳转 URL。
      *
      * @param string $state OAuth state token.
      * @return string|\WP_Error
@@ -50,7 +50,7 @@ interface Provider_Interface {
     public function get_authorization_url( $state );
 
     /**
-     * Resolve callback request into a normalized social profile.
+     * 解析回调请求并转换为规范化的社交资料数组。
      *
      * @param array<string,mixed> $request Callback request.
      * @return array<string,mixed>|\WP_Error

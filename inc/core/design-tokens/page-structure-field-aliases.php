@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for page structure field aliases.
+ * 页面结构字段别名数据配置。
  *
  * @package Developer_Starter
  */

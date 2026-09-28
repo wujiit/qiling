@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for system style presets.
+ * 系统样式预设数据配置。
  *
  * @package Developer_Starter
  */

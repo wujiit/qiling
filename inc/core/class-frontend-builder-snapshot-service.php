@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend Builder snapshot service.
+ * 前台页面构建器快照备份服务。
  *
  * @package Developer_Starter
  */
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Stores small server-side backups before builder saves overwrite page data.
+ * 在构建器保存覆盖前在服务端创建轻量备份。
  */
 class Frontend_Builder_Snapshot_Service {
 
@@ -20,7 +20,7 @@ class Frontend_Builder_Snapshot_Service {
     const MAX_SNAPSHOTS = 10;
 
     /**
-     * Create a pre-save snapshot for the current persisted builder state.
+     * 在覆盖保存前为当前页面构建器状态创建安全快照。
      *
      * @param int                 $post_id       Page ID.
      * @param array<int,mixed>    $modules       Current persisted modules.
@@ -66,7 +66,7 @@ class Frontend_Builder_Snapshot_Service {
     }
 
     /**
-     * Get saved snapshots for a page.
+     * 获取指定页面已保存的历史快照。
      *
      * @param int $post_id Page ID.
      * @return array<int,array<string,mixed>>
@@ -94,7 +94,7 @@ class Frontend_Builder_Snapshot_Service {
     }
 
     /**
-     * Get compact snapshots suitable for the builder UI.
+     * 获取适用于构建器界面的精简快照列表。
      *
      * @param int $post_id Page ID.
      * @return array<int,array<string,mixed>>
@@ -123,7 +123,7 @@ class Frontend_Builder_Snapshot_Service {
     }
 
     /**
-     * Find a snapshot by ID.
+     * 根据快照 ID 查找构建器快照。
      *
      * @param int    $post_id Page ID.
      * @param string $snapshot_id Snapshot ID.
@@ -191,7 +191,7 @@ class Frontend_Builder_Snapshot_Service {
     }
 
     /**
-     * Recursively remove sensitive values from a snapshot payload.
+     * 递归清除快照载荷中的敏感配置数据。
      *
      * @param mixed $value Payload value.
      * @param int   $depth Current recursion depth.
@@ -223,7 +223,7 @@ class Frontend_Builder_Snapshot_Service {
     }
 
     /**
-     * Whether a key should never be persisted into snapshots.
+     * 检测键名是否属于禁止存入快照的敏感字段。
      *
      * @param mixed $key Payload key.
      * @return bool
@@ -253,7 +253,7 @@ class Frontend_Builder_Snapshot_Service {
     }
 
     /**
-     * Generate a stable-ish snapshot ID.
+     * 生成稳定的快照标识 ID。
      *
      * @return string
      */

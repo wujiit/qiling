@@ -1,6 +1,6 @@
 <?php
 /**
- * Backward-compatible media WebP helper entry.
+ * 向后兼容的媒体 WebP 辅助函数入口。
  *
  * @deprecated 2.5.8 Use helpers-media-security-video.php instead.
  *

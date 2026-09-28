@@ -218,7 +218,7 @@ class Account_Deletion_Manager {
         }
 
         /**
-         * Fires after a user account deletion request has been stored.
+         * 用户账号注销申请持久化后触发。
          *
          * @param int      $request_id Request row ID.
          * @param int      $user_id    User ID.

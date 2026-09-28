@@ -1,6 +1,6 @@
 <?php
 /**
- * Meta Boxes - Modules view service.
+ * 模块元数据视图服务类。
  *
  * @package Developer_Starter
  */

@@ -176,8 +176,8 @@
       "data": {
         "cta_title": "开启您的数字化转型之旅",
         "cta_subtitle": "立即联系我们，获取免费需求评估和专属解决方案",
-        "cta_btn_text": "预约咨询",
-        "cta_btn_url": "/contact/",
+        "cta_button_text": "预约咨询",
+        "cta_button_url": "/contact/",
         "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 55%, #059669 100%)",
         "cta_bg_type": "color",
         "cta_title_color": "#ffffff",

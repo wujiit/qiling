@@ -62,10 +62,10 @@ class Software_Intro_Page_Creator extends Page_Creator_Base {
                     'ps_cta_target' => '_self',
                     'ps_description' => function_exists( 'developer_starter_get_locale_text' )
                         ? developer_starter_get_locale_text(
-                            "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新",
-                            "Latest version: V2.5\nUpdated: 2026-01-01\nWP support: 6.0-6.9, latest recommended\nPHP support: 7.4+, 8.0 recommended\nLicense: lifetime access with free updates"
+                            "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼容PHP：8.1及以上，推荐8.1/8.2版本\n授权时间：永久授权使用，免费更新",
+                            "Latest version: V2.5\nUpdated: 2026-01-01\nWP support: 6.0-6.9, latest recommended\nPHP support: 8.1+, 8.2 recommended\nLicense: lifetime access with free updates"
                         )
-                        : __( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新", 'developer-starter' ),
+                        : __( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼容PHP：8.1及以上，推荐8.1/8.2版本\n授权时间：永久授权使用，免费更新", 'developer-starter' ),
                 ),
             ),
 

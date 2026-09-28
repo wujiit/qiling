@@ -1,6 +1,6 @@
 <?php
 /**
- * Friendly Links Module - 友链/推荐博客
+ * 友情链接与推荐站点模块
  *
  * @package Developer_Starter
  */
@@ -114,6 +114,32 @@ class Friendly_Links_Module extends Module_Base {
                         'default' => '_blank',
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'name'   => __( 'WordPress', 'developer-starter' ),
+                        'url'    => 'https://wordpress.org/',
+                        'logo'   => '',
+                        'desc'   => __( '开源内容管理系统社区', 'developer-starter' ),
+                        'tag'    => 'CMS',
+                        'target' => '_blank',
+                    ),
+                    array(
+                        'name'   => __( 'OpenAI', 'developer-starter' ),
+                        'url'    => 'https://openai.com/',
+                        'logo'   => '',
+                        'desc'   => __( 'AI 技术与产品实践', 'developer-starter' ),
+                        'tag'    => 'AI',
+                        'target' => '_blank',
+                    ),
+                    array(
+                        'name'   => __( 'MDN Web Docs', 'developer-starter' ),
+                        'url'    => 'https://developer.mozilla.org/',
+                        'logo'   => '',
+                        'desc'   => __( '前端开发参考文档', 'developer-starter' ),
+                        'tag'    => 'Docs',
+                        'target' => '_blank',
+                    ),
+                ),
             ),
             array(
                 'id'      => 'fl_card_bg',
@@ -163,7 +189,7 @@ class Friendly_Links_Module extends Module_Base {
         $show_domain = ! isset( $data['fl_show_domain'] ) || $data['fl_show_domain'] === 'yes';
 
         $items = isset( $data['fl_items'] ) && is_array( $data['fl_items'] ) ? $data['fl_items'] : array();
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['fl_items'] ) ) {
             $items = array(
                 array(
                     'name'   => __( 'WordPress', 'developer-starter' ),

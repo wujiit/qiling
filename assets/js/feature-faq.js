@@ -1,7 +1,7 @@
 /**
- * FAQ runtime
+ * FAQ 问答交互运行时
  *
- * Split from main.js so page-specific interactions can load only when needed.
+ * 从 main.js 独立拆分，支持按需加载。
  */
 (function (window, document) {
     'use strict';
@@ -20,7 +20,7 @@
     }
 
     onReady(function () {
-    // ===== FAQ Page Filter =====
+    // ===== FAQ 分类筛选 =====
     (function initFaqPageFilters() {
         var faqPages = document.querySelectorAll('.faq-page');
 
@@ -81,7 +81,7 @@
         });
     })();
 
-    // ===== FAQ Accordion =====
+    // ===== FAQ 折叠手风琴 =====
     (function initFaqAccordion() {
         var faqRoots = document.querySelectorAll('.module-faq, .faq-page');
         var faqIdSeed = 0;

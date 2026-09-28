@@ -1,6 +1,6 @@
 <?php
 /**
- * Products Module - 产品中心模块
+ * 产品中心展示模块
  *
  * @package Developer_Starter
  * @since 1.0.0
@@ -558,7 +558,7 @@ class Products_Module extends Module_Base {
     }
 
     /**
-     * Resolve the page that provided this module configuration.
+     * 解析提供此模块配置的来源页面。
      *
      * @return int
      */

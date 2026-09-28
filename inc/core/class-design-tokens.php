@@ -1,6 +1,6 @@
 <?php
 /**
- * Global style service.
+ * 全局设计样式服务。
  *
  * @package Developer_Starter
  */
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Centralizes site-wide colors, typography, spacing, radius and shadows.
+ * 集中管理全站颜色、排版字体、间距、圆角与阴影设计系统。
  */
 class Design_Tokens {
 
@@ -24,7 +24,7 @@ class Design_Tokens {
     const CATEGORY_DESIGN_PRESET_META_KEY = 'ds_category_design_preset';
 
     /**
-     * Loads extracted design-token data files once per request.
+     * 每次请求仅加载一次抽取的设计令牌数据文件。
      *
      * @param string $key Data group key.
      * @return array<mixed>
@@ -2029,7 +2029,7 @@ class Design_Tokens {
             $options['primary_color'] = self::sanitize_css_color_value( $options['primary_color'] );
         }
         if ( isset( $options['primary_color'] ) && '' !== $options['primary_color'] && ! array_key_exists( 'design_primary_color', $options ) ) {
-            // Legacy admin saves should continue to update the canonical design token state.
+            // 兼容后台旧保存逻辑，持续同步规范的设计令牌状态。
             $options['design_primary_color'] = $options['primary_color'];
         }
         if ( isset( $options['design_custom_presets_present'] ) ) {

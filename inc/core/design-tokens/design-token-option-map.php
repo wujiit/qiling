@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for design token option map.
+ * 设计令牌选项映射数据配置。
  *
  * @package Developer_Starter
  */

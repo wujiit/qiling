@@ -1,6 +1,6 @@
 <?php
 /**
- * Icon Helper Functions
+ * 图标辅助函数库
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_svg_allowed_schema' ) ) {
     /**
-     * Get the strict SVG element and attribute allowlist.
+     * 获取严格的 SVG 元素与属性白名单配置。
      *
      * @return array<string,array<int,string>>
      */
@@ -96,7 +96,7 @@ if ( ! function_exists( 'developer_starter_get_svg_allowed_schema' ) ) {
 
 if ( ! function_exists( 'developer_starter_normalize_svg_name' ) ) {
     /**
-     * Normalize SVG tag and attribute names while preserving SVG camelCase names.
+     * 规范化 SVG 标签与属性名称，同时保留 SVG 规范的大小写格式。
      *
      * @param string $name Raw XML name.
      * @return string
@@ -125,7 +125,7 @@ if ( ! function_exists( 'developer_starter_normalize_svg_name' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_allowed_svg_attributes_for_tag' ) ) {
     /**
-     * Get allowed attributes for a sanitized SVG tag.
+     * 获取指定 SVG 标签允许的安全属性列表。
      *
      * @param string $tag SVG tag name.
      * @return array<int,string>
@@ -144,7 +144,7 @@ if ( ! function_exists( 'developer_starter_get_allowed_svg_attributes_for_tag' )
 
 if ( ! function_exists( 'developer_starter_sanitize_svg_id_list' ) ) {
     /**
-     * Sanitize id/class-like SVG attribute values.
+     * 清理与过滤类似 id/class 的 SVG 属性值。
      *
      * @param string $value Raw value.
      * @param bool   $allow_spaces Whether spaces are allowed.
@@ -160,7 +160,7 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_id_list' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_svg_attribute_value' ) ) {
     /**
-     * Validate and normalize a single SVG attribute value.
+     * 验证并规范化单个 SVG 属性值。
      *
      * @param string $name  Attribute name.
      * @param string $value Attribute value.
@@ -218,7 +218,7 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_attribute_value' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_svg_dom_element' ) ) {
     /**
-     * Recursively sanitize an SVG DOM element.
+     * 递归清理 SVG DOM 节点及其子节点。
      *
      * @param DOMElement $element DOM element.
      * @return void
@@ -280,7 +280,7 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_dom_element' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_svg_with_dom' ) ) {
     /**
-     * Sanitize SVG using DOMDocument when available.
+     * 环境支持时使用 DOMDocument 清理过滤 SVG。
      *
      * @param string $svg Raw SVG code.
      * @return string
@@ -323,7 +323,7 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_with_dom' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_svg_kses_allowed_tags' ) ) {
     /**
-     * Convert the SVG schema to a KSES allowlist.
+     * 将 SVG 白名单模式转换为 KSES 过滤白名单。
      *
      * @return array<string,array<string,bool>>
      */
@@ -352,7 +352,7 @@ if ( ! function_exists( 'developer_starter_get_svg_kses_allowed_tags' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_svg_with_kses' ) ) {
     /**
-     * Strict KSES fallback for environments without DOMDocument.
+     * 缺少 DOMDocument 扩展时的严格 KSES 过滤兜底。
      *
      * @param string $svg Raw SVG code.
      * @return string
@@ -371,7 +371,7 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_with_kses' ) ) {
 }
 
 /**
- * Sanitize SVG code to prevent XSS attacks.
+ * 清理 SVG 源码以防御 XSS 跨站脚本攻击。
  *
  * @param string $svg Raw SVG code.
  * @return string Sanitized SVG code.
@@ -398,7 +398,7 @@ function developer_starter_sanitize_svg( $svg ) {
 }
 
 /**
- * Get icon HTML (Emoji, SVG code, or SVG Symbol)
+ * 获取图标 HTML 内容（支持 Emoji、SVG 源码或 SVG Symbol）
  *
  * @param string $icon Icon class/name, Emoji, or SVG code
  * @param string $class Extra CSS classes

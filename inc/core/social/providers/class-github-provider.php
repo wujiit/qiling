@@ -1,6 +1,6 @@
 <?php
 /**
- * GitHub OAuth social login provider.
+ * GitHub OAuth 社交登录提供者。
  *
  * @package Developer_Starter
  */

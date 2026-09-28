@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Settings Config Trait
+ * 主题后台设置配置定义 Trait
  *
  * @package Developer_Starter
  */
@@ -815,9 +815,25 @@ trait Admin_Settings_Config_Trait {
                 array( 'type' => 'custom', 'callback' => array( $this, 'render_ip_usermeta_reset_field' ) ),
 
                 array( 'type' => 'section', 'title' => __( 'SEO 设置', 'developer-starter' ) ),
-                array( 'id' => 'default_title', 'type' => 'text', 'label' => __( '默认标题', 'developer-starter' ) ),
-                array( 'id' => 'default_description', 'type' => 'textarea', 'label' => __( '默认描述', 'developer-starter' ) ),
-                array( 'id' => 'default_keywords', 'type' => 'text', 'label' => __( '默认关键词', 'developer-starter' ) ),
+                array( 'type' => 'custom', 'callback' => array( $this, 'render_home_seo_status_notice_field' ) ),
+                array(
+                    'id'          => 'default_title',
+                    'type'        => 'text',
+                    'label'       => __( '默认标题', 'developer-starter' ),
+                    'desc'        => __( '全站首页默认标题。在最新文章模式下直接生效；若使用静态页面作为首页且页面未单独设置 SEO 标题时，作为全局回退标题生效。', 'developer-starter' ),
+                ),
+                array(
+                    'id'          => 'default_description',
+                    'type'        => 'textarea',
+                    'label'       => __( '默认描述', 'developer-starter' ),
+                    'desc'        => __( '全站首页默认描述。最新文章模式直接生效；静态首页在页面未单独填写 SEO 描述时自动回退使用此处内容。', 'developer-starter' ),
+                ),
+                array(
+                    'id'          => 'default_keywords',
+                    'type'        => 'text',
+                    'label'       => __( '默认关键词', 'developer-starter' ),
+                    'desc'        => __( '全站首页默认关键词。最新文章模式直接生效；静态首页在页面未单独填写 SEO 关键词时自动回退使用此处内容。', 'developer-starter' ),
+                ),
                 array( 'id' => 'non_home_title_use_tagline', 'type' => 'checkbox', 'label' => __( '非首页标题副标题使用站点副标题', 'developer-starter' ), 'desc' => __( '开启后，非首页标题将从“页面标题 - 站点标题”改为“页面标题 - 站点副标题”。', 'developer-starter' ) ),
                 array( 'type' => 'custom', 'callback' => array( $this, 'render_seo_health_check_field' ) ),
 
@@ -941,6 +957,9 @@ trait Admin_Settings_Config_Trait {
 
                 array( 'type' => 'section', 'title' => __( '页面模块数据修复', 'developer-starter' ), 'desc' => __( '如果你曾用 SQL 直接批量替换域名，可能会破坏模块配置的序列化数据，导致页面模块“看起来被清空”。这里可以批量修复 _developer_starter_modules。建议先备份数据库。', 'developer-starter' ) ),
                 array( 'type' => 'custom', 'callback' => array( $this, 'render_modules_repair_field' ) ),
+
+                array( 'type' => 'section', 'title' => __( '系统认证页面修复与去重', 'developer-starter' ), 'desc' => __( '检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。', 'developer-starter' ) ),
+                array( 'type' => 'custom', 'callback' => array( $this, 'render_auth_pages_cleanup_field' ) ),
             ),
 
             // ========== 文章选项卡 ==========

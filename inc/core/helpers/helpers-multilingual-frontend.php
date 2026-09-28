@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend multilingual helpers split from functions.php.
+ * 从 functions.php 拆分出的前台多语言辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Helpers grouped split from class-helpers.php.
+ * 从 class-helpers.php 拆分出的分组辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

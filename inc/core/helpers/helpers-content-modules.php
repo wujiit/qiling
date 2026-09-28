@@ -1,6 +1,6 @@
 <?php
 /**
- * Helpers grouped split from class-helpers.php.
+ * 从 class-helpers.php 拆分出的分组辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -1681,6 +1681,21 @@ if ( ! function_exists( 'developer_starter_get_page_template_default_modules_map
                 'class'  => '\Developer_Starter\Core\Industry_Preset_Page_Creator',
                 'preset' => 'medical_beauty',
             ),
+            'templates/template-esports-team.php'       => array(
+                'flag'   => '_industry_esports_team_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
+            'templates/template-esports-hotel.php'      => array(
+                'flag'   => '_industry_esports_hotel_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
+            'templates/template-game-studio.php'        => array(
+                'flag'   => '_industry_game_studio_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
         );
     }
 }
@@ -1712,17 +1727,6 @@ if ( ! function_exists( 'developer_starter_maybe_fill_default_modules_for_page_t
             return false;
         }
 
-        $map = developer_starter_get_page_template_default_modules_map();
-        if ( ! isset( $map[ $template ] ) || ! is_array( $map[ $template ] ) ) {
-            return false;
-        }
-
-        $config = $map[ $template ];
-        $flag   = isset( $config['flag'] ) && is_string( $config['flag'] ) ? $config['flag'] : '';
-        $class  = isset( $config['class'] ) && is_string( $config['class'] ) ? ltrim( $config['class'], '\\' ) : '';
-        $method = isset( $config['method'] ) && is_string( $config['method'] ) ? $config['method'] : '';
-        $preset = isset( $config['preset'] ) && is_string( $config['preset'] ) ? $config['preset'] : '';
-
         $stored_template = (string) get_post_meta( $post_id, '_wp_page_template', true );
         if ( $template !== 'default' && $template !== $stored_template ) {
             update_post_meta( $post_id, '_wp_page_template', $template );
@@ -1735,12 +1739,19 @@ if ( ! function_exists( 'developer_starter_maybe_fill_default_modules_for_page_t
 
 		$official_json_filled = developer_starter_maybe_fill_official_template_package_for_page_template( $post_id, $template );
 		if ( $official_json_filled ) {
-			if ( '' !== $flag && ! get_post_meta( $post_id, $flag, true ) ) {
-				update_post_meta( $post_id, $flag, '1' );
-			}
-
 			return true;
 		}
+
+        $map = developer_starter_get_page_template_default_modules_map();
+        if ( ! isset( $map[ $template ] ) || ! is_array( $map[ $template ] ) ) {
+            return false;
+        }
+
+        $config = $map[ $template ];
+        $flag   = isset( $config['flag'] ) && is_string( $config['flag'] ) ? $config['flag'] : '';
+        $class  = isset( $config['class'] ) && is_string( $config['class'] ) ? ltrim( $config['class'], '\\' ) : '';
+        $method = isset( $config['method'] ) && is_string( $config['method'] ) ? $config['method'] : '';
+        $preset = isset( $config['preset'] ) && is_string( $config['preset'] ) ? $config['preset'] : '';
 
 		if ( 'data_showcase' !== $preset ) {
 			if ( '' === $class ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Document head template part.
+ * HTML 文档头部 <head> 区域模板。
  *
  * @package Developer_Starter
  */

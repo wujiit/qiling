@@ -1,6 +1,6 @@
 <?php
 /**
- * Gallery Module - 画廊/相册（增强版）
+ * 画廊与相册展示模块
  * 
  * 支持分类筛选、增强Lightbox导航、键盘操作
  *
@@ -261,10 +261,10 @@ class Gallery_Module extends Module_Base {
         $subtitle_size  = isset( $data['gallery_subtitle_size'] ) ? $data['gallery_subtitle_size'] : '';
         
         $columns  = isset( $data['gallery_columns'] ) ? intval( $data['gallery_columns'] ) : 4;
-        $style    = isset( $data['gallery_style'] ) ? $data['gallery_style'] : 'grid';
+        $style    = isset( $data['gallery_style'] ) && '' !== $data['gallery_style'] ? $data['gallery_style'] : ( isset( $data['gallery_layout'] ) ? $data['gallery_layout'] : 'grid' );
         $gap      = isset( $data['gallery_gap'] ) && $data['gallery_gap'] !== '' ? intval( $data['gallery_gap'] ) : 15;
         $lightbox = isset( $data['gallery_lightbox'] ) ? $data['gallery_lightbox'] : '1';
-        $images   = isset( $data['gallery_images'] ) ? $data['gallery_images'] : array();
+        $images   = isset( $data['gallery_images'] ) && is_array( $data['gallery_images'] ) ? $data['gallery_images'] : ( isset( $data['gallery_items'] ) && is_array( $data['gallery_items'] ) ? $data['gallery_items'] : array() );
         
         // 分类筛选
         $enable_filter = isset( $data['enable_filter'] ) ? $data['enable_filter'] : 'no';
@@ -292,7 +292,7 @@ class Gallery_Module extends Module_Base {
         // ========================================
         // 默认示例数据
         // ========================================
-        if ( empty( $images ) ) {
+        if ( empty( $images ) && empty( $title ) && empty( $subtitle ) ) {
             $images = array(
                 array(
                     'image'    => '',

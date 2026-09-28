@@ -580,13 +580,36 @@ body.qiling-page-skin-integrated .module-cta :is(.cta-title, .cta-subtitle) {
     box-shadow: 0 28px 64px rgba(63, 50, 104, 0.14);
 }
 
+.qiling-page-skin--cloud-canvas .module-stats,
+.qiling-page-skin--tech-canvas .module-stats,
 .qiling-page-skin--hosting-canvas .module-stats {
     color: var(--qcc-ink) !important;
 }
 
+.qiling-page-skin--cloud-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label),
+.qiling-page-skin--tech-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label),
 .qiling-page-skin--hosting-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label) {
     color: var(--qcc-ink) !important;
     opacity: 1 !important;
+}
+
+.qiling-page-skin--cloud-canvas .module-stats .stats-title,
+.qiling-page-skin--tech-canvas .module-stats .stats-title {
+    color: var(--qcc-ink, #25365f) !important;
+}
+
+.qiling-page-skin--cloud-canvas .module-stats .stats-subtitle,
+.qiling-page-skin--cloud-canvas .module-stats .stat-label,
+.qiling-page-skin--tech-canvas .module-stats .stats-subtitle,
+.qiling-page-skin--tech-canvas .module-stats .stat-label {
+    color: var(--qcc-muted, #52617e) !important;
+}
+
+.qiling-page-skin--cloud-canvas .module-stats .stat-number,
+.qiling-page-skin--cloud-canvas .module-stats .stat-plus,
+.qiling-page-skin--tech-canvas .module-stats .stat-number,
+.qiling-page-skin--tech-canvas .module-stats .stat-plus {
+    color: var(--qcc-coral, #2563eb) !important;
 }
 
 .qiling-page-skin--hosting-canvas .module-stats .stats-subtitle,
@@ -629,6 +652,36 @@ body.qiling-page-skin-integrated .module-cta :is(.cta-title, .cta-subtitle) {
     background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
     color: #ffffff !important;
     border-color: #c2410c !important;
+}
+
+body.qiling-page-skin-cloud-canvas .module-stats,
+body.qiling-page-skin-tech-canvas .module-stats {
+    color: var(--qcc-ink, #25365f) !important;
+}
+
+body.qiling-page-skin-cloud-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label),
+body.qiling-page-skin-tech-canvas .module-stats :is(.stats-title, .stats-subtitle, .stat-number, .stat-label) {
+    color: var(--qcc-ink, #25365f) !important;
+    opacity: 1 !important;
+}
+
+body.qiling-page-skin-cloud-canvas .module-stats .stats-title,
+body.qiling-page-skin-tech-canvas .module-stats .stats-title {
+    color: var(--qcc-ink, #25365f) !important;
+}
+
+body.qiling-page-skin-cloud-canvas .module-stats .stats-subtitle,
+body.qiling-page-skin-cloud-canvas .module-stats .stat-label,
+body.qiling-page-skin-tech-canvas .module-stats .stats-subtitle,
+body.qiling-page-skin-tech-canvas .module-stats .stat-label {
+    color: var(--qcc-muted, #52617e) !important;
+}
+
+body.qiling-page-skin-cloud-canvas .module-stats .stat-number,
+body.qiling-page-skin-cloud-canvas .module-stats .stat-plus,
+body.qiling-page-skin-tech-canvas .module-stats .stat-number,
+body.qiling-page-skin-tech-canvas .module-stats .stat-plus {
+    color: var(--qcc-coral, #2563eb) !important;
 }
 
 body.qiling-page-skin-hosting-canvas .module-stats {

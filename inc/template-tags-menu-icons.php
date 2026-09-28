@@ -1,6 +1,6 @@
 <?php
 /**
- * Menu Icon Helpers
+ * 菜单图标辅助函数库
  *
  * @package Developer_Starter
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_normalize_menu_icon_token' ) ) {
     /**
-     * Normalize menu icon token spacing.
+     * 规范化菜单图标标记间距。
      *
      * @param string $icon Raw icon value.
      * @return string
@@ -32,12 +32,12 @@ if ( ! function_exists( 'developer_starter_normalize_menu_icon_token' ) ) {
 
 if ( ! function_exists( 'developer_starter_is_supported_menu_icon_token' ) ) {
     /**
-     * Check whether a token can be treated as a menu icon.
+     * 检查文本标记是否可作为菜单图标解析。
      *
      * Supports:
      * - icon-xxx
-     * - inline HTML icon snippet (emoji/span/i/svg)
-     * - emoji text / html-entity emoji
+     * - 内联 HTML 图标片段 (emoji/span/i/svg)
+     * - Emoji 文本或 HTML 实体
      *
      * @param string $icon Raw icon value.
      * @return bool
@@ -69,7 +69,7 @@ if ( ! function_exists( 'developer_starter_is_supported_menu_icon_token' ) ) {
 
 if ( ! function_exists( 'developer_starter_extract_menu_icon_from_classes' ) ) {
     /**
-     * Extract icon token from nav menu CSS class list.
+     * 从导航菜单 CSS 类名列表中提取图标标记。
      *
      * @param array $classes Menu CSS classes.
      * @return string
@@ -102,9 +102,9 @@ if ( ! function_exists( 'developer_starter_extract_menu_icon_from_classes' ) ) {
 
 if ( ! function_exists( 'developer_starter_extract_menu_icon_from_title' ) ) {
     /**
-     * Parse icon token from title prefix.
+     * 从菜单标题前缀中解析图标标记。
      *
-     * Supported forms:
+     * 支持的格式：
      * - [icon-home]首页
      * - [<span>🔥</span>]首页
      * - icon-home|首页
@@ -149,7 +149,7 @@ if ( ! function_exists( 'developer_starter_extract_menu_icon_from_title' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_menu_icon_html' ) ) {
     /**
-     * Sanitize inline HTML icon snippet.
+     * 清理内联 HTML 图标片段。
      *
      * @param string $html Raw html.
      * @return string
@@ -212,7 +212,7 @@ if ( ! function_exists( 'developer_starter_sanitize_menu_icon_html' ) ) {
 
 if ( ! function_exists( 'developer_starter_render_menu_icon_html' ) ) {
     /**
-     * Render menu icon html from icon token.
+     * 根据图标标记渲染菜单图标 HTML。
      *
      * @param string $icon Icon token.
      * @return string
@@ -231,7 +231,7 @@ if ( ! function_exists( 'developer_starter_render_menu_icon_html' ) ) {
             return '';
         }
 
-        // Inline HTML icon markup.
+        // 内联 HTML 图标结构
         if ( false !== strpos( $icon, '<' ) && false !== strpos( $icon, '>' ) ) {
             $safe_html = developer_starter_sanitize_menu_icon_html( $icon );
             if ( '' === trim( $safe_html ) ) {
@@ -241,7 +241,7 @@ if ( ! function_exists( 'developer_starter_render_menu_icon_html' ) ) {
             return '<span class="qiling-menu-icon qiling-menu-icon--html" aria-hidden="true">' . $safe_html . '</span>';
         }
 
-        // Emoji text / html entity emoji.
+        // Emoji 文本或 HTML 实体
         $decoded = html_entity_decode( $icon, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
         if ( '' !== trim( $decoded ) && function_exists( 'developer_starter_get_icon_html' ) ) {
             return developer_starter_get_icon_html( $decoded, 'qiling-menu-icon qiling-menu-icon--emoji' );
@@ -253,12 +253,12 @@ if ( ! function_exists( 'developer_starter_render_menu_icon_html' ) ) {
 
 if ( ! function_exists( 'developer_starter_filter_nav_menu_item_title_with_icon' ) ) {
     /**
-     * Inject icon markup before nav menu item title on frontend.
+     * 在前台导航菜单项标题前注入图标 HTML。
      *
      * Priority:
-     * 1) custom field _menu_item_icon
-     * 2) menu CSS classes
-     * 3) title prefix syntax
+     * 1) 自定义字段 _menu_item_icon
+     * 2) 菜单 CSS 类名
+     * 3) 标题前缀语法
      *
      * @param string   $title     Menu item title.
      * @param WP_Post  $menu_item Menu item object.
@@ -282,14 +282,14 @@ if ( ! function_exists( 'developer_starter_filter_nav_menu_item_title_with_icon'
             return $title;
         }
 
-        // Avoid double wrapping.
+        // 避免重复包裹
         if ( strpos( $title_str, 'qiling-menu-title-with-icon' ) !== false || strpos( $title_str, 'qiling-menu-icon' ) !== false ) {
             return $title;
         }
 
         $icon_token = '';
 
-        // 1) Custom menu field.
+        // 1) 自定义菜单字段
         $meta_icon = get_post_meta( (int) $menu_item->ID, '_menu_item_icon', true );
         if ( is_string( $meta_icon ) && '' !== trim( $meta_icon ) ) {
             $candidate = developer_starter_normalize_menu_icon_token( $meta_icon );
@@ -298,7 +298,7 @@ if ( ! function_exists( 'developer_starter_filter_nav_menu_item_title_with_icon'
             }
         }
 
-        // 2) Menu CSS classes.
+        // 2) 菜单 CSS 类名
         if ( '' === $icon_token && isset( $menu_item->classes ) ) {
             $icon_token = developer_starter_extract_menu_icon_from_classes( (array) $menu_item->classes );
         }

@@ -151,8 +151,7 @@ class Features_List_Module extends Module_Base {
         $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
         $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
         
-        // Legacy support for simple bg_color if new field is empty but old one exists (optional, but requested "complete custom settings" implies new fields take precedence)
-        // If module_bg_color is empty but 'bg_color' (old field) is set, use it.
+        // 兼容旧版背景颜色字段配置
         if ( empty( $bg_color ) && isset( $data['bg_color'] ) && ! empty( $data['bg_color'] ) ) {
             $bg_color = $data['bg_color'];
         }
@@ -188,6 +187,10 @@ class Features_List_Module extends Module_Base {
                         );
                     }
                 }
+            } elseif ( isset( $tab['features'] ) && is_array( $tab['features'] ) ) {
+                $parsed_tab['features'] = $tab['features'];
+            } elseif ( isset( $tab['items'] ) && is_array( $tab['items'] ) ) {
+                $parsed_tab['features'] = $tab['items'];
             }
             $parsed_tabs[] = $parsed_tab;
         }
@@ -195,7 +198,7 @@ class Features_List_Module extends Module_Base {
         
         $unique_id = 'features-list-' . uniqid();
         
-        // Dynamic Style Construction
+        // 构建动态样式
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         
         if ( $bg_type === 'image' && $bg_image ) {
@@ -207,12 +210,12 @@ class Features_List_Module extends Module_Base {
             if ( ! empty( $data[ $field ] ) ) $section_style .= $variable . ':' . $data[ $field ] . ';';
         }
         
-        // Title Style
+        // 标题样式
         $title_style = '';
         if ( $title_size ) $title_style .= "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
         
-        // Subtitle Style
+        // 副标题样式
         $subtitle_style = '';
         if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
         if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";

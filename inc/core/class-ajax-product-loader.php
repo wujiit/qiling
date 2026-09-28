@@ -1,8 +1,8 @@
 <?php
 /**
- * AJAX Product Content Loader
+ * 产品内容 AJAX 加载器
  *
- * Handles fetching post content for the Product Showcase modal.
+ * 处理产品展示弹窗中文章详情正文的动态获取。
  *
  * @package Developer_Starter
  */
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class AJAX_Product_Loader {
 
     /**
-     * Constructor
+     * 构造函数
      */
     public function __construct() {
         add_action( 'wp_ajax_ds_fetch_product_content', array( $this, 'fetch_content' ) );
@@ -24,10 +24,10 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Fetch post content
+     * 获取文章正文内容
      */
     public function fetch_content() {
-        // Public endpoint: require nonce to reduce abuse traffic.
+        // 公共接口：强制校验 Nonce 以抵御恶意流量。
         if ( ! check_ajax_referer( 'ds_product_nonce', 'nonce', false ) ) {
             wp_send_json_error(
                 array( 'message' => __( '安全验证失败，请刷新后重试', 'developer-starter' ) ),
@@ -35,7 +35,7 @@ class AJAX_Product_Loader {
             );
         }
 
-        // Optional global rate limiting for unauthenticated traffic.
+        // 针对未登录访客流量的可选全局访问频次限制。
         if ( ! is_user_logged_in() && function_exists( 'developer_starter_is_public_rate_limit_enabled' ) && developer_starter_is_public_rate_limit_enabled() ) {
             $window = function_exists( 'developer_starter_get_rate_limit_window' ) ? developer_starter_get_rate_limit_window() : 60;
             $max = function_exists( 'developer_starter_get_option' ) ? intval( developer_starter_get_option( 'request_rate_limit_product_max', 60 ) ) : 60;
@@ -67,7 +67,7 @@ class AJAX_Product_Loader {
             wp_send_json_error( array( 'message' => __( '该产品未在当前模块中配置', 'developer-starter' ) ), 403 );
         }
 
-        // Prepare content with standard shortcode and embed processing.
+        // 执行标准短代码与媒体嵌入解析以处理正文内容。
         $previous_post = isset( $GLOBALS['post'] ) ? $GLOBALS['post'] : null;
         $GLOBALS['post'] = $post;
         setup_postdata( $post );
@@ -77,7 +77,7 @@ class AJAX_Product_Loader {
             $GLOBALS['post'] = $previous_post;
         }
 
-        // Wrap in a clean container.
+        // 包裹在干净的容器标签内。
         $html = '<div class="ds-product-modal-content entry-content">';
         $html .= $content;
         $html .= '</div>';
@@ -90,7 +90,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Build a stable public module key for the Products module AJAX boundary.
+     * 为产品模块 AJAX 请求边界构建稳定的公共模块标识。
      *
      * @param int        $source_id Source page ID.
      * @param array<int> $post_ids  Product detail post IDs configured in one module.
@@ -108,7 +108,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Extract configured detail post IDs from a Products module data array.
+     * 从产品展示模块数据中提取已配置的详情文章 ID。
      *
      * @param array<string,mixed> $data Module data.
      * @return array<int>
@@ -130,7 +130,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Normalize configured product detail IDs.
+     * 规范化配置的产品详情文章 ID 列表。
      *
      * @param array<int|string> $post_ids Post IDs.
      * @return array<int>
@@ -148,7 +148,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Read an integer from the AJAX POST payload.
+     * 从 AJAX POST 载荷中读取整数值。
      *
      * @param string $key Request key.
      * @return int
@@ -167,7 +167,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Read a text value from the AJAX POST payload.
+     * 从 AJAX POST 载荷中安全读取文本值。
      *
      * @param string $key Request key.
      * @return string
@@ -186,7 +186,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Validate that the target post is a public product-detail source.
+     * 校验目标文章是否为公开的产品详情来源。
      *
      * @param mixed $post Post object candidate.
      * @return bool
@@ -216,7 +216,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Restrict target content to IDs explicitly configured in a Products module on the source page.
+     * 严格限制目标内容必须为来源页面产品模块中显式配置的文章 ID。
      *
      * @param int    $post_id    Requested product detail post ID.
      * @param int    $source_id  Source page ID.
@@ -241,7 +241,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Get public target post types accepted by the product modal.
+     * 获取产品弹窗支持的公开目标文章类型。
      *
      * @return array<int,string>
      */
@@ -268,7 +268,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Get source post types that can host Products module configuration.
+     * 获取可挂载产品模块配置的来源文章类型。
      *
      * @return array<int,string>
      */
@@ -284,7 +284,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Validate that a source page can expose module-configured products.
+     * 校验来源页面是否具备开放模块产品数据的权限。
      *
      * @param int $source_id Source page ID.
      * @return bool
@@ -315,7 +315,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Resolve allowed product IDs from one module instance on a source page.
+     * 从来源页面的模块实例中解析允许访问的产品 ID。
      *
      * @param int    $source_id  Source page ID.
      * @param string $module_key Module key.
@@ -353,7 +353,7 @@ class AJAX_Product_Loader {
     }
 
     /**
-     * Load raw module configuration for the source page.
+     * 加载来源页面的原始模块配置数据。
      *
      * @param int $source_id Source page ID.
      * @return array<int,array<string,mixed>>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Room Showcase Module - 房型展示模块
+ * 房型与空间展示模块
  * 
  * 展示酒店客房类型、面积、床型、价格和设施
  * 适用于酒店官网和民宿预订网站
@@ -214,6 +214,50 @@ class Room_Showcase_Module extends Module_Base {
                         'default' => '#',
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华大床房', 'Deluxe King Room' ) : __( '豪华大床房', 'developer-starter' ),
+                        'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '45㎡', '45 sqm' ) : '45㎡',
+                        'bed_type'       => 'king',
+                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 688 ) : '¥688',
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 888 ) : '¥888',
+                        'badge'          => 'luxury',
+                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-tv|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '智能电视', 'Smart TV' ) : __( '智能电视', 'developer-starter' ) ) . "\nicon-bath|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '独立浴室', 'Private bathroom' ) : __( '独立浴室', 'developer-starter' ) ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '宽敞明亮的豪华大床房，配备高品质床品', 'A spacious king room with premium bedding and refined finishes.' ) : __( '宽敞明亮的豪华大床房，配备高品质床品', 'developer-starter' ),
+                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '海景双床房', 'Ocean Twin Room' ) : __( '海景双床房', 'developer-starter' ),
+                        'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '52㎡', '52 sqm' ) : '52㎡',
+                        'bed_type'       => 'twin',
+                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2-3人', '2-3 guests' ) : __( '2-3人', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 888 ) : '¥888',
+                        'original_price' => '',
+                        'badge'          => 'seaview',
+                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-balcony|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '观景阳台', 'Private balcony' ) : __( '观景阳台', 'developer-starter' ) ) . "\nicon-minibar|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '迷你吧', 'Minibar' ) : __( '迷你吧', 'developer-starter' ) ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无敌海景视野，让您尽享海滨度假时光', 'Open sea views designed for a relaxed coastal stay.' ) : __( '无敌海景视野，让您尽享海滨度假时光', 'developer-starter' ),
+                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                    array(
+                        'image'          => '',
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政套房', 'Executive Suite' ) : __( '行政套房', 'developer-starter' ),
+                        'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '78㎡', '78 sqm' ) : '78㎡',
+                        'bed_type'       => 'king',
+                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'developer-starter' ),
+                        'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1288 ) : '¥1288',
+                        'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1588 ) : '¥1588',
+                        'badge'          => 'recommend',
+                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-lounge|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政酒廊', 'Executive lounge' ) : __( '行政酒廊', 'developer-starter' ) ) . "\nicon-breakfast|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '含早餐', 'Breakfast included' ) : __( '含早餐', 'developer-starter' ) ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '尊享行政礼遇，配备独立客厅和办公区', 'Premium suite with a lounge area and private workspace.' ) : __( '尊享行政礼遇，配备独立客厅和办公区', 'developer-starter' ),
+                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_link'       => '#',
+                    ),
+                ),
             ),
             array(
                 'id'      => 'room_btn_bg_color',
@@ -335,7 +379,7 @@ class Room_Showcase_Module extends Module_Base {
         // ========================================
         // 默认示例数据
         // ========================================
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['room_items'] ) ) {
             $items = array(
                 array(
                     'image'          => '',

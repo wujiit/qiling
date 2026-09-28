@@ -1,5 +1,5 @@
 /**
- * Admin Mega Menu Scripts
+ * 后台超级菜单交互脚本
  */
 (function ($) {
     'use strict';

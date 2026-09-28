@@ -3,7 +3,7 @@
  * Template Name: 影视门户首页
  * Template Post Type: page
  *
- * Full-width shell for the official video portal page package.
+ * 官方视频门户页面包的全宽外层框架模板。
  *
  * @package Developer_Starter
  */

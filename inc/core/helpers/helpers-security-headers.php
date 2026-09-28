@@ -1,6 +1,6 @@
 <?php
 /**
- * Security header helpers split from functions.php.
+ * 从 functions.php 拆分出的安全响应头辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -101,7 +101,7 @@ function developer_starter_get_allowed_permissions_policy_directives() {
     );
 
     /**
-     * Filter the Permissions-Policy directive allowlist.
+     * 过滤 Permissions-Policy 安全策略指令白名单。
      *
      * @param array<int,string> $directives Directive names.
      */

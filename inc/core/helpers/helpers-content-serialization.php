@@ -1,6 +1,6 @@
 <?php
 /**
- * Backward-compatible content serialization helper entry.
+ * 向后兼容的内容序列化辅助函数入口。
  *
  * @deprecated 2.5.8 Use helpers-content-modules.php instead.
  *

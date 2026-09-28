@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search results
+ * 搜索结果页面模板
  *
  * @package Developer_Starter
  */
@@ -63,7 +63,7 @@ $search_scope_choices = function_exists( 'developer_starter_get_search_scope_cho
 );
 $search_terms = function_exists( 'developer_starter_get_search_query_terms' ) ? developer_starter_get_search_query_terms( $search_query_display ) : array( $search_query_display );
 $search_highlight_allowed = array(
-    // developer_starter_highlight_search_terms() emits search-highlight marks.
+    // developer_starter_highlight_search_terms() 函数输出关键词高亮 mark 标记。
     'mark' => array(
         'class' => true,
     ),

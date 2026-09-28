@@ -1,6 +1,6 @@
 <?php
 /**
- * Minimal bootstrap for theme-level PHPStan runs.
+ * 用于主题级 PHPStan 静态检查分析的最小化引导文件。
  */
 
 declare(strict_types=1);

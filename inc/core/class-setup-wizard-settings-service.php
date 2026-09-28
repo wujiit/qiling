@@ -1,10 +1,10 @@
 <?php
 /**
- * Setup wizard menu and basic settings service.
+ * 安装向导菜单与基础配置服务。
  *
- * Phase 4 creates/reuses a primary menu when the primary location is empty
- * and writes lightweight theme-owned settings. It keeps existing menus and
- * non-empty settings by default, and never writes third-party plugin options.
+ * 阶段 4 在主菜单为空时配置主菜单，
+ * 并写入轻量主题设置，默认保留已有菜单，
+ * 不覆盖已有设置，绝不写入第三方插件选项。
  *
  * @package Developer_Starter
  */
@@ -55,7 +55,7 @@ class Setup_Wizard_Settings_Service {
     }
 
     /**
-     * Apply menu and basic settings.
+     * 应用菜单与基础主题设置。
      *
      * @param array<string,mixed> $args Arguments.
      * @return array<string,mixed>
@@ -108,7 +108,7 @@ class Setup_Wizard_Settings_Service {
     }
 
     /**
-     * Create/reuse a primary menu only when the primary location is empty.
+     * 仅在主菜单位置为空时创建或复用主导航菜单。
      *
      * @param array<int,string> $selected_pages Page keys.
      * @return array<string,mixed>

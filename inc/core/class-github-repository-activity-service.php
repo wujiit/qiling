@@ -1,6 +1,6 @@
 <?php
 /**
- * GitHub repository activity fetcher with local file cache.
+ * 带本地文件缓存的 GitHub 仓库动态抓取器。
  *
  * @package Developer_Starter
  */
@@ -19,7 +19,7 @@ class GitHub_Repository_Activity_Service {
     const LOCK_TTL     = 120;
 
     /**
-     * Collect local file cache stats.
+     * 统计本地文件缓存状态。
      *
      * @return array<string,mixed>
      */
@@ -40,7 +40,7 @@ class GitHub_Repository_Activity_Service {
                     }
                 }
             } catch ( \Exception $e ) {
-                // Return the partial stats collected so far.
+                // 返回已收集的部分统计信息。
             }
         }
 
@@ -53,7 +53,7 @@ class GitHub_Repository_Activity_Service {
     }
 
     /**
-     * Clear local file cache.
+     * 清理本地文件缓存。
      *
      * @return array<string,int>
      */
@@ -121,7 +121,7 @@ class GitHub_Repository_Activity_Service {
                 }
             }
         } catch ( \Exception $e ) {
-            // Return the partial cleanup result.
+            // 返回已完成的部分清理结果。
         }
 
         return array(
@@ -132,7 +132,7 @@ class GitHub_Repository_Activity_Service {
     }
 
     /**
-     * Get repository activity.
+     * 获取仓库动态数据。
      *
      * @param string              $repository Repository URL or owner/repo.
      * @param array<string,mixed> $args       Fetch args.
@@ -205,7 +205,7 @@ class GitHub_Repository_Activity_Service {
     }
 
     /**
-     * Parse GitHub repository URL.
+     * 解析 GitHub 仓库 URL 地址。
      *
      * @param string $repository Repository URL or owner/repo.
      * @return array<string,string>|\WP_Error
@@ -249,7 +249,7 @@ class GitHub_Repository_Activity_Service {
     }
 
     /**
-     * Fetch activity from GitHub.
+     * 从 GitHub 获取仓库最新动态。
      *
      * @param array<string,string> $repo Repository data.
      * @param int                  $commit_count Commit count.
@@ -282,7 +282,7 @@ class GitHub_Repository_Activity_Service {
     }
 
     /**
-     * Request JSON from GitHub.
+     * 向 GitHub API 发送请求并获取 JSON 结果。
      *
      * @param string $url Allowed GitHub API URL.
      * @param int[]  $soft_statuses Status codes treated as empty responses.
@@ -607,7 +607,7 @@ class GitHub_Repository_Activity_Service {
     }
 
     /**
-     * Build guarded filesystem arguments for GitHub activity cache files.
+     * 为 GitHub 动态缓存文件构建受保护的文件系统操作参数。
      *
      * @param string $operation Operation id.
      * @return array<string,mixed>

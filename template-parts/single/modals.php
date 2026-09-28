@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post modal markup.
+ * 文章详情页弹窗结构模板。
  *
  * @package Developer_Starter
  */

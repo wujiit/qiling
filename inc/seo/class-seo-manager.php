@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO Manager Class
+ * SEO 管理器类
  *
  * @package Developer_Starter
  * @since 1.0.0
@@ -126,7 +126,7 @@ class SEO_Manager {
     }
 
     public function output_meta_tags() {
-        // Skip if other SEO plugin is active
+        // 若已激活其他第三方 SEO 插件则跳过输出
         if ( $this->has_seo_plugin() ) {
             return;
         }
@@ -231,7 +231,7 @@ class SEO_Manager {
             }
         }
 
-        // Multi-language hreflang support
+        // 多语言 hreflang 标签支持
         if ( function_exists( 'pll_the_languages' ) ) {
             $languages = pll_the_languages( array( 'raw' => 1 ) );
             foreach ( $languages as $lang ) {
@@ -370,7 +370,16 @@ class SEO_Manager {
                 if ( ! empty( $seo_desc ) ) {
                     return $seo_desc;
                 }
+            }
 
+            // 优先回退到主题 SEO 设置中的“默认描述”
+            $custom_desc = developer_starter_get_option( 'default_description', '' );
+            if ( ! empty( $custom_desc ) ) {
+                return $custom_desc;
+            }
+
+            // 页面摘要或内容提取兜底
+            if ( $home_post_id > 0 ) {
                 $page_excerpt = function_exists( 'developer_starter_get_translated_post_excerpt' )
                     ? developer_starter_get_translated_post_excerpt( $home_post_id )
                     : get_the_excerpt( $home_post_id );
@@ -379,8 +388,7 @@ class SEO_Manager {
                 }
             }
 
-            $custom_desc = developer_starter_get_option( 'default_description', '' );
-            return ! empty( $custom_desc ) ? $custom_desc : get_bloginfo( 'description' );
+            return get_bloginfo( 'description' );
         }
         // 单页/文章
         if ( is_singular() ) {

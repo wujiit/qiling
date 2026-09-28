@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin settings international diagnostics field render trait.
+ * 后台设置国际化诊断字段渲染 Trait。
  *
  * @package Developer_Starter
  */
@@ -35,7 +35,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Build a redacted international delivery snapshot.
+     * 构建脱敏的国际化交付快照数据。
      *
      * @param array<string,mixed> $options Theme options.
      * @return string
@@ -177,7 +177,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get a scalar summary value for snapshots.
+     * 获取快照的标量汇总数值。
      *
      * @param array<string,mixed> $summary Summary array.
      * @param string              $key Summary key.
@@ -189,7 +189,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get a compact status count line.
+     * 获取精简的状态计数统计行。
      *
      * @param array<string,mixed> $summary Summary array.
      * @param string              $warning_label Warning label.
@@ -204,7 +204,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get a readable status label for snapshots.
+     * 获取快照的易读状态标签。
      *
      * @param string $status Status key.
      * @return string
@@ -221,7 +221,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get snapshot generation time.
+     * 获取快照生成时间。
      *
      * @return string
      */
@@ -230,7 +230,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get site name for snapshot.
+     * 获取快照站点名称。
      *
      * @return string
      */
@@ -239,7 +239,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get home URL for snapshot.
+     * 获取快照站点首页 URL。
      *
      * @return string
      */
@@ -248,7 +248,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render snapshot CSS and copy helper once.
+     * 渲染快照单例 CSS 样式与复制辅助脚本。
      *
      * @return void
      */
@@ -327,7 +327,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render read-only international launch readiness checklist.
+     * 渲染只读的国际化上线就绪核对清单。
      *
      * @param array<string,mixed> $options Theme options.
      * @return void
@@ -450,7 +450,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render a compact Cookie diagnostics list.
+     * 渲染精简的 Cookie 诊断列表。
      *
      * @param string              $title Section title.
      * @param array<int,mixed>    $rows Diagnostic rows.
@@ -487,7 +487,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Build read-only launch readiness data from international settings.
+     * 根据国际化配置构建只读的上线就绪状态数据。
      *
      * @param array<string,mixed> $options Theme options.
      * @return array<string,mixed>
@@ -755,7 +755,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get a theme option from the passed admin options array.
+     * 从传入的后台选项数组中读取主题配置项。
      *
      * @param array<string,mixed> $options Theme options.
      * @param string              $key Option key.
@@ -767,7 +767,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get code groups without making the admin renderer depend on frontend boot order.
+     * 获取代码分组配置，避免后台渲染器依赖前台加载时序。
      *
      * @return array<string,array<string,string>>
      */
@@ -786,7 +786,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get admin labels for third-party code groups.
+     * 获取第三方代码分组在后台的显示标签。
      *
      * @return array<string,string>
      */
@@ -801,7 +801,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Resolve category plus explicit/default state for admin diagnostics.
+     * 解析分类及显式/默认配置状态用于后台诊断展示。
      *
      * @param array<string,mixed> $options Theme options.
      * @param string              $group_id Group id.
@@ -854,7 +854,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Resolve a third-party code group Cookie category for admin diagnostics.
+     * 解析第三方代码组对应的 Cookie 分类用于后台诊断展示。
      *
      * @param array<string,mixed> $options Theme options.
      * @param string              $group_id Group id.
@@ -868,7 +868,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Analyze risky third-party code patterns for admin diagnostics.
+     * 分析第三方代码中的潜在风险模式供后台诊断参考。
      *
      * @param string $group_id Group id.
      * @param string $code Snippet code.
@@ -935,7 +935,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Normalize a Cookie category key.
+     * 规范化 Cookie 分类键名。
      *
      * @param string $category Category key.
      * @return string
@@ -950,7 +950,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Whether a Cookie category requires visitor consent.
+     * 判断指定 Cookie 分类是否必须经过访客明确授权。
      *
      * @param string $category Category key.
      * @return bool
@@ -960,7 +960,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get an admin label for a Cookie category.
+     * 获取 Cookie 分类在后台的显示标签。
      *
      * @param string $category Category key.
      * @return string
@@ -979,7 +979,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get an admin label for a regional Cookie preset.
+     * 获取区域 Cookie 预设在后台的显示标签。
      *
      * @param string $preset Preset key.
      * @return string
@@ -998,7 +998,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render CSS for the launch checklist once.
+     * 渲染上线核对清单单例 CSS 样式。
      *
      * @return void
      */
@@ -1208,7 +1208,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render read-only international SEO diagnostics.
+     * 渲染只读的国际化 SEO 诊断面板。
      *
      * @param array<string,mixed> $options Theme options.
      * @return void
@@ -1311,7 +1311,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render full-site multilingual SEO scan powered by 启灵AI多语言.
+     * 渲染全站多语言 SEO 扫描状态面板。
      *
      * @param array<string,mixed> $options Theme options.
      * @return void
@@ -1463,7 +1463,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Export multilingual SEO report.
+     * 导出多语言 SEO 诊断报告。
      *
      * @return void
      */
@@ -1496,7 +1496,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Run batch SEO meta generation.
+     * 执行批量 SEO 元数据生成。
      *
      * @return void
      */
@@ -1534,7 +1534,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Build read-only international SEO diagnostics.
+     * 构建只读的国际化 SEO 诊断数据。
      *
      * @param array<string,mixed> $options Theme options.
      * @return array<string,mixed>
@@ -1705,7 +1705,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Read the first multilingual SEO provider exposed by 启灵AI多语言.
+     * 读取多语言 SEO 服务提供程序。
      *
      * @param int $post_id Optional post id.
      * @return array<string,mixed>
@@ -1740,7 +1740,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Read full-site multilingual SEO diagnostics from 启灵AI多语言 provider.
+     * 从多语言提供程序中读取全站 SEO 诊断数据。
      *
      * @return array<string,mixed>
      */
@@ -1766,7 +1766,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Get configured multilingual languages for diagnostics.
+     * 获取用于诊断的多语言语种列表。
      *
      * @param array<string,mixed> $options Theme options.
      * @return array<int,array<string,string>>
@@ -1837,7 +1837,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Resolve default language for diagnostics.
+     * 解析用于诊断的默认语言。
      *
      * @param array<string,mixed> $options Theme options.
      * @param array<int,array<string,string>> $languages Languages.
@@ -1864,7 +1864,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Whether configured languages include an overseas language.
+     * 判断已配置的语言中是否包含海外语种。
      *
      * @param array<int,array<string,mixed>> $languages Languages.
      * @return bool
@@ -1881,7 +1881,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render CSS for the diagnostics panel once.
+     * 渲染诊断面板单例 CSS 样式。
      *
      * @return void
      */
@@ -2073,7 +2073,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render read-only Schema.org JSON-LD preview.
+     * 渲染只读的 Schema.org JSON-LD 结构化数据预览。
      *
      * @param array<string,mixed> $options Theme options.
      * @return void
@@ -2191,7 +2191,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Pretty-print JSON-LD for the admin preview.
+     * 格式化 JSON-LD 供后台美化展示。
      *
      * @param string $json Minified JSON.
      * @return string
@@ -2212,7 +2212,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
     }
 
     /**
-     * Render CSS for the Schema preview panel once.
+     * 渲染 Schema 预览面板单例 CSS 样式。
      *
      * @return void
      */

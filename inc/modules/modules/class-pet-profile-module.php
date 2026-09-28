@@ -1,6 +1,6 @@
 <?php
 /**
- * Pet Profile Module - 宠物档案/领养
+ * 宠物档案与领养信息模块
  *
  * @package Developer_Starter
  */
@@ -163,10 +163,10 @@ class Pet_Profile_Module extends Module_Base {
             $style_vars .= "--pet-status-adopted-bg: {$badge_bg};";
         }
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
 
-        // Grid Class
+        // 网格布局类名
         $grid_class = "qiling-pet-grid grid-cols-{$columns}";
         ?>
         <section class="module module-pet-profile" style="<?php echo esc_attr( $style_vars ); ?>">
@@ -195,10 +195,10 @@ class Pet_Profile_Module extends Module_Base {
                             $price = isset( $item['price'] ) ? $item['price'] : '';
                             $link = isset( $item['link'] ) ? $item['link'] : '';
 
-                            // Process Tags
+                            // 处理标签数据
                             $tags = array_filter( array_map( 'trim', explode( ',', $tags_str ) ) );
 
-                            // Status Label
+                            // 状态标签
                             $status_labels = array(
                                 'available' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '待领养', 'Available' ) : __( '待领养', 'developer-starter' ),
                                 'reserved' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '已预订', 'Reserved' ) : __( '已预订', 'developer-starter' ),
@@ -209,7 +209,7 @@ class Pet_Profile_Module extends Module_Base {
                             $tag_el = $link ? 'a' : 'div';
                             $href = $link ? ' href="' . esc_url( $link ) . '"' : '';
                             
-                            // Calculate staggered animation.
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

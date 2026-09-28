@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce Setup Class
+ * WooCommerce 基础适配与配置类
  *
  * 负责 WooCommerce 兼容性配置和 Hook 注册
  * 不复制模板文件，全部使用 Hook/Filter 实现

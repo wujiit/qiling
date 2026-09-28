@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer effect boot data.
+ * 页脚特效初始配置数据模板。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Accordion Module - 手风琴折叠
+ * 手风琴折叠模块
  *
  * @package Developer_Starter
  */
@@ -34,7 +34,7 @@ class Accordion_Module extends Module_Base {
             array( 'id' => 'accordion_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
             array( 'id' => 'accordion_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
             
-            // Typography Settings
+            // 字体排版配置
             array(
                 'id' => 'accordion_title_size',
                 'label' => __( '标题字体大小', 'developer-starter' ),
@@ -73,9 +73,14 @@ class Accordion_Module extends Module_Base {
                 array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
                 array( 'id' => 'content', 'type' => 'textarea', 'label' => __( '内容', 'developer-starter' ) ),
                 array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (Emoji 或 Symbol类名)', 'developer-starter' ) ),
+            ),
+            'default_items' => array(
+                array( 'title' => __( '产品质量如何保证？', 'developer-starter' ), 'content' => __( '我们拥有完善的质量管理体系，通过ISO9001认证。每件产品都经过严格的质检流程，确保出厂产品100%合格。如有任何质量问题，我们提供无条件退换货服务。', 'developer-starter' ), 'icon' => '🛡️' ),
+                array( 'title' => __( '配送范围和时效？', 'developer-starter' ), 'content' => __( '我们支持全国配送，一二线城市1-3天送达，其他地区3-7天送达。部分地区支持当日达服务，下单时可查看具体配送时效。', 'developer-starter' ), 'icon' => '🚚' ),
+                array( 'title' => __( '售后服务政策？', 'developer-starter' ), 'content' => __( '我们提供7x24小时在线客服支持，产品享有1 year 质保期。质保期内非人为损坏可免费维修或更换。质保期外提供有偿维修服务。', 'developer-starter' ), 'icon' => '💬' ),
             ) ),
             
-            // Background Settings
+            // 背景配置
             array(
                 'id' => 'module_bg_type',
                 'label' => __( '背景类型', 'developer-starter' ),
@@ -142,8 +147,8 @@ class Accordion_Module extends Module_Base {
         $first_open = isset( $data['accordion_first_open'] ) ? $data['accordion_first_open'] : '1';
         $items = isset( $data['accordion_items'] ) ? $data['accordion_items'] : array();
         
-        // 默认示例数据
-        if ( empty( $items ) ) {
+        // 默认示例数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $items ) && ! isset( $data['accordion_items'] ) ) {
             $items = array(
                 array( 'title' => __( '产品质量如何保证？', 'developer-starter' ), 'content' => __( '我们拥有完善的质量管理体系，通过ISO9001认证。每件产品都经过严格的质检流程，确保出厂产品100%合格。如有任何质量问题，我们提供无条件退换货服务。', 'developer-starter' ), 'icon' => '🛡️' ),
                 array( 'title' => __( '配送范围和时效？', 'developer-starter' ), 'content' => __( '我们支持全国配送，一二线城市1-3天送达，其他地区3-7天送达。部分地区支持当日达服务，下单时可查看具体配送时效。', 'developer-starter' ), 'icon' => '🚚' ),
@@ -151,7 +156,7 @@ class Accordion_Module extends Module_Base {
             );
         }
         
-        // Typography Logic
+        // 字体排版处理
         $title_size = isset( $data['accordion_title_size'] ) ? $data['accordion_title_size'] : '';
         $title_color = isset( $data['accordion_title_color'] ) ? $data['accordion_title_color'] : '';
         $subtitle_size = isset( $data['accordion_subtitle_size'] ) ? $data['accordion_subtitle_size'] : '';
@@ -170,7 +175,7 @@ class Accordion_Module extends Module_Base {
         if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
         if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";
         
-        // Background Logic
+        // 背景样式处理
         $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
         $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
         $bg_image = isset( $data['module_bg_image'] ) ? $data['module_bg_image'] : '';
@@ -255,7 +260,7 @@ class Accordion_Module extends Module_Base {
                 header.addEventListener('click', function() {
                     var item = this.closest('.accordion-item');
                     var isActive = item.classList.contains('active');
-                    // var icon = this.querySelector('.accordion-toggle-icon'); // SVG handled by CSS now
+                    // var icon = this.querySelector('.accordion-toggle-icon'); // 图标旋转动画由 CSS 统一控制
                     var content = item.querySelector('.accordion-content');
                     
                     if (!allowMultiple) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Industry-aware Schema.org JSON-LD engine.
+ * 行业级 Schema.org 结构化数据 (JSON-LD) 引擎。
  *
  * @package Developer_Starter
  */
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Builds one connected @graph from site settings, page modules and content models.
+ * 根据站点配置、页面模块与内容模型构建连通的 @graph 结构化数据图谱。
  */
 class Industry_Schema_Engine {
 
@@ -30,7 +30,7 @@ class Industry_Schema_Engine {
     private static $instance = null;
 
     /**
-     * Get singleton instance.
+     * 获取单例实例。
      *
      * @return self
      */
@@ -43,7 +43,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Settings choices for the industry selector.
+     * 行业类型选择器的后台选项列表。
      *
      * @return array<string,string>
      */
@@ -74,7 +74,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Page-level Schema override type choices.
+     * 页面级 Schema 覆盖类型的选项列表。
      *
      * @return array<string,string>
      */
@@ -94,7 +94,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Sanitize a page-level Schema override payload.
+     * 清理并校验页面级 Schema 自定义覆盖数据。
      *
      * @param mixed $value Raw override payload.
      * @return array<string,mixed>
@@ -191,7 +191,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Read a page-level Schema override from post meta.
+     * 从文章元数据 (post meta) 中读取页面级 Schema 覆盖配置。
      *
      * @param int $post_id Post id.
      * @return array<string,mixed>
@@ -218,7 +218,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Persist a page-level Schema override to post meta.
+     * 持久化保存页面级 Schema 覆盖配置到文章元数据。
      *
      * @param int   $post_id Post id.
      * @param mixed $raw Raw override payload.
@@ -253,7 +253,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Normalize FAQ rows from structured rows or textarea lines.
+     * 从结构化行或多行文本中解析并规范化 FAQ 数据项。
      *
      * @param mixed  $rows Raw rows.
      * @param string $text Textarea fallback.
@@ -303,7 +303,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Normalize HowTo steps from structured rows or textarea lines.
+     * 从结构化行或多行文本中解析并规范化 HowTo 步骤数据项。
      *
      * @param mixed  $rows Raw rows.
      * @param string $text Textarea fallback.
@@ -345,7 +345,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Sanitize theme options owned by this service.
+     * 清理并校验此服务所管理的主题选项配置。
      *
      * @param array<string,mixed> $sanitized Sanitized option draft.
      * @param array<string,mixed> $existing_options Existing options.
@@ -377,7 +377,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Whether front-end schema output is enabled.
+     * 检查前台结构化数据输出是否开启。
      *
      * @param array<string,mixed>|null $options Theme options.
      * @return bool
@@ -390,7 +390,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * JSON-LD payload for the current request.
+     * 当前请求生成的 JSON-LD 结构化数据载荷。
      *
      * @param int $post_id Optional post id override.
      * @return string
@@ -412,7 +412,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build admin preview data from the same graph generator used by front-end output.
+     * 使用与前台完全一致的图谱生成器构建后台预览数据。
      *
      * @param int $post_id Optional post id override.
      * @return array<string,mixed>
@@ -440,7 +440,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build Schema diagnostics for preview and page editors.
+     * 构建用于预览与页面编辑器的 Schema 诊断数据。
      *
      * @param int $post_id Optional post id override.
      * @return array<string,mixed>
@@ -453,7 +453,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build graph nodes for the current request.
+     * 为当前请求构建结构化数据图谱节点。
      *
      * @param int $post_id Optional post id override.
      * @return array<int,array<string,mixed>>
@@ -463,7 +463,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build filterable JSON-LD payload from graph nodes.
+     * 从图谱节点构建支持过滤器扩展的 JSON-LD 数据载荷。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @param array<string,mixed>            $context Resolved page context.
@@ -480,7 +480,7 @@ class Industry_Schema_Engine {
         );
 
         /**
-         * Filter the full Schema.org payload before JSON encoding.
+         * 在 JSON 编码输出前过滤完整的 Schema.org 数据载荷。
          *
          * @param array<string,mixed> $payload JSON-LD payload.
          * @param array<string,mixed> $context Resolved page context.
@@ -491,7 +491,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Encode a JSON-LD payload for output or preview.
+     * 将数据载荷编码为 JSON-LD 格式供前台输出或后台预览。
      *
      * @param array<string,mixed> $payload JSON-LD payload.
      * @return string
@@ -507,7 +507,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build reusable context for graph generation.
+     * 构建用于生成图谱的可复用上下文环境。
      *
      * @param int $post_id Optional post id override.
      * @return array<string,mixed>
@@ -547,7 +547,7 @@ class Industry_Schema_Engine {
         );
 
         /**
-         * Filter resolved context before graph nodes are built.
+         * 在构建图谱节点前过滤解析后的上下文数据。
          *
          * @param array<string,mixed> $context Resolved page context.
          */
@@ -555,7 +555,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build graph nodes from context.
+     * 根据上下文构建具体的图谱节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<int,array<string,mixed>>
@@ -593,7 +593,7 @@ class Industry_Schema_Engine {
         $graph = $this->clean_graph( $graph );
 
         /**
-         * Filter Schema.org @graph nodes.
+         * 过滤 Schema.org @graph 节点数组。
          *
          * @param array<int,array<string,mixed>> $graph Graph nodes.
          * @param array<string,mixed>            $context Resolved page context.
@@ -604,7 +604,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build Organization/LocalBusiness level node.
+     * 构建组织机构或本地商户级别的节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<string,mixed>
@@ -657,7 +657,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build WebSite node.
+     * 构建网站 (WebSite) 根节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<string,mixed>
@@ -685,7 +685,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build current WebPage/CollectionPage/FAQPage node.
+     * 构建当前网页、集合页或 FAQ 页面节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<string,mixed>
@@ -733,7 +733,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build BreadcrumbList node.
+     * 构建面包屑导航列表节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<string,mixed>
@@ -755,7 +755,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build Article/Product/Service/etc node for singular content.
+     * 为详情单页内容构建文章/产品/服务等对应节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<string,mixed>
@@ -816,7 +816,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build ItemList nodes from page modules.
+     * 从页面模块中提取并构建项目列表 (ItemList) 节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<int,array<string,mixed>>
@@ -874,7 +874,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Merge a page-level Schema override into the same graph.
+     * 将页面级自定义 Schema 覆盖配置合并到图谱中。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @param array<string,mixed>            $context Resolved page context.
@@ -902,7 +902,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Apply FAQ override to the existing WebPage node.
+     * 将 FAQ 覆盖配置应用至既有的 WebPage 节点。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @param array<string,mixed>            $context Resolved page context.
@@ -943,7 +943,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build a primary node from a page-level override.
+     * 从页面级覆盖配置中构建主节点。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @param string              $type Schema.org type.
@@ -1077,7 +1077,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Replace a graph node by @id suffix or append when not found.
+     * 按 @id 后缀匹配替换图谱节点，未找到时追加。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @param string                         $suffix ID suffix.
@@ -1102,7 +1102,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Pick the first non-empty override value.
+     * 选取首个非空的覆盖字段值。
      *
      * @param array<string,mixed> $data Override data.
      * @param array<int,string>   $keys Candidate keys.
@@ -1120,7 +1120,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Resolve post time for an override preview.
+     * 解析用于覆盖预览的文章发布时间。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @param string              $kind published|modified.
@@ -1136,7 +1136,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Resolve author name for an override preview.
+     * 解析用于覆盖预览的作者名称。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return string
@@ -1154,7 +1154,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build FAQ Question nodes from override data.
+     * 根据覆盖数据构建 FAQ 问答节点。
      *
      * @param array<string,mixed> $data Override data.
      * @return array<int,array<string,mixed>>
@@ -1185,7 +1185,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build HowToStep nodes from override data.
+     * 根据覆盖数据构建 HowTo 步骤节点。
      *
      * @param array<string,mixed> $data Override data.
      * @return array<int,array<string,mixed>>
@@ -1213,7 +1213,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build a Place node for Event overrides.
+     * 为活动覆盖配置构建地点 (Place) 节点。
      *
      * @param array<string,mixed> $data Override data.
      * @return array<string,mixed>|string
@@ -1240,7 +1240,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Extract FAQ, Product, Service and other item entities from page modules.
+     * 从页面模块中提取 FAQ、产品、服务等实体项目。
      *
      * @param array<int,array<string,mixed>> $modules Page modules.
      * @return array<string,array<int,array<string,mixed>>>
@@ -1310,7 +1310,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Extract FAQ question nodes.
+     * 提取 FAQ 问答节点。
      *
      * @param array<string,mixed> $data Module data.
      * @return array<int,array<string,mixed>>
@@ -1340,7 +1340,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Extract generic item nodes.
+     * 提取通用条目节点。
      *
      * @param array<string,mixed> $data Module data.
      * @param string              $type Schema.org type.
@@ -1403,7 +1403,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Extract LocalBusiness nodes.
+     * 提取本地商户节点。
      *
      * @param array<string,mixed> $data Module data.
      * @return array<int,array<string,mixed>>
@@ -1452,7 +1452,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Extract Review nodes.
+     * 提取客户评价节点。
      *
      * @param array<string,mixed> $data Module data.
      * @return array<int,array<string,mixed>>
@@ -1497,7 +1497,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Enrich custom model nodes with model meta.
+     * 使用模型元数据丰富自定义模型节点。
      *
      * @param array<string,mixed> $node Base node.
      * @param int                 $post_id Post id.
@@ -1576,7 +1576,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Add price data without inventing unavailable offers.
+     * 在不虚构不可用报价的前提下安全附加价格数据。
      *
      * @param array<string,mixed> $node Schema node.
      * @param string              $price Price string.
@@ -1607,7 +1607,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Resolve context post id.
+     * 解析当前上下文的文章 ID。
      *
      * @param int $post_id Optional post id.
      * @return int
@@ -1634,7 +1634,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Resolve industry type from options and context.
+     * 根据配置项与上下文解析当前行业类型。
      *
      * @param array<string,mixed> $options Theme options.
      * @param int                 $post_id Post id.
@@ -1716,7 +1716,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Resolve content model from post type.
+     * 根据文章类型解析对应的内容模型。
      *
      * @param string $post_type Post type.
      * @return array<string,mixed>
@@ -1759,7 +1759,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Normalize content model definition keys.
+     * 规范化内容模型定义的字段键名。
      *
      * @param array<string,mixed> $definition Raw definition.
      * @return array<string,mixed>
@@ -1775,7 +1775,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Resolve primary Schema.org type for post.
+     * 解析文章的主 Schema.org 类型。
      *
      * @param \WP_Post          $post Post object.
      * @param array<int,string> $schema_types Schema type hints.
@@ -1818,7 +1818,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get webpage schema types for current request.
+     * 获取当前请求对应的网页 Schema 类型数组。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @param array<int,array<string,mixed>> $faq_items FAQ entities.
@@ -1848,7 +1848,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build breadcrumb items.
+     * 构建面包屑导航数据项。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<int,array<string,mixed>>
@@ -1926,7 +1926,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Whether a module supports a schema type or keyword.
+     * 判断模块是否支持指定的 Schema 类型或关键词。
      *
      * @param string            $type Module id.
      * @param array<int,string> $schema_types Manifest schema types.
@@ -1966,7 +1966,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get module metadata.
+     * 获取模块元数据。
      *
      * @param string $module_id Module id.
      * @return array<string,mixed>
@@ -1983,7 +1983,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Collect repeater-like lists from module data.
+     * 从模块数据中收集类似中继器结构的列表数据。
      *
      * @param array<string,mixed> $data Module data.
      * @param array<int,string>   $candidate_keys Candidate keys.
@@ -2018,7 +2018,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Normalize list arrays.
+     * 规范化列表数组。
      *
      * @param array<mixed> $list Raw list.
      * @return array<int,array<string,mixed>>
@@ -2035,7 +2035,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * First non-empty text value by keys.
+     * 按键名顺序获取首个非空文本值。
      *
      * @param array<string,mixed> $data Source data.
      * @param array<int,string>   $keys Candidate keys.
@@ -2061,7 +2061,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * First usable URL by keys.
+     * 按键名顺序获取首个可用 URL 地址。
      *
      * @param array<string,mixed> $data Source data.
      * @param array<int,string>   $keys Candidate keys.
@@ -2082,7 +2082,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * First usable image URL by keys.
+     * 按键名顺序获取首个可用图片 URL 地址。
      *
      * @param array<string,mixed> $data Source data.
      * @param array<int,string>   $keys Candidate keys.
@@ -2103,7 +2103,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Normalize URL.
+     * 规范化 URL 地址。
      *
      * @param string $url Raw URL.
      * @return string
@@ -2122,7 +2122,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Normalize image URL.
+     * 规范化图片 URL 地址。
      *
      * @param mixed $value Raw image value.
      * @return string
@@ -2146,7 +2146,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Deduplicate entities by type/name/url.
+     * 按类型/名称/URL 去重实体项。
      *
      * @param array<int,array<string,mixed>> $items Entities.
      * @return array<int,array<string,mixed>>
@@ -2174,7 +2174,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get page modules.
+     * 获取当前页面配置的模块列表。
      *
      * @param int $post_id Post id.
      * @return array<int,array<string,mixed>>
@@ -2193,7 +2193,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get current request title.
+     * 获取当前请求的页面标题。
      *
      * @param int $post_id Post id.
      * @return string
@@ -2205,6 +2205,13 @@ class Industry_Schema_Engine {
                 : get_post_meta( $post_id, '_developer_starter_seo_title', true );
             if ( ! empty( $seo_title ) ) {
                 return (string) $seo_title;
+            }
+
+            if ( is_front_page() || is_home() ) {
+                $default_title = developer_starter_get_option( 'default_title', '' );
+                if ( ! empty( $default_title ) ) {
+                    return (string) $default_title;
+                }
             }
 
             return function_exists( 'developer_starter_get_translated_post_title' )
@@ -2228,7 +2235,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get current request description.
+     * 获取当前请求的页面描述摘要。
      *
      * @param int $post_id Post id.
      * @return string
@@ -2240,6 +2247,13 @@ class Industry_Schema_Engine {
                 : get_post_meta( $post_id, '_developer_starter_seo_description', true );
             if ( ! empty( $seo_desc ) ) {
                 return (string) $seo_desc;
+            }
+
+            if ( is_front_page() || is_home() ) {
+                $default_desc = developer_starter_get_option( 'default_description', '' );
+                if ( ! empty( $default_desc ) ) {
+                    return (string) $default_desc;
+                }
             }
 
             $excerpt = function_exists( 'developer_starter_get_translated_post_excerpt' )
@@ -2273,7 +2287,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get primary image for current request.
+     * 获取当前请求的主图片 URL。
      *
      * @param int $post_id Post id.
      * @return string
@@ -2304,7 +2318,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get canonical URL for current request.
+     * 获取当前请求的规范网址 (Canonical URL)。
      *
      * @param int $post_id Post id.
      * @return string
@@ -2330,7 +2344,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get current URL.
+     * 获取当前页面请求的完整 URL。
      *
      * @param int $post_id Post id.
      * @return string
@@ -2392,7 +2406,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get front-end home URL.
+     * 获取站点前台首页 URL。
      *
      * @return string
      */
@@ -2405,7 +2419,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get logo URL used by schema.
+     * 获取结构化数据使用的站点 Logo URL。
      *
      * @param array<string,mixed> $options Theme options.
      * @return string
@@ -2429,7 +2443,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build compact node status data for the admin JSON-LD preview.
+     * 为后台 JSON-LD 预览面板构建紧凑的节点状态数据。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @return array<string,array<string,mixed>>
@@ -2465,7 +2479,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Resolve the primary type shown in the preview panel.
+     * 解析预览面板中展示的主要类型。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @return string
@@ -2485,7 +2499,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get site-level field warnings for Schema preview.
+     * 获取 Schema 预览界面的站点级必填字段警告。
      *
      * @param array<string,mixed>            $context Resolved page context.
      * @param array<int,array<string,mixed>> $graph Graph nodes.
@@ -2546,7 +2560,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build visual diagnostics for the generated graph.
+     * 为生成的图谱构建可视化诊断指标。
      *
      * @param array<string,mixed>            $context Resolved page context.
      * @param array<int,array<string,mixed>> $graph Graph nodes.
@@ -2597,7 +2611,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get required field warnings for page-level overrides.
+     * 获取页面级覆盖配置的必填字段警告。
      *
      * @param array<string,mixed> $context Resolved page context.
      * @return array<int,array<string,string>>
@@ -2657,7 +2671,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Build one required field warning.
+     * 构建单条必填字段缺失警告。
      *
      * @param string $field Field id.
      * @param string $label Field label.
@@ -2674,7 +2688,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Detect graph conflicts that should be visible in admin.
+     * 检测需要在后台提示的图谱冲突项。
      *
      * @param array<string,mixed>            $context Resolved page context.
      * @param array<int,array<string,mixed>> $graph Graph nodes.
@@ -2705,7 +2719,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Count Schema.org type occurrences recursively.
+     * 递归统计指定 Schema.org 类型的出现频次。
      *
      * @param mixed  $value Value to inspect.
      * @param string $type Target type.
@@ -2737,7 +2751,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Count top-level graph nodes matching any target type.
+     * 统计匹配目标类型的顶层图谱节点数量。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @param array<int,string>              $types Target types.
@@ -2762,7 +2776,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Find a graph node whose @id ends with a known fragment.
+     * 按 @id 后缀锚点查找图谱节点。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @param string                         $suffix ID suffix.
@@ -2784,7 +2798,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Whether the graph contains any of the given Schema.org types.
+     * 检查图谱是否包含指定的任一 Schema.org 类型。
      *
      * @param array<int,array<string,mixed>> $graph Graph nodes.
      * @param array<int,string>              $types Target types.
@@ -2808,7 +2822,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get a readable @type value from a graph node.
+     * 从图谱节点中提取易读的 @type 类型文本。
      *
      * @param array<string,mixed> $node Graph node.
      * @return string
@@ -2825,7 +2839,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get default currency for numeric offers.
+     * 获取数值型报价的默认货币代码。
      *
      * @return string
      */
@@ -2838,7 +2852,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get all theme options.
+     * 获取主题全部配置项。
      *
      * @param array<string,mixed>|null $options Optional options.
      * @return array<string,mixed>
@@ -2854,7 +2868,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get organization schema type by industry.
+     * 根据行业类型获取组织机构的 Schema 类型。
      *
      * @param string $industry Industry type.
      * @return string
@@ -2879,7 +2893,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Whether a post looks like news content.
+     * 判断文章是否属于新闻快讯类内容。
      *
      * @param int $post_id Post id.
      * @return bool
@@ -2901,7 +2915,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Get model meta.
+     * 获取内容模型元数据。
      *
      * @param int    $post_id Post id.
      * @param string $field_id Field id.
@@ -2922,7 +2936,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Remove empty values from graph.
+     * 移除图谱中的空值字段。
      *
      * @param array<int,array<string,mixed>> $graph Raw graph.
      * @return array<int,array<string,mixed>>
@@ -2943,7 +2957,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Recursively remove empty values and strip unsafe markup.
+     * 递归移除空值并清理不安全的 HTML 标记。
      *
      * @param mixed $value Raw value.
      * @return mixed
@@ -2971,7 +2985,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Determine whether an array should remain a JSON list.
+     * 判断数组在编码时是否应保持为 JSON 列表。
      *
      * @param array<mixed> $value Array value.
      * @return bool
@@ -2985,7 +2999,7 @@ class Industry_Schema_Engine {
     }
 
     /**
-     * Filter one graph node.
+     * 过滤单个图谱节点。
      *
      * @param string              $name Node name.
      * @param array<string,mixed> $node Schema node.
@@ -2994,7 +3008,7 @@ class Industry_Schema_Engine {
      */
     private function filter_node( $name, $node, $context ) {
         /**
-         * Filter an individual Schema.org node.
+         * 过滤独立的 Schema.org 结构化数据节点。
          *
          * @param array<string,mixed> $node Schema node.
          * @param string              $name Node name.

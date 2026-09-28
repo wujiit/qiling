@@ -1,6 +1,6 @@
 <?php
 /**
- * Related posts for single post pages.
+ * 文章详情页相关推荐文章模板。
  *
  * @package Developer_Starter
  */

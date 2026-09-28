@@ -1,6 +1,6 @@
 <?php
 /**
- * Third-party code manager for international basics.
+ * 国际化基础第三方代码管理器。
  *
  * @package Developer_Starter
  */
@@ -12,15 +12,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Outputs lightweight third-party snippets configured in the International tab.
+ * 输出在国际化设置面板中配置的轻量级第三方代码片段。
  *
- * This class only reads the new international_* options. It intentionally does
- * not replace legacy Baidu analytics, custom JS, captcha, SEO, or filing output.
+ * 此类仅读取 international_* 相关的新增配置，
+ * 不替代百度统计、自定义 JS、验证码、SEO 或备案号输出等功能。
  */
 class Third_Party_Code_Manager {
 
     /**
-     * Master switch option.
+     * 全局总开关配置项。
      */
     const OPTION_ENABLE = 'international_third_party_code_enable';
 
@@ -33,7 +33,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Get third-party code groups.
+     * 获取第三方代码分组配置。
      *
      * @return array<string,array<string,string>>
      */
@@ -88,7 +88,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Render code groups assigned to wp_head.
+     * 渲染挂载至 wp_head 的代码组。
      *
      * @return void
      */
@@ -97,7 +97,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Render code groups assigned to wp_footer.
+     * 渲染挂载至 wp_footer 的代码组。
      *
      * @return void
      */
@@ -106,7 +106,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Render configured code groups for a hook position.
+     * 在指定钩子位置渲染配置的代码组。
      *
      * @param string $position Hook position: head or footer.
      * @return void
@@ -180,7 +180,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Render a non-executing template for snippets waiting on Cookie consent.
+     * 为等待 Cookie 授权的代码片段渲染非直接执行的 template 标签。
      *
      * @param string $group_id Code group id.
      * @param string $position Target output position.
@@ -197,7 +197,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Resolve the consent category for a code group.
+     * 解析代码组对应的授权分类。
      *
      * @param string              $group_id Code group id.
      * @param array<string,mixed> $group Group config.
@@ -216,7 +216,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Map legacy consent-only code groups into non-essential categories.
+     * 将旧版仅需同意的代码组映射到非必要分类中。
      *
      * @param string $group_id Code group id.
      * @param string $default Default category.
@@ -235,7 +235,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Whether a category needs visitor consent before execution.
+     * 检查分类是否需要在执行前获得访问者授权。
      *
      * @param string $category Category key.
      * @return bool
@@ -245,7 +245,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Normalize a consent category key.
+     * 规范化授权分类键名。
      *
      * @param string $category Raw category.
      * @return string
@@ -262,7 +262,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Normalize the output position option.
+     * 规范化输出位置选项。
      *
      * @param mixed $position Raw position.
      * @return string
@@ -272,7 +272,7 @@ class Third_Party_Code_Manager {
     }
 
     /**
-     * Read a theme option safely.
+     * 安全读取主题配置选项。
      *
      * @param string $key Option key.
      * @param mixed  $default Default value.

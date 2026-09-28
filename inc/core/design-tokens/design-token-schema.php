@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for design token schema.
+ * 设计令牌模式定义数据配置。
  *
  * @package Developer_Starter
  */

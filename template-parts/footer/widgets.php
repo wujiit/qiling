@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer widget columns.
+ * 页脚小工具列模板。
  *
  * @package Developer_Starter
  */

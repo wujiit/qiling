@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme contact form helpers.
+ * 主题联系表单辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

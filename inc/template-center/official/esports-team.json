@@ -1,0 +1,362 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 2,
+  "title": "电竞战队俱乐部官网",
+  "page_template": "templates/template-esports-team.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#8b5cf6",
+      "accent": "#06b6d4",
+      "background": "#090d16",
+      "text": "#f8fafc"
+    },
+    "header": {
+      "transparent_text": "#ffffff"
+    },
+    "footer": {
+      "background": "#0b0f19",
+      "text": "rgba(255,255,255,0.85)",
+      "friend_background": "#080c14",
+      "friend_text": "rgba(255,255,255,0.65)",
+      "bottom_background": "#05080f",
+      "bottom_text": "rgba(255,255,255,0.55)"
+    }
+  },
+  "footer": {
+    "mode": "page_skin",
+    "wave": "off",
+    "preset": "technology_company",
+    "inherit_skin_colors": true
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "esports-team",
+    "label": "电竞战队俱乐部官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "esports",
+    "industry_label": "电竞赛事",
+    "scenario": "战队阵容、赛程战报、荣誉殿堂、周边商城",
+    "description": "适合职业电竞俱乐部、战队公会与电竞赛事运营机构，内置全屏视频宣传、即时战报、荣誉数据、主力选手阵容、赛程历程与正品商城。",
+    "badges": [
+      "电竞赛事",
+      "战队矩阵",
+      "赛程周边"
+    ],
+    "order": 470,
+    "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "电竞战队俱乐部官网模板 - 职业战队与赛事周边",
+    "description": "专为职业电竞俱乐部打造的高能暗黑风官网页面，包含全屏高光视频、主力队员名单、赛程安排、战力榜、正品周边与粉丝社群。",
+    "keywords": "电竞俱乐部官网,电竞战队官网,职业选手名单,电竞赛程,电竞周边,启灵电竞",
+    "og_title": "电竞战队俱乐部官网",
+    "og_description": "暗黑机甲赛博风电竞职业俱乐部官网模板。"
+  },
+  "modules": [
+    {
+      "type": "fullscreen_video",
+      "data": {
+        "fsv_video_url": "",
+        "fsv_overlay_opacity": "0.45",
+        "fsv_title": "追逐巅峰荣耀 · <strong>共赴传奇之战</strong>",
+        "fsv_subtitle": "启灵电子竞技俱乐部（QILING ESPORTS）· 2026 赛季出征阵容与全球赛程公布",
+        "fsv_glow_color": "#8b5cf6",
+        "fsv_glow_intensity": "high",
+        "fsv_nav_items": [
+          {
+            "item_label": "选手名单",
+            "item_icon": "⚡",
+            "item_type": "link",
+            "item_link": "#roster"
+          },
+          {
+            "item_label": "赛程安排",
+            "item_icon": "🏆",
+            "item_type": "link",
+            "item_link": "#schedule"
+          },
+          {
+            "item_label": "战队商城",
+            "item_icon": "🛒",
+            "item_type": "link",
+            "item_link": "#merch"
+          },
+          {
+            "item_label": "青训招募",
+            "item_icon": "🚀",
+            "item_type": "link",
+            "item_link": "#recruit"
+          }
+        ],
+        "fsv_show_controls": "1"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "赛场实力与荣誉见证",
+        "stats_subtitle": "以纯粹竞技精神，书写属于我们的冠军时代",
+        "stats_bg_type": "color",
+        "stats_bg_color": "transparent",
+        "stats_title_color": "#ffffff",
+        "stats_items": [
+          {
+            "number": "12+",
+            "label": "座职业联赛总冠军奖杯",
+            "number_color": "#a78bfa",
+            "label_color": "#e2e8f0"
+          },
+          {
+            "number": "85.6%",
+            "label": "历史常规赛累计胜率",
+            "number_color": "#38bdf8",
+            "label_color": "#e2e8f0"
+          },
+          {
+            "number": "6",
+            "label": "大顶级职业电竞竞技分部",
+            "number_color": "#a78bfa",
+            "label_color": "#e2e8f0"
+          },
+          {
+            "number": "500W+",
+            "label": "全球注册粉丝俱乐部成员",
+            "number_color": "#38bdf8",
+            "label_color": "#e2e8f0"
+          }
+        ]
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "主力选手阵容 (Roster)",
+        "team_subtitle": "顶尖操作、极致默契与钢铁意志凝聚的冠军之师",
+        "team_title_color": "#ffffff",
+        "team_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "team_columns": "4",
+        "module_bg_type": "color",
+        "module_bg_color": "transparent",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=600&q=80",
+            "name": "Sky / 陆云天",
+            "position": "队长 · 首发中路 (MID)",
+            "desc": "场均 KDA 6.8，擅长刺客突进与节奏掌控，联赛两届常规赛 MVP。",
+            "social": "#"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+            "name": "Viper / 林彻",
+            "position": "首发下路核心 (ADC)",
+            "desc": "反应速度 140ms，后期团战终极输出核心，团战伤害转化率达 185%。",
+            "social": "#"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+            "name": "Ghost / 叶寻",
+            "position": "首发野区游走 (JUG)",
+            "desc": "极具侵略性的野区开团手，野区控图率与一血参与率均位列赛区前茅。",
+            "social": "#"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=600&q=80",
+            "name": "Titan / 赵烈",
+            "position": "首发对抗路磐石 (TOP)",
+            "desc": "团战铜墙铁壁，兼备重装坦克与单带战士绝活，抗伤占比高达 34%。",
+            "social": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "timeline",
+      "data": {
+        "timeline_title": "赛季征程与焦点对决",
+        "timeline_title_color": "#ffffff",
+        "module_bg_color": "transparent",
+        "timeline_items": [
+          {
+            "year": "2026.03.15",
+            "title": "春季赛常规赛揭幕战 vs FLG",
+            "desc": "比分 2:0 完胜。Sky 选出招牌阿卡丽斩获全场最高击杀，赢得开门红。"
+          },
+          {
+            "year": "2026.04.28",
+            "title": "季后赛半决赛 BO5 vs T1G",
+            "desc": "鏖战五局 3:2 逆转晋级！决胜局远古巨龙团战 Viper 豪取四杀锁定胜局。"
+          },
+          {
+            "year": "2026.05.10",
+            "title": "春季总决赛巅峰之夜 vs NOVA",
+            "desc": "以 3:1 绝对优势捧起冠军银龙奖杯，成功斩获全球季中冠军赛门票！"
+          },
+          {
+            "year": "2026.07.01",
+            "title": "MSI 全球季中冠军赛小组赛",
+            "desc": "即将代表赛区出征伦敦，敬请锁定官方直播间为启灵战队助威！"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "title": "俱乐部全竞技分部",
+        "subtitle": "多项目协同作战，构建全方位职业电竞生态",
+        "title_color": "#ffffff",
+        "subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "fl_tabs_bg": "rgba(255, 255, 255, 0.08)",
+        "fl_tab_text": "rgba(255, 255, 255, 0.75)",
+        "fl_tab_active_bg": "#7c3aed",
+        "fl_tab_active_text": "#ffffff",
+        "fl_card_bg": "#111726",
+        "fl_card_border": "rgba(255, 255, 255, 0.1)",
+        "fl_item_title": "#ffffff",
+        "fl_item_desc": "rgba(248, 250, 252, 0.7)",
+        "fl_icon_bg": "rgba(124, 58, 237, 0.18)",
+        "fl_icon_color": "#a78bfa",
+        "module_bg_color": "transparent",
+        "columns": "3",
+        "tabs": [
+          {
+            "tab_id": "lol",
+            "tab_title": "英雄联盟分部",
+            "features": "⚔️ | 一队 LPL 顶级阵容 | 征战顶级联赛，连续四年晋级全球总决赛并斩获冠军殊荣。\n🛡️ | LDL 发展联赛青训队 | 标准化青训造血体系，为顶级赛事源源不断输送新星选手。\n📊 | 专业数据分析与教练组 | 包含韩国外教、战术分析师与心理理疗团队，全方位保障竞技状态。"
+          },
+          {
+            "tab_id": "val",
+            "tab_title": "无畏契约分部",
+            "features": "🎯 | VCT 职业联赛先锋队 | 以精准枪法与协同战术著称，赛区大师赛冠军队伍。\n🔥 | 战术枪法研发室 | 全系搭载 360Hz 顶级外设，专属特训地图全天候数据记录。\n🌐 | 国际邀请赛常客 | 屡次代表赛区出战东京大师赛与首尔全球冠军赛。"
+          },
+          {
+            "tab_id": "honor",
+            "tab_title": "移动电竞分部",
+            "features": "📱 | KPL 席位战队 | 快节奏抱团与野区运营打法，赛区胜率名列前茅。\n👑 | 全国挑战者杯四强 | 新生代移动电竞主力军，拥有极高人气与粉丝基础。\n🌟 | 电竞创作者孵化中心 | 战队退役元老与人气主播矩阵，全网短视频曝光超百亿。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "video",
+      "data": {
+        "video_title": "赛场高光与队内纪录片",
+        "video_subtitle": "聆听队内语音 Mic Check，感受最真实的赛场搏杀与热血团魂",
+        "video_title_color": "#ffffff",
+        "video_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "video_url": "",
+        "video_bg_color": "transparent",
+        "video_poster": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "战队正品周边与应援装备",
+        "products_subtitle": "OFFICIAL MERCHANDISE",
+        "module_bg_color": "transparent",
+        "columns": "3",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+            "title": "2026 赛季选手同款主场出征队服",
+            "desc": "吸汗速干透气面料，立体修身剪裁，胸前烫金冠军徽章。",
+            "specs": "尺码：S / M / L / XL / 2XL",
+            "price": "¥299",
+            "btn_text": "立即选购",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
+            "title": "启灵联名 RGB 磁轴电竞机械键盘",
+            "desc": "RT 快速触发，8K 回报率，战队专属客制化紫青键帽配色。",
+            "specs": "轴体：磁力霍尔轴 | 键位：75% 配列",
+            "price": "¥699",
+            "btn_text": "立即选购",
+            "btn_link": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+            "title": "夺冠纪念微操控超大电竞鼠标垫",
+            "desc": "粗面微绒乱纹纹理，包边高密度锁线，底面天然防滑橡胶。",
+            "specs": "尺寸：900mm x 400mm x 4mm",
+            "price": "¥99",
+            "btn_text": "立即选购",
+            "btn_link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "clients",
+      "data": {
+        "clients_title": "赞助商与品牌战略伙伴",
+        "clients_subtitle": "感谢全球顶尖品牌对启灵电竞的鼎力支持与携手前行",
+        "clients_title_color": "#ffffff",
+        "clients_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "clients_card_bg": "rgba(255, 255, 255, 0.04)",
+        "clients_bg_color": "transparent",
+        "clients_columns": "6",
+        "clients_auto_scroll": "1",
+        "clients_scroll_speed": 25,
+        "clients_items": [
+          {
+            "name": "NVIDIA GeForce",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "Logitech G",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "Intel Core",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "Secretlab",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "Razer",
+            "logo": "",
+            "link": "#"
+          },
+          {
+            "name": "Red Bull",
+            "logo": "",
+            "link": "#"
+          }
+        ],
+        "clients_card_text_color": "#ffffff",
+        "clients_show_name": "1"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "加入启灵电竞 · 开启你的职业征途",
+        "cta_subtitle": "启灵青训营常年面向全国天梯顶尖高玩开放试训通道，粉丝俱乐部专享选手独家签名照与赛事内场赠票！",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.9)",
+        "cta_button_text": "投递试训简历",
+        "cta_button_url": "#recruit",
+        "cta_button_bg_color": "#ffffff",
+        "cta_button_text_color": "#7c3aed",
+        "cta_button_hover_bg_color": "#f1f5f9",
+        "cta_button_hover_text_color": "#6d28d9",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #18112e 0%, #7c3aed 50%, #06b6d4 100%)"
+      }
+    }
+  ]
+}

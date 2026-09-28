@@ -34,7 +34,7 @@ class Notification_Manager {
         add_action( 'after_switch_theme', array( $this, 'install_table' ), 10, 0 );
         add_action( 'admin_init', array( $this, 'maybe_create_table' ) );
 
-        // Hook for third-party plugins
+        // 供第三方插件扩展的挂钩点
         add_action( 'developer_starter_add_notification', array( $this, 'handle_add_notification' ), 10, 4 );
     }
 

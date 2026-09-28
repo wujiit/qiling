@@ -1,7 +1,7 @@
 /**
- * Search enhance runtime.
+ * 搜索增强交互运行时。
  *
- * Handles local search history and Ajax autocomplete result cards.
+ * 负责本地搜索历史记录管理与 Ajax 自动补全推荐卡片渲染。
  */
 (function (window, document) {
     'use strict';
@@ -72,7 +72,7 @@
                         localStorage.setItem(storageKey, JSON.stringify(items.slice(0, maxHistory)));
                     }
                 } catch (error) {
-                    // Search still works when storage is blocked.
+                    // 本地存储不可用时搜索仍可正常工作。
                 }
             }
 
@@ -469,8 +469,7 @@
                 var modeField = form.querySelector('[name="qiling_search_mode"]');
                 var mode = modeField ? String(modeField.value || 'all') : 'all';
 
-                // Mode-specific suggestions require their own query adapters. Until then,
-                // avoid showing comprehensive suggestions in article/video-only forms.
+                // 专属模式建议需由独立适配器提供，此处避免在纯文章/视频表单中展示全局建议。
                 if (!autocompleteEnabled || mode !== 'all' || term.length < minChars) {
                     renderHistorySuggestions(form, input);
                     return;

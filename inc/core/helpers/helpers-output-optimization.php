@@ -1,6 +1,6 @@
 <?php
 /**
- * Output optimization helpers split from functions.php.
+ * 从 functions.php 拆分出的页面输出优化辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

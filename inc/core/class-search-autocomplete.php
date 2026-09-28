@@ -1,6 +1,6 @@
 <?php
 /**
- * Ajax search autocomplete service.
+ * Ajax 搜索自动补全服务。
  *
  * @package Developer_Starter
  */
@@ -36,7 +36,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Register hooks.
+     * 注册钩子。
      *
      * @return void
      */
@@ -48,7 +48,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Client config exposed to frontend scripts.
+     * 暴露给前端脚本的客户端配置。
      *
      * @return array<string,mixed>
      */
@@ -67,7 +67,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Whether autocomplete is enabled.
+     * 检测自动补全功能是否开启。
      *
      * @return bool
      */
@@ -133,7 +133,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Handle the public Ajax request.
+     * 处理公共 Ajax 自动补全请求。
      *
      * @return void
      */
@@ -195,7 +195,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Search WHERE for autocomplete queries.
+     * 构建自动补全查询的 WHERE 条件。
      *
      * @param string    $search SQL fragment.
      * @param \WP_Query $query Query.
@@ -259,7 +259,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Weighted ordering for autocomplete queries.
+     * 为自动补全搜索结果应用加权排序规则。
      *
      * @param array<string,string> $clauses SQL clauses.
      * @param \WP_Query            $query Query.
@@ -320,7 +320,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Build response payload.
+     * 构建接口响应数据载荷。
      *
      * @param string $term Search term.
      * @param string $scope Search scope.
@@ -368,7 +368,7 @@ class Search_Autocomplete {
     }
 
     /**
-     * Format a result item.
+     * 格式化单个搜索结果条目。
      *
      * @param \WP_Post $post Post.
      * @param string   $term Search term.

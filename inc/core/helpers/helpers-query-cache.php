@@ -1,6 +1,6 @@
 <?php
 /**
- * Query and fragment cache helpers split from functions.php.
+ * 从 functions.php 拆分出的查询与片段缓存辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

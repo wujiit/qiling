@@ -1,6 +1,6 @@
 <?php
 /**
- * International typography engine.
+ * 国际化多语言排版字体引擎。
  *
  * @package Developer_Starter
  */
@@ -12,17 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Adds lightweight locale-aware typography helpers when explicitly enabled.
+ * 显式启用时为多语言环境提供轻量级字型排版支持。
  */
 class Typography_Engine {
 
     /**
-     * Enable option.
+     * 开关配置项。
      */
     const OPTION_ENABLE = 'international_typography_enable';
 
     /**
-     * Mode option.
+     * 排版模式配置项。
      */
     const OPTION_MODE = 'international_typography_mode';
 
@@ -35,7 +35,7 @@ class Typography_Engine {
     }
 
     /**
-     * Whether the engine is enabled.
+     * 排版引擎是否启用。
      *
      * @return bool
      */
@@ -44,7 +44,7 @@ class Typography_Engine {
     }
 
     /**
-     * Add typography classes to body.
+     * 向 body 添加排版辅助类名。
      *
      * @param array<int,string> $classes Body classes.
      * @return array<int,string>
@@ -71,7 +71,7 @@ class Typography_Engine {
     }
 
     /**
-     * Enqueue the frontend typography stylesheet.
+     * 加载前台字体排版样式表。
      *
      * @return void
      */
@@ -92,7 +92,7 @@ class Typography_Engine {
     }
 
     /**
-     * Get configured typography mode.
+     * 获取配置的排版模式。
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class Typography_Engine {
     }
 
     /**
-     * Resolve the effective mode for auto configuration.
+     * 自动配置模式下解析当前生效的排版模式。
      *
      * @return string zh, en, ja, ko, or rtl.
      */
@@ -138,7 +138,7 @@ class Typography_Engine {
     }
 
     /**
-     * Map a language or locale string to typography mode.
+     * 将语言或地区编码映射为对应的排版模式。
      *
      * @param string $language Language code or locale.
      * @return string
@@ -174,7 +174,7 @@ class Typography_Engine {
     }
 
     /**
-     * Get direction for typography mode.
+     * 获取排版模式的文字书写方向（LTR/RTL）。
      *
      * @param string $mode Typography mode.
      * @return string
@@ -184,7 +184,7 @@ class Typography_Engine {
     }
 
     /**
-     * Get current locale.
+     * 获取当前语言地区编码。
      *
      * @return string
      */
@@ -197,7 +197,7 @@ class Typography_Engine {
     }
 
     /**
-     * Read a theme option safely.
+     * 安全读取主题配置选项。
      *
      * @param string $key Option key.
      * @param mixed  $default Default value.

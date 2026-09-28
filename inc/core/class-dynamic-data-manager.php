@@ -1,9 +1,9 @@
 <?php
 /**
- * Dynamic data manager.
+ * 动态数据绑定管理器。
  *
  * Enables the `_ds_dynamic` module data protocol and resolves basic WordPress
- * context values before modules render.
+ * 在模块渲染前注入动态上下文。
  *
  * @package Developer_Starter
  */
@@ -19,21 +19,21 @@ class Dynamic_Data_Manager {
     const DYNAMIC_KEY = '_ds_dynamic';
 
     /**
-     * Singleton instance.
+     * 单例实例。
      *
      * @var Dynamic_Data_Manager|null
      */
     private static $instance = null;
 
     /**
-     * Temporary render contexts, used by builder AJAX previews.
+     * 供页面构建器 AJAX 预览使用的临时渲染上下文。
      *
      * @var array<int,array<string,mixed>>
      */
     private $context_stack = array();
 
     /**
-     * Get singleton instance.
+     * 获取单例实例。
      *
      * @return Dynamic_Data_Manager
      */
@@ -46,14 +46,14 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Constructor.
+     * 构造函数.
      */
     private function __construct() {
         add_filter( 'developer_starter_module_data', array( $this, 'resolve_module_data' ), 20, 3 );
     }
 
     /**
-     * Dynamic data source registry for module bindings.
+     * 模块绑定的动态数据源注册表。
      *
      * @return array<string,array<string,string>>
      */
@@ -239,7 +239,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Payload exposed to the frontend builder.
+     * 暴露给前端页面构建器的数据载荷。
      *
      * @return array<string,mixed>
      */
@@ -287,7 +287,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Add a temporary post context for the current render operation.
+     * 为当前渲染操作添加临时的文章上下文。
      *
      * @param int $post_id Post ID.
      * @return void
@@ -297,7 +297,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Add a temporary loop item context for Query Loop rendering.
+     * 为查询循环渲染添加临时的循环项上下文。
      *
      * @param int $post_id Post ID.
      * @return void
@@ -309,7 +309,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Remove the latest temporary context.
+     * 弹出并移除最近添加的临时动态上下文。
      *
      * @return void
      */
@@ -318,7 +318,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Resolve dynamic bindings in module data before render.
+     * 在渲染前解析模块数据中的动态绑定数据。
      *
      * @param mixed  $data      Module data.
      * @param string $module_id Module ID.
@@ -394,7 +394,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Normalize source IDs while preserving the dot namespace.
+     * 规范化数据源 ID 并保留点号命名空间。
      *
      * @param mixed $source Source ID.
      * @return string
@@ -411,7 +411,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get current dynamic context.
+     * 获取当前请求的动态数据上下文。
      *
      * @return array<string,mixed>
      */
@@ -427,7 +427,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Build context from the current query.
+     * 根据当前全局查询构建动态上下文。
      *
      * @return array<string,mixed>
      */
@@ -484,7 +484,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Build context from a post ID.
+     * 根据文章 ID 构建动态上下文。
      *
      * @param int $post_id Post ID.
      * @return array<string,mixed>
@@ -496,7 +496,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Resolve a single source from context.
+     * 从当前上下文中解析单个动态数据源。
      *
      * @param string              $source  Source ID.
      * @param array<string,mixed> $context Dynamic context.
@@ -614,7 +614,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Check whether a builder field type should expose dynamic binding.
+     * 检查构建器字段类型是否支持动态数据绑定。
      *
      * @param string $field_type Field type.
      * @return bool
@@ -633,7 +633,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Build context payload.
+     * 构建动态上下文数据载荷。
      *
      * @param \WP_Post|null $post Post object.
      * @param \WP_Term|null $term Term object.
@@ -656,7 +656,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get current context term, optionally constrained to a taxonomy.
+     * 获取当前上下文中的 Term 对象（可限制分类法）。
      *
      * @param array<string,mixed> $context  Context.
      * @param string              $taxonomy Taxonomy.
@@ -679,7 +679,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get first term assigned to a post.
+     * 获取文章所属的首个分类或标签。
      *
      * @param int    $post_id  Post ID.
      * @param string $taxonomy Taxonomy.
@@ -696,7 +696,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get comma-separated term names for a post.
+     * 获取文章所属分类或标签的逗号分隔名称。
      *
      * @param int    $post_id  Post ID.
      * @param string $taxonomy Taxonomy.
@@ -719,7 +719,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get term names from the preferred taxonomy, falling back to public taxonomies.
+     * 从优先分类法获取分类名称列表，回退至公开分类法。
      *
      * @param int    $post_id              Post ID.
      * @param string $preferred_taxonomy   Preferred taxonomy.
@@ -780,7 +780,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get a plain-text excerpt.
+     * 获取纯文本摘要内容。
      *
      * @param \WP_Post $post Post.
      * @return string
@@ -794,7 +794,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get filtered post content while preserving global post state.
+     * 在保护全局文章状态的同时获取经过滤的正文。
      *
      * @param \WP_Post $post Post.
      * @return string
@@ -818,7 +818,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Resolve featured image URL, respecting the theme's custom featured URL.
+     * 解析特色图片 URL（支持主题自定义特色图地址）。
      *
      * @param int $post_id Post ID.
      * @return string
@@ -850,7 +850,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Get term description as plain text.
+     * 获取分类或标签的纯文本描述。
      *
      * @param \WP_Term $term Term.
      * @return string
@@ -865,7 +865,7 @@ class Dynamic_Data_Manager {
     }
 
     /**
-     * Sanitize a dynamic binding target field ID.
+     * 清理动态绑定的目标字段标识 ID。
      *
      * @param mixed $field_id Field ID.
      * @return string

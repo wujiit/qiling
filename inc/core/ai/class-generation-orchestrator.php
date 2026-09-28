@@ -1,6 +1,6 @@
 <?php
 /**
- * Generation orchestrator.
+ * AI 生成调度编排器。
  *
  * @package Developer_Starter
  */
@@ -486,7 +486,7 @@ class Generation_Orchestrator {
     }
 
     /**
-     * Localize an existing page package while preserving module structure.
+     * 在保留模块结构的同时本地化现有页面包。
      *
      * @param array<string,mixed> $args Request args.
      * @return array<string,mixed>|\WP_Error
@@ -620,7 +620,7 @@ class Generation_Orchestrator {
     }
 
     /**
-     * Batch localize existing pages/posts through the same page-package path.
+     * 通过相同页面包路径批量本地化现有文章/页面。
      *
      * @param array<string,mixed> $args Request args.
      * @return array<string,mixed>|\WP_Error
@@ -716,7 +716,7 @@ class Generation_Orchestrator {
     }
 
     /**
-     * Localize a post/article/FAQ without Builder modules.
+     * 本地化无构建器模块的文章/FAQ。
      *
      * @param array<string,mixed> $args Request args.
      * @return array<string,mixed>|\WP_Error
@@ -820,7 +820,7 @@ class Generation_Orchestrator {
     }
 
     /**
-     * Normalize batch post IDs.
+     * 规范化批量文章 ID。
      *
      * @param mixed $value Raw value.
      * @return array<int,int>
@@ -839,7 +839,7 @@ class Generation_Orchestrator {
     }
 
     /**
-     * Query content IDs for batch localization.
+     * 查询用于批量本地化的内容 ID。
      *
      * @param array<string,mixed> $localization Localization args.
      * @return array<int,int>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Comparison Module - 比较表格
+ * 方案对比表格模块
  *
  * @package Developer_Starter
  */
@@ -119,6 +119,11 @@ class Comparison_Module extends Module_Base {
                     array( 'id' => 'name', 'label' => __( '产品名称', 'developer-starter' ), 'type' => 'text' ),
                     array( 'id' => 'values', 'label' => __( '特性值 (每行一个，对应特性列表)', 'developer-starter' ), 'type' => 'textarea', 'desc' => __( '使用 ✓ 或 ✗ 表示支持/不支持', 'developer-starter' ) ),
                 ),
+                'default_items' => array(
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'developer-starter' ), 'values' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓\n✗\n邮件支持\n✗\n✗\n✗", "✓\n✗\nEmail support\n✗\n✗\n✗" ) : __( "✓\n✗\n邮件支持\n✗\n✗\n✗", 'developer-starter' ) ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业版', 'Professional' ) : __( '专业版', 'developer-starter' ), 'values' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓\n✓\n在线客服\n✓\n✓\n✗", "✓\n✓\nLive chat support\n✓\n✓\n✗" ) : __( "✓\n✓\n在线客服\n✓\n✓\n✗", 'developer-starter' ) ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '企业版', 'Enterprise' ) : __( '企业版', 'developer-starter' ), 'values' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓\n✓\n7×24专属\n✓\n✓\n✓", "✓\n✓\nDedicated 24/7 support\n✓\n✓\n✓" ) : __( "✓\n✓\n7×24专属\n✓\n✓\n✓", 'developer-starter' ) ),
+                ),
             ),
             array(
                 'id' => 'comparison_highlight',
@@ -151,7 +156,7 @@ class Comparison_Module extends Module_Base {
                 'description' => __( '支持十六进制、rgb 或 rgba 颜色。', 'developer-starter' ),
             ),
             
-            // Background Settings
+            // 背景配置
             array(
                 'id' => 'module_bg_type',
                 'label' => __( '背景类型', 'developer-starter' ),
@@ -253,7 +258,7 @@ class Comparison_Module extends Module_Base {
         }
         
         // 默认产品数据
-        if ( empty( $products ) ) {
+        if ( empty( $products ) && ! isset( $data['comparison_products'] ) ) {
             $products = array(
                 array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'developer-starter' ), 'values' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓\n✗\n邮件支持\n✗\n✗\n✗", "✓\n✗\nEmail support\n✗\n✗\n✗" ) : __( "✓\n✗\n邮件支持\n✗\n✗\n✗", 'developer-starter' ) ),
                 array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业版', 'Professional' ) : __( '专业版', 'developer-starter' ), 'values' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓\n✓\n在线客服\n✓\n✓\n✗", "✓\n✓\nLive chat support\n✓\n✓\n✗" ) : __( "✓\n✓\n在线客服\n✓\n✓\n✗", 'developer-starter' ) ),
@@ -261,7 +266,7 @@ class Comparison_Module extends Module_Base {
             );
         }
         
-        // Typography Logic
+        // 字体排版处理
         $title_size = isset( $data['comparison_title_size'] ) ? $data['comparison_title_size'] : '';
         $title_color = isset( $data['comparison_title_color'] ) ? $data['comparison_title_color'] : '';
         $subtitle_size = isset( $data['comparison_subtitle_size'] ) ? $data['comparison_subtitle_size'] : '';
@@ -275,7 +280,7 @@ class Comparison_Module extends Module_Base {
         if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
         if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";
         
-        // Background Logic
+        // 背景样式处理
         $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
         $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
         $bg_image = isset( $data['module_bg_image'] ) ? $data['module_bg_image'] : '';

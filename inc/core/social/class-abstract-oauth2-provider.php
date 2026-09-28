@@ -1,6 +1,6 @@
 <?php
 /**
- * Base helpers for OAuth2 social login providers.
+ * OAuth2 社交登录提供者基础辅助类。
  *
  * @package Developer_Starter
  */
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 abstract class Abstract_OAuth2_Provider implements Provider_Interface {
 
     /**
-     * Read a theme option.
+     * 读取主题配置选项。
      *
      * @param string $key Option key.
      * @param mixed  $default Default value.
@@ -27,7 +27,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
     }
 
     /**
-     * Sanitize a scalar option.
+     * 清理标量配置值。
      *
      * @param string $key Option key.
      * @return string
@@ -37,7 +37,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
     }
 
     /**
-     * Build the shared admin-post callback URL.
+     * 构建统一的 admin-post 回调 URL。
      *
      * @return string
      */
@@ -52,7 +52,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
     }
 
     /**
-     * Perform a remote GET request and decode JSON, query string, or QQ JSONP payloads.
+     * 执行远程 GET 请求并解析 JSON、查询字符串或 QQ JSONP 载荷。
      *
      * @param string $url Request URL.
      * @return array<string,mixed>|\WP_Error
@@ -62,7 +62,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
     }
 
     /**
-     * Perform a remote GET request with custom headers.
+     * 携带自定义标头执行远程 GET 请求。
      *
      * @param string               $url Request URL.
      * @param array<string,string> $headers Request headers.
@@ -90,7 +90,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
     }
 
     /**
-     * Perform a remote POST request and decode the provider response.
+     * 执行远程 POST 请求并解析提供者响应。
      *
      * @param string              $url Request URL.
      * @param array<string,mixed> $args wp_remote_post arguments.
@@ -122,7 +122,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
     }
 
     /**
-     * Decode a WordPress HTTP API response.
+     * 解析 WordPress HTTP API 响应结果。
      *
      * @param array<string,mixed>|\WP_Error $response HTTP response.
      * @return array<string,mixed>|\WP_Error
@@ -165,7 +165,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
     }
 
     /**
-     * Normalize a profile array.
+     * 规范化社交用户信息数组。
      *
      * @param array<string,mixed> $profile Raw profile.
      * @return array<string,mixed>

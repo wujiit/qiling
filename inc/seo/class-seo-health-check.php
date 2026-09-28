@@ -1,6 +1,6 @@
 <?php
 /**
- * Lightweight SEO health checks.
+ * 轻量级 SEO 健康度检查工具类。
  *
  * @package Developer_Starter
  */
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Provides temporary, low-cost SEO diagnostics.
+ * 提供按需运行的低负载 SEO 诊断与评分支持。
  */
 class SEO_Health_Check {
     const SNAPSHOT_TRANSIENT = 'developer_starter_seo_health_snapshot';
@@ -23,7 +23,7 @@ class SEO_Health_Check {
     const MAX_ISSUES_BUCKET  = 100;
 
     /**
-     * Get the latest cached scan snapshot.
+     * 获取最近一次缓存的扫描快照数据。
      *
      * @return array<string,mixed>
      */
@@ -33,7 +33,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Clear cached SEO health data.
+     * 清理已缓存的 SEO 健康检查数据。
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Run a bounded manual scan and cache only the latest compact snapshot.
+     * 执行有限范围的轻量手动扫描，并仅缓存最新的紧凑快照。
      *
      * @param int $limit Max posts/pages to scan in this run.
      * @return array<string,mixed>
@@ -117,7 +117,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Build content-level score for a post/page edit screen.
+     * 在文章/页面编辑界面构建内容级 SEO 评分。
      *
      * @param int $post_id Post ID.
      * @return array<string,mixed>
@@ -194,7 +194,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Get a small sitemap diagnostics snapshot.
+     * 获取精简的 Sitemap 诊断快照。
      *
      * @return array<string,mixed>
      */
@@ -241,7 +241,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Build a robots.txt preview without writing a file.
+     * 生成 robots.txt 规则预览（不写物理文件）。
      *
      * @return array<string,mixed>
      */
@@ -277,7 +277,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Split scan budget between posts and pages.
+     * 合理分配文章与页面的扫描配额。
      *
      * @param int $limit Total limit.
      * @return array<string,int>
@@ -291,7 +291,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Query public post IDs with minimal data loading.
+     * 以最小资源开销查询公开文章 ID 列表。
      *
      * @param string $post_type Post type.
      * @param int    $limit Limit.
@@ -316,7 +316,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Query category terms for diagnostics.
+     * 查询分类目录用于诊断。
      *
      * @param int $limit Limit.
      * @return \WP_Term[]
@@ -336,7 +336,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Build a compact post record.
+     * 构建精简的文章诊断记录。
      *
      * @param int    $post_id Post ID.
      * @param string $post_type Post type.
@@ -360,7 +360,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Build a compact term record.
+     * 构建精简的分类词条记录。
      *
      * @param \WP_Term $term Term object.
      * @return array<string,mixed>
@@ -382,7 +382,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Add simple rule-based issues for one record.
+     * 根据规则为单个记录检查并添加诊断问题项。
      *
      * @param array<string,mixed> $record Record.
      * @param array<string,array> $buckets Issue buckets.
@@ -422,7 +422,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Add one capped issue.
+     * 添加带上限的诊断问题项。
      *
      * @param array<string,array> $buckets Issue buckets.
      * @param array<string,int>   $counts Issue counts.
@@ -455,7 +455,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Collect duplicate title/description keys.
+     * 收集重复的标题与描述键。
      *
      * @param array<string,array> $seen Seen map.
      * @param array<string,mixed> $record Record.
@@ -475,7 +475,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Add duplicate issues for all duplicate groups.
+     * 为所有重复组添加诊断提示。
      *
      * @param array<string,array> $seen Seen map.
      * @param string              $code Issue code.
@@ -496,7 +496,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Extract plain text from post content and module data.
+     * 从文章正文和模块数据中提取纯文本。
      *
      * @param int $post_id Post ID.
      * @return string
@@ -518,7 +518,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Recursively collect human text from module arrays.
+     * 递归提取模块数组中的可读文本。
      *
      * @param mixed  $value Value.
      * @param array  $texts Text collection.
@@ -556,7 +556,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Push one score check.
+     * 压入单项评分检查结果。
      *
      * @param array<string,mixed> $checks Check collection.
      * @param int                 $score Score.
@@ -579,7 +579,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Split SEO keyword string.
+     * 切分并解析 SEO 关键词。
      *
      * @param string $keywords Raw keywords.
      * @return string[]
@@ -591,7 +591,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Count HTML images with missing alt attributes.
+     * 统计缺少 alt 属性的 HTML 图片数量。
      *
      * @param string $html HTML.
      * @return array<string,int>
@@ -615,7 +615,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Count internal links in raw HTML.
+     * 统计 HTML 中的内部链接数量。
      *
      * @param string $html HTML.
      * @return int
@@ -642,7 +642,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Basic URL validation.
+     * 基础 URL 格式合法性校验。
      *
      * @param string $url URL.
      * @return bool
@@ -658,7 +658,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Normalize text for comparison.
+     * 规范化文本用于比对。
      *
      * @param string $text Text.
      * @return string
@@ -669,7 +669,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Get text length.
+     * 计算多字节文本长度。
      *
      * @param string $text Text.
      * @return int
@@ -680,7 +680,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Score label.
+     * 获取评分等级标签。
      *
      * @param int $score Score.
      * @return string
@@ -696,7 +696,7 @@ class SEO_Health_Check {
     }
 
     /**
-     * Get multilingual sitemap provider state if available.
+     * 获取多语言 Sitemap 扩展状态。
      *
      * @return string
      */

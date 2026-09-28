@@ -1,6 +1,6 @@
 <?php
 /**
- * Auth captcha service.
+ * 用户认证验证码服务。
  *
  * @package Developer_Starter
  * @since 1.0.0

@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer visual decoration helpers.
+ * 页脚视觉装饰辅助函数。
  *
  * @package Developer_Starter
  * @since 2.5.17
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_footer_visual_css_value' ) ) {
     /**
-     * Sanitize a CSS value used in footer visual custom properties.
+     * 过滤页脚视觉自定义属性中使用的 CSS 值。
      *
      * @param mixed  $value    Raw CSS value.
      * @param string $fallback Fallback value.
@@ -34,7 +34,7 @@ if ( ! function_exists( 'developer_starter_sanitize_footer_visual_css_value' ) )
 
 if ( ! function_exists( 'developer_starter_sanitize_footer_visual_spacing_value' ) ) {
     /**
-     * Sanitize a footer spacing value.
+     * 过滤页脚间距配置值。
      *
      * @param mixed  $value    Raw spacing value.
      * @param string $fallback Fallback value.
@@ -60,7 +60,7 @@ if ( ! function_exists( 'developer_starter_sanitize_footer_visual_spacing_value'
 
 if ( ! function_exists( 'developer_starter_get_footer_wave_palette_presets' ) ) {
     /**
-     * Get footer wave palette presets.
+     * 获取页脚波浪调色板预设。
      *
      * @return array<string,array<string,string>>
      */
@@ -129,7 +129,7 @@ if ( ! function_exists( 'developer_starter_get_footer_wave_palette_presets' ) ) 
 
 if ( ! function_exists( 'developer_starter_get_footer_wave_palette_vars' ) ) {
     /**
-     * Resolve footer wave palette CSS values.
+     * 解析页脚波浪调色板的 CSS 变量值。
      *
      * @param string $palette_key Palette key.
      * @param string $main_bg     Footer main background fallback.
@@ -158,7 +158,7 @@ if ( ! function_exists( 'developer_starter_get_footer_wave_palette_vars' ) ) {
 
 if ( ! function_exists( 'developer_starter_sanitize_footer_visual_options' ) ) {
     /**
-     * Sanitize footer visual settings.
+     * 清理并过滤页脚视觉设置。
      *
      * @param array<string,mixed> $options Sanitized options.
      * @return array<string,mixed>
@@ -238,7 +238,7 @@ if ( ! function_exists( 'developer_starter_sanitize_footer_visual_options' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_footer_visual_page_meta_keys' ) ) {
     /**
-     * Get footer visual page-level meta keys.
+     * 获取页面级页脚视觉设置的 Meta 键名。
      *
      * @return array<string,string>
      */
@@ -254,7 +254,7 @@ if ( ! function_exists( 'developer_starter_get_footer_visual_page_meta_keys' ) )
 
 if ( ! function_exists( 'developer_starter_sanitize_footer_visual_page_bool' ) ) {
     /**
-     * Normalize a page footer visual boolean value.
+     * 规范化页面页脚视觉开关布尔值。
      *
      * @param mixed $value Raw value.
      * @return bool
@@ -274,7 +274,7 @@ if ( ! function_exists( 'developer_starter_sanitize_footer_visual_page_bool' ) )
 
 if ( ! function_exists( 'developer_starter_sanitize_footer_visual_page_settings' ) ) {
     /**
-     * Sanitize page-level footer visual settings.
+     * 清理并过滤页面级页脚视觉设置。
      *
      * @param mixed $settings Raw settings.
      * @return array<string,mixed>
@@ -342,7 +342,7 @@ if ( ! function_exists( 'developer_starter_sanitize_footer_visual_page_settings'
 
 if ( ! function_exists( 'developer_starter_get_post_footer_visual_settings' ) ) {
     /**
-     * Read page-level footer visual settings from post meta.
+     * 从文章 Meta 中读取页面级页脚视觉设置。
      *
      * @param int $post_id Post ID.
      * @return array<string,mixed>
@@ -368,7 +368,7 @@ if ( ! function_exists( 'developer_starter_get_post_footer_visual_settings' ) ) 
 
 if ( ! function_exists( 'developer_starter_persist_post_footer_visual_settings' ) ) {
     /**
-     * Persist page-level footer visual settings.
+     * 持久化保存页面级页脚视觉设置。
      *
      * @param int   $post_id  Post ID.
      * @param mixed $settings Raw settings.
@@ -411,7 +411,7 @@ if ( ! function_exists( 'developer_starter_persist_post_footer_visual_settings' 
 
 if ( ! function_exists( 'developer_starter_get_current_footer_visual_page_settings' ) ) {
     /**
-     * Resolve page-level footer visual settings for the current queried page.
+     * 为当前查询的页面解析页面级页脚视觉设置。
      *
      * @return array<string,mixed>
      */
@@ -427,7 +427,7 @@ if ( ! function_exists( 'developer_starter_get_current_footer_visual_page_settin
 
 if ( ! function_exists( 'developer_starter_get_footer_visual_config' ) ) {
     /**
-     * Build footer visual runtime configuration.
+     * 构建页脚视觉装饰运行时配置。
      *
      * @return array<string,mixed>
      */
@@ -632,7 +632,7 @@ if ( ! function_exists( 'developer_starter_get_footer_visual_config' ) ) {
 
 if ( ! function_exists( 'developer_starter_get_footer_wave_paths' ) ) {
     /**
-     * Get SVG paths for footer wave styles.
+     * 获取页脚波浪样式的 SVG 路径数据。
      *
      * @param string $style Wave style.
      * @return array<string,string>

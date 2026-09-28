@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin settings design preset field render trait.
+ * 后台设置设计预设字段渲染 Trait。
  *
  * @package Developer_Starter
  */

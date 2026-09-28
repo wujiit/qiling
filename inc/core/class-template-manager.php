@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Manager - Handle saving and loading module templates
+ * 模板管理器 - 处理模块模板的存储与读取
  *
  * @package Developer_Starter
  */
@@ -141,18 +141,18 @@ class Template_Manager {
             wp_send_json_error( __( '信息不完整', 'developer-starter' ) );
         }
 
-        // Handle raw serialized form data
+        // 处理原始序列化表单数据
         if ( empty( $data_json ) && ! empty( $raw_data ) ) {
             $parsed = array();
             parse_str( $raw_data, $parsed );
             
-            // Expected structure: parsed['modules'][INDEX]['data']...
+            // 预期数据结构：parsed['modules'][INDEX]['data']...
             if ( isset( $parsed['modules'] ) && is_array( $parsed['modules'] ) ) {
                 $first_module = reset( $parsed['modules'] ); // Get first item (we only serialized one module)
                 if ( isset( $first_module['data'] ) ) {
                     $data_array = $first_module['data'];
                     
-                    // No other sanitation or modification. Raw data as is.
+                    // 保持原始数据结构不变，不做额外篡改。
                     // $data_array = $this->simple_unslash_recursive($data_array);
 
                     $data_json = json_encode( $data_array, JSON_UNESCAPED_UNICODE );
@@ -191,8 +191,7 @@ class Template_Manager {
     }
 
     /**
-     * Simple recursive unslash to handle PHP magic quotes.
-     * Absolutely NO other modifications.
+     * 递归去除斜杠转义以处理魔术引号（历史备用函数）。
      */
     /*
     private function simple_unslash_recursive($data) {
@@ -227,7 +226,7 @@ class Template_Manager {
                     continue;
                 }
                 $type = get_post_meta( get_the_ID(), '_ql_template_type', true );
-                // Validate if module type still exists
+                // 校验模块类型是否依然存在
                 $module_manager = \Developer_Starter\Modules\Module_Manager::get_instance();
                 $module_obj = $module_manager->get_module( $type );
                 $type_name = $module_obj ? $module_obj->get_name() : $type;

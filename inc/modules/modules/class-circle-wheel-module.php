@@ -1,6 +1,6 @@
 <?php
 /**
- * Circle Wheel Module - 圆形交互式轮盘
+ * 圆形交互式轮盘模块
  *
  * @package Developer_Starter
  */
@@ -45,6 +45,7 @@ class Circle_Wheel_Module extends Module_Base {
                 'id' => 'wheel_items',
                 'label' => __( '轮盘功能项 (建议8-10项效果最佳)', 'developer-starter' ),
                 'type' => 'repeater',
+                'default_items' => $this->get_demo_data()['wheel_items'],
                 'fields' => array(
                     array( 'id' => 'ring_title_desc', 'label' => __( '圆环短标题 (常驻)', 'developer-starter' ), 'type' => 'text', 'desc' => __( '如：积分商城', 'developer-starter' ) ),
                     array( 'id' => 'hover_title_desc', 'label' => __( '悬停-标题', 'developer-starter' ), 'type' => 'text', 'desc' => __( '侧边显示的主标题，支持HTML', 'developer-starter' ) ),
@@ -160,7 +161,7 @@ class Circle_Wheel_Module extends Module_Base {
         } elseif ( $bg_image ) {
             $section_style .= "background-image: url('{$bg_image}'); background-size: cover; background-position: center;";
         } else {
-             // Fallback dark bg
+             // 兜底暗色背景
              $section_style .= "background-color: var(--color-neutral-900);";
         }
         $section_style .= "--wheel-highlight-color: {$highlight_color};";
@@ -168,7 +169,7 @@ class Circle_Wheel_Module extends Module_Base {
         // 生成唯一ID，用于JS/CSS隔离
         $unique_id = 'wheel-' . uniqid();
         
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['wheel_items'] ) ) {
             $items = $this->get_demo_data()['wheel_items'];
         }
         
@@ -182,13 +183,13 @@ class Circle_Wheel_Module extends Module_Base {
             $angle = $index * $step_angle;
             $counter_angle = -$angle;
             
-            //Item Rotation
+            // 子项旋转角度计算
             $dynamic_css .= "#{$unique_id} .wheel-item[data-index='{$index}'] { transform: rotate({$angle}deg) translateY(-250px); } ";
-            //Content Counter Rotation (Keep horizontal)
+            // 内容反向旋转保持水平
             $dynamic_css .= "#{$unique_id} .wheel-item[data-index='{$index}'] .wheel-item-content { transform: rotate({$counter_angle}deg); } ";
-             //Active/Hover State
+            // 激活与悬停缩放状态
             $dynamic_css .= "#{$unique_id} .wheel-item[data-index='{$index}']:hover .wheel-item-content, #{$unique_id} .wheel-item[data-index='{$index}'].active .wheel-item-content { transform: rotate({$counter_angle}deg) scale(1.1); } ";
-             // Ring Text Color on Active
+             // 激活态文字颜色
             $dynamic_css .= "#{$unique_id} .wheel-item[data-index='{$index}'].active .ring-text, #{$unique_id} .wheel-item[data-index='{$index}']:hover .ring-text { color: {$highlight_color}; }";
         }
         ?>
@@ -290,7 +291,7 @@ class Circle_Wheel_Module extends Module_Base {
                     const index = parseInt(item.getAttribute('data-index'));
                     const total = items.length;
                     
-                    // Decode escaped attribute values before rendering them in detail panels.
+                    // 在详情面板中渲染前解码属性值
                     const tempDiv = document.createElement('div');
                     tempDiv.innerHTML = title;
                     const decodedTitle = tempDiv.innerText;

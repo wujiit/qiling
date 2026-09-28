@@ -1,6 +1,6 @@
 <?php
 /**
- * Downloads Module - 下载中心
+ * 资料下载中心模块
  *
  * @package Developer_Starter
  */
@@ -43,7 +43,7 @@ class Downloads_Module extends Module_Base {
                 'type' => 'text',
                 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载我们的产品资料和技术文档', 'Download our product materials and technical documents.' ) : __( '下载我们的产品资料和技术文档', 'developer-starter' ),
             ),
-            // Background Settings
+            // 背景配置
             array(
                 'id' => 'downloads_bg_color',
                 'label' => __( '背景颜色 (支持渐变)', 'developer-starter' ),
@@ -51,7 +51,7 @@ class Downloads_Module extends Module_Base {
                 'default' => 'var(--color-neutral-0)',
                 'description' => __( '例如: var(--color-neutral-0) 或 linear-gradient(to right, var(--color-error), var(--color-primary))', 'developer-starter' ),
             ),
-            // Typography Settings
+            // 字体排版配置
             array(
                 'id' => 'downloads_title_color',
                 'label' => __( '标题颜色', 'developer-starter' ),
@@ -142,6 +142,11 @@ class Downloads_Module extends Module_Base {
                     array( 'id' => 'btn_icon', 'label' => __( '按钮图标(默认: 下载图标)', 'developer-starter' ), 'type' => 'text', 'description' => __( '输入图标类名，如 icon-download', 'developer-starter' ) ),
                     array( 'id' => 'description', 'label' => __( '文件说明(可选)', 'developer-starter' ), 'type' => 'textarea' ),
                 ),
+                'default_items' => array(
+                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品手册', 'Product Brochure' ) : __( '产品手册', 'developer-starter' ), 'file' => '', 'size' => '2.5MB', 'icon' => '📄' ),
+                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术白皮书', 'Technical Whitepaper' ) : __( '技术白皮书', 'developer-starter' ), 'file' => '', 'size' => '1.2MB', 'icon' => '📋' ),
+                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '用户指南', 'User Guide' ) : __( '用户指南', 'developer-starter' ), 'file' => '', 'size' => '3.8MB', 'icon' => '📘' ),
+                ),
             ),
         );
     }
@@ -156,7 +161,7 @@ class Downloads_Module extends Module_Base {
             return str_replace( array( ';', '{', '}' ), '', $value );
         };
         
-        // Style Settings
+        // 样式配置
         $bg_color = isset( $data['downloads_bg_color'] ) && '' !== trim( (string) $data['downloads_bg_color'] )
             ? $data['downloads_bg_color']
             : ( isset( $data['module_bg_color'] ) && '' !== trim( (string) $data['module_bg_color'] ) ? $data['module_bg_color'] : 'var(--color-neutral-0)' );
@@ -172,7 +177,7 @@ class Downloads_Module extends Module_Base {
         $btn_hover_border_color = isset( $data['downloads_btn_hover_border_color'] ) ? $clean_css_value( $data['downloads_btn_hover_border_color'] ) : '';
         $badge_bg = isset( $data['downloads_badge_bg'] ) ? $clean_css_value( $data['downloads_badge_bg'] ) : '';
         
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['downloads_items'] ) ) {
             $items = array(
                 array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品手册', 'Product Brochure' ) : __( '产品手册', 'developer-starter' ), 'file' => '', 'size' => '2.5MB', 'icon' => '📄' ),
                 array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术白皮书', 'Technical Whitepaper' ) : __( '技术白皮书', 'developer-starter' ), 'file' => '', 'size' => '1.2MB', 'icon' => '📋' ),
@@ -182,17 +187,17 @@ class Downloads_Module extends Module_Base {
         
         $grid_style = $columns > 1 ? "grid-template-columns: repeat({$columns}, 1fr);" : "";
         
-        // Dynamic Title Style
+        // 动态标题样式
         $title_style = '';
         if ( $title_size ) $title_style .= "font-size: {$title_size};";
         if ( $title_color && ! in_array( $title_color, array( 'var(--color-neutral-800)', '#' . '1e293b' ), true ) ) $title_style .= "color: {$title_color};";
         
-        // Dynamic Subtitle Style
+        // 动态副标题样式
         $subtitle_style = '';
         if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
         if ( $subtitle_color && ! in_array( $subtitle_color, array( 'var(--color-text-muted)', '#' . '64748b' ), true ) ) $subtitle_style .= "color: {$subtitle_color};";
 
-        // Dynamic Background Style
+        // 动态背景样式
         $bg_style = '';
         if ( $bg_color && ! in_array( $bg_color, array( 'var(--color-neutral-0)', '#' . 'ffffff' ), true ) ) {
             $bg_style = strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";

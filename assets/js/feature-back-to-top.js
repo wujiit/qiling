@@ -1,7 +1,7 @@
 /**
- * Back to top runtime
+ * 返回顶部交互运行时
  *
- * Split from main.js so page-specific interactions can load only when needed.
+ * 从 main.js 独立拆分，支持按需加载。
  */
 (function (window, document) {
     'use strict';
@@ -36,6 +36,6 @@
         });
     }
 
-    // Float widget hover is now handled by CSS
+    // 浮动小工具悬停效果已由 CSS 统一控制
     });
 })(window, document);

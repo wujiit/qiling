@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer bottom bar.
+ * 页脚底部版权与链接栏模板。
  *
  * @package Developer_Starter
  */

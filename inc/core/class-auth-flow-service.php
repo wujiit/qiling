@@ -1,6 +1,6 @@
 <?php
 /**
- * Auth flow service.
+ * 用户认证业务流程服务。
  *
  * @package Developer_Starter
  * @since 1.0.0

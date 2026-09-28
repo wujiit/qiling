@@ -1,6 +1,6 @@
 <?php
 /**
- * Single Page Package Service
+ * 单页面包服务
  *
  * 负责单页页面 JSON 的解析与导出。
  *

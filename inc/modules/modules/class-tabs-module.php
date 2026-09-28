@@ -1,6 +1,6 @@
 <?php
 /**
- * Tabs Module - 标签页切换
+ * 标签页切换模块
  *
  * @package Developer_Starter
  */
@@ -34,7 +34,7 @@ class Tabs_Module extends Module_Base {
             array( 'id' => 'tabs_title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
             array( 'id' => 'tabs_subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
             
-            // Typography Settings
+            // 字体排版配置
             array(
                 'id' => 'tabs_title_size',
                 'label' => __( '标题字体大小', 'developer-starter' ),
@@ -83,9 +83,26 @@ class Tabs_Module extends Module_Base {
                     array( 'id' => 'icon', 'label' => __( '图标(emoji或留空)', 'developer-starter' ), 'type' => 'text' ),
                     array( 'id' => 'content', 'label' => __( '标签内容(支持HTML)', 'developer-starter' ), 'type' => 'textarea' ),
                 ),
+                'default_items' => array(
+                    array( 
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品介绍', 'Overview' ) : __( '产品介绍', 'developer-starter' ),
+                        'icon' => '📦',
+                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', '<p>Use this area to introduce the product, highlight strengths, and explain the core value.</p><ul><li>Benefit one: reliable performance</li><li>Benefit two: easy to use</li><li>Benefit three: safe and dependable</li></ul>' ) : __( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', 'developer-starter' ),
+                    ),
+                    array( 
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术规格', 'Specifications' ) : __( '技术规格', 'developer-starter' ),
+                        'icon' => '⚙️',
+                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', '<p>Technical specifications and key product details.</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Size</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Weight</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>' ) : __( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', 'developer-starter' ),
+                    ),
+                    array( 
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '使用说明', 'How to Use' ) : __( '使用说明', 'developer-starter' ),
+                        'icon' => '📖',
+                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', '<p>Setup steps and usage guidance.</p><ol><li>Step 1: unpack the product</li><li>Step 2: review the instructions</li><li>Step 3: follow the setup steps</li></ol>' ) : __( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', 'developer-starter' ),
+                    ),
+                ),
             ),
             
-            // Background Settings
+            // 背景配置
             array(
                 'id' => 'module_bg_type',
                 'label' => __( '背景类型', 'developer-starter' ),
@@ -152,7 +169,7 @@ class Tabs_Module extends Module_Base {
         $items = isset( $data['tabs_items'] ) ? $data['tabs_items'] : array();
         
         // 默认示例数据
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['tabs_items'] ) ) {
             $items = array(
                 array( 
                     'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品介绍', 'Overview' ) : __( '产品介绍', 'developer-starter' ),
@@ -172,7 +189,7 @@ class Tabs_Module extends Module_Base {
             );
         }
         
-        // Typography Logic
+        // 字体排版处理
         $title_size = isset( $data['tabs_title_size'] ) ? $data['tabs_title_size'] : '';
         $title_color = isset( $data['tabs_title_color'] ) ? $data['tabs_title_color'] : '';
         $subtitle_size = isset( $data['tabs_subtitle_size'] ) ? $data['tabs_subtitle_size'] : '';
@@ -191,7 +208,7 @@ class Tabs_Module extends Module_Base {
         if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
         if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";
         
-        // Background Logic
+        // 背景样式处理
         $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
         $bg_color = isset( $data['module_bg_color'] ) ? $data['module_bg_color'] : '';
         $bg_image = isset( $data['module_bg_image'] ) ? $data['module_bg_image'] : '';

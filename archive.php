@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * 文章归档页面通用模板
  *
  * @package Developer_Starter
  */

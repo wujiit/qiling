@@ -1,6 +1,6 @@
 <?php
 /**
- * Video ranking module.
+ * 视频排行榜展示模块。
  *
  * @package Developer_Starter
  */
@@ -263,7 +263,7 @@ class Video_Ranking_Module extends Module_Base {
                     $args['order']    = 'DESC';
                     break;
                 }
-                // Fall through to latest when statistics are unavailable.
+                // 统计数据不可用时回退至最新列表
             case 'category':
             case 'latest':
             default:

@@ -1,6 +1,6 @@
 <?php
 /**
- * Auth profile and ajax response service.
+ * 用户资料与 Ajax 响应服务。
  *
  * @package Developer_Starter
  * @since 1.0.0

@@ -593,6 +593,24 @@ class Auth_Manager {
     }
 
     /**
+     * 清理重复的系统认证页面。
+     *
+     * @return array
+     */
+    public function cleanup_duplicate_auth_pages() {
+        return $this->get_pages_service()->cleanup_duplicate_auth_pages();
+    }
+
+    /**
+     * 统计当前冗余的重复系统认证页面总数。
+     *
+     * @return int
+     */
+    public function count_duplicate_auth_pages() {
+        return $this->get_pages_service()->count_duplicate_auth_pages();
+    }
+
+    /**
      * AJAX 登录
      */
     public function ajax_login() {

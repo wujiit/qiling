@@ -1,8 +1,8 @@
 <?php
 /**
- * Helpers bootstrap loader.
+ * 辅助函数引导加载器。
  *
- * Maintains legacy load order from class-helpers.php.
+ * 保持与原 class-helpers.php 一致的加载顺序。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

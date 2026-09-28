@@ -249,7 +249,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 .dsm-btn-templates { margin-left: 0; margin-top: 8px; }
             }
 
-            /* Modal Styles */
+            /* 弹窗样式 */
             .dsm-modal-overlay {
                 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
                 background: rgba(0,0,0,0.5); z-index: 1000000; display: none;
@@ -1505,7 +1505,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 }
             });
 
-            // Add module
+            // 添加模块
             $(document).on('click', '.dsm-add-btn:not(.dsm-btn-templates):not(.dsm-btn-page-json-import):not(.dsm-btn-page-json-export):not(.dsm-btn-ai-decorate)', function(e){
                 e.preventDefault();
                 var type = $(this).data('type');
@@ -1545,13 +1545,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                 });
             });
 
-            // Toggle module
+            // 折叠/展开模块
             $(document).on('click', '.dsm-item-header', function(e){
                 if($(e.target).closest('.dsm-remove, .dsm-save-template, .dsm-toggle-hidden').length) return;
                 $(this).closest('.dsm-item').toggleClass('open');
             });
 
-            // Remove module
+            // 移除模块
             $(document).on('click', '.dsm-remove', function(e){
                 e.preventDefault();
                 e.stopPropagation();
@@ -1573,7 +1573,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 });
             }
 
-            // Image/File upload logic (Standard WP Media)
+            // 图片与文件上传逻辑（标准 WordPress 媒体库）
             $(document).on('click', '.dsm-upload', function(e){
                 e.preventDefault();
                 var $btn = $(this);
@@ -1586,7 +1586,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     alert('<?php echo esc_js( __( '媒体库加载失败', 'developer-starter' ) ); ?>'); return;
                 }
                 
-                // Create frame if not exists (simplified for inline)
+                // 媒体库弹窗单例初始化
                 var frame = wp.media({ 
                     title: isGallery ? '<?php echo esc_js( __( '选择多张图片 (按住Ctrl/Cmd多选)', 'developer-starter' ) ); ?>' : '<?php echo esc_js( __( '选择文件', 'developer-starter' ) ); ?>', 
                     multiple: isGallery ? 'add' : false, 
@@ -1605,7 +1605,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             html += '<span class="dsm-img-wrap gallery-item"><img src="'+ attachment.url +'" class="dsm-img-preview"/><button type="button" class="dsm-img-remove">×</button></span> ';
                         });
                         
-                        // Append newly selected images to the existing gallery value.
+                        // 将新选中的图片追加至相册字段
                         var current = $inp.val();
                         if(current) {
                             var newUrls = urls.join(',');
@@ -1631,20 +1631,20 @@ if ( ! defined( 'ABSPATH' ) ) {
                 var $inp = $field.find('.dsm-img-input');
                 
                 if ($wrap.hasClass('gallery-item')) {
-                     // Gallery removal logic
+                     // 相册单图移除逻辑
                      var urlToRemove = $wrap.find('img').attr('src');
                      var currentUrls = $inp.val().split(',');
                      var newUrls = currentUrls.filter(function(url) { return url.trim() !== urlToRemove; });
                      $inp.val(newUrls.join(','));
                      $wrap.remove();
                 } else {
-                    // Single image removal
+                    // 单张图片移除逻辑
                     $inp.val('');
                     $wrap.remove();
                 }
             });
 
-            // Repeater Add
+            // 中继器添加子项
             $(document).on('click', '.dsm-rep-add', function(){
                 var $wrap = $(this).parent();
                 var $list = $wrap.find('.dsm-repeater-list');
@@ -1657,7 +1657,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             });
             $(document).on('click', '.dsm-repeater-remove', function(e){ e.preventDefault(); $(this).closest('.dsm-repeater-item').remove(); });
 
-            // Dependency Logic
+            // 字段显示依赖联动逻辑
             function checkDependencies() {
                 $('.dsm-field[data-dependency]').each(function(){
                     var $field = $(this);
@@ -1886,33 +1886,33 @@ if ( ! defined( 'ABSPATH' ) ) {
             });
 
 
-            /* ================= Template System ================= */
+            /* ================= 模板体系 ================= */
             
-            // Helper: Serialize Module Data from DOM
+            // 辅助函数：从 DOM 序列化模块配置数据
             function serializeModule($item) {
                 var data = {};
                 $item.find('.dsm-content :input').each(function(){
                     var name = $(this).attr('name');
                     if(!name) return;
-                    // Field names follow modules[0][data][key]...
-                    // Extract the module data path.
-                    // Strip modules[xxx][data].
+                    // 表单字段名称规范遵循 modules[0][data][key] 规则
+                    // 提取模块数据路径
+                    // 移除外层模块路径前缀
                     var match = name.match(/modules\[\d+\]\[data\](.*)/);
                     if(!match || !match[1]) return;
                     
                     var path = match[1]; // [key] or [key][0][subkey]
                     var val = $(this).val();
                     
-                    // Keep relative paths available for future structured serialization.
+                    // 保留相对路径以便结构化序列化
                 });
-                // Server-side template saving expects serialized module data.
+                // 服务端模板保存需要序列化的模块数据
                 
                 var raw = $item.find(':input').serialize(); 
-                // Keep the raw serialized payload for server-side parsing.
+                // 保留原始序列化载荷供服务端解析
                 return raw;
             }
 
-            // Save Template
+            // 保存模板
             $(document).on('click', '.dsm-save-template', function(e){
                 e.preventDefault();
                 e.stopPropagation();
@@ -1945,7 +1945,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 });
             });
 
-            // View Templates
+            // 查看模板库
             $(document).on('click', '.dsm-btn-templates', function(){
                 showDsmModal('#dsm-template-modal');
                 loadTemplates();
@@ -1990,7 +1990,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 });
             }
 
-            // Delete Template
+            // 删除模板
             $(document).on('click', '.dsm-delete-template', function(){
                 if(!confirm('<?php echo esc_js( __( '确定删除此模版吗？', 'developer-starter' ) ); ?>')) return;
                 var id = $(this).data('id');
@@ -2001,7 +2001,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 });
             });
 
-            // Use Template (Load)
+            // 应用并加载模板
             $(document).on('click', '.dsm-use-template', function(){
                 var id = $(this).data('id');
                 var $btn = $(this);
@@ -2018,7 +2018,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     },
                     success: function(res){
                         if(res.success) {
-                            // Append the rendered HTML
+                            // 追加渲染后的模块 HTML
                             var $item = $(res.data);
                             $item.addClass('open');
                             $('#dsm-list').append($item);
@@ -2027,7 +2027,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             $('#dsm-template-modal').fadeOut(200);
                             $('html, body').animate({ scrollTop: $item.offset().top - 100 }, 300);
                             
-                            // Ensure dependencies are checked for new item
+                            // 为新增模块触发字段联动依赖检查
                             setTimeout(checkDependencies, 100);
                         } else {
                             alert('<?php echo esc_js( __( '加载失败: ', 'developer-starter' ) ); ?>' + res.data);

@@ -3,7 +3,7 @@
  * Template Name: 影视排行榜
  * Template Post Type: page
  *
- * Dedicated full-width shell for video ranking pages.
+ * 视频排行榜页面的专属全宽外层框架模板。
  *
  * @package Developer_Starter
  */

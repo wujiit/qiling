@@ -919,6 +919,17 @@ body.qfb-builder-mode.qfb-builder-collapsed.qfb-preview-mobile #page {
     white-space: nowrap;
 }
 
+.qfb-page-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-6);
+    min-width: 0;
+}
+
+.qfb-page-title-wrap .qfb-page-title {
+    flex: 1 1 auto;
+}
+
 .qfb-page-actions {
     display: flex;
     align-items: center;

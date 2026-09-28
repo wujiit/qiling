@@ -1,6 +1,6 @@
 <?php
 /**
- * Team Module - 团队成员
+ * 团队成员展示模块
  *
  * @package Developer_Starter
  */
@@ -64,6 +64,12 @@ class Team_Module extends Module_Base {
                     array( 'id' => 'wechat', 'label' => __( '微信二维码', 'developer-starter' ), 'type' => 'text' ),
                     array( 'id' => 'email', 'label' => __( '邮箱', 'developer-starter' ), 'type' => 'text' ),
                     array( 'id' => 'phone', 'label' => __( '电话', 'developer-starter' ), 'type' => 'text' ),
+                ),
+                'default_items' => array(
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张明', 'Michael Zhang' ) : __( '张明', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '首席执行官', 'Chief Executive Officer' ) : __( '首席执行官', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '20年行业经验，曾任多家知名企业高管。', 'Leads strategy and long-term growth with extensive industry experience.' ) : __( '20年行业经验，曾任多家知名企业高管。', 'developer-starter' ) ),
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李华', 'Sophia Lee' ) : __( '李华', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术总监', 'Technical Director' ) : __( '技术总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资深技术专家，主导多个大型项目研发。', 'Oversees delivery quality, architecture, and technical execution.' ) : __( '资深技术专家，主导多个大型项目研发。', 'developer-starter' ) ),
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王芳', 'Emma Wang' ) : __( '王芳', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深耕市场营销领域15年，擅长品牌策略。', 'Shapes brand positioning, messaging, and campaign strategy.' ) : __( '深耕市场营销领域15年，擅长品牌策略。', 'developer-starter' ) ),
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '刘强', 'David Liu' ) : __( '刘强', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '运营总监', 'Operations Director' ) : __( '运营总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精细化运营专家，打造高效团队管理体系。', 'Keeps workflows efficient and operations aligned across teams.' ) : __( '精细化运营专家，打造高效团队管理体系。', 'developer-starter' ) ),
                 ),
             ),
             
@@ -168,8 +174,8 @@ class Team_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) && $data['module_padding_top'] !== '' ? $data['module_padding_top'] : '60px';
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '60px';
         
-        // Default Data
-        if ( empty( $members ) ) {
+        // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
+        if ( empty( $members ) && ! isset( $data['team_members'] ) ) {
             $members = array(
                 array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张明', 'Michael Zhang' ) : __( '张明', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '首席执行官', 'Chief Executive Officer' ) : __( '首席执行官', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '20年行业经验，曾任多家知名企业高管。', 'Leads strategy and long-term growth with extensive industry experience.' ) : __( '20年行业经验，曾任多家知名企业高管。', 'developer-starter' ) ),
                 array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李华', 'Sophia Lee' ) : __( '李华', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术总监', 'Technical Director' ) : __( '技术总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资深技术专家，主导多个大型项目研发。', 'Oversees delivery quality, architecture, and technical execution.' ) : __( '资深技术专家，主导多个大型项目研发。', 'developer-starter' ) ),
@@ -178,7 +184,7 @@ class Team_Module extends Module_Base {
             );
         }
         
-        // Dynamic Style Construction
+        // 构建动态样式
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
         
         if ( $bg_type === 'image' && $bg_image ) {
@@ -187,12 +193,12 @@ class Team_Module extends Module_Base {
             $section_style .= strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
         }
         
-        // Title Style
+        // 标题样式
         $title_style = '';
         if ( $title_size ) $title_style .= "font-size: {$title_size};";
         if ( $title_color ) $title_style .= "color: {$title_color};";
         
-        // Subtitle Style
+        // 副标题样式
         $subtitle_style = '';
         if ( $subtitle_size ) $subtitle_style .= "font-size: {$subtitle_size};";
         if ( $subtitle_color ) $subtitle_style .= "color: {$subtitle_color};";
@@ -208,7 +214,7 @@ class Team_Module extends Module_Base {
             'linear-gradient(135deg, var(--color-info) 0%, var(--qiling-color-error-alpha-01) 100%)',
         );
         
-        // Animation Setting
+        // 动画效果配置
         $enable_anim = isset( $data['enable_staggered_animation'] ) ? $data['enable_staggered_animation'] : 'yes';
         ?>
         <section class="module module-team" style="<?php echo esc_attr( $section_style ); ?>">
@@ -236,7 +242,7 @@ class Team_Module extends Module_Base {
                             $phone = isset( $member['phone'] ) ? $member['phone'] : '';
                             $default_avatar_bg = $avatar_colors[ $index % count( $avatar_colors ) ];
                             
-                            // Calculate Staggered Animation
+                            // 计算交错动画延迟
                             $anim_attr = '';
                             if ( $enable_anim === 'yes' ) {
                                 $anim_attr = $this->get_staggered_animation_attr( $index );

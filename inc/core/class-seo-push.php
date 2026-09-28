@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO Push - Baidu, IndexNow/Bing and optional Google Indexing API.
+ * SEO 主动推送服务 - 百度、Bing/IndexNow 与 Google 索引推送。
  *
  * @package Developer_Starter
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Sidebar Post List Widget
+ * 侧边栏文章列表小工具
  *
  * @package Developer_Starter
  */

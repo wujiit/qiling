@@ -1,6 +1,6 @@
 <?php
 /**
- * Data config for component group labels.
+ * 组件分组标签数据配置。
  *
  * @package Developer_Starter
  */

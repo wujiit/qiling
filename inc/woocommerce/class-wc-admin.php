@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce Admin Settings Class
+ * WooCommerce 后台设置管理类
  *
  * 在主题设置中添加 WooCommerce 专用设置页面
  *
@@ -121,7 +121,7 @@ class WC_Admin {
             $sanitized[ $key ] = isset( $input[ $key ] ) && $input[ $key ] === '1' ? '1' : '';
         }
 
-        // Shop Banner (3 Slots)
+        // 商城横幅横向推荐位（3个卡位）
         for ( $i = 1; $i <= 3; $i++ ) {
             $sanitized["wc_shop_banner_type_$i"] = isset( $input["wc_shop_banner_type_$i"] ) ? sanitize_text_field( $input["wc_shop_banner_type_$i"] ) : 'image';
             $sanitized["wc_shop_banner_url_$i"] = isset( $input["wc_shop_banner_url_$i"] ) ? sanitize_text_field( $input["wc_shop_banner_url_$i"] ) : '';

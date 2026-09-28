@@ -1,5 +1,5 @@
 /**
- * Post and comment speech controls powered by the browser Web Speech API.
+ * 基于浏览器 Web Speech API 的文章与评论语音朗读控制脚本。
  */
 (function () {
     'use strict';

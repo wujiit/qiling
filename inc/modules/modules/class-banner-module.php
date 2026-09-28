@@ -1,6 +1,6 @@
 <?php
 /**
- * Banner Module - 首屏Banner
+ * 首屏 Banner 轮播模块
  *
  * @package Developer_Starter
  */
@@ -86,6 +86,18 @@ class Banner_Module extends Module_Base {
                     array( 'id' => 'btn_bg_color', 'label' => __( '按钮背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
                     array( 'id' => 'btn_text_color', 'label' => __( '按钮文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
                     $this->get_button_border_color_field( 'btn_border_color' ),
+                ),
+                'default_items' => array(
+                    array(
+                        'media_type'  => 'image',
+                        'image'       => '',
+                        'video_url'   => '',
+                        'title'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'developer-starter' ),
+                        'title_align' => 'default',
+                        'subtitle'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型，提供一站式服务', 'Support digital growth with an end-to-end service approach.' ) : __( '助力企业数字化转型，提供一站式服务', 'developer-starter' ),
+                        'btn_text'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'developer-starter' ),
+                        'btn_url'     => '#',
+                    ),
                 ),
             ),
             
@@ -198,7 +210,7 @@ class Banner_Module extends Module_Base {
         $image_position = isset( $data['banner_image_position'] ) ? $data['banner_image_position'] : 'right';
         $bg_color = isset( $data['banner_bg_color'] ) ? trim( $data['banner_bg_color'] ) : '';
         
-        if ( empty( $slides ) ) {
+        if ( empty( $slides ) && ! isset( $data['banner_slides'] ) ) {
             $slides = array(
                 array(
                     'image'    => '',
@@ -264,10 +276,10 @@ class Banner_Module extends Module_Base {
                                 <div class="container" style="position: relative; z-index: 2;">
                                     <div class="banner-content" style="text-align: center; color: var(--color-neutral-0); max-width: var(--qiling-measure-800); margin: 0 auto;">
                                         <?php if ( ! empty( $slide['title'] ) ) : ?>
-                                            <h1 class="banner-title" style="font-size: var(--qiling-text-rem-3p5); font-weight: 700; line-height: 1.2; margin-bottom: var(--qiling-space-20); text-align: <?php echo esc_attr( $title_align ); ?>; text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.3);"><?php echo wp_kses_post( $slide['title'] ); ?></h1>
+                                            <h1 class="banner-title" style="color: var(--color-neutral-0, #ffffff); font-size: var(--qiling-text-rem-3p5); font-weight: 700; line-height: 1.2; margin-bottom: var(--qiling-space-20); text-align: <?php echo esc_attr( $title_align ); ?>; text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.3);"><?php echo wp_kses_post( $slide['title'] ); ?></h1>
                                         <?php endif; ?>
                                         <?php if ( ! empty( $slide['subtitle'] ) ) : ?>
-                                            <p class="banner-subtitle" style="font-size: var(--qiling-text-rem-1p25); opacity: 0.9; margin-bottom: var(--qiling-space-35); line-height: 1.6;"><?php echo wp_kses_post( $slide['subtitle'] ); ?></p>
+                                            <p class="banner-subtitle" style="color: rgba(var(--qiling-rgb-255-255-255), 0.9); font-size: var(--qiling-text-rem-1p25); opacity: 0.9; margin-bottom: var(--qiling-space-35); line-height: 1.6;"><?php echo wp_kses_post( $slide['subtitle'] ); ?></p>
                                         <?php endif; ?>
                                         <?php if ( ! empty( $slide['btn_text'] ) ) : ?>
                                             <div class="banner-buttons">
@@ -301,10 +313,10 @@ class Banner_Module extends Module_Base {
                     <div class="container" style="position: relative; z-index: 2;">
                         <div class="banner-content" style="text-align: center; color: var(--color-neutral-0); max-width: var(--qiling-measure-800); margin: 0 auto;">
                             <?php if ( ! empty( $slide['title'] ) ) : ?>
-                                <h1 class="banner-title" style="font-size: var(--qiling-text-rem-3p5); font-weight: 700; line-height: 1.2; margin-bottom: var(--qiling-space-20); text-align: <?php echo esc_attr( $title_align ); ?>; text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.3);"><?php echo wp_kses_post( $slide['title'] ); ?></h1>
+                                <h1 class="banner-title" style="color: var(--color-neutral-0, #ffffff); font-size: var(--qiling-text-rem-3p5); font-weight: 700; line-height: 1.2; margin-bottom: var(--qiling-space-20); text-align: <?php echo esc_attr( $title_align ); ?>; text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.3);"><?php echo wp_kses_post( $slide['title'] ); ?></h1>
                             <?php endif; ?>
                             <?php if ( ! empty( $slide['subtitle'] ) ) : ?>
-                                <p class="banner-subtitle" style="font-size: var(--qiling-text-rem-1p25); opacity: 0.9; margin-bottom: var(--qiling-space-35); line-height: 1.6;"><?php echo wp_kses_post( $slide['subtitle'] ); ?></p>
+                                <p class="banner-subtitle" style="color: rgba(var(--qiling-rgb-255-255-255), 0.9); font-size: var(--qiling-text-rem-1p25); opacity: 0.9; margin-bottom: var(--qiling-space-35); line-height: 1.6;"><?php echo wp_kses_post( $slide['subtitle'] ); ?></p>
                             <?php endif; ?>
                             <?php if ( ! empty( $slide['btn_text'] ) ) : ?>
                                 <div class="banner-buttons">
@@ -526,7 +538,7 @@ class Banner_Module extends Module_Base {
     }
     
     /**
-     * Whether the stats bar should be shown.
+     * 检查是否应展示统计栏。
      *
      * @param mixed $value Raw option value.
      * @return bool
@@ -544,7 +556,7 @@ class Banner_Module extends Module_Base {
     }
 
     /**
-     * Normalize stats bar items from current and legacy payload shapes.
+     * 规范化当前与历史格式的统计栏数据项。
      *
      * @param array<string,mixed> $data Module data.
      * @return array<int,array<string,string>>

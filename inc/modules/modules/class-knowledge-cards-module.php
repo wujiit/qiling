@@ -1,6 +1,6 @@
 <?php
 /**
- * Knowledge Cards Module - 知识点卡
+ * 知识要点卡片模块
  *
  * @package Developer_Starter
  */
@@ -140,6 +140,35 @@ class Knowledge_Cards_Module extends Module_Base {
                         'label' => __( '链接地址', 'developer-starter' ),
                     ),
                 ),
+                'default_items' => array(
+                    array(
+                        'term'       => 'LCP',
+                        'definition' => __( '首屏最大可见内容绘制时间，越短通常代表首屏体验越好。', 'developer-starter' ),
+                        'importance' => 'high',
+                        'example'    => __( '压缩首图、预加载首屏关键资源可改善 LCP。', 'developer-starter' ),
+                        'mistake'    => __( '只优化跑分，不关注真实用户网络环境。', 'developer-starter' ),
+                        'link_text'  => __( '查看性能优化建议', 'developer-starter' ),
+                        'link_url'   => '',
+                    ),
+                    array(
+                        'term'       => 'FAQ Schema',
+                        'definition' => __( '用结构化数据标注问答内容，帮助搜索引擎更好理解页面。', 'developer-starter' ),
+                        'importance' => 'medium',
+                        'example'    => __( '把高频问题整理成标准问答并保持与正文一致。', 'developer-starter' ),
+                        'mistake'    => __( '堆砌无关问题或与页面主体内容不一致。', 'developer-starter' ),
+                        'link_text'  => __( '查看 FAQ 实践', 'developer-starter' ),
+                        'link_url'   => '',
+                    ),
+                    array(
+                        'term'       => 'GEO',
+                        'definition' => __( '通过结构化和高质量内容，提升页面被 AI 系统理解与引用的概率。', 'developer-starter' ),
+                        'importance' => 'high',
+                        'example'    => __( '清晰标题结构、摘要、关键结论有助于 AI 抽取。', 'developer-starter' ),
+                        'mistake'    => __( '关键词堆砌和低质量改写会降低可用性。', 'developer-starter' ),
+                        'link_text'  => __( '查看 GEO 指南', 'developer-starter' ),
+                        'link_url'   => '',
+                    ),
+                ),
             ),
             array(
                 'id'      => 'kc_card_bg',
@@ -184,7 +213,7 @@ class Knowledge_Cards_Module extends Module_Base {
         $show_link = ! isset( $data['kc_show_link'] ) || $data['kc_show_link'] === 'yes';
 
         $items = isset( $data['kc_items'] ) && is_array( $data['kc_items'] ) ? $data['kc_items'] : array();
-        if ( empty( $items ) ) {
+        if ( empty( $items ) && ! isset( $data['kc_items'] ) ) {
             $items = array(
                 array(
                     'term'       => 'LCP',

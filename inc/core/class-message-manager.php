@@ -89,25 +89,25 @@ class Message_Manager {
             ) );
         }
 
-        // Verify nonce
+        // 校验安全 Nonce
         $nonce = $this->get_post_value( 'nonce', 'nonce' );
         if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'ds_message_nonce' ) ) {
             wp_send_json_error( array( 'message' => __( '安全验证失败', 'developer-starter' ) ) );
         }
 	        
-        // Rate limiting by IP
+        // 基于客户端 IP 实施限流
         $ip = developer_starter_get_client_ip();
         if ( $this->is_rate_limited( $ip ) ) {
             wp_send_json_error( array( 'message' => __( '提交过于频繁，请稍后再试', 'developer-starter' ) ) );
         }
 	        
-        // Sanitize inputs - prevent SQL injection
+        // 清理输入数据以防御 SQL 注入
         $name = $this->get_post_value( 'name', 'text' );
         $phone = $this->get_post_value( 'phone', 'text' );
         $email = $this->get_post_value( 'email', 'email' );
         $message = $this->get_post_value( 'message', 'textarea' );
         
-        // Validate required fields
+        // 校验必填字段
         if ( empty( $name ) || empty( $message ) ) {
             wp_send_json_error( array( 'message' => __( '请填写必填项', 'developer-starter' ) ) );
         }
@@ -116,7 +116,7 @@ class Message_Manager {
             wp_send_json_error( array( 'message' => __( '请填写联系电话或邮箱', 'developer-starter' ) ) );
         }
         
-        // Insert into database
+        // 写入数据库
         global $wpdb;
         $result = $wpdb->insert(
             $this->table_name,
@@ -137,7 +137,7 @@ class Message_Manager {
             wp_send_json_error( array( 'message' => __( '提交失败，请稍后重试', 'developer-starter' ) ) );
         }
         
-        // Send email notification
+        // 发送邮件通知
         $this->send_email_notification( $name, $phone, $email, $message );
         
         wp_send_json_success( array( 'message' => __( '留言提交成功，我们会尽快与您联系！', 'developer-starter' ) ) );
@@ -406,7 +406,7 @@ class Message_Manager {
         $per_page = 50;
         $base_page_url = admin_url( 'admin.php?page=developer-starter-messages' );
 	        
-        // Handle actions
+        // 处理操作动作
         $action = $this->get_query_value( 'action', 'key' );
         $nonce = $this->get_query_value( '_wpnonce', 'nonce' );
         if ( '' !== $action && '' !== $nonce ) {
@@ -430,7 +430,7 @@ class Message_Manager {
             }
         }
         
-        // Get messages with real pagination
+        // 获取分页留言列表
         $total_records = (int) $wpdb->get_var( "SELECT COUNT(*) FROM `{$this->table_name}`" );
         $total_pages = max( 1, (int) ceil( $total_records / $per_page ) );
         if ( $paged > $total_pages ) {

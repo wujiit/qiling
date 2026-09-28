@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin bootstrap helpers split from functions.php.
+ * 从 functions.php 独立拆分的后台引导辅助函数。
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -144,6 +144,7 @@ if ( ! function_exists( 'developer_starter_should_boot_admin_settings' ) ) {
                 'developer_starter_seo_health_clear',
                 'developer_starter_detect_ecosystem_plugins',
                 'developer_starter_reset_ip_usermeta',
+                'developer_starter_cleanup_duplicate_auth_pages',
             );
             if ( in_array( $ajax_action, $allowed_ajax_actions, true ) ) {
                 return true;
