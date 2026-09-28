@@ -1,4 +1,4 @@
-# ✨ 启灵 (QiLing) - 现代化模块化 WordPress 企业级全能主题
+# 启灵 - 现代化模块化 WordPress 企业级全能主题
 
 <p align="center">
   <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="QiLing WordPress Theme Banner" width="100%" style="border-radius: 8px;" />
