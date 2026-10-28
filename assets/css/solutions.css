@@ -1,0 +1,290 @@
+/**
+ * 解决方案页面专用样式
+ *
+ * @package Developer_Starter
+ * @since 1.0.0
+ */
+
+/* ========================================
+   解决方案页面 - 头部区域
+   ======================================== */
+.template-solutions .page-header {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.template-solutions .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 6px 6px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px),
+        radial-gradient(circle at 36px 36px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.template-solutions .page-header .page-title {
+    text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.2);
+}
+
+.template-solutions .page-header__description {
+    text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.18);
+}
+
+/* ========================================
+   模块通用增强
+   ======================================== */
+.template-solutions .module {
+    position: relative;
+}
+
+.template-solutions .module:nth-child(even) {
+    background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-0) 100%);
+}
+
+/* ========================================
+   图文模块增强
+   ======================================== */
+.template-solutions .module-image-text {
+    position: relative;
+}
+
+.template-solutions .module-image-text .image-text-grid {
+    gap: var(--qiling-space-80) !important;
+}
+
+.template-solutions .module-image-text .image-text-content h2 {
+    position: relative;
+    padding-bottom: var(--qiling-space-20);
+}
+
+.template-solutions .module-image-text .image-text-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-violet-600));
+    border-radius: 2px;
+}
+
+.template-solutions .module-image-text .image-text-content ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--qiling-space-20) 0;
+}
+
+.template-solutions .module-image-text .image-text-content ul li {
+    padding: var(--qiling-space-8) 0;
+    color: var(--color-neutral-700);
+    font-weight: 500;
+}
+
+/* 图片占位符增强 */
+.template-solutions .module-image-text .image-text-image>div {
+    background: linear-gradient(135deg, var(--qiling-color-e0e7ff) 0%, var(--qiling-color-c7d2fe) 100%) !important;
+    min-height: 350px;
+}
+
+.template-solutions .module-image-text .image-text-image>div::before {
+    content: '';
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-primary, #6366f1);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='20' x2='18' y2='10'%3E%3C/line%3E%3Cline x1='12' y1='20' x2='12' y2='4'%3E%3C/line%3E%3Cline x1='6' y1='20' x2='6' y2='14'%3E%3C/line%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='20' x2='18' y2='10'%3E%3C/line%3E%3Cline x1='12' y1='20' x2='12' y2='4'%3E%3C/line%3E%3Cline x1='6' y1='20' x2='6' y2='14'%3E%3C/line%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* ========================================
+   多列布局增强
+   ======================================== */
+.template-solutions .module-columns .column-item {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.template-solutions .module-columns .column-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(var(--qiling-rgb-0-0-0), 0.1) !important;
+    border-color: var(--color-primary);
+}
+
+.template-solutions .module-columns .column-item h3 {
+    color: var(--color-dark);
+    font-size: calc(var(--qiling-font-size-base) * 1.25) !important;
+    font-weight: 600;
+}
+
+.template-solutions .module-columns .column-item ul {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--qiling-space-15);
+}
+
+.template-solutions .module-columns .column-item ul li {
+    padding: var(--qiling-space-5) 0;
+    color: var(--color-gray-600);
+    position: relative;
+    padding-left: var(--qiling-space-20);
+}
+
+.template-solutions .module-columns .column-item ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* ========================================
+   合作流程模块增强
+   ======================================== */
+.template-solutions .module-process {
+    padding-top: var(--qiling-space-80);
+    padding-bottom: var(--qiling-space-80);
+}
+
+.template-solutions .module-process .process-item {
+    transition: all 0.3s ease;
+}
+
+.template-solutions .module-process .process-item:hover {
+    transform: translateY(-5px);
+}
+
+/* ========================================
+   企业优势模块增强
+   ======================================== */
+.template-solutions .module-features .feature-item {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.template-solutions .module-features .feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, var(--color-primary), var(--color-violet-600));
+    transition: height 0.3s ease;
+}
+
+.template-solutions .module-features .feature-item:hover {
+    transform: translateX(5px);
+}
+
+.template-solutions .module-features .feature-item:hover::before {
+    height: 100%;
+}
+
+/* ========================================
+   CTA模块增强
+   ======================================== */
+.template-solutions .module-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.template-solutions .module-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    border-radius: 50%;
+    animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.template-solutions .module-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.08);
+    border-radius: 50%;
+    animation: pulse-slow 4s ease-in-out infinite 2s;
+}
+
+@keyframes pulse-slow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* ========================================
+   动画效果
+   ======================================== */
+.template-solutions [data-aos] {
+    transition-duration: 0.8s !important;
+}
+
+/* ========================================
+   响应式适配
+   ======================================== */
+@media (max-width: 991px) {
+    .template-solutions .page-header .page-title {
+        font-size: calc(var(--qiling-font-size-base) * 2);
+    }
+
+    .template-solutions .module-image-text .image-text-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--qiling-space-40) !important;
+        direction: ltr !important;
+    }
+
+    .template-solutions .module-image-text .image-text-image,
+    .template-solutions .module-image-text .image-text-content {
+        direction: ltr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .template-solutions .page-header .page-title {
+        font-size: calc(var(--qiling-font-size-base) * 1.75);
+    }
+
+    .template-solutions .module-columns .columns-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .template-solutions .module-columns .column-item:hover {
+        transform: none;
+    }
+}
+
+/* ========================================
+   暗黑模式支持 (Dark Mode Support)
+   ======================================== */
+html.dark-mode .template-solutions .module-columns .column-item h3 {
+    color: var(--color-neutral-100) !important;
+}
+
+html.dark-mode .template-solutions .module-columns .column-item ul li {
+    color: var(--color-neutral-300);
+}
+
+html.dark-mode .template-solutions .module:nth-child(even) {
+    background: linear-gradient(180deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%);
+}

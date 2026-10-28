@@ -1,0 +1,98 @@
+body.qiling-i18n-typography {
+    --qiling-i18n-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    --qiling-i18n-font-heading: var(--qiling-i18n-font-body);
+    --qiling-i18n-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --qiling-i18n-line-height-body: 1.72;
+    --qiling-i18n-line-height-heading: 1.24;
+    --qiling-i18n-word-break: normal;
+    --qiling-i18n-overflow-wrap: break-word;
+    font-family: var(--qiling-i18n-font-body);
+}
+
+body.qiling-i18n-typography :where(p, li, dd, blockquote, figcaption, input, textarea, select, button) {
+    line-height: var(--qiling-i18n-line-height-body);
+    overflow-wrap: var(--qiling-i18n-overflow-wrap);
+    word-break: var(--qiling-i18n-word-break);
+}
+
+body.qiling-i18n-typography :where(h1, h2, h3, h4, h5, h6, .entry-title, .module-title, .section-title, .card-title) {
+    font-family: var(--qiling-i18n-font-heading);
+    line-height: var(--qiling-i18n-line-height-heading);
+    overflow-wrap: var(--qiling-i18n-overflow-wrap);
+    word-break: var(--qiling-i18n-word-break);
+}
+
+body.qiling-i18n-typography :where(a, button, .button, .btn, .menu-item, .nav-link, .card, .module-card, .qiling-module) {
+    overflow-wrap: var(--qiling-i18n-overflow-wrap);
+}
+
+body.qiling-i18n-typography :where(pre, code, kbd, samp) {
+    font-family: var(--qiling-i18n-font-mono);
+}
+
+body.qiling-lang-zh {
+    --qiling-i18n-font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans", Arial, sans-serif;
+    --qiling-i18n-line-height-body: 1.72;
+    --qiling-i18n-line-height-heading: 1.24;
+    --qiling-i18n-word-break: normal;
+    --qiling-i18n-overflow-wrap: break-word;
+}
+
+body.qiling-lang-en {
+    --qiling-i18n-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    --qiling-i18n-line-height-body: 1.68;
+    --qiling-i18n-line-height-heading: 1.18;
+    --qiling-i18n-word-break: normal;
+    --qiling-i18n-overflow-wrap: anywhere;
+}
+
+body.qiling-lang-en :where(p, li, dd, blockquote, figcaption, .entry-content, .post-content, .module-content) {
+    hyphens: auto;
+}
+
+body.qiling-lang-ja {
+    --qiling-i18n-font-body: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+    --qiling-i18n-line-height-body: 1.82;
+    --qiling-i18n-line-height-heading: 1.3;
+    --qiling-i18n-word-break: normal;
+    --qiling-i18n-overflow-wrap: break-word;
+}
+
+body.qiling-lang-ko {
+    --qiling-i18n-font-body: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Noto Sans CJK KR", sans-serif;
+    --qiling-i18n-line-height-body: 1.78;
+    --qiling-i18n-line-height-heading: 1.28;
+    --qiling-i18n-word-break: keep-all;
+    --qiling-i18n-overflow-wrap: anywhere;
+}
+
+body.qiling-dir-rtl {
+    direction: rtl;
+    text-align: start;
+    --qiling-i18n-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans", Arial, sans-serif;
+    --qiling-i18n-line-height-body: 1.78;
+    --qiling-i18n-line-height-heading: 1.28;
+    --qiling-i18n-word-break: normal;
+    --qiling-i18n-overflow-wrap: anywhere;
+}
+
+body.qiling-dir-rtl :where(input, textarea, select) {
+    direction: rtl;
+    text-align: start;
+}
+
+body.qiling-dir-rtl :where(pre, code, kbd, samp, [dir="ltr"]) {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: isolate;
+}
+
+body.qiling-dir-rtl :where(.swiper, .swiper-wrapper, .swiper-slide) {
+    direction: ltr;
+}
+
+@media (max-width: 720px) {
+    body.qiling-i18n-typography :where(button, .button, .btn, .nav-link, .menu-item a) {
+        white-space: normal;
+    }
+}

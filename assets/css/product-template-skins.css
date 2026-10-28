@@ -1,0 +1,59 @@
+/**
+ * Product template skins.
+ *
+ * Lightweight visual layer for product, app and official-site page templates.
+ *
+ * @package Developer_Starter
+ */
+
+.qiling-product-template {
+    background: var(--color-surface);
+}
+
+.qiling-product-template .qiling-resource-empty-state {
+    min-height: 52vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(180deg, rgba(var(--color-primary-rgb), 0.035) 0, rgba(var(--color-primary-rgb), 0) 320px),
+        var(--color-surface);
+}
+
+.qiling-product-template .qiling-resource-empty-state__icon {
+    width: 72px;
+    height: 72px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--qiling-space-24);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.18);
+    border-radius: 18px;
+    color: var(--color-primary);
+    background: rgba(var(--color-primary-rgb), 0.08);
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.qiling-product-template .qiling-resource-empty-state__title {
+    margin: 0 0 var(--qiling-space-12);
+    color: var(--color-text);
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    line-height: 1.2;
+}
+
+.qiling-product-template .qiling-resource-empty-state__desc {
+    max-width: 620px;
+    margin: 0 auto var(--qiling-space-24);
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.qiling-product-template .qiling-resource-empty-state__button {
+    border-radius: 10px;
+}
+
+html.dark-mode .qiling-product-template,
+[data-theme="dark"] .qiling-product-template {
+    background: var(--color-neutral-950);
+}

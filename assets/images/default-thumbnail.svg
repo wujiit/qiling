@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Qiling default thumbnail</title>
+  <desc id="desc">A quiet geometric placeholder for posts without thumbnails.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e8eef7"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <circle cx="502" cy="80" r="76" fill="#dbeafe" opacity=".72"/>
+  <circle cx="88" cy="322" r="112" fill="#ccfbf1" opacity=".58"/>
+  <rect x="172" y="118" width="256" height="164" rx="22" fill="#ffffff" opacity=".88"/>
+  <path d="M209 250h182l-59-70-42 45-28-32z" fill="url(#mark)" opacity=".88"/>
+  <circle cx="239" cy="160" r="20" fill="#93c5fd"/>
+  <rect x="218" y="300" width="164" height="10" rx="5" fill="#cbd5e1"/>
+  <rect x="252" y="322" width="96" height="8" rx="4" fill="#d8e0ea"/>
+</svg>

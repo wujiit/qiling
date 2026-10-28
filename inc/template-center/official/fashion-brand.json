@@ -1,0 +1,303 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "服装品牌官网",
+  "page_template": "templates/template-fashion-brand.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "beauty_company",
+    "colors": {
+      "primary": "#171717",
+      "accent": "#9a3412",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "fashion-brand",
+    "label": "服装品牌官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "fashion",
+    "industry_label": "服装时尚",
+    "scenario": "当季系列、造型画册、精选单品、品牌服务",
+    "description": "适合设计师服装品牌、成衣工作室和生活方式品牌，内置当季系列、搭配画册、精选单品、面料工艺、顾客评价与品牌服务入口。",
+    "badges": [
+      "当季系列",
+      "搭配画册",
+      "精选单品"
+    ],
+    "order": 550,
+    "thumbnail": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85"
+  },
+  "seo": {
+    "title": "服装品牌官网模板 - 当季系列与造型画册",
+    "description": "面向设计师服装品牌与成衣工作室的中文官网模板，包含季节系列、Lookbook、精选单品、面料工艺、顾客评价和品牌服务。",
+    "keywords": "服装品牌官网,时装品牌,设计师品牌,当季系列,Lookbook,成衣",
+    "og_title": "服装品牌官网",
+    "og_description": "以编辑式视觉呈现当季系列、品牌工艺与精选成衣。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "full",
+        "banner_bg_color": "#0a0a0a",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2000&q=90",
+            "title": "风从衣褶之间经过",
+            "title_align": "left",
+            "subtitle": "2026 秋冬系列 · 在克制廓形中留下温度与行动的余量",
+            "btn_text": "探索当季系列",
+            "btn_url": "#collection",
+            "btn_bg_color": "#f7f3ea",
+            "btn_text_color": "#0f172a",
+            "btn_border_color": "#f7f3ea"
+          },
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=90",
+            "title": "城市漫游者",
+            "title_align": "right",
+            "subtitle": "松弛剪裁、森林绿与一点朱红，为日常建立清晰节奏",
+            "btn_text": "翻阅造型画册",
+            "btn_url": "#lookbook",
+            "btn_bg_color": "#a33a32",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "#a33a32"
+          }
+        ],
+        "show_stats_bar": "0",
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "本季造型画册 / AUTUMN–WINTER 2026",
+        "lookbook_columns": "3",
+        "lookbook_items": [
+          {
+            "cover_image": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=88",
+            "video_360": "",
+            "name": "LOOK 01 · 苔原层次",
+            "desc": "羊毛外套与垂坠长裙叠穿，沉静森林绿回应初冬光线。",
+            "btn_text": "查看造型单品",
+            "item_1_img": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=700&q=85",
+            "item_1_title": "双面羊毛长外套",
+            "item_1_price": "¥2,680",
+            "item_1_link": "#featured",
+            "item_1_spec_name": "苔藓绿",
+            "item_1_btn_bg": "#264c3a",
+            "item_1_btn_border": "#264c3a",
+            "item_2_img": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85",
+            "item_2_title": "高腰垂坠长裤",
+            "item_2_price": "¥980",
+            "item_2_link": "#featured",
+            "item_2_spec_name": "岩灰",
+            "item_2_btn_bg": "#264c3a",
+            "item_2_btn_border": "#264c3a"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=88",
+            "video_360": "",
+            "name": "LOOK 02 · 朱红切面",
+            "desc": "利落短夹克穿过中性色调，以朱红留下明确的视觉停顿。",
+            "btn_text": "查看造型单品",
+            "item_1_img": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=85",
+            "item_1_title": "短款皮革夹克",
+            "item_1_price": "¥2,280",
+            "item_1_link": "#featured",
+            "item_1_spec_name": "深朱红",
+            "item_1_btn_bg": "#a33a32",
+            "item_1_btn_border": "#a33a32",
+            "item_2_img": "https://images.unsplash.com/photo-1594633313593-bab3825d0caf?auto=format&fit=crop&w=700&q=85",
+            "item_2_title": "直筒羊毛半裙",
+            "item_2_price": "¥1,180",
+            "item_2_link": "#featured",
+            "item_2_spec_name": "墨黑",
+            "item_2_btn_bg": "#a33a32",
+            "item_2_btn_border": "#a33a32"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=1200&q=88",
+            "video_360": "",
+            "name": "LOOK 03 · 冬日留白",
+            "desc": "柔软针织与干净衬衫构成轻盈层次，从工作日延伸至周末。",
+            "btn_text": "查看造型单品",
+            "item_1_img": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=700&q=85",
+            "item_1_title": "羊绒混纺针织衫",
+            "item_1_price": "¥1,380",
+            "item_1_link": "#featured",
+            "item_1_spec_name": "燕麦白",
+            "item_1_btn_bg": "#171713",
+            "item_1_btn_border": "#171713",
+            "item_2_img": "https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=85",
+            "item_2_title": "有机棉宽版衬衫",
+            "item_2_price": "¥890",
+            "item_2_link": "#featured",
+            "item_2_spec_name": "骨白",
+            "item_2_btn_bg": "#171713",
+            "item_2_btn_border": "#171713"
+          }
+        ],
+        "enable_staggered_animation": "yes",
+        "module_bg_color": "#f5f5f4",
+        "module_padding_top": "100px",
+        "module_padding_bottom": "100px"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "精选成衣",
+        "products_subtitle": "THE EDIT / 06",
+        "columns": "3",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=900&q=88",
+            "title": "双面羊毛长外套",
+            "desc": "苔藓绿 · 宽松直身廓形",
+            "specs": "90% 羊毛 / 10% 山羊绒\n双面手工缝制\n建议专业干洗",
+            "post_id": "",
+            "btn_text": "查看细节"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=88",
+            "title": "羊绒混纺针织衫",
+            "desc": "燕麦白 · 柔软落肩",
+            "specs": "羊绒羊毛混纺\n12 针细密织法\n低温手洗",
+            "post_id": "",
+            "btn_text": "查看细节"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=88",
+            "title": "高腰垂坠长裤",
+            "desc": "岩灰 · 微阔直筒",
+            "specs": "精纺羊毛混纺\n半里结构\n侧缝隐形口袋",
+            "post_id": "",
+            "btn_text": "查看细节"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=900&q=88",
+            "title": "有机棉宽版衬衫",
+            "desc": "骨白 · 弧形下摆",
+            "specs": "有机棉面料\n贝壳纽扣\n可机洗",
+            "post_id": "",
+            "btn_text": "查看细节"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=88",
+            "title": "短款皮革夹克",
+            "desc": "深朱红 · 收束肩线",
+            "specs": "绵羊皮革\n再生纤维里布\n专业皮革护理",
+            "post_id": "",
+            "btn_text": "查看细节"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1594633313593-bab3825d0caf?auto=format&fit=crop&w=900&q=88",
+            "title": "直筒羊毛半裙",
+            "desc": "墨黑 · 后开衩剪裁",
+            "specs": "精纺羊毛\n醋酸纤维里布\n后中隐形拉链",
+            "post_id": "",
+            "btn_text": "查看细节"
+          }
+        ],
+        "modal_inquire_text": "咨询门店库存",
+        "modal_inquire_url": "#service",
+        "modal_inquire_btn_bg_color": "#171717",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_border_color": "#264c3a",
+        "modal_inquire_btn_hover_bg_color": "#a33a32",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "modal_inquire_btn_hover_border_color": "#a33a32",
+        "module_bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "从纤维到衣橱",
+        "features_subtitle": "面料、剪裁、制作与售后，构成一件衣服更长久的生命",
+        "features_title_color": "#ffffff",
+        "features_subtitle_color": "rgba(255, 255, 255, 0.8)",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#171717",
+        "features_padding": "loose",
+        "features_card_style": "border",
+        "features_card_bg": "#264c3a",
+        "features_card_border": "#5f7869",
+        "features_card_hover_border": "#d1665d",
+        "features_item_title_color": "#ffffff",
+        "features_item_desc_color": "#d8dfd9",
+        "features_card_radius": "0",
+        "features_hover_effect": "lift",
+        "features_icon_style": "simple",
+        "features_icon_size": "48px",
+        "features_icon_color": "#d1665d",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "可追溯面料",
+            "desc": "优先选择认证羊毛、有机棉与再生纤维，公开主要成分和护理方式。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "立体剪裁",
+            "desc": "围绕身体活动反复调版，让轮廓清晰，同时保留舒适余量。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "小批量制作",
+            "desc": "控制生产节奏，重视缝份、里布、纽扣与每一道收边细节。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "品牌服务",
+            "desc": "提供尺码建议、门店试穿、基础修改与专业衣物养护咨询。",
+            "link": "#service"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "找到属于你的本季轮廓",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle": "预约门店试穿，或在线获得尺码、搭配与衣物养护建议。",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_text": "预约品牌服务",
+        "cta_button_url": "#service",
+        "cta_button_bg_color": "#f7f3ea",
+        "cta_button_text_color": "#a33a32",
+        "cta_button_border_color": "#f7f3ea",
+        "cta_button_hover_bg_color": "#264c3a",
+        "cta_button_hover_text_color": "#ffffff",
+        "cta_button_hover_border_color": "#264c3a",
+        "cta_bg_type": "color",
+        "cta_bg_image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=90",
+        "cta_bg_overlay": "0.58",
+        "cta_layout_mode": "standard",
+        "cta_footer_bridge": "on",
+        "cta_border_radius": "0",
+        "module_padding_top": "110px",
+        "module_padding_bottom": "110px",
+        "cta_bg_color": "#0a0a0a"
+      }
+    }
+  ]
+}

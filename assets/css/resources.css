@@ -1,0 +1,318 @@
+/**
+ * 资源下载页面专用样式
+ *
+ * @package Developer_Starter
+ * @since 1.0.0
+ */
+
+/* ========================================
+   资源下载页面 - 头部区域
+   ======================================== */
+.template-resources .page-header {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.template-resources .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 6px 6px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px),
+        radial-gradient(circle at 36px 36px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.template-resources .page-header .page-title {
+    text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.3);
+}
+
+.template-resources .page-header__description {
+    text-shadow: 0 2px 10px rgba(var(--qiling-rgb-0-0-0), 0.18);
+}
+
+/* ========================================
+   下载模块增强样式
+   ======================================== */
+.template-resources .module-downloads {
+    position: relative;
+}
+
+.template-resources .module-downloads:nth-child(odd) {
+    background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-0) 100%);
+}
+
+.template-resources .module-downloads .section-header {
+    position: relative;
+}
+
+.template-resources .module-downloads .section-title {
+    font-size: calc(var(--qiling-font-size-base) * 1.75);
+    font-weight: 700;
+    color: var(--color-neutral-800);
+}
+
+.template-resources .module-downloads .section-subtitle {
+    color: var(--color-neutral-500);
+    margin-top: var(--qiling-space-8);
+}
+
+/* 下载卡片增强 */
+.template-resources .module-downloads .download-item {
+    background: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.template-resources .module-downloads .download-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
+    transition: height 0.3s ease;
+}
+
+.template-resources .module-downloads .download-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(var(--qiling-rgb-0-0-0), 0.1);
+    border-color: var(--qiling-color-c7d2fe);
+}
+
+.template-resources .module-downloads .download-item:hover::before {
+    height: 100%;
+}
+
+/* 下载按钮增强 */
+.template-resources .module-downloads .download-item .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
+    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.template-resources .module-downloads .download-item .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(var(--qiling-rgb-255-255-255), 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.template-resources .module-downloads .download-item:hover .btn-primary::before {
+    left: 100%;
+}
+
+.template-resources .module-downloads .download-item .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(var(--color-primary-rgb), 0.4);
+}
+
+/* ========================================
+   文件类型标签样式
+   ======================================== */
+.template-resources .module-downloads .download-item .meta-tag {
+    animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* ========================================
+   FAQ模块增强
+   ======================================== */
+.template-resources .module-faq {
+    background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-0) 100%);
+}
+
+.template-resources .module-faq .faq-item {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.template-resources .module-faq .faq-item:hover {
+    background: var(--color-neutral-50);
+}
+
+/* ========================================
+   CTA模块增强
+   ======================================== */
+.template-resources .module-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.template-resources .module-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    border-radius: 50%;
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+.template-resources .module-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.08);
+    border-radius: 50%;
+    animation: float-slow 6s ease-in-out infinite 3s;
+}
+
+@keyframes float-slow {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* ========================================
+   分类图标动画
+   ======================================== */
+.template-resources .module-downloads .download-item .download-icon {
+    transition: transform 0.3s ease;
+}
+
+.template-resources .module-downloads .download-item:hover .download-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* ========================================
+   Banner模块增强（如果页面使用了Banner）
+   ======================================== */
+.template-resources .module-banner {
+    position: relative;
+}
+
+.template-resources .module-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(var(--qiling-rgb-248-250-252), 1), transparent);
+    pointer-events: none;
+}
+
+/* ========================================
+   动画效果
+   ======================================== */
+.template-resources [data-aos] {
+    transition-duration: 0.8s !important;
+}
+
+/* ========================================
+   响应式适配
+   ======================================== */
+@media (max-width: 991px) {
+    .template-resources .page-header .page-title {
+        font-size: calc(var(--qiling-font-size-base) * 2);
+    }
+
+    .template-resources .module-downloads .downloads-list {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .template-resources .page-header .page-title {
+        font-size: calc(var(--qiling-font-size-base) * 1.75);
+    }
+
+    .template-resources .module-downloads .download-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .template-resources .module-downloads .download-item .btn-primary,
+    .template-resources .module-downloads .download-item span[style*="暂无文件"] {
+        margin-left: 0 !important;
+        margin-top: var(--qiling-space-15);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .template-resources .module-downloads .download-item:hover {
+        transform: none;
+    }
+
+    .template-resources .module-cta::before,
+    .template-resources .module-cta::after {
+        display: none;
+    }
+}
+
+/* ========================================
+   暗色模式适配
+   ======================================== */
+.dark-mode .template-resources .module-downloads .download-item {
+    background: var(--color-neutral-800);
+    border-color: var(--color-neutral-700);
+}
+
+.dark-mode .template-resources .module-downloads .download-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 20px 40px rgba(var(--qiling-rgb-0-0-0), 0.3);
+}
+
+.dark-mode .template-resources .module-downloads .section-title {
+    color: var(--color-neutral-100);
+}
+
+.dark-mode .template-resources .module-downloads .section-subtitle {
+    color: var(--color-neutral-400);
+}
+
+.dark-mode .template-resources .module-downloads:nth-child(odd) {
+    background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+}
+
+.dark-mode .template-resources .module-faq {
+    background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+}
+
+.dark-mode .template-resources .module-faq .faq-item:hover {
+    background: var(--color-neutral-700);
+}
+
+:is(html.dark-mode, [data-theme="dark"]) .template-resources .module-banner::after {
+    background: linear-gradient(to top, var(--dm-bg, var(--color-neutral-900)), transparent);
+}

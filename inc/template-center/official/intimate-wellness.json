@@ -1,0 +1,330 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "情趣用品商城",
+  "page_template": "templates/template-intimate-wellness.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "beauty_company",
+    "colors": {
+      "primary": "#9d174d",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "intimate-wellness",
+    "label": "情趣用品商城",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "intimate_wellness",
+    "industry_label": "情趣用品",
+    "scenario": "成人私密健康用品、材质说明、隐私配送、使用养护",
+    "description": "适合面向成年人的私密健康用品品牌与生活方式商店，内置克制的产品展示、材质安全、隐私配送、清洁收纳指导和常见问题。",
+    "badges": [
+      "18+ 成人适用",
+      "隐私配送",
+      "材质透明"
+    ],
+    "order": 549,
+    "thumbnail": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "情趣用品商城模板 - 材质透明与隐私配送",
+    "description": "面向年满 18 周岁成年人的私密健康用品品牌页面，清晰展示产品材质、隐私包装配送、清洁方法与收纳建议。",
+    "keywords": "私密健康用品,成人健康用品,材质安全,隐私包装,隐私配送,清洁收纳",
+    "og_title": "情趣用品商城",
+    "og_description": "以克制、现代的方式呈现成人私密健康用品、材质信息与隐私服务。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_bg_color": "linear-gradient(135deg, #090d16 0%, #4a044e 50%, #831843 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1800&q=80",
+            "title": "认真照顾每一份私密感受",
+            "title_align": "left",
+            "subtitle": "为年满 18 周岁的成年人提供克制、安心的健康用品选择。材质信息清晰，包装与配送注重隐私；产品不用于疾病诊断、治疗或预防。",
+            "btn_text": "了解产品与材质",
+            "btn_url": "#",
+            "btn_bg_color": "#be185d",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "#ffffff"
+          }
+        ],
+        "show_stats_bar": "1",
+        "stats_bar_bg_color": "rgba(18, 60, 58, 0.9)",
+        "stats_data": [
+          {
+            "icon": "18+",
+            "number": "18+",
+            "label": "仅限成年人",
+            "color": "#ffffff",
+            "label_color": "#d9eeeb"
+          },
+          {
+            "icon": "材",
+            "number": "透明",
+            "label": "材质与养护说明",
+            "color": "#ffffff",
+            "label_color": "#d9eeeb"
+          },
+          {
+            "icon": "隐",
+            "number": "无敏感字样",
+            "label": "外箱与面单",
+            "color": "#ffffff",
+            "label_color": "#d9eeeb"
+          },
+          {
+            "icon": "净",
+            "number": "清晰",
+            "label": "清洁收纳指引",
+            "color": "#ffffff",
+            "label_color": "#d9eeeb"
+          }
+        ],
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "日常私密健康精选",
+        "products_subtitle": "INTIMATE WELLNESS ESSENTIALS · 18+",
+        "columns": "4",
+        "modal_inquire_text": "查看材质与使用说明",
+        "modal_inquire_url": "#",
+        "modal_inquire_btn_bg_color": "#9d174d",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_border_color": "#1f6f68",
+        "modal_inquire_btn_hover_bg_color": "#123c3a",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "modal_inquire_btn_hover_border_color": "#123c3a",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=900&q=80",
+            "title": "温和清洁护理液",
+            "desc": "用于可水洗用品的日常表面清洁，配方与适用范围以包装说明为准。",
+            "specs": "适用：年满 18 周岁的成年人\n使用：按标签说明稀释或直接使用\n提醒：先在小范围测试，出现不适请停用\n收纳：密封后置于阴凉干燥处",
+            "post_id": "",
+            "btn_text": "查看使用说明"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=80",
+            "title": "亲肤按摩器",
+            "desc": "简洁外观与易清洁设计，适合成年人的个人放松场景。",
+            "specs": "适用：年满 18 周岁的成年人\n材质：产品详情页标示的亲肤接触材质\n清洁：关机后按防水等级和说明书清洁\n收纳：完全干燥后单独存放，避免高温与挤压",
+            "post_id": "",
+            "btn_text": "查看材质信息"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1607006483225-0d2fb72f6285?auto=format&fit=crop&w=900&q=80",
+            "title": "水溶性亲密凝露",
+            "desc": "关注顺滑体验与易清洁性，成分、禁忌与兼容性以产品标签为准。",
+            "specs": "适用：年满 18 周岁的成年人\n成分：购买前查看完整成分表\n使用：少量取用，避免接触破损皮肤\n提醒：敏感人群先做局部测试，不适时立即停用",
+            "post_id": "",
+            "btn_text": "查看成分说明"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80",
+            "title": "清洁收纳套装",
+            "desc": "将软布、清洁工具与独立收纳袋组合，帮助保持用品干燥整洁。",
+            "specs": "包含：清洁软布、专用刷、透气收纳袋\n清洁：不同用品分开处理，不与他人共用\n干燥：清洁后自然晾干，不带水收纳\n存放：远离儿童、宠物、阳光直射与热源",
+            "post_id": "",
+            "btn_text": "查看养护指南"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "把安全与隐私写在明处",
+        "features_subtitle": "从选择、收货到日常养护，每一步都有清晰信息",
+        "features_title_color": "#0f172a",
+        "features_subtitle_color": "#475569",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_padding": "normal",
+        "features_card_style": "border",
+        "features_card_bg": "#ffffff",
+        "features_card_border": "#d5e3e0",
+        "features_card_hover_border": "#1f6f68",
+        "features_item_title_color": "#173332",
+        "features_item_desc_color": "#526967",
+        "features_card_radius": "8px",
+        "features_hover_effect": "lift",
+        "features_icon_style": "square",
+        "features_icon_size": "48px",
+        "features_icon_color": "#1f6f68",
+        "features_icon_bg": "#dcefeb",
+        "enable_staggered_animation": "yes",
+        "features_items": [
+          {
+            "icon": "材",
+            "title": "材质信息可查",
+            "desc": "明确展示主要接触材质、成分、适用范围与养护要求；购买和使用前请核对标签及说明书。",
+            "link": "#"
+          },
+          {
+            "icon": "包",
+            "title": "克制的隐私包装",
+            "desc": "采用无敏感文字与图案的普通外箱，商品在箱内独立固定，减少运输途中暴露与磕碰。",
+            "link": "#"
+          },
+          {
+            "icon": "送",
+            "title": "注重隐私的配送",
+            "desc": "面单使用常规品类名称，不展示具体商品信息；物流节点以订单页实际服务为准。",
+            "link": "#"
+          },
+          {
+            "icon": "护",
+            "title": "清洁收纳指引",
+            "desc": "按材质、防水等级和说明书分别清洁，充分干燥后独立收纳，避免共用、暴晒和高温。",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "安心选择四步",
+        "process_subtitle": "先确认适用条件，再了解材质、配送与长期养护",
+        "process_title_color": "#0f172a",
+        "process_subtitle_color": "#475569",
+        "process_mode": "standard",
+        "process_desc_color": "#526967",
+        "process_card_bg": "#ffffff",
+        "process_card_border": "#d5e3e0",
+        "process_card_hover_border": "#d97757",
+        "process_arrow_color": "#9dbbb6",
+        "process_icon_color": "#ffffff",
+        "process_badge_text": "#7a3e2d",
+        "process_badge_bg": "#fbe6de",
+        "module_bg_type": "color",
+        "module_bg_color": "#fdf2f8",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "enable_staggered_animation": "yes",
+        "process_items": [
+          {
+            "icon": "01",
+            "title": "确认年龄与需求",
+            "stage_tag": "18+",
+            "title_color": "#173332",
+            "desc": "本页产品仅面向年满 18 周岁的成年人。结合个人需求、身体状况和产品禁忌谨慎选择。",
+            "icon_bg": "#1f6f68"
+          },
+          {
+            "icon": "02",
+            "title": "核对材质与说明",
+            "stage_tag": "选择",
+            "title_color": "#173332",
+            "desc": "查看材质、成分、防水等级、兼容性与过敏提示，不确定时先咨询品牌客服或专业人士。",
+            "icon_bg": "#2f8178"
+          },
+          {
+            "icon": "03",
+            "title": "隐私收货与验货",
+            "stage_tag": "配送",
+            "title_color": "#173332",
+            "desc": "普通外箱与克制面单发货。签收后先检查封装、产品状态和说明书，再决定是否启封使用。",
+            "icon_bg": "#d97757"
+          },
+          {
+            "icon": "04",
+            "title": "清洁干燥后收纳",
+            "stage_tag": "养护",
+            "title_color": "#173332",
+            "desc": "按说明书清洁，待完全干燥后独立存放；定期检查表面、电池与配件状态，发现破损应停止使用。",
+            "icon_bg": "#b65f45"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "购买与养护常见问题",
+        "faq_subtitle": "关于年龄、材质、隐私配送、清洁和使用边界",
+        "faq_title_color": "#0f172a",
+        "faq_subtitle_color": "#475569",
+        "module_bg_color": "#ffffff",
+        "faq_card_bg": "#ffffff",
+        "faq_card_border": "#d5e3e0",
+        "faq_card_hover_border": "#1f6f68",
+        "faq_question_color": "#173332",
+        "faq_answer_color": "#526967",
+        "faq_icon_bg": "#dcefeb",
+        "faq_icon_color": "#1f6f68",
+        "module_padding_top": "84px",
+        "module_padding_bottom": "84px",
+        "faq_items": [
+          {
+            "question": "哪些人适合浏览和购买本页产品？",
+            "answer": "本页内容及产品仅面向年满 18 周岁的成年人。请根据个人情况阅读材质、成分、适用范围和禁忌说明；孕期、产后、存在过敏史或正在接受诊疗的人群，建议使用前咨询合格的专业人士。"
+          },
+          {
+            "question": "如何判断材质是否适合自己？",
+            "answer": "购买前查看完整材质或成分表、接触部位、使用时长和清洁要求。敏感人群应先做小范围测试；若出现持续不适、红肿或其他异常，请立即停用并根据情况寻求专业帮助。"
+          },
+          {
+            "question": "包裹会显示具体商品信息吗？",
+            "answer": "模板采用普通外箱、无敏感文字图案和常规面单品类名称的隐私方案。实际承运商、面单展示和配送范围应以商家订单页公布的服务为准。"
+          },
+          {
+            "question": "用品应该怎样清洁和收纳？",
+            "answer": "先关机或断开电源，并严格按照材质、防水等级和说明书清洁。避免使用不兼容的酒精、强酸碱或磨蚀性清洁剂；彻底晾干后独立收纳，避免与他人共用，并远离儿童、宠物、高温和阳光直射。"
+          },
+          {
+            "question": "这些产品能改善或治疗健康问题吗？",
+            "answer": "不能作此保证。本页产品属于日常健康与生活方式用品，不用于疾病诊断、治疗或预防，也不能替代医生建议。若有疼痛、出血、持续不适或其他健康疑虑，请停止使用并及时就医。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "了解清楚，再安心选择",
+        "cta_subtitle": "查看材质、适用年龄、使用边界和清洁收纳说明。我们尊重每一份咨询，也重视每一次配送中的隐私。",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
+        "cta_button_text": "查看选购指南",
+        "cta_button_url": "#",
+        "cta_button_bg_color": "#be185d",
+        "cta_button_text_color": "#ffffff",
+        "cta_button_border_color": "#ffffff",
+        "cta_button_hover_bg_color": "#fbe6de",
+        "cta_button_hover_text_color": "#7a3e2d",
+        "cta_button_hover_border_color": "#fbe6de",
+        "cta_bg_type": "color",
+        "cta_bg_image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1800&q=80",
+        "cta_bg_overlay": "0.72",
+        "cta_layout_mode": "standard",
+        "cta_footer_bridge": "off",
+        "cta_border_radius": "0",
+        "cta_content_max_width": "780px",
+        "cta_button_style": "soft",
+        "module_padding_top": "96px",
+        "module_padding_bottom": "96px",
+        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #4a044e 55%, #831843 100%)"
+      }
+    }
+  ]
+}

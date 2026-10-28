@@ -1,0 +1,369 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "健康保健用品官网",
+  "page_template": "templates/template-health-supplements.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "healthcare_company",
+    "colors": {
+      "primary": "#059669",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "health-supplements",
+    "label": "健康保健用品官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "health_supplements",
+    "industry_label": "健康保健用品",
+    "scenario": "营养补充、睡眠支持、关节养护、日常健康用品展示与选购咨询",
+    "description": "适合营养补充剂、健康食品和日常保健用品品牌官网，内置产品分类、理性选购、标签合规、资质材料、FAQ 和咨询入口。",
+    "badges": [
+      "健康用品",
+      "理性选购",
+      "合规展示"
+    ],
+    "order": 548,
+    "thumbnail": "https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "健康保健用品官网模板 - 产品展示与理性选购",
+    "description": "适合营养补充剂、睡眠支持、关节养护和日常健康用品品牌的官网页面，包含产品中心、选购要点、合规说明、资质材料、FAQ 和咨询入口。",
+    "keywords": "健康保健用品官网,营养补充剂,睡眠支持,关节养护,日常健康,保健食品",
+    "og_title": "健康保健用品官网",
+    "og_description": "用清晰的产品信息、适用人群提示和合规材料搭建健康用品品牌官网。"
+  },
+  "modules": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "image_text",
+        "banner_height": "large",
+        "banner_image_position": "right",
+        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 55%, #d97706 100%)",
+        "banner_slides": [
+          {
+            "media_type": "image",
+            "image": "https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=1800&q=80",
+            "title": "把每日健康选择，做得清楚一点",
+            "title_align": "left",
+            "subtitle": "从配料、含量、建议食用方法到不适宜人群，完整呈现产品信息，帮助消费者按自身需要理性选择。保健食品不能替代药物。",
+            "btn_text": "查看产品系列",
+            "btn_url": "#products",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#059669",
+            "btn_border_color": "#0f766e"
+          }
+        ],
+        "show_stats_bar": "0",
+        "banner_wave_enable": "0"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "按日常需求选择",
+        "products_subtitle": "DAILY WELLNESS COLLECTION",
+        "columns": "4",
+        "modal_inquire_text": "咨询产品信息",
+        "modal_inquire_url": "#consult",
+        "modal_inquire_btn_bg_color": "#059669",
+        "modal_inquire_btn_text_color": "#ffffff",
+        "modal_inquire_btn_border_color": "#0f766e",
+        "modal_inquire_btn_hover_bg_color": "#115e59",
+        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "modal_inquire_btn_hover_border_color": "#115e59",
+        "items": [
+          {
+            "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80",
+            "title": "基础营养补充系列",
+            "desc": "围绕日常膳食补充需求，清晰标注配料与每份含量。",
+            "specs": "品类：维生素、矿物质与复合营养补充剂\n信息：配料表、营养成分、每份含量\n选择：结合饮食结构与个人需要\n提示：按标签建议食用，不替代均衡饮食",
+            "post_id": "",
+            "btn_text": "查看产品信息"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80",
+            "title": "睡眠支持系列",
+            "desc": "服务规律作息场景，重点展示原料、食用时间与注意事项。",
+            "specs": "场景：晚间日常营养支持\n信息：原料来源、建议食用方法\n配合：规律作息、减少睡前刺激\n提示：孕期、哺乳期及用药人群食用前先咨询专业人士",
+            "post_id": "",
+            "btn_text": "了解使用提示"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=80",
+            "title": "关节日常养护系列",
+            "desc": "面向运动与日常活动人群，提供成分透明的营养补充选择。",
+            "specs": "场景：运动与日常活动营养支持\n信息：核心原料、每份含量、食用周期\n配合：适量运动与体重管理\n提示：不用于疾病预防、诊断或治疗",
+            "post_id": "",
+            "btn_text": "查看成分说明"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=80",
+            "title": "日常健康管理系列",
+            "desc": "覆盖通勤、运动和家庭场景的便携健康用品与营养选择。",
+            "specs": "场景：通勤、运动、家庭日常\n选择：根据年龄、饮食与生活方式判断\n信息：规格、储存方法、保质期\n提示：阅读标签并遵循建议用量",
+            "post_id": "",
+            "btn_text": "浏览日常系列"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "选购时，先看这些信息",
+        "features_subtitle": "不堆砌功效承诺，把消费者真正需要核对的内容放在前面",
+        "features_columns": "4",
+        "features_icon_position": "top",
+        "features_text_align": "left",
+        "features_bg_color": "#ffffff",
+        "features_padding": "normal",
+        "features_card_style": "border",
+        "features_card_bg": "#ffffff",
+        "features_card_border": "#dbe7e4",
+        "features_card_hover_border": "#0f766e",
+        "features_card_radius": "8px",
+        "features_hover_effect": "lift",
+        "features_icon_style": "square",
+        "features_icon_size": "48px",
+        "features_icon_color": "#0f766e",
+        "features_icon_bg": "#ccfbf1",
+        "features_items": [
+          {
+            "icon": "01",
+            "title": "配料与含量",
+            "desc": "核对完整配料表、每份含量、规格和过敏原提示。",
+            "link": "#"
+          },
+          {
+            "icon": "02",
+            "title": "适宜与不适宜人群",
+            "desc": "根据年龄、孕哺状态、过敏史和正在使用的药物审慎选择。",
+            "link": "#"
+          },
+          {
+            "icon": "03",
+            "title": "食用方法",
+            "desc": "遵循标签建议的次数、用量与食用时间，不自行叠加同类成分。",
+            "link": "#"
+          },
+          {
+            "icon": "04",
+            "title": "标签与追溯",
+            "desc": "查看生产信息、保质期、储存条件和可查询的批次信息。",
+            "link": "#"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "ct_title": "信息透明与<span style=\"color:#0f766e\">合规表达</span>",
+        "ct_subtitle": "健康用品页面应以真实标签和实际资料为准，不使用疾病治疗、保证效果或绝对化表述。",
+        "ct_note": "以下为官网发布前的核验项目，不代表模板使用者已经取得任何许可或认证。请按产品实际类别、销售地区和现行法规，由专业人员审核后替换。",
+        "ct_layout": "grid",
+        "ct_columns": "4",
+        "ct_enable_filter": "yes",
+        "ct_card_style": "solid",
+        "ct_accent_color": "#059669",
+        "ct_status_chip_bg": "#fef3c7",
+        "ct_status_chip_text": "#92400e",
+        "ct_action_btn_bg": "#0f766e",
+        "ct_action_btn_text": "#ffffff",
+        "ct_action_btn_border": "#0f766e",
+        "module_bg_type": "color",
+        "module_bg_color": "#f0fdf4",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "ct_items": [
+          {
+            "icon": "标",
+            "title": "产品标签核验",
+            "short_name": "LABEL",
+            "category": "产品信息",
+            "status": "planned",
+            "status_text": "上线前核验",
+            "issuer": "企业质量与法规负责人",
+            "scope": "产品名称、配料、含量、食用方法与不适宜人群",
+            "valid_until": "随产品版本复核",
+            "description": "页面信息应与实际包装标签和经审核的产品资料保持一致。",
+            "checklist": "标签版本一致\n配料与含量一致\n警示语完整\n储存条件清楚",
+            "report_url": "#",
+            "report_text": "查看核验说明",
+            "highlight": "yes"
+          },
+          {
+            "icon": "宣",
+            "title": "宣传内容审核",
+            "short_name": "CLAIM",
+            "category": "宣传规范",
+            "status": "planned",
+            "status_text": "发布前审核",
+            "issuer": "企业法规与内容负责人",
+            "scope": "官网标题、详情、图片、问答与推广素材",
+            "valid_until": "每次发布复核",
+            "description": "不明示或暗示疾病预防、诊断、治疗作用，不以个案替代普遍结论。",
+            "checklist": "不承诺治疗疾病\n不使用保证性效果\n不夸大适用范围\n不伪造用户反馈",
+            "report_url": "#",
+            "report_text": "查看发布边界",
+            "highlight": "yes"
+          },
+          {
+            "icon": "溯",
+            "title": "批次与来源追溯",
+            "short_name": "TRACE",
+            "category": "质量管理",
+            "status": "planned",
+            "status_text": "按实际配置",
+            "issuer": "企业供应链与质量负责人",
+            "scope": "原料来源、生产批次、检验资料与售后反馈",
+            "valid_until": "持续维护",
+            "description": "根据实际业务建立批次查询和问题反馈路径，不展示无法验证的信息。",
+            "checklist": "供应商资料留存\n生产批次可查\n检验资料匹配\n问题反馈有记录",
+            "report_url": "#",
+            "report_text": "查看追溯流程",
+            "highlight": "no"
+          },
+          {
+            "icon": "隐",
+            "title": "咨询信息保护",
+            "short_name": "PRIVACY",
+            "category": "用户权益",
+            "status": "planned",
+            "status_text": "按业务核验",
+            "issuer": "企业用户服务负责人",
+            "scope": "咨询表单、联系方式与健康相关描述",
+            "valid_until": "持续维护",
+            "description": "仅收集完成咨询所需的信息，明确用途并提供删除或更正渠道。",
+            "checklist": "最小必要收集\n用途清晰告知\n访问权限受控\n提供更正渠道",
+            "report_url": "#",
+            "report_text": "查看隐私说明",
+            "highlight": "no"
+          }
+        ],
+        "enable_staggered_animation": "yes"
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "ch_title": "上线前应核验的资质材料",
+        "ch_subtitle": "本区域仅列出常见材料类别，不代表已取得相关许可；请根据经营范围上传真实、有效且可核验的文件。",
+        "ch_columns": "3",
+        "ch_enable_filter": "yes",
+        "ch_link_text": "查看真实文件",
+        "module_bg_color": "#ffffff",
+        "ch_badge_bg": "#dcfce7",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px",
+        "ch_items": [
+          {
+            "image": "",
+            "title": "主体经营资质",
+            "category": "主体资质",
+            "badge": "按实际上传",
+            "cert_no": "",
+            "issuer": "以真实文件为准",
+            "issue_date": "",
+            "expiry_date": "",
+            "file_url": ""
+          },
+          {
+            "image": "",
+            "title": "食品或相关经营许可",
+            "category": "经营许可",
+            "badge": "按品类核验",
+            "cert_no": "",
+            "issuer": "以主管部门签发文件为准",
+            "issue_date": "",
+            "expiry_date": "",
+            "file_url": ""
+          },
+          {
+            "image": "",
+            "title": "产品检验与质量资料",
+            "category": "产品资料",
+            "badge": "按批次匹配",
+            "cert_no": "",
+            "issuer": "以实际检验或质量文件为准",
+            "issue_date": "",
+            "expiry_date": "",
+            "file_url": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "健康用品选购常见问题",
+        "faq_subtitle": "先读标签，再结合个人情况做选择",
+        "faq_items": [
+          {
+            "question": "保健食品可以代替药物吗？",
+            "answer": "不可以。保健食品不是药物，不能替代药物治疗疾病。正在接受治疗或使用药物的人群，应先咨询医生或药师。"
+          },
+          {
+            "question": "多种营养补充剂可以一起食用吗？",
+            "answer": "应先比较配料和每份含量，避免同类营养素重复叠加。儿童、老年人、孕期或哺乳期人群，以及有过敏史、慢性病或正在用药的人群，建议食用前咨询专业人士。"
+          },
+          {
+            "question": "如何判断产品信息是否完整？",
+            "answer": "可重点查看产品名称、配料表、净含量、建议食用方法、适宜与不适宜人群、生产信息、保质期、储存条件和必要的警示语，并以实际包装标签为准。"
+          },
+          {
+            "question": "睡眠支持或关节养护产品多久能看到效果？",
+            "answer": "个体情况和生活方式存在差异，不应承诺固定时间或保证效果。产品仅用于标签说明范围内的日常营养支持；持续不适或症状加重时，应及时就医。"
+          }
+        ],
+        "module_bg_color": "#f8fafc",
+        "faq_card_bg": "#ffffff",
+        "faq_card_border": "#dbe7e4",
+        "faq_card_hover_border": "#0f766e",
+        "faq_icon_bg": "#ccfbf1",
+        "faq_icon_color": "#0f766e",
+        "module_padding_top": "80px",
+        "module_padding_bottom": "80px"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "需要核对配料或选择产品？",
+        "cta_subtitle": "告诉我们关注的产品、年龄段、饮食偏好和需要避开的成分，客服将提供标签与规格信息。涉及疾病、用药或持续不适，请咨询医生或药师。",
+        "cta_button_text": "咨询产品信息",
+        "cta_button_url": "#consult",
+        "cta_button_bg_color": "#ffffff",
+        "cta_button_text_color": "#064e3b",
+        "cta_button_border_color": "#ffffff",
+        "cta_button_hover_bg_color": "#ecfdf5",
+        "cta_button_hover_text_color": "#115e59",
+        "cta_button_hover_border_color": "#ecfdf5",
+        "cta_bg_type": "color",
+        "cta_bg_image": "https://images.pexels.com/photos/3873146/pexels-photo-3873146.jpeg?auto=compress&cs=tinysrgb&w=1800",
+        "cta_bg_overlay": "0.68",
+        "cta_layout_mode": "standard",
+        "cta_footer_bridge": "off",
+        "cta_border_radius": "0",
+        "cta_content_max_width": "820px",
+        "cta_button_style": "soft",
+        "module_padding_top": "88px",
+        "module_padding_bottom": "88px",
+        "cta_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 60%, #047857 100%)",
+        "cta_title_color": "#ffffff",
+        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
+      }
+    }
+  ]
+}

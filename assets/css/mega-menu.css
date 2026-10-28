@@ -1,0 +1,656 @@
+/**
+ * Mega Menu Styles
+ */
+
+/* === 基础样式 (Base Styles) === */
+
+/* 设中间容器为 static，以防限制绝对定位的下拉菜单 (Make intermediate containers static so they don't trap the absolute dropdown) */
+.site-header .container,
+.site-header .header-inner,
+.primary-navigation,
+.primary-navigation>ul,
+.primary-navigation>ul>li.has-mega-menu {
+    position: static !important;
+}
+
+/* 巨型菜单下拉基础 (Mega Menu Dropdown Base) */
+.primary-navigation .mega-menu-dropdown {
+    position: absolute;
+    left: 50%;
+    width: 100vw;
+    margin-left: var(--qiling-space-neg-vw-50);
+    right: auto;
+    background: var(--color-neutral-0);
+    box-shadow: 0 10px 30px rgba(var(--qiling-rgb-0-0-0), 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    padding: var(--qiling-space-15) 0;
+    border-top: 1px solid var(--color-neutral-100);
+    text-align: left;
+    margin-top: var(--qiling-space-10);
+    line-height: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    pointer-events: none;
+}
+
+/* 通过 CSS 悬停显示下拉菜单 (Show dropdown via CSS hover) */
+.primary-navigation .has-mega-menu:hover>.mega-menu-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* 通过 JS 类显示下拉菜单 (用于延迟显示/隐藏) (Show dropdown via JS class for delayed show/hide) */
+.primary-navigation .mega-menu-dropdown.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* 悬停桥接区：菜单项与下拉菜单之间的隐形区域，实现平滑过渡 (Hover Bridge: invisible area between menu item and dropdown for smooth transition) */
+.primary-navigation .has-mega-menu>a {
+    position: relative;
+}
+
+.primary-navigation .has-mega-menu>a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 30px;
+    /* 覆盖到下拉菜单的间隙 (Cover the gap to dropdown) */
+    background: transparent;
+    z-index: 100;
+}
+
+/* 巨型菜单列表 - 独立重置 (Mega Menu List - Independent reset) */
+.mega-menu-dropdown .mega-menu-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+    /* 覆盖任何继承的子菜单样式 (Override any inherited sub-menu styles) */
+    position: static !important;
+    min-width: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    border-radius: 0 !important;
+}
+
+/* 巨型菜单列表项 - 独立重置 (Mega Menu List Items - Independent reset) */
+.mega-menu-dropdown .mega-menu-list>li {
+    display: block !important;
+    float: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    position: static !important;
+    list-style: none !important;
+    /* 覆盖任何继承的子菜单 li 样式 (Override any inherited sub-menu li styles) */
+    min-width: 0 !important;
+    box-shadow: none !important;
+}
+
+/* 巨型菜单链接 - 独立重置 (Mega Menu Links - Independent reset) */
+.mega-menu-dropdown .mega-menu-list>li>a {
+    /* 覆盖任何继承的子菜单链接样式 (Override any inherited sub-menu link styles) */
+    position: static !important;
+    min-width: 0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: transparent;
+}
+
+/* 重置巨型菜单下拉框内的所有子菜单 (Reset all sub-menus inside mega menu dropdown) */
+.mega-menu-dropdown .sub-menu {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    min-width: 0 !important;
+    top: auto !important;
+    left: auto !important;
+    border-radius: 0 !important;
+}
+
+.mega-menu-dropdown .sub-menu li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.mega-menu-dropdown .sub-menu li::before,
+.mega-menu-dropdown .sub-menu li::marker {
+    display: none !important;
+    content: none !important;
+}
+
+/* === 列模式 (标准) (Mode: Columns Standard) === */
+.mega-mode-columns .mega-menu-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--qiling-space-30);
+}
+
+.mega-mode-columns .mega-menu-list>li {
+    flex: 0 0 auto;
+    min-width: var(--qiling-space-150);
+    max-width: var(--qiling-measure-220);
+}
+
+.mega-mode-columns .mega-menu-list>li>a {
+    font-weight: 600;
+    margin-bottom: var(--qiling-space-15);
+    display: flex !important;
+    align-items: center;
+    font-size: var(--qiling-font-size-base);
+    border-bottom: 2px solid transparent;
+    padding: var(--qiling-space-8) var(--qiling-space-12) !important;
+    border-radius: 8px;
+}
+
+.mega-mode-columns .mega-menu-list>li>.sub-menu {
+    display: block !important;
+    position: relative !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    top: 0 !important;
+    left: auto !important;
+    list-style: none !important;
+    min-width: 0 !important;
+    border-radius: 0 !important;
+    padding-top: var(--qiling-space-5);
+}
+
+/* 标题悬停效果 (Title Hover Effect) */
+.mega-mode-columns .mega-menu-list>li>a:hover {
+    background-color: var(--color-gray-100);
+    color: var(--color-primary) !important;
+}
+
+/* 内部子菜单链接 (Inner Sub-menu Links) */
+.mega-mode-columns .mega-menu-list .sub-menu li a {
+    display: block !important;
+    padding: var(--qiling-space-6) var(--qiling-space-12) !important;
+    text-decoration: none !important;
+    color: var(--color-gray-600);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    background: transparent;
+}
+
+.mega-mode-columns .mega-menu-list .sub-menu li a:hover {
+    color: var(--color-primary) !important;
+    background-color: var(--color-gray-100);
+    padding-left: var(--qiling-space-16) !important;
+}
+
+.mega-mode-columns .mega-menu-list>li>.sub-menu li {
+    list-style: none !important;
+}
+
+.mega-mode-columns .mega-menu-list>li>.sub-menu li a {
+    padding: var(--qiling-space-8) var(--qiling-space-12) !important;
+    color: var(--qiling-color-666666) !important;
+    font-size: calc(var(--qiling-font-size-base) * 0.875) !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease;
+    display: block !important;
+    background: transparent !important;
+    transform: none !important;
+}
+
+.mega-mode-columns .mega-menu-list>li>.sub-menu li a:hover {
+    color: var(--primary-color, var(--color-primary)) !important;
+    background: rgba(var(--color-primary-rgb), 0.08) !important;
+    padding-left: var(--qiling-space-16) !important;
+}
+
+
+/* === 网格模式 (产品视图 - 小米风格) (Mode: Grid Product View - Xiaomi Style) === */
+.mega-mode-grid .mega-menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.mega-mode-grid .mega-menu-list>li {
+    width: 16.66%;
+    min-width: var(--qiling-measure-120);
+    padding: 0 var(--qiling-space-8);
+    margin-bottom: var(--qiling-space-5);
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    float: none;
+    border: none;
+}
+
+/* 可选的垂直分隔线 (Optional vertical separator line) */
+.mega-mode-grid .mega-menu-list>li::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background: var(--color-border);
+    display: none;
+}
+
+.mega-mode-grid .mega-menu-list>li>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: var(--qiling-space-8) var(--qiling-space-6);
+    height: auto;
+    border: none;
+    background: transparent;
+    color: inherit;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.mega-mode-grid .mega-menu-list>li>a:hover {
+    transform: translateY(-5px);
+    background: transparent;
+}
+
+.mega-grid-item {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mega-item-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+    /* 根据要求移除了渐变 (Removed gradient as requested) */
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--qiling-space-8);
+    /* box-shadow: 0 2px 8px rgba(var(--qiling-rgb-0-0-0), 0.06); */
+    /* 可选：如果需要“更整洁”的外观也可移除阴影，但若需要保持结构可保留阴影。 (Optional: Remove shadow too if "cleaner" look desired...) */
+    box-shadow: none;
+    /* 使其更整洁 (Make it cleaner) */
+    transition: all 0.3s ease;
+}
+
+.mega-item-image img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+/* 悬停：缩放图片并增强阴影 (Hover: Scale image and enhance shadow) */
+.mega-mode-grid .mega-menu-list>li>a:hover .mega-item-image {
+    box-shadow: 0 6px 20px rgba(var(--qiling-rgb-0-0-0), 0.1);
+    transform: translateY(-3px);
+}
+
+.mega-mode-grid .mega-menu-list>li>a:hover .mega-item-image img {
+    transform: scale(1.05);
+}
+
+.mega-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.mega-item-title {
+    font-weight: 500;
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    margin-bottom: var(--qiling-space-2);
+    line-height: 1.4;
+}
+
+.mega-item-desc {
+    font-size: calc(var(--qiling-font-size-base) * 0.75);
+    color: var(--color-accent);
+    line-height: 1.4;
+    margin-top: var(--qiling-space-2);
+}
+
+/* === 侧边栏模式 (交互式) (Mode: Sidebar Interactive) === */
+.mega-mode-sidebar .container {
+    --mega-menu-sidebar-rail-width: 25%;
+    --mega-menu-sidebar-preview-width: 75%;
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    width: 100%;
+    max-width: none;
+}
+
+.mega-mode-sidebar .mega-menu-list {
+    flex: 0 0 var(--mega-menu-sidebar-rail-width);
+    max-width: var(--mega-menu-sidebar-rail-width);
+    min-width: var(--qiling-measure-180);
+    flex-direction: column;
+    border-right: 1px solid var(--color-neutral-100);
+    padding-right: var(--qiling-space-15);
+    display: block;
+}
+
+.mega-mode-sidebar .mega-menu-preview {
+    flex: 1 1 var(--mega-menu-sidebar-preview-width);
+    max-width: var(--mega-menu-sidebar-preview-width);
+    padding-left: var(--qiling-space-30);
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mega-mode-sidebar .mega-menu-list>li>a {
+    padding: var(--qiling-space-12) var(--qiling-space-15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-neutral-600);
+    border-radius: 6px;
+    font-weight: 500;
+    margin-bottom: var(--qiling-space-5);
+    transition: all 0.2s;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* 侧边栏项的激活/悬停状态 (Active/Hover state for sidebar items) */
+.mega-mode-sidebar .mega-menu-list>li>a:hover,
+.mega-mode-sidebar .mega-menu-list>li.hover-active>a {
+    background: var(--qiling-color-eff6ff);
+    color: var(--primary-color, var(--color-primary));
+}
+
+.mega-item-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.mega-arrow {
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    /* 防止箭头缩小 (Prevent arrow from shrinking) */
+}
+
+/* 强制标题占据可用空间，将徽章/箭头推向右侧 (Force title to take available space, pushing badge/arrow to right) */
+.mega-mode-sidebar .mega-item-title {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: var(--qiling-space-10);
+}
+
+.mega-mode-sidebar .mega-menu-list>li>a:hover .mega-arrow,
+.mega-mode-sidebar .mega-menu-list>li.hover-active>a .mega-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 预览图区域 (Preview Image Area) */
+.preview-image-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.preview-image-box.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.preview-image-box.default-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.preview-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.preview-image-box.placeholder {
+    background: var(--color-neutral-100);
+    background-image: linear-gradient(45deg, var(--color-surface-alt) 25%, transparent 25%, transparent 75%, var(--color-surface-alt) 75%, var(--color-surface-alt)),
+        linear-gradient(45deg, var(--color-surface-alt) 25%, transparent 25%, transparent 75%, var(--color-surface-alt) 75%, var(--color-surface-alt));
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+/* 徽章 (Badges) */
+.mega-badge {
+    font-size: calc(var(--qiling-font-size-base) * 0.625);
+    font-weight: 700;
+    color: var(--color-neutral-0);
+    background: var(--color-error);
+    padding: var(--qiling-space-2) var(--qiling-space-6);
+    border-radius: 4px;
+    margin-left: var(--qiling-space-6);
+    text-transform: uppercase;
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* === 列模式图标样式 (Columns Mode Icon Styles) === */
+.mega-column-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: var(--qiling-space-8);
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.mega-column-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+
+/* === 响应式适配 === */
+
+/* 笔记本适配 (Notebook 1024px - 1366px) */
+@media (min-width: 992px) and (max-width: 1366px) {
+    .primary-navigation .mega-menu-dropdown {
+        padding: var(--qiling-space-12) 0;
+    }
+
+    .mega-mode-grid .mega-menu-list {
+        padding: var(--qiling-space-8) 0;
+    }
+
+    .mega-mode-grid .mega-menu-list>li {
+        width: 20%;
+        min-width: var(--qiling-space-100);
+        padding: 0 var(--qiling-space-6);
+        margin-bottom: var(--qiling-space-8);
+    }
+
+    .mega-item-image {
+        height: 60px;
+        margin-bottom: var(--qiling-space-6);
+    }
+
+    .mega-item-title {
+        font-size: calc(var(--qiling-font-size-base) * 0.75);
+    }
+
+    .mega-mode-sidebar .mega-menu-preview {
+        min-height: 180px;
+        padding-left: var(--qiling-space-20);
+    }
+
+    .mega-mode-columns .mega-menu-list {
+        gap: var(--qiling-space-20);
+    }
+
+    .mega-mode-columns .mega-menu-list>li {
+        min-width: var(--qiling-space-150);
+    }
+
+    .mega-column-icon img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* 小尺寸笔记本 (Small Notebook ~1024px) */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .mega-mode-sidebar .container {
+        --mega-menu-sidebar-rail-width: 30%;
+        --mega-menu-sidebar-preview-width: 70%;
+    }
+
+    .mega-mode-grid .mega-menu-list>li {
+        width: 25%;
+    }
+
+    .mega-mode-sidebar .mega-menu-list {
+        flex: 0 0 var(--mega-menu-sidebar-rail-width);
+        max-width: var(--mega-menu-sidebar-rail-width);
+        min-width: var(--qiling-space-150);
+    }
+
+    .mega-mode-sidebar .mega-menu-preview {
+        flex: 1 1 var(--mega-menu-sidebar-preview-width);
+        max-width: var(--mega-menu-sidebar-preview-width);
+        padding-left: var(--qiling-space-15);
+        min-height: 160px;
+    }
+
+    .mega-mode-columns .mega-menu-list>li {
+        min-width: var(--qiling-measure-120);
+    }
+}
+
+/* 隐藏移动端巨型菜单 (Hide Mobile Mega Menu) */
+@media (max-width: 991px) {
+    .primary-navigation .mega-menu-dropdown {
+        display: none !important;
+    }
+}
+
+/* === 暗黑模式支持 === */
+html.dark-mode .mega-menu-dropdown {
+    background: var(--dm-bg-card, var(--color-neutral-800));
+    border-color: var(--dm-border, var(--color-neutral-700));
+}
+
+html.dark-mode .mega-item-title {
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+html.dark-mode .mega-item-desc {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+html.dark-mode .mega-mode-sidebar .mega-menu-list {
+    border-right-color: var(--dm-border, var(--color-neutral-700));
+}
+
+html.dark-mode .mega-mode-sidebar .mega-menu-list>li>a {
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+html.dark-mode .mega-mode-sidebar .mega-menu-list>li>a:hover,
+html.dark-mode .mega-mode-sidebar .mega-menu-list>li.hover-active>a {
+    background: rgba(var(--qiling-rgb-255-255-255), 0.05);
+}
+
+/* 暗黑模式 - 列模式细节 (Dark Mode - Columns Mode Specifics) */
+html.dark-mode .mega-mode-columns .mega-menu-list>li>a {
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+html.dark-mode .mega-mode-columns .mega-menu-list>li>a:hover {
+    background-color: rgba(var(--qiling-rgb-255-255-255), 0.05);
+    color: var(--color-neutral-0) !important;
+}
+
+html.dark-mode .mega-mode-columns .mega-menu-list .sub-menu li a {
+    color: var(--dm-text-muted, var(--color-neutral-400)) !important;
+}
+
+html.dark-mode .mega-mode-columns .mega-menu-list .sub-menu li a:hover {
+    color: var(--color-neutral-0) !important;
+    background-color: rgba(var(--qiling-rgb-255-255-255), 0.05);
+}
+
+html.dark-mode .mega-item-image {
+    background: linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-neutral-700) 100%);
+}

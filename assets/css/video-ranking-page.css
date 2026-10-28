@@ -1,0 +1,362 @@
+/* Dedicated video ranking page */
+body.qiling-video-ranking-page,
+body.qiling-video-ranking-page #page.site,
+body.qiling-video-ranking-page #primary.site-main {
+    background: #080a10;
+    color: #e5e7eb;
+}
+
+.video-ranking-page {
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, #0c0f18 0, #080a10 520px),
+        #080a10;
+}
+
+.video-ranking-page__hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(84px, 10vw, 138px) 0 clamp(58px, 7vw, 90px);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+    background-size: 42px 42px;
+}
+
+.video-ranking-page__hero::after {
+    position: absolute;
+    z-index: -1;
+    right: -6%;
+    bottom: -78px;
+    color: rgba(255, 255, 255, .025);
+    content: "TOP 100";
+    font-size: clamp(5rem, 15vw, 13rem);
+    font-weight: 900;
+    letter-spacing: -.08em;
+    line-height: .8;
+    white-space: nowrap;
+}
+
+.video-ranking-page__glow {
+    position: absolute;
+    z-index: -2;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .18;
+    pointer-events: none;
+}
+
+.video-ranking-page__glow--red {
+    top: -240px;
+    left: 4%;
+    background: #ef4444;
+}
+
+.video-ranking-page__glow--amber {
+    right: 12%;
+    bottom: -320px;
+    background: #f59e0b;
+}
+
+.video-ranking-page__hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.video-ranking-page__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #fca5a5;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .18em;
+}
+
+.video-ranking-page__eyebrow span {
+    width: 26px;
+    height: 2px;
+    background: #ef4444;
+    box-shadow: 0 0 14px rgba(239, 68, 68, .7);
+}
+
+.video-ranking-page__hero h1 {
+    max-width: 760px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.65rem, 6vw, 5.4rem);
+    font-weight: 850;
+    letter-spacing: -.065em;
+    line-height: .98;
+}
+
+.video-ranking-page__hero p {
+    max-width: 680px;
+    margin: 24px 0 0;
+    color: #b8c2d1;
+    font-size: clamp(1rem, 1.8vw, 1.12rem);
+    line-height: 1.8;
+}
+
+.video-ranking-page__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.video-ranking-page__meta span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .045);
+    color: #d5dbe5;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.video-ranking-page__content {
+    position: relative;
+}
+
+.video-ranking-page__content > .module-wrapper {
+    margin: 0;
+}
+
+.video-ranking-page__content .qiling-video-ranking {
+    --qvr-bg: #080a10;
+    --qvr-title-color: #ffffff;
+    --qvr-subtitle-color: #b8c2d1;
+    --color-surface: #111520;
+    --color-surface-alt: #0c0f17;
+    --color-border: rgba(255, 255, 255, .09);
+    --color-heading: #f8fafc;
+    --color-text: #e5e7eb;
+    --color-text-muted: #9ca8ba;
+    padding: clamp(50px, 7vw, 88px) 0 clamp(76px, 9vw, 120px);
+    background: var(--qvr-bg);
+}
+
+.video-ranking-page__content .qvr-header {
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.video-ranking-page__content .qvr-title {
+    font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+    letter-spacing: -.02em;
+}
+
+.video-ranking-page__content .qvr-subtitle {
+    margin-top: 6px;
+    font-size: .86rem;
+}
+
+.video-ranking-page__content .qvr-heading {
+    position: relative;
+    padding-left: 16px;
+}
+
+.video-ranking-page__content .qvr-heading::before {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 0;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #ef4444, #991b1b);
+    content: "";
+}
+
+.video-ranking-page__content .qvr-more {
+    display: none;
+}
+
+.video-ranking-page__content .qvr-tabs {
+    gap: 4px;
+    margin-bottom: 26px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 10px;
+    background: #0d111a;
+}
+
+.video-ranking-page__content .qvr-tab {
+    min-height: 42px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #9ca8ba;
+    font-size: .86rem;
+    font-weight: 650;
+}
+
+.video-ranking-page__content .qvr-tab:hover {
+    background: rgba(255, 255, 255, .055);
+    color: #fff;
+}
+
+.video-ranking-page__content .qvr-tab.is-active {
+    background: #ef4444;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(239, 68, 68, .2);
+}
+
+.video-ranking-page__content .qvr-top-three {
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.video-ranking-page__content .qvr-item {
+    border-color: rgba(255, 255, 255, .075);
+    border-radius: 10px;
+    background: #10141f;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+}
+
+.video-ranking-page__content .qvr-item:hover {
+    border-color: rgba(239, 68, 68, .45);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, .26), inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+.video-ranking-page__content .qvr-item--top {
+    background:
+        linear-gradient(145deg, rgba(239, 68, 68, .09), transparent 48%),
+        #111520;
+}
+
+.video-ranking-page__content .qvr-item--top .qvr-rank {
+    border: 1px solid rgba(255, 255, 255, .15);
+    background: rgba(5, 7, 12, .88);
+    backdrop-filter: blur(8px);
+}
+
+.video-ranking-page__content .qvr-rank-1 {
+    border-color: rgba(245, 158, 11, .3);
+}
+
+.video-ranking-page__content .qvr-rank-1 .qvr-rank {
+    color: #fbbf24;
+}
+
+.video-ranking-page__content .qvr-poster {
+    background: #090b11;
+}
+
+.video-ranking-page__content .qvr-list {
+    gap: 8px;
+}
+
+.video-ranking-page__content .qvr-list .qvr-item-link {
+    min-height: 76px;
+}
+
+.video-ranking-page__content .qvr-list .qvr-item:nth-child(odd) {
+    background: #0e121b;
+}
+
+.video-ranking-page__content .qvr-meta span + span::before {
+    color: rgba(255, 255, 255, .16);
+}
+
+.video-ranking-page__empty,
+.video-ranking-page__entry {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 12px;
+    background: #10141f;
+    color: #b8c2d1;
+}
+
+.video-ranking-page__empty strong {
+    color: #fff;
+    font-size: 1.15rem;
+}
+
+.video-ranking-page__empty p {
+    margin: 8px 0 18px;
+}
+
+.video-ranking-page__empty a {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 7px;
+    background: #ef4444;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.video-ranking-page__shared-footer .module-footer-suite {
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .video-ranking-page__hero {
+        padding: 68px 0 54px;
+    }
+
+    .video-ranking-page__hero::after {
+        right: -4%;
+        bottom: -24px;
+        font-size: 5rem;
+    }
+
+    .video-ranking-page__hero h1 {
+        font-size: clamp(2.55rem, 14vw, 4rem);
+    }
+
+    .video-ranking-page__hero p {
+        margin-top: 18px;
+        line-height: 1.7;
+    }
+
+    .video-ranking-page__meta {
+        margin-top: 22px;
+    }
+
+    .video-ranking-page__meta span:last-child {
+        width: 100%;
+    }
+
+    .video-ranking-page__content .qvr-header {
+        margin-bottom: 22px;
+    }
+
+    .video-ranking-page__content .qvr-tabs {
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+        margin-right: -16px;
+        margin-left: -16px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .video-ranking-page__content .qvr-tab {
+        min-height: 40px;
+        padding: 0 15px;
+    }
+
+    .video-ranking-page__content .qvr-item--top .qvr-item-link {
+        min-height: 136px;
+    }
+
+    .video-ranking-page__content .qvr-list .qvr-item-link {
+        min-height: 68px;
+    }
+
+}
