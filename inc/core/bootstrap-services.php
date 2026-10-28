@@ -80,15 +80,6 @@ function developer_starter_is_careers_admin_menu_enabled() {
 }
 
 /**
- * 检测后台 WooCommerce 管理菜单是否已启用。
- *
- * @return bool
- */
-function developer_starter_is_woocommerce_admin_menu_enabled() {
-    return '1' === (string) developer_starter_get_option( 'woocommerce_admin_menu_enable', '1' );
-}
-
-/**
  * 检测当前请求是否需要初始化招聘管理服务。
  *
  * @return bool
@@ -119,24 +110,11 @@ function developer_starter_maybe_hide_disabled_feature_admin_menus() {
             'developer-starter-careers-positions',
             'developer-starter-careers-applications',
         ) as $careers_menu_slug ) {
-            remove_submenu_page( 'developer-starter-settings', $careers_menu_slug );
+            remove_submenu_page( 'qiling-settings', $careers_menu_slug );
         }
     }
 
-    if ( developer_starter_is_woocommerce_admin_menu_enabled() ) {
-        return;
-    }
 
-    remove_submenu_page( 'developer-starter-settings', \Developer_Starter\WooCommerce\WC_Admin::PAGE_SLUG );
-
-    foreach ( array(
-        'woocommerce',
-        'edit.php?post_type=product',
-        'wc-admin&path=/analytics/overview',
-        'woocommerce-marketing',
-    ) as $woocommerce_menu_slug ) {
-        remove_menu_page( $woocommerce_menu_slug );
-    }
 }
 add_action( 'admin_menu', 'developer_starter_maybe_hide_disabled_feature_admin_menus', 999 );
 
@@ -445,13 +423,9 @@ function developer_starter_boot_content_services() {
 function developer_starter_boot_taxonomy_and_commerce_services() {
     new Developer_Starter\Core\Category_Manager();
 
-    require_once DEVELOPER_STARTER_INC . '/core/class-category-tabs-ajax.php';
+    require_once QILING_INC . '/core/class-category-tabs-ajax.php';
 
-    if ( is_admin() && developer_starter_is_woocommerce_admin_menu_enabled() ) {
-        new Developer_Starter\WooCommerce\WC_Admin();
-    }
 
-    new Developer_Starter\WooCommerce\WC_Setup();
     new Developer_Starter\Core\AJAX_Product_Loader();
 }
 

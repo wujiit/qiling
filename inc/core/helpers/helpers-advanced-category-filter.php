@@ -15,11 +15,11 @@ if ( ! function_exists( 'developer_starter_get_category_sort_choices' ) ) {
      */
     function developer_starter_get_category_sort_choices() {
         $choices = array(
-            'latest'   => __( '最新', 'developer-starter' ),
-            'random'   => __( '随机', 'developer-starter' ),
-            'hot'      => __( '热门', 'developer-starter' ),
-            'like'     => __( '点赞', 'developer-starter' ),
-            'favorite' => __( '收藏', 'developer-starter' ),
+            'latest'   => __( '最新', 'qiling' ),
+            'random'   => __( '随机', 'qiling' ),
+            'hot'      => __( '热门', 'qiling' ),
+            'like'     => __( '点赞', 'qiling' ),
+            'favorite' => __( '收藏', 'qiling' ),
         );
 
         return (array) apply_filters( 'developer_starter_category_sort_choices', $choices );
@@ -193,7 +193,7 @@ if ( ! function_exists( 'developer_starter_adv_category_filter' ) ) {
             if ( $is_limited ) {
                 wp_send_json_error(
                     array(
-                        'message' => __( '请求过于频繁，请稍后再试', 'developer-starter' ),
+                        'message' => __( '请求过于频繁，请稍后再试', 'qiling' ),
                         'code'    => 'rate_limited',
                     ),
                     429
@@ -475,7 +475,7 @@ if ( ! function_exists( 'developer_starter_adv_category_filter' ) ) {
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                     <polyline points="14 2 14 8 20 8"></polyline>
                 </svg>
-                <p style="margin: 0; color: var(--color-text-muted, var(--qiling-color-6b7280));"><?php esc_html_e( '没有找到符合条件的文章', 'developer-starter' ); ?></p>
+                <p style="margin: 0; color: var(--color-text-muted, var(--qiling-color-6b7280));"><?php esc_html_e( '没有找到符合条件的文章', 'qiling' ); ?></p>
             </div>
             <?php
         }

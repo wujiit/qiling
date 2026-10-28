@@ -18,7 +18,7 @@ class About_Me_Card_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-id';
-        $this->description = __( '展示作者头像、简介、社媒与 Now 状态', 'developer-starter' );
+        $this->description = __( '展示作者头像、简介、社媒与 Now 状态', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class About_Me_Card_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( 'About 我是谁', 'developer-starter' );
+        return __( 'About 我是谁', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,150 +34,150 @@ class About_Me_Card_Module extends Module_Base {
             array(
                 'id'      => 'about_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( 'About 我是谁', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( 'About 我是谁', 'qiling' ),
             ),
             array(
                 'id'    => 'about_subtitle',
                 'type'  => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
             ),
             array(
                 'id'    => 'about_avatar',
                 'type'  => 'image',
-                'label' => __( '头像', 'developer-starter' ),
+                'label' => __( '头像', 'qiling' ),
             ),
             array(
                 'id'      => 'about_name',
                 'type'    => 'text',
-                'label'   => __( '名称', 'developer-starter' ),
-                'default' => __( '启灵站长', 'developer-starter' ),
+                'label'   => __( '名称', 'qiling' ),
+                'default' => __( '启灵站长', 'qiling' ),
             ),
             array(
                 'id'      => 'about_role',
                 'type'    => 'text',
-                'label'   => __( '身份/标签', 'developer-starter' ),
-                'default' => __( '创作者 / 开发者', 'developer-starter' ),
+                'label'   => __( '身份/标签', 'qiling' ),
+                'default' => __( '创作者 / 开发者', 'qiling' ),
             ),
             array(
                 'id'      => 'about_intro',
                 'type'    => 'textarea',
-                'label'   => __( '简介', 'developer-starter' ),
-                'default' => __( '在这里分享产品、技术和内容创作思考。', 'developer-starter' ),
+                'label'   => __( '简介', 'qiling' ),
+                'default' => __( '在这里分享产品、技术和内容创作思考。', 'qiling' ),
             ),
             array(
                 'id'      => 'about_now',
                 'type'    => 'text',
-                'label'   => __( 'Now 状态', 'developer-starter' ),
-                'default' => __( '最近在优化主题模块和内容体验。', 'developer-starter' ),
+                'label'   => __( 'Now 状态', 'qiling' ),
+                'default' => __( '最近在优化主题模块和内容体验。', 'qiling' ),
             ),
             array(
                 'id'      => 'about_show_now',
                 'type'    => 'select',
-                'label'   => __( '显示 Now 状态', 'developer-starter' ),
+                'label'   => __( '显示 Now 状态', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'    => 'about_location',
                 'type'  => 'text',
-                'label' => __( '所在地', 'developer-starter' ),
+                'label' => __( '所在地', 'qiling' ),
             ),
             array(
                 'id'    => 'about_website',
                 'type'  => 'text',
-                'label' => __( '个人网站链接', 'developer-starter' ),
+                'label' => __( '个人网站链接', 'qiling' ),
             ),
-            array( 'id' => 'about_website_text', 'type' => 'text', 'label' => __( '个人网站文案', 'developer-starter' ), 'default' => __( '个人网站', 'developer-starter' ) ),
+            array( 'id' => 'about_website_text', 'type' => 'text', 'label' => __( '个人网站文案', 'qiling' ), 'default' => __( '个人网站', 'qiling' ) ),
             array(
                 'id'    => 'about_email',
                 'type'  => 'text',
-                'label' => __( '邮箱', 'developer-starter' ),
+                'label' => __( '邮箱', 'qiling' ),
             ),
             array(
                 'id'     => 'about_socials',
                 'type'   => 'repeater',
-                'label'  => __( '社媒列表', 'developer-starter' ),
+                'label'  => __( '社媒列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'label',
                         'type'  => 'text',
-                        'label' => __( '名称', 'developer-starter' ),
+                        'label' => __( '名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'url',
                         'type'  => 'text',
-                        'label' => __( '链接', 'developer-starter' ),
+                        'label' => __( '链接', 'qiling' ),
                     ),
                     array(
                         'id'      => 'icon',
                         'type'    => 'text',
-                        'label'   => __( '图标文字/Emoji', 'developer-starter' ),
-                        'default' => '🔗',
+                        'label'   => __( '图标 (Symbol类名/SVG/Emoji，可选)', 'qiling' ),
+                        'default' => '',
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'label' => 'GitHub',
                         'url'   => 'https://github.com/',
-                        'icon'  => '🐙',
+                        'icon'  => '',
                     ),
                     array(
                         'label' => 'X',
                         'url'   => 'https://x.com/',
-                        'icon'  => '𝕏',
+                        'icon'  => '',
                     ),
                     array(
                         'label' => 'RSS',
                         'url'   => home_url( '/feed/' ),
-                        'icon'  => '📡',
+                        'icon'  => '',
                     ),
                 ),
             ),
             array(
                 'id'      => 'about_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景色', 'developer-starter' ),
+                'label'   => __( '卡片背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'about_bg_color',
                 'type'    => 'color',
-                'label'   => __( '模块背景色', 'developer-starter' ),
+                'label'   => __( '模块背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'about_text_color',
                 'type'    => 'color',
-                'label'   => __( '文字颜色', 'developer-starter' ),
+                'label'   => __( '文字颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-900)',
             ),
             array(
                 'id'      => 'about_accent_color',
                 'type'    => 'color',
-                'label'   => __( '强调色', 'developer-starter' ),
+                'label'   => __( '强调色', 'qiling' ),
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'          => 'about_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '控制 Now 标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制 Now 标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '56px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '56px',
             ),
         );
@@ -187,14 +187,14 @@ class About_Me_Card_Module extends Module_Base {
         $title = isset( $data['about_title'] ) ? $data['about_title'] : '';
         $subtitle = isset( $data['about_subtitle'] ) ? $data['about_subtitle'] : '';
         $avatar = isset( $data['about_avatar'] ) ? $data['about_avatar'] : '';
-        $name = isset( $data['about_name'] ) && $data['about_name'] !== '' ? $data['about_name'] : __( '启灵站长', 'developer-starter' );
+        $name = isset( $data['about_name'] ) && $data['about_name'] !== '' ? $data['about_name'] : __( '启灵站长', 'qiling' );
         $role = isset( $data['about_role'] ) ? $data['about_role'] : '';
         $intro = isset( $data['about_intro'] ) && '' !== $data['about_intro'] ? $data['about_intro'] : ( isset( $data['about_bio'] ) ? $data['about_bio'] : '' );
         $now = isset( $data['about_now'] ) && '' !== $data['about_now'] ? $data['about_now'] : ( isset( $data['about_status_text'] ) ? $data['about_status_text'] : '' );
         $show_now = ! isset( $data['about_show_now'] ) || $data['about_show_now'] === 'yes';
         $location = isset( $data['about_location'] ) ? $data['about_location'] : '';
         $website = isset( $data['about_website'] ) && '' !== $data['about_website'] ? $data['about_website'] : ( isset( $data['about_btn_url'] ) ? $data['about_btn_url'] : '' );
-        $website_text = isset( $data['about_website_text'] ) && '' !== trim( (string) $data['about_website_text'] ) ? (string) $data['about_website_text'] : ( isset( $data['about_btn_text'] ) && '' !== trim( (string) $data['about_btn_text'] ) ? (string) $data['about_btn_text'] : __( '个人网站', 'developer-starter' ) );
+        $website_text = isset( $data['about_website_text'] ) && '' !== trim( (string) $data['about_website_text'] ) ? (string) $data['about_website_text'] : ( isset( $data['about_btn_text'] ) && '' !== trim( (string) $data['about_btn_text'] ) ? (string) $data['about_btn_text'] : __( '个人网站', 'qiling' ) );
         $email = isset( $data['about_email'] ) ? $data['about_email'] : '';
         $safe_email = sanitize_email( $email );
 
@@ -204,17 +204,17 @@ class About_Me_Card_Module extends Module_Base {
                 array(
                     'label' => 'GitHub',
                     'url'   => 'https://github.com/',
-                    'icon'  => '🐙',
+                    'icon'  => '',
                 ),
                 array(
                     'label' => 'X',
                     'url'   => 'https://x.com/',
-                    'icon'  => '𝕏',
+                    'icon'  => '',
                 ),
                 array(
                     'label' => 'RSS',
                     'url'   => home_url( '/feed/' ),
-                    'icon'  => '📡',
+                    'icon'  => '',
                 ),
             );
         }
@@ -267,7 +267,7 @@ class About_Me_Card_Module extends Module_Base {
 
                     <?php if ( $show_now && $now !== '' ) : ?>
                         <div class="qil-about-now">
-                            <span class="qil-about-now-label"><?php echo esc_html__( 'Now', 'developer-starter' ); ?></span>
+                            <span class="qil-about-now-label"><?php echo esc_html__( 'Now', 'qiling' ); ?></span>
                             <span class="qil-about-now-text"><?php echo esc_html( $now ); ?></span>
                         </div>
                     <?php endif; ?>
@@ -275,7 +275,7 @@ class About_Me_Card_Module extends Module_Base {
                     <?php if ( $location || $website || $email ) : ?>
                         <div class="qil-about-meta">
                             <?php if ( $location ) : ?>
-                                <span class="qil-about-meta-item"><?php echo esc_html__( '位置：', 'developer-starter' ) . esc_html( $location ); ?></span>
+                                <span class="qil-about-meta-item"><?php echo esc_html__( '位置：', 'qiling' ) . esc_html( $location ); ?></span>
                             <?php endif; ?>
                             <?php if ( $website ) : ?>
                                 <a class="qil-about-meta-item" href="<?php echo esc_url( $website ); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html( $website_text ); ?></a>
@@ -297,13 +297,15 @@ class About_Me_Card_Module extends Module_Base {
                                 }
                                 $social_label = isset( $social['label'] ) ? trim( (string) $social['label'] ) : '';
                                 $social_url = isset( $social['url'] ) ? trim( (string) $social['url'] ) : '';
-                                $social_icon = isset( $social['icon'] ) && $social['icon'] !== '' ? (string) $social['icon'] : '🔗';
+                                $social_icon = isset( $social['icon'] ) ? trim( (string) $social['icon'] ) : '';
                                 if ( $social_label === '' || $social_url === '' ) {
                                     continue;
                                 }
                                 ?>
                                 <a class="qil-about-social" href="<?php echo esc_url( $social_url ); ?>" target="_blank" rel="noopener nofollow">
-                                    <span class="qil-about-social-icon"><?php echo esc_html( $social_icon ); ?></span>
+                                    <?php if ( $social_icon !== '' ) : ?>
+                                        <span class="qil-about-social-icon"><?php echo developer_starter_get_icon_html( $social_icon ); ?></span>
+                                    <?php endif; ?>
                                     <span class="qil-about-social-label"><?php echo esc_html( $social_label ); ?></span>
                                 </a>
                             <?php endforeach; ?>
@@ -322,7 +324,8 @@ class About_Me_Card_Module extends Module_Base {
         }
 
         if ( function_exists( 'mb_substr' ) ) {
-            return mb_substr( $name, 0, 1 );
+            $char = mb_substr( $name, 0, 1, 'UTF-8' );
+            return function_exists( 'mb_strtoupper' ) ? mb_strtoupper( $char, 'UTF-8' ) : strtoupper( $char );
         }
 
         return strtoupper( substr( $name, 0, 1 ) );

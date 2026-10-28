@@ -77,8 +77,8 @@ class Auth_Pages_Service {
 
             status_header( 403 );
             wp_die(
-                esc_html__( '本站已关闭默认注册入口，请使用前台注册页面。', 'developer-starter' ),
-                esc_html__( '注册已受限', 'developer-starter' ),
+                esc_html__( '本站已关闭默认注册入口，请使用前台注册页面。', 'qiling' ),
+                esc_html__( '注册已受限', 'qiling' ),
                 array( 'response' => 403 )
             );
         }
@@ -167,22 +167,22 @@ class Auth_Pages_Service {
         try {
             $pages = array(
                 'login'           => array(
-                    'title'      => __( '用户登录', 'developer-starter' ),
+                    'title'      => __( '用户登录', 'qiling' ),
                     'template'   => 'templates/template-login.php',
                     'option_key' => 'login_page_id',
                 ),
                 'register'        => array(
-                    'title'      => __( '用户注册', 'developer-starter' ),
+                    'title'      => __( '用户注册', 'qiling' ),
                     'template'   => 'templates/template-register.php',
                     'option_key' => 'register_page_id',
                 ),
                 'forgot-password' => array(
-                    'title'      => __( '找回密码', 'developer-starter' ),
+                    'title'      => __( '找回密码', 'qiling' ),
                     'template'   => 'templates/template-forgot-password.php',
                     'option_key' => 'forgot_password_page_id',
                 ),
                 'account-center'  => array(
-                    'title'             => __( '个人中心', 'developer-starter' ),
+                    'title'             => __( '个人中心', 'qiling' ),
                     'template'          => 'templates/template-account.php',
                     'global_option_key' => 'developer_starter_account_page_id',
                 ),
@@ -270,7 +270,7 @@ class Auth_Pages_Service {
         $existing_by_title = get_posts(
             array(
                 'post_type'      => 'page',
-                'title'          => __( '个人中心', 'developer-starter' ),
+                'title'          => __( '个人中心', 'qiling' ),
                 'post_status'    => array( 'publish', 'draft', 'pending', 'private' ),
                 'posts_per_page' => 1,
                 'fields'         => 'ids',
@@ -418,19 +418,19 @@ class Auth_Pages_Service {
     public function count_duplicate_auth_pages() {
         $definitions = array(
             'login'           => array(
-                'title'    => __( '用户登录', 'developer-starter' ),
+                'title'    => __( '用户登录', 'qiling' ),
                 'template' => 'templates/template-login.php',
             ),
             'register'        => array(
-                'title'    => __( '用户注册', 'developer-starter' ),
+                'title'    => __( '用户注册', 'qiling' ),
                 'template' => 'templates/template-register.php',
             ),
             'forgot-password' => array(
-                'title'    => __( '找回密码', 'developer-starter' ),
+                'title'    => __( '找回密码', 'qiling' ),
                 'template' => 'templates/template-forgot-password.php',
             ),
             'account-center'  => array(
-                'title'    => __( '个人中心', 'developer-starter' ),
+                'title'    => __( '个人中心', 'qiling' ),
                 'template' => 'templates/template-account.php',
             ),
         );
@@ -490,28 +490,28 @@ class Auth_Pages_Service {
                 'success'       => false,
                 'trashed_count' => 0,
                 'kept_pages'    => array(),
-                'message'       => __( '权限不足', 'developer-starter' ),
+                'message'       => __( '权限不足', 'qiling' ),
             );
         }
 
         $definitions = array(
             'login'           => array(
-                'title'             => __( '用户登录', 'developer-starter' ),
+                'title'             => __( '用户登录', 'qiling' ),
                 'template'          => 'templates/template-login.php',
                 'option_key'        => 'login_page_id',
             ),
             'register'        => array(
-                'title'             => __( '用户注册', 'developer-starter' ),
+                'title'             => __( '用户注册', 'qiling' ),
                 'template'          => 'templates/template-register.php',
                 'option_key'        => 'register_page_id',
             ),
             'forgot-password' => array(
-                'title'             => __( '找回密码', 'developer-starter' ),
+                'title'             => __( '找回密码', 'qiling' ),
                 'template'          => 'templates/template-forgot-password.php',
                 'option_key'        => 'forgot_password_page_id',
             ),
             'account-center'  => array(
-                'title'             => __( '个人中心', 'developer-starter' ),
+                'title'             => __( '个人中心', 'qiling' ),
                 'template'          => 'templates/template-account.php',
                 'global_option_key' => 'developer_starter_account_page_id',
             ),
@@ -612,7 +612,7 @@ class Auth_Pages_Service {
             'success'       => true,
             'trashed_count' => $trashed_count,
             'kept_pages'    => $kept_pages,
-            'message'       => sprintf( __( '清理完成！共将 %d 个多余的重复页面移入回收站，系统已自动保留主页面并绑定好对应设置。', 'developer-starter' ), $trashed_count ),
+            'message'       => sprintf( __( '清理完成！共将 %d 个多余的重复页面移入回收站，系统已自动保留主页面并绑定好对应设置。', 'qiling' ), $trashed_count ),
         );
     }
 

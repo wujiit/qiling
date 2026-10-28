@@ -66,13 +66,13 @@ function developer_starter_maybe_block_wechat_browser() {
 add_action( 'template_redirect', 'developer_starter_maybe_block_wechat_browser', 0 );
 
 function developer_starter_render_wechat_browser_overlay_page() {
-    $title = trim( (string) developer_starter_get_option( 'wechat_browser_block_title', __( '请在浏览器中打开', 'developer-starter' ) ) );
-    $desc  = trim( (string) developer_starter_get_option( 'wechat_browser_block_desc', __( '当前页面在微信内可能无法正常操作，请按提示切换到系统浏览器继续访问。', 'developer-starter' ) ) );
+    $title = trim( (string) developer_starter_get_option( 'wechat_browser_block_title', __( '请在浏览器中打开', 'qiling' ) ) );
+    $desc  = trim( (string) developer_starter_get_option( 'wechat_browser_block_desc', __( '当前页面在微信内可能无法正常操作，请按提示切换到系统浏览器继续访问。', 'qiling' ) ) );
     if ( '' === $title ) {
-        $title = __( '请在浏览器中打开', 'developer-starter' );
+        $title = __( '请在浏览器中打开', 'qiling' );
     }
     if ( '' === $desc ) {
-        $desc = __( '当前页面在微信内可能无法正常操作，请按提示切换到系统浏览器继续访问。', 'developer-starter' );
+        $desc = __( '当前页面在微信内可能无法正常操作，请按提示切换到系统浏览器继续访问。', 'qiling' );
     }
 
     ?>
@@ -291,14 +291,14 @@ function developer_starter_render_wechat_browser_overlay_page() {
             </svg>
             <div class="ds-wechat-browser-guide__step">
                 <span class="ds-wechat-browser-guide__number">1</span>
-                <span><?php esc_html_e( '点击右上角的', 'developer-starter' ); ?></span>
+                <span><?php esc_html_e( '点击右上角的', 'qiling' ); ?></span>
                 <span class="ds-wechat-browser-guide__menu" aria-hidden="true"><span></span><span></span><span></span></span>
-                <span><?php esc_html_e( '按钮', 'developer-starter' ); ?></span>
+                <span><?php esc_html_e( '按钮', 'qiling' ); ?></span>
             </div>
             <div class="ds-wechat-browser-guide__step">
                 <span class="ds-wechat-browser-guide__number">2</span>
-                <span><?php esc_html_e( '选择', 'developer-starter' ); ?></span>
-                <span class="ds-wechat-browser-guide__browser"><?php esc_html_e( '在浏览器中打开', 'developer-starter' ); ?></span>
+                <span><?php esc_html_e( '选择', 'qiling' ); ?></span>
+                <span class="ds-wechat-browser-guide__browser"><?php esc_html_e( '在浏览器中打开', 'qiling' ); ?></span>
             </div>
             <?php if ( '' !== $desc ) : ?>
                 <p class="ds-wechat-browser-guide__note"><?php echo nl2br( esc_html( $desc ) ); ?></p>
@@ -450,7 +450,7 @@ function developer_starter_comment_optimizations() {
         add_filter( 'preprocess_comment', function( $commentdata ) {
             $honeypot_value = isset( $_POST['ds_hp_field'] ) ? sanitize_text_field( wp_unslash( $_POST['ds_hp_field'] ) ) : '';
             if ( '' !== $honeypot_value ) {
-                wp_die( __( '垃圾评论检测：提交被阻止。', 'developer-starter' ), 403 );
+                wp_die( __( '垃圾评论检测：提交被阻止。', 'qiling' ), 403 );
             }
             return $commentdata;
         } );

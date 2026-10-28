@@ -33,7 +33,7 @@ $page_header->render();
             ?>
                 <div class="changelog-timeline">
                     <?php foreach ( $entries as $index => $entry ) : ?>
-                        <div class="changelog-entry <?php echo $index === 0 ? 'is-latest' : ''; ?>" data-index="<?php echo $index; ?>">
+                        <div class="changelog-entry <?php echo $index === 0 ? 'is-latest' : ''; ?>" data-index="<?php echo esc_attr( $index ); ?>">
                             <div class="changelog-marker">
                                 <span class="marker-dot"></span>
                                 <span class="marker-line"></span>
@@ -42,7 +42,7 @@ $page_header->render();
                                 <button type="button" class="changelog-header" aria-expanded="<?php echo $index === 0 ? 'true' : 'false'; ?>">
                                     <div class="changelog-title-group">
                                         <?php if ( $entry['is_latest'] || $index === 0 ) : ?>
-                                            <span class="changelog-badge"><?php esc_html_e( '最新', 'developer-starter' ); ?></span>
+                                            <span class="changelog-badge"><?php esc_html_e( '最新', 'qiling' ); ?></span>
                                         <?php endif; ?>
                                         <h3 class="changelog-title"><?php echo esc_html( $entry['title'] ); ?></h3>
                                     </div>
@@ -60,7 +60,7 @@ $page_header->render();
                                 </button>
                                 <div class="changelog-content <?php echo $index === 0 ? 'is-open' : ''; ?>">
                                     <div class="changelog-body">
-                                        <?php echo $entry['content']; ?>
+                                        <?php echo wp_kses_post( $entry['content'] ); ?>
                                     </div>
                                     <?php if ( ! empty( $entry['downloads'] ) ) : ?>
                                         <div class="changelog-downloads">
@@ -80,7 +80,7 @@ $page_header->render();
             <?php else : ?>
                 <div class="changelog-empty">
                     <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    <p><?php esc_html_e( '暂无更新日志', 'developer-starter' ); ?></p>
+                    <p><?php esc_html_e( '暂无更新日志', 'qiling' ); ?></p>
                 </div>
             <?php
                 endif;

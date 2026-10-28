@@ -27,7 +27,7 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
         // 设置模块分类为 'shop' 或其他合适的分类，这里暂时用 'homepage' 保持一致
         $this->category = 'homepage'; 
         $this->icon = 'dashicons-store'; // 使用商店图标
-        $this->description = __( '展示启灵实物商城的商品，支持横向轮播', 'developer-starter' );
+        $this->description = __( '展示启灵实物商城的商品，支持横向轮播', 'qiling' );
     }
 
     public function get_id() {
@@ -36,7 +36,7 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '启灵商品展示', 'developer-starter' );
+        return __( '启灵商品展示', 'qiling' );
     }
 
     public function get_fields() {
@@ -45,23 +45,23 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'qss_bg_color',
                 'type'    => 'text',
-                'label'   => __( '背景颜色(支持渐变)', 'developer-starter' ),
+                'label'   => __( '背景颜色(支持渐变)', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'qss_content_width',
                 'type'    => 'select',
-                'label'   => __( '内容宽度', 'developer-starter' ),
+                'label'   => __( '内容宽度', 'qiling' ),
                 'options' => array(
-                    'container' => __( '默认容器宽度', 'developer-starter' ),
-                    'full'      => __( '全宽', 'developer-starter' ),
+                    'container' => __( '默认容器宽度', 'qiling' ),
+                    'full'      => __( '全宽', 'qiling' ),
                 ),
                 'default' => 'container',
             ),
             array(
                 'id'      => 'qss_padding',
                 'type'    => 'select',
-                'label'   => __( '上下内边距', 'developer-starter' ),
+                'label'   => __( '上下内边距', 'qiling' ),
                 'options' => array(
                     '40'  => '40px',
                     '60'  => '60px',
@@ -75,33 +75,33 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'qss_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门商品', 'Featured Products' ) : __( '热门商品', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门商品', 'Featured Products' ) : __( '热门商品', 'qiling' ),
             ),
             array(
                 'id'      => 'qss_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选实物好货，品质保证', 'Curated physical products with reliable quality.' ) : __( '精选实物好货，品质保证', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选实物好货，品质保证', 'Curated physical products with reliable quality.' ) : __( '精选实物好货，品质保证', 'qiling' ),
             ),
 
             // === 查询设置 ===
             array(
                 'id'      => 'qss_limit',
                 'type'    => 'text',
-                'label'   => __( '显示数量', 'developer-starter' ),
+                'label'   => __( '显示数量', 'qiling' ),
                 'default' => '8',
-                'desc'    => __( '输入数字，例如 8', 'developer-starter' ),
+                'desc'    => __( '输入数字，例如 8', 'qiling' ),
             ),
             array(
                 'id'      => 'qss_orderby',
                 'type'    => 'select',
-                'label'   => __( '排序方式', 'developer-starter' ),
+                'label'   => __( '排序方式', 'qiling' ),
                 'options' => array(
-                    'newest' => __( '最新发布', 'developer-starter' ),
-                    'sales'  => __( '销量最高', 'developer-starter' ),
-                    'price_asc' => __( '价格从低到高', 'developer-starter' ),
-                    'price_desc' => __( '价格从高到低', 'developer-starter' ),
+                    'newest' => __( '最新发布', 'qiling' ),
+                    'sales'  => __( '销量最高', 'qiling' ),
+                    'price_asc' => __( '价格从低到高', 'qiling' ),
+                    'price_desc' => __( '价格从高到低', 'qiling' ),
                 ),
                 'default' => 'newest',
             ),
@@ -110,10 +110,10 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'qss_show_cart',
                 'type'    => 'select',
-                'label'   => __( '显示购物车图标', 'developer-starter' ),
+                'label'   => __( '显示购物车图标', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -138,7 +138,7 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
         $table_products = $this->get_products_table_name( $wpdb );
         if ( ! $this->has_products_table( $wpdb, $table_products ) ) {
             if ( current_user_can( 'manage_options' ) ) {
-                echo '<div class="alert alert-warning">' . sprintf( __( '提示：未找到启灵积分商城数据表 (%s)，请确保插件已安装并激活。', 'developer-starter' ), esc_html( $table_products ) ) . '</div>';
+                echo '<div class="alert alert-warning">' . sprintf( __( '提示：未找到启灵积分商城数据表 (%s)，请确保插件已安装并激活。', 'qiling' ), esc_html( $table_products ) ) . '</div>';
             }
             return;
         }
@@ -189,8 +189,8 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
             'bg_color'      => isset( $data['qss_bg_color'] ) ? (string) $data['qss_bg_color'] : 'var(--color-neutral-50)',
             'content_width' => $content_width,
             'padding'       => isset( $data['qss_padding'] ) ? max( 0, intval( $data['qss_padding'] ) ) : 60,
-            'title'         => isset( $data['qss_title'] ) ? (string) $data['qss_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门商品', 'Featured Products' ) : __( '热门商品', 'developer-starter' ) ),
-            'subtitle'      => isset( $data['qss_subtitle'] ) ? (string) $data['qss_subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选实物好货，品质保证', 'Carefully selected products with dependable quality.' ) : __( '精选实物好货，品质保证', 'developer-starter' ) ),
+            'title'         => isset( $data['qss_title'] ) ? (string) $data['qss_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门商品', 'Featured Products' ) : __( '热门商品', 'qiling' ) ),
+            'subtitle'      => isset( $data['qss_subtitle'] ) ? (string) $data['qss_subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选实物好货，品质保证', 'Carefully selected products with dependable quality.' ) : __( '精选实物好货，品质保证', 'qiling' ) ),
             'limit'         => $limit,
             'orderby'       => $orderby,
             'show_cart'     => $show_cart,

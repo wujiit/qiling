@@ -29,17 +29,17 @@ class FAQ_Manager {
      */
     public function register_post_type() {
         $labels = array(
-            'name'               => __( '常见问题', 'developer-starter' ),
-            'singular_name'      => __( '常见问题', 'developer-starter' ),
-            'menu_name'          => __( '常见问题', 'developer-starter' ),
-            'add_new'            => __( '添加问题', 'developer-starter' ),
-            'add_new_item'       => __( '添加新问题', 'developer-starter' ),
-            'edit_item'          => __( '编辑问题', 'developer-starter' ),
-            'new_item'           => __( '新问题', 'developer-starter' ),
-            'view_item'          => __( '查看问题', 'developer-starter' ),
-            'search_items'       => __( '搜索问题', 'developer-starter' ),
-            'not_found'          => __( '未找到问题', 'developer-starter' ),
-            'not_found_in_trash' => __( '回收站中无问题', 'developer-starter' ),
+            'name'               => __( '常见问题', 'qiling' ),
+            'singular_name'      => __( '常见问题', 'qiling' ),
+            'menu_name'          => __( '常见问题', 'qiling' ),
+            'add_new'            => __( '添加问题', 'qiling' ),
+            'add_new_item'       => __( '添加新问题', 'qiling' ),
+            'edit_item'          => __( '编辑问题', 'qiling' ),
+            'new_item'           => __( '新问题', 'qiling' ),
+            'view_item'          => __( '查看问题', 'qiling' ),
+            'search_items'       => __( '搜索问题', 'qiling' ),
+            'not_found'          => __( '未找到问题', 'qiling' ),
+            'not_found_in_trash' => __( '回收站中无问题', 'qiling' ),
         );
 
         $args = array(
@@ -63,17 +63,17 @@ class FAQ_Manager {
      */
     public function register_taxonomy() {
         $labels = array(
-            'name'              => __( '问题分类', 'developer-starter' ),
-            'singular_name'     => __( '问题分类', 'developer-starter' ),
-            'search_items'      => __( '搜索分类', 'developer-starter' ),
-            'all_items'         => __( '所有分类', 'developer-starter' ),
-            'parent_item'       => __( '父分类', 'developer-starter' ),
-            'parent_item_colon' => __( '父分类:', 'developer-starter' ),
-            'edit_item'         => __( '编辑分类', 'developer-starter' ),
-            'update_item'       => __( '更新分类', 'developer-starter' ),
-            'add_new_item'      => __( '添加新分类', 'developer-starter' ),
-            'new_item_name'     => __( '新分类名称', 'developer-starter' ),
-            'menu_name'         => __( '问题分类', 'developer-starter' ),
+            'name'              => __( '问题分类', 'qiling' ),
+            'singular_name'     => __( '问题分类', 'qiling' ),
+            'search_items'      => __( '搜索分类', 'qiling' ),
+            'all_items'         => __( '所有分类', 'qiling' ),
+            'parent_item'       => __( '父分类', 'qiling' ),
+            'parent_item_colon' => __( '父分类:', 'qiling' ),
+            'edit_item'         => __( '编辑分类', 'qiling' ),
+            'update_item'       => __( '更新分类', 'qiling' ),
+            'add_new_item'      => __( '添加新分类', 'qiling' ),
+            'new_item_name'     => __( '新分类名称', 'qiling' ),
+            'menu_name'         => __( '问题分类', 'qiling' ),
         );
 
         $args = array(
@@ -94,7 +94,7 @@ class FAQ_Manager {
     public function add_meta_boxes() {
         add_meta_box(
             'faq_document_meta',
-            __( '文档信息', 'developer-starter' ),
+            __( '文档信息', 'qiling' ),
             array( $this, 'render_meta_box' ),
             'ds_faq',
             'normal',
@@ -124,44 +124,44 @@ class FAQ_Manager {
         </style>
         <table class="faq-meta-table">
             <tr>
-                <th><?php esc_html_e( '排序', 'developer-starter' ); ?></th>
+                <th><?php esc_html_e( '排序', 'qiling' ); ?></th>
                 <td>
                     <input type="number" name="faq_order" value="<?php echo esc_attr( $faq_order ? $faq_order : '0' ); ?>" style="width: 80px;" min="0" />
-                    <p class="faq-meta-desc"><?php esc_html_e( '数字越大越靠前显示，默认为0', 'developer-starter' ); ?></p>
+                    <p class="faq-meta-desc"><?php esc_html_e( '数字越大越靠前显示，默认为0', 'qiling' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th><?php esc_html_e( '文档名称', 'developer-starter' ); ?></th>
+                <th><?php esc_html_e( '文档名称', 'qiling' ); ?></th>
                 <td>
-                    <input type="text" name="faq_doc_name" value="<?php echo esc_attr( $doc_name ); ?>" placeholder="<?php esc_attr_e( '例如：产品使用手册', 'developer-starter' ); ?>" />
-                    <p class="faq-meta-desc"><?php esc_html_e( '可选，留空则不显示文档下载', 'developer-starter' ); ?></p>
+                    <input type="text" name="faq_doc_name" value="<?php echo esc_attr( $doc_name ); ?>" placeholder="<?php esc_attr_e( '例如：产品使用手册', 'qiling' ); ?>" />
+                    <p class="faq-meta-desc"><?php esc_html_e( '可选，留空则不显示文档下载', 'qiling' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th><?php esc_html_e( '文档格式', 'developer-starter' ); ?></th>
+                <th><?php esc_html_e( '文档格式', 'qiling' ); ?></th>
                 <td>
                     <select name="faq_doc_format">
-                        <option value=""><?php esc_html_e( '-- 选择格式 --', 'developer-starter' ); ?></option>
+                        <option value=""><?php esc_html_e( '-- 选择格式 --', 'qiling' ); ?></option>
                         <option value="pdf" <?php selected( $doc_format, 'pdf' ); ?>>PDF</option>
                         <option value="word" <?php selected( $doc_format, 'word' ); ?>>Word</option>
                         <option value="excel" <?php selected( $doc_format, 'excel' ); ?>>Excel</option>
                         <option value="ppt" <?php selected( $doc_format, 'ppt' ); ?>>PPT</option>
                         <option value="zip" <?php selected( $doc_format, 'zip' ); ?>>ZIP</option>
-                        <option value="other" <?php selected( $doc_format, 'other' ); ?>><?php esc_html_e( '其他', 'developer-starter' ); ?></option>
+                        <option value="other" <?php selected( $doc_format, 'other' ); ?>><?php esc_html_e( '其他', 'qiling' ); ?></option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <th><?php esc_html_e( '文档大小', 'developer-starter' ); ?></th>
+                <th><?php esc_html_e( '文档大小', 'qiling' ); ?></th>
                 <td>
-                    <input type="text" name="faq_doc_size" value="<?php echo esc_attr( $doc_size ); ?>" placeholder="<?php esc_attr_e( '例如：2.5MB', 'developer-starter' ); ?>" style="width: 150px;" />
+                    <input type="text" name="faq_doc_size" value="<?php echo esc_attr( $doc_size ); ?>" placeholder="<?php esc_attr_e( '例如：2.5MB', 'qiling' ); ?>" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
-                <th><?php esc_html_e( '下载链接', 'developer-starter' ); ?></th>
+                <th><?php esc_html_e( '下载链接', 'qiling' ); ?></th>
                 <td>
                     <input type="text" name="faq_doc_url" value="<?php echo esc_attr( $doc_url ); ?>" placeholder="https://..." />
-                    <p class="faq-meta-desc"><?php esc_html_e( '文档下载地址，可使用媒体库链接或外部链接', 'developer-starter' ); ?></p>
+                    <p class="faq-meta-desc"><?php esc_html_e( '文档下载地址，可使用媒体库链接或外部链接', 'qiling' ); ?></p>
                 </td>
             </tr>
         </table>

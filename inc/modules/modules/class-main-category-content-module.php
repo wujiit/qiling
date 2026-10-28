@@ -19,7 +19,7 @@ class Main_Category_Content_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-grid-view';
-        $this->description = __( '展示指定分类的内容，包含子分类导航和“查看更多”按钮', 'developer-starter' );
+        $this->description = __( '展示指定分类的内容，包含子分类导航和“查看更多”按钮', 'qiling' );
     }
 
     public function get_id() {
@@ -27,13 +27,13 @@ class Main_Category_Content_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '主分类内容展示', 'developer-starter' );
+        return __( '主分类内容展示', 'qiling' );
     }
 
     public function get_fields() {
         // 获取所有分类用于选择
         $categories = get_categories( array( 'hide_empty' => false ) );
-        $cat_options = array( '' => __( '请选择影视分类', 'developer-starter' ) );
+        $cat_options = array( '' => __( '请选择影视分类', 'qiling' ) );
         foreach ( $categories as $cat ) {
             $cat_options[ $cat->term_id ] = $cat->name;
         }
@@ -42,94 +42,94 @@ class Main_Category_Content_Module extends Module_Base {
             // --- 核心内容设置 ---
             array(
                 'id' => 'category_header_info',
-                'label' => __( '分类信息设置', 'developer-starter' ),
+                'label' => __( '分类信息设置', 'qiling' ),
                 'type' => 'info',
-                'description' => __( '尚未选择影视分类时，请在下方选择该模块要展示的分类。模块会自动获取所选分类下的子分类链接。', 'developer-starter' )
+                'description' => __( '尚未选择影视分类时，请在下方选择该模块要展示的分类。模块会自动获取所选分类下的子分类链接。', 'qiling' )
             ),
             array( 
                 'id' => 'target_category', 
-                'label' => __( '选择主分类', 'developer-starter' ), 
+                'label' => __( '选择主分类', 'qiling' ), 
                 'type' => 'select', 
                 'options' => $cat_options,
                 'default' => '' 
             ),
             array( 
                 'id' => 'category_icon', 
-                'label' => __( '分类图标', 'developer-starter' ), 
+                'label' => __( '分类图标', 'qiling' ), 
                 'type' => 'image', 
-                'description' => __( '显示在分类名称左侧的图标', 'developer-starter' ) 
+                'description' => __( '显示在分类名称左侧的图标', 'qiling' ) 
             ),
             array( 
                 'id' => 'custom_title', 
-                'label' => __( '自定义标题', 'developer-starter' ), 
+                'label' => __( '自定义标题', 'qiling' ), 
                 'type' => 'text', 
-                'description' => __( '留空则默认显示分类名称', 'developer-starter' ),
+                'description' => __( '留空则默认显示分类名称', 'qiling' ),
                 'default' => '' 
             ),
             
             // --- 右侧按钮设置 ---
             array(
                 'id' => 'more_btn_text',
-                'label' => __( '“查看更多”按钮文字', 'developer-starter' ),
+                'label' => __( '“查看更多”按钮文字', 'qiling' ),
                 'type' => 'text',
-                'default' => __( '查看更多', 'developer-starter' ),
-                'description' => __( '显示在最右侧的按钮文字', 'developer-starter' )
+                'default' => __( '查看更多', 'qiling' ),
+                'description' => __( '显示在最右侧的按钮文字', 'qiling' )
             ),
-            $this->get_button_border_color_field( 'more_btn_border_color', __( '“查看更多”按钮边框颜色', 'developer-starter' ) ),
-            $this->get_button_border_color_field( 'more_btn_hover_border_color', __( '“查看更多”按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随全局按钮悬停背景色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'more_btn_border_color', __( '“查看更多”按钮边框颜色', 'qiling' ) ),
+            $this->get_button_border_color_field( 'more_btn_hover_border_color', __( '“查看更多”按钮悬停边框颜色', 'qiling' ), __( '留空时跟随全局按钮悬停背景色。', 'qiling' ) ),
             
             // --- 显示设置 ---
             array(
                 'id' => 'enable_artplayer_data',
-                'label' => __( '启用启灵播放器视频数据', 'developer-starter' ),
+                'label' => __( '启用启灵播放器视频数据', 'qiling' ),
                 'type' => 'select',
-                'options' => array( 'yes' => __( '启用', 'developer-starter' ), 'no' => __( '禁用', 'developer-starter' ) ),
+                'options' => array( 'yes' => __( '启用', 'qiling' ), 'no' => __( '禁用', 'qiling' ) ),
                 'default' => 'no',
-                'description' => __( '启用后将读取播放器封面、高清类型、评分，并显示播放按钮图标。', 'developer-starter' )
+                'description' => __( '启用后将读取播放器封面、高清类型、评分，并显示播放按钮图标。', 'qiling' )
             ),
             array(
                 'id' => 'show_episode_count',
-                'label' => __( '显示视频集数', 'developer-starter' ),
+                'label' => __( '显示视频集数', 'qiling' ),
                 'type' => 'select',
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'no',
-                'description' => __( '启用后将在封面左下角显示“更新至第X集”', 'developer-starter' )
+                'description' => __( '启用后将在封面左下角显示“更新至第X集”', 'qiling' )
             ),
             array(
                 'id' => 'show_subcategories',
-                'label' => __( '显示子分类链接', 'developer-starter' ),
+                'label' => __( '显示子分类链接', 'qiling' ),
                 'type' => 'select',
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'yes',
-                'description' => __( '自动读取当前选中分类的直接子分类显示在标题右侧', 'developer-starter' )
+                'description' => __( '自动读取当前选中分类的直接子分类显示在标题右侧', 'qiling' )
             ),
             array( 
                 'id' => 'post_count', 
-                'label' => __( '显示文章数量', 'developer-starter' ), 
+                'label' => __( '显示文章数量', 'qiling' ), 
                 'type' => 'number', 
                 'default' => '10' 
             ),
             array( 
                 'id' => 'columns', 
-                'label' => __( '显示列数', 'developer-starter' ), 
+                'label' => __( '显示列数', 'qiling' ), 
                 'type' => 'select', 
                 'options' => array( 
-                    '4' => __( '4列', 'developer-starter' ),
-                    '5' => __( '5列', 'developer-starter' ),
-                    '6' => __( '6列', 'developer-starter' )
+                    '4' => __( '4列', 'qiling' ),
+                    '5' => __( '5列', 'qiling' ),
+                    '6' => __( '6列', 'qiling' )
                 ), 
                 'default' => '5' 
             ),
             array( 
                 'id' => 'image_aspect_ratio', 
-                'label' => __( '封面比例', 'developer-starter' ), 
+                'label' => __( '封面比例', 'qiling' ), 
                 'type' => 'select', 
                 'options' => array( 
-                    '16:9' => __( '16:9 (宽屏)', 'developer-starter' ), 
-                    '4:3' => __( '4:3 (标准)', 'developer-starter' ), 
-                    '3:4' => __( '3:4 (竖屏)', 'developer-starter' ), 
-                    '1:1' => __( '1:1 (正方形)', 'developer-starter' ), 
-                    '2:3' => __( '2:3 (电影海报)', 'developer-starter' )
+                    '16:9' => __( '16:9 (宽屏)', 'qiling' ), 
+                    '4:3' => __( '4:3 (标准)', 'qiling' ), 
+                    '3:4' => __( '3:4 (竖屏)', 'qiling' ), 
+                    '1:1' => __( '1:1 (正方形)', 'qiling' ), 
+                    '2:3' => __( '2:3 (电影海报)', 'qiling' )
                 ), 
                 'default' => '2:3' 
             ),
@@ -137,19 +137,19 @@ class Main_Category_Content_Module extends Module_Base {
             // --- 样式设置 ---
             array(
                 'id' => 'bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'padding_top',
-                'label' => __( '上边距', 'developer-starter' ),
+                'label' => __( '上边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '40px',
             ),
             array(
                 'id' => 'padding_bottom',
-                'label' => __( '下边距', 'developer-starter' ),
+                'label' => __( '下边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '40px',
             ),
@@ -188,7 +188,7 @@ class Main_Category_Content_Module extends Module_Base {
         
         if ( ! $cat_id || is_wp_error( $category ) || ! $category instanceof \WP_Term ) {
             if ( $this->is_builder_preview() ) {
-                echo '<div class="qmcc-config-notice" role="status"><strong>' . esc_html__( '尚未选择影视分类', 'developer-starter' ) . '</strong><span>' . esc_html__( '请在模块设置中选择该模块要展示的分类。', 'developer-starter' ) . '</span></div>';
+                echo '<div class="qmcc-config-notice" role="status"><strong>' . esc_html__( '尚未选择影视分类', 'qiling' ) . '</strong><span>' . esc_html__( '请在模块设置中选择该模块要展示的分类。', 'qiling' ) . '</span></div>';
             }
             return;
         }
@@ -196,7 +196,7 @@ class Main_Category_Content_Module extends Module_Base {
         // 准备数据
         $icon = isset( $data['category_icon'] ) ? $data['category_icon'] : '';
         $title = ! empty( $data['custom_title'] ) ? $data['custom_title'] : $category->name;
-        $more_text = ! empty( $data['more_btn_text'] ) ? $data['more_btn_text'] : __( '查看更多', 'developer-starter' );
+        $more_text = ! empty( $data['more_btn_text'] ) ? $data['more_btn_text'] : __( '查看更多', 'qiling' );
         $show_sub = isset( $data['show_subcategories'] ) ? $data['show_subcategories'] : 'yes';
         $post_count = isset( $data['post_count'] ) ? intval( $data['post_count'] ) : 10;
         $columns = isset( $data['columns'] ) ? intval( $data['columns'] ) : 5;
@@ -337,7 +337,7 @@ class Main_Category_Content_Module extends Module_Base {
                                                 $episode_count = $this->get_video_episode_count( $post_id, isset($video_meta) ? $video_meta : null );
                                                 if ( $episode_count > 0 ) {
                                                     echo '<span class="qmcc-badge-episode">';
-                                                    printf( __( '更新至第<span class="qmcc-badge-count">%s</span>集', 'developer-starter' ), esc_html( $episode_count ) );
+                                                    printf( __( '更新至第<span class="qmcc-badge-count">%s</span>集', 'qiling' ), esc_html( $episode_count ) );
                                                     echo '</span>';
                                                 }
                                             }
@@ -362,7 +362,7 @@ class Main_Category_Content_Module extends Module_Base {
                         <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                 <?php else : ?>
-                    <div class="qmcc-empty"><?php esc_html_e( '暂无内容', 'developer-starter' ); ?></div>
+                    <div class="qmcc-empty"><?php esc_html_e( '暂无内容', 'qiling' ); ?></div>
                 <?php endif; ?>
 
             </div>

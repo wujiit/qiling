@@ -21,7 +21,7 @@ class Experience_Timeline_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-welcome-learn-more';
-        $this->description = __( '教育/工作经历展示，适合个人简历', 'developer-starter' );
+        $this->description = __( '教育/工作经历展示，适合个人简历', 'qiling' );
     }
 
     public function get_id() {
@@ -29,7 +29,7 @@ class Experience_Timeline_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '经历时间线', 'developer-starter' );
+        return __( '经历时间线', 'qiling' );
     }
 
     public function get_fields() {
@@ -38,37 +38,37 @@ class Experience_Timeline_Module extends Module_Base {
             array(
                 'id'      => 'exp_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
             ),
             array(
                 'id'      => 'exp_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id'      => 'exp_title_color',
                 'type'    => 'color',
-                'label'   => __( '标题颜色', 'developer-starter' ),
+                'label'   => __( '标题颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'exp_subtitle',
                 'type'    => 'text',
-                'label'   => __( '模块副标题', 'developer-starter' ),
+                'label'   => __( '模块副标题', 'qiling' ),
             ),
             array(
                 'id'      => 'exp_subtitle_size',
                 'type'    => 'text',
-                'label'   => __( '副标题字体大小', 'developer-starter' ),
+                'label'   => __( '副标题字体大小', 'qiling' ),
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id'      => 'exp_subtitle_color',
                 'type'    => 'color',
-                'label'   => __( '副标题颜色', 'developer-starter' ),
+                'label'   => __( '副标题颜色', 'qiling' ),
                 'default' => '',
             ),
             
@@ -76,33 +76,33 @@ class Experience_Timeline_Module extends Module_Base {
             array(
                 'id'      => 'exp_bg_type',
                 'type'    => 'select',
-                'label'   => __( '背景类型', 'developer-starter' ),
+                'label'   => __( '背景类型', 'qiling' ),
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id'      => 'exp_bg_color',
                 'type'    => 'text',
-                'label'   => __( '背景颜色(支持渐变)', 'developer-starter' ),
+                'label'   => __( '背景颜色(支持渐变)', 'qiling' ),
                 'default' => '',
-                'description' => __( '如 var(--color-neutral-50) 或 linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)', 'developer-starter' ),
+                'description' => __( '如 var(--color-neutral-50) 或 linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)', 'qiling' ),
                 'dependency' => array( 'exp_bg_type', '==', 'color' ),
             ),
             array(
                 'id'      => 'exp_bg_image',
                 'type'    => 'image',
-                'label'   => __( '背景图片', 'developer-starter' ),
+                'label'   => __( '背景图片', 'qiling' ),
                 'dependency' => array( 'exp_bg_type', '==', 'image' ),
             ),
             array(
                 'id'      => 'exp_bg_overlay',
                 'type'    => 'select',
-                'label'   => __( '背景遮罩浓度', 'developer-starter' ),
+                'label'   => __( '背景遮罩浓度', 'qiling' ),
                 'options' => array(
-                    '0'   => __( '无遮罩', 'developer-starter' ),
+                    '0'   => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -121,13 +121,13 @@ class Experience_Timeline_Module extends Module_Base {
             array(
                 'id'      => 'exp_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label'   => __( '上边距 (如 60px)', 'qiling' ),
                 'default' => '60px',
             ),
             array(
                 'id'      => 'exp_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label'   => __( '下边距 (如 60px)', 'qiling' ),
                 'default' => '60px',
             ),
             
@@ -135,34 +135,34 @@ class Experience_Timeline_Module extends Module_Base {
             array(
                 'id'      => 'exp_layout',
                 'type'    => 'select',
-                'label'   => __( '布局模式', 'developer-starter' ),
+                'label'   => __( '布局模式', 'qiling' ),
                 'options' => array(
-                    'single' => __( '单列 (仅显示第1组)', 'developer-starter' ),
-                    'double' => __( '双列 (显示2组)', 'developer-starter' ),
+                    'single' => __( '单列 (仅显示第1组)', 'qiling' ),
+                    'double' => __( '双列 (显示2组)', 'qiling' ),
                 ),
                 'default' => 'single',
             ),
             array(
                 'id'      => 'exp_line_color',
                 'type'    => 'color',
-                'label'   => __( '时间线/高亮颜色', 'developer-starter' ),
+                'label'   => __( '时间线/高亮颜色', 'qiling' ),
                 'default' => 'var(--color-primary-light)',
             ),
             array(
                 'id'          => 'exp_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '控制时间段徽章与经历标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制时间段徽章与经历标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'exp_dot_style',
                 'type'    => 'select',
-                'label'   => __( '节点样式', 'developer-starter' ),
+                'label'   => __( '节点样式', 'qiling' ),
                 'options' => array(
-                    'dot'   => __( '实心圆点', 'developer-starter' ),
-                    'ring'  => __( '空心圆环', 'developer-starter' ),
-                    'icon'  => __( '图标节点', 'developer-starter' ),
+                    'dot'   => __( '实心圆点', 'qiling' ),
+                    'ring'  => __( '空心圆环', 'qiling' ),
+                    'icon'  => __( '图标节点', 'qiling' ),
                 ),
                 'default' => 'dot',
             ),
@@ -171,51 +171,51 @@ class Experience_Timeline_Module extends Module_Base {
             array(
                 'id'      => 'exp_group1_title',
                 'type'    => 'text',
-                'label'   => __( '分组1 标题 (如: 教育经历)', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '教育经历', 'Education' ) : __( '教育经历', 'developer-starter' ),
+                'label'   => __( '分组1 标题 (如: 教育经历)', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '教育经历', 'Education' ) : __( '教育经历', 'qiling' ),
             ),
             array(
                 'id'      => 'exp_group1_icon',
                 'type'    => 'text',
-                'label'   => __( '分组1 图标 (Emoji 或 icon-xxx)', 'developer-starter' ),
-                'default' => '🎓',
+                'label'   => __( '分组1 图标 (留空或 icon-xxx)', 'qiling' ),
+                'default' => '',
             ),
             array(
                 'id'            => 'exp_group1',
                 'type'          => 'repeater',
-                'label'         => __( '分组1 内容列表', 'developer-starter' ),
-                'add_button'    => __( '添加经历', 'developer-starter' ),
+                'label'         => __( '分组1 内容列表', 'qiling' ),
+                'add_button'    => __( '添加经历', 'qiling' ),
                 'default_items' => $this->get_default_education_items(),
                 'fields'        => array(
                     array(
                         'id'    => 'period',
                         'type'  => 'text',
-                        'label' => __( '时间段 (如: 2016 - 2020)', 'developer-starter' ),
+                        'label' => __( '时间段 (如: 2016 - 2020)', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '主标题/学位/职位', 'developer-starter' ),
+                        'label' => __( '主标题/学位/职位', 'qiling' ),
                     ),
                     array(
                         'id'    => 'company',
                         'type'  => 'text',
-                        'label' => __( '副标题/学校/公司', 'developer-starter' ),
+                        'label' => __( '副标题/学校/公司', 'qiling' ),
                     ),
                     array(
                         'id'    => 'company_link',
                         'type'  => 'text',
-                        'label' => __( '链接URL', 'developer-starter' ),
+                        'label' => __( '链接URL', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'textarea',
-                        'label' => __( '详细描述', 'developer-starter' ),
+                        'label' => __( '详细描述', 'qiling' ),
                     ),
                     array(
                         'id'    => 'tags',
                         'type'  => 'text',
-                        'label' => __( '标签 (逗号分隔)', 'developer-starter' ),
+                        'label' => __( '标签 (逗号分隔)', 'qiling' ),
                     ),
                 ),
             ),
@@ -224,51 +224,51 @@ class Experience_Timeline_Module extends Module_Base {
             array(
                 'id'      => 'exp_group2_title',
                 'type'    => 'text',
-                'label'   => __( '分组2 标题 (如: 工作经验)', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作经验', 'Experience' ) : __( '工作经验', 'developer-starter' ),
+                'label'   => __( '分组2 标题 (如: 工作经验)', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作经验', 'Experience' ) : __( '工作经验', 'qiling' ),
             ),
             array(
                 'id'      => 'exp_group2_icon',
                 'type'    => 'text',
-                'label'   => __( '分组2 图标 (Emoji 或 icon-xxx)', 'developer-starter' ),
-                'default' => '💼',
+                'label'   => __( '分组2 图标 (留空或 icon-xxx)', 'qiling' ),
+                'default' => '',
             ),
             array(
                 'id'            => 'exp_group2',
                 'type'          => 'repeater',
-                'label'         => __( '分组2 内容列表', 'developer-starter' ),
-                'add_button'    => __( '添加经历', 'developer-starter' ),
+                'label'         => __( '分组2 内容列表', 'qiling' ),
+                'add_button'    => __( '添加经历', 'qiling' ),
                 'default_items' => $this->get_default_work_items(),
                 'fields'        => array(
                     array(
                         'id'    => 'period',
                         'type'  => 'text',
-                        'label' => __( '时间段', 'developer-starter' ),
+                        'label' => __( '时间段', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '职位/标题', 'developer-starter' ),
+                        'label' => __( '职位/标题', 'qiling' ),
                     ),
                     array(
                         'id'    => 'company',
                         'type'  => 'text',
-                        'label' => __( '公司/副标题', 'developer-starter' ),
+                        'label' => __( '公司/副标题', 'qiling' ),
                     ),
                     array(
                         'id'    => 'company_link',
                         'type'  => 'text',
-                        'label' => __( '链接URL', 'developer-starter' ),
+                        'label' => __( '链接URL', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'textarea',
-                        'label' => __( '详细描述', 'developer-starter' ),
+                        'label' => __( '详细描述', 'qiling' ),
                     ),
                     array(
                         'id'    => 'tags',
                         'type'  => 'text',
-                        'label' => __( '标签 (逗号分隔)', 'developer-starter' ),
+                        'label' => __( '标签 (逗号分隔)', 'qiling' ),
                     ),
                 ),
             ),
@@ -304,16 +304,16 @@ class Experience_Timeline_Module extends Module_Base {
         $dot_style = isset( $data['exp_dot_style'] ) ? $data['exp_dot_style'] : 'dot';
         
         // 经历分组1（教育经历）
-        $group1_title = isset( $data['exp_group1_title'] ) ? $data['exp_group1_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '教育经历', 'Education' ) : __( '教育经历', 'developer-starter' ) );
-        $group1_icon = isset( $data['exp_group1_icon'] ) ? $data['exp_group1_icon'] : '🎓';
+        $group1_title = isset( $data['exp_group1_title'] ) ? $data['exp_group1_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '教育经历', 'Education' ) : __( '教育经历', 'qiling' ) );
+        $group1_icon = isset( $data['exp_group1_icon'] ) ? $data['exp_group1_icon'] : '';
         $experiences1 = isset( $data['exp_group1'] ) && is_array( $data['exp_group1'] ) ? $data['exp_group1'] : array();
         if ( empty( $experiences1 ) && ! isset( $data['exp_group1'] ) ) {
             $experiences1 = $this->get_default_education_items();
         }
         
         // 经历分组2（工作经验）
-        $group2_title = isset( $data['exp_group2_title'] ) ? $data['exp_group2_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作经验', 'Experience' ) : __( '工作经验', 'developer-starter' ) );
-        $group2_icon = isset( $data['exp_group2_icon'] ) ? $data['exp_group2_icon'] : '💼';
+        $group2_title = isset( $data['exp_group2_title'] ) ? $data['exp_group2_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作经验', 'Experience' ) : __( '工作经验', 'qiling' ) );
+        $group2_icon = isset( $data['exp_group2_icon'] ) ? $data['exp_group2_icon'] : '';
         $experiences2 = isset( $data['exp_group2'] ) && is_array( $data['exp_group2'] ) ? $data['exp_group2'] : array();
         if ( empty( $experiences2 ) && ! isset( $data['exp_group2'] ) ) {
             $experiences2 = $this->get_default_work_items();
@@ -428,7 +428,11 @@ class Experience_Timeline_Module extends Module_Base {
             <div class="exp-item">
                 <div class="exp-dot <?php echo esc_attr( 'style-' . $dot_style ); ?>">
                     <?php if ( $dot_style === 'icon' ) : ?>
-                        <?php echo $type === 'education' ? '🎓' : '💼'; ?>
+                        <?php if ( $type === 'education' ) : ?>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        <?php else : ?>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </div>
                 <div class="exp-content">
@@ -477,19 +481,19 @@ class Experience_Timeline_Module extends Module_Base {
         return array(
             array( 
                 'period' => '2016 - 2020', 
-                'title' => __( '计算机科学与技术 学士', 'developer-starter' ), 
-                'company' => __( '清华大学', 'developer-starter' ),
+                'title' => __( '计算机科学与技术 学士', 'qiling' ), 
+                'company' => __( '清华大学', 'qiling' ),
                 'company_link' => '',
-                'desc' => __( '主修软件工程 direction，GPA 3.8/4.0，获得优秀毕业生称号', 'developer-starter' ),
-                'tags' => __( '数据结构,算法,软件工程', 'developer-starter' )
+                'desc' => __( '主修软件工程 direction，GPA 3.8/4.0，获得优秀毕业生称号', 'qiling' ),
+                'tags' => __( '数据结构,算法,软件工程', 'qiling' )
             ),
             array( 
                 'period' => '2020 - 2022', 
-                'title' => __( '软件工程 硕士', 'developer-starter' ), 
-                'company' => __( '北京大学', 'developer-starter' ),
+                'title' => __( '软件工程 硕士', 'qiling' ), 
+                'company' => __( '北京大学', 'qiling' ),
                 'company_link' => '',
-                'desc' => __( '专注于Web前端技术研究，发表SCI论文2篇', 'developer-starter' ),
-                'tags' => __( '前端架构,性能优化', 'developer-starter' )
+                'desc' => __( '专注于Web前端技术研究，发表SCI论文2篇', 'qiling' ),
+                'tags' => __( '前端架构,性能优化', 'qiling' )
             ),
         );
     }
@@ -500,20 +504,20 @@ class Experience_Timeline_Module extends Module_Base {
     public function get_default_work_items() {
         return array(
             array( 
-                'period' => '2022 - ' . __( '至今', 'developer-starter' ), 
-                'title' => __( '高级前端工程师', 'developer-starter' ), 
-                'company' => __( '字节跳动', 'developer-starter' ),
+                'period' => '2022 - ' . __( '至今', 'qiling' ), 
+                'title' => __( '高级前端工程师', 'qiling' ), 
+                'company' => __( '字节跳动', 'qiling' ),
                 'company_link' => 'https://bytedance.com',
-                'desc' => __( '负责抖音Web端核心业务开发，带领5人团队完成多个重点项目', 'developer-starter' ),
+                'desc' => __( '负责抖音Web端核心业务开发，带领5人团队完成多个重点项目', 'qiling' ),
                 'tags' => 'React,TypeScript,Node.js'
             ),
             array( 
                 'period' => '2020 - 2022', 
-                'title' => __( '前端开发工程师', 'developer-starter' ), 
-                'company' => __( '阿里巴巴', 'developer-starter' ),
+                'title' => __( '前端开发工程师', 'qiling' ), 
+                'company' => __( '阿里巴巴', 'qiling' ),
                 'company_link' => 'https://alibaba.com',
-                'desc' => __( '参与淘宝商家后台开发，优化页面性能，加载速度提升40%', 'developer-starter' ),
-                'tags' => __( 'Vue,Webpack,小程序', 'developer-starter' )
+                'desc' => __( '参与淘宝商家后台开发，优化页面性能，加载速度提升40%', 'qiling' ),
+                'tags' => __( 'Vue,Webpack,小程序', 'qiling' )
             ),
         );
     }

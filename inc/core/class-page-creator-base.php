@@ -104,7 +104,7 @@ abstract class Page_Creator_Base {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
         if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $this->fill_page_modules( $post_id );
@@ -224,7 +224,7 @@ abstract class Page_Creator_Base {
      * @return string
      */
     protected function get_ajax_success_message() {
-        return __( '模块已填充，请刷新页面', 'developer-starter' );
+        return __( '模块已填充，请刷新页面', 'qiling' );
     }
 
     /**

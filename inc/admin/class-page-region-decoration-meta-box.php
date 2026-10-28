@@ -31,7 +31,7 @@ class Page_Region_Decoration_Meta_Box {
     public function register_meta_box() {
         add_meta_box(
             'qiling_page_region_decoration',
-            __( '当前页顶部与底部装修', 'developer-starter' ),
+            __( '当前页顶部与底部装修', 'qiling' ),
             array( $this, 'render_meta_box' ),
             'page',
             'normal',
@@ -57,14 +57,14 @@ class Page_Region_Decoration_Meta_Box {
         );
         ?>
         <div class="qiling-page-region-decoration" data-qiling-page-region-decoration>
-            <p><strong><?php esc_html_e( '使用说明', 'developer-starter' ); ?></strong></p>
-            <p class="description"><?php esc_html_e( '每个区域都可以跟随全站设置、使用一个独立装修页面，或者仅在当前页隐藏。只想改背景和文字颜色时，不需要挂载装修页面，请直接使用“页面视觉风格”中的对应区域配色。', 'developer-starter' ); ?></p>
+            <p><strong><?php esc_html_e( '使用说明', 'qiling' ); ?></strong></p>
+            <p class="description"><?php esc_html_e( '每个区域都可以跟随全站设置、使用一个独立装修页面，或者仅在当前页隐藏。只想改背景和文字颜色时，不需要挂载装修页面，请直接使用“页面视觉风格”中的对应区域配色。', 'qiling' ); ?></p>
             <table class="widefat striped" style="margin-top: 14px;">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e( '页面区域', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '当前页处理方式', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '装修内容来源', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '页面区域', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '当前页处理方式', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '装修内容来源', 'qiling' ); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,14 +74,14 @@ class Page_Region_Decoration_Meta_Box {
                             <th scope="row"><?php echo esc_html( $label ); ?></th>
                             <td>
                                 <select name="qiling_page_region_decoration[<?php echo esc_attr( $region ); ?>][mode]" data-qiling-page-region-mode>
-                                    <option value="inherit" <?php selected( $region_settings['mode'], 'inherit' ); ?>><?php esc_html_e( '跟随全站设置', 'developer-starter' ); ?></option>
-                                    <option value="custom" <?php selected( $region_settings['mode'], 'custom' ); ?>><?php esc_html_e( '使用指定装修页面', 'developer-starter' ); ?></option>
-                                    <option value="hidden" <?php selected( $region_settings['mode'], 'hidden' ); ?>><?php esc_html_e( '仅在当前页隐藏', 'developer-starter' ); ?></option>
+                                    <option value="inherit" <?php selected( $region_settings['mode'], 'inherit' ); ?>><?php esc_html_e( '跟随全站设置', 'qiling' ); ?></option>
+                                    <option value="custom" <?php selected( $region_settings['mode'], 'custom' ); ?>><?php esc_html_e( '使用指定装修页面', 'qiling' ); ?></option>
+                                    <option value="hidden" <?php selected( $region_settings['mode'], 'hidden' ); ?>><?php esc_html_e( '仅在当前页隐藏', 'qiling' ); ?></option>
                                 </select>
                             </td>
                             <td>
                                 <select name="qiling_page_region_decoration[<?php echo esc_attr( $region ); ?>][page_id]" data-qiling-page-region-source>
-                                    <option value="0"><?php esc_html_e( '请选择已完成装修的页面', 'developer-starter' ); ?></option>
+                                    <option value="0"><?php esc_html_e( '请选择已完成装修的页面', 'qiling' ); ?></option>
                                     <?php foreach ( $pages as $source_page ) : ?>
                                         <?php if ( absint( $source_page->ID ) === absint( $post->ID ) ) { continue; } ?>
                                         <option value="<?php echo esc_attr( (string) $source_page->ID ); ?>" <?php selected( $region_settings['page_id'], $source_page->ID ); ?>><?php echo esc_html( $source_page->post_title . ' (#' . $source_page->ID . ')' ); ?></option>
@@ -92,7 +92,7 @@ class Page_Region_Decoration_Meta_Box {
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <p class="description" style="margin-top: 12px;"><?php esc_html_e( '优先级：当前页指定装修 > 当前页隐藏 > 全站装修 > 主题默认结构。装修源页面不能选择当前页面自身，以免循环加载。', 'developer-starter' ); ?></p>
+            <p class="description" style="margin-top: 12px;"><?php esc_html_e( '优先级：当前页指定装修 > 当前页隐藏 > 全站装修 > 主题默认结构。装修源页面不能选择当前页面自身，以免循环加载。', 'qiling' ); ?></p>
         </div>
         <script>
         (function() {

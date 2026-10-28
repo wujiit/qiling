@@ -24,7 +24,7 @@ if ( $posts_page_id > 0 ) {
 }
 
 if ( '' === trim( (string) $page_title ) ) {
-    $page_title = is_front_page() ? get_bloginfo( 'name' ) : __( '最新文章', 'developer-starter' );
+    $page_title = is_front_page() ? get_bloginfo( 'name' ) : __( '最新文章', 'qiling' );
 }
 
 if ( '' === trim( (string) $page_desc ) ) {

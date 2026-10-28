@@ -21,7 +21,7 @@ class Blog_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-layout';
-        $this->description = __( '博客布局展示，支持多种样式和布局', 'developer-starter' );
+        $this->description = __( '博客布局展示，支持多种样式和布局', 'qiling' );
         // 侧边栏已在 functions.php 中通过 widgets_init 注册
     }
 
@@ -30,114 +30,114 @@ class Blog_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '博客布局', 'developer-starter' );
+        return __( '博客布局', 'qiling' );
     }
 
     public function get_fields() {
         $visual_preset_choices = class_exists( '\Developer_Starter\Core\Blog_Visual_Manager' )
             ? \Developer_Starter\Core\Blog_Visual_Manager::get_module_preset_choices()
             : array(
-                'inherit'   => __( '继承页面/全局', 'developer-starter' ),
-                'default'   => __( '默认企业内容', 'developer-starter' ),
-                'developer' => __( '技术开发者', 'developer-starter' ),
-                'minimal'   => __( '极简', 'developer-starter' ),
-                'artist'    => __( '艺术家', 'developer-starter' ),
+                'inherit'   => __( '继承页面/全局', 'qiling' ),
+                'default'   => __( '默认企业内容', 'qiling' ),
+                'developer' => __( '技术开发者', 'qiling' ),
+                'minimal'   => __( '极简', 'qiling' ),
+                'artist'    => __( '艺术家', 'qiling' ),
             );
 
         return array(
-            array( 'id' => 'blog_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-            array( 'id' => 'blog_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
-            array( 'id' => 'blog_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ) ),
-            array( 'id' => 'blog_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
-            array( 'id' => 'blog_badge_bg', 'type' => 'color', 'label' => __( '标签/徽章背景颜色', 'developer-starter' ), 'desc' => __( '控制分类、文章标签和资源徽章，留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ) ),
-            array( 'id' => 'blog_visual_preset', 'type' => 'select', 'label' => __( '博客视觉风格', 'developer-starter' ), 'options' => $visual_preset_choices, 'default' => 'inherit' ),
-            array( 'id' => 'blog_page_layout', 'type' => 'select', 'label' => __( '页面布局', 'developer-starter' ), 'options' => array(
-                'full' => __( '全宽', 'developer-starter' ),
-                'sidebar-left' => __( '左侧边栏', 'developer-starter' ),
-                'sidebar-right' => __( '右侧边栏', 'developer-starter' ),
+            array( 'id' => 'blog_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+            array( 'id' => 'blog_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
+            array( 'id' => 'blog_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'qiling' ) ),
+            array( 'id' => 'blog_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
+            array( 'id' => 'blog_badge_bg', 'type' => 'color', 'label' => __( '标签/徽章背景颜色', 'qiling' ), 'desc' => __( '控制分类、文章标签和资源徽章，留空时跟随页面预设/全局徽章颜色。', 'qiling' ) ),
+            array( 'id' => 'blog_visual_preset', 'type' => 'select', 'label' => __( '博客视觉风格', 'qiling' ), 'options' => $visual_preset_choices, 'default' => 'inherit' ),
+            array( 'id' => 'blog_page_layout', 'type' => 'select', 'label' => __( '页面布局', 'qiling' ), 'options' => array(
+                'full' => __( '全宽', 'qiling' ),
+                'sidebar-left' => __( '左侧边栏', 'qiling' ),
+                'sidebar-right' => __( '右侧边栏', 'qiling' ),
             ), 'default' => 'full' ),
-            array( 'id' => 'blog_sidebar_source', 'type' => 'select', 'label' => __( '侧边栏内容来源', 'developer-starter' ), 'options' => array(
-                'widget' => __( 'WordPress 小工具侧边栏', 'developer-starter' ),
-                'module' => __( '模块内置侧边栏', 'developer-starter' ),
+            array( 'id' => 'blog_sidebar_source', 'type' => 'select', 'label' => __( '侧边栏内容来源', 'qiling' ), 'options' => array(
+                'widget' => __( 'WordPress 小工具侧边栏', 'qiling' ),
+                'module' => __( '模块内置侧边栏', 'qiling' ),
             ), 'default' => 'widget', 'dependency' => array( 'blog_page_layout', '!=', 'full' ) ),
             array(
                 'id'      => 'padding_top',
                 'type'    => 'select',
-                'label'   => __( '顶部间距', 'developer-starter' ),
+                'label'   => __( '顶部间距', 'qiling' ),
                 'options' => array(
-                    'default' => __( '默认 (80px)', 'developer-starter' ),
-                    'none'    => __( '无 (0px)', 'developer-starter' ),
-                    'small'   => __( '小 (40px)', 'developer-starter' ),
-                    'large'   => __( '大 (120px)', 'developer-starter' ),
+                    'default' => __( '默认 (80px)', 'qiling' ),
+                    'none'    => __( '无 (0px)', 'qiling' ),
+                    'small'   => __( '小 (40px)', 'qiling' ),
+                    'large'   => __( '大 (120px)', 'qiling' ),
                 ),
                 'default' => 'default',
             ),
             array(
                 'id'      => 'padding_bottom',
                 'type'    => 'select',
-                'label'   => __( '底部间距', 'developer-starter' ),
+                'label'   => __( '底部间距', 'qiling' ),
                 'options' => array(
-                    'default' => __( '默认 (80px)', 'developer-starter' ),
-                    'none'    => __( '无 (0px)', 'developer-starter' ),
-                    'small'   => __( '小 (40px)', 'developer-starter' ),
-                    'large'   => __( '大 (120px)', 'developer-starter' ),
+                    'default' => __( '默认 (80px)', 'qiling' ),
+                    'none'    => __( '无 (0px)', 'qiling' ),
+                    'small'   => __( '小 (40px)', 'qiling' ),
+                    'large'   => __( '大 (120px)', 'qiling' ),
                 ),
                 'default' => 'default',
             ),
-            array( 'id' => 'blog_layout_style', 'type' => 'select', 'label' => __( '列表样式', 'developer-starter' ), 'options' => array(
-                'card' => __( '卡片', 'developer-starter' ),
-                'grid' => __( '网格', 'developer-starter' ),
-                'list' => __( '列表', 'developer-starter' ),
-                'large' => __( '大图', 'developer-starter' ),
-                'magazine' => __( '杂志流（头条+分栏）', 'developer-starter' ),
+            array( 'id' => 'blog_layout_style', 'type' => 'select', 'label' => __( '列表样式', 'qiling' ), 'options' => array(
+                'card' => __( '卡片', 'qiling' ),
+                'grid' => __( '网格', 'qiling' ),
+                'list' => __( '列表', 'qiling' ),
+                'large' => __( '大图', 'qiling' ),
+                'magazine' => __( '杂志流（头条+分栏）', 'qiling' ),
             ), 'default' => 'card' ),
-            array( 'id' => 'blog_resource_skin', 'type' => 'select', 'label' => __( '资源卡风格', 'developer-starter' ), 'options' => array(
-                'default' => __( '默认', 'developer-starter' ),
-                'resource_soft' => __( '资源风格（清爽）', 'developer-starter' ),
-                'resource_pro' => __( '资源风格（强化）', 'developer-starter' ),
+            array( 'id' => 'blog_resource_skin', 'type' => 'select', 'label' => __( '资源卡风格', 'qiling' ), 'options' => array(
+                'default' => __( '默认', 'qiling' ),
+                'resource_soft' => __( '资源风格（清爽）', 'qiling' ),
+                'resource_pro' => __( '资源风格（强化）', 'qiling' ),
             ), 'default' => 'default' ),
-            array( 'id' => 'blog_resource_show_price', 'type' => 'select', 'label' => __( '资源卡显示价格', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_resource_show_updated', 'type' => 'select', 'label' => __( '资源卡显示更新时间', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_resource_show_download_count', 'type' => 'select', 'label' => __( '资源卡显示下载项数量', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array(
-                '2' => __( '2列', 'developer-starter' ),
-                '3' => __( '3列', 'developer-starter' ),
-                '4' => __( '4列', 'developer-starter' ),
+            array( 'id' => 'blog_resource_show_price', 'type' => 'select', 'label' => __( '资源卡显示价格', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_resource_show_updated', 'type' => 'select', 'label' => __( '资源卡显示更新时间', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_resource_show_download_count', 'type' => 'select', 'label' => __( '资源卡显示下载项数量', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_columns', 'type' => 'select', 'label' => __( '列数', 'qiling' ), 'options' => array(
+                '2' => __( '2列', 'qiling' ),
+                '3' => __( '3列', 'qiling' ),
+                '4' => __( '4列', 'qiling' ),
             ), 'default' => '3' ),
-            array( 'id' => 'blog_data_source', 'type' => 'select', 'label' => __( '数据来源', 'developer-starter' ), 'options' => array(
-                'latest' => __( '最新文章', 'developer-starter' ),
-                'category' => __( '指定分类', 'developer-starter' ),
-                'tag' => __( '指定标签', 'developer-starter' ),
+            array( 'id' => 'blog_data_source', 'type' => 'select', 'label' => __( '数据来源', 'qiling' ), 'options' => array(
+                'latest' => __( '最新文章', 'qiling' ),
+                'category' => __( '指定分类', 'qiling' ),
+                'tag' => __( '指定标签', 'qiling' ),
             ), 'default' => 'latest' ),
-            array( 'id' => 'blog_categories', 'type' => 'text', 'label' => __( '分类ID (逗号分隔)', 'developer-starter' ), 'dependency' => array( 'blog_data_source', '==', 'category' ) ),
-            array( 'id' => 'blog_tags', 'type' => 'text', 'label' => __( '标签 (逗号分隔)', 'developer-starter' ), 'dependency' => array( 'blog_data_source', '==', 'tag' ) ),
-            array( 'id' => 'blog_count', 'type' => 'number', 'label' => __( '文章数量', 'developer-starter' ), 'default' => '6' ),
-            array( 'id' => 'blog_orderby', 'type' => 'select', 'label' => __( '排序方式', 'developer-starter' ), 'options' => array(
-                'date' => __( '日期', 'developer-starter' ),
-                'modified' => __( '更新时间', 'developer-starter' ),
-                'random' => __( '随机', 'developer-starter' ),
-                'comment_count' => __( '评论数', 'developer-starter' ),
-                'views' => __( '浏览量', 'developer-starter' ),
+            array( 'id' => 'blog_categories', 'type' => 'text', 'label' => __( '分类ID (逗号分隔)', 'qiling' ), 'dependency' => array( 'blog_data_source', '==', 'category' ) ),
+            array( 'id' => 'blog_tags', 'type' => 'text', 'label' => __( '标签 (逗号分隔)', 'qiling' ), 'dependency' => array( 'blog_data_source', '==', 'tag' ) ),
+            array( 'id' => 'blog_count', 'type' => 'number', 'label' => __( '文章数量', 'qiling' ), 'default' => '6' ),
+            array( 'id' => 'blog_orderby', 'type' => 'select', 'label' => __( '排序方式', 'qiling' ), 'options' => array(
+                'date' => __( '日期', 'qiling' ),
+                'modified' => __( '更新时间', 'qiling' ),
+                'random' => __( '随机', 'qiling' ),
+                'comment_count' => __( '评论数', 'qiling' ),
+                'views' => __( '浏览量', 'qiling' ),
             ), 'default' => 'date' ),
-            array( 'id' => 'blog_exclude_ids', 'type' => 'text', 'label' => __( '排除文章ID (逗号分隔)', 'developer-starter' ) ),
-            array( 'id' => 'blog_ignore_sticky', 'type' => 'select', 'label' => __( '忽略置顶文章权重', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_show_image', 'type' => 'select', 'label' => __( '显示缩略图', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_image_height', 'type' => 'text', 'label' => __( '缩略图高度', 'developer-starter' ), 'default' => '200px' ),
-            array( 'id' => 'blog_show_excerpt', 'type' => 'select', 'label' => __( '显示摘要', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_excerpt_length', 'type' => 'number', 'label' => __( '摘要长度', 'developer-starter' ), 'default' => '80' ),
-            array( 'id' => 'blog_show_author', 'type' => 'select', 'label' => __( '显示作者', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'blog_show_date', 'type' => 'select', 'label' => __( '显示日期', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_show_category', 'type' => 'select', 'label' => __( '显示分类', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'blog_show_tags', 'type' => 'select', 'label' => __( '显示标签', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'blog_show_views', 'type' => 'select', 'label' => __( '显示浏览量', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'blog_show_reading_time', 'type' => 'select', 'label' => __( '显示阅读时长', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'blog_show_comments', 'type' => 'select', 'label' => __( '显示评论数', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'blog_read_more_text', 'type' => 'text', 'label' => __( '阅读更多文案', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阅读全文', 'Read More' ) : __( '阅读全文', 'developer-starter' ) ),
-            array( 'id' => 'blog_read_more_bg_color', 'type' => 'color', 'label' => __( '阅读更多按钮背景颜色', 'developer-starter' ) ),
-            array( 'id' => 'blog_read_more_text_color', 'type' => 'color', 'label' => __( '阅读更多按钮文字颜色', 'developer-starter' ) ),
-            array( 'id' => 'blog_read_more_hover_bg_color', 'type' => 'color', 'label' => __( '阅读更多按钮悬停背景颜色', 'developer-starter' ) ),
-            array( 'id' => 'blog_read_more_hover_text_color', 'type' => 'color', 'label' => __( '阅读更多按钮悬停文字颜色', 'developer-starter' ) ),
-            array( 'id' => 'blog_enable_pagination', 'type' => 'select', 'label' => __( '启用分页', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'no' ),
+            array( 'id' => 'blog_exclude_ids', 'type' => 'text', 'label' => __( '排除文章ID (逗号分隔)', 'qiling' ) ),
+            array( 'id' => 'blog_ignore_sticky', 'type' => 'select', 'label' => __( '忽略置顶文章权重', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_show_image', 'type' => 'select', 'label' => __( '显示缩略图', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_image_height', 'type' => 'text', 'label' => __( '缩略图高度', 'qiling' ), 'default' => '200px' ),
+            array( 'id' => 'blog_show_excerpt', 'type' => 'select', 'label' => __( '显示摘要', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_excerpt_length', 'type' => 'number', 'label' => __( '摘要长度', 'qiling' ), 'default' => '80' ),
+            array( 'id' => 'blog_show_author', 'type' => 'select', 'label' => __( '显示作者', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'blog_show_date', 'type' => 'select', 'label' => __( '显示日期', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_show_category', 'type' => 'select', 'label' => __( '显示分类', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'blog_show_tags', 'type' => 'select', 'label' => __( '显示标签', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'blog_show_views', 'type' => 'select', 'label' => __( '显示浏览量', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'blog_show_reading_time', 'type' => 'select', 'label' => __( '显示阅读时长', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'blog_show_comments', 'type' => 'select', 'label' => __( '显示评论数', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'blog_read_more_text', 'type' => 'text', 'label' => __( '阅读更多文案', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阅读全文', 'Read More' ) : __( '阅读全文', 'qiling' ) ),
+            array( 'id' => 'blog_read_more_bg_color', 'type' => 'color', 'label' => __( '阅读更多按钮背景颜色', 'qiling' ) ),
+            array( 'id' => 'blog_read_more_text_color', 'type' => 'color', 'label' => __( '阅读更多按钮文字颜色', 'qiling' ) ),
+            array( 'id' => 'blog_read_more_hover_bg_color', 'type' => 'color', 'label' => __( '阅读更多按钮悬停背景颜色', 'qiling' ) ),
+            array( 'id' => 'blog_read_more_hover_text_color', 'type' => 'color', 'label' => __( '阅读更多按钮悬停文字颜色', 'qiling' ) ),
+            array( 'id' => 'blog_enable_pagination', 'type' => 'select', 'label' => __( '启用分页', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'no' ),
         );
     }
 
@@ -397,8 +397,10 @@ class Blog_Module extends Module_Base {
                             
                         <?php else : ?>
                             <div class="blog-no-posts" style="text-align: center; padding: var(--qiling-space-60) var(--qiling-space-20); background: var(--color-neutral-50); border-radius: 12px;">
-                                <span style="font-size: var(--qiling-text-rem-3); display: block; margin-bottom: var(--qiling-space-16);">📝</span>
-                                <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1);"><?php esc_html_e( '暂无文章', 'developer-starter' ); ?></p>
+                                <span style="display: block; margin: 0 auto var(--qiling-space-16); width: 48px; height: 48px; color: var(--color-primary);" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                                </span>
+                                <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1);"><?php esc_html_e( '暂无文章', 'qiling' ); ?></p>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -631,11 +633,11 @@ class Blog_Module extends Module_Base {
                             <span class="resource-chip resource-price"><?php echo esc_html( $resource_price_text ); ?></span>
                         <?php endif; ?>
                         <?php if ( $resource_show_updated ) : ?>
-                            <span class="resource-chip resource-updated"><?php echo esc_html( sprintf( __( '更新 %s', 'developer-starter' ), get_the_modified_date( 'Y-m-d' ) ) ); ?></span>
+                            <span class="resource-chip resource-updated"><?php echo esc_html( sprintf( __( '更新 %s', 'qiling' ), get_the_modified_date( 'Y-m-d' ) ) ); ?></span>
                         <?php endif; ?>
                         <?php if ( $resource_show_download_count && $resource_download_count > 0 ) : ?>
                             <span class="resource-chip resource-downloads">
-                                <?php echo esc_html( sprintf( _n( '%d 项资源', '%d 项资源', $resource_download_count, 'developer-starter' ), $resource_download_count ) ); ?>
+                                <?php echo esc_html( sprintf( _n( '%d 项资源', '%d 项资源', $resource_download_count, 'qiling' ), $resource_download_count ) ); ?>
                             </span>
                         <?php endif; ?>
                     </div>
@@ -708,7 +710,7 @@ class Blog_Module extends Module_Base {
         if ( class_exists( '\Developer_Starter\Core\Post_Enhancer' ) ) {
             $views = \Developer_Starter\Core\Post_Enhancer::get_post_views( $post_id );
         }
-        return sprintf( __( '%s 次浏览', 'developer-starter' ), number_format_i18n( (int) $views ) );
+        return sprintf( __( '%s 次浏览', 'qiling' ), number_format_i18n( (int) $views ) );
     }
 
     /**
@@ -719,7 +721,7 @@ class Blog_Module extends Module_Base {
         if ( class_exists( '\Developer_Starter\Core\Post_Enhancer' ) ) {
             $minutes = \Developer_Starter\Core\Post_Enhancer::get_reading_time( $post_id );
         }
-        return sprintf( __( '%d 分钟阅读', 'developer-starter' ), max( 1, (int) $minutes ) );
+        return sprintf( __( '%d 分钟阅读', 'qiling' ), max( 1, (int) $minutes ) );
     }
 
     /**
@@ -737,18 +739,18 @@ class Blog_Module extends Module_Base {
         }
 
         if ( $is_free ) {
-            return __( '免费获取', 'developer-starter' );
+            return __( '免费获取', 'qiling' );
         }
 
         if ( $points_price > 0 ) {
-            return sprintf( __( '%s 积分', 'developer-starter' ), number_format_i18n( $points_price, 0 ) );
+            return sprintf( __( '%s 积分', 'qiling' ), number_format_i18n( $points_price, 0 ) );
         }
 
         if ( $is_vip ) {
-            return __( 'VIP权益', 'developer-starter' );
+            return __( 'VIP权益', 'qiling' );
         }
 
-        return __( '资源内容', 'developer-starter' );
+        return __( '资源内容', 'qiling' );
     }
 
     /**
@@ -765,9 +767,9 @@ class Blog_Module extends Module_Base {
                 // 如果没有配置小工具，显示提示
                 ?>
                 <div class="sidebar-widget widget-notice" style="text-align: center; padding: var(--qiling-space-30) var(--qiling-space-20); background: var(--color-neutral-50);">
-                    <span style="font-size: var(--qiling-text-rem-2); display: block; margin-bottom: var(--qiling-space-10);">📝</span>
+                    <span style="display: block; margin: 0 auto var(--qiling-space-10); width: 36px; height: 36px; color: var(--color-primary);"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></span>
                     <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-0p9); margin: 0;">
-                        <?php esc_html_e( '请在 外观 > 小工具 中配置博客布局侧边栏', 'developer-starter' ); ?>
+                        <?php esc_html_e( '请在 外观 > 小工具 中配置博客布局侧边栏', 'qiling' ); ?>
                     </p>
                 </div>
                 <?php
@@ -804,11 +806,11 @@ class Blog_Module extends Module_Base {
         };
         
         ?>
-        <nav class="blog-pagination" role="navigation" aria-label="<?php esc_attr_e( '文章分页导航', 'developer-starter' ); ?>">
+        <nav class="blog-pagination" role="navigation" aria-label="<?php esc_attr_e( '文章分页导航', 'qiling' ); ?>">
             <?php if ( $paged > 1 ) : ?>
                 <a href="<?php echo esc_url( $get_page_url( $paged - 1 ) ); ?>" class="page-numbers prev">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    <?php esc_html_e( '上一页', 'developer-starter' ); ?>
+                    <?php esc_html_e( '上一页', 'qiling' ); ?>
                 </a>
             <?php endif; ?>
             
@@ -846,14 +848,14 @@ class Blog_Module extends Module_Base {
             
             <?php if ( $paged < $total_pages ) : ?>
                 <a href="<?php echo esc_url( $get_page_url( $paged + 1 ) ); ?>" class="page-numbers next">
-                    <?php esc_html_e( '下一页', 'developer-starter' ); ?>
+                    <?php esc_html_e( '下一页', 'qiling' ); ?>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </a>
             <?php endif; ?>
         </nav>
         
         <div class="pagination-info">
-            <?php printf( __( '第 %1$d 页，共 %2$d 页', 'developer-starter' ), $paged, $total_pages ); ?>
+            <?php printf( __( '第 %1$d 页，共 %2$d 页', 'qiling' ), $paged, $total_pages ); ?>
         </div>
         <?php
     }

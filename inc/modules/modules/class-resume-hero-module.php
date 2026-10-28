@@ -22,7 +22,7 @@ class Resume_Hero_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-id-alt';
-        $this->description = __( '个人简历首屏，适合展示个人资料、联系方式、社交媒体等', 'developer-starter' );
+        $this->description = __( '个人简历首屏，适合展示个人资料、联系方式、社交媒体等', 'qiling' );
     }
 
     public function get_id() {
@@ -30,7 +30,7 @@ class Resume_Hero_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '个人简历首屏', 'developer-starter' );
+        return __( '个人简历首屏', 'qiling' );
     }
 
     public function get_fields() {
@@ -38,72 +38,72 @@ class Resume_Hero_Module extends Module_Base {
             array(
                 'id'      => 'rh_style_variant',
                 'type'    => 'select',
-                'label'   => __( '首屏风格', 'developer-starter' ),
+                'label'   => __( '首屏风格', 'qiling' ),
                 'options' => array(
-                    'classic' => __( '经典介绍', 'developer-starter' ),
-                    'card'    => __( '资料卡片', 'developer-starter' ),
+                    'classic' => __( '经典介绍', 'qiling' ),
+                    'card'    => __( '资料卡片', 'qiling' ),
                 ),
                 'default' => 'classic',
             ),
-            array( 'id' => 'rh_layout', 'type' => 'select', 'label' => __( '布局方式', 'developer-starter' ), 'options' => array( 'center' => __( '居中', 'developer-starter' ), 'left' => __( '左对齐', 'developer-starter' ) ), 'default' => 'center', 'dependency' => array( 'rh_style_variant', '==', 'classic' ) ),
-            array( 'id' => 'rh_height', 'type' => 'text', 'label' => __( '区域高度', 'developer-starter' ), 'default' => '100vh' ),
-            array( 'id' => 'rh_bg_image', 'type' => 'image', 'label' => __( '背景图片', 'developer-starter' ) ),
-            array( 'id' => 'rh_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ), 'default' => 'var(--color-neutral-900)' ),
-            array( 'id' => 'rh_overlay_color', 'type' => 'color', 'label' => __( '遮罩颜色', 'developer-starter' ), 'default' => 'rgba(var(--qiling-rgb-15-23-42), 0.85)' ),
+            array( 'id' => 'rh_layout', 'type' => 'select', 'label' => __( '布局方式', 'qiling' ), 'options' => array( 'center' => __( '居中', 'qiling' ), 'left' => __( '左对齐', 'qiling' ) ), 'default' => 'center', 'dependency' => array( 'rh_style_variant', '==', 'classic' ) ),
+            array( 'id' => 'rh_height', 'type' => 'text', 'label' => __( '区域高度', 'qiling' ), 'default' => '100vh' ),
+            array( 'id' => 'rh_bg_image', 'type' => 'image', 'label' => __( '背景图片', 'qiling' ) ),
+            array( 'id' => 'rh_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'qiling' ), 'default' => 'var(--color-neutral-900)' ),
+            array( 'id' => 'rh_overlay_color', 'type' => 'color', 'label' => __( '遮罩颜色', 'qiling' ), 'default' => 'rgba(var(--qiling-rgb-15-23-42), 0.85)' ),
             array(
                 'id'         => 'rh_intro_badge',
                 'type'       => 'text',
-                'label'      => __( '卡片标签', 'developer-starter' ),
+                'label'      => __( '卡片标签', 'qiling' ),
                 'default'    => 'HELLO',
                 'dependency' => array( 'rh_style_variant', '==', 'card' ),
             ),
             array(
                 'id'         => 'rh_accent_color',
                 'type'       => 'color',
-                'label'      => __( '卡片强调色', 'developer-starter' ),
+                'label'      => __( '卡片强调色', 'qiling' ),
                 'default'    => 'var(--color-success)',
                 'dependency' => array( 'rh_style_variant', '==', 'card' ),
             ),
             
-            array( 'id' => 'rh_avatar', 'type' => 'image', 'label' => __( '头像', 'developer-starter' ) ),
-            array( 'id' => 'rh_avatar_style', 'type' => 'select', 'label' => __( '头像样式', 'developer-starter' ), 'options' => array( 'circle' => __( '圆形', 'developer-starter' ), 'rounded' => __( '圆角', 'developer-starter' ), 'square' => __( '方形', 'developer-starter' ) ), 'default' => 'circle' ),
-            array( 'id' => 'rh_avatar_size', 'type' => 'text', 'label' => __( '头像尺寸', 'developer-starter' ), 'default' => '150px' ),
-            array( 'id' => 'rh_name', 'type' => 'text', 'label' => __( '姓名', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张三', 'Alex Chen' ) : __( '张三', 'developer-starter' ) ),
-            array( 'id' => 'rh_name_color', 'type' => 'color', 'label' => __( '姓名颜色', 'developer-starter' ), 'default' => 'var(--color-neutral-0)' ),
-            array( 'id' => 'rh_titles', 'type' => 'textarea', 'label' => __( '职位/头衔 (每行一个)', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "前端工程师\n全栈开发者", "Frontend Engineer\nFull-Stack Developer" ) : __( "前端工程师\n全栈开发者", 'developer-starter' ) ),
-            array( 'id' => 'rh_title_color', 'type' => 'color', 'label' => __( '职位颜色', 'developer-starter' ) ),
-            array( 'id' => 'rh_typewriter', 'type' => 'checkbox', 'label' => __( '启用打字机效果', 'developer-starter' ), 'default' => '1' ),
+            array( 'id' => 'rh_avatar', 'type' => 'image', 'label' => __( '头像', 'qiling' ) ),
+            array( 'id' => 'rh_avatar_style', 'type' => 'select', 'label' => __( '头像样式', 'qiling' ), 'options' => array( 'circle' => __( '圆形', 'qiling' ), 'rounded' => __( '圆角', 'qiling' ), 'square' => __( '方形', 'qiling' ) ), 'default' => 'circle' ),
+            array( 'id' => 'rh_avatar_size', 'type' => 'text', 'label' => __( '头像尺寸', 'qiling' ), 'default' => '150px' ),
+            array( 'id' => 'rh_name', 'type' => 'text', 'label' => __( '姓名', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张三', 'Alex Chen' ) : __( '张三', 'qiling' ) ),
+            array( 'id' => 'rh_name_color', 'type' => 'color', 'label' => __( '姓名颜色', 'qiling' ), 'default' => 'var(--color-neutral-0)' ),
+            array( 'id' => 'rh_titles', 'type' => 'textarea', 'label' => __( '职位/头衔 (每行一个)', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "前端工程师\n全栈开发者", "Frontend Engineer\nFull-Stack Developer" ) : __( "前端工程师\n全栈开发者", 'qiling' ) ),
+            array( 'id' => 'rh_title_color', 'type' => 'color', 'label' => __( '职位颜色', 'qiling' ) ),
+            array( 'id' => 'rh_typewriter', 'type' => 'checkbox', 'label' => __( '启用打字机效果', 'qiling' ), 'default' => '1' ),
             
-            array( 'id' => 'rh_bio', 'type' => 'textarea', 'label' => __( '个人简介', 'developer-starter' ) ),
-            array( 'id' => 'rh_bio_color', 'type' => 'color', 'label' => __( '简介颜色', 'developer-starter' ), 'default' => 'var(--qiling-color-rgba-255-255-255-08)' ),
-            array( 'id' => 'rh_location', 'type' => 'text', 'label' => __( '所在地', 'developer-starter' ) ),
-            array( 'id' => 'rh_email', 'type' => 'text', 'label' => __( '邮箱', 'developer-starter' ) ),
-            array( 'id' => 'rh_phone', 'type' => 'text', 'label' => __( '电话', 'developer-starter' ) ),
-            array( 'id' => 'rh_website', 'type' => 'text', 'label' => __( '网站', 'developer-starter' ) ),
+            array( 'id' => 'rh_bio', 'type' => 'textarea', 'label' => __( '个人简介', 'qiling' ) ),
+            array( 'id' => 'rh_bio_color', 'type' => 'color', 'label' => __( '简介颜色', 'qiling' ), 'default' => 'var(--qiling-color-rgba-255-255-255-08)' ),
+            array( 'id' => 'rh_location', 'type' => 'text', 'label' => __( '所在地', 'qiling' ) ),
+            array( 'id' => 'rh_email', 'type' => 'text', 'label' => __( '邮箱', 'qiling' ) ),
+            array( 'id' => 'rh_phone', 'type' => 'text', 'label' => __( '电话', 'qiling' ) ),
+            array( 'id' => 'rh_website', 'type' => 'text', 'label' => __( '网站', 'qiling' ) ),
             array(
                 'id'         => 'rh_profile_facts',
                 'type'       => 'repeater',
-                'label'      => __( '卡片资料条目', 'developer-starter' ),
+                'label'      => __( '卡片资料条目', 'qiling' ),
                 'dependency' => array( 'rh_style_variant', '==', 'card' ),
                 'fields'     => array(
-                    array( 'id' => 'label', 'type' => 'text', 'label' => __( '标签', 'developer-starter' ) ),
-                    array( 'id' => 'value', 'type' => 'text', 'label' => __( '内容', 'developer-starter' ) ),
+                    array( 'id' => 'label', 'type' => 'text', 'label' => __( '标签', 'qiling' ) ),
+                    array( 'id' => 'value', 'type' => 'text', 'label' => __( '内容', 'qiling' ) ),
                 ),
             ),
             
-            array( 'id' => 'rh_socials', 'type' => 'repeater', 'label' => __( '社交媒体', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (支持SVG/Predefined)', 'developer-starter' ) ),
-                array( 'id' => 'name', 'type' => 'text', 'label' => __( '名称', 'developer-starter' ) ),
-                array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接', 'developer-starter' ) ),
+            array( 'id' => 'rh_socials', 'type' => 'repeater', 'label' => __( '社交媒体', 'qiling' ), 'fields' => array(
+                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (支持SVG/Predefined)', 'qiling' ) ),
+                array( 'id' => 'name', 'type' => 'text', 'label' => __( '名称', 'qiling' ) ),
+                array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接', 'qiling' ) ),
             ) ),
             
-            array( 'id' => 'rh_btn1_text', 'type' => 'text', 'label' => __( '按钮1文字', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载简历', 'Download Resume' ) : __( '下载简历', 'developer-starter' ) ),
-            array( 'id' => 'rh_btn1_link', 'type' => 'text', 'label' => __( '按钮1链接', 'developer-starter' ), 'default' => '#' ),
-            array( 'id' => 'rh_btn1_style', 'type' => 'select', 'label' => __( '按钮1样式', 'developer-starter' ), 'options' => array( 'solid' => __( '实心', 'developer-starter' ), 'outline' => __( '描边', 'developer-starter' ) ), 'default' => 'solid' ),
+            array( 'id' => 'rh_btn1_text', 'type' => 'text', 'label' => __( '按钮1文字', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载简历', 'Download Resume' ) : __( '下载简历', 'qiling' ) ),
+            array( 'id' => 'rh_btn1_link', 'type' => 'text', 'label' => __( '按钮1链接', 'qiling' ), 'default' => '#' ),
+            array( 'id' => 'rh_btn1_style', 'type' => 'select', 'label' => __( '按钮1样式', 'qiling' ), 'options' => array( 'solid' => __( '实心', 'qiling' ), 'outline' => __( '描边', 'qiling' ) ), 'default' => 'solid' ),
             
-            array( 'id' => 'rh_btn2_text', 'type' => 'text', 'label' => __( '按钮2文字', 'developer-starter' ) ),
-            array( 'id' => 'rh_btn2_link', 'type' => 'text', 'label' => __( '按钮2链接', 'developer-starter' ) ),
-            array( 'id' => 'rh_btn2_style', 'type' => 'select', 'label' => __( '按钮2样式', 'developer-starter' ), 'options' => array( 'solid' => __( '实心', 'developer-starter' ), 'outline' => __( '描边', 'developer-starter' ) ), 'default' => 'outline' ),
+            array( 'id' => 'rh_btn2_text', 'type' => 'text', 'label' => __( '按钮2文字', 'qiling' ) ),
+            array( 'id' => 'rh_btn2_link', 'type' => 'text', 'label' => __( '按钮2链接', 'qiling' ) ),
+            array( 'id' => 'rh_btn2_style', 'type' => 'select', 'label' => __( '按钮2样式', 'qiling' ), 'options' => array( 'solid' => __( '实心', 'qiling' ), 'outline' => __( '描边', 'qiling' ) ), 'default' => 'outline' ),
         );
     }
 
@@ -126,9 +126,9 @@ class Resume_Hero_Module extends Module_Base {
         $avatar = isset( $data['rh_avatar'] ) ? $data['rh_avatar'] : '';
         $avatar_style = isset( $data['rh_avatar_style'] ) ? $data['rh_avatar_style'] : 'circle';
         $avatar_size = isset( $data['rh_avatar_size'] ) ? $data['rh_avatar_size'] : '150px';
-        $name = isset( $data['rh_name'] ) ? $data['rh_name'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张三', 'Alex Chen' ) : __( '张三', 'developer-starter' ) );
+        $name = isset( $data['rh_name'] ) ? $data['rh_name'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张三', 'Alex Chen' ) : __( '张三', 'qiling' ) );
         $name_color = isset( $data['rh_name_color'] ) ? $data['rh_name_color'] : 'var(--color-neutral-0)';
-        $titles = isset( $data['rh_titles'] ) ? $data['rh_titles'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "前端工程师\n全栈开发者", "Frontend Engineer\nFull-Stack Developer" ) : __( "前端工程师\n全栈开发者", 'developer-starter' ) );
+        $titles = isset( $data['rh_titles'] ) ? $data['rh_titles'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "前端工程师\n全栈开发者", "Frontend Engineer\nFull-Stack Developer" ) : __( "前端工程师\n全栈开发者", 'qiling' ) );
         $title_color = isset( $data['rh_title_color'] ) ? $data['rh_title_color'] : '';
         $bio = isset( $data['rh_bio'] ) ? $data['rh_bio'] : '';
         $bio_color = isset( $data['rh_bio_color'] ) ? $data['rh_bio_color'] : 'var(--qiling-color-rgba-255-255-255-08)';
@@ -144,7 +144,7 @@ class Resume_Hero_Module extends Module_Base {
         $profile_facts = $this->get_profile_facts( $data, $location, $email, $phone, $website );
         
         // CTA按钮
-        $btn1_text = isset( $data['rh_btn1_text'] ) ? $data['rh_btn1_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载简历', 'Download Resume' ) : __( '下载简历', 'developer-starter' ) );
+        $btn1_text = isset( $data['rh_btn1_text'] ) ? $data['rh_btn1_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载简历', 'Download Resume' ) : __( '下载简历', 'qiling' ) );
         $btn1_link = isset( $data['rh_btn1_link'] ) ? $data['rh_btn1_link'] : '#';
         $btn1_style = isset( $data['rh_btn1_style'] ) ? $data['rh_btn1_style'] : 'solid';
         $btn2_text = isset( $data['rh_btn2_text'] ) ? $data['rh_btn2_text'] : '';
@@ -425,7 +425,7 @@ class Resume_Hero_Module extends Module_Base {
                 }
 
                 $facts[] = array(
-                    'label' => '' !== $label ? $label : __( '资料', 'developer-starter' ),
+                    'label' => '' !== $label ? $label : __( '资料', 'qiling' ),
                     'value' => $value,
                 );
             }
@@ -437,19 +437,19 @@ class Resume_Hero_Module extends Module_Base {
 
         $defaults = array(
             array(
-                'label' => __( '所在地', 'developer-starter' ),
+                'label' => __( '所在地', 'qiling' ),
                 'value' => $location,
             ),
             array(
-                'label' => __( '邮箱', 'developer-starter' ),
+                'label' => __( '邮箱', 'qiling' ),
                 'value' => $email,
             ),
             array(
-                'label' => __( '电话', 'developer-starter' ),
+                'label' => __( '电话', 'qiling' ),
                 'value' => $phone,
             ),
             array(
-                'label' => __( '网站', 'developer-starter' ),
+                'label' => __( '网站', 'qiling' ),
                 'value' => $website,
             ),
         );

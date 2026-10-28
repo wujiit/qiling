@@ -26,7 +26,7 @@ class Topic_Page_Creator extends Page_Creator_Base {
      * @return string
      */
     protected function get_ajax_success_message() {
-        return __( '专题模块已填充，请刷新页面', 'developer-starter' );
+        return __( '专题模块已填充，请刷新页面', 'qiling' );
     }
 
     /**
@@ -37,7 +37,7 @@ class Topic_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'featured_posts',
                 'data' => array(
-                    'fp_title'            => __( '专题导读', 'developer-starter' ),
+                    'fp_title'            => __( '专题导读', 'qiling' ),
                     'fp_layout'           => 'magazine',
                     'fp_slider_ratio'     => '70',
                     'fp_slider_height'    => '440px',
@@ -62,8 +62,8 @@ class Topic_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'category_tabs',
                 'data' => array(
-                    'tabs_title'               => __( '热门标签聚合', 'developer-starter' ),
-                    'tabs_subtitle'            => __( '按标签快速切换浏览本专题内容', 'developer-starter' ),
+                    'tabs_title'               => __( '热门标签聚合', 'qiling' ),
+                    'tabs_subtitle'            => __( '按标签快速切换浏览本专题内容', 'qiling' ),
                     'tabs_source_mode'         => 'auto_hot_tags',
                     'tabs_auto_tag_count'      => '8',
                     'tabs_auto_min_count'      => '1',
@@ -79,7 +79,7 @@ class Topic_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'blog',
                 'data' => array(
-                    'blog_title'               => __( '专题文章流', 'developer-starter' ),
+                    'blog_title'               => __( '专题文章流', 'qiling' ),
                     'blog_layout_style'        => 'magazine',
                     'blog_columns'             => '3',
                     'blog_data_source'         => 'latest',
@@ -92,7 +92,7 @@ class Topic_Page_Creator extends Page_Creator_Base {
                     'blog_show_date'           => 'yes',
                     'blog_show_views'          => 'yes',
                     'blog_show_reading_time'   => 'yes',
-                    'blog_read_more_text'      => __( '继续阅读', 'developer-starter' ),
+                    'blog_read_more_text'      => __( '继续阅读', 'qiling' ),
                     'blog_enable_pagination'   => 'yes',
                 ),
             ),

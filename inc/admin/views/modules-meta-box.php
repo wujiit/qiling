@@ -7,19 +7,19 @@ if ( ! defined( 'ABSPATH' ) ) {
             <label style="font-weight: 600; color: #2271b1; display: flex; align-items: center; gap: 5px; cursor: pointer;">
                 <input type="checkbox" name="developer_starter_enable_scroll_reveal" value="1" <?php checked( $enable_scroll_reveal, '1' ); ?> />
                 <span class="dashicons dashicons-performance" style="font-size: 18px; width: 18px; height: 18px;"></span>
-                <?php esc_html_e( '开启全页模块滚动视差效果', 'developer-starter' ); ?>
+                <?php esc_html_e( '开启全页模块滚动视差效果', 'qiling' ); ?>
             </label>
             <span style="margin-left: auto; padding: 4px 10px; border-radius: 999px; background: #e7f3ff; color: #135e96; font-size: 12px; font-weight: 600;">
-                <?php echo esc_html( sprintf( __( '功能模块：%d 个', 'developer-starter' ), (int) $available_module_count ) ); ?>
+                <?php echo esc_html( sprintf( __( '功能模块：%d 个', 'qiling' ), (int) $available_module_count ) ); ?>
             </span>
         </div>
         <div class="dsm-template-apply-row">
             <input type="hidden" id="developer-starter-selected-page-template" name="developer_starter_selected_page_template" value="<?php echo esc_attr( (string) get_post_meta( $post->ID, '_wp_page_template', true ) ); ?>" />
             <label>
                 <input type="checkbox" id="developer-starter-apply-selected-template-package" name="developer_starter_apply_selected_template_package" value="1" />
-                <span><?php esc_html_e( '保存时应用所选页面模板的默认装修', 'developer-starter' ); ?></span>
+                <span><?php esc_html_e( '保存时应用所选页面模板的默认装修', 'qiling' ); ?></span>
             </label>
-            <p><?php esc_html_e( '仅在需要替换当前模块时勾选。原装修会先备份；不勾选时，切换页面模板只改变模板外壳并保留现有模块。', 'developer-starter' ); ?></p>
+            <p><?php esc_html_e( '仅在需要替换当前模块时勾选。原装修会先备份；不勾选时，切换页面模板只改变模板外壳并保留现有模块。', 'qiling' ); ?></p>
         </div>
         <style>
             #developer_starter_modules .inside { padding: 0; margin: 0; }
@@ -422,11 +422,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="dsm-wrap">
             <div class="dsm-toolbar" id="dsm-toolbar">
-                <span style="color:#fff; opacity:0.9;"><?php esc_html_e( 'WordPress 编辑器加载完成后，将自动加载主题装修模块…', 'developer-starter' ); ?></span>
+                <span style="color:#fff; opacity:0.9;"><?php esc_html_e( 'WordPress 编辑器加载完成后，将自动加载主题装修模块…', 'qiling' ); ?></span>
             </div>
 
             <div class="dsm-list" id="dsm-list">
-                <div style="padding: 20px; color: #666; text-align: center;"><?php esc_html_e( '正在等待编辑器与页面核心资源完成…', 'developer-starter' ); ?></div>
+                <div style="padding: 20px; color: #666; text-align: center;"><?php esc_html_e( '正在等待编辑器与页面核心资源完成…', 'qiling' ); ?></div>
             </div>
         </div>
 
@@ -434,13 +434,13 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="dsm-modal-overlay" id="dsm-template-modal">
             <div class="dsm-modal">
                 <div class="dsm-modal-header">
-                    <h3 class="dsm-modal-title"><?php esc_html_e( '我的模版库', 'developer-starter' ); ?></h3>
+                    <h3 class="dsm-modal-title"><?php esc_html_e( '我的模版库', 'qiling' ); ?></h3>
                     <button type="button" class="dsm-modal-close">&times;</button>
                 </div>
                 <div class="dsm-modal-body">
                     <ul class="dsm-template-list" id="dsm-template-list">
                         <!-- Ajax Loaded -->
-                        <li style="text-align:center; padding: 20px; color:#666;"><?php esc_html_e( '加载中...', 'developer-starter' ); ?></li>
+                        <li style="text-align:center; padding: 20px; color:#666;"><?php esc_html_e( '加载中...', 'qiling' ); ?></li>
                     </ul>
                 </div>
             </div>
@@ -449,7 +449,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="dsm-modal-overlay dsm-ai-modal" id="dsm-ai-modal">
             <div class="dsm-modal">
                 <div class="dsm-modal-header">
-                    <h3 class="dsm-modal-title"><?php esc_html_e( 'AI 局部辅助', 'developer-starter' ); ?></h3>
+                    <h3 class="dsm-modal-title"><?php esc_html_e( 'AI 局部辅助', 'qiling' ); ?></h3>
                     <button type="button" class="dsm-modal-close">&times;</button>
                 </div>
                 <div class="dsm-modal-body">
@@ -461,12 +461,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 echo esc_html(
                                     ! empty( $ai_scope_policy['notice'] )
                                         ? (string) $ai_scope_policy['notice']
-                                        : __( '当前 AI 只辅助当前页面；单页草稿属于高级入口，保存页面前不会正式生效。', 'developer-starter' )
+                                        : __( '当前 AI 只辅助当前页面；单页草稿属于高级入口，保存页面前不会正式生效。', 'qiling' )
                                 );
                                 ?>
                             </div>
                             <div class="dsm-ai-field">
-                                <label for="dsm-ai-connection"><?php esc_html_e( 'AI 连接', 'developer-starter' ); ?></label>
+                                <label for="dsm-ai-connection"><?php esc_html_e( 'AI 连接', 'qiling' ); ?></label>
                                 <select id="dsm-ai-connection">
                                     <?php foreach ( $ai_builder_config['connections'] as $connection ) : ?>
                                         <?php if ( ! is_array( $connection ) || empty( $connection['id'] ) ) : ?>
@@ -479,20 +479,20 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 </select>
                             </div>
                             <div class="dsm-ai-field">
-                                <label for="dsm-ai-model"><?php esc_html_e( '模型', 'developer-starter' ); ?></label>
+                                <label for="dsm-ai-model"><?php esc_html_e( '模型', 'qiling' ); ?></label>
                                 <input type="text" id="dsm-ai-model" list="dsm-ai-model-list" value="<?php echo esc_attr( isset( $ai_builder_config['defaultModel'] ) ? (string) $ai_builder_config['defaultModel'] : '' ); ?>" placeholder="qwen-plus" />
                                 <datalist id="dsm-ai-model-list"></datalist>
                             </div>
                             <div class="dsm-ai-field dsm-ai-field-wide">
-                                <label for="dsm-ai-prompt"><?php esc_html_e( '装修需求', 'developer-starter' ); ?></label>
-                                <textarea id="dsm-ai-prompt" rows="7" placeholder="<?php esc_attr_e( '例如：优化当前首页，面向软件服务公司，风格现代可信。保留可用内容，强化首屏卖点、服务能力、客户案例、CTA 和 SEO 标题描述。', 'developer-starter' ); ?>"></textarea>
+                                <label for="dsm-ai-prompt"><?php esc_html_e( '装修需求', 'qiling' ); ?></label>
+                                <textarea id="dsm-ai-prompt" rows="7" placeholder="<?php esc_attr_e( '例如：优化当前首页，面向软件服务公司，风格现代可信。保留可用内容，强化首屏卖点、服务能力、客户案例、CTA 和 SEO 标题描述。', 'qiling' ); ?>"></textarea>
                             </div>
                             <div class="dsm-ai-field dsm-ai-field-wide">
                                 <div class="dsm-ai-module-tools">
-                                    <label for="dsm-ai-module-search"><?php esc_html_e( '候选模块', 'developer-starter' ); ?></label>
+                                    <label for="dsm-ai-module-search"><?php esc_html_e( '候选模块', 'qiling' ); ?></label>
                                     <span><strong id="dsm-ai-selected-count">0</strong>/<?php echo esc_html( (string) $ai_max_modules ); ?></span>
                                 </div>
-                                <input type="search" id="dsm-ai-module-search" placeholder="<?php esc_attr_e( '搜索模块名称...', 'developer-starter' ); ?>" />
+                                <input type="search" id="dsm-ai-module-search" placeholder="<?php esc_attr_e( '搜索模块名称...', 'qiling' ); ?>" />
                                 <div class="dsm-ai-module-list" id="dsm-ai-module-list">
                                     <?php foreach ( $ai_module_groups as $module_group ) : ?>
                                         <?php
@@ -538,7 +538,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                     <?php
                                     printf(
                                         /* translators: %d: max module count */
-                                        esc_html__( '高级单页草稿：建议勾选 1-%d 个候选模块。生成后会先预览摘要，确认后才导入当前模块列表。', 'developer-starter' ),
+                                        esc_html__( '高级单页草稿：建议勾选 1-%d 个候选模块。生成后会先预览摘要，确认后才导入当前模块列表。', 'qiling' ),
                                         (int) $ai_max_modules
                                     );
                                     ?>
@@ -546,32 +546,32 @@ if ( ! defined( 'ABSPATH' ) ) {
                             </div>
                         </div>
                         <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                            <button type="button" class="button button-primary" id="dsm-ai-generate"><?php esc_html_e( '生成/优化当前单页', 'developer-starter' ); ?></button>
-                            <button type="button" class="button" id="dsm-ai-undo-apply" style="display:none;"><?php esc_html_e( '撤回本次导入', 'developer-starter' ); ?></button>
+                            <button type="button" class="button button-primary" id="dsm-ai-generate"><?php esc_html_e( '生成/优化当前单页', 'qiling' ); ?></button>
+                            <button type="button" class="button" id="dsm-ai-undo-apply" style="display:none;"><?php esc_html_e( '撤回本次导入', 'qiling' ); ?></button>
                             <span class="dsm-ai-status" id="dsm-ai-status"></span>
                         </div>
                         <ul class="dsm-ai-warning-list" id="dsm-ai-warnings" style="display:none;"></ul>
                         <div class="dsm-ai-pending-preview" id="dsm-ai-pending-preview" style="display:none;">
                             <div class="dsm-ai-pending-head">
-                                <strong><?php esc_html_e( 'AI 草稿待确认', 'developer-starter' ); ?></strong>
-                                <span><?php esc_html_e( '当前页面', 'developer-starter' ); ?></span>
+                                <strong><?php esc_html_e( 'AI 草稿待确认', 'qiling' ); ?></strong>
+                                <span><?php esc_html_e( '当前页面', 'qiling' ); ?></span>
                             </div>
-                            <p><?php esc_html_e( '请先查看摘要；确认后才会导入当前模块列表。保存页面前不会正式生效。', 'developer-starter' ); ?></p>
+                            <p><?php esc_html_e( '请先查看摘要；确认后才会导入当前模块列表。保存页面前不会正式生效。', 'qiling' ); ?></p>
                             <pre class="dsm-ai-pending-summary" id="dsm-ai-pending-summary"></pre>
                             <div class="dsm-ai-pending-actions">
-                                <button type="button" class="button button-primary" id="dsm-ai-apply-pending"><?php esc_html_e( '确认应用草稿', 'developer-starter' ); ?></button>
-                                <button type="button" class="button" id="dsm-ai-discard-pending"><?php esc_html_e( '放弃草稿', 'developer-starter' ); ?></button>
+                                <button type="button" class="button button-primary" id="dsm-ai-apply-pending"><?php esc_html_e( '确认应用草稿', 'qiling' ); ?></button>
+                                <button type="button" class="button" id="dsm-ai-discard-pending"><?php esc_html_e( '放弃草稿', 'qiling' ); ?></button>
                             </div>
                         </div>
                     <?php elseif ( $ai_builder_available && ! $ai_builder_supported ) : ?>
                         <div class="dsm-ai-disabled">
-                            <p style="margin-top:0;"><?php esc_html_e( '当前积分商城页面暂不支持 AI 装修。', 'developer-starter' ); ?></p>
-                            <p style="margin-bottom:0;"><?php esc_html_e( '请使用积分商城模块手动搭建页面；普通主题页面仍可使用 AI 装修。', 'developer-starter' ); ?></p>
+                            <p style="margin-top:0;"><?php esc_html_e( '当前积分商城页面暂不支持 AI 装修。', 'qiling' ); ?></p>
+                            <p style="margin-bottom:0;"><?php esc_html_e( '请使用积分商城模块手动搭建页面；普通主题页面仍可使用 AI 装修。', 'qiling' ); ?></p>
                         </div>
                     <?php else : ?>
                         <div class="dsm-ai-disabled">
-                            <p style="margin-top:0;"><?php esc_html_e( '当前还没有可用的 AI 连接。', 'developer-starter' ); ?></p>
-                            <p style="margin-bottom:0;"><?php esc_html_e( '请先到「启灵主题设置 -> AI装修」里启用 AI 装修，并至少配置一个启用中的 AI 连接。', 'developer-starter' ); ?></p>
+                            <p style="margin-top:0;"><?php esc_html_e( '当前还没有可用的 AI 连接。', 'qiling' ); ?></p>
+                            <p style="margin-bottom:0;"><?php esc_html_e( '请先到「启灵主题设置 -> AI装修」里启用 AI 装修，并至少配置一个启用中的 AI 连接。', 'qiling' ); ?></p>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -613,7 +613,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 }
                 lastObservedPageTemplate = template;
                 templateChangePromptedFor = template;
-                var shouldReplace = window.confirm(<?php echo wp_json_encode( __( "检测到页面模板已切换。是否在保存时用新模板的默认装修替换当前模块？\n\n选择“确定”会先备份当前装修再替换；选择“取消”则只切换模板外壳并保留当前模块。", 'developer-starter' ) ); ?>);
+                var shouldReplace = window.confirm(<?php echo wp_json_encode( __( "检测到页面模板已切换。是否在保存时用新模板的默认装修替换当前模块？\n\n选择“确定”会先备份当前装修再替换；选择“取消”则只切换模板外壳并保留当前模块。", 'qiling' ) ); ?>);
                 $('#developer-starter-apply-selected-template-package').prop('checked', shouldReplace);
             }
 
@@ -890,10 +890,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                 applyImportedPagePackageSeo(packageData.seo || {});
 
                 var hint = usesFullscreenTemplate
-                    ? '<?php echo esc_js( __( '已导入页面 JSON。保存页面后将自动切换为独立全屏模板，不显示页面头部面包屑或侧边栏。', 'developer-starter' ) ); ?>'
-                    : '<?php echo esc_js( __( '已导入页面 JSON。保存页面后会按包内模板与模块数据应用到当前页面。', 'developer-starter' ) ); ?>';
+                    ? '<?php echo esc_js( __( '已导入页面 JSON。保存页面后将自动切换为独立全屏模板，不显示页面头部面包屑或侧边栏。', 'qiling' ) ); ?>'
+                    : '<?php echo esc_js( __( '已导入页面 JSON。保存页面后会按包内模板与模块数据应用到当前页面。', 'qiling' ) ); ?>';
                 if (packageData.templateLabel) {
-                    hint += ' <?php echo esc_js( __( '目标模板：', 'developer-starter' ) ); ?>' + packageData.templateLabel;
+                    hint += ' <?php echo esc_js( __( '目标模板：', 'qiling' ) ); ?>' + packageData.templateLabel;
                 }
                 setPagePackageHint(hint);
             }
@@ -939,7 +939,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 if (!(res && res.success && res.data)) {
                     clearImportedPagePackageMeta();
                     setPagePackageHint('');
-                    alert((fallbackError || '<?php echo esc_js( __( '导入失败：', 'developer-starter' ) ); ?>') + ((res && res.data) ? res.data : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>'));
+                    alert((fallbackError || '<?php echo esc_js( __( '导入失败：', 'qiling' ) ); ?>') + ((res && res.data) ? res.data : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>'));
                     return false;
                 }
 
@@ -1029,26 +1029,26 @@ if ( ! defined( 'ABSPATH' ) ) {
                 }).filter(Boolean);
 
                 if (title) {
-                    lines.push('<?php echo esc_js( __( '页面标题：', 'developer-starter' ) ); ?>' + title);
+                    lines.push('<?php echo esc_js( __( '页面标题：', 'qiling' ) ); ?>' + title);
                 }
                 if (templateLabel) {
-                    lines.push('<?php echo esc_js( __( '目标模板：', 'developer-starter' ) ); ?>' + templateLabel);
+                    lines.push('<?php echo esc_js( __( '目标模板：', 'qiling' ) ); ?>' + templateLabel);
                 }
-                lines.push('<?php echo esc_js( __( '模块数量：', 'developer-starter' ) ); ?>' + modules.length);
+                lines.push('<?php echo esc_js( __( '模块数量：', 'qiling' ) ); ?>' + modules.length);
                 if (moduleNames.length) {
-                    lines.push('<?php echo esc_js( __( '模块预览：', 'developer-starter' ) ); ?>' + moduleNames.join('、') + (modules.length > moduleNames.length ? '…' : ''));
+                    lines.push('<?php echo esc_js( __( '模块预览：', 'qiling' ) ); ?>' + moduleNames.join('、') + (modules.length > moduleNames.length ? '…' : ''));
                 }
                 if (visualStyle && typeof visualStyle === 'object' && Object.keys(visualStyle).length) {
-                    lines.push('<?php echo esc_js( __( '包含页面风格：是', 'developer-starter' ) ); ?>');
+                    lines.push('<?php echo esc_js( __( '包含页面风格：是', 'qiling' ) ); ?>');
                 }
                 if (packageData.seo && typeof packageData.seo === 'object' && Object.keys(packageData.seo).length) {
-                    lines.push('<?php echo esc_js( __( '包含 SEO 建议：是', 'developer-starter' ) ); ?>');
+                    lines.push('<?php echo esc_js( __( '包含 SEO 建议：是', 'qiling' ) ); ?>');
                 }
                 if (packageData.footer || packageData.footerSettings) {
-                    lines.push('<?php echo esc_js( __( '包含页脚设置：是', 'developer-starter' ) ); ?>');
+                    lines.push('<?php echo esc_js( __( '包含页脚设置：是', 'qiling' ) ); ?>');
                 }
 
-                return lines.length ? lines.join("\n") : '<?php echo esc_js( __( '草稿已生成，请确认后应用到当前页面模块列表。', 'developer-starter' ) ); ?>';
+                return lines.length ? lines.join("\n") : '<?php echo esc_js( __( '草稿已生成，请确认后应用到当前页面模块列表。', 'qiling' ) ); ?>';
             }
 
             function renderAiPendingPackage(packageData, jsonPayload, successMessage) {
@@ -1059,11 +1059,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                 $('#dsm-ai-pending-summary').text(buildAiGeneratedPackageSummary(packageData));
                 $('#dsm-ai-pending-preview').show();
                 setAiPendingButtonsDisabled(false);
-                setAiStatus('<?php echo esc_js( __( 'AI 草稿已生成，请查看摘要后确认应用。', 'developer-starter' ) ); ?>', 'success');
+                setAiStatus('<?php echo esc_js( __( 'AI 草稿已生成，请查看摘要后确认应用。', 'qiling' ) ); ?>', 'success');
             }
 
             function applyAiGeneratedPackage(jsonPayload, doneCallback, successMessage) {
-                setPagePackageHint('<?php echo esc_js( __( '正在把 AI 草稿应用到当前页面模块…', 'developer-starter' ) ); ?>');
+                setPagePackageHint('<?php echo esc_js( __( '正在把 AI 草稿应用到当前页面模块…', 'qiling' ) ); ?>');
                 lastAiApplySnapshot = captureAiApplySnapshot();
                 setAiPendingButtonsDisabled(true);
 
@@ -1076,22 +1076,22 @@ if ( ! defined( 'ABSPATH' ) ) {
                         json: jsonPayload
                     },
                     success: function(res) {
-                        if (applyImportedPagePackageResponse(res, '<?php echo esc_js( __( '草稿应用失败：', 'developer-starter' ) ); ?>')) {
-                            setAiStatus(successMessage || '<?php echo esc_js( __( '草稿已应用到页面模块列表，请保存页面。', 'developer-starter' ) ); ?>', 'success');
+                        if (applyImportedPagePackageResponse(res, '<?php echo esc_js( __( '草稿应用失败：', 'qiling' ) ); ?>')) {
+                            setAiStatus(successMessage || '<?php echo esc_js( __( '草稿已应用到页面模块列表，请保存页面。', 'qiling' ) ); ?>', 'success');
                             clearAiPendingPackage();
                             setAiApplyUndoVisible(true);
                         } else {
                             restoreAiApplySnapshot(lastAiApplySnapshot);
                             lastAiApplySnapshot = null;
                             setAiPendingButtonsDisabled(false);
-                            setAiStatus('<?php echo esc_js( __( '草稿应用失败，请重试。', 'developer-starter' ) ); ?>', 'error');
+                            setAiStatus('<?php echo esc_js( __( '草稿应用失败，请重试。', 'qiling' ) ); ?>', 'error');
                         }
                     },
                     error: function() {
                         restoreAiApplySnapshot(lastAiApplySnapshot);
                         lastAiApplySnapshot = null;
                         setAiPendingButtonsDisabled(false);
-                        setAiStatus('<?php echo esc_js( __( '网络错误，草稿未能应用到当前页面。', 'developer-starter' ) ); ?>', 'error');
+                        setAiStatus('<?php echo esc_js( __( '网络错误，草稿未能应用到当前页面。', 'qiling' ) ); ?>', 'error');
                     },
                     complete: function() {
                         if (typeof doneCallback === 'function') {
@@ -1103,7 +1103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             function runAiGenerationFlow(args) {
                 if (!aiBuilderService) {
-                    setAiStatus('<?php echo esc_js( __( 'AI 服务未加载，请刷新后重试。', 'developer-starter' ) ); ?>', 'error');
+                    setAiStatus('<?php echo esc_js( __( 'AI 服务未加载，请刷新后重试。', 'qiling' ) ); ?>', 'error');
                     return;
                 }
 
@@ -1113,7 +1113,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 clearAiPendingPackage();
                 lastAiApplySnapshot = null;
                 setAiApplyUndoVisible(false);
-                setAiStatus('<?php echo esc_js( __( '正在生成页面草稿，请稍候…', 'developer-starter' ) ); ?>', 'warning');
+                setAiStatus('<?php echo esc_js( __( '正在生成页面草稿，请稍候…', 'qiling' ) ); ?>', 'warning');
                 $button.prop('disabled', true);
 
                 aiBuilderService.generatePagePackage({
@@ -1124,20 +1124,20 @@ if ( ! defined( 'ABSPATH' ) ) {
                     connectionId: String(args.connectionId || ''),
                     model: String(args.model || ''),
                     moduleIds: Array.isArray(args.moduleIds) ? args.moduleIds.slice() : [],
-                    successMessage: '<?php echo esc_js( __( '草稿已应用到页面模块列表，请保存页面。', 'developer-starter' ) ); ?>',
-                    generateFailedMessage: '<?php echo esc_js( __( '生成失败，请重试。', 'developer-starter' ) ); ?>',
-                    timeoutMessage: '<?php echo esc_js( __( 'AI 生成超时，请稍后重试，或减少候选模块数量。', 'developer-starter' ) ); ?>',
-                    networkErrorMessage: '<?php echo esc_js( __( '网络错误，生成失败。', 'developer-starter' ) ); ?>'
+                    successMessage: '<?php echo esc_js( __( '草稿已应用到页面模块列表，请保存页面。', 'qiling' ) ); ?>',
+                    generateFailedMessage: '<?php echo esc_js( __( '生成失败，请重试。', 'qiling' ) ); ?>',
+                    timeoutMessage: '<?php echo esc_js( __( 'AI 生成超时，请稍后重试，或减少候选模块数量。', 'qiling' ) ); ?>',
+                    networkErrorMessage: '<?php echo esc_js( __( '网络错误，生成失败。', 'qiling' ) ); ?>'
                 }).done(function(result) {
                     var successMessage = result && result.successMessage
                         ? result.successMessage
-                        : '<?php echo esc_js( __( '草稿已应用到页面模块列表，请保存页面。', 'developer-starter' ) ); ?>';
+                        : '<?php echo esc_js( __( '草稿已应用到页面模块列表，请保存页面。', 'qiling' ) ); ?>';
                     var finalJson = '';
 
                     try {
                         finalJson = JSON.stringify(result.package);
                     } catch (err) {
-                        setAiStatus('<?php echo esc_js( __( '草稿组装失败，请重试。', 'developer-starter' ) ); ?>', 'error');
+                        setAiStatus('<?php echo esc_js( __( '草稿组装失败，请重试。', 'qiling' ) ); ?>', 'error');
                         $button.prop('disabled', false);
                         return;
                     }
@@ -1146,7 +1146,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     renderAiPendingPackage(result.package, finalJson, successMessage);
                     $button.prop('disabled', false);
                 }).fail(function(result) {
-                    setAiStatus(result && result.message ? result.message : '<?php echo esc_js( __( '网络错误，生成失败。', 'developer-starter' ) ); ?>', 'error');
+                    setAiStatus(result && result.message ? result.message : '<?php echo esc_js( __( '网络错误，生成失败。', 'qiling' ) ); ?>', 'error');
                     $button.prop('disabled', false);
                 });
             }
@@ -1154,8 +1154,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             function showModulesUiLoadError() {
                 modulesUiLoaded = false;
                 modulesUiRequested = false;
-                $('#dsm-toolbar').html('<span style="color:#fff;"><?php echo esc_js( __( '主题模块加载失败，请点击重试。', 'developer-starter' ) ); ?></span> <button type="button" class="dsm-add-btn dsm-retry-load"><?php echo esc_js( __( '重试加载', 'developer-starter' ) ); ?></button>');
-                $('#dsm-list').html('<div style="padding:20px;color:#b32d2e;text-align:center;"><?php echo esc_js( __( '模块未加载，本次保存不会覆盖已存在模块。', 'developer-starter' ) ); ?></div>');
+                $('#dsm-toolbar').html('<span style="color:#fff;"><?php echo esc_js( __( '主题模块加载失败，请点击重试。', 'qiling' ) ); ?></span> <button type="button" class="dsm-add-btn dsm-retry-load"><?php echo esc_js( __( '重试加载', 'qiling' ) ); ?></button>');
+                $('#dsm-list').html('<div style="padding:20px;color:#b32d2e;text-align:center;"><?php echo esc_js( __( '模块未加载，本次保存不会覆盖已存在模块。', 'qiling' ) ); ?></div>');
             }
 
             function loadModulesEditorUI() {
@@ -1501,7 +1501,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 if (hidden) {
                     $item.find('.dsm-hidden-badge').remove();
                 } else if (!$item.find('.dsm-hidden-badge').length) {
-                    $('<span class="dsm-hidden-badge"><?php echo esc_js( __( '已隐藏', 'developer-starter' ) ); ?></span>').insertBefore($button);
+                    $('<span class="dsm-hidden-badge"><?php echo esc_js( __( '已隐藏', 'qiling' ) ); ?></span>').insertBefore($button);
                 }
             });
 
@@ -1533,11 +1533,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                             $('html, body').animate({ scrollTop: $item.offset().top - 100 }, 300);
                             setTimeout(checkDependencies, 100);
                         } else {
-                            alert('<?php echo esc_js( __( '模块加载失败，请稍后重试。', 'developer-starter' ) ); ?>');
+                            alert('<?php echo esc_js( __( '模块加载失败，请稍后重试。', 'qiling' ) ); ?>');
                         }
                     },
                     error: function() {
-                        alert('<?php echo esc_js( __( '网络错误，请稍后重试。', 'developer-starter' ) ); ?>');
+                        alert('<?php echo esc_js( __( '网络错误，请稍后重试。', 'qiling' ) ); ?>');
                     },
                     complete: function() {
                         $btn.removeData('loading').prop('disabled', false).css('opacity', '');
@@ -1555,7 +1555,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             $(document).on('click', '.dsm-remove', function(e){
                 e.preventDefault();
                 e.stopPropagation();
-                if(confirm('<?php echo esc_js( __( '确定删除此模块吗？', 'developer-starter' ) ); ?>')){
+                if(confirm('<?php echo esc_js( __( '确定删除此模块吗？', 'qiling' ) ); ?>')){
                     $(this).closest('.dsm-item').remove();
                     renumberModuleInputs();
                 }
@@ -1583,12 +1583,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                 var isGallery = $btn.hasClass('dsm-gallery-upload');
                 
                 if(typeof wp === 'undefined' || typeof wp.media === 'undefined') {
-                    alert('<?php echo esc_js( __( '媒体库加载失败', 'developer-starter' ) ); ?>'); return;
+                    alert('<?php echo esc_js( __( '媒体库加载失败', 'qiling' ) ); ?>'); return;
                 }
                 
                 // 媒体库弹窗单例初始化
                 var frame = wp.media({ 
-                    title: isGallery ? '<?php echo esc_js( __( '选择多张图片 (按住Ctrl/Cmd多选)', 'developer-starter' ) ); ?>' : '<?php echo esc_js( __( '选择文件', 'developer-starter' ) ); ?>', 
+                    title: isGallery ? '<?php echo esc_js( __( '选择多张图片 (按住Ctrl/Cmd多选)', 'qiling' ) ); ?>' : '<?php echo esc_js( __( '选择文件', 'qiling' ) ); ?>', 
                     multiple: isGallery ? 'add' : false, 
                     library: {type: 'image'} 
                 });
@@ -1689,7 +1689,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     return;
                 }
 
-                if ($('#dsm-list .dsm-item').length && !window.confirm('<?php echo esc_js( __( '导入页面 JSON 会替换当前模块列表，是否继续？', 'developer-starter' ) ); ?>')) {
+                if ($('#dsm-list .dsm-item').length && !window.confirm('<?php echo esc_js( __( '导入页面 JSON 会替换当前模块列表，是否继续？', 'qiling' ) ); ?>')) {
                     input.value = '';
                     return;
                 }
@@ -1699,12 +1699,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                     var rawJson = event && event.target ? event.target.result : '';
 
                     if (!rawJson || typeof rawJson !== 'string') {
-                        alert('<?php echo esc_js( __( 'JSON 文件读取失败，请重试。', 'developer-starter' ) ); ?>');
+                        alert('<?php echo esc_js( __( 'JSON 文件读取失败，请重试。', 'qiling' ) ); ?>');
                         input.value = '';
                         return;
                     }
 
-                    setPagePackageHint('<?php echo esc_js( __( '正在导入页面 JSON…', 'developer-starter' ) ); ?>');
+                    setPagePackageHint('<?php echo esc_js( __( '正在导入页面 JSON…', 'qiling' ) ); ?>');
 
                     $.ajax({
                         url: ajaxurl,
@@ -1715,12 +1715,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                             json: rawJson
                         },
                         success: function(res) {
-                            applyImportedPagePackageResponse(res, '<?php echo esc_js( __( '导入失败：', 'developer-starter' ) ); ?>');
+                            applyImportedPagePackageResponse(res, '<?php echo esc_js( __( '导入失败：', 'qiling' ) ); ?>');
                         },
                         error: function() {
                             clearImportedPagePackageMeta();
                             setPagePackageHint('');
-                            alert('<?php echo esc_js( __( '网络错误，请稍后重试。', 'developer-starter' ) ); ?>');
+                            alert('<?php echo esc_js( __( '网络错误，请稍后重试。', 'qiling' ) ); ?>');
                         },
                         complete: function() {
                             input.value = '';
@@ -1728,7 +1728,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     });
                 };
                 reader.onerror = function() {
-                    alert('<?php echo esc_js( __( 'JSON 文件读取失败，请重试。', 'developer-starter' ) ); ?>');
+                    alert('<?php echo esc_js( __( 'JSON 文件读取失败，请重试。', 'qiling' ) ); ?>');
                     input.value = '';
                 };
                 reader.readAsText(file, 'utf-8');
@@ -1739,11 +1739,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                 var postId = resolveCurrentPostId();
                 if (postId <= 0) {
-                    alert('<?php echo esc_js( __( '请先保存页面，再导出 JSON。', 'developer-starter' ) ); ?>');
+                    alert('<?php echo esc_js( __( '请先保存页面，再导出 JSON。', 'qiling' ) ); ?>');
                     return;
                 }
 
-                setPagePackageHint('<?php echo esc_js( __( '正在导出页面 JSON…', 'developer-starter' ) ); ?>');
+                setPagePackageHint('<?php echo esc_js( __( '正在导出页面 JSON…', 'qiling' ) ); ?>');
 
                 $.ajax({
                     url: ajaxurl,
@@ -1756,16 +1756,16 @@ if ( ! defined( 'ABSPATH' ) ) {
                     success: function(res) {
                         if (!(res && res.success && res.data && res.data.json)) {
                             setPagePackageHint('');
-                            alert('<?php echo esc_js( __( '导出失败：', 'developer-starter' ) ); ?>' + ((res && res.data) ? res.data : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>'));
+                            alert('<?php echo esc_js( __( '导出失败：', 'qiling' ) ); ?>' + ((res && res.data) ? res.data : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>'));
                             return;
                         }
 
                         downloadTextFile(res.data.filename || 'page-package.json', res.data.json);
-                        setPagePackageHint('<?php echo esc_js( __( '页面 JSON 已导出。该文件默认使用独立全屏模板，可直接用于新页面导入。', 'developer-starter' ) ); ?>');
+                        setPagePackageHint('<?php echo esc_js( __( '页面 JSON 已导出。该文件默认使用独立全屏模板，可直接用于新页面导入。', 'qiling' ) ); ?>');
                     },
                     error: function() {
                         setPagePackageHint('');
-                        alert('<?php echo esc_js( __( '网络错误，请稍后重试。', 'developer-starter' ) ); ?>');
+                        alert('<?php echo esc_js( __( '网络错误，请稍后重试。', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -1774,7 +1774,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 e.preventDefault();
                 showDsmModal('#dsm-ai-modal');
                 if (pendingAiPackageJson) {
-                    setAiStatus('<?php echo esc_js( __( 'AI 草稿待确认，请查看摘要后应用或放弃。', 'developer-starter' ) ); ?>', 'success');
+                    setAiStatus('<?php echo esc_js( __( 'AI 草稿待确认，请查看摘要后应用或放弃。', 'qiling' ) ); ?>', 'success');
                 } else {
                     setAiStatus('', '');
                 }
@@ -1812,7 +1812,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 e.preventDefault();
 
                 if (!aiBuilderService) {
-                    setAiStatus('<?php echo esc_js( __( 'AI 服务未加载，请刷新后重试。', 'developer-starter' ) ); ?>', 'error');
+                    setAiStatus('<?php echo esc_js( __( 'AI 服务未加载，请刷新后重试。', 'qiling' ) ); ?>', 'error');
                     return;
                 }
 
@@ -1832,12 +1832,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                         return window.confirm(message);
                     },
                     messages: {
-                        unavailable: '<?php echo esc_js( __( 'AI 装修尚未配置完成，请先到主题设置中启用。', 'developer-starter' ) ); ?>',
-                        missingPrompt: '<?php echo esc_js( __( '请先输入装修需求。', 'developer-starter' ) ); ?>',
-                        missingModules: '<?php echo esc_js( __( '请先选择候选模块。', 'developer-starter' ) ); ?>',
-                        tooManyModules: '<?php echo esc_js( sprintf( __( '候选模块最多选择 %d 个。', 'developer-starter' ), (int) $ai_max_modules ) ); ?>',
-                        disallowedSitePrompt: '<?php echo esc_js( __( '在线 AI 整站生成已关闭。请改为生成当前单页，或使用前台装修器选中单个模块后做模块优化。', 'developer-starter' ) ); ?>',
-                        replaceConfirm: '<?php echo esc_js( __( '这是高级单页草稿入口。生成后会先预览摘要；确认应用时才替换当前模块列表，保存页面前不会正式生效。是否继续？', 'developer-starter' ) ); ?>'
+                        unavailable: '<?php echo esc_js( __( 'AI 装修尚未配置完成，请先到主题设置中启用。', 'qiling' ) ); ?>',
+                        missingPrompt: '<?php echo esc_js( __( '请先输入装修需求。', 'qiling' ) ); ?>',
+                        missingModules: '<?php echo esc_js( __( '请先选择候选模块。', 'qiling' ) ); ?>',
+                        tooManyModules: '<?php echo esc_js( sprintf( __( '候选模块最多选择 %d 个。', 'qiling' ), (int) $ai_max_modules ) ); ?>',
+                        disallowedSitePrompt: '<?php echo esc_js( __( '在线 AI 整站生成已关闭。请改为生成当前单页，或使用前台装修器选中单个模块后做模块优化。', 'qiling' ) ); ?>',
+                        replaceConfirm: '<?php echo esc_js( __( '这是高级单页草稿入口。生成后会先预览摘要；确认应用时才替换当前模块列表，保存页面前不会正式生效。是否继续？', 'qiling' ) ); ?>'
                     }
                 });
 
@@ -1861,7 +1861,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             $(document).on('click', '#dsm-ai-apply-pending', function(e){
                 e.preventDefault();
                 if (!pendingAiPackageJson) {
-                    setAiStatus('<?php echo esc_js( __( '没有可应用的 AI 草稿，请重新生成。', 'developer-starter' ) ); ?>', 'error');
+                    setAiStatus('<?php echo esc_js( __( '没有可应用的 AI 草稿，请重新生成。', 'qiling' ) ); ?>', 'error');
                     return;
                 }
                 applyAiGeneratedPackage(pendingAiPackageJson, null, pendingAiPackageSuccessMessage);
@@ -1870,19 +1870,19 @@ if ( ! defined( 'ABSPATH' ) ) {
             $(document).on('click', '#dsm-ai-discard-pending', function(e){
                 e.preventDefault();
                 clearAiPendingPackage();
-                setAiStatus('<?php echo esc_js( __( '已放弃本次 AI 草稿，页面未被改动。', 'developer-starter' ) ); ?>', 'warning');
+                setAiStatus('<?php echo esc_js( __( '已放弃本次 AI 草稿，页面未被改动。', 'qiling' ) ); ?>', 'warning');
             });
 
             $(document).on('click', '#dsm-ai-undo-apply', function(e){
                 e.preventDefault();
                 if (!lastAiApplySnapshot) {
-                    setAiStatus('<?php echo esc_js( __( '没有可撤回的 AI 导入。', 'developer-starter' ) ); ?>', 'error');
+                    setAiStatus('<?php echo esc_js( __( '没有可撤回的 AI 导入。', 'qiling' ) ); ?>', 'error');
                     return;
                 }
                 restoreAiApplySnapshot(lastAiApplySnapshot);
                 lastAiApplySnapshot = null;
                 setAiApplyUndoVisible(false);
-                setAiStatus('<?php echo esc_js( __( '已撤回本次 AI 导入，页面恢复到导入前状态。', 'developer-starter' ) ); ?>', 'success');
+                setAiStatus('<?php echo esc_js( __( '已撤回本次 AI 导入，页面恢复到导入前状态。', 'qiling' ) ); ?>', 'success');
             });
 
 
@@ -1918,7 +1918,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 e.stopPropagation();
                 var $item = $(this).closest('.dsm-item');
                 var type = $item.data('type');
-                var name = prompt("<?php echo esc_js( __( '请输入模版名称 (例如：首页联系我们):', 'developer-starter' ) ); ?>");
+                var name = prompt("<?php echo esc_js( __( '请输入模版名称 (例如：首页联系我们):', 'qiling' ) ); ?>");
                 if(!name) return;
 
                 var rawData = $item.find(':input').serialize(); // Serialize all inputs in this module
@@ -1936,12 +1936,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                     },
                     success: function(res){
                         if(res.success){
-                            alert('<?php echo esc_js( __( '模版保存成功！', 'developer-starter' ) ); ?>');
+                            alert('<?php echo esc_js( __( '模版保存成功！', 'qiling' ) ); ?>');
                         } else {
-                            alert('<?php echo esc_js( __( '保存失败: ', 'developer-starter' ) ); ?>' + res.data);
+                            alert('<?php echo esc_js( __( '保存失败: ', 'qiling' ) ); ?>' + res.data);
                         }
                     },
-                    error: function(){ alert('<?php echo esc_js( __( '网络错误', 'developer-starter' ) ); ?>'); }
+                    error: function(){ alert('<?php echo esc_js( __( '网络错误', 'qiling' ) ); ?>'); }
                 });
             });
 
@@ -1961,26 +1961,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             function loadTemplates() {
                 var $list = $('#dsm-template-list');
-                $list.html('<li style="padding:20px;text-align:center;"><?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?></li>');
+                $list.html('<li style="padding:20px;text-align:center;"><?php echo esc_js( __( '加载中...', 'qiling' ) ); ?></li>');
                 
                 $.ajax({
                     url: ajaxurl,
                     data: { action: 'qiling_get_templates', nonce: $('#modules_nonce').val() },
                     success: function(res) {
-                        if(!res.success) { $list.html('<li><?php echo esc_js( __( '加载失败', 'developer-starter' ) ); ?></li>'); return; }
+                        if(!res.success) { $list.html('<li><?php echo esc_js( __( '加载失败', 'qiling' ) ); ?></li>'); return; }
                         var html = '';
                         if(res.data.length === 0) {
-                            html = '<li style="padding:20px;text-align:center;color:#888;"><?php echo esc_js( __( '暂无保存的模版', 'developer-starter' ) ); ?></li>';
+                            html = '<li style="padding:20px;text-align:center;color:#888;"><?php echo esc_js( __( '暂无保存的模版', 'qiling' ) ); ?></li>';
                         } else {
                             $.each(res.data, function(i, tpl){
                                 html += '<li class="dsm-template-item">';
                                 html += '<div class="dsm-tpl-info">';
                                 html += '<span class="dsm-tpl-name">' + tpl.title + '</span>';
-                                html += '<span class="dsm-tpl-meta"><?php echo esc_js( __( '类型: ', 'developer-starter' ) ); ?>' + tpl.type_name + ' | <?php echo esc_js( __( '时间: ', 'developer-starter' ) ); ?>' + tpl.date + '</span>';
+                                html += '<span class="dsm-tpl-meta"><?php echo esc_js( __( '类型: ', 'qiling' ) ); ?>' + tpl.type_name + ' | <?php echo esc_js( __( '时间: ', 'qiling' ) ); ?>' + tpl.date + '</span>';
                                 html += '</div>';
                                 html += '<div class="dsm-tpl-actions">';
-                                html += '<button type="button" class="dsm-btn-small dsm-use-template" data-id="'+tpl.id+'"><?php echo esc_js( __( '使用', 'developer-starter' ) ); ?></button>';
-                                html += '<button type="button" class="dsm-btn-small dsm-delete-template" data-id="'+tpl.id+'"><?php echo esc_js( __( '删除', 'developer-starter' ) ); ?></button>';
+                                html += '<button type="button" class="dsm-btn-small dsm-use-template" data-id="'+tpl.id+'"><?php echo esc_js( __( '使用', 'qiling' ) ); ?></button>';
+                                html += '<button type="button" class="dsm-btn-small dsm-delete-template" data-id="'+tpl.id+'"><?php echo esc_js( __( '删除', 'qiling' ) ); ?></button>';
                                 html += '</div>';
                                 html += '</li>';
                             });
@@ -1992,7 +1992,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             // 删除模板
             $(document).on('click', '.dsm-delete-template', function(){
-                if(!confirm('<?php echo esc_js( __( '确定删除此模版吗？', 'developer-starter' ) ); ?>')) return;
+                if(!confirm('<?php echo esc_js( __( '确定删除此模版吗？', 'qiling' ) ); ?>')) return;
                 var id = $(this).data('id');
                 var $btn = $(this);
                 $.post(ajaxurl, { action: 'delete_template', id: id, nonce: $('#modules_nonce').val() }, function(res){
@@ -2005,7 +2005,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             $(document).on('click', '.dsm-use-template', function(){
                 var id = $(this).data('id');
                 var $btn = $(this);
-                $btn.text('<?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?>');
+                $btn.text('<?php echo esc_js( __( '加载中...', 'qiling' ) ); ?>');
                 
                 $.ajax({
                     url: ajaxurl,
@@ -2030,11 +2030,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                             // 为新增模块触发字段联动依赖检查
                             setTimeout(checkDependencies, 100);
                         } else {
-                            alert('<?php echo esc_js( __( '加载失败: ', 'developer-starter' ) ); ?>' + res.data);
+                            alert('<?php echo esc_js( __( '加载失败: ', 'qiling' ) ); ?>' + res.data);
                         }
-                        $btn.text('<?php echo esc_js( __( '使用', 'developer-starter' ) ); ?>');
+                        $btn.text('<?php echo esc_js( __( '使用', 'qiling' ) ); ?>');
                     },
-                    error: function(){ alert('<?php echo esc_js( __( '网络错误', 'developer-starter' ) ); ?>'); $btn.text('<?php echo esc_js( __( '使用', 'developer-starter' ) ); ?>'); }
+                    error: function(){ alert('<?php echo esc_js( __( '网络错误', 'qiling' ) ); ?>'); $btn.text('<?php echo esc_js( __( '使用', 'qiling' ) ); ?>'); }
                 });
             });
 

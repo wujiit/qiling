@@ -46,7 +46,7 @@ class Page_Package_Preview_Service {
      */
     public function create_site_package_preview( $prepared_package, $options = array() ) {
         if ( ! is_array( $prepared_package ) || empty( $prepared_package['pages'] ) || ! is_array( $prepared_package['pages'] ) ) {
-            return new \WP_Error( 'invalid_package', __( '没有可预览的页面数据。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_package', __( '没有可预览的页面数据。', 'qiling' ) );
         }
 
         $this->cleanup_expired_preview_pages();
@@ -75,7 +75,7 @@ class Page_Package_Preview_Service {
             }
 
             $page_key = sanitize_key( (string) $page['page_key'] );
-            $title    = isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '预览页面', 'developer-starter' );
+            $title    = isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '预览页面', 'qiling' );
             $slug     = isset( $page['target_slug'] ) ? sanitize_title( (string) $page['target_slug'] ) : '';
             if ( '' === $slug && isset( $page['slug'] ) ) {
                 $slug = sanitize_title( (string) $page['slug'] );
@@ -90,7 +90,7 @@ class Page_Package_Preview_Service {
 
             $post_id = wp_insert_post(
                 array(
-                    'post_title'   => sprintf( __( '[预览] %s', 'developer-starter' ), $title ),
+                    'post_title'   => sprintf( __( '[预览] %s', 'qiling' ), $title ),
                     'post_name'    => $preview_slug,
                     'post_status'  => 'draft',
                     'post_type'    => 'page',
@@ -144,7 +144,7 @@ class Page_Package_Preview_Service {
                 'title'    => get_the_title( $post_id ),
                 'action'   => 'preview',
                 'page_id'  => $post_id,
-                'message'  => __( '临时预览已生成。', 'developer-starter' ),
+                'message'  => __( '临时预览已生成。', 'qiling' ),
                 'url'      => (string) $preview_url,
             );
         }

@@ -87,23 +87,24 @@ if ( ! function_exists( 'developer_starter_render_left_nav_toggle_icon' ) ) {
      * @param string $fallback 兜底图标。
      * @return string
      */
-    function developer_starter_render_left_nav_toggle_icon( $raw_icon, $fallback = '☰' ) {
+    function developer_starter_render_left_nav_toggle_icon( $raw_icon, $fallback = '' ) {
         $icon = trim( (string) $raw_icon );
-        if ( '' === $icon ) {
+        if ( '' === $icon && '' !== $fallback ) {
             $icon = (string) $fallback;
         }
 
-        if ( function_exists( 'developer_starter_render_menu_icon_html' ) ) {
+        if ( '' !== $icon && function_exists( 'developer_starter_render_menu_icon_html' ) ) {
             $icon_html = (string) developer_starter_render_menu_icon_html( $icon );
             if ( '' !== trim( $icon_html ) ) {
                 return '<span class="qiling-left-nav-toggle-icon qiling-left-nav-toggle-icon--rendered" aria-hidden="true">' . $icon_html . '</span>';
             }
         }
 
-        $plain_icon = html_entity_decode( wp_strip_all_tags( $icon ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
-        if ( '' === trim( $plain_icon ) ) {
-            $plain_icon = (string) $fallback;
+        if ( '' === $icon ) {
+            return '<span class="qiling-left-nav-toggle-icon qiling-left-nav-toggle-icon--rendered" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>';
         }
+
+        $plain_icon = html_entity_decode( wp_strip_all_tags( $icon ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
 
         return '<span class="qiling-left-nav-toggle-icon qiling-left-nav-toggle-icon--text" aria-hidden="true">' . esc_html( $plain_icon ) . '</span>';
     }
@@ -143,12 +144,12 @@ if ( ! function_exists( 'developer_starter_render_left_nav' ) ) {
         $shell_classes   = 'qiling-left-nav-shell' . ( $default_open ? ' is-expanded' : '' );
         $aside_classes   = 'qiling-left-nav' . ( $default_open ? ' is-expanded' : '' );
         $open_icon_html  = developer_starter_render_left_nav_toggle_icon(
-            developer_starter_get_option( 'left_nav_toggle_open_icon', '☰' ),
-            '☰'
+            developer_starter_get_option( 'left_nav_toggle_open_icon', 'icon-menu' ),
+            'icon-menu'
         );
         $close_icon_html = developer_starter_render_left_nav_toggle_icon(
-            developer_starter_get_option( 'left_nav_toggle_close_icon', '✕' ),
-            '✕'
+            developer_starter_get_option( 'left_nav_toggle_close_icon', 'icon-close' ),
+            'icon-close'
         );
         ?>
         <div
@@ -165,11 +166,11 @@ if ( ! function_exists( 'developer_starter_render_left_nav' ) ) {
                 <span class="qiling-left-nav-toggle-state qiling-left-nav-toggle-state-close" aria-hidden="<?php echo $default_open ? 'false' : 'true'; ?>">
                     <?php echo wp_kses_post( $close_icon_html ); ?>
                 </span>
-                <span class="screen-reader-text"><?php esc_html_e( '切换左侧导航', 'developer-starter' ); ?></span>
+                <span class="screen-reader-text"><?php esc_html_e( '切换左侧导航', 'qiling' ); ?></span>
             </button>
 
-            <aside id="qiling-left-nav" class="<?php echo esc_attr( $aside_classes ); ?>" aria-label="<?php esc_attr_e( '左侧导航菜单', 'developer-starter' ); ?>">
-                <div class="qiling-left-nav-scroll" tabindex="0" aria-label="<?php esc_attr_e( '左侧导航内容', 'developer-starter' ); ?>">
+            <aside id="qiling-left-nav" class="<?php echo esc_attr( $aside_classes ); ?>" aria-label="<?php esc_attr_e( '左侧导航菜单', 'qiling' ); ?>">
+                <div class="qiling-left-nav-scroll" tabindex="0" aria-label="<?php esc_attr_e( '左侧导航内容', 'qiling' ); ?>">
                     <?php wp_nav_menu( $left_nav_args ); ?>
                 </div>
             </aside>

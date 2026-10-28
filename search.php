@@ -41,10 +41,10 @@ if ( '' === $search_empty_title_template ) {
     $search_empty_title = $search_has_query
         ? sprintf(
             /* translators: %s: search query */
-            __( '未找到与 "%s" 相关的内容', 'developer-starter' ),
+            __( '未找到与 "%s" 相关的内容', 'qiling' ),
             $search_query_display
         )
-        : __( '请输入关键词开始搜索', 'developer-starter' );
+        : __( '请输入关键词开始搜索', 'qiling' );
 } elseif ( $search_has_query && false !== strpos( $search_empty_title_template, '%s' ) ) {
     $search_empty_title = str_replace( '%s', $search_query_display, $search_empty_title_template );
 } else {
@@ -52,14 +52,14 @@ if ( '' === $search_empty_title_template ) {
 }
 $search_empty_text = isset( $search_theme_options['search_empty_text'] ) ? trim( wp_strip_all_tags( (string) $search_theme_options['search_empty_text'] ) ) : '';
 if ( '' === $search_empty_text ) {
-    $search_empty_text = __( '可以换一个更短的关键词，或从最新内容继续浏览。', 'developer-starter' );
+    $search_empty_text = __( '可以换一个更短的关键词，或从最新内容继续浏览。', 'qiling' );
 }
 $search_scope = function_exists( 'developer_starter_get_current_search_scope' ) ? developer_starter_get_current_search_scope() : 'all';
 $search_scope_choices = function_exists( 'developer_starter_get_search_scope_choices' ) ? developer_starter_get_search_scope_choices() : array(
-    'all'     => __( '全部', 'developer-starter' ),
-    'title'   => __( '标题', 'developer-starter' ),
-    'content' => __( '正文', 'developer-starter' ),
-    'tag'     => __( '标签', 'developer-starter' ),
+    'all'     => __( '全部', 'qiling' ),
+    'title'   => __( '标题', 'qiling' ),
+    'content' => __( '正文', 'qiling' ),
+    'tag'     => __( '标签', 'qiling' ),
 );
 $search_terms = function_exists( 'developer_starter_get_search_query_terms' ) ? developer_starter_get_search_query_terms( $search_query_display ) : array( $search_query_display );
 $search_highlight_allowed = array(
@@ -74,10 +74,12 @@ $search_mode = $search_mode_manager ? $search_mode_manager->get_current_mode() :
 $search_mode_choices = $search_mode_manager ? $search_mode_manager->get_frontend_modes() : array();
 $search_mode_switch_enabled = $search_mode_manager && $search_mode_manager->visitor_switching_enabled() && count( $search_mode_choices ) > 1;
 $search_mode_data = $search_mode_manager ? $search_mode_manager->get_modes( true ) : array();
-$search_mode_label = isset( $search_mode_data[ $search_mode ]['label'] ) ? $search_mode_data[ $search_mode ]['label'] : __( '综合搜索', 'developer-starter' );
+$search_mode_label = isset( $search_mode_data[ $search_mode ]['label'] ) ? $search_mode_data[ $search_mode ]['label'] : __( '综合搜索', 'qiling' );
 $search_hot_keywords = function_exists( 'developer_starter_get_search_hot_keywords' ) ? developer_starter_get_search_hot_keywords() : array();
 
-$assets_version = ! empty( $search_theme_options['assets_version'] ) ? $search_theme_options['assets_version'] : DEVELOPER_STARTER_VERSION;
+$assets_version = function_exists( 'developer_starter_get_assets_version' )
+    ? developer_starter_get_assets_version()
+    : ( ! empty( $search_theme_options['assets_version'] ) ? $search_theme_options['assets_version'] : QILING_VERSION );
 $archive_loading_mode = isset( $search_theme_options['archive_loading_mode'] ) ? sanitize_key( (string) $search_theme_options['archive_loading_mode'] ) : 'regular';
 if ( ! in_array( $archive_loading_mode, array( 'regular', 'infinite' ), true ) ) {
     $archive_loading_mode = 'regular';
@@ -90,11 +92,11 @@ if ( $archive_infinite_enabled ) {
         'developer-starter-infinite-scroll',
         'qilingInfiniteScrollI18n',
         array(
-            'loadMore' => __( '加载更多', 'developer-starter' ),
-            'loading'  => __( '正在加载...', 'developer-starter' ),
-            'done'     => __( '已经到底了', 'developer-starter' ),
-            'error'    => __( '加载失败，请稍后再试', 'developer-starter' ),
-            'retry'    => __( '重试加载', 'developer-starter' ),
+            'loadMore' => __( '加载更多', 'qiling' ),
+            'loading'  => __( '正在加载...', 'qiling' ),
+            'done'     => __( '已经到底了', 'qiling' ),
+            'error'    => __( '加载失败，请稍后再试', 'qiling' ),
+            'retry'    => __( '重试加载', 'qiling' ),
         )
     );
 }
@@ -139,14 +141,14 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
             <h1 class="page-title">
                 <?php
                 if ( $search_has_query ) {
-                    printf( esc_html__( '搜索结果：%s', 'developer-starter' ), esc_html( $search_query_display ) );
+                    printf( esc_html__( '搜索结果：%s', 'qiling' ), esc_html( $search_query_display ) );
                 } else {
-                    esc_html_e( '搜索结果', 'developer-starter' );
+                    esc_html_e( '搜索结果', 'qiling' );
                 }
                 ?>
             </h1>
             <p class="search-page-description">
-                <?php printf( esc_html( _n( '共找到 %s 条结果', '共找到 %s 条结果', $search_results_count, 'developer-starter' ) ), esc_html( number_format_i18n( $search_results_count ) ) ); ?>
+                <?php printf( esc_html( _n( '共找到 %s 条结果', '共找到 %s 条结果', $search_results_count, 'qiling' ) ), esc_html( number_format_i18n( $search_results_count ) ) ); ?>
             </p>
         </div>
     </div>
@@ -170,10 +172,10 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
         <div class="search-mode-summary">
             <div class="search-mode-summary__meta">
                 <span class="search-mode-summary__label"><?php echo esc_html( $search_mode_label ); ?></span>
-                <span><?php printf( esc_html( _n( '%s 条结果', '%s 条结果', $search_results_count, 'developer-starter' ) ), esc_html( number_format_i18n( $search_results_count ) ) ); ?></span>
+                <span><?php printf( esc_html( _n( '%s 条结果', '%s 条结果', $search_results_count, 'qiling' ) ), esc_html( number_format_i18n( $search_results_count ) ) ); ?></span>
             </div>
             <?php if ( $search_mode_switch_enabled ) : ?>
-                <nav class="search-mode-tabs" aria-label="<?php esc_attr_e( '切换搜索模式', 'developer-starter' ); ?>">
+                <nav class="search-mode-tabs" aria-label="<?php esc_attr_e( '切换搜索模式', 'qiling' ); ?>">
                     <?php foreach ( $search_mode_choices as $mode_key => $mode_data ) : ?>
                         <?php
                         $mode_url_args = array( 'qiling_search_mode' => $mode_key );
@@ -192,7 +194,7 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
 
         <?php if ( ! empty( $search_hot_keywords ) ) : ?>
             <div class="search-hot-keywords">
-                <span class="search-hot-keywords__label"><?php esc_html_e( '热门搜索', 'developer-starter' ); ?></span>
+                <span class="search-hot-keywords__label"><?php esc_html_e( '热门搜索', 'qiling' ); ?></span>
                 <?php foreach ( $search_hot_keywords as $hot_keyword ) : ?>
                     <?php
                     $hot_url = function_exists( 'developer_starter_get_search_pretty_url' )
@@ -211,13 +213,13 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
             <form role="search" method="get" class="qiling-search-enhanced" data-qiling-search-form="1" action="<?php echo esc_url( $search_form_action ); ?>"<?php if ( developer_starter_get_option( 'search_rewrite', '' ) ) : ?> onsubmit="return dsSearchRedirect(this);"<?php endif; ?>>
                 <div class="search-form-fields">
                     <div class="search-form-input-group">
-                        <label class="screen-reader-text" for="search-page-input"><?php esc_html_e( '搜索关键词', 'developer-starter' ); ?></label>
+                        <label class="screen-reader-text" for="search-page-input"><?php esc_html_e( '搜索关键词', 'qiling' ); ?></label>
                         <input id="search-page-input" type="search" name="s" value="<?php echo esc_attr( $search_query_display ); ?>"
-                               placeholder="<?php esc_attr_e( '继续搜索...', 'developer-starter' ); ?>"
+                               placeholder="<?php esc_attr_e( '继续搜索...', 'qiling' ); ?>"
                                class="search-form-input" autocomplete="off" data-qiling-search-input="1" />
                     </div>
                     <?php if ( $search_scope_enabled ) : ?>
-                    <label class="screen-reader-text" for="search-scope-select"><?php esc_html_e( '搜索范围', 'developer-starter' ); ?></label>
+                    <label class="screen-reader-text" for="search-scope-select"><?php esc_html_e( '搜索范围', 'qiling' ); ?></label>
                     <select id="search-scope-select" name="search_scope" class="search-scope-select" data-qiling-search-scope="1">
                         <?php foreach ( $search_scope_choices as $scope_key => $scope_label ) : ?>
                             <option value="<?php echo esc_attr( $scope_key ); ?>"<?php selected( $search_scope, $scope_key ); ?>>
@@ -227,7 +229,7 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
                     </select>
                     <?php endif; ?>
                     <?php if ( $search_mode_switch_enabled ) : ?>
-                    <label class="screen-reader-text" for="search-mode-select"><?php esc_html_e( '搜索模式', 'developer-starter' ); ?></label>
+                    <label class="screen-reader-text" for="search-mode-select"><?php esc_html_e( '搜索模式', 'qiling' ); ?></label>
                     <select id="search-mode-select" name="qiling_search_mode" class="search-mode-select">
                         <?php foreach ( $search_mode_choices as $mode_key => $mode_data ) : ?>
                             <option value="<?php echo esc_attr( $mode_key ); ?>"<?php selected( $search_mode, $mode_key ); ?>><?php echo esc_html( $mode_data['label'] ); ?></option>
@@ -236,7 +238,7 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
                     <?php else : ?>
                     <input type="hidden" name="qiling_search_mode" value="<?php echo esc_attr( $search_mode ); ?>" />
                     <?php endif; ?>
-                    <button type="submit" class="btn btn-primary search-form-submit"><?php esc_html_e( '搜索', 'developer-starter' ); ?></button>
+                    <button type="submit" class="btn btn-primary search-form-submit"><?php esc_html_e( '搜索', 'qiling' ); ?></button>
                 </div>
                 <div class="search-history" data-qiling-search-history></div>
             </form>
@@ -272,12 +274,12 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
             ?>
             
             <!-- Pagination -->
-            <nav class="search-results-pagination<?php echo $archive_infinite_enabled ? ' qiling-infinite-pagination-fallback' : ''; ?>" aria-label="<?php esc_attr_e( '搜索结果分页', 'developer-starter' ); ?>">
+            <nav class="search-results-pagination<?php echo $archive_infinite_enabled ? ' qiling-infinite-pagination-fallback' : ''; ?>" aria-label="<?php esc_attr_e( '搜索结果分页', 'qiling' ); ?>">
                 <?php
                 $search_pagination_args = array(
                     'mid_size'  => 2,
-                    'prev_text' => sprintf( '&laquo; %s', __( '上一页', 'developer-starter' ) ),
-                    'next_text' => sprintf( '%s &raquo;', __( '下一页', 'developer-starter' ) ),
+                    'prev_text' => sprintf( '&laquo; %s', __( '上一页', 'qiling' ) ),
+                    'next_text' => sprintf( '%s &raquo;', __( '下一页', 'qiling' ) ),
                 );
 
                 $search_pagination_args['add_args'] = array(
@@ -293,10 +295,10 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
 
             <?php if ( $archive_infinite_enabled ) : ?>
                 <div class="qiling-infinite-control" data-qiling-infinite-control>
-                    <button type="button" class="qiling-infinite-load-more" data-qiling-infinite-load-more><?php esc_html_e( '加载更多', 'developer-starter' ); ?></button>
-                    <span class="qiling-infinite-status qiling-infinite-status--loading"><span class="qiling-infinite-spinner" aria-hidden="true"></span><?php esc_html_e( '正在加载...', 'developer-starter' ); ?></span>
-                    <span class="qiling-infinite-status qiling-infinite-status--done"><?php esc_html_e( '已经到底了', 'developer-starter' ); ?></span>
-                    <span class="qiling-infinite-status qiling-infinite-status--error"><?php esc_html_e( '加载失败，请稍后再试', 'developer-starter' ); ?></span>
+                    <button type="button" class="qiling-infinite-load-more" data-qiling-infinite-load-more><?php esc_html_e( '加载更多', 'qiling' ); ?></button>
+                    <span class="qiling-infinite-status qiling-infinite-status--loading"><span class="qiling-infinite-spinner" aria-hidden="true"></span><?php esc_html_e( '正在加载...', 'qiling' ); ?></span>
+                    <span class="qiling-infinite-status qiling-infinite-status--done"><?php esc_html_e( '已经到底了', 'qiling' ); ?></span>
+                    <span class="qiling-infinite-status qiling-infinite-status--error"><?php esc_html_e( '加载失败，请稍后再试', 'qiling' ); ?></span>
                 </div>
             <?php endif; ?>
             
@@ -321,34 +323,41 @@ if ( $search_builder_enabled && 'replace_header' === $search_builder_position &&
                 $posts_page_url = home_url( '/' );
             }
             $search_empty_secondary_url = $posts_page_url;
-            $search_empty_secondary_label = __( '查看最新内容', 'developer-starter' );
+            $search_empty_secondary_label = __( '查看最新内容', 'qiling' );
             if ( 'video' === $search_mode ) {
                 $search_empty_secondary_url = function_exists( 'developer_starter_get_search_pretty_url' )
                     ? developer_starter_get_search_pretty_url( $search_query_display, array( 'qiling_search_mode' => 'all' ) )
                     : add_query_arg( array( 's' => $search_query_display, 'qiling_search_mode' => 'all' ), home_url( '/' ) );
-                $search_empty_secondary_label = __( '切换到综合搜索', 'developer-starter' );
+                $search_empty_secondary_label = __( '切换到综合搜索', 'qiling' );
             }
             ?>
-            <div class="search-empty-state">
+            <div class="search-empty-state qiling-empty-state">
+                <div class="qiling-empty-state__visual" aria-hidden="true">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                </div>
                 <h2 class="search-empty-state__title">
-                    <?php echo esc_html( 'video' === $search_mode ? __( '没有找到相关影视内容', 'developer-starter' ) : $search_empty_title ); ?>
+                    <?php echo esc_html( 'video' === $search_mode ? __( '没有找到相关影视内容', 'qiling' ) : $search_empty_title ); ?>
                 </h2>
-                <p class="search-empty-state__hint">
-                    <?php echo esc_html( 'video' === $search_mode ? __( '请检查关键词是否正确，或尝试搜索演员、导演或影片名称。', 'developer-starter' ) : $search_empty_text ); ?>
+                <p class="search-empty-state__hint qiling-empty-state__desc">
+                    <?php echo esc_html( 'video' === $search_mode ? __( '请检查关键词是否正确，或尝试搜索演员、导演或影片名称。', 'qiling' ) : $search_empty_text ); ?>
                 </p>
-                <div class="search-empty-actions">
-                    <a class="btn btn-primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '返回首页', 'developer-starter' ); ?></a>
+                <div class="search-empty-actions qiling-empty-state__actions">
+                    <a class="btn btn-primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '返回首页', 'qiling' ); ?></a>
                     <a class="btn btn-outline" href="<?php echo esc_url( $search_empty_secondary_url ); ?>"><?php echo esc_html( $search_empty_secondary_label ); ?></a>
                 </div>
 
                 <?php if ( $recent_search_posts ) : ?>
                     <div class="search-empty-suggestions">
-                        <h3 class="search-empty-suggestions__title"><?php esc_html_e( '最新发布', 'developer-starter' ); ?></h3>
+                        <h3 class="search-empty-suggestions__title"><?php esc_html_e( '最新发布', 'qiling' ); ?></h3>
                         <ul class="search-empty-suggestions__list">
                             <?php foreach ( $recent_search_posts as $recent_post ) : ?>
                                 <li>
                                     <a href="<?php echo esc_url( get_permalink( $recent_post ) ); ?>">
-                                        <?php echo esc_html( get_the_title( $recent_post ) ? get_the_title( $recent_post ) : __( '（无标题）', 'developer-starter' ) ); ?>
+                                        <?php echo esc_html( get_the_title( $recent_post ) ? get_the_title( $recent_post ) : __( '（无标题）', 'qiling' ) ); ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>

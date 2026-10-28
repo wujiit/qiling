@@ -461,7 +461,7 @@ class Page_Package_Manager {
             if ( ! isset( $page_key_to_target[ $front_page_key ] ) ) {
                 $package_warnings[] = sprintf(
                     /* translators: %s: page key */
-                    __( '站点设置里的首页引用 %s 在当前数据包中不存在，导入时将忽略首页设置。', 'developer-starter' ),
+                    __( '站点设置里的首页引用 %s 在当前数据包中不存在，导入时将忽略首页设置。', 'qiling' ),
                     $front_page_key
                 );
             }
@@ -472,7 +472,7 @@ class Page_Package_Manager {
             if ( ! isset( $page_key_to_target[ $posts_page_key ] ) ) {
                 $package_warnings[] = sprintf(
                     /* translators: %s: page key */
-                    __( '站点设置里的文章列表页引用 %s 在当前数据包中不存在，导入时将忽略文章列表页设置。', 'developer-starter' ),
+                    __( '站点设置里的文章列表页引用 %s 在当前数据包中不存在，导入时将忽略文章列表页设置。', 'qiling' ),
                     $posts_page_key
                 );
             }
@@ -582,16 +582,16 @@ class Page_Package_Manager {
     public function get_conflict_strategies() {
         return array(
             self::CONFLICT_STRATEGY_SKIP      => array(
-                'label'       => __( '跳过已存在页面', 'developer-starter' ),
-                'description' => __( '如果 URL 已存在，就跳过该页，不覆盖原页面。', 'developer-starter' ),
+                'label'       => __( '跳过已存在页面', 'qiling' ),
+                'description' => __( '如果 URL 已存在，就跳过该页，不覆盖原页面。', 'qiling' ),
             ),
             self::CONFLICT_STRATEGY_DUPLICATE => array(
-                'label'       => __( '自动生成新 URL', 'developer-starter' ),
-                'description' => __( '如果 URL 已存在，就自动改成新 URL 创建副本。', 'developer-starter' ),
+                'label'       => __( '自动生成新 URL', 'qiling' ),
+                'description' => __( '如果 URL 已存在，就自动改成新 URL 创建副本。', 'qiling' ),
             ),
             self::CONFLICT_STRATEGY_UPDATE    => array(
-                'label'       => __( '仅更新同一数据包历史页面', 'developer-starter' ),
-                'description' => __( '只有匹配同一数据包 ID 和页面标识的旧页面才会更新，其余一律跳过。', 'developer-starter' ),
+                'label'       => __( '仅更新同一数据包历史页面', 'qiling' ),
+                'description' => __( '只有匹配同一数据包 ID 和页面标识的旧页面才会更新，其余一律跳过。', 'qiling' ),
             ),
         );
     }
@@ -604,12 +604,12 @@ class Page_Package_Manager {
     public function get_package_scope_choices() {
         return array(
             self::PACKAGE_SCOPE_PAGE => array(
-                'label'       => __( '页面包', 'developer-starter' ),
-                'description' => __( '用于单页或多页面装修复用，只导出页面模块、页面设置和页面互链。', 'developer-starter' ),
+                'label'       => __( '页面包', 'qiling' ),
+                'description' => __( '用于单页或多页面装修复用，只导出页面模块、页面设置和页面互链。', 'qiling' ),
             ),
             self::PACKAGE_SCOPE_SITE => array(
-                'label'       => __( '整站包', 'developer-starter' ),
-                'description' => __( '用于本地整站迁移，可额外携带全局样式、内容模型、菜单和站点身份设置。', 'developer-starter' ),
+                'label'       => __( '整站包', 'qiling' ),
+                'description' => __( '用于本地整站迁移，可额外携带全局样式、内容模型、菜单和站点身份设置。', 'qiling' ),
             ),
         );
     }
@@ -704,22 +704,22 @@ class Page_Package_Manager {
             array(
                 'slug'     => 'login',
                 'template' => 'templates/template-login.php',
-                'label'    => __( '用户登录', 'developer-starter' ),
+                'label'    => __( '用户登录', 'qiling' ),
             ),
             array(
                 'slug'     => 'register',
                 'template' => 'templates/template-register.php',
-                'label'    => __( '用户注册', 'developer-starter' ),
+                'label'    => __( '用户注册', 'qiling' ),
             ),
             array(
                 'slug'     => 'forgot-password',
                 'template' => 'templates/template-forgot-password.php',
-                'label'    => __( '找回密码', 'developer-starter' ),
+                'label'    => __( '找回密码', 'qiling' ),
             ),
             array(
                 'slug'     => 'account-center',
                 'template' => 'templates/template-account.php',
-                'label'    => __( '个人中心', 'developer-starter' ),
+                'label'    => __( '个人中心', 'qiling' ),
             ),
         );
 

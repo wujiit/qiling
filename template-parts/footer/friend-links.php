@@ -19,7 +19,7 @@ if ( ! $friend_links_enable || ! is_front_page() || empty( $friend_links ) || ! 
 <div class="footer-friend-links footer-section footer-section--friend-links">
     <div class="container">
         <div class="footer-friend-links-row">
-            <span class="footer-friend-links-label"><?php esc_html_e( '友情链接：', 'developer-starter' ); ?></span>
+            <span class="footer-friend-links-label"><?php esc_html_e( '友情链接：', 'qiling' ); ?></span>
             <?php
             foreach ( $friend_links as $link ) :
                 $text = isset( $link['text'] ) ? $link['text'] : '';

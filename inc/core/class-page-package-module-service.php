@@ -75,7 +75,7 @@ class Page_Package_Module_Service {
                 'empty_modules',
                 sprintf(
                     /* translators: %s: page title */
-                    __( '页面“%s”没有可导入的模块数据。', 'developer-starter' ),
+                    __( '页面“%s”没有可导入的模块数据。', 'qiling' ),
                     $page_title
                 )
             );
@@ -86,7 +86,7 @@ class Page_Package_Module_Service {
                 'too_many_modules',
                 sprintf(
                     /* translators: 1: page title 2: module limit */
-                    __( '页面“%1$s”包含的模块数量超过安全上限（最多 %2$d 个），当前数据包不会导入。', 'developer-starter' ),
+                    __( '页面“%1$s”包含的模块数量超过安全上限（最多 %2$d 个），当前数据包不会导入。', 'qiling' ),
                     $page_title,
                     $this->max_modules_per_page
                 )
@@ -106,7 +106,7 @@ class Page_Package_Module_Service {
                     'invalid_module_structure',
                     sprintf(
                         /* translators: 1: page title 2: module index */
-                        __( '页面“%1$s”的第 %2$d 个模块结构无效。', 'developer-starter' ),
+                        __( '页面“%1$s”的第 %2$d 个模块结构无效。', 'qiling' ),
                         $page_title,
                         $module_index + 1
                     )
@@ -119,7 +119,7 @@ class Page_Package_Module_Service {
                     'unknown_module_type',
                     sprintf(
                         /* translators: 1: page title 2: module type */
-                        __( '页面“%1$s”包含未注册模块：%2$s。', 'developer-starter' ),
+                        __( '页面“%1$s”包含未注册模块：%2$s。', 'qiling' ),
                         $page_title,
                         $type
                     )
@@ -165,7 +165,7 @@ class Page_Package_Module_Service {
                 foreach ( $module_warnings as $warning ) {
                     $warnings[] = sprintf(
                         /* translators: 1: module type 2: warning message */
-                        __( '模块 %1$s：%2$s', 'developer-starter' ),
+                        __( '模块 %1$s：%2$s', 'qiling' ),
                         $schemas[ $type ]['name'],
                         $warning
                     );
@@ -176,7 +176,7 @@ class Page_Package_Module_Service {
                 foreach ( $module_style_warnings as $style_warning ) {
                     $style_warnings[] = sprintf(
                         /* translators: 1: module type 2: warning message */
-                        __( '模块 %1$s：%2$s', 'developer-starter' ),
+                        __( '模块 %1$s：%2$s', 'qiling' ),
                         $schemas[ $type ]['name'],
                         $style_warning
                     );
@@ -187,7 +187,7 @@ class Page_Package_Module_Service {
                 foreach ( $module_security_warnings as $security_warning ) {
                     $security_warnings[] = sprintf(
                         /* translators: 1: module type 2: warning message */
-                        __( '模块 %1$s：%2$s', 'developer-starter' ),
+                        __( '模块 %1$s：%2$s', 'qiling' ),
                         $schemas[ $type ]['name'],
                         $security_warning
                     );
@@ -226,7 +226,7 @@ class Page_Package_Module_Service {
         $sanitized = array();
 
         if ( ! is_array( $data ) ) {
-            $warnings[] = __( '模块数据格式无效，已按空数据处理。', 'developer-starter' );
+            $warnings[] = __( '模块数据格式无效，已按空数据处理。', 'qiling' );
             return $sanitized;
         }
 
@@ -241,7 +241,7 @@ class Page_Package_Module_Service {
             } else {
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 未在当前模块注册，已自动忽略。', 'developer-starter' ),
+                    __( '字段 %s 未在当前模块注册，已自动忽略。', 'qiling' ),
                     $path === '' ? $key : $path . '.' . $key
                 );
                 continue;
@@ -254,7 +254,7 @@ class Page_Package_Module_Service {
                     if ( count( $value ) > $this->max_repeater_items ) {
                         $security_warnings[] = sprintf(
                             /* translators: 1: field path 2: item limit */
-                            __( '字段 %1$s 的列表项数量超过安全上限，导入时仅保留前 %2$d 项。', 'developer-starter' ),
+                            __( '字段 %1$s 的列表项数量超过安全上限，导入时仅保留前 %2$d 项。', 'qiling' ),
                             $path === '' ? $key : $path . '.' . $key,
                             $this->max_repeater_items
                         );
@@ -266,7 +266,7 @@ class Page_Package_Module_Service {
                         if ( ! is_array( $item ) ) {
                             $warnings[] = sprintf(
                                 /* translators: %s: field path */
-                                __( '字段 %s 的子项格式无效，已跳过。', 'developer-starter' ),
+                                __( '字段 %s 的子项格式无效，已跳过。', 'qiling' ),
                                 $path === '' ? $key . '[' . $item_index . ']' : $path . '.' . $key . '[' . $item_index . ']'
                             );
                             continue;
@@ -323,7 +323,7 @@ class Page_Package_Module_Service {
 
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的结构无效，已忽略。', 'developer-starter' ),
+                    __( '字段 %s 的结构无效，已忽略。', 'qiling' ),
                     $field_path
                 );
                 continue;
@@ -332,7 +332,7 @@ class Page_Package_Module_Service {
             if ( 'repeater' === $field_type ) {
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 不是列表结构，已忽略。', 'developer-starter' ),
+                    __( '字段 %s 不是列表结构，已忽略。', 'qiling' ),
                     $path === '' ? $key : $path . '.' . $key
                 );
                 continue;
@@ -348,7 +348,7 @@ class Page_Package_Module_Service {
                 if ( '' !== $original_value && $original_value !== $value ) {
                     $style_warnings[] = sprintf(
                         /* translators: %s: field path */
-                        __( '字段 %s 的间距值已被自动规范化，导入后间距表现可能与原包略有差异。', 'developer-starter' ),
+                        __( '字段 %s 的间距值已被自动规范化，导入后间距表现可能与原包略有差异。', 'qiling' ),
                         $field_path
                     );
                 }
@@ -517,7 +517,7 @@ class Page_Package_Module_Service {
                     if ( '' !== $raw_value ) {
                         $style_warnings[] = sprintf(
                             /* translators: %s: field path */
-                            __( '字段 %s 的选项值不受当前主题支持，已回退到模块默认值。', 'developer-starter' ),
+                            __( '字段 %s 的选项值不受当前主题支持，已回退到模块默认值。', 'qiling' ),
                             $field_path
                         );
                     }
@@ -529,7 +529,7 @@ class Page_Package_Module_Service {
                     if ( '' !== $raw_value ) {
                         $style_warnings[] = sprintf(
                             /* translators: %s: field path */
-                            __( '字段 %s 的选项值不受当前主题支持，已回退到模块默认值。', 'developer-starter' ),
+                            __( '字段 %s 的选项值不受当前主题支持，已回退到模块默认值。', 'qiling' ),
                             $field_path
                         );
                     }
@@ -539,7 +539,7 @@ class Page_Package_Module_Service {
                 if ( '' !== $raw_value ) {
                     $style_warnings[] = sprintf(
                         /* translators: %s: field path */
-                        __( '字段 %s 的选项值不受当前主题支持，已回退到模块默认值。', 'developer-starter' ),
+                        __( '字段 %s 的选项值不受当前主题支持，已回退到模块默认值。', 'qiling' ),
                         $field_path
                     );
                 }
@@ -551,7 +551,7 @@ class Page_Package_Module_Service {
             if ( '' !== $raw_value ) {
                 $style_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的选项值不受当前主题支持，已回退到第一个可用选项。', 'developer-starter' ),
+                    __( '字段 %s 的选项值不受当前主题支持，已回退到第一个可用选项。', 'qiling' ),
                     $field_path
                 );
             }
@@ -602,7 +602,7 @@ class Page_Package_Module_Service {
             if ( '' !== $original_value && $original_value !== $sanitized_spacing ) {
                 $style_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的间距值已被自动规范化，导入后间距表现可能与原包略有差异。', 'developer-starter' ),
+                    __( '字段 %s 的间距值已被自动规范化，导入后间距表现可能与原包略有差异。', 'qiling' ),
                     '' !== $field_path ? $field_path : $key
                 );
             }
@@ -627,12 +627,12 @@ class Page_Package_Module_Service {
             if ( '' !== trim( $original_value ) && '' === $sanitized_url ) {
                 $security_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 使用了不在白名单内的链接协议（仅支持 http/https/mailto/tel 与 qiling://page/*、qiling://system/*），导入时已自动清理。', 'developer-starter' ),
+                    __( '字段 %s 使用了不在白名单内的链接协议（仅支持 http/https/mailto/tel 与 qiling://page/*、qiling://system/*），导入时已自动清理。', 'qiling' ),
                     '' !== $field_path ? $field_path : $key
                 );
                 $style_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的链接已被清理，导入后相关按钮或跳转可能不可用。', 'developer-starter' ),
+                    __( '字段 %s 的链接已被清理，导入后相关按钮或跳转可能不可用。', 'qiling' ),
                     '' !== $field_path ? $field_path : $key
                 );
             }
@@ -648,12 +648,12 @@ class Page_Package_Module_Service {
             if ( '' !== trim( $original_value ) && '' === $sanitized_media ) {
                 $security_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 使用了不安全或无效的媒体地址，导入时已自动清理。', 'developer-starter' ),
+                    __( '字段 %s 使用了不安全或无效的媒体地址，导入时已自动清理。', 'qiling' ),
                     '' !== $field_path ? $field_path : $key
                 );
                 $style_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的媒体地址无效，导入后相关图片或文件位可能不显示。', 'developer-starter' ),
+                    __( '字段 %s 的媒体地址无效，导入后相关图片或文件位可能不显示。', 'qiling' ),
                     '' !== $field_path ? $field_path : $key
                 );
             }
@@ -667,7 +667,7 @@ class Page_Package_Module_Service {
                     if ( '' !== trim( $original_value ) && '' === trim( $sanitized_svg ) ) {
                         $style_warnings[] = sprintf(
                             /* translators: %s: field path */
-                            __( '字段 %s 的 SVG 图标未通过安全过滤，导入后图标可能缺失。', 'developer-starter' ),
+                            __( '字段 %s 的 SVG 图标未通过安全过滤，导入后图标可能缺失。', 'qiling' ),
                             '' !== $field_path ? $field_path : $key
                         );
                     }
@@ -678,7 +678,7 @@ class Page_Package_Module_Service {
                 if ( '' !== trim( $original_value ) && '' === trim( $sanitized_svg ) ) {
                     $style_warnings[] = sprintf(
                         /* translators: %s: field path */
-                        __( '字段 %s 的 SVG 图标未通过安全过滤，导入后图标可能缺失。', 'developer-starter' ),
+                        __( '字段 %s 的 SVG 图标未通过安全过滤，导入后图标可能缺失。', 'qiling' ),
                         '' !== $field_path ? $field_path : $key
                     );
                 }
@@ -785,7 +785,7 @@ class Page_Package_Module_Service {
 
         $style_warnings[] = sprintf(
             /* translators: %s: field path */
-            __( '字段 %s 的文案较长，导入后可能出现换行、挤压卡片或按钮尺寸变化。', 'developer-starter' ),
+            __( '字段 %s 的文案较长，导入后可能出现换行、挤压卡片或按钮尺寸变化。', 'qiling' ),
             '' !== $field_path ? $field_path : $key
         );
     }
@@ -809,7 +809,7 @@ class Page_Package_Module_Service {
         if ( preg_match( '/<\s*(script|iframe|object|embed|form|style|link)\b/i', $value ) ) {
             $security_warnings[] = sprintf(
                 /* translators: %s: field path */
-                __( '字段 %s 包含高风险 HTML 标签，导入时会按主题安全规则自动过滤。', 'developer-starter' ),
+                __( '字段 %s 包含高风险 HTML 标签，导入时会按主题安全规则自动过滤。', 'qiling' ),
                 '' !== $field_path ? $field_path : $key
             );
         }
@@ -817,7 +817,7 @@ class Page_Package_Module_Service {
         if ( preg_match( '/\son[a-z]+\s*=/i', $value ) ) {
             $security_warnings[] = sprintf(
                 /* translators: %s: field path */
-                __( '字段 %s 包含事件属性写法，导入时会按主题安全规则自动过滤。', 'developer-starter' ),
+                __( '字段 %s 包含事件属性写法，导入时会按主题安全规则自动过滤。', 'qiling' ),
                 '' !== $field_path ? $field_path : $key
             );
         }
@@ -825,7 +825,7 @@ class Page_Package_Module_Service {
         if ( strlen( $value ) > 20000 ) {
             $security_warnings[] = sprintf(
                 /* translators: %s: field path */
-                __( '字段 %s 的内容体积较大，建议导入后关注页面性能与缓存命中情况。', 'developer-starter' ),
+                __( '字段 %s 的内容体积较大，建议导入后关注页面性能与缓存命中情况。', 'qiling' ),
                 '' !== $field_path ? $field_path : $key
             );
         }

@@ -93,8 +93,8 @@ class SEO_Health_Check {
             self::add_record_rule_issues( $record, $buckets, $counts );
         }
 
-        self::add_duplicate_issues( $seen_titles, 'duplicate_title', __( 'SEO 标题重复', 'developer-starter' ), $buckets, $counts );
-        self::add_duplicate_issues( $seen_descriptions, 'duplicate_description', __( 'SEO 描述重复', 'developer-starter' ), $buckets, $counts );
+        self::add_duplicate_issues( $seen_titles, 'duplicate_title', __( 'SEO 标题重复', 'qiling' ), $buckets, $counts );
+        self::add_duplicate_issues( $seen_descriptions, 'duplicate_description', __( 'SEO 描述重复', 'qiling' ), $buckets, $counts );
 
         $snapshot = array(
             'version'      => 1,
@@ -106,7 +106,7 @@ class SEO_Health_Check {
                 'total_issues'     => array_sum( $counts ),
                 'stored_issues'    => count( $buckets['critical'] ) + count( $buckets['warning'] ) + count( $buckets['info'] ),
                 'storage'          => 'transient',
-                'retention'        => __( '仅保存最近一次轻量快照，可自动过期或手动清除。', 'developer-starter' ),
+                'retention'        => __( '仅保存最近一次轻量快照，可自动过期或手动清除。', 'qiling' ),
             ),
             'issues'       => $buckets,
         );
@@ -147,38 +147,38 @@ class SEO_Health_Check {
         $score         = 100;
         $checks        = array();
 
-        self::push_score_check( $checks, $score, '' !== $seo_title, __( 'SEO 标题', 'developer-starter' ), __( '已填写 SEO 标题。', 'developer-starter' ), __( '建议填写独立 SEO 标题。', 'developer-starter' ), 12 );
-        self::push_score_check( $checks, $score, $title_length >= 10 && $title_length <= 70, __( '标题长度', 'developer-starter' ), __( '标题长度处于常用范围。', 'developer-starter' ), __( '标题建议控制在 10-70 个字符。', 'developer-starter' ), 10 );
-        self::push_score_check( $checks, $score, '' !== $seo_description, __( 'SEO 描述', 'developer-starter' ), __( '已填写 SEO 描述。', 'developer-starter' ), __( '建议填写页面 SEO 描述。', 'developer-starter' ), 16 );
-        self::push_score_check( $checks, $score, $desc_length >= 50 && $desc_length <= 160, __( '描述长度', 'developer-starter' ), __( '描述长度处于常用范围。', 'developer-starter' ), __( '描述建议控制在 50-160 个字符。', 'developer-starter' ), 10 );
-        self::push_score_check( $checks, $score, $content_length >= ( 'post' === $post->post_type ? 300 : 120 ), __( '内容长度', 'developer-starter' ), __( '正文/模块文本量基本够用。', 'developer-starter' ), __( '当前内容偏短，建议补充更完整的信息。', 'developer-starter' ), 10 );
+        self::push_score_check( $checks, $score, '' !== $seo_title, __( 'SEO 标题', 'qiling' ), __( '已填写 SEO 标题。', 'qiling' ), __( '建议填写独立 SEO 标题。', 'qiling' ), 12 );
+        self::push_score_check( $checks, $score, $title_length >= 10 && $title_length <= 70, __( '标题长度', 'qiling' ), __( '标题长度处于常用范围。', 'qiling' ), __( '标题建议控制在 10-70 个字符。', 'qiling' ), 10 );
+        self::push_score_check( $checks, $score, '' !== $seo_description, __( 'SEO 描述', 'qiling' ), __( '已填写 SEO 描述。', 'qiling' ), __( '建议填写页面 SEO 描述。', 'qiling' ), 16 );
+        self::push_score_check( $checks, $score, $desc_length >= 50 && $desc_length <= 160, __( '描述长度', 'qiling' ), __( '描述长度处于常用范围。', 'qiling' ), __( '描述建议控制在 50-160 个字符。', 'qiling' ), 10 );
+        self::push_score_check( $checks, $score, $content_length >= ( 'post' === $post->post_type ? 300 : 120 ), __( '内容长度', 'qiling' ), __( '正文/模块文本量基本够用。', 'qiling' ), __( '当前内容偏短，建议补充更完整的信息。', 'qiling' ), 10 );
 
         if ( ! empty( $seo_keywords ) ) {
             $primary_keyword = $seo_keywords[0];
             $lower_title     = self::normalize_text( $effective_title );
             $lower_content   = self::normalize_text( $content_text );
             $lower_keyword   = self::normalize_text( $primary_keyword );
-            self::push_score_check( $checks, $score, false !== strpos( $lower_title, $lower_keyword ), __( '关键词标题覆盖', 'developer-starter' ), __( '主关键词已出现在标题中。', 'developer-starter' ), __( '建议让主关键词自然出现在标题中。', 'developer-starter' ), 8 );
-            self::push_score_check( $checks, $score, false !== strpos( $lower_content, $lower_keyword ), __( '关键词内容覆盖', 'developer-starter' ), __( '主关键词已出现在正文或模块文本中。', 'developer-starter' ), __( '建议在正文或模块文本中自然覆盖主关键词。', 'developer-starter' ), 8 );
+            self::push_score_check( $checks, $score, false !== strpos( $lower_title, $lower_keyword ), __( '关键词标题覆盖', 'qiling' ), __( '主关键词已出现在标题中。', 'qiling' ), __( '建议让主关键词自然出现在标题中。', 'qiling' ), 8 );
+            self::push_score_check( $checks, $score, false !== strpos( $lower_content, $lower_keyword ), __( '关键词内容覆盖', 'qiling' ), __( '主关键词已出现在正文或模块文本中。', 'qiling' ), __( '建议在正文或模块文本中自然覆盖主关键词。', 'qiling' ), 8 );
         } else {
-            self::push_score_check( $checks, $score, false, __( 'SEO 关键词', 'developer-starter' ), '', __( '建议填写 1-3 个核心关键词，便于基础检查。', 'developer-starter' ), 8 );
+            self::push_score_check( $checks, $score, false, __( 'SEO 关键词', 'qiling' ), '', __( '建议填写 1-3 个核心关键词，便于基础检查。', 'qiling' ), 8 );
         }
 
-        self::push_score_check( $checks, $score, $has_image, __( '分享/特色图', 'developer-starter' ), __( '已检测到特色图或 OG 图片。', 'developer-starter' ), __( '建议设置特色图或 OG 图片。', 'developer-starter' ), 8 );
+        self::push_score_check( $checks, $score, $has_image, __( '分享/特色图', 'qiling' ), __( '已检测到特色图或 OG 图片。', 'qiling' ), __( '建议设置特色图或 OG 图片。', 'qiling' ), 8 );
         if ( $image_stats['total'] > 0 ) {
             self::push_score_check(
                 $checks,
                 $score,
                 0 === $image_stats['missing_alt'],
-                __( '图片 Alt', 'developer-starter' ),
-                __( '正文图片均带有 alt 文本。', 'developer-starter' ),
-                sprintf( __( '检测到 %d 张正文图片缺少 alt 文本。', 'developer-starter' ), (int) $image_stats['missing_alt'] ),
+                __( '图片 Alt', 'qiling' ),
+                __( '正文图片均带有 alt 文本。', 'qiling' ),
+                sprintf( __( '检测到 %d 张正文图片缺少 alt 文本。', 'qiling' ), (int) $image_stats['missing_alt'] ),
                 6
             );
         }
-        self::push_score_check( $checks, $score, $internal_urls > 0, __( '内部链接', 'developer-starter' ), __( '正文中包含内部链接。', 'developer-starter' ), __( '可以加入相关页面的内部链接。', 'developer-starter' ), 5 );
+        self::push_score_check( $checks, $score, $internal_urls > 0, __( '内部链接', 'qiling' ), __( '正文中包含内部链接。', 'qiling' ), __( '可以加入相关页面的内部链接。', 'qiling' ), 5 );
         if ( '' !== $canonical ) {
-            self::push_score_check( $checks, $score, self::is_valid_url( $canonical ), __( 'Canonical', 'developer-starter' ), __( 'Canonical URL 格式有效。', 'developer-starter' ), __( 'Canonical URL 格式异常，请检查。', 'developer-starter' ), 10 );
+            self::push_score_check( $checks, $score, self::is_valid_url( $canonical ), __( 'Canonical', 'qiling' ), __( 'Canonical URL 格式有效。', 'qiling' ), __( 'Canonical URL 格式异常，请检查。', 'qiling' ), 10 );
         }
 
         $score = max( 0, min( 100, $score ) );
@@ -346,9 +346,9 @@ class SEO_Health_Check {
         $title = get_the_title( $post_id );
         return array(
             'object_type'     => $post_type,
-            'object_label'    => 'page' === $post_type ? __( '页面', 'developer-starter' ) : __( '文章', 'developer-starter' ),
+            'object_label'    => 'page' === $post_type ? __( '页面', 'qiling' ) : __( '文章', 'qiling' ),
             'object_id'       => absint( $post_id ),
-            'title'           => '' !== (string) $title ? (string) $title : sprintf( __( '未命名 #%d', 'developer-starter' ), absint( $post_id ) ),
+            'title'           => '' !== (string) $title ? (string) $title : sprintf( __( '未命名 #%d', 'qiling' ), absint( $post_id ) ),
             'edit_url'        => get_edit_post_link( $post_id, '' ),
             'seo_title'       => trim( (string) get_post_meta( $post_id, '_developer_starter_seo_title', true ) ),
             'seo_description' => trim( (string) get_post_meta( $post_id, '_developer_starter_seo_description', true ) ),
@@ -368,7 +368,7 @@ class SEO_Health_Check {
     private static function build_term_record( $term ) {
         return array(
             'object_type'     => 'category',
-            'object_label'    => __( '分类', 'developer-starter' ),
+            'object_label'    => __( '分类', 'qiling' ),
             'object_id'       => isset( $term->term_id ) ? absint( $term->term_id ) : 0,
             'title'           => isset( $term->name ) ? (string) $term->name : '',
             'edit_url'        => isset( $term->term_id ) ? get_edit_term_link( $term->term_id, 'category' ) : '',
@@ -397,27 +397,27 @@ class SEO_Health_Check {
         $is_category     = isset( $record['object_type'] ) && 'category' === $record['object_type'];
 
         if ( '' === $seo_title ) {
-            self::add_issue( $buckets, $counts, $record, 'warning', 'missing_title', __( '缺少 SEO 标题', 'developer-starter' ) );
+            self::add_issue( $buckets, $counts, $record, 'warning', 'missing_title', __( '缺少 SEO 标题', 'qiling' ) );
         } elseif ( self::text_length( $seo_title ) < 10 || self::text_length( $seo_title ) > 70 ) {
-            self::add_issue( $buckets, $counts, $record, 'warning', 'title_length', __( 'SEO 标题长度建议控制在 10-70 个字符。', 'developer-starter' ) );
+            self::add_issue( $buckets, $counts, $record, 'warning', 'title_length', __( 'SEO 标题长度建议控制在 10-70 个字符。', 'qiling' ) );
         }
 
         if ( '' === $seo_description ) {
-            self::add_issue( $buckets, $counts, $record, 'critical', 'missing_description', __( '缺少 SEO 描述', 'developer-starter' ) );
+            self::add_issue( $buckets, $counts, $record, 'critical', 'missing_description', __( '缺少 SEO 描述', 'qiling' ) );
         } elseif ( self::text_length( $seo_description ) < 50 || self::text_length( $seo_description ) > 160 ) {
-            self::add_issue( $buckets, $counts, $record, 'warning', 'description_length', __( 'SEO 描述建议控制在 50-160 个字符。', 'developer-starter' ) );
+            self::add_issue( $buckets, $counts, $record, 'warning', 'description_length', __( 'SEO 描述建议控制在 50-160 个字符。', 'qiling' ) );
         }
 
         if ( '' !== $canonical && ! self::is_valid_url( $canonical ) ) {
-            self::add_issue( $buckets, $counts, $record, 'critical', 'canonical_invalid', __( '自定义 canonical URL 格式异常。', 'developer-starter' ) );
+            self::add_issue( $buckets, $counts, $record, 'critical', 'canonical_invalid', __( '自定义 canonical URL 格式异常。', 'qiling' ) );
         }
 
         if ( ! $is_category && '' === $og_image ) {
-            self::add_issue( $buckets, $counts, $record, 'info', 'missing_og_image', __( '未设置 OG 图片；可回退特色图，但建议关键页面单独设置。', 'developer-starter' ) );
+            self::add_issue( $buckets, $counts, $record, 'info', 'missing_og_image', __( '未设置 OG 图片；可回退特色图，但建议关键页面单独设置。', 'qiling' ) );
         }
 
         if ( ! empty( $record['noindex'] ) ) {
-            self::add_issue( $buckets, $counts, $record, 'info', 'noindex', __( '该内容设置了 noindex，请确认这是有意设置。', 'developer-starter' ) );
+            self::add_issue( $buckets, $counts, $record, 'info', 'noindex', __( '该内容设置了 noindex，请确认这是有意设置。', 'qiling' ) );
         }
     }
 
@@ -687,12 +687,12 @@ class SEO_Health_Check {
      */
     private static function score_grade( $score ) {
         if ( $score >= 85 ) {
-            return __( '良好', 'developer-starter' );
+            return __( '良好', 'qiling' );
         }
         if ( $score >= 65 ) {
-            return __( '可优化', 'developer-starter' );
+            return __( '可优化', 'qiling' );
         }
-        return __( '需要处理', 'developer-starter' );
+        return __( '需要处理', 'qiling' );
     }
 
     /**

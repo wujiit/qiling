@@ -13,8 +13,8 @@
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-solutions',
-        DEVELOPER_STARTER_ASSETS . '/css/solutions.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/solutions.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 }, 20 );

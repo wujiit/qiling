@@ -116,10 +116,10 @@ function developer_starter_normalize_search_scope( $scope ) {
  */
 function developer_starter_get_search_scope_choices() {
     return array(
-        'all'     => __( '全部', 'developer-starter' ),
-        'title'   => __( '标题', 'developer-starter' ),
-        'content' => __( '正文', 'developer-starter' ),
-        'tag'     => __( '标签', 'developer-starter' ),
+        'all'     => __( '全部', 'qiling' ),
+        'title'   => __( '标题', 'qiling' ),
+        'content' => __( '正文', 'qiling' ),
+        'tag'     => __( '标签', 'qiling' ),
     );
 }
 
@@ -417,7 +417,7 @@ function developer_starter_is_public_ajax_rate_limited( $scope, $default_max_req
  */
 function developer_starter_send_public_ajax_rate_limited( $message = '' ) {
     if ( '' === $message ) {
-        $message = __( '请求过于频繁，请稍后再试', 'developer-starter' );
+        $message = __( '请求过于频繁，请稍后再试', 'qiling' );
     }
 
     nocache_headers();
@@ -438,12 +438,12 @@ function developer_starter_send_public_ajax_rate_limited( $message = '' ) {
  */
 function developer_starter_die_public_ajax_rate_limited( $message = '' ) {
     if ( '' === $message ) {
-        $message = __( '请求过于频繁，请稍后再试', 'developer-starter' );
+        $message = __( '请求过于频繁，请稍后再试', 'qiling' );
     }
 
     status_header( 429 );
     nocache_headers();
-    wp_die( esc_html( $message ), esc_html__( 'Too Many Requests', 'developer-starter' ), array( 'response' => 429 ) );
+    wp_die( esc_html( $message ), esc_html__( 'Too Many Requests', 'qiling' ), array( 'response' => 429 ) );
 }
 
 /**
@@ -464,7 +464,7 @@ function developer_starter_guard_public_search_rate_limit() {
     if ( developer_starter_is_rate_limited( 'public_search', $search_max, $window ) ) {
         status_header( 429 );
         nocache_headers();
-        wp_die( esc_html__( '请求过于频繁，请稍后再试。', 'developer-starter' ), 'Too Many Requests', array( 'response' => 429 ) );
+        wp_die( esc_html__( '请求过于频繁，请稍后再试。', 'qiling' ), 'Too Many Requests', array( 'response' => 429 ) );
     }
 }
 add_action( 'template_redirect', 'developer_starter_guard_public_search_rate_limit', 0 );

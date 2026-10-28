@@ -21,7 +21,7 @@ class Skills_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-chart-bar';
-        $this->description = __( '技能进度条展示，适合简历和作品集网站', 'developer-starter' );
+        $this->description = __( '技能进度条展示，适合简历和作品集网站', 'qiling' );
     }
 
     public function get_id() {
@@ -29,47 +29,47 @@ class Skills_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '技能进度条', 'developer-starter' );
+        return __( '技能进度条', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             // === 基础设置 ===
-            array( 'id' => 'skills_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => __( '专业技能', 'developer-starter' ) ),
-            array( 'id' => 'skills_title_size', 'type' => 'text', 'label' => __( '标题字体大小', 'developer-starter' ), 'default' => '', 'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ) ),
-            array( 'id' => 'skills_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'skills_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
-            array( 'id' => 'skills_subtitle_size', 'type' => 'text', 'label' => __( '副标题字体大小', 'developer-starter' ), 'default' => '', 'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ) ),
-            array( 'id' => 'skills_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'skills_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => __( '专业技能', 'qiling' ) ),
+            array( 'id' => 'skills_title_size', 'type' => 'text', 'label' => __( '标题字体大小', 'qiling' ), 'default' => '', 'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ) ),
+            array( 'id' => 'skills_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'skills_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
+            array( 'id' => 'skills_subtitle_size', 'type' => 'text', 'label' => __( '副标题字体大小', 'qiling' ), 'default' => '', 'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ) ),
+            array( 'id' => 'skills_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ), 'default' => '' ),
             
             // === 背景设置 ===
             array( 
                 'id' => 'skills_bg_type', 
                 'type' => 'select', 
-                'label' => __( '背景类型', 'developer-starter' ), 
-                'options' => array( 'color' => __( '纯色/渐变背景', 'developer-starter' ), 'image' => __( '图片背景', 'developer-starter' ) ), 
+                'label' => __( '背景类型', 'qiling' ), 
+                'options' => array( 'color' => __( '纯色/渐变背景', 'qiling' ), 'image' => __( '图片背景', 'qiling' ) ), 
                 'default' => 'color' 
             ),
             array( 
                 'id' => 'skills_bg_color', 
                 'type' => 'text', 
-                'label' => __( '背景颜色(支持渐变)', 'developer-starter' ), 
+                'label' => __( '背景颜色(支持渐变)', 'qiling' ), 
                 'default' => '',
-                'description' => __( '如 var(--color-neutral-50) 或 linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)', 'developer-starter' ),
+                'description' => __( '如 var(--color-neutral-50) 或 linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)', 'qiling' ),
                 'dependency' => array( 'skills_bg_type', '==', 'color' )
             ),
             array( 
                 'id' => 'skills_bg_image', 
                 'type' => 'image', 
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'dependency' => array( 'skills_bg_type', '==', 'image' )
             ),
             array( 
                 'id' => 'skills_bg_overlay', 
                 'type' => 'select', 
-                'label' => __( '背景遮罩浓度', 'developer-starter' ), 
+                'label' => __( '背景遮罩浓度', 'qiling' ), 
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ), '0.1' => '10%', '0.2' => '20%', '0.3' => '30%', 
+                    '0' => __( '无遮罩', 'qiling' ), '0.1' => '10%', '0.2' => '20%', '0.3' => '30%', 
                     '0.4' => '40%', '0.5' => '50%', '0.6' => '60%', '0.7' => '70%', 
                     '0.8' => '80%', '0.9' => '90%'
                 ), 
@@ -78,23 +78,23 @@ class Skills_Module extends Module_Base {
             ),
             
             // === 间距设置 ===
-            array( 'id' => 'skills_padding_top', 'type' => 'text', 'label' => __( '上边距 (如 60px)', 'developer-starter' ), 'default' => '60px' ),
-            array( 'id' => 'skills_padding_bottom', 'type' => 'text', 'label' => __( '下边距 (如 60px)', 'developer-starter' ), 'default' => '60px' ),
+            array( 'id' => 'skills_padding_top', 'type' => 'text', 'label' => __( '上边距 (如 60px)', 'qiling' ), 'default' => '60px' ),
+            array( 'id' => 'skills_padding_bottom', 'type' => 'text', 'label' => __( '下边距 (如 60px)', 'qiling' ), 'default' => '60px' ),
             
             // === 布局设置 ===
-            array( 'id' => 'skills_layout', 'type' => 'select', 'label' => __( '布局方式', 'developer-starter' ), 'options' => array( 'single' => __( '单列', 'developer-starter' ), 'double' => __( '双列', 'developer-starter' ) ), 'default' => 'single' ),
-            array( 'id' => 'skills_style', 'type' => 'select', 'label' => __( '展示样式', 'developer-starter' ), 'options' => array( 'bar' => __( '进度条', 'developer-starter' ), 'circle' => __( '圆环', 'developer-starter' ) ), 'default' => 'bar' ),
-            array( 'id' => 'skills_bar_height', 'type' => 'text', 'label' => __( '进度条高度', 'developer-starter' ), 'default' => '10px' ),
-            array( 'id' => 'skills_bar_color', 'type' => 'text', 'label' => __( '进度条颜色/主色', 'developer-starter' ), 'default' => '', 'description' => __( '支持颜色值或渐变，留空时跟随全局主色与强调色', 'developer-starter' ) ),
-            array( 'id' => 'skills_bar_bg', 'type' => 'color', 'label' => __( '进度条背景/底色', 'developer-starter' ), 'default' => 'var(--color-neutral-200)' ),
-            array( 'id' => 'skills_show_percent', 'type' => 'select', 'label' => __( '显示百分比', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
-            array( 'id' => 'skills_animate', 'type' => 'select', 'label' => __( '启用动画', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
+            array( 'id' => 'skills_layout', 'type' => 'select', 'label' => __( '布局方式', 'qiling' ), 'options' => array( 'single' => __( '单列', 'qiling' ), 'double' => __( '双列', 'qiling' ) ), 'default' => 'single' ),
+            array( 'id' => 'skills_style', 'type' => 'select', 'label' => __( '展示样式', 'qiling' ), 'options' => array( 'bar' => __( '进度条', 'qiling' ), 'circle' => __( '圆环', 'qiling' ) ), 'default' => 'bar' ),
+            array( 'id' => 'skills_bar_height', 'type' => 'text', 'label' => __( '进度条高度', 'qiling' ), 'default' => '10px' ),
+            array( 'id' => 'skills_bar_color', 'type' => 'text', 'label' => __( '进度条颜色/主色', 'qiling' ), 'default' => '', 'description' => __( '支持颜色值或渐变，留空时跟随全局主色与强调色', 'qiling' ) ),
+            array( 'id' => 'skills_bar_bg', 'type' => 'color', 'label' => __( '进度条背景/底色', 'qiling' ), 'default' => 'var(--color-neutral-200)' ),
+            array( 'id' => 'skills_show_percent', 'type' => 'select', 'label' => __( '显示百分比', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
+            array( 'id' => 'skills_animate', 'type' => 'select', 'label' => __( '启用动画', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
             
             // === 技能分组 ===
-            array( 'id' => 'skills_group1_title', 'type' => 'text', 'label' => __( '分组1标题', 'developer-starter' ) ),
-            array( 'id' => 'skills_group1', 'type' => 'repeater', 'label' => __( '分组1技能列表', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'name', 'type' => 'text', 'label' => __( '技能名称', 'developer-starter' ) ),
-                array( 'id' => 'percent', 'type' => 'number', 'label' => __( '百分比 (0-100)', 'developer-starter' ) ),
+            array( 'id' => 'skills_group1_title', 'type' => 'text', 'label' => __( '分组1标题', 'qiling' ) ),
+            array( 'id' => 'skills_group1', 'type' => 'repeater', 'label' => __( '分组1技能列表', 'qiling' ), 'fields' => array(
+                array( 'id' => 'name', 'type' => 'text', 'label' => __( '技能名称', 'qiling' ) ),
+                array( 'id' => 'percent', 'type' => 'number', 'label' => __( '百分比 (0-100)', 'qiling' ) ),
             ),
             'default_items' => array(
                 array( 'name' => 'HTML/CSS', 'percent' => '95' ),
@@ -103,10 +103,10 @@ class Skills_Module extends Module_Base {
                 array( 'name' => 'PHP/WordPress', 'percent' => '75' ),
             ) ),
             
-            array( 'id' => 'skills_group2_title', 'type' => 'text', 'label' => __( '分组2标题 (双列布局有效)', 'developer-starter' ) ),
-            array( 'id' => 'skills_group2', 'type' => 'repeater', 'label' => __( '分组2技能列表', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'name', 'type' => 'text', 'label' => __( '技能名称', 'developer-starter' ) ),
-                array( 'id' => 'percent', 'type' => 'number', 'label' => __( '百分比 (0-100)', 'developer-starter' ) ),
+            array( 'id' => 'skills_group2_title', 'type' => 'text', 'label' => __( '分组2标题 (双列布局有效)', 'qiling' ) ),
+            array( 'id' => 'skills_group2', 'type' => 'repeater', 'label' => __( '分组2技能列表', 'qiling' ), 'fields' => array(
+                array( 'id' => 'name', 'type' => 'text', 'label' => __( '技能名称', 'qiling' ) ),
+                array( 'id' => 'percent', 'type' => 'number', 'label' => __( '百分比 (0-100)', 'qiling' ) ),
             ) ),
         );
     }

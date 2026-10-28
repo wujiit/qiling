@@ -25,7 +25,7 @@ class Category_Tabs_Ajax {
      */
     public function load_posts() {
         if ( $this->is_rate_limited() ) {
-            wp_send_json_error( array( 'message' => __( '请求过于频繁，请稍后重试', 'developer-starter' ) ), 429 );
+            wp_send_json_error( array( 'message' => __( '请求过于频繁，请稍后重试', 'qiling' ) ), 429 );
         }
 
         $type = isset( $_POST['type'] ) ? sanitize_text_field( wp_unslash( $_POST['type'] ) ) : '';
@@ -40,11 +40,11 @@ class Category_Tabs_Ajax {
         );
 
         if ( empty( $type ) || empty( $id_str ) ) {
-            wp_send_json_error( array( 'message' => __( '参数无效', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '参数无效', 'qiling' ) ) );
         }
 
         if ( ! in_array( $type, array( 'category', 'tag' ), true ) ) {
-            wp_send_json_error( array( 'message' => __( '分类类型无效', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '分类类型无效', 'qiling' ) ) );
         }
 
         $args = array(
@@ -59,7 +59,7 @@ class Category_Tabs_Ajax {
         $ids = array_slice( array_filter( array_map( 'intval', explode( ',', $id_str ) ) ), 0, 20 );
 
         if ( empty( $ids ) ) {
-            wp_send_json_error( array( 'message' => __( '无效的 ID', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '无效的 ID', 'qiling' ) ) );
         }
 
         if ( $type === 'category' ) {
@@ -186,7 +186,7 @@ class Category_Tabs_Ajax {
             'show_resource_price' => in_array( $show_resource_price, $yes_no, true ) ? $show_resource_price : 'no',
             'show_download_button' => in_array( $show_download_button, $yes_no, true ) ? $show_download_button : 'no',
             'download_button_text' => $this->truncate_config_text(
-                $this->get_config_string( $config, 'download_button_text', __( '获取图片', 'developer-starter' ) ),
+                $this->get_config_string( $config, 'download_button_text', __( '获取图片', 'qiling' ) ),
                 40
             ),
             'image_aspect_ratio' => in_array( $image_aspect_ratio, $aspect_ratios, true )
@@ -302,7 +302,7 @@ class Category_Tabs_Ajax {
         $show_download_button = isset( $config['show_download_button'] ) && $config['show_download_button'] === 'yes';
         $download_button_text = isset( $config['download_button_text'] ) && '' !== trim( (string) $config['download_button_text'] )
             ? (string) $config['download_button_text']
-            : __( '获取图片', 'developer-starter' );
+            : __( '获取图片', 'qiling' );
         $card_style = isset( $config['card_style'] ) && 'wallpaper' === $config['card_style'] ? 'wallpaper' : 'default';
         $aspect_ratio = isset($config['image_aspect_ratio']) ? $config['image_aspect_ratio'] : '16:9';
         $custom_height = isset($config['image_height']) ? $config['image_height'] : '200px';
@@ -363,11 +363,11 @@ class Category_Tabs_Ajax {
         $resource_price_text = '';
         if ( $show_resource_price && $has_resource ) {
             if ( ! empty( $resource['is_free'] ) ) {
-                $resource_price_text = __( '免费', 'developer-starter' );
+                $resource_price_text = __( '免费', 'qiling' );
             } elseif ( ! empty( $resource['has_price'] ) && isset( $resource['points_price'] ) ) {
-                $resource_price_text = sprintf( __( '%s 积分', 'developer-starter' ), number_format_i18n( (float) $resource['points_price'], 0 ) );
+                $resource_price_text = sprintf( __( '%s 积分', 'qiling' ), number_format_i18n( (float) $resource['points_price'], 0 ) );
             } elseif ( ! empty( $resource['is_vip'] ) ) {
-                $resource_price_text = __( 'VIP权益', 'developer-starter' );
+                $resource_price_text = __( 'VIP权益', 'qiling' );
             }
         }
         $video_preview_src = ( $has_video_cover && ! empty( $video_data['preview_src'] ) ) ? $video_data['preview_src'] : ( $video_data['url'] ?? '' );

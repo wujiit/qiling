@@ -59,7 +59,7 @@ class Blog_Page_Creator extends Page_Creator_Base {
             'blog_show_tags'      => 'no',
             'blog_show_views'     => 'yes',
             'blog_show_reading_time' => 'yes',
-            'blog_read_more_text' => __( '阅读全文', 'developer-starter' ),
+            'blog_read_more_text' => __( '阅读全文', 'qiling' ),
             'blog_enable_pagination' => 'yes',
         );
 
@@ -78,10 +78,10 @@ class Blog_Page_Creator extends Page_Creator_Base {
             $blog_module_data['blog_show_category'] = 'no';
             $blog_module_data['blog_show_views'] = 'no';
             $blog_module_data['blog_show_reading_time'] = 'no';
-            $blog_module_data['blog_read_more_text'] = __( '继续阅读', 'developer-starter' );
+            $blog_module_data['blog_read_more_text'] = __( '继续阅读', 'qiling' );
         } elseif ( $is_artist_preset ) {
-            $blog_module_data['blog_title'] = __( '作品与札记', 'developer-starter' );
-            $blog_module_data['blog_subtitle'] = __( '图像、灵感与创作过程', 'developer-starter' );
+            $blog_module_data['blog_title'] = __( '作品与札记', 'qiling' );
+            $blog_module_data['blog_subtitle'] = __( '图像、灵感与创作过程', 'qiling' );
             $blog_module_data['blog_visual_preset'] = 'artist';
             $blog_module_data['blog_layout_style'] = 'card';
             $blog_module_data['blog_columns'] = '2';
@@ -90,7 +90,7 @@ class Blog_Page_Creator extends Page_Creator_Base {
             $blog_module_data['blog_excerpt_length'] = '20';
             $blog_module_data['blog_show_views'] = 'no';
             $blog_module_data['blog_show_reading_time'] = 'no';
-            $blog_module_data['blog_read_more_text'] = __( '进入作品', 'developer-starter' );
+            $blog_module_data['blog_read_more_text'] = __( '进入作品', 'qiling' );
         }
 
         $default_modules = array(

@@ -441,7 +441,7 @@ class Content_Model_Center {
 
             add_meta_box(
                 'qiling_content_model_fields',
-                __( '内容模型字段', 'developer-starter' ),
+                __( '内容模型字段', 'qiling' ),
                 array( $this, 'render_meta_box' ),
                 (string) $model['postType'],
                 'normal',
@@ -459,14 +459,14 @@ class Content_Model_Center {
     public function render_meta_box( $post ) {
         $model = $this->find_model_by_post_type( $post->post_type );
         if ( empty( $model ) || empty( $model['fields'] ) ) {
-            echo '<p>' . esc_html__( '当前内容类型未配置模型字段。', 'developer-starter' ) . '</p>';
+            echo '<p>' . esc_html__( '当前内容类型未配置模型字段。', 'qiling' ) . '</p>';
             return;
         }
 
         wp_nonce_field( 'qiling_content_model_meta_' . $post->ID, 'qiling_content_model_meta_nonce' );
 
         echo '<div class="qiling-content-model-meta">';
-        echo '<p class="description">' . esc_html__( '这些字段由通用内容模型中心提供，后续可被模块、AI 装修和站点包复用。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . esc_html__( '这些字段由通用内容模型中心提供，后续可被模块、AI 装修和站点包复用。', 'qiling' ) . '</p>';
         echo '<table class="form-table" role="presentation"><tbody>';
         foreach ( $model['fields'] as $field ) {
             $this->render_model_meta_field( $post->ID, $field );
@@ -582,26 +582,26 @@ class Content_Model_Center {
      */
     private static function get_static_model_definitions() {
         return array(
-            'page'        => self::model( 'page', __( '页面', 'developer-starter' ), __( '承载官网、专题页、落地页和内容聚合页。', 'developer-starter' ), 'page', false, 'dashicons-admin-page', array(), array( 'WebPage' ), array( 'banner', 'image_text', 'cta' ) ),
-            'post'        => self::model( 'post', __( '文章', 'developer-starter' ), __( '适合博客、资讯、杂志、知识库和内容营销。', 'developer-starter' ), 'post', false, 'dashicons-admin-post', array(), array( 'Article', 'BlogPosting' ), array( 'blog', 'featured_posts', 'news' ) ),
-            'service'     => self::model( 'service', __( '服务', 'developer-starter' ), __( '适合企业服务、门店项目、咨询方案和本地业务。', 'developer-starter' ), 'ql_service', true, 'dashicons-hammer', array( 'subtitle', 'summary', 'icon', 'price', 'external_url', 'featured', 'sort_order' ), array( 'Service' ), array( 'services', 'service_cards', 'pricing' ), 'services' ),
-            'product'     => self::model( 'product', __( '产品', 'developer-starter' ), __( '适合产品目录、设备、课程商品、数字产品和方案包。', 'developer-starter' ), 'ql_product', true, 'dashicons-products', array( 'subtitle', 'summary', 'price', 'external_url', 'gallery', 'featured', 'sort_order' ), array( 'Product', 'ItemList' ), array( 'products', 'product_showcase', 'pricing' ), 'products' ),
-            'case'        => self::model( 'case', __( '案例', 'developer-starter' ), __( '适合客户案例、项目作品、实施成果和成功故事。', 'developer-starter' ), 'ql_case', true, 'dashicons-portfolio', array( 'subtitle', 'client', 'industry', 'result', 'external_url', 'gallery', 'featured', 'sort_order' ), array( 'Article', 'CreativeWork' ), array( 'cases', 'work_library', 'testimonials' ), 'cases' ),
-            'testimonial' => self::model( 'testimonial', __( '评价', 'developer-starter' ), __( '适合客户评价、学员反馈、用户证言和口碑背书。', 'developer-starter' ), 'ql_testimonial', true, 'dashicons-format-quote', array( 'author_name', 'author_title', 'company', 'rating', 'featured', 'sort_order' ), array( 'Review' ), array( 'testimonials', 'reader_wall' ), 'testimonials' ),
-            'team'        => self::model( 'team', __( '团队', 'developer-starter' ), __( '适合团队成员、专家医生、讲师、顾问和主创人员。', 'developer-starter' ), 'ql_team_member', true, 'dashicons-groups', array( 'position', 'department', 'phone', 'email', 'external_url', 'sort_order' ), array( 'Person' ), array( 'team', 'author_matrix' ), 'team' ),
-            'branch'      => self::model( 'branch', __( '门店/分支', 'developer-starter' ), __( '适合连锁门店、校区、服务网点、办公地点和经销商。', 'developer-starter' ), 'ql_branch', true, 'dashicons-location-alt', array( 'address', 'phone', 'email', 'business_hours', 'latitude', 'longitude', 'sort_order' ), array( 'LocalBusiness', 'Organization' ), array( 'branches', 'contact', 'booking_entry' ), 'branches' ),
-            'faq'         => self::model( 'faq', __( 'FAQ', 'developer-starter' ), __( '适合常见问题、帮助中心、售前答疑和文档条目。', 'developer-starter' ), 'ds_faq', false, 'dashicons-editor-help', array( 'sort_order', 'file_url', 'file_format', 'file_size' ), array( 'FAQPage' ), array( 'faq', 'accordion' ), 'faq' ),
-            'download'    => self::model( 'download', __( '下载资料', 'developer-starter' ), __( '适合白皮书、资料包、软件附件、报价单和说明书。', 'developer-starter' ), 'ql_download', true, 'dashicons-download', array( 'summary', 'file_url', 'file_format', 'file_size', 'featured', 'sort_order' ), array( 'DigitalDocument' ), array( 'downloads', 'resource_stats' ), 'downloads' ),
-            'course'      => self::model( 'course', __( '课程', 'developer-starter' ), __( '适合课程、训练营、培训项目和知识付费。', 'developer-starter' ), 'ql_course', true, 'dashicons-welcome-learn-more', array( 'subtitle', 'price', 'duration', 'level', 'external_url', 'featured', 'sort_order' ), array( 'Course' ), array( 'curriculum', 'course_enrollment' ), 'courses' ),
-            'event'       => self::model( 'event', __( '活动', 'developer-starter' ), __( '适合展会、沙龙、旅行线路、发布会和预约活动。', 'developer-starter' ), 'ql_event', true, 'dashicons-calendar-alt', array( 'summary', 'start_date', 'end_date', 'location', 'external_url', 'featured', 'sort_order' ), array( 'Event' ), array( 'timeline', 'itinerary', 'ticket_showcase' ), 'events' ),
-            'job'         => self::model( 'job', __( '职位', 'developer-starter' ), __( '适合招聘职位和人才招募；可和主题招聘系统衔接。', 'developer-starter' ), '', false, 'dashicons-id', array( 'department', 'location', 'salary', 'external_url' ), array( 'JobPosting' ), array( 'cta', 'contact' ), 'jobs' ),
-            'room'        => self::model( 'room', __( '房型', 'developer-starter' ), __( '适合酒店民宿房型、公寓、场地和空间产品。', 'developer-starter' ), 'ql_room', true, 'dashicons-building', array( 'subtitle', 'price', 'capacity', 'gallery', 'featured', 'sort_order' ), array( 'HotelRoom', 'Product' ), array( 'room_showcase', 'hotel_amenities' ), 'rooms' ),
-            'menu_item'   => self::model( 'menu_item', __( '菜单菜品', 'developer-starter' ), __( '适合餐饮菜单、套餐、项目价目表和门店商品。', 'developer-starter' ), 'ql_menu_item', true, 'dashicons-food', array( 'subtitle', 'price', 'badge', 'gallery', 'featured', 'sort_order' ), array( 'MenuItem', 'Product' ), array( 'menu', 'pricing' ), 'menu' ),
-            'software'    => self::model( 'software', __( '软件应用', 'developer-starter' ), __( '适合软件目录、应用市场和工具库；优先兼容启灵应用插件。', 'developer-starter' ), 'qiapp_software', false, 'dashicons-cloud', array( 'subtitle', 'external_url', 'rating', 'featured' ), array( 'SoftwareApplication' ), array( 'software_carousel', 'software_ranking' ), 'software' ),
-            'resource'    => self::model( 'resource', __( '资源', 'developer-starter' ), __( '适合资料、知识卡片、媒体资源和可筛选内容库。', 'developer-starter' ), 'ql_resource', true, 'dashicons-media-document', array( 'summary', 'resource_type', 'file_url', 'external_url', 'featured', 'sort_order' ), array( 'CreativeWork', 'Article' ), array( 'media_list', 'knowledge_cards', 'resource_hero_pro' ), 'resources' ),
-            'media_item'  => self::model( 'media_item', __( '媒体条目', 'developer-starter' ), __( '适合视频、播客、图集、媒体报道和素材条目。', 'developer-starter' ), 'ql_media_item', true, 'dashicons-format-video', array( 'summary', 'media_type', 'media_url', 'external_url', 'featured', 'sort_order' ), array( 'MediaObject' ), array( 'video', 'gallery', 'media_list' ), 'media' ),
-            'author'      => self::model( 'author', __( '作者', 'developer-starter' ), __( '适合博客作者、杂志专栏、个人主页和投稿人。', 'developer-starter' ), '', false, 'dashicons-admin-users', array( 'bio', 'avatar', 'external_url' ), array( 'Person' ), array( 'author_matrix', 'about_me_card' ), 'authors' ),
-            'partner'     => self::model( 'partner', __( '合作伙伴', 'developer-starter' ), __( '适合客户、品牌伙伴、渠道商、供应商和友情链接。', 'developer-starter' ), 'ql_partner', true, 'dashicons-businessperson', array( 'logo', 'summary', 'external_url', 'featured', 'sort_order' ), array( 'Organization' ), array( 'clients', 'friendly_links' ), 'partners' ),
+            'page'        => self::model( 'page', __( '页面', 'qiling' ), __( '承载官网、专题页、落地页和内容聚合页。', 'qiling' ), 'page', false, 'dashicons-admin-page', array(), array( 'WebPage' ), array( 'banner', 'image_text', 'cta' ) ),
+            'post'        => self::model( 'post', __( '文章', 'qiling' ), __( '适合博客、资讯、杂志、知识库和内容营销。', 'qiling' ), 'post', false, 'dashicons-admin-post', array(), array( 'Article', 'BlogPosting' ), array( 'blog', 'featured_posts', 'news' ) ),
+            'service'     => self::model( 'service', __( '服务', 'qiling' ), __( '适合企业服务、门店项目、咨询方案和本地业务。', 'qiling' ), 'ql_service', true, 'dashicons-hammer', array( 'subtitle', 'summary', 'icon', 'price', 'external_url', 'featured', 'sort_order' ), array( 'Service' ), array( 'services', 'service_cards', 'pricing' ), 'services' ),
+            'product'     => self::model( 'product', __( '产品', 'qiling' ), __( '适合产品目录、设备、课程商品、数字产品和方案包。', 'qiling' ), 'ql_product', true, 'dashicons-products', array( 'subtitle', 'summary', 'price', 'external_url', 'gallery', 'featured', 'sort_order' ), array( 'Product', 'ItemList' ), array( 'products', 'product_showcase', 'pricing' ), 'products' ),
+            'case'        => self::model( 'case', __( '案例', 'qiling' ), __( '适合客户案例、项目作品、实施成果和成功故事。', 'qiling' ), 'ql_case', true, 'dashicons-portfolio', array( 'subtitle', 'client', 'industry', 'result', 'external_url', 'gallery', 'featured', 'sort_order' ), array( 'Article', 'CreativeWork' ), array( 'cases', 'work_library', 'testimonials' ), 'cases' ),
+            'testimonial' => self::model( 'testimonial', __( '评价', 'qiling' ), __( '适合客户评价、学员反馈、用户证言和口碑背书。', 'qiling' ), 'ql_testimonial', true, 'dashicons-format-quote', array( 'author_name', 'author_title', 'company', 'rating', 'featured', 'sort_order' ), array( 'Review' ), array( 'testimonials', 'reader_wall' ), 'testimonials' ),
+            'team'        => self::model( 'team', __( '团队', 'qiling' ), __( '适合团队成员、专家医生、讲师、顾问和主创人员。', 'qiling' ), 'ql_team_member', true, 'dashicons-groups', array( 'position', 'department', 'phone', 'email', 'external_url', 'sort_order' ), array( 'Person' ), array( 'team', 'author_matrix' ), 'team' ),
+            'branch'      => self::model( 'branch', __( '门店/分支', 'qiling' ), __( '适合连锁门店、校区、服务网点、办公地点和经销商。', 'qiling' ), 'ql_branch', true, 'dashicons-location-alt', array( 'address', 'phone', 'email', 'business_hours', 'latitude', 'longitude', 'sort_order' ), array( 'LocalBusiness', 'Organization' ), array( 'branches', 'contact', 'booking_entry' ), 'branches' ),
+            'faq'         => self::model( 'faq', __( 'FAQ', 'qiling' ), __( '适合常见问题、帮助中心、售前答疑和文档条目。', 'qiling' ), 'ds_faq', false, 'dashicons-editor-help', array( 'sort_order', 'file_url', 'file_format', 'file_size' ), array( 'FAQPage' ), array( 'faq', 'accordion' ), 'faq' ),
+            'download'    => self::model( 'download', __( '下载资料', 'qiling' ), __( '适合白皮书、资料包、软件附件、报价单和说明书。', 'qiling' ), 'ql_download', true, 'dashicons-download', array( 'summary', 'file_url', 'file_format', 'file_size', 'featured', 'sort_order' ), array( 'DigitalDocument' ), array( 'downloads', 'resource_stats' ), 'downloads' ),
+            'course'      => self::model( 'course', __( '课程', 'qiling' ), __( '适合课程、训练营、培训项目和知识付费。', 'qiling' ), 'ql_course', true, 'dashicons-welcome-learn-more', array( 'subtitle', 'price', 'duration', 'level', 'external_url', 'featured', 'sort_order' ), array( 'Course' ), array( 'curriculum', 'course_enrollment' ), 'courses' ),
+            'event'       => self::model( 'event', __( '活动', 'qiling' ), __( '适合展会、沙龙、旅行线路、发布会和预约活动。', 'qiling' ), 'ql_event', true, 'dashicons-calendar-alt', array( 'summary', 'start_date', 'end_date', 'location', 'external_url', 'featured', 'sort_order' ), array( 'Event' ), array( 'timeline', 'itinerary', 'ticket_showcase' ), 'events' ),
+            'job'         => self::model( 'job', __( '职位', 'qiling' ), __( '适合招聘职位和人才招募；可和主题招聘系统衔接。', 'qiling' ), '', false, 'dashicons-id', array( 'department', 'location', 'salary', 'external_url' ), array( 'JobPosting' ), array( 'cta', 'contact' ), 'jobs' ),
+            'room'        => self::model( 'room', __( '房型', 'qiling' ), __( '适合酒店民宿房型、公寓、场地和空间产品。', 'qiling' ), 'ql_room', true, 'dashicons-building', array( 'subtitle', 'price', 'capacity', 'gallery', 'featured', 'sort_order' ), array( 'HotelRoom', 'Product' ), array( 'room_showcase', 'hotel_amenities' ), 'rooms' ),
+            'menu_item'   => self::model( 'menu_item', __( '菜单菜品', 'qiling' ), __( '适合餐饮菜单、套餐、项目价目表和门店商品。', 'qiling' ), 'ql_menu_item', true, 'dashicons-food', array( 'subtitle', 'price', 'badge', 'gallery', 'featured', 'sort_order' ), array( 'MenuItem', 'Product' ), array( 'menu', 'pricing' ), 'menu' ),
+            'software'    => self::model( 'software', __( '软件应用', 'qiling' ), __( '适合软件目录、应用市场和工具库；优先兼容启灵应用插件。', 'qiling' ), 'qiapp_software', false, 'dashicons-cloud', array( 'subtitle', 'external_url', 'rating', 'featured' ), array( 'SoftwareApplication' ), array( 'software_carousel', 'software_ranking' ), 'software' ),
+            'resource'    => self::model( 'resource', __( '资源', 'qiling' ), __( '适合资料、知识卡片、媒体资源和可筛选内容库。', 'qiling' ), 'ql_resource', true, 'dashicons-media-document', array( 'summary', 'resource_type', 'file_url', 'external_url', 'featured', 'sort_order' ), array( 'CreativeWork', 'Article' ), array( 'media_list', 'knowledge_cards', 'resource_hero_pro' ), 'resources' ),
+            'media_item'  => self::model( 'media_item', __( '媒体条目', 'qiling' ), __( '适合视频、播客、图集、媒体报道和素材条目。', 'qiling' ), 'ql_media_item', true, 'dashicons-format-video', array( 'summary', 'media_type', 'media_url', 'external_url', 'featured', 'sort_order' ), array( 'MediaObject' ), array( 'video', 'gallery', 'media_list' ), 'media' ),
+            'author'      => self::model( 'author', __( '作者', 'qiling' ), __( '适合博客作者、杂志专栏、个人主页和投稿人。', 'qiling' ), '', false, 'dashicons-admin-users', array( 'bio', 'avatar', 'external_url' ), array( 'Person' ), array( 'author_matrix', 'about_me_card' ), 'authors' ),
+            'partner'     => self::model( 'partner', __( '合作伙伴', 'qiling' ), __( '适合客户、品牌伙伴、渠道商、供应商和友情链接。', 'qiling' ), 'ql_partner', true, 'dashicons-businessperson', array( 'logo', 'summary', 'external_url', 'featured', 'sort_order' ), array( 'Organization' ), array( 'clients', 'friendly_links' ), 'partners' ),
         );
     }
 
@@ -631,7 +631,7 @@ class Content_Model_Center {
 
         $plural = sprintf(
             /* translators: %s: content model label */
-            __( '%s内容', 'developer-starter' ),
+            __( '%s内容', 'qiling' ),
             $label
         );
         $taxonomies = array();
@@ -639,13 +639,13 @@ class Content_Model_Center {
             $taxonomies = array(
                 array(
                     'taxonomy'     => sanitize_key( $post_type . '_category' ),
-                    'label'        => sprintf( __( '%s分类', 'developer-starter' ), $label ),
+                    'label'        => sprintf( __( '%s分类', 'qiling' ), $label ),
                     'hierarchical' => true,
                     'slug'         => ( '' !== $archive_slug ? $archive_slug : $id ) . '-category',
                 ),
                 array(
                     'taxonomy'     => sanitize_key( $post_type . '_tag' ),
-                    'label'        => sprintf( __( '%s标签', 'developer-starter' ), $label ),
+                    'label'        => sprintf( __( '%s标签', 'qiling' ), $label ),
                     'hierarchical' => false,
                     'slug'         => ( '' !== $archive_slug ? $archive_slug : $id ) . '-tag',
                 ),
@@ -678,46 +678,46 @@ class Content_Model_Center {
      */
     private static function get_field_definition( $field_id ) {
         $fields = array(
-            'subtitle'       => array( 'id' => 'subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text' ),
-            'summary'        => array( 'id' => 'summary', 'label' => __( '摘要', 'developer-starter' ), 'type' => 'textarea' ),
-            'icon'           => array( 'id' => 'icon', 'label' => __( '图标', 'developer-starter' ), 'type' => 'text' ),
-            'price'          => array( 'id' => 'price', 'label' => __( '价格/报价', 'developer-starter' ), 'type' => 'text' ),
-            'external_url'   => array( 'id' => 'external_url', 'label' => __( '外部链接', 'developer-starter' ), 'type' => 'url' ),
-            'featured'       => array( 'id' => 'featured', 'label' => __( '推荐展示', 'developer-starter' ), 'type' => 'checkbox' ),
-            'sort_order'     => array( 'id' => 'sort_order', 'label' => __( '排序权重', 'developer-starter' ), 'type' => 'number' ),
-            'gallery'        => array( 'id' => 'gallery', 'label' => __( '图库 URL', 'developer-starter' ), 'type' => 'textarea' ),
-            'client'         => array( 'id' => 'client', 'label' => __( '客户名称', 'developer-starter' ), 'type' => 'text' ),
-            'industry'       => array( 'id' => 'industry', 'label' => __( '所属行业', 'developer-starter' ), 'type' => 'text' ),
-            'result'         => array( 'id' => 'result', 'label' => __( '成果亮点', 'developer-starter' ), 'type' => 'textarea' ),
-            'author_name'    => array( 'id' => 'author_name', 'label' => __( '评价人', 'developer-starter' ), 'type' => 'text' ),
-            'author_title'   => array( 'id' => 'author_title', 'label' => __( '评价人身份', 'developer-starter' ), 'type' => 'text' ),
-            'company'        => array( 'id' => 'company', 'label' => __( '公司/组织', 'developer-starter' ), 'type' => 'text' ),
-            'rating'         => array( 'id' => 'rating', 'label' => __( '评分', 'developer-starter' ), 'type' => 'number' ),
-            'position'       => array( 'id' => 'position', 'label' => __( '职位', 'developer-starter' ), 'type' => 'text' ),
-            'department'     => array( 'id' => 'department', 'label' => __( '部门', 'developer-starter' ), 'type' => 'text' ),
-            'phone'          => array( 'id' => 'phone', 'label' => __( '电话', 'developer-starter' ), 'type' => 'text' ),
-            'email'          => array( 'id' => 'email', 'label' => __( '邮箱', 'developer-starter' ), 'type' => 'email' ),
-            'address'        => array( 'id' => 'address', 'label' => __( '地址', 'developer-starter' ), 'type' => 'textarea' ),
-            'business_hours' => array( 'id' => 'business_hours', 'label' => __( '营业时间', 'developer-starter' ), 'type' => 'textarea' ),
-            'latitude'       => array( 'id' => 'latitude', 'label' => __( '纬度', 'developer-starter' ), 'type' => 'text' ),
-            'longitude'      => array( 'id' => 'longitude', 'label' => __( '经度', 'developer-starter' ), 'type' => 'text' ),
-            'file_url'       => array( 'id' => 'file_url', 'label' => __( '文件链接', 'developer-starter' ), 'type' => 'url' ),
-            'file_format'    => array( 'id' => 'file_format', 'label' => __( '文件格式', 'developer-starter' ), 'type' => 'text' ),
-            'file_size'      => array( 'id' => 'file_size', 'label' => __( '文件大小', 'developer-starter' ), 'type' => 'text' ),
-            'duration'       => array( 'id' => 'duration', 'label' => __( '周期/时长', 'developer-starter' ), 'type' => 'text' ),
-            'level'          => array( 'id' => 'level', 'label' => __( '难度/等级', 'developer-starter' ), 'type' => 'text' ),
-            'start_date'     => array( 'id' => 'start_date', 'label' => __( '开始日期', 'developer-starter' ), 'type' => 'date' ),
-            'end_date'       => array( 'id' => 'end_date', 'label' => __( '结束日期', 'developer-starter' ), 'type' => 'date' ),
-            'location'       => array( 'id' => 'location', 'label' => __( '地点', 'developer-starter' ), 'type' => 'text' ),
-            'salary'         => array( 'id' => 'salary', 'label' => __( '薪资', 'developer-starter' ), 'type' => 'text' ),
-            'capacity'       => array( 'id' => 'capacity', 'label' => __( '容量/人数', 'developer-starter' ), 'type' => 'text' ),
-            'badge'          => array( 'id' => 'badge', 'label' => __( '角标', 'developer-starter' ), 'type' => 'text' ),
-            'resource_type'  => array( 'id' => 'resource_type', 'label' => __( '资源类型', 'developer-starter' ), 'type' => 'text' ),
-            'media_type'     => array( 'id' => 'media_type', 'label' => __( '媒体类型', 'developer-starter' ), 'type' => 'text' ),
-            'media_url'      => array( 'id' => 'media_url', 'label' => __( '媒体链接', 'developer-starter' ), 'type' => 'url' ),
-            'bio'            => array( 'id' => 'bio', 'label' => __( '简介', 'developer-starter' ), 'type' => 'textarea' ),
-            'avatar'         => array( 'id' => 'avatar', 'label' => __( '头像 URL', 'developer-starter' ), 'type' => 'url' ),
-            'logo'           => array( 'id' => 'logo', 'label' => __( 'Logo URL', 'developer-starter' ), 'type' => 'url' ),
+            'subtitle'       => array( 'id' => 'subtitle', 'label' => __( '副标题', 'qiling' ), 'type' => 'text' ),
+            'summary'        => array( 'id' => 'summary', 'label' => __( '摘要', 'qiling' ), 'type' => 'textarea' ),
+            'icon'           => array( 'id' => 'icon', 'label' => __( '图标', 'qiling' ), 'type' => 'text' ),
+            'price'          => array( 'id' => 'price', 'label' => __( '价格/报价', 'qiling' ), 'type' => 'text' ),
+            'external_url'   => array( 'id' => 'external_url', 'label' => __( '外部链接', 'qiling' ), 'type' => 'url' ),
+            'featured'       => array( 'id' => 'featured', 'label' => __( '推荐展示', 'qiling' ), 'type' => 'checkbox' ),
+            'sort_order'     => array( 'id' => 'sort_order', 'label' => __( '排序权重', 'qiling' ), 'type' => 'number' ),
+            'gallery'        => array( 'id' => 'gallery', 'label' => __( '图库 URL', 'qiling' ), 'type' => 'textarea' ),
+            'client'         => array( 'id' => 'client', 'label' => __( '客户名称', 'qiling' ), 'type' => 'text' ),
+            'industry'       => array( 'id' => 'industry', 'label' => __( '所属行业', 'qiling' ), 'type' => 'text' ),
+            'result'         => array( 'id' => 'result', 'label' => __( '成果亮点', 'qiling' ), 'type' => 'textarea' ),
+            'author_name'    => array( 'id' => 'author_name', 'label' => __( '评价人', 'qiling' ), 'type' => 'text' ),
+            'author_title'   => array( 'id' => 'author_title', 'label' => __( '评价人身份', 'qiling' ), 'type' => 'text' ),
+            'company'        => array( 'id' => 'company', 'label' => __( '公司/组织', 'qiling' ), 'type' => 'text' ),
+            'rating'         => array( 'id' => 'rating', 'label' => __( '评分', 'qiling' ), 'type' => 'number' ),
+            'position'       => array( 'id' => 'position', 'label' => __( '职位', 'qiling' ), 'type' => 'text' ),
+            'department'     => array( 'id' => 'department', 'label' => __( '部门', 'qiling' ), 'type' => 'text' ),
+            'phone'          => array( 'id' => 'phone', 'label' => __( '电话', 'qiling' ), 'type' => 'text' ),
+            'email'          => array( 'id' => 'email', 'label' => __( '邮箱', 'qiling' ), 'type' => 'email' ),
+            'address'        => array( 'id' => 'address', 'label' => __( '地址', 'qiling' ), 'type' => 'textarea' ),
+            'business_hours' => array( 'id' => 'business_hours', 'label' => __( '营业时间', 'qiling' ), 'type' => 'textarea' ),
+            'latitude'       => array( 'id' => 'latitude', 'label' => __( '纬度', 'qiling' ), 'type' => 'text' ),
+            'longitude'      => array( 'id' => 'longitude', 'label' => __( '经度', 'qiling' ), 'type' => 'text' ),
+            'file_url'       => array( 'id' => 'file_url', 'label' => __( '文件链接', 'qiling' ), 'type' => 'url' ),
+            'file_format'    => array( 'id' => 'file_format', 'label' => __( '文件格式', 'qiling' ), 'type' => 'text' ),
+            'file_size'      => array( 'id' => 'file_size', 'label' => __( '文件大小', 'qiling' ), 'type' => 'text' ),
+            'duration'       => array( 'id' => 'duration', 'label' => __( '周期/时长', 'qiling' ), 'type' => 'text' ),
+            'level'          => array( 'id' => 'level', 'label' => __( '难度/等级', 'qiling' ), 'type' => 'text' ),
+            'start_date'     => array( 'id' => 'start_date', 'label' => __( '开始日期', 'qiling' ), 'type' => 'date' ),
+            'end_date'       => array( 'id' => 'end_date', 'label' => __( '结束日期', 'qiling' ), 'type' => 'date' ),
+            'location'       => array( 'id' => 'location', 'label' => __( '地点', 'qiling' ), 'type' => 'text' ),
+            'salary'         => array( 'id' => 'salary', 'label' => __( '薪资', 'qiling' ), 'type' => 'text' ),
+            'capacity'       => array( 'id' => 'capacity', 'label' => __( '容量/人数', 'qiling' ), 'type' => 'text' ),
+            'badge'          => array( 'id' => 'badge', 'label' => __( '角标', 'qiling' ), 'type' => 'text' ),
+            'resource_type'  => array( 'id' => 'resource_type', 'label' => __( '资源类型', 'qiling' ), 'type' => 'text' ),
+            'media_type'     => array( 'id' => 'media_type', 'label' => __( '媒体类型', 'qiling' ), 'type' => 'text' ),
+            'media_url'      => array( 'id' => 'media_url', 'label' => __( '媒体链接', 'qiling' ), 'type' => 'url' ),
+            'bio'            => array( 'id' => 'bio', 'label' => __( '简介', 'qiling' ), 'type' => 'textarea' ),
+            'avatar'         => array( 'id' => 'avatar', 'label' => __( '头像 URL', 'qiling' ), 'type' => 'url' ),
+            'logo'           => array( 'id' => 'logo', 'label' => __( 'Logo URL', 'qiling' ), 'type' => 'url' ),
         );
 
         return isset( $fields[ $field_id ] ) ? $fields[ $field_id ] : array();
@@ -746,14 +746,14 @@ class Content_Model_Center {
                 'name'               => $plural,
                 'singular_name'      => $label,
                 'menu_name'          => $label,
-                'add_new'            => __( '新增', 'developer-starter' ),
-                'add_new_item'       => sprintf( __( '新增%s', 'developer-starter' ), $label ),
-                'edit_item'          => sprintf( __( '编辑%s', 'developer-starter' ), $label ),
-                'new_item'           => sprintf( __( '新%s', 'developer-starter' ), $label ),
-                'view_item'          => sprintf( __( '查看%s', 'developer-starter' ), $label ),
-                'search_items'       => sprintf( __( '搜索%s', 'developer-starter' ), $label ),
-                'not_found'          => sprintf( __( '暂无%s', 'developer-starter' ), $label ),
-                'not_found_in_trash' => sprintf( __( '回收站中暂无%s', 'developer-starter' ), $label ),
+                'add_new'            => __( '新增', 'qiling' ),
+                'add_new_item'       => sprintf( __( '新增%s', 'qiling' ), $label ),
+                'edit_item'          => sprintf( __( '编辑%s', 'qiling' ), $label ),
+                'new_item'           => sprintf( __( '新%s', 'qiling' ), $label ),
+                'view_item'          => sprintf( __( '查看%s', 'qiling' ), $label ),
+                'search_items'       => sprintf( __( '搜索%s', 'qiling' ), $label ),
+                'not_found'          => sprintf( __( '暂无%s', 'qiling' ), $label ),
+                'not_found_in_trash' => sprintf( __( '回收站中暂无%s', 'qiling' ), $label ),
             ),
             'public'       => ! empty( $model['public'] ),
             'show_ui'      => true,
@@ -890,7 +890,7 @@ class Content_Model_Center {
             echo '<textarea id="' . esc_attr( $input_id ) . '" name="' . esc_attr( $name ) . '" rows="3" class="large-text">' . esc_textarea( $value ) . '</textarea>';
         } elseif ( 'checkbox' === $type ) {
             echo '<input type="hidden" name="' . esc_attr( $name ) . '" value="" />';
-            echo '<label><input id="' . esc_attr( $input_id ) . '" type="checkbox" name="' . esc_attr( $name ) . '" value="1"' . checked( (string) $value, '1', false ) . ' /> ' . esc_html__( '启用', 'developer-starter' ) . '</label>';
+            echo '<label><input id="' . esc_attr( $input_id ) . '" type="checkbox" name="' . esc_attr( $name ) . '" value="1"' . checked( (string) $value, '1', false ) . ' /> ' . esc_html__( '启用', 'qiling' ) . '</label>';
         } else {
             $input_type = in_array( $type, array( 'url', 'number', 'date', 'email' ), true ) ? $type : 'text';
             echo '<input id="' . esc_attr( $input_id ) . '" type="' . esc_attr( $input_type ) . '" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '" class="regular-text" />';

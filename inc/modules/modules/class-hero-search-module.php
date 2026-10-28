@@ -21,7 +21,7 @@ class Hero_Search_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-search';
-        $this->description = __( '全屏搜索首屏，支持背景图片/视频轮播', 'developer-starter' );
+        $this->description = __( '全屏搜索首屏，支持背景图片/视频轮播', 'qiling' );
     }
 
     public function get_id() {
@@ -29,7 +29,7 @@ class Hero_Search_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '图片视频搜索模块', 'developer-starter' );
+        return __( '图片视频搜索模块', 'qiling' );
     }
 
     public function get_fields() {
@@ -38,79 +38,79 @@ class Hero_Search_Module extends Module_Base {
             array(
                 'id'      => 'hs_height',
                 'type'    => 'select',
-                'label'   => __( '模块高度', 'developer-starter' ),
+                'label'   => __( '模块高度', 'qiling' ),
                 'options' => array(
-                    '100vh' => __( '全屏高度', 'developer-starter' ),
-                    '80vh'  => __( '80%屏幕高度', 'developer-starter' ),
-                    '70vh'  => __( '70%屏幕高度', 'developer-starter' ),
-                    '60vh'  => __( '60%屏幕高度', 'developer-starter' ),
-                    '500px' => __( '500px固定高度', 'developer-starter' ),
-                    '600px' => __( '600px固定高度', 'developer-starter' ),
+                    '100vh' => __( '全屏高度', 'qiling' ),
+                    '80vh'  => __( '80%屏幕高度', 'qiling' ),
+                    '70vh'  => __( '70%屏幕高度', 'qiling' ),
+                    '60vh'  => __( '60%屏幕高度', 'qiling' ),
+                    '500px' => __( '500px固定高度', 'qiling' ),
+                    '600px' => __( '600px固定高度', 'qiling' ),
                 ),
                 'default' => '80vh',
             ),
             array(
                 'id'      => 'hs_width_mode',
                 'type'    => 'select',
-                'label'   => __( '前台显示宽度', 'developer-starter' ),
+                'label'   => __( '前台显示宽度', 'qiling' ),
                 'options' => array(
-                    'full'      => __( '浏览器全屏宽度', 'developer-starter' ),
-                    'container' => __( '跟随页面内容宽度', 'developer-starter' ),
-                    'custom'    => __( '自定义最大宽度', 'developer-starter' ),
+                    'full'      => __( '浏览器全屏宽度', 'qiling' ),
+                    'container' => __( '跟随页面内容宽度', 'qiling' ),
+                    'custom'    => __( '自定义最大宽度', 'qiling' ),
                 ),
                 'default' => 'full',
-                'description' => __( '只控制模块整体宽度，不影响下方搜索框最大宽度设置。', 'developer-starter' ),
+                'description' => __( '只控制模块整体宽度，不影响下方搜索框最大宽度设置。', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_custom_width',
                 'type'    => 'text',
-                'label'   => __( '模块自定义最大宽度', 'developer-starter' ),
+                'label'   => __( '模块自定义最大宽度', 'qiling' ),
                 'default' => '1400px',
-                'description' => __( '例如 1400px、90vw 或 80rem。移动端会自动保留安全边距。', 'developer-starter' ),
+                'description' => __( '例如 1400px、90vw 或 80rem。移动端会自动保留安全边距。', 'qiling' ),
                 'dependency' => array( 'id' => 'hs_width_mode', 'value' => 'custom' ),
             ),
             array(
                 'id'      => 'hs_border_radius',
                 'type'    => 'select',
-                'label'   => __( '模块图片/视频圆角', 'developer-starter' ),
+                'label'   => __( '模块图片/视频圆角', 'qiling' ),
                 'options' => array(
-                    'none'   => __( '直角', 'developer-starter' ),
-                    'small'  => __( '小圆角（8px）', 'developer-starter' ),
-                    'medium' => __( '中圆角（16px）', 'developer-starter' ),
-                    'large'  => __( '大圆角（24px）', 'developer-starter' ),
-                    'custom' => __( '自定义圆角', 'developer-starter' ),
+                    'none'   => __( '直角', 'qiling' ),
+                    'small'  => __( '小圆角（8px）', 'qiling' ),
+                    'medium' => __( '中圆角（16px）', 'qiling' ),
+                    'large'  => __( '大圆角（24px）', 'qiling' ),
+                    'custom' => __( '自定义圆角', 'qiling' ),
                 ),
                 'default' => 'none',
-                'description' => __( '背景图片、背景视频和遮罩会随整个模块一起裁切。', 'developer-starter' ),
+                'description' => __( '背景图片、背景视频和遮罩会随整个模块一起裁切。', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_custom_radius',
                 'type'    => 'text',
-                'label'   => __( '自定义圆角大小', 'developer-starter' ),
+                'label'   => __( '自定义圆角大小', 'qiling' ),
                 'default' => '16px',
-                'description' => __( '例如 12px、1rem 或 2vw。', 'developer-starter' ),
+                'description' => __( '例如 12px、1rem 或 2vw。', 'qiling' ),
                 'dependency' => array( 'id' => 'hs_border_radius', 'value' => 'custom' ),
             ),
             array(
                 'id'      => 'hs_overlay_color',
                 'type'    => 'text',
-                'label'   => __( '背景遮罩颜色（如 var(--qiling-color-rgba-0-0-0-05)）', 'developer-starter' ),
+                'label'   => __( '背景遮罩颜色（如 var(--qiling-color-rgba-0-0-0-05)）', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-0-0-0-04)',
             ),
             array(
                 'id'          => 'hs_overlay_opacity',
                 'type'        => 'number',
-                'label'       => __( '背景遮罩透明度', 'developer-starter' ),
+                'label'       => __( '背景遮罩透明度', 'qiling' ),
                 'default'     => '',
-                'description' => __( '填写 0-100，设置遮罩颜色时以颜色值为准。', 'developer-starter' ),
+                'description' => __( '填写 0-100，设置遮罩颜色时以颜色值为准。', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_content_align',
                 'type'    => 'select',
-                'label'   => __( '内容对齐方式', 'developer-starter' ),
+                'label'   => __( '内容对齐方式', 'qiling' ),
                 'options' => array(
-                    'center' => __( '居中', 'developer-starter' ),
-                    'left'   => __( '左对齐', 'developer-starter' ),
+                    'center' => __( '居中', 'qiling' ),
+                    'left'   => __( '左对齐', 'qiling' ),
                 ),
                 'default' => 'center',
             ),
@@ -119,44 +119,44 @@ class Hero_Search_Module extends Module_Base {
             array(
                 'id'         => 'hs_bg_items',
                 'type'       => 'repeater',
-                'label'      => __( '背景媒体（图片或视频，多个则轮播）', 'developer-starter' ),
-                'add_button' => __( '添加背景', 'developer-starter' ),
+                'label'      => __( '背景媒体（图片或视频，多个则轮播）', 'qiling' ),
+                'add_button' => __( '添加背景', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'      => 'type',
                         'type'    => 'select',
-                        'label'   => __( '媒体类型', 'developer-starter' ),
+                        'label'   => __( '媒体类型', 'qiling' ),
                         'options' => array(
-                            'image' => __( '🖼️ 图片 (image)', 'developer-starter' ),
-                            'video' => __( '🎬 视频 (video)', 'developer-starter' ),
+                            'image' => __( '图片 (image)', 'qiling' ),
+                            'video' => __( '视频 (video)', 'qiling' ),
                         ),
                     ),
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '背景图片（类型为图片时使用）', 'developer-starter' ),
+                        'label' => __( '背景图片（类型为图片时使用）', 'qiling' ),
                     ),
                     array(
                         'id'    => 'video_url',
                         'type'  => 'text',
-                        'label' => __( '视频URL（类型为视频时使用，支持mp4直链）', 'developer-starter' ),
+                        'label' => __( '视频URL（类型为视频时使用，支持mp4直链）', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'      => 'hs_bg_autoplay',
                 'type'    => 'select',
-                'label'   => __( '背景轮播自动播放', 'developer-starter' ),
+                'label'   => __( '背景轮播自动播放', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'hs_bg_interval',
                 'type'    => 'number',
-                'label'   => __( '轮播间隔（毫秒）', 'developer-starter' ),
+                'label'   => __( '轮播间隔（毫秒）', 'qiling' ),
                 'default' => '5000',
             ),
             
@@ -164,31 +164,31 @@ class Hero_Search_Module extends Module_Base {
             array(
                 'id'      => 'hs_title',
                 'type'    => 'text',
-                'label'   => __( '大标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '模块化企业主题', 'Modular Business Theme' ) : __( '模块化企业主题', 'developer-starter' ),
+                'label'   => __( '大标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '模块化企业主题', 'Modular Business Theme' ) : __( '模块化企业主题', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_title_color',
                 'type'    => 'text',
-                'label'   => __( '大标题颜色', 'developer-starter' ),
+                'label'   => __( '大标题颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'hs_title_size',
                 'type'    => 'text',
-                'label'   => __( '大标题字号', 'developer-starter' ),
+                'label'   => __( '大标题字号', 'qiling' ),
                 'default' => '3rem',
             ),
             array(
                 'id'      => 'hs_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '高度自定义中文企业主题', 'A highly customizable theme for content-rich business websites.' ) : __( '高度自定义中文企业主题', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '高度自定义中文企业主题', 'A highly customizable theme for content-rich business websites.' ) : __( '高度自定义中文企业主题', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_subtitle_color',
                 'type'    => 'text',
-                'label'   => __( '副标题颜色', 'developer-starter' ),
+                'label'   => __( '副标题颜色', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-255-255-255-08)',
             ),
             
@@ -196,67 +196,67 @@ class Hero_Search_Module extends Module_Base {
             array(
                 'id'      => 'hs_show_search',
                 'type'    => 'select',
-                'label'   => __( '显示搜索框', 'developer-starter' ),
+                'label'   => __( '显示搜索框', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'hs_search_placeholder',
                 'type'    => 'text',
-                'label'   => __( '搜索框占位符', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索文章、资源、教程...', 'Search articles, resources, or guides...' ) : __( '搜索文章、资源、教程...', 'developer-starter' ),
+                'label'   => __( '搜索框占位符', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索文章、资源、教程...', 'Search articles, resources, or guides...' ) : __( '搜索文章、资源、教程...', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_search_mode',
                 'type'    => 'select',
-                'label'   => __( '搜索模式', 'developer-starter' ),
+                'label'   => __( '搜索模式', 'qiling' ),
                 'options' => array_merge(
-                    array( 'inherit' => __( '跟随主题设置', 'developer-starter' ) ),
+                    array( 'inherit' => __( '跟随主题设置', 'qiling' ) ),
                     function_exists( 'developer_starter_get_search_mode_choices' )
                         ? developer_starter_get_search_mode_choices()
-                        : array( 'all' => __( '综合搜索', 'developer-starter' ), 'post' => __( '文章搜索', 'developer-starter' ) )
+                        : array( 'all' => __( '综合搜索', 'qiling' ), 'post' => __( '文章搜索', 'qiling' ) )
                 ),
                 'default' => 'inherit',
             ),
             array(
                 'id'      => 'hs_search_btn_text',
                 'type'    => 'text',
-                'label'   => __( '搜索按钮文字', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索', 'Search' ) : __( '搜索', 'developer-starter' ),
+                'label'   => __( '搜索按钮文字', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索', 'Search' ) : __( '搜索', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_search_btn_bg',
                 'type'    => 'text',
-                'label'   => __( '搜索按钮背景色(支持渐变)', 'developer-starter' ),
+                'label'   => __( '搜索按钮背景色(支持渐变)', 'qiling' ),
                 'default' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)',
             ),
             array(
                 'id'          => 'hs_search_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '搜索按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用搜索首屏默认按钮文字色', 'developer-starter' ),
+                'label'       => __( '搜索按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时使用搜索首屏默认按钮文字色', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'hs_search_btn_border_color', __( '搜索按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'hs_search_btn_border_color', __( '搜索按钮边框颜色', 'qiling' ) ),
             array(
                 'id'          => 'hs_search_btn_hover_bg',
                 'type'        => 'text',
-                'label'       => __( '搜索按钮悬停背景色(支持渐变)', 'developer-starter' ),
-                'description' => __( '留空时使用搜索首屏默认悬停背景', 'developer-starter' ),
+                'label'       => __( '搜索按钮悬停背景色(支持渐变)', 'qiling' ),
+                'description' => __( '留空时使用搜索首屏默认悬停背景', 'qiling' ),
             ),
             array(
                 'id'          => 'hs_search_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '搜索按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用搜索首屏默认悬停文字色', 'developer-starter' ),
+                'label'       => __( '搜索按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时使用搜索首屏默认悬停文字色', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'hs_search_btn_hover_border_color', __( '搜索按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随搜索按钮悬停背景色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'hs_search_btn_hover_border_color', __( '搜索按钮悬停边框颜色', 'qiling' ), __( '留空时跟随搜索按钮悬停背景色。', 'qiling' ) ),
             array(
                 'id'      => 'hs_search_width',
                 'type'    => 'text',
-                'label'   => __( '搜索框最大宽度', 'developer-starter' ),
+                'label'   => __( '搜索框最大宽度', 'qiling' ),
                 'default' => '600px',
             ),
             
@@ -264,32 +264,32 @@ class Hero_Search_Module extends Module_Base {
             array(
                 'id'         => 'hs_tags',
                 'type'       => 'repeater',
-                'label'      => __( '关键词标签（标签文字即为搜索关键词）', 'developer-starter' ),
-                'add_button' => __( '添加标签', 'developer-starter' ),
+                'label'      => __( '关键词标签（标签文字即为搜索关键词）', 'qiling' ),
+                'add_button' => __( '添加标签', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'    => 'text',
                         'type'  => 'text',
-                        'label' => __( '标签文字（点击后搜索此关键词）', 'developer-starter' ),
+                        'label' => __( '标签文字（点击后搜索此关键词）', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'      => 'hs_tags_label',
                 'type'    => 'text',
-                'label'   => __( '标签前缀文字（如"热门搜索："）', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门搜索：', 'Popular topics:' ) : __( '热门搜索：', 'developer-starter' ),
+                'label'   => __( '标签前缀文字（如"热门搜索："）', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门搜索：', 'Popular topics:' ) : __( '热门搜索：', 'qiling' ),
             ),
             array(
                 'id'      => 'hs_tags_bg',
                 'type'    => 'text',
-                'label'   => __( '标签背景色', 'developer-starter' ),
+                'label'   => __( '标签背景色', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-255-255-255-015)',
             ),
             array(
                 'id'      => 'hs_tags_color',
                 'type'    => 'text',
-                'label'   => __( '标签文字颜色', 'developer-starter' ),
+                'label'   => __( '标签文字颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
         );
@@ -332,16 +332,16 @@ class Hero_Search_Module extends Module_Base {
         $bg_autoplay = isset( $data['hs_bg_autoplay'] ) ? $data['hs_bg_autoplay'] : 'yes';
         $bg_interval = isset( $data['hs_bg_interval'] ) ? intval( $data['hs_bg_interval'] ) : 5000;
         
-        $title = isset( $data['hs_title'] ) ? $data['hs_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '模块化企业主题', 'Modular Business Theme' ) : __( '模块化企业主题', 'developer-starter' ) );
+        $title = isset( $data['hs_title'] ) ? $data['hs_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '模块化企业主题', 'Modular Business Theme' ) : __( '模块化企业主题', 'qiling' ) );
         $title_color = isset( $data['hs_title_color'] ) ? $data['hs_title_color'] : 'var(--color-neutral-0)';
         $title_size = isset( $data['hs_title_size'] ) ? $data['hs_title_size'] : '3rem';
         $subtitle = isset( $data['hs_subtitle'] ) ? $data['hs_subtitle'] : '';
         $subtitle_color = isset( $data['hs_subtitle_color'] ) ? $data['hs_subtitle_color'] : 'var(--qiling-color-rgba-255-255-255-08)';
         
         $show_search = isset( $data['hs_show_search'] ) ? $data['hs_show_search'] : 'yes';
-        $search_placeholder = isset( $data['hs_search_placeholder'] ) ? $data['hs_search_placeholder'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索文章、资源、教程...', 'Search articles, resources, or guides...' ) : __( '搜索文章、资源、教程...', 'developer-starter' ) );
+        $search_placeholder = isset( $data['hs_search_placeholder'] ) ? $data['hs_search_placeholder'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索文章、资源、教程...', 'Search articles, resources, or guides...' ) : __( '搜索文章、资源、教程...', 'qiling' ) );
         $search_mode_setting = isset( $data['hs_search_mode'] ) ? sanitize_key( (string) $data['hs_search_mode'] ) : 'inherit';
-        $search_btn_text = isset( $data['hs_search_btn_text'] ) ? $data['hs_search_btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索', 'Search' ) : __( '搜索', 'developer-starter' ) );
+        $search_btn_text = isset( $data['hs_search_btn_text'] ) ? $data['hs_search_btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '搜索', 'Search' ) : __( '搜索', 'qiling' ) );
         $search_btn_bg = $this->sanitize_css_color_value( isset( $data['hs_search_btn_bg'] ) ? $data['hs_search_btn_bg'] : '', 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)' );
         $search_btn_text_color = $this->sanitize_css_color_value( isset( $data['hs_search_btn_text_color'] ) ? $data['hs_search_btn_text_color'] : '', '' );
         $search_btn_border_color = $this->sanitize_css_color_value( isset( $data['hs_search_btn_border_color'] ) ? $data['hs_search_btn_border_color'] : '', '' );
@@ -351,7 +351,7 @@ class Hero_Search_Module extends Module_Base {
         $search_width = isset( $data['hs_search_width'] ) ? $data['hs_search_width'] : '600px';
         
         $tags = isset( $data['hs_tags'] ) ? $data['hs_tags'] : array();
-        $tags_label = isset( $data['hs_tags_label'] ) ? $data['hs_tags_label'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门搜索：', 'Popular topics:' ) : __( '热门搜索：', 'developer-starter' ) );
+        $tags_label = isset( $data['hs_tags_label'] ) ? $data['hs_tags_label'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门搜索：', 'Popular topics:' ) : __( '热门搜索：', 'qiling' ) );
         $tags_bg = isset( $data['hs_tags_bg'] ) ? $data['hs_tags_bg'] : 'var(--qiling-color-rgba-255-255-255-015)';
         $tags_color = isset( $data['hs_tags_color'] ) ? $data['hs_tags_color'] : 'var(--color-neutral-0)';
         

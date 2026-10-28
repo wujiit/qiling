@@ -39,6 +39,19 @@ class Developer_Starter_Content_Restriction {
     }
 
     /**
+     * 获取限制提示图标 SVG
+     *
+     * @param string $type 图标类型 lock|reply
+     * @return string
+     */
+    private function get_restriction_icon_svg( $type = 'lock' ) {
+        if ( 'reply' === $type ) {
+            return '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+        }
+        return '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>';
+    }
+
+    /**
      * 登录可见短代码
      */
     public function login_to_view_shortcode( $atts, $content = null ) {
@@ -57,14 +70,14 @@ class Developer_Starter_Content_Restriction {
             : (bool) developer_starter_get_option( 'header_login_enable', '' );
         
         $html = '<div class="content-restriction-box login-required">';
-        $html .= '<div class="restriction-icon">🔒</div>';
-        $html .= '<div class="restriction-title">' . __( '登录后可见', 'developer-starter' ) . '</div>';
-        $html .= '<div class="restriction-desc">' . __( '此部分内容需要登录后才能查看', 'developer-starter' ) . '</div>';
+        $html .= '<div class="restriction-icon">' . $this->get_restriction_icon_svg( 'lock' ) . '</div>';
+        $html .= '<div class="restriction-title">' . __( '登录后可见', 'qiling' ) . '</div>';
+        $html .= '<div class="restriction-desc">' . __( '此部分内容需要登录后才能查看', 'qiling' ) . '</div>';
         
         if ( $login_modal_enable ) {
-            $html .= '<button type="button" class="restriction-btn trigger-login-modal" data-ds-login-trigger="modal" data-login-url="' . esc_url( $login_url ) . '">' . __( '立即登录', 'developer-starter' ) . '</button>';
+            $html .= '<button type="button" class="restriction-btn trigger-login-modal" data-ds-login-trigger="modal" data-login-url="' . esc_url( $login_url ) . '">' . __( '立即登录', 'qiling' ) . '</button>';
         } else {
-            $html .= '<a href="' . esc_url( $login_url ) . '" class="restriction-btn">' . __( '立即登录', 'developer-starter' ) . '</a>';
+            $html .= '<a href="' . esc_url( $login_url ) . '" class="restriction-btn">' . __( '立即登录', 'qiling' ) . '</a>';
         }
         
         $html .= '</div>';
@@ -93,13 +106,13 @@ class Developer_Starter_Content_Restriction {
         }
         
         $html = '<div class="content-restriction-box reply-required">';
-        $html .= '<div class="restriction-icon">💬</div>';
-        $html .= '<div class="restriction-title">' . __( '回复后可见', 'developer-starter' ) . '</div>';
-        $html .= '<div class="restriction-desc">' . __( '请在下方评论区留言后查看隐藏内容', 'developer-starter' ) . '</div>';
+        $html .= '<div class="restriction-icon">' . $this->get_restriction_icon_svg( 'reply' ) . '</div>';
+        $html .= '<div class="restriction-title">' . __( '回复后可见', 'qiling' ) . '</div>';
+        $html .= '<div class="restriction-desc">' . __( '请在下方评论区留言后查看隐藏内容', 'qiling' ) . '</div>';
         if ( ! is_user_logged_in() ) {
-            $html .= '<div class="restriction-notice" style="font-size: 12px; opacity: 0.7; margin-bottom: 10px;">' . __( '(游客留言依赖浏览器缓存，清理缓存后需重新评论)', 'developer-starter' ) . '</div>';
+            $html .= '<div class="restriction-notice" style="font-size: 12px; opacity: 0.7; margin-bottom: 10px;">' . __( '(游客留言依赖浏览器缓存，清理缓存后需重新评论)', 'qiling' ) . '</div>';
         }
-        $html .= '<a href="#respond" class="restriction-btn">' . __( '前往评论', 'developer-starter' ) . '</a>';
+        $html .= '<a href="#respond" class="restriction-btn">' . __( '前往评论', 'qiling' ) . '</a>';
         $html .= '</div>';
         
         return $html;
@@ -190,14 +203,14 @@ class Developer_Starter_Content_Restriction {
                 : (bool) developer_starter_get_option( 'header_login_enable', '' );
             
             $html = '<div class="content-restriction-box login-required full-post">';
-            $html .= '<div class="restriction-icon">🔒</div>';
-            $html .= '<div class="restriction-title">' . __( '登录后阅读全文', 'developer-starter' ) . '</div>';
-            $html .= '<div class="restriction-desc">' . __( '请登录后查看完整文章内容', 'developer-starter' ) . '</div>';
+            $html .= '<div class="restriction-icon">' . $this->get_restriction_icon_svg( 'lock' ) . '</div>';
+            $html .= '<div class="restriction-title">' . __( '登录后阅读全文', 'qiling' ) . '</div>';
+            $html .= '<div class="restriction-desc">' . __( '请登录后查看完整文章内容', 'qiling' ) . '</div>';
             
             if ( $login_modal_enable ) {
-                $html .= '<button type="button" class="restriction-btn trigger-login-modal" data-ds-login-trigger="modal" data-login-url="' . esc_url( $login_url ) . '">' . __( '立即登录', 'developer-starter' ) . '</button>';
+                $html .= '<button type="button" class="restriction-btn trigger-login-modal" data-ds-login-trigger="modal" data-login-url="' . esc_url( $login_url ) . '">' . __( '立即登录', 'qiling' ) . '</button>';
             } else {
-                $html .= '<a href="' . esc_url( $login_url ) . '" class="restriction-btn">' . __( '立即登录', 'developer-starter' ) . '</a>';
+                $html .= '<a href="' . esc_url( $login_url ) . '" class="restriction-btn">' . __( '立即登录', 'qiling' ) . '</a>';
             }
             
             $html .= '</div>';
@@ -213,13 +226,13 @@ class Developer_Starter_Content_Restriction {
             }
 
             $html = '<div class="content-restriction-box reply-required full-post">';
-            $html .= '<div class="restriction-icon">💬</div>';
-            $html .= '<div class="restriction-title">' . __( '回复后阅读全文', 'developer-starter' ) . '</div>';
-            $html .= '<div class="restriction-desc">' . __( '请在评论区留言后查看完整文章内容', 'developer-starter' ) . '</div>';
+            $html .= '<div class="restriction-icon">' . $this->get_restriction_icon_svg( 'reply' ) . '</div>';
+            $html .= '<div class="restriction-title">' . __( '回复后阅读全文', 'qiling' ) . '</div>';
+            $html .= '<div class="restriction-desc">' . __( '请在评论区留言后查看完整文章内容', 'qiling' ) . '</div>';
             if ( ! is_user_logged_in() ) {
-                $html .= '<div class="restriction-notice" style="font-size: 12px; opacity: 0.7; margin-bottom: 10px;">' . __( '(游客留言依赖浏览器缓存，清理缓存后需重新评论)', 'developer-starter' ) . '</div>';
+                $html .= '<div class="restriction-notice" style="font-size: 12px; opacity: 0.7; margin-bottom: 10px;">' . __( '(游客留言依赖浏览器缓存，清理缓存后需重新评论)', 'qiling' ) . '</div>';
             }
-            $html .= '<a href="#respond" class="restriction-btn">' . __( '前往评论', 'developer-starter' ) . '</a>';
+            $html .= '<a href="#respond" class="restriction-btn">' . __( '前往评论', 'qiling' ) . '</a>';
             $html .= '</div>';
             
             // 完全替换内容，不显示任何正文
@@ -235,7 +248,7 @@ class Developer_Starter_Content_Restriction {
     public function add_restriction_meta_box() {
         add_meta_box(
             'content_restriction_settings',
-            __( '内容可见性', 'developer-starter' ),
+            __( '内容可见性', 'qiling' ),
             array( $this, 'render_restriction_meta_box' ),
             'post',
             'side',
@@ -306,7 +319,7 @@ class Developer_Starter_Content_Restriction {
         
         <div class="restriction-option">
             <div>
-                <div class="restriction-label"><?php esc_html_e( '🔒 全文登录可见', 'developer-starter' ); ?></div>
+                <div class="restriction-label"><?php esc_html_e( '全文登录可见', 'qiling' ); ?></div>
             </div>
             <label class="restriction-toggle">
                 <input type="checkbox" name="content_login_required" value="1" <?php checked( $login_required, '1' ); ?> />
@@ -316,7 +329,7 @@ class Developer_Starter_Content_Restriction {
         
         <div class="restriction-option">
             <div>
-                <div class="restriction-label"><?php esc_html_e( '💬 全文回复可见', 'developer-starter' ); ?></div>
+                <div class="restriction-label"><?php esc_html_e( '全文回复可见', 'qiling' ); ?></div>
             </div>
             <label class="restriction-toggle">
                 <input type="checkbox" name="content_reply_required" value="1" <?php checked( $reply_required, '1' ); ?> />
@@ -325,8 +338,8 @@ class Developer_Starter_Content_Restriction {
         </div>
         
         <div class="restriction-desc-text">
-            <?php esc_html_e( '开启后整篇文章需要登录或回复才能阅读全文。', 'developer-starter' ); ?><br>
-            <?php esc_html_e( '如需部分内容隐藏，请使用编辑器工具栏的快捷按钮插入短代码。', 'developer-starter' ); ?>
+            <?php esc_html_e( '开启后整篇文章需要登录或回复才能阅读全文。', 'qiling' ); ?><br>
+            <?php esc_html_e( '如需部分内容隐藏，请使用编辑器工具栏的快捷按钮插入短代码。', 'qiling' ); ?>
         </div>
         <?php
     }
@@ -405,10 +418,10 @@ class Developer_Starter_Content_Restriction {
         <script>
         window.qilingContentRestrictionI18n = <?php echo wp_json_encode(
             array(
-                'loginVisible'      => __( '登录可见', 'developer-starter' ),
-                'replyVisible'      => __( '回复可见', 'developer-starter' ),
-                'loginVisibleText'  => __( '此处内容登录后可见', 'developer-starter' ),
-                'replyVisibleText'  => __( '此处内容回复后可见', 'developer-starter' ),
+                'loginVisible'      => __( '登录可见', 'qiling' ),
+                'replyVisible'      => __( '回复可见', 'qiling' ),
+                'loginVisibleText'  => __( '此处内容登录后可见', 'qiling' ),
+                'replyVisibleText'  => __( '此处内容回复后可见', 'qiling' ),
             )
         ); ?>;
         </script>
@@ -437,8 +450,16 @@ class Developer_Starter_Content_Restriction {
             margin-top: 0;
         }
         .restriction-icon {
-            font-size: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0ea5e9;
             margin-bottom: 16px;
+        }
+        .restriction-icon svg {
+            display: block;
+            width: 48px;
+            height: 48px;
         }
         .restriction-title {
             font-size: 20px;

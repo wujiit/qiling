@@ -35,9 +35,9 @@ class Site_Notification_Admin {
      */
     public function add_submenu_page() {
         add_submenu_page(
-            'developer-starter-settings',
-            __( '站内通知发送', 'developer-starter' ),
-            __( '站内通知发送', 'developer-starter' ),
+            'qiling-settings',
+            __( '站内通知发送', 'qiling' ),
+            __( '站内通知发送', 'qiling' ),
             'manage_options',
             $this->page_slug,
             array( $this, 'render_page' )
@@ -51,7 +51,7 @@ class Site_Notification_Admin {
      */
     public function handle_submit() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( '权限不足。', 'developer-starter' ) );
+            wp_die( esc_html__( '权限不足。', 'qiling' ) );
         }
 
         check_admin_referer( 'developer_starter_send_site_notification' );
@@ -61,8 +61,8 @@ class Site_Notification_Admin {
             $recipient_mode = 'specific';
         }
 
-        $notice_title = isset( $_POST['notice_title'] ) ? sanitize_text_field( wp_unslash( $_POST['notice_title'] ) ) : '';
-        $notice_content = isset( $_POST['notice_content'] ) ? wp_kses_post( wp_unslash( $_POST['notice_content'] ) ) : '';
+        $notice_title = isset( $_POST['notice_title'] ) ? sanitize_text_field( (string) wp_unslash( $_POST['notice_title'] ) ) : '';
+        $notice_content = ( isset( $_POST['notice_content'] ) && is_string( $_POST['notice_content'] ) && '' !== trim( $_POST['notice_content'] ) ) ? wp_kses_post( wp_unslash( $_POST['notice_content'] ) ) : '';
         $notice_type = isset( $_POST['notice_type'] ) ? sanitize_key( wp_unslash( $_POST['notice_type'] ) ) : 'info';
         $notice_link = isset( $_POST['notice_link'] ) ? esc_url_raw( wp_unslash( $_POST['notice_link'] ) ) : '';
 
@@ -73,7 +73,7 @@ class Site_Notification_Admin {
         if ( $notice_title === '' ) {
             $this->redirect_with_result( array(
                 'notice_status'  => 'error',
-                'notice_message' => __( '通知标题不能为空。', 'developer-starter' ),
+                'notice_message' => __( '通知标题不能为空。', 'qiling' ),
             ) );
         }
 
@@ -89,7 +89,7 @@ class Site_Notification_Admin {
             if ( empty( $recipient_user_ids ) ) {
                 $this->redirect_with_result( array(
                     'notice_status'  => 'error',
-                    'notice_message' => __( '未匹配到有效用户，请检查用户ID/用户名/邮箱。', 'developer-starter' ),
+                    'notice_message' => __( '未匹配到有效用户，请检查用户ID/用户名/邮箱。', 'qiling' ),
                 ) );
             }
         } else {
@@ -97,7 +97,7 @@ class Site_Notification_Admin {
             if ( $role === '' ) {
                 $this->redirect_with_result( array(
                     'notice_status'  => 'error',
-                    'notice_message' => __( '请选择用户角色。', 'developer-starter' ),
+                    'notice_message' => __( '请选择用户角色。', 'qiling' ),
                 ) );
             }
 
@@ -116,12 +116,12 @@ class Site_Notification_Admin {
             if ( empty( $recipient_user_ids ) ) {
                 $this->redirect_with_result( array(
                     'notice_status'  => 'error',
-                    'notice_message' => __( '该角色下暂无用户。', 'developer-starter' ),
+                    'notice_message' => __( '该角色下暂无用户。', 'qiling' ),
                 ) );
             }
 
             if ( (int) $query->get_total() > 2000 ) {
-                $invalid_identifiers[] = __( '角色用户数超过 2000，仅发送给前 2000 位用户。', 'developer-starter' );
+                $invalid_identifiers[] = __( '角色用户数超过 2000，仅发送给前 2000 位用户。', 'qiling' );
             }
         }
 
@@ -156,13 +156,13 @@ class Site_Notification_Admin {
         if ( $sent_count <= 0 ) {
             $this->redirect_with_result( array(
                 'notice_status'  => 'error',
-                'notice_message' => __( '发送失败，请确认已启用站内通知。', 'developer-starter' ),
+                'notice_message' => __( '发送失败，请确认已启用站内通知。', 'qiling' ),
             ) );
         }
 
         $result_message = sprintf(
             /* translators: %d: sent user count */
-            __( '发送完成，共发送给 %d 位用户。', 'developer-starter' ),
+            __( '发送完成，共发送给 %d 位用户。', 'qiling' ),
             $sent_count
         );
 
@@ -173,7 +173,7 @@ class Site_Notification_Admin {
             }
             $result_message .= ' ' . sprintf(
                 /* translators: %s: invalid user identifiers */
-                __( '未识别项：%s', 'developer-starter' ),
+                __( '未识别项：%s', 'qiling' ),
                 $invalid_preview
             );
         }
@@ -200,12 +200,12 @@ class Site_Notification_Admin {
         $roles = function_exists( 'wp_roles' ) && wp_roles() ? wp_roles()->roles : array();
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e( '站内通知发送', 'developer-starter' ); ?></h1>
-            <p><?php esc_html_e( '管理员可向指定用户或某个角色用户发送单向站内通知。', 'developer-starter' ); ?></p>
+            <h1><?php esc_html_e( '站内通知发送', 'qiling' ); ?></h1>
+            <p><?php esc_html_e( '管理员可向指定用户或某个角色用户发送单向站内通知。', 'qiling' ); ?></p>
 
             <?php if ( function_exists( 'developer_starter_site_notify_enabled' ) && ! developer_starter_site_notify_enabled( '', true ) ) : ?>
                 <div class="notice notice-warning">
-                    <p><?php esc_html_e( '当前“站内通知”总开关已关闭，发送将不会写入通知记录。请先在主题设置中开启。', 'developer-starter' ); ?></p>
+                    <p><?php esc_html_e( '当前“站内通知”总开关已关闭，发送将不会写入通知记录。请先在主题设置中开启。', 'qiling' ); ?></p>
                 </div>
             <?php endif; ?>
 
@@ -222,78 +222,78 @@ class Site_Notification_Admin {
                 <table class="form-table" role="presentation">
                     <tbody>
                         <tr>
-                            <th scope="row"><?php esc_html_e( '接收方式', 'developer-starter' ); ?></th>
+                            <th scope="row"><?php esc_html_e( '接收方式', 'qiling' ); ?></th>
                             <td>
                                 <fieldset>
                                     <label>
                                         <input type="radio" name="recipient_mode" value="specific" checked />
-                                        <?php esc_html_e( '指定用户', 'developer-starter' ); ?>
+                                        <?php esc_html_e( '指定用户', 'qiling' ); ?>
                                     </label>
                                     <br />
                                     <label>
                                         <input type="radio" name="recipient_mode" value="role" />
-                                        <?php esc_html_e( '按角色群发', 'developer-starter' ); ?>
+                                        <?php esc_html_e( '按角色群发', 'qiling' ); ?>
                                     </label>
                                 </fieldset>
                             </td>
                         </tr>
                         <tr data-recipient-row="specific">
                             <th scope="row">
-                                <?php esc_html_e( '用户标识', 'developer-starter' ); ?>
+                                <?php esc_html_e( '用户标识', 'qiling' ); ?>
                             </th>
                             <td>
                                 <textarea name="recipient_identifiers" rows="6" class="large-text" placeholder="1\nadmin\nuser@example.com"></textarea>
-                                <p class="description"><?php esc_html_e( '支持用户ID、用户名、邮箱；可用英文逗号或换行分隔。', 'developer-starter' ); ?></p>
+                                <p class="description"><?php esc_html_e( '支持用户ID、用户名、邮箱；可用英文逗号或换行分隔。', 'qiling' ); ?></p>
                             </td>
                         </tr>
                         <tr data-recipient-row="role" style="display:none;">
-                            <th scope="row"><?php esc_html_e( '用户角色', 'developer-starter' ); ?></th>
+                            <th scope="row"><?php esc_html_e( '用户角色', 'qiling' ); ?></th>
                             <td>
                                 <select name="recipient_role">
-                                    <option value=""><?php esc_html_e( '请选择角色', 'developer-starter' ); ?></option>
+                                    <option value=""><?php esc_html_e( '请选择角色', 'qiling' ); ?></option>
                                     <?php foreach ( $roles as $role_key => $role_data ) : ?>
                                         <option value="<?php echo esc_attr( $role_key ); ?>">
                                             <?php echo esc_html( translate_user_role( $role_data['name'] ) ); ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
-                                <p class="description"><?php esc_html_e( '单次最多发送给前 2000 位角色用户。', 'developer-starter' ); ?></p>
+                                <p class="description"><?php esc_html_e( '单次最多发送给前 2000 位角色用户。', 'qiling' ); ?></p>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><?php esc_html_e( '通知标题', 'developer-starter' ); ?></th>
+                            <th scope="row"><?php esc_html_e( '通知标题', 'qiling' ); ?></th>
                             <td>
                                 <input type="text" name="notice_title" class="regular-text" maxlength="200" required />
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><?php esc_html_e( '通知内容', 'developer-starter' ); ?></th>
+                            <th scope="row"><?php esc_html_e( '通知内容', 'qiling' ); ?></th>
                             <td>
                                 <textarea name="notice_content" rows="8" class="large-text"></textarea>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><?php esc_html_e( '通知类型', 'developer-starter' ); ?></th>
+                            <th scope="row"><?php esc_html_e( '通知类型', 'qiling' ); ?></th>
                             <td>
                                 <select name="notice_type">
-                                    <option value="info"><?php esc_html_e( '信息', 'developer-starter' ); ?></option>
-                                    <option value="success"><?php esc_html_e( '成功', 'developer-starter' ); ?></option>
-                                    <option value="warning"><?php esc_html_e( '警告', 'developer-starter' ); ?></option>
-                                    <option value="error"><?php esc_html_e( '错误', 'developer-starter' ); ?></option>
+                                    <option value="info"><?php esc_html_e( '信息', 'qiling' ); ?></option>
+                                    <option value="success"><?php esc_html_e( '成功', 'qiling' ); ?></option>
+                                    <option value="warning"><?php esc_html_e( '警告', 'qiling' ); ?></option>
+                                    <option value="error"><?php esc_html_e( '错误', 'qiling' ); ?></option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><?php esc_html_e( '跳转链接', 'developer-starter' ); ?></th>
+                            <th scope="row"><?php esc_html_e( '跳转链接', 'qiling' ); ?></th>
                             <td>
                                 <input type="url" name="notice_link" class="regular-text" placeholder="https://example.com/path" />
-                                <p class="description"><?php esc_html_e( '可选。填写后用户可在通知中点击“查看详情”。', 'developer-starter' ); ?></p>
+                                <p class="description"><?php esc_html_e( '可选。填写后用户可在通知中点击“查看详情”。', 'qiling' ); ?></p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
-                <?php submit_button( __( '发送通知', 'developer-starter' ) ); ?>
+                <?php submit_button( __( '发送通知', 'qiling' ) ); ?>
             </form>
         </div>
 

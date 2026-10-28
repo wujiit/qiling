@@ -52,7 +52,7 @@ class Mega_Menu_Manager {
         }
         wp_enqueue_media();
         $admin_js_file = get_template_directory() . '/assets/js/admin-mega-menu.js';
-        $admin_js_ver  = file_exists( $admin_js_file ) ? (string) filemtime( $admin_js_file ) : (string) DEVELOPER_STARTER_VERSION;
+        $admin_js_ver  = file_exists( $admin_js_file ) ? (string) filemtime( $admin_js_file ) : (string) QILING_VERSION;
         wp_enqueue_script(
             'ds-mega-menu-admin',
             get_template_directory_uri() . '/assets/js/admin-mega-menu.js',
@@ -67,9 +67,9 @@ class Mega_Menu_Manager {
             'ds-mega-menu-admin',
             'dsMegaMenuAdmin',
             array(
-                'title'      => __( '选择图片', 'developer-starter' ),
-                'buttonText' => __( '使用此图片', 'developer-starter' ),
-                'mediaError' => __( '媒体库未加载，请刷新页面重试。', 'developer-starter' ),
+                'title'      => __( '选择图片', 'qiling' ),
+                'buttonText' => __( '使用此图片', 'qiling' ),
+                'mediaError' => __( '媒体库未加载，请刷新页面重试。', 'qiling' ),
             )
         );
 
@@ -173,7 +173,7 @@ class Mega_Menu_Manager {
         $js_mtime  = file_exists( $js_file ) ? (int) filemtime( $js_file ) : 0;
         $version   = ( $css_mtime > 0 || $js_mtime > 0 )
             ? (string) max( $css_mtime, $js_mtime )
-            : (string) DEVELOPER_STARTER_VERSION;
+            : (string) QILING_VERSION;
 
         wp_enqueue_style( 'ds-mega-menu', get_template_directory_uri() . '/assets/css/mega-menu.css', array(), $version );
         wp_enqueue_script( 'ds-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array(), $version, true );
@@ -411,81 +411,81 @@ class Mega_Menu_Manager {
         <div class="ds-mega-menu-fields field-custom clear-fix description-wide" data-menu-depth="<?php echo esc_attr( (string) $depth ); ?>">
             <div class="ds-mega-menu-panel">
                 <div class="ds-mega-menu-panel__header">
-                    <strong><?php esc_html_e( '启灵菜单增强', 'developer-starter' ); ?></strong>
-                    <span><?php esc_html_e( '展示与超级菜单', 'developer-starter' ); ?></span>
+                    <strong><?php esc_html_e( '启灵菜单增强', 'qiling' ); ?></strong>
+                    <span><?php esc_html_e( '展示与超级菜单', 'qiling' ); ?></span>
                 </div>
 
                 <div class="ds-mega-menu-section">
-                    <h4><?php esc_html_e( '菜单项展示', 'developer-starter' ); ?></h4>
+                    <h4><?php esc_html_e( '菜单项展示', 'qiling' ); ?></h4>
                     <div class="ds-mega-menu-grid">
                         <p class="field-menu-display-type description description-thin">
                             <label for="edit-menu-item-display-type-<?php echo $item_id_attr; ?>">
-                                <?php esc_html_e( '显示类型', 'developer-starter' ); ?><br>
+                                <?php esc_html_e( '显示类型', 'qiling' ); ?><br>
                                 <select id="edit-menu-item-display-type-<?php echo $item_id_attr; ?>"
                                         name="menu-item-display-type[<?php echo $item_id_attr; ?>]" class="widefat">
-                                    <option value="normal" <?php selected( $display_type, 'normal' ); ?>><?php esc_html_e( '普通链接', 'developer-starter' ); ?></option>
-                                    <option value="button" <?php selected( $display_type, 'button' ); ?>><?php esc_html_e( '按钮', 'developer-starter' ); ?></option>
-                                    <option value="icon" <?php selected( $display_type, 'icon' ); ?>><?php esc_html_e( '图标入口', 'developer-starter' ); ?></option>
-                                    <option value="divider" <?php selected( $display_type, 'divider' ); ?>><?php esc_html_e( '分割标题', 'developer-starter' ); ?></option>
+                                    <option value="normal" <?php selected( $display_type, 'normal' ); ?>><?php esc_html_e( '普通链接', 'qiling' ); ?></option>
+                                    <option value="button" <?php selected( $display_type, 'button' ); ?>><?php esc_html_e( '按钮', 'qiling' ); ?></option>
+                                    <option value="icon" <?php selected( $display_type, 'icon' ); ?>><?php esc_html_e( '图标入口', 'qiling' ); ?></option>
+                                    <option value="divider" <?php selected( $display_type, 'divider' ); ?>><?php esc_html_e( '分割标题', 'qiling' ); ?></option>
                                 </select>
                             </label>
                         </p>
 
                         <p class="field-menu-icon description description-thin">
                             <label for="edit-menu-item-icon-<?php echo $item_id_attr; ?>">
-                                <?php esc_html_e( '菜单图标', 'developer-starter' ); ?><br>
+                                <?php esc_html_e( '菜单图标', 'qiling' ); ?><br>
                                 <input type="text" id="edit-menu-item-icon-<?php echo $item_id_attr; ?>"
                                        class="widefat code"
                                        name="menu-item-icon[<?php echo $item_id_attr; ?>]"
                                        value="<?php echo esc_attr( $menu_icon ); ?>"
-                                       placeholder="<?php esc_attr_e( '例如: icon-home、🔥 或 SVG 代码', 'developer-starter' ); ?>" />
+                                       placeholder="<?php esc_attr_e( '例如: icon-home、icon-fire 或 SVG 代码', 'qiling' ); ?>" />
                             </label>
-                            <span class="description"><?php esc_html_e( '主导航、移动菜单和移动端底部菜单都会优先复用这里的图标。', 'developer-starter' ); ?></span>
+                            <span class="description"><?php esc_html_e( '主导航、移动菜单和移动端底部菜单都会优先复用这里的图标。', 'qiling' ); ?></span>
                         </p>
 
                         <p class="field-menu-badge description description-thin">
                             <label for="edit-menu-item-badge-text-<?php echo $item_id_attr; ?>">
-                                <?php esc_html_e( '角标文字', 'developer-starter' ); ?><br>
+                                <?php esc_html_e( '角标文字', 'qiling' ); ?><br>
                                 <input type="text" id="edit-menu-item-badge-text-<?php echo $item_id_attr; ?>"
                                        class="widefat code"
                                        name="menu-item-badge-text[<?php echo $item_id_attr; ?>]"
                                        value="<?php echo esc_attr( $menu_badge ); ?>"
-                                       placeholder="<?php esc_attr_e( '例如: HOT、NEW、VIP', 'developer-starter' ); ?>" />
+                                       placeholder="<?php esc_attr_e( '例如: HOT、NEW、VIP', 'qiling' ); ?>" />
                             </label>
                         </p>
                     </div>
 
                     <p class="field-menu-desc description description-wide">
                         <label for="edit-menu-item-description-<?php echo $item_id_attr; ?>">
-                            <?php esc_html_e( '描述文本', 'developer-starter' ); ?><br>
+                            <?php esc_html_e( '描述文本', 'qiling' ); ?><br>
                             <textarea id="edit-menu-item-description-<?php echo $item_id_attr; ?>"
                                       class="widefat" rows="2"
                                       name="menu-item-description[<?php echo $item_id_attr; ?>]"
-                                      placeholder="<?php esc_attr_e( '用于 Mega Menu 或支持描述的菜单样式。', 'developer-starter' ); ?>"><?php echo esc_textarea( $menu_desc ); ?></textarea>
+                                      placeholder="<?php esc_attr_e( '用于 Mega Menu 或支持描述的菜单样式。', 'qiling' ); ?>"><?php echo esc_textarea( $menu_desc ); ?></textarea>
                         </label>
                     </p>
                 </div>
 
                 <div class="ds-mega-menu-section">
-                    <h4><?php esc_html_e( '图片 / Mega 预览', 'developer-starter' ); ?></h4>
+                    <h4><?php esc_html_e( '图片 / Mega 预览', 'qiling' ); ?></h4>
                     <p class="field-menu-image description description-wide">
                         <label for="edit-menu-item-image-<?php echo $item_id_attr; ?>">
-                            <?php esc_html_e( '菜单图片', 'developer-starter' ); ?><br>
+                            <?php esc_html_e( '菜单图片', 'qiling' ); ?><br>
                             <input type="text" id="edit-menu-item-image-<?php echo $item_id_attr; ?>"
                                    class="widefat code edit-menu-item-image"
                                    name="menu-item-image[<?php echo $item_id_attr; ?>]"
                                    value="<?php echo esc_url( $menu_image ); ?>"
-                                   placeholder="<?php esc_attr_e( '输入图片地址或点击选择', 'developer-starter' ); ?>" />
+                                   placeholder="<?php esc_attr_e( '输入图片地址或点击选择', 'qiling' ); ?>" />
                         </label>
-                        <span class="description"><?php esc_html_e( '用于 Mega Menu 图文网格、侧栏预览等场景。普通菜单图标请使用上方“菜单图标”。', 'developer-starter' ); ?></span>
+                        <span class="description"><?php esc_html_e( '用于 Mega Menu 图文网格、侧栏预览等场景。普通菜单图标请使用上方“菜单图标”。', 'qiling' ); ?></span>
                         <span class="ds-menu-image-actions">
                             <button type="button" class="button ds-menu-image-upload"
                                     data-input="edit-menu-item-image-<?php echo $item_id_attr; ?>"
-                                    data-preview="preview-menu-item-image-<?php echo $item_id_attr; ?>"><?php esc_html_e( '选择图片', 'developer-starter' ); ?></button>
+                                    data-preview="preview-menu-item-image-<?php echo $item_id_attr; ?>"><?php esc_html_e( '选择图片', 'qiling' ); ?></button>
                             <button type="button" class="button ds-menu-image-remove"
                                     data-input="edit-menu-item-image-<?php echo $item_id_attr; ?>"
                                     data-preview="preview-menu-item-image-<?php echo $item_id_attr; ?>"
-                                    style="<?php echo empty( $menu_image ) ? 'display:none;' : ''; ?>"><?php esc_html_e( '移除', 'developer-starter' ); ?></button>
+                                    style="<?php echo empty( $menu_image ) ? 'display:none;' : ''; ?>"><?php esc_html_e( '移除', 'qiling' ); ?></button>
                         </span>
                         <span id="preview-menu-item-image-<?php echo $item_id_attr; ?>" class="ds-menu-image-preview">
                             <?php if ( ! empty( $menu_image ) ) : ?>
@@ -496,27 +496,27 @@ class Mega_Menu_Manager {
                 </div>
 
                 <div class="ds-mega-menu-section">
-                    <h4><?php esc_html_e( '超级菜单', 'developer-starter' ); ?></h4>
+                    <h4><?php esc_html_e( '超级菜单', 'qiling' ); ?></h4>
                     <p class="ds-mega-menu-help description">
-                        <?php esc_html_e( '超级菜单建议只在一级菜单项启用；前台主导航仅一级菜单项会触发 Mega Menu 布局。', 'developer-starter' ); ?>
+                        <?php esc_html_e( '超级菜单建议只在一级菜单项启用；前台主导航仅一级菜单项会触发 Mega Menu 布局。', 'qiling' ); ?>
                     </p>
                     <p class="field-mega-enable description description-wide">
                         <label for="edit-menu-item-mega-enable-<?php echo $item_id_attr; ?>">
                             <input type="checkbox" id="edit-menu-item-mega-enable-<?php echo $item_id_attr; ?>"
                                    name="menu-item-mega-enable[<?php echo $item_id_attr; ?>]" value="1"
                                    <?php checked( $mega_enable, 1 ); ?> />
-                            <strong><?php esc_html_e( '启用超级菜单', 'developer-starter' ); ?></strong>
+                            <strong><?php esc_html_e( '启用超级菜单', 'qiling' ); ?></strong>
                         </label>
                     </p>
 
                     <p class="field-mega-style description description-wide">
                         <label for="edit-menu-item-mega-style-<?php echo $item_id_attr; ?>">
-                            <?php esc_html_e( '布局模式', 'developer-starter' ); ?><br>
+                            <?php esc_html_e( '布局模式', 'qiling' ); ?><br>
                             <select id="edit-menu-item-mega-style-<?php echo $item_id_attr; ?>"
                                     name="menu-item-mega-style[<?php echo $item_id_attr; ?>]" class="widefat">
-                                <option value="columns" <?php selected( $mega_style, 'columns' ); ?>><?php esc_html_e( '标准多栏', 'developer-starter' ); ?></option>
-                                <option value="grid" <?php selected( $mega_style, 'grid' ); ?>><?php esc_html_e( '图文网格（上图下文）', 'developer-starter' ); ?></option>
-                                <option value="sidebar" <?php selected( $mega_style, 'sidebar' ); ?>><?php esc_html_e( '动态侧栏（左文右图）', 'developer-starter' ); ?></option>
+                                <option value="columns" <?php selected( $mega_style, 'columns' ); ?>><?php esc_html_e( '标准多栏', 'qiling' ); ?></option>
+                                <option value="grid" <?php selected( $mega_style, 'grid' ); ?>><?php esc_html_e( '图文网格（上图下文）', 'qiling' ); ?></option>
+                                <option value="sidebar" <?php selected( $mega_style, 'sidebar' ); ?>><?php esc_html_e( '动态侧栏（左文右图）', 'qiling' ); ?></option>
                             </select>
                         </label>
                     </p>

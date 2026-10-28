@@ -66,7 +66,7 @@ class Account_Deletion_Manager {
     public function get_agreement_content() {
         $agreement = (string) $this->get_option( 'account_deletion_request_agreement', '' );
         if ( trim( $agreement ) === '' ) {
-            $agreement = __( '提交注销申请后，账号不会立即删除。管理员将在后台审核后人工处理删除。请确认已备份个人数据。', 'developer-starter' );
+            $agreement = __( '提交注销申请后，账号不会立即删除。管理员将在后台审核后人工处理删除。请确认已备份个人数据。', 'qiling' );
         }
         return $agreement;
     }
@@ -81,6 +81,23 @@ class Account_Deletion_Manager {
         }
 
         $this->run_table_migration();
+        self::maybe_upgrade_table_schema();
+    }
+
+    /**
+     * 自动补齐 deleted_at 软删除字段与索引。
+     */
+    public static function maybe_upgrade_table_schema() {
+        if ( ! self::table_exists() ) {
+            return;
+        }
+
+        global $wpdb;
+        $table_name = self::table_name();
+        $col        = $wpdb->get_results( "SHOW COLUMNS FROM {$table_name} LIKE 'deleted_at'" );
+        if ( empty( $col ) ) {
+            $wpdb->query( "ALTER TABLE {$table_name} ADD COLUMN deleted_at DATETIME NULL DEFAULT NULL AFTER updated_at, ADD KEY deleted_at (deleted_at)" );
+        }
     }
 
     private function run_table_migration( $force = false ) {
@@ -120,13 +137,15 @@ class Account_Deletion_Manager {
             user_agent VARCHAR(255) DEFAULT '',
             created_at DATETIME NOT NULL,
             updated_at DATETIME NOT NULL,
+            deleted_at DATETIME NULL,
             reviewed_by BIGINT(20) UNSIGNED DEFAULT 0,
             reviewed_note TEXT NULL,
             reviewed_at DATETIME NULL,
             PRIMARY KEY (id),
             KEY user_id (user_id),
             KEY status (status),
-            KEY created_at (created_at)
+            KEY created_at (created_at),
+            KEY deleted_at (deleted_at)
         ) {$charset_collate};";
     }
 
@@ -266,7 +285,7 @@ class Account_Deletion_Manager {
         $table_name = self::table_name();
         $record     = $wpdb->get_row(
             $wpdb->prepare(
-                "SELECT * FROM {$table_name} WHERE user_id = %d ORDER BY id DESC LIMIT 1",
+                "SELECT id, user_id, username_snapshot, email_snapshot, display_name_snapshot, status, agreement_snapshot, request_ip, user_agent, created_at, updated_at, reviewed_by, reviewed_note, reviewed_at FROM {$table_name} WHERE user_id = %d ORDER BY id DESC LIMIT 1",
                 $user_id
             )
         );
@@ -277,13 +296,14 @@ class Account_Deletion_Manager {
     public static function get_status_label( $status ) {
         $status = sanitize_key( (string) $status );
         $map    = array(
-            'pending'   => __( '待审核', 'developer-starter' ),
-            'approved'  => __( '审核通过', 'developer-starter' ),
-            'rejected'  => __( '已驳回', 'developer-starter' ),
-            'processed' => __( '已处理', 'developer-starter' ),
+            'pending'   => __( '待审核', 'qiling' ),
+            'approved'  => __( '审核通过', 'qiling' ),
+            'rejected'  => __( '已驳回', 'qiling' ),
+            'processed' => __( '已处理', 'qiling' ),
+            'trash'     => __( '回收站', 'qiling' ),
         );
 
-        return isset( $map[ $status ] ) ? $map[ $status ] : __( '未知状态', 'developer-starter' );
+        return isset( $map[ $status ] ) ? $map[ $status ] : __( '未知状态', 'qiling' );
     }
 
     public static function count_requests_by_status( $status = '' ) {
@@ -296,7 +316,7 @@ class Account_Deletion_Manager {
         $status     = sanitize_key( (string) $status );
 
         if ( $status === '' ) {
-            return (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table_name}" );
+            return (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table_name} WHERE status != 'trash'" );
         }
 
         return (int) $wpdb->get_var(
@@ -313,14 +333,14 @@ class Account_Deletion_Manager {
         }
 
         $pending_count = self::count_requests_by_status( 'pending' );
-        $menu_title    = __( '账号注销申请', 'developer-starter' );
+        $menu_title    = __( '账号注销申请', 'qiling' );
         if ( $pending_count > 0 ) {
             $menu_title .= ' <span class="awaiting-mod count-' . $pending_count . '"><span class="pending-count">' . $pending_count . '</span></span>';
         }
 
         add_submenu_page(
-            'developer-starter-settings',
-            __( '账号注销申请', 'developer-starter' ),
+            'qiling-settings',
+            __( '账号注销申请', 'qiling' ),
             $menu_title,
             'manage_options',
             self::PAGE_SLUG,
@@ -333,14 +353,14 @@ class Account_Deletion_Manager {
             return;
         }
 
-        $version = defined( 'DEVELOPER_STARTER_VERSION' ) ? DEVELOPER_STARTER_VERSION : '1.0.0';
+        $version = defined( 'QILING_VERSION' ) ? QILING_VERSION : '1.0.0';
         if ( function_exists( 'developer_starter_get_assets_version' ) ) {
             $version = (string) developer_starter_get_assets_version();
         }
 
         wp_enqueue_style(
             'developer-starter-account-deletion-admin',
-            DEVELOPER_STARTER_ASSETS . '/css/admin-account-deletion.css',
+            QILING_ASSETS . '/css/admin-account-deletion.css',
             array( 'developer-starter-admin' ),
             $version
         );
@@ -348,13 +368,25 @@ class Account_Deletion_Manager {
 
     private function maybe_handle_admin_actions() {
         $action = isset( $_GET['ds_account_deletion_action'] ) ? sanitize_key( wp_unslash( (string) $_GET['ds_account_deletion_action'] ) ) : '';
-        $id     = isset( $_GET['rid'] ) ? absint( wp_unslash( $_GET['rid'] ) ) : 0;
+
+        // 一键清空回收站
+        if ( $action === 'empty_trash' ) {
+            check_admin_referer( 'ds_account_deletion_empty_trash' );
+            if ( ! current_user_can( 'manage_options' ) ) {
+                wp_die( __( '您没有权限执行该操作。', 'qiling' ) );
+            }
+            global $wpdb;
+            $ok = $wpdb->query( "DELETE FROM {$this->table_name} WHERE status = 'trash'" ) !== false;
+            $this->redirect_admin_with_notice( 'emptied', $ok );
+        }
+
+        $id = isset( $_GET['rid'] ) ? absint( wp_unslash( $_GET['rid'] ) ) : 0;
         if ( $action === '' || $id <= 0 ) {
             return;
         }
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( __( '您没有权限执行该操作。', 'developer-starter' ) );
+            wp_die( __( '您没有权限执行该操作。', 'qiling' ) );
         }
 
         $nonce = isset( $_GET['_wpnonce'] ) ? wp_unslash( (string) $_GET['_wpnonce'] ) : '';
@@ -363,15 +395,65 @@ class Account_Deletion_Manager {
         }
 
         global $wpdb;
-        $ok = false;
+        $ok          = false;
+        $reviewed_by = get_current_user_id();
+        $now         = current_time( 'mysql' );
 
-        if ( $action === 'delete' ) {
+        // 移至回收站（软删除）或在回收站中删除
+        if ( $action === 'trash' || $action === 'delete' ) {
+            $current_status = $wpdb->get_var( $wpdb->prepare( "SELECT status FROM {$this->table_name} WHERE id = %d", $id ) );
+            if ( 'trash' === $current_status ) {
+                // 已在回收站中点击删除：执行物理彻底粉碎
+                $ok = $wpdb->delete( $this->table_name, array( 'id' => $id ), array( '%d' ) ) !== false;
+                $this->redirect_admin_with_notice( 'deleted', $ok );
+            } else {
+                // 首次删除：移入回收站
+                $ok = $wpdb->update(
+                    $this->table_name,
+                    array(
+                        'status'      => 'trash',
+                        'updated_at'  => $now,
+                        'deleted_at'  => $now,
+                        'reviewed_by' => $reviewed_by,
+                    ),
+                    array( 'id' => $id ),
+                    array( '%s', '%s', '%s', '%d' ),
+                    array( '%d' )
+                ) !== false;
+                $this->redirect_admin_with_notice( 'trashed', $ok );
+            }
+        }
+
+        // 永久彻底删除
+        if ( $action === 'force_delete' ) {
             $ok = $wpdb->delete( $this->table_name, array( 'id' => $id ), array( '%d' ) ) !== false;
             $this->redirect_admin_with_notice( 'deleted', $ok );
         }
 
-        $reviewed_by = get_current_user_id();
-        $now         = current_time( 'mysql' );
+        // 从回收站还原
+        if ( $action === 'restore' ) {
+            $ok = $wpdb->update(
+                $this->table_name,
+                array(
+                    'status'        => 'pending',
+                    'updated_at'    => $now,
+                    'reviewed_by'   => 0,
+                    'reviewed_note' => '',
+                ),
+                array( 'id' => $id ),
+                array( '%s', '%s', '%d', '%s' ),
+                array( '%d' )
+            ) !== false;
+            if ( $ok ) {
+                $wpdb->query(
+                    $wpdb->prepare(
+                        "UPDATE {$this->table_name} SET deleted_at = NULL, reviewed_at = NULL WHERE id = %d",
+                        $id
+                    )
+                );
+            }
+            $this->redirect_admin_with_notice( 'restored', $ok );
+        }
 
         if ( $action === 'mark_processed' ) {
             $ok = $wpdb->update(
@@ -453,13 +535,13 @@ class Account_Deletion_Manager {
 
     public function render_admin_page() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( __( '您没有权限访问该页面。', 'developer-starter' ) );
+            wp_die( __( '您没有权限访问该页面。', 'qiling' ) );
         }
 
         $this->maybe_handle_admin_actions();
 
         global $wpdb;
-        $status_whitelist = array( 'pending', 'approved', 'rejected', 'processed' );
+        $status_whitelist = array( 'pending', 'approved', 'rejected', 'processed', 'trash' );
         $status_filter    = isset( $_GET['status'] ) ? sanitize_key( wp_unslash( (string) $_GET['status'] ) ) : '';
         if ( ! in_array( $status_filter, $status_whitelist, true ) ) {
             $status_filter = '';
@@ -475,6 +557,8 @@ class Account_Deletion_Manager {
         if ( $status_filter !== '' ) {
             $where_clauses[] = 'status = %s';
             $params[]        = $status_filter;
+        } else {
+            $where_clauses[] = "status != 'trash'";
         }
         if ( $keyword !== '' ) {
             $like            = '%' . $wpdb->esc_like( $keyword ) . '%';
@@ -492,7 +576,7 @@ class Account_Deletion_Manager {
             $total_records = (int) $wpdb->get_var( $count_sql );
         }
 
-        $query_sql   = "SELECT * FROM {$this->table_name} WHERE {$where_sql} ORDER BY created_at DESC LIMIT %d OFFSET %d";
+        $query_sql   = "SELECT id, user_id, username_snapshot, email_snapshot, display_name_snapshot, status, agreement_snapshot, request_ip, user_agent, created_at, updated_at, reviewed_by, reviewed_note, reviewed_at FROM {$this->table_name} WHERE {$where_sql} ORDER BY created_at DESC LIMIT %d OFFSET %d";
         $query_params = $params;
         $query_params[] = $per_page;
         $query_params[] = $offset;
@@ -502,29 +586,36 @@ class Account_Deletion_Manager {
         $pending_count   = self::count_requests_by_status( 'pending' );
         $processed_count = self::count_requests_by_status( 'processed' );
         $rejected_count  = self::count_requests_by_status( 'rejected' );
+        $trash_count     = self::count_requests_by_status( 'trash' );
 
         $notice_code = isset( $_GET['ds_account_deletion_notice'] ) ? sanitize_key( wp_unslash( (string) $_GET['ds_account_deletion_notice'] ) ) : '';
         $notice_ok   = isset( $_GET['ds_account_deletion_result'] ) && wp_unslash( (string) $_GET['ds_account_deletion_result'] ) === '1';
         ?>
         <div class="wrap qiling-account-deletion-admin">
-            <h1><?php esc_html_e( '账号注销申请', 'developer-starter' ); ?></h1>
+            <h1><?php esc_html_e( '账号注销申请', 'qiling' ); ?></h1>
 
             <?php if ( $notice_code ) : ?>
                 <div class="notice <?php echo $notice_ok ? 'notice-success' : 'notice-error'; ?> is-dismissible">
                     <p>
                         <?php
                         if ( $notice_ok ) {
-                            if ( $notice_code === 'deleted' ) {
-                                esc_html_e( '记录已删除。', 'developer-starter' );
+                            if ( $notice_code === 'trashed' ) {
+                                esc_html_e( '申请记录已移至回收站。', 'qiling' );
+                            } elseif ( $notice_code === 'restored' ) {
+                                esc_html_e( '申请记录已从回收站成功还原。', 'qiling' );
+                            } elseif ( $notice_code === 'deleted' ) {
+                                esc_html_e( '申请记录已永久粉碎删除。', 'qiling' );
+                            } elseif ( $notice_code === 'emptied' ) {
+                                esc_html_e( '回收站已成功清空。', 'qiling' );
                             } elseif ( $notice_code === 'updated' ) {
-                                esc_html_e( '状态已更新。', 'developer-starter' );
+                                esc_html_e( '状态已更新。', 'qiling' );
                             } else {
-                                esc_html_e( '操作完成。', 'developer-starter' );
+                                esc_html_e( '操作完成。', 'qiling' );
                             }
                         } elseif ( $notice_code === 'nonce_error' ) {
-                            esc_html_e( '安全校验失败，请重试。', 'developer-starter' );
+                            esc_html_e( '安全校验失败，请重试。', 'qiling' );
                         } else {
-                            esc_html_e( '操作失败，请稍后再试。', 'developer-starter' );
+                            esc_html_e( '操作失败，请稍后再试。', 'qiling' );
                         }
                         ?>
                     </p>
@@ -532,45 +623,63 @@ class Account_Deletion_Manager {
             <?php endif; ?>
 
             <div class="qiling-account-deletion-admin__stats">
-                <span class="stat-item"><?php echo esc_html( sprintf( __( '总申请：%d', 'developer-starter' ), $all_count ) ); ?></span>
-                <span class="stat-item stat-pending"><?php echo esc_html( sprintf( __( '待审核：%d', 'developer-starter' ), $pending_count ) ); ?></span>
-                <span class="stat-item stat-processed"><?php echo esc_html( sprintf( __( '已处理：%d', 'developer-starter' ), $processed_count ) ); ?></span>
-                <span class="stat-item stat-rejected"><?php echo esc_html( sprintf( __( '已驳回：%d', 'developer-starter' ), $rejected_count ) ); ?></span>
+                <span class="stat-item"><?php echo esc_html( sprintf( __( '总申请：%d', 'qiling' ), $all_count ) ); ?></span>
+                <span class="stat-item stat-pending"><?php echo esc_html( sprintf( __( '待审核：%d', 'qiling' ), $pending_count ) ); ?></span>
+                <span class="stat-item stat-processed"><?php echo esc_html( sprintf( __( '已处理：%d', 'qiling' ), $processed_count ) ); ?></span>
+                <span class="stat-item stat-rejected"><?php echo esc_html( sprintf( __( '已驳回：%d', 'qiling' ), $rejected_count ) ); ?></span>
+                <span class="stat-item stat-trash" style="color: #ef4444; font-weight: 600;"><?php echo esc_html( sprintf( __( '回收站：%d', 'qiling' ), $trash_count ) ); ?></span>
             </div>
 
             <form method="get" class="qiling-account-deletion-admin__filters">
                 <input type="hidden" name="page" value="<?php echo esc_attr( self::PAGE_SLUG ); ?>" />
-                <label for="qiling-account-deletion-status" class="screen-reader-text"><?php esc_html_e( '状态筛选', 'developer-starter' ); ?></label>
+                <label for="qiling-account-deletion-status" class="screen-reader-text"><?php esc_html_e( '状态筛选', 'qiling' ); ?></label>
                 <select id="qiling-account-deletion-status" name="status">
-                    <option value=""><?php esc_html_e( '全部状态', 'developer-starter' ); ?></option>
-                    <option value="pending" <?php selected( $status_filter, 'pending' ); ?>><?php esc_html_e( '待审核', 'developer-starter' ); ?></option>
-                    <option value="processed" <?php selected( $status_filter, 'processed' ); ?>><?php esc_html_e( '已处理', 'developer-starter' ); ?></option>
-                    <option value="rejected" <?php selected( $status_filter, 'rejected' ); ?>><?php esc_html_e( '已驳回', 'developer-starter' ); ?></option>
-                    <option value="approved" <?php selected( $status_filter, 'approved' ); ?>><?php esc_html_e( '审核通过', 'developer-starter' ); ?></option>
+                    <option value=""><?php esc_html_e( '全部正常状态', 'qiling' ); ?></option>
+                    <option value="pending" <?php selected( $status_filter, 'pending' ); ?>><?php esc_html_e( '待审核', 'qiling' ); ?></option>
+                    <option value="processed" <?php selected( $status_filter, 'processed' ); ?>><?php esc_html_e( '已处理', 'qiling' ); ?></option>
+                    <option value="rejected" <?php selected( $status_filter, 'rejected' ); ?>><?php esc_html_e( '已驳回', 'qiling' ); ?></option>
+                    <option value="approved" <?php selected( $status_filter, 'approved' ); ?>><?php esc_html_e( '审核通过', 'qiling' ); ?></option>
+                    <option value="trash" <?php selected( $status_filter, 'trash' ); ?>><?php echo esc_html( sprintf( __( '回收站 (%d)', 'qiling' ), $trash_count ) ); ?></option>
                 </select>
-                <label for="qiling-account-deletion-search" class="screen-reader-text"><?php esc_html_e( '搜索', 'developer-starter' ); ?></label>
-                <input id="qiling-account-deletion-search" type="search" name="s" value="<?php echo esc_attr( $keyword ); ?>" placeholder="<?php esc_attr_e( '搜索用户ID/用户名/邮箱', 'developer-starter' ); ?>" />
-                <button type="submit" class="button button-primary"><?php esc_html_e( '筛选', 'developer-starter' ); ?></button>
-                <a href="<?php echo esc_url( admin_url( 'admin.php?page=' . self::PAGE_SLUG ) ); ?>" class="button"><?php esc_html_e( '重置', 'developer-starter' ); ?></a>
+                <label for="qiling-account-deletion-search" class="screen-reader-text"><?php esc_html_e( '搜索', 'qiling' ); ?></label>
+                <input id="qiling-account-deletion-search" type="search" name="s" value="<?php echo esc_attr( $keyword ); ?>" placeholder="<?php esc_attr_e( '搜索用户ID/用户名/邮箱', 'qiling' ); ?>" />
+                <button type="submit" class="button button-primary"><?php esc_html_e( '筛选', 'qiling' ); ?></button>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=' . self::PAGE_SLUG ) ); ?>" class="button"><?php esc_html_e( '重置', 'qiling' ); ?></a>
+                <?php if ( $status_filter === 'trash' && $trash_count > 0 ) : ?>
+                    <?php
+                    $empty_trash_url = wp_nonce_url(
+                        add_query_arg(
+                            array(
+                                'page'                       => self::PAGE_SLUG,
+                                'status'                     => 'trash',
+                                'ds_account_deletion_action' => 'empty_trash',
+                            ),
+                            admin_url( 'admin.php' )
+                        ),
+                        'ds_account_deletion_empty_trash'
+                    );
+                    ?>
+                    <a href="<?php echo esc_url( $empty_trash_url ); ?>" class="button button-secondary" onclick="return confirm('<?php echo esc_js( __( '确定清空回收站吗？所有处于回收站中的记录都将被彻底物理删除，不可恢复！', 'qiling' ) ); ?>');" style="margin-left: 10px; color: #dc2626; border-color: #fca5a5;"><?php esc_html_e( '清空回收站', 'qiling' ); ?></a>
+                <?php endif; ?>
             </form>
 
             <table class="wp-list-table widefat fixed striped">
                 <thead>
                     <tr>
-                        <th style="width:64px;"><?php esc_html_e( 'ID', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '用户', 'developer-starter' ); ?></th>
-                        <th style="width:120px;"><?php esc_html_e( '状态', 'developer-starter' ); ?></th>
-                        <th style="width:170px;"><?php esc_html_e( '申请时间', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '协议快照', 'developer-starter' ); ?></th>
-                        <th style="width:130px;"><?php esc_html_e( '处理人', 'developer-starter' ); ?></th>
-                        <th style="width:170px;"><?php esc_html_e( '处理时间', 'developer-starter' ); ?></th>
-                        <th style="width:220px;"><?php esc_html_e( '操作', 'developer-starter' ); ?></th>
+                        <th style="width:64px;"><?php esc_html_e( 'ID', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '用户', 'qiling' ); ?></th>
+                        <th style="width:120px;"><?php esc_html_e( '状态', 'qiling' ); ?></th>
+                        <th style="width:170px;"><?php esc_html_e( '申请时间', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '协议快照', 'qiling' ); ?></th>
+                        <th style="width:130px;"><?php esc_html_e( '处理人', 'qiling' ); ?></th>
+                        <th style="width:170px;"><?php esc_html_e( '处理时间', 'qiling' ); ?></th>
+                        <th style="width:220px;"><?php esc_html_e( '操作', 'qiling' ); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if ( empty( $records ) ) : ?>
                         <tr>
-                            <td colspan="8" style="text-align:center;padding:40px;"><?php esc_html_e( '暂无注销申请记录。', 'developer-starter' ); ?></td>
+                            <td colspan="8" style="text-align:center;padding:40px;"><?php esc_html_e( '暂无注销申请记录。', 'qiling' ); ?></td>
                         </tr>
                     <?php else : ?>
                         <?php foreach ( $records as $record ) : ?>
@@ -599,9 +708,9 @@ class Account_Deletion_Manager {
                                     <div class="muted">ID: <?php echo esc_html( (int) $record->user_id ); ?></div>
                                     <div class="muted"><?php echo esc_html( $record->email_snapshot ); ?></div>
                                     <?php if ( $user ) : ?>
-                                        <a href="<?php echo esc_url( admin_url( 'user-edit.php?user_id=' . (int) $record->user_id ) ); ?>" target="_blank"><?php esc_html_e( '查看用户', 'developer-starter' ); ?></a>
+                                        <a href="<?php echo esc_url( admin_url( 'user-edit.php?user_id=' . (int) $record->user_id ) ); ?>" target="_blank"><?php esc_html_e( '查看用户', 'qiling' ); ?></a>
                                     <?php else : ?>
-                                        <span class="muted is-danger"><?php esc_html_e( '用户已不存在', 'developer-starter' ); ?></span>
+                                        <span class="muted is-danger"><?php esc_html_e( '用户已不存在', 'qiling' ); ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
@@ -612,7 +721,7 @@ class Account_Deletion_Manager {
                                     <?php
                                     $agreement_text = wp_strip_all_tags( (string) $record->agreement_snapshot );
                                     if ( $agreement_text === '' ) {
-                                        $agreement_text = __( '无', 'developer-starter' );
+                                        $agreement_text = __( '无', 'qiling' );
                                     }
                                     echo esc_html( wp_trim_words( $agreement_text, 24, '…' ) );
                                     ?>
@@ -622,67 +731,98 @@ class Account_Deletion_Manager {
                                 </td>
                                 <td><?php echo esc_html( (string) ( $record->reviewed_at ?: '-' ) ); ?></td>
                                 <td>
-                                    <?php if ( in_array( $status, array( 'pending', 'approved' ), true ) ) : ?>
+                                    <?php if ( $status === 'trash' ) : ?>
                                         <?php
-                                        $processed_url = add_query_arg(
+                                        $restore_url = add_query_arg(
                                             array_merge(
                                                 $base_args,
                                                 array(
-                                                    'ds_account_deletion_action' => 'mark_processed',
+                                                    'ds_account_deletion_action' => 'restore',
                                                     'rid'                        => $record_id,
                                                 )
                                             ),
                                             $action_base_url
                                         );
-                                        $processed_url = wp_nonce_url( $processed_url, 'ds_account_deletion_action_' . $record_id );
+                                        $restore_url = wp_nonce_url( $restore_url, 'ds_account_deletion_action_' . $record_id );
 
-                                        $rejected_url = add_query_arg(
+                                        $force_delete_url = add_query_arg(
                                             array_merge(
                                                 $base_args,
                                                 array(
-                                                    'ds_account_deletion_action' => 'mark_rejected',
+                                                    'ds_account_deletion_action' => 'force_delete',
                                                     'rid'                        => $record_id,
                                                 )
                                             ),
                                             $action_base_url
                                         );
-                                        $rejected_url = wp_nonce_url( $rejected_url, 'ds_account_deletion_action_' . $record_id );
+                                        $force_delete_url = wp_nonce_url( $force_delete_url, 'ds_account_deletion_action_' . $record_id );
                                         ?>
-                                        <a href="<?php echo esc_url( $processed_url ); ?>"><?php esc_html_e( '标记已处理', 'developer-starter' ); ?></a>
+                                        <a href="<?php echo esc_url( $restore_url ); ?>"><?php esc_html_e( '还原', 'qiling' ); ?></a>
                                         |
-                                        <a href="<?php echo esc_url( $rejected_url ); ?>"><?php esc_html_e( '驳回', 'developer-starter' ); ?></a>
-                                        |
+                                        <a href="<?php echo esc_url( $force_delete_url ); ?>" class="text-danger" onclick="return confirm('<?php echo esc_js( __( '确定要永久粉碎删除此记录吗？此操作无法撤销！', 'qiling' ) ); ?>');"><?php esc_html_e( '永久删除', 'qiling' ); ?></a>
                                     <?php else : ?>
+                                        <?php if ( in_array( $status, array( 'pending', 'approved' ), true ) ) : ?>
+                                            <?php
+                                            $processed_url = add_query_arg(
+                                                array_merge(
+                                                    $base_args,
+                                                    array(
+                                                        'ds_account_deletion_action' => 'mark_processed',
+                                                        'rid'                        => $record_id,
+                                                    )
+                                                ),
+                                                $action_base_url
+                                            );
+                                            $processed_url = wp_nonce_url( $processed_url, 'ds_account_deletion_action_' . $record_id );
+
+                                            $rejected_url = add_query_arg(
+                                                array_merge(
+                                                    $base_args,
+                                                    array(
+                                                        'ds_account_deletion_action' => 'mark_rejected',
+                                                        'rid'                        => $record_id,
+                                                    )
+                                                ),
+                                                $action_base_url
+                                            );
+                                            $rejected_url = wp_nonce_url( $rejected_url, 'ds_account_deletion_action_' . $record_id );
+                                            ?>
+                                            <a href="<?php echo esc_url( $processed_url ); ?>"><?php esc_html_e( '标记已处理', 'qiling' ); ?></a>
+                                            |
+                                            <a href="<?php echo esc_url( $rejected_url ); ?>"><?php esc_html_e( '驳回', 'qiling' ); ?></a>
+                                            |
+                                        <?php else : ?>
+                                            <?php
+                                            $pending_url = add_query_arg(
+                                                array_merge(
+                                                    $base_args,
+                                                    array(
+                                                        'ds_account_deletion_action' => 'mark_pending',
+                                                        'rid'                        => $record_id,
+                                                    )
+                                                ),
+                                                $action_base_url
+                                            );
+                                            $pending_url = wp_nonce_url( $pending_url, 'ds_account_deletion_action_' . $record_id );
+                                            ?>
+                                            <a href="<?php echo esc_url( $pending_url ); ?>"><?php esc_html_e( '设为待审核', 'qiling' ); ?></a>
+                                            |
+                                        <?php endif; ?>
                                         <?php
-                                        $pending_url = add_query_arg(
+                                        $delete_url = add_query_arg(
                                             array_merge(
                                                 $base_args,
                                                 array(
-                                                    'ds_account_deletion_action' => 'mark_pending',
+                                                    'ds_account_deletion_action' => 'trash',
                                                     'rid'                        => $record_id,
                                                 )
                                             ),
                                             $action_base_url
                                         );
-                                        $pending_url = wp_nonce_url( $pending_url, 'ds_account_deletion_action_' . $record_id );
+                                        $delete_url = wp_nonce_url( $delete_url, 'ds_account_deletion_action_' . $record_id );
                                         ?>
-                                        <a href="<?php echo esc_url( $pending_url ); ?>"><?php esc_html_e( '设为待审核', 'developer-starter' ); ?></a>
-                                        |
+                                        <a href="<?php echo esc_url( $delete_url ); ?>" class="text-danger" onclick="return confirm('<?php echo esc_js( __( '确定将此记录移至回收站吗？', 'qiling' ) ); ?>');"><?php esc_html_e( '移至回收站', 'qiling' ); ?></a>
                                     <?php endif; ?>
-                                    <?php
-                                    $delete_url = add_query_arg(
-                                        array_merge(
-                                            $base_args,
-                                            array(
-                                                'ds_account_deletion_action' => 'delete',
-                                                'rid'                        => $record_id,
-                                            )
-                                        ),
-                                        $action_base_url
-                                    );
-                                    $delete_url = wp_nonce_url( $delete_url, 'ds_account_deletion_action_' . $record_id );
-                                    ?>
-                                    <a href="<?php echo esc_url( $delete_url ); ?>" class="text-danger" onclick="return confirm('<?php echo esc_js( __( '确定删除这条申请记录吗？', 'developer-starter' ) ); ?>');"><?php esc_html_e( '删除', 'developer-starter' ); ?></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

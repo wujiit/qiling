@@ -19,7 +19,7 @@ class Banner_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-format-image';
-        $this->description = __( '首屏Banner模块', 'developer-starter' );
+        $this->description = __( '首屏Banner模块', 'qiling' );
     }
 
     public function get_id() {
@@ -27,64 +27,64 @@ class Banner_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '首屏Banner', 'developer-starter' );
+        return __( '首屏Banner', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             array(
                 'id' => 'banner_layout',
-                'label' => __( '布局风格', 'developer-starter' ),
+                'label' => __( '布局风格', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'slider' => __( '全屏轮播 (Slider)', 'developer-starter' ),
-                    'image_text' => __( '图文左右 (Image + Text)', 'developer-starter' ),
+                    'slider' => __( '全屏轮播 (Slider)', 'qiling' ),
+                    'image_text' => __( '图文左右 (Image + Text)', 'qiling' ),
                 ),
                 'default' => 'slider',
             ),
             array(
                 'id' => 'banner_height',
-                'label' => __( '模块高度', 'developer-starter' ),
+                'label' => __( '模块高度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'full' => __( '全屏 (100vh)', 'developer-starter' ),
-                    'large' => __( '高 (80vh)', 'developer-starter' ),
-                    'medium' => __( '中 (60vh)', 'developer-starter' ),
-                    'small' => __( '矮 (50vh)', 'developer-starter' ),
+                    'full' => __( '全屏 (100vh)', 'qiling' ),
+                    'large' => __( '高 (80vh)', 'qiling' ),
+                    'medium' => __( '中 (60vh)', 'qiling' ),
+                    'small' => __( '矮 (50vh)', 'qiling' ),
                 ),
                 'default' => 'full',
             ),
             array(
                 'id' => 'banner_image_position',
-                'label' => __( '图片/视频位置 (仅图文布局)', 'developer-starter' ),
+                'label' => __( '图片/视频位置 (仅图文布局)', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'right' => __( '右侧', 'developer-starter' ),
-                    'left' => __( '左侧', 'developer-starter' ),
+                    'right' => __( '右侧', 'qiling' ),
+                    'left' => __( '左侧', 'qiling' ),
                 ),
                 'default' => 'right',
             ),
             array(
                 'id' => 'banner_bg_color',
-                'label' => __( '背景颜色 (可选)', 'developer-starter' ),
+                'label' => __( '背景颜色 (可选)', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '留空则使用默认渐变色', 'developer-starter' ),
+                'desc' => __( '留空则使用默认渐变色', 'qiling' ),
             ),
             array(
                 'id' => 'banner_slides',
-                'label' => __( '幻灯片内容', 'developer-starter' ),
+                'label' => __( '幻灯片内容', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'media_type', 'label' => __( '媒体类型', 'developer-starter' ), 'type' => 'select', 'options' => array( 'image' => __( '图片', 'developer-starter' ), 'video' => __( '视频', 'developer-starter' ) ), 'default' => 'image' ),
-                    array( 'id' => 'image', 'label' => __( '图片', 'developer-starter' ), 'type' => 'image', 'dependency' => array( 'media_type', '==', 'image' ) ),
-                    array( 'id' => 'video_url', 'label' => __( '视频URL (.mp4)', 'developer-starter' ), 'type' => 'text', 'dependency' => array( 'media_type', '==', 'video' ) ),
-                    array( 'id' => 'title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'title_align', 'label' => __( '标题位置（仅PC）', 'developer-starter' ), 'type' => 'select', 'options' => array( 'default' => __( '跟随布局', 'developer-starter' ), 'left' => __( '居左', 'developer-starter' ), 'center' => __( '居中', 'developer-starter' ), 'right' => __( '居右', 'developer-starter' ) ), 'default' => 'default' ),
-                    array( 'id' => 'subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'textarea' ),
-                    array( 'id' => 'btn_text', 'label' => __( '按钮文字', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'btn_url', 'label' => __( '按钮链接', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'btn_bg_color', 'label' => __( '按钮背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-                    array( 'id' => 'btn_text_color', 'label' => __( '按钮文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'media_type', 'label' => __( '媒体类型', 'qiling' ), 'type' => 'select', 'options' => array( 'image' => __( '图片', 'qiling' ), 'video' => __( '视频', 'qiling' ) ), 'default' => 'image' ),
+                    array( 'id' => 'image', 'label' => __( '图片', 'qiling' ), 'type' => 'image', 'dependency' => array( 'media_type', '==', 'image' ) ),
+                    array( 'id' => 'video_url', 'label' => __( '视频URL (.mp4)', 'qiling' ), 'type' => 'text', 'dependency' => array( 'media_type', '==', 'video' ) ),
+                    array( 'id' => 'title', 'label' => __( '标题', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'title_align', 'label' => __( '标题位置（仅PC）', 'qiling' ), 'type' => 'select', 'options' => array( 'default' => __( '跟随布局', 'qiling' ), 'left' => __( '居左', 'qiling' ), 'center' => __( '居中', 'qiling' ), 'right' => __( '居右', 'qiling' ) ), 'default' => 'default' ),
+                    array( 'id' => 'subtitle', 'label' => __( '副标题', 'qiling' ), 'type' => 'textarea' ),
+                    array( 'id' => 'btn_text', 'label' => __( '按钮文字', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'btn_url', 'label' => __( '按钮链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'btn_bg_color', 'label' => __( '按钮背景颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'btn_text_color', 'label' => __( '按钮文字颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
                     $this->get_button_border_color_field( 'btn_border_color' ),
                 ),
                 'default_items' => array(
@@ -92,111 +92,111 @@ class Banner_Module extends Module_Base {
                         'media_type'  => 'image',
                         'image'       => '',
                         'video_url'   => '',
-                        'title'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'developer-starter' ),
+                        'title'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'qiling' ),
                         'title_align' => 'default',
-                        'subtitle'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型，提供一站式服务', 'Support digital growth with an end-to-end service approach.' ) : __( '助力企业数字化转型，提供一站式服务', 'developer-starter' ),
-                        'btn_text'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'developer-starter' ),
+                        'subtitle'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型，提供一站式服务', 'Support digital growth with an end-to-end service approach.' ) : __( '助力企业数字化转型，提供一站式服务', 'qiling' ),
+                        'btn_text'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ),
                         'btn_url'     => '#',
                     ),
                 ),
             ),
             
-            array( 'id' => 'heading_stats', 'type' => 'heading', 'label' => __( '数据展示条 (Stats Bar)', 'developer-starter' ) ),
+            array( 'id' => 'heading_stats', 'type' => 'heading', 'label' => __( '数据展示条 (Stats Bar)', 'qiling' ) ),
             array(
                 'id' => 'show_stats_bar',
-                'label' => __( '显示数据条', 'developer-starter' ),
+                'label' => __( '显示数据条', 'qiling' ),
                 'type' => 'select',
-                'options' => array( '0' => __( '关闭', 'developer-starter' ), '1' => __( '开启', 'developer-starter' ) ),
+                'options' => array( '0' => __( '关闭', 'qiling' ), '1' => __( '开启', 'qiling' ) ),
                 'default' => '0',
             ),
             array(
                 'id' => 'stats_bar_bg_color',
-                'label' => __( '数据条背景颜色', 'developer-starter' ),
+                'label' => __( '数据条背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'desc' => __( '留空则跟随当前模块视觉风格；可填写 HEX、rgba 或渐变等 CSS 背景值。', 'developer-starter' ),
+                'desc' => __( '留空则跟随当前模块视觉风格；可填写 HEX、rgba 或渐变等 CSS 背景值。', 'qiling' ),
                 'dependency' => array( 'show_stats_bar', '==', '1' ),
             ),
             array(
                 'id' => 'stats_items_layout',
-                'label' => __( '数据项布局', 'developer-starter' ),
+                'label' => __( '数据项布局', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'connected' => __( '连体数据条', 'developer-starter' ),
-                    'independent' => __( '独立数据卡片', 'developer-starter' ),
+                    'connected' => __( '连体数据条', 'qiling' ),
+                    'independent' => __( '独立数据卡片', 'qiling' ),
                 ),
                 'default' => 'connected',
                 'dependency' => array( 'show_stats_bar', '==', '1' ),
             ),
             array(
                 'id' => 'stats_items_gap',
-                'label' => __( '独立卡片间距', 'developer-starter' ),
+                'label' => __( '独立卡片间距', 'qiling' ),
                 'type' => 'text',
                 'default' => '16px',
-                'desc' => __( '如 12px、16px、24px，仅独立数据卡片生效。', 'developer-starter' ),
+                'desc' => __( '如 12px、16px、24px，仅独立数据卡片生效。', 'qiling' ),
                 'dependency' => array( 'stats_items_layout', '==', 'independent' ),
             ),
             array(
                 'id' => 'stats_data',
-                'label' => __( '数据项配置', 'developer-starter' ),
+                'label' => __( '数据项配置', 'qiling' ),
                 'type' => 'repeater',
                 'dependency' => array( 'show_stats_bar', '==', '1' ),
                 'fields' => array(
-                    array( 'id' => 'icon', 'label' => __( '图标类名', 'developer-starter' ), 'type' => 'text', 'desc' => __( '支持 Emoji 或 Symbol类名', 'developer-starter' ) ),
-                    array( 'id' => 'number', 'label' => __( '数值', 'developer-starter' ), 'type' => 'text', 'default' => '10k+' ),
-                    array( 'id' => 'label', 'label' => __( '描述文本', 'developer-starter' ), 'type' => 'text', 'default' => __( '活跃用户', 'developer-starter' ) ),
-                    array( 'id' => 'color', 'label' => __( '图标/数值颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-                    array( 'id' => 'label_color', 'label' => __( '描述文本颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-                    array( 'id' => 'card_bg', 'label' => __( '单卡片背景', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-                    array( 'id' => 'card_border', 'label' => __( '单卡片边框', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-                    array( 'id' => 'card_radius', 'label' => __( '单卡片圆角', 'developer-starter' ), 'type' => 'text', 'default' => '12px', 'desc' => __( '填写 0px 为直角，填写 12px、20px 等为圆角。', 'developer-starter' ) ),
-                    array( 'id' => 'card_padding', 'label' => __( '单卡片内边距', 'developer-starter' ), 'type' => 'text', 'default' => '16px', 'desc' => __( '如 12px、16px、24px。', 'developer-starter' ) ),
-                    array( 'id' => 'card_shadow', 'label' => __( '单卡片阴影', 'developer-starter' ), 'type' => 'text', 'default' => '', 'desc' => __( '如 0 12px 30px rgba(15,23,42,.12)，填写 none 可关闭。', 'developer-starter' ) ),
+                    array( 'id' => 'icon', 'label' => __( '图标类名', 'qiling' ), 'type' => 'text', 'desc' => __( '支持 Emoji 或 Symbol类名', 'qiling' ) ),
+                    array( 'id' => 'number', 'label' => __( '数值', 'qiling' ), 'type' => 'text', 'default' => '10k+' ),
+                    array( 'id' => 'label', 'label' => __( '描述文本', 'qiling' ), 'type' => 'text', 'default' => __( '活跃用户', 'qiling' ) ),
+                    array( 'id' => 'color', 'label' => __( '图标/数值颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'label_color', 'label' => __( '描述文本颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'card_bg', 'label' => __( '单卡片背景', 'qiling' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'card_border', 'label' => __( '单卡片边框', 'qiling' ), 'type' => 'color', 'default' => '' ),
+                    array( 'id' => 'card_radius', 'label' => __( '单卡片圆角', 'qiling' ), 'type' => 'text', 'default' => '12px', 'desc' => __( '填写 0px 为直角，填写 12px、20px 等为圆角。', 'qiling' ) ),
+                    array( 'id' => 'card_padding', 'label' => __( '单卡片内边距', 'qiling' ), 'type' => 'text', 'default' => '16px', 'desc' => __( '如 12px、16px、24px。', 'qiling' ) ),
+                    array( 'id' => 'card_shadow', 'label' => __( '单卡片阴影', 'qiling' ), 'type' => 'text', 'default' => '', 'desc' => __( '如 0 12px 30px rgba(15,23,42,.12)，填写 none 可关闭。', 'qiling' ) ),
                 ),
             ),
             
             // === 底部波浪效果 ===
             array(
                 'id' => 'banner_wave_enable',
-                'label' => __( '【波浪】启用底部波浪', 'developer-starter' ),
+                'label' => __( '【波浪】启用底部波浪', 'qiling' ),
                 'type' => 'select',
-                'options' => array( '0' => __( '关闭', 'developer-starter' ), '1' => __( '开启', 'developer-starter' ) ),
+                'options' => array( '0' => __( '关闭', 'qiling' ), '1' => __( '开启', 'qiling' ) ),
                 'default' => '0',
             ),
             array(
                 'id' => 'banner_wave_style',
-                'label' => __( '波浪样式', 'developer-starter' ),
+                'label' => __( '波浪样式', 'qiling' ),
                 'type' => 'select',
                 'options' => array( 
-                    'single' => __( '单波浪', 'developer-starter' ), 
-                    'double' => __( '双波浪', 'developer-starter' ), 
-                    'triple' => __( '三波浪', 'developer-starter' ),
-                    'curve' => __( '曲线', 'developer-starter' ),
+                    'single' => __( '单波浪', 'qiling' ), 
+                    'double' => __( '双波浪', 'qiling' ), 
+                    'triple' => __( '三波浪', 'qiling' ),
+                    'curve' => __( '曲线', 'qiling' ),
                 ),
                 'default' => 'single',
                 'dependency' => array( 'banner_wave_enable', '==', '1' ),
             ),
             array(
                 'id' => 'banner_wave_color',
-                'label' => __( '波浪颜色', 'developer-starter' ),
+                'label' => __( '波浪颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'desc' => __( '⚠️ 重要：必须与下方模块背景色一致，否则会出现横线', 'developer-starter' ),
+                'desc' => __( '注意：必须与下方模块背景色一致，否则会出现横线', 'qiling' ),
                 'dependency' => array( 'banner_wave_enable', '==', '1' ),
             ),
             array(
                 'id' => 'banner_wave_height',
-                'label' => __( '波浪高度', 'developer-starter' ),
+                'label' => __( '波浪高度', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
-                'desc' => __( '如 60px、80px、100px', 'developer-starter' ),
+                'desc' => __( '如 60px、80px、100px', 'qiling' ),
                 'dependency' => array( 'banner_wave_enable', '==', '1' ),
             ),
             array(
                 'id' => 'banner_wave_flip',
-                'label' => __( '翻转波浪', 'developer-starter' ),
+                'label' => __( '翻转波浪', 'qiling' ),
                 'type' => 'select',
-                'options' => array( '0' => __( '否', 'developer-starter' ), '1' => __( '是', 'developer-starter' ) ),
+                'options' => array( '0' => __( '否', 'qiling' ), '1' => __( '是', 'qiling' ) ),
                 'default' => '0',
                 'dependency' => array( 'banner_wave_enable', '==', '1' ),
             ),
@@ -214,9 +214,9 @@ class Banner_Module extends Module_Base {
             $slides = array(
                 array(
                     'image'    => '',
-                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'developer-starter' ),
-                    'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型，提供一站式服务', 'Support digital growth with an end-to-end service approach.' ) : __( '助力企业数字化转型，提供一站式服务', 'developer-starter' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'developer-starter' ),
+                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'qiling' ),
+                    'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型，提供一站式服务', 'Support digital growth with an end-to-end service approach.' ) : __( '助力企业数字化转型，提供一站式服务', 'qiling' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ),
                     'btn_url'  => '#',
                 ),
             );
@@ -445,9 +445,9 @@ class Banner_Module extends Module_Base {
     
     private function render_image_text_layout( $slides, $image_position, $height_class, $bg_color = '', $data = array() ) {
         $slide = is_array( $slides ) && ! empty( $slides ) ? $slides[0] : array();
-        $title = isset( $slide['title'] ) ? $slide['title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'developer-starter' ) );
-        $subtitle = isset( $slide['subtitle'] ) ? $slide['subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型', 'Support digital growth with a polished online presence.' ) : __( '助力企业数字化转型', 'developer-starter' ) );
-        $btn_text = isset( $slide['btn_text'] ) ? $slide['btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'developer-starter' ) );
+        $title = isset( $slide['title'] ) ? $slide['title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'qiling' ) );
+        $subtitle = isset( $slide['subtitle'] ) ? $slide['subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型', 'Support digital growth with a polished online presence.' ) : __( '助力企业数字化转型', 'qiling' ) );
+        $btn_text = isset( $slide['btn_text'] ) ? $slide['btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ) );
         $btn_url = isset( $slide['btn_url'] ) ? $slide['btn_url'] : '#';
         $image = isset( $slide['image'] ) ? $slide['image'] : '';
         $media_type = isset( $slide['media_type'] ) ? $slide['media_type'] : 'image';
@@ -502,7 +502,7 @@ class Banner_Module extends Module_Base {
                             <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" style="max-width: min(100%, var(--qiling-measure-800)); height: auto; border-radius: var(--qiling-space-12); box-shadow: 0 var(--qiling-space-20) var(--qiling-space-40) rgba(var(--qiling-rgb-0-0-0), 0.2);" />
                         <?php else : ?>
                             <div style="aspect-ratio: 4/3; background: rgba(var(--qiling-rgb-255-255-255), 0.1); border-radius: var(--qiling-space-12); display: flex; align-items: center; justify-content: center; color: rgba(var(--qiling-rgb-255-255-255), 0.5);">
-                                <?php esc_html_e( '请上传图片或视频', 'developer-starter' ); ?>
+                                <?php esc_html_e( '请上传图片或视频', 'qiling' ); ?>
                             </div>
                         <?php endif; ?>
                         

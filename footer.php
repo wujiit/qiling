@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     $footer_links_title   = trim( developer_starter_get_option( 'footer_links_title', '' ) );
     $footer_contact_title = trim( developer_starter_get_option( 'footer_contact_title', '' ) );
     $footer_follow_title  = trim( developer_starter_get_option( 'footer_follow_title', '' ) );
-    $company_brief        = (string) developer_starter_get_option( 'company_brief', __( '专业的企业服务提供商，致力于为客户提供优质的产品与服务。', 'developer-starter' ) );
+    $company_brief        = (string) developer_starter_get_option( 'company_brief', __( '专业的企业服务提供商，致力于为客户提供优质的产品与服务。', 'qiling' ) );
     $footer_section_visibility = array(
         'about'   => '1' === (string) developer_starter_get_option( 'footer_about_enable', '1' ),
         'links'   => '1' === (string) developer_starter_get_option( 'footer_links_enable', '1' ),
@@ -55,10 +55,10 @@ if ( ! defined( 'ABSPATH' ) ) {
         'follow'  => '1' === (string) developer_starter_get_option( 'footer_follow_enable', '1' ),
     );
 
-    $footer_about_title   = '' !== $footer_about_title ? $footer_about_title : __( '关于我们', 'developer-starter' );
-    $footer_links_title   = '' !== $footer_links_title ? $footer_links_title : __( '快速链接', 'developer-starter' );
-    $footer_contact_title = '' !== $footer_contact_title ? $footer_contact_title : __( '联系方式', 'developer-starter' );
-    $footer_follow_title  = '' !== $footer_follow_title ? $footer_follow_title : __( '关注我们', 'developer-starter' );
+    $footer_about_title   = '' !== $footer_about_title ? $footer_about_title : __( '关于我们', 'qiling' );
+    $footer_links_title   = '' !== $footer_links_title ? $footer_links_title : __( '快速链接', 'qiling' );
+    $footer_contact_title = '' !== $footer_contact_title ? $footer_contact_title : __( '联系方式', 'qiling' );
+    $footer_follow_title  = '' !== $footer_follow_title ? $footer_follow_title : __( '关注我们', 'qiling' );
 
     if ( function_exists( 'developer_starter_translate_theme_option_text' ) ) {
         $footer_about_title   = developer_starter_translate_theme_option_text( $footer_about_title );

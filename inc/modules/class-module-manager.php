@@ -196,22 +196,22 @@ class Module_Manager {
      */
     private function get_module_group_labels() {
         $labels = array(
-            'core'      => __( '基础通用', 'developer-starter' ),
-            'software'  => __( '软件应用', 'developer-starter' ),
-            'resume'    => __( '个人履历', 'developer-starter' ),
-            'qiling'    => __( '启灵特色', 'developer-starter' ),
-            'footer'    => __( '页脚模块', 'developer-starter' ),
-            'industry'  => __( '行业场景', 'developer-starter' ),
-            'general'   => __( '通用模块', 'developer-starter' ),
-            'homepage'  => __( '首页模块', 'developer-starter' ),
-            'content'   => __( '内容展示', 'developer-starter' ),
-            'hero'      => __( '首屏模块', 'developer-starter' ),
-            'business'  => __( '商业模块', 'developer-starter' ),
-            'marketing' => __( '营销活动', 'developer-starter' ),
-            'education' => __( '教育培训', 'developer-starter' ),
-            'component' => __( '组件模块', 'developer-starter' ),
-            'media'     => __( '媒体模块', 'developer-starter' ),
-            'header'    => __( '头部模块', 'developer-starter' ),
+            'core'      => __( '基础通用', 'qiling' ),
+            'software'  => __( '软件应用', 'qiling' ),
+            'resume'    => __( '个人履历', 'qiling' ),
+            'qiling'    => __( '启灵特色', 'qiling' ),
+            'footer'    => __( '页脚模块', 'qiling' ),
+            'industry'  => __( '行业场景', 'qiling' ),
+            'general'   => __( '通用模块', 'qiling' ),
+            'homepage'  => __( '首页模块', 'qiling' ),
+            'content'   => __( '内容展示', 'qiling' ),
+            'hero'      => __( '首屏模块', 'qiling' ),
+            'business'  => __( '商业模块', 'qiling' ),
+            'marketing' => __( '营销活动', 'qiling' ),
+            'education' => __( '教育培训', 'qiling' ),
+            'component' => __( '组件模块', 'qiling' ),
+            'media'     => __( '媒体模块', 'qiling' ),
+            'header'    => __( '头部模块', 'qiling' ),
         );
 
         return (array) apply_filters( 'developer_starter_module_group_labels', $labels );
@@ -230,7 +230,7 @@ class Module_Manager {
             return (string) $labels[ $group ];
         }
 
-        return $group !== '' ? ucfirst( str_replace( array( '-', '_' ), ' ', $group ) ) : __( '通用模块', 'developer-starter' );
+        return $group !== '' ? ucfirst( str_replace( array( '-', '_' ), ' ', $group ) ) : __( '通用模块', 'qiling' );
     }
 
     /**
@@ -1037,7 +1037,7 @@ class Module_Manager {
             }
             if ( $module_is_hidden && $builder_mode ) {
                 echo '<div class="module-wrapper qiling-builder-module qfb-hidden-module-placeholder" data-builder-index="' . esc_attr( (string) $builder_index ) . '" data-module-id="' . esc_attr( $module_id ) . '">';
-                echo '<div class="qfb-hidden-module-placeholder__inner"><strong>' . esc_html( $this->get_module( $module_id ) ? $this->get_module( $module_id )->get_name() : $module_id ) . '</strong><span>' . esc_html__( '当前模块已暂时隐藏，点击可编辑并恢复显示。', 'developer-starter' ) . '</span></div>';
+                echo '<div class="qfb-hidden-module-placeholder__inner"><strong>' . esc_html( $this->get_module( $module_id ) ? $this->get_module( $module_id )->get_name() : $module_id ) . '</strong><span>' . esc_html__( '当前模块已暂时隐藏，点击可编辑并恢复显示。', 'qiling' ) . '</span></div>';
                 echo '</div>';
                 $builder_index++;
                 continue;

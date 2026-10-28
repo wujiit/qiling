@@ -88,11 +88,11 @@ if ( ! function_exists( 'developer_starter_filesystem_theme_generated_asset_file
      */
     function developer_starter_filesystem_theme_generated_asset_files() {
         $files = array();
-        if ( defined( 'DEVELOPER_STARTER_DIR' ) ) {
+        if ( defined( 'QILING_DIR' ) ) {
             $files = array(
-                DEVELOPER_STARTER_DIR . '/assets/css/main.min.css',
-                DEVELOPER_STARTER_DIR . '/assets/css/modules.min.css',
-                DEVELOPER_STARTER_DIR . '/assets/css/modules-hero.min.css',
+                QILING_DIR . '/assets/css/main.min.css',
+                QILING_DIR . '/assets/css/modules.min.css',
+                QILING_DIR . '/assets/css/modules-hero.min.css',
             );
         }
 

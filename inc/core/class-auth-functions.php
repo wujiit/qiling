@@ -50,7 +50,7 @@ class Auth_Functions {
         // 隐藏登录错误信息（统一文案，避免暴露用户名/密码状态细节）
         if ( developer_starter_get_option( 'login_error_hide', '' ) ) {
             add_filter( 'login_errors', function() {
-                return __( '用户名或密码错误，请重试。', 'developer-starter' );
+                return __( '用户名或密码错误，请重试。', 'qiling' );
             }, 999 );
         }
     }

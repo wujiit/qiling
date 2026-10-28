@@ -43,9 +43,9 @@ class News_Center_Page_Creator extends Page_Creator_Base {
                         array(
                             'media_type' => 'image',
                             'image' => '',
-                            'title' => __( '新闻中心', 'developer-starter' ),
-                            'subtitle' => __( '聚合最新动态与行业洞察', 'developer-starter' ),
-                            'btn_text' => __( '查看最新', 'developer-starter' ),
+                            'title' => __( '新闻中心', 'qiling' ),
+                            'subtitle' => __( '聚合最新动态与行业洞察', 'qiling' ),
+                            'btn_text' => __( '查看最新', 'qiling' ),
                             'btn_url' => '#',
                             'btn_bg_color' => '#ffffff',
                             'btn_text_color' => '#0f172a',
@@ -58,7 +58,7 @@ class News_Center_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'news',
                 'data' => array(
-                    'news_title' => __( '最新新闻', 'developer-starter' ),
+                    'news_title' => __( '最新新闻', 'qiling' ),
                     'news_count' => '9',
                     'news_columns' => '3',
                     'news_categories' => '',
@@ -73,9 +73,9 @@ class News_Center_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'cta',
                 'data' => array(
-                    'cta_title' => __( '订阅我们的动态', 'developer-starter' ),
-                    'cta_subtitle' => __( '获取产品更新、活动与行业趋势', 'developer-starter' ),
-                    'cta_button_text' => __( '联系我们', 'developer-starter' ),
+                    'cta_title' => __( '订阅我们的动态', 'qiling' ),
+                    'cta_subtitle' => __( '获取产品更新、活动与行业趋势', 'qiling' ),
+                    'cta_button_text' => __( '联系我们', 'qiling' ),
                     'cta_button_url' => '/contact',
                     'cta_bg_type' => 'color',
                     'cta_bg_color' => 'linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)',

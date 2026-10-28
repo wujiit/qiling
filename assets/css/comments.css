@@ -165,13 +165,18 @@ html.dark-mode .comment-text,
 }
 
 .comment-reply-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: calc(var(--qiling-font-size-base) * 0.8);
     color: var(--color-text-muted);
     text-decoration: none;
-    padding: var(--qiling-space-4) var(--qiling-space-12);
+    padding: var(--qiling-space-6) var(--qiling-space-14);
     background: rgba(var(--qiling-rgb-0-0-0), 0.04);
     border-radius: 20px;
+    white-space: nowrap;
     transition: all 0.2s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html.dark-mode .comment-reply-link,

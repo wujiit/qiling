@@ -22,7 +22,7 @@ class Customizer {
     public function register( $wp_customize ) {
         // 页头配置区块
         $wp_customize->add_section( 'developer_starter_header', array(
-            'title'    => __( '头部设置', 'developer-starter' ),
+            'title'    => __( '头部设置', 'qiling' ),
             'priority' => 40,
         ) );
 
@@ -32,13 +32,13 @@ class Customizer {
         ) );
         $wp_customize->add_control( 'developer_starter_header_sticky', array(
             'type'    => 'checkbox',
-            'label'   => __( '启用固定头部', 'developer-starter' ),
+            'label'   => __( '启用固定头部', 'qiling' ),
             'section' => 'developer_starter_header',
         ) );
 
         // 页脚配置区块
         $wp_customize->add_section( 'developer_starter_footer', array(
-            'title'    => __( '页脚设置', 'developer-starter' ),
+            'title'    => __( '页脚设置', 'qiling' ),
             'priority' => 50,
         ) );
 
@@ -48,7 +48,7 @@ class Customizer {
         ) );
         $wp_customize->add_control( 'developer_starter_copyright', array(
             'type'    => 'textarea',
-            'label'   => __( '版权信息', 'developer-starter' ),
+            'label'   => __( '版权信息', 'qiling' ),
             'section' => 'developer_starter_footer',
         ) );
     }

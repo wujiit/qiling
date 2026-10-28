@@ -151,11 +151,11 @@ class Manager {
         }
 
         if ( ! $provider->is_available() ) {
-            $this->fail( new \WP_Error( 'social_provider_unavailable', __( '该第三方登录尚未启用或配置不完整。', 'developer-starter' ) ) );
+            $this->fail( new \WP_Error( 'social_provider_unavailable', __( '该第三方登录尚未启用或配置不完整。', 'qiling' ) ) );
         }
 
         if ( ! $this->check_rate_limit( 'start', 30, 5 * MINUTE_IN_SECONDS ) ) {
-            $this->fail( new \WP_Error( 'social_login_rate_limited', __( '请求过于频繁，请稍后再试。', 'developer-starter' ) ), 429 );
+            $this->fail( new \WP_Error( 'social_login_rate_limited', __( '请求过于频繁，请稍后再试。', 'qiling' ) ), 429 );
         }
 
         $state = $this->create_state(
@@ -190,7 +190,7 @@ class Manager {
         }
 
         if ( ! $provider->is_available() ) {
-            $this->fail( new \WP_Error( 'social_provider_unavailable', __( '该第三方登录尚未启用或配置不完整。', 'developer-starter' ) ) );
+            $this->fail( new \WP_Error( 'social_provider_unavailable', __( '该第三方登录尚未启用或配置不完整。', 'qiling' ) ) );
         }
 
         $state = isset( $_GET['state'] ) ? sanitize_text_field( wp_unslash( (string) $_GET['state'] ) ) : '';
@@ -200,11 +200,11 @@ class Manager {
         }
 
         if ( ! $this->check_rate_limit( 'callback', 30, 5 * MINUTE_IN_SECONDS ) ) {
-            $this->fail( new \WP_Error( 'social_login_rate_limited', __( '请求过于频繁，请稍后再试。', 'developer-starter' ) ), 429 );
+            $this->fail( new \WP_Error( 'social_login_rate_limited', __( '请求过于频繁，请稍后再试。', 'qiling' ) ), 429 );
         }
 
         if ( ! empty( $_GET['error'] ) ) {
-            $this->fail( new \WP_Error( 'social_login_denied', __( '第三方授权已取消或失败。', 'developer-starter' ) ) );
+            $this->fail( new \WP_Error( 'social_login_denied', __( '第三方授权已取消或失败。', 'qiling' ) ) );
         }
 
         $profile = $provider->get_profile_from_callback( $_GET );
@@ -244,7 +244,7 @@ class Manager {
             esc_attr( $key ),
             esc_url( $url ),
             $icon_html,
-            esc_html( sprintf( __( '%s 登录', 'developer-starter' ), $label ) )
+            esc_html( sprintf( __( '%s 登录', 'qiling' ), $label ) )
         );
     }
 
@@ -289,7 +289,7 @@ class Manager {
      * @return string
      */
     public function get_local_provider_icon_html( $provider_key ) {
-        if ( ! defined( 'DEVELOPER_STARTER_DIR' ) || ! defined( 'DEVELOPER_STARTER_ASSETS' ) ) {
+        if ( ! defined( 'QILING_DIR' ) || ! defined( 'QILING_ASSETS' ) ) {
             return '';
         }
 
@@ -300,12 +300,12 @@ class Manager {
 
         foreach ( array( 'png', 'svg', 'webp', 'jpg', 'jpeg' ) as $extension ) {
             $relative_path = 'images/' . $provider_key . '.' . $extension;
-            $local_path    = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/' . $relative_path;
+            $local_path    = trailingslashit( QILING_DIR ) . 'assets/' . $relative_path;
             if ( file_exists( $local_path ) ) {
                 return sprintf(
                     '<img class="social-icon-img social-icon-img-%1$s" src="%2$s" alt="" width="18" height="18" loading="lazy" decoding="async" aria-hidden="true">',
                     esc_attr( $provider_key ),
-                    esc_url( trailingslashit( DEVELOPER_STARTER_ASSETS ) . $relative_path )
+                    esc_url( trailingslashit( QILING_ASSETS ) . $relative_path )
                 );
             }
         }
@@ -321,7 +321,7 @@ class Manager {
         $providers    = $this->get_providers();
 
         if ( '' === $provider_key || empty( $providers[ $provider_key ] ) ) {
-            return new \WP_Error( 'social_provider_missing', __( '未知的第三方登录方式。', 'developer-starter' ) );
+            return new \WP_Error( 'social_provider_missing', __( '未知的第三方登录方式。', 'qiling' ) );
         }
 
         return $providers[ $provider_key ];
@@ -346,7 +346,7 @@ class Manager {
 
         $stored = set_transient( $this->get_state_transient_key( $provider_key, $state ), $payload, 10 * MINUTE_IN_SECONDS );
         if ( ! $stored ) {
-            return new \WP_Error( 'social_state_failed', __( '无法创建第三方登录会话，请稍后再试。', 'developer-starter' ) );
+            return new \WP_Error( 'social_state_failed', __( '无法创建第三方登录会话，请稍后再试。', 'qiling' ) );
         }
 
         return $state;
@@ -359,7 +359,7 @@ class Manager {
      */
     private function consume_state( $provider_key, $state ) {
         if ( '' === $state || ! preg_match( '/^[A-Za-z0-9_-]{20,80}$/', $state ) ) {
-            return new \WP_Error( 'social_state_missing', __( '第三方登录状态参数无效，请重新发起登录。', 'developer-starter' ) );
+            return new \WP_Error( 'social_state_missing', __( '第三方登录状态参数无效，请重新发起登录。', 'qiling' ) );
         }
 
         $key  = $this->get_state_transient_key( $provider_key, $state );
@@ -367,12 +367,12 @@ class Manager {
         delete_transient( $key );
 
         if ( ! is_array( $data ) || empty( $data['provider'] ) || sanitize_key( $data['provider'] ) !== sanitize_key( $provider_key ) ) {
-            return new \WP_Error( 'social_state_expired', __( '第三方登录会话已过期，请重新发起登录。', 'developer-starter' ) );
+            return new \WP_Error( 'social_state_expired', __( '第三方登录会话已过期，请重新发起登录。', 'qiling' ) );
         }
 
         $enforce_ip = (bool) apply_filters( 'developer_starter_social_login_enforce_state_ip', false, $provider_key, $data );
         if ( $enforce_ip && ! empty( $data['ip_hash'] ) && $data['ip_hash'] !== $this->get_ip_hash() ) {
-            return new \WP_Error( 'social_state_ip_mismatch', __( '第三方登录环境发生变化，请重新发起登录。', 'developer-starter' ) );
+            return new \WP_Error( 'social_state_ip_mismatch', __( '第三方登录环境发生变化，请重新发起登录。', 'qiling' ) );
         }
 
         return $data;
@@ -397,7 +397,7 @@ class Manager {
         $provider_key = sanitize_key( $provider->get_key() );
         $identifier   = isset( $profile['identifier'] ) ? sanitize_text_field( (string) $profile['identifier'] ) : '';
         if ( '' === $identifier ) {
-            return new \WP_Error( 'social_profile_missing_id', __( '第三方账号缺少唯一身份标识。', 'developer-starter' ) );
+            return new \WP_Error( 'social_profile_missing_id', __( '第三方账号缺少唯一身份标识。', 'qiling' ) );
         }
 
         $user_id = $this->find_user_id( $provider_key, $identifier );
@@ -405,7 +405,7 @@ class Manager {
 
         if ( ! $user_id ) {
             if ( ! $this->can_auto_register( $provider_key, $profile ) ) {
-                return new \WP_Error( 'social_account_not_bound', __( '该第三方账号尚未绑定本站账号，请先使用其他方式注册或联系管理员。', 'developer-starter' ) );
+                return new \WP_Error( 'social_account_not_bound', __( '该第三方账号尚未绑定本站账号，请先使用其他方式注册或联系管理员。', 'qiling' ) );
             }
 
             $user_id = $this->create_user( $provider_key, $profile );
@@ -419,7 +419,7 @@ class Manager {
 
         $user = get_user_by( 'id', $user_id );
         if ( ! $user ) {
-            return new \WP_Error( 'social_user_missing', __( '用户不存在，无法完成登录。', 'developer-starter' ) );
+            return new \WP_Error( 'social_user_missing', __( '用户不存在，无法完成登录。', 'qiling' ) );
         }
 
         wp_set_current_user( $user_id );
@@ -503,7 +503,7 @@ class Manager {
 
         $user_id = wp_insert_user( $userdata );
         if ( is_wp_error( $user_id ) ) {
-            return new \WP_Error( 'social_user_create_failed', sprintf( __( '创建用户失败：%s', 'developer-starter' ), $user_id->get_error_message() ) );
+            return new \WP_Error( 'social_user_create_failed', sprintf( __( '创建用户失败：%s', 'qiling' ), $user_id->get_error_message() ) );
         }
 
         update_user_meta( $user_id, 'qiling_social_login_provider', sanitize_key( $provider_key ) );
@@ -675,12 +675,12 @@ class Manager {
     private function fail( \WP_Error $error, $status = 400 ) {
         $message = $error->get_error_message();
         if ( '' === $message ) {
-            $message = __( '第三方登录失败，请稍后再试。', 'developer-starter' );
+            $message = __( '第三方登录失败，请稍后再试。', 'qiling' );
         }
 
         wp_die(
             esc_html( $message ),
-            esc_html__( '第三方登录失败', 'developer-starter' ),
+            esc_html__( '第三方登录失败', 'qiling' ),
             array(
                 'response' => absint( $status ),
                 'back_link'=> true,

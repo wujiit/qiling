@@ -18,7 +18,7 @@ class Category_Tabs_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-category'; // 使用分类图标
-        $this->description = __( '支持分类/标签切换展示文章列表，无需跳转', 'developer-starter' );
+        $this->description = __( '支持分类/标签切换展示文章列表，无需跳转', 'qiling' );
     }
 
     public function get_id() {
@@ -26,41 +26,41 @@ class Category_Tabs_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '分类标签切换', 'developer-starter' );
+        return __( '分类标签切换', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             // 标题设置
-            array( 'id' => 'tabs_title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'tabs_subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'tabs_title', 'label' => __( '标题', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'tabs_subtitle', 'label' => __( '副标题', 'qiling' ), 'type' => 'text', 'default' => '' ),
             array(
                 'id' => 'tabs_source_mode',
-                'label' => __( '标签来源模式', 'developer-starter' ),
+                'label' => __( '标签来源模式', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'manual' => __( '手动配置', 'developer-starter' ),
-                    'auto_hot_tags' => __( '自动聚合热门标签', 'developer-starter' ),
+                    'manual' => __( '手动配置', 'qiling' ),
+                    'auto_hot_tags' => __( '自动聚合热门标签', 'qiling' ),
                 ),
                 'default' => 'manual',
             ),
             array(
                 'id' => 'tabs_auto_tag_count',
-                'label' => __( '自动标签数量', 'developer-starter' ),
+                'label' => __( '自动标签数量', 'qiling' ),
                 'type' => 'number',
                 'default' => '8',
                 'dependency' => array( 'id' => 'tabs_source_mode', 'value' => 'auto_hot_tags' ),
             ),
             array(
                 'id' => 'tabs_auto_min_count',
-                'label' => __( '最小文章数（过滤冷标签）', 'developer-starter' ),
+                'label' => __( '最小文章数（过滤冷标签）', 'qiling' ),
                 'type' => 'number',
                 'default' => '1',
                 'dependency' => array( 'id' => 'tabs_source_mode', 'value' => 'auto_hot_tags' ),
             ),
             array(
                 'id' => 'tabs_auto_exclude_tag_ids',
-                'label' => __( '排除标签ID (逗号分隔)', 'developer-starter' ),
+                'label' => __( '排除标签ID (逗号分隔)', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
                 'dependency' => array( 'id' => 'tabs_source_mode', 'value' => 'auto_hot_tags' ),
@@ -69,123 +69,123 @@ class Category_Tabs_Module extends Module_Base {
             // 样式设置
             array(
                 'id' => 'tabs_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'tabs_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             
             // 布局设置
-            array( 'id' => 'columns', 'label' => __( '显示列数', 'developer-starter' ), 'type' => 'select', 'options' => array( 
-                '2' => __( '2列', 'developer-starter' ), 
-                '3' => __( '3列', 'developer-starter' ), 
-                '4' => __( '4列', 'developer-starter' ),
-                '5' => __( '5列', 'developer-starter' )
+            array( 'id' => 'columns', 'label' => __( '显示列数', 'qiling' ), 'type' => 'select', 'options' => array( 
+                '2' => __( '2列', 'qiling' ), 
+                '3' => __( '3列', 'qiling' ), 
+                '4' => __( '4列', 'qiling' ),
+                '5' => __( '5列', 'qiling' )
             ), 'default' => '4' ),
             
-            array( 'id' => 'image_aspect_ratio', 'label' => __( '封面比例', 'developer-starter' ), 'type' => 'select', 'options' => array( 
+            array( 'id' => 'image_aspect_ratio', 'label' => __( '封面比例', 'qiling' ), 'type' => 'select', 'options' => array( 
                 '16:9' => '16:9 (宽屏)', 
                 '4:3' => '4:3 (标准)', 
                 '1:1' => '1:1 (正方形)', 
                 '3:4' => '3:4 (竖屏)', 
-                'custom' => __( '自定义', 'developer-starter' )
+                'custom' => __( '自定义', 'qiling' )
             ), 'default' => '16:9' ),
             
             array( 
                 'id' => 'image_height', 
-                'label' => __( '自定义封面高度', 'developer-starter' ), 
+                'label' => __( '自定义封面高度', 'qiling' ), 
                 'type' => 'text', 
                 'default' => '200px', 
                 'dependency' => array( 'image_aspect_ratio', '==', 'custom' ),
-                'description' => __( '例如: 200px 或 15rem', 'developer-starter' )
+                'description' => __( '例如: 200px 或 15rem', 'qiling' )
             ),
 
             // 查询设置
-            array( 'id' => 'post_count', 'label' => __( '显示数量', 'developer-starter' ), 'type' => 'number', 'default' => '8' ),
+            array( 'id' => 'post_count', 'label' => __( '显示数量', 'qiling' ), 'type' => 'number', 'default' => '8' ),
             
             // 标签项设置
             array(
                 'id' => 'tabs_list',
-                'label' => __( '分类/标签页', 'developer-starter' ),
+                'label' => __( '分类/标签页', 'qiling' ),
                 'type' => 'repeater',
-                'description' => __( '添加要展示的分类或标签', 'developer-starter' ),
+                'description' => __( '添加要展示的分类或标签', 'qiling' ),
                 'dependency' => array( 'id' => 'tabs_source_mode', 'value' => 'manual' ),
                 'fields' => array(
-                    array( 'id' => 'tab_name', 'label' => __( '显示名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'source_type', 'label' => __( '数据来源', 'developer-starter' ), 'type' => 'select', 'options' => array(
-                        'category' => __( '文章分类', 'developer-starter' ),
-                        'tag' => __( '文章标签', 'developer-starter' )
+                    array( 'id' => 'tab_name', 'label' => __( '显示名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'source_type', 'label' => __( '数据来源', 'qiling' ), 'type' => 'select', 'options' => array(
+                        'category' => __( '文章分类', 'qiling' ),
+                        'tag' => __( '文章标签', 'qiling' )
                     ) ),
-                    array( 'id' => 'source_id', 'label' => __( 'ID (多个用逗号分隔)', 'developer-starter' ), 'type' => 'text', 'description' => __( '输入分类或标签的ID', 'developer-starter' ) ),
+                    array( 'id' => 'source_id', 'label' => __( 'ID (多个用逗号分隔)', 'qiling' ), 'type' => 'text', 'description' => __( '输入分类或标签的ID', 'qiling' ) ),
                 ),
             ),
             
             // 显示选项
-            array( 'id' => 'show_date', 'label' => __( '显示日期', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'show_author', 'label' => __( '显示作者', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'show_views', 'label' => __( '显示浏览量', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'show_category_badge', 'label' => __( '显示分类标识', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
+            array( 'id' => 'show_date', 'label' => __( '显示日期', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'show_author', 'label' => __( '显示作者', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'show_views', 'label' => __( '显示浏览量', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'show_category_badge', 'label' => __( '显示分类标识', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'no' ),
             array(
                 'id' => 'card_style',
-                'label' => __( '卡片风格', 'developer-starter' ),
+                'label' => __( '卡片风格', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'default' => __( '默认文章卡片', 'developer-starter' ),
-                    'wallpaper' => __( '图片素材卡片', 'developer-starter' ),
+                    'default' => __( '默认文章卡片', 'qiling' ),
+                    'wallpaper' => __( '图片素材卡片', 'qiling' ),
                 ),
                 'default' => 'default',
             ),
-            array( 'id' => 'show_title', 'label' => __( '显示标题', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'show_image_dimensions', 'label' => __( '显示图片尺寸', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'show_image_format', 'label' => __( '显示图片格式', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
+            array( 'id' => 'show_title', 'label' => __( '显示标题', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'show_image_dimensions', 'label' => __( '显示图片尺寸', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'show_image_format', 'label' => __( '显示图片格式', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'no' ),
             array(
                 'id' => 'show_resource_badges',
-                'label' => __( '显示商城资源角标', 'developer-starter' ),
+                'label' => __( '显示商城资源角标', 'qiling' ),
                 'type' => 'select',
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'no',
-                'description' => __( '仅在文章配置了启灵商城资源且全局角标已启用时显示；普通图片文章不受影响。', 'developer-starter' ),
+                'description' => __( '仅在文章配置了启灵商城资源且全局角标已启用时显示；普通图片文章不受影响。', 'qiling' ),
             ),
             array(
                 'id' => 'show_resource_price',
-                'label' => __( '显示商城价格', 'developer-starter' ),
+                'label' => __( '显示商城价格', 'qiling' ),
                 'type' => 'select',
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'no',
-                'description' => __( '价格只读取启灵商城资源状态，不需要商城的普通文章会自动忽略。', 'developer-starter' ),
+                'description' => __( '价格只读取启灵商城资源状态，不需要商城的普通文章会自动忽略。', 'qiling' ),
             ),
             array(
                 'id' => 'show_download_button',
-                'label' => __( '显示获取图片按钮', 'developer-starter' ),
+                'label' => __( '显示获取图片按钮', 'qiling' ),
                 'type' => 'select',
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'no',
-                'description' => __( '按钮进入文章详情；如文章使用启灵商城，购买和下载权限仍由商城在详情页处理。', 'developer-starter' ),
+                'description' => __( '按钮进入文章详情；如文章使用启灵商城，购买和下载权限仍由商城在详情页处理。', 'qiling' ),
             ),
-            array( 'id' => 'download_button_text', 'label' => __( '获取图片按钮文案', 'developer-starter' ), 'type' => 'text', 'default' => __( '获取图片', 'developer-starter' ), 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
-            array( 'id' => 'download_button_bg_color', 'label' => __( '获取图片按钮背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
-            array( 'id' => 'download_button_text_color', 'label' => __( '获取图片按钮文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
-            $this->get_button_border_color_field( 'download_button_border_color', __( '获取图片按钮边框颜色', 'developer-starter' ), '', array( 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ) ),
-            array( 'id' => 'download_button_hover_bg_color', 'label' => __( '获取图片按钮悬停背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
-            array( 'id' => 'download_button_hover_text_color', 'label' => __( '获取图片按钮悬停文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
-            $this->get_button_border_color_field( 'download_button_hover_border_color', __( '获取图片按钮悬停边框颜色', 'developer-starter' ), '', array( 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ) ),
-            array( 'id' => 'tabs_badge_bg', 'label' => __( '分类标识背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '', 'desc' => __( '控制封面分类标识，留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ) ),
+            array( 'id' => 'download_button_text', 'label' => __( '获取图片按钮文案', 'qiling' ), 'type' => 'text', 'default' => __( '获取图片', 'qiling' ), 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            array( 'id' => 'download_button_bg_color', 'label' => __( '获取图片按钮背景颜色', 'qiling' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            array( 'id' => 'download_button_text_color', 'label' => __( '获取图片按钮文字颜色', 'qiling' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            $this->get_button_border_color_field( 'download_button_border_color', __( '获取图片按钮边框颜色', 'qiling' ), '', array( 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ) ),
+            array( 'id' => 'download_button_hover_bg_color', 'label' => __( '获取图片按钮悬停背景颜色', 'qiling' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            array( 'id' => 'download_button_hover_text_color', 'label' => __( '获取图片按钮悬停文字颜色', 'qiling' ), 'type' => 'color', 'default' => '', 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ),
+            $this->get_button_border_color_field( 'download_button_hover_border_color', __( '获取图片按钮悬停边框颜色', 'qiling' ), '', array( 'dependency' => array( 'id' => 'show_download_button', 'value' => 'yes' ) ) ),
+            array( 'id' => 'tabs_badge_bg', 'label' => __( '分类标识背景颜色', 'qiling' ), 'type' => 'color', 'default' => '', 'desc' => __( '控制封面分类标识，留空时跟随页面预设/全局徽章颜色。', 'qiling' ) ),
 
             // 标准间距和背景
             array(
                 'id' => 'padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
@@ -193,29 +193,29 @@ class Category_Tabs_Module extends Module_Base {
             // 底部按钮设置
             array(
                 'id' => 'more_btn_type',
-                'label' => __( '底部按钮功能', 'developer-starter' ),
+                'label' => __( '底部按钮功能', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'ajax' => __( '加载更多 (当前页加载)', 'developer-starter' ),
-                    'link' => __( '查看更多 (跳转到分类/标签页)', 'developer-starter' )
+                    'ajax' => __( '加载更多 (当前页加载)', 'qiling' ),
+                    'link' => __( '查看更多 (跳转到分类/标签页)', 'qiling' )
                 ),
                 'default' => 'ajax',
-                'description' => __( '选择点击底部按钮时的行为', 'developer-starter' )
+                'description' => __( '选择点击底部按钮时的行为', 'qiling' )
             ),
-            array( 'id' => 'more_link_text', 'label' => __( '查看更多按钮文案', 'developer-starter' ), 'type' => 'text', 'default' => __( '查看更多', 'developer-starter' ) ),
-            array( 'id' => 'more_ajax_text', 'label' => __( '加载更多按钮文案', 'developer-starter' ), 'type' => 'text', 'default' => __( '加载更多', 'developer-starter' ) ),
-            array( 'id' => 'more_button_bg_color', 'label' => __( '底部按钮背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'more_button_text_color', 'label' => __( '底部按钮文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'more_button_hover_bg_color', 'label' => __( '底部按钮悬停背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'more_button_hover_text_color', 'label' => __( '底部按钮悬停文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            $this->get_button_border_color_field( 'more_button_border_color', __( '底部按钮边框颜色', 'developer-starter' ) ),
-            $this->get_button_border_color_field( 'more_button_hover_border_color', __( '底部按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随悬停背景颜色。', 'developer-starter' ) ),
+            array( 'id' => 'more_link_text', 'label' => __( '查看更多按钮文案', 'qiling' ), 'type' => 'text', 'default' => __( '查看更多', 'qiling' ) ),
+            array( 'id' => 'more_ajax_text', 'label' => __( '加载更多按钮文案', 'qiling' ), 'type' => 'text', 'default' => __( '加载更多', 'qiling' ) ),
+            array( 'id' => 'more_button_bg_color', 'label' => __( '底部按钮背景颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'more_button_text_color', 'label' => __( '底部按钮文字颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'more_button_hover_bg_color', 'label' => __( '底部按钮悬停背景颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'more_button_hover_text_color', 'label' => __( '底部按钮悬停文字颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            $this->get_button_border_color_field( 'more_button_border_color', __( '底部按钮边框颜色', 'qiling' ) ),
+            $this->get_button_border_color_field( 'more_button_hover_border_color', __( '底部按钮悬停边框颜色', 'qiling' ), __( '留空时跟随悬停背景颜色。', 'qiling' ) ),
             array(
                 'id' => 'bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
             ),
         );
     }
@@ -244,8 +244,8 @@ class Category_Tabs_Module extends Module_Base {
         $subtitle_color = isset( $data['tabs_subtitle_color'] ) ? $data['tabs_subtitle_color'] : '';
         $bg_color = isset( $data['bg_color'] ) ? $data['bg_color'] : '';
         $badge_bg = isset( $data['tabs_badge_bg'] ) ? $clean_css_value( $data['tabs_badge_bg'] ) : '';
-        $more_link_text = isset( $data['more_link_text'] ) && '' !== trim( (string) $data['more_link_text'] ) ? (string) $data['more_link_text'] : __( '查看更多', 'developer-starter' );
-        $more_ajax_text = isset( $data['more_ajax_text'] ) && '' !== trim( (string) $data['more_ajax_text'] ) ? (string) $data['more_ajax_text'] : __( '加载更多', 'developer-starter' );
+        $more_link_text = isset( $data['more_link_text'] ) && '' !== trim( (string) $data['more_link_text'] ) ? (string) $data['more_link_text'] : __( '查看更多', 'qiling' );
+        $more_ajax_text = isset( $data['more_ajax_text'] ) && '' !== trim( (string) $data['more_ajax_text'] ) ? (string) $data['more_ajax_text'] : __( '加载更多', 'qiling' );
         $pt = isset( $data['padding_top'] ) ? $data['padding_top'] : '60px';
         $pb = isset( $data['padding_bottom'] ) ? $data['padding_bottom'] : '60px';
 
@@ -300,7 +300,7 @@ class Category_Tabs_Module extends Module_Base {
             'show_resource_badges' => isset( $data['show_resource_badges'] ) ? $data['show_resource_badges'] : 'no',
             'show_resource_price' => isset( $data['show_resource_price'] ) ? $data['show_resource_price'] : 'no',
             'show_download_button' => isset( $data['show_download_button'] ) ? $data['show_download_button'] : 'no',
-            'download_button_text' => isset( $data['download_button_text'] ) ? $data['download_button_text'] : __( '获取图片', 'developer-starter' ),
+            'download_button_text' => isset( $data['download_button_text'] ) ? $data['download_button_text'] : __( '获取图片', 'qiling' ),
             'columns' => $columns,
             'more_btn_type' => isset( $data['more_btn_type'] ) ? $data['more_btn_type'] : 'ajax',
         );
@@ -393,10 +393,10 @@ class Category_Tabs_Module extends Module_Base {
                 var tabButtons = Array.prototype.slice.call(module.querySelectorAll('.cat-tab-btn'));
                 var ajaxBtnDefaultHtml = ajaxBtn ? ajaxBtn.innerHTML : '';
                 var loadingMarkup = '<div class="loading-spinner-wrapper"><div class="loading-spinner"></div></div>';
-                var noPostsMarkup = '<div class="no-posts"><?php echo esc_js( __( '暂无内容', 'developer-starter' ) ); ?></div>';
-                var loadFailedMessage = <?php echo wp_json_encode( __( '加载失败，请稍后重试', 'developer-starter' ) ); ?>;
-                var networkErrorMessage = <?php echo wp_json_encode( __( '网络错误，请稍后重试', 'developer-starter' ) ); ?>;
-                var loadingButtonText = <?php echo wp_json_encode( __( '加载中...', 'developer-starter' ) ); ?>;
+                var noPostsMarkup = '<div class="no-posts"><?php echo esc_js( __( '暂无内容', 'qiling' ) ); ?></div>';
+                var loadFailedMessage = <?php echo wp_json_encode( __( '加载失败，请稍后重试', 'qiling' ) ); ?>;
+                var networkErrorMessage = <?php echo wp_json_encode( __( '网络错误，请稍后重试', 'qiling' ) ); ?>;
+                var loadingButtonText = <?php echo wp_json_encode( __( '加载中...', 'qiling' ) ); ?>;
 
                 var currentState = {
                     type: '',

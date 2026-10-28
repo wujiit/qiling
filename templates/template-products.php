@@ -68,7 +68,7 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
             <?php if ( $products_query->have_posts() ) : ?>
                 <?php do_action( 'developer_starter_template_products_before_loop', $products_query, $args, get_the_ID() ); ?>
                 
-                <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(<?php echo $min_width; ?>, 1fr)); gap: var(--qiling-space-30);">
+                <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(<?php echo esc_attr( $min_width ); ?>, 1fr)); gap: var(--qiling-space-30);">
                     
                     <?php while ( $products_query->have_posts() ) : $products_query->the_post(); 
                         // 获取缩略图或文章第一张图片
@@ -91,7 +91,7 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                                 </div>
                             <?php else : ?>
                                 <div style="height: <?php echo intval( $thumb_height ); ?>px; background: linear-gradient(135deg, var(--color-neutral-100) 0%, var(--color-neutral-200) 100%); display: flex; align-items: center; justify-content: center; color: var(--color-neutral-400);">
-                                    <?php esc_html_e( '暂无图片', 'developer-starter' ); ?>
+                                    <?php esc_html_e( '暂无图片', 'qiling' ); ?>
                                 </div>
                             <?php endif; ?>
                             
@@ -102,7 +102,7 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                                     </h3>
                                 <?php endif; ?>
                                 
-                                <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn btn-sm btn-outline"><?php esc_html_e( '查看详情', 'developer-starter' ); ?></a>
+                                <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn btn-sm btn-outline"><?php esc_html_e( '查看详情', 'qiling' ); ?></a>
                             </div>
                         </article>
                     <?php endwhile; ?>
@@ -110,15 +110,15 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                 </div>
                 
                 <nav class="pagination-nav" style="margin-top: var(--qiling-space-50); text-align: center;">
-                    <nav class="navigation pagination" role="navigation" aria-label="<?php esc_attr_e( '分页', 'developer-starter' ); ?>">
+                    <nav class="navigation pagination" role="navigation" aria-label="<?php esc_attr_e( '分页', 'qiling' ); ?>">
                         <div class="nav-links">
                             <?php
                             echo paginate_links( array(
                                 'total'     => $products_query->max_num_pages,
                                 'current'   => $paged,
                                 'mid_size'  => 2,
-                                'prev_text' => __( '&laquo; 上一页', 'developer-starter' ),
-                                'next_text' => __( '下一页 &raquo;', 'developer-starter' ),
+                                'prev_text' => __( '&laquo; 上一页', 'qiling' ),
+                                'next_text' => __( '下一页 &raquo;', 'qiling' ),
                             ) );
                             ?>
                         </div>
@@ -160,9 +160,9 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
             <?php else : ?>
                 
                 <div style="text-align: center; padding: var(--qiling-space-80) var(--qiling-space-20);">
-                    <div style="font-size: var(--qiling-text-rem-4); margin-bottom: var(--qiling-space-20);">📦</div>
-                    <h2 style="color: var(--color-text-muted); font-weight: 400;"><?php esc_html_e( '暂无产品', 'developer-starter' ); ?></h2>
-                    <p style="color: var(--color-neutral-400);"><?php esc_html_e( '请先在后台添加产品内容', 'developer-starter' ); ?><?php echo $category ? sprintf( '（%s%s）', __( '分类：', 'developer-starter' ), esc_html( $category ) ) : ''; ?></p>
+                    <div style="margin: 0 auto var(--qiling-space-20); display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 18px; background: var(--qiling-color-f1f5f9, #f1f5f9); color: var(--color-primary);"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
+                    <h2 style="color: var(--color-text-muted); font-weight: 400;"><?php esc_html_e( '暂无产品', 'qiling' ); ?></h2>
+                    <p style="color: var(--color-neutral-400);"><?php esc_html_e( '请先在后台添加产品内容', 'qiling' ); ?><?php echo $category ? sprintf( '（%s%s）', __( '分类：', 'qiling' ), esc_html( $category ) ) : ''; ?></p>
                 </div>
                 
             <?php endif; ?>

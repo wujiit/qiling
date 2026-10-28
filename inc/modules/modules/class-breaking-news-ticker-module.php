@@ -18,7 +18,7 @@ class Breaking_News_Ticker_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-megaphone';
-        $this->description = __( 'Breaking News / 热点快讯滚动条', 'developer-starter' );
+        $this->description = __( 'Breaking News / 热点快讯滚动条', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Breaking_News_Ticker_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '热点快讯滚动条', 'developer-starter' );
+        return __( '热点快讯滚动条', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,64 +34,64 @@ class Breaking_News_Ticker_Module extends Module_Base {
             array(
                 'id'      => 'bn_title',
                 'type'    => 'text',
-                'label'   => __( '标签标题', 'developer-starter' ),
-                'default' => __( '热点快讯', 'developer-starter' ),
+                'label'   => __( '标签标题', 'qiling' ),
+                'default' => __( '热点快讯', 'qiling' ),
             ),
             array(
                 'id'      => 'bn_source',
                 'type'    => 'select',
-                'label'   => __( '数据来源', 'developer-starter' ),
+                'label'   => __( '数据来源', 'qiling' ),
                 'options' => array(
-                    'latest' => __( '最新文章', 'developer-starter' ),
-                    'category' => __( '指定分类', 'developer-starter' ),
-                    'tag' => __( '指定标签', 'developer-starter' ),
-                    'manual' => __( '手动输入', 'developer-starter' ),
+                    'latest' => __( '最新文章', 'qiling' ),
+                    'category' => __( '指定分类', 'qiling' ),
+                    'tag' => __( '指定标签', 'qiling' ),
+                    'manual' => __( '手动输入', 'qiling' ),
                 ),
                 'default' => 'latest',
             ),
             array(
                 'id'      => 'bn_count',
                 'type'    => 'number',
-                'label'   => __( '自动获取数量', 'developer-starter' ),
+                'label'   => __( '自动获取数量', 'qiling' ),
                 'default' => '8',
             ),
             array(
                 'id'    => 'bn_categories',
                 'type'  => 'text',
-                'label' => __( '分类ID (逗号分隔)', 'developer-starter' ),
+                'label' => __( '分类ID (逗号分隔)', 'qiling' ),
             ),
             array(
                 'id'    => 'bn_tags',
                 'type'  => 'text',
-                'label' => __( '标签ID/Slug (逗号分隔)', 'developer-starter' ),
+                'label' => __( '标签ID/Slug (逗号分隔)', 'qiling' ),
             ),
             array(
                 'id'    => 'bn_post_ids',
                 'type'  => 'text',
-                'label' => __( '手动文章ID (逗号分隔，仅手动模式)', 'developer-starter' ),
+                'label' => __( '手动文章ID (逗号分隔，仅手动模式)', 'qiling' ),
             ),
             array(
                 'id'    => 'bn_manual_items',
                 'type'  => 'repeater',
-                'label' => __( '手动快讯条目', 'developer-starter' ),
+                'label' => __( '手动快讯条目', 'qiling' ),
                 'fields' => array(
                     array(
                         'id' => 'text',
                         'type' => 'text',
-                        'label' => __( '文案', 'developer-starter' ),
+                        'label' => __( '文案', 'qiling' ),
                     ),
                     array(
                         'id' => 'url',
                         'type' => 'text',
-                        'label' => __( '链接', 'developer-starter' ),
+                        'label' => __( '链接', 'qiling' ),
                     ),
                     array(
                         'id' => 'target',
                         'type' => 'select',
-                        'label' => __( '打开方式', 'developer-starter' ),
+                        'label' => __( '打开方式', 'qiling' ),
                         'options' => array(
-                            '_self' => __( '当前窗口', 'developer-starter' ),
-                            '_blank' => __( '新窗口', 'developer-starter' ),
+                            '_self' => __( '当前窗口', 'qiling' ),
+                            '_blank' => __( '新窗口', 'qiling' ),
                         ),
                         'default' => '_self',
                     ),
@@ -100,64 +100,64 @@ class Breaking_News_Ticker_Module extends Module_Base {
             array(
                 'id'      => 'bn_show_time',
                 'type'    => 'select',
-                'label'   => __( '显示时间', 'developer-starter' ),
+                'label'   => __( '显示时间', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no' => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no' => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'no',
             ),
             array(
                 'id'      => 'bn_speed',
                 'type'    => 'number',
-                'label'   => __( '滚动一轮时长 (秒)', 'developer-starter' ),
+                'label'   => __( '滚动一轮时长 (秒)', 'qiling' ),
                 'default' => '45',
             ),
             array(
                 'id'      => 'bn_pause_on_hover',
                 'type'    => 'select',
-                'label'   => __( '鼠标悬停暂停', 'developer-starter' ),
+                'label'   => __( '鼠标悬停暂停', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'bn_bg_color',
                 'type'    => 'color',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'bn_label_bg_color',
                 'type'    => 'color',
-                'label'   => __( '标签背景色', 'developer-starter' ),
+                'label'   => __( '标签背景色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'bn_text_color',
                 'type'    => 'color',
-                'label'   => __( '文字颜色', 'developer-starter' ),
+                'label'   => __( '文字颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-900)',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '16px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '16px',
             ),
         );
     }
 
     public function render( $data = array() ) {
-        $title = isset( $data['bn_title'] ) && $data['bn_title'] !== '' ? $data['bn_title'] : __( '热点快讯', 'developer-starter' );
+        $title = isset( $data['bn_title'] ) && $data['bn_title'] !== '' ? $data['bn_title'] : __( '热点快讯', 'qiling' );
         $source = isset( $data['bn_source'] ) && $data['bn_source'] !== '' ? $data['bn_source'] : 'latest';
         $count = isset( $data['bn_count'] ) ? max( 1, intval( $data['bn_count'] ) ) : 8;
         $show_time = isset( $data['bn_show_time'] ) && $data['bn_show_time'] === 'yes';
@@ -182,7 +182,7 @@ class Breaking_News_Ticker_Module extends Module_Base {
             <div class="container">
                 <div class="ql-bn-wrap <?php echo $pause_on_hover ? 'is-pause-hover' : ''; ?>" style="--ql-bn-bg: <?php echo esc_attr( $bg_color ); ?>; --ql-bn-label-bg: <?php echo esc_attr( $label_bg ); ?>; --ql-bn-text: <?php echo esc_attr( $text_color ); ?>; --ql-bn-speed: <?php echo esc_attr( $speed ); ?>s;">
                     <div class="ql-bn-label"><?php echo esc_html( $title ); ?></div>
-                    <div class="ql-bn-viewport" aria-label="<?php esc_attr_e( '热点快讯滚动内容', 'developer-starter' ); ?>">
+                    <div class="ql-bn-viewport" aria-label="<?php esc_attr_e( '热点快讯滚动内容', 'qiling' ); ?>">
                         <div class="ql-bn-track">
                             <?php $this->render_track_row( $items, $show_time ); ?>
                             <?php $this->render_track_row( $items, $show_time, true ); ?>

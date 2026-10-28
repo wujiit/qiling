@@ -14,10 +14,10 @@ if ( ! $privacy_banner_enable ) {
     return;
 }
 
-$privacy_text         = developer_starter_get_option( 'privacy_banner_text', __( '本网站使用Cookie和类似技术来提升您的体验。继续使用本网站即表示您同意我们的隐私政策。', 'developer-starter' ) );
-$privacy_link_text    = developer_starter_get_option( 'privacy_banner_link_text', __( '了解更多', 'developer-starter' ) );
+$privacy_text         = developer_starter_get_option( 'privacy_banner_text', __( '本网站使用Cookie和类似技术来提升您的体验。继续使用本网站即表示您同意我们的隐私政策。', 'qiling' ) );
+$privacy_link_text    = developer_starter_get_option( 'privacy_banner_link_text', __( '了解更多', 'qiling' ) );
 $privacy_link_url     = developer_starter_get_option( 'privacy_banner_link_url', '' );
-$privacy_btn_text     = developer_starter_get_option( 'privacy_banner_btn_text', __( '全部接受', 'developer-starter' ) );
+$privacy_btn_text     = developer_starter_get_option( 'privacy_banner_btn_text', __( '全部接受', 'qiling' ) );
 $privacy_decline_text = developer_starter_get_option( 'privacy_banner_decline_text', '' );
 $privacy_bg           = developer_starter_get_option( 'privacy_banner_bg', 'var(--color-neutral-800)' );
 $privacy_text_color   = developer_starter_get_option( 'privacy_banner_text_color', 'var(--color-neutral-0)' );
@@ -25,11 +25,14 @@ $privacy_text_color   = developer_starter_get_option( 'privacy_banner_text_color
 <div id="privacy-banner" class="privacy-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: <?php echo esc_attr( $privacy_bg ); ?>; color: <?php echo esc_attr( $privacy_text_color ); ?>; padding: var(--qiling-space-15) var(--qiling-space-20); box-shadow: 0 -4px 20px rgba(var(--qiling-rgb-0-0-0), 0.15);">
     <div class="container" style="max-width: var(--qiling-measure-1200); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--qiling-space-20); flex-wrap: wrap;">
         <div class="privacy-banner-content" style="flex: 1; min-width: var(--qiling-measure-300);">
-            <p style="margin: 0; font-size: var(--qiling-text-rem-0p95); line-height: 1.6;">
-                🍪 <?php echo esc_html( $privacy_text ); ?>
-                <?php if ( $privacy_link_url ) : ?>
-                    <a href="<?php echo esc_url( $privacy_link_url ); ?>" style="color: <?php echo esc_attr( $privacy_text_color ); ?>; text-decoration: underline; margin-left: var(--qiling-space-5);" target="_blank"><?php echo esc_html( $privacy_link_text ); ?></a>
-                <?php endif; ?>
+            <p style="margin: 0; font-size: var(--qiling-text-rem-0p95); line-height: 1.6; display: flex; align-items: center; gap: var(--qiling-space-8, 8px);">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>
+                    <?php echo esc_html( $privacy_text ); ?>
+                    <?php if ( $privacy_link_url ) : ?>
+                        <a href="<?php echo esc_url( $privacy_link_url ); ?>" style="color: <?php echo esc_attr( $privacy_text_color ); ?>; text-decoration: underline; margin-left: var(--qiling-space-5);" target="_blank"><?php echo esc_html( $privacy_link_text ); ?></a>
+                    <?php endif; ?>
+                </span>
             </p>
         </div>
         <div class="privacy-banner-actions" style="display: flex; gap: var(--qiling-space-10); flex-shrink: 0;">

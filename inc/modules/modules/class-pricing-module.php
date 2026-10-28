@@ -18,7 +18,7 @@ class Pricing_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-money-alt';
-        $this->description = __( '展示价格方案套餐', 'developer-starter' );
+        $this->description = __( '展示价格方案套餐', 'qiling' );
     }
 
     public function get_id() {
@@ -26,61 +26,61 @@ class Pricing_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '价格方案', 'developer-starter' );
+        return __( '价格方案', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'pricing_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '价格方案', 'Pricing Plans' ) : __( '价格方案', 'developer-starter' ) ),
+            array( 'id' => 'pricing_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '价格方案', 'Pricing Plans' ) : __( '价格方案', 'qiling' ) ),
             array(
                 'id'      => 'pricing_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2rem',
-                'desc'    => __( '如 2rem 或 32px', 'developer-starter' ),
+                'desc'    => __( '如 2rem 或 32px', 'qiling' ),
             ),
-            array( 'id' => 'pricing_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'pricing_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'pricing_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'pricing_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
             array(
                 'id'      => 'pricing_subtitle_size',
                 'type'    => 'text',
-                'label'   => __( '副标题字体大小', 'developer-starter' ),
+                'label'   => __( '副标题字体大小', 'qiling' ),
                 'default' => '1rem',
-                'desc'    => __( '如 1rem 或 16px', 'developer-starter' ),
+                'desc'    => __( '如 1rem 或 16px', 'qiling' ),
             ),
-            array( 'id' => 'pricing_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'pricing_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ) ),
             
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -96,61 +96,61 @@ class Pricing_Module extends Module_Base {
             ),
              array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             
-            array( 'id' => 'pricing_columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array( '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ) ), 'default' => '3' ),
+            array( 'id' => 'pricing_columns', 'type' => 'select', 'label' => __( '列数', 'qiling' ), 'options' => array( '3' => __( '3列', 'qiling' ), '4' => __( '4列', 'qiling' ) ), 'default' => '3' ),
             array(
                 'id'      => 'pricing_cards_mode',
                 'type'    => 'select',
-                'label'   => __( '方案布局模式', 'developer-starter' ),
+                'label'   => __( '方案布局模式', 'qiling' ),
                 'options' => array(
-                    'native'      => __( '跟随原有样式', 'developer-starter' ),
-                    'connected'   => __( '连体方案', 'developer-starter' ),
-                    'independent' => __( '独立卡片', 'developer-starter' ),
+                    'native'      => __( '跟随原有样式', 'qiling' ),
+                    'connected'   => __( '连体方案', 'qiling' ),
+                    'independent' => __( '独立卡片', 'qiling' ),
                 ),
                 'default' => 'native',
-                'desc'    => __( '连体方案使用一个共同外框，方案之间没有空白；独立卡片让每个方案单独成卡并保留间距。', 'developer-starter' ),
+                'desc'    => __( '连体方案使用一个共同外框，方案之间没有空白；独立卡片让每个方案单独成卡并保留间距。', 'qiling' ),
             ),
-            array( 'id' => 'pricing_items', 'type' => 'repeater', 'label' => __( '方案列表', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'name', 'type' => 'text', 'label' => __( '方案名称', 'developer-starter' ) ),
-                array( 'id' => 'name_color', 'type' => 'color', 'label' => __( '名称颜色', 'developer-starter' ) ),
-                array( 'id' => 'price', 'type' => 'text', 'label' => __( '价格', 'developer-starter' ) ),
-                array( 'id' => 'price_color', 'type' => 'color', 'label' => __( '价格颜色', 'developer-starter' ) ),
-                array( 'id' => 'period', 'type' => 'text', 'label' => __( '周期 (如 /月)', 'developer-starter' ) ),
-                array( 'id' => 'desc', 'type' => 'text', 'label' => __( '描述', 'developer-starter' ) ),
-                array( 'id' => 'desc_color', 'type' => 'color', 'label' => __( '描述颜色', 'developer-starter' ) ),
+            array( 'id' => 'pricing_items', 'type' => 'repeater', 'label' => __( '方案列表', 'qiling' ), 'fields' => array(
+                array( 'id' => 'name', 'type' => 'text', 'label' => __( '方案名称', 'qiling' ) ),
+                array( 'id' => 'name_color', 'type' => 'color', 'label' => __( '名称颜色', 'qiling' ) ),
+                array( 'id' => 'price', 'type' => 'text', 'label' => __( '价格', 'qiling' ) ),
+                array( 'id' => 'price_color', 'type' => 'color', 'label' => __( '价格颜色', 'qiling' ) ),
+                array( 'id' => 'period', 'type' => 'text', 'label' => __( '周期 (如 /月)', 'qiling' ) ),
+                array( 'id' => 'desc', 'type' => 'text', 'label' => __( '描述', 'qiling' ) ),
+                array( 'id' => 'desc_color', 'type' => 'color', 'label' => __( '描述颜色', 'qiling' ) ),
                 
-                array( 'id' => 'features', 'type' => 'textarea', 'label' => __( '特性列表 (每行一个，支持 ✓✗ 前缀)', 'developer-starter' ), 'rows' => 10 ),
-                array( 'id' => 'features_color', 'type' => 'color', 'label' => __( '特性列表文字颜色', 'developer-starter' ) ),
+                array( 'id' => 'features', 'type' => 'textarea', 'label' => __( '特性列表 (每行一个，支持 ✓✗ 前缀)', 'qiling' ), 'rows' => 10 ),
+                array( 'id' => 'features_color', 'type' => 'color', 'label' => __( '特性列表文字颜色', 'qiling' ) ),
                 
-                array( 'id' => 'btn_text', 'type' => 'text', 'label' => __( '按钮文字', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ) ),
-                array( 'id' => 'btn_link', 'type' => 'text', 'label' => __( '按钮链接', 'developer-starter' ), 'default' => '#' ),
-                array( 'id' => 'btn_bg', 'type' => 'color', 'label' => __( '按钮背景色', 'developer-starter' ) ),
-                array( 'id' => 'btn_text_color', 'type' => 'color', 'label' => __( '按钮文字颜色', 'developer-starter' ) ),
+                array( 'id' => 'btn_text', 'type' => 'text', 'label' => __( '按钮文字', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'qiling' ) ),
+                array( 'id' => 'btn_link', 'type' => 'text', 'label' => __( '按钮链接', 'qiling' ), 'default' => '#' ),
+                array( 'id' => 'btn_bg', 'type' => 'color', 'label' => __( '按钮背景色', 'qiling' ) ),
+                array( 'id' => 'btn_text_color', 'type' => 'color', 'label' => __( '按钮文字颜色', 'qiling' ) ),
                 $this->get_button_border_color_field( 'btn_border_color' ),
-                array( 'id' => 'card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'developer-starter' ), 'default' => 'var(--color-neutral-0)' ),
-                array( 'id' => 'featured', 'type' => 'select', 'label' => __( '推荐高亮', 'developer-starter' ), 'options' => array( '' => __( '否', 'developer-starter' ), '1' => __( '是', 'developer-starter' ) ) ),
-                array( 'id' => 'featured_text', 'type' => 'text', 'label' => __( '推荐标签文字', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'developer-starter' ), 'dependency' => array( 'featured', '==', '1' ) ),
+                array( 'id' => 'card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'qiling' ), 'default' => 'var(--color-neutral-0)' ),
+                array( 'id' => 'featured', 'type' => 'select', 'label' => __( '推荐高亮', 'qiling' ), 'options' => array( '' => __( '否', 'qiling' ), '1' => __( '是', 'qiling' ) ) ),
+                array( 'id' => 'featured_text', 'type' => 'text', 'label' => __( '推荐标签文字', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'qiling' ), 'dependency' => array( 'featured', '==', '1' ) ),
 
-                array( 'id' => 'featured_bg', 'type' => 'color', 'label' => __( '推荐标签背景', 'developer-starter' ), 'desc' => __( '留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ), 'dependency' => array( 'featured', '==', '1' ) ),
+                array( 'id' => 'featured_bg', 'type' => 'color', 'label' => __( '推荐标签背景', 'qiling' ), 'desc' => __( '留空时跟随页面预设/全局徽章颜色。', 'qiling' ), 'dependency' => array( 'featured', '==', '1' ) ),
             ),
             'default_items' => array(
                 array( 
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'qiling' ),
                     'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 99 ) : '¥99',
-                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合个人用户和小型项目', 'Best for individuals and small projects.' ) : __( '适合个人用户和小型项目', 'developer-starter' ),
-                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", "✓ Core feature access\n✓ 5GB storage\n✓ Email support\n✗ Advanced analytics\n✗ API access" ) : __( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", 'developer-starter' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ),
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合个人用户和小型项目', 'Best for individuals and small projects.' ) : __( '适合个人用户和小型项目', 'qiling' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", "✓ Core feature access\n✓ 5GB storage\n✓ Email support\n✗ Advanced analytics\n✗ API access" ) : __( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", 'qiling' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'qiling' ),
                     'btn_link' => '#',
                     'card_bg' => 'var(--color-neutral-0)',
                     'featured' => '',
@@ -158,25 +158,25 @@ class Pricing_Module extends Module_Base {
                     'featured_bg' => ''
                 ),
                 array( 
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业版', 'Professional' ) : __( '专业版', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业版', 'Professional' ) : __( '专业版', 'qiling' ),
                     'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 299 ) : '¥299',
-                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合成长型企业', 'Built for growing teams and active businesses.' ) : __( '适合成长型企业', 'developer-starter' ),
-                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", "✓ Everything in Starter\n✓ 50GB storage\n✓ Priority support\n✓ Advanced analytics\n✓ API access" ) : __( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", 'developer-starter' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ),
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合成长型企业', 'Built for growing teams and active businesses.' ) : __( '适合成长型企业', 'qiling' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", "✓ Everything in Starter\n✓ 50GB storage\n✓ Priority support\n✓ Advanced analytics\n✓ API access" ) : __( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", 'qiling' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'qiling' ),
                     'btn_link' => '#',
                     'card_bg' => 'var(--color-neutral-0)',
                     'featured' => '1',
-                    'featured_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'developer-starter' ),
+                    'featured_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'qiling' ),
                     'featured_bg' => ''
                 ),
                 array( 
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '企业版', 'Enterprise' ) : __( '企业版', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '企业版', 'Enterprise' ) : __( '企业版', 'qiling' ),
                     'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 999 ) : '¥999',
-                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合大型企业定制需求', 'For custom enterprise requirements and larger delivery scope.' ) : __( '适合大型企业定制需求', 'developer-starter' ),
-                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", "✓ Everything in Professional\n✓ Unlimited storage\n✓ Dedicated support\n✓ Custom development\n✓ Account manager" ) : __( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", 'developer-starter' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '联系我们', 'Contact Sales' ) : __( '联系我们', 'developer-starter' ),
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合大型企业定制需求', 'For custom enterprise requirements and larger delivery scope.' ) : __( '适合大型企业定制需求', 'qiling' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", "✓ Everything in Professional\n✓ Unlimited storage\n✓ Dedicated support\n✓ Custom development\n✓ Account manager" ) : __( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", 'qiling' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '联系我们', 'Contact Sales' ) : __( '联系我们', 'qiling' ),
                     'btn_link' => '#',
                     'card_bg' => 'var(--color-neutral-0)',
                     'featured' => '',
@@ -186,14 +186,14 @@ class Pricing_Module extends Module_Base {
             ) ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，价格方案将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，价格方案将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -201,12 +201,12 @@ class Pricing_Module extends Module_Base {
     public function render( $data = array() ) {
         $title = isset( $data['pricing_title'] ) && $data['pricing_title'] !== ''
             ? $data['pricing_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '价格方案', 'Pricing Plans' ) : __( '价格方案', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '价格方案', 'Pricing Plans' ) : __( '价格方案', 'qiling' ) );
         $title_size = isset( $data['pricing_title_size'] ) && $data['pricing_title_size'] !== '' ? $data['pricing_title_size'] : '2rem';
         
         $subtitle = isset( $data['pricing_subtitle'] )
             ? $data['pricing_subtitle']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '选择适合您的方案，开启高效之旅', 'Choose the plan that fits your next stage of growth.' ) : __( '选择适合您的方案，开启高效之旅', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '选择适合您的方案，开启高效之旅', 'Choose the plan that fits your next stage of growth.' ) : __( '选择适合您的方案，开启高效之旅', 'qiling' ) );
         $subtitle_size = isset( $data['pricing_subtitle_size'] ) && $data['pricing_subtitle_size'] !== '' ? $data['pricing_subtitle_size'] : '1rem';
         
         $bg_type = isset( $data['module_bg_type'] ) ? $data['module_bg_type'] : 'color';
@@ -241,12 +241,12 @@ class Pricing_Module extends Module_Base {
         if ( empty( $items ) && ! isset( $data['pricing_items'] ) ) {
             $items = array(
                 array( 
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'qiling' ),
                     'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 99 ) : '¥99',
-                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合个人用户和小型项目', 'Best for individuals and small projects.' ) : __( '适合个人用户和小型项目', 'developer-starter' ),
-                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", "✓ Core feature access\n✓ 5GB storage\n✓ Email support\n✗ Advanced analytics\n✗ API access" ) : __( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", 'developer-starter' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ),
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合个人用户和小型项目', 'Best for individuals and small projects.' ) : __( '适合个人用户和小型项目', 'qiling' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", "✓ Core feature access\n✓ 5GB storage\n✓ Email support\n✗ Advanced analytics\n✗ API access" ) : __( "✓ 基础功能支持\n✓ 5GB 存储空间\n✓ 邮件支持\n✗ 高级分析\n✗ API 接口", 'qiling' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'qiling' ),
                     'btn_link' => '#',
                     'card_bg' => 'var(--color-neutral-0)',
                     'featured' => '',
@@ -254,25 +254,25 @@ class Pricing_Module extends Module_Base {
                     'featured_bg' => ''
                 ),
                 array( 
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业版', 'Professional' ) : __( '专业版', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业版', 'Professional' ) : __( '专业版', 'qiling' ),
                     'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 299 ) : '¥299',
-                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合成长型企业', 'Built for growing teams and active businesses.' ) : __( '适合成长型企业', 'developer-starter' ),
-                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", "✓ Everything in Starter\n✓ 50GB storage\n✓ Priority support\n✓ Advanced analytics\n✓ API access" ) : __( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", 'developer-starter' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ),
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合成长型企业', 'Built for growing teams and active businesses.' ) : __( '适合成长型企业', 'qiling' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", "✓ Everything in Starter\n✓ 50GB storage\n✓ Priority support\n✓ Advanced analytics\n✓ API access" ) : __( "✓ 全部基础功能\n✓ 50GB 存储空间\n✓ 优先技术支持\n✓ 高级数据分析\n✓ API 接口", 'qiling' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'qiling' ),
                     'btn_link' => '#',
                     'card_bg' => 'var(--color-neutral-0)',
                     'featured' => '1',
-                    'featured_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'developer-starter' ),
+                    'featured_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'qiling' ),
                     'featured_bg' => ''
                 ),
                 array( 
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '企业版', 'Enterprise' ) : __( '企业版', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '企业版', 'Enterprise' ) : __( '企业版', 'qiling' ),
                     'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 999 ) : '¥999',
-                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合大型企业定制需求', 'For custom enterprise requirements and larger delivery scope.' ) : __( '适合大型企业定制需求', 'developer-starter' ),
-                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", "✓ Everything in Professional\n✓ Unlimited storage\n✓ Dedicated support\n✓ Custom development\n✓ Account manager" ) : __( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", 'developer-starter' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '联系我们', 'Contact Sales' ) : __( '联系我们', 'developer-starter' ),
+                    'period' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/月', '/month' ) : __( '/月', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合大型企业定制需求', 'For custom enterprise requirements and larger delivery scope.' ) : __( '适合大型企业定制需求', 'qiling' ),
+                    'features' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", "✓ Everything in Professional\n✓ Unlimited storage\n✓ Dedicated support\n✓ Custom development\n✓ Account manager" ) : __( "✓ 全部专业功能\n✓ 无限存储空间\n✓ 7×24专属客服\n✓ 定制化开发\n✓ 专属客户经理", 'qiling' ),
+                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '联系我们', 'Contact Sales' ) : __( '联系我们', 'qiling' ),
                     'btn_link' => '#',
                     'card_bg' => 'var(--color-neutral-0)',
                     'featured' => '',
@@ -342,7 +342,7 @@ class Pricing_Module extends Module_Base {
                             $features = isset( $item['features'] ) ? $item['features'] : '';
                             $features_color = isset( $item['features_color'] ) && ! empty( $item['features_color'] ) ? $item['features_color'] : '';
                             
-                            $btn_text = isset( $item['btn_text'] ) ? $item['btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'developer-starter' ) );
+                            $btn_text = isset( $item['btn_text'] ) ? $item['btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即购买', 'Buy Now' ) : __( '立即购买', 'qiling' ) );
                                     $btn_link = isset( $item['btn_link'] ) ? $item['btn_link'] : '#';
                                     $btn_bg = isset( $item['btn_bg'] ) && ! empty( $item['btn_bg'] ) ? $item['btn_bg'] : '';
                                     $btn_text_color = isset( $item['btn_text_color'] ) && ! empty( $item['btn_text_color'] ) ? $item['btn_text_color'] : '';
@@ -356,7 +356,7 @@ class Pricing_Module extends Module_Base {
                                 $features_color = 'var(--color-text, #334155)';
                             }
                              $is_featured = isset( $item['featured'] ) && $item['featured'];
-                            $featured_text = isset( $item['featured_text'] ) && ! empty( $item['featured_text'] ) ? $item['featured_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'developer-starter' ) );
+                            $featured_text = isset( $item['featured_text'] ) && ! empty( $item['featured_text'] ) ? $item['featured_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'qiling' ) );
                             $featured_bg = isset( $item['featured_bg'] ) && ! empty( $item['featured_bg'] ) ? $item['featured_bg'] : 'var(--qiling-component-badge-bg)';
                             
                             // 卡片背景样式

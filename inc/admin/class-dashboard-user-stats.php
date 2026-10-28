@@ -39,7 +39,7 @@ class Dashboard_User_Stats {
 
         wp_add_dashboard_widget(
             $this->widget_id,
-            __( '用户数据统计', 'developer-starter' ),
+            __( '用户数据统计', 'qiling' ),
             array( $this, 'render_widget' )
         );
     }
@@ -59,15 +59,15 @@ class Dashboard_User_Stats {
         ?>
         <div class="developer-starter-dashboard-user-stats">
             <p>
-                <strong><?php esc_html_e( '当前网站注册用户总数', 'developer-starter' ); ?>：</strong>
+                <strong><?php esc_html_e( '当前网站注册用户总数', 'qiling' ); ?>：</strong>
                 <span><?php echo esc_html( number_format_i18n( $total_users ) ); ?></span>
             </p>
             <p>
-                <strong><?php echo esc_html( sprintf( __( '%s新增注册用户', 'developer-starter' ), $current_month ) ); ?>：</strong>
+                <strong><?php echo esc_html( sprintf( __( '%s新增注册用户', 'qiling' ), $current_month ) ); ?>：</strong>
                 <span><?php echo esc_html( number_format_i18n( $month_new ) ); ?></span>
             </p>
             <p style="margin:8px 0 0;color:#646970;">
-                <?php esc_html_e( '提示：可在右上角“显示选项”中隐藏该统计组件。', 'developer-starter' ); ?>
+                <?php esc_html_e( '提示：可在右上角“显示选项”中隐藏该统计组件。', 'qiling' ); ?>
             </p>
         </div>
         <?php

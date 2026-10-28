@@ -13,8 +13,8 @@ $submit_post_enable = developer_starter_get_option( 'submit_post_enable', '' );
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-submit-post',
-        DEVELOPER_STARTER_ASSETS . '/css/submit-post.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/submit-post.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 }, 20 );
@@ -25,8 +25,8 @@ get_header();
 $is_logged_in = is_user_logged_in();
 
 // 获取设置
-$disabled_message = developer_starter_get_option( 'submit_post_disabled_message', __( '投稿功能暂时关闭，请稍后再试。', 'developer-starter' ) );
-$success_message = developer_starter_get_option( 'submit_post_success_message', __( '投稿成功！请等待管理员审核。', 'developer-starter' ) );
+$disabled_message = developer_starter_get_option( 'submit_post_disabled_message', __( '投稿功能暂时关闭，请稍后再试。', 'qiling' ) );
+$success_message = developer_starter_get_option( 'submit_post_success_message', __( '投稿成功！请等待管理员审核。', 'qiling' ) );
 $allow_tags = developer_starter_get_option( 'submit_post_allow_tags', '1' );
 $max_tags = developer_starter_get_option( 'submit_post_max_tags', '5' );
 $allowed_categories = developer_starter_get_option( 'submit_post_categories', array() );
@@ -59,9 +59,9 @@ $categories = get_categories( $cat_args );
                     <line x1="9" y1="9" x2="15" y2="15"/>
                 </svg>
             </div>
-            <h2><?php esc_html_e( '暂不支持投稿', 'developer-starter' ); ?></h2>
+            <h2><?php esc_html_e( '暂不支持投稿', 'qiling' ); ?></h2>
             <p><?php echo esc_html( $disabled_message ); ?></p>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn-primary"><?php esc_html_e( '返回首页', 'developer-starter' ); ?></a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn-primary"><?php esc_html_e( '返回首页', 'qiling' ); ?></a>
         </div>
         
         <?php elseif ( ! $is_logged_in ) : ?>
@@ -73,8 +73,8 @@ $categories = get_categories( $cat_args );
                     <circle cx="12" cy="7" r="4"/>
                 </svg>
             </div>
-            <h2><?php esc_html_e( '请先登录', 'developer-starter' ); ?></h2>
-            <p><?php esc_html_e( '您需要登录后才能投稿文章。', 'developer-starter' ); ?></p>
+            <h2><?php esc_html_e( '请先登录', 'qiling' ); ?></h2>
+            <p><?php esc_html_e( '您需要登录后才能投稿文章。', 'qiling' ); ?></p>
             <?php
             $login_page_id = developer_starter_get_option( 'login_page_id', '' );
             $login_url = $login_page_id ? get_permalink( $login_page_id ) : wp_login_url( get_permalink() );
@@ -88,7 +88,7 @@ $categories = get_categories( $cat_args );
                 $login_btn_class .= ' trigger-login-modal';
             }
             ?>
-            <a href="<?php echo esc_url( $login_url ); ?>" class="<?php echo esc_attr( $login_btn_class ); ?>"<?php echo $login_modal_enable ? ' data-ds-login-trigger="modal"' : ''; ?>><?php esc_html_e( '立即登录', 'developer-starter' ); ?></a>
+            <a href="<?php echo esc_url( $login_url ); ?>" class="<?php echo esc_attr( $login_btn_class ); ?>"<?php echo $login_modal_enable ? ' data-ds-login-trigger="modal"' : ''; ?>><?php esc_html_e( '立即登录', 'qiling' ); ?></a>
         </div>
         
     <?php else : ?>
@@ -97,15 +97,15 @@ $categories = get_categories( $cat_args );
         // 检查是否是编辑模式
         $edit_post_id = isset( $_GET['post_id'] ) ? absint( wp_unslash( $_GET['post_id'] ) ) : 0;
         $post_to_edit = null;
-        $form_title = __( '投稿文章', 'developer-starter' );
-        $submit_btn_text = __( '提交投稿', 'developer-starter' );
+        $form_title = __( '投稿文章', 'qiling' );
+        $submit_btn_text = __( '提交投稿', 'qiling' );
         
         if ( $edit_post_id ) {
             $post_to_edit = get_post( $edit_post_id );
             // 验证权限：文章存在且作者是当前用户
             if ( $post_to_edit && $post_to_edit->post_author == get_current_user_id() ) {
-                $form_title = __( '编辑文章', 'developer-starter' );
-                $submit_btn_text = __( '更新投稿', 'developer-starter' );
+                $form_title = __( '编辑文章', 'qiling' );
+                $submit_btn_text = __( '更新投稿', 'qiling' );
             } else {
                 $post_to_edit = null; // 权限验证失败，重置
             }
@@ -120,7 +120,7 @@ $categories = get_categories( $cat_args );
                     </svg>
                     <?php echo esc_html( $form_title ); ?>
                 </h1>
-                <p class="form-desc"><?php esc_html_e( '请填写以下信息，提交后将由管理员审核。', 'developer-starter' ); ?></p>
+                <p class="form-desc"><?php esc_html_e( '请填写以下信息，提交后将由管理员审核。', 'qiling' ); ?></p>
             </div>
             
             <form id="submit-post-form" class="submit-post-form">
@@ -131,12 +131,12 @@ $categories = get_categories( $cat_args );
                 
                 <div class="form-group">
                     <label for="post-title">
-                        <?php esc_html_e( '文章标题', 'developer-starter' ); ?> <span class="required">*</span>
+                        <?php esc_html_e( '文章标题', 'qiling' ); ?> <span class="required">*</span>
                     </label>
                     <input type="text" 
                            id="post-title" 
                            name="post_title" 
-                           placeholder="<?php esc_attr_e( '请输入文章标题', 'developer-starter' ); ?>" 
+                           placeholder="<?php esc_attr_e( '请输入文章标题', 'qiling' ); ?>" 
                            maxlength="100"
                            value="<?php echo $post_to_edit ? esc_attr( $post_to_edit->post_title ) : ''; ?>"
                            required />
@@ -145,7 +145,7 @@ $categories = get_categories( $cat_args );
                 
                 <div class="form-group">
                     <label for="post-content">
-                        <?php esc_html_e( '文章内容', 'developer-starter' ); ?> <span class="required">*</span>
+                        <?php esc_html_e( '文章内容', 'qiling' ); ?> <span class="required">*</span>
                     </label>
                     <div class="editor-wrapper">
                         <?php
@@ -176,10 +176,10 @@ $categories = get_categories( $cat_args );
                 ?>
                 <div class="form-group">
                     <label for="post-category">
-                        <?php esc_html_e( '文章分类', 'developer-starter' ); ?> <span class="required">*</span>
+                        <?php esc_html_e( '文章分类', 'qiling' ); ?> <span class="required">*</span>
                     </label>
                     <select id="post-category" name="post_category" required>
-                        <option value=""><?php esc_html_e( '请选择分类', 'developer-starter' ); ?></option>
+                        <option value=""><?php esc_html_e( '请选择分类', 'qiling' ); ?></option>
                         <?php foreach ( $categories as $cat ) : ?>
                         <option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php selected( $current_cat, $cat->term_id ); ?>>
                             <?php echo esc_html( $cat->name ); ?>
@@ -204,13 +204,13 @@ $categories = get_categories( $cat_args );
                 ?>
                 <div class="form-group">
                     <label for="post-tags">
-                        <?php esc_html_e( '文章标签', 'developer-starter' ); ?>
-                        <span class="label-hint">(<?php printf( esc_html__( '可选，用逗号分隔，最多%d个', 'developer-starter' ), esc_html( $max_tags ) ); ?>)</span>
+                        <?php esc_html_e( '文章标签', 'qiling' ); ?>
+                        <span class="label-hint">(<?php printf( esc_html__( '可选，用逗号分隔，最多%d个', 'qiling' ), esc_html( $max_tags ) ); ?>)</span>
                     </label>
                     <input type="text" 
                            id="post-tags" 
                            name="post_tags" 
-                           placeholder="<?php esc_attr_e( '如：WordPress, 教程, 主题开发', 'developer-starter' ); ?>"
+                           placeholder="<?php esc_attr_e( '如：WordPress, 教程, 主题开发', 'qiling' ); ?>"
                            value="<?php echo esc_attr( $current_tags_str ); ?>"
                            data-max-tags="<?php echo esc_attr( $max_tags ); ?>" />
                     <div class="tags-preview" id="tags-preview">
@@ -245,7 +245,7 @@ $categories = get_categories( $cat_args );
                         <span><?php echo esc_html( $submit_btn_text ); ?></span>
                     </button>
                     <?php if ( $post_to_edit ) : ?>
-                    <a href="javascript:history.back()" class="btn-cancel" style="margin-left: var(--qiling-space-10); padding: var(--qiling-space-10) var(--qiling-space-20); text-decoration: none; color: var(--color-text-muted);"><?php esc_html_e( '取消', 'developer-starter' ); ?></a>
+                    <a href="javascript:history.back()" class="btn-cancel" style="margin-left: var(--qiling-space-10); padding: var(--qiling-space-10) var(--qiling-space-20); text-decoration: none; color: var(--color-text-muted);"><?php esc_html_e( '取消', 'qiling' ); ?></a>
                     <?php endif; ?>
                 </div>
                 
@@ -332,36 +332,63 @@ $categories = get_categories( $cat_args );
             
             // 验证
             if (!title) {
-                showMessage('error', '<?php echo esc_js( __( '请输入文章标题', 'developer-starter' ) ); ?>');
+                showMessage('error', '<?php echo esc_js( __( '请输入文章标题', 'qiling' ) ); ?>');
                 return;
             }
             
             if (!content || content === '<p><br></p>' || content === '<p></p>') {
-                showMessage('error', '<?php echo esc_js( __( '请输入文章内容', 'developer-starter' ) ); ?>');
+                showMessage('error', '<?php echo esc_js( __( '请输入文章内容', 'qiling' ) ); ?>');
                 return;
             }
             
             if (category && !categoryValue) {
-                showMessage('error', '<?php echo esc_js( __( '请选择文章分类', 'developer-starter' ) ); ?>');
+                showMessage('error', '<?php echo esc_js( __( '请选择文章分类', 'qiling' ) ); ?>');
                 return;
             }
             
             // 禁用按钮
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32"/></svg><span><?php echo esc_js( __( '提交中...', 'developer-starter' ) ); ?></span>';
+            submitBtn.innerHTML = '<svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32"/></svg><span><?php echo esc_js( __( '提交中...', 'qiling' ) ); ?></span>';
             
             // 发送请求
             var formData = new FormData(form);
             formData.append('action', 'developer_starter_submit_post');
             formData.set('post_content', content); // Ensure content from editor is used
-            
-            var submitSuccess = false; // 标记提交是否成功
-            
-            fetch(ajaxUrl, {
-                method: 'POST',
-                body: formData,
-                credentials: 'same-origin'
-            })
+
+            // 规范第 37 项：检查表单中是否存在图片文件上传（如插图或封面），先通过 Canvas 等比缩放预压缩
+            var fileInputs = form.querySelectorAll('input[type="file"]');
+            var compressPromises = [];
+            var compressFn = (typeof window.DSCompressImage === 'function')
+                ? window.DSCompressImage
+                : function(f) { return Promise.resolve(f); };
+
+            for (var i = 0; i < fileInputs.length; i++) {
+                var fi = fileInputs[i];
+                if (fi.files && fi.files.length) {
+                    for (var j = 0; j < fi.files.length; j++) {
+                        var fileObj = fi.files[j];
+                        if (fileObj.type && fileObj.type.indexOf('image/') === 0 && fileObj.type !== 'image/gif') {
+                            (function(inputName, originalFile) {
+                                compressPromises.push(
+                                    compressFn(originalFile, { maxWidth: 1920, maxHeight: 1920, quality: 0.85 })
+                                        .then(function(compressed) {
+                                            formData.set(inputName, compressed);
+                                        })
+                                );
+                            })(fi.name || 'image', fileObj);
+                        }
+                    }
+                }
+            }
+
+            var doSubmit = function() {
+                var submitSuccess = false; // 标记提交是否成功
+                
+                fetch(ajaxUrl, {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'same-origin'
+                })
             .then(function(response) { return response.json(); })
             .then(function(data) {
                 if (data.success) {
@@ -374,22 +401,29 @@ $categories = get_categories( $cat_args );
                          }, 1500);
                     }
                 } else {
-                    showMessage('error', data.data.message || '<?php echo esc_js( __( '提交失败，请重试', 'developer-starter' ) ); ?>');
+                    showMessage('error', data.data.message || '<?php echo esc_js( __( '提交失败，请重试', 'qiling' ) ); ?>');
                 }
             })
             .catch(function(error) {
-                showMessage('error', '<?php echo esc_js( __( '网络错误，请重试', 'developer-starter' ) ); ?>');
+                showMessage('error', '<?php echo esc_js( __( '网络错误，请重试', 'qiling' ) ); ?>');
                 console.error('Submit error:', error);
             })
             .finally(function() {
                 if (!submitSuccess) { // 成功时不恢复按钮，防止重复提交
                     submitBtn.disabled = false;
-                    var btnText = postId ? '<?php echo esc_js( __( '更新投稿', 'developer-starter' ) ); ?>' : '<?php echo esc_js( __( '提交投稿', 'developer-starter' ) ); ?>';
+                    var btnText = postId ? '<?php echo esc_js( __( '更新投稿', 'qiling' ) ); ?>' : '<?php echo esc_js( __( '提交投稿', 'qiling' ) ); ?>';
                     submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>' + btnText + '</span>';
                 }
             });
-        });
-    }
+        };
+
+        if (compressPromises.length) {
+            Promise.all(compressPromises).then(doSubmit).catch(doSubmit);
+        } else {
+            doSubmit();
+        }
+    });
+}
 })();
 </script>
 <?php endif; ?>

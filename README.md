@@ -1,4 +1,4 @@
-# 启灵 - 现代化模块化 WordPress 企业级全能主题
+# ✨ 启灵 (QiLing) - 现代化模块化 WordPress 企业级全能主题
 
 <p align="center">
   <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="QiLing WordPress Theme Banner" width="100%" style="border-radius: 8px;" />
@@ -9,8 +9,8 @@
   <a href="https://demo.jingxialai.com/"><img src="https://img.shields.io/badge/演示-demo.jingxialai.com-06b6d4?style=flat-square" alt="Live Demo" /></a>
   <a href="https://www.jingxialai.com/docs/qiling"><img src="https://img.shields.io/badge/文档-官方完整指南-10b981?style=flat-square" alt="Documentation" /></a>
   <img src="https://img.shields.io/badge/WordPress-5.8%20~%206.9-21759b?style=flat-square&logo=wordpress" alt="WordPress Version" />
-  <img src="https://img.shields.io/badge/PHP-8.1+-777bb4?style=flat-square&logo=php" alt="PHP Version" />
-  <img src="https://img.shields.io/badge/版本-v2.6.7-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/badge/PHP-8.2.35+-777bb4?style=flat-square&logo=php" alt="PHP Version" />
+  <img src="https://img.shields.io/badge/版本-v2.6.9-blue?style=flat-square" alt="Version" />
   <img src="https://img.shields.io/badge/QQ交流群-16966111-f59e0b?style=flat-square" alt="QQ Group" />
 </p>
 
@@ -20,7 +20,7 @@
 
 **启灵 (QiLing)** 是一款专为站长、企业、独立开发者及数字化服务商量身打造的**现代化、高复用、高性能模块化 WordPress 企业级主题**。
 
-主题**从底层构建了一套极简、原生、轻量级的高性能积木式模块化渲染引擎**。无论是构建科技公司品牌站、外贸独立站、工业制造官网、医疗门诊、律所咨询，还是电竞赛事、生活服务、个人作品集与数字商业平台，启灵都能提供极致顺滑、自由灵活且开箱即用的建站体验。
+主题彻底摒弃了传统建站依赖 Elementor 等第三方重型可视化插件导致的臃肿代码与缓慢加载弊端，**从底层构建了一套极简、原生、轻量级的高性能积木式模块化渲染引擎**。无论是构建科技公司品牌站、外贸独立站、工业制造官网、医疗门诊、律所咨询，还是电竞赛事、生活服务、个人作品集与数字商业平台，启灵都能提供极致顺滑、自由灵活且开箱即用的建站体验。
 
 ---
 
@@ -77,7 +77,7 @@
 
 ### 运行环境推荐
 - **WordPress 核心版本**：WordPress 5.8 及以上（推荐 WordPress 6.0 ~ 6.9+ 最新稳定版）
-- **PHP 版本**：PHP 8.1 / PHP 8.2 / PHP 8.3
+- **PHP 版本**：PHP 8.2.35+ / PHP 8.3.36+ / PHP 8.4.27+（防范 PHP2Shell 核心 RCE 高危漏洞 CVE-2026-109618 / CVE-2026-109619）
 - **数据库**：MySQL 5.7 及以上，或 MariaDB 10.3 及以上
 - **Web 服务器**：Nginx / Apache / LiteSpeed（推荐使用伪静态开启固定链接）
 
@@ -90,6 +90,111 @@
    进入【页面】->【新建页面】，在右侧【页面属性】中选择您所需的行业模板（如“企业官网”、“科技外贸”、“电竞俱乐部”等），勾选**【保存时应用所选页面模板的默认装修】**后发布，即可一秒获得完整的精美行业站点！
 4. **可视化自由微调**：
    在页面下方的“功能模块”管理区域，直接对文字、图片、按钮链接进行可视化修改并保存即可。
+
+---
+
+## 💻 开发者指南与架构规范 (Developer Guide)
+
+启灵主题全面遵循现代 WordPress 与 PHP 8.2+ 工程规范，提供稳定、可拓展且高性能的二次开发支持。
+
+### 1. 规范命名与命名空间体系
+
+| 层次/类型 | 命名规范 | 示例 / 说明 | 兼容说明 |
+| :--- | :--- | :--- | :--- |
+| **全局核心常量** | `QILING_*` (全大写下划线) | `QILING_VERSION`, `QILING_DIR`, `QILING_URI`, `QILING_INC`, `QILING_ASSETS` | 旧版 `DEVELOPER_STARTER_*` 自动映射保留 |
+| **公共辅助函数** | `qiling_*` (全小写下划线) | `qiling_get_option()`, `qiling_render_page_modules()`, `qiling_get_client_ip()` | 旧版 `developer_starter_*` 作为别名无损兼容 |
+| **自建数据库表** | `{$wpdb->prefix}qiling_*` | `wp_qiling_messages`, `wp_qiling_notifications`, `wp_qiling_post_interactions` | 自动执行 RENAME TABLE 热迁移，历史数据 100% 保留 |
+| **静态资源与别名** | `qiling-*` (小写中划线) | `qiling-main` (CSS/JS Handle), `qiling-settings` (后台菜单 Slug) | 注册 `developer-starter-main` 别名；后台旧链接自动 302 重定向 |
+| **前端全局变量** | `window.qilingData` (小驼峰) | 包含 AJAX URL、Nonce、用户状态与本地化字符串 | 同时挂载 `window.developerStarterData` 兼容别名 |
+| **PHP 核心命名空间** | `Qiling\*` (大驼峰) | `\Qiling\Core\Assets`, `\Qiling\Core\Theme_Setup` | Autoloader 双向动态绑定 `Developer_Starter\*` 别名 |
+
+---
+
+### 2. 常用核心 API 函数
+
+开发者可以在子主题 `functions.php` 或自定义插件中直接调用以下标准 API：
+
+```php
+// 1. 获取主题设置选项（自动处理缓存与默认值）
+$site_logo = qiling_get_option( 'site_logo', '' );
+$enable_dark_mode = qiling_get_option( 'enable_dark_mode', true );
+
+// 2. 渲染积木式页面模块
+qiling_render_page_modules( $custom_modules_array, $page_id );
+
+// 3. 获取当前页面保存的积木模块配置数据
+$modules = qiling_get_page_modules_data( $post_id );
+
+// 4. 多语言本地化文案提取
+$button_text = qiling_get_locale_text( $text_array_or_json );
+
+// 5. 安全获取访客真实 IP（防伪造、支持受信任反向代理列表）
+$client_ip = qiling_get_client_ip();
+
+// 6. 渲染 SVG / 矢量图标 HTML
+echo qiling_get_icon_html( 'ri-flashlight-line', array( 'class' => 'my-icon' ) );
+
+// 7. 文章特色图像安全提取（自动回退默认占位图）
+$thumb_url = qiling_get_featured_image_url( $post_id, 'medium_large' );
+
+// 8. 通用高频查询对象缓存包装器（显著降低数据库 I/O 负担）
+$data = qiling_run_cached_query( 'my_custom_query_key', function() {
+    return get_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) );
+}, 'my_query_group', 300 );
+```
+
+---
+
+### 3. 核心动作与过滤器钩子 (Hooks)
+
+#### 动作钩子 (Action Hooks)
+- `qiling_header_actions`: 在顶部导航栏右侧快捷操作区（搜索/登录按钮旁）插入自定义 HTML 或按钮。
+- `qiling_user_dropdown_items`: 在前台登录用户头像下拉菜单中追加自定义菜单项。
+- `qiling_account_tab_content`: 渲染前台用户中心自定义 Tab 的主体内容。
+- `developer_starter_before_site_header`: 在全站 `<header>` 标签之前插入全局 Banner 或通知条。
+- `developer_starter_after_site_footer`: 在全站 `<footer>` 之后插入第三方统计脚本或全局浮动客服。
+- `qiling_forms_submitted`: 启灵表单提交成功后触发（入参: `$entry_id`, `$form_id`, `$form`, `$entry_data`）。
+
+#### 过滤器钩子 (Filter Hooks)
+- `qiling_show_sidebar`: 动态控制当前页面/文章是否显示侧边栏（返回 `true` 或 `false`）。
+- `qiling_show_breadcrumb`: 动态控制当前页面是否显示面包屑导航（返回 `true` 或 `false`）。
+- `qiling_show_page_header`: 控制特定页面是否渲染顶部页面大标题头区。
+- `qiling_account_tabs`: 扩展或修改前台个人中心的标签页配置列表。
+- `qiling_search_modes`: 注册或调整多模式搜索配置（文章/产品/软件/知识库等）。
+- `developer_starter_modules`: 扩展注册自定义积木模块。
+
+---
+
+### 4. 自建数据表规范
+
+主题自建数据表均统一采用 WordPress 前缀 `{$wpdb->prefix}qiling_*`，开箱即用：
+
+- `wp_qiling_messages`: 访客与客户在线留言管理表。
+- `wp_qiling_notifications`: 站内系统通知、私信互动与提醒记录表。
+- `wp_qiling_post_interactions`: 文章点赞、收藏、浏览足迹等互动数据表。
+- `wp_qiling_careers_positions`: 企业招聘岗位职位信息表。
+- `wp_qiling_careers_applications`: 应聘者在线投递简历表。
+- `wp_qiling_id_verifications`: 用户实名认证与资质审核表。
+- `wp_qiling_account_deletion_requests`: 用户注销账号合规申请表。
+
+---
+
+### 5. 子主题定制 (Child Theme)
+
+推荐使用配套的 `qiling-child` 进行二次开发。子主题 `functions.php` 示例：
+
+```php
+<?php
+// 子主题样式与脚本继承已由主主题自动调度
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_style( 'qiling-child-style', get_stylesheet_uri(), array( 'qiling-main' ), wp_get_theme()->get( 'Version' ) );
+}, 20 );
+
+// 在顶部导航右侧添加自定义按钮
+add_action( 'qiling_header_actions', function() {
+    echo '<a href="/vip" class="theme-btn theme-btn-sm theme-btn-primary">开通 VIP</a>';
+} );
+```
 
 ---
 

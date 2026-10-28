@@ -111,7 +111,7 @@ class Auth_Manager {
             $remaining = $lock_data - $current_time;
             if ( $remaining > 0 ) {
                 return sprintf( 
-                    __( '操作过于频繁，请%s后再试', 'developer-starter' ), 
+                    __( '操作过于频繁，请%s后再试', 'qiling' ), 
                     human_time_diff( $current_time, $lock_data ) 
                 );
             }
@@ -151,7 +151,7 @@ class Auth_Manager {
             set_transient( $lock_key, $lock_until, $duration );
             delete_transient( $transient_key );
             return sprintf( 
-                __( '操作过于频繁，请%s后再试', 'developer-starter' ), 
+                __( '操作过于频繁，请%s后再试', 'qiling' ), 
                 human_time_diff( $current_time, $lock_until ) 
             );
         }
@@ -552,7 +552,7 @@ class Auth_Manager {
 
             wp_send_json_error(
                 array(
-                    'message' => __( '请求过于频繁，请稍后再试', 'developer-starter' ),
+                    'message' => __( '请求过于频繁，请稍后再试', 'qiling' ),
                     'code'    => 'rate_limited',
                 ),
                 429
@@ -632,21 +632,21 @@ class Auth_Manager {
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
         if ( is_user_logged_in() ) {
-            wp_send_json_error( array( 'message' => __( '您已登录，无需获取注册验证码', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '您已登录，无需获取注册验证码', 'qiling' ) ) );
         }
         if ( ! $this->is_register_email_code_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '邮箱注册验证码未开启', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '邮箱注册验证码未开启', 'qiling' ) ) );
         }
         if ( ! get_option( 'users_can_register' ) ) {
-            wp_send_json_error( array( 'message' => __( '网站已关闭注册功能', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '网站已关闭注册功能', 'qiling' ) ) );
         }
         if ( function_exists( 'developer_starter_is_email_registration_allowed' ) && ! developer_starter_is_email_registration_allowed() ) {
-            wp_send_json_error( array( 'message' => __( '当前站点未开启邮箱注册', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '当前站点未开启邮箱注册', 'qiling' ) ) );
         }
 
         $email = isset( $_POST['email'] ) ? $this->normalize_register_email( wp_unslash( $_POST['email'] ) ) : '';
         if ( ! is_email( $email ) ) {
-            wp_send_json_error( array( 'message' => __( '请输入有效的邮箱地址', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入有效的邮箱地址', 'qiling' ) ) );
         }
 
         if ( function_exists( 'developer_starter_is_email_domain_allowed' ) && ! developer_starter_is_email_domain_allowed( $email ) ) {
@@ -654,24 +654,24 @@ class Auth_Manager {
                 ? developer_starter_get_email_domain_whitelist_text( '、' )
                 : '';
             $message = $allowed_suffixes !== ''
-                ? sprintf( __( '当前仅支持以下邮箱后缀：%s', 'developer-starter' ), $allowed_suffixes )
-                : __( '当前邮箱后缀不在允许范围内', 'developer-starter' );
+                ? sprintf( __( '当前仅支持以下邮箱后缀：%s', 'qiling' ), $allowed_suffixes )
+                : __( '当前邮箱后缀不在允许范围内', 'qiling' );
             wp_send_json_error( array( 'message' => $message ) );
         }
 
         if ( email_exists( $email ) ) {
-            wp_send_json_error( array( 'message' => __( '该邮箱已被注册，请直接登录', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '该邮箱已被注册，请直接登录', 'qiling' ) ) );
         }
 
         if ( $this->get_option( 'auth_captcha_enable', '' ) ) {
             $captcha = isset( $_POST['captcha_verified'] ) ? sanitize_text_field( wp_unslash( $_POST['captcha_verified'] ) ) : '';
             if ( ! $this->consume_captcha_token( $captcha ) ) {
-                wp_send_json_error( array( 'message' => __( '请先完成验证，再获取验证码', 'developer-starter' ) ) );
+                wp_send_json_error( array( 'message' => __( '请先完成验证，再获取验证码', 'qiling' ) ) );
             }
         }
 
         if ( ! $this->is_register_email_smtp_ready() ) {
-            wp_send_json_error( array( 'message' => __( '邮箱服务未配置完整，请先在主题设置中完成 SMTP 配置', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '邮箱服务未配置完整，请先在主题设置中完成 SMTP 配置', 'qiling' ) ) );
         }
 
         $rate_check = $this->check_rate_limit( 'register_email_code_send', 20, 3600 );
@@ -687,12 +687,12 @@ class Auth_Manager {
 
         $daily_ip_limit = $this->get_register_email_code_daily_ip_limit();
         if ( ! $this->check_register_email_daily_limit( 'ip', $ip, $daily_ip_limit ) ) {
-            wp_send_json_error( array( 'message' => __( '当前 IP 今日发送次数已达上限，请明天再试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '当前 IP 今日发送次数已达上限，请明天再试', 'qiling' ) ) );
         }
 
         $daily_email_limit = $this->get_register_email_code_daily_email_limit();
         if ( ! $this->check_register_email_daily_limit( 'email', $email, $daily_email_limit ) ) {
-            wp_send_json_error( array( 'message' => __( '该邮箱今日验证码发送次数已达上限，请明天再试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '该邮箱今日验证码发送次数已达上限，请明天再试', 'qiling' ) ) );
         }
 
         $code = $this->generate_register_email_code();
@@ -707,7 +707,7 @@ class Auth_Manager {
         $this->increment_register_email_daily_counter( 'email', $email );
 
         wp_send_json_success( array(
-            'message'       => __( '验证码已发送，请查收邮箱（含垃圾邮箱）', 'developer-starter' ),
+            'message'       => __( '验证码已发送，请查收邮箱（含垃圾邮箱）', 'qiling' ),
             'retry_after'   => max( 1, $lock_until - time() ),
             'expire_minutes'=> $this->get_register_email_code_expire_minutes(),
         ) );

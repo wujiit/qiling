@@ -18,7 +18,7 @@ class Team_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-groups';
-        $this->description = __( '展示团队成员/核心人员', 'developer-starter' );
+        $this->description = __( '展示团队成员/核心人员', 'qiling' );
     }
 
     public function get_id() {
@@ -26,86 +26,86 @@ class Team_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '团队成员', 'developer-starter' );
+        return __( '团队成员', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'team_title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '核心团队', 'Our Team' ) : __( '核心团队', 'developer-starter' ) ),
+            array( 'id' => 'team_title', 'label' => __( '标题', 'qiling' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '核心团队', 'Our Team' ) : __( '核心团队', 'qiling' ) ),
             array(
                 'id' => 'team_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'team_title_color', 'label' => __( '标题颜色', 'developer-starter' ), 'type' => 'color' ),
+            array( 'id' => 'team_title_color', 'label' => __( '标题颜色', 'qiling' ), 'type' => 'color' ),
             
-            array( 'id' => 'team_subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队，值得信赖', 'Experienced people you can rely on.' ) : __( '专业团队，值得信赖', 'developer-starter' ) ),
+            array( 'id' => 'team_subtitle', 'label' => __( '副标题', 'qiling' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队，值得信赖', 'Experienced people you can rely on.' ) : __( '专业团队，值得信赖', 'qiling' ) ),
             array(
                 'id' => 'team_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'team_subtitle_color', 'label' => __( '副标题颜色', 'developer-starter' ), 'type' => 'color' ),
+            array( 'id' => 'team_subtitle_color', 'label' => __( '副标题颜色', 'qiling' ), 'type' => 'color' ),
             
-            array( 'id' => 'team_columns', 'label' => __( '每行列数', 'developer-starter' ), 'type' => 'select', 'options' => array( '2' => __( '2列', 'developer-starter' ), '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ) ), 'default' => '4' ),
+            array( 'id' => 'team_columns', 'label' => __( '每行列数', 'qiling' ), 'type' => 'select', 'options' => array( '2' => __( '2列', 'qiling' ), '3' => __( '3列', 'qiling' ), '4' => __( '4列', 'qiling' ) ), 'default' => '4' ),
             array(
                 'id' => 'team_members',
-                'label' => __( '团队成员', 'developer-starter' ),
+                'label' => __( '团队成员', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'avatar', 'label' => __( '头像', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'name', 'label' => __( '姓名', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'position', 'label' => __( '职位', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'desc', 'label' => __( '简介', 'developer-starter' ), 'type' => 'textarea' ),
-                    array( 'id' => 'wechat', 'label' => __( '微信二维码', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'email', 'label' => __( '邮箱', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'phone', 'label' => __( '电话', 'developer-starter' ), 'type' => 'text' ),
+                    array( 'id' => 'avatar', 'label' => __( '头像', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'name', 'label' => __( '姓名', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'position', 'label' => __( '职位', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'desc', 'label' => __( '简介', 'qiling' ), 'type' => 'textarea' ),
+                    array( 'id' => 'wechat', 'label' => __( '微信二维码', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'email', 'label' => __( '邮箱', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'phone', 'label' => __( '电话', 'qiling' ), 'type' => 'text' ),
                 ),
                 'default_items' => array(
-                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张明', 'Michael Zhang' ) : __( '张明', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '首席执行官', 'Chief Executive Officer' ) : __( '首席执行官', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '20年行业经验，曾任多家知名企业高管。', 'Leads strategy and long-term growth with extensive industry experience.' ) : __( '20年行业经验，曾任多家知名企业高管。', 'developer-starter' ) ),
-                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李华', 'Sophia Lee' ) : __( '李华', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术总监', 'Technical Director' ) : __( '技术总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资深技术专家，主导多个大型项目研发。', 'Oversees delivery quality, architecture, and technical execution.' ) : __( '资深技术专家，主导多个大型项目研发。', 'developer-starter' ) ),
-                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王芳', 'Emma Wang' ) : __( '王芳', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深耕市场营销领域15年，擅长品牌策略。', 'Shapes brand positioning, messaging, and campaign strategy.' ) : __( '深耕市场营销领域15年，擅长品牌策略。', 'developer-starter' ) ),
-                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '刘强', 'David Liu' ) : __( '刘强', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '运营总监', 'Operations Director' ) : __( '运营总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精细化运营专家，打造高效团队管理体系。', 'Keeps workflows efficient and operations aligned across teams.' ) : __( '精细化运营专家，打造高效团队管理体系。', 'developer-starter' ) ),
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张明', 'Michael Zhang' ) : __( '张明', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '首席执行官', 'Chief Executive Officer' ) : __( '首席执行官', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '20年行业经验，曾任多家知名企业高管。', 'Leads strategy and long-term growth with extensive industry experience.' ) : __( '20年行业经验，曾任多家知名企业高管。', 'qiling' ) ),
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李华', 'Sophia Lee' ) : __( '李华', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术总监', 'Technical Director' ) : __( '技术总监', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资深技术专家，主导多个大型项目研发。', 'Oversees delivery quality, architecture, and technical execution.' ) : __( '资深技术专家，主导多个大型项目研发。', 'qiling' ) ),
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王芳', 'Emma Wang' ) : __( '王芳', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深耕市场营销领域15年，擅长品牌策略。', 'Shapes brand positioning, messaging, and campaign strategy.' ) : __( '深耕市场营销领域15年，擅长品牌策略。', 'qiling' ) ),
+                    array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '刘强', 'David Liu' ) : __( '刘强', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '运营总监', 'Operations Director' ) : __( '运营总监', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精细化运营专家，打造高效团队管理体系。', 'Keeps workflows efficient and operations aligned across teams.' ) : __( '精细化运营专家，打造高效团队管理体系。', 'qiling' ) ),
                 ),
             ),
             
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -122,27 +122,27 @@ class Team_Module extends Module_Base {
             
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，团队成员将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，团队成员将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -150,10 +150,10 @@ class Team_Module extends Module_Base {
     public function render( $data = array() ) {
         $title = isset( $data['team_title'] ) && $data['team_title'] !== ''
             ? $data['team_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '核心团队', 'Our Team' ) : __( '核心团队', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '核心团队', 'Our Team' ) : __( '核心团队', 'qiling' ) );
         $subtitle = isset( $data['team_subtitle'] )
             ? $data['team_subtitle']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队，值得信赖', 'Experienced people you can rely on.' ) : __( '专业团队，值得信赖', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队，值得信赖', 'Experienced people you can rely on.' ) : __( '专业团队，值得信赖', 'qiling' ) );
         
         // Typography
         $title_color = isset( $data['team_title_color'] ) ? $data['team_title_color'] : '';
@@ -177,10 +177,10 @@ class Team_Module extends Module_Base {
         // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
         if ( empty( $members ) && ! isset( $data['team_members'] ) ) {
             $members = array(
-                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张明', 'Michael Zhang' ) : __( '张明', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '首席执行官', 'Chief Executive Officer' ) : __( '首席执行官', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '20年行业经验，曾任多家知名企业高管。', 'Leads strategy and long-term growth with extensive industry experience.' ) : __( '20年行业经验，曾任多家知名企业高管。', 'developer-starter' ) ),
-                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李华', 'Sophia Lee' ) : __( '李华', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术总监', 'Technical Director' ) : __( '技术总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资深技术专家，主导多个大型项目研发。', 'Oversees delivery quality, architecture, and technical execution.' ) : __( '资深技术专家，主导多个大型项目研发。', 'developer-starter' ) ),
-                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王芳', 'Emma Wang' ) : __( '王芳', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深耕市场营销领域15年，擅长品牌策略。', 'Shapes brand positioning, messaging, and campaign strategy.' ) : __( '深耕市场营销领域15年，擅长品牌策略。', 'developer-starter' ) ),
-                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '刘强', 'David Liu' ) : __( '刘强', 'developer-starter' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '运营总监', 'Operations Director' ) : __( '运营总监', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精细化运营专家，打造高效团队管理体系。', 'Keeps workflows efficient and operations aligned across teams.' ) : __( '精细化运营专家，打造高效团队管理体系。', 'developer-starter' ) ),
+                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张明', 'Michael Zhang' ) : __( '张明', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '首席执行官', 'Chief Executive Officer' ) : __( '首席执行官', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '20年行业经验，曾任多家知名企业高管。', 'Leads strategy and long-term growth with extensive industry experience.' ) : __( '20年行业经验，曾任多家知名企业高管。', 'qiling' ) ),
+                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李华', 'Sophia Lee' ) : __( '李华', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术总监', 'Technical Director' ) : __( '技术总监', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资深技术专家，主导多个大型项目研发。', 'Oversees delivery quality, architecture, and technical execution.' ) : __( '资深技术专家，主导多个大型项目研发。', 'qiling' ) ),
+                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王芳', 'Emma Wang' ) : __( '王芳', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深耕市场营销领域15年，擅长品牌策略。', 'Shapes brand positioning, messaging, and campaign strategy.' ) : __( '深耕市场营销领域15年，擅长品牌策略。', 'qiling' ) ),
+                array( 'avatar' => '', 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '刘强', 'David Liu' ) : __( '刘强', 'qiling' ), 'position' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '运营总监', 'Operations Director' ) : __( '运营总监', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精细化运营专家，打造高效团队管理体系。', 'Keeps workflows efficient and operations aligned across teams.' ) : __( '精细化运营专家，打造高效团队管理体系。', 'qiling' ) ),
             );
         }
         
@@ -290,7 +290,7 @@ class Team_Module extends Module_Base {
                                                     <svg class="team-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348z"/></svg>
                                                 </span>
                                                 <div class="team-wechat-qr">
-                                                    <img src="<?php echo esc_url( $wechat ); ?>" alt="<?php esc_attr_e( '微信', 'developer-starter' ); ?>" class="team-qr-img" />
+                                                    <img src="<?php echo esc_url( $wechat ); ?>" alt="<?php esc_attr_e( '微信', 'qiling' ); ?>" class="team-qr-img" />
                                                 </div>
                                             </div>
                                         <?php endif; ?>

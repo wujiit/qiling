@@ -34,12 +34,12 @@ if ( ! is_active_sidebar( $sidebar_id ) ) {
 }
 
 $sidebar_labels = array(
-    'sidebar-main' => __( '主侧边栏', 'developer-starter' ),
-    'sidebar-post' => __( '文章侧边栏', 'developer-starter' ),
-    'sidebar-page' => __( '页面侧边栏', 'developer-starter' ),
-    'sidebar-shop' => __( '商店侧边栏', 'developer-starter' ),
+    'sidebar-main' => __( '主侧边栏', 'qiling' ),
+    'sidebar-post' => __( '文章侧边栏', 'qiling' ),
+    'sidebar-page' => __( '页面侧边栏', 'qiling' ),
+    'sidebar-shop' => __( '商店侧边栏', 'qiling' ),
 );
-$sidebar_label = isset( $sidebar_labels[ $sidebar_id ] ) ? $sidebar_labels[ $sidebar_id ] : __( '侧边栏', 'developer-starter' );
+$sidebar_label = isset( $sidebar_labels[ $sidebar_id ] ) ? $sidebar_labels[ $sidebar_id ] : __( '侧边栏', 'qiling' );
 $sidebar_classes = array(
     'widget-area',
     'sidebar',

@@ -19,7 +19,7 @@ class Products_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-products';
-        $this->description = __( '手动添加产品，支持网格/轮播模式，点击弹出文章详情 (B2B模式)', 'developer-starter' );
+        $this->description = __( '手动添加产品，支持网格/轮播模式，点击弹出文章详情 (B2B模式)', 'qiling' );
     }
 
     public function get_id() {
@@ -27,52 +27,52 @@ class Products_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '产品列表 (手动版)', 'developer-starter' );
+        return __( '产品列表 (手动版)', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'products_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品中心', 'Product Catalog' ) : __( '产品中心', 'developer-starter' ) ),
-            array( 'id' => 'products_subtitle', 'type' => 'text', 'label' => __( '模块副标题', 'developer-starter' ), 'default' => 'PRODUCT CENTER' ),
+            array( 'id' => 'products_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品中心', 'Product Catalog' ) : __( '产品中心', 'qiling' ) ),
+            array( 'id' => 'products_subtitle', 'type' => 'text', 'label' => __( '模块副标题', 'qiling' ), 'default' => 'PRODUCT CENTER' ),
             
             // 手动产品列表
             array(
                 'id'         => 'items',
                 'type'       => 'repeater',
-                'label'      => __( '产品列表', 'developer-starter' ),
-                'add_button' => __( '+ 添加产品', 'developer-starter' ),
+                'label'      => __( '产品列表', 'qiling' ),
+                'add_button' => __( '+ 添加产品', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '产品图片', 'developer-starter' ),
+                        'label' => __( '产品图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '产品型号/名称', 'developer-starter' ),
+                        'label' => __( '产品型号/名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'text',
-                        'label' => __( '简短描述 (显示在卡片)', 'developer-starter' ),
+                        'label' => __( '简短描述 (显示在卡片)', 'qiling' ),
                     ),
                     array(
                         'id'    => 'specs',
                         'type'  => 'textarea',
-                        'label' => __( '详细参数 (显示在弹窗左侧，每行一条)', 'developer-starter' ),
-                        'desc'  => __( '例如：<br>尺寸：100x100mm<br>材质：铝合金', 'developer-starter' ),
+                        'label' => __( '详细参数 (显示在弹窗左侧，每行一条)', 'qiling' ),
+                        'desc'  => __( '例如：<br>尺寸：100x100mm<br>材质：铝合金', 'qiling' ),
                     ),
                     array(
                         'id'    => 'post_id',
                         'type'  => 'text',
-                        'label' => __( '关联文章ID (详情来源)', 'developer-starter' ),
-                        'desc'  => __( '填写产品介绍文章的ID', 'developer-starter' ),
+                        'label' => __( '关联文章ID (详情来源)', 'qiling' ),
+                        'desc'  => __( '填写产品介绍文章的ID', 'qiling' ),
                     ),
                     array(
                         'id'    => 'btn_text',
                         'type'  => 'text',
-                        'label' => __( '卡片按钮文字 (留空则不显示)', 'developer-starter' ),
+                        'label' => __( '卡片按钮文字 (留空则不显示)', 'qiling' ),
                         'default' => 'View Details',
                     ),
                 ),
@@ -82,10 +82,10 @@ class Products_Module extends Module_Base {
             array(
                 'id'      => 'columns',
                 'type'    => 'select',
-                'label'   => __( '显示模式 (超过此数量自动变轮播)', 'developer-starter' ),
+                'label'   => __( '显示模式 (超过此数量自动变轮播)', 'qiling' ),
                 'options' => array(
-                    '3' => __( '3个/行', 'developer-starter' ),
-                    '4' => __( '4个/行', 'developer-starter' ),
+                    '3' => __( '3个/行', 'qiling' ),
+                    '4' => __( '4个/行', 'qiling' ),
                 ),
                 'default' => '4',
             ),
@@ -94,41 +94,41 @@ class Products_Module extends Module_Base {
             array(
                 'id'      => 'modal_inquire_text',
                 'type'    => 'text',
-                'label'   => __( '弹窗咨询按钮文案', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即咨询', 'Inquire Now' ) : __( '立即咨询', 'developer-starter' ),
+                'label'   => __( '弹窗咨询按钮文案', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即咨询', 'Inquire Now' ) : __( '立即咨询', 'qiling' ),
             ),
             array(
                 'id'      => 'modal_inquire_url',
                 'type'    => 'text',
-                'label'   => __( '弹窗咨询按钮链接', 'developer-starter' ),
+                'label'   => __( '弹窗咨询按钮链接', 'qiling' ),
                 'default' => '/contact',
             ),
             array(
                 'id'    => 'modal_inquire_btn_bg_color',
                 'type'  => 'color',
-                'label' => __( '弹窗咨询按钮背景颜色', 'developer-starter' ),
-                'desc'  => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label' => __( '弹窗咨询按钮背景颜色', 'qiling' ),
+                'desc'  => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'    => 'modal_inquire_btn_text_color',
                 'type'  => 'color',
-                'label' => __( '弹窗咨询按钮文字颜色', 'developer-starter' ),
-                'desc'  => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label' => __( '弹窗咨询按钮文字颜色', 'qiling' ),
+                'desc'  => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'modal_inquire_btn_border_color', __( '弹窗咨询按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'modal_inquire_btn_border_color', __( '弹窗咨询按钮边框颜色', 'qiling' ) ),
             array(
                 'id'    => 'modal_inquire_btn_hover_bg_color',
                 'type'  => 'color',
-                'label' => __( '弹窗咨询按钮悬停背景颜色', 'developer-starter' ),
-                'desc'  => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label' => __( '弹窗咨询按钮悬停背景颜色', 'qiling' ),
+                'desc'  => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'    => 'modal_inquire_btn_hover_text_color',
                 'type'  => 'color',
-                'label' => __( '弹窗咨询按钮悬停文字颜色', 'developer-starter' ),
-                'desc'  => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label' => __( '弹窗咨询按钮悬停文字颜色', 'qiling' ),
+                'desc'  => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'modal_inquire_btn_hover_border_color', __( '弹窗咨询按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随弹窗咨询按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'modal_inquire_btn_hover_border_color', __( '弹窗咨询按钮悬停边框颜色', 'qiling' ), __( '留空时跟随弹窗咨询按钮悬停背景颜色。', 'qiling' ) ),
         );
     }
 
@@ -142,7 +142,7 @@ class Products_Module extends Module_Base {
             return str_replace( array( ';', '{', '}' ), '', $value );
         };
         
-        $inquire_text = isset( $data['modal_inquire_text'] ) ? $data['modal_inquire_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即咨询', 'Inquire Now' ) : __( '立即咨询', 'developer-starter' ) );
+        $inquire_text = isset( $data['modal_inquire_text'] ) ? $data['modal_inquire_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即咨询', 'Inquire Now' ) : __( '立即咨询', 'qiling' ) );
         $inquire_url = isset( $data['modal_inquire_url'] ) ? $data['modal_inquire_url'] : '/contact';
         $inquire_btn_bg_color = isset( $data['modal_inquire_btn_bg_color'] ) ? $clean_css_value( $data['modal_inquire_btn_bg_color'] ) : '';
         $inquire_btn_text_color = isset( $data['modal_inquire_btn_text_color'] ) ? $clean_css_value( $data['modal_inquire_btn_text_color'] ) : '';
@@ -237,7 +237,7 @@ class Products_Module extends Module_Base {
 
                 <?php else : ?>
                     <div class="text-center" style="padding: var(--qiling-space-40); color:var(--qiling-color-999999); background:var(--color-neutral-50); border-radius:8px;">
-                        <?php esc_html_e( '请在后台添加产品列表', 'developer-starter' ); ?>
+                        <?php esc_html_e( '请在后台添加产品列表', 'qiling' ); ?>
                     </div>
                 <?php endif; ?>
             </div>
@@ -246,7 +246,7 @@ class Products_Module extends Module_Base {
             <div id="<?php echo esc_attr( $module_id ); ?>-portal" class="qiling-products-modal-portal qiling-module-scope qiling-module-scope-products" data-qiling-module-scope="products"<?php echo '' !== $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
             <div id="<?php echo esc_attr( $module_id ); ?>-modal" class="pm-modal-mask" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="<?php echo esc_attr( $module_id ); ?>-modal-title">
                 <div class="pm-modal-box">
-                    <button type="button" class="pm-close" aria-label="<?php esc_attr_e( '关闭产品详情', 'developer-starter' ); ?>">&times;</button>
+                    <button type="button" class="pm-close" aria-label="<?php esc_attr_e( '关闭产品详情', 'qiling' ); ?>">&times;</button>
                     
                     <!-- Modal Container Flex Wrapper -->
                     <div class="pm-modal-layout">
@@ -257,8 +257,8 @@ class Products_Module extends Module_Base {
                                 <img src="" class="pm-mh-img">
                             </div>
                             <div class="pm-ms-info">
-                                <h3 id="<?php echo esc_attr( $module_id ); ?>-modal-title" class="pm-mh-title"><?php esc_html_e( '产品名称', 'developer-starter' ); ?></h3>
-                                <div class="pm-mh-desc"><?php esc_html_e( '产品描述', 'developer-starter' ); ?></div>
+                                <h3 id="<?php echo esc_attr( $module_id ); ?>-modal-title" class="pm-mh-title"><?php esc_html_e( '产品名称', 'qiling' ); ?></h3>
+                                <div class="pm-mh-desc"><?php esc_html_e( '产品描述', 'qiling' ); ?></div>
                                 
                                 <!-- New Args List -->
                                 <ul class="pm-mh-specs"></ul>
@@ -273,7 +273,7 @@ class Products_Module extends Module_Base {
                         <div class="pm-modal-main custom-scrollbar">
                             <div class="pm-loader">
                                 <div class="pm-spinner"></div>
-                                <p><?php esc_html_e( '正在加载详情...', 'developer-starter' ); ?></p>
+                                <p><?php esc_html_e( '正在加载详情...', 'qiling' ); ?></p>
                             </div>
                             <div class="pm-content-area article-content"></div>
                         </div>
@@ -299,9 +299,9 @@ class Products_Module extends Module_Base {
             var ajaxUrl = <?php echo wp_json_encode( admin_url( 'admin-ajax.php' ) ); ?>;
             var productSourceId = <?php echo wp_json_encode( (string) $source_post_id ); ?>;
             var productModuleKey = <?php echo wp_json_encode( $product_module_key ); ?>;
-            var noContentText = <?php echo wp_json_encode( __( '暂无详细内容', 'developer-starter' ) ); ?>;
-            var errorPrefix = <?php echo wp_json_encode( __( '错误：', 'developer-starter' ) ); ?>;
-            var genericError = <?php echo wp_json_encode( __( '加载失败，请稍后重试', 'developer-starter' ) ); ?>;
+            var noContentText = <?php echo wp_json_encode( __( '暂无详细内容', 'qiling' ) ); ?>;
+            var errorPrefix = <?php echo wp_json_encode( __( '错误：', 'qiling' ) ); ?>;
+            var genericError = <?php echo wp_json_encode( __( '加载失败，请稍后重试', 'qiling' ) ); ?>;
 
             <?php if ( $is_carousel ) : ?>
             if (typeof window.Swiper !== 'undefined') {

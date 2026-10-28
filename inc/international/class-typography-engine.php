@@ -80,13 +80,13 @@ class Typography_Engine {
             return;
         }
 
-        $file = DEVELOPER_STARTER_DIR . '/assets/css/international-typography.css';
-        $ver  = file_exists( $file ) ? (string) filemtime( $file ) : DEVELOPER_STARTER_VERSION;
+        $file = QILING_DIR . '/assets/css/international-typography.css';
+        $ver  = file_exists( $file ) ? (string) filemtime( $file ) : QILING_VERSION;
 
         wp_enqueue_style(
             'developer-starter-international-typography',
-            DEVELOPER_STARTER_ASSETS . '/css/international-typography.css',
-            array( 'developer-starter-main' ),
+            QILING_ASSETS . '/css/international-typography.css',
+            array( 'qiling-main' ),
             $ver
         );
     }

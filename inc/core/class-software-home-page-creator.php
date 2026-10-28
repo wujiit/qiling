@@ -57,8 +57,8 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
                 'type' => 'hero_search',
                 'data' => array(
                     'hs_height'             => 'medium',
-                    'hs_title'              => __( '发现精品软件', 'developer-starter' ),
-                    'hs_subtitle'           => __( '安全、免费、快速下载，一站式软件下载平台', 'developer-starter' ),
+                    'hs_title'              => __( '发现精品软件', 'qiling' ),
+                    'hs_subtitle'           => __( '安全、免费、快速下载，一站式软件下载平台', 'qiling' ),
                     'hs_bg_items'           => array(
                         array(
                             'type'      => 'image',
@@ -68,14 +68,14 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
                     ),
                     'hs_bg_overlay'         => 'yes',
                     'hs_overlay_opacity'    => '60',
-                    'hs_search_placeholder' => __( '搜索软件名称、分类或关键词...', 'developer-starter' ),
+                    'hs_search_placeholder' => __( '搜索软件名称、分类或关键词...', 'qiling' ),
                     'hs_search_btn_bg'      => 'linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)',
                     'hs_tags'               => array(
-                        array( 'text' => __( '办公软件', 'developer-starter' ) ),
-                        array( 'text' => __( '系统工具', 'developer-starter' ) ),
-                        array( 'text' => __( '影音播放', 'developer-starter' ) ),
-                        array( 'text' => __( '图形设计', 'developer-starter' ) ),
-                        array( 'text' => __( '开发工具', 'developer-starter' ) ),
+                        array( 'text' => __( '办公软件', 'qiling' ) ),
+                        array( 'text' => __( '系统工具', 'qiling' ) ),
+                        array( 'text' => __( '影音播放', 'qiling' ) ),
+                        array( 'text' => __( '图形设计', 'qiling' ) ),
+                        array( 'text' => __( '开发工具', 'qiling' ) ),
                     ),
                     'hs_title_color'        => '#ffffff',
                     'hs_subtitle_color'     => 'rgba(255,255,255,0.85)',
@@ -88,8 +88,8 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'software_carousel',
                 'data' => array(
-                    'software_carousel_title'       => __( '🌟 精选推荐', 'developer-starter' ),
-                    'software_carousel_subtitle'    => __( '编辑精选的优质软件', 'developer-starter' ),
+                    'software_carousel_title'       => __( 'icon-star 精选推荐', 'qiling' ),
+                    'software_carousel_subtitle'    => __( '编辑精选的优质软件', 'qiling' ),
                     'software_carousel_bg_color'    => '#f8fafc',
                     'software_carousel_categories'  => '',
                     'software_carousel_count'       => '10',
@@ -97,7 +97,7 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
                     'software_carousel_card_bg'     => '#ffffff',
                     'software_carousel_icon_size'   => '56px',
                     'software_carousel_show_btn'    => '1',
-                    'software_carousel_btn_text'    => __( '全部软件', 'developer-starter' ),
+                    'software_carousel_btn_text'    => __( '全部软件', 'qiling' ),
                     'software_carousel_btn_link'    => '/software/',
                     'module_margin_top'             => '-60px',
                 ),
@@ -107,8 +107,8 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'software_category',
                 'data' => array(
-                    'sc_title'          => __( '💻 热门软件', 'developer-starter' ),
-                    'sc_subtitle'       => __( '最受欢迎的软件下载', 'developer-starter' ),
+                    'sc_title'          => __( 'icon-laptop 热门软件', 'qiling' ),
+                    'sc_subtitle'       => __( '最受欢迎的软件下载', 'qiling' ),
                     'sc_bg_color'       => '',
                     'sc_layout'         => 'grid',
                     'sc_columns'        => '4',
@@ -122,7 +122,7 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
                     'sc_show_downloads' => '1',
                     'sc_show_desc'      => '0',
                     'sc_show_btn'       => '1',
-                    'sc_btn_text'       => __( '查看更多', 'developer-starter' ),
+                    'sc_btn_text'       => __( '查看更多', 'qiling' ),
                     'sc_btn_link'       => '/software/',
                 ),
             ),
@@ -135,10 +135,10 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
                     'stats_bg_color'   => 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
                     'stats_text_align' => 'center',
                     'stats_items'      => array(
-                        array( 'number' => '1000+', 'label' => __( '软件资源', 'developer-starter' ) ),
-                        array( 'number' => '50万+', 'label' => __( '累计下载', 'developer-starter' ) ),
-                        array( 'number' => '100%', 'label' => __( '安全检测', 'developer-starter' ) ),
-                        array( 'number' => '24H', 'label' => __( '更新维护', 'developer-starter' ) ),
+                        array( 'number' => '1000+', 'label' => __( '软件资源', 'qiling' ) ),
+                        array( 'number' => '50万+', 'label' => __( '累计下载', 'qiling' ) ),
+                        array( 'number' => '100%', 'label' => __( '安全检测', 'qiling' ) ),
+                        array( 'number' => '24H', 'label' => __( '更新维护', 'qiling' ) ),
                     ),
                 ),
             ),
@@ -147,8 +147,8 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'software_ranking',
                 'data' => array(
-                    'sr_title'           => __( '🏆 下载排行榜', 'developer-starter' ),
-                    'sr_subtitle'        => __( '用户下载最多的软件', 'developer-starter' ),
+                    'sr_title'           => __( 'icon-trophy 下载排行榜', 'qiling' ),
+                    'sr_subtitle'        => __( '用户下载最多的软件', 'qiling' ),
                     'sr_bg_color'        => '#f8fafc',
                     'sr_ranking_type'    => 'downloads',
                     'sr_layout'          => 'cards',
@@ -168,8 +168,8 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'software_category',
                 'data' => array(
-                    'sc_title'          => __( '🆕 最新更新', 'developer-starter' ),
-                    'sc_subtitle'       => __( '最近更新的软件版本', 'developer-starter' ),
+                    'sc_title'          => __( '最新更新', 'qiling' ),
+                    'sc_subtitle'       => __( '最近更新的软件版本', 'qiling' ),
                     'sc_bg_color'       => '',
                     'sc_layout'         => 'list',
                     'sc_columns'        => '4',
@@ -183,7 +183,7 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
                     'sc_show_downloads' => '0',
                     'sc_show_desc'      => '1',
                     'sc_show_btn'       => '1',
-                    'sc_btn_text'       => __( '更多更新', 'developer-starter' ),
+                    'sc_btn_text'       => __( '更多更新', 'qiling' ),
                     'sc_btn_link'       => '/software/',
                 ),
             ),
@@ -192,8 +192,8 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'software_category',
                 'data' => array(
-                    'sc_title'          => __( '📦 更多软件', 'developer-starter' ),
-                    'sc_subtitle'       => __( '浏览更多软件分类', 'developer-starter' ),
+                    'sc_title'          => __( 'icon-box 更多软件', 'qiling' ),
+                    'sc_subtitle'       => __( '浏览更多软件分类', 'qiling' ),
                     'sc_bg_color'       => '#f1f5f9',
                     'sc_layout'         => 'compact',
                     'sc_columns'        => '5',
@@ -207,7 +207,7 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
                     'sc_show_downloads' => '0',
                     'sc_show_desc'      => '0',
                     'sc_show_btn'       => '1',
-                    'sc_btn_text'       => __( '浏览全部', 'developer-starter' ),
+                    'sc_btn_text'       => __( '浏览全部', 'qiling' ),
                     'sc_btn_link'       => '/software/',
                 ),
             ),
@@ -216,8 +216,8 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'faq',
                 'data' => array(
-                    'faq_title'       => __( '常见问题', 'developer-starter' ),
-                    'faq_subtitle'    => __( '关于软件下载的常见疑问解答', 'developer-starter' ),
+                    'faq_title'       => __( '常见问题', 'qiling' ),
+                    'faq_subtitle'    => __( '关于软件下载的常见疑问解答', 'qiling' ),
                     'faq_bg_color'    => '',
                     'faq_items'       => array(
                         array(
@@ -244,9 +244,9 @@ class Software_Home_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'cta',
                 'data' => array(
-                    'cta_title'       => __( '找不到需要的软件？', 'developer-starter' ),
-                    'cta_subtitle'    => __( '告诉我们您需要什么软件，我们会尽快添加', 'developer-starter' ),
-                    'cta_button_text' => __( '提交软件需求', 'developer-starter' ),
+                    'cta_title'       => __( '找不到需要的软件？', 'qiling' ),
+                    'cta_subtitle'    => __( '告诉我们您需要什么软件，我们会尽快添加', 'qiling' ),
+                    'cta_button_text' => __( '提交软件需求', 'qiling' ),
                     'cta_button_url'  => '/contact/',
                     'cta_bg_type'     => 'gradient',
                 ),

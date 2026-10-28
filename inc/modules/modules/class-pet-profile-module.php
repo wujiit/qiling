@@ -18,7 +18,7 @@ class Pet_Profile_Module extends Module_Base {
     public function __construct() {
         $this->category = 'industry'; // 行业专属
         $this->icon = 'dashicons-pets'; // 宠物图标
-        $this->description = __( '展示宠物档案、领养信息或种猫种犬库', 'developer-starter' );
+        $this->description = __( '展示宠物档案、领养信息或种猫种犬库', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Pet_Profile_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '宠物档案/领养', 'developer-starter' );
+        return __( '宠物档案/领养', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,115 +34,115 @@ class Pet_Profile_Module extends Module_Base {
             // 基础设置
             array(
                 'id' => 'pet_title',
-                'label' => __( '模块标题 (支持HTML)', 'developer-starter' ),
+                'label' => __( '模块标题 (支持HTML)', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'Find your <span style="color:var(--pet-primary, var(--color-accent))">perfect companion</span>' ) : __( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'Find your <span style="color:var(--pet-primary, var(--color-accent))">perfect companion</span>' ) : __( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'qiling' ),
             ),
             array(
                 'id' => 'pet_subtitle',
-                'label' => __( '副标题', 'developer-starter' ),
+                'label' => __( '副标题', 'qiling' ),
                 'type' => 'textarea',
                 'rows' => 2,
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '每一只都经过严格健康检查与性格评估', 'Each profile is reviewed for health, temperament, and care needs.' ) : __( '每一只都经过严格健康检查与性格评估', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '每一只都经过严格健康检查与性格评估', 'Each profile is reviewed for health, temperament, and care needs.' ) : __( '每一只都经过严格健康检查与性格评估', 'qiling' ),
             ),
             array(
                 'id' => 'pet_columns',
-                'label' => __( '每行显示数量', 'developer-starter' ),
+                'label' => __( '每行显示数量', 'qiling' ),
                 'type' => 'select',
-                'options' => array( '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ) ),
+                'options' => array( '3' => __( '3列', 'qiling' ), '4' => __( '4列', 'qiling' ) ),
                 'default' => '4',
             ),
             
             // 样式设置
             array(
                 'id' => 'pet_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--qiling-color-error-alpha-01)', // 默认淡粉色背景
             ),
             array(
                 'id' => 'pet_card_bg',
-                'label' => __( '卡片背景色', 'developer-starter' ),
+                'label' => __( '卡片背景色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id' => 'pet_primary_color',
-                'label' => __( '主色调 (标签/按钮)', 'developer-starter' ),
+                'label' => __( '主色调 (标签/按钮)', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id'          => 'pet_badge_bg',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'type'        => 'color',
                 'default'     => '',
-                'description' => __( '控制状态徽章与特点标签背景；留空时保留状态语义色并跟随全局标签风格。', 'developer-starter' ),
+                'description' => __( '控制状态徽章与特点标签背景；留空时保留状态语义色并跟随全局标签风格。', 'qiling' ),
             ),
 
             // 内容列表
             array(
                 'id' => 'pet_items',
-                'label' => __( '宠物列表', 'developer-starter' ),
+                'label' => __( '宠物列表', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'image', 'label' => __( '封面照片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'name', 'label' => __( '昵称/编号', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'breed', 'label' => __( '品种', 'developer-starter' ), 'type' => 'text', 'placeholder' => __( '如：布偶猫', 'developer-starter' ) ),
+                    array( 'id' => 'image', 'label' => __( '封面照片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'name', 'label' => __( '昵称/编号', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'breed', 'label' => __( '品种', 'qiling' ), 'type' => 'text', 'placeholder' => __( '如：布偶猫', 'qiling' ) ),
                     array( 
                         'id' => 'gender', 
-                        'label' => __( '性别', 'developer-starter' ), 
+                        'label' => __( '性别', 'qiling' ), 
                         'type' => 'select', 
-                        'options' => array( 'male' => __( '弟弟 (♂)', 'developer-starter' ), 'female' => __( '妹妹 (♀)', 'developer-starter' ), 'unknown' => __( '保密', 'developer-starter' ) ) 
+                        'options' => array( 'male' => __( '弟弟 (♂)', 'qiling' ), 'female' => __( '妹妹 (♀)', 'qiling' ), 'unknown' => __( '保密', 'qiling' ) ) 
                     ),
-                    array( 'id' => 'age', 'label' => __( '年龄/生日', 'developer-starter' ), 'type' => 'text', 'placeholder' => __( '3个月', 'developer-starter' ) ),
+                    array( 'id' => 'age', 'label' => __( '年龄/生日', 'qiling' ), 'type' => 'text', 'placeholder' => __( '3个月', 'qiling' ) ),
                     array( 
                         'id' => 'status', 
-                        'label' => __( '当前状态', 'developer-starter' ), 
+                        'label' => __( '当前状态', 'qiling' ), 
                         'type' => 'select', 
-                        'options' => array( 'available' => __( '待领养/待售', 'developer-starter' ), 'reserved' => __( '已预订', 'developer-starter' ), 'adopted' => __( '已回家', 'developer-starter' ) ) 
+                        'options' => array( 'available' => __( '待领养/待售', 'qiling' ), 'reserved' => __( '已预订', 'qiling' ), 'adopted' => __( '已回家', 'qiling' ) ) 
                     ),
-                    array( 'id' => 'tags', 'label' => __( '性格/特点标签 (逗号分隔)', 'developer-starter' ), 'type' => 'text', 'placeholder' => __( '粘人, 疫苗全, 会用猫砂', 'developer-starter' ) ),
-                    array( 'id' => 'price', 'label' => __( '领养费/价格 (可选)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'link', 'label' => __( '详情链接 (可选)', 'developer-starter' ), 'type' => 'text' ),
+                    array( 'id' => 'tags', 'label' => __( '性格/特点标签 (逗号分隔)', 'qiling' ), 'type' => 'text', 'placeholder' => __( '粘人, 疫苗全, 会用猫砂', 'qiling' ) ),
+                    array( 'id' => 'price', 'label' => __( '领养费/价格 (可选)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'link', 'label' => __( '详情链接 (可选)', 'qiling' ), 'type' => 'text' ),
                 ),
                 'default_items' => array(
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '汤圆', 'Mochi' ) : __( '汤圆', 'developer-starter' ), 'breed' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '布偶猫', 'Ragdoll Cat' ) : __( '布偶猫', 'developer-starter' ), 'gender' => 'female', 'age' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '4个月', '4 months' ) : __( '4个月', 'developer-starter' ), 'status' => 'available', 'tags' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '双色, 爆毛, 粘人精', 'Bicolor, fluffy coat, affectionate' ) : __( '双色, 爆毛, 粘人精', 'developer-starter' ), 'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 5000 ) : '¥5000' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '奥利奥', 'Oreo' ) : __( '奥利奥', 'developer-starter' ), 'breed' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '边境牧羊犬', 'Border Collie' ) : __( '边境牧羊犬', 'developer-starter' ), 'gender' => 'male', 'age' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2个月', '2 months' ) : __( '2个月', 'developer-starter' ), 'status' => 'reserved', 'tags' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '高智商, 飞盘狗预备役', 'Smart, active, frisbee-ready' ) : __( '高智商, 飞盘狗预备役', 'developer-starter' ), 'price' => '' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '咪咪', 'Sunny' ) : __( '咪咪', 'developer-starter' ), 'breed' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '中华田园橘', 'Domestic Orange Tabby' ) : __( '中华田园橘', 'developer-starter' ), 'gender' => 'male', 'age' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '1岁', '1 year old' ) : __( '1岁', 'developer-starter' ), 'status' => 'available', 'tags' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费领养, 已绝育, 胖嘟嘟', 'Adoption free, neutered, cuddly' ) : __( '免费领养, 已绝育, 胖嘟嘟', 'developer-starter' ), 'price' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费', 'Free' ) : __( '免费', 'developer-starter' ) ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '汤圆', 'Mochi' ) : __( '汤圆', 'qiling' ), 'breed' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '布偶猫', 'Ragdoll Cat' ) : __( '布偶猫', 'qiling' ), 'gender' => 'female', 'age' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '4个月', '4 months' ) : __( '4个月', 'qiling' ), 'status' => 'available', 'tags' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '双色, 爆毛, 粘人精', 'Bicolor, fluffy coat, affectionate' ) : __( '双色, 爆毛, 粘人精', 'qiling' ), 'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 5000 ) : '¥5000' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '奥利奥', 'Oreo' ) : __( '奥利奥', 'qiling' ), 'breed' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '边境牧羊犬', 'Border Collie' ) : __( '边境牧羊犬', 'qiling' ), 'gender' => 'male', 'age' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2个月', '2 months' ) : __( '2个月', 'qiling' ), 'status' => 'reserved', 'tags' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '高智商, 飞盘狗预备役', 'Smart, active, frisbee-ready' ) : __( '高智商, 飞盘狗预备役', 'qiling' ), 'price' => '' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '咪咪', 'Sunny' ) : __( '咪咪', 'qiling' ), 'breed' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '中华田园橘', 'Domestic Orange Tabby' ) : __( '中华田园橘', 'qiling' ), 'gender' => 'male', 'age' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '1岁', '1 year old' ) : __( '1岁', 'qiling' ), 'status' => 'available', 'tags' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费领养, 已绝育, 胖嘟嘟', 'Adoption free, neutered, cuddly' ) : __( '免费领养, 已绝育, 胖嘟嘟', 'qiling' ), 'price' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费', 'Free' ) : __( '免费', 'qiling' ) ),
                 ),
             ),
 
             // Spacing
             array(
                 'id' => 'module_margin_top',
-                'label' => __( '上间距', 'developer-starter' ),
+                'label' => __( '上间距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_margin_bottom',
-                'label' => __( '下间距', 'developer-starter' ),
+                'label' => __( '下间距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，宠物卡片将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，宠物卡片将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
 
     public function render( $data = array() ) {
-        $title = isset( $data['pet_title'] ) ? $data['pet_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'Find your <span style="color:var(--pet-primary, var(--color-accent))">perfect companion</span>' ) : __( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'developer-starter' ) );
-        $subtitle = isset( $data['pet_subtitle'] ) ? $data['pet_subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '每一只都经过严格健康检查与性格评估', 'Each profile is reviewed for health, temperament, and care needs.' ) : __( '每一只都经过严格健康检查与性格评估', 'developer-starter' ) );
+        $title = isset( $data['pet_title'] ) ? $data['pet_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'Find your <span style="color:var(--pet-primary, var(--color-accent))">perfect companion</span>' ) : __( '寻找你的<span style="color:var(--pet-primary, var(--color-accent))">灵魂伴侣</span>', 'qiling' ) );
+        $subtitle = isset( $data['pet_subtitle'] ) ? $data['pet_subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '每一只都经过严格健康检查与性格评估', 'Each profile is reviewed for health, temperament, and care needs.' ) : __( '每一只都经过严格健康检查与性格评估', 'qiling' ) );
         $bg_color = isset( $data['pet_bg_color'] ) ? $data['pet_bg_color'] : 'var(--qiling-color-error-alpha-01)';
         $card_bg = isset( $data['pet_card_bg'] ) ? $data['pet_card_bg'] : 'var(--color-neutral-0)';
         $primary_color = ! empty( $data['pet_primary_color'] ) ? $data['pet_primary_color'] : '';
@@ -186,7 +186,7 @@ class Pet_Profile_Module extends Module_Base {
                     <div class="<?php echo esc_attr( $grid_class ); ?>">
                         <?php foreach ( $items as $index => $item ) : 
                             $img = isset( $item['image'] ) ? $item['image'] : '';
-                            $name = isset( $item['name'] ) ? $item['name'] : __( '未命名', 'developer-starter' );
+                            $name = isset( $item['name'] ) ? $item['name'] : __( '未命名', 'qiling' );
                             $breed = isset( $item['breed'] ) ? $item['breed'] : '';
                             $gender = isset( $item['gender'] ) ? $item['gender'] : 'unknown';
                             $age = isset( $item['age'] ) ? $item['age'] : '';
@@ -200,11 +200,11 @@ class Pet_Profile_Module extends Module_Base {
 
                             // 状态标签
                             $status_labels = array(
-                                'available' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '待领养', 'Available' ) : __( '待领养', 'developer-starter' ),
-                                'reserved' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '已预订', 'Reserved' ) : __( '已预订', 'developer-starter' ),
-                                'adopted' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '已回家', 'Adopted' ) : __( '已回家', 'developer-starter' )
+                                'available' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '待领养', 'Available' ) : __( '待领养', 'qiling' ),
+                                'reserved' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '已预订', 'Reserved' ) : __( '已预订', 'qiling' ),
+                                'adopted' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '已回家', 'Adopted' ) : __( '已回家', 'qiling' )
                             );
-                            $status_label = isset( $status_labels[$status] ) ? $status_labels[$status] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'View Details' ) : __( '查看详情', 'developer-starter' ) );
+                            $status_label = isset( $status_labels[$status] ) ? $status_labels[$status] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'View Details' ) : __( '查看详情', 'qiling' ) );
                             
                             $tag_el = $link ? 'a' : 'div';
                             $href = $link ? ' href="' . esc_url( $link ) . '"' : '';
@@ -234,9 +234,9 @@ class Pet_Profile_Module extends Module_Base {
                                         <h3 class="qiling-pet-name">
                                             <?php echo esc_html( $name ); ?>
                                             <?php if ( $gender === 'male' ) : ?>
-                                                <span class="qiling-pet-gender male" title="<?php esc_attr_e( '男孩', 'developer-starter' ); ?>">♂</span>
+                                                <span class="qiling-pet-gender male" title="<?php esc_attr_e( '男孩', 'qiling' ); ?>">♂</span>
                                             <?php elseif ( $gender === 'female' ) : ?>
-                                                <span class="qiling-pet-gender female" title="<?php esc_attr_e( '女孩', 'developer-starter' ); ?>">♀</span>
+                                                <span class="qiling-pet-gender female" title="<?php esc_attr_e( '女孩', 'qiling' ); ?>">♀</span>
                                             <?php endif; ?>
                                         </h3>
                                         <?php if ( $price ) : ?>

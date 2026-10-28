@@ -67,14 +67,14 @@ if ( ! function_exists( 'developer_starter_get_footer_wave_palette_presets' ) ) 
     function developer_starter_get_footer_wave_palette_presets() {
         return array(
             'auto'        => array(
-                'label'             => __( '自动跟随当前页面', 'developer-starter' ),
+                'label'             => __( '自动跟随当前页面', 'qiling' ),
                 'backdrop'          => 'var(--qiling-page-bg, var(--color-background, #ffffff))',
                 'transition_from'   => 'var(--qiling-page-bg, var(--color-background, #ffffff))',
                 'transition_height' => '32px',
                 'height'            => '120px',
             ),
             'soft_blue'   => array(
-                'label'             => __( '清亮蓝色', 'developer-starter' ),
+                'label'             => __( '清亮蓝色', 'qiling' ),
                 'backdrop'          => '#eff6ff',
                 'transition_from'   => '#dbeafe',
                 'transition_height' => '36px',
@@ -84,7 +84,7 @@ if ( ! function_exists( 'developer_starter_get_footer_wave_palette_presets' ) ) 
                 'layer_opacity'     => '0.56',
             ),
             'warm_orange' => array(
-                'label'             => __( '暖橙营销', 'developer-starter' ),
+                'label'             => __( '暖橙营销', 'qiling' ),
                 'backdrop'          => '#fff7ed',
                 'transition_from'   => '#ffedd5',
                 'transition_height' => '36px',
@@ -94,7 +94,7 @@ if ( ! function_exists( 'developer_starter_get_footer_wave_palette_presets' ) ) 
                 'layer_opacity'     => '0.5',
             ),
             'fresh_green' => array(
-                'label'             => __( '清新绿色', 'developer-starter' ),
+                'label'             => __( '清新绿色', 'qiling' ),
                 'backdrop'          => '#ecfdf5',
                 'transition_from'   => '#d1fae5',
                 'transition_height' => '36px',
@@ -104,7 +104,7 @@ if ( ! function_exists( 'developer_starter_get_footer_wave_palette_presets' ) ) 
                 'layer_opacity'     => '0.52',
             ),
             'rose'        => array(
-                'label'             => __( '红粉活动', 'developer-starter' ),
+                'label'             => __( '红粉活动', 'qiling' ),
                 'backdrop'          => '#fff1f2',
                 'transition_from'   => '#ffe4e6',
                 'transition_height' => '36px',
@@ -114,7 +114,7 @@ if ( ! function_exists( 'developer_starter_get_footer_wave_palette_presets' ) ) 
                 'layer_opacity'     => '0.5',
             ),
             'violet'      => array(
-                'label'             => __( '柔紫科技', 'developer-starter' ),
+                'label'             => __( '柔紫科技', 'qiling' ),
                 'backdrop'          => '#f5f3ff',
                 'transition_from'   => '#ede9fe',
                 'transition_height' => '36px',

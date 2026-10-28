@@ -143,7 +143,7 @@ class Search_Autocomplete {
         if ( ! self::is_enabled() ) {
             wp_send_json_error(
                 array(
-                    'message' => __( '实时搜索未启用。', 'developer-starter' ),
+                    'message' => __( '实时搜索未启用。', 'qiling' ),
                     'code'    => 'disabled',
                 ),
                 403
@@ -154,7 +154,7 @@ class Search_Autocomplete {
         if ( '' === $nonce || ! wp_verify_nonce( $nonce, self::NONCE_ACTION ) ) {
             wp_send_json_error(
                 array(
-                    'message' => __( '安全验证失败，请刷新页面重试。', 'developer-starter' ),
+                    'message' => __( '安全验证失败，请刷新页面重试。', 'qiling' ),
                     'code'    => 'bad_nonce',
                 ),
                 403
@@ -382,11 +382,11 @@ class Search_Autocomplete {
             : $post_type;
 
         if ( 'post' === $post_type ) {
-            $type_label = __( '文章', 'developer-starter' );
+            $type_label = __( '文章', 'qiling' );
         } elseif ( 'page' === $post_type ) {
-            $type_label = __( '页面', 'developer-starter' );
+            $type_label = __( '页面', 'qiling' );
         } elseif ( 'product' === $post_type ) {
-            $type_label = __( '产品', 'developer-starter' );
+            $type_label = __( '产品', 'qiling' );
         }
 
         $excerpt = '';
@@ -408,10 +408,13 @@ class Search_Autocomplete {
             'price'      => '',
         );
 
-        if ( self::show_price() && 'product' === $post_type && function_exists( 'wc_get_product' ) ) {
-            $product = wc_get_product( $post->ID );
-            if ( $product ) {
-                $item['price'] = wp_strip_all_tags( (string) $product->get_price_html() );
+        if ( self::show_price() && 'product' === $post_type ) {
+            $price = get_post_meta( $post->ID, '_price', true );
+            if ( '' === $price || null === $price || false === $price ) {
+                $price = get_post_meta( $post->ID, 'price', true );
+            }
+            if ( '' !== $price && null !== $price && false !== $price ) {
+                $item['price'] = (string) $price;
             }
         }
 
@@ -593,7 +596,7 @@ class Search_Autocomplete {
         }
 
         if ( $this->get_term_length( $term ) > 80 ) {
-            $term = function_exists( 'mb_substr' ) ? mb_substr( $term, 0, 80 ) : substr( $term, 0, 80 );
+            $term = function_exists( 'mb_substr' ) ? mb_substr( $term, 0, 80, 'UTF-8' ) : substr( $term, 0, 80 );
         }
 
         return trim( $term );
@@ -604,7 +607,7 @@ class Search_Autocomplete {
      * @return int
      */
     private function get_term_length( $term ) {
-        return function_exists( 'mb_strlen' ) ? (int) mb_strlen( (string) $term ) : strlen( (string) $term );
+        return function_exists( 'mb_strlen' ) ? (int) mb_strlen( (string) $term, 'UTF-8' ) : strlen( (string) $term );
     }
 
     /**

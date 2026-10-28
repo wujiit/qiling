@@ -17,8 +17,8 @@ class Widget_Social extends \WP_Widget {
     public function __construct() {
         parent::__construct(
             'developer_starter_social',
-            __( '社交链接', 'developer-starter' ),
-            array( 'description' => __( '显示社交媒体链接', 'developer-starter' ) )
+            __( '社交链接', 'qiling' ),
+            array( 'description' => __( '显示社交媒体链接', 'qiling' ) )
         );
     }
 
@@ -34,14 +34,14 @@ class Widget_Social extends \WP_Widget {
         <div class="social-widget-content">
             <?php if ( ! empty( $options['weibo_url'] ) ) : ?>
                 <a href="<?php echo esc_url( $options['weibo_url'] ); ?>" target="_blank" rel="noopener" class="social-link social-weibo">
-                    <?php esc_html_e( '微博', 'developer-starter' ); ?>
+                    <?php esc_html_e( '微博', 'qiling' ); ?>
                 </a>
             <?php endif; ?>
 
             <?php if ( ! empty( $options['wechat_qrcode'] ) ) : ?>
                 <div class="social-wechat">
-                    <span><?php esc_html_e( '微信公众号', 'developer-starter' ); ?></span>
-                    <img src="<?php echo esc_url( $options['wechat_qrcode'] ); ?>" alt="<?php esc_attr_e( '微信二维码', 'developer-starter' ); ?>" />
+                    <span><?php esc_html_e( '微信公众号', 'qiling' ); ?></span>
+                    <img src="<?php echo esc_url( $options['wechat_qrcode'] ); ?>" alt="<?php esc_attr_e( '微信二维码', 'qiling' ); ?>" />
                 </div>
             <?php endif; ?>
         </div>
@@ -50,10 +50,10 @@ class Widget_Social extends \WP_Widget {
     }
 
     public function form( $instance ) {
-        $title = ! empty( $instance['title'] ) ? $instance['title'] : __( '关注我们', 'developer-starter' );
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : __( '关注我们', 'qiling' );
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( '标题:', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( '标题:', 'qiling' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
         <?php

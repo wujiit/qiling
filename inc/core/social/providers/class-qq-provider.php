@@ -31,7 +31,7 @@ class QQ_Provider extends Abstract_OAuth2_Provider {
      * @return string
      */
     public function get_label() {
-        return __( 'QQ', 'developer-starter' );
+        return __( 'QQ', 'qiling' );
     }
 
     /**
@@ -49,7 +49,7 @@ class QQ_Provider extends Abstract_OAuth2_Provider {
      */
     public function get_authorization_url( $state ) {
         if ( ! $this->is_available() ) {
-            return new \WP_Error( 'qq_not_configured', __( 'QQ 登录尚未配置完整。', 'developer-starter' ) );
+            return new \WP_Error( 'qq_not_configured', __( 'QQ 登录尚未配置完整。', 'qiling' ) );
         }
 
         return add_query_arg(
@@ -71,7 +71,7 @@ class QQ_Provider extends Abstract_OAuth2_Provider {
     public function get_profile_from_callback( $request ) {
         $code = isset( $request['code'] ) ? sanitize_text_field( wp_unslash( (string) $request['code'] ) ) : '';
         if ( '' === $code ) {
-            return new \WP_Error( 'qq_missing_code', __( 'QQ 授权回调缺少 code。', 'developer-starter' ) );
+            return new \WP_Error( 'qq_missing_code', __( 'QQ 授权回调缺少 code。', 'qiling' ) );
         }
 
         $token = $this->request_access_token( $code );
@@ -148,11 +148,11 @@ class QQ_Provider extends Abstract_OAuth2_Provider {
         }
 
         if ( ! empty( $data['error'] ) ) {
-            return new \WP_Error( 'qq_token_error', $this->get_api_error_message( $data, __( 'QQ Access Token 获取失败。', 'developer-starter' ) ) );
+            return new \WP_Error( 'qq_token_error', $this->get_api_error_message( $data, __( 'QQ Access Token 获取失败。', 'qiling' ) ) );
         }
 
         if ( empty( $data['access_token'] ) ) {
-            return new \WP_Error( 'qq_token_missing', __( 'QQ Access Token 返回缺少 access_token。', 'developer-starter' ) );
+            return new \WP_Error( 'qq_token_missing', __( 'QQ Access Token 返回缺少 access_token。', 'qiling' ) );
         }
 
         return $data;
@@ -177,15 +177,15 @@ class QQ_Provider extends Abstract_OAuth2_Provider {
         }
 
         if ( ! empty( $data['error'] ) ) {
-            return new \WP_Error( 'qq_openid_error', $this->get_api_error_message( $data, __( 'QQ OpenID 获取失败。', 'developer-starter' ) ) );
+            return new \WP_Error( 'qq_openid_error', $this->get_api_error_message( $data, __( 'QQ OpenID 获取失败。', 'qiling' ) ) );
         }
 
         if ( empty( $data['openid'] ) ) {
-            return new \WP_Error( 'qq_openid_missing', __( 'QQ OpenID 返回缺少 openid。', 'developer-starter' ) );
+            return new \WP_Error( 'qq_openid_missing', __( 'QQ OpenID 返回缺少 openid。', 'qiling' ) );
         }
 
         if ( ! empty( $data['client_id'] ) && (string) $data['client_id'] !== $this->get_app_id() ) {
-            return new \WP_Error( 'qq_client_id_mismatch', __( 'QQ OpenID 返回的 App ID 与当前配置不一致。', 'developer-starter' ) );
+            return new \WP_Error( 'qq_client_id_mismatch', __( 'QQ OpenID 返回的 App ID 与当前配置不一致。', 'qiling' ) );
         }
 
         return $data;
@@ -213,7 +213,7 @@ class QQ_Provider extends Abstract_OAuth2_Provider {
         }
 
         if ( isset( $data['ret'] ) && 0 !== (int) $data['ret'] ) {
-            return new \WP_Error( 'qq_user_info_error', $this->get_api_error_message( $data, __( 'QQ 用户资料获取失败。', 'developer-starter' ) ) );
+            return new \WP_Error( 'qq_user_info_error', $this->get_api_error_message( $data, __( 'QQ 用户资料获取失败。', 'qiling' ) ) );
         }
 
         return $data;

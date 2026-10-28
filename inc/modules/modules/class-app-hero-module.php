@@ -19,7 +19,7 @@ class App_Hero_Module extends Module_Base {
         // 设置模块所属分类
         $this->category = 'header'; // 或者 'hero'
         $this->icon = 'dashicons-smartphone';
-        $this->description = __( 'APP推广首屏展示，支持图片/视频切换、多下载按钮及二维码卡片', 'developer-starter' );
+        $this->description = __( 'APP推广首屏展示，支持图片/视频切换、多下载按钮及二维码卡片', 'qiling' );
     }
 
     public function get_id() {
@@ -27,7 +27,7 @@ class App_Hero_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( 'APP推广首屏', 'developer-starter' );
+        return __( 'APP推广首屏', 'qiling' );
     }
 
     public function get_fields() {
@@ -35,100 +35,100 @@ class App_Hero_Module extends Module_Base {
             // --- 内容设置 ---
             array(
                 'id' => 'hero_title',
-                'label' => __( '主标题', 'developer-starter' ),
+                'label' => __( '主标题', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即下载我们的APP', 'Download Our App Today' ) : __( '立即下载我们的APP', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即下载我们的APP', 'Download Our App Today' ) : __( '立即下载我们的APP', 'qiling' ),
             ),
             array(
                 'id' => 'hero_desc',
-                'label' => __( '描述文本', 'developer-starter' ),
+                'label' => __( '描述文本', 'qiling' ),
                 'type' => 'textarea',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '随时随地捕捉灵感，手机也能高效创作。支持 iOS 和 Android 系统，数据多端同步。', 'Create from anywhere with a mobile workflow built for iOS and Android, with seamless sync across devices.' ) : __( '随时随地捕捉灵感，手机也能高效创作。支持 iOS 和 Android 系统，数据多端同步。', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '随时随地捕捉灵感，手机也能高效创作。支持 iOS 和 Android 系统，数据多端同步。', 'Create from anywhere with a mobile workflow built for iOS and Android, with seamless sync across devices.' ) : __( '随时随地捕捉灵感，手机也能高效创作。支持 iOS 和 Android 系统，数据多端同步。', 'qiling' ),
             ),
             
             // --- 下载按钮组 ---
             array(
                 'id' => 'hero_buttons',
-                'label' => __( '下载按钮配置', 'developer-starter' ),
+                'label' => __( '下载按钮配置', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
                     array( 
                         'id' => 'btn_type', 
-                        'label' => __( '按钮类型', 'developer-starter' ), 
+                        'label' => __( '按钮类型', 'qiling' ), 
                         'type' => 'select',
                         'options' => array(
                             'apple' => 'Apple (App Store)',
                             'android' => 'Android (Google Play)',
                             'windows' => 'Windows',
                             'mac' => 'Mac OS',
-                            'custom' => __( '自定义', 'developer-starter' ),
+                            'custom' => __( '自定义', 'qiling' ),
                         ),
                         'default' => 'apple'
                     ),
-                    array( 'id' => 'btn_text', 'label' => __( '主平标题 (如 App Store)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'btn_subtext', 'label' => __( '副标题 (如 Download on)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'btn_icon', 'label' => __( '图标 (如 icon-apple)', 'developer-starter' ), 'type' => 'text', 'desc' => __( '支持 icon-xxx 或图片URL，留空则根据类型自动显示默认图标', 'developer-starter' ) ),
-                    array( 'id' => 'btn_link', 'label' => __( '下载链接', 'developer-starter' ), 'type' => 'text', 'default' => '#' ),
+                    array( 'id' => 'btn_text', 'label' => __( '主平标题 (如 App Store)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'btn_subtext', 'label' => __( '副标题 (如 Download on)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'btn_icon', 'label' => __( '图标 (如 icon-apple)', 'qiling' ), 'type' => 'text', 'desc' => __( '支持 icon-xxx 或图片URL，留空则根据类型自动显示默认图标', 'qiling' ) ),
+                    array( 'id' => 'btn_link', 'label' => __( '下载链接', 'qiling' ), 'type' => 'text', 'default' => '#' ),
                     array( 
                         'id' => 'btn_style', 
-                        'label' => __( '样式风格', 'developer-starter' ), 
+                        'label' => __( '样式风格', 'qiling' ), 
                         'type' => 'select', 
                         'options' => array(
-                            'light' => __( '白色背景(深色字)', 'developer-starter' ),
-                            'dark' => __( '深色背景(白色字)', 'developer-starter' ),
-                            'outline' => __( '描边风格', 'developer-starter' ),
+                            'light' => __( '白色背景(深色字)', 'qiling' ),
+                            'dark' => __( '深色背景(白色字)', 'qiling' ),
+                            'outline' => __( '描边风格', 'qiling' ),
                         ),
                         'default' => 'light'
                     ),
-                    $this->get_button_border_color_field( 'btn_border_color', __( '按钮边框颜色', 'developer-starter' ) ),
-                    $this->get_button_border_color_field( 'btn_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮边框颜色。', 'developer-starter' ) ),
+                    $this->get_button_border_color_field( 'btn_border_color', __( '按钮边框颜色', 'qiling' ) ),
+                    $this->get_button_border_color_field( 'btn_hover_border_color', __( '按钮悬停边框颜色', 'qiling' ), __( '留空时跟随按钮边框颜色。', 'qiling' ) ),
                 ),
             ),
 
             // --- 底部二维码卡片 ---
             array(
                 'id' => 'show_qr_card',
-                'label' => __( '显示底部二维码/标语栏', 'developer-starter' ),
+                'label' => __( '显示底部二维码/标语栏', 'qiling' ),
                 'type' => 'select', // Changed from switch to select for better clarity
                 'options' => array(
-                    '1' => __( '显示', 'developer-starter' ),
-                    '0' => __( '隐藏', 'developer-starter' ),
+                    '1' => __( '显示', 'qiling' ),
+                    '0' => __( '隐藏', 'qiling' ),
                 ),
                 'default' => '1',
-                'desc' => __( '选择是否显示底部的二维码或标语卡片', 'developer-starter' ),
+                'desc' => __( '选择是否显示底部的二维码或标语卡片', 'qiling' ),
             ),
             array(
                 'id' => 'qr_icon',
-                'label' => __( '左侧图标', 'developer-starter' ),
+                'label' => __( '左侧图标', 'qiling' ),
                 'type' => 'text',
                 'default' => 'icon-shouji',
-                'desc' => __( '支持 icon-xxx 或图片URL', 'developer-starter' ),
+                'desc' => __( '支持 icon-xxx 或图片URL', 'qiling' ),
                 'dependency' => array( 'show_qr_card', '==', '1' ),
             ),
             array(
                 'id' => 'qr_sub', // New field
-                'label' => __( '左侧小标题 (如 手机扫一扫)', 'developer-starter' ),
+                'label' => __( '左侧小标题 (如 手机扫一扫)', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '手机扫一扫', 'Scan with Your Phone' ) : __( '手机扫一扫', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '手机扫一扫', 'Scan with Your Phone' ) : __( '手机扫一扫', 'qiling' ),
                 'dependency' => array( 'show_qr_card', '==', '1' ),
             ),
             array(
                 'id' => 'qr_title',
-                'label' => __( '左侧主标题', 'developer-starter' ),
+                'label' => __( '左侧主标题', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '微信小程序', 'Mobile Quick Access' ) : __( '微信小程序', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '微信小程序', 'Mobile Quick Access' ) : __( '微信小程序', 'qiling' ),
                 'dependency' => array( 'show_qr_card', '==', '1' ),
             ),
             array(
                 'id' => 'qr_desc',
-                'label' => __( '左侧描述', 'developer-starter' ),
+                'label' => __( '左侧描述', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免下载，扫码直接使用', 'No install needed. Scan to launch instantly.' ) : __( '免下载，扫码直接使用', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免下载，扫码直接使用', 'No install needed. Scan to launch instantly.' ) : __( '免下载，扫码直接使用', 'qiling' ),
                 'dependency' => array( 'show_qr_card', '==', '1' ),
             ),
             array(
                 'id' => 'qr_image',
-                'label' => __( '右侧二维码图片', 'developer-starter' ),
+                'label' => __( '右侧二维码图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'show_qr_card', '==', '1' ),
             ),
@@ -136,24 +136,24 @@ class App_Hero_Module extends Module_Base {
             // --- 右侧媒体设置 ---
             array(
                 'id' => 'media_type',
-                'label' => __( '右侧展示类型', 'developer-starter' ),
+                'label' => __( '右侧展示类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'image' => __( '静态图片', 'developer-starter' ),
-                    'video' => __( '视频播放', 'developer-starter' ),
+                    'image' => __( '静态图片', 'qiling' ),
+                    'video' => __( '视频播放', 'qiling' ),
                 ),
                 'default' => 'image',
             ),
             array(
                 'id' => 'hero_image',
-                'label' => __( '上传图片', 'developer-starter' ),
+                'label' => __( '上传图片', 'qiling' ),
                 'type' => 'image',
-                'desc' => __( '建议尺寸: 600x800px 透明背景PNG效果最佳', 'developer-starter' ),
+                'desc' => __( '建议尺寸: 600x800px 透明背景PNG效果最佳', 'qiling' ),
                 'dependency' => array( 'media_type', '==', 'image' ),
             ),
             array(
                 'id' => 'hero_video',
-                'label' => __( '视频地址 (MP4)', 'developer-starter' ),
+                'label' => __( '视频地址 (MP4)', 'qiling' ),
                 'type' => 'text',
                 'dependency' => array( 'media_type', '==', 'video' ),
             ),
@@ -161,23 +161,23 @@ class App_Hero_Module extends Module_Base {
             // --- 悬浮装饰元素 (新建) ---
             array(
                 'id' => 'floating_elements',
-                'label' => __( '悬浮装饰卡片', 'developer-starter' ),
+                'label' => __( '悬浮装饰卡片', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'float_icon', 'label' => __( '图标(支持 icon-xxx 或图片URL)', 'developer-starter' ), 'type' => 'text', 'desc' => __( '支持 icon-xxx 或图片URL', 'developer-starter' ) ),
-                    array( 'id' => 'float_title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '功能亮点', 'Feature Highlight' ) : __( '功能亮点', 'developer-starter' ) ),
-                    array( 'id' => 'float_desc', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '多功能', 'All-in-One' ) : __( '多功能', 'developer-starter' ) ),
+                    array( 'id' => 'float_icon', 'label' => __( '图标(支持 icon-xxx 或图片URL)', 'qiling' ), 'type' => 'text', 'desc' => __( '支持 icon-xxx 或图片URL', 'qiling' ) ),
+                    array( 'id' => 'float_title', 'label' => __( '标题', 'qiling' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '功能亮点', 'Feature Highlight' ) : __( '功能亮点', 'qiling' ) ),
+                    array( 'id' => 'float_desc', 'label' => __( '副标题', 'qiling' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '多功能', 'All-in-One' ) : __( '多功能', 'qiling' ) ),
                     array( 
                         'id' => 'float_pos', 
-                        'label' => __( '位置', 'developer-starter' ), 
+                        'label' => __( '位置', 'qiling' ), 
                         'type' => 'select',
                         'options' => array(
-                            'top-left' => __( '左上 (Top-Left)', 'developer-starter' ),
-                            'top-right' => __( '右上 (Top-Right)', 'developer-starter' ),
-                            'bottom-left' => __( '左下 (Bottom-Left)', 'developer-starter' ),
-                            'bottom-right' => __( '右下 (Bottom-Right)', 'developer-starter' ),
-                            'center-left' => __( '左中 (Center-Left)', 'developer-starter' ),
-                            'center-right' => __( '右中 (Center-Right)', 'developer-starter' ),
+                            'top-left' => __( '左上 (Top-Left)', 'qiling' ),
+                            'top-right' => __( '右上 (Top-Right)', 'qiling' ),
+                            'bottom-left' => __( '左下 (Bottom-Left)', 'qiling' ),
+                            'bottom-right' => __( '右下 (Bottom-Right)', 'qiling' ),
+                            'center-left' => __( '左中 (Center-Left)', 'qiling' ),
+                            'center-right' => __( '右中 (Center-Right)', 'qiling' ),
                         ),
                         'default' => 'top-left'
                     ),
@@ -188,30 +188,30 @@ class App_Hero_Module extends Module_Base {
             // --- 背景设置 ---
             array(
                 'id' => 'bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id' => 'bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-4f46e5) 100%)',
                 'dependency' => array( 'bg_type', '==', 'color' ),
             ),
             array(
                 'id' => 'bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'bg_overlay',
-                'label' => __( '遮罩浓度 (0-1)', 'developer-starter' ),
+                'label' => __( '遮罩浓度 (0-1)', 'qiling' ),
                 'type' => 'text',
                 'default' => '0',
                 'dependency' => array( 'bg_type', '==', 'image' ),
@@ -220,13 +220,13 @@ class App_Hero_Module extends Module_Base {
             // --- 间距 ---
             array(
                 'id' => 'padding_top',
-                'label' => __( '上内边距', 'developer-starter' ),
+                'label' => __( '上内边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '100px',
             ),
             array(
                 'id' => 'padding_bottom',
-                'label' => __( '下内边距', 'developer-starter' ),
+                'label' => __( '下内边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '100px',
             ),
@@ -235,8 +235,8 @@ class App_Hero_Module extends Module_Base {
 
     public function get_demo_data() {
         return array(
-            'hero_title' => __( '立即下载玫瑰克隆APP', 'developer-starter' ),
-            'hero_desc' => __( '随时随地捕捉灵感，手机也能高效创作。支持 iOS 和 Android 系统，数据多端同步。', 'developer-starter' ),
+            'hero_title' => __( '立即下载玫瑰克隆APP', 'qiling' ),
+            'hero_desc' => __( '随时随地捕捉灵感，手机也能高效创作。支持 iOS 和 Android 系统，数据多端同步。', 'qiling' ),
             'hero_buttons' => array(
                 array(
                     'btn_type' => 'apple',
@@ -254,8 +254,8 @@ class App_Hero_Module extends Module_Base {
                 ),
             ),
             'show_qr_card' => true,
-            'qr_title' => __( '微信小程序', 'developer-starter' ),
-            'qr_desc' => __( '免下载，扫码直接使用', 'developer-starter' ),
+            'qr_title' => __( '微信小程序', 'qiling' ),
+            'qr_desc' => __( '免下载，扫码直接使用', 'qiling' ),
             'media_type' => 'image',
             'bg_type' => 'color',
             'bg_color' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-4f46e5) 100%)',
@@ -428,7 +428,7 @@ class App_Hero_Module extends Module_Base {
                                     <?php endif; ?>
                                     <div class="qr-text-wrap">
                                         <?php 
-                                        $qr_sub_text = isset($data['qr_sub']) ? $data['qr_sub'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '手机扫一扫', 'Scan with your phone' ) : __( '手机扫一扫', 'developer-starter' ) );
+                                        $qr_sub_text = isset($data['qr_sub']) ? $data['qr_sub'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '手机扫一扫', 'Scan with your phone' ) : __( '手机扫一扫', 'qiling' ) );
                                         if ( $qr_sub_text ) : 
                                         ?>
                                             <span class="qr-sub"><?php echo esc_html( $qr_sub_text ); ?></span>
@@ -498,7 +498,7 @@ class App_Hero_Module extends Module_Base {
                                 </div>
                             <?php else : ?>
                                 <div class="media-placeholder">
-                                    <span><?php esc_html_e( '请配置图片或视频', 'developer-starter' ); ?></span>
+                                    <span><?php esc_html_e( '请配置图片或视频', 'qiling' ); ?></span>
                                 </div>
                             <?php endif; ?>
                         </div>

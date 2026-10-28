@@ -52,15 +52,15 @@ class Module_Advanced_Style_Service {
             array(
                 'id'          => '_ds_style',
                 'type'        => 'advanced_style',
-                'label'       => __( '统一高级样式', 'developer-starter' ),
-                'description' => __( '统一设置模块的响应式间距、排版、背景、边框、阴影、圆角与悬停状态。', 'developer-starter' ),
+                'label'       => __( '统一高级样式', 'qiling' ),
+                'description' => __( '统一设置模块的响应式间距、排版、背景、边框、阴影、圆角与悬停状态。', 'qiling' ),
                 'capabilities' => is_array( $capabilities ) ? $capabilities : array(),
             ),
             array(
                 'id'          => '_ds_visibility',
                 'type'        => 'advanced_visibility',
-                'label'       => __( '模块显隐', 'developer-starter' ),
-                'description' => __( '可以暂时隐藏整个模块，也可以按桌面、平板、手机分别控制显示。', 'developer-starter' ),
+                'label'       => __( '模块显隐', 'qiling' ),
+                'description' => __( '可以暂时隐藏整个模块，也可以按桌面、平板、手机分别控制显示。', 'qiling' ),
             ),
         );
     }
@@ -78,67 +78,67 @@ class Module_Advanced_Style_Service {
         $legacy_payload     = isset( $style_payload['legacy'] ) && is_array( $style_payload['legacy'] ) ? $style_payload['legacy'] : array();
         ?>
         <details class="dsm-advanced-style-panel" style="margin-top:var(--qiling-space-20); border-top:1px dashed var(--color-border); padding-top:var(--qiling-space-15);">
-            <summary style="cursor:pointer; font-weight:600; color:var(--color-neutral-900); outline:none;"><?php esc_html_e( '高级样式协议（响应式 / 排版 / 背景 / 状态）', 'developer-starter' ); ?></summary>
-            <p style="margin:var(--qiling-space-10) 0 0; color:var(--color-neutral-500); font-size:var(--qiling-text-rem-0p75);"><?php esc_html_e( '这是模块样式的统一编辑入口。旧版公共样式字段只作为兼容镜像保留，当前优先在这里维护。', 'developer-starter' ); ?></p>
+            <summary style="cursor:pointer; font-weight:600; color:var(--color-neutral-900); outline:none;"><?php esc_html_e( '高级样式协议（响应式 / 排版 / 背景 / 状态）', 'qiling' ); ?></summary>
+            <p style="margin:var(--qiling-space-10) 0 0; color:var(--color-neutral-500); font-size:var(--qiling-text-rem-0p75);"><?php esc_html_e( '这是模块样式的统一编辑入口。旧版公共样式字段只作为兼容镜像保留，当前优先在这里维护。', 'qiling' ); ?></p>
 
             <div style="margin-top:var(--qiling-space-16);">
-                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '响应式间距', 'developer-starter' ); ?></p>
+                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '响应式间距', 'qiling' ); ?></p>
                 <?php
                 $this->render_responsive_table(
                     $idx,
                     '_ds_style',
                     'spacing.margin',
-                    __( '外边距', 'developer-starter' ),
+                    __( '外边距', 'qiling' ),
                     array(
-                        'top'    => __( '上', 'developer-starter' ),
-                        'right'  => __( '右', 'developer-starter' ),
-                        'bottom' => __( '下', 'developer-starter' ),
-                        'left'   => __( '左', 'developer-starter' ),
+                        'top'    => __( '上', 'qiling' ),
+                        'right'  => __( '右', 'qiling' ),
+                        'bottom' => __( '下', 'qiling' ),
+                        'left'   => __( '左', 'qiling' ),
                     ),
                     $style_payload,
-                    __( '如 32px / 2rem / clamp(...)', 'developer-starter' )
+                    __( '如 32px / 2rem / clamp(...)', 'qiling' )
                 );
                 $this->render_responsive_table(
                     $idx,
                     '_ds_style',
                     'spacing.padding',
-                    __( '内边距', 'developer-starter' ),
+                    __( '内边距', 'qiling' ),
                     array(
-                        'top'    => __( '上', 'developer-starter' ),
-                        'right'  => __( '右', 'developer-starter' ),
-                        'bottom' => __( '下', 'developer-starter' ),
-                        'left'   => __( '左', 'developer-starter' ),
+                        'top'    => __( '上', 'qiling' ),
+                        'right'  => __( '右', 'qiling' ),
+                        'bottom' => __( '下', 'qiling' ),
+                        'left'   => __( '左', 'qiling' ),
                     ),
                     $style_payload,
-                    __( '如 24px / 4vw / clamp(...)', 'developer-starter' )
+                    __( '如 24px / 4vw / clamp(...)', 'qiling' )
                 );
                 ?>
             </div>
 
             <div style="margin-top:var(--qiling-space-18);">
-                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '排版', 'developer-starter' ); ?></p>
+                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '排版', 'qiling' ); ?></p>
                 <?php
-                if ( ! empty( $capabilities['title'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.title', __( '模块主标题', 'developer-starter' ), $style_payload );
-                if ( ! empty( $capabilities['subtitle'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.subtitle', __( '模块副标题', 'developer-starter' ), $style_payload );
-                if ( ! empty( $capabilities['text'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.text', __( '模块正文', 'developer-starter' ), $style_payload );
-                if ( ! empty( $capabilities['buttons'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.button', __( '模块行动按钮文字', 'developer-starter' ), $style_payload );
+                if ( ! empty( $capabilities['title'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.title', __( '模块主标题', 'qiling' ), $style_payload );
+                if ( ! empty( $capabilities['subtitle'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.subtitle', __( '模块副标题', 'qiling' ), $style_payload );
+                if ( ! empty( $capabilities['text'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.text', __( '模块正文', 'qiling' ), $style_payload );
+                if ( ! empty( $capabilities['buttons'] ) ) $this->render_typography_group( $idx, '_ds_style', 'typography.button', __( '模块行动按钮文字', 'qiling' ), $style_payload );
                 ?>
             </div>
 
             <div style="margin-top:var(--qiling-space-18);">
-                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '背景与边框', 'developer-starter' ); ?></p>
+                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '背景与边框', 'qiling' ); ?></p>
                 <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:var(--qiling-space-12);">
                     <?php
-                    $this->render_text_input( $idx, '_ds_style', 'background.color', __( '背景颜色 / 渐变', 'developer-starter' ), $this->get_nested_string( $style_payload, 'background.color' ), __( 'var(--color-neutral-0) 或 linear-gradient(...)', 'developer-starter' ) );
-                    $this->render_text_input( $idx, '_ds_style', 'background.image', __( '背景图片 URL', 'developer-starter' ), $this->get_nested_string( $style_payload, 'background.image' ), __( 'https://', 'developer-starter' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'background.color', __( '背景颜色 / 渐变', 'qiling' ), $this->get_nested_string( $style_payload, 'background.color' ), __( 'var(--color-neutral-0) 或 linear-gradient(...)', 'qiling' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'background.image', __( '背景图片 URL', 'qiling' ), $this->get_nested_string( $style_payload, 'background.image' ), __( 'https://', 'qiling' ) );
                     $this->render_select_input(
                         $idx,
                         '_ds_style',
                         'background.size',
-                        __( '背景尺寸', 'developer-starter' ),
+                        __( '背景尺寸', 'qiling' ),
                         $this->get_nested_string( $style_payload, 'background.size' ),
                         array(
-                            ''          => __( '默认', 'developer-starter' ),
+                            ''          => __( '默认', 'qiling' ),
                             'cover'     => 'cover',
                             'contain'   => 'contain',
                             'auto'      => 'auto',
@@ -149,47 +149,47 @@ class Module_Advanced_Style_Service {
                         $idx,
                         '_ds_style',
                         'background.position',
-                        __( '背景位置', 'developer-starter' ),
+                        __( '背景位置', 'qiling' ),
                         $this->get_nested_string( $style_payload, 'background.position' ),
                         array(
-                            ''              => __( '默认', 'developer-starter' ),
-                            'center center' => __( '居中', 'developer-starter' ),
-                            'top center'    => __( '顶部居中', 'developer-starter' ),
-                            'bottom center' => __( '底部居中', 'developer-starter' ),
-                            'center left'   => __( '左侧居中', 'developer-starter' ),
-                            'center right'  => __( '右侧居中', 'developer-starter' ),
+                            ''              => __( '默认', 'qiling' ),
+                            'center center' => __( '居中', 'qiling' ),
+                            'top center'    => __( '顶部居中', 'qiling' ),
+                            'bottom center' => __( '底部居中', 'qiling' ),
+                            'center left'   => __( '左侧居中', 'qiling' ),
+                            'center right'  => __( '右侧居中', 'qiling' ),
                         )
                     );
                     $this->render_select_input(
                         $idx,
                         '_ds_style',
                         'background.repeat',
-                        __( '背景重复', 'developer-starter' ),
+                        __( '背景重复', 'qiling' ),
                         $this->get_nested_string( $style_payload, 'background.repeat' ),
                         array(
-                            ''          => __( '默认', 'developer-starter' ),
+                            ''          => __( '默认', 'qiling' ),
                             'no-repeat' => 'no-repeat',
                             'repeat'    => 'repeat',
                             'repeat-x'  => 'repeat-x',
                             'repeat-y'  => 'repeat-y',
                         )
                     );
-                    $this->render_text_input( $idx, '_ds_style', 'border.width', __( '边框宽度', 'developer-starter' ), $this->get_nested_string( $style_payload, 'border.width' ), __( '如 1px', 'developer-starter' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'border.width', __( '边框宽度', 'qiling' ), $this->get_nested_string( $style_payload, 'border.width' ), __( '如 1px', 'qiling' ) );
                     $this->render_select_input(
                         $idx,
                         '_ds_style',
                         'border.style',
-                        __( '边框样式', 'developer-starter' ),
+                        __( '边框样式', 'qiling' ),
                         $this->get_nested_string( $style_payload, 'border.style' ),
                         array(
-                            ''       => __( '默认', 'developer-starter' ),
+                            ''       => __( '默认', 'qiling' ),
                             'solid'  => 'solid',
                             'dashed' => 'dashed',
                             'dotted' => 'dotted',
                             'double' => 'double',
                         )
                     );
-                    $this->render_text_input( $idx, '_ds_style', 'border.color', __( '边框颜色', 'developer-starter' ), $this->get_nested_string( $style_payload, 'border.color' ), __( 'var(--color-border)', 'developer-starter' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'border.color', __( '边框颜色', 'qiling' ), $this->get_nested_string( $style_payload, 'border.color' ), __( 'var(--color-border)', 'qiling' ) );
                     ?>
                 </div>
                 <?php
@@ -197,43 +197,43 @@ class Module_Advanced_Style_Service {
                     $idx,
                     '_ds_style',
                     'radius',
-                    __( '圆角', 'developer-starter' ),
+                    __( '圆角', 'qiling' ),
                     array(
-                        'value' => __( '半径', 'developer-starter' ),
+                        'value' => __( '半径', 'qiling' ),
                     ),
                     $style_payload,
-                    __( '如 24px / 1.5rem', 'developer-starter' )
+                    __( '如 24px / 1.5rem', 'qiling' )
                 );
                 ?>
             </div>
 
             <div style="margin-top:var(--qiling-space-18);">
-                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '阴影与状态', 'developer-starter' ); ?></p>
+                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '阴影与状态', 'qiling' ); ?></p>
                 <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:var(--qiling-space-12);">
                     <?php
-                    $this->render_text_input( $idx, '_ds_style', 'shadow.default', __( '默认阴影', 'developer-starter' ), $this->get_nested_string( $style_payload, 'shadow.default' ), __( '如 0 18px 48px rgba(var(--qiling-rgb-15-23-42), .12)', 'developer-starter' ) );
-                    $this->render_text_input( $idx, '_ds_style', 'shadow.hover', __( '悬停阴影', 'developer-starter' ), $this->get_nested_string( $style_payload, 'shadow.hover' ), __( '如 0 24px 60px rgba(var(--qiling-rgb-15-23-42), .18)', 'developer-starter' ) );
-                    $this->render_text_input( $idx, '_ds_style', 'state.hover.background_color', __( '悬停背景色', 'developer-starter' ), $this->get_nested_string( $style_payload, 'state.hover.background_color' ), __( 'var(--color-neutral-900)', 'developer-starter' ) );
-                    $this->render_text_input( $idx, '_ds_style', 'state.hover.border_color', __( '悬停边框色', 'developer-starter' ), $this->get_nested_string( $style_payload, 'state.hover.border_color' ), __( 'var(--color-neutral-900)', 'developer-starter' ) );
-                    $this->render_text_input( $idx, '_ds_style', 'state.hover.title_color', __( '悬停标题色', 'developer-starter' ), $this->get_nested_string( $style_payload, 'state.hover.title_color' ), __( 'var(--color-neutral-0)', 'developer-starter' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'shadow.default', __( '默认阴影', 'qiling' ), $this->get_nested_string( $style_payload, 'shadow.default' ), __( '如 0 18px 48px rgba(var(--qiling-rgb-15-23-42), .12)', 'qiling' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'shadow.hover', __( '悬停阴影', 'qiling' ), $this->get_nested_string( $style_payload, 'shadow.hover' ), __( '如 0 24px 60px rgba(var(--qiling-rgb-15-23-42), .18)', 'qiling' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'state.hover.background_color', __( '悬停背景色', 'qiling' ), $this->get_nested_string( $style_payload, 'state.hover.background_color' ), __( 'var(--color-neutral-900)', 'qiling' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'state.hover.border_color', __( '悬停边框色', 'qiling' ), $this->get_nested_string( $style_payload, 'state.hover.border_color' ), __( 'var(--color-neutral-900)', 'qiling' ) );
+                    $this->render_text_input( $idx, '_ds_style', 'state.hover.title_color', __( '悬停标题色', 'qiling' ), $this->get_nested_string( $style_payload, 'state.hover.title_color' ), __( 'var(--color-neutral-0)', 'qiling' ) );
                     ?>
                 </div>
             </div>
 
             <div style="margin-top:var(--qiling-space-18);">
-                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '模块显隐', 'developer-starter' ); ?></p>
+                <p style="margin:0 0 var(--qiling-space-8); font-weight:600;"><?php esc_html_e( '模块显隐', 'qiling' ); ?></p>
                 <div style="margin-bottom:var(--qiling-space-12);">
                     <?php
                     $this->render_select_input(
                         $idx,
                         '_ds_visibility',
                         'status',
-                        __( '模块状态', 'developer-starter' ),
+                        __( '模块状态', 'qiling' ),
                         $this->get_nested_string( $visibility_payload, 'status', '' ),
                         array(
-                            ''       => __( '默认显示', 'developer-starter' ),
-                            'show'   => __( '显示', 'developer-starter' ),
-                            'hidden' => __( '暂时隐藏（保留全部设置）', 'developer-starter' ),
+                            ''       => __( '默认显示', 'qiling' ),
+                            'show'   => __( '显示', 'qiling' ),
+                            'hidden' => __( '暂时隐藏（保留全部设置）', 'qiling' ),
                         )
                     );
                     ?>
@@ -244,36 +244,36 @@ class Module_Advanced_Style_Service {
                         $idx,
                         '_ds_visibility',
                         'desktop',
-                        __( '桌面端', 'developer-starter' ),
+                        __( '桌面端', 'qiling' ),
                         $this->get_nested_string( $visibility_payload, 'desktop', '' ),
                         array(
-                            ''  => __( '默认显示', 'developer-starter' ),
-                            '1' => __( '显示', 'developer-starter' ),
-                            '0' => __( '隐藏', 'developer-starter' ),
+                            ''  => __( '默认显示', 'qiling' ),
+                            '1' => __( '显示', 'qiling' ),
+                            '0' => __( '隐藏', 'qiling' ),
                         )
                     );
                     $this->render_select_input(
                         $idx,
                         '_ds_visibility',
                         'tablet',
-                        __( '平板端', 'developer-starter' ),
+                        __( '平板端', 'qiling' ),
                         $this->get_nested_string( $visibility_payload, 'tablet', '' ),
                         array(
-                            ''  => __( '默认显示', 'developer-starter' ),
-                            '1' => __( '显示', 'developer-starter' ),
-                            '0' => __( '隐藏', 'developer-starter' ),
+                            ''  => __( '默认显示', 'qiling' ),
+                            '1' => __( '显示', 'qiling' ),
+                            '0' => __( '隐藏', 'qiling' ),
                         )
                     );
                     $this->render_select_input(
                         $idx,
                         '_ds_visibility',
                         'mobile',
-                        __( '手机端', 'developer-starter' ),
+                        __( '手机端', 'qiling' ),
                         $this->get_nested_string( $visibility_payload, 'mobile', '' ),
                         array(
-                            ''  => __( '默认显示', 'developer-starter' ),
-                            '1' => __( '显示', 'developer-starter' ),
-                            '0' => __( '隐藏', 'developer-starter' ),
+                            ''  => __( '默认显示', 'qiling' ),
+                            '1' => __( '显示', 'qiling' ),
+                            '0' => __( '隐藏', 'qiling' ),
                         )
                     );
                     ?>
@@ -281,7 +281,7 @@ class Module_Advanced_Style_Service {
             </div>
 
             <?php if ( ! empty( $legacy_payload ) ) : ?>
-                <p style="margin:var(--qiling-space-16) 0 0; font-size:var(--qiling-text-rem-0p75); color:var(--color-neutral-500);"><?php esc_html_e( '旧版公共样式字段仍保留兼容，并会同步映射到这套协议里。', 'developer-starter' ); ?></p>
+                <p style="margin:var(--qiling-space-16) 0 0; font-size:var(--qiling-text-rem-0p75); color:var(--color-neutral-500);"><?php esc_html_e( '旧版公共样式字段仍保留兼容，并会同步映射到这套协议里。', 'qiling' ); ?></p>
             <?php endif; ?>
         </details>
         <?php
@@ -665,9 +665,9 @@ class Module_Advanced_Style_Service {
      */
     private function render_responsive_table( $idx, $root_field, $base_path, $title, $rows, $payload, $placeholder ) {
         $devices = array(
-            'desktop' => __( '桌面', 'developer-starter' ),
-            'tablet'  => __( '平板', 'developer-starter' ),
-            'mobile'  => __( '手机', 'developer-starter' ),
+            'desktop' => __( '桌面', 'qiling' ),
+            'tablet'  => __( '平板', 'qiling' ),
+            'mobile'  => __( '手机', 'qiling' ),
         );
         ?>
         <div style="margin-bottom:var(--qiling-space-14);">
@@ -675,7 +675,7 @@ class Module_Advanced_Style_Service {
             <table class="widefat striped" style="margin:0; font-size:var(--qiling-text-rem-0p75);">
                 <thead>
                     <tr>
-                        <th style="width:90px;"><?php esc_html_e( '方向', 'developer-starter' ); ?></th>
+                        <th style="width:90px;"><?php esc_html_e( '方向', 'qiling' ); ?></th>
                         <?php foreach ( $devices as $label ) : ?>
                             <th><?php echo esc_html( $label ); ?></th>
                         <?php endforeach; ?>
@@ -716,15 +716,15 @@ class Module_Advanced_Style_Service {
             <div style="margin:0 0 var(--qiling-space-10); font-weight:600; color:var(--color-neutral-900);"><?php echo esc_html( $title ); ?></div>
             <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:var(--qiling-space-12);">
                 <?php
-                $this->render_text_input( $idx, $root_field, $base_path . '.color', __( '颜色', 'developer-starter' ), $this->get_nested_string( $payload, $base_path . '.color' ), __( 'var(--color-neutral-900)', 'developer-starter' ) );
+                $this->render_text_input( $idx, $root_field, $base_path . '.color', __( '颜色', 'qiling' ), $this->get_nested_string( $payload, $base_path . '.color' ), __( 'var(--color-neutral-900)', 'qiling' ) );
                 $this->render_select_input(
                     $idx,
                     $root_field,
                     $base_path . '.weight',
-                    __( '字重', 'developer-starter' ),
+                    __( '字重', 'qiling' ),
                     $this->get_nested_string( $payload, $base_path . '.weight' ),
                     array(
-                        ''       => __( '默认', 'developer-starter' ),
+                        ''       => __( '默认', 'qiling' ),
                         '300'    => '300',
                         '400'    => '400',
                         '500'    => '500',
@@ -736,9 +736,9 @@ class Module_Advanced_Style_Service {
                         'bold'   => 'bold',
                     )
                 );
-                $this->render_text_input( $idx, $root_field, $base_path . '.line_height', __( '行高', 'developer-starter' ), $this->get_nested_string( $payload, $base_path . '.line_height' ), __( '如 1.6 / 28px', 'developer-starter' ) );
+                $this->render_text_input( $idx, $root_field, $base_path . '.line_height', __( '行高', 'qiling' ), $this->get_nested_string( $payload, $base_path . '.line_height' ), __( '如 1.6 / 28px', 'qiling' ) );
                 if ( 'typography.button' === $base_path ) {
-                    $this->render_text_input( $idx, $root_field, $base_path . '.hover_color', __( '悬停文字颜色', 'developer-starter' ), $this->get_nested_string( $payload, $base_path . '.hover_color' ), __( '#ffffff', 'developer-starter' ) );
+                    $this->render_text_input( $idx, $root_field, $base_path . '.hover_color', __( '悬停文字颜色', 'qiling' ), $this->get_nested_string( $payload, $base_path . '.hover_color' ), __( '#ffffff', 'qiling' ) );
                 }
                 ?>
             </div>
@@ -747,12 +747,12 @@ class Module_Advanced_Style_Service {
                 $idx,
                 $root_field,
                 $base_path . '.size',
-                __( '字号', 'developer-starter' ),
+                __( '字号', 'qiling' ),
                 array(
-                    'value' => __( '字号', 'developer-starter' ),
+                    'value' => __( '字号', 'qiling' ),
                 ),
                 $payload,
-                __( '如 18px / clamp(...)', 'developer-starter' )
+                __( '如 18px / clamp(...)', 'qiling' )
             );
             ?>
         </div>

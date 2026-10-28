@@ -24,7 +24,7 @@ $args = wp_parse_args(
         'post_poster_excerpt'     => '',
         'post_poster_cache_key'   => '',
         'post_poster_nonce'       => '',
-        'post_poster_button_label'=> __( '生成海报', 'developer-starter' ),
+        'post_poster_button_label'=> __( '生成海报', 'qiling' ),
         'hide_post_tags'          => false,
         'hide_post_navigation'    => false,
         'hide_post_comments'      => false,
@@ -38,7 +38,7 @@ $toc_html = isset( $toc_data['toc'] ) ? (string) $toc_data['toc'] : '';
 $toc_content = isset( $toc_data['content'] ) ? (string) $toc_data['content'] : '';
 $post_poster_button_label = trim( wp_strip_all_tags( (string) $args['post_poster_button_label'] ) );
 if ( '' === $post_poster_button_label ) {
-    $post_poster_button_label = __( '生成海报', 'developer-starter' );
+    $post_poster_button_label = __( '生成海报', 'qiling' );
 }
 $resource_detail_contexts = is_array( $args['resource_detail_contexts'] ) ? $args['resource_detail_contexts'] : array();
 $article_classes = array( 'single-post', 'section-padding' );
@@ -75,27 +75,27 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
 
             <div class="post-main-content">
                 <?php if ( ! empty( $args['post_speech_enable'] ) ) : ?>
-                    <div class="qiling-post-speech" data-speech-scope="article" aria-label="<?php esc_attr_e( '文章语音朗读', 'developer-starter' ); ?>">
+                    <div class="qiling-post-speech" data-speech-scope="article" aria-label="<?php esc_attr_e( '文章语音朗读', 'qiling' ); ?>">
                         <div class="qiling-post-speech__actions">
                             <button type="button" class="qiling-post-speech__button" data-speech-action="play">
                                 <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor"></polygon></svg>
-                                <span><?php esc_html_e( '朗读文章', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '朗读文章', 'qiling' ); ?></span>
                             </button>
                             <button type="button" class="qiling-post-speech__button" data-speech-action="pause">
                                 <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><rect x="6" y="4" width="4" height="16" fill="currentColor"></rect><rect x="14" y="4" width="4" height="16" fill="currentColor"></rect></svg>
-                                <span><?php esc_html_e( '暂停', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '暂停', 'qiling' ); ?></span>
                             </button>
                             <button type="button" class="qiling-post-speech__button" data-speech-action="resume">
                                 <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"></path><rect x="4" y="5" width="2" height="14" fill="currentColor"></rect></svg>
-                                <span><?php esc_html_e( '继续', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '继续', 'qiling' ); ?></span>
                             </button>
                             <button type="button" class="qiling-post-speech__button" data-speech-action="stop">
                                 <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="1" fill="currentColor"></rect></svg>
-                                <span><?php esc_html_e( '停止', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '停止', 'qiling' ); ?></span>
                             </button>
                         </div>
                         <div class="qiling-post-speech__meta">
-                            <span class="qiling-post-speech__status" aria-live="polite"><?php esc_html_e( '准备朗读', 'developer-starter' ); ?></span>
+                            <span class="qiling-post-speech__status" aria-live="polite"><?php esc_html_e( '准备朗读', 'qiling' ); ?></span>
                             <span class="qiling-post-speech__progress" data-speech-progress hidden>0/0</span>
                         </div>
                     </div>
@@ -132,21 +132,21 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
                                 ?>
                                 <div class="gallery-mode-viewer">
                                     <?php if ( $paged > 1 ) : ?>
-                                        <a href="<?php echo esc_url( $prev_link ); ?>" class="gallery-nav-btn gallery-nav-prev" rel="prev" aria-label="<?php esc_attr_e( '上一张', 'developer-starter' ); ?>"><span aria-hidden="true">❮</span></a>
+                                        <a href="<?php echo esc_url( $prev_link ); ?>" class="gallery-nav-btn gallery-nav-prev" rel="prev" aria-label="<?php esc_attr_e( '上一张', 'qiling' ); ?>"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></a>
                                     <?php endif; ?>
 
                                     <?php echo wp_kses_post( $current_img ); ?>
 
                                     <?php if ( $paged < $total_pages ) : ?>
-                                        <a href="<?php echo esc_url( $next_link ); ?>" class="gallery-nav-btn gallery-nav-next" rel="next" aria-label="<?php esc_attr_e( '下一张', 'developer-starter' ); ?>"><span aria-hidden="true">❯</span></a>
+                                        <a href="<?php echo esc_url( $next_link ); ?>" class="gallery-nav-btn gallery-nav-next" rel="next" aria-label="<?php esc_attr_e( '下一张', 'qiling' ); ?>"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
                                     <?php endif; ?>
                                 </div>
 
-                                <nav class="gallery-pagination" aria-label="<?php esc_attr_e( '相册分页', 'developer-starter' ); ?>">
+                                <nav class="gallery-pagination" aria-label="<?php esc_attr_e( '相册分页', 'qiling' ); ?>">
                                     <?php
                                     $range = 4;
                                     if ( $paged > 1 ) {
-                                        echo '<a href="' . esc_url( $prev_link ) . '" class="gallery-page-item" rel="prev" aria-label="' . esc_attr__( '上一张', 'developer-starter' ) . '">&lt;</a>';
+                                        echo '<a href="' . esc_url( $prev_link ) . '" class="gallery-page-item" rel="prev" aria-label="' . esc_attr__( '上一张', 'qiling' ) . '">&lt;</a>';
                                     }
 
                                     for ( $i = 1; $i <= $total_pages; $i++ ) {
@@ -160,7 +160,7 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
                                     }
 
                                     if ( $paged < $total_pages ) {
-                                        echo '<a href="' . esc_url( $next_link ) . '" class="gallery-page-item" rel="next" aria-label="' . esc_attr__( '下一张', 'developer-starter' ) . '">&gt;</a>';
+                                        echo '<a href="' . esc_url( $next_link ) . '" class="gallery-page-item" rel="next" aria-label="' . esc_attr__( '下一张', 'qiling' ) . '">&gt;</a>';
                                     }
                                     ?>
                                 </nav>
@@ -181,14 +181,14 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
                                         var prevArea = document.createElement('a');
                                         prevArea.href = linkPrev;
                                         prevArea.className = 'gallery-click-area gallery-click-prev';
-                                        prevArea.title = '<?php echo esc_js( __( '上一张', 'developer-starter' ) ); ?>';
+                                        prevArea.title = '<?php echo esc_js( __( '上一张', 'qiling' ) ); ?>';
                                         wrapper.appendChild(prevArea);
                                     }
                                     if (linkNext) {
                                         var nextArea = document.createElement('a');
                                         nextArea.href = linkNext;
                                         nextArea.className = 'gallery-click-area gallery-click-next';
-                                        nextArea.title = '<?php echo esc_js( __( '下一张', 'developer-starter' ) ); ?>';
+                                        nextArea.title = '<?php echo esc_js( __( '下一张', 'qiling' ) ); ?>';
                                         wrapper.appendChild(nextArea);
                                     }
                                 });
@@ -214,7 +214,7 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
 
                         $page_links = wp_link_pages(
                             array(
-                                'before'      => '<nav class="single-post-page-links" aria-label="' . esc_attr__( '文章分页', 'developer-starter' ) . '"><span class="single-post-page-links__label">' . esc_html__( '分页', 'developer-starter' ) . '</span>',
+                                'before'      => '<nav class="single-post-page-links" aria-label="' . esc_attr__( '文章分页', 'qiling' ) . '"><span class="single-post-page-links__label">' . esc_html__( '分页', 'qiling' ) . '</span>',
                                 'after'       => '</nav>',
                                 'link_before' => '<span class="single-post-page-links__item">',
                                 'link_after'  => '</span>',
@@ -243,7 +243,7 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
                 if ( empty( $args['hide_post_tags'] ) && $tags ) :
                     ?>
                     <div class="post-tags">
-                        <strong><?php esc_html_e( '标签：', 'developer-starter' ); ?></strong>
+                        <strong><?php esc_html_e( '标签：', 'qiling' ); ?></strong>
                         <?php foreach ( $tags as $tag ) : ?>
                             <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" rel="tag">
                                 <?php echo esc_html( $tag->name ); ?>
@@ -256,20 +256,20 @@ if ( ! $args['full_width_mode'] && $args['toc_enable'] && 'sidebar' === $args['t
                 <?php echo wp_kses_post( Developer_Starter\Core\Post_Enhancer::render_author_box() ); ?>
 
                 <?php if ( empty( $args['hide_post_navigation'] ) ) : ?>
-                    <nav class="post-navigation" aria-label="<?php esc_attr_e( '文章上一篇下一篇', 'developer-starter' ); ?>">
+                    <nav class="post-navigation" aria-label="<?php esc_attr_e( '文章上一篇下一篇', 'qiling' ); ?>">
                         <?php
                         $prev_post = get_previous_post();
                         $next_post = get_next_post();
                         ?>
                         <div class="post-navigation__item post-navigation__item--prev">
                             <?php if ( $prev_post ) : ?>
-                                <span class="post-navigation__label">← <?php esc_html_e( '上一篇', 'developer-starter' ); ?></span>
+                                <span class="post-navigation__label">← <?php esc_html_e( '上一篇', 'qiling' ); ?></span>
                                 <a class="post-navigation__link" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" rel="prev"><?php echo esc_html( $prev_post->post_title ); ?></a>
                             <?php endif; ?>
                         </div>
                         <div class="post-navigation__item post-navigation__item--next">
                             <?php if ( $next_post ) : ?>
-                                <span class="post-navigation__label"><?php esc_html_e( '下一篇', 'developer-starter' ); ?> →</span>
+                                <span class="post-navigation__label"><?php esc_html_e( '下一篇', 'qiling' ); ?> →</span>
                                 <a class="post-navigation__link" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" rel="next"><?php echo esc_html( $next_post->post_title ); ?></a>
                             <?php endif; ?>
                         </div>

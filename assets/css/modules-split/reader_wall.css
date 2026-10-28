@@ -35,6 +35,9 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }.qiling-module-scope-reader_wall .features-tab-btn::before {
   content: "";
   position: absolute;
@@ -56,6 +59,9 @@
   box-shadow: 0 10px 24px rgba(var(--color-primary-rgb), 0.12);
 }.qiling-module-scope-reader_wall .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
+}.qiling-module-scope-reader_wall .features-tab-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }.qiling-module-scope-reader_wall .features-tab-btn.active {
   color: var(--fl-tab-active-text, var(--qiling-component-tabs-active-text));
   border-color: var(--qiling-component-tabs-active-border);

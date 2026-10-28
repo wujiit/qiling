@@ -30,7 +30,7 @@ class Google_Provider extends Abstract_OAuth2_Provider {
      * @return string
      */
     public function get_label() {
-        return __( 'Google', 'developer-starter' );
+        return __( 'Google', 'qiling' );
     }
 
     /**
@@ -48,7 +48,7 @@ class Google_Provider extends Abstract_OAuth2_Provider {
      */
     public function get_authorization_url( $state ) {
         if ( ! $this->is_available() ) {
-            return new \WP_Error( 'google_not_configured', __( 'Google 登录尚未配置完整。', 'developer-starter' ) );
+            return new \WP_Error( 'google_not_configured', __( 'Google 登录尚未配置完整。', 'qiling' ) );
         }
 
         return add_query_arg(
@@ -72,7 +72,7 @@ class Google_Provider extends Abstract_OAuth2_Provider {
     public function get_profile_from_callback( $request ) {
         $code = isset( $request['code'] ) ? sanitize_text_field( wp_unslash( (string) $request['code'] ) ) : '';
         if ( '' === $code ) {
-            return new \WP_Error( 'google_missing_code', __( 'Google 授权回调缺少 code。', 'developer-starter' ) );
+            return new \WP_Error( 'google_missing_code', __( 'Google 授权回调缺少 code。', 'qiling' ) );
         }
 
         $token = $this->request_access_token( $code );
@@ -86,7 +86,7 @@ class Google_Provider extends Abstract_OAuth2_Provider {
         }
 
         if ( empty( $user_info['sub'] ) ) {
-            return new \WP_Error( 'google_user_id_missing', __( 'Google 用户资料缺少唯一 ID。', 'developer-starter' ) );
+            return new \WP_Error( 'google_user_id_missing', __( 'Google 用户资料缺少唯一 ID。', 'qiling' ) );
         }
 
         $email = isset( $user_info['email'] ) ? sanitize_email( (string) $user_info['email'] ) : '';
@@ -146,11 +146,11 @@ class Google_Provider extends Abstract_OAuth2_Provider {
         }
 
         if ( ! empty( $data['error'] ) ) {
-            return new \WP_Error( 'google_token_error', $this->get_api_error_message( $data, __( 'Google Access Token 获取失败。', 'developer-starter' ) ) );
+            return new \WP_Error( 'google_token_error', $this->get_api_error_message( $data, __( 'Google Access Token 获取失败。', 'qiling' ) ) );
         }
 
         if ( empty( $data['access_token'] ) ) {
-            return new \WP_Error( 'google_token_missing', __( 'Google Access Token 返回缺少 access_token。', 'developer-starter' ) );
+            return new \WP_Error( 'google_token_missing', __( 'Google Access Token 返回缺少 access_token。', 'qiling' ) );
         }
 
         return $data;
@@ -174,7 +174,7 @@ class Google_Provider extends Abstract_OAuth2_Provider {
         }
 
         if ( ! empty( $data['error'] ) && empty( $data['sub'] ) ) {
-            return new \WP_Error( 'google_user_info_error', $this->get_api_error_message( $data, __( 'Google 用户资料获取失败。', 'developer-starter' ) ) );
+            return new \WP_Error( 'google_user_info_error', $this->get_api_error_message( $data, __( 'Google 用户资料获取失败。', 'qiling' ) ) );
         }
 
         return $data;

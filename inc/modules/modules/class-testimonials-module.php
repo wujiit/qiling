@@ -29,7 +29,7 @@ class Testimonials_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'homepage';
         $this->icon        = 'dashicons-format-quote';
-        $this->description = __( '展示客户评价和推荐', 'developer-starter' );
+        $this->description = __( '展示客户评价和推荐', 'qiling' );
     }
 
     /**
@@ -47,7 +47,7 @@ class Testimonials_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '客户评价', 'developer-starter' );
+        return __( '客户评价', 'qiling' );
     }
 
     /**
@@ -63,37 +63,37 @@ class Testimonials_Module extends Module_Base {
             array(
                 'id'      => 'testimonials_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户评价', 'Client Reviews' ) : __( '客户评价', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户评价', 'Client Reviews' ) : __( '客户评价', 'qiling' ),
             ),
             array(
                 'id'      => 'testimonials_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2rem',
-                'desc'    => __( '如 2rem 或 32px', 'developer-starter' ),
+                'desc'    => __( '如 2rem 或 32px', 'qiling' ),
             ),
             array(
                 'id'    => 'testimonials_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'      => 'testimonials_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '听听客户怎么说', 'See what clients are saying.' ) : __( '听听客户怎么说', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '听听客户怎么说', 'See what clients are saying.' ) : __( '听听客户怎么说', 'qiling' ),
             ),
             array(
                 'id'      => 'testimonials_subtitle_size',
                 'type'    => 'text',
-                'label'   => __( '副标题字体大小', 'developer-starter' ),
+                'label'   => __( '副标题字体大小', 'qiling' ),
                 'default' => '1rem',
             ),
             array(
                 'id'    => 'testimonials_subtitle_color',
                 'type'  => 'color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
             ),
 
             // ========================================
@@ -102,32 +102,32 @@ class Testimonials_Module extends Module_Base {
             array(
                 'id'      => 'testimonials_layout',
                 'type'    => 'select',
-                'label'   => __( '布局样式', 'developer-starter' ),
+                'label'   => __( '布局样式', 'qiling' ),
                 'options' => array(
-                    'grid'     => __( '网格布局', 'developer-starter' ),
-                    'carousel' => __( '轮播滑动', 'developer-starter' ),
-                    'list'     => __( '列表布局', 'developer-starter' ),
-                    'large'    => __( '大卡片', 'developer-starter' ),
+                    'grid'     => __( '网格布局', 'qiling' ),
+                    'carousel' => __( '轮播滑动', 'qiling' ),
+                    'list'     => __( '列表布局', 'qiling' ),
+                    'large'    => __( '大卡片', 'qiling' ),
                 ),
                 'default' => 'grid',
             ),
             array(
                 'id'      => 'testimonials_columns',
                 'type'    => 'select',
-                'label'   => __( '列数（网格布局）', 'developer-starter' ),
+                'label'   => __( '列数（网格布局）', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'testimonials_badge_bg',
                 'type'    => 'color',
-                'label'   => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'   => __( '标签/徽章背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '控制评价来源与认证徽章，留空时保留来源默认色并跟随全局徽章颜色。', 'developer-starter' ),
+                'desc'    => __( '控制评价来源与认证徽章，留空时保留来源默认色并跟随全局徽章颜色。', 'qiling' ),
             ),
 
             // ========================================
@@ -136,24 +136,24 @@ class Testimonials_Module extends Module_Base {
             array(
                 'id'      => 'show_rating_summary',
                 'type'    => 'select',
-                'label'   => __( '显示评分统计', 'developer-starter' ),
+                'label'   => __( '显示评分统计', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'no',
             ),
             array(
                 'id'      => 'total_reviews',
                 'type'    => 'text',
-                'label'   => __( '总评价数', 'developer-starter' ),
-                'desc'    => __( '如：1280+', 'developer-starter' ),
+                'label'   => __( '总评价数', 'qiling' ),
+                'desc'    => __( '如：1280+', 'qiling' ),
             ),
             array(
                 'id'      => 'average_rating',
                 'type'    => 'text',
-                'label'   => __( '平均评分', 'developer-starter' ),
-                'desc'    => __( '如：4.9', 'developer-starter' ),
+                'label'   => __( '平均评分', 'qiling' ),
+                'desc'    => __( '如：4.9', 'qiling' ),
             ),
 
             // ========================================
@@ -162,92 +162,92 @@ class Testimonials_Module extends Module_Base {
             array(
                 'id'     => 'testimonials_items',
                 'type'   => 'repeater',
-                'label'  => __( '评价列表', 'developer-starter' ),
+                'label'  => __( '评价列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'avatar',
                         'type'  => 'image',
-                        'label' => __( '头像', 'developer-starter' ),
+                        'label' => __( '头像', 'qiling' ),
                     ),
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
-                        'label' => __( '姓名', 'developer-starter' ),
+                        'label' => __( '姓名', 'qiling' ),
                     ),
                     array(
                         'id'    => 'position',
                         'type'  => 'text',
-                        'label' => __( '职位/身份', 'developer-starter' ),
+                        'label' => __( '职位/身份', 'qiling' ),
                     ),
                     array(
                         'id'    => 'content',
                         'type'  => 'textarea',
-                        'label' => __( '评价内容', 'developer-starter' ),
+                        'label' => __( '评价内容', 'qiling' ),
                     ),
                     array(
                         'id'      => 'rating',
                         'type'    => 'number',
-                        'label'   => __( '评分 (1-5)', 'developer-starter' ),
+                        'label'   => __( '评分 (1-5)', 'qiling' ),
                         'default' => '5',
                     ),
                     // 新增字段
                     array(
                         'id'      => 'source',
                         'type'    => 'select',
-                        'label'   => __( '评价来源', 'developer-starter' ),
+                        'label'   => __( '评价来源', 'qiling' ),
                         'options' => array(
-                            ''           => __( '无', 'developer-starter' ),
-                            'dianping'   => __( '大众点评', 'developer-starter' ),
-                            'ctrip'      => __( '携程', 'developer-starter' ),
-                            'meituan'    => __( '美团', 'developer-starter' ),
-                            'fliggy'     => __( '飞猪', 'developer-starter' ),
-                            'booking'    => __( 'Booking', 'developer-starter' ),
-                            'tripadvisor'=> __( 'TripAdvisor', 'developer-starter' ),
-                            'google'     => __( 'Google', 'developer-starter' ),
-                            'weibo'      => __( '微博', 'developer-starter' ),
-                            'xiaohongshu'=> __( '小红书', 'developer-starter' ),
+                            ''           => __( '无', 'qiling' ),
+                            'dianping'   => __( '大众点评', 'qiling' ),
+                            'ctrip'      => __( '携程', 'qiling' ),
+                            'meituan'    => __( '美团', 'qiling' ),
+                            'fliggy'     => __( '飞猪', 'qiling' ),
+                            'booking'    => __( 'Booking', 'qiling' ),
+                            'tripadvisor'=> __( 'TripAdvisor', 'qiling' ),
+                            'google'     => __( 'Google', 'qiling' ),
+                            'weibo'      => __( '微博', 'qiling' ),
+                            'xiaohongshu'=> __( '小红书', 'qiling' ),
                         ),
                     ),
                     array(
                         'id'    => 'date',
                         'type'  => 'text',
-                        'label' => __( '评价日期', 'developer-starter' ),
-                        'desc'  => __( '如：2024-01-15', 'developer-starter' ),
+                        'label' => __( '评价日期', 'qiling' ),
+                        'desc'  => __( '如：2024-01-15', 'qiling' ),
                     ),
                     array(
                         'id'      => 'verified',
                         'type'    => 'select',
-                        'label'   => __( '认证标识', 'developer-starter' ),
+                        'label'   => __( '认证标识', 'qiling' ),
                         'options' => array(
-                            ''         => __( '无', 'developer-starter' ),
-                            'verified' => __( '已验证用户', 'developer-starter' ),
-                            'vip'      => __( 'VIP会员', 'developer-starter' ),
-                            'guest'    => __( '已入住', 'developer-starter' ),
+                            ''         => __( '无', 'qiling' ),
+                            'verified' => __( '已验证用户', 'qiling' ),
+                            'vip'      => __( 'VIP会员', 'qiling' ),
+                            'guest'    => __( '已入住', 'qiling' ),
                         ),
                     ),
                     array(
                         'id'      => 'card_bg',
                         'type'    => 'color',
-                        'label'   => __( '卡片背景色', 'developer-starter' ),
+                        'label'   => __( '卡片背景色', 'qiling' ),
                         'default' => 'var(--color-neutral-0)',
                     ),
                     array(
                         'id'    => 'name_color',
                         'type'  => 'color',
-                        'label' => __( '姓名颜色', 'developer-starter' ),
+                        'label' => __( '姓名颜色', 'qiling' ),
                     ),
                     array(
                         'id'    => 'content_color',
                         'type'  => 'color',
-                        'label' => __( '内容颜色', 'developer-starter' ),
+                        'label' => __( '内容颜色', 'qiling' ),
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'avatar'        => '',
-                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张先生', 'Michael Z.' ) : __( '张先生', 'developer-starter' ),
-                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'CEO · 某科技公司', 'CEO · Technology Company' ) : __( 'CEO · 某科技公司', 'developer-starter' ),
-                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'A very professional team. Delivery was on time and the quality exceeded expectations.' ) : __( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'developer-starter' ),
+                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张先生', 'Michael Z.' ) : __( '张先生', 'qiling' ),
+                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'CEO · 某科技公司', 'CEO · Technology Company' ) : __( 'CEO · 某科技公司', 'qiling' ),
+                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'A very professional team. Delivery was on time and the quality exceeded expectations.' ) : __( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'qiling' ),
                         'rating'        => '5',
                         'source'        => 'google',
                         'date'          => '2024-01-15',
@@ -258,9 +258,9 @@ class Testimonials_Module extends Module_Base {
                     ),
                     array(
                         'avatar'        => '',
-                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李女士', 'Sophia L.' ) : __( '李女士', 'developer-starter' ),
-                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'developer-starter' ),
-                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'The collaboration was smooth, communication was clear, and the final direction matched our goals perfectly.' ) : __( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'developer-starter' ),
+                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李女士', 'Sophia L.' ) : __( '李女士', 'qiling' ),
+                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'qiling' ),
+                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'The collaboration was smooth, communication was clear, and the final direction matched our goals perfectly.' ) : __( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'qiling' ),
                         'rating'        => '5',
                         'source'        => 'dianping',
                         'date'          => '2024-01-10',
@@ -271,9 +271,9 @@ class Testimonials_Module extends Module_Base {
                     ),
                     array(
                         'avatar'        => '',
-                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王总', 'David W.' ) : __( '王总', 'developer-starter' ),
-                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '创始人', 'Founder' ) : __( '创始人', 'developer-starter' ),
-                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'From discovery to delivery, every step felt thoughtful and well executed. A strong long-term partner.' ) : __( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'developer-starter' ),
+                        'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王总', 'David W.' ) : __( '王总', 'qiling' ),
+                        'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '创始人', 'Founder' ) : __( '创始人', 'qiling' ),
+                        'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'From discovery to delivery, every step felt thoughtful and well executed. A strong long-term partner.' ) : __( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'qiling' ),
                         'rating'        => '5',
                         'source'        => 'ctrip',
                         'date'          => '2024-01-05',
@@ -291,18 +291,18 @@ class Testimonials_Module extends Module_Base {
             array(
                 'id'    => 'testimonials_bg_color',
                 'type'  => 'color',
-                'label' => __( '背景颜色 (支持渐变)', 'developer-starter' ),
+                'label' => __( '背景颜色 (支持渐变)', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
 
@@ -312,10 +312,10 @@ class Testimonials_Module extends Module_Base {
             array(
                 'id'      => 'enable_staggered_animation',
                 'type'    => 'select',
-                'label'   => __( '开启逐个显示动画', 'developer-starter' ),
+                'label'   => __( '开启逐个显示动画', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -340,7 +340,7 @@ class Testimonials_Module extends Module_Base {
                        ? $data['testimonials_title'] 
                        : ( isset( $data['testimonial_title'] ) && $data['testimonial_title'] !== ''
                            ? $data['testimonial_title']
-                           : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户评价', 'Client Reviews' ) : __( '客户评价', 'developer-starter' ) ) );
+                           : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户评价', 'Client Reviews' ) : __( '客户评价', 'qiling' ) ) );
         $title_size  = isset( $data['testimonials_title_size'] ) && $data['testimonials_title_size'] !== '' 
                        ? $data['testimonials_title_size'] 
                        : '2rem';
@@ -383,9 +383,9 @@ class Testimonials_Module extends Module_Base {
             $items = array(
                 array(
                     'avatar'        => '',
-                    'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张先生', 'Michael Z.' ) : __( '张先生', 'developer-starter' ),
-                    'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'CEO · 某科技公司', 'CEO · Technology Company' ) : __( 'CEO · 某科技公司', 'developer-starter' ),
-                    'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'A very professional team. Delivery was on time and the quality exceeded expectations.' ) : __( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'developer-starter' ),
+                    'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '张先生', 'Michael Z.' ) : __( '张先生', 'qiling' ),
+                    'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'CEO · 某科技公司', 'CEO · Technology Company' ) : __( 'CEO · 某科技公司', 'qiling' ),
+                    'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'A very professional team. Delivery was on time and the quality exceeded expectations.' ) : __( '非常专业的团队，项目交付准时，质量超出预期。推荐给所有需要高品质服务的企业！', 'qiling' ),
                     'rating'        => '5',
                     'source'        => 'google',
                     'date'          => '2024-01-15',
@@ -396,9 +396,9 @@ class Testimonials_Module extends Module_Base {
                 ),
                 array(
                     'avatar'        => '',
-                    'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李女士', 'Sophia L.' ) : __( '李女士', 'developer-starter' ),
-                    'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'developer-starter' ),
-                    'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'The collaboration was smooth, communication was clear, and the final direction matched our goals perfectly.' ) : __( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'developer-starter' ),
+                    'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '李女士', 'Sophia L.' ) : __( '李女士', 'qiling' ),
+                    'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '市场总监', 'Marketing Director' ) : __( '市场总监', 'qiling' ),
+                    'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'The collaboration was smooth, communication was clear, and the final direction matched our goals perfectly.' ) : __( '合作非常愉快，沟通顺畅，设计方案很有创意，完美达成了我们的需求目标。', 'qiling' ),
                     'rating'        => '5',
                     'source'        => 'dianping',
                     'date'          => '2024-01-10',
@@ -409,9 +409,9 @@ class Testimonials_Module extends Module_Base {
                 ),
                 array(
                     'avatar'        => '',
-                    'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王总', 'David W.' ) : __( '王总', 'developer-starter' ),
-                    'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '创始人', 'Founder' ) : __( '创始人', 'developer-starter' ),
-                    'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'From discovery to delivery, every step felt thoughtful and well executed. A strong long-term partner.' ) : __( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'developer-starter' ),
+                    'name'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '王总', 'David W.' ) : __( '王总', 'qiling' ),
+                    'position'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '创始人', 'Founder' ) : __( '创始人', 'qiling' ),
+                    'content'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'From discovery to delivery, every step felt thoughtful and well executed. A strong long-term partner.' ) : __( '从需求分析到最终交付，每个环节都很用心。技术实力强，值得长期合作！', 'qiling' ),
                     'rating'        => '5',
                     'source'        => 'ctrip',
                     'date'          => '2024-01-05',
@@ -449,22 +449,22 @@ class Testimonials_Module extends Module_Base {
 
         // 来源平台标签
         $source_labels = array(
-            'dianping'    => __( '大众点评', 'developer-starter' ),
-            'ctrip'       => __( '携程', 'developer-starter' ),
-            'meituan'     => __( '美团', 'developer-starter' ),
-            'fliggy'      => __( '飞猪', 'developer-starter' ),
+            'dianping'    => __( '大众点评', 'qiling' ),
+            'ctrip'       => __( '携程', 'qiling' ),
+            'meituan'     => __( '美团', 'qiling' ),
+            'fliggy'      => __( '飞猪', 'qiling' ),
             'booking'     => 'Booking',
             'tripadvisor' => 'TripAdvisor',
             'google'      => 'Google',
-            'weibo'       => __( '微博', 'developer-starter' ),
-            'xiaohongshu' => __( '小红书', 'developer-starter' ),
+            'weibo'       => __( '微博', 'qiling' ),
+            'xiaohongshu' => __( '小红书', 'qiling' ),
         );
 
         // 认证标识标签
         $verified_labels = array(
-            'verified' => __( '已验证', 'developer-starter' ),
-            'vip'      => __( 'VIP会员', 'developer-starter' ),
-            'guest'    => __( '已入住', 'developer-starter' ),
+            'verified' => __( '已验证', 'qiling' ),
+            'vip'      => __( 'VIP会员', 'qiling' ),
+            'guest'    => __( '已入住', 'qiling' ),
         );
 
         // 网格类名
@@ -521,7 +521,7 @@ class Testimonials_Module extends Module_Base {
                             <div class="ql-testimonial-summary-count">
                                 <?php 
                                 /* translators: %s: number of reviews */
-                                printf( esc_html__( '基于 %s 条评价', 'developer-starter' ), '<strong>' . esc_html( $total_reviews ) . '</strong>' ); 
+                                printf( esc_html__( '基于 %s 条评价', 'qiling' ), '<strong>' . esc_html( $total_reviews ) . '</strong>' ); 
                                 ?>
                             </div>
                         <?php endif; ?>
@@ -538,12 +538,12 @@ class Testimonials_Module extends Module_Base {
                                     $this->ql_testimonial_render_card( $item, $index, $enable_anim, $source_labels, $verified_labels );
                                 endforeach; ?>
                             </div>
-                            <button type="button" class="ql-testimonial-carousel-btn ql-testimonial-prev" aria-label="<?php esc_attr_e( '上一个', 'developer-starter' ); ?>">
+                            <button type="button" class="ql-testimonial-carousel-btn ql-testimonial-prev" aria-label="<?php esc_attr_e( '上一个', 'qiling' ); ?>">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="15 18 9 12 15 6"></polyline>
                                 </svg>
                             </button>
-                            <button type="button" class="ql-testimonial-carousel-btn ql-testimonial-next" aria-label="<?php esc_attr_e( '下一个', 'developer-starter' ); ?>">
+                            <button type="button" class="ql-testimonial-carousel-btn ql-testimonial-next" aria-label="<?php esc_attr_e( '下一个', 'qiling' ); ?>">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>

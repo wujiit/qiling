@@ -18,7 +18,7 @@ class Columns_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-columns';
-        $this->description = __( '多列布局模块', 'developer-starter' );
+        $this->description = __( '多列布局模块', 'qiling' );
     }
 
     public function get_id() {
@@ -26,87 +26,87 @@ class Columns_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '多列布局', 'developer-starter' );
+        return __( '多列布局', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'columns_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'columns_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => '' ),
             array(
                 'id' => 'columns_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'columns_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认颜色', 'developer-starter' ),
+                'description' => __( '留空使用默认颜色', 'qiling' ),
             ),
             array(
                 'id' => 'columns_subtitle',
-                'label' => __( '模块副标题', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
             ),
             array(
                 'id' => 'columns_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'columns_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认颜色', 'developer-starter' ),
+                'description' => __( '留空使用默认颜色', 'qiling' ),
             ),
             
-            array( 'id' => 'columns_count', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array(
-                '2' => __( '2列', 'developer-starter' ),
-                '3' => __( '3列', 'developer-starter' ),
-                '4' => __( '4列', 'developer-starter' ),
+            array( 'id' => 'columns_count', 'type' => 'select', 'label' => __( '列数', 'qiling' ), 'options' => array(
+                '2' => __( '2列', 'qiling' ),
+                '3' => __( '3列', 'qiling' ),
+                '4' => __( '4列', 'qiling' ),
             ), 'default' => '3' ),
             
-            array( 'id' => 'columns_items', 'type' => 'repeater', 'label' => __( '列内容', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-                array( 'id' => 'content', 'type' => 'textarea', 'label' => __( '内容', 'developer-starter' ) ),
-                array( 'id' => 'image', 'type' => 'image', 'label' => __( '图片', 'developer-starter' ) ),
-                array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接(可选)', 'developer-starter' ) ),
+            array( 'id' => 'columns_items', 'type' => 'repeater', 'label' => __( '列内容', 'qiling' ), 'fields' => array(
+                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+                array( 'id' => 'content', 'type' => 'textarea', 'label' => __( '内容', 'qiling' ) ),
+                array( 'id' => 'image', 'type' => 'image', 'label' => __( '图片', 'qiling' ) ),
+                array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接(可选)', 'qiling' ) ),
             ),
             'default_items' => array(
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第一列', 'Column One' ) : __( '第一列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第二列', 'Column Two' ) : __( '第二列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第三列', 'Column Three' ) : __( '第三列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第一列', 'Column One' ) : __( '第一列', 'qiling' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'qiling' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第二列', 'Column Two' ) : __( '第二列', 'qiling' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'qiling' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第三列', 'Column Three' ) : __( '第三列', 'qiling' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'qiling' ), 'image' => '' ),
             ) ),
             
             // 样式配置
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
             ),
-            array( 'id' => 'columns_card_bg', 'label' => __( '卡片背景颜色', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'columns_card_border', 'label' => __( '卡片边框颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'columns_card_hover_border', 'label' => __( '卡片悬停边框颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'columns_item_title_color', 'label' => __( '卡片标题颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'columns_item_text_color', 'label' => __( '卡片正文颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'columns_card_bg', 'label' => __( '卡片背景颜色', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'columns_card_border', 'label' => __( '卡片边框颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'columns_card_hover_border', 'label' => __( '卡片悬停边框颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'columns_item_title_color', 'label' => __( '卡片标题颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'columns_item_text_color', 'label' => __( '卡片正文颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
@@ -132,9 +132,9 @@ class Columns_Module extends Module_Base {
         
         if ( empty( $items ) && ! isset( $data['columns_items'] ) ) {
             $items = array(
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第一列', 'Column One' ) : __( '第一列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第二列', 'Column Two' ) : __( '第二列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第三列', 'Column Three' ) : __( '第三列', 'developer-starter' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'developer-starter' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第一列', 'Column One' ) : __( '第一列', 'qiling' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'qiling' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第二列', 'Column Two' ) : __( '第二列', 'qiling' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'qiling' ), 'image' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '第三列', 'Column Three' ) : __( '第三列', 'qiling' ), 'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内容描述', 'Content description' ) : __( '内容描述', 'qiling' ), 'image' => '' ),
             );
         }
         

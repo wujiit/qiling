@@ -83,7 +83,7 @@ class Single_Page_Package_Service {
         $template = $this->normalize_page_template( $template );
 
         if ( 'default' === $template ) {
-            return __( '默认模板', 'developer-starter' );
+            return __( '默认模板', 'qiling' );
         }
 
         $templates = wp_get_theme()->get_page_templates( null, 'page' );
@@ -135,15 +135,15 @@ class Single_Page_Package_Service {
     public function parse_package( $raw_json ) {
         $raw_json = is_string( $raw_json ) ? trim( $raw_json ) : '';
         if ( '' === $raw_json ) {
-            return new \WP_Error( 'empty_json', __( 'JSON 内容为空', 'developer-starter' ) );
+            return new \WP_Error( 'empty_json', __( 'JSON 内容为空', 'qiling' ) );
         }
         if ( strlen( $raw_json ) > self::MAX_PACKAGE_BYTES ) {
-            return new \WP_Error( 'page_package_too_large', __( '页面 JSON 过大，请减少模块或复杂内容后再导入', 'developer-starter' ) );
+            return new \WP_Error( 'page_package_too_large', __( '页面 JSON 过大，请减少模块或复杂内容后再导入', 'qiling' ) );
         }
 
         $decoded = json_decode( $raw_json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_json', __( 'JSON 格式错误，请检查文件内容', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_json', __( 'JSON 格式错误，请检查文件内容', 'qiling' ) );
         }
 
         $package = array(
@@ -389,7 +389,7 @@ class Single_Page_Package_Service {
         }
 
         if ( ! is_array( $modules ) || empty( $modules ) ) {
-            return new \WP_Error( 'empty_modules', __( 'JSON 中没有可导入的模块数据', 'developer-starter' ) );
+            return new \WP_Error( 'empty_modules', __( 'JSON 中没有可导入的模块数据', 'qiling' ) );
         }
 
         $normalized_modules = array();
@@ -419,14 +419,14 @@ class Single_Page_Package_Service {
         }
 
         if ( empty( $normalized_modules ) ) {
-            return new \WP_Error( 'invalid_modules', __( 'JSON 里的模块结构无效，至少需要一个包含 type 的模块项', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_modules', __( 'JSON 里的模块结构无效，至少需要一个包含 type 的模块项', 'qiling' ) );
         }
         if ( count( $normalized_modules ) > self::MAX_MODULES_PER_PAGE ) {
             return new \WP_Error(
                 'page_package_too_many_modules',
                 sprintf(
                     /* translators: %d: max single page module count */
-                    __( '页面 JSON 模块数量超过上限（最多 %d 个）', 'developer-starter' ),
+                    __( '页面 JSON 模块数量超过上限（最多 %d 个）', 'qiling' ),
                     self::MAX_MODULES_PER_PAGE
                 )
             );
@@ -436,7 +436,7 @@ class Single_Page_Package_Service {
             $module_data = isset( $module['data'] ) && is_array( $module['data'] ) ? $module['data'] : array();
             $module_json = wp_json_encode( $module_data );
             if ( is_string( $module_json ) && strlen( $module_json ) > self::MAX_MODULE_DATA_BYTES ) {
-                return new \WP_Error( 'page_package_module_too_large', __( '页面 JSON 中存在数据过大的模块，请减少该模块中的列表项、图片或长文本后再导入', 'developer-starter' ) );
+                return new \WP_Error( 'page_package_module_too_large', __( '页面 JSON 中存在数据过大的模块，请减少该模块中的列表项、图片或长文本后再导入', 'qiling' ) );
             }
         }
 
@@ -459,7 +459,7 @@ class Single_Page_Package_Service {
     public function build_export_payload( $post_id ) {
         $post = get_post( $post_id );
         if ( ! $post || 'page' !== $post->post_type ) {
-            return new \WP_Error( 'invalid_post', __( '仅支持导出页面类型', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_post', __( '仅支持导出页面类型', 'qiling' ) );
         }
 
         $template = function_exists( 'get_page_template_slug' ) ? get_page_template_slug( $post_id ) : '';
@@ -476,7 +476,7 @@ class Single_Page_Package_Service {
             : get_post_meta( $post_id, '_developer_starter_modules', true );
 
         if ( ! is_array( $modules ) || empty( $modules ) ) {
-            return new \WP_Error( 'empty_modules', __( '当前页面没有可导出的模块数据', 'developer-starter' ) );
+            return new \WP_Error( 'empty_modules', __( '当前页面没有可导出的模块数据', 'qiling' ) );
         }
 
         if ( function_exists( 'developer_starter_normalize_modules_meta_types' ) ) {

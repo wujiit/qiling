@@ -151,7 +151,7 @@ class Page_Package_Export_Service {
     public function export_site_package( $page_ids, $options = array() ) {
         $page_ids = array_values( array_unique( array_filter( array_map( 'absint', is_array( $page_ids ) ? $page_ids : array() ) ) ) );
         if ( empty( $page_ids ) ) {
-            return new \WP_Error( 'empty_export_pages', __( '请先选择至少一个页面再导出数据包。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_export_pages', __( '请先选择至少一个页面再导出数据包。', 'qiling' ) );
         }
 
         $options            = $this->normalize_export_options( $options );
@@ -174,7 +174,7 @@ class Page_Package_Export_Service {
         }
 
         if ( empty( $exported_pages ) ) {
-            return new \WP_Error( 'empty_export_payload', __( '所选页面没有可导出的模块数据。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_export_payload', __( '所选页面没有可导出的模块数据。', 'qiling' ) );
         }
 
         $site_options  = array();
@@ -286,7 +286,7 @@ class Page_Package_Export_Service {
         );
 
         if ( ! is_string( $json ) || '' === $json ) {
-            return new \WP_Error( 'export_encode_failed', __( '数据包导出失败，JSON 编码未成功。', 'developer-starter' ) );
+            return new \WP_Error( 'export_encode_failed', __( '数据包导出失败，JSON 编码未成功。', 'qiling' ) );
         }
 
         return array(
@@ -309,10 +309,10 @@ class Page_Package_Export_Service {
     private function normalize_export_options( $options ) {
         $title = isset( $options['title'] ) && is_scalar( $options['title'] )
             ? sanitize_text_field( (string) $options['title'] )
-            : __( '未命名页面数据包', 'developer-starter' );
+            : __( '未命名页面数据包', 'qiling' );
 
         if ( '' === $title ) {
-            $title = __( '未命名页面数据包', 'developer-starter' );
+            $title = __( '未命名页面数据包', 'qiling' );
         }
 
         $scope = isset( $options['scope'] ) ? $this->diagnostics_service->normalize_package_scope( $options['scope'] ) : 'page';
@@ -326,7 +326,7 @@ class Page_Package_Export_Service {
             ),
             'min_theme_version' => isset( $options['min_theme_version'] ) && is_scalar( $options['min_theme_version'] ) && trim( (string) $options['min_theme_version'] ) !== ''
                 ? sanitize_text_field( (string) $options['min_theme_version'] )
-                : ( defined( 'DEVELOPER_STARTER_VERSION' ) ? (string) DEVELOPER_STARTER_VERSION : '1.0.0' ),
+                : ( defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1.0.0' ),
             'author'            => $this->diagnostics_service->normalize_package_author( isset( $options['author'] ) ? $options['author'] : '' ),
             'description'       => isset( $options['description'] ) && is_scalar( $options['description'] ) ? sanitize_textarea_field( (string) $options['description'] ) : '',
             'cover'             => isset( $options['cover'] ) && is_scalar( $options['cover'] ) ? esc_url_raw( (string) $options['cover'] ) : '',
@@ -356,7 +356,7 @@ class Page_Package_Export_Service {
                 'invalid_export_page',
                 sprintf(
                     /* translators: %d: page id */
-                    __( '页面 ID %d 不存在或不是有效页面。', 'developer-starter' ),
+                    __( '页面 ID %d 不存在或不是有效页面。', 'qiling' ),
                     $page_id
                 )
             );
@@ -367,7 +367,7 @@ class Page_Package_Export_Service {
                 'reserved_export_page',
                 sprintf(
                     /* translators: %s: page title */
-                    __( '页面“%s”属于系统保留页，不参与多页包导出。', 'developer-starter' ),
+                    __( '页面“%s”属于系统保留页，不参与多页包导出。', 'qiling' ),
                     get_the_title( $page_id )
                 )
             );
@@ -384,7 +384,7 @@ class Page_Package_Export_Service {
                 'reserved_export_template',
                 sprintf(
                     /* translators: %s: page title */
-                    __( '页面“%s”使用了系统模板，不参与多页包导出。', 'developer-starter' ),
+                    __( '页面“%s”使用了系统模板，不参与多页包导出。', 'qiling' ),
                     get_the_title( $page_id )
                 )
             );
@@ -395,7 +395,7 @@ class Page_Package_Export_Service {
                 'unsupported_export_template',
                 sprintf(
                     /* translators: %s: page title */
-                    __( '页面“%s”不是启灵主题的模块装修模板，不参与多页包导出。', 'developer-starter' ),
+                    __( '页面“%s”不是启灵主题的模块装修模板，不参与多页包导出。', 'qiling' ),
                     get_the_title( $page_id )
                 )
             );
@@ -407,7 +407,7 @@ class Page_Package_Export_Service {
                 'empty_export_modules',
                 sprintf(
                     /* translators: %s: page title */
-                    __( '页面“%s”不是纯模块装修页，或没有可导出的模块数据。', 'developer-starter' ),
+                    __( '页面“%s”不是纯模块装修页，或没有可导出的模块数据。', 'qiling' ),
                     get_the_title( $page_id )
                 )
             );
@@ -671,7 +671,7 @@ class Page_Package_Export_Service {
                 } else {
                     $warnings[] = sprintf(
                         /* translators: %s: menu item title */
-                        __( '菜单项“%s”不在当前导出页面范围内，已从整站包导航中跳过。', 'developer-starter' ),
+                        __( '菜单项“%s”不在当前导出页面范围内，已从整站包导航中跳过。', 'qiling' ),
                         sanitize_text_field( $menu_item->title )
                     );
                     continue;
@@ -728,7 +728,7 @@ class Page_Package_Export_Service {
             'template_assets' => $assets,
             'media'           => array(),
             'notes'           => array(
-                __( '本地整站包只记录资源清单，不复制媒体库文件；图片字段保留原 URL 或相对路径。', 'developer-starter' ),
+                __( '本地整站包只记录资源清单，不复制媒体库文件；图片字段保留原 URL 或相对路径。', 'qiling' ),
             ),
         );
     }

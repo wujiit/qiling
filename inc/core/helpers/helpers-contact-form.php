@@ -34,7 +34,7 @@ if ( ! function_exists( 'developer_starter_get_builtin_contact_form_markup' ) ) 
     function developer_starter_get_builtin_contact_form_markup( $args = array() ) {
         $defaults = array(
             'form_id'      => 'contact-form',
-            'submit_text'  => __( '提交留言', 'developer-starter' ),
+            'submit_text'  => __( '提交留言', 'qiling' ),
             'submit_class' => 'btn-submit',
             'message_rows' => 5,
             'extra_class'  => '',
@@ -66,7 +66,7 @@ if ( ! function_exists( 'developer_starter_get_builtin_contact_form_markup' ) ) 
         }
 
         if ( '' === $submit_text ) {
-            $submit_text = __( '提交留言', 'developer-starter' );
+            $submit_text = __( '提交留言', 'qiling' );
         }
         $submit_classes = array_values( array_unique( array_filter( array_map( 'sanitize_html_class', preg_split( '/\s+/', $submit_class ) ) ) ) );
         if ( empty( $submit_classes ) ) {
@@ -90,7 +90,7 @@ if ( ! function_exists( 'developer_starter_get_builtin_contact_form_markup' ) ) 
                     <input
                         type="text"
                         name="name"
-                        placeholder="<?php echo esc_attr__( '您的姓名 *', 'developer-starter' ); ?>"
+                        placeholder="<?php echo esc_attr__( '您的姓名 *', 'qiling' ); ?>"
                         required
                     />
                 </div>
@@ -99,7 +99,7 @@ if ( ! function_exists( 'developer_starter_get_builtin_contact_form_markup' ) ) 
                     <input
                         type="tel"
                         name="phone"
-                        placeholder="<?php echo esc_attr__( '联系电话', 'developer-starter' ); ?>"
+                        placeholder="<?php echo esc_attr__( '联系电话', 'qiling' ); ?>"
                     />
                 </div>
             </div>
@@ -109,7 +109,7 @@ if ( ! function_exists( 'developer_starter_get_builtin_contact_form_markup' ) ) 
                     <input
                         type="email"
                         name="email"
-                        placeholder="<?php echo esc_attr__( '电子邮箱', 'developer-starter' ); ?>"
+                        placeholder="<?php echo esc_attr__( '电子邮箱', 'qiling' ); ?>"
                     />
                 </div>
             </div>
@@ -119,7 +119,7 @@ if ( ! function_exists( 'developer_starter_get_builtin_contact_form_markup' ) ) 
                     <textarea
                         name="message"
                         rows="<?php echo esc_attr( $message_rows ); ?>"
-                        placeholder="<?php echo esc_attr__( '请输入您的留言内容 *', 'developer-starter' ); ?>"
+                        placeholder="<?php echo esc_attr__( '请输入您的留言内容 *', 'qiling' ); ?>"
                         required
                     ></textarea>
                 </div>

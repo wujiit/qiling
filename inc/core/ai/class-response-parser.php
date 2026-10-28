@@ -43,12 +43,12 @@ class Response_Parser {
     public function extract_page_plan_from_response( $content, $allowed_module_ids ) {
         $json = $this->extract_json_string( $content );
         if ( '' === $json ) {
-            return new \WP_Error( 'no_plan_json_found', __( 'AI 返回内容中未找到有效的页面规划 JSON。', 'developer-starter' ) );
+            return new \WP_Error( 'no_plan_json_found', __( 'AI 返回内容中未找到有效的页面规划 JSON。', 'qiling' ) );
         }
 
         $decoded = json_decode( $json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_plan_json', __( 'AI 返回的页面规划 JSON 格式无效，请重试。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_plan_json', __( 'AI 返回的页面规划 JSON 格式无效，请重试。', 'qiling' ) );
         }
 
         return $this->sanitize_generation_plan( $decoded, $allowed_module_ids );
@@ -64,7 +64,7 @@ class Response_Parser {
     public function normalize_generation_plan_input( $plan, $allowed_module_ids ) {
         $plan = $this->decorator->normalize_json_array_input( $plan );
         if ( empty( $plan ) ) {
-            return new \WP_Error( 'missing_plan', __( '缺少页面规划结果，请先执行页面规划。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_plan', __( '缺少页面规划结果，请先执行页面规划。', 'qiling' ) );
         }
 
         return $this->sanitize_generation_plan( $plan, $allowed_module_ids );
@@ -119,7 +119,7 @@ class Response_Parser {
         }
 
         if ( empty( $raw_modules ) ) {
-            return new \WP_Error( 'empty_plan_modules', __( '页面规划结果里没有模块信息，请重试。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_plan_modules', __( '页面规划结果里没有模块信息，请重试。', 'qiling' ) );
         }
 
         $warnings = array();
@@ -128,7 +128,7 @@ class Response_Parser {
             if ( ! is_array( $module ) || empty( $module['type'] ) ) {
                 $warnings[] = sprintf(
                     /* translators: %d: module index */
-                    __( '规划结果中的第 %d 个模块无效，已忽略。', 'developer-starter' ),
+                    __( '规划结果中的第 %d 个模块无效，已忽略。', 'qiling' ),
                     $index + 1
                 );
                 continue;
@@ -138,7 +138,7 @@ class Response_Parser {
             if ( '' === $type || ! in_array( $type, $allowed_module_ids, true ) ) {
                 $warnings[] = sprintf(
                     /* translators: %s: module type */
-                    __( '规划结果中的模块 %s 不在候选范围内，已忽略。', 'developer-starter' ),
+                    __( '规划结果中的模块 %s 不在候选范围内，已忽略。', 'qiling' ),
                     $type
                 );
                 continue;
@@ -147,7 +147,7 @@ class Response_Parser {
             if ( in_array( $type, $seen_types, true ) ) {
                 $warnings[] = sprintf(
                     /* translators: %s: module type */
-                    __( '规划结果中的模块 %s 重复出现，已自动去重。', 'developer-starter' ),
+                    __( '规划结果中的模块 %s 重复出现，已自动去重。', 'qiling' ),
                     $type
                 );
                 continue;
@@ -169,7 +169,7 @@ class Response_Parser {
         }
 
         if ( empty( $plan['modules'] ) ) {
-            return new \WP_Error( 'empty_valid_plan_modules', __( '规划结果没有可用模块，请缩小候选范围后重试。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_valid_plan_modules', __( '规划结果没有可用模块，请缩小候选范围后重试。', 'qiling' ) );
         }
 
         return array(
@@ -264,17 +264,17 @@ class Response_Parser {
     public function extract_single_module_from_response( $content, $module_type ) {
         $json = $this->extract_json_string( $content );
         if ( '' === $json ) {
-            return new \WP_Error( 'no_module_json_found', __( 'AI 返回内容中未找到有效的模块 JSON。', 'developer-starter' ) );
+            return new \WP_Error( 'no_module_json_found', __( 'AI 返回内容中未找到有效的模块 JSON。', 'qiling' ) );
         }
 
         $decoded = json_decode( $json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_module_json', __( 'AI 返回的模块 JSON 格式无效，请重试。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_module_json', __( 'AI 返回的模块 JSON 格式无效，请重试。', 'qiling' ) );
         }
 
         $schemas = $this->decorator->get_module_schema_map( array( $module_type ) );
         if ( empty( $schemas[ $module_type ] ) ) {
-            return new \WP_Error( 'missing_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'qiling' ) );
         }
 
         $module = $decoded;
@@ -289,7 +289,7 @@ class Response_Parser {
         if ( '' !== $returned_type && $returned_type !== $module_type ) {
             $warnings[] = sprintf(
                 /* translators: 1: returned type 2: expected type */
-                __( 'AI 返回了模块 %1$s，已按当前目标模块 %2$s 处理。', 'developer-starter' ),
+                __( 'AI 返回了模块 %1$s，已按当前目标模块 %2$s 处理。', 'qiling' ),
                 $returned_type,
                 $module_type
             );
@@ -347,17 +347,17 @@ class Response_Parser {
     public function extract_localized_module_from_response( $content, $module_type, $current_module_data, $text_only_schema ) {
         $json = $this->extract_json_string( $content );
         if ( '' === $json ) {
-            return new \WP_Error( 'no_module_localization_json_found', __( 'AI 返回内容中未找到有效的本地化模块 JSON。', 'developer-starter' ) );
+            return new \WP_Error( 'no_module_localization_json_found', __( 'AI 返回内容中未找到有效的本地化模块 JSON。', 'qiling' ) );
         }
 
         $decoded = json_decode( $json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_module_localization_json', __( 'AI 返回的本地化 JSON 格式无效，请重试。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_module_localization_json', __( 'AI 返回的本地化 JSON 格式无效，请重试。', 'qiling' ) );
         }
 
         $schemas = $this->decorator->get_module_schema_map( array( $module_type ) );
         if ( empty( $schemas[ $module_type ] ) ) {
-            return new \WP_Error( 'missing_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'qiling' ) );
         }
 
         $module = $decoded;
@@ -372,7 +372,7 @@ class Response_Parser {
         if ( '' !== $returned_type && $returned_type !== $module_type ) {
             $warnings[] = sprintf(
                 /* translators: 1: returned type 2: expected type */
-                __( 'AI 返回了模块 %1$s，已按当前目标模块 %2$s 处理。', 'developer-starter' ),
+                __( 'AI 返回了模块 %1$s，已按当前目标模块 %2$s 处理。', 'qiling' ),
                 $returned_type,
                 $module_type
             );
@@ -434,18 +434,18 @@ class Response_Parser {
     public function extract_localized_page_package_from_response( $content, $current_package, $text_schema_map, $localization = array() ) {
         $json = $this->extract_json_string( $content );
         if ( '' === $json ) {
-            return new \WP_Error( 'no_page_localization_json_found', __( 'AI 返回内容中未找到有效的整页本地化 JSON。', 'developer-starter' ) );
+            return new \WP_Error( 'no_page_localization_json_found', __( 'AI 返回内容中未找到有效的整页本地化 JSON。', 'qiling' ) );
         }
 
         $decoded = json_decode( $json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_page_localization_json', __( 'AI 返回的整页本地化 JSON 格式无效，请重试。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_page_localization_json', __( 'AI 返回的整页本地化 JSON 格式无效，请重试。', 'qiling' ) );
         }
 
         $current_package = is_array( $current_package ) ? $current_package : array();
         $base_modules = isset( $current_package['modules'] ) && is_array( $current_package['modules'] ) ? array_values( $current_package['modules'] ) : array();
         if ( empty( $base_modules ) ) {
-            return new \WP_Error( 'empty_page_localization_modules', __( '当前页面没有可合并的模块。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_page_localization_modules', __( '当前页面没有可合并的模块。', 'qiling' ) );
         }
 
         $raw_modules = array();
@@ -456,7 +456,7 @@ class Response_Parser {
         }
 
         if ( empty( $raw_modules ) ) {
-            return new \WP_Error( 'empty_page_localization_response_modules', __( 'AI 返回结果里没有整页模块数据。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_page_localization_response_modules', __( 'AI 返回结果里没有整页模块数据。', 'qiling' ) );
         }
 
         $package = array(
@@ -502,7 +502,7 @@ class Response_Parser {
             if ( '' !== $returned_type && $returned_type !== $type ) {
                 $warnings[] = sprintf(
                     /* translators: 1: returned type 2: expected type */
-                    __( 'AI 返回的第 %1$d 个模块类型为 %2$s，已按原模块 %3$s 合并。', 'developer-starter' ),
+                    __( 'AI 返回的第 %1$d 个模块类型为 %2$s，已按原模块 %3$s 合并。', 'qiling' ),
                     $module_index + 1,
                     $returned_type,
                     $type
@@ -545,7 +545,7 @@ class Response_Parser {
         }
 
         if ( count( $raw_modules ) !== count( $base_modules ) ) {
-            $warnings[] = __( 'AI 返回的模块数量变化已被忽略，整页本地化会保留原页面结构。', 'developer-starter' );
+            $warnings[] = __( 'AI 返回的模块数量变化已被忽略，整页本地化会保留原页面结构。', 'qiling' );
         }
 
         $review = array();
@@ -585,12 +585,12 @@ class Response_Parser {
     public function extract_localized_content_from_response( $content, $source_payload, $localization = array() ) {
         $json = $this->extract_json_string( $content );
         if ( '' === $json ) {
-            return new \WP_Error( 'no_content_localization_json_found', __( 'AI 返回内容中未找到有效的内容本地化 JSON。', 'developer-starter' ) );
+            return new \WP_Error( 'no_content_localization_json_found', __( 'AI 返回内容中未找到有效的内容本地化 JSON。', 'qiling' ) );
         }
 
         $decoded = json_decode( $json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_content_localization_json', __( 'AI 返回的内容本地化 JSON 格式无效，请重试。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_content_localization_json', __( 'AI 返回的内容本地化 JSON 格式无效，请重试。', 'qiling' ) );
         }
 
         $source_payload = is_array( $source_payload ) ? $source_payload : array();
@@ -685,12 +685,12 @@ class Response_Parser {
     public function extract_package_from_response( $content, $allowed_module_ids ) {
         $json = $this->extract_json_string( $content );
         if ( '' === $json ) {
-            return new \WP_Error( 'no_json_found', __( 'AI 返回内容中未找到有效 JSON。', 'developer-starter' ) );
+            return new \WP_Error( 'no_json_found', __( 'AI 返回内容中未找到有效 JSON。', 'qiling' ) );
         }
 
         $decoded = json_decode( $json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_json_response', __( 'AI 返回的 JSON 格式无效，请重试。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_json_response', __( 'AI 返回的 JSON 格式无效，请重试。', 'qiling' ) );
         }
 
         return $this->sanitize_generated_package( $decoded, $allowed_module_ids );
@@ -753,7 +753,7 @@ class Response_Parser {
         }
 
         if ( empty( $raw_modules ) ) {
-            return new \WP_Error( 'empty_package_modules', __( 'AI 返回结果里没有模块数据。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_package_modules', __( 'AI 返回结果里没有模块数据。', 'qiling' ) );
         }
 
         $schemas = $this->decorator->get_module_schema_map( $allowed_module_ids );
@@ -765,7 +765,7 @@ class Response_Parser {
             if ( ! is_array( $module ) || empty( $module['type'] ) ) {
                 $warnings[] = sprintf(
                     /* translators: %d: module index */
-                    __( '第 %d 个模块结构无效，已忽略。', 'developer-starter' ),
+                    __( '第 %d 个模块结构无效，已忽略。', 'qiling' ),
                     $module_index + 1
                 );
                 continue;
@@ -775,7 +775,7 @@ class Response_Parser {
             if ( '' === $type || ! isset( $schemas[ $type ] ) ) {
                 $warnings[] = sprintf(
                     /* translators: %s: module type */
-                    __( '模块 %s 不在当前允许列表中，已忽略。', 'developer-starter' ),
+                    __( '模块 %s 不在当前允许列表中，已忽略。', 'qiling' ),
                     $type
                 );
                 continue;
@@ -809,7 +809,7 @@ class Response_Parser {
         }
 
         if ( empty( $package['modules'] ) ) {
-            return new \WP_Error( 'no_valid_modules', __( 'AI 返回的模块都未通过校验，请重试或缩小候选模块范围。', 'developer-starter' ) );
+            return new \WP_Error( 'no_valid_modules', __( 'AI 返回的模块都未通过校验，请重试或缩小候选模块范围。', 'qiling' ) );
         }
 
         return array(
@@ -842,7 +842,7 @@ class Response_Parser {
         $sanitized = array();
 
         if ( ! is_array( $data ) ) {
-            $warnings[] = __( '模块数据格式无效，已按空数据处理。', 'developer-starter' );
+            $warnings[] = __( '模块数据格式无效，已按空数据处理。', 'qiling' );
             return $sanitized;
         }
 
@@ -857,7 +857,7 @@ class Response_Parser {
             } else {
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                        __( '部分不支持的内容已忽略。', 'developer-starter' ),
+                        __( '部分不支持的内容已忽略。', 'qiling' ),
                     '' === $path ? $key : $path . '.' . $key
                 );
                 continue;
@@ -871,7 +871,7 @@ class Response_Parser {
                     if ( count( $value ) > AI_Decorator::MAX_REPEATER_ITEMS ) {
                         $security_warnings[] = sprintf(
                             /* translators: 1: field path 2: item limit */
-                            __( '字段 %1$s 的重复项过多，已仅保留前 %2$d 项。', 'developer-starter' ),
+                            __( '字段 %1$s 的重复项过多，已仅保留前 %2$d 项。', 'qiling' ),
                             '' === $path ? $key : $path . '.' . $key,
                             AI_Decorator::MAX_REPEATER_ITEMS
                         );
@@ -919,7 +919,7 @@ class Response_Parser {
 
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的结构无效，已忽略。', 'developer-starter' ),
+                    __( '字段 %s 的结构无效，已忽略。', 'qiling' ),
                     $field_path
                 );
                 continue;
@@ -928,7 +928,7 @@ class Response_Parser {
             if ( 'repeater' === $field_type ) {
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 不是列表结构，已忽略。', 'developer-starter' ),
+                    __( '字段 %s 不是列表结构，已忽略。', 'qiling' ),
                     '' === $path ? $key : $path . '.' . $key
                 );
                 continue;
@@ -946,7 +946,7 @@ class Response_Parser {
                 if ( '' !== $original_value && $original_value !== $sanitized_spacing ) {
                     $style_warnings[] = sprintf(
                         /* translators: %s: field path */
-                        __( '字段 %s 的间距值已被自动规范化。', 'developer-starter' ),
+                        __( '字段 %s 的间距值已被自动规范化。', 'qiling' ),
                         $field_path
                     );
                 }
@@ -999,7 +999,7 @@ class Response_Parser {
             if ( '' !== $original_value && $original_value !== $sanitized_spacing ) {
                 $style_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的间距值已被自动规范化。', 'developer-starter' ),
+                    __( '字段 %s 的间距值已被自动规范化。', 'qiling' ),
                     $field_path
                 );
             }
@@ -1024,7 +1024,7 @@ class Response_Parser {
             if ( '' !== trim( $original_value ) && '' === $sanitized_url ) {
                 $security_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的链接协议不受支持，已自动清理。', 'developer-starter' ),
+                    __( '字段 %s 的链接协议不受支持，已自动清理。', 'qiling' ),
                     $field_path
                 );
             }
@@ -1040,7 +1040,7 @@ class Response_Parser {
             if ( '' !== trim( $original_value ) && '' === $sanitized_media ) {
                 $security_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的媒体地址无效，已自动清理。', 'developer-starter' ),
+                    __( '字段 %s 的媒体地址无效，已自动清理。', 'qiling' ),
                     $field_path
                 );
             }
@@ -1105,7 +1105,7 @@ class Response_Parser {
             if ( '' !== $raw_key && ! isset( $text_schema[ $raw_key ] ) ) {
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 不属于本地化文案白名单，已忽略。', 'developer-starter' ),
+                    __( '字段 %s 不属于本地化文案白名单，已忽略。', 'qiling' ),
                     '' === $path ? $raw_key : $path . '.' . $raw_key
                 );
             }
@@ -1146,7 +1146,7 @@ class Response_Parser {
                 if ( count( $raw_items ) !== count( $base_items ) ) {
                     $warnings[] = sprintf(
                         /* translators: %s: field path */
-                        __( '字段 %s 的列表数量变化已被忽略，本地化会保留原列表结构。', 'developer-starter' ),
+                        __( '字段 %s 的列表数量变化已被忽略，本地化会保留原列表结构。', 'qiling' ),
                         $field_path
                     );
                 }
@@ -1159,7 +1159,7 @@ class Response_Parser {
                 if ( ! is_array( $raw_value ) ) {
                     $warnings[] = sprintf(
                         /* translators: %s: field path */
-                        __( '字段 %s 的本地化结构无效，已忽略。', 'developer-starter' ),
+                        __( '字段 %s 的本地化结构无效，已忽略。', 'qiling' ),
                         $field_path
                     );
                     continue;
@@ -1180,7 +1180,7 @@ class Response_Parser {
             if ( is_array( $raw_value ) || is_object( $raw_value ) ) {
                 $warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的本地化内容不是文本，已忽略。', 'developer-starter' ),
+                    __( '字段 %s 的本地化内容不是文本，已忽略。', 'qiling' ),
                     $field_path
                 );
                 continue;
@@ -1282,13 +1282,13 @@ class Response_Parser {
         if ( $seo_title_length > 68 ) {
             $score -= 10;
             $checks['seo_title_length'] = 'bad';
-            $warnings[] = __( 'SEO 标题偏长，建议缩短后再发布。', 'developer-starter' );
+            $warnings[] = __( 'SEO 标题偏长，建议缩短后再发布。', 'qiling' );
         } elseif ( $seo_title_length > 60 ) {
             $score -= 5;
             if ( 'good' === $checks['seo_title_length'] ) {
                 $checks['seo_title_length'] = 'risk';
             }
-            $warnings[] = __( 'SEO 标题接近长度上限，建议检查搜索结果展示。', 'developer-starter' );
+            $warnings[] = __( 'SEO 标题接近长度上限，建议检查搜索结果展示。', 'qiling' );
         }
 
         $encoded_package = wp_json_encode( $package, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES );
@@ -1301,7 +1301,7 @@ class Response_Parser {
                 $checks['forbidden_words'] = 'bad';
                 $warnings[] = sprintf(
                     /* translators: %s: forbidden word */
-                    __( '本地化结果仍包含禁用词：%s', 'developer-starter' ),
+                    __( '本地化结果仍包含禁用词：%s', 'qiling' ),
                     $word
                 );
             }
@@ -1474,7 +1474,7 @@ class Response_Parser {
                     if ( '' !== $raw_value ) {
                         $style_warnings[] = sprintf(
                             /* translators: %s: field path */
-                            __( '字段 %s 的选项值不受支持，已回退到默认值。', 'developer-starter' ),
+                            __( '字段 %s 的选项值不受支持，已回退到默认值。', 'qiling' ),
                             $field_path
                         );
                     }
@@ -1486,7 +1486,7 @@ class Response_Parser {
                     if ( '' !== $raw_value ) {
                         $style_warnings[] = sprintf(
                             /* translators: %s: field path */
-                            __( '字段 %s 的选项值不受支持，已回退到默认值。', 'developer-starter' ),
+                            __( '字段 %s 的选项值不受支持，已回退到默认值。', 'qiling' ),
                             $field_path
                         );
                     }
@@ -1496,7 +1496,7 @@ class Response_Parser {
                 if ( '' !== $raw_value ) {
                     $style_warnings[] = sprintf(
                         /* translators: %s: field path */
-                        __( '字段 %s 的选项值不受支持，已回退到默认值。', 'developer-starter' ),
+                        __( '字段 %s 的选项值不受支持，已回退到默认值。', 'qiling' ),
                         $field_path
                     );
                 }
@@ -1508,7 +1508,7 @@ class Response_Parser {
             if ( '' !== $raw_value ) {
                 $style_warnings[] = sprintf(
                     /* translators: %s: field path */
-                    __( '字段 %s 的选项值不受支持，已回退到首个可用选项。', 'developer-starter' ),
+                    __( '字段 %s 的选项值不受支持，已回退到首个可用选项。', 'qiling' ),
                     $field_path
                 );
             }

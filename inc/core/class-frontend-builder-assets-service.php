@@ -40,15 +40,15 @@ class Frontend_Builder_Assets_Service {
 
         $fallbacks = array(
             'swiper_css' => array(
-                'url'     => DEVELOPER_STARTER_ASSETS . '/css/vendor/swiper-bundle.min.css',
+                'url'     => QILING_ASSETS . '/css/vendor/swiper-bundle.min.css',
                 'version' => '12.0.3',
             ),
             'swiper_js'  => array(
-                'url'     => DEVELOPER_STARTER_ASSETS . '/js/vendor/swiper-bundle.min.js',
+                'url'     => QILING_ASSETS . '/js/vendor/swiper-bundle.min.js',
                 'version' => '12.0.3',
             ),
             'chart_js'   => array(
-                'url'     => DEVELOPER_STARTER_ASSETS . '/js/vendor/chart.min.js',
+                'url'     => QILING_ASSETS . '/js/vendor/chart.min.js',
                 'version' => '2.7.2',
             ),
         );

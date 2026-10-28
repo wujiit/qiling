@@ -33,72 +33,14 @@ if ( ! function_exists( 'developer_starter_get_media_url' ) ) {
 }
 
 if ( ! function_exists( 'developer_starter_get_wc_options' ) ) {
-    /**
-     * 获取 WooCommerce 主题设置数组（含损坏序列化自修复）。
-     *
-     * @return array<string,mixed>
-     */
     function developer_starter_get_wc_options() {
-        static $wc_options = null;
-
-        if ( null !== $wc_options ) {
-            return is_array( $wc_options ) ? $wc_options : array();
-        }
-
-        $option_name = 'developer_starter_wc_options';
-        $resolved = array();
-        $raw = function_exists( 'developer_starter_get_raw_option_value' )
-            ? developer_starter_get_raw_option_value( $option_name )
-            : null;
-
-        if ( is_string( $raw ) && $raw !== '' ) {
-            if ( function_exists( 'is_serialized' ) && is_serialized( $raw ) ) {
-                $parsed = function_exists( 'developer_starter_try_unserialize_no_classes' )
-                    ? developer_starter_try_unserialize_no_classes( $raw )
-                    : null;
-
-                if ( ! is_array( $parsed ) && function_exists( 'developer_starter_fix_serialized_string_lengths' ) ) {
-                    $fixed = developer_starter_fix_serialized_string_lengths( $raw );
-                    if ( is_string( $fixed ) && $fixed !== '' && $fixed !== $raw ) {
-                        $parsed = function_exists( 'developer_starter_try_unserialize_no_classes' )
-                            ? developer_starter_try_unserialize_no_classes( $fixed )
-                            : null;
-                        if ( is_array( $parsed ) ) {
-                            update_option( $option_name, $parsed );
-                        }
-                    }
-                }
-
-                if ( is_array( $parsed ) ) {
-                    $resolved = $parsed;
-                }
-            } else {
-                $json = json_decode( $raw, true );
-                if ( is_array( $json ) ) {
-                    $resolved = $json;
-                }
-            }
-        }
-
-        $wc_options = is_array( $resolved ) ? $resolved : array();
-        return $wc_options;
+        return array();
     }
 }
 
-/**
- * 获取 WooCommerce 主题设置选项
- *
- * @param string $key 选项键名。
- * @param mixed  $default 默认值。
- * @return mixed
- */
 if ( ! function_exists( 'developer_starter_get_wc_option' ) ) {
     function developer_starter_get_wc_option( $key, $default = '' ) {
-        $wc_options = function_exists( 'developer_starter_get_wc_options' )
-            ? developer_starter_get_wc_options()
-            : array();
-
-        return isset( $wc_options[ $key ] ) ? $wc_options[ $key ] : $default;
+        return $default;
     }
 }
 
@@ -147,8 +89,8 @@ if ( ! function_exists( 'developer_starter_custom_breadcrumb' ) ) {
             ? developer_starter_get_translated_post_title( get_the_ID() )
             : get_the_title( get_the_ID() );
 
-        echo '<nav class="breadcrumb" aria-label="' . esc_attr__( '面包屑导航', 'developer-starter' ) . '">';
-        echo '<a href="' . esc_url( $home_url ) . '">' . esc_html__( '首页', 'developer-starter' ) . '</a>';
+        echo '<nav class="breadcrumb" aria-label="' . esc_attr__( '面包屑导航', 'qiling' ) . '">';
+        echo '<a href="' . esc_url( $home_url ) . '">' . esc_html__( '首页', 'qiling' ) . '</a>';
         
         if ( is_category() || is_single() ) {
             $cats = get_the_category();
@@ -161,9 +103,9 @@ if ( ! function_exists( 'developer_starter_custom_breadcrumb' ) ) {
         } elseif ( is_page() ) {
             echo $sep . '<span class="current">' . esc_html( $current_title ) . '</span>';
         } elseif ( is_search() ) {
-            echo $sep . '<span class="current">' . esc_html__( '搜索结果', 'developer-starter' ) . '</span>';
+            echo $sep . '<span class="current">' . esc_html__( '搜索结果', 'qiling' ) . '</span>';
         } elseif ( is_404() ) {
-            echo $sep . '<span class="current">' . esc_html__( '404', 'developer-starter' ) . '</span>';
+            echo $sep . '<span class="current">' . esc_html__( '404', 'qiling' ) . '</span>';
         }
         echo '</nav>';
     }

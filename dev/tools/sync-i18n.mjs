@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const themeRoot = path.resolve(__dirname, '../..');
 const languagesDir = path.join(themeRoot, 'languages');
-const textDomain = 'developer-starter';
+const textDomain = 'qiling';
 
 const ignoredDirs = new Set([
   '.git',

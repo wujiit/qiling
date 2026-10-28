@@ -14,8 +14,8 @@
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-blog-page',
-        DEVELOPER_STARTER_ASSETS . '/css/blog-page.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/blog-page.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 }, 20 );
@@ -63,18 +63,18 @@ if ( get_query_var( 'paged' ) ) {
                 <!-- 没有内容时的显示 -->
                 <section class="blog-empty-state" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
                     <div class="container text-center">
-                        <span style="font-size: var(--qiling-text-rem-4); display: block; margin-bottom: var(--qiling-space-20);">📝</span>
-                        <h2 style="font-size: var(--qiling-text-rem-2); margin-bottom: var(--qiling-space-15); color: var(--color-neutral-800);"><?php esc_html_e( '开始构建您的博客', 'developer-starter' ); ?></h2>
+                        <div style="margin: 0 auto var(--qiling-space-20); display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 18px; background: var(--qiling-color-f1f5f9, #f1f5f9); color: var(--color-primary);"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></div>
+                        <h2 style="font-size: var(--qiling-text-rem-2); margin-bottom: var(--qiling-space-15); color: var(--color-neutral-800);"><?php esc_html_e( '开始构建您的博客', 'qiling' ); ?></h2>
                         <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                             <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1); max-width: var(--qiling-measure-500); margin: 0 auto var(--qiling-space-30);">
-                                <?php esc_html_e( '通过模块构建器添加「博客置顶推荐」和「博客布局」模块，快速创建专业的博客首页', 'developer-starter' ); ?>
+                                <?php esc_html_e( '通过模块构建器添加「博客置顶推荐」和「博客布局」模块，快速创建专业的博客首页', 'qiling' ); ?>
                             </p>
                             <a href="<?php echo esc_url( admin_url( 'post.php?post=' . get_the_ID() . '&action=edit' ) ); ?>" class="btn btn-primary btn-lg">
-                                <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                                <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                             </a>
                         <?php else : ?>
                             <p style="color: var(--color-text-muted); font-size: var(--qiling-text-rem-1p1);">
-                                <?php esc_html_e( '暂无内容。', 'developer-starter' ); ?>
+                                <?php esc_html_e( '暂无内容。', 'qiling' ); ?>
                             </p>
                         <?php endif; ?>
                     </div>

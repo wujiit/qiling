@@ -132,7 +132,7 @@ class Frontend_Builder_Snapshot_Service {
     public function get_snapshot( $post_id, $snapshot_id ) {
         $snapshot_id = is_scalar( $snapshot_id ) ? trim( (string) $snapshot_id ) : '';
         if ( '' === $snapshot_id ) {
-            return new \WP_Error( 'invalid_snapshot_id', __( '快照 ID 无效。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_snapshot_id', __( '快照 ID 无效。', 'qiling' ) );
         }
 
         foreach ( $this->get_snapshots( $post_id ) as $snapshot ) {
@@ -141,7 +141,7 @@ class Frontend_Builder_Snapshot_Service {
             }
         }
 
-        return new \WP_Error( 'snapshot_not_found', __( '未找到该保存快照。', 'developer-starter' ) );
+        return new \WP_Error( 'snapshot_not_found', __( '未找到该保存快照。', 'qiling' ) );
     }
 
     /**
@@ -155,7 +155,7 @@ class Frontend_Builder_Snapshot_Service {
         $post_id     = absint( $post_id );
         $snapshot_id = is_scalar( $snapshot_id ) ? trim( (string) $snapshot_id ) : '';
         if ( $post_id <= 0 || '' === $snapshot_id ) {
-            return new \WP_Error( 'invalid_snapshot', __( '装修修订参数无效。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_snapshot', __( '装修修订参数无效。', 'qiling' ) );
         }
 
         $snapshots = $this->get_snapshots( $post_id );
@@ -168,7 +168,7 @@ class Frontend_Builder_Snapshot_Service {
             )
         );
         if ( count( $remaining ) === count( $snapshots ) ) {
-            return new \WP_Error( 'snapshot_not_found', __( '未找到该装修修订。', 'developer-starter' ) );
+            return new \WP_Error( 'snapshot_not_found', __( '未找到该装修修订。', 'qiling' ) );
         }
 
         if ( empty( $remaining ) ) {

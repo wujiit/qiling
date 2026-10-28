@@ -32,13 +32,13 @@ else :
 ?>
 <section class="section-padding" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
     <div class="container text-center">
-        <h2><?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?></h2>
+        <h2><?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?></h2>
         <p style="color: var(--color-text-muted); margin-top: var(--qiling-space-20);">
-            <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+            <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
         </p>
         <?php if ( current_user_can( 'edit_pages' ) ) : ?>
             <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary" style="margin-top: var(--qiling-space-20);">
-                <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                <?php esc_html_e( '编辑页面', 'qiling' ); ?>
             </a>
         <?php endif; ?>
     </div>

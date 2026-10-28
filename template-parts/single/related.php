@@ -28,7 +28,7 @@ $related_show_excerpt = ! empty( $options['related_posts_show_excerpt'] ) && '1'
 $related_show_category = ! empty( $options['related_posts_show_category'] ) && '1' === (string) $options['related_posts_show_category'];
 $related_title = isset( $options['related_posts_title'] ) ? trim( wp_strip_all_tags( (string) $options['related_posts_title'] ) ) : '';
 if ( '' === $related_title ) {
-    $related_title = __( '相关文章', 'developer-starter' );
+    $related_title = __( '相关文章', 'qiling' );
 }
 $related_limit = isset( $options['related_posts_count'] ) ? absint( $options['related_posts_count'] ) : 3;
 if ( $related_limit <= 0 ) {

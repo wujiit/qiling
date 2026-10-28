@@ -15,8 +15,8 @@ add_action(
     function() {
         wp_enqueue_style(
             'developer-starter-sidebar',
-            DEVELOPER_STARTER_ASSETS . '/css/sidebar.css',
-            array( 'developer-starter-main' ),
+            QILING_ASSETS . '/css/sidebar.css',
+            array( 'qiling-main' ),
             developer_starter_get_assets_version()
         );
     },
@@ -36,7 +36,7 @@ $page_desc = function_exists( 'developer_starter_get_translated_post_excerpt' )
     : get_post_field( 'post_excerpt', $page_id );
 
 if ( '' === trim( (string) $page_title ) ) {
-    $page_title = __( '最新文章', 'developer-starter' );
+    $page_title = __( '最新文章', 'qiling' );
 }
 
 $paged = 1;

@@ -823,7 +823,7 @@ if ( ! function_exists( 'developer_starter_optimizations' ) ) {
             
             add_action( 'admin_init', function() {
                 if ( isset( $GLOBALS['pagenow'] ) && 'options-connectors.php' === $GLOBALS['pagenow'] ) {
-                    wp_die( esc_html__( '该功能已被系统优化模块禁用，以保障访问速度与合规安全。', 'developer-starter' ) );
+                    wp_die( esc_html__( '该功能已被系统优化模块禁用，以保障访问速度与合规安全。', 'qiling' ) );
                 }
             }, 0 );
         }

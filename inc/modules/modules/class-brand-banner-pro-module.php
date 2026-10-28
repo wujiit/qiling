@@ -28,7 +28,7 @@ class Brand_Banner_Pro_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-format-image';
-        $this->description = __( '现代品牌首屏模块，支持上下/左右/叠加布局与动效。', 'developer-starter' );
+        $this->description = __( '现代品牌首屏模块，支持上下/左右/叠加布局与动效。', 'qiling' );
     }
 
     public function get_id() {
@@ -36,7 +36,7 @@ class Brand_Banner_Pro_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '品牌旗舰Banner', 'developer-starter' );
+        return __( '品牌旗舰Banner', 'qiling' );
     }
 
     public function get_fields() {
@@ -44,90 +44,90 @@ class Brand_Banner_Pro_Module extends Module_Base {
             array(
                 'id'      => 'bb_layout',
                 'type'    => 'select',
-                'label'   => __( '布局模式', 'developer-starter' ),
+                'label'   => __( '布局模式', 'qiling' ),
                 'options' => array(
-                    'top_bottom'     => __( '上文下图（苹果风）', 'developer-starter' ),
-                    'left_right'     => __( '左文右图（品牌展示）', 'developer-starter' ),
-                    'right_left'     => __( '右文左图（反向展示）', 'developer-starter' ),
-                    'overlay_center' => __( '居中叠加（海报风）', 'developer-starter' ),
+                    'top_bottom'     => __( '上文下图（苹果风）', 'qiling' ),
+                    'left_right'     => __( '左文右图（品牌展示）', 'qiling' ),
+                    'right_left'     => __( '右文左图（反向展示）', 'qiling' ),
+                    'overlay_center' => __( '居中叠加（海报风）', 'qiling' ),
                 ),
                 'default' => 'top_bottom',
             ),
             array(
                 'id'      => 'bb_style_mode',
                 'type'    => 'select',
-                'label'   => __( '视觉风格', 'developer-starter' ),
+                'label'   => __( '视觉风格', 'qiling' ),
                 'options' => array(
-                    'minimal'   => __( '简洁（Apple 风）', 'developer-starter' ),
-                    'glow'      => __( '氛围光感（ATMOS 风）', 'developer-starter' ),
-                    'editorial' => __( '大片（运动品牌风）', 'developer-starter' ),
+                    'minimal'   => __( '简洁（Apple 风）', 'qiling' ),
+                    'glow'      => __( '氛围光感（ATMOS 风）', 'qiling' ),
+                    'editorial' => __( '大片（运动品牌风）', 'qiling' ),
                 ),
                 'default' => 'minimal',
             ),
             array(
                 'id'      => 'bb_overlay_content_box',
                 'type'    => 'select',
-                'label'   => __( '居中叠加内容容器', 'developer-starter' ),
+                'label'   => __( '居中叠加内容容器', 'qiling' ),
                 'options' => array(
-                    'none'  => __( '无（参考图风格）', 'developer-starter' ),
-                    'glass' => __( '磨砂玻璃卡片', 'developer-starter' ),
+                    'none'  => __( '无（参考图风格）', 'qiling' ),
+                    'glass' => __( '磨砂玻璃卡片', 'qiling' ),
                 ),
                 'default' => 'none',
             ),
             array(
                 'id'      => 'bb_height',
                 'type'    => 'select',
-                'label'   => __( '模块高度', 'developer-starter' ),
+                'label'   => __( '模块高度', 'qiling' ),
                 'options' => array(
-                    '70vh'   => __( '70vh', 'developer-starter' ),
-                    '85vh'   => __( '85vh', 'developer-starter' ),
-                    '100vh'  => __( '100vh（全屏）', 'developer-starter' ),
-                    'custom' => __( '自定义', 'developer-starter' ),
+                    '70vh'   => __( '70vh', 'qiling' ),
+                    '85vh'   => __( '85vh', 'qiling' ),
+                    '100vh'  => __( '100vh（全屏）', 'qiling' ),
+                    'custom' => __( '自定义', 'qiling' ),
                 ),
                 'default' => '85vh',
             ),
             array(
                 'id'         => 'bb_height_custom',
                 'type'       => 'text',
-                'label'      => __( '自定义高度', 'developer-starter' ),
+                'label'      => __( '自定义高度', 'qiling' ),
                 'default'    => '760px',
                 'dependency' => array( 'bb_height', '==', 'custom' ),
             ),
             array(
                 'id'      => 'bb_bg_type',
                 'type'    => 'select',
-                'label'   => __( '背景类型', 'developer-starter' ),
+                'label'   => __( '背景类型', 'qiling' ),
                 'options' => array(
-                    'gradient' => __( '渐变背景', 'developer-starter' ),
-                    'color'    => __( '纯色背景', 'developer-starter' ),
-                    'image'    => __( '图片背景', 'developer-starter' ),
+                    'gradient' => __( '渐变背景', 'qiling' ),
+                    'color'    => __( '纯色背景', 'qiling' ),
+                    'image'    => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'gradient',
             ),
             array(
                 'id'         => 'bb_bg_gradient',
                 'type'       => 'text',
-                'label'      => __( '渐变 CSS', 'developer-starter' ),
+                'label'      => __( '渐变 CSS', 'qiling' ),
                 'default'    => 'linear-gradient(180deg, var(--qiling-color-eef2ff) 0%, var(--qiling-color-dbeafe) 50%, var(--color-neutral-50) 100%)',
                 'dependency' => array( 'bb_bg_type', '==', 'gradient' ),
             ),
             array(
                 'id'         => 'bb_bg_color',
                 'type'       => 'color',
-                'label'      => __( '背景颜色', 'developer-starter' ),
+                'label'      => __( '背景颜色', 'qiling' ),
                 'default'    => '',
                 'dependency' => array( 'bb_bg_type', '==', 'color' ),
             ),
             array(
                 'id'         => 'bb_bg_image',
                 'type'       => 'image',
-                'label'      => __( '背景图片', 'developer-starter' ),
+                'label'      => __( '背景图片', 'qiling' ),
                 'dependency' => array( 'bb_bg_type', '==', 'image' ),
             ),
             array(
                 'id'         => 'bb_bg_overlay',
                 'type'       => 'text',
-                'label'      => __( '图片背景遮罩（0-0.9）', 'developer-starter' ),
+                'label'      => __( '图片背景遮罩（0-0.9）', 'qiling' ),
                 'default'    => '0.12',
                 'dependency' => array( 'bb_bg_type', '==', 'image' ),
             ),
@@ -135,352 +135,352 @@ class Brand_Banner_Pro_Module extends Module_Base {
             array(
                 'id'      => 'bb_title_mode',
                 'type'    => 'select',
-                'label'   => __( '主视觉标题类型', 'developer-starter' ),
+                'label'   => __( '主视觉标题类型', 'qiling' ),
                 'options' => array(
-                    'text'  => __( '文字（可放大）', 'developer-starter' ),
-                    'image' => __( '图片（可放大）', 'developer-starter' ),
+                    'text'  => __( '文字（可放大）', 'qiling' ),
+                    'image' => __( '图片（可放大）', 'qiling' ),
                 ),
                 'default' => 'text',
             ),
             array(
                 'id'      => 'bb_title',
                 'type'    => 'textarea',
-                'label'   => __( '主标题', 'developer-starter' ),
+                'label'   => __( '主标题', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '让品牌首屏，<br><strong>更高级、更现代</strong>', 'A premium hero for modern digital brands.' )
-                    : __( '让品牌首屏，<br><strong>更高级、更现代</strong>', 'developer-starter' ),
+                    : __( '让品牌首屏，<br><strong>更高级、更现代</strong>', 'qiling' ),
             ),
             array(
                 'id'         => 'bb_title_image',
                 'type'       => 'image',
-                'label'      => __( '主视觉标题图片', 'developer-starter' ),
+                'label'      => __( '主视觉标题图片', 'qiling' ),
                 'dependency' => array( 'bb_title_mode', '==', 'image' ),
             ),
             array(
                 'id'      => 'bb_title_size_max',
                 'type'    => 'text',
-                'label'   => __( '主标题最大字号', 'developer-starter' ),
+                'label'   => __( '主标题最大字号', 'qiling' ),
                 'default' => '88px',
             ),
             array(
                 'id'      => 'bb_title_image_max_width',
                 'type'    => 'text',
-                'label'   => __( '主视觉标题图片最大宽度', 'developer-starter' ),
+                'label'   => __( '主视觉标题图片最大宽度', 'qiling' ),
                 'default' => '760px',
             ),
             array(
                 'id'      => 'bb_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '不是普通横幅，而是有品牌气场的第一屏。', 'Not just a banner, but your brand statement above the fold.' )
-                    : __( '不是普通横幅，而是有品牌气场的第一屏。', 'developer-starter' ),
+                    : __( '不是普通横幅，而是有品牌气场的第一屏。', 'qiling' ),
             ),
             array(
                 'id'      => 'bb_desc',
                 'type'    => 'textarea',
-                'label'   => __( '描述文案', 'developer-starter' ),
+                'label'   => __( '描述文案', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '支持上文下图、左右图文、居中叠加等布局，适合官网、产品页、活动页首屏展示。', 'Supports top-bottom, left-right and overlay layouts for official sites, product launches, and campaign pages.' )
-                    : __( '支持上文下图、左右图文、居中叠加等布局，适合官网、产品页、活动页首屏展示。', 'developer-starter' ),
+                    : __( '支持上文下图、左右图文、居中叠加等布局，适合官网、产品页、活动页首屏展示。', 'qiling' ),
             ),
             array(
                 'id'      => 'bb_orbit_text',
                 'type'    => 'text',
-                'label'   => __( '环形文字（可选）', 'developer-starter' ),
+                'label'   => __( '环形文字（可选）', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'bb_orbit_anchor',
                 'type'    => 'select',
-                'label'   => __( '环形文字位置', 'developer-starter' ),
+                'label'   => __( '环形文字位置', 'qiling' ),
                 'options' => array(
-                    'title'  => __( '标题右上（推荐）', 'developer-starter' ),
-                    'corner' => __( '模块右上角', 'developer-starter' ),
+                    'title'  => __( '标题右上（推荐）', 'qiling' ),
+                    'corner' => __( '模块右上角', 'qiling' ),
                 ),
                 'default' => 'title',
             ),
             array(
                 'id'      => 'bb_orbit_size',
                 'type'    => 'text',
-                'label'   => __( '环形文字尺寸', 'developer-starter' ),
+                'label'   => __( '环形文字尺寸', 'qiling' ),
                 'default' => '120px',
             ),
             array(
                 'id'      => 'bb_orbit_top',
                 'type'    => 'text',
-                'label'   => __( '环形文字垂直偏移（可负值）', 'developer-starter' ),
+                'label'   => __( '环形文字垂直偏移（可负值）', 'qiling' ),
                 'default' => '0px',
             ),
             array(
                 'id'      => 'bb_orbit_right',
                 'type'    => 'text',
-                'label'   => __( '环形文字水平偏移（可负值）', 'developer-starter' ),
+                'label'   => __( '环形文字水平偏移（可负值）', 'qiling' ),
                 'default' => '0px',
             ),
             array(
                 'id'      => 'bb_orbit_color',
                 'type'    => 'color',
-                'label'   => __( '环形文字颜色', 'developer-starter' ),
+                'label'   => __( '环形文字颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'bb_orbit_center_type',
                 'type'    => 'select',
-                'label'   => __( '环形中心内容类型', 'developer-starter' ),
+                'label'   => __( '环形中心内容类型', 'qiling' ),
                 'options' => array(
-                    'text'  => __( '文字/符号', 'developer-starter' ),
-                    'image' => __( '图片', 'developer-starter' ),
+                    'text'  => __( '文字/符号', 'qiling' ),
+                    'image' => __( '图片', 'qiling' ),
                 ),
                 'default' => 'text',
             ),
             array(
                 'id'      => 'bb_orbit_center_symbol',
                 'type'    => 'text',
-                'label'   => __( '环形中心符号/文字', 'developer-starter' ),
+                'label'   => __( '环形中心符号/文字', 'qiling' ),
                 'default' => '↻',
                 'dependency' => array( 'bb_orbit_center_type', '==', 'text' ),
             ),
             array(
                 'id'      => 'bb_orbit_center_image',
                 'type'    => 'image',
-                'label'   => __( '环形中心图片', 'developer-starter' ),
+                'label'   => __( '环形中心图片', 'qiling' ),
                 'dependency' => array( 'bb_orbit_center_type', '==', 'image' ),
             ),
             array(
                 'id'      => 'bb_text_align',
                 'type'    => 'select',
-                'label'   => __( '文字对齐', 'developer-starter' ),
+                'label'   => __( '文字对齐', 'qiling' ),
                 'options' => array(
-                    'auto'   => __( '自动', 'developer-starter' ),
-                    'left'   => __( '左对齐', 'developer-starter' ),
-                    'center' => __( '居中', 'developer-starter' ),
+                    'auto'   => __( '自动', 'qiling' ),
+                    'left'   => __( '左对齐', 'qiling' ),
+                    'center' => __( '居中', 'qiling' ),
                 ),
                 'default' => 'auto',
             ),
             array(
                 'id'      => 'bb_title_color',
                 'type'    => 'color',
-                'label'   => __( '标题颜色', 'developer-starter' ),
+                'label'   => __( '标题颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'bb_title_effect',
                 'type'    => 'select',
-                'label'   => __( '标题特效', 'developer-starter' ),
+                'label'   => __( '标题特效', 'qiling' ),
                 'options' => array(
-                    'normal'   => __( '普通', 'developer-starter' ),
-                    'outline'  => __( '描边字', 'developer-starter' ),
-                    'gradient' => __( '渐变字', 'developer-starter' ),
-                    'glow'     => __( '发光字', 'developer-starter' ),
+                    'normal'   => __( '普通', 'qiling' ),
+                    'outline'  => __( '描边字', 'qiling' ),
+                    'gradient' => __( '渐变字', 'qiling' ),
+                    'glow'     => __( '发光字', 'qiling' ),
                 ),
                 'default' => 'normal',
             ),
             array(
                 'id'      => 'bb_title_stroke_color',
                 'type'    => 'color',
-                'label'   => __( '描边颜色', 'developer-starter' ),
+                'label'   => __( '描边颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'bb_title_stroke_width',
                 'type'    => 'text',
-                'label'   => __( '描边宽度', 'developer-starter' ),
+                'label'   => __( '描边宽度', 'qiling' ),
                 'default' => '1.5px',
             ),
             array(
                 'id'      => 'bb_title_gradient',
                 'type'    => 'text',
-                'label'   => __( '标题渐变 CSS', 'developer-starter' ),
+                'label'   => __( '标题渐变 CSS', 'qiling' ),
                 'default' => 'linear-gradient(180deg, var(--color-neutral-0) 0%, var(--qiling-color-dbeafe) 65%, var(--qiling-color-93c5fd) 100%)',
             ),
             array(
                 'id'      => 'bb_text_color',
                 'type'    => 'color',
-                'label'   => __( '正文颜色', 'developer-starter' ),
+                'label'   => __( '正文颜色', 'qiling' ),
                 'default' => '',
             ),
 
             array(
                 'id'            => 'bb_buttons',
                 'type'          => 'repeater',
-                'label'         => __( '按钮组', 'developer-starter' ),
-                'add_button'    => __( '添加按钮', 'developer-starter' ),
+                'label'         => __( '按钮组', 'qiling' ),
+                'add_button'    => __( '添加按钮', 'qiling' ),
                 'default_items' => $this->get_default_buttons(),
                 'fields'        => array(
                     array(
                         'id'    => 'text',
                         'type'  => 'text',
-                        'label' => __( '按钮文字', 'developer-starter' ),
+                        'label' => __( '按钮文字', 'qiling' ),
                     ),
                     array(
                         'id'    => 'link',
                         'type'  => 'text',
-                        'label' => __( '按钮链接', 'developer-starter' ),
+                        'label' => __( '按钮链接', 'qiling' ),
                     ),
                     array(
                         'id'      => 'style',
                         'type'    => 'select',
-                        'label'   => __( '按钮样式', 'developer-starter' ),
+                        'label'   => __( '按钮样式', 'qiling' ),
                         'options' => array(
-                            'primary' => __( '主按钮', 'developer-starter' ),
-                            'light'   => __( '浅色按钮', 'developer-starter' ),
-                            'outline' => __( '描边按钮', 'developer-starter' ),
+                            'primary' => __( '主按钮', 'qiling' ),
+                            'light'   => __( '浅色按钮', 'qiling' ),
+                            'outline' => __( '描边按钮', 'qiling' ),
                         ),
                         'default' => 'primary',
                     ),
                     array(
                         'id'    => 'icon',
                         'type'  => 'text',
-                        'label' => __( '图标类名 / Emoji（可选）', 'developer-starter' ),
+                        'label' => __( '图标类名 / Emoji（可选）', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'          => 'bb_primary_btn_bg_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认主按钮样式', 'developer-starter' ),
+                'label'       => __( '主按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认主按钮样式', 'qiling' ),
             ),
             array(
                 'id'          => 'bb_primary_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认主按钮样式', 'developer-starter' ),
+                'label'       => __( '主按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认主按钮样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'bb_primary_btn_border_color', __( '主按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'bb_primary_btn_border_color', __( '主按钮边框颜色', 'qiling' ) ),
             array(
                 'id'          => 'bb_primary_btn_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认主按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '主按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认主按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'          => 'bb_primary_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认主按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '主按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认主按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'bb_primary_btn_hover_border_color', __( '主按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随主按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'bb_primary_btn_hover_border_color', __( '主按钮悬停边框颜色', 'qiling' ), __( '留空时跟随主按钮悬停背景颜色。', 'qiling' ) ),
             array(
                 'id'          => 'bb_light_btn_bg_color',
                 'type'        => 'color',
-                'label'       => __( '浅色按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮样式', 'developer-starter' ),
+                'label'       => __( '浅色按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮样式', 'qiling' ),
             ),
             array(
                 'id'          => 'bb_light_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '浅色按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮样式', 'developer-starter' ),
+                'label'       => __( '浅色按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'bb_light_btn_border_color', __( '浅色按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'bb_light_btn_border_color', __( '浅色按钮边框颜色', 'qiling' ) ),
             array(
                 'id'          => 'bb_light_btn_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '浅色按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '浅色按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'          => 'bb_light_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '浅色按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '浅色按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时使用品牌旗舰Banner默认浅色按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'bb_light_btn_hover_border_color', __( '浅色按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随浅色按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'bb_light_btn_hover_border_color', __( '浅色按钮悬停边框颜色', 'qiling' ), __( '留空时跟随浅色按钮悬停背景颜色。', 'qiling' ) ),
 
             array(
                 'id'      => 'bb_media_type',
                 'type'    => 'select',
-                'label'   => __( '主视觉类型', 'developer-starter' ),
+                'label'   => __( '主视觉类型', 'qiling' ),
                 'options' => array(
-                    'image' => __( '图片', 'developer-starter' ),
-                    'video' => __( '视频', 'developer-starter' ),
-                    'none'  => __( '不显示主视觉', 'developer-starter' ),
+                    'image' => __( '图片', 'qiling' ),
+                    'video' => __( '视频', 'qiling' ),
+                    'none'  => __( '不显示主视觉', 'qiling' ),
                 ),
                 'default' => 'image',
             ),
             array(
                 'id'         => 'bb_main_image',
                 'type'       => 'image',
-                'label'      => __( '主视觉图片', 'developer-starter' ),
+                'label'      => __( '主视觉图片', 'qiling' ),
                 'dependency' => array( 'bb_media_type', '==', 'image' ),
             ),
             array(
                 'id'         => 'bb_video_url',
                 'type'       => 'text',
-                'label'      => __( '视频地址（MP4）', 'developer-starter' ),
+                'label'      => __( '视频地址（MP4）', 'qiling' ),
                 'dependency' => array( 'bb_media_type', '==', 'video' ),
             ),
             array(
                 'id'      => 'bb_media_shadow',
                 'type'    => 'select',
-                'label'   => __( '主视觉阴影', 'developer-starter' ),
+                'label'   => __( '主视觉阴影', 'qiling' ),
                 'options' => array(
-                    'none'   => __( '无阴影', 'developer-starter' ),
-                    'soft'   => __( '柔和', 'developer-starter' ),
-                    'lifted' => __( '悬浮', 'developer-starter' ),
-                    'glow'   => __( '发光', 'developer-starter' ),
+                    'none'   => __( '无阴影', 'qiling' ),
+                    'soft'   => __( '柔和', 'qiling' ),
+                    'lifted' => __( '悬浮', 'qiling' ),
+                    'glow'   => __( '发光', 'qiling' ),
                 ),
                 'default' => 'soft',
             ),
             array(
                 'id'      => 'bb_media_radius',
                 'type'    => 'text',
-                'label'   => __( '主视觉圆角', 'developer-starter' ),
+                'label'   => __( '主视觉圆角', 'qiling' ),
                 'default' => '26px',
             ),
             array(
                 'id'      => 'bb_media_max_width',
                 'type'    => 'text',
-                'label'   => __( '主视觉最大宽度', 'developer-starter' ),
+                'label'   => __( '主视觉最大宽度', 'qiling' ),
                 'default' => '980px',
             ),
 
             array(
                 'id'      => 'bb_intro_anim',
                 'type'    => 'select',
-                'label'   => __( '文案入场动画', 'developer-starter' ),
+                'label'   => __( '文案入场动画', 'qiling' ),
                 'options' => array(
-                    'fade_up'  => __( '淡入上移', 'developer-starter' ),
-                    'slide_up' => __( '滑入上移', 'developer-starter' ),
-                    'zoom'     => __( '轻微缩放', 'developer-starter' ),
-                    'none'     => __( '无', 'developer-starter' ),
+                    'fade_up'  => __( '淡入上移', 'qiling' ),
+                    'slide_up' => __( '滑入上移', 'qiling' ),
+                    'zoom'     => __( '轻微缩放', 'qiling' ),
+                    'none'     => __( '无', 'qiling' ),
                 ),
                 'default' => 'fade_up',
             ),
             array(
                 'id'      => 'bb_media_anim',
                 'type'    => 'select',
-                'label'   => __( '主视觉动画', 'developer-starter' ),
+                'label'   => __( '主视觉动画', 'qiling' ),
                 'options' => array(
-                    'float' => __( '上下悬浮', 'developer-starter' ),
-                    'pulse' => __( '呼吸动效', 'developer-starter' ),
-                    'tilt'  => __( '鼠标倾斜', 'developer-starter' ),
-                    'none'  => __( '无', 'developer-starter' ),
+                    'float' => __( '上下悬浮', 'qiling' ),
+                    'pulse' => __( '呼吸动效', 'qiling' ),
+                    'tilt'  => __( '鼠标倾斜', 'qiling' ),
+                    'none'  => __( '无', 'qiling' ),
                 ),
                 'default' => 'float',
             ),
             array(
                 'id'      => 'bb_show_glow',
                 'type'    => 'select',
-                'label'   => __( '显示氛围光效', 'developer-starter' ),
+                'label'   => __( '显示氛围光效', 'qiling' ),
                 'options' => array(
-                    '1' => __( '显示', 'developer-starter' ),
-                    '0' => __( '隐藏', 'developer-starter' ),
+                    '1' => __( '显示', 'qiling' ),
+                    '0' => __( '隐藏', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'bb_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上内边距', 'developer-starter' ),
+                'label'   => __( '上内边距', 'qiling' ),
                 'default' => '72px',
             ),
             array(
                 'id'      => 'bb_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下内边距', 'developer-starter' ),
+                'label'   => __( '下内边距', 'qiling' ),
                 'default' => '72px',
             ),
         );
@@ -535,7 +535,7 @@ class Brand_Banner_Pro_Module extends Module_Base {
             ? $this->sanitize_opacity( isset( $data['bb_bg_overlay'] ) ? $data['bb_bg_overlay'] : '0.12', '0.12' )
             : '0';
 
-        $title = isset( $data['bb_title'] ) ? (string) $data['bb_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '让品牌首屏，<br><strong>更高级、更现代</strong>', 'A premium hero for modern digital brands.' ) : __( '让品牌首屏，<br><strong>更高级、更现代</strong>', 'developer-starter' ) );
+        $title = isset( $data['bb_title'] ) ? (string) $data['bb_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '让品牌首屏，<br><strong>更高级、更现代</strong>', 'A premium hero for modern digital brands.' ) : __( '让品牌首屏，<br><strong>更高级、更现代</strong>', 'qiling' ) );
         $subtitle = isset( $data['bb_subtitle'] ) ? (string) $data['bb_subtitle'] : '';
         $desc = isset( $data['bb_desc'] ) ? (string) $data['bb_desc'] : '';
         $title_mode = isset( $data['bb_title_mode'] ) ? sanitize_key( $data['bb_title_mode'] ) : 'text';
@@ -760,7 +760,7 @@ class Brand_Banner_Pro_Module extends Module_Base {
                             <div class="bbp-title-wrap">
                                 <div class="bbp-title-line">
                                     <?php if ( 'image' === $title_mode && ! empty( $title_image ) ) : ?>
-                                        <img class="bbp-title-image" src="<?php echo esc_url( $title_image ); ?>" alt="<?php echo esc_attr( '' !== trim( wp_strip_all_tags( $title ) ) ? wp_strip_all_tags( $title ) : __( '主视觉标题图', 'developer-starter' ) ); ?>">
+                                        <img class="bbp-title-image" src="<?php echo esc_url( $title_image ); ?>" alt="<?php echo esc_attr( '' !== trim( wp_strip_all_tags( $title ) ) ? wp_strip_all_tags( $title ) : __( '主视觉标题图', 'qiling' ) ); ?>">
                                     <?php else : ?>
                                         <h2 class="bbp-title"><?php echo wp_kses_post( $title ); ?></h2>
                                     <?php endif; ?>
@@ -1036,6 +1036,7 @@ class Brand_Banner_Pro_Module extends Module_Base {
             .module-brand-banner-pro .bbp-media-wrap video {
                 width: 100%;
                 height: auto;
+                max-height: min(540px, 60vh);
                 display: block;
                 object-fit: cover;
             }
@@ -1098,68 +1099,78 @@ class Brand_Banner_Pro_Module extends Module_Base {
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-inner,
             .module-brand-banner-pro.bbp-layout-right_left .bbp-inner {
-                width: min(1540px, 98vw);
-                grid-template-columns: minmax(220px, 0.34fr) minmax(720px, 0.66fr);
-                gap: clamp(16px, 2.4vw, 36px);
+                width: min(1380px, 92vw);
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+                gap: clamp(24px, 3.5vw, 56px);
+                align-items: center;
             }
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-content,
             .module-brand-banner-pro.bbp-layout-right_left .bbp-content {
-                max-width: var(--qiling-measure-420);
+                max-width: min(100%, 580px);
                 width: 100%;
+                margin: 0;
             }
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-title,
             .module-brand-banner-pro.bbp-layout-right_left .bbp-title {
-                font-size: clamp(34px, 4.6vw, min(var(--bbp-title-size-max, 72px), 72px));
-                line-height: 1.06;
+                font-size: clamp(28px, 3.4vw, min(var(--bbp-title-size-max, 64px), 64px));
+                line-height: 1.18;
                 letter-spacing: var(--qiling-letter-spacing-tight, 0);
+                word-break: break-word;
             }
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-subtitle,
             .module-brand-banner-pro.bbp-layout-right_left .bbp-subtitle {
-                font-size: clamp(18px, 2.4vw, 30px);
+                font-size: clamp(16px, 1.6vw, 22px);
+                line-height: 1.45;
             }
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-desc,
             .module-brand-banner-pro.bbp-layout-right_left .bbp-desc {
-                max-width: var(--qiling-measure-430);
+                max-width: 100%;
                 font-size: clamp(14px, 1.05vw, 16px);
+                line-height: 1.75;
             }
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-media-col {
                 justify-content: flex-end;
-                overflow: visible;
+                align-items: center;
+                overflow: hidden;
             }
 
             .module-brand-banner-pro.bbp-layout-right_left .bbp-media-col {
                 justify-content: flex-start;
-                overflow: visible;
+                align-items: center;
+                overflow: hidden;
             }
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap,
             .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap {
-                width: min(132%, calc(var(--bbp-media-max-width, 980px) + 360px));
-                max-width: none;
-                border-radius: max(var(--bbp-media-radius, 26px), 18px);
+                width: 100%;
+                max-width: min(100%, var(--bbp-media-max-width, 760px));
+                margin: 0;
+                border-radius: max(var(--bbp-media-radius, 22px), 16px);
+                overflow: hidden;
             }
 
-            .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap {
-                margin-right: clamp(calc(var(--qiling-space-56) * -1), -4vw, calc(var(--qiling-space-20) * -1));
-            }
-
-            .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap {
-                margin-left: clamp(calc(var(--qiling-space-56) * -1), -4vw, calc(var(--qiling-space-20) * -1));
+            .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap img,
+            .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap video,
+            .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap img,
+            .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap video {
+                width: 100%;
+                height: auto;
+                max-height: min(520px, 58vh);
+                object-fit: cover;
+                display: block;
             }
 
             .module-brand-banner-pro.bbp-layout-left_right .bbp-content {
                 justify-self: start;
-                margin-left: clamp(calc(var(--qiling-space-30) * -1), -2vw, calc(var(--qiling-space-10) * -1));
             }
 
             .module-brand-banner-pro.bbp-layout-right_left .bbp-content {
                 justify-self: end;
-                margin-right: clamp(calc(var(--qiling-space-30) * -1), -2vw, calc(var(--qiling-space-10) * -1));
             }
 
             .module-brand-banner-pro.bbp-layout-right_left .bbp-content {
@@ -1443,10 +1454,26 @@ class Brand_Banner_Pro_Module extends Module_Base {
                 }
             }
 
+            @media (max-width: 1200px) {
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-inner,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-inner {
+                    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                    gap: var(--qiling-space-24);
+                }
+
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap img,
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap video,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap img,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap video {
+                    max-height: 420px;
+                }
+            }
+
             @media (max-width: 1024px) {
                 .module-brand-banner-pro.bbp-layout-left_right .bbp-inner,
                 .module-brand-banner-pro.bbp-layout-right_left .bbp-inner {
                     grid-template-columns: 1fr;
+                    gap: var(--qiling-space-32);
                 }
 
                 .module-brand-banner-pro.bbp-layout-right_left .bbp-content,
@@ -1456,6 +1483,20 @@ class Brand_Banner_Pro_Module extends Module_Base {
 
                 .module-brand-banner-pro .bbp-content {
                     max-width: min(100%, var(--qiling-measure-760));
+                }
+
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap {
+                    width: 100%;
+                    max-width: min(100%, var(--bbp-media-max-width, 640px));
+                    margin: 0 auto;
+                }
+
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap img,
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap video,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap img,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap video {
+                    max-height: 380px;
                 }
 
                 .module-brand-banner-pro .bbp-orbit {
@@ -1480,6 +1521,18 @@ class Brand_Banner_Pro_Module extends Module_Base {
                 .module-brand-banner-pro .bbp-stage {
                     padding-top: min(var(--bbp-pt, var(--qiling-space-72)), var(--qiling-space-56));
                     padding-bottom: min(var(--bbp-pb, var(--qiling-space-72)), var(--qiling-space-56));
+                    min-height: auto;
+                }
+
+                .module-brand-banner-pro .bbp-title {
+                    font-size: clamp(24px, 6.8vw, 36px);
+                }
+
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap img,
+                .module-brand-banner-pro.bbp-layout-left_right .bbp-media-wrap video,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap img,
+                .module-brand-banner-pro.bbp-layout-right_left .bbp-media-wrap video {
+                    max-height: 260px;
                 }
 
                 .module-brand-banner-pro .bbp-actions {
@@ -1595,7 +1648,7 @@ class Brand_Banner_Pro_Module extends Module_Base {
             <?php
         else :
             ?>
-            <div class="bbp-media-placeholder"><?php esc_html_e( '请添加主视觉图片或视频', 'developer-starter' ); ?></div>
+            <div class="bbp-media-placeholder"><?php esc_html_e( '请添加主视觉图片或视频', 'qiling' ); ?></div>
             <?php
         endif;
         return (string) ob_get_clean();
@@ -1650,13 +1703,13 @@ class Brand_Banner_Pro_Module extends Module_Base {
     private function get_default_buttons() {
         return array(
             array(
-                'text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'developer-starter' ),
+                'text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ),
                 'link'  => '#',
                 'style' => 'primary',
                 'icon'  => '',
             ),
             array(
-                'text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看产品', 'Explore' ) : __( '查看产品', 'developer-starter' ),
+                'text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看产品', 'Explore' ) : __( '查看产品', 'qiling' ),
                 'link'  => '#',
                 'style' => 'outline',
                 'icon'  => '',

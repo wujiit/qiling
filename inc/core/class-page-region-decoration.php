@@ -25,10 +25,10 @@ class Page_Region_Decoration {
      */
     public static function get_regions() {
         return array(
-            'header'        => __( '网站顶部菜单区域', 'developer-starter' ),
-            'footer_main'   => __( '底部关于我们/联系区域', 'developer-starter' ),
-            'footer_friend' => __( '底部友情链接区域（仅首页）', 'developer-starter' ),
-            'footer_bottom' => __( '底部版权/ICP 备案区域', 'developer-starter' ),
+            'header'        => __( '网站顶部菜单区域', 'qiling' ),
+            'footer_main'   => __( '底部关于我们/联系区域', 'qiling' ),
+            'footer_friend' => __( '底部友情链接区域（仅首页）', 'qiling' ),
+            'footer_bottom' => __( '底部版权/ICP 备案区域', 'qiling' ),
         );
     }
 

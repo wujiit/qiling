@@ -92,43 +92,43 @@ class Page_Performance_A11y_Auditor {
         $contrast_pairs = array(
             array(
                 'key'   => 'text_background',
-                'label' => __( '正文 / 页面背景', 'developer-starter' ),
+                'label' => __( '正文 / 页面背景', 'qiling' ),
                 'fg'    => isset( $tokens['text'] ) ? (string) $tokens['text'] : '',
                 'bg'    => isset( $tokens['background'] ) ? (string) $tokens['background'] : '',
             ),
             array(
                 'key'   => 'heading_background',
-                'label' => __( '标题 / 页面背景', 'developer-starter' ),
+                'label' => __( '标题 / 页面背景', 'qiling' ),
                 'fg'    => isset( $tokens['heading'] ) ? (string) $tokens['heading'] : '',
                 'bg'    => isset( $tokens['background'] ) ? (string) $tokens['background'] : '',
             ),
             array(
                 'key'   => 'button_primary',
-                'label' => __( '主按钮文字 / 背景', 'developer-starter' ),
+                'label' => __( '主按钮文字 / 背景', 'qiling' ),
                 'fg'    => isset( $component_styles['button_text'] ) ? (string) $component_styles['button_text'] : '',
                 'bg'    => isset( $component_styles['button_bg'] ) ? (string) $component_styles['button_bg'] : '',
             ),
             array(
                 'key'   => 'form_input',
-                'label' => __( '输入框文字 / 背景', 'developer-starter' ),
+                'label' => __( '输入框文字 / 背景', 'qiling' ),
                 'fg'    => isset( $component_styles['form_input_text'] ) ? (string) $component_styles['form_input_text'] : '',
                 'bg'    => isset( $component_styles['form_input_bg'] ) ? (string) $component_styles['form_input_bg'] : '',
             ),
             array(
                 'key'   => 'dropdown_layer',
-                'label' => __( '下拉层文字 / 背景', 'developer-starter' ),
+                'label' => __( '下拉层文字 / 背景', 'qiling' ),
                 'fg'    => isset( $component_styles['dropdown_link'] ) ? (string) $component_styles['dropdown_link'] : '',
                 'bg'    => isset( $component_styles['dropdown_bg'] ) ? (string) $component_styles['dropdown_bg'] : '',
             ),
             array(
                 'key'   => 'footer_main',
-                'label' => __( '页脚文字 / 页脚背景', 'developer-starter' ),
+                'label' => __( '页脚文字 / 页脚背景', 'qiling' ),
                 'fg'    => isset( $component_styles['footer_text'] ) ? (string) $component_styles['footer_text'] : '',
                 'bg'    => isset( $component_styles['footer_bg'] ) ? (string) $component_styles['footer_bg'] : '',
             ),
             array(
                 'key'   => 'dark_text_background',
-                'label' => __( '暗色正文 / 暗色背景', 'developer-starter' ),
+                'label' => __( '暗色正文 / 暗色背景', 'qiling' ),
                 'fg'    => isset( $tokens['dark_text'] ) ? (string) $tokens['dark_text'] : '',
                 'bg'    => isset( $tokens['dark_bg'] ) ? (string) $tokens['dark_bg'] : '',
             ),
@@ -142,13 +142,13 @@ class Page_Performance_A11y_Auditor {
             $resolved_fg = self::resolve_diagnostic_color_value( $pair['fg'], $variables );
             $ratio       = ( '' !== $resolved_fg && '' !== $resolved_bg ) ? self::contrast_ratio( $resolved_fg, $resolved_bg ) : null;
             $status      = 'unknown';
-            $message     = __( '包含渐变或复杂变量，当前工作台只对纯色对比度做快速检测。', 'developer-starter' );
+            $message     = __( '包含渐变或复杂变量，当前工作台只对纯色对比度做快速检测。', 'qiling' );
 
             if ( null !== $ratio ) {
                 $status  = $ratio >= 4.5 ? 'pass' : 'warning';
                 $message = $ratio >= 4.5
-                    ? __( '对比度通过 WCAG AA 正文建议值。', 'developer-starter' )
-                    : __( '对比度低于 4.5，建议提升文字与背景反差。', 'developer-starter' );
+                    ? __( '对比度通过 WCAG AA 正文建议值。', 'qiling' )
+                    : __( '对比度低于 4.5，建议提升文字与背景反差。', 'qiling' );
                 if ( 'warning' === $status ) {
                     $contrast_warnings++;
                 }
@@ -218,7 +218,7 @@ class Page_Performance_A11y_Auditor {
             $is_variable_driven = self::is_variable_driven_design_value( $light_value ) && self::is_variable_driven_design_value( $dark_value );
             $has_explicit_dark  = '' !== $dark_value && $dark_value !== $light_value;
             $status             = ( $is_variable_driven || $has_explicit_dark ) ? 'pass' : 'warning';
-            $message            = __( '先不用管', 'developer-starter' );
+            $message            = __( '先不用管', 'qiling' );
 
             if ( 'warning' === $status ) {
                 $dark_warnings++;
@@ -251,7 +251,7 @@ class Page_Performance_A11y_Auditor {
                 'label'    => isset( $definition['label'] ) ? (string) $definition['label'] : $style_key,
                 'darkLabel'=> '',
                 'status'   => 'warning',
-                'message'  => __( '先不用管', 'developer-starter' ),
+                'message'  => __( '先不用管', 'qiling' ),
             );
         }
 
@@ -528,7 +528,7 @@ class Page_Performance_A11y_Auditor {
         if ( ! empty( $images ) && empty( $high_priority_images ) && empty( $image_preloads ) ) {
             $issues[] = $this->make_issue(
                 'lcp_image_priority_missing',
-                __( '页面有图片，但没有发现 fetchpriority="high" 或图片 preload；首屏大图建议指定 LCP 优先级。', 'developer-starter' ),
+                __( '页面有图片，但没有发现 fetchpriority="high" 或图片 preload；首屏大图建议指定 LCP 优先级。', 'qiling' ),
                 'warning'
             );
         }
@@ -536,7 +536,7 @@ class Page_Performance_A11y_Auditor {
         if ( count( $high_priority_images ) > 1 ) {
             $issues[] = $this->make_issue(
                 'lcp_multiple_high_priority_images',
-                __( '页面存在多个 fetchpriority="high" 图片，建议只保留最可能成为 LCP 的首屏图片。', 'developer-starter' ),
+                __( '页面存在多个 fetchpriority="high" 图片，建议只保留最可能成为 LCP 的首屏图片。', 'qiling' ),
                 'notice',
                 array( 'count' => count( $high_priority_images ) )
             );
@@ -577,7 +577,7 @@ class Page_Performance_A11y_Auditor {
             if ( ! array_key_exists( 'alt', $image ) || null === $image['alt'] ) {
                 $issues[] = $this->make_issue(
                     'image_alt_missing',
-                    __( '图片缺少 alt 属性；内容图需要描述文字，装饰图也应显式 alt=""。', 'developer-starter' ),
+                    __( '图片缺少 alt 属性；内容图需要描述文字，装饰图也应显式 alt=""。', 'qiling' ),
                     'warning',
                     $context
                 );
@@ -589,7 +589,7 @@ class Page_Performance_A11y_Auditor {
             if ( ( ! $has_width || ! $has_height ) && ! $has_aspect && ! $this->is_vector_image( $src ) ) {
                 $issues[] = $this->make_issue(
                     'image_dimensions_missing',
-                    __( '图片缺少 width/height 或 aspect-ratio，可能造成布局位移。', 'developer-starter' ),
+                    __( '图片缺少 width/height 或 aspect-ratio，可能造成布局位移。', 'qiling' ),
                     'warning',
                     $context
                 );
@@ -598,7 +598,7 @@ class Page_Performance_A11y_Auditor {
             if ( empty( $image['loading'] ) ) {
                 $issues[] = $this->make_issue(
                     'image_loading_missing',
-                    __( '图片缺少 loading 属性；非首屏图片建议 lazy，首屏关键图建议 eager。', 'developer-starter' ),
+                    __( '图片缺少 loading 属性；非首屏图片建议 lazy，首屏关键图建议 eager。', 'qiling' ),
                     'notice',
                     $context
                 );
@@ -607,7 +607,7 @@ class Page_Performance_A11y_Auditor {
             if ( empty( $image['decoding'] ) ) {
                 $issues[] = $this->make_issue(
                     'image_decoding_missing',
-                    __( '图片缺少 decoding="async"，可能阻塞渲染。', 'developer-starter' ),
+                    __( '图片缺少 decoding="async"，可能阻塞渲染。', 'qiling' ),
                     'notice',
                     $context
                 );
@@ -619,7 +619,7 @@ class Page_Performance_A11y_Auditor {
         if ( $raster_count > 0 && 0 === $modern_count ) {
             $issues[] = $this->make_issue(
                 'modern_image_format_missing',
-                __( '页面包含 JPG/PNG 图片，但没有发现 WebP/AVIF 资源或 source，建议为大图提供现代格式。', 'developer-starter' ),
+                __( '页面包含 JPG/PNG 图片，但没有发现 WebP/AVIF 资源或 source，建议为大图提供现代格式。', 'qiling' ),
                 'notice',
                 array( 'raster_images' => $raster_count )
             );
@@ -653,7 +653,7 @@ class Page_Performance_A11y_Auditor {
                 if ( '' === $text ) {
                     $issues[] = $this->make_issue(
                         'heading_empty',
-                        __( '发现空标题标签，可能影响屏幕阅读器和 SEO 结构。', 'developer-starter' ),
+                        __( '发现空标题标签，可能影响屏幕阅读器和 SEO 结构。', 'qiling' ),
                         'warning',
                         array( 'level' => $level )
                     );
@@ -671,19 +671,19 @@ class Page_Performance_A11y_Auditor {
         if ( empty( $headings ) ) {
             $issues[] = $this->make_issue(
                 'heading_none',
-                __( '页面没有标题标签，建议至少有一个清晰的 H1。', 'developer-starter' ),
+                __( '页面没有标题标签，建议至少有一个清晰的 H1。', 'qiling' ),
                 'warning'
             );
         } elseif ( 0 === $h1_count ) {
             $issues[] = $this->make_issue(
                 'h1_missing',
-                __( '页面缺少 H1，建议每个主要页面保留一个主标题。', 'developer-starter' ),
+                __( '页面缺少 H1，建议每个主要页面保留一个主标题。', 'qiling' ),
                 'warning'
             );
         } elseif ( $h1_count > 1 ) {
             $issues[] = $this->make_issue(
                 'h1_multiple',
-                __( '页面存在多个 H1，建议保留一个主 H1，其余改为 H2/H3。', 'developer-starter' ),
+                __( '页面存在多个 H1，建议保留一个主 H1，其余改为 H2/H3。', 'qiling' ),
                 'notice',
                 array( 'count' => $h1_count )
             );
@@ -695,7 +695,7 @@ class Page_Performance_A11y_Auditor {
             if ( $previous_level > 0 && $level > $previous_level + 1 ) {
                 $issues[] = $this->make_issue(
                     'heading_level_skipped',
-                    __( '标题层级出现跳级，建议按 H1 > H2 > H3 顺序组织内容。', 'developer-starter' ),
+                    __( '标题层级出现跳级，建议按 H1 > H2 > H3 顺序组织内容。', 'qiling' ),
                     'notice',
                     array(
                         'from' => $previous_level,
@@ -760,7 +760,7 @@ class Page_Performance_A11y_Auditor {
                 if ( ! $has_name ) {
                     $issues[] = $this->make_issue(
                         'form_control_name_missing',
-                        __( '表单控件缺少可访问名称，请添加 label、aria-label 或 aria-labelledby。', 'developer-starter' ),
+                        __( '表单控件缺少可访问名称，请添加 label、aria-label 或 aria-labelledby。', 'qiling' ),
                         'warning',
                         array(
                             'tag'  => $tag_name,
@@ -783,7 +783,7 @@ class Page_Performance_A11y_Auditor {
                 if ( ! $has_name ) {
                     $issues[] = $this->make_issue(
                         'button_name_missing',
-                        __( '按钮缺少可访问名称，请补充按钮文字或 aria-label。', 'developer-starter' ),
+                        __( '按钮缺少可访问名称，请补充按钮文字或 aria-label。', 'qiling' ),
                         'warning'
                     );
                 }
@@ -807,11 +807,11 @@ class Page_Performance_A11y_Auditor {
         if ( class_exists( '\Developer_Starter\Core\Design_Tokens' ) ) {
             $tokens = Design_Tokens::get_current_tokens();
             $pairs  = array(
-                array( 'text', 'background', __( '正文 / 页面背景', 'developer-starter' ) ),
-                array( 'heading', 'background', __( '标题 / 页面背景', 'developer-starter' ) ),
-                array( 'text_muted', 'background', __( '弱化文字 / 页面背景', 'developer-starter' ) ),
-                array( 'primary', 'background', __( '品牌主色 / 页面背景', 'developer-starter' ) ),
-                array( 'dark_text', 'dark_bg', __( '暗色正文 / 暗色背景', 'developer-starter' ) ),
+                array( 'text', 'background', __( '正文 / 页面背景', 'qiling' ) ),
+                array( 'heading', 'background', __( '标题 / 页面背景', 'qiling' ) ),
+                array( 'text_muted', 'background', __( '弱化文字 / 页面背景', 'qiling' ) ),
+                array( 'primary', 'background', __( '品牌主色 / 页面背景', 'qiling' ) ),
+                array( 'dark_text', 'dark_bg', __( '暗色正文 / 暗色背景', 'qiling' ) ),
             );
 
             foreach ( $pairs as $pair ) {
@@ -824,7 +824,7 @@ class Page_Performance_A11y_Auditor {
                         'design_token_contrast_low',
                         sprintf(
                             /* translators: 1: token pair label, 2: contrast ratio. */
-                            __( '%1$s 对比度为 %2$s，低于 WCAG AA 正文建议值 4.5。', 'developer-starter' ),
+                            __( '%1$s 对比度为 %2$s，低于 WCAG AA 正文建议值 4.5。', 'qiling' ),
                             $pair[2],
                             number_format_i18n( $ratio, 2 )
                         ),
@@ -852,7 +852,7 @@ class Page_Performance_A11y_Auditor {
                 if ( null !== $ratio && $ratio < 4.5 ) {
                     $issues[] = $this->make_issue(
                         'inline_contrast_low',
-                        __( '内联样式文字与背景色对比度偏低，移动端和弱视用户可能难以阅读。', 'developer-starter' ),
+                        __( '内联样式文字与背景色对比度偏低，移动端和弱视用户可能难以阅读。', 'qiling' ),
                         'warning',
                         array(
                             'tag'   => $tag_name,
@@ -886,7 +886,7 @@ class Page_Performance_A11y_Auditor {
                 if ( preg_match( '/[A-Za-z0-9][A-Za-z0-9_\/\.\-:@%?&=#]{31,}/', $text, $long_match ) ) {
                     $issues[] = $this->make_issue(
                         'mobile_long_unbroken_text',
-                        __( '发现较长的连续字符，移动端可能横向溢出；建议允许断行或改短展示文案。', 'developer-starter' ),
+                        __( '发现较长的连续字符，移动端可能横向溢出；建议允许断行或改短展示文案。', 'qiling' ),
                         'notice',
                         array(
                             'tag'  => $tag,
@@ -905,7 +905,7 @@ class Page_Performance_A11y_Auditor {
                 if ( false !== stripos( $style, 'white-space' ) && preg_match( '/white-space\s*:\s*nowrap/i', $style ) ) {
                     $issues[] = $this->make_issue(
                         'mobile_nowrap_text',
-                        __( '发现 white-space: nowrap，窄屏下可能造成文字溢出。', 'developer-starter' ),
+                        __( '发现 white-space: nowrap，窄屏下可能造成文字溢出。', 'qiling' ),
                         'notice',
                         array( 'tag' => $tag_name )
                     );
@@ -914,7 +914,7 @@ class Page_Performance_A11y_Auditor {
                 if ( preg_match( '/(?:^|;)\s*(?:min-)?width\s*:\s*(\d{3,})px/i', $style, $width_match ) && absint( $width_match[1] ) > 390 ) {
                     $issues[] = $this->make_issue(
                         'mobile_fixed_width_large',
-                        __( '发现较大的固定像素宽度，移动端可能出现横向滚动。', 'developer-starter' ),
+                        __( '发现较大的固定像素宽度，移动端可能出现横向滚动。', 'qiling' ),
                         'notice',
                         array(
                             'tag'   => $tag_name,
@@ -961,7 +961,7 @@ class Page_Performance_A11y_Auditor {
         if ( $image_missing_dimensions > 0 ) {
             $issues[] = $this->make_issue(
                 'cls_image_dimensions_missing',
-                __( '存在未声明尺寸的图片，浏览器无法提前预留空间，可能造成 CLS。', 'developer-starter' ),
+                __( '存在未声明尺寸的图片，浏览器无法提前预留空间，可能造成 CLS。', 'qiling' ),
                 'warning',
                 array( 'count' => $image_missing_dimensions )
             );
@@ -984,7 +984,7 @@ class Page_Performance_A11y_Auditor {
         if ( $embed_missing_dimensions > 0 ) {
             $issues[] = $this->make_issue(
                 'cls_embed_dimensions_missing',
-                __( '存在未声明尺寸的 iframe/video，建议设置 width/height 或 aspect-ratio。', 'developer-starter' ),
+                __( '存在未声明尺寸的 iframe/video，建议设置 width/height 或 aspect-ratio。', 'qiling' ),
                 'warning',
                 array( 'count' => $embed_missing_dimensions )
             );
@@ -1442,8 +1442,8 @@ class Page_Performance_A11y_Auditor {
         $text = preg_replace( '/\s+/u', ' ', $text );
         $text = trim( (string) $text );
 
-        if ( function_exists( 'mb_strlen' ) && function_exists( 'mb_substr' ) && mb_strlen( $text ) > $length ) {
-            return mb_substr( $text, 0, $length ) . '...';
+        if ( function_exists( 'mb_strlen' ) && function_exists( 'mb_substr' ) && mb_strlen( $text, 'UTF-8' ) > $length ) {
+            return mb_substr( $text, 0, $length, 'UTF-8' ) . '...';
         }
 
         if ( strlen( $text ) > $length ) {

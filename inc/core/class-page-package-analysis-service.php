@@ -79,7 +79,7 @@ class Page_Package_Analysis_Service {
     public function parse_site_package( $raw_json ) {
         $raw_json = is_string( $raw_json ) ? trim( $raw_json ) : '';
         if ( '' === $raw_json ) {
-            return new \WP_Error( 'empty_json', __( 'JSON 内容为空。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_json', __( 'JSON 内容为空。', 'qiling' ) );
         }
 
         $payload_bytes = strlen( $raw_json );
@@ -88,7 +88,7 @@ class Page_Package_Analysis_Service {
                 'package_too_large',
                 sprintf(
                     /* translators: %s: max size */
-                    __( '当前数据包体积超过安全上限（最大 %s），请拆分后再导入。', 'developer-starter' ),
+                    __( '当前数据包体积超过安全上限（最大 %s），请拆分后再导入。', 'qiling' ),
                     size_format( absint( $this->config['max_package_bytes'] ) )
                 )
             );
@@ -96,12 +96,12 @@ class Page_Package_Analysis_Service {
 
         $decoded = json_decode( $raw_json, true );
         if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-            return new \WP_Error( 'invalid_json', __( 'JSON 格式错误，请检查文件内容。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_json', __( 'JSON 格式错误，请检查文件内容。', 'qiling' ) );
         }
 
         $package_type = isset( $decoded['package_type'] ) ? sanitize_key( (string) $decoded['package_type'] ) : '';
         if ( '' !== $package_type && $package_type !== (string) $this->config['package_type'] ) {
-            return new \WP_Error( 'invalid_package_type', __( '当前文件不是启灵主题支持的多页面数据包。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_package_type', __( '当前文件不是启灵主题支持的多页面数据包。', 'qiling' ) );
         }
 
         $package_version = absint( $this->config['package_version'] );
@@ -111,7 +111,7 @@ class Page_Package_Analysis_Service {
                 'unsupported_package_version',
                 sprintf(
                     /* translators: %d: version number */
-                    __( '当前仅支持 V%d 协议的多页面数据包。', 'developer-starter' ),
+                    __( '当前仅支持 V%d 协议的多页面数据包。', 'qiling' ),
                     $package_version
                 )
             );
@@ -119,18 +119,18 @@ class Page_Package_Analysis_Service {
 
         $theme = isset( $decoded['theme'] ) ? sanitize_key( (string) $decoded['theme'] ) : '';
         if ( '' !== $theme && ! in_array( $theme, $this->page_service->get_supported_theme_identifiers(), true ) ) {
-            return new \WP_Error( 'theme_mismatch', __( '该数据包不是为当前启灵主题构建的。', 'developer-starter' ) );
+            return new \WP_Error( 'theme_mismatch', __( '该数据包不是为当前启灵主题构建的。', 'qiling' ) );
         }
 
         $min_theme_version = isset( $decoded['min_theme_version'] ) ? sanitize_text_field( (string) $decoded['min_theme_version'] ) : '';
-        if ( '' !== $min_theme_version && defined( 'DEVELOPER_STARTER_VERSION' ) && version_compare( (string) DEVELOPER_STARTER_VERSION, $min_theme_version, '<' ) ) {
+        if ( '' !== $min_theme_version && defined( 'QILING_VERSION' ) && version_compare( (string) QILING_VERSION, $min_theme_version, '<' ) ) {
             return new \WP_Error(
                 'theme_version_too_low',
                 sprintf(
                     /* translators: 1: required version 2: current version */
-                    __( '当前主题版本过低。数据包要求 %1$s，当前版本为 %2$s。', 'developer-starter' ),
+                    __( '当前主题版本过低。数据包要求 %1$s，当前版本为 %2$s。', 'qiling' ),
                     $min_theme_version,
-                    (string) DEVELOPER_STARTER_VERSION
+                    (string) QILING_VERSION
                 )
             );
         }
@@ -138,7 +138,7 @@ class Page_Package_Analysis_Service {
         $scope = $this->diagnostics_service->normalize_package_scope( isset( $decoded['scope'] ) ? $decoded['scope'] : 'page' );
         $pages = isset( $decoded['pages'] ) && is_array( $decoded['pages'] ) ? $decoded['pages'] : array();
         if ( empty( $pages ) ) {
-            return new \WP_Error( 'empty_pages', __( '数据包中没有可导入的页面。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_pages', __( '数据包中没有可导入的页面。', 'qiling' ) );
         }
 
         if ( count( $pages ) > absint( $this->config['max_package_pages'] ) ) {
@@ -146,7 +146,7 @@ class Page_Package_Analysis_Service {
                 'too_many_pages',
                 sprintf(
                     /* translators: %d: page limit */
-                    __( '当前数据包包含的页面数超过安全上限（最多 %d 页），请拆分后再导入。', 'developer-starter' ),
+                    __( '当前数据包包含的页面数超过安全上限（最多 %d 页），请拆分后再导入。', 'qiling' ),
                     absint( $this->config['max_package_pages'] )
                 )
             );
@@ -208,7 +208,7 @@ class Page_Package_Analysis_Service {
                 isset( $decoded['package_id'] ) ? $decoded['package_id'] : '',
                 $raw_json
             ),
-            'title'             => isset( $decoded['title'] ) ? sanitize_text_field( (string) $decoded['title'] ) : __( '未命名页面数据包', 'developer-starter' ),
+            'title'             => isset( $decoded['title'] ) ? sanitize_text_field( (string) $decoded['title'] ) : __( '未命名页面数据包', 'qiling' ),
             'theme'             => $theme,
             'min_theme_version' => $min_theme_version,
             'author'            => $this->diagnostics_service->normalize_package_author( isset( $decoded['author'] ) ? $decoded['author'] : '' ),
@@ -277,7 +277,7 @@ class Page_Package_Analysis_Service {
         if ( isset( $page_key_index[ $page_key ] ) ) {
             $report['errors'][] = sprintf(
                 /* translators: %s: page key */
-                __( '页面标识 %s 在数据包中重复。', 'developer-starter' ),
+                __( '页面标识 %s 在数据包中重复。', 'qiling' ),
                 $page_key
             );
             return $report;
@@ -287,7 +287,7 @@ class Page_Package_Analysis_Service {
         if ( isset( $page_slug_index[ $slug ] ) ) {
             $report['errors'][] = sprintf(
                 /* translators: %s: slug */
-                __( '页面 URL 标识 %s 在数据包中重复。', 'developer-starter' ),
+                __( '页面 URL 标识 %s 在数据包中重复。', 'qiling' ),
                 $slug
             );
             return $report;
@@ -297,7 +297,7 @@ class Page_Package_Analysis_Service {
         if ( $this->page_service->is_reserved_page_slug( $slug, $this->get_reserved_page_definitions() ) ) {
             $report['errors'][] = sprintf(
                 /* translators: %s: slug */
-                __( '页面 %s 使用了系统保留 URL，当前数据包不允许导入登录/注册/个人中心等系统页。', 'developer-starter' ),
+                __( '页面 %s 使用了系统保留 URL，当前数据包不允许导入登录/注册/个人中心等系统页。', 'qiling' ),
                 $slug
             );
             return $report;
@@ -306,7 +306,7 @@ class Page_Package_Analysis_Service {
         if ( $this->page_service->is_reserved_page_template( $template, $this->get_reserved_page_definitions() ) ) {
             $report['errors'][] = sprintf(
                 /* translators: %s: template */
-                __( '模板 %s 属于系统保留模板，当前数据包不允许导入。', 'developer-starter' ),
+                __( '模板 %s 属于系统保留模板，当前数据包不允许导入。', 'qiling' ),
                 $template
             );
             return $report;
@@ -315,7 +315,7 @@ class Page_Package_Analysis_Service {
         if ( ! $this->page_service->is_allowed_public_page_template( $template ) ) {
             $report['errors'][] = sprintf(
                 /* translators: %s: template */
-                __( '模板 %s 在当前主题中不存在。', 'developer-starter' ),
+                __( '模板 %s 在当前主题中不存在。', 'qiling' ),
                 $template
             );
             return $report;
@@ -325,7 +325,7 @@ class Page_Package_Analysis_Service {
         if ( $existing_page instanceof \WP_Post ) {
             $report['existing_page_id'] = absint( $existing_page->ID );
             if ( $this->page_service->is_reserved_page_template( get_post_meta( $existing_page->ID, '_wp_page_template', true ), $this->get_reserved_page_definitions() ) ) {
-                $report['errors'][] = __( '该 URL 已被系统保留页面占用，当前数据包不会覆盖它。', 'developer-starter' );
+                $report['errors'][] = __( '该 URL 已被系统保留页面占用，当前数据包不会覆盖它。', 'qiling' );
                 return $report;
             }
         }
@@ -339,18 +339,18 @@ class Page_Package_Analysis_Service {
                 $target_slug          = $this->generate_unique_page_slug( $slug );
                 $report['warnings'][] = sprintf(
                     /* translators: %s: slug */
-                    __( '该页面 URL 已存在，导入时将自动改为新 URL %s 后创建副本。', 'developer-starter' ),
+                    __( '该页面 URL 已存在，导入时将自动改为新 URL %s 后创建副本。', 'qiling' ),
                     $target_slug
                 );
             } elseif ( $this->config['conflict_strategy_update'] === $conflict_strategy && $this->can_update_existing_package_page( $existing_page->ID, $package_id, $page_key ) ) {
                 $prepared_action      = 'update';
                 $target_slug          = $existing_page->post_name;
-                $report['warnings'][] = __( '已识别到同一数据包的历史页面，导入时将执行安全更新。', 'developer-starter' );
+                $report['warnings'][] = __( '已识别到同一数据包的历史页面，导入时将执行安全更新。', 'qiling' );
             } else {
                 $report['action']   = 'skip';
                 $report['warnings'][] = $this->config['conflict_strategy_update'] === $conflict_strategy
-                    ? __( '该页面 URL 已存在，但不是当前数据包的历史页面，已按安全策略跳过。', 'developer-starter' )
-                    : __( '该页面 URL 已存在，将按当前策略跳过。', 'developer-starter' );
+                    ? __( '该页面 URL 已存在，但不是当前数据包的历史页面，已按安全策略跳过。', 'qiling' )
+                    : __( '该页面 URL 已存在，将按当前策略跳过。', 'qiling' );
                 $report['prepared_page'] = array(
                     'page_key'         => $page_key,
                     'existing_page_id' => absint( $existing_page->ID ),
@@ -412,7 +412,7 @@ class Page_Package_Analysis_Service {
                 'invalid_page_entry',
                 sprintf(
                     /* translators: %d: page index */
-                    __( '第 %d 个页面条目格式无效。', 'developer-starter' ),
+                    __( '第 %d 个页面条目格式无效。', 'qiling' ),
                     $index + 1
                 )
             );
@@ -428,7 +428,7 @@ class Page_Package_Analysis_Service {
         if ( '' === $title ) {
             $title = sprintf(
                 /* translators: %d: page number */
-                __( '导入页面 %d', 'developer-starter' ),
+                __( '导入页面 %d', 'qiling' ),
                 $index + 1
             );
         }

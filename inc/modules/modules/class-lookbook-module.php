@@ -18,7 +18,7 @@ class Lookbook_Module extends Module_Base {
     public function __construct() {
         $this->category = 'business';
         $this->icon = 'dashicons-groups'; // 使用群组图标代表搭配
-        $this->description = __( '展示模特搭配或场景组合，点击弹出详情购买', 'developer-starter' );
+        $this->description = __( '展示模特搭配或场景组合，点击弹出详情购买', 'qiling' );
     }
 
     public function get_id() {
@@ -26,117 +26,117 @@ class Lookbook_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '搭配画册', 'developer-starter' );
+        return __( '搭配画册', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'lookbook_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => __( '当季精选搭配', 'developer-starter' ) ),
+            array( 'id' => 'lookbook_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => __( '当季精选搭配', 'qiling' ) ),
             
             // 搭配画册中继器
             array(
                 'id' => 'lookbook_items',
-                'label' => __( '搭配列表', 'developer-starter' ),
+                'label' => __( '搭配列表', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
                     // Cover
-                    array( 'id' => 'cover_image', 'label' => __( '封面/模特图 (大图)', 'developer-starter' ), 'type' => 'image', 'description' => __( '如果未上传视频，则显示此图。', 'developer-starter' ) ),
-                    array( 'id' => 'video_360', 'label' => __( '360°展示视频 (MP4链接)', 'developer-starter' ), 'type' => 'text', 'description' => __( '直接输入视频链接(MP4格式)。前台将自动循环播放。', 'developer-starter' ) ),
-                    array( 'id' => 'name', 'label' => __( '搭配名称/编号', 'developer-starter' ), 'type' => 'text', 'default' => 'LOOK 01' ),
-                    array( 'id' => 'desc', 'label' => __( '搭配描述', 'developer-starter' ), 'type' => 'textarea', 'rows' => 2 ),
-                    array( 'id' => 'btn_text', 'label' => __( '按钮文案', 'developer-starter' ), 'type' => 'text', 'default' => __( '查看详情', 'developer-starter' ), 'description' => __( '默认为“查看详情”', 'developer-starter' ) ),
+                    array( 'id' => 'cover_image', 'label' => __( '封面/模特图 (大图)', 'qiling' ), 'type' => 'image', 'description' => __( '如果未上传视频，则显示此图。', 'qiling' ) ),
+                    array( 'id' => 'video_360', 'label' => __( '360°展示视频 (MP4链接)', 'qiling' ), 'type' => 'text', 'description' => __( '直接输入视频链接(MP4格式)。前台将自动循环播放。', 'qiling' ) ),
+                    array( 'id' => 'name', 'label' => __( '搭配名称/编号', 'qiling' ), 'type' => 'text', 'default' => 'LOOK 01' ),
+                    array( 'id' => 'desc', 'label' => __( '搭配描述', 'qiling' ), 'type' => 'textarea', 'rows' => 2 ),
+                    array( 'id' => 'btn_text', 'label' => __( '按钮文案', 'qiling' ), 'type' => 'text', 'default' => __( '查看详情', 'qiling' ), 'description' => __( '默认为“查看详情”', 'qiling' ) ),
                     
                     // 关联单品配置（最多支持 4 组单品信息）
                     
-                    array( 'type' => 'header', 'label' => __( '单品 1', 'developer-starter' ) ),
-                    array( 'id' => 'item_1_img', 'label' => __( '单品1 图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_1_title', 'label' => __( '单品1 名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_1_price', 'label' => __( '单品1 价格', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_1_link', 'label' => __( '单品1 链接', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_1_spec_name', 'label' => __( '单品1 主规格名', 'developer-starter' ), 'type' => 'text', 'description' => __( '例如：默认同款 / 黑色', 'developer-starter' ) ),
-                    array( 'id' => 'item_1_spec_2_name', 'label' => __( '单品1 规格2名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_1_spec_2_img', 'label' => __( '单品1 规格2图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_1_spec_3_name', 'label' => __( '单品1 规格3名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_1_spec_3_img', 'label' => __( '单品1 规格3图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_1_btn_bg', 'label' => __( '单品1 按钮背景色', 'developer-starter' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)', 'description' => __( '支持颜色代码或渐变色(如 linear-gradient(...))', 'developer-starter' ) ),
-                    $this->get_button_border_color_field( 'item_1_btn_border', __( '单品1 按钮边框颜色', 'developer-starter' ) ),
+                    array( 'type' => 'header', 'label' => __( '单品 1', 'qiling' ) ),
+                    array( 'id' => 'item_1_img', 'label' => __( '单品1 图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_1_title', 'label' => __( '单品1 名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_1_price', 'label' => __( '单品1 价格', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_1_link', 'label' => __( '单品1 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_1_spec_name', 'label' => __( '单品1 主规格名', 'qiling' ), 'type' => 'text', 'description' => __( '例如：默认同款 / 黑色', 'qiling' ) ),
+                    array( 'id' => 'item_1_spec_2_name', 'label' => __( '单品1 规格2名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_1_spec_2_img', 'label' => __( '单品1 规格2图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_1_spec_3_name', 'label' => __( '单品1 规格3名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_1_spec_3_img', 'label' => __( '单品1 规格3图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_1_btn_bg', 'label' => __( '单品1 按钮背景色', 'qiling' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)', 'description' => __( '支持颜色代码或渐变色(如 linear-gradient(...))', 'qiling' ) ),
+                    $this->get_button_border_color_field( 'item_1_btn_border', __( '单品1 按钮边框颜色', 'qiling' ) ),
                     
-                    array( 'type' => 'header', 'label' => __( '单品 2', 'developer-starter' ) ),
-                    array( 'id' => 'item_2_img', 'label' => __( '单品2 图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_2_title', 'label' => __( '单品2 名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_2_price', 'label' => __( '单品2 价格', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_2_link', 'label' => __( '单品2 链接', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_2_spec_name', 'label' => __( '单品2 主规格名', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_2_spec_2_name', 'label' => __( '单品2 规格2名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_2_spec_2_img', 'label' => __( '单品2 规格2图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_2_spec_3_name', 'label' => __( '单品2 规格3名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_2_spec_3_img', 'label' => __( '单品2 规格3图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_2_btn_bg', 'label' => __( '单品2 按钮背景色', 'developer-starter' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
-                    $this->get_button_border_color_field( 'item_2_btn_border', __( '单品2 按钮边框颜色', 'developer-starter' ) ),
+                    array( 'type' => 'header', 'label' => __( '单品 2', 'qiling' ) ),
+                    array( 'id' => 'item_2_img', 'label' => __( '单品2 图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_2_title', 'label' => __( '单品2 名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_price', 'label' => __( '单品2 价格', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_link', 'label' => __( '单品2 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_spec_name', 'label' => __( '单品2 主规格名', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_spec_2_name', 'label' => __( '单品2 规格2名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_spec_2_img', 'label' => __( '单品2 规格2图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_2_spec_3_name', 'label' => __( '单品2 规格3名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_spec_3_img', 'label' => __( '单品2 规格3图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_2_btn_bg', 'label' => __( '单品2 按钮背景色', 'qiling' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
+                    $this->get_button_border_color_field( 'item_2_btn_border', __( '单品2 按钮边框颜色', 'qiling' ) ),
                     
-                    array( 'type' => 'header', 'label' => __( '单品 3', 'developer-starter' ) ),
-                    array( 'id' => 'item_3_img', 'label' => __( '单品3 图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_3_title', 'label' => __( '单品3 名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_3_price', 'label' => __( '单品3 价格', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_3_link', 'label' => __( '单品3 链接', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_3_spec_name', 'label' => __( '单品3 主规格名', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_3_spec_2_name', 'label' => __( '单品3 规格2名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_3_spec_2_img', 'label' => __( '单品3 规格2图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_3_spec_3_name', 'label' => __( '单品3 规格3名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_3_spec_3_img', 'label' => __( '单品3 规格3图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_3_btn_bg', 'label' => __( '单品3 按钮背景色', 'developer-starter' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
-                    $this->get_button_border_color_field( 'item_3_btn_border', __( '单品3 按钮边框颜色', 'developer-starter' ) ),
+                    array( 'type' => 'header', 'label' => __( '单品 3', 'qiling' ) ),
+                    array( 'id' => 'item_3_img', 'label' => __( '单品3 图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_3_title', 'label' => __( '单品3 名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_price', 'label' => __( '单品3 价格', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_link', 'label' => __( '单品3 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_spec_name', 'label' => __( '单品3 主规格名', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_spec_2_name', 'label' => __( '单品3 规格2名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_spec_2_img', 'label' => __( '单品3 规格2图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_3_spec_3_name', 'label' => __( '单品3 规格3名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_spec_3_img', 'label' => __( '单品3 规格3图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_3_btn_bg', 'label' => __( '单品3 按钮背景色', 'qiling' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
+                    $this->get_button_border_color_field( 'item_3_btn_border', __( '单品3 按钮边框颜色', 'qiling' ) ),
                     
-                    array( 'type' => 'header', 'label' => __( '单品 4', 'developer-starter' ) ),
-                    array( 'id' => 'item_4_img', 'label' => __( '单品4 图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_4_title', 'label' => __( '单品4 名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_4_price', 'label' => __( '单品4 价格', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_4_link', 'label' => __( '单品4 链接', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_4_spec_name', 'label' => __( '单品4 主规格名', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_4_spec_2_name', 'label' => __( '单品4 规格2名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_4_spec_2_img', 'label' => __( '单品4 规格2图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_4_spec_3_name', 'label' => __( '单品4 规格3名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_4_spec_3_img', 'label' => __( '单品4 规格3图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_4_btn_bg', 'label' => __( '单品4 按钮背景色', 'developer-starter' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
-                    $this->get_button_border_color_field( 'item_4_btn_border', __( '单品4 按钮边框颜色', 'developer-starter' ) ),
+                    array( 'type' => 'header', 'label' => __( '单品 4', 'qiling' ) ),
+                    array( 'id' => 'item_4_img', 'label' => __( '单品4 图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_4_title', 'label' => __( '单品4 名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_price', 'label' => __( '单品4 价格', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_link', 'label' => __( '单品4 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_spec_name', 'label' => __( '单品4 主规格名', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_spec_2_name', 'label' => __( '单品4 规格2名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_spec_2_img', 'label' => __( '单品4 规格2图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_4_spec_3_name', 'label' => __( '单品4 规格3名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_spec_3_img', 'label' => __( '单品4 规格3图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_4_btn_bg', 'label' => __( '单品4 按钮背景色', 'qiling' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
+                    $this->get_button_border_color_field( 'item_4_btn_border', __( '单品4 按钮边框颜色', 'qiling' ) ),
                     
-                    array( 'type' => 'header', 'label' => __( '单品 5', 'developer-starter' ) ),
-                    array( 'id' => 'item_5_img', 'label' => __( '单品5 图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_5_title', 'label' => __( '单品5 名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_5_price', 'label' => __( '单品5 价格', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_5_link', 'label' => __( '单品5 链接', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_5_spec_name', 'label' => __( '单品5 主规格名', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_5_spec_2_name', 'label' => __( '单品5 规格2名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_5_spec_2_img', 'label' => __( '单品5 规格2图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_5_spec_3_name', 'label' => __( '单品5 规格3名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'item_5_spec_3_img', 'label' => __( '单品5 规格3图片', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'item_5_btn_bg', 'label' => __( '单品5 按钮背景色', 'developer-starter' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
-                    $this->get_button_border_color_field( 'item_5_btn_border', __( '单品5 按钮边框颜色', 'developer-starter' ) ),
+                    array( 'type' => 'header', 'label' => __( '单品 5', 'qiling' ) ),
+                    array( 'id' => 'item_5_img', 'label' => __( '单品5 图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_5_title', 'label' => __( '单品5 名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_price', 'label' => __( '单品5 价格', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_link', 'label' => __( '单品5 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_spec_name', 'label' => __( '单品5 主规格名', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_spec_2_name', 'label' => __( '单品5 规格2名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_spec_2_img', 'label' => __( '单品5 规格2图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_5_spec_3_name', 'label' => __( '单品5 规格3名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_spec_3_img', 'label' => __( '单品5 规格3图片', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'item_5_btn_bg', 'label' => __( '单品5 按钮背景色', 'qiling' ), 'type' => 'text', 'default' => 'var(--qiling-color-000000)' ),
+                    $this->get_button_border_color_field( 'item_5_btn_border', __( '单品5 按钮边框颜色', 'qiling' ) ),
                 ),
                 'default_items' => array(
                      array( 
-                         'name' => __( '都市行者', 'developer-starter' ), 
-                         'desc' => __( '适合日常通勤的舒适穿搭', 'developer-starter' ),
-                         'item_1_title' => __( '纯棉T恤', 'developer-starter' ), 'item_1_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 99 ) : '¥99',
-                         'item_2_title' => __( '休闲长裤', 'developer-starter' ), 'item_2_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 199 ) : '¥199',
+                         'name' => __( '都市行者', 'qiling' ), 
+                         'desc' => __( '适合日常通勤的舒适穿搭', 'qiling' ),
+                         'item_1_title' => __( '纯棉T恤', 'qiling' ), 'item_1_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 99 ) : '¥99',
+                         'item_2_title' => __( '休闲长裤', 'qiling' ), 'item_2_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 199 ) : '¥199',
                      ),
                 ),
             ),
             
-            array( 'id' => 'lookbook_columns', 'label' => __( '每行显示', 'developer-starter' ), 'type' => 'select', 'options' => array( '2' => __( '2列', 'developer-starter' ), '3' => __( '3列', 'developer-starter' ) ), 'default' => '3' ),
+            array( 'id' => 'lookbook_columns', 'label' => __( '每行显示', 'qiling' ), 'type' => 'select', 'options' => array( '2' => __( '2列', 'qiling' ), '3' => __( '3列', 'qiling' ) ), 'default' => '3' ),
             
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
-                'options' => array( 'yes' => __( '开启', 'developer-starter' ), 'no' => __( '关闭', 'developer-starter' ) ),
+                'options' => array( 'yes' => __( '开启', 'qiling' ), 'no' => __( '关闭', 'qiling' ) ),
                 'default' => 'yes',
-                'description' => __( '开启后，搭配卡片将依次延迟显示', 'developer-starter' ),
+                'description' => __( '开启后，搭配卡片将依次延迟显示', 'qiling' ),
             ),
             
-            array( 'id' => 'module_bg_color', 'label' => __( '背景颜色', 'developer-starter' ), 'type' => 'color', 'default' => 'var(--color-neutral-50)' ),
-            array( 'id' => 'module_padding_top', 'label' => __( '上边距', 'developer-starter' ), 'type' => 'text', 'default' => '80px' ),
-            array( 'id' => 'module_padding_bottom', 'label' => __( '下边距', 'developer-starter' ), 'type' => 'text', 'default' => '80px' ),
+            array( 'id' => 'module_bg_color', 'label' => __( '背景颜色', 'qiling' ), 'type' => 'color', 'default' => 'var(--color-neutral-50)' ),
+            array( 'id' => 'module_padding_top', 'label' => __( '上边距', 'qiling' ), 'type' => 'text', 'default' => '80px' ),
+            array( 'id' => 'module_padding_bottom', 'label' => __( '下边距', 'qiling' ), 'type' => 'text', 'default' => '80px' ),
         );
     }
 
@@ -170,7 +170,7 @@ class Lookbook_Module extends Module_Base {
                             $name = isset( $item['name'] ) ? sanitize_text_field( (string) $item['name'] ) : '';
                             $desc = isset( $item['desc'] ) ? sanitize_textarea_field( (string) $item['desc'] ) : '';
                             $btn_text_raw = isset( $item['btn_text'] ) ? sanitize_text_field( (string) $item['btn_text'] ) : '';
-                            $btn_text = $btn_text_raw !== '' ? $btn_text_raw : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'View Details' ) : __( '查看详情', 'developer-starter' ) );
+                            $btn_text = $btn_text_raw !== '' ? $btn_text_raw : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'View Details' ) : __( '查看详情', 'qiling' ) );
                             $video = isset( $item['video_360'] ) ? esc_url_raw( (string) $item['video_360'] ) : '';
                             
                             // 收集条目数据用于 JSON 输出
@@ -186,7 +186,7 @@ class Lookbook_Module extends Module_Base {
                                     $main_spec_name = isset( $item["item_{$i}_spec_name"] ) && ! empty( $item["item_{$i}_spec_name"] ) ? sanitize_text_field( (string) $item["item_{$i}_spec_name"] ) : '';
                                     if ( ! empty( $item_image ) ) {
                                          $specs[] = array(
-                                             'name' => $main_spec_name ? $main_spec_name : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '默认', 'Default' ) : __( '默认', 'developer-starter' ) ),
+                                             'name' => $main_spec_name ? $main_spec_name : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '默认', 'Default' ) : __( '默认', 'qiling' ) ),
                                              'img'  => $item_image,
                                              'is_main' => true
                                          );
@@ -390,7 +390,7 @@ class Lookbook_Module extends Module_Base {
                 item.specs.forEach(function(spec, index) {
                     var specBtn = document.createElement('span');
                     specBtn.className = 'lb-spec-item' + (index === 0 ? ' active' : '');
-                    specBtn.textContent = spec && spec.name ? String(spec.name) : ('<?php echo esc_js( __( '规格', 'developer-starter' ) ); ?>' + (index + 1));
+                    specBtn.textContent = spec && spec.name ? String(spec.name) : ('<?php echo esc_js( __( '规格', 'qiling' ) ); ?>' + (index + 1));
                     specBtn.setAttribute('data-img', lbSafeMediaUrl(spec && spec.img ? spec.img : ''));
                     specBtn.addEventListener('click', function(event) {
                         lbSwitchSpec(specBtn, event);
@@ -491,7 +491,7 @@ class Lookbook_Module extends Module_Base {
 
             var btnText = (data.btn_text && String(data.btn_text).trim() !== '')
                 ? String(data.btn_text)
-                : '<?php echo esc_js( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'View Details' ) : __( '查看详情', 'developer-starter' ) ); ?>';
+                : '<?php echo esc_js( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'View Details' ) : __( '查看详情', 'qiling' ) ); ?>';
 
             if (data.items && data.items.length > 0) {
                 data.items.forEach(function(item) {
@@ -500,7 +500,7 @@ class Lookbook_Module extends Module_Base {
             } else {
                 var empty = document.createElement('p');
                 empty.className = 'text-gray-500';
-                empty.textContent = '<?php echo esc_js( __( '暂无关联单品', 'developer-starter' ) ); ?>';
+                empty.textContent = '<?php echo esc_js( __( '暂无关联单品', 'qiling' ) ); ?>';
                 itemsContainer.appendChild(empty);
             }
 

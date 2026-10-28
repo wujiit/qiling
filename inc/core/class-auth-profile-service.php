@@ -49,7 +49,7 @@ class Auth_Profile_Service {
      */
     public function get_already_logged_in_payload() {
         return array(
-            'message'  => __( '您已经登录，正在刷新页面...', 'developer-starter' ),
+            'message'  => __( '您已经登录，正在刷新页面...', 'qiling' ),
             'redirect' => home_url(),
         );
     }
@@ -89,7 +89,7 @@ class Auth_Profile_Service {
      */
     public function get_refresh_nonce_payload() {
         return array(
-            'message'    => __( 'Token 已刷新', 'developer-starter' ),
+            'message'    => __( 'Token 已刷新', 'qiling' ),
             'auth_nonce' => wp_create_nonce( 'developer_starter_auth' ),
             'sms_nonce'  => wp_create_nonce( 'sms_nonce' ),
         );
@@ -104,26 +104,26 @@ class Auth_Profile_Service {
      */
     public function handle_avatar_upload( $request, $files ) {
         if ( ! is_user_logged_in() ) {
-            return new \WP_Error( 'avatar_auth_required', __( '请先登录', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_auth_required', __( '请先登录', 'qiling' ) );
         }
 
         if ( ! $this->get_option( 'user_avatar_upload_enable', '' ) ) {
-            return new \WP_Error( 'avatar_upload_disabled', __( '头像上传功能未启用', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_upload_disabled', __( '头像上传功能未启用', 'qiling' ) );
         }
 
         $nonce = isset( $request['nonce'] ) ? (string) $request['nonce'] : '';
         if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'developer_starter_avatar_upload' ) ) {
-            return new \WP_Error( 'avatar_nonce_invalid', __( '安全验证失败，请刷新页面重试', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_nonce_invalid', __( '安全验证失败，请刷新页面重试', 'qiling' ) );
         }
 
         if ( empty( $files['avatar'] ) || ! is_array( $files['avatar'] ) ) {
-            return new \WP_Error( 'avatar_file_missing', __( '文件上传失败，请重试', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_file_missing', __( '文件上传失败，请重试', 'qiling' ) );
         }
 
         $file = $files['avatar'];
         $error_code = isset( $file['error'] ) ? (int) $file['error'] : UPLOAD_ERR_NO_FILE;
         if ( UPLOAD_ERR_OK !== $error_code ) {
-            return new \WP_Error( 'avatar_file_upload_failed', __( '文件上传失败，请重试', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_file_upload_failed', __( '文件上传失败，请重试', 'qiling' ) );
         }
 
         $allowed_types = array( 'image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/avif' );
@@ -132,7 +132,7 @@ class Auth_Profile_Service {
         $image_size = ( '' !== $tmp_name && file_exists( $tmp_name ) ) ? getimagesize( $tmp_name ) : false;
 
         if ( false === $image_size ) {
-            return new \WP_Error( 'avatar_image_invalid', __( '上传的文件不是有效的图片', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_image_invalid', __( '上传的文件不是有效的图片', 'qiling' ) );
         }
 
         $image_mime = isset( $image_size['mime'] ) ? strtolower( (string) $image_size['mime'] ) : '';
@@ -141,35 +141,35 @@ class Auth_Profile_Service {
         }
 
         if ( ! in_array( $file_type, $allowed_types, true ) ) {
-            return new \WP_Error( 'avatar_type_invalid', __( '只允许上传 JPG、PNG、GIF、WebP、AVIF 格式的图片', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_type_invalid', __( '只允许上传 JPG、PNG、GIF、WebP、AVIF 格式的图片', 'qiling' ) );
         }
 
         if ( '' !== $image_mime && '' !== $file_type && $image_mime !== $file_type ) {
-            return new \WP_Error( 'avatar_mime_mismatch', __( '文件类型验证失败', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_mime_mismatch', __( '文件类型验证失败', 'qiling' ) );
         }
 
         $max_width = 4096;
         $max_height = 4096;
         if ( $image_size[0] > $max_width || $image_size[1] > $max_height ) {
-            return new \WP_Error( 'avatar_dimensions_exceeded', sprintf( __( '图片尺寸不能超过 %dx%d 像素', 'developer-starter' ), $max_width, $max_height ) );
+            return new \WP_Error( 'avatar_dimensions_exceeded', sprintf( __( '图片尺寸不能超过 %dx%d 像素', 'qiling' ), $max_width, $max_height ) );
         }
 
         $min_size = 10;
         if ( $image_size[0] < $min_size || $image_size[1] < $min_size ) {
-            return new \WP_Error( 'avatar_dimensions_too_small', __( '图片尺寸过小', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_dimensions_too_small', __( '图片尺寸过小', 'qiling' ) );
         }
 
         $max_size = 2 * 1024 * 1024;
         $file_size = isset( $file['size'] ) ? (int) $file['size'] : 0;
         if ( $file_size > $max_size ) {
-            return new \WP_Error( 'avatar_size_exceeded', __( '图片大小不能超过 2MB', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_size_exceeded', __( '图片大小不能超过 2MB', 'qiling' ) );
         }
 
         $user_id = get_current_user_id();
         $rate_key = 'ds_avatar_upload_' . $user_id;
         $upload_count = (int) get_transient( $rate_key );
         if ( $upload_count >= 3 ) {
-            return new \WP_Error( 'avatar_rate_limited', __( '上传过于频繁，请稍后再试', 'developer-starter' ) );
+            return new \WP_Error( 'avatar_rate_limited', __( '上传过于频繁，请稍后再试', 'qiling' ) );
         }
         set_transient( $rate_key, $upload_count + 1, 60 );
 
@@ -202,7 +202,7 @@ class Auth_Profile_Service {
         if ( is_wp_error( $attachment_id ) ) {
             return new \WP_Error(
                 'avatar_upload_failed',
-                sprintf( __( '头像上传失败：%s', 'developer-starter' ), $attachment_id->get_error_message() )
+                sprintf( __( '头像上传失败：%s', 'qiling' ), $attachment_id->get_error_message() )
             );
         }
 
@@ -216,7 +216,7 @@ class Auth_Profile_Service {
         update_user_meta( $user_id, 'custom_avatar_attachment_id', $attachment_id );
 
         return array(
-            'message'    => __( '头像上传成功！', 'developer-starter' ),
+            'message'    => __( '头像上传成功！', 'qiling' ),
             'avatar_url' => (string) $avatar_url,
         );
     }

@@ -31,7 +31,7 @@ class Promotion_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'marketing';
         $this->icon        = 'dashicons-tag';
-        $this->description = __( '展示限时优惠和特价促销活动', 'developer-starter' );
+        $this->description = __( '展示限时优惠和特价促销活动', 'qiling' );
     }
 
     /**
@@ -49,7 +49,7 @@ class Promotion_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '特价促销', 'developer-starter' );
+        return __( '特价促销', 'qiling' );
     }
 
     /**
@@ -65,30 +65,30 @@ class Promotion_Module extends Module_Base {
             array(
                 'id'      => 'ql_promo_title',
                 'type'    => 'text',
-                'label'   => __( '活动标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时特惠', 'Limited-Time Deals' ) : __( '限时特惠', 'developer-starter' ),
+                'label'   => __( '活动标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时特惠', 'Limited-Time Deals' ) : __( '限时特惠', 'qiling' ),
             ),
             array(
                 'id'      => 'ql_promo_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2.5rem',
             ),
             array(
                 'id'    => 'ql_promo_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'      => 'ql_promo_subtitle',
                 'type'    => 'text',
-                'label'   => __( '活动副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '错过再等一年，限时抢购中', 'Seasonal offers are live now with limited availability.' ) : __( '错过再等一年，限时抢购中', 'developer-starter' ),
+                'label'   => __( '活动副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '错过再等一年，限时抢购中', 'Seasonal offers are live now with limited availability.' ) : __( '错过再等一年，限时抢购中', 'qiling' ),
             ),
             array(
                 'id'    => 'ql_promo_subtitle_color',
                 'type'  => 'color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
             ),
 
             // ========================================
@@ -97,30 +97,30 @@ class Promotion_Module extends Module_Base {
             array(
                 'id'      => 'ql_promo_show_countdown',
                 'type'    => 'select',
-                'label'   => __( '显示倒计时', 'developer-starter' ),
+                'label'   => __( '显示倒计时', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'    => 'ql_promo_end_date',
                 'type'  => 'date',
-                'label' => __( '活动截止日期', 'developer-starter' ),
-                'desc'  => __( '格式: YYYY-MM-DD，如 2024-12-31', 'developer-starter' ),
+                'label' => __( '活动截止日期', 'qiling' ),
+                'desc'  => __( '格式: YYYY-MM-DD，如 2024-12-31', 'qiling' ),
             ),
             array(
                 'id'    => 'ql_promo_end_time',
                 'type'  => 'text',
-                'label' => __( '活动截止时间', 'developer-starter' ),
-                'desc'  => __( '格式: HH:MM，如 23:59（24小时制）', 'developer-starter' ),
+                'label' => __( '活动截止时间', 'qiling' ),
+                'desc'  => __( '格式: HH:MM，如 23:59（24小时制）', 'qiling' ),
             ),
             array(
                 'id'      => 'ql_promo_expired_text',
                 'type'    => 'text',
-                'label'   => __( '活动结束提示', 'developer-starter' ),
-                'default' => __( '活动已结束', 'developer-starter' ),
+                'label'   => __( '活动结束提示', 'qiling' ),
+                'default' => __( '活动已结束', 'qiling' ),
             ),
 
             // ========================================
@@ -129,25 +129,25 @@ class Promotion_Module extends Module_Base {
             array(
                 'id'      => 'ql_promo_layout',
                 'type'    => 'select',
-                'label'   => __( '布局样式', 'developer-starter' ),
+                'label'   => __( '布局样式', 'qiling' ),
                 'options' => array(
-                    'banner'   => __( '横幅式', 'developer-starter' ),
-                    'cards'    => __( '卡片式', 'developer-starter' ),
-                    'fullscreen' => __( '全屏式', 'developer-starter' ),
+                    'banner'   => __( '横幅式', 'qiling' ),
+                    'cards'    => __( '卡片式', 'qiling' ),
+                    'fullscreen' => __( '全屏式', 'qiling' ),
                 ),
                 'default' => 'banner',
             ),
             array(
                 'id'      => 'ql_promo_columns',
                 'type'    => 'select',
-                'label'   => __( '卡片列数', 'developer-starter' ),
+                'label'   => __( '卡片列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
-                'desc'    => __( '仅卡片式布局有效', 'developer-starter' ),
+                'desc'    => __( '仅卡片式布局有效', 'qiling' ),
             ),
 
             // ========================================
@@ -156,91 +156,91 @@ class Promotion_Module extends Module_Base {
             array(
                 'id'     => 'ql_promo_items',
                 'type'   => 'repeater',
-                'label'  => __( '促销产品列表', 'developer-starter' ),
+                'label'  => __( '促销产品列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '产品图片', 'developer-starter' ),
+                        'label' => __( '产品图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
-                        'label' => __( '产品名称', 'developer-starter' ),
+                        'label' => __( '产品名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'textarea',
-                        'label' => __( '简短描述', 'developer-starter' ),
+                        'label' => __( '简短描述', 'qiling' ),
                     ),
                     array(
                         'id'    => 'original_price',
                         'type'  => 'text',
-                        'label' => __( '原价', 'developer-starter' ),
-                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 999 ) : __( '如: ¥999', 'developer-starter' ),
+                        'label' => __( '原价', 'qiling' ),
+                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 999 ) : __( '如: ¥999', 'qiling' ),
                     ),
                     array(
                         'id'    => 'sale_price',
                         'type'  => 'text',
-                        'label' => __( '促销价', 'developer-starter' ),
-                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 499 ) : __( '如: ¥499', 'developer-starter' ),
+                        'label' => __( '促销价', 'qiling' ),
+                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 499 ) : __( '如: ¥499', 'qiling' ),
                     ),
                     array(
                         'id'      => 'badge',
                         'type'    => 'text',
-                        'label'   => __( '折扣标签', 'developer-starter' ),
-                        'desc'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '如: 限时5折、立减200、买一送一', 'Examples: 50% Off, Save $200, Buy 1 Get 1' ) : __( '如: 限时5折、立减200、买一送一', 'developer-starter' ),
+                        'label'   => __( '折扣标签', 'qiling' ),
+                        'desc'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '如: 限时5折、立减200、买一送一', 'Examples: 50% Off, Save $200, Buy 1 Get 1' ) : __( '如: 限时5折、立减200、买一送一', 'qiling' ),
                     ),
                     array(
                         'id'      => 'badge_color',
                         'type'    => 'color',
-                        'label'   => __( '标签颜色', 'developer-starter' ),
+                        'label'   => __( '标签颜色', 'qiling' ),
                         'default' => '',
                     ),
                     array(
                         'id'      => 'btn_text',
                         'type'    => 'text',
-                        'label'   => __( '按钮文字', 'developer-starter' ),
-                        'default' => __( '立即抢购', 'developer-starter' ),
+                        'label'   => __( '按钮文字', 'qiling' ),
+                        'default' => __( '立即抢购', 'qiling' ),
                     ),
                     array(
                         'id'    => 'btn_link',
                         'type'  => 'text',
-                        'label' => __( '按钮链接', 'developer-starter' ),
+                        'label' => __( '按钮链接', 'qiling' ),
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华海景套房', 'Ocean View Suite' ) : __( '豪华海景套房', 'developer-starter' ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '270°无敌海景，私人阳台', '270-degree ocean views with a private terrace.' ) : __( '270°无敌海景，私人阳台', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华海景套房', 'Ocean View Suite' ) : __( '豪华海景套房', 'qiling' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '270°无敌海景，私人阳台', '270-degree ocean views with a private terrace.' ) : __( '270°无敌海景，私人阳台', 'qiling' ),
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2999 ) : '¥2999',
                         'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1499 ) : '¥1499',
-                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时5折', '50% Off' ) : __( '限时5折', 'developer-starter' ),
+                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时5折', '50% Off' ) : __( '限时5折', 'qiling' ),
                         'badge_color'    => 'var(--color-error)',
-                        'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                        'btn_text'       => __( '立即抢购', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '双人SPA套餐', 'Couples Spa Package' ) : __( '双人SPA套餐', 'developer-starter' ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '90分钟精油按摩 + 茶点', '90-minute aromatherapy session with refreshments.' ) : __( '90分钟精油按摩 + 茶点', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '双人SPA套餐', 'Couples Spa Package' ) : __( '双人SPA套餐', 'qiling' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '90分钟精油按摩 + 茶点', '90-minute aromatherapy session with refreshments.' ) : __( '90分钟精油按摩 + 茶点', 'qiling' ),
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1280 ) : '¥1280',
                         'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 699 ) : '¥699',
-                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '买一送一', 'Buy 1 Get 1' ) : __( '买一送一', 'developer-starter' ),
+                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '买一送一', 'Buy 1 Get 1' ) : __( '买一送一', 'qiling' ),
                         'badge_color'    => 'var(--color-success)',
-                        'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                        'btn_text'       => __( '立即抢购', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '自助海鲜晚餐', 'Seafood Dinner Buffet' ) : __( '自助海鲜晚餐', 'developer-starter' ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无限畅吃龙虾、帝王蟹', 'Unlimited lobster and king crab specialties.' ) : __( '无限畅吃龙虾、帝王蟹', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '自助海鲜晚餐', 'Seafood Dinner Buffet' ) : __( '自助海鲜晚餐', 'qiling' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无限畅吃龙虾、帝王蟹', 'Unlimited lobster and king crab specialties.' ) : __( '无限畅吃龙虾、帝王蟹', 'qiling' ),
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 598 ) : '¥598',
                         'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 398 ) : '¥398',
-                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立减200', 'Save $200' ) : __( '立减200', 'developer-starter' ),
+                        'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立减200', 'Save $200' ) : __( '立减200', 'qiling' ),
                         'badge_color'    => 'var(--color-warning)',
-                        'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                        'btn_text'       => __( '立即抢购', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                 ),
@@ -248,33 +248,33 @@ class Promotion_Module extends Module_Base {
             array(
                 'id'      => 'ql_promo_btn_bg_color',
                 'type'    => 'color',
-                'label'   => __( '活动按钮背景颜色', 'developer-starter' ),
+                'label'   => __( '活动按钮背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'      => 'ql_promo_btn_text_color',
                 'type'    => 'color',
-                'label'   => __( '活动按钮文字颜色', 'developer-starter' ),
+                'label'   => __( '活动按钮文字颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'ql_promo_btn_border_color', __( '活动按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'ql_promo_btn_border_color', __( '活动按钮边框颜色', 'qiling' ) ),
             array(
                 'id'      => 'ql_promo_btn_hover_bg_color',
                 'type'    => 'color',
-                'label'   => __( '活动按钮悬停背景颜色', 'developer-starter' ),
+                'label'   => __( '活动按钮悬停背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'      => 'ql_promo_btn_hover_text_color',
                 'type'    => 'color',
-                'label'   => __( '活动按钮悬停文字颜色', 'developer-starter' ),
+                'label'   => __( '活动按钮悬停文字颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'ql_promo_btn_hover_border_color', __( '活动按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随活动按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'ql_promo_btn_hover_border_color', __( '活动按钮悬停边框颜色', 'qiling' ), __( '留空时跟随活动按钮悬停背景颜色。', 'qiling' ) ),
 
             // ========================================
             // 背景设置
@@ -282,24 +282,24 @@ class Promotion_Module extends Module_Base {
             array(
                 'id'    => 'ql_promo_bg_color',
                 'type'  => 'color',
-                'label' => __( '背景颜色', 'developer-starter' ),
-                'desc'  => __( '支持渐变代码', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
+                'desc'  => __( '支持渐变代码', 'qiling' ),
             ),
             array(
                 'id'    => 'ql_promo_bg_image',
                 'type'  => 'image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
 
@@ -309,10 +309,10 @@ class Promotion_Module extends Module_Base {
             array(
                 'id'      => 'enable_staggered_animation',
                 'type'    => 'select',
-                'label'   => __( '开启逐个显示动画', 'developer-starter' ),
+                'label'   => __( '开启逐个显示动画', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -335,7 +335,7 @@ class Promotion_Module extends Module_Base {
         // ========================================
         $title       = isset( $data['ql_promo_title'] ) && $data['ql_promo_title'] !== '' 
                        ? $data['ql_promo_title'] 
-                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时特惠', 'Limited-Time Deals' ) : __( '限时特惠', 'developer-starter' ) );
+                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时特惠', 'Limited-Time Deals' ) : __( '限时特惠', 'qiling' ) );
         $title_size  = isset( $data['ql_promo_title_size'] ) && $data['ql_promo_title_size'] !== '' 
                        ? $data['ql_promo_title_size'] 
                        : '2.5rem';
@@ -348,7 +348,7 @@ class Promotion_Module extends Module_Base {
         $show_countdown = isset( $data['ql_promo_show_countdown'] ) ? $data['ql_promo_show_countdown'] : 'yes';
         $end_date       = isset( $data['ql_promo_end_date'] ) ? trim( $data['ql_promo_end_date'] ) : '';
         $end_time       = isset( $data['ql_promo_end_time'] ) ? trim( $data['ql_promo_end_time'] ) : '23:59';
-        $expired_text   = isset( $data['ql_promo_expired_text'] ) ? $data['ql_promo_expired_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '活动已结束', 'This promotion has ended.' ) : __( '活动已结束', 'developer-starter' ) );
+        $expired_text   = isset( $data['ql_promo_expired_text'] ) ? $data['ql_promo_expired_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '活动已结束', 'This promotion has ended.' ) : __( '活动已结束', 'qiling' ) );
         
         // 布局配置
         $layout  = isset( $data['ql_promo_layout'] ) ? $data['ql_promo_layout'] : 'banner';
@@ -383,35 +383,35 @@ class Promotion_Module extends Module_Base {
             $items = array(
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华海景套房', 'Ocean View Suite' ) : __( '豪华海景套房', 'developer-starter' ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '270°无敌海景，私人阳台', '270-degree ocean views with a private terrace.' ) : __( '270°无敌海景，私人阳台', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华海景套房', 'Ocean View Suite' ) : __( '豪华海景套房', 'qiling' ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '270°无敌海景，私人阳台', '270-degree ocean views with a private terrace.' ) : __( '270°无敌海景，私人阳台', 'qiling' ),
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2999 ) : '¥2999',
                     'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1499 ) : '¥1499',
-                    'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时5折', '50% Off' ) : __( '限时5折', 'developer-starter' ),
+                    'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '限时5折', '50% Off' ) : __( '限时5折', 'qiling' ),
                     'badge_color'    => 'var(--color-error)',
-                    'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                    'btn_text'       => __( '立即抢购', 'qiling' ),
                     'btn_link'       => '#',
                 ),
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '双人SPA套餐', 'Couples Spa Package' ) : __( '双人SPA套餐', 'developer-starter' ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '90分钟精油按摩 + 茶点', '90-minute aromatherapy session with refreshments.' ) : __( '90分钟精油按摩 + 茶点', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '双人SPA套餐', 'Couples Spa Package' ) : __( '双人SPA套餐', 'qiling' ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '90分钟精油按摩 + 茶点', '90-minute aromatherapy session with refreshments.' ) : __( '90分钟精油按摩 + 茶点', 'qiling' ),
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1280 ) : '¥1280',
                     'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 699 ) : '¥699',
-                    'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '买一送一', 'Buy 1 Get 1' ) : __( '买一送一', 'developer-starter' ),
+                    'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '买一送一', 'Buy 1 Get 1' ) : __( '买一送一', 'qiling' ),
                     'badge_color'    => 'var(--color-success)',
-                    'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                    'btn_text'       => __( '立即抢购', 'qiling' ),
                     'btn_link'       => '#',
                 ),
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '自助海鲜晚餐', 'Seafood Dinner Buffet' ) : __( '自助海鲜晚餐', 'developer-starter' ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无限畅吃龙虾、帝王蟹', 'Unlimited lobster and king crab specialties.' ) : __( '无限畅吃龙虾、帝王蟹', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '自助海鲜晚餐', 'Seafood Dinner Buffet' ) : __( '自助海鲜晚餐', 'qiling' ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无限畅吃龙虾、帝王蟹', 'Unlimited lobster and king crab specialties.' ) : __( '无限畅吃龙虾、帝王蟹', 'qiling' ),
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 598 ) : '¥598',
                     'sale_price'     => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 398 ) : '¥398',
-                    'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立减200', 'Save $200' ) : __( '立减200', 'developer-starter' ),
+                    'badge'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立减200', 'Save $200' ) : __( '立减200', 'qiling' ),
                     'badge_color'    => 'var(--color-warning)',
-                    'btn_text'       => __( '立即抢购', 'developer-starter' ),
+                    'btn_text'       => __( '立即抢购', 'qiling' ),
                     'btn_link'       => '#',
                 ),
             );
@@ -532,26 +532,26 @@ class Promotion_Module extends Module_Base {
                                 </div>
                             <?php else : ?>
                                 <div class="ql-promo-countdown">
-                                    <span class="ql-promo-countdown-label"><?php esc_html_e( '距离结束', 'developer-starter' ); ?></span>
+                                    <span class="ql-promo-countdown-label"><?php esc_html_e( '距离结束', 'qiling' ); ?></span>
                                     <div class="ql-promo-countdown-boxes">
                                         <div class="ql-promo-countdown-box">
                                             <span class="ql-promo-countdown-num" data-unit="days"><?php echo esc_html( $countdown_data['days'] ?? 0 ); ?></span>
-                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '天', 'developer-starter' ); ?></span>
+                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '天', 'qiling' ); ?></span>
                                         </div>
                                         <span class="ql-promo-countdown-sep">:</span>
                                         <div class="ql-promo-countdown-box">
                                             <span class="ql-promo-countdown-num" data-unit="hours"><?php echo esc_html( str_pad( $countdown_data['hours'] ?? 0, 2, '0', STR_PAD_LEFT ) ); ?></span>
-                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '时', 'developer-starter' ); ?></span>
+                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '时', 'qiling' ); ?></span>
                                         </div>
                                         <span class="ql-promo-countdown-sep">:</span>
                                         <div class="ql-promo-countdown-box">
                                             <span class="ql-promo-countdown-num" data-unit="minutes"><?php echo esc_html( str_pad( $countdown_data['minutes'] ?? 0, 2, '0', STR_PAD_LEFT ) ); ?></span>
-                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '分', 'developer-starter' ); ?></span>
+                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '分', 'qiling' ); ?></span>
                                         </div>
                                         <span class="ql-promo-countdown-sep">:</span>
                                         <div class="ql-promo-countdown-box">
                                             <span class="ql-promo-countdown-num" data-unit="seconds"><?php echo esc_html( str_pad( $countdown_data['seconds'] ?? 0, 2, '0', STR_PAD_LEFT ) ); ?></span>
-                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '秒', 'developer-starter' ); ?></span>
+                                            <span class="ql-promo-countdown-unit"><?php esc_html_e( '秒', 'qiling' ); ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -655,7 +655,7 @@ class Promotion_Module extends Module_Base {
                           : 'var(--color-error)';
         $btn_text       = isset( $item['btn_text'] ) && $item['btn_text'] !== '' 
                           ? $item['btn_text'] 
-                          : __( '立即抢购', 'developer-starter' );
+                          : __( '立即抢购', 'qiling' );
         $btn_link       = isset( $item['btn_link'] ) ? $item['btn_link'] : '#';
 
         $placeholder_bg = $placeholder_colors[ $index % count( $placeholder_colors ) ];

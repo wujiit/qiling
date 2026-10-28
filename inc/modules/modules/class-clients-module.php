@@ -18,7 +18,7 @@ class Clients_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-groups';
-        $this->description = __( '合作客户Logo展示', 'developer-starter' );
+        $this->description = __( '合作客户Logo展示', 'qiling' );
     }
 
     public function get_id() {
@@ -26,52 +26,52 @@ class Clients_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '合作客户', 'developer-starter' );
+        return __( '合作客户', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'clients_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作客户', 'Trusted By' ) : __( '合作客户', 'developer-starter' ) ),
+            array( 'id' => 'clients_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作客户', 'Trusted By' ) : __( '合作客户', 'qiling' ) ),
             array(
                 'id' => 'clients_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'clients_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'clients_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'clients_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'clients_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
             array(
                 'id' => 'clients_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'clients_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'clients_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'clients_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ), 'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ) ),
+            array( 'id' => 'clients_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'qiling' ), 'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ) ),
             
-            array( 'id' => 'clients_columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array( '4' => __( '4列', 'developer-starter' ), '5' => __( '5列', 'developer-starter' ), '6' => __( '6列', 'developer-starter' ) ), 'default' => '6' ),
-            array( 'id' => 'clients_logo_style', 'type' => 'select', 'label' => __( 'Logo样式', 'developer-starter' ), 'options' => array( 'normal' => __( '原色', 'developer-starter' ), 'grayscale' => __( '黑白', 'developer-starter' ) ), 'default' => 'normal' ),
-            array( 'id' => 'clients_auto_scroll', 'type' => 'select', 'label' => __( '自动滚动', 'developer-starter' ), 'options' => array( '' => __( '否', 'developer-starter' ), '1' => __( '是', 'developer-starter' ) ) ),
-            array( 'id' => 'clients_scroll_speed', 'type' => 'number', 'label' => __( '滚动速度 (秒)', 'developer-starter' ), 'default' => '30', 'dependency' => array( 'clients_auto_scroll', '==', '1' ) ),
-            array( 'id' => 'clients_card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'developer-starter' ), 'default' => 'var(--color-neutral-0)' ),
-            array( 'id' => 'clients_card_text_color', 'type' => 'color', 'label' => __( '卡片文字颜色', 'developer-starter' ), 'desc' => __( '控制占位文字与客户名称颜色，支持深浅色自主设置', 'developer-starter' ) ),
-            array( 'id' => 'clients_logo_height', 'type' => 'text', 'label' => __( 'Logo高度', 'developer-starter' ), 'default' => '50px' ),
-            array( 'id' => 'clients_show_name', 'type' => 'select', 'label' => __( '显示名称', 'developer-starter' ), 'options' => array( '' => __( '否', 'developer-starter' ), '1' => __( '是', 'developer-starter' ) ) ),
+            array( 'id' => 'clients_columns', 'type' => 'select', 'label' => __( '列数', 'qiling' ), 'options' => array( '4' => __( '4列', 'qiling' ), '5' => __( '5列', 'qiling' ), '6' => __( '6列', 'qiling' ) ), 'default' => '6' ),
+            array( 'id' => 'clients_logo_style', 'type' => 'select', 'label' => __( 'Logo样式', 'qiling' ), 'options' => array( 'normal' => __( '原色', 'qiling' ), 'grayscale' => __( '黑白', 'qiling' ) ), 'default' => 'normal' ),
+            array( 'id' => 'clients_auto_scroll', 'type' => 'select', 'label' => __( '自动滚动', 'qiling' ), 'options' => array( '' => __( '否', 'qiling' ), '1' => __( '是', 'qiling' ) ) ),
+            array( 'id' => 'clients_scroll_speed', 'type' => 'number', 'label' => __( '滚动速度 (秒)', 'qiling' ), 'default' => '30', 'dependency' => array( 'clients_auto_scroll', '==', '1' ) ),
+            array( 'id' => 'clients_card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'qiling' ), 'default' => 'var(--color-neutral-0)' ),
+            array( 'id' => 'clients_card_text_color', 'type' => 'color', 'label' => __( '卡片文字颜色', 'qiling' ), 'desc' => __( '控制占位文字与客户名称颜色，支持深浅色自主设置', 'qiling' ) ),
+            array( 'id' => 'clients_logo_height', 'type' => 'text', 'label' => __( 'Logo高度', 'qiling' ), 'default' => '50px' ),
+            array( 'id' => 'clients_show_name', 'type' => 'select', 'label' => __( '显示名称', 'qiling' ), 'options' => array( '' => __( '否', 'qiling' ), '1' => __( '是', 'qiling' ) ) ),
             
             // Spacing
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 80px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 80px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 80px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 80px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
@@ -79,31 +79,31 @@ class Clients_Module extends Module_Base {
             array(
                 'id'            => 'clients_items',
                 'type'          => 'repeater',
-                'label'         => __( '客户列表', 'developer-starter' ),
+                'label'         => __( '客户列表', 'qiling' ),
                 'fields'        => array(
-                    array( 'id' => 'name', 'type' => 'text', 'label' => __( '客户名称', 'developer-starter' ) ),
-                    array( 'id' => 'logo', 'type' => 'image', 'label' => __( 'Logo图片', 'developer-starter' ) ),
-                    array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接 (可选)', 'developer-starter' ) ),
+                    array( 'id' => 'name', 'type' => 'text', 'label' => __( '客户名称', 'qiling' ) ),
+                    array( 'id' => 'logo', 'type' => 'image', 'label' => __( 'Logo图片', 'qiling' ) ),
+                    array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接 (可选)', 'qiling' ) ),
                 ),
                 'default_items' => array(
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '华为', 'Acme Corp' ) : __( '华为', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阿里巴巴', 'Northwind' ) : __( '阿里巴巴', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '腾讯', 'BrightLabs' ) : __( '腾讯', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '百度', 'Vertex Studio' ) : __( '百度', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '京东', 'BluePeak' ) : __( '京东', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '字节跳动', 'NovaWorks' ) : __( '字节跳动', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '华为', 'Acme Corp' ) : __( '华为', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阿里巴巴', 'Northwind' ) : __( '阿里巴巴', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '腾讯', 'BrightLabs' ) : __( '腾讯', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '百度', 'Vertex Studio' ) : __( '百度', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '京东', 'BluePeak' ) : __( '京东', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '字节跳动', 'NovaWorks' ) : __( '字节跳动', 'qiling' ), 'logo' => '', 'link' => '#' ),
                 ),
             ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，客户Logo将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，客户Logo将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -148,12 +148,12 @@ class Clients_Module extends Module_Base {
                 );
             } else {
                 $items = array(
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '华为', 'Acme Corp' ) : __( '华为', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阿里巴巴', 'Northwind' ) : __( '阿里巴巴', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '腾讯', 'BrightLabs' ) : __( '腾讯', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '百度', 'Vertex Studio' ) : __( '百度', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '京东', 'BluePeak' ) : __( '京东', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
-                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '字节跳动', 'NovaWorks' ) : __( '字节跳动', 'developer-starter' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '华为', 'Acme Corp' ) : __( '华为', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '阿里巴巴', 'Northwind' ) : __( '阿里巴巴', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '腾讯', 'BrightLabs' ) : __( '腾讯', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '百度', 'Vertex Studio' ) : __( '百度', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '京东', 'BluePeak' ) : __( '京东', 'qiling' ), 'logo' => '', 'link' => '#' ),
+                    array( 'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '字节跳动', 'NovaWorks' ) : __( '字节跳动', 'qiling' ), 'logo' => '', 'link' => '#' ),
                 );
             }
         }

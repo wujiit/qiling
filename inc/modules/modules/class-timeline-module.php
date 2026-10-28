@@ -18,7 +18,7 @@ class Timeline_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-backup';
-        $this->description = __( '发展历程展示', 'developer-starter' );
+        $this->description = __( '发展历程展示', 'qiling' );
     }
 
     public function get_id() {
@@ -26,69 +26,69 @@ class Timeline_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '时间轴', 'developer-starter' );
+        return __( '时间轴', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'timeline_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发展历程', 'Company Timeline' ) : __( '发展历程', 'developer-starter' ) ),
+            array( 'id' => 'timeline_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发展历程', 'Company Timeline' ) : __( '发展历程', 'qiling' ) ),
             array(
                 'id' => 'timeline_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'timeline_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认颜色', 'developer-starter' ),
+                'description' => __( '留空使用默认颜色', 'qiling' ),
             ),
             
-            array( 'id' => 'timeline_items', 'type' => 'repeater', 'label' => __( '时间节点', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'year', 'type' => 'text', 'label' => __( '年份/时间点', 'developer-starter' ) ),
-                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-                array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '描述', 'developer-starter' ) ),
+            array( 'id' => 'timeline_items', 'type' => 'repeater', 'label' => __( '时间节点', 'qiling' ), 'fields' => array(
+                array( 'id' => 'year', 'type' => 'text', 'label' => __( '年份/时间点', 'qiling' ) ),
+                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+                array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '描述', 'qiling' ) ),
             ),
             'default_items' => array(
-                array( 'year' => '2020', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '公司成立', 'Company Founded' ) : __( '公司成立', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '正式成立，开始创业之旅', 'The team launched with a clear product vision and first clients.' ) : __( '正式成立，开始创业之旅', 'developer-starter' ) ),
-                array( 'year' => '2021', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务扩展', 'Team Expansion' ) : __( '业务扩展', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队规模扩大至50人', 'Operations expanded and the team grew to support more projects.' ) : __( '团队规模扩大至50人', 'developer-starter' ) ),
-                array( 'year' => '2022', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品升级', 'Product Upgrade' ) : __( '产品升级', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发布2.0版本产品', 'A major release introduced a more polished and flexible platform.' ) : __( '发布2.0版本产品', 'developer-starter' ) ),
-                array( 'year' => '2023', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全国布局', 'Wider Reach' ) : __( '全国布局', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务覆盖全国20个省市', 'The business reached a broader market footprint and more industries.' ) : __( '业务覆盖全国20个省市', 'developer-starter' ) ),
+                array( 'year' => '2020', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '公司成立', 'Company Founded' ) : __( '公司成立', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '正式成立，开始创业之旅', 'The team launched with a clear product vision and first clients.' ) : __( '正式成立，开始创业之旅', 'qiling' ) ),
+                array( 'year' => '2021', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务扩展', 'Team Expansion' ) : __( '业务扩展', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队规模扩大至50人', 'Operations expanded and the team grew to support more projects.' ) : __( '团队规模扩大至50人', 'qiling' ) ),
+                array( 'year' => '2022', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品升级', 'Product Upgrade' ) : __( '产品升级', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发布2.0版本产品', 'A major release introduced a more polished and flexible platform.' ) : __( '发布2.0版本产品', 'qiling' ) ),
+                array( 'year' => '2023', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全国布局', 'Wider Reach' ) : __( '全国布局', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务覆盖全国20个省市', 'The business reached a broader market footprint and more industries.' ) : __( '业务覆盖全国20个省市', 'qiling' ) ),
             ) ),
             
             // 样式配置
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，时间节点将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，时间节点将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -96,7 +96,7 @@ class Timeline_Module extends Module_Base {
     public function render( $data = array() ) {
         $title = isset( $data['timeline_title'] ) && $data['timeline_title'] !== ''
             ? $data['timeline_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发展历程', 'Company Timeline' ) : __( '发展历程', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发展历程', 'Company Timeline' ) : __( '发展历程', 'qiling' ) );
         $items = isset( $data['timeline_items'] ) ? $data['timeline_items'] : array();
         
         // Typography
@@ -111,10 +111,10 @@ class Timeline_Module extends Module_Base {
         // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
         if ( empty( $items ) && ! isset( $data['timeline_items'] ) ) {
             $items = array(
-                array( 'year' => '2020', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '公司成立', 'Company Founded' ) : __( '公司成立', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '正式成立，开始创业之旅', 'The team launched with a clear product vision and first clients.' ) : __( '正式成立，开始创业之旅', 'developer-starter' ) ),
-                array( 'year' => '2021', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务扩展', 'Team Expansion' ) : __( '业务扩展', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队规模扩大至50人', 'Operations expanded and the team grew to support more projects.' ) : __( '团队规模扩大至50人', 'developer-starter' ) ),
-                array( 'year' => '2022', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品升级', 'Product Upgrade' ) : __( '产品升级', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发布2.0版本产品', 'A major release introduced a more polished and flexible platform.' ) : __( '发布2.0版本产品', 'developer-starter' ) ),
-                array( 'year' => '2023', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全国布局', 'Wider Reach' ) : __( '全国布局', 'developer-starter' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务覆盖全国20个省市', 'The business reached a broader market footprint and more industries.' ) : __( '业务覆盖全国20个省市', 'developer-starter' ) ),
+                array( 'year' => '2020', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '公司成立', 'Company Founded' ) : __( '公司成立', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '正式成立，开始创业之旅', 'The team launched with a clear product vision and first clients.' ) : __( '正式成立，开始创业之旅', 'qiling' ) ),
+                array( 'year' => '2021', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务扩展', 'Team Expansion' ) : __( '业务扩展', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队规模扩大至50人', 'Operations expanded and the team grew to support more projects.' ) : __( '团队规模扩大至50人', 'qiling' ) ),
+                array( 'year' => '2022', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品升级', 'Product Upgrade' ) : __( '产品升级', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '发布2.0版本产品', 'A major release introduced a more polished and flexible platform.' ) : __( '发布2.0版本产品', 'qiling' ) ),
+                array( 'year' => '2023', 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全国布局', 'Wider Reach' ) : __( '全国布局', 'qiling' ), 'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '业务覆盖全国20个省市', 'The business reached a broader market footprint and more industries.' ) : __( '业务覆盖全国20个省市', 'qiling' ) ),
             );
         }
         

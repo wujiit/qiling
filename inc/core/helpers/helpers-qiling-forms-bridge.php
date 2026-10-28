@@ -105,7 +105,7 @@ if ( ! function_exists( 'developer_starter_restrict_contact_form_to_logged_in' )
         }
 
         if ( $is_contact_form ) {
-            $errors[] = __( '请先登录后再留言', 'developer-starter' );
+            $errors[] = __( '请先登录后再留言', 'qiling' );
         }
 
         return $errors;

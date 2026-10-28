@@ -29,7 +29,7 @@ class Meta_Boxes_Editor_Service {
     public function render_module_item_html( $idx, $type, $data, $module_fields, Meta_Boxes_Module_Renderer $renderer, $use_defaults = false ) {
         $type = sanitize_key( (string) $type );
         if ( '' === $type || ! isset( $module_fields[ $type ] ) ) {
-            return new \WP_Error( 'invalid_module_type', __( '模块不存在或未注册', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_module_type', __( '模块不存在或未注册', 'qiling' ) );
         }
 
         ob_start();
@@ -146,7 +146,7 @@ class Meta_Boxes_Editor_Service {
                 <input type="hidden" name="modules[<?php echo esc_attr( (string) $idx ); ?>][type]" value="<?php echo esc_attr( $type ); ?>"/>
                 <?php $this->render_hidden_data_inputs( "modules[{$idx}][data]", $data ); ?>
                 <p class="notice notice-warning" style="margin:0; padding:10px 12px;">
-                    <?php esc_html_e( '该旧模块包含无法直接渲染的历史字段，已保留原始数据。你仍可以继续添加新模块；如需编辑此模块，请先导出页面 JSON 后修复字段。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '该旧模块包含无法直接渲染的历史字段，已保留原始数据。你仍可以继续添加新模块；如需编辑此模块，请先导出页面 JSON 后修复字段。', 'qiling' ); ?>
                 </p>
             </div>
         </div>
@@ -215,22 +215,22 @@ class Meta_Boxes_Editor_Service {
         endforeach;
         ?>
         <button type="button" class="dsm-add-btn dsm-btn-templates">
-            <?php esc_html_e( '📂 我的模版库', 'developer-starter' ); ?>
+            <?php esc_html_e( '我的模版库', 'qiling' ); ?>
         </button>
         <?php if ( $ai_builder_available ) : ?>
         <button type="button" class="dsm-add-btn dsm-btn-ai-decorate">
-            <?php esc_html_e( 'AI装修', 'developer-starter' ); ?>
+            <?php esc_html_e( 'AI装修', 'qiling' ); ?>
         </button>
         <?php elseif ( $ai_builder_globally_available && ! $ai_builder_supported ) : ?>
         <span style="padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.18); color:#fff; font-size:12px; font-weight:600;">
-            <?php esc_html_e( '积分商城页面暂不支持 AI 装修', 'developer-starter' ); ?>
+            <?php esc_html_e( '积分商城页面暂不支持 AI 装修', 'qiling' ); ?>
         </span>
         <?php endif; ?>
         <button type="button" class="dsm-add-btn dsm-btn-page-json-import">
-            <?php esc_html_e( '⬆ 导入页面JSON', 'developer-starter' ); ?>
+            <?php esc_html_e( '⬆ 导入页面JSON', 'qiling' ); ?>
         </button>
         <button type="button" class="dsm-add-btn dsm-btn-page-json-export">
-            <?php esc_html_e( '⬇ 导出页面JSON', 'developer-starter' ); ?>
+            <?php esc_html_e( '⬇ 导出页面JSON', 'qiling' ); ?>
         </button>
         <div class="dsm-page-package-hint" id="dsm-page-package-hint"></div>
         <?php
@@ -266,7 +266,7 @@ class Meta_Boxes_Editor_Service {
                 'unknown_module_types',
                 sprintf(
                     /* translators: %s: module type list */
-                    __( 'JSON 中包含当前主题未注册的模块：%s', 'developer-starter' ),
+                    __( 'JSON 中包含当前主题未注册的模块：%s', 'qiling' ),
                     implode( ', ', $unknown_types )
                 )
             );
@@ -326,7 +326,7 @@ class Meta_Boxes_Editor_Service {
         );
 
         if ( ! is_string( $json ) || '' === $json ) {
-            return new \WP_Error( 'json_encode_failed', __( 'JSON 生成失败', 'developer-starter' ) );
+            return new \WP_Error( 'json_encode_failed', __( 'JSON 生成失败', 'qiling' ) );
         }
 
         return array(

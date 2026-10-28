@@ -23,7 +23,7 @@ trait Admin_Settings_Sanitize_Trait {
             add_settings_error(
                 'developer_starter_settings',
                 'ds_options_broken_save_blocked',
-                __( '检测到主题设置序列化损坏，已阻止保存以避免覆盖数据。请先修复或从备份恢复后再保存。', 'developer-starter' ),
+                __( '检测到主题设置序列化损坏，已阻止保存以避免覆盖数据。请先修复或从备份恢复后再保存。', 'qiling' ),
                 'error'
             );
             $existing_options = get_option( $this->option_name, array() );
@@ -340,7 +340,7 @@ trait Admin_Settings_Sanitize_Trait {
             add_settings_error(
                 'developer_starter_settings',
                 'id_verification_ssl_verify_disabled',
-                __( '实名认证 API SSL 验证已关闭。请仅在临时排查服务器根证书问题时关闭，处理完成后立即重新开启。', 'developer-starter' ),
+                __( '实名认证 API SSL 验证已关闭。请仅在临时排查服务器根证书问题时关闭，处理完成后立即重新开启。', 'qiling' ),
                 'warning'
             );
         }
@@ -447,7 +447,7 @@ trait Admin_Settings_Sanitize_Trait {
                     add_settings_error(
                         'developer_starter_settings',
                         'ds_google_service_account_invalid',
-                        __( 'Google Service Account JSON 格式无效，已保留原配置。', 'developer-starter' ),
+                        __( 'Google Service Account JSON 格式无效，已保留原配置。', 'qiling' ),
                         'error'
                     );
                 }
@@ -528,7 +528,7 @@ trait Admin_Settings_Sanitize_Trait {
                 $sanitized[ $basic_page_checkbox_field ] = ( '1' === (string) $sanitized[ $basic_page_checkbox_field ] ) ? '1' : '';
             }
         }
-        foreach ( array( 'careers_admin_menu_enable', 'woocommerce_admin_menu_enable' ) as $feature_entry_checkbox_field ) {
+        foreach ( array( 'careers_admin_menu_enable' ) as $feature_entry_checkbox_field ) {
             if ( isset( $sanitized[ $feature_entry_checkbox_field ] ) ) {
                 $sanitized[ $feature_entry_checkbox_field ] = ( '1' === (string) $sanitized[ $feature_entry_checkbox_field ] ) ? '1' : '';
             }
@@ -800,31 +800,31 @@ trait Admin_Settings_Sanitize_Trait {
             add_settings_error(
                 'developer_starter_settings',
                 'runtime_compat_safe_mode_enabled',
-                __( '兼容回滚模式已开启：高兼容风险的运行优化会暂时停用，原开关值仍会保留。', 'developer-starter' ),
+                __( '兼容回滚模式已开启：高兼容风险的运行优化会暂时停用，原开关值仍会保留。', 'qiling' ),
                 'warning'
             );
         } elseif ( function_exists( 'developer_starter_get_dangerous_runtime_optimization_keys' ) ) {
             $enabled_runtime_risky_keys = array();
             $runtime_risky_labels       = array(
-                'disable_embeds'                 => __( '禁用嵌入内容', 'developer-starter' ),
-                'disable_xmlrpc'                 => __( '禁用 XML-RPC', 'developer-starter' ),
-                'disable_rest_api'               => __( '限制 REST API', 'developer-starter' ),
-                'restrict_rest_api_important'    => __( '限制 REST API 敏感接口', 'developer-starter' ),
-                'restrict_rest_users'            => __( '限制 REST API 用户信息', 'developer-starter' ),
-                'disable_application_passwords'  => __( '禁用应用密码', 'developer-starter' ),
-                'disable_core_auto_update'       => __( '禁用核心自动更新', 'developer-starter' ),
-                'disable_plugin_auto_update'     => __( '禁用插件自动更新', 'developer-starter' ),
-                'disable_theme_auto_update'      => __( '禁用主题自动更新', 'developer-starter' ),
-                'disable_translation_auto_update' => __( '禁用翻译包自动更新', 'developer-starter' ),
-                'disable_update_emails'          => __( '禁用更新通知邮件', 'developer-starter' ),
-                'disable_gutenberg'               => __( '禁用 Gutenberg 编辑器', 'developer-starter' ),
-                'disable_block_widgets'           => __( '禁用区块小工具', 'developer-starter' ),
-                'remove_json_api_link'            => __( '移除 JSON API 链接', 'developer-starter' ),
-                'remove_gutenberg_css'            => __( '移除 Gutenberg 样式', 'developer-starter' ),
-                'remove_global_styles'            => __( '移除全局样式', 'developer-starter' ),
-                'disable_jquery_migrate'          => __( '禁用 jQuery Migrate', 'developer-starter' ),
-                'disable_external_google_fonts'   => __( '禁用外部 Google Fonts', 'developer-starter' ),
-                'disable_wp_core_ai'              => __( '禁用 WordPress AI', 'developer-starter' ),
+                'disable_embeds'                 => __( '禁用嵌入内容', 'qiling' ),
+                'disable_xmlrpc'                 => __( '禁用 XML-RPC', 'qiling' ),
+                'disable_rest_api'               => __( '限制 REST API', 'qiling' ),
+                'restrict_rest_api_important'    => __( '限制 REST API 敏感接口', 'qiling' ),
+                'restrict_rest_users'            => __( '限制 REST API 用户信息', 'qiling' ),
+                'disable_application_passwords'  => __( '禁用应用密码', 'qiling' ),
+                'disable_core_auto_update'       => __( '禁用核心自动更新', 'qiling' ),
+                'disable_plugin_auto_update'     => __( '禁用插件自动更新', 'qiling' ),
+                'disable_theme_auto_update'      => __( '禁用主题自动更新', 'qiling' ),
+                'disable_translation_auto_update' => __( '禁用翻译包自动更新', 'qiling' ),
+                'disable_update_emails'          => __( '禁用更新通知邮件', 'qiling' ),
+                'disable_gutenberg'               => __( '禁用 Gutenberg 编辑器', 'qiling' ),
+                'disable_block_widgets'           => __( '禁用区块小工具', 'qiling' ),
+                'remove_json_api_link'            => __( '移除 JSON API 链接', 'qiling' ),
+                'remove_gutenberg_css'            => __( '移除 Gutenberg 样式', 'qiling' ),
+                'remove_global_styles'            => __( '移除全局样式', 'qiling' ),
+                'disable_jquery_migrate'          => __( '禁用 jQuery Migrate', 'qiling' ),
+                'disable_external_google_fonts'   => __( '禁用外部 Google Fonts', 'qiling' ),
+                'disable_wp_core_ai'              => __( '禁用 WordPress AI', 'qiling' ),
             );
             foreach ( developer_starter_get_dangerous_runtime_optimization_keys() as $runtime_risky_key ) {
                 if ( ! empty( $sanitized[ $runtime_risky_key ] ) ) {
@@ -842,43 +842,43 @@ trait Admin_Settings_Sanitize_Trait {
                 $whitelist_requirements = array(
                     'disable_rest_api' => array(
                         'option' => 'runtime_rest_whitelist_prefixes',
-                        'label'  => __( 'REST API 白名单', 'developer-starter' ),
+                        'label'  => __( 'REST API 白名单', 'qiling' ),
                     ),
                     'disable_application_passwords' => array(
                         'option' => 'runtime_application_passwords_allowlist',
-                        'label'  => __( '应用密码白名单', 'developer-starter' ),
+                        'label'  => __( '应用密码白名单', 'qiling' ),
                     ),
                     'disable_gutenberg' => array(
                         'option' => 'runtime_block_editor_allowlist',
-                        'label'  => __( '区块编辑器/小工具白名单', 'developer-starter' ),
+                        'label'  => __( '区块编辑器/小工具白名单', 'qiling' ),
                     ),
                     'disable_block_widgets' => array(
                         'option' => 'runtime_block_editor_allowlist',
-                        'label'  => __( '区块编辑器/小工具白名单', 'developer-starter' ),
+                        'label'  => __( '区块编辑器/小工具白名单', 'qiling' ),
                     ),
                     'remove_gutenberg_css' => array(
                         'option' => 'runtime_style_output_allowlist',
-                        'label'  => __( '前端样式白名单', 'developer-starter' ),
+                        'label'  => __( '前端样式白名单', 'qiling' ),
                     ),
                     'remove_global_styles' => array(
                         'option' => 'runtime_style_output_allowlist',
-                        'label'  => __( '前端样式白名单', 'developer-starter' ),
+                        'label'  => __( '前端样式白名单', 'qiling' ),
                     ),
                     'disable_core_auto_update' => array(
                         'option' => 'runtime_auto_update_allowlist',
-                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                        'label'  => __( '自动更新白名单', 'qiling' ),
                     ),
                     'disable_plugin_auto_update' => array(
                         'option' => 'runtime_auto_update_allowlist',
-                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                        'label'  => __( '自动更新白名单', 'qiling' ),
                     ),
                     'disable_theme_auto_update' => array(
                         'option' => 'runtime_auto_update_allowlist',
-                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                        'label'  => __( '自动更新白名单', 'qiling' ),
                     ),
                     'disable_translation_auto_update' => array(
                         'option' => 'runtime_auto_update_allowlist',
-                        'label'  => __( '自动更新白名单', 'developer-starter' ),
+                        'label'  => __( '自动更新白名单', 'qiling' ),
                     ),
                 );
                 $whitelist_status = array();
@@ -893,18 +893,18 @@ trait Admin_Settings_Sanitize_Trait {
                     $entries = function_exists( 'developer_starter_sanitize_runtime_whitelist_field' )
                         ? developer_starter_sanitize_runtime_whitelist_field( $requirement['option'], $raw_entries )
                         : trim( sanitize_textarea_field( (string) $raw_entries ) );
-                    $status = ! empty( $entries ) ? __( '已配置', 'developer-starter' ) : __( '未配置', 'developer-starter' );
+                    $status = ! empty( $entries ) ? __( '已配置', 'qiling' ) : __( '未配置', 'qiling' );
                     $whitelist_status[ $requirement['option'] ] = $requirement['label'] . '：' . $status;
                 }
 
                 $warning = sprintf(
                     /* translators: 1: enabled setting count, 2: setting names, 3: whitelist status or no whitelist note */
-                    __( '已启用 %1$d 个可能影响兼容性的运行优化：%2$s。%3$s', 'developer-starter' ),
+                    __( '已启用 %1$d 个可能影响兼容性的运行优化：%2$s。%3$s', 'qiling' ),
                     count( $enabled_runtime_risky_keys ),
                     implode( '、', $enabled_runtime_risky_labels ),
                     ! empty( $whitelist_status )
-                        ? __( '相关白名单状态：', 'developer-starter' ) . implode( '、', array_values( $whitelist_status ) )
-                        : __( '这些设置没有对应的白名单配置，无需额外填写。', 'developer-starter' )
+                        ? __( '相关白名单状态：', 'qiling' ) . implode( '、', array_values( $whitelist_status ) )
+                        : __( '这些设置没有对应的白名单配置，无需额外填写。', 'qiling' )
                 );
                 add_settings_error(
                     'developer_starter_settings',
@@ -1078,8 +1078,8 @@ trait Admin_Settings_Sanitize_Trait {
         if ( isset( $sanitized['pc_logo_slogan_text'] ) ) {
             $slogan = trim( sanitize_text_field( (string) $sanitized['pc_logo_slogan_text'] ) );
             if ( function_exists( 'mb_strlen' ) && function_exists( 'mb_substr' ) ) {
-                if ( mb_strlen( $slogan ) > 24 ) {
-                    $slogan = mb_substr( $slogan, 0, 24 );
+                if ( mb_strlen( $slogan, 'UTF-8' ) > 24 ) {
+                    $slogan = mb_substr( $slogan, 0, 24, 'UTF-8' );
                 }
             } elseif ( strlen( $slogan ) > 24 ) {
                 $slogan = substr( $slogan, 0, 24 );
@@ -1222,7 +1222,7 @@ trait Admin_Settings_Sanitize_Trait {
                     add_settings_error(
                         'developer_starter_settings',
                         'smtp_password_encryption_failed',
-                        __( 'SMTP 密码未保存：当前服务器缺少可用的 OpenSSL AES-GCM 或 sodium 加密能力。', 'developer-starter' ),
+                        __( 'SMTP 密码未保存：当前服务器缺少可用的 OpenSSL AES-GCM 或 sodium 加密能力。', 'qiling' ),
                         'error'
                     );
                 }
@@ -1254,7 +1254,7 @@ trait Admin_Settings_Sanitize_Trait {
                 add_settings_error(
                     'developer_starter_settings',
                     'cleanup_cron_token_too_short',
-                    __( '外部定时清理密钥至少需要 16 位；已保留原密钥或自动生成新密钥。', 'developer-starter' ),
+                    __( '外部定时清理密钥至少需要 16 位；已保留原密钥或自动生成新密钥。', 'qiling' ),
                     'error'
                 );
                 $cleanup_cron_token = strlen( $existing_cleanup_cron_token ) >= 16 ? $existing_cleanup_cron_token : '';
@@ -1451,7 +1451,7 @@ trait Admin_Settings_Sanitize_Trait {
                         'ai_endpoint_blocked_' . $id,
                         sprintf(
                             /* translators: %s: connection name */
-                            __( 'AI 连接“%s”的接口地址已被拦截：仅允许公网 HTTPS 地址，且必须符合 allowlist。', 'developer-starter' ),
+                            __( 'AI 连接“%s”的接口地址已被拦截：仅允许公网 HTTPS 地址，且必须符合 allowlist。', 'qiling' ),
                             '' !== $name ? $name : $id
                         ),
                         'error'
@@ -1632,7 +1632,7 @@ trait Admin_Settings_Sanitize_Trait {
             if ( is_array( $v ) ) {
                 $result[ $k ] = $this->sanitize_array_recursive( $v );
             } else {
-                // icon 字段允许 HTML 标签（如 <span>🔥</span>）
+                // icon 字段允许 HTML 标签（如 <span class="badge">Hot</span> 或 SVG）
                 if ( current_user_can( 'manage_options' ) ) {
                     $result[ $k ] = $this->normalize_admin_setting_text( $v );
                 } elseif ( $k === 'icon' ) {

@@ -63,7 +63,7 @@ class Generation_Orchestrator {
         $max_modules = $this->decorator->get_default_max_modules();
 
         if ( '' === $prompt ) {
-            return new \WP_Error( 'empty_prompt', __( '请先输入装修需求。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_prompt', __( '请先输入装修需求。', 'qiling' ) );
         }
 
         if ( $this->decorator->is_disallowed_site_generation_prompt( $prompt ) ) {
@@ -75,7 +75,7 @@ class Generation_Orchestrator {
                 'empty_modules',
                 sprintf(
                     /* translators: %d: max module count */
-                    __( '请先选择 1-%d 个候选功能模块。', 'developer-starter' ),
+                    __( '请先选择 1-%d 个候选功能模块。', 'qiling' ),
                     $max_modules
                 )
             );
@@ -86,7 +86,7 @@ class Generation_Orchestrator {
                 'too_many_modules',
                 sprintf(
                     /* translators: %d: max module count */
-                    __( '单次最多选择 %d 个候选模块。', 'developer-starter' ),
+                    __( '单次最多选择 %d 个候选模块。', 'qiling' ),
                     $max_modules
                 )
             );
@@ -94,19 +94,19 @@ class Generation_Orchestrator {
 
         $connection = $this->connection_manager->get_connection( $connection_id );
         if ( ! $connection ) {
-            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'qiling' ) );
         }
 
         if ( '' === $model ) {
             $model = (string) $connection['default_model'];
         }
         if ( '' === $model ) {
-            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'qiling' ) );
         }
 
         $selected_modules = $this->decorator->get_selected_module_prompt_schemas( $module_ids );
         if ( empty( $selected_modules ) ) {
-            return new \WP_Error( 'invalid_module_selection', __( '候选模块无效，请重新选择。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_module_selection', __( '候选模块无效，请重新选择。', 'qiling' ) );
         }
 
         $messages = $this->prompt_builder->build_page_plan_messages( $post_id, $prompt, $selected_modules );
@@ -141,7 +141,7 @@ class Generation_Orchestrator {
         }
 
         return array(
-            'message'        => __( '页面规划已完成。', 'developer-starter' ),
+            'message'        => __( '页面规划已完成。', 'qiling' ),
             'connectionId'   => $connection['id'],
             'connectionName' => $connection['name'],
             'model'          => $model,
@@ -169,10 +169,10 @@ class Generation_Orchestrator {
         $max_modules = $this->decorator->get_default_max_modules();
 
         if ( '' === $prompt && ! $is_localization ) {
-            return new \WP_Error( 'empty_prompt', __( '请先输入装修需求。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_prompt', __( '请先输入装修需求。', 'qiling' ) );
         }
         if ( '' === $prompt && $is_localization ) {
-            $prompt = __( '按目标语言和市场参数本地化当前模块文案。', 'developer-starter' );
+            $prompt = __( '按目标语言和市场参数本地化当前模块文案。', 'qiling' );
         }
 
         if ( $this->decorator->is_disallowed_site_generation_prompt( $prompt ) ) {
@@ -180,7 +180,7 @@ class Generation_Orchestrator {
         }
 
         if ( empty( $module_ids ) ) {
-            return new \WP_Error( 'empty_modules', __( '请先选择候选模块。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_modules', __( '请先选择候选模块。', 'qiling' ) );
         }
 
         if ( count( $module_ids ) > $max_modules ) {
@@ -188,26 +188,26 @@ class Generation_Orchestrator {
                 'too_many_modules',
                 sprintf(
                     /* translators: %d: max module count */
-                    __( '单次最多选择 %d 个候选模块。', 'developer-starter' ),
+                    __( '单次最多选择 %d 个候选模块。', 'qiling' ),
                     $max_modules
                 )
             );
         }
 
         if ( '' === $current_module_type ) {
-            return new \WP_Error( 'empty_current_module', __( '当前模块参数无效。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_current_module', __( '当前模块参数无效。', 'qiling' ) );
         }
 
         $connection = $this->connection_manager->get_connection( $connection_id );
         if ( ! $connection ) {
-            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'qiling' ) );
         }
 
         if ( '' === $model ) {
             $model = (string) $connection['default_model'];
         }
         if ( '' === $model ) {
-            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'qiling' ) );
         }
 
         $plan = $this->response_parser->normalize_generation_plan_input(
@@ -220,12 +220,12 @@ class Generation_Orchestrator {
 
         $current_module_plan = $this->response_parser->find_plan_module_by_type( $plan['plan'], $current_module_type );
         if ( ! $current_module_plan ) {
-            return new \WP_Error( 'module_not_in_plan', __( '当前模块不在页面规划结果中。', 'developer-starter' ) );
+            return new \WP_Error( 'module_not_in_plan', __( '当前模块不在页面规划结果中。', 'qiling' ) );
         }
 
         $current_module_schema_map = $this->decorator->get_selected_module_prompt_schemas( array( $current_module_type ) );
         if ( empty( $current_module_schema_map[ $current_module_type ] ) ) {
-            return new \WP_Error( 'invalid_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_module_schema', __( '当前内容暂时无法生成，请刷新后重试。', 'qiling' ) );
         }
         $current_module_schema = $current_module_schema_map[ $current_module_type ];
 
@@ -243,7 +243,7 @@ class Generation_Orchestrator {
             );
             $text_only_schema = $this->decorator->get_module_text_only_field_schema_map( $current_module_type );
             if ( empty( $text_only_schema ) ) {
-                return new \WP_Error( 'empty_localization_text_fields', __( '当前模块没有可本地化的文案字段。', 'developer-starter' ) );
+                return new \WP_Error( 'empty_localization_text_fields', __( '当前模块没有可本地化的文案字段。', 'qiling' ) );
             }
 
             $messages = $this->prompt_builder->build_module_localization_messages(
@@ -301,7 +301,7 @@ class Generation_Orchestrator {
             return array(
                 'message'      => sprintf(
                     /* translators: 1: module name 2: target language */
-                    __( '模块“%1$s”已本地化为%2$s。', 'developer-starter' ),
+                    __( '模块“%1$s”已本地化为%2$s。', 'qiling' ),
                     isset( $current_module_schema['name'] ) ? (string) $current_module_schema['name'] : $current_module_type,
                     isset( $localization['target_language_label'] ) ? (string) $localization['target_language_label'] : ''
                 ),
@@ -363,7 +363,7 @@ class Generation_Orchestrator {
         return array(
             'message'    => sprintf(
                 /* translators: %s: module name */
-                __( '模块“%s”已生成。', 'developer-starter' ),
+                __( '模块“%s”已生成。', 'qiling' ),
                 isset( $current_module_schema['name'] ) ? (string) $current_module_schema['name'] : $current_module_type
             ),
             'module'     => $module_result['module'],
@@ -388,7 +388,7 @@ class Generation_Orchestrator {
         $max_modules = $this->decorator->get_default_max_modules();
 
         if ( '' === $prompt ) {
-            return new \WP_Error( 'empty_prompt', __( '请先输入装修需求。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_prompt', __( '请先输入装修需求。', 'qiling' ) );
         }
 
         if ( $this->decorator->is_disallowed_site_generation_prompt( $prompt ) ) {
@@ -400,7 +400,7 @@ class Generation_Orchestrator {
                 'empty_modules',
                 sprintf(
                     /* translators: %d: max module count */
-                    __( '请先选择 1-%d 个候选功能模块。', 'developer-starter' ),
+                    __( '请先选择 1-%d 个候选功能模块。', 'qiling' ),
                     $max_modules
                 )
             );
@@ -411,7 +411,7 @@ class Generation_Orchestrator {
                 'too_many_modules',
                 sprintf(
                     /* translators: %d: max module count */
-                    __( '单次最多选择 %d 个候选模块。', 'developer-starter' ),
+                    __( '单次最多选择 %d 个候选模块。', 'qiling' ),
                     $max_modules
                 )
             );
@@ -419,19 +419,19 @@ class Generation_Orchestrator {
 
         $connection = $this->connection_manager->get_connection( $connection_id );
         if ( ! $connection ) {
-            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'qiling' ) );
         }
 
         if ( '' === $model ) {
             $model = (string) $connection['default_model'];
         }
         if ( '' === $model ) {
-            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'qiling' ) );
         }
 
         $selected_modules = $this->decorator->get_selected_module_prompt_schemas( $module_ids );
         if ( empty( $selected_modules ) ) {
-            return new \WP_Error( 'invalid_module_selection', __( '候选模块无效，请重新选择。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_module_selection', __( '候选模块无效，请重新选择。', 'qiling' ) );
         }
 
         $messages = $this->prompt_builder->build_request_messages( $post_id, $prompt, $selected_modules );
@@ -478,7 +478,7 @@ class Generation_Orchestrator {
             $model,
             $package['package'],
             isset( $package['warnings'] ) && is_array( $package['warnings'] ) ? $package['warnings'] : array(),
-            __( 'AI 装修草稿已生成。', 'developer-starter' ),
+            __( 'AI 装修草稿已生成。', 'qiling' ),
             array(
                 'generationStrategy' => 'page_generate',
             )
@@ -495,7 +495,7 @@ class Generation_Orchestrator {
         $post_id = isset( $args['post_id'] ) ? absint( $args['post_id'] ) : 0;
         $prompt = isset( $args['prompt'] ) ? trim( (string) $args['prompt'] ) : '';
         if ( '' === $prompt ) {
-            $prompt = __( '按目标语言和市场参数本地化当前页面文案。', 'developer-starter' );
+            $prompt = __( '按目标语言和市场参数本地化当前页面文案。', 'qiling' );
         }
 
         $connection_id = isset( $args['connection_id'] ) ? sanitize_key( (string) $args['connection_id'] ) : '';
@@ -519,7 +519,7 @@ class Generation_Orchestrator {
 
         $modules = isset( $current_package['modules'] ) && is_array( $current_package['modules'] ) ? array_values( $current_package['modules'] ) : array();
         if ( empty( $modules ) ) {
-            return new \WP_Error( 'empty_current_page_modules', __( '当前页面没有可本地化的模块。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_current_page_modules', __( '当前页面没有可本地化的模块。', 'qiling' ) );
         }
 
         $text_schema_map = $this->decorator->get_page_package_text_only_schema_map( $modules );
@@ -531,19 +531,19 @@ class Generation_Orchestrator {
             }
         }
         if ( ! $has_text_fields && '' === trim( (string) $current_package['title'] ) ) {
-            return new \WP_Error( 'empty_page_localization_text_fields', __( '当前页面没有可本地化的文案字段。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_page_localization_text_fields', __( '当前页面没有可本地化的文案字段。', 'qiling' ) );
         }
 
         $connection = $this->connection_manager->get_connection( $connection_id );
         if ( ! $connection ) {
-            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'qiling' ) );
         }
 
         if ( '' === $model ) {
             $model = (string) $connection['default_model'];
         }
         if ( '' === $model ) {
-            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'qiling' ) );
         }
 
         $messages = $this->prompt_builder->build_page_localization_messages(
@@ -605,7 +605,7 @@ class Generation_Orchestrator {
             isset( $localized['warnings'] ) && is_array( $localized['warnings'] ) ? $localized['warnings'] : array(),
             sprintf(
                 /* translators: %s: target language label */
-                __( '当前页面已本地化为%s。', 'developer-starter' ),
+                __( '当前页面已本地化为%s。', 'qiling' ),
                 isset( $localization['target_language_label'] ) ? (string) $localization['target_language_label'] : ''
             ),
             array(
@@ -638,7 +638,7 @@ class Generation_Orchestrator {
         }
 
         if ( empty( $post_ids ) ) {
-            return new \WP_Error( 'empty_batch_posts', __( '没有找到可批量本地化的页面或文章。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_batch_posts', __( '没有找到可批量本地化的页面或文章。', 'qiling' ) );
         }
 
         $post_ids = array_slice( array_values( array_unique( array_map( 'absint', $post_ids ) ) ), 0, absint( $localization['batch_limit'] ) );
@@ -652,7 +652,7 @@ class Generation_Orchestrator {
                 $results[] = array(
                     'post_id' => $post_id,
                     'success' => false,
-                    'message' => __( '无权编辑该内容。', 'developer-starter' ),
+                    'message' => __( '无权编辑该内容。', 'qiling' ),
                 );
                 continue;
             }
@@ -703,7 +703,7 @@ class Generation_Orchestrator {
         return array(
             'message' => sprintf(
                 /* translators: 1: success count 2: failed count */
-                __( '批量本地化完成：成功 %1$d 个，失败 %2$d 个。', 'developer-starter' ),
+                __( '批量本地化完成：成功 %1$d 个，失败 %2$d 个。', 'qiling' ),
                 $success_count,
                 $failed_count
             ),
@@ -725,12 +725,12 @@ class Generation_Orchestrator {
         $post_id = isset( $args['post_id'] ) ? absint( $args['post_id'] ) : 0;
         $post = $post_id > 0 ? get_post( $post_id ) : null;
         if ( ! $post instanceof \WP_Post ) {
-            return new \WP_Error( 'invalid_content_post', __( '内容不存在，无法本地化。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_content_post', __( '内容不存在，无法本地化。', 'qiling' ) );
         }
 
         $prompt = isset( $args['prompt'] ) ? trim( (string) $args['prompt'] ) : '';
         if ( '' === $prompt ) {
-            $prompt = __( '按目标语言和市场参数本地化当前内容。', 'developer-starter' );
+            $prompt = __( '按目标语言和市场参数本地化当前内容。', 'qiling' );
         }
 
         $connection_id = isset( $args['connection_id'] ) ? sanitize_key( (string) $args['connection_id'] ) : '';
@@ -745,14 +745,14 @@ class Generation_Orchestrator {
 
         $connection = $this->connection_manager->get_connection( $connection_id );
         if ( ! $connection ) {
-            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_connection', __( 'AI 连接不存在或未启用，请先到主题设置中检查。', 'qiling' ) );
         }
 
         if ( '' === $model ) {
             $model = (string) $connection['default_model'];
         }
         if ( '' === $model ) {
-            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_model', __( '当前连接未配置默认模型，请先在主题设置中填写模型名称。', 'qiling' ) );
         }
 
         $source_payload = array(
@@ -806,7 +806,7 @@ class Generation_Orchestrator {
         return array(
             'message' => sprintf(
                 /* translators: %s: target language label */
-                __( '当前内容已本地化为%s。', 'developer-starter' ),
+                __( '当前内容已本地化为%s。', 'qiling' ),
                 isset( $localization['target_language_label'] ) ? (string) $localization['target_language_label'] : ''
             ),
             'mode' => AI_Decorator::AI_MODE_LOCALIZATION,
@@ -977,7 +977,7 @@ class Generation_Orchestrator {
 
         if ( empty( $package['modules'] ) ) {
             return $this->wrap_page_package_fallback_error(
-                new \WP_Error( 'empty_fallback_modules', __( '自动回退后没有生成可用模块，请重试。', 'developer-starter' ) ),
+                new \WP_Error( 'empty_fallback_modules', __( '自动回退后没有生成可用模块，请重试。', 'qiling' ) ),
                 $primary_error
             );
         }
@@ -987,7 +987,7 @@ class Generation_Orchestrator {
             $model,
             $package,
             $warnings,
-            __( '整页生成失败，已自动切换为分模块生成并完成。', 'developer-starter' ),
+            __( '整页生成失败，已自动切换为分模块生成并完成。', 'qiling' ),
             array(
                 'generationStrategy' => 'planned_modules',
                 'fallbackReason'     => is_wp_error( $primary_error ) ? $primary_error->get_error_code() : '',
@@ -1033,10 +1033,10 @@ class Generation_Orchestrator {
         }
 
         if ( 'request_timeout' === $error->get_error_code() ) {
-            return __( '整页生成超时，系统已自动切换为分模块生成。', 'developer-starter' );
+            return __( '整页生成超时，系统已自动切换为分模块生成。', 'qiling' );
         }
 
-        return __( '整页生成结果不可直接解析，系统已自动切换为分模块生成。', 'developer-starter' );
+        return __( '整页生成结果不可直接解析，系统已自动切换为分模块生成。', 'qiling' );
     }
 
     /**
@@ -1057,11 +1057,11 @@ class Generation_Orchestrator {
         );
 
         if ( ! is_string( $json ) || '' === $json ) {
-            return new \WP_Error( 'json_encode_failed', __( 'AI 结果已生成，但转成 JSON 失败。', 'developer-starter' ) );
+            return new \WP_Error( 'json_encode_failed', __( 'AI 结果已生成，但转成 JSON 失败。', 'qiling' ) );
         }
 
         $response = array(
-            'message'        => '' !== $message ? $message : __( 'AI 装修草稿已生成。', 'developer-starter' ),
+            'message'        => '' !== $message ? $message : __( 'AI 装修草稿已生成。', 'qiling' ),
             'connectionId'   => isset( $connection['id'] ) ? (string) $connection['id'] : '',
             'connectionName' => isset( $connection['name'] ) ? (string) $connection['name'] : '',
             'model'          => (string) $model,
@@ -1088,20 +1088,20 @@ class Generation_Orchestrator {
      */
     private function wrap_page_package_fallback_error( $fallback_error, $primary_error = null, $module_type = '' ) {
         if ( ! is_wp_error( $fallback_error ) ) {
-            return new \WP_Error( 'unknown_fallback_error', __( '自动回退生成失败。', 'developer-starter' ) );
+            return new \WP_Error( 'unknown_fallback_error', __( '自动回退生成失败。', 'qiling' ) );
         }
 
         if ( '' !== $module_type ) {
             $message = sprintf(
                 /* translators: 1: module type 2: error message */
-                __( '整页生成未成功，自动切换为分模块生成时，在模块 %1$s 处失败：%2$s', 'developer-starter' ),
+                __( '整页生成未成功，自动切换为分模块生成时，在模块 %1$s 处失败：%2$s', 'qiling' ),
                 $module_type,
                 $fallback_error->get_error_message()
             );
         } else {
             $message = sprintf(
                 /* translators: %s: error message */
-                __( '整页生成未成功，自动切换为分模块生成后仍失败：%s', 'developer-starter' ),
+                __( '整页生成未成功，自动切换为分模块生成后仍失败：%s', 'qiling' ),
                 $fallback_error->get_error_message()
             );
         }

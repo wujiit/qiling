@@ -56,12 +56,12 @@ class Meta_Boxes_Module_Renderer {
             <div class="dsm-item-header">
                 <span class="dsm-handle">::</span>
                 <span class="dsm-title"><?php echo esc_html( $title ); ?></span>
-                <?php if ( $module_is_hidden ) : ?><span class="dsm-hidden-badge"><?php esc_html_e( '已隐藏', 'developer-starter' ); ?></span><?php endif; ?>
+                <?php if ( $module_is_hidden ) : ?><span class="dsm-hidden-badge"><?php esc_html_e( '已隐藏', 'qiling' ); ?></span><?php endif; ?>
                 <span class="dsm-toggle">v</span>
                 <span class="dsm-item-actions">
-                    <a href="#" class="dsm-save-template" title="<?php echo esc_attr__( '保存为模版', 'developer-starter' ); ?>">💾</a>
-                    <button type="button" class="button-link dsm-toggle-hidden" title="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'developer-starter' ) : __( '暂时隐藏', 'developer-starter' ) ); ?>" aria-label="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'developer-starter' ) : __( '暂时隐藏', 'developer-starter' ) ); ?>" aria-pressed="<?php echo $module_is_hidden ? 'true' : 'false'; ?>" data-hidden-label="<?php echo esc_attr__( '暂时隐藏', 'developer-starter' ); ?>" data-show-label="<?php echo esc_attr__( '恢复显示', 'developer-starter' ); ?>"><span class="dashicons <?php echo $module_is_hidden ? 'dashicons-visibility' : 'dashicons-hidden'; ?>" aria-hidden="true"></span></button>
-                    <a href="#" class="dsm-remove" title="<?php echo esc_attr__( '删除模块', 'developer-starter' ); ?>">x</a>
+                    <a href="#" class="dsm-save-template" title="<?php echo esc_attr__( '保存为模版', 'qiling' ); ?>"><span class="dashicons dashicons-saved" aria-hidden="true"></span></a>
+                    <button type="button" class="button-link dsm-toggle-hidden" title="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'qiling' ) : __( '暂时隐藏', 'qiling' ) ); ?>" aria-label="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'qiling' ) : __( '暂时隐藏', 'qiling' ) ); ?>" aria-pressed="<?php echo $module_is_hidden ? 'true' : 'false'; ?>" data-hidden-label="<?php echo esc_attr__( '暂时隐藏', 'qiling' ); ?>" data-show-label="<?php echo esc_attr__( '恢复显示', 'qiling' ); ?>"><span class="dashicons <?php echo $module_is_hidden ? 'dashicons-visibility' : 'dashicons-hidden'; ?>" aria-hidden="true"></span></button>
+                    <a href="#" class="dsm-remove" title="<?php echo esc_attr__( '删除模块', 'qiling' ); ?>">x</a>
                 </span>
             </div>
             <div class="dsm-content">
@@ -197,12 +197,12 @@ class Meta_Boxes_Module_Renderer {
 
                 case 'switcher':
                 case 'checkbox':
-                    echo '<label style="display:inline-flex; align-items:center; gap:6px;"><input type="checkbox" name="' . esc_attr( $name ) . '" value="1"' . checked( in_array( (string) $val, array( '1', 'yes', 'true' ), true ), true, false ) . '/> ' . esc_html__( '启用', 'developer-starter' ) . '</label>';
+                    echo '<label style="display:inline-flex; align-items:center; gap:6px;"><input type="checkbox" name="' . esc_attr( $name ) . '" value="1"' . checked( in_array( (string) $val, array( '1', 'yes', 'true' ), true ), true, false ) . '/> ' . esc_html__( '启用', 'qiling' ) . '</label>';
                     break;
 
                 case 'gallery':
                     echo '<input type="hidden" name="' . esc_attr( $name ) . '" value="' . esc_attr( is_scalar( $val ) ? (string) $val : '' ) . '" class="dsm-img-input"/>';
-                    echo '<button type="button" class="button dsm-upload dsm-gallery-upload">' . esc_html__( '选择多图', 'developer-starter' ) . '</button>';
+                    echo '<button type="button" class="button dsm-upload dsm-gallery-upload">' . esc_html__( '选择多图', 'qiling' ) . '</button>';
                     echo '<div class="dsm-gallery-preview" style="margin-top:10px;">';
                     if ( is_scalar( $val ) && $val ) {
                         $urls = explode( ',', (string) $val );
@@ -219,8 +219,8 @@ class Meta_Boxes_Module_Renderer {
                 case 'image':
                 case 'file':
                 case 'upload':
-                    echo '<input type="text" name="' . esc_attr( $name ) . '" value="' . esc_attr( is_scalar( $val ) ? (string) $val : '' ) . '" class="dsm-img-input" placeholder="' . esc_attr__( '输入图片URL或点击选择', 'developer-starter' ) . '" style="max-width:350px;"/>';
-                    echo '<button type="button" class="button dsm-upload" style="margin-left:8px;">' . esc_html__( '选择', 'developer-starter' ) . '</button>';
+                    echo '<input type="text" name="' . esc_attr( $name ) . '" value="' . esc_attr( is_scalar( $val ) ? (string) $val : '' ) . '" class="dsm-img-input" placeholder="' . esc_attr__( '输入图片URL或点击选择', 'qiling' ) . '" style="max-width:350px;"/>';
+                    echo '<button type="button" class="button dsm-upload" style="margin-left:8px;">' . esc_html__( '选择', 'qiling' ) . '</button>';
                     if ( is_scalar( $val ) && $val ) {
                         echo '<span class="dsm-img-wrap"><img src="' . esc_url( (string) $val ) . '" class="dsm-img-preview"/><button type="button" class="dsm-img-remove">×</button></span>';
                     }
@@ -302,14 +302,14 @@ class Meta_Boxes_Module_Renderer {
                 echo '<div class="dsm-field"' . $s_dep_attr . '><label>' . esc_html( isset( $sf['label'] ) ? (string) $sf['label'] : $sf_id ) . '</label>';
                 $sf_type = isset( $sf['type'] ) ? (string) $sf['type'] : 'text';
                 if ( $sf_type === 'image' || $sf_type === 'file' ) {
-                    echo '<input type="text" name="' . esc_attr( $sn ) . '" value="' . esc_attr( is_scalar( $sv ) ? (string) $sv : '' ) . '" class="dsm-img-input" placeholder="' . esc_attr__( '输入图片URL或点击选择', 'developer-starter' ) . '" style="max-width:250px;"/>';
-                    echo '<button type="button" class="button dsm-upload" style="margin-left:8px;">' . esc_html__( '选择', 'developer-starter' ) . '</button>';
+                    echo '<input type="text" name="' . esc_attr( $sn ) . '" value="' . esc_attr( is_scalar( $sv ) ? (string) $sv : '' ) . '" class="dsm-img-input" placeholder="' . esc_attr__( '输入图片URL或点击选择', 'qiling' ) . '" style="max-width:250px;"/>';
+                    echo '<button type="button" class="button dsm-upload" style="margin-left:8px;">' . esc_html__( '选择', 'qiling' ) . '</button>';
                     if ( is_scalar( $sv ) && $sv ) {
                         echo '<span class="dsm-img-wrap"><img src="' . esc_url( (string) $sv ) . '" class="dsm-img-preview"/><button type="button" class="dsm-img-remove">×</button></span>';
                     }
                 } elseif ( $sf_type === 'gallery' ) {
                     echo '<input type="hidden" name="' . esc_attr( $sn ) . '" value="' . esc_attr( is_scalar( $sv ) ? (string) $sv : '' ) . '" class="dsm-img-input"/>';
-                    echo '<button type="button" class="button dsm-upload dsm-gallery-upload">' . esc_html__( '选择多图', 'developer-starter' ) . '</button>';
+                    echo '<button type="button" class="button dsm-upload dsm-gallery-upload">' . esc_html__( '选择多图', 'qiling' ) . '</button>';
                     echo '<div class="dsm-gallery-preview" style="margin-top:5px;">';
                     if ( is_scalar( $sv ) && $sv ) {
                         $urls = explode( ',', (string) $sv );
@@ -328,7 +328,7 @@ class Meta_Boxes_Module_Renderer {
                 } elseif ( $sf_type === 'date' ) {
                     echo '<input type="date" name="' . esc_attr( $sn ) . '" value="' . esc_attr( is_scalar( $sv ) ? (string) $sv : '' ) . '"/>';
                 } elseif ( $sf_type === 'checkbox' ) {
-                    echo '<label style="display:inline-flex; align-items:center; gap:6px;"><input type="checkbox" name="' . esc_attr( $sn ) . '" value="1"' . checked( ! empty( $sv ), true, false ) . '/> ' . esc_html__( '启用', 'developer-starter' ) . '</label>';
+                    echo '<label style="display:inline-flex; align-items:center; gap:6px;"><input type="checkbox" name="' . esc_attr( $sn ) . '" value="1"' . checked( ! empty( $sv ), true, false ) . '/> ' . esc_html__( '启用', 'qiling' ) . '</label>';
                 } elseif ( $sf_type === 'select' && isset( $sf['options'] ) && is_array( $sf['options'] ) ) {
                     echo '<select name="' . esc_attr( $sn ) . '" autocomplete="off">';
                     foreach ( $sf['options'] as $opt_val => $opt_label ) {
@@ -364,8 +364,8 @@ class Meta_Boxes_Module_Renderer {
             $tpl_html .= '<div class="dsm-field"' . $s_dep_attr . '><label>' . esc_html( isset( $sf['label'] ) ? (string) $sf['label'] : $sf_id ) . '</label>';
             $sf_type = isset( $sf['type'] ) ? (string) $sf['type'] : 'text';
             if ( $sf_type === 'image' || $sf_type === 'file' ) {
-                $tpl_html .= '<input type="text" name="' . esc_attr( $sn ) . '" value="" class="dsm-img-input" placeholder="' . esc_attr__( '输入图片URL或点击选择', 'developer-starter' ) . '" style="max-width:250px;"/>';
-                $tpl_html .= '<button type="button" class="button dsm-upload" style="margin-left:8px;">' . esc_html__( '选择', 'developer-starter' ) . '</button>';
+                $tpl_html .= '<input type="text" name="' . esc_attr( $sn ) . '" value="" class="dsm-img-input" placeholder="' . esc_attr__( '输入图片URL或点击选择', 'qiling' ) . '" style="max-width:250px;"/>';
+                $tpl_html .= '<button type="button" class="button dsm-upload" style="margin-left:8px;">' . esc_html__( '选择', 'qiling' ) . '</button>';
             } elseif ( $sf_type === 'textarea' ) {
                 $tpl_html .= '<textarea name="' . esc_attr( $sn ) . '" rows="2"></textarea>';
             } elseif ( $sf_type === 'number' ) {
@@ -373,7 +373,7 @@ class Meta_Boxes_Module_Renderer {
             } elseif ( $sf_type === 'date' ) {
                 $tpl_html .= '<input type="date" name="' . esc_attr( $sn ) . '" value=""/>';
             } elseif ( $sf_type === 'checkbox' ) {
-                $tpl_html .= '<label style="display:inline-flex; align-items:center; gap:6px;"><input type="checkbox" name="' . esc_attr( $sn ) . '" value="1"/> ' . esc_html__( '启用', 'developer-starter' ) . '</label>';
+                $tpl_html .= '<label style="display:inline-flex; align-items:center; gap:6px;"><input type="checkbox" name="' . esc_attr( $sn ) . '" value="1"/> ' . esc_html__( '启用', 'qiling' ) . '</label>';
             } elseif ( $sf_type === 'select' && isset( $sf['options'] ) && is_array( $sf['options'] ) ) {
                 $tpl_html .= '<select name="' . esc_attr( $sn ) . '" autocomplete="off">';
                 foreach ( $sf['options'] as $opt_val => $opt_label ) {
@@ -390,6 +390,6 @@ class Meta_Boxes_Module_Renderer {
         }
         $tpl_html .= '</div>';
         echo '<div class="dsm-rep-tpl" data-template="' . esc_attr( $tpl_html ) . '" style="display:none;"></div>';
-        echo '<button type="button" class="dsm-btn-add dsm-rep-add">' . __( '+ 添加项目', 'developer-starter' ) . '</button>';
+        echo '<button type="button" class="dsm-btn-add dsm-rep-add">' . __( '+ 添加项目', 'qiling' ) . '</button>';
     }
 }

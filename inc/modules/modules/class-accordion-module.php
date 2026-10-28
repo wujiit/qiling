@@ -18,7 +18,7 @@ class Accordion_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-list-view';
-        $this->description = __( '可折叠的手风琴内容', 'developer-starter' );
+        $this->description = __( '可折叠的手风琴内容', 'qiling' );
     }
 
     public function get_id() {
@@ -26,90 +26,90 @@ class Accordion_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '手风琴', 'developer-starter' );
+        return __( '手风琴', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'accordion_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-            array( 'id' => 'accordion_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'accordion_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+            array( 'id' => 'accordion_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
             
             // 字体排版配置
             array(
                 'id' => 'accordion_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'accordion_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'accordion_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'accordion_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             
-            array( 'id' => 'accordion_style', 'type' => 'select', 'label' => __( '样式', 'developer-starter' ), 'options' => array(
-                'default' => __( '默认', 'developer-starter' ),
-                'bordered' => __( '带边框', 'developer-starter' ),
-                'minimal' => __( '极简', 'developer-starter' ),
+            array( 'id' => 'accordion_style', 'type' => 'select', 'label' => __( '样式', 'qiling' ), 'options' => array(
+                'default' => __( '默认', 'qiling' ),
+                'bordered' => __( '带边框', 'qiling' ),
+                'minimal' => __( '极简', 'qiling' ),
             ), 'default' => 'default' ),
-            array( 'id' => 'accordion_multiple', 'type' => 'select', 'label' => __( '允许多开', 'developer-starter' ), 'options' => array( '' => __( '否', 'developer-starter' ), '1' => __( '是', 'developer-starter' ) ) ),
-            array( 'id' => 'accordion_first_open', 'type' => 'select', 'label' => __( '默认展开第一项', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
-            array( 'id' => 'accordion_items', 'type' => 'repeater', 'label' => __( '折叠项', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-                array( 'id' => 'content', 'type' => 'textarea', 'label' => __( '内容', 'developer-starter' ) ),
-                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (Emoji 或 Symbol类名)', 'developer-starter' ) ),
+            array( 'id' => 'accordion_multiple', 'type' => 'select', 'label' => __( '允许多开', 'qiling' ), 'options' => array( '' => __( '否', 'qiling' ), '1' => __( '是', 'qiling' ) ) ),
+            array( 'id' => 'accordion_first_open', 'type' => 'select', 'label' => __( '默认展开第一项', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '' => __( '否', 'qiling' ) ), 'default' => '1' ),
+            array( 'id' => 'accordion_items', 'type' => 'repeater', 'label' => __( '折叠项', 'qiling' ), 'fields' => array(
+                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+                array( 'id' => 'content', 'type' => 'textarea', 'label' => __( '内容', 'qiling' ) ),
+                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (留空或Symbol类名)', 'qiling' ) ),
             ),
             'default_items' => array(
-                array( 'title' => __( '产品质量如何保证？', 'developer-starter' ), 'content' => __( '我们拥有完善的质量管理体系，通过ISO9001认证。每件产品都经过严格的质检流程，确保出厂产品100%合格。如有任何质量问题，我们提供无条件退换货服务。', 'developer-starter' ), 'icon' => '🛡️' ),
-                array( 'title' => __( '配送范围和时效？', 'developer-starter' ), 'content' => __( '我们支持全国配送，一二线城市1-3天送达，其他地区3-7天送达。部分地区支持当日达服务，下单时可查看具体配送时效。', 'developer-starter' ), 'icon' => '🚚' ),
-                array( 'title' => __( '售后服务政策？', 'developer-starter' ), 'content' => __( '我们提供7x24小时在线客服支持，产品享有1 year 质保期。质保期内非人为损坏可免费维修或更换。质保期外提供有偿维修服务。', 'developer-starter' ), 'icon' => '💬' ),
+                array( 'title' => __( '产品质量如何保证？', 'qiling' ), 'content' => __( '我们拥有完善的质量管理体系，通过ISO9001认证。每件产品都经过严格的质检流程，确保出厂产品100%合格。如有任何质量问题，我们提供无条件退换货服务。', 'qiling' ), 'icon' => '' ),
+                array( 'title' => __( '配送范围和时效？', 'qiling' ), 'content' => __( '我们支持全国配送，一二线城市1-3天送达，其他地区3-7天送达。部分地区支持当日达服务，下单时可查看具体配送时效。', 'qiling' ), 'icon' => '' ),
+                array( 'title' => __( '售后服务政策？', 'qiling' ), 'content' => __( '我们提供7x24小时在线客服支持，产品享有1 year 质保期。质保期内非人为损坏可免费维修或更换。质保期外提供有偿维修服务。', 'qiling' ), 'icon' => '' ),
             ) ),
             
             // 背景配置
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -126,13 +126,13 @@ class Accordion_Module extends Module_Base {
             
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
@@ -150,9 +150,9 @@ class Accordion_Module extends Module_Base {
         // 默认示例数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
         if ( empty( $items ) && ! isset( $data['accordion_items'] ) ) {
             $items = array(
-                array( 'title' => __( '产品质量如何保证？', 'developer-starter' ), 'content' => __( '我们拥有完善的质量管理体系，通过ISO9001认证。每件产品都经过严格的质检流程，确保出厂产品100%合格。如有任何质量问题，我们提供无条件退换货服务。', 'developer-starter' ), 'icon' => '🛡️' ),
-                array( 'title' => __( '配送范围和时效？', 'developer-starter' ), 'content' => __( '我们支持全国配送，一二线城市1-3天送达，其他地区3-7天送达。部分地区支持当日达服务，下单时可查看具体配送时效。', 'developer-starter' ), 'icon' => '🚚' ),
-                array( 'title' => __( '售后服务政策？', 'developer-starter' ), 'content' => __( '我们提供7x24小时在线客服支持，产品享有1 year 质保期。质保期内非人为损坏可免费维修或更换。质保期外提供有偿维修服务。', 'developer-starter' ), 'icon' => '💬' ),
+                array( 'title' => __( '产品质量如何保证？', 'qiling' ), 'content' => __( '我们拥有完善的质量管理体系，通过ISO9001认证。每件产品都经过严格的质检流程，确保出厂产品100%合格。如有任何质量问题，我们提供无条件退换货服务。', 'qiling' ), 'icon' => '' ),
+                array( 'title' => __( '配送范围和时效？', 'qiling' ), 'content' => __( '我们支持全国配送，一二线城市1-3天送达，其他地区3-7天送达。部分地区支持当日达服务，下单时可查看具体配送时效。', 'qiling' ), 'icon' => '' ),
+                array( 'title' => __( '售后服务政策？', 'qiling' ), 'content' => __( '我们提供7x24小时在线客服支持，产品享有1 year 质保期。质保期内非人为损坏可免费维修或更换。质保期外提供有偿维修服务。', 'qiling' ), 'icon' => '' ),
             );
         }
         

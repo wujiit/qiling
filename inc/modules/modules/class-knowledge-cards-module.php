@@ -18,7 +18,7 @@ class Knowledge_Cards_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-welcome-learn-more';
-        $this->description = __( '用于展示术语解释、知识点、误区和实践建议', 'developer-starter' );
+        $this->description = __( '用于展示术语解释、知识点、误区和实践建议', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Knowledge_Cards_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '知识点卡', 'developer-starter' );
+        return __( '知识点卡', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,138 +34,138 @@ class Knowledge_Cards_Module extends Module_Base {
             array(
                 'id'      => 'kc_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( '知识点卡', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( '知识点卡', 'qiling' ),
             ),
             array(
                 'id'    => 'kc_subtitle',
                 'type'  => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
             ),
             array(
                 'id'      => 'kc_columns',
                 'type'    => 'select',
-                'label'   => __( '每行列数', 'developer-starter' ),
+                'label'   => __( '每行列数', 'qiling' ),
                 'options' => array(
-                    '1' => __( '1列', 'developer-starter' ),
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
+                    '1' => __( '1列', 'qiling' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'kc_show_number',
                 'type'    => 'select',
-                'label'   => __( '显示序号徽标', 'developer-starter' ),
+                'label'   => __( '显示序号徽标', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'kc_show_example',
                 'type'    => 'select',
-                'label'   => __( '显示实践示例', 'developer-starter' ),
+                'label'   => __( '显示实践示例', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'kc_show_mistake',
                 'type'    => 'select',
-                'label'   => __( '显示常见误区', 'developer-starter' ),
+                'label'   => __( '显示常见误区', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'kc_show_link',
                 'type'    => 'select',
-                'label'   => __( '显示扩展链接', 'developer-starter' ),
+                'label'   => __( '显示扩展链接', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'     => 'kc_items',
                 'type'   => 'repeater',
-                'label'  => __( '知识点列表', 'developer-starter' ),
+                'label'  => __( '知识点列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'      => 'term',
                         'type'    => 'text',
-                        'label'   => __( '术语/知识点名称', 'developer-starter' ),
+                        'label'   => __( '术语/知识点名称', 'qiling' ),
                     ),
                     array(
                         'id'      => 'definition',
                         'type'    => 'textarea',
-                        'label'   => __( '一句话定义', 'developer-starter' ),
+                        'label'   => __( '一句话定义', 'qiling' ),
                     ),
                     array(
                         'id'      => 'importance',
                         'type'    => 'select',
-                        'label'   => __( '重要级别', 'developer-starter' ),
+                        'label'   => __( '重要级别', 'qiling' ),
                         'options' => array(
-                            'high'   => __( '高', 'developer-starter' ),
-                            'medium' => __( '中', 'developer-starter' ),
-                            'low'    => __( '低', 'developer-starter' ),
+                            'high'   => __( '高', 'qiling' ),
+                            'medium' => __( '中', 'qiling' ),
+                            'low'    => __( '低', 'qiling' ),
                         ),
                         'default' => 'medium',
                     ),
                     array(
                         'id'    => 'example',
                         'type'  => 'textarea',
-                        'label' => __( '实践示例', 'developer-starter' ),
+                        'label' => __( '实践示例', 'qiling' ),
                     ),
                     array(
                         'id'    => 'mistake',
                         'type'  => 'text',
-                        'label' => __( '常见误区', 'developer-starter' ),
+                        'label' => __( '常见误区', 'qiling' ),
                     ),
                     array(
                         'id'    => 'link_text',
                         'type'  => 'text',
-                        'label' => __( '链接文案', 'developer-starter' ),
+                        'label' => __( '链接文案', 'qiling' ),
                     ),
                     array(
                         'id'    => 'link_url',
                         'type'  => 'text',
-                        'label' => __( '链接地址', 'developer-starter' ),
+                        'label' => __( '链接地址', 'qiling' ),
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'term'       => 'LCP',
-                        'definition' => __( '首屏最大可见内容绘制时间，越短通常代表首屏体验越好。', 'developer-starter' ),
+                        'definition' => __( '首屏最大可见内容绘制时间，越短通常代表首屏体验越好。', 'qiling' ),
                         'importance' => 'high',
-                        'example'    => __( '压缩首图、预加载首屏关键资源可改善 LCP。', 'developer-starter' ),
-                        'mistake'    => __( '只优化跑分，不关注真实用户网络环境。', 'developer-starter' ),
-                        'link_text'  => __( '查看性能优化建议', 'developer-starter' ),
+                        'example'    => __( '压缩首图、预加载首屏关键资源可改善 LCP。', 'qiling' ),
+                        'mistake'    => __( '只优化跑分，不关注真实用户网络环境。', 'qiling' ),
+                        'link_text'  => __( '查看性能优化建议', 'qiling' ),
                         'link_url'   => '',
                     ),
                     array(
                         'term'       => 'FAQ Schema',
-                        'definition' => __( '用结构化数据标注问答内容，帮助搜索引擎更好理解页面。', 'developer-starter' ),
+                        'definition' => __( '用结构化数据标注问答内容，帮助搜索引擎更好理解页面。', 'qiling' ),
                         'importance' => 'medium',
-                        'example'    => __( '把高频问题整理成标准问答并保持与正文一致。', 'developer-starter' ),
-                        'mistake'    => __( '堆砌无关问题或与页面主体内容不一致。', 'developer-starter' ),
-                        'link_text'  => __( '查看 FAQ 实践', 'developer-starter' ),
+                        'example'    => __( '把高频问题整理成标准问答并保持与正文一致。', 'qiling' ),
+                        'mistake'    => __( '堆砌无关问题或与页面主体内容不一致。', 'qiling' ),
+                        'link_text'  => __( '查看 FAQ 实践', 'qiling' ),
                         'link_url'   => '',
                     ),
                     array(
                         'term'       => 'GEO',
-                        'definition' => __( '通过结构化和高质量内容，提升页面被 AI 系统理解与引用的概率。', 'developer-starter' ),
+                        'definition' => __( '通过结构化和高质量内容，提升页面被 AI 系统理解与引用的概率。', 'qiling' ),
                         'importance' => 'high',
-                        'example'    => __( '清晰标题结构、摘要、关键结论有助于 AI 抽取。', 'developer-starter' ),
-                        'mistake'    => __( '关键词堆砌和低质量改写会降低可用性。', 'developer-starter' ),
-                        'link_text'  => __( '查看 GEO 指南', 'developer-starter' ),
+                        'example'    => __( '清晰标题结构、摘要、关键结论有助于 AI 抽取。', 'qiling' ),
+                        'mistake'    => __( '关键词堆砌和低质量改写会降低可用性。', 'qiling' ),
+                        'link_text'  => __( '查看 GEO 指南', 'qiling' ),
                         'link_url'   => '',
                     ),
                 ),
@@ -173,31 +173,31 @@ class Knowledge_Cards_Module extends Module_Base {
             array(
                 'id'      => 'kc_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景色', 'developer-starter' ),
+                'label'   => __( '卡片背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'kc_bg_color',
                 'type'    => 'color',
-                'label'   => __( '模块背景色', 'developer-starter' ),
+                'label'   => __( '模块背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'kc_accent_color',
                 'type'    => 'color',
-                'label'   => __( '强调色', 'developer-starter' ),
+                'label'   => __( '强调色', 'qiling' ),
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '56px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '56px',
             ),
         );
@@ -217,29 +217,29 @@ class Knowledge_Cards_Module extends Module_Base {
             $items = array(
                 array(
                     'term'       => 'LCP',
-                    'definition' => __( '首屏最大可见内容绘制时间，越短通常代表首屏体验越好。', 'developer-starter' ),
+                    'definition' => __( '首屏最大可见内容绘制时间，越短通常代表首屏体验越好。', 'qiling' ),
                     'importance' => 'high',
-                    'example'    => __( '压缩首图、预加载首屏关键资源可改善 LCP。', 'developer-starter' ),
-                    'mistake'    => __( '只优化跑分，不关注真实用户网络环境。', 'developer-starter' ),
-                    'link_text'  => __( '查看性能优化建议', 'developer-starter' ),
+                    'example'    => __( '压缩首图、预加载首屏关键资源可改善 LCP。', 'qiling' ),
+                    'mistake'    => __( '只优化跑分，不关注真实用户网络环境。', 'qiling' ),
+                    'link_text'  => __( '查看性能优化建议', 'qiling' ),
                     'link_url'   => '',
                 ),
                 array(
                     'term'       => 'FAQ Schema',
-                    'definition' => __( '用结构化数据标注问答内容，帮助搜索引擎更好理解页面。', 'developer-starter' ),
+                    'definition' => __( '用结构化数据标注问答内容，帮助搜索引擎更好理解页面。', 'qiling' ),
                     'importance' => 'medium',
-                    'example'    => __( '把高频问题整理成标准问答并保持与正文一致。', 'developer-starter' ),
-                    'mistake'    => __( '堆砌无关问题或与页面主体内容不一致。', 'developer-starter' ),
-                    'link_text'  => __( '查看 FAQ 实践', 'developer-starter' ),
+                    'example'    => __( '把高频问题整理成标准问答并保持与正文一致。', 'qiling' ),
+                    'mistake'    => __( '堆砌无关问题或与页面主体内容不一致。', 'qiling' ),
+                    'link_text'  => __( '查看 FAQ 实践', 'qiling' ),
                     'link_url'   => '',
                 ),
                 array(
                     'term'       => 'GEO',
-                    'definition' => __( '通过结构化和高质量内容，提升页面被 AI 系统理解与引用的概率。', 'developer-starter' ),
+                    'definition' => __( '通过结构化和高质量内容，提升页面被 AI 系统理解与引用的概率。', 'qiling' ),
                     'importance' => 'high',
-                    'example'    => __( '清晰标题结构、摘要、关键结论有助于 AI 抽取。', 'developer-starter' ),
-                    'mistake'    => __( '关键词堆砌和低质量改写会降低可用性。', 'developer-starter' ),
-                    'link_text'  => __( '查看 GEO 指南', 'developer-starter' ),
+                    'example'    => __( '清晰标题结构、摘要、关键结论有助于 AI 抽取。', 'qiling' ),
+                    'mistake'    => __( '关键词堆砌和低质量改写会降低可用性。', 'qiling' ),
+                    'link_text'  => __( '查看 GEO 指南', 'qiling' ),
                     'link_url'   => '',
                 ),
             );
@@ -314,14 +314,14 @@ class Knowledge_Cards_Module extends Module_Base {
 
                             <?php if ( $show_example && $example !== '' ) : ?>
                                 <div class="qil-kc-row">
-                                    <strong><?php echo esc_html__( '示例：', 'developer-starter' ); ?></strong>
+                                    <strong><?php echo esc_html__( '示例：', 'qiling' ); ?></strong>
                                     <span><?php echo esc_html( $example ); ?></span>
                                 </div>
                             <?php endif; ?>
 
                             <?php if ( $show_mistake && $mistake !== '' ) : ?>
                                 <div class="qil-kc-row is-mistake">
-                                    <strong><?php echo esc_html__( '误区：', 'developer-starter' ); ?></strong>
+                                    <strong><?php echo esc_html__( '误区：', 'qiling' ); ?></strong>
                                     <span><?php echo esc_html( $mistake ); ?></span>
                                 </div>
                             <?php endif; ?>
@@ -339,11 +339,11 @@ class Knowledge_Cards_Module extends Module_Base {
 
     private function get_level_label( $importance ) {
         if ( $importance === 'high' ) {
-            return __( '高优先', 'developer-starter' );
+            return __( '高优先', 'qiling' );
         }
         if ( $importance === 'low' ) {
-            return __( '基础', 'developer-starter' );
+            return __( '基础', 'qiling' );
         }
-        return __( '重点', 'developer-starter' );
+        return __( '重点', 'qiling' );
     }
 }

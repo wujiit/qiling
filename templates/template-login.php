@@ -96,7 +96,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
 
         <div class="auth-card">
             <?php if ( $weixin_login_available ) : ?>
-            <button type="button" class="auth-weixin-toggle" id="auth-weixin-toggle" aria-label="<?php esc_attr_e( '微信扫码登录', 'developer-starter' ); ?>">
+            <button type="button" class="auth-weixin-toggle" id="auth-weixin-toggle" aria-label="<?php esc_attr_e( '微信扫码登录', 'qiling' ); ?>">
                 <span class="corner-icon weixin-icon"></span>
                 <span class="corner-icon pc-icon"></span>
             </button>
@@ -111,8 +111,8 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                         <h1><?php bloginfo( 'name' ); ?></h1>
                     <?php endif; ?>
                 </div>
-                <h2 class="auth-title"><?php esc_html_e( '用户登录', 'developer-starter' ); ?></h2>
-                <p class="auth-subtitle"><?php esc_html_e( '欢迎回来，请登录您的账户', 'developer-starter' ); ?></p>
+                <h2 class="auth-title"><?php esc_html_e( '用户登录', 'qiling' ); ?></h2>
+                <p class="auth-subtitle"><?php esc_html_e( '欢迎回来，请登录您的账户', 'qiling' ); ?></p>
             </div>
             
             <?php if ( $sms_enable && ! $sms_phone_only ) : ?>
@@ -120,11 +120,11 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
             <div class="auth-tabs">
                 <button type="button" class="auth-tab <?php echo $default_tab === 'phone' ? 'active' : ''; ?>" data-tab="phone">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                    <?php esc_html_e( '手机号登录', 'developer-starter' ); ?>
+                    <?php esc_html_e( '手机号登录', 'qiling' ); ?>
                 </button>
                 <button type="button" class="auth-tab <?php echo $default_tab === 'account' ? 'active' : ''; ?>" data-tab="account">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    <?php esc_html_e( '账号密码登录', 'developer-starter' ); ?>
+                    <?php esc_html_e( '账号密码登录', 'qiling' ); ?>
                 </button>
             </div>
             <?php endif; ?>
@@ -136,15 +136,15 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="sms-phone">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                     </label>
-                    <input type="tel" id="sms-phone" name="phone" placeholder="<?php esc_attr_e( '请输入手机号', 'developer-starter' ); ?>" required autocomplete="tel" maxlength="11" />
+                    <input type="tel" id="sms-phone" name="phone" placeholder="<?php esc_attr_e( '请输入手机号', 'qiling' ); ?>" required autocomplete="tel" maxlength="11" />
                 </div>
                 
                 <div class="form-group sms-code-group">
                     <label for="sms-code">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     </label>
-                    <input type="text" id="sms-code" name="code" placeholder="<?php esc_attr_e( '请输入验证码', 'developer-starter' ); ?>" required maxlength="6" autocomplete="one-time-code" />
-                    <button type="button" class="sms-send-btn" id="sms-send-btn"><?php esc_html_e( '获取验证码', 'developer-starter' ); ?></button>
+                    <input type="text" id="sms-code" name="code" placeholder="<?php esc_attr_e( '请输入验证码', 'qiling' ); ?>" required maxlength="6" autocomplete="one-time-code" />
+                    <button type="button" class="sms-send-btn" id="sms-send-btn"><?php esc_html_e( '获取验证码', 'qiling' ); ?></button>
                 </div>
                 
                 <?php if ( $captcha_enable ) : ?>
@@ -155,7 +155,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                             </div>
                             <div class="captcha-progress"></div>
-                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'developer-starter' ); ?></span>
+                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'qiling' ); ?></span>
                         </div>
                     </div>
                     <input type="hidden" name="captcha_verified" value="false" class="captcha-verified-input" />
@@ -164,14 +164,14 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 
                 <div class="form-row">
                     <?php if ( $forgot_page_id ) : ?>
-                        <a href="<?php echo esc_url( get_permalink( $forgot_page_id ) ); ?>" class="forgot-link"><?php esc_html_e( '忘记密码？', 'developer-starter' ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink( $forgot_page_id ) ); ?>" class="forgot-link"><?php esc_html_e( '忘记密码？', 'qiling' ); ?></a>
                     <?php endif; ?>
                 </div>
                 
                 <div class="form-message" id="phone-form-message"></div>
                 
                 <button type="submit" class="auth-submit" id="phone-submit-btn">
-                    <span class="btn-text"><?php esc_html_e( '登 录', 'developer-starter' ); ?></span>
+                    <span class="btn-text"><?php esc_html_e( '登 录', 'qiling' ); ?></span>
                     <span class="btn-loading">
                         <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>
                     </span>
@@ -194,14 +194,14 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="username">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </label>
-                    <input type="text" id="username" name="username" placeholder="<?php esc_attr_e( '用户名或邮箱', 'developer-starter' ); ?>" required autocomplete="username" />
+                    <input type="text" id="username" name="username" placeholder="<?php esc_attr_e( '用户名或邮箱', 'qiling' ); ?>" required autocomplete="username" />
                 </div>
                 
                 <div class="form-group">
                     <label for="password">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     </label>
-                    <input type="password" id="password" name="password" placeholder="<?php esc_attr_e( '密码', 'developer-starter' ); ?>" required autocomplete="current-password" />
+                    <input type="password" id="password" name="password" placeholder="<?php esc_attr_e( '密码', 'qiling' ); ?>" required autocomplete="current-password" />
                     <button type="button" class="toggle-password" tabindex="-1">
                         <svg class="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                         <svg class="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
@@ -212,11 +212,11 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <?php if ( $remember_me_enable ) : ?>
                     <label class="checkbox-label">
                         <input type="checkbox" name="remember" value="true" />
-                        <span><?php esc_html_e( '记住我', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '记住我', 'qiling' ); ?></span>
                     </label>
                     <?php endif; ?>
                     <?php if ( $forgot_page_id ) : ?>
-                        <a href="<?php echo esc_url( get_permalink( $forgot_page_id ) ); ?>" class="forgot-link"><?php esc_html_e( '忘记密码？', 'developer-starter' ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink( $forgot_page_id ) ); ?>" class="forgot-link"><?php esc_html_e( '忘记密码？', 'qiling' ); ?></a>
                     <?php endif; ?>
                 </div>
                 
@@ -228,7 +228,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                             </div>
                             <div class="captcha-progress"></div>
-                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'developer-starter' ); ?></span>
+                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'qiling' ); ?></span>
                         </div>
                     </div>
                     <input type="hidden" name="captcha_verified" value="false" class="captcha-verified-input" />
@@ -238,7 +238,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 <div class="form-message" id="form-message"></div>
                 
                 <button type="submit" class="auth-submit" id="submit-btn">
-                    <span class="btn-text"><?php esc_html_e( '登 录', 'developer-starter' ); ?></span>
+                    <span class="btn-text"><?php esc_html_e( '登 录', 'qiling' ); ?></span>
                     <span class="btn-loading">
                         <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>
                     </span>
@@ -260,7 +260,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 <div class="weixin-login-wrap">
                     <?php echo do_shortcode( '[qiling_weixin_login mode="auto" autoload="0" layout="embed"]' ); ?>
                 </div>
-                <button type="button" class="auth-weixin-back" id="auth-weixin-back"><?php esc_html_e( '返回账号登录', 'developer-starter' ); ?></button>
+                <button type="button" class="auth-weixin-back" id="auth-weixin-back"><?php esc_html_e( '返回账号登录', 'qiling' ); ?></button>
             </div>
             <?php endif; ?>
 
@@ -270,11 +270,11 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 <?php if ( $weixin_login_available ) : ?>
                     <button type="button" class="social-btn social-weixin" id="auth-weixin-btn">
                         <?php if ( $weixin_icon_html ) : ?>
-                            <?php echo $weixin_icon_html; ?>
+                            <?php echo function_exists( 'developer_starter_sanitize_svg_with_kses' ) ? developer_starter_sanitize_svg_with_kses( $weixin_icon_html ) : $weixin_icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                         <?php else : ?>
                             <span class="social-icon"></span>
                         <?php endif; ?>
-                        <?php esc_html_e( '微信扫码登录', 'developer-starter' ); ?>
+                        <?php esc_html_e( '微信扫码登录', 'qiling' ); ?>
                     </button>
                 <?php endif; ?>
             </div>
@@ -282,7 +282,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
             
             <?php if ( $register_page_id && $can_register ) : ?>
             <div class="auth-footer">
-                <p><?php esc_html_e( '还没有账户？', 'developer-starter' ); ?><a href="<?php echo esc_url( get_permalink( $register_page_id ) ); ?>"><?php esc_html_e( '立即注册', 'developer-starter' ); ?></a></p>
+                <p><?php esc_html_e( '还没有账户？', 'qiling' ); ?><a href="<?php echo esc_url( get_permalink( $register_page_id ) ); ?>"><?php esc_html_e( '立即注册', 'qiling' ); ?></a></p>
             </div>
             <?php endif; ?>
         </div>
@@ -299,11 +299,11 @@ $auth_page_config = array(
     'authNonce'     => wp_create_nonce( 'developer_starter_auth' ),
     'smsNonce'      => $auth_page_sms_nonce,
     'i18n'          => array(
-        'sendCode'         => __( '获取验证码', 'developer-starter' ),
-        'sending'          => __( '发送中...', 'developer-starter' ),
-        'phoneInvalid'     => __( '请输入正确的手机号', 'developer-starter' ),
-        'smsCodeInvalid'   => __( '请输入6位验证码', 'developer-starter' ),
-        'networkErrorText' => __( '网络错误，请稍后再试', 'developer-starter' ),
+        'sendCode'         => __( '获取验证码', 'qiling' ),
+        'sending'          => __( '发送中...', 'qiling' ),
+        'phoneInvalid'     => __( '请输入正确的手机号', 'qiling' ),
+        'smsCodeInvalid'   => __( '请输入6位验证码', 'qiling' ),
+        'networkErrorText' => __( '网络错误，请稍后再试', 'qiling' ),
     ),
 );
 $auth_page_config_json = wp_json_encode( $auth_page_config, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT );

@@ -21,7 +21,7 @@ class Software_Carousel_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-layout';
-        $this->description = __( '展示启灵软件库数据的轮播模块', 'developer-starter' );
+        $this->description = __( '展示启灵软件库数据的轮播模块', 'qiling' );
     }
 
     public function get_id() {
@@ -29,22 +29,22 @@ class Software_Carousel_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '软件轮播', 'developer-starter' );
+        return __( '软件轮播', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'software_carousel_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-            array( 'id' => 'software_carousel_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'software_carousel_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+            array( 'id' => 'software_carousel_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
             
             // 样式设置
             array( 
                 'id' => 'software_carousel_bg_type', 
                 'type' => 'select', 
-                'label' => __( '背景类型', 'developer-starter' ), 
+                'label' => __( '背景类型', 'qiling' ), 
                 'options' => array(
-                    'color' => __( '纯色背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
@@ -64,68 +64,68 @@ class Software_Carousel_Module extends Module_Base {
             array( 
                 'id' => 'software_carousel_bg_overlay', 
                 'type' => 'color', 
-                'label' => __( '图片遮罩颜色', 'developer-starter' ),
-                'desc' => __( '设置带透明度的颜色以增加文字可读性', 'developer-starter' ),
+                'label' => __( '图片遮罩颜色', 'qiling' ),
+                'desc' => __( '设置带透明度的颜色以增加文字可读性', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-0-0-0-05)',
                 'dependency' => array( 'software_carousel_bg_type', '==', 'image' )
             ),
 
             // 排版设置
-            array( 'id' => 'software_carousel_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ), 'default' => 'var(--color-neutral-800)' ),
-            array( 'id' => 'software_carousel_title_size', 'type' => 'text', 'label' => __( '标题大小', 'developer-starter' ), 'default' => '1.5rem' ),
-            array( 'id' => 'software_carousel_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ), 'default' => 'var(--color-text-muted)' ),
-            array( 'id' => 'software_carousel_subtitle_size', 'type' => 'text', 'label' => __( '副标题大小', 'developer-starter' ), 'default' => '0.95rem' ),
+            array( 'id' => 'software_carousel_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ), 'default' => 'var(--color-neutral-800)' ),
+            array( 'id' => 'software_carousel_title_size', 'type' => 'text', 'label' => __( '标题大小', 'qiling' ), 'default' => '1.5rem' ),
+            array( 'id' => 'software_carousel_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ), 'default' => 'var(--color-text-muted)' ),
+            array( 'id' => 'software_carousel_subtitle_size', 'type' => 'text', 'label' => __( '副标题大小', 'qiling' ), 'default' => '0.95rem' ),
 
             // 布局与显示
-            array( 'id' => 'software_carousel_categories', 'type' => 'text', 'label' => __( '软件分类ID (逗号分隔)', 'developer-starter' ) ),
-            array( 'id' => 'software_carousel_count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '8' ),
-            array( 'id' => 'software_carousel_speed', 'type' => 'number', 'label' => __( '滚动速度 (秒)', 'developer-starter' ), 'default' => '30' ),
-            array( 'id' => 'software_carousel_card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'developer-starter' ), 'default' => 'var(--color-neutral-0)' ),
+            array( 'id' => 'software_carousel_categories', 'type' => 'text', 'label' => __( '软件分类ID (逗号分隔)', 'qiling' ) ),
+            array( 'id' => 'software_carousel_count', 'type' => 'number', 'label' => __( '显示数量', 'qiling' ), 'default' => '8' ),
+            array( 'id' => 'software_carousel_speed', 'type' => 'number', 'label' => __( '滚动速度 (秒)', 'qiling' ), 'default' => '30' ),
+            array( 'id' => 'software_carousel_card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'qiling' ), 'default' => 'var(--color-neutral-0)' ),
             array(
                 'id'          => 'software_carousel_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
-                'description' => __( '控制版本标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
+                'description' => __( '控制版本标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
                 'default'     => '',
             ),
-            array( 'id' => 'software_carousel_icon_size', 'type' => 'text', 'label' => __( '图标大小', 'developer-starter' ), 'default' => '64px' ),
+            array( 'id' => 'software_carousel_icon_size', 'type' => 'text', 'label' => __( '图标大小', 'qiling' ), 'default' => '64px' ),
             
-            array( 'id' => 'software_carousel_show_btn', 'type' => 'select', 'label' => __( '显示按钮', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '0' ),
-            array( 'id' => 'software_carousel_btn_text', 'type' => 'text', 'label' => __( '按钮文字', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看更多', 'View More' ) : __( '查看更多', 'developer-starter' ) ),
-            array( 'id' => 'software_carousel_btn_link', 'type' => 'text', 'label' => __( '按钮链接', 'developer-starter' ) ),
+            array( 'id' => 'software_carousel_show_btn', 'type' => 'select', 'label' => __( '显示按钮', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '0' ),
+            array( 'id' => 'software_carousel_btn_text', 'type' => 'text', 'label' => __( '按钮文字', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看更多', 'View More' ) : __( '查看更多', 'qiling' ) ),
+            array( 'id' => 'software_carousel_btn_link', 'type' => 'text', 'label' => __( '按钮链接', 'qiling' ) ),
             array(
                 'id'          => 'software_carousel_btn_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label'       => __( '按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'          => 'software_carousel_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label'       => __( '按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             $this->get_button_border_color_field( 'software_carousel_btn_border_color' ),
             array(
                 'id'          => 'software_carousel_btn_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'          => 'software_carousel_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'software_carousel_btn_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'software_carousel_btn_hover_border_color', __( '按钮悬停边框颜色', 'qiling' ), __( '留空时跟随按钮悬停背景颜色。', 'qiling' ) ),
         );
     }
 
     public function render( $data = array() ) {
         if ( ! function_exists( 'developer_starter_qiapp_is_available' ) ) {
-            $helper_file = defined( 'DEVELOPER_STARTER_INC' )
-                ? DEVELOPER_STARTER_INC . '/core/helpers/helpers-qiapp-theme.php'
+            $helper_file = defined( 'QILING_INC' )
+                ? QILING_INC . '/core/helpers/helpers-qiapp-theme.php'
                 : get_template_directory() . '/inc/core/helpers/helpers-qiapp-theme.php';
             if ( is_string( $helper_file ) && file_exists( $helper_file ) ) {
                 require_once $helper_file;
@@ -206,7 +206,7 @@ class Software_Carousel_Module extends Module_Base {
         $show_btn = isset( $data['software_carousel_show_btn'] ) && $data['software_carousel_show_btn'] === '1';
         $btn_text = isset( $data['software_carousel_btn_text'] ) && ! empty( $data['software_carousel_btn_text'] )
             ? $data['software_carousel_btn_text']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看更多', 'View More' ) : __( '查看更多', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看更多', 'View More' ) : __( '查看更多', 'qiling' ) );
         $btn_link = ! empty( $data['software_carousel_btn_link'] ) ? $data['software_carousel_btn_link'] : developer_starter_qiapp_get_archive_link();
         $btn_bg_color = $this->sanitize_css_color_value(
             isset( $data['software_carousel_btn_bg_color'] ) ? $data['software_carousel_btn_bg_color'] : '',
@@ -554,9 +554,11 @@ class Software_Carousel_Module extends Module_Base {
             text-align: center;
             margin: var(--qiling-space-20) 0;
         ">
-            <span style="font-size: var(--qiling-text-rem-2p5); display: block; margin-bottom: var(--qiling-space-12);">⚠️</span>
-            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--qiling-color-92400e);"><?php esc_html_e( '请先安装启灵软件库插件', 'developer-starter' ); ?></h3>
-            <p style="margin: 0; color: var(--qiling-color-a16207);"><?php esc_html_e( '软件轮播模块需要启灵软件库插件（qilingapp）的支持，请先安装并激活该插件。', 'developer-starter' ); ?></p>
+            <span style="display: block; margin: 0 auto var(--qiling-space-12); width: 40px; height: 40px; color: var(--qiling-color-92400e);" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </span>
+            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--qiling-color-92400e);"><?php esc_html_e( '请先安装启灵软件库插件', 'qiling' ); ?></h3>
+            <p style="margin: 0; color: var(--qiling-color-a16207);"><?php esc_html_e( '软件轮播模块需要启灵软件库插件（qilingapp）的支持，请先安装并激活该插件。', 'qiling' ); ?></p>
         </div>
         <?php
     }
@@ -577,9 +579,11 @@ class Software_Carousel_Module extends Module_Base {
             text-align: center;
             margin: var(--qiling-space-20) 0;
         ">
-            <span style="font-size: var(--qiling-text-rem-2p5); display: block; margin-bottom: var(--qiling-space-12);">📦</span>
-            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--color-neutral-600);"><?php esc_html_e( '暂无软件数据', 'developer-starter' ); ?></h3>
-            <p style="margin: 0; color: var(--color-text-muted);"><?php esc_html_e( '请先在启灵软件库插件中添加软件数据，或选择包含软件数据的分类。', 'developer-starter' ); ?></p>
+            <span style="display: block; margin: 0 auto var(--qiling-space-12); width: 40px; height: 40px; color: var(--color-neutral-600);" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </span>
+            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--color-neutral-600);"><?php esc_html_e( '暂无软件数据', 'qiling' ); ?></h3>
+            <p style="margin: 0; color: var(--color-text-muted);"><?php esc_html_e( '请先在启灵软件库插件中添加软件数据，或选择包含软件数据的分类。', 'qiling' ); ?></p>
         </div>
         <?php
     }

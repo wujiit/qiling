@@ -100,8 +100,8 @@ function developer_starter_output_login_modal() {
     
     // 注册协议设置
     $agreement_enable = developer_starter_get_option( 'register_agreement_enable', '' );
-    $agreement_text = developer_starter_get_option( 'register_agreement_text', __( '我已阅读并同意', 'developer-starter' ) );
-    $agreement_link_text = developer_starter_get_option( 'register_agreement_link_text', __( '《用户服务协议》', 'developer-starter' ) );
+    $agreement_text = developer_starter_get_option( 'register_agreement_text', __( '我已阅读并同意', 'qiling' ) );
+    $agreement_link_text = developer_starter_get_option( 'register_agreement_link_text', __( '《用户服务协议》', 'qiling' ) );
     $agreement_url = developer_starter_get_option( 'register_agreement_url', '' );
     
     // 自定义提示信息
@@ -143,9 +143,9 @@ function developer_starter_output_login_modal() {
     <div class="login-modal-overlay" id="login-modal-overlay"></div>
     <div class="login-modal<?php echo $has_auth_modal_side_image ? ' with-side-media' : ''; ?>" id="login-modal">
         <div class="login-modal-header<?php echo $weixin_login_available ? ' has-corner-toggle' : ''; ?>">
-            <h3 id="modal-title"><?php esc_html_e( '用户登录', 'developer-starter' ); ?></h3>
+            <h3 id="modal-title"><?php esc_html_e( '用户登录', 'qiling' ); ?></h3>
             <?php if ( $weixin_login_available ) : ?>
-            <button type="button" class="login-weixin-toggle" id="login-weixin-toggle" aria-label="<?php esc_attr_e( '微信扫码登录', 'developer-starter' ); ?>">
+            <button type="button" class="login-weixin-toggle" id="login-weixin-toggle" aria-label="<?php esc_attr_e( '微信扫码登录', 'qiling' ); ?>">
                 <span class="corner-icon weixin-icon"></span>
                 <span class="corner-icon pc-icon"></span>
             </button>
@@ -163,8 +163,8 @@ function developer_starter_output_login_modal() {
                 <?php if ( $sms_enable && ! $sms_phone_only ) : ?>
                 <!-- 登录方式切换 -->
                 <div class="modal-login-tabs">
-                    <button type="button" class="modal-tab <?php echo $modal_default_phone ? 'active' : ''; ?>" data-tab="phone"><?php esc_html_e( '手机号', 'developer-starter' ); ?></button>
-                    <button type="button" class="modal-tab <?php echo ! $modal_default_phone ? 'active' : ''; ?>" data-tab="account"><?php esc_html_e( '账号密码', 'developer-starter' ); ?></button>
+                    <button type="button" class="modal-tab <?php echo $modal_default_phone ? 'active' : ''; ?>" data-tab="phone"><?php esc_html_e( '手机号', 'qiling' ); ?></button>
+                    <button type="button" class="modal-tab <?php echo ! $modal_default_phone ? 'active' : ''; ?>" data-tab="account"><?php esc_html_e( '账号密码', 'qiling' ); ?></button>
                 </div>
                 <?php endif; ?>
                 
@@ -172,16 +172,16 @@ function developer_starter_output_login_modal() {
                 <!-- 手机号登录表单 -->
                 <form id="header-phone-form" class="login-modal-form <?php echo ( $sms_phone_only || $modal_default_phone ) ? '' : 'hidden'; ?>" novalidate>
                     <div class="modal-form-group">
-                        <input type="tel" id="header-phone" name="phone" placeholder="<?php esc_attr_e( '请输入手机号', 'developer-starter' ); ?>" required autocomplete="tel" maxlength="11" />
+                        <input type="tel" id="header-phone" name="phone" placeholder="<?php esc_attr_e( '请输入手机号', 'qiling' ); ?>" required autocomplete="tel" maxlength="11" />
                     </div>
                     <div class="modal-form-group modal-sms-group">
-                        <input type="text" id="header-sms-code" name="code" placeholder="<?php esc_attr_e( '请输入验证码', 'developer-starter' ); ?>" required maxlength="6" autocomplete="one-time-code" />
-                        <button type="button" class="modal-sms-btn" id="header-sms-btn"><?php esc_html_e( '获取验证码', 'developer-starter' ); ?></button>
+                        <input type="text" id="header-sms-code" name="code" placeholder="<?php esc_attr_e( '请输入验证码', 'qiling' ); ?>" required maxlength="6" autocomplete="one-time-code" />
+                        <button type="button" class="modal-sms-btn" id="header-sms-btn"><?php esc_html_e( '获取验证码', 'qiling' ); ?></button>
                     </div>
 
                     <?php if ( $register_code_enabled ) : ?>
                     <div class="modal-form-group">
-                        <input type="text" id="header-registration-code" name="registration_code" placeholder="<?php esc_attr_e( '注册码（新用户必填）', 'developer-starter' ); ?>" autocomplete="off" />
+                        <input type="text" id="header-registration-code" name="registration_code" placeholder="<?php esc_attr_e( '注册码（新用户必填）', 'qiling' ); ?>" autocomplete="off" />
                     </div>
                     <?php if ( $register_code_obtain_enabled ) : ?>
                     <p class="email-whitelist-tip register-code-obtain-tip">
@@ -189,7 +189,7 @@ function developer_starter_output_login_modal() {
                             <span><?php echo esc_html( $register_code_obtain_link['tip_text'] ); ?></span>
                         <?php endif; ?>
                         <a href="<?php echo esc_url( $register_code_obtain_link['url'] ); ?>" target="_blank" rel="noopener noreferrer nofollow">
-                            <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'developer-starter' ) ); ?>
+                            <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'qiling' ) ); ?>
                         </a>
                     </p>
                     <?php endif; ?>
@@ -203,7 +203,7 @@ function developer_starter_output_login_modal() {
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                                 </div>
                                 <div class="captcha-progress"></div>
-                                <span class="captcha-text"><?php esc_html_e( '向右滑动验证', 'developer-starter' ); ?></span>
+                                <span class="captcha-text"><?php esc_html_e( '向右滑动验证', 'qiling' ); ?></span>
                             </div>
                         </div>
                         <input type="hidden" name="captcha_verified" id="header-phone-captcha-verified" value="false" />
@@ -213,7 +213,7 @@ function developer_starter_output_login_modal() {
                     <div class="modal-form-message" id="header-phone-message"></div>
                     
                     <button type="submit" class="login-modal-submit" id="header-phone-submit">
-                        <span class="btn-text" id="header-phone-submit-text"><?php esc_html_e( '登 录', 'developer-starter' ); ?></span>
+                        <span class="btn-text" id="header-phone-submit-text"><?php esc_html_e( '登 录', 'qiling' ); ?></span>
                         <span class="modal-btn-loading">
                             <svg class="modal-spinner" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>
                         </span>
@@ -233,17 +233,17 @@ function developer_starter_output_login_modal() {
                 <!-- 账号密码登录表单 -->
                 <form id="header-login-form" class="login-modal-form <?php echo ( $sms_enable && $modal_default_phone ) ? 'hidden' : ''; ?>" novalidate>
                     <div class="modal-form-group">
-                        <input type="text" id="header-username" name="username" placeholder="<?php esc_attr_e( '用户名或邮箱', 'developer-starter' ); ?>" required autocomplete="username" />
+                        <input type="text" id="header-username" name="username" placeholder="<?php esc_attr_e( '用户名或邮箱', 'qiling' ); ?>" required autocomplete="username" />
                     </div>
                     <div class="modal-form-group">
-                        <input type="password" id="header-password" name="password" placeholder="<?php esc_attr_e( '密码', 'developer-starter' ); ?>" required autocomplete="current-password" />
+                        <input type="password" id="header-password" name="password" placeholder="<?php esc_attr_e( '密码', 'qiling' ); ?>" required autocomplete="current-password" />
                     </div>
                     
                     <?php if ( $remember_me_enable ) : ?>
                     <div class="modal-form-group modal-remember-group">
                         <label class="modal-remember-label">
                             <input type="checkbox" name="remember" value="true" class="modal-remember-checkbox" />
-                            <?php esc_html_e( '记住我', 'developer-starter' ); ?>
+                            <?php esc_html_e( '记住我', 'qiling' ); ?>
                         </label>
                     </div>
                     <?php endif; ?>
@@ -256,7 +256,7 @@ function developer_starter_output_login_modal() {
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                                 </div>
                                 <div class="captcha-progress"></div>
-                                <span class="captcha-text"><?php esc_html_e( '向右滑动验证', 'developer-starter' ); ?></span>
+                                <span class="captcha-text"><?php esc_html_e( '向右滑动验证', 'qiling' ); ?></span>
                             </div>
                         </div>
                         <input type="hidden" name="captcha_verified" id="header-captcha-verified" value="false" />
@@ -266,7 +266,7 @@ function developer_starter_output_login_modal() {
                     <div class="modal-form-message" id="header-form-message"></div>
                     
                     <button type="submit" class="login-modal-submit" id="header-login-submit">
-                        <span class="btn-text"><?php esc_html_e( '登 录', 'developer-starter' ); ?></span>
+                        <span class="btn-text"><?php esc_html_e( '登 录', 'qiling' ); ?></span>
                         <span class="modal-btn-loading">
                             <svg class="modal-spinner" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>
                         </span>
@@ -293,18 +293,18 @@ function developer_starter_output_login_modal() {
                             <?php else : ?>
                                 <span class="social-icon"></span>
                             <?php endif; ?>
-                            <span id="login-weixin-btn-text"><?php esc_html_e( '微信扫码登录', 'developer-starter' ); ?></span>
+                            <span id="login-weixin-btn-text"><?php esc_html_e( '微信扫码登录', 'qiling' ); ?></span>
                         </button>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
                 <div class="login-modal-footer">
                     <?php if ( $can_register ) : ?>
-                        <a href="javascript:;" class="login-modal-register-link" id="show-register-panel"><?php esc_html_e( '注册账号', 'developer-starter' ); ?></a>
-                        <a href="javascript:;" class="login-modal-register-link hidden" id="show-login-inline-panel"><?php esc_html_e( '已有账号？立即登录', 'developer-starter' ); ?></a>
+                        <a href="javascript:;" class="login-modal-register-link" id="show-register-panel"><?php esc_html_e( '注册账号', 'qiling' ); ?></a>
+                        <a href="javascript:;" class="login-modal-register-link hidden" id="show-login-inline-panel"><?php esc_html_e( '已有账号？立即登录', 'qiling' ); ?></a>
                     <?php endif; ?>
                     <?php if ( $forgot_page_id ) : ?>
-                        <a href="<?php echo esc_url( get_permalink( $forgot_page_id ) ); ?>" class="login-modal-forgot-link" id="login-modal-forgot-link"><?php esc_html_e( '忘记密码？', 'developer-starter' ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink( $forgot_page_id ) ); ?>" class="login-modal-forgot-link" id="login-modal-forgot-link"><?php esc_html_e( '忘记密码？', 'qiling' ); ?></a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -316,7 +316,7 @@ function developer_starter_output_login_modal() {
                     <?php echo do_shortcode( '[qiling_weixin_login mode="auto" autoload="0" layout="embed"]' ); ?>
                 </div>
                 <div class="login-modal-footer">
-                    <a href="javascript:;" id="weixin-back-btn"><?php esc_html_e( '返回账号登录', 'developer-starter' ); ?></a>
+                    <a href="javascript:;" id="weixin-back-btn"><?php esc_html_e( '返回账号登录', 'qiling' ); ?></a>
                 </div>
             </div>
             <?php endif; ?>
@@ -326,35 +326,35 @@ function developer_starter_output_login_modal() {
             <div id="register-panel" class="login-modal-panel-hidden">
                 <form id="header-register-form" class="login-modal-form" novalidate>
                     <div class="modal-form-group">
-                        <input type="text" id="reg-username" name="username" placeholder="<?php esc_attr_e( '用户名（至少3个字符）', 'developer-starter' ); ?>" required autocomplete="username" />
+                        <input type="text" id="reg-username" name="username" placeholder="<?php esc_attr_e( '用户名（至少3个字符）', 'qiling' ); ?>" required autocomplete="username" />
                     </div>
                     <div class="modal-form-group">
-                        <input type="email" id="reg-email" name="email" placeholder="<?php esc_attr_e( '邮箱地址', 'developer-starter' ); ?>" required autocomplete="email" />
+                        <input type="email" id="reg-email" name="email" placeholder="<?php esc_attr_e( '邮箱地址', 'qiling' ); ?>" required autocomplete="email" />
                     </div>
                     <?php if ( $email_domain_whitelist_text !== '' ) : ?>
                     <p class="email-whitelist-tip">
-                        <?php echo esc_html( sprintf( __( '仅支持以下邮箱后缀：%s', 'developer-starter' ), $email_domain_whitelist_text ) ); ?>
+                        <?php echo esc_html( sprintf( __( '仅支持以下邮箱后缀：%s', 'qiling' ), $email_domain_whitelist_text ) ); ?>
                     </p>
                     <?php endif; ?>
                     <?php if ( $register_email_code_enabled ) : ?>
                     <div class="modal-form-group modal-sms-group">
-                        <input type="text" id="reg-email-code" name="email_code" placeholder="<?php esc_attr_e( '请输入邮箱验证码', 'developer-starter' ); ?>" required maxlength="6" autocomplete="one-time-code" inputmode="numeric" />
-                        <button type="button" class="modal-sms-btn" id="reg-email-send-btn"><?php esc_html_e( '获取验证码', 'developer-starter' ); ?></button>
+                        <input type="text" id="reg-email-code" name="email_code" placeholder="<?php esc_attr_e( '请输入邮箱验证码', 'qiling' ); ?>" required maxlength="6" autocomplete="one-time-code" inputmode="numeric" />
+                        <button type="button" class="modal-sms-btn" id="reg-email-send-btn"><?php esc_html_e( '获取验证码', 'qiling' ); ?></button>
                     </div>
                     <p class="email-whitelist-tip">
-                        <?php echo esc_html( sprintf( __( '验证码有效期 %d 分钟', 'developer-starter' ), (int) $register_email_code_expire_minutes ) ); ?>
+                        <?php echo esc_html( sprintf( __( '验证码有效期 %d 分钟', 'qiling' ), (int) $register_email_code_expire_minutes ) ); ?>
                     </p>
                     <?php endif; ?>
                     <div class="modal-form-group">
-                        <input type="password" id="reg-password" name="password" placeholder="<?php esc_attr_e( '密码', 'developer-starter' ); ?>" required autocomplete="new-password" />
+                        <input type="password" id="reg-password" name="password" placeholder="<?php esc_attr_e( '密码', 'qiling' ); ?>" required autocomplete="new-password" />
                     </div>
                     <div class="modal-form-group">
-                        <input type="password" id="reg-password-confirm" name="password_confirm" placeholder="<?php esc_attr_e( '确认密码', 'developer-starter' ); ?>" required autocomplete="new-password" />
+                        <input type="password" id="reg-password-confirm" name="password_confirm" placeholder="<?php esc_attr_e( '确认密码', 'qiling' ); ?>" required autocomplete="new-password" />
                     </div>
 
                     <?php if ( $register_code_enabled ) : ?>
                     <div class="modal-form-group">
-                        <input type="text" id="reg-registration-code" name="registration_code" placeholder="<?php esc_attr_e( '请输入注册码', 'developer-starter' ); ?>" autocomplete="off" />
+                        <input type="text" id="reg-registration-code" name="registration_code" placeholder="<?php esc_attr_e( '请输入注册码', 'qiling' ); ?>" autocomplete="off" />
                     </div>
                     <?php if ( $register_code_obtain_enabled ) : ?>
                     <p class="email-whitelist-tip register-code-obtain-tip">
@@ -362,7 +362,7 @@ function developer_starter_output_login_modal() {
                             <span><?php echo esc_html( $register_code_obtain_link['tip_text'] ); ?></span>
                         <?php endif; ?>
                         <a href="<?php echo esc_url( $register_code_obtain_link['url'] ); ?>" target="_blank" rel="noopener noreferrer nofollow">
-                            <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'developer-starter' ) ); ?>
+                            <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'qiling' ) ); ?>
                         </a>
                     </p>
                     <?php endif; ?>
@@ -376,7 +376,7 @@ function developer_starter_output_login_modal() {
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                                 </div>
                                 <div class="captcha-progress"></div>
-                                <span class="captcha-text"><?php esc_html_e( '向右滑动验证', 'developer-starter' ); ?></span>
+                                <span class="captcha-text"><?php esc_html_e( '向右滑动验证', 'qiling' ); ?></span>
                             </div>
                         </div>
                         <input type="hidden" name="captcha_verified" id="reg-captcha-verified" value="false" />
@@ -403,7 +403,7 @@ function developer_starter_output_login_modal() {
                     <div class="modal-form-message" id="reg-form-message"></div>
                     
                     <button type="submit" class="login-modal-submit" id="reg-submit-btn">
-                        <span class="btn-text"><?php esc_html_e( '立即注册', 'developer-starter' ); ?></span>
+                        <span class="btn-text"><?php esc_html_e( '立即注册', 'qiling' ); ?></span>
                         <span class="modal-btn-loading">
                             <svg class="modal-spinner" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>
                         </span>
@@ -420,7 +420,7 @@ function developer_starter_output_login_modal() {
                 </form>
                 
                 <div class="login-modal-footer">
-                    <a href="javascript:;" id="show-login-panel"><?php esc_html_e( '已有账号？立即登录', 'developer-starter' ); ?></a>
+                    <a href="javascript:;" id="show-login-panel"><?php esc_html_e( '已有账号？立即登录', 'qiling' ); ?></a>
                 </div>
             </div>
             <?php endif; ?>
@@ -431,7 +431,7 @@ function developer_starter_output_login_modal() {
     <?php
     $assets_version = function_exists( 'developer_starter_get_assets_version' )
         ? (string) developer_starter_get_assets_version()
-        : (string) DEVELOPER_STARTER_VERSION;
+        : (string) QILING_VERSION;
     $captcha_provider = (string) developer_starter_get_option( 'captcha_provider', 'theme' );
     if ( ! in_array( $captcha_provider, array( 'theme', 'aliyun' ), true ) ) {
         $captcha_provider = 'theme';
@@ -470,17 +470,17 @@ function developer_starter_output_login_modal() {
             'captchaChallengeAction' => 'developer_starter_captcha_challenge',
             'captchaVerifyAction'    => 'developer_starter_captcha_verify',
             'i18n'                   => array(
-                'captchaInitFailedText' => __( '验证初始化失败，请重试', 'developer-starter' ),
-                'dragText'              => __( '向右滑动完成验证', 'developer-starter' ),
-                'networkErrorShort'     => __( '网络错误', 'developer-starter' ),
-                'networkErrorText'      => __( '网络错误，请稍后再试', 'developer-starter' ),
-                'sendCodeText'          => __( '获取验证码', 'developer-starter' ),
+                'captchaInitFailedText' => __( '验证初始化失败，请重试', 'qiling' ),
+                'dragText'              => __( '向右滑动完成验证', 'qiling' ),
+                'networkErrorShort'     => __( '网络错误', 'qiling' ),
+                'networkErrorText'      => __( '网络错误，请稍后再试', 'qiling' ),
+                'sendCodeText'          => __( '获取验证码', 'qiling' ),
             ),
         ),
         'captchaProviderScript'      => add_query_arg(
             'ver',
             rawurlencode( $assets_version ),
-            DEVELOPER_STARTER_ASSETS . '/js/captcha-provider.js'
+            QILING_ASSETS . '/js/captcha-provider.js'
         ),
         'captcha'                   => array(
             'provider'      => $captcha_provider,
@@ -492,40 +492,40 @@ function developer_starter_output_login_modal() {
             'sceneAuth'     => $captcha_aliyun_scene_auth,
             'sceneSearch'   => $captcha_aliyun_scene_search,
             'i18n'          => array(
-                'configErrorText' => __( '验证码配置不完整', 'developer-starter' ),
-                'waitingText'     => __( '点击完成验证', 'developer-starter' ),
-                'successText'     => __( '验证成功', 'developer-starter' ),
-                'failedText'      => __( '验证失败，请重试', 'developer-starter' ),
-                'verifyingText'   => __( '正在验证...', 'developer-starter' ),
-                'buttonText'      => __( '点击验证', 'developer-starter' ),
-                'loadFailedText'  => __( '验证码脚本加载失败，请检查网络', 'developer-starter' ),
+                'configErrorText' => __( '验证码配置不完整', 'qiling' ),
+                'waitingText'     => __( '点击完成验证', 'qiling' ),
+                'successText'     => __( '验证成功', 'qiling' ),
+                'failedText'      => __( '验证失败，请重试', 'qiling' ),
+                'verifyingText'   => __( '正在验证...', 'qiling' ),
+                'buttonText'      => __( '点击验证', 'qiling' ),
+                'loadFailedText'  => __( '验证码脚本加载失败，请检查网络', 'qiling' ),
             ),
         ),
         'i18n'                      => array(
-            'loginSubmit'              => __( '登 录', 'developer-starter' ),
-            'registerSubmit'           => __( '立即注册', 'developer-starter' ),
-            'loginTitle'               => __( '用户登录', 'developer-starter' ),
-            'phoneRegisterTitle'       => __( '手机号注册', 'developer-starter' ),
-            'registerTitle'            => __( '创建账户', 'developer-starter' ),
-            'weixinLogin'              => __( '微信扫码登录', 'developer-starter' ),
-            'weixinRegister'           => __( '微信扫码注册', 'developer-starter' ),
-            'sendCode'                 => __( '获取验证码', 'developer-starter' ),
-            'sending'                  => __( '发送中...', 'developer-starter' ),
-            'captchaRequired'          => __( '请先完成验证，再获取验证码', 'developer-starter' ),
-            'phoneInvalid'             => __( '请输入正确的手机号', 'developer-starter' ),
-            'smsCodeInvalid'           => __( '请输入6位验证码', 'developer-starter' ),
-            'emailInvalid'             => __( '请输入正确的邮箱地址', 'developer-starter' ),
-            'emailWhitelistPrefix'     => __( '当前仅支持以下邮箱后缀：', 'developer-starter' ),
-            'emailNotAllowed'          => __( '当前邮箱后缀不在允许范围内', 'developer-starter' ),
-            'emailCodeInvalid'         => __( '请输入6位邮箱验证码', 'developer-starter' ),
-            'passwordLength'           => __( '密码至少需要6个字符', 'developer-starter' ),
-            'passwordMismatch'         => __( '两次输入的密码不一致', 'developer-starter' ),
-            'registrationCodeRequired' => __( '请输入注册码', 'developer-starter' ),
-            'usernameLength'           => __( '用户名至少需要3个字符', 'developer-starter' ),
-            'usernameChineseDisallowed' => __( '用户名不支持中文，请使用字母、数字或下划线', 'developer-starter' ),
-            'sendFailed'               => __( '发送失败，请稍后重试', 'developer-starter' ),
-            'networkError'             => __( '网络错误', 'developer-starter' ),
-            'networkErrorText'         => __( '网络错误，请稍后再试', 'developer-starter' ),
+            'loginSubmit'              => __( '登 录', 'qiling' ),
+            'registerSubmit'           => __( '立即注册', 'qiling' ),
+            'loginTitle'               => __( '用户登录', 'qiling' ),
+            'phoneRegisterTitle'       => __( '手机号注册', 'qiling' ),
+            'registerTitle'            => __( '创建账户', 'qiling' ),
+            'weixinLogin'              => __( '微信扫码登录', 'qiling' ),
+            'weixinRegister'           => __( '微信扫码注册', 'qiling' ),
+            'sendCode'                 => __( '获取验证码', 'qiling' ),
+            'sending'                  => __( '发送中...', 'qiling' ),
+            'captchaRequired'          => __( '请先完成验证，再获取验证码', 'qiling' ),
+            'phoneInvalid'             => __( '请输入正确的手机号', 'qiling' ),
+            'smsCodeInvalid'           => __( '请输入6位验证码', 'qiling' ),
+            'emailInvalid'             => __( '请输入正确的邮箱地址', 'qiling' ),
+            'emailWhitelistPrefix'     => __( '当前仅支持以下邮箱后缀：', 'qiling' ),
+            'emailNotAllowed'          => __( '当前邮箱后缀不在允许范围内', 'qiling' ),
+            'emailCodeInvalid'         => __( '请输入6位邮箱验证码', 'qiling' ),
+            'passwordLength'           => __( '密码至少需要6个字符', 'qiling' ),
+            'passwordMismatch'         => __( '两次输入的密码不一致', 'qiling' ),
+            'registrationCodeRequired' => __( '请输入注册码', 'qiling' ),
+            'usernameLength'           => __( '用户名至少需要3个字符', 'qiling' ),
+            'usernameChineseDisallowed' => __( '用户名不支持中文，请使用字母、数字或下划线', 'qiling' ),
+            'sendFailed'               => __( '发送失败，请稍后重试', 'qiling' ),
+            'networkError'             => __( '网络错误', 'qiling' ),
+            'networkErrorText'         => __( '网络错误，请稍后再试', 'qiling' ),
         ),
     );
     $login_modal_config_json = wp_json_encode( $login_modal_config, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT );
@@ -564,7 +564,7 @@ function developer_starter_ajax_get_login_modal() {
 
         wp_send_json_error(
             array(
-                'message' => __( '请求过于频繁，请稍后再试', 'developer-starter' ),
+                'message' => __( '请求过于频繁，请稍后再试', 'qiling' ),
                 'code'    => 'rate_limited',
             ),
             429

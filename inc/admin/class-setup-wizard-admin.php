@@ -46,9 +46,9 @@ class Setup_Wizard_Admin {
      */
     public function register_submenu_page() {
         $hook = add_submenu_page(
-            'developer-starter-settings',
-            __( '启灵建站向导', 'developer-starter' ),
-            __( '建站向导', 'developer-starter' ),
+            'qiling-settings',
+            __( '启灵建站向导', 'qiling' ),
+            __( '建站向导', 'qiling' ),
             'manage_options',
             self::PAGE_SLUG,
             array( $this, 'render_page' )
@@ -74,9 +74,9 @@ class Setup_Wizard_Admin {
         $wp_admin_bar->add_node(
             array(
                 'id'     => 'developer-starter-setup-wizard',
-                'title'  => '<span class="ab-icon dashicons dashicons-admin-home" style="margin-top:2px;"></span><span class="ab-label">' . esc_html__( '启灵建站', 'developer-starter' ) . '</span>',
+                'title'  => '<span class="ab-icon dashicons dashicons-admin-home" style="margin-top:2px;"></span><span class="ab-label">' . esc_html__( '启灵建站', 'qiling' ) . '</span>',
                 'href'   => admin_url( 'admin.php?page=' . self::PAGE_SLUG ),
-                'parent' => 'developer-starter-settings',
+                'parent' => 'qiling-settings',
             )
         );
     }
@@ -132,7 +132,7 @@ class Setup_Wizard_Admin {
      */
     public function maybe_handle_request() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( '权限不足', 'developer-starter' ) );
+            wp_die( esc_html__( '权限不足', 'qiling' ) );
         }
 
         $method = isset( $_SERVER['REQUEST_METHOD'] ) ? strtoupper( sanitize_text_field( wp_unslash( (string) $_SERVER['REQUEST_METHOD'] ) ) ) : '';
@@ -175,7 +175,7 @@ class Setup_Wizard_Admin {
      */
     public function render_page() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( '权限不足', 'developer-starter' ) );
+            wp_die( esc_html__( '权限不足', 'qiling' ) );
         }
 
         $step         = $this->get_current_step();
@@ -185,8 +185,8 @@ class Setup_Wizard_Admin {
 
         ?>
         <div class="wrap qiling-setup-wizard">
-            <h1><?php esc_html_e( '启灵建站向导', 'developer-starter' ); ?></h1>
-            <p class="description"><?php esc_html_e( '这个向导只做首次配置辅助，所有结果都会回到启灵主题设置、页面、菜单和模板系统里继续修改。', 'developer-starter' ); ?></p>
+            <h1><?php esc_html_e( '启灵建站向导', 'qiling' ); ?></h1>
+            <p class="description"><?php esc_html_e( '这个向导只做首次配置辅助，所有结果都会回到启灵主题设置、页面、菜单和模板系统里继续修改。', 'qiling' ); ?></p>
 
             <?php $this->render_notices(); ?>
             <?php $this->render_styles(); ?>
@@ -409,33 +409,33 @@ class Setup_Wizard_Admin {
         ?>
         <section class="qsw-panel">
             <div class="qsw-panel-head">
-                <span><?php esc_html_e( '步骤 1', 'developer-starter' ); ?></span>
-                <h2><?php esc_html_e( '欢迎使用启灵建站向导', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '当前向导会根据站点类型和行业给出模板、页面、内容模型建议；只有点击生成页面时才会创建缺失页面，不会安装或配置第三方插件。', 'developer-starter' ); ?></p>
+                <span><?php esc_html_e( '步骤 1', 'qiling' ); ?></span>
+                <h2><?php esc_html_e( '欢迎使用启灵建站向导', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '当前向导会根据站点类型和行业给出模板、页面、内容模型建议；只有点击生成页面时才会创建缺失页面，不会安装或配置第三方插件。', 'qiling' ); ?></p>
             </div>
 
             <div class="qsw-feature-grid">
-                <div><strong><?php esc_html_e( '可随时调整', 'developer-starter' ); ?></strong><span><?php esc_html_e( '所有设置都能在主题设置、页面和菜单中单独修改。', 'developer-starter' ); ?></span></div>
-                <div><strong><?php esc_html_e( '默认不覆盖', 'developer-starter' ); ?></strong><span><?php esc_html_e( '已有首页、页面和菜单会优先复用。', 'developer-starter' ); ?></span></div>
-                <div><strong><?php esc_html_e( '插件只提示', 'developer-starter' ); ?></strong><span><?php esc_html_e( 'WooCommerce、积分商城、微信登录等只检测状态，不安装不配置。', 'developer-starter' ); ?></span></div>
+                <div><strong><?php esc_html_e( '可随时调整', 'qiling' ); ?></strong><span><?php esc_html_e( '所有设置都能在主题设置、页面和菜单中单独修改。', 'qiling' ); ?></span></div>
+                <div><strong><?php esc_html_e( '默认不覆盖', 'qiling' ); ?></strong><span><?php esc_html_e( '已有首页、页面和菜单会优先复用。', 'qiling' ); ?></span></div>
+                <div><strong><?php esc_html_e( '插件只提示', 'qiling' ); ?></strong><span><?php esc_html_e( '启灵生态插件、积分商城、微信登录等只检测状态，不安装不配置。', 'qiling' ); ?></span></div>
             </div>
 
             <div class="qsw-existing">
-                <h3><?php esc_html_e( '当前站点检测', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '当前站点检测', 'qiling' ); ?></h3>
                 <ul>
-                    <li><?php echo esc_html( sprintf( __( '页面数量：%d', 'developer-starter' ), absint( $site_summary['pages'] ) ) ); ?></li>
-                    <li><?php echo esc_html( sprintf( __( '菜单数量：%d', 'developer-starter' ), absint( $site_summary['menus'] ) ) ); ?></li>
-                    <li><?php echo esc_html( ! empty( $site_summary['front_page_title'] ) ? sprintf( __( '当前首页：%s', 'developer-starter' ), $site_summary['front_page_title'] ) : __( '当前首页：尚未设置静态首页', 'developer-starter' ) ); ?></li>
+                    <li><?php echo esc_html( sprintf( __( '页面数量：%d', 'qiling' ), absint( $site_summary['pages'] ) ) ); ?></li>
+                    <li><?php echo esc_html( sprintf( __( '菜单数量：%d', 'qiling' ), absint( $site_summary['menus'] ) ) ); ?></li>
+                    <li><?php echo esc_html( ! empty( $site_summary['front_page_title'] ) ? sprintf( __( '当前首页：%s', 'qiling' ), $site_summary['front_page_title'] ) : __( '当前首页：尚未设置静态首页', 'qiling' ) ); ?></li>
                 </ul>
                 <?php if ( ! empty( $site_summary['has_content'] ) ) : ?>
-                    <p class="qsw-warning"><?php esc_html_e( '已检测到站点存在内容。向导默认不会覆盖已有内容。', 'developer-starter' ); ?></p>
+                    <p class="qsw-warning"><?php esc_html_e( '已检测到站点存在内容。向导默认不会覆盖已有内容。', 'qiling' ); ?></p>
                 <?php endif; ?>
             </div>
 
             <div class="qsw-actions">
-                <?php $this->render_step_link( 'type', __( '开始配置', 'developer-starter' ), 'button button-primary button-hero' ); ?>
-                <a class="button button-hero" href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-template-center' ) ); ?>"><?php esc_html_e( '查看模板中心', 'developer-starter' ); ?></a>
-                <?php $this->render_action_form( 'skip', __( '跳过向导', 'developer-starter' ), 'button-link qsw-danger-link' ); ?>
+                <?php $this->render_step_link( 'type', __( '开始配置', 'qiling' ), 'button button-primary button-hero' ); ?>
+                <a class="button button-hero" href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-template-center' ) ); ?>"><?php esc_html_e( '查看模板中心', 'qiling' ); ?></a>
+                <?php $this->render_action_form( 'skip', __( '跳过向导', 'qiling' ), 'button-link qsw-danger-link' ); ?>
             </div>
         </section>
         <?php
@@ -457,9 +457,9 @@ class Setup_Wizard_Admin {
         ?>
         <section class="qsw-panel">
             <div class="qsw-panel-head">
-                <span><?php esc_html_e( '步骤 2', 'developer-starter' ); ?></span>
-                <h2><?php esc_html_e( '选择站点类型', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '这里会先生成推荐预览：模板、页面、内容模型和主题能力都只是建议，不会立即写入站点。', 'developer-starter' ); ?></p>
+                <span><?php esc_html_e( '步骤 2', 'qiling' ); ?></span>
+                <h2><?php esc_html_e( '选择站点类型', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '这里会先生成推荐预览：模板、页面、内容模型和主题能力都只是建议，不会立即写入站点。', 'qiling' ); ?></p>
             </div>
 
             <form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=' . self::PAGE_SLUG ) ); ?>">
@@ -468,7 +468,7 @@ class Setup_Wizard_Admin {
                 <input type="hidden" name="current_step" value="type" />
                 <input type="hidden" name="next_step" value="pages" />
 
-                <h3><?php esc_html_e( '建站类型', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '建站类型', 'qiling' ); ?></h3>
                 <div class="qsw-choice-grid">
                     <?php foreach ( $this->get_site_type_choices() as $key => $label ) : ?>
                         <label class="qsw-choice">
@@ -478,7 +478,7 @@ class Setup_Wizard_Admin {
                     <?php endforeach; ?>
                 </div>
 
-                <h3><?php esc_html_e( '行业/场景', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '行业/场景', 'qiling' ); ?></h3>
                 <div class="qsw-choice-grid">
                     <?php foreach ( $this->get_industry_choices() as $key => $label ) : ?>
                         <label class="qsw-choice">
@@ -491,8 +491,8 @@ class Setup_Wizard_Admin {
                 <?php $this->render_preset_preview( $preset ); ?>
 
                 <div class="qsw-actions">
-                    <?php $this->render_step_link( 'welcome', __( '返回', 'developer-starter' ), 'button button-hero' ); ?>
-                    <button type="submit" class="button button-primary button-hero"><?php esc_html_e( '保存并继续', 'developer-starter' ); ?></button>
+                    <?php $this->render_step_link( 'welcome', __( '返回', 'qiling' ), 'button button-hero' ); ?>
+                    <button type="submit" class="button button-primary button-hero"><?php esc_html_e( '保存并继续', 'qiling' ); ?></button>
                 </div>
             </form>
         </section>
@@ -522,9 +522,9 @@ class Setup_Wizard_Admin {
         ?>
         <section class="qsw-panel">
             <div class="qsw-panel-head">
-                <span><?php esc_html_e( '步骤 3', 'developer-starter' ); ?></span>
-                <h2><?php esc_html_e( '生成页面结构', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '默认优先复用已有页面，网址别名、标题或模板相同的页面不会重复创建；只有缺失的页面才会新建。', 'developer-starter' ); ?></p>
+                <span><?php esc_html_e( '步骤 3', 'qiling' ); ?></span>
+                <h2><?php esc_html_e( '生成页面结构', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '默认优先复用已有页面，网址别名、标题或模板相同的页面不会重复创建；只有缺失的页面才会新建。', 'qiling' ); ?></p>
             </div>
 
             <?php $this->render_last_run_card( $state ); ?>
@@ -534,7 +534,7 @@ class Setup_Wizard_Admin {
                 <input type="hidden" name="developer_starter_setup_wizard_action" value="generate_pages" />
                 <input type="hidden" name="current_step" value="pages" />
 
-                <h3><?php esc_html_e( '首页模板', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '首页模板', 'qiling' ); ?></h3>
                 <div class="qsw-template-grid">
                     <?php foreach ( $templates as $template ) : ?>
                         <?php $id = isset( $template['id'] ) ? sanitize_key( (string) $template['id'] ) : ''; ?>
@@ -551,7 +551,7 @@ class Setup_Wizard_Admin {
                     <?php endforeach; ?>
                 </div>
 
-                <h3><?php esc_html_e( '要创建或复用的页面', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '要创建或复用的页面', 'qiling' ); ?></h3>
                 <div class="qsw-page-grid">
                     <?php foreach ( $pages as $page ) : ?>
                         <?php $id = isset( $page['id'] ) ? sanitize_key( (string) $page['id'] ) : ''; ?>
@@ -573,26 +573,26 @@ class Setup_Wizard_Admin {
                 <div class="qsw-option-list">
                     <label>
                         <input type="checkbox" name="include_auth_pages" value="1" <?php checked( $include_auth_pages ); ?> />
-                        <span><?php esc_html_e( '创建缺少的登录、注册和个人中心页面', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '创建缺少的登录、注册和个人中心页面', 'qiling' ); ?></span>
                     </label>
                     <label>
                         <input type="checkbox" name="set_front_page" value="1" <?php checked( $set_front_page ); ?> />
-                        <span><?php esc_html_e( '如果当前没有静态首页，则把“首页”设为站点首页', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '如果当前没有静态首页，则把“首页”设为站点首页', 'qiling' ); ?></span>
                     </label>
                     <label>
                         <input type="checkbox" name="import_home_modules" value="1" <?php checked( $import_home_modules ); ?> />
-                        <span><?php esc_html_e( '为新创建的首页导入官方模板模块', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '为新创建的首页导入官方模板模块', 'qiling' ); ?></span>
                     </label>
                 </div>
 
                 <div class="qsw-note">
-                    <?php esc_html_e( '生成页面不会创建菜单、写入品牌、SEO 或页脚设置，也不会覆盖已有页面内容。菜单和基础信息可在下一步配置。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '生成页面不会创建菜单、写入品牌、SEO 或页脚设置，也不会覆盖已有页面内容。菜单和基础信息可在下一步配置。', 'qiling' ); ?>
                 </div>
 
                 <div class="qsw-actions">
-                    <?php $this->render_step_link( 'type', __( '返回', 'developer-starter' ), 'button button-hero' ); ?>
-                    <button type="submit" class="button button-primary button-hero"><?php esc_html_e( '生成页面并继续', 'developer-starter' ); ?></button>
-                    <?php $this->render_step_link( 'basics', __( '暂不生成，继续设置', 'developer-starter' ), 'button button-hero' ); ?>
+                    <?php $this->render_step_link( 'type', __( '返回', 'qiling' ), 'button button-hero' ); ?>
+                    <button type="submit" class="button button-primary button-hero"><?php esc_html_e( '生成页面并继续', 'qiling' ); ?></button>
+                    <?php $this->render_step_link( 'basics', __( '暂不生成，继续设置', 'qiling' ), 'button button-hero' ); ?>
                 </div>
             </form>
         </section>
@@ -617,9 +617,9 @@ class Setup_Wizard_Admin {
         ?>
         <section class="qsw-panel">
             <div class="qsw-panel-head">
-                <span><?php esc_html_e( '步骤 4', 'developer-starter' ); ?></span>
-                <h2><?php esc_html_e( '菜单与基础设置', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '此步骤可创建或绑定主菜单，并保存品牌、联系、页脚和 SEO 基础信息；默认只填写尚未设置的内容。', 'developer-starter' ); ?></p>
+                <span><?php esc_html_e( '步骤 4', 'qiling' ); ?></span>
+                <h2><?php esc_html_e( '菜单与基础设置', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '此步骤可创建或绑定主菜单，并保存品牌、联系、页脚和 SEO 基础信息；默认只填写尚未设置的内容。', 'qiling' ); ?></p>
             </div>
 
             <?php $this->render_last_run_card( $state ); ?>
@@ -631,67 +631,67 @@ class Setup_Wizard_Admin {
 
                 <div class="qsw-form-grid">
                     <div class="qsw-field">
-                        <label for="qsw-site-title"><?php esc_html_e( '站点名称', 'developer-starter' ); ?></label>
+                        <label for="qsw-site-title"><?php esc_html_e( '站点名称', 'qiling' ); ?></label>
                         <input id="qsw-site-title" type="text" name="brand[site_title]" value="<?php echo esc_attr( isset( $brand['site_title'] ) ? $brand['site_title'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-tagline"><?php esc_html_e( '副标题', 'developer-starter' ); ?></label>
+                        <label for="qsw-tagline"><?php esc_html_e( '副标题', 'qiling' ); ?></label>
                         <input id="qsw-tagline" type="text" name="brand[tagline]" value="<?php echo esc_attr( isset( $brand['tagline'] ) ? $brand['tagline'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-logo"><?php esc_html_e( 'Logo 图片 URL', 'developer-starter' ); ?></label>
+                        <label for="qsw-logo"><?php esc_html_e( 'Logo 图片 URL', 'qiling' ); ?></label>
                         <input id="qsw-logo" type="url" name="brand[site_logo]" value="<?php echo esc_attr( isset( $brand['site_logo'] ) ? $brand['site_logo'] : '' ); ?>" placeholder="https://example.com/logo.png" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-mobile-logo"><?php esc_html_e( '移动端 Logo URL', 'developer-starter' ); ?></label>
+                        <label for="qsw-mobile-logo"><?php esc_html_e( '移动端 Logo URL', 'qiling' ); ?></label>
                         <input id="qsw-mobile-logo" type="url" name="brand[mobile_logo]" value="<?php echo esc_attr( isset( $brand['mobile_logo'] ) ? $brand['mobile_logo'] : '' ); ?>" placeholder="https://example.com/mobile-logo.png" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-primary-color"><?php esc_html_e( '品牌主色', 'developer-starter' ); ?></label>
+                        <label for="qsw-primary-color"><?php esc_html_e( '品牌主色', 'qiling' ); ?></label>
                         <input id="qsw-primary-color" type="text" name="brand[primary_color]" value="<?php echo esc_attr( isset( $brand['primary_color'] ) ? $brand['primary_color'] : '' ); ?>" placeholder="#2563eb" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-company-name"><?php esc_html_e( '企业/组织名称', 'developer-starter' ); ?></label>
+                        <label for="qsw-company-name"><?php esc_html_e( '企业/组织名称', 'qiling' ); ?></label>
                         <input id="qsw-company-name" type="text" name="contact[company_name]" value="<?php echo esc_attr( isset( $contact['company_name'] ) ? $contact['company_name'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-company-phone"><?php esc_html_e( '联系电话', 'developer-starter' ); ?></label>
+                        <label for="qsw-company-phone"><?php esc_html_e( '联系电话', 'qiling' ); ?></label>
                         <input id="qsw-company-phone" type="text" name="contact[company_phone]" value="<?php echo esc_attr( isset( $contact['company_phone'] ) ? $contact['company_phone'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-company-email"><?php esc_html_e( '联系邮箱', 'developer-starter' ); ?></label>
+                        <label for="qsw-company-email"><?php esc_html_e( '联系邮箱', 'qiling' ); ?></label>
                         <input id="qsw-company-email" type="email" name="contact[company_email]" value="<?php echo esc_attr( isset( $contact['company_email'] ) ? $contact['company_email'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field qsw-field-wide">
-                        <label for="qsw-company-address"><?php esc_html_e( '企业地址', 'developer-starter' ); ?></label>
+                        <label for="qsw-company-address"><?php esc_html_e( '企业地址', 'qiling' ); ?></label>
                         <textarea id="qsw-company-address" name="contact[company_address]" rows="2"><?php echo esc_textarea( isset( $contact['company_address'] ) ? $contact['company_address'] : '' ); ?></textarea>
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-working-hours"><?php esc_html_e( '工作时间', 'developer-starter' ); ?></label>
-                        <input id="qsw-working-hours" type="text" name="contact[company_working_hours]" value="<?php echo esc_attr( isset( $contact['company_working_hours'] ) ? $contact['company_working_hours'] : '' ); ?>" placeholder="<?php esc_attr_e( '周一至周五 9:00-18:00', 'developer-starter' ); ?>" />
+                        <label for="qsw-working-hours"><?php esc_html_e( '工作时间', 'qiling' ); ?></label>
+                        <input id="qsw-working-hours" type="text" name="contact[company_working_hours]" value="<?php echo esc_attr( isset( $contact['company_working_hours'] ) ? $contact['company_working_hours'] : '' ); ?>" placeholder="<?php esc_attr_e( '周一至周五 9:00-18:00', 'qiling' ); ?>" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-icp"><?php esc_html_e( 'ICP 备案号', 'developer-starter' ); ?></label>
+                        <label for="qsw-icp"><?php esc_html_e( 'ICP 备案号', 'qiling' ); ?></label>
                         <input id="qsw-icp" type="text" name="contact[icp_number]" value="<?php echo esc_attr( isset( $contact['icp_number'] ) ? $contact['icp_number'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-police"><?php esc_html_e( '公安备案号', 'developer-starter' ); ?></label>
+                        <label for="qsw-police"><?php esc_html_e( '公安备案号', 'qiling' ); ?></label>
                         <input id="qsw-police" type="text" name="contact[police_number]" value="<?php echo esc_attr( isset( $contact['police_number'] ) ? $contact['police_number'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field qsw-field-wide">
-                        <label for="qsw-company-brief"><?php esc_html_e( '页脚简介', 'developer-starter' ); ?></label>
+                        <label for="qsw-company-brief"><?php esc_html_e( '页脚简介', 'qiling' ); ?></label>
                         <textarea id="qsw-company-brief" name="contact[company_brief]" rows="3"><?php echo esc_textarea( isset( $contact['company_brief'] ) ? $contact['company_brief'] : '' ); ?></textarea>
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-seo-title"><?php esc_html_e( 'SEO 默认标题', 'developer-starter' ); ?></label>
+                        <label for="qsw-seo-title"><?php esc_html_e( 'SEO 默认标题', 'qiling' ); ?></label>
                         <input id="qsw-seo-title" type="text" name="seo[default_title]" value="<?php echo esc_attr( isset( $seo['default_title'] ) ? $seo['default_title'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field">
-                        <label for="qsw-seo-keywords"><?php esc_html_e( 'SEO 默认关键词', 'developer-starter' ); ?></label>
+                        <label for="qsw-seo-keywords"><?php esc_html_e( 'SEO 默认关键词', 'qiling' ); ?></label>
                         <input id="qsw-seo-keywords" type="text" name="seo[default_keywords]" value="<?php echo esc_attr( isset( $seo['default_keywords'] ) ? $seo['default_keywords'] : '' ); ?>" />
                     </div>
                     <div class="qsw-field qsw-field-wide">
-                        <label for="qsw-seo-description"><?php esc_html_e( 'SEO 默认描述', 'developer-starter' ); ?></label>
+                        <label for="qsw-seo-description"><?php esc_html_e( 'SEO 默认描述', 'qiling' ); ?></label>
                         <textarea id="qsw-seo-description" name="seo[default_description]" rows="3"><?php echo esc_textarea( isset( $seo['default_description'] ) ? $seo['default_description'] : '' ); ?></textarea>
                     </div>
                 </div>
@@ -699,26 +699,26 @@ class Setup_Wizard_Admin {
                 <div class="qsw-option-list">
                     <label>
                         <input type="checkbox" name="create_primary_menu" value="1" <?php checked( $create_primary_menu ); ?> />
-                        <span><?php esc_html_e( '如果主导航位置为空，则创建并绑定“启灵主菜单”', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '如果主导航位置为空，则创建并绑定“启灵主菜单”', 'qiling' ); ?></span>
                     </label>
                     <label>
                         <input type="checkbox" name="schema_engine_enable" value="1" <?php checked( ! empty( $seo['schema_engine_enable'] ) ); ?> />
-                        <span><?php esc_html_e( '启用主题行业 Schema 引擎', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '启用主题行业 Schema 引擎', 'qiling' ); ?></span>
                     </label>
                     <label>
                         <input type="checkbox" name="overwrite_existing" value="1" <?php checked( $overwrite_existing ); ?> />
-                        <span><?php esc_html_e( '覆盖已有站点标题、主题设置和 SEO 基础字段', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '覆盖已有站点标题、主题设置和 SEO 基础字段', 'qiling' ); ?></span>
                     </label>
                 </div>
 
                 <div class="qsw-note">
-                    <?php esc_html_e( '默认不会替换已有主菜单，也不会覆盖已有主题设置；Logo 字段沿用主题设置页的图片 URL 格式。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '默认不会替换已有主菜单，也不会覆盖已有主题设置；Logo 字段沿用主题设置页的图片 URL 格式。', 'qiling' ); ?>
                 </div>
 
                 <div class="qsw-actions">
-                    <?php $this->render_step_link( 'pages', __( '返回', 'developer-starter' ), 'button button-hero' ); ?>
-                    <button type="submit" class="button button-primary button-hero"><?php esc_html_e( '应用设置并继续', 'developer-starter' ); ?></button>
-                    <?php $this->render_step_link( 'plugins', __( '暂不应用，继续检测插件', 'developer-starter' ), 'button button-hero' ); ?>
+                    <?php $this->render_step_link( 'pages', __( '返回', 'qiling' ), 'button button-hero' ); ?>
+                    <button type="submit" class="button button-primary button-hero"><?php esc_html_e( '应用设置并继续', 'qiling' ); ?></button>
+                    <?php $this->render_step_link( 'plugins', __( '暂不应用，继续检测插件', 'qiling' ), 'button button-hero' ); ?>
                 </div>
             </form>
         </section>
@@ -739,15 +739,15 @@ class Setup_Wizard_Admin {
         ?>
         <section class="qsw-panel">
             <div class="qsw-panel-head">
-                <span><?php esc_html_e( '步骤 5', 'developer-starter' ); ?></span>
-                <h2><?php esc_html_e( '可选增强能力检测', 'developer-starter' ); ?></h2>
+                <span><?php esc_html_e( '步骤 5', 'qiling' ); ?></span>
+                <h2><?php esc_html_e( '可选增强能力检测', 'qiling' ); ?></h2>
                 <p>
                     <?php
                     echo esc_html(
                         sprintf(
-                            __( '当前方案：%1$s / %2$s。这里只读检测第三方插件状态，不提供安装、启用或配置操作。', 'developer-starter' ),
-                            isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : __( '站点类型', 'developer-starter' ),
-                            isset( $preset['industry_label'] ) ? $preset['industry_label'] : __( '行业场景', 'developer-starter' )
+                            __( '当前方案：%1$s / %2$s。这里只读检测第三方插件状态，不提供安装、启用或配置操作。', 'qiling' ),
+                            isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : __( '站点类型', 'qiling' ),
+                            isset( $preset['industry_label'] ) ? $preset['industry_label'] : __( '行业场景', 'qiling' )
                         )
                     );
                     ?>
@@ -755,15 +755,15 @@ class Setup_Wizard_Admin {
             </div>
 
             <div class="qsw-summary-grid">
-                <div><strong><?php esc_html_e( '推荐增强', 'developer-starter' ); ?></strong><span><?php echo esc_html( sprintf( __( '%d 项', 'developer-starter' ), isset( $counts['recommended'] ) ? absint( $counts['recommended'] ) : 0 ) ); ?></span></div>
-                <div><strong><?php esc_html_e( '已可使用', 'developer-starter' ); ?></strong><span><?php echo esc_html( sprintf( __( '%d 项已启用', 'developer-starter' ), isset( $counts['active'] ) ? absint( $counts['active'] ) : 0 ) ); ?></span></div>
-                <div><strong><?php esc_html_e( '待人工处理', 'developer-starter' ); ?></strong><span><?php echo esc_html( sprintf( __( '%d 项未安装或未启用', 'developer-starter' ), isset( $counts['needs_attention'] ) ? absint( $counts['needs_attention'] ) : 0 ) ); ?></span></div>
+                <div><strong><?php esc_html_e( '推荐增强', 'qiling' ); ?></strong><span><?php echo esc_html( sprintf( __( '%d 项', 'qiling' ), isset( $counts['recommended'] ) ? absint( $counts['recommended'] ) : 0 ) ); ?></span></div>
+                <div><strong><?php esc_html_e( '已可使用', 'qiling' ); ?></strong><span><?php echo esc_html( sprintf( __( '%d 项已启用', 'qiling' ), isset( $counts['active'] ) ? absint( $counts['active'] ) : 0 ) ); ?></span></div>
+                <div><strong><?php esc_html_e( '待人工处理', 'qiling' ); ?></strong><span><?php echo esc_html( sprintf( __( '%d 项未安装或未启用', 'qiling' ), isset( $counts['needs_attention'] ) ? absint( $counts['needs_attention'] ) : 0 ) ); ?></span></div>
             </div>
 
             <div class="qsw-plugin-section">
-                <h3><?php esc_html_e( '本方案推荐', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '本方案推荐', 'qiling' ); ?></h3>
                 <?php if ( empty( $recommended_plugins ) ) : ?>
-                    <p class="qsw-muted"><?php esc_html_e( '这个方案不依赖额外插件，主题能力已经可以完成基础建站。', 'developer-starter' ); ?></p>
+                    <p class="qsw-muted"><?php esc_html_e( '这个方案不依赖额外插件，主题能力已经可以完成基础建站。', 'qiling' ); ?></p>
                 <?php else : ?>
                     <div class="qsw-plugin-list">
                         <?php foreach ( $recommended_plugins as $plugin ) : ?>
@@ -775,8 +775,8 @@ class Setup_Wizard_Admin {
 
             <?php if ( ! empty( $other_plugins ) ) : ?>
                 <div class="qsw-plugin-section">
-                    <h3><?php esc_html_e( '其他可选能力', 'developer-starter' ); ?></h3>
-                    <p class="qsw-muted"><?php esc_html_e( '下面这些不是当前方案必需项，仅显示安装状态，供扩展站点功能时参考。', 'developer-starter' ); ?></p>
+                    <h3><?php esc_html_e( '其他可选能力', 'qiling' ); ?></h3>
+                    <p class="qsw-muted"><?php esc_html_e( '下面这些不是当前方案必需项，仅显示安装状态，供扩展站点功能时参考。', 'qiling' ); ?></p>
                     <div class="qsw-plugin-list qsw-plugin-list-compact">
                         <?php foreach ( $other_plugins as $plugin ) : ?>
                             <?php $this->render_plugin_detection_item( $plugin, false ); ?>
@@ -786,12 +786,12 @@ class Setup_Wizard_Admin {
             <?php endif; ?>
 
             <div class="qsw-note">
-                <?php esc_html_e( '检测只读取插件的安装和启用状态；向导不会安装、启用或停用插件，也不会更改 WooCommerce、积分商城、微信登录或表单插件的配置。', 'developer-starter' ); ?>
+                <?php esc_html_e( '检测只读取插件的安装和启用状态；向导不会安装、启用或停用插件，也不会更改启灵生态插件、微信登录或表单插件的配置。', 'qiling' ); ?>
             </div>
 
             <div class="qsw-actions">
-                <?php $this->render_step_link( 'basics', __( '返回', 'developer-starter' ), 'button button-hero' ); ?>
-                <?php $this->render_step_link( 'finish', __( '继续到完成页', 'developer-starter' ), 'button button-primary button-hero' ); ?>
+                <?php $this->render_step_link( 'basics', __( '返回', 'qiling' ), 'button button-hero' ); ?>
+                <?php $this->render_step_link( 'finish', __( '继续到完成页', 'qiling' ), 'button button-primary button-hero' ); ?>
             </div>
         </section>
         <?php
@@ -821,7 +821,7 @@ class Setup_Wizard_Admin {
                 <strong>
                     <?php echo esc_html( $label ); ?>
                     <?php if ( $recommended ) : ?>
-                        <mark><?php esc_html_e( '推荐', 'developer-starter' ); ?></mark>
+                        <mark><?php esc_html_e( '推荐', 'qiling' ); ?></mark>
                     <?php endif; ?>
                 </strong>
                 <?php if ( '' !== $description ) : ?>
@@ -940,15 +940,15 @@ class Setup_Wizard_Admin {
         ?>
         <section class="qsw-panel">
             <div class="qsw-panel-head">
-                <span><?php esc_html_e( '步骤 6', 'developer-starter' ); ?></span>
-                <h2><?php esc_html_e( '基础建站已准备好', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '这里汇总本次向导的配置结果和常用管理入口。点击完成只记录向导完成状态；第三方插件仍然只检测和提示，不会安装、启用或配置。', 'developer-starter' ); ?></p>
+                <span><?php esc_html_e( '步骤 6', 'qiling' ); ?></span>
+                <h2><?php esc_html_e( '基础建站已准备好', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '这里汇总本次向导的配置结果和常用管理入口。点击完成只记录向导完成状态；第三方插件仍然只检测和提示，不会安装、启用或配置。', 'qiling' ); ?></p>
             </div>
 
             <div class="qsw-summary-grid">
-                <div><strong><?php esc_html_e( '站点类型', 'developer-starter' ); ?></strong><span><?php echo esc_html( isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : $this->get_choice_label( $this->get_site_type_choices(), $site_type ) ); ?></span></div>
-                <div><strong><?php esc_html_e( '行业/场景', 'developer-starter' ); ?></strong><span><?php echo esc_html( isset( $preset['industry_label'] ) ? $preset['industry_label'] : $this->get_choice_label( $this->get_industry_choices(), $industry ) ); ?></span></div>
-                <div><strong><?php esc_html_e( '状态', 'developer-starter' ); ?></strong><span><?php echo esc_html( ! empty( $state['completed'] ) ? __( '已完成', 'developer-starter' ) : __( '未完成', 'developer-starter' ) ); ?></span></div>
+                <div><strong><?php esc_html_e( '站点类型', 'qiling' ); ?></strong><span><?php echo esc_html( isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : $this->get_choice_label( $this->get_site_type_choices(), $site_type ) ); ?></span></div>
+                <div><strong><?php esc_html_e( '行业/场景', 'qiling' ); ?></strong><span><?php echo esc_html( isset( $preset['industry_label'] ) ? $preset['industry_label'] : $this->get_choice_label( $this->get_industry_choices(), $industry ) ); ?></span></div>
+                <div><strong><?php esc_html_e( '状态', 'qiling' ); ?></strong><span><?php echo esc_html( ! empty( $state['completed'] ) ? __( '已完成', 'qiling' ) : __( '未完成', 'qiling' ) ); ?></span></div>
             </div>
 
             <?php $this->render_finish_delivery_checklist( isset( $summary['checklist'] ) ? $summary['checklist'] : array() ); ?>
@@ -961,9 +961,9 @@ class Setup_Wizard_Admin {
                 <?php wp_nonce_field( self::NONCE_ACTION ); ?>
                 <input type="hidden" name="developer_starter_setup_wizard_action" value="complete" />
                 <div class="qsw-actions">
-                    <?php $this->render_step_link( 'plugins', __( '返回', 'developer-starter' ), 'button button-hero' ); ?>
-                    <button type="submit" class="button button-primary button-hero"><?php echo esc_html( ! empty( $state['completed'] ) ? __( '重新记录完成状态', 'developer-starter' ) : __( '标记向导完成', 'developer-starter' ) ); ?></button>
-                    <a class="button button-hero" href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-settings' ) ); ?>"><?php esc_html_e( '进入主题设置', 'developer-starter' ); ?></a>
+                    <?php $this->render_step_link( 'plugins', __( '返回', 'qiling' ), 'button button-hero' ); ?>
+                    <button type="submit" class="button button-primary button-hero"><?php echo esc_html( ! empty( $state['completed'] ) ? __( '重新记录完成状态', 'qiling' ) : __( '标记向导完成', 'qiling' ) ); ?></button>
+                    <a class="button button-hero" href="<?php echo esc_url( admin_url( 'admin.php?page=qiling-settings' ) ); ?>"><?php esc_html_e( '进入主题设置', 'qiling' ); ?></a>
                 </div>
             </form>
         </section>
@@ -980,8 +980,8 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-finish-card">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '配置结果', 'developer-starter' ); ?></h3>
-                <p><?php esc_html_e( '绿色表示已经具备，黄色表示可继续补充；这些状态只读展示，不会触发额外写入。', 'developer-starter' ); ?></p>
+                <h3><?php esc_html_e( '配置结果', 'qiling' ); ?></h3>
+                <p><?php esc_html_e( '绿色表示已经具备，黄色表示可继续补充；这些状态只读展示，不会触发额外写入。', 'qiling' ); ?></p>
             </div>
             <div class="qsw-finish-grid">
                 <?php foreach ( $items as $item ) : ?>
@@ -1008,12 +1008,12 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-finish-card">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '可选插件状态', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '可选插件状态', 'qiling' ); ?></h3>
                 <p>
                     <?php
                     echo esc_html(
                         sprintf(
-                            __( '已启用 %1$d 项，已安装未启用 %2$d 项，未安装 %3$d 项。向导不会更改第三方插件配置。', 'developer-starter' ),
+                            __( '已启用 %1$d 项，已安装未启用 %2$d 项，未安装 %3$d 项。向导不会更改第三方插件配置。', 'qiling' ),
                             isset( $counts['active'] ) ? absint( $counts['active'] ) : 0,
                             isset( $counts['inactive'] ) ? absint( $counts['inactive'] ) : 0,
                             isset( $counts['missing'] ) ? absint( $counts['missing'] ) : 0
@@ -1024,7 +1024,7 @@ class Setup_Wizard_Admin {
             </div>
 
             <?php if ( empty( $rows ) ) : ?>
-                <p class="qsw-muted"><?php esc_html_e( '暂无插件检测记录。', 'developer-starter' ); ?></p>
+                <p class="qsw-muted"><?php esc_html_e( '暂无插件检测记录。', 'qiling' ); ?></p>
             <?php else : ?>
                 <div class="qsw-plugin-list qsw-plugin-list-compact">
                     <?php foreach ( $rows as $row ) : ?>
@@ -1051,8 +1051,8 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-finish-card">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '常用管理入口', 'developer-starter' ); ?></h3>
-                <p><?php esc_html_e( '完成向导后，通常从这些入口继续微调内容、菜单、样式和模板。', 'developer-starter' ); ?></p>
+                <h3><?php esc_html_e( '常用管理入口', 'qiling' ); ?></h3>
+                <p><?php esc_html_e( '完成向导后，通常从这些入口继续微调内容、菜单、样式和模板。', 'qiling' ); ?></p>
             </div>
             <div class="qsw-next-grid">
                 <?php foreach ( $steps as $step ) : ?>
@@ -1086,25 +1086,25 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-finish-card qsw-cleanup-card">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '安全清理 / 重置', 'developer-starter' ); ?></h3>
-                <p><?php esc_html_e( '这里只处理向导最近一次记录的候选内容。页面只会移入回收站；当前静态首页、缺少向导标记的页面和第三方插件配置都会跳过。', 'developer-starter' ); ?></p>
+                <h3><?php esc_html_e( '安全清理 / 重置', 'qiling' ); ?></h3>
+                <p><?php esc_html_e( '这里只处理向导最近一次记录的候选内容。页面只会移入回收站；当前静态首页、缺少向导标记的页面和第三方插件配置都会跳过。', 'qiling' ); ?></p>
             </div>
 
             <?php if ( ! empty( $preview['run_id'] ) ) : ?>
-                <p class="qsw-muted"><?php echo esc_html( sprintf( __( '最近批次：%s', 'developer-starter' ), $preview['run_id'] ) ); ?></p>
+                <p class="qsw-muted"><?php echo esc_html( sprintf( __( '最近批次：%s', 'qiling' ), $preview['run_id'] ) ); ?></p>
             <?php endif; ?>
 
             <div class="qsw-cleanup-summary">
-                <span><?php echo esc_html( sprintf( __( '可清理页面：%d/%d', 'developer-starter' ), isset( $counts['eligible_pages'] ) ? absint( $counts['eligible_pages'] ) : 0, isset( $counts['pages'] ) ? absint( $counts['pages'] ) : 0 ) ); ?></span>
-                <span><?php echo esc_html( sprintf( __( '可删除菜单：%d/%d', 'developer-starter' ), isset( $counts['eligible_menus'] ) ? absint( $counts['eligible_menus'] ) : 0, isset( $counts['menus'] ) ? absint( $counts['menus'] ) : 0 ) ); ?></span>
-                <span><?php echo esc_html( ! empty( $preview['draft_exists'] ) ? __( '临时草稿：存在', 'developer-starter' ) : __( '临时草稿：无', 'developer-starter' ) ); ?></span>
+                <span><?php echo esc_html( sprintf( __( '可清理页面：%d/%d', 'qiling' ), isset( $counts['eligible_pages'] ) ? absint( $counts['eligible_pages'] ) : 0, isset( $counts['pages'] ) ? absint( $counts['pages'] ) : 0 ) ); ?></span>
+                <span><?php echo esc_html( sprintf( __( '可删除菜单：%d/%d', 'qiling' ), isset( $counts['eligible_menus'] ) ? absint( $counts['eligible_menus'] ) : 0, isset( $counts['menus'] ) ? absint( $counts['menus'] ) : 0 ) ); ?></span>
+                <span><?php echo esc_html( ! empty( $preview['draft_exists'] ) ? __( '临时草稿：存在', 'qiling' ) : __( '临时草稿：无', 'qiling' ) ); ?></span>
             </div>
 
-            <?php $this->render_cleanup_candidate_list( __( '页面候选', 'developer-starter' ), $pages, 'page' ); ?>
-            <?php $this->render_cleanup_candidate_list( __( '菜单候选', 'developer-starter' ), $menus, 'menu' ); ?>
+            <?php $this->render_cleanup_candidate_list( __( '页面候选', 'qiling' ), $pages, 'page' ); ?>
+            <?php $this->render_cleanup_candidate_list( __( '菜单候选', 'qiling' ), $menus, 'menu' ); ?>
 
             <?php if ( ! $has_any ) : ?>
-                <p class="qsw-muted"><?php esc_html_e( '当前没有可清理的向导记录。', 'developer-starter' ); ?></p>
+                <p class="qsw-muted"><?php esc_html_e( '当前没有可清理的向导记录。', 'qiling' ); ?></p>
             <?php else : ?>
                 <form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=' . self::PAGE_SLUG ) ); ?>" class="qsw-cleanup-form">
                     <?php wp_nonce_field( self::NONCE_ACTION ); ?>
@@ -1114,37 +1114,37 @@ class Setup_Wizard_Admin {
                         <?php if ( ! empty( $preview['draft_exists'] ) ) : ?>
                             <label>
                                 <input type="checkbox" name="delete_draft" value="1" />
-                                <span><?php esc_html_e( '清理临时草稿', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '清理临时草稿', 'qiling' ); ?></span>
                             </label>
                         <?php endif; ?>
 
                         <label>
                             <input type="checkbox" name="reset_tracking" value="1" />
-                            <span><?php esc_html_e( '只重置最近一次向导记录，不删除页面或菜单', 'developer-starter' ); ?></span>
+                            <span><?php esc_html_e( '只重置最近一次向导记录，不删除页面或菜单', 'qiling' ); ?></span>
                         </label>
 
                         <?php if ( ! empty( $counts['eligible_pages'] ) ) : ?>
                             <label>
                                 <input type="checkbox" name="trash_pages" value="1" />
-                                <span><?php esc_html_e( '将可清理页面移入回收站', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '将可清理页面移入回收站', 'qiling' ); ?></span>
                             </label>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $counts['eligible_menus'] ) ) : ?>
                             <label>
                                 <input type="checkbox" name="delete_menus" value="1" />
-                                <span><?php esc_html_e( '删除可清理菜单，并解除对应菜单位置绑定', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '删除可清理菜单，并解除对应菜单位置绑定', 'qiling' ); ?></span>
                             </label>
                         <?php endif; ?>
 
                         <label class="qsw-cleanup-confirm">
                             <input type="checkbox" name="cleanup_confirm" value="1" required="required" />
-                            <span><?php esc_html_e( '我已确认只清理上方列出的向导记录。', 'developer-starter' ); ?></span>
+                            <span><?php esc_html_e( '我已确认只清理上方列出的向导记录。', 'qiling' ); ?></span>
                         </label>
                     </div>
 
                     <div class="qsw-actions">
-                        <button type="submit" class="button button-hero qsw-danger-button" onclick="return confirm('<?php echo esc_js( __( '确定执行所选清理吗？页面会进入回收站，菜单删除后需要重新绑定。', 'developer-starter' ) ); ?>');"><?php esc_html_e( '执行所选清理', 'developer-starter' ); ?></button>
+                        <button type="submit" class="button button-hero qsw-danger-button" onclick="return confirm('<?php echo esc_js( __( '确定执行所选清理吗？页面会进入回收站，菜单删除后需要重新绑定。', 'qiling' ) ); ?>');"><?php esc_html_e( '执行所选清理', 'qiling' ); ?></button>
                     </div>
                 </form>
             <?php endif; ?>
@@ -1171,13 +1171,13 @@ class Setup_Wizard_Admin {
                     <li class="<?php echo esc_attr( $eligible ? 'is-eligible' : 'is-skipped' ); ?>">
                         <strong>
                             <?php
-                            $label = isset( $item['title'] ) && '' !== (string) $item['title'] ? (string) $item['title'] : sprintf( __( '#%d', 'developer-starter' ), isset( $item['id'] ) ? absint( $item['id'] ) : 0 );
+                            $label = isset( $item['title'] ) && '' !== (string) $item['title'] ? (string) $item['title'] : sprintf( __( '#%d', 'qiling' ), isset( $item['id'] ) ? absint( $item['id'] ) : 0 );
                             echo esc_html( $label );
                             ?>
                         </strong>
                         <span><?php echo esc_html( isset( $item['reason'] ) ? $item['reason'] : '' ); ?></span>
                         <?php if ( isset( $item['id'] ) && absint( $item['id'] ) > 0 ) : ?>
-                            <em><?php echo esc_html( sprintf( __( 'ID: %d', 'developer-starter' ), absint( $item['id'] ) ) ); ?></em>
+                            <em><?php echo esc_html( sprintf( __( 'ID: %d', 'qiling' ), absint( $item['id'] ) ) ); ?></em>
                         <?php endif; ?>
                     </li>
                 <?php endforeach; ?>
@@ -1206,40 +1206,40 @@ class Setup_Wizard_Admin {
 
         $checklist = array(
             array(
-                'label'  => __( '站点方案', 'developer-starter' ),
+                'label'  => __( '站点方案', 'qiling' ),
                 'detail' => sprintf(
-                    __( '%1$s / %2$s', 'developer-starter' ),
-                    isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : __( '站点类型', 'developer-starter' ),
-                    isset( $preset['industry_label'] ) ? $preset['industry_label'] : __( '行业场景', 'developer-starter' )
+                    __( '%1$s / %2$s', 'qiling' ),
+                    isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : __( '站点类型', 'qiling' ),
+                    isset( $preset['industry_label'] ) ? $preset['industry_label'] : __( '行业场景', 'qiling' )
                 ),
                 'status' => 'done',
             ),
             array(
-                'label'  => __( '页面结果', 'developer-starter' ),
+                'label'  => __( '页面结果', 'qiling' ),
                 'detail' => ! empty( $created_pages )
-                    ? sprintf( __( '向导记录了 %d 个页面。', 'developer-starter' ), count( $created_pages ) )
-                    : __( '没有记录新建页面，可能使用了已有页面或跳过页面生成。', 'developer-starter' ),
+                    ? sprintf( __( '向导记录了 %d 个页面。', 'qiling' ), count( $created_pages ) )
+                    : __( '没有记录新建页面，可能使用了已有页面或跳过页面生成。', 'qiling' ),
                 'status' => ! empty( $created_pages ) ? 'done' : 'pending',
             ),
             array(
-                'label'  => __( '静态首页', 'developer-starter' ),
+                'label'  => __( '静态首页', 'qiling' ),
                 'detail' => '' !== $front_page_title
-                    ? sprintf( __( '当前首页：%s', 'developer-starter' ), $front_page_title )
-                    : __( '尚未设置静态首页。', 'developer-starter' ),
+                    ? sprintf( __( '当前首页：%s', 'qiling' ), $front_page_title )
+                    : __( '尚未设置静态首页。', 'qiling' ),
                 'status' => $front_page_id > 0 ? 'done' : 'pending',
             ),
             array(
-                'label'  => __( '主导航', 'developer-starter' ),
-                'detail' => ! empty( $menu_summary['title'] ) ? $menu_summary['title'] : __( '主导航位置尚未绑定菜单。', 'developer-starter' ),
+                'label'  => __( '主导航', 'qiling' ),
+                'detail' => ! empty( $menu_summary['title'] ) ? $menu_summary['title'] : __( '主导航位置尚未绑定菜单。', 'qiling' ),
                 'status' => ! empty( $menu_summary['ready'] ) ? 'done' : 'pending',
             ),
             array(
-                'label'  => __( '品牌与联系信息', 'developer-starter' ),
+                'label'  => __( '品牌与联系信息', 'qiling' ),
                 'detail' => isset( $basics['contact_detail'] ) ? $basics['contact_detail'] : '',
                 'status' => ! empty( $basics['contact_ready'] ) ? 'done' : 'pending',
             ),
             array(
-                'label'  => __( 'SEO 基础信息', 'developer-starter' ),
+                'label'  => __( 'SEO 基础信息', 'qiling' ),
                 'detail' => isset( $basics['seo_detail'] ) ? $basics['seo_detail'] : '',
                 'status' => ! empty( $basics['seo_ready'] ) ? 'done' : 'pending',
             ),
@@ -1271,7 +1271,7 @@ class Setup_Wizard_Admin {
         $name = isset( $menu->name ) ? (string) $menu->name : '';
         return array(
             'ready' => true,
-            'title' => '' !== $name ? sprintf( __( '已绑定：%s', 'developer-starter' ), $name ) : __( '已绑定主导航菜单。', 'developer-starter' ),
+            'title' => '' !== $name ? sprintf( __( '已绑定：%s', 'qiling' ), $name ) : __( '已绑定主导航菜单。', 'qiling' ),
         );
     }
 
@@ -1293,28 +1293,28 @@ class Setup_Wizard_Admin {
 
         $contact_bits = array();
         if ( '' !== $site_title ) {
-            $contact_bits[] = __( '站点名称已设置', 'developer-starter' );
+            $contact_bits[] = __( '站点名称已设置', 'qiling' );
         }
         if ( '' !== $company_name ) {
-            $contact_bits[] = __( '企业名称已设置', 'developer-starter' );
+            $contact_bits[] = __( '企业名称已设置', 'qiling' );
         }
         if ( '' !== $phone || '' !== $email ) {
-            $contact_bits[] = __( '联系方式已设置', 'developer-starter' );
+            $contact_bits[] = __( '联系方式已设置', 'qiling' );
         }
 
         $seo_bits = array();
         if ( '' !== $seo_title ) {
-            $seo_bits[] = __( '默认标题已设置', 'developer-starter' );
+            $seo_bits[] = __( '默认标题已设置', 'qiling' );
         }
         if ( '' !== $seo_desc ) {
-            $seo_bits[] = __( '默认描述已设置', 'developer-starter' );
+            $seo_bits[] = __( '默认描述已设置', 'qiling' );
         }
 
         return array(
             'contact_ready'  => count( $contact_bits ) >= 2,
-            'contact_detail' => ! empty( $contact_bits ) ? implode( '，', $contact_bits ) : __( '可在主题设置里继续补充品牌和联系方式。', 'developer-starter' ),
+            'contact_detail' => ! empty( $contact_bits ) ? implode( '，', $contact_bits ) : __( '可在主题设置里继续补充品牌和联系方式。', 'qiling' ),
             'seo_ready'      => ! empty( $seo_bits ),
-            'seo_detail'     => ! empty( $seo_bits ) ? implode( '，', $seo_bits ) : __( '可在主题设置里继续补充 SEO 默认标题和描述。', 'developer-starter' ),
+            'seo_detail'     => ! empty( $seo_bits ) ? implode( '，', $seo_bits ) : __( '可在主题设置里继续补充 SEO 默认标题和描述。', 'qiling' ),
         );
     }
 
@@ -1368,28 +1368,28 @@ class Setup_Wizard_Admin {
     private function get_finish_next_steps( $front_page_id ) {
         $steps = array(
             array(
-                'label'  => __( '预览网站', 'developer-starter' ),
-                'detail' => __( '打开前台首页检查整体效果。', 'developer-starter' ),
+                'label'  => __( '预览网站', 'qiling' ),
+                'detail' => __( '打开前台首页检查整体效果。', 'qiling' ),
                 'url'    => home_url( '/' ),
             ),
             array(
-                'label'  => __( '主题设置', 'developer-starter' ),
-                'detail' => __( '继续调整品牌、页脚、SEO、性能和安全。', 'developer-starter' ),
-                'url'    => admin_url( 'admin.php?page=developer-starter-settings' ),
+                'label'  => __( '主题设置', 'qiling' ),
+                'detail' => __( '继续调整品牌、页脚、SEO、性能和安全。', 'qiling' ),
+                'url'    => admin_url( 'admin.php?page=qiling-settings' ),
             ),
             array(
-                'label'  => __( '菜单位置', 'developer-starter' ),
-                'detail' => __( '检查主导航、移动端菜单和底部菜单。', 'developer-starter' ),
+                'label'  => __( '菜单位置', 'qiling' ),
+                'detail' => __( '检查主导航、移动端菜单和底部菜单。', 'qiling' ),
                 'url'    => admin_url( 'nav-menus.php?action=locations' ),
             ),
             array(
-                'label'  => __( '页面列表', 'developer-starter' ),
-                'detail' => __( '继续编辑向导创建或复用的页面。', 'developer-starter' ),
+                'label'  => __( '页面列表', 'qiling' ),
+                'detail' => __( '继续编辑向导创建或复用的页面。', 'qiling' ),
                 'url'    => admin_url( 'edit.php?post_type=page' ),
             ),
             array(
-                'label'  => __( '模板中心', 'developer-starter' ),
-                'detail' => __( '继续导入或替换页面模板。', 'developer-starter' ),
+                'label'  => __( '模板中心', 'qiling' ),
+                'detail' => __( '继续导入或替换页面模板。', 'qiling' ),
                 'url'    => admin_url( 'admin.php?page=developer-starter-template-center' ),
             ),
         );
@@ -1402,8 +1402,8 @@ class Setup_Wizard_Admin {
                 0,
                 array(
                     array(
-                        'label'  => __( '编辑首页', 'developer-starter' ),
-                        'detail' => __( '进入当前静态首页继续装修内容。', 'developer-starter' ),
+                        'label'  => __( '编辑首页', 'qiling' ),
+                        'detail' => __( '进入当前静态首页继续装修内容。', 'qiling' ),
                         'url'    => get_edit_post_link( $front_page_id, '' ),
                     ),
                 )
@@ -1428,14 +1428,14 @@ class Setup_Wizard_Admin {
         ?>
         <div class="qsw-preset-preview">
             <div class="qsw-preview-head">
-                <h3><?php esc_html_e( '推荐预览', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '推荐预览', 'qiling' ); ?></h3>
                 <p>
                     <?php
                     echo esc_html(
                         sprintf(
-                            __( '当前组合：%1$s / %2$s。这里仅展示推荐，不会写入数据库或访问第三方服务。', 'developer-starter' ),
-                            isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : __( '站点类型', 'developer-starter' ),
-                            isset( $preset['industry_label'] ) ? $preset['industry_label'] : __( '行业场景', 'developer-starter' )
+                            __( '当前组合：%1$s / %2$s。这里仅展示推荐，不会写入数据库或访问第三方服务。', 'qiling' ),
+                            isset( $preset['site_type_label'] ) ? $preset['site_type_label'] : __( '站点类型', 'qiling' ),
+                            isset( $preset['industry_label'] ) ? $preset['industry_label'] : __( '行业场景', 'qiling' )
                         )
                     );
                     ?>
@@ -1443,16 +1443,16 @@ class Setup_Wizard_Admin {
             </div>
 
             <div class="qsw-preview-grid">
-                <?php $this->render_preset_item_list( __( '推荐模板', 'developer-starter' ), $templates, 'package' ); ?>
-                <?php $this->render_preset_item_list( __( '推荐页面', 'developer-starter' ), $pages, 'slug' ); ?>
-                <?php $this->render_preset_chip_list( __( '内容模型', 'developer-starter' ), $models ); ?>
-                <?php $this->render_preset_chip_list( __( '主题能力', 'developer-starter' ), $features ); ?>
+                <?php $this->render_preset_item_list( __( '推荐模板', 'qiling' ), $templates, 'package' ); ?>
+                <?php $this->render_preset_item_list( __( '推荐页面', 'qiling' ), $pages, 'slug' ); ?>
+                <?php $this->render_preset_chip_list( __( '内容模型', 'qiling' ), $models ); ?>
+                <?php $this->render_preset_chip_list( __( '主题能力', 'qiling' ), $features ); ?>
             </div>
 
             <?php if ( ! empty( $plugins ) ) : ?>
                 <div class="qsw-plugin-hints">
-                    <h4><?php esc_html_e( '可选插件提示', 'developer-starter' ); ?></h4>
-                    <p><?php esc_html_e( '向导仅检测并提示这些插件的状态，不会安装、启用或配置它们。', 'developer-starter' ); ?></p>
+                    <h4><?php esc_html_e( '可选插件提示', 'qiling' ); ?></h4>
+                    <p><?php esc_html_e( '向导仅检测并提示这些插件的状态，不会安装、启用或配置它们。', 'qiling' ); ?></p>
                     <div class="qsw-chip-row">
                         <?php foreach ( $plugins as $plugin ) : ?>
                             <span class="qsw-chip"><?php echo esc_html( isset( $plugin['label'] ) ? $plugin['label'] : '' ); ?></span>
@@ -1475,7 +1475,7 @@ class Setup_Wizard_Admin {
         <div class="qsw-preview-card">
             <h4><?php echo esc_html( $title ); ?></h4>
             <?php if ( empty( $items ) ) : ?>
-                <p class="qsw-muted"><?php esc_html_e( '暂无推荐', 'developer-starter' ); ?></p>
+                <p class="qsw-muted"><?php esc_html_e( '暂无推荐', 'qiling' ); ?></p>
             <?php else : ?>
                 <ul>
                     <?php foreach ( array_slice( $items, 0, 6 ) as $item ) : ?>
@@ -1502,7 +1502,7 @@ class Setup_Wizard_Admin {
         <div class="qsw-preview-card">
             <h4><?php echo esc_html( $title ); ?></h4>
             <?php if ( empty( $items ) ) : ?>
-                <p class="qsw-muted"><?php esc_html_e( '暂无推荐', 'developer-starter' ); ?></p>
+                <p class="qsw-muted"><?php esc_html_e( '暂无推荐', 'qiling' ); ?></p>
             <?php else : ?>
                 <div class="qsw-chip-row">
                     <?php foreach ( array_slice( $items, 0, 8 ) as $item ) : ?>
@@ -1523,7 +1523,7 @@ class Setup_Wizard_Admin {
     private function render_progress( $current ) {
         $steps = $this->get_steps();
         ?>
-        <nav class="qsw-progress" aria-label="<?php esc_attr_e( '建站向导步骤', 'developer-starter' ); ?>">
+        <nav class="qsw-progress" aria-label="<?php esc_attr_e( '建站向导步骤', 'qiling' ); ?>">
             <?php foreach ( $steps as $key => $label ) : ?>
                 <a class="<?php echo esc_attr( $current === $key ? 'is-active' : '' ); ?>" href="<?php echo esc_url( $this->get_step_url( $key ) ); ?>">
                     <span><?php echo esc_html( $label ); ?></span>
@@ -1542,12 +1542,12 @@ class Setup_Wizard_Admin {
     private function render_state_card( $state ) {
         ?>
         <div class="qsw-state-card">
-            <h3><?php esc_html_e( '向导状态', 'developer-starter' ); ?></h3>
-            <p><?php echo esc_html( ! empty( $state['completed'] ) ? __( '已完成', 'developer-starter' ) : ( ! empty( $state['skipped'] ) ? __( '已跳过', 'developer-starter' ) : __( '进行中 / 未完成', 'developer-starter' ) ) ); ?></p>
+            <h3><?php esc_html_e( '向导状态', 'qiling' ); ?></h3>
+            <p><?php echo esc_html( ! empty( $state['completed'] ) ? __( '已完成', 'qiling' ) : ( ! empty( $state['skipped'] ) ? __( '已跳过', 'qiling' ) : __( '进行中 / 未完成', 'qiling' ) ) ); ?></p>
             <?php if ( ! empty( $state['completed_at'] ) ) : ?>
-                <span><?php echo esc_html( sprintf( __( '完成时间：%s', 'developer-starter' ), date_i18n( 'Y-m-d H:i', absint( $state['completed_at'] ) ) ) ); ?></span>
+                <span><?php echo esc_html( sprintf( __( '完成时间：%s', 'qiling' ), date_i18n( 'Y-m-d H:i', absint( $state['completed_at'] ) ) ) ); ?></span>
             <?php elseif ( ! empty( $state['skipped_at'] ) ) : ?>
-                <span><?php echo esc_html( sprintf( __( '跳过时间：%s', 'developer-starter' ), date_i18n( 'Y-m-d H:i', absint( $state['skipped_at'] ) ) ) ); ?></span>
+                <span><?php echo esc_html( sprintf( __( '跳过时间：%s', 'qiling' ), date_i18n( 'Y-m-d H:i', absint( $state['skipped_at'] ) ) ) ); ?></span>
             <?php endif; ?>
         </div>
         <?php
@@ -1567,7 +1567,7 @@ class Setup_Wizard_Admin {
         }
         ?>
         <div class="qsw-last-run">
-            <h3><?php esc_html_e( '最近一次向导创建的页面', 'developer-starter' ); ?></h3>
+            <h3><?php esc_html_e( '最近一次向导创建的页面', 'qiling' ); ?></h3>
             <ul>
                 <?php foreach ( $pages as $page_key => $page_id ) : ?>
                     <?php $page_id = absint( $page_id ); ?>
@@ -1577,7 +1577,7 @@ class Setup_Wizard_Admin {
                     <li>
                         <strong><?php echo esc_html( get_the_title( $page_id ) ); ?></strong>
                         <span><?php echo esc_html( sanitize_key( (string) $page_key ) ); ?></span>
-                        <a href="<?php echo esc_url( get_edit_post_link( $page_id, '' ) ); ?>"><?php esc_html_e( '编辑', 'developer-starter' ); ?></a>
+                        <a href="<?php echo esc_url( get_edit_post_link( $page_id, '' ) ); ?>"><?php esc_html_e( '编辑', 'qiling' ); ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -1802,21 +1802,21 @@ class Setup_Wizard_Admin {
      */
     private function render_notices() {
         if ( ! empty( $_GET['from_activation'] ) ) {
-            echo '<div class="notice notice-info is-dismissible"><p>' . esc_html__( '启灵主题已启用，你可以先通过建站向导完成基础配置；也可以跳过，之后随时重新进入。', 'developer-starter' ) . '</p></div>';
+            echo '<div class="notice notice-info is-dismissible"><p>' . esc_html__( '启灵主题已启用，你可以先通过建站向导完成基础配置；也可以跳过，之后随时重新进入。', 'qiling' ) . '</p></div>';
         }
         if ( ! empty( $_GET['saved'] ) ) {
-            echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( '当前步骤已保存。', 'developer-starter' ) . '</p></div>';
+            echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( '当前步骤已保存。', 'qiling' ) . '</p></div>';
         }
         if ( ! empty( $_GET['pages_generated'] ) ) {
             $created = isset( $_GET['created'] ) ? absint( $_GET['created'] ) : 0;
             $reused  = isset( $_GET['reused'] ) ? absint( $_GET['reused'] ) : 0;
             $errors  = isset( $_GET['errors'] ) ? absint( $_GET['errors'] ) : 0;
-            echo '<div class="notice ' . esc_attr( $errors > 0 ? 'notice-warning' : 'notice-success' ) . ' is-dismissible"><p>' . esc_html( sprintf( __( '页面生成完成：新建 %1$d 个，复用 %2$d 个，错误 %3$d 个。', 'developer-starter' ), $created, $reused, $errors ) ) . '</p></div>';
+            echo '<div class="notice ' . esc_attr( $errors > 0 ? 'notice-warning' : 'notice-success' ) . ' is-dismissible"><p>' . esc_html( sprintf( __( '页面生成完成：新建 %1$d 个，复用 %2$d 个，错误 %3$d 个。', 'qiling' ), $created, $reused, $errors ) ) . '</p></div>';
             if ( isset( $_GET['front_page'] ) && 'kept_existing' === sanitize_key( wp_unslash( (string) $_GET['front_page'] ) ) ) {
-                echo '<div class="notice notice-info is-dismissible"><p>' . esc_html__( '已检测到现有静态首页，向导没有覆盖它。', 'developer-starter' ) . '</p></div>';
+                echo '<div class="notice notice-info is-dismissible"><p>' . esc_html__( '已检测到现有静态首页，向导没有覆盖它。', 'qiling' ) . '</p></div>';
             }
             if ( ! empty( $_GET['modules_filled'] ) ) {
-                echo '<div class="notice notice-info is-dismissible"><p>' . esc_html__( '新创建首页已导入官方模板模块。', 'developer-starter' ) . '</p></div>';
+                echo '<div class="notice notice-info is-dismissible"><p>' . esc_html__( '新创建首页已导入官方模板模块。', 'qiling' ) . '</p></div>';
             }
         }
         if ( ! empty( $_GET['basics_applied'] ) ) {
@@ -1824,13 +1824,13 @@ class Setup_Wizard_Admin {
             $skipped  = isset( $_GET['settings_skip'] ) ? absint( $_GET['settings_skip'] ) : 0;
             $menu_items = isset( $_GET['menu_items'] ) ? absint( $_GET['menu_items'] ) : 0;
             $menu_status = isset( $_GET['menu_status'] ) ? sanitize_key( wp_unslash( (string) $_GET['menu_status'] ) ) : 'skipped';
-            echo '<div class="notice notice-success is-dismissible"><p>' . esc_html( sprintf( __( '菜单与基础设置已处理：更新 %1$d 项，保留已有 %2$d 项，菜单状态 %3$s，新增菜单项 %4$d 个。', 'developer-starter' ), $settings, $skipped, $menu_status, $menu_items ) ) . '</p></div>';
+            echo '<div class="notice notice-success is-dismissible"><p>' . esc_html( sprintf( __( '菜单与基础设置已处理：更新 %1$d 项，保留已有 %2$d 项，菜单状态 %3$s，新增菜单项 %4$d 个。', 'qiling' ), $settings, $skipped, $menu_status, $menu_items ) ) . '</p></div>';
         }
         if ( ! empty( $_GET['wizard_skipped'] ) ) {
-            echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( '已跳过建站向导。你可以稍后从“企业主题设置 -> 建站向导”重新进入。', 'developer-starter' ) . '</p></div>';
+            echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( '已跳过建站向导。你可以稍后从“企业主题设置 -> 建站向导”重新进入。', 'qiling' ) . '</p></div>';
         }
         if ( ! empty( $_GET['wizard_completed'] ) ) {
-            echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( '建站向导已标记完成。', 'developer-starter' ) . '</p></div>';
+            echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( '建站向导已标记完成。', 'qiling' ) . '</p></div>';
         }
         if ( ! empty( $_GET['cleanup_done'] ) ) {
             $trashed_pages = isset( $_GET['trash_pages'] ) ? absint( $_GET['trash_pages'] ) : 0;
@@ -1838,9 +1838,9 @@ class Setup_Wizard_Admin {
             $deleted_menus = isset( $_GET['delete_menus'] ) ? absint( $_GET['delete_menus'] ) : 0;
             $skipped_menus = isset( $_GET['skip_menus'] ) ? absint( $_GET['skip_menus'] ) : 0;
             $errors        = isset( $_GET['errors'] ) ? absint( $_GET['errors'] ) : 0;
-            $draft_text    = ! empty( $_GET['draft_deleted'] ) ? __( '临时草稿已清理。', 'developer-starter' ) : __( '临时草稿未清理。', 'developer-starter' );
-            $record_text   = ! empty( $_GET['records_reset'] ) ? __( '向导记录已更新。', 'developer-starter' ) : __( '向导记录未变更。', 'developer-starter' );
-            echo '<div class="notice ' . esc_attr( $errors > 0 ? 'notice-warning' : 'notice-success' ) . ' is-dismissible"><p>' . esc_html( sprintf( __( '向导清理完成：页面移入回收站 %1$d 个，页面跳过 %2$d 个，删除菜单 %3$d 个，菜单跳过 %4$d 个，错误 %5$d 个。%6$s%7$s', 'developer-starter' ), $trashed_pages, $skipped_pages, $deleted_menus, $skipped_menus, $errors, $draft_text, $record_text ) ) . '</p></div>';
+            $draft_text    = ! empty( $_GET['draft_deleted'] ) ? __( '临时草稿已清理。', 'qiling' ) : __( '临时草稿未清理。', 'qiling' );
+            $record_text   = ! empty( $_GET['records_reset'] ) ? __( '向导记录已更新。', 'qiling' ) : __( '向导记录未变更。', 'qiling' );
+            echo '<div class="notice ' . esc_attr( $errors > 0 ? 'notice-warning' : 'notice-success' ) . ' is-dismissible"><p>' . esc_html( sprintf( __( '向导清理完成：页面移入回收站 %1$d 个，页面跳过 %2$d 个，删除菜单 %3$d 个，菜单跳过 %4$d 个，错误 %5$d 个。%6$s%7$s', 'qiling' ), $trashed_pages, $skipped_pages, $deleted_menus, $skipped_menus, $errors, $draft_text, $record_text ) ) . '</p></div>';
         }
     }
 
@@ -1884,12 +1884,12 @@ class Setup_Wizard_Admin {
      */
     private function get_steps() {
         return array(
-            'welcome' => __( '欢迎', 'developer-starter' ),
-            'type'    => __( '站点类型', 'developer-starter' ),
-            'pages'   => __( '页面生成', 'developer-starter' ),
-            'basics'  => __( '菜单设置', 'developer-starter' ),
-            'plugins' => __( '插件检测', 'developer-starter' ),
-            'finish'  => __( '完成', 'developer-starter' ),
+            'welcome' => __( '欢迎', 'qiling' ),
+            'type'    => __( '站点类型', 'qiling' ),
+            'pages'   => __( '页面生成', 'qiling' ),
+            'basics'  => __( '菜单设置', 'qiling' ),
+            'plugins' => __( '插件检测', 'qiling' ),
+            'finish'  => __( '完成', 'qiling' ),
         );
     }
 
@@ -1914,7 +1914,7 @@ class Setup_Wizard_Admin {
      */
     private function get_choice_label( $choices, $key ) {
         $key = sanitize_key( (string) $key );
-        return isset( $choices[ $key ] ) ? $choices[ $key ] : __( '尚未选择', 'developer-starter' );
+        return isset( $choices[ $key ] ) ? $choices[ $key ] : __( '尚未选择', 'qiling' );
     }
 
     /**
@@ -1923,10 +1923,10 @@ class Setup_Wizard_Admin {
      */
     private function get_plugin_status_label( $status ) {
         $labels = array(
-            Setup_Wizard_Plugin_Detector::STATUS_ACTIVE   => __( '已启用', 'developer-starter' ),
-            Setup_Wizard_Plugin_Detector::STATUS_INACTIVE => __( '已安装未启用', 'developer-starter' ),
-            Setup_Wizard_Plugin_Detector::STATUS_MISSING  => __( '未安装', 'developer-starter' ),
-            Setup_Wizard_Plugin_Detector::STATUS_UNKNOWN  => __( '未知', 'developer-starter' ),
+            Setup_Wizard_Plugin_Detector::STATUS_ACTIVE   => __( '已启用', 'qiling' ),
+            Setup_Wizard_Plugin_Detector::STATUS_INACTIVE => __( '已安装未启用', 'qiling' ),
+            Setup_Wizard_Plugin_Detector::STATUS_MISSING  => __( '未安装', 'qiling' ),
+            Setup_Wizard_Plugin_Detector::STATUS_UNKNOWN  => __( '未知', 'qiling' ),
         );
 
         return isset( $labels[ $status ] ) ? $labels[ $status ] : $labels[ Setup_Wizard_Plugin_Detector::STATUS_UNKNOWN ];

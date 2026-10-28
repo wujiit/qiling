@@ -399,7 +399,7 @@ class ID_Verification_Manager {
         ) {
             return new \WP_Error(
                 'pii_storage_unavailable',
-                __( '服务器暂时无法安全保存实名资料，请联系管理员检查 OpenSSL 配置后重试。', 'developer-starter' ),
+                __( '服务器暂时无法安全保存实名资料，请联系管理员检查 OpenSSL 配置后重试。', 'qiling' ),
                 array( 'status' => 500 )
             );
         }
@@ -473,11 +473,11 @@ class ID_Verification_Manager {
         $length = function_exists( 'mb_strlen' ) ? mb_strlen( $name ) : strlen( $name );
 
         if ( '' === $name ) {
-            return new \WP_Error( 'invalid_name', __( '姓名不能为空', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_name', __( '姓名不能为空', 'qiling' ), array( 'status' => 400 ) );
         }
 
         if ( $length > 60 ) {
-            return new \WP_Error( 'invalid_name_length', __( '姓名长度过长', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_name_length', __( '姓名长度过长', 'qiling' ), array( 'status' => 400 ) );
         }
 
         return true;
@@ -497,7 +497,7 @@ class ID_Verification_Manager {
     public function validate_verification_mobile_arg( $value, $request = null, $param = '' ) {
         $mobile = $this->sanitize_verification_mobile_arg( $value );
         if ( ! preg_match( '/^1[3-9]\d{9}$/', $mobile ) ) {
-            return new \WP_Error( 'invalid_mobile', __( '手机号格式不正确', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_mobile', __( '手机号格式不正确', 'qiling' ), array( 'status' => 400 ) );
         }
 
         return true;
@@ -518,7 +518,7 @@ class ID_Verification_Manager {
     public function validate_verification_idcard_arg( $value, $request = null, $param = '' ) {
         $idcard = $this->sanitize_verification_idcard_arg( $value );
         if ( ! preg_match( '/^\d{17}[\dX]$/', $idcard ) ) {
-            return new \WP_Error( 'invalid_idcard', __( '身份证号格式不正确', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_idcard', __( '身份证号格式不正确', 'qiling' ), array( 'status' => 400 ) );
         }
 
         return true;
@@ -529,7 +529,7 @@ class ID_Verification_Manager {
      */
     public function validate_positive_integer_arg( $value, $request = null, $param = '' ) {
         if ( absint( $value ) <= 0 ) {
-            return new \WP_Error( 'invalid_record_id', __( '记录 ID 无效', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_record_id', __( '记录 ID 无效', 'qiling' ), array( 'status' => 400 ) );
         }
 
         return true;
@@ -540,7 +540,7 @@ class ID_Verification_Manager {
      */
     public function handle_verification( $request ) {
         if ( ! $this->is_enabled() ) {
-            return new \WP_Error( 'disabled', __( '实名认证功能未启用', 'developer-starter' ), array( 'status' => 403 ) );
+            return new \WP_Error( 'disabled', __( '实名认证功能未启用', 'qiling' ), array( 'status' => 403 ) );
         }
 
         $user_id = get_current_user_id();
@@ -551,17 +551,17 @@ class ID_Verification_Manager {
 
         // 验证输入
         if ( empty( $name ) || empty( $mobile ) || empty( $idcard ) ) {
-            return new \WP_Error( 'invalid_input', __( '所有字段均为必填', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_input', __( '所有字段均为必填', 'qiling' ), array( 'status' => 400 ) );
         }
 
         // 验证手机号格式
         if ( ! preg_match( '/^1[3-9]\d{9}$/', $mobile ) ) {
-            return new \WP_Error( 'invalid_mobile', __( '手机号格式不正确', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_mobile', __( '手机号格式不正确', 'qiling' ), array( 'status' => 400 ) );
         }
 
         // 验证身份证格式（简单验证18位）
         if ( ! preg_match( '/^\d{17}[\dXx]$/', $idcard ) ) {
-            return new \WP_Error( 'invalid_idcard', __( '身份证号格式不正确', 'developer-starter' ), array( 'status' => 400 ) );
+            return new \WP_Error( 'invalid_idcard', __( '身份证号格式不正确', 'qiling' ), array( 'status' => 400 ) );
         }
 
         // 检查每日尝试次数（优化查询）
@@ -584,7 +584,7 @@ class ID_Verification_Manager {
         ) );
 
         if ( $attempts >= $max_attempts ) {
-            return new \WP_Error( 'max_attempts', __( '今日验证次数已达上限，请明天再试', 'developer-starter' ), array( 'status' => 429 ) );
+            return new \WP_Error( 'max_attempts', __( '今日验证次数已达上限，请明天再试', 'qiling' ), array( 'status' => 429 ) );
         }
 
         // 加密处理 PII
@@ -623,7 +623,7 @@ class ID_Verification_Manager {
         if ( false === $inserted ) {
             return new \WP_Error(
                 'verification_store_failed',
-                __( '实名认证结果已返回，但验证记录保存失败，请稍后重试或联系管理员。', 'developer-starter' ),
+                __( '实名认证结果已返回，但验证记录保存失败，请稍后重试或联系管理员。', 'qiling' ),
                 array( 'status' => 500 )
             );
         }
@@ -640,8 +640,8 @@ class ID_Verification_Manager {
         return array(
             'success' => $response_success,
             'message' => $response_success
-                ? __( '验证成功', 'developer-starter' )
-                : __( '验证失败，请检查信息是否正确或稍后重试', 'developer-starter' ),
+                ? __( '验证成功', 'qiling' )
+                : __( '验证失败，请检查信息是否正确或稍后重试', 'qiling' ),
             'data'    => array(
                 'verified' => $response_success,
                 'status'   => $response_success ? 'success' : 'failed',
@@ -661,7 +661,7 @@ class ID_Verification_Manager {
         if ( empty( $appcode ) ) {
             return array(
                 'success' => false,
-                'msg'     => __( 'AppCode 未配置', 'developer-starter' ),
+                'msg'     => __( 'AppCode 未配置', 'qiling' ),
                 'code'    => 500,
                 'data'    => array(),
             );
@@ -670,7 +670,7 @@ class ID_Verification_Manager {
         if ( empty( $api_url ) ) {
             return array(
                 'success' => false,
-                'msg'     => __( 'API 地址未配置', 'developer-starter' ),
+                'msg'     => __( 'API 地址未配置', 'qiling' ),
                 'code'    => 500,
                 'data'    => array(),
             );
@@ -696,9 +696,10 @@ class ID_Verification_Manager {
             'Accept'        => 'application/json',
         );
         $args = array(
-            'headers'   => $headers,
-            'timeout'   => 30,
-            'sslverify' => $ssl_verify,
+            'headers'            => $headers,
+            'timeout'            => 15,
+            'sslverify'          => $ssl_verify,
+            'reject_unsafe_urls' => true,
         );
 
         if ( 'post' === $method ) {
@@ -713,7 +714,7 @@ class ID_Verification_Manager {
         if ( is_wp_error( $response ) ) {
             return array(
                 'success' => false,
-                'msg'     => __( 'API请求失败：', 'developer-starter' ) . $response->get_error_message(),
+                'msg'     => __( 'API请求失败：', 'qiling' ) . $response->get_error_message(),
                 'code'    => 500,
                 'data'    => array(),
             );
@@ -726,7 +727,7 @@ class ID_Verification_Manager {
         if ( ! is_array( $data ) ) {
             return array(
                 'success' => false,
-                'msg'     => __( 'API响应解析失败', 'developer-starter' ),
+                'msg'     => __( 'API响应解析失败', 'qiling' ),
                 'code'    => $status_code > 0 ? $status_code : 500,
                 'data'    => array(),
             );
@@ -862,7 +863,7 @@ class ID_Verification_Manager {
 
         $total_records = $wpdb->get_var( "SELECT COUNT(*) FROM {$this->table_name}" );
         $records = $wpdb->get_results( $wpdb->prepare(
-            "SELECT * FROM {$this->table_name} ORDER BY verification_time DESC LIMIT %d OFFSET %d",
+            "SELECT id, user_id, name, mobile, mobile_encrypted, idcard, channel, sex, birthday, address, ip_address, result, verification_time FROM {$this->table_name} ORDER BY verification_time DESC LIMIT %d OFFSET %d",
             $per_page,
             $offset
         ) );

@@ -239,14 +239,19 @@
 }
 
 .widget_tag_cloud .tagcloud a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
     padding: var(--qiling-space-6) var(--qiling-space-14);
     background: var(--color-gray-100);
     color: var(--color-gray-700);
     border-radius: 20px;
     font-size: calc(var(--qiling-font-size-base) * 0.8125) !important;
     text-decoration: none;
+    white-space: nowrap;
     transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .widget_tag_cloud .tagcloud a:hover {

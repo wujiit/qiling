@@ -18,7 +18,7 @@ class Fullscreen_Video_Module extends Module_Base {
     public function __construct() {
         $this->category = 'hero';
         $this->icon = 'dashicons-video-alt3';
-        $this->description = __( '全屏沉浸式视频背景首屏，支持光晕标题和底部互动导航', 'developer-starter' );
+        $this->description = __( '全屏沉浸式视频背景首屏，支持光晕标题和底部互动导航', 'qiling' );
     }
 
     public function get_id() {
@@ -26,41 +26,41 @@ class Fullscreen_Video_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '全屏视频首屏', 'developer-starter' );
+        return __( '全屏视频首屏', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             // --- 视频/背景设置 ---
-            array( 'id' => 'fsv_video_url', 'type' => 'text', 'label' => __( '背景视频URL (.mp4)', 'developer-starter' ), 'desc' => __( '建议使用CDN链接或相对路径，视频将自动循环播放', 'developer-starter' ) ),
+            array( 'id' => 'fsv_video_url', 'type' => 'text', 'label' => __( '背景视频URL (.mp4)', 'qiling' ), 'desc' => __( '建议使用CDN链接或相对路径，视频将自动循环播放', 'qiling' ) ),
             array( 
                 'id' => 'fsv_overlay_opacity', 
                 'type' => 'text', 
-                'label' => __( '遮罩浓度 (0-1)', 'developer-starter' ), 
+                'label' => __( '遮罩浓度 (0-1)', 'qiling' ), 
                 'default' => '0.3',
-                'desc' => __( '黑色遮罩层的透明度，用于提升文字可读性', 'developer-starter' )
+                'desc' => __( '黑色遮罩层的透明度，用于提升文字可读性', 'qiling' )
             ),
 
             // --- 标题内容 ---
-            array( 'id' => 'fsv_title', 'type' => 'text', 'label' => __( '主标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题 · <strong>超乎想象</strong>', 'Qiling Theme <strong>beyond expectations</strong>' ) : __( '启灵主题 · <strong>超乎想象</strong>', 'developer-starter' ), 'desc' => __( '支持HTML标签，如 <strong>加粗</strong>, <span>文字</span>', 'developer-starter' ) ),
-            array( 'id' => 'fsv_subtitle', 'type' => 'text', 'label' => __( '副标题/描述', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极速开发 · 优雅设计 · 极致体验', 'Fast delivery, refined design, and a polished experience.' ) : __( '极速开发 · 优雅设计 · 极致体验', 'developer-starter' ) ),
+            array( 'id' => 'fsv_title', 'type' => 'text', 'label' => __( '主标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题 · <strong>超乎想象</strong>', 'Qiling Theme <strong>beyond expectations</strong>' ) : __( '启灵主题 · <strong>超乎想象</strong>', 'qiling' ), 'desc' => __( '支持HTML标签，如 <strong>加粗</strong>, <span>文字</span>', 'qiling' ) ),
+            array( 'id' => 'fsv_subtitle', 'type' => 'text', 'label' => __( '副标题/描述', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极速开发 · 优雅设计 · 极致体验', 'Fast delivery, refined design, and a polished experience.' ) : __( '极速开发 · 优雅设计 · 极致体验', 'qiling' ) ),
             
             // --- 标题特效 ---
             array( 
                 'id' => 'fsv_glow_color', 
                 'type' => 'color', 
-                'label' => __( '光晕颜色', 'developer-starter' ), 
+                'label' => __( '光晕颜色', 'qiling' ), 
                 'default' => 'var(--color-neutral-0)',
-                'desc' => __( '标题呼吸光晕的颜色', 'developer-starter' )
+                'desc' => __( '标题呼吸光晕的颜色', 'qiling' )
             ),
             array( 
                 'id' => 'fsv_glow_intensity', 
                 'type' => 'select', 
-                'label' => __( '光晕强度', 'developer-starter' ), 
+                'label' => __( '光晕强度', 'qiling' ), 
                 'options' => array(
-                    'low' => __( '微光', 'developer-starter' ),
-                    'medium' => __( '正常', 'developer-starter' ),
-                    'high' => __( '强光', 'developer-starter' ),
+                    'low' => __( '微光', 'qiling' ),
+                    'medium' => __( '正常', 'qiling' ),
+                    'high' => __( '强光', 'qiling' ),
                 ),
                 'default' => 'medium'
             ),
@@ -68,24 +68,24 @@ class Fullscreen_Video_Module extends Module_Base {
             // --- 底部导航 ---
             array(
                 'id' => 'fsv_nav_items',
-                'label' => __( '底部导航按钮', 'developer-starter' ),
+                'label' => __( '底部导航按钮', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'item_label', 'label' => __( '按钮文字', 'developer-starter' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '快速入门', 'Quick Start' ) : __( '快速入门', 'developer-starter' ) ),
-                    array( 'id' => 'item_icon', 'label' => __( '按钮图标', 'developer-starter' ), 'type' => 'text', 'default' => '🚀', 'desc' => __( '支持 Emoji (如 🔥) 或图标类名 (如 icon-home)', 'developer-starter' ) ),
+                    array( 'id' => 'item_label', 'label' => __( '按钮文字', 'qiling' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '快速入门', 'Quick Start' ) : __( '快速入门', 'qiling' ) ),
+                    array( 'id' => 'item_icon', 'label' => __( '按钮图标', 'qiling' ), 'type' => 'text', 'default' => 'icon-rocket', 'desc' => __( '支持图标类名 (如 icon-rocket、icon-home) 或 SVG 代码', 'qiling' ) ),
                     array( 
                         'id' => 'item_type', 
-                        'label' => __( '交互类型', 'developer-starter' ), 
+                        'label' => __( '交互类型', 'qiling' ), 
                         'type' => 'select',
                         'options' => array(
-                            'link' => __( '直接跳转链接', 'developer-starter' ),
-                            'qr' => __( '悬停显示二维码', 'developer-starter' ),
+                            'link' => __( '直接跳转链接', 'qiling' ),
+                            'qr' => __( '悬停显示二维码', 'qiling' ),
                         ),
                         'default' => 'link'
                     ),
-                    array( 'id' => 'item_link', 'label' => __( '跳转链接', 'developer-starter' ), 'type' => 'text', 'dependency' => array( 'item_type', '==', 'link' ) ),
-                    array( 'id' => 'item_qr', 'label' => __( '二维码图片', 'developer-starter' ), 'type' => 'image', 'dependency' => array( 'item_type', '==', 'qr' ) ),
-                    array( 'id' => 'item_qr_desc', 'label' => __( '二维码描述', 'developer-starter' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '扫码查看', 'Scan to view' ) : __( '扫码查看', 'developer-starter' ), 'dependency' => array( 'item_type', '==', 'qr' ) ),
+                    array( 'id' => 'item_link', 'label' => __( '跳转链接', 'qiling' ), 'type' => 'text', 'dependency' => array( 'item_type', '==', 'link' ) ),
+                    array( 'id' => 'item_qr', 'label' => __( '二维码图片', 'qiling' ), 'type' => 'image', 'dependency' => array( 'item_type', '==', 'qr' ) ),
+                    array( 'id' => 'item_qr_desc', 'label' => __( '二维码描述', 'qiling' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '扫码查看', 'Scan to view' ) : __( '扫码查看', 'qiling' ), 'dependency' => array( 'item_type', '==', 'qr' ) ),
                 ),
             ),
 
@@ -93,8 +93,8 @@ class Fullscreen_Video_Module extends Module_Base {
             array( 
                 'id' => 'fsv_show_controls', 
                 'type' => 'select', 
-                'label' => __( '显示右上角控制按钮', 'developer-starter' ), 
-                'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 
+                'label' => __( '显示右上角控制按钮', 'qiling' ), 
+                'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 
                 'default' => '1' 
             ),
         );
@@ -142,7 +142,7 @@ class Fullscreen_Video_Module extends Module_Base {
                     ></video>
                 <?php else : ?>
                     <div class="fsv-placeholder">
-                        <span><?php esc_html_e( '请设置背景视频URL', 'developer-starter' ); ?></span>
+                        <span><?php esc_html_e( '请设置背景视频URL', 'qiling' ); ?></span>
                     </div>
                 <?php endif; ?>
             </div>
@@ -150,13 +150,13 @@ class Fullscreen_Video_Module extends Module_Base {
             <!-- 右上角控制区 -->
             <?php if ( $show_controls && $video_url ) : ?>
                 <div class="fsv-controls" style="z-index: 200;">
-                    <button class="fsv-ctrl-btn" data-action="play-pause" title="<?php esc_attr_e( '播放/暂停', 'developer-starter' ); ?>">
+                    <button class="fsv-ctrl-btn" data-action="play-pause" title="<?php esc_attr_e( '播放/暂停', 'qiling' ); ?>">
                         <!-- Play Icon -->
                         <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
                         <!-- Pause Icon -->
                         <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
                     </button>
-                    <button class="fsv-ctrl-btn" data-action="mute-unmute" title="<?php esc_attr_e( '静音/取消静音', 'developer-starter' ); ?>">
+                    <button class="fsv-ctrl-btn" data-action="mute-unmute" title="<?php esc_attr_e( '静音/取消静音', 'qiling' ); ?>">
                         <!-- Mute Icon -->
                         <svg class="icon-mute" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
                         <!-- Volume Icon -->

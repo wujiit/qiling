@@ -18,7 +18,7 @@ class Branches_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-location';
-        $this->description = __( '展示门店/分支机构信息', 'developer-starter' );
+        $this->description = __( '展示门店/分支机构信息', 'qiling' );
     }
 
     public function get_id() {
@@ -26,227 +26,227 @@ class Branches_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '门店机构', 'developer-starter' );
+        return __( '门店机构', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'branches_title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text', 'default' => __( '全国分支机构', 'developer-starter' ) ),
+            array( 'id' => 'branches_title', 'label' => __( '标题', 'qiling' ), 'type' => 'text', 'default' => __( '全国分支机构', 'qiling' ) ),
             array(
                 'id' => 'branches_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'branches_title_color', 'label' => __( '标题颜色', 'developer-starter' ), 'type' => 'color' ),
+            array( 'id' => 'branches_title_color', 'label' => __( '标题颜色', 'qiling' ), 'type' => 'color' ),
 
-            array( 'id' => 'branches_subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => __( '覆盖全国主要城市，为您提供本地化服务', 'developer-starter' ) ),
+            array( 'id' => 'branches_subtitle', 'label' => __( '副标题', 'qiling' ), 'type' => 'text', 'default' => __( '覆盖全国主要城市，为您提供本地化服务', 'qiling' ) ),
             array(
                 'id' => 'branches_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'branches_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认颜色', 'developer-starter' ),
+                'description' => __( '留空使用默认颜色', 'qiling' ),
             ),
 
             array(
                 'id' => 'branches_columns',
-                'label' => __( '每行列数', 'developer-starter' ),
+                'label' => __( '每行列数', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id' => 'enable_city_filter',
-                'label' => __( '启用城市筛选', 'developer-starter' ),
+                'label' => __( '启用城市筛选', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '启用', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '启用', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id' => 'map_provider',
-                'label' => __( '默认地图服务', 'developer-starter' ),
+                'label' => __( '默认地图服务', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'auto'    => __( '自动（高德）', 'developer-starter' ),
-                    'gaode'   => __( '高德地图', 'developer-starter' ),
-                    'baidu'   => __( '百度地图', 'developer-starter' ),
-                    'tencent' => __( '腾讯地图', 'developer-starter' ),
-                    'google'  => __( 'Google Maps', 'developer-starter' ),
+                    'auto'    => __( '自动（高德）', 'qiling' ),
+                    'gaode'   => __( '高德地图', 'qiling' ),
+                    'baidu'   => __( '百度地图', 'qiling' ),
+                    'tencent' => __( '腾讯地图', 'qiling' ),
+                    'google'  => __( 'Google Maps', 'qiling' ),
                 ),
                 'default' => 'auto',
             ),
             array(
                 'id'      => 'branches_badge_bg',
-                'label'   => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'   => __( '标签/徽章背景颜色', 'qiling' ),
                 'type'    => 'color',
                 'default' => '',
-                'description' => __( '控制服务标签和营业状态徽章，留空时保留状态默认色并跟随全局徽章颜色', 'developer-starter' ),
+                'description' => __( '控制服务标签和营业状态徽章，留空时保留状态默认色并跟随全局徽章颜色', 'qiling' ),
             ),
             array(
                 'id' => 'show_booking_button',
-                'label' => __( '显示预约按钮', 'developer-starter' ),
+                'label' => __( '显示预约按钮', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id' => 'navigation_button_text',
-                'label' => __( '导航按钮文案', 'developer-starter' ),
+                'label' => __( '导航按钮文案', 'qiling' ),
                 'type' => 'text',
-                'default' => __( '导航到店', 'developer-starter' ),
+                'default' => __( '导航到店', 'qiling' ),
             ),
             array(
                 'id' => 'navigation_button_bg_color',
-                'label' => __( '导航按钮背景颜色', 'developer-starter' ),
+                'label' => __( '导航按钮背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响“导航到店”按钮，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“导航到店”按钮，留空时跟随全局设计', 'qiling' ),
             ),
             array(
                 'id' => 'navigation_button_text_color',
-                'label' => __( '导航按钮文字颜色', 'developer-starter' ),
+                'label' => __( '导航按钮文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响“导航到店”按钮，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“导航到店”按钮，留空时跟随全局设计', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'navigation_button_border_color', __( '导航按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'navigation_button_border_color', __( '导航按钮边框颜色', 'qiling' ) ),
             array(
                 'id' => 'navigation_button_hover_bg_color',
-                'label' => __( '导航按钮悬停背景颜色', 'developer-starter' ),
+                'label' => __( '导航按钮悬停背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响“导航到店”按钮悬停状态，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“导航到店”按钮悬停状态，留空时跟随全局设计', 'qiling' ),
             ),
             array(
                 'id' => 'navigation_button_hover_text_color',
-                'label' => __( '导航按钮悬停文字颜色', 'developer-starter' ),
+                'label' => __( '导航按钮悬停文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响“导航到店”按钮悬停状态，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“导航到店”按钮悬停状态，留空时跟随全局设计', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'navigation_button_hover_border_color', __( '导航按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随导航按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'navigation_button_hover_border_color', __( '导航按钮悬停边框颜色', 'qiling' ), __( '留空时跟随导航按钮悬停背景颜色。', 'qiling' ) ),
             array(
                 'id' => 'booking_button_text',
-                'label' => __( '预约按钮文案', 'developer-starter' ),
+                'label' => __( '预约按钮文案', 'qiling' ),
                 'type' => 'text',
-                'default' => __( '在线预约', 'developer-starter' ),
+                'default' => __( '在线预约', 'qiling' ),
                 'dependency' => array( 'show_booking_button', '==', 'yes' ),
             ),
             array(
                 'id' => 'booking_button_bg_color',
-                'label' => __( '预约按钮背景颜色', 'developer-starter' ),
+                'label' => __( '预约按钮背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
                 'dependency' => array( 'show_booking_button', '==', 'yes' ),
-                'description' => __( '只影响“在线预约”按钮，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“在线预约”按钮，留空时跟随全局设计', 'qiling' ),
             ),
             array(
                 'id' => 'booking_button_text_color',
-                'label' => __( '预约按钮文字颜色', 'developer-starter' ),
+                'label' => __( '预约按钮文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
                 'dependency' => array( 'show_booking_button', '==', 'yes' ),
-                'description' => __( '只影响“在线预约”按钮，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“在线预约”按钮，留空时跟随全局设计', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'booking_button_border_color', __( '预约按钮边框颜色', 'developer-starter' ), '', array( 'dependency' => array( 'show_booking_button', '==', 'yes' ) ) ),
+            $this->get_button_border_color_field( 'booking_button_border_color', __( '预约按钮边框颜色', 'qiling' ), '', array( 'dependency' => array( 'show_booking_button', '==', 'yes' ) ) ),
             array(
                 'id' => 'booking_button_hover_bg_color',
-                'label' => __( '预约按钮悬停背景颜色', 'developer-starter' ),
+                'label' => __( '预约按钮悬停背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
                 'dependency' => array( 'show_booking_button', '==', 'yes' ),
-                'description' => __( '只影响“在线预约”按钮悬停状态，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“在线预约”按钮悬停状态，留空时跟随全局设计', 'qiling' ),
             ),
             array(
                 'id' => 'booking_button_hover_text_color',
-                'label' => __( '预约按钮悬停文字颜色', 'developer-starter' ),
+                'label' => __( '预约按钮悬停文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
                 'dependency' => array( 'show_booking_button', '==', 'yes' ),
-                'description' => __( '只影响“在线预约”按钮悬停状态，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响“在线预约”按钮悬停状态，留空时跟随全局设计', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'booking_button_hover_border_color', __( '预约按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随预约按钮悬停背景颜色。', 'developer-starter' ), array( 'dependency' => array( 'show_booking_button', '==', 'yes' ) ) ),
+            $this->get_button_border_color_field( 'booking_button_hover_border_color', __( '预约按钮悬停边框颜色', 'qiling' ), __( '留空时跟随预约按钮悬停背景颜色。', 'qiling' ), array( 'dependency' => array( 'show_booking_button', '==', 'yes' ) ) ),
 
             array(
                 'id' => 'branches_list',
-                'label' => __( '门店列表', 'developer-starter' ),
+                'label' => __( '门店列表', 'qiling' ),
                 'type' => 'repeater',
-                'description' => __( '新增门店时可填写坐标，系统会自动生成地图导航链接', 'developer-starter' ),
+                'description' => __( '新增门店时可填写坐标，系统会自动生成地图导航链接', 'qiling' ),
                 'fields' => array(
-                    array( 'id' => 'name', 'label' => __( '门店名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'city', 'label' => __( '所在城市', 'developer-starter' ), 'type' => 'text', 'description' => __( '用于前台筛选，如：北京', 'developer-starter' ) ),
-                    array( 'id' => 'status', 'label' => __( '营业状态', 'developer-starter' ), 'type' => 'select', 'options' => array(
-                        'open'   => __( '营业中', 'developer-starter' ),
-                        'busy'   => __( '客流较高', 'developer-starter' ),
-                        'closed' => __( '暂停营业', 'developer-starter' ),
-                        'coming' => __( '即将开业', 'developer-starter' ),
+                    array( 'id' => 'name', 'label' => __( '门店名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'city', 'label' => __( '所在城市', 'qiling' ), 'type' => 'text', 'description' => __( '用于前台筛选，如：北京', 'qiling' ) ),
+                    array( 'id' => 'status', 'label' => __( '营业状态', 'qiling' ), 'type' => 'select', 'options' => array(
+                        'open'   => __( '营业中', 'qiling' ),
+                        'busy'   => __( '客流较高', 'qiling' ),
+                        'closed' => __( '暂停营业', 'qiling' ),
+                        'coming' => __( '即将开业', 'qiling' ),
                     ) ),
-                    array( 'id' => 'address', 'label' => __( '地址', 'developer-starter' ), 'type' => 'textarea' ),
-                    array( 'id' => 'phone', 'label' => __( '电话', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'email', 'label' => __( '邮箱', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'hours', 'label' => __( '营业时间', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'services', 'label' => __( '服务标签', 'developer-starter' ), 'type' => 'text', 'description' => __( '多个标签用逗号分隔，如：器械区, 私教, 康复', 'developer-starter' ) ),
-                    array( 'id' => 'transport', 'label' => __( '交通提示', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'lat', 'label' => __( '纬度(可选)', 'developer-starter' ), 'type' => 'text', 'description' => __( '如：39.9042', 'developer-starter' ) ),
-                    array( 'id' => 'lng', 'label' => __( '经度(可选)', 'developer-starter' ), 'type' => 'text', 'description' => __( '如：116.4074', 'developer-starter' ) ),
-                    array( 'id' => 'map_url', 'label' => __( '地图链接(可选)', 'developer-starter' ), 'type' => 'text', 'description' => __( '优先使用手动填写链接', 'developer-starter' ) ),
-                    array( 'id' => 'booking_url', 'label' => __( '预约链接(可选)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'image', 'label' => __( '图片(可选)', 'developer-starter' ), 'type' => 'text' ),
+                    array( 'id' => 'address', 'label' => __( '地址', 'qiling' ), 'type' => 'textarea' ),
+                    array( 'id' => 'phone', 'label' => __( '电话', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'email', 'label' => __( '邮箱', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'hours', 'label' => __( '营业时间', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'services', 'label' => __( '服务标签', 'qiling' ), 'type' => 'text', 'description' => __( '多个标签用逗号分隔，如：器械区, 私教, 康复', 'qiling' ) ),
+                    array( 'id' => 'transport', 'label' => __( '交通提示', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'lat', 'label' => __( '纬度(可选)', 'qiling' ), 'type' => 'text', 'description' => __( '如：39.9042', 'qiling' ) ),
+                    array( 'id' => 'lng', 'label' => __( '经度(可选)', 'qiling' ), 'type' => 'text', 'description' => __( '如：116.4074', 'qiling' ) ),
+                    array( 'id' => 'map_url', 'label' => __( '地图链接(可选)', 'qiling' ), 'type' => 'text', 'description' => __( '优先使用手动填写链接', 'qiling' ) ),
+                    array( 'id' => 'booking_url', 'label' => __( '预约链接(可选)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'image', 'label' => __( '图片(可选)', 'qiling' ), 'type' => 'text' ),
                 ),
             ),
 
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
 
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
 
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
 
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -263,14 +263,14 @@ class Branches_Module extends Module_Base {
 
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
 
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
@@ -283,8 +283,8 @@ class Branches_Module extends Module_Base {
             return str_replace( array( ';', '{', '}' ), '', $value );
         };
 
-        $title = isset( $data['branches_title'] ) ? $data['branches_title'] : __( '全国分支机构', 'developer-starter' );
-        $subtitle = isset( $data['branches_subtitle'] ) ? $data['branches_subtitle'] : __( '覆盖全国主要城市，为您提供本地化服务', 'developer-starter' );
+        $title = isset( $data['branches_title'] ) ? $data['branches_title'] : __( '全国分支机构', 'qiling' );
+        $subtitle = isset( $data['branches_subtitle'] ) ? $data['branches_subtitle'] : __( '覆盖全国主要城市，为您提供本地化服务', 'qiling' );
 
         $title_color = isset( $data['branches_title_color'] ) ? $data['branches_title_color'] : '';
         $title_size = isset( $data['branches_title_size'] ) ? $data['branches_title_size'] : '';
@@ -299,8 +299,8 @@ class Branches_Module extends Module_Base {
         $enable_city_filter = ( isset( $data['enable_city_filter'] ) ? $data['enable_city_filter'] : 'yes' ) === 'yes';
         $show_booking_button = ( isset( $data['show_booking_button'] ) ? $data['show_booking_button'] : 'yes' ) === 'yes';
         $badge_bg = isset( $data['branches_badge_bg'] ) ? $clean_css_value( $data['branches_badge_bg'] ) : '';
-        $navigation_button_text = ! empty( $data['navigation_button_text'] ) ? $data['navigation_button_text'] : __( '导航到店', 'developer-starter' );
-        $booking_button_text = ! empty( $data['booking_button_text'] ) ? $data['booking_button_text'] : __( '在线预约', 'developer-starter' );
+        $navigation_button_text = ! empty( $data['navigation_button_text'] ) ? $data['navigation_button_text'] : __( '导航到店', 'qiling' );
+        $booking_button_text = ! empty( $data['booking_button_text'] ) ? $data['booking_button_text'] : __( '在线预约', 'qiling' );
         $navigation_button_bg_color = isset( $data['navigation_button_bg_color'] ) ? $clean_css_value( $data['navigation_button_bg_color'] ) : '';
         $navigation_button_text_color = isset( $data['navigation_button_text_color'] ) ? $clean_css_value( $data['navigation_button_text_color'] ) : '';
         $navigation_button_border_color = isset( $data['navigation_button_border_color'] ) ? $clean_css_value( $data['navigation_button_border_color'] ) : '';
@@ -324,34 +324,34 @@ class Branches_Module extends Module_Base {
         if ( empty( $branches ) && empty( $title ) && empty( $subtitle ) ) {
             $branches = array(
                 array(
-                    'name' => __( '北京总部店', 'developer-starter' ),
-                    'city' => __( '北京', 'developer-starter' ),
+                    'name' => __( '北京总部店', 'qiling' ),
+                    'city' => __( '北京', 'qiling' ),
                     'status' => 'open',
-                    'address' => __( '北京市朝阳区建国路88号SOHO现代城A座', 'developer-starter' ),
+                    'address' => __( '北京市朝阳区建国路88号SOHO现代城A座', 'qiling' ),
                     'phone' => '010-88888888',
                     'email' => 'beijing@example.com',
-                    'hours' => __( '周一至周日 09:00-20:00', 'developer-starter' ),
-                    'services' => __( '门店零售, 私人顾问, 上门服务', 'developer-starter' ),
+                    'hours' => __( '周一至周日 09:00-20:00', 'qiling' ),
+                    'services' => __( '门店零售, 私人顾问, 上门服务', 'qiling' ),
                 ),
                 array(
-                    'name' => __( '上海旗舰店', 'developer-starter' ),
-                    'city' => __( '上海', 'developer-starter' ),
+                    'name' => __( '上海旗舰店', 'qiling' ),
+                    'city' => __( '上海', 'qiling' ),
                     'status' => 'busy',
-                    'address' => __( '上海市浦东新区陆家嘴环路1000号恒生银行大厦', 'developer-starter' ),
+                    'address' => __( '上海市浦东新区陆家嘴环路1000号恒生银行大厦', 'qiling' ),
                     'phone' => '021-88888888',
                     'email' => 'shanghai@example.com',
-                    'hours' => __( '周一至周日 10:00-21:00', 'developer-starter' ),
-                    'services' => __( '体验中心, 快速安装, 企业团购', 'developer-starter' ),
+                    'hours' => __( '周一至周日 10:00-21:00', 'qiling' ),
+                    'services' => __( '体验中心, 快速安装, 企业团购', 'qiling' ),
                 ),
                 array(
-                    'name' => __( '深圳南山店', 'developer-starter' ),
-                    'city' => __( '深圳', 'developer-starter' ),
+                    'name' => __( '深圳南山店', 'qiling' ),
+                    'city' => __( '深圳', 'qiling' ),
                     'status' => 'coming',
-                    'address' => __( '深圳市南山区科技园南区高新南七道', 'developer-starter' ),
+                    'address' => __( '深圳市南山区科技园南区高新南七道', 'qiling' ),
                     'phone' => '0755-88888888',
                     'email' => 'shenzhen@example.com',
-                    'hours' => __( '预计下月开业', 'developer-starter' ),
-                    'services' => __( '展示体验, 售后服务', 'developer-starter' ),
+                    'hours' => __( '预计下月开业', 'qiling' ),
+                    'services' => __( '展示体验, 售后服务', 'qiling' ),
                 ),
             );
         }
@@ -459,7 +459,7 @@ class Branches_Module extends Module_Base {
                     <?php $cities = array_values( array_unique( $cities ) ); ?>
                     <?php if ( $enable_city_filter && count( $cities ) > 1 ) : ?>
                         <div class="branches-city-filter">
-                            <button type="button" class="branches-city-btn is-active" data-city-filter="all"><?php esc_html_e( '全部城市', 'developer-starter' ); ?></button>
+                            <button type="button" class="branches-city-btn is-active" data-city-filter="all"><?php esc_html_e( '全部城市', 'qiling' ); ?></button>
                             <?php foreach ( $cities as $city_item ) : ?>
                                 <button type="button" class="branches-city-btn" data-city-filter="<?php echo esc_attr( $city_item ); ?>"><?php echo esc_html( $city_item ); ?></button>
                             <?php endforeach; ?>
@@ -509,7 +509,7 @@ class Branches_Module extends Module_Base {
                                 <div class="branch-content">
                                     <div class="branch-head">
                                         <h3 class="branch-name">
-                                            <span class="branch-icon-pin">📍</span>
+                                            <span class="branch-icon-pin"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
                                             <?php echo esc_html( $name ); ?>
                                         </h3>
                                         <?php if ( $status_label ) : ?>
@@ -646,10 +646,10 @@ class Branches_Module extends Module_Base {
      */
     private function get_branch_status_label( $status ) {
         $map = array(
-            'open'   => __( '营业中', 'developer-starter' ),
-            'busy'   => __( '客流较高', 'developer-starter' ),
-            'closed' => __( '暂停营业', 'developer-starter' ),
-            'coming' => __( '即将开业', 'developer-starter' ),
+            'open'   => __( '营业中', 'qiling' ),
+            'busy'   => __( '客流较高', 'qiling' ),
+            'closed' => __( '暂停营业', 'qiling' ),
+            'coming' => __( '即将开业', 'qiling' ),
         );
 
         return isset( $map[ $status ] ) ? $map[ $status ] : '';

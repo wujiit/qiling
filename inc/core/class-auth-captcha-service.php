@@ -94,7 +94,7 @@ class Auth_Captcha_Service {
         $scene_id = trim( (string) $scene_id );
 
         if ( '' === $captcha_verify_param ) {
-            return new \WP_Error( 'captcha_param_missing', __( '验证失败，请重试', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_param_missing', __( '验证失败，请重试', 'qiling' ) );
         }
 
         if ( '' === $scene_id ) {
@@ -108,7 +108,7 @@ class Auth_Captcha_Service {
         $client_region = trim( (string) $this->get_option( 'aliyun_captcha_client_region', '' ) );
 
         if ( '' === $access_key_id || '' === $access_key_secret || '' === $scene_id ) {
-            return new \WP_Error( 'captcha_config_missing', __( '验证码配置不完整，请联系管理员', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_config_missing', __( '验证码配置不完整，请联系管理员', 'qiling' ) );
         }
 
         if ( ! in_array( $client_region, array( 'cn', 'sgp' ), true ) ) {
@@ -126,7 +126,7 @@ class Auth_Captcha_Service {
         }
 
         if ( ! $this->load_aliyun_sdk() ) {
-            return new \WP_Error( 'captcha_sdk_missing', __( '验证码服务未正确安装，请联系管理员', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_sdk_missing', __( '验证码服务未正确安装，请联系管理员', 'qiling' ) );
         }
 
         if ( '' === $endpoint ) {
@@ -188,7 +188,7 @@ class Auth_Captcha_Service {
                 $message = trim( (string) $body['message'] );
             }
             if ( '' === $message ) {
-                $message = __( '验证失败，请重试', 'developer-starter' );
+                $message = __( '验证失败，请重试', 'qiling' );
             }
             if ( isset( $result['VerifyCode'] ) && '' !== (string) $result['VerifyCode'] ) {
                 $message .= ' (' . sanitize_text_field( (string) $result['VerifyCode'] ) . ')';
@@ -199,7 +199,7 @@ class Auth_Captcha_Service {
             return new \WP_Error( 'captcha_verify_failed', $message );
         } catch ( \Throwable $e ) {
             developer_starter_log( 'captcha', 'Aliyun verify exception.', array( 'exception' => $e ), 'error' );
-            return new \WP_Error( 'captcha_service_error', __( '验证码服务暂不可用，请稍后重试', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_service_error', __( '验证码服务暂不可用，请稍后重试', 'qiling' ) );
         }
     }
 
@@ -249,7 +249,7 @@ class Auth_Captcha_Service {
         $drag_distance = isset( $payload['drag_distance'] ) ? (int) $payload['drag_distance'] : 0;
 
         if ( '' === $challenge_id || '' === $challenge_signature || $challenge_issued <= 0 ) {
-            return new \WP_Error( 'captcha_invalid_payload', __( '验证失败，请重试', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_invalid_payload', __( '验证失败，请重试', 'qiling' ) );
         }
 
         $challenge_key = $this->get_challenge_key( $challenge_id );
@@ -258,31 +258,31 @@ class Auth_Captcha_Service {
         delete_transient( $challenge_key );
 
         if ( ! is_array( $challenge_data ) ) {
-            return new \WP_Error( 'captcha_expired', __( '验证已过期，请重新滑动', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_expired', __( '验证已过期，请重新滑动', 'qiling' ) );
         }
 
         $current_ua_hash = $this->get_client_ua_hash();
         $expected_signature_hash = isset( $challenge_data['signature_hash'] ) ? (string) $challenge_data['signature_hash'] : '';
 
         if ( $challenge_issued !== (int) $challenge_data['issued_at'] ) {
-            return new \WP_Error( 'captcha_invalid_payload', __( '验证失败，请重试', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_invalid_payload', __( '验证失败，请重试', 'qiling' ) );
         }
 
         if ( ( time() - (int) $challenge_data['issued_at'] ) > $this->challenge_ttl ) {
-            return new \WP_Error( 'captcha_expired', __( '验证已过期，请重新滑动', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_expired', __( '验证已过期，请重新滑动', 'qiling' ) );
         }
 
         if ( ! hash_equals( $expected_signature_hash, hash_hmac( 'sha256', $challenge_signature, wp_salt( 'auth' ) ) ) ) {
-            return new \WP_Error( 'captcha_invalid_signature', __( '验证失败，请重试', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_invalid_signature', __( '验证失败，请重试', 'qiling' ) );
         }
 
         $stored_ua_hash = isset( $challenge_data['ua_hash'] ) ? (string) $challenge_data['ua_hash'] : '';
         if ( '' === $stored_ua_hash || ! hash_equals( $stored_ua_hash, $current_ua_hash ) ) {
-            return new \WP_Error( 'captcha_invalid_ua', __( '验证失败，请重试', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_invalid_ua', __( '验证失败，请重试', 'qiling' ) );
         }
 
         if ( $drag_duration < 250 || $drag_duration > 20000 || $move_count < 3 || $drag_distance < 60 ) {
-            return new \WP_Error( 'captcha_behavior_invalid', __( '请完成滑动验证', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_behavior_invalid', __( '请完成滑动验证', 'qiling' ) );
         }
 
         return true;

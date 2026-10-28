@@ -18,7 +18,7 @@ class Circle_Wheel_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-update'; // 类似旋转的图标
-        $this->description = __( '360式圆形交互轮盘，展示核心功能', 'developer-starter' );
+        $this->description = __( '360式圆形交互轮盘，展示核心功能', 'qiling' );
     }
 
     public function get_id() {
@@ -26,40 +26,40 @@ class Circle_Wheel_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '圆形交互轮盘(小屏幕不显示)', 'developer-starter' );
+        return __( '圆形交互轮盘(小屏幕不显示)', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'wheel_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题核心优势', 'Why Qiling Theme' ) : __( '启灵主题核心优势', 'developer-starter' ) ),
+            array( 'id' => 'wheel_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题核心优势', 'Why Qiling Theme' ) : __( '启灵主题核心优势', 'qiling' ) ),
             array(
                 'id' => 'wheel_subtitle',
                 'type' => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
-                'description' => __( '支持允许的HTML标签，例如 &lt;span style="color:red"&gt;强调文本&lt;/span&gt;', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
+                'description' => __( '支持允许的HTML标签，例如 &lt;span style="color:red"&gt;强调文本&lt;/span&gt;', 'qiling' ),
                 'default' => '',
             ),
             
             // --- 轮盘列表设置 ---
             array(
                 'id' => 'wheel_items',
-                'label' => __( '轮盘功能项 (建议8-10项效果最佳)', 'developer-starter' ),
+                'label' => __( '轮盘功能项 (建议8-10项效果最佳)', 'qiling' ),
                 'type' => 'repeater',
                 'default_items' => $this->get_demo_data()['wheel_items'],
                 'fields' => array(
-                    array( 'id' => 'ring_title_desc', 'label' => __( '圆环短标题 (常驻)', 'developer-starter' ), 'type' => 'text', 'desc' => __( '如：积分商城', 'developer-starter' ) ),
-                    array( 'id' => 'hover_title_desc', 'label' => __( '悬停-标题', 'developer-starter' ), 'type' => 'text', 'desc' => __( '侧边显示的主标题，支持HTML', 'developer-starter' ) ),
-                    array( 'id' => 'hover_desc', 'label' => __( '悬停-描述', 'developer-starter' ), 'type' => 'textarea', 'desc' => __( '侧边显示的 detailed description，支持HTML', 'developer-starter' ) ),
+                    array( 'id' => 'ring_title_desc', 'label' => __( '圆环短标题 (常驻)', 'qiling' ), 'type' => 'text', 'desc' => __( '如：积分商城', 'qiling' ) ),
+                    array( 'id' => 'hover_title_desc', 'label' => __( '悬停-标题', 'qiling' ), 'type' => 'text', 'desc' => __( '侧边显示的主标题，支持HTML', 'qiling' ) ),
+                    array( 'id' => 'hover_desc', 'label' => __( '悬停-描述', 'qiling' ), 'type' => 'textarea', 'desc' => __( '侧边显示的 detailed description，支持HTML', 'qiling' ) ),
                     array( 
                         'id' => 'highlight', 
-                        'label' => __( '默认高亮', 'developer-starter' ), 
+                        'label' => __( '默认高亮', 'qiling' ), 
                         'type' => 'select',
                         'options' => array(
-                            'no' => __( '否', 'developer-starter' ),
-                            'yes' => __( '是', 'developer-starter' ),
+                            'no' => __( '否', 'qiling' ),
+                            'yes' => __( '是', 'qiling' ),
                         ),
                         'default' => 'no',
-                        'desc' => __( '【必选一项】请将其中一项设置为“是”作为默认展示项。', 'developer-starter' ) 
+                        'desc' => __( '【必选一项】请将其中一项设置为“是”作为默认展示项。', 'qiling' ) 
                     ),
                 ),
             ),
@@ -67,53 +67,53 @@ class Circle_Wheel_Module extends Module_Base {
             // --- 样式设置 ---
             array(
                 'id' => 'wheel_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变', 'developer-starter' ),
-                    'image' => __( '背景图片', 'developer-starter' ),
+                    'color' => __( '纯色/渐变', 'qiling' ),
+                    'image' => __( '背景图片', 'qiling' ),
                 ),
                 'default' => 'image',
             ),
             array(
                 'id' => 'wheel_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'dependency' => array( 'wheel_bg_type', '==', 'color' ),
                 'default' => 'var(--color-neutral-900)',
             ),
             array(
                 'id' => 'wheel_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'wheel_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'wheel_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'text',
                 'default' => '0.8',
-                'desc' => __( '0-1之间，背景图模式下生效', 'developer-starter' ),
+                'desc' => __( '0-1之间，背景图模式下生效', 'qiling' ),
                 'dependency' => array( 'wheel_bg_type', '==', 'image' ),
             ),
 
             // --- 间距设置 ---
             array(
                 'id' => 'wheel_padding_top',
-                'label' => __( '上边距', 'developer-starter' ),
+                'label' => __( '上边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '100px',
             ),
             array(
                 'id' => 'highlight_color',
-                'label' => __( '高亮标题颜色', 'developer-starter' ),
+                'label' => __( '高亮标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--qiling-color-4ffbdf)',
-                'desc' => __( '侧边详情标题的高亮颜色', 'developer-starter' ),
+                'desc' => __( '侧边详情标题的高亮颜色', 'qiling' ),
             ),
             array(
                 'id' => 'wheel_padding_bottom',
-                'label' => __( '下边距', 'developer-starter' ),
+                'label' => __( '下边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '100px',
             ),
@@ -122,26 +122,26 @@ class Circle_Wheel_Module extends Module_Base {
 
     public function get_demo_data() {
         return array(
-            'wheel_title' => __( '启灵主题核心功能', 'developer-starter' ),
+            'wheel_title' => __( '启灵主题核心功能', 'qiling' ),
             'wheel_subtitle' => 'Powerful Features of <span style="color:var(--qiling-color-4ffbdf)">Qi Ling Theme</span>',
             'wheel_bg_type' => 'color',
             'wheel_bg_color' => 'var(--color-neutral-900)',
             'wheel_items' => array(
-                array( 'ring_title_desc' => __( '积分商城', 'developer-starter' ), 'hover_title_desc' => __( '强大的积分商城', 'developer-starter' ), 'hover_desc' => __( '内置完善的积分商城系统，支持实物、虚拟商品兑换，支持积分+现金混合支付。', 'developer-starter' ), 'highlight' => 'yes' ),
-                array( 'ring_title_desc' => __( '营销互动', 'developer-starter' ), 'hover_title_desc' => __( '多种营销玩法', 'developer-starter' ), 'hover_desc' => __( '包含大转盘抽奖、每日签到、任务中心等多种用户互动营销工具，提升用户粘性。', 'developer-starter' ), 'highlight' => 'no' ),
-                array( 'ring_title_desc' => __( '会员中心', 'developer-starter' ), 'hover_title_desc' => __( '精美用户中心', 'developer-starter' ), 'hover_desc' => __( '重新设计的用户中心界面，支持VIP会员体系、余额充值、推广返佣等功能。', 'developer-starter' ), 'highlight' => 'no' ),
-                array( 'ring_title_desc' => __( '内容变现', 'developer-starter' ), 'hover_title_desc' => __( '内容付费阅读', 'developer-starter' ), 'hover_desc' => __( '支持文章部分内容隐藏、付费阅读、VIP免费阅读等多种内容变现模式。', 'developer-starter' ), 'highlight' => 'no' ),
-                array( 'ring_title_desc' => __( '资源下载', 'developer-starter' ), 'hover_title_desc' => __( '专业资源下载', 'developer-starter' ), 'hover_desc' => __( '针对资源站优化的下载模块，支持多网盘地址、提取码复制、解压密码保护。', 'developer-starter' ), 'highlight' => 'no' ),
-                array( 'ring_title_desc' => __( '社交登录', 'developer-starter' ), 'hover_title_desc' => __( '便捷社交登录', 'developer-starter' ), 'hover_desc' => __( '集成微信、QQ、微博等主流社交平台一键登录，降低用户注册门槛。', 'developer-starter' ), 'highlight' => 'no' ),
-                array( 'ring_title_desc' => __( '响应式', 'developer-starter' ), 'hover_title_desc' => __( '全端响应式设计', 'developer-starter' ), 'hover_desc' => __( '完美适配PC、平板、手机等各种屏幕尺寸，提供一致的优质浏览体验。', 'developer-starter' ), 'highlight' => 'no' ),
-                array( 'ring_title_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SEO优化', 'SEO' ) : __( 'SEO优化', 'developer-starter' ), 'hover_title_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极致SEO优化', 'SEO Ready' ) : __( '极致SEO优化', 'developer-starter' ), 'hover_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '遵循SEO最佳实践，自动生成Mate标签、Sitemap，助力网站收录排名。', 'Built with search-friendly structure, metadata support, and sitemap-friendly output.' ) : __( '遵循SEO最佳实践，自动生成Mate标签、Sitemap，助力网站收录排名。', 'developer-starter' ), 'highlight' => 'no' ),
+                array( 'ring_title_desc' => __( '积分商城', 'qiling' ), 'hover_title_desc' => __( '强大的积分商城', 'qiling' ), 'hover_desc' => __( '内置完善的积分商城系统，支持实物、虚拟商品兑换，支持积分+现金混合支付。', 'qiling' ), 'highlight' => 'yes' ),
+                array( 'ring_title_desc' => __( '营销互动', 'qiling' ), 'hover_title_desc' => __( '多种营销玩法', 'qiling' ), 'hover_desc' => __( '包含大转盘抽奖、每日签到、任务中心等多种用户互动营销工具，提升用户粘性。', 'qiling' ), 'highlight' => 'no' ),
+                array( 'ring_title_desc' => __( '会员中心', 'qiling' ), 'hover_title_desc' => __( '精美用户中心', 'qiling' ), 'hover_desc' => __( '重新设计的用户中心界面，支持VIP会员体系、余额充值、推广返佣等功能。', 'qiling' ), 'highlight' => 'no' ),
+                array( 'ring_title_desc' => __( '内容变现', 'qiling' ), 'hover_title_desc' => __( '内容付费阅读', 'qiling' ), 'hover_desc' => __( '支持文章部分内容隐藏、付费阅读、VIP免费阅读等多种内容变现模式。', 'qiling' ), 'highlight' => 'no' ),
+                array( 'ring_title_desc' => __( '资源下载', 'qiling' ), 'hover_title_desc' => __( '专业资源下载', 'qiling' ), 'hover_desc' => __( '针对资源站优化的下载模块，支持多网盘地址、提取码复制、解压密码保护。', 'qiling' ), 'highlight' => 'no' ),
+                array( 'ring_title_desc' => __( '社交登录', 'qiling' ), 'hover_title_desc' => __( '便捷社交登录', 'qiling' ), 'hover_desc' => __( '集成微信、QQ、微博等主流社交平台一键登录，降低用户注册门槛。', 'qiling' ), 'highlight' => 'no' ),
+                array( 'ring_title_desc' => __( '响应式', 'qiling' ), 'hover_title_desc' => __( '全端响应式设计', 'qiling' ), 'hover_desc' => __( '完美适配PC、平板、手机等各种屏幕尺寸，提供一致的优质浏览体验。', 'qiling' ), 'highlight' => 'no' ),
+                array( 'ring_title_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SEO优化', 'SEO' ) : __( 'SEO优化', 'qiling' ), 'hover_title_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极致SEO优化', 'SEO Ready' ) : __( '极致SEO优化', 'qiling' ), 'hover_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '遵循SEO最佳实践，自动生成Mate标签、Sitemap，助力网站收录排名。', 'Built with search-friendly structure, metadata support, and sitemap-friendly output.' ) : __( '遵循SEO最佳实践，自动生成Mate标签、Sitemap，助力网站收录排名。', 'qiling' ), 'highlight' => 'no' ),
             ),
         );
     }
 
     public function render( $data = array() ) {
         // 数据获取
-        $title = isset( $data['wheel_title'] ) ? $data['wheel_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题核心优势', 'Why Qiling Theme' ) : __( '启灵主题核心优势', 'developer-starter' ) );
+        $title = isset( $data['wheel_title'] ) ? $data['wheel_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题核心优势', 'Why Qiling Theme' ) : __( '启灵主题核心优势', 'qiling' ) );
         $subtitle = isset( $data['wheel_subtitle'] ) ? $data['wheel_subtitle'] : '';
         $items = isset( $data['wheel_items'] ) && is_array( $data['wheel_items'] ) ? $data['wheel_items'] : array();
         

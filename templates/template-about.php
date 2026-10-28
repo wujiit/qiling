@@ -10,8 +10,8 @@
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-about',
-        DEVELOPER_STARTER_ASSETS . '/css/about.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/about.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 }, 20 );
@@ -33,12 +33,12 @@ $culture = developer_starter_get_option( 'about_culture', array() );
 
 // 构建Tab数据
 $tabs = array();
-$tabs['intro'] = __( '公司简介', 'developer-starter' );
-if ( $show_timeline && ! empty( $timeline_items ) ) $tabs['timeline'] = __( '发展历程', 'developer-starter' );
-if ( $show_team && ! empty( $team_members ) ) $tabs['team'] = __( '团队成员', 'developer-starter' );
-if ( $show_certificates && ! empty( $certificates ) ) $tabs['certificates'] = __( '资质荣誉', 'developer-starter' );
-if ( $show_environment && ! empty( $environment ) ) $tabs['environment'] = __( '公司环境', 'developer-starter' );
-if ( $show_culture && ! empty( $culture ) ) $tabs['culture'] = __( '企业文化', 'developer-starter' );
+$tabs['intro'] = __( '公司简介', 'qiling' );
+if ( $show_timeline && ! empty( $timeline_items ) ) $tabs['timeline'] = __( '发展历程', 'qiling' );
+if ( $show_team && ! empty( $team_members ) ) $tabs['team'] = __( '团队成员', 'qiling' );
+if ( $show_certificates && ! empty( $certificates ) ) $tabs['certificates'] = __( '资质荣誉', 'qiling' );
+if ( $show_environment && ! empty( $environment ) ) $tabs['environment'] = __( '公司环境', 'qiling' );
+if ( $show_culture && ! empty( $culture ) ) $tabs['culture'] = __( '企业文化', 'qiling' );
 
 $has_tabs = count( $tabs ) > 1;
 ?>
@@ -53,7 +53,7 @@ $has_tabs = count( $tabs ) > 1;
         <div class="about-tabs-wrapper" data-aos="fade-up">
             <div class="about-tabs">
                 <?php $first = true; foreach ( $tabs as $key => $label ) : ?>
-                    <button class="about-tab-btn <?php echo $first ? 'active' : ''; ?>" data-tab="<?php echo $key; ?>">
+                    <button class="about-tab-btn <?php echo $first ? 'active' : ''; ?>" data-tab="<?php echo esc_attr( $key ); ?>">
                         <?php echo esc_html( $label ); ?>
                     </button>
                 <?php $first = false; endforeach; ?>
@@ -125,7 +125,7 @@ $has_tabs = count( $tabs ) > 1;
                                     <img src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_attr( $name ); ?>" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--color-primary);" />
                                 <?php else : ?>
                                     <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-violet-600)); margin: 0 auto; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-0); font-size: calc(var(--qiling-font-size-base) * 2.5); font-weight: 600;">
-                                        <?php echo mb_substr( $name, 0, 1 ); ?>
+                                        <?php echo esc_html( mb_substr( $name, 0, 1 ) ); ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -152,7 +152,15 @@ $has_tabs = count( $tabs ) > 1;
                             <?php if ( $image ) : ?>
                                 <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" />
                             <?php else : ?>
-                                <div class="about-gallery-placeholder">📜</div>
+                                <div class="about-gallery-placeholder">
+                                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: 0.6;">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </div>
                             <?php endif; ?>
                             <?php if ( $title ) : ?>
                                 <div class="gallery-title"><?php echo esc_html( $title ); ?></div>
@@ -175,7 +183,20 @@ $has_tabs = count( $tabs ) > 1;
                             <?php if ( $image ) : ?>
                                 <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" />
                             <?php else : ?>
-                                <div class="about-gallery-placeholder">🏢</div>
+                                <div class="about-gallery-placeholder">
+                                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: 0.6;">
+                                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                        <line x1="9" y1="22" x2="9" y2="18"></line>
+                                        <line x1="15" y1="22" x2="15" y2="18"></line>
+                                        <line x1="18" y1="18" x2="6" y2="18"></line>
+                                        <line x1="8" y1="6" x2="10" y2="6"></line>
+                                        <line x1="14" y1="6" x2="16" y2="6"></line>
+                                        <line x1="8" y1="10" x2="10" y2="10"></line>
+                                        <line x1="14" y1="10" x2="16" y2="10"></line>
+                                        <line x1="8" y1="14" x2="10" y2="14"></line>
+                                        <line x1="14" y1="14" x2="16" y2="14"></line>
+                                    </svg>
+                                </div>
                             <?php endif; ?>
                             <?php if ( $title ) : ?>
                                 <div class="gallery-title"><?php echo esc_html( $title ); ?></div>
@@ -191,7 +212,7 @@ $has_tabs = count( $tabs ) > 1;
             <div class="about-tab-content" data-panel="culture">
                 <div class="about-culture-grid">
                     <?php foreach ( $culture as $idx => $item ) : 
-                        $icon_raw = isset( $item['icon'] ) ? trim( $item['icon'] ) : '💡';
+                        $icon_raw = isset( $item['icon'] ) ? trim( $item['icon'] ) : 'icon-bulb';
                         $title = isset( $item['title'] ) ? $item['title'] : '';
                         $desc = isset( $item['desc'] ) ? $item['desc'] : '';
                         
@@ -232,7 +253,7 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
     <div class="container">
         <div class="about-contact-shell">
             <div class="section-header about-contact-header text-center">
-                <h2 class="section-title"><?php esc_html_e( '联系方式', 'developer-starter' ); ?></h2>
+                <h2 class="section-title"><?php esc_html_e( '联系方式', 'qiling' ); ?></h2>
             </div>
 
             <div class="about-contact-list">
@@ -242,7 +263,7 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
                         </span>
                         <div class="about-contact-body">
-                            <span class="about-contact-label"><?php esc_html_e( '公司名称', 'developer-starter' ); ?></span>
+                            <span class="about-contact-label"><?php esc_html_e( '公司名称', 'qiling' ); ?></span>
                             <strong class="about-contact-value"><?php echo esc_html( $company_name ); ?></strong>
                         </div>
                     </div>
@@ -254,7 +275,7 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.78 19.78 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.78 19.78 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.65 2.81a2 2 0 0 1-.45 2.11L8.04 9.91a16 16 0 0 0 6.05 6.05l1.27-1.27a2 2 0 0 1 2.11-.45c.91.3 1.85.52 2.81.65A2 2 0 0 1 22 16.92z"/></svg>
                         </span>
                         <div class="about-contact-body">
-                            <span class="about-contact-label"><?php esc_html_e( '联系电话', 'developer-starter' ); ?></span>
+                            <span class="about-contact-label"><?php esc_html_e( '联系电话', 'qiling' ); ?></span>
                             <?php if ( $phone_link ) : ?>
                                 <a class="about-contact-value" href="tel:<?php echo esc_attr( $phone_link ); ?>"><?php echo esc_html( $phone ); ?></a>
                             <?php else : ?>
@@ -270,7 +291,7 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1.5L13 17v-3h-3a2 2 0 0 1-2-2Z"/><path d="M8 8H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1.5L11 21v-3"/></svg>
                         </span>
                         <div class="about-contact-body">
-                            <span class="about-contact-label"><?php esc_html_e( 'QQ', 'developer-starter' ); ?></span>
+                            <span class="about-contact-label"><?php esc_html_e( 'QQ', 'qiling' ); ?></span>
                             <?php if ( $qq_link ) : ?>
                                 <a class="about-contact-value" href="<?php echo esc_url( $qq_link ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $qq ); ?></a>
                             <?php else : ?>
@@ -286,7 +307,7 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
                         </span>
                         <div class="about-contact-body">
-                            <span class="about-contact-label"><?php esc_html_e( '电子邮箱', 'developer-starter' ); ?></span>
+                            <span class="about-contact-label"><?php esc_html_e( '电子邮箱', 'qiling' ); ?></span>
                             <a class="about-contact-value" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
                         </div>
                     </div>
@@ -298,7 +319,7 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5.5-8 12-8 12S4 15.5 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                         </span>
                         <div class="about-contact-body">
-                            <span class="about-contact-label"><?php esc_html_e( '公司地址', 'developer-starter' ); ?></span>
+                            <span class="about-contact-label"><?php esc_html_e( '公司地址', 'qiling' ); ?></span>
                             <strong class="about-contact-value"><?php echo esc_html( $address ); ?></strong>
                         </div>
                     </div>
@@ -310,7 +331,7 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
                         </span>
                         <div class="about-contact-body">
-                            <span class="about-contact-label"><?php esc_html_e( '工作时间', 'developer-starter' ); ?></span>
+                            <span class="about-contact-label"><?php esc_html_e( '工作时间', 'qiling' ); ?></span>
                             <strong class="about-contact-value"><?php echo esc_html( $working_hours ); ?></strong>
                         </div>
                     </div>
@@ -322,10 +343,10 @@ if ( $company_name || $phone || $qq || $wechat_qrcode || $email || $address || $
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.69 2.19C3.89 2.19 0 5.48 0 9.53c0 2.21 1.17 4.2 3 5.55a.59.59 0 0 1 .21.66l-.39 1.48c-.02.07-.05.14-.05.22 0 .16.13.29.29.29a.33.33 0 0 0 .17-.05l1.91-1.11a.86.86 0 0 1 .71-.1 10.16 10.16 0 0 0 2.84.4c.28 0 .55-.03.81-.05-.86-2.58.16-4.97 1.93-6.45 1.7-1.41 3.88-1.98 5.85-1.84-.57-3.58-4.19-6.34-8.59-6.34Zm-2.9 5.98a1.17 1.17 0 1 0 0-2.35 1.17 1.17 0 0 0 0 2.35Zm5.81 0a1.17 1.17 0 1 0 0-2.35 1.17 1.17 0 0 0 0 2.35Zm5.34.72c-1.8-.05-3.75.51-5.28 1.79-1.72 1.43-2.69 3.72-1.78 6.22.94 2.45 3.67 4.23 6.88 4.23.83 0 1.62-.12 2.36-.34a.72.72 0 0 1 .6.08l1.58.93a.27.27 0 0 0 .14.04c.13 0 .24-.11.24-.25 0-.06-.02-.12-.04-.18l-.33-1.23a.58.58 0 0 1-.02-.16.49.49 0 0 1 .2-.4C23.02 18.48 24 16.82 24 14.98c0-3.21-2.93-5.84-7.06-6.09Zm-2.04 3.81a.98.98 0 1 1 0-1.96.98.98 0 0 1 0 1.96Zm4.85 0a.98.98 0 1 1 0-1.96.98.98 0 0 1 0 1.96Z"/></svg>
                         </span>
                         <div class="about-contact-body">
-                            <span class="about-contact-label"><?php esc_html_e( '微信', 'developer-starter' ); ?></span>
+                            <span class="about-contact-label"><?php esc_html_e( '微信', 'qiling' ); ?></span>
                             <div class="about-contact-qr">
-                                <img src="<?php echo esc_url( $wechat_qrcode ); ?>" alt="<?php esc_attr_e( '微信二维码', 'developer-starter' ); ?>" loading="lazy" decoding="async" />
-                                <span><?php esc_html_e( '扫码添加微信', 'developer-starter' ); ?></span>
+                                <img src="<?php echo esc_url( $wechat_qrcode ); ?>" alt="<?php esc_attr_e( '微信二维码', 'qiling' ); ?>" loading="lazy" decoding="async" />
+                                <span><?php esc_html_e( '扫码添加微信', 'qiling' ); ?></span>
                             </div>
                         </div>
                     </div>

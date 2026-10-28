@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'developer_starter_ip_location_http_user_agent' ) ) {
     function developer_starter_ip_location_http_user_agent() {
-        $version = defined( 'DEVELOPER_STARTER_VERSION' ) ? DEVELOPER_STARTER_VERSION : '1.0.0';
+        $version = defined( 'QILING_VERSION' ) ? QILING_VERSION : '1.0.0';
         $site_url = function_exists( 'home_url' ) ? home_url( '/' ) : '';
 
         return (string) apply_filters(

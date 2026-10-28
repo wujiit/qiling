@@ -249,7 +249,7 @@ class Pinyin_Slug_Manager {
         }
 
         if ( ! class_exists( '\Overtrue\Pinyin\Pinyin' ) ) {
-            $autoload = DEVELOPER_STARTER_INC . '/vendor/pinyin-autoload.php';
+            $autoload = QILING_INC . '/vendor/pinyin-autoload.php';
 
             if ( file_exists( $autoload ) ) {
                 require_once $autoload;

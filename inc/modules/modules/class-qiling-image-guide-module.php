@@ -18,7 +18,7 @@ class Qiling_Image_Guide_Module extends Module_Base {
     public function __construct() {
         $this->category = 'component'; // 组件类
         $this->icon = 'dashicons-images-alt2';
-        $this->description = __( '小图引导模块，支持自定义图片、标题、副标题及链接跳转', 'developer-starter' );
+        $this->description = __( '小图引导模块，支持自定义图片、标题、副标题及链接跳转', 'qiling' );
     }
 
     public function get_id() {
@@ -26,40 +26,40 @@ class Qiling_Image_Guide_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '小图引导模块', 'developer-starter' );
+        return __( '小图引导模块', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'guide_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'guide_subtitle', 'type' => 'text', 'label' => __( '模块副标题', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'guide_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'guide_subtitle', 'type' => 'text', 'label' => __( '模块副标题', 'qiling' ), 'default' => '' ),
             
-            array( 'id' => 'guide_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ), 'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ) ),
+            array( 'id' => 'guide_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'qiling' ), 'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ) ),
             
-            array( 'id' => 'guide_columns', 'type' => 'select', 'label' => __( '列数 (PC端)', 'developer-starter' ), 'options' => array( '2' => __( '2列', 'developer-starter' ), '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ), '5' => __( '5列', 'developer-starter' ), '6' => __( '6列', 'developer-starter' ) ), 'default' => '4' ),
-            array( 'id' => 'guide_item_height', 'type' => 'text', 'label' => __( '图片高度', 'developer-starter' ), 'default' => '160px', 'desc' => __( '支持 px, rem, vw 等单位', 'developer-starter' ) ),
-            array( 'id' => 'guide_item_radius', 'type' => 'text', 'label' => __( '圆角大小', 'developer-starter' ), 'default' => '8px' ),
-            array( 'id' => 'guide_gap', 'type' => 'text', 'label' => __( '图片间距', 'developer-starter' ), 'default' => '20px' ),
+            array( 'id' => 'guide_columns', 'type' => 'select', 'label' => __( '列数 (PC端)', 'qiling' ), 'options' => array( '2' => __( '2列', 'qiling' ), '3' => __( '3列', 'qiling' ), '4' => __( '4列', 'qiling' ), '5' => __( '5列', 'qiling' ), '6' => __( '6列', 'qiling' ) ), 'default' => '4' ),
+            array( 'id' => 'guide_item_height', 'type' => 'text', 'label' => __( '图片高度', 'qiling' ), 'default' => '160px', 'desc' => __( '支持 px, rem, vw 等单位', 'qiling' ) ),
+            array( 'id' => 'guide_item_radius', 'type' => 'text', 'label' => __( '圆角大小', 'qiling' ), 'default' => '8px' ),
+            array( 'id' => 'guide_gap', 'type' => 'text', 'label' => __( '图片间距', 'qiling' ), 'default' => '20px' ),
             
             // Spacing
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距', 'developer-starter' ),
+                'label' => __( '上边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '40px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距', 'developer-starter' ),
+                'label' => __( '下边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '40px',
             ),
             
-            array( 'id' => 'guide_items', 'type' => 'repeater', 'label' => __( '图片列表', 'developer-starter' ), 'default_items' => $this->get_default_items(), 'fields' => array(
-                array( 'id' => 'image', 'type' => 'image', 'label' => __( '背景图片', 'developer-starter' ) ),
-                array( 'id' => 'title', 'type' => 'text', 'label' => __( '主标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '标题文本', 'Demo Title' ) : __( '标题文本', 'developer-starter' ) ),
-                array( 'id' => 'subtitle', 'type' => 'text', 'label' => __( '副标题 (可选)', 'developer-starter' ), 'default' => '' ),
-                array( 'id' => 'link', 'type' => 'text', 'label' => __( '跳转链接', 'developer-starter' ) ),
+            array( 'id' => 'guide_items', 'type' => 'repeater', 'label' => __( '图片列表', 'qiling' ), 'default_items' => $this->get_default_items(), 'fields' => array(
+                array( 'id' => 'image', 'type' => 'image', 'label' => __( '背景图片', 'qiling' ) ),
+                array( 'id' => 'title', 'type' => 'text', 'label' => __( '主标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '标题文本', 'Demo Title' ) : __( '标题文本', 'qiling' ) ),
+                array( 'id' => 'subtitle', 'type' => 'text', 'label' => __( '副标题 (可选)', 'qiling' ), 'default' => '' ),
+                array( 'id' => 'link', 'type' => 'text', 'label' => __( '跳转链接', 'qiling' ) ),
             ) ),
         );
     }
@@ -149,8 +149,8 @@ class Qiling_Image_Guide_Module extends Module_Base {
     private function get_default_items() {
         return array_fill( 0, 4, array( 
             'image' => '', 
-            'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示标题', 'Demo Title' ) : __( '演示标题', 'developer-starter' ),
-            'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示副标题', 'Demo Subtitle' ) : __( '演示副标题', 'developer-starter' ),
+            'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示标题', 'Demo Title' ) : __( '演示标题', 'qiling' ),
+            'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '演示副标题', 'Demo Subtitle' ) : __( '演示副标题', 'qiling' ),
             'link' => '#' 
         ) );
     }

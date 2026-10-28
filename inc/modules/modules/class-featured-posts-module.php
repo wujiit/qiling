@@ -21,7 +21,7 @@ class Featured_Posts_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-star-filled';
-        $this->description = __( '博客置顶推荐，支持轮播和文章列表展示', 'developer-starter' );
+        $this->description = __( '博客置顶推荐，支持轮播和文章列表展示', 'qiling' );
     }
 
     public function get_id() {
@@ -29,7 +29,7 @@ class Featured_Posts_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '博客置顶推荐', 'developer-starter' );
+        return __( '博客置顶推荐', 'qiling' );
     }
 
     public function get_fields() {
@@ -38,41 +38,41 @@ class Featured_Posts_Module extends Module_Base {
             array(
                 'id'      => 'fp_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题 (可选)', 'developer-starter' ),
+                'label'   => __( '模块标题 (可选)', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_bg_color',
                 'type'    => 'text',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'fp_title_color',
                 'type'    => 'color',
-                'label'   => __( '文章标题颜色', 'developer-starter' ),
+                'label'   => __( '文章标题颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'fp_padding_top',
                 'type'    => 'select',
-                'label'   => __( '顶部间距', 'developer-starter' ),
+                'label'   => __( '顶部间距', 'qiling' ),
                 'options' => array(
-                    'default' => __( '默认 (80px)', 'developer-starter' ),
-                    'none'    => __( '无 (0px)', 'developer-starter' ),
-                    'small'   => __( '小 (40px)', 'developer-starter' ),
-                    'large'   => __( '大 (120px)', 'developer-starter' ),
+                    'default' => __( '默认 (80px)', 'qiling' ),
+                    'none'    => __( '无 (0px)', 'qiling' ),
+                    'small'   => __( '小 (40px)', 'qiling' ),
+                    'large'   => __( '大 (120px)', 'qiling' ),
                 ),
                 'default' => 'default',
             ),
             array(
                 'id'      => 'fp_padding_bottom',
                 'type'    => 'select',
-                'label'   => __( '底部间距', 'developer-starter' ),
+                'label'   => __( '底部间距', 'qiling' ),
                 'options' => array(
-                    'default' => __( '默认 (80px)', 'developer-starter' ),
-                    'none'    => __( '无 (0px)', 'developer-starter' ),
-                    'small'   => __( '小 (40px)', 'developer-starter' ),
-                    'large'   => __( '大 (120px)', 'developer-starter' ),
+                    'default' => __( '默认 (80px)', 'qiling' ),
+                    'none'    => __( '无 (0px)', 'qiling' ),
+                    'small'   => __( '小 (40px)', 'qiling' ),
+                    'large'   => __( '大 (120px)', 'qiling' ),
                 ),
                 'default' => 'default',
             ),
@@ -81,24 +81,24 @@ class Featured_Posts_Module extends Module_Base {
             array(
                 'id'      => 'fp_layout',
                 'type'    => 'select',
-                'label'   => __( '布局模式', 'developer-starter' ),
+                'label'   => __( '布局模式', 'qiling' ),
                 'options' => array(
-                    'full' => __( '全宽轮播', 'developer-starter' ),
-                    'dual' => __( '左侧轮播 + 右侧列表', 'developer-starter' ),
-                    'magazine' => __( '杂志头条流（推荐）', 'developer-starter' ),
+                    'full' => __( '全宽轮播', 'qiling' ),
+                    'dual' => __( '左侧轮播 + 右侧列表', 'qiling' ),
+                    'magazine' => __( '杂志头条流（推荐）', 'qiling' ),
                 ),
                 'default' => 'full',
             ),
             array(
                 'id'      => 'fp_slider_ratio',
                 'type'    => 'text',
-                'label'   => __( '轮播区域宽度占比 (双栏/杂志模式, 0-100)', 'developer-starter' ),
+                'label'   => __( '轮播区域宽度占比 (双栏/杂志模式, 0-100)', 'qiling' ),
                 'default' => '65',
             ),
             array(
                 'id'      => 'fp_slider_height',
                 'type'    => 'text',
-                'label'   => __( '轮播区域高度', 'developer-starter' ),
+                'label'   => __( '轮播区域高度', 'qiling' ),
                 'default' => '320px',
             ),
             
@@ -106,46 +106,46 @@ class Featured_Posts_Module extends Module_Base {
             array(
                 'id'      => 'fp_autoplay',
                 'type'    => 'select',
-                'label'   => __( '自动播放', 'developer-starter' ),
+                'label'   => __( '自动播放', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'no',
             ),
             array(
                 'id'      => 'fp_interval',
                 'type'    => 'number',
-                'label'   => __( '轮播间隔 (毫秒)', 'developer-starter' ),
+                'label'   => __( '轮播间隔 (毫秒)', 'qiling' ),
                 'default' => '5000',
             ),
             array(
                 'id'      => 'fp_effect',
                 'type'    => 'select',
-                'label'   => __( '切换效果', 'developer-starter' ),
+                'label'   => __( '切换效果', 'qiling' ),
                 'options' => array(
-                    'slide' => __( '滑动', 'developer-starter' ),
-                    'fade'  => __( '淡入淡出', 'developer-starter' ),
+                    'slide' => __( '滑动', 'qiling' ),
+                    'fade'  => __( '淡入淡出', 'qiling' ),
                 ),
                 'default' => 'slide',
             ),
             array(
                 'id'      => 'fp_show_arrows',
                 'type'    => 'select',
-                'label'   => __( '显示箭头', 'developer-starter' ),
+                'label'   => __( '显示箭头', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'fp_show_dots',
                 'type'    => 'select',
-                'label'   => __( '显示导航点', 'developer-starter' ),
+                'label'   => __( '显示导航点', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -154,40 +154,40 @@ class Featured_Posts_Module extends Module_Base {
             array(
                 'id'      => 'fp_slider_source',
                 'type'    => 'select',
-                'label'   => __( '轮播内容来源', 'developer-starter' ),
+                'label'   => __( '轮播内容来源', 'qiling' ),
                 'options' => array(
-                    'latest'   => __( '最新发布', 'developer-starter' ),
-                    'popular'  => __( '热门浏览 (需插件支持)', 'developer-starter' ),
-                    'comment'  => __( '热评文章', 'developer-starter' ),
-                    'random'   => __( '随机推荐', 'developer-starter' ),
-                    'category' => __( '指定分类', 'developer-starter' ),
-                    'tag'      => __( '指定标签', 'developer-starter' ),
-                    'manual'   => __( '手动指定ID', 'developer-starter' ),
+                    'latest'   => __( '最新发布', 'qiling' ),
+                    'popular'  => __( '热门浏览 (需插件支持)', 'qiling' ),
+                    'comment'  => __( '热评文章', 'qiling' ),
+                    'random'   => __( '随机推荐', 'qiling' ),
+                    'category' => __( '指定分类', 'qiling' ),
+                    'tag'      => __( '指定标签', 'qiling' ),
+                    'manual'   => __( '手动指定ID', 'qiling' ),
                 ),
                 'default' => 'latest',
             ),
             array(
                 'id'      => 'fp_slider_category',
                 'type'    => 'text',
-                'label'   => __( '轮播分类ID (多个用逗号分隔)', 'developer-starter' ),
-                'desc'    => __( '仅在来源为"指定分类"时有效', 'developer-starter' ),
+                'label'   => __( '轮播分类ID (多个用逗号分隔)', 'qiling' ),
+                'desc'    => __( '仅在来源为"指定分类"时有效', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_slider_ids',
                 'type'    => 'text',
-                'label'   => __( '轮播文章ID (多个用逗号分隔)', 'developer-starter' ),
-                'desc'    => __( '仅在来源为"手动指定ID"时有效', 'developer-starter' ),
+                'label'   => __( '轮播文章ID (多个用逗号分隔)', 'qiling' ),
+                'desc'    => __( '仅在来源为"手动指定ID"时有效', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_slider_tag',
                 'type'    => 'text',
-                'label'   => __( '轮播标签ID/Slug (多个用逗号分隔)', 'developer-starter' ),
-                'desc'    => __( '仅在来源为"指定标签"时有效', 'developer-starter' ),
+                'label'   => __( '轮播标签ID/Slug (多个用逗号分隔)', 'qiling' ),
+                'desc'    => __( '仅在来源为"指定标签"时有效', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_slider_count',
                 'type'    => 'number',
-                'label'   => __( '轮播文章数量', 'developer-starter' ),
+                'label'   => __( '轮播文章数量', 'qiling' ),
                 'default' => '5',
             ),
             
@@ -195,46 +195,46 @@ class Featured_Posts_Module extends Module_Base {
             array(
                 'id'      => 'fp_list_source',
                 'type'    => 'select',
-                'label'   => __( '右侧列表来源', 'developer-starter' ),
+                'label'   => __( '右侧列表来源', 'qiling' ),
                 'options' => array(
-                    'latest'   => __( '最新发布', 'developer-starter' ),
-                    'popular'  => __( '热门浏览', 'developer-starter' ),
-                    'comment'  => __( '热评文章', 'developer-starter' ),
-                    'random'   => __( '随机推荐', 'developer-starter' ),
-                    'category' => __( '指定分类', 'developer-starter' ),
-                    'tag'      => __( '指定标签', 'developer-starter' ),
-                    'manual'   => __( '手动指定ID', 'developer-starter' ),
+                    'latest'   => __( '最新发布', 'qiling' ),
+                    'popular'  => __( '热门浏览', 'qiling' ),
+                    'comment'  => __( '热评文章', 'qiling' ),
+                    'random'   => __( '随机推荐', 'qiling' ),
+                    'category' => __( '指定分类', 'qiling' ),
+                    'tag'      => __( '指定标签', 'qiling' ),
+                    'manual'   => __( '手动指定ID', 'qiling' ),
                 ),
                 'default' => 'latest',
             ),
             array(
                 'id'      => 'fp_list_category',
                 'type'    => 'text',
-                'label'   => __( '列表分类ID', 'developer-starter' ),
+                'label'   => __( '列表分类ID', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_list_ids',
                 'type'    => 'text',
-                'label'   => __( '列表文章ID', 'developer-starter' ),
+                'label'   => __( '列表文章ID', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_list_tag',
                 'type'    => 'text',
-                'label'   => __( '列表标签ID/Slug', 'developer-starter' ),
+                'label'   => __( '列表标签ID/Slug', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_list_count',
                 'type'    => 'number',
-                'label'   => __( '列表文章数量', 'developer-starter' ),
+                'label'   => __( '列表文章数量', 'qiling' ),
                 'default' => '4',
             ),
             array(
                 'id'      => 'fp_deduplicate',
                 'type'    => 'select',
-                'label'   => __( '列表去重（排除已在轮播出现文章）', 'developer-starter' ),
+                'label'   => __( '列表去重（排除已在轮播出现文章）', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -243,80 +243,80 @@ class Featured_Posts_Module extends Module_Base {
             array(
                 'id'      => 'fp_badge_type',
                 'type'    => 'select',
-                'label'   => __( '文章角标类型', 'developer-starter' ),
+                'label'   => __( '文章角标类型', 'qiling' ),
                 'options' => array(
-                    'none'      => __( '不显示', 'developer-starter' ),
-                    'recommend' => __( '推荐', 'developer-starter' ),
-                    'hot'       => __( '热门', 'developer-starter' ),
-                    'featured'  => __( '精选', 'developer-starter' ),
-                    'top'       => __( '置顶', 'developer-starter' ),
-                    'custom'    => __( '自定义文字', 'developer-starter' ),
+                    'none'      => __( '不显示', 'qiling' ),
+                    'recommend' => __( '推荐', 'qiling' ),
+                    'hot'       => __( '热门', 'qiling' ),
+                    'featured'  => __( '精选', 'qiling' ),
+                    'top'       => __( '置顶', 'qiling' ),
+                    'custom'    => __( '自定义文字', 'qiling' ),
                 ),
                 'default' => 'none',
             ),
             array(
                 'id'      => 'fp_badge_text',
                 'type'    => 'text',
-                'label'   => __( '自定义角标文字', 'developer-starter' ),
-                'desc'    => __( '仅当角标类型为"自定义文字"时有效', 'developer-starter' ),
+                'label'   => __( '自定义角标文字', 'qiling' ),
+                'desc'    => __( '仅当角标类型为"自定义文字"时有效', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_badge_color',
                 'type'    => 'color',
-                'label'   => __( '角标背景颜色', 'developer-starter' ),
+                'label'   => __( '角标背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局徽章颜色。', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'fp_badge_position',
                 'type'    => 'select',
-                'label'   => __( '角标位置', 'developer-starter' ),
+                'label'   => __( '角标位置', 'qiling' ),
                 'options' => array(
-                    'left'  => __( '左上角', 'developer-starter' ),
-                    'right' => __( '右上角', 'developer-starter' ),
+                    'left'  => __( '左上角', 'qiling' ),
+                    'right' => __( '右上角', 'qiling' ),
                 ),
                 'default' => 'left',
             ),
             array(
                 'id'      => 'fp_show_category',
                 'type'    => 'select',
-                'label'   => __( '显示分类', 'developer-starter' ),
-                'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ),
+                'label'   => __( '显示分类', 'qiling' ),
+                'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'fp_show_author',
                 'type'    => 'select',
-                'label'   => __( '显示作者', 'developer-starter' ),
-                'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ),
+                'label'   => __( '显示作者', 'qiling' ),
+                'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'fp_show_date',
                 'type'    => 'select',
-                'label'   => __( '显示日期', 'developer-starter' ),
-                'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ),
+                'label'   => __( '显示日期', 'qiling' ),
+                'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'fp_show_excerpt',
                 'type'    => 'select',
-                'label'   => __( '显示摘要', 'developer-starter' ),
-                'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ),
+                'label'   => __( '显示摘要', 'qiling' ),
+                'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'fp_show_views',
                 'type'    => 'select',
-                'label'   => __( '显示浏览量', 'developer-starter' ),
-                'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ),
+                'label'   => __( '显示浏览量', 'qiling' ),
+                'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ),
                 'default' => 'no',
             ),
             array(
                 'id'      => 'fp_show_reading_time',
                 'type'    => 'select',
-                'label'   => __( '显示预计阅读时长', 'developer-starter' ),
-                'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ),
+                'label'   => __( '显示预计阅读时长', 'qiling' ),
+                'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ),
                 'default' => 'no',
             ),
         );
@@ -426,10 +426,10 @@ class Featured_Posts_Module extends Module_Base {
         
         // 角标文字
         $badge_labels = array(
-            'recommend' => __( '推荐', 'developer-starter' ),
-            'hot' => __( '热门', 'developer-starter' ),
-            'featured' => __( '精选', 'developer-starter' ),
-            'top' => __( '置顶', 'developer-starter' ),
+            'recommend' => __( '推荐', 'qiling' ),
+            'hot' => __( '热门', 'qiling' ),
+            'featured' => __( '精选', 'qiling' ),
+            'top' => __( '置顶', 'qiling' ),
             'custom' => $badge_text,
         );
         $badge_label = isset( $badge_labels[ $badge_type ] ) ? $badge_labels[ $badge_type ] : '';
@@ -497,10 +497,10 @@ class Featured_Posts_Module extends Module_Base {
                             <?php endforeach; ?>
                             
                             <?php if ( $show_arrows && count( $slider_posts ) > 1 ) : ?>
-                                <button class="fp-arrow fp-arrow-prev" aria-label="<?php esc_attr_e( '上一张', 'developer-starter' ); ?>">
+                                <button class="fp-arrow fp-arrow-prev" aria-label="<?php esc_attr_e( '上一张', 'qiling' ); ?>">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
                                 </button>
-                                <button class="fp-arrow fp-arrow-next" aria-label="<?php esc_attr_e( '下一张', 'developer-starter' ); ?>">
+                                <button class="fp-arrow fp-arrow-next" aria-label="<?php esc_attr_e( '下一张', 'qiling' ); ?>">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
                                 </button>
                             <?php endif; ?>
@@ -518,7 +518,7 @@ class Featured_Posts_Module extends Module_Base {
                         <div class="fp-empty" style="height: <?php echo esc_attr( $slider_height ); ?>; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%); border-radius: 16px; color: var(--color-neutral-0);">
                             <div style="text-align: center;">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.8; margin-bottom: var(--qiling-space-12);"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                                <p style="margin: 0; font-size: var(--qiling-text-rem-0p875); opacity: 0.9;"><?php esc_html_e( '暂无轮播文章，请在后台配置数据来源', 'developer-starter' ); ?></p>
+                                <p style="margin: 0; font-size: var(--qiling-text-rem-0p875); opacity: 0.9;"><?php esc_html_e( '暂无轮播文章，请在后台配置数据来源', 'qiling' ); ?></p>
                             </div>
                         </div>
                         <?php endif; ?>
@@ -799,7 +799,7 @@ class Featured_Posts_Module extends Module_Base {
         if ( class_exists( '\Developer_Starter\Core\Post_Enhancer' ) ) {
             $views = \Developer_Starter\Core\Post_Enhancer::get_post_views( $post_id );
         }
-        return sprintf( __( '%s 次浏览', 'developer-starter' ), number_format_i18n( (int) $views ) );
+        return sprintf( __( '%s 次浏览', 'qiling' ), number_format_i18n( (int) $views ) );
     }
 
     /**
@@ -810,7 +810,7 @@ class Featured_Posts_Module extends Module_Base {
         if ( class_exists( '\Developer_Starter\Core\Post_Enhancer' ) ) {
             $minutes = \Developer_Starter\Core\Post_Enhancer::get_reading_time( $post_id );
         }
-        return sprintf( __( '%d 分钟阅读', 'developer-starter' ), max( 1, (int) $minutes ) );
+        return sprintf( __( '%d 分钟阅读', 'qiling' ), max( 1, (int) $minutes ) );
     }
     
     /**
@@ -842,7 +842,7 @@ class Featured_Posts_Module extends Module_Base {
         
         // 如果还是没有图片，使用占位图
         if ( ! $image ) {
-            $placeholder_text = esc_html__( 'No Image', 'developer-starter' );
+            $placeholder_text = esc_html__( 'No Image', 'qiling' );
             $svg = sprintf(
                 '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="var(--color-neutral-200)"><rect width="800" height="400"/><text x="50%%" y="50%%" text-anchor="middle" dy=".3em" fill="var(--color-neutral-400)" font-family="sans-serif" font-size="24">%s</text></svg>',
                 $placeholder_text

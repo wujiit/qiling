@@ -18,7 +18,7 @@ class Downloads_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-download';
-        $this->description = __( '资料下载中心', 'developer-starter' );
+        $this->description = __( '资料下载中心', 'qiling' );
     }
 
     public function get_id() {
@@ -26,126 +26,126 @@ class Downloads_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '下载中心', 'developer-starter' );
+        return __( '下载中心', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             array(
                 'id' => 'downloads_title',
-                'label' => __( '标题', 'developer-starter' ),
+                'label' => __( '标题', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资料下载', 'Downloads' ) : __( '资料下载', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '资料下载', 'Downloads' ) : __( '资料下载', 'qiling' ),
             ),
             array(
                 'id' => 'downloads_subtitle',
-                'label' => __( '副标题', 'developer-starter' ),
+                'label' => __( '副标题', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载我们的产品资料和技术文档', 'Download our product materials and technical documents.' ) : __( '下载我们的产品资料和技术文档', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载我们的产品资料和技术文档', 'Download our product materials and technical documents.' ) : __( '下载我们的产品资料和技术文档', 'qiling' ),
             ),
             // 背景配置
             array(
                 'id' => 'downloads_bg_color',
-                'label' => __( '背景颜色 (支持渐变)', 'developer-starter' ),
+                'label' => __( '背景颜色 (支持渐变)', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-neutral-0)',
-                'description' => __( '例如: var(--color-neutral-0) 或 linear-gradient(to right, var(--color-error), var(--color-primary))', 'developer-starter' ),
+                'description' => __( '例如: var(--color-neutral-0) 或 linear-gradient(to right, var(--color-error), var(--color-primary))', 'qiling' ),
             ),
             // 字体排版配置
             array(
                 'id' => 'downloads_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'downloads_title_size',
-                'label' => __( '标题大小', 'developer-starter' ),
+                'label' => __( '标题大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '2rem',
-                'description' => __( '例如: 2rem, 32px', 'developer-starter' ),
+                'description' => __( '例如: 2rem, 32px', 'qiling' ),
             ),
             array(
                 'id' => 'downloads_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'downloads_subtitle_size',
-                'label' => __( '副标题大小', 'developer-starter' ),
+                'label' => __( '副标题大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '1.125rem',
-                'description' => __( '例如: 1.125rem, 18px', 'developer-starter' ),
+                'description' => __( '例如: 1.125rem, 18px', 'qiling' ),
             ),
             array(
                 'id' => 'downloads_btn_bg_color',
-                'label' => __( '下载按钮背景颜色', 'developer-starter' ),
+                'label' => __( '下载按钮背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id' => 'downloads_btn_text_color',
-                'label' => __( '下载按钮文字颜色', 'developer-starter' ),
+                'label' => __( '下载按钮文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'downloads_btn_border_color', __( '下载按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'downloads_btn_border_color', __( '下载按钮边框颜色', 'qiling' ) ),
             array(
                 'id' => 'downloads_btn_hover_bg_color',
-                'label' => __( '下载按钮悬停背景颜色', 'developer-starter' ),
+                'label' => __( '下载按钮悬停背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id' => 'downloads_btn_hover_text_color',
-                'label' => __( '下载按钮悬停文字颜色', 'developer-starter' ),
+                'label' => __( '下载按钮悬停文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'downloads_btn_hover_border_color', __( '下载按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随下载按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'downloads_btn_hover_border_color', __( '下载按钮悬停边框颜色', 'qiling' ), __( '留空时跟随下载按钮悬停背景颜色。', 'qiling' ) ),
             array(
                 'id'          => 'downloads_badge_bg',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'type'        => 'color',
                 'default'     => '',
-                'description' => __( '控制文件格式等标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制文件格式等标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id' => 'downloads_columns',
-                'label' => __( '每行列数', 'developer-starter' ),
+                'label' => __( '每行列数', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '1' => __( '1列', 'developer-starter' ),
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
+                    '1' => __( '1列', 'qiling' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id' => 'downloads_items',
-                'label' => __( '下载项目', 'developer-starter' ),
+                'label' => __( '下载项目', 'qiling' ),
                 'type' => 'repeater',
-                'description' => __( '添加下载文件，链接可填写外部URL。文件格式、日期、说明为可选项，填写后会显示', 'developer-starter' ),
+                'description' => __( '添加下载文件，链接可填写外部URL。文件格式、日期、说明为可选项，填写后会显示', 'qiling' ),
                 'fields' => array(
-                    array( 'id' => 'title', 'label' => __( '文件名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'size', 'label' => __( '文件大小', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'file', 'label' => __( '文件链接(可填外部URL)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'icon', 'label' => __( '图标(emoji或留空)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'format', 'label' => __( '文件格式(可选，如PDF、DOC等)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'date', 'label' => __( '文件日期(可选，如2024-01-01)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'btn_text', 'label' => __( '按钮文案(默认: 下载)', 'developer-starter' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载', 'Download' ) : __( '下载', 'developer-starter' ) ),
-                    array( 'id' => 'btn_icon', 'label' => __( '按钮图标(默认: 下载图标)', 'developer-starter' ), 'type' => 'text', 'description' => __( '输入图标类名，如 icon-download', 'developer-starter' ) ),
-                    array( 'id' => 'description', 'label' => __( '文件说明(可选)', 'developer-starter' ), 'type' => 'textarea' ),
+                    array( 'id' => 'title', 'label' => __( '文件名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'size', 'label' => __( '文件大小', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'file', 'label' => __( '文件链接(可填外部URL)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'icon', 'label' => __( '图标(emoji或留空)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'format', 'label' => __( '文件格式(可选，如PDF、DOC等)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'date', 'label' => __( '文件日期(可选，如2024-01-01)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'btn_text', 'label' => __( '按钮文案(默认: 下载)', 'qiling' ), 'type' => 'text', 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载', 'Download' ) : __( '下载', 'qiling' ) ),
+                    array( 'id' => 'btn_icon', 'label' => __( '按钮图标(默认: 下载图标)', 'qiling' ), 'type' => 'text', 'description' => __( '输入图标类名，如 icon-download', 'qiling' ) ),
+                    array( 'id' => 'description', 'label' => __( '文件说明(可选)', 'qiling' ), 'type' => 'textarea' ),
                 ),
                 'default_items' => array(
-                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品手册', 'Product Brochure' ) : __( '产品手册', 'developer-starter' ), 'file' => '', 'size' => '2.5MB', 'icon' => '📄' ),
-                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术白皮书', 'Technical Whitepaper' ) : __( '技术白皮书', 'developer-starter' ), 'file' => '', 'size' => '1.2MB', 'icon' => '📋' ),
-                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '用户指南', 'User Guide' ) : __( '用户指南', 'developer-starter' ), 'file' => '', 'size' => '3.8MB', 'icon' => '📘' ),
+                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品手册', 'Product Brochure' ) : __( '产品手册', 'qiling' ), 'file' => '', 'size' => '2.5MB', 'icon' => '' ),
+                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术白皮书', 'Technical Whitepaper' ) : __( '技术白皮书', 'qiling' ), 'file' => '', 'size' => '1.2MB', 'icon' => '' ),
+                    array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '用户指南', 'User Guide' ) : __( '用户指南', 'qiling' ), 'file' => '', 'size' => '3.8MB', 'icon' => '' ),
                 ),
             ),
         );
@@ -179,9 +179,9 @@ class Downloads_Module extends Module_Base {
         
         if ( empty( $items ) && ! isset( $data['downloads_items'] ) ) {
             $items = array(
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品手册', 'Product Brochure' ) : __( '产品手册', 'developer-starter' ), 'file' => '', 'size' => '2.5MB', 'icon' => '📄' ),
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术白皮书', 'Technical Whitepaper' ) : __( '技术白皮书', 'developer-starter' ), 'file' => '', 'size' => '1.2MB', 'icon' => '📋' ),
-                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '用户指南', 'User Guide' ) : __( '用户指南', 'developer-starter' ), 'file' => '', 'size' => '3.8MB', 'icon' => '📘' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品手册', 'Product Brochure' ) : __( '产品手册', 'qiling' ), 'file' => '', 'size' => '2.5MB', 'icon' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术白皮书', 'Technical Whitepaper' ) : __( '技术白皮书', 'qiling' ), 'file' => '', 'size' => '1.2MB', 'icon' => '' ),
+                array( 'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '用户指南', 'User Guide' ) : __( '用户指南', 'qiling' ), 'file' => '', 'size' => '3.8MB', 'icon' => '' ),
             );
         }
         
@@ -249,7 +249,7 @@ class Downloads_Module extends Module_Base {
                         $item_title = isset( $item['title'] ) ? $item['title'] : '';
                         $file = isset( $item['file'] ) ? trim( $item['file'] ) : '';
                         $size = isset( $item['size'] ) ? $item['size'] : '';
-                        $icon = isset( $item['icon'] ) && $item['icon'] ? $item['icon'] : '📄';
+                        $icon = isset( $item['icon'] ) && $item['icon'] ? $item['icon'] : 'icon-file';
                         $format = isset( $item['format'] ) ? trim( $item['format'] ) : '';
                         $date = isset( $item['date'] ) ? trim( $item['date'] ) : '';
                         $description = isset( $item['description'] ) ? trim( $item['description'] ) : '';
@@ -269,7 +269,7 @@ class Downloads_Module extends Module_Base {
                                             <span class="meta-text"><?php echo esc_html( $size ); ?></span>
                                         <?php endif; ?>
                                         <?php if ( $date ) : ?>
-                                            <span class="meta-text">📅 <?php echo esc_html( $date ); ?></span>
+                                            <span class="meta-text"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block; vertical-align:-2px; margin-right:4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><?php echo esc_html( $date ); ?></span>
                                         <?php endif; ?>
                                     </div>
                                     <?php if ( $description ) : ?>
@@ -279,7 +279,7 @@ class Downloads_Module extends Module_Base {
                             </div>
                             <div class="download-action">
                                 <?php if ( $file ) : 
-                                    $btn_text = isset( $item['btn_text'] ) && $item['btn_text'] ? $item['btn_text'] : __( '下载', 'developer-starter' );
+                                    $btn_text = isset( $item['btn_text'] ) && $item['btn_text'] ? $item['btn_text'] : __( '下载', 'qiling' );
                                     $btn_icon_class = isset( $item['btn_icon'] ) ? trim( $item['btn_icon'] ) : '';
                                 ?>
                                     <a href="<?php echo esc_url( $file ); ?>" class="btn-download" target="_blank" download>
@@ -293,7 +293,7 @@ class Downloads_Module extends Module_Base {
                                         <?php echo esc_html( $btn_text ); ?>
                                     </a>
                                 <?php else : ?>
-                                    <span class="no-file"><?php esc_html_e( '暂无文件', 'developer-starter' ); ?></span>
+                                    <span class="no-file"><?php esc_html_e( '暂无文件', 'qiling' ); ?></span>
                                 <?php endif; ?>
                             </div>
                         </div>

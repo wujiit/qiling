@@ -110,12 +110,12 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                                 
                                 <?php if ( $show_excerpt ) : ?>
                                     <p style="color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.95); line-height: 1.7; margin-bottom: var(--qiling-space-15);">
-                                        <?php echo wp_trim_words( get_the_excerpt(), 40 ); ?>
+                                        <?php echo esc_html( wp_trim_words( get_the_excerpt(), 40 ) ); ?>
                                     </p>
                                 <?php endif; ?>
                                 
                                 <a href="<?php echo esc_url( get_permalink() ); ?>" style="color: var(--color-primary); font-weight: 500; font-size: calc(var(--qiling-font-size-base) * 0.9);">
-                                    <?php esc_html_e( '阅读全文 →', 'developer-starter' ); ?>
+                                    <?php esc_html_e( '阅读全文 →', 'qiling' ); ?>
                                 </a>
                             </div>
                             
@@ -125,15 +125,15 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                 </div>
                 
                 <nav class="pagination-nav" style="margin-top: var(--qiling-space-50); text-align: center;">
-                    <nav class="navigation pagination" role="navigation" aria-label="<?php esc_attr_e( '分页', 'developer-starter' ); ?>">
+                    <nav class="navigation pagination" role="navigation" aria-label="<?php esc_attr_e( '分页', 'qiling' ); ?>">
                         <div class="nav-links">
                             <?php
                             echo paginate_links( array(
                                 'total'     => $news_query->max_num_pages,
                                 'current'   => $paged,
                                 'mid_size'  => 2,
-                                'prev_text' => '&laquo; ' . __( '上一页', 'developer-starter' ),
-                                'next_text' => __( '下一页', 'developer-starter' ) . ' &raquo;',
+                                'prev_text' => '&laquo; ' . __( '上一页', 'qiling' ),
+                                'next_text' => __( '下一页', 'qiling' ) . ' &raquo;',
                             ) );
                             ?>
                         </div>
@@ -175,9 +175,9 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
             <?php else : ?>
                 
                 <div style="text-align: center; padding: var(--qiling-space-80) var(--qiling-space-20);">
-                    <div style="font-size: calc(var(--qiling-font-size-base) * 4); margin-bottom: var(--qiling-space-20);">📰</div>
-                    <h2 style="color: var(--color-neutral-500); font-weight: 400;"><?php esc_html_e( '暂无新闻', 'developer-starter' ); ?></h2>
-                    <p style="color: var(--color-neutral-400);"><?php esc_html_e( '请先在后台添加新闻内容', 'developer-starter' ); ?><?php echo $category ? sprintf( '（%s%s）', __( '分类：', 'developer-starter' ), esc_html( $category ) ) : ''; ?></p>
+                    <div style="margin: 0 auto var(--qiling-space-20); display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 18px; background: var(--qiling-color-f1f5f9, #f1f5f9); color: var(--color-primary);"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></div>
+                    <h2 style="color: var(--color-neutral-500); font-weight: 400;"><?php esc_html_e( '暂无新闻', 'qiling' ); ?></h2>
+                    <p style="color: var(--color-neutral-400);"><?php esc_html_e( '请先在后台添加新闻内容', 'qiling' ); ?><?php echo $category ? sprintf( '（%s%s）', __( '分类：', 'qiling' ), esc_html( $category ) ) : ''; ?></p>
                 </div>
                 
             <?php endif; ?>

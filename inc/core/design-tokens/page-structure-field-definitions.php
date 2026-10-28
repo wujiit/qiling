@@ -11,22 +11,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return array(
             'card_radius' => array(
-                'label'       => __( '卡片圆角', 'developer-starter' ),
+                'label'       => __( '卡片圆角', 'qiling' ),
                 'type'        => 'text',
                 'placeholder' => '8px',
             ),
             'button_radius' => array(
-                'label'       => __( '按钮圆角', 'developer-starter' ),
+                'label'       => __( '按钮圆角', 'qiling' ),
                 'type'        => 'text',
                 'placeholder' => '8px',
             ),
             'input_radius' => array(
-                'label'       => __( '输入框圆角', 'developer-starter' ),
+                'label'       => __( '输入框圆角', 'qiling' ),
                 'type'        => 'text',
                 'placeholder' => '8px',
             ),
             'animation_speed' => array(
-                'label'       => __( '动效速度', 'developer-starter' ),
+                'label'       => __( '动效速度', 'qiling' ),
                 'type'        => 'text',
                 'placeholder' => '0.25s',
             ),

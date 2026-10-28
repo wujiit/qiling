@@ -457,17 +457,17 @@ class User_Manager {
     public static function handle_submit_post() {
         // 1. 验证 nonce
         if ( ! check_ajax_referer( 'developer_starter_submit_post', 'submit_post_nonce', false ) ) {
-            wp_send_json_error( array( 'message' => __( '安全验证失败，请刷新页面后重试。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全验证失败，请刷新页面后重试。', 'qiling' ) ) );
         }
         
         // 2. 检查用户登录状态
         if ( ! is_user_logged_in() ) {
-            wp_send_json_error( array( 'message' => __( '请先登录后再投稿。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先登录后再投稿。', 'qiling' ) ) );
         }
         
         // 3. 检查功能是否启用
         if ( ! developer_starter_get_option( 'submit_post_enable', '' ) ) {
-            wp_send_json_error( array( 'message' => __( '投稿功能暂未开放。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '投稿功能暂未开放。', 'qiling' ) ) );
         }
         
         // 4. 获取并验证表单数据
@@ -478,16 +478,16 @@ class User_Manager {
         
         // 验证标题
         if ( empty( $title ) ) {
-            wp_send_json_error( array( 'message' => __( '请输入文章标题。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入文章标题。', 'qiling' ) ) );
         }
         
         if ( mb_strlen( $title ) > 100 ) {
-            wp_send_json_error( array( 'message' => __( '文章标题不能超过100个字符。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '文章标题不能超过100个字符。', 'qiling' ) ) );
         }
         
         // 验证内容
         if ( empty( $content ) || trim( strip_tags( $content ) ) === '' ) {
-            wp_send_json_error( array( 'message' => __( '请输入文章内容。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入文章内容。', 'qiling' ) ) );
         }
         
         // 验证分类
@@ -495,12 +495,12 @@ class User_Manager {
         if ( ! empty( $allowed_categories ) && is_array( $allowed_categories ) ) {
             // 如果设置了允许的分类，检查是否在范围内
             if ( ! in_array( $category, array_map( 'intval', $allowed_categories ) ) ) {
-                wp_send_json_error( array( 'message' => __( '请选择有效的文章分类。', 'developer-starter' ) ) );
+                wp_send_json_error( array( 'message' => __( '请选择有效的文章分类。', 'qiling' ) ) );
             }
         } else {
             // 没有限制分类时，仅检查分类是否存在
             if ( $category && ! term_exists( $category, 'category' ) ) {
-                wp_send_json_error( array( 'message' => __( '所选分类不存在。', 'developer-starter' ) ) );
+                wp_send_json_error( array( 'message' => __( '所选分类不存在。', 'qiling' ) ) );
             }
         }
         
@@ -545,7 +545,7 @@ class User_Manager {
                 $post_id = wp_update_post( $post_data, true );
                 $is_update = true;
             } else {
-                wp_send_json_error( array( 'message' => __( '无法编辑该文章：权限不足或文章不存在。', 'developer-starter' ) ) );
+                wp_send_json_error( array( 'message' => __( '无法编辑该文章：权限不足或文章不存在。', 'qiling' ) ) );
             }
         } else {
             // 插入新文章
@@ -553,7 +553,7 @@ class User_Manager {
         }
         
         if ( is_wp_error( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '投稿失败：', 'developer-starter' ) . $post_id->get_error_message() ) );
+            wp_send_json_error( array( 'message' => __( '投稿失败：', 'qiling' ) . $post_id->get_error_message() ) );
         }
         
         // 6. 设置标签
@@ -576,7 +576,7 @@ class User_Manager {
         // 8. 返回成功消息
         $success_message = developer_starter_get_option( 'submit_post_success_message', '' );
         if ( empty( $success_message ) ) {
-            $success_message = $is_update ? __( '更新成功！请等待管理员审核。', 'developer-starter' ) : __( '投稿成功！请等待管理员审核。', 'developer-starter' );
+            $success_message = $is_update ? __( '更新成功！请等待管理员审核。', 'qiling' ) : __( '投稿成功！请等待管理员审核。', 'qiling' );
         }
         
         // 获取个人中心页面URL
@@ -622,17 +622,17 @@ class User_Manager {
     public static function handle_delete_post() {
         // 1. 验证 nonce
         if ( ! check_ajax_referer( 'developer_starter_delete_post', 'nonce', false ) ) {
-            wp_send_json_error( array( 'message' => __( '安全验证失败，请刷新页面后重试。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全验证失败，请刷新页面后重试。', 'qiling' ) ) );
         }
         
         // 2. 检查用户登录状态
         if ( ! is_user_logged_in() ) {
-            wp_send_json_error( array( 'message' => __( '请先登录。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先登录。', 'qiling' ) ) );
         }
         
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
         if ( ! $post_id ) {
-            wp_send_json_error( array( 'message' => __( '参数错误。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '参数错误。', 'qiling' ) ) );
         }
         
         $current_user = wp_get_current_user();
@@ -640,16 +640,16 @@ class User_Manager {
         
         // 3. 验证权限：只能删除自己的文章
         if ( ! $post || (int) $post->post_author !== (int) $current_user->ID ) {
-            wp_send_json_error( array( 'message' => __( '权限不足，无法删除此文章。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足，无法删除此文章。', 'qiling' ) ) );
         }
         
         // 4. 执行删除（移至回收站）
         $result = wp_trash_post( $post_id );
         
         if ( $result ) {
-            wp_send_json_success( array( 'message' => __( '文章已删除至回收站。', 'developer-starter' ) ) );
+            wp_send_json_success( array( 'message' => __( '文章已删除至回收站。', 'qiling' ) ) );
         } else {
-            wp_send_json_error( array( 'message' => __( '删除失败，请重试。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '删除失败，请重试。', 'qiling' ) ) );
         }
     }
     
@@ -840,9 +840,9 @@ class User_Manager {
         $number = (int) $number;
         
         if ( $number >= 100000000 ) {
-            return round( $number / 100000000, 1 ) . __( '亿', 'developer-starter' );
+            return round( $number / 100000000, 1 ) . __( '亿', 'qiling' );
         } elseif ( $number >= 10000 ) {
-            return round( $number / 10000, 1 ) . __( '万', 'developer-starter' );
+            return round( $number / 10000, 1 ) . __( '万', 'qiling' );
         } elseif ( $number >= 1000 ) {
             return number_format( $number );
         }
@@ -858,11 +858,15 @@ class User_Manager {
             return;
         }
         
+        $version = function_exists( 'developer_starter_get_assets_version' )
+            ? developer_starter_get_assets_version()
+            : QILING_VERSION;
+
         wp_enqueue_style(
             'developer-starter-author-profile',
-            DEVELOPER_STARTER_ASSETS . '/css/author-profile.css',
-            array( 'developer-starter-main' ),
-            DEVELOPER_STARTER_VERSION
+            QILING_ASSETS . '/css/author-profile.css',
+            array( 'qiling-main' ),
+            $version
         );
     }
     

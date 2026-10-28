@@ -330,7 +330,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
             $video_icon_only = ! empty( $context['video_icon_only'] );
             $badges[] = array(
                 'type'     => 'video',
-                'label'    => $video_icon_only ? '' : developer_starter_get_post_cover_badge_label( 'video', __( '视频', 'developer-starter' ), $options ),
+                'label'    => $video_icon_only ? '' : developer_starter_get_post_cover_badge_label( 'video', __( '视频', 'qiling' ), $options ),
                 'class'    => isset( $context['video_badge_class'] ) ? (string) $context['video_badge_class'] : 'post-badge post-badge-video',
                 'icon'     => true,
                 'priority' => isset( $priorities['video'] ) ? $priorities['video'] : 20,
@@ -344,7 +344,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
             if ( $app_badge_enabled && function_exists( 'developer_starter_qiapp_has_software_data' ) && developer_starter_qiapp_has_software_data( $post_id ) ) {
                 $badges[] = array(
                     'type'     => 'app',
-                    'label'    => developer_starter_get_post_cover_badge_label( 'app', __( 'APP', 'developer-starter' ), $options ),
+                    'label'    => developer_starter_get_post_cover_badge_label( 'app', __( 'APP', 'qiling' ), $options ),
                     'class'    => 'post-badge post-badge-app',
                     'priority' => isset( $priorities['app'] ) ? $priorities['app'] : 30,
                 );
@@ -355,7 +355,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
             if ( ! empty( $options['album_badge_enable'] ) && get_post_meta( $post_id, '_qiling_gallery_mode', true ) === '1' ) {
                 $badges[] = array(
                     'type'     => 'album',
-                    'label'    => developer_starter_get_post_cover_badge_label( 'album', __( '相册', 'developer-starter' ), $options ),
+                    'label'    => developer_starter_get_post_cover_badge_label( 'album', __( '相册', 'qiling' ), $options ),
                     'class'    => 'post-badge post-badge-album',
                     'priority' => isset( $priorities['album'] ) ? $priorities['album'] : 40,
                 );
@@ -375,7 +375,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
                 if ( $resource_is_free && ! empty( $options['qilingshop_free_badge_enable'] ) ) {
                     $badges[] = array(
                         'type'     => 'free',
-                        'label'    => developer_starter_get_post_cover_badge_label( 'free', __( '免费', 'developer-starter' ), $options ),
+                        'label'    => developer_starter_get_post_cover_badge_label( 'free', __( '免费', 'qiling' ), $options ),
                         'class'    => 'post-badge post-badge-free',
                         'priority' => isset( $priorities['free'] ) ? $priorities['free'] : 50,
                     );
@@ -383,7 +383,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
                 if ( ! $resource_is_free && ! empty( $options['qilingshop_vip_badge_enable'] ) && ( ! empty( $qilingshop_resource['is_paid'] ) || ! empty( $qilingshop_resource['is_vip'] ) ) ) {
                     $badges[] = array(
                         'type'     => 'vip',
-                        'label'    => developer_starter_get_post_cover_badge_label( 'vip', __( 'VIP', 'developer-starter' ), $options ),
+                        'label'    => developer_starter_get_post_cover_badge_label( 'vip', __( 'VIP', 'qiling' ), $options ),
                         'class'    => 'post-badge post-badge-vip',
                         'priority' => isset( $priorities['vip'] ) ? $priorities['vip'] : 60,
                     );
@@ -394,7 +394,7 @@ if ( ! function_exists( 'developer_starter_get_post_cover_badges' ) ) {
         if ( ! empty( $context['include_sticky_badge'] ) && is_sticky( $post_id ) ) {
             $badges[] = array(
                 'type'     => 'sticky',
-                'label'    => developer_starter_get_post_cover_badge_label( 'sticky', __( '置顶', 'developer-starter' ), $options ),
+                'label'    => developer_starter_get_post_cover_badge_label( 'sticky', __( '置顶', 'qiling' ), $options ),
                 'class'    => isset( $context['sticky_badge_class'] ) ? (string) $context['sticky_badge_class'] : 'qiling-post-card-badge qiling-post-card-badge-sticky',
                 'priority' => isset( $priorities['sticky'] ) ? $priorities['sticky'] : 70,
             );

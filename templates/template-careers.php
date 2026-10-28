@@ -15,11 +15,11 @@ $careers_options = Developer_Starter\Core\Careers_Manager::get_option();
 $hero_title = $careers_options['hero_title'] ?? get_the_title();
 $hero_subtitle = $careers_options['hero_subtitle'] ?? '';
 $stat_1_number = $careers_options['stat_1_number'] ?? '50+';
-$stat_1_label = ! empty( $careers_options['stat_1_label'] ) ? sanitize_text_field( (string) $careers_options['stat_1_label'] ) : __( '团队成员', 'developer-starter' );
+$stat_1_label = ! empty( $careers_options['stat_1_label'] ) ? sanitize_text_field( (string) $careers_options['stat_1_label'] ) : __( '团队成员', 'qiling' );
 $stat_2_number = $careers_options['stat_2_number'] ?? '10+';
-$stat_2_label = ! empty( $careers_options['stat_2_label'] ) ? sanitize_text_field( (string) $careers_options['stat_2_label'] ) : __( '开放职位', 'developer-starter' );
+$stat_2_label = ! empty( $careers_options['stat_2_label'] ) ? sanitize_text_field( (string) $careers_options['stat_2_label'] ) : __( '开放职位', 'qiling' );
 $stat_3_number = $careers_options['stat_3_number'] ?? '5个';
-$stat_3_label = ! empty( $careers_options['stat_3_label'] ) ? sanitize_text_field( (string) $careers_options['stat_3_label'] ) : __( '办公城市', 'developer-starter' );
+$stat_3_label = ! empty( $careers_options['stat_3_label'] ) ? sanitize_text_field( (string) $careers_options['stat_3_label'] ) : __( '办公城市', 'qiling' );
 $benefits = $careers_options['benefits'] ?? array();
 $enable_application = $careers_options['enable_application'] ?? '1';
 $hero_bg_color = $careers_options['hero_bg_color'] ?? '';
@@ -60,8 +60,8 @@ $benefit_colors = array(
 );
 
 // 职位类型和分类映射
-$job_types = array( 'fulltime' => __( '全职', 'developer-starter' ), 'parttime' => __( '兼职', 'developer-starter' ), 'intern' => __( '实习', 'developer-starter' ) );
-$categories = array( 'tech' => __( '技术研发', 'developer-starter' ), 'product' => __( '产品设计', 'developer-starter' ), 'market' => __( '市场运营', 'developer-starter' ), 'admin' => __( '职能管理', 'developer-starter' ) );
+$job_types = array( 'fulltime' => __( '全职', 'qiling' ), 'parttime' => __( '兼职', 'qiling' ), 'intern' => __( '实习', 'qiling' ) );
+$categories = array( 'tech' => __( '技术研发', 'qiling' ), 'product' => __( '产品设计', 'qiling' ), 'market' => __( '市场运营', 'qiling' ), 'admin' => __( '职能管理', 'qiling' ) );
 ?>
 
 <!-- Hero Banner -->
@@ -87,7 +87,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
     <div class="careers-hero-particles"></div>
     <div class="container">
         <div class="careers-hero-content">
-            <span class="careers-badge">🚀 <?php esc_html_e( '加入我们', 'developer-starter' ); ?></span>
+            <span class="careers-badge"><?php esc_html_e( '加入我们', 'qiling' ); ?></span>
             <h1 class="careers-hero-title"><?php echo esc_html( $hero_title ); ?></h1>
             <?php if ( $hero_subtitle ) : ?>
                 <p class="careers-hero-subtitle"><?php echo esc_html( $hero_subtitle ); ?></p>
@@ -115,8 +115,8 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
 <section class="careers-benefits section-padding">
     <div class="container">
         <div class="section-header text-center">
-            <h2 class="section-title"><?php esc_html_e( '为什么选择我们？', 'developer-starter' ); ?></h2>
-            <p class="section-subtitle"><?php esc_html_e( '我们提供具有竞争力的薪酬福利和广阔的发展空间', 'developer-starter' ); ?></p>
+            <h2 class="section-title"><?php esc_html_e( '为什么选择我们？', 'qiling' ); ?></h2>
+            <p class="section-subtitle"><?php esc_html_e( '我们提供具有竞争力的薪酬福利和广阔的发展空间', 'qiling' ); ?></p>
         </div>
         
         <div class="benefits-grid">
@@ -126,8 +126,8 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
                 $icon_bg = $benefit_colors[ $icon_key ] ?? $benefit_colors['star'];
             ?>
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="background: <?php echo $icon_bg; ?>;">
-                        <?php echo $icon_svg; ?>
+                    <div class="benefit-icon" style="background: <?php echo esc_attr( $icon_bg ); ?>;">
+                        <?php echo developer_starter_sanitize_svg_with_kses( $icon_svg ); ?>
                     </div>
                     <h3 class="benefit-title"><?php echo esc_html( $benefit['title'] ?? '' ); ?></h3>
                     <p class="benefit-desc"><?php echo esc_html( $benefit['desc'] ?? '' ); ?></p>
@@ -142,12 +142,12 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
 <section class="careers-positions section-padding">
     <div class="container">
         <div class="section-header text-center">
-            <h2 class="section-title"><?php esc_html_e( '开放职位', 'developer-starter' ); ?></h2>
-            <p class="section-subtitle"><?php esc_html_e( '寻找你的理想职位，开启精彩职业旅程', 'developer-starter' ); ?></p>
+            <h2 class="section-title"><?php esc_html_e( '开放职位', 'qiling' ); ?></h2>
+            <p class="section-subtitle"><?php esc_html_e( '寻找你的理想职位，开启精彩职业旅程', 'qiling' ); ?></p>
         </div>
         
         <div class="positions-filter">
-            <button class="filter-btn active" data-filter="all"><?php esc_html_e( '全部职位', 'developer-starter' ); ?></button>
+            <button class="filter-btn active" data-filter="all"><?php esc_html_e( '全部职位', 'qiling' ); ?></button>
             <?php foreach ( $categories as $cat_key => $cat_label ) : ?>
                 <button class="filter-btn" data-filter="<?php echo esc_attr( $cat_key ); ?>"><?php echo esc_html( $cat_label ); ?></button>
             <?php endforeach; ?>
@@ -156,7 +156,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
         <div class="positions-list">
             <?php if ( empty( $positions ) ) : ?>
                 <div class="no-positions" style="text-align: center; padding: var(--qiling-space-60) var(--qiling-space-20); background: var(--color-neutral-0); border-radius: var(--qiling-space-16);">
-                    <p style="color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 1.1);"><?php esc_html_e( '暂无开放职位，请稍后再来查看', 'developer-starter' ); ?></p>
+                    <p style="color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 1.1);"><?php esc_html_e( '暂无开放职位，请稍后再来查看', 'qiling' ); ?></p>
                 </div>
             <?php else : ?>
                 <?php foreach ( $positions as $pos ) : ?>
@@ -175,7 +175,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
                                     </span>
                                     <span class="meta-item">
                                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                                        <?php echo esc_html( $job_types[ $pos->job_type ] ?? __( '全职', 'developer-starter' ) ); ?>
+                                        <?php echo esc_html( $job_types[ $pos->job_type ] ?? __( '全职', 'qiling' ) ); ?>
                                     </span>
                                 </div>
                             </div>
@@ -189,7 +189,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
                         <div class="position-details">
                             <?php if ( $pos->description ) : ?>
                                 <div class="detail-section">
-                                    <h4><?php esc_html_e( '职位描述', 'developer-starter' ); ?></h4>
+                                    <h4><?php esc_html_e( '职位描述', 'qiling' ); ?></h4>
                                     <ul>
                                         <?php foreach ( explode( "\n", $pos->description ) as $line ) : ?>
                                             <?php if ( trim( $line ) ) : ?>
@@ -201,7 +201,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
                             <?php endif; ?>
                             <?php if ( $pos->requirements ) : ?>
                                 <div class="detail-section">
-                                    <h4><?php esc_html_e( '任职要求', 'developer-starter' ); ?></h4>
+                                    <h4><?php esc_html_e( '任职要求', 'qiling' ); ?></h4>
                                     <ul>
                                         <?php foreach ( explode( "\n", $pos->requirements ) as $line ) : ?>
                                             <?php if ( trim( $line ) ) : ?>
@@ -212,7 +212,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
                                 </div>
                             <?php endif; ?>
                             <?php if ( $enable_application ) : ?>
-                                <a href="#apply-form" class="btn btn-primary" data-position-id="<?php echo esc_attr( $pos->id ); ?>" data-position-title="<?php echo esc_attr( $pos->title ); ?>"><?php esc_html_e( '立即申请', 'developer-starter' ); ?></a>
+                                <a href="#apply-form" class="btn btn-primary" data-position-id="<?php echo esc_attr( $pos->id ); ?>" data-position-title="<?php echo esc_attr( $pos->title ); ?>"><?php esc_html_e( '立即申请', 'qiling' ); ?></a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -228,26 +228,26 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
     <div class="container">
         <div class="apply-wrapper">
             <div class="apply-info">
-                <h2><?php esc_html_e( '投递简历', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '填写以下信息，我们会尽快与您联系', 'developer-starter' ); ?></p>
+                <h2><?php esc_html_e( '投递简历', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '填写以下信息，我们会尽快与您联系', 'qiling' ); ?></p>
                 
                 <div class="apply-tips">
-                    <h4><?php esc_html_e( '投递须知', 'developer-starter' ); ?></h4>
+                    <h4><?php esc_html_e( '投递须知', 'qiling' ); ?></h4>
                     <ul>
-                        <li><?php esc_html_e( '请确保联系方式真实有效', 'developer-starter' ); ?></li>
-                        <li><?php esc_html_e( '简历投递后3-5个工作日内回复', 'developer-starter' ); ?></li>
-                        <li><?php esc_html_e( '面试通过后签订正式劳动合同', 'developer-starter' ); ?></li>
+                        <li><?php esc_html_e( '请确保联系方式真实有效', 'qiling' ); ?></li>
+                        <li><?php esc_html_e( '简历投递后3-5个工作日内回复', 'qiling' ); ?></li>
+                        <li><?php esc_html_e( '面试通过后签订正式劳动合同', 'qiling' ); ?></li>
                     </ul>
                 </div>
                 
                 <?php if ( $hr_phone || $hr_email ) : ?>
                 <div class="hr-contact">
-                    <h4><?php esc_html_e( 'HR联系方式', 'developer-starter' ); ?></h4>
+                    <h4><?php esc_html_e( 'HR联系方式', 'qiling' ); ?></h4>
                     <?php if ( $hr_phone ) : ?>
-                        <p><strong><?php esc_html_e( '电话：', 'developer-starter' ); ?></strong><?php echo esc_html( $hr_phone ); ?></p>
+                        <p><strong><?php esc_html_e( '电话：', 'qiling' ); ?></strong><?php echo esc_html( $hr_phone ); ?></p>
                     <?php endif; ?>
                     <?php if ( $hr_email ) : ?>
-                        <p><strong><?php esc_html_e( '邮箱：', 'developer-starter' ); ?></strong><?php echo esc_html( $hr_email ); ?></p>
+                        <p><strong><?php esc_html_e( '邮箱：', 'qiling' ); ?></strong><?php echo esc_html( $hr_email ); ?></p>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
@@ -264,50 +264,50 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
                 <form id="careers-apply-form" class="apply-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label><?php esc_html_e( '姓名', 'developer-starter' ); ?> <span class="required">*</span></label>
-                            <input type="text" name="name" required placeholder="<?php esc_attr_e( '请输入您的姓名', 'developer-starter' ); ?>" />
+                            <label><?php esc_html_e( '姓名', 'qiling' ); ?> <span class="required">*</span></label>
+                            <input type="text" name="name" required placeholder="<?php esc_attr_e( '请输入您的姓名', 'qiling' ); ?>" />
                         </div>
                         <div class="form-group">
-                            <label><?php esc_html_e( '电话', 'developer-starter' ); ?> <span class="required">*</span></label>
-                            <input type="tel" name="phone" required placeholder="<?php esc_attr_e( '请输入联系电话', 'developer-starter' ); ?>" />
+                            <label><?php esc_html_e( '电话', 'qiling' ); ?> <span class="required">*</span></label>
+                            <input type="tel" name="phone" required placeholder="<?php esc_attr_e( '请输入联系电话', 'qiling' ); ?>" />
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label><?php esc_html_e( '邮箱', 'developer-starter' ); ?> <span class="required">*</span></label>
-                            <input type="email" name="email" required placeholder="<?php esc_attr_e( '请输入电子邮箱', 'developer-starter' ); ?>" />
+                            <label><?php esc_html_e( '邮箱', 'qiling' ); ?> <span class="required">*</span></label>
+                            <input type="email" name="email" required placeholder="<?php esc_attr_e( '请输入电子邮箱', 'qiling' ); ?>" />
                         </div>
                         <div class="form-group">
-                            <label><?php esc_html_e( '应聘职位', 'developer-starter' ); ?> <span class="required">*</span></label>
+                            <label><?php esc_html_e( '应聘职位', 'qiling' ); ?> <span class="required">*</span></label>
                             <select name="position_title" id="position-select" required>
-                                <option value=""><?php esc_html_e( '请选择职位', 'developer-starter' ); ?></option>
+                                <option value=""><?php esc_html_e( '请选择职位', 'qiling' ); ?></option>
                                 <?php foreach ( $positions as $pos ) : ?>
                                     <option value="<?php echo esc_attr( $pos->title ); ?>" data-id="<?php echo esc_attr( $pos->id ); ?>">
                                         <?php echo esc_html( $pos->title ); ?>
                                     </option>
                                 <?php endforeach; ?>
-                                <option value="其他职位"><?php esc_html_e( '其他职位', 'developer-starter' ); ?></option>
+                                <option value="其他职位"><?php esc_html_e( '其他职位', 'qiling' ); ?></option>
                             </select>
                             <input type="hidden" name="position_id" id="position-id" value="0" />
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label><?php esc_html_e( '自我介绍', 'developer-starter' ); ?></label>
-                        <textarea name="message" rows="5" placeholder="<?php esc_attr_e( '请简要介绍您的教育背景、工作经验和核心技能...', 'developer-starter' ); ?>"></textarea>
+                        <label><?php esc_html_e( '自我介绍', 'qiling' ); ?></label>
+                        <textarea name="message" rows="5" placeholder="<?php esc_attr_e( '请简要介绍您的教育背景、工作经验和核心技能...', 'qiling' ); ?>"></textarea>
                     </div>
                     
                     <input type="hidden" name="action" value="ds_submit_careers_application" />
                     <input type="hidden" name="nonce" value="<?php echo esc_attr( wp_create_nonce( 'ds_careers_application_nonce' ) ); ?>" />
                     
                     <button type="submit" class="btn btn-primary btn-lg btn-submit">
-                        <span class="btn-text"><?php esc_html_e( '提交申请', 'developer-starter' ); ?></span>
+                        <span class="btn-text"><?php esc_html_e( '提交申请', 'qiling' ); ?></span>
                         <span class="btn-loading" style="display: none;">
                             <svg width="20" height="20" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="32" stroke-linecap="round"/>
                             </svg>
-                            <?php esc_html_e( '提交中...', 'developer-starter' ); ?>
+                            <?php esc_html_e( '提交中...', 'qiling' ); ?>
                         </span>
                     </button>
                 </form>
@@ -323,7 +323,7 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
     <div class="container">
         <div class="location-content">
             <div class="location-text">
-                <h3><?php esc_html_e( '工作地点', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '工作地点', 'qiling' ); ?></h3>
                 <?php if ( $company_name ) : ?>
                     <p class="company-name"><?php echo esc_html( $company_name ); ?></p>
                 <?php endif; ?>
@@ -332,9 +332,9 @@ if ( ! empty( $hero_bg_color ) && ! in_array( $hero_bg_color_normalized, $empty_
                 <?php endif; ?>
             </div>
             <div class="location-cta">
-                <p><?php esc_html_e( '期待与你相见！', 'developer-starter' ); ?></p>
+                <p><?php esc_html_e( '期待与你相见！', 'qiling' ); ?></p>
                 <?php if ( $enable_application ) : ?>
-                    <a href="#apply-form" class="btn btn-light btn-lg"><?php esc_html_e( '立即加入', 'developer-starter' ); ?></a>
+                    <a href="#apply-form" class="btn btn-light btn-lg"><?php esc_html_e( '立即加入', 'qiling' ); ?></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -1129,13 +1129,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (data.success) {
                     toast.style.background = 'var(--qiling-color-dcfce7)';
-                    toastIcon.innerHTML = '✅';
+                    toastIcon.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--qiling-color-166534)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
                     toastText.innerHTML = '<span style="color:var(--qiling-color-166534);">' + data.data.message + '</span>';
                     form.reset();
                 } else {
                     toast.style.background = 'var(--qiling-color-fee2e2)';
-                    toastIcon.innerHTML = '❌';
-                    toastText.innerHTML = '<span style="color:var(--qiling-color-991b1b);">' + (data.data ? data.data.message : '<?php echo esc_js( __( '提交失败，请稍后重试', 'developer-starter' ) ); ?>') + '</span>';
+                    toastIcon.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--qiling-color-991b1b)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>';
+                    toastText.innerHTML = '<span style="color:var(--qiling-color-991b1b);">' + (data.data ? data.data.message : '<?php echo esc_js( __( '提交失败，请稍后重试', 'qiling' ) ); ?>') + '</span>';
                 }
                 
                 submitBtn.disabled = false;
@@ -1152,8 +1152,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 overlay.style.display = 'block';
                 toast.style.display = 'block';
                 toast.style.background = 'var(--qiling-color-fee2e2)';
-                toastIcon.innerHTML = '❌';
-                toastText.innerHTML = '<span style="color:var(--qiling-color-991b1b);"><?php echo esc_js( __( '网络错误，请稍后重试', 'developer-starter' ) ); ?></span>';
+                toastIcon.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--qiling-color-991b1b)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>';
+                toastText.innerHTML = '<span style="color:var(--qiling-color-991b1b);"><?php echo esc_js( __( '网络错误，请稍后重试', 'qiling' ) ); ?></span>';
                 
                 submitBtn.disabled = false;
                 btnText.style.display = 'inline';

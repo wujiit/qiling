@@ -62,7 +62,7 @@ class Setup_Wizard_Settings_Service {
      */
     public function apply( $args ) {
         if ( ! current_user_can( 'manage_options' ) ) {
-            return $this->result_with_error( 'forbidden', __( '权限不足，无法应用基础设置。', 'developer-starter' ) );
+            return $this->result_with_error( 'forbidden', __( '权限不足，无法应用基础设置。', 'qiling' ) );
         }
 
         $args = is_array( $args ) ? $args : array();
@@ -148,7 +148,7 @@ class Setup_Wizard_Settings_Service {
             return array(
                 'status' => 'error',
                 'id'     => 0,
-                'message'=> __( '主菜单 ID 无效。', 'developer-starter' ),
+                'message'=> __( '主菜单 ID 无效。', 'qiling' ),
                 'items_added' => 0,
             );
         }

@@ -18,7 +18,7 @@ class Friendly_Links_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-admin-links';
-        $this->description = __( '展示友链与推荐博客列表', 'developer-starter' );
+        $this->description = __( '展示友链与推荐博客列表', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Friendly_Links_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '友链/推荐博客', 'developer-starter' );
+        return __( '友链/推荐博客', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,108 +34,108 @@ class Friendly_Links_Module extends Module_Base {
             array(
                 'id'      => 'fl_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( '友链 / 推荐博客', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( '友链 / 推荐博客', 'qiling' ),
             ),
             array(
                 'id'    => 'fl_subtitle',
                 'type'  => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
             ),
             array(
                 'id'      => 'fl_columns',
                 'type'    => 'select',
-                'label'   => __( '每行列数', 'developer-starter' ),
+                'label'   => __( '每行列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'fl_show_desc',
                 'type'    => 'select',
-                'label'   => __( '显示简介', 'developer-starter' ),
+                'label'   => __( '显示简介', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'fl_show_domain',
                 'type'    => 'select',
-                'label'   => __( '显示域名', 'developer-starter' ),
+                'label'   => __( '显示域名', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'     => 'fl_items',
                 'type'   => 'repeater',
-                'label'  => __( '友链列表', 'developer-starter' ),
+                'label'  => __( '友链列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
-                        'label' => __( '名称', 'developer-starter' ),
+                        'label' => __( '名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'url',
                         'type'  => 'text',
-                        'label' => __( '链接', 'developer-starter' ),
+                        'label' => __( '链接', 'qiling' ),
                     ),
                     array(
                         'id'    => 'logo',
                         'type'  => 'image',
-                        'label' => __( 'Logo', 'developer-starter' ),
+                        'label' => __( 'Logo', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'text',
-                        'label' => __( '一句话介绍', 'developer-starter' ),
+                        'label' => __( '一句话介绍', 'qiling' ),
                     ),
                     array(
                         'id'    => 'tag',
                         'type'  => 'text',
-                        'label' => __( '标签', 'developer-starter' ),
+                        'label' => __( '标签', 'qiling' ),
                     ),
                     array(
                         'id'      => 'target',
                         'type'    => 'select',
-                        'label'   => __( '打开方式', 'developer-starter' ),
+                        'label'   => __( '打开方式', 'qiling' ),
                         'options' => array(
-                            '_blank' => __( '新窗口', 'developer-starter' ),
-                            '_self'  => __( '当前窗口', 'developer-starter' ),
+                            '_blank' => __( '新窗口', 'qiling' ),
+                            '_self'  => __( '当前窗口', 'qiling' ),
                         ),
                         'default' => '_blank',
                     ),
                 ),
                 'default_items' => array(
                     array(
-                        'name'   => __( 'WordPress', 'developer-starter' ),
+                        'name'   => __( 'WordPress', 'qiling' ),
                         'url'    => 'https://wordpress.org/',
                         'logo'   => '',
-                        'desc'   => __( '开源内容管理系统社区', 'developer-starter' ),
+                        'desc'   => __( '开源内容管理系统社区', 'qiling' ),
                         'tag'    => 'CMS',
                         'target' => '_blank',
                     ),
                     array(
-                        'name'   => __( 'OpenAI', 'developer-starter' ),
+                        'name'   => __( 'OpenAI', 'qiling' ),
                         'url'    => 'https://openai.com/',
                         'logo'   => '',
-                        'desc'   => __( 'AI 技术与产品实践', 'developer-starter' ),
+                        'desc'   => __( 'AI 技术与产品实践', 'qiling' ),
                         'tag'    => 'AI',
                         'target' => '_blank',
                     ),
                     array(
-                        'name'   => __( 'MDN Web Docs', 'developer-starter' ),
+                        'name'   => __( 'MDN Web Docs', 'qiling' ),
                         'url'    => 'https://developer.mozilla.org/',
                         'logo'   => '',
-                        'desc'   => __( '前端开发参考文档', 'developer-starter' ),
+                        'desc'   => __( '前端开发参考文档', 'qiling' ),
                         'tag'    => 'Docs',
                         'target' => '_blank',
                     ),
@@ -144,38 +144,38 @@ class Friendly_Links_Module extends Module_Base {
             array(
                 'id'      => 'fl_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景色', 'developer-starter' ),
+                'label'   => __( '卡片背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'fl_bg_color',
                 'type'    => 'color',
-                'label'   => __( '模块背景色', 'developer-starter' ),
+                'label'   => __( '模块背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'fl_accent_color',
                 'type'    => 'color',
-                'label'   => __( '强调色', 'developer-starter' ),
+                'label'   => __( '强调色', 'qiling' ),
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'          => 'fl_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '控制友链标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制友链标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '56px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '56px',
             ),
         );
@@ -192,26 +192,26 @@ class Friendly_Links_Module extends Module_Base {
         if ( empty( $items ) && ! isset( $data['fl_items'] ) ) {
             $items = array(
                 array(
-                    'name'   => __( 'WordPress', 'developer-starter' ),
+                    'name'   => __( 'WordPress', 'qiling' ),
                     'url'    => 'https://wordpress.org/',
                     'logo'   => '',
-                    'desc'   => __( '开源内容管理系统社区', 'developer-starter' ),
+                    'desc'   => __( '开源内容管理系统社区', 'qiling' ),
                     'tag'    => 'CMS',
                     'target' => '_blank',
                 ),
                 array(
-                    'name'   => __( 'OpenAI', 'developer-starter' ),
+                    'name'   => __( 'OpenAI', 'qiling' ),
                     'url'    => 'https://openai.com/',
                     'logo'   => '',
-                    'desc'   => __( 'AI 技术与产品实践', 'developer-starter' ),
+                    'desc'   => __( 'AI 技术与产品实践', 'qiling' ),
                     'tag'    => 'AI',
                     'target' => '_blank',
                 ),
                 array(
-                    'name'   => __( 'MDN Web Docs', 'developer-starter' ),
+                    'name'   => __( 'MDN Web Docs', 'qiling' ),
                     'url'    => 'https://developer.mozilla.org/',
                     'logo'   => '',
-                    'desc'   => __( '前端开发参考文档', 'developer-starter' ),
+                    'desc'   => __( '前端开发参考文档', 'qiling' ),
                     'tag'    => 'Docs',
                     'target' => '_blank',
                 ),
@@ -297,7 +297,8 @@ class Friendly_Links_Module extends Module_Base {
         }
 
         if ( function_exists( 'mb_substr' ) ) {
-            return mb_substr( $name, 0, 1 );
+            $char = mb_substr( $name, 0, 1, 'UTF-8' );
+            return function_exists( 'mb_strtoupper' ) ? mb_strtoupper( $char, 'UTF-8' ) : strtoupper( $char );
         }
 
         return strtoupper( substr( $name, 0, 1 ) );

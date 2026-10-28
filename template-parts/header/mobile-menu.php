@@ -51,7 +51,7 @@ if ( $mobile_menu_logo && function_exists( 'developer_starter_get_image_dimensio
 $phone = developer_starter_get_option( 'company_phone', '' );
 $phone_tel = preg_replace( '/[^0-9+]/', '', (string) $phone );
 ?>
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( '移动端菜单', 'developer-starter' ); ?>" aria-hidden="true" tabindex="-1">
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( '移动端菜单', 'qiling' ); ?>" aria-hidden="true" tabindex="-1">
     <div class="mobile-menu-header">
         <div class="mobile-menu-logo">
             <?php if ( $mobile_menu_logo ) : ?>
@@ -62,14 +62,14 @@ $phone_tel = preg_replace( '/[^0-9+]/', '', (string) $phone );
                 <span class="site-name"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></span>
             <?php endif; ?>
         </div>
-        <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="<?php esc_attr_e( '关闭菜单', 'developer-starter' ); ?>" aria-controls="mobile-menu">
+        <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="<?php esc_attr_e( '关闭菜单', 'qiling' ); ?>" aria-controls="mobile-menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </button>
     </div>
-    <nav class="mobile-menu-nav" aria-label="<?php esc_attr_e( '移动端导航', 'developer-starter' ); ?>">
+    <nav class="mobile-menu-nav" aria-label="<?php esc_attr_e( '移动端导航', 'qiling' ); ?>">
         <?php
         if ( $menu_id ) {
             wp_nav_menu(
@@ -83,7 +83,7 @@ $phone_tel = preg_replace( '/[^0-9+]/', '', (string) $phone );
                 )
             );
         } else {
-            $fallback_items = '<li class="menu-item menu-item-home"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( '首页', 'developer-starter' ) . '</a></li>';
+            $fallback_items = '<li class="menu-item menu-item-home"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( '首页', 'qiling' ) . '</a></li>';
             $fallback_pages = wp_list_pages(
                 array(
                     'depth'    => 2,
@@ -111,7 +111,7 @@ $phone_tel = preg_replace( '/[^0-9+]/', '', (string) $phone );
             </a>
         <?php else : ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mobile-phone-btn mobile-home-btn">
-                <?php esc_html_e( '返回首页', 'developer-starter' ); ?>
+                <?php esc_html_e( '返回首页', 'qiling' ); ?>
             </a>
         <?php endif; ?>
     </div>

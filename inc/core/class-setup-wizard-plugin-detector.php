@@ -55,13 +55,6 @@ class Setup_Wizard_Plugin_Detector {
      */
     public function get_known_plugins() {
         return array(
-            'woocommerce'   => array(
-                'label'      => 'WooCommerce',
-                'basenames'  => array( 'woocommerce/woocommerce.php' ),
-                'classes'    => array( 'WooCommerce' ),
-                'functions'  => array(),
-                'hint'       => '可增强电商、商品和订单能力。向导只检测，不安装不配置。',
-            ),
             'qilingshop'    => array(
                 'label'      => '启灵积分商城',
                 'basenames'  => array( 'qilingshop/qilingshop.php', 'qiling-shop/qiling-shop.php' ),

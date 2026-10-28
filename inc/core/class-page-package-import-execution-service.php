@@ -70,7 +70,7 @@ class Page_Package_Import_Execution_Service {
         $options = $this->normalize_import_options( $options );
 
         if ( ! is_array( $prepared_package ) || empty( $prepared_package['pages'] ) || ! is_array( $prepared_package['pages'] ) ) {
-            return new \WP_Error( 'invalid_package', __( '没有可导入的页面数据。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_package', __( '没有可导入的页面数据。', 'qiling' ) );
         }
 
         $meta              = isset( $prepared_package['meta'] ) && is_array( $prepared_package['meta'] ) ? $prepared_package['meta'] : array();
@@ -130,8 +130,8 @@ class Page_Package_Import_Execution_Service {
                 'action'   => 'skip',
                 'page_id'  => $existing_page_id,
                 'message'  => $this->config['conflict_strategy_update'] === $conflict_strategy
-                    ? __( 'URL 已存在，但不是当前数据包的历史页面，已按安全策略跳过。', 'developer-starter' )
-                    : __( 'URL 已存在，已按当前策略跳过。', 'developer-starter' ),
+                    ? __( 'URL 已存在，但不是当前数据包的历史页面，已按安全策略跳过。', 'qiling' )
+                    : __( 'URL 已存在，已按当前策略跳过。', 'qiling' ),
             );
         }
 
@@ -165,7 +165,7 @@ class Page_Package_Import_Execution_Service {
 
                 $post_id = wp_insert_post(
                     array(
-                        'post_title'   => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'developer-starter' ),
+                        'post_title'   => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'qiling' ),
                         'post_name'    => $target_slug,
                         'post_status'  => $post_status,
                         'post_type'    => 'page',
@@ -180,11 +180,11 @@ class Page_Package_Import_Execution_Service {
                     $error_count++;
                     $results[] = array(
                         'page_key' => $page_key,
-                        'title'    => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'developer-starter' ),
+                        'title'    => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'qiling' ),
                         'slug'     => $slug,
                         'action'   => 'error',
                         'page_id'  => 0,
-                        'message'  => __( '找不到需要更新的历史页面。', 'developer-starter' ),
+                        'message'  => __( '找不到需要更新的历史页面。', 'qiling' ),
                     );
                     continue;
                 }
@@ -194,11 +194,11 @@ class Page_Package_Import_Execution_Service {
                     $error_count++;
                     $results[] = array(
                         'page_key' => $page_key,
-                        'title'    => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'developer-starter' ),
+                        'title'    => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'qiling' ),
                         'slug'     => $slug,
                         'action'   => 'error',
                         'page_id'  => 0,
-                        'message'  => __( '历史页面不存在，无法执行更新。', 'developer-starter' ),
+                        'message'  => __( '历史页面不存在，无法执行更新。', 'qiling' ),
                     );
                     continue;
                 }
@@ -221,7 +221,7 @@ class Page_Package_Import_Execution_Service {
                 $error_count++;
                 $results[] = array(
                     'page_key' => $page_key,
-                    'title'    => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'developer-starter' ),
+                    'title'    => isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '导入页面', 'qiling' ),
                     'slug'     => '' !== $target_slug ? $target_slug : $slug,
                     'action'   => 'error',
                     'page_id'  => 0,
@@ -275,8 +275,8 @@ class Page_Package_Import_Execution_Service {
                 'action'   => $import_action,
                 'page_id'  => $post_id,
                 'message'  => 'update' === $import_action
-                    ? __( '页面更新成功。', 'developer-starter' )
-                    : ( 'duplicate' === $import_action ? __( '页面副本创建成功。', 'developer-starter' ) : __( '页面创建成功。', 'developer-starter' ) ),
+                    ? __( '页面更新成功。', 'qiling' )
+                    : ( 'duplicate' === $import_action ? __( '页面副本创建成功。', 'qiling' ) : __( '页面创建成功。', 'qiling' ) ),
             );
         }
 
@@ -287,7 +287,7 @@ class Page_Package_Import_Execution_Service {
                 $page_key_map
             );
         } elseif ( ! empty( $prepared_package['site_options'] ) && is_array( $prepared_package['site_options'] ) ) {
-            $site_option_messages[] = __( '已按安全策略跳过站点设置应用（未勾选“应用站点设置”）。', 'developer-starter' );
+            $site_option_messages[] = __( '已按安全策略跳过站点设置应用（未勾选“应用站点设置”）。', 'qiling' );
         }
 
         $link_resolution_messages = $this->page_service->resolve_imported_page_links(

@@ -19,7 +19,7 @@ class Cases_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-portfolio';
-        $this->description = __( '案例展示', 'developer-starter' );
+        $this->description = __( '案例展示', 'qiling' );
     }
 
     public function get_id() {
@@ -27,50 +27,50 @@ class Cases_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '案例展示', 'developer-starter' );
+        return __( '案例展示', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'cases_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => __( '成功案例', 'developer-starter' ) ),
-            array( 'id' => 'cases_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
-            array( 'id' => 'cases_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
-            array( 'id' => 'cases_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'cases_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => __( '成功案例', 'qiling' ) ),
+            array( 'id' => 'cases_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
+            array( 'id' => 'cases_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
+            array( 'id' => 'cases_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ) ),
             array(
                 'id'          => 'cases_items',
                 'type'        => 'repeater',
-                'label'       => __( '案例列表 (手动版)', 'developer-starter' ),
-                'description' => __( '填写后优先展示自定义案例列表；留空时自动读取案例文章。', 'developer-starter' ),
+                'label'       => __( '案例列表 (手动版)', 'qiling' ),
+                'description' => __( '填写后优先展示自定义案例列表；留空时自动读取案例文章。', 'qiling' ),
                 'fields'      => array(
-                    array( 'id' => 'image', 'type' => 'image', 'label' => __( '案例图片', 'developer-starter' ) ),
-                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '案例标题', 'developer-starter' ) ),
-                    array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '案例描述', 'developer-starter' ) ),
-                    array( 'id' => 'link', 'type' => 'text', 'label' => __( '跳转链接', 'developer-starter' ), 'default' => '#' ),
+                    array( 'id' => 'image', 'type' => 'image', 'label' => __( '案例图片', 'qiling' ) ),
+                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '案例标题', 'qiling' ) ),
+                    array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '案例描述', 'qiling' ) ),
+                    array( 'id' => 'link', 'type' => 'text', 'label' => __( '跳转链接', 'qiling' ), 'default' => '#' ),
                 ),
             ),
-            array( 'id' => 'module_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'cases_padding_top', 'type' => 'text', 'label' => __( '上边距', 'developer-starter' ), 'default' => '80px' ),
-            array( 'id' => 'cases_padding_bottom', 'type' => 'text', 'label' => __( '下边距', 'developer-starter' ), 'default' => '80px' ),
-            array( 'id' => 'cases_count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '6' ),
-            array( 'id' => 'cases_columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array(
-                '2' => __( '2列', 'developer-starter' ),
-                '3' => __( '3列', 'developer-starter' ),
-                '4' => __( '4列', 'developer-starter' ),
+            array( 'id' => 'module_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'cases_padding_top', 'type' => 'text', 'label' => __( '上边距', 'qiling' ), 'default' => '80px' ),
+            array( 'id' => 'cases_padding_bottom', 'type' => 'text', 'label' => __( '下边距', 'qiling' ), 'default' => '80px' ),
+            array( 'id' => 'cases_count', 'type' => 'number', 'label' => __( '显示数量', 'qiling' ), 'default' => '6' ),
+            array( 'id' => 'cases_columns', 'type' => 'select', 'label' => __( '列数', 'qiling' ), 'options' => array(
+                '2' => __( '2列', 'qiling' ),
+                '3' => __( '3列', 'qiling' ),
+                '4' => __( '4列', 'qiling' ),
             ), 'default' => '3' ),
-            array( 'id' => 'cases_categories', 'type' => 'text', 'label' => __( '分类ID (逗号分隔)', 'developer-starter' ) ),
-            array( 'id' => 'cases_show_image', 'type' => 'select', 'label' => __( '显示图片', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
-            array( 'id' => 'cases_image_height', 'type' => 'text', 'label' => __( '图片高度', 'developer-starter' ), 'default' => '200px' ),
-            array( 'id' => 'cases_detail_text', 'type' => 'text', 'label' => __( '卡片查看详情文案', 'developer-starter' ), 'default' => __( '查看详情', 'developer-starter' ) ),
+            array( 'id' => 'cases_categories', 'type' => 'text', 'label' => __( '分类ID (逗号分隔)', 'qiling' ) ),
+            array( 'id' => 'cases_show_image', 'type' => 'select', 'label' => __( '显示图片', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
+            array( 'id' => 'cases_image_height', 'type' => 'text', 'label' => __( '图片高度', 'qiling' ), 'default' => '200px' ),
+            array( 'id' => 'cases_detail_text', 'type' => 'text', 'label' => __( '卡片查看详情文案', 'qiling' ), 'default' => __( '查看详情', 'qiling' ) ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，案例卡片将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，案例卡片将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -78,7 +78,7 @@ class Cases_Module extends Module_Base {
     public function render( $data = array() ) {
         $title = isset( $data['cases_title'] ) && $data['cases_title'] !== ''
             ? $data['cases_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '成功案例', 'Case Studies' ) : __( '成功案例', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '成功案例', 'Case Studies' ) : __( '成功案例', 'qiling' ) );
         $subtitle = isset( $data['cases_subtitle'] ) ? $data['cases_subtitle'] : '';
         $title_color = isset( $data['cases_title_color'] ) ? $data['cases_title_color'] : '';
         $subtitle_color = isset( $data['cases_subtitle_color'] ) ? $data['cases_subtitle_color'] : '';
@@ -91,7 +91,7 @@ class Cases_Module extends Module_Base {
         // 显示开关 - 默认显示图片，只有明确设置为0时才隐藏
         $show_image = ! isset( $data['cases_show_image'] ) || $data['cases_show_image'] !== '0';
         $image_height = isset( $data['cases_image_height'] ) && $data['cases_image_height'] !== '' ? $data['cases_image_height'] : '200px';
-        $detail_text = isset( $data['cases_detail_text'] ) && '' !== trim( (string) $data['cases_detail_text'] ) ? (string) $data['cases_detail_text'] : __( '查看详情', 'developer-starter' );
+        $detail_text = isset( $data['cases_detail_text'] ) && '' !== trim( (string) $data['cases_detail_text'] ) ? (string) $data['cases_detail_text'] : __( '查看详情', 'qiling' );
         $padding_top = isset( $data['cases_padding_top'] ) && '' !== trim( (string) $data['cases_padding_top'] ) ? (string) $data['cases_padding_top'] : '80px';
         $padding_bottom = isset( $data['cases_padding_bottom'] ) && '' !== trim( (string) $data['cases_padding_bottom'] ) ? (string) $data['cases_padding_bottom'] : '80px';
         $bg_color = isset( $data['module_bg_color'] ) ? trim( (string) $data['module_bg_color'] ) : '';
@@ -270,7 +270,7 @@ class Cases_Module extends Module_Base {
                         <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                 <?php else : ?>
-                    <p class="text-center"><?php esc_html_e( '暂无案例', 'developer-starter' ); ?></p>
+                    <p class="text-center"><?php esc_html_e( '暂无案例', 'qiling' ); ?></p>
                 <?php endif; ?>
             </div>
         </section>

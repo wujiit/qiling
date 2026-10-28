@@ -78,8 +78,8 @@ if ( ! empty( $args['is_resource_detail_skin'] ) ) {
                 <div class="single-post-header__content">
                     <div class="single-post-header__title-block">
                         <?php if ( $show_breadcrumb && ! empty( $breadcrumb_terms ) ) : ?>
-                            <nav class="single-post-breadcrumb" aria-label="<?php esc_attr_e( '文章面包屑', 'developer-starter' ); ?>">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '首页', 'developer-starter' ); ?></a>
+                            <nav class="single-post-breadcrumb" aria-label="<?php esc_attr_e( '文章面包屑', 'qiling' ); ?>">
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '首页', 'qiling' ); ?></a>
                                 <?php foreach ( $breadcrumb_terms as $breadcrumb_term ) : ?>
                                     <span aria-hidden="true">/</span>
                                     <a href="<?php echo esc_url( get_category_link( $breadcrumb_term->term_id ) ); ?>"><?php echo esc_html( $breadcrumb_term->name ); ?></a>
@@ -121,8 +121,8 @@ if ( ! empty( $args['is_resource_detail_skin'] ) ) {
         <div class="container single-post-header__container">
             <div class="single-post-header__intro">
                 <?php if ( $show_breadcrumb && ! empty( $breadcrumb_terms ) ) : ?>
-                    <nav class="single-post-breadcrumb" aria-label="<?php esc_attr_e( '文章面包屑', 'developer-starter' ); ?>">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '首页', 'developer-starter' ); ?></a>
+                    <nav class="single-post-breadcrumb" aria-label="<?php esc_attr_e( '文章面包屑', 'qiling' ); ?>">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '首页', 'qiling' ); ?></a>
                         <?php foreach ( $breadcrumb_terms as $breadcrumb_term ) : ?>
                             <span aria-hidden="true">/</span>
                             <a href="<?php echo esc_url( get_category_link( $breadcrumb_term->term_id ) ); ?>"><?php echo esc_html( $breadcrumb_term->name ); ?></a>

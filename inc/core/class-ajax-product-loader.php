@@ -30,7 +30,7 @@ class AJAX_Product_Loader {
         // 公共接口：强制校验 Nonce 以抵御恶意流量。
         if ( ! check_ajax_referer( 'ds_product_nonce', 'nonce', false ) ) {
             wp_send_json_error(
-                array( 'message' => __( '安全验证失败，请刷新后重试', 'developer-starter' ) ),
+                array( 'message' => __( '安全验证失败，请刷新后重试', 'qiling' ) ),
                 403
             );
         }
@@ -43,7 +43,7 @@ class AJAX_Product_Loader {
 
             if ( function_exists( 'developer_starter_is_rate_limited' ) && developer_starter_is_rate_limited( 'public_product_modal', $max, $window ) ) {
                 wp_send_json_error(
-                    array( 'message' => __( '请求过于频繁，请稍后再试', 'developer-starter' ) ),
+                    array( 'message' => __( '请求过于频繁，请稍后再试', 'qiling' ) ),
                     429
                 );
             }
@@ -54,17 +54,17 @@ class AJAX_Product_Loader {
         $module_key = $this->get_posted_text( 'module_key' );
 
         if ( ! $post_id ) {
-            wp_send_json_error( array( 'message' => __( '无效的产品 ID', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '无效的产品 ID', 'qiling' ) ) );
         }
 
         $post = get_post( $post_id );
 
         if ( ! $this->is_allowed_product_post( $post ) ) {
-            wp_send_json_error( array( 'message' => __( '未找到该产品', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未找到该产品', 'qiling' ) ) );
         }
 
         if ( ! $this->is_allowed_product_for_module_source( $post_id, $source_id, $module_key ) ) {
-            wp_send_json_error( array( 'message' => __( '该产品未在当前模块中配置', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '该产品未在当前模块中配置', 'qiling' ) ), 403 );
         }
 
         // 执行标准短代码与媒体嵌入解析以处理正文内容。

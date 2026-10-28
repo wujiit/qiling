@@ -18,7 +18,7 @@ class Double_Column_Carousel_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-slides';
-        $this->description = __( '左侧轮播图+右侧广告图', 'developer-starter' );
+        $this->description = __( '左侧轮播图+右侧广告图', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Double_Column_Carousel_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '双栏轮播', 'developer-starter' );
+        return __( '双栏轮播', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,21 +34,21 @@ class Double_Column_Carousel_Module extends Module_Base {
             array(
                 'id'      => 'dcc_layout',
                 'type'    => 'select',
-                'label'   => __( '右侧布局', 'developer-starter' ),
+                'label'   => __( '右侧布局', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2张图片（上下排列）', 'developer-starter' ),
-                    '3' => __( '3张图片（上1下2）', 'developer-starter' ),
+                    '2' => __( '2张图片（上下排列）', 'qiling' ),
+                    '3' => __( '3张图片（上1下2）', 'qiling' ),
                 ),
                 'default' => '2',
             ),
             array(
                 'id'      => 'dcc_height',
                 'type'    => 'select',
-                'label'   => __( '模块高度', 'developer-starter' ),
+                'label'   => __( '模块高度', 'qiling' ),
                 'options' => array(
                     '400' => '400px',
                     '450' => '450px',
-                    '500' => __( '500px（推荐）', 'developer-starter' ),
+                    '500' => __( '500px（推荐）', 'qiling' ),
                     '550' => '550px',
                     '600' => '600px',
                 ),
@@ -57,11 +57,11 @@ class Double_Column_Carousel_Module extends Module_Base {
             array(
                 'id'      => 'dcc_gap',
                 'type'    => 'select',
-                'label'   => __( '间距', 'developer-starter' ),
+                'label'   => __( '间距', 'qiling' ),
                 'options' => array(
                     '8'  => '8px',
                     '12' => '12px',
-                    '16' => __( '16px（推荐）', 'developer-starter' ),
+                    '16' => __( '16px（推荐）', 'qiling' ),
                     '20' => '20px',
                 ),
                 'default' => '16',
@@ -69,87 +69,87 @@ class Double_Column_Carousel_Module extends Module_Base {
             array(
                 'id'      => 'dcc_slide_source',
                 'type'    => 'select',
-                'label'   => __( '左侧内容来源', 'developer-starter' ),
+                'label'   => __( '左侧内容来源', 'qiling' ),
                 'options' => array(
-                    'manual' => __( '自定义图片', 'developer-starter' ),
-                    'latest' => __( '最新文章', 'developer-starter' ),
-                    'random' => __( '随机文章', 'developer-starter' ),
-                    'ids'    => __( '指定文章ID', 'developer-starter' ),
+                    'manual' => __( '自定义图片', 'qiling' ),
+                    'latest' => __( '最新文章', 'qiling' ),
+                    'random' => __( '随机文章', 'qiling' ),
+                    'ids'    => __( '指定文章ID', 'qiling' ),
                 ),
                 'default' => 'manual',
             ),
             array(
                 'id'          => 'dcc_post_count',
                 'type'        => 'number',
-                'label'       => __( '读取文章数量', 'developer-starter' ),
+                'label'       => __( '读取文章数量', 'qiling' ),
                 'default'     => '5',
-                'description' => __( '用于最新文章和随机文章，建议填写 2-10。', 'developer-starter' ),
+                'description' => __( '用于最新文章和随机文章，建议填写 2-10。', 'qiling' ),
             ),
             array(
                 'id'          => 'dcc_exclude_categories',
                 'type'        => 'text',
-                'label'       => __( '排除分类 ID', 'developer-starter' ),
-                'description' => __( '仅用于随机文章，多个分类 ID 用英文逗号分隔，例如：3,8,15。', 'developer-starter' ),
+                'label'       => __( '排除分类 ID', 'qiling' ),
+                'description' => __( '仅用于随机文章，多个分类 ID 用英文逗号分隔，例如：3,8,15。', 'qiling' ),
                 'dependency'  => array( 'dcc_slide_source', '==', 'random' ),
             ),
             array(
                 'id'          => 'dcc_post_ids',
                 'type'        => 'text',
-                'label'       => __( '文章ID', 'developer-starter' ),
-                'description' => __( '仅用于指定文章ID，多个ID用英文逗号分隔，并按填写顺序展示。', 'developer-starter' ),
+                'label'       => __( '文章ID', 'qiling' ),
+                'description' => __( '仅用于指定文章ID，多个ID用英文逗号分隔，并按填写顺序展示。', 'qiling' ),
             ),
             array(
                 'id'         => 'dcc_slides',
                 'type'       => 'repeater',
-                'label'      => __( '自定义左侧轮播图', 'developer-starter' ),
-                'add_button' => __( '添加轮播图', 'developer-starter' ),
+                'label'      => __( '自定义左侧轮播图', 'qiling' ),
+                'add_button' => __( '添加轮播图', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '图片', 'developer-starter' ),
+                        'label' => __( '图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'url',
                         'type'  => 'text',
-                        'label' => __( '链接地址', 'developer-starter' ),
+                        'label' => __( '链接地址', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '标题（可选）', 'developer-starter' ),
+                        'label' => __( '标题（可选）', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'    => 'dcc_right_1_image',
                 'type'  => 'image',
-                'label' => __( '右侧图1（上方）', 'developer-starter' ),
+                'label' => __( '右侧图1（上方）', 'qiling' ),
             ),
             array(
                 'id'    => 'dcc_right_1_url',
                 'type'  => 'text',
-                'label' => __( '右侧图1链接', 'developer-starter' ),
+                'label' => __( '右侧图1链接', 'qiling' ),
             ),
             array(
                 'id'    => 'dcc_right_2_image',
                 'type'  => 'image',
-                'label' => __( '右侧图2（下方/左下）', 'developer-starter' ),
+                'label' => __( '右侧图2（下方/左下）', 'qiling' ),
             ),
             array(
                 'id'    => 'dcc_right_2_url',
                 'type'  => 'text',
-                'label' => __( '右侧图2链接', 'developer-starter' ),
+                'label' => __( '右侧图2链接', 'qiling' ),
             ),
             array(
                 'id'    => 'dcc_right_3_image',
                 'type'  => 'image',
-                'label' => __( '右侧图3（右下，仅3张布局）', 'developer-starter' ),
+                'label' => __( '右侧图3（右下，仅3张布局）', 'qiling' ),
             ),
             array(
                 'id'    => 'dcc_right_3_url',
                 'type'  => 'text',
-                'label' => __( '右侧图3链接', 'developer-starter' ),
+                'label' => __( '右侧图3链接', 'qiling' ),
             ),
         );
     }
@@ -230,7 +230,7 @@ class Double_Column_Carousel_Module extends Module_Base {
                             <?php endif; ?>
                         <?php else : ?>
                             <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); display: flex; align-items: center; justify-content: center; color: var(--qiling-color-rgba-255-255-255-07);">
-                                <?php esc_html_e( '请添加轮播图片', 'developer-starter' ); ?>
+                                <?php esc_html_e( '请添加轮播图片', 'qiling' ); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -248,7 +248,7 @@ class Double_Column_Carousel_Module extends Module_Base {
                                     </a>
                                 <?php endif; ?>
                             <?php else : ?>
-                                <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位1', 'developer-starter' ); ?></div>
+                                <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位1', 'qiling' ); ?></div>
                             <?php endif; ?>
                         </div>
                         
@@ -265,7 +265,7 @@ class Double_Column_Carousel_Module extends Module_Base {
                                         </a>
                                     <?php endif; ?>
                                 <?php else : ?>
-                                    <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位2', 'developer-starter' ); ?></div>
+                                    <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位2', 'qiling' ); ?></div>
                                 <?php endif; ?>
                             </div>
                         <?php else : ?>
@@ -281,7 +281,7 @@ class Double_Column_Carousel_Module extends Module_Base {
                                             </a>
                                         <?php endif; ?>
                                     <?php else : ?>
-                                        <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位2', 'developer-starter' ); ?></div>
+                                        <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位2', 'qiling' ); ?></div>
                                     <?php endif; ?>
                                 </div>
                                 <div class="dcc-right-bottom-right" style="flex: 1; border-radius: 12px; overflow: hidden;">
@@ -294,7 +294,7 @@ class Double_Column_Carousel_Module extends Module_Base {
                                             </a>
                                         <?php endif; ?>
                                     <?php else : ?>
-                                        <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位3', 'developer-starter' ); ?></div>
+                                        <div style="width: 100%; height: 100%; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center; color: var(--color-gray-400);"><?php esc_html_e( '广告位3', 'qiling' ); ?></div>
                                     <?php endif; ?>
                                 </div>
                             </div>

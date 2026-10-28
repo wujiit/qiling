@@ -110,12 +110,12 @@ function developer_starter_debug_output() {
     $load_time = timer_stop( 0, 4 );
     $query_count = get_num_queries();
     $memory_usage = size_format( memory_get_peak_usage( true ) );
-    $object_cache = wp_using_ext_object_cache() ? '✅ 已启用' : '❌ 未启用';
+    $object_cache = wp_using_ext_object_cache() ? '[已启用]' : '[未启用]';
     $cache_type = wp_using_ext_object_cache() ? '（Redis/Memcached）' : '（使用数据库）';
-    $page_cache = defined( 'WP_CACHE' ) && WP_CACHE ? '✅ 已启用' : '❌ 未启用';
+    $page_cache = defined( 'WP_CACHE' ) && WP_CACHE ? '[已启用]' : '[未启用]';
     $php_version = phpversion();
     $wp_version = get_bloginfo( 'version' );
-    $theme_version = DEVELOPER_STARTER_VERSION;
+    $theme_version = QILING_VERSION;
 
     ?>
     <div id="developer-debug-bar" style="
@@ -134,7 +134,7 @@ function developer_starter_debug_output() {
     ">
         <div style="display: flex; align-items: center; justify-content: space-between; padding: var(--qiling-space-8) var(--qiling-space-20);">
             <div style="display: flex; align-items: center; gap: var(--qiling-space-25); flex-wrap: wrap;">
-                <span style="color: var(--color-warning); font-weight: 600;">🛠️ 调试模式</span>
+                <span style="color: var(--color-warning); font-weight: 600;">调试模式</span>
 
                 <span title="SQL查询次数" style="cursor: pointer;" onclick="document.getElementById('debug-sql-details').style.display = document.getElementById('debug-sql-details').style.display === 'none' ? 'block' : 'none'">
                     <span style="color: var(--color-neutral-500);">SQL</span>
@@ -228,7 +228,7 @@ function developer_starter_debug_output() {
                 </table>
             <?php else : ?>
                 <div style="padding: var(--qiling-space-20); text-align: center; color: var(--color-neutral-400);">
-                    <p style="font-size: calc(var(--qiling-font-size-base) * 0.875); margin-bottom: var(--qiling-space-10);">⚠️ 未启用 SQL 记录</p>
+                    <p style="font-size: calc(var(--qiling-font-size-base) * 0.875); margin-bottom: var(--qiling-space-10); font-weight: 600;">[提示] 未启用 SQL 记录</p>
                     <p>请在 <code style="background: rgba(var(--qiling-rgb-255-255-255), 0.1); padding: var(--qiling-space-2) var(--qiling-space-4); border-radius: var(--qiling-space-3);">wp-config.php</code> 文件中添加以下代码以查看详细查询：</p>
                     <pre style="background: rgba(var(--qiling-rgb-0-0-0), 0.3); padding: var(--qiling-space-10); display: inline-block; border-radius: var(--qiling-space-4); color: var(--color-warning);">define( 'SAVEQUERIES', true );</pre>
                     <p style="margin-top: var(--qiling-space-10); color: var(--color-error); font-size: calc(var(--qiling-font-size-base) * 0.6875);">(注意：启用此选项会影响网站性能，调试完成后请务必关闭)</p>
@@ -257,7 +257,7 @@ function developer_starter_performance_monitor_output() {
     $load_time = (float) timer_stop( 0, 4 );
     $query_count = (int) get_num_queries();
     $memory_usage = size_format( memory_get_peak_usage( true ) );
-    $object_cache = wp_using_ext_object_cache() ? __( '对象缓存: 开', 'developer-starter' ) : __( '对象缓存: 关', 'developer-starter' );
+    $object_cache = wp_using_ext_object_cache() ? __( '对象缓存: 开', 'qiling' ) : __( '对象缓存: 关', 'qiling' );
     $status_color = 'var(--color-success)';
     if ( $load_time > 1.2 || $query_count > 120 ) {
         $status_color = 'var(--color-error)';
@@ -266,9 +266,9 @@ function developer_starter_performance_monitor_output() {
     }
     ?>
     <div style="position:fixed;right:var(--qiling-space-14);bottom:var(--qiling-space-14);z-index:99998;background:rgba(var(--qiling-rgb-15-23-42),.92);color:var(--color-neutral-200);padding:var(--qiling-space-8) var(--qiling-space-10);border-radius:var(--qiling-space-8);font-size:var(--qiling-text-rem-0p75);line-height:1.5;box-shadow:0 6px 20px rgba(var(--qiling-rgb-0-0-0),.3);border-left:3px solid <?php echo esc_attr( $status_color ); ?>;">
-        <div><?php echo esc_html( sprintf( __( '加载: %ss', 'developer-starter' ), number_format( $load_time, 3 ) ) ); ?></div>
-        <div><?php echo esc_html( sprintf( __( 'SQL: %d', 'developer-starter' ), $query_count ) ); ?></div>
-        <div><?php echo esc_html( sprintf( __( '内存: %s', 'developer-starter' ), $memory_usage ) ); ?></div>
+        <div><?php echo esc_html( sprintf( __( '加载: %ss', 'qiling' ), number_format( $load_time, 3 ) ) ); ?></div>
+        <div><?php echo esc_html( sprintf( __( 'SQL: %d', 'qiling' ), $query_count ) ); ?></div>
+        <div><?php echo esc_html( sprintf( __( '内存: %s', 'qiling' ), $memory_usage ) ); ?></div>
         <div><?php echo esc_html( $object_cache ); ?></div>
     </div>
     <?php

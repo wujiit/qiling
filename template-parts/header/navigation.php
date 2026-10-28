@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $args            = is_array( $args ) ? $args : array();
 $primary_menu_id = isset( $args['primary_menu_id'] ) ? (int) $args['primary_menu_id'] : 0;
 ?>
-<nav id="site-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( '主导航', 'developer-starter' ); ?>">
+<nav id="site-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( '主导航', 'qiling' ); ?>">
     <?php
     if ( $primary_menu_id ) {
         $menu_args = array(
@@ -36,7 +36,7 @@ $primary_menu_id = isset( $args['primary_menu_id'] ) ? (int) $args['primary_menu
 
         wp_nav_menu( $menu_args );
     } else {
-        $fallback_items = '<li class="menu-item menu-item-home"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( '首页', 'developer-starter' ) . '</a></li>';
+        $fallback_items = '<li class="menu-item menu-item-home"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( '首页', 'qiling' ) . '</a></li>';
         $fallback_pages = wp_list_pages(
             array(
                 'depth'    => 1,

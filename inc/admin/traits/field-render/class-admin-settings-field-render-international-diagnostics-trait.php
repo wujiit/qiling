@@ -19,17 +19,17 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $snapshot = $this->build_international_delivery_snapshot( is_array( $options ) ? $options : array() );
         $textarea_id = 'ds-international-delivery-snapshot';
 
-        echo '<tr id="setting-row-international_delivery_snapshot" data-setting-id="international_delivery_snapshot"><th scope="row">' . esc_html__( '配置快照', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-international_delivery_snapshot" data-setting-id="international_delivery_snapshot"><th scope="row">' . esc_html__( '配置快照', 'qiling' ) . '</th><td>';
         echo '<div class="ds-i18n-snapshot-panel">';
         echo '<div class="ds-i18n-snapshot-panel__head">';
         echo '<div>';
-        echo '<strong>' . esc_html__( '国际化交付摘要', 'developer-starter' ) . '</strong>';
-        echo '<p>' . esc_html__( '摘要只包含配置状态和复核建议，不包含第三方代码正文、密钥或验证码配置。', 'developer-starter' ) . '</p>';
+        echo '<strong>' . esc_html__( '国际化交付摘要', 'qiling' ) . '</strong>';
+        echo '<p>' . esc_html__( '摘要只包含配置状态和复核建议，不包含第三方代码正文、密钥或验证码配置。', 'qiling' ) . '</p>';
         echo '</div>';
-        echo '<button type="button" class="button button-secondary ds-i18n-snapshot-copy" data-ds-copy-target="' . esc_attr( $textarea_id ) . '">' . esc_html__( '复制摘要', 'developer-starter' ) . '</button>';
+        echo '<button type="button" class="button button-secondary ds-i18n-snapshot-copy" data-ds-copy-target="' . esc_attr( $textarea_id ) . '">' . esc_html__( '复制摘要', 'qiling' ) . '</button>';
         echo '</div>';
         echo '<textarea id="' . esc_attr( $textarea_id ) . '" class="large-text code ds-i18n-snapshot-textarea" rows="18" readonly="readonly">' . esc_textarea( $snapshot ) . '</textarea>';
-        echo '<p class="description">' . esc_html__( '此处提供后台只读快照，便于核对配置和排查问题；不会向前台输出任何新内容。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . esc_html__( '此处提供后台只读快照，便于核对配置和排查问题；不会向前台输出任何新内容。', 'qiling' ) . '</p>';
         echo '</div>';
         echo '</td></tr>';
     }
@@ -306,7 +306,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
                 target.select();
                 var done = function(){
                     var original = $button.text();
-                    $button.text('<?php echo esc_js( __( '已复制', 'developer-starter' ) ); ?>');
+                    $button.text('<?php echo esc_js( __( '已复制', 'qiling' ) ); ?>');
                     window.setTimeout(function(){
                         $button.text(original);
                     }, 1600);
@@ -347,24 +347,24 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $ok_count = isset( $summary['ok_count'] ) ? absint( $summary['ok_count'] ) : 0;
         $info_count = isset( $summary['info_count'] ) ? absint( $summary['info_count'] ) : 0;
 
-        echo '<tr id="setting-row-international_launch_readiness" data-setting-id="international_launch_readiness"><th scope="row">' . esc_html__( '上线检查清单', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-international_launch_readiness" data-setting-id="international_launch_readiness"><th scope="row">' . esc_html__( '上线检查清单', 'qiling' ) . '</th><td>';
         echo '<div class="ds-i18n-launch-panel">';
         echo '<div class="ds-i18n-launch-panel__head">';
         echo '<div>';
-        echo '<strong>' . esc_html__( '国际化基础上线检查', 'developer-starter' ) . '</strong>';
-        echo '<p>' . esc_html__( '这个清单只读取当前配置，不会改动前台、SEO、验证码、备案或既有中文区功能。', 'developer-starter' ) . '</p>';
+        echo '<strong>' . esc_html__( '国际化基础上线检查', 'qiling' ) . '</strong>';
+        echo '<p>' . esc_html__( '这个清单只读取当前配置，不会改动前台、SEO、验证码、备案或既有中文区功能。', 'qiling' ) . '</p>';
         echo '</div>';
         echo '<span class="ds-i18n-launch-score ' . esc_attr( $warning_count > 0 ? 'is-warning' : 'is-success' ) . '">';
-        echo esc_html( $warning_count > 0 ? sprintf( __( '%d 项需要处理', 'developer-starter' ), $warning_count ) : __( '基础可上线', 'developer-starter' ) );
+        echo esc_html( $warning_count > 0 ? sprintf( __( '%d 项需要处理', 'qiling' ), $warning_count ) : __( '基础可上线', 'qiling' ) );
         echo '</span>';
         echo '</div>';
 
         echo '<div class="ds-i18n-launch-summary">';
         $summary_cards = array(
-            array( 'label' => __( '新代码输出', 'developer-starter' ), 'value' => isset( $summary['code_output'] ) ? (string) $summary['code_output'] : __( '未输出', 'developer-starter' ) ),
-            array( 'label' => __( 'Cookie 控制', 'developer-starter' ), 'value' => isset( $summary['cookie_state'] ) ? (string) $summary['cookie_state'] : __( '关闭', 'developer-starter' ) ),
-            array( 'label' => __( '语言模式', 'developer-starter' ), 'value' => isset( $summary['mode_label'] ) ? (string) $summary['mode_label'] : __( '关闭', 'developer-starter' ) ),
-            array( 'label' => __( '检查项', 'developer-starter' ), 'value' => sprintf( __( '%1$d 正常 / %2$d 提示 / %3$d 处理', 'developer-starter' ), $ok_count, $info_count, $warning_count ) ),
+            array( 'label' => __( '新代码输出', 'qiling' ), 'value' => isset( $summary['code_output'] ) ? (string) $summary['code_output'] : __( '未输出', 'qiling' ) ),
+            array( 'label' => __( 'Cookie 控制', 'qiling' ), 'value' => isset( $summary['cookie_state'] ) ? (string) $summary['cookie_state'] : __( '关闭', 'qiling' ) ),
+            array( 'label' => __( '语言模式', 'qiling' ), 'value' => isset( $summary['mode_label'] ) ? (string) $summary['mode_label'] : __( '关闭', 'qiling' ) ),
+            array( 'label' => __( '检查项', 'qiling' ), 'value' => sprintf( __( '%1$d 正常 / %2$d 提示 / %3$d 处理', 'qiling' ), $ok_count, $info_count, $warning_count ) ),
         );
         foreach ( $summary_cards as $card ) {
             echo '<div class="ds-i18n-launch-summary__card">';
@@ -401,7 +401,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
 
         if ( ! empty( $groups ) ) {
             echo '<div class="ds-i18n-launch-groups">';
-            echo '<strong>' . esc_html__( '第三方代码组状态', 'developer-starter' ) . '</strong>';
+            echo '<strong>' . esc_html__( '第三方代码组状态', 'qiling' ) . '</strong>';
             echo '<div class="ds-i18n-launch-group-grid">';
             foreach ( $groups as $group ) {
                 if ( ! is_array( $group ) ) {
@@ -414,13 +414,13 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
                 $label = isset( $group['label'] ) ? (string) $group['label'] : '';
                 $position = isset( $group['position'] ) ? (string) $group['position'] : 'footer';
                 $state = isset( $group['state'] ) ? (string) $group['state'] : '';
-                $consent = ! empty( $group['requires_consent'] ) ? __( '需要同意', 'developer-starter' ) : __( '不需要同意', 'developer-starter' );
+                $consent = ! empty( $group['requires_consent'] ) ? __( '需要同意', 'qiling' ) : __( '不需要同意', 'qiling' );
                 $category_label = isset( $group['category_label'] ) ? (string) $group['category_label'] : '';
 
                 echo '<div class="ds-i18n-launch-group is-' . esc_attr( $status ) . '">';
                 echo '<span>' . esc_html( $label ) . '</span>';
                 echo '<strong>' . esc_html( $state ) . '</strong>';
-                echo '<em>' . esc_html( sprintf( __( '%1$s / %2$s / %3$s', 'developer-starter' ), 'head' === $position ? 'wp_head' : 'wp_footer', '' !== $category_label ? $category_label : __( '未分类', 'developer-starter' ), $consent ) ) . '</em>';
+                echo '<em>' . esc_html( sprintf( __( '%1$s / %2$s / %3$s', 'qiling' ), 'head' === $position ? 'wp_head' : 'wp_footer', '' !== $category_label ? $category_label : __( '未分类', 'qiling' ), $consent ) ) . '</em>';
                 echo '</div>';
             }
             echo '</div>';
@@ -429,19 +429,19 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
 
         echo '<div class="ds-i18n-cookie-diagnostics">';
         $this->render_international_cookie_diagnostic_list(
-            __( '会被拦截的代码', 'developer-starter' ),
+            __( '会被拦截的代码', 'qiling' ),
             $blocked_groups,
-            __( '当前没有会被 Cookie 分类拦截的第三方代码。', 'developer-starter' )
+            __( '当前没有会被 Cookie 分类拦截的第三方代码。', 'qiling' )
         );
         $this->render_international_cookie_diagnostic_list(
-            __( '无分类代码', 'developer-starter' ),
+            __( '无分类代码', 'qiling' ),
             $unclassified_groups,
-            __( '当前没有未显式分类或分类异常的第三方代码。', 'developer-starter' )
+            __( '当前没有未显式分类或分类异常的第三方代码。', 'qiling' )
         );
         $this->render_international_cookie_diagnostic_list(
-            __( '高风险代码', 'developer-starter' ),
+            __( '高风险代码', 'qiling' ),
             $high_risk_groups,
-            __( '当前没有检测到高风险第三方代码特征。', 'developer-starter' )
+            __( '当前没有检测到高风险第三方代码特征。', 'qiling' )
         );
         echo '</div>';
 
@@ -508,9 +508,9 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         }
 
         $mode_labels = array(
-            ''                      => __( '关闭', 'developer-starter' ),
-            'translate_js'          => __( 'translate.js 机翻模式', 'developer-starter' ),
-            'multilingual_content'  => __( '多语言内容模式', 'developer-starter' ),
+            ''                      => __( '关闭', 'qiling' ),
+            'translate_js'          => __( 'translate.js 机翻模式', 'qiling' ),
+            'multilingual_content'  => __( '多语言内容模式', 'qiling' ),
         );
         $mode_label = isset( $mode_labels[ $mode ] ) ? $mode_labels[ $mode ] : $mode_labels[''];
 
@@ -560,7 +560,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
                 $blocked_groups[] = array(
                     'label'  => $label,
                     'detail' => sprintf(
-                        __( '%1$s，分类：%2$s，访客授权前会以延迟模板保存，不直接执行。', 'developer-starter' ),
+                        __( '%1$s，分类：%2$s，访客授权前会以延迟模板保存，不直接执行。', 'qiling' ),
                         'head' === $position ? 'wp_head' : 'wp_footer',
                         $this->get_international_cookie_category_label( $category )
                     ),
@@ -570,7 +570,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
             if ( $has_content && ! empty( $category_meta['unclassified'] ) ) {
                 $unclassified_groups[] = array(
                     'label'  => $label,
-                    'detail' => isset( $category_meta['detail'] ) ? (string) $category_meta['detail'] : __( '未显式选择 Cookie 分类，当前使用默认分类。', 'developer-starter' ),
+                    'detail' => isset( $category_meta['detail'] ) ? (string) $category_meta['detail'] : __( '未显式选择 Cookie 分类，当前使用默认分类。', 'qiling' ),
                 );
             }
 
@@ -578,30 +578,30 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
             if ( $has_content && ! empty( $risk['high_risk'] ) ) {
                 $high_risk_groups[] = array(
                     'label'  => $label,
-                    'detail' => isset( $risk['detail'] ) ? (string) $risk['detail'] : __( '检测到需要复核的第三方代码特征。', 'developer-starter' ),
+                    'detail' => isset( $risk['detail'] ) ? (string) $risk['detail'] : __( '检测到需要复核的第三方代码特征。', 'qiling' ),
                 );
             }
 
             if ( $will_output ) {
                 if ( $requires_consent && $cookie_enabled ) {
                     $status = 'pass';
-                    $state = __( '未授权前会被拦截', 'developer-starter' );
+                    $state = __( '未授权前会被拦截', 'qiling' );
                 } elseif ( $requires_consent && ! $cookie_enabled ) {
                     $status = 'warning';
-                    $state = __( '未拦截，需开启 Cookie', 'developer-starter' );
+                    $state = __( '未拦截，需开启 Cookie', 'qiling' );
                 } else {
                     $status = 'pass';
-                    $state = __( '直接输出', 'developer-starter' );
+                    $state = __( '直接输出', 'qiling' );
                 }
             } elseif ( $has_content ) {
                 $status = ! empty( $category_meta['unclassified'] ) ? 'warning' : 'info';
-                $state = $third_party_enabled && ! $group_enabled ? __( '已配置，未启用', 'developer-starter' ) : __( '已配置，总开关关闭', 'developer-starter' );
+                $state = $third_party_enabled && ! $group_enabled ? __( '已配置，未启用', 'qiling' ) : __( '已配置，总开关关闭', 'qiling' );
             } elseif ( $group_enabled ) {
                 $status = 'info';
-                $state = __( '已启用，缺少代码', 'developer-starter' );
+                $state = __( '已启用，缺少代码', 'qiling' );
             } else {
                 $status = 'info';
-                $state = __( '未配置', 'developer-starter' );
+                $state = __( '未配置', 'qiling' );
             }
             if ( $has_content && ! empty( $risk['high_risk'] ) ) {
                 $status = 'warning';
@@ -625,15 +625,15 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $items = array();
         $items[] = array(
             'status' => 'pass',
-            'title'  => __( '现有功能隔离', 'developer-starter' ),
-            'detail' => __( '国际化检查只读取和汇总相关配置，不会改动百度统计、阿里云验证码、备案、隐私提示、语言切换或现有 SEO 输出。', 'developer-starter' ),
-            'badge'  => __( '已隔离', 'developer-starter' ),
+            'title'  => __( '现有功能隔离', 'qiling' ),
+            'detail' => __( '国际化检查只读取和汇总相关配置，不会改动百度统计、阿里云验证码、备案、隐私提示、语言切换或现有 SEO 输出。', 'qiling' ),
+            'badge'  => __( '已隔离', 'qiling' ),
         );
         $items[] = array(
             'status' => $cookie_enabled ? 'pass' : 'info',
-            'title'  => __( '地区预设与同意版本', 'developer-starter' ),
+            'title'  => __( '地区预设与同意版本', 'qiling' ),
             'detail' => sprintf(
-                __( '当前地区预设为 %1$s，同意版本号为 %2$s。隐私政策更新后递增版本号，旧授权会重新弹出确认。', 'developer-starter' ),
+                __( '当前地区预设为 %1$s，同意版本号为 %2$s。隐私政策更新后递增版本号，旧授权会重新弹出确认。', 'qiling' ),
                 $this->get_international_cookie_region_label( $cookie_region ),
                 $cookie_version
             ),
@@ -643,90 +643,90 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         if ( ! $third_party_enabled ) {
             $items[] = array(
                 'status' => 'pass',
-                'title'  => __( '第三方代码输出', 'developer-starter' ),
+                'title'  => __( '第三方代码输出', 'qiling' ),
                 'detail' => $configured_groups > 0
-                    ? __( '已有代码内容保存，但总开关关闭，前台不会输出新增国际化代码。', 'developer-starter' )
-                    : __( '总开关关闭且未配置代码组，前台不会输出新增国际化代码。', 'developer-starter' ),
-                'badge'  => __( '未输出', 'developer-starter' ),
+                    ? __( '已有代码内容保存，但总开关关闭，前台不会输出新增国际化代码。', 'qiling' )
+                    : __( '总开关关闭且未配置代码组，前台不会输出新增国际化代码。', 'qiling' ),
+                'badge'  => __( '未输出', 'qiling' ),
             );
         } elseif ( $active_output_groups > 0 ) {
             $items[] = array(
                 'status' => 'pass',
-                'title'  => __( '第三方代码输出', 'developer-starter' ),
-                'detail' => sprintf( __( '总开关已开启，当前有 %d 个代码组会按配置输出。', 'developer-starter' ), $active_output_groups ),
-                'badge'  => sprintf( __( '%d 组', 'developer-starter' ), $active_output_groups ),
+                'title'  => __( '第三方代码输出', 'qiling' ),
+                'detail' => sprintf( __( '总开关已开启，当前有 %d 个代码组会按配置输出。', 'qiling' ), $active_output_groups ),
+                'badge'  => sprintf( __( '%d 组', 'qiling' ), $active_output_groups ),
             );
         } else {
             $items[] = array(
                 'status' => 'info',
-                'title'  => __( '第三方代码输出', 'developer-starter' ),
-                'detail' => __( '总开关已开启，但没有同时满足“启用 + 有代码内容”的代码组。', 'developer-starter' ),
-                'badge'  => __( '待配置', 'developer-starter' ),
+                'title'  => __( '第三方代码输出', 'qiling' ),
+                'detail' => __( '总开关已开启，但没有同时满足“启用 + 有代码内容”的代码组。', 'qiling' ),
+                'badge'  => __( '待配置', 'qiling' ),
             );
         }
 
         if ( $consent_required_active > 0 && ! $cookie_enabled ) {
             $items[] = array(
                 'status' => 'warning',
-                'title'  => __( 'Cookie 同意保护', 'developer-starter' ),
-                'detail' => __( '已有会输出的代码组归入非必要 Cookie 分类，但 Cookie 提示关闭；当前不会拦截这些代码，建议开启 Cookie 提示或改为必要分类。', 'developer-starter' ),
-                'badge'  => __( '需处理', 'developer-starter' ),
+                'title'  => __( 'Cookie 同意保护', 'qiling' ),
+                'detail' => __( '已有会输出的代码组归入非必要 Cookie 分类，但 Cookie 提示关闭；当前不会拦截这些代码，建议开启 Cookie 提示或改为必要分类。', 'qiling' ),
+                'badge'  => __( '需处理', 'qiling' ),
             );
         } elseif ( $consent_required_active > 0 ) {
             $items[] = array(
                 'status' => 'pass',
-                'title'  => __( 'Cookie 同意保护', 'developer-starter' ),
-                'detail' => sprintf( __( 'Cookie 提示已开启，%d 个非必要分类代码组会在访客同意后再执行。', 'developer-starter' ), $consent_required_active ),
-                'badge'  => __( '已保护', 'developer-starter' ),
+                'title'  => __( 'Cookie 同意保护', 'qiling' ),
+                'detail' => sprintf( __( 'Cookie 提示已开启，%d 个非必要分类代码组会在访客同意后再执行。', 'qiling' ), $consent_required_active ),
+                'badge'  => __( '已保护', 'qiling' ),
             );
         } else {
             $items[] = array(
                 'status' => 'info',
-                'title'  => __( 'Cookie 同意保护', 'developer-starter' ),
-                'detail' => __( '当前没有会输出且属于非必要 Cookie 分类的代码组；中文默认站点可保持关闭。', 'developer-starter' ),
-                'badge'  => __( '参考', 'developer-starter' ),
+                'title'  => __( 'Cookie 同意保护', 'qiling' ),
+                'detail' => __( '当前没有会输出且属于非必要 Cookie 分类的代码组；中文默认站点可保持关闭。', 'qiling' ),
+                'badge'  => __( '参考', 'qiling' ),
             );
         }
 
         $items[] = array(
             'status' => $cookie_enabled && '' !== $policy_url ? 'pass' : 'info',
-            'title'  => __( '隐私政策链接', 'developer-starter' ),
+            'title'  => __( '隐私政策链接', 'qiling' ),
             'detail' => $cookie_enabled
-                ? ( '' !== $policy_url ? __( 'Cookie 提示已配置隐私政策链接。', 'developer-starter' ) : __( 'Cookie 提示已开启但未配置隐私政策链接；基础功能可用，上线前可补充。', 'developer-starter' ) )
-                : __( 'Cookie 提示关闭时不会显示新增隐私链接。', 'developer-starter' ),
-            'badge'  => $cookie_enabled && '' !== $policy_url ? __( '已配置', 'developer-starter' ) : __( '可选', 'developer-starter' ),
+                ? ( '' !== $policy_url ? __( 'Cookie 提示已配置隐私政策链接。', 'qiling' ) : __( 'Cookie 提示已开启但未配置隐私政策链接；基础功能可用，上线前可补充。', 'qiling' ) )
+                : __( 'Cookie 提示关闭时不会显示新增隐私链接。', 'qiling' ),
+            'badge'  => $cookie_enabled && '' !== $policy_url ? __( '已配置', 'qiling' ) : __( '可选', 'qiling' ),
         );
 
         $items[] = array(
             'status' => $typography_enabled ? 'pass' : 'info',
-            'title'  => __( '国际排版增强', 'developer-starter' ),
+            'title'  => __( '国际排版增强', 'qiling' ),
             'detail' => $typography_enabled
-                ? __( '国际排版增强已开启，会按配置加载轻量 CSS 和 body class。', 'developer-starter' )
-                : __( '国际排版增强关闭，不改变现有中文样式。', 'developer-starter' ),
-            'badge'  => $typography_enabled ? __( '已开启', 'developer-starter' ) : __( '关闭', 'developer-starter' ),
+                ? __( '国际排版增强已开启，会按配置加载轻量 CSS 和 body class。', 'qiling' )
+                : __( '国际排版增强关闭，不改变现有中文样式。', 'qiling' ),
+            'badge'  => $typography_enabled ? __( '已开启', 'qiling' ) : __( '关闭', 'qiling' ),
         );
 
         $items[] = array(
             'status' => 'multilingual_content' === $mode && $seo_warning_count > 0 ? 'warning' : ( $seo_warning_count > 0 ? 'info' : 'pass' ),
-            'title'  => __( '多语言 SEO 复核', 'developer-starter' ),
+            'title'  => __( '多语言 SEO 复核', 'qiling' ),
             'detail' => $seo_warning_count > 0
-                ? sprintf( __( 'SEO 基础检查中有 %d 项复核提示；未启用多语言内容模式时只作为参考。', 'developer-starter' ), $seo_warning_count )
-                : __( 'SEO 基础检查暂无需要处理的复核项。', 'developer-starter' ),
-            'badge'  => $seo_warning_count > 0 ? __( '有提示', 'developer-starter' ) : __( '正常', 'developer-starter' ),
+                ? sprintf( __( 'SEO 基础检查中有 %d 项复核提示；未启用多语言内容模式时只作为参考。', 'qiling' ), $seo_warning_count )
+                : __( 'SEO 基础检查暂无需要处理的复核项。', 'qiling' ),
+            'badge'  => $seo_warning_count > 0 ? __( '有提示', 'qiling' ) : __( '正常', 'qiling' ),
         );
 
         $items[] = array(
             'status' => 'multilingual_content' === $mode ? 'pass' : 'info',
-            'title'  => __( '语言模式', 'developer-starter' ),
+            'title'  => __( '语言模式', 'qiling' ),
             'detail' => 'multilingual_content' === $mode
-                ? __( '当前使用多语言内容模式，适合真实海外多语言页面。', 'developer-starter' )
-                : __( '当前不是多语言内容模式；只做中文站或基础海外投放时可以保持现状。', 'developer-starter' ),
+                ? __( '当前使用多语言内容模式，适合真实海外多语言页面。', 'qiling' )
+                : __( '当前不是多语言内容模式；只做中文站或基础海外投放时可以保持现状。', 'qiling' ),
             'badge'  => $mode_label,
         );
 
         $summary = array(
-            'code_output'   => $active_output_groups > 0 ? sprintf( __( '%d 组会输出', 'developer-starter' ), $active_output_groups ) : __( '未输出', 'developer-starter' ),
-            'cookie_state'  => $cookie_enabled ? __( '已开启', 'developer-starter' ) : __( '关闭', 'developer-starter' ),
+            'code_output'   => $active_output_groups > 0 ? sprintf( __( '%d 组会输出', 'qiling' ), $active_output_groups ) : __( '未输出', 'qiling' ),
+            'cookie_state'  => $cookie_enabled ? __( '已开启', 'qiling' ) : __( '关闭', 'qiling' ),
             'mode_label'    => $mode_label,
             'warning_count' => 0,
             'ok_count'      => 0,
@@ -792,11 +792,11 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
      */
     private function get_international_code_group_labels() {
         return array(
-            'head'      => __( '头部代码', 'developer-starter' ),
-            'footer'    => __( '底部代码', 'developer-starter' ),
-            'analytics' => __( '统计代码', 'developer-starter' ),
-            'ads'       => __( '广告转化代码', 'developer-starter' ),
-            'custom'    => __( '自定义代码', 'developer-starter' ),
+            'head'      => __( '头部代码', 'qiling' ),
+            'footer'    => __( '底部代码', 'qiling' ),
+            'analytics' => __( '统计代码', 'qiling' ),
+            'ads'       => __( '广告转化代码', 'qiling' ),
+            'custom'    => __( '自定义代码', 'qiling' ),
         );
     }
 
@@ -826,19 +826,19 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
             );
             $raw = isset( $legacy_map[ $group_id ] ) ? $legacy_map[ $group_id ] : $default;
             $source = 'legacy';
-            $detail = __( '此代码尚未明确 Cookie 分类，建议重新确认。', 'developer-starter' );
+            $detail = __( '此代码尚未明确 Cookie 分类，建议重新确认。', 'qiling' );
         } elseif ( '' === $raw ) {
             $raw = $default;
             $source = 'default';
             $detail = sprintf(
-                __( '未显式选择 Cookie 分类，当前使用默认分类：%s。', 'developer-starter' ),
+                __( '未显式选择 Cookie 分类，当前使用默认分类：%s。', 'qiling' ),
                 $this->get_international_cookie_category_label( $raw )
             );
         } elseif ( ! in_array( sanitize_key( $raw ), $allowed, true ) ) {
             $raw = $default;
             $source = 'invalid';
             $detail = sprintf(
-                __( '保存的分类值无效，当前回退到默认分类：%s。', 'developer-starter' ),
+                __( '保存的分类值无效，当前回退到默认分类：%s。', 'qiling' ),
                 $this->get_international_cookie_category_label( $raw )
             );
         }
@@ -908,22 +908,22 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         }
 
         if ( $tracking_detected && 'necessary' === $category ) {
-            $reasons[] = __( '疑似统计、广告或再营销代码被归入必要分类。', 'developer-starter' );
+            $reasons[] = __( '疑似统计、广告或再营销代码被归入必要分类。', 'qiling' );
         }
         if ( $tracking_detected && 'custom' === $category ) {
-            $reasons[] = __( '疑似统计、广告或再营销代码仍在自定义分类，建议明确归入统计、营销或广告。', 'developer-starter' );
+            $reasons[] = __( '疑似统计、广告或再营销代码仍在自定义分类，建议明确归入统计、营销或广告。', 'qiling' );
         }
         if ( false !== strpos( $code, 'googletagmanager.com/gtm.js' ) || false !== strpos( $code, 'gtm-' ) ) {
-            $reasons[] = __( '检测到 GTM，容器可能继续加载多个供应商标签。', 'developer-starter' );
+            $reasons[] = __( '检测到 GTM，容器可能继续加载多个供应商标签。', 'qiling' );
         }
         if ( false !== strpos( $code, '<iframe' ) || false !== strpos( $code, '<noscript' ) ) {
-            $reasons[] = __( '包含 iframe 或 noscript 像素，需确认是否受 Cookie 授权控制。', 'developer-starter' );
+            $reasons[] = __( '包含 iframe 或 noscript 像素，需确认是否受 Cookie 授权控制。', 'qiling' );
         }
         if ( false !== strpos( $code, 'document.write' ) || false !== strpos( $code, 'eval(' ) ) {
-            $reasons[] = __( '包含动态执行脚本，建议上线前人工复核。', 'developer-starter' );
+            $reasons[] = __( '包含动态执行脚本，建议上线前人工复核。', 'qiling' );
         }
         if ( 'head' === $group_id && $tracking_detected ) {
-            $reasons[] = __( '头部代码检测到追踪供应商，建议确认是否必须首屏加载。', 'developer-starter' );
+            $reasons[] = __( '头部代码检测到追踪供应商，建议确认是否必须首屏加载。', 'qiling' );
         }
 
         $reasons = array_values( array_unique( $reasons ) );
@@ -967,11 +967,11 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
      */
     private function get_international_cookie_category_label( $category ) {
         $labels = array(
-            'necessary'   => __( '必要', 'developer-starter' ),
-            'statistics'  => __( '统计', 'developer-starter' ),
-            'marketing'   => __( '营销', 'developer-starter' ),
-            'advertising' => __( '广告', 'developer-starter' ),
-            'custom'      => __( '自定义', 'developer-starter' ),
+            'necessary'   => __( '必要', 'qiling' ),
+            'statistics'  => __( '统计', 'qiling' ),
+            'marketing'   => __( '营销', 'qiling' ),
+            'advertising' => __( '广告', 'qiling' ),
+            'custom'      => __( '自定义', 'qiling' ),
         );
         $category = $this->normalize_international_cookie_category( $category );
 
@@ -986,11 +986,11 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
      */
     private function get_international_cookie_region_label( $preset ) {
         $labels = array(
-            'cn'           => __( '中国', 'developer-starter' ),
-            'eu'           => __( '欧盟', 'developer-starter' ),
-            'uk'           => __( '英国', 'developer-starter' ),
-            'us'           => __( '美国', 'developer-starter' ),
-            'cross_border' => __( '跨境站', 'developer-starter' ),
+            'cn'           => __( '中国', 'qiling' ),
+            'eu'           => __( '欧盟', 'qiling' ),
+            'uk'           => __( '英国', 'qiling' ),
+            'us'           => __( '美国', 'qiling' ),
+            'cross_border' => __( '跨境站', 'qiling' ),
         );
         $preset = sanitize_key( (string) $preset );
 
@@ -1227,27 +1227,27 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $mode_label = isset( $summary['mode_label'] ) ? (string) $summary['mode_label'] : '';
         $default_lang = isset( $summary['default_lang'] ) ? (string) $summary['default_lang'] : '';
         $currency = isset( $summary['currency'] ) ? (string) $summary['currency'] : 'CNY';
-        $provider_label = isset( $summary['provider_label'] ) ? (string) $summary['provider_label'] : __( '主题配置', 'developer-starter' );
+        $provider_label = isset( $summary['provider_label'] ) ? (string) $summary['provider_label'] : __( '主题配置', 'qiling' );
 
-        echo '<tr id="setting-row-international_seo_diagnostics" data-setting-id="international_seo_diagnostics"><th scope="row">' . esc_html__( 'SEO 检查结果', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-international_seo_diagnostics" data-setting-id="international_seo_diagnostics"><th scope="row">' . esc_html__( 'SEO 检查结果', 'qiling' ) . '</th><td>';
         echo '<div class="ds-i18n-seo-panel">';
         echo '<div class="ds-i18n-seo-panel__head">';
         echo '<div>';
-        echo '<strong>' . esc_html__( '多语言 SEO 基础检查', 'developer-starter' ) . '</strong>';
-        echo '<p>' . esc_html__( '这个面板只读取当前配置并给出提示，不会自动修改 URL、canonical、schema、sitemap 或 head 标签。', 'developer-starter' ) . '</p>';
+        echo '<strong>' . esc_html__( '多语言 SEO 基础检查', 'qiling' ) . '</strong>';
+        echo '<p>' . esc_html__( '这个面板只读取当前配置并给出提示，不会自动修改 URL、canonical、schema、sitemap 或 head 标签。', 'qiling' ) . '</p>';
         echo '</div>';
         echo '<span class="ds-i18n-seo-score ' . esc_attr( $warning_count > 0 ? 'is-warning' : 'is-success' ) . '">';
-        echo esc_html( $warning_count > 0 ? sprintf( __( '%d 项建议复核', 'developer-starter' ), $warning_count ) : __( '基础状态正常', 'developer-starter' ) );
+        echo esc_html( $warning_count > 0 ? sprintf( __( '%d 项建议复核', 'qiling' ), $warning_count ) : __( '基础状态正常', 'qiling' ) );
         echo '</span>';
         echo '</div>';
 
         echo '<div class="ds-i18n-seo-summary">';
         $summary_cards = array(
-            array( 'label' => __( '语言模式', 'developer-starter' ), 'value' => $mode_label ),
-            array( 'label' => __( '默认语言', 'developer-starter' ), 'value' => $default_lang ),
-            array( 'label' => __( 'SEO 数据来源', 'developer-starter' ), 'value' => $provider_label ),
-            array( 'label' => __( 'Schema 币种', 'developer-starter' ), 'value' => $currency ),
-            array( 'label' => __( '检查项', 'developer-starter' ), 'value' => sprintf( __( '%1$d 正常 / %2$d 提示 / %3$d 复核', 'developer-starter' ), $ok_count, $info_count, $warning_count ) ),
+            array( 'label' => __( '语言模式', 'qiling' ), 'value' => $mode_label ),
+            array( 'label' => __( '默认语言', 'qiling' ), 'value' => $default_lang ),
+            array( 'label' => __( 'SEO 数据来源', 'qiling' ), 'value' => $provider_label ),
+            array( 'label' => __( 'Schema 币种', 'qiling' ), 'value' => $currency ),
+            array( 'label' => __( '检查项', 'qiling' ), 'value' => sprintf( __( '%1$d 正常 / %2$d 提示 / %3$d 复核', 'qiling' ), $ok_count, $info_count, $warning_count ) ),
         );
         foreach ( $summary_cards as $card ) {
             echo '<div class="ds-i18n-seo-summary__card">';
@@ -1284,7 +1284,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
 
         if ( ! empty( $languages ) ) {
             echo '<div class="ds-i18n-seo-languages">';
-            echo '<strong>' . esc_html__( '语言包检查', 'developer-starter' ) . '</strong>';
+            echo '<strong>' . esc_html__( '语言包检查', 'qiling' ) . '</strong>';
             echo '<div class="ds-i18n-seo-language-grid">';
             foreach ( $languages as $language ) {
                 if ( ! is_array( $language ) ) {
@@ -1294,7 +1294,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
                 $name = isset( $language['name'] ) ? (string) $language['name'] : '';
                 $code = isset( $language['code'] ) ? (string) $language['code'] : '';
                 $locale = isset( $language['locale'] ) ? (string) $language['locale'] : '';
-                $label = ! empty( $language['has_mo'] ) ? __( '已存在', 'developer-starter' ) : ( ! empty( $language['requires_mo'] ) ? __( '缺少 .mo', 'developer-starter' ) : __( '未启用，仅参考', 'developer-starter' ) );
+                $label = ! empty( $language['has_mo'] ) ? __( '已存在', 'qiling' ) : ( ! empty( $language['requires_mo'] ) ? __( '缺少 .mo', 'qiling' ) : __( '未启用，仅参考', 'qiling' ) );
 
                 echo '<div class="ds-i18n-seo-language is-' . esc_attr( $status ) . '">';
                 echo '<span>' . esc_html( $name ) . '</span>';
@@ -1327,67 +1327,67 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $generated = isset( $_GET['i18n_seo_generated'] ) ? absint( wp_unslash( $_GET['i18n_seo_generated'] ) ) : null;
         $failed = isset( $_GET['i18n_seo_failed'] ) ? absint( wp_unslash( $_GET['i18n_seo_failed'] ) ) : 0;
 
-        echo '<tr id="setting-row-international_seo_site_scan" data-setting-id="international_seo_site_scan"><th scope="row">' . esc_html__( '全站 SEO 扫描', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-international_seo_site_scan" data-setting-id="international_seo_site_scan"><th scope="row">' . esc_html__( '全站 SEO 扫描', 'qiling' ) . '</th><td>';
         echo '<div class="ds-i18n-seo-panel ds-i18n-seo-site-scan">';
         echo '<div class="ds-i18n-seo-panel__head">';
         echo '<div>';
-        echo '<strong>' . esc_html__( '多语言 SEO 增强扫描', 'developer-starter' ) . '</strong>';
-        echo '<p>' . esc_html__( '通过启灵AI多语言汇总各公开页面及语言的 SEO、OG、hreflang、x-default 与 sitemap 缺失项。', 'developer-starter' ) . '</p>';
+        echo '<strong>' . esc_html__( '多语言 SEO 增强扫描', 'qiling' ) . '</strong>';
+        echo '<p>' . esc_html__( '通过启灵AI多语言汇总各公开页面及语言的 SEO、OG、hreflang、x-default 与 sitemap 缺失项。', 'qiling' ) . '</p>';
         echo '</div>';
         echo '<span class="ds-i18n-seo-score ' . esc_attr( $available && 0 === $issue_count ? 'is-success' : 'is-warning' ) . '">';
-        echo esc_html( $available ? sprintf( __( '%d 个问题', 'developer-starter' ), $issue_count ) : __( '扫描服务不可用', 'developer-starter' ) );
+        echo esc_html( $available ? sprintf( __( '%d 个问题', 'qiling' ), $issue_count ) : __( '扫描服务不可用', 'qiling' ) );
         echo '</span>';
         echo '</div>';
 
         if ( null !== $generated ) {
             echo '<div class="notice notice-' . esc_attr( $failed > 0 ? 'warning' : 'success' ) . ' inline"><p>';
-            echo esc_html( sprintf( __( '批量生成完成：更新 %1$d 组语言 SEO 字段，失败 %2$d 组。', 'developer-starter' ), $generated, $failed ) );
+            echo esc_html( sprintf( __( '批量生成完成：更新 %1$d 组语言 SEO 字段，失败 %2$d 组。', 'qiling' ), $generated, $failed ) );
             echo '</p></div>';
         }
 
         if ( ! $available ) {
-            echo '<p class="description">' . esc_html__( '启灵AI多语言的全站扫描功能当前不可用。基础检查仍可使用；增强扫描、批量生成和报告导出需要启用并更新启灵AI多语言插件。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '启灵AI多语言的全站扫描功能当前不可用。基础检查仍可使用；增强扫描、批量生成和报告导出需要启用并更新启灵AI多语言插件。', 'qiling' ) . '</p>';
             echo '</div></td></tr>';
             return;
         }
 
         $summary_cards = array(
             array(
-                'label' => __( '扫描内容', 'developer-starter' ),
+                'label' => __( '扫描内容', 'qiling' ),
                 'value' => sprintf(
-                    __( '%1$d 篇 / %2$d 语言', 'developer-starter' ),
+                    __( '%1$d 篇 / %2$d 语言', 'qiling' ),
                     isset( $summary['posts_scanned'] ) ? absint( $summary['posts_scanned'] ) : 0,
                     isset( $summary['language_count'] ) ? absint( $summary['language_count'] ) : 0
                 ),
             ),
             array(
-                'label' => __( 'SEO 缺口', 'developer-starter' ),
+                'label' => __( 'SEO 缺口', 'qiling' ),
                 'value' => sprintf(
-                    __( '标题 %1$d / 描述 %2$d', 'developer-starter' ),
+                    __( '标题 %1$d / 描述 %2$d', 'qiling' ),
                     isset( $summary['seo_title_missing'] ) ? absint( $summary['seo_title_missing'] ) : 0,
                     isset( $summary['seo_description_missing'] ) ? absint( $summary['seo_description_missing'] ) : 0
                 ),
             ),
             array(
-                'label' => __( 'OG 缺口', 'developer-starter' ),
+                'label' => __( 'OG 缺口', 'qiling' ),
                 'value' => sprintf(
-                    __( '标题 %1$d / 描述 %2$d', 'developer-starter' ),
+                    __( '标题 %1$d / 描述 %2$d', 'qiling' ),
                     isset( $summary['og_title_missing'] ) ? absint( $summary['og_title_missing'] ) : 0,
                     isset( $summary['og_description_missing'] ) ? absint( $summary['og_description_missing'] ) : 0
                 ),
             ),
             array(
-                'label' => __( 'hreflang', 'developer-starter' ),
+                'label' => __( 'hreflang', 'qiling' ),
                 'value' => sprintf(
-                    __( '缺失 %1$d / 规则 %2$d', 'developer-starter' ),
+                    __( '缺失 %1$d / 规则 %2$d', 'qiling' ),
                     isset( $summary['hreflang_missing'] ) ? absint( $summary['hreflang_missing'] ) : 0,
                     isset( $summary['hreflang_reciprocal_issues'] ) ? absint( $summary['hreflang_reciprocal_issues'] ) : 0
                 ),
             ),
             array(
-                'label' => __( 'x-default / sitemap', 'developer-starter' ),
+                'label' => __( 'x-default / sitemap', 'qiling' ),
                 'value' => sprintf(
-                    __( '%1$d / %2$d', 'developer-starter' ),
+                    __( '%1$d / %2$d', 'qiling' ),
                     isset( $summary['x_default_issues'] ) ? absint( $summary['x_default_issues'] ) : 0,
                     isset( $summary['sitemap_missing_urls'] ) ? absint( $summary['sitemap_missing_urls'] ) : 0
                 ),
@@ -1407,21 +1407,21 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
         wp_nonce_field( 'developer_starter_generate_i18n_seo_meta' );
         echo '<input type="hidden" name="action" value="developer_starter_generate_i18n_seo_meta">';
-        echo '<button type="submit" class="button button-primary">' . esc_html__( '批量补齐 SEO 标题/描述', 'developer-starter' ) . '</button>';
+        echo '<button type="submit" class="button button-primary">' . esc_html__( '批量补齐 SEO 标题/描述', 'qiling' ) . '</button>';
         echo '</form>';
-        echo '<a class="button" href="' . esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=developer_starter_export_i18n_seo_report' ), 'developer_starter_export_i18n_seo_report' ) ) . '">' . esc_html__( '导出诊断报告 CSV', 'developer-starter' ) . '</a>';
+        echo '<a class="button" href="' . esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=developer_starter_export_i18n_seo_report' ), 'developer_starter_export_i18n_seo_report' ) ) . '">' . esc_html__( '导出诊断报告 CSV', 'qiling' ) . '</a>';
         echo '</div>';
 
         if ( empty( $issues ) ) {
-            echo '<p class="description">' . esc_html__( '当前扫描没有发现多语言 SEO 缺口。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '当前扫描没有发现多语言 SEO 缺口。', 'qiling' ) . '</p>';
         } else {
             echo '<div class="ds-i18n-seo-table-wrap">';
             echo '<table class="widefat striped ds-i18n-seo-issue-table">';
             echo '<thead><tr>';
-            echo '<th>' . esc_html__( '页面', 'developer-starter' ) . '</th>';
-            echo '<th>' . esc_html__( '语言', 'developer-starter' ) . '</th>';
-            echo '<th>' . esc_html__( '问题', 'developer-starter' ) . '</th>';
-            echo '<th>' . esc_html__( '操作', 'developer-starter' ) . '</th>';
+            echo '<th>' . esc_html__( '页面', 'qiling' ) . '</th>';
+            echo '<th>' . esc_html__( '语言', 'qiling' ) . '</th>';
+            echo '<th>' . esc_html__( '问题', 'qiling' ) . '</th>';
+            echo '<th>' . esc_html__( '操作', 'qiling' ) . '</th>';
             echo '</tr></thead><tbody>';
 
             foreach ( array_slice( $issues, 0, 20 ) as $issue ) {
@@ -1442,10 +1442,10 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
                 echo '<td><span class="ds-i18n-seo-issue-type">' . esc_html( $type ) . '</span><br>' . esc_html( $message ) . '</td>';
                 echo '<td class="ds-i18n-seo-row-actions">';
                 if ( '' !== $edit_url ) {
-                    echo '<a class="button button-small" href="' . esc_url( $edit_url ) . '">' . esc_html__( '编辑译文', 'developer-starter' ) . '</a> ';
+                    echo '<a class="button button-small" href="' . esc_url( $edit_url ) . '">' . esc_html__( '编辑译文', 'qiling' ) . '</a> ';
                 }
                 if ( '' !== $frontend_url ) {
-                    echo '<a class="button button-small" href="' . esc_url( $frontend_url ) . '" target="_blank" rel="noopener">' . esc_html__( '查看前台', 'developer-starter' ) . '</a>';
+                    echo '<a class="button button-small" href="' . esc_url( $frontend_url ) . '" target="_blank" rel="noopener">' . esc_html__( '查看前台', 'qiling' ) . '</a>';
                 }
                 echo '</td>';
                 echo '</tr>';
@@ -1453,7 +1453,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
 
             echo '</tbody></table>';
             if ( count( $issues ) > 20 ) {
-                echo '<p class="description">' . esc_html( sprintf( __( '仅显示前 20 个问题；完整结果请导出 CSV 报告，共 %d 个问题。', 'developer-starter' ), count( $issues ) ) ) . '</p>';
+                echo '<p class="description">' . esc_html( sprintf( __( '仅显示前 20 个问题；完整结果请导出 CSV 报告，共 %d 个问题。', 'qiling' ), count( $issues ) ) ) . '</p>';
             }
             echo '</div>';
         }
@@ -1469,12 +1469,12 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
      */
     public function handle_international_seo_report_export() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( '当前用户无权导出多语言 SEO 报告。', 'developer-starter' ) );
+            wp_die( esc_html__( '当前用户无权导出多语言 SEO 报告。', 'qiling' ) );
         }
         check_admin_referer( 'developer_starter_export_i18n_seo_report' );
 
         if ( ! function_exists( 'xb_aifanyi_export_site_seo_diagnostics' ) ) {
-            wp_die( esc_html__( '启灵AI多语言报告服务不可用。', 'developer-starter' ) );
+            wp_die( esc_html__( '启灵AI多语言报告服务不可用。', 'qiling' ) );
         }
 
         $report = xb_aifanyi_export_site_seo_diagnostics( array(
@@ -1482,7 +1482,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
             'limit'     => -1,
         ) );
         if ( ! is_array( $report ) || empty( $report['success'] ) ) {
-            wp_die( esc_html__( '诊断报告生成失败。', 'developer-starter' ) );
+            wp_die( esc_html__( '诊断报告生成失败。', 'qiling' ) );
         }
 
         $filename = ! empty( $report['filename'] ) ? sanitize_file_name( (string) $report['filename'] ) : 'qiling-multilingual-seo-report.csv';
@@ -1502,7 +1502,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
      */
     public function handle_international_seo_meta_generation() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( '当前用户无权批量生成多语言 SEO 字段。', 'developer-starter' ) );
+            wp_die( esc_html__( '当前用户无权批量生成多语言 SEO 字段。', 'qiling' ) );
         }
         check_admin_referer( 'developer_starter_generate_i18n_seo_meta' );
 
@@ -1521,7 +1521,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
 
         $redirect_url = add_query_arg(
             array(
-                'page'               => 'developer-starter-settings',
+                'page'               => 'qiling-settings',
                 'tab'                => 'international',
                 'i18n_seo_generated' => isset( $result['updated_count'] ) ? absint( $result['updated_count'] ) : 0,
                 'i18n_seo_failed'    => isset( $result['failed_count'] ) ? absint( $result['failed_count'] ) : 0,
@@ -1546,9 +1546,9 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         }
 
         $mode_labels = array(
-            ''                      => __( '关闭', 'developer-starter' ),
-            'translate_js'          => __( 'translate.js 机翻模式', 'developer-starter' ),
-            'multilingual_content'  => __( '多语言内容模式', 'developer-starter' ),
+            ''                      => __( '关闭', 'qiling' ),
+            'translate_js'          => __( 'translate.js 机翻模式', 'qiling' ),
+            'multilingual_content'  => __( '多语言内容模式', 'qiling' ),
         );
         $mode_label = isset( $mode_labels[ $mode ] ) ? $mode_labels[ $mode ] : $mode_labels[''];
 
@@ -1579,28 +1579,28 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $items = array();
         $items[] = array(
             'status' => 'multilingual_content' === $mode ? 'pass' : 'info',
-            'title'  => __( '多语言模式', 'developer-starter' ),
+            'title'  => __( '多语言模式', 'qiling' ),
             'detail' => 'multilingual_content' === $mode
-                ? __( '当前启用了多语言内容模式，主题会按前台语言切换 locale。', 'developer-starter' )
-                : __( '当前不是多语言内容模式；中文默认站点无需处理，海外多语言站建议使用多语言内容模式。', 'developer-starter' ),
+                ? __( '当前启用了多语言内容模式，主题会按前台语言切换 locale。', 'qiling' )
+                : __( '当前不是多语言内容模式；中文默认站点无需处理，海外多语言站建议使用多语言内容模式。', 'qiling' ),
             'badge'  => $mode_label,
         );
 
-        $provider_label = $has_aifanyi_provider ? __( '启灵AI多语言', 'developer-starter' ) : __( '主题配置检查', 'developer-starter' );
+        $provider_label = $has_aifanyi_provider ? __( '启灵AI多语言', 'qiling' ) : __( '主题配置检查', 'qiling' );
         $items[] = array(
             'status' => $has_aifanyi_provider ? 'pass' : ( 'multilingual_content' === $mode ? 'warning' : 'info' ),
-            'title'  => __( '启灵AI多语言协作状态', 'developer-starter' ),
+            'title'  => __( '启灵AI多语言协作状态', 'qiling' ),
             'detail' => $has_aifanyi_provider
-                ? __( '已检测到启灵AI多语言，可读取译文、URL、hreflang、canonical 和 sitemap 状态；SEO 标签仍由主题统一输出。', 'developer-starter' )
-                : __( '未检测到启灵AI多语言，当前仅检查主题自身的语言配置。', 'developer-starter' ),
-            'badge'  => $has_aifanyi_provider ? __( '已连接', 'developer-starter' ) : __( '基础检查', 'developer-starter' ),
+                ? __( '已检测到启灵AI多语言，可读取译文、URL、hreflang、canonical 和 sitemap 状态；SEO 标签仍由主题统一输出。', 'qiling' )
+                : __( '未检测到启灵AI多语言，当前仅检查主题自身的语言配置。', 'qiling' ),
+            'badge'  => $has_aifanyi_provider ? __( '已连接', 'qiling' ) : __( '基础检查', 'qiling' ),
         );
 
         $missing_language_packs = 0;
         foreach ( $languages as $index => $language ) {
             $locale = isset( $language['locale'] ) ? (string) $language['locale'] : '';
-            $mo_file = '' !== $locale ? DEVELOPER_STARTER_DIR . '/languages/developer-starter-' . $locale . '.mo' : '';
-            $po_file = '' !== $locale ? DEVELOPER_STARTER_DIR . '/languages/developer-starter-' . $locale . '.po' : '';
+            $mo_file = '' !== $locale ? QILING_DIR . '/languages/developer-starter-' . $locale . '.mo' : '';
+            $po_file = '' !== $locale ? QILING_DIR . '/languages/developer-starter-' . $locale . '.po' : '';
             $languages[ $index ]['has_mo'] = '' !== $mo_file && is_readable( $mo_file );
             $languages[ $index ]['has_po'] = '' !== $po_file && is_readable( $po_file );
             $languages[ $index ]['requires_mo'] = 'multilingual_content' === $mode;
@@ -1615,48 +1615,48 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         }
         $items[] = array(
             'status' => $language_pack_status,
-            'title'  => __( '语言包文件', 'developer-starter' ),
+            'title'  => __( '语言包文件', 'qiling' ),
             'detail' => 0 === $missing_language_packs
-                ? __( '已配置语言都有对应 .mo 文件。', 'developer-starter' )
-                : sprintf( __( '当前有 %d 个配置语言缺少对应 .mo 文件；未启用多语言内容模式时仅作参考。', 'developer-starter' ), $missing_language_packs ),
-            'badge'  => sprintf( __( '%d 个语言', 'developer-starter' ), count( $languages ) ),
+                ? __( '已配置语言都有对应 .mo 文件。', 'qiling' )
+                : sprintf( __( '当前有 %d 个配置语言缺少对应 .mo 文件；未启用多语言内容模式时仅作参考。', 'qiling' ), $missing_language_packs ),
+            'badge'  => sprintf( __( '%d 个语言', 'qiling' ), count( $languages ) ),
         );
 
         $items[] = array(
             'status' => $has_hreflang_provider ? 'pass' : ( 'multilingual_content' === $mode ? 'warning' : 'info' ),
-            'title'  => __( 'hreflang 来源', 'developer-starter' ),
+            'title'  => __( 'hreflang 来源', 'qiling' ),
             'detail' => $has_hreflang_provider
-                ? sprintf( __( '检测到可用 hreflang 来源：%s。', 'developer-starter' ), implode( ' / ', $integration_names ) )
-                : __( '未检测到 AI 翻译 hreflang、Polylang 或 WPML。中文默认站点可忽略；多语言站建议确认 hreflang 来源。', 'developer-starter' ),
-            'badge'  => $has_hreflang_provider ? __( '可输出', 'developer-starter' ) : __( '未检测到', 'developer-starter' ),
+                ? sprintf( __( '检测到可用 hreflang 来源：%s。', 'qiling' ), implode( ' / ', $integration_names ) )
+                : __( '未检测到 AI 翻译 hreflang、Polylang 或 WPML。中文默认站点可忽略；多语言站建议确认 hreflang 来源。', 'qiling' ),
+            'badge'  => $has_hreflang_provider ? __( '可输出', 'qiling' ) : __( '未检测到', 'qiling' ),
         );
 
         $items[] = array(
             'status' => $has_aifanyi ? 'pass' : ( $has_hreflang_provider ? 'warning' : 'info' ),
-            'title'  => __( 'x-default', 'developer-starter' ),
+            'title'  => __( 'x-default', 'qiling' ),
             'detail' => $has_aifanyi
-                ? __( '当前启灵AI多语言 hreflang map 支持主题输出 x-default。', 'developer-starter' )
-                : __( '主题在 AI 翻译 hreflang map 存在时会输出 x-default；Polylang/WPML 场景建议人工复核。', 'developer-starter' ),
-            'badge'  => $has_aifanyi ? __( '已覆盖', 'developer-starter' ) : __( '建议复核', 'developer-starter' ),
+                ? __( '当前启灵AI多语言 hreflang map 支持主题输出 x-default。', 'qiling' )
+                : __( '主题在 AI 翻译 hreflang map 存在时会输出 x-default；Polylang/WPML 场景建议人工复核。', 'qiling' ),
+            'badge'  => $has_aifanyi ? __( '已覆盖', 'qiling' ) : __( '建议复核', 'qiling' ),
         );
 
         $has_overseas_language = $this->international_seo_has_overseas_language( $languages );
         $items[] = array(
             'status' => ( $has_overseas_language && 'CNY' === $currency ) ? 'warning' : 'pass',
-            'title'  => __( 'Schema 默认币种', 'developer-starter' ),
+            'title'  => __( 'Schema 默认币种', 'qiling' ),
             'detail' => ( $has_overseas_language && 'CNY' === $currency )
-                ? __( '语言列表包含海外语言且默认币种仍为 CNY，如面向海外市场建议确认是否需要 USD/EUR/JPY/KRW。', 'developer-starter' )
-                : __( '当前 schema 默认币种格式正常。', 'developer-starter' ),
+                ? __( '语言列表包含海外语言且默认币种仍为 CNY，如面向海外市场建议确认是否需要 USD/EUR/JPY/KRW。', 'qiling' )
+                : __( '当前 schema 默认币种格式正常。', 'qiling' ),
             'badge'  => $currency,
         );
 
         $items[] = array(
             'status' => function_exists( 'xb_aifanyi_get_frontend_og_locale_data' ) ? 'pass' : 'info',
-            'title'  => __( 'OG locale', 'developer-starter' ),
+            'title'  => __( 'OG locale', 'qiling' ),
             'detail' => function_exists( 'xb_aifanyi_get_frontend_og_locale_data' )
-                ? __( '检测到 OG locale 数据来源，主题可输出 og:locale 和 og:locale:alternate。', 'developer-starter' )
-                : __( '未检测到专用 OG locale 数据来源；中文默认站点可忽略，多语言站建议复核社交分享语言。', 'developer-starter' ),
-            'badge'  => function_exists( 'xb_aifanyi_get_frontend_og_locale_data' ) ? __( '可输出', 'developer-starter' ) : __( '参考', 'developer-starter' ),
+                ? __( '检测到 OG locale 数据来源，主题可输出 og:locale 和 og:locale:alternate。', 'qiling' )
+                : __( '未检测到专用 OG locale 数据来源；中文默认站点可忽略，多语言站建议复核社交分享语言。', 'qiling' ),
+            'badge'  => function_exists( 'xb_aifanyi_get_frontend_og_locale_data' ) ? __( '可输出', 'qiling' ) : __( '参考', 'qiling' ),
         );
 
         $sitemap = $has_aifanyi_provider && isset( $aifanyi_provider['sitemap'] ) && is_array( $aifanyi_provider['sitemap'] )
@@ -1666,13 +1666,13 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $sitemap_provider_name = isset( $sitemap['provider_name'] ) ? (string) $sitemap['provider_name'] : '';
         $items[] = array(
             'status' => $has_aifanyi_provider ? ( $sitemap_provider_registered ? 'pass' : 'warning' ) : 'info',
-            'title'  => __( 'Sitemap 覆盖', 'developer-starter' ),
+            'title'  => __( 'Sitemap 覆盖', 'qiling' ),
             'detail' => $has_aifanyi_provider
                 ? ( $sitemap_provider_registered
-                    ? sprintf( __( '启灵AI多语言 sitemap 已接入：%s。', 'developer-starter' ), $sitemap_provider_name )
-                    : __( '已检测到启灵AI多语言，但 sitemap 功能当前不可用或 WordPress 原生 sitemap 未启用。', 'developer-starter' ) )
-                : __( '插件未启用时不读取插件 sitemap；当前只做主题配置级提示。', 'developer-starter' ),
-            'badge'  => $has_aifanyi_provider ? ( $sitemap_provider_registered ? __( '已注册', 'developer-starter' ) : __( '待确认', 'developer-starter' ) ) : __( '降级', 'developer-starter' ),
+                    ? sprintf( __( '启灵AI多语言 sitemap 已接入：%s。', 'qiling' ), $sitemap_provider_name )
+                    : __( '已检测到启灵AI多语言，但 sitemap 功能当前不可用或 WordPress 原生 sitemap 未启用。', 'qiling' ) )
+                : __( '插件未启用时不读取插件 sitemap；当前只做主题配置级提示。', 'qiling' ),
+            'badge'  => $has_aifanyi_provider ? ( $sitemap_provider_registered ? __( '已注册', 'qiling' ) : __( '待确认', 'qiling' ) ) : __( '降级', 'qiling' ),
         );
 
         $summary = array(
@@ -1782,14 +1782,14 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
 
         if ( empty( $languages ) || ! is_array( $languages ) ) {
             $languages = array(
-                array( 'name' => __( '简体中文', 'developer-starter' ), 'code' => 'zh', 'locale' => 'zh_CN' ),
-                array( 'name' => __( '繁体中文', 'developer-starter' ), 'code' => 'zh-tw', 'locale' => 'zh_TW' ),
+                array( 'name' => __( '简体中文', 'qiling' ), 'code' => 'zh', 'locale' => 'zh_CN' ),
+                array( 'name' => __( '繁体中文', 'qiling' ), 'code' => 'zh-tw', 'locale' => 'zh_TW' ),
                 array( 'name' => 'English', 'code' => 'en', 'locale' => 'en_US' ),
-                array( 'name' => __( '日文', 'developer-starter' ), 'code' => 'jp', 'locale' => 'ja_JP' ),
-                array( 'name' => __( '韩文', 'developer-starter' ), 'code' => 'ko', 'locale' => 'ko_KR' ),
-                array( 'name' => __( '法文', 'developer-starter' ), 'code' => 'fr', 'locale' => 'fr_FR' ),
-                array( 'name' => __( '德文', 'developer-starter' ), 'code' => 'de', 'locale' => 'de_DE' ),
-                array( 'name' => __( '西班牙文', 'developer-starter' ), 'code' => 'es', 'locale' => 'es_ES' ),
+                array( 'name' => __( '日文', 'qiling' ), 'code' => 'jp', 'locale' => 'ja_JP' ),
+                array( 'name' => __( '韩文', 'qiling' ), 'code' => 'ko', 'locale' => 'ko_KR' ),
+                array( 'name' => __( '法文', 'qiling' ), 'code' => 'fr', 'locale' => 'fr_FR' ),
+                array( 'name' => __( '德文', 'qiling' ), 'code' => 'de', 'locale' => 'de_DE' ),
+                array( 'name' => __( '西班牙文', 'qiling' ), 'code' => 'es', 'locale' => 'es_ES' ),
             );
         }
 
@@ -2084,8 +2084,8 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $this->render_schema_preview_assets_once();
 
         if ( ! class_exists( '\Developer_Starter\SEO\Industry_Schema_Engine' ) ) {
-            echo '<tr id="setting-row-schema_jsonld_preview" data-setting-id="schema_jsonld_preview"><th scope="row">' . esc_html__( 'JSON-LD 预览', 'developer-starter' ) . '</th><td>';
-            echo '<div class="ds-schema-preview-panel is-warning"><p>' . esc_html__( '未检测到行业 Schema 引擎，当前无法生成预览。', 'developer-starter' ) . '</p></div>';
+            echo '<tr id="setting-row-schema_jsonld_preview" data-setting-id="schema_jsonld_preview"><th scope="row">' . esc_html__( 'JSON-LD 预览', 'qiling' ) . '</th><td>';
+            echo '<div class="ds-schema-preview-panel is-warning"><p>' . esc_html__( '未检测到行业 Schema 引擎，当前无法生成预览。', 'qiling' ) . '</p></div>';
             echo '</td></tr>';
             return;
         }
@@ -2103,28 +2103,28 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         $warning_count = count( $visual_issues );
 
         $node_defaults = array(
-            'organization' => array( 'label' => 'Organization', 'empty' => __( '未生成组织实体', 'developer-starter' ) ),
-            'website'      => array( 'label' => 'WebSite', 'empty' => __( '未生成站点实体', 'developer-starter' ) ),
-            'breadcrumb'   => array( 'label' => 'Breadcrumb', 'empty' => __( '当前预览上下文未生成 BreadcrumbList', 'developer-starter' ) ),
-            'primary'      => array( 'label' => __( '当前页面主类型', 'developer-starter' ), 'empty' => __( '未识别页面主类型', 'developer-starter' ) ),
+            'organization' => array( 'label' => 'Organization', 'empty' => __( '未生成组织实体', 'qiling' ) ),
+            'website'      => array( 'label' => 'WebSite', 'empty' => __( '未生成站点实体', 'qiling' ) ),
+            'breadcrumb'   => array( 'label' => 'Breadcrumb', 'empty' => __( '当前预览上下文未生成 BreadcrumbList', 'qiling' ) ),
+            'primary'      => array( 'label' => __( '当前页面主类型', 'qiling' ), 'empty' => __( '未识别页面主类型', 'qiling' ) ),
         );
 
-        echo '<tr id="setting-row-schema_jsonld_preview" data-setting-id="schema_jsonld_preview"><th scope="row">' . esc_html__( 'JSON-LD 预览', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-schema_jsonld_preview" data-setting-id="schema_jsonld_preview"><th scope="row">' . esc_html__( 'JSON-LD 预览', 'qiling' ) . '</th><td>';
         echo '<div class="ds-schema-preview-panel">';
         echo '<div class="ds-schema-preview-panel__head">';
         echo '<div>';
-        echo '<strong>' . esc_html__( 'Schema 结构化数据预览', 'developer-starter' ) . '</strong>';
-        echo '<p>' . esc_html__( '预览根据当前已保存的 Schema 配置生成，前台由主题统一输出。', 'developer-starter' ) . '</p>';
+        echo '<strong>' . esc_html__( 'Schema 结构化数据预览', 'qiling' ) . '</strong>';
+        echo '<p>' . esc_html__( '预览根据当前已保存的 Schema 配置生成，前台由主题统一输出。', 'qiling' ) . '</p>';
         echo '</div>';
         echo '<span class="ds-schema-preview-score ' . esc_attr( $warning_count > 0 || ! $enabled ? 'is-warning' : 'is-success' ) . '">';
-        echo esc_html( ! $enabled ? __( '引擎未启用', 'developer-starter' ) : ( $warning_count > 0 ? sprintf( __( '%d 项需补齐', 'developer-starter' ), $warning_count ) : __( '基础字段完整', 'developer-starter' ) ) );
+        echo esc_html( ! $enabled ? __( '引擎未启用', 'qiling' ) : ( $warning_count > 0 ? sprintf( __( '%d 项需补齐', 'qiling' ), $warning_count ) : __( '基础字段完整', 'qiling' ) ) );
         echo '</span>';
         echo '</div>';
 
         echo '<div class="ds-schema-preview-meta">';
-        echo '<div><span>' . esc_html__( '输出状态', 'developer-starter' ) . '</span><strong>' . esc_html( $enabled ? __( '已启用', 'developer-starter' ) : __( '未启用', 'developer-starter' ) ) . '</strong></div>';
-        echo '<div><span>' . esc_html__( '行业类型', 'developer-starter' ) . '</span><strong>' . esc_html( '' !== $industry ? $industry : __( '自动识别', 'developer-starter' ) ) . '</strong></div>';
-        echo '<div><span>' . esc_html__( '默认币种', 'developer-starter' ) . '</span><strong>' . esc_html( $currency ) . '</strong></div>';
+        echo '<div><span>' . esc_html__( '输出状态', 'qiling' ) . '</span><strong>' . esc_html( $enabled ? __( '已启用', 'qiling' ) : __( '未启用', 'qiling' ) ) . '</strong></div>';
+        echo '<div><span>' . esc_html__( '行业类型', 'qiling' ) . '</span><strong>' . esc_html( '' !== $industry ? $industry : __( '自动识别', 'qiling' ) ) . '</strong></div>';
+        echo '<div><span>' . esc_html__( '默认币种', 'qiling' ) . '</span><strong>' . esc_html( $currency ) . '</strong></div>';
         echo '</div>';
 
         echo '<div class="ds-schema-preview-nodes">';
@@ -2141,9 +2141,9 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         echo '</div>';
 
         echo '<div class="ds-schema-preview-missing">';
-        echo '<strong>' . esc_html__( '必填字段缺失提示', 'developer-starter' ) . '</strong>';
+        echo '<strong>' . esc_html__( '必填字段缺失提示', 'qiling' ) . '</strong>';
         if ( empty( $missing_required ) ) {
-            echo '<p class="is-success">' . esc_html__( '当前站点级必填字段已补齐。', 'developer-starter' ) . '</p>';
+            echo '<p class="is-success">' . esc_html__( '当前站点级必填字段已补齐。', 'qiling' ) . '</p>';
         } else {
             echo '<ul>';
             foreach ( $missing_required as $warning ) {
@@ -2159,9 +2159,9 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         echo '</div>';
 
         echo '<div class="ds-schema-preview-issues">';
-        echo '<strong>' . esc_html__( 'Schema 可视化诊断', 'developer-starter' ) . '</strong>';
+        echo '<strong>' . esc_html__( 'Schema 可视化诊断', 'qiling' ) . '</strong>';
         if ( empty( $visual_issues ) ) {
-            echo '<p class="is-success">' . esc_html__( '当前未发现 Schema 冲突或关键缺失项。', 'developer-starter' ) . '</p>';
+            echo '<p class="is-success">' . esc_html__( '当前未发现 Schema 冲突或关键缺失项。', 'qiling' ) . '</p>';
         } else {
             echo '<ul>';
             foreach ( $visual_issues as $issue ) {
@@ -2169,7 +2169,7 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
                     continue;
                 }
                 $severity = isset( $issue['severity'] ) ? sanitize_html_class( (string) $issue['severity'] ) : 'warning';
-                $label = isset( $issue['label'] ) ? (string) $issue['label'] : __( '诊断项', 'developer-starter' );
+                $label = isset( $issue['label'] ) ? (string) $issue['label'] : __( '诊断项', 'qiling' );
                 $message = isset( $issue['message'] ) ? (string) $issue['message'] : '';
                 echo '<li class="is-' . esc_attr( $severity ) . '"><strong>' . esc_html( $label ) . '</strong><span>' . esc_html( $message ) . '</span></li>';
             }
@@ -2178,11 +2178,11 @@ trait Admin_Settings_Field_Render_International_Diagnostics_Trait {
         echo '</div>';
 
         echo '<div class="ds-schema-preview-json">';
-        echo '<div class="ds-schema-preview-json__head"><strong>' . esc_html__( 'JSON-LD 预览', 'developer-starter' ) . '</strong><span>' . esc_html__( '只读', 'developer-starter' ) . '</span></div>';
+        echo '<div class="ds-schema-preview-json__head"><strong>' . esc_html__( 'JSON-LD 预览', 'qiling' ) . '</strong><span>' . esc_html__( '只读', 'qiling' ) . '</span></div>';
         if ( '' !== $json ) {
             echo '<pre><code>' . esc_html( $json ) . '</code></pre>';
         } else {
-            echo '<p>' . esc_html__( '当前没有可预览的 JSON-LD。请确认引擎已启用并保存基础配置。', 'developer-starter' ) . '</p>';
+            echo '<p>' . esc_html__( '当前没有可预览的 JSON-LD。请确认引擎已启用并保存基础配置。', 'qiling' ) . '</p>';
         }
         echo '</div>';
 

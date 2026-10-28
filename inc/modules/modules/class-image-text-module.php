@@ -18,7 +18,7 @@ class Image_Text_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-align-left';
-        $this->description = __( '图文组合布局', 'developer-starter' );
+        $this->description = __( '图文组合布局', 'qiling' );
     }
 
     public function get_id() {
@@ -26,98 +26,98 @@ class Image_Text_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '图文模块', 'developer-starter' );
+        return __( '图文模块', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'image_text_layout', 'type' => 'select', 'label' => __( '图片位置', 'developer-starter' ), 'options' => array( 'left' => __( '左侧', 'developer-starter' ), 'right' => __( '右侧', 'developer-starter' ) ), 'default' => 'left' ),
-            array( 'id' => 'image_text_image', 'type' => 'image', 'label' => __( '图片', 'developer-starter' ) ),
+            array( 'id' => 'image_text_layout', 'type' => 'select', 'label' => __( '图片位置', 'qiling' ), 'options' => array( 'left' => __( '左侧', 'qiling' ), 'right' => __( '右侧', 'qiling' ) ), 'default' => 'left' ),
+            array( 'id' => 'image_text_image', 'type' => 'image', 'label' => __( '图片', 'qiling' ) ),
             
-            array( 'id' => 'image_text_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '关于我们', 'About Us' ) : __( '关于我们', 'developer-starter' ) ),
+            array( 'id' => 'image_text_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '关于我们', 'About Us' ) : __( '关于我们', 'qiling' ) ),
             array(
                 'id' => 'image_text_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'image_text_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认颜色', 'developer-starter' ),
+                'description' => __( '留空使用默认颜色', 'qiling' ),
             ),
             
             array(
                 'id' => 'image_text_subtitle',
-                'label' => __( '副标题', 'developer-starter' ),
+                'label' => __( '副标题', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
             ),
             array(
                 'id' => 'image_text_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'image_text_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认颜色', 'developer-starter' ),
+                'description' => __( '留空使用默认颜色', 'qiling' ),
             ),
             
-            array( 'id' => 'image_text_content', 'type' => 'editor', 'label' => __( '内容', 'developer-starter' ) ),
-            array( 'id' => 'image_text_button', 'type' => 'text', 'label' => __( '按钮文字', 'developer-starter' ) ),
-            array( 'id' => 'image_text_url', 'type' => 'text', 'label' => __( '按钮链接', 'developer-starter' ) ),
+            array( 'id' => 'image_text_content', 'type' => 'editor', 'label' => __( '内容', 'qiling' ) ),
+            array( 'id' => 'image_text_button', 'type' => 'text', 'label' => __( '按钮文字', 'qiling' ) ),
+            array( 'id' => 'image_text_url', 'type' => 'text', 'label' => __( '按钮链接', 'qiling' ) ),
             array(
                 'id'          => 'image_text_btn_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label'       => __( '按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'          => 'image_text_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label'       => __( '按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             $this->get_button_border_color_field( 'image_text_btn_border_color' ),
             array(
                 'id'          => 'image_text_btn_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'          => 'image_text_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'image_text_btn_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'image_text_btn_hover_border_color', __( '按钮悬停边框颜色', 'qiling' ), __( '留空时跟随按钮悬停背景颜色。', 'qiling' ) ),
             
             // 样式配置
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
@@ -127,7 +127,7 @@ class Image_Text_Module extends Module_Base {
     public function render( $data = array() ) {
         $layout = isset( $data['image_text_layout'] ) ? $data['image_text_layout'] : 'left';
         $image = isset( $data['image_text_image'] ) ? $data['image_text_image'] : '';
-        $title = isset( $data['image_text_title'] ) ? $data['image_text_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '关于我们', 'About Us' ) : __( '关于我们', 'developer-starter' ) );
+        $title = isset( $data['image_text_title'] ) ? $data['image_text_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '关于我们', 'About Us' ) : __( '关于我们', 'qiling' ) );
         $subtitle = isset( $data['image_text_subtitle'] ) ? $data['image_text_subtitle'] : '';
         $content = isset( $data['image_text_content'] ) ? $data['image_text_content'] : '';
         $button = isset( $data['image_text_button'] ) ? $data['image_text_button'] : '';
@@ -207,7 +207,7 @@ class Image_Text_Module extends Module_Base {
                         <?php if ( $image ) : ?>
                             <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" />
                         <?php else : ?>
-                            <div class="placeholder-image"><?php esc_html_e( '请上传图片', 'developer-starter' ); ?></div>
+                            <div class="placeholder-image"><?php esc_html_e( '请上传图片', 'qiling' ); ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="image-text-content">

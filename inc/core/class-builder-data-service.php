@@ -680,7 +680,7 @@ class Builder_Data_Service {
             $data['magic_layout_sections'] = array(
                 array(
                     'section_slot'            => '1',
-                    'section_label'           => __( '主容器', 'developer-starter' ),
+                    'section_label'           => __( '主容器', 'qiling' ),
                     'section_columns'         => isset( $data['magic_layout_columns'] ) ? $data['magic_layout_columns'] : '2',
                     'section_preset'          => isset( $data['magic_layout_preset'] ) ? $data['magic_layout_preset'] : 'equal',
                     'section_gap'             => isset( $data['magic_layout_gap'] ) ? $data['magic_layout_gap'] : '28px',

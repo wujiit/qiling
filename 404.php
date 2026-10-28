@@ -47,11 +47,11 @@ if ( ! in_array( $error_404_preset, array( 'guide', 'clean', 'bold', 'image' ), 
 }
 
 $error_404_code            = $get_error_404_text( 'error_404_code', '404' );
-$error_404_title           = $get_error_404_text( 'error_404_title', __( '页面未找到', 'developer-starter' ) );
-$error_404_description     = $get_error_404_text( 'error_404_description', __( '抱歉，您访问的页面不存在或已被移除。请检查网址是否正确，或返回首页继续浏览。', 'developer-starter' ) );
-$error_404_primary_label   = $get_error_404_text( 'error_404_primary_label', __( '返回首页', 'developer-starter' ) );
-$error_404_secondary_label = $get_error_404_text( 'error_404_secondary_label', __( '返回上页', 'developer-starter' ) );
-$error_404_search_hint     = $get_error_404_text( 'error_404_search_hint', __( '也许您可以试试搜索：', 'developer-starter' ) );
+$error_404_title           = $get_error_404_text( 'error_404_title', __( '页面未找到', 'qiling' ) );
+$error_404_description     = $get_error_404_text( 'error_404_description', __( '抱歉，您访问的页面不存在或已被移除。请检查网址是否正确，或返回首页继续浏览。', 'qiling' ) );
+$error_404_primary_label   = $get_error_404_text( 'error_404_primary_label', __( '返回首页', 'qiling' ) );
+$error_404_secondary_label = $get_error_404_text( 'error_404_secondary_label', __( '返回上页', 'qiling' ) );
+$error_404_search_hint     = $get_error_404_text( 'error_404_search_hint', __( '也许您可以试试搜索：', 'qiling' ) );
 $error_404_show_back       = '1' === (string) $get_error_404_option( 'error_404_back_enable', '1' );
 $error_404_show_search     = '1' === (string) $get_error_404_option( 'error_404_search_enable', '1' );
 $error_404_background      = $sanitize_error_404_color( $get_error_404_option( 'error_404_background_color', '#f8fafc' ), '#f8fafc' );
@@ -90,7 +90,7 @@ if ( '' !== $error_404_background_img ) {
         <div class="container">
             <div class="error-404-layout">
                 <div class="error-404-copy">
-                    <span class="error-404-kicker"><?php esc_html_e( '访问中断', 'developer-starter' ); ?></span>
+                    <span class="error-404-kicker"><?php esc_html_e( '访问中断', 'qiling' ); ?></span>
 
                     <div class="error-code" aria-hidden="true">
                         <?php echo esc_html( $error_404_code ); ?>
@@ -114,10 +114,10 @@ if ( '' !== $error_404_background_img ) {
                             <p class="error-404-hint"><?php echo esc_html( $error_404_search_hint ); ?></p>
                             <form role="search" method="get" action="<?php echo esc_url( $error_404_search_action ); ?>"<?php if ( developer_starter_get_option( 'search_rewrite', '' ) ) : ?> onsubmit="return dsSearchRedirect(this);"<?php endif; ?> class="error-404-search-form qiling-search-enhanced" data-qiling-search-form="1">
                                 <div class="error-404-search-fields">
-                                    <label class="screen-reader-text" for="error-404-search-input"><?php esc_html_e( '搜索关键词', 'developer-starter' ); ?></label>
-                                    <input id="error-404-search-input" type="search" name="s" placeholder="<?php esc_attr_e( '输入关键词搜索...', 'developer-starter' ); ?>" class="error-404-search-input" autocomplete="off" data-qiling-search-input="1" />
+                                    <label class="screen-reader-text" for="error-404-search-input"><?php esc_html_e( '搜索关键词', 'qiling' ); ?></label>
+                                    <input id="error-404-search-input" type="search" name="s" placeholder="<?php esc_attr_e( '输入关键词搜索...', 'qiling' ); ?>" class="error-404-search-input" autocomplete="off" data-qiling-search-input="1" />
                                     <input type="hidden" name="qiling_search_mode" value="<?php echo esc_attr( function_exists( 'developer_starter_get_search_mode_form_value' ) ? developer_starter_get_search_mode_form_value() : 'all' ); ?>" />
-                                    <button type="submit" class="btn btn-primary"><?php esc_html_e( '搜索', 'developer-starter' ); ?></button>
+                                    <button type="submit" class="btn btn-primary"><?php esc_html_e( '搜索', 'qiling' ); ?></button>
                                 </div>
                                 <div class="search-history" data-qiling-search-history></div>
                             </form>
@@ -141,7 +141,7 @@ if ( '' !== $error_404_background_img ) {
                             <span class="error-404-map__line error-404-map__line--short"></span>
                         </div>
                     </div>
-                    <div class="error-404-panel__notice"><?php esc_html_e( '这条路径暂时不可达', 'developer-starter' ); ?></div>
+                    <div class="error-404-panel__notice"><?php esc_html_e( '这条路径暂时不可达', 'qiling' ); ?></div>
                 </div>
             </div>
         </div>

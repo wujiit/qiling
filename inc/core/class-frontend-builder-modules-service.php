@@ -294,7 +294,7 @@ class Frontend_Builder_Modules_Service {
         ) {
             $module = $manager->get_module( $module_id );
             $module_name = $module && method_exists( $module, 'get_name' ) ? $module->get_name() : $module_id;
-            return '<div class="module-wrapper qiling-builder-module qfb-hidden-module-placeholder" data-builder-index="' . esc_attr( (string) $index ) . '" data-module-id="' . esc_attr( $module_id ) . '"><div class="qfb-hidden-module-placeholder__inner"><strong>' . esc_html( $module_name ) . '</strong><span>' . esc_html__( '当前模块已暂时隐藏，点击可编辑并恢复显示。', 'developer-starter' ) . '</span></div></div>';
+            return '<div class="module-wrapper qiling-builder-module qfb-hidden-module-placeholder" data-builder-index="' . esc_attr( (string) $index ) . '" data-module-id="' . esc_attr( $module_id ) . '"><div class="qfb-hidden-module-placeholder__inner"><strong>' . esc_html( $module_name ) . '</strong><span>' . esc_html__( '当前模块已暂时隐藏，点击可编辑并恢复显示。', 'qiling' ) . '</span></div></div>';
         }
 
         $hero_modules = Module_Manager::get_hero_module_ids( 'builder_preview' );

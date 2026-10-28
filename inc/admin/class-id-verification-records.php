@@ -47,7 +47,7 @@ class ID_Verification_Records {
         }
 
         add_submenu_page(
-            'developer-starter-settings',  // 父菜单 slug
+            'qiling-settings',  // 父菜单 slug
             '实名验证记录',
             '实名验证记录',
             'manage_options',
@@ -68,7 +68,7 @@ class ID_Verification_Records {
 
         $total_records = $wpdb->get_var( "SELECT COUNT(*) FROM {$this->table_name}" );
         $records = $wpdb->get_results( $wpdb->prepare(
-            "SELECT * FROM {$this->table_name} ORDER BY verification_time DESC LIMIT %d OFFSET %d",
+            "SELECT id, user_id, name, mobile, mobile_encrypted, idcard, channel, sex, birthday, address, ip_address, result, verification_time FROM {$this->table_name} ORDER BY verification_time DESC LIMIT %d OFFSET %d",
             $per_page,
             $offset
         ) );
@@ -166,11 +166,11 @@ class ID_Verification_Records {
         
         <script>
         jQuery(document).ready(function($) {
-            var confirmDeleteText = <?php echo wp_json_encode( __( '确定删除此记录？此操作不可恢复。', 'developer-starter' ) ); ?>;
-            var deletingText = <?php echo wp_json_encode( __( '删除中...', 'developer-starter' ) ); ?>;
-            var deleteFailedText = <?php echo wp_json_encode( __( '删除失败', 'developer-starter' ) ); ?>;
-            var deleteFailedRetryText = <?php echo wp_json_encode( __( '删除失败，请重试', 'developer-starter' ) ); ?>;
-            var deleteText = <?php echo wp_json_encode( __( '删除', 'developer-starter' ) ); ?>;
+            var confirmDeleteText = <?php echo wp_json_encode( __( '确定删除此记录？此操作不可恢复。', 'qiling' ) ); ?>;
+            var deletingText = <?php echo wp_json_encode( __( '删除中...', 'qiling' ) ); ?>;
+            var deleteFailedText = <?php echo wp_json_encode( __( '删除失败', 'qiling' ) ); ?>;
+            var deleteFailedRetryText = <?php echo wp_json_encode( __( '删除失败，请重试', 'qiling' ) ); ?>;
+            var deleteText = <?php echo wp_json_encode( __( '删除', 'qiling' ) ); ?>;
             $('.qiling-delete-record').click(function() {
                 if (!confirm(confirmDeleteText)) return;
                 

@@ -18,7 +18,7 @@ class Menu_Module extends Module_Base {
     public function __construct() {
         $this->category = 'business'; // 归类为商业
         $this->icon = 'dashicons-list-view';
-        $this->description = __( '展示餐厅菜单、服务价目表或产品清单', 'developer-starter' );
+        $this->description = __( '展示餐厅菜单、服务价目表或产品清单', 'qiling' );
     }
 
     public function get_id() {
@@ -26,44 +26,44 @@ class Menu_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '菜单/价目表', 'developer-starter' );
+        return __( '菜单/价目表', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             array(
                 'id' => 'menu_title',
-                'label' => __( '模块标题 (支持HTML)', 'developer-starter' ),
+                'label' => __( '模块标题 (支持HTML)', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'Featured <span style="color:var(--qiling-color-eab308)">Menu</span>' ) : __( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'developer-starter' ),
-                'description' => __( '如：我们的&lt;b&gt;服务&lt;/b&gt;', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'Featured <span style="color:var(--qiling-color-eab308)">Menu</span>' ) : __( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'qiling' ),
+                'description' => __( '如：我们的&lt;b&gt;服务&lt;/b&gt;', 'qiling' ),
             ),
             array(
                 'id' => 'menu_subtitle',
-                'label' => __( '副标题', 'developer-starter' ),
+                'label' => __( '副标题', 'qiling' ),
                 'type' => 'textarea',
                 'rows' => 2,
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精心挑选的优质服务与产品', 'A curated selection of signature services and products.' ) : __( '精心挑选的优质服务与产品', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精心挑选的优质服务与产品', 'A curated selection of signature services and products.' ) : __( '精心挑选的优质服务与产品', 'qiling' ),
             ),
             array(
                 'id' => 'menu_layout',
-                'label' => __( '布局模式', 'developer-starter' ),
+                'label' => __( '布局模式', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'list' => __( '单栏列表 (适合详细介绍)', 'developer-starter' ),
-                    'grid' => __( '双栏网格 (适合紧凑展示)', 'developer-starter' ),
+                    'list' => __( '单栏列表 (适合详细介绍)', 'qiling' ),
+                    'grid' => __( '双栏网格 (适合紧凑展示)', 'qiling' ),
                 ),
                 'default' => 'grid',
             ),
             array(
                 'id' => 'menu_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id' => 'menu_accent_color',
-                'label' => __( '强调色 (价格/角标)', 'developer-starter' ),
+                'label' => __( '强调色 (价格/角标)', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--qiling-color-eab308)',
             ),
@@ -71,40 +71,40 @@ class Menu_Module extends Module_Base {
             // 子项中继器列表
             array(
                 'id' => 'menu_items',
-                'label' => __( '菜单/价目列表', 'developer-starter' ),
+                'label' => __( '菜单/价目列表', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'image', 'label' => __( '图片 (可选)', 'developer-starter' ), 'type' => 'image' ),
-                    array( 'id' => 'title', 'label' => __( '名称', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'desc', 'label' => __( '描述/配料', 'developer-starter' ), 'type' => 'textarea', 'rows' => 2 ),
-                    array( 'id' => 'price', 'label' => __( '价格', 'developer-starter' ), 'type' => 'text', 'description' => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 68 ) : __( '如 ¥68', 'developer-starter' ) ),
-                    array( 'id' => 'badge', 'label' => __( '推荐角标', 'developer-starter' ), 'type' => 'text', 'description' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '如 推荐, Hot, 新品 (留空不显示)', 'Examples: Featured, Hot, New (leave blank to hide)' ) : __( '如 推荐, Hot, 新品 (留空不显示)', 'developer-starter' ) ),
-                    array( 'id' => 'link', 'label' => __( '链接 (可选)', 'developer-starter' ), 'type' => 'text' ),
+                    array( 'id' => 'image', 'label' => __( '图片 (可选)', 'qiling' ), 'type' => 'image' ),
+                    array( 'id' => 'title', 'label' => __( '名称', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'desc', 'label' => __( '描述/配料', 'qiling' ), 'type' => 'textarea', 'rows' => 2 ),
+                    array( 'id' => 'price', 'label' => __( '价格', 'qiling' ), 'type' => 'text', 'description' => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 68 ) : __( '如 ¥68', 'qiling' ) ),
+                    array( 'id' => 'badge', 'label' => __( '推荐角标', 'qiling' ), 'type' => 'text', 'description' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '如 推荐, Hot, 新品 (留空不显示)', 'Examples: Featured, Hot, New (leave blank to hide)' ) : __( '如 推荐, Hot, 新品 (留空不显示)', 'qiling' ) ),
+                    array( 'id' => 'link', 'label' => __( '链接 (可选)', 'qiling' ), 'type' => 'text' ),
                 ),
                 'default_items' => array(
                     array(
-                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '经典商务套餐', 'Business Lunch Set' ) : __( '经典商务套餐', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '包含主食、汤品、时令蔬菜与水果', 'Includes a main dish, soup, seasonal vegetables, and fruit.' ) : __( '包含主食、汤品、时令蔬菜与水果', 'developer-starter' ),
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '经典商务套餐', 'Business Lunch Set' ) : __( '经典商务套餐', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '包含主食、汤品、时令蔬菜与水果', 'Includes a main dish, soup, seasonal vegetables, and fruit.' ) : __( '包含主食、汤品、时令蔬菜与水果', 'qiling' ),
                         'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 48 ) : '¥48',
-                        'badge' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Featured' ) : __( '推荐', 'developer-starter' ),
+                        'badge' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Featured' ) : __( '推荐', 'qiling' ),
                     ),
                     array(
-                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '高级定制服务', 'Premium Concierge Service' ) : __( '高级定制服务', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '一对一专属顾问，24小时响应', 'A dedicated consultant with around-the-clock support.' ) : __( '一对一专属顾问，24小时响应', 'developer-starter' ),
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '高级定制服务', 'Premium Concierge Service' ) : __( '高级定制服务', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '一对一专属顾问，24小时响应', 'A dedicated consultant with around-the-clock support.' ) : __( '一对一专属顾问，24小时响应', 'qiling' ),
                         'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2999 ) : '¥2999',
                         'badge' => 'Hot',
                     ),
                     array(
-                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础保养套餐', 'Essential Maintenance Package' ) : __( '基础保养套餐', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '机油更换、滤芯更换、全车检查', 'Oil change, filter replacement, and a full inspection.' ) : __( '机油更换、滤芯更换、全车检查', 'developer-starter' ),
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础保养套餐', 'Essential Maintenance Package' ) : __( '基础保养套餐', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '机油更换、滤芯更换、全车检查', 'Oil change, filter replacement, and a full inspection.' ) : __( '机油更换、滤芯更换、全车检查', 'qiling' ),
                         'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 398 ) : '¥398',
                         'badge' => '',
                     ),
                     array(
-                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深度清洗服务', 'Detail Cleaning Service' ) : __( '深度清洗服务', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内饰精洗、外观打蜡、轮毂清洁', 'Interior deep clean, exterior wax, and wheel detailing.' ) : __( '内饰精洗、外观打蜡、轮毂清洁', 'developer-starter' ),
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深度清洗服务', 'Detail Cleaning Service' ) : __( '深度清洗服务', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内饰精洗、外观打蜡、轮毂清洁', 'Interior deep clean, exterior wax, and wheel detailing.' ) : __( '内饰精洗、外观打蜡、轮毂清洁', 'qiling' ),
                         'price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 580 ) : '¥580',
-                        'badge' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新品', 'New' ) : __( '新品', 'developer-starter' ),
+                        'badge' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新品', 'New' ) : __( '新品', 'qiling' ),
                     ),
                 ),
             ),
@@ -112,26 +112,26 @@ class Menu_Module extends Module_Base {
             // Spacing
             array(
                 'id' => 'module_margin_top',
-                'label' => __( '上间距', 'developer-starter' ),
+                'label' => __( '上间距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_margin_bottom',
-                'label' => __( '下间距', 'developer-starter' ),
+                'label' => __( '下间距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，菜单项目将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，菜单项目将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -140,10 +140,10 @@ class Menu_Module extends Module_Base {
         // 数据提取与处理
         $title = isset( $data['menu_title'] ) && $data['menu_title'] !== ''
             ? $data['menu_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'Featured <span style="color:var(--qiling-color-eab308)">Menu</span>' ) : __( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'Featured <span style="color:var(--qiling-color-eab308)">Menu</span>' ) : __( '特色<span style="color:var(--qiling-color-eab308)">菜单</span>', 'qiling' ) );
         $subtitle = isset( $data['menu_subtitle'] ) && $data['menu_subtitle'] !== ''
             ? $data['menu_subtitle']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精心挑选的优质服务与产品', 'A curated selection of signature services and products.' ) : __( '精心挑选的优质服务与产品', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精心挑选的优质服务与产品', 'A curated selection of signature services and products.' ) : __( '精心挑选的优质服务与产品', 'qiling' ) );
         $layout = isset( $data['menu_layout'] ) ? $data['menu_layout'] : 'grid';
         $bg_color = isset( $data['menu_bg_color'] ) ? $data['menu_bg_color'] : 'var(--color-neutral-0)';
         $accent_color = isset( $data['menu_accent_color'] ) ? $data['menu_accent_color'] : 'var(--qiling-color-eab308)';

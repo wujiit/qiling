@@ -29,7 +29,8 @@ class Notification_Manager {
 
     private function __construct() {
         global $wpdb;
-        $this->table_name = $wpdb->prefix . 'developer_starter_notifications';
+        $this->table_name = $wpdb->prefix . 'qiling_notifications';
+        $this->maybe_migrate_legacy_table();
 
         add_action( 'after_switch_theme', array( $this, 'install_table' ), 10, 0 );
         add_action( 'admin_init', array( $this, 'maybe_create_table' ) );
@@ -62,7 +63,23 @@ class Notification_Manager {
         );
     }
 
+    
+    /**
+     * 自动平滑重命名历史表，保留历史站内通知数据。
+     */
+    private function maybe_migrate_legacy_table() {
+        global $wpdb;
+        $old_table = $wpdb->prefix . 'developer_starter_notifications';
+        $new_table = $this->table_name;
+        if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $old_table ) ) === $old_table ) {
+            if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_table ) ) !== $new_table ) {
+                $wpdb->query( "RENAME TABLE `{$old_table}` TO `{$new_table}`" );
+            }
+        }
+    }
+
     public function create_table() {
+        $this->maybe_migrate_legacy_table();
         Database_Schema_Migration_Service::apply_schema( $this->get_table_schema() );
     }
 
@@ -129,8 +146,8 @@ class Notification_Manager {
 
         $data = array(
             'user_id'    => $user_id,
-            'title'      => sanitize_text_field( $title ),
-            'content'    => $content !== '' ? wp_kses_post( $content ) : '',
+            'title'      => sanitize_text_field( (string) $title ),
+            'content'    => ( is_string( $content ) && '' !== trim( $content ) ) ? wp_kses_post( $content ) : '',
             'link_url'   => isset( $args['link'] ) ? esc_url_raw( $args['link'] ) : '',
             'notice_type'=> $type,
             'is_read'    => ! empty( $args['is_read'] ) ? 1 : 0,
@@ -198,7 +215,7 @@ class Notification_Manager {
         $order = strtoupper( $args['order'] ) === 'ASC' ? 'ASC' : 'DESC';
 
         $sql = $wpdb->prepare(
-            "SELECT * FROM {$this->table_name}
+            "SELECT id, user_id, title, content, link_url, notice_type, is_read, read_at, meta, created_at FROM {$this->table_name}
              WHERE {$where}
              ORDER BY id {$order}
              LIMIT %d OFFSET %d",

@@ -21,7 +21,8 @@ class Message_Manager {
 
     public function __construct() {
         global $wpdb;
-        $this->table_name = $wpdb->prefix . 'developer_starter_messages';
+        $this->table_name = $wpdb->prefix . 'qiling_messages';
+        $this->maybe_migrate_legacy_table();
         
         add_action( 'after_switch_theme', array( $this, 'install_table' ), 10, 0 );
         add_action( 'admin_init', array( $this, 'maybe_create_table' ) );
@@ -54,7 +55,23 @@ class Message_Manager {
         );
     }
 
+    
+    /**
+     * 自动平滑重命名历史表，保留历史留言数据。
+     */
+    private function maybe_migrate_legacy_table() {
+        global $wpdb;
+        $old_table = $wpdb->prefix . 'developer_starter_messages';
+        $new_table = $this->table_name;
+        if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $old_table ) ) === $old_table ) {
+            if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_table ) ) !== $new_table ) {
+                $wpdb->query( "RENAME TABLE `{$old_table}` TO `{$new_table}`" );
+            }
+        }
+    }
+
     public function create_table() {
+        $this->maybe_migrate_legacy_table();
         Database_Schema_Migration_Service::apply_schema( $this->get_table_schema() );
     }
 
@@ -83,7 +100,7 @@ class Message_Manager {
         $login_required = function_exists( 'developer_starter_get_option' ) && developer_starter_get_option( 'contact_message_login_required', '' ) === '1';
         if ( $login_required && ! is_user_logged_in() ) {
             wp_send_json_error( array(
-                'message'   => __( '请先登录后再留言', 'developer-starter' ),
+                'message'   => __( '请先登录后再留言', 'qiling' ),
                 'code'      => 'login_required',
                 'login_url' => $this->get_login_url(),
             ) );
@@ -92,13 +109,13 @@ class Message_Manager {
         // 校验安全 Nonce
         $nonce = $this->get_post_value( 'nonce', 'nonce' );
         if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'ds_message_nonce' ) ) {
-            wp_send_json_error( array( 'message' => __( '安全验证失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全验证失败', 'qiling' ) ) );
         }
 	        
         // 基于客户端 IP 实施限流
         $ip = developer_starter_get_client_ip();
         if ( $this->is_rate_limited( $ip ) ) {
-            wp_send_json_error( array( 'message' => __( '提交过于频繁，请稍后再试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '提交过于频繁，请稍后再试', 'qiling' ) ) );
         }
 	        
         // 清理输入数据以防御 SQL 注入
@@ -109,11 +126,11 @@ class Message_Manager {
         
         // 校验必填字段
         if ( empty( $name ) || empty( $message ) ) {
-            wp_send_json_error( array( 'message' => __( '请填写必填项', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请填写必填项', 'qiling' ) ) );
         }
         
         if ( empty( $phone ) && empty( $email ) ) {
-            wp_send_json_error( array( 'message' => __( '请填写联系电话或邮箱', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请填写联系电话或邮箱', 'qiling' ) ) );
         }
         
         // 写入数据库
@@ -134,13 +151,13 @@ class Message_Manager {
         );
         
         if ( $result === false ) {
-            wp_send_json_error( array( 'message' => __( '提交失败，请稍后重试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '提交失败，请稍后重试', 'qiling' ) ) );
         }
         
         // 发送邮件通知
         $this->send_email_notification( $name, $phone, $email, $message );
         
-        wp_send_json_success( array( 'message' => __( '留言提交成功，我们会尽快与您联系！', 'developer-starter' ) ) );
+        wp_send_json_success( array( 'message' => __( '留言提交成功，我们会尽快与您联系！', 'qiling' ) ) );
     }
 
     /**
@@ -319,36 +336,36 @@ class Message_Manager {
         $admin_email = get_option( 'admin_email' );
         $site_name = get_bloginfo( 'name' );
         
-        $subject = sprintf( __( '[%s] 新留言通知', 'developer-starter' ), $site_name );
+        $subject = sprintf( __( '[%s] 新留言通知', 'qiling' ), $site_name );
         
         $body = '
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <div style="background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: #fff; padding: 30px; border-radius: 10px 10px 0 0;">
-                <h2 style="margin: 0;">' . esc_html__( '📬 新留言通知', 'developer-starter' ) . '</h2>
-                <p style="margin: 10px 0 0; opacity: 0.9;">' . esc_html__( '您收到一条新的网站留言', 'developer-starter' ) . '</p>
+                <h2 style="margin: 0;">' . esc_html__( '新留言通知', 'qiling' ) . '</h2>
+                <p style="margin: 10px 0 0; opacity: 0.9;">' . esc_html__( '您收到一条新的网站留言', 'qiling' ) . '</p>
             </div>
             <div style="background: #f8fafc; padding: 30px; border: 1px solid #e2e8f0; border-top: none;">
                 <table style="width: 100%; border-collapse: collapse;">
                     <tr>
-                        <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; width: 100px;">' . esc_html__( '姓名', 'developer-starter' ) . '</td>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; width: 100px;">' . esc_html__( '姓名', 'qiling' ) . '</td>
                         <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0;">' . esc_html( $name ) . '</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold;">' . esc_html__( '电话', 'developer-starter' ) . '</td>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold;">' . esc_html__( '电话', 'qiling' ) . '</td>
                         <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0;">' . esc_html( $phone ) . '</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold;">' . esc_html__( '邮箱', 'developer-starter' ) . '</td>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold;">' . esc_html__( '邮箱', 'qiling' ) . '</td>
                         <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0;">' . esc_html( $email ) . '</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px 0; font-weight: bold; vertical-align: top;">' . esc_html__( '留言', 'developer-starter' ) . '</td>
+                        <td style="padding: 10px 0; font-weight: bold; vertical-align: top;">' . esc_html__( '留言', 'qiling' ) . '</td>
                         <td style="padding: 10px 0;">' . nl2br( esc_html( $message ) ) . '</td>
                     </tr>
                 </table>
             </div>
             <div style="background: #1e293b; color: #94a3b8; padding: 20px; border-radius: 0 0 10px 10px; text-align: center; font-size: 12px;">
-                <p style="margin: 0;">' . sprintf( esc_html__( '此邮件由 %s 自动发送', 'developer-starter' ), esc_html( $site_name ) ) . '</p>
+                <p style="margin: 0;">' . sprintf( esc_html__( '此邮件由 %s 自动发送', 'qiling' ), esc_html( $site_name ) ) . '</p>
             </div>
         </div>';
         
@@ -359,15 +376,15 @@ class Message_Manager {
 
         if ( $should_send_push && function_exists( 'developer_starter_send_push_message' ) ) {
             $push_lines = array(
-                __( '姓名', 'developer-starter' ) => $name,
-                __( '电话', 'developer-starter' ) => $phone,
-                __( '邮箱', 'developer-starter' ) => $email,
-                __( '留言', 'developer-starter' ) => $message,
-                __( '时间', 'developer-starter' ) => current_time( 'Y-m-d H:i:s' ),
+                __( '姓名', 'qiling' ) => $name,
+                __( '电话', 'qiling' ) => $phone,
+                __( '邮箱', 'qiling' ) => $email,
+                __( '留言', 'qiling' ) => $message,
+                __( '时间', 'qiling' ) => current_time( 'Y-m-d H:i:s' ),
             );
             developer_starter_send_push_message(
                 'message',
-                __( '新留言通知', 'developer-starter' ),
+                __( '新留言通知', 'qiling' ),
                 $push_lines,
                 array(
                     'args' => array(
@@ -380,14 +397,14 @@ class Message_Manager {
 
     public function add_messages_menu() {
         $unread_count = $this->get_unread_count();
-        $menu_title = __( '留言管理', 'developer-starter' );
+        $menu_title = __( '留言管理', 'qiling' );
         if ( $unread_count > 0 ) {
             $menu_title .= ' <span class="awaiting-mod count-' . $unread_count . '"><span class="pending-count">' . $unread_count . '</span></span>';
         }
         
         add_submenu_page(
-            'developer-starter-settings',
-            __( '留言管理', 'developer-starter' ),
+            'qiling-settings',
+            __( '留言管理', 'qiling' ),
             $menu_title,
             'manage_options',
             'developer-starter-messages',
@@ -412,13 +429,13 @@ class Message_Manager {
         if ( '' !== $action && '' !== $nonce ) {
             // 权限检查
             if ( ! current_user_can( 'manage_options' ) ) {
-                wp_die( __( '您没有权限执行此操作', 'developer-starter' ) );
+                wp_die( __( '您没有权限执行此操作', 'qiling' ) );
             }
 	
             if ( wp_verify_nonce( $nonce, 'ds_message_action' ) ) {
                 if ( $action === 'delete_all' ) {
                     $wpdb->query( "TRUNCATE TABLE {$this->table_name}" );
-                    echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( '所有留言已清空。', 'developer-starter' ) . '</p></div>';
+                    echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( '所有留言已清空。', 'qiling' ) . '</p></div>';
                 } else {
                     $id = (int) $this->get_query_value( 'id', 'absint', 0 );
                     if ( $id > 0 && $action === 'mark_read' ) {
@@ -440,7 +457,7 @@ class Message_Manager {
 
         $messages = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM `{$this->table_name}` ORDER BY created_at DESC LIMIT %d OFFSET %d",
+                "SELECT id, name, phone, email, message, ip_address, user_agent, is_read, created_at FROM `{$this->table_name}` ORDER BY created_at DESC LIMIT %d OFFSET %d",
                 $per_page,
                 $offset
             )
@@ -458,12 +475,12 @@ class Message_Manager {
         );
         ?>
         <div class="wrap">
-            <h1 class="wp-heading-inline"><?php esc_html_e( '留言管理', 'developer-starter' ); ?></h1>
+            <h1 class="wp-heading-inline"><?php esc_html_e( '留言管理', 'qiling' ); ?></h1>
             <a href="<?php echo esc_url( $delete_all_url ); ?>" 
                class="page-title-action" 
-               onclick="return confirm('<?php echo esc_js( __( '确定要清空所有留言吗？此操作不可恢复！', 'developer-starter' ) ); ?>');"
+               onclick="return confirm('<?php echo esc_js( __( '确定要清空所有留言吗？此操作不可恢复！', 'qiling' ) ); ?>');"
                style="color: #b32d2e; border-color: #b32d2e;">
-                <?php esc_html_e( '清空所有留言', 'developer-starter' ); ?>
+                <?php esc_html_e( '清空所有留言', 'qiling' ); ?>
             </a>
             <hr class="wp-header-end">
             
@@ -471,18 +488,18 @@ class Message_Manager {
                 <thead>
                     <tr>
                         <th style="width: 50px;">ID</th>
-                        <th style="width: 100px;"><?php esc_html_e( '姓名', 'developer-starter' ); ?></th>
-                        <th style="width: 120px;"><?php esc_html_e( '电话', 'developer-starter' ); ?></th>
-                        <th style="width: 150px;"><?php esc_html_e( '邮箱', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '留言内容', 'developer-starter' ); ?></th>
-                        <th style="width: 150px;"><?php esc_html_e( '时间', 'developer-starter' ); ?></th>
-                        <th style="width: 60px;"><?php esc_html_e( '状态', 'developer-starter' ); ?></th>
-                        <th style="width: 100px;"><?php esc_html_e( '操作', 'developer-starter' ); ?></th>
+                        <th style="width: 100px;"><?php esc_html_e( '姓名', 'qiling' ); ?></th>
+                        <th style="width: 120px;"><?php esc_html_e( '电话', 'qiling' ); ?></th>
+                        <th style="width: 150px;"><?php esc_html_e( '邮箱', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '留言内容', 'qiling' ); ?></th>
+                        <th style="width: 150px;"><?php esc_html_e( '时间', 'qiling' ); ?></th>
+                        <th style="width: 60px;"><?php esc_html_e( '状态', 'qiling' ); ?></th>
+                        <th style="width: 100px;"><?php esc_html_e( '操作', 'qiling' ); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if ( empty( $messages ) ) : ?>
-                        <tr><td colspan="8" style="text-align: center; padding: 40px;"><?php esc_html_e( '暂无留言', 'developer-starter' ); ?></td></tr>
+                        <tr><td colspan="8" style="text-align: center; padding: 40px;"><?php esc_html_e( '暂无留言', 'qiling' ); ?></td></tr>
                     <?php else : ?>
                         <?php foreach ( $messages as $msg ) : ?>
                             <tr style="<?php echo $msg->is_read ? '' : 'background: #fff9e6;'; ?>">
@@ -494,9 +511,9 @@ class Message_Manager {
                                 <td><?php echo esc_html( $msg->created_at ); ?></td>
                                 <td>
                                     <?php if ( $msg->is_read ) : ?>
-                                        <span style="color: #22c55e;"><?php esc_html_e( '已读', 'developer-starter' ); ?></span>
+                                        <span style="color: #22c55e;"><?php esc_html_e( '已读', 'qiling' ); ?></span>
                                     <?php else : ?>
-                                        <span style="color: #f59e0b; font-weight: bold;"><?php esc_html_e( '未读', 'developer-starter' ); ?></span>
+                                        <span style="color: #f59e0b; font-weight: bold;"><?php esc_html_e( '未读', 'qiling' ); ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
@@ -514,7 +531,7 @@ class Message_Manager {
                                             'ds_message_action'
                                         );
                                         ?>
-                                        <a href="<?php echo esc_url( $mark_read_url ); ?>"><?php esc_html_e( '标记已读', 'developer-starter' ); ?></a> |
+                                        <a href="<?php echo esc_url( $mark_read_url ); ?>"><?php esc_html_e( '标记已读', 'qiling' ); ?></a> |
                                     <?php endif; ?>
                                     <?php
                                     $delete_url = wp_nonce_url(
@@ -530,7 +547,7 @@ class Message_Manager {
                                     );
                                     ?>
                                     <a href="<?php echo esc_url( $delete_url ); ?>" 
-                                       onclick="return confirm('<?php echo esc_js( __( '确定删除此留言？', 'developer-starter' ) ); ?>');" style="color: #dc2626;"><?php esc_html_e( '删除', 'developer-starter' ); ?></a>
+                                       onclick="return confirm('<?php echo esc_js( __( '确定删除此留言？', 'qiling' ) ); ?>');" style="color: #dc2626;"><?php esc_html_e( '删除', 'qiling' ); ?></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

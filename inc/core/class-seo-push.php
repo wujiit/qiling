@@ -140,12 +140,12 @@ class SEO_Push_Baidu {
     private function get_google_service_account() {
         $raw = $this->get_google_service_account_json();
         if ( '' === $raw ) {
-            return new \WP_Error( 'missing_google_service_account', __( '请先配置 Google Service Account JSON', 'developer-starter' ) );
+            return new \WP_Error( 'missing_google_service_account', __( '请先配置 Google Service Account JSON', 'qiling' ) );
         }
 
         $data = json_decode( $raw, true );
         if ( ! is_array( $data ) || empty( $data['client_email'] ) || empty( $data['private_key'] ) ) {
-            return new \WP_Error( 'invalid_google_service_account', __( 'Google Service Account JSON 格式无效', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_google_service_account', __( 'Google Service Account JSON 格式无效', 'qiling' ) );
         }
 
         if ( empty( $data['token_uri'] ) ) {
@@ -217,11 +217,12 @@ class SEO_Push_Baidu {
         $body = implode( "\n", array_filter( $urls ) );
 
         $response = wp_remote_post( $api, array(
-            'headers' => array(
+            'headers'            => array(
                 'Content-Type' => 'text/plain',
             ),
-            'body'    => $body,
-            'timeout' => 10,
+            'body'               => $body,
+            'timeout'            => 10,
+            'reject_unsafe_urls' => true,
         ) );
 
         if ( is_wp_error( $response ) ) {
@@ -300,11 +301,12 @@ class SEO_Push_Baidu {
         }
 
         $response = wp_remote_post( $endpoint, array(
-            'headers' => array(
+            'headers'            => array(
                 'Content-Type' => 'application/json',
             ),
-            'body'    => wp_json_encode( $payload, JSON_UNESCAPED_UNICODE ),
-            'timeout' => 10,
+            'body'               => wp_json_encode( $payload, JSON_UNESCAPED_UNICODE ),
+            'timeout'            => 10,
+            'reject_unsafe_urls' => true,
         ) );
 
         if ( is_wp_error( $response ) ) {
@@ -350,7 +352,7 @@ class SEO_Push_Baidu {
         }
 
         if ( ! function_exists( 'openssl_sign' ) ) {
-            return new \WP_Error( 'openssl_unavailable', __( '当前 PHP 环境缺少 openssl_sign，无法签发 Google 访问令牌', 'developer-starter' ) );
+            return new \WP_Error( 'openssl_unavailable', __( '当前 PHP 环境缺少 openssl_sign，无法签发 Google 访问令牌', 'qiling' ) );
         }
 
         $cache_key = 'ds_google_indexing_token_' . md5( (string) $service_account['client_email'] . '|' . (string) $service_account['private_key'] );
@@ -375,7 +377,7 @@ class SEO_Push_Baidu {
         $algorithm = defined( 'OPENSSL_ALGO_SHA256' ) ? OPENSSL_ALGO_SHA256 : 'sha256WithRSAEncryption';
         $signed = openssl_sign( $jwt_body, $signature, (string) $service_account['private_key'], $algorithm );
         if ( ! $signed ) {
-            return new \WP_Error( 'google_jwt_sign_failed', __( 'Google 访问令牌签名失败，请检查 private_key 是否完整', 'developer-starter' ) );
+            return new \WP_Error( 'google_jwt_sign_failed', __( 'Google 访问令牌签名失败，请检查 private_key 是否完整', 'qiling' ) );
         }
 
         $assertion = $jwt_body . '.' . $this->base64url_encode( $signature );
@@ -500,7 +502,7 @@ class SEO_Push_Baidu {
         $status = $success > 0 && 0 === $error ? 'success' : ( $success > 0 ? 'partial' : 'error' );
         $message = sprintf(
             /* translators: 1: success count, 2: error count */
-            __( 'Google 推送完成：成功 %1$d 条，失败 %2$d 条', 'developer-starter' ),
+            __( 'Google 推送完成：成功 %1$d 条，失败 %2$d 条', 'qiling' ),
             $success,
             $error
         );
@@ -520,7 +522,7 @@ class SEO_Push_Baidu {
     public function register_meta_box() {
         add_meta_box(
             'ds_baidu_push_status',
-            __( 'SEO 推送状态', 'developer-starter' ),
+            __( 'SEO 推送状态', 'qiling' ),
             array( $this, 'render_meta_box' ),
             array( 'post', 'page' ),
             'side',
@@ -556,40 +558,40 @@ class SEO_Push_Baidu {
         $google_message = is_array( $google_data ) && isset( $google_data['message'] ) ? $google_data['message'] : '';
         $google_trigger = is_array( $google_data ) && isset( $google_data['trigger'] ) ? $google_data['trigger'] : '';
 
-        echo '<p><strong>' . esc_html__( '百度推送：', 'developer-starter' ) . '</strong> ' . ( $enabled ? esc_html__( '已启用', 'developer-starter' ) : esc_html__( '未启用', 'developer-starter' ) ) . '</p>';
+        echo '<p><strong>' . esc_html__( '百度推送：', 'qiling' ) . '</strong> ' . ( $enabled ? esc_html__( '已启用', 'qiling' ) : esc_html__( '未启用', 'qiling' ) ) . '</p>';
 
         if ( ! $status ) {
-            echo '<p>' . esc_html__( '尚未推送（仅首次发布时推送）', 'developer-starter' ) . '</p>';
+            echo '<p>' . esc_html__( '尚未推送（仅首次发布时推送）', 'qiling' ) . '</p>';
         } else {
-            echo '<p><strong>' . esc_html__( '推送结果：', 'developer-starter' ) . '</strong> ' . esc_html( $status ) . '</p>';
+            echo '<p><strong>' . esc_html__( '推送结果：', 'qiling' ) . '</strong> ' . esc_html( $status ) . '</p>';
             if ( $trigger ) {
-                echo '<p><strong>' . esc_html__( '推送方式：', 'developer-starter' ) . '</strong> ' . esc_html( $trigger === 'auto' ? __( '自动', 'developer-starter' ) : __( '手动', 'developer-starter' ) ) . '</p>';
+                echo '<p><strong>' . esc_html__( '推送方式：', 'qiling' ) . '</strong> ' . esc_html( $trigger === 'auto' ? __( '自动', 'qiling' ) : __( '手动', 'qiling' ) ) . '</p>';
             }
             if ( $time ) {
-                echo '<p><strong>' . esc_html__( '推送时间：', 'developer-starter' ) . '</strong> ' . esc_html( $time ) . '</p>';
+                echo '<p><strong>' . esc_html__( '推送时间：', 'qiling' ) . '</strong> ' . esc_html( $time ) . '</p>';
             }
             if ( $message ) {
-                echo '<p><strong>' . esc_html__( '返回信息：', 'developer-starter' ) . '</strong> ' . esc_html( $message ) . '</p>';
+                echo '<p><strong>' . esc_html__( '返回信息：', 'qiling' ) . '</strong> ' . esc_html( $message ) . '</p>';
             }
             if ( $success !== null ) {
-                echo '<p><strong>' . esc_html__( '成功条数：', 'developer-starter' ) . '</strong> ' . esc_html( $success ) . '</p>';
+                echo '<p><strong>' . esc_html__( '成功条数：', 'qiling' ) . '</strong> ' . esc_html( $success ) . '</p>';
             }
             if ( $remain !== null ) {
-                echo '<p><strong>' . esc_html__( '剩余配额：', 'developer-starter' ) . '</strong> ' . esc_html( $remain ) . '</p>';
+                echo '<p><strong>' . esc_html__( '剩余配额：', 'qiling' ) . '</strong> ' . esc_html( $remain ) . '</p>';
             }
         }
 
         if ( $enabled && $post->post_status === 'publish' ) {
             $nonce = wp_create_nonce( 'ds_baidu_push_single_' . $post->ID );
-            echo '<p><button type="button" class="button" id="ds-baidu-push-btn" data-post-id="' . esc_attr( $post->ID ) . '" data-nonce="' . esc_attr( $nonce ) . '">' . esc_html__( '手动推送', 'developer-starter' ) . '</button></p>';
+            echo '<p><button type="button" class="button" id="ds-baidu-push-btn" data-post-id="' . esc_attr( $post->ID ) . '" data-nonce="' . esc_attr( $nonce ) . '">' . esc_html__( '手动推送', 'qiling' ) . '</button></p>';
             echo '<p class="description" id="ds-baidu-push-msg"></p>';
             ?>
             <script>
                 (function() {
-                    var pushingText = '<?php echo esc_js( __( '正在推送...', 'developer-starter' ) ); ?>';
-                    var successText = '<?php echo esc_js( __( '推送成功', 'developer-starter' ) ); ?>';
-                    var failText = '<?php echo esc_js( __( '推送失败', 'developer-starter' ) ); ?>';
-                    var failRetryText = '<?php echo esc_js( __( '推送失败，请稍后再试', 'developer-starter' ) ); ?>';
+                    var pushingText = '<?php echo esc_js( __( '正在推送...', 'qiling' ) ); ?>';
+                    var successText = '<?php echo esc_js( __( '推送成功', 'qiling' ) ); ?>';
+                    var failText = '<?php echo esc_js( __( '推送失败', 'qiling' ) ); ?>';
+                    var failRetryText = '<?php echo esc_js( __( '推送失败，请稍后再试', 'qiling' ) ); ?>';
                     var btn = document.getElementById('ds-baidu-push-btn');
                     if (!btn || typeof ajaxurl === 'undefined') return;
                     btn.addEventListener('click', function() {
@@ -625,34 +627,34 @@ class SEO_Push_Baidu {
         }
 
         echo '<hr style="margin:10px 0;border:none;border-top:1px solid #e5e7eb;">';
-        echo '<p><strong>' . esc_html__( 'IndexNow：', 'developer-starter' ) . '</strong> ' . ( $index_enabled ? esc_html__( '已启用', 'developer-starter' ) : esc_html__( '未启用', 'developer-starter' ) ) . '</p>';
+        echo '<p><strong>' . esc_html__( 'IndexNow：', 'qiling' ) . '</strong> ' . ( $index_enabled ? esc_html__( '已启用', 'qiling' ) : esc_html__( '未启用', 'qiling' ) ) . '</p>';
 
         if ( ! $index_status ) {
-            echo '<p>' . esc_html__( '尚未推送（仅首次发布时推送）', 'developer-starter' ) . '</p>';
+            echo '<p>' . esc_html__( '尚未推送（仅首次发布时推送）', 'qiling' ) . '</p>';
         } else {
-            echo '<p><strong>' . esc_html__( '推送结果：', 'developer-starter' ) . '</strong> ' . esc_html( $index_status ) . '</p>';
+            echo '<p><strong>' . esc_html__( '推送结果：', 'qiling' ) . '</strong> ' . esc_html( $index_status ) . '</p>';
             if ( $index_trigger ) {
-                echo '<p><strong>' . esc_html__( '推送方式：', 'developer-starter' ) . '</strong> ' . esc_html( $index_trigger === 'auto' ? __( '自动', 'developer-starter' ) : __( '手动', 'developer-starter' ) ) . '</p>';
+                echo '<p><strong>' . esc_html__( '推送方式：', 'qiling' ) . '</strong> ' . esc_html( $index_trigger === 'auto' ? __( '自动', 'qiling' ) : __( '手动', 'qiling' ) ) . '</p>';
             }
             if ( $index_time ) {
-                echo '<p><strong>' . esc_html__( '推送时间：', 'developer-starter' ) . '</strong> ' . esc_html( $index_time ) . '</p>';
+                echo '<p><strong>' . esc_html__( '推送时间：', 'qiling' ) . '</strong> ' . esc_html( $index_time ) . '</p>';
             }
             if ( $index_message ) {
-                echo '<p><strong>' . esc_html__( '返回信息：', 'developer-starter' ) . '</strong> ' . esc_html( $index_message ) . '</p>';
+                echo '<p><strong>' . esc_html__( '返回信息：', 'qiling' ) . '</strong> ' . esc_html( $index_message ) . '</p>';
             }
         }
 
         if ( $index_enabled && $post->post_status === 'publish' ) {
             $nonce = wp_create_nonce( 'ds_indexnow_push_single_' . $post->ID );
-            echo '<p><button type="button" class="button" id="ds-indexnow-push-btn" data-post-id="' . esc_attr( $post->ID ) . '" data-nonce="' . esc_attr( $nonce ) . '">' . esc_html__( '手动推送 IndexNow', 'developer-starter' ) . '</button></p>';
+            echo '<p><button type="button" class="button" id="ds-indexnow-push-btn" data-post-id="' . esc_attr( $post->ID ) . '" data-nonce="' . esc_attr( $nonce ) . '">' . esc_html__( '手动推送 IndexNow', 'qiling' ) . '</button></p>';
             echo '<p class="description" id="ds-indexnow-push-msg"></p>';
             ?>
             <script>
                 (function() {
-                    var pushingText = '<?php echo esc_js( __( '正在推送...', 'developer-starter' ) ); ?>';
-                    var successText = '<?php echo esc_js( __( '推送成功', 'developer-starter' ) ); ?>';
-                    var failText = '<?php echo esc_js( __( '推送失败', 'developer-starter' ) ); ?>';
-                    var failRetryText = '<?php echo esc_js( __( '推送失败，请稍后再试', 'developer-starter' ) ); ?>';
+                    var pushingText = '<?php echo esc_js( __( '正在推送...', 'qiling' ) ); ?>';
+                    var successText = '<?php echo esc_js( __( '推送成功', 'qiling' ) ); ?>';
+                    var failText = '<?php echo esc_js( __( '推送失败', 'qiling' ) ); ?>';
+                    var failRetryText = '<?php echo esc_js( __( '推送失败，请稍后再试', 'qiling' ) ); ?>';
                     var btn = document.getElementById('ds-indexnow-push-btn');
                     if (!btn || typeof ajaxurl === 'undefined') return;
                     btn.addEventListener('click', function() {
@@ -688,37 +690,37 @@ class SEO_Push_Baidu {
         }
 
         echo '<hr style="margin:10px 0;border:none;border-top:1px solid #e5e7eb;">';
-        echo '<p><strong>' . esc_html__( 'Google Indexing：', 'developer-starter' ) . '</strong> ' . ( $google_enabled ? esc_html__( '已启用', 'developer-starter' ) : esc_html__( '未启用', 'developer-starter' ) ) . '</p>';
+        echo '<p><strong>' . esc_html__( 'Google Indexing：', 'qiling' ) . '</strong> ' . ( $google_enabled ? esc_html__( '已启用', 'qiling' ) : esc_html__( '未启用', 'qiling' ) ) . '</p>';
         if ( $google_enabled ) {
-            echo '<p class="description">' . esc_html( $google_auto_enabled ? __( '发布时自动推送已开启。', 'developer-starter' ) : __( '仅手动推送；适合 Google 无法稳定访问的服务器。', 'developer-starter' ) ) . '</p>';
+            echo '<p class="description">' . esc_html( $google_auto_enabled ? __( '发布时自动推送已开启。', 'qiling' ) : __( '仅手动推送；适合 Google 无法稳定访问的服务器。', 'qiling' ) ) . '</p>';
         }
 
         if ( ! $google_status ) {
-            echo '<p>' . esc_html__( '尚未推送', 'developer-starter' ) . '</p>';
+            echo '<p>' . esc_html__( '尚未推送', 'qiling' ) . '</p>';
         } else {
-            echo '<p><strong>' . esc_html__( '推送结果：', 'developer-starter' ) . '</strong> ' . esc_html( $google_status ) . '</p>';
+            echo '<p><strong>' . esc_html__( '推送结果：', 'qiling' ) . '</strong> ' . esc_html( $google_status ) . '</p>';
             if ( $google_trigger ) {
-                echo '<p><strong>' . esc_html__( '推送方式：', 'developer-starter' ) . '</strong> ' . esc_html( $google_trigger === 'auto' ? __( '自动', 'developer-starter' ) : __( '手动', 'developer-starter' ) ) . '</p>';
+                echo '<p><strong>' . esc_html__( '推送方式：', 'qiling' ) . '</strong> ' . esc_html( $google_trigger === 'auto' ? __( '自动', 'qiling' ) : __( '手动', 'qiling' ) ) . '</p>';
             }
             if ( $google_time ) {
-                echo '<p><strong>' . esc_html__( '推送时间：', 'developer-starter' ) . '</strong> ' . esc_html( $google_time ) . '</p>';
+                echo '<p><strong>' . esc_html__( '推送时间：', 'qiling' ) . '</strong> ' . esc_html( $google_time ) . '</p>';
             }
             if ( $google_message ) {
-                echo '<p><strong>' . esc_html__( '返回信息：', 'developer-starter' ) . '</strong> ' . esc_html( $google_message ) . '</p>';
+                echo '<p><strong>' . esc_html__( '返回信息：', 'qiling' ) . '</strong> ' . esc_html( $google_message ) . '</p>';
             }
         }
 
         if ( $google_enabled && $post->post_status === 'publish' ) {
             $nonce = wp_create_nonce( 'ds_google_indexing_push_single_' . $post->ID );
-            echo '<p><button type="button" class="button" id="ds-google-indexing-push-btn" data-post-id="' . esc_attr( $post->ID ) . '" data-nonce="' . esc_attr( $nonce ) . '">' . esc_html__( '手动推送 Google', 'developer-starter' ) . '</button></p>';
+            echo '<p><button type="button" class="button" id="ds-google-indexing-push-btn" data-post-id="' . esc_attr( $post->ID ) . '" data-nonce="' . esc_attr( $nonce ) . '">' . esc_html__( '手动推送 Google', 'qiling' ) . '</button></p>';
             echo '<p class="description" id="ds-google-indexing-push-msg"></p>';
             ?>
             <script>
                 (function() {
-                    var pushingText = '<?php echo esc_js( __( '正在推送...', 'developer-starter' ) ); ?>';
-                    var successText = '<?php echo esc_js( __( '推送成功', 'developer-starter' ) ); ?>';
-                    var failText = '<?php echo esc_js( __( '推送失败', 'developer-starter' ) ); ?>';
-                    var failRetryText = '<?php echo esc_js( __( '推送失败，请稍后再试', 'developer-starter' ) ); ?>';
+                    var pushingText = '<?php echo esc_js( __( '正在推送...', 'qiling' ) ); ?>';
+                    var successText = '<?php echo esc_js( __( '推送成功', 'qiling' ) ); ?>';
+                    var failText = '<?php echo esc_js( __( '推送失败', 'qiling' ) ); ?>';
+                    var failRetryText = '<?php echo esc_js( __( '推送失败，请稍后再试', 'qiling' ) ); ?>';
                     var btn = document.getElementById('ds-google-indexing-push-btn');
                     if (!btn || typeof ajaxurl === 'undefined') return;
                     btn.addEventListener('click', function() {
@@ -758,54 +760,54 @@ class SEO_Push_Baidu {
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( ! $post_id || ! wp_verify_nonce( $nonce, 'ds_baidu_push_single_' . $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '安全校验失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全校验失败', 'qiling' ) ) );
         }
         if ( ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         if ( ! $this->is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'qiling' ) ) );
         }
         $post = get_post( $post_id );
         if ( ! $this->can_push_post( $post ) ) {
-            wp_send_json_error( array( 'message' => __( '不支持的文章类型', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '不支持的文章类型', 'qiling' ) ) );
         }
         if ( $post->post_status !== 'publish' ) {
-            wp_send_json_error( array( 'message' => __( '仅支持已发布内容', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '仅支持已发布内容', 'qiling' ) ) );
         }
         $token = $this->get_token();
         $site = $this->get_site();
         if ( $token === '' || $site === '' ) {
-            wp_send_json_error( array( 'message' => __( '请先配置站点域名与Token', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先配置站点域名与Token', 'qiling' ) ) );
         }
         $url = get_permalink( $post );
         if ( ! $url ) {
-            wp_send_json_error( array( 'message' => __( '获取链接失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '获取链接失败', 'qiling' ) ) );
         }
         $result = $this->push_urls( array( $url ), $site, $token, 'manual' );
         $this->save_push_meta( $post_id, $result['status'], $result );
         if ( $result['status'] === 'success' ) {
-            wp_send_json_success( array( 'message' => __( '推送成功', 'developer-starter' ), 'result' => $result ) );
+            wp_send_json_success( array( 'message' => __( '推送成功', 'qiling' ), 'result' => $result ) );
         }
-        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'developer-starter' );
+        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'qiling' );
         wp_send_json_error( array( 'message' => $message, 'result' => $result ) );
     }
 
     public function ajax_push_custom() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( ! wp_verify_nonce( $nonce, 'ds_baidu_push_custom' ) ) {
-            wp_send_json_error( array( 'message' => __( '安全校验失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全校验失败', 'qiling' ) ) );
         }
         if ( ! $this->is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'qiling' ) ) );
         }
         $token = $this->get_token();
         $site = $this->get_site();
         if ( $token === '' || $site === '' ) {
-            wp_send_json_error( array( 'message' => __( '请先配置站点域名与Token', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先配置站点域名与Token', 'qiling' ) ) );
         }
 
         $raw = isset( $_POST['urls'] ) ? (string) wp_unslash( $_POST['urls'] ) : '';
@@ -831,10 +833,10 @@ class SEO_Push_Baidu {
         $urls = array_values( array_unique( $urls ) );
 
         if ( empty( $urls ) ) {
-            wp_send_json_error( array( 'message' => __( '未检测到有效URL', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未检测到有效URL', 'qiling' ) ) );
         }
         if ( count( $urls ) > 2000 ) {
-            wp_send_json_error( array( 'message' => __( '单次最多提交 2000 条链接', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '单次最多提交 2000 条链接', 'qiling' ) ) );
         }
 
         $result = $this->push_urls( $urls, $site, $token, 'manual' );
@@ -848,14 +850,14 @@ class SEO_Push_Baidu {
 
             $message = sprintf(
                 /* translators: 1: success, 2: remain */
-                __( '推送成功：%1$d 条，剩余配额：%2$d', 'developer-starter' ),
+                __( '推送成功：%1$d 条，剩余配额：%2$d', 'qiling' ),
                 $success,
                 $remain
             );
             if ( $not_same || $not_valid || $invalid ) {
                 $message .= '。' . sprintf(
                     /* translators: 1: not_same, 2: not_valid, 3: invalid */
-                    __( '过滤/失败：非本站 %1$d 条，无效 %2$d 条，格式错误 %3$d 条', 'developer-starter' ),
+                    __( '过滤/失败：非本站 %1$d 条，无效 %2$d 条，格式错误 %3$d 条', 'qiling' ),
                     $not_same,
                     $not_valid,
                     $invalid
@@ -864,7 +866,7 @@ class SEO_Push_Baidu {
             wp_send_json_success( array( 'message' => $message, 'result' => $result ) );
         }
 
-        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'developer-starter' );
+        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'qiling' );
         wp_send_json_error( array( 'message' => $message, 'result' => $result ) );
     }
 
@@ -872,52 +874,52 @@ class SEO_Push_Baidu {
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( ! $post_id || ! wp_verify_nonce( $nonce, 'ds_indexnow_push_single_' . $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '安全校验失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全校验失败', 'qiling' ) ) );
         }
         if ( ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         if ( ! $this->is_indexnow_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'qiling' ) ) );
         }
         $post = get_post( $post_id );
         if ( ! $this->can_push_post( $post ) ) {
-            wp_send_json_error( array( 'message' => __( '不支持的文章类型', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '不支持的文章类型', 'qiling' ) ) );
         }
         if ( $post->post_status !== 'publish' ) {
-            wp_send_json_error( array( 'message' => __( '仅支持已发布内容', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '仅支持已发布内容', 'qiling' ) ) );
         }
         $key = $this->get_indexnow_key();
         if ( $key === '' ) {
-            wp_send_json_error( array( 'message' => __( '请先配置 IndexNow Key', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先配置 IndexNow Key', 'qiling' ) ) );
         }
         $url = get_permalink( $post );
         if ( ! $url ) {
-            wp_send_json_error( array( 'message' => __( '获取链接失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '获取链接失败', 'qiling' ) ) );
         }
         $result = $this->push_indexnow_urls( array( $url ), 'manual' );
         $this->save_indexnow_meta( $post_id, $result['status'], $result );
         if ( $result['status'] === 'success' ) {
-            wp_send_json_success( array( 'message' => __( '推送成功', 'developer-starter' ), 'result' => $result ) );
+            wp_send_json_success( array( 'message' => __( '推送成功', 'qiling' ), 'result' => $result ) );
         }
-        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'developer-starter' );
+        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'qiling' );
         wp_send_json_error( array( 'message' => $message, 'result' => $result ) );
     }
 
     public function ajax_indexnow_push_custom() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( ! wp_verify_nonce( $nonce, 'ds_indexnow_push_custom' ) ) {
-            wp_send_json_error( array( 'message' => __( '安全校验失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全校验失败', 'qiling' ) ) );
         }
         if ( ! $this->is_indexnow_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未启用推送功能', 'qiling' ) ) );
         }
         $key = $this->get_indexnow_key();
         if ( $key === '' ) {
-            wp_send_json_error( array( 'message' => __( '请先配置 IndexNow Key', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先配置 IndexNow Key', 'qiling' ) ) );
         }
 
         $raw = isset( $_POST['urls'] ) ? (string) wp_unslash( $_POST['urls'] ) : '';
@@ -943,23 +945,23 @@ class SEO_Push_Baidu {
         $urls = array_values( array_unique( $urls ) );
 
         if ( empty( $urls ) ) {
-            wp_send_json_error( array( 'message' => __( '未检测到有效URL', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未检测到有效URL', 'qiling' ) ) );
         }
         if ( count( $urls ) > 10000 ) {
-            wp_send_json_error( array( 'message' => __( '单次最多提交 10000 条链接', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '单次最多提交 10000 条链接', 'qiling' ) ) );
         }
 
         $result = $this->push_indexnow_urls( $urls, 'manual' );
 
         if ( $result['status'] === 'success' ) {
-            $message = __( '推送成功', 'developer-starter' );
+            $message = __( '推送成功', 'qiling' );
             if ( $invalid ) {
-                $message .= '。' . sprintf( __( '格式错误 %d 条', 'developer-starter' ), $invalid );
+                $message .= '。' . sprintf( __( '格式错误 %d 条', 'qiling' ), $invalid );
             }
             wp_send_json_success( array( 'message' => $message, 'result' => $result ) );
         }
 
-        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'developer-starter' );
+        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'qiling' );
         wp_send_json_error( array( 'message' => $message, 'result' => $result ) );
     }
 
@@ -967,58 +969,58 @@ class SEO_Push_Baidu {
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( ! $post_id || ! wp_verify_nonce( $nonce, 'ds_google_indexing_push_single_' . $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '安全校验失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全校验失败', 'qiling' ) ) );
         }
         if ( ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         if ( ! $this->is_google_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '未启用 Google Indexing API', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未启用 Google Indexing API', 'qiling' ) ) );
         }
         $post = get_post( $post_id );
         if ( ! $this->can_push_post( $post ) ) {
-            wp_send_json_error( array( 'message' => __( '不支持的文章类型', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '不支持的文章类型', 'qiling' ) ) );
         }
         if ( $post->post_status !== 'publish' ) {
-            wp_send_json_error( array( 'message' => __( '仅支持已发布内容', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '仅支持已发布内容', 'qiling' ) ) );
         }
         $url = get_permalink( $post );
         if ( ! $url ) {
-            wp_send_json_error( array( 'message' => __( '获取链接失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '获取链接失败', 'qiling' ) ) );
         }
         $result = $this->push_google_urls( array( $url ), 'manual' );
         $this->save_google_meta( $post_id, $result['status'], $result );
         if ( in_array( $result['status'], array( 'success', 'partial' ), true ) ) {
-            wp_send_json_success( array( 'message' => isset( $result['message'] ) ? $result['message'] : __( '推送成功', 'developer-starter' ), 'result' => $result ) );
+            wp_send_json_success( array( 'message' => isset( $result['message'] ) ? $result['message'] : __( '推送成功', 'qiling' ), 'result' => $result ) );
         }
-        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'developer-starter' );
+        $message = isset( $result['message'] ) ? $result['message'] : __( '推送失败', 'qiling' );
         wp_send_json_error( array( 'message' => $message, 'result' => $result ) );
     }
 
     public function ajax_google_push_custom() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( ! wp_verify_nonce( $nonce, 'ds_google_indexing_push_custom' ) ) {
-            wp_send_json_error( array( 'message' => __( '安全校验失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全校验失败', 'qiling' ) ) );
         }
         if ( ! $this->is_google_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '未启用 Google Indexing API', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未启用 Google Indexing API', 'qiling' ) ) );
         }
 
         $parsed = $this->parse_urls_from_request();
         if ( empty( $parsed['urls'] ) ) {
-            wp_send_json_error( array( 'message' => __( '未检测到有效URL', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未检测到有效URL', 'qiling' ) ) );
         }
         if ( count( $parsed['urls'] ) > 200 ) {
-            wp_send_json_error( array( 'message' => __( 'Google 单次最多提交 200 条链接，请分批操作', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Google 单次最多提交 200 条链接，请分批操作', 'qiling' ) ) );
         }
 
         $result = $this->push_google_urls( $parsed['urls'], 'manual' );
-        $message = isset( $result['message'] ) ? $result['message'] : __( '推送完成', 'developer-starter' );
+        $message = isset( $result['message'] ) ? $result['message'] : __( '推送完成', 'qiling' );
         if ( ! empty( $parsed['invalid'] ) ) {
-            $message .= '。' . sprintf( __( '格式错误 %d 条', 'developer-starter' ), (int) $parsed['invalid'] );
+            $message .= '。' . sprintf( __( '格式错误 %d 条', 'qiling' ), (int) $parsed['invalid'] );
         }
 
         if ( in_array( $result['status'], array( 'success', 'partial' ), true ) ) {
@@ -1057,12 +1059,12 @@ class SEO_Push_Baidu {
 
     private function get_provider_label( $provider ) {
         if ( 'indexnow' === $provider ) {
-            return __( 'IndexNow / Bing', 'developer-starter' );
+            return __( 'IndexNow / Bing', 'qiling' );
         }
         if ( 'google' === $provider ) {
-            return __( 'Google Indexing', 'developer-starter' );
+            return __( 'Google Indexing', 'qiling' );
         }
-        return __( '百度', 'developer-starter' );
+        return __( '百度', 'qiling' );
     }
 
     private function normalize_push_provider( $provider ) {
@@ -1123,16 +1125,16 @@ class SEO_Push_Baidu {
 
     public function ajax_push_history() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( ! wp_verify_nonce( $nonce, 'ds_seo_push_history' ) ) {
-            wp_send_json_error( array( 'message' => __( '安全校验失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全校验失败', 'qiling' ) ) );
         }
 
         $provider = $this->normalize_push_provider( isset( $_POST['provider'] ) ? wp_unslash( (string) $_POST['provider'] ) : '' );
         if ( '' === $provider ) {
-            wp_send_json_error( array( 'message' => __( '请选择推送通道', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请选择推送通道', 'qiling' ) ) );
         }
 
         $mode = isset( $_POST['mode'] ) ? sanitize_key( wp_unslash( (string) $_POST['mode'] ) ) : 'pending';
@@ -1185,7 +1187,7 @@ class SEO_Push_Baidu {
         if ( empty( $post_ids ) ) {
             wp_send_json_success(
                 array(
-                    'message' => __( '没有找到需要推送的历史内容', 'developer-starter' ),
+                    'message' => __( '没有找到需要推送的历史内容', 'qiling' ),
                     'counts'  => array(),
                 )
             );
@@ -1209,14 +1211,14 @@ class SEO_Push_Baidu {
 
         $message = sprintf(
             /* translators: 1: provider, 2: processed, 3: success, 4: failed */
-            __( '%1$s 批量推送完成：处理 %2$d 条，成功 %3$d 条，失败 %4$d 条。', 'developer-starter' ),
+            __( '%1$s 批量推送完成：处理 %2$d 条，成功 %3$d 条，失败 %4$d 条。', 'qiling' ),
             $this->get_provider_label( $provider ),
             count( $post_ids ),
             $counts['success'] + $counts['partial'],
             $counts['error']
         );
         if ( $counts['skipped'] > 0 ) {
-            $message .= sprintf( __( '跳过 %d 条。', 'developer-starter' ), $counts['skipped'] );
+            $message .= sprintf( __( '跳过 %d 条。', 'qiling' ), $counts['skipped'] );
         }
 
         wp_send_json_success(

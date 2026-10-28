@@ -31,7 +31,7 @@ class Tour_Package_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'homepage';
         $this->icon        = 'dashicons-location-alt';
-        $this->description = __( '展示旅游线路和套餐', 'developer-starter' );
+        $this->description = __( '展示旅游线路和套餐', 'qiling' );
     }
 
     /**
@@ -49,7 +49,7 @@ class Tour_Package_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '旅游线路', 'developer-starter' );
+        return __( '旅游线路', 'qiling' );
     }
 
     /**
@@ -67,31 +67,31 @@ class Tour_Package_Module extends Module_Base {
             array(
                 'id'      => 'tour_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门旅游线路', 'Featured Tours' ) : __( '热门旅游线路', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门旅游线路', 'Featured Tours' ) : __( '热门旅游线路', 'qiling' ),
             ),
             array(
                 'id'      => 'tour_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2rem',
-                'desc'    => __( '如 2rem 或 32px', 'developer-starter' ),
+                'desc'    => __( '如 2rem 或 32px', 'qiling' ),
             ),
             array(
                 'id'    => 'tour_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'      => 'tour_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选优质旅游线路，开启美好旅程', 'Curated trips for memorable journeys.' ) : __( '精选优质旅游线路，开启美好旅程', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选优质旅游线路，开启美好旅程', 'Curated trips for memorable journeys.' ) : __( '精选优质旅游线路，开启美好旅程', 'qiling' ),
             ),
             array(
                 'id'    => 'tour_subtitle_color',
                 'type'  => 'color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
             ),
 
             // ========================================
@@ -100,21 +100,21 @@ class Tour_Package_Module extends Module_Base {
             array(
                 'id'      => 'tour_columns',
                 'type'    => 'select',
-                'label'   => __( '列数', 'developer-starter' ),
+                'label'   => __( '列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'tour_card_style',
                 'type'    => 'select',
-                'label'   => __( '卡片样式', 'developer-starter' ),
+                'label'   => __( '卡片样式', 'qiling' ),
                 'options' => array(
-                    'standard' => __( '标准卡片', 'developer-starter' ),
-                    'overlay'  => __( '图片叠加', 'developer-starter' ),
+                    'standard' => __( '标准卡片', 'qiling' ),
+                    'overlay'  => __( '图片叠加', 'qiling' ),
                 ),
                 'default' => 'standard',
             ),
@@ -125,106 +125,106 @@ class Tour_Package_Module extends Module_Base {
             array(
                 'id'     => 'tour_items',
                 'type'   => 'repeater',
-                'label'  => __( '线路列表', 'developer-starter' ),
+                'label'  => __( '线路列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '封面图片', 'developer-starter' ),
+                        'label' => __( '封面图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '线路名称', 'developer-starter' ),
+                        'label' => __( '线路名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'destination',
                         'type'  => 'text',
-                        'label' => __( '目的地', 'developer-starter' ),
+                        'label' => __( '目的地', 'qiling' ),
                     ),
                     array(
                         'id'    => 'departure',
                         'type'  => 'text',
-                        'label' => __( '出发城市', 'developer-starter' ),
+                        'label' => __( '出发城市', 'qiling' ),
                     ),
                     array(
                         'id'    => 'days',
                         'type'  => 'text',
-                        'label' => __( '行程天数', 'developer-starter' ),
-                        'desc'  => __( '如：5天4晚', 'developer-starter' ),
+                        'label' => __( '行程天数', 'qiling' ),
+                        'desc'  => __( '如：5天4晚', 'qiling' ),
                     ),
                     array(
                         'id'    => 'price',
                         'type'  => 'text',
-                        'label' => __( '价格', 'developer-starter' ),
-                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 2999 ) : __( '如：¥2999', 'developer-starter' ),
+                        'label' => __( '价格', 'qiling' ),
+                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 2999 ) : __( '如：¥2999', 'qiling' ),
                     ),
                     array(
                         'id'    => 'original_price',
                         'type'  => 'text',
-                        'label' => __( '原价（划线价）', 'developer-starter' ),
+                        'label' => __( '原价（划线价）', 'qiling' ),
                     ),
                     array(
                         'id'      => 'badge',
                         'type'    => 'select',
-                        'label'   => __( '标签', 'developer-starter' ),
+                        'label'   => __( '标签', 'qiling' ),
                         'options' => array(
-                            ''         => __( '无', 'developer-starter' ),
-                            'hot'      => __( '热门', 'developer-starter' ),
-                            'recommend'=> __( '推荐', 'developer-starter' ),
-                            'discount' => __( '特价', 'developer-starter' ),
-                            'new'      => __( '新品', 'developer-starter' ),
+                            ''         => __( '无', 'qiling' ),
+                            'hot'      => __( '热门', 'qiling' ),
+                            'recommend'=> __( '推荐', 'qiling' ),
+                            'discount' => __( '特价', 'qiling' ),
+                            'new'      => __( '新品', 'qiling' ),
                         ),
                     ),
                     array(
                         'id'    => 'highlights',
                         'type'  => 'textarea',
-                        'label' => __( '行程亮点', 'developer-starter' ),
-                        'desc'  => __( '每行一个亮点', 'developer-starter' ),
+                        'label' => __( '行程亮点', 'qiling' ),
+                        'desc'  => __( '每行一个亮点', 'qiling' ),
                         'rows'  => 4,
                     ),
                     array(
                         'id'      => 'link',
                         'type'    => 'text',
-                        'label'   => __( '详情链接', 'developer-starter' ),
+                        'label'   => __( '详情链接', 'qiling' ),
                         'default' => '#',
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'image'          => '',
-                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚阳光海岸5日游', 'Sunny Coast Escape · 5 Days' ) : __( '三亚阳光海岸5日游', 'developer-starter' ),
-                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚', 'Coastal Resort' ) : __( '三亚', 'developer-starter' ),
-                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '北京', 'Beijing' ) : __( '北京', 'developer-starter' ),
-                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '5天4晚', '5 days / 4 nights' ) : __( '5天4晚', 'developer-starter' ),
+                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚阳光海岸5日游', 'Sunny Coast Escape · 5 Days' ) : __( '三亚阳光海岸5日游', 'qiling' ),
+                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚', 'Coastal Resort' ) : __( '三亚', 'qiling' ),
+                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '北京', 'Beijing' ) : __( '北京', 'qiling' ),
+                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '5天4晚', '5 days / 4 nights' ) : __( '5天4晚', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2999 ) : '¥2999',
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 3999 ) : '¥3999',
                         'badge'          => 'hot',
-                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", "Oceanfront resort\nSignature coastal landmarks\nMeals included" ) : __( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", 'developer-starter' ),
+                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", "Oceanfront resort\nSignature coastal landmarks\nMeals included" ) : __( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", 'qiling' ),
                         'link'           => '#',
                     ),
                     array(
                         'image'          => '',
-                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南丽江大理双飞6日', 'Lijiang & Dali Discovery · 6 Days' ) : __( '云南丽江大理双飞6日', 'developer-starter' ),
-                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南', 'Yunnan' ) : __( '云南', 'developer-starter' ),
-                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '上海', 'Shanghai' ) : __( '上海', 'developer-starter' ),
-                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '6天5晚', '6 days / 5 nights' ) : __( '6天5晚', 'developer-starter' ),
+                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南丽江大理双飞6日', 'Lijiang & Dali Discovery · 6 Days' ) : __( '云南丽江大理双飞6日', 'qiling' ),
+                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南', 'Yunnan' ) : __( '云南', 'qiling' ),
+                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '上海', 'Shanghai' ) : __( '上海', 'qiling' ),
+                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '6天5晚', '6 days / 5 nights' ) : __( '6天5晚', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 3599 ) : '¥3599',
                         'original_price' => '',
                         'badge'          => 'recommend',
-                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "丽江古城\n玉龙雪山\n洱海游船", "Old town walks\nSnow mountain views\nLake cruise" ) : __( "丽江古城\n玉龙雪山\n洱海游船", 'developer-starter' ),
+                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "丽江古城\n玉龙雪山\n洱海游船", "Old town walks\nSnow mountain views\nLake cruise" ) : __( "丽江古城\n玉龙雪山\n洱海游船", 'qiling' ),
                         'link'           => '#',
                     ),
                     array(
                         'image'          => '',
-                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林山水甲天下4日', 'Guilin Landscape Highlights · 4 Days' ) : __( '桂林山水甲天下4日', 'developer-starter' ),
-                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林', 'Guilin' ) : __( '桂林', 'developer-starter' ),
-                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '广州', 'Guangzhou' ) : __( '广州', 'developer-starter' ),
-                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '4天3晚', '4 days / 3 nights' ) : __( '4天3晚', 'developer-starter' ),
+                        'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林山水甲天下4日', 'Guilin Landscape Highlights · 4 Days' ) : __( '桂林山水甲天下4日', 'qiling' ),
+                        'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林', 'Guilin' ) : __( '桂林', 'qiling' ),
+                        'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '广州', 'Guangzhou' ) : __( '广州', 'qiling' ),
+                        'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '4天3晚', '4 days / 3 nights' ) : __( '4天3晚', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1999 ) : '¥1999',
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2599 ) : '¥2599',
                         'badge'          => 'discount',
-                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "漓江竹筏\n阳朔西街\n象鼻山", "Li River raft ride\nYangshuo strolls\nLandmark viewpoints" ) : __( "漓江竹筏\n阳朔西街\n象鼻山", 'developer-starter' ),
+                        'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "漓江竹筏\n阳朔西街\n象鼻山", "Li River raft ride\nYangshuo strolls\nLandmark viewpoints" ) : __( "漓江竹筏\n阳朔西街\n象鼻山", 'qiling' ),
                         'link'           => '#',
                     ),
                 ),
@@ -236,37 +236,37 @@ class Tour_Package_Module extends Module_Base {
             array(
                 'id'      => 'module_bg_type',
                 'type'    => 'select',
-                'label'   => __( '背景类型', 'developer-starter' ),
+                'label'   => __( '背景类型', 'qiling' ),
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id'         => 'module_bg_color',
                 'type'       => 'color',
-                'label'      => __( '背景颜色', 'developer-starter' ),
-                'desc'       => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'label'      => __( '背景颜色', 'qiling' ),
+                'desc'       => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default'    => '',
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             array(
                 'id'         => 'module_bg_image',
                 'type'       => 'image',
-                'label'      => __( '背景图片', 'developer-starter' ),
+                'label'      => __( '背景图片', 'qiling' ),
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
 
@@ -276,13 +276,13 @@ class Tour_Package_Module extends Module_Base {
             array(
                 'id'          => 'enable_staggered_animation',
                 'type'        => 'select',
-                'label'       => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label'       => __( '开启列表逐个显示动画', 'qiling' ),
                 'options'     => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default'     => 'yes',
-                'description' => __( '开启后，线路卡片将依次延迟显示', 'developer-starter' ),
+                'description' => __( '开启后，线路卡片将依次延迟显示', 'qiling' ),
             ),
         );
     }
@@ -298,7 +298,7 @@ class Tour_Package_Module extends Module_Base {
         // ========================================
         $title          = isset( $data['tour_title'] ) && $data['tour_title'] !== '' 
                           ? $data['tour_title'] 
-                          : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门旅游线路', 'Featured Tours' ) : __( '热门旅游线路', 'developer-starter' ) );
+                          : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门旅游线路', 'Featured Tours' ) : __( '热门旅游线路', 'qiling' ) );
         $title_size     = isset( $data['tour_title_size'] ) && $data['tour_title_size'] !== '' 
                           ? $data['tour_title_size'] 
                           : '2rem';
@@ -332,38 +332,38 @@ class Tour_Package_Module extends Module_Base {
             $items = array(
                 array(
                     'image'          => '',
-                    'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚阳光海岸5日游', 'Sunny Coast Escape · 5 Days' ) : __( '三亚阳光海岸5日游', 'developer-starter' ),
-                    'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚', 'Coastal Resort' ) : __( '三亚', 'developer-starter' ),
-                    'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '北京', 'Beijing' ) : __( '北京', 'developer-starter' ),
-                    'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '5天4晚', '5 days / 4 nights' ) : __( '5天4晚', 'developer-starter' ),
+                    'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚阳光海岸5日游', 'Sunny Coast Escape · 5 Days' ) : __( '三亚阳光海岸5日游', 'qiling' ),
+                    'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '三亚', 'Coastal Resort' ) : __( '三亚', 'qiling' ),
+                    'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '北京', 'Beijing' ) : __( '北京', 'qiling' ),
+                    'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '5天4晚', '5 days / 4 nights' ) : __( '5天4晚', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2999 ) : '¥2999',
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 3999 ) : '¥3999',
                     'badge'          => 'hot',
-                    'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", "Oceanfront resort\nSignature coastal landmarks\nMeals included" ) : __( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", 'developer-starter' ),
+                    'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", "Oceanfront resort\nSignature coastal landmarks\nMeals included" ) : __( "五星海景酒店\n亚龙湾/天涯海角\n含三餐", 'qiling' ),
                     'link'           => '#',
                 ),
                 array(
                     'image'          => '',
-                    'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南丽江大理双飞6日', 'Lijiang & Dali Discovery · 6 Days' ) : __( '云南丽江大理双飞6日', 'developer-starter' ),
-                    'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南', 'Yunnan' ) : __( '云南', 'developer-starter' ),
-                    'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '上海', 'Shanghai' ) : __( '上海', 'developer-starter' ),
-                    'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '6天5晚', '6 days / 5 nights' ) : __( '6天5晚', 'developer-starter' ),
+                    'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南丽江大理双飞6日', 'Lijiang & Dali Discovery · 6 Days' ) : __( '云南丽江大理双飞6日', 'qiling' ),
+                    'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '云南', 'Yunnan' ) : __( '云南', 'qiling' ),
+                    'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '上海', 'Shanghai' ) : __( '上海', 'qiling' ),
+                    'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '6天5晚', '6 days / 5 nights' ) : __( '6天5晚', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 3599 ) : '¥3599',
                     'original_price' => '',
                     'badge'          => 'recommend',
-                    'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "丽江古城\n玉龙雪山\n洱海游船", "Old town walks\nSnow mountain views\nLake cruise" ) : __( "丽江古城\n玉龙雪山\n洱海游船", 'developer-starter' ),
+                    'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "丽江古城\n玉龙雪山\n洱海游船", "Old town walks\nSnow mountain views\nLake cruise" ) : __( "丽江古城\n玉龙雪山\n洱海游船", 'qiling' ),
                     'link'           => '#',
                 ),
                 array(
                     'image'          => '',
-                    'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林山水甲天下4日', 'Guilin Landscape Highlights · 4 Days' ) : __( '桂林山水甲天下4日', 'developer-starter' ),
-                    'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林', 'Guilin' ) : __( '桂林', 'developer-starter' ),
-                    'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '广州', 'Guangzhou' ) : __( '广州', 'developer-starter' ),
-                    'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '4天3晚', '4 days / 3 nights' ) : __( '4天3晚', 'developer-starter' ),
+                    'title'          => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林山水甲天下4日', 'Guilin Landscape Highlights · 4 Days' ) : __( '桂林山水甲天下4日', 'qiling' ),
+                    'destination'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '桂林', 'Guilin' ) : __( '桂林', 'qiling' ),
+                    'departure'      => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '广州', 'Guangzhou' ) : __( '广州', 'qiling' ),
+                    'days'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '4天3晚', '4 days / 3 nights' ) : __( '4天3晚', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1999 ) : '¥1999',
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 2599 ) : '¥2599',
                     'badge'          => 'discount',
-                    'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "漓江竹筏\n阳朔西街\n象鼻山", "Li River raft ride\nYangshuo strolls\nLandmark viewpoints" ) : __( "漓江竹筏\n阳朔西街\n象鼻山", 'developer-starter' ),
+                    'highlights'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "漓江竹筏\n阳朔西街\n象鼻山", "Li River raft ride\nYangshuo strolls\nLandmark viewpoints" ) : __( "漓江竹筏\n阳朔西街\n象鼻山", 'qiling' ),
                     'link'           => '#',
                 ),
             );
@@ -393,10 +393,10 @@ class Tour_Package_Module extends Module_Base {
 
         // 标签文字映射
         $badge_labels = array(
-            'hot'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门', 'Popular' ) : __( '热门', 'developer-starter' ),
-            'recommend' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Recommended' ) : __( '推荐', 'developer-starter' ),
-            'discount'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '特价', 'Special' ) : __( '特价', 'developer-starter' ),
-            'new'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新品', 'New' ) : __( '新品', 'developer-starter' ),
+            'hot'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门', 'Popular' ) : __( '热门', 'qiling' ),
+            'recommend' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Recommended' ) : __( '推荐', 'qiling' ),
+            'discount'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '特价', 'Special' ) : __( '特价', 'qiling' ),
+            'new'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新品', 'New' ) : __( '新品', 'qiling' ),
         );
         ?>
         <section class="module module-tour-package" style="<?php echo esc_attr( $section_style ); ?>">
@@ -444,7 +444,7 @@ class Tour_Package_Module extends Module_Base {
 
                             $price_prefix = '';
                             $price_value  = trim( (string) $item_price );
-                            $price_suffix = function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '起', 'from' ) : __( '起', 'developer-starter' );
+                            $price_suffix = function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '起', 'from' ) : __( '起', 'qiling' );
                             if ( preg_match( '/^([^\d]*?)\s*([\d.,]+)\s*(.*)$/u', trim( (string) $item_price ), $price_matches ) ) {
                                 $price_prefix = trim( $price_matches[1] );
                                 $price_value  = trim( $price_matches[2] );
@@ -454,7 +454,7 @@ class Tour_Package_Module extends Module_Base {
                             }
 
                             // 默认占位图
-                            $placeholder_img = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect fill="%23e2e8f0" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" fill="%2394a3b8" text-anchor="middle" dy=".3em" font-size="20"%3E' . urlencode( __( '旅游线路', 'developer-starter' ) ) . '%3C/text%3E%3C/svg%3E';
+                            $placeholder_img = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect fill="%23e2e8f0" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" fill="%2394a3b8" text-anchor="middle" dy=".3em" font-size="20"%3E' . urlencode( __( '旅游线路', 'qiling' ) ) . '%3C/text%3E%3C/svg%3E';
                             $display_image = $item_image ? $item_image : $placeholder_img;
                         ?>
                             <div class="ql-travel-tour-card ql-travel-style-<?php echo esc_attr( $card_style ); ?>" <?php echo $anim_attr; ?>>

@@ -42,9 +42,9 @@ $author_actions_enabled = $author_option_enabled( 'author_page_show_actions', tr
 $author_social_enabled = $author_option_enabled( 'author_page_show_social', true );
 $author_stats_enabled = $author_option_enabled( 'author_page_show_stats', true );
 $author_posts_summary_enabled = $author_option_enabled( 'author_page_posts_summary_enable', true );
-$author_empty_bio_text = $author_option_text( 'author_page_empty_bio_text', __( '这个人很懒，什么都没有留下...', 'developer-starter' ) );
-$author_posts_title = $author_option_text( 'author_page_posts_title', __( 'TA 的文章', 'developer-starter' ) );
-$author_empty_posts_text = $author_option_text( 'author_page_empty_posts_text', __( '该作者暂未发布任何文章', 'developer-starter' ) );
+$author_empty_bio_text = $author_option_text( 'author_page_empty_bio_text', __( '这个人很懒，什么都没有留下...', 'qiling' ) );
+$author_posts_title = $author_option_text( 'author_page_posts_title', __( 'TA 的文章', 'qiling' ) );
+$author_empty_posts_text = $author_option_text( 'author_page_empty_posts_text', __( '该作者暂未发布任何文章', 'qiling' ) );
 $author_posts_columns = isset( $author_theme_options['author_page_posts_columns'] ) ? absint( $author_theme_options['author_page_posts_columns'] ) : 3;
 if ( ! in_array( $author_posts_columns, array( 2, 3, 4 ), true ) ) {
     $author_posts_columns = 3;
@@ -165,26 +165,26 @@ if ( $qibbs_active && is_user_logged_in() ) {
                                 data-nonce="<?php echo esc_attr( wp_create_nonce( 'qibbs_follow_nonce' ) ); ?>">
                             <?php if ( $is_following ) : ?>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span><?php esc_html_e( '已关注', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '已关注', 'qiling' ); ?></span>
                             <?php else : ?>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                <span><?php esc_html_e( '关注', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '关注', 'qiling' ); ?></span>
                             <?php endif; ?>
                         </button>
                         <a href="<?php echo esc_url( home_url( '/messages/?user=' . $author_id ) ); ?>" class="author-message-btn">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                            <span><?php esc_html_e( '私信', 'developer-starter' ); ?></span>
+                            <span><?php esc_html_e( '私信', 'qiling' ); ?></span>
                         </a>
                     </div>
                 <?php elseif ( $author_actions_enabled && $qibbs_active && ! $is_self && ! is_user_logged_in() ) : ?>
                     <div class="author-profile-actions">
                         <button class="author-follow-btn" onclick="if(typeof dsOpenLoginModal==='function'){dsOpenLoginModal();}else{window.location.href='<?php echo esc_url( wp_login_url( get_author_posts_url( $author_id ) ) ); ?>';}">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                            <span><?php esc_html_e( '关注', 'developer-starter' ); ?></span>
+                            <span><?php esc_html_e( '关注', 'qiling' ); ?></span>
                         </button>
                         <button class="author-message-btn" onclick="if(typeof dsOpenLoginModal==='function'){dsOpenLoginModal();}else{window.location.href='<?php echo esc_url( wp_login_url( get_author_posts_url( $author_id ) ) ); ?>';}">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                            <span><?php esc_html_e( '私信', 'developer-starter' ); ?></span>
+                            <span><?php esc_html_e( '私信', 'qiling' ); ?></span>
                         </button>
                     </div>
                 <?php endif; ?>
@@ -209,25 +209,25 @@ if ( $qibbs_active && is_user_logged_in() ) {
                 <?php if ( isset( $author_stat_items_visible['posts'] ) ) : ?>
                 <div class="author-stat-item">
                     <span class="author-stat-value"><?php echo esc_html( $post_count ); ?></span>
-                    <span class="author-stat-label"><?php esc_html_e( '文章', 'developer-starter' ); ?></span>
+                    <span class="author-stat-label"><?php esc_html_e( '文章', 'qiling' ); ?></span>
                 </div>
                 <?php endif; ?>
                 <?php if ( isset( $author_stat_items_visible['views'] ) ) : ?>
                 <div class="author-stat-item">
                     <span class="author-stat-value"><?php echo esc_html( $format_number( $total_views ) ); ?></span>
-                    <span class="author-stat-label"><?php esc_html_e( '浏览', 'developer-starter' ); ?></span>
+                    <span class="author-stat-label"><?php esc_html_e( '浏览', 'qiling' ); ?></span>
                 </div>
                 <?php endif; ?>
                 <?php if ( isset( $author_stat_items_visible['comments'] ) ) : ?>
                 <div class="author-stat-item">
                     <span class="author-stat-value"><?php echo esc_html( $comment_count ); ?></span>
-                    <span class="author-stat-label"><?php esc_html_e( '评论', 'developer-starter' ); ?></span>
+                    <span class="author-stat-label"><?php esc_html_e( '评论', 'qiling' ); ?></span>
                 </div>
                 <?php endif; ?>
                 <?php if ( isset( $author_stat_items_visible['joined'] ) ) : ?>
                 <div class="author-stat-item">
                     <span class="author-stat-value"><?php echo esc_html( $registered_date ); ?></span>
-                    <span class="author-stat-label"><?php esc_html_e( '加入', 'developer-starter' ); ?></span>
+                    <span class="author-stat-label"><?php esc_html_e( '加入', 'qiling' ); ?></span>
                 </div>
                 <?php endif; ?>
             </div>
@@ -249,7 +249,7 @@ if ( $qibbs_active && is_user_logged_in() ) {
                     <?php
                     printf(
                         /* translators: %s: post count */
-                        esc_html__( '共 %s 篇公开文章', 'developer-starter' ),
+                        esc_html__( '共 %s 篇公开文章', 'qiling' ),
                         number_format_i18n( (int) $post_count )
                     );
                     ?>
@@ -301,10 +301,10 @@ if ( $qibbs_active && is_user_logged_in() ) {
                 if (data.success) {
                     if (isFollowing) {
                         btn.classList.remove('is-following');
-                        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span><?php esc_html_e( '关注', 'developer-starter' ); ?></span>';
+                        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span><?php esc_html_e( '关注', 'qiling' ); ?></span>';
                     } else {
                         btn.classList.add('is-following');
-                        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span><?php esc_html_e( '已关注', 'developer-starter' ); ?></span>';
+                        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span><?php esc_html_e( '已关注', 'qiling' ); ?></span>';
                     }
                 }
             })

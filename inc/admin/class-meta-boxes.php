@@ -135,7 +135,7 @@ class Meta_Boxes {
      * @return string
      */
     private function get_module_fields_cache_key() {
-        $version = defined( 'DEVELOPER_STARTER_VERSION' ) ? (string) DEVELOPER_STARTER_VERSION : '1.0.0';
+        $version = defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1.0.0';
         return 'developer_starter_module_fields_' . md5( $version . '|' . get_locale() );
     }
 
@@ -449,12 +449,12 @@ class Meta_Boxes {
         wp_enqueue_media();
         wp_enqueue_script( 'jquery-ui-sortable' );
 
-        $ai_service_js_file = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/ai-builder-service.js';
-        $ai_service_js_ver  = file_exists( $ai_service_js_file ) ? (string) filemtime( $ai_service_js_file ) : DEVELOPER_STARTER_VERSION;
+        $ai_service_js_file = trailingslashit( QILING_DIR ) . 'assets/js/ai-builder-service.js';
+        $ai_service_js_ver  = file_exists( $ai_service_js_file ) ? (string) filemtime( $ai_service_js_file ) : QILING_VERSION;
 
         wp_enqueue_script(
             'qiling-ai-builder-service',
-            DEVELOPER_STARTER_ASSETS . '/js/ai-builder-service.js',
+            QILING_ASSETS . '/js/ai-builder-service.js',
             array( 'jquery' ),
             $ai_service_js_ver,
             false
@@ -464,7 +464,7 @@ class Meta_Boxes {
     public function add_meta_boxes( $post_type = '', $post = null ) {
         add_meta_box(
             'developer_starter_modules',
-            __( '页面模块配置', 'developer-starter' ),
+            __( '页面模块配置', 'qiling' ),
             array( $this, 'render_modules_meta_box' ),
             'page',
             'normal',
@@ -473,7 +473,7 @@ class Meta_Boxes {
 
         add_meta_box(
             'developer_starter_seo',
-            __( 'SEO设置', 'developer-starter' ),
+            __( 'SEO设置', 'qiling' ),
             array( $this->get_post_settings_service(), 'render_seo_meta_box' ),
             array( 'post', 'page', 'qilingdoc_doc' ),
             'normal',
@@ -483,7 +483,7 @@ class Meta_Boxes {
         // 页面头部设置 - 仅对页面生效
         add_meta_box(
             'qiling_page_header_settings',
-            __( '页面头部设置', 'developer-starter' ),
+            __( '页面头部设置', 'qiling' ),
             array( $this->get_post_settings_service(), 'render_page_header_meta_box' ),
             'page',
             'side',
@@ -492,7 +492,7 @@ class Meta_Boxes {
 
         add_meta_box(
             'qiling_page_visual_style_settings',
-            __( '页面视觉风格', 'developer-starter' ),
+            __( '页面视觉风格', 'qiling' ),
             array( $this->get_post_settings_service(), 'render_page_visual_style_meta_box' ),
             'page',
             'normal',
@@ -505,7 +505,7 @@ class Meta_Boxes {
         }
         add_meta_box(
             'developer_starter_featured_image_url',
-            __( '特色图URL', 'developer-starter' ),
+            __( '特色图URL', 'qiling' ),
             array( $this->get_post_settings_service(), 'render_featured_image_url_meta_box' ),
             $featured_image_screens,
             'side',
@@ -515,7 +515,7 @@ class Meta_Boxes {
         // 文章相册模式设置
         add_meta_box(
             'qiling_gallery_mode_settings',
-            __( '文章相册模式', 'developer-starter' ),
+            __( '文章相册模式', 'qiling' ),
             array( $this->get_post_settings_service(), 'render_gallery_mode_meta_box' ),
             'post',
             'side',
@@ -525,7 +525,7 @@ class Meta_Boxes {
         // 文章布局设置
         add_meta_box(
             'qiling_post_layout_settings',
-            __( '文章布局设置', 'developer-starter' ),
+            __( '文章布局设置', 'qiling' ),
             array( $this->get_post_settings_service(), 'render_post_layout_meta_box' ),
             'post',
             'side',
@@ -534,7 +534,7 @@ class Meta_Boxes {
 
         add_meta_box(
             'qiling_post_comments_settings',
-            __( '评论设置', 'developer-starter' ),
+            __( '评论设置', 'qiling' ),
             array( $this, 'render_post_comments_meta_box' ),
             'post',
             'side',
@@ -556,11 +556,11 @@ class Meta_Boxes {
         <p>
             <label>
                 <input type="checkbox" name="qiling_comments_enabled" value="1" <?php checked( '1', (string) $setting ); ?> />
-                <?php esc_html_e( '允许此文章显示并接收评论', 'developer-starter' ); ?>
+                <?php esc_html_e( '允许此文章显示并接收评论', 'qiling' ); ?>
             </label>
         </p>
         <p class="description">
-            <?php echo esc_html( $global_closed ? __( '全站默认已关闭评论；勾选后仅此文章开启评论。', 'developer-starter' ) : __( '未勾选时沿用 WordPress 的文章评论状态。', 'developer-starter' ) ); ?>
+            <?php echo esc_html( $global_closed ? __( '全站默认已关闭评论；勾选后仅此文章开启评论。', 'qiling' ) : __( '未勾选时沿用 WordPress 的文章评论状态。', 'qiling' ) ); ?>
         </p>
         <?php
     }
@@ -655,7 +655,7 @@ class Meta_Boxes {
     public function ajax_load_template_html() {
         check_ajax_referer( 'developer_starter_modules_nonce', 'nonce' );
         
-        if ( ! current_user_can( 'edit_posts' ) ) wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+        if ( ! current_user_can( 'edit_posts' ) ) wp_send_json_error( __( '权限不足', 'qiling' ) );
         
         $id = isset( $_POST['id'] ) ? intval( $_POST['id'] ) : 0;
         $idx = isset( $_POST['idx'] ) ? intval( $_POST['idx'] ) : 9999;
@@ -664,14 +664,14 @@ class Meta_Boxes {
             ? \Developer_Starter\Core\Template_Manager::get_template_post( $id )
             : get_post( $id );
         if ( ! $post || $post->post_type !== 'ql_module_template' ) {
-            wp_send_json_error( __( '无此模版', 'developer-starter' ) );
+            wp_send_json_error( __( '无此模版', 'qiling' ) );
         }
 
         if (
             class_exists( '\Developer_Starter\Core\Template_Manager' )
             && ! \Developer_Starter\Core\Template_Manager::current_user_can_access_template_post( $post, 'read_post' )
         ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
         
         $json = $post->post_content;
@@ -700,24 +700,24 @@ class Meta_Boxes {
         check_ajax_referer( 'developer_starter_modules_nonce', 'nonce' );
 
         if ( ! current_user_can( 'edit_pages' ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $type = isset( $_POST['type'] ) ? sanitize_key( wp_unslash( $_POST['type'] ) ) : '';
         $idx = isset( $_POST['idx'] ) ? absint( $_POST['idx'] ) : 0;
 
         if ( '' === $type ) {
-            wp_send_json_error( __( '模块类型无效', 'developer-starter' ) );
+            wp_send_json_error( __( '模块类型无效', 'qiling' ) );
         }
 
         $this->init_module_fields();
         if ( ! isset( $this->module_fields[ $type ] ) ) {
-            wp_send_json_error( __( '模块不存在或未注册', 'developer-starter' ) );
+            wp_send_json_error( __( '模块不存在或未注册', 'qiling' ) );
         }
         if ( class_exists( '\Developer_Starter\Modules\Module_Manager' ) ) {
             $module_manager = \Developer_Starter\Modules\Module_Manager::get_instance();
             if ( method_exists( $module_manager, 'is_module_visible_in_catalog' ) && ! $module_manager->is_module_visible_in_catalog( $type ) ) {
-                wp_send_json_error( __( '模块未启用', 'developer-starter' ) );
+                wp_send_json_error( __( '模块未启用', 'qiling' ) );
             }
         }
 
@@ -740,22 +740,22 @@ class Meta_Boxes {
         check_ajax_referer( 'developer_starter_modules_nonce', 'nonce' );
 
         if ( ! current_user_can( 'edit_pages' ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
         if ( $post_id <= 0 ) {
-            wp_send_json_error( __( '页面参数无效', 'developer-starter' ) );
+            wp_send_json_error( __( '页面参数无效', 'qiling' ) );
         }
 
         $post = get_post( $post_id );
         if ( ! $post || $post->post_type !== 'page' ) {
-            wp_send_json_error( __( '仅支持页面类型', 'developer-starter' ) );
+            wp_send_json_error( __( '仅支持页面类型', 'qiling' ) );
         }
 
         $this->init_module_fields();
         if ( empty( $this->module_fields ) ) {
-            wp_send_json_error( __( '模块系统未初始化成功', 'developer-starter' ) );
+            wp_send_json_error( __( '模块系统未初始化成功', 'qiling' ) );
         }
 
         $ai_builder_globally_available = current_user_can( 'manage_options' )
@@ -810,7 +810,7 @@ class Meta_Boxes {
         check_ajax_referer( 'developer_starter_modules_nonce', 'nonce' );
 
         if ( ! current_user_can( 'edit_pages' ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $raw_json = isset( $_POST['json'] ) ? wp_unslash( $_POST['json'] ) : '';
@@ -822,7 +822,7 @@ class Meta_Boxes {
 
         $this->init_module_fields();
         if ( empty( $this->module_fields ) ) {
-            wp_send_json_error( __( '模块系统未初始化成功', 'developer-starter' ) );
+            wp_send_json_error( __( '模块系统未初始化成功', 'qiling' ) );
         }
         $preview_payload = $this->get_editor_service()->build_import_preview_payload(
             $package,
@@ -844,11 +844,11 @@ class Meta_Boxes {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
         if ( $post_id <= 0 ) {
-            wp_send_json_error( __( '页面参数无效', 'developer-starter' ) );
+            wp_send_json_error( __( '页面参数无效', 'qiling' ) );
         }
 
         if ( ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $payload = $this->build_page_json_export_payload( $post_id );
@@ -868,11 +868,11 @@ class Meta_Boxes {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 ) {
-            wp_send_json_error( __( '页面参数无效', 'developer-starter' ) );
+            wp_send_json_error( __( '页面参数无效', 'qiling' ) );
         }
 
         if ( ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $raw_payload = isset( $_POST['modules'] ) ? wp_unslash( (string) $_POST['modules'] ) : '';

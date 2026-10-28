@@ -12,14 +12,14 @@
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-resource-template-skins',
-        DEVELOPER_STARTER_ASSETS . '/css/resource-template-skins.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/resource-template-skins.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 
     wp_enqueue_style(
         'developer-starter-qiling-wallpaper-gallery',
-        DEVELOPER_STARTER_ASSETS . '/css/qiling-wallpaper-gallery.css',
+        QILING_ASSETS . '/css/qiling-wallpaper-gallery.css',
         array( 'developer-starter-resource-template-skins' ),
         developer_starter_get_assets_version()
     );
@@ -45,14 +45,14 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                     <span class="qiling-wallpaper-empty-state__tile qiling-wallpaper-empty-state__tile--square"></span>
                 </div>
                 <div class="qiling-wallpaper-empty-state__content">
-                    <span class="qiling-wallpaper-empty-state__eyebrow"><?php esc_html_e( '图片素材库', 'developer-starter' ); ?></span>
-                    <h1 class="qiling-wallpaper-empty-state__title"><?php esc_html_e( '用清晰分类呈现每一张好图片', 'developer-starter' ); ?></h1>
+                    <span class="qiling-wallpaper-empty-state__eyebrow"><?php esc_html_e( '图片素材库', 'qiling' ); ?></span>
+                    <h1 class="qiling-wallpaper-empty-state__title"><?php esc_html_e( '用清晰分类呈现每一张好图片', 'qiling' ); ?></h1>
                     <p class="qiling-wallpaper-empty-state__desc">
-                        <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+                        <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
                     </p>
                     <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                         <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="qiling-wallpaper-empty-state__button">
-                            <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                            <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                         </a>
                     <?php endif; ?>
                 </div>

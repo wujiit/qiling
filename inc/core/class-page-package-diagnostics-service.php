@@ -557,7 +557,7 @@ class Page_Package_Diagnostics_Service {
 
                 $warnings[] = sprintf(
                     /* translators: %s: plugin name */
-                    __( '数据包声明依赖插件 %s，但当前站点未检测到该插件。', 'developer-starter' ),
+                    __( '数据包声明依赖插件 %s，但当前站点未检测到该插件。', 'qiling' ),
                     $plugin_label
                 );
                 continue;
@@ -566,7 +566,7 @@ class Page_Package_Diagnostics_Service {
             if ( $is_required && function_exists( 'is_plugin_active' ) && ! is_plugin_active( $plugin_match['file'] ) ) {
                 $warnings[] = sprintf(
                     /* translators: %s: plugin name */
-                    __( '数据包依赖插件 %s 已安装但未启用，导入后可能出现样式或功能缺失。', 'developer-starter' ),
+                    __( '数据包依赖插件 %s 已安装但未启用，导入后可能出现样式或功能缺失。', 'qiling' ),
                     $plugin_label
                 );
             }
@@ -593,10 +593,10 @@ class Page_Package_Diagnostics_Service {
                 || ! empty( $package['site_assets'] );
 
             if ( ! $has_site_payload ) {
-                $warnings[] = __( '该数据包声明为整站包，但未包含全局样式、内容模型、导航或站点设置。', 'developer-starter' );
+                $warnings[] = __( '该数据包声明为整站包，但未包含全局样式、内容模型、导航或站点设置。', 'qiling' );
             }
         } elseif ( ! empty( $site_options ) ) {
-            $warnings[] = __( '该页面包包含站点级设置；默认不会应用，只有导入时勾选“应用整站设置”才会写入当前站点。', 'developer-starter' );
+            $warnings[] = __( '该页面包包含站点级设置；默认不会应用，只有导入时勾选“应用整站设置”才会写入当前站点。', 'qiling' );
         }
 
         if ( ! empty( $package['site_assets']['template_assets'] ) && is_array( $package['site_assets']['template_assets'] ) ) {
@@ -606,10 +606,10 @@ class Page_Package_Diagnostics_Service {
                 }
 
                 $asset_path = ltrim( sanitize_text_field( (string) $asset['path'] ), '/' );
-                if ( '' !== $asset_path && defined( 'DEVELOPER_STARTER_DIR' ) && ! file_exists( trailingslashit( DEVELOPER_STARTER_DIR ) . $asset_path ) ) {
+                if ( '' !== $asset_path && defined( 'QILING_DIR' ) && ! file_exists( trailingslashit( QILING_DIR ) . $asset_path ) ) {
                     $warnings[] = sprintf(
                         /* translators: %s: asset path */
-                        __( '整站包声明依赖主题资源 %s，但当前主题目录未检测到该文件。', 'developer-starter' ),
+                        __( '整站包声明依赖主题资源 %s，但当前主题目录未检测到该文件。', 'qiling' ),
                         $asset_path
                     );
                 }
@@ -627,7 +627,7 @@ class Page_Package_Diagnostics_Service {
                 if ( '' !== $location && is_array( $registered_locations ) && ! isset( $registered_locations[ $location ] ) ) {
                     $warnings[] = sprintf(
                         /* translators: %s: menu location */
-                        __( '整站包声明菜单位置 %s，但当前主题未注册该位置，导入时只会创建菜单，不会自动挂载到该位置。', 'developer-starter' ),
+                        __( '整站包声明菜单位置 %s，但当前主题未注册该位置，导入时只会创建菜单，不会自动挂载到该位置。', 'qiling' ),
                         $location
                     );
                 }
@@ -648,18 +648,18 @@ class Page_Package_Diagnostics_Service {
         $warnings = array();
 
         if ( empty( $package['theme'] ) ) {
-            $warnings[] = __( '数据包未声明 theme 标识，跨主题或分发场景下的样式兼容性较难判断。', 'developer-starter' );
+            $warnings[] = __( '数据包未声明 theme 标识，跨主题或分发场景下的样式兼容性较难判断。', 'qiling' );
         }
 
         if ( empty( $package['min_theme_version'] ) ) {
-            $warnings[] = __( '数据包未声明最低主题版本，跨版本导入时可能出现字段默认值变化或样式细节偏差。', 'developer-starter' );
+            $warnings[] = __( '数据包未声明最低主题版本，跨版本导入时可能出现字段默认值变化或样式细节偏差。', 'qiling' );
         }
 
         $missing_split_css = $this->collect_missing_split_css_modules_from_pages( $prepared_pages );
         if ( ! empty( $missing_split_css ) && 'split' === $this->get_module_css_load_mode() ) {
             $warnings[] = sprintf(
                 /* translators: %s: module types */
-                __( '当前站点启用了拆包模块样式，但这些模块缺少独立 CSS：%s。前台会自动使用完整模块样式文件，通常不会影响显示效果。', 'developer-starter' ),
+                __( '当前站点启用了拆包模块样式，但这些模块缺少独立 CSS：%s。前台会自动使用完整模块样式文件，通常不会影响显示效果。', 'qiling' ),
                 implode( '、', $missing_split_css )
             );
         }
@@ -673,8 +673,8 @@ class Page_Package_Diagnostics_Service {
 
                 $warnings[] = sprintf(
                     /* translators: 1: page title 2: module count */
-                    __( '页面“%1$s”包含 %2$d 个模块，导入后建议重点检查模块间距、移动端折行和首屏层级。', 'developer-starter' ),
-                    isset( $prepared_page['title'] ) ? sanitize_text_field( (string) $prepared_page['title'] ) : __( '未命名页面', 'developer-starter' ),
+                    __( '页面“%1$s”包含 %2$d 个模块，导入后建议重点检查模块间距、移动端折行和首屏层级。', 'qiling' ),
+                    isset( $prepared_page['title'] ) ? sanitize_text_field( (string) $prepared_page['title'] ) : __( '未命名页面', 'qiling' ),
                     $module_count
                 );
             }
@@ -697,7 +697,7 @@ class Page_Package_Diagnostics_Service {
         if ( $payload_bytes >= 524288 ) {
             $warnings[] = sprintf(
                 /* translators: %s: file size */
-                __( '当前数据包体积约为 %s，建议仅从可信来源导入，并优先在测试环境预检。', 'developer-starter' ),
+                __( '当前数据包体积约为 %s，建议仅从可信来源导入，并优先在测试环境预检。', 'qiling' ),
                 size_format( $payload_bytes )
             );
         }
@@ -712,7 +712,7 @@ class Page_Package_Diagnostics_Service {
         if ( $total_modules >= 200 ) {
             $warnings[] = sprintf(
                 /* translators: %d: module count */
-                __( '当前数据包共包含 %d 个模块，建议分批导入并在导入后复查前台渲染与缓存状态。', 'developer-starter' ),
+                __( '当前数据包共包含 %d 个模块，建议分批导入并在导入后复查前台渲染与缓存状态。', 'qiling' ),
                 $total_modules
             );
         }
@@ -780,7 +780,7 @@ class Page_Package_Diagnostics_Service {
             return array();
         }
 
-        $split_dir = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/modules-split/';
+        $split_dir = trailingslashit( QILING_DIR ) . 'assets/css/modules-split/';
         if ( ! is_dir( $split_dir ) ) {
             return $module_types;
         }

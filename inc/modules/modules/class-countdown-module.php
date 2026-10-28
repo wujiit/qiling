@@ -18,7 +18,7 @@ class Countdown_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-clock';
-        $this->description = __( '产品上线倒计时展示', 'developer-starter' );
+        $this->description = __( '产品上线倒计时展示', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Countdown_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '产品倒计时', 'developer-starter' );
+        return __( '产品倒计时', 'qiling' );
     }
 
     public function get_fields() {
@@ -35,70 +35,70 @@ class Countdown_Module extends Module_Base {
             array(
                 'id'      => 'countdown_title',
                 'type'    => 'text',
-                'label'   => __( '主标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新品即将上线', 'New Release Coming Soon' ) : __( '新品即将上线', 'developer-starter' ),
+                'label'   => __( '主标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新品即将上线', 'New Release Coming Soon' ) : __( '新品即将上线', 'qiling' ),
             ),
             array(
                 'id'      => 'countdown_title_size',
                 'type'    => 'text',
-                'label'   => __( '主标题字体大小', 'developer-starter' ),
+                'label'   => __( '主标题字体大小', 'qiling' ),
                 'default' => '2.8rem',
-                'desc'    => __( '如 2.8rem 或 48px', 'developer-starter' ),
+                'desc'    => __( '如 2.8rem 或 48px', 'qiling' ),
             ),
             array(
                 'id'      => 'countdown_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '敬请期待', 'Stay Tuned' ) : __( '敬请期待', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '敬请期待', 'Stay Tuned' ) : __( '敬请期待', 'qiling' ),
             ),
             array(
                 'id'      => 'countdown_subtitle_size',
                 'type'    => 'text',
-                'label'   => __( '副标题字体大小', 'developer-starter' ),
+                'label'   => __( '副标题字体大小', 'qiling' ),
                 'default' => '0.9rem',
-                'desc'    => __( '如 0.9rem 或 14px', 'developer-starter' ),
+                'desc'    => __( '如 0.9rem 或 14px', 'qiling' ),
             ),
             array(
                 'id'      => 'countdown_desc',
                 'type'    => 'textarea',
-                'label'   => __( '描述文本', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '我们正在精心打造一款革命性的产品，即将与您见面！', 'We are crafting a bold new product experience and cannot wait to share it with you.' ) : __( '我们正在精心打造一款革命性的产品，即将与您见面！', 'developer-starter' ),
+                'label'   => __( '描述文本', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '我们正在精心打造一款革命性的产品，即将与您见面！', 'We are crafting a bold new product experience and cannot wait to share it with you.' ) : __( '我们正在精心打造一款革命性的产品，即将与您见面！', 'qiling' ),
             ),
             
             // === 样式设置 ===
             array(
                 'id'      => 'countdown_bg_color',
                 'type'    => 'text', // support gradient
-                'label'   => __( '背景颜色(支持渐变)', 'developer-starter' ),
+                'label'   => __( '背景颜色(支持渐变)', 'qiling' ),
                 'default' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)',
             ),
             array(
                 'id'      => 'countdown_title_color',
                 'type'    => 'color',
-                'label'   => __( '标题颜色', 'developer-starter' ),
+                'label'   => __( '标题颜色', 'qiling' ),
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'      => 'countdown_subtitle_color',
                 'type'    => 'color',
-                'label'   => __( '副标题颜色', 'developer-starter' ),
+                'label'   => __( '副标题颜色', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-255-255-255-08)',
             ),
             array(
                 'id'      => 'countdown_desc_color',
                 'type'    => 'color',
-                'label'   => __( '描述文字颜色', 'developer-starter' ),
+                'label'   => __( '描述文字颜色', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-255-255-255-07)',
             ),
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
@@ -107,26 +107,26 @@ class Countdown_Module extends Module_Base {
             array(
                 'id'      => 'countdown_image',
                 'type'    => 'image',
-                'label'   => __( '左侧产品图（可选）', 'developer-starter' ),
+                'label'   => __( '左侧产品图（可选）', 'qiling' ),
             ),
             array(
                 'id'      => 'countdown_date',
                 'type'    => 'text', // In a real scenario, a date picker would be better, but text works for YYYY-MM-DD
-                'label'   => __( '目标日期 (格式: YYYY-MM-DD HH:MM:SS)', 'developer-starter' ),
-                'desc'    => __( '如果留空，默认显示30天后', 'developer-starter' ),
+                'label'   => __( '目标日期 (格式: YYYY-MM-DD HH:MM:SS)', 'qiling' ),
+                'desc'    => __( '如果留空，默认显示30天后', 'qiling' ),
             ),
             
             // === 倒计时样式 ===
             array(
                 'id'      => 'countdown_timer_bg',
                 'type'    => 'text',
-                'label'   => __( '倒计时方块背景', 'developer-starter' ),
+                'label'   => __( '倒计时方块背景', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-255-255-255-015)',
             ),
             array(
                 'id'      => 'countdown_timer_color',
                 'type'    => 'color',
-                'label'   => __( '倒计时文字颜色', 'developer-starter' ),
+                'label'   => __( '倒计时文字颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             
@@ -134,25 +134,25 @@ class Countdown_Module extends Module_Base {
             array(
                 'id'      => 'countdown_btn_text',
                 'type'    => 'text',
-                'label'   => __( '按钮文字', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即预约', 'Reserve Now' ) : __( '立即预约', 'developer-starter' ),
+                'label'   => __( '按钮文字', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即预约', 'Reserve Now' ) : __( '立即预约', 'qiling' ),
             ),
             array(
                 'id'      => 'countdown_btn_link',
                 'type'    => 'text',
-                'label'   => __( '按钮链接', 'developer-starter' ),
+                'label'   => __( '按钮链接', 'qiling' ),
                 'default' => '#',
             ),
             array(
                 'id'      => 'countdown_btn_bg',
                 'type'    => 'color',
-                'label'   => __( '按钮背景色', 'developer-starter' ),
+                'label'   => __( '按钮背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'countdown_btn_text_color',
                 'type'    => 'color',
-                'label'   => __( '按钮文字颜色', 'developer-starter' ),
+                'label'   => __( '按钮文字颜色', 'qiling' ),
                 'default' => '#ffffff',
             ),
             $this->get_button_border_color_field( 'countdown_btn_border_color' ),
@@ -180,7 +180,7 @@ class Countdown_Module extends Module_Base {
         $target_date = isset( $data['countdown_date'] ) && ! empty( $data['countdown_date'] ) ? $data['countdown_date'] : '';
         $timer_bg = isset( $data['countdown_timer_bg'] ) && ! empty( $data['countdown_timer_bg'] ) ? $data['countdown_timer_bg'] : 'var(--qiling-color-rgba-255-255-255-015)';
         $timer_color = isset( $data['countdown_timer_color'] ) && ! empty( $data['countdown_timer_color'] ) ? $data['countdown_timer_color'] : 'var(--color-neutral-0)';
-        $btn_text = isset( $data['countdown_btn_text'] ) ? $data['countdown_btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即预约', 'Reserve Now' ) : __( '立即预约', 'developer-starter' ) );
+        $btn_text = isset( $data['countdown_btn_text'] ) ? $data['countdown_btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即预约', 'Reserve Now' ) : __( '立即预约', 'qiling' ) );
         $btn_link = isset( $data['countdown_btn_link'] ) ? $data['countdown_btn_link'] : '#';
         $btn_bg = isset( $data['countdown_btn_bg'] ) && ! empty( $data['countdown_btn_bg'] ) ? $data['countdown_btn_bg'] : 'var(--color-primary)';
         $btn_text_color = isset( $data['countdown_btn_text_color'] ) && ! empty( $data['countdown_btn_text_color'] ) ? $data['countdown_btn_text_color'] : '#ffffff';
@@ -229,7 +229,7 @@ class Countdown_Module extends Module_Base {
                         <?php if ( $subtitle ) : ?>
                             <div class="countdown-label">
                                 <span style="<?php echo esc_attr( $subtitle_style ); ?>">
-                                    🎉 <?php echo esc_html( $subtitle ); ?>
+                                    <?php echo esc_html( $subtitle ); ?>
                                 </span>
                             </div>
                         <?php endif; ?>
@@ -245,19 +245,19 @@ class Countdown_Module extends Module_Base {
                         <div class="countdown-timer" data-date="<?php echo esc_attr( $target_timestamp * 1000 ); ?>">
                             <div class="countdown-item" style="<?php echo esc_attr( $timer_item_style ); ?>">
                                 <div class="countdown-value" data-type="days">00</div>
-                                <div class="countdown-unit"><?php esc_html_e( '天', 'developer-starter' ); ?></div>
+                                <div class="countdown-unit"><?php esc_html_e( '天', 'qiling' ); ?></div>
                             </div>
                             <div class="countdown-item" style="<?php echo esc_attr( $timer_item_style ); ?>">
                                 <div class="countdown-value" data-type="hours">00</div>
-                                <div class="countdown-unit"><?php esc_html_e( '时', 'developer-starter' ); ?></div>
+                                <div class="countdown-unit"><?php esc_html_e( '时', 'qiling' ); ?></div>
                             </div>
                             <div class="countdown-item" style="<?php echo esc_attr( $timer_item_style ); ?>">
                                 <div class="countdown-value" data-type="minutes">00</div>
-                                <div class="countdown-unit"><?php esc_html_e( '分', 'developer-starter' ); ?></div>
+                                <div class="countdown-unit"><?php esc_html_e( '分', 'qiling' ); ?></div>
                             </div>
                             <div class="countdown-item" style="<?php echo esc_attr( $timer_item_style ); ?>">
                                 <div class="countdown-value" data-type="seconds">00</div>
-                                <div class="countdown-unit"><?php esc_html_e( '秒', 'developer-starter' ); ?></div>
+                                <div class="countdown-unit"><?php esc_html_e( '秒', 'qiling' ); ?></div>
                             </div>
                         </div>
                         

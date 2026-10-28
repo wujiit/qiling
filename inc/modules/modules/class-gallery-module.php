@@ -29,7 +29,7 @@ class Gallery_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'general';
         $this->icon        = 'dashicons-format-gallery';
-        $this->description = __( '图片画廊/相册展示', 'developer-starter' );
+        $this->description = __( '图片画廊/相册展示', 'qiling' );
     }
 
     /**
@@ -47,7 +47,7 @@ class Gallery_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '画廊相册', 'developer-starter' );
+        return __( '画廊相册', 'qiling' );
     }
 
     /**
@@ -63,37 +63,37 @@ class Gallery_Module extends Module_Base {
             array(
                 'id'      => 'gallery_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图片展示', 'Gallery' ) : __( '图片展示', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图片展示', 'Gallery' ) : __( '图片展示', 'qiling' ),
             ),
             array(
                 'id'      => 'gallery_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'desc'    => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id'    => 'gallery_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'      => 'gallery_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'gallery_subtitle_size',
                 'type'    => 'text',
-                'label'   => __( '副标题字体大小', 'developer-starter' ),
+                'label'   => __( '副标题字体大小', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'    => 'gallery_subtitle_color',
                 'type'  => 'color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
             ),
 
             // ========================================
@@ -102,31 +102,31 @@ class Gallery_Module extends Module_Base {
             array(
                 'id'      => 'gallery_columns',
                 'type'    => 'select',
-                'label'   => __( '每行列数', 'developer-starter' ),
+                'label'   => __( '每行列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
-                    '5' => __( '5列', 'developer-starter' ),
-                    '6' => __( '6列', 'developer-starter' ), // 新增
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
+                    '5' => __( '5列', 'qiling' ),
+                    '6' => __( '6列', 'qiling' ), // 新增
                 ),
                 'default' => '4',
             ),
             array(
                 'id'      => 'gallery_style',
                 'type'    => 'select',
-                'label'   => __( '展示样式', 'developer-starter' ),
+                'label'   => __( '展示样式', 'qiling' ),
                 'options' => array(
-                    'grid'      => __( '网格布局', 'developer-starter' ),
-                    'masonry'   => __( '瀑布流', 'developer-starter' ),
-                    'fullwidth' => __( '全宽展示', 'developer-starter' ), // 新增
+                    'grid'      => __( '网格布局', 'qiling' ),
+                    'masonry'   => __( '瀑布流', 'qiling' ),
+                    'fullwidth' => __( '全宽展示', 'qiling' ), // 新增
                 ),
                 'default' => 'grid',
             ),
             array(
                 'id'      => 'gallery_gap',
                 'type'    => 'number',
-                'label'   => __( '图片间距(px)', 'developer-starter' ),
+                'label'   => __( '图片间距(px)', 'qiling' ),
                 'default' => '15',
             ),
 
@@ -136,18 +136,18 @@ class Gallery_Module extends Module_Base {
             array(
                 'id'      => 'enable_filter',
                 'type'    => 'select',
-                'label'   => __( '启用分类筛选', 'developer-starter' ),
+                'label'   => __( '启用分类筛选', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '启用', 'developer-starter' ),
-                    'no'  => __( '禁用', 'developer-starter' ),
+                    'yes' => __( '启用', 'qiling' ),
+                    'no'  => __( '禁用', 'qiling' ),
                 ),
                 'default' => 'no',
             ),
             array(
                 'id'    => 'filter_categories',
                 'type'  => 'text',
-                'label' => __( '分类列表', 'developer-starter' ),
-                'desc'  => __( '用逗号分隔，如：酒店外观,客房环境,餐厅美食,休闲设施', 'developer-starter' ),
+                'label' => __( '分类列表', 'qiling' ),
+                'desc'  => __( '用逗号分隔，如：酒店外观,客房环境,餐厅美食,休闲设施', 'qiling' ),
             ),
 
             // ========================================
@@ -156,19 +156,19 @@ class Gallery_Module extends Module_Base {
             array(
                 'id'      => 'gallery_lightbox',
                 'type'    => 'checkbox',
-                'label'   => __( '点击放大', 'developer-starter' ),
+                'label'   => __( '点击放大', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'show_counter',
                 'type'    => 'select',
-                'label'   => __( '显示图片数量', 'developer-starter' ),
+                'label'   => __( '显示图片数量', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'desc'    => __( 'Lightbox中显示"第X张/共Y张"', 'developer-starter' ),
+                'desc'    => __( 'Lightbox中显示"第X张/共Y张"', 'qiling' ),
             ),
 
             // ========================================
@@ -177,29 +177,29 @@ class Gallery_Module extends Module_Base {
             array(
                 'id'     => 'gallery_images',
                 'type'   => 'repeater',
-                'label'  => __( '图片列表', 'developer-starter' ),
-                'desc'   => __( '添加需要展示的图片', 'developer-starter' ),
+                'label'  => __( '图片列表', 'qiling' ),
+                'desc'   => __( '添加需要展示的图片', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'image',
                         'type'  => 'text',
-                        'label' => __( '图片URL', 'developer-starter' ),
+                        'label' => __( '图片URL', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '标题', 'developer-starter' ),
+                        'label' => __( '标题', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'text',
-                        'label' => __( '描述', 'developer-starter' ),
+                        'label' => __( '描述', 'qiling' ),
                     ),
                     array(
                         'id'    => 'category',
                         'type'  => 'text',
-                        'label' => __( '所属分类', 'developer-starter' ),
-                        'desc'  => __( '需与上方分类列表中的名称一致', 'developer-starter' ),
+                        'label' => __( '所属分类', 'qiling' ),
+                        'desc'  => __( '需与上方分类列表中的名称一致', 'qiling' ),
                     ),
                 ),
             ),
@@ -210,19 +210,19 @@ class Gallery_Module extends Module_Base {
             array(
                 'id'    => 'module_bg_color',
                 'type'  => 'color',
-                'label' => __( '背景颜色', 'developer-starter' ),
-                'desc'  => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
+                'desc'  => __( '支持CSS颜色值或渐变代码', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '60px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '60px',
             ),
 
@@ -232,10 +232,10 @@ class Gallery_Module extends Module_Base {
             array(
                 'id'      => 'enable_staggered_animation',
                 'type'    => 'select',
-                'label'   => __( '开启逐个显示动画', 'developer-starter' ),
+                'label'   => __( '开启逐个显示动画', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -253,7 +253,7 @@ class Gallery_Module extends Module_Base {
         // ========================================
         $title       = isset( $data['gallery_title'] ) && $data['gallery_title'] !== '' 
                        ? $data['gallery_title'] 
-                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图片展示', 'Gallery' ) : __( '图片展示', 'developer-starter' ) );
+                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图片展示', 'Gallery' ) : __( '图片展示', 'qiling' ) );
         $subtitle    = isset( $data['gallery_subtitle'] ) ? $data['gallery_subtitle'] : '';
         $title_color = isset( $data['gallery_title_color'] ) ? $data['gallery_title_color'] : '';
         $title_size  = isset( $data['gallery_title_size'] ) ? $data['gallery_title_size'] : '';
@@ -296,27 +296,27 @@ class Gallery_Module extends Module_Base {
             $images = array(
                 array(
                     'image'    => '',
-                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品展示', 'Product Showcase' ) : __( '产品展示', 'developer-starter' ),
+                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品展示', 'Product Showcase' ) : __( '产品展示', 'qiling' ),
                     'desc'     => '',
-                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品', 'Products' ) : __( '产品', 'developer-starter' ),
+                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品', 'Products' ) : __( '产品', 'qiling' ),
                 ),
                 array(
                     'image'    => '',
-                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '办公环境', 'Workspace' ) : __( '办公环境', 'developer-starter' ),
+                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '办公环境', 'Workspace' ) : __( '办公环境', 'qiling' ),
                     'desc'     => '',
-                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '环境', 'Spaces' ) : __( '环境', 'developer-starter' ),
+                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '环境', 'Spaces' ) : __( '环境', 'qiling' ),
                 ),
                 array(
                     'image'    => '',
-                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队活动', 'Team Moments' ) : __( '团队活动', 'developer-starter' ),
+                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队活动', 'Team Moments' ) : __( '团队活动', 'qiling' ),
                     'desc'     => '',
-                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队', 'Team' ) : __( '团队', 'developer-starter' ),
+                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '团队', 'Team' ) : __( '团队', 'qiling' ),
                 ),
                 array(
                     'image'    => '',
-                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '荣誉资质', 'Recognition' ) : __( '荣誉资质', 'developer-starter' ),
+                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '荣誉资质', 'Recognition' ) : __( '荣誉资质', 'qiling' ),
                     'desc'     => '',
-                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '荣誉', 'Awards' ) : __( '荣誉', 'developer-starter' ),
+                    'category' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '荣誉', 'Awards' ) : __( '荣誉', 'qiling' ),
                 ),
             );
         }
@@ -378,7 +378,7 @@ class Gallery_Module extends Module_Base {
                 <?php if ( $enable_filter === 'yes' && ! empty( $categories ) ) : ?>
                     <div class="ql-gallery-filters">
                         <button type="button" class="ql-gallery-filter-btn active" data-filter="all">
-                            <?php esc_html_e( '全部', 'developer-starter' ); ?>
+                            <?php esc_html_e( '全部', 'qiling' ); ?>
                         </button>
                         <?php foreach ( $categories as $cat ) : ?>
                             <button type="button" class="ql-gallery-filter-btn" data-filter="<?php echo esc_attr( $cat ); ?>">
@@ -457,12 +457,12 @@ class Gallery_Module extends Module_Base {
             <img src="" alt="" class="gallery-lightbox-image" />
             
             <!-- 左右导航按钮（新增） -->
-            <button type="button" class="ql-gallery-nav ql-gallery-prev" aria-label="<?php esc_attr_e( '上一张', 'developer-starter' ); ?>">
+            <button type="button" class="ql-gallery-nav ql-gallery-prev" aria-label="<?php esc_attr_e( '上一张', 'qiling' ); ?>">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
             </button>
-            <button type="button" class="ql-gallery-nav ql-gallery-next" aria-label="<?php esc_attr_e( '下一张', 'developer-starter' ); ?>">
+            <button type="button" class="ql-gallery-nav ql-gallery-next" aria-label="<?php esc_attr_e( '下一张', 'qiling' ); ?>">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>

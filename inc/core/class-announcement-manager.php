@@ -161,7 +161,12 @@ class Announcement_Manager {
         <div id="ds-announcement" class="ds-announcement <?php echo $type_class; ?>" data-id="<?php echo esc_attr( $announcement_id ); ?>" style="display: none;">
             <div class="announcement-overlay"></div>
             <div class="announcement-modal">
-                <button type="button" class="announcement-close" aria-label="<?php esc_attr_e( '关闭', 'developer-starter' ); ?>">&times;</button>
+                <button type="button" class="announcement-close" aria-label="<?php esc_attr_e( '关闭', 'qiling' ); ?>">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
                 
                 <?php if ( $type === 'image' && $image ) : ?>
                     <div class="announcement-image">
@@ -171,7 +176,7 @@ class Announcement_Manager {
                 
                 <div class="announcement-body">
                     <?php if ( $type === 'marketing' ) : ?>
-                        <div class="announcement-badge"><?php esc_html_e( '限时活动', 'developer-starter' ); ?></div>
+                        <div class="announcement-badge"><?php esc_html_e( '限时活动', 'qiling' ); ?></div>
                     <?php endif; ?>
                     
                     <?php if ( $title ) : ?>
@@ -203,7 +208,7 @@ class Announcement_Manager {
                     <div class="announcement-dismiss">
                         <label>
                             <input type="checkbox" id="announcement-today-dismiss" />
-                            <span><?php esc_html_e( '今日不再显示', 'developer-starter' ); ?></span>
+                            <span><?php esc_html_e( '今日不再显示', 'qiling' ); ?></span>
                         </label>
                     </div>
                 <?php endif; ?>
@@ -246,7 +251,12 @@ class Announcement_Manager {
             </<?php echo $tag; ?>>
             
             <?php if ( $allow_dismiss === '1' ) : ?>
-                <button type="button" class="ds-bottom-banner-close" aria-label="<?php esc_attr_e( '关闭', 'developer-starter' ); ?>">&times;</button>
+                <button type="button" class="ds-bottom-banner-close" aria-label="<?php esc_attr_e( '关闭', 'qiling' ); ?>">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             <?php endif; ?>
         </div>
         
@@ -338,17 +348,39 @@ class Announcement_Manager {
             border: none;
             border-radius: 50%;
             color: #fff;
-            font-size: 20px;
-            line-height: 1;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
+            padding: 0;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .ds-bottom-banner-close svg {
+            width: 14px;
+            height: 14px;
+            display: block;
+            stroke: currentColor;
+            pointer-events: none;
+            flex-shrink: 0;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .ds-bottom-banner-close:hover {
             background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .ds-bottom-banner-close:hover svg {
+            transform: scale(1.1);
+        }
+        
+        .ds-bottom-banner-close:active {
+            transform: translateY(-50%) scale(0.92);
+        }
+        
+        .ds-bottom-banner-close:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
         }
         
         /* 深色模式 */
@@ -472,9 +504,9 @@ class Announcement_Manager {
             'announcementId' => (string) $announcement_id,
         );
 
-        $version = defined( 'DEVELOPER_STARTER_VERSION' ) ? (string) DEVELOPER_STARTER_VERSION : '1.0.0';
-        $css_file = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/announcement.css';
-        $js_file  = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/announcement.js';
+        $version = defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1.0.0';
+        $css_file = trailingslashit( QILING_DIR ) . 'assets/css/announcement.css';
+        $js_file  = trailingslashit( QILING_DIR ) . 'assets/js/announcement.js';
         $css_mtime = file_exists( $css_file ) ? (int) filemtime( $css_file ) : 0;
         $js_mtime  = file_exists( $js_file ) ? (int) filemtime( $js_file ) : 0;
         $asset_mtime = max( $css_mtime, $js_mtime );
@@ -487,8 +519,8 @@ class Announcement_Manager {
             }
         }
 
-        $css_url = add_query_arg( 'ver', rawurlencode( $version ), DEVELOPER_STARTER_ASSETS . '/css/announcement.css' );
-        $js_url  = add_query_arg( 'ver', rawurlencode( $version ), DEVELOPER_STARTER_ASSETS . '/js/announcement.js' );
+        $css_url = add_query_arg( 'ver', rawurlencode( $version ), QILING_ASSETS . '/css/announcement.css' );
+        $js_url  = add_query_arg( 'ver', rawurlencode( $version ), QILING_ASSETS . '/js/announcement.js' );
         ?>
         <script id="ds-announcement-lazy-loader">
         (function () {

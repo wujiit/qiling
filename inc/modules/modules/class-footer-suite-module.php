@@ -19,7 +19,7 @@ class Footer_Suite_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'footer';
         $this->icon        = 'dashicons-layout';
-        $this->description = __( '整合品牌、链接、联系、二维码、友情链接和版权备案的页脚模块', 'developer-starter' );
+        $this->description = __( '整合品牌、链接、联系、二维码、友情链接和版权备案的页脚模块', 'qiling' );
     }
 
     public function get_id() {
@@ -27,7 +27,7 @@ class Footer_Suite_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '页脚风格', 'developer-starter' );
+        return __( '页脚风格', 'qiling' );
     }
 
     public function get_fields() {
@@ -35,78 +35,78 @@ class Footer_Suite_Module extends Module_Base {
             array(
                 'id'      => 'qfs_layout',
                 'type'    => 'select',
-                'label'   => __( '布局', 'developer-starter' ),
+                'label'   => __( '布局', 'qiling' ),
                 'options' => array(
-                    'balanced' => __( '品牌 + 链接 + 联系', 'developer-starter' ),
-                    'columns'  => __( '多列', 'developer-starter' ),
-                    'compact'  => __( '紧凑', 'developer-starter' ),
+                    'balanced' => __( '品牌 + 链接 + 联系', 'qiling' ),
+                    'columns'  => __( '多列', 'qiling' ),
+                    'compact'  => __( '紧凑', 'qiling' ),
                 ),
                 'default' => 'balanced',
             ),
             array(
                 'id'      => 'qfs_width',
                 'type'    => 'select',
-                'label'   => __( '宽度', 'developer-starter' ),
+                'label'   => __( '宽度', 'qiling' ),
                 'options' => array(
-                    'contained' => __( '常规', 'developer-starter' ),
-                    'wide'      => __( '宽屏', 'developer-starter' ),
-                    'full'      => __( '通栏', 'developer-starter' ),
+                    'contained' => __( '常规', 'qiling' ),
+                    'wide'      => __( '宽屏', 'qiling' ),
+                    'full'      => __( '通栏', 'qiling' ),
                 ),
                 'default' => 'contained',
             ),
             array(
                 'id'      => 'qfs_variant',
                 'type'    => 'select',
-                'label'   => __( '视觉风格', 'developer-starter' ),
+                'label'   => __( '视觉风格', 'qiling' ),
                 'options' => array(
-                    'classic' => __( '经典页脚', 'developer-starter' ),
-                    'cinema'  => __( '深色影院', 'developer-starter' ),
+                    'classic' => __( '经典页脚', 'qiling' ),
+                    'cinema'  => __( '深色影院', 'qiling' ),
                 ),
                 'default' => 'classic',
             ),
             array(
                 'id'    => 'qfs_logo',
                 'type'  => 'image',
-                'label' => __( 'Logo', 'developer-starter' ),
+                'label' => __( 'Logo', 'qiling' ),
             ),
             array(
                 'id'    => 'qfs_brand_title',
                 'type'  => 'text',
-                'label' => __( '品牌名称', 'developer-starter' ),
+                'label' => __( '品牌名称', 'qiling' ),
             ),
             array(
                 'id'    => 'qfs_brand_desc',
                 'type'  => 'textarea',
-                'label' => __( '品牌简介', 'developer-starter' ),
+                'label' => __( '品牌简介', 'qiling' ),
             ),
             array(
                 'id'            => 'qfs_link_groups',
                 'type'          => 'repeater',
-                'label'         => __( '链接分组', 'developer-starter' ),
+                'label'         => __( '链接分组', 'qiling' ),
                 'default_items' => array(
                     array(
-                        'title' => __( '快速链接', 'developer-starter' ),
-                        'links' => __( "首页|/\n关于我们|#\n联系我们|#", 'developer-starter' ),
+                        'title' => __( '快速链接', 'qiling' ),
+                        'links' => __( "首页|/\n关于我们|#\n联系我们|#", 'qiling' ),
                     ),
                 ),
                 'fields'        => array(
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '分组标题', 'developer-starter' ),
+                        'label' => __( '分组标题', 'qiling' ),
                     ),
                     array(
                         'id'          => 'links',
                         'type'        => 'textarea',
-                        'label'       => __( '链接', 'developer-starter' ),
-                        'description' => __( '每行：文字|链接', 'developer-starter' ),
+                        'label'       => __( '链接', 'qiling' ),
+                        'description' => __( '每行：文字|链接', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'      => 'qfs_link_columns',
                 'type'    => 'select',
-                'label'   => __( '链接列数', 'developer-starter' ),
+                'label'   => __( '链接列数', 'qiling' ),
                 'options' => array(
                     '1' => '1',
                     '2' => '2',
@@ -118,165 +118,165 @@ class Footer_Suite_Module extends Module_Base {
             array(
                 'id'      => 'qfs_contact_title',
                 'type'    => 'text',
-                'label'   => __( '联系标题', 'developer-starter' ),
-                'default' => __( '联系方式', 'developer-starter' ),
+                'label'   => __( '联系标题', 'qiling' ),
+                'default' => __( '联系方式', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_contact_items',
                 'type'        => 'textarea',
-                'label'       => __( '联系内容', 'developer-starter' ),
-                'description' => __( '每行：名称|内容|链接', 'developer-starter' ),
+                'label'       => __( '联系内容', 'qiling' ),
+                'description' => __( '每行：名称|内容|链接', 'qiling' ),
             ),
             array(
                 'id'      => 'qfs_social_title',
                 'type'    => 'text',
-                'label'   => __( '社交标题', 'developer-starter' ),
-                'default' => __( '关注我们', 'developer-starter' ),
+                'label'   => __( '社交标题', 'qiling' ),
+                'default' => __( '关注我们', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_social_links',
                 'type'        => 'textarea',
-                'label'       => __( '社交链接', 'developer-starter' ),
-                'description' => __( '每行：文字|链接', 'developer-starter' ),
+                'label'       => __( '社交链接', 'qiling' ),
+                'description' => __( '每行：文字|链接', 'qiling' ),
             ),
             array(
                 'id'            => 'qfs_qr_items',
                 'type'          => 'repeater',
-                'label'         => __( '二维码', 'developer-starter' ),
+                'label'         => __( '二维码', 'qiling' ),
                 'default_items' => array(),
                 'fields'        => array(
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '标题', 'developer-starter' ),
+                        'label' => __( '标题', 'qiling' ),
                     ),
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '图片', 'developer-starter' ),
+                        'label' => __( '图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'text',
                         'type'  => 'text',
-                        'label' => __( '说明', 'developer-starter' ),
+                        'label' => __( '说明', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'      => 'qfs_show_qr',
                 'type'    => 'select',
-                'label'   => __( '显示二维码', 'developer-starter' ),
+                'label'   => __( '显示二维码', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'qfs_friend_mode',
                 'type'    => 'select',
-                'label'   => __( '友情链接', 'developer-starter' ),
+                'label'   => __( '友情链接', 'qiling' ),
                 'options' => array(
-                    'theme_home'  => __( '使用主题友链，仅首页', 'developer-starter' ),
-                    'custom_home' => __( '自定义，仅首页', 'developer-starter' ),
-                    'custom_all'  => __( '自定义，全站', 'developer-starter' ),
-                    'none'        => __( '不显示', 'developer-starter' ),
+                    'theme_home'  => __( '使用主题友链，仅首页', 'qiling' ),
+                    'custom_home' => __( '自定义，仅首页', 'qiling' ),
+                    'custom_all'  => __( '自定义，全站', 'qiling' ),
+                    'none'        => __( '不显示', 'qiling' ),
                 ),
                 'default' => 'theme_home',
             ),
             array(
                 'id'      => 'qfs_friend_title',
                 'type'    => 'text',
-                'label'   => __( '友链标题', 'developer-starter' ),
-                'default' => __( '友情链接：', 'developer-starter' ),
+                'label'   => __( '友链标题', 'qiling' ),
+                'default' => __( '友情链接：', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_friend_links',
                 'type'        => 'textarea',
-                'label'       => __( '自定义友链', 'developer-starter' ),
-                'description' => __( '每行：文字|链接', 'developer-starter' ),
+                'label'       => __( '自定义友链', 'qiling' ),
+                'description' => __( '每行：文字|链接', 'qiling' ),
             ),
             array(
                 'id'    => 'qfs_bottom_text',
                 'type'  => 'editor',
-                'label' => __( '版权内容', 'developer-starter' ),
+                'label' => __( '版权内容', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_bottom_links',
                 'type'        => 'textarea',
-                'label'       => __( '底部链接', 'developer-starter' ),
-                'description' => __( '每行：文字|链接', 'developer-starter' ),
+                'label'       => __( '底部链接', 'qiling' ),
+                'description' => __( '每行：文字|链接', 'qiling' ),
             ),
             array(
                 'id'      => 'qfs_show_filings',
                 'type'    => 'select',
-                'label'   => __( '显示备案', 'developer-starter' ),
+                'label'   => __( '显示备案', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'qfs_bg',
                 'type'    => 'color',
-                'label'   => __( '背景', 'developer-starter' ),
+                'label'   => __( '背景', 'qiling' ),
                 'default' => 'var(--qiling-color-111111)',
             ),
             array(
                 'id'      => 'qfs_text_color',
                 'type'    => 'color',
-                'label'   => __( '文字颜色', 'developer-starter' ),
+                'label'   => __( '文字颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'qfs_muted_color',
                 'type'    => 'color',
-                'label'   => __( '辅助文字颜色', 'developer-starter' ),
+                'label'   => __( '辅助文字颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'qfs_heading_color',
                 'type'    => 'color',
-                'label'   => __( '标题颜色', 'developer-starter' ),
+                'label'   => __( '标题颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'qfs_accent_color',
                 'type'    => 'color',
-                'label'   => __( '强调色', 'developer-starter' ),
+                'label'   => __( '强调色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'qfs_badge_bg',
                 'type'    => 'color',
-                'label'   => __( '联系标签背景颜色', 'developer-starter' ),
+                'label'   => __( '联系标签背景颜色', 'qiling' ),
                 'default' => '',
-                'description' => __( '控制联系内容前的小标签，留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制联系内容前的小标签，留空时跟随页面预设/全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'qfs_border_color',
                 'type'    => 'color',
-                'label'   => __( '边线颜色', 'developer-starter' ),
+                'label'   => __( '边线颜色', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-255-255-255-014)',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '64px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '28px',
             ),
             array(
                 'id'          => 'qfs_custom_css',
                 'type'        => 'textarea',
-                'label'       => __( '自定义 CSS', 'developer-starter' ),
-                'description' => __( '可用 {{WRAPPER}} 表示当前模块', 'developer-starter' ),
+                'label'       => __( '自定义 CSS', 'qiling' ),
+                'description' => __( '可用 {{WRAPPER}} 表示当前模块', 'qiling' ),
             ),
         );
     }
@@ -332,9 +332,9 @@ class Footer_Suite_Module extends Module_Base {
         $friend_links  = $this->get_friend_links( $data );
         $bottom_links  = $this->parse_link_lines( $this->string_value( $data, 'qfs_bottom_links', '' ) );
 
-        $contact_title = $this->string_value( $data, 'qfs_contact_title', __( '联系方式', 'developer-starter' ) );
-        $social_title  = $this->string_value( $data, 'qfs_social_title', __( '关注我们', 'developer-starter' ) );
-        $friend_title  = $this->string_value( $data, 'qfs_friend_title', __( '友情链接：', 'developer-starter' ) );
+        $contact_title = $this->string_value( $data, 'qfs_contact_title', __( '联系方式', 'qiling' ) );
+        $social_title  = $this->string_value( $data, 'qfs_social_title', __( '关注我们', 'qiling' ) );
+        $friend_title  = $this->string_value( $data, 'qfs_friend_title', __( '友情链接：', 'qiling' ) );
         $bottom_text   = $this->get_bottom_text( $data );
         $show_filings  = 'no' !== $this->string_value( $data, 'qfs_show_filings', 'yes' );
 
@@ -544,7 +544,7 @@ class Footer_Suite_Module extends Module_Base {
             if ( ! empty( $links ) ) {
                 return array(
                     array(
-                        'title' => $this->option_text( 'footer_links_title', __( '快速链接', 'developer-starter' ) ),
+                        'title' => $this->option_text( 'footer_links_title', __( '快速链接', 'qiling' ) ),
                         'links' => $links,
                     ),
                 );
@@ -553,9 +553,9 @@ class Footer_Suite_Module extends Module_Base {
 
         return array(
             array(
-                'title' => __( '快速链接', 'developer-starter' ),
+                'title' => __( '快速链接', 'qiling' ),
                 'links' => array(
-                    $this->normalize_link( __( '首页', 'developer-starter' ), home_url( '/' ) ),
+                    $this->normalize_link( __( '首页', 'qiling' ), home_url( '/' ) ),
                 ),
             ),
         );
@@ -571,7 +571,7 @@ class Footer_Suite_Module extends Module_Base {
         $phone = $this->option_text( 'company_phone', '' );
         if ( '' !== $phone ) {
             $items[] = array(
-                'label' => __( '电话', 'developer-starter' ),
+                'label' => __( '电话', 'qiling' ),
                 'text'  => $phone,
                 'url'   => 'tel:' . preg_replace( '/[^0-9\+]/', '', $phone ),
             );
@@ -589,7 +589,7 @@ class Footer_Suite_Module extends Module_Base {
         $email = $this->option_text( 'company_email', '' );
         if ( '' !== $email ) {
             $items[] = array(
-                'label' => __( '邮箱', 'developer-starter' ),
+                'label' => __( '邮箱', 'qiling' ),
                 'text'  => $email,
                 'url'   => 'mailto:' . $email,
             );
@@ -598,7 +598,7 @@ class Footer_Suite_Module extends Module_Base {
         $address = $this->option_text( 'company_address', '' );
         if ( '' !== $address ) {
             $items[] = array(
-                'label' => __( '地址', 'developer-starter' ),
+                'label' => __( '地址', 'qiling' ),
                 'text'  => $address,
                 'url'   => '',
             );
@@ -607,7 +607,7 @@ class Footer_Suite_Module extends Module_Base {
         $hours = $this->option_text( 'company_working_hours', '' );
         if ( '' !== $hours ) {
             $items[] = array(
-                'label' => __( '时间', 'developer-starter' ),
+                'label' => __( '时间', 'qiling' ),
                 'text'  => $hours,
                 'url'   => '',
             );
@@ -644,9 +644,9 @@ class Footer_Suite_Module extends Module_Base {
         $contact_qr = $this->resolve_media_url( $this->option( 'company_wechat_qrcode', '' ) );
         if ( '' !== $contact_qr ) {
             $normalized[] = array(
-                'title' => __( '联系微信', 'developer-starter' ),
+                'title' => __( '联系微信', 'qiling' ),
                 'image' => $contact_qr,
-                'text'  => __( '扫码添加微信', 'developer-starter' ),
+                'text'  => __( '扫码添加微信', 'qiling' ),
             );
         }
 
@@ -656,18 +656,18 @@ class Footer_Suite_Module extends Module_Base {
         }
         if ( '' !== $wechat_qr ) {
             $normalized[] = array(
-                'title' => __( '微信公众号', 'developer-starter' ),
+                'title' => __( '微信公众号', 'qiling' ),
                 'image' => $wechat_qr,
-                'text'  => $this->option_text( 'wechat_qr_text', __( '扫码关注公众号', 'developer-starter' ) ),
+                'text'  => $this->option_text( 'wechat_qr_text', __( '扫码关注公众号', 'qiling' ) ),
             );
         }
 
         $douyin_qr = $this->resolve_media_url( $this->option( 'douyin_qrcode', '' ) );
         if ( '' !== $douyin_qr ) {
             $normalized[] = array(
-                'title' => __( '抖音', 'developer-starter' ),
+                'title' => __( '抖音', 'qiling' ),
                 'image' => $douyin_qr,
-                'text'  => $this->option_text( 'douyin_qr_text', __( '扫码关注抖音', 'developer-starter' ) ),
+                'text'  => $this->option_text( 'douyin_qr_text', __( '扫码关注抖音', 'qiling' ) ),
             );
         }
 
@@ -722,7 +722,7 @@ class Footer_Suite_Module extends Module_Base {
             return $copyright;
         }
 
-        return '&copy; ' . esc_html( wp_date( 'Y' ) ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '. ' . esc_html__( '版权所有', 'developer-starter' ) . '.';
+        return '&copy; ' . esc_html( wp_date( 'Y' ) ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '. ' . esc_html__( '版权所有', 'qiling' ) . '.';
     }
 
     private function parse_link_lines( $value, $target = '_self' ) {

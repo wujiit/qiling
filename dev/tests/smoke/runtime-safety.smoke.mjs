@@ -187,7 +187,6 @@ export async function run() {
     '- ../inc/admin/views/*',
     '- ../inc/core/helpers/helpers-content-modules.php',
     '- ../inc/modules/modules/*',
-    '- ../inc/woocommerce/*',
   ].forEach((needle) => {
     assertMatches(
       phpstanConfig,
@@ -267,12 +266,6 @@ export async function run() {
     'Blog visual preset body class should sanitize the option-derived preset slug'
   );
 
-  const wcSetupPhp = readThemeFile('inc/woocommerce/class-wc-setup.php');
-  assertContains(
-    wcSetupPhp,
-    "sanitize_html_class( 'wc-layout-' . $this->get_layout(), 'wc-layout-full-width' )",
-    'WooCommerce layout body class should sanitize the option-derived layout slug'
-  );
 
   const adminSettingsConfigPhp = readThemeFile('inc/admin/traits/class-admin-settings-config-trait.php');
   [

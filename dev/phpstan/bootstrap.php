@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $constants = array(
-    'DEVELOPER_STARTER_VERSION'    => '2.5.7',
-    'DEVELOPER_STARTER_DIR'        => $themeRoot,
-    'DEVELOPER_STARTER_URI'        => 'https://example.test/wp-content/themes/qiling',
-    'DEVELOPER_STARTER_INC'        => $themeRoot . '/inc',
-    'DEVELOPER_STARTER_ASSETS'     => 'https://example.test/wp-content/themes/qiling/assets',
-    'DEVELOPER_STARTER_DB_VERSION' => '2.5.7',
+    'QILING_VERSION'    => '2.6.8',
+    'QILING_DIR'        => $themeRoot,
+    'QILING_URI'        => 'https://example.test/wp-content/themes/qiling',
+    'QILING_INC'        => $themeRoot . '/inc',
+    'QILING_ASSETS'     => 'https://example.test/wp-content/themes/qiling/assets',
+    'QILING_DB_VERSION' => '2.6.8',
 );
 
 foreach ( $constants as $name => $value ) {
@@ -26,7 +26,7 @@ foreach ( $constants as $name => $value ) {
     }
 }
 
-$pinyinAutoload = DEVELOPER_STARTER_INC . '/vendor/pinyin-autoload.php';
+$pinyinAutoload = QILING_INC . '/vendor/pinyin-autoload.php';
 if ( file_exists( $pinyinAutoload ) ) {
     require_once $pinyinAutoload;
 }

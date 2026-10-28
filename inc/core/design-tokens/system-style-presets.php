@@ -45,7 +45,7 @@ $transparent_header_defaults = array(
 
 return array(
 	'default'    => array(
-		'label'            => __( '通用官网', 'developer-starter' ),
+		'label'            => __( '通用官网', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_slate,
 			array(
@@ -107,7 +107,7 @@ return array(
 		),
 	),
 	'enterprise' => array(
-		'label'            => __( '企业服务', 'developer-starter' ),
+		'label'            => __( '企业服务', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_slate,
 			array(
@@ -169,7 +169,7 @@ return array(
 		),
 	),
 	'technology' => array(
-		'label'            => __( '科技产品', 'developer-starter' ),
+		'label'            => __( '科技产品', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_slate,
 			array(
@@ -231,7 +231,7 @@ return array(
 		),
 	),
 	'medical'    => array(
-		'label'            => __( '医疗健康', 'developer-starter' ),
+		'label'            => __( '医疗健康', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_slate,
 			array(
@@ -293,7 +293,7 @@ return array(
 		),
 	),
 	'education'  => array(
-		'label'            => __( '教育培训', 'developer-starter' ),
+		'label'            => __( '教育培训', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_slate,
 			array(
@@ -355,7 +355,7 @@ return array(
 		),
 	),
 	'restaurant' => array(
-		'label'            => __( '餐饮门店', 'developer-starter' ),
+		'label'            => __( '餐饮门店', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_warm,
 			array(
@@ -417,7 +417,7 @@ return array(
 		),
 	),
 	'magazine'   => array(
-		'label'            => __( '杂志媒体', 'developer-starter' ),
+		'label'            => __( '杂志媒体', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_slate,
 			array(
@@ -479,7 +479,7 @@ return array(
 		),
 	),
 	'minimal'    => array(
-		'label'            => __( '极简内容', 'developer-starter' ),
+		'label'            => __( '极简内容', 'qiling' ),
 		'tokens'           => array_merge(
 			$neutral_slate,
 			array(

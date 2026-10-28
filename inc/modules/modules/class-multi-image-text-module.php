@@ -20,7 +20,7 @@ class Multi_Image_Text_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-images-alt2';
-        $this->description = __( '多图文悬停切换模块', 'developer-starter' );
+        $this->description = __( '多图文悬停切换模块', 'qiling' );
     }
 
     public function get_id() {
@@ -28,78 +28,78 @@ class Multi_Image_Text_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '多图文模块', 'developer-starter' );
+        return __( '多图文模块', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'multi_image_text_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
+            array( 'id' => 'multi_image_text_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
             array(
                 'id' => 'multi_image_text_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'multi_image_text_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'multi_image_text_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'multi_image_text_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'multi_image_text_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
             array(
                 'id' => 'multi_image_text_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'multi_image_text_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'multi_image_text_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'multi_image_text_layout', 'type' => 'select', 'label' => __( '布局方向', 'developer-starter' ), 'options' => array( 'left' => __( '左图右文', 'developer-starter' ), 'right' => __( '右图左文', 'developer-starter' ) ), 'default' => 'left' ),
+            array( 'id' => 'multi_image_text_layout', 'type' => 'select', 'label' => __( '布局方向', 'qiling' ), 'options' => array( 'left' => __( '左图右文', 'qiling' ), 'right' => __( '右图左文', 'qiling' ) ), 'default' => 'left' ),
             
-            array( 'id' => 'module_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'developer-starter' ), 'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ) ),
+            array( 'id' => 'module_bg_color', 'type' => 'color', 'label' => __( '背景颜色', 'qiling' ), 'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ) ),
             
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             
-            array( 'id' => 'multi_image_text_item_title_size', 'type' => 'text', 'label' => __( '子项标题大小', 'developer-starter' ), 'default' => '1.25rem' ),
-            array( 'id' => 'multi_image_text_items', 'type' => 'repeater', 'label' => __( '图文列表', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (Emoji 或 Symbol类名)', 'developer-starter' ) ),
-                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-                array( 'id' => 'title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
-                array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '描述', 'developer-starter' ) ),
-                array( 'id' => 'desc_color', 'type' => 'color', 'label' => __( '描述颜色', 'developer-starter' ) ),
-                array( 'id' => 'image', 'type' => 'image', 'label' => __( '对应图片', 'developer-starter' ) ),
-                array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接', 'developer-starter' ) ),
+            array( 'id' => 'multi_image_text_item_title_size', 'type' => 'text', 'label' => __( '子项标题大小', 'qiling' ), 'default' => '1.25rem' ),
+            array( 'id' => 'multi_image_text_items', 'type' => 'repeater', 'label' => __( '图文列表', 'qiling' ), 'fields' => array(
+                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (Emoji 或 Symbol类名)', 'qiling' ) ),
+                array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+                array( 'id' => 'title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
+                array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '描述', 'qiling' ) ),
+                array( 'id' => 'desc_color', 'type' => 'color', 'label' => __( '描述颜色', 'qiling' ) ),
+                array( 'id' => 'image', 'type' => 'image', 'label' => __( '对应图片', 'qiling' ) ),
+                array( 'id' => 'link', 'type' => 'text', 'label' => __( '链接', 'qiling' ) ),
             ),
             'default_items' => array(
                 array(
-                    'icon'  => '🚀',
-                    'title' => __( '快速部署', 'developer-starter' ),
-                    'desc'  => __( '采用自动化部署流程，5分钟即可完成系统上线，大幅降低运维成本和时间投入。', 'developer-starter' ),
+                    'icon'  => '',
+                    'title' => __( '快速部署', 'qiling' ),
+                    'desc'  => __( '采用自动化部署流程，5分钟即可完成系统上线，大幅降低运维成本和时间投入。', 'qiling' ),
                     'image' => '',
                     'link'  => '',
                 ),
                 array(
-                    'icon'  => '🛡️',
-                    'title' => __( '安全可靠', 'developer-starter' ),
-                    'desc'  => __( '企业级安全架构，多层防护机制，数据加密存储，确保您的业务数据安全无虞。', 'developer-starter' ),
+                    'icon'  => '',
+                    'title' => __( '安全可靠', 'qiling' ),
+                    'desc'  => __( '企业级安全架构，多层防护机制，数据加密存储，确保您的业务数据安全无虞。', 'qiling' ),
                     'image' => '',
                     'link'  => '',
                 ),
                 array(
-                    'icon'  => '📊',
-                    'title' => __( '数据分析', 'developer-starter' ),
-                    'desc'  => __( '强大的数据分析引擎，实时监控业务指标，智能报表助力精准决策。', 'developer-starter' ),
+                    'icon'  => '',
+                    'title' => __( '数据分析', 'qiling' ),
+                    'desc'  => __( '强大的数据分析引擎，实时监控业务指标，智能报表助力精准决策。', 'qiling' ),
                     'image' => '',
                     'link'  => '',
                 ),
@@ -140,23 +140,23 @@ class Multi_Image_Text_Module extends Module_Base {
         if ( empty( $items ) && ! isset( $data['multi_image_text_items'] ) ) {
             $items = array(
                 array(
-                    'icon'  => '🚀',
-                    'title' => __( '快速部署', 'developer-starter' ),
-                    'desc'  => __( '采用自动化部署流程，5分钟即可完成系统上线，大幅降低运维成本和时间投入。', 'developer-starter' ),
+                    'icon'  => '',
+                    'title' => __( '快速部署', 'qiling' ),
+                    'desc'  => __( '采用自动化部署流程，5分钟即可完成系统上线，大幅降低运维成本和时间投入。', 'qiling' ),
                     'image' => '',
                     'link'  => '',
                 ),
                 array(
-                    'icon'  => '🛡️',
-                    'title' => __( '安全可靠', 'developer-starter' ),
-                    'desc'  => __( '企业级安全架构，多层防护机制，数据加密存储，确保您的业务数据安全无虞。', 'developer-starter' ),
+                    'icon'  => '',
+                    'title' => __( '安全可靠', 'qiling' ),
+                    'desc'  => __( '企业级安全架构，多层防护机制，数据加密存储，确保您的业务数据安全无虞。', 'qiling' ),
                     'image' => '',
                     'link'  => '',
                 ),
                 array(
-                    'icon'  => '📊',
-                    'title' => __( '数据分析', 'developer-starter' ),
-                    'desc'  => __( '强大的数据分析引擎，实时监控业务指标，智能报表助力精准决策。', 'developer-starter' ),
+                    'icon'  => '',
+                    'title' => __( '数据分析', 'qiling' ),
+                    'desc'  => __( '强大的数据分析引擎，实时监控业务指标，智能报表助力精准决策。', 'qiling' ),
                     'image' => '',
                     'link'  => '',
                 ),
@@ -216,8 +216,12 @@ class Multi_Image_Text_Module extends Module_Base {
                                         <div class="mit-placeholder" style="background: linear-gradient(135deg, <?php echo $this->get_gradient_color( $index ); ?>);">
                                             <span class="mit-placeholder-icon">
                                                 <?php 
-                                                $icon_ph = isset( $item['icon'] ) ? $item['icon'] : '📷';
-                                                echo developer_starter_get_icon_html( $icon_ph ); 
+                                                $icon_ph = ! empty( $item['icon'] ) ? $item['icon'] : '';
+                                                if ( $icon_ph ) {
+                                                    echo developer_starter_get_icon_html( $icon_ph );
+                                                } else {
+                                                    echo '<svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>';
+                                                }
                                                 ?>
                                             </span>
                                         </div>

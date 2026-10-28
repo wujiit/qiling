@@ -133,30 +133,30 @@ class Frontend_Builder_Library_Service {
     public function get_my_library_template_detail( $template_id, $post_id = 0 ) {
         $template_id = absint( $template_id );
         if ( $template_id <= 0 ) {
-            return new \WP_Error( 'invalid_template_id', __( '模板ID无效', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_template_id', __( '模板ID无效', 'qiling' ) );
         }
 
         $template = Template_Manager::get_template_post( $template_id );
         if ( ! $template || 'publish' !== $template->post_status ) {
-            return new \WP_Error( 'template_not_found', __( '模板不存在或已删除', 'developer-starter' ) );
+            return new \WP_Error( 'template_not_found', __( '模板不存在或已删除', 'qiling' ) );
         }
 
         if ( ! Template_Manager::current_user_can_access_template_post( $template, 'read_post' ) ) {
-            return new \WP_Error( 'template_forbidden', __( '无权访问该模板', 'developer-starter' ) );
+            return new \WP_Error( 'template_forbidden', __( '无权访问该模板', 'qiling' ) );
         }
 
         $module_type = sanitize_key( (string) get_post_meta( $template_id, '_ql_template_type', true ) );
         if ( '' === $module_type ) {
-            return new \WP_Error( 'template_type_missing', __( '模板对应模块无效', 'developer-starter' ) );
+            return new \WP_Error( 'template_type_missing', __( '模板对应模块无效', 'qiling' ) );
         }
 
         $shop_only = $post_id > 0 ? $this->qilingshop_service->is_builder_page( $post_id ) : false;
         $is_shop_module = $this->qilingshop_service->is_shop_module_type( $module_type );
         if ( $shop_only && ! $is_shop_module ) {
-            return new \WP_Error( 'template_source_mismatch', __( '当前页面不能使用该模板', 'developer-starter' ) );
+            return new \WP_Error( 'template_source_mismatch', __( '当前页面不能使用该模板', 'qiling' ) );
         }
         if ( ! $shop_only && $is_shop_module ) {
-            return new \WP_Error( 'template_source_mismatch', __( '当前页面不能使用该模板', 'developer-starter' ) );
+            return new \WP_Error( 'template_source_mismatch', __( '当前页面不能使用该模板', 'qiling' ) );
         }
 
         if ( $is_shop_module ) {
@@ -166,7 +166,7 @@ class Frontend_Builder_Library_Service {
         $manager = Module_Manager::get_instance();
         $module_obj = $manager->get_module( $module_type );
         if ( ! $module_obj ) {
-            return new \WP_Error( 'template_module_missing', __( '该模版对应的模块已不存在，无法添加。', 'developer-starter' ) );
+            return new \WP_Error( 'template_module_missing', __( '该模版对应的模块已不存在，无法添加。', 'qiling' ) );
         }
 
         $raw_json = (string) get_post_field( 'post_content', $template_id, 'raw' );

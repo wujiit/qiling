@@ -18,7 +18,7 @@ class CTA_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-megaphone';
-        $this->description = __( '行动号召模块', 'developer-starter' );
+        $this->description = __( '行动号召模块', 'qiling' );
     }
 
     public function get_id() {
@@ -26,163 +26,163 @@ class CTA_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( 'CTA按钮', 'developer-starter' );
+        return __( 'CTA按钮', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'cta_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '准备好开始了吗？', 'Ready to get started?' ) : __( '准备好开始了吗？', 'developer-starter' ) ),
+            array( 'id' => 'cta_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '准备好开始了吗？', 'Ready to get started?' ) : __( '准备好开始了吗？', 'qiling' ) ),
             array(
                 'id' => 'cta_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2.5rem 或 40px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2.5rem 或 40px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'cta_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认(白色)', 'developer-starter' ),
+                'description' => __( '留空使用默认(白色)', 'qiling' ),
             ),
             
-            array( 'id' => 'cta_subtitle', 'type' => 'textarea', 'label' => __( '副标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即联系我们，获取专业方案和报价', 'Contact us today for a tailored solution and quote.' ) : __( '立即联系我们，获取专业方案和报价', 'developer-starter' ) ),
+            array( 'id' => 'cta_subtitle', 'type' => 'textarea', 'label' => __( '副标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即联系我们，获取专业方案和报价', 'Contact us today for a tailored solution and quote.' ) : __( '立即联系我们，获取专业方案和报价', 'qiling' ) ),
             array(
                 'id' => 'cta_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.25rem 或 20px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.25rem 或 20px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'cta_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认(半透明白)', 'developer-starter' ),
+                'description' => __( '留空使用默认(半透明白)', 'qiling' ),
             ),
             
-            array( 'id' => 'cta_button_text', 'type' => 'text', 'label' => __( '按钮文字', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费咨询', 'Get a Free Quote' ) : __( '免费咨询', 'developer-starter' ) ),
-            array( 'id' => 'cta_button_url', 'type' => 'text', 'label' => __( '按钮链接', 'developer-starter' ), 'default' => '#' ),
+            array( 'id' => 'cta_button_text', 'type' => 'text', 'label' => __( '按钮文字', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费咨询', 'Get a Free Quote' ) : __( '免费咨询', 'qiling' ) ),
+            array( 'id' => 'cta_button_url', 'type' => 'text', 'label' => __( '按钮链接', 'qiling' ), 'default' => '#' ),
             array(
                 'id'          => 'cta_button_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮背景颜色', 'developer-starter' ),
+                'label'       => __( '按钮背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '留空使用默认浅色按钮，只影响当前 CTA 模块。', 'developer-starter' ),
+                'description' => __( '留空使用默认浅色按钮，只影响当前 CTA 模块。', 'qiling' ),
             ),
             array(
                 'id'          => 'cta_button_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮文字颜色', 'developer-starter' ),
+                'label'       => __( '按钮文字颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '留空使用主题主色文字。', 'developer-starter' ),
+                'description' => __( '留空使用主题主色文字。', 'qiling' ),
             ),
             $this->get_button_border_color_field( 'cta_button_border_color' ),
             array(
                 'id'          => 'cta_button_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停背景颜色', 'developer-starter' ),
+                'label'       => __( '按钮悬停背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '留空使用浅灰悬停背景。', 'developer-starter' ),
+                'description' => __( '留空使用浅灰悬停背景。', 'qiling' ),
             ),
             array(
                 'id'          => 'cta_button_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停文字颜色', 'developer-starter' ),
+                'label'       => __( '按钮悬停文字颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '留空使用主题主色悬停文字。', 'developer-starter' ),
+                'description' => __( '留空使用主题主色悬停文字。', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'cta_button_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'cta_button_hover_border_color', __( '按钮悬停边框颜色', 'qiling' ), __( '留空时跟随按钮悬停背景颜色。', 'qiling' ) ),
             
             // 背景配置
             array(
                 'id' => 'cta_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '颜色/渐变', 'developer-starter' ),
-                    'image' => __( '背景图片', 'developer-starter' ),
+                    'color' => __( '颜色/渐变', 'qiling' ),
+                    'image' => __( '背景图片', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id' => 'cta_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%)',
                 'dependency' => array( 'cta_bg_type', '==', 'color' ),
             ),
             array(
                 'id' => 'cta_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'cta_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'cta_bg_overlay',
-                'label' => __( '图片遮罩透明度', 'developer-starter' ),
+                'label' => __( '图片遮罩透明度', 'qiling' ),
                 'type' => 'text',
                 'default' => '0.5',
-                'desc' => __( '0-1之间的小数，如 0.5 表示50%黑遮罩', 'developer-starter' ),
+                'desc' => __( '0-1之间的小数，如 0.5 表示50%黑遮罩', 'qiling' ),
                 'dependency' => array( 'cta_bg_type', '==', 'image' ),
             ),
 
             // Layout.
             array(
                 'id'      => 'cta_layout_mode',
-                'label'   => __( '板块样式', 'developer-starter' ),
+                'label'   => __( '板块样式', 'qiling' ),
                 'type'    => 'select',
                 'options' => array(
-                    'standard'        => __( '标准通栏', 'developer-starter' ),
-                    'card'            => __( '卡片式', 'developer-starter' ),
-                    'seamless_footer' => __( '衔接底部波浪', 'developer-starter' ),
+                    'standard'        => __( '标准通栏', 'qiling' ),
+                    'card'            => __( '卡片式', 'qiling' ),
+                    'seamless_footer' => __( '衔接底部波浪', 'qiling' ),
                 ),
                 'default' => 'standard',
             ),
             array(
                 'id'          => 'cta_footer_bridge',
-                'label'       => __( '底部衔接方式', 'developer-starter' ),
+                'label'       => __( '底部衔接方式', 'qiling' ),
                 'type'        => 'select',
                 'options'     => array(
-                    'auto' => __( '自动', 'developer-starter' ),
-                    'on'   => __( '强制衔接页脚', 'developer-starter' ),
-                    'off'  => __( '不衔接', 'developer-starter' ),
+                    'auto' => __( '自动', 'qiling' ),
+                    'on'   => __( '强制衔接页脚', 'qiling' ),
+                    'off'  => __( '不衔接', 'qiling' ),
                 ),
                 'default'     => 'auto',
-                'description' => __( '放在页脚上方时，建议选择“强制衔接页脚”，避免和底部波浪断层。', 'developer-starter' ),
+                'description' => __( '放在页脚上方时，建议选择“强制衔接页脚”，避免和底部波浪断层。', 'qiling' ),
             ),
             array(
                 'id'          => 'cta_footer_overlap',
-                'label'       => __( '底部衔接重叠量', 'developer-starter' ),
+                'label'       => __( '底部衔接重叠量', 'qiling' ),
                 'type'        => 'text',
                 'default'     => '',
-                'description' => __( '如 2px、4px。控制与底部波浪的重叠像素，值越大越不容易出现白线。留空使用默认(2px)。', 'developer-starter' ),
+                'description' => __( '如 2px、4px。控制与底部波浪的重叠像素，值越大越不容易出现白线。留空使用默认(2px)。', 'qiling' ),
             ),
             array(
                 'id'          => 'cta_border_radius',
-                'label'       => __( '板块圆角', 'developer-starter' ),
+                'label'       => __( '板块圆角', 'qiling' ),
                 'type'        => 'text',
                 'default'     => '',
-                'description' => __( '如 0、18px、28px。留空跟随板块样式。', 'developer-starter' ),
+                'description' => __( '如 0、18px、28px。留空跟随板块样式。', 'qiling' ),
             ),
             array(
                 'id'          => 'cta_content_max_width',
-                'label'       => __( '内容最大宽度', 'developer-starter' ),
+                'label'       => __( '内容最大宽度', 'qiling' ),
                 'type'        => 'text',
                 'default'     => '',
-                'description' => __( '如 760px、980px。留空使用默认。', 'developer-starter' ),
+                'description' => __( '如 760px、980px。留空使用默认。', 'qiling' ),
             ),
             array(
                 'id'      => 'cta_button_style',
-                'label'   => __( '按钮样式', 'developer-starter' ),
+                'label'   => __( '按钮样式', 'qiling' ),
                 'type'    => 'select',
                 'options' => array(
-                    'default' => __( '默认', 'developer-starter' ),
-                    'pill'    => __( '胶囊按钮', 'developer-starter' ),
-                    'soft'    => __( '柔和按钮', 'developer-starter' ),
+                    'default' => __( '默认', 'qiling' ),
+                    'pill'    => __( '胶囊按钮', 'qiling' ),
+                    'soft'    => __( '柔和按钮', 'qiling' ),
                 ),
                 'default' => 'default',
             ),
@@ -190,13 +190,13 @@ class CTA_Module extends Module_Base {
             // Spacing
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 80px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 80px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 80px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 80px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
@@ -211,13 +211,13 @@ class CTA_Module extends Module_Base {
 
         $title = isset( $data['cta_title'] ) && $data['cta_title'] !== ''
             ? $data['cta_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '准备好开始了吗？', 'Ready to get started?' ) : __( '准备好开始了吗？', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '准备好开始了吗？', 'Ready to get started?' ) : __( '准备好开始了吗？', 'qiling' ) );
         $subtitle = isset( $data['cta_subtitle'] )
             ? $data['cta_subtitle']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即联系我们，获取专业方案和报价', 'Talk to us for a tailored plan and quotation.' ) : __( '立即联系我们，获取专业方案和报价', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即联系我们，获取专业方案和报价', 'Talk to us for a tailored plan and quotation.' ) : __( '立即联系我们，获取专业方案和报价', 'qiling' ) );
         $btn_text = isset( $data['cta_button_text'] ) && $data['cta_button_text'] !== ''
             ? $data['cta_button_text']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费咨询', 'Request a Quote' ) : __( '免费咨询', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费咨询', 'Request a Quote' ) : __( '免费咨询', 'qiling' ) );
         $btn_url = isset( $data['cta_button_url'] ) ? $data['cta_button_url'] : '#';
         
         // Typography

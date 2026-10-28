@@ -25,13 +25,13 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
         <section class="section-padding" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #123c3a 0%, #1f6f68 58%, #d97757 100%);">
             <div class="container text-center">
                 <div style="display: inline-flex; align-items: center; justify-content: center; min-width: 64px; min-height: 64px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.55); border-radius: 50%; color: #ffffff; font-size: 1.15rem; font-weight: 700;">18+</div>
-                <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '情趣用品商城', 'developer-starter' ); ?></h2>
+                <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '情趣用品商城', 'qiling' ); ?></h2>
                 <p style="color: rgba(255,255,255,0.88); margin-bottom: 24px; font-size: 1.05rem;">
-                    <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
                 </p>
                 <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                     <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary" style="background: #ffffff; color: #123c3a; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                        <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                     </a>
                 <?php endif; ?>
             </div>

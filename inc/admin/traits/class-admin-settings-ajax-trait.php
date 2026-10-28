@@ -22,11 +22,11 @@ trait Admin_Settings_Ajax_Trait {
     public function ajax_thumbnail_cache_stats() {
         check_ajax_referer( 'thumbnail_cache_nonce', 'nonce' );
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
         $optimizer = $this->get_thumbnail_cache_optimizer();
         if ( ! $optimizer ) {
-            wp_send_json_error( array( 'message' => __( '缩略图服务未加载', 'developer-starter' ) ), 500 );
+            wp_send_json_error( array( 'message' => __( '缩略图服务未加载', 'qiling' ) ), 500 );
         }
         wp_send_json_success( $optimizer->get_cache_stats() );
     }
@@ -34,17 +34,17 @@ trait Admin_Settings_Ajax_Trait {
     public function ajax_clear_thumbnail_cache() {
         check_ajax_referer( 'thumbnail_cache_nonce', 'nonce' );
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
         $optimizer = $this->get_thumbnail_cache_optimizer();
         if ( ! $optimizer ) {
-            wp_send_json_error( array( 'message' => __( '缩略图服务未加载', 'developer-starter' ) ), 500 );
+            wp_send_json_error( array( 'message' => __( '缩略图服务未加载', 'qiling' ) ), 500 );
         }
         $result = $optimizer->clear_all_cache();
         $result['stats'] = $optimizer->get_cache_stats();
-        $result['message'] = sprintf( __( '已删除 %1$s 个缓存文件，释放 %2$s。', 'developer-starter' ), number_format_i18n( $result['deleted_files'] ), size_format( $result['freed_bytes'], 2 ) );
+        $result['message'] = sprintf( __( '已删除 %1$s 个缓存文件，释放 %2$s。', 'qiling' ), number_format_i18n( $result['deleted_files'] ), size_format( $result['freed_bytes'], 2 ) );
         if ( ! empty( $result['failed_files'] ) ) {
-            $result['message'] .= ' ' . sprintf( __( '%s 个文件删除失败，请检查目录权限。', 'developer-starter' ), number_format_i18n( $result['failed_files'] ) );
+            $result['message'] .= ' ' . sprintf( __( '%s 个文件删除失败，请检查目录权限。', 'qiling' ), number_format_i18n( $result['failed_files'] ) );
         }
         wp_send_json_success( $result );
     }
@@ -52,17 +52,17 @@ trait Admin_Settings_Ajax_Trait {
     public function ajax_clear_unused_thumbnail_cache() {
         check_ajax_referer( 'thumbnail_cache_nonce', 'nonce' );
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
         $optimizer = $this->get_thumbnail_cache_optimizer();
         if ( ! $optimizer ) {
-            wp_send_json_error( array( 'message' => __( '缩略图服务未加载', 'developer-starter' ) ), 500 );
+            wp_send_json_error( array( 'message' => __( '缩略图服务未加载', 'qiling' ) ), 500 );
         }
         $result = $optimizer->clear_unused_cache();
         $result['stats'] = $optimizer->get_cache_stats();
-        $result['message'] = sprintf( __( '扫描完成，已清理 %1$s 个未使用缓存，释放 %2$s。', 'developer-starter' ), number_format_i18n( $result['deleted_files'] ), size_format( $result['freed_bytes'], 2 ) );
+        $result['message'] = sprintf( __( '扫描完成，已清理 %1$s 个未使用缓存，释放 %2$s。', 'qiling' ), number_format_i18n( $result['deleted_files'] ), size_format( $result['freed_bytes'], 2 ) );
         if ( ! empty( $result['failed_files'] ) ) {
-            $result['message'] .= ' ' . sprintf( __( '%s 个文件删除失败，请检查目录权限。', 'developer-starter' ), number_format_i18n( $result['failed_files'] ) );
+            $result['message'] .= ' ' . sprintf( __( '%s 个文件删除失败，请检查目录权限。', 'qiling' ), number_format_i18n( $result['failed_files'] ) );
         }
         wp_send_json_success( $result );
     }
@@ -95,12 +95,12 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'smtp_test_email_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $smtp_host = trim( (string) developer_starter_get_option( 'smtp_host', '' ) );
         if ( $smtp_host === '' ) {
-            wp_send_json_error( array( 'message' => __( '请先配置并保存 SMTP 服务器后再测试。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先配置并保存 SMTP 服务器后再测试。', 'qiling' ) ) );
         }
 
         $current_user = wp_get_current_user();
@@ -112,22 +112,22 @@ trait Admin_Settings_Ajax_Trait {
             $to = sanitize_email( (string) get_option( 'admin_email' ) );
         }
         if ( $to === '' ) {
-            wp_send_json_error( array( 'message' => __( '未找到可用的收件邮箱。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '未找到可用的收件邮箱。', 'qiling' ) ) );
         }
 
         $subject = sprintf(
-            __( '[%s] SMTP 测试邮件', 'developer-starter' ),
+            __( '[%s] SMTP 测试邮件', 'qiling' ),
             wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES )
         );
 
         $message = implode(
             "\n",
             array(
-                __( '这是一封来自主题设置页的 SMTP 测试邮件。', 'developer-starter' ),
+                __( '这是一封来自主题设置页的 SMTP 测试邮件。', 'qiling' ),
                 '',
-                sprintf( __( '站点：%s', 'developer-starter' ), home_url( '/' ) ),
-                sprintf( __( '发送时间：%s', 'developer-starter' ), current_time( 'Y-m-d H:i:s' ) ),
-                sprintf( __( '接收邮箱：%s', 'developer-starter' ), $to ),
+                sprintf( __( '站点：%s', 'qiling' ), home_url( '/' ) ),
+                sprintf( __( '发送时间：%s', 'qiling' ), current_time( 'Y-m-d H:i:s' ) ),
+                sprintf( __( '接收邮箱：%s', 'qiling' ), $to ),
             )
         );
 
@@ -135,14 +135,14 @@ trait Admin_Settings_Ajax_Trait {
         if ( function_exists( 'developer_starter_build_html_email_template' ) ) {
             $html_message = developer_starter_build_html_email_template(
                 array(
-                    'title'  => __( 'SMTP 测试邮件', 'developer-starter' ),
-                    'intro'  => __( '这是一封来自主题设置页的 SMTP 测试邮件。', 'developer-starter' ),
+                    'title'  => __( 'SMTP 测试邮件', 'qiling' ),
+                    'intro'  => __( '这是一封来自主题设置页的 SMTP 测试邮件。', 'qiling' ),
                     'lines'  => array(
-                        __( '站点', 'developer-starter' )   => home_url( '/' ),
-                        __( '发送时间', 'developer-starter' ) => current_time( 'Y-m-d H:i:s' ),
-                        __( '接收邮箱', 'developer-starter' ) => $to,
+                        __( '站点', 'qiling' )   => home_url( '/' ),
+                        __( '发送时间', 'qiling' ) => current_time( 'Y-m-d H:i:s' ),
+                        __( '接收邮箱', 'qiling' ) => $to,
                     ),
-                    'notice' => __( '如果您收到本邮件，说明当前 SMTP 配置已生效。', 'developer-starter' ),
+                    'notice' => __( '如果您收到本邮件，说明当前 SMTP 配置已生效。', 'qiling' ),
                 )
             );
             if ( is_string( $html_message ) && trim( $html_message ) !== '' ) {
@@ -163,7 +163,7 @@ trait Admin_Settings_Ajax_Trait {
         remove_action( 'wp_mail_failed', $mail_failed_handler );
 
         if ( ! $sent ) {
-            $msg = __( '测试邮件发送失败，请检查 SMTP 配置。', 'developer-starter' );
+            $msg = __( '测试邮件发送失败，请检查 SMTP 配置。', 'qiling' );
             if ( $mail_error_message !== '' ) {
                 $msg .= ' ' . $mail_error_message;
             }
@@ -173,7 +173,7 @@ trait Admin_Settings_Ajax_Trait {
         wp_send_json_success(
             array(
                 'message' => sprintf(
-                    __( '测试邮件已发送到：%s，请检查收件箱（及垃圾箱）。', 'developer-starter' ),
+                    __( '测试邮件已发送到：%s，请检查收件箱（及垃圾箱）。', 'qiling' ),
                     $to
                 ),
             )
@@ -189,11 +189,11 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'ai_connection_test_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         if ( ! class_exists( '\Developer_Starter\Core\AI_Decorator' ) ) {
-            wp_send_json_error( array( 'message' => __( 'AI 服务尚未加载，请稍后重试。', 'developer-starter' ) ), 500 );
+            wp_send_json_error( array( 'message' => __( 'AI 服务尚未加载，请稍后重试。', 'qiling' ) ), 500 );
         }
 
         $connection_id = isset( $_POST['connection_id'] ) ? sanitize_key( wp_unslash( (string) $_POST['connection_id'] ) ) : '';
@@ -250,7 +250,7 @@ trait Admin_Settings_Ajax_Trait {
         if ( ! empty( $result['reply'] ) ) {
             $message .= ' ' . sprintf(
                 /* translators: %s: assistant reply excerpt */
-                __( '模型返回：%s', 'developer-starter' ),
+                __( '模型返回：%s', 'qiling' ),
                 (string) $result['reply']
             );
         }
@@ -271,11 +271,11 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'developer_starter_seo_health', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         if ( ! class_exists( '\Developer_Starter\SEO\SEO_Health_Check' ) ) {
-            wp_send_json_error( array( 'message' => __( 'SEO 健康检查服务未加载。', 'developer-starter' ) ), 500 );
+            wp_send_json_error( array( 'message' => __( 'SEO 健康检查服务未加载。', 'qiling' ) ), 500 );
         }
 
         $limit = isset( $_POST['limit'] ) ? absint( wp_unslash( $_POST['limit'] ) ) : 200;
@@ -283,7 +283,7 @@ trait Admin_Settings_Ajax_Trait {
 
         wp_send_json_success(
             array(
-                'message'  => __( 'SEO 健康检查已完成，结果已作为临时快照保存。', 'developer-starter' ),
+                'message'  => __( 'SEO 健康检查已完成，结果已作为临时快照保存。', 'qiling' ),
                 'snapshot' => $snapshot,
             )
         );
@@ -296,7 +296,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'developer_starter_seo_health', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         if ( class_exists( '\Developer_Starter\SEO\SEO_Health_Check' ) ) {
@@ -305,7 +305,7 @@ trait Admin_Settings_Ajax_Trait {
 
         wp_send_json_success(
             array(
-                'message' => __( '已清除 SEO 体检临时结果。', 'developer-starter' ),
+                'message' => __( '已清除 SEO 体检临时结果。', 'qiling' ),
             )
         );
     }
@@ -317,7 +317,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'db_cleanup_nonce', 'nonce' );
         
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $allowed_items = $this->get_db_cleanup_allowed_items();
@@ -337,7 +337,7 @@ trait Admin_Settings_Ajax_Trait {
         if ( empty( $items ) ) {
             wp_send_json_success(
                 array(
-                    'message' => __( '请至少选择一个清理项', 'developer-starter' ),
+                    'message' => __( '请至少选择一个清理项', 'qiling' ),
                     'has_more' => false,
                     'deleted'  => 0,
                 )
@@ -353,7 +353,7 @@ trait Admin_Settings_Ajax_Trait {
         if ( $cursor >= count( $items ) ) {
             wp_send_json_success(
                 array(
-                    'message'   => __( '清理完成', 'developer-starter' ),
+                    'message'   => __( '清理完成', 'qiling' ),
                     'has_more'  => false,
                     'deleted'   => 0,
                     'cursor'    => $cursor,
@@ -382,19 +382,19 @@ trait Admin_Settings_Ajax_Trait {
 
         $message = sprintf(
             /* translators: 1: cleanup item label, 2: deleted count */
-            __( '已处理 %1$s，本批清理 %2$d 条。', 'developer-starter' ),
+            __( '已处理 %1$s，本批清理 %2$d 条。', 'qiling' ),
             $item_label,
             $deleted
         );
         if ( $has_more ) {
             $message .= ' ' . sprintf(
                 /* translators: 1: processed items, 2: total items */
-                __( '继续处理中（%1$d/%2$d）…', 'developer-starter' ),
+                __( '继续处理中（%1$d/%2$d）…', 'qiling' ),
                 max( 1, $processed_items + 1 ),
                 count( $items )
             );
         } elseif ( 0 === $deleted ) {
-            $message = __( '数据库已经很干净，没有需要清理的数据', 'developer-starter' );
+            $message = __( '数据库已经很干净，没有需要清理的数据', 'qiling' );
         }
 
         $response = array(
@@ -426,7 +426,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'cleanup_rest_audit_log_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         if ( function_exists( 'developer_starter_clear_cleanup_rest_audit_log' ) ) {
@@ -435,7 +435,7 @@ trait Admin_Settings_Ajax_Trait {
             delete_option( 'developer_starter_cleanup_rest_audit_log' );
         }
 
-        wp_send_json_success( array( 'message' => __( '清理日志已清空。', 'developer-starter' ) ) );
+        wp_send_json_success( array( 'message' => __( '清理日志已清空。', 'qiling' ) ) );
     }
 
     /**
@@ -447,11 +447,11 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'theme_cleanup_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         if ( ! function_exists( 'developer_starter_run_cleanup_scope_data' ) ) {
-            wp_send_json_error( array( 'message' => __( '主题清理器未加载。', 'developer-starter' ) ), 500 );
+            wp_send_json_error( array( 'message' => __( '主题清理器未加载。', 'qiling' ) ), 500 );
         }
 
         $scope = isset( $_POST['scope'] ) ? sanitize_key( wp_unslash( (string) $_POST['scope'] ) ) : 'auto';
@@ -466,7 +466,7 @@ trait Admin_Settings_Ajax_Trait {
 
         $result = developer_starter_run_cleanup_scope_data( $scope, $request, 'admin_ajax' );
         $status = isset( $result['status'] ) ? absint( $result['status'] ) : 500;
-        $data = isset( $result['data'] ) && is_array( $result['data'] ) ? $result['data'] : array( 'message' => __( '清理失败。', 'developer-starter' ) );
+        $data = isset( $result['data'] ) && is_array( $result['data'] ) ? $result['data'] : array( 'message' => __( '清理失败。', 'qiling' ) );
 
         if ( $status >= 400 ) {
             wp_send_json_error( $data, $status );
@@ -484,11 +484,11 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'cleanup_cron_token_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         if ( ! function_exists( 'developer_starter_ensure_cleanup_cron_token' ) ) {
-            wp_send_json_error( array( 'message' => __( '外部定时清理 token 生成器未加载。', 'developer-starter' ) ), 500 );
+            wp_send_json_error( array( 'message' => __( '外部定时清理 token 生成器未加载。', 'qiling' ) ), 500 );
         }
 
         $token = developer_starter_ensure_cleanup_cron_token( true );
@@ -506,7 +506,7 @@ trait Admin_Settings_Ajax_Trait {
 
         wp_send_json_success(
             array(
-                'message'     => __( '外部定时清理 token 已重新生成。', 'developer-starter' ),
+                'message'     => __( '外部定时清理 token 已重新生成。', 'qiling' ),
                 'token'       => $token,
                 'url'         => $url,
                 'header_url'  => $header_url,
@@ -586,20 +586,20 @@ trait Admin_Settings_Ajax_Trait {
      */
     private function get_db_cleanup_item_label( $item ) {
         $labels = array(
-            'revisions'           => __( '修订版本', 'developer-starter' ),
-            'drafts'              => __( '自动草稿', 'developer-starter' ),
-            'trash'               => __( '回收站文章', 'developer-starter' ),
-            'spam'                => __( '垃圾评论', 'developer-starter' ),
-            'orphan_postmeta'     => __( '孤立文章元数据', 'developer-starter' ),
-            'orphan_commentmeta'  => __( '孤立评论元数据', 'developer-starter' ),
-            'orphan_relationships'=> __( '孤立关系数据', 'developer-starter' ),
-            'pingbacks'           => __( 'Pingback/Trackback', 'developer-starter' ),
-            'unused_tags'         => __( '未使用标签', 'developer-starter' ),
-            'transients'          => __( '过期缓存', 'developer-starter' ),
-            'package_trash_pages' => __( '数据包回收站页面', 'developer-starter' ),
+            'revisions'           => __( '修订版本', 'qiling' ),
+            'drafts'              => __( '自动草稿', 'qiling' ),
+            'trash'               => __( '回收站文章', 'qiling' ),
+            'spam'                => __( '垃圾评论', 'qiling' ),
+            'orphan_postmeta'     => __( '孤立文章元数据', 'qiling' ),
+            'orphan_commentmeta'  => __( '孤立评论元数据', 'qiling' ),
+            'orphan_relationships'=> __( '孤立关系数据', 'qiling' ),
+            'pingbacks'           => __( 'Pingback/Trackback', 'qiling' ),
+            'unused_tags'         => __( '未使用标签', 'qiling' ),
+            'transients'          => __( '过期缓存', 'qiling' ),
+            'package_trash_pages' => __( '数据包回收站页面', 'qiling' ),
         );
 
-        $labels['post_views'] = __( '文章浏览量', 'developer-starter' );
+        $labels['post_views'] = __( '文章浏览量', 'qiling' );
 
         return isset( $labels[ $item ] ) ? $labels[ $item ] : sanitize_text_field( (string) $item );
     }
@@ -697,7 +697,7 @@ trait Admin_Settings_Ajax_Trait {
                 break;
 
             default:
-                return new \WP_Error( 'invalid_cleanup_item', __( '无效的清理项', 'developer-starter' ) );
+                return new \WP_Error( 'invalid_cleanup_item', __( '无效的清理项', 'qiling' ) );
         }
 
         if ( $deleted < 0 ) {
@@ -1307,7 +1307,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'db_stats_nonce', 'nonce' );
         
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
         
         global $wpdb;
@@ -1611,7 +1611,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'poster_cache_stats_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         wp_send_json_success( $this->collect_poster_cache_stats() );
@@ -1624,7 +1624,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'clear_poster_cache_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $result = $this->cleanup_poster_cache_files();
@@ -1632,7 +1632,7 @@ trait Admin_Settings_Ajax_Trait {
 
         $message = sprintf(
             /* translators: 1: deleted file count, 2: freed bytes. */
-            __( '已清理 %1$s 张海报缓存，释放 %2$s。', 'developer-starter' ),
+            __( '已清理 %1$s 张海报缓存，释放 %2$s。', 'qiling' ),
             number_format_i18n( (int) $result['deleted_files'] ),
             function_exists( 'size_format' ) ? size_format( (int) $result['freed_bytes'], 2 ) : ( (int) $result['freed_bytes'] . ' B' )
         );
@@ -1640,7 +1640,7 @@ trait Admin_Settings_Ajax_Trait {
         if ( ! empty( $result['failed_files'] ) ) {
             $message .= ' ' . sprintf(
                 /* translators: %s: failed file count. */
-                __( '%s 个文件清理失败，请检查 uploads/qiling-posters 目录权限或远程存储配置。', 'developer-starter' ),
+                __( '%s 个文件清理失败，请检查 uploads/qiling-posters 目录权限或远程存储配置。', 'qiling' ),
                 number_format_i18n( (int) $result['failed_files'] )
             );
         }
@@ -1663,7 +1663,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'github_activity_cache_stats_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $service = new \Developer_Starter\Core\GitHub_Repository_Activity_Service();
@@ -1677,7 +1677,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'clear_github_activity_cache_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $service = new \Developer_Starter\Core\GitHub_Repository_Activity_Service();
@@ -1686,7 +1686,7 @@ trait Admin_Settings_Ajax_Trait {
 
         $message = sprintf(
             /* translators: 1: deleted file count, 2: freed bytes. */
-            __( '已清理 %1$s 个 GitHub 项目缓存文件，释放 %2$s。', 'developer-starter' ),
+            __( '已清理 %1$s 个 GitHub 项目缓存文件，释放 %2$s。', 'qiling' ),
             number_format_i18n( (int) $result['deleted_files'] ),
             function_exists( 'size_format' ) ? size_format( (int) $result['freed_bytes'], 2 ) : ( (int) $result['freed_bytes'] . ' B' )
         );
@@ -1694,7 +1694,7 @@ trait Admin_Settings_Ajax_Trait {
         if ( ! empty( $result['failed_files'] ) ) {
             $message .= ' ' . sprintf(
                 /* translators: %s: failed file count. */
-                __( '%s 个文件清理失败，请检查 uploads/qiling/github-activity 目录权限。', 'developer-starter' ),
+                __( '%s 个文件清理失败，请检查 uploads/qiling/github-activity 目录权限。', 'qiling' ),
                 number_format_i18n( (int) $result['failed_files'] )
             );
         }
@@ -1717,21 +1717,21 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'generate_css_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $files = array(
             'main' => array(
-                'src' => DEVELOPER_STARTER_DIR . '/assets/css/main.css',
-                'min' => DEVELOPER_STARTER_DIR . '/assets/css/main.min.css',
+                'src' => QILING_DIR . '/assets/css/main.css',
+                'min' => QILING_DIR . '/assets/css/main.min.css',
             ),
             'modules' => array(
-                'src' => DEVELOPER_STARTER_DIR . '/assets/css/modules.css',
-                'min' => DEVELOPER_STARTER_DIR . '/assets/css/modules.min.css',
+                'src' => QILING_DIR . '/assets/css/modules.css',
+                'min' => QILING_DIR . '/assets/css/modules.min.css',
             ),
             'modules-hero' => array(
-                'src' => DEVELOPER_STARTER_DIR . '/assets/css/modules-hero.css',
-                'min' => DEVELOPER_STARTER_DIR . '/assets/css/modules-hero.min.css',
+                'src' => QILING_DIR . '/assets/css/modules-hero.css',
+                'min' => QILING_DIR . '/assets/css/modules-hero.min.css',
             ),
         );
 
@@ -1742,7 +1742,7 @@ trait Admin_Settings_Ajax_Trait {
             if ( ! file_exists( $file['src'] ) ) {
                 $results[] = sprintf(
                     /* translators: %s: CSS file key. */
-                    __( '源文件 %s.css 不存在', 'developer-starter' ),
+                    __( '源文件 %s.css 不存在', 'qiling' ),
                     $key
                 );
                 continue;
@@ -1752,7 +1752,7 @@ trait Admin_Settings_Ajax_Trait {
             if ( false === $content ) {
                 $results[] = sprintf(
                     /* translators: %s: CSS file key. */
-                    __( '%s.css 读取失败', 'developer-starter' ),
+                    __( '%s.css 读取失败', 'qiling' ),
                     $key
                 );
                 continue;
@@ -1764,7 +1764,7 @@ trait Admin_Settings_Ajax_Trait {
             if ( ! is_string( $content_safe ) ) {
                 $results[] = sprintf(
                     /* translators: %s: CSS file key. */
-                    __( '%s.css 压缩失败', 'developer-starter' ),
+                    __( '%s.css 压缩失败', 'qiling' ),
                     $key
                 );
                 continue;
@@ -1775,7 +1775,7 @@ trait Admin_Settings_Ajax_Trait {
             if ( ! is_string( $content_safe ) ) {
                 $results[] = sprintf(
                     /* translators: %s: CSS file key. */
-                    __( '%s.css 压缩失败', 'developer-starter' ),
+                    __( '%s.css 压缩失败', 'qiling' ),
                     $key
                 );
                 continue;
@@ -1788,7 +1788,7 @@ trait Admin_Settings_Ajax_Trait {
                 $saved = $src_size > 0 ? round( ( ( $src_size - $min_size ) / $src_size ) * 100, 1 ) : 0;
                 $results[] = sprintf(
                     /* translators: 1: CSS file key, 2: source size in bytes, 3: minified size in bytes, 4: percentage saved. */
-                    __( '%1$s.css: %2$sB -> %3$sB (节省 %4$s%%)', 'developer-starter' ),
+                    __( '%1$s.css: %2$sB -> %3$sB (节省 %4$s%%)', 'qiling' ),
                     $key,
                     $src_size,
                     $min_size,
@@ -1797,7 +1797,7 @@ trait Admin_Settings_Ajax_Trait {
             } else {
                 $results[] = sprintf(
                     /* translators: %s: CSS file key. */
-                    __( '%s.min.css 写入失败', 'developer-starter' ),
+                    __( '%s.min.css 写入失败', 'qiling' ),
                     $key
                 );
             }
@@ -1809,7 +1809,7 @@ trait Admin_Settings_Ajax_Trait {
         update_option( $this->option_name, $options );
 
         wp_send_json_success( array( 
-            'message' => __( '生成成功：', 'developer-starter' ) . implode( '，', $results ),
+            'message' => __( '生成成功：', 'qiling' ) . implode( '，', $results ),
             'version' => $options['assets_version']
         ) );
     }
@@ -1818,23 +1818,23 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'clear_ip_cache_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         if ( ! function_exists( 'developer_starter_ip_cache_clear' ) ) {
-            wp_send_json_success( array( 'message' => __( '缓存清理器未加载', 'developer-starter' ), 'deleted' => 0 ) );
+            wp_send_json_success( array( 'message' => __( '缓存清理器未加载', 'qiling' ), 'deleted' => 0 ) );
         }
 
         $deleted = developer_starter_ip_cache_clear();
 
-        wp_send_json_success( array( 'message' => sprintf( __( '已清理 %d 个缓存文件', 'developer-starter' ), $deleted ), 'deleted' => $deleted ) );
+        wp_send_json_success( array( 'message' => sprintf( __( '已清理 %d 个缓存文件', 'qiling' ), $deleted ), 'deleted' => $deleted ) );
     }
 
     public function ajax_reset_ip_usermeta() {
         check_ajax_referer( 'reset_ip_usermeta_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         global $wpdb;
@@ -1843,24 +1843,24 @@ trait Admin_Settings_Ajax_Trait {
         );
 
         if ( $deleted === false ) {
-            wp_send_json_error( array( 'message' => __( '数据库操作失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '数据库操作失败', 'qiling' ) ) );
         }
 
-        wp_send_json_success( array( 'message' => sprintf( __( '成功清除了 %d 条用户 IP 归属地遗留数据', 'developer-starter' ), $deleted ), 'deleted' => $deleted ) );
+        wp_send_json_success( array( 'message' => sprintf( __( '成功清除了 %d 条用户 IP 归属地遗留数据', 'qiling' ), $deleted ), 'deleted' => $deleted ) );
     }
 
     public function ajax_toggle_favorite_setting() {
         check_ajax_referer( 'favorite_setting_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $setting_id = isset( $_POST['setting'] ) ? sanitize_key( wp_unslash( $_POST['setting'] ) ) : '';
         $enabled = isset( $_POST['enabled'] ) ? (bool) absint( wp_unslash( $_POST['enabled'] ) ) : false;
 
         if ( ! $setting_id ) {
-            wp_send_json_error( array( 'message' => __( '无效设置项', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '无效设置项', 'qiling' ) ) );
         }
 
         $favorites = $this->get_user_favorites();
@@ -1882,12 +1882,12 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'check_gzip_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $targets = array(
-            __( '首页', 'developer-starter' ) => home_url( '/' ),
-            __( '主题主样式', 'developer-starter' ) => DEVELOPER_STARTER_ASSETS . '/css/main.css',
+            __( '首页', 'qiling' ) => home_url( '/' ),
+            __( '主题主样式', 'qiling' ) => QILING_ASSETS . '/css/main.css',
         );
 
         $items = array();
@@ -1956,13 +1956,13 @@ trait Admin_Settings_Ajax_Trait {
         }
 
         if ( $error_count > 0 && $enabled_count === 0 ) {
-            $summary = __( '检测失败：无法完成回环请求，请检查服务器是否允许本机请求。', 'developer-starter' );
+            $summary = __( '检测失败：无法完成回环请求，请检查服务器是否允许本机请求。', 'qiling' );
         } elseif ( $overall === 'enabled' ) {
-            $summary = __( '已开启：检测到 gzip/br 压缩响应。', 'developer-starter' );
+            $summary = __( '已开启：检测到 gzip/br 压缩响应。', 'qiling' );
         } elseif ( $overall === 'partial' ) {
-            $summary = __( '部分开启：有的资源已压缩，有的未压缩。', 'developer-starter' );
+            $summary = __( '部分开启：有的资源已压缩，有的未压缩。', 'qiling' );
         } else {
-            $summary = __( '未检测到 gzip/br：请在 Nginx/Apache/CDN 开启压缩。', 'developer-starter' );
+            $summary = __( '未检测到 gzip/br：请在 Nginx/Apache/CDN 开启压缩。', 'qiling' );
         }
 
         wp_send_json_success(
@@ -1978,11 +1978,11 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'check_split_css_integrity_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
-        $source_file   = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/modules.source.css';
-        $split_dir     = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/modules-split/';
+        $source_file   = trailingslashit( QILING_DIR ) . 'assets/css/modules.source.css';
+        $split_dir     = trailingslashit( QILING_DIR ) . 'assets/css/modules-split/';
         $manifest_file = $split_dir . '_manifest.txt';
 
         $items    = array();
@@ -2002,14 +2002,14 @@ trait Admin_Settings_Ajax_Trait {
         };
 
         if ( ! file_exists( $source_file ) ) {
-            $add_item( 'error', __( '缺少源文件 assets/css/modules.source.css。', 'developer-starter' ) );
+            $add_item( 'error', __( '缺少源文件 assets/css/modules.source.css。', 'qiling' ) );
         } elseif ( ! is_readable( $source_file ) ) {
-            $add_item( 'error', __( '源文件 modules.source.css 不可读。', 'developer-starter' ) );
+            $add_item( 'error', __( '源文件 modules.source.css 不可读。', 'qiling' ) );
         } else {
             $add_item(
                 'ok',
                 sprintf(
-                    __( '源文件存在：%1$s（%2$s，%3$d 字节）', 'developer-starter' ),
+                    __( '源文件存在：%1$s（%2$s，%3$d 字节）', 'qiling' ),
                     basename( $source_file ),
                     date_i18n( 'Y-m-d H:i:s', (int) @filemtime( $source_file ) ),
                     (int) @filesize( $source_file )
@@ -2018,20 +2018,20 @@ trait Admin_Settings_Ajax_Trait {
         }
 
         if ( ! is_dir( $split_dir ) ) {
-            $add_item( 'error', __( '缺少拆分目录 assets/css/modules-split/。', 'developer-starter' ) );
+            $add_item( 'error', __( '缺少拆分目录 assets/css/modules-split/。', 'qiling' ) );
         } else {
-            $add_item( 'ok', __( '拆分目录存在。', 'developer-starter' ) );
+            $add_item( 'ok', __( '拆分目录存在。', 'qiling' ) );
         }
 
         if ( ! file_exists( $manifest_file ) ) {
-            $add_item( 'error', __( '缺少拆分清单 _manifest.txt。', 'developer-starter' ) );
+            $add_item( 'error', __( '缺少拆分清单 _manifest.txt。', 'qiling' ) );
         } elseif ( ! is_readable( $manifest_file ) ) {
-            $add_item( 'error', __( '拆分清单 _manifest.txt 不可读。', 'developer-starter' ) );
+            $add_item( 'error', __( '拆分清单 _manifest.txt 不可读。', 'qiling' ) );
         } else {
             $add_item(
                 'ok',
                 sprintf(
-                    __( '已检测到拆分清单 _manifest.txt（%1$s，%2$d 字节）。', 'developer-starter' ),
+                    __( '已检测到拆分清单 _manifest.txt（%1$s，%2$d 字节）。', 'qiling' ),
                     date_i18n( 'Y-m-d H:i:s', (int) @filemtime( $manifest_file ) ),
                     (int) @filesize( $manifest_file )
                 )
@@ -2044,7 +2044,7 @@ trait Admin_Settings_Ajax_Trait {
         if ( $errors === 0 ) {
             $lines = file( $manifest_file, FILE_IGNORE_NEW_LINES );
             if ( ! is_array( $lines ) || empty( $lines ) ) {
-                $add_item( 'error', __( '拆分清单为空或读取失败。', 'developer-starter' ) );
+                $add_item( 'error', __( '拆分清单为空或读取失败。', 'qiling' ) );
             } else {
                 foreach ( $lines as $line ) {
                     $line = trim( (string) $line );
@@ -2120,11 +2120,11 @@ trait Admin_Settings_Ajax_Trait {
 
         if ( $errors === 0 ) {
             if ( empty( $entries ) ) {
-                $add_item( 'error', __( '拆分清单中没有可用模块记录。', 'developer-starter' ) );
+                $add_item( 'error', __( '拆分清单中没有可用模块记录。', 'qiling' ) );
             }
 
             if ( ! isset( $entries['_shared'] ) ) {
-                $add_item( 'error', __( '拆分清单缺少 _shared 记录。', 'developer-starter' ) );
+                $add_item( 'error', __( '拆分清单缺少 _shared 记录。', 'qiling' ) );
             }
 
             if ( $manifest_source_bytes !== null ) {
@@ -2133,13 +2133,13 @@ trait Admin_Settings_Ajax_Trait {
                     $add_item(
                         'warn',
                         sprintf(
-                            __( 'modules.source.css 已变化：manifest source_bytes=%1$d，当前=%2$d。建议重新执行拆分脚本。', 'developer-starter' ),
+                            __( 'modules.source.css 已变化：manifest source_bytes=%1$d，当前=%2$d。建议重新执行拆分脚本。', 'qiling' ),
                             $manifest_source_bytes,
                             $source_size
                         )
                     );
                 } else {
-                    $add_item( 'ok', __( 'modules.source.css 与 manifest source_bytes 一致。', 'developer-starter' ) );
+                    $add_item( 'ok', __( 'modules.source.css 与 manifest source_bytes 一致。', 'qiling' ) );
                 }
             }
 
@@ -2157,20 +2157,20 @@ trait Admin_Settings_Ajax_Trait {
                         $add_item(
                             'error',
                             sprintf(
-                                __( '%s 标记为 skipped-empty，但该模块不在可选空文件白名单。', 'developer-starter' ),
+                                __( '%s 标记为 skipped-empty，但该模块不在可选空文件白名单。', 'qiling' ),
                                 $type
                             )
                         );
                     } else {
-                        $add_item( 'ok', sprintf( __( '%s 已按预期标记为 skipped-empty。', 'developer-starter' ), $type ) );
+                        $add_item( 'ok', sprintf( __( '%s 已按预期标记为 skipped-empty。', 'qiling' ), $type ) );
                     }
 
                     if ( file_exists( $expected_file ) ) {
                         $size = (int) @filesize( $expected_file );
                         if ( $size > 0 ) {
-                            $add_item( 'warn', sprintf( __( '%s 标记为 skipped-empty，但文件仍存在且非空。', 'developer-starter' ), basename( $expected_file ) ) );
+                            $add_item( 'warn', sprintf( __( '%s 标记为 skipped-empty，但文件仍存在且非空。', 'qiling' ), basename( $expected_file ) ) );
                         } else {
-                            $add_item( 'warn', sprintf( __( '%s 标记为 skipped-empty，但仍保留了空文件。建议清理。', 'developer-starter' ), basename( $expected_file ) ) );
+                            $add_item( 'warn', sprintf( __( '%s 标记为 skipped-empty，但仍保留了空文件。建议清理。', 'qiling' ), basename( $expected_file ) ) );
                         }
                     }
                     continue;
@@ -2189,14 +2189,14 @@ trait Admin_Settings_Ajax_Trait {
                 }
 
                 if ( $real_file === '' ) {
-                    $add_item( 'error', sprintf( __( '缺少模块样式文件：%s', 'developer-starter' ), $type . '.css' ) );
+                    $add_item( 'error', sprintf( __( '缺少模块样式文件：%s', 'qiling' ), $type . '.css' ) );
                     continue;
                 }
 
                 $expected_files[] = basename( $real_file );
                 $actual_size = (int) @filesize( $real_file );
                 if ( $actual_size <= 0 ) {
-                    $add_item( 'warn', sprintf( __( '%s 文件大小为 0。', 'developer-starter' ), basename( $real_file ) ) );
+                    $add_item( 'warn', sprintf( __( '%s 文件大小为 0。', 'qiling' ), basename( $real_file ) ) );
                 }
 
                 if ( $bytes !== null && $bytes >= 0 && $bytes !== $actual_size ) {
@@ -2204,7 +2204,7 @@ trait Admin_Settings_Ajax_Trait {
                         $add_item(
                             'warn',
                             sprintf(
-                                __( '%1$s 字节数差异（manifest 过期导致）：manifest=%2$d，当前=%3$d。', 'developer-starter' ),
+                                __( '%1$s 字节数差异（manifest 过期导致）：manifest=%2$d，当前=%3$d。', 'qiling' ),
                                 basename( $real_file ),
                                 $bytes,
                                 $actual_size
@@ -2214,7 +2214,7 @@ trait Admin_Settings_Ajax_Trait {
                         $add_item(
                             'error',
                             sprintf(
-                                __( '%1$s 字节数不一致：manifest=%2$d，当前=%3$d。', 'developer-starter' ),
+                                __( '%1$s 字节数不一致：manifest=%2$d，当前=%3$d。', 'qiling' ),
                                 basename( $real_file ),
                                 $bytes,
                                 $actual_size
@@ -2237,7 +2237,7 @@ trait Admin_Settings_Ajax_Trait {
                 foreach ( $disk_css_files as $css_file ) {
                     $name = basename( $css_file );
                     if ( ! in_array( $name, $manifest_files, true ) ) {
-                        $add_item( 'warn', sprintf( __( '发现未在 manifest 声明的样式文件：%s', 'developer-starter' ), $name ) );
+                        $add_item( 'warn', sprintf( __( '发现未在 manifest 声明的样式文件：%s', 'qiling' ), $name ) );
                     }
                 }
             }
@@ -2246,19 +2246,19 @@ trait Admin_Settings_Ajax_Trait {
         if ( $errors > 0 ) {
             $overall = 'error';
             $summary = sprintf(
-                __( '检查失败：%1$d 个错误，%2$d 个警告。请先修复错误项。', 'developer-starter' ),
+                __( '检查失败：%1$d 个错误，%2$d 个警告。请先修复错误项。', 'qiling' ),
                 $errors,
                 $warnings
             );
         } elseif ( $warnings > 0 ) {
             $overall = 'warning';
             $summary = sprintf(
-                __( '检查通过（含警告）：%d 个警告，建议处理。', 'developer-starter' ),
+                __( '检查通过（含警告）：%d 个警告，建议处理。', 'qiling' ),
                 $warnings
             );
         } else {
             $overall = 'healthy';
-            $summary = __( '检查通过：拆分 CSS 清单与实际文件一致。', 'developer-starter' );
+            $summary = __( '检查通过：拆分 CSS 清单与实际文件一致。', 'qiling' );
         }
 
         wp_send_json_success(
@@ -2281,7 +2281,7 @@ trait Admin_Settings_Ajax_Trait {
         check_ajax_referer( 'developer_starter_ecosystem_plugins', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         wp_send_json_success( $this->detect_ecosystem_plugin_statuses() );

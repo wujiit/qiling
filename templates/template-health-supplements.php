@@ -24,13 +24,13 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
         <section class="section-padding" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #134e4a 0%, #0f766e 52%, #65a30d 100%);">
             <div class="container text-center">
                 <div style="font-size: 3rem; margin-bottom: 20px; color: #ffffff; font-weight: 700; letter-spacing: 0;">HEALTH</div>
-                <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '健康保健用品官网', 'developer-starter' ); ?></h2>
+                <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '健康保健用品官网', 'qiling' ); ?></h2>
                 <p style="color: rgba(255,255,255,0.85); margin-bottom: 24px; font-size: 1.05rem;">
-                    <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
                 </p>
                 <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                     <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary" style="background: #ffffff; color: #0f766e; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                        <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                     </a>
                 <?php endif; ?>
             </div>

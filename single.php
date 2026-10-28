@@ -43,8 +43,8 @@ if ( $is_resource_detail_skin ) {
         static function() {
             wp_enqueue_style(
                 'developer-starter-resource-detail-skins',
-                DEVELOPER_STARTER_ASSETS . '/css/resource-detail-skins.css',
-                array( 'developer-starter-main' ),
+                QILING_ASSETS . '/css/resource-detail-skins.css',
+                array( 'qiling-main' ),
                 developer_starter_get_assets_version()
             );
         },
@@ -76,7 +76,7 @@ $hide_post_navigation = ! empty( $options['hide_post_navigation'] ) && '1' === (
 $hide_post_comments = ! empty( $options['hide_post_comments'] ) && '1' === (string) $options['hide_post_comments'];
 $post_poster_button_label = isset( $options['post_poster_button_label'] ) ? trim( wp_strip_all_tags( (string) $options['post_poster_button_label'] ) ) : '';
 if ( '' === $post_poster_button_label ) {
-    $post_poster_button_label = __( '生成海报', 'developer-starter' );
+    $post_poster_button_label = __( '生成海报', 'qiling' );
 }
 $post_published_timestamp = (int) get_post_time( 'U', true, $post_id );
 $post_modified_timestamp = (int) get_post_modified_time( 'U', true, $post_id );

@@ -18,7 +18,7 @@ class Query_Loop_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'content';
         $this->icon        = 'dashicons-list-view';
-        $this->description = __( '输出当前归档、文章列表、分类标签列表、文章类型或启灵内容模型。', 'developer-starter' );
+        $this->description = __( '输出当前归档、文章列表、分类标签列表、文章类型或启灵内容模型。', 'qiling' );
     }
 
     public function get_id() {
@@ -26,33 +26,33 @@ class Query_Loop_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( 'Query Loop 查询循环', 'developer-starter' );
+        return __( 'Query Loop 查询循环', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'ql_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-            array( 'id' => 'ql_subtitle', 'type' => 'textarea', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'ql_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+            array( 'id' => 'ql_subtitle', 'type' => 'textarea', 'label' => __( '副标题', 'qiling' ) ),
             array(
                 'id'      => 'ql_source',
                 'type'    => 'select',
-                'label'   => __( '数据来源', 'developer-starter' ),
+                'label'   => __( '数据来源', 'qiling' ),
                 'options' => array(
-                    'current_query' => __( '当前归档查询', 'developer-starter' ),
-                    'latest'        => __( '最新文章', 'developer-starter' ),
-                    'category'      => __( '指定分类文章', 'developer-starter' ),
-                    'tag'           => __( '指定标签文章', 'developer-starter' ),
-                    'post_type'     => __( '指定文章类型', 'developer-starter' ),
-                    'content_model' => __( '启灵内容模型', 'developer-starter' ),
+                    'current_query' => __( '当前归档查询', 'qiling' ),
+                    'latest'        => __( '最新文章', 'qiling' ),
+                    'category'      => __( '指定分类文章', 'qiling' ),
+                    'tag'           => __( '指定标签文章', 'qiling' ),
+                    'post_type'     => __( '指定文章类型', 'qiling' ),
+                    'content_model' => __( '启灵内容模型', 'qiling' ),
                 ),
                 'default' => 'latest',
             ),
-            array( 'id' => 'ql_category_terms', 'type' => 'text', 'label' => __( '分类 ID 或别名', 'developer-starter' ), 'dependency' => array( 'ql_source', '==', 'category' ) ),
-            array( 'id' => 'ql_tag_terms', 'type' => 'text', 'label' => __( '标签 ID 或别名', 'developer-starter' ), 'dependency' => array( 'ql_source', '==', 'tag' ) ),
+            array( 'id' => 'ql_category_terms', 'type' => 'text', 'label' => __( '分类 ID 或别名', 'qiling' ), 'dependency' => array( 'ql_source', '==', 'category' ) ),
+            array( 'id' => 'ql_tag_terms', 'type' => 'text', 'label' => __( '标签 ID 或别名', 'qiling' ), 'dependency' => array( 'ql_source', '==', 'tag' ) ),
             array(
                 'id'         => 'ql_post_type',
                 'type'       => 'select',
-                'label'      => __( '文章类型', 'developer-starter' ),
+                'label'      => __( '文章类型', 'qiling' ),
                 'options'    => $this->get_post_type_options(),
                 'default'    => 'post',
                 'dependency' => array( 'ql_source', '==', 'post_type' ),
@@ -60,57 +60,57 @@ class Query_Loop_Module extends Module_Base {
             array(
                 'id'         => 'ql_content_model',
                 'type'       => 'select',
-                'label'      => __( '内容模型', 'developer-starter' ),
+                'label'      => __( '内容模型', 'qiling' ),
                 'options'    => $this->get_content_model_options(),
                 'default'    => 'post',
                 'dependency' => array( 'ql_source', '==', 'content_model' ),
             ),
-            array( 'id' => 'ql_count', 'type' => 'number', 'label' => __( '数量', 'developer-starter' ), 'default' => '6' ),
+            array( 'id' => 'ql_count', 'type' => 'number', 'label' => __( '数量', 'qiling' ), 'default' => '6' ),
             array(
                 'id'      => 'ql_columns',
                 'type'    => 'select',
-                'label'   => __( '列数', 'developer-starter' ),
+                'label'   => __( '列数', 'qiling' ),
                 'options' => array(
-                    '1' => __( '1列', 'developer-starter' ),
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '1' => __( '1列', 'qiling' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'ql_orderby',
                 'type'    => 'select',
-                'label'   => __( '排序方式', 'developer-starter' ),
+                'label'   => __( '排序方式', 'qiling' ),
                 'options' => array(
-                    'date'          => __( '发布日期', 'developer-starter' ),
-                    'modified'      => __( '更新时间', 'developer-starter' ),
-                    'title'         => __( '标题', 'developer-starter' ),
-                    'menu_order'    => __( '菜单顺序', 'developer-starter' ),
-                    'sort_order'    => __( '内容模型排序权重', 'developer-starter' ),
-                    'comment_count' => __( '评论数', 'developer-starter' ),
-                    'rand'          => __( '随机', 'developer-starter' ),
+                    'date'          => __( '发布日期', 'qiling' ),
+                    'modified'      => __( '更新时间', 'qiling' ),
+                    'title'         => __( '标题', 'qiling' ),
+                    'menu_order'    => __( '菜单顺序', 'qiling' ),
+                    'sort_order'    => __( '内容模型排序权重', 'qiling' ),
+                    'comment_count' => __( '评论数', 'qiling' ),
+                    'rand'          => __( '随机', 'qiling' ),
                 ),
                 'default' => 'date',
             ),
             array(
                 'id'      => 'ql_order',
                 'type'    => 'select',
-                'label'   => __( '排序方向', 'developer-starter' ),
+                'label'   => __( '排序方向', 'qiling' ),
                 'options' => array(
-                    'DESC' => __( '降序', 'developer-starter' ),
-                    'ASC'  => __( '升序', 'developer-starter' ),
+                    'DESC' => __( '降序', 'qiling' ),
+                    'ASC'  => __( '升序', 'qiling' ),
                 ),
                 'default' => 'DESC',
             ),
-            array( 'id' => 'ql_enable_pagination', 'type' => 'select', 'label' => __( '启用分页', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'ql_show_image', 'type' => 'select', 'label' => __( '显示图片', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'ql_show_excerpt', 'type' => 'select', 'label' => __( '显示摘要', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'ql_excerpt_length', 'type' => 'number', 'label' => __( '摘要字数', 'developer-starter' ), 'default' => '28' ),
-            array( 'id' => 'ql_show_meta', 'type' => 'select', 'label' => __( '显示分类和日期', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'ql_show_read_more', 'type' => 'select', 'label' => __( '显示按钮', 'developer-starter' ), 'options' => array( 'yes' => __( '是', 'developer-starter' ), 'no' => __( '否', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'ql_read_more_text', 'type' => 'text', 'label' => __( '按钮文案', 'developer-starter' ), 'default' => __( '查看详情', 'developer-starter' ) ),
-            array( 'id' => 'ql_empty_text', 'type' => 'text', 'label' => __( '空状态文案', 'developer-starter' ), 'default' => __( '暂无内容', 'developer-starter' ) ),
+            array( 'id' => 'ql_enable_pagination', 'type' => 'select', 'label' => __( '启用分页', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'ql_show_image', 'type' => 'select', 'label' => __( '显示图片', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'ql_show_excerpt', 'type' => 'select', 'label' => __( '显示摘要', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'ql_excerpt_length', 'type' => 'number', 'label' => __( '摘要字数', 'qiling' ), 'default' => '28' ),
+            array( 'id' => 'ql_show_meta', 'type' => 'select', 'label' => __( '显示分类和日期', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'ql_show_read_more', 'type' => 'select', 'label' => __( '显示按钮', 'qiling' ), 'options' => array( 'yes' => __( '是', 'qiling' ), 'no' => __( '否', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'ql_read_more_text', 'type' => 'text', 'label' => __( '按钮文案', 'qiling' ), 'default' => __( '查看详情', 'qiling' ) ),
+            array( 'id' => 'ql_empty_text', 'type' => 'text', 'label' => __( '空状态文案', 'qiling' ), 'default' => __( '暂无内容', 'qiling' ) ),
         );
     }
 
@@ -224,8 +224,8 @@ class Query_Loop_Module extends Module_Base {
             'show_meta'         => ! isset( $data['ql_show_meta'] ) || 'no' !== $data['ql_show_meta'],
             'show_read_more'    => ! isset( $data['ql_show_read_more'] ) || 'no' !== $data['ql_show_read_more'],
             'excerpt_length'    => max( 5, min( 120, isset( $data['ql_excerpt_length'] ) ? absint( $data['ql_excerpt_length'] ) : 28 ) ),
-            'read_more_text'    => isset( $data['ql_read_more_text'] ) && '' !== (string) $data['ql_read_more_text'] ? (string) $data['ql_read_more_text'] : __( '查看详情', 'developer-starter' ),
-            'empty_text'        => isset( $data['ql_empty_text'] ) && '' !== (string) $data['ql_empty_text'] ? (string) $data['ql_empty_text'] : __( '暂无内容', 'developer-starter' ),
+            'read_more_text'    => isset( $data['ql_read_more_text'] ) && '' !== (string) $data['ql_read_more_text'] ? (string) $data['ql_read_more_text'] : __( '查看详情', 'qiling' ),
+            'empty_text'        => isset( $data['ql_empty_text'] ) && '' !== (string) $data['ql_empty_text'] ? (string) $data['ql_empty_text'] : __( '暂无内容', 'qiling' ),
             'paged'             => $this->get_current_paged(),
         );
     }
@@ -426,8 +426,8 @@ class Query_Loop_Module extends Module_Base {
                 'current'   => $paged,
                 'total'     => $total,
                 'type'      => 'array',
-                'prev_text' => __( '上一页', 'developer-starter' ),
-                'next_text' => __( '下一页', 'developer-starter' ),
+                'prev_text' => __( '上一页', 'qiling' ),
+                'next_text' => __( '下一页', 'qiling' ),
             )
         );
 
@@ -435,7 +435,7 @@ class Query_Loop_Module extends Module_Base {
             return;
         }
         ?>
-        <nav class="qiling-query-loop__pagination" role="navigation" aria-label="<?php echo esc_attr__( '查询循环分页', 'developer-starter' ); ?>">
+        <nav class="qiling-query-loop__pagination" role="navigation" aria-label="<?php echo esc_attr__( '查询循环分页', 'qiling' ); ?>">
             <?php foreach ( $links as $link ) : ?>
                 <?php echo wp_kses_post( $link ); ?>
             <?php endforeach; ?>
@@ -474,7 +474,7 @@ class Query_Loop_Module extends Module_Base {
     }
 
     private function get_post_type_options() {
-        $options = array( 'post' => __( '文章', 'developer-starter' ) );
+        $options = array( 'post' => __( '文章', 'qiling' ) );
         if ( ! function_exists( 'get_post_types' ) ) {
             return $options;
         }
@@ -493,7 +493,7 @@ class Query_Loop_Module extends Module_Base {
     }
 
     private function get_content_model_options() {
-        $options = array( 'post' => __( '文章', 'developer-starter' ) );
+        $options = array( 'post' => __( '文章', 'qiling' ) );
         $models  = $this->get_content_model_map();
 
         foreach ( $models as $model_id => $model ) {

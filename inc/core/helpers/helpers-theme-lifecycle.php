@@ -14,7 +14,7 @@ if ( ! function_exists( 'developer_starter_get_theme_rewrite_flush_version' ) ) 
      * @return string
      */
     function developer_starter_get_theme_rewrite_flush_version() {
-        return defined( 'DEVELOPER_STARTER_VERSION' ) ? (string) DEVELOPER_STARTER_VERSION : '1';
+        return defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1';
     }
 }
 
@@ -83,9 +83,9 @@ if ( ! function_exists( 'developer_starter_check_db_tables' ) ) {
         }
 
         $db_version = get_option( 'developer_starter_db_version', '0' );
-        if ( version_compare( $db_version, DEVELOPER_STARTER_DB_VERSION, '<' ) ) {
+        if ( version_compare( $db_version, QILING_DB_VERSION, '<' ) ) {
             developer_starter_run_locked_table_migrations();
-            update_option( 'developer_starter_db_version', DEVELOPER_STARTER_DB_VERSION );
+            update_option( 'developer_starter_db_version', QILING_DB_VERSION );
         }
     }
 }

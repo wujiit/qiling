@@ -18,7 +18,7 @@ class Visual_Tabs_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-screenoptions';
-        $this->description = __( '顶部图卡导航联动下方内容面板，支持切换、跳转或纯展示。', 'developer-starter' );
+        $this->description = __( '顶部图卡导航联动下方内容面板，支持切换、跳转或纯展示。', 'qiling' );
     }
 
     public function get_id() {
@@ -26,242 +26,242 @@ class Visual_Tabs_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '图卡切换', 'developer-starter' );
+        return __( '图卡切换', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             array(
                 'id' => 'visual_tabs_title',
-                'label' => __( '标题', 'developer-starter' ),
+                'label' => __( '标题', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图卡切换展示', 'Visual Tab Showcase' ) : __( '图卡切换展示', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图卡切换展示', 'Visual Tab Showcase' ) : __( '图卡切换展示', 'qiling' ),
             ),
             array(
                 'id' => 'visual_tabs_subtitle',
-                'label' => __( '副标题', 'developer-starter' ),
+                'label' => __( '副标题', 'qiling' ),
                 'type' => 'text',
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合做主图导航、专题入口、模块化内容切换。', 'Use image cards as content tabs, feature entries, or visual navigation.' ) : __( '适合做主图导航、专题入口、模块化内容切换。', 'developer-starter' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合做主图导航、专题入口、模块化内容切换。', 'Use image cards as content tabs, feature entries, or visual navigation.' ) : __( '适合做主图导航、专题入口、模块化内容切换。', 'qiling' ),
             ),
             array(
                 'id' => 'visual_tabs_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'visual_tabs_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'visual_tabs_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.05rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.05rem 或 18px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'visual_tabs_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'visual_tabs_content_layout',
-                'label' => __( '内容区域布局', 'developer-starter' ),
+                'label' => __( '内容区域布局', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'single' => __( '单面板', 'developer-starter' ),
-                    'dual'   => __( '双面板', 'developer-starter' ),
+                    'single' => __( '单面板', 'qiling' ),
+                    'dual'   => __( '双面板', 'qiling' ),
                 ),
                 'default' => 'dual',
             ),
             array(
                 'id' => 'visual_tabs_columns',
-                'label' => __( '每行图卡数量', 'developer-starter' ),
+                'label' => __( '每行图卡数量', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
-                    '5' => __( '5列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
+                    '5' => __( '5列', 'qiling' ),
                 ),
                 'default' => '4',
             ),
             array(
                 'id' => 'visual_tabs_card_image_height',
-                'label' => __( '图卡图片高度', 'developer-starter' ),
+                'label' => __( '图卡图片高度', 'qiling' ),
                 'type' => 'text',
                 'default' => '160px',
-                'description' => __( '如 160px、12rem', 'developer-starter' ),
+                'description' => __( '如 160px、12rem', 'qiling' ),
             ),
             array(
                 'id' => 'visual_tabs_accent_color',
-                'label' => __( '强调色', 'developer-starter' ),
+                'label' => __( '强调色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id' => 'visual_tabs_card_bg',
-                'label' => __( '图卡背景色', 'developer-starter' ),
+                'label' => __( '图卡背景色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id' => 'visual_tabs_card_active_bg',
-                'label' => __( '激活图卡背景色', 'developer-starter' ),
+                'label' => __( '激活图卡背景色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--qiling-color-eff6ff)',
             ),
             array(
                 'id' => 'visual_tabs_panel_bg',
-                'label' => __( '内容面板背景色', 'developer-starter' ),
+                'label' => __( '内容面板背景色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id' => 'visual_tabs_btn_bg_color',
-                'label' => __( '面板按钮背景颜色', 'developer-starter' ),
+                'label' => __( '面板按钮背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响下方内容面板里的按钮，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响下方内容面板里的按钮，留空时跟随全局设计', 'qiling' ),
             ),
             array(
                 'id' => 'visual_tabs_btn_text_color',
-                'label' => __( '面板按钮文字颜色', 'developer-starter' ),
+                'label' => __( '面板按钮文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响下方内容面板里的按钮，留空时跟随全局设计', 'developer-starter' ),
+                'description' => __( '只影响下方内容面板里的按钮，留空时跟随全局设计', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'visual_tabs_btn_border_color', __( '面板按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'visual_tabs_btn_border_color', __( '面板按钮边框颜色', 'qiling' ) ),
             array(
                 'id' => 'visual_tabs_btn_hover_bg_color',
-                'label' => __( '面板按钮悬停背景颜色', 'developer-starter' ),
+                'label' => __( '面板按钮悬停背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响下方内容面板里的按钮悬停状态，不影响上方图卡高亮色', 'developer-starter' ),
+                'description' => __( '只影响下方内容面板里的按钮悬停状态，不影响上方图卡高亮色', 'qiling' ),
             ),
             array(
                 'id' => 'visual_tabs_btn_hover_text_color',
-                'label' => __( '面板按钮悬停文字颜色', 'developer-starter' ),
+                'label' => __( '面板按钮悬停文字颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '只影响下方内容面板里的按钮悬停状态，不影响上方图卡高亮色', 'developer-starter' ),
+                'description' => __( '只影响下方内容面板里的按钮悬停状态，不影响上方图卡高亮色', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'visual_tabs_btn_hover_border_color', __( '面板按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随面板按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'visual_tabs_btn_hover_border_color', __( '面板按钮悬停边框颜色', 'qiling' ), __( '留空时跟随面板按钮悬停背景颜色。', 'qiling' ) ),
             array(
                 'id' => 'visual_tabs_items',
-                'label' => __( '图卡列表', 'developer-starter' ),
+                'label' => __( '图卡列表', 'qiling' ),
                 'type' => 'repeater',
-                'description' => __( '每张图卡都可以设置为切换内容、跳转链接或纯展示。', 'developer-starter' ),
+                'description' => __( '每张图卡都可以设置为切换内容、跳转链接或纯展示。', 'qiling' ),
                 'fields' => array(
                     array(
                         'id' => 'card_title',
-                        'label' => __( '图卡标题', 'developer-starter' ),
+                        'label' => __( '图卡标题', 'qiling' ),
                         'type' => 'text',
                     ),
                     array(
                         'id' => 'card_subtitle',
-                        'label' => __( '图卡副标题', 'developer-starter' ),
+                        'label' => __( '图卡副标题', 'qiling' ),
                         'type' => 'text',
                     ),
                     array(
                         'id' => 'card_badge',
-                        'label' => __( '角标/标签', 'developer-starter' ),
+                        'label' => __( '角标/标签', 'qiling' ),
                         'type' => 'text',
                     ),
                     array(
                         'id' => 'card_image',
-                        'label' => __( '图卡图片', 'developer-starter' ),
+                        'label' => __( '图卡图片', 'qiling' ),
                         'type' => 'image',
                     ),
                     array(
                         'id' => 'card_action',
-                        'label' => __( '点击行为', 'developer-starter' ),
+                        'label' => __( '点击行为', 'qiling' ),
                         'type' => 'select',
                         'options' => array(
-                            'switch' => __( '切换下方内容', 'developer-starter' ),
-                            'link'   => __( '跳转到链接', 'developer-starter' ),
-                            'static' => __( '纯展示不点击', 'developer-starter' ),
+                            'switch' => __( '切换下方内容', 'qiling' ),
+                            'link'   => __( '跳转到链接', 'qiling' ),
+                            'static' => __( '纯展示不点击', 'qiling' ),
                         ),
                         'default' => 'switch',
                     ),
                     array(
                         'id' => 'card_link',
-                        'label' => __( '跳转链接', 'developer-starter' ),
+                        'label' => __( '跳转链接', 'qiling' ),
                         'type' => 'text',
                         'default' => '',
                     ),
                     array(
                         'id' => 'card_link_target',
-                        'label' => __( '链接打开方式', 'developer-starter' ),
+                        'label' => __( '链接打开方式', 'qiling' ),
                         'type' => 'select',
                         'options' => array(
-                            '_self'  => __( '当前窗口', 'developer-starter' ),
-                            '_blank' => __( '新窗口', 'developer-starter' ),
+                            '_self'  => __( '当前窗口', 'qiling' ),
+                            '_blank' => __( '新窗口', 'qiling' ),
                         ),
                         'default' => '_self',
                     ),
                     array(
                         'id' => 'content_title',
-                        'label' => __( '主内容标题', 'developer-starter' ),
+                        'label' => __( '主内容标题', 'qiling' ),
                         'type' => 'text',
                     ),
                     array(
                         'id' => 'content_text',
-                        'label' => __( '主内容文本', 'developer-starter' ),
+                        'label' => __( '主内容文本', 'qiling' ),
                         'type' => 'textarea',
                     ),
                     array(
                         'id' => 'content_secondary_title',
-                        'label' => __( '次内容标题', 'developer-starter' ),
+                        'label' => __( '次内容标题', 'qiling' ),
                         'type' => 'text',
                     ),
                     array(
                         'id' => 'content_secondary_text',
-                        'label' => __( '次内容文本', 'developer-starter' ),
+                        'label' => __( '次内容文本', 'qiling' ),
                         'type' => 'textarea',
                     ),
                     array(
                         'id' => 'content_button_text',
-                        'label' => __( '内容按钮文字', 'developer-starter' ),
+                        'label' => __( '内容按钮文字', 'qiling' ),
                         'type' => 'text',
                     ),
                     array(
                         'id' => 'content_button_url',
-                        'label' => __( '内容按钮链接', 'developer-starter' ),
+                        'label' => __( '内容按钮链接', 'qiling' ),
                         'type' => 'text',
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'card_title'              => 'S版主图',
-                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合品牌主入口', 'Best for primary hero entry' ) : __( '适合品牌主入口', 'developer-starter' ),
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合品牌主入口', 'Best for primary hero entry' ) : __( '适合品牌主入口', 'qiling' ),
                         'card_badge'              => 'S',
                         'card_action'             => 'switch',
-                        'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 1', 'Display Block 1' ) : __( '展示内容 1', 'developer-starter' ),
-                        'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", "Use this area for the S-card headline, CTA, and supporting copy." ) : __( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", 'developer-starter' ),
-                        'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 2', 'Display Block 2' ) : __( '展示内容 2', 'developer-starter' ),
-                        'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", "Use the second panel for specs, quick links, or supplemental content." ) : __( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", 'developer-starter' ),
-                        'content_button_text'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'Learn More' ) : __( '查看详情', 'developer-starter' ),
+                        'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 1', 'Display Block 1' ) : __( '展示内容 1', 'qiling' ),
+                        'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", "Use this area for the S-card headline, CTA, and supporting copy." ) : __( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", 'qiling' ),
+                        'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 2', 'Display Block 2' ) : __( '展示内容 2', 'qiling' ),
+                        'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", "Use the second panel for specs, quick links, or supplemental content." ) : __( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", 'qiling' ),
+                        'content_button_text'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'Learn More' ) : __( '查看详情', 'qiling' ),
                         'content_button_url'      => '#',
                     ),
                     array(
                         'card_title'              => 'T版主图',
-                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合专题聚合', 'Good for topic collections' ) : __( '适合专题聚合', 'developer-starter' ),
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合专题聚合', 'Good for topic collections' ) : __( '适合专题聚合', 'qiling' ),
                         'card_badge'              => 'T',
                         'card_action'             => 'switch',
-                        'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'T 版内容区', 'T Panel' ) : __( 'T 版内容区', 'developer-starter' ),
-                        'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", "Switch to another content set for topic navigation or grouped highlights." ) : __( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", 'developer-starter' ),
-                        'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '补充面板', 'Secondary Panel' ) : __( '补充面板', 'developer-starter' ),
-                        'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'Use this area for extra notes, quick lists, or supporting CTA copy.' ) : __( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'developer-starter' ),
+                        'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'T 版内容区', 'T Panel' ) : __( 'T 版内容区', 'qiling' ),
+                        'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", "Switch to another content set for topic navigation or grouped highlights." ) : __( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", 'qiling' ),
+                        'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '补充面板', 'Secondary Panel' ) : __( '补充面板', 'qiling' ),
+                        'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'Use this area for extra notes, quick lists, or supporting CTA copy.' ) : __( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'qiling' ),
                     ),
                     array(
                         'card_title'              => 'E版主图',
-                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以设置成跳转', 'Can also work as a link card' ) : __( '也可以设置成跳转', 'developer-starter' ),
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以设置成跳转', 'Can also work as a link card' ) : __( '也可以设置成跳转', 'qiling' ),
                         'card_badge'              => 'E',
                         'card_action'             => 'link',
                         'card_link'               => '#',
@@ -271,7 +271,7 @@ class Visual_Tabs_Module extends Module_Base {
                     ),
                     array(
                         'card_title'              => 'M版主图',
-                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以只做展示', 'Can remain display-only' ) : __( '也可以只做展示', 'developer-starter' ),
+                        'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以只做展示', 'Can remain display-only' ) : __( '也可以只做展示', 'qiling' ),
                         'card_badge'              => 'M',
                         'card_action'             => 'static',
                         'content_title'           => '',
@@ -281,33 +281,33 @@ class Visual_Tabs_Module extends Module_Base {
             ),
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持 CSS 颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持 CSS 颜色值或渐变代码', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'default' => '',
             ),
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0'   => __( '无遮罩', 'developer-starter' ),
+                    '0'   => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -322,13 +322,13 @@ class Visual_Tabs_Module extends Module_Base {
             ),
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
@@ -342,7 +342,7 @@ class Visual_Tabs_Module extends Module_Base {
         };
         $title = isset( $data['visual_tabs_title'] ) && $data['visual_tabs_title'] !== ''
             ? $data['visual_tabs_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图卡切换展示', 'Visual Tab Showcase' ) : __( '图卡切换展示', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '图卡切换展示', 'Visual Tab Showcase' ) : __( '图卡切换展示', 'qiling' ) );
         $subtitle = isset( $data['visual_tabs_subtitle'] ) ? $data['visual_tabs_subtitle'] : '';
         $content_layout = isset( $data['visual_tabs_content_layout'] ) && in_array( $data['visual_tabs_content_layout'], array( 'single', 'dual' ), true )
             ? $data['visual_tabs_content_layout']
@@ -375,29 +375,29 @@ class Visual_Tabs_Module extends Module_Base {
             $items = array(
                 array(
                     'card_title'              => 'S版主图',
-                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合品牌主入口', 'Best for primary hero entry' ) : __( '适合品牌主入口', 'developer-starter' ),
+                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合品牌主入口', 'Best for primary hero entry' ) : __( '适合品牌主入口', 'qiling' ),
                     'card_badge'              => 'S',
                     'card_action'             => 'switch',
-                    'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 1', 'Display Block 1' ) : __( '展示内容 1', 'developer-starter' ),
-                    'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", "Use this area for the S-card headline, CTA, and supporting copy." ) : __( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", 'developer-starter' ),
-                    'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 2', 'Display Block 2' ) : __( '展示内容 2', 'developer-starter' ),
-                    'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", "Use the second panel for specs, quick links, or supplemental content." ) : __( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", 'developer-starter' ),
-                    'content_button_text'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'Learn More' ) : __( '查看详情', 'developer-starter' ),
+                    'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 1', 'Display Block 1' ) : __( '展示内容 1', 'qiling' ),
+                    'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", "Use this area for the S-card headline, CTA, and supporting copy." ) : __( "这里可以放 S 版主图对应的文案、按钮、功能说明。\n支持做主图说明、专题介绍、产品卖点摘要。", 'qiling' ),
+                    'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '展示内容 2', 'Display Block 2' ) : __( '展示内容 2', 'qiling' ),
+                    'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", "Use the second panel for specs, quick links, or supplemental content." ) : __( "第二块可放补充说明、参数摘要、推荐入口。\n如果不需要，可以留空，模块会自动只显示一栏。", 'qiling' ),
+                    'content_button_text'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看详情', 'Learn More' ) : __( '查看详情', 'qiling' ),
                     'content_button_url'      => '#',
                 ),
                 array(
                     'card_title'              => 'T版主图',
-                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合专题聚合', 'Good for topic collections' ) : __( '适合专题聚合', 'developer-starter' ),
+                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '适合专题聚合', 'Good for topic collections' ) : __( '适合专题聚合', 'qiling' ),
                     'card_badge'              => 'T',
                     'card_action'             => 'switch',
-                    'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'T 版内容区', 'T Panel' ) : __( 'T 版内容区', 'developer-starter' ),
-                    'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", "Switch to another content set for topic navigation or grouped highlights." ) : __( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", 'developer-starter' ),
-                    'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '补充面板', 'Secondary Panel' ) : __( '补充面板', 'developer-starter' ),
-                    'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'Use this area for extra notes, quick lists, or supporting CTA copy.' ) : __( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'developer-starter' ),
+                    'content_title'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'T 版内容区', 'T Panel' ) : __( 'T 版内容区', 'qiling' ),
+                    'content_text'            => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", "Switch to another content set for topic navigation or grouped highlights." ) : __( "点击这张图卡后，可以切换到另一套说明内容。\n适合做频道介绍、入口导航、专题推荐。", 'qiling' ),
+                    'content_secondary_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '补充面板', 'Secondary Panel' ) : __( '补充面板', 'qiling' ),
+                    'content_secondary_text'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'Use this area for extra notes, quick lists, or supporting CTA copy.' ) : __( '这里可以放次级说明、短列表、或者 CTA 之前的补充文案。', 'qiling' ),
                 ),
                 array(
                     'card_title'              => 'E版主图',
-                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以设置成跳转', 'Can also work as a link card' ) : __( '也可以设置成跳转', 'developer-starter' ),
+                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以设置成跳转', 'Can also work as a link card' ) : __( '也可以设置成跳转', 'qiling' ),
                     'card_badge'              => 'E',
                     'card_action'             => 'link',
                     'card_link'               => '#',
@@ -407,7 +407,7 @@ class Visual_Tabs_Module extends Module_Base {
                 ),
                 array(
                     'card_title'              => 'M版主图',
-                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以只做展示', 'Can remain display-only' ) : __( '也可以只做展示', 'developer-starter' ),
+                    'card_subtitle'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '也可以只做展示', 'Can remain display-only' ) : __( '也可以只做展示', 'qiling' ),
                     'card_badge'              => 'M',
                     'card_action'             => 'static',
                     'content_title'           => '',
@@ -525,7 +525,7 @@ class Visual_Tabs_Module extends Module_Base {
                     <div class="visual-tabs-grid">
                         <?php foreach ( $items as $index => $item ) : ?>
                             <?php
-                            $card_title = isset( $item['card_title'] ) && $item['card_title'] !== '' ? $item['card_title'] : __( '图卡标题', 'developer-starter' );
+                            $card_title = isset( $item['card_title'] ) && $item['card_title'] !== '' ? $item['card_title'] : __( '图卡标题', 'qiling' );
                             $card_subtitle = isset( $item['card_subtitle'] ) ? $item['card_subtitle'] : '';
                             $card_badge = isset( $item['card_badge'] ) ? $item['card_badge'] : '';
                             $card_image = isset( $item['card_image'] ) ? $item['card_image'] : '';
@@ -536,7 +536,7 @@ class Visual_Tabs_Module extends Module_Base {
                                 : '_self';
                             $is_active = (int) $index === $active_index;
                             $pane_id = $module_id . '-pane-' . $index;
-                            $placeholder_text = function_exists( 'mb_substr' ) ? mb_substr( wp_strip_all_tags( $card_title ), 0, 1 ) : substr( wp_strip_all_tags( $card_title ), 0, 1 );
+                            $placeholder_text = function_exists( 'mb_substr' ) ? mb_substr( wp_strip_all_tags( $card_title ), 0, 1, 'UTF-8' ) : substr( wp_strip_all_tags( $card_title ), 0, 1 );
 
                             if ( ! in_array( $card_action, array( 'switch', 'link', 'static' ), true ) ) {
                                 $card_action = 'switch';
@@ -596,7 +596,7 @@ class Visual_Tabs_Module extends Module_Base {
                                         <?php if ( $card_subtitle ) : ?>
                                             <p class="visual-tabs-card-subtitle"><?php echo esc_html( $card_subtitle ); ?></p>
                                         <?php endif; ?>
-                                        <span class="visual-tabs-card-mode"><?php esc_html_e( '点击跳转', 'developer-starter' ); ?></span>
+                                        <span class="visual-tabs-card-mode"><?php esc_html_e( '点击跳转', 'qiling' ); ?></span>
                                     </div>
                                 </a>
                             <?php else : ?>
@@ -616,7 +616,7 @@ class Visual_Tabs_Module extends Module_Base {
                                         <?php if ( $card_subtitle ) : ?>
                                             <p class="visual-tabs-card-subtitle"><?php echo esc_html( $card_subtitle ); ?></p>
                                         <?php endif; ?>
-                                        <span class="visual-tabs-card-mode"><?php esc_html_e( '纯展示', 'developer-starter' ); ?></span>
+                                        <span class="visual-tabs-card-mode"><?php esc_html_e( '纯展示', 'qiling' ); ?></span>
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -632,7 +632,7 @@ class Visual_Tabs_Module extends Module_Base {
                                     continue;
                                 }
 
-                                $card_title = isset( $item['card_title'] ) && $item['card_title'] !== '' ? $item['card_title'] : __( '图卡标题', 'developer-starter' );
+                                $card_title = isset( $item['card_title'] ) && $item['card_title'] !== '' ? $item['card_title'] : __( '图卡标题', 'qiling' );
                                 $content_title = isset( $item['content_title'] ) && $item['content_title'] !== '' ? $item['content_title'] : $card_title;
                                 $content_text = isset( $item['content_text'] ) ? $item['content_text'] : '';
                                 $secondary_title = isset( $item['content_secondary_title'] ) ? $item['content_secondary_title'] : '';
@@ -684,7 +684,7 @@ class Visual_Tabs_Module extends Module_Base {
                         </div>
                     <?php else : ?>
                         <div class="visual-tabs-empty">
-                            <p><?php esc_html_e( '当前图卡全部设置为跳转或纯展示，所以这里不会显示联动内容。', 'developer-starter' ); ?></p>
+                            <p><?php esc_html_e( '当前图卡全部设置为跳转或纯展示，所以这里不会显示联动内容。', 'qiling' ); ?></p>
                         </div>
                     <?php endif; ?>
                 </div>

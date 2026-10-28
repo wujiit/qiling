@@ -20,7 +20,8 @@ class Post_Interaction_Manager {
      */
     public function __construct( $register_hooks = true ) {
         global $wpdb;
-        $this->table_name = $wpdb->prefix . 'developer_starter_post_interactions';
+        $this->table_name = self::table_name();
+        self::maybe_migrate_legacy_table();
 
         if ( ! $register_hooks ) {
             return;
@@ -34,7 +35,7 @@ class Post_Interaction_Manager {
 
     public static function table_name() {
         global $wpdb;
-        return $wpdb->prefix . 'developer_starter_post_interactions';
+        return $wpdb->prefix . 'qiling_post_interactions';
     }
 
     public function install_table() {
@@ -72,7 +73,23 @@ class Post_Interaction_Manager {
         );
     }
 
+    
+    /**
+     * 自动平滑重命名历史表，保留历史文章点赞收藏数据。
+     */
+    private static function maybe_migrate_legacy_table() {
+        global $wpdb;
+        $old_table = $wpdb->prefix . 'developer_starter_post_interactions';
+        $new_table = self::table_name();
+        if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $old_table ) ) === $old_table ) {
+            if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_table ) ) !== $new_table ) {
+                $wpdb->query( "RENAME TABLE `{$old_table}` TO `{$new_table}`" );
+            }
+        }
+    }
+
     public static function create_table() {
+        self::maybe_migrate_legacy_table();
         Database_Schema_Migration_Service::apply_schema( self::get_table_schema() );
     }
 
@@ -153,18 +170,18 @@ class Post_Interaction_Manager {
         check_ajax_referer( 'ds_post_interaction', 'nonce' );
 
         if ( ! is_user_logged_in() ) {
-            wp_send_json_error( array( 'message' => __( '请先登录后再操作。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先登录后再操作。', 'qiling' ) ) );
         }
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
         $type = isset( $_POST['interaction_type'] ) ? sanitize_key( wp_unslash( $_POST['interaction_type'] ) ) : '';
 
         if ( ! $post_id || ! in_array( $type, array( 'like', 'favorite' ), true ) ) {
-            wp_send_json_error( array( 'message' => __( '参数错误。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '参数错误。', 'qiling' ) ) );
         }
 
         if ( get_post_status( $post_id ) !== 'publish' ) {
-            wp_send_json_error( array( 'message' => __( '文章不存在或不可用。', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '文章不存在或不可用。', 'qiling' ) ) );
         }
 
         $active = $this->toggle_interaction( $post_id, get_current_user_id(), $type );

@@ -79,10 +79,11 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
         $response = wp_remote_get(
             $url,
             array(
-                'timeout'     => 12,
-                'redirection' => 2,
-                'sslverify'   => true,
-                'headers'     => $headers,
+                'timeout'            => 12,
+                'redirection'        => 2,
+                'sslverify'          => true,
+                'reject_unsafe_urls' => true,
+                'headers'            => $headers,
             )
         );
 
@@ -107,11 +108,12 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
         $request_args = wp_parse_args(
             $args,
             array(
-                'timeout'     => 12,
-                'redirection' => 2,
-                'sslverify'   => true,
-                'headers'     => $headers,
-                'body'        => array(),
+                'timeout'            => 12,
+                'redirection'        => 2,
+                'sslverify'          => true,
+                'reject_unsafe_urls' => true,
+                'headers'            => $headers,
+                'body'               => array(),
             )
         );
         $request_args['headers'] = $headers;
@@ -136,11 +138,11 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
         $body   = trim( (string) wp_remote_retrieve_body( $response ) );
 
         if ( $status < 200 || $status >= 300 ) {
-            return new \WP_Error( 'social_login_http_error', __( '第三方授权接口暂时不可用，请稍后再试。', 'developer-starter' ) );
+            return new \WP_Error( 'social_login_http_error', __( '第三方授权接口暂时不可用，请稍后再试。', 'qiling' ) );
         }
 
         if ( '' === $body ) {
-            return new \WP_Error( 'social_login_empty_response', __( '第三方授权接口返回为空。', 'developer-starter' ) );
+            return new \WP_Error( 'social_login_empty_response', __( '第三方授权接口返回为空。', 'qiling' ) );
         }
 
         $decoded = json_decode( $body, true );
@@ -161,7 +163,7 @@ abstract class Abstract_OAuth2_Provider implements Provider_Interface {
             return $parsed;
         }
 
-        return new \WP_Error( 'social_login_bad_response', __( '第三方授权接口返回格式无法识别。', 'developer-starter' ) );
+        return new \WP_Error( 'social_login_bad_response', __( '第三方授权接口返回格式无法识别。', 'qiling' ) );
     }
 
     /**

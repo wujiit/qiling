@@ -16,9 +16,9 @@ if ( ! function_exists( 'developer_starter_register_blog_sidebar' ) ) {
     function developer_starter_register_blog_sidebar() {
         register_sidebar(
             array(
-                'name'          => __( '博客布局侧边栏', 'developer-starter' ),
+                'name'          => __( '博客布局侧边栏', 'qiling' ),
                 'id'            => 'blog-module-sidebar',
-                'description'   => __( '用于博客布局模块的侧边栏小工具区域', 'developer-starter' ),
+                'description'   => __( '用于博客布局模块的侧边栏小工具区域', 'qiling' ),
                 'before_widget' => '<div id="%1$s" class="sidebar-widget widget %2$s">',
                 'after_widget'  => '</div>',
                 'before_title'  => '<h4 class="widget-title">',
@@ -52,7 +52,7 @@ if ( ! function_exists( 'developer_starter_admin_post_ds_repair_modules_meta' ) 
      */
     function developer_starter_admin_post_ds_repair_modules_meta() {
         if ( ! function_exists( 'developer_starter_get_admin_settings_instance' ) ) {
-            wp_die( esc_html__( '主题设置组件未就绪。', 'developer-starter' ) );
+            wp_die( esc_html__( '主题设置组件未就绪。', 'qiling' ) );
         }
 
         developer_starter_get_admin_settings_instance()->handle_repair_modules_meta();
@@ -68,7 +68,7 @@ if ( ! function_exists( 'developer_starter_admin_post_ds_repair_theme_options' )
      */
     function developer_starter_admin_post_ds_repair_theme_options() {
         if ( ! function_exists( 'developer_starter_get_admin_settings_instance' ) ) {
-            wp_die( esc_html__( '主题设置组件未就绪。', 'developer-starter' ) );
+            wp_die( esc_html__( '主题设置组件未就绪。', 'qiling' ) );
         }
 
         developer_starter_get_admin_settings_instance()->handle_repair_theme_options();
@@ -88,7 +88,7 @@ if ( ! function_exists( 'developer_starter_should_boot_admin_settings' ) ) {
         }
 
         $page = isset( $_REQUEST['page'] ) ? sanitize_key( wp_unslash( (string) $_REQUEST['page'] ) ) : '';
-        if ( $page === 'developer-starter-settings' ) {
+        if ( $page === 'qiling-settings' || $page === 'developer-starter-settings' ) {
             return true;
         }
 
@@ -163,7 +163,7 @@ if ( ! function_exists( 'developer_starter_render_admin_settings_page' ) ) {
      */
     function developer_starter_render_admin_settings_page() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( '权限不足', 'developer-starter' ) );
+            wp_die( esc_html__( '权限不足', 'qiling' ) );
         }
 
         developer_starter_get_admin_settings_instance()->render_settings_page();
@@ -178,10 +178,10 @@ if ( ! function_exists( 'developer_starter_register_admin_settings_menu' ) ) {
      */
     function developer_starter_register_admin_settings_menu() {
         add_menu_page(
-            __( '企业主题设置', 'developer-starter' ),
-            __( '企业主题设置', 'developer-starter' ),
+            __( '企业主题设置', 'qiling' ),
+            __( '企业主题设置', 'qiling' ),
             'manage_options',
-            'developer-starter-settings',
+            'qiling-settings',
             'developer_starter_render_admin_settings_page',
             'dashicons-building',
             60
@@ -189,6 +189,21 @@ if ( ! function_exists( 'developer_starter_register_admin_settings_menu' ) ) {
     }
 }
 add_action( 'admin_menu', 'developer_starter_register_admin_settings_menu', 10 );
+/**
+ * 历史主题设置 URL 自动 302 平滑重定向（兼容书签与旧外链）
+ */
+if ( ! function_exists( 'developer_starter_redirect_legacy_admin_settings_slug' ) ) {
+    function developer_starter_redirect_legacy_admin_settings_slug() {
+        if ( is_admin() && isset( $_GET['page'] ) && 'developer-starter-settings' === $_GET['page'] ) {
+            $params = $_GET;
+            $params['page'] = 'qiling-settings';
+            wp_safe_redirect( add_query_arg( $params, admin_url( 'admin.php' ) ) );
+            exit;
+        }
+    }
+}
+add_action( 'admin_init', 'developer_starter_redirect_legacy_admin_settings_slug' );
+
 
 if ( ! function_exists( 'developer_starter_add_admin_settings_bar_menu' ) ) {
     /**
@@ -204,9 +219,9 @@ if ( ! function_exists( 'developer_starter_add_admin_settings_bar_menu' ) ) {
 
         $wp_admin_bar->add_node(
             array(
-                'id'     => 'developer-starter-settings',
-                'title'  => '<span class="ab-icon dashicons dashicons-admin-generic" style="margin-top:2px;"></span><span class="ab-label">' . __( '启灵主题设置', 'developer-starter' ) . '</span>',
-                'href'   => admin_url( 'admin.php?page=developer-starter-settings' ),
+                'id'     => 'qiling-settings',
+                'title'  => '<span class="ab-icon dashicons dashicons-admin-generic" style="margin-top:2px;"></span><span class="ab-label">' . __( '启灵主题设置', 'qiling' ) . '</span>',
+                'href'   => admin_url( 'admin.php?page=qiling-settings' ),
                 'parent' => false,
             )
         );

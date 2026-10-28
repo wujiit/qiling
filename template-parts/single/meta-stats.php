@@ -80,7 +80,7 @@ if ( ! $has_meta_items ) {
             <?php
             printf(
                 /* translators: %s: modified date */
-                esc_html__( '更新于 %s', 'developer-starter' ),
+                esc_html__( '更新于 %s', 'qiling' ),
                 esc_html( $args['post_modified_date'] )
             );
             ?>
@@ -90,28 +90,28 @@ if ( ! $has_meta_items ) {
     <?php if ( $args['post_views_enable'] ) : ?>
         <span class="meta-stat">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            <?php printf( esc_html__( '%s 阅读', 'developer-starter' ), esc_html( number_format_i18n( (int) $args['post_views'] ) ) ); ?>
+            <?php printf( esc_html__( '%s 阅读', 'qiling' ), esc_html( number_format_i18n( (int) $args['post_views'] ) ) ); ?>
         </span>
     <?php endif; ?>
 
     <?php if ( $args['reading_time_enable'] ) : ?>
         <span class="meta-stat">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <?php printf( esc_html__( '%d 分钟阅读', 'developer-starter' ), absint( $args['reading_time'] ) ); ?>
+            <?php printf( esc_html__( '%d 分钟阅读', 'qiling' ), absint( $args['reading_time'] ) ); ?>
         </span>
     <?php endif; ?>
 
     <?php if ( $show_comment_count ) : ?>
         <span class="meta-stat">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            <?php printf( esc_html( _n( '%s 评论', '%s 评论', get_comments_number(), 'developer-starter' ) ), esc_html( number_format_i18n( get_comments_number() ) ) ); ?>
+            <?php printf( esc_html( _n( '%s 评论', '%s 评论', get_comments_number(), 'qiling' ) ), esc_html( number_format_i18n( get_comments_number() ) ) ); ?>
         </span>
     <?php endif; ?>
 
     <?php if ( $args['post_like_enable'] ) : ?>
         <button type="button" class="<?php echo esc_attr( 'meta-stat ds-interaction-btn' . ( $args['like_active'] ? ' is-active' : '' ) ); ?>" data-post-id="<?php echo esc_attr( (int) $args['post_id'] ); ?>" data-type="like" data-nonce="<?php echo esc_attr( $nonce ); ?>">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6c-1.9-1.9-5-1.9-6.9 0L12 6.5l-1.9-1.9c-1.9-1.9-5-1.9-6.9 0s-1.9 5 0 6.9L12 21.2l8.8-9.7c1.9-1.9 1.9-5 0-6.9z"></path></svg>
-            <span><?php esc_html_e( '点赞', 'developer-starter' ); ?></span>
+            <span><?php esc_html_e( '点赞', 'qiling' ); ?></span>
             <span class="ds-interaction-count"><?php echo esc_html( number_format_i18n( (int) $args['like_count'] ) ); ?></span>
         </button>
     <?php endif; ?>
@@ -119,7 +119,7 @@ if ( ! $has_meta_items ) {
     <?php if ( $args['post_favorite_enable'] ) : ?>
         <button type="button" class="<?php echo esc_attr( 'meta-stat ds-interaction-btn' . ( $args['favorite_active'] ? ' is-active' : '' ) ); ?>" data-post-id="<?php echo esc_attr( (int) $args['post_id'] ); ?>" data-type="favorite" data-nonce="<?php echo esc_attr( $nonce ); ?>">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            <span><?php esc_html_e( '收藏', 'developer-starter' ); ?></span>
+            <span><?php esc_html_e( '收藏', 'qiling' ); ?></span>
             <span class="ds-interaction-count"><?php echo esc_html( number_format_i18n( (int) $args['favorite_count'] ) ); ?></span>
         </button>
     <?php endif; ?>

@@ -134,7 +134,7 @@ trait Admin_Settings_Field_Trait {
             return $label_text;
         }
         $is_favorite = $this->is_favorite( $setting_id );
-        $title = $is_favorite ? __( '取消收藏', 'developer-starter' ) : __( '收藏此设置', 'developer-starter' );
+        $title = $is_favorite ? __( '取消收藏', 'qiling' ) : __( '收藏此设置', 'qiling' );
         $button = '<button type="button" class="ds-favorite-toggle" data-field="' . esc_attr( $setting_id ) . '" aria-pressed="' . ( $is_favorite ? 'true' : 'false' ) . '" title="' . esc_attr( $title ) . '" aria-label="' . esc_attr( $title ) . '"></button>';
         if ( $input_id ) {
             $label_html = '<label for="' . esc_attr( $input_id ) . '" class="ds-field-label-text">' . $label_text . '</label>';
@@ -181,7 +181,7 @@ trait Admin_Settings_Field_Trait {
         $this->render_design_quick_value_assets_once();
 
         echo '<div class="ds-design-quick-values" data-ds-design-quick-values="' . esc_attr( $id ) . '">';
-        echo '<span class="ds-design-quick-values__label">' . esc_html__( '快捷选择', 'developer-starter' ) . '</span>';
+        echo '<span class="ds-design-quick-values__label">' . esc_html__( '快捷选择', 'qiling' ) . '</span>';
         foreach ( $items as $item ) {
             if ( empty( $item['label'] ) || ! array_key_exists( 'value', $item ) ) {
                 continue;
@@ -203,59 +203,59 @@ trait Admin_Settings_Field_Trait {
 
         if ( false !== strpos( $id, 'shadow' ) ) {
             return array(
-                array( 'label' => __( '无', 'developer-starter' ), 'value' => 'none' ),
-                array( 'label' => __( '轻', 'developer-starter' ), 'value' => '0 8px 24px rgba(15, 23, 42, 0.08)' ),
-                array( 'label' => __( '中', 'developer-starter' ), 'value' => '0 16px 40px rgba(15, 23, 42, 0.12)' ),
-                array( 'label' => __( '重', 'developer-starter' ), 'value' => '0 24px 60px rgba(15, 23, 42, 0.18)' ),
+                array( 'label' => __( '无', 'qiling' ), 'value' => 'none' ),
+                array( 'label' => __( '轻', 'qiling' ), 'value' => '0 8px 24px rgba(15, 23, 42, 0.08)' ),
+                array( 'label' => __( '中', 'qiling' ), 'value' => '0 16px 40px rgba(15, 23, 42, 0.12)' ),
+                array( 'label' => __( '重', 'qiling' ), 'value' => '0 24px 60px rgba(15, 23, 42, 0.18)' ),
             );
         }
 
         if ( false !== strpos( $id, 'radius' ) ) {
             return array(
-                array( 'label' => __( '直角', 'developer-starter' ), 'value' => '0px' ),
-                array( 'label' => __( '小', 'developer-starter' ), 'value' => '6px' ),
-                array( 'label' => __( '圆润', 'developer-starter' ), 'value' => '14px' ),
-                array( 'label' => __( '胶囊', 'developer-starter' ), 'value' => '999px' ),
+                array( 'label' => __( '直角', 'qiling' ), 'value' => '0px' ),
+                array( 'label' => __( '小', 'qiling' ), 'value' => '6px' ),
+                array( 'label' => __( '圆润', 'qiling' ), 'value' => '14px' ),
+                array( 'label' => __( '胶囊', 'qiling' ), 'value' => '999px' ),
             );
         }
 
         if ( false !== strpos( $id, 'padding' ) ) {
             return array(
-                array( 'label' => __( '紧凑', 'developer-starter' ), 'value' => '8px 16px' ),
-                array( 'label' => __( '标准', 'developer-starter' ), 'value' => '12px 24px' ),
-                array( 'label' => __( '舒展', 'developer-starter' ), 'value' => '14px 28px' ),
+                array( 'label' => __( '紧凑', 'qiling' ), 'value' => '8px 16px' ),
+                array( 'label' => __( '标准', 'qiling' ), 'value' => '12px 24px' ),
+                array( 'label' => __( '舒展', 'qiling' ), 'value' => '14px 28px' ),
             );
         }
 
         if ( 'design_animation_speed' === $id ) {
             return array(
-                array( 'label' => __( '快', 'developer-starter' ), 'value' => '0.18s' ),
-                array( 'label' => __( '标准', 'developer-starter' ), 'value' => '0.25s' ),
-                array( 'label' => __( '柔和', 'developer-starter' ), 'value' => '0.35s' ),
+                array( 'label' => __( '快', 'qiling' ), 'value' => '0.18s' ),
+                array( 'label' => __( '标准', 'qiling' ), 'value' => '0.25s' ),
+                array( 'label' => __( '柔和', 'qiling' ), 'value' => '0.35s' ),
             );
         }
 
         if ( false !== strpos( $id, 'letter_spacing' ) ) {
             return array(
-                array( 'label' => __( '默认', 'developer-starter' ), 'value' => '0em' ),
-                array( 'label' => __( '紧凑', 'developer-starter' ), 'value' => '-0.02em' ),
-                array( 'label' => __( '疏朗', 'developer-starter' ), 'value' => '0.04em' ),
+                array( 'label' => __( '默认', 'qiling' ), 'value' => '0em' ),
+                array( 'label' => __( '紧凑', 'qiling' ), 'value' => '-0.02em' ),
+                array( 'label' => __( '疏朗', 'qiling' ), 'value' => '0.04em' ),
             );
         }
 
         if ( 'design_component_module_title_size' === $id ) {
             return array(
-                array( 'label' => __( '小', 'developer-starter' ), 'value' => '1.75rem' ),
-                array( 'label' => __( '标准', 'developer-starter' ), 'value' => '2rem' ),
-                array( 'label' => __( '大', 'developer-starter' ), 'value' => '2.5rem' ),
+                array( 'label' => __( '小', 'qiling' ), 'value' => '1.75rem' ),
+                array( 'label' => __( '标准', 'qiling' ), 'value' => '2rem' ),
+                array( 'label' => __( '大', 'qiling' ), 'value' => '2.5rem' ),
             );
         }
 
         if ( 'design_component_footer_heading_size' === $id ) {
             return array(
-                array( 'label' => __( '小', 'developer-starter' ), 'value' => '16px' ),
-                array( 'label' => __( '标准', 'developer-starter' ), 'value' => '18px' ),
-                array( 'label' => __( '大', 'developer-starter' ), 'value' => '22px' ),
+                array( 'label' => __( '小', 'qiling' ), 'value' => '16px' ),
+                array( 'label' => __( '标准', 'qiling' ), 'value' => '18px' ),
+                array( 'label' => __( '大', 'qiling' ), 'value' => '22px' ),
             );
         }
 
@@ -411,13 +411,13 @@ trait Admin_Settings_Field_Trait {
             'value' => $value,
         ), $attrs );
 
-        $button_label = '' !== (string) $button_label ? (string) $button_label : __( '选择文件', 'developer-starter' );
+        $button_label = '' !== (string) $button_label ? (string) $button_label : __( '选择文件', 'qiling' );
 
         echo '<tr' . $row_attr . '><th scope="row">' . $this->get_field_label_html( $id, $label, $id ) . '</th><td>';
         echo '<div class="ds-file-field">';
         echo '<input' . $this->build_attrs( $attrs ) . ' /> ';
         echo '<button type="button" class="button ds-upload-file-btn" data-title="' . esc_attr( $button_label ) . '">' . esc_html( $button_label ) . '</button> ';
-        echo '<button type="button" class="button ds-remove-file-btn">' . esc_html__( '移除', 'developer-starter' ) . '</button>';
+        echo '<button type="button" class="button ds-remove-file-btn">' . esc_html__( '移除', 'qiling' ) . '</button>';
         echo '</div>';
         if ( $desc ) {
             echo '<p class="description">' . esc_html( $desc ) . '</p>';
@@ -577,7 +577,7 @@ trait Admin_Settings_Field_Trait {
         echo '<tr' . $row_attr . '><th scope="row">' . $this->get_field_label_html( $id, $label, $id ) . '</th>';
         echo '<td><input type="number" id="' . esc_attr( $id ) . '" name="' . $this->option_name . '[' . $id . ']" value="' . esc_attr( $value ) . '" class="small-text" />';
         if ( $value ) {
-            echo ' <a href="' . esc_url( get_permalink( $value ) ) . '" target="_blank">' . __( '查看页面', 'developer-starter' ) . '</a>';
+            echo ' <a href="' . esc_url( get_permalink( $value ) ) . '" target="_blank">' . __( '查看页面', 'qiling' ) . '</a>';
         }
         if ( $desc ) {
             echo '<p class="description">' . esc_html( $desc ) . '</p>';

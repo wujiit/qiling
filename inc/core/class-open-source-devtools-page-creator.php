@@ -29,7 +29,7 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
     protected function get_default_modules( $page_id ) {
         $page_title = get_the_title( $page_id );
         if ( empty( $page_title ) ) {
-            $page_title = __( '开源项目/开发工具官网', 'developer-starter' );
+            $page_title = __( '开源项目/开发工具官网', 'qiling' );
         }
 
         $default_modules = array(
@@ -41,21 +41,21 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                     'db_bg_gradient'     => 'linear-gradient(135deg, #0b1220 0%, #1e3a8a 45%, #0ea5e9 100%)',
                     'db_title_prefix'    => $page_title,
                     'db_typing_mode'     => 'loop',
-                    'db_typing_text'     => __( "现代化开发工具链\nCLI + SDK + 可视化工作台\n开源协作，持续迭代发布", 'developer-starter' ),
+                    'db_typing_text'     => __( "现代化开发工具链\nCLI + SDK + 可视化工作台\n开源协作，持续迭代发布", 'qiling' ),
                     'db_highlight_color' => '#5eead4',
                     'db_title_color'     => '#e2e8f0',
-                    'db_subtitle'        => __( '为开发者团队提供更高效的构建、调试与发布体验。', 'developer-starter' ),
-                    'db_desc'            => __( '预设已包含快速开始、下载入口、版本历程、社区数据和反馈表单。', 'developer-starter' ),
+                    'db_subtitle'        => __( '为开发者团队提供更高效的构建、调试与发布体验。', 'qiling' ),
+                    'db_desc'            => __( '预设已包含快速开始、下载入口、版本历程、社区数据和反馈表单。', 'qiling' ),
                     'db_text_color'      => 'rgba(226,232,240,0.88)',
                     'db_buttons'         => array(
                         array(
-                            'text'  => __( '查看快速开始', 'developer-starter' ),
+                            'text'  => __( '查看快速开始', 'qiling' ),
                             'link'  => '#quickstart',
                             'style' => 'primary',
-                            'icon'  => '🚀',
+                            'icon'  => 'icon-rocket',
                         ),
                         array(
-                            'text'  => __( '下载最新版本', 'developer-starter' ),
+                            'text'  => __( '下载最新版本', 'qiling' ),
                             'link'  => '#downloads',
                             'style' => 'outline',
                             'icon'  => '⬇️',
@@ -75,7 +75,7 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                         ),
                         array(
                             'content_type' => 'badge',
-                            'title'        => __( '每月稳定更新', 'developer-starter' ),
+                            'title'        => __( '每月稳定更新', 'qiling' ),
                             'pos_bottom'   => '10%',
                             'pos_left'     => '-4%',
                             'animation'    => 'pulse',
@@ -87,8 +87,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'tabs',
                 'data' => array(
-                    'tabs_title'            => __( '快速开始', 'developer-starter' ),
-                    'tabs_subtitle'         => __( '3 个步骤完成本地安装与首个项目初始化', 'developer-starter' ),
+                    'tabs_title'            => __( '快速开始', 'qiling' ),
+                    'tabs_subtitle'         => __( '3 个步骤完成本地安装与首个项目初始化', 'qiling' ),
                     'tabs_style'            => 'boxed',
                     'tabs_align'            => 'center',
                     'module_bg_type'        => 'color',
@@ -97,19 +97,19 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                     'module_padding_bottom' => '80px',
                     'tabs_items'            => array(
                         array(
-                            'title'   => __( '安装', 'developer-starter' ),
-                            'icon'    => '📦',
-                            'content' => '<p>' . esc_html__( '通过包管理器安装 CLI 与核心依赖。', 'developer-starter' ) . '</p><pre><code>npm i -g ql-devtools\n# or\nbrew install ql-devtools</code></pre>',
+                            'title'   => __( '安装', 'qiling' ),
+                            'icon'    => 'icon-box',
+                            'content' => '<p>' . esc_html__( '通过包管理器安装 CLI 与核心依赖。', 'qiling' ) . '</p><pre><code>npm i -g ql-devtools\n# or\nbrew install ql-devtools</code></pre>',
                         ),
                         array(
-                            'title'   => __( '初始化项目', 'developer-starter' ),
+                            'title'   => __( '初始化项目', 'qiling' ),
                             'icon'    => '🧩',
-                            'content' => '<p>' . esc_html__( '一键创建模板工程并完成基础配置。', 'developer-starter' ) . '</p><pre><code>ql init my-app\ncd my-app\nql dev</code></pre>',
+                            'content' => '<p>' . esc_html__( '一键创建模板工程并完成基础配置。', 'qiling' ) . '</p><pre><code>ql init my-app\ncd my-app\nql dev</code></pre>',
                         ),
                         array(
-                            'title'   => __( '发布部署', 'developer-starter' ),
-                            'icon'    => '🚀',
-                            'content' => '<p>' . esc_html__( '执行构建与发布命令，支持多环境部署。', 'developer-starter' ) . '</p><pre><code>ql build --prod\nql deploy --env=production</code></pre>',
+                            'title'   => __( '发布部署', 'qiling' ),
+                            'icon'    => 'icon-rocket',
+                            'content' => '<p>' . esc_html__( '执行构建与发布命令，支持多环境部署。', 'qiling' ) . '</p><pre><code>ql build --prod\nql deploy --env=production</code></pre>',
                         ),
                     ),
                 ),
@@ -117,8 +117,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'features_list',
                 'data' => array(
-                    'title'                 => __( '开发工具核心能力', 'developer-starter' ),
-                    'subtitle'              => __( '围绕开发效率、质量保障与协作发布设计', 'developer-starter' ),
+                    'title'                 => __( '开发工具核心能力', 'qiling' ),
+                    'subtitle'              => __( '围绕开发效率、质量保障与协作发布设计', 'qiling' ),
                     'columns'               => '3',
                     'module_bg_type'        => 'color',
                     'module_bg_color'       => '#f8fafc',
@@ -127,21 +127,21 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                     'tabs'                  => array(
                         array(
                             'tab_id'    => 'dev',
-                            'tab_title' => __( '开发体验', 'developer-starter' ),
-                            'tab_icon'  => '⚡',
-                            'features'  => __( "🛠️|本地调试|热更新与断点调试能力完整\n📚|模板脚手架|内置多场景模板快速起步\n🔍|智能提示|命令提示与错误定位更清晰", 'developer-starter' ),
+                            'tab_title' => __( '开发体验', 'qiling' ),
+                            'tab_icon'  => 'icon-flash',
+                            'features'  => __( "icon-tool|本地调试|热更新与断点调试能力完整\n📚|模板脚手架|内置多场景模板快速起步\n🔍|智能提示|命令提示与错误定位更清晰", 'qiling' ),
                         ),
                         array(
                             'tab_id'    => 'quality',
-                            'tab_title' => __( '质量保障', 'developer-starter' ),
+                            'tab_title' => __( '质量保障', 'qiling' ),
                             'tab_icon'  => '✅',
-                            'features'  => __( "🧪|自动测试|集成单测与冒烟测试流程\n🧹|代码规范|内置 lint/format 保障代码一致性\n🛡️|安全检查|依赖漏洞检测与修复建议", 'developer-starter' ),
+                            'features'  => __( "🧪|自动测试|集成单测与冒烟测试流程\n🧹|代码规范|内置 lint/format 保障代码一致性\nicon-shield|安全检查|依赖漏洞检测与修复建议", 'qiling' ),
                         ),
                         array(
                             'tab_id'    => 'release',
-                            'tab_title' => __( '发布协作', 'developer-starter' ),
+                            'tab_title' => __( '发布协作', 'qiling' ),
                             'tab_icon'  => '🤝',
-                            'features'  => __( "🔄|CI/CD 集成|支持主流流水线平台接入\n📦|版本管理|语义化版本与变更日志自动生成\n🌍|多环境部署|测试、预发、生产环境统一管理", 'developer-starter' ),
+                            'features'  => __( "🔄|CI/CD 集成|支持主流流水线平台接入\nicon-box|版本管理|语义化版本与变更日志自动生成\nicon-globe|多环境部署|测试、预发、生产环境统一管理", 'qiling' ),
                         ),
                     ),
                 ),
@@ -149,8 +149,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'downloads',
                 'data' => array(
-                    'downloads_title'       => __( '版本下载', 'developer-starter' ),
-                    'downloads_subtitle'    => __( '按系统和语言选择对应安装包与 SDK', 'developer-starter' ),
+                    'downloads_title'       => __( '版本下载', 'qiling' ),
+                    'downloads_subtitle'    => __( '按系统和语言选择对应安装包与 SDK', 'qiling' ),
                     'downloads_bg_color'    => '#ffffff',
                     'downloads_columns'     => '3',
                     'downloads_items'       => array(
@@ -158,11 +158,11 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                             'title'       => 'CLI for macOS',
                             'size'        => '28 MB',
                             'file'        => '#',
-                            'icon'        => '🍎',
+                            'icon'        => 'icon-apple',
                             'format'      => 'PKG',
                             'date'        => '2026-03-22',
-                            'btn_text'    => __( '下载', 'developer-starter' ),
-                            'description' => __( '适用于 Apple Silicon 与 Intel 芯片。', 'developer-starter' ),
+                            'btn_text'    => __( '下载', 'qiling' ),
+                            'description' => __( '适用于 Apple Silicon 与 Intel 芯片。', 'qiling' ),
                         ),
                         array(
                             'title'       => 'CLI for Windows',
@@ -171,8 +171,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                             'icon'        => '🪟',
                             'format'      => 'EXE',
                             'date'        => '2026-03-22',
-                            'btn_text'    => __( '下载', 'developer-starter' ),
-                            'description' => __( '支持 Win10/Win11，一键安装运行环境。', 'developer-starter' ),
+                            'btn_text'    => __( '下载', 'qiling' ),
+                            'description' => __( '支持 Win10/Win11，一键安装运行环境。', 'qiling' ),
                         ),
                         array(
                             'title'       => 'JavaScript SDK',
@@ -181,8 +181,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                             'icon'        => '🟨',
                             'format'      => 'ZIP',
                             'date'        => '2026-03-22',
-                            'btn_text'    => __( '下载', 'developer-starter' ),
-                            'description' => __( '适配浏览器和 Node.js 环境。', 'developer-starter' ),
+                            'btn_text'    => __( '下载', 'qiling' ),
+                            'description' => __( '适配浏览器和 Node.js 环境。', 'qiling' ),
                         ),
                     ),
                 ),
@@ -190,8 +190,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'github_activity',
                 'data' => array(
-                    'gha_title'          => __( 'GitHub 项目动态', 'developer-starter' ),
-                    'gha_subtitle'       => __( '填入公开仓库地址后，自动展示 Star、Fork、最新 Release 与最近 Commit。', 'developer-starter' ),
+                    'gha_title'          => __( 'GitHub 项目动态', 'qiling' ),
+                    'gha_subtitle'       => __( '填入公开仓库地址后，自动展示 Star、Fork、最新 Release 与最近 Commit。', 'qiling' ),
                     'gha_enable'         => 'no',
                     'gha_repository_url' => '',
                     'gha_show_stats'     => 'yes',
@@ -207,14 +207,14 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'resource_stats',
                 'data' => array(
-                    'rs_title'          => __( '社区与生态数据', 'developer-starter' ),
-                    'rs_subtitle'       => __( '持续活跃的开发者社区与插件生态', 'developer-starter' ),
+                    'rs_title'          => __( '社区与生态数据', 'qiling' ),
+                    'rs_subtitle'       => __( '持续活跃的开发者社区与插件生态', 'qiling' ),
                     'rs_bg_color'       => '#f8fafc',
                     'rs_padding_top'    => '80px',
                     'rs_padding_bottom' => '80px',
                     'rs_stats_list'     => array(
                         array(
-                            'stat_label'  => __( 'GitHub Stars', 'developer-starter' ),
+                            'stat_label'  => __( 'GitHub Stars', 'qiling' ),
                             'stat_icon'   => '⭐',
                             'data_source' => 'custom',
                             'source_id'   => '28000',
@@ -222,15 +222,15 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                             'show_plus'   => 'yes',
                         ),
                         array(
-                            'stat_label'  => __( '月活开发者', 'developer-starter' ),
-                            'stat_icon'   => '👨‍💻',
+                            'stat_label'  => __( '月活开发者', 'qiling' ),
+                            'stat_icon'   => '👨‍icon-laptop',
                             'data_source' => 'custom',
                             'source_id'   => '9600',
                             'virtual_num' => '0',
                             'show_plus'   => 'yes',
                         ),
                         array(
-                            'stat_label'  => __( '插件数量', 'developer-starter' ),
+                            'stat_label'  => __( '插件数量', 'qiling' ),
                             'stat_icon'   => '🧩',
                             'data_source' => 'custom',
                             'source_id'   => '430',
@@ -238,7 +238,7 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
                             'show_plus'   => 'yes',
                         ),
                         array(
-                            'stat_label'  => __( '贡献者', 'developer-starter' ),
+                            'stat_label'  => __( '贡献者', 'qiling' ),
                             'stat_icon'   => '🤝',
                             'data_source' => 'custom',
                             'source_id'   => '540',
@@ -251,27 +251,27 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'timeline',
                 'data' => array(
-                    'timeline_title'          => __( '版本演进路线', 'developer-starter' ),
+                    'timeline_title'          => __( '版本演进路线', 'qiling' ),
                     'timeline_items'          => array(
                         array(
                             'year'  => 'v1.0',
-                            'title' => __( '核心 CLI 发布', 'developer-starter' ),
-                            'desc'  => __( '上线项目初始化、构建、发布的基础命令能力。', 'developer-starter' ),
+                            'title' => __( '核心 CLI 发布', 'qiling' ),
+                            'desc'  => __( '上线项目初始化、构建、发布的基础命令能力。', 'qiling' ),
                         ),
                         array(
                             'year'  => 'v1.5',
-                            'title' => __( '插件系统开放', 'developer-starter' ),
-                            'desc'  => __( '支持第三方插件扩展和能力复用。', 'developer-starter' ),
+                            'title' => __( '插件系统开放', 'qiling' ),
+                            'desc'  => __( '支持第三方插件扩展和能力复用。', 'qiling' ),
                         ),
                         array(
                             'year'  => 'v2.0',
-                            'title' => __( '可视化工作台', 'developer-starter' ),
-                            'desc'  => __( '新增可视化配置和团队协作功能。', 'developer-starter' ),
+                            'title' => __( '可视化工作台', 'qiling' ),
+                            'desc'  => __( '新增可视化配置和团队协作功能。', 'qiling' ),
                         ),
                         array(
                             'year'  => 'v2.2',
-                            'title' => __( '企业级发布能力', 'developer-starter' ),
-                            'desc'  => __( '支持多环境发布审批、回滚和审计记录。', 'developer-starter' ),
+                            'title' => __( '企业级发布能力', 'qiling' ),
+                            'desc'  => __( '支持多环境发布审批、回滚和审计记录。', 'qiling' ),
                         ),
                     ),
                     'module_bg_color'         => '#ffffff',
@@ -283,8 +283,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'blog',
                 'data' => array(
-                    'blog_title'              => __( '更新日志与技术文章', 'developer-starter' ),
-                    'blog_subtitle'           => __( '跟进版本更新、实践指南与最佳实践', 'developer-starter' ),
+                    'blog_title'              => __( '更新日志与技术文章', 'qiling' ),
+                    'blog_subtitle'           => __( '跟进版本更新、实践指南与最佳实践', 'qiling' ),
                     'blog_bg_color'           => '#f8fafc',
                     'blog_page_layout'        => 'full',
                     'blog_layout_style'       => 'card',
@@ -303,27 +303,27 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'faq',
                 'data' => array(
-                    'faq_title'             => __( '常见问题', 'developer-starter' ),
-                    'faq_subtitle'          => __( '关于安装、兼容性和贡献流程的说明', 'developer-starter' ),
+                    'faq_title'             => __( '常见问题', 'qiling' ),
+                    'faq_subtitle'          => __( '关于安装、兼容性和贡献流程的说明', 'qiling' ),
                     'module_bg_color'       => '#ffffff',
                     'module_padding_top'    => '80px',
                     'module_padding_bottom' => '80px',
                     'faq_items'             => array(
                         array(
-                            'question' => __( '是否支持离线环境安装？', 'developer-starter' ),
-                            'answer'   => __( '支持离线安装包和镜像源配置，适配受限网络场景。', 'developer-starter' ),
+                            'question' => __( '是否支持离线环境安装？', 'qiling' ),
+                            'answer'   => __( '支持离线安装包和镜像源配置，适配受限网络场景。', 'qiling' ),
                         ),
                         array(
-                            'question' => __( '如何参与开源贡献？', 'developer-starter' ),
-                            'answer'   => __( '可通过 Issue/PR 提交改进，遵循仓库的贡献指南。', 'developer-starter' ),
+                            'question' => __( '如何参与开源贡献？', 'qiling' ),
+                            'answer'   => __( '可通过 Issue/PR 提交改进，遵循仓库的贡献指南。', 'qiling' ),
                         ),
                         array(
-                            'question' => __( '版本升级会破坏已有工程吗？', 'developer-starter' ),
-                            'answer'   => __( '采用语义化版本策略，并提供迁移脚本和升级提示。', 'developer-starter' ),
+                            'question' => __( '版本升级会破坏已有工程吗？', 'qiling' ),
+                            'answer'   => __( '采用语义化版本策略，并提供迁移脚本和升级提示。', 'qiling' ),
                         ),
                         array(
-                            'question' => __( '是否有企业支持版本？', 'developer-starter' ),
-                            'answer'   => __( '提供企业支持计划，包含 SLA 与专属技术支持。', 'developer-starter' ),
+                            'question' => __( '是否有企业支持版本？', 'qiling' ),
+                            'answer'   => __( '提供企业支持计划，包含 SLA 与专属技术支持。', 'qiling' ),
                         ),
                     ),
                 ),
@@ -331,8 +331,8 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'contact',
                 'data' => array(
-                    'contact_title'          => __( '社区反馈与合作', 'developer-starter' ),
-                    'contact_subtitle'       => __( '提交问题、需求或合作意向，我们会尽快回复。', 'developer-starter' ),
+                    'contact_title'          => __( '社区反馈与合作', 'qiling' ),
+                    'contact_subtitle'       => __( '提交问题、需求或合作意向，我们会尽快回复。', 'qiling' ),
                     'contact_show_form'      => '1',
                     'contact_form_id'        => '',
                     'module_bg_type'         => 'color',
@@ -344,9 +344,9 @@ class Open_Source_DevTools_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'cta',
                 'data' => array(
-                    'cta_title'             => __( '现在就开始构建你的开发工作流', 'developer-starter' ),
-                    'cta_subtitle'          => __( '开源协作 + 工具链标准化，让团队交付更快更稳。', 'developer-starter' ),
-                    'cta_button_text'       => __( '立即下载', 'developer-starter' ),
+                    'cta_title'             => __( '现在就开始构建你的开发工作流', 'qiling' ),
+                    'cta_subtitle'          => __( '开源协作 + 工具链标准化，让团队交付更快更稳。', 'qiling' ),
+                    'cta_button_text'       => __( '立即下载', 'qiling' ),
                     'cta_button_url'        => '#downloads',
                     'cta_bg_type'           => 'color',
                     'cta_bg_color'          => 'linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%)',

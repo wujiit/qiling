@@ -424,7 +424,7 @@ class SEO_Manager {
                 if ( ! empty( $term_desc ) ) {
                     return trim( wp_strip_all_tags( $term_desc ) );
                 }
-                return sprintf( __( '标签「%s」相关文章聚合页。', 'developer-starter' ), $tag->name );
+                return sprintf( __( '标签「%s」相关文章聚合页。', 'qiling' ), $tag->name );
             }
         }
         // 其他页面（分类、标签、归档等）

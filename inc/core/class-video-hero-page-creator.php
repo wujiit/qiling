@@ -36,14 +36,14 @@ class Video_Hero_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'fullscreen_video',
                 'data' => array(
-                    'fsv_title'           => __( '启灵主题 · <strong>超乎想象</strong>', 'developer-starter' ),
-                    'fsv_subtitle'        => __( '极速开发 · 优雅设计 · 极致体验', 'developer-starter' ),
+                    'fsv_title'           => __( '启灵主题 · <strong>超乎想象</strong>', 'qiling' ),
+                    'fsv_subtitle'        => __( '极速开发 · 优雅设计 · 极致体验', 'qiling' ),
                     'fsv_glow_intensity'  => 'medium',
                     'fsv_overlay_opacity' => '0.3',
                     'fsv_nav_items'       => array(
-                        array( 'item_label' => __( '快速入门', 'developer-starter' ), 'item_icon' => '🚀', 'item_type' => 'link', 'item_link' => '#' ),
-                        array( 'item_label' => __( '功能特性', 'developer-starter' ), 'item_icon' => '⚡', 'item_type' => 'link', 'item_link' => '#' ),
-                        array( 'item_label' => __( '扫码体验', 'developer-starter' ), 'item_icon' => '📱', 'item_type' => 'qr', 'item_qr_desc' => __( '扫码查看移动端', 'developer-starter' ), 'item_qr' => '' ),
+                        array( 'item_label' => __( '快速入门', 'qiling' ), 'item_icon' => 'icon-rocket', 'item_type' => 'link', 'item_link' => '#' ),
+                        array( 'item_label' => __( '功能特性', 'qiling' ), 'item_icon' => 'icon-flash', 'item_type' => 'link', 'item_link' => '#' ),
+                        array( 'item_label' => __( '扫码体验', 'qiling' ), 'item_icon' => '📱', 'item_type' => 'qr', 'item_qr_desc' => __( '扫码查看移动端', 'qiling' ), 'item_qr' => '' ),
                     ),
                 ),
             ),
@@ -52,14 +52,14 @@ class Video_Hero_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'features',
                 'data' => array(
-                    'features_title'    => __( '核心优势', 'developer-starter' ),
-                    'features_subtitle' => __( '为什么选择启灵主题？', 'developer-starter' ),
+                    'features_title'    => __( '核心优势', 'qiling' ),
+                    'features_subtitle' => __( '为什么选择启灵主题？', 'qiling' ),
                     'features_columns'  => '4',
                     'features_items'    => array(
-                        array( 'icon' => '⚡', 'title' => __( '极致性能', 'developer-starter' ), 'desc' => __( '底层代码优化，秒开体验', 'developer-starter' ) ),
-                        array( 'icon' => '📱', 'title' => __( '全端适配', 'developer-starter' ), 'desc' => __( '完美兼容手机、平板和PC', 'developer-starter' ) ),
-                        array( 'icon' => '🛡️', 'title' => __( '安全稳定', 'developer-starter' ), 'desc' => __( '企业级安全防护标准', 'developer-starter' ) ),
-                        array( 'icon' => '🔄', 'title' => __( '持续更新', 'developer-starter' ), 'desc' => __( '源源不断的新功能支持', 'developer-starter' ) ),
+                        array( 'icon' => 'icon-flash', 'title' => __( '极致性能', 'qiling' ), 'desc' => __( '底层代码优化，秒开体验', 'qiling' ) ),
+                        array( 'icon' => '📱', 'title' => __( '全端适配', 'qiling' ), 'desc' => __( '完美兼容手机、平板和PC', 'qiling' ) ),
+                        array( 'icon' => 'icon-shield', 'title' => __( '安全稳定', 'qiling' ), 'desc' => __( '企业级安全防护标准', 'qiling' ) ),
+                        array( 'icon' => '🔄', 'title' => __( '持续更新', 'qiling' ), 'desc' => __( '源源不断的新功能支持', 'qiling' ) ),
                     ),
                 ),
             ),
@@ -68,9 +68,9 @@ class Video_Hero_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'cta',
                 'data' => array(
-                    'cta_title'       => __( '准备好开始了吗？', 'developer-starter' ),
-                    'cta_subtitle'    => __( '立即体验功能强大的企业级 WordPress 主题', 'developer-starter' ),
-                    'cta_button_text' => __( '🔥 立即购买', 'developer-starter' ),
+                    'cta_title'       => __( '准备好开始了吗？', 'qiling' ),
+                    'cta_subtitle'    => __( '立即体验功能强大的企业级 WordPress 主题', 'qiling' ),
+                    'cta_button_text' => __( 'icon-fire 立即购买', 'qiling' ),
                     'cta_button_url'  => '#',
                 ),
             ),

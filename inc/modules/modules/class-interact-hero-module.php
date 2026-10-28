@@ -18,7 +18,7 @@ class Interact_Hero_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage'; // 分类：首页
         $this->icon = 'dashicons-desktop'; // 图标
-        $this->description = __( '高度自定义的交互式首屏Banner，支持视频/图片切换，底部带特性卡片。', 'developer-starter' );
+        $this->description = __( '高度自定义的交互式首屏Banner，支持视频/图片切换，底部带特性卡片。', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Interact_Hero_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '交互首屏Banner', 'developer-starter' );
+        return __( '交互首屏Banner', 'qiling' );
     }
 
     /**
@@ -38,159 +38,159 @@ class Interact_Hero_Module extends Module_Base {
             array(
                 'id' => 'badge_text',
                 'type' => 'text',
-                'label' => __( '顶部小标签 (Badge)', 'developer-starter' ),
+                'label' => __( '顶部小标签 (Badge)', 'qiling' ),
                 'default' => 'NEW 2.0',
-                'desc' => __( '标题上方的小黑标，留空不显示', 'developer-starter' ),
+                'desc' => __( '标题上方的小黑标，留空不显示', 'qiling' ),
             ),
             array(
                 'id' => 'hero_title_content',   // Renamed for HTML support
                 'type' => 'textarea',
-                'label' => __( '主标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题 · 全新一代', 'Qiling Theme, a new generation' ) : __( '启灵主题 · 全新一代', 'developer-starter' ),
-                'desc' => __( '支持HTML标签，如 &lt;span style="color:var(--color-primary)"&gt;高亮文字&lt;/span&gt;', 'developer-starter' ),
+                'label' => __( '主标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题 · 全新一代', 'Qiling Theme, a new generation' ) : __( '启灵主题 · 全新一代', 'qiling' ),
+                'desc' => __( '支持HTML标签，如 &lt;span style="color:var(--color-primary)"&gt;高亮文字&lt;/span&gt;', 'qiling' ),
             ),
             array(
                 'id' => 'hero_subtitle_content', // Helper for consistency, though 'subtitle' keyword works too
                 'type' => 'textarea',
-                'label' => __( '副标题/描述', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '不仅是好看，更是强大的生产力工具。', 'More than beautiful, it is built to help teams ship faster.' ) : __( '不仅是好看，更是强大的生产力工具。', 'developer-starter' ),
-                'desc' => __( '支持HTML标签', 'developer-starter' ),
+                'label' => __( '副标题/描述', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '不仅是好看，更是强大的生产力工具。', 'More than beautiful, it is built to help teams ship faster.' ) : __( '不仅是好看，更是强大的生产力工具。', 'qiling' ),
+                'desc' => __( '支持HTML标签', 'qiling' ),
             ),
             array(
                 'id' => 'btn_primary_content',  // Renamed for HTML support
                 'type' => 'textarea',
-                'label' => __( '主按钮文字', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即体验', 'Start Now' ) : __( '立即体验', 'developer-starter' ),
-                'desc' => __( '支持HTML标签 (如 &lt;span style="color:yellow"&gt;TEXT&lt;/span&gt;)', 'developer-starter' ),
+                'label' => __( '主按钮文字', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即体验', 'Start Now' ) : __( '立即体验', 'qiling' ),
+                'desc' => __( '支持HTML标签 (如 &lt;span style="color:yellow"&gt;TEXT&lt;/span&gt;)', 'qiling' ),
             ),
             array(
                 'id' => 'btn_primary_icon',
                 'type' => 'text',
-                'label' => __( '主按钮图标 (可选)', 'developer-starter' ),
+                'label' => __( '主按钮图标 (可选)', 'qiling' ),
                 'default' => '',
-                'desc' => __( '支持Emoji(💡)或Symbol类名(如 icon-download)', 'developer-starter' ),
+                'desc' => __( '支持图标类名(如 icon-download)或SVG代码', 'qiling' ),
             ),
             array(
                 'id' => 'btn_primary_link',
                 'type' => 'text',
-                'label' => __( '主按钮链接', 'developer-starter' ),
+                'label' => __( '主按钮链接', 'qiling' ),
                 'default' => '#',
             ),
             array(
                 'id' => 'btn_primary_bg_color',
                 'type' => 'color',
-                'label' => __( '主按钮背景色', 'developer-starter' ),
-                'desc' => __( '留空则使用默认强调色', 'developer-starter' ),
+                'label' => __( '主按钮背景色', 'qiling' ),
+                'desc' => __( '留空则使用默认强调色', 'qiling' ),
             ),
             array(
                 'id' => 'btn_primary_text_color',
                 'type' => 'color',
-                'label' => __( '主按钮文本色', 'developer-starter' ),
-                'desc' => __( '留空则使用主按钮默认白色', 'developer-starter' ),
+                'label' => __( '主按钮文本色', 'qiling' ),
+                'desc' => __( '留空则使用主按钮默认白色', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'btn_primary_border_color', __( '主按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'btn_primary_border_color', __( '主按钮边框颜色', 'qiling' ) ),
 
             array(
                 'id' => 'btn_secondary_content', // Renamed for HTML support
                 'type' => 'textarea',
-                'label' => __( '次要按钮文字', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'developer-starter' ),
-                'desc' => __( '支持HTML标签', 'developer-starter' ),
+                'label' => __( '次要按钮文字', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ),
+                'desc' => __( '支持HTML标签', 'qiling' ),
             ),
             array(
                 'id' => 'btn_secondary_icon',
                 'type' => 'text',
-                'label' => __( '次要按钮图标 (可选)', 'developer-starter' ),
+                'label' => __( '次要按钮图标 (可选)', 'qiling' ),
                 'default' => '',
-                'desc' => __( '支持Emoji或Symbol类名', 'developer-starter' ),
+                'desc' => __( '支持Emoji或Symbol类名', 'qiling' ),
             ),
             array(
                 'id' => 'btn_secondary_link',
                 'type' => 'text',
-                'label' => __( '次要按钮链接', 'developer-starter' ),
+                'label' => __( '次要按钮链接', 'qiling' ),
                 'default' => '#',
             ),
             array(
                 'id' => 'btn_secondary_bg_color',
                 'type' => 'color',
-                'label' => __( '次要按钮背景色', 'developer-starter' ),
-                'desc' => __( '留空则使用默认淡灰色', 'developer-starter' ),
+                'label' => __( '次要按钮背景色', 'qiling' ),
+                'desc' => __( '留空则使用默认淡灰色', 'qiling' ),
             ),
             array(
                 'id' => 'btn_secondary_text_color',
                 'type' => 'color',
-                'label' => __( '次要按钮文本色', 'developer-starter' ),
-                'desc' => __( '留空则使用默认深色', 'developer-starter' ),
+                'label' => __( '次要按钮文本色', 'qiling' ),
+                'desc' => __( '留空则使用默认深色', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'btn_secondary_border_color', __( '次要按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'btn_secondary_border_color', __( '次要按钮边框颜色', 'qiling' ) ),
 
             // --- 右侧媒体设置 ---
             array(
                 'id' => 'media_type',
                 'type' => 'select',
-                'label' => __( '媒体类型', 'developer-starter' ),
+                'label' => __( '媒体类型', 'qiling' ),
                 'options' => array(
-                    'image' => __( '图片模式', 'developer-starter' ),
-                    'video' => __( '视频模式', 'developer-starter' ),
+                    'image' => __( '图片模式', 'qiling' ),
+                    'video' => __( '视频模式', 'qiling' ),
                 ),
                 'default' => 'image',
             ),
             array(
                 'id' => 'hero_image',
                 'type' => 'image',
-                'label' => __( '上传图片', 'developer-starter' ),
+                'label' => __( '上传图片', 'qiling' ),
                 'dependency' => array( 'media_type', '==', 'image' ),
-                'desc' => __( '建议尺寸：800x600px 透明PNG效果最佳', 'developer-starter' ),
+                'desc' => __( '建议尺寸：800x600px 透明PNG效果最佳', 'qiling' ),
             ),
             array(
                 'id' => 'hero_video',
                 'type' => 'upload',
-                'label' => __( '上传视频 (MP4)', 'developer-starter' ),
+                'label' => __( '上传视频 (MP4)', 'qiling' ),
                 'dependency' => array( 'media_type', '==', 'video' ),
-                'desc' => __( '建议使用无背景或融合背景的WebM/MP4视频', 'developer-starter' ),
+                'desc' => __( '建议使用无背景或融合背景的WebM/MP4视频', 'qiling' ),
             ),
             array(
                 'id' => 'enable_float_anim',
                 'type' => 'switcher',
-                'label' => __( '开启悬浮呼吸动画', 'developer-starter' ),
+                'label' => __( '开启悬浮呼吸动画', 'qiling' ),
                 'default' => 'yes',
-                'desc' => __( '右侧媒体是否上下浮动', 'developer-starter' ),
+                'desc' => __( '右侧媒体是否上下浮动', 'qiling' ),
             ),
 
             // --- 底部卡片设置 ---
             array(
                 'id' => 'feature_items',
                 'type' => 'repeater',
-                'label' => __( '特性卡片列表 (建议4-5项)', 'developer-starter' ),
+                'label' => __( '特性卡片列表 (建议4-5项)', 'qiling' ),
                 'default_items' => $this->get_demo_data()['feature_items'],
                 'fields' => array(
                     array( 
                         'id' => 'f_icon_type', 
                         'type' => 'select', 
-                        'label' => __( '图标类型', 'developer-starter' ),
+                        'label' => __( '图标类型', 'qiling' ),
                         'options' => array(
-                            'image' => __( '图片/SVG', 'developer-starter' ),
-                            'class' => __( 'Symbol/Emoji', 'developer-starter' ),
+                            'image' => __( '图片/SVG', 'qiling' ),
+                            'class' => __( 'Symbol/Emoji', 'qiling' ),
                         ),
                         'default' => 'image',
                     ),
                     array( 
                         'id' => 'f_icon', 
                         'type' => 'image', 
-                        'label' => __( '上传图标', 'developer-starter' ),
+                        'label' => __( '上传图标', 'qiling' ),
                         'dependency' => array( 'f_icon_type', '==', 'image' )
                     ),
                     array( 
                         'id' => 'f_icon_class', 
                         'type' => 'text', 
-                        'label' => __( '图标类名或Emoji', 'developer-starter' ), 
-                        'desc' => __( '例如: icon-weibo 或 🚀', 'developer-starter' ),
+                        'label' => __( '图标类名或SVG代码', 'qiling' ), 
+                        'desc' => __( '例如: icon-weibo、icon-rocket 或 SVG 代码', 'qiling' ),
                         'dependency' => array( 'f_icon_type', '==', 'class' )
                     ),
-                    array( 'id' => 'f_title_content', 'type' => 'textarea', 'label' => __( '标题 (支持HTML)', 'developer-starter' ), 'default' => __( '特性标题', 'developer-starter' ) ),
-                    array( 'id' => 'f_desc', 'type' => 'textarea', 'label' => __( '描述 (支持HTML)', 'developer-starter' ), 'default' => __( '简短的描述文本', 'developer-starter' ) ),
-                    array( 'id' => 'f_link', 'type' => 'text', 'label' => __( '链接 (可选)', 'developer-starter' ) ),
-                    array( 'id' => 'f_bg_color', 'type' => 'color', 'label' => __( '卡片自定义背景', 'developer-starter' ), 'desc' => __( '留空则使用默认半透明磨砂白', 'developer-starter' ) ),
+                    array( 'id' => 'f_title_content', 'type' => 'textarea', 'label' => __( '标题 (支持HTML)', 'qiling' ), 'default' => __( '特性标题', 'qiling' ) ),
+                    array( 'id' => 'f_desc', 'type' => 'textarea', 'label' => __( '描述 (支持HTML)', 'qiling' ), 'default' => __( '简短的描述文本', 'qiling' ) ),
+                    array( 'id' => 'f_link', 'type' => 'text', 'label' => __( '链接 (可选)', 'qiling' ) ),
+                    array( 'id' => 'f_bg_color', 'type' => 'color', 'label' => __( '卡片自定义背景', 'qiling' ), 'desc' => __( '留空则使用默认半透明磨砂白', 'qiling' ) ),
                 ),
             ),
 
@@ -198,31 +198,31 @@ class Interact_Hero_Module extends Module_Base {
             array(
                 'id' => 'bg_color',
                 'type' => 'color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'default' => 'var(--qiling-color-ebf7f8)', // 类似360的淡蓝灰
             ),
             array(
                 'id' => 'text_color',
                 'type' => 'color',
-                'label' => __( '文本颜色', 'developer-starter' ),
+                'label' => __( '文本颜色', 'qiling' ),
                 'default' => 'var(--qiling-color-333333)',
             ),
             array(
                 'id' => 'highlight_color',
                 'type' => 'color',
-                'label' => __( '强调色 (按钮/Hover)', 'developer-starter' ),
+                'label' => __( '强调色 (按钮/Hover)', 'qiling' ),
                 'default' => 'var(--qiling-color-00e09f)', // 360 Green
             ),
             array(
                 'id' => 'padding_top',
                 'type' => 'text',
-                'label' => __( '上边距', 'developer-starter' ),
+                'label' => __( '上边距', 'qiling' ),
                 'default' => '100px',
             ),
             array(
                 'id' => 'padding_bottom',
                 'type' => 'text',
-                'label' => __( '下边距', 'developer-starter' ),
+                'label' => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
         );
@@ -230,17 +230,17 @@ class Interact_Hero_Module extends Module_Base {
 
     public function get_demo_data() {
         return array(
-            'hero_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题<br>为专业开发者打造', 'Qiling Theme<br>built for professional teams' ) : __( '启灵主题<br>为专业开发者打造', 'developer-starter' ),
-            'hero_subtitle_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '集成了强大的模块化系统，让开发更简单，让界面更出众。', 'A modular system that keeps building simple and presentation polished.' ) : __( '集成了强大的模块化系统，让开发更简单，让界面更出众。', 'developer-starter' ),
+            'hero_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题<br>为专业开发者打造', 'Qiling Theme<br>built for professional teams' ) : __( '启灵主题<br>为专业开发者打造', 'qiling' ),
+            'hero_subtitle_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '集成了强大的模块化系统，让开发更简单，让界面更出众。', 'A modular system that keeps building simple and presentation polished.' ) : __( '集成了强大的模块化系统，让开发更简单，让界面更出众。', 'qiling' ),
             'badge_text' => 'V3.0 Pro',
             'media_type' => 'image',
             'bg_color' => 'var(--qiling-color-ebf7f8)',
             'highlight_color' => 'var(--qiling-color-00e09f)',
             'feature_items' => array(
-                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极速开发', 'Fast Setup' ) : __( '极速开发', 'developer-starter' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内置多种开发工具', 'Built-in tools for a quicker launch workflow.' ) : __( '内置多种开发工具', 'developer-starter' ), 'f_icon_type' => 'class', 'f_icon_class' => '🚀' ),
-                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '美观设计', 'Refined Design' ) : __( '美观设计', 'developer-starter' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '遵循现代设计规范', 'Crafted with a clean and modern visual system.' ) : __( '遵循现代设计规范', 'developer-starter' ), 'f_icon_type' => 'class', 'f_icon_class' => '💎' ),
-                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '响应式布局', 'Responsive Layouts' ) : __( '响应式布局', 'developer-starter' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '完美适配所有终端', 'Ready for desktop, tablet, and mobile screens.' ) : __( '完美适配所有终端', 'developer-starter' ), 'f_icon_type' => 'class', 'f_icon_class' => '📱' ),
-                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '持续更新', 'Ongoing Updates' ) : __( '持续更新', 'developer-starter' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '每周功能迭代优化', 'Continuous improvements to keep the product current.' ) : __( '每周功能迭代优化', 'developer-starter' ), 'f_icon_type' => 'class', 'f_icon_class' => '🔄' ),
+                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '极速开发', 'Fast Setup' ) : __( '极速开发', 'qiling' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '内置多种开发工具', 'Built-in tools for a quicker launch workflow.' ) : __( '内置多种开发工具', 'qiling' ), 'f_icon_type' => 'class', 'f_icon_class' => '' ),
+                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '美观设计', 'Refined Design' ) : __( '美观设计', 'qiling' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '遵循现代设计规范', 'Crafted with a clean and modern visual system.' ) : __( '遵循现代设计规范', 'qiling' ), 'f_icon_type' => 'class', 'f_icon_class' => '' ),
+                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '响应式布局', 'Responsive Layouts' ) : __( '响应式布局', 'qiling' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '完美适配所有终端', 'Ready for desktop, tablet, and mobile screens.' ) : __( '完美适配所有终端', 'qiling' ), 'f_icon_type' => 'class', 'f_icon_class' => '' ),
+                array( 'f_title_content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '持续更新', 'Ongoing Updates' ) : __( '持续更新', 'qiling' ), 'f_desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '每周功能迭代优化', 'Continuous improvements to keep the product current.' ) : __( '每周功能迭代优化', 'qiling' ), 'f_icon_type' => 'class', 'f_icon_class' => '' ),
             ),
         );
     }
@@ -251,13 +251,13 @@ class Interact_Hero_Module extends Module_Base {
     public function render( $data = array() ) {
         // 数据提取
         $badge = isset($data['badge_text']) ? $data['badge_text'] : '';
-        $title = isset($data['hero_title_content']) ? $data['hero_title_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题 · 全新一代', 'Qiling Theme, a new generation' ) : __( '启灵主题 · 全新一代', 'developer-starter' ) );
-        $subtitle = isset($data['hero_subtitle_content']) ? $data['hero_subtitle_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '不仅是好看，更是强大的生产力工具。', 'More than beautiful, it is built to help teams ship faster.' ) : __( '不仅是好看，更是强大的生产力工具。', 'developer-starter' ) );
+        $title = isset($data['hero_title_content']) ? $data['hero_title_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题 · 全新一代', 'Qiling Theme, a new generation' ) : __( '启灵主题 · 全新一代', 'qiling' ) );
+        $subtitle = isset($data['hero_subtitle_content']) ? $data['hero_subtitle_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '不仅是好看，更是强大的生产力工具。', 'More than beautiful, it is built to help teams ship faster.' ) : __( '不仅是好看，更是强大的生产力工具。', 'qiling' ) );
         // 兼容旧版数据字段名
         if(empty($title) && isset($data['hero_title'])) $title = $data['hero_title'];
         if(empty($subtitle) && isset($data['hero_subtitle'])) $subtitle = $data['hero_subtitle'];
         
-        $btn1_text = isset($data['btn_primary_content']) ? $data['btn_primary_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即体验', 'Start Now' ) : __( '立即体验', 'developer-starter' ) );
+        $btn1_text = isset($data['btn_primary_content']) ? $data['btn_primary_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即体验', 'Start Now' ) : __( '立即体验', 'qiling' ) );
         if(empty($btn1_text) && isset($data['btn_primary_text'])) $btn1_text = $data['btn_primary_text'];
 
         $btn1_icon = isset($data['btn_primary_icon']) ? $data['btn_primary_icon'] : '';
@@ -266,7 +266,7 @@ class Interact_Hero_Module extends Module_Base {
         $btn1_color = isset($data['btn_primary_text_color']) ? $data['btn_primary_text_color'] : '';
         $btn1_border = isset($data['btn_primary_border_color']) ? $data['btn_primary_border_color'] : '';
         
-        $btn2_text = isset($data['btn_secondary_content']) ? $data['btn_secondary_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'developer-starter' ) );
+        $btn2_text = isset($data['btn_secondary_content']) ? $data['btn_secondary_content'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ) );
         if(empty($btn2_text) && isset($data['btn_secondary_text'])) $btn2_text = $data['btn_secondary_text'];
 
         $btn2_icon = isset($data['btn_secondary_icon']) ? $data['btn_secondary_icon'] : '';
@@ -369,7 +369,7 @@ class Interact_Hero_Module extends Module_Base {
                             <?php else : ?>
                                 <!-- 占位符 -->
                                 <div style="width: 400px; height: 300px; background: var(--qiling-color-rgba-0-0-0-01); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
-                                    <span><?php esc_html_e( '未设置媒体', 'developer-starter' ); ?></span>
+                                    <span><?php esc_html_e( '未设置媒体', 'qiling' ); ?></span>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -397,6 +397,7 @@ class Interact_Hero_Module extends Module_Base {
                         $card_style = $f_bg ? "style='background-color: {$f_bg} !important; border-color: var(--qiling-color-rgba-0-0-0-005);'" : "";
                     ?>
                         <<?php echo $tag; ?> class="ql-ih-card" <?php echo $href; ?> <?php echo $card_style; ?>>
+                            <?php if ( ( $f_icon_type === 'class' && $f_icon_class ) || ( $f_icon_type === 'image' && $f_icon ) ) : ?>
                             <div class="ql-ih-card-icon">
                                 <?php if ( $f_icon_type === 'class' && $f_icon_class ) : ?>
                                     <!-- Icon Class or Emoji -->
@@ -408,6 +409,7 @@ class Interact_Hero_Module extends Module_Base {
                                     <img src="<?php echo esc_url( $f_icon ); ?>" alt="icon">
                                 <?php endif; ?>
                             </div>
+                            <?php endif; ?>
                             
                             <div class="ql-ih-card-info">
                                 <h4><?php echo wp_kses_post( $f_title ); ?></h4>

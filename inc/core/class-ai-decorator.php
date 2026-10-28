@@ -154,7 +154,7 @@ class AI_Decorator {
         );
 
         if ( 'client' === $mode ) {
-            $context['notice'] = __( '高级设置可保持默认，无需额外填写。', 'developer-starter' );
+            $context['notice'] = __( '高级设置可保持默认，无需额外填写。', 'qiling' );
         } else {
             $context['rules'] = array(
                 '如需输出高级协议字段，只能使用 reserved_field_ids 里给出的根字段',
@@ -235,11 +235,11 @@ class AI_Decorator {
                 'seo_assist',
             ),
             'blocked_task'            => 'online_whole_site_generation',
-            'reason'                  => __( '在线 AI 生成整站耗时长且体验不可控，启灵主题仅支持当前单页和单模块 AI 装修。', 'developer-starter' ),
+            'reason'                  => __( '在线 AI 生成整站耗时长且体验不可控，启灵主题仅支持当前单页和单模块 AI 装修。', 'qiling' ),
         );
 
         if ( 'client' === $mode ) {
-            $policy['notice'] = __( '当前工具用于当前单页或当前模块，可辅助生成 SEO 内容。', 'developer-starter' );
+            $policy['notice'] = __( '当前工具用于当前单页或当前模块，可辅助生成 SEO 内容。', 'qiling' );
         } else {
             $policy['prompt_rules'] = array(
                 '本次请求只能生成或优化当前单页，max_pages_per_request 固定为 1',
@@ -299,17 +299,17 @@ class AI_Decorator {
             'supportsBatch'       => true,
             'supportsLanguagePage'=> true,
             'providerAvailable'   => function_exists( 'xb_aifanyi_upsert_theme_localization' ),
-            'providerLabel'       => __( '启灵AI多语言', 'developer-starter' ),
+            'providerLabel'       => __( '启灵AI多语言', 'qiling' ),
             'languages'           => $this->get_ai_localization_language_choices(),
             'tones'               => $this->get_ai_localization_tone_choices(),
             'industryTonePacks'   => $this->get_ai_localization_industry_tone_packs(),
             'batchContentTypes'   => $this->get_ai_localization_batch_content_types(),
             'defaultCurrency'     => 'USD',
             'rules'               => array(
-                __( '支持单模块和整页本地化；整页模式仍只改已有页面包中的文案字段。', 'developer-starter' ),
-                __( '本次仅优化文字内容，布局、样式、图片、图标、链接和数据连接保持不变。', 'developer-starter' ),
-                __( '可选择同步到启灵AI多语言译文记录，并生成对应语言页面。', 'developer-starter' ),
-                __( '生成结果会先进入 diff 待应用状态，确认后才会修改当前页面。', 'developer-starter' ),
+                __( '支持单模块和整页本地化；整页模式仍只改已有页面包中的文案字段。', 'qiling' ),
+                __( '本次仅优化文字内容，布局、样式、图片、图标、链接和数据连接保持不变。', 'qiling' ),
+                __( '可选择同步到启灵AI多语言译文记录，并生成对应语言页面。', 'qiling' ),
+                __( '生成结果会先进入 diff 待应用状态，确认后才会修改当前页面。', 'qiling' ),
             ),
         );
     }
@@ -321,12 +321,12 @@ class AI_Decorator {
      */
     public function get_ai_localization_language_choices() {
         return array(
-            'en' => __( '英文', 'developer-starter' ),
-            'ja' => __( '日文', 'developer-starter' ),
-            'ko' => __( '韩文', 'developer-starter' ),
-            'fr' => __( '法文', 'developer-starter' ),
-            'de' => __( '德文', 'developer-starter' ),
-            'es' => __( '西班牙文', 'developer-starter' ),
+            'en' => __( '英文', 'qiling' ),
+            'ja' => __( '日文', 'qiling' ),
+            'ko' => __( '韩文', 'qiling' ),
+            'fr' => __( '法文', 'qiling' ),
+            'de' => __( '德文', 'qiling' ),
+            'es' => __( '西班牙文', 'qiling' ),
         );
     }
 
@@ -337,11 +337,11 @@ class AI_Decorator {
      */
     public function get_ai_localization_tone_choices() {
         return array(
-            'professional' => __( '专业可信', 'developer-starter' ),
-            'friendly'     => __( '自然友好', 'developer-starter' ),
-            'concise'      => __( '简洁直接', 'developer-starter' ),
-            'premium'      => __( '高端克制', 'developer-starter' ),
-            'technical'    => __( '技术清晰', 'developer-starter' ),
+            'professional' => __( '专业可信', 'qiling' ),
+            'friendly'     => __( '自然友好', 'qiling' ),
+            'concise'      => __( '简洁直接', 'qiling' ),
+            'premium'      => __( '高端克制', 'qiling' ),
+            'technical'    => __( '技术清晰', 'qiling' ),
         );
     }
 
@@ -353,28 +353,28 @@ class AI_Decorator {
     public function get_ai_localization_industry_tone_packs() {
         return array(
             'saas' => array(
-                'label' => __( 'SaaS', 'developer-starter' ),
-                'guidance' => __( '突出效率、集成、可扩展、安全合规和清晰 CTA，避免过度营销腔。', 'developer-starter' ),
+                'label' => __( 'SaaS', 'qiling' ),
+                'guidance' => __( '突出效率、集成、可扩展、安全合规和清晰 CTA，避免过度营销腔。', 'qiling' ),
             ),
             'export_trade' => array(
-                'label' => __( '外贸', 'developer-starter' ),
-                'guidance' => __( '强调交付能力、认证、MOQ、售后、询盘转化和目标市场贸易习惯。', 'developer-starter' ),
+                'label' => __( '外贸', 'qiling' ),
+                'guidance' => __( '强调交付能力、认证、MOQ、售后、询盘转化和目标市场贸易习惯。', 'qiling' ),
             ),
             'lawyer' => array(
-                'label' => __( '律师', 'developer-starter' ),
-                'guidance' => __( '语气稳重克制，避免保证结果，突出资质、流程、保密和咨询入口。', 'developer-starter' ),
+                'label' => __( '律师', 'qiling' ),
+                'guidance' => __( '语气稳重克制，避免保证结果，突出资质、流程、保密和咨询入口。', 'qiling' ),
             ),
             'medical' => array(
-                'label' => __( '医疗', 'developer-starter' ),
-                'guidance' => __( '避免诊断承诺和夸大疗效，突出专业资质、预约、风险提示和合规表达。', 'developer-starter' ),
+                'label' => __( '医疗', 'qiling' ),
+                'guidance' => __( '避免诊断承诺和夸大疗效，突出专业资质、预约、风险提示和合规表达。', 'qiling' ),
             ),
             'education' => array(
-                'label' => __( '教育', 'developer-starter' ),
-                'guidance' => __( '突出课程成果、学习路径、师资、适合人群和报名转化，语言清楚亲和。', 'developer-starter' ),
+                'label' => __( '教育', 'qiling' ),
+                'guidance' => __( '突出课程成果、学习路径、师资、适合人群和报名转化，语言清楚亲和。', 'qiling' ),
             ),
             'local_service' => array(
-                'label' => __( '本地服务', 'developer-starter' ),
-                'guidance' => __( '突出服务范围、响应速度、评价信任、本地电话和预约入口。', 'developer-starter' ),
+                'label' => __( '本地服务', 'qiling' ),
+                'guidance' => __( '突出服务范围、响应速度、评价信任、本地电话和预约入口。', 'qiling' ),
             ),
         );
     }
@@ -386,9 +386,9 @@ class AI_Decorator {
      */
     public function get_ai_localization_batch_content_types() {
         return array(
-            'page'             => __( '页面', 'developer-starter' ),
-            'post'             => __( '文章', 'developer-starter' ),
-            'faq'              => __( 'FAQ', 'developer-starter' ),
+            'page'             => __( '页面', 'qiling' ),
+            'post'             => __( '文章', 'qiling' ),
+            'faq'              => __( 'FAQ', 'qiling' ),
         );
     }
 
@@ -991,16 +991,16 @@ class AI_Decorator {
         check_ajax_referer( self::NONCE_ACTION, 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'qiling' ) ), 403 );
         }
 
         if ( ! $this->is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'qiling' ) ), 400 );
         }
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id > 0 && ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'qiling' ) ), 403 );
         }
 
         $prompt = isset( $_POST['prompt'] ) ? trim( wp_unslash( (string) $_POST['prompt'] ) ) : '';
@@ -1039,16 +1039,16 @@ class AI_Decorator {
         check_ajax_referer( self::NONCE_ACTION, 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'qiling' ) ), 403 );
         }
 
         if ( ! $this->is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'qiling' ) ), 400 );
         }
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id > 0 && ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'qiling' ) ), 403 );
         }
 
         $scope = isset( $_POST['scope'] ) ? sanitize_key( wp_unslash( (string) $_POST['scope'] ) ) : self::AI_SCOPE_PAGE;
@@ -1083,16 +1083,16 @@ class AI_Decorator {
         check_ajax_referer( self::NONCE_ACTION, 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'qiling' ) ), 403 );
         }
 
         if ( ! $this->is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'qiling' ) ), 400 );
         }
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id > 0 && ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'qiling' ) ), 403 );
         }
 
         $scope = isset( $_POST['scope'] ) ? sanitize_key( wp_unslash( (string) $_POST['scope'] ) ) : self::AI_SCOPE_MODULE;
@@ -1133,16 +1133,16 @@ class AI_Decorator {
         check_ajax_referer( self::NONCE_ACTION, 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'qiling' ) ), 403 );
         }
 
         if ( ! $this->is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'qiling' ) ), 400 );
         }
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id > 0 && ! current_user_can( 'edit_post', $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '当前页面无编辑权限。', 'qiling' ) ), 403 );
         }
 
         $result = $this->localize_page_package(
@@ -1172,11 +1172,11 @@ class AI_Decorator {
         check_ajax_referer( self::NONCE_ACTION, 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足，仅管理员可使用 AI 装修。', 'qiling' ) ), 403 );
         }
 
         if ( ! $this->is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( 'AI 装修尚未在主题设置中启用。', 'qiling' ) ), 400 );
         }
 
         $result = $this->batch_localize_content(
@@ -1487,7 +1487,7 @@ class AI_Decorator {
             return array(
                 'success' => false,
                 'provider' => 'xb-aifanyi-translator',
-                'message' => __( '未找到需要同步的内容。', 'developer-starter' ),
+                'message' => __( '未找到需要同步的内容。', 'qiling' ),
             );
         }
 
@@ -1495,7 +1495,7 @@ class AI_Decorator {
             return array(
                 'success' => false,
                 'provider' => 'xb-aifanyi-translator',
-                'message' => __( '启灵AI多语言插件未启用，已仅生成本地化页面包。', 'developer-starter' ),
+                'message' => __( '启灵AI多语言插件未启用，已仅生成本地化页面包。', 'qiling' ),
             );
         }
 
@@ -1518,7 +1518,7 @@ class AI_Decorator {
         return is_array( $result ) ? $result : array(
             'success' => false,
             'provider' => 'xb-aifanyi-translator',
-            'message' => __( '多语言服务暂时无法完成同步，请稍后重试。', 'developer-starter' ),
+            'message' => __( '多语言服务暂时无法完成同步，请稍后重试。', 'qiling' ),
         );
     }
 
@@ -1536,7 +1536,7 @@ class AI_Decorator {
             return array(
                 'success' => false,
                 'provider' => 'xb-aifanyi-translator',
-                'message' => __( '未找到需要同步的内容。', 'developer-starter' ),
+                'message' => __( '未找到需要同步的内容。', 'qiling' ),
             );
         }
 
@@ -1544,7 +1544,7 @@ class AI_Decorator {
             return array(
                 'success' => false,
                 'provider' => 'xb-aifanyi-translator',
-                'message' => __( '启灵AI多语言插件未启用，已仅生成本地化内容。', 'developer-starter' ),
+                'message' => __( '启灵AI多语言插件未启用，已仅生成本地化内容。', 'qiling' ),
             );
         }
 
@@ -1565,7 +1565,7 @@ class AI_Decorator {
         return is_array( $result ) ? $result : array(
             'success' => false,
             'provider' => 'xb-aifanyi-translator',
-            'message' => __( '多语言服务暂时无法完成同步，请稍后重试。', 'developer-starter' ),
+            'message' => __( '多语言服务暂时无法完成同步，请稍后重试。', 'qiling' ),
         );
     }
 
@@ -1714,7 +1714,7 @@ class AI_Decorator {
     public function get_disallowed_site_generation_error() {
         return new \WP_Error(
             'online_whole_site_generation_disabled',
-            __( 'AI 在线整站生成已关闭。请改为生成当前单页、优化当前单页，或选中单个模块后做模块优化。', 'developer-starter' )
+            __( 'AI 在线整站生成已关闭。请改为生成当前单页、优化当前单页，或选中单个模块后做模块优化。', 'qiling' )
         );
     }
 
@@ -2276,7 +2276,7 @@ class AI_Decorator {
         if ( $text_length > $threshold ) {
             $style_warnings[] = sprintf(
                 /* translators: %s: field path */
-                __( '字段 %s 的文案较长，应用后可能出现换行或布局挤压。', 'developer-starter' ),
+                __( '字段 %s 的文案较长，应用后可能出现换行或布局挤压。', 'qiling' ),
                 $field_path
             );
         }
@@ -2301,7 +2301,7 @@ class AI_Decorator {
         if ( preg_match( '/<\s*(script|iframe|object|embed|form|style|link)\b/i', $value ) ) {
             $security_warnings[] = sprintf(
                 /* translators: %s: field path */
-                __( '字段 %s 包含高风险 HTML，保存时会按主题安全规则过滤。', 'developer-starter' ),
+                __( '字段 %s 包含高风险 HTML，保存时会按主题安全规则过滤。', 'qiling' ),
                 $field_path
             );
         }
@@ -2309,7 +2309,7 @@ class AI_Decorator {
         if ( preg_match( '/\son[a-z]+\s*=/i', $value ) ) {
             $security_warnings[] = sprintf(
                 /* translators: %s: field path */
-                __( '字段 %s 包含事件属性写法，保存时会按主题安全规则过滤。', 'developer-starter' ),
+                __( '字段 %s 包含事件属性写法，保存时会按主题安全规则过滤。', 'qiling' ),
                 $field_path
             );
         }

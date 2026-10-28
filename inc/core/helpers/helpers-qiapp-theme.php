@@ -1524,13 +1524,13 @@ if ( ! function_exists( 'developer_starter_qiapp_get_license_map' ) ) {
      */
     function developer_starter_qiapp_get_license_map() {
         return array(
-            'free'         => array( 'text' => __( '免费', 'developer-starter' ), 'class' => 'qiapp-badge-free' ),
-            'opensource'   => array( 'text' => __( '开源', 'developer-starter' ), 'class' => 'qiapp-badge-opensource' ),
-            'paid'         => array( 'text' => __( '收费', 'developer-starter' ), 'class' => 'qiapp-badge-paid' ),
-            'trial'        => array( 'text' => __( '试用', 'developer-starter' ), 'class' => 'qiapp-badge-trial' ),
-            'subscription' => array( 'text' => __( '订阅', 'developer-starter' ), 'class' => 'qiapp-badge-subscription' ),
-            'ad'           => array( 'text' => __( '广告支持', 'developer-starter' ), 'class' => 'qiapp-badge-ad' ),
-            'freemium'     => array( 'text' => __( '免费增值', 'developer-starter' ), 'class' => 'qiapp-badge-freemium' ),
+            'free'         => array( 'text' => __( '免费', 'qiling' ), 'class' => 'qiapp-badge-free' ),
+            'opensource'   => array( 'text' => __( '开源', 'qiling' ), 'class' => 'qiapp-badge-opensource' ),
+            'paid'         => array( 'text' => __( '收费', 'qiling' ), 'class' => 'qiapp-badge-paid' ),
+            'trial'        => array( 'text' => __( '试用', 'qiling' ), 'class' => 'qiapp-badge-trial' ),
+            'subscription' => array( 'text' => __( '订阅', 'qiling' ), 'class' => 'qiapp-badge-subscription' ),
+            'ad'           => array( 'text' => __( '广告支持', 'qiling' ), 'class' => 'qiapp-badge-ad' ),
+            'freemium'     => array( 'text' => __( '免费增值', 'qiling' ), 'class' => 'qiapp-badge-freemium' ),
         );
     }
 }
@@ -1563,11 +1563,11 @@ if ( ! function_exists( 'developer_starter_qiapp_format_count_short' ) ) {
         $count = (int) $count;
 
         if ( $count >= 100000000 ) {
-            return number_format_i18n( round( $count / 100000000, 1 ), 1 ) . __( '亿', 'developer-starter' );
+            return number_format_i18n( round( $count / 100000000, 1 ), 1 ) . __( '亿', 'qiling' );
         }
 
         if ( $count >= 10000 ) {
-            return number_format_i18n( round( $count / 10000, 1 ), 1 ) . __( '万', 'developer-starter' );
+            return number_format_i18n( round( $count / 10000, 1 ), 1 ) . __( '万', 'qiling' );
         }
 
         return number_format_i18n( $count );

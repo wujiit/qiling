@@ -120,16 +120,16 @@ if ( ! function_exists( 'developer_starter_load_multilingual_theme_textdomain' )
             return;
         }
 
-        $languages_dir = trailingslashit( DEVELOPER_STARTER_DIR ) . 'languages';
+        $languages_dir = trailingslashit( QILING_DIR ) . 'languages';
         $mofile        = trailingslashit( $languages_dir ) . 'developer-starter-' . $locale . '.mo';
 
-        load_theme_textdomain( 'developer-starter', $languages_dir );
+        load_theme_textdomain( 'qiling', $languages_dir );
 
         if ( ! is_readable( $mofile ) ) {
             return;
         }
 
-        unload_textdomain( 'developer-starter' );
+        unload_textdomain( 'qiling' );
         load_textdomain( 'developer-starter', $mofile );
     }
 }

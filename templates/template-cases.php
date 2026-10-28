@@ -68,7 +68,7 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
             <?php if ( $cases_query->have_posts() ) : ?>
                 <?php do_action( 'developer_starter_template_cases_before_loop', $cases_query, $args, get_the_ID() ); ?>
                 
-                <div class="cases-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(<?php echo $min_width; ?>, 1fr)); gap: var(--qiling-space-30);">
+                <div class="cases-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(<?php echo esc_attr( $min_width ); ?>, 1fr)); gap: var(--qiling-space-30);">
                     
                     <?php while ( $cases_query->have_posts() ) : $cases_query->the_post(); 
                         // 获取缩略图或文章第一张图片
@@ -113,15 +113,15 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
                 </div>
                 
                 <nav class="pagination-nav" style="margin-top: var(--qiling-space-50); text-align: center;">
-                    <nav class="navigation pagination" role="navigation" aria-label="<?php esc_attr_e( '分页', 'developer-starter' ); ?>">
+                    <nav class="navigation pagination" role="navigation" aria-label="<?php esc_attr_e( '分页', 'qiling' ); ?>">
                         <div class="nav-links">
                             <?php
                             echo paginate_links( array(
                                 'total'     => $cases_query->max_num_pages,
                                 'current'   => $paged,
                                 'mid_size'  => 2,
-                                'prev_text' => '&laquo; ' . __( '上一页', 'developer-starter' ),
-                                'next_text' => __( '下一页', 'developer-starter' ) . ' &raquo;',
+                                'prev_text' => '&laquo; ' . __( '上一页', 'qiling' ),
+                                'next_text' => __( '下一页', 'qiling' ) . ' &raquo;',
                             ) );
                             ?>
                         </div>
@@ -163,14 +163,14 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
             <?php else : ?>
                 
                 <div style="text-align: center; padding: var(--qiling-space-80) var(--qiling-space-20);">
-                    <div style="font-size: var(--qiling-text-rem-4); margin-bottom: var(--qiling-space-20);">🏆</div>
-                    <h2 style="color: var(--color-text-muted); font-weight: 400;"><?php esc_html_e( '暂无案例', 'developer-starter' ); ?></h2>
+                    <div style="margin: 0 auto var(--qiling-space-20); display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 18px; background: var(--qiling-color-f1f5f9, #f1f5f9); color: var(--color-primary);"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div>
+                    <h2 style="color: var(--color-text-muted); font-weight: 400;"><?php esc_html_e( '暂无案例', 'qiling' ); ?></h2>
                     <p style="color: var(--color-neutral-400);">
                         <?php 
                         if ( $category ) {
-                            printf( esc_html__( '请先在后台添加案例内容（分类：%s）', 'developer-starter' ), esc_html( $category ) );
+                            printf( esc_html__( '请先在后台添加案例内容（分类：%s）', 'qiling' ), esc_html( $category ) );
                         } else {
-                            esc_html_e( '请先在后台添加案例内容', 'developer-starter' ); 
+                            esc_html_e( '请先在后台添加案例内容', 'qiling' ); 
                         }
                         ?>
                     </p>

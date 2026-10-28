@@ -95,3 +95,18 @@ if ( ! function_exists( 'mb_strtolower' ) ) {
         return strtolower( (string) $string );
     }
 }
+
+if ( ! function_exists( 'mb_strtoupper' ) ) {
+    /**
+     * mb_strtoupper() 兼容垫片实现。
+     *
+     * @param mixed       $string   Source string.
+     * @param string|null $encoding Requested encoding.
+     * @return string
+     */
+    function mb_strtoupper( $string, $encoding = null ) {
+        unset( $encoding );
+        return strtoupper( (string) $string );
+    }
+}
+

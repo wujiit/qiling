@@ -89,34 +89,34 @@ class Connection_Manager {
     public static function validate_endpoint_url( $endpoint, $allowed_hosts = null, $resolve_dns = true ) {
         $endpoint = trim( (string) $endpoint );
         if ( '' === $endpoint ) {
-            return new \WP_Error( 'ai_endpoint_empty', __( '请先填写 AI 接口地址。', 'developer-starter' ) );
+            return new \WP_Error( 'ai_endpoint_empty', __( '请先填写 AI 接口地址。', 'qiling' ) );
         }
 
         $parts = wp_parse_url( $endpoint );
         if ( ! is_array( $parts ) || empty( $parts['scheme'] ) || empty( $parts['host'] ) ) {
-            return new \WP_Error( 'ai_endpoint_invalid', __( 'AI 接口地址无效。', 'developer-starter' ) );
+            return new \WP_Error( 'ai_endpoint_invalid', __( 'AI 接口地址无效。', 'qiling' ) );
         }
 
         if ( 'https' !== strtolower( (string) $parts['scheme'] ) ) {
-            return new \WP_Error( 'ai_endpoint_https_required', __( 'AI 接口地址必须使用 HTTPS。', 'developer-starter' ) );
+            return new \WP_Error( 'ai_endpoint_https_required', __( 'AI 接口地址必须使用 HTTPS。', 'qiling' ) );
         }
 
         $host = self::normalize_endpoint_host( (string) $parts['host'] );
         if ( '' === $host ) {
-            return new \WP_Error( 'ai_endpoint_invalid_host', __( 'AI 接口域名无效。', 'developer-starter' ) );
+            return new \WP_Error( 'ai_endpoint_invalid_host', __( 'AI 接口域名无效。', 'qiling' ) );
         }
 
         if ( ! self::is_valid_endpoint_host( $host ) ) {
-            return new \WP_Error( 'ai_endpoint_invalid_host', __( 'AI 接口域名无效。', 'developer-starter' ) );
+            return new \WP_Error( 'ai_endpoint_invalid_host', __( 'AI 接口域名无效。', 'qiling' ) );
         }
 
         $configured_allowed_hosts = self::get_allowed_endpoint_hosts( $allowed_hosts );
         if ( ! self::endpoint_host_matches_allowed_hosts( $host, $configured_allowed_hosts ) ) {
-            return new \WP_Error( 'ai_endpoint_not_allowed', __( 'AI 接口域名不在 allowlist 中。', 'developer-starter' ) );
+            return new \WP_Error( 'ai_endpoint_not_allowed', __( 'AI 接口域名不在 allowlist 中。', 'qiling' ) );
         }
 
         if ( ! self::endpoint_host_is_public( $host, $resolve_dns ) ) {
-            return new \WP_Error( 'ai_endpoint_private_host', __( 'AI 接口地址不能指向 localhost、内网、保留地址或链路本地地址。', 'developer-starter' ) );
+            return new \WP_Error( 'ai_endpoint_private_host', __( 'AI 接口地址不能指向 localhost、内网、保留地址或链路本地地址。', 'qiling' ) );
         }
 
         return true;
@@ -470,7 +470,7 @@ class Connection_Manager {
         $endpoint = self::sanitize_endpoint_url( $raw_endpoint );
         $connection = array(
             'id'            => isset( $args['id'] ) ? sanitize_key( (string) $args['id'] ) : '',
-            'name'          => '' !== $connection_name ? $connection_name : __( '未命名连接', 'developer-starter' ),
+            'name'          => '' !== $connection_name ? $connection_name : __( '未命名连接', 'qiling' ),
             'endpoint'      => $endpoint,
             'default_model' => '',
             'models'        => array(),
@@ -480,22 +480,22 @@ class Connection_Manager {
         $model = isset( $args['model'] ) ? sanitize_text_field( (string) $args['model'] ) : '';
 
         if ( '' === $raw_endpoint ) {
-            return new \WP_Error( 'empty_endpoint', __( '请先填写接口地址。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_endpoint', __( '请先填写接口地址。', 'qiling' ) );
         }
 
         if ( '' === $connection['endpoint'] ) {
             $validation = self::validate_endpoint_url( $raw_endpoint, null, false );
             return is_wp_error( $validation )
                 ? $validation
-                : new \WP_Error( 'invalid_endpoint', __( 'AI 连接接口地址无效。', 'developer-starter' ) );
+                : new \WP_Error( 'invalid_endpoint', __( 'AI 连接接口地址无效。', 'qiling' ) );
         }
 
         if ( '' === $connection['api_key'] ) {
-            return new \WP_Error( 'empty_api_key', __( '请先填写 API Key。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_api_key', __( '请先填写 API Key。', 'qiling' ) );
         }
 
         if ( '' === $model ) {
-            return new \WP_Error( 'empty_model', __( '请先填写默认模型后再测试。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_model', __( '请先填写默认模型后再测试。', 'qiling' ) );
         }
 
         $messages = array(
@@ -533,7 +533,7 @@ class Connection_Manager {
 
         $reply = trim( (string) $response['content'] );
         if ( '' === $reply ) {
-            return new \WP_Error( 'empty_test_reply', __( '接口已响应，但没有返回可读文本。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_test_reply', __( '接口已响应，但没有返回可读文本。', 'qiling' ) );
         }
 
         if ( ! empty( $connection['json_mode'] ) ) {
@@ -545,7 +545,7 @@ class Connection_Manager {
         }
 
         return array(
-            'message'  => __( '连接测试成功，接口已正常返回内容。', 'developer-starter' ),
+            'message'  => __( '连接测试成功，接口已正常返回内容。', 'qiling' ),
             'reply'    => $this->decorator->truncate_text_for_log( $reply, 220 ),
             'model'    => $model,
             'endpoint' => $this->normalize_chat_endpoint( $connection['endpoint'] ),
@@ -637,7 +637,7 @@ class Connection_Manager {
                     'request_timeout',
                     sprintf(
                         /* translators: %d: timeout seconds */
-                        __( 'AI 请求超时（%d 秒）。当前模型返回较慢，建议减少候选模块数量、降低输出长度，或在主题设置里把请求超时调大后再试。', 'developer-starter' ),
+                        __( 'AI 请求超时（%d 秒）。当前模型返回较慢，建议减少候选模块数量、降低输出长度，或在主题设置里把请求超时调大后再试。', 'qiling' ),
                         $timeout
                     )
                 );
@@ -647,7 +647,7 @@ class Connection_Manager {
                 'request_failed',
                 sprintf(
                     /* translators: %s: error message */
-                    __( 'AI 请求失败：%s', 'developer-starter' ),
+                    __( 'AI 请求失败：%s', 'qiling' ),
                     $response->get_error_message()
                 )
             );
@@ -674,7 +674,7 @@ class Connection_Manager {
                 'http_error',
                 sprintf(
                     /* translators: 1: status code 2: message */
-                    __( 'AI 接口返回异常（HTTP %1$d）：%2$s', 'developer-starter' ),
+                    __( 'AI 接口返回异常（HTTP %1$d）：%2$s', 'qiling' ),
                     $status_code,
                     $message
                 )
@@ -692,7 +692,7 @@ class Connection_Manager {
                     )
                 )
             );
-            return new \WP_Error( 'invalid_response', __( 'AI 接口返回了无法解析的响应。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_response', __( 'AI 接口返回了无法解析的响应。', 'qiling' ) );
         }
 
         $content = $this->extract_assistant_content( $decoded );
@@ -707,7 +707,7 @@ class Connection_Manager {
                     )
                 )
             );
-            return new \WP_Error( 'empty_response', __( '接口没有返回可解析的文本内容。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_response', __( '接口没有返回可解析的文本内容。', 'qiling' ) );
         }
 
         return array(
@@ -736,7 +736,7 @@ class Connection_Manager {
     private function prepare_chat_endpoint( $endpoint ) {
         $endpoint = trim( (string) $endpoint );
         if ( '' === $endpoint ) {
-            return new \WP_Error( 'invalid_endpoint', __( 'AI 连接接口地址无效。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_endpoint', __( 'AI 连接接口地址无效。', 'qiling' ) );
         }
 
         $endpoint = rtrim( $endpoint, '/' );
@@ -747,7 +747,7 @@ class Connection_Manager {
         }
 
         if ( '' === $endpoint ) {
-            return new \WP_Error( 'invalid_endpoint', __( 'AI 连接接口地址无效。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_endpoint', __( 'AI 连接接口地址无效。', 'qiling' ) );
         }
 
         $validation = self::validate_endpoint_url( $endpoint, null, true );
@@ -777,7 +777,7 @@ class Connection_Manager {
 
         $fallback = trim( wp_strip_all_tags( (string) $fallback ) );
         if ( '' === $fallback ) {
-            return __( '未知错误', 'developer-starter' );
+            return __( '未知错误', 'qiling' );
         }
 
         if ( function_exists( 'mb_strlen' ) && mb_strlen( $fallback, 'UTF-8' ) > 180 ) {

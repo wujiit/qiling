@@ -67,7 +67,9 @@ if ( ! function_exists( 'developer_starter_get_trusted_proxy_list' ) ) {
     function developer_starter_get_trusted_proxy_list() {
         $trusted = array();
 
-        if ( defined( 'DEVELOPER_STARTER_TRUSTED_PROXIES' ) ) {
+        if ( defined( 'QILING_TRUSTED_PROXIES' ) ) {
+            $const_value = constant( 'QILING_TRUSTED_PROXIES' );
+        } elseif ( defined( 'DEVELOPER_STARTER_TRUSTED_PROXIES' ) ) {
             $const_value = constant( 'DEVELOPER_STARTER_TRUSTED_PROXIES' );
             if ( is_array( $const_value ) ) {
                 $trusted = array_merge( $trusted, $const_value );

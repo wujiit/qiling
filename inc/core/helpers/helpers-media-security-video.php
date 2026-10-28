@@ -607,6 +607,7 @@ if ( ! function_exists( 'developer_starter_lazy_load_images' ) ) {
                 }
 
                 $tag = developer_starter_add_image_tag_attribute( $tag, 'loading', 'lazy' );
+                $tag = developer_starter_add_image_tag_attribute( $tag, 'decoding', 'async' );
 
                 $loading = strtolower( developer_starter_image_tag_get_attribute( $tag, 'loading' ) );
                 if ( $placeholder_enabled && 'lazy' === $loading ) {
@@ -766,15 +767,15 @@ if ( ! function_exists( 'developer_starter_validate_svg_upload_content' ) ) {
     function developer_starter_validate_svg_upload_content( $content ) {
         $content = is_string( $content ) ? trim( $content ) : '';
         if ( '' === $content || false === stripos( $content, '<svg' ) ) {
-            return new WP_Error( 'invalid_svg_file', __( '请上传有效的 SVG 图片文件。', 'developer-starter' ) );
+            return new WP_Error( 'invalid_svg_file', __( '请上传有效的 SVG 图片文件。', 'qiling' ) );
         }
 
         if ( preg_match( '/<!\s*(doctype|entity)\b/i', $content ) ) {
-            return new WP_Error( 'unsafe_svg_file', __( 'SVG 文件包含不安全的文档声明或实体定义。', 'developer-starter' ) );
+            return new WP_Error( 'unsafe_svg_file', __( 'SVG 文件包含不安全的文档声明或实体定义。', 'qiling' ) );
         }
 
         if ( preg_match( '/<\s*(script|style|iframe|object|embed|foreignObject)\b/i', $content ) ) {
-            return new WP_Error( 'unsafe_svg_file', __( 'SVG 文件包含不允许的脚本、样式或嵌入内容。', 'developer-starter' ) );
+            return new WP_Error( 'unsafe_svg_file', __( 'SVG 文件包含不允许的脚本、样式或嵌入内容。', 'qiling' ) );
         }
 
         return true;
@@ -856,18 +857,18 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_upload_file' ) ) {
         }
 
         if ( ! developer_starter_svg_uploads_enabled() ) {
-            $file['error'] = __( '当前站点未开启 SVG 上传支持。', 'developer-starter' );
+            $file['error'] = __( '当前站点未开启 SVG 上传支持。', 'qiling' );
             return $file;
         }
 
         if ( ! developer_starter_current_user_can_upload_svg() ) {
-            $file['error'] = __( '当前账号没有上传 SVG 图片的权限。', 'developer-starter' );
+            $file['error'] = __( '当前账号没有上传 SVG 图片的权限。', 'qiling' );
             return $file;
         }
 
         $tmp_name = isset( $file['tmp_name'] ) ? (string) $file['tmp_name'] : '';
         if ( '' === $tmp_name || ! is_readable( $tmp_name ) || ! is_writable( $tmp_name ) ) {
-            $file['error'] = __( 'SVG 临时文件不可读写，请重新上传。', 'developer-starter' );
+            $file['error'] = __( 'SVG 临时文件不可读写，请重新上传。', 'qiling' );
             return $file;
         }
 
@@ -877,7 +878,7 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_upload_file' ) ) {
         if ( $max_bytes > 0 && $file_size > $max_bytes ) {
             $file['error'] = sprintf(
                 /* translators: %s: max file size */
-                __( 'SVG 文件不能超过 %s。', 'developer-starter' ),
+                __( 'SVG 文件不能超过 %s。', 'qiling' ),
                 size_format( $max_bytes )
             );
             return $file;
@@ -892,12 +893,12 @@ if ( ! function_exists( 'developer_starter_sanitize_svg_upload_file' ) ) {
 
         $sanitized = developer_starter_sanitize_svg_upload_content( $content );
         if ( '' === $sanitized ) {
-            $file['error'] = __( 'SVG 文件未通过安全过滤，请检查文件内容。', 'developer-starter' );
+            $file['error'] = __( 'SVG 文件未通过安全过滤，请检查文件内容。', 'qiling' );
             return $file;
         }
 
         if ( ! developer_starter_filesystem_write_temp_file( $tmp_name, $sanitized ) ) {
-            $file['error'] = __( 'SVG 文件清洗失败，请重新上传。', 'developer-starter' );
+            $file['error'] = __( 'SVG 文件清洗失败，请重新上传。', 'qiling' );
             return $file;
         }
 
@@ -1004,7 +1005,7 @@ if ( ! function_exists( 'developer_starter_validate_custom_font_upload_file' ) )
         }
 
         if ( ! developer_starter_current_user_can_upload_custom_fonts() ) {
-            $file['error'] = __( '当前账号没有上传字体文件的权限。', 'developer-starter' );
+            $file['error'] = __( '当前账号没有上传字体文件的权限。', 'qiling' );
             return $file;
         }
 
@@ -1014,7 +1015,7 @@ if ( ! function_exists( 'developer_starter_validate_custom_font_upload_file' ) )
         if ( $max_bytes > 0 && $size > $max_bytes ) {
             $file['error'] = sprintf(
                 /* translators: %s: maximum file size in MB */
-                __( '字体文件过大，请上传不超过 %s MB 的文件。', 'developer-starter' ),
+                __( '字体文件过大，请上传不超过 %s MB 的文件。', 'qiling' ),
                 number_format_i18n( $max_bytes / 1024 / 1024, 1 )
             );
         }
@@ -1282,7 +1283,9 @@ if ( ! function_exists( 'developer_starter_convert_to_webp' ) ) {
         
         if ( $image ) {
             imagewebp( $image, $webp_file, $quality );
-            imagedestroy( $image );
+            if ( function_exists( 'imagedestroy' ) && ( ! defined( 'PHP_VERSION_ID' ) || PHP_VERSION_ID < 80500 ) ) {
+                imagedestroy( $image );
+            }
             return $webp_file;
         }
         
@@ -1317,7 +1320,7 @@ if ( ! function_exists( 'developer_starter_check_login_attempts' ) ) {
             return new WP_Error(
                 'too_many_attempts',
                 sprintf( 
-                    __( '登录尝试次数过多，请在 %d 分钟后再试。', 'developer-starter' ),
+                    __( '登录尝试次数过多，请在 %d 分钟后再试。', 'qiling' ),
                     $lockout_duration 
                 )
             );
@@ -1355,9 +1358,9 @@ if ( ! function_exists( 'developer_starter_record_login_failure' ) ) {
             // 通知管理员
             if ( developer_starter_get_option( 'login_notify_admin', '' ) ) {
                 $admin_email = get_option( 'admin_email' );
-                $subject = sprintf( __( '[%s] 登录安全提醒', 'developer-starter' ), get_bloginfo( 'name' ) );
+                $subject = sprintf( __( '[%s] 登录安全提醒', 'qiling' ), get_bloginfo( 'name' ) );
                 $message = sprintf(
-                    __( "用户名 %s 因多次登录失败已被临时锁定。\n\nIP 地址: %s\n时间: %s\n锁定时长: %d 分钟", 'developer-starter' ),
+                    __( "用户名 %s 因多次登录失败已被临时锁定。\n\nIP 地址: %s\n时间: %s\n锁定时长: %d 分钟", 'qiling' ),
                     $username,
                     $ip,
                     current_time( 'mysql' ),
@@ -1428,7 +1431,7 @@ if ( ! function_exists( 'developer_starter_login_error_message' ) ) {
         $remaining = $max_attempts - $attempts;
         
         if ( $remaining > 0 && $remaining < $max_attempts ) {
-            $error .= sprintf( '<br><strong>' . __( '剩余尝试次数：%d', 'developer-starter' ) . '</strong>', $remaining );
+            $error .= sprintf( '<br><strong>' . __( '剩余尝试次数：%d', 'qiling' ) . '</strong>', $remaining );
         }
         
         return $error;

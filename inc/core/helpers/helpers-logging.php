@@ -170,8 +170,14 @@ if ( ! function_exists( 'developer_starter_sanitize_log_text' ) ) {
         $text = preg_replace( '/(?<!\d)(1[3-9]\d)\d{4}(\d{4})(?!\d)/', '$1****$2', (string) $text );
 
         $limit = absint( $limit );
-        if ( $limit > 0 && strlen( (string) $text ) > $limit ) {
-            $text = substr( (string) $text, 0, $limit ) . '...';
+        if ( $limit > 0 ) {
+            if ( function_exists( 'mb_strlen' ) && function_exists( 'mb_substr' ) ) {
+                if ( mb_strlen( (string) $text, 'UTF-8' ) > $limit ) {
+                    $text = mb_substr( (string) $text, 0, $limit, 'UTF-8' ) . '...';
+                }
+            } elseif ( strlen( (string) $text ) > $limit ) {
+                $text = substr( (string) $text, 0, $limit ) . '...';
+            }
         }
 
         return sanitize_text_field( (string) $text );
@@ -277,7 +283,10 @@ if ( ! function_exists( 'developer_starter_log' ) ) {
             }
         }
 
+        $trace_id     = function_exists( 'developer_starter_get_trace_id' ) ? developer_starter_get_trace_id() : '';
+        $trace_prefix = '' !== $trace_id ? '[' . $trace_id . '] ' : '';
+
         // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- Central gated logger, enabled only for debug contexts.
-        error_log( '[developer_starter ' . $channel . '] ' . strtoupper( $level ) . ': ' . $message . $suffix );
+        error_log( '[developer_starter ' . $channel . '] ' . $trace_prefix . strtoupper( $level ) . ': ' . $message . $suffix );
     }
 }

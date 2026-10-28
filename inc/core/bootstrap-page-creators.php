@@ -21,7 +21,7 @@ function developer_starter_get_page_creator_class_file_map() {
         return $map;
     }
 
-    $registry_file = DEVELOPER_STARTER_INC . '/core/page-creator-registry.php';
+    $registry_file = QILING_INC . '/core/page-creator-registry.php';
     $registry = file_exists( $registry_file ) ? require $registry_file : array();
     if ( ! is_array( $registry ) ) {
         $registry = array();
@@ -53,7 +53,7 @@ function developer_starter_include_page_creator_base_file() {
         return;
     }
 
-    require_once DEVELOPER_STARTER_INC . '/core/class-page-creator-base.php';
+    require_once QILING_INC . '/core/class-page-creator-base.php';
     $included = true;
 }
 

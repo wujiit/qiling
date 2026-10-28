@@ -142,7 +142,7 @@ class Menu_Protector {
 
             $title = (string) $menu_item->post_title;
             if ( '' === $title ) {
-                $title = __( '未命名菜单', 'developer-starter' );
+                $title = __( '未命名菜单', 'qiling' );
             }
 
             if ( 'post_type' === $item_type ) {
@@ -296,7 +296,7 @@ class Menu_Protector {
             // 添加提示属性
             $atts['title'] = isset( $atts['title'] ) ? $atts['title'] : '';
             if ( current_user_can( 'edit_theme_options' ) ) {
-                $atts['title'] .= ' ' . __( '(原内容已删除)', 'developer-starter' );
+                $atts['title'] .= ' ' . __( '(原内容已删除)', 'qiling' );
             }
         }
         

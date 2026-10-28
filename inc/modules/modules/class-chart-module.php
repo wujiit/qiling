@@ -14,30 +14,30 @@ class Chart_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '数据图表', 'developer-starter' );
+        return __( '数据图表', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'heading_basic', 'type' => 'heading', 'label' => __( '基础设置', 'developer-starter' ) ),
-            array( 'id' => 'chart_type', 'type' => 'select', 'label' => __( '图表类型', 'developer-starter' ), 'options' => array(
-                'bar'      => __( '柱状图 (Bar)', 'developer-starter' ),
-                'line'     => __( '折线图 (Line)', 'developer-starter' ),
-                'pie'      => __( '饼图 (Pie)', 'developer-starter' ),
-                'doughnut' => __( '环形图 (Doughnut)', 'developer-starter' ),
+            array( 'id' => 'heading_basic', 'type' => 'heading', 'label' => __( '基础设置', 'qiling' ) ),
+            array( 'id' => 'chart_type', 'type' => 'select', 'label' => __( '图表类型', 'qiling' ), 'options' => array(
+                'bar'      => __( '柱状图 (Bar)', 'qiling' ),
+                'line'     => __( '折线图 (Line)', 'qiling' ),
+                'pie'      => __( '饼图 (Pie)', 'qiling' ),
+                'doughnut' => __( '环形图 (Doughnut)', 'qiling' ),
             ), 'default' => 'bar' ),
-            array( 'id' => 'chart_title', 'type' => 'text', 'label' => __( '图表标题', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'chart_height', 'type' => 'number', 'label' => __( '图表高度 (px)', 'developer-starter' ), 'default' => '400' ),
+            array( 'id' => 'chart_title', 'type' => 'text', 'label' => __( '图表标题', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'chart_height', 'type' => 'number', 'label' => __( '图表高度 (px)', 'qiling' ), 'default' => '400' ),
             
-            array( 'id' => 'heading_data', 'type' => 'heading', 'label' => __( '数据设置', 'developer-starter' ) ),
+            array( 'id' => 'heading_data', 'type' => 'heading', 'label' => __( '数据设置', 'qiling' ) ),
             array( 
                 'id' => 'chart_data', 
                 'type' => 'repeater', 
-                'label' => __( '数据项', 'developer-starter' ), 
+                'label' => __( '数据项', 'qiling' ), 
                 'fields' => array(
-                    array( 'id' => 'label', 'type' => 'text', 'label' => __( '标签 (X轴)', 'developer-starter' ) ),
-                    array( 'id' => 'value', 'type' => 'number', 'label' => __( '数值 (Y轴)', 'developer-starter' ) ),
-                    array( 'id' => 'color', 'type' => 'color', 'label' => __( '颜色 (可选)', 'developer-starter' ), 'desc' => __( '留空则自动生成颜色', 'developer-starter' ) ),
+                    array( 'id' => 'label', 'type' => 'text', 'label' => __( '标签 (X轴)', 'qiling' ) ),
+                    array( 'id' => 'value', 'type' => 'number', 'label' => __( '数值 (Y轴)', 'qiling' ) ),
+                    array( 'id' => 'color', 'type' => 'color', 'label' => __( '颜色 (可选)', 'qiling' ), 'desc' => __( '留空则自动生成颜色', 'qiling' ) ),
                 )
             ),
         );
@@ -52,17 +52,17 @@ class Chart_Module extends Module_Base {
 
         switch ( $type ) {
             case 'pie':
-                $data['chart_title'] = __( '市场份额分布', 'developer-starter' );
+                $data['chart_title'] = __( '市场份额分布', 'qiling' );
                 $data['chart_data'] = array(
-                    array( 'label' => __( '品牌 A', 'developer-starter' ), 'value' => '300', 'color' => 'var(--qiling-color-ef4444)' ),
-                    array( 'label' => __( '品牌 B', 'developer-starter' ), 'value' => '50', 'color' => 'var(--color-primary-light)' ),
-                    array( 'label' => __( '品牌 C', 'developer-starter' ), 'value' => '100', 'color' => 'var(--qiling-color-eab308)' ),
+                    array( 'label' => __( '品牌 A', 'qiling' ), 'value' => '300', 'color' => 'var(--qiling-color-ef4444)' ),
+                    array( 'label' => __( '品牌 B', 'qiling' ), 'value' => '50', 'color' => 'var(--color-primary-light)' ),
+                    array( 'label' => __( '品牌 C', 'qiling' ), 'value' => '100', 'color' => 'var(--qiling-color-eab308)' ),
                 );
                 break;
             
             case 'bar':
             default:
-                $data['chart_title'] = __( '季度业绩增长 (2024)', 'developer-starter' );
+                $data['chart_title'] = __( '季度业绩增长 (2024)', 'qiling' );
                 $data['chart_data'] = array(
                     array( 'label' => 'Q1', 'value' => '1200', 'color' => 'var(--color-primary-light)' ),
                     array( 'label' => 'Q2', 'value' => '1900', 'color' => 'var(--qiling-color-8b5cf6)' ),
@@ -114,7 +114,7 @@ class Chart_Module extends Module_Base {
         $chart_asset = function_exists( 'developer_starter_get_third_party_asset' )
             ? developer_starter_get_third_party_asset( 'chart_js' )
             : array(
-                'url'     => DEVELOPER_STARTER_ASSETS . '/js/vendor/chart.min.js',
+                'url'     => QILING_ASSETS . '/js/vendor/chart.min.js',
                 'version' => '2.7.2',
             );
 
@@ -124,7 +124,7 @@ class Chart_Module extends Module_Base {
                 'labels' => $labels,
                 'datasets' => array(
                     array(
-                        'label' => $title ? $title : __( '数据', 'developer-starter' ),
+                        'label' => $title ? $title : __( '数据', 'qiling' ),
                         'data' => $values,
                         'backgroundColor' => $colors,
                         'borderColor' => $colors, // consistent border

@@ -18,7 +18,7 @@ class Resource_Stats_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage'; // 放在首页分类下
         $this->icon = 'dashicons-chart-pie'; // 使用饼图图标区分
-        $this->description = __( '展示博客资源、用户、运行时间等综合数据统计', 'developer-starter' );
+        $this->description = __( '展示博客资源、用户、运行时间等综合数据统计', 'qiling' );
     }
 
     public function get_id() {
@@ -26,25 +26,25 @@ class Resource_Stats_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '博客资源统计', 'developer-starter' );
+        return __( '博客资源统计', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             // 基础设置
-            array( 'id' => 'rs_title', 'label' => __( '模块标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'rs_subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'rs_title', 'label' => __( '模块标题', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'rs_subtitle', 'label' => __( '副标题', 'qiling' ), 'type' => 'text', 'default' => '' ),
             
             // 样式设置
             array(
                 'id' => 'rs_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'rs_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
@@ -52,80 +52,80 @@ class Resource_Stats_Module extends Module_Base {
             // 建站日期设置 (供运行天数使用)
             array(
                 'id' => 'rs_site_start_date',
-                'label' => __( '建站日期', 'developer-starter' ),
+                'label' => __( '建站日期', 'qiling' ),
                 'type' => 'text',
                 'default' => '2020-01-01',
-                'description' => __( '格式：YYYY-MM-DD，用于计算运行天数', 'developer-starter' )
+                'description' => __( '格式：YYYY-MM-DD，用于计算运行天数', 'qiling' )
             ),
             
             // 统计项设置
             array(
                 'id' => 'rs_stats_list',
-                'label' => __( '统计数据项', 'developer-starter' ),
+                'label' => __( '统计数据项', 'qiling' ),
                 'type' => 'repeater',
-                'description' => __( '添加要展示的数据项', 'developer-starter' ),
+                'description' => __( '添加要展示的数据项', 'qiling' ),
                 'fields' => array(
-                    array( 'id' => 'stat_label', 'label' => __( '显示名称', 'developer-starter' ), 'type' => 'text', 'default' => __( '总资源数', 'developer-starter' ) ),
-                    array( 'id' => 'stat_icon', 'label' => __( '图标 (Dashicons/Emoji)', 'developer-starter' ), 'type' => 'text', 'default' => 'dashicons-chart-area' ),
+                    array( 'id' => 'stat_label', 'label' => __( '显示名称', 'qiling' ), 'type' => 'text', 'default' => __( '总资源数', 'qiling' ) ),
+                    array( 'id' => 'stat_icon', 'label' => __( '图标 (Dashicons/Emoji)', 'qiling' ), 'type' => 'text', 'default' => 'dashicons-chart-area' ),
                     
                     array( 
                         'id' => 'data_source', 
-                        'label' => __( '数据来源', 'developer-starter' ), 
+                        'label' => __( '数据来源', 'qiling' ), 
                         'type' => 'select', 
                         'options' => array(
-                            'total_posts' => __( '全站文章总数', 'developer-starter' ),
-                            'category_posts' => __( '指定分类文章数', 'developer-starter' ),
-                            'total_users' => __( '全站用户总数', 'developer-starter' ),
-                            'vip_users' => __( 'VIP会员总数', 'developer-starter' ),
-                            'site_days' => __( '网站运行天数', 'developer-starter' ),
-                            'custom' => __( '自定义数字', 'developer-starter' )
+                            'total_posts' => __( '全站文章总数', 'qiling' ),
+                            'category_posts' => __( '指定分类文章数', 'qiling' ),
+                            'total_users' => __( '全站用户总数', 'qiling' ),
+                            'vip_users' => __( 'VIP会员总数', 'qiling' ),
+                            'site_days' => __( '网站运行天数', 'qiling' ),
+                            'custom' => __( '自定义数字', 'qiling' )
                         ),
                         'default' => 'total_posts'
                     ),
                     
                     array( 
                         'id' => 'source_id', 
-                        'label' => __( '分类ID / 自定义数字', 'developer-starter' ), 
+                        'label' => __( '分类ID / 自定义数字', 'qiling' ), 
                         'type' => 'text', 
-                        'description' => __( '如果是分类填ID；如果是自定义填数字；其他留空', 'developer-starter' )
+                        'description' => __( '如果是分类填ID；如果是自定义填数字；其他留空', 'qiling' )
                     ),
                     
                     array( 
                         'id' => 'virtual_num', 
-                        'label' => __( '虚拟增长数值', 'developer-starter' ), 
+                        'label' => __( '虚拟增长数值', 'qiling' ), 
                         'type' => 'number', 
                         'default' => '0',
-                        'description' => __( '前台显示 = 真实数据 + 此虚拟数值', 'developer-starter' )
+                        'description' => __( '前台显示 = 真实数据 + 此虚拟数值', 'qiling' )
                     ),
                     
-                    array( 'id' => 'show_plus', 'label' => __( '显示加号(+)', 'developer-starter' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '不显示', 'developer-starter' ) ), 'default' => 'yes' ),
+                    array( 'id' => 'show_plus', 'label' => __( '显示加号(+)', 'qiling' ), 'type' => 'select', 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '不显示', 'qiling' ) ), 'default' => 'yes' ),
                 ),
             ),
             
             // 外观设置
             array(
                 'id' => 'rs_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-neutral-50)',
-                'desc' => __( '支持颜色或渐变', 'developer-starter' ),
+                'desc' => __( '支持颜色或渐变', 'qiling' ),
             ),
             array(
                 'id' => 'rs_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
             ),
             
             // 间距
             array(
                 'id' => 'rs_padding_top',
-                'label' => __( '上边距', 'developer-starter' ),
+                'label' => __( '上边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'rs_padding_bottom',
-                'label' => __( '下边距', 'developer-starter' ),
+                'label' => __( '下边距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),

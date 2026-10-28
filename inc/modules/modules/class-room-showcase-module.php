@@ -31,7 +31,7 @@ class Room_Showcase_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'homepage';
         $this->icon        = 'dashicons-admin-home';
-        $this->description = __( '展示酒店房型和价格', 'developer-starter' );
+        $this->description = __( '展示酒店房型和价格', 'qiling' );
     }
 
     /**
@@ -49,7 +49,7 @@ class Room_Showcase_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '房型展示', 'developer-starter' );
+        return __( '房型展示', 'qiling' );
     }
 
     /**
@@ -65,25 +65,25 @@ class Room_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'room_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => __( '精选客房', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => __( '精选客房', 'qiling' ),
             ),
             array(
                 'id'      => 'room_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2rem',
             ),
             array(
                 'id'    => 'room_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'      => 'room_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => __( '为您精心准备的舒适空间', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => __( '为您精心准备的舒适空间', 'qiling' ),
             ),
 
             // ========================================
@@ -92,8 +92,8 @@ class Room_Showcase_Module extends Module_Base {
             array(
                 'id'    => 'iconfont_url',
                 'type'  => 'text',
-                'label' => __( 'iconfont JS地址', 'developer-starter' ),
-                'desc'  => __( '阿里巴巴 iconfont Symbol 方式的 JS 链接', 'developer-starter' ),
+                'label' => __( 'iconfont JS地址', 'qiling' ),
+                'desc'  => __( '阿里巴巴 iconfont Symbol 方式的 JS 链接', 'qiling' ),
             ),
 
             // ========================================
@@ -102,20 +102,20 @@ class Room_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'room_columns',
                 'type'    => 'select',
-                'label'   => __( '列数', 'developer-starter' ),
+                'label'   => __( '列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'room_card_style',
                 'type'    => 'select',
-                'label'   => __( '卡片样式', 'developer-starter' ),
+                'label'   => __( '卡片样式', 'qiling' ),
                 'options' => array(
-                    'standard'   => __( '标准卡片', 'developer-starter' ),
-                    'horizontal' => __( '横向布局', 'developer-starter' ),
+                    'standard'   => __( '标准卡片', 'qiling' ),
+                    'horizontal' => __( '横向布局', 'qiling' ),
                 ),
                 'default' => 'standard',
             ),
@@ -126,135 +126,135 @@ class Room_Showcase_Module extends Module_Base {
             array(
                 'id'     => 'room_items',
                 'type'   => 'repeater',
-                'label'  => __( '房型列表', 'developer-starter' ),
+                'label'  => __( '房型列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '房型图片', 'developer-starter' ),
+                        'label' => __( '房型图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
-                        'label' => __( '房型名称', 'developer-starter' ),
+                        'label' => __( '房型名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'area',
                         'type'  => 'text',
-                        'label' => __( '房间面积', 'developer-starter' ),
-                        'desc'  => __( '如：45㎡', 'developer-starter' ),
+                        'label' => __( '房间面积', 'qiling' ),
+                        'desc'  => __( '如：45㎡', 'qiling' ),
                     ),
                     array(
                         'id'      => 'bed_type',
                         'type'    => 'select',
-                        'label'   => __( '床型', 'developer-starter' ),
+                        'label'   => __( '床型', 'qiling' ),
                         'options' => array(
-                            'king'      => __( '大床', 'developer-starter' ),
-                            'twin'      => __( '双床', 'developer-starter' ),
-                            'queen'     => __( '标准床', 'developer-starter' ),
-                            'family'    => __( '家庭多床', 'developer-starter' ),
-                            'tatami'    => __( '榻榻米', 'developer-starter' ),
+                            'king'      => __( '大床', 'qiling' ),
+                            'twin'      => __( '双床', 'qiling' ),
+                            'queen'     => __( '标准床', 'qiling' ),
+                            'family'    => __( '家庭多床', 'qiling' ),
+                            'tatami'    => __( '榻榻米', 'qiling' ),
                         ),
                         'default' => 'king',
                     ),
                     array(
                         'id'    => 'capacity',
                         'type'  => 'text',
-                        'label' => __( '可住人数', 'developer-starter' ),
-                        'desc'  => __( '如：2人', 'developer-starter' ),
+                        'label' => __( '可住人数', 'qiling' ),
+                        'desc'  => __( '如：2人', 'qiling' ),
                     ),
                     array(
                         'id'    => 'price',
                         'type'  => 'text',
-                        'label' => __( '价格', 'developer-starter' ),
-                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 688 ) : __( '如：¥688', 'developer-starter' ),
+                        'label' => __( '价格', 'qiling' ),
+                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 688 ) : __( '如：¥688', 'qiling' ),
                     ),
                     array(
                         'id'    => 'original_price',
                         'type'  => 'text',
-                        'label' => __( '原价（划线价）', 'developer-starter' ),
+                        'label' => __( '原价（划线价）', 'qiling' ),
                     ),
                     array(
                         'id'      => 'badge',
                         'type'    => 'select',
-                        'label'   => __( '房型标签', 'developer-starter' ),
+                        'label'   => __( '房型标签', 'qiling' ),
                         'options' => array(
-                            ''          => __( '无', 'developer-starter' ),
-                            'luxury'    => __( '豪华', 'developer-starter' ),
-                            'seaview'   => __( '海景', 'developer-starter' ),
-                            'cityview'  => __( '城景', 'developer-starter' ),
-                            'garden'    => __( '园景', 'developer-starter' ),
-                            'discount'  => __( '特惠', 'developer-starter' ),
-                            'recommend' => __( '推荐', 'developer-starter' ),
+                            ''          => __( '无', 'qiling' ),
+                            'luxury'    => __( '豪华', 'qiling' ),
+                            'seaview'   => __( '海景', 'qiling' ),
+                            'cityview'  => __( '城景', 'qiling' ),
+                            'garden'    => __( '园景', 'qiling' ),
+                            'discount'  => __( '特惠', 'qiling' ),
+                            'recommend' => __( '推荐', 'qiling' ),
                         ),
                     ),
                     array(
                         'id'    => 'amenities',
                         'type'  => 'textarea',
-                        'label' => __( '房间设施', 'developer-starter' ),
-                        'desc'  => __( '每行格式：图标名|设施名称，如：icon-wifi|免费WiFi', 'developer-starter' ),
+                        'label' => __( '房间设施', 'qiling' ),
+                        'desc'  => __( '每行格式：图标名|设施名称，如：icon-wifi|免费WiFi', 'qiling' ),
                         'rows'  => 5,
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'textarea',
-                        'label' => __( '房型描述', 'developer-starter' ),
+                        'label' => __( '房型描述', 'qiling' ),
                         'rows'  => 2,
                     ),
                     array(
                         'id'      => 'btn_text',
                         'type'    => 'text',
-                        'label'   => __( '按钮文字', 'developer-starter' ),
-                        'default' => __( '立即预订', 'developer-starter' ),
+                        'label'   => __( '按钮文字', 'qiling' ),
+                        'default' => __( '立即预订', 'qiling' ),
                     ),
                     array(
                         'id'      => 'btn_link',
                         'type'    => 'text',
-                        'label'   => __( '预订链接', 'developer-starter' ),
+                        'label'   => __( '预订链接', 'qiling' ),
                         'default' => '#',
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华大床房', 'Deluxe King Room' ) : __( '豪华大床房', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华大床房', 'Deluxe King Room' ) : __( '豪华大床房', 'qiling' ),
                         'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '45㎡', '45 sqm' ) : '45㎡',
                         'bed_type'       => 'king',
-                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'developer-starter' ),
+                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 688 ) : '¥688',
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 888 ) : '¥888',
                         'badge'          => 'luxury',
-                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-tv|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '智能电视', 'Smart TV' ) : __( '智能电视', 'developer-starter' ) ) . "\nicon-bath|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '独立浴室', 'Private bathroom' ) : __( '独立浴室', 'developer-starter' ) ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '宽敞明亮的豪华大床房，配备高品质床品', 'A spacious king room with premium bedding and refined finishes.' ) : __( '宽敞明亮的豪华大床房，配备高品质床品', 'developer-starter' ),
-                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ) ) . "\nicon-tv|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '智能电视', 'Smart TV' ) : __( '智能电视', 'qiling' ) ) . "\nicon-bath|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '独立浴室', 'Private bathroom' ) : __( '独立浴室', 'qiling' ) ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '宽敞明亮的豪华大床房，配备高品质床品', 'A spacious king room with premium bedding and refined finishes.' ) : __( '宽敞明亮的豪华大床房，配备高品质床品', 'qiling' ),
+                        'btn_text'       => __( '立即预订', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '海景双床房', 'Ocean Twin Room' ) : __( '海景双床房', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '海景双床房', 'Ocean Twin Room' ) : __( '海景双床房', 'qiling' ),
                         'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '52㎡', '52 sqm' ) : '52㎡',
                         'bed_type'       => 'twin',
-                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2-3人', '2-3 guests' ) : __( '2-3人', 'developer-starter' ),
+                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2-3人', '2-3 guests' ) : __( '2-3人', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 888 ) : '¥888',
                         'original_price' => '',
                         'badge'          => 'seaview',
-                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-balcony|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '观景阳台', 'Private balcony' ) : __( '观景阳台', 'developer-starter' ) ) . "\nicon-minibar|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '迷你吧', 'Minibar' ) : __( '迷你吧', 'developer-starter' ) ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无敌海景视野，让您尽享海滨度假时光', 'Open sea views designed for a relaxed coastal stay.' ) : __( '无敌海景视野，让您尽享海滨度假时光', 'developer-starter' ),
-                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ) ) . "\nicon-balcony|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '观景阳台', 'Private balcony' ) : __( '观景阳台', 'qiling' ) ) . "\nicon-minibar|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '迷你吧', 'Minibar' ) : __( '迷你吧', 'qiling' ) ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无敌海景视野，让您尽享海滨度假时光', 'Open sea views designed for a relaxed coastal stay.' ) : __( '无敌海景视野，让您尽享海滨度假时光', 'qiling' ),
+                        'btn_text'       => __( '立即预订', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政套房', 'Executive Suite' ) : __( '行政套房', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政套房', 'Executive Suite' ) : __( '行政套房', 'qiling' ),
                         'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '78㎡', '78 sqm' ) : '78㎡',
                         'bed_type'       => 'king',
-                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'developer-starter' ),
+                        'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1288 ) : '¥1288',
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1588 ) : '¥1588',
                         'badge'          => 'recommend',
-                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-lounge|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政酒廊', 'Executive lounge' ) : __( '行政酒廊', 'developer-starter' ) ) . "\nicon-breakfast|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '含早餐', 'Breakfast included' ) : __( '含早餐', 'developer-starter' ) ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '尊享行政礼遇，配备独立客厅和办公区', 'Premium suite with a lounge area and private workspace.' ) : __( '尊享行政礼遇，配备独立客厅和办公区', 'developer-starter' ),
-                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ) ) . "\nicon-lounge|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政酒廊', 'Executive lounge' ) : __( '行政酒廊', 'qiling' ) ) . "\nicon-breakfast|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '含早餐', 'Breakfast included' ) : __( '含早餐', 'qiling' ) ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '尊享行政礼遇，配备独立客厅和办公区', 'Premium suite with a lounge area and private workspace.' ) : __( '尊享行政礼遇，配备独立客厅和办公区', 'qiling' ),
+                        'btn_text'       => __( '立即预订', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                 ),
@@ -262,33 +262,33 @@ class Room_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'room_btn_bg_color',
                 'type'    => 'color',
-                'label'   => __( '预订按钮背景颜色', 'developer-starter' ),
+                'label'   => __( '预订按钮背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'      => 'room_btn_text_color',
                 'type'    => 'color',
-                'label'   => __( '预订按钮文字颜色', 'developer-starter' ),
+                'label'   => __( '预订按钮文字颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'room_btn_border_color', __( '预订按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'room_btn_border_color', __( '预订按钮边框颜色', 'qiling' ) ),
             array(
                 'id'      => 'room_btn_hover_bg_color',
                 'type'    => 'color',
-                'label'   => __( '预订按钮悬停背景颜色', 'developer-starter' ),
+                'label'   => __( '预订按钮悬停背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'      => 'room_btn_hover_text_color',
                 'type'    => 'color',
-                'label'   => __( '预订按钮悬停文字颜色', 'developer-starter' ),
+                'label'   => __( '预订按钮悬停文字颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'room_btn_hover_border_color', __( '预订按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随预订按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'room_btn_hover_border_color', __( '预订按钮悬停边框颜色', 'qiling' ), __( '留空时跟随预订按钮悬停背景颜色。', 'qiling' ) ),
 
             // ========================================
             // 背景设置
@@ -296,19 +296,19 @@ class Room_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'module_bg_color',
                 'type'    => 'color',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
 
@@ -318,10 +318,10 @@ class Room_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'enable_staggered_animation',
                 'type'    => 'select',
-                'label'   => __( '开启逐个显示动画', 'developer-starter' ),
+                'label'   => __( '开启逐个显示动画', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -344,7 +344,7 @@ class Room_Showcase_Module extends Module_Base {
         // ========================================
         $title       = isset( $data['room_title'] ) && $data['room_title'] !== '' 
                        ? $data['room_title'] 
-                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选客房', 'Featured Rooms' ) : __( '精选客房', 'developer-starter' ) );
+                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选客房', 'Featured Rooms' ) : __( '精选客房', 'qiling' ) );
         $title_size  = isset( $data['room_title_size'] ) && $data['room_title_size'] !== '' 
                        ? $data['room_title_size'] 
                        : '2rem';
@@ -383,44 +383,44 @@ class Room_Showcase_Module extends Module_Base {
             $items = array(
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华大床房', 'Deluxe King Room' ) : __( '豪华大床房', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '豪华大床房', 'Deluxe King Room' ) : __( '豪华大床房', 'qiling' ),
                     'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '45㎡', '45 sqm' ) : '45㎡',
                     'bed_type'       => 'king',
-                    'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'developer-starter' ),
+                    'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 688 ) : '¥688',
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 888 ) : '¥888',
                     'badge'          => 'luxury',
-                    'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-tv|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '智能电视', 'Smart TV' ) : __( '智能电视', 'developer-starter' ) ) . "\nicon-bath|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '独立浴室', 'Private bathroom' ) : __( '独立浴室', 'developer-starter' ) ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '宽敞明亮的豪华大床房，配备高品质床品', 'A spacious king room with premium bedding and refined finishes.' ) : __( '宽敞明亮的豪华大床房，配备高品质床品', 'developer-starter' ),
-                    'btn_text'       => __( '立即预订', 'developer-starter' ),
+                    'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ) ) . "\nicon-tv|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '智能电视', 'Smart TV' ) : __( '智能电视', 'qiling' ) ) . "\nicon-bath|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '独立浴室', 'Private bathroom' ) : __( '独立浴室', 'qiling' ) ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '宽敞明亮的豪华大床房，配备高品质床品', 'A spacious king room with premium bedding and refined finishes.' ) : __( '宽敞明亮的豪华大床房，配备高品质床品', 'qiling' ),
+                    'btn_text'       => __( '立即预订', 'qiling' ),
                     'btn_link'       => '#',
                 ),
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '海景双床房', 'Ocean Twin Room' ) : __( '海景双床房', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '海景双床房', 'Ocean Twin Room' ) : __( '海景双床房', 'qiling' ),
                     'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '52㎡', '52 sqm' ) : '52㎡',
                     'bed_type'       => 'twin',
-                    'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2-3人', '2-3 guests' ) : __( '2-3人', 'developer-starter' ),
+                    'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2-3人', '2-3 guests' ) : __( '2-3人', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 888 ) : '¥888',
                     'original_price' => '',
                     'badge'          => 'seaview',
-                    'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-balcony|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '观景阳台', 'Private balcony' ) : __( '观景阳台', 'developer-starter' ) ) . "\nicon-minibar|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '迷你吧', 'Minibar' ) : __( '迷你吧', 'developer-starter' ) ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无敌海景视野，让您尽享海滨度假时光', 'Open sea views designed for a relaxed coastal stay.' ) : __( '无敌海景视野，让您尽享海滨度假时光', 'developer-starter' ),
-                    'btn_text'       => __( '立即预订', 'developer-starter' ),
+                    'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ) ) . "\nicon-balcony|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '观景阳台', 'Private balcony' ) : __( '观景阳台', 'qiling' ) ) . "\nicon-minibar|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '迷你吧', 'Minibar' ) : __( '迷你吧', 'qiling' ) ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '无敌海景视野，让您尽享海滨度假时光', 'Open sea views designed for a relaxed coastal stay.' ) : __( '无敌海景视野，让您尽享海滨度假时光', 'qiling' ),
+                    'btn_text'       => __( '立即预订', 'qiling' ),
                     'btn_link'       => '#',
                 ),
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政套房', 'Executive Suite' ) : __( '行政套房', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政套房', 'Executive Suite' ) : __( '行政套房', 'qiling' ),
                     'area'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '78㎡', '78 sqm' ) : '78㎡',
                     'bed_type'       => 'king',
-                    'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'developer-starter' ),
+                    'capacity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '2人', '2 guests' ) : __( '2人', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1288 ) : '¥1288',
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 1588 ) : '¥1588',
                     'badge'          => 'recommend',
-                    'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ) ) . "\nicon-lounge|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政酒廊', 'Executive lounge' ) : __( '行政酒廊', 'developer-starter' ) ) . "\nicon-breakfast|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '含早餐', 'Breakfast included' ) : __( '含早餐', 'developer-starter' ) ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '尊享行政礼遇，配备独立客厅和办公区', 'Premium suite with a lounge area and private workspace.' ) : __( '尊享行政礼遇，配备独立客厅和办公区', 'developer-starter' ),
-                    'btn_text'       => __( '立即预订', 'developer-starter' ),
+                    'amenities'      => "icon-wifi|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ) ) . "\nicon-lounge|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '行政酒廊', 'Executive lounge' ) : __( '行政酒廊', 'qiling' ) ) . "\nicon-breakfast|" . ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '含早餐', 'Breakfast included' ) : __( '含早餐', 'qiling' ) ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '尊享行政礼遇，配备独立客厅和办公区', 'Premium suite with a lounge area and private workspace.' ) : __( '尊享行政礼遇，配备独立客厅和办公区', 'qiling' ),
+                    'btn_text'       => __( '立即预订', 'qiling' ),
                     'btn_link'       => '#',
                 ),
             );
@@ -461,21 +461,21 @@ class Room_Showcase_Module extends Module_Base {
 
         // 床型文字映射
         $bed_labels = array(
-            'king'   => __( '大床', 'developer-starter' ),
-            'twin'   => __( '双床', 'developer-starter' ),
-            'queen'  => __( '标准床', 'developer-starter' ),
-            'family' => __( '家庭多床', 'developer-starter' ),
-            'tatami' => __( '榻榻米', 'developer-starter' ),
+            'king'   => __( '大床', 'qiling' ),
+            'twin'   => __( '双床', 'qiling' ),
+            'queen'  => __( '标准床', 'qiling' ),
+            'family' => __( '家庭多床', 'qiling' ),
+            'tatami' => __( '榻榻米', 'qiling' ),
         );
 
         // 标签文字映射
         $badge_labels = array(
-            'luxury'    => __( '豪华', 'developer-starter' ),
-            'seaview'   => __( '海景', 'developer-starter' ),
-            'cityview'  => __( '城景', 'developer-starter' ),
-            'garden'    => __( '园景', 'developer-starter' ),
-            'discount'  => __( '特惠', 'developer-starter' ),
-            'recommend' => __( '推荐', 'developer-starter' ),
+            'luxury'    => __( '豪华', 'qiling' ),
+            'seaview'   => __( '海景', 'qiling' ),
+            'cityview'  => __( '城景', 'qiling' ),
+            'garden'    => __( '园景', 'qiling' ),
+            'discount'  => __( '特惠', 'qiling' ),
+            'recommend' => __( '推荐', 'qiling' ),
         );
         ?>
         
@@ -518,7 +518,7 @@ class Room_Showcase_Module extends Module_Base {
                             $item_badge    = isset( $item['badge'] ) ? $item['badge'] : '';
                             $item_amenities= isset( $item['amenities'] ) ? $item['amenities'] : '';
                             $item_desc     = isset( $item['desc'] ) ? $item['desc'] : '';
-                            $item_btn_text = isset( $item['btn_text'] ) ? $item['btn_text'] : __( '立即预订', 'developer-starter' );
+                            $item_btn_text = isset( $item['btn_text'] ) ? $item['btn_text'] : __( '立即预订', 'qiling' );
                             $item_btn_link = isset( $item['btn_link'] ) ? $item['btn_link'] : '#';
 
                             // 解析设施列表
@@ -544,7 +544,7 @@ class Room_Showcase_Module extends Module_Base {
                             }
 
                             // 默认占位图
-                            $placeholder_img = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260"%3E%3Crect fill="%23e2e8f0" width="400" height="260"/%3E%3Ctext x="50%25" y="50%25" fill="%2394a3b8" text-anchor="middle" dy=".3em" font-size="18"%3E' . urlencode( __( '房型图片', 'developer-starter' ) ) . '%3C/text%3E%3C/svg%3E';
+                            $placeholder_img = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260"%3E%3Crect fill="%23e2e8f0" width="400" height="260"/%3E%3Ctext x="50%25" y="50%25" fill="%2394a3b8" text-anchor="middle" dy=".3em" font-size="18"%3E' . urlencode( __( '房型图片', 'qiling' ) ) . '%3C/text%3E%3C/svg%3E';
                             $display_image = $item_image ? $item_image : $placeholder_img;
                         ?>
                             <div class="ql-hotel-room-card" <?php echo $anim_attr; ?>>
@@ -629,7 +629,7 @@ class Room_Showcase_Module extends Module_Base {
                                     <div class="ql-hotel-room-footer">
                                         <div class="ql-hotel-room-price">
                                             <span class="ql-hotel-price-current"><?php echo esc_html( $item_price ); ?></span>
-                                            <span class="ql-hotel-price-unit"><?php echo esc_html( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/晚', '/night' ) : __( '/晚', 'developer-starter' ) ); ?></span>
+                                            <span class="ql-hotel-price-unit"><?php echo esc_html( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '/晚', '/night' ) : __( '/晚', 'qiling' ) ); ?></span>
                                             <?php if ( $item_orig ) : ?>
                                                 <span class="ql-hotel-price-original"><?php echo esc_html( $item_orig ); ?></span>
                                             <?php endif; ?>

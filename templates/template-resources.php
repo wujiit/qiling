@@ -13,14 +13,14 @@
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-resources',
-        DEVELOPER_STARTER_ASSETS . '/css/resources.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/resources.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 
     wp_enqueue_style(
         'developer-starter-resource-template-skins',
-        DEVELOPER_STARTER_ASSETS . '/css/resource-template-skins.css',
+        QILING_ASSETS . '/css/resource-template-skins.css',
         array( 'developer-starter-resources' ),
         developer_starter_get_assets_version()
     );

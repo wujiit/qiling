@@ -15,7 +15,7 @@ trait Admin_Settings_Admin_Trait {
 
     public function handle_create_theme_table() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( __( '权限不足', 'developer-starter' ) );
+            wp_die( __( '权限不足', 'qiling' ) );
         }
 
         check_admin_referer( 'ds_create_theme_table' );
@@ -26,6 +26,15 @@ trait Admin_Settings_Admin_Trait {
             case 'messages':
                 if ( class_exists( 'Developer_Starter\\Core\\Message_Manager' ) ) {
                     $manager = new \Developer_Starter\Core\Message_Manager();
+                    $manager->create_table();
+                }
+                break;
+            case 'notifications':
+                if ( class_exists( 'Developer_Starter\\Core\\Notification_Manager' ) ) {
+                    $manager = new \Developer_Starter\Core\Notification_Manager();
+                    $manager->create_table();
+                } elseif ( class_exists( 'Qiling\\Core\\Notification_Manager' ) ) {
+                    $manager = new \Qiling\Core\Notification_Manager();
                     $manager->create_table();
                 }
                 break;
@@ -55,7 +64,7 @@ trait Admin_Settings_Admin_Trait {
 
         $redirect = wp_get_referer();
         if ( ! $redirect ) {
-            $redirect = admin_url( 'admin.php?page=developer-starter-settings&tab=documentation' );
+            $redirect = admin_url( 'admin.php?page=qiling-settings&tab=documentation' );
         }
         $redirect = add_query_arg( 'ds_table_created', '1', $redirect );
         wp_safe_redirect( $redirect );
@@ -63,30 +72,32 @@ trait Admin_Settings_Admin_Trait {
     }
 
     public function enqueue_admin_scripts( $hook ) {
-        if ( strpos( $hook, 'developer-starter' ) === false ) {
+        if ( strpos( (string) $hook, 'qiling' ) === false && strpos( (string) $hook, 'developer-starter' ) === false ) {
             return;
         }
         wp_enqueue_media();
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_script( 'wp-color-picker' );
+        wp_enqueue_style( 'qiling-admin', QILING_ASSETS . '/css/admin.css', array(), QILING_VERSION );
+        wp_register_style( 'developer-starter-admin', false, array( 'qiling-admin' ), QILING_VERSION );
 
-        $design_preset_snapshot_js     = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/admin-design-preset-snapshot.js';
-        $design_preset_snapshot_js_ver = file_exists( $design_preset_snapshot_js ) ? (string) filemtime( $design_preset_snapshot_js ) : DEVELOPER_STARTER_VERSION;
+        $design_preset_snapshot_js     = trailingslashit( QILING_DIR ) . 'assets/js/admin-design-preset-snapshot.js';
+        $design_preset_snapshot_js_ver = file_exists( $design_preset_snapshot_js ) ? (string) filemtime( $design_preset_snapshot_js ) : QILING_VERSION;
 
         wp_enqueue_script(
             'developer-starter-admin-design-preset-snapshot',
-            DEVELOPER_STARTER_ASSETS . '/js/admin-design-preset-snapshot.js',
+            QILING_ASSETS . '/js/admin-design-preset-snapshot.js',
             array(),
             $design_preset_snapshot_js_ver,
             false
         );
 
-        $settings_repeater_js = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/admin-settings-repeater.js';
+        $settings_repeater_js = trailingslashit( QILING_DIR ) . 'assets/js/admin-settings-repeater.js';
         wp_enqueue_script(
             'developer-starter-admin-settings-repeater',
-            DEVELOPER_STARTER_ASSETS . '/js/admin-settings-repeater.js',
+            QILING_ASSETS . '/js/admin-settings-repeater.js',
             array(),
-            file_exists( $settings_repeater_js ) ? (string) filemtime( $settings_repeater_js ) : DEVELOPER_STARTER_VERSION,
+            file_exists( $settings_repeater_js ) ? (string) filemtime( $settings_repeater_js ) : QILING_VERSION,
             false
         );
 
@@ -124,7 +135,7 @@ trait Admin_Settings_Admin_Trait {
                 var input = button.siblings('.ds-image-url');
                 var preview = button.siblings('.ds-image-preview');
 
-                var frame = wp.media({ title: '<?php echo esc_js( __( '选择图片', 'developer-starter' ) ); ?>', multiple: false });
+                var frame = wp.media({ title: '<?php echo esc_js( __( '选择图片', 'qiling' ) ); ?>', multiple: false });
                 frame.on('select', function() {
                     var attachment = frame.state().get('selection').first().toJSON();
                     var selectedUrl = attachment.url;
@@ -151,7 +162,7 @@ trait Admin_Settings_Admin_Trait {
                 e.preventDefault();
                 var button = $(this);
                 var input = button.siblings('.ds-file-url');
-                var title = button.data('title') || '<?php echo esc_js( __( '选择文件', 'developer-starter' ) ); ?>';
+                var title = button.data('title') || '<?php echo esc_js( __( '选择文件', 'qiling' ) ); ?>';
 
                 var frame = wp.media({ title: title, multiple: false });
                 frame.on('select', function() {
@@ -174,7 +185,7 @@ trait Admin_Settings_Admin_Trait {
                 var result = $('#refresh-version-result');
                 var versionInput = $('input[name="developer_starter_options[assets_version]"]');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '刷新中...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '刷新中...', 'qiling' ) ); ?>');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -187,17 +198,17 @@ trait Admin_Settings_Admin_Trait {
                     success: function(response) {
                         if (response && response.success) {
                             versionInput.val(response.data.version);
-                            result.css('color', '#10b981').text('✓ ' + '<?php echo esc_js( __( '版本号已更新为: ', 'developer-starter' ) ); ?>' + response.data.version);
+                            result.css('color', '#10b981').text('<?php echo esc_js( __( '版本号已更新为: ', 'qiling' ) ); ?>' + response.data.version);
                             setTimeout(function() { result.text(''); }, 5000);
                         } else {
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '刷新失败: ', 'developer-starter' ) ); ?>' + (response && response.data ? response.data : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>'));
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '刷新失败: ', 'qiling' ) ); ?>' + (response && response.data ? response.data : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>'));
                         }
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '一键刷新版本号', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '一键刷新版本号', 'qiling' ) ); ?>');
                     },
                     error: function(xhr, status, error) {
                         console.log('AJAX Error:', status, error, xhr.responseText);
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败: ', 'developer-starter' ) ); ?>' + error);
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '一键刷新版本号', 'developer-starter' ) ); ?>');
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败: ', 'qiling' ) ); ?>' + error);
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '一键刷新版本号', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -207,8 +218,8 @@ trait Admin_Settings_Admin_Trait {
                 var button = $(this);
                 var result = $('#smtp-test-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '发送中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在发送测试邮件...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '发送中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在发送测试邮件...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -220,17 +231,17 @@ trait Admin_Settings_Admin_Trait {
                     },
                     success: function(response) {
                         if (response && response.success && response.data) {
-                            result.css('color', '#10b981').text('✓ ' + response.data.message);
+                            result.css('color', '#10b981').text(response.data.message);
                         } else {
                             var msg = response && response.data && response.data.message
                                 ? response.data.message
-                                : '<?php echo esc_js( __( '发送失败，请检查 SMTP 配置。', 'developer-starter' ) ); ?>';
+                                : '<?php echo esc_js( __( '发送失败，请检查 SMTP 配置。', 'qiling' ) ); ?>';
                             result.css('color', '#ef4444').text(msg);
                         }
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '发送测试邮件', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '发送测试邮件', 'qiling' ) ); ?>');
                     },
                     error: function(xhr, status, error) {
-                        var msg = '<?php echo esc_js( __( '请求失败，请稍后重试', 'developer-starter' ) ); ?>';
+                        var msg = '<?php echo esc_js( __( '请求失败，请稍后重试', 'qiling' ) ); ?>';
                         if (xhr && xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message) {
                             msg = xhr.responseJSON.data.message;
                         } else if (error) {
@@ -239,7 +250,7 @@ trait Admin_Settings_Admin_Trait {
                             msg = msg + ' (' + status + ')';
                         }
                         result.css('color', '#ef4444').text(msg);
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '发送测试邮件', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '发送测试邮件', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -271,9 +282,9 @@ trait Admin_Settings_Admin_Trait {
                     json_mode: card.find('.ds-ai-connection-input-json-mode').is(':checked') ? '1' : ''
                 };
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '测试中...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '测试中...', 'qiling' ) ); ?>');
                 spinner.addClass('is-active');
-                result.text('<?php echo esc_js( __( '正在测试连通性...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                result.text('<?php echo esc_js( __( '正在测试连通性...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -282,16 +293,16 @@ trait Admin_Settings_Admin_Trait {
                     data: payload,
                     success: function(response) {
                         if (response && response.success && response.data) {
-                            result.css('color', '#10b981').text('✓ ' + response.data.message);
+                            result.css('color', '#10b981').text(response.data.message);
                         } else {
                             var msg = response && response.data && response.data.message
                                 ? response.data.message
-                                : '<?php echo esc_js( __( '测试失败，请检查接口地址、模型和 API Key。', 'developer-starter' ) ); ?>';
+                                : '<?php echo esc_js( __( '测试失败，请检查接口地址、模型和 API Key。', 'qiling' ) ); ?>';
                             result.css('color', '#ef4444').text(msg);
                         }
                     },
                     error: function(xhr, status, error) {
-                        var msg = '<?php echo esc_js( __( '请求失败，请稍后重试', 'developer-starter' ) ); ?>';
+                        var msg = '<?php echo esc_js( __( '请求失败，请稍后重试', 'qiling' ) ); ?>';
                         if (xhr && xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message) {
                             msg = xhr.responseJSON.data.message;
                         } else if (error) {
@@ -310,7 +321,7 @@ trait Admin_Settings_Admin_Trait {
 
             // 一键数据库清理
             $('#run-db-cleanup').on('click', function() {
-                if (!confirm('<?php echo esc_js( __( '确定要清理数据库吗？此操作不可逆，请确保已备份数据库！', 'developer-starter' ) ); ?>')) {
+                if (!confirm('<?php echo esc_js( __( '确定要清理数据库吗？此操作不可逆，请确保已备份数据库！', 'qiling' ) ); ?>')) {
                     return;
                 }
 
@@ -324,12 +335,12 @@ trait Admin_Settings_Admin_Trait {
                 });
 
                 if (cleanItems.length === 0) {
-                    result.css('color', '#f59e0b').text('<?php echo esc_js( __( '请至少选择一个清理项', 'developer-starter' ) ); ?>');
+                    result.css('color', '#f59e0b').text('<?php echo esc_js( __( '请至少选择一个清理项', 'qiling' ) ); ?>');
                     return;
                 }
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'developer-starter' ) ); ?>');
-                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在清理数据库（分批执行）...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'qiling' ) ); ?>');
+                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在清理数据库（分批执行）...', 'qiling' ) ); ?>');
 
                 var totalDeleted = 0;
                 var cleanupBatchSize = 200;
@@ -350,9 +361,9 @@ trait Admin_Settings_Admin_Trait {
                             if (!response || !response.success || !response.data) {
                                 var failMsg = response && response.data && response.data.message
                                     ? response.data.message
-                                    : '<?php echo esc_js( __( '清理失败', 'developer-starter' ) ); ?>';
-                                result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'developer-starter' ) ); ?>' + failMsg);
-                                button.prop('disabled', false).text('🧹 <?php echo esc_js( __( '一键清理数据库', 'developer-starter' ) ); ?>');
+                                    : '<?php echo esc_js( __( '清理失败', 'qiling' ) ); ?>';
+                                result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'qiling' ) ); ?>' + failMsg);
+                                button.prop('disabled', false).text('<?php echo esc_js( __( '一键清理数据库', 'qiling' ) ); ?>');
                                 return;
                             }
 
@@ -362,7 +373,7 @@ trait Admin_Settings_Admin_Trait {
                                 totalDeleted += deleted;
                             }
 
-                            result.css('color', '#64748b').text(data.message || '<?php echo esc_js( __( '正在清理中...', 'developer-starter' ) ); ?>');
+                            result.css('color', '#64748b').text(data.message || '<?php echo esc_js( __( '正在清理中...', 'qiling' ) ); ?>');
 
                             if (data.has_more) {
                                 runCleanupBatch(parseInt(data.next_cursor || cursor, 10));
@@ -370,17 +381,17 @@ trait Admin_Settings_Admin_Trait {
                             }
 
                             if (totalDeleted > 0) {
-                                result.css('color', '#10b981').text('✓ <?php echo esc_js( __( '清理完成，本次共清理', 'developer-starter' ) ); ?> ' + totalDeleted + ' <?php echo esc_js( __( '条数据', 'developer-starter' ) ); ?>');
+                                result.css('color', '#10b981').text('<?php echo esc_js( __( '清理完成，本次共清理', 'qiling' ) ); ?> ' + totalDeleted + ' <?php echo esc_js( __( '条数据', 'qiling' ) ); ?>');
                             } else {
-                                result.css('color', '#10b981').text('✓ ' + (data.message || '<?php echo esc_js( __( '数据库已经很干净，没有需要清理的数据', 'developer-starter' ) ); ?>'));
+                                result.css('color', '#10b981').text((data.message || '<?php echo esc_js( __( '数据库已经很干净，没有需要清理的数据', 'qiling' ) ); ?>'));
                             }
 
                             loadDbStats();
-                            button.prop('disabled', false).text('🧹 <?php echo esc_js( __( '一键清理数据库', 'developer-starter' ) ); ?>');
+                            button.prop('disabled', false).text('<?php echo esc_js( __( '一键清理数据库', 'qiling' ) ); ?>');
                         },
                         error: function() {
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>');
-                            button.prop('disabled', false).text('🧹 <?php echo esc_js( __( '一键清理数据库', 'developer-starter' ) ); ?>');
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>');
+                            button.prop('disabled', false).text('<?php echo esc_js( __( '一键清理数据库', 'qiling' ) ); ?>');
                         }
                     });
                 }
@@ -420,7 +431,7 @@ trait Admin_Settings_Admin_Trait {
 
             function updateStatDisplay(selector, count) {
                 var $el = $(selector);
-                $el.text(count + ' <?php echo esc_js( __( '条', 'developer-starter' ) ); ?>');
+                $el.text(count + ' <?php echo esc_js( __( '条', 'qiling' ) ); ?>');
                 if (count > 0) {
                     $el.removeClass('ds-stat-ok').addClass('ds-stat-warn');
                 } else {
@@ -434,7 +445,7 @@ trait Admin_Settings_Admin_Trait {
             }
 
             $('#clear-cleanup-rest-audit-log').on('click', function() {
-                if (!confirm('<?php echo esc_js( __( '确定要清空清理审计日志吗？此操作不可逆。', 'developer-starter' ) ); ?>')) {
+                if (!confirm('<?php echo esc_js( __( '确定要清空清理审计日志吗？此操作不可逆。', 'qiling' ) ); ?>')) {
                     return;
                 }
 
@@ -442,8 +453,8 @@ trait Admin_Settings_Admin_Trait {
                 var result = $('#cleanup-rest-audit-log-result');
                 var list = $('#cleanup-rest-audit-log-list');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '清空中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在清空日志...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '清空中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在清空日志...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -455,19 +466,19 @@ trait Admin_Settings_Admin_Trait {
                     },
                     success: function(response) {
                         if (response && response.success) {
-                            list.html('<p class="description" style="margin:0 0 8px;"><?php echo esc_js( __( '暂无清理日志。', 'developer-starter' ) ); ?></p>');
-                            result.css('color', '#10b981').text('✓ ' + (response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '清理日志已清空。', 'developer-starter' ) ); ?>'));
+                            list.html('<p class="description" style="margin:0 0 8px;"><?php echo esc_js( __( '暂无清理日志。', 'qiling' ) ); ?></p>');
+                            result.css('color', '#10b981').text((response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '清理日志已清空。', 'qiling' ) ); ?>'));
                         } else {
-                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清空失败: ', 'developer-starter' ) ); ?>' + msg);
+                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清空失败: ', 'qiling' ) ); ?>' + msg);
                         }
                     },
                     error: function(xhr) {
-                        var msg = xhr && xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message ? xhr.responseJSON.data.message : '<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>';
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '执行失败: ', 'developer-starter' ) ); ?>' + msg);
+                        var msg = xhr && xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message ? xhr.responseJSON.data.message : '<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>';
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '执行失败: ', 'qiling' ) ); ?>' + msg);
                     },
                     complete: function() {
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '清空清理日志', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '清空清理日志', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -477,8 +488,8 @@ trait Admin_Settings_Admin_Trait {
                 var result = $('#theme-scheduled-cleanup-result');
                 var scope = button.data('scope') || 'auto';
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '执行中...', 'developer-starter' ) ); ?>');
-                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在执行主题清理...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '执行中...', 'qiling' ) ); ?>');
+                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在执行主题清理...', 'qiling' ) ); ?>');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -491,24 +502,24 @@ trait Admin_Settings_Admin_Trait {
                     },
                     success: function(response) {
                         if (response && response.success) {
-                            result.css('color', '#10b981').text('✓ ' + (response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '清理完成。', 'developer-starter' ) ); ?>'));
+                            result.css('color', '#10b981').text((response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '清理完成。', 'qiling' ) ); ?>'));
                         } else {
-                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '执行失败: ', 'developer-starter' ) ); ?>' + msg);
+                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '执行失败: ', 'qiling' ) ); ?>' + msg);
                         }
                     },
                     error: function(xhr) {
-                        var msg = xhr && xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message ? xhr.responseJSON.data.message : '<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>';
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '执行失败: ', 'developer-starter' ) ); ?>' + msg);
+                        var msg = xhr && xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message ? xhr.responseJSON.data.message : '<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>';
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '执行失败: ', 'qiling' ) ); ?>' + msg);
                     },
                     complete: function() {
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '立即执行主题清理', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '立即执行主题清理', 'qiling' ) ); ?>');
                     }
                 });
             });
 
             $('#regenerate-cleanup-cron-token').on('click', function() {
-                if (!confirm('<?php echo esc_js( __( '重新生成后，旧的外部定时任务 URL 会失效。确定继续吗？', 'developer-starter' ) ); ?>')) {
+                if (!confirm('<?php echo esc_js( __( '重新生成后，旧的外部定时任务 URL 会失效。确定继续吗？', 'qiling' ) ); ?>')) {
                     return;
                 }
 
@@ -520,8 +531,8 @@ trait Admin_Settings_Admin_Trait {
                 var header = $('#cleanup-cron-header');
                 var headerCurl = $('#cleanup-cron-header-curl');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '生成中...', 'developer-starter' ) ); ?>');
-                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在生成...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '生成中...', 'qiling' ) ); ?>');
+                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在生成...', 'qiling' ) ); ?>');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -548,17 +559,17 @@ trait Admin_Settings_Admin_Trait {
                             if (response.data.header_curl) {
                                 headerCurl.text(response.data.header_curl);
                             }
-                            result.css('color', '#10b981').text('✓ ' + (response.data.message || '<?php echo esc_js( __( '已重新生成。', 'developer-starter' ) ); ?>'));
+                            result.css('color', '#10b981').text((response.data.message || '<?php echo esc_js( __( '已重新生成。', 'qiling' ) ); ?>'));
                         } else {
-                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '生成失败: ', 'developer-starter' ) ); ?>' + msg);
+                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '生成失败: ', 'qiling' ) ); ?>' + msg);
                         }
                     },
                     error: function() {
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>');
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>');
                     },
                     complete: function() {
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '重新生成', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '重新生成', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -566,9 +577,9 @@ trait Admin_Settings_Admin_Trait {
             // 刷新统计按钮
             $('#refresh-db-stats').on('click', function() {
                 var button = $(this);
-                button.prop('disabled', true).text('<?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '加载中...', 'qiling' ) ); ?>');
                 $('#db-stats-grid .db-stat-item span:last-child')
-                    .text('<?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?>')
+                    .text('<?php echo esc_js( __( '加载中...', 'qiling' ) ); ?>')
                     .removeClass('ds-stat-ok ds-stat-warn');
 
                 $.ajax({
@@ -595,10 +606,10 @@ trait Admin_Settings_Admin_Trait {
                             updateStatDisplay('#stat-package-pages', stats.package_pages);
                             updateStatDisplay('#stat-package-trash-pages', stats.package_trash_pages);
                         }
-                        button.prop('disabled', false).text('🔄 <?php echo esc_js( __( '刷新统计', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '刷新统计', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        button.prop('disabled', false).text('🔄 <?php echo esc_js( __( '刷新统计', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '刷新统计', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -619,7 +630,7 @@ trait Admin_Settings_Admin_Trait {
                 var sizeEl = $('#poster-cache-size');
                 var dirEl = $('#poster-cache-dir');
 
-                countEl.text(count + ' <?php echo esc_js( __( '张', 'developer-starter' ) ); ?>');
+                countEl.text(count + ' <?php echo esc_js( __( '张', 'qiling' ) ); ?>');
                 sizeEl.text(sizeText);
                 dirEl.text(stats.dir || '--');
 
@@ -658,26 +669,26 @@ trait Admin_Settings_Admin_Trait {
 
             $('#refresh-poster-cache-stats').on('click', function() {
                 var button = $(this);
-                button.prop('disabled', true).text('<?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '加载中...', 'qiling' ) ); ?>');
                 $('#poster-cache-count, #poster-cache-size')
-                    .text('<?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?>')
+                    .text('<?php echo esc_js( __( '加载中...', 'qiling' ) ); ?>')
                     .removeClass('ds-stat-ok ds-stat-warn');
 
                 loadPosterCacheStats().always(function() {
-                    button.prop('disabled', false).text('🔄 <?php echo esc_js( __( '刷新统计', 'developer-starter' ) ); ?>');
+                    button.prop('disabled', false).text('<?php echo esc_js( __( '刷新统计', 'qiling' ) ); ?>');
                 });
             });
 
             $('#clear-poster-cache').on('click', function() {
-                if (!confirm('<?php echo esc_js( __( '确定要清理文章海报缓存吗？此操作只会删除 uploads/qiling-posters 下的海报 PNG 缓存。', 'developer-starter' ) ); ?>')) {
+                if (!confirm('<?php echo esc_js( __( '确定要清理文章海报缓存吗？此操作只会删除 uploads/qiling-posters 下的海报 PNG 缓存。', 'qiling' ) ); ?>')) {
                     return;
                 }
 
                 var button = $(this);
                 var result = $('#clear-poster-cache-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在清理缓存...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在清理缓存...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -690,28 +701,28 @@ trait Admin_Settings_Admin_Trait {
                     success: function(response) {
                         if (response && response.success) {
                             var failed = response.data && response.data.failed_files ? parseInt(response.data.failed_files, 10) : 0;
-                            result.css('color', failed > 0 ? '#f59e0b' : '#10b981').text(response.data.message || '<?php echo esc_js( __( '清理完成', 'developer-starter' ) ); ?>');
+                            result.css('color', failed > 0 ? '#f59e0b' : '#10b981').text(response.data.message || '<?php echo esc_js( __( '清理完成', 'qiling' ) ); ?>');
                             if (response.data && response.data.stats) {
                                 applyPosterCacheStats(response.data.stats);
                             } else {
                                 loadPosterCacheStats();
                             }
                         } else {
-                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'developer-starter' ) ); ?>' + msg);
+                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'qiling' ) ); ?>' + msg);
                         }
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理海报缓存', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理海报缓存', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>');
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理海报缓存', 'developer-starter' ) ); ?>');
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理海报缓存', 'qiling' ) ); ?>');
                     }
                 });
             });
 
             function applyThumbnailCacheStats(stats) {
                 stats = stats || {};
-                $('#thumbnail-cache-count').text((parseInt(stats.count || 0, 10) || 0).toLocaleString() + ' <?php echo esc_js( __( '张', 'developer-starter' ) ); ?>');
+                $('#thumbnail-cache-count').text((parseInt(stats.count || 0, 10) || 0).toLocaleString() + ' <?php echo esc_js( __( '张', 'qiling' ) ); ?>');
                 $('#thumbnail-cache-size').text(stats.size_human || '0 B');
                 $('#thumbnail-cache-dir').text(stats.dir || '');
             }
@@ -734,21 +745,21 @@ trait Admin_Settings_Admin_Trait {
                 var button = action === 'developer_starter_clear_thumbnail_cache' ? $('#clear-thumbnail-cache') : $('#clear-unused-thumbnail-cache');
                 var result = $('#thumbnail-cache-result');
                 button.prop('disabled', true).text(workingText);
-                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在处理，请稍候...', 'developer-starter' ) ); ?>');
+                result.css('color', '#64748b').text('<?php echo esc_js( __( '正在处理，请稍候...', 'qiling' ) ); ?>');
                 $.post(dsAjaxUrl, {
                     action: action,
                     nonce: <?php echo wp_json_encode( wp_create_nonce( 'thumbnail_cache_nonce' ) ); ?>
                 }).done(function(response) {
                     if (response && response.success) {
-                        result.css('color', '#10b981').text(response.data.message || '<?php echo esc_js( __( '操作完成', 'developer-starter' ) ); ?>');
+                        result.css('color', '#10b981').text(response.data.message || '<?php echo esc_js( __( '操作完成', 'qiling' ) ); ?>');
                         applyThumbnailCacheStats(response.data.stats);
                     } else {
-                        result.css('color', '#ef4444').text((response && response.data && response.data.message) || '<?php echo esc_js( __( '操作失败', 'developer-starter' ) ); ?>');
+                        result.css('color', '#ef4444').text((response && response.data && response.data.message) || '<?php echo esc_js( __( '操作失败', 'qiling' ) ); ?>');
                     }
                 }).fail(function() {
-                    result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>');
+                    result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>');
                 }).always(function() {
-                    button.prop('disabled', false).text(action === 'developer_starter_clear_thumbnail_cache' ? '<?php echo esc_js( __( '清空全部缓存', 'developer-starter' ) ); ?>' : '<?php echo esc_js( __( '扫描并清理未使用缓存', 'developer-starter' ) ); ?>');
+                    button.prop('disabled', false).text(action === 'developer_starter_clear_thumbnail_cache' ? '<?php echo esc_js( __( '清空全部缓存', 'qiling' ) ); ?>' : '<?php echo esc_js( __( '扫描并清理未使用缓存', 'qiling' ) ); ?>');
                 });
             }
 
@@ -757,10 +768,10 @@ trait Admin_Settings_Admin_Trait {
             }
             $('#refresh-thumbnail-cache-stats').on('click', loadThumbnailCacheStats);
             $('#clear-thumbnail-cache').on('click', function() {
-                runThumbnailCacheAction('developer_starter_clear_thumbnail_cache', '<?php echo esc_js( __( '确定清空全部缩略图缓存吗？前台访问时会重新生成。', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '清空中...', 'developer-starter' ) ); ?>');
+                runThumbnailCacheAction('developer_starter_clear_thumbnail_cache', '<?php echo esc_js( __( '确定清空全部缩略图缓存吗？前台访问时会重新生成。', 'qiling' ) ); ?>', '<?php echo esc_js( __( '清空中...', 'qiling' ) ); ?>');
             });
             $('#clear-unused-thumbnail-cache').on('click', function() {
-                runThumbnailCacheAction('developer_starter_clear_unused_thumbnail_cache', '<?php echo esc_js( __( '确定扫描并删除未使用的缩略图缓存吗？', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '扫描中...', 'developer-starter' ) ); ?>');
+                runThumbnailCacheAction('developer_starter_clear_unused_thumbnail_cache', '<?php echo esc_js( __( '确定扫描并删除未使用的缩略图缓存吗？', 'qiling' ) ); ?>', '<?php echo esc_js( __( '扫描中...', 'qiling' ) ); ?>');
             });
 
             function applyGitHubActivityCacheStats(stats) {
@@ -772,7 +783,7 @@ trait Admin_Settings_Admin_Trait {
                 var sizeEl = $('#github-activity-cache-size');
                 var dirEl = $('#github-activity-cache-dir');
 
-                countEl.text(count + ' <?php echo esc_js( __( '个', 'developer-starter' ) ); ?>');
+                countEl.text(count + ' <?php echo esc_js( __( '个', 'qiling' ) ); ?>');
                 sizeEl.text(sizeText);
                 dirEl.text(stats.dir || '--');
 
@@ -811,26 +822,26 @@ trait Admin_Settings_Admin_Trait {
 
             $('#refresh-github-activity-cache-stats').on('click', function() {
                 var button = $(this);
-                button.prop('disabled', true).text('<?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?>');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '加载中...', 'qiling' ) ); ?>');
                 $('#github-activity-cache-count, #github-activity-cache-size')
-                    .text('<?php echo esc_js( __( '加载中...', 'developer-starter' ) ); ?>')
+                    .text('<?php echo esc_js( __( '加载中...', 'qiling' ) ); ?>')
                     .removeClass('ds-stat-ok ds-stat-warn');
 
                 loadGitHubActivityCacheStats().always(function() {
-                    button.prop('disabled', false).text('🔄 <?php echo esc_js( __( '刷新统计', 'developer-starter' ) ); ?>');
+                    button.prop('disabled', false).text('<?php echo esc_js( __( '刷新统计', 'qiling' ) ); ?>');
                 });
             });
 
             $('#clear-github-activity-cache').on('click', function() {
-                if (!confirm('<?php echo esc_js( __( '确定要清理 GitHub 项目动态缓存吗？此操作只会删除 uploads/qiling/github-activity 下的 JSON 缓存文件。', 'developer-starter' ) ); ?>')) {
+                if (!confirm('<?php echo esc_js( __( '确定要清理 GitHub 项目动态缓存吗？此操作只会删除 uploads/qiling/github-activity 下的 JSON 缓存文件。', 'qiling' ) ); ?>')) {
                     return;
                 }
 
                 var button = $(this);
                 var result = $('#clear-github-activity-cache-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在清理缓存...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在清理缓存...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -843,35 +854,35 @@ trait Admin_Settings_Admin_Trait {
                     success: function(response) {
                         if (response && response.success) {
                             var failed = response.data && response.data.failed_files ? parseInt(response.data.failed_files, 10) : 0;
-                            result.css('color', failed > 0 ? '#f59e0b' : '#10b981').text(response.data.message || '<?php echo esc_js( __( '清理完成', 'developer-starter' ) ); ?>');
+                            result.css('color', failed > 0 ? '#f59e0b' : '#10b981').text(response.data.message || '<?php echo esc_js( __( '清理完成', 'qiling' ) ); ?>');
                             if (response.data && response.data.stats) {
                                 applyGitHubActivityCacheStats(response.data.stats);
                             } else {
                                 loadGitHubActivityCacheStats();
                             }
                         } else {
-                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'developer-starter' ) ); ?>' + msg);
+                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'qiling' ) ); ?>' + msg);
                         }
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 GitHub 缓存', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 GitHub 缓存', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>');
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 GitHub 缓存', 'developer-starter' ) ); ?>');
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 GitHub 缓存', 'qiling' ) ); ?>');
                     }
                 });
             });
 
             $('#clear-ip-cache').on('click', function() {
-                if (!confirm('<?php echo esc_js( __( '确定要清理 IP 缓存吗？此操作只会删除主题 IP 归属地临时缓存文件。', 'developer-starter' ) ); ?>')) {
+                if (!confirm('<?php echo esc_js( __( '确定要清理 IP 缓存吗？此操作只会删除主题 IP 归属地临时缓存文件。', 'qiling' ) ); ?>')) {
                     return;
                 }
 
                 var button = $(this);
                 var result = $('#clear-ip-cache-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在清理缓存...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '清理中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在清理缓存...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -882,30 +893,30 @@ trait Admin_Settings_Admin_Trait {
                     },
                     success: function(response) {
                         if (response && response.success) {
-                            result.css('color', '#10b981').text('✓ ' + response.data.message);
+                            result.css('color', '#10b981').text(response.data.message);
                         } else {
-                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'developer-starter' ) ); ?>' + msg);
+                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '清理失败: ', 'qiling' ) ); ?>' + msg);
                         }
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 IP 接口缓存', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 IP 接口缓存', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>');
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 IP 接口缓存', 'developer-starter' ) ); ?>');
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '清理 IP 接口缓存', 'qiling' ) ); ?>');
                     }
                 });
             });
 
             $('#reset-ip-usermeta').on('click', function() {
-                if (!confirm('<?php echo esc_js( __( '确定要重置用户 IP 归属地数据吗？\n\n此操作不会删除用户账号，只会清空已保存的旧 IP 归属地，用户下次访问时重新获取并写入数据库。', 'developer-starter' ) ); ?>')) {
+                if (!confirm('<?php echo esc_js( __( '确定要重置用户 IP 归属地数据吗？\n\n此操作不会删除用户账号，只会清空已保存的旧 IP 归属地，用户下次访问时重新获取并写入数据库。', 'qiling' ) ); ?>')) {
                     return;
                 }
 
                 var button = $(this);
                 var result = $('#reset-ip-usermeta-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '重置中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在重置数据库中的遗留 IP 数据...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '重置中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在重置数据库中的遗留 IP 数据...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -916,16 +927,16 @@ trait Admin_Settings_Admin_Trait {
                     },
                     success: function(response) {
                         if (response && response.success) {
-                            result.css('color', '#10b981').text('✓ ' + response.data.message);
+                            result.css('color', '#10b981').text(response.data.message);
                         } else {
-                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '重置失败: ', 'developer-starter' ) ); ?>' + msg);
+                            var msg = response && response.data && response.data.message ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.css('color', '#ef4444').text('<?php echo esc_js( __( '重置失败: ', 'qiling' ) ); ?>' + msg);
                         }
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '重置用户 IP 归属地数据', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '重置用户 IP 归属地数据', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'developer-starter' ) ); ?>');
-                        button.prop('disabled', false).text('<?php echo esc_js( __( '重置用户 IP 归属地数据', 'developer-starter' ) ); ?>');
+                        result.css('color', '#ef4444').text('<?php echo esc_js( __( '请求失败', 'qiling' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '重置用户 IP 归属地数据', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -935,8 +946,8 @@ trait Admin_Settings_Admin_Trait {
                 var button = $(this);
                 var result = $('#generate-css-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '生成中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在处理...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '生成中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在处理...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -949,13 +960,13 @@ trait Admin_Settings_Admin_Trait {
                         if (response.success) {
                             result.html(response.data.message).css('color', '#10b981');
                         } else {
-                            result.text('<?php echo esc_js( __( '失败: ', 'developer-starter' ) ); ?>' + (response.data ? response.data.message : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>')).css('color', '#ef4444');
+                            result.text('<?php echo esc_js( __( '失败: ', 'qiling' ) ); ?>' + (response.data ? response.data.message : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>')).css('color', '#ef4444');
                         }
-                        button.prop('disabled', false).text('⚡ <?php echo esc_js( __( '立即生成压缩文件 (.min.css)', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '立即生成压缩文件 (.min.css)', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        result.text('<?php echo esc_js( __( '请求失败，请稍后重试', 'developer-starter' ) ); ?>').css('color', '#ef4444');
-                        button.prop('disabled', false).text('⚡ <?php echo esc_js( __( '立即生成压缩文件 (.min.css)', 'developer-starter' ) ); ?>');
+                        result.text('<?php echo esc_js( __( '请求失败，请稍后重试', 'qiling' ) ); ?>').css('color', '#ef4444');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '立即生成压缩文件 (.min.css)', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -965,8 +976,8 @@ trait Admin_Settings_Admin_Trait {
                 var button = $(this);
                 var result = $('#check-split-css-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '检测中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在校验拆分文件...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '检测中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在校验拆分文件...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -980,13 +991,13 @@ trait Admin_Settings_Admin_Trait {
                         if (response && response.success && response.data) {
                             var data = response.data;
                             var color = '#10b981';
-                            var prefix = '✓ ';
+                            var prefix = '';
                             if (data.overall === 'warning') {
                                 color = '#f59e0b';
-                                prefix = '⚠ ';
+                                prefix = '[警告] ';
                             } else if (data.overall === 'error') {
                                 color = '#ef4444';
-                                prefix = '✕ ';
+                                prefix = '[错误] ';
                             }
 
                             var summary = data.summary ? String(data.summary) : '';
@@ -996,11 +1007,11 @@ trait Admin_Settings_Admin_Trait {
                                 data.items.forEach(function(item) {
                                     var level = item && item.level ? String(item.level) : 'ok';
                                     var text = item && item.text ? String(item.text) : '';
-                                    var icon = '✓ ';
+                                    var icon = '';
                                     if (level === 'warn') {
-                                        icon = '⚠ ';
+                                        icon = '[警告] ';
                                     } else if (level === 'error') {
-                                        icon = '✕ ';
+                                        icon = '[错误] ';
                                     }
                                     html += '<li>' + $('<div/>').text(icon + text).html() + '</li>';
                                 });
@@ -1010,14 +1021,14 @@ trait Admin_Settings_Admin_Trait {
                         } else {
                             var msg = response && response.data && response.data.message
                                 ? response.data.message
-                                : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.text('<?php echo esc_js( __( '检测失败: ', 'developer-starter' ) ); ?>' + msg).css('color', '#ef4444');
+                                : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.text('<?php echo esc_js( __( '检测失败: ', 'qiling' ) ); ?>' + msg).css('color', '#ef4444');
                         }
-                        button.prop('disabled', false).text('🧪 <?php echo esc_js( __( '检查拆分 CSS 完整性', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '检查拆分 CSS 完整性', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        result.text('<?php echo esc_js( __( '请求失败，请稍后重试', 'developer-starter' ) ); ?>').css('color', '#ef4444');
-                        button.prop('disabled', false).text('🧪 <?php echo esc_js( __( '检查拆分 CSS 完整性', 'developer-starter' ) ); ?>');
+                        result.text('<?php echo esc_js( __( '请求失败，请稍后重试', 'qiling' ) ); ?>').css('color', '#ef4444');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '检查拆分 CSS 完整性', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -1027,8 +1038,8 @@ trait Admin_Settings_Admin_Trait {
                 var button = $(this);
                 var result = $('#check-gzip-result');
 
-                button.prop('disabled', true).text('<?php echo esc_js( __( '检测中...', 'developer-starter' ) ); ?>');
-                result.text('<?php echo esc_js( __( '正在检测响应头...', 'developer-starter' ) ); ?>').css('color', '#64748b');
+                button.prop('disabled', true).text('<?php echo esc_js( __( '检测中...', 'qiling' ) ); ?>');
+                result.text('<?php echo esc_js( __( '正在检测响应头...', 'qiling' ) ); ?>').css('color', '#64748b');
 
                 $.ajax({
                     url: dsAjaxUrl,
@@ -1045,13 +1056,13 @@ trait Admin_Settings_Admin_Trait {
                             var prefix = '• ';
                             if (data.overall === 'enabled') {
                                 color = '#10b981';
-                                prefix = '✓ ';
+                                prefix = '';
                             } else if (data.overall === 'disabled') {
                                 color = '#ef4444';
-                                prefix = '✕ ';
+                                prefix = '[错误] ';
                             } else if (data.overall === 'partial') {
                                 color = '#f59e0b';
-                                prefix = '⚠ ';
+                                prefix = '[警告] ';
                             }
 
                             var html = '<div>' + prefix + (data.summary || '') + '</div>';
@@ -1073,14 +1084,14 @@ trait Admin_Settings_Admin_Trait {
                         } else {
                             var msg = response && response.data && response.data.message
                                 ? response.data.message
-                                : '<?php echo esc_js( __( '未知错误', 'developer-starter' ) ); ?>';
-                            result.text('<?php echo esc_js( __( '检测失败: ', 'developer-starter' ) ); ?>' + msg).css('color', '#ef4444');
+                                : '<?php echo esc_js( __( '未知错误', 'qiling' ) ); ?>';
+                            result.text('<?php echo esc_js( __( '检测失败: ', 'qiling' ) ); ?>' + msg).css('color', '#ef4444');
                         }
-                        button.prop('disabled', false).text('🔍 <?php echo esc_js( __( '检测 Gzip/Brotli 是否开启', 'developer-starter' ) ); ?>');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '检测 Gzip/Brotli 是否开启', 'qiling' ) ); ?>');
                     },
                     error: function() {
-                        result.text('<?php echo esc_js( __( '请求失败，请稍后重试', 'developer-starter' ) ); ?>').css('color', '#ef4444');
-                        button.prop('disabled', false).text('🔍 <?php echo esc_js( __( '检测 Gzip/Brotli 是否开启', 'developer-starter' ) ); ?>');
+                        result.text('<?php echo esc_js( __( '请求失败，请稍后重试', 'qiling' ) ); ?>').css('color', '#ef4444');
+                        button.prop('disabled', false).text('<?php echo esc_js( __( '检测 Gzip/Brotli 是否开启', 'qiling' ) ); ?>');
                     }
                 });
             });
@@ -1116,9 +1127,9 @@ trait Admin_Settings_Admin_Trait {
                     if ($section.length) {
                         return $section;
                     }
-                    return $('<tr class="ds-section-row ds-favorites-section" data-search="<?php echo esc_attr( __( '常用设置 收藏', 'developer-starter' ) ); ?>">' +
-                        '<th colspan="2"><h2 class="ds-section-title"><?php echo esc_html( __( '常用设置', 'developer-starter' ) ); ?></h2>' +
-                        '<p class="description"><?php echo esc_html( __( '已收藏的设置会在这里置顶展示。', 'developer-starter' ) ); ?></p></th></tr>');
+                    return $('<tr class="ds-section-row ds-favorites-section" data-search="<?php echo esc_attr( __( '常用设置 收藏', 'qiling' ) ); ?>">' +
+                        '<th colspan="2"><h2 class="ds-section-title"><?php echo esc_html( __( '常用设置', 'qiling' ) ); ?></h2>' +
+                        '<p class="description"><?php echo esc_html( __( '已收藏的设置会在这里置顶展示。', 'qiling' ) ); ?></p></th></tr>');
                 }
 
                 function reorderFavorites() {
@@ -1178,8 +1189,8 @@ trait Admin_Settings_Admin_Trait {
                     var willFavorite = !$row.hasClass('ds-favorite');
                     $row.toggleClass('ds-favorite', willFavorite);
                     $btn.attr('aria-pressed', willFavorite ? 'true' : 'false');
-                    $btn.attr('title', willFavorite ? '<?php echo esc_js( __( '取消收藏', 'developer-starter' ) ); ?>' : '<?php echo esc_js( __( '收藏此设置', 'developer-starter' ) ); ?>');
-                    $btn.attr('aria-label', willFavorite ? '<?php echo esc_js( __( '取消收藏', 'developer-starter' ) ); ?>' : '<?php echo esc_js( __( '收藏此设置', 'developer-starter' ) ); ?>');
+                    $btn.attr('title', willFavorite ? '<?php echo esc_js( __( '取消收藏', 'qiling' ) ); ?>' : '<?php echo esc_js( __( '收藏此设置', 'qiling' ) ); ?>');
+                    $btn.attr('aria-label', willFavorite ? '<?php echo esc_js( __( '取消收藏', 'qiling' ) ); ?>' : '<?php echo esc_js( __( '收藏此设置', 'qiling' ) ); ?>');
 
                     reorderFavorites();
 
@@ -1261,18 +1272,18 @@ trait Admin_Settings_Admin_Trait {
                 }
 
                 var $rows = $tbody.children('tr');
-                var $empty = $('<div class="ds-search-empty" hidden><strong><?php echo esc_js( __( '未找到匹配设置', 'developer-starter' ) ); ?></strong><p><?php echo esc_js( __( '可尝试以下关键词。', 'developer-starter' ) ); ?></p><div class="ds-search-empty__chips"></div></div>');
+                var $empty = $('<div class="ds-search-empty" hidden><strong><?php echo esc_js( __( '未找到匹配设置', 'qiling' ) ); ?></strong><p><?php echo esc_js( __( '可尝试以下关键词。', 'qiling' ) ); ?></p><div class="ds-search-empty__chips"></div></div>');
                 $toolbar.after($empty);
 
                 function getSearchSuggestions() {
                     var tab = ($wrap.data('current-tab') || '').toString();
                     var suggestions = {
-                        design: ['<?php echo esc_js( __( '按钮颜色', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '卡片圆角', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '页脚背景', 'developer-starter' ) ); ?>'],
-                        header: ['<?php echo esc_js( __( '菜单位置', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '透明头部', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '移动端顶部入口', 'developer-starter' ) ); ?>'],
-                        footer: ['<?php echo esc_js( __( '公司名称', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '联系电话', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '备案信息', 'developer-starter' ) ); ?>'],
-                        pages: ['<?php echo esc_js( __( '搜索页装修', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '404 页面装修', 'developer-starter' ) ); ?>']
+                        design: ['<?php echo esc_js( __( '按钮颜色', 'qiling' ) ); ?>', '<?php echo esc_js( __( '卡片圆角', 'qiling' ) ); ?>', '<?php echo esc_js( __( '页脚背景', 'qiling' ) ); ?>'],
+                        header: ['<?php echo esc_js( __( '菜单位置', 'qiling' ) ); ?>', '<?php echo esc_js( __( '透明头部', 'qiling' ) ); ?>', '<?php echo esc_js( __( '移动端顶部入口', 'qiling' ) ); ?>'],
+                        footer: ['<?php echo esc_js( __( '公司名称', 'qiling' ) ); ?>', '<?php echo esc_js( __( '联系电话', 'qiling' ) ); ?>', '<?php echo esc_js( __( '备案信息', 'qiling' ) ); ?>'],
+                        pages: ['<?php echo esc_js( __( '搜索页装修', 'qiling' ) ); ?>', '<?php echo esc_js( __( '404 页面装修', 'qiling' ) ); ?>']
                     };
-                    return suggestions[tab] || ['<?php echo esc_js( __( '按钮颜色', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '页脚背景', 'developer-starter' ) ); ?>', '<?php echo esc_js( __( '菜单位置', 'developer-starter' ) ); ?>'];
+                    return suggestions[tab] || ['<?php echo esc_js( __( '按钮颜色', 'qiling' ) ); ?>', '<?php echo esc_js( __( '页脚背景', 'qiling' ) ); ?>', '<?php echo esc_js( __( '菜单位置', 'qiling' ) ); ?>'];
                 }
 
                 function renderEmptySuggestions() {
@@ -1343,7 +1354,7 @@ trait Admin_Settings_Admin_Trait {
                         }
                     });
 
-                    $count.text('<?php echo esc_js( __( '找到', 'developer-starter' ) ); ?> ' + visibleCount + ' <?php echo esc_js( __( '项', 'developer-starter' ) ); ?>');
+                    $count.text('<?php echo esc_js( __( '找到', 'qiling' ) ); ?> ' + visibleCount + ' <?php echo esc_js( __( '项', 'qiling' ) ); ?>');
                     if (visibleCount > 0) {
                         $empty.prop('hidden', true);
                     } else {
@@ -1506,7 +1517,7 @@ trait Admin_Settings_Admin_Trait {
             $reset_nonce = sanitize_text_field( wp_unslash( $_POST['ds_reset_nonce'] ) );
             if ( wp_verify_nonce( $reset_nonce, 'ds_reset_action' ) && current_user_can( 'manage_options' ) ) {
                 delete_option( $this->option_name );
-                add_settings_error( 'developer_starter_settings', 'reset', __( '主题设置已恢复默认！', 'developer-starter' ), 'updated' );
+                add_settings_error( 'developer_starter_settings', 'reset', __( '主题设置已恢复默认！', 'qiling' ), 'updated' );
             }
         }
     }

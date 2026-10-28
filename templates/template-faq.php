@@ -30,7 +30,7 @@ $all_faqs = FAQ_Manager::get_faqs();
                         <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
                         <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
                     </svg>
-                    <?php esc_html_e( '全部', 'developer-starter' ); ?>
+                    <?php esc_html_e( '全部', 'qiling' ); ?>
                 </button>
                 <?php foreach ( $categories as $cat ) : ?>
                     <button type="button" class="faq-cat-btn" data-category="<?php echo esc_attr( $cat->term_id ); ?>">
@@ -79,7 +79,7 @@ $all_faqs = FAQ_Manager::get_faqs();
                                     <div class="faq-document">
                                         <div class="doc-info">
                                             <span class="doc-icon" style="color: <?php echo esc_attr( FAQ_Manager::get_format_color( $doc_format ) ); ?>">
-                                                <?php echo FAQ_Manager::get_format_icon( $doc_format ); ?>
+                                                <?php echo function_exists( 'developer_starter_sanitize_svg_with_kses' ) ? developer_starter_sanitize_svg_with_kses( FAQ_Manager::get_format_icon( $doc_format ) ) : FAQ_Manager::get_format_icon( $doc_format ); ?>
                                             </span>
                                             <div class="doc-details">
                                                 <span class="doc-name"><?php echo esc_html( $doc_name ); ?></span>
@@ -94,7 +94,7 @@ $all_faqs = FAQ_Manager::get_faqs();
                                                 <polyline points="7 10 12 15 17 10"/>
                                                 <line x1="12" y1="15" x2="12" y2="3"/>
                                             </svg>
-                                            <?php esc_html_e( '下载', 'developer-starter' ); ?>
+                                            <?php esc_html_e( '下载', 'qiling' ); ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -108,7 +108,7 @@ $all_faqs = FAQ_Manager::get_faqs();
                             <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
                             <line x1="12" y1="17" x2="12.01" y2="17"/>
                         </svg>
-                        <p><?php esc_html_e( '暂无常见问题', 'developer-starter' ); ?></p>
+                        <p><?php esc_html_e( '暂无常见问题', 'qiling' ); ?></p>
                     </div>
                 <?php endif; ?>
             </div>

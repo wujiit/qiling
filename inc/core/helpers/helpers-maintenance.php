@@ -86,7 +86,7 @@ function developer_starter_cron_schedules( $schedules ) {
     if ( ! isset( $schedules['monthly_30'] ) ) {
         $schedules['monthly_30'] = array(
             'interval' => 30 * DAY_IN_SECONDS,
-            'display'  => __( '每30天', 'developer-starter' ),
+            'display'  => __( '每30天', 'qiling' ),
         );
     }
     return $schedules;
@@ -658,23 +658,23 @@ function developer_starter_rest_cleanup_permission( $request ) {
         if ( developer_starter_cleanup_rest_should_log_rate_limit() ) {
             developer_starter_add_cleanup_rest_audit_log( 'rate_limited', $request, array( 'status' => 429, 'message' => 'Too many cleanup requests.' ) );
         }
-        return new WP_Error( 'cleanup_rest_rate_limited', __( 'Too many cleanup requests.', 'developer-starter' ), array( 'status' => 429 ) );
+        return new WP_Error( 'cleanup_rest_rate_limited', __( 'Too many cleanup requests.', 'qiling' ), array( 'status' => 429 ) );
     }
 
     if ( ! developer_starter_maintenance_get_option( 'cleanup_rest_enable', '' ) ) {
         developer_starter_add_cleanup_rest_audit_log( 'disabled', $request, array( 'status' => 403, 'message' => 'REST cleanup endpoint is disabled.' ) );
-        return new WP_Error( 'cleanup_rest_disabled', __( 'REST cleanup endpoint is disabled.', 'developer-starter' ), array( 'status' => 403 ) );
+        return new WP_Error( 'cleanup_rest_disabled', __( 'REST cleanup endpoint is disabled.', 'qiling' ), array( 'status' => 403 ) );
     }
 
     $nonce = developer_starter_get_cleanup_rest_nonce( $request );
     if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'wp_rest' ) ) {
         developer_starter_add_cleanup_rest_audit_log( 'invalid_nonce', $request, array( 'status' => 401, 'message' => 'A valid administrator REST nonce is required.' ) );
-        return new WP_Error( 'cleanup_rest_nonce_required', __( 'A valid administrator REST nonce is required.', 'developer-starter' ), array( 'status' => 401 ) );
+        return new WP_Error( 'cleanup_rest_nonce_required', __( 'A valid administrator REST nonce is required.', 'qiling' ), array( 'status' => 401 ) );
     }
 
     if ( ! current_user_can( 'manage_options' ) ) {
         developer_starter_add_cleanup_rest_audit_log( 'forbidden', $request, array( 'status' => 403, 'message' => 'Current user cannot manage options.' ) );
-        return new WP_Error( 'cleanup_rest_forbidden', __( 'Current user cannot trigger cleanup.', 'developer-starter' ), array( 'status' => 403 ) );
+        return new WP_Error( 'cleanup_rest_forbidden', __( 'Current user cannot trigger cleanup.', 'qiling' ), array( 'status' => 403 ) );
     }
 
     return true;
@@ -691,17 +691,17 @@ function developer_starter_cleanup_cron_permission( $request ) {
         if ( developer_starter_cleanup_rest_should_log_rate_limit() ) {
             developer_starter_add_cleanup_rest_audit_log( 'cron_rate_limited', $request, array( 'status' => 429, 'message' => 'Too many cleanup cron requests.' ) );
         }
-        return new WP_Error( 'cleanup_cron_rate_limited', __( 'Too many cleanup requests.', 'developer-starter' ), array( 'status' => 429 ) );
+        return new WP_Error( 'cleanup_cron_rate_limited', __( 'Too many cleanup requests.', 'qiling' ), array( 'status' => 429 ) );
     }
 
     if ( ! developer_starter_maintenance_get_option( 'cleanup_cron_enable', '' ) ) {
         developer_starter_add_cleanup_rest_audit_log( 'cron_disabled', $request, array( 'status' => 403, 'message' => 'External cleanup cron endpoint is disabled.' ) );
-        return new WP_Error( 'cleanup_cron_disabled', __( 'External cleanup cron endpoint is disabled.', 'developer-starter' ), array( 'status' => 403 ) );
+        return new WP_Error( 'cleanup_cron_disabled', __( 'External cleanup cron endpoint is disabled.', 'qiling' ), array( 'status' => 403 ) );
     }
 
     if ( ! developer_starter_cleanup_cron_ip_is_allowed() ) {
         developer_starter_add_cleanup_rest_audit_log( 'cron_forbidden_ip', $request, array( 'status' => 403, 'message' => 'Current IP is not allowed.' ) );
-        return new WP_Error( 'cleanup_cron_forbidden_ip', __( 'Current IP is not allowed to trigger cleanup.', 'developer-starter' ), array( 'status' => 403 ) );
+        return new WP_Error( 'cleanup_cron_forbidden_ip', __( 'Current IP is not allowed to trigger cleanup.', 'qiling' ), array( 'status' => 403 ) );
     }
 
     $configured_token = developer_starter_sanitize_cleanup_cron_token(
@@ -709,13 +709,13 @@ function developer_starter_cleanup_cron_permission( $request ) {
     );
     if ( strlen( $configured_token ) < 16 ) {
         developer_starter_add_cleanup_rest_audit_log( 'cron_token_missing', $request, array( 'status' => 403, 'message' => 'External cleanup cron token is not configured.' ) );
-        return new WP_Error( 'cleanup_cron_token_missing', __( 'External cleanup cron token is not configured.', 'developer-starter' ), array( 'status' => 403 ) );
+        return new WP_Error( 'cleanup_cron_token_missing', __( 'External cleanup cron token is not configured.', 'qiling' ), array( 'status' => 403 ) );
     }
 
     $provided_token = developer_starter_get_cleanup_cron_token( $request );
     if ( strlen( $provided_token ) < 16 || ! hash_equals( $configured_token, $provided_token ) ) {
         developer_starter_add_cleanup_rest_audit_log( 'cron_invalid_token', $request, array( 'status' => 401, 'message' => 'Invalid external cleanup cron token.' ) );
-        return new WP_Error( 'cleanup_cron_invalid_token', __( 'Invalid external cleanup cron token.', 'developer-starter' ), array( 'status' => 401 ) );
+        return new WP_Error( 'cleanup_cron_invalid_token', __( 'Invalid external cleanup cron token.', 'qiling' ), array( 'status' => 401 ) );
     }
 
     return true;
@@ -881,7 +881,7 @@ function developer_starter_register_cleanup_rest_route() {
                 'permission_callback' => 'developer_starter_rest_cleanup_permission',
                 'args'                => array(
                     'scope' => array(
-                        'description'       => __( 'Cleanup scope.', 'developer-starter' ),
+                        'description'       => __( 'Cleanup scope.', 'qiling' ),
                         'type'              => 'string',
                         'default'           => 'auto',
                         'enum'              => array( 'auto', 'all', 'revisions', 'misc' ),
@@ -903,7 +903,7 @@ function developer_starter_register_cleanup_rest_route() {
                 'permission_callback' => 'developer_starter_cleanup_cron_permission',
                 'args'                => array(
                     'scope' => array(
-                        'description'       => __( 'Cleanup scope.', 'developer-starter' ),
+                        'description'       => __( 'Cleanup scope.', 'qiling' ),
                         'type'              => 'string',
                         'default'           => 'auto',
                         'enum'              => array( 'auto', 'all', 'revisions', 'misc' ),
@@ -911,7 +911,7 @@ function developer_starter_register_cleanup_rest_route() {
                         'validate_callback' => 'developer_starter_validate_cleanup_rest_scope',
                     ),
                     'token' => array(
-                        'description'       => __( 'External cleanup cron token.', 'developer-starter' ),
+                        'description'       => __( 'External cleanup cron token.', 'qiling' ),
                         'type'              => 'string',
                         'required'          => false,
                         'sanitize_callback' => 'developer_starter_sanitize_cleanup_cron_token',

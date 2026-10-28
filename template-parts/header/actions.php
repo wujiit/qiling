@@ -31,19 +31,19 @@ $header_search_mode        = function_exists( 'developer_starter_get_search_mode
     <div class="header-search <?php echo $show_search_form ? 'header-search-mode-form' : 'header-search-mode-icon'; ?>">
         <?php if ( $show_search_form ) : ?>
             <form role="search" method="get" class="header-search-form-inline qiling-search-enhanced" data-qiling-search-form="1" action="<?php echo esc_url( $header_search_action ); ?>"<?php if ( $header_search_use_rewrite ) : ?> onsubmit="return dsSearchRedirect(this);"<?php endif; ?>>
-                <label class="screen-reader-text" for="header-search-input"><?php esc_html_e( '搜索', 'developer-starter' ); ?></label>
-                <input id="header-search-input" class="header-search-input" type="search" name="s" placeholder="<?php esc_attr_e( '搜索关键词', 'developer-starter' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" autocomplete="off" data-qiling-search-input="1" />
+                <label class="screen-reader-text" for="header-search-input"><?php esc_html_e( '搜索', 'qiling' ); ?></label>
+                <input id="header-search-input" class="header-search-input" type="search" name="s" placeholder="<?php esc_attr_e( '搜索关键词', 'qiling' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" autocomplete="off" data-qiling-search-input="1" />
                 <input type="hidden" name="search_scope" value="all" />
                 <input type="hidden" name="qiling_search_mode" value="<?php echo esc_attr( $header_search_mode ); ?>" />
-                <button type="submit" class="header-search-submit" aria-label="<?php esc_attr_e( '提交搜索', 'developer-starter' ); ?>">
+                <button type="submit" class="header-search-submit" aria-label="<?php esc_attr_e( '提交搜索', 'qiling' ); ?>">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                 </button>
             </form>
-            <button type="button" class="search-toggle header-search-mobile-toggle" id="search-toggle" title="<?php esc_attr_e( '搜索', 'developer-starter' ); ?>">
+            <button type="button" class="search-toggle header-search-mobile-toggle" id="search-toggle" title="<?php esc_attr_e( '搜索', 'qiling' ); ?>">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </button>
         <?php else : ?>
-            <button type="button" class="search-toggle" id="search-toggle" title="<?php esc_attr_e( '搜索', 'developer-starter' ); ?>">
+            <button type="button" class="search-toggle" id="search-toggle" title="<?php esc_attr_e( '搜索', 'qiling' ); ?>">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </button>
         <?php endif; ?>
@@ -66,7 +66,7 @@ $header_login_enable = developer_starter_get_option( 'header_login_enable', '' )
 $header_account_enable = developer_starter_get_option( 'header_account_enable', '1' );
 if ( $header_login_enable || ( $header_account_enable && is_user_logged_in() ) ) :
     $login_text = developer_starter_get_option( 'header_login_text', '' );
-    $login_text = ! empty( $login_text ) ? $login_text : __( '登录', 'developer-starter' );
+    $login_text = ! empty( $login_text ) ? $login_text : __( '登录', 'qiling' );
     $is_logged_in = is_user_logged_in();
     $current_user  = wp_get_current_user();
     $unread_notice_count = 0;
@@ -110,7 +110,7 @@ if ( $header_login_enable || ( $header_account_enable && is_user_logged_in() ) )
         }
     }
 
-    $header_auth_sync_script = DEVELOPER_STARTER_ASSETS . '/js/header-auth.js';
+    $header_auth_sync_script = QILING_ASSETS . '/js/header-auth.js';
     if ( function_exists( 'developer_starter_get_assets_version' ) ) {
         $header_auth_sync_script = add_query_arg(
             'ver',
@@ -136,10 +136,10 @@ if ( $header_login_enable || ( $header_account_enable && is_user_logged_in() ) )
         <?php endif; ?>
         <?php if ( $header_account_enable ) : ?>
             <div class="header-user-menu" id="header-user-area" style="<?php echo $is_logged_in ? '' : 'display:none;'; ?>">
-            <a href="<?php echo esc_url( $account_url ); ?>" class="header-user-btn" id="header-user-toggle" title="<?php esc_attr_e( '个人中心', 'developer-starter' ); ?>">
+            <a href="<?php echo esc_url( $account_url ); ?>" class="header-user-btn" id="header-user-toggle" title="<?php esc_attr_e( '个人中心', 'qiling' ); ?>">
                 <img id="header-user-avatar" src="<?php echo esc_url( get_avatar_url( $current_user->ID, array( 'size' => 32 ) ) ); ?>" alt="<?php echo esc_attr( $current_user->display_name ); ?>" width="32" height="32" loading="lazy" decoding="async" />
                 <?php if ( $unread_notice_count > 0 ) : ?>
-                    <span class="header-user-badge" aria-label="<?php esc_attr_e( '未读通知', 'developer-starter' ); ?>">
+                    <span class="header-user-badge" aria-label="<?php esc_attr_e( '未读通知', 'qiling' ); ?>">
                         <?php echo esc_html( $unread_notice_count > 99 ? '99+' : (string) $unread_notice_count ); ?>
                     </span>
                 <?php endif; ?>
@@ -154,11 +154,11 @@ if ( $header_login_enable || ( $header_account_enable && is_user_logged_in() ) )
                 </div>
                 <div class="dropdown-divider"></div>
                 <a href="<?php echo esc_url( $account_url ); ?>" id="dropdown-account-link">
-                    <?php esc_html_e( '个人中心', 'developer-starter' ); ?>
+                    <?php esc_html_e( '个人中心', 'qiling' ); ?>
                 </a>
                 <?php if ( current_user_can( 'manage_options' ) ) : ?>
                     <a href="<?php echo esc_url( admin_url() ); ?>" id="dropdown-admin-link">
-                        <?php esc_html_e( '管理后台', 'developer-starter' ); ?>
+                        <?php esc_html_e( '管理后台', 'qiling' ); ?>
                     </a>
                 <?php endif; ?>
 
@@ -166,7 +166,7 @@ if ( $header_login_enable || ( $header_account_enable && is_user_logged_in() ) )
 
                 <div class="dropdown-divider"></div>
                 <a href="<?php echo esc_url( function_exists( 'developer_starter_get_front_logout_url' ) ? developer_starter_get_front_logout_url() : wp_logout_url( home_url() ) ); ?>" class="logout-link" id="dropdown-logout-link">
-                    <?php esc_html_e( '退出登录', 'developer-starter' ); ?>
+                    <?php esc_html_e( '退出登录', 'qiling' ); ?>
                 </a>
             </div>
         <?php endif; ?>
@@ -220,8 +220,12 @@ if ( 'translate_js' === $language_switch_mode ) {
 if ( $language_switcher_enabled ) :
     ?>
     <div class="header-translate">
-        <button type="button" class="translate-toggle" id="translate-toggle" title="<?php esc_attr_e( '语言切换', 'developer-starter' ); ?>">
-            <span style="font-size: var(--qiling-text-rem-1p125); line-height: 1;">🌐</span>
+        <button type="button" class="translate-toggle" id="translate-toggle" title="<?php esc_attr_e( '语言切换', 'qiling' ); ?>" aria-label="<?php esc_attr_e( '语言切换', 'qiling' ); ?>">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: block;">
+                <circle cx="12" cy="12" r="9.2"></circle>
+                <line x1="2.8" y1="12" x2="21.2" y2="12"></line>
+                <path d="M12 2.8a14.5 14.5 0 0 1 3.8 9.2 14.5 14.5 0 0 1-3.8 9.2 14.5 14.5 0 0 1-3.8-9.2 14.5 14.5 0 0 1 3.8-9.2z"></path>
+            </svg>
         </button>
     </div>
 <?php endif; ?>
@@ -231,16 +235,32 @@ $darkmode_enable = developer_starter_get_option( 'darkmode_enable', '' );
 if ( $darkmode_enable ) :
     ?>
     <div class="header-darkmode">
-        <button type="button" class="darkmode-toggle" id="darkmode-toggle" title="<?php esc_attr_e( '切换暗黑模式', 'developer-starter' ); ?>">
-            <span class="icon-sun" style="font-size: var(--qiling-text-rem-1p125); line-height: 1;">☀️</span>
-            <span class="icon-moon" style="font-size: var(--qiling-text-rem-1p125); line-height: 1; display:none">🌙</span>
+        <button type="button" class="darkmode-toggle" id="darkmode-toggle" title="<?php esc_attr_e( '切换暗黑模式', 'qiling' ); ?>" aria-label="<?php esc_attr_e( '切换暗黑模式', 'qiling' ); ?>">
+            <span class="icon-sun" aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <circle cx="12" cy="12" r="4.6"></circle>
+                    <line x1="12" y1="1.8" x2="12" y2="4.6"></line>
+                    <line x1="12" y1="19.4" x2="12" y2="22.2"></line>
+                    <line x1="1.8" y1="12" x2="4.6" y2="12"></line>
+                    <line x1="19.4" y1="12" x2="22.2" y2="12"></line>
+                    <line x1="4.8" y1="4.8" x2="6.8" y2="6.8"></line>
+                    <line x1="17.2" y1="17.2" x2="19.2" y2="19.2"></line>
+                    <line x1="17.2" y1="6.8" x2="19.2" y2="4.8"></line>
+                    <line x1="4.8" y1="19.2" x2="6.8" y2="17.2"></line>
+                </svg>
+            </span>
+            <span class="icon-moon" style="display:none;" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path d="M21 12.8A8.5 8.5 0 0 1 11.2 3a7 7 0 1 0 9.8 9.8z"></path>
+                </svg>
+            </span>
         </button>
     </div>
 <?php endif; ?>
 
 <?php do_action( 'qiling_header_actions' ); ?>
 
-<button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="<?php esc_attr_e( '打开菜单', 'developer-starter' ); ?>" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false">
+<button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="<?php esc_attr_e( '打开菜单', 'qiling' ); ?>" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>

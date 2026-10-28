@@ -204,7 +204,7 @@ class Auth_Register_Email_Service {
                 return new \WP_Error(
                     'register_email_code_send_lock',
                     sprintf(
-                        __( '发送过于频繁，请 %s 后再试', 'developer-starter' ),
+                        __( '发送过于频繁，请 %s 后再试', 'qiling' ),
                         human_time_diff( $now, $lock_until )
                     )
                 );
@@ -287,10 +287,10 @@ class Auth_Register_Email_Service {
         $code = preg_replace( '/\D+/', '', (string) $code );
 
         if ( ! is_email( $email ) ) {
-            return new \WP_Error( 'register_email_invalid', __( '请输入有效的邮箱地址', 'developer-starter' ) );
+            return new \WP_Error( 'register_email_invalid', __( '请输入有效的邮箱地址', 'qiling' ) );
         }
         if ( strlen( $code ) !== Auth_Manager::REGISTER_EMAIL_CODE_DIGITS ) {
-            return new \WP_Error( 'register_email_code_invalid_format', __( '请输入6位邮箱验证码', 'developer-starter' ) );
+            return new \WP_Error( 'register_email_code_invalid_format', __( '请输入6位邮箱验证码', 'qiling' ) );
         }
 
         $now = time();
@@ -300,7 +300,7 @@ class Auth_Register_Email_Service {
             return new \WP_Error(
                 'register_email_code_verify_locked',
                 sprintf(
-                    __( '验证码输入错误过多，请 %s 后再试', 'developer-starter' ),
+                    __( '验证码输入错误过多，请 %s 后再试', 'qiling' ),
                     human_time_diff( $now, $locked_until )
                 )
             );
@@ -311,7 +311,7 @@ class Auth_Register_Email_Service {
 
         $stored = get_transient( $this->get_code_key( $email ) );
         if ( ! is_array( $stored ) || empty( $stored['hash'] ) ) {
-            return new \WP_Error( 'register_email_code_expired', __( '邮箱验证码已过期，请重新获取', 'developer-starter' ) );
+            return new \WP_Error( 'register_email_code_expired', __( '邮箱验证码已过期，请重新获取', 'qiling' ) );
         }
 
         $stored_hash = (string) $stored['hash'];
@@ -339,14 +339,14 @@ class Auth_Register_Email_Service {
             return new \WP_Error(
                 'register_email_code_verify_locked',
                 sprintf(
-                    __( '验证码输入错误过多，请 %s 后再试', 'developer-starter' ),
+                    __( '验证码输入错误过多，请 %s 后再试', 'qiling' ),
                     human_time_diff( $now, $locked_until )
                 )
             );
         }
 
         set_transient( $attempts_key, $attempts, max( MINUTE_IN_SECONDS, $this->get_expire_seconds() ) );
-        return new \WP_Error( 'register_email_code_invalid', __( '邮箱验证码错误或已过期', 'developer-starter' ) );
+        return new \WP_Error( 'register_email_code_invalid', __( '邮箱验证码错误或已过期', 'qiling' ) );
     }
 
     /**
@@ -359,20 +359,20 @@ class Auth_Register_Email_Service {
     public function send_code_email( $email, $code ) {
         $site_name = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
         $expire_minutes = $this->get_expire_minutes();
-        $subject = sprintf( __( '[%s] 注册验证码', 'developer-starter' ), $site_name );
-        $message = sprintf( __( "您好！\n\n您正在进行账号注册，验证码为：%s\n\n验证码 %d 分钟内有效，请勿泄露给他人。\n如果这不是您的操作，请忽略本邮件。", 'developer-starter' ), $code, $expire_minutes );
+        $subject = sprintf( __( '[%s] 注册验证码', 'qiling' ), $site_name );
+        $message = sprintf( __( "您好！\n\n您正在进行账号注册，验证码为：%s\n\n验证码 %d 分钟内有效，请勿泄露给他人。\n如果这不是您的操作，请忽略本邮件。", 'qiling' ), $code, $expire_minutes );
 
         $headers = array();
         if ( function_exists( 'developer_starter_build_html_email_template' ) ) {
             $html_message = developer_starter_build_html_email_template(
                 array(
-                    'title'  => __( '注册验证码', 'developer-starter' ),
-                    'intro'  => __( '您正在进行账号注册，请使用以下验证码完成校验。', 'developer-starter' ),
+                    'title'  => __( '注册验证码', 'qiling' ),
+                    'intro'  => __( '您正在进行账号注册，请使用以下验证码完成校验。', 'qiling' ),
                     'lines'  => array(
-                        __( '验证码', 'developer-starter' ) => $code,
-                        __( '有效期', 'developer-starter' ) => sprintf( __( '%d 分钟', 'developer-starter' ), $expire_minutes ),
+                        __( '验证码', 'qiling' ) => $code,
+                        __( '有效期', 'qiling' ) => sprintf( __( '%d 分钟', 'qiling' ), $expire_minutes ),
                     ),
-                    'notice' => __( '如果这不是您的操作，请忽略此邮件并检查账户安全。', 'developer-starter' ),
+                    'notice' => __( '如果这不是您的操作，请忽略此邮件并检查账户安全。', 'qiling' ),
                 )
             );
             if ( is_string( $html_message ) && trim( $html_message ) !== '' ) {
@@ -383,7 +383,7 @@ class Auth_Register_Email_Service {
 
         $sent = wp_mail( $email, $subject, $message, $headers );
         if ( ! $sent ) {
-            return new \WP_Error( 'register_email_code_send_failed', __( '邮件发送失败，请稍后重试', 'developer-starter' ) );
+            return new \WP_Error( 'register_email_code_send_failed', __( '邮件发送失败，请稍后重试', 'qiling' ) );
         }
 
         return true;

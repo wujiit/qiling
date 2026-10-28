@@ -10,8 +10,8 @@ add_action(
     static function() {
         wp_enqueue_style(
             'developer-starter-resource-detail-skins',
-            DEVELOPER_STARTER_ASSETS . '/css/resource-detail-skins.css',
-            array( 'developer-starter-main' ),
+            QILING_ASSETS . '/css/resource-detail-skins.css',
+            array( 'qiling-main' ),
             developer_starter_get_assets_version()
         );
     },

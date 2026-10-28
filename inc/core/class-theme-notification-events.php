@@ -41,23 +41,23 @@ class Theme_Notification_Events {
 
         $author = get_userdata( (int) $post->post_author );
         $lines  = array(
-            __( '文章标题', 'developer-starter' ) => get_the_title( $post_id ),
-            __( '提交类型', 'developer-starter' ) => $is_update ? __( '修改投稿', 'developer-starter' ) : __( '新投稿', 'developer-starter' ),
-            __( '作者', 'developer-starter' )   => $author ? $author->display_name . ' (#' . (int) $author->ID . ')' : __( '未知用户', 'developer-starter' ),
-            __( '分类', 'developer-starter' )   => $this->get_post_category_names( $post_id ),
-            __( '状态', 'developer-starter' )   => $this->get_post_status_label( $post->post_status ),
-            __( '提交时间', 'developer-starter' ) => current_time( 'Y-m-d H:i:s' ),
+            __( '文章标题', 'qiling' ) => get_the_title( $post_id ),
+            __( '提交类型', 'qiling' ) => $is_update ? __( '修改投稿', 'qiling' ) : __( '新投稿', 'qiling' ),
+            __( '作者', 'qiling' )   => $author ? $author->display_name . ' (#' . (int) $author->ID . ')' : __( '未知用户', 'qiling' ),
+            __( '分类', 'qiling' )   => $this->get_post_category_names( $post_id ),
+            __( '状态', 'qiling' )   => $this->get_post_status_label( $post->post_status ),
+            __( '提交时间', 'qiling' ) => current_time( 'Y-m-d H:i:s' ),
         );
 
         $edit_url = admin_url( 'post.php?post=' . $post_id . '&action=edit' );
-        $lines[ __( '审核地址', 'developer-starter' ) ] = $edit_url;
+        $lines[ __( '审核地址', 'qiling' ) ] = $edit_url;
 
         $this->notify_admin(
             'submit_post',
-            $is_update ? __( '投稿更新待审核', 'developer-starter' ) : __( '新投稿待审核', 'developer-starter' ),
-            __( '前台用户提交的文章已进入待审核状态，请及时处理。', 'developer-starter' ),
+            $is_update ? __( '投稿更新待审核', 'qiling' ) : __( '新投稿待审核', 'qiling' ),
+            __( '前台用户提交的文章已进入待审核状态，请及时处理。', 'qiling' ),
             $lines,
-            __( '查看投稿', 'developer-starter' ),
+            __( '查看投稿', 'qiling' ),
             $edit_url,
             'qiling_theme_submit_post'
         );
@@ -98,30 +98,30 @@ class Theme_Notification_Events {
         $post_id  = absint( $comment->comment_post_ID );
         $post_url = $post_id > 0 ? get_permalink( $post_id ) : '';
         $edit_url = admin_url( 'comment.php?action=editcomment&c=' . $comment_id );
-        $title    = '0' === $approved ? __( '新待审评论通知', 'developer-starter' ) : __( '新评论通知', 'developer-starter' );
+        $title    = '0' === $approved ? __( '新待审评论通知', 'qiling' ) : __( '新评论通知', 'qiling' );
 
         $lines = array(
-            __( '评论文章', 'developer-starter' ) => $post_id > 0 ? get_the_title( $post_id ) : __( '未知文章', 'developer-starter' ),
-            __( '评论人', 'developer-starter' )   => get_comment_author( $comment ),
-            __( '邮箱', 'developer-starter' )     => get_comment_author_email( $comment ),
-            __( '状态', 'developer-starter' )     => '0' === $approved ? __( '待审核', 'developer-starter' ) : __( '已发布', 'developer-starter' ),
-            __( '内容摘要', 'developer-starter' ) => $this->trim_text( (string) $comment->comment_content, 180 ),
-            __( '评论时间', 'developer-starter' ) => current_time( 'Y-m-d H:i:s' ),
-            __( '管理地址', 'developer-starter' ) => $edit_url,
+            __( '评论文章', 'qiling' ) => $post_id > 0 ? get_the_title( $post_id ) : __( '未知文章', 'qiling' ),
+            __( '评论人', 'qiling' )   => get_comment_author( $comment ),
+            __( '邮箱', 'qiling' )     => get_comment_author_email( $comment ),
+            __( '状态', 'qiling' )     => '0' === $approved ? __( '待审核', 'qiling' ) : __( '已发布', 'qiling' ),
+            __( '内容摘要', 'qiling' ) => $this->trim_text( (string) $comment->comment_content, 180 ),
+            __( '评论时间', 'qiling' ) => current_time( 'Y-m-d H:i:s' ),
+            __( '管理地址', 'qiling' ) => $edit_url,
         );
 
         if ( is_string( $post_url ) && '' !== $post_url ) {
-            $lines[ __( '文章地址', 'developer-starter' ) ] = $post_url;
+            $lines[ __( '文章地址', 'qiling' ) ] = $post_url;
         }
 
         $this->notify_admin(
             'comment',
             $title,
             '0' === $approved
-                ? __( '站点收到一条待审核评论，请及时审核。', 'developer-starter' )
-                : __( '站点收到一条新评论。', 'developer-starter' ),
+                ? __( '站点收到一条待审核评论，请及时审核。', 'qiling' )
+                : __( '站点收到一条新评论。', 'qiling' ),
             $lines,
-            __( '管理评论', 'developer-starter' ),
+            __( '管理评论', 'qiling' ),
             $edit_url,
             'qiling_theme_comment'
         );
@@ -145,22 +145,22 @@ class Theme_Notification_Events {
 
         $admin_url = admin_url( 'admin.php?page=' . $this->get_account_deletion_page_slug() );
         $lines     = array(
-            __( '申请编号', 'developer-starter' ) => $request_id > 0 ? '#' . $request_id : __( '未知', 'developer-starter' ),
-            __( '用户 ID', 'developer-starter' )  => $user_id,
-            __( '用户名', 'developer-starter' )   => $user ? $user->user_login : __( '未知用户', 'developer-starter' ),
-            __( '显示名称', 'developer-starter' ) => $user ? $user->display_name : '',
-            __( '邮箱', 'developer-starter' )     => $user ? $user->user_email : '',
-            __( 'IP 地址', 'developer-starter' )  => sanitize_text_field( (string) $ip_address ),
-            __( '申请时间', 'developer-starter' ) => current_time( 'Y-m-d H:i:s' ),
-            __( '处理入口', 'developer-starter' ) => $admin_url,
+            __( '申请编号', 'qiling' ) => $request_id > 0 ? '#' . $request_id : __( '未知', 'qiling' ),
+            __( '用户 ID', 'qiling' )  => $user_id,
+            __( '用户名', 'qiling' )   => $user ? $user->user_login : __( '未知用户', 'qiling' ),
+            __( '显示名称', 'qiling' ) => $user ? $user->display_name : '',
+            __( '邮箱', 'qiling' )     => $user ? $user->user_email : '',
+            __( 'IP 地址', 'qiling' )  => sanitize_text_field( (string) $ip_address ),
+            __( '申请时间', 'qiling' ) => current_time( 'Y-m-d H:i:s' ),
+            __( '处理入口', 'qiling' ) => $admin_url,
         );
 
         $this->notify_admin(
             'account_deletion',
-            __( '新的账号注销申请', 'developer-starter' ),
-            __( '有用户提交了账号注销申请，需要管理员在后台人工审核处理。', 'developer-starter' ),
+            __( '新的账号注销申请', 'qiling' ),
+            __( '有用户提交了账号注销申请，需要管理员在后台人工审核处理。', 'qiling' ),
             $lines,
-            __( '查看申请', 'developer-starter' ),
+            __( '查看申请', 'qiling' ),
             $admin_url,
             'qiling_theme_account_deletion'
         );
@@ -287,7 +287,7 @@ class Theme_Notification_Events {
     private function get_post_category_names( $post_id ) {
         $terms = get_the_terms( $post_id, 'category' );
         if ( ! is_array( $terms ) || empty( $terms ) || is_wp_error( $terms ) ) {
-            return __( '未分类', 'developer-starter' );
+            return __( '未分类', 'qiling' );
         }
 
         return implode( ', ', wp_list_pluck( $terms, 'name' ) );

@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 trait Admin_Settings_Field_Render_Design_Presets_Trait {
 
     private function render_design_preset_manager_field( $options ) {
-        echo '<tr id="setting-row-design_preset_manager" data-setting-id="design_preset_manager"><th scope="row">' . esc_html__( '自定义预设', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-design_preset_manager" data-setting-id="design_preset_manager"><th scope="row">' . esc_html__( '自定义预设', 'qiling' ) . '</th><td>';
 
         if ( ! class_exists( '\Developer_Starter\Core\Design_Tokens' ) ) {
-            echo '<p class="description">' . esc_html__( '设计预设服务未加载。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '设计预设服务未加载。', 'qiling' ) . '</p>';
             echo '</td></tr>';
             return;
         }
@@ -30,7 +30,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
         $option_name = $this->option_name;
         $field_groups = array(
             'brand' => array(
-                'title'  => __( '品牌色板', 'developer-starter' ),
+                'title'  => __( '品牌色板', 'qiling' ),
                 'fields' => array(
                     'primary'       => '#2563eb',
                     'primary_hover' => '#1d4ed8',
@@ -39,7 +39,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                 ),
             ),
             'semantic' => array(
-                'title'  => __( '语义色', 'developer-starter' ),
+                'title'  => __( '语义色', 'qiling' ),
                 'fields' => array(
                     'success' => '#16a34a',
                     'info'    => '#0ea5e9',
@@ -49,7 +49,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                 ),
             ),
             'surface' => array(
-                'title'  => __( '表面与文本', 'developer-starter' ),
+                'title'  => __( '表面与文本', 'qiling' ),
                 'fields' => array(
                     'text'        => '#1f2937',
                     'text_muted'  => '#64748b',
@@ -61,7 +61,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                 ),
             ),
             'neutral' => array(
-                'title'  => __( '常用中性色', 'developer-starter' ),
+                'title'  => __( '常用中性色', 'qiling' ),
                 'fields' => array(
                     'neutral_0'   => '#ffffff',
                     'neutral_50'  => '#f8fafc',
@@ -77,7 +77,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                 ),
             ),
             'dark' => array(
-                'title'  => __( '暗色映射', 'developer-starter' ),
+                'title'  => __( '暗色映射', 'qiling' ),
                 'fields' => array(
                     'dark_bg'      => '#111827',
                     'dark_surface' => '#1f2937',
@@ -108,21 +108,21 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
         );
         $current_token_option_map = isset( $payload['tokenOptionMap'] ) && is_array( $payload['tokenOptionMap'] ) ? $payload['tokenOptionMap'] : array();
         $manager_messages = array(
-            'exportReady'   => __( '已生成可分享内容，可直接复制或发给别人。', 'developer-starter' ),
-            'copySuccess'   => __( '可分享内容已复制到剪贴板。', 'developer-starter' ),
-            'copyFallback'  => __( '浏览器不支持直接复制，已选中文本框内容，可手动复制。', 'developer-starter' ),
-            'copyFailed'    => __( '复制失败，请手动复制文本框中的内容。', 'developer-starter' ),
-            'importEmpty'   => __( '请先粘贴要导入的预设内容。', 'developer-starter' ),
-            'importInvalid' => __( '内容格式不对，请确认粘贴的是完整预设内容。', 'developer-starter' ),
-            'importAppend'  => __( '已放进当前列表，保存后生效。', 'developer-starter' ),
-            'importReplace' => __( '已用导入内容替换当前列表，保存后生效。', 'developer-starter' ),
-            'customSuffix'  => __( '（自定义）', 'developer-starter' ),
-            'customUntitled' => __( '未命名自定义预设', 'developer-starter' ),
-            'snapshotSummary' => __( '排版 %1$d · 布局 %2$d · 组件 %3$d', 'developer-starter' ),
-            'snapshotEmpty' => __( '当前仅保存了颜色；可使用上方按钮保存完整效果。', 'developer-starter' ),
-            'snapshotSynced' => __( '已收下当前站点的排版、布局和组件效果。', 'developer-starter' ),
-            'captureSaved' => __( '已新建一张“当前站点风格”预设卡，保存后生效。', 'developer-starter' ),
-            'defaultPresetLabel' => __( '我的站点风格', 'developer-starter' ),
+            'exportReady'   => __( '已生成可分享内容，可直接复制或发给别人。', 'qiling' ),
+            'copySuccess'   => __( '可分享内容已复制到剪贴板。', 'qiling' ),
+            'copyFallback'  => __( '浏览器不支持直接复制，已选中文本框内容，可手动复制。', 'qiling' ),
+            'copyFailed'    => __( '复制失败，请手动复制文本框中的内容。', 'qiling' ),
+            'importEmpty'   => __( '请先粘贴要导入的预设内容。', 'qiling' ),
+            'importInvalid' => __( '内容格式不对，请确认粘贴的是完整预设内容。', 'qiling' ),
+            'importAppend'  => __( '已放进当前列表，保存后生效。', 'qiling' ),
+            'importReplace' => __( '已用导入内容替换当前列表，保存后生效。', 'qiling' ),
+            'customSuffix'  => __( '（自定义）', 'qiling' ),
+            'customUntitled' => __( '未命名自定义预设', 'qiling' ),
+            'snapshotSummary' => __( '排版 %1$d · 布局 %2$d · 组件 %3$d', 'qiling' ),
+            'snapshotEmpty' => __( '当前仅保存了颜色；可使用上方按钮保存完整效果。', 'qiling' ),
+            'snapshotSynced' => __( '已收下当前站点的排版、布局和组件效果。', 'qiling' ),
+            'captureSaved' => __( '已新建一张“当前站点风格”预设卡，保存后生效。', 'qiling' ),
+            'defaultPresetLabel' => __( '我的站点风格', 'qiling' ),
         );
         $preset_select_selector = wp_json_encode( 'select[name="' . $option_name . '[design_preset]"]' );
 
@@ -161,14 +161,14 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
         </style>';
 
         echo '<div class="ds-design-preset-manager" data-schema-version="' . esc_attr( $schema_version ) . '" data-current-preset="' . esc_attr( $current_preset ) . '" data-current-preset-label="' . esc_attr( $current_preset_label ) . '">';
-        echo '<p class="ds-design-preset-manager__tip">' . esc_html__( '这里可以把一整套站点风格收起来复用。除了颜色，也能顺手带上排版、布局和组件样式，适合做行业风格、品牌风格和快速换肤。', 'developer-starter' ) . '</p>';
+        echo '<p class="ds-design-preset-manager__tip">' . esc_html__( '这里可以把一整套站点风格收起来复用。除了颜色，也能顺手带上排版、布局和组件样式，适合做行业风格、品牌风格和快速换肤。', 'qiling' ) . '</p>';
         echo '<input type="hidden" name="' . esc_attr( $option_name ) . '[design_custom_presets_present]" value="1" />';
         echo '<div class="ds-design-preset-manager__actions">';
-        echo '<button type="button" class="button button-primary ds-capture-design-preset">' . esc_html__( '保存当前站点为新预设', 'developer-starter' ) . '</button>';
-        echo '<button type="button" class="button button-secondary ds-add-design-preset">' . esc_html__( '新增自定义预设', 'developer-starter' ) . '</button>';
-        echo '<button type="button" class="button ds-clone-design-preset">' . esc_html__( '复制当前预设', 'developer-starter' ) . '</button>';
+        echo '<button type="button" class="button button-primary ds-capture-design-preset">' . esc_html__( '保存当前站点为新预设', 'qiling' ) . '</button>';
+        echo '<button type="button" class="button button-secondary ds-add-design-preset">' . esc_html__( '新增自定义预设', 'qiling' ) . '</button>';
+        echo '<button type="button" class="button ds-clone-design-preset">' . esc_html__( '复制当前预设', 'qiling' ) . '</button>';
         if ( ! empty( $custom_presets ) && isset( $payload['presetSource'] ) && 'custom' === (string) $payload['presetSource'] ) {
-            echo '<span class="ds-design-preset-manager__badge">' . esc_html( sprintf( __( '当前使用：%s', 'developer-starter' ), $current_preset ) ) . '</span>';
+            echo '<span class="ds-design-preset-manager__badge">' . esc_html( sprintf( __( '当前使用：%s', 'qiling' ), $current_preset ) ) . '</span>';
         }
         echo '</div>';
         echo '<div class="ds-design-preset-manager__list" data-design-preset-list="1" data-next-index="' . esc_attr( count( $custom_presets ) ) . '">';
@@ -188,27 +188,27 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
             $layout_json = wp_json_encode( $preset_layout );
             $components_json = wp_json_encode( $preset_components );
 
-            echo '<div><strong>' . esc_html__( '一套站点风格', 'developer-starter' ) . '</strong><p>' . esc_html__( '可以同时收下颜色、排版、布局和常用组件效果，后面直接复用。', 'developer-starter' ) . '</p></div>';
-            echo '<button type="button" class="button-link-delete ds-remove-design-preset">' . esc_html__( '删除', 'developer-starter' ) . '</button>';
+            echo '<div><strong>' . esc_html__( '一套站点风格', 'qiling' ) . '</strong><p>' . esc_html__( '可以同时收下颜色、排版、布局和常用组件效果，后面直接复用。', 'qiling' ) . '</p></div>';
+            echo '<button type="button" class="button-link-delete ds-remove-design-preset">' . esc_html__( '删除', 'qiling' ) . '</button>';
             echo '</div>';
 
             echo '<div class="ds-design-preset-card__meta">';
             echo '<input type="hidden" data-design-preset-field="id" name="' . esc_attr( $option_name ) . '[design_custom_presets][' . esc_attr( $index ) . '][id]" value="' . esc_attr( $preset_id ) . '" />';
-            echo '<label><span>' . esc_html__( '预设名称', 'developer-starter' ) . '</span><input type="text" class="regular-text" data-design-preset-field="label" name="' . esc_attr( $option_name ) . '[design_custom_presets][' . esc_attr( $index ) . '][label]" value="' . esc_attr( $preset_label ) . '" placeholder="' . esc_attr__( '我的品牌预设', 'developer-starter' ) . '" /></label>';
+            echo '<label><span>' . esc_html__( '预设名称', 'qiling' ) . '</span><input type="text" class="regular-text" data-design-preset-field="label" name="' . esc_attr( $option_name ) . '[design_custom_presets][' . esc_attr( $index ) . '][label]" value="' . esc_attr( $preset_label ) . '" placeholder="' . esc_attr__( '我的品牌预设', 'qiling' ) . '" /></label>';
             echo '</div>';
 
             echo '<div class="ds-design-preset-card__groups">';
             echo '<section class="ds-design-preset-card__snapshot">';
             echo '<div class="ds-design-preset-card__snapshot-head">';
-            echo '<div class="ds-design-preset-card__snapshot-title">' . esc_html__( '把当前站点样式收进来', 'developer-starter' ) . '</div>';
-            echo '<button type="button" class="button button-secondary ds-sync-design-preset-snapshot">' . esc_html__( '收下当前站点效果', 'developer-starter' ) . '</button>';
+            echo '<div class="ds-design-preset-card__snapshot-title">' . esc_html__( '把当前站点样式收进来', 'qiling' ) . '</div>';
+            echo '<button type="button" class="button button-secondary ds-sync-design-preset-snapshot">' . esc_html__( '收下当前站点效果', 'qiling' ) . '</button>';
             echo '</div>';
             echo '<div class="ds-design-preset-card__snapshot-badges">';
-            echo '<span class="ds-design-preset-card__snapshot-badge" data-design-preset-snapshot-badge="typography">' . esc_html__( '排版 0', 'developer-starter' ) . '</span>';
-            echo '<span class="ds-design-preset-card__snapshot-badge" data-design-preset-snapshot-badge="layout">' . esc_html__( '布局 0', 'developer-starter' ) . '</span>';
-            echo '<span class="ds-design-preset-card__snapshot-badge" data-design-preset-snapshot-badge="components">' . esc_html__( '组件 0', 'developer-starter' ) . '</span>';
+            echo '<span class="ds-design-preset-card__snapshot-badge" data-design-preset-snapshot-badge="typography">' . esc_html__( '排版 0', 'qiling' ) . '</span>';
+            echo '<span class="ds-design-preset-card__snapshot-badge" data-design-preset-snapshot-badge="layout">' . esc_html__( '布局 0', 'qiling' ) . '</span>';
+            echo '<span class="ds-design-preset-card__snapshot-badge" data-design-preset-snapshot-badge="components">' . esc_html__( '组件 0', 'qiling' ) . '</span>';
             echo '</div>';
-            echo '<p class="ds-design-preset-card__snapshot-summary" data-design-preset-snapshot-summary="1">' . esc_html__( '当前仅保存了颜色；可使用上方按钮保存完整效果。', 'developer-starter' ) . '</p>';
+            echo '<p class="ds-design-preset-card__snapshot-summary" data-design-preset-snapshot-summary="1">' . esc_html__( '当前仅保存了颜色；可使用上方按钮保存完整效果。', 'qiling' ) . '</p>';
             echo '<textarea data-design-preset-json="typography" name="' . esc_attr( $option_name ) . '[design_custom_presets][' . esc_attr( $index ) . '][typography_json]">' . esc_textarea( is_string( $typography_json ) ? $typography_json : '{}' ) . '</textarea>';
             echo '<textarea data-design-preset-json="layout" name="' . esc_attr( $option_name ) . '[design_custom_presets][' . esc_attr( $index ) . '][layout_json]">' . esc_textarea( is_string( $layout_json ) ? $layout_json : '{}' ) . '</textarea>';
             echo '<textarea data-design-preset-json="components" name="' . esc_attr( $option_name ) . '[design_custom_presets][' . esc_attr( $index ) . '][components_json]">' . esc_textarea( is_string( $components_json ) ? $components_json : '{}' ) . '</textarea>';
@@ -237,16 +237,16 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
 
         echo '</div>';
         echo '<section class="ds-design-preset-exchange">';
-        echo '<h4>' . esc_html__( '分享 / 导入预设', 'developer-starter' ) . '</h4>';
-        echo '<p>' . esc_html__( '可生成可分享内容，也可粘贴外部预设内容。系统会一起带上颜色、排版、布局和组件快照。', 'developer-starter' ) . '</p>';
-        echo '<textarea class="large-text code" data-design-preset-exchange rows="10" spellcheck="false" placeholder="' . esc_attr__( '生成后可复制；也可在此粘贴预设内容。', 'developer-starter' ) . '"></textarea>';
+        echo '<h4>' . esc_html__( '分享 / 导入预设', 'qiling' ) . '</h4>';
+        echo '<p>' . esc_html__( '可生成可分享内容，也可粘贴外部预设内容。系统会一起带上颜色、排版、布局和组件快照。', 'qiling' ) . '</p>';
+        echo '<textarea class="large-text code" data-design-preset-exchange rows="10" spellcheck="false" placeholder="' . esc_attr__( '生成后可复制；也可在此粘贴预设内容。', 'qiling' ) . '"></textarea>';
         echo '<div class="ds-design-preset-exchange__actions">';
-        echo '<button type="button" class="button ds-export-design-presets">' . esc_html__( '生成可分享内容', 'developer-starter' ) . '</button>';
-        echo '<button type="button" class="button ds-copy-design-presets">' . esc_html__( '复制内容', 'developer-starter' ) . '</button>';
-        echo '<button type="button" class="button ds-import-design-presets">' . esc_html__( '导入到当前列表', 'developer-starter' ) . '</button>';
-        echo '<button type="button" class="button ds-replace-design-presets">' . esc_html__( '用导入内容替换当前列表', 'developer-starter' ) . '</button>';
+        echo '<button type="button" class="button ds-export-design-presets">' . esc_html__( '生成可分享内容', 'qiling' ) . '</button>';
+        echo '<button type="button" class="button ds-copy-design-presets">' . esc_html__( '复制内容', 'qiling' ) . '</button>';
+        echo '<button type="button" class="button ds-import-design-presets">' . esc_html__( '导入到当前列表', 'qiling' ) . '</button>';
+        echo '<button type="button" class="button ds-replace-design-presets">' . esc_html__( '用导入内容替换当前列表', 'qiling' ) . '</button>';
         echo '</div>';
-        echo '<p class="ds-design-preset-exchange__status" data-design-preset-status="1">' . esc_html__( '保存主题设置后，这里的导入或新增内容才会真正生效。', 'developer-starter' ) . '</p>';
+        echo '<p class="ds-design-preset-exchange__status" data-design-preset-status="1">' . esc_html__( '保存主题设置后，这里的导入或新增内容才会真正生效。', 'qiling' ) . '</p>';
         echo '</section>';
         echo '</div>';
 
@@ -772,10 +772,10 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
     }
 
     private function render_design_preset_scope_manager_field( $options ) {
-        echo '<tr id="setting-row-design_preset_context_rules" data-setting-id="design_preset_context_rules"><th scope="row">' . esc_html__( '多品牌应用范围', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-design_preset_context_rules" data-setting-id="design_preset_context_rules"><th scope="row">' . esc_html__( '多品牌应用范围', 'qiling' ) . '</th><td>';
 
         if ( ! class_exists( '\Developer_Starter\Core\Design_Tokens' ) ) {
-            echo '<p class="description">' . esc_html__( '设计预设服务未加载。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '设计预设服务未加载。', 'qiling' ) . '</p>';
             echo '</td></tr>';
             return;
         }
@@ -848,43 +848,43 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                 echo '</select>';
                 echo '</td>';
                 echo '<td>';
-                echo '<select name="' . esc_attr( $option_name ) . '[design_preset_context_rules][' . esc_attr( $group_key ) . '][' . esc_attr( $index ) . '][preset]" aria-label="' . esc_attr__( '品牌配色预设', 'developer-starter' ) . '">';
+                echo '<select name="' . esc_attr( $option_name ) . '[design_preset_context_rules][' . esc_attr( $group_key ) . '][' . esc_attr( $index ) . '][preset]" aria-label="' . esc_attr__( '品牌配色预设', 'qiling' ) . '">';
                 $render_preset_options( $preset_choices, $preset ?: 'inherit' );
                 echo '</select>';
                 echo '</td>';
-                echo '<td><button type="button" class="button-link-delete ds-remove-design-scope-row">' . esc_html__( '删除', 'developer-starter' ) . '</button></td>';
+                echo '<td><button type="button" class="button-link-delete ds-remove-design-scope-row">' . esc_html__( '删除', 'qiling' ) . '</button></td>';
                 echo '</tr>';
             }
         };
 
         echo '<div class="ds-design-scope-manager" data-design-scope-manager="1">';
-        echo '<p class="ds-design-scope-manager__tip">' . esc_html__( '这里集中管理多站点/多品牌的应用范围。上方负责创建和保存预设，这里决定哪些页面或分类使用哪套品牌配色。', 'developer-starter' ) . '</p>';
+        echo '<p class="ds-design-scope-manager__tip">' . esc_html__( '这里集中管理多站点/多品牌的应用范围。上方负责创建和保存预设，这里决定哪些页面或分类使用哪套品牌配色。', 'qiling' ) . '</p>';
         echo '<input type="hidden" name="' . esc_attr( $option_name ) . '[design_preset_context_rules_present]" value="1" />';
         echo '<div class="ds-design-scope-manager__grid">';
 
         echo '<section class="ds-design-scope-card" data-design-scope-card="pages">';
-        echo '<div class="ds-design-scope-card__head"><h4>' . esc_html__( '页面配色规则', 'developer-starter' ) . '</h4><p>' . esc_html__( '适合不同品牌落地页、活动页或多站点共用主题时快速换肤。', 'developer-starter' ) . '</p></div>';
-        echo '<table class="widefat striped"><thead><tr><th>' . esc_html__( '页面', 'developer-starter' ) . '</th><th>' . esc_html__( '品牌配色预设', 'developer-starter' ) . '</th><th></th></tr></thead><tbody data-design-scope-list="pages">';
-        $render_rows( 'pages', isset( $rules['pages'] ) ? $rules['pages'] : array(), $page_choices, __( '页面', 'developer-starter' ), __( '选择页面', 'developer-starter' ) );
+        echo '<div class="ds-design-scope-card__head"><h4>' . esc_html__( '页面配色规则', 'qiling' ) . '</h4><p>' . esc_html__( '适合不同品牌落地页、活动页或多站点共用主题时快速换肤。', 'qiling' ) . '</p></div>';
+        echo '<table class="widefat striped"><thead><tr><th>' . esc_html__( '页面', 'qiling' ) . '</th><th>' . esc_html__( '品牌配色预设', 'qiling' ) . '</th><th></th></tr></thead><tbody data-design-scope-list="pages">';
+        $render_rows( 'pages', isset( $rules['pages'] ) ? $rules['pages'] : array(), $page_choices, __( '页面', 'qiling' ), __( '选择页面', 'qiling' ) );
         echo '</tbody></table>';
-        echo '<div class="ds-design-scope-card__actions"><button type="button" class="button button-secondary ds-add-design-scope-row" data-design-scope-add="pages">' . esc_html__( '添加页面规则', 'developer-starter' ) . '</button></div>';
+        echo '<div class="ds-design-scope-card__actions"><button type="button" class="button button-secondary ds-add-design-scope-row" data-design-scope-add="pages">' . esc_html__( '添加页面规则', 'qiling' ) . '</button></div>';
         echo '</section>';
 
         echo '<section class="ds-design-scope-card" data-design-scope-card="categories">';
-        echo '<div class="ds-design-scope-card__head"><h4>' . esc_html__( '分类配色规则', 'developer-starter' ) . '</h4><p>' . esc_html__( '分类页和该分类下文章会继承这里指定的品牌配色。', 'developer-starter' ) . '</p></div>';
-        echo '<table class="widefat striped"><thead><tr><th>' . esc_html__( '分类', 'developer-starter' ) . '</th><th>' . esc_html__( '品牌配色预设', 'developer-starter' ) . '</th><th></th></tr></thead><tbody data-design-scope-list="categories">';
-        $render_rows( 'categories', isset( $rules['categories'] ) ? $rules['categories'] : array(), $category_choices, __( '分类', 'developer-starter' ), __( '选择分类', 'developer-starter' ) );
+        echo '<div class="ds-design-scope-card__head"><h4>' . esc_html__( '分类配色规则', 'qiling' ) . '</h4><p>' . esc_html__( '分类页和该分类下文章会继承这里指定的品牌配色。', 'qiling' ) . '</p></div>';
+        echo '<table class="widefat striped"><thead><tr><th>' . esc_html__( '分类', 'qiling' ) . '</th><th>' . esc_html__( '品牌配色预设', 'qiling' ) . '</th><th></th></tr></thead><tbody data-design-scope-list="categories">';
+        $render_rows( 'categories', isset( $rules['categories'] ) ? $rules['categories'] : array(), $category_choices, __( '分类', 'qiling' ), __( '选择分类', 'qiling' ) );
         echo '</tbody></table>';
-        echo '<div class="ds-design-scope-card__actions"><button type="button" class="button button-secondary ds-add-design-scope-row" data-design-scope-add="categories">' . esc_html__( '添加分类规则', 'developer-starter' ) . '</button></div>';
+        echo '<div class="ds-design-scope-card__actions"><button type="button" class="button button-secondary ds-add-design-scope-row" data-design-scope-add="categories">' . esc_html__( '添加分类规则', 'qiling' ) . '</button></div>';
         echo '</section>';
 
         echo '</div>';
 
         echo '<script type="text/template" data-design-scope-template="pages">';
-        $render_rows( 'pages', array( '__EMPTY__' => '' ), $page_choices, __( '页面', 'developer-starter' ), __( '选择页面', 'developer-starter' ), true );
+        $render_rows( 'pages', array( '__EMPTY__' => '' ), $page_choices, __( '页面', 'qiling' ), __( '选择页面', 'qiling' ), true );
         echo '</script>';
         echo '<script type="text/template" data-design-scope-template="categories">';
-        $render_rows( 'categories', array( '__EMPTY__' => '' ), $category_choices, __( '分类', 'developer-starter' ), __( '选择分类', 'developer-starter' ), true );
+        $render_rows( 'categories', array( '__EMPTY__' => '' ), $category_choices, __( '分类', 'qiling' ), __( '选择分类', 'qiling' ), true );
         echo '</script>';
         echo '<script>
         document.addEventListener("DOMContentLoaded", function(){
@@ -918,10 +918,10 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
     }
 
     private function render_design_typography_system_field( $options ) {
-        echo '<tr id="setting-row-design_typography_system" data-setting-id="design_typography_system"><th scope="row">' . esc_html__( '响应式排版体系', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-design_typography_system" data-setting-id="design_typography_system"><th scope="row">' . esc_html__( '响应式排版体系', 'qiling' ) . '</th><td>';
 
         if ( ! class_exists( '\Developer_Starter\Core\Design_Tokens' ) ) {
-            echo '<p class="description">' . esc_html__( '全局排版服务未加载。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '全局排版服务未加载。', 'qiling' ) . '</p>';
             echo '</td></tr>';
             return;
         }
@@ -983,7 +983,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
         }
         </style>
         <div class="ds-typography-system" data-ds-typography-system="1">
-            <p class="ds-typography-system__tip"><?php echo esc_html__( '统一设置正文、导语、导航、按钮、表单和标题在桌面、平板、手机端的排版。', 'developer-starter' ); ?></p>
+            <p class="ds-typography-system__tip"><?php echo esc_html__( '统一设置正文、导语、导航、按钮、表单和标题在桌面、平板、手机端的排版。', 'qiling' ); ?></p>
             <input type="hidden" name="<?php echo esc_attr( $option_name ); ?>[design_typography_system_present]" value="1" />
 
             <div class="ds-typography-system__preview">
@@ -1116,10 +1116,10 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
     }
 
     private function render_design_layout_system_field( $options ) {
-        echo '<tr id="setting-row-design_layout_system" data-setting-id="design_layout_system"><th scope="row">' . esc_html__( '响应式布局尺度', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-design_layout_system" data-setting-id="design_layout_system"><th scope="row">' . esc_html__( '响应式布局尺度', 'qiling' ) . '</th><td>';
 
         if ( ! class_exists( '\Developer_Starter\Core\Design_Tokens' ) ) {
-            echo '<p class="description">' . esc_html__( '全局布局服务未加载。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '全局布局服务未加载。', 'qiling' ) . '</p>';
             echo '</td></tr>';
             return;
         }
@@ -1180,7 +1180,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
         }
         </style>
         <div class="ds-layout-system" data-ds-layout-system="1">
-            <p class="ds-layout-system__tip"><?php echo esc_html__( '统一设置桌面、平板、手机端的容器宽度、区块间距、栅格间距和布局模式。', 'developer-starter' ); ?></p>
+            <p class="ds-layout-system__tip"><?php echo esc_html__( '统一设置桌面、平板、手机端的容器宽度、区块间距、栅格间距和布局模式。', 'qiling' ); ?></p>
             <input type="hidden" name="<?php echo esc_attr( $option_name ); ?>[design_layout_system_present]" value="1" />
 
             <div class="ds-layout-system__preview">
@@ -1207,9 +1207,9 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                             </div>
                         </div>
                         <div class="ds-layout-system__metrics">
-                            <code data-ds-layout-meta="container"><?php echo esc_html( sprintf( __( '容器 %s', 'developer-starter' ), $container_width ) ); ?></code>
-                            <code data-ds-layout-meta="spacing"><?php echo esc_html( sprintf( __( '区块 %s', 'developer-starter' ), $section_spacing ) ); ?></code>
-                            <code data-ds-layout-meta="gap"><?php echo esc_html( sprintf( __( '栅格 %s', 'developer-starter' ), $grid_gap ) ); ?></code>
+                            <code data-ds-layout-meta="container"><?php echo esc_html( sprintf( __( '容器 %s', 'qiling' ), $container_width ) ); ?></code>
+                            <code data-ds-layout-meta="spacing"><?php echo esc_html( sprintf( __( '区块 %s', 'qiling' ), $section_spacing ) ); ?></code>
+                            <code data-ds-layout-meta="gap"><?php echo esc_html( sprintf( __( '栅格 %s', 'qiling' ), $grid_gap ) ); ?></code>
                         </div>
                     </section>
                 <?php endforeach; ?>
@@ -1220,7 +1220,7 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                     <section class="ds-layout-system__card">
                         <div class="ds-layout-system__card-head">
                             <strong><?php echo esc_html( $layout_definitions[ $layout_key ]['label'] ); ?></strong>
-                            <p><?php echo esc_html__( '支持桌面 / 平板 / 手机三端独立设置。', 'developer-starter' ); ?></p>
+                            <p><?php echo esc_html__( '支持桌面 / 平板 / 手机三端独立设置。', 'qiling' ); ?></p>
                         </div>
                         <div class="ds-layout-system__matrix">
                             <?php foreach ( $device_definitions as $device_key => $device_definition ) : ?>
@@ -1248,14 +1248,14 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
 
                 <section class="ds-layout-system__meta-card">
                     <div class="ds-layout-system__card-head">
-                        <strong><?php echo esc_html__( '断点与布局模式', 'developer-starter' ); ?></strong>
-                        <p><?php echo esc_html__( '断点会决定排版与容器何时切换到平板 / 手机值；布局模式用于切换 wide 与 boxed 的站点框架。', 'developer-starter' ); ?></p>
+                        <strong><?php echo esc_html__( '断点与布局模式', 'qiling' ); ?></strong>
+                        <p><?php echo esc_html__( '断点会决定排版与容器何时切换到平板 / 手机值；布局模式用于切换 wide 与 boxed 的站点框架。', 'qiling' ); ?></p>
                     </div>
                     <div class="ds-layout-system__meta-grid">
                         <div class="ds-layout-system__device">
-                            <h5><?php echo esc_html__( '平板断点', 'developer-starter' ); ?></h5>
+                            <h5><?php echo esc_html__( '平板断点', 'qiling' ); ?></h5>
                             <label class="ds-layout-system__field">
-                                <span><?php echo esc_html__( '平板最大宽度', 'developer-starter' ); ?></span>
+                                <span><?php echo esc_html__( '平板最大宽度', 'qiling' ); ?></span>
                                 <input
                                     type="text"
                                     class="regular-text"
@@ -1269,9 +1269,9 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                             </label>
                         </div>
                         <div class="ds-layout-system__device">
-                            <h5><?php echo esc_html__( '手机断点', 'developer-starter' ); ?></h5>
+                            <h5><?php echo esc_html__( '手机断点', 'qiling' ); ?></h5>
                             <label class="ds-layout-system__field">
-                                <span><?php echo esc_html__( '手机最大宽度', 'developer-starter' ); ?></span>
+                                <span><?php echo esc_html__( '手机最大宽度', 'qiling' ); ?></span>
                                 <input
                                     type="text"
                                     class="regular-text"
@@ -1285,9 +1285,9 @@ trait Admin_Settings_Field_Render_Design_Presets_Trait {
                             </label>
                         </div>
                         <div class="ds-layout-system__device">
-                            <h5><?php echo esc_html__( '站点布局模式', 'developer-starter' ); ?></h5>
+                            <h5><?php echo esc_html__( '站点布局模式', 'qiling' ); ?></h5>
                             <label class="ds-layout-system__field">
-                                <span><?php echo esc_html__( '布局模式', 'developer-starter' ); ?></span>
+                                <span><?php echo esc_html__( '布局模式', 'qiling' ); ?></span>
                                 <select data-ds-layout-mode="1" name="<?php echo esc_attr( $option_name ); ?>[design_layout_system][layout_mode]">
                                     <?php foreach ( $layout_definitions['layout_mode']['choices'] as $choice_key => $choice_label ) : ?>
                                         <option value="<?php echo esc_attr( $choice_key ); ?>" <?php selected( isset( $layout_system['layout_mode'] ) ? (string) $layout_system['layout_mode'] : 'wide', (string) $choice_key ); ?>><?php echo esc_html( $choice_label ); ?></option>

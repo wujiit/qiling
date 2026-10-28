@@ -209,12 +209,18 @@ function developer_starter_sanitize_permissions_policy_header( $policy ) {
  * 输出安全响应头
  */
 function developer_starter_security_headers() {
-    if ( ! developer_starter_get_option( 'security_headers_enable', '' ) || headers_sent() ) {
+    if ( headers_sent() ) {
+        return;
+    }
+
+    // 默认输出基础安全防御标头（防止 MIME 嗅探）
+    header( 'X-Content-Type-Options: nosniff' );
+
+    if ( ! developer_starter_get_option( 'security_headers_enable', '' ) ) {
         return;
     }
 
     header( 'X-Frame-Options: SAMEORIGIN' );
-    header( 'X-Content-Type-Options: nosniff' );
 
     if ( is_ssl() && apply_filters( 'developer_starter_security_hsts_enabled', true ) ) {
         $hsts_header = (string) apply_filters(
@@ -249,3 +255,20 @@ function developer_starter_security_headers() {
     header( 'Permissions-Policy: ' . $permissions_policy );
 }
 add_action( 'send_headers', 'developer_starter_security_headers', 20 );
+
+if ( ! function_exists( 'developer_starter_filter_wp_security_headers' ) ) {
+    /**
+     * 过滤 WordPress 标准响应头，确保默认包含 nosniff 保护。
+     *
+     * @param array<string,string> $headers HTTP 响应头数组。
+     * @return array<string,string>
+     */
+    function developer_starter_filter_wp_security_headers( $headers ) {
+        if ( is_array( $headers ) && ! isset( $headers['X-Content-Type-Options'] ) ) {
+            $headers['X-Content-Type-Options'] = 'nosniff';
+        }
+        return $headers;
+    }
+}
+add_filter( 'wp_headers', 'developer_starter_filter_wp_security_headers', 10 );
+

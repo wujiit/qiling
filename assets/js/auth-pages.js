@@ -298,7 +298,9 @@
                 item.classList.toggle('pending', !valid && password.length === 0);
                 var icon = item.querySelector('.icon');
                 if (icon) {
-                    icon.textContent = valid ? '✓' : '○';
+                    icon.innerHTML = valid
+                        ? '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+                        : '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-1px;" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle></svg>';
                 }
                 if (valid) {
                     validCount++;

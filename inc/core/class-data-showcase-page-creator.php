@@ -69,23 +69,23 @@ class Data_Showcase_Page_Creator extends Page_Creator_Base {
         }
 
         return array(
-            'stats_title' => __( '关键数据总览', 'developer-starter' ),
+            'stats_title' => __( '关键数据总览', 'qiling' ),
             'stats_items' => array(
                 array(
                     'number' => '500+',
-                    'label'  => __( '服务客户', 'developer-starter' ),
+                    'label'  => __( '服务客户', 'qiling' ),
                 ),
                 array(
                     'number' => '10+',
-                    'label'  => __( '年行业经验', 'developer-starter' ),
+                    'label'  => __( '年行业经验', 'qiling' ),
                 ),
                 array(
                     'number' => '99%',
-                    'label'  => __( '客户满意度', 'developer-starter' ),
+                    'label'  => __( '客户满意度', 'qiling' ),
                 ),
                 array(
                     'number' => '24/7',
-                    'label'  => __( '在线支持', 'developer-starter' ),
+                    'label'  => __( '在线支持', 'qiling' ),
                 ),
             ),
         );
@@ -111,19 +111,19 @@ class Data_Showcase_Page_Creator extends Page_Creator_Base {
         if ( $type === 'pie' ) {
             return array(
                 'chart_type'  => 'pie',
-                'chart_title' => __( '市场份额分布', 'developer-starter' ),
+                'chart_title' => __( '市场份额分布', 'qiling' ),
                 'chart_height' => '400',
                 'chart_data'  => array(
-                    array( 'label' => __( '品牌 A', 'developer-starter' ), 'value' => '300', 'color' => '#ef4444' ),
-                    array( 'label' => __( '品牌 B', 'developer-starter' ), 'value' => '50', 'color' => '#3b82f6' ),
-                    array( 'label' => __( '品牌 C', 'developer-starter' ), 'value' => '100', 'color' => '#eab308' ),
+                    array( 'label' => __( '品牌 A', 'qiling' ), 'value' => '300', 'color' => '#ef4444' ),
+                    array( 'label' => __( '品牌 B', 'qiling' ), 'value' => '50', 'color' => '#3b82f6' ),
+                    array( 'label' => __( '品牌 C', 'qiling' ), 'value' => '100', 'color' => '#eab308' ),
                 ),
             );
         }
 
         return array(
             'chart_type'   => 'bar',
-            'chart_title'  => __( '季度业绩增长 (2024)', 'developer-starter' ),
+            'chart_title'  => __( '季度业绩增长 (2024)', 'qiling' ),
             'chart_height' => '400',
             'chart_data'   => array(
                 array( 'label' => 'Q1', 'value' => '1200', 'color' => '#3b82f6' ),
@@ -151,21 +151,21 @@ class Data_Showcase_Page_Creator extends Page_Creator_Base {
         }
 
         return array(
-            'comparison_title' => __( '版本对比', 'developer-starter' ),
-            'comparison_subtitle' => __( '选择最适合您的方案', 'developer-starter' ),
-            'comparison_features' => __( "基础功能\n高级功能\n技术支持\nAPI接口\n数据导出\n自定义域名", 'developer-starter' ),
+            'comparison_title' => __( '版本对比', 'qiling' ),
+            'comparison_subtitle' => __( '选择最适合您的方案', 'qiling' ),
+            'comparison_features' => __( "基础功能\n高级功能\n技术支持\nAPI接口\n数据导出\n自定义域名", 'qiling' ),
             'comparison_products' => array(
                 array(
-                    'name'   => __( '基础版', 'developer-starter' ),
-                    'values' => __( "✓\n✗\n邮件支持\n✗\n✗\n✗", 'developer-starter' ),
+                    'name'   => __( '基础版', 'qiling' ),
+                    'values' => __( "✓\n✗\n邮件支持\n✗\n✗\n✗", 'qiling' ),
                 ),
                 array(
-                    'name'   => __( '专业版', 'developer-starter' ),
-                    'values' => __( "✓\n✓\n在线客服\n✓\n✓\n✗", 'developer-starter' ),
+                    'name'   => __( '专业版', 'qiling' ),
+                    'values' => __( "✓\n✓\n在线客服\n✓\n✓\n✗", 'qiling' ),
                 ),
                 array(
-                    'name'   => __( '企业版', 'developer-starter' ),
-                    'values' => __( "✓\n✓\n7×24专属\n✓\n✓\n✓", 'developer-starter' ),
+                    'name'   => __( '企业版', 'qiling' ),
+                    'values' => __( "✓\n✓\n7×24专属\n✓\n✓\n✓", 'qiling' ),
                 ),
             ),
             'comparison_highlight' => '2',

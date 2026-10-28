@@ -566,8 +566,12 @@
             loginOverlay.addEventListener('click', closeModal);
         }
         document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && loginModal.classList.contains('active')) {
-                closeModal();
+            if (event.key === 'Escape') {
+                if (loginModal && loginModal.classList.contains('active')) {
+                    closeModal();
+                } else if (userDropdown && userDropdown.classList.contains('active')) {
+                    userDropdown.classList.remove('active');
+                }
             }
         });
 

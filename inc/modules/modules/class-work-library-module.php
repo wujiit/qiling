@@ -19,7 +19,7 @@ class Work_Library_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'content';
         $this->icon        = 'dashicons-portfolio';
-        $this->description = __( '读取启灵作品库插件数据，支持响应式网格、分页和详情跳转。', 'developer-starter' );
+        $this->description = __( '读取启灵作品库插件数据，支持响应式网格、分页和详情跳转。', 'qiling' );
     }
 
     public function get_id() {
@@ -27,7 +27,7 @@ class Work_Library_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '作品库展示', 'developer-starter' );
+        return __( '作品库展示', 'qiling' );
     }
 
     public function get_fields() {
@@ -35,53 +35,53 @@ class Work_Library_Module extends Module_Base {
             array(
                 'id'      => 'wl_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( '作品库(插件)', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( '作品库(插件)', 'qiling' ),
             ),
             array(
                 'id'      => 'wl_subtitle',
                 'type'    => 'text',
-                'label'   => __( '模块副标题', 'developer-starter' ),
-                'default' => __( '最新发布的精选作品', 'developer-starter' ),
+                'label'   => __( '模块副标题', 'qiling' ),
+                'default' => __( '最新发布的精选作品', 'qiling' ),
             ),
             array(
                 'id'      => 'wl_item_type',
                 'type'    => 'select',
-                'label'   => __( '作品类型筛选', 'developer-starter' ),
+                'label'   => __( '作品类型筛选', 'qiling' ),
                 'options' => array(
-                    'all'     => __( '全部类型', 'developer-starter' ),
-                    'work'    => __( '通用作品', 'developer-starter' ),
-                    'photo'   => __( '摄影', 'developer-starter' ),
-                    'music'   => __( '音乐', 'developer-starter' ),
-                    'book'    => __( '书籍 / 出版物', 'developer-starter' ),
-                    'product' => __( '产品', 'developer-starter' ),
+                    'all'     => __( '全部类型', 'qiling' ),
+                    'work'    => __( '通用作品', 'qiling' ),
+                    'photo'   => __( '摄影', 'qiling' ),
+                    'music'   => __( '音乐', 'qiling' ),
+                    'book'    => __( '书籍 / 出版物', 'qiling' ),
+                    'product' => __( '产品', 'qiling' ),
                 ),
                 'default' => 'all',
             ),
             array(
                 'id'      => 'wl_taxonomy',
                 'type'    => 'text',
-                'label'   => __( '分类类型 taxonomy（可选）', 'developer-starter' ),
+                'label'   => __( '分类类型 taxonomy（可选）', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '例如 style / series / medium / genre', 'developer-starter' ),
+                'desc'    => __( '例如 style / series / medium / genre', 'qiling' ),
             ),
             array(
                 'id'      => 'wl_term_ids',
                 'type'    => 'text',
-                'label'   => __( '分类 ID（逗号分隔，可选）', 'developer-starter' ),
+                'label'   => __( '分类 ID（逗号分隔，可选）', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '只显示这些分类下的作品。留空表示不按分类过滤。', 'developer-starter' ),
+                'desc'    => __( '只显示这些分类下的作品。留空表示不按分类过滤。', 'qiling' ),
             ),
             array(
                 'id'      => 'wl_per_page',
                 'type'    => 'number',
-                'label'   => __( '每页数量', 'developer-starter' ),
+                'label'   => __( '每页数量', 'qiling' ),
                 'default' => 12,
             ),
             array(
                 'id'      => 'wl_columns',
                 'type'    => 'select',
-                'label'   => __( '桌面端列数', 'developer-starter' ),
+                'label'   => __( '桌面端列数', 'qiling' ),
                 'options' => array(
                     '2' => '2',
                     '3' => '3',
@@ -93,7 +93,7 @@ class Work_Library_Module extends Module_Base {
             array(
                 'id'      => 'wl_cover_ratio',
                 'type'    => 'select',
-                'label'   => __( '封面比例', 'developer-starter' ),
+                'label'   => __( '封面比例', 'qiling' ),
                 'options' => array(
                     '1:1'  => '1:1',
                     '4:3'  => '4:3',
@@ -105,96 +105,96 @@ class Work_Library_Module extends Module_Base {
             array(
                 'id'      => 'wl_show_excerpt',
                 'type'    => 'select',
-                'label'   => __( '显示简介', 'developer-starter' ),
+                'label'   => __( '显示简介', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wl_show_price',
                 'type'    => 'select',
-                'label'   => __( '显示价格', 'developer-starter' ),
+                'label'   => __( '显示价格', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wl_show_type',
                 'type'    => 'select',
-                'label'   => __( '显示类型标签', 'developer-starter' ),
+                'label'   => __( '显示类型标签', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wl_show_terms',
                 'type'    => 'select',
-                'label'   => __( '显示分类标签', 'developer-starter' ),
+                'label'   => __( '显示分类标签', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wl_show_pager',
                 'type'    => 'select',
-                'label'   => __( '显示分页', 'developer-starter' ),
+                'label'   => __( '显示分页', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wl_page_query_key',
                 'type'    => 'text',
-                'label'   => __( '分页参数名', 'developer-starter' ),
+                'label'   => __( '分页参数名', 'qiling' ),
                 'default' => 'qw_page',
-                'desc'    => __( '同一页面有多个作品库模块时，请给每个模块设不同参数名。', 'developer-starter' ),
+                'desc'    => __( '同一页面有多个作品库模块时，请给每个模块设不同参数名。', 'qiling' ),
             ),
             array(
                 'id'      => 'wl_detail_page_url',
                 'type'    => 'text',
-                'label'   => __( '详情页 URL', 'developer-starter' ),
+                'label'   => __( '详情页 URL', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空则跳当前页面。建议填写独立详情页地址。', 'developer-starter' ),
+                'desc'    => __( '留空则跳当前页面。建议填写独立详情页地址。', 'qiling' ),
             ),
             array(
                 'id'      => 'wl_bg_color',
                 'type'    => 'color',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'wl_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景', 'developer-starter' ),
+                'label'   => __( '卡片背景', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'wl_badge_bg',
                 'type'    => 'color',
-                'label'   => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'   => __( '标签/徽章背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '控制作品类型和分类标签，留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ),
+                'desc'    => __( '控制作品类型和分类标签，留空时跟随页面预设/全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'wl_padding_top',
                 'type'    => 'text',
-                'label'   => __( '顶部间距', 'developer-starter' ),
+                'label'   => __( '顶部间距', 'qiling' ),
                 'default' => '64px',
             ),
             array(
                 'id'      => 'wl_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '底部间距', 'developer-starter' ),
+                'label'   => __( '底部间距', 'qiling' ),
                 'default' => '64px',
             ),
         );
@@ -206,7 +206,7 @@ class Work_Library_Module extends Module_Base {
             return;
         }
 
-        $title       = isset( $data['wl_title'] ) ? sanitize_text_field( (string) $data['wl_title'] ) : __( '作品库', 'developer-starter' );
+        $title       = isset( $data['wl_title'] ) ? sanitize_text_field( (string) $data['wl_title'] ) : __( '作品库', 'qiling' );
         $subtitle    = isset( $data['wl_subtitle'] ) ? sanitize_text_field( (string) $data['wl_subtitle'] ) : '';
         $item_type   = isset( $data['wl_item_type'] ) ? sanitize_key( (string) $data['wl_item_type'] ) : 'all';
         $taxonomy    = isset( $data['wl_taxonomy'] ) ? sanitize_key( (string) $data['wl_taxonomy'] ) : '';
@@ -294,7 +294,7 @@ class Work_Library_Module extends Module_Base {
                 <?php endif; ?>
 
                 <?php if ( empty( $items ) ) : ?>
-                    <div class="qw-lib-empty"><?php echo esc_html__( '暂无作品，请先在启灵作品库插件里发布内容。', 'developer-starter' ); ?></div>
+                    <div class="qw-lib-empty"><?php echo esc_html__( '暂无作品，请先在启灵作品库插件里发布内容。', 'qiling' ); ?></div>
                 <?php else : ?>
                     <div class="qw-lib-grid">
                         <?php foreach ( $items as $item ) : ?>
@@ -316,7 +316,7 @@ class Work_Library_Module extends Module_Base {
                                         <?php if ( ! empty( $item['cover_url'] ) ) : ?>
                                             <img src="<?php echo esc_url( (string) $item['cover_url'] ); ?>" alt="<?php echo esc_attr( (string) $item['title'] ); ?>" loading="lazy" />
                                         <?php else : ?>
-                                            <span class="qw-lib-cover-empty"><?php echo esc_html__( '暂无封面', 'developer-starter' ); ?></span>
+                                            <span class="qw-lib-cover-empty"><?php echo esc_html__( '暂无封面', 'qiling' ); ?></span>
                                         <?php endif; ?>
                                     </div>
                                     <div class="qw-lib-card-body">
@@ -351,7 +351,7 @@ class Work_Library_Module extends Module_Base {
                     </div>
 
                     <?php if ( $show_pager && isset( $meta['pages'] ) && (int) $meta['pages'] > 1 ) : ?>
-                        <nav class="qw-lib-pager" aria-label="<?php echo esc_attr__( '作品分页', 'developer-starter' ); ?>">
+                        <nav class="qw-lib-pager" aria-label="<?php echo esc_attr__( '作品分页', 'qiling' ); ?>">
                             <?php for ( $i = 1; $i <= (int) $meta['pages']; $i++ ) : ?>
                                 <?php $url = add_query_arg( array( $page_key => $i ), $pager_base ); ?>
                                 <a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( (int) $meta['page'] === $i ? 'is-active' : '' ); ?>">
@@ -647,7 +647,7 @@ class Work_Library_Module extends Module_Base {
         }
         ?>
         <div class="notice notice-warning qiling-module-admin-notice">
-            <?php echo esc_html__( '作品库展示模块需要先启用「启灵作品库（qilingwork）」插件。', 'developer-starter' ); ?>
+            <?php echo esc_html__( '作品库展示模块需要先启用「启灵作品库（qilingwork）」插件。', 'qiling' ); ?>
         </div>
         <?php
     }

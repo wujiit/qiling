@@ -19,13 +19,13 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skins' ) ) {
     function developer_starter_get_page_visual_skins() {
         $skins = array(
             'cloud_canvas' => array(
-                'label'           => __( '一体式官网', 'developer-starter' ),
+                'label'           => __( '一体式官网', 'qiling' ),
                 'templates'       => array(
                     'templates/template-qiling-cloud-canvas.php',
                 ),
                 'style_handle'    => 'developer-starter-cloud-canvas-skin',
                 'style_path'      => 'assets/css/cloud-canvas-skin.css',
-                'style_deps'      => array( 'developer-starter-main' ),
+                'style_deps'      => array( 'qiling-main' ),
                 'header'          => array(
                     'vars' => array(
                         '--qiling-header-bg'                         => 'rgba(255, 255, 255, 0.88)',
@@ -99,14 +99,14 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skins' ) ) {
                 ),
             ),
             'tech_canvas' => array(
-                'label'           => __( '科技公司官网（一体式）', 'developer-starter' ),
+                'label'           => __( '科技公司官网（一体式）', 'qiling' ),
                 'templates'       => array(
                     'templates/template-tech-company-integrated.php',
                     'templates/template-home.php',
                 ),
                 'style_handle'    => 'developer-starter-cloud-canvas-skin',
                 'style_path'      => 'assets/css/cloud-canvas-skin.css',
-                'style_deps'      => array( 'developer-starter-main' ),
+                'style_deps'      => array( 'qiling-main' ),
                 'header'          => array(
                     'vars' => array(
                         '--qiling-header-bg'                         => 'rgba(247, 251, 255, 0.9)',
@@ -183,11 +183,11 @@ if ( ! function_exists( 'developer_starter_get_page_visual_skins' ) ) {
                 ),
             ),
             'hosting_canvas' => array(
-                'label'           => __( '云主机SaaS官网（一体式）', 'developer-starter' ),
+                'label'           => __( '云主机SaaS官网（一体式）', 'qiling' ),
                 'templates'       => array( 'templates/template-hosting-saas-home.php' ),
                 'style_handle'    => 'developer-starter-cloud-canvas-skin',
                 'style_path'      => 'assets/css/cloud-canvas-skin.css',
-                'style_deps'      => array( 'developer-starter-main' ),
+                'style_deps'      => array( 'qiling-main' ),
                 'header'          => array(
                     'vars' => array(
                         '--qiling-header-bg'                         => 'rgba(255, 255, 255, 0.94)',
@@ -434,7 +434,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
 	function developer_starter_get_industry_page_visual_skin_presets() {
 		$specs = array(
 			'video_entertainment' => array(
-				'label'       => __( '影视娱乐', 'developer-starter' ),
+				'label'       => __( '影视娱乐', 'qiling' ),
 				'primary'     => '#2563eb',
 				'accent'      => '#10b981',
 				'ink'         => '#f8fafc',
@@ -454,7 +454,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
 				),
 			),
 			'technology_company' => array(
-                'label'       => __( '科技公司', 'developer-starter' ),
+                'label'       => __( '科技公司', 'qiling' ),
                 'primary'     => '#4f7dff',
                 'accent'      => '#38c9a6',
                 'ink'         => '#25365f',
@@ -503,7 +503,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
 				),
             ),
             'food_company' => array(
-                'label'       => __( '食品餐饮', 'developer-starter' ),
+                'label'       => __( '食品餐饮', 'qiling' ),
                 'primary'     => '#059669',
                 'accent'      => '#2563eb',
                 'ink'         => '#123c36',
@@ -525,7 +525,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'renovation_company' => array(
-                'label'       => __( '装修设计', 'developer-starter' ),
+                'label'       => __( '装修设计', 'qiling' ),
                 'primary'     => '#1d4ed8',
                 'accent'      => '#0f766e',
                 'ink'         => '#172554',
@@ -552,7 +552,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'education_company' => array(
-                'label'       => __( '教育培训', 'developer-starter' ),
+                'label'       => __( '教育培训', 'qiling' ),
                 'primary'     => '#2563eb',
                 'accent'      => '#10b981',
                 'ink'         => '#172554',
@@ -575,7 +575,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'healthcare_company' => array(
-                'label'       => __( '医疗健康', 'developer-starter' ),
+                'label'       => __( '医疗健康', 'qiling' ),
                 'primary'     => '#10b981',
                 'accent'      => '#0ea5e9',
                 'ink'         => '#164e63',
@@ -603,7 +603,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'law_company' => array(
-                'label'       => __( '法律咨询', 'developer-starter' ),
+                'label'       => __( '法律咨询', 'qiling' ),
                 'primary'     => '#1d4ed8',
                 'accent'      => '#059669',
                 'ink'         => '#172554',
@@ -624,7 +624,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'beauty_company' => array(
-                'label'       => __( '美业护肤', 'developer-starter' ),
+                'label'       => __( '美业护肤', 'qiling' ),
                 'primary'     => '#0f766e',
                 'accent'      => '#2563eb',
                 'ink'         => '#134e4a',
@@ -648,7 +648,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'manufacturing_company' => array(
-                'label'       => __( '工业制造', 'developer-starter' ),
+                'label'       => __( '工业制造', 'qiling' ),
                 'primary'     => '#2563eb',
                 'accent'      => '#059669',
                 'ink'         => '#1e293b',
@@ -681,7 +681,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'finance_company' => array(
-                'label'       => __( '财税金融', 'developer-starter' ),
+                'label'       => __( '财税金融', 'qiling' ),
                 'primary'     => '#0f766e',
                 'accent'      => '#2563eb',
                 'ink'         => '#134e4a',
@@ -703,7 +703,7 @@ if ( ! function_exists( 'developer_starter_get_industry_page_visual_skin_presets
                 ),
             ),
             'photography_company' => array(
-                'label'       => __( '摄影设计', 'developer-starter' ),
+                'label'       => __( '摄影设计', 'qiling' ),
                 'primary'     => '#2563eb',
                 'accent'      => '#059669',
                 'ink'         => '#172554',
@@ -1478,127 +1478,127 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_fields' ) ) {
             'developer_starter_page_visual_style_fields',
             array(
                 'colors'  => array(
-                    'label'       => __( '页面基础色', 'developer-starter' ),
-                    'description' => __( '控制当前页面主色、辅助色和基础背景。', 'developer-starter' ),
+                    'label'       => __( '页面基础色', 'qiling' ),
+                    'description' => __( '控制当前页面主色、辅助色和基础背景。', 'qiling' ),
                     'fields'      => array(
                         'primary'    => array(
-                            'label'       => __( '页面主色', 'developer-starter' ),
+                            'label'       => __( '页面主色', 'qiling' ),
                             'placeholder' => '#4f7dff',
                             'vars'        => array( '--qiling-page-primary', '--qiling-page-accent', '--color-primary' ),
                         ),
                         'accent'     => array(
-                            'label'       => __( '页面辅助色', 'developer-starter' ),
+                            'label'       => __( '页面辅助色', 'qiling' ),
                             'placeholder' => '#38c9a6',
                             'vars'        => array( '--qiling-page-accent-2' ),
                         ),
                         'background' => array(
-                            'label'       => __( '页面背景色', 'developer-starter' ),
+                            'label'       => __( '页面背景色', 'qiling' ),
                             'placeholder' => '#f7fbff',
                             'vars'        => array( '--qiling-page-bg', '--qiling-page-background' ),
                         ),
                         'text'       => array(
-                            'label'       => __( '页面文字色', 'developer-starter' ),
+                            'label'       => __( '页面文字色', 'qiling' ),
                             'placeholder' => '#25365f',
                             'vars'        => array( '--qiling-page-text' ),
                         ),
                     ),
                 ),
                 'canvas' => array(
-                    'label'       => __( '页面连续画布', 'developer-starter' ),
-                    'description' => __( '控制正文模块之间以及正文与页脚之间的整体衔接。标准分区保持各模块原有布局；连续画布适合一体化页面。', 'developer-starter' ),
+                    'label'       => __( '页面连续画布', 'qiling' ),
+                    'description' => __( '控制正文模块之间以及正文与页脚之间的整体衔接。标准分区保持各模块原有布局；连续画布适合一体化页面。', 'qiling' ),
                     'fields'      => array(
                         'mode' => array(
-                            'label'       => __( '画布模式', 'developer-starter' ),
+                            'label'       => __( '画布模式', 'qiling' ),
                             'type'        => 'select',
                             'options'     => array(
-                                'standard'   => __( '标准分区', 'developer-starter' ),
-                                'continuous' => __( '一体化连续画布', 'developer-starter' ),
+                                'standard'   => __( '标准分区', 'qiling' ),
+                                'continuous' => __( '一体化连续画布', 'qiling' ),
                             ),
                         ),
                         'background' => array(
-                            'label'       => __( '画布背景', 'developer-starter' ),
+                            'label'       => __( '画布背景', 'qiling' ),
                             'placeholder' => 'var(--qiling-page-bg)',
                             'vars'        => array( '--qiling-canvas-bg' ),
                         ),
                         'footer_transition' => array(
-                            'label'       => __( '正文到页脚衔接色', 'developer-starter' ),
+                            'label'       => __( '正文到页脚衔接色', 'qiling' ),
                             'placeholder' => 'var(--qiling-canvas-bg)',
                             'vars'        => array( '--qiling-canvas-footer-transition', '--qiling-footer-wave-backdrop', '--qiling-footer-wave-transition-from' ),
                         ),
                     ),
                 ),
                 'header'  => array(
-                    'label'       => __( '顶部菜单栏', 'developer-starter' ),
-                    'description' => __( '分别控制常规/滚动状态和首屏透明状态。透明状态文字留空时，会根据首屏标题明暗自动选择深色或白色。', 'developer-starter' ),
+                    'label'       => __( '顶部菜单栏', 'qiling' ),
+                    'description' => __( '分别控制常规/滚动状态和首屏透明状态。透明状态文字留空时，会根据首屏标题明暗自动选择深色或白色。', 'qiling' ),
                     'fields'      => array(
                         'background'         => array(
-                            'label'       => __( '常规/滚动顶部背景', 'developer-starter' ),
+                            'label'       => __( '常规/滚动顶部背景', 'qiling' ),
                             'placeholder' => 'rgba(255,255,255,0.9)',
                             'vars'        => array( '--qiling-header-bg' ),
                         ),
                         'text'               => array(
-                            'label'       => __( '菜单文字色', 'developer-starter' ),
+                            'label'       => __( '菜单文字色', 'qiling' ),
                             'placeholder' => '#25365f',
                             'vars'        => array( '--qiling-header-text', '--qiling-header-nav-link', '--qiling-header-scrolled-text', '--qiling-header-scrolled-nav-link' ),
                         ),
                         'transparent_text'   => array(
-                            'label'       => __( '首屏透明状态文字色', 'developer-starter' ),
+                            'label'       => __( '首屏透明状态文字色', 'qiling' ),
                             'placeholder' => '#25365f',
                             'vars'        => array( '--qiling-header-transparent-text', '--qiling-header-transparent-nav-link' ),
                         ),
                         'nav_hover_bg'       => array(
-                            'label'       => __( '菜单悬停背景', 'developer-starter' ),
+                            'label'       => __( '菜单悬停背景', 'qiling' ),
                             'placeholder' => 'linear-gradient(135deg,#4f7dff,#38c9a6)',
                             'vars'        => array( '--qiling-header-nav-hover-bg', '--qiling-header-scrolled-nav-hover-bg' ),
                         ),
                         'nav_hover_text'     => array(
-                            'label'       => __( '菜单悬停文字', 'developer-starter' ),
+                            'label'       => __( '菜单悬停文字', 'qiling' ),
                             'placeholder' => '#ffffff',
                             'vars'        => array( '--qiling-header-nav-hover-text', '--qiling-header-scrolled-nav-hover-text' ),
                         ),
                         'search_bg'          => array(
-                            'label'       => __( '搜索框背景', 'developer-starter' ),
+                            'label'       => __( '搜索框背景', 'qiling' ),
                             'placeholder' => 'rgba(255,255,255,0.78)',
                             'vars'        => array( '--qiling-header-search-bg', '--qiling-header-search-transparent-bg' ),
                         ),
                         'search_text'        => array(
-                            'label'       => __( '搜索框文字', 'developer-starter' ),
+                            'label'       => __( '搜索框文字', 'qiling' ),
                             'placeholder' => '#25365f',
                             'vars'        => array( '--qiling-header-search-text', '--qiling-header-search-transparent-text' ),
                         ),
                         'search_placeholder' => array(
-                            'label'       => __( '搜索占位文案', 'developer-starter' ),
+                            'label'       => __( '搜索占位文案', 'qiling' ),
                             'placeholder' => 'rgba(37,54,95,0.52)',
                             'vars'        => array( '--qiling-header-search-placeholder', '--qiling-header-search-transparent-placeholder' ),
                         ),
                         'search_icon'        => array(
-                            'label'       => __( '搜索图标颜色', 'developer-starter' ),
+                            'label'       => __( '搜索图标颜色', 'qiling' ),
                             'placeholder' => '#4f7dff',
                             'vars'        => array( '--qiling-header-search-icon', '--qiling-header-search-transparent-icon' ),
                         ),
                         'phone_bg'           => array(
-                            'label'       => __( '联系电话背景', 'developer-starter' ),
+                            'label'       => __( '联系电话背景', 'qiling' ),
                             'placeholder' => 'rgba(255,255,255,0.78)',
                             'vars'        => array( '--qiling-header-phone-normal-bg', '--qiling-header-phone-transparent-bg' ),
                         ),
                         'phone_text'         => array(
-                            'label'       => __( '联系电话文字', 'developer-starter' ),
+                            'label'       => __( '联系电话文字', 'qiling' ),
                             'placeholder' => '#25365f',
                             'vars'        => array( '--qiling-header-phone-normal-text', '--qiling-header-phone-transparent-text' ),
                         ),
                     ),
                 ),
                 'footer'  => array(
-                    'label'       => __( '底部和波浪', 'developer-starter' ),
-                    'description' => __( '这里是当前页显式覆盖，优先于全局页脚和所选页面皮肤；留空则按“页脚策略”继承。', 'developer-starter' ),
+                    'label'       => __( '底部和波浪', 'qiling' ),
+                    'description' => __( '这里是当前页显式覆盖，优先于全局页脚和所选页面皮肤；留空则按“页脚策略”继承。', 'qiling' ),
                     'fields'      => array(
                         'background'         => array(
-                            'label'       => __( '关于我们/联系区域背景', 'developer-starter' ),
+                            'label'       => __( '关于我们/联系区域背景', 'qiling' ),
                             'placeholder' => '#4f7dff',
                             'vars'        => array( '--qiling-footer-main-bg' ),
                         ),
                         'text'               => array(
-                            'label'       => __( '关于我们/联系区域文字', 'developer-starter' ),
+                            'label'       => __( '关于我们/联系区域文字', 'qiling' ),
                             'placeholder' => 'rgba(255,255,255,0.9)',
                             'vars'        => array(
                                 '--qiling-footer-main-text',
@@ -1608,72 +1608,72 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_fields' ) ) {
                             ),
                         ),
                         'friend_background'  => array(
-                            'label'       => __( '友情链接区域背景', 'developer-starter' ),
+                            'label'       => __( '友情链接区域背景', 'qiling' ),
                             'placeholder' => '#e3f7f3',
                             'vars'        => array( '--qiling-footer-friend-bg' ),
                         ),
                         'friend_text'        => array(
-                            'label'       => __( '友情链接区域文字', 'developer-starter' ),
+                            'label'       => __( '友情链接区域文字', 'qiling' ),
                             'placeholder' => '#52617e',
                             'vars'        => array( '--qiling-footer-friend-text', '--qiling-footer-friend-link', '--qiling-footer-friend-link-hover' ),
                         ),
                         'bottom_background'  => array(
-                            'label'       => __( '版权/ICP 备案区域背景', 'developer-starter' ),
+                            'label'       => __( '版权/ICP 备案区域背景', 'qiling' ),
                             'placeholder' => '#25365f',
                             'vars'        => array( '--qiling-footer-bottom-bg' ),
                         ),
                         'bottom_text'        => array(
-                            'label'       => __( '版权/ICP 备案文案颜色', 'developer-starter' ),
+                            'label'       => __( '版权/ICP 备案文案颜色', 'qiling' ),
                             'placeholder' => 'rgba(255,255,255,0.82)',
                             'vars'        => array( '--qiling-footer-bottom-text' ),
                         ),
                         'bottom_link'        => array(
-                            'label'       => __( 'ICP/公安备案链接颜色', 'developer-starter' ),
+                            'label'       => __( 'ICP/公安备案链接颜色', 'qiling' ),
                             'placeholder' => '#3d5b9d',
                             'vars'        => array( '--qiling-footer-bottom-link' ),
                         ),
                         'bottom_link_hover'  => array(
-                            'label'       => __( '备案链接悬停颜色', 'developer-starter' ),
+                            'label'       => __( '备案链接悬停颜色', 'qiling' ),
                             'placeholder' => '#315fdc',
                             'vars'        => array( '--qiling-footer-bottom-link-hover' ),
                         ),
                         'bottom_border'      => array(
-                            'label'       => __( '版权/备案区域分隔线', 'developer-starter' ),
+                            'label'       => __( '版权/备案区域分隔线', 'qiling' ),
                             'placeholder' => 'rgba(79,125,255,0.14)',
                             'vars'        => array( '--qiling-footer-bottom-border' ),
                         ),
                         'wave_backdrop'      => array(
-                            'label'       => __( '波浪上方背景', 'developer-starter' ),
+                            'label'       => __( '波浪上方背景', 'qiling' ),
                             'placeholder' => '#ffffff',
                             'vars'        => array( '--qiling-footer-wave-backdrop' ),
                         ),
                         'wave_transition_from' => array(
-                            'label'       => __( '波浪柔化起始色', 'developer-starter' ),
+                            'label'       => __( '波浪柔化起始色', 'qiling' ),
                             'placeholder' => '#f7fbff',
                             'vars'        => array( '--qiling-footer-wave-transition-from' ),
                         ),
                         'wave_transition_height' => array(
-                            'label'       => __( '波浪柔化高度', 'developer-starter' ),
+                            'label'       => __( '波浪柔化高度', 'qiling' ),
                             'placeholder' => '32px',
                             'vars'        => array( '--qiling-footer-wave-transition-height' ),
                         ),
                         'wave_height'        => array(
-                            'label'       => __( '波浪高度', 'developer-starter' ),
+                            'label'       => __( '波浪高度', 'qiling' ),
                             'placeholder' => '64px',
                             'vars'        => array( '--qiling-footer-wave-height' ),
                         ),
                         'wave_color'         => array(
-                            'label'       => __( '主波浪颜色', 'developer-starter' ),
+                            'label'       => __( '主波浪颜色', 'qiling' ),
                             'placeholder' => '#dff7ff',
                             'vars'        => array( '--qiling-footer-wave-color' ),
                         ),
                         'wave_layer_color'   => array(
-                            'label'       => __( '副波浪颜色', 'developer-starter' ),
+                            'label'       => __( '副波浪颜色', 'qiling' ),
                             'placeholder' => '#e8efff',
                             'vars'        => array( '--qiling-footer-wave-layer-color' ),
                         ),
                         'wave_layer_opacity' => array(
-                            'label'       => __( '副波浪透明度', 'developer-starter' ),
+                            'label'       => __( '副波浪透明度', 'qiling' ),
                             'placeholder' => '0.5',
                             'type'        => 'opacity',
                             'vars'        => array( '--qiling-footer-wave-layer-opacity' ),
@@ -1681,26 +1681,26 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_fields' ) ) {
                     ),
                 ),
                 'buttons' => array(
-                    'label'       => __( '按钮和筛选项', 'developer-starter' ),
-                    'description' => __( '控制当前页面通用按钮、tab/cat/filter 按钮。', 'developer-starter' ),
+                    'label'       => __( '按钮和筛选项', 'qiling' ),
+                    'description' => __( '控制当前页面通用按钮、tab/cat/filter 按钮。', 'qiling' ),
                     'fields'      => array(
                         'background'       => array(
-                            'label'       => __( '按钮背景', 'developer-starter' ),
+                            'label'       => __( '按钮背景', 'qiling' ),
                             'placeholder' => '#4f7dff',
                             'vars'        => array( '--qiling-button-bg', '--qiling-component-button-bg', '--qiling-page-accent' ),
                         ),
                         'text'             => array(
-                            'label'       => __( '按钮文字', 'developer-starter' ),
+                            'label'       => __( '按钮文字', 'qiling' ),
                             'placeholder' => '#ffffff',
                             'vars'        => array( '--qiling-button-text', '--qiling-component-button-text', '--qiling-page-accent-contrast' ),
                         ),
                         'hover_background' => array(
-                            'label'       => __( '按钮悬停背景', 'developer-starter' ),
+                            'label'       => __( '按钮悬停背景', 'qiling' ),
                             'placeholder' => '#38c9a6',
                             'vars'        => array( '--qiling-button-hover-bg', '--qiling-component-button-hover-bg', '--color-primary-dark' ),
                         ),
                         'hover_text'       => array(
-                            'label'       => __( '按钮悬停文字', 'developer-starter' ),
+                            'label'       => __( '按钮悬停文字', 'qiling' ),
                             'placeholder' => '#ffffff',
                             'vars'        => array( '--qiling-button-hover-text', '--qiling-component-button-hover-text' ),
                         ),
@@ -1901,7 +1901,7 @@ if ( ! function_exists( 'developer_starter_get_page_visual_style_presets' ) ) {
 
                 $choices[ $preset_key ] = sprintf(
                     /* translators: %s: custom preset label */
-                    __( '我的：%s', 'developer-starter' ),
+                    __( '我的：%s', 'qiling' ),
                     (string) $preset['label']
                 );
             }
@@ -2354,17 +2354,17 @@ if ( ! function_exists( 'developer_starter_enqueue_current_page_visual_skin_styl
             return;
         }
 
-        $file_path = trailingslashit( DEVELOPER_STARTER_DIR ) . $path;
+        $file_path = trailingslashit( QILING_DIR ) . $path;
         if ( ! file_exists( $file_path ) ) {
             return;
         }
 
-        $deps         = isset( $skin['style_deps'] ) && is_array( $skin['style_deps'] ) ? $skin['style_deps'] : array( 'developer-starter-main' );
+        $deps         = isset( $skin['style_deps'] ) && is_array( $skin['style_deps'] ) ? $skin['style_deps'] : array( 'qiling-main' );
         $file_version = filemtime( $file_path );
         $version      = false !== $file_version ? (string) $file_version : (string) $fallback_version;
         $style_url    = 0 === strpos( $path, 'assets/' )
-            ? trailingslashit( DEVELOPER_STARTER_ASSETS ) . substr( $path, strlen( 'assets/' ) )
-            : trailingslashit( DEVELOPER_STARTER_URI ) . $path;
+            ? trailingslashit( QILING_ASSETS ) . substr( $path, strlen( 'assets/' ) )
+            : trailingslashit( QILING_URI ) . $path;
 
         wp_enqueue_style(
             $handle,

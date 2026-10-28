@@ -53,10 +53,10 @@ if ( ! function_exists( 'developer_starter_entry_footer' ) ) {
         $comments_enabled = function_exists( 'developer_starter_comments_feature_enabled' ) ? developer_starter_comments_feature_enabled() : true;
         if ( $comments_enabled && ! is_single() && ! post_password_required() && comments_open() ) {
             echo '<span class="comments-link">';
-            comments_popup_link( __( '发表评论', 'developer-starter' ), __( '1条评论', 'developer-starter' ), __( '%条评论', 'developer-starter' ) );
+            comments_popup_link( __( '发表评论', 'qiling' ), __( '1条评论', 'qiling' ), __( '%条评论', 'qiling' ) );
             echo '</span>';
         }
-        edit_post_link( __( '编辑', 'developer-starter' ), '<span class="edit-link">', '</span>' );
+        edit_post_link( __( '编辑', 'qiling' ), '<span class="edit-link">', '</span>' );
     }
 }
 
@@ -66,7 +66,15 @@ if ( ! function_exists( 'developer_starter_entry_footer' ) ) {
  */
 if ( ! function_exists( 'developer_starter_get_assets_version' ) ) {
     function developer_starter_get_assets_version() {
-        $custom_version = developer_starter_get_option( 'assets_version', '' );
-        return ! empty( $custom_version ) ? $custom_version : DEVELOPER_STARTER_VERSION;
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            $main_css = defined( 'QILING_DIR' ) ? QILING_DIR . '/assets/css/main.css' : '';
+            if ( $main_css && file_exists( $main_css ) ) {
+                return (string) filemtime( $main_css );
+            }
+        }
+
+        $custom_version = function_exists( 'developer_starter_get_option' ) ? developer_starter_get_option( 'assets_version', '' ) : '';
+        $fallback_version = defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1.0.0';
+        return ! empty( $custom_version ) ? (string) $custom_version : $fallback_version;
     }
 }

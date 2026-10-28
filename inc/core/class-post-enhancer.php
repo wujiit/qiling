@@ -122,7 +122,7 @@ class Post_Enhancer {
      * 注册 TinyMCE 代码插件脚本
      */
     public function register_tinymce_code_plugin( $plugins ) {
-        $plugins['developer_starter_code'] = DEVELOPER_STARTER_ASSETS . '/js/admin/code-highlight-editor.js';
+        $plugins['developer_starter_code'] = QILING_ASSETS . '/js/admin/code-highlight-editor.js';
         return $plugins;
     }
 
@@ -149,11 +149,11 @@ class Post_Enhancer {
         <script>
         window.qilingCodeEditorI18n = <?php echo wp_json_encode(
             array(
-                'insertHighlightedCodeBlock' => __( '插入高亮代码块', 'developer-starter' ),
-                'insertHighlightedCode'      => __( '插入高亮代码', 'developer-starter' ),
-                'languageLabel'              => __( '语言', 'developer-starter' ),
-                'codeLabel'                  => __( '代码内容', 'developer-starter' ),
-                'plainTextLabel'             => __( '纯文本', 'developer-starter' ),
+                'insertHighlightedCodeBlock' => __( '插入高亮代码块', 'qiling' ),
+                'insertHighlightedCode'      => __( '插入高亮代码', 'qiling' ),
+                'languageLabel'              => __( '语言', 'qiling' ),
+                'codeLabel'                  => __( '代码内容', 'qiling' ),
+                'plainTextLabel'             => __( '纯文本', 'qiling' ),
             )
         ); ?>;
         </script>
@@ -171,8 +171,8 @@ class Post_Enhancer {
         // 加载文章增强样式
         wp_enqueue_style(
             'developer-starter-article-enhance',
-            DEVELOPER_STARTER_ASSETS . '/css/article-enhance.css',
-            array( 'developer-starter-main' ),
+            QILING_ASSETS . '/css/article-enhance.css',
+            array( 'qiling-main' ),
             developer_starter_get_assets_version()
         );
 
@@ -184,14 +184,14 @@ class Post_Enhancer {
         if ( self::is_reading_progress_enabled() ) {
             wp_enqueue_style(
                 'developer-starter-reading-progress',
-                DEVELOPER_STARTER_ASSETS . '/css/reading-progress.css',
-                array( 'developer-starter-main' ),
+                QILING_ASSETS . '/css/reading-progress.css',
+                array( 'qiling-main' ),
                 developer_starter_get_assets_version()
             );
 
             wp_enqueue_script(
                 'developer-starter-reading-progress',
-                DEVELOPER_STARTER_ASSETS . '/js/reading-progress.js',
+                QILING_ASSETS . '/js/reading-progress.js',
                 array(),
                 developer_starter_get_assets_version(),
                 true
@@ -200,7 +200,7 @@ class Post_Enhancer {
             wp_localize_script( 'developer-starter-reading-progress', 'qilingReadingProgressConfig', array(
                 'targetSelector' => '.single-post .entry-content',
                 'offset'         => 80,
-                'label'          => __( '阅读进度', 'developer-starter' ),
+                'label'          => __( '阅读进度', 'qiling' ),
             ) );
         }
         
@@ -209,7 +209,7 @@ class Post_Enhancer {
         if ( $toc_enable ) {
             wp_enqueue_script(
                 'developer-starter-article-enhance',
-                DEVELOPER_STARTER_ASSETS . '/js/article-enhance.js',
+                QILING_ASSETS . '/js/article-enhance.js',
                 array(),
                 developer_starter_get_assets_version(),
                 true
@@ -220,12 +220,12 @@ class Post_Enhancer {
                 'tocPosition' => developer_starter_get_option( 'toc_position', 'sidebar' ),
                 'tocCollapsible' => developer_starter_get_option( 'toc_collapsible', '' ),
                 'tocHeadingLevels' => developer_starter_get_option( 'toc_heading_levels', 'h2h3' ),
-                'copyButtonLabel' => __( '复制代码', 'developer-starter' ),
-                'tocExpandLabel' => __( '展开目录', 'developer-starter' ),
-                'tocCollapseLabel' => __( '收起目录', 'developer-starter' ),
-                'tocMobileOpenLabel' => __( '打开目录', 'developer-starter' ),
-                'tocMobileCloseLabel' => __( '关闭目录', 'developer-starter' ),
-                'tocMobileButtonText' => __( '目录', 'developer-starter' ),
+                'copyButtonLabel' => __( '复制代码', 'qiling' ),
+                'tocExpandLabel' => __( '展开目录', 'qiling' ),
+                'tocCollapseLabel' => __( '收起目录', 'qiling' ),
+                'tocMobileOpenLabel' => __( '打开目录', 'qiling' ),
+                'tocMobileCloseLabel' => __( '关闭目录', 'qiling' ),
+                'tocMobileButtonText' => __( '目录', 'qiling' ),
             ) );
         }
 
@@ -235,14 +235,14 @@ class Post_Enhancer {
         if ( $post_speech_enabled || $has_comment_speech_targets ) {
             wp_enqueue_style(
                 'developer-starter-post-speech',
-                DEVELOPER_STARTER_ASSETS . '/css/post-speech.css',
+                QILING_ASSETS . '/css/post-speech.css',
                 array( 'developer-starter-article-enhance' ),
                 developer_starter_get_assets_version()
             );
 
             wp_enqueue_script(
                 'developer-starter-post-speech',
-                DEVELOPER_STARTER_ASSETS . '/js/post-speech.js',
+                QILING_ASSETS . '/js/post-speech.js',
                 array(),
                 developer_starter_get_assets_version(),
                 true
@@ -267,25 +267,25 @@ class Post_Enhancer {
                     'commentText'   => '.comment-text',
                 ),
                 'i18n'              => array(
-                    'unsupported'       => __( '当前浏览器不支持语音朗读', 'developer-starter' ),
-                    'emptyText'         => __( '暂无可朗读内容', 'developer-starter' ),
-                    'ready'             => __( '准备朗读', 'developer-starter' ),
-                    'playing'           => __( '正在朗读', 'developer-starter' ),
-                    'paused'            => __( '已暂停', 'developer-starter' ),
-                    'stopped'           => __( '已停止', 'developer-starter' ),
-                    'finished'          => __( '朗读完成', 'developer-starter' ),
-                    'error'             => __( '朗读失败，请稍后重试', 'developer-starter' ),
-                    'articleLabel'      => __( '文章正文', 'developer-starter' ),
-                    'commentLabel'      => __( '评论', 'developer-starter' ),
-                    'commentIdleLabel'  => __( '朗读', 'developer-starter' ),
-                    'commentActiveLabel' => __( '朗读中', 'developer-starter' ),
-                    'miniTitle'         => __( '语音播放器', 'developer-starter' ),
-                    'rateLabel'         => __( '语速', 'developer-starter' ),
-                    'volumeLabel'       => __( '音量', 'developer-starter' ),
-                    'progressLabel'     => __( '进度', 'developer-starter' ),
-                    'pauseButton'       => __( '暂停', 'developer-starter' ),
-                    'resumeButton'      => __( '继续', 'developer-starter' ),
-                    'stopButton'        => __( '停止', 'developer-starter' ),
+                    'unsupported'       => __( '当前浏览器不支持语音朗读', 'qiling' ),
+                    'emptyText'         => __( '暂无可朗读内容', 'qiling' ),
+                    'ready'             => __( '准备朗读', 'qiling' ),
+                    'playing'           => __( '正在朗读', 'qiling' ),
+                    'paused'            => __( '已暂停', 'qiling' ),
+                    'stopped'           => __( '已停止', 'qiling' ),
+                    'finished'          => __( '朗读完成', 'qiling' ),
+                    'error'             => __( '朗读失败，请稍后重试', 'qiling' ),
+                    'articleLabel'      => __( '文章正文', 'qiling' ),
+                    'commentLabel'      => __( '评论', 'qiling' ),
+                    'commentIdleLabel'  => __( '朗读', 'qiling' ),
+                    'commentActiveLabel' => __( '朗读中', 'qiling' ),
+                    'miniTitle'         => __( '语音播放器', 'qiling' ),
+                    'rateLabel'         => __( '语速', 'qiling' ),
+                    'volumeLabel'       => __( '音量', 'qiling' ),
+                    'progressLabel'     => __( '进度', 'qiling' ),
+                    'pauseButton'       => __( '暂停', 'qiling' ),
+                    'resumeButton'      => __( '继续', 'qiling' ),
+                    'stopButton'        => __( '停止', 'qiling' ),
                 ),
             ) );
         }
@@ -296,7 +296,7 @@ class Post_Enhancer {
 
             wp_enqueue_script(
                 'developer-starter-post-poster',
-                DEVELOPER_STARTER_ASSETS . '/js/post-poster.js',
+                QILING_ASSETS . '/js/post-poster.js',
                 array(),
                 developer_starter_get_assets_version(),
                 true
@@ -311,15 +311,15 @@ class Post_Enhancer {
                     'download' => 'ds_download_post_poster',
                 ),
                 'tips'  => array(
-                    'loading'  => __( '正在生成海报...', 'developer-starter' ),
-                    'cached'   => __( '已加载缓存海报', 'developer-starter' ),
-                    'ready'    => __( '海报已生成，可下载保存', 'developer-starter' ),
-                    'saved'    => __( '海报已缓存，下次可直接复用', 'developer-starter' ),
-                    'fallback' => __( '海报已生成。若无法下载，请长按或截图保存。', 'developer-starter' ),
-                    'error'    => __( '海报生成失败，请稍后重试', 'developer-starter' ),
+                    'loading'  => __( '正在生成海报...', 'qiling' ),
+                    'cached'   => __( '已加载缓存海报', 'qiling' ),
+                    'ready'    => __( '海报已生成，可下载保存', 'qiling' ),
+                    'saved'    => __( '海报已缓存，下次可直接复用', 'qiling' ),
+                    'fallback' => __( '海报已生成。若无法下载，请长按或截图保存。', 'qiling' ),
+                    'error'    => __( '海报生成失败，请稍后重试', 'qiling' ),
                 ),
                 'labels' => array(
-                    'scanToRead' => __( '扫码阅读全文', 'developer-starter' ),
+                    'scanToRead' => __( '扫码阅读全文', 'qiling' ),
                 ),
                 'assets' => array(
                     'jquery' => add_query_arg(
@@ -330,7 +330,7 @@ class Post_Enhancer {
                     'qrcode' => add_query_arg(
                         'ver',
                         rawurlencode( (string) developer_starter_get_assets_version() ),
-                        DEVELOPER_STARTER_ASSETS . '/js/vendor/jquery-qrcode.min.js'
+                        QILING_ASSETS . '/js/vendor/jquery-qrcode.min.js'
                     ),
                 ),
             ) );
@@ -480,7 +480,7 @@ class Post_Enhancer {
                     }
                 })();
             ";
-            wp_add_inline_script( 'developer-starter-main', $zoom_script );
+            wp_add_inline_script( 'qiling-main', $zoom_script );
         }
     }
 
@@ -620,7 +620,7 @@ class Post_Enhancer {
             return;
         }
         ?>
-        <div id="qiling-reading-progress" class="qiling-reading-progress" role="progressbar" aria-label="<?php esc_attr_e( '阅读进度', 'developer-starter' ); ?>" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="qiling-reading-progress" class="qiling-reading-progress" role="progressbar" aria-label="<?php esc_attr_e( '阅读进度', 'qiling' ); ?>" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
             <div class="qiling-reading-progress__track" aria-hidden="true">
                 <div class="qiling-reading-progress__fill"></div>
             </div>
@@ -844,7 +844,7 @@ class Post_Enhancer {
 
         if ( $is_guest ) {
             if ( $config['rate_max'] > 0 && $this->is_post_poster_guest_rate_limited( $config['rate_max'], $config['window'] ) ) {
-                return new \WP_Error( 'poster_rate_limited', __( '请求过于频繁，请稍后再试', 'developer-starter' ) );
+                return new \WP_Error( 'poster_rate_limited', __( '请求过于频繁，请稍后再试', 'qiling' ) );
             }
 
             $daily_key = $this->get_post_poster_daily_quota_key( $this->get_post_poster_limit_ip() );
@@ -860,10 +860,10 @@ class Post_Enhancer {
             $daily_bytes = isset( $daily_usage['bytes'] ) ? intval( $daily_usage['bytes'] ) : 0;
 
             if ( $config['daily_write_max'] > 0 && ( $daily_writes + 1 ) > $config['daily_write_max'] ) {
-                return new \WP_Error( 'poster_daily_write_quota', __( '今日海报生成次数已达上限，请明日再试', 'developer-starter' ) );
+                return new \WP_Error( 'poster_daily_write_quota', __( '今日海报生成次数已达上限，请明日再试', 'qiling' ) );
             }
             if ( $config['daily_bytes_max'] > 0 && ( $daily_bytes + $binary_size ) > $config['daily_bytes_max'] ) {
-                return new \WP_Error( 'poster_daily_bytes_quota', __( '今日海报缓存写入流量已达上限，请稍后再试', 'developer-starter' ) );
+                return new \WP_Error( 'poster_daily_bytes_quota', __( '今日海报缓存写入流量已达上限，请稍后再试', 'qiling' ) );
             }
         }
 
@@ -871,15 +871,15 @@ class Post_Enhancer {
         if ( $need_metrics ) {
             $metrics = $this->collect_post_poster_cache_metrics( $cache_dir, $post_id );
             if ( $config['per_post_file_max'] > 0 && $metrics['post_count'] >= $config['per_post_file_max'] ) {
-                return new \WP_Error( 'poster_post_cache_quota', __( '当前文章海报缓存版本过多，请稍后再试', 'developer-starter' ) );
+                return new \WP_Error( 'poster_post_cache_quota', __( '当前文章海报缓存版本过多，请稍后再试', 'qiling' ) );
             }
 
             if ( $config['dir_file_max'] > 0 && $metrics['count'] >= $config['dir_file_max'] ) {
-                return new \WP_Error( 'poster_dir_file_quota', __( '海报缓存文件数已达上限，请先清理缓存', 'developer-starter' ) );
+                return new \WP_Error( 'poster_dir_file_quota', __( '海报缓存文件数已达上限，请先清理缓存', 'qiling' ) );
             }
 
             if ( $config['dir_bytes_max'] > 0 && ( $metrics['bytes'] + $binary_size ) > $config['dir_bytes_max'] ) {
-                return new \WP_Error( 'poster_dir_size_quota', __( '海报缓存空间已达上限，请先清理缓存', 'developer-starter' ) );
+                return new \WP_Error( 'poster_dir_size_quota', __( '海报缓存空间已达上限，请先清理缓存', 'qiling' ) );
             }
         }
 
@@ -936,7 +936,7 @@ class Post_Enhancer {
 
                 wp_send_json_error(
                     array(
-                        'message' => __( '请求过于频繁，请稍后再试', 'developer-starter' ),
+                        'message' => __( '请求过于频繁，请稍后再试', 'qiling' ),
                         'code'    => 'rate_limited',
                     ),
                     429
@@ -949,7 +949,7 @@ class Post_Enhancer {
 
             status_header( 429 );
             nocache_headers();
-            wp_die( esc_html__( '请求过于频繁，请稍后再试', 'developer-starter' ), esc_html__( 'Too Many Requests', 'developer-starter' ), array( 'response' => 429 ) );
+            wp_die( esc_html__( '请求过于频繁，请稍后再试', 'qiling' ), esc_html__( 'Too Many Requests', 'qiling' ), array( 'response' => 429 ) );
         }
     }
 
@@ -958,20 +958,20 @@ class Post_Enhancer {
      */
     private function validate_post_poster_request( $post_id, $cache_key, $nonce ) {
         if ( $post_id <= 0 ) {
-            return new \WP_Error( 'invalid_post', __( '文章参数错误', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_post', __( '文章参数错误', 'qiling' ) );
         }
 
         if ( ! preg_match( '/^[a-f0-9]{16}$/', (string) $cache_key ) ) {
-            return new \WP_Error( 'invalid_key', __( '缓存键无效', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_key', __( '缓存键无效', 'qiling' ) );
         }
 
         if ( ! wp_verify_nonce( (string) $nonce, 'ds_post_poster_' . $post_id ) ) {
-            return new \WP_Error( 'invalid_nonce', __( '请求校验失败', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_nonce', __( '请求校验失败', 'qiling' ) );
         }
 
         $post = get_post( $post_id );
         if ( ! $post || $post->post_type !== 'post' || $post->post_status !== 'publish' ) {
-            return new \WP_Error( 'invalid_post_status', __( '文章不可用', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_post_status', __( '文章不可用', 'qiling' ) );
         }
 
         return $post;
@@ -1003,7 +1003,7 @@ class Post_Enhancer {
         }
 
         wp_send_json_error( array(
-            'message' => __( '缓存不存在', 'developer-starter' ),
+            'message' => __( '缓存不存在', 'qiling' ),
             'code' => 'cache_miss',
         ) );
     }
@@ -1034,7 +1034,7 @@ class Post_Enhancer {
         if ( ! $this->current_request_can_save_post_poster_cache() ) {
             wp_send_json_error(
                 array(
-                    'message' => __( '游客海报缓存未启用，请直接下载生成的海报。', 'developer-starter' ),
+                    'message' => __( '游客海报缓存未启用，请直接下载生成的海报。', 'qiling' ),
                     'code'    => 'poster_guest_cache_disabled',
                 ),
                 403
@@ -1051,7 +1051,7 @@ class Post_Enhancer {
 
         if ( ! preg_match( '#^data:image/png;base64,#', $image_data ) ) {
             wp_send_json_error( array(
-                'message' => __( '海报数据格式错误', 'developer-starter' ),
+                'message' => __( '海报数据格式错误', 'qiling' ),
                 'code' => 'invalid_image_format',
             ) );
         }
@@ -1060,7 +1060,7 @@ class Post_Enhancer {
         $binary = base64_decode( $raw, true );
         if ( false === $binary || '' === $binary ) {
             wp_send_json_error( array(
-                'message' => __( '海报数据解码失败', 'developer-starter' ),
+                'message' => __( '海报数据解码失败', 'qiling' ),
                 'code' => 'decode_failed',
             ) );
         }
@@ -1068,7 +1068,7 @@ class Post_Enhancer {
         $binary_size = strlen( $binary );
         if ( $binary_size > 8 * 1024 * 1024 ) {
             wp_send_json_error( array(
-                'message' => __( '海报文件过大', 'developer-starter' ),
+                'message' => __( '海报文件过大', 'qiling' ),
                 'code' => 'image_too_large',
             ) );
         }
@@ -1087,7 +1087,7 @@ class Post_Enhancer {
         if ( ! function_exists( 'imagecreatefromstring' ) || ! function_exists( 'imagepng' ) ) {
             wp_send_json_error(
                 array(
-                    'message' => __( '服务器图片处理组件不可用，无法生成海报缓存', 'developer-starter' ),
+                    'message' => __( '服务器图片处理组件不可用，无法生成海报缓存', 'qiling' ),
                     'code'    => 'image_library_unavailable',
                 ),
                 500
@@ -1096,7 +1096,7 @@ class Post_Enhancer {
 
         if ( ! wp_mkdir_p( $paths['dir'] ) ) {
             wp_send_json_error( array(
-                'message' => __( '缓存目录创建失败', 'developer-starter' ),
+                'message' => __( '缓存目录创建失败', 'qiling' ),
                 'code' => 'mkdir_failed',
             ) );
         }
@@ -1123,13 +1123,15 @@ class Post_Enhancer {
                         );
                     }
                 }
-                imagedestroy( $img );
+                if ( function_exists( 'imagedestroy' ) && ( ! defined( 'PHP_VERSION_ID' ) || PHP_VERSION_ID < 80500 ) ) {
+                    imagedestroy( $img );
+                }
             }
         }
 
         if ( ! $saved || ! file_exists( $paths['path'] ) ) {
             wp_send_json_error( array(
-                'message' => __( '海报缓存写入失败', 'developer-starter' ),
+                'message' => __( '海报缓存写入失败', 'qiling' ),
                 'code' => 'save_failed',
             ) );
         }
@@ -1176,7 +1178,7 @@ class Post_Enhancer {
 
         if ( '' === $binary ) {
             status_header( 404 );
-            wp_die( esc_html__( '海报不存在，请先点击“生成海报”', 'developer-starter' ) );
+            wp_die( esc_html__( '海报不存在，请先点击“生成海报”', 'qiling' ) );
         }
 
         $title_slug = sanitize_title( get_the_title( $post_id ) );
@@ -1219,13 +1221,13 @@ class Post_Enhancer {
         $prism_css = function_exists( 'developer_starter_get_third_party_asset' )
             ? developer_starter_get_third_party_asset( 'prism_css' )
             : array(
-                'url'     => DEVELOPER_STARTER_ASSETS . '/css/vendor/prism.css',
+                'url'     => QILING_ASSETS . '/css/vendor/prism.css',
                 'version' => '1.29.0',
             );
         $prism_js = function_exists( 'developer_starter_get_third_party_asset' )
             ? developer_starter_get_third_party_asset( 'prism_js' )
             : array(
-                'url'     => DEVELOPER_STARTER_ASSETS . '/js/vendor/prism.js',
+                'url'     => QILING_ASSETS . '/js/vendor/prism.js',
                 'version' => '1.29.0',
             );
         
@@ -1813,13 +1815,13 @@ class Post_Enhancer {
         }
         
         // 生成目录 HTML
-        $toc_html = '<nav class="article-toc article-toc--enhanced" id="article-toc" aria-label="' . esc_attr__( '文章目录', 'developer-starter' ) . '">';
+        $toc_html = '<nav class="article-toc article-toc--enhanced" id="article-toc" aria-label="' . esc_attr__( '文章目录', 'qiling' ) . '">';
         $toc_html .= '<div class="toc-header">';
-        $toc_html .= '<span class="toc-title">' . esc_html__( '目录', 'developer-starter' ) . '</span>';
+        $toc_html .= '<span class="toc-title">' . esc_html__( '目录', 'qiling' ) . '</span>';
         
         $collapsible = developer_starter_get_option( 'toc_collapsible', '' );
         if ( $collapsible ) {
-            $toc_html .= '<button type="button" class="toc-toggle" aria-label="' . esc_attr__( '收起目录', 'developer-starter' ) . '" aria-expanded="true" aria-controls="article-toc-list">';
+            $toc_html .= '<button type="button" class="toc-toggle" aria-label="' . esc_attr__( '收起目录', 'qiling' ) . '" aria-expanded="true" aria-controls="article-toc-list">';
             $toc_html .= '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg>';
             $toc_html .= '</button>';
         }
@@ -2067,20 +2069,20 @@ class Post_Enhancer {
     public function add_user_social_fields( $methods ) {
         // 根据后台设置动态添加字段
         $fields = array(
-            'user_social_weibo' => array( 'key' => 'user_weibo', 'label' => __( '微博链接', 'developer-starter' ) ),
-            'user_social_twitter' => array( 'key' => 'user_twitter', 'label' => __( 'X (Twitter) 链接', 'developer-starter' ) ),
-            'user_social_wechat' => array( 'key' => 'user_wechat', 'label' => __( '微信二维码图片URL', 'developer-starter' ) ),
-            'user_social_github' => array( 'key' => 'user_github', 'label' => __( 'GitHub 链接', 'developer-starter' ) ),
-            'user_social_bilibili' => array( 'key' => 'user_bilibili', 'label' => __( 'B站链接', 'developer-starter' ) ),
-            'user_social_zhihu' => array( 'key' => 'user_zhihu', 'label' => __( '知乎链接', 'developer-starter' ) ),
-            'user_social_website' => array( 'key' => 'user_website', 'label' => __( '个人网站', 'developer-starter' ) ),
-            'user_social_linkedin' => array( 'key' => 'user_linkedin', 'label' => __( 'LinkedIn 链接', 'developer-starter' ) ),
-            'user_social_youtube' => array( 'key' => 'user_youtube', 'label' => __( 'YouTube 链接', 'developer-starter' ) ),
-            'user_social_instagram' => array( 'key' => 'user_instagram', 'label' => __( 'Instagram 链接', 'developer-starter' ) ),
-            'user_social_tiktok' => array( 'key' => 'user_tiktok', 'label' => __( 'TikTok 链接', 'developer-starter' ) ),
-            'user_social_wechat_mp' => array( 'key' => 'user_wechat_mp', 'label' => __( '公众号二维码图片URL', 'developer-starter' ) ),
-            'user_social_qq' => array( 'key' => 'user_qq', 'label' => __( 'QQ 号码或链接', 'developer-starter' ) ),
-            'user_social_custom' => array( 'key' => 'user_custom', 'label' => __( '自定义链接', 'developer-starter' ) ),
+            'user_social_weibo' => array( 'key' => 'user_weibo', 'label' => __( '微博链接', 'qiling' ) ),
+            'user_social_twitter' => array( 'key' => 'user_twitter', 'label' => __( 'X (Twitter) 链接', 'qiling' ) ),
+            'user_social_wechat' => array( 'key' => 'user_wechat', 'label' => __( '微信二维码图片URL', 'qiling' ) ),
+            'user_social_github' => array( 'key' => 'user_github', 'label' => __( 'GitHub 链接', 'qiling' ) ),
+            'user_social_bilibili' => array( 'key' => 'user_bilibili', 'label' => __( 'B站链接', 'qiling' ) ),
+            'user_social_zhihu' => array( 'key' => 'user_zhihu', 'label' => __( '知乎链接', 'qiling' ) ),
+            'user_social_website' => array( 'key' => 'user_website', 'label' => __( '个人网站', 'qiling' ) ),
+            'user_social_linkedin' => array( 'key' => 'user_linkedin', 'label' => __( 'LinkedIn 链接', 'qiling' ) ),
+            'user_social_youtube' => array( 'key' => 'user_youtube', 'label' => __( 'YouTube 链接', 'qiling' ) ),
+            'user_social_instagram' => array( 'key' => 'user_instagram', 'label' => __( 'Instagram 链接', 'qiling' ) ),
+            'user_social_tiktok' => array( 'key' => 'user_tiktok', 'label' => __( 'TikTok 链接', 'qiling' ) ),
+            'user_social_wechat_mp' => array( 'key' => 'user_wechat_mp', 'label' => __( '公众号二维码图片URL', 'qiling' ) ),
+            'user_social_qq' => array( 'key' => 'user_qq', 'label' => __( 'QQ 号码或链接', 'qiling' ) ),
+            'user_social_custom' => array( 'key' => 'user_custom', 'label' => __( '自定义链接', 'qiling' ) ),
         );
         
         foreach ( $fields as $option_key => $field_data ) {

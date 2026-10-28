@@ -71,6 +71,9 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .features-tab-btn::before {
@@ -102,6 +105,11 @@
 
 .features-tab-btn:hover .tab-icon {
   transform: scale(1.1);
+}
+
+.features-tab-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .features-tab-btn.active {
@@ -16595,6 +16603,9 @@ html.dark-mode .tc-placeholder {
   background: var(--qiling-color-transparent);
   color: var(--qiling-component-tabs-text);
   border-radius: var(--qiling-button-radius);
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .module-tabs .tab-btn:hover {

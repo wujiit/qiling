@@ -213,7 +213,7 @@ class GitHub_Repository_Activity_Service {
     public function parse_repository( $repository ) {
         $repository = trim( wp_strip_all_tags( (string) $repository ) );
         if ( '' === $repository ) {
-            return new \WP_Error( 'empty_repository', __( '请先填写 GitHub 仓库地址。', 'developer-starter' ) );
+            return new \WP_Error( 'empty_repository', __( '请先填写 GitHub 仓库地址。', 'qiling' ) );
         }
 
         $path = $repository;
@@ -222,7 +222,7 @@ class GitHub_Repository_Activity_Service {
             $path = (string) parse_url( $repository, PHP_URL_PATH );
             $host = strtolower( preg_replace( '/^www\./', '', $host ) );
             if ( 'github.com' !== $host ) {
-                return new \WP_Error( 'invalid_repository_host', __( '仅支持 github.com 仓库地址。', 'developer-starter' ) );
+                return new \WP_Error( 'invalid_repository_host', __( '仅支持 github.com 仓库地址。', 'qiling' ) );
             }
         }
 
@@ -230,14 +230,14 @@ class GitHub_Repository_Activity_Service {
         $path = preg_replace( '/\.git$/i', '', $path );
         $parts = explode( '/', (string) $path );
         if ( count( $parts ) < 2 ) {
-            return new \WP_Error( 'invalid_repository', __( '仓库地址格式应为 https://github.com/owner/repo。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_repository', __( '仓库地址格式应为 https://github.com/owner/repo。', 'qiling' ) );
         }
 
         $owner = sanitize_key( $parts[0] );
         $repo  = $this->sanitize_repo_segment( $parts[1] );
 
         if ( '' === $owner || '' === $repo ) {
-            return new \WP_Error( 'invalid_repository_name', __( '仓库 owner 或 repo 名称无效。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_repository_name', __( '仓库 owner 或 repo 名称无效。', 'qiling' ) );
         }
 
         return array(
@@ -296,7 +296,7 @@ class GitHub_Repository_Activity_Service {
                 'redirection' => 2,
                 'headers'     => array(
                     'Accept'               => 'application/vnd.github+json',
-                    'User-Agent'           => 'Qiling-Theme-GitHub-Activity/' . ( defined( 'DEVELOPER_STARTER_VERSION' ) ? DEVELOPER_STARTER_VERSION : '1.0' ),
+                    'User-Agent'           => 'Qiling-Theme-GitHub-Activity/' . ( defined( 'QILING_VERSION' ) ? QILING_VERSION : '1.0' ),
                     'X-GitHub-Api-Version' => '2022-11-28',
                 ),
             )
@@ -316,7 +316,7 @@ class GitHub_Repository_Activity_Service {
                 'github_api_error',
                 sprintf(
                     /* translators: %d: HTTP status code. */
-                    __( 'GitHub API 请求失败，状态码：%d。', 'developer-starter' ),
+                    __( 'GitHub API 请求失败，状态码：%d。', 'qiling' ),
                     $status
                 )
             );
@@ -324,7 +324,7 @@ class GitHub_Repository_Activity_Service {
 
         $body = json_decode( (string) wp_remote_retrieve_body( $response ), true );
         if ( JSON_ERROR_NONE !== json_last_error() ) {
-            return new \WP_Error( 'github_json_error', __( 'GitHub API 返回数据解析失败。', 'developer-starter' ) );
+            return new \WP_Error( 'github_json_error', __( 'GitHub API 返回数据解析失败。', 'qiling' ) );
         }
 
         return $body;

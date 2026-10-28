@@ -187,13 +187,13 @@ $sticky_inline_badges = function_exists( 'developer_starter_get_post_cover_badge
 
                 <?php if ( $show_reading_time && $reading_time > 0 ) : ?>
                     <span class="qiling-blog-meta-chip qiling-blog-reading-chip">
-                        <?php printf( esc_html__( '%d 分钟阅读', 'developer-starter' ), $reading_time ); ?>
+                        <?php printf( esc_html__( '%d 分钟阅读', 'qiling' ), $reading_time ); ?>
                     </span>
                 <?php endif; ?>
 
                 <?php if ( $show_views ) : ?>
                     <span class="qiling-blog-meta-chip qiling-blog-views-chip">
-                        <?php printf( esc_html__( '%s 次浏览', 'developer-starter' ), esc_html( number_format_i18n( $views_count ) ) ); ?>
+                        <?php printf( esc_html__( '%s 次浏览', 'qiling' ), esc_html( number_format_i18n( $views_count ) ) ); ?>
                     </span>
                 <?php endif; ?>
             </div>

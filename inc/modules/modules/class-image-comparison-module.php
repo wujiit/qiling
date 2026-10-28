@@ -18,7 +18,7 @@ class Image_Comparison_Module extends Module_Base {
     public function __construct() {
         $this->category = 'media';
         $this->icon = 'dashicons-format-gallery';
-        $this->description = __( '两张图片左右拖动对比', 'developer-starter' );
+        $this->description = __( '两张图片左右拖动对比', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Image_Comparison_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '图片对比滑块', 'developer-starter' );
+        return __( '图片对比滑块', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,80 +34,80 @@ class Image_Comparison_Module extends Module_Base {
             array(
                 'id'      => 'heading_basic',
                 'type'    => 'heading',
-                'label'   => __( '基础设置', 'developer-starter' ),
+                'label'   => __( '基础设置', 'qiling' ),
             ),
             array(
                 'id'      => 'title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'heading_images',
                 'type'    => 'heading',
-                'label'   => __( '图片设置', 'developer-starter' ),
+                'label'   => __( '图片设置', 'qiling' ),
             ),
             array(
                 'id'      => 'image_before',
                 'type'    => 'image',
-                'label'   => __( 'Before 图片 (左)', 'developer-starter' ),
+                'label'   => __( 'Before 图片 (左)', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '建议两张图片尺寸完全一致', 'developer-starter' ),
+                'desc'    => __( '建议两张图片尺寸完全一致', 'qiling' ),
             ),
             array(
                 'id'      => 'label_before',
                 'type'    => 'text',
-                'label'   => __( 'Before 标签', 'developer-starter' ),
+                'label'   => __( 'Before 标签', 'qiling' ),
                 'default' => 'Before',
             ),
             array(
                 'id'      => 'image_after',
                 'type'    => 'image',
-                'label'   => __( 'After 图片 (右)', 'developer-starter' ),
+                'label'   => __( 'After 图片 (右)', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '建议两张图片尺寸完全一致', 'developer-starter' ),
+                'desc'    => __( '建议两张图片尺寸完全一致', 'qiling' ),
             ),
             array(
                 'id'      => 'label_after',
                 'type'    => 'text',
-                'label'   => __( 'After 标签', 'developer-starter' ),
+                'label'   => __( 'After 标签', 'qiling' ),
                 'default' => 'After',
             ),
             array(
                 'id'          => 'comparison_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '控制 Before/After 标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制 Before/After 标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'heading_style',
                 'type'    => 'heading',
-                'label'   => __( '样式设置', 'developer-starter' ),
+                'label'   => __( '样式设置', 'qiling' ),
             ),
             array(
                 'id'      => 'slider_color',
                 'type'    => 'color',
-                'label'   => __( '滑块颜色', 'developer-starter' ),
+                'label'   => __( '滑块颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'height',
                 'type'    => 'number',
-                'label'   => __( '高度 (px)', 'developer-starter' ),
+                'label'   => __( '高度 (px)', 'qiling' ),
                 'default' => '500',
-                'desc'    => __( 'PC端显示高度，移动端会自动适应', 'developer-starter' ),
+                'desc'    => __( 'PC端显示高度，移动端会自动适应', 'qiling' ),
             ),
             array(
                 'id'      => 'initial_offset',
                 'type'    => 'range',
-                'label'   => __( '初始位置 (%)', 'developer-starter' ),
+                'label'   => __( '初始位置 (%)', 'qiling' ),
                 'default' => '50',
                 'min'     => '0',
                 'max'     => '100',
@@ -118,7 +118,7 @@ class Image_Comparison_Module extends Module_Base {
     public function render( $data = array() ) {
         if ( empty( $data['image_before'] ) || empty( $data['image_after'] ) ) {
             if ( current_user_can( 'edit_posts' ) ) {
-                echo '<div class="alert alert-warning">' . __( '请在后台设置 Before 和 After 图片', 'developer-starter' ) . '</div>';
+                echo '<div class="alert alert-warning">' . __( '请在后台设置 Before 和 After 图片', 'qiling' ) . '</div>';
             }
             return;
         }

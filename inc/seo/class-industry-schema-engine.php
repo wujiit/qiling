@@ -49,27 +49,27 @@ class Industry_Schema_Engine {
      */
     public static function get_industry_choices() {
         return array(
-            'auto'          => __( '自动识别', 'developer-starter' ),
-            'corporate'     => __( '企业官网 / 通用品牌', 'developer-starter' ),
-            'local_service' => __( '本地服务 / 门店', 'developer-starter' ),
-            'ecommerce'     => __( '电商零售 / 产品目录', 'developer-starter' ),
-            'publisher'     => __( '博客 / 杂志 / 媒体', 'developer-starter' ),
-            'education'     => __( '教育培训 / 课程', 'developer-starter' ),
-            'medical'       => __( '医疗健康 / 诊所', 'developer-starter' ),
-            'real_estate'   => __( '房产 / 空间 / 场地', 'developer-starter' ),
-            'restaurant'    => __( '餐饮 / 菜单', 'developer-starter' ),
-            'software'      => __( '软件 / SaaS / 应用', 'developer-starter' ),
-            'manufacturing' => __( '制造业 / B2B', 'developer-starter' ),
-            'logistics'     => __( '物流 / 供应链', 'developer-starter' ),
-            'agriculture_food' => __( '农业 / 食品', 'developer-starter' ),
-            'energy_environment' => __( '能源 / 环保', 'developer-starter' ),
-            'industrial_park' => __( '产业园区 / 招商', 'developer-starter' ),
-            'human_resources' => __( '人力资源 / 招聘', 'developer-starter' ),
-            'hospitality'   => __( '酒店民宿 / 旅游', 'developer-starter' ),
-            'property_management' => __( '物业 / 社区服务', 'developer-starter' ),
-            'nonprofit'     => __( '公益组织 / 社会服务', 'developer-starter' ),
-            'government'    => __( '政务机构 / 公共服务', 'developer-starter' ),
-            'event'         => __( '活动 / 展会 / 票务', 'developer-starter' ),
+            'auto'          => __( '自动识别', 'qiling' ),
+            'corporate'     => __( '企业官网 / 通用品牌', 'qiling' ),
+            'local_service' => __( '本地服务 / 门店', 'qiling' ),
+            'ecommerce'     => __( '电商零售 / 产品目录', 'qiling' ),
+            'publisher'     => __( '博客 / 杂志 / 媒体', 'qiling' ),
+            'education'     => __( '教育培训 / 课程', 'qiling' ),
+            'medical'       => __( '医疗健康 / 诊所', 'qiling' ),
+            'real_estate'   => __( '房产 / 空间 / 场地', 'qiling' ),
+            'restaurant'    => __( '餐饮 / 菜单', 'qiling' ),
+            'software'      => __( '软件 / SaaS / 应用', 'qiling' ),
+            'manufacturing' => __( '制造业 / B2B', 'qiling' ),
+            'logistics'     => __( '物流 / 供应链', 'qiling' ),
+            'agriculture_food' => __( '农业 / 食品', 'qiling' ),
+            'energy_environment' => __( '能源 / 环保', 'qiling' ),
+            'industrial_park' => __( '产业园区 / 招商', 'qiling' ),
+            'human_resources' => __( '人力资源 / 招聘', 'qiling' ),
+            'hospitality'   => __( '酒店民宿 / 旅游', 'qiling' ),
+            'property_management' => __( '物业 / 社区服务', 'qiling' ),
+            'nonprofit'     => __( '公益组织 / 社会服务', 'qiling' ),
+            'government'    => __( '政务机构 / 公共服务', 'qiling' ),
+            'event'         => __( '活动 / 展会 / 票务', 'qiling' ),
         );
     }
 
@@ -80,7 +80,7 @@ class Industry_Schema_Engine {
      */
     public static function get_page_schema_type_choices() {
         return array(
-            ''           => __( '不覆盖，使用自动识别', 'developer-starter' ),
+            ''           => __( '不覆盖，使用自动识别', 'qiling' ),
             'FAQPage'    => 'FAQ',
             'Product'    => 'Product',
             'Article'    => 'Article',
@@ -316,11 +316,11 @@ class Industry_Schema_Engine {
                 if ( ! is_array( $row ) ) {
                     continue;
                 }
-                $name = isset( $row['name'] ) ? sanitize_text_field( (string) $row['name'] ) : sprintf( __( '步骤 %d', 'developer-starter' ), absint( $index ) + 1 );
+                $name = isset( $row['name'] ) ? sanitize_text_field( (string) $row['name'] ) : sprintf( __( '步骤 %d', 'qiling' ), absint( $index ) + 1 );
                 $step_text = isset( $row['text'] ) ? sanitize_textarea_field( (string) $row['text'] ) : '';
                 if ( '' !== $step_text ) {
                     $items[] = array(
-                        'name' => '' !== $name ? $name : sprintf( __( '步骤 %d', 'developer-starter' ), count( $items ) + 1 ),
+                        'name' => '' !== $name ? $name : sprintf( __( '步骤 %d', 'qiling' ), count( $items ) + 1 ),
                         'text' => $step_text,
                     );
                 }
@@ -335,7 +335,7 @@ class Industry_Schema_Engine {
                     continue;
                 }
                 $items[] = array(
-                    'name' => sprintf( __( '步骤 %d', 'developer-starter' ), count( $items ) + 1 ),
+                    'name' => sprintf( __( '步骤 %d', 'qiling' ), count( $items ) + 1 ),
                     'text' => sanitize_textarea_field( $line ),
                 );
             }
@@ -825,14 +825,14 @@ class Industry_Schema_Engine {
         $module_schema = isset( $context['module_schema'] ) && is_array( $context['module_schema'] ) ? $context['module_schema'] : array();
         $url = ! empty( $context['canonical_url'] ) ? (string) $context['canonical_url'] : (string) $context['current_url'];
         $lists = array(
-            'services' => array( 'name' => __( '服务项目', 'developer-starter' ), 'type' => 'Service' ),
-            'products' => array( 'name' => __( '产品项目', 'developer-starter' ), 'type' => 'Product' ),
-            'courses'  => array( 'name' => __( '课程项目', 'developer-starter' ), 'type' => 'Course' ),
-            'events'   => array( 'name' => __( '活动项目', 'developer-starter' ), 'type' => 'Event' ),
-            'branches' => array( 'name' => __( '门店与服务网点', 'developer-starter' ), 'type' => 'LocalBusiness' ),
-            'people'   => array( 'name' => __( '团队成员', 'developer-starter' ), 'type' => 'Person' ),
-            'reviews'  => array( 'name' => __( '客户评价', 'developer-starter' ), 'type' => 'Review' ),
-            'works'    => array( 'name' => __( '案例与资源', 'developer-starter' ), 'type' => 'CreativeWork' ),
+            'services' => array( 'name' => __( '服务项目', 'qiling' ), 'type' => 'Service' ),
+            'products' => array( 'name' => __( '产品项目', 'qiling' ), 'type' => 'Product' ),
+            'courses'  => array( 'name' => __( '课程项目', 'qiling' ), 'type' => 'Course' ),
+            'events'   => array( 'name' => __( '活动项目', 'qiling' ), 'type' => 'Event' ),
+            'branches' => array( 'name' => __( '门店与服务网点', 'qiling' ), 'type' => 'LocalBusiness' ),
+            'people'   => array( 'name' => __( '团队成员', 'qiling' ), 'type' => 'Person' ),
+            'reviews'  => array( 'name' => __( '客户评价', 'qiling' ), 'type' => 'Review' ),
+            'works'    => array( 'name' => __( '案例与资源', 'qiling' ), 'type' => 'CreativeWork' ),
         );
         $nodes = array();
 
@@ -1038,7 +1038,7 @@ class Industry_Schema_Engine {
             $node['reviewBody'] = $description;
             $node['author'] = array(
                 '@type' => 'Person',
-                'name'  => $this->first_override_value( $data, array( 'author_name' ), __( '客户', 'developer-starter' ) ),
+                'name'  => $this->first_override_value( $data, array( 'author_name' ), __( '客户', 'qiling' ) ),
             );
             $node['itemReviewed'] = ! empty( $data['item_name'] )
                 ? array( '@type' => 'Thing', 'name' => (string) $data['item_name'] )
@@ -1204,7 +1204,7 @@ class Industry_Schema_Engine {
             $out[] = array(
                 '@type'    => 'HowToStep',
                 'position' => $index + 1,
-                'name'     => isset( $item['name'] ) && '' !== trim( (string) $item['name'] ) ? trim( wp_strip_all_tags( (string) $item['name'] ) ) : sprintf( __( '步骤 %d', 'developer-starter' ), $index + 1 ),
+                'name'     => isset( $item['name'] ) && '' !== trim( (string) $item['name'] ) ? trim( wp_strip_all_tags( (string) $item['name'] ) ) : sprintf( __( '步骤 %d', 'qiling' ), $index + 1 ),
                 'text'     => $text,
             );
         }
@@ -1473,7 +1473,7 @@ class Industry_Schema_Engine {
                 'reviewBody'  => $body,
                 'author'      => array(
                     '@type' => 'Person',
-                    'name'  => '' !== $author ? $author : __( '客户', 'developer-starter' ),
+                    'name'  => '' !== $author ? $author : __( '客户', 'qiling' ),
                 ),
                 'itemReviewed' => array(
                     '@id' => trailingslashit( $this->get_home_url() ) . '#organization',
@@ -1598,7 +1598,7 @@ class Industry_Schema_Engine {
         } else {
             $node['additionalProperty'][] = array(
                 '@type' => 'PropertyValue',
-                'name'  => __( '价格/报价', 'developer-starter' ),
+                'name'  => __( '价格/报价', 'qiling' ),
                 'value' => $price,
             );
         }
@@ -1863,7 +1863,7 @@ class Industry_Schema_Engine {
             array(
                 '@type'    => 'ListItem',
                 'position' => 1,
-                'name'     => __( '首页', 'developer-starter' ),
+                'name'     => __( '首页', 'qiling' ),
                 'item'     => $home_url,
             ),
         );
@@ -2224,7 +2224,7 @@ class Industry_Schema_Engine {
         }
 
         if ( is_search() ) {
-            return sprintf( __( '搜索：%s', 'developer-starter' ), get_search_query() );
+            return sprintf( __( '搜索：%s', 'qiling' ), get_search_query() );
         }
 
         if ( is_post_type_archive() ) {
@@ -2471,7 +2471,7 @@ class Industry_Schema_Engine {
                 'type'    => $breadcrumb_present ? 'BreadcrumbList' : '',
             ),
             'primary'      => array(
-                'label'   => __( '当前页面主类型', 'developer-starter' ),
+                'label'   => __( '当前页面主类型', 'qiling' ),
                 'present' => '' !== $primary_type,
                 'type'    => $primary_type,
             ),
@@ -2512,8 +2512,8 @@ class Industry_Schema_Engine {
         if ( empty( $options['company_name'] ) || '' === trim( (string) $options['company_name'] ) ) {
             $warnings[] = array(
                 'field'   => 'company_name',
-                'label'   => __( '组织名称', 'developer-starter' ),
-                'message' => __( '未填写企业名称，Schema 会回退站点名称；正式上线前建议补齐。', 'developer-starter' ),
+                'label'   => __( '组织名称', 'qiling' ),
+                'message' => __( '未填写企业名称，Schema 会回退站点名称；正式上线前建议补齐。', 'qiling' ),
             );
         }
 
@@ -2521,7 +2521,7 @@ class Industry_Schema_Engine {
             $warnings[] = array(
                 'field'   => 'site_logo',
                 'label'   => 'Logo',
-                'message' => __( '未检测到网站 Logo 或 WordPress 自定义 Logo，Organization 缺少 logo/image。', 'developer-starter' ),
+                'message' => __( '未检测到网站 Logo 或 WordPress 自定义 Logo，Organization 缺少 logo/image。', 'qiling' ),
             );
         }
 
@@ -2530,8 +2530,8 @@ class Industry_Schema_Engine {
         if ( 3 !== strlen( $currency ) ) {
             $warnings[] = array(
                 'field'   => self::OPTION_DEFAULT_CURRENCY,
-                'label'   => __( '默认币种', 'developer-starter' ),
-                'message' => __( '默认币种需要填写三位 ISO 货币代码，例如 CNY、USD、EUR。', 'developer-starter' ),
+                'label'   => __( '默认币种', 'qiling' ),
+                'message' => __( '默认币种需要填写三位 ISO 货币代码，例如 CNY、USD、EUR。', 'qiling' ),
             );
         }
 
@@ -2540,17 +2540,17 @@ class Industry_Schema_Engine {
         $local_business_types = array( 'LocalBusiness', 'Store', 'Restaurant', 'MedicalOrganization', 'RealEstateAgent', 'LodgingBusiness' );
         if ( in_array( $organization_type, $local_business_types, true ) ) {
             $local_required_fields = array(
-                'company_phone'         => __( '电话', 'developer-starter' ),
-                'company_email'         => __( '邮箱', 'developer-starter' ),
-                'company_address'       => __( '地址', 'developer-starter' ),
-                'company_working_hours' => __( '营业时间', 'developer-starter' ),
+                'company_phone'         => __( '电话', 'qiling' ),
+                'company_email'         => __( '邮箱', 'qiling' ),
+                'company_address'       => __( '地址', 'qiling' ),
+                'company_working_hours' => __( '营业时间', 'qiling' ),
             );
             foreach ( $local_required_fields as $field => $label ) {
                 if ( empty( $options[ $field ] ) || '' === trim( (string) $options[ $field ] ) ) {
                     $warnings[] = array(
                         'field'   => $field,
                         'label'   => $label,
-                        'message' => sprintf( __( '%s 类型建议补齐 %s，避免 LocalBusiness 信息不完整。', 'developer-starter' ), $organization_type, $label ),
+                        'message' => sprintf( __( '%s 类型建议补齐 %s，避免 LocalBusiness 信息不完整。', 'qiling' ), $organization_type, $label ),
                     );
                 }
             }
@@ -2581,7 +2581,7 @@ class Industry_Schema_Engine {
             $issues[] = array(
                 'severity' => isset( $warning['severity'] ) ? (string) $warning['severity'] : 'warning',
                 'type'     => 'missing_required',
-                'label'    => isset( $warning['label'] ) ? (string) $warning['label'] : __( '必填字段', 'developer-starter' ),
+                'label'    => isset( $warning['label'] ) ? (string) $warning['label'] : __( '必填字段', 'qiling' ),
                 'message'  => isset( $warning['message'] ) ? (string) $warning['message'] : '',
             );
         }
@@ -2593,7 +2593,7 @@ class Industry_Schema_Engine {
             $issues[] = array(
                 'severity' => 'error',
                 'type'     => 'conflict',
-                'label'    => isset( $conflict['label'] ) ? (string) $conflict['label'] : __( 'Schema 冲突', 'developer-starter' ),
+                'label'    => isset( $conflict['label'] ) ? (string) $conflict['label'] : __( 'Schema 冲突', 'qiling' ),
                 'message'  => isset( $conflict['message'] ) ? (string) $conflict['message'] : '',
             );
         }
@@ -2628,42 +2628,42 @@ class Industry_Schema_Engine {
         $name = $this->first_override_value( $data, array( 'name', 'headline', 'title' ), isset( $context['title'] ) ? (string) $context['title'] : '' );
 
         if ( '' === $name && 'FAQPage' !== $type ) {
-            $warnings[] = $this->build_schema_required_warning( 'schema_override_name', __( '页面主名称', 'developer-starter' ), sprintf( __( '%s 覆盖需要可读的 name/headline/title。', 'developer-starter' ), $type ) );
+            $warnings[] = $this->build_schema_required_warning( 'schema_override_name', __( '页面主名称', 'qiling' ), sprintf( __( '%s 覆盖需要可读的 name/headline/title。', 'qiling' ), $type ) );
         }
 
         if ( 'FAQPage' === $type && empty( $data['faq_items'] ) ) {
-            $warnings[] = $this->build_schema_required_warning( 'schema_override_faq_items', 'FAQ', __( 'FAQPage 至少需要一组“问题 | 答案”。', 'developer-starter' ) );
+            $warnings[] = $this->build_schema_required_warning( 'schema_override_faq_items', 'FAQ', __( 'FAQPage 至少需要一组“问题 | 答案”。', 'qiling' ) );
         } elseif ( 'Product' === $type && empty( $data['price'] ) ) {
-            $warnings[] = $this->build_schema_required_warning( 'schema_override_price', __( '产品价格', 'developer-starter' ), __( 'Product 建议填写价格，才能生成 Offer.price / priceCurrency。', 'developer-starter' ) );
+            $warnings[] = $this->build_schema_required_warning( 'schema_override_price', __( '产品价格', 'qiling' ), __( 'Product 建议填写价格，才能生成 Offer.price / priceCurrency。', 'qiling' ) );
         } elseif ( 'Article' === $type && '' === $this->first_override_value( $data, array( 'headline', 'name', 'title' ), '' ) ) {
-            $warnings[] = $this->build_schema_required_warning( 'schema_override_headline', __( '文章标题', 'developer-starter' ), __( 'Article 至少需要 headline。', 'developer-starter' ) );
+            $warnings[] = $this->build_schema_required_warning( 'schema_override_headline', __( '文章标题', 'qiling' ), __( 'Article 至少需要 headline。', 'qiling' ) );
         } elseif ( 'Course' === $type && empty( $data['course_provider'] ) ) {
-            $warnings[] = $this->build_schema_required_warning( 'schema_override_course_provider', __( '课程提供方', 'developer-starter' ), __( 'Course 建议填写课程提供方；留空时会回退站点组织。', 'developer-starter' ) );
+            $warnings[] = $this->build_schema_required_warning( 'schema_override_course_provider', __( '课程提供方', 'qiling' ), __( 'Course 建议填写课程提供方；留空时会回退站点组织。', 'qiling' ) );
         } elseif ( 'Event' === $type ) {
             if ( empty( $data['start_date'] ) ) {
-                $warnings[] = $this->build_schema_required_warning( 'schema_override_start_date', __( '活动开始时间', 'developer-starter' ), __( 'Event 需要 startDate，便于搜索引擎识别活动时间。', 'developer-starter' ) );
+                $warnings[] = $this->build_schema_required_warning( 'schema_override_start_date', __( '活动开始时间', 'qiling' ), __( 'Event 需要 startDate，便于搜索引擎识别活动时间。', 'qiling' ) );
             }
             if ( empty( $data['location_name'] ) && empty( $data['location_address'] ) ) {
-                $warnings[] = $this->build_schema_required_warning( 'schema_override_location', __( '活动地点', 'developer-starter' ), __( 'Event 需要地点名称或地址。', 'developer-starter' ) );
+                $warnings[] = $this->build_schema_required_warning( 'schema_override_location', __( '活动地点', 'qiling' ), __( 'Event 需要地点名称或地址。', 'qiling' ) );
             }
         } elseif ( 'Review' === $type ) {
             if ( empty( $data['item_name'] ) ) {
-                $warnings[] = $this->build_schema_required_warning( 'schema_override_item_reviewed', __( '评价对象', 'developer-starter' ), __( 'Review 需要明确 itemReviewed，避免评价对象不清晰。', 'developer-starter' ) );
+                $warnings[] = $this->build_schema_required_warning( 'schema_override_item_reviewed', __( '评价对象', 'qiling' ), __( 'Review 需要明确 itemReviewed，避免评价对象不清晰。', 'qiling' ) );
             }
             if ( empty( $data['rating_value'] ) ) {
-                $warnings[] = $this->build_schema_required_warning( 'schema_override_rating', __( '评分', 'developer-starter' ), __( 'Review 建议填写 1-5 分评分。', 'developer-starter' ) );
+                $warnings[] = $this->build_schema_required_warning( 'schema_override_rating', __( '评分', 'qiling' ), __( 'Review 建议填写 1-5 分评分。', 'qiling' ) );
             }
         } elseif ( 'HowTo' === $type && empty( $data['howto_steps'] ) ) {
-            $warnings[] = $this->build_schema_required_warning( 'schema_override_howto_steps', 'HowTo', __( 'HowTo 至少需要一个步骤。', 'developer-starter' ) );
+            $warnings[] = $this->build_schema_required_warning( 'schema_override_howto_steps', 'HowTo', __( 'HowTo 至少需要一个步骤。', 'qiling' ) );
         } elseif ( 'JobPosting' === $type ) {
             if ( empty( $data['date_posted'] ) ) {
-                $warnings[] = $this->build_schema_required_warning( 'schema_override_date_posted', __( '发布日期', 'developer-starter' ), __( 'JobPosting 需要 datePosted。', 'developer-starter' ) );
+                $warnings[] = $this->build_schema_required_warning( 'schema_override_date_posted', __( '发布日期', 'qiling' ), __( 'JobPosting 需要 datePosted。', 'qiling' ) );
             }
             if ( empty( $data['hiring_organization'] ) ) {
-                $warnings[] = $this->build_schema_required_warning( 'schema_override_hiring_organization', __( '招聘组织', 'developer-starter' ), __( 'JobPosting 需要 hiringOrganization；留空时会回退站点名称。', 'developer-starter' ) );
+                $warnings[] = $this->build_schema_required_warning( 'schema_override_hiring_organization', __( '招聘组织', 'qiling' ), __( 'JobPosting 需要 hiringOrganization；留空时会回退站点名称。', 'qiling' ) );
             }
             if ( empty( $data['job_location'] ) ) {
-                $warnings[] = $this->build_schema_required_warning( 'schema_override_job_location', __( '工作地点', 'developer-starter' ), __( 'JobPosting 建议填写 jobLocation。', 'developer-starter' ) );
+                $warnings[] = $this->build_schema_required_warning( 'schema_override_job_location', __( '工作地点', 'qiling' ), __( 'JobPosting 建议填写 jobLocation。', 'qiling' ) );
             }
         }
 
@@ -2701,8 +2701,8 @@ class Industry_Schema_Engine {
         if ( $product_count > 1 ) {
             $conflicts[] = array(
                 'code'    => 'multiple_product',
-                'label'   => __( '多个顶层 Product', 'developer-starter' ),
-                'message' => sprintf( __( '当前 @graph 顶层检测到 %d 个 Product。请只保留一个页面主 Product，产品列表应放入 ItemList 或模块列表。', 'developer-starter' ), $product_count ),
+                'label'   => __( '多个顶层 Product', 'qiling' ),
+                'message' => sprintf( __( '当前 @graph 顶层检测到 %d 个 Product。请只保留一个页面主 Product，产品列表应放入 ItemList 或模块列表。', 'qiling' ), $product_count ),
             );
         }
 
@@ -2710,8 +2710,8 @@ class Industry_Schema_Engine {
         if ( $organization_count > 1 ) {
             $conflicts[] = array(
                 'code'    => 'multiple_organization',
-                'label'   => __( '多个 Organization', 'developer-starter' ),
-                'message' => sprintf( __( '当前 @graph 顶层检测到 %d 个组织实体。建议站点级只保留一个 Organization/LocalBusiness 主体。', 'developer-starter' ), $organization_count ),
+                'label'   => __( '多个 Organization', 'qiling' ),
+                'message' => sprintf( __( '当前 @graph 顶层检测到 %d 个组织实体。建议站点级只保留一个 Organization/LocalBusiness 主体。', 'qiling' ), $organization_count ),
             );
         }
 

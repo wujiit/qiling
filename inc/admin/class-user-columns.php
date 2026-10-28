@@ -52,12 +52,12 @@ class User_Columns {
      * 添加列头
      */
     public function add_columns( $columns ) {
-        $columns['phone']           = __( '手机', 'developer-starter' );
-        $columns['weixin']          = __( '微信', 'developer-starter' );
-        $columns['user_registered'] = __( '注册时间', 'developer-starter' );
-        $columns['last_login']      = __( '最后活跃', 'developer-starter' );
-        $columns['signup_ip']       = __( '注册IP', 'developer-starter' );
-        $columns['last_login_ip']   = __( '最后活跃IP', 'developer-starter' );
+        $columns['phone']           = __( '手机', 'qiling' );
+        $columns['weixin']          = __( '微信', 'qiling' );
+        $columns['user_registered'] = __( '注册时间', 'qiling' );
+        $columns['last_login']      = __( '最后活跃', 'qiling' );
+        $columns['signup_ip']       = __( '注册IP', 'qiling' );
+        $columns['last_login_ip']   = __( '最后活跃IP', 'qiling' );
         return $columns;
     }
 
@@ -90,16 +90,16 @@ class User_Columns {
                 }
                 $flag = get_user_meta( $user_id, 'qiling_weixin_is_wechat_user', true );
                 if ( $flag ) {
-                    return esc_html__( '微信用户', 'developer-starter' );
+                    return esc_html__( '微信用户', 'qiling' );
                 }
                 $user_info = get_userdata( $user_id );
                 if ( $user_info && 0 === strpos( $user_info->user_login, 'wx' ) ) {
                     $rest = substr( $user_info->user_login, 2 );
                     if ( strlen( $user_info->user_login ) === 14 && ctype_digit( $rest ) ) {
-                        return esc_html__( '微信用户', 'developer-starter' );
+                        return esc_html__( '微信用户', 'qiling' );
                     }
                 }
-                return esc_html__( '已绑定', 'developer-starter' );
+                return esc_html__( '已绑定', 'qiling' );
 
             case 'user_registered':
                 $user_info = get_userdata( $user_id );

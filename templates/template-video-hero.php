@@ -163,9 +163,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- 没有模块时显示提示 -->
             <section class="section-padding" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #000; color: #fff;">
                 <div class="container text-center">
-                    <h2 class="glow-animation"><?php esc_html_e( '正在构建全屏体验...', 'developer-starter' ); ?></h2>
+                    <h2 class="glow-animation"><?php esc_html_e( '正在构建全屏体验...', 'qiling' ); ?></h2>
                     <p style="color: #ccc; margin-top: 20px;">
-                        <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+                        <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
                     </p>
                 </div>
             </section>

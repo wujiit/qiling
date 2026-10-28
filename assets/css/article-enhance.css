@@ -365,14 +365,18 @@
 }
 
 .post-tags a {
-    display: inline-block;
-    padding: var(--qiling-space-4) var(--qiling-space-12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--qiling-space-6) var(--qiling-space-14);
     background: var(--color-gray-100);
     border-radius: 20px;
     margin: var(--qiling-space-4);
     font-size: var(--qiling-text-rem-0p875);
     color: var(--color-gray-600);
     text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .post-navigation {

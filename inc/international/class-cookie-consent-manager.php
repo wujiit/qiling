@@ -52,28 +52,28 @@ class Cookie_Consent_Manager {
     public static function get_categories() {
         return array(
             'necessary'   => array(
-                'label'       => __( '必要', 'developer-starter' ),
-                'description' => __( '用于网站安全、基础功能和偏好保存，始终启用。', 'developer-starter' ),
+                'label'       => __( '必要', 'qiling' ),
+                'description' => __( '用于网站安全、基础功能和偏好保存，始终启用。', 'qiling' ),
                 'required'    => true,
             ),
             'statistics'  => array(
-                'label'       => __( '统计', 'developer-starter' ),
-                'description' => __( '帮助了解访问表现，例如 GA4、Clarity 或其他统计代码。', 'developer-starter' ),
+                'label'       => __( '统计', 'qiling' ),
+                'description' => __( '帮助了解访问表现，例如 GA4、Clarity 或其他统计代码。', 'qiling' ),
                 'required'    => false,
             ),
             'marketing'   => array(
-                'label'       => __( '营销', 'developer-starter' ),
-                'description' => __( '用于营销自动化、转化分析和客户互动工具。', 'developer-starter' ),
+                'label'       => __( '营销', 'qiling' ),
+                'description' => __( '用于营销自动化、转化分析和客户互动工具。', 'qiling' ),
                 'required'    => false,
             ),
             'advertising' => array(
-                'label'       => __( '广告', 'developer-starter' ),
-                'description' => __( '用于广告追踪、再营销和投放转化，例如 Meta Pixel。', 'developer-starter' ),
+                'label'       => __( '广告', 'qiling' ),
+                'description' => __( '用于广告追踪、再营销和投放转化，例如 Meta Pixel。', 'qiling' ),
                 'required'    => false,
             ),
             'custom'      => array(
-                'label'       => __( '自定义', 'developer-starter' ),
-                'description' => __( '用于其他第三方代码，请按实际用途谨慎开启。', 'developer-starter' ),
+                'label'       => __( '自定义', 'qiling' ),
+                'description' => __( '用于其他第三方代码，请按实际用途谨慎开启。', 'qiling' ),
                 'required'    => false,
             ),
         );
@@ -117,20 +117,20 @@ class Cookie_Consent_Manager {
             return;
         }
 
-        $css_file = DEVELOPER_STARTER_DIR . '/assets/css/international-cookie-consent.css';
-        $js_file  = DEVELOPER_STARTER_DIR . '/assets/js/international-cookie-consent.js';
-        $css_ver  = file_exists( $css_file ) ? (string) filemtime( $css_file ) : DEVELOPER_STARTER_VERSION;
-        $js_ver   = file_exists( $js_file ) ? (string) filemtime( $js_file ) : DEVELOPER_STARTER_VERSION;
+        $css_file = QILING_DIR . '/assets/css/international-cookie-consent.css';
+        $js_file  = QILING_DIR . '/assets/js/international-cookie-consent.js';
+        $css_ver  = file_exists( $css_file ) ? (string) filemtime( $css_file ) : QILING_VERSION;
+        $js_ver   = file_exists( $js_file ) ? (string) filemtime( $js_file ) : QILING_VERSION;
 
         wp_enqueue_style(
             'developer-starter-international-cookie-consent',
-            DEVELOPER_STARTER_ASSETS . '/css/international-cookie-consent.css',
+            QILING_ASSETS . '/css/international-cookie-consent.css',
             array(),
             $css_ver
         );
         wp_enqueue_script(
             'developer-starter-international-cookie-consent',
-            DEVELOPER_STARTER_ASSETS . '/js/international-cookie-consent.js',
+            QILING_ASSETS . '/js/international-cookie-consent.js',
             array(),
             $js_ver,
             true
@@ -162,38 +162,38 @@ class Cookie_Consent_Manager {
             return;
         }
 
-        $message = trim( (string) $this->get_option( 'international_cookie_notice_text', __( '本网站使用 Cookie 和类似技术来提升访问体验。', 'developer-starter' ) ) );
+        $message = trim( (string) $this->get_option( 'international_cookie_notice_text', __( '本网站使用 Cookie 和类似技术来提升访问体验。', 'qiling' ) ) );
         if ( '' === $message ) {
-            $message = __( '本网站使用 Cookie 和类似技术来提升访问体验。', 'developer-starter' );
+            $message = __( '本网站使用 Cookie 和类似技术来提升访问体验。', 'qiling' );
         }
 
-        $accept_text = trim( (string) $this->get_option( 'international_cookie_accept_text', __( '接受全部', 'developer-starter' ) ) );
+        $accept_text = trim( (string) $this->get_option( 'international_cookie_accept_text', __( '接受全部', 'qiling' ) ) );
         if ( '' === $accept_text ) {
-            $accept_text = __( '接受全部', 'developer-starter' );
+            $accept_text = __( '接受全部', 'qiling' );
         }
 
-        $reject_text = trim( (string) $this->get_option( 'international_cookie_reject_text', __( '拒绝非必要', 'developer-starter' ) ) );
+        $reject_text = trim( (string) $this->get_option( 'international_cookie_reject_text', __( '拒绝非必要', 'qiling' ) ) );
         if ( '' === $reject_text ) {
-            $reject_text = __( '拒绝非必要', 'developer-starter' );
+            $reject_text = __( '拒绝非必要', 'qiling' );
         }
 
-        $customize_text = trim( (string) $this->get_option( 'international_cookie_customize_text', __( '自定义设置', 'developer-starter' ) ) );
+        $customize_text = trim( (string) $this->get_option( 'international_cookie_customize_text', __( '自定义设置', 'qiling' ) ) );
         if ( '' === $customize_text ) {
-            $customize_text = __( '自定义设置', 'developer-starter' );
+            $customize_text = __( '自定义设置', 'qiling' );
         }
 
-        $save_text = trim( (string) $this->get_option( 'international_cookie_save_text', __( '保存设置', 'developer-starter' ) ) );
+        $save_text = trim( (string) $this->get_option( 'international_cookie_save_text', __( '保存设置', 'qiling' ) ) );
         if ( '' === $save_text ) {
-            $save_text = __( '保存设置', 'developer-starter' );
+            $save_text = __( '保存设置', 'qiling' );
         }
 
-        $link_text = trim( (string) $this->get_option( 'international_cookie_policy_link_text', __( '了解更多', 'developer-starter' ) ) );
+        $link_text = trim( (string) $this->get_option( 'international_cookie_policy_link_text', __( '了解更多', 'qiling' ) ) );
         $link_url  = trim( (string) $this->get_option( 'international_cookie_policy_url', '' ) );
         $position  = $this->normalize_notice_position( (string) $this->get_option( 'international_cookie_notice_position', 'bottom_center' ) );
         $categories = self::get_categories();
         $has_choice = $this->has_consent_choice();
         ?>
-        <div class="qiling-cookie-consent" data-qiling-cookie-consent data-position="<?php echo esc_attr( $position ); ?>" data-consent-version="<?php echo esc_attr( $this->get_consent_version() ); ?>"<?php echo $has_choice ? ' data-hidden="1"' : ''; ?> role="region" aria-label="<?php esc_attr_e( 'Cookie 提示', 'developer-starter' ); ?>">
+        <div class="qiling-cookie-consent" data-qiling-cookie-consent data-position="<?php echo esc_attr( $position ); ?>" data-consent-version="<?php echo esc_attr( $this->get_consent_version() ); ?>"<?php echo $has_choice ? ' data-hidden="1"' : ''; ?> role="region" aria-label="<?php esc_attr_e( 'Cookie 提示', 'qiling' ); ?>">
             <div class="qiling-cookie-consent__main">
                 <div class="qiling-cookie-consent__content">
                     <p class="qiling-cookie-consent__text"><?php echo esc_html( $message ); ?></p>
@@ -245,9 +245,9 @@ class Cookie_Consent_Manager {
             return;
         }
 
-        $text = trim( (string) $this->get_option( 'international_cookie_footer_button_text', __( 'Cookie 设置', 'developer-starter' ) ) );
+        $text = trim( (string) $this->get_option( 'international_cookie_footer_button_text', __( 'Cookie 设置', 'qiling' ) ) );
         if ( '' === $text ) {
-            $text = __( 'Cookie 设置', 'developer-starter' );
+            $text = __( 'Cookie 设置', 'qiling' );
         }
 
         echo '<div class="qiling-cookie-settings-footer" data-qiling-cookie-settings-footer>';
@@ -268,7 +268,7 @@ class Cookie_Consent_Manager {
 
         $atts = shortcode_atts(
             array(
-                'text'  => __( 'Cookie 设置', 'developer-starter' ),
+                'text'  => __( 'Cookie 设置', 'qiling' ),
                 'class' => '',
             ),
             is_array( $atts ) ? $atts : array(),
@@ -277,7 +277,7 @@ class Cookie_Consent_Manager {
 
         $text = trim( (string) $atts['text'] );
         if ( '' === $text ) {
-            $text = __( 'Cookie 设置', 'developer-starter' );
+            $text = __( 'Cookie 设置', 'qiling' );
         }
 
         $extra_class = trim( sanitize_html_class( (string) $atts['class'] ) );

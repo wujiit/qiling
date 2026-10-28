@@ -21,7 +21,7 @@ class Features_List_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-list-view';
-        $this->description = __( 'Tab标签切换的功能清单，展示产品功能特性', 'developer-starter' );
+        $this->description = __( 'Tab标签切换的功能清单，展示产品功能特性', 'qiling' );
     }
 
     public function get_id() {
@@ -29,82 +29,82 @@ class Features_List_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '功能清单列表', 'developer-starter' );
+        return __( '功能清单列表', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => __( '产品功能', 'developer-starter' ) ),
+            array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => __( '产品功能', 'qiling' ) ),
             array(
                 'id' => 'title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
+            array( 'id' => 'subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
             array(
                 'id' => 'subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem 或 18px，留空使用默认', 'qiling' ),
             ),
-            array( 'id' => 'subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array( '2' => __( '2列', 'developer-starter' ), '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ) ), 'default' => '3' ),
-            array( 'id' => 'tabs', 'type' => 'repeater', 'label' => __( 'Tab标签页', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'tab_id', 'type' => 'text', 'label' => __( 'Tab ID (唯一标识)', 'developer-starter' ), 'default' => 'tab1' ),
-                array( 'id' => 'tab_title', 'type' => 'text', 'label' => __( 'Tab标题', 'developer-starter' ) ),
-                array( 'id' => 'tab_icon', 'type' => 'text', 'label' => __( 'Tab图标 (可选)', 'developer-starter' ) ),
-                array( 'id' => 'features', 'type' => 'textarea', 'label' => __( '功能列表 (每行格式: 图标|标题|描述)', 'developer-starter' ), 'rows' => 6 ),
+            array( 'id' => 'columns', 'type' => 'select', 'label' => __( '列数', 'qiling' ), 'options' => array( '2' => __( '2列', 'qiling' ), '3' => __( '3列', 'qiling' ), '4' => __( '4列', 'qiling' ) ), 'default' => '3' ),
+            array( 'id' => 'tabs', 'type' => 'repeater', 'label' => __( 'Tab标签页', 'qiling' ), 'fields' => array(
+                array( 'id' => 'tab_id', 'type' => 'text', 'label' => __( 'Tab ID (唯一标识)', 'qiling' ), 'default' => 'tab1' ),
+                array( 'id' => 'tab_title', 'type' => 'text', 'label' => __( 'Tab标题', 'qiling' ) ),
+                array( 'id' => 'tab_icon', 'type' => 'text', 'label' => __( 'Tab图标 (可选)', 'qiling' ) ),
+                array( 'id' => 'features', 'type' => 'textarea', 'label' => __( '功能列表 (每行格式: 图标|标题|描述)', 'qiling' ), 'rows' => 6 ),
             ) ),
             
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
-            array( 'id' => 'fl_tabs_bg', 'label' => __( '标签栏背景', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'fl_tab_text', 'label' => __( '标签文字颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'fl_tab_active_bg', 'label' => __( '激活标签背景', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'fl_tab_active_text', 'label' => __( '激活标签文字', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'fl_card_bg', 'label' => __( '功能卡片背景', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'fl_card_border', 'label' => __( '功能卡片边框', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'fl_item_title', 'label' => __( '功能标题颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'fl_item_desc', 'label' => __( '功能描述颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
-            array( 'id' => 'fl_icon_bg', 'label' => __( '功能图标背景', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'fl_icon_color', 'label' => __( '功能图标颜色', 'developer-starter' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'fl_tabs_bg', 'label' => __( '标签栏背景', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'fl_tab_text', 'label' => __( '标签文字颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'fl_tab_active_bg', 'label' => __( '激活标签背景', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'fl_tab_active_text', 'label' => __( '激活标签文字', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'fl_card_bg', 'label' => __( '功能卡片背景', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'fl_card_border', 'label' => __( '功能卡片边框', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'fl_item_title', 'label' => __( '功能标题颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'fl_item_desc', 'label' => __( '功能描述颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
+            array( 'id' => 'fl_icon_bg', 'label' => __( '功能图标背景', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'fl_icon_color', 'label' => __( '功能图标颜色', 'qiling' ), 'type' => 'color', 'default' => '' ),
             
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -121,14 +121,14 @@ class Features_List_Module extends Module_Base {
             
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
@@ -136,7 +136,7 @@ class Features_List_Module extends Module_Base {
     }
 
     public function render( $data = array() ) {
-        $title = isset( $data['title'] ) ? $data['title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品功能', 'Product Features' ) : __( '产品功能', 'developer-starter' ) );
+        $title = isset( $data['title'] ) ? $data['title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品功能', 'Product Features' ) : __( '产品功能', 'qiling' ) );
         $subtitle = isset( $data['subtitle'] ) ? $data['subtitle'] : '';
         $columns = isset( $data['columns'] ) ? $data['columns'] : '3';
         $tabs = isset( $data['tabs'] ) ? $data['tabs'] : array();

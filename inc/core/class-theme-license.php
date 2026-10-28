@@ -189,17 +189,17 @@ class Theme_License {
             ?>
             <div class="notice notice-error is-dismissible">
                 <p>
-                    <strong><?php esc_html_e( '主题授权验证失败：', 'developer-starter' ); ?></strong>
-                    <?php esc_html_e( '检测到当前域名与授权码绑定的域名不一致。请检查设置或联系客服。', 'developer-starter' ); ?>
-                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-settings' ) ); ?>"><?php esc_html_e( '前往设置', 'developer-starter' ); ?></a>
+                    <strong><?php esc_html_e( '主题授权验证失败：', 'qiling' ); ?></strong>
+                    <?php esc_html_e( '检测到当前域名与授权码绑定的域名不一致。请检查设置或联系客服。', 'qiling' ); ?>
+                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=qiling-settings' ) ); ?>"><?php esc_html_e( '前往设置', 'qiling' ); ?></a>
                 </p>
                 <?php if ( $debug_error && self::is_debug_logging_enabled() ) : ?>
                 <p style="color: #d63638;">
-                    <strong><?php esc_html_e( '调试信息：', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '调试信息：', 'qiling' ); ?></strong>
                     <?php echo esc_html( $debug_error ); ?>
                 </p>
                 <?php endif; ?>
-                <p><small><?php esc_html_e( '注：您的网站前台功能未受影响。', 'developer-starter' ); ?></small></p>
+                <p><small><?php esc_html_e( '注：您的网站前台功能未受影响。', 'qiling' ); ?></small></p>
             </div>
             <?php
         }
@@ -381,13 +381,13 @@ class Theme_License {
         check_ajax_referer( 'qiling_verify_license_nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         $license_key = isset( $_POST['license_key'] ) ? sanitize_text_field( wp_unslash( $_POST['license_key'] ) ) : '';
         
         if ( empty( $license_key ) ) {
-            wp_send_json_error( array( 'message' => __( '请输入授权密钥', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入授权密钥', 'qiling' ) ) );
         }
 
         // 保存新密钥到数据库。这里保留双写，避免设置页字段与运行时独立 option 不一致。
@@ -412,12 +412,12 @@ class Theme_License {
         
         // 检查网络错误
         if ( is_wp_error( $response ) ) {
-            wp_send_json_error( array( 'message' => __( '网络连接失败：', 'developer-starter' ) . $response->get_error_message() ) );
+            wp_send_json_error( array( 'message' => __( '网络连接失败：', 'qiling' ) . $response->get_error_message() ) );
         }
         
         $response_code = wp_remote_retrieve_response_code( $response );
         if ( $response_code !== 200 ) {
-            wp_send_json_error( array( 'message' => __( '服务器返回错误：HTTP ', 'developer-starter' ) . $response_code ) );
+            wp_send_json_error( array( 'message' => __( '服务器返回错误：HTTP ', 'qiling' ) . $response_code ) );
         }
         
         // 解析响应
@@ -428,13 +428,13 @@ class Theme_License {
         
         // 检查JSON解析是否成功
         if ( json_last_error() !== JSON_ERROR_NONE ) {
-            wp_send_json_error( array( 'message' => __( 'JSON解析错误：', 'developer-starter' ) . json_last_error_msg() ) );
+            wp_send_json_error( array( 'message' => __( 'JSON解析错误：', 'qiling' ) . json_last_error_msg() ) );
         }
         
         if ( ! isset( $data['data']['status'] ) ) {
             // 显示原始响应帮助调试
             $preview = mb_substr( $body_raw, 0, 200 );
-            wp_send_json_error( array( 'message' => __( '服务器返回格式错误：', 'developer-starter' ) . $preview ) );
+            wp_send_json_error( array( 'message' => __( '服务器返回格式错误：', 'qiling' ) . $preview ) );
         }
         
         $remote_status = $data['data']['status'];
@@ -444,9 +444,9 @@ class Theme_License {
         update_option( self::OPTION_LAST_CHECK, time() );
         
         if ( $remote_status === 'valid' ) {
-            wp_send_json_success( array( 'message' => __( '授权验证成功', 'developer-starter' ) ) );
+            wp_send_json_success( array( 'message' => __( '授权验证成功', 'qiling' ) ) );
         } else {
-            wp_send_json_error( array( 'message' => __( '授权验证失败：', 'developer-starter' ) . $remote_status ) );
+            wp_send_json_error( array( 'message' => __( '授权验证失败：', 'qiling' ) . $remote_status ) );
         }
     }
 

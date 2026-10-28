@@ -18,7 +18,7 @@ class Micro_Journal_Stream_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-clock';
-        $this->description = __( '碎片化时间流更新，不是长文文章', 'developer-starter' );
+        $this->description = __( '碎片化时间流更新，不是长文文章', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Micro_Journal_Stream_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '时间流/日记流', 'developer-starter' );
+        return __( '时间流/日记流', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,103 +34,103 @@ class Micro_Journal_Stream_Module extends Module_Base {
             array(
                 'id'      => 'mjs_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( '时间流 / 日记流', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( '时间流 / 日记流', 'qiling' ),
             ),
             array(
                 'id'    => 'mjs_subtitle',
                 'type'  => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
             ),
             array(
                 'id'      => 'mjs_limit',
                 'type'    => 'number',
-                'label'   => __( '最多显示条数', 'developer-starter' ),
+                'label'   => __( '最多显示条数', 'qiling' ),
                 'default' => '20',
             ),
             array(
                 'id'      => 'mjs_show_image',
                 'type'    => 'select',
-                'label'   => __( '显示配图', 'developer-starter' ),
+                'label'   => __( '显示配图', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
-            array( 'id' => 'mjs_link_text', 'type' => 'text', 'label' => __( '外部链接文案', 'developer-starter' ), 'default' => __( '查看相关链接', 'developer-starter' ) ),
+            array( 'id' => 'mjs_link_text', 'type' => 'text', 'label' => __( '外部链接文案', 'qiling' ), 'default' => __( '查看相关链接', 'qiling' ) ),
             array(
                 'id'            => 'mjs_items',
                 'type'          => 'repeater',
-                'label'         => __( '时间流条目', 'developer-starter' ),
+                'label'         => __( '时间流条目', 'qiling' ),
                 'default_items' => $this->get_default_items(),
                 'fields'        => array(
                     array(
                         'id'    => 'date',
                         'type'  => 'text',
-                        'label' => __( '日期 (如 2026-02-12)', 'developer-starter' ),
+                        'label' => __( '日期 (如 2026-02-12)', 'qiling' ),
                     ),
                     array(
                         'id'    => 'time',
                         'type'  => 'text',
-                        'label' => __( '时间 (如 14:30)', 'developer-starter' ),
+                        'label' => __( '时间 (如 14:30)', 'qiling' ),
                     ),
                     array(
                         'id'    => 'content',
                         'type'  => 'textarea',
-                        'label' => __( '内容', 'developer-starter' ),
+                        'label' => __( '内容', 'qiling' ),
                     ),
                     array(
                         'id'      => 'mood',
                         'type'    => 'text',
-                        'label'   => __( '心情', 'developer-starter' ),
-                        'default' => '🙂',
+                        'label'   => __( '心情 / 状态', 'qiling' ),
+                        'default' => '',
                     ),
                     array(
                         'id'    => 'location',
                         'type'  => 'text',
-                        'label' => __( '位置', 'developer-starter' ),
+                        'label' => __( '位置', 'qiling' ),
                     ),
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '配图', 'developer-starter' ),
+                        'label' => __( '配图', 'qiling' ),
                     ),
                     array(
                         'id'    => 'link',
                         'type'  => 'text',
-                        'label' => __( '外部链接', 'developer-starter' ),
+                        'label' => __( '外部链接', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'      => 'mjs_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景色', 'developer-starter' ),
+                'label'   => __( '卡片背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'mjs_bg_color',
                 'type'    => 'color',
-                'label'   => __( '模块背景色', 'developer-starter' ),
+                'label'   => __( '模块背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'mjs_line_color',
                 'type'    => 'color',
-                'label'   => __( '时间线颜色', 'developer-starter' ),
+                'label'   => __( '时间线颜色', 'qiling' ),
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '56px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '56px',
             ),
         );
@@ -141,7 +141,7 @@ class Micro_Journal_Stream_Module extends Module_Base {
         $subtitle = isset( $data['mjs_subtitle'] ) ? $data['mjs_subtitle'] : '';
         $limit = isset( $data['mjs_limit'] ) ? max( 1, min( 100, intval( $data['mjs_limit'] ) ) ) : 20;
         $show_image = ! isset( $data['mjs_show_image'] ) || $data['mjs_show_image'] === 'yes';
-        $link_text = isset( $data['mjs_link_text'] ) && '' !== trim( (string) $data['mjs_link_text'] ) ? (string) $data['mjs_link_text'] : __( '查看相关链接', 'developer-starter' );
+        $link_text = isset( $data['mjs_link_text'] ) && '' !== trim( (string) $data['mjs_link_text'] ) ? (string) $data['mjs_link_text'] : __( '查看相关链接', 'qiling' );
 
         $items = isset( $data['mjs_items'] ) && is_array( $data['mjs_items'] ) ? $data['mjs_items'] : array();
         if ( empty( $items ) && ! isset( $data['mjs_items'] ) ) {
@@ -183,7 +183,7 @@ class Micro_Journal_Stream_Module extends Module_Base {
                         $date = isset( $item['date'] ) ? trim( (string) $item['date'] ) : '';
                         $time = isset( $item['time'] ) ? trim( (string) $item['time'] ) : '';
                         $content = isset( $item['content'] ) ? trim( (string) $item['content'] ) : '';
-                        $mood = isset( $item['mood'] ) && $item['mood'] !== '' ? (string) $item['mood'] : '📝';
+                        $mood = isset( $item['mood'] ) ? trim( (string) $item['mood'] ) : '';
                         $location = isset( $item['location'] ) ? trim( (string) $item['location'] ) : '';
                         $image = isset( $item['image'] ) ? trim( (string) $item['image'] ) : '';
                         $link = isset( $item['link'] ) ? trim( (string) $item['link'] ) : '';
@@ -195,12 +195,14 @@ class Micro_Journal_Stream_Module extends Module_Base {
                             <div class="qil-mjs-point"></div>
                             <div class="qil-mjs-card">
                                 <div class="qil-mjs-head">
-                                    <span class="qil-mjs-mood"><?php echo esc_html( $mood ); ?></span>
+                                    <?php if ( $mood !== '' ) : ?>
+                                        <span class="qil-mjs-mood"><?php echo esc_html( $mood ); ?></span>
+                                    <?php endif; ?>
                                     <span class="qil-mjs-datetime"><?php echo esc_html( trim( $date . ' ' . $time ) ); ?></span>
                                 </div>
                                 <div class="qil-mjs-content"><?php echo nl2br( esc_html( $content ) ); ?></div>
                                 <?php if ( $location !== '' ) : ?>
-                                    <div class="qil-mjs-location"><?php echo esc_html__( '位置：', 'developer-starter' ) . esc_html( $location ); ?></div>
+                                    <div class="qil-mjs-location"><?php echo esc_html__( '位置：', 'qiling' ) . esc_html( $location ); ?></div>
                                 <?php endif; ?>
                                 <?php if ( $show_image && $image !== '' ) : ?>
                                     <img class="qil-mjs-image" src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $date ); ?>" />
@@ -228,26 +230,26 @@ class Micro_Journal_Stream_Module extends Module_Base {
             array(
                 'date'     => date_i18n( $date_format ),
                 'time'     => date_i18n( 'H:i' ),
-                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '今天把首页模块又简化了一轮，加载速度更稳。', 'Simplified the homepage modules again today and improved load consistency.' ) : __( '今天把首页模块又简化了一轮，加载速度更稳。', 'developer-starter' ),
-                'mood'     => '⚡',
-                'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作室', 'Studio' ) : __( '工作室', 'developer-starter' ),
+                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '今天把首页模块又简化了一轮，加载速度更稳。', 'Simplified the homepage modules again today and improved load consistency.' ) : __( '今天把首页模块又简化了一轮，加载速度更稳。', 'qiling' ),
+                'mood'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '动态', 'Update' ) : __( '动态', 'qiling' ),
+                'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '工作室', 'Studio' ) : __( '工作室', 'qiling' ),
                 'image'    => '',
                 'link'     => '',
             ),
             array(
                 'date'     => date_i18n( $date_format, strtotime( '-1 day' ) ),
                 'time'     => '22:10',
-                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读完一本关于写作的书，准备把灵感整理成新文章。', 'Finished a book on writing and started shaping the ideas into a new article.' ) : __( '读完一本关于写作的书，准备把灵感整理成新文章。', 'developer-starter' ),
-                'mood'     => '📚',
-                'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '书房', 'Study' ) : __( '书房', 'developer-starter' ),
+                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读完一本关于写作的书，准备把灵感整理成新文章。', 'Finished a book on writing and started shaping the ideas into a new article.' ) : __( '读完一本关于写作的书，准备把灵感整理成新文章。', 'qiling' ),
+                'mood'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '随笔', 'Note' ) : __( '随笔', 'qiling' ),
+                'location' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '书房', 'Study' ) : __( '书房', 'qiling' ),
                 'image'    => '',
                 'link'     => '',
             ),
             array(
                 'date'     => date_i18n( $date_format, strtotime( '-2 day' ) ),
                 'time'     => '09:40',
-                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '测试了新的评论交互，准备继续优化读者体验。', 'Tested a new comment interaction flow and will keep refining the reader experience.' ) : __( '测试了新的评论交互，准备继续优化读者体验。', 'developer-starter' ),
-                'mood'     => '🛠️',
+                'content'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '测试了新的评论交互，准备继续优化读者体验。', 'Tested a new comment interaction flow and will keep refining the reader experience.' ) : __( '测试了新的评论交互，准备继续优化读者体验。', 'qiling' ),
+                'mood'     => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '日志', 'Log' ) : __( '日志', 'qiling' ),
                 'location' => '',
                 'image'    => '',
                 'link'     => '',

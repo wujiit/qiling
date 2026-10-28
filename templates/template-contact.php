@@ -42,7 +42,7 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
             <!-- 左侧：联系信息 -->
             <?php if ( $show_info ) : ?>
             <div class="contact-info-section">
-                <h2 class="section-heading"><?php esc_html_e( '联系方式', 'developer-starter' ); ?></h2>
+                <h2 class="section-heading"><?php esc_html_e( '联系方式', 'qiling' ); ?></h2>
 
                 <div class="contact-info-list" style="display: flex; flex-direction: column; gap: var(--qiling-space-25);">
                     <?php if ( $company_name ) : ?>
@@ -51,7 +51,7 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
                             </div>
                             <div>
-                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '公司名称', 'developer-starter' ); ?></h4>
+                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '公司名称', 'qiling' ); ?></h4>
                                 <p style="margin: 0; color: var(--color-neutral-800); font-weight: 600;"><?php echo esc_html( $company_name ); ?></p>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                             </div>
                             <div>
-                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '联系电话', 'developer-starter' ); ?></h4>
+                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '联系电话', 'qiling' ); ?></h4>
                                 <p style="margin: 0;"><a href="tel:<?php echo esc_attr( preg_replace( '/[^\d+]/', '', (string) $phone ) ); ?>" style="color: var(--color-neutral-800); font-weight: 600; text-decoration: none;"><?php echo esc_html( $phone ); ?></a></p>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1.5L13 17v-3H10a2 2 0 0 1-2-2Z"/><path d="M8 8H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1.5L11 21v-3"/></svg>
                             </div>
                             <div>
-                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( 'QQ', 'developer-starter' ); ?></h4>
+                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( 'QQ', 'qiling' ); ?></h4>
                                 <?php if ( $qq_link ) : ?>
                                     <p style="margin: 0;"><a href="<?php echo esc_url( $qq_link ); ?>" target="_blank" rel="noopener noreferrer" style="color: var(--color-neutral-800); font-weight: 600; text-decoration: none;"><?php echo esc_html( $qq ); ?></a></p>
                                 <?php else : ?>
@@ -91,10 +91,10 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="color: white;"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zm-2.906 5.983c.642 0 1.162-.528 1.162-1.178 0-.651-.52-1.18-1.162-1.18s-1.162.529-1.162 1.18c0 .65.52 1.178 1.162 1.178zm5.813 0c.642 0 1.162-.528 1.162-1.178 0-.651-.52-1.18-1.162-1.18s-1.162.529-1.162 1.18c0 .65.52 1.178 1.162 1.178zm5.34.72c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.045c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-2.036 3.812a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982.536 0 .97.44.97.982a.977.977 0 0 1-.97.983zm4.844 0a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982.536 0 .97.44.97.982a.977.977 0 0 1-.97.983z"/></svg>
                             </div>
                             <div>
-                                <h4 style="margin: 0 0 var(--qiling-space-10); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '微信', 'developer-starter' ); ?></h4>
+                                <h4 style="margin: 0 0 var(--qiling-space-10); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '微信', 'qiling' ); ?></h4>
                                 <div style="display: inline-flex; flex-direction: column; align-items: center; gap: var(--qiling-space-8); padding: var(--qiling-space-10); background: var(--color-neutral-50); border: 1px solid rgba(var(--qiling-rgb-148-163-184), 0.2); border-radius: var(--qiling-space-14);">
-                                    <img src="<?php echo esc_url( $wechat_qrcode ); ?>" alt="<?php esc_attr_e( '微信二维码', 'developer-starter' ); ?>" loading="lazy" decoding="async" style="width: 96px; height: 96px; border-radius: 10px; object-fit: cover;" />
-                                    <span style="color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.85);"><?php esc_html_e( '扫码添加微信', 'developer-starter' ); ?></span>
+                                    <img src="<?php echo esc_url( $wechat_qrcode ); ?>" alt="<?php esc_attr_e( '微信二维码', 'qiling' ); ?>" loading="lazy" decoding="async" style="width: 96px; height: 96px; border-radius: 10px; object-fit: cover;" />
+                                    <span style="color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.85);"><?php esc_html_e( '扫码添加微信', 'qiling' ); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
                             <div>
-                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '电子邮箱', 'developer-starter' ); ?></h4>
+                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '电子邮箱', 'qiling' ); ?></h4>
                                 <p style="margin: 0;"><a href="mailto:<?php echo esc_attr( $email ); ?>" style="color: var(--color-neutral-800); font-weight: 600; text-decoration: none;"><?php echo esc_html( $email ); ?></a></p>
                             </div>
                         </div>
@@ -118,7 +118,7 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             </div>
                             <div>
-                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '公司地址', 'developer-starter' ); ?></h4>
+                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '公司地址', 'qiling' ); ?></h4>
                                 <p style="margin: 0; color: var(--color-neutral-800); font-weight: 600; line-height: 1.6;"><?php echo esc_html( $address ); ?></p>
                             </div>
                         </div>
@@ -130,7 +130,7 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                             </div>
                             <div>
-                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '工作时间', 'developer-starter' ); ?></h4>
+                                <h4 style="margin: 0 0 var(--qiling-space-5); color: var(--color-neutral-500); font-size: calc(var(--qiling-font-size-base) * 0.9); font-weight: 500;"><?php esc_html_e( '工作时间', 'qiling' ); ?></h4>
                                 <p style="margin: 0; color: var(--color-neutral-800); font-weight: 600;"><?php echo esc_html( $working_hours ); ?></p>
                             </div>
                         </div>
@@ -142,14 +142,14 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
             <!-- 右侧：表单 或 图片 -->
             <div class="contact-form-section">
                 <?php if ( $show_form ) : ?>
-                    <h2 class="section-heading"><?php esc_html_e( '在线留言', 'developer-starter' ); ?></h2>
+                    <h2 class="section-heading"><?php esc_html_e( '在线留言', 'qiling' ); ?></h2>
 
                     <?php if ( $show_contact_login_hint ) : ?>
                         <div class="contact-form-login-hint" style="margin-bottom: var(--qiling-space-12); padding: var(--qiling-space-10) var(--qiling-space-12); border-radius: var(--qiling-space-10); background: var(--qiling-color-eff6ff); border: 1px solid var(--qiling-color-bfdbfe); color: var(--qiling-color-1e40af);">
                             <?php
                             printf(
                                 /* translators: %s: login URL */
-                                wp_kses( __( '当前仅登录用户可提交。<a href="%s">立即登录</a>', 'developer-starter' ), array( 'a' => array( 'href' => array() ) ) ),
+                                wp_kses( __( '当前仅登录用户可提交。<a href="%s">立即登录</a>', 'qiling' ), array( 'a' => array( 'href' => array() ) ) ),
                                 esc_url( $contact_login_url )
                             );
                             ?>
@@ -164,14 +164,14 @@ $working_hours = developer_starter_get_option( 'company_working_hours', '' );
 
                 <?php elseif ( $contact_image ) : ?>
                     <!-- 显示自定义图片 -->
-                    <img src="<?php echo esc_url( $contact_image ); ?>" alt="<?php esc_attr_e( '联系我们', 'developer-starter' ); ?>" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 50px rgba(var(--qiling-rgb-0-0-0), 0.1);" />
+                    <img src="<?php echo esc_url( $contact_image ); ?>" alt="<?php esc_attr_e( '联系我们', 'qiling' ); ?>" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 50px rgba(var(--qiling-rgb-0-0-0), 0.1);" />
 
                 <?php else : ?>
                     <!-- 默认占位 -->
                     <div style="background: linear-gradient(135deg, var(--color-neutral-100) 0%, var(--color-neutral-200) var(--qiling-measure-pct-100)); border-radius: var(--qiling-space-16); padding: var(--qiling-space-60) var(--qiling-space-40); text-align: center;">
-                        <div style="font-size: calc(var(--qiling-font-size-base) * 4); margin-bottom: var(--qiling-space-20);">📞</div>
-                        <h3 style="color: var(--color-neutral-500); font-weight: 500; margin: 0 0 var(--qiling-space-10);"><?php esc_html_e( '欢迎联系我们', 'developer-starter' ); ?></h3>
-                        <p style="color: var(--color-neutral-400); margin: 0;"><?php esc_html_e( '我们期待与您的合作', 'developer-starter' ); ?></p>
+                        <div style="margin: 0 auto var(--qiling-space-20); display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 18px; background: var(--qiling-color-f1f5f9, #f1f5f9); color: var(--color-primary);"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+                        <h3 style="color: var(--color-neutral-500); font-weight: 500; margin: 0 0 var(--qiling-space-10);"><?php esc_html_e( '欢迎联系我们', 'qiling' ); ?></h3>
+                        <p style="color: var(--color-neutral-400); margin: 0;"><?php esc_html_e( '我们期待与您的合作', 'qiling' ); ?></p>
                     </div>
                 <?php endif; ?>
             </div>

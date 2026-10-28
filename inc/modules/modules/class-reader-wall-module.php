@@ -18,7 +18,7 @@ class Reader_Wall_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-admin-comments';
-        $this->description = __( '展示评论精选和读者墙', 'developer-starter' );
+        $this->description = __( '展示评论精选和读者墙', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Reader_Wall_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '评论精选/读者墙', 'developer-starter' );
+        return __( '评论精选/读者墙', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,127 +34,127 @@ class Reader_Wall_Module extends Module_Base {
             array(
                 'id'      => 'rw_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( '评论精选 / 读者墙', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( '评论精选 / 读者墙', 'qiling' ),
             ),
             array(
                 'id'    => 'rw_subtitle',
                 'type'  => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
             ),
             array(
                 'id'      => 'rw_source',
                 'type'    => 'select',
-                'label'   => __( '数据来源', 'developer-starter' ),
+                'label'   => __( '数据来源', 'qiling' ),
                 'options' => array(
-                    'latest_comments' => __( '最新评论', 'developer-starter' ),
-                    'manual'          => __( '手动输入', 'developer-starter' ),
+                    'latest_comments' => __( '最新评论', 'qiling' ),
+                    'manual'          => __( '手动输入', 'qiling' ),
                 ),
                 'default' => 'latest_comments',
             ),
             array(
                 'id'      => 'rw_count',
                 'type'    => 'number',
-                'label'   => __( '显示数量', 'developer-starter' ),
+                'label'   => __( '显示数量', 'qiling' ),
                 'default' => '8',
             ),
             array(
                 'id'      => 'rw_columns',
                 'type'    => 'select',
-                'label'   => __( '每行列数', 'developer-starter' ),
+                'label'   => __( '每行列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'rw_show_avatar',
                 'type'    => 'select',
-                'label'   => __( '显示头像', 'developer-starter' ),
+                'label'   => __( '显示头像', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'rw_show_post',
                 'type'    => 'select',
-                'label'   => __( '显示来源文章', 'developer-starter' ),
+                'label'   => __( '显示来源文章', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'            => 'rw_manual_items',
                 'type'          => 'repeater',
-                'label'         => __( '手动评论列表', 'developer-starter' ),
+                'label'         => __( '手动评论列表', 'qiling' ),
                 'default_items' => $this->get_default_items(),
                 'fields'        => array(
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
-                        'label' => __( '读者昵称', 'developer-starter' ),
+                        'label' => __( '读者昵称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'avatar',
                         'type'  => 'image',
-                        'label' => __( '头像', 'developer-starter' ),
+                        'label' => __( '头像', 'qiling' ),
                     ),
                     array(
                         'id'    => 'content',
                         'type'  => 'textarea',
-                        'label' => __( '评论内容', 'developer-starter' ),
+                        'label' => __( '评论内容', 'qiling' ),
                     ),
                     array(
                         'id'    => 'date',
                         'type'  => 'text',
-                        'label' => __( '日期', 'developer-starter' ),
+                        'label' => __( '日期', 'qiling' ),
                     ),
                     array(
                         'id'    => 'post_title',
                         'type'  => 'text',
-                        'label' => __( '来源文章标题', 'developer-starter' ),
+                        'label' => __( '来源文章标题', 'qiling' ),
                     ),
                     array(
                         'id'    => 'url',
                         'type'  => 'text',
-                        'label' => __( '链接（可选）', 'developer-starter' ),
+                        'label' => __( '链接（可选）', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'      => 'rw_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景色', 'developer-starter' ),
+                'label'   => __( '卡片背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'rw_bg_color',
                 'type'    => 'color',
-                'label'   => __( '模块背景色', 'developer-starter' ),
+                'label'   => __( '模块背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'rw_accent_color',
                 'type'    => 'color',
-                'label'   => __( '强调色', 'developer-starter' ),
+                'label'   => __( '强调色', 'qiling' ),
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '56px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '56px',
             ),
         );
@@ -285,7 +285,7 @@ class Reader_Wall_Module extends Module_Base {
             }
 
             $items[] = array(
-                'name'      => $comment->comment_author ? $comment->comment_author : __( '匿名读者', 'developer-starter' ),
+                'name'      => $comment->comment_author ? $comment->comment_author : __( '匿名读者', 'qiling' ),
                 'avatar'    => get_avatar_url( $comment, array( 'size' => 80 ) ),
                 'content'   => wp_trim_words( $content, 30, '...' ),
                 'date'      => get_comment_date( get_option( 'date_format' ), $comment ),
@@ -314,7 +314,7 @@ class Reader_Wall_Module extends Module_Base {
                 continue;
             }
             $items[] = array(
-                'name'       => $name !== '' ? $name : __( '匿名读者', 'developer-starter' ),
+                'name'       => $name !== '' ? $name : __( '匿名读者', 'qiling' ),
                 'avatar'     => isset( $row['avatar'] ) ? trim( (string) $row['avatar'] ) : '',
                 'content'    => wp_trim_words( $content, 30, '...' ),
                 'date'       => isset( $row['date'] ) ? trim( (string) $row['date'] ) : '',
@@ -336,7 +336,8 @@ class Reader_Wall_Module extends Module_Base {
         }
 
         if ( function_exists( 'mb_substr' ) ) {
-            return mb_substr( $name, 0, 1 );
+            $char = mb_substr( $name, 0, 1, 'UTF-8' );
+            return function_exists( 'mb_strtoupper' ) ? mb_strtoupper( $char, 'UTF-8' ) : strtoupper( $char );
         }
 
         return strtoupper( substr( $name, 0, 1 ) );
@@ -351,19 +352,19 @@ class Reader_Wall_Module extends Module_Base {
         $date_format = function_exists( 'developer_starter_get_date_time_format' ) ? developer_starter_get_date_time_format( false ) : get_option( 'date_format' );
         return array(
             array(
-                'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者A', 'Reader A' ) : __( '读者A', 'developer-starter' ),
+                'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者A', 'Reader A' ) : __( '读者A', 'qiling' ),
                 'avatar'     => '',
-                'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '文章非常实用，解决了我很多实际问题。', 'Very practical article. It helped solve several real project issues for me.' ) : __( '文章非常实用，解决了我很多实际问题。', 'developer-starter' ),
+                'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '文章非常实用，解决了我很多实际问题。', 'Very practical article. It helped solve several real project issues for me.' ) : __( '文章非常实用，解决了我很多实际问题。', 'qiling' ),
                 'date'       => date_i18n( $date_format ),
-                'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '主题模块实战经验', 'Practical Theme Module Notes' ) : __( '主题模块实战经验', 'developer-starter' ),
+                'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '主题模块实战经验', 'Practical Theme Module Notes' ) : __( '主题模块实战经验', 'qiling' ),
                 'url'        => '',
             ),
             array(
-                'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者B', 'Reader B' ) : __( '读者B', 'developer-starter' ),
+                'name'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '读者B', 'Reader B' ) : __( '读者B', 'qiling' ),
                 'avatar'     => '',
-                'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '希望后续能有更多案例拆解，学习成本更低。', 'Would love to see more case studies like this. They make the learning curve much easier.' ) : __( '希望后续能有更多案例拆解，学习成本更低。', 'developer-starter' ),
+                'content'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '希望后续能有更多案例拆解，学习成本更低。', 'Would love to see more case studies like this. They make the learning curve much easier.' ) : __( '希望后续能有更多案例拆解，学习成本更低。', 'qiling' ),
                 'date'       => date_i18n( $date_format, strtotime( '-1 day' ) ),
-                'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '性能优化指南', 'Performance Optimization Guide' ) : __( '性能优化指南', 'developer-starter' ),
+                'post_title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '性能优化指南', 'Performance Optimization Guide' ) : __( '性能优化指南', 'qiling' ),
                 'url'        => '',
             ),
         );

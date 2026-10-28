@@ -18,7 +18,7 @@ class Stats_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-chart-bar';
-        $this->description = __( '数据统计展示', 'developer-starter' );
+        $this->description = __( '数据统计展示', 'qiling' );
     }
 
     public function get_id() {
@@ -26,144 +26,144 @@ class Stats_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '数据统计', 'developer-starter' );
+        return __( '数据统计', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             // Title & Subtitle
-            array( 'id' => 'stats_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'stats_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => '' ),
             array(
                 'id' => 'stats_subtitle',
                 'type' => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
-                'description' => __( '支持允许的HTML标签，例如 &lt;span style="color:red"&gt;强调文本&lt;/span&gt;', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
+                'description' => __( '支持允许的HTML标签，例如 &lt;span style="color:red"&gt;强调文本&lt;/span&gt;', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id' => 'stats_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'stats_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
-                'description' => __( '留空使用默认(白色/自适应)', 'developer-starter' ),
+                'description' => __( '留空使用默认(白色/自适应)', 'qiling' ),
             ),
             
             array(
                 'id' => 'stats_text_align',
-                'label' => __( '内容对齐', 'developer-starter' ),
+                'label' => __( '内容对齐', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'left' => __( '左对齐', 'developer-starter' ),
-                    'center' => __( '居中', 'developer-starter' ),
-                    'right' => __( '右对齐', 'developer-starter' ),
+                    'left' => __( '左对齐', 'qiling' ),
+                    'center' => __( '居中', 'qiling' ),
+                    'right' => __( '右对齐', 'qiling' ),
                 ),
                 'default' => 'center',
             ),
             
             array(
                 'id' => 'stats_items',
-                'label' => __( '统计项', 'developer-starter' ),
+                'label' => __( '统计项', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'number', 'label' => __( '数字', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'label', 'label' => __( '标签', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'number_color', 'label' => __( '数字颜色', 'developer-starter' ), 'type' => 'color', 'description' => __( '留空使用模块默认颜色', 'developer-starter' ) ),
-                    array( 'id' => 'label_color', 'label' => __( '标签颜色', 'developer-starter' ), 'type' => 'color', 'description' => __( '留空使用模块默认颜色', 'developer-starter' ) ),
+                    array( 'id' => 'number', 'label' => __( '数字', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'label', 'label' => __( '标签', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'number_color', 'label' => __( '数字颜色', 'qiling' ), 'type' => 'color', 'description' => __( '留空使用模块默认颜色', 'qiling' ) ),
+                    array( 'id' => 'label_color', 'label' => __( '标签颜色', 'qiling' ), 'type' => 'color', 'description' => __( '留空使用模块默认颜色', 'qiling' ) ),
                 ),
                 'default_items' => array(
-                    array( 'number' => '500', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '服务客户', 'Clients Served' ) : __( '服务客户', 'developer-starter' ) ),
-                    array( 'number' => '10', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '年行业经验', 'Years of Experience' ) : __( '年行业经验', 'developer-starter' ) ),
-                    array( 'number' => '50', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队', 'Team Members' ) : __( '专业团队', 'developer-starter' ) ),
-                    array( 'number' => '99', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户满意度', 'Client Satisfaction' ) : __( '客户满意度', 'developer-starter' ) ),
+                    array( 'number' => '500', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '服务客户', 'Clients Served' ) : __( '服务客户', 'qiling' ) ),
+                    array( 'number' => '10', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '年行业经验', 'Years of Experience' ) : __( '年行业经验', 'qiling' ) ),
+                    array( 'number' => '50', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队', 'Team Members' ) : __( '专业团队', 'qiling' ) ),
+                    array( 'number' => '99', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户满意度', 'Client Satisfaction' ) : __( '客户满意度', 'qiling' ) ),
                 ),
             ),
             
             // 背景配置
             array(
                 'id' => 'stats_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '颜色/渐变', 'developer-starter' ),
-                    'image' => __( '背景图片', 'developer-starter' ),
+                    'color' => __( '颜色/渐变', 'qiling' ),
+                    'image' => __( '背景图片', 'qiling' ),
                 ),
                 'default' => 'image', // Default to image to match previous behavior if possible, or color
             ),
             array(
                 'id' => 'stats_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
                 'dependency' => array( 'stats_bg_type', '==', 'color' ),
             ),
             array(
                 'id' => 'stats_bg_image', // Keeping ID same as before for potential backward compat if basic image was used
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'stats_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'stats_bg_overlay',
-                'label' => __( '图片遮罩透明度', 'developer-starter' ),
+                'label' => __( '图片遮罩透明度', 'qiling' ),
                 'type' => 'text',
                 'default' => '0.6',
-                'desc' => __( '0-1之间的小数，如 0.6 表示60%黑遮罩', 'developer-starter' ),
+                'desc' => __( '0-1之间的小数，如 0.6 表示60%黑遮罩', 'qiling' ),
                 'dependency' => array( 'stats_bg_type', '==', 'image' ),
             ),
 
             // 特色布局配置（侧边图片）
             array(
                 'id' => 'stats_side_image',
-                'label' => __( '侧边配图 (3项数据时生效)', 'developer-starter' ),
+                'label' => __( '侧边配图 (3项数据时生效)', 'qiling' ),
                 'type' => 'image',
-                'description' => __( '仅当统计项刚好为3个且上传了此图片时，会启用特殊的"左图右数据"布局。', 'developer-starter' ),
+                'description' => __( '仅当统计项刚好为3个且上传了此图片时，会启用特殊的"左图右数据"布局。', 'qiling' ),
             ),
             
             // Spacing
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 80px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 80px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 80px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 80px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，统计数字将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，统计数字将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
 
     public function get_demo_data() {
         return array(
-            'stats_subtitle' => __( '这里是副标题演示，支持 <span style="color: var(--qiling-color-ff4757);">HTML标签</span>', 'developer-starter' ),
+            'stats_subtitle' => __( '这里是副标题演示，支持 <span style="color: var(--qiling-color-ff4757);">HTML标签</span>', 'qiling' ),
             'stats_bg_image' => '',
             'stats_text_align' => 'center',
             'stats_items' => array(
-                array( 'number' => '500', 'label' => __( '服务客户', 'developer-starter' ) ),
-                array( 'number' => '10', 'label' => __( '年行业经验', 'developer-starter' ) ),
-                array( 'number' => '50', 'label' => __( '专业团队', 'developer-starter' ) ),
-                array( 'number' => '99', 'label' => __( '客户满意度', 'developer-starter' ) ),
+                array( 'number' => '500', 'label' => __( '服务客户', 'qiling' ) ),
+                array( 'number' => '10', 'label' => __( '年行业经验', 'qiling' ) ),
+                array( 'number' => '50', 'label' => __( '专业团队', 'qiling' ) ),
+                array( 'number' => '99', 'label' => __( '客户满意度', 'qiling' ) ),
             ),
             'module_margin_top' => '60px',
             'module_margin_bottom' => '60px',
@@ -193,10 +193,10 @@ class Stats_Module extends Module_Base {
         // 默认数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
         if ( empty( $items ) && ! isset( $data['stats_items'] ) ) {
             $items = array(
-                array( 'number' => '500', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '服务客户', 'Clients Served' ) : __( '服务客户', 'developer-starter' ) ),
-                array( 'number' => '10', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '年行业经验', 'Years of Experience' ) : __( '年行业经验', 'developer-starter' ) ),
-                array( 'number' => '50', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队', 'Team Members' ) : __( '专业团队', 'developer-starter' ) ),
-                array( 'number' => '99', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户满意度', 'Client Satisfaction' ) : __( '客户满意度', 'developer-starter' ) ),
+                array( 'number' => '500', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '服务客户', 'Clients Served' ) : __( '服务客户', 'qiling' ) ),
+                array( 'number' => '10', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '年行业经验', 'Years of Experience' ) : __( '年行业经验', 'qiling' ) ),
+                array( 'number' => '50', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队', 'Team Members' ) : __( '专业团队', 'qiling' ) ),
+                array( 'number' => '99', 'label' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '客户满意度', 'Client Satisfaction' ) : __( '客户满意度', 'qiling' ) ),
             );
         }
         

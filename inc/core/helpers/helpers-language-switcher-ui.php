@@ -54,7 +54,7 @@ function developer_starter_output_translate_modal() {
     <div class="translate-modal-overlay" id="translate-modal-overlay"></div>
     <div class="translate-modal" id="translate-modal">
         <div class="translate-modal-header">
-            <h3><?php esc_html_e( '选择语言', 'developer-starter' ); ?></h3>
+            <h3><?php esc_html_e( '选择语言', 'qiling' ); ?></h3>
             <button type="button" class="translate-modal-close" id="translate-modal-close">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="18" y1="6" x2="6" y2="18"/>

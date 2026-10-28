@@ -110,7 +110,7 @@ class Design_Tokens {
      */
     public static function get_context_preset_choices( $options = null ) {
         return array_merge(
-            array( 'inherit' => __( '继承全局配色', 'developer-starter' ) ),
+            array( 'inherit' => __( '继承全局配色', 'qiling' ) ),
             self::get_preset_choices( $options )
         );
     }
@@ -257,32 +257,32 @@ class Design_Tokens {
     public static function get_page_design_field_definitions() {
         return array(
             'palette' => array(
-                'label'  => __( '页面配色覆盖', 'developer-starter' ),
+                'label'  => __( '页面配色覆盖', 'qiling' ),
                 'fields' => array(
-                    'primary'    => array( 'label' => __( '页面主色', 'developer-starter' ), 'type' => 'color' ),
-                    'secondary'  => array( 'label' => __( '页面辅助色', 'developer-starter' ), 'type' => 'color' ),
-                    'accent'     => array( 'label' => __( '页面点缀色', 'developer-starter' ), 'type' => 'color' ),
-                    'success'    => array( 'label' => __( '页面成功色', 'developer-starter' ), 'type' => 'color' ),
-                    'info'       => array( 'label' => __( '页面信息色', 'developer-starter' ), 'type' => 'color' ),
-                    'warning'    => array( 'label' => __( '页面警示色', 'developer-starter' ), 'type' => 'color' ),
-                    'error'      => array( 'label' => __( '页面错误色', 'developer-starter' ), 'type' => 'color' ),
-                    'overlay'    => array( 'label' => __( '页面遮罩色', 'developer-starter' ), 'type' => 'color' ),
-                    'background' => array( 'label' => __( '页面背景', 'developer-starter' ), 'type' => 'color' ),
-                    'surface'    => array( 'label' => __( '页面卡片背景', 'developer-starter' ), 'type' => 'color' ),
-                    'surface_alt' => array( 'label' => __( '页面浅色区块', 'developer-starter' ), 'type' => 'color' ),
-                    'text'       => array( 'label' => __( '页面正文颜色', 'developer-starter' ), 'type' => 'color' ),
-                    'text_muted' => array( 'label' => __( '页面弱化文字', 'developer-starter' ), 'type' => 'color' ),
-                    'heading'    => array( 'label' => __( '页面标题颜色', 'developer-starter' ), 'type' => 'color' ),
-                    'border'     => array( 'label' => __( '页面边框颜色', 'developer-starter' ), 'type' => 'color' ),
-                    'dark_bg'    => array( 'label' => __( '页面暗色背景', 'developer-starter' ), 'type' => 'color' ),
-                    'dark_surface' => array( 'label' => __( '页面暗色卡片背景', 'developer-starter' ), 'type' => 'color' ),
-                    'dark_text'  => array( 'label' => __( '页面暗色正文', 'developer-starter' ), 'type' => 'color' ),
-                    'dark_text_muted' => array( 'label' => __( '页面暗色弱化文字', 'developer-starter' ), 'type' => 'color' ),
-                    'dark_border' => array( 'label' => __( '页面暗色边框', 'developer-starter' ), 'type' => 'color' ),
+                    'primary'    => array( 'label' => __( '页面主色', 'qiling' ), 'type' => 'color' ),
+                    'secondary'  => array( 'label' => __( '页面辅助色', 'qiling' ), 'type' => 'color' ),
+                    'accent'     => array( 'label' => __( '页面点缀色', 'qiling' ), 'type' => 'color' ),
+                    'success'    => array( 'label' => __( '页面成功色', 'qiling' ), 'type' => 'color' ),
+                    'info'       => array( 'label' => __( '页面信息色', 'qiling' ), 'type' => 'color' ),
+                    'warning'    => array( 'label' => __( '页面警示色', 'qiling' ), 'type' => 'color' ),
+                    'error'      => array( 'label' => __( '页面错误色', 'qiling' ), 'type' => 'color' ),
+                    'overlay'    => array( 'label' => __( '页面遮罩色', 'qiling' ), 'type' => 'color' ),
+                    'background' => array( 'label' => __( '页面背景', 'qiling' ), 'type' => 'color' ),
+                    'surface'    => array( 'label' => __( '页面卡片背景', 'qiling' ), 'type' => 'color' ),
+                    'surface_alt' => array( 'label' => __( '页面浅色区块', 'qiling' ), 'type' => 'color' ),
+                    'text'       => array( 'label' => __( '页面正文颜色', 'qiling' ), 'type' => 'color' ),
+                    'text_muted' => array( 'label' => __( '页面弱化文字', 'qiling' ), 'type' => 'color' ),
+                    'heading'    => array( 'label' => __( '页面标题颜色', 'qiling' ), 'type' => 'color' ),
+                    'border'     => array( 'label' => __( '页面边框颜色', 'qiling' ), 'type' => 'color' ),
+                    'dark_bg'    => array( 'label' => __( '页面暗色背景', 'qiling' ), 'type' => 'color' ),
+                    'dark_surface' => array( 'label' => __( '页面暗色卡片背景', 'qiling' ), 'type' => 'color' ),
+                    'dark_text'  => array( 'label' => __( '页面暗色正文', 'qiling' ), 'type' => 'color' ),
+                    'dark_text_muted' => array( 'label' => __( '页面暗色弱化文字', 'qiling' ), 'type' => 'color' ),
+                    'dark_border' => array( 'label' => __( '页面暗色边框', 'qiling' ), 'type' => 'color' ),
                 ),
             ),
             'layout'  => array(
-                'label'  => __( '页面布局覆盖', 'developer-starter' ),
+                'label'  => __( '页面布局覆盖', 'qiling' ),
                 'fields' => array(
                     'container_width' => self::get_layout_field_definitions()['container_width'],
                     'section_spacing' => self::get_layout_field_definitions()['section_spacing'],
@@ -291,16 +291,16 @@ class Design_Tokens {
                 ),
             ),
             'structure' => array(
-                'label'  => __( '页面圆角与动效', 'developer-starter' ),
+                'label'  => __( '页面圆角与动效', 'qiling' ),
                 'fields' => self::get_page_structure_field_definitions(),
             ),
             'typography' => array(
-                'label'      => __( '页面排版覆盖', 'developer-starter' ),
+                'label'      => __( '页面排版覆盖', 'qiling' ),
                 'styles'     => self::get_typography_style_definitions(),
                 'properties' => self::get_typography_property_definitions(),
             ),
             'component_styles' => array(
-                'label'  => __( '页面组件覆盖', 'developer-starter' ),
+                'label'  => __( '页面组件覆盖', 'qiling' ),
                 'groups' => self::get_page_component_style_groups(),
             ),
         );
@@ -4525,32 +4525,30 @@ class Design_Tokens {
         $dropdown_selector = ".site-header .primary-navigation .sub-menu,.user-dropdown";
         $dropdown_link_selector = ".site-header .primary-navigation .sub-menu li a,.user-dropdown a";
         $dropdown_active_selector = ".site-header .primary-navigation .sub-menu li a:hover,.site-header .primary-navigation .sub-menu li.current-menu-item>a,.site-header .primary-navigation .sub-menu li.current-menu-ancestor>a,.site-header .primary-navigation .sub-menu li.current-menu-parent>a,.site-header .primary-navigation .sub-menu li.current_page_item>a,.site-header .primary-navigation .sub-menu li.current_page_parent>a,.site-header .primary-navigation .sub-menu li.current_page_ancestor>a,.user-dropdown a:hover";
-        $badge_selector = ".header-user-badge,.woocommerce ul.products li.product .onsale,.woocommerce span.onsale,.pricing-badge,.module :is(.badge,.label,.pill,.tag,.status-badge,.category-badge,.post-category,.highlight-label)";
+        $badge_selector = ".header-user-badge,.pricing-badge,.module :is(.badge,.label,.pill,.tag,.status-badge,.category-badge,.post-category,.highlight-label)";
         $title_bar_selector = ".module :is(.section-kicker,.section-eyebrow,.module-kicker,.module-eyebrow,.block-title-bar,.section-title-bar,.qfs-section-title)";
         $list_header_selector = ".module :is(.list-header,.table-header,.ranking-header,.software-ranking-header,.ql-list-header,.ql-table-header),.comparison-table th";
         $border_accent_selector = ".pricing-card.pricing-featured,.module :is(.is-featured,.featured-card,.highlight-card)";
         $highlight_selector = ".comparison-table .th-product.is-highlight,.module :is(.highlight-card,.highlight-block,.highlight-banner),.module :is(.ct-card,.case-card,.service-item).is-highlight";
         $highlight_soft_selector = ".comparison-table .td-value.is-highlight,.module :is(.highlight-soft,.highlight-panel,.active-card)";
-        $tabs_list_selector = ".woocommerce div.product .woocommerce-tabs ul.tabs";
-        $tabs_link_selector = ".woocommerce div.product .woocommerce-tabs ul.tabs li a,.tab-btn,.about-tab-btn";
-        $tabs_active_selector = ".woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,.tab-btn:hover,.tab-btn.active,.about-tab-btn:hover,.about-tab-btn.active";
+        $tabs_list_selector = ".tabs-nav,.tab-nav,.about-tabs";
+        $tabs_link_selector = ".tab-btn,.about-tab-btn";
+        $tabs_active_selector = ".tab-btn:hover,.tab-btn.active,.about-tab-btn:hover,.about-tab-btn.active";
         $accordion_selector = ".faq-item,.accordion-item";
         $accordion_title_selector = ".faq-item h3,.faq-question,.accordion-header,.accordion-title";
-        $pagination_selector = ".pagination-nav .page-numbers,.woocommerce nav.woocommerce-pagination ul li a,.woocommerce nav.woocommerce-pagination ul li span";
-        $pagination_active_selector = ".pagination-nav .page-numbers.current,.woocommerce nav.woocommerce-pagination ul li a:hover,.woocommerce nav.woocommerce-pagination ul li span.current";
-        $breadcrumb_selector = ".qiling-wc-breadcrumb,.breadcrumb,.breadcrumbs,.woocommerce-breadcrumb";
-        $breadcrumb_link_selector = ".qiling-wc-breadcrumb a,.breadcrumb a,.breadcrumbs a,.woocommerce-breadcrumb a";
-        $alert_selector = ".account-message,.woocommerce-error,.woocommerce-message,.woocommerce-info,.qiling-alert";
+        $pagination_selector = ".pagination-nav .page-numbers";
+        $pagination_active_selector = ".pagination-nav .page-numbers.current";
+        $breadcrumb_selector = ".breadcrumb,.breadcrumbs";
+        $breadcrumb_link_selector = ".breadcrumb a,.breadcrumbs a";
+        $alert_selector = ".account-message,.qiling-alert";
         $modal_selector = ".login-modal,.translate-modal";
         $modal_title_selector = ".login-modal-header h3,.translate-modal-header h3";
-        $sidebar_selector = ".wc-sidebar,.account-nav,.sidebar-widget,.sidebar-card";
-        $sidebar_title_selector = ".wc-sidebar .widget-title,.account-nav-title,.sidebar-widget .widget-title,.sidebar-card-title";
+        $sidebar_selector = ".account-nav,.sidebar-widget,.sidebar-card";
+        $sidebar_title_selector = ".account-nav-title,.sidebar-widget .widget-title,.sidebar-card-title";
         $footer_selector = ".site-footer:not(.site-footer--builder-replace-all),.footer-widgets";
         $footer_link_selector = ".footer-widget-area a,.footer-friend-link,.footer-copyright a,.footer-filing a,.footer-navigation a,.social-navigation a,.footer-contact-link,.footer-widget-text a";
         $footer_bottom_selector = ".footer-bottom,.footer-friend-links";
-        $woo_card_selector = ".woocommerce ul.products li.product,.woocommerce div.product,.woocommerce-cart .woocommerce,.woocommerce-checkout .woocommerce,.woocommerce-account .woocommerce";
-        $woo_card_title_selector = ".woocommerce ul.products li.product .woocommerce-loop-product__title,.woocommerce div.product .product_title,.woocommerce div.product .woocommerce-tabs .panel h2";
-        $woo_card_price_selector = ".woocommerce ul.products li.product .price,.woocommerce ul.products li.product .price ins,.woocommerce div.product p.price,.woocommerce div.product span.price";
+        
         $card_match = ":is(" . $card_selector . ")";
         $post_card_match = ":is(" . $post_card_selector . ")";
         $module_title_match = ":is(" . $module_title_selector . ")";
@@ -4626,9 +4624,6 @@ class Design_Tokens {
         $css .= $footer_bottom_selector . "{background:var(--qiling-component-footer-bottom-bg);}\n";
         $css .= $footer_link_selector . "{color:var(--qiling-component-footer-link);}\n";
         $css .= ".footer-widget-area a:hover,.footer-friend-link:hover,.footer-copyright a:hover,.footer-filing a:hover,.footer-navigation a:hover,.social-navigation a:hover,.footer-contact-link:hover,.footer-widget-text a:hover{color:var(--qiling-component-footer-link-hover);}\n";
-        $css .= $woo_card_selector . "{background:var(--qiling-component-woo-card-bg);border-color:var(--qiling-component-woo-card-border);box-shadow:var(--qiling-component-woo-card-shadow);}\n";
-        $css .= $woo_card_title_selector . "{color:var(--qiling-component-woo-card-title);}\n";
-        $css .= $woo_card_price_selector . "{color:var(--qiling-component-woo-card-price);}\n";
 
         return $css;
     }

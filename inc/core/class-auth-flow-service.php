@@ -96,7 +96,7 @@ class Auth_Flow_Service {
         }
 
         if ( '' === $username || '' === (string) $password ) {
-            return new \WP_Error( 'login_required_fields_missing', __( '请填写用户名和密码', 'developer-starter' ) );
+            return new \WP_Error( 'login_required_fields_missing', __( '请填写用户名和密码', 'qiling' ) );
         }
 
         $rate_check = $this->check_rate_limit( 'login', 5, 60 );
@@ -114,7 +114,7 @@ class Auth_Flow_Service {
 
         if ( is_wp_error( $user ) ) {
             do_action( 'developer_starter_auth_login_failed', $username, $user, developer_starter_resolve_client_ip( $this->client_ip_callback ) );
-            return new \WP_Error( 'login_failed', __( '用户名或密码错误', 'developer-starter' ) );
+            return new \WP_Error( 'login_failed', __( '用户名或密码错误', 'qiling' ) );
         }
 
         $redirect = $this->get_option( 'login_redirect_url', '' );
@@ -127,7 +127,7 @@ class Auth_Flow_Service {
         do_action( 'developer_starter_auth_login_success', $user, $redirect, developer_starter_resolve_client_ip( $this->client_ip_callback ) );
 
         return array(
-            'message'  => __( '登录成功，正在跳转...', 'developer-starter' ),
+            'message'  => __( '登录成功，正在跳转...', 'qiling' ),
             'redirect' => $redirect,
         );
     }
@@ -140,10 +140,10 @@ class Auth_Flow_Service {
      */
     public function handle_register( $request ) {
         if ( ! get_option( 'users_can_register' ) ) {
-            return new \WP_Error( 'registration_closed', __( '网站已关闭注册功能', 'developer-starter' ) );
+            return new \WP_Error( 'registration_closed', __( '网站已关闭注册功能', 'qiling' ) );
         }
         if ( function_exists( 'developer_starter_is_email_registration_allowed' ) && ! developer_starter_is_email_registration_allowed() ) {
-            return new \WP_Error( 'registration_email_disabled', __( '当前站点未开启邮箱注册', 'developer-starter' ) );
+            return new \WP_Error( 'registration_email_disabled', __( '当前站点未开启邮箱注册', 'qiling' ) );
         }
 
         $raw_username = isset( $request['username'] ) ? trim( wp_unslash( (string) $request['username'] ) ) : '';
@@ -166,7 +166,7 @@ class Auth_Flow_Service {
         }
 
         if ( '' === $username || '' === $email || '' === (string) $password ) {
-            return new \WP_Error( 'register_required_fields_missing', __( '请填写所有必填项', 'developer-starter' ) );
+            return new \WP_Error( 'register_required_fields_missing', __( '请填写所有必填项', 'qiling' ) );
         }
 
         $rate_check = $this->check_rate_limit( 'register', 3, 3600 );
@@ -175,7 +175,7 @@ class Auth_Flow_Service {
         }
 
         if ( strlen( $username ) < 3 ) {
-            return new \WP_Error( 'register_username_short', __( '用户名至少需要3个字符', 'developer-starter' ) );
+            return new \WP_Error( 'register_username_short', __( '用户名至少需要3个字符', 'qiling' ) );
         }
 
         $username_policy_check = $this->validate_register_username_chinese_policy( $username, $raw_username );
@@ -184,7 +184,7 @@ class Auth_Flow_Service {
         }
 
         if ( ! is_email( $email ) ) {
-            return new \WP_Error( 'register_invalid_email', __( '请输入有效的邮箱地址', 'developer-starter' ) );
+            return new \WP_Error( 'register_invalid_email', __( '请输入有效的邮箱地址', 'qiling' ) );
         }
 
         if ( function_exists( 'developer_starter_is_email_domain_allowed' ) && ! developer_starter_is_email_domain_allowed( $email ) ) {
@@ -193,8 +193,8 @@ class Auth_Flow_Service {
                 : '';
 
             $message = $allowed_suffixes !== ''
-                ? sprintf( __( '当前仅支持以下邮箱后缀：%s', 'developer-starter' ), $allowed_suffixes )
-                : __( '当前邮箱后缀不在允许范围内', 'developer-starter' );
+                ? sprintf( __( '当前仅支持以下邮箱后缀：%s', 'qiling' ), $allowed_suffixes )
+                : __( '当前邮箱后缀不在允许范围内', 'qiling' );
 
             return new \WP_Error( 'register_email_domain_disallowed', $message );
         }
@@ -207,7 +207,7 @@ class Auth_Flow_Service {
         }
 
         if ( $password !== $password_confirm ) {
-            return new \WP_Error( 'register_password_mismatch', __( '两次输入的密码不一致', 'developer-starter' ) );
+            return new \WP_Error( 'register_password_mismatch', __( '两次输入的密码不一致', 'qiling' ) );
         }
 
         $strength = $this->get_option( 'password_strength', 'medium' );
@@ -219,33 +219,33 @@ class Auth_Flow_Service {
         if ( $this->get_option( 'register_agreement_enable', '' ) ) {
             $agreement = isset( $request['agreement'] ) ? $request['agreement'] : '';
             if ( empty( $agreement ) ) {
-                return new \WP_Error( 'register_agreement_required', __( '请阅读并同意用户服务协议', 'developer-starter' ) );
+                return new \WP_Error( 'register_agreement_required', __( '请阅读并同意用户服务协议', 'qiling' ) );
             }
         }
 
         if ( username_exists( $username ) || email_exists( $email ) ) {
-            return new \WP_Error( 'register_user_exists', __( '该用户名或邮箱已被注册', 'developer-starter' ) );
+            return new \WP_Error( 'register_user_exists', __( '该用户名或邮箱已被注册', 'qiling' ) );
         }
 
         if ( function_exists( 'qilingshop_registration_code_is_enabled' ) && qilingshop_registration_code_is_enabled() ) {
             if ( '' === $registration_code ) {
-                return new \WP_Error( 'register_code_required', __( '请输入注册码', 'developer-starter' ) );
+                return new \WP_Error( 'register_code_required', __( '请输入注册码', 'qiling' ) );
             }
 
             if ( ! function_exists( 'qilingshop_registration_code_consume_for_registration' ) ) {
-                return new \WP_Error( 'register_code_service_missing', __( '注册码服务未加载，请联系管理员', 'developer-starter' ) );
+                return new \WP_Error( 'register_code_service_missing', __( '注册码服务未加载，请联系管理员', 'qiling' ) );
             }
 
             $consume = qilingshop_registration_code_consume_for_registration(
                 $registration_code,
                 array(
                     'register_source' => 'auth_ajax',
-                    'message'         => __( '账号注册流程预占用', 'developer-starter' ),
+                    'message'         => __( '账号注册流程预占用', 'qiling' ),
                 )
             );
 
             if ( empty( $consume['success'] ) ) {
-                $msg = ! empty( $consume['message'] ) ? $consume['message'] : __( '注册码校验失败', 'developer-starter' );
+                $msg = ! empty( $consume['message'] ) ? $consume['message'] : __( '注册码校验失败', 'qiling' );
                 return new \WP_Error( 'register_code_invalid', $msg );
             }
 
@@ -256,14 +256,14 @@ class Auth_Flow_Service {
 
         if ( is_wp_error( $user_id ) ) {
             if ( $registration_code_log_id > 0 && function_exists( 'qilingshop_registration_code_rollback_consumption' ) ) {
-                qilingshop_registration_code_rollback_consumption( $registration_code_log_id, __( '账号注册失败，注册码已回滚', 'developer-starter' ) );
+                qilingshop_registration_code_rollback_consumption( $registration_code_log_id, __( '账号注册失败，注册码已回滚', 'qiling' ) );
             }
             do_action( 'developer_starter_auth_register_failed', $username, $email, $user_id, developer_starter_resolve_client_ip( $this->client_ip_callback ) );
-            return new \WP_Error( 'register_failed', sprintf( __( '注册失败：%s', 'developer-starter' ), $user_id->get_error_message() ) );
+            return new \WP_Error( 'register_failed', sprintf( __( '注册失败：%s', 'qiling' ), $user_id->get_error_message() ) );
         }
 
         if ( $registration_code_log_id > 0 && function_exists( 'qilingshop_registration_code_confirm_consumption' ) ) {
-            qilingshop_registration_code_confirm_consumption( $registration_code_log_id, $user_id, __( '账号注册成功，注册码生效', 'developer-starter' ) );
+            qilingshop_registration_code_confirm_consumption( $registration_code_log_id, $user_id, __( '账号注册成功，注册码生效', 'qiling' ) );
         }
         if ( $register_email_code_enabled ) {
             $this->clear_register_email_code( $email );
@@ -282,7 +282,7 @@ class Auth_Flow_Service {
         do_action( 'developer_starter_auth_register_success', $user_id, $redirect, developer_starter_resolve_client_ip( $this->client_ip_callback ) );
 
         return array(
-            'message'  => __( '注册成功，正在跳转...', 'developer-starter' ),
+            'message'  => __( '注册成功，正在跳转...', 'qiling' ),
             'redirect' => $redirect,
         );
     }
@@ -303,7 +303,7 @@ class Auth_Flow_Service {
         }
 
         if ( '' === $email || ! is_email( $email ) ) {
-            return new \WP_Error( 'forgot_password_invalid_email', __( '请输入有效的邮箱地址', 'developer-starter' ) );
+            return new \WP_Error( 'forgot_password_invalid_email', __( '请输入有效的邮箱地址', 'qiling' ) );
         }
 
         $rate_check = $this->check_rate_limit( 'forgot_pass', 3, 3600 );
@@ -313,24 +313,24 @@ class Auth_Flow_Service {
 
         $user = get_user_by( 'email', $email );
         if ( ! $user ) {
-            return array( 'message' => __( '如果该邮箱已注册，您将收到重置密码的邮件', 'developer-starter' ) );
+            return array( 'message' => __( '如果该邮箱已注册，您将收到重置密码的邮件', 'qiling' ) );
         }
 
         $key = get_password_reset_key( $user );
         if ( is_wp_error( $key ) ) {
-            return new \WP_Error( 'forgot_password_key_failed', __( '发送重置邮件失败，请稍后再试', 'developer-starter' ) );
+            return new \WP_Error( 'forgot_password_key_failed', __( '发送重置邮件失败，请稍后再试', 'qiling' ) );
         }
 
         $reset_url = $this->build_password_reset_url( $user, $key );
 
         $site_name = get_bloginfo( 'name' );
-        $subject = sprintf( __( '[%s] 密码重置请求', 'developer-starter' ), $site_name );
-        $message = sprintf( __( '您好，%s！', 'developer-starter' ), $user->display_name ) . "\n\n";
-        $message .= __( "我们收到了您的密码重置请求。如果这不是您本人的操作，请忽略此邮件。\n\n", 'developer-starter' );
-        $message .= __( "点击以下链接重置您的密码：\n", 'developer-starter' );
+        $subject = sprintf( __( '[%s] 密码重置请求', 'qiling' ), $site_name );
+        $message = sprintf( __( '您好，%s！', 'qiling' ), $user->display_name ) . "\n\n";
+        $message .= __( "我们收到了您的密码重置请求。如果这不是您本人的操作，请忽略此邮件。\n\n", 'qiling' );
+        $message .= __( "点击以下链接重置您的密码：\n", 'qiling' );
         $message .= $reset_url . "\n\n";
-        $message .= __( "此链接将在24小时后失效。\n\n", 'developer-starter' );
-        $message .= sprintf( __( '—— %s', 'developer-starter' ), $site_name );
+        $message .= __( "此链接将在24小时后失效。\n\n", 'qiling' );
+        $message .= sprintf( __( '—— %s', 'qiling' ), $site_name );
         $subject = apply_filters( 'developer_starter_auth_forgot_password_subject', $subject, $user );
         $message = apply_filters( 'developer_starter_auth_forgot_password_message', $message, $user, $reset_url );
 
@@ -338,16 +338,16 @@ class Auth_Flow_Service {
         if ( function_exists( 'developer_starter_build_html_email_template' ) ) {
             $html_message = developer_starter_build_html_email_template(
                 array(
-                    'title'       => __( '密码重置请求', 'developer-starter' ),
+                    'title'       => __( '密码重置请求', 'qiling' ),
                     'intro'       => $message,
                     'lines'       => array(
-                        __( '账号', 'developer-starter' )     => $user->user_login,
-                        __( '重置链接', 'developer-starter' ) => $reset_url,
-                        __( '有效期', 'developer-starter' )   => __( '24 小时', 'developer-starter' ),
+                        __( '账号', 'qiling' )     => $user->user_login,
+                        __( '重置链接', 'qiling' ) => $reset_url,
+                        __( '有效期', 'qiling' )   => __( '24 小时', 'qiling' ),
                     ),
-                    'button_text' => __( '立即重置密码', 'developer-starter' ),
+                    'button_text' => __( '立即重置密码', 'qiling' ),
                     'button_url'  => $reset_url,
-                    'notice'      => __( '若按钮无法点击，请复制上方链接到浏览器打开。', 'developer-starter' ),
+                    'notice'      => __( '若按钮无法点击，请复制上方链接到浏览器打开。', 'qiling' ),
                 )
             );
             $html_message = apply_filters( 'developer_starter_auth_forgot_password_html_message', $html_message, $user, $reset_url, $message );
@@ -361,10 +361,10 @@ class Auth_Flow_Service {
 
         if ( $sent ) {
             do_action( 'developer_starter_auth_forgot_password_sent', $user, $email, $reset_url );
-            return array( 'message' => __( '重置密码邮件已发送，请查收您的邮箱', 'developer-starter' ) );
+            return array( 'message' => __( '重置密码邮件已发送，请查收您的邮箱', 'qiling' ) );
         }
 
-        return new \WP_Error( 'forgot_password_mail_failed', __( '邮件发送失败，请稍后再试', 'developer-starter' ) );
+        return new \WP_Error( 'forgot_password_mail_failed', __( '邮件发送失败，请稍后再试', 'qiling' ) );
     }
 
     /**
@@ -429,15 +429,15 @@ class Auth_Flow_Service {
         do_action( 'developer_starter_auth_before_reset_password', $login, developer_starter_resolve_client_ip( $this->client_ip_callback ), $this->get_safe_hook_request_payload() );
 
         if ( '' === $key || '' === $login ) {
-            return new \WP_Error( 'reset_password_invalid_link', __( '无效的重置链接', 'developer-starter' ) );
+            return new \WP_Error( 'reset_password_invalid_link', __( '无效的重置链接', 'qiling' ) );
         }
 
         if ( '' === (string) $password ) {
-            return new \WP_Error( 'reset_password_required', __( '请输入新密码', 'developer-starter' ) );
+            return new \WP_Error( 'reset_password_required', __( '请输入新密码', 'qiling' ) );
         }
 
         if ( $password !== $password_confirm ) {
-            return new \WP_Error( 'reset_password_mismatch', __( '两次输入的密码不一致', 'developer-starter' ) );
+            return new \WP_Error( 'reset_password_mismatch', __( '两次输入的密码不一致', 'qiling' ) );
         }
 
         $strength = $this->get_option( 'password_strength', 'medium' );
@@ -448,7 +448,7 @@ class Auth_Flow_Service {
 
         $user = check_password_reset_key( $key, $login );
         if ( is_wp_error( $user ) ) {
-            return new \WP_Error( 'reset_password_key_invalid', __( '重置链接已失效，请重新申请', 'developer-starter' ) );
+            return new \WP_Error( 'reset_password_key_invalid', __( '重置链接已失效，请重新申请', 'qiling' ) );
         }
 
         reset_password( $user, $password );
@@ -460,7 +460,7 @@ class Auth_Flow_Service {
         do_action( 'developer_starter_auth_reset_password_success', $user, developer_starter_resolve_client_ip( $this->client_ip_callback ) );
 
         return array(
-            'message'  => __( '密码重置成功，请使用新密码登录', 'developer-starter' ),
+            'message'  => __( '密码重置成功，请使用新密码登录', 'qiling' ),
             'redirect' => $redirect,
         );
     }
@@ -477,30 +477,30 @@ class Auth_Flow_Service {
 
         if ( 'weak' === $required_strength ) {
             if ( $length < 6 ) {
-                return array( 'valid' => false, 'message' => __( '密码至少需要6个字符', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码至少需要6个字符', 'qiling' ) );
             }
         } elseif ( 'medium' === $required_strength ) {
             if ( $length < 8 ) {
-                return array( 'valid' => false, 'message' => __( '密码至少需要8个字符', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码至少需要8个字符', 'qiling' ) );
             }
             if ( ! preg_match( '/[A-Za-z]/', (string) $password ) || ! preg_match( '/[0-9]/', (string) $password ) ) {
-                return array( 'valid' => false, 'message' => __( '密码必须包含字母和数字', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码必须包含字母和数字', 'qiling' ) );
             }
         } elseif ( 'strong' === $required_strength ) {
             if ( $length < 10 ) {
-                return array( 'valid' => false, 'message' => __( '密码至少需要10个字符', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码至少需要10个字符', 'qiling' ) );
             }
             if ( ! preg_match( '/[A-Z]/', (string) $password ) ) {
-                return array( 'valid' => false, 'message' => __( '密码必须包含大写字母', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码必须包含大写字母', 'qiling' ) );
             }
             if ( ! preg_match( '/[a-z]/', (string) $password ) ) {
-                return array( 'valid' => false, 'message' => __( '密码必须包含小写字母', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码必须包含小写字母', 'qiling' ) );
             }
             if ( ! preg_match( '/[0-9]/', (string) $password ) ) {
-                return array( 'valid' => false, 'message' => __( '密码必须包含数字', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码必须包含数字', 'qiling' ) );
             }
             if ( ! preg_match( '/[!@#$%^&*(),.?":{}|<>]/', (string) $password ) ) {
-                return array( 'valid' => false, 'message' => __( '密码必须包含特殊字符', 'developer-starter' ) );
+                return array( 'valid' => false, 'message' => __( '密码必须包含特殊字符', 'qiling' ) );
             }
         }
 
@@ -523,7 +523,7 @@ class Auth_Flow_Service {
         }
 
         if ( 'deny' === $policy ) {
-            return new \WP_Error( 'register_username_chinese_disallowed', __( '用户名不支持中文，请使用字母、数字或下划线', 'developer-starter' ) );
+            return new \WP_Error( 'register_username_chinese_disallowed', __( '用户名不支持中文，请使用字母、数字或下划线', 'qiling' ) );
         }
 
         if ( 'scan' !== $policy || ! function_exists( 'qiling_content_security_scan_text' ) ) {
@@ -534,7 +534,7 @@ class Auth_Flow_Service {
             $text,
             array(
                 'object_type'  => 'username',
-                'object_title' => __( '注册用户名', 'developer-starter' ),
+                'object_title' => __( '注册用户名', 'qiling' ),
                 'source'       => 'qiling_theme_register_username',
                 'use_remote'   => true,
             )
@@ -545,7 +545,7 @@ class Auth_Flow_Service {
 
         $status = isset( $scan['status'] ) ? (string) $scan['status'] : '';
         if ( in_array( $status, array( 'review', 'blocked' ), true ) ) {
-            return new \WP_Error( 'register_username_content_risk', __( '用户名未通过内容安全检测，请更换后重试', 'developer-starter' ) );
+            return new \WP_Error( 'register_username_content_risk', __( '用户名未通过内容安全检测，请更换后重试', 'qiling' ) );
         }
 
         return true;
@@ -588,7 +588,7 @@ class Auth_Flow_Service {
 
         $captcha = isset( $request['captcha_verified'] ) ? $request['captcha_verified'] : '';
         if ( ! $this->consume_captcha_token( $captcha ) ) {
-            return new \WP_Error( 'captcha_required', __( '请完成滑动验证', 'developer-starter' ) );
+            return new \WP_Error( 'captcha_required', __( '请完成滑动验证', 'qiling' ) );
         }
 
         return true;

@@ -82,10 +82,10 @@ class Blog_Visual_Manager {
      */
     public static function get_preset_choices() {
         return array(
-            'default'   => __( '默认企业内容', 'developer-starter' ),
-            'developer' => __( '技术开发者', 'developer-starter' ),
-            'minimal'   => __( '极简', 'developer-starter' ),
-            'artist'    => __( '艺术家', 'developer-starter' ),
+            'default'   => __( '默认企业内容', 'qiling' ),
+            'developer' => __( '技术开发者', 'qiling' ),
+            'minimal'   => __( '极简', 'qiling' ),
+            'artist'    => __( '艺术家', 'qiling' ),
         );
     }
 
@@ -108,7 +108,7 @@ class Blog_Visual_Manager {
      */
     public static function get_module_preset_choices() {
         return array(
-            'inherit' => __( '继承页面/全局', 'developer-starter' ),
+            'inherit' => __( '继承页面/全局', 'qiling' ),
         ) + self::get_preset_choices();
     }
 
@@ -119,9 +119,9 @@ class Blog_Visual_Manager {
      */
     public static function get_visibility_override_choices() {
         return array(
-            ''     => __( '使用该风格内置默认值', 'developer-starter' ),
-            'show' => __( '显示', 'developer-starter' ),
-            'hide' => __( '隐藏', 'developer-starter' ),
+            ''     => __( '使用该风格内置默认值', 'qiling' ),
+            'show' => __( '显示', 'qiling' ),
+            'hide' => __( '隐藏', 'qiling' ),
         );
     }
 
@@ -133,16 +133,16 @@ class Blog_Visual_Manager {
      */
     public static function get_category_layout_choices( $include_auto = false ) {
         $choices = array(
-            'card'     => __( '卡片布局', 'developer-starter' ),
-            'list'     => __( '列表布局', 'developer-starter' ),
-            'grid'     => __( '网格布局', 'developer-starter' ),
-            'magazine' => __( '杂志布局', 'developer-starter' ),
-            'video'    => __( '视频布局', 'developer-starter' ),
+            'card'     => __( '卡片布局', 'qiling' ),
+            'list'     => __( '列表布局', 'qiling' ),
+            'grid'     => __( '网格布局', 'qiling' ),
+            'magazine' => __( '杂志布局', 'qiling' ),
+            'video'    => __( '视频布局', 'qiling' ),
         );
 
         if ( $include_auto ) {
             return array(
-                '' => __( '使用该风格内置默认值', 'developer-starter' ),
+                '' => __( '使用该风格内置默认值', 'qiling' ),
             ) + $choices;
         }
 
@@ -157,14 +157,14 @@ class Blog_Visual_Manager {
      */
     public static function get_columns_choices( $include_auto = false ) {
         $choices = array(
-            '2' => __( '2 列', 'developer-starter' ),
-            '3' => __( '3 列', 'developer-starter' ),
-            '4' => __( '4 列', 'developer-starter' ),
+            '2' => __( '2 列', 'qiling' ),
+            '3' => __( '3 列', 'qiling' ),
+            '4' => __( '4 列', 'qiling' ),
         );
 
         if ( $include_auto ) {
             return array(
-                '' => __( '使用该风格内置默认值', 'developer-starter' ),
+                '' => __( '使用该风格内置默认值', 'qiling' ),
             ) + $choices;
         }
 
@@ -179,158 +179,158 @@ class Blog_Visual_Manager {
     public static function get_preset_customization_schema() {
         return array(
             'native'   => array(
-                'title'       => __( '原生文章流', 'developer-starter' ),
-                'description' => __( '作用于首页最新文章、归档页和原生文章卡片流。', 'developer-starter' ),
+                'title'       => __( '原生文章流', 'qiling' ),
+                'description' => __( '作用于首页最新文章、归档页和原生文章卡片流。', 'qiling' ),
                 'fields'      => array(
                     'native_columns'           => array(
                         'type'        => 'select',
-                        'label'       => __( '列表列数', 'developer-starter' ),
+                        'label'       => __( '列表列数', 'qiling' ),
                         'choices'     => self::get_columns_choices( true ),
-                        'description' => __( '留空继续使用该风格当前的默认列数。', 'developer-starter' ),
+                        'description' => __( '留空继续使用该风格当前的默认列数。', 'qiling' ),
                     ),
                     'native_thumb_height'      => array(
                         'type'        => 'number',
-                        'label'       => __( '缩略图高度', 'developer-starter' ),
+                        'label'       => __( '缩略图高度', 'qiling' ),
                         'min'         => 0,
                         'max'         => 600,
                         'suffix'      => 'px',
                         'placeholder' => '0',
-                        'description' => __( '留空或填 0 时使用该风格默认缩略图高度。', 'developer-starter' ),
+                        'description' => __( '留空或填 0 时使用该风格默认缩略图高度。', 'qiling' ),
                     ),
                     'native_excerpt_length'    => array(
                         'type'        => 'number',
-                        'label'       => __( '摘要字数', 'developer-starter' ),
+                        'label'       => __( '摘要字数', 'qiling' ),
                         'min'         => 0,
                         'max'         => 200,
                         'placeholder' => '0',
-                        'description' => __( '留空或填 0 时使用该风格默认摘要长度。', 'developer-starter' ),
+                        'description' => __( '留空或填 0 时使用该风格默认摘要长度。', 'qiling' ),
                     ),
                     'native_show_thumb'        => array(
                         'type'        => 'select',
-                        'label'       => __( '缩略图显示', 'developer-starter' ),
+                        'label'       => __( '缩略图显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '单独覆盖该风格的缩略图显隐。', 'developer-starter' ),
+                        'description' => __( '单独覆盖该风格的缩略图显隐。', 'qiling' ),
                     ),
                     'native_show_excerpt'      => array(
                         'type'        => 'select',
-                        'label'       => __( '摘要显示', 'developer-starter' ),
+                        'label'       => __( '摘要显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '单独覆盖该风格的摘要显隐。', 'developer-starter' ),
+                        'description' => __( '单独覆盖该风格的摘要显隐。', 'qiling' ),
                     ),
                     'native_show_date'         => array(
                         'type'        => 'select',
-                        'label'       => __( '日期显示', 'developer-starter' ),
+                        'label'       => __( '日期显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '单独覆盖该风格的日期显隐。', 'developer-starter' ),
+                        'description' => __( '单独覆盖该风格的日期显隐。', 'qiling' ),
                     ),
                     'native_show_author'       => array(
                         'type'        => 'select',
-                        'label'       => __( '作者显示', 'developer-starter' ),
+                        'label'       => __( '作者显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '单独覆盖该风格的作者信息显隐。', 'developer-starter' ),
+                        'description' => __( '单独覆盖该风格的作者信息显隐。', 'qiling' ),
                     ),
                     'native_show_category'     => array(
                         'type'        => 'select',
-                        'label'       => __( '分类显示', 'developer-starter' ),
+                        'label'       => __( '分类显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '单独覆盖该风格的分类标签显隐。', 'developer-starter' ),
+                        'description' => __( '单独覆盖该风格的分类标签显隐。', 'qiling' ),
                     ),
                     'native_show_reading_time' => array(
                         'type'        => 'select',
-                        'label'       => __( '阅读时长显示', 'developer-starter' ),
+                        'label'       => __( '阅读时长显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '单独覆盖该风格的阅读时长显隐。', 'developer-starter' ),
+                        'description' => __( '单独覆盖该风格的阅读时长显隐。', 'qiling' ),
                     ),
                 ),
             ),
             'category' => array(
-                'title'       => __( '分类页默认值', 'developer-starter' ),
-                'description' => __( '分类未单独设置时，会优先采用当前风格这里的默认值。', 'developer-starter' ),
+                'title'       => __( '分类页默认值', 'qiling' ),
+                'description' => __( '分类未单独设置时，会优先采用当前风格这里的默认值。', 'qiling' ),
                 'fields'      => array(
                     'category_layout'          => array(
                         'type'        => 'select',
-                        'label'       => __( '默认布局', 'developer-starter' ),
+                        'label'       => __( '默认布局', 'qiling' ),
                         'choices'     => self::get_category_layout_choices( true ),
-                        'description' => __( '留空继续使用该风格内置的分类布局节奏。', 'developer-starter' ),
+                        'description' => __( '留空继续使用该风格内置的分类布局节奏。', 'qiling' ),
                     ),
                     'category_columns'         => array(
                         'type'        => 'select',
-                        'label'       => __( '默认列数', 'developer-starter' ),
+                        'label'       => __( '默认列数', 'qiling' ),
                         'choices'     => self::get_columns_choices( true ),
-                        'description' => __( '仅在卡片/网格布局下生效。', 'developer-starter' ),
+                        'description' => __( '仅在卡片/网格布局下生效。', 'qiling' ),
                     ),
                     'category_posts_per_page'  => array(
                         'type'        => 'number',
-                        'label'       => __( '每页文章数', 'developer-starter' ),
+                        'label'       => __( '每页文章数', 'qiling' ),
                         'min'         => 0,
                         'max'         => 100,
                         'placeholder' => '0',
-                        'description' => __( '留空或填 0 时回退到全局分类页设置或 WordPress 默认值。', 'developer-starter' ),
+                        'description' => __( '留空或填 0 时回退到全局分类页设置或 WordPress 默认值。', 'qiling' ),
                     ),
                     'category_thumb_height'    => array(
                         'type'        => 'number',
-                        'label'       => __( '缩略图高度', 'developer-starter' ),
+                        'label'       => __( '缩略图高度', 'qiling' ),
                         'min'         => 0,
                         'max'         => 600,
                         'suffix'      => 'px',
                         'placeholder' => '0',
-                        'description' => __( '分类未单独设置缩略图高度时使用。', 'developer-starter' ),
+                        'description' => __( '分类未单独设置缩略图高度时使用。', 'qiling' ),
                     ),
                     'category_excerpt_length'  => array(
                         'type'        => 'number',
-                        'label'       => __( '摘要字数', 'developer-starter' ),
+                        'label'       => __( '摘要字数', 'qiling' ),
                         'min'         => 0,
                         'max'         => 200,
                         'placeholder' => '0',
-                        'description' => __( '分类未单独设置摘要字数时使用。', 'developer-starter' ),
+                        'description' => __( '分类未单独设置摘要字数时使用。', 'qiling' ),
                     ),
                     'category_show_thumb'      => array(
                         'type'        => 'select',
-                        'label'       => __( '缩略图显示', 'developer-starter' ),
+                        'label'       => __( '缩略图显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '为当前风格的分类页设置默认显隐。', 'developer-starter' ),
+                        'description' => __( '为当前风格的分类页设置默认显隐。', 'qiling' ),
                     ),
                     'category_show_excerpt'    => array(
                         'type'        => 'select',
-                        'label'       => __( '摘要显示', 'developer-starter' ),
+                        'label'       => __( '摘要显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '为当前风格的分类页设置默认显隐。', 'developer-starter' ),
+                        'description' => __( '为当前风格的分类页设置默认显隐。', 'qiling' ),
                     ),
                     'category_show_date'       => array(
                         'type'        => 'select',
-                        'label'       => __( '日期显示', 'developer-starter' ),
+                        'label'       => __( '日期显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '为当前风格的分类页设置默认显隐。', 'developer-starter' ),
+                        'description' => __( '为当前风格的分类页设置默认显隐。', 'qiling' ),
                     ),
                     'category_show_category'   => array(
                         'type'        => 'select',
-                        'label'       => __( '分类标签显示', 'developer-starter' ),
+                        'label'       => __( '分类标签显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '为当前风格的分类页设置默认显隐。', 'developer-starter' ),
+                        'description' => __( '为当前风格的分类页设置默认显隐。', 'qiling' ),
                     ),
                     'category_show_author'     => array(
                         'type'        => 'select',
-                        'label'       => __( '作者显示', 'developer-starter' ),
+                        'label'       => __( '作者显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '为当前风格的分类页设置默认显隐。', 'developer-starter' ),
+                        'description' => __( '为当前风格的分类页设置默认显隐。', 'qiling' ),
                     ),
                     'category_show_breadcrumb' => array(
                         'type'        => 'select',
-                        'label'       => __( '面包屑显示', 'developer-starter' ),
+                        'label'       => __( '面包屑显示', 'qiling' ),
                         'choices'     => self::get_visibility_override_choices(),
-                        'description' => __( '分类未单独设置时，决定当前风格是否默认显示面包屑。', 'developer-starter' ),
+                        'description' => __( '分类未单独设置时，决定当前风格是否默认显示面包屑。', 'qiling' ),
                     ),
                 ),
             ),
             'custom'   => array(
-                'title'       => __( '风格附加 CSS', 'developer-starter' ),
-                'description' => __( '补充该风格的细节规则。建议写在 body.qiling-blog-preset-xxx 或 .module-blog.blog-preset-xxx 作用域下。', 'developer-starter' ),
+                'title'       => __( '风格附加 CSS', 'qiling' ),
+                'description' => __( '补充该风格的细节规则。建议写在 body.qiling-blog-preset-xxx 或 .module-blog.blog-preset-xxx 作用域下。', 'qiling' ),
                 'fields'      => array(
                     'custom_css' => array(
                         'type'        => 'textarea',
-                        'label'       => __( '附加 CSS', 'developer-starter' ),
+                        'label'       => __( '附加 CSS', 'qiling' ),
                         'rows'        => 8,
-                        'description' => __( '这里只会在博客相关页面加载。建议写带作用域的选择器，避免误伤其他页面。', 'developer-starter' ),
+                        'description' => __( '这里只会在博客相关页面加载。建议写带作用域的选择器，避免误伤其他页面。', 'qiling' ),
                     ),
                 ),
             ),
@@ -964,37 +964,37 @@ class Blog_Visual_Manager {
     private static function get_template_center_variant_definitions() {
         return array(
             'developer-blog' => array(
-                'label'            => __( '开发者博客', 'developer-starter' ),
-                'description'      => __( '面向技术文章、开发日志、接口文档和开源内容的博客入口，默认使用开发者风格预设。', 'developer-starter' ),
-                'scenario'         => __( '技术文章、开发日志、文档型博客', 'developer-starter' ),
+                'label'            => __( '开发者博客', 'qiling' ),
+                'description'      => __( '面向技术文章、开发日志、接口文档和开源内容的博客入口，默认使用开发者风格预设。', 'qiling' ),
+                'scenario'         => __( '技术文章、开发日志、文档型博客', 'qiling' ),
                 'badges'           => array(
-                    __( '开发者', 'developer-starter' ),
-                    __( '技术内容', 'developer-starter' ),
-                    __( '预设样板', 'developer-starter' ),
+                    __( '开发者', 'qiling' ),
+                    __( '技术内容', 'qiling' ),
+                    __( '预设样板', 'qiling' ),
                 ),
                 'template_variant' => self::TEMPLATE_CENTER_VARIANT_DEVELOPER,
                 'order_offset'     => 1,
             ),
             'minimal-blog'   => array(
-                'label'            => __( '极简博客', 'developer-starter' ),
-                'description'      => __( '面向个人写作、独立博客和克制型内容展示的轻量博客入口，默认使用极简风格预设。', 'developer-starter' ),
-                'scenario'         => __( '个人写作、独立博客、产品随笔', 'developer-starter' ),
+                'label'            => __( '极简博客', 'qiling' ),
+                'description'      => __( '面向个人写作、独立博客和克制型内容展示的轻量博客入口，默认使用极简风格预设。', 'qiling' ),
+                'scenario'         => __( '个人写作、独立博客、产品随笔', 'qiling' ),
                 'badges'           => array(
-                    __( '极简', 'developer-starter' ),
-                    __( '留白排版', 'developer-starter' ),
-                    __( '预设样板', 'developer-starter' ),
+                    __( '极简', 'qiling' ),
+                    __( '留白排版', 'qiling' ),
+                    __( '预设样板', 'qiling' ),
                 ),
                 'template_variant' => self::TEMPLATE_CENTER_VARIANT_MINIMAL,
                 'order_offset'     => 2,
             ),
             'artist-blog'    => array(
-                'label'            => __( '艺术家博客', 'developer-starter' ),
-                'description'      => __( '面向作品笔记、图像随笔、创作过程和视觉档案的表达型博客入口，默认使用艺术家风格预设。', 'developer-starter' ),
-                'scenario'         => __( '作品笔记、图像随笔、创作档案', 'developer-starter' ),
+                'label'            => __( '艺术家博客', 'qiling' ),
+                'description'      => __( '面向作品笔记、图像随笔、创作过程和视觉档案的表达型博客入口，默认使用艺术家风格预设。', 'qiling' ),
+                'scenario'         => __( '作品笔记、图像随笔、创作档案', 'qiling' ),
                 'badges'           => array(
-                    __( '艺术家', 'developer-starter' ),
-                    __( '拼贴编排', 'developer-starter' ),
-                    __( '预设样板', 'developer-starter' ),
+                    __( '艺术家', 'qiling' ),
+                    __( '拼贴编排', 'qiling' ),
+                    __( '预设样板', 'qiling' ),
                 ),
                 'template_variant' => self::TEMPLATE_CENTER_VARIANT_ARTIST,
                 'order_offset'     => 3,

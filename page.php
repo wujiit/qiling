@@ -84,7 +84,7 @@ if ( $has_modules ) {
                             if ( $basic_page_links_enabled ) {
                                 wp_link_pages(
                                     array(
-                                        'before'      => '<nav class="page-links" aria-label="' . esc_attr__( '页面分页', 'developer-starter' ) . '"><span class="page-links__label">' . esc_html__( '分页：', 'developer-starter' ) . '</span>',
+                                        'before'      => '<nav class="page-links" aria-label="' . esc_attr__( '页面分页', 'qiling' ) . '"><span class="page-links__label">' . esc_html__( '分页：', 'qiling' ) . '</span>',
                                         'after'       => '</nav>',
                                         'link_before' => '<span class="page-links__item">',
                                         'link_after'  => '</span>',

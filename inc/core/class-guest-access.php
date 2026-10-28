@@ -248,7 +248,7 @@ class Guest_Access {
         <p class="description description-wide">
             <label>
                 <input type="checkbox" value="1" name="ds_menu_login_required[<?php echo esc_attr( $item_id ); ?>]" <?php checked( $checked ); ?> />
-                <?php esc_html_e( '仅登录用户可见', 'developer-starter' ); ?>
+                <?php esc_html_e( '仅登录用户可见', 'qiling' ); ?>
             </label>
         </p>
         <?php
@@ -271,9 +271,9 @@ class Guest_Access {
         status_header( 200 );
         nocache_headers();
 
-        $title = developer_starter_get_option( 'guest_access_prompt_title', __( '该内容仅登录用户可见', 'developer-starter' ) );
-        $desc = developer_starter_get_option( 'guest_access_prompt_desc', __( '请登录后继续浏览', 'developer-starter' ) );
-        $login_text = developer_starter_get_option( 'guest_access_login_button_text', __( '立即登录', 'developer-starter' ) );
+        $title = developer_starter_get_option( 'guest_access_prompt_title', __( '该内容仅登录用户可见', 'qiling' ) );
+        $desc = developer_starter_get_option( 'guest_access_prompt_desc', __( '请登录后继续浏览', 'qiling' ) );
+        $login_text = developer_starter_get_option( 'guest_access_login_button_text', __( '立即登录', 'qiling' ) );
         $show_login = developer_starter_get_option( 'guest_access_login_button_enable', '1' ) !== '0';
         $extra_text = trim( (string) developer_starter_get_option( 'guest_access_extra_button_text', '' ) );
         $extra_url = trim( (string) developer_starter_get_option( 'guest_access_extra_button_url', '' ) );
@@ -299,7 +299,7 @@ class Guest_Access {
         <div class="guest-access-section">
             <div class="container">
                 <div class="guest-access-card">
-                    <div class="guest-access-icon">🔒</div>
+                    <div class="guest-access-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
                     <h2 class="guest-access-title"><?php echo esc_html( $title ); ?></h2>
                     <p class="guest-access-desc"><?php echo esc_html( $desc ); ?></p>
                     <div class="guest-access-actions">
@@ -331,8 +331,16 @@ class Guest_Access {
                 margin: 0 auto;
             }
             .guest-access-icon {
-                font-size: 52px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #0ea5e9;
                 margin-bottom: 16px;
+            }
+            .guest-access-icon svg {
+                display: block;
+                width: 52px;
+                height: 52px;
             }
             .guest-access-title {
                 font-size: 22px;

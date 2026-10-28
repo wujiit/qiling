@@ -31,7 +31,7 @@ class Ticket_Showcase_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'homepage';
         $this->icon        = 'dashicons-tickets-alt';
-        $this->description = __( '展示景点门票和价格', 'developer-starter' );
+        $this->description = __( '展示景点门票和价格', 'qiling' );
     }
 
     /**
@@ -49,7 +49,7 @@ class Ticket_Showcase_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '景点门票', 'developer-starter' );
+        return __( '景点门票', 'qiling' );
     }
 
     /**
@@ -65,24 +65,24 @@ class Ticket_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ticket_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门景点门票', 'Popular Attraction Tickets' ) : __( '热门景点门票', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门景点门票', 'Popular Attraction Tickets' ) : __( '热门景点门票', 'qiling' ),
             ),
             array(
                 'id'      => 'ticket_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2rem',
             ),
             array(
                 'id'    => 'ticket_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'    => 'ticket_subtitle',
                 'type'  => 'text',
-                'label' => __( '副标题', 'developer-starter' ),
+                'label' => __( '副标题', 'qiling' ),
             ),
 
             // ========================================
@@ -91,22 +91,22 @@ class Ticket_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ticket_columns',
                 'type'    => 'select',
-                'label'   => __( '列数', 'developer-starter' ),
+                'label'   => __( '列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'ticket_card_style',
                 'type'    => 'select',
-                'label'   => __( '卡片样式', 'developer-starter' ),
+                'label'   => __( '卡片样式', 'qiling' ),
                 'options' => array(
-                    'standard' => __( '标准卡片', 'developer-starter' ),
-                    'minimal'  => __( '简约风格', 'developer-starter' ),
-                    'featured' => __( '突出价格', 'developer-starter' ),
+                    'standard' => __( '标准卡片', 'qiling' ),
+                    'minimal'  => __( '简约风格', 'qiling' ),
+                    'featured' => __( '突出价格', 'qiling' ),
                 ),
                 'default' => 'standard',
             ),
@@ -117,139 +117,139 @@ class Ticket_Showcase_Module extends Module_Base {
             array(
                 'id'     => 'ticket_items',
                 'type'   => 'repeater',
-                'label'  => __( '门票列表', 'developer-starter' ),
+                'label'  => __( '门票列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '景点图片', 'developer-starter' ),
+                        'label' => __( '景点图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
-                        'label' => __( '门票名称', 'developer-starter' ),
+                        'label' => __( '门票名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'textarea',
-                        'label' => __( '门票描述', 'developer-starter' ),
+                        'label' => __( '门票描述', 'qiling' ),
                         'rows'  => 2,
                     ),
                     array(
                         'id'    => 'price',
                         'type'  => 'text',
-                        'label' => __( '现价', 'developer-starter' ),
-                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 128 ) : __( '如：¥128', 'developer-starter' ),
+                        'label' => __( '现价', 'qiling' ),
+                        'desc'  => function_exists( 'developer_starter_get_demo_price_hint' ) ? developer_starter_get_demo_price_hint( 128 ) : __( '如：¥128', 'qiling' ),
                     ),
                     array(
                         'id'    => 'original_price',
                         'type'  => 'text',
-                        'label' => __( '原价', 'developer-starter' ),
+                        'label' => __( '原价', 'qiling' ),
                     ),
                     array(
                         'id'    => 'validity',
                         'type'  => 'text',
-                        'label' => __( '有效期', 'developer-starter' ),
-                        'desc'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '如：当日有效、30天内有效', 'Examples: Valid today, Valid for 30 days' ) : __( '如：当日有效、30天内有效', 'developer-starter' ),
+                        'label' => __( '有效期', 'qiling' ),
+                        'desc'  => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '如：当日有效、30天内有效', 'Examples: Valid today, Valid for 30 days' ) : __( '如：当日有效、30天内有效', 'qiling' ),
                     ),
                     array(
                         'id'      => 'ticket_type',
                         'type'    => 'select',
-                        'label'   => __( '票务类型', 'developer-starter' ),
+                        'label'   => __( '票务类型', 'qiling' ),
                         'options' => array(
-                            'e-ticket'  => __( '电子票', 'developer-starter' ),
-                            'physical'  => __( '实体票', 'developer-starter' ),
-                            'both'      => __( '电子/实体', 'developer-starter' ),
+                            'e-ticket'  => __( '电子票', 'qiling' ),
+                            'physical'  => __( '实体票', 'qiling' ),
+                            'both'      => __( '电子/实体', 'qiling' ),
                         ),
                         'default' => 'e-ticket',
                     ),
                     array(
                         'id'      => 'audience',
                         'type'    => 'select',
-                        'label'   => __( '适用人群', 'developer-starter' ),
+                        'label'   => __( '适用人群', 'qiling' ),
                         'options' => array(
-                            'adult'   => __( '成人票', 'developer-starter' ),
-                            'child'   => __( '儿童票', 'developer-starter' ),
-                            'student' => __( '学生票', 'developer-starter' ),
-                            'senior'  => __( '老人票', 'developer-starter' ),
-                            'family'  => __( '家庭套票', 'developer-starter' ),
-                            'all'     => __( '通用票', 'developer-starter' ),
+                            'adult'   => __( '成人票', 'qiling' ),
+                            'child'   => __( '儿童票', 'qiling' ),
+                            'student' => __( '学生票', 'qiling' ),
+                            'senior'  => __( '老人票', 'qiling' ),
+                            'family'  => __( '家庭套票', 'qiling' ),
+                            'all'     => __( '通用票', 'qiling' ),
                         ),
                         'default' => 'adult',
                     ),
                     array(
                         'id'    => 'features',
                         'type'  => 'textarea',
-                        'label' => __( '包含项目', 'developer-starter' ),
-                        'desc'  => __( '每行一个项目', 'developer-starter' ),
+                        'label' => __( '包含项目', 'qiling' ),
+                        'desc'  => __( '每行一个项目', 'qiling' ),
                         'rows'  => 4,
                     ),
                     array(
                         'id'      => 'badge',
                         'type'    => 'select',
-                        'label'   => __( '促销标签', 'developer-starter' ),
+                        'label'   => __( '促销标签', 'qiling' ),
                         'options' => array(
-                            ''          => __( '无', 'developer-starter' ),
-                            'hot'       => __( '热卖', 'developer-starter' ),
-                            'recommend' => __( '推荐', 'developer-starter' ),
-                            'limited'   => __( '限时', 'developer-starter' ),
-                            'vip'       => __( 'VIP', 'developer-starter' ),
+                            ''          => __( '无', 'qiling' ),
+                            'hot'       => __( '热卖', 'qiling' ),
+                            'recommend' => __( '推荐', 'qiling' ),
+                            'limited'   => __( '限时', 'qiling' ),
+                            'vip'       => __( 'VIP', 'qiling' ),
                         ),
                     ),
                     array(
                         'id'      => 'btn_text',
                         'type'    => 'text',
-                        'label'   => __( '按钮文字', 'developer-starter' ),
-                        'default' => __( '立即预订', 'developer-starter' ),
+                        'label'   => __( '按钮文字', 'qiling' ),
+                        'default' => __( '立即预订', 'qiling' ),
                     ),
                     array(
                         'id'      => 'btn_link',
                         'type'    => 'text',
-                        'label'   => __( '购票链接', 'developer-starter' ),
+                        'label'   => __( '购票链接', 'qiling' ),
                         'default' => '#',
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '亚龙湾热带天堂森林公园', 'Rainforest Park Pass' ) : __( '亚龙湾热带天堂森林公园', 'developer-starter' ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热带雨林探秘，俯瞰亚龙湾全景', 'Explore the rainforest with panoramic bay views.' ) : __( '热带雨林探秘，俯瞰亚龙湾全景', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '亚龙湾热带天堂森林公园', 'Rainforest Park Pass' ) : __( '亚龙湾热带天堂森林公园', 'qiling' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热带雨林探秘，俯瞰亚龙湾全景', 'Explore the rainforest with panoramic bay views.' ) : __( '热带雨林探秘，俯瞰亚龙湾全景', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 158 ) : '¥158',
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 198 ) : '¥198',
-                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'qiling' ),
                         'ticket_type'    => 'e-ticket',
                         'audience'       => 'adult',
-                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n玻璃栈道\n滑索体验", "Park admission\nGlass skywalk\nZipline experience" ) : __( "景区大门票\n玻璃栈道\n滑索体验", 'developer-starter' ),
+                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n玻璃栈道\n滑索体验", "Park admission\nGlass skywalk\nZipline experience" ) : __( "景区大门票\n玻璃栈道\n滑索体验", 'qiling' ),
                         'badge'          => 'hot',
-                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_text'       => __( '立即预订', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南山文化旅游区', 'Cultural Heritage Park' ) : __( '南山文化旅游区', 'developer-starter' ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南海观音圣像，祈福圣地', 'An iconic cultural destination with coastal landmarks.' ) : __( '南海观音圣像，祈福圣地', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南山文化旅游区', 'Cultural Heritage Park' ) : __( '南山文化旅游区', 'qiling' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南海观音圣像，祈福圣地', 'An iconic cultural destination with coastal landmarks.' ) : __( '南海观音圣像，祈福圣地', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 129 ) : '¥129',
                         'original_price' => '',
-                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'qiling' ),
                         'ticket_type'    => 'e-ticket',
                         'audience'       => 'adult',
-                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n南海观音\n长寿谷", "Park admission\nCultural monuments\nScenic valley route" ) : __( "景区大门票\n南海观音\n长寿谷", 'developer-starter' ),
+                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n南海观音\n长寿谷", "Park admission\nCultural monuments\nScenic valley route" ) : __( "景区大门票\n南海观音\n长寿谷", 'qiling' ),
                         'badge'          => 'recommend',
-                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_text'       => __( '立即预订', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                     array(
                         'image'          => '',
-                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '天涯海角风景区', 'Coastal Landmark Ticket' ) : __( '天涯海角风景区', 'developer-starter' ),
-                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '经典地标，浪漫海滨', 'A classic seaside stop for scenic coastal photos.' ) : __( '经典地标，浪漫海滨', 'developer-starter' ),
+                        'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '天涯海角风景区', 'Coastal Landmark Ticket' ) : __( '天涯海角风景区', 'qiling' ),
+                        'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '经典地标，浪漫海滨', 'A classic seaside stop for scenic coastal photos.' ) : __( '经典地标，浪漫海滨', 'qiling' ),
                         'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 68 ) : '¥68',
                         'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 81 ) : '¥81',
-                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                        'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'qiling' ),
                         'ticket_type'    => 'e-ticket',
                         'audience'       => 'adult',
-                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n天涯石\n海角石", "Park admission\nSignature rock landmark\nSeaside viewpoint" ) : __( "景区大门票\n天涯石\n海角石", 'developer-starter' ),
+                        'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n天涯石\n海角石", "Park admission\nSignature rock landmark\nSeaside viewpoint" ) : __( "景区大门票\n天涯石\n海角石", 'qiling' ),
                         'badge'          => 'limited',
-                        'btn_text'       => __( '立即预订', 'developer-starter' ),
+                        'btn_text'       => __( '立即预订', 'qiling' ),
                         'btn_link'       => '#',
                     ),
                 ),
@@ -257,33 +257,33 @@ class Ticket_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ticket_btn_bg_color',
                 'type'    => 'color',
-                'label'   => __( '购票按钮背景颜色', 'developer-starter' ),
+                'label'   => __( '购票按钮背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'      => 'ticket_btn_text_color',
                 'type'    => 'color',
-                'label'   => __( '购票按钮文字颜色', 'developer-starter' ),
+                'label'   => __( '购票按钮文字颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'ticket_btn_border_color', __( '购票按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'ticket_btn_border_color', __( '购票按钮边框颜色', 'qiling' ) ),
             array(
                 'id'      => 'ticket_btn_hover_bg_color',
                 'type'    => 'color',
-                'label'   => __( '购票按钮悬停背景颜色', 'developer-starter' ),
+                'label'   => __( '购票按钮悬停背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'      => 'ticket_btn_hover_text_color',
                 'type'    => 'color',
-                'label'   => __( '购票按钮悬停文字颜色', 'developer-starter' ),
+                'label'   => __( '购票按钮悬停文字颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'desc'    => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'ticket_btn_hover_border_color', __( '购票按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随购票按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'ticket_btn_hover_border_color', __( '购票按钮悬停边框颜色', 'qiling' ), __( '留空时跟随购票按钮悬停背景颜色。', 'qiling' ) ),
 
             // ========================================
             // 背景设置
@@ -291,19 +291,19 @@ class Ticket_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'module_bg_color',
                 'type'    => 'color',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
 
@@ -313,10 +313,10 @@ class Ticket_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'enable_staggered_animation',
                 'type'    => 'select',
-                'label'   => __( '开启逐个显示动画', 'developer-starter' ),
+                'label'   => __( '开启逐个显示动画', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -339,7 +339,7 @@ class Ticket_Showcase_Module extends Module_Base {
         // ========================================
         $title       = isset( $data['ticket_title'] ) && $data['ticket_title'] !== '' 
                        ? $data['ticket_title'] 
-                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门景点门票', 'Popular Attraction Tickets' ) : __( '热门景点门票', 'developer-starter' ) );
+                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热门景点门票', 'Popular Attraction Tickets' ) : __( '热门景点门票', 'qiling' ) );
         $title_size  = isset( $data['ticket_title_size'] ) && $data['ticket_title_size'] !== '' 
                        ? $data['ticket_title_size'] 
                        : '2rem';
@@ -375,44 +375,44 @@ class Ticket_Showcase_Module extends Module_Base {
             $items = array(
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '亚龙湾热带天堂森林公园', 'Rainforest Park Pass' ) : __( '亚龙湾热带天堂森林公园', 'developer-starter' ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热带雨林探秘，俯瞰亚龙湾全景', 'Explore the rainforest with panoramic bay views.' ) : __( '热带雨林探秘，俯瞰亚龙湾全景', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '亚龙湾热带天堂森林公园', 'Rainforest Park Pass' ) : __( '亚龙湾热带天堂森林公园', 'qiling' ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '热带雨林探秘，俯瞰亚龙湾全景', 'Explore the rainforest with panoramic bay views.' ) : __( '热带雨林探秘，俯瞰亚龙湾全景', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 158 ) : '¥158',
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 198 ) : '¥198',
-                    'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                    'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'qiling' ),
                     'ticket_type'    => 'e-ticket',
                     'audience'       => 'adult',
-                    'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n玻璃栈道\n滑索体验", "Park admission\nGlass skywalk\nZipline experience" ) : __( "景区大门票\n玻璃栈道\n滑索体验", 'developer-starter' ),
+                    'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n玻璃栈道\n滑索体验", "Park admission\nGlass skywalk\nZipline experience" ) : __( "景区大门票\n玻璃栈道\n滑索体验", 'qiling' ),
                     'badge'          => 'hot',
-                    'btn_text'       => __( '立即预订', 'developer-starter' ),
+                    'btn_text'       => __( '立即预订', 'qiling' ),
                     'btn_link'       => '#',
                 ),
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南山文化旅游区', 'Cultural Heritage Park' ) : __( '南山文化旅游区', 'developer-starter' ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南海观音圣像，祈福圣地', 'An iconic cultural destination with coastal landmarks.' ) : __( '南海观音圣像，祈福圣地', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南山文化旅游区', 'Cultural Heritage Park' ) : __( '南山文化旅游区', 'qiling' ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '南海观音圣像，祈福圣地', 'An iconic cultural destination with coastal landmarks.' ) : __( '南海观音圣像，祈福圣地', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 129 ) : '¥129',
                     'original_price' => '',
-                    'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                    'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'qiling' ),
                     'ticket_type'    => 'e-ticket',
                     'audience'       => 'adult',
-                    'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n南海观音\n长寿谷", "Park admission\nCultural monuments\nScenic valley route" ) : __( "景区大门票\n南海观音\n长寿谷", 'developer-starter' ),
+                    'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n南海观音\n长寿谷", "Park admission\nCultural monuments\nScenic valley route" ) : __( "景区大门票\n南海观音\n长寿谷", 'qiling' ),
                     'badge'          => 'recommend',
-                    'btn_text'       => __( '立即预订', 'developer-starter' ),
+                    'btn_text'       => __( '立即预订', 'qiling' ),
                     'btn_link'       => '#',
                 ),
                 array(
                     'image'          => '',
-                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '天涯海角风景区', 'Coastal Landmark Ticket' ) : __( '天涯海角风景区', 'developer-starter' ),
-                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '经典地标，浪漫海滨', 'A classic seaside stop for scenic coastal photos.' ) : __( '经典地标，浪漫海滨', 'developer-starter' ),
+                    'name'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '天涯海角风景区', 'Coastal Landmark Ticket' ) : __( '天涯海角风景区', 'qiling' ),
+                    'desc'           => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '经典地标，浪漫海滨', 'A classic seaside stop for scenic coastal photos.' ) : __( '经典地标，浪漫海滨', 'qiling' ),
                     'price'          => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 68 ) : '¥68',
                     'original_price' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 81 ) : '¥81',
-                    'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'developer-starter' ),
+                    'validity'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '当日有效', 'Valid today' ) : __( '当日有效', 'qiling' ),
                     'ticket_type'    => 'e-ticket',
                     'audience'       => 'adult',
-                    'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n天涯石\n海角石", "Park admission\nSignature rock landmark\nSeaside viewpoint" ) : __( "景区大门票\n天涯石\n海角石", 'developer-starter' ),
+                    'features'       => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "景区大门票\n天涯石\n海角石", "Park admission\nSignature rock landmark\nSeaside viewpoint" ) : __( "景区大门票\n天涯石\n海角石", 'qiling' ),
                     'badge'          => 'limited',
-                    'btn_text'       => __( '立即预订', 'developer-starter' ),
+                    'btn_text'       => __( '立即预订', 'qiling' ),
                     'btn_link'       => '#',
                 ),
             );
@@ -453,25 +453,25 @@ class Ticket_Showcase_Module extends Module_Base {
 
         // 标签和人群文字映射
         $badge_labels = array(
-            'hot'       => __( '热卖', 'developer-starter' ),
-            'recommend' => __( '推荐', 'developer-starter' ),
-            'limited'   => __( '限时', 'developer-starter' ),
-            'vip'       => __( 'VIP', 'developer-starter' ),
+            'hot'       => __( '热卖', 'qiling' ),
+            'recommend' => __( '推荐', 'qiling' ),
+            'limited'   => __( '限时', 'qiling' ),
+            'vip'       => __( 'VIP', 'qiling' ),
         );
 
         $audience_labels = array(
-            'adult'   => __( '成人票', 'developer-starter' ),
-            'child'   => __( '儿童票', 'developer-starter' ),
-            'student' => __( '学生票', 'developer-starter' ),
-            'senior'  => __( '老人票', 'developer-starter' ),
-            'family'  => __( '家庭套票', 'developer-starter' ),
-            'all'     => __( '通用票', 'developer-starter' ),
+            'adult'   => __( '成人票', 'qiling' ),
+            'child'   => __( '儿童票', 'qiling' ),
+            'student' => __( '学生票', 'qiling' ),
+            'senior'  => __( '老人票', 'qiling' ),
+            'family'  => __( '家庭套票', 'qiling' ),
+            'all'     => __( '通用票', 'qiling' ),
         );
 
         $type_labels = array(
-            'e-ticket' => __( '电子票', 'developer-starter' ),
-            'physical' => __( '实体票', 'developer-starter' ),
-            'both'     => __( '电子/实体', 'developer-starter' ),
+            'e-ticket' => __( '电子票', 'qiling' ),
+            'physical' => __( '实体票', 'qiling' ),
+            'both'     => __( '电子/实体', 'qiling' ),
         );
         ?>
         <section class="module module-ticket-showcase" style="<?php echo esc_attr( $section_style ); ?>">
@@ -501,7 +501,7 @@ class Ticket_Showcase_Module extends Module_Base {
                             $item_audience = isset( $item['audience'] ) ? $item['audience'] : 'adult';
                             $item_features = isset( $item['features'] ) ? $item['features'] : '';
                             $item_badge    = isset( $item['badge'] ) ? $item['badge'] : '';
-                            $item_btn_text = isset( $item['btn_text'] ) ? $item['btn_text'] : __( '立即预订', 'developer-starter' );
+                            $item_btn_text = isset( $item['btn_text'] ) ? $item['btn_text'] : __( '立即预订', 'qiling' );
                             $item_btn_link = isset( $item['btn_link'] ) ? $item['btn_link'] : '#';
 
                             // 解析包含项目
@@ -518,7 +518,7 @@ class Ticket_Showcase_Module extends Module_Base {
                             }
 
                             // 默认占位图
-                            $placeholder_img = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"%3E%3Crect fill="%23e2e8f0" width="400" height="200"/%3E%3Ctext x="50%25" y="50%25" fill="%2394a3b8" text-anchor="middle" dy=".3em" font-size="18"%3E' . urlencode( __( '景点图片', 'developer-starter' ) ) . '%3C/text%3E%3C/svg%3E';
+                            $placeholder_img = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"%3E%3Crect fill="%23e2e8f0" width="400" height="200"/%3E%3Ctext x="50%25" y="50%25" fill="%2394a3b8" text-anchor="middle" dy=".3em" font-size="18"%3E' . urlencode( __( '景点图片', 'qiling' ) ) . '%3C/text%3E%3C/svg%3E';
                             $display_image = $item_image ? $item_image : $placeholder_img;
                         ?>
                             <div class="ql-travel-ticket-card ql-travel-style-<?php echo esc_attr( $card_style ); ?>" <?php echo $anim_attr; ?>>

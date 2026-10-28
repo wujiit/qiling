@@ -43,9 +43,9 @@ class Cases_Center_Page_Creator extends Page_Creator_Base {
                         array(
                             'media_type' => 'image',
                             'image' => '',
-                            'title' => __( '案例中心', 'developer-starter' ),
-                            'subtitle' => __( '真实案例见证成效与口碑', 'developer-starter' ),
-                            'btn_text' => __( '咨询合作', 'developer-starter' ),
+                            'title' => __( '案例中心', 'qiling' ),
+                            'subtitle' => __( '真实案例见证成效与口碑', 'qiling' ),
+                            'btn_text' => __( '咨询合作', 'qiling' ),
                             'btn_url' => '/contact',
                             'btn_bg_color' => '#ffffff',
                             'btn_text_color' => '#0f172a',
@@ -58,7 +58,7 @@ class Cases_Center_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'cases',
                 'data' => array(
-                    'cases_title' => __( '成功案例', 'developer-starter' ),
+                    'cases_title' => __( '成功案例', 'qiling' ),
                     'cases_count' => '9',
                     'cases_columns' => '3',
                     'cases_categories' => '',
@@ -72,14 +72,14 @@ class Cases_Center_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'stats',
                 'data' => array(
-                    'stats_title' => __( '案例成果', 'developer-starter' ),
-                    'stats_subtitle' => __( '持续交付可量化的增长结果', 'developer-starter' ),
+                    'stats_title' => __( '案例成果', 'qiling' ),
+                    'stats_subtitle' => __( '持续交付可量化的增长结果', 'qiling' ),
                     'stats_text_align' => 'center',
                     'stats_items' => array(
-                        array( 'number' => '120+', 'label' => __( '行业客户', 'developer-starter' ) ),
-                        array( 'number' => '300%', 'label' => __( '平均转化提升', 'developer-starter' ) ),
-                        array( 'number' => '98%', 'label' => __( '客户满意度', 'developer-starter' ) ),
-                        array( 'number' => '24h', 'label' => __( '响应时间', 'developer-starter' ) ),
+                        array( 'number' => '120+', 'label' => __( '行业客户', 'qiling' ) ),
+                        array( 'number' => '300%', 'label' => __( '平均转化提升', 'qiling' ) ),
+                        array( 'number' => '98%', 'label' => __( '客户满意度', 'qiling' ) ),
+                        array( 'number' => '24h', 'label' => __( '响应时间', 'qiling' ) ),
                     ),
                     'stats_bg_type' => 'color',
                     'stats_bg_color' => 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
@@ -93,9 +93,9 @@ class Cases_Center_Page_Creator extends Page_Creator_Base {
             array(
                 'type' => 'cta',
                 'data' => array(
-                    'cta_title' => __( '想打造下一个标杆案例？', 'developer-starter' ),
-                    'cta_subtitle' => __( '联系我们，获取行业定制方案', 'developer-starter' ),
-                    'cta_button_text' => __( '开始咨询', 'developer-starter' ),
+                    'cta_title' => __( '想打造下一个标杆案例？', 'qiling' ),
+                    'cta_subtitle' => __( '联系我们，获取行业定制方案', 'qiling' ),
+                    'cta_button_text' => __( '开始咨询', 'qiling' ),
                     'cta_button_url' => '/contact',
                     'cta_bg_type' => 'color',
                     'cta_bg_color' => 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)',

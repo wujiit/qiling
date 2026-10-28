@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return array(
             'container_width' => array(
-                'label'       => __( '容器宽度', 'developer-starter' ),
+                'label'       => __( '容器宽度', 'qiling' ),
                 'type'        => 'responsive_length',
                 'placeholder' => array(
                     'desktop' => '1200px',
@@ -20,7 +20,7 @@ return array(
                 ),
             ),
             'section_spacing' => array(
-                'label'       => __( '区块上下间距', 'developer-starter' ),
+                'label'       => __( '区块上下间距', 'qiling' ),
                 'type'        => 'responsive_length',
                 'placeholder' => array(
                     'desktop' => '50px',
@@ -29,7 +29,7 @@ return array(
                 ),
             ),
             'grid_gap'        => array(
-                'label'       => __( '栅格间距', 'developer-starter' ),
+                'label'       => __( '栅格间距', 'qiling' ),
                 'type'        => 'responsive_length',
                 'placeholder' => array(
                     'desktop' => '30px',
@@ -38,7 +38,7 @@ return array(
                 ),
             ),
             'breakpoints'     => array(
-                'label'       => __( '响应断点', 'developer-starter' ),
+                'label'       => __( '响应断点', 'qiling' ),
                 'type'        => 'breakpoints',
                 'placeholder' => array(
                     'tablet' => '992px',
@@ -46,11 +46,11 @@ return array(
                 ),
             ),
             'layout_mode'     => array(
-                'label'   => __( '布局模式', 'developer-starter' ),
+                'label'   => __( '布局模式', 'qiling' ),
                 'type'    => 'choice',
                 'choices' => array(
-                    'wide'  => __( '宽屏', 'developer-starter' ),
-                    'boxed' => __( '盒式', 'developer-starter' ),
+                    'wide'  => __( '宽屏', 'qiling' ),
+                    'boxed' => __( '盒式', 'qiling' ),
                 ),
             ),
         );

@@ -19,7 +19,7 @@ class News_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-admin-post';
-        $this->description = __( '企业动态新闻展示', 'developer-starter' );
+        $this->description = __( '企业动态新闻展示', 'qiling' );
     }
 
     public function get_id() {
@@ -27,37 +27,37 @@ class News_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '新闻列表', 'developer-starter' );
+        return __( '新闻列表', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'news_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => __( '新闻动态', 'developer-starter' ) ),
-            array( 'id' => 'news_title_color', 'type' => 'color', 'label' => __( '模块标题颜色', 'developer-starter' ), 'description' => __( '控制“新闻动态”等模块顶部主标题的颜色；留空时跟随页面标题颜色。', 'developer-starter' ) ),
-            array( 'id' => 'news_card_title_color', 'type' => 'color', 'label' => __( '新闻标题颜色', 'developer-starter' ), 'description' => __( '控制每张新闻卡片内文章标题及标题链接的颜色。', 'developer-starter' ) ),
-            array( 'id' => 'news_count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '6' ),
-            array( 'id' => 'news_columns', 'type' => 'select', 'label' => __( '列数', 'developer-starter' ), 'options' => array( '3' => __( '3列', 'developer-starter' ), '4' => __( '4列', 'developer-starter' ) ), 'default' => '3' ),
-            array( 'id' => 'news_categories', 'type' => 'text', 'label' => __( '分类ID (逗号分隔)', 'developer-starter' ) ),
-            array( 'id' => 'news_show_image', 'type' => 'select', 'label' => __( '显示图片', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
-            array( 'id' => 'news_image_height', 'type' => 'text', 'label' => __( '图片高度', 'developer-starter' ), 'default' => '200px' ),
-            array( 'id' => 'news_show_excerpt', 'type' => 'select', 'label' => __( '显示摘要', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
-            array( 'id' => 'news_button_bg_color', 'type' => 'color', 'label' => __( '查看更多按钮背景颜色', 'developer-starter' ), 'description' => __( '留空时跟随当前页面的主按钮颜色。', 'developer-starter' ) ),
-            array( 'id' => 'news_button_text', 'type' => 'text', 'label' => __( '查看更多按钮文案', 'developer-starter' ), 'default' => __( '查看更多', 'developer-starter' ) ),
-            array( 'id' => 'news_button_text_color', 'type' => 'color', 'label' => __( '查看更多按钮文字颜色', 'developer-starter' ), 'description' => __( '控制按钮正常状态的文字颜色。', 'developer-starter' ) ),
-            array( 'id' => 'news_button_hover_bg_color', 'type' => 'color', 'label' => __( '查看更多按钮悬停背景颜色', 'developer-starter' ) ),
-            array( 'id' => 'news_button_hover_text_color', 'type' => 'color', 'label' => __( '查看更多按钮悬停文字颜色', 'developer-starter' ) ),
-            $this->get_button_border_color_field( 'news_button_border_color', __( '查看更多按钮边框颜色', 'developer-starter' ) ),
-            $this->get_button_border_color_field( 'news_button_hover_border_color', __( '查看更多按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
+            array( 'id' => 'news_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => __( '新闻动态', 'qiling' ) ),
+            array( 'id' => 'news_title_color', 'type' => 'color', 'label' => __( '模块标题颜色', 'qiling' ), 'description' => __( '控制“新闻动态”等模块顶部主标题的颜色；留空时跟随页面标题颜色。', 'qiling' ) ),
+            array( 'id' => 'news_card_title_color', 'type' => 'color', 'label' => __( '新闻标题颜色', 'qiling' ), 'description' => __( '控制每张新闻卡片内文章标题及标题链接的颜色。', 'qiling' ) ),
+            array( 'id' => 'news_count', 'type' => 'number', 'label' => __( '显示数量', 'qiling' ), 'default' => '6' ),
+            array( 'id' => 'news_columns', 'type' => 'select', 'label' => __( '列数', 'qiling' ), 'options' => array( '3' => __( '3列', 'qiling' ), '4' => __( '4列', 'qiling' ) ), 'default' => '3' ),
+            array( 'id' => 'news_categories', 'type' => 'text', 'label' => __( '分类ID (逗号分隔)', 'qiling' ) ),
+            array( 'id' => 'news_show_image', 'type' => 'select', 'label' => __( '显示图片', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
+            array( 'id' => 'news_image_height', 'type' => 'text', 'label' => __( '图片高度', 'qiling' ), 'default' => '200px' ),
+            array( 'id' => 'news_show_excerpt', 'type' => 'select', 'label' => __( '显示摘要', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
+            array( 'id' => 'news_button_bg_color', 'type' => 'color', 'label' => __( '查看更多按钮背景颜色', 'qiling' ), 'description' => __( '留空时跟随当前页面的主按钮颜色。', 'qiling' ) ),
+            array( 'id' => 'news_button_text', 'type' => 'text', 'label' => __( '查看更多按钮文案', 'qiling' ), 'default' => __( '查看更多', 'qiling' ) ),
+            array( 'id' => 'news_button_text_color', 'type' => 'color', 'label' => __( '查看更多按钮文字颜色', 'qiling' ), 'description' => __( '控制按钮正常状态的文字颜色。', 'qiling' ) ),
+            array( 'id' => 'news_button_hover_bg_color', 'type' => 'color', 'label' => __( '查看更多按钮悬停背景颜色', 'qiling' ) ),
+            array( 'id' => 'news_button_hover_text_color', 'type' => 'color', 'label' => __( '查看更多按钮悬停文字颜色', 'qiling' ) ),
+            $this->get_button_border_color_field( 'news_button_border_color', __( '查看更多按钮边框颜色', 'qiling' ) ),
+            $this->get_button_border_color_field( 'news_button_hover_border_color', __( '查看更多按钮悬停边框颜色', 'qiling' ), __( '留空时跟随按钮悬停背景颜色。', 'qiling' ) ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，新闻卡片将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，新闻卡片将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -65,7 +65,7 @@ class News_Module extends Module_Base {
     public function render( $data = array() ) {
         $title = isset( $data['news_title'] ) && $data['news_title'] !== ''
             ? $data['news_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新闻动态', 'Latest News' ) : __( '新闻动态', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '新闻动态', 'Latest News' ) : __( '新闻动态', 'qiling' ) );
         $count = isset( $data['news_count'] ) && $data['news_count'] !== '' ? intval( $data['news_count'] ) : 6;
         $columns = isset( $data['news_columns'] ) && $data['news_columns'] !== '' ? $data['news_columns'] : '3';
         $categories = isset( $data['news_categories'] ) ? $data['news_categories'] : '';
@@ -74,7 +74,7 @@ class News_Module extends Module_Base {
         $show_image = ! isset( $data['news_show_image'] ) || $data['news_show_image'] !== '0';
         $image_height = isset( $data['news_image_height'] ) && $data['news_image_height'] !== '' ? $data['news_image_height'] : '200px';
         $show_excerpt = ! isset( $data['news_show_excerpt'] ) || $data['news_show_excerpt'] !== '0';
-        $button_text = isset( $data['news_button_text'] ) && '' !== trim( (string) $data['news_button_text'] ) ? (string) $data['news_button_text'] : __( '查看更多', 'developer-starter' );
+        $button_text = isset( $data['news_button_text'] ) && '' !== trim( (string) $data['news_button_text'] ) ? (string) $data['news_button_text'] : __( '查看更多', 'qiling' );
         
         // 解析分类（支持多个，逗号分隔）
         $cat_ids = array();
@@ -270,7 +270,7 @@ class News_Module extends Module_Base {
                         </a>
                     </div>
                 <?php else : ?>
-                    <p class="text-center text-muted"><?php esc_html_e( '暂无新闻', 'developer-starter' ); ?></p>
+                    <p class="text-center text-muted"><?php esc_html_e( '暂无新闻', 'qiling' ); ?></p>
                 <?php endif; ?>
             </div>
         </section>

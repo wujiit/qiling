@@ -89,6 +89,187 @@
         return loadScriptOnce(url, marker);
     };
 
+    /**
+     * 客户端图片前置压缩 (Canvas 缩放)
+     * 规范第 37 项：避免访客直接上传 15MB 原始相机生图打爆服务器带宽和存储
+     *
+     * @param {File|Blob} file 原始图片文件
+     * @param {Object} [options] 压缩参数
+     * @param {number} [options.maxWidth=1920] 最大宽度 (头像通常传 800)
+     * @param {number} [options.maxHeight=1920] 最大高度 (头像通常传 800)
+     * @param {number} [options.quality=0.85] 压缩质量 (0.1 - 1.0)
+     * @param {number} [options.maxSizeToSkip=204800] 体积小于该值(默认200KB)且尺寸未超标时跳过重绘
+     * @param {string} [options.outputType] 强制指定 MIME
+     * @returns {Promise<File|Blob>} 压缩优化后的文件对象 (失败时优雅返回原文件)
+     */
+    window.DSCompressImage = function (file, options) {
+        options = options || {};
+        if (!file || !(file instanceof Blob)) {
+            return Promise.resolve(file);
+        }
+
+        // GIF 动图与 SVG 矢量图跳过 Canvas 压缩，保留帧动画与矢量精度
+        var fileType = file.type || '';
+        if (fileType === 'image/gif' || fileType === 'image/svg+xml') {
+            return Promise.resolve(file);
+        }
+
+        // 检查浏览器 Canvas 环境与 URL.createObjectURL 支持
+        if (typeof window.HTMLCanvasElement === 'undefined' || typeof URL === 'undefined' || typeof URL.createObjectURL !== 'function') {
+            return Promise.resolve(file);
+        }
+
+        return new Promise(function (resolve) {
+            var objectUrl = URL.createObjectURL(file);
+            var img = new Image();
+
+            var cleanup = function () {
+                try {
+                    URL.revokeObjectURL(objectUrl);
+                } catch (e) {}
+            };
+
+            img.onload = function () {
+                var width = img.naturalWidth || img.width;
+                var height = img.naturalHeight || img.height;
+
+                if (!width || !height) {
+                    cleanup();
+                    resolve(file);
+                    return;
+                }
+
+                var maxW = typeof options.maxWidth === 'number' ? options.maxWidth : 1920;
+                var maxH = typeof options.maxHeight === 'number' ? options.maxHeight : 1920;
+                var quality = typeof options.quality === 'number' ? options.quality : 0.85;
+                var maxSizeToSkip = typeof options.maxSizeToSkip === 'number' ? options.maxSizeToSkip : 200 * 1024;
+
+                // 如果尺寸已在限定内且原图体积较小，则无需多余重采样
+                if (width <= maxW && height <= maxH && file.size <= maxSizeToSkip) {
+                    cleanup();
+                    resolve(file);
+                    return;
+                }
+
+                // 计算等比例缩放尺寸
+                var targetW = width;
+                var targetH = height;
+                if (targetW > maxW || targetH > maxH) {
+                    var ratio = Math.min(maxW / targetW, maxH / targetH);
+                    targetW = Math.max(1, Math.round(targetW * ratio));
+                    targetH = Math.max(1, Math.round(targetH * ratio));
+                }
+
+                var canvas = document.createElement('canvas');
+                canvas.width = targetW;
+                canvas.height = targetH;
+                var ctx = canvas.getContext('2d');
+                if (!ctx) {
+                    cleanup();
+                    resolve(file);
+                    return;
+                }
+
+                // 开启高精度双三次平滑
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
+
+                // 检测浏览器 WebP 导出支持
+                var isWebPSupported = false;
+                try {
+                    isWebPSupported = canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+                } catch (e) {
+                    isWebPSupported = false;
+                }
+
+                var outputType = options.outputType;
+                if (!outputType) {
+                    if (fileType === 'image/webp') {
+                        outputType = 'image/webp';
+                    } else if (fileType === 'image/png') {
+                        // PNG 优先采用支持透明通道的 WebP 以获得最高压缩率，不支持则保持 PNG
+                        outputType = isWebPSupported ? 'image/webp' : 'image/png';
+                    } else {
+                        // JPEG 及其他，优先 WebP 或 JPEG
+                        outputType = isWebPSupported ? 'image/webp' : 'image/jpeg';
+                    }
+                }
+
+                // 若输出为 JPEG（无透明通道），预填充白色底色，防止透明图变成黑底
+                if (outputType === 'image/jpeg') {
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, targetW, targetH);
+                }
+
+                ctx.drawImage(img, 0, 0, targetW, targetH);
+                cleanup();
+
+                var handleBlob = function (blob) {
+                    if (!blob || (blob.size >= file.size && targetW === width && targetH === height)) {
+                        // 若未缩放且压缩后体积并未变小，保留原文件
+                        resolve(file);
+                        return;
+                    }
+
+                    var ext = '.jpg';
+                    if (outputType === 'image/webp') {
+                        ext = '.webp';
+                    } else if (outputType === 'image/png') {
+                        ext = '.png';
+                    }
+
+                    var baseName = (file.name || 'image').replace(/\.[^/.]+$/, '');
+                    var newName = baseName + ext;
+
+                    var compressedFile;
+                    try {
+                        compressedFile = new File([blob], newName, {
+                            type: blob.type || outputType,
+                            lastModified: Date.now()
+                        });
+                    } catch (e) {
+                        // 兼容不支持 File 构造器的旧环境
+                        blob.name = newName;
+                        blob.lastModifiedDate = new Date();
+                        compressedFile = blob;
+                    }
+                    resolve(compressedFile);
+                };
+
+                if (canvas.toBlob) {
+                    canvas.toBlob(handleBlob, outputType, quality);
+                } else {
+                    try {
+                        var dataUrl = canvas.toDataURL(outputType, quality);
+                        var parts = dataUrl.split(',');
+                        var mime = parts[0].match(/:(.*?);/)[1];
+                        var binStr = atob(parts[1]);
+                        var len = binStr.length;
+                        var u8arr = new Uint8Array(len);
+                        for (var i = 0; i < len; i++) {
+                            u8arr[i] = binStr.charCodeAt(i);
+                        }
+                        var fallbackBlob = new Blob([u8arr], { type: mime });
+                        handleBlob(fallbackBlob);
+                    } catch (err) {
+                        resolve(file);
+                    }
+                }
+            };
+
+            img.onerror = function () {
+                cleanup();
+                resolve(file);
+            };
+
+            img.src = objectUrl;
+        });
+    };
+
+    window.QiLingImageCompressor = {
+        compress: window.DSCompressImage
+    };
+
     if (typeof window.DSLoadCaptchaProvider !== 'function') {
         window.DSLoadCaptchaProvider = function (scene) {
             if (window.DSProviderCaptcha) {
@@ -335,11 +516,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function updateDarkModeIcons(isDark) {
             if (iconSun) {
-                iconSun.style.display = isDark ? 'none' : 'block';
+                iconSun.style.display = isDark ? 'none' : 'inline-flex';
             }
 
             if (iconMoon) {
-                iconMoon.style.display = isDark ? 'block' : 'none';
+                iconMoon.style.display = isDark ? 'inline-flex' : 'none';
             }
         }
 

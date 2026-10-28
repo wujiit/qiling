@@ -36,6 +36,8 @@ class Theme_Setup {
         add_filter( 'redirect_canonical', array( $this, 'disable_canonical_for_gallery' ), 10, 2 );
         add_filter( 'body_class', array( $this, 'body_classes' ) );
         add_action( 'wp_head', array( $this, 'add_preconnect_links' ), 1 );
+        add_filter( 'plupload_default_settings', array( $this, 'configure_plupload_client_resize' ) );
+        Trace_ID::init();
     }
 
     /**
@@ -159,7 +161,7 @@ class Theme_Setup {
      */
     public function setup_theme() {
         // 主题 UI 翻译是基础能力，不受前台语言切换模式控制。
-        load_theme_textdomain( 'developer-starter', DEVELOPER_STARTER_DIR . '/languages' );
+        load_theme_textdomain( 'qiling', QILING_DIR . '/languages' );
 
         // 添加默认文章和评论RSS订阅链接到head
         add_theme_support( 'automatic-feed-links' );
@@ -222,11 +224,6 @@ class Theme_Setup {
             add_editor_style( 'assets/css/editor-style.css' );
         }
 
-        // 添加WooCommerce支持（如需要）
-        add_theme_support( 'woocommerce' );
-        add_theme_support( 'wc-product-gallery-zoom' );
-        add_theme_support( 'wc-product-gallery-lightbox' );
-        add_theme_support( 'wc-product-gallery-slider' );
 
         // 添加小工具选择性刷新支持
         add_theme_support( 'customize-selective-refresh-widgets' );
@@ -243,10 +240,10 @@ class Theme_Setup {
      */
     public function register_menus() {
         register_nav_menus( array(
-            'primary' => esc_html__( '主导航菜单', 'developer-starter' ),
-            'mobile'  => esc_html__( '移动端导航菜单（可选，默认使用主导航）', 'developer-starter' ),
-            'mobile_bottom' => esc_html__( '移动端底部菜单', 'developer-starter' ),
-            'left_sidebar' => esc_html__( '左侧导航菜单（桌面端）', 'developer-starter' ),
+            'primary' => esc_html__( '主导航菜单', 'qiling' ),
+            'mobile'  => esc_html__( '移动端导航菜单（可选，默认使用主导航）', 'qiling' ),
+            'mobile_bottom' => esc_html__( '移动端底部菜单', 'qiling' ),
+            'left_sidebar' => esc_html__( '左侧导航菜单（桌面端）', 'qiling' ),
         ) );
     }
 
@@ -256,9 +253,9 @@ class Theme_Setup {
     public function register_sidebars() {
         // 主侧边栏
         register_sidebar( array(
-            'name'          => esc_html__( '主侧边栏', 'developer-starter' ),
+            'name'          => esc_html__( '主侧边栏', 'qiling' ),
             'id'            => 'sidebar-main',
-            'description'   => esc_html__( '在页面侧边栏显示的小工具', 'developer-starter' ),
+            'description'   => esc_html__( '在页面侧边栏显示的小工具', 'qiling' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -266,9 +263,9 @@ class Theme_Setup {
         ) );
 
         register_sidebar( array(
-            'name'          => esc_html__( '页脚联系我们区域', 'developer-starter' ),
+            'name'          => esc_html__( '页脚联系我们区域', 'qiling' ),
             'id'            => 'footer-contact',
-            'description'   => esc_html__( '用于页脚联系方式板块的小工具内容', 'developer-starter' ),
+            'description'   => esc_html__( '用于页脚联系方式板块的小工具内容', 'qiling' ),
             'before_widget' => '<div id="%1$s" class="footer-contact-widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="footer-contact-widget-title">',
@@ -276,31 +273,21 @@ class Theme_Setup {
         ) );
 
         register_sidebar( array(
-            'name'          => esc_html__( '页脚快速链接区域', 'developer-starter' ),
+            'name'          => esc_html__( '页脚快速链接区域', 'qiling' ),
             'id'            => 'footer-quick-links',
-            'description'   => esc_html__( '用于页脚快速链接板块的小工具内容（已设置时优先显示）', 'developer-starter' ),
+            'description'   => esc_html__( '用于页脚快速链接板块的小工具内容（已设置时优先显示）', 'qiling' ),
             'before_widget' => '<div id="%1$s" class="footer-quick-links-widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="footer-quick-links-widget-title">',
             'after_title'   => '</h4>',
         ) );
 
-        // 商店侧边栏（用于WooCommerce）
-        register_sidebar( array(
-            'name'          => esc_html__( '商店侧边栏', 'developer-starter' ),
-            'id'            => 'sidebar-shop',
-            'description'   => esc_html__( '商店页面侧边栏小工具', 'developer-starter' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ) );
-        
+
         // 文章侧边栏
         register_sidebar( array(
-            'name'          => esc_html__( '文章侧边栏', 'developer-starter' ),
+            'name'          => esc_html__( '文章侧边栏', 'qiling' ),
             'id'            => 'sidebar-post',
-            'description'   => esc_html__( '在文章详情页侧边栏显示的小工具', 'developer-starter' ),
+            'description'   => esc_html__( '在文章详情页侧边栏显示的小工具', 'qiling' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -309,9 +296,9 @@ class Theme_Setup {
         
         // 页面侧边栏
         register_sidebar( array(
-            'name'          => esc_html__( '页面侧边栏', 'developer-starter' ),
+            'name'          => esc_html__( '页面侧边栏', 'qiling' ),
             'id'            => 'sidebar-page',
-            'description'   => esc_html__( '在默认页面侧边栏显示的小工具', 'developer-starter' ),
+            'description'   => esc_html__( '在默认页面侧边栏显示的小工具', 'qiling' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -366,5 +353,30 @@ class Theme_Setup {
         if ( ! empty( $cdn_url ) ) {
             echo '<link rel="preconnect" href="' . esc_url( $cdn_url ) . '">' . "\n";
         }
+    }
+
+    /**
+     * 配置 Plupload 原生前端客户端缩放（防大图打爆带宽与存储）。
+     *
+     * 规范第 37 项：在前台投稿插图或后台上传媒体时，浏览器前端通过 Plupload 自动等比缩放至最大 1920px，
+     * 避免访客/作者直接上传 15MB 原始相机生图导致服务器带宽和存储打爆。
+     *
+     * @param array $settings Plupload 配置。
+     * @return array
+     */
+    public function configure_plupload_client_resize( $settings ) {
+        if ( ! is_array( $settings ) ) {
+            $settings = array();
+        }
+
+        $settings['resize'] = array(
+            'width'            => (int) apply_filters( 'developer_starter_upload_max_width', 1920 ),
+            'height'           => (int) apply_filters( 'developer_starter_upload_max_height', 1920 ),
+            'quality'          => (int) apply_filters( 'developer_starter_upload_quality', 85 ),
+            'crop'             => false,
+            'preserve_headers' => false,
+        );
+
+        return $settings;
     }
 }

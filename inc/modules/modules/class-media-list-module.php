@@ -18,7 +18,7 @@ class Media_List_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-format-audio';
-        $this->description = __( '展示读书、观影、听歌清单与进度', 'developer-starter' );
+        $this->description = __( '展示读书、观影、听歌清单与进度', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Media_List_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '读书/观影/听歌清单', 'developer-starter' );
+        return __( '读书/观影/听歌清单', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,154 +34,154 @@ class Media_List_Module extends Module_Base {
             array(
                 'id'      => 'ml_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( '读书 / 观影 / 听歌清单', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( '读书 / 观影 / 听歌清单', 'qiling' ),
             ),
             array(
                 'id'    => 'ml_subtitle',
                 'type'  => 'text',
-                'label' => __( '模块副标题', 'developer-starter' ),
+                'label' => __( '模块副标题', 'qiling' ),
             ),
             array(
                 'id'      => 'ml_filter',
                 'type'    => 'select',
-                'label'   => __( '显示类型', 'developer-starter' ),
+                'label'   => __( '显示类型', 'qiling' ),
                 'options' => array(
-                    'all'   => __( '全部', 'developer-starter' ),
-                    'book'  => __( '仅图书', 'developer-starter' ),
-                    'movie' => __( '仅影视', 'developer-starter' ),
-                    'music' => __( '仅音乐', 'developer-starter' ),
+                    'all'   => __( '全部', 'qiling' ),
+                    'book'  => __( '仅图书', 'qiling' ),
+                    'movie' => __( '仅影视', 'qiling' ),
+                    'music' => __( '仅音乐', 'qiling' ),
                 ),
                 'default' => 'all',
             ),
             array(
                 'id'      => 'ml_columns',
                 'type'    => 'select',
-                'label'   => __( '每行列数', 'developer-starter' ),
+                'label'   => __( '每行列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'ml_show_note',
                 'type'    => 'select',
-                'label'   => __( '显示短评', 'developer-starter' ),
+                'label'   => __( '显示短评', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'ml_show_link',
                 'type'    => 'select',
-                'label'   => __( '显示详情链接', 'developer-starter' ),
+                'label'   => __( '显示详情链接', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no'  => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
-            array( 'id' => 'ml_link_text', 'type' => 'text', 'label' => __( '详情链接文案', 'developer-starter' ), 'default' => __( '查看详情', 'developer-starter' ) ),
+            array( 'id' => 'ml_link_text', 'type' => 'text', 'label' => __( '详情链接文案', 'qiling' ), 'default' => __( '查看详情', 'qiling' ) ),
             array(
                 'id'     => 'ml_items',
                 'type'   => 'repeater',
-                'label'  => __( '清单条目', 'developer-starter' ),
+                'label'  => __( '清单条目', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'      => 'type',
                         'type'    => 'select',
-                        'label'   => __( '类型', 'developer-starter' ),
+                        'label'   => __( '类型', 'qiling' ),
                         'options' => array(
-                            'book'  => __( '图书', 'developer-starter' ),
-                            'movie' => __( '影视', 'developer-starter' ),
-                            'music' => __( '音乐', 'developer-starter' ),
+                            'book'  => __( '图书', 'qiling' ),
+                            'movie' => __( '影视', 'qiling' ),
+                            'music' => __( '音乐', 'qiling' ),
                         ),
                         'default' => 'book',
                     ),
                     array(
                         'id'    => 'cover',
                         'type'  => 'image',
-                        'label' => __( '封面', 'developer-starter' ),
+                        'label' => __( '封面', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '标题', 'developer-starter' ),
+                        'label' => __( '标题', 'qiling' ),
                     ),
                     array(
                         'id'    => 'creator',
                         'type'  => 'text',
-                        'label' => __( '作者/导演/歌手', 'developer-starter' ),
+                        'label' => __( '作者/导演/歌手', 'qiling' ),
                     ),
                     array(
                         'id'      => 'status',
                         'type'    => 'select',
-                        'label'   => __( '状态', 'developer-starter' ),
+                        'label'   => __( '状态', 'qiling' ),
                         'options' => array(
-                            'done'  => __( '已完成', 'developer-starter' ),
-                            'doing' => __( '进行中', 'developer-starter' ),
-                            'wish'  => __( '想看/想读/想听', 'developer-starter' ),
+                            'done'  => __( '已完成', 'qiling' ),
+                            'doing' => __( '进行中', 'qiling' ),
+                            'wish'  => __( '想看/想读/想听', 'qiling' ),
                         ),
                         'default' => 'done',
                     ),
                     array(
                         'id'      => 'score',
                         'type'    => 'number',
-                        'label'   => __( '评分 (1-10)', 'developer-starter' ),
+                        'label'   => __( '评分 (1-10)', 'qiling' ),
                         'default' => '8',
                     ),
                     array(
                         'id'    => 'progress',
                         'type'  => 'text',
-                        'label' => __( '进度描述', 'developer-starter' ),
+                        'label' => __( '进度描述', 'qiling' ),
                     ),
                     array(
                         'id'    => 'link',
                         'type'  => 'text',
-                        'label' => __( '详情链接', 'developer-starter' ),
+                        'label' => __( '详情链接', 'qiling' ),
                     ),
                     array(
                         'id'    => 'note',
                         'type'  => 'textarea',
-                        'label' => __( '短评', 'developer-starter' ),
+                        'label' => __( '短评', 'qiling' ),
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'type'     => 'book',
                         'cover'    => '',
-                        'title'    => __( '纳瓦尔宝典', 'developer-starter' ),
-                        'creator'  => __( 'Eric Jorgenson', 'developer-starter' ),
+                        'title'    => __( '纳瓦尔宝典', 'qiling' ),
+                        'creator'  => __( 'Eric Jorgenson', 'qiling' ),
                         'status'   => 'done',
                         'score'    => '9',
-                        'progress' => __( '已读', 'developer-starter' ),
-                        'note'     => __( '对杠杆与长期主义的阐述很实用。', 'developer-starter' ),
+                        'progress' => __( '已读', 'qiling' ),
+                        'note'     => __( '对杠杆与长期主义的阐述很实用。', 'qiling' ),
                         'link'     => '',
                     ),
                     array(
                         'type'     => 'movie',
                         'cover'    => '',
-                        'title'    => __( '沙丘', 'developer-starter' ),
-                        'creator'  => __( 'Denis Villeneuve', 'developer-starter' ),
+                        'title'    => __( '沙丘', 'qiling' ),
+                        'creator'  => __( 'Denis Villeneuve', 'qiling' ),
                         'status'   => 'doing',
                         'score'    => '8',
-                        'progress' => __( '看到第二部', 'developer-starter' ),
-                        'note'     => __( '世界观宏大，视听质感优秀。', 'developer-starter' ),
+                        'progress' => __( '看到第二部', 'qiling' ),
+                        'note'     => __( '世界观宏大，视听质感优秀。', 'qiling' ),
                         'link'     => '',
                     ),
                     array(
                         'type'     => 'music',
                         'cover'    => '',
-                        'title'    => __( 'Random Access Memories', 'developer-starter' ),
+                        'title'    => __( 'Random Access Memories', 'qiling' ),
                         'creator'  => 'Daft Punk',
                         'status'   => 'wish',
                         'score'    => '9',
-                        'progress' => __( '准备重听', 'developer-starter' ),
-                        'note'     => __( '复古与未来感融合得很自然。', 'developer-starter' ),
+                        'progress' => __( '准备重听', 'qiling' ),
+                        'note'     => __( '复古与未来感融合得很自然。', 'qiling' ),
                         'link'     => '',
                     ),
                 ),
@@ -189,38 +189,38 @@ class Media_List_Module extends Module_Base {
             array(
                 'id'      => 'ml_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景色', 'developer-starter' ),
+                'label'   => __( '卡片背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'ml_bg_color',
                 'type'    => 'color',
-                'label'   => __( '模块背景色', 'developer-starter' ),
+                'label'   => __( '模块背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'ml_accent_color',
                 'type'    => 'color',
-                'label'   => __( '强调色', 'developer-starter' ),
+                'label'   => __( '强调色', 'qiling' ),
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'      => 'ml_badge_bg',
                 'type'    => 'color',
-                'label'   => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'   => __( '标签/徽章背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '控制类型标签和状态徽章，留空时保留状态默认色并跟随全局徽章颜色。', 'developer-starter' ),
+                'desc'    => __( '控制类型标签和状态徽章，留空时保留状态默认色并跟随全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '56px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '56px',
             ),
         );
@@ -238,7 +238,7 @@ class Media_List_Module extends Module_Base {
         $columns = isset( $data['ml_columns'] ) ? max( 2, min( 4, intval( $data['ml_columns'] ) ) ) : 3;
         $show_note = ! isset( $data['ml_show_note'] ) || $data['ml_show_note'] === 'yes';
         $show_link = ! isset( $data['ml_show_link'] ) || $data['ml_show_link'] === 'yes';
-        $link_text = isset( $data['ml_link_text'] ) && '' !== trim( (string) $data['ml_link_text'] ) ? (string) $data['ml_link_text'] : __( '查看详情', 'developer-starter' );
+        $link_text = isset( $data['ml_link_text'] ) && '' !== trim( (string) $data['ml_link_text'] ) ? (string) $data['ml_link_text'] : __( '查看详情', 'qiling' );
 
         $items = isset( $data['ml_items'] ) && is_array( $data['ml_items'] ) ? $data['ml_items'] : array();
         if ( empty( $items ) && ! isset( $data['ml_items'] ) ) {
@@ -246,34 +246,34 @@ class Media_List_Module extends Module_Base {
                 array(
                     'type'     => 'book',
                     'cover'    => '',
-                    'title'    => __( '纳瓦尔宝典', 'developer-starter' ),
-                    'creator'  => __( 'Eric Jorgenson', 'developer-starter' ),
+                    'title'    => __( '纳瓦尔宝典', 'qiling' ),
+                    'creator'  => __( 'Eric Jorgenson', 'qiling' ),
                     'status'   => 'done',
                     'score'    => '9',
-                    'progress' => __( '已读', 'developer-starter' ),
-                    'note'     => __( '对杠杆与长期主义的阐述很实用。', 'developer-starter' ),
+                    'progress' => __( '已读', 'qiling' ),
+                    'note'     => __( '对杠杆与长期主义的阐述很实用。', 'qiling' ),
                     'link'     => '',
                 ),
                 array(
                     'type'     => 'movie',
                     'cover'    => '',
-                    'title'    => __( '沙丘', 'developer-starter' ),
-                    'creator'  => __( 'Denis Villeneuve', 'developer-starter' ),
+                    'title'    => __( '沙丘', 'qiling' ),
+                    'creator'  => __( 'Denis Villeneuve', 'qiling' ),
                     'status'   => 'doing',
                     'score'    => '8',
-                    'progress' => __( '看到第二部', 'developer-starter' ),
-                    'note'     => __( '世界观宏大，视听质感优秀。', 'developer-starter' ),
+                    'progress' => __( '看到第二部', 'qiling' ),
+                    'note'     => __( '世界观宏大，视听质感优秀。', 'qiling' ),
                     'link'     => '',
                 ),
                 array(
                     'type'     => 'music',
                     'cover'    => '',
-                    'title'    => __( 'Random Access Memories', 'developer-starter' ),
+                    'title'    => __( 'Random Access Memories', 'qiling' ),
                     'creator'  => 'Daft Punk',
                     'status'   => 'wish',
                     'score'    => '9',
-                    'progress' => __( '准备重听', 'developer-starter' ),
-                    'note'     => __( '复古与未来感融合得很自然。', 'developer-starter' ),
+                    'progress' => __( '准备重听', 'qiling' ),
+                    'note'     => __( '复古与未来感融合得很自然。', 'qiling' ),
                     'link'     => '',
                 ),
             );
@@ -361,7 +361,7 @@ class Media_List_Module extends Module_Base {
                                         <span><?php echo esc_html( $progress ); ?></span>
                                     <?php endif; ?>
                                     <?php if ( $score > 0 ) : ?>
-                                        <span><?php printf( esc_html__( '评分 %d/10', 'developer-starter' ), $score ); ?></span>
+                                        <span><?php printf( esc_html__( '评分 %d/10', 'qiling' ), $score ); ?></span>
                                     <?php endif; ?>
                                 </div>
                                 <?php if ( $show_note && $note !== '' ) : ?>
@@ -381,31 +381,31 @@ class Media_List_Module extends Module_Base {
 
     private function get_type_label( $type ) {
         if ( $type === 'movie' ) {
-            return __( '影视', 'developer-starter' );
+            return __( '影视', 'qiling' );
         }
         if ( $type === 'music' ) {
-            return __( '音乐', 'developer-starter' );
+            return __( '音乐', 'qiling' );
         }
-        return __( '图书', 'developer-starter' );
+        return __( '图书', 'qiling' );
     }
 
     private function get_type_icon( $type ) {
         if ( $type === 'movie' ) {
-            return '🎬';
+            return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>';
         }
         if ( $type === 'music' ) {
-            return '🎧';
+            return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>';
         }
-        return '📚';
+        return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';
     }
 
     private function get_status_label( $status ) {
         if ( $status === 'doing' ) {
-            return __( '进行中', 'developer-starter' );
+            return __( '进行中', 'qiling' );
         }
         if ( $status === 'wish' ) {
-            return __( '想看/想读/想听', 'developer-starter' );
+            return __( '想看/想读/想听', 'qiling' );
         }
-        return __( '已完成', 'developer-starter' );
+        return __( '已完成', 'qiling' );
     }
 }

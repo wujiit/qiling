@@ -31,7 +31,7 @@ class Hotel_Amenities_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'homepage';
         $this->icon        = 'dashicons-building';
-        $this->description = __( '展示酒店配套设施', 'developer-starter' );
+        $this->description = __( '展示酒店配套设施', 'qiling' );
     }
 
     /**
@@ -49,7 +49,7 @@ class Hotel_Amenities_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '酒店设施', 'developer-starter' );
+        return __( '酒店设施', 'qiling' );
     }
 
     /**
@@ -65,25 +65,25 @@ class Hotel_Amenities_Module extends Module_Base {
             array(
                 'id'      => 'amenity_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '酒店设施', 'Amenities' ) : __( '酒店设施', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '酒店设施', 'Amenities' ) : __( '酒店设施', 'qiling' ),
             ),
             array(
                 'id'      => 'amenity_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2rem',
             ),
             array(
                 'id'    => 'amenity_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'      => 'amenity_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '完善的配套服务，只为您的舒适体验', 'Thoughtful facilities designed for a comfortable stay.' ) : __( '完善的配套服务，只为您的舒适体验', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '完善的配套服务，只为您的舒适体验', 'Thoughtful facilities designed for a comfortable stay.' ) : __( '完善的配套服务，只为您的舒适体验', 'qiling' ),
             ),
 
             // ========================================
@@ -92,19 +92,19 @@ class Hotel_Amenities_Module extends Module_Base {
             array(
                 'id'    => 'iconfont_url',
                 'type'  => 'text',
-                'label' => __( 'iconfont JS地址', 'developer-starter' ),
-                'desc'  => __( '阿里巴巴 iconfont Symbol 方式的 JS 链接', 'developer-starter' ),
+                'label' => __( 'iconfont JS地址', 'qiling' ),
+                'desc'  => __( '阿里巴巴 iconfont Symbol 方式的 JS 链接', 'qiling' ),
             ),
             array(
                 'id'      => 'icon_size',
                 'type'    => 'text',
-                'label'   => __( '图标大小', 'developer-starter' ),
+                'label'   => __( '图标大小', 'qiling' ),
                 'default' => '48px',
             ),
             array(
                 'id'    => 'icon_color',
                 'type'  => 'color',
-                'label' => __( '图标颜色', 'developer-starter' ),
+                'label' => __( '图标颜色', 'qiling' ),
             ),
 
             // ========================================
@@ -113,23 +113,23 @@ class Hotel_Amenities_Module extends Module_Base {
             array(
                 'id'      => 'amenity_columns',
                 'type'    => 'select',
-                'label'   => __( '列数', 'developer-starter' ),
+                'label'   => __( '列数', 'qiling' ),
                 'options' => array(
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
-                    '5' => __( '5列', 'developer-starter' ),
-                    '6' => __( '6列', 'developer-starter' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
+                    '5' => __( '5列', 'qiling' ),
+                    '6' => __( '6列', 'qiling' ),
                 ),
                 'default' => '4',
             ),
             array(
                 'id'      => 'amenity_layout',
                 'type'    => 'select',
-                'label'   => __( '布局样式', 'developer-starter' ),
+                'label'   => __( '布局样式', 'qiling' ),
                 'options' => array(
-                    'grid'     => __( '网格布局', 'developer-starter' ),
-                    'card'     => __( '卡片布局', 'developer-starter' ),
-                    'minimal'  => __( '简约布局', 'developer-starter' ),
+                    'grid'     => __( '网格布局', 'qiling' ),
+                    'card'     => __( '卡片布局', 'qiling' ),
+                    'minimal'  => __( '简约布局', 'qiling' ),
                 ),
                 'default' => 'grid',
             ),
@@ -140,86 +140,86 @@ class Hotel_Amenities_Module extends Module_Base {
             array(
                 'id'     => 'amenity_items',
                 'type'   => 'repeater',
-                'label'  => __( '设施列表', 'developer-starter' ),
+                'label'  => __( '设施列表', 'qiling' ),
                 'fields' => array(
                     array(
                         'id'    => 'icon',
                         'type'  => 'text',
-                        'label' => __( '图标名称', 'developer-starter' ),
-                        'desc'  => __( 'iconfont图标名，如：icon-wifi', 'developer-starter' ),
+                        'label' => __( '图标名称', 'qiling' ),
+                        'desc'  => __( 'iconfont图标名，如：icon-wifi', 'qiling' ),
                     ),
                     array(
                         'id'    => 'fallback_image',
                         'type'  => 'image',
-                        'label' => __( '备用图片', 'developer-starter' ),
-                        'desc'  => __( '无iconfont时显示此图片', 'developer-starter' ),
+                        'label' => __( '备用图片', 'qiling' ),
+                        'desc'  => __( '无iconfont时显示此图片', 'qiling' ),
                     ),
                     array(
                         'id'    => 'name',
                         'type'  => 'text',
-                        'label' => __( '设施名称', 'developer-starter' ),
+                        'label' => __( '设施名称', 'qiling' ),
                     ),
                     array(
                         'id'    => 'desc',
                         'type'  => 'textarea',
-                        'label' => __( '设施描述', 'developer-starter' ),
+                        'label' => __( '设施描述', 'qiling' ),
                         'rows'  => 2,
                     ),
                     array(
                         'id'    => 'time',
                         'type'  => 'text',
-                        'label' => __( '开放时间', 'developer-starter' ),
-                        'desc'  => __( '如：06:00-22:00', 'developer-starter' ),
+                        'label' => __( '开放时间', 'qiling' ),
+                        'desc'  => __( '如：06:00-22:00', 'qiling' ),
                     ),
                 ),
                 'default_items' => array(
                     array(
                         'icon' => 'icon-swimming',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '室内恒温泳池', 'Indoor Heated Pool' ) : __( '室内恒温泳池', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '25米标准泳道，全年恒温', '25-meter lap pool with year-round temperature control.' ) : __( '25米标准泳道，全年恒温', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '室内恒温泳池', 'Indoor Heated Pool' ) : __( '室内恒温泳池', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '25米标准泳道，全年恒温', '25-meter lap pool with year-round temperature control.' ) : __( '25米标准泳道，全年恒温', 'qiling' ),
                         'time' => '06:00-22:00',
                     ),
                     array(
                         'icon' => 'icon-gym',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '健身中心', 'Fitness Center' ) : __( '健身中心', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业器械，24小时开放', 'Professional equipment with around-the-clock access.' ) : __( '专业器械，24小时开放', 'developer-starter' ),
-                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '健身中心', 'Fitness Center' ) : __( '健身中心', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业器械，24小时开放', 'Professional equipment with around-the-clock access.' ) : __( '专业器械，24小时开放', 'qiling' ),
+                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'qiling' ),
                     ),
                     array(
                         'icon' => 'icon-spa',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SPA水疗', 'Spa & Wellness' ) : __( 'SPA水疗', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业理疗师，放松身心', 'Relax with treatments from professional therapists.' ) : __( '专业理疗师，放松身心', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SPA水疗', 'Spa & Wellness' ) : __( 'SPA水疗', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业理疗师，放松身心', 'Relax with treatments from professional therapists.' ) : __( '专业理疗师，放松身心', 'qiling' ),
                         'time' => '10:00-22:00',
                     ),
                     array(
                         'icon' => 'icon-restaurant',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '中西餐厅', 'Dining Room' ) : __( '中西餐厅', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选美食，环球风味', 'A curated menu with regional and international flavors.' ) : __( '精选美食，环球风味', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '中西餐厅', 'Dining Room' ) : __( '中西餐厅', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选美食，环球风味', 'A curated menu with regional and international flavors.' ) : __( '精选美食，环球风味', 'qiling' ),
                         'time' => '06:30-22:00',
                     ),
                     array(
                         'icon' => 'icon-bar',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '大堂酒吧', 'Lobby Bar' ) : __( '大堂酒吧', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选酒水，惬意时光', 'Signature drinks and a relaxed lounge atmosphere.' ) : __( '精选酒水，惬意时光', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '大堂酒吧', 'Lobby Bar' ) : __( '大堂酒吧', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选酒水，惬意时光', 'Signature drinks and a relaxed lounge atmosphere.' ) : __( '精选酒水，惬意时光', 'qiling' ),
                         'time' => '14:00-02:00',
                     ),
                     array(
                         'icon' => 'icon-meeting',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '会议中心', 'Meeting Center' ) : __( '会议中心', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '多功能会议室，专业设备', 'Flexible meeting rooms with business-ready equipment.' ) : __( '多功能会议室，专业设备', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '会议中心', 'Meeting Center' ) : __( '会议中心', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '多功能会议室，专业设备', 'Flexible meeting rooms with business-ready equipment.' ) : __( '多功能会议室，专业设备', 'qiling' ),
                         'time' => '08:00-20:00',
                     ),
                     array(
                         'icon' => 'icon-parking',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '停车场', 'Parking' ) : __( '停车场', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '地下车位，24小时安保', 'Underground parking with 24-hour security.' ) : __( '地下车位，24小时安保', 'developer-starter' ),
-                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '停车场', 'Parking' ) : __( '停车场', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '地下车位，24小时安保', 'Underground parking with 24-hour security.' ) : __( '地下车位，24小时安保', 'qiling' ),
+                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'qiling' ),
                     ),
                     array(
                         'icon' => 'icon-wifi',
-                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ),
-                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全覆盖高速无线网络', 'High-speed wireless coverage throughout the property.' ) : __( '全覆盖高速无线网络', 'developer-starter' ),
-                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                        'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ),
+                        'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全覆盖高速无线网络', 'High-speed wireless coverage throughout the property.' ) : __( '全覆盖高速无线网络', 'qiling' ),
+                        'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'qiling' ),
                     ),
                 ),
             ),
@@ -230,24 +230,24 @@ class Hotel_Amenities_Module extends Module_Base {
             array(
                 'id'      => 'module_bg_color',
                 'type'    => 'color',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'    => 'module_bg_image',
                 'type'  => 'image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
 
@@ -257,10 +257,10 @@ class Hotel_Amenities_Module extends Module_Base {
             array(
                 'id'      => 'enable_staggered_animation',
                 'type'    => 'select',
-                'label'   => __( '开启逐个显示动画', 'developer-starter' ),
+                'label'   => __( '开启逐个显示动画', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -278,7 +278,7 @@ class Hotel_Amenities_Module extends Module_Base {
         // ========================================
         $title       = isset( $data['amenity_title'] ) && $data['amenity_title'] !== '' 
                        ? $data['amenity_title'] 
-                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '酒店设施', 'Amenities' ) : __( '酒店设施', 'developer-starter' ) );
+                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '酒店设施', 'Amenities' ) : __( '酒店设施', 'qiling' ) );
         $title_size  = isset( $data['amenity_title_size'] ) && $data['amenity_title_size'] !== '' 
                        ? $data['amenity_title_size'] 
                        : '2rem';
@@ -316,51 +316,51 @@ class Hotel_Amenities_Module extends Module_Base {
             $items = array(
                 array(
                     'icon' => 'icon-swimming',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '室内恒温泳池', 'Indoor Heated Pool' ) : __( '室内恒温泳池', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '25米标准泳道，全年恒温', '25-meter lap pool with year-round temperature control.' ) : __( '25米标准泳道，全年恒温', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '室内恒温泳池', 'Indoor Heated Pool' ) : __( '室内恒温泳池', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '25米标准泳道，全年恒温', '25-meter lap pool with year-round temperature control.' ) : __( '25米标准泳道，全年恒温', 'qiling' ),
                     'time' => '06:00-22:00',
                 ),
                 array(
                     'icon' => 'icon-gym',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '健身中心', 'Fitness Center' ) : __( '健身中心', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业器械，24小时开放', 'Professional equipment with around-the-clock access.' ) : __( '专业器械，24小时开放', 'developer-starter' ),
-                    'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '健身中心', 'Fitness Center' ) : __( '健身中心', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业器械，24小时开放', 'Professional equipment with around-the-clock access.' ) : __( '专业器械，24小时开放', 'qiling' ),
+                    'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'qiling' ),
                 ),
                 array(
                     'icon' => 'icon-spa',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SPA水疗', 'Spa & Wellness' ) : __( 'SPA水疗', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业理疗师，放松身心', 'Relax with treatments from professional therapists.' ) : __( '专业理疗师，放松身心', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( 'SPA水疗', 'Spa & Wellness' ) : __( 'SPA水疗', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业理疗师，放松身心', 'Relax with treatments from professional therapists.' ) : __( '专业理疗师，放松身心', 'qiling' ),
                     'time' => '10:00-22:00',
                 ),
                 array(
                     'icon' => 'icon-restaurant',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '中西餐厅', 'Dining Room' ) : __( '中西餐厅', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选美食，环球风味', 'A curated menu with regional and international flavors.' ) : __( '精选美食，环球风味', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '中西餐厅', 'Dining Room' ) : __( '中西餐厅', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选美食，环球风味', 'A curated menu with regional and international flavors.' ) : __( '精选美食，环球风味', 'qiling' ),
                     'time' => '06:30-22:00',
                 ),
                 array(
                     'icon' => 'icon-bar',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '大堂酒吧', 'Lobby Bar' ) : __( '大堂酒吧', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选酒水，惬意时光', 'Signature drinks and a relaxed lounge atmosphere.' ) : __( '精选酒水，惬意时光', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '大堂酒吧', 'Lobby Bar' ) : __( '大堂酒吧', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '精选酒水，惬意时光', 'Signature drinks and a relaxed lounge atmosphere.' ) : __( '精选酒水，惬意时光', 'qiling' ),
                     'time' => '14:00-02:00',
                 ),
                 array(
                     'icon' => 'icon-meeting',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '会议中心', 'Meeting Center' ) : __( '会议中心', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '多功能会议室，专业设备', 'Flexible meeting rooms with business-ready equipment.' ) : __( '多功能会议室，专业设备', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '会议中心', 'Meeting Center' ) : __( '会议中心', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '多功能会议室，专业设备', 'Flexible meeting rooms with business-ready equipment.' ) : __( '多功能会议室，专业设备', 'qiling' ),
                     'time' => '08:00-20:00',
                 ),
                 array(
                     'icon' => 'icon-parking',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '停车场', 'Parking' ) : __( '停车场', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '地下车位，24小时安保', 'Underground parking with 24-hour security.' ) : __( '地下车位，24小时安保', 'developer-starter' ),
-                    'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '停车场', 'Parking' ) : __( '停车场', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '地下车位，24小时安保', 'Underground parking with 24-hour security.' ) : __( '地下车位，24小时安保', 'qiling' ),
+                    'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'qiling' ),
                 ),
                 array(
                     'icon' => 'icon-wifi',
-                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全覆盖高速无线网络', 'High-speed wireless coverage throughout the property.' ) : __( '全覆盖高速无线网络', 'developer-starter' ),
-                    'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'developer-starter' ),
+                    'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '免费WiFi', 'Free Wi-Fi' ) : __( '免费WiFi', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '全覆盖高速无线网络', 'High-speed wireless coverage throughout the property.' ) : __( '全覆盖高速无线网络', 'qiling' ),
+                    'time' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时', '24 hours' ) : __( '24小时', 'qiling' ),
                 ),
             );
         }

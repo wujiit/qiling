@@ -30,7 +30,7 @@ class Advanced_Category_Metabox {
     public function add_meta_box() {
         add_meta_box(
             'ds_advanced_category',
-            __( '🔖 高级分类设置', 'developer-starter' ),
+            __( '高级分类设置', 'qiling' ),
             array( $this, 'render_meta_box' ),
             'post',
             'side',
@@ -49,7 +49,7 @@ class Advanced_Category_Metabox {
             if ( empty( $options ) ) {
                 continue;
             }
-            $label = $level['label'] ? $level['label'] : sprintf( __( '分类层级 %d', 'developer-starter' ), $index + 1 );
+            $label = $level['label'] ? $level['label'] : sprintf( __( '分类层级 %d', 'qiling' ), $index + 1 );
             $result[] = array(
                 'key' => 'level_' . $index,
                 'label' => $label,
@@ -104,13 +104,13 @@ class Advanced_Category_Metabox {
         $minor_cats = get_term_meta( $term_id, 'ds_adv_minor_cats', true );
         if ( ! empty( $major_cats ) ) {
             $levels[] = array(
-                'label' => __( '大分类', 'developer-starter' ),
+                'label' => __( '大分类', 'qiling' ),
                 'options' => array_filter( array_map( 'trim', explode( ',', $major_cats ) ) ),
             );
         }
         if ( ! empty( $minor_cats ) ) {
             $levels[] = array(
-                'label' => __( '小分类', 'developer-starter' ),
+                'label' => __( '小分类', 'qiling' ),
                 'options' => array_filter( array_map( 'trim', explode( ',', $minor_cats ) ) ),
             );
         }
@@ -161,8 +161,8 @@ class Advanced_Category_Metabox {
         if ( empty( $category_levels_map ) ) {
             ?>
             <p style="color: #666; font-style: italic;">
-                <?php esc_html_e( '暂无可用的高级分类选项。', 'developer-starter' ); ?><br>
-                <?php printf( __( '请先在 <a href="%s">分类目录</a> 中启用高级分类筛选并设置筛选层级。', 'developer-starter' ), esc_url( admin_url( 'edit-tags.php?taxonomy=category' ) ) ); ?>
+                <?php esc_html_e( '暂无可用的高级分类选项。', 'qiling' ); ?><br>
+                <?php printf( __( '请先在 <a href="%s">分类目录</a> 中启用高级分类筛选并设置筛选层级。', 'qiling' ), esc_url( admin_url( 'edit-tags.php?taxonomy=category' ) ) ); ?>
             </p>
             <?php
             return;
@@ -193,7 +193,7 @@ class Advanced_Category_Metabox {
             <div style="margin-bottom: 12px;">
                 <label for="ds_adv_<?php echo esc_attr( $level['key'] ); ?>" style="display: block; margin-bottom: 5px; font-weight: 600;"><?php echo esc_html( $level['label'] ); ?></label>
                 <select name="ds_adv_levels[<?php echo esc_attr( $level['key'] ); ?>]" id="ds_adv_<?php echo esc_attr( $level['key'] ); ?>" style="width: 100%;">
-                    <option value=""><?php esc_html_e( '-- 不设置 --', 'developer-starter' ); ?></option>
+                    <option value=""><?php esc_html_e( '-- 不设置 --', 'qiling' ); ?></option>
                     <?php foreach ( $level['options'] as $cat ) : ?>
                         <option value="<?php echo esc_attr( $cat ); ?>" <?php selected( isset( $saved_levels[ $level['key'] ] ) ? $saved_levels[ $level['key'] ] : '', $cat ); ?>><?php echo esc_html( $cat ); ?></option>
                     <?php endforeach; ?>
@@ -203,7 +203,7 @@ class Advanced_Category_Metabox {
         </div>
         
         <p class="description" style="margin-top: 10px; font-size: 11px; color: #888;">
-            <?php esc_html_e( '用于前端分类页面的高级筛选功能。', 'developer-starter' ); ?>
+            <?php esc_html_e( '用于前端分类页面的高级筛选功能。', 'qiling' ); ?>
         </p>
         <script>
         (function($){
@@ -246,14 +246,14 @@ class Advanced_Category_Metabox {
                 var $container = $('#ds-adv-category-levels');
                 $container.empty();
                 if (!levels || !levels.length) {
-                    $container.append('<p style="color: #666; font-style: italic;"><?php echo esc_js( __( '暂无可用的高级分类选项。', 'developer-starter' ) ); ?></p>');
+                    $container.append('<p style="color: #666; font-style: italic;"><?php echo esc_js( __( '暂无可用的高级分类选项。', 'qiling' ) ); ?></p>');
                     return;
                 }
                 levels.forEach(function(level){
                     var $wrap = $('<div>').attr('style', 'margin-bottom: 12px;');
                     var $label = $('<label>').attr('for', 'ds_adv_' + level.key).attr('style', 'display: block; margin-bottom: 5px; font-weight: 600;').text(level.label);
                     var $select = $('<select>').attr('name', 'ds_adv_levels[' + level.key + ']').attr('id', 'ds_adv_' + level.key).attr('style', 'width: 100%;');
-                    $select.append($('<option>').attr('value', '').text('<?php echo esc_js( __( '-- 不设置 --', 'developer-starter' ) ); ?>'));
+                    $select.append($('<option>').attr('value', '').text('<?php echo esc_js( __( '-- 不设置 --', 'qiling' ) ); ?>'));
                     level.options.forEach(function(option){
                         var $option = $('<option>').attr('value', option).text(option);
                         if (savedLevels && savedLevels[level.key] === option) {

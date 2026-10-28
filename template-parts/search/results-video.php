@@ -22,7 +22,7 @@ if ( function_exists( 'update_post_thumbnail_cache' ) && $wp_query instanceof WP
         $post_id    = get_the_ID();
         $video_meta = $video_frontend ? $video_frontend->get_video_meta_public( $post_id ) : null;
         $title      = trim( get_the_title() );
-        $title      = '' !== $title ? $title : __( '（无标题）', 'developer-starter' );
+        $title      = '' !== $title ? $title : __( '（无标题）', 'qiling' );
         $poster     = $video_meta && ! empty( $video_meta->cover_image ) ? (string) $video_meta->cover_image : '';
         if ( '' === $poster && has_post_thumbnail( $post_id ) ) {
             $poster = (string) get_the_post_thumbnail_url( $post_id, 'medium_large' );
@@ -74,7 +74,7 @@ if ( function_exists( 'update_post_thumbnail_cache' ) && $wp_query instanceof WP
             <a class="search-video-card__poster<?php echo $poster_is_default ? ' is-placeholder' : ''; ?>" href="<?php echo esc_url( $card_data['permalink'] ); ?>" aria-label="<?php echo esc_attr( $card_data['title'] ); ?>">
                 <img src="<?php echo esc_url( $card_data['poster'] ); ?>" alt="<?php echo esc_attr( $card_data['title'] ); ?>" width="400" height="600" loading="lazy" decoding="async" />
                 <span class="search-video-card__badges search-video-card__badges--left">
-                    <span class="search-video-badge search-video-badge--mode"><?php esc_html_e( '影视', 'developer-starter' ); ?></span>
+                    <span class="search-video-badge search-video-badge--mode"><?php esc_html_e( '影视', 'qiling' ); ?></span>
                     <?php if ( ! empty( $card_data['vip_enabled'] ) ) : ?><span class="search-video-badge search-video-badge--vip">VIP</span><?php endif; ?>
                 </span>
                 <?php if ( ! empty( $card_data['quality'] ) || ! empty( $card_data['rating'] ) ) : ?>
@@ -85,7 +85,7 @@ if ( function_exists( 'update_post_thumbnail_cache' ) && $wp_query instanceof WP
                 <?php endif; ?>
                 <span class="search-video-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                 <?php if ( ! empty( $card_data['episode_count'] ) ) : ?>
-                    <span class="search-video-card__episode"><?php echo esc_html( sprintf( _n( '全 %d 集', '全 %d 集', (int) $card_data['episode_count'], 'developer-starter' ), (int) $card_data['episode_count'] ) ); ?></span>
+                    <span class="search-video-card__episode"><?php echo esc_html( sprintf( _n( '全 %d 集', '全 %d 集', (int) $card_data['episode_count'], 'qiling' ), (int) $card_data['episode_count'] ) ); ?></span>
                 <?php endif; ?>
             </a>
             <div class="search-video-card__body">

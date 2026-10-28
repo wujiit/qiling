@@ -257,18 +257,18 @@ if ( ! function_exists( 'developer_starter_admin_child_theme_compat_notice' ) ) 
         ?>
         <div class="notice notice-error">
             <p>
-                <strong><?php esc_html_e( '启灵子主题兼容提醒：', 'developer-starter' ); ?></strong>
-                <?php esc_html_e( '子主题覆盖的关键模板缺少必要 WordPress 钩子，可能导致父主题核心脚本、登录态同步、SEO 或插件资源无法输出。', 'developer-starter' ); ?>
+                <strong><?php esc_html_e( '启灵子主题兼容提醒：', 'qiling' ); ?></strong>
+                <?php esc_html_e( '子主题覆盖的关键模板缺少必要 WordPress 钩子，可能导致父主题核心脚本、登录态同步、SEO 或插件资源无法输出。', 'qiling' ); ?>
             </p>
             <ul>
                 <?php foreach ( $report as $item ) : ?>
                     <li>
                         <code><?php echo esc_html( $item['template'] ); ?></code>
-                        <?php echo esc_html( sprintf( __( '缺少：%s', 'developer-starter' ), implode( ', ', $item['missing_hooks'] ) ) ); ?>
+                        <?php echo esc_html( sprintf( __( '缺少：%s', 'qiling' ), implode( ', ', $item['missing_hooks'] ) ) ); ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <p><?php esc_html_e( '请把这些钩子补回子主题模板。启灵父主题会继续通过兼容桥兜底核心能力，但这些 WordPress 标准钩子仍然必须保留。', 'developer-starter' ); ?></p>
+            <p><?php esc_html_e( '请把这些钩子补回子主题模板。启灵父主题会继续通过兼容桥兜底核心能力，但这些 WordPress 标准钩子仍然必须保留。', 'qiling' ); ?></p>
         </div>
         <?php
     }
@@ -321,17 +321,17 @@ if ( ! function_exists( 'developer_starter_enqueue_child_theme_core_bridge' ) ) 
             return;
         }
 
-        if ( '' === (string) $version && defined( 'DEVELOPER_STARTER_VERSION' ) ) {
-            $version = DEVELOPER_STARTER_VERSION;
+        if ( '' === (string) $version && defined( 'QILING_VERSION' ) ) {
+            $version = QILING_VERSION;
         }
 
-        $deps = wp_script_is( 'developer-starter-main', 'registered' )
-            ? array( 'developer-starter-main' )
+        $deps = wp_script_is( 'qiling-main', 'registered' )
+            ? array( 'qiling-main' )
             : array();
 
         wp_enqueue_script(
             'developer-starter-header-auth',
-            DEVELOPER_STARTER_ASSETS . '/js/header-auth.js',
+            QILING_ASSETS . '/js/header-auth.js',
             $deps,
             (string) $version,
             true

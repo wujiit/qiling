@@ -63,11 +63,11 @@
         </h2>
         
         <?php if ( ! $hide_article_excerpt ) : ?>
-            <p class="post-excerpt"><?php echo wp_trim_words( get_the_excerpt(), $excerpt_length ); ?></p>
+            <p class="post-excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), $excerpt_length ) ); ?></p>
         <?php endif; ?>
         
         <a href="<?php echo esc_url( get_permalink() ); ?>" class="post-read-more">
-            <?php esc_html_e( '阅读更多 →', 'developer-starter' ); ?>
+            <?php esc_html_e( '阅读更多 →', 'qiling' ); ?>
         </a>
     </div>
 </article>

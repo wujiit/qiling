@@ -18,7 +18,7 @@ class Compliance_Trust_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'general';
         $this->icon        = 'dashicons-shield-alt';
-        $this->description = __( '展示 SOC2 / ISO / GDPR 等安全合规资质，支持徽章、说明与报告链接', 'developer-starter' );
+        $this->description = __( '展示 SOC2 / ISO / GDPR 等安全合规资质，支持徽章、说明与报告链接', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Compliance_Trust_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '安全合规', 'developer-starter' );
+        return __( '安全合规', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,123 +34,123 @@ class Compliance_Trust_Module extends Module_Base {
             array(
                 'id'      => 'ct_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '安全与<span style="color:var(--color-primary)">合规</span>', 'Security & <span style="color:var(--color-primary)">Compliance</span>' ) : __( '安全与<span style="color:var(--color-primary)">合规</span>', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '安全与<span style="color:var(--color-primary)">合规</span>', 'Security & <span style="color:var(--color-primary)">Compliance</span>' ) : __( '安全与<span style="color:var(--color-primary)">合规</span>', 'qiling' ),
             ),
             array(
                 'id'      => 'ct_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '我们持续通过权威安全认证与隐私合规审查，保障数据安全与业务连续性。', 'We continuously pass independent security and privacy audits to protect your data and business continuity.' ) : __( '我们持续通过权威安全认证与隐私合规审查，保障数据安全与业务连续性。', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '我们持续通过权威安全认证与隐私合规审查，保障数据安全与业务连续性。', 'We continuously pass independent security and privacy audits to protect your data and business continuity.' ) : __( '我们持续通过权威安全认证与隐私合规审查，保障数据安全与业务连续性。', 'qiling' ),
             ),
             array(
                 'id'      => 'ct_note',
                 'type'    => 'textarea',
-                'label'   => __( '补充说明', 'developer-starter' ),
+                'label'   => __( '补充说明', 'qiling' ),
                 'rows'    => 3,
                 'default' => '',
             ),
             array(
                 'id'      => 'ct_layout',
                 'type'    => 'select',
-                'label'   => __( '布局模式', 'developer-starter' ),
+                'label'   => __( '布局模式', 'qiling' ),
                 'options' => array(
-                    'grid' => __( '网格布局', 'developer-starter' ),
-                    'list' => __( '列表布局', 'developer-starter' ),
+                    'grid' => __( '网格布局', 'qiling' ),
+                    'list' => __( '列表布局', 'qiling' ),
                 ),
                 'default' => 'grid',
             ),
             array(
                 'id'      => 'ct_columns',
                 'type'    => 'select',
-                'label'   => __( '网格列数', 'developer-starter' ),
+                'label'   => __( '网格列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
             ),
             array(
                 'id'      => 'ct_enable_filter',
                 'type'    => 'select',
-                'label'   => __( '启用分类筛选', 'developer-starter' ),
+                'label'   => __( '启用分类筛选', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'ct_card_style',
                 'type'    => 'select',
-                'label'   => __( '卡片风格', 'developer-starter' ),
+                'label'   => __( '卡片风格', 'qiling' ),
                 'options' => array(
-                    'solid' => __( '实体卡片', 'developer-starter' ),
-                    'glass' => __( '玻璃拟态', 'developer-starter' ),
+                    'solid' => __( '实体卡片', 'qiling' ),
+                    'glass' => __( '玻璃拟态', 'qiling' ),
                 ),
                 'default' => 'solid',
             ),
             array(
                 'id'      => 'ct_accent_color',
                 'type'    => 'color',
-                'label'   => __( '主题强调色', 'developer-starter' ),
+                'label'   => __( '主题强调色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'ct_status_chip_bg',
                 'type'    => 'color',
-                'label'   => __( '状态徽章背景色', 'developer-starter' ),
+                'label'   => __( '状态徽章背景色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'ct_status_chip_text',
                 'type'    => 'color',
-                'label'   => __( '状态徽章文字色', 'developer-starter' ),
+                'label'   => __( '状态徽章文字色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'ct_action_btn_bg',
                 'type'    => 'text',
-                'label'   => __( '操作按钮背景 (支持渐变)', 'developer-starter' ),
+                'label'   => __( '操作按钮背景 (支持渐变)', 'qiling' ),
                 'default' => 'var(--qiling-gradient-brand)',
             ),
             array(
                 'id'      => 'ct_action_btn_text',
                 'type'    => 'color',
-                'label'   => __( '操作按钮文字色', 'developer-starter' ),
+                'label'   => __( '操作按钮文字色', 'qiling' ),
                 'default' => '',
             ),
-            $this->get_button_border_color_field( 'ct_action_btn_border', __( '操作按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'ct_action_btn_border', __( '操作按钮边框颜色', 'qiling' ) ),
             array(
                 'id'      => 'module_bg_type',
                 'type'    => 'select',
-                'label'   => __( '背景类型', 'developer-starter' ),
+                'label'   => __( '背景类型', 'qiling' ),
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id'         => 'module_bg_color',
                 'type'       => 'text',
-                'label'      => __( '背景颜色/渐变', 'developer-starter' ),
+                'label'      => __( '背景颜色/渐变', 'qiling' ),
                 'default'    => 'var(--color-neutral-50)',
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             array(
                 'id'         => 'module_bg_image',
                 'type'       => 'image',
-                'label'      => __( '背景图片', 'developer-starter' ),
+                'label'      => __( '背景图片', 'qiling' ),
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             array(
                 'id'         => 'module_bg_overlay',
                 'type'       => 'select',
-                'label'      => __( '背景遮罩浓度', 'developer-starter' ),
+                'label'      => __( '背景遮罩浓度', 'qiling' ),
                 'options'    => array(
-                    '0'   => __( '无遮罩', 'developer-starter' ),
+                    '0'   => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -167,68 +167,68 @@ class Compliance_Trust_Module extends Module_Base {
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距 (如 80px)', 'developer-starter' ),
+                'label'   => __( '上边距 (如 80px)', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距 (如 80px)', 'developer-starter' ),
+                'label'   => __( '下边距 (如 80px)', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'            => 'ct_items',
                 'type'          => 'repeater',
-                'label'         => __( '合规条目', 'developer-starter' ),
-                'add_button'    => __( '添加条目', 'developer-starter' ),
+                'label'         => __( '合规条目', 'qiling' ),
+                'add_button'    => __( '添加条目', 'qiling' ),
                 'default_items' => $this->get_default_items(),
                 'fields'        => array(
-                    array( 'id' => 'logo', 'type' => 'image', 'label' => __( '徽章/logo', 'developer-starter' ) ),
-                    array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (emoji 或文本)', 'developer-starter' ) ),
-                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '名称', 'developer-starter' ) ),
-                    array( 'id' => 'short_name', 'type' => 'text', 'label' => __( '简称 (如 SOC2)', 'developer-starter' ) ),
-                    array( 'id' => 'category', 'type' => 'text', 'label' => __( '分类 (如 隐私/安全)', 'developer-starter' ) ),
+                    array( 'id' => 'logo', 'type' => 'image', 'label' => __( '徽章/logo', 'qiling' ) ),
+                    array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标 (emoji 或文本)', 'qiling' ) ),
+                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '名称', 'qiling' ) ),
+                    array( 'id' => 'short_name', 'type' => 'text', 'label' => __( '简称 (如 SOC2)', 'qiling' ) ),
+                    array( 'id' => 'category', 'type' => 'text', 'label' => __( '分类 (如 隐私/安全)', 'qiling' ) ),
                     array(
                         'id'      => 'status',
                         'type'    => 'select',
-                        'label'   => __( '状态', 'developer-starter' ),
+                        'label'   => __( '状态', 'qiling' ),
                         'options' => array(
-                            'active'   => __( '已认证', 'developer-starter' ),
-                            'progress' => __( '进行中', 'developer-starter' ),
-                            'planned'  => __( '计划中', 'developer-starter' ),
-                            'expired'  => __( '已过期', 'developer-starter' ),
+                            'active'   => __( '已认证', 'qiling' ),
+                            'progress' => __( '进行中', 'qiling' ),
+                            'planned'  => __( '计划中', 'qiling' ),
+                            'expired'  => __( '已过期', 'qiling' ),
                         ),
                     ),
-                    array( 'id' => 'status_text', 'type' => 'text', 'label' => __( '自定义状态文案 (可选)', 'developer-starter' ) ),
-                    array( 'id' => 'issuer', 'type' => 'text', 'label' => __( '审计/颁发机构', 'developer-starter' ) ),
-                    array( 'id' => 'cert_no', 'type' => 'text', 'label' => __( '证书编号/报告号', 'developer-starter' ) ),
-                    array( 'id' => 'scope', 'type' => 'text', 'label' => __( '适用范围', 'developer-starter' ) ),
-                    array( 'id' => 'valid_until', 'type' => 'text', 'label' => __( '有效期', 'developer-starter' ) ),
-                    array( 'id' => 'description', 'type' => 'textarea', 'label' => __( '说明', 'developer-starter' ), 'rows' => 3 ),
-                    array( 'id' => 'checklist', 'type' => 'textarea', 'label' => __( '能力点 (每行一条)', 'developer-starter' ), 'rows' => 4 ),
-                    array( 'id' => 'report_url', 'type' => 'text', 'label' => __( '详情/报告链接', 'developer-starter' ) ),
-                    array( 'id' => 'report_text', 'type' => 'text', 'label' => __( '链接文案', 'developer-starter' ) ),
+                    array( 'id' => 'status_text', 'type' => 'text', 'label' => __( '自定义状态文案 (可选)', 'qiling' ) ),
+                    array( 'id' => 'issuer', 'type' => 'text', 'label' => __( '审计/颁发机构', 'qiling' ) ),
+                    array( 'id' => 'cert_no', 'type' => 'text', 'label' => __( '证书编号/报告号', 'qiling' ) ),
+                    array( 'id' => 'scope', 'type' => 'text', 'label' => __( '适用范围', 'qiling' ) ),
+                    array( 'id' => 'valid_until', 'type' => 'text', 'label' => __( '有效期', 'qiling' ) ),
+                    array( 'id' => 'description', 'type' => 'textarea', 'label' => __( '说明', 'qiling' ), 'rows' => 3 ),
+                    array( 'id' => 'checklist', 'type' => 'textarea', 'label' => __( '能力点 (每行一条)', 'qiling' ), 'rows' => 4 ),
+                    array( 'id' => 'report_url', 'type' => 'text', 'label' => __( '详情/报告链接', 'qiling' ) ),
+                    array( 'id' => 'report_text', 'type' => 'text', 'label' => __( '链接文案', 'qiling' ) ),
                     array(
                         'id'      => 'highlight',
                         'type'    => 'select',
-                        'label'   => __( '高亮卡片', 'developer-starter' ),
+                        'label'   => __( '高亮卡片', 'qiling' ),
                         'options' => array(
-                            'no'  => __( '否', 'developer-starter' ),
-                            'yes' => __( '是', 'developer-starter' ),
+                            'no'  => __( '否', 'qiling' ),
+                            'yes' => __( '是', 'qiling' ),
                         ),
                         'default' => 'no',
                     ),
-                    array( 'id' => 'card_bg', 'type' => 'color', 'label' => __( '卡片背景色 (可选)', 'developer-starter' ) ),
-                    array( 'id' => 'border_color', 'type' => 'color', 'label' => __( '卡片边框色 (可选)', 'developer-starter' ) ),
+                    array( 'id' => 'card_bg', 'type' => 'color', 'label' => __( '卡片背景色 (可选)', 'qiling' ) ),
+                    array( 'id' => 'border_color', 'type' => 'color', 'label' => __( '卡片边框色 (可选)', 'qiling' ) ),
                 ),
             ),
             array(
                 'id'      => 'enable_staggered_animation',
                 'type'    => 'select',
-                'label'   => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label'   => __( '开启列表逐个显示动画', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no'  => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -335,19 +335,19 @@ class Compliance_Trust_Module extends Module_Base {
 
         $status_map = array(
             'active'   => array(
-                'label' => __( '已认证', 'developer-starter' ),
+                'label' => __( '已认证', 'qiling' ),
                 'class' => 'is-active',
             ),
             'progress' => array(
-                'label' => __( '进行中', 'developer-starter' ),
+                'label' => __( '进行中', 'qiling' ),
                 'class' => 'is-progress',
             ),
             'planned'  => array(
-                'label' => __( '计划中', 'developer-starter' ),
+                'label' => __( '计划中', 'qiling' ),
                 'class' => 'is-planned',
             ),
             'expired'  => array(
-                'label' => __( '已过期', 'developer-starter' ),
+                'label' => __( '已过期', 'qiling' ),
                 'class' => 'is-expired',
             ),
         );
@@ -416,7 +416,7 @@ class Compliance_Trust_Module extends Module_Base {
 
                 <?php if ( $enable_filter === 'yes' && count( $categories ) > 1 ) : ?>
                     <div class="ct-filters">
-                        <button type="button" class="ct-filter-btn is-active" data-filter="all"><?php esc_html_e( '全部', 'developer-starter' ); ?></button>
+                        <button type="button" class="ct-filter-btn is-active" data-filter="all"><?php esc_html_e( '全部', 'qiling' ); ?></button>
                         <?php foreach ( $categories as $category ) : ?>
                             <button type="button" class="ct-filter-btn" data-filter="<?php echo esc_attr( sanitize_title( $category ) ); ?>">
                                 <?php echo esc_html( $category ); ?>
@@ -442,7 +442,7 @@ class Compliance_Trust_Module extends Module_Base {
                         $item_desc       = isset( $item['description'] ) ? (string) $item['description'] : '';
                         $item_points     = $this->parse_multiline_list( isset( $item['checklist'] ) ? (string) $item['checklist'] : '' );
                         $item_report_url = isset( $item['report_url'] ) ? (string) $item['report_url'] : '';
-                        $item_report_txt = isset( $item['report_text'] ) && trim( (string) $item['report_text'] ) !== '' ? (string) $item['report_text'] : __( '查看详情', 'developer-starter' );
+                        $item_report_txt = isset( $item['report_text'] ) && trim( (string) $item['report_text'] ) !== '' ? (string) $item['report_text'] : __( '查看详情', 'qiling' );
                         $item_highlight  = isset( $item['highlight'] ) && sanitize_key( (string) $item['highlight'] ) === 'yes';
                         $item_card_bg    = isset( $item['card_bg'] ) ? trim( (string) $item['card_bg'] ) : '';
                         $item_border     = isset( $item['border_color'] ) ? trim( (string) $item['border_color'] ) : '';
@@ -475,7 +475,7 @@ class Compliance_Trust_Module extends Module_Base {
                                     <?php elseif ( $item_icon !== '' ) : ?>
                                         <span class="ct-seal-fallback"><?php echo esc_html( $item_icon ); ?></span>
                                     <?php else : ?>
-                                        <span class="ct-seal-fallback"><?php echo esc_html( $item_short_name !== '' ? $item_short_name : '✔' ); ?></span>
+                                        <span class="ct-seal-fallback"><?php if ( $item_short_name !== '' ) : ?><?php echo esc_html( $item_short_name ); ?><?php else : ?><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><?php endif; ?></span>
                                     <?php endif; ?>
                                 </div>
                                 <div class="ct-head-text">
@@ -493,16 +493,16 @@ class Compliance_Trust_Module extends Module_Base {
 
                             <div class="ct-meta">
                                 <?php if ( $item_issuer !== '' ) : ?>
-                                    <div class="ct-meta-item"><span><?php esc_html_e( '机构', 'developer-starter' ); ?></span><strong><?php echo esc_html( $item_issuer ); ?></strong></div>
+                                    <div class="ct-meta-item"><span><?php esc_html_e( '机构', 'qiling' ); ?></span><strong><?php echo esc_html( $item_issuer ); ?></strong></div>
                                 <?php endif; ?>
                                 <?php if ( $item_cert_no !== '' ) : ?>
-                                    <div class="ct-meta-item"><span><?php esc_html_e( '编号', 'developer-starter' ); ?></span><strong><?php echo esc_html( $item_cert_no ); ?></strong></div>
+                                    <div class="ct-meta-item"><span><?php esc_html_e( '编号', 'qiling' ); ?></span><strong><?php echo esc_html( $item_cert_no ); ?></strong></div>
                                 <?php endif; ?>
                                 <?php if ( $item_scope !== '' ) : ?>
-                                    <div class="ct-meta-item"><span><?php esc_html_e( '范围', 'developer-starter' ); ?></span><strong><?php echo esc_html( $item_scope ); ?></strong></div>
+                                    <div class="ct-meta-item"><span><?php esc_html_e( '范围', 'qiling' ); ?></span><strong><?php echo esc_html( $item_scope ); ?></strong></div>
                                 <?php endif; ?>
                                 <?php if ( $item_valid !== '' ) : ?>
-                                    <div class="ct-meta-item"><span><?php esc_html_e( '有效期', 'developer-starter' ); ?></span><strong><?php echo esc_html( $item_valid ); ?></strong></div>
+                                    <div class="ct-meta-item"><span><?php esc_html_e( '有效期', 'qiling' ); ?></span><strong><?php echo esc_html( $item_valid ); ?></strong></div>
                                 <?php endif; ?>
                             </div>
 
@@ -843,63 +843,63 @@ class Compliance_Trust_Module extends Module_Base {
     private function get_default_items() {
         return array(
             array(
-                'icon'        => '🛡️',
+                'icon'        => '',
                 'title'       => 'SOC 2 Type II',
                 'short_name'  => 'SOC2',
-                'category'    => __( '安全控制', 'developer-starter' ),
+                'category'    => __( '安全控制', 'qiling' ),
                 'status'      => 'active',
-                'issuer'      => __( '独立第三方审计机构', 'developer-starter' ),
+                'issuer'      => __( '独立第三方审计机构', 'qiling' ),
                 'cert_no'     => 'SOC2-2026-Q1',
-                'scope'       => __( '云平台与生产运营控制', 'developer-starter' ),
-                'valid_until' => __( '年度滚动审计', 'developer-starter' ),
-                'description' => __( '围绕安全性、可用性、保密性建立控制体系并持续审计。', 'developer-starter' ),
-                'checklist'   => __( "访问控制策略\n变更管理审计\n日志留存与告警", 'developer-starter' ),
+                'scope'       => __( '云平台与生产运营控制', 'qiling' ),
+                'valid_until' => __( '年度滚动审计', 'qiling' ),
+                'description' => __( '围绕安全性、可用性、保密性建立控制体系并持续审计。', 'qiling' ),
+                'checklist'   => __( "访问控制策略\n变更管理审计\n日志留存与告警", 'qiling' ),
                 'report_url'  => '#',
-                'report_text' => __( '查看审计说明', 'developer-starter' ),
+                'report_text' => __( '查看审计说明', 'qiling' ),
                 'highlight'   => 'yes',
             ),
             array(
-                'icon'        => '🔐',
+                'icon'        => '',
                 'title'       => 'ISO/IEC 27001',
                 'short_name'  => 'ISO27001',
-                'category'    => __( '信息安全', 'developer-starter' ),
+                'category'    => __( '信息安全', 'qiling' ),
                 'status'      => 'active',
-                'issuer'      => __( '国际认证机构', 'developer-starter' ),
+                'issuer'      => __( '国际认证机构', 'qiling' ),
                 'cert_no'     => 'ISO27001-2026-11',
-                'scope'       => __( '信息安全管理体系', 'developer-starter' ),
+                'scope'       => __( '信息安全管理体系', 'qiling' ),
                 'valid_until' => '2028-11-30',
-                'description' => __( '基于风险评估持续改进信息安全管理流程。', 'developer-starter' ),
-                'checklist'   => __( "风险分级管控\n供应商安全评估\n员工安全培训", 'developer-starter' ),
+                'description' => __( '基于风险评估持续改进信息安全管理流程。', 'qiling' ),
+                'checklist'   => __( "风险分级管控\n供应商安全评估\n员工安全培训", 'qiling' ),
                 'report_url'  => '#',
-                'report_text' => __( '查看认证范围', 'developer-starter' ),
+                'report_text' => __( '查看认证范围', 'qiling' ),
             ),
             array(
-                'icon'        => '🌍',
+                'icon'        => '',
                 'title'       => 'GDPR',
                 'short_name'  => 'GDPR',
-                'category'    => __( '隐私合规', 'developer-starter' ),
+                'category'    => __( '隐私合规', 'qiling' ),
                 'status'      => 'active',
-                'issuer'      => __( '内部法务与外部顾问联合评估', 'developer-starter' ),
-                'scope'       => __( '欧盟用户数据处理流程', 'developer-starter' ),
-                'valid_until' => __( '持续合规监测', 'developer-starter' ),
-                'description' => __( '提供数据主体权利响应机制与跨境数据处理合规流程。', 'developer-starter' ),
-                'checklist'   => __( "数据处理记录\nDPA协议支持\n删除与导出流程", 'developer-starter' ),
+                'issuer'      => __( '内部法务与外部顾问联合评估', 'qiling' ),
+                'scope'       => __( '欧盟用户数据处理流程', 'qiling' ),
+                'valid_until' => __( '持续合规监测', 'qiling' ),
+                'description' => __( '提供数据主体权利响应机制与跨境数据处理合规流程。', 'qiling' ),
+                'checklist'   => __( "数据处理记录\nDPA协议支持\n删除与导出流程", 'qiling' ),
                 'report_url'  => '#',
-                'report_text' => __( '查看隐私承诺', 'developer-starter' ),
+                'report_text' => __( '查看隐私承诺', 'qiling' ),
             ),
             array(
-                'icon'        => '📋',
-                'title'       => __( '等保三级', 'developer-starter' ),
-                'short_name'  => __( '等保3级', 'developer-starter' ),
-                'category'    => __( '本地监管', 'developer-starter' ),
+                'icon'        => '',
+                'title'       => __( '等保三级', 'qiling' ),
+                'short_name'  => __( '等保3级', 'qiling' ),
+                'category'    => __( '本地监管', 'qiling' ),
                 'status'      => 'progress',
-                'issuer'      => __( '测评机构进行中', 'developer-starter' ),
-                'scope'       => __( '核心业务系统安全防护', 'developer-starter' ),
-                'valid_until' => __( '预计 2026 Q4 完成', 'developer-starter' ),
-                'description' => __( '按等保要求完善技术与管理制度，推进正式测评。', 'developer-starter' ),
-                'checklist'   => __( "主机与网络加固\n制度与流程补齐\n测评整改闭环", 'developer-starter' ),
+                'issuer'      => __( '测评机构进行中', 'qiling' ),
+                'scope'       => __( '核心业务系统安全防护', 'qiling' ),
+                'valid_until' => __( '预计 2026 Q4 完成', 'qiling' ),
+                'description' => __( '按等保要求完善技术与管理制度，推进正式测评。', 'qiling' ),
+                'checklist'   => __( "主机与网络加固\n制度与流程补齐\n测评整改闭环", 'qiling' ),
                 'report_url'  => '#',
-                'report_text' => __( '查看进展', 'developer-starter' ),
+                'report_text' => __( '查看进展', 'qiling' ),
             ),
         );
     }

@@ -58,177 +58,177 @@ class Dynamic_Data_Manager {
      * @return array<string,array<string,string>>
      */
     public function get_sources() {
-        $post_group = __( '当前文章', 'developer-starter' );
-        $loop_group = __( '当前循环项', 'developer-starter' );
-        $query_group = __( '当前查询', 'developer-starter' );
-        $term_group = __( '当前分类/标签', 'developer-starter' );
-        $site_group = __( '站点信息', 'developer-starter' );
+        $post_group = __( '当前文章', 'qiling' );
+        $loop_group = __( '当前循环项', 'qiling' );
+        $query_group = __( '当前查询', 'qiling' );
+        $term_group = __( '当前分类/标签', 'qiling' );
+        $site_group = __( '站点信息', 'qiling' );
 
         $sources = array(
             'post.title' => array(
-                'label'      => __( '当前文章标题', 'developer-starter' ),
+                'label'      => __( '当前文章标题', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'text',
             ),
             'post.content' => array(
-                'label'      => __( '当前文章正文', 'developer-starter' ),
+                'label'      => __( '当前文章正文', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'html',
             ),
             'post.excerpt' => array(
-                'label'      => __( '当前文章摘要', 'developer-starter' ),
+                'label'      => __( '当前文章摘要', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'text',
             ),
             'post.featured_image' => array(
-                'label'      => __( '当前文章特色图', 'developer-starter' ),
+                'label'      => __( '当前文章特色图', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'image',
             ),
             'post.link' => array(
-                'label'      => __( '当前文章链接', 'developer-starter' ),
+                'label'      => __( '当前文章链接', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'url',
             ),
             'post.author' => array(
-                'label'      => __( '当前作者', 'developer-starter' ),
+                'label'      => __( '当前作者', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'text',
             ),
             'post.date' => array(
-                'label'      => __( '当前发布时间', 'developer-starter' ),
+                'label'      => __( '当前发布时间', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'text',
             ),
             'post.categories' => array(
-                'label'      => __( '当前文章分类', 'developer-starter' ),
+                'label'      => __( '当前文章分类', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'text',
             ),
             'post.tags' => array(
-                'label'      => __( '当前文章标签', 'developer-starter' ),
+                'label'      => __( '当前文章标签', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'text',
             ),
             'post.terms' => array(
-                'label'      => __( '当前分类/标签', 'developer-starter' ),
+                'label'      => __( '当前分类/标签', 'qiling' ),
                 'group'      => 'post',
                 'groupLabel' => $post_group,
                 'valueType'  => 'text',
             ),
             'loop.title' => array(
-                'label'      => __( '循环项标题', 'developer-starter' ),
+                'label'      => __( '循环项标题', 'qiling' ),
                 'group'      => 'loop',
                 'groupLabel' => $loop_group,
                 'valueType'  => 'text',
             ),
             'loop.featured_image' => array(
-                'label'      => __( '循环项图片', 'developer-starter' ),
+                'label'      => __( '循环项图片', 'qiling' ),
                 'group'      => 'loop',
                 'groupLabel' => $loop_group,
                 'valueType'  => 'image',
             ),
             'loop.excerpt' => array(
-                'label'      => __( '循环项摘要', 'developer-starter' ),
+                'label'      => __( '循环项摘要', 'qiling' ),
                 'group'      => 'loop',
                 'groupLabel' => $loop_group,
                 'valueType'  => 'text',
             ),
             'loop.link' => array(
-                'label'      => __( '循环项链接', 'developer-starter' ),
+                'label'      => __( '循环项链接', 'qiling' ),
                 'group'      => 'loop',
                 'groupLabel' => $loop_group,
                 'valueType'  => 'url',
             ),
             'loop.categories' => array(
-                'label'      => __( '循环项分类', 'developer-starter' ),
+                'label'      => __( '循环项分类', 'qiling' ),
                 'group'      => 'loop',
                 'groupLabel' => $loop_group,
                 'valueType'  => 'text',
             ),
             'loop.date' => array(
-                'label'      => __( '循环项日期', 'developer-starter' ),
+                'label'      => __( '循环项日期', 'qiling' ),
                 'group'      => 'loop',
                 'groupLabel' => $loop_group,
                 'valueType'  => 'text',
             ),
             'archive.title' => array(
-                'label'      => __( '当前归档标题', 'developer-starter' ),
+                'label'      => __( '当前归档标题', 'qiling' ),
                 'group'      => 'query',
                 'groupLabel' => $query_group,
                 'valueType'  => 'text',
             ),
             'archive.description' => array(
-                'label'      => __( '当前归档描述', 'developer-starter' ),
+                'label'      => __( '当前归档描述', 'qiling' ),
                 'group'      => 'query',
                 'groupLabel' => $query_group,
                 'valueType'  => 'text',
             ),
             'search.query' => array(
-                'label'      => __( '当前搜索词', 'developer-starter' ),
+                'label'      => __( '当前搜索词', 'qiling' ),
                 'group'      => 'query',
                 'groupLabel' => $query_group,
                 'valueType'  => 'text',
             ),
             'search.results_count' => array(
-                'label'      => __( '搜索结果数量', 'developer-starter' ),
+                'label'      => __( '搜索结果数量', 'qiling' ),
                 'group'      => 'query',
                 'groupLabel' => $query_group,
                 'valueType'  => 'text',
             ),
             'author.name' => array(
-                'label'      => __( '当前作者名称', 'developer-starter' ),
+                'label'      => __( '当前作者名称', 'qiling' ),
                 'group'      => 'query',
                 'groupLabel' => $query_group,
                 'valueType'  => 'text',
             ),
             'term.name' => array(
-                'label'      => __( '当前分类/标签名称', 'developer-starter' ),
+                'label'      => __( '当前分类/标签名称', 'qiling' ),
                 'group'      => 'term',
                 'groupLabel' => $term_group,
                 'valueType'  => 'text',
             ),
             'term.description' => array(
-                'label'      => __( '当前分类/标签描述', 'developer-starter' ),
+                'label'      => __( '当前分类/标签描述', 'qiling' ),
                 'group'      => 'term',
                 'groupLabel' => $term_group,
                 'valueType'  => 'text',
             ),
             'category.name' => array(
-                'label'      => __( '当前分类名称', 'developer-starter' ),
+                'label'      => __( '当前分类名称', 'qiling' ),
                 'group'      => 'term',
                 'groupLabel' => $term_group,
                 'valueType'  => 'text',
             ),
             'category.description' => array(
-                'label'      => __( '当前分类描述', 'developer-starter' ),
+                'label'      => __( '当前分类描述', 'qiling' ),
                 'group'      => 'term',
                 'groupLabel' => $term_group,
                 'valueType'  => 'text',
             ),
             'site.title' => array(
-                'label'      => __( '站点标题', 'developer-starter' ),
+                'label'      => __( '站点标题', 'qiling' ),
                 'group'      => 'site',
                 'groupLabel' => $site_group,
                 'valueType'  => 'text',
             ),
             'site.tagline' => array(
-                'label'      => __( '站点副标题', 'developer-starter' ),
+                'label'      => __( '站点副标题', 'qiling' ),
                 'group'      => 'site',
                 'groupLabel' => $site_group,
                 'valueType'  => 'text',
             ),
             'site.home_url' => array(
-                'label'      => __( '首页链接', 'developer-starter' ),
+                'label'      => __( '首页链接', 'qiling' ),
                 'group'      => 'site',
                 'groupLabel' => $site_group,
                 'valueType'  => 'url',
@@ -467,8 +467,8 @@ class Dynamic_Data_Manager {
             $context['searchResultsCount'] = $wp_query instanceof \WP_Query ? max( 0, (int) $wp_query->found_posts ) : 0;
             if ( empty( $context['archiveTitle'] ) ) {
                 $context['archiveTitle'] = '' !== $context['searchQuery']
-                    ? sprintf( __( '搜索：%s', 'developer-starter' ), $context['searchQuery'] )
-                    : __( '搜索结果', 'developer-starter' );
+                    ? sprintf( __( '搜索：%s', 'qiling' ), $context['searchQuery'] )
+                    : __( '搜索结果', 'qiling' );
             }
         }
 

@@ -21,7 +21,7 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-star-filled';
-        $this->description = __( '通用推荐/专题模块（支持手动与自动内容）', 'developer-starter' );
+        $this->description = __( '通用推荐/专题模块（支持手动与自动内容）', 'qiling' );
     }
 
     public function get_id() {
@@ -29,42 +29,42 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '通用推荐/专题', 'developer-starter' );
+        return __( '通用推荐/专题', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'qur_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => __( '推荐与专题', 'developer-starter' ) ),
-            array( 'id' => 'qur_subtitle', 'type' => 'text', 'label' => __( '模块副标题', 'developer-starter' ), 'default' => __( '精选内容与专题入口', 'developer-starter' ) ),
+            array( 'id' => 'qur_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => __( '推荐与专题', 'qiling' ) ),
+            array( 'id' => 'qur_subtitle', 'type' => 'text', 'label' => __( '模块副标题', 'qiling' ), 'default' => __( '精选内容与专题入口', 'qiling' ) ),
 
             array(
                 'id' => 'qur_show_topics',
                 'type' => 'select',
-                'label' => __( '显示专题入口', 'developer-starter' ),
+                'label' => __( '显示专题入口', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no' => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no' => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'no',
             ),
             array(
                 'id' => 'qur_topics',
                 'type' => 'repeater',
-                'label' => __( '专题入口列表', 'developer-starter' ),
+                'label' => __( '专题入口列表', 'qiling' ),
                 'dependency' => array( 'id' => 'qur_show_topics', 'value' => 'yes' ),
                 'fields' => array(
-                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '专题标题', 'developer-starter' ) ),
-                    array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '专题描述', 'developer-starter' ) ),
-                    array( 'id' => 'image', 'type' => 'image', 'label' => __( '专题封面', 'developer-starter' ) ),
-                    array( 'id' => 'badge', 'type' => 'text', 'label' => __( '专题角标', 'developer-starter' ) ),
-                    array( 'id' => 'url', 'type' => 'text', 'label' => __( '跳转链接', 'developer-starter' ) ),
+                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '专题标题', 'qiling' ) ),
+                    array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '专题描述', 'qiling' ) ),
+                    array( 'id' => 'image', 'type' => 'image', 'label' => __( '专题封面', 'qiling' ) ),
+                    array( 'id' => 'badge', 'type' => 'text', 'label' => __( '专题角标', 'qiling' ) ),
+                    array( 'id' => 'url', 'type' => 'text', 'label' => __( '跳转链接', 'qiling' ) ),
                     array(
                         'id' => 'target',
                         'type' => 'select',
-                        'label' => __( '打开方式', 'developer-starter' ),
+                        'label' => __( '打开方式', 'qiling' ),
                         'options' => array(
-                            '_self' => __( '当前窗口', 'developer-starter' ),
-                            '_blank' => __( '新窗口', 'developer-starter' ),
+                            '_self' => __( '当前窗口', 'qiling' ),
+                            '_blank' => __( '新窗口', 'qiling' ),
                         ),
                         'default' => '_self',
                     ),
@@ -74,50 +74,50 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
             array(
                 'id' => 'qur_source_mode',
                 'type' => 'select',
-                'label' => __( '内容来源模式', 'developer-starter' ),
+                'label' => __( '内容来源模式', 'qiling' ),
                 'options' => array(
-                    'auto' => __( '自动获取', 'developer-starter' ),
-                    'manual' => __( '手动添加', 'developer-starter' ),
-                    'mixed' => __( '混合模式（手动优先 + 自动补位）', 'developer-starter' ),
+                    'auto' => __( '自动获取', 'qiling' ),
+                    'manual' => __( '手动添加', 'qiling' ),
+                    'mixed' => __( '混合模式（手动优先 + 自动补位）', 'qiling' ),
                 ),
                 'default' => 'auto',
             ),
-            array( 'id' => 'qur_total_count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '9' ),
+            array( 'id' => 'qur_total_count', 'type' => 'number', 'label' => __( '显示数量', 'qiling' ), 'default' => '9' ),
 
             array(
                 'id' => 'qur_category_ids',
                 'type' => 'text',
-                'label' => __( '文章分类 ID', 'developer-starter' ),
+                'label' => __( '文章分类 ID', 'qiling' ),
                 'default' => '',
-                'description' => __( '填写要推荐的文章分类 ID；多个 ID 用英文逗号分隔。留空时显示全部分类的最新文章。', 'developer-starter' ),
+                'description' => __( '填写要推荐的文章分类 ID；多个 ID 用英文逗号分隔。留空时显示全部分类的最新文章。', 'qiling' ),
                 'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'auto', 'mixed' ) ),
             ),
 
             array(
                 'id' => 'qur_manual_items',
                 'type' => 'repeater',
-                'label' => __( '手动推荐内容', 'developer-starter' ),
+                'label' => __( '手动推荐内容', 'qiling' ),
                 'dependency' => array( 'id' => 'qur_source_mode', 'value' => array( 'manual', 'mixed' ) ),
                 'default_items' => array(
                     array(
                         'item_type' => 'custom',
-                        'title' => __( '专题精选', 'developer-starter' ),
-                        'excerpt' => __( '用于展示重点内容与推荐位的通用卡片。', 'developer-starter' ),
-                        'badge' => __( '推荐', 'developer-starter' ),
+                        'title' => __( '专题精选', 'qiling' ),
+                        'excerpt' => __( '用于展示重点内容与推荐位的通用卡片。', 'qiling' ),
+                        'badge' => __( '推荐', 'qiling' ),
                         'target' => '_self',
                     ),
                     array(
                         'item_type' => 'custom',
-                        'title' => __( '行业案例合集', 'developer-starter' ),
-                        'excerpt' => __( '支持手动与自动混合，适配不同业务场景。', 'developer-starter' ),
-                        'badge' => __( '专题', 'developer-starter' ),
+                        'title' => __( '行业案例合集', 'qiling' ),
+                        'excerpt' => __( '支持手动与自动混合，适配不同业务场景。', 'qiling' ),
+                        'badge' => __( '专题', 'qiling' ),
                         'target' => '_self',
                     ),
                     array(
                         'item_type' => 'custom',
-                        'title' => __( '产品更新速览', 'developer-starter' ),
-                        'excerpt' => __( '可关联站内文章或外部链接。', 'developer-starter' ),
-                        'badge' => __( '最新', 'developer-starter' ),
+                        'title' => __( '产品更新速览', 'qiling' ),
+                        'excerpt' => __( '可关联站内文章或外部链接。', 'qiling' ),
+                        'badge' => __( '最新', 'qiling' ),
                         'target' => '_self',
                     ),
                 ),
@@ -125,34 +125,34 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
                     array(
                         'id' => 'item_type',
                         'type' => 'select',
-                        'label' => __( '内容类型', 'developer-starter' ),
+                        'label' => __( '内容类型', 'qiling' ),
                         'options' => array(
-                            'content' => __( '站内内容（文章/页面/自定义类型）', 'developer-starter' ),
-                            'custom' => __( '自定义卡片', 'developer-starter' ),
-                            'external' => __( '外部链接', 'developer-starter' ),
+                            'content' => __( '站内内容（文章/页面/自定义类型）', 'qiling' ),
+                            'custom' => __( '自定义卡片', 'qiling' ),
+                            'external' => __( '外部链接', 'qiling' ),
                         ),
                         'default' => 'content',
                     ),
                     array(
                         'id' => 'post_id',
                         'type' => 'text',
-                        'label' => __( '内容ID', 'developer-starter' ),
-                        'description' => __( '填写文章/页面/自定义内容ID', 'developer-starter' ),
+                        'label' => __( '内容ID', 'qiling' ),
+                        'description' => __( '填写文章/页面/自定义内容ID', 'qiling' ),
                         'dependency' => array( 'id' => 'item_type', 'value' => 'content' ),
                     ),
-                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题（可覆盖）', 'developer-starter' ) ),
-                    array( 'id' => 'excerpt', 'type' => 'textarea', 'label' => __( '摘要（可覆盖）', 'developer-starter' ) ),
-                    array( 'id' => 'image', 'type' => 'image', 'label' => __( '封面图片', 'developer-starter' ) ),
-                    array( 'id' => 'url', 'type' => 'text', 'label' => __( '跳转链接（可覆盖）', 'developer-starter' ) ),
-                    array( 'id' => 'badge', 'type' => 'text', 'label' => __( '角标文本', 'developer-starter' ) ),
-                    array( 'id' => 'meta', 'type' => 'text', 'label' => __( '辅助信息（可选）', 'developer-starter' ) ),
+                    array( 'id' => 'title', 'type' => 'text', 'label' => __( '标题（可覆盖）', 'qiling' ) ),
+                    array( 'id' => 'excerpt', 'type' => 'textarea', 'label' => __( '摘要（可覆盖）', 'qiling' ) ),
+                    array( 'id' => 'image', 'type' => 'image', 'label' => __( '封面图片', 'qiling' ) ),
+                    array( 'id' => 'url', 'type' => 'text', 'label' => __( '跳转链接（可覆盖）', 'qiling' ) ),
+                    array( 'id' => 'badge', 'type' => 'text', 'label' => __( '角标文本', 'qiling' ) ),
+                    array( 'id' => 'meta', 'type' => 'text', 'label' => __( '辅助信息（可选）', 'qiling' ) ),
                     array(
                         'id' => 'target',
                         'type' => 'select',
-                        'label' => __( '打开方式', 'developer-starter' ),
+                        'label' => __( '打开方式', 'qiling' ),
                         'options' => array(
-                            '_self' => __( '当前窗口', 'developer-starter' ),
-                            '_blank' => __( '新窗口', 'developer-starter' ),
+                            '_self' => __( '当前窗口', 'qiling' ),
+                            '_blank' => __( '新窗口', 'qiling' ),
                         ),
                         'default' => '_self',
                     ),
@@ -162,173 +162,173 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
             array(
                 'id' => 'qur_layout',
                 'type' => 'select',
-                'label' => __( '展示布局', 'developer-starter' ),
+                'label' => __( '展示布局', 'qiling' ),
                 'options' => array(
-                    'grid' => __( '网格', 'developer-starter' ),
-                    'list' => __( '列表', 'developer-starter' ),
-                    'ranking' => __( '排行榜（前三突出）', 'developer-starter' ),
+                    'grid' => __( '网格', 'qiling' ),
+                    'list' => __( '列表', 'qiling' ),
+                    'ranking' => __( '排行榜（前三突出）', 'qiling' ),
                 ),
                 'default' => 'grid',
             ),
             array(
                 'id' => 'qur_columns',
                 'type' => 'select',
-                'label' => __( '网格列数', 'developer-starter' ),
+                'label' => __( '网格列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '3',
                 'dependency' => array( 'id' => 'qur_layout', 'value' => 'grid' ),
             ),
-            array( 'id' => 'qur_gap', 'type' => 'text', 'label' => __( '卡片间距', 'developer-starter' ), 'default' => '24px' ),
+            array( 'id' => 'qur_gap', 'type' => 'text', 'label' => __( '卡片间距', 'qiling' ), 'default' => '24px' ),
 
             array(
                 'id' => 'qur_image_ratio',
                 'type' => 'select',
-                'label' => __( '封面比例', 'developer-starter' ),
+                'label' => __( '封面比例', 'qiling' ),
                 'options' => array(
                     '16:9' => '16:9',
                     '4:3' => '4:3',
                     '1:1' => '1:1',
                     '3:4' => '3:4',
-                    'custom' => __( '自定义高度', 'developer-starter' ),
+                    'custom' => __( '自定义高度', 'qiling' ),
                 ),
                 'default' => '16:9',
             ),
             array(
                 'id' => 'qur_image_height',
                 'type' => 'text',
-                'label' => __( '自定义封面高度', 'developer-starter' ),
+                'label' => __( '自定义封面高度', 'qiling' ),
                 'default' => '220px',
                 'dependency' => array( 'id' => 'qur_image_ratio', 'value' => 'custom' ),
             ),
             array(
                 'id' => 'qur_show_image',
                 'type' => 'select',
-                'label' => __( '显示封面', 'developer-starter' ),
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'label' => __( '显示封面', 'qiling' ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'yes',
             ),
             array(
                 'id' => 'qur_show_excerpt',
                 'type' => 'select',
-                'label' => __( '显示摘要', 'developer-starter' ),
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'label' => __( '显示摘要', 'qiling' ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'yes',
             ),
             array(
                 'id' => 'qur_excerpt_length',
                 'type' => 'number',
-                'label' => __( '摘要长度', 'developer-starter' ),
+                'label' => __( '摘要长度', 'qiling' ),
                 'default' => '28',
                 'dependency' => array( 'id' => 'qur_show_excerpt', 'value' => 'yes' ),
             ),
             array(
                 'id' => 'qur_show_date',
                 'type' => 'select',
-                'label' => __( '显示日期', 'developer-starter' ),
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'label' => __( '显示日期', 'qiling' ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'yes',
             ),
             array(
                 'id' => 'qur_show_category',
                 'type' => 'select',
-                'label' => __( '显示分类', 'developer-starter' ),
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'label' => __( '显示分类', 'qiling' ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'no',
             ),
             array(
                 'id' => 'qur_show_badge',
                 'type' => 'select',
-                'label' => __( '显示角标', 'developer-starter' ),
-                'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ),
+                'label' => __( '显示角标', 'qiling' ),
+                'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ),
                 'default' => 'yes',
             ),
 
-            array( 'id' => 'qur_bg_color', 'type' => 'text', 'label' => __( '背景颜色', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'qur_bg_color', 'type' => 'text', 'label' => __( '背景颜色', 'qiling' ), 'default' => '' ),
             array(
                 'id'          => 'qur_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '控制专题角标与推荐卡片角标背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制专题角标与推荐卡片角标背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
-            array( 'id' => 'qur_accent_color', 'type' => 'text', 'label' => __( '强调色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'qur_card_bg', 'type' => 'text', 'label' => __( '卡片背景色', 'developer-starter' ), 'default' => 'var(--color-neutral-0)' ),
-            array( 'id' => 'qur_card_radius', 'type' => 'text', 'label' => __( '卡片圆角', 'developer-starter' ), 'default' => '16px' ),
-            array( 'id' => 'qur_card_border', 'type' => 'text', 'label' => __( '卡片边框颜色', 'developer-starter' ), 'default' => 'var(--color-neutral-200)' ),
+            array( 'id' => 'qur_accent_color', 'type' => 'text', 'label' => __( '强调色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'qur_card_bg', 'type' => 'text', 'label' => __( '卡片背景色', 'qiling' ), 'default' => 'var(--color-neutral-0)' ),
+            array( 'id' => 'qur_card_radius', 'type' => 'text', 'label' => __( '卡片圆角', 'qiling' ), 'default' => '16px' ),
+            array( 'id' => 'qur_card_border', 'type' => 'text', 'label' => __( '卡片边框颜色', 'qiling' ), 'default' => 'var(--color-neutral-200)' ),
             array(
                 'id' => 'qur_card_shadow',
                 'type' => 'select',
-                'label' => __( '卡片阴影', 'developer-starter' ),
+                'label' => __( '卡片阴影', 'qiling' ),
                 'options' => array(
-                    'soft' => __( '柔和', 'developer-starter' ),
-                    'strong' => __( '明显', 'developer-starter' ),
-                    'none' => __( '无', 'developer-starter' ),
+                    'soft' => __( '柔和', 'qiling' ),
+                    'strong' => __( '明显', 'qiling' ),
+                    'none' => __( '无', 'qiling' ),
                 ),
                 'default' => 'soft',
             ),
-            array( 'id' => 'qur_title_color', 'type' => 'text', 'label' => __( '标题颜色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'qur_text_color', 'type' => 'text', 'label' => __( '正文颜色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'qur_meta_color', 'type' => 'text', 'label' => __( '辅助信息颜色', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'qur_title_color', 'type' => 'text', 'label' => __( '标题颜色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'qur_text_color', 'type' => 'text', 'label' => __( '正文颜色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'qur_meta_color', 'type' => 'text', 'label' => __( '辅助信息颜色', 'qiling' ), 'default' => '' ),
 
-            array( 'id' => 'qur_padding_top', 'type' => 'text', 'label' => __( '上边距', 'developer-starter' ), 'default' => '60px' ),
-            array( 'id' => 'qur_padding_bottom', 'type' => 'text', 'label' => __( '下边距', 'developer-starter' ), 'default' => '60px' ),
+            array( 'id' => 'qur_padding_top', 'type' => 'text', 'label' => __( '上边距', 'qiling' ), 'default' => '60px' ),
+            array( 'id' => 'qur_padding_bottom', 'type' => 'text', 'label' => __( '下边距', 'qiling' ), 'default' => '60px' ),
 
             array(
                 'id' => 'qur_more_text',
                 'type' => 'text',
-                'label' => __( '底部按钮文字', 'developer-starter' ),
-                'default' => __( '查看更多', 'developer-starter' ),
+                'label' => __( '底部按钮文字', 'qiling' ),
+                'default' => __( '查看更多', 'qiling' ),
             ),
             array(
                 'id' => 'qur_more_url',
                 'type' => 'text',
-                'label' => __( '底部按钮链接', 'developer-starter' ),
+                'label' => __( '底部按钮链接', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id' => 'qur_more_target',
                 'type' => 'select',
-                'label' => __( '底部按钮打开方式', 'developer-starter' ),
+                'label' => __( '底部按钮打开方式', 'qiling' ),
                 'options' => array(
-                    '_self' => __( '当前窗口', 'developer-starter' ),
-                    '_blank' => __( '新窗口', 'developer-starter' ),
+                    '_self' => __( '当前窗口', 'qiling' ),
+                    '_blank' => __( '新窗口', 'qiling' ),
                 ),
                 'default' => '_self',
             ),
             array(
                 'id' => 'qur_more_btn_bg_color',
                 'type' => 'color',
-                'label' => __( '底部按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label' => __( '底部按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id' => 'qur_more_btn_text_color',
                 'type' => 'color',
-                'label' => __( '底部按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label' => __( '底部按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
                 'default' => '',
             ),
-            $this->get_button_border_color_field( 'qur_more_btn_border_color', __( '底部按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'qur_more_btn_border_color', __( '底部按钮边框颜色', 'qiling' ) ),
             array(
                 'id' => 'qur_more_btn_hover_bg_color',
                 'type' => 'color',
-                'label' => __( '底部按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label' => __( '底部按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id' => 'qur_more_btn_hover_text_color',
                 'type' => 'color',
-                'label' => __( '底部按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label' => __( '底部按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
                 'default' => '',
             ),
-            $this->get_button_border_color_field( 'qur_more_btn_hover_border_color', __( '底部按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随底部按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'qur_more_btn_hover_border_color', __( '底部按钮悬停边框颜色', 'qiling' ), __( '留空时跟随底部按钮悬停背景颜色。', 'qiling' ) ),
         );
     }
 
@@ -697,14 +697,14 @@ class Qiling_Universal_Recommend_Module extends Module_Base {
                     <?php endif; ?>
                 <?php else : ?>
                     <div class="ql-ur-empty">
-                        <?php esc_html_e( '暂无推荐内容，请在模块设置中添加。', 'developer-starter' ); ?>
+                        <?php esc_html_e( '暂无推荐内容，请在模块设置中添加。', 'qiling' ); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php if ( $more_url ) : ?>
                     <div class="ql-ur-more">
                         <a class="ql-ur-more-btn" href="<?php echo esc_url( $more_url ); ?>" target="<?php echo esc_attr( $more_target ); ?>">
-                            <?php echo esc_html( $more_text ? $more_text : __( '查看更多', 'developer-starter' ) ); ?>
+                            <?php echo esc_html( $more_text ? $more_text : __( '查看更多', 'qiling' ) ); ?>
                         </a>
                     </div>
                 <?php endif; ?>

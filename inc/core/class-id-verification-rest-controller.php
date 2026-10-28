@@ -153,21 +153,21 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     public function get_verify_args() {
         return array(
             'name'   => array(
-                'description'       => __( '实名认证姓名', 'developer-starter' ),
+                'description'       => __( '实名认证姓名', 'qiling' ),
                 'type'              => 'string',
                 'required'          => true,
                 'sanitize_callback' => array( $this->manager, 'sanitize_verification_name_arg' ),
                 'validate_callback' => array( $this->manager, 'validate_verification_name_arg' ),
             ),
             'mobile' => array(
-                'description'       => __( '中国大陆手机号', 'developer-starter' ),
+                'description'       => __( '中国大陆手机号', 'qiling' ),
                 'type'              => 'string',
                 'required'          => true,
                 'sanitize_callback' => array( $this->manager, 'sanitize_verification_mobile_arg' ),
                 'validate_callback' => array( $this->manager, 'validate_verification_mobile_arg' ),
             ),
             'idcard' => array(
-                'description'       => __( '18 位居民身份证号', 'developer-starter' ),
+                'description'       => __( '18 位居民身份证号', 'qiling' ),
                 'type'              => 'string',
                 'required'          => true,
                 'sanitize_callback' => array( $this->manager, 'sanitize_verification_idcard_arg' ),
@@ -184,7 +184,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
     public function get_delete_args() {
         return array(
             'id' => array(
-                'description'       => __( '实名认证记录 ID', 'developer-starter' ),
+                'description'       => __( '实名认证记录 ID', 'qiling' ),
                 'type'              => 'integer',
                 'required'          => true,
                 'sanitize_callback' => 'absint',
@@ -214,17 +214,17 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
             'type'       => 'object',
             'properties' => array(
                 'success' => array(
-                    'description' => __( '实名认证是否成功。', 'developer-starter' ),
+                    'description' => __( '实名认证是否成功。', 'qiling' ),
                     'type'        => 'boolean',
                     'readonly'    => true,
                 ),
                 'message' => array(
-                    'description' => __( '面向用户的验证结果消息。', 'developer-starter' ),
+                    'description' => __( '面向用户的验证结果消息。', 'qiling' ),
                     'type'        => 'string',
                     'readonly'    => true,
                 ),
                 'data'    => array(
-                    'description' => __( '验证结果摘要。', 'developer-starter' ),
+                    'description' => __( '验证结果摘要。', 'qiling' ),
                     'type'        => 'object',
                     'readonly'    => true,
                     'properties'  => array(
@@ -240,7 +240,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
                     ),
                 ),
                 'time'    => array(
-                    'description' => __( '服务器记录时间。', 'developer-starter' ),
+                    'description' => __( '服务器记录时间。', 'qiling' ),
                     'type'        => 'string',
                     'readonly'    => true,
                 ),
@@ -260,22 +260,22 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
             'type'       => 'object',
             'properties' => array(
                 'verified' => array(
-                    'description' => __( '当前用户是否已实名认证。', 'developer-starter' ),
+                    'description' => __( '当前用户是否已实名认证。', 'qiling' ),
                     'type'        => 'boolean',
                     'readonly'    => true,
                 ),
                 'name'     => array(
-                    'description' => __( '脱敏后的实名姓名。', 'developer-starter' ),
+                    'description' => __( '脱敏后的实名姓名。', 'qiling' ),
                     'type'        => 'string',
                     'readonly'    => true,
                 ),
                 'mobile'   => array(
-                    'description' => __( '脱敏后的手机号。', 'developer-starter' ),
+                    'description' => __( '脱敏后的手机号。', 'qiling' ),
                     'type'        => 'string',
                     'readonly'    => true,
                 ),
                 'idcard'   => array(
-                    'description' => __( '脱敏后的身份证号。', 'developer-starter' ),
+                    'description' => __( '脱敏后的身份证号。', 'qiling' ),
                     'type'        => 'string',
                     'readonly'    => true,
                 ),
@@ -295,7 +295,7 @@ class ID_Verification_REST_Controller extends \WP_REST_Controller {
             'type'       => 'object',
             'properties' => array(
                 'success' => array(
-                    'description' => __( '记录是否删除成功。', 'developer-starter' ),
+                    'description' => __( '记录是否删除成功。', 'qiling' ),
                     'type'        => 'boolean',
                     'readonly'    => true,
                 ),

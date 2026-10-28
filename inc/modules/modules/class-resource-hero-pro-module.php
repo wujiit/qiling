@@ -23,7 +23,7 @@ class Resource_Hero_Pro_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-download';
-        $this->description = __( '虚拟资源站专用首屏，支持资源文章滚动展示与转化引导。', 'developer-starter' );
+        $this->description = __( '虚拟资源站专用首屏，支持资源文章滚动展示与转化引导。', 'qiling' );
     }
 
     public function get_id() {
@@ -31,7 +31,7 @@ class Resource_Hero_Pro_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '资源首屏Pro', 'developer-starter' );
+        return __( '资源首屏Pro', 'qiling' );
     }
 
     public function get_fields() {
@@ -39,97 +39,97 @@ class Resource_Hero_Pro_Module extends Module_Base {
             array(
                 'id'      => 'rh_layout',
                 'type'    => 'select',
-                'label'   => __( '布局模式', 'developer-starter' ),
+                'label'   => __( '布局模式', 'qiling' ),
                 'options' => array(
-                    'left_right' => __( '左文右资源（推荐）', 'developer-starter' ),
-                    'top_bottom' => __( '上文下资源', 'developer-starter' ),
-                    'text_only'  => __( '仅文案区', 'developer-starter' ),
+                    'left_right' => __( '左文右资源（推荐）', 'qiling' ),
+                    'top_bottom' => __( '上文下资源', 'qiling' ),
+                    'text_only'  => __( '仅文案区', 'qiling' ),
                 ),
                 'default' => 'left_right',
             ),
             array(
                 'id'      => 'rh_height',
                 'type'    => 'select',
-                'label'   => __( '模块高度', 'developer-starter' ),
+                'label'   => __( '模块高度', 'qiling' ),
                 'options' => array(
-                    'auto'   => __( '自适应内容', 'developer-starter' ),
-                    '58vh'   => __( '58vh', 'developer-starter' ),
-                    '78vh'   => __( '78vh', 'developer-starter' ),
-                    '88vh'   => __( '88vh', 'developer-starter' ),
-                    '100vh'  => __( '100vh', 'developer-starter' ),
-                    'custom' => __( '自定义', 'developer-starter' ),
+                    'auto'   => __( '自适应内容', 'qiling' ),
+                    '58vh'   => __( '58vh', 'qiling' ),
+                    '78vh'   => __( '78vh', 'qiling' ),
+                    '88vh'   => __( '88vh', 'qiling' ),
+                    '100vh'  => __( '100vh', 'qiling' ),
+                    'custom' => __( '自定义', 'qiling' ),
                 ),
                 'default' => '58vh',
             ),
             array(
                 'id'         => 'rh_height_custom',
                 'type'       => 'text',
-                'label'      => __( '自定义高度', 'developer-starter' ),
+                'label'      => __( '自定义高度', 'qiling' ),
                 'default'    => '760px',
                 'dependency' => array( 'rh_height', '==', 'custom' ),
             ),
             array(
                 'id'      => 'rh_bg_type',
                 'type'    => 'select',
-                'label'   => __( '背景类型', 'developer-starter' ),
+                'label'   => __( '背景类型', 'qiling' ),
                 'options' => array(
-                    'gradient' => __( '渐变背景', 'developer-starter' ),
-                    'color'    => __( '纯色背景', 'developer-starter' ),
-                    'image'    => __( '图片背景', 'developer-starter' ),
+                    'gradient' => __( '渐变背景', 'qiling' ),
+                    'color'    => __( '纯色背景', 'qiling' ),
+                    'image'    => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'gradient',
             ),
             array(
                 'id'         => 'rh_bg_gradient',
                 'type'       => 'text',
-                'label'      => __( '渐变 CSS', 'developer-starter' ),
+                'label'      => __( '渐变 CSS', 'qiling' ),
                 'default'    => 'linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-primary-dark) 45%, var(--qiling-color-60a5fa) 100%)',
                 'dependency' => array( 'rh_bg_type', '==', 'gradient' ),
             ),
             array(
                 'id'         => 'rh_bg_color',
                 'type'       => 'color',
-                'label'      => __( '背景颜色', 'developer-starter' ),
+                'label'      => __( '背景颜色', 'qiling' ),
                 'default'    => 'var(--color-neutral-900)',
                 'dependency' => array( 'rh_bg_type', '==', 'color' ),
             ),
             array(
                 'id'         => 'rh_bg_image',
                 'type'       => 'image',
-                'label'      => __( '背景图片', 'developer-starter' ),
+                'label'      => __( '背景图片', 'qiling' ),
                 'dependency' => array( 'rh_bg_type', '==', 'image' ),
             ),
             array(
                 'id'         => 'rh_bg_overlay',
                 'type'       => 'text',
-                'label'      => __( '图片遮罩透明度（0-0.9）', 'developer-starter' ),
+                'label'      => __( '图片遮罩透明度（0-0.9）', 'qiling' ),
                 'default'    => '0.42',
                 'dependency' => array( 'rh_bg_type', '==', 'image' ),
             ),
             array(
                 'id'      => 'rh_style_preset',
                 'type'    => 'select',
-                'label'   => __( '视觉风格', 'developer-starter' ),
+                'label'   => __( '视觉风格', 'qiling' ),
                 'options' => array(
-                    'premium' => __( '高级光感（推荐）', 'developer-starter' ),
-                    'clean'   => __( '简洁商务', 'developer-starter' ),
-                    'dark'    => __( '深色质感', 'developer-starter' ),
+                    'premium' => __( '高级光感（推荐）', 'qiling' ),
+                    'clean'   => __( '简洁商务', 'qiling' ),
+                    'dark'    => __( '深色质感', 'qiling' ),
                 ),
                 'default' => 'premium',
             ),
             array(
                 'id'      => 'rh_enable_motion',
                 'type'    => 'switcher',
-                'label'   => __( '开启轻量动效', 'developer-starter' ),
+                'label'   => __( '开启轻量动效', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'         => 'rh_motion_level',
                 'type'       => 'select',
-                'label'      => __( '动效强度', 'developer-starter' ),
+                'label'      => __( '动效强度', 'qiling' ),
                 'options'    => array(
-                    'soft' => __( '柔和', 'developer-starter' ),
-                    'rich' => __( '增强', 'developer-starter' ),
+                    'soft' => __( '柔和', 'qiling' ),
+                    'rich' => __( '增强', 'qiling' ),
                 ),
                 'default'    => 'soft',
                 'dependency' => array( 'rh_enable_motion', '==', '1' ),
@@ -138,58 +138,58 @@ class Resource_Hero_Pro_Module extends Module_Base {
             array(
                 'id'      => 'rh_badge',
                 'type'    => 'text',
-                'label'   => __( '顶部标签', 'developer-starter' ),
+                'label'   => __( '顶部标签', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( 'VIP资源站解决方案', 'VIP Resource Site Kit' )
-                    : __( 'VIP资源站解决方案', 'developer-starter' ),
+                    : __( 'VIP资源站解决方案', 'qiling' ),
             ),
             array(
                 'id'      => 'rh_title',
                 'type'    => 'textarea',
-                'label'   => __( '主标题', 'developer-starter' ),
+                'label'   => __( '主标题', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '打造更有转化力的<br><strong>虚拟资源首页</strong>', 'Build a conversion-focused hero for your digital resource business.' )
-                    : __( '打造更有转化力的<br><strong>虚拟资源首页</strong>', 'developer-starter' ),
+                    : __( '打造更有转化力的<br><strong>虚拟资源首页</strong>', 'qiling' ),
             ),
             array(
                 'id'      => 'rh_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '资源展示、VIP权益、付费引导一次到位', 'Resource showcase, member value and purchase CTAs in one unified hero.' )
-                    : __( '资源展示、VIP权益、付费引导一次到位', 'developer-starter' ),
+                    : __( '资源展示、VIP权益、付费引导一次到位', 'qiling' ),
             ),
             array(
                 'id'      => 'rh_desc',
                 'type'    => 'textarea',
-                'label'   => __( '描述文案', 'developer-starter' ),
+                'label'   => __( '描述文案', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '启灵积分商城负责付费与权限逻辑，这个模块专注资源展示与首页转化氛围。', 'Qiling Shop handles payment and access rules, while this hero focuses on visual storytelling and conversion.' )
-                    : __( '启灵积分商城负责付费与权限逻辑，这个模块专注资源展示与首页转化氛围。', 'developer-starter' ),
+                    : __( '启灵积分商城负责付费与权限逻辑，这个模块专注资源展示与首页转化氛围。', 'qiling' ),
             ),
             array(
                 'id'         => 'rh_visual_slides',
                 'type'       => 'repeater',
-                'label'      => __( '主视觉图片列表', 'developer-starter' ),
-                'add_button' => __( '添加图片', 'developer-starter' ),
-                'description'=> __( '每项支持：上传图片 + 可选链接。添加1张显示单图，添加多张自动轮播。', 'developer-starter' ),
+                'label'      => __( '主视觉图片列表', 'qiling' ),
+                'add_button' => __( '添加图片', 'qiling' ),
+                'description'=> __( '每项支持：上传图片 + 可选链接。添加1张显示单图，添加多张自动轮播。', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'      => 'image',
                         'type'    => 'image',
-                        'label'   => __( '图片', 'developer-starter' ),
+                        'label'   => __( '图片', 'qiling' ),
                         'default' => '',
                     ),
                     array(
                         'id'      => 'link',
                         'type'    => 'text',
-                        'label'   => __( '链接（可选）', 'developer-starter' ),
+                        'label'   => __( '链接（可选）', 'qiling' ),
                         'default' => '',
                     ),
                     array(
                         'id'      => 'alt',
                         'type'    => 'text',
-                        'label'   => __( '图片说明（可选）', 'developer-starter' ),
+                        'label'   => __( '图片说明（可选）', 'qiling' ),
                         'default' => '',
                     ),
                 ),
@@ -197,108 +197,108 @@ class Resource_Hero_Pro_Module extends Module_Base {
             array(
                 'id'         => 'rh_visual_position',
                 'type'       => 'select',
-                'label'      => __( '主视觉位置', 'developer-starter' ),
+                'label'      => __( '主视觉位置', 'qiling' ),
                 'options'    => array(
-                    'right' => __( '右侧', 'developer-starter' ),
-                    'left'  => __( '左侧', 'developer-starter' ),
+                    'right' => __( '右侧', 'qiling' ),
+                    'left'  => __( '左侧', 'qiling' ),
                 ),
                 'default'    => 'right',
             ),
             array(
                 'id'         => 'rh_visual_height',
                 'type'       => 'text',
-                'label'      => __( '主视觉高度', 'developer-starter' ),
+                'label'      => __( '主视觉高度', 'qiling' ),
                 'default'    => '320px',
             ),
             array(
                 'id'         => 'rh_visual_radius',
                 'type'       => 'text',
-                'label'      => __( '主视觉圆角', 'developer-starter' ),
+                'label'      => __( '主视觉圆角', 'qiling' ),
                 'default'    => '18px',
             ),
             array(
                 'id'         => 'rh_visual_fit',
                 'type'       => 'select',
-                'label'      => __( '图片填充方式', 'developer-starter' ),
+                'label'      => __( '图片填充方式', 'qiling' ),
                 'options'    => array(
-                    'cover'   => __( '填充裁切（cover）', 'developer-starter' ),
-                    'contain' => __( '完整显示（contain）', 'developer-starter' ),
+                    'cover'   => __( '填充裁切（cover）', 'qiling' ),
+                    'contain' => __( '完整显示（contain）', 'qiling' ),
                 ),
                 'default'    => 'cover',
             ),
             array(
                 'id'         => 'rh_visual_shadow',
                 'type'       => 'select',
-                'label'      => __( '主视觉阴影', 'developer-starter' ),
+                'label'      => __( '主视觉阴影', 'qiling' ),
                 'options'    => array(
-                    'none' => __( '无', 'developer-starter' ),
-                    'soft' => __( '柔和', 'developer-starter' ),
-                    'glow' => __( '光晕', 'developer-starter' ),
+                    'none' => __( '无', 'qiling' ),
+                    'soft' => __( '柔和', 'qiling' ),
+                    'glow' => __( '光晕', 'qiling' ),
                 ),
                 'default'    => 'soft',
             ),
             array(
                 'id'         => 'rh_visual_shine',
                 'type'       => 'switcher',
-                'label'      => __( '主视觉扫光动效', 'developer-starter' ),
+                'label'      => __( '主视觉扫光动效', 'qiling' ),
                 'default'    => '1',
             ),
             array(
                 'id'         => 'rh_visual_autoplay',
                 'type'       => 'switcher',
-                'label'      => __( '主视觉自动轮播', 'developer-starter' ),
+                'label'      => __( '主视觉自动轮播', 'qiling' ),
                 'default'    => '1',
             ),
             array(
                 'id'         => 'rh_visual_interval',
                 'type'       => 'number',
-                'label'      => __( '轮播间隔（秒）', 'developer-starter' ),
+                'label'      => __( '轮播间隔（秒）', 'qiling' ),
                 'default'    => '4',
             ),
             array(
                 'id'         => 'rh_visual_show_dots',
                 'type'       => 'switcher',
-                'label'      => __( '显示轮播圆点', 'developer-starter' ),
+                'label'      => __( '显示轮播圆点', 'qiling' ),
                 'default'    => '1',
             ),
             array(
                 'id'         => 'rh_visual_caption',
                 'type'       => 'text',
-                'label'      => __( '主视觉说明（可选）', 'developer-starter' ),
+                'label'      => __( '主视觉说明（可选）', 'qiling' ),
                 'default'    => '',
             ),
 
             array(
                 'id'         => 'rh_benefits',
                 'type'       => 'repeater',
-                'label'      => __( '权益卖点', 'developer-starter' ),
-                'add_button' => __( '添加卖点', 'developer-starter' ),
+                'label'      => __( '权益卖点', 'qiling' ),
+                'add_button' => __( '添加卖点', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'      => 'text',
                         'type'    => 'text',
-                        'label'   => __( '文案', 'developer-starter' ),
-                        'default' => __( 'VIP专属资源持续更新', 'developer-starter' ),
+                        'label'   => __( '文案', 'qiling' ),
+                        'default' => __( 'VIP专属资源持续更新', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'         => 'rh_stats',
                 'type'       => 'repeater',
-                'label'      => __( '数据指标', 'developer-starter' ),
-                'add_button' => __( '添加指标', 'developer-starter' ),
+                'label'      => __( '数据指标', 'qiling' ),
+                'add_button' => __( '添加指标', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'      => 'value',
                         'type'    => 'text',
-                        'label'   => __( '数值', 'developer-starter' ),
+                        'label'   => __( '数值', 'qiling' ),
                         'default' => '12,000+',
                     ),
                     array(
                         'id'      => 'label',
                         'type'    => 'text',
-                        'label'   => __( '说明', 'developer-starter' ),
-                        'default' => __( '资源总量', 'developer-starter' ),
+                        'label'   => __( '说明', 'qiling' ),
+                        'default' => __( '资源总量', 'qiling' ),
                     ),
                 ),
             ),
@@ -306,212 +306,212 @@ class Resource_Hero_Pro_Module extends Module_Base {
             array(
                 'id'      => 'rh_primary_text',
                 'type'    => 'text',
-                'label'   => __( '主按钮文字', 'developer-starter' ),
+                'label'   => __( '主按钮文字', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '开通VIP', 'Upgrade VIP' )
-                    : __( '开通VIP', 'developer-starter' ),
+                    : __( '开通VIP', 'qiling' ),
             ),
             array(
                 'id'      => 'rh_primary_link',
                 'type'    => 'text',
-                'label'   => __( '主按钮链接', 'developer-starter' ),
+                'label'   => __( '主按钮链接', 'qiling' ),
                 'default' => '#',
             ),
             array(
                 'id'          => 'rh_primary_btn_bg_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认主按钮样式', 'developer-starter' ),
+                'label'       => __( '主按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认主按钮样式', 'qiling' ),
                 'default'     => '',
             ),
             array(
                 'id'          => 'rh_primary_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认主按钮样式', 'developer-starter' ),
+                'label'       => __( '主按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认主按钮样式', 'qiling' ),
                 'default'     => '',
             ),
-            $this->get_button_border_color_field( 'rh_primary_btn_border_color', __( '主按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'rh_primary_btn_border_color', __( '主按钮边框颜色', 'qiling' ) ),
             array(
                 'id'          => 'rh_primary_btn_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认主按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '主按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认主按钮悬停样式', 'qiling' ),
                 'default'     => '',
             ),
             array(
                 'id'          => 'rh_primary_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '主按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认主按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '主按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认主按钮悬停样式', 'qiling' ),
                 'default'     => '',
             ),
-            $this->get_button_border_color_field( 'rh_primary_btn_hover_border_color', __( '主按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随主按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'rh_primary_btn_hover_border_color', __( '主按钮悬停边框颜色', 'qiling' ), __( '留空时跟随主按钮悬停背景颜色。', 'qiling' ) ),
             array(
                 'id'      => 'rh_secondary_text',
                 'type'    => 'text',
-                'label'   => __( '次按钮文字', 'developer-starter' ),
+                'label'   => __( '次按钮文字', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_locale_text' )
                     ? developer_starter_get_locale_text( '立即下载资源', 'Browse Resources' )
-                    : __( '立即下载资源', 'developer-starter' ),
+                    : __( '立即下载资源', 'qiling' ),
             ),
             array(
                 'id'      => 'rh_secondary_link',
                 'type'    => 'text',
-                'label'   => __( '次按钮链接', 'developer-starter' ),
+                'label'   => __( '次按钮链接', 'qiling' ),
                 'default' => '#',
             ),
             array(
                 'id'          => 'rh_secondary_btn_bg_color',
                 'type'        => 'color',
-                'label'       => __( '次按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认次按钮样式', 'developer-starter' ),
+                'label'       => __( '次按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认次按钮样式', 'qiling' ),
                 'default'     => '',
             ),
             array(
                 'id'          => 'rh_secondary_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '次按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认次按钮样式', 'developer-starter' ),
+                'label'       => __( '次按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认次按钮样式', 'qiling' ),
                 'default'     => '',
             ),
-            $this->get_button_border_color_field( 'rh_secondary_btn_border_color', __( '次按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'rh_secondary_btn_border_color', __( '次按钮边框颜色', 'qiling' ) ),
             array(
                 'id'          => 'rh_secondary_btn_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '次按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认次按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '次按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认次按钮悬停样式', 'qiling' ),
                 'default'     => '',
             ),
             array(
                 'id'          => 'rh_secondary_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '次按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时使用资源首屏Pro默认次按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '次按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时使用资源首屏Pro默认次按钮悬停样式', 'qiling' ),
                 'default'     => '',
             ),
-            $this->get_button_border_color_field( 'rh_secondary_btn_hover_border_color', __( '次按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随次按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'rh_secondary_btn_hover_border_color', __( '次按钮悬停边框颜色', 'qiling' ), __( '留空时跟随次按钮悬停背景颜色。', 'qiling' ) ),
 
             array(
                 'id'      => 'rh_enable_feed',
                 'type'    => 'switcher',
-                'label'   => __( '开启右侧资源流', 'developer-starter' ),
+                'label'   => __( '开启右侧资源流', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'rh_feed_direction',
                 'type'    => 'select',
-                'label'   => __( '右侧资源流方向', 'developer-starter' ),
+                'label'   => __( '右侧资源流方向', 'qiling' ),
                 'options' => array(
-                    'vertical'   => __( '纵向滚动', 'developer-starter' ),
-                    'horizontal' => __( '横向滚动', 'developer-starter' ),
+                    'vertical'   => __( '纵向滚动', 'qiling' ),
+                    'horizontal' => __( '横向滚动', 'qiling' ),
                 ),
                 'default' => 'vertical',
             ),
             array(
                 'id'      => 'rh_feed_source',
                 'type'    => 'select',
-                'label'   => __( '资源来源', 'developer-starter' ),
+                'label'   => __( '资源来源', 'qiling' ),
                 'options' => array(
-                    'latest'   => __( '最新文章', 'developer-starter' ),
-                    'category' => __( '指定分类', 'developer-starter' ),
-                    'tag'      => __( '指定标签', 'developer-starter' ),
+                    'latest'   => __( '最新文章', 'qiling' ),
+                    'category' => __( '指定分类', 'qiling' ),
+                    'tag'      => __( '指定标签', 'qiling' ),
                 ),
                 'default' => 'latest',
             ),
             array(
                 'id'      => 'rh_feed_categories',
                 'type'    => 'text',
-                'label'   => __( '分类ID (逗号分隔)', 'developer-starter' ),
+                'label'   => __( '分类ID (逗号分隔)', 'qiling' ),
                 'dependency' => array( 'rh_feed_source', '==', 'category' ),
             ),
             array(
                 'id'      => 'rh_feed_tags',
                 'type'    => 'text',
-                'label'   => __( '标签 (逗号分隔)', 'developer-starter' ),
+                'label'   => __( '标签 (逗号分隔)', 'qiling' ),
                 'dependency' => array( 'rh_feed_source', '==', 'tag' ),
             ),
             array(
                 'id'      => 'rh_feed_filter',
                 'type'    => 'select',
-                'label'   => __( '内容过滤', 'developer-starter' ),
+                'label'   => __( '内容过滤', 'qiling' ),
                 'options' => array(
-                    'resource_only' => __( '仅资源文章（推荐）', 'developer-starter' ),
-                    'all_posts'     => __( '全部文章', 'developer-starter' ),
+                    'resource_only' => __( '仅资源文章（推荐）', 'qiling' ),
+                    'all_posts'     => __( '全部文章', 'qiling' ),
                 ),
                 'default' => 'resource_only',
             ),
             array(
                 'id'      => 'rh_feed_orderby',
                 'type'    => 'select',
-                'label'   => __( '排序方式', 'developer-starter' ),
+                'label'   => __( '排序方式', 'qiling' ),
                 'options' => array(
-                    'date'          => __( '发布日期', 'developer-starter' ),
-                    'modified'      => __( '更新时间', 'developer-starter' ),
-                    'comment_count' => __( '评论数', 'developer-starter' ),
-                    'views'         => __( '浏览量', 'developer-starter' ),
-                    'random'        => __( '随机', 'developer-starter' ),
+                    'date'          => __( '发布日期', 'qiling' ),
+                    'modified'      => __( '更新时间', 'qiling' ),
+                    'comment_count' => __( '评论数', 'qiling' ),
+                    'views'         => __( '浏览量', 'qiling' ),
+                    'random'        => __( '随机', 'qiling' ),
                 ),
                 'default' => 'date',
             ),
             array(
                 'id'      => 'rh_feed_count',
                 'type'    => 'number',
-                'label'   => __( '资源数量', 'developer-starter' ),
+                'label'   => __( '资源数量', 'qiling' ),
                 'default' => '8',
             ),
             array(
                 'id'      => 'rh_feed_duration',
                 'type'    => 'number',
-                'label'   => __( '右侧资源流动画时长（秒）', 'developer-starter' ),
+                'label'   => __( '右侧资源流动画时长（秒）', 'qiling' ),
                 'default' => '26',
             ),
             array(
                 'id'      => 'rh_feed_pause_hover',
                 'type'    => 'switcher',
-                'label'   => __( '悬停暂停滚动', 'developer-starter' ),
+                'label'   => __( '悬停暂停滚动', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'rh_feed_show_excerpt',
                 'type'    => 'switcher',
-                'label'   => __( '显示摘要', 'developer-starter' ),
+                'label'   => __( '显示摘要', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'rh_feed_excerpt_length',
                 'type'    => 'number',
-                'label'   => __( '摘要长度', 'developer-starter' ),
+                'label'   => __( '摘要长度', 'qiling' ),
                 'default' => '36',
             ),
             array(
                 'id'      => 'rh_feed_show_price',
                 'type'    => 'switcher',
-                'label'   => __( '显示价格信息', 'developer-starter' ),
+                'label'   => __( '显示价格信息', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'rh_feed_show_download_count',
                 'type'    => 'switcher',
-                'label'   => __( '显示下载项数量', 'developer-starter' ),
+                'label'   => __( '显示下载项数量', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'rh_feed_show_date',
                 'type'    => 'switcher',
-                'label'   => __( '显示日期', 'developer-starter' ),
+                'label'   => __( '显示日期', 'qiling' ),
                 'default' => '0',
             ),
             array(
                 'id'      => 'rh_enable_bottom_strip',
                 'type'    => 'switcher',
-                'label'   => __( '开启底部横向资源流', 'developer-starter' ),
+                'label'   => __( '开启底部横向资源流', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'rh_strip_duration',
                 'type'    => 'number',
-                'label'   => __( '底部横向资源流动画时长（秒）', 'developer-starter' ),
+                'label'   => __( '底部横向资源流动画时长（秒）', 'qiling' ),
                 'default' => '34',
             ),
         );
@@ -526,16 +526,16 @@ class Resource_Hero_Pro_Module extends Module_Base {
             'rh_bg_overlay' => '0.4',
             'rh_badge' => function_exists( 'developer_starter_get_locale_text' )
                 ? developer_starter_get_locale_text( '数字资源变现系统', 'Digital Resource Monetization' )
-                : __( '数字资源变现系统', 'developer-starter' ),
+                : __( '数字资源变现系统', 'qiling' ),
             'rh_title' => function_exists( 'developer_starter_get_locale_text' )
                 ? developer_starter_get_locale_text( '让你的资源首页，<br><strong>更像专业付费平台</strong>', 'Make your hero look like a premium resource platform.' )
-                : __( '让你的资源首页，<br><strong>更像专业付费平台</strong>', 'developer-starter' ),
+                : __( '让你的资源首页，<br><strong>更像专业付费平台</strong>', 'qiling' ),
             'rh_subtitle' => function_exists( 'developer_starter_get_locale_text' )
                 ? developer_starter_get_locale_text( '虚拟资源展示 + VIP权益 + 强转化 CTA', 'Resource cards, member value and conversion CTAs in one place.' )
-                : __( '虚拟资源展示 + VIP权益 + 强转化 CTA', 'developer-starter' ),
+                : __( '虚拟资源展示 + VIP权益 + 强转化 CTA', 'qiling' ),
             'rh_desc' => function_exists( 'developer_starter_get_locale_text' )
                 ? developer_starter_get_locale_text( '你专注内容更新，首页交给资源首屏Pro。适合软件、模板、素材、课程、文档等虚拟资源站。', 'You focus on content operations while Resource Hero Pro handles your first-screen conversion experience.' )
-                : __( '你专注内容更新，首页交给资源首屏Pro。适合软件、模板、素材、课程、文档等虚拟资源站。', 'developer-starter' ),
+                : __( '你专注内容更新，首页交给资源首屏Pro。适合软件、模板、素材、课程、文档等虚拟资源站。', 'qiling' ),
             'rh_style_preset' => 'premium',
             'rh_enable_motion' => '1',
             'rh_motion_level' => 'soft',
@@ -543,17 +543,17 @@ class Resource_Hero_Pro_Module extends Module_Base {
                 array(
                     'image' => 'https://picsum.photos/seed/qiling-resource-hero-1/1200/900',
                     'link'  => '#',
-                    'alt'   => __( '资源首屏轮播图 1', 'developer-starter' ),
+                    'alt'   => __( '资源首屏轮播图 1', 'qiling' ),
                 ),
                 array(
                     'image' => 'https://picsum.photos/seed/qiling-resource-hero-2/1200/900',
                     'link'  => '#',
-                    'alt'   => __( '资源首屏轮播图 2', 'developer-starter' ),
+                    'alt'   => __( '资源首屏轮播图 2', 'qiling' ),
                 ),
                 array(
                     'image' => 'https://picsum.photos/seed/qiling-resource-hero-3/1200/900',
                     'link'  => '#',
-                    'alt'   => __( '资源首屏轮播图 3', 'developer-starter' ),
+                    'alt'   => __( '资源首屏轮播图 3', 'qiling' ),
                 ),
             ),
             'rh_visual_position' => 'right',
@@ -567,22 +567,22 @@ class Resource_Hero_Pro_Module extends Module_Base {
             'rh_visual_show_dots' => '1',
             'rh_visual_caption' => '',
             'rh_benefits' => array(
-                array( 'text' => __( 'VIP专享资源可视化展示', 'developer-starter' ) ),
-                array( 'text' => __( '免费/付费状态一眼区分', 'developer-starter' ) ),
-                array( 'text' => __( '与启灵积分商城逻辑无缝配合', 'developer-starter' ) ),
+                array( 'text' => __( 'VIP专享资源可视化展示', 'qiling' ) ),
+                array( 'text' => __( '免费/付费状态一眼区分', 'qiling' ) ),
+                array( 'text' => __( '与启灵积分商城逻辑无缝配合', 'qiling' ) ),
             ),
             'rh_stats' => array(
-                array( 'value' => '12,000+', 'label' => __( '资源总量', 'developer-starter' ) ),
-                array( 'value' => '4,200+', 'label' => __( '付费会员', 'developer-starter' ) ),
-                array( 'value' => '99.9%', 'label' => __( '下载可用率', 'developer-starter' ) ),
+                array( 'value' => '12,000+', 'label' => __( '资源总量', 'qiling' ) ),
+                array( 'value' => '4,200+', 'label' => __( '付费会员', 'qiling' ) ),
+                array( 'value' => '99.9%', 'label' => __( '下载可用率', 'qiling' ) ),
             ),
             'rh_primary_text' => function_exists( 'developer_starter_get_locale_text' )
                 ? developer_starter_get_locale_text( '开通VIP', 'Upgrade VIP' )
-                : __( '开通VIP', 'developer-starter' ),
+                : __( '开通VIP', 'qiling' ),
             'rh_primary_link' => '#',
             'rh_secondary_text' => function_exists( 'developer_starter_get_locale_text' )
                 ? developer_starter_get_locale_text( '浏览资源', 'Browse Resources' )
-                : __( '浏览资源', 'developer-starter' ),
+                : __( '浏览资源', 'qiling' ),
             'rh_secondary_link' => '#',
             'rh_enable_feed' => '1',
             'rh_feed_direction' => 'vertical',
@@ -990,7 +990,7 @@ class Resource_Hero_Pro_Module extends Module_Base {
                                     <?php endforeach; ?>
                                 </div>
                             <?php else : ?>
-                                <div class="rhp-feed-empty"><?php esc_html_e( '暂无可展示的资源文章', 'developer-starter' ); ?></div>
+                                <div class="rhp-feed-empty"><?php esc_html_e( '暂无可展示的资源文章', 'qiling' ); ?></div>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
@@ -1131,7 +1131,7 @@ class Resource_Hero_Pro_Module extends Module_Base {
                                     $slide_link = $visual_link;
                                 }
                                 if ( $slide_alt === '' ) {
-                                    $slide_alt = __( '主视觉轮播图', 'developer-starter' );
+                                    $slide_alt = __( '主视觉轮播图', 'qiling' );
                                 }
                                 ?>
                                 <div class="rhp-visual-slide<?php echo $index === 0 ? ' is-active' : ''; ?>" data-index="<?php echo esc_attr( (string) $index ); ?>">
@@ -1150,7 +1150,7 @@ class Resource_Hero_Pro_Module extends Module_Base {
                         <?php if ( $show_dots === '1' ) : ?>
                             <div class="rhp-visual-dots">
                                 <?php foreach ( $visual_images as $index => $slide ) : ?>
-                                    <button type="button" class="rhp-visual-dot<?php echo $index === 0 ? ' is-active' : ''; ?>" data-index="<?php echo esc_attr( (string) $index ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '切换到第 %d 张图片', 'developer-starter' ), $index + 1 ) ); ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>"></button>
+                                    <button type="button" class="rhp-visual-dot<?php echo $index === 0 ? ' is-active' : ''; ?>" data-index="<?php echo esc_attr( (string) $index ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '切换到第 %d 张图片', 'qiling' ), $index + 1 ) ); ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>"></button>
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
@@ -1164,7 +1164,7 @@ class Resource_Hero_Pro_Module extends Module_Base {
                         $slide_link = $visual_link;
                     }
                     if ( $slide_alt === '' ) {
-                        $slide_alt = __( '主视觉图片', 'developer-starter' );
+                        $slide_alt = __( '主视觉图片', 'qiling' );
                     }
                     ?>
                     <?php if ( $slide_link !== '' ) : ?>
@@ -1227,7 +1227,7 @@ class Resource_Hero_Pro_Module extends Module_Base {
                             <span class="rhp-price"><?php echo esc_html( $price_text ); ?></span>
                         <?php endif; ?>
                         <?php if ( $show_download_count && $download_count > 0 ) : ?>
-                            <span class="rhp-download-count"><?php echo esc_html( sprintf( _n( '%d 项资源', '%d 项资源', $download_count, 'developer-starter' ), $download_count ) ); ?></span>
+                            <span class="rhp-download-count"><?php echo esc_html( sprintf( _n( '%d 项资源', '%d 项资源', $download_count, 'qiling' ), $download_count ) ); ?></span>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -1404,25 +1404,25 @@ class Resource_Hero_Pro_Module extends Module_Base {
 
         if ( $has_resource ) {
             if ( ! empty( $resource['is_free'] ) ) {
-                $badge_text = __( '免费', 'developer-starter' );
+                $badge_text = __( '免费', 'qiling' );
                 $badge_class = 'is-free';
-                $price_text = __( '免费获取', 'developer-starter' );
+                $price_text = __( '免费获取', 'qiling' );
             } elseif ( ! empty( $resource['is_paid'] ) && $points_price > 0 ) {
-                $badge_text = __( '付费', 'developer-starter' );
+                $badge_text = __( '付费', 'qiling' );
                 $badge_class = 'is-paid';
-                $price_text = sprintf( __( '%s 积分', 'developer-starter' ), number_format_i18n( $points_price, 0 ) );
+                $price_text = sprintf( __( '%s 积分', 'qiling' ), number_format_i18n( $points_price, 0 ) );
             } elseif ( ! empty( $resource['is_vip'] ) ) {
-                $badge_text = __( 'VIP', 'developer-starter' );
+                $badge_text = __( 'VIP', 'qiling' );
                 $badge_class = 'is-vip';
-                $price_text = __( 'VIP权益', 'developer-starter' );
+                $price_text = __( 'VIP权益', 'qiling' );
             } elseif ( $download_count > 0 ) {
-                $badge_text = __( '资源', 'developer-starter' );
+                $badge_text = __( '资源', 'qiling' );
                 $badge_class = 'is-resource';
-                $price_text = __( '可下载', 'developer-starter' );
+                $price_text = __( '可下载', 'qiling' );
             } else {
-                $badge_text = __( '资源', 'developer-starter' );
+                $badge_text = __( '资源', 'qiling' );
                 $badge_class = 'is-resource';
-                $price_text = __( '资源内容', 'developer-starter' );
+                $price_text = __( '资源内容', 'qiling' );
             }
         }
 

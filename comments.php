@@ -55,15 +55,15 @@ $comments_header_enabled = $comments_option_enabled( 'comments_header_enable', t
 $comments_count_enabled = $comments_option_enabled( 'comments_show_count', true );
 $comments_empty_hint_enabled = $comments_option_enabled( 'comments_show_empty_hint', true );
 $comments_logged_in_as_enabled = $comments_option_enabled( 'comments_show_logged_in_as', true );
-$comments_section_title = $comments_option_text( 'comments_section_title', __( '读者评论', 'developer-starter' ) );
-$comments_empty_hint_text = $comments_option_text( 'comments_empty_hint_text', __( '暂无评论，快来抢沙发吧！', 'developer-starter' ) );
-$comments_closed_text = $comments_option_text( 'comments_closed_text', __( '评论已关闭', 'developer-starter' ) );
-$comments_form_logged_in_title = $comments_option_text( 'comments_form_logged_in_title', __( '发表评论', 'developer-starter' ) );
-$comments_form_guest_title = $comments_option_text( 'comments_form_guest_title', __( '参与讨论', 'developer-starter' ) );
-$comments_textarea_placeholder = $comments_option_text( 'comments_textarea_placeholder', __( '写下你的评论...', 'developer-starter' ) );
-$comments_submit_label = $comments_option_text( 'comments_submit_label', __( '发表评论', 'developer-starter' ) );
-$comments_login_required_text = $comments_option_text( 'comments_login_required_text', __( '请先登录后发表评论', 'developer-starter' ) );
-$comments_login_button_label = $comments_option_text( 'comments_login_button_label', __( '立即登录', 'developer-starter' ) );
+$comments_section_title = $comments_option_text( 'comments_section_title', __( '读者评论', 'qiling' ) );
+$comments_empty_hint_text = $comments_option_text( 'comments_empty_hint_text', __( '暂无评论，快来抢沙发吧！', 'qiling' ) );
+$comments_closed_text = $comments_option_text( 'comments_closed_text', __( '评论已关闭', 'qiling' ) );
+$comments_form_logged_in_title = $comments_option_text( 'comments_form_logged_in_title', __( '发表评论', 'qiling' ) );
+$comments_form_guest_title = $comments_option_text( 'comments_form_guest_title', __( '参与讨论', 'qiling' ) );
+$comments_textarea_placeholder = $comments_option_text( 'comments_textarea_placeholder', __( '写下你的评论...', 'qiling' ) );
+$comments_submit_label = $comments_option_text( 'comments_submit_label', __( '发表评论', 'qiling' ) );
+$comments_login_required_text = $comments_option_text( 'comments_login_required_text', __( '请先登录后发表评论', 'qiling' ) );
+$comments_login_button_label = $comments_option_text( 'comments_login_button_label', __( '立即登录', 'qiling' ) );
 $comments_avatar_size = isset( $theme_options['comments_avatar_size'] ) ? absint( $theme_options['comments_avatar_size'] ) : 48;
 if ( $comments_avatar_size <= 0 ) {
     $comments_avatar_size = 48;
@@ -89,7 +89,7 @@ $comments_avatar_size = min( 96, max( 24, $comments_avatar_size ) );
                 <div>
                     <h2 class="comments-title"><?php echo esc_html( $comments_section_title ); ?></h2>
                     <?php if ( $comments_count_enabled ) : ?>
-                        <span class="comments-count"><?php printf( _n( '%s 条评论', '%s 条评论', get_comments_number(), 'developer-starter' ), number_format_i18n( get_comments_number() ) ); ?></span>
+                        <span class="comments-count"><?php printf( _n( '%s 条评论', '%s 条评论', get_comments_number(), 'qiling' ), number_format_i18n( get_comments_number() ) ); ?></span>
                     <?php endif; ?>
                 </div>
             </div>
@@ -113,8 +113,8 @@ $comments_avatar_size = min( 96, max( 24, $comments_avatar_size ) );
 
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
             <nav class="comment-pagination">
-                <div class="nav-prev"><?php previous_comments_link( __( '&larr; 较早的评论', 'developer-starter' ) ); ?></div>
-                <div class="nav-next"><?php next_comments_link( __( '更新的评论 &rarr;', 'developer-starter' ) ); ?></div>
+                <div class="nav-prev"><?php previous_comments_link( __( '&larr; 较早的评论', 'qiling' ) ); ?></div>
+                <div class="nav-next"><?php next_comments_link( __( '更新的评论 &rarr;', 'qiling' ) ); ?></div>
             </nav>
         <?php endif; ?>
 
@@ -135,8 +135,8 @@ $comments_avatar_size = min( 96, max( 24, $comments_avatar_size ) );
         $commenter              = wp_get_current_commenter();
         $required_name_email    = (bool) get_option( 'require_name_email' );
         $required_attributes    = $required_name_email ? ' required="required" aria-required="true"' : '';
-        $author_placeholder     = $required_name_email ? __( '昵称 *', 'developer-starter' ) : __( '昵称', 'developer-starter' );
-        $email_placeholder      = $required_name_email ? __( '邮箱 *', 'developer-starter' ) : __( '邮箱', 'developer-starter' );
+        $author_placeholder     = $required_name_email ? __( '昵称 *', 'qiling' ) : __( '昵称', 'qiling' );
+        $email_placeholder      = $required_name_email ? __( '邮箱 *', 'qiling' ) : __( '邮箱', 'qiling' );
         $custom_login_page      = developer_starter_get_option( 'login_page_id', '' );
         $login_url              = $custom_login_page ? get_permalink( $custom_login_page ) : '';
 
@@ -145,23 +145,23 @@ $comments_avatar_size = min( 96, max( 24, $comments_avatar_size ) );
         }
 
         $comment_fields = array(
-            'author' => '<div class="form-row"><div class="form-field comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( '昵称', 'developer-starter' ) . '</label><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245" autocomplete="name" placeholder="' . esc_attr( $author_placeholder ) . '"' . $required_attributes . ' /></div>',
-            'email'  => '<div class="form-field comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( '邮箱', 'developer-starter' ) . '</label><input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" autocomplete="email" placeholder="' . esc_attr( $email_placeholder ) . '"' . $required_attributes . ' /></div></div>',
+            'author' => '<div class="form-row"><div class="form-field comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( '昵称', 'qiling' ) . '</label><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245" autocomplete="name" placeholder="' . esc_attr( $author_placeholder ) . '"' . $required_attributes . ' /></div>',
+            'email'  => '<div class="form-field comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( '邮箱', 'qiling' ) . '</label><input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" autocomplete="email" placeholder="' . esc_attr( $email_placeholder ) . '"' . $required_attributes . ' /></div></div>',
         );
 
         if ( get_option( 'show_comments_cookies_opt_in' ) ) {
-            $comment_fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . ( empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"' ) . ' /><label for="wp-comment-cookies-consent">' . esc_html__( '在此浏览器中保存我的昵称和邮箱，方便下次评论。', 'developer-starter' ) . '</label></p>';
+            $comment_fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . ( empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"' ) . ' /><label for="wp-comment-cookies-consent">' . esc_html__( '在此浏览器中保存我的昵称和邮箱，方便下次评论。', 'qiling' ) . '</label></p>';
         }
 
         $honeypot_field = '';
         if ( $honeypot_enabled ) {
-            $honeypot_field = '<div class="comment-honeypot" aria-hidden="true"><label for="website_url_hp">' . esc_html__( '网站地址', 'developer-starter' ) . '</label><input type="text" name="website_url_hp" id="website_url_hp" value="" autocomplete="off" tabindex="-1" /></div>';
+            $honeypot_field = '<div class="comment-honeypot" aria-hidden="true"><label for="website_url_hp">' . esc_html__( '网站地址', 'qiling' ) . '</label><input type="text" name="website_url_hp" id="website_url_hp" value="" autocomplete="off" tabindex="-1" /></div>';
         }
 
         $logged_in_as = '';
         if ( $is_logged_in && $comments_logged_in_as_enabled ) {
             $current_user = wp_get_current_user();
-            $logged_in_as = '<div class="logged-user-info">' . get_avatar( get_current_user_id(), 36 ) . '<span class="user-name">' . esc_html( $current_user->display_name ) . '</span><a href="' . esc_url( wp_logout_url( get_permalink() ) ) . '" class="logout-link">' . esc_html__( '登出', 'developer-starter' ) . '</a></div>';
+            $logged_in_as = '<div class="logged-user-info">' . get_avatar( get_current_user_id(), 36 ) . '<span class="user-name">' . esc_html( $current_user->display_name ) . '</span><a href="' . esc_url( wp_logout_url( get_permalink() ) ) . '" class="logout-link">' . esc_html__( '登出', 'qiling' ) . '</a></div>';
         }
 
         $must_log_in = '<div class="comment-login-required"><span class="login-required-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span><p class="login-required-text">' . esc_html( $comments_login_required_text ) . '</p><a href="' . esc_url( $login_url ) . '" class="btn-login js-comment-login" data-login-url="' . esc_url( $login_url ) . '">' . esc_html( $comments_login_button_label ) . '</a></div>';
@@ -171,7 +171,7 @@ $comments_avatar_size = min( 96, max( 24, $comments_avatar_size ) );
                 'class_container'     => 'comment-form-section comment-respond',
                 'class_form'          => 'comment-form qiling-comment-form',
                 'class_submit'        => 'btn-submit',
-                'comment_field'       => '<div class="form-field comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( '评论内容', 'developer-starter' ) . '</label><textarea name="comment" id="comment" rows="3" maxlength="65525" placeholder="' . esc_attr( $comments_textarea_placeholder ) . '" required="required"></textarea></div>',
+                'comment_field'       => '<div class="form-field comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( '评论内容', 'qiling' ) . '</label><textarea name="comment" id="comment" rows="3" maxlength="65525" placeholder="' . esc_attr( $comments_textarea_placeholder ) . '" required="required"></textarea></div>',
                 'comment_notes_after' => $honeypot_field,
                 'comment_notes_before' => '',
                 'fields'              => $comment_fields,
@@ -187,7 +187,7 @@ $comments_avatar_size = min( 96, max( 24, $comments_avatar_size ) );
                 'title_reply_after'   => '</h3></div>',
                 'cancel_reply_before' => '<small class="cancel-reply">',
                 'cancel_reply_after'  => '</small>',
-                'cancel_reply_link'   => __( '取消回复', 'developer-starter' ),
+                'cancel_reply_link'   => __( '取消回复', 'qiling' ),
             )
         );
         ?>

@@ -32,7 +32,7 @@ class Booking_Entry_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'homepage';
         $this->icon        = 'dashicons-calendar-alt';
-        $this->description = __( '酒店预订入口表单', 'developer-starter' );
+        $this->description = __( '酒店预订入口表单', 'qiling' );
     }
 
     /**
@@ -50,7 +50,7 @@ class Booking_Entry_Module extends Module_Base {
      * @return string 模块名称
      */
     public function get_name() {
-        return __( '预订入口', 'developer-starter' );
+        return __( '预订入口', 'qiling' );
     }
 
     /**
@@ -98,25 +98,25 @@ class Booking_Entry_Module extends Module_Base {
             array(
                 'id'      => 'booking_title',
                 'type'    => 'text',
-                'label'   => __( '标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '在线预订', 'Online Booking' ) : __( '在线预订', 'developer-starter' ),
+                'label'   => __( '标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '在线预订', 'Online Booking' ) : __( '在线预订', 'qiling' ),
             ),
             array(
                 'id'      => 'booking_title_size',
                 'type'    => 'text',
-                'label'   => __( '标题字体大小', 'developer-starter' ),
+                'label'   => __( '标题字体大小', 'qiling' ),
                 'default' => '2rem',
             ),
             array(
                 'id'    => 'booking_title_color',
                 'type'  => 'color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
             ),
             array(
                 'id'      => 'booking_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '预订您的理想房间，开启美好旅程', 'Reserve your ideal stay and start a great trip.' ) : __( '预订您的理想房间，开启美好旅程', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '预订您的理想房间，开启美好旅程', 'Reserve your ideal stay and start a great trip.' ) : __( '预订您的理想房间，开启美好旅程', 'qiling' ),
             ),
 
             // ========================================
@@ -125,8 +125,8 @@ class Booking_Entry_Module extends Module_Base {
             array(
                 'id'      => 'form_id',
                 'type'    => 'text',
-                'label'   => __( '表单ID', 'developer-starter' ),
-                'desc'    => __( '输入 qiling-forms 插件中的表单ID（可在启灵表单后台查看）', 'developer-starter' ),
+                'label'   => __( '表单ID', 'qiling' ),
+                'desc'    => __( '输入 qiling-forms 插件中的表单ID（可在启灵表单后台查看）', 'qiling' ),
             ),
 
             // ========================================
@@ -135,20 +135,20 @@ class Booking_Entry_Module extends Module_Base {
             array(
                 'id'      => 'booking_layout',
                 'type'    => 'select',
-                'label'   => __( '布局样式', 'developer-starter' ),
+                'label'   => __( '布局样式', 'qiling' ),
                 'options' => array(
-                    'card'       => __( '卡片样式', 'developer-starter' ),
-                    'fullwidth'  => __( '全宽样式', 'developer-starter' ),
-                    'sidebar'    => __( '侧边信息', 'developer-starter' ),
+                    'card'       => __( '卡片样式', 'qiling' ),
+                    'fullwidth'  => __( '全宽样式', 'qiling' ),
+                    'sidebar'    => __( '侧边信息', 'qiling' ),
                 ),
                 'default' => 'card',
             ),
             array(
                 'id'      => 'card_max_width',
                 'type'    => 'text',
-                'label'   => __( '卡片最大宽度', 'developer-starter' ),
+                'label'   => __( '卡片最大宽度', 'qiling' ),
                 'default' => '600px',
-                'desc'    => __( '仅卡片样式生效', 'developer-starter' ),
+                'desc'    => __( '仅卡片样式生效', 'qiling' ),
             ),
 
             // ========================================
@@ -157,26 +157,26 @@ class Booking_Entry_Module extends Module_Base {
             array(
                 'id'      => 'sidebar_title',
                 'type'    => 'text',
-                'label'   => __( '侧边标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '预订须知', 'Booking Notes' ) : __( '预订须知', 'developer-starter' ),
+                'label'   => __( '侧边标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '预订须知', 'Booking Notes' ) : __( '预订须知', 'qiling' ),
             ),
             array(
                 'id'      => 'sidebar_content',
                 'type'    => 'textarea',
-                'label'   => __( '侧边内容', 'developer-starter' ),
-                'desc'    => __( '每行一条信息', 'developer-starter' ),
+                'label'   => __( '侧边内容', 'qiling' ),
+                'desc'    => __( '每行一条信息', 'qiling' ),
                 'rows'    => 6,
             ),
             array(
                 'id'      => 'contact_phone',
                 'type'    => 'text',
-                'label'   => __( '预订电话', 'developer-starter' ),
+                'label'   => __( '预订电话', 'qiling' ),
             ),
             array(
                 'id'      => 'contact_hours',
                 'type'    => 'text',
-                'label'   => __( '服务时间', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时服务', '24/7 service' ) : __( '24小时服务', 'developer-starter' ),
+                'label'   => __( '服务时间', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '24小时服务', '24/7 service' ) : __( '24小时服务', 'qiling' ),
             ),
 
             // ========================================
@@ -185,31 +185,31 @@ class Booking_Entry_Module extends Module_Base {
             array(
                 'id'      => 'module_bg_color',
                 'type'    => 'color',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'    => 'module_bg_image',
                 'type'  => 'image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
             ),
             array(
                 'id'      => 'bg_overlay',
                 'type'    => 'text',
-                'label'   => __( '背景遮罩透明度', 'developer-starter' ),
+                'label'   => __( '背景遮罩透明度', 'qiling' ),
                 'default' => '0.5',
-                'desc'    => __( '0-1之间，有背景图时生效', 'developer-starter' ),
+                'desc'    => __( '0-1之间，有背景图时生效', 'qiling' ),
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '80px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '80px',
             ),
         );
@@ -226,7 +226,7 @@ class Booking_Entry_Module extends Module_Base {
         // ========================================
         $title       = isset( $data['booking_title'] ) && $data['booking_title'] !== '' 
                        ? $data['booking_title'] 
-                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '在线预订', 'Online Booking' ) : __( '在线预订', 'developer-starter' ) );
+                       : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '在线预订', 'Online Booking' ) : __( '在线预订', 'qiling' ) );
         $title_size  = isset( $data['booking_title_size'] ) && $data['booking_title_size'] !== '' 
                        ? $data['booking_title_size'] 
                        : '2rem';
@@ -337,7 +337,7 @@ class Booking_Entry_Module extends Module_Base {
 
                             <?php if ( $contact_phone ) : ?>
                                 <div class="ql-hotel-sidebar-contact">
-                                    <div class="ql-hotel-contact-label"><?php esc_html_e( '预订热线', 'developer-starter' ); ?></div>
+                                    <div class="ql-hotel-contact-label"><?php esc_html_e( '预订热线', 'qiling' ); ?></div>
                                     <a href="tel:<?php echo esc_attr( $contact_phone ); ?>" class="ql-hotel-contact-phone">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -363,7 +363,7 @@ class Booking_Entry_Module extends Module_Base {
                                     <path d="M12 8v4"></path>
                                     <path d="M12 16h.01"></path>
                                 </svg>
-                                <p><?php esc_html_e( '请先安装并启用「启灵表单（qiling-forms）」插件', 'developer-starter' ); ?></p>
+                                <p><?php esc_html_e( '请先安装并启用「启灵表单（qiling-forms）」插件', 'qiling' ); ?></p>
                             </div>
                         <?php else : ?>
                             <div class="ql-hotel-booking-placeholder">
@@ -373,7 +373,7 @@ class Booking_Entry_Module extends Module_Base {
                                     <line x1="8" y1="2" x2="8" y2="6"></line>
                                     <line x1="3" y1="10" x2="21" y2="10"></line>
                                 </svg>
-                                <p><?php esc_html_e( '请在模块设置中选择一个预订表单', 'developer-starter' ); ?></p>
+                                <p><?php esc_html_e( '请在模块设置中选择一个预订表单', 'qiling' ); ?></p>
                             </div>
                         <?php endif; ?>
                     </div>

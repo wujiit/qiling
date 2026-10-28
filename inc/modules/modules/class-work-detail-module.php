@@ -19,7 +19,7 @@ class Work_Detail_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'content';
         $this->icon        = 'dashicons-media-document';
-        $this->description = __( '读取 URL 参数中的作品并展示完整详情，支持版权、出版物、EXIF 与授权表单。', 'developer-starter' );
+        $this->description = __( '读取 URL 参数中的作品并展示完整详情，支持版权、出版物、EXIF 与授权表单。', 'qiling' );
     }
 
     public function get_id() {
@@ -27,7 +27,7 @@ class Work_Detail_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '作品详情', 'developer-starter' );
+        return __( '作品详情', 'qiling' );
     }
 
     public function get_fields() {
@@ -35,129 +35,129 @@ class Work_Detail_Module extends Module_Base {
             array(
                 'id'      => 'wd_empty_text',
                 'type'    => 'text',
-                'label'   => __( '未匹配到作品时提示', 'developer-starter' ),
-                'default' => __( '请选择一个作品进入详情页。', 'developer-starter' ),
+                'label'   => __( '未匹配到作品时提示', 'qiling' ),
+                'default' => __( '请选择一个作品进入详情页。', 'qiling' ),
             ),
             array(
                 'id'      => 'wd_show_back',
                 'type'    => 'select',
-                'label'   => __( '显示返回作品库按钮', 'developer-starter' ),
+                'label'   => __( '显示返回作品库按钮', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_back_label',
                 'type'    => 'text',
-                'label'   => __( '返回按钮文案', 'developer-starter' ),
-                'default' => __( '返回作品库', 'developer-starter' ),
+                'label'   => __( '返回按钮文案', 'qiling' ),
+                'default' => __( '返回作品库', 'qiling' ),
             ),
             array(
                 'id'      => 'wd_library_url',
                 'type'    => 'text',
-                'label'   => __( '作品库页面 URL（可选）', 'developer-starter' ),
+                'label'   => __( '作品库页面 URL（可选）', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空则返回当前页面并移除作品参数。', 'developer-starter' ),
+                'desc'    => __( '留空则返回当前页面并移除作品参数。', 'qiling' ),
             ),
             array(
                 'id'      => 'wd_show_cover',
                 'type'    => 'select',
-                'label'   => __( '显示封面图', 'developer-starter' ),
+                'label'   => __( '显示封面图', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_show_gallery',
                 'type'    => 'select',
-                'label'   => __( '显示图集', 'developer-starter' ),
+                'label'   => __( '显示图集', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_show_content',
                 'type'    => 'select',
-                'label'   => __( '显示正文', 'developer-starter' ),
+                'label'   => __( '显示正文', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_show_terms',
                 'type'    => 'select',
-                'label'   => __( '显示分类标签', 'developer-starter' ),
+                'label'   => __( '显示分类标签', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_show_copyright',
                 'type'    => 'select',
-                'label'   => __( '显示版权信息', 'developer-starter' ),
+                'label'   => __( '显示版权信息', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_show_book',
                 'type'    => 'select',
-                'label'   => __( '显示出版信息', 'developer-starter' ),
+                'label'   => __( '显示出版信息', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_show_exif',
                 'type'    => 'select',
-                'label'   => __( '显示 EXIF / 器材信息', 'developer-starter' ),
+                'label'   => __( '显示 EXIF / 器材信息', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'wd_show_external',
                 'type'    => 'select',
-                'label'   => __( '显示外链按钮', 'developer-starter' ),
+                'label'   => __( '显示外链按钮', 'qiling' ),
                 'options' => array(
-                    '1' => __( '是', 'developer-starter' ),
-                    '0' => __( '否', 'developer-starter' ),
+                    '1' => __( '是', 'qiling' ),
+                    '0' => __( '否', 'qiling' ),
                 ),
                 'default' => '1',
             ),
-            array( 'id' => 'wd_external_label', 'type' => 'text', 'label' => __( '外链按钮默认文案', 'developer-starter' ), 'default' => __( '立即查看', 'developer-starter' ), 'desc' => __( '作品数据没有单独按钮文案时使用。', 'developer-starter' ) ),
+            array( 'id' => 'wd_external_label', 'type' => 'text', 'label' => __( '外链按钮默认文案', 'qiling' ), 'default' => __( '立即查看', 'qiling' ), 'desc' => __( '作品数据没有单独按钮文案时使用。', 'qiling' ) ),
             array(
                 'id'      => 'wd_bg_color',
                 'type'    => 'color',
-                'label'   => __( '背景颜色', 'developer-starter' ),
+                'label'   => __( '背景颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'      => 'wd_padding_top',
                 'type'    => 'text',
-                'label'   => __( '顶部间距', 'developer-starter' ),
+                'label'   => __( '顶部间距', 'qiling' ),
                 'default' => '52px',
             ),
             array(
                 'id'      => 'wd_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '底部间距', 'developer-starter' ),
+                'label'   => __( '底部间距', 'qiling' ),
                 'default' => '64px',
             ),
         );
@@ -169,9 +169,9 @@ class Work_Detail_Module extends Module_Base {
             return;
         }
 
-        $empty_text = isset( $data['wd_empty_text'] ) ? sanitize_text_field( (string) $data['wd_empty_text'] ) : __( '请选择一个作品进入详情页。', 'developer-starter' );
+        $empty_text = isset( $data['wd_empty_text'] ) ? sanitize_text_field( (string) $data['wd_empty_text'] ) : __( '请选择一个作品进入详情页。', 'qiling' );
         $show_back  = isset( $data['wd_show_back'] ) ? '1' === (string) $data['wd_show_back'] : true;
-        $back_label = isset( $data['wd_back_label'] ) ? sanitize_text_field( (string) $data['wd_back_label'] ) : __( '返回作品库', 'developer-starter' );
+        $back_label = isset( $data['wd_back_label'] ) ? sanitize_text_field( (string) $data['wd_back_label'] ) : __( '返回作品库', 'qiling' );
         $library_url = isset( $data['wd_library_url'] ) ? esc_url_raw( (string) $data['wd_library_url'] ) : '';
 
         $show_cover        = isset( $data['wd_show_cover'] ) ? '1' === (string) $data['wd_show_cover'] : true;
@@ -182,7 +182,7 @@ class Work_Detail_Module extends Module_Base {
         $show_book         = isset( $data['wd_show_book'] ) ? '1' === (string) $data['wd_show_book'] : true;
         $show_exif         = isset( $data['wd_show_exif'] ) ? '1' === (string) $data['wd_show_exif'] : true;
         $show_external_btn = isset( $data['wd_show_external'] ) ? '1' === (string) $data['wd_show_external'] : true;
-        $external_label    = isset( $data['wd_external_label'] ) && '' !== trim( (string) $data['wd_external_label'] ) ? sanitize_text_field( (string) $data['wd_external_label'] ) : __( '立即查看', 'developer-starter' );
+        $external_label    = isset( $data['wd_external_label'] ) && '' !== trim( (string) $data['wd_external_label'] ) ? sanitize_text_field( (string) $data['wd_external_label'] ) : __( '立即查看', 'qiling' );
 
         $bg_color       = isset( $data['wd_bg_color'] ) ? sanitize_text_field( (string) $data['wd_bg_color'] ) : 'var(--color-neutral-0)';
         $padding_top    = isset( $data['wd_padding_top'] ) ? Module_Manager::sanitize_spacing_value( $data['wd_padding_top'] ) : '52px';
@@ -281,7 +281,7 @@ class Work_Detail_Module extends Module_Base {
 
                         <?php if ( $show_gallery && ! empty( $gallery ) ) : ?>
                             <section class="qw-detail-section">
-                                <h3><?php echo esc_html__( '作品图集', 'developer-starter' ); ?></h3>
+                                <h3><?php echo esc_html__( '作品图集', 'qiling' ); ?></h3>
                                 <div class="qw-detail-gallery">
                                     <?php foreach ( $gallery as $img_url ) : ?>
                                         <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( (string) $item['title'] ); ?>" loading="lazy" />
@@ -303,7 +303,7 @@ class Work_Detail_Module extends Module_Base {
 
                         <?php if ( $show_terms && ! empty( $terms_map ) ) : ?>
                             <div class="qw-detail-side-card">
-                                <h3><?php echo esc_html__( '分类标签', 'developer-starter' ); ?></h3>
+                                <h3><?php echo esc_html__( '分类标签', 'qiling' ); ?></h3>
                                 <div class="qw-detail-term-groups">
                                     <?php foreach ( $terms_map as $taxonomy => $rows ) : ?>
                                         <?php if ( empty( $rows ) ) : ?>
@@ -328,40 +328,40 @@ class Work_Detail_Module extends Module_Base {
                         <?php if ( $show_copyright ) : ?>
                             <?php
                             $copyright_rows = array(
-                                __( '版权归属', 'developer-starter' ) => isset( $meta['copyright_owner'] ) ? (string) $meta['copyright_owner'] : '',
-                                __( '授权类型', 'developer-starter' ) => isset( $meta['copyright_license'] ) ? (string) $meta['copyright_license'] : '',
-                                __( '版权说明', 'developer-starter' ) => isset( $meta['copyright_notice'] ) ? (string) $meta['copyright_notice'] : '',
+                                __( '版权归属', 'qiling' ) => isset( $meta['copyright_owner'] ) ? (string) $meta['copyright_owner'] : '',
+                                __( '授权类型', 'qiling' ) => isset( $meta['copyright_license'] ) ? (string) $meta['copyright_license'] : '',
+                                __( '版权说明', 'qiling' ) => isset( $meta['copyright_notice'] ) ? (string) $meta['copyright_notice'] : '',
                             );
-                            $this->render_meta_card( __( '版权与授权', 'developer-starter' ), $copyright_rows );
+                            $this->render_meta_card( __( '版权与授权', 'qiling' ), $copyright_rows );
                             ?>
                         <?php endif; ?>
 
                         <?php if ( $show_book ) : ?>
                             <?php
                             $book_rows = array(
-                                __( '书名', 'developer-starter' )   => isset( $meta['book_title'] ) ? (string) $meta['book_title'] : '',
-                                __( '作者', 'developer-starter' )   => isset( $meta['book_author'] ) ? (string) $meta['book_author'] : '',
-                                __( '出版社', 'developer-starter' ) => isset( $meta['book_publisher'] ) ? (string) $meta['book_publisher'] : '',
-                                __( 'ISBN', 'developer-starter' ) => isset( $meta['book_isbn'] ) ? (string) $meta['book_isbn'] : '',
-                                __( '出版日期', 'developer-starter' ) => isset( $meta['book_publish_date'] ) ? (string) $meta['book_publish_date'] : '',
+                                __( '书名', 'qiling' )   => isset( $meta['book_title'] ) ? (string) $meta['book_title'] : '',
+                                __( '作者', 'qiling' )   => isset( $meta['book_author'] ) ? (string) $meta['book_author'] : '',
+                                __( '出版社', 'qiling' ) => isset( $meta['book_publisher'] ) ? (string) $meta['book_publisher'] : '',
+                                __( 'ISBN', 'qiling' ) => isset( $meta['book_isbn'] ) ? (string) $meta['book_isbn'] : '',
+                                __( '出版日期', 'qiling' ) => isset( $meta['book_publish_date'] ) ? (string) $meta['book_publish_date'] : '',
                             );
-                            $this->render_meta_card( __( '书籍 / 出版物', 'developer-starter' ), $book_rows );
+                            $this->render_meta_card( __( '书籍 / 出版物', 'qiling' ), $book_rows );
                             ?>
                         <?php endif; ?>
 
                         <?php if ( $show_exif ) : ?>
                             <?php
                             $exif_rows = array(
-                                __( '机身品牌', 'developer-starter' ) => isset( $exif['camera_make'] ) ? (string) $exif['camera_make'] : '',
-                                __( '机身型号', 'developer-starter' ) => isset( $exif['camera_model'] ) ? (string) $exif['camera_model'] : '',
-                                __( '镜头型号', 'developer-starter' ) => isset( $exif['lens_model'] ) ? (string) $exif['lens_model'] : '',
-                                __( '焦段', 'developer-starter' ) => isset( $exif['focal_length'] ) ? (string) $exif['focal_length'] : '',
-                                __( '光圈', 'developer-starter' ) => isset( $exif['aperture'] ) ? (string) $exif['aperture'] : '',
-                                __( '快门', 'developer-starter' ) => isset( $exif['shutter_speed'] ) ? (string) $exif['shutter_speed'] : '',
-                                __( 'ISO', 'developer-starter' ) => isset( $exif['iso_value'] ) ? (string) $exif['iso_value'] : '',
-                                __( '拍摄时间', 'developer-starter' ) => isset( $exif['taken_at'] ) ? (string) $exif['taken_at'] : '',
+                                __( '机身品牌', 'qiling' ) => isset( $exif['camera_make'] ) ? (string) $exif['camera_make'] : '',
+                                __( '机身型号', 'qiling' ) => isset( $exif['camera_model'] ) ? (string) $exif['camera_model'] : '',
+                                __( '镜头型号', 'qiling' ) => isset( $exif['lens_model'] ) ? (string) $exif['lens_model'] : '',
+                                __( '焦段', 'qiling' ) => isset( $exif['focal_length'] ) ? (string) $exif['focal_length'] : '',
+                                __( '光圈', 'qiling' ) => isset( $exif['aperture'] ) ? (string) $exif['aperture'] : '',
+                                __( '快门', 'qiling' ) => isset( $exif['shutter_speed'] ) ? (string) $exif['shutter_speed'] : '',
+                                __( 'ISO', 'qiling' ) => isset( $exif['iso_value'] ) ? (string) $exif['iso_value'] : '',
+                                __( '拍摄时间', 'qiling' ) => isset( $exif['taken_at'] ) ? (string) $exif['taken_at'] : '',
                             );
-                            $this->render_meta_card( __( 'EXIF / 器材', 'developer-starter' ), $exif_rows );
+                            $this->render_meta_card( __( 'EXIF / 器材', 'qiling' ), $exif_rows );
                             ?>
                         <?php endif; ?>
                     </aside>
@@ -506,7 +506,7 @@ class Work_Detail_Module extends Module_Base {
         }
         ?>
         <div class="notice notice-warning qiling-module-admin-notice">
-            <?php echo esc_html__( '作品详情模块需要先启用「启灵作品库（qilingwork）」插件。', 'developer-starter' ); ?>
+            <?php echo esc_html__( '作品详情模块需要先启用「启灵作品库（qilingwork）」插件。', 'qiling' ); ?>
         </div>
         <?php
     }

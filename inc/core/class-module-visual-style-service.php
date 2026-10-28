@@ -52,8 +52,8 @@ class Module_Visual_Style_Service {
             array(
                 'id'          => '_ds_visual',
                 'type'        => 'module_visual_style',
-                'label'       => __( '模块视觉风格', 'developer-starter' ),
-                'description' => __( '只影响当前模块，优先级高于当前页面视觉风格。', 'developer-starter' ),
+                'label'       => __( '模块视觉风格', 'qiling' ),
+                'description' => __( '只影响当前模块，优先级高于当前页面视觉风格。', 'qiling' ),
                 'groups'      => $this->get_field_groups( $module_id ),
             ),
         );
@@ -65,162 +65,162 @@ class Module_Visual_Style_Service {
     public function get_field_groups( $module_id = '' ) {
         $groups = array(
             'base'    => array(
-                'label'       => __( '基础', 'developer-starter' ),
-                'description' => __( '控制当前模块主色、辅助色和背景。', 'developer-starter' ),
+                'label'       => __( '基础', 'qiling' ),
+                'description' => __( '控制当前模块主色、辅助色和背景。', 'qiling' ),
                 'fields'      => array(
                     'mode'         => array(
-                        'label'   => __( '简单模式', 'developer-starter' ),
+                        'label'   => __( '简单模式', 'qiling' ),
                         'type'    => 'select',
                         'options' => array(
-                            'follow' => __( '跟随页面风格', 'developer-starter' ),
-                            'light'  => __( '使用浅色模块', 'developer-starter' ),
-                            'dark'   => __( '使用深色模块', 'developer-starter' ),
-                            'accent' => __( '使用强调色模块', 'developer-starter' ),
-                            'custom' => __( '自定义', 'developer-starter' ),
+                            'follow' => __( '跟随页面风格', 'qiling' ),
+                            'light'  => __( '使用浅色模块', 'qiling' ),
+                            'dark'   => __( '使用深色模块', 'qiling' ),
+                            'accent' => __( '使用强调色模块', 'qiling' ),
+                            'custom' => __( '自定义', 'qiling' ),
                         ),
                     ),
                     'inherit_page' => array(
-                        'label'   => __( '继承页面主色', 'developer-starter' ),
+                        'label'   => __( '继承页面主色', 'qiling' ),
                         'type'    => 'select',
                         'options' => array(
-                            '1' => __( '继承', 'developer-starter' ),
-                            '0' => __( '不继承', 'developer-starter' ),
+                            '1' => __( '继承', 'qiling' ),
+                            '0' => __( '不继承', 'qiling' ),
                         ),
                     ),
                     'primary'      => array(
-                        'label'       => __( '模块主色', 'developer-starter' ),
+                        'label'       => __( '模块主色', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--qiling-page-primary)',
-                        'description' => __( '用于当前模块的强调元素，例如图标、标签、链接和局部高亮；不是标题文字颜色。', 'developer-starter' ),
+                        'description' => __( '用于当前模块的强调元素，例如图标、标签、链接和局部高亮；不是标题文字颜色。', 'qiling' ),
                     ),
                     'accent'       => array(
-                        'label'       => __( '模块辅助色', 'developer-starter' ),
+                        'label'       => __( '模块辅助色', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--qiling-page-accent-2)',
-                        'description' => __( '用于当前模块的第二强调色和悬停状态，与模块主色搭配使用。', 'developer-starter' ),
+                        'description' => __( '用于当前模块的第二强调色和悬停状态，与模块主色搭配使用。', 'qiling' ),
                     ),
                     'background'   => array(
-                        'label'       => __( '模块背景', 'developer-starter' ),
+                        'label'       => __( '模块背景', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '#ffffff',
-                        'description' => __( '控制整个当前模块区块的背景颜色或渐变。', 'developer-starter' ),
+                        'description' => __( '控制整个当前模块区块的背景颜色或渐变。', 'qiling' ),
                     ),
                 ),
             ),
             'content' => array(
-                'label'       => __( '文字', 'developer-starter' ),
-                'description' => __( '控制当前模块中的标题、副标题和正文文字。', 'developer-starter' ),
+                'label'       => __( '文字', 'qiling' ),
+                'description' => __( '控制当前模块中的标题、副标题和正文文字。', 'qiling' ),
                 'fields'      => array(
                     'title' => array(
-                        'label'       => __( '标题颜色', 'developer-starter' ),
+                        'label'       => __( '标题颜色', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--qiling-page-text)',
-                        'description' => __( '控制模块主标题；兼容模块内使用标准标题类的标题链接。', 'developer-starter' ),
+                        'description' => __( '控制模块主标题；兼容模块内使用标准标题类的标题链接。', 'qiling' ),
                     ),
                     'subtitle' => array(
-                        'label'       => __( '副标题颜色', 'developer-starter' ),
+                        'label'       => __( '副标题颜色', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--color-text-muted)',
-                        'description' => __( '控制模块主标题下方的说明、副标题和描述文字。', 'developer-starter' ),
+                        'description' => __( '控制模块主标题下方的说明、副标题和描述文字。', 'qiling' ),
                     ),
                     'text' => array(
-                        'label'       => __( '正文颜色', 'developer-starter' ),
+                        'label'       => __( '正文颜色', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--color-text)',
-                        'description' => __( '控制当前模块中的普通段落、列表和摘要文字。', 'developer-starter' ),
+                        'description' => __( '控制当前模块中的普通段落、列表和摘要文字。', 'qiling' ),
                     ),
                 ),
             ),
             'buttons' => array(
-                'label'       => __( '按钮', 'developer-starter' ),
-                'description' => __( '覆盖当前模块里的按钮和链接按钮。', 'developer-starter' ),
+                'label'       => __( '按钮', 'qiling' ),
+                'description' => __( '覆盖当前模块里的按钮和链接按钮。', 'qiling' ),
                 'fields'      => array(
                     'background'       => array(
-                        'label'       => __( '按钮背景', 'developer-starter' ),
+                        'label'       => __( '按钮背景', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--qiling-button-bg)',
-                        'description' => __( '控制当前模块实心主按钮的正常背景颜色。', 'developer-starter' ),
+                        'description' => __( '控制当前模块实心主按钮的正常背景颜色。', 'qiling' ),
                     ),
                     'text'             => array(
-                        'label'       => __( '按钮文字', 'developer-starter' ),
+                        'label'       => __( '按钮文字', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '#ffffff',
-                        'description' => __( '控制当前模块主按钮正常状态的文字颜色。', 'developer-starter' ),
+                        'description' => __( '控制当前模块主按钮正常状态的文字颜色。', 'qiling' ),
                     ),
                     'hover_background' => array(
-                        'label'       => __( '按钮悬停背景', 'developer-starter' ),
+                        'label'       => __( '按钮悬停背景', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--qiling-button-hover-bg)',
-                        'description' => __( '控制鼠标移到当前模块主按钮上时的背景颜色。', 'developer-starter' ),
+                        'description' => __( '控制鼠标移到当前模块主按钮上时的背景颜色。', 'qiling' ),
                     ),
                     'hover_text'       => array(
-                        'label'       => __( '按钮悬停文字', 'developer-starter' ),
+                        'label'       => __( '按钮悬停文字', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '#ffffff',
-                        'description' => __( '控制鼠标移到当前模块主按钮上时的文字颜色。', 'developer-starter' ),
+                        'description' => __( '控制鼠标移到当前模块主按钮上时的文字颜色。', 'qiling' ),
                     ),
                 ),
             ),
             'cards'   => array(
-                'label'       => __( '卡片', 'developer-starter' ),
-                'description' => __( '统一控制当前模块内重复卡片的文字、背景、边框、圆角、间距和图片。', 'developer-starter' ),
+                'label'       => __( '卡片', 'qiling' ),
+                'description' => __( '统一控制当前模块内重复卡片的文字、背景、边框、圆角、间距和图片。', 'qiling' ),
                 'fields'      => array(
                     'mode'       => array(
-                        'label'       => __( '卡片布局模式', 'developer-starter' ),
+                        'label'       => __( '卡片布局模式', 'qiling' ),
                         'type'        => 'select',
                         'options'     => array(
-                            'native'      => __( '跟随模块原生样式', 'developer-starter' ),
-                            'connected'   => __( '连体内容', 'developer-starter' ),
-                            'independent' => __( '独立卡片', 'developer-starter' ),
+                            'native'      => __( '跟随模块原生样式', 'qiling' ),
+                            'connected'   => __( '连体内容', 'qiling' ),
+                            'independent' => __( '独立卡片', 'qiling' ),
                         ),
-                        'description' => __( '默认保留模块原来的设计。选择“独立卡片”后，才会启用下面的卡片分离和视觉设置。', 'developer-starter' ),
+                        'description' => __( '默认保留模块原来的设计。选择“独立卡片”后，才会启用下面的卡片分离和视觉设置。', 'qiling' ),
                     ),
                     'title'      => array(
-                        'label'       => __( '卡片标题颜色', 'developer-starter' ),
+                        'label'       => __( '卡片标题颜色', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--qiling-page-text)',
                     ),
                     'text'       => array(
-                        'label'       => __( '卡片正文颜色', 'developer-starter' ),
+                        'label'       => __( '卡片正文颜色', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'var(--color-text-muted)',
                     ),
                     'background' => array(
-                        'label'       => __( '卡片背景', 'developer-starter' ),
+                        'label'       => __( '卡片背景', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '#ffffff',
-                        'description' => __( '控制当前模块内卡片的背景颜色。', 'developer-starter' ),
+                        'description' => __( '控制当前模块内卡片的背景颜色。', 'qiling' ),
                     ),
                     'border'     => array(
-                        'label'       => __( '卡片边框', 'developer-starter' ),
+                        'label'       => __( '卡片边框', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => 'rgba(15,23,42,.1)',
-                        'description' => __( '控制当前模块内卡片的边框颜色。', 'developer-starter' ),
+                        'description' => __( '控制当前模块内卡片的边框颜色。', 'qiling' ),
                     ),
                     'shadow'     => array(
-                        'label'       => __( '卡片阴影', 'developer-starter' ),
+                        'label'       => __( '卡片阴影', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '0 18px 48px rgba(15,23,42,.12)',
-                        'description' => __( '控制当前模块内卡片的阴影；填写 none 可关闭阴影。', 'developer-starter' ),
+                        'description' => __( '控制当前模块内卡片的阴影；填写 none 可关闭阴影。', 'qiling' ),
                     ),
                     'radius'     => array(
-                        'label'       => __( '卡片圆角', 'developer-starter' ),
+                        'label'       => __( '卡片圆角', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '12px',
                     ),
                     'padding'    => array(
-                        'label'       => __( '卡片内边距', 'developer-starter' ),
+                        'label'       => __( '卡片内边距', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '24px',
                     ),
                     'gap'        => array(
-                        'label'       => __( '组件间距', 'developer-starter' ),
+                        'label'       => __( '组件间距', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '24px',
-                        'description' => __( '控制卡片网格、列表项或重复组件之间的距离。', 'developer-starter' ),
+                        'description' => __( '控制卡片网格、列表项或重复组件之间的距离。', 'qiling' ),
                     ),
                     'image_radius' => array(
-                        'label'       => __( '卡片图片圆角', 'developer-starter' ),
+                        'label'       => __( '卡片图片圆角', 'qiling' ),
                         'type'        => 'css',
                         'placeholder' => '10px',
                     ),
@@ -277,106 +277,106 @@ class Module_Visual_Style_Service {
         } elseif ( 'follow' === $mode && $has_advanced_values ) {
             $mode = 'custom';
         }
-        $status_message  = __( '当前模块跟随页面风格。', 'developer-starter' );
+        $status_message  = __( '当前模块跟随页面风格。', 'qiling' );
         if ( 'custom' === $mode && ! $has_advanced_values ) {
-            $status_message = __( '已选择自定义，请在高级设置里填写字段后生效。', 'developer-starter' );
+            $status_message = __( '已选择自定义，请在高级设置里填写字段后生效。', 'qiling' );
         } elseif ( 'follow' !== $mode ) {
-            $status_message = __( '当前模块正在覆盖页面风格。', 'developer-starter' );
+            $status_message = __( '当前模块正在覆盖页面风格。', 'qiling' );
         }
         $field_groups    = $this->get_field_groups( $module_id );
         $mode_options    = isset( $field_groups['base']['fields']['mode']['options'] ) ? $field_groups['base']['fields']['mode']['options'] : array();
         $advanced_fields = array(
             array(
                 'path'        => 'base.background',
-                'label'       => __( '背景色', 'developer-starter' ),
+                'label'       => __( '背景色', 'qiling' ),
                 'placeholder' => '#ffffff / linear-gradient(...)',
-                'description' => __( '控制整个当前模块区块的背景。', 'developer-starter' ),
+                'description' => __( '控制整个当前模块区块的背景。', 'qiling' ),
             ),
             array(
                 'path'        => 'content.title',
-                'label'       => __( '标题颜色', 'developer-starter' ),
+                'label'       => __( '标题颜色', 'qiling' ),
                 'placeholder' => 'var(--qiling-page-text)',
-                'description' => __( '控制当前模块主标题和兼容的标题链接。', 'developer-starter' ),
+                'description' => __( '控制当前模块主标题和兼容的标题链接。', 'qiling' ),
             ),
             array(
                 'path'        => 'content.subtitle',
-                'label'       => __( '副标题颜色', 'developer-starter' ),
+                'label'       => __( '副标题颜色', 'qiling' ),
                 'placeholder' => 'var(--color-text-muted)',
-                'description' => __( '控制主标题下方的副标题和说明。', 'developer-starter' ),
+                'description' => __( '控制主标题下方的副标题和说明。', 'qiling' ),
             ),
             array(
                 'path'        => 'content.text',
-                'label'       => __( '正文颜色', 'developer-starter' ),
+                'label'       => __( '正文颜色', 'qiling' ),
                 'placeholder' => 'var(--color-text)',
-                'description' => __( '控制普通段落、列表和摘要文字。', 'developer-starter' ),
+                'description' => __( '控制普通段落、列表和摘要文字。', 'qiling' ),
             ),
             array(
                 'path'        => 'buttons.background',
-                'label'       => __( '按钮色', 'developer-starter' ),
+                'label'       => __( '按钮色', 'qiling' ),
                 'placeholder' => 'var(--qiling-button-bg)',
-                'description' => __( '控制当前模块实心主按钮的背景。', 'developer-starter' ),
+                'description' => __( '控制当前模块实心主按钮的背景。', 'qiling' ),
             ),
             array(
                 'path'        => 'buttons.text',
-                'label'       => __( '按钮文字', 'developer-starter' ),
+                'label'       => __( '按钮文字', 'qiling' ),
                 'placeholder' => '#ffffff',
-                'description' => __( '控制主按钮正常状态的文字颜色。', 'developer-starter' ),
+                'description' => __( '控制主按钮正常状态的文字颜色。', 'qiling' ),
             ),
             array(
                 'path'        => 'buttons.hover_background',
-                'label'       => __( '按钮悬停背景', 'developer-starter' ),
+                'label'       => __( '按钮悬停背景', 'qiling' ),
                 'placeholder' => 'var(--qiling-button-hover-bg)',
-                'description' => __( '控制鼠标移到主按钮上时的背景。', 'developer-starter' ),
+                'description' => __( '控制鼠标移到主按钮上时的背景。', 'qiling' ),
             ),
             array(
                 'path'        => 'buttons.hover_text',
-                'label'       => __( '按钮悬停文字', 'developer-starter' ),
+                'label'       => __( '按钮悬停文字', 'qiling' ),
                 'placeholder' => '#ffffff',
-                'description' => __( '控制鼠标移到主按钮上时的文字颜色。', 'developer-starter' ),
+                'description' => __( '控制鼠标移到主按钮上时的文字颜色。', 'qiling' ),
             ),
             array(
                 'path'        => 'cards.title',
-                'label'       => __( '卡片标题颜色', 'developer-starter' ),
+                'label'       => __( '卡片标题颜色', 'qiling' ),
                 'placeholder' => 'var(--qiling-page-text)',
             ),
             array(
                 'path'        => 'cards.text',
-                'label'       => __( '卡片正文颜色', 'developer-starter' ),
+                'label'       => __( '卡片正文颜色', 'qiling' ),
                 'placeholder' => 'var(--color-text-muted)',
             ),
             array(
                 'path'        => 'cards.background',
-                'label'       => __( '卡片背景', 'developer-starter' ),
+                'label'       => __( '卡片背景', 'qiling' ),
                 'placeholder' => '#ffffff',
             ),
             array(
                 'path'        => 'cards.border',
-                'label'       => __( '卡片边框', 'developer-starter' ),
+                'label'       => __( '卡片边框', 'qiling' ),
                 'placeholder' => 'rgba(15,23,42,.1)',
             ),
             array(
                 'path'        => 'cards.shadow',
-                'label'       => __( '卡片阴影', 'developer-starter' ),
+                'label'       => __( '卡片阴影', 'qiling' ),
                 'placeholder' => '0 18px 48px rgba(15,23,42,.12)',
             ),
             array(
                 'path'        => 'cards.radius',
-                'label'       => __( '卡片圆角', 'developer-starter' ),
+                'label'       => __( '卡片圆角', 'qiling' ),
                 'placeholder' => '12px',
             ),
             array(
                 'path'        => 'cards.padding',
-                'label'       => __( '卡片内边距', 'developer-starter' ),
+                'label'       => __( '卡片内边距', 'qiling' ),
                 'placeholder' => '24px',
             ),
             array(
                 'path'        => 'cards.gap',
-                'label'       => __( '组件间距', 'developer-starter' ),
+                'label'       => __( '组件间距', 'qiling' ),
                 'placeholder' => '24px',
             ),
             array(
                 'path'        => 'cards.image_radius',
-                'label'       => __( '卡片图片圆角', 'developer-starter' ),
+                'label'       => __( '卡片图片圆角', 'qiling' ),
                 'placeholder' => '10px',
             ),
         );
@@ -391,11 +391,11 @@ class Module_Visual_Style_Service {
         } ) );
         ?>
         <details class="dsm-module-visual-style-panel" style="margin-top:var(--qiling-space-20); border-top:1px dashed var(--color-border); padding-top:var(--qiling-space-15);">
-            <summary style="cursor:pointer; font-weight:600; color:var(--color-neutral-900); outline:none;"><?php esc_html_e( '模块视觉风格（页面级覆盖）', 'developer-starter' ); ?></summary>
-            <p style="margin:var(--qiling-space-10) 0 0; color:var(--color-neutral-500); font-size:var(--qiling-text-rem-0p75);"><?php esc_html_e( '这里的设置只影响当前模块，并优先于当前页面风格。留空字段会继续继承页面或全站。', 'developer-starter' ); ?></p>
+            <summary style="cursor:pointer; font-weight:600; color:var(--color-neutral-900); outline:none;"><?php esc_html_e( '模块视觉风格（页面级覆盖）', 'qiling' ); ?></summary>
+            <p style="margin:var(--qiling-space-10) 0 0; color:var(--color-neutral-500); font-size:var(--qiling-text-rem-0p75);"><?php esc_html_e( '这里的设置只影响当前模块，并优先于当前页面风格。留空字段会继续继承页面或全站。', 'qiling' ); ?></p>
 
             <div data-dsm-module-visual-classic-panel style="margin-top:var(--qiling-space-14); padding:var(--qiling-space-12); border:1px solid var(--color-border); border-radius:8px; background:var(--color-neutral-0);">
-                <label style="display:block; margin-bottom:var(--qiling-space-6); font-size:var(--qiling-text-rem-0p75); color:var(--color-neutral-700);"><?php esc_html_e( '简单模式', 'developer-starter' ); ?></label>
+                <label style="display:block; margin-bottom:var(--qiling-space-6); font-size:var(--qiling-text-rem-0p75); color:var(--color-neutral-700);"><?php esc_html_e( '简单模式', 'qiling' ); ?></label>
                 <select name="<?php echo esc_attr( $this->build_nested_field_name( $idx, '_ds_visual', 'base.mode' ) ); ?>" data-dsm-module-visual-input="base.mode" style="width:100%;">
                     <?php foreach ( $mode_options as $option_value => $option_label ) : ?>
                         <option value="<?php echo esc_attr( (string) $option_value ); ?>" <?php selected( $mode, (string) $option_value ); ?>><?php echo esc_html( (string) $option_label ); ?></option>
@@ -405,13 +405,13 @@ class Module_Visual_Style_Service {
                     <?php echo esc_html( $status_message ); ?>
                 </p>
                 <p style="display:flex; flex-wrap:wrap; gap:var(--qiling-space-8); margin:var(--qiling-space-10) 0 0;">
-                    <button type="button" class="button button-secondary" data-dsm-module-visual-action="follow"><?php esc_html_e( '恢复跟随页面', 'developer-starter' ); ?></button>
-                    <button type="button" class="button button-secondary" data-dsm-module-visual-action="sync-primary"><?php esc_html_e( '同步页面主色', 'developer-starter' ); ?></button>
+                    <button type="button" class="button button-secondary" data-dsm-module-visual-action="follow"><?php esc_html_e( '恢复跟随页面', 'qiling' ); ?></button>
+                    <button type="button" class="button button-secondary" data-dsm-module-visual-action="sync-primary"><?php esc_html_e( '同步页面主色', 'qiling' ); ?></button>
                 </p>
             </div>
 
             <details style="margin-top:var(--qiling-space-14);" <?php echo ( 'custom' === $mode || $has_advanced_values ) ? 'open' : ''; ?>>
-                <summary style="cursor:pointer; font-weight:600;"><?php esc_html_e( '高级设置', 'developer-starter' ); ?></summary>
+                <summary style="cursor:pointer; font-weight:600;"><?php esc_html_e( '高级设置', 'qiling' ); ?></summary>
                 <div style="display:grid; grid-template-columns:minmax(0, 1fr); gap:var(--qiling-space-12); margin-top:var(--qiling-space-12);">
                     <?php foreach ( $advanced_fields as $field ) : ?>
                         <?php

@@ -18,7 +18,7 @@ class Tabs_Module extends Module_Base {
     public function __construct() {
         $this->category = 'general';
         $this->icon = 'dashicons-index-card';
-        $this->description = __( '多标签页内容切换', 'developer-starter' );
+        $this->description = __( '多标签页内容切换', 'qiling' );
     }
 
     public function get_id() {
@@ -26,78 +26,78 @@ class Tabs_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '标签切换', 'developer-starter' );
+        return __( '标签切换', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'tabs_title', 'label' => __( '标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
-            array( 'id' => 'tabs_subtitle', 'label' => __( '副标题', 'developer-starter' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'tabs_title', 'label' => __( '标题', 'qiling' ), 'type' => 'text', 'default' => '' ),
+            array( 'id' => 'tabs_subtitle', 'label' => __( '副标题', 'qiling' ), 'type' => 'text', 'default' => '' ),
             
             // 字体排版配置
             array(
                 'id' => 'tabs_title_size',
-                'label' => __( '标题字体大小', 'developer-starter' ),
+                'label' => __( '标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 2rem 或 36px，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 2rem 或 36px，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'tabs_title_color',
-                'label' => __( '标题颜色', 'developer-starter' ),
+                'label' => __( '标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             array(
                 'id' => 'tabs_subtitle_size',
-                'label' => __( '副标题字体大小', 'developer-starter' ),
+                'label' => __( '副标题字体大小', 'qiling' ),
                 'type' => 'text',
                 'default' => '',
-                'description' => __( '如 1.1rem，留空使用默认', 'developer-starter' ),
+                'description' => __( '如 1.1rem，留空使用默认', 'qiling' ),
             ),
             array(
                 'id' => 'tabs_subtitle_color',
-                'label' => __( '副标题颜色', 'developer-starter' ),
+                'label' => __( '副标题颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => '',
             ),
             
-            array( 'id' => 'tabs_style', 'label' => __( '标签样式', 'developer-starter' ), 'type' => 'select', 'options' => array( 
-                'default' => __( '默认样式', 'developer-starter' ), 
-                'pills' => __( '胶囊样式', 'developer-starter' ), 
-                'underline' => __( '下划线样式', 'developer-starter' ),
-                'boxed' => __( '卡片样式', 'developer-starter' ),
+            array( 'id' => 'tabs_style', 'label' => __( '标签样式', 'qiling' ), 'type' => 'select', 'options' => array( 
+                'default' => __( '默认样式', 'qiling' ), 
+                'pills' => __( '胶囊样式', 'qiling' ), 
+                'underline' => __( '下划线样式', 'qiling' ),
+                'boxed' => __( '卡片样式', 'qiling' ),
             ), 'default' => 'default' ),
-            array( 'id' => 'tabs_align', 'label' => __( '标签对齐', 'developer-starter' ), 'type' => 'select', 'options' => array( 
-                'left' => __( '左对齐', 'developer-starter' ), 
-                'center' => __( '居中', 'developer-starter' ), 
-                'right' => __( '右对齐', 'developer-starter' ),
+            array( 'id' => 'tabs_align', 'label' => __( '标签对齐', 'qiling' ), 'type' => 'select', 'options' => array( 
+                'left' => __( '左对齐', 'qiling' ), 
+                'center' => __( '居中', 'qiling' ), 
+                'right' => __( '右对齐', 'qiling' ),
             ), 'default' => 'center' ),
             array(
                 'id' => 'tabs_items',
-                'label' => __( '标签页', 'developer-starter' ),
+                'label' => __( '标签页', 'qiling' ),
                 'type' => 'repeater',
-                'description' => __( '添加标签页，内容支持HTML', 'developer-starter' ),
+                'description' => __( '添加标签页，内容支持HTML', 'qiling' ),
                 'fields' => array(
-                    array( 'id' => 'title', 'label' => __( '标签标题', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'icon', 'label' => __( '图标(emoji或留空)', 'developer-starter' ), 'type' => 'text' ),
-                    array( 'id' => 'content', 'label' => __( '标签内容(支持HTML)', 'developer-starter' ), 'type' => 'textarea' ),
+                    array( 'id' => 'title', 'label' => __( '标签标题', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'icon', 'label' => __( '图标 (留空或Symbol类名)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'content', 'label' => __( '标签内容(支持HTML)', 'qiling' ), 'type' => 'textarea' ),
                 ),
                 'default_items' => array(
                     array( 
-                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品介绍', 'Overview' ) : __( '产品介绍', 'developer-starter' ),
-                        'icon' => '📦',
-                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', '<p>Use this area to introduce the product, highlight strengths, and explain the core value.</p><ul><li>Benefit one: reliable performance</li><li>Benefit two: easy to use</li><li>Benefit three: safe and dependable</li></ul>' ) : __( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', 'developer-starter' ),
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品介绍', 'Overview' ) : __( '产品介绍', 'qiling' ),
+                        'icon' => '',
+                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', '<p>Use this area to introduce the product, highlight strengths, and explain the core value.</p><ul><li>Benefit one: reliable performance</li><li>Benefit two: easy to use</li><li>Benefit three: safe and dependable</li></ul>' ) : __( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', 'qiling' ),
                     ),
                     array( 
-                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术规格', 'Specifications' ) : __( '技术规格', 'developer-starter' ),
-                        'icon' => '⚙️',
-                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', '<p>Technical specifications and key product details.</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Size</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Weight</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>' ) : __( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', 'developer-starter' ),
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术规格', 'Specifications' ) : __( '技术规格', 'qiling' ),
+                        'icon' => '',
+                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', '<p>Technical specifications and key product details.</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Size</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Weight</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>' ) : __( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', 'qiling' ),
                     ),
                     array( 
-                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '使用说明', 'How to Use' ) : __( '使用说明', 'developer-starter' ),
-                        'icon' => '📖',
-                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', '<p>Setup steps and usage guidance.</p><ol><li>Step 1: unpack the product</li><li>Step 2: review the instructions</li><li>Step 3: follow the setup steps</li></ol>' ) : __( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', 'developer-starter' ),
+                        'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '使用说明', 'How to Use' ) : __( '使用说明', 'qiling' ),
+                        'icon' => '',
+                        'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', '<p>Setup steps and usage guidance.</p><ol><li>Step 1: unpack the product</li><li>Step 2: review the instructions</li><li>Step 3: follow the setup steps</li></ol>' ) : __( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', 'qiling' ),
                     ),
                 ),
             ),
@@ -105,33 +105,33 @@ class Tabs_Module extends Module_Base {
             // 背景配置
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -148,13 +148,13 @@ class Tabs_Module extends Module_Base {
             
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
@@ -172,19 +172,19 @@ class Tabs_Module extends Module_Base {
         if ( empty( $items ) && ! isset( $data['tabs_items'] ) ) {
             $items = array(
                 array( 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品介绍', 'Overview' ) : __( '产品介绍', 'developer-starter' ),
-                    'icon' => '📦',
-                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', '<p>Use this area to introduce the product, highlight strengths, and explain the core value.</p><ul><li>Benefit one: reliable performance</li><li>Benefit two: easy to use</li><li>Benefit three: safe and dependable</li></ul>' ) : __( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '产品介绍', 'Overview' ) : __( '产品介绍', 'qiling' ),
+                    'icon' => '',
+                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', '<p>Use this area to introduce the product, highlight strengths, and explain the core value.</p><ul><li>Benefit one: reliable performance</li><li>Benefit two: easy to use</li><li>Benefit three: safe and dependable</li></ul>' ) : __( '<p>这里是产品介绍的详细内容。您可以在这里添加产品的特点、优势、使用方法等信息。</p><ul><li>特点一：高效稳定</li><li>特点二：易于使用</li><li>特点三：安全可靠</li></ul>', 'qiling' ),
                 ),
                 array( 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术规格', 'Specifications' ) : __( '技术规格', 'developer-starter' ),
-                    'icon' => '⚙️',
-                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', '<p>Technical specifications and key product details.</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Size</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Weight</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>' ) : __( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '技术规格', 'Specifications' ) : __( '技术规格', 'qiling' ),
+                    'icon' => '',
+                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', '<p>Technical specifications and key product details.</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Size</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">Weight</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>' ) : __( '<p>产品的技术参数和规格说明。</p><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">尺寸</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">100 x 50 x 30 mm</td></tr><tr><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">重量</td><td style="padding:var(--qiling-space-10);border:1px solid var(--color-neutral-200);">500g</td></tr></table>', 'qiling' ),
                 ),
                 array( 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '使用说明', 'How to Use' ) : __( '使用说明', 'developer-starter' ),
-                    'icon' => '📖',
-                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', '<p>Setup steps and usage guidance.</p><ol><li>Step 1: unpack the product</li><li>Step 2: review the instructions</li><li>Step 3: follow the setup steps</li></ol>' ) : __( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '使用说明', 'How to Use' ) : __( '使用说明', 'qiling' ),
+                    'icon' => '',
+                    'content' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', '<p>Setup steps and usage guidance.</p><ol><li>Step 1: unpack the product</li><li>Step 2: review the instructions</li><li>Step 3: follow the setup steps</li></ol>' ) : __( '<p>产品的使用步骤和注意事项。</p><ol><li>第一步：打开包装</li><li>第二步：阅读说明书</li><li>第三步：按照指引操作</li></ol>', 'qiling' ),
                 ),
             );
         }
@@ -256,7 +256,7 @@ class Tabs_Module extends Module_Base {
                         <!-- 标签导航 -->
                         <div class="tabs-nav <?php echo esc_attr( $align_class ); ?>">
                             <?php foreach ( $items as $index => $item ) : 
-                                $tab_title = isset( $item['title'] ) ? $item['title'] : __( '标签', 'developer-starter' );
+                                $tab_title = isset( $item['title'] ) ? $item['title'] : __( '标签', 'qiling' );
                                 $icon = isset( $item['icon'] ) ? $item['icon'] : '';
                             ?>
                                 <button type="button" class="tab-btn <?php echo $index === 0 ? 'active' : ''; ?>" data-tab="<?php echo esc_attr( $index ); ?>">

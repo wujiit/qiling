@@ -90,7 +90,7 @@ class Page_Package_Import_State_Service {
     public function rollback_import_history( $run_id ) {
         $run_id = sanitize_text_field( (string) $run_id );
         if ( '' === $run_id ) {
-            return new \WP_Error( 'invalid_run_id', __( '回滚失败：缺少导入记录 ID。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_run_id', __( '回滚失败：缺少导入记录 ID。', 'qiling' ) );
         }
 
         $records = $this->get_import_history_records();
@@ -103,17 +103,17 @@ class Page_Package_Import_State_Service {
         }
 
         if ( $index < 0 || ! isset( $records[ $index ] ) || ! is_array( $records[ $index ] ) ) {
-            return new \WP_Error( 'run_not_found', __( '回滚失败：找不到对应的导入记录。', 'developer-starter' ) );
+            return new \WP_Error( 'run_not_found', __( '回滚失败：找不到对应的导入记录。', 'qiling' ) );
         }
 
         $record = $records[ $index ];
         if ( ! empty( $record['rolled_back_at'] ) ) {
-            return new \WP_Error( 'already_rolled_back', __( '该导入记录已经执行过回滚。', 'developer-starter' ) );
+            return new \WP_Error( 'already_rolled_back', __( '该导入记录已经执行过回滚。', 'qiling' ) );
         }
 
         $snapshot = isset( $record['snapshot'] ) && is_array( $record['snapshot'] ) ? $record['snapshot'] : array();
         if ( empty( $snapshot ) ) {
-            return new \WP_Error( 'missing_snapshot', __( '回滚失败：该记录没有可用快照。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_snapshot', __( '回滚失败：该记录没有可用快照。', 'qiling' ) );
         }
 
         $restored_pages = 0;
@@ -157,7 +157,7 @@ class Page_Package_Import_State_Service {
             } else {
                 $errors[] = sprintf(
                     /* translators: %d: page id */
-                    __( '页面 #%d 删除失败，请手动检查。', 'developer-starter' ),
+                    __( '页面 #%d 删除失败，请手动检查。', 'qiling' ),
                     $created_page_id
                 );
             }
@@ -385,7 +385,7 @@ class Page_Package_Import_State_Service {
     private function restore_page_from_snapshot( $page_snapshot ) {
         $page_id = isset( $page_snapshot['page_id'] ) ? absint( $page_snapshot['page_id'] ) : 0;
         if ( $page_id <= 0 ) {
-            return new \WP_Error( 'invalid_snapshot_page', __( '页面快照无效，缺少页面 ID。', 'developer-starter' ) );
+            return new \WP_Error( 'invalid_snapshot_page', __( '页面快照无效，缺少页面 ID。', 'qiling' ) );
         }
 
         $post = get_post( $page_id );
@@ -394,7 +394,7 @@ class Page_Package_Import_State_Service {
                 'missing_snapshot_page',
                 sprintf(
                     /* translators: %d: page id */
-                    __( '回滚失败：页面 #%d 已不存在。', 'developer-starter' ),
+                    __( '回滚失败：页面 #%d 已不存在。', 'qiling' ),
                     $page_id
                 )
             );

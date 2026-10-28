@@ -24,7 +24,7 @@ trait Admin_Settings_Repair_Trait {
             ? $this->get_advanced_settings_url( array( 'ds_run_domain_scan' => '1' ) )
             : add_query_arg(
                 array(
-                    'page'               => 'developer-starter-settings',
+                    'page'               => 'qiling-settings',
                     'tab'                => 'advanced',
                     'ds_run_domain_scan' => '1',
                 ),
@@ -32,8 +32,8 @@ trait Admin_Settings_Repair_Trait {
             );
 
         $status_label = $is_broken
-            ? __( '检测到序列化异常', 'developer-starter' )
-            : __( '序列化正常（如仍有旧域名请看下方提示）', 'developer-starter' );
+            ? __( '检测到序列化异常', 'qiling' )
+            : __( '序列化正常（如仍有旧域名请看下方提示）', 'qiling' );
         $status_color = $is_broken ? '#ef4444' : '#10b981';
         $backups = function_exists( 'developer_starter_cleanup_theme_options_backups' )
             ? developer_starter_cleanup_theme_options_backups()
@@ -46,19 +46,19 @@ trait Admin_Settings_Repair_Trait {
             ? developer_starter_get_theme_options_backup_max_count()
             : 20;
 
-        echo '<tr><th scope="row">' . esc_html__( '主题设置数据修复', 'developer-starter' ) . '</th><td>';
+        echo '<tr><th scope="row">' . esc_html__( '主题设置数据修复', 'qiling' ) . '</th><td>';
         echo '<div style="padding:16px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;">';
-        echo '<p class="description" style="margin:0 0 12px;">' . esc_html__( '用于检测并修复因直接替换数据库域名导致的主题设置数据损坏。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin:0 0 12px;">' . esc_html__( '用于检测并修复因直接替换数据库域名导致的主题设置数据损坏。', 'qiling' ) . '</p>';
         echo '<div style="margin:0 0 12px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#f9fafb;border:1px solid #e5e7eb;color:' . esc_attr( $status_color ) . ';font-weight:600;">' . esc_html( $status_label ) . '</span></div>';
-        echo '<div class="description" style="margin:0 0 12px;">' . esc_html__( '这里仅检测主题设置的序列化损坏，不判断是否含旧域名。旧域名差异请使用上方“域名设置检查”；该检查现已改为手动触发，不会在后台常驻扫描。', 'developer-starter' ) . '</div>';
-        echo '<div style="margin:0 0 12px;"><a class="button button-secondary" href="' . esc_url( $domain_scan_url ) . '">' . esc_html__( '手动执行域名检查', 'developer-starter' ) . '</a></div>';
+        echo '<div class="description" style="margin:0 0 12px;">' . esc_html__( '这里仅检测主题设置的序列化损坏，不判断是否含旧域名。旧域名差异请使用上方“域名设置检查”；该检查现已改为手动触发，不会在后台常驻扫描。', 'qiling' ) . '</div>';
+        echo '<div style="margin:0 0 12px;"><a class="button button-secondary" href="' . esc_url( $domain_scan_url ) . '">' . esc_html__( '手动执行域名检查', 'qiling' ) . '</a></div>';
         echo '<div class="description" style="margin:0 0 12px;">' . sprintf(
             /* translators: 1: retention days, 2: max backups */
-            esc_html__( '修复前会自动备份主题设置，默认保留 %1$d 天，最多 %2$d 份（惰性清理，不依赖定时任务）。', 'developer-starter' ),
+            esc_html__( '修复前会自动备份主题设置，默认保留 %1$d 天，最多 %2$d 份（惰性清理，不依赖定时任务）。', 'qiling' ),
             absint( $retention_days ),
             absint( $max_backups )
         ) . '</div>';
-        echo '<div style="margin:0 0 12px;font-weight:600;">' . sprintf( esc_html__( '当前备份数量：%d', 'developer-starter' ), absint( $backup_count ) ) . '</div>';
+        echo '<div style="margin:0 0 12px;font-weight:600;">' . sprintf( esc_html__( '当前备份数量：%d', 'qiling' ), absint( $backup_count ) ) . '</div>';
         if ( $backup_count > 0 ) {
             echo '<div style="display:flex;flex-direction:column;gap:8px;margin:0 0 12px;">';
             $preview_backups = array_slice( $backups, 0, 5 );
@@ -69,26 +69,26 @@ trait Admin_Settings_Repair_Trait {
                 $created_at = isset( $backup['created_at'] ) ? absint( $backup['created_at'] ) : 0;
                 $context    = isset( $backup['context'] ) ? (string) $backup['context'] : '';
                 $size       = isset( $backup['size'] ) ? absint( $backup['size'] ) : 0;
-                $label_time = $created_at ? date_i18n( 'Y-m-d H:i:s', $created_at ) : esc_html__( '未知时间', 'developer-starter' );
-                $label_ctx  = $context === 'manual' ? esc_html__( '手动修复', 'developer-starter' ) : esc_html__( '自动修复', 'developer-starter' );
-                $label_size = $size > 0 ? sprintf( esc_html__( '%d KB', 'developer-starter' ), (int) ceil( $size / 1024 ) ) : esc_html__( '未知大小', 'developer-starter' );
+                $label_time = $created_at ? date_i18n( 'Y-m-d H:i:s', $created_at ) : esc_html__( '未知时间', 'qiling' );
+                $label_ctx  = $context === 'manual' ? esc_html__( '手动修复', 'qiling' ) : esc_html__( '自动修复', 'qiling' );
+                $label_size = $size > 0 ? sprintf( esc_html__( '%d KB', 'qiling' ), (int) ceil( $size / 1024 ) ) : esc_html__( '未知大小', 'qiling' );
                 echo '<div style="padding:8px 10px;border:1px dashed #e5e7eb;border-radius:8px;background:#f9fafb;color:#374151;">';
                 echo esc_html( $label_time ) . ' · ' . esc_html( $label_ctx ) . ' · ' . esc_html( $label_size );
                 echo '</div>';
             }
             if ( $backup_count > 5 ) {
-                echo '<div style="color:#6b7280;font-size:12px;">' . sprintf( esc_html__( '还有 %d 条备份未显示。', 'developer-starter' ), $backup_count - 5 ) . '</div>';
+                echo '<div style="color:#6b7280;font-size:12px;">' . sprintf( esc_html__( '还有 %d 条备份未显示。', 'qiling' ), $backup_count - 5 ) . '</div>';
             }
             echo '</div>';
         }
-        echo '<button type="button" class="button button-primary" id="ds-repair-theme-options-btn">' . esc_html__( '扫描并修复主题设置', 'developer-starter' ) . '</button>';
-        echo '<a class="button button-secondary" style="margin-left:8px;" href="' . esc_url( $action_url ) . '" onclick="return confirm(\'' . esc_js( __( '确定要开始扫描并修复主题设置吗？建议先备份数据库。', 'developer-starter' ) ) . '\');">' . esc_html__( '备用入口（无 JS）', 'developer-starter' ) . '</a>';
+        echo '<button type="button" class="button button-primary" id="ds-repair-theme-options-btn">' . esc_html__( '扫描并修复主题设置', 'qiling' ) . '</button>';
+        echo '<a class="button button-secondary" style="margin-left:8px;" href="' . esc_url( $action_url ) . '" onclick="return confirm(\'' . esc_js( __( '确定要开始扫描并修复主题设置吗？建议先备份数据库。', 'qiling' ) ) . '\');">' . esc_html__( '备用入口（无 JS）', 'qiling' ) . '</a>';
         echo '<script>
         (function(){
             var btn = document.getElementById("ds-repair-theme-options-btn");
             if(!btn) return;
             btn.addEventListener("click", function(){
-                if(!window.confirm(' . wp_json_encode( __( '确定要开始扫描并修复主题设置吗？建议先备份数据库。', 'developer-starter' ) ) . ')) return;
+                if(!window.confirm(' . wp_json_encode( __( '确定要开始扫描并修复主题设置吗？建议先备份数据库。', 'qiling' ) ) . ')) return;
                 var form = document.createElement("form");
                 form.method = "POST";
                 form.action = ' . wp_json_encode( admin_url( 'admin-post.php' ) ) . ';
@@ -110,7 +110,7 @@ trait Admin_Settings_Repair_Trait {
             });
         })();
         </script>';
-        echo '<p class="description" style="margin-top:12px;color:#ef4444;">' . esc_html__( '提示：如果你已经在设置丢失后保存过，原始设置可能已被覆盖，这种情况只能从数据库备份恢复。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin-top:12px;color:#ef4444;">' . esc_html__( '提示：如果你已经在设置丢失后保存过，原始设置可能已被覆盖，这种情况只能从数据库备份恢复。', 'qiling' ) . '</p>';
         echo '</div>';
         echo '</td></tr>';
     }
@@ -132,23 +132,23 @@ trait Admin_Settings_Repair_Trait {
 
         $targets_text = ! empty( $target_labels )
             ? implode( '、', array_unique( $target_labels ) )
-            : __( '页面模块', 'developer-starter' );
+            : __( '页面模块', 'qiling' );
 
-        echo '<tr><th scope="row">' . esc_html__( '模块数据修复', 'developer-starter' ) . '</th><td>';
+        echo '<tr><th scope="row">' . esc_html__( '模块数据修复', 'qiling' ) . '</th><td>';
         echo '<div style="padding:16px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;">';
         echo '<p class="description" style="margin:0 0 12px;">' . sprintf(
-            esc_html__( '用于修复 %s 因 SQL 直接替换域名导致的序列化损坏（常见表现：页面装修模块在前台/后台看起来被清空）。', 'developer-starter' ),
+            esc_html__( '用于修复 %s 因 SQL 直接替换域名导致的序列化损坏（常见表现：页面装修模块在前台/后台看起来被清空）。', 'qiling' ),
             esc_html( $targets_text )
         ) . '</p>';
-        echo '<div class="description" style="margin:0 0 12px;">' . esc_html__( '当前会扫描主题页面模块和启灵积分商城页面装修数据。', 'developer-starter' ) . '</div>';
-        echo '<button type="button" class="button button-primary" id="ds-repair-modules-meta-btn">' . esc_html__( '扫描并修复页面模块', 'developer-starter' ) . '</button>';
-        echo '<a class="button button-secondary" style="margin-left:8px;" href="' . esc_url( $action_url ) . '" onclick="return confirm(\'' . esc_js( __( '确定要开始扫描并修复页面模块数据吗？建议先备份数据库。', 'developer-starter' ) ) . '\');">' . esc_html__( '备用入口（无 JS）', 'developer-starter' ) . '</a>';
+        echo '<div class="description" style="margin:0 0 12px;">' . esc_html__( '当前会扫描主题页面模块和启灵积分商城页面装修数据。', 'qiling' ) . '</div>';
+        echo '<button type="button" class="button button-primary" id="ds-repair-modules-meta-btn">' . esc_html__( '扫描并修复页面模块', 'qiling' ) . '</button>';
+        echo '<a class="button button-secondary" style="margin-left:8px;" href="' . esc_url( $action_url ) . '" onclick="return confirm(\'' . esc_js( __( '确定要开始扫描并修复页面模块数据吗？建议先备份数据库。', 'qiling' ) ) . '\');">' . esc_html__( '备用入口（无 JS）', 'qiling' ) . '</a>';
         echo '<script>
         (function(){
             var btn = document.getElementById("ds-repair-modules-meta-btn");
             if(!btn) return;
             btn.addEventListener("click", function(){
-                if(!window.confirm(' . wp_json_encode( __( '确定要开始扫描并修复页面模块数据吗？建议先备份数据库。', 'developer-starter' ) ) . ')) return;
+                if(!window.confirm(' . wp_json_encode( __( '确定要开始扫描并修复页面模块数据吗？建议先备份数据库。', 'qiling' ) ) . ')) return;
                 var form = document.createElement("form");
                 form.method = "POST";
                 form.action = ' . wp_json_encode( admin_url( 'admin-post.php' ) ) . ';
@@ -170,14 +170,14 @@ trait Admin_Settings_Repair_Trait {
             });
         })();
         </script>';
-        echo '<p class="description" style="margin-top:12px;color:#ef4444;">' . esc_html__( '提示：如果你已经在模块丢失后保存过页面（保存了空模块），原始模块可能已被覆盖，这种情况只能从数据库备份恢复。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin-top:12px;color:#ef4444;">' . esc_html__( '提示：如果你已经在模块丢失后保存过页面（保存了空模块），原始模块可能已被覆盖，这种情况只能从数据库备份恢复。', 'qiling' ) . '</p>';
         echo '</div>';
         echo '</td></tr>';
     }
 
     public function handle_repair_modules_meta() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( __( '权限不足', 'developer-starter' ) );
+            wp_die( __( '权限不足', 'qiling' ) );
         }
 
         check_admin_referer( 'ds_repair_modules_meta_nonce', 'ds_repair_modules_meta_nonce' );
@@ -187,7 +187,7 @@ trait Admin_Settings_Repair_Trait {
             ! function_exists( 'developer_starter_try_unserialize_no_classes' ) ||
             ! function_exists( 'is_serialized' )
         ) {
-            wp_die( __( '修复函数未就绪，请确认主题文件完整。', 'developer-starter' ) );
+            wp_die( __( '修复函数未就绪，请确认主题文件完整。', 'qiling' ) );
         }
 
         global $wpdb;
@@ -330,7 +330,7 @@ trait Admin_Settings_Repair_Trait {
 
         $redirect = wp_get_referer();
         if ( ! $redirect ) {
-            $redirect = admin_url( 'admin.php?page=developer-starter-settings&tab=advanced' );
+            $redirect = admin_url( 'admin.php?page=qiling-settings&tab=advanced' );
         }
 
         $redirect = add_query_arg(
@@ -352,19 +352,19 @@ trait Admin_Settings_Repair_Trait {
         return array(
             array(
                 'type'      => 'post_meta',
-                'label'     => __( '主题页面模块', 'developer-starter' ),
+                'label'     => __( '主题页面模块', 'qiling' ),
                 'meta_key'  => '_developer_starter_modules',
                 'post_type' => 'page',
             ),
             array(
                 'type'      => 'post_meta',
-                'label'     => __( '启灵积分商城页面装修', 'developer-starter' ),
+                'label'     => __( '启灵积分商城页面装修', 'qiling' ),
                 'meta_key'  => '_qls_shop_layout',
                 'post_type' => 'page',
             ),
             array(
                 'type'        => 'option',
-                'label'       => __( '启灵积分商城旧版全局布局', 'developer-starter' ),
+                'label'       => __( '启灵积分商城旧版全局布局', 'qiling' ),
                 'option_name' => 'qls_shop_home_layout',
             ),
         );
@@ -372,7 +372,7 @@ trait Admin_Settings_Repair_Trait {
 
     public function handle_repair_theme_options() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( __( '权限不足', 'developer-starter' ) );
+            wp_die( __( '权限不足', 'qiling' ) );
         }
 
         check_admin_referer( 'ds_repair_theme_options_nonce', 'ds_repair_theme_options_nonce' );
@@ -383,7 +383,7 @@ trait Admin_Settings_Repair_Trait {
             ! function_exists( 'developer_starter_try_unserialize_no_classes' ) ||
             ! function_exists( 'is_serialized' )
         ) {
-            wp_die( __( '修复函数未就绪，请确认主题文件完整。', 'developer-starter' ) );
+            wp_die( __( '修复函数未就绪，请确认主题文件完整。', 'qiling' ) );
         }
 
         $result = 'failed';
@@ -418,7 +418,7 @@ trait Admin_Settings_Repair_Trait {
 
         $redirect = wp_get_referer();
         if ( ! $redirect ) {
-            $redirect = admin_url( 'admin.php?page=developer-starter-settings&tab=advanced' );
+            $redirect = admin_url( 'admin.php?page=qiling-settings&tab=advanced' );
         }
 
         $redirect = add_query_arg(
@@ -444,7 +444,7 @@ trait Admin_Settings_Repair_Trait {
         unset( $options );
 
         if ( ! class_exists( '\Developer_Starter\Core\Auth_Pages_Service' ) ) {
-            $service_file = DEVELOPER_STARTER_INC . '/core/class-auth-pages-service.php';
+            $service_file = QILING_INC . '/core/class-auth-pages-service.php';
             if ( file_exists( $service_file ) ) {
                 require_once $service_file;
             }
@@ -457,32 +457,32 @@ trait Admin_Settings_Repair_Trait {
         $duplicate_count = $auth_service ? $auth_service->count_duplicate_auth_pages() : 0;
         $nonce = wp_create_nonce( 'developer_starter_auth_cleanup_nonce' );
 
-        echo '<tr><th scope="row">' . esc_html__( '系统认证页面状态', 'developer-starter' ) . '</th><td>';
+        echo '<tr><th scope="row">' . esc_html__( '系统认证页面状态', 'qiling' ) . '</th><td>';
         echo '<div style="padding:16px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;max-width:820px;">';
-        echo '<p class="description" style="margin:0 0 12px;">' . esc_html__( '检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。系统会自动保留最早创建的主页面，将多余的重复项安全移至回收站并重新校准设置绑定。', 'developer-starter' ) . '</p>';
+        echo '<p class="description" style="margin:0 0 12px;">' . esc_html__( '检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。系统会自动保留最早创建的主页面，将多余的重复项安全移至回收站并重新校准设置绑定。', 'qiling' ) . '</p>';
 
         if ( $duplicate_count > 0 ) {
             echo '<div style="margin:0 0 12px;">';
             echo '<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-weight:600;font-size:13px;">';
             echo '<span class="dashicons dashicons-warning" style="font-size:18px;width:18px;height:18px;"></span>';
-            echo sprintf( esc_html__( '检测到 %d 个冗余重复的系统认证页面', 'developer-starter' ), $duplicate_count );
+            echo sprintf( esc_html__( '检测到 %d 个冗余重复的系统认证页面', 'qiling' ), $duplicate_count );
             echo '</span>';
             echo '</div>';
 
             echo '<div style="margin:0 0 12px;">';
-            echo '<button type="button" class="button button-primary" id="ds-cleanup-auth-pages-btn">' . esc_html__( '一键清理冗余重复页面', 'developer-starter' ) . '</button>';
+            echo '<button type="button" class="button button-primary" id="ds-cleanup-auth-pages-btn">' . esc_html__( '一键清理冗余重复页面', 'qiling' ) . '</button>';
             echo '<span id="ds-cleanup-auth-pages-msg" style="margin-left:10px;font-weight:600;"></span>';
             echo '</div>';
-            echo '<p class="description" style="margin:0;font-size:12px;color:#64748b;">' . esc_html__( '注意：清理操作会将多余的重复页面移入 WordPress 回收站，不会彻底物理删除，如有需要随时可从回收站恢复。', 'developer-starter' ) . '</p>';
+            echo '<p class="description" style="margin:0;font-size:12px;color:#64748b;">' . esc_html__( '注意：清理操作会将多余的重复页面移入 WordPress 回收站，不会彻底物理删除，如有需要随时可从回收站恢复。', 'qiling' ) . '</p>';
         } else {
             echo '<div style="margin:0 0 12px;">';
             echo '<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-weight:600;font-size:13px;">';
             echo '<span class="dashicons dashicons-yes-alt" style="font-size:18px;width:18px;height:18px;"></span>';
-            echo esc_html__( '系统认证页面状态正常，未检测到重复页面', 'developer-starter' );
+            echo esc_html__( '系统认证页面状态正常，未检测到重复页面', 'qiling' );
             echo '</span>';
             echo '</div>';
 
-            echo '<button type="button" class="button button-secondary" id="ds-cleanup-auth-pages-btn">' . esc_html__( '重新扫描并校准认证页面', 'developer-starter' ) . '</button>';
+            echo '<button type="button" class="button button-secondary" id="ds-cleanup-auth-pages-btn">' . esc_html__( '重新扫描并校准认证页面', 'qiling' ) . '</button>';
             echo '<span id="ds-cleanup-auth-pages-msg" style="margin-left:10px;font-weight:600;"></span>';
         }
 
@@ -552,18 +552,18 @@ trait Admin_Settings_Repair_Trait {
     public function ajax_cleanup_duplicate_auth_pages() {
         check_ajax_referer( 'developer_starter_auth_cleanup_nonce', 'nonce' );
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ) );
         }
 
         if ( ! class_exists( '\Developer_Starter\Core\Auth_Pages_Service' ) ) {
-            $service_file = DEVELOPER_STARTER_INC . '/core/class-auth-pages-service.php';
+            $service_file = QILING_INC . '/core/class-auth-pages-service.php';
             if ( file_exists( $service_file ) ) {
                 require_once $service_file;
             }
         }
 
         if ( ! class_exists( '\Developer_Starter\Core\Auth_Pages_Service' ) ) {
-            wp_send_json_error( array( 'message' => __( '认证服务类未加载', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '认证服务类未加载', 'qiling' ) ) );
         }
 
         $service = new \Developer_Starter\Core\Auth_Pages_Service();
@@ -572,7 +572,7 @@ trait Admin_Settings_Repair_Trait {
         if ( ! empty( $result['success'] ) ) {
             wp_send_json_success( $result );
         } else {
-            $message = ! empty( $result['message'] ) ? $result['message'] : __( '清理失败，请重试', 'developer-starter' );
+            $message = ! empty( $result['message'] ) ? $result['message'] : __( '清理失败，请重试', 'qiling' );
             wp_send_json_error( array( 'message' => $message ) );
         }
     }

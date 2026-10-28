@@ -18,7 +18,7 @@ class Curriculum_Module extends Module_Base {
     public function __construct() {
         $this->category = 'education'; // 归类为教育
         $this->icon = 'dashicons-welcome-learn-more';
-        $this->description = __( '展示课程大纲、活动日程或时间安排表', 'developer-starter' );
+        $this->description = __( '展示课程大纲、活动日程或时间安排表', 'qiling' );
     }
 
     public function get_id() {
@@ -26,91 +26,91 @@ class Curriculum_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '课程/日程表', 'developer-starter' );
+        return __( '课程/日程表', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             array(
                 'id' => 'curriculum_title',
-                'label' => __( '模块标题', 'developer-starter' ),
+                'label' => __( '模块标题', 'qiling' ),
                 'type' => 'text',
-                'default' => __( '课程大纲', 'developer-starter' ),
+                'default' => __( '课程大纲', 'qiling' ),
             ),
             array(
                 'id' => 'curriculum_subtitle',
-                'label' => __( '副标题', 'developer-starter' ),
+                'label' => __( '副标题', 'qiling' ),
                 'type' => 'text',
-                'default' => __( '由浅入深，系统掌握核心知识', 'developer-starter' ),
+                'default' => __( '由浅入深，系统掌握核心知识', 'qiling' ),
             ),
             array(
                 'id' => 'curriculum_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id' => 'curriculum_primary_color',
-                'label' => __( '主色调 (图标/高亮)', 'developer-starter' ),
+                'label' => __( '主色调 (图标/高亮)', 'qiling' ),
                 'type' => 'color',
                 'default' => 'var(--color-primary)',
             ),
             array(
                 'id'          => 'curriculum_badge_bg',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'type'        => 'color',
                 'default'     => '',
-                'description' => __( '控制章节元信息标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制章节元信息标签背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
             
             // Repeater
             array(
                 'id' => 'curriculum_items',
-                'label' => __( '章节/日程列表', 'developer-starter' ),
+                'label' => __( '章节/日程列表', 'qiling' ),
                 'type' => 'repeater',
                 'fields' => array(
-                    array( 'id' => 'title', 'label' => __( '章节标题', 'developer-starter' ), 'type' => 'text', 'placeholder' => __( '第一章：基础入门', 'developer-starter' ) ),
-                    array( 'id' => 'meta', 'label' => __( '元信息 (如时长/讲师)', 'developer-starter' ), 'type' => 'text', 'placeholder' => __( '45分钟 | 张老师', 'developer-starter' ) ),
-                    array( 'id' => 'content', 'label' => __( '详细内容 (支持HTML)', 'developer-starter' ), 'type' => 'textarea', 'rows' => 3, 'placeholder' => __( '本章将介绍...', 'developer-starter' ) ),
-                    array( 'id' => 'open', 'label' => __( '默认展开', 'developer-starter' ), 'type' => 'select', 'options' => array( 'no' => __( '否', 'developer-starter' ), 'yes' => __( '是', 'developer-starter' ) ) )
+                    array( 'id' => 'title', 'label' => __( '章节标题', 'qiling' ), 'type' => 'text', 'placeholder' => __( '第一章：基础入门', 'qiling' ) ),
+                    array( 'id' => 'meta', 'label' => __( '元信息 (如时长/讲师)', 'qiling' ), 'type' => 'text', 'placeholder' => __( '45分钟 | 张老师', 'qiling' ) ),
+                    array( 'id' => 'content', 'label' => __( '详细内容 (支持HTML)', 'qiling' ), 'type' => 'textarea', 'rows' => 3, 'placeholder' => __( '本章将介绍...', 'qiling' ) ),
+                    array( 'id' => 'open', 'label' => __( '默认展开', 'qiling' ), 'type' => 'select', 'options' => array( 'no' => __( '否', 'qiling' ), 'yes' => __( '是', 'qiling' ) ) )
                 ),
                 'default_items' => array(
-                    array( 'title' => __( 'Day 1: 签到与开幕式', 'developer-starter' ), 'meta' => '09:00 - 12:00', 'content' => __( '<p>领取会议资料，参观展区，聆听开幕主题演讲。</p>', 'developer-starter' ), 'open' => 'yes' ),
-                    array( 'title' => __( 'Day 1: 行业高峰论坛', 'developer-starter' ), 'meta' => '14:00 - 17:00', 'content' => __( '<p>邀请行业领袖进行圆桌讨论，探讨未来发展趋势。</p>', 'developer-starter' ), 'open' => 'no' ),
-                    array( 'title' => __( 'Day 2: 专题研讨会', 'developer-starter' ), 'meta' => '09:00 - 11:30', 'content' => __( '<p>分组进行技术、市场、运营三个方向的深度研讨。</p>', 'developer-starter' ), 'open' => 'no' ),
+                    array( 'title' => __( 'Day 1: 签到与开幕式', 'qiling' ), 'meta' => '09:00 - 12:00', 'content' => __( '<p>领取会议资料，参观展区，聆听开幕主题演讲。</p>', 'qiling' ), 'open' => 'yes' ),
+                    array( 'title' => __( 'Day 1: 行业高峰论坛', 'qiling' ), 'meta' => '14:00 - 17:00', 'content' => __( '<p>邀请行业领袖进行圆桌讨论，探讨未来发展趋势。</p>', 'qiling' ), 'open' => 'no' ),
+                    array( 'title' => __( 'Day 2: 专题研讨会', 'qiling' ), 'meta' => '09:00 - 11:30', 'content' => __( '<p>分组进行技术、市场、运营三个方向的深度研讨。</p>', 'qiling' ), 'open' => 'no' ),
                 ),
             ),
             
              // Spacing
             array(
                 'id' => 'module_margin_top',
-                'label' => __( '上间距', 'developer-starter' ),
+                'label' => __( '上间距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'module_margin_bottom',
-                'label' => __( '下间距', 'developer-starter' ),
+                'label' => __( '下间距', 'qiling' ),
                 'type' => 'text',
                 'default' => '80px',
             ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，课程章节将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，课程章节将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
 
     public function render( $data = array() ) {
-        $title = isset( $data['curriculum_title'] ) ? $data['curriculum_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '课程大纲', 'Course Outline' ) : __( '课程大纲', 'developer-starter' ) );
-        $subtitle = isset( $data['curriculum_subtitle'] ) ? $data['curriculum_subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '由浅入深，系统掌握核心知识', 'A structured path to build skills step by step.' ) : __( '由浅入深，系统掌握核心知识', 'developer-starter' ) );
+        $title = isset( $data['curriculum_title'] ) ? $data['curriculum_title'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '课程大纲', 'Course Outline' ) : __( '课程大纲', 'qiling' ) );
+        $subtitle = isset( $data['curriculum_subtitle'] ) ? $data['curriculum_subtitle'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '由浅入深，系统掌握核心知识', 'A structured path to build skills step by step.' ) : __( '由浅入深，系统掌握核心知识', 'qiling' ) );
         $bg_color = isset( $data['curriculum_bg_color'] ) ? $data['curriculum_bg_color'] : 'var(--color-neutral-50)';
         $primary_color = isset( $data['curriculum_primary_color'] ) ? $data['curriculum_primary_color'] : 'var(--color-primary)';
         $badge_bg = isset( $data['curriculum_badge_bg'] ) ? trim( wp_strip_all_tags( (string) $data['curriculum_badge_bg'] ) ) : '';

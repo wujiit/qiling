@@ -323,7 +323,7 @@ class Frontend_Builder {
         $admin_bar->add_node(
             array(
                 'id'    => 'qiling_frontend_builder',
-                'title' => $is_builder_mode ? __( '退出前台装修', 'developer-starter' ) : __( '前台装修', 'developer-starter' ),
+                'title' => $is_builder_mode ? __( '退出前台装修', 'qiling' ) : __( '前台装修', 'qiling' ),
                 'href'  => esc_url( $builder_url ),
                 'meta'  => array(
                     'class' => 'qiling-frontend-builder-toolbar',
@@ -347,25 +347,25 @@ class Frontend_Builder {
             return;
         }
 
-        $css_file = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/frontend-builder.css';
-        $ai_service_js_file = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/ai-builder-service.js';
-        $js_file  = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/frontend-builder.js';
-        $css_ver  = file_exists( $css_file ) ? (string) filemtime( $css_file ) : DEVELOPER_STARTER_VERSION;
-        $ai_service_js_ver = file_exists( $ai_service_js_file ) ? (string) filemtime( $ai_service_js_file ) : DEVELOPER_STARTER_VERSION;
-        $js_ver   = file_exists( $js_file ) ? (string) filemtime( $js_file ) : DEVELOPER_STARTER_VERSION;
+        $css_file = trailingslashit( QILING_DIR ) . 'assets/css/frontend-builder.css';
+        $ai_service_js_file = trailingslashit( QILING_DIR ) . 'assets/js/ai-builder-service.js';
+        $js_file  = trailingslashit( QILING_DIR ) . 'assets/js/frontend-builder.js';
+        $css_ver  = file_exists( $css_file ) ? (string) filemtime( $css_file ) : QILING_VERSION;
+        $ai_service_js_ver = file_exists( $ai_service_js_file ) ? (string) filemtime( $ai_service_js_file ) : QILING_VERSION;
+        $js_ver   = file_exists( $js_file ) ? (string) filemtime( $js_file ) : QILING_VERSION;
 
         wp_enqueue_style(
             'qiling-frontend-builder',
-            DEVELOPER_STARTER_ASSETS . '/css/frontend-builder.css',
+            QILING_ASSETS . '/css/frontend-builder.css',
             array(),
             $css_ver
         );
 
-        $advanced_css_file = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/module-advanced-styles.css';
+        $advanced_css_file = trailingslashit( QILING_DIR ) . 'assets/css/module-advanced-styles.css';
         if ( file_exists( $advanced_css_file ) ) {
             wp_enqueue_style(
                 'developer-starter-module-advanced-styles',
-                DEVELOPER_STARTER_ASSETS . '/css/module-advanced-styles.css',
+                QILING_ASSETS . '/css/module-advanced-styles.css',
                 array( 'qiling-frontend-builder' ),
                 (string) filemtime( $advanced_css_file )
             );
@@ -375,19 +375,19 @@ class Frontend_Builder {
         $module_css_mode = in_array( $module_css_mode, array( 'single', 'split' ), true ) ? $module_css_mode : 'single';
 
         if ( 'single' === $module_css_mode ) {
-            $modules_css_file = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/modules.css';
+            $modules_css_file = trailingslashit( QILING_DIR ) . 'assets/css/modules.css';
             if ( is_file( $modules_css_file ) ) {
                 wp_enqueue_style(
                     'developer-starter-modules',
-                    DEVELOPER_STARTER_ASSETS . '/css/modules.css',
+                    QILING_ASSETS . '/css/modules.css',
                     array( 'qiling-frontend-builder' ),
                     (string) filemtime( $modules_css_file )
                 );
             }
         } else {
             // Builder 可随时新增任意模块，分包模式需加载全部独立模块文件供即时预览。
-            $module_css_dir = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/modules-split/';
-            $module_css_uri = trailingslashit( DEVELOPER_STARTER_ASSETS ) . 'css/modules-split/';
+            $module_css_dir = trailingslashit( QILING_DIR ) . 'assets/css/modules-split/';
+            $module_css_uri = trailingslashit( QILING_ASSETS ) . 'css/modules-split/';
             $module_css_files = glob( $module_css_dir . '*.css' );
             if ( is_array( $module_css_files ) ) {
                 sort( $module_css_files, SORT_STRING );
@@ -479,7 +479,7 @@ class Frontend_Builder {
 
         wp_enqueue_script(
             'qiling-ai-builder-service',
-            DEVELOPER_STARTER_ASSETS . '/js/ai-builder-service.js',
+            QILING_ASSETS . '/js/ai-builder-service.js',
             array( 'jquery' ),
             $ai_service_js_ver,
             false
@@ -487,7 +487,7 @@ class Frontend_Builder {
 
         wp_enqueue_script(
             'qiling-frontend-builder',
-            DEVELOPER_STARTER_ASSETS . '/js/frontend-builder.js',
+            QILING_ASSETS . '/js/frontend-builder.js',
             array( 'qiling-ai-builder-service', 'jquery', 'jquery-ui-sortable' ),
             $js_ver,
             true
@@ -529,321 +529,321 @@ class Frontend_Builder {
                     'required'           => $required_external_assets,
                 ),
                 'texts'            => array(
-                    'loading'            => __( '加载中...', 'developer-starter' ),
-                    'selectModuleTip'    => __( '请选择左侧模块后进行设置', 'developer-starter' ),
-                    'saveSuccess'        => __( '已保存，正在刷新预览...', 'developer-starter' ),
-                    'saveFailed'         => __( '保存失败，请重试', 'developer-starter' ),
-                    'schemaLoadFailed'   => __( '模块配置加载失败', 'developer-starter' ),
-                    'templateLoading'    => __( '正在加载模板内容...', 'developer-starter' ),
-                    'templateLoadFailed' => __( '模板加载失败，请稍后重试', 'developer-starter' ),
-                    'invalidRepeaterJson'=> __( 'JSON 格式错误，请检查后再保存', 'developer-starter' ),
-                    'previewFailed'      => __( '实时预览失败，请稍后重试', 'developer-starter' ),
-                    'unsaved'            => __( '有未保存修改', 'developer-starter' ),
-                    'saved'              => __( '当前内容已保存', 'developer-starter' ),
-                    'placeholderSuffix'  => __( '（正在生成实时预览）', 'developer-starter' ),
-                    'addAction'          => __( '添加', 'developer-starter' ),
-                    'libraryEmpty'       => __( '模块库为空，请检查模块是否正常加载。', 'developer-starter' ),
-                    'noLibraryMatch'     => __( '没有匹配的模块，请换个关键词。', 'developer-starter' ),
-                    'pageEmpty'          => __( '暂无模块，请先从左侧模块库添加。', 'developer-starter' ),
-                    'dragSort'           => __( '拖拽排序', 'developer-starter' ),
-                    'settingsAction'     => __( '设置', 'developer-starter' ),
-                    'duplicateAction'    => __( '复制', 'developer-starter' ),
-                    'deleteAction'       => __( '删除', 'developer-starter' ),
-                    'switchYes'          => __( '是', 'developer-starter' ),
-                    'switchNo'           => __( '否', 'developer-starter' ),
-                    'currentValue'       => __( '当前值：', 'developer-starter' ),
-                    'enabledLabel'       => __( '启用', 'developer-starter' ),
-                    'galleryPlaceholder' => __( '多个URL用英文逗号分隔', 'developer-starter' ),
-                    'repeaterItemPrefix' => __( '项目 #', 'developer-starter' ),
-                    'repeaterEmpty'      => __( '暂无项目，请点击“添加项目”。', 'developer-starter' ),
-                    'repeaterAdd'        => __( '添加项目', 'developer-starter' ),
-                    'mediaUrlPlaceholder'=> __( '请输入媒体URL', 'developer-starter' ),
-                    'colorPlaceholder'   => __( '#ffffff 或 linear-gradient(...)', 'developer-starter' ),
-                    'tokenApply'         => __( '快速颜色选择', 'developer-starter' ),
-                    'tokenApplied'       => __( '已选择快捷颜色', 'developer-starter' ),
-                    'tokenShadowSmall'   => __( '小阴影', 'developer-starter' ),
-                    'tokenShadowMedium'  => __( '中阴影', 'developer-starter' ),
-                    'tokenShadowLarge'   => __( '大阴影', 'developer-starter' ),
-                    'tokenCardRadius'    => __( '卡片圆角', 'developer-starter' ),
-                    'tokenButtonRadius'  => __( '按钮圆角', 'developer-starter' ),
-                    'tokenInputRadius'   => __( '输入框圆角', 'developer-starter' ),
-                    'tokenSectionPadding'=> __( '区块间距', 'developer-starter' ),
-                    'tokenContainerWidth'=> __( '容器宽度', 'developer-starter' ),
-                    'tokenPrimaryColor'  => __( '主色', 'developer-starter' ),
-                    'tokenSecondaryColor'=> __( '辅助', 'developer-starter' ),
-                    'tokenAccentColor'   => __( '点缀', 'developer-starter' ),
-                    'tokenTextColor'     => __( '正文', 'developer-starter' ),
-                    'tokenMutedColor'    => __( '弱化', 'developer-starter' ),
-                    'tokenHeadingColor'  => __( '标题', 'developer-starter' ),
-                    'tokenBackgroundColor'=> __( '背景', 'developer-starter' ),
-                    'tokenCardColor'     => __( '卡片', 'developer-starter' ),
-                    'tokenSurfaceAltColor'=> __( '浅区块', 'developer-starter' ),
-                    'tokenBorderColor'   => __( '边框', 'developer-starter' ),
-                    'dynamicDataLabel'   => __( '动态数据', 'developer-starter' ),
-                    'dynamicDataStatic'  => __( '静态内容', 'developer-starter' ),
-                    'dynamicDataApplied' => __( '已绑定动态数据，预览已更新。', 'developer-starter' ),
-                    'dynamicDataCleared' => __( '已改回静态内容。', 'developer-starter' ),
-                    'designSummaryTitle' => __( '全局样式', 'developer-starter' ),
-                    'libraryFilterAll'   => __( '全部', 'developer-starter' ),
-                    'myLibraryEmpty'     => __( '后台“我的模版库”暂无数据，请先在后台页面装修中保存模版。', 'developer-starter' ),
-                    'templateTypeMissing'=> __( '该模版对应的模块已不存在，无法添加。', 'developer-starter' ),
-                    'externalAssetLoadFailed' => __( '模块依赖资源加载失败，部分预览效果可能不可用。', 'developer-starter' ),
-                    'settingsPanelTitle' => __( '模块设置', 'developer-starter' ),
-                     'settingsPanelDesc'  => __( '调整当前模块的内容和外观，不会影响其他页面。', 'developer-starter' ),
-                    'pageSettingsEntry' => __( '页面设置', 'developer-starter' ),
-                    'pageSettingsPanelTitle' => __( '页面设置', 'developer-starter' ),
-                     'pageSettingsPanelDesc' => __( '管理当前页面的模板、页头和专属风格。', 'developer-starter' ),
-                    'pageTitleLabel' => __( '页面标题', 'developer-starter' ),
-                    'pageTemplateLabel' => __( '页面模板', 'developer-starter' ),
-                    'pageFooterPresetNone' => __( '不指定预设', 'developer-starter' ),
-                    'pageHideHeaderLabel' => __( '隐藏页面头部', 'developer-starter' ),
-                    'pageTransparentHeaderLabel' => __( '启用透明头部', 'developer-starter' ),
-                    'pageTransparentHeaderDesc' => __( '首屏覆盖在 Banner 上，系统会按首屏明暗自动选择菜单文字色；也可在页面视觉预设中手动指定。', 'developer-starter' ),
-                    'pageScrollRevealLabel' => __( '启用滚动动效', 'developer-starter' ),
-                    'pageBasicSectionTitle' => __( '基础设置', 'developer-starter' ),
-                    'pageDesignSectionTitle' => __( '当前页单独风格', 'developer-starter' ),
-                    'pagePaletteSectionTitle' => __( '页面配色', 'developer-starter' ),
-                    'pageDarkPaletteSectionTitle' => __( '页面暗色模式', 'developer-starter' ),
-                    'pageStructureSectionTitle' => __( '页面圆角与动效', 'developer-starter' ),
-                    'pageTypographySectionTitle' => __( '页面排版', 'developer-starter' ),
-                    'pageLayoutSectionTitle' => __( '页面布局', 'developer-starter' ),
-                    'pageComponentSectionTitle' => __( '页面组件样式', 'developer-starter' ),
-                     'pageDesignHelp' => __( '设置仅对当前页面生效，留空则使用全站样式。', 'developer-starter' ),
-                     'pageDarkPaletteSectionHelp' => __( '设置仅在当前页面的暗色模式下生效，留空则使用全站方案。', 'developer-starter' ),
-                     'pageStructureSectionHelp' => __( '设置当前页面的圆角和动效，留空则使用全站方案。', 'developer-starter' ),
-                    'pageDesignSummaryTitle' => __( '当前页覆盖概览', 'developer-starter' ),
-                    'pageDesignSummaryActive' => __( '当前页已单独调整 %d 项', 'developer-starter' ),
-                    'pageDesignSummaryEmpty' => __( '当前页还没有单独设置，正在跟随全站。', 'developer-starter' ),
-                    'pageDesignSectionCount' => __( '已改 %d 项', 'developer-starter' ),
-                    'pageDesignSectionClean' => __( '当前跟随全站', 'developer-starter' ),
-                    'pageDesignResetAll' => __( '恢复本页跟随全站', 'developer-starter' ),
-                    'pageDesignResetGroup' => __( '清空本组', 'developer-starter' ),
-                    'pageDesignResetAllDone' => __( '当前页已恢复跟随全站，保存后正式生效。', 'developer-starter' ),
-                     'pageDesignResetGroupDone' => __( '已清空当前分组，保存后将使用全站样式。', 'developer-starter' ),
-                    'pageDesignPreviewApplied' => __( '页面设计已同步到当前预览，保存后会正式生效。', 'developer-starter' ),
-                    'pageVisualPresetAuto' => __( '按当前页面模板自动匹配', 'developer-starter' ),
-                    'pageVisualStyleSectionTitle' => __( '页面视觉预设', 'developer-starter' ),
-                    'pageVisualStyleHelp' => __( '这里控制当前页顶部、底部、波浪和按钮的基础搭配；下方字段可直接在前台细调。', 'developer-starter' ),
-                    'pageVisualStyleModeLabel' => __( '视觉模式', 'developer-starter' ),
-                    'pageVisualStyleModeInherit' => __( '跟随页面模板预设', 'developer-starter' ),
-                    'pageVisualStyleModeGlobal' => __( '强制跟随全站默认', 'developer-starter' ),
-                    'pageVisualStyleModeCustom' => __( '启用当前页面视觉预设', 'developer-starter' ),
-                    'pageVisualStylePresetLabel' => __( '基础预设', 'developer-starter' ),
-                    'pageVisualHydratePreset' => __( '填充预设值', 'developer-starter' ),
-                    'pageVisualClearCustom' => __( '清空细调', 'developer-starter' ),
-                    'pageVisualPresetValueLabel' => __( '当前预设值', 'developer-starter' ),
-                    'pageVisualPreviewApplied' => __( '页面视觉风格已同步到当前预览，保存后会正式生效。', 'developer-starter' ),
-                    'pageVisualPresetRequired' => __( '请先选择一个基础预设，再填充预设值。', 'developer-starter' ),
-                     'pageSettingInherited' => __( '留空则使用全站设置', 'developer-starter' ),
-                     'pageTypographySectionHelp' => __( '设置当前页面的正文、标题、按钮和导航排版，留空则使用全站设置。', 'developer-starter' ),
-                    'pageSettingLayoutHelp' => __( '当前页想单独改容器宽度、区块间距和布局模式，就在这里改。', 'developer-starter' ),
-                     'pageComponentSectionHelp' => __( '调整当前页面的组件外观，不会影响全站设置。', 'developer-starter' ),
-                    'governanceCardTitle' => __( '作用层级', 'developer-starter' ),
-                    'governanceGlobalLabel' => __( '站点级', 'developer-starter' ),
-                    'governancePageLabel' => __( '页面级', 'developer-starter' ),
-                    'governanceModuleLabel' => __( '模块级', 'developer-starter' ),
-                    'pageGovernanceGlobalDesc' => __( '全局设计先决定整站默认外观，当前页默认跟它走。', 'developer-starter' ),
-                     'pageGovernancePageDesc' => __( '设置仅对当前页面生效，留空则使用全站设置。', 'developer-starter' ),
-                    'pageGovernanceModuleDesc' => __( '如果某个模块还要特殊一点，再去模块设置里单独改。', 'developer-starter' ),
-                    'pageGovernanceNote' => __( '普通做法：先定全站，再定当前页，最后只对少数模块做局部微调。', 'developer-starter' ),
-                    'moduleGovernanceGlobalDesc' => __( '全局设计先给这个模块一个默认基线。', 'developer-starter' ),
-                     'moduleGovernancePageDesc' => __( '当前页面的专属风格会应用到此模块。', 'developer-starter' ),
-                    'moduleGovernanceModuleDesc' => __( '这里的设置只改当前模块，最适合做局部强调。', 'developer-starter' ),
-                     'moduleGovernanceNote' => __( '留空则使用当前页面和全站设置。', 'developer-starter' ),
-                     'moduleLegacyBridgeNote' => __( '当前模块的公共样式设置集中在此面板。', 'developer-starter' ),
-                     'moduleVisualTip' => __( '设置仅影响当前模块；留空字段则使用页面或全站设置。', 'developer-starter' ),
-                    'moduleVisualAdvancedPrimaryDesc' => __( '用于图标、标签、链接和局部高亮，不是标题文字颜色。', 'developer-starter' ),
-                    'moduleVisualAdvancedAccentDesc' => __( '用于第二强调色和部分悬停状态。', 'developer-starter' ),
-                    'moduleVisualAdvancedBackgroundDesc' => __( '控制整个当前模块区块的背景。', 'developer-starter' ),
-                    'moduleVisualAdvancedTitleColor' => __( '标题颜色', 'developer-starter' ),
-                    'moduleVisualAdvancedTitleColorDesc' => __( '控制当前模块主标题和兼容的标题链接。', 'developer-starter' ),
-                    'moduleVisualAdvancedSubtitleColor' => __( '副标题颜色', 'developer-starter' ),
-                    'moduleVisualAdvancedSubtitleColorDesc' => __( '控制主标题下方的副标题和说明。', 'developer-starter' ),
-                    'moduleVisualAdvancedTextColor' => __( '正文颜色', 'developer-starter' ),
-                    'moduleVisualAdvancedTextColorDesc' => __( '控制普通段落、列表和摘要文字。', 'developer-starter' ),
-                    'moduleVisualAdvancedButtonDesc' => __( '控制当前模块实心主按钮的背景。', 'developer-starter' ),
-                    'moduleVisualAdvancedButtonText' => __( '按钮文字', 'developer-starter' ),
-                    'moduleVisualAdvancedButtonTextDesc' => __( '控制主按钮正常状态的文字颜色。', 'developer-starter' ),
-                    'moduleVisualAdvancedButtonHoverDesc' => __( '控制鼠标移到主按钮上时的背景。', 'developer-starter' ),
-                    'moduleVisualAdvancedButtonHoverText' => __( '按钮悬停文字', 'developer-starter' ),
-                    'moduleVisualAdvancedButtonHoverTextDesc' => __( '控制鼠标移到主按钮上时的文字颜色。', 'developer-starter' ),
-                    'moduleVisualAdvancedCardDesc' => __( '控制当前模块内卡片的背景。', 'developer-starter' ),
-                    'moduleVisualAdvancedCardBorderDesc' => __( '控制当前模块内卡片的边框。', 'developer-starter' ),
-                    'moduleVisualClear' => __( '清空模块视觉', 'developer-starter' ),
-                     'moduleVisualCleared' => __( '已清空当前模块视觉设置，保存后将使用页面样式。', 'developer-starter' ),
-                    'aiPanelTitle'       => __( 'AI装修', 'developer-starter' ),
-                     'aiPanelDesc'        => __( '支持优化当前页面、所选模块和 SEO 信息。', 'developer-starter' ),
-                    'aiButton'           => __( 'AI装修', 'developer-starter' ),
-                    'aiBackButton'       => __( '返回设置', 'developer-starter' ),
-                    'aiScopeNotice'      => __( '当前工具用于当前单页或当前选中的模块，可同步生成当前页面 SEO 建议。', 'developer-starter' ),
-                    'aiDesignContextTip' => __( '生成时会优先沿用当前全局样式，保持模块颜色、圆角、阴影和区块间距一致。', 'developer-starter' ),
-                    'aiContentModelContextTip' => __( '生成时会参考已启用的内容模型，优先匹配服务、产品、案例、团队、门店、资源等可复用结构。', 'developer-starter' ),
-                    'contentModelSummaryTitle' => __( '内容模型', 'developer-starter' ),
-                    'aiUnavailable'      => __( 'AI 装修尚未配置完成，请先到主题设置中启用并配置连接。', 'developer-starter' ),
-                    'aiServiceUnavailable' => __( 'AI 服务未加载，请刷新后重试。', 'developer-starter' ),
-                    'aiPromptLabel'      => __( '装修需求', 'developer-starter' ),
-                    'aiPromptPlaceholder'=> __( '例如：优化当前首页，面向软件服务公司，风格现代可信。保留可用内容，强化首屏卖点、服务能力、客户案例、CTA 和 SEO 标题描述。', 'developer-starter' ),
-                    'aiPromptRecipeLabel'=> __( '快捷需求', 'developer-starter' ),
-                    'aiPromptRecipeTip'  => __( '点一下会追加到装修需求里', 'developer-starter' ),
-                     'aiPromptRecipeApplied' => __( '快捷需求已添加。', 'developer-starter' ),
-                    'aiPromptRecipeHero' => __( '首屏转化', 'developer-starter' ),
-                    'aiPromptRecipeHeroText' => __( '重做当前单页的首屏与转化路径：突出核心卖点、适用人群、信任背书和明确 CTA，保留当前可用内容，不要生成整站。', 'developer-starter' ),
-                    'aiPromptRecipeConversion' => __( '成交路径', 'developer-starter' ),
-                    'aiPromptRecipeConversionText' => __( '优化当前页面的成交路径：强化服务或产品价值、客户案例、常见问题、咨询入口和按钮文案，让模块顺序更利于转化。', 'developer-starter' ),
-                    'aiPromptRecipeInternational' => __( '国际化落地', 'developer-starter' ),
-                    'aiPromptRecipeInternationalText' => __( '优化成面向海外用户的国际化落地页基础：标题短句、卖点直接、CTA 清晰，SEO 标题和描述适合英文搜索，保留中文品牌调性。', 'developer-starter' ),
-                    'aiPromptRecipeVisual' => __( '视觉统一', 'developer-starter' ),
-                    'aiPromptRecipeVisualText' => __( '统一页面视觉：沿用当前全局设计令牌，减少杂色，统一按钮、卡片、间距、圆角和阴影，让页面更专业、更利于阅读。', 'developer-starter' ),
-                    'aiPromptRecipeModule' => __( '当前模块', 'developer-starter' ),
-                     'aiPromptRecipeModuleText' => __( '仅优化当前模块，保留信息结构，强化标题、描述、按钮文案和视觉节奏。', 'developer-starter' ),
-                    'aiPromptHistoryLabel' => __( '最近需求', 'developer-starter' ),
-                    'aiPromptHistoryTip' => __( '只保存在当前浏览器，方便反复微调。', 'developer-starter' ),
-                    'aiPromptHistoryClear' => __( '清空', 'developer-starter' ),
-                    'aiPromptHistoryDelete' => __( '删除', 'developer-starter' ),
-                    'aiPromptHistoryUntitled' => __( '未命名需求', 'developer-starter' ),
-                    'aiPromptHistoryModuleCount' => __( '%d 个候选模块', 'developer-starter' ),
-                    'aiPromptHistoryRestored' => __( '已恢复最近需求。', 'developer-starter' ),
-                    'aiPromptHistoryDeleted' => __( '已删除该需求。', 'developer-starter' ),
-                    'aiPromptHistoryCleared' => __( '已清空最近需求。', 'developer-starter' ),
-                    'aiModuleBundleLabel'=> __( '模块组合', 'developer-starter' ),
-                    'aiModuleBundleTip'  => __( '按页面目标快速勾选候选模块', 'developer-starter' ),
-                    'aiModuleBundleLanding' => __( '落地页', 'developer-starter' ),
-                    'aiModuleBundleService' => __( '服务页', 'developer-starter' ),
-                    'aiModuleBundleProduct' => __( '产品页', 'developer-starter' ),
-                    'aiModuleBundleContent' => __( '内容页', 'developer-starter' ),
-                    'aiModuleBundleLocal' => __( '本地门店', 'developer-starter' ),
-                    'aiModuleBundleClear' => __( '清空', 'developer-starter' ),
-                    'aiModuleBundleApplied' => __( '已选择 %d 个候选模块。', 'developer-starter' ),
-                    'aiModuleBundleCleared' => __( '已清空候选模块。', 'developer-starter' ),
-                    'aiModuleBundleEmpty' => __( '没有找到适合该组合的候选模块，请手动选择。', 'developer-starter' ),
-                    'aiReadinessTitle'  => __( '生成前自检', 'developer-starter' ),
-                    'aiReadinessReady'  => __( '可以生成草稿', 'developer-starter' ),
-                    'aiReadinessBlocking' => __( '%d 项需要处理', 'developer-starter' ),
-                    'aiReadinessWarning'=> __( '%d 项建议确认', 'developer-starter' ),
-                    'aiReadinessPrompt' => __( '需求', 'developer-starter' ),
-                    'aiReadinessPromptOk' => __( '已输入 %d 字', 'developer-starter' ),
-                    'aiReadinessPromptShort' => __( '建议再补充目标、人群和风格。', 'developer-starter' ),
-                    'aiReadinessPromptMissing' => __( '还没填写装修需求。', 'developer-starter' ),
-                    'aiReadinessModules'=> __( '模块', 'developer-starter' ),
-                    'aiReadinessModulesMissing' => __( '还没选择候选模块。', 'developer-starter' ),
-                    'aiReadinessConnection' => __( '连接', 'developer-starter' ),
-                    'aiReadinessConnectionDefault' => __( '将使用后台默认连接。', 'developer-starter' ),
-                    'aiReadinessModel'  => __( '模型', 'developer-starter' ),
-                    'aiReadinessModelDefault' => __( '将使用连接默认模型。', 'developer-starter' ),
-                    'aiReadinessPending'=> __( '待应用', 'developer-starter' ),
-                    'aiReadinessPendingExists' => __( '已有生成结果待应用或放弃。', 'developer-starter' ),
-                    'aiReadinessPendingEmpty' => __( '当前没有待应用结果。', 'developer-starter' ),
-                    'aiReviewTitle'     => __( '应用前验收', 'developer-starter' ),
-                    'aiReviewReady'     => __( '可以应用', 'developer-starter' ),
-                    'aiReviewWarning'   => __( '%d 项建议确认', 'developer-starter' ),
-                    'aiReviewError'     => __( '%d 项需要处理', 'developer-starter' ),
-                    'aiReviewResult'    => __( '结果', 'developer-starter' ),
-                    'aiReviewResultOk'  => __( 'AI 结果结构完整。', 'developer-starter' ),
-                    'aiReviewResultInvalid' => __( '结果不完整，建议放弃后重试。', 'developer-starter' ),
-                    'aiReviewModuleStructure' => __( '模块结构', 'developer-starter' ),
-                    'aiReviewModuleCountOk' => __( '已生成 %d 个模块。', 'developer-starter' ),
-                    'aiReviewModuleMissing' => __( '未生成可用模块。', 'developer-starter' ),
-                    'aiReviewModuleChange' => __( '模块变化', 'developer-starter' ),
-                    'aiReviewModuleChangeOk' => __( '已检测到模块变化。', 'developer-starter' ),
-                    'aiReviewModuleChangeNone' => __( '模块结构变化很小，请确认是否符合预期。', 'developer-starter' ),
-                    'aiReviewSeo'       => __( 'SEO', 'developer-starter' ),
-                    'aiReviewSeoOk'     => __( '已包含 SEO 标题或描述。', 'developer-starter' ),
-                    'aiReviewSeoMissing'=> __( '未检测到 SEO 建议，可应用后手动补充。', 'developer-starter' ),
-                    'aiReviewCta'       => __( '转化', 'developer-starter' ),
-                    'aiReviewCtaOk'     => __( '已检测到 CTA 或联系转化词。', 'developer-starter' ),
-                    'aiReviewCtaMissing'=> __( '未检测到明显 CTA，应用前建议确认。', 'developer-starter' ),
-                    'aiReviewDesign'    => __( '视觉', 'developer-starter' ),
-                    'aiReviewDesignOk'  => __( '已包含页面设计建议。', 'developer-starter' ),
-                    'aiReviewDesignInherited' => __( '未包含页面设计覆盖，将沿用当前全局视觉。', 'developer-starter' ),
-                    'aiReviewModuleType'=> __( '模块类型', 'developer-starter' ),
-                    'aiReviewModuleTypeOk' => __( '模块类型保持不变。', 'developer-starter' ),
-                    'aiReviewModuleTypeChanged' => __( '模块类型不一致，建议放弃后重试。', 'developer-starter' ),
-                    'aiReviewModuleContent' => __( '模块内容', 'developer-starter' ),
-                    'aiReviewModuleContentOk' => __( '已检测到字段变化。', 'developer-starter' ),
-                    'aiReviewModuleContentSame' => __( '未检测到明显内容变化。', 'developer-starter' ),
-                    'aiReviewGuardrail' => __( '安全', 'developer-starter' ),
-                    'aiReviewGuardrailOk' => __( '仍处于待应用状态，确认后才会修改页面。', 'developer-starter' ),
-                    'aiConnectionLabel'  => __( 'AI 连接', 'developer-starter' ),
-                    'aiModelLabel'       => __( '模型', 'developer-starter' ),
-                    'aiModuleLabel'      => __( '候选模块', 'developer-starter' ),
-                    'aiModuleSearch'     => __( '搜索模块名称...', 'developer-starter' ),
-                    'aiGenerate'         => __( '生成/优化当前单页', 'developer-starter' ),
-                    'aiOptimizeModule'   => __( '优化当前模块', 'developer-starter' ),
-                    'aiGenerating'       => __( '正在生成当前单页草稿，请稍候…', 'developer-starter' ),
-                    'aiModuleOptimizing' => __( '正在优化当前模块，请稍候…', 'developer-starter' ),
-                    'aiPlanning'         => __( '正在规划页面结构，请稍候…', 'developer-starter' ),
-                    'aiPlanFailed'       => __( '页面规划失败，请重试。', 'developer-starter' ),
-                    'aiPlanEmpty'        => __( '未规划出可用模块，请调整需求或候选模块后重试。', 'developer-starter' ),
-                    'aiPlanSuccess'      => __( '页面规划完成，开始逐模块生成…', 'developer-starter' ),
-                    'aiGeneratingStep'   => __( '正在逐模块生成草稿：', 'developer-starter' ),
-                    'aiModuleFailed'     => __( '模块生成失败，请重试。', 'developer-starter' ),
-                    'aiNoSelectedModule' => __( '请先在页面结构中选中一个模块，再使用当前模块优化。', 'developer-starter' ),
-                    'aiModuleApplySuccess' => __( '当前模块已优化，请确认预览后保存。', 'developer-starter' ),
-                    'aiModuleRetrying'   => __( '模块生成失败，正在自动重试：', 'developer-starter' ),
-                    'aiPartialApply'     => __( '生成过程中出现问题，已先应用当前拿到的草稿内容，请检查后再保存。', 'developer-starter' ),
-                    'aiUndoLastChange'   => __( '撤回本次修改', 'developer-starter' ),
-                    'aiUndoSuccess'      => __( '已撤回到修改前，请确认预览后保存。', 'developer-starter' ),
-                    'aiPendingReady'     => __( '草稿已生成，请查看差异后应用。', 'developer-starter' ),
-                    'aiPendingDiscarded' => __( '已放弃本次生成结果，页面未被改动。', 'developer-starter' ),
-                    'aiPendingApplyFailed' => __( '结果应用失败，请放弃后重试。', 'developer-starter' ),
-                    'aiPendingApplySuccess' => __( '结果已应用，请确认预览后保存。', 'developer-starter' ),
-                    'aiDiffModuleTitle'  => __( '模块结果待应用', 'developer-starter' ),
-                    'aiDiffPageTitle'    => __( '单页结果待应用', 'developer-starter' ),
-                    'aiDiffIntro'        => __( '草稿还没有改动页面，确认后才会应用。', 'developer-starter' ),
-                    'aiApplyPending'     => __( '应用 AI 结果', 'developer-starter' ),
-                    'aiDiscardPending'   => __( '放弃结果', 'developer-starter' ),
-                    'aiDiffPageTemplate' => __( '页面模板', 'developer-starter' ),
-                    'aiDiffHideHeader'   => __( '隐藏页面标题', 'developer-starter' ),
-                    'aiDiffTransparentHeader' => __( '透明头部', 'developer-starter' ),
-                    'aiDiffScrollReveal' => __( '滚动动效', 'developer-starter' ),
-                    'aiDiffSeo'          => __( 'SEO 建议', 'developer-starter' ),
-                    'aiDiffDesign'       => __( '页面设计', 'developer-starter' ),
-                    'aiDiffUnknownModule'=> __( '未知模块', 'developer-starter' ),
-                    'aiDiffModuleInvalid'=> __( '模块结果不完整，建议放弃后重试。', 'developer-starter' ),
-                    'aiDiffTargetModule' => __( '目标模块：%d', 'developer-starter' ),
-                    'aiDiffModuleTypeChanged' => __( '模块类型变化：', 'developer-starter' ),
-                    'aiDiffModuleFieldsChanged' => __( '模块字段变化：', 'developer-starter' ),
-                    'aiDiffModuleCount'  => __( '模块数量：', 'developer-starter' ),
-                    'aiDiffAddedModules' => __( '新增模块：', 'developer-starter' ),
-                    'aiDiffRemovedModules' => __( '删除模块：', 'developer-starter' ),
-                    'aiDiffReplacedModules' => __( '替换模块：', 'developer-starter' ),
-                    'aiDiffChangedModules' => __( '修改模块：', 'developer-starter' ),
-                    'aiDiffPageSettings' => __( '页面设置：', 'developer-starter' ),
-                    'aiDiffNoMajorChange'=> __( '没有检测到明显字段变化。', 'developer-starter' ),
-                    'aiDiffFieldCount'   => __( '(%d 项)', 'developer-starter' ),
-                    'aiDiffFieldCountPlain' => __( '%d 项', 'developer-starter' ),
-                    'aiMissingPrompt'    => __( '请先输入装修需求。', 'developer-starter' ),
-                    'aiMissingModules'   => __( '请先选择候选模块。', 'developer-starter' ),
-                    'aiDisallowedSitePrompt' => __( '在线 AI 整站生成已关闭。请改为生成当前单页，或选中单个模块后做模块优化。', 'developer-starter' ),
+                    'loading'            => __( '加载中...', 'qiling' ),
+                    'selectModuleTip'    => __( '请选择左侧模块后进行设置', 'qiling' ),
+                    'saveSuccess'        => __( '已保存，正在刷新预览...', 'qiling' ),
+                    'saveFailed'         => __( '保存失败，请重试', 'qiling' ),
+                    'schemaLoadFailed'   => __( '模块配置加载失败', 'qiling' ),
+                    'templateLoading'    => __( '正在加载模板内容...', 'qiling' ),
+                    'templateLoadFailed' => __( '模板加载失败，请稍后重试', 'qiling' ),
+                    'invalidRepeaterJson'=> __( 'JSON 格式错误，请检查后再保存', 'qiling' ),
+                    'previewFailed'      => __( '实时预览失败，请稍后重试', 'qiling' ),
+                    'unsaved'            => __( '有未保存修改', 'qiling' ),
+                    'saved'              => __( '当前内容已保存', 'qiling' ),
+                    'placeholderSuffix'  => __( '（正在生成实时预览）', 'qiling' ),
+                    'addAction'          => __( '添加', 'qiling' ),
+                    'libraryEmpty'       => __( '模块库为空，请检查模块是否正常加载。', 'qiling' ),
+                    'noLibraryMatch'     => __( '没有匹配的模块，请换个关键词。', 'qiling' ),
+                    'pageEmpty'          => __( '暂无模块，请先从左侧模块库添加。', 'qiling' ),
+                    'dragSort'           => __( '拖拽排序', 'qiling' ),
+                    'settingsAction'     => __( '设置', 'qiling' ),
+                    'duplicateAction'    => __( '复制', 'qiling' ),
+                    'deleteAction'       => __( '删除', 'qiling' ),
+                    'switchYes'          => __( '是', 'qiling' ),
+                    'switchNo'           => __( '否', 'qiling' ),
+                    'currentValue'       => __( '当前值：', 'qiling' ),
+                    'enabledLabel'       => __( '启用', 'qiling' ),
+                    'galleryPlaceholder' => __( '多个URL用英文逗号分隔', 'qiling' ),
+                    'repeaterItemPrefix' => __( '项目 #', 'qiling' ),
+                    'repeaterEmpty'      => __( '暂无项目，请点击“添加项目”。', 'qiling' ),
+                    'repeaterAdd'        => __( '添加项目', 'qiling' ),
+                    'mediaUrlPlaceholder'=> __( '请输入媒体URL', 'qiling' ),
+                    'colorPlaceholder'   => __( '#ffffff 或 linear-gradient(...)', 'qiling' ),
+                    'tokenApply'         => __( '快速颜色选择', 'qiling' ),
+                    'tokenApplied'       => __( '已选择快捷颜色', 'qiling' ),
+                    'tokenShadowSmall'   => __( '小阴影', 'qiling' ),
+                    'tokenShadowMedium'  => __( '中阴影', 'qiling' ),
+                    'tokenShadowLarge'   => __( '大阴影', 'qiling' ),
+                    'tokenCardRadius'    => __( '卡片圆角', 'qiling' ),
+                    'tokenButtonRadius'  => __( '按钮圆角', 'qiling' ),
+                    'tokenInputRadius'   => __( '输入框圆角', 'qiling' ),
+                    'tokenSectionPadding'=> __( '区块间距', 'qiling' ),
+                    'tokenContainerWidth'=> __( '容器宽度', 'qiling' ),
+                    'tokenPrimaryColor'  => __( '主色', 'qiling' ),
+                    'tokenSecondaryColor'=> __( '辅助', 'qiling' ),
+                    'tokenAccentColor'   => __( '点缀', 'qiling' ),
+                    'tokenTextColor'     => __( '正文', 'qiling' ),
+                    'tokenMutedColor'    => __( '弱化', 'qiling' ),
+                    'tokenHeadingColor'  => __( '标题', 'qiling' ),
+                    'tokenBackgroundColor'=> __( '背景', 'qiling' ),
+                    'tokenCardColor'     => __( '卡片', 'qiling' ),
+                    'tokenSurfaceAltColor'=> __( '浅区块', 'qiling' ),
+                    'tokenBorderColor'   => __( '边框', 'qiling' ),
+                    'dynamicDataLabel'   => __( '动态数据', 'qiling' ),
+                    'dynamicDataStatic'  => __( '静态内容', 'qiling' ),
+                    'dynamicDataApplied' => __( '已绑定动态数据，预览已更新。', 'qiling' ),
+                    'dynamicDataCleared' => __( '已改回静态内容。', 'qiling' ),
+                    'designSummaryTitle' => __( '全局样式', 'qiling' ),
+                    'libraryFilterAll'   => __( '全部', 'qiling' ),
+                    'myLibraryEmpty'     => __( '后台“我的模版库”暂无数据，请先在后台页面装修中保存模版。', 'qiling' ),
+                    'templateTypeMissing'=> __( '该模版对应的模块已不存在，无法添加。', 'qiling' ),
+                    'externalAssetLoadFailed' => __( '模块依赖资源加载失败，部分预览效果可能不可用。', 'qiling' ),
+                    'settingsPanelTitle' => __( '模块设置', 'qiling' ),
+                     'settingsPanelDesc'  => __( '调整当前模块的内容和外观，不会影响其他页面。', 'qiling' ),
+                    'pageSettingsEntry' => __( '页面设置', 'qiling' ),
+                    'pageSettingsPanelTitle' => __( '页面设置', 'qiling' ),
+                     'pageSettingsPanelDesc' => __( '管理当前页面的模板、页头和专属风格。', 'qiling' ),
+                    'pageTitleLabel' => __( '页面标题', 'qiling' ),
+                    'pageTemplateLabel' => __( '页面模板', 'qiling' ),
+                    'pageFooterPresetNone' => __( '不指定预设', 'qiling' ),
+                    'pageHideHeaderLabel' => __( '隐藏页面头部', 'qiling' ),
+                    'pageTransparentHeaderLabel' => __( '启用透明头部', 'qiling' ),
+                    'pageTransparentHeaderDesc' => __( '首屏覆盖在 Banner 上，系统会按首屏明暗自动选择菜单文字色；也可在页面视觉预设中手动指定。', 'qiling' ),
+                    'pageScrollRevealLabel' => __( '启用滚动动效', 'qiling' ),
+                    'pageBasicSectionTitle' => __( '基础设置', 'qiling' ),
+                    'pageDesignSectionTitle' => __( '当前页单独风格', 'qiling' ),
+                    'pagePaletteSectionTitle' => __( '页面配色', 'qiling' ),
+                    'pageDarkPaletteSectionTitle' => __( '页面暗色模式', 'qiling' ),
+                    'pageStructureSectionTitle' => __( '页面圆角与动效', 'qiling' ),
+                    'pageTypographySectionTitle' => __( '页面排版', 'qiling' ),
+                    'pageLayoutSectionTitle' => __( '页面布局', 'qiling' ),
+                    'pageComponentSectionTitle' => __( '页面组件样式', 'qiling' ),
+                     'pageDesignHelp' => __( '设置仅对当前页面生效，留空则使用全站样式。', 'qiling' ),
+                     'pageDarkPaletteSectionHelp' => __( '设置仅在当前页面的暗色模式下生效，留空则使用全站方案。', 'qiling' ),
+                     'pageStructureSectionHelp' => __( '设置当前页面的圆角和动效，留空则使用全站方案。', 'qiling' ),
+                    'pageDesignSummaryTitle' => __( '当前页覆盖概览', 'qiling' ),
+                    'pageDesignSummaryActive' => __( '当前页已单独调整 %d 项', 'qiling' ),
+                    'pageDesignSummaryEmpty' => __( '当前页还没有单独设置，正在跟随全站。', 'qiling' ),
+                    'pageDesignSectionCount' => __( '已改 %d 项', 'qiling' ),
+                    'pageDesignSectionClean' => __( '当前跟随全站', 'qiling' ),
+                    'pageDesignResetAll' => __( '恢复本页跟随全站', 'qiling' ),
+                    'pageDesignResetGroup' => __( '清空本组', 'qiling' ),
+                    'pageDesignResetAllDone' => __( '当前页已恢复跟随全站，保存后正式生效。', 'qiling' ),
+                     'pageDesignResetGroupDone' => __( '已清空当前分组，保存后将使用全站样式。', 'qiling' ),
+                    'pageDesignPreviewApplied' => __( '页面设计已同步到当前预览，保存后会正式生效。', 'qiling' ),
+                    'pageVisualPresetAuto' => __( '按当前页面模板自动匹配', 'qiling' ),
+                    'pageVisualStyleSectionTitle' => __( '页面视觉预设', 'qiling' ),
+                    'pageVisualStyleHelp' => __( '这里控制当前页顶部、底部、波浪和按钮的基础搭配；下方字段可直接在前台细调。', 'qiling' ),
+                    'pageVisualStyleModeLabel' => __( '视觉模式', 'qiling' ),
+                    'pageVisualStyleModeInherit' => __( '跟随页面模板预设', 'qiling' ),
+                    'pageVisualStyleModeGlobal' => __( '强制跟随全站默认', 'qiling' ),
+                    'pageVisualStyleModeCustom' => __( '启用当前页面视觉预设', 'qiling' ),
+                    'pageVisualStylePresetLabel' => __( '基础预设', 'qiling' ),
+                    'pageVisualHydratePreset' => __( '填充预设值', 'qiling' ),
+                    'pageVisualClearCustom' => __( '清空细调', 'qiling' ),
+                    'pageVisualPresetValueLabel' => __( '当前预设值', 'qiling' ),
+                    'pageVisualPreviewApplied' => __( '页面视觉风格已同步到当前预览，保存后会正式生效。', 'qiling' ),
+                    'pageVisualPresetRequired' => __( '请先选择一个基础预设，再填充预设值。', 'qiling' ),
+                     'pageSettingInherited' => __( '留空则使用全站设置', 'qiling' ),
+                     'pageTypographySectionHelp' => __( '设置当前页面的正文、标题、按钮和导航排版，留空则使用全站设置。', 'qiling' ),
+                    'pageSettingLayoutHelp' => __( '当前页想单独改容器宽度、区块间距和布局模式，就在这里改。', 'qiling' ),
+                     'pageComponentSectionHelp' => __( '调整当前页面的组件外观，不会影响全站设置。', 'qiling' ),
+                    'governanceCardTitle' => __( '作用层级', 'qiling' ),
+                    'governanceGlobalLabel' => __( '站点级', 'qiling' ),
+                    'governancePageLabel' => __( '页面级', 'qiling' ),
+                    'governanceModuleLabel' => __( '模块级', 'qiling' ),
+                    'pageGovernanceGlobalDesc' => __( '全局设计先决定整站默认外观，当前页默认跟它走。', 'qiling' ),
+                     'pageGovernancePageDesc' => __( '设置仅对当前页面生效，留空则使用全站设置。', 'qiling' ),
+                    'pageGovernanceModuleDesc' => __( '如果某个模块还要特殊一点，再去模块设置里单独改。', 'qiling' ),
+                    'pageGovernanceNote' => __( '普通做法：先定全站，再定当前页，最后只对少数模块做局部微调。', 'qiling' ),
+                    'moduleGovernanceGlobalDesc' => __( '全局设计先给这个模块一个默认基线。', 'qiling' ),
+                     'moduleGovernancePageDesc' => __( '当前页面的专属风格会应用到此模块。', 'qiling' ),
+                    'moduleGovernanceModuleDesc' => __( '这里的设置只改当前模块，最适合做局部强调。', 'qiling' ),
+                     'moduleGovernanceNote' => __( '留空则使用当前页面和全站设置。', 'qiling' ),
+                     'moduleLegacyBridgeNote' => __( '当前模块的公共样式设置集中在此面板。', 'qiling' ),
+                     'moduleVisualTip' => __( '设置仅影响当前模块；留空字段则使用页面或全站设置。', 'qiling' ),
+                    'moduleVisualAdvancedPrimaryDesc' => __( '用于图标、标签、链接和局部高亮，不是标题文字颜色。', 'qiling' ),
+                    'moduleVisualAdvancedAccentDesc' => __( '用于第二强调色和部分悬停状态。', 'qiling' ),
+                    'moduleVisualAdvancedBackgroundDesc' => __( '控制整个当前模块区块的背景。', 'qiling' ),
+                    'moduleVisualAdvancedTitleColor' => __( '标题颜色', 'qiling' ),
+                    'moduleVisualAdvancedTitleColorDesc' => __( '控制当前模块主标题和兼容的标题链接。', 'qiling' ),
+                    'moduleVisualAdvancedSubtitleColor' => __( '副标题颜色', 'qiling' ),
+                    'moduleVisualAdvancedSubtitleColorDesc' => __( '控制主标题下方的副标题和说明。', 'qiling' ),
+                    'moduleVisualAdvancedTextColor' => __( '正文颜色', 'qiling' ),
+                    'moduleVisualAdvancedTextColorDesc' => __( '控制普通段落、列表和摘要文字。', 'qiling' ),
+                    'moduleVisualAdvancedButtonDesc' => __( '控制当前模块实心主按钮的背景。', 'qiling' ),
+                    'moduleVisualAdvancedButtonText' => __( '按钮文字', 'qiling' ),
+                    'moduleVisualAdvancedButtonTextDesc' => __( '控制主按钮正常状态的文字颜色。', 'qiling' ),
+                    'moduleVisualAdvancedButtonHoverDesc' => __( '控制鼠标移到主按钮上时的背景。', 'qiling' ),
+                    'moduleVisualAdvancedButtonHoverText' => __( '按钮悬停文字', 'qiling' ),
+                    'moduleVisualAdvancedButtonHoverTextDesc' => __( '控制鼠标移到主按钮上时的文字颜色。', 'qiling' ),
+                    'moduleVisualAdvancedCardDesc' => __( '控制当前模块内卡片的背景。', 'qiling' ),
+                    'moduleVisualAdvancedCardBorderDesc' => __( '控制当前模块内卡片的边框。', 'qiling' ),
+                    'moduleVisualClear' => __( '清空模块视觉', 'qiling' ),
+                     'moduleVisualCleared' => __( '已清空当前模块视觉设置，保存后将使用页面样式。', 'qiling' ),
+                    'aiPanelTitle'       => __( 'AI装修', 'qiling' ),
+                     'aiPanelDesc'        => __( '支持优化当前页面、所选模块和 SEO 信息。', 'qiling' ),
+                    'aiButton'           => __( 'AI装修', 'qiling' ),
+                    'aiBackButton'       => __( '返回设置', 'qiling' ),
+                    'aiScopeNotice'      => __( '当前工具用于当前单页或当前选中的模块，可同步生成当前页面 SEO 建议。', 'qiling' ),
+                    'aiDesignContextTip' => __( '生成时会优先沿用当前全局样式，保持模块颜色、圆角、阴影和区块间距一致。', 'qiling' ),
+                    'aiContentModelContextTip' => __( '生成时会参考已启用的内容模型，优先匹配服务、产品、案例、团队、门店、资源等可复用结构。', 'qiling' ),
+                    'contentModelSummaryTitle' => __( '内容模型', 'qiling' ),
+                    'aiUnavailable'      => __( 'AI 装修尚未配置完成，请先到主题设置中启用并配置连接。', 'qiling' ),
+                    'aiServiceUnavailable' => __( 'AI 服务未加载，请刷新后重试。', 'qiling' ),
+                    'aiPromptLabel'      => __( '装修需求', 'qiling' ),
+                    'aiPromptPlaceholder'=> __( '例如：优化当前首页，面向软件服务公司，风格现代可信。保留可用内容，强化首屏卖点、服务能力、客户案例、CTA 和 SEO 标题描述。', 'qiling' ),
+                    'aiPromptRecipeLabel'=> __( '快捷需求', 'qiling' ),
+                    'aiPromptRecipeTip'  => __( '点一下会追加到装修需求里', 'qiling' ),
+                     'aiPromptRecipeApplied' => __( '快捷需求已添加。', 'qiling' ),
+                    'aiPromptRecipeHero' => __( '首屏转化', 'qiling' ),
+                    'aiPromptRecipeHeroText' => __( '重做当前单页的首屏与转化路径：突出核心卖点、适用人群、信任背书和明确 CTA，保留当前可用内容，不要生成整站。', 'qiling' ),
+                    'aiPromptRecipeConversion' => __( '成交路径', 'qiling' ),
+                    'aiPromptRecipeConversionText' => __( '优化当前页面的成交路径：强化服务或产品价值、客户案例、常见问题、咨询入口和按钮文案，让模块顺序更利于转化。', 'qiling' ),
+                    'aiPromptRecipeInternational' => __( '国际化落地', 'qiling' ),
+                    'aiPromptRecipeInternationalText' => __( '优化成面向海外用户的国际化落地页基础：标题短句、卖点直接、CTA 清晰，SEO 标题和描述适合英文搜索，保留中文品牌调性。', 'qiling' ),
+                    'aiPromptRecipeVisual' => __( '视觉统一', 'qiling' ),
+                    'aiPromptRecipeVisualText' => __( '统一页面视觉：沿用当前全局设计令牌，减少杂色，统一按钮、卡片、间距、圆角和阴影，让页面更专业、更利于阅读。', 'qiling' ),
+                    'aiPromptRecipeModule' => __( '当前模块', 'qiling' ),
+                     'aiPromptRecipeModuleText' => __( '仅优化当前模块，保留信息结构，强化标题、描述、按钮文案和视觉节奏。', 'qiling' ),
+                    'aiPromptHistoryLabel' => __( '最近需求', 'qiling' ),
+                    'aiPromptHistoryTip' => __( '只保存在当前浏览器，方便反复微调。', 'qiling' ),
+                    'aiPromptHistoryClear' => __( '清空', 'qiling' ),
+                    'aiPromptHistoryDelete' => __( '删除', 'qiling' ),
+                    'aiPromptHistoryUntitled' => __( '未命名需求', 'qiling' ),
+                    'aiPromptHistoryModuleCount' => __( '%d 个候选模块', 'qiling' ),
+                    'aiPromptHistoryRestored' => __( '已恢复最近需求。', 'qiling' ),
+                    'aiPromptHistoryDeleted' => __( '已删除该需求。', 'qiling' ),
+                    'aiPromptHistoryCleared' => __( '已清空最近需求。', 'qiling' ),
+                    'aiModuleBundleLabel'=> __( '模块组合', 'qiling' ),
+                    'aiModuleBundleTip'  => __( '按页面目标快速勾选候选模块', 'qiling' ),
+                    'aiModuleBundleLanding' => __( '落地页', 'qiling' ),
+                    'aiModuleBundleService' => __( '服务页', 'qiling' ),
+                    'aiModuleBundleProduct' => __( '产品页', 'qiling' ),
+                    'aiModuleBundleContent' => __( '内容页', 'qiling' ),
+                    'aiModuleBundleLocal' => __( '本地门店', 'qiling' ),
+                    'aiModuleBundleClear' => __( '清空', 'qiling' ),
+                    'aiModuleBundleApplied' => __( '已选择 %d 个候选模块。', 'qiling' ),
+                    'aiModuleBundleCleared' => __( '已清空候选模块。', 'qiling' ),
+                    'aiModuleBundleEmpty' => __( '没有找到适合该组合的候选模块，请手动选择。', 'qiling' ),
+                    'aiReadinessTitle'  => __( '生成前自检', 'qiling' ),
+                    'aiReadinessReady'  => __( '可以生成草稿', 'qiling' ),
+                    'aiReadinessBlocking' => __( '%d 项需要处理', 'qiling' ),
+                    'aiReadinessWarning'=> __( '%d 项建议确认', 'qiling' ),
+                    'aiReadinessPrompt' => __( '需求', 'qiling' ),
+                    'aiReadinessPromptOk' => __( '已输入 %d 字', 'qiling' ),
+                    'aiReadinessPromptShort' => __( '建议再补充目标、人群和风格。', 'qiling' ),
+                    'aiReadinessPromptMissing' => __( '还没填写装修需求。', 'qiling' ),
+                    'aiReadinessModules'=> __( '模块', 'qiling' ),
+                    'aiReadinessModulesMissing' => __( '还没选择候选模块。', 'qiling' ),
+                    'aiReadinessConnection' => __( '连接', 'qiling' ),
+                    'aiReadinessConnectionDefault' => __( '将使用后台默认连接。', 'qiling' ),
+                    'aiReadinessModel'  => __( '模型', 'qiling' ),
+                    'aiReadinessModelDefault' => __( '将使用连接默认模型。', 'qiling' ),
+                    'aiReadinessPending'=> __( '待应用', 'qiling' ),
+                    'aiReadinessPendingExists' => __( '已有生成结果待应用或放弃。', 'qiling' ),
+                    'aiReadinessPendingEmpty' => __( '当前没有待应用结果。', 'qiling' ),
+                    'aiReviewTitle'     => __( '应用前验收', 'qiling' ),
+                    'aiReviewReady'     => __( '可以应用', 'qiling' ),
+                    'aiReviewWarning'   => __( '%d 项建议确认', 'qiling' ),
+                    'aiReviewError'     => __( '%d 项需要处理', 'qiling' ),
+                    'aiReviewResult'    => __( '结果', 'qiling' ),
+                    'aiReviewResultOk'  => __( 'AI 结果结构完整。', 'qiling' ),
+                    'aiReviewResultInvalid' => __( '结果不完整，建议放弃后重试。', 'qiling' ),
+                    'aiReviewModuleStructure' => __( '模块结构', 'qiling' ),
+                    'aiReviewModuleCountOk' => __( '已生成 %d 个模块。', 'qiling' ),
+                    'aiReviewModuleMissing' => __( '未生成可用模块。', 'qiling' ),
+                    'aiReviewModuleChange' => __( '模块变化', 'qiling' ),
+                    'aiReviewModuleChangeOk' => __( '已检测到模块变化。', 'qiling' ),
+                    'aiReviewModuleChangeNone' => __( '模块结构变化很小，请确认是否符合预期。', 'qiling' ),
+                    'aiReviewSeo'       => __( 'SEO', 'qiling' ),
+                    'aiReviewSeoOk'     => __( '已包含 SEO 标题或描述。', 'qiling' ),
+                    'aiReviewSeoMissing'=> __( '未检测到 SEO 建议，可应用后手动补充。', 'qiling' ),
+                    'aiReviewCta'       => __( '转化', 'qiling' ),
+                    'aiReviewCtaOk'     => __( '已检测到 CTA 或联系转化词。', 'qiling' ),
+                    'aiReviewCtaMissing'=> __( '未检测到明显 CTA，应用前建议确认。', 'qiling' ),
+                    'aiReviewDesign'    => __( '视觉', 'qiling' ),
+                    'aiReviewDesignOk'  => __( '已包含页面设计建议。', 'qiling' ),
+                    'aiReviewDesignInherited' => __( '未包含页面设计覆盖，将沿用当前全局视觉。', 'qiling' ),
+                    'aiReviewModuleType'=> __( '模块类型', 'qiling' ),
+                    'aiReviewModuleTypeOk' => __( '模块类型保持不变。', 'qiling' ),
+                    'aiReviewModuleTypeChanged' => __( '模块类型不一致，建议放弃后重试。', 'qiling' ),
+                    'aiReviewModuleContent' => __( '模块内容', 'qiling' ),
+                    'aiReviewModuleContentOk' => __( '已检测到字段变化。', 'qiling' ),
+                    'aiReviewModuleContentSame' => __( '未检测到明显内容变化。', 'qiling' ),
+                    'aiReviewGuardrail' => __( '安全', 'qiling' ),
+                    'aiReviewGuardrailOk' => __( '仍处于待应用状态，确认后才会修改页面。', 'qiling' ),
+                    'aiConnectionLabel'  => __( 'AI 连接', 'qiling' ),
+                    'aiModelLabel'       => __( '模型', 'qiling' ),
+                    'aiModuleLabel'      => __( '候选模块', 'qiling' ),
+                    'aiModuleSearch'     => __( '搜索模块名称...', 'qiling' ),
+                    'aiGenerate'         => __( '生成/优化当前单页', 'qiling' ),
+                    'aiOptimizeModule'   => __( '优化当前模块', 'qiling' ),
+                    'aiGenerating'       => __( '正在生成当前单页草稿，请稍候…', 'qiling' ),
+                    'aiModuleOptimizing' => __( '正在优化当前模块，请稍候…', 'qiling' ),
+                    'aiPlanning'         => __( '正在规划页面结构，请稍候…', 'qiling' ),
+                    'aiPlanFailed'       => __( '页面规划失败，请重试。', 'qiling' ),
+                    'aiPlanEmpty'        => __( '未规划出可用模块，请调整需求或候选模块后重试。', 'qiling' ),
+                    'aiPlanSuccess'      => __( '页面规划完成，开始逐模块生成…', 'qiling' ),
+                    'aiGeneratingStep'   => __( '正在逐模块生成草稿：', 'qiling' ),
+                    'aiModuleFailed'     => __( '模块生成失败，请重试。', 'qiling' ),
+                    'aiNoSelectedModule' => __( '请先在页面结构中选中一个模块，再使用当前模块优化。', 'qiling' ),
+                    'aiModuleApplySuccess' => __( '当前模块已优化，请确认预览后保存。', 'qiling' ),
+                    'aiModuleRetrying'   => __( '模块生成失败，正在自动重试：', 'qiling' ),
+                    'aiPartialApply'     => __( '生成过程中出现问题，已先应用当前拿到的草稿内容，请检查后再保存。', 'qiling' ),
+                    'aiUndoLastChange'   => __( '撤回本次修改', 'qiling' ),
+                    'aiUndoSuccess'      => __( '已撤回到修改前，请确认预览后保存。', 'qiling' ),
+                    'aiPendingReady'     => __( '草稿已生成，请查看差异后应用。', 'qiling' ),
+                    'aiPendingDiscarded' => __( '已放弃本次生成结果，页面未被改动。', 'qiling' ),
+                    'aiPendingApplyFailed' => __( '结果应用失败，请放弃后重试。', 'qiling' ),
+                    'aiPendingApplySuccess' => __( '结果已应用，请确认预览后保存。', 'qiling' ),
+                    'aiDiffModuleTitle'  => __( '模块结果待应用', 'qiling' ),
+                    'aiDiffPageTitle'    => __( '单页结果待应用', 'qiling' ),
+                    'aiDiffIntro'        => __( '草稿还没有改动页面，确认后才会应用。', 'qiling' ),
+                    'aiApplyPending'     => __( '应用 AI 结果', 'qiling' ),
+                    'aiDiscardPending'   => __( '放弃结果', 'qiling' ),
+                    'aiDiffPageTemplate' => __( '页面模板', 'qiling' ),
+                    'aiDiffHideHeader'   => __( '隐藏页面标题', 'qiling' ),
+                    'aiDiffTransparentHeader' => __( '透明头部', 'qiling' ),
+                    'aiDiffScrollReveal' => __( '滚动动效', 'qiling' ),
+                    'aiDiffSeo'          => __( 'SEO 建议', 'qiling' ),
+                    'aiDiffDesign'       => __( '页面设计', 'qiling' ),
+                    'aiDiffUnknownModule'=> __( '未知模块', 'qiling' ),
+                    'aiDiffModuleInvalid'=> __( '模块结果不完整，建议放弃后重试。', 'qiling' ),
+                    'aiDiffTargetModule' => __( '目标模块：%d', 'qiling' ),
+                    'aiDiffModuleTypeChanged' => __( '模块类型变化：', 'qiling' ),
+                    'aiDiffModuleFieldsChanged' => __( '模块字段变化：', 'qiling' ),
+                    'aiDiffModuleCount'  => __( '模块数量：', 'qiling' ),
+                    'aiDiffAddedModules' => __( '新增模块：', 'qiling' ),
+                    'aiDiffRemovedModules' => __( '删除模块：', 'qiling' ),
+                    'aiDiffReplacedModules' => __( '替换模块：', 'qiling' ),
+                    'aiDiffChangedModules' => __( '修改模块：', 'qiling' ),
+                    'aiDiffPageSettings' => __( '页面设置：', 'qiling' ),
+                    'aiDiffNoMajorChange'=> __( '没有检测到明显字段变化。', 'qiling' ),
+                    'aiDiffFieldCount'   => __( '(%d 项)', 'qiling' ),
+                    'aiDiffFieldCountPlain' => __( '%d 项', 'qiling' ),
+                    'aiMissingPrompt'    => __( '请先输入装修需求。', 'qiling' ),
+                    'aiMissingModules'   => __( '请先选择候选模块。', 'qiling' ),
+                    'aiDisallowedSitePrompt' => __( '在线 AI 整站生成已关闭。请改为生成当前单页，或选中单个模块后做模块优化。', 'qiling' ),
                     'aiTooManyModules'   => sprintf(
                         /* translators: %d: max module count */
-                        __( '候选模块最多选择 %d 个。', 'developer-starter' ),
+                        __( '候选模块最多选择 %d 个。', 'qiling' ),
                         $ai_max_modules
                     ),
-                    'aiReplaceConfirm'   => __( 'AI 会先生成待应用草稿，确认应用时会替换当前页面模块列表。是否继续？', 'developer-starter' ),
-                    'aiApplySuccess'     => __( '草稿已应用到当前页面，请确认预览后保存。', 'developer-starter' ),
-                    'aiGenerateFailed'   => __( '生成失败，请重试。', 'developer-starter' ),
+                    'aiReplaceConfirm'   => __( 'AI 会先生成待应用草稿，确认应用时会替换当前页面模块列表。是否继续？', 'qiling' ),
+                    'aiApplySuccess'     => __( '草稿已应用到当前页面，请确认预览后保存。', 'qiling' ),
+                    'aiGenerateFailed'   => __( '生成失败，请重试。', 'qiling' ),
                     'aiSelectedSuffix'   => sprintf(
                         /* translators: %d: max module count */
-                        __( '/%d', 'developer-starter' ),
+                        __( '/%d', 'qiling' ),
                         $ai_max_modules
                     ),
-                    'pageSettingsPending'=> __( '页面模板与头部设置会在保存后一起生效。', 'developer-starter' ),
-                    'snapshotHistory'    => __( '保存历史', 'developer-starter' ),
-                    'snapshotLoadFailed' => __( '保存历史加载失败', 'developer-starter' ),
-                    'snapshotEmpty'      => __( '暂无保存历史。每次保存前都会自动生成一份快照。', 'developer-starter' ),
-                    'snapshotRestore'    => __( '恢复', 'developer-starter' ),
-                    'snapshotRestoring'  => __( '正在恢复保存历史...', 'developer-starter' ),
-                    'snapshotRestoreSuccess' => __( '已恢复保存历史，正在刷新预览...', 'developer-starter' ),
-                    'snapshotRestoreFailed' => __( '恢复保存历史失败，请重试', 'developer-starter' ),
-                    'snapshotRestoreConfirm' => __( '确定恢复到这次保存前的状态吗？当前状态会先生成一份新快照。', 'developer-starter' ),
-                    'builderPayloadTooLarge' => __( '装修数据过大，请减少模块或复杂内容后再试。', 'developer-starter' ),
+                    'pageSettingsPending'=> __( '页面模板与头部设置会在保存后一起生效。', 'qiling' ),
+                    'snapshotHistory'    => __( '保存历史', 'qiling' ),
+                    'snapshotLoadFailed' => __( '保存历史加载失败', 'qiling' ),
+                    'snapshotEmpty'      => __( '暂无保存历史。每次保存前都会自动生成一份快照。', 'qiling' ),
+                    'snapshotRestore'    => __( '恢复', 'qiling' ),
+                    'snapshotRestoring'  => __( '正在恢复保存历史...', 'qiling' ),
+                    'snapshotRestoreSuccess' => __( '已恢复保存历史，正在刷新预览...', 'qiling' ),
+                    'snapshotRestoreFailed' => __( '恢复保存历史失败，请重试', 'qiling' ),
+                    'snapshotRestoreConfirm' => __( '确定恢复到这次保存前的状态吗？当前状态会先生成一份新快照。', 'qiling' ),
+                    'builderPayloadTooLarge' => __( '装修数据过大，请减少模块或复杂内容后再试。', 'qiling' ),
                     'builderTooManyModules' => sprintf(
                         /* translators: %d: max builder module count */
-                        __( '当前页面模块超过上限（最多 %d 个），请减少模块后再保存或预览。', 'developer-starter' ),
+                        __( '当前页面模块超过上限（最多 %d 个），请减少模块后再保存或预览。', 'qiling' ),
                         self::MAX_BUILDER_MODULES
                     ),
-                    'builderModuleDataTooLarge' => __( '某个模块的数据过大，请减少该模块中的列表项、图片或长文本后再试。', 'developer-starter' ),
+                    'builderModuleDataTooLarge' => __( '某个模块的数据过大，请减少该模块中的列表项、图片或长文本后再试。', 'qiling' ),
                 ),
             )
         );
@@ -871,56 +871,56 @@ class Frontend_Builder {
         $ai_builder_enabled = $ai_builder_globally_available && ! $shop_only;
         ?>
         <div id="qiling-frontend-builder" class="qfb-root">
-            <button type="button" id="qfb-toggle" class="qfb-toggle" aria-label="<?php esc_attr_e( '展开/收起前台装修面板', 'developer-starter' ); ?>">
+            <button type="button" id="qfb-toggle" class="qfb-toggle" aria-label="<?php esc_attr_e( '展开/收起前台装修面板', 'qiling' ); ?>">
                 <span class="dashicons dashicons-admin-customizer"></span>
             </button>
 
             <aside class="qfb-panel qfb-panel-left" id="qfb-panel">
                 <header class="qfb-header">
                     <div class="qfb-header-title">
-                        <strong><?php esc_html_e( '启灵前台装修', 'developer-starter' ); ?></strong>
+                        <strong><?php esc_html_e( '启灵前台装修', 'qiling' ); ?></strong>
                         <span class="qfb-post-id">#<?php echo esc_html( (string) $post_id ); ?></span>
                     </div>
                     <div class="qfb-header-actions">
-                        <button type="button" class="button button-primary button-small qfb-save-btn" id="qfb-save"><?php esc_html_e( '保存', 'developer-starter' ); ?></button>
-                        <button type="button" class="button button-small qfb-snapshots-btn" id="qfb-snapshots-toggle"><?php esc_html_e( '保存历史', 'developer-starter' ); ?></button>
+                        <button type="button" class="button button-primary button-small qfb-save-btn" id="qfb-save"><?php esc_html_e( '保存', 'qiling' ); ?></button>
+                        <button type="button" class="button button-small qfb-snapshots-btn" id="qfb-snapshots-toggle"><?php esc_html_e( '保存历史', 'qiling' ); ?></button>
                         <?php if ( $ai_builder_enabled ) : ?>
-                            <button type="button" class="button button-small qfb-ai-btn" id="qfb-ai-toggle"><?php esc_html_e( 'AI装修', 'developer-starter' ); ?></button>
+                            <button type="button" class="button button-small qfb-ai-btn" id="qfb-ai-toggle"><?php esc_html_e( 'AI装修', 'qiling' ); ?></button>
                         <?php endif; ?>
-                        <a class="button button-small qfb-exit-btn" href="<?php echo esc_url( $exit_url ); ?>"><?php esc_html_e( '退出', 'developer-starter' ); ?></a>
+                        <a class="button button-small qfb-exit-btn" href="<?php echo esc_url( $exit_url ); ?>"><?php esc_html_e( '退出', 'qiling' ); ?></a>
                     </div>
                 </header>
 
-                <div class="qfb-status" id="qfb-status"><?php esc_html_e( '当前内容已保存', 'developer-starter' ); ?></div>
+                <div class="qfb-status" id="qfb-status"><?php esc_html_e( '当前内容已保存', 'qiling' ); ?></div>
                 <div class="qfb-snapshots" id="qfb-snapshots-panel" style="display:none;"></div>
                 <?php if ( $shop_only && $ai_builder_globally_available ) : ?>
-                    <div class="qfb-status is-warning"><?php esc_html_e( '当前积分商城页面暂不支持 AI 装修，请使用模块库手动搭建页面。', 'developer-starter' ); ?></div>
+                    <div class="qfb-status is-warning"><?php esc_html_e( '当前积分商城页面暂不支持 AI 装修，请使用模块库手动搭建页面。', 'qiling' ); ?></div>
                     <?php endif; ?>
 
                 <div class="qfb-columns">
                     <section class="qfb-column qfb-column-library">
-                        <h3><?php esc_html_e( '模块库', 'developer-starter' ); ?></h3>
-                        <div class="qfb-preview-bar" id="qfb-preview-tools" aria-label="<?php esc_attr_e( '预览尺寸', 'developer-starter' ); ?>">
-                            <span><?php esc_html_e( '预览', 'developer-starter' ); ?></span>
-                            <button type="button" class="qfb-preview-mode is-active" data-preview-mode="desktop"><?php esc_html_e( '桌面', 'developer-starter' ); ?></button>
-                            <button type="button" class="qfb-preview-mode" data-preview-mode="tablet"><?php esc_html_e( '平板', 'developer-starter' ); ?></button>
-                            <button type="button" class="qfb-preview-mode" data-preview-mode="mobile"><?php esc_html_e( '手机', 'developer-starter' ); ?></button>
+                        <h3><?php esc_html_e( '模块库', 'qiling' ); ?></h3>
+                        <div class="qfb-preview-bar" id="qfb-preview-tools" aria-label="<?php esc_attr_e( '预览尺寸', 'qiling' ); ?>">
+                            <span><?php esc_html_e( '预览', 'qiling' ); ?></span>
+                            <button type="button" class="qfb-preview-mode is-active" data-preview-mode="desktop"><?php esc_html_e( '桌面', 'qiling' ); ?></button>
+                            <button type="button" class="qfb-preview-mode" data-preview-mode="tablet"><?php esc_html_e( '平板', 'qiling' ); ?></button>
+                            <button type="button" class="qfb-preview-mode" data-preview-mode="mobile"><?php esc_html_e( '手机', 'qiling' ); ?></button>
                         </div>
                         <div id="qfb-design-summary" class="qfb-design-summary"></div>
                         <div class="qfb-library-block qfb-library-block-my">
-                            <div class="qfb-block-title"><?php esc_html_e( '我的模版库（后台同步）', 'developer-starter' ); ?></div>
+                            <div class="qfb-block-title"><?php esc_html_e( '我的模版库（后台同步）', 'qiling' ); ?></div>
                             <ul id="qfb-my-library-list" class="qfb-list qfb-my-library-list"></ul>
                         </div>
                         <div class="qfb-library-block qfb-library-block-all">
-                            <div class="qfb-block-title"><?php esc_html_e( '全部模块', 'developer-starter' ); ?></div>
+                            <div class="qfb-block-title"><?php esc_html_e( '全部模块', 'qiling' ); ?></div>
                             <div id="qfb-library-filters" class="qfb-library-filters"></div>
-                            <input type="search" id="qfb-library-search" class="qfb-search" placeholder="<?php esc_attr_e( '搜索模块...', 'developer-starter' ); ?>" />
+                            <input type="search" id="qfb-library-search" class="qfb-search" placeholder="<?php esc_attr_e( '搜索模块...', 'qiling' ); ?>" />
                             <ul id="qfb-library-list" class="qfb-list qfb-library-list"></ul>
                         </div>
                     </section>
 
                     <section class="qfb-column qfb-column-structure">
-                        <h3><?php esc_html_e( '页面结构（可拖拽）', 'developer-starter' ); ?></h3>
+                        <h3><?php esc_html_e( '页面结构（可拖拽）', 'qiling' ); ?></h3>
                         <ul id="qfb-page-list" class="qfb-list qfb-page-list"></ul>
                     </section>
                 </div>
@@ -929,14 +929,14 @@ class Frontend_Builder {
             <aside class="qfb-panel qfb-panel-right">
                 <header class="qfb-header qfb-settings-header">
                     <div class="qfb-header-title">
-                        <strong id="qfb-right-title"><?php esc_html_e( '模块设置', 'developer-starter' ); ?></strong>
-                        <span class="qfb-post-id" id="qfb-right-desc"><?php esc_html_e( '点击左侧模块或页面模块进行编辑', 'developer-starter' ); ?></span>
+                        <strong id="qfb-right-title"><?php esc_html_e( '模块设置', 'qiling' ); ?></strong>
+                        <span class="qfb-post-id" id="qfb-right-desc"><?php esc_html_e( '点击左侧模块或页面模块进行编辑', 'qiling' ); ?></span>
                     </div>
                 </header>
                 <div class="qfb-settings-pane">
                     <section class="qfb-column qfb-column-settings">
                         <div id="qfb-settings" class="qfb-settings-empty">
-                            <?php esc_html_e( '请选择左侧模块后进行设置', 'developer-starter' ); ?>
+                            <?php esc_html_e( '请选择左侧模块后进行设置', 'qiling' ); ?>
                         </div>
                         <div id="qfb-ai-pane" class="qfb-ai-pane" style="display:none;"></div>
                     </section>
@@ -1012,7 +1012,7 @@ class Frontend_Builder {
      */
     private function get_page_template_choices() {
         $choices = array(
-            'default' => __( '默认模板', 'developer-starter' ),
+            'default' => __( '默认模板', 'qiling' ),
         );
 
         $theme_templates = wp_get_theme()->get_page_templates( null, 'page' );
@@ -1034,7 +1034,7 @@ class Frontend_Builder {
      */
     private function get_footer_preset_choices() {
         $choices = array(
-            '' => __( '不指定预设', 'developer-starter' ),
+            '' => __( '不指定预设', 'qiling' ),
         );
 
         if ( ! function_exists( 'developer_starter_get_page_visual_skins' ) ) {
@@ -1052,7 +1052,7 @@ class Frontend_Builder {
                 : $skin_key;
             $choices[ $skin_key ] = sprintf(
                 /* translators: %s: visual skin label */
-                __( '%s页脚', 'developer-starter' ),
+                __( '%s页脚', 'qiling' ),
                 $label
             );
         }
@@ -1066,7 +1066,7 @@ class Frontend_Builder {
                 $label = ! empty( $preset['label'] ) ? wp_strip_all_tags( (string) $preset['label'] ) : $preset_key;
                 $choices[ $preset_key ] = sprintf(
                     /* translators: %s: user-created visual preset label */
-                    __( '我的预设：%s', 'developer-starter' ),
+                    __( '我的预设：%s', 'qiling' ),
                     $label
                 );
             }
@@ -1080,7 +1080,7 @@ class Frontend_Builder {
      */
     private function get_page_visual_preset_choices() {
         $choices = array(
-            '' => __( '按当前页面模板自动匹配', 'developer-starter' ),
+            '' => __( '按当前页面模板自动匹配', 'qiling' ),
         );
 
         if ( function_exists( 'developer_starter_get_page_visual_style_presets' ) ) {
@@ -1222,12 +1222,12 @@ class Frontend_Builder {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 || ! self::current_user_can_use_builder( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         $module_id = isset( $_POST['module_id'] ) ? sanitize_key( wp_unslash( (string) $_POST['module_id'] ) ) : '';
         if ( $module_id === '' ) {
-            wp_send_json_error( array( 'message' => __( '模块ID无效', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '模块ID无效', 'qiling' ) ), 400 );
         }
         if ( $this->get_qilingshop_service()->is_shop_module_type( $module_id ) ) {
             $this->get_qilingshop_service()->bootstrap_modules( $post_id );
@@ -1236,7 +1236,7 @@ class Frontend_Builder {
         $manager = Module_Manager::get_instance();
         $module = $manager->get_module( $module_id );
         if ( ! $module ) {
-            wp_send_json_error( array( 'message' => __( '模块不存在', 'developer-starter' ) ), 404 );
+            wp_send_json_error( array( 'message' => __( '模块不存在', 'qiling' ) ), 404 );
         }
 
         wp_send_json_success( $this->get_modules_service()->build_module_schema_payload( $module_id, $module ) );
@@ -1253,7 +1253,7 @@ class Frontend_Builder {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 || ! self::current_user_can_use_builder( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         $template_id = isset( $_POST['template_id'] ) ? absint( wp_unslash( (string) $_POST['template_id'] ) ) : 0;
@@ -1280,17 +1280,17 @@ class Frontend_Builder {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 || ! self::current_user_can_use_builder( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         $modules_raw = isset( $_POST['modules'] ) ? wp_unslash( (string) $_POST['modules'] ) : '';
         if ( $modules_raw === '' ) {
-            wp_send_json_error( array( 'message' => __( '保存数据为空', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '保存数据为空', 'qiling' ) ), 400 );
         }
 
         $modules = json_decode( $modules_raw, true );
         if ( ! is_array( $modules ) ) {
-            wp_send_json_error( array( 'message' => __( '数据格式错误', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '数据格式错误', 'qiling' ) ), 400 );
         }
 
         $payload_check = $this->validate_builder_modules_payload( $modules_raw, $modules );
@@ -1329,7 +1329,7 @@ class Frontend_Builder {
 
         wp_send_json_success(
             array(
-                'message'  => __( '模块保存成功', 'developer-starter' ),
+                'message'  => __( '模块保存成功', 'qiling' ),
                 'snapshot' => $snapshot_result,
             )
         );
@@ -1346,7 +1346,7 @@ class Frontend_Builder {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 || ! self::current_user_can_use_builder( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         wp_send_json_success(
@@ -1367,7 +1367,7 @@ class Frontend_Builder {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 || ! self::current_user_can_use_builder( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         $snapshot_id = isset( $_POST['snapshot_id'] ) ? sanitize_text_field( wp_unslash( (string) $_POST['snapshot_id'] ) ) : '';
@@ -1379,7 +1379,7 @@ class Frontend_Builder {
         $data_source = isset( $snapshot['data_source'] ) ? sanitize_key( (string) $snapshot['data_source'] ) : 'theme';
         $current_source = $this->get_qilingshop_service()->is_builder_page( $post_id ) ? 'qilingshop' : 'theme';
         if ( $data_source !== $current_source ) {
-            wp_send_json_error( array( 'message' => __( '该历史版本与当前页面不匹配，无法恢复。', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '该历史版本与当前页面不匹配，无法恢复。', 'qiling' ) ), 400 );
         }
 
         $current_modules = $this->get_builder_modules_for_post( $post_id, $current_source );
@@ -1403,7 +1403,7 @@ class Frontend_Builder {
 
         wp_send_json_success(
             array(
-                'message'  => __( '保存历史已恢复', 'developer-starter' ),
+                'message'  => __( '保存历史已恢复', 'qiling' ),
                 'snapshot' => $restore_guard_snapshot,
             )
         );
@@ -1420,26 +1420,26 @@ class Frontend_Builder {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 || ! self::current_user_can_use_builder( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         $module_id = isset( $_POST['module_id'] ) ? sanitize_key( wp_unslash( (string) $_POST['module_id'] ) ) : '';
         if ( $module_id === '' ) {
-            wp_send_json_error( array( 'message' => __( '模块ID无效', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '模块ID无效', 'qiling' ) ), 400 );
         }
         if ( $this->get_qilingshop_service()->is_shop_module_type( $module_id ) ) {
             $this->get_qilingshop_service()->bootstrap_modules( $post_id );
         }
 
         if ( ! Module_Manager::get_instance()->get_module( $module_id ) ) {
-            wp_send_json_error( array( 'message' => __( '模块不存在', 'developer-starter' ) ), 404 );
+            wp_send_json_error( array( 'message' => __( '模块不存在', 'qiling' ) ), 404 );
         }
 
         $index = isset( $_POST['index'] ) ? absint( wp_unslash( (string) $_POST['index'] ) ) : 0;
 
         $module_data_raw = isset( $_POST['module_data'] ) ? wp_unslash( (string) $_POST['module_data'] ) : '';
         if ( strlen( $module_data_raw ) > self::MAX_BUILDER_MODULE_DATA_BYTES ) {
-            wp_send_json_error( array( 'message' => __( '模块数据过大，请减少该模块中的列表项、图片或长文本后再试。', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '模块数据过大，请减少该模块中的列表项、图片或长文本后再试。', 'qiling' ) ), 400 );
         }
         $module_data = array();
         if ( $module_data_raw !== '' ) {
@@ -1474,17 +1474,17 @@ class Frontend_Builder {
 
         $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( (string) $_POST['post_id'] ) ) : 0;
         if ( $post_id <= 0 || ! self::current_user_can_use_builder( $post_id ) ) {
-            wp_send_json_error( array( 'message' => __( '权限不足', 'developer-starter' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
         }
 
         $modules_raw = isset( $_POST['modules'] ) ? wp_unslash( (string) $_POST['modules'] ) : '';
         if ( $modules_raw === '' ) {
-            wp_send_json_error( array( 'message' => __( '预览数据为空', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '预览数据为空', 'qiling' ) ), 400 );
         }
 
         $modules = json_decode( $modules_raw, true );
         if ( ! is_array( $modules ) ) {
-            wp_send_json_error( array( 'message' => __( '预览数据格式错误', 'developer-starter' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( '预览数据格式错误', 'qiling' ) ), 400 );
         }
 
         $payload_check = $this->validate_builder_modules_payload( $modules_raw, $modules );
@@ -1542,7 +1542,7 @@ class Frontend_Builder {
      */
     private function validate_builder_modules_payload( $raw_payload, $modules ) {
         if ( strlen( (string) $raw_payload ) > self::MAX_BUILDER_PAYLOAD_BYTES ) {
-            return new \WP_Error( 'builder_payload_too_large', __( '装修数据过大，请减少模块或复杂内容后再试。', 'developer-starter' ) );
+            return new \WP_Error( 'builder_payload_too_large', __( '装修数据过大，请减少模块或复杂内容后再试。', 'qiling' ) );
         }
 
         if ( count( $modules ) > self::MAX_BUILDER_MODULES ) {
@@ -1550,7 +1550,7 @@ class Frontend_Builder {
                 'builder_too_many_modules',
                 sprintf(
                     /* translators: %d: max builder module count */
-                    __( '当前页面模块超过上限（最多 %d 个），请减少模块后再保存或预览。', 'developer-starter' ),
+                    __( '当前页面模块超过上限（最多 %d 个），请减少模块后再保存或预览。', 'qiling' ),
                     self::MAX_BUILDER_MODULES
                 )
             );
@@ -1572,7 +1572,7 @@ class Frontend_Builder {
 
             $module_json = wp_json_encode( $module_data );
             if ( is_string( $module_json ) && strlen( $module_json ) > self::MAX_BUILDER_MODULE_DATA_BYTES ) {
-                return new \WP_Error( 'builder_module_data_too_large', __( '某个模块的数据过大，请减少该模块中的列表项、图片或长文本后再试。', 'developer-starter' ) );
+                return new \WP_Error( 'builder_module_data_too_large', __( '某个模块的数据过大，请减少该模块中的列表项、图片或长文本后再试。', 'qiling' ) );
             }
         }
 

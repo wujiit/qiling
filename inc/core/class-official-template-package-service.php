@@ -167,22 +167,22 @@ class Official_Template_Package_Service {
 	public function load_package_for_template( $template ) {
 		$template = $this->normalize_template_slug( $template );
 		if ( '' === $template || ! isset( $this->package_map[ $template ] ) ) {
-			return new \WP_Error( 'unsupported_template_package', __( '该模板没有官方 JSON 页面包。', 'developer-starter' ) );
+			return new \WP_Error( 'unsupported_template_package', __( '该模板没有官方 JSON 页面包。', 'qiling' ) );
 		}
 
 		$path = $this->get_package_path( $template );
 		if ( ! is_readable( $path ) ) {
-			return new \WP_Error( 'missing_template_package', __( '官方 JSON 页面包文件不存在或不可读。', 'developer-starter' ) );
+			return new \WP_Error( 'missing_template_package', __( '官方 JSON 页面包文件不存在或不可读。', 'qiling' ) );
 		}
 
 		$raw_json = file_get_contents( $path );
 		if ( ! is_string( $raw_json ) || '' === trim( $raw_json ) ) {
-			return new \WP_Error( 'empty_template_package', __( '官方 JSON 页面包内容为空。', 'developer-starter' ) );
+			return new \WP_Error( 'empty_template_package', __( '官方 JSON 页面包内容为空。', 'qiling' ) );
 		}
 
 		$decoded = json_decode( $raw_json, true );
 		if ( JSON_ERROR_NONE !== json_last_error() || ! is_array( $decoded ) ) {
-			return new \WP_Error( 'invalid_template_package', __( '官方 JSON 页面包格式错误。', 'developer-starter' ) );
+			return new \WP_Error( 'invalid_template_package', __( '官方 JSON 页面包格式错误。', 'qiling' ) );
 		}
 
 		$single_page_service = new Single_Page_Package_Service();
@@ -223,13 +223,13 @@ class Official_Template_Package_Service {
 			'id'             => ! empty( $metadata['id'] ) ? sanitize_key( (string) $metadata['id'] ) : $this->get_package_id( $template ),
 			'label'          => ! empty( $metadata['label'] ) ? sanitize_text_field( (string) $metadata['label'] ) : ( ! empty( $package['title'] ) ? sanitize_text_field( (string) $package['title'] ) : '' ),
 			'source'         => 'official_json',
-			'source_label'   => __( '启灵官方 JSON', 'developer-starter' ),
+			'source_label'   => __( '启灵官方 JSON', 'qiling' ),
 			'category'       => $category,
 			'category_label' => ! empty( $metadata['category_label'] ) ? sanitize_text_field( (string) $metadata['category_label'] ) : $this->get_category_label( $category ),
 			'industry'       => $industry,
 			'industry_label' => $this->get_industry_label( $industry ),
-			'scenario'       => ! empty( $metadata['scenario'] ) ? sanitize_text_field( (string) $metadata['scenario'] ) : __( '行业官网页面', 'developer-starter' ),
-			'description'    => ! empty( $metadata['description'] ) ? sanitize_textarea_field( (string) $metadata['description'] ) : __( '由启灵官方 JSON 页面包提供模块、图片、页面设置和 SEO 初始内容。', 'developer-starter' ),
+			'scenario'       => ! empty( $metadata['scenario'] ) ? sanitize_text_field( (string) $metadata['scenario'] ) : __( '行业官网页面', 'qiling' ),
+			'description'    => ! empty( $metadata['description'] ) ? sanitize_textarea_field( (string) $metadata['description'] ) : __( '由启灵官方 JSON 页面包提供模块、图片、页面设置和 SEO 初始内容。', 'qiling' ),
 			'badges'         => $badges,
 			'order'          => isset( $metadata['order'] ) ? absint( $metadata['order'] ) : 500,
 			'thumbnail'      => ! empty( $metadata['thumbnail'] ) ? esc_url_raw( (string) $metadata['thumbnail'] ) : '',
@@ -272,7 +272,7 @@ class Official_Template_Package_Service {
 
 		$package_modules = isset( $package['modules'] ) && is_array( $package['modules'] ) ? $package['modules'] : array();
 		if ( empty( $package_modules ) ) {
-			return new \WP_Error( 'empty_template_package_modules', __( '官方 JSON 页面包没有可写入的模块。', 'developer-starter' ) );
+			return new \WP_Error( 'empty_template_package_modules', __( '官方 JSON 页面包没有可写入的模块。', 'qiling' ) );
 		}
 
 		if ( function_exists( 'developer_starter_normalize_modules_meta_types' ) ) {
@@ -582,7 +582,7 @@ class Official_Template_Package_Service {
 	 */
 	private function get_package_path( $template ) {
 		$file = isset( $this->package_map[ $template ] ) ? $this->package_map[ $template ] : '';
-		return trailingslashit( DEVELOPER_STARTER_INC ) . trailingslashit( $this->package_dir ) . $file;
+		return trailingslashit( QILING_INC ) . trailingslashit( $this->package_dir ) . $file;
 	}
 
 	/**
@@ -639,7 +639,7 @@ class Official_Template_Package_Service {
 			'category_label' => ! empty( $metadata['category_label'] ) && is_scalar( $metadata['category_label'] ) ? sanitize_text_field( (string) $metadata['category_label'] ) : $this->get_category_label( $category ),
 			'industry'       => $industry,
 			'industry_label' => $this->get_industry_label( $industry ),
-			'scenario'       => ! empty( $metadata['scenario'] ) && is_scalar( $metadata['scenario'] ) ? sanitize_text_field( (string) $metadata['scenario'] ) : __( '行业官网页面', 'developer-starter' ),
+			'scenario'       => ! empty( $metadata['scenario'] ) && is_scalar( $metadata['scenario'] ) ? sanitize_text_field( (string) $metadata['scenario'] ) : __( '行业官网页面', 'qiling' ),
 			'description'    => ! empty( $metadata['description'] ) && is_scalar( $metadata['description'] ) ? sanitize_textarea_field( (string) $metadata['description'] ) : '',
 			'badges'         => $badges,
 			'order'          => isset( $metadata['order'] ) && is_scalar( $metadata['order'] ) ? absint( $metadata['order'] ) : 500,
@@ -708,11 +708,11 @@ class Official_Template_Package_Service {
 	 */
 	private function get_category_label( $category ) {
 		$labels = array(
-			'industry' => __( '行业官网', 'developer-starter' ),
-			'resource' => __( '数字资源', 'developer-starter' ),
+			'industry' => __( '行业官网', 'qiling' ),
+			'resource' => __( '数字资源', 'qiling' ),
 		);
 
-		return isset( $labels[ $category ] ) ? $labels[ $category ] : __( '其他', 'developer-starter' );
+		return isset( $labels[ $category ] ) ? $labels[ $category ] : __( '其他', 'qiling' );
 	}
 
 	/**

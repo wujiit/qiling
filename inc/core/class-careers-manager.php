@@ -41,8 +41,9 @@ class Careers_Manager {
 
     public function __construct() {
         global $wpdb;
-        $this->positions_table = $wpdb->prefix . 'ds_careers_positions';
-        $this->applications_table = $wpdb->prefix . 'ds_careers_applications';
+        $this->positions_table = $wpdb->prefix . 'qiling_careers_positions';
+        $this->applications_table = $wpdb->prefix . 'qiling_careers_applications';
+        $this->maybe_migrate_legacy_tables();
         
         // 数据表创建
         add_action( 'after_switch_theme', array( $this, 'install_tables' ), 10, 0 );
@@ -102,7 +103,31 @@ class Careers_Manager {
     /**
      * 创建数据表
      */
+    
+    /**
+     * 自动平滑重命名历史表，保留历史招聘职位与简历投递数据。
+     */
+    private function maybe_migrate_legacy_tables() {
+        global $wpdb;
+        $old_pos = $wpdb->prefix . 'ds_careers_positions';
+        $new_pos = $this->positions_table;
+        if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $old_pos ) ) === $old_pos ) {
+            if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_pos ) ) !== $new_pos ) {
+                $wpdb->query( "RENAME TABLE `{$old_pos}` TO `{$new_pos}`" );
+            }
+        }
+
+        $old_app = $wpdb->prefix . 'ds_careers_applications';
+        $new_app = $this->applications_table;
+        if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $old_app ) ) === $old_app ) {
+            if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_app ) ) !== $new_app ) {
+                $wpdb->query( "RENAME TABLE `{$old_app}` TO `{$new_app}`" );
+            }
+        }
+    }
+
     public function create_tables() {
+        $this->maybe_migrate_legacy_tables();
         Database_Schema_Migration_Service::apply_schema( $this->get_table_schemas() );
 
         // 插入默认职位数据
@@ -171,47 +196,47 @@ class Careers_Manager {
         
         $default_positions = array(
             array(
-                'title' => __( '高级PHP开发工程师', 'developer-starter' ),
-                'department' => __( '技术部', 'developer-starter' ),
-                'location' => __( '北京', 'developer-starter' ),
+                'title' => __( '高级PHP开发工程师', 'qiling' ),
+                'department' => __( '技术部', 'qiling' ),
+                'location' => __( '北京', 'qiling' ),
                 'job_type' => 'fulltime',
                 'salary' => '15-25K',
                 'category' => 'tech',
-                'description' => __( "负责公司核心业务系统的设计和开发\n参与技术架构设计，保证系统高可用性和扩展性\n编写技术文档，进行代码审查\n指导初级开发人员，参与技术分享", 'developer-starter' ),
-                'requirements' => __( "本科及以上学历，计算机相关专业\n5年以上PHP开发经验，熟悉Laravel/ThinkPHP框架\n熟悉MySQL、Redis等数据库，具备性能优化经验\n良好的沟通能力和团队协作精神", 'developer-starter' ),
+                'description' => __( "负责公司核心业务系统的设计和开发\n参与技术架构设计，保证系统高可用性和扩展性\n编写技术文档，进行代码审查\n指导初级开发人员，参与技术分享", 'qiling' ),
+                'requirements' => __( "本科及以上学历，计算机相关专业\n5年以上PHP开发经验，熟悉Laravel/ThinkPHP框架\n熟悉MySQL、Redis等数据库，具备性能优化经验\n良好的沟通能力和团队协作精神", 'qiling' ),
                 'sort_order' => 1,
             ),
             array(
-                'title' => __( 'UI/UX设计师', 'developer-starter' ),
-                'department' => __( '产品部', 'developer-starter' ),
-                'location' => __( '上海', 'developer-starter' ),
+                'title' => __( 'UI/UX设计师', 'qiling' ),
+                'department' => __( '产品部', 'qiling' ),
+                'location' => __( '上海', 'qiling' ),
                 'job_type' => 'fulltime',
                 'salary' => '12-20K',
                 'category' => 'product',
-                'description' => __( "负责公司产品的UI/UX设计工作\n制定设计规范，维护设计系统\n与产品、开发团队紧密协作\n跟踪国际设计趋势，持续优化用户体验", 'developer-starter' ),
-                'requirements' => __( "设计相关专业本科及以上学历\n3年以上UI/UX设计经验，有B端产品设计经验优先\n精通Figma、Sketch等设计工具\n具备良好的审美和设计感", 'developer-starter' ),
+                'description' => __( "负责公司产品的UI/UX设计工作\n制定设计规范，维护设计系统\n与产品、开发团队紧密协作\n跟踪国际设计趋势，持续优化用户体验", 'qiling' ),
+                'requirements' => __( "设计相关专业本科及以上学历\n3年以上UI/UX设计经验，有B端产品设计经验优先\n精通Figma、Sketch等设计工具\n具备良好的审美和设计感", 'qiling' ),
                 'sort_order' => 2,
             ),
             array(
-                'title' => __( '新媒体运营专员', 'developer-starter' ),
-                'department' => __( '市场部', 'developer-starter' ),
-                'location' => __( '深圳', 'developer-starter' ),
+                'title' => __( '新媒体运营专员', 'qiling' ),
+                'department' => __( '市场部', 'qiling' ),
+                'location' => __( '深圳', 'qiling' ),
                 'job_type' => 'fulltime',
                 'salary' => '8-15K',
                 'category' => 'market',
-                'description' => __( "负责公司新媒体账号的日常运营\n策划并执行内容营销活动\n分析运营数据，优化运营策略\n关注行业动态，挖掘热点话题", 'developer-starter' ),
-                'requirements' => __( "本科及以上学历，市场营销、新闻传播相关专业\n2年以上新媒体运营经验\n优秀的文案撰写能力和创意策划能力\n熟悉微信、微博、抖音等主流平台规则", 'developer-starter' ),
+                'description' => __( "负责公司新媒体账号的日常运营\n策划并执行内容营销活动\n分析运营数据，优化运营策略\n关注行业动态，挖掘热点话题", 'qiling' ),
+                'requirements' => __( "本科及以上学历，市场营销、新闻传播相关专业\n2年以上新媒体运营经验\n优秀的文案撰写能力和创意策划能力\n熟悉微信、微博、抖音等主流平台规则", 'qiling' ),
                 'sort_order' => 3,
             ),
             array(
-                'title' => __( '人力资源主管', 'developer-starter' ),
-                'department' => __( '行政部', 'developer-starter' ),
-                'location' => __( '北京', 'developer-starter' ),
+                'title' => __( '人力资源主管', 'qiling' ),
+                'department' => __( '行政部', 'qiling' ),
+                'location' => __( '北京', 'qiling' ),
                 'job_type' => 'fulltime',
                 'salary' => '12-18K',
                 'category' => 'admin',
-                'description' => __( "负责公司招聘工作的全流程管理\n维护和拓展招聘渠道\n参与人力资源政策制定和执行\n负责员工关系管理和企业文化建设", 'developer-starter' ),
-                'requirements' => __( "本科及以上学历，人力资源管理相关专业\n3年以上人力资源工作经验\n熟悉劳动法律法规\n优秀的沟通协调能力和抗压能力", 'developer-starter' ),
+                'description' => __( "负责公司招聘工作的全流程管理\n维护和拓展招聘渠道\n参与人力资源政策制定和执行\n负责员工关系管理和企业文化建设", 'qiling' ),
+                'requirements' => __( "本科及以上学历，人力资源管理相关专业\n3年以上人力资源工作经验\n熟悉劳动法律法规\n优秀的沟通协调能力和抗压能力", 'qiling' ),
                 'sort_order' => 4,
             ),
         );
@@ -222,21 +247,21 @@ class Careers_Manager {
         
         // 设置默认选项
         $default_options = array(
-            'hero_title' => __( '加入我们', 'developer-starter' ),
-            'hero_subtitle' => __( '与优秀的团队一起，创造无限可能。我们期待有才华的你加入！', 'developer-starter' ),
+            'hero_title' => __( '加入我们', 'qiling' ),
+            'hero_subtitle' => __( '与优秀的团队一起，创造无限可能。我们期待有才华的你加入！', 'qiling' ),
             'stat_1_number' => '50+',
-            'stat_1_label' => __( '团队成员', 'developer-starter' ),
+            'stat_1_label' => __( '团队成员', 'qiling' ),
             'stat_2_number' => '10+',
-            'stat_2_label' => __( '开放职位', 'developer-starter' ),
+            'stat_2_label' => __( '开放职位', 'qiling' ),
             'stat_3_number' => '5个',
-            'stat_3_label' => __( '办公城市', 'developer-starter' ),
+            'stat_3_label' => __( '办公城市', 'qiling' ),
             'benefits' => array(
-                array( 'icon' => 'money', 'title' => __( '有竞争力的薪资', 'developer-starter' ), 'desc' => __( '行业领先的薪酬体系，绩效奖金、年终奖金、项目分红', 'developer-starter' ) ),
-                array( 'icon' => 'shield', 'title' => __( '五险一金', 'developer-starter' ), 'desc' => __( '足额缴纳五险一金，额外补充商业医疗保险', 'developer-starter' ) ),
-                array( 'icon' => 'book', 'title' => __( '培训发展', 'developer-starter' ), 'desc' => __( '完善的培训体系，行业大会、技术分享、读书基金', 'developer-starter' ) ),
-                array( 'icon' => 'calendar', 'title' => __( '带薪年假', 'developer-starter' ), 'desc' => __( '入职即享带薪年假，额外享有生日假、婚假等福利假期', 'developer-starter' ) ),
-                array( 'icon' => 'users', 'title' => __( '团队活动', 'developer-starter' ), 'desc' => __( '定期团建活动，下午茶、生日会、年度旅游', 'developer-starter' ) ),
-                array( 'icon' => 'trending', 'title' => __( '晋升通道', 'developer-starter' ), 'desc' => __( '透明的晋升机制，技术线与管理线双通道发展', 'developer-starter' ) ),
+                array( 'icon' => 'money', 'title' => __( '有竞争力的薪资', 'qiling' ), 'desc' => __( '行业领先的薪酬体系，绩效奖金、年终奖金、项目分红', 'qiling' ) ),
+                array( 'icon' => 'shield', 'title' => __( '五险一金', 'qiling' ), 'desc' => __( '足额缴纳五险一金，额外补充商业医疗保险', 'qiling' ) ),
+                array( 'icon' => 'book', 'title' => __( '培训发展', 'qiling' ), 'desc' => __( '完善的培训体系，行业大会、技术分享、读书基金', 'qiling' ) ),
+                array( 'icon' => 'calendar', 'title' => __( '带薪年假', 'qiling' ), 'desc' => __( '入职即享带薪年假，额外享有生日假、婚假等福利假期', 'qiling' ) ),
+                array( 'icon' => 'users', 'title' => __( '团队活动', 'qiling' ), 'desc' => __( '定期团建活动，下午茶、生日会、年度旅游', 'qiling' ) ),
+                array( 'icon' => 'trending', 'title' => __( '晋升通道', 'qiling' ), 'desc' => __( '透明的晋升机制，技术线与管理线双通道发展', 'qiling' ) ),
             ),
             'hr_phone' => '',
             'hr_email' => '',
@@ -312,9 +337,9 @@ class Careers_Manager {
     public function add_admin_menus() {
         // 招聘设置
         add_submenu_page(
-            'developer-starter-settings',
-            __( '招聘设置', 'developer-starter' ),
-            __( '招聘设置', 'developer-starter' ),
+            'qiling-settings',
+            __( '招聘设置', 'qiling' ),
+            __( '招聘设置', 'qiling' ),
             'manage_options',
             'developer-starter-careers-settings',
             array( $this, 'render_settings_page' )
@@ -322,9 +347,9 @@ class Careers_Manager {
         
         // 职位管理
         add_submenu_page(
-            'developer-starter-settings',
-            __( '职位管理', 'developer-starter' ),
-            __( '职位管理', 'developer-starter' ),
+            'qiling-settings',
+            __( '职位管理', 'qiling' ),
+            __( '职位管理', 'qiling' ),
             'manage_options',
             'developer-starter-careers-positions',
             array( $this, 'render_positions_page' )
@@ -332,14 +357,14 @@ class Careers_Manager {
         
         // 求职申请
         $unread_count = $this->get_unread_applications_count();
-        $menu_title = __( '求职申请', 'developer-starter' );
+        $menu_title = __( '求职申请', 'qiling' );
         if ( $unread_count > 0 ) {
             $menu_title .= ' <span class="awaiting-mod count-' . $unread_count . '"><span class="pending-count">' . $unread_count . '</span></span>';
         }
         
         add_submenu_page(
-            'developer-starter-settings',
-            __( '求职申请', 'developer-starter' ),
+            'qiling-settings',
+            __( '求职申请', 'qiling' ),
             $menu_title,
             'manage_options',
             'developer-starter-careers-applications',
@@ -371,13 +396,13 @@ class Careers_Manager {
      */
     public static function get_positions( $category = '' ) {
         global $wpdb;
-        $table = $wpdb->prefix . 'ds_careers_positions';
+        $table = $wpdb->prefix . 'qiling_careers_positions';
 
         if ( ! self::is_enabled() && ! is_admin() ) {
             return array();
         }
         
-        $sql = "SELECT * FROM {$table} WHERE status = 1";
+        $sql = "SELECT id, title, department, location, job_type, salary, category, description, requirements, sort_order, status, created_at, updated_at FROM {$table} WHERE status = 1";
         if ( ! empty( $category ) && $category !== 'all' ) {
             $sql .= $wpdb->prepare( " AND category = %s", $category );
         }
@@ -391,8 +416,8 @@ class Careers_Manager {
      */
     public static function get_position( $id ) {
         global $wpdb;
-        $table = $wpdb->prefix . 'ds_careers_positions';
-        return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table} WHERE id = %d", $id ) );
+        $table = $wpdb->prefix . 'qiling_careers_positions';
+        return $wpdb->get_row( $wpdb->prepare( "SELECT id, title, department, location, job_type, salary, category, description, requirements, sort_order, status, created_at, updated_at FROM {$table} WHERE id = %d", $id ) );
     }
 
     /**
@@ -411,7 +436,7 @@ class Careers_Manager {
 
         return $wpdb->get_row(
             $wpdb->prepare(
-                "SELECT * FROM {$this->positions_table} WHERE title = %s AND status = 1 ORDER BY id DESC LIMIT 1",
+                "SELECT id, title, department, location, job_type, salary, category, description, requirements, sort_order, status, created_at, updated_at FROM {$this->positions_table} WHERE title = %s AND status = 1 ORDER BY id DESC LIMIT 1",
                 $title
             )
         );
@@ -426,89 +451,89 @@ class Careers_Manager {
         $options = get_option( $this->option_name, array() );
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e( '招聘页面设置', 'developer-starter' ); ?></h1>
+            <h1><?php esc_html_e( '招聘页面设置', 'qiling' ); ?></h1>
             
             <form method="post" action="options.php">
                 <?php settings_fields( 'developer_starter_careers_settings' ); ?>
                 
-                <h2 class="title"><?php esc_html_e( '页面头部设置', 'developer-starter' ); ?></h2>
+                <h2 class="title"><?php esc_html_e( '页面头部设置', 'qiling' ); ?></h2>
                 <table class="form-table">
                     <tr>
-                        <th><label for="hero_title"><?php esc_html_e( 'Hero 标题', 'developer-starter' ); ?></label></th>
+                        <th><label for="hero_title"><?php esc_html_e( 'Hero 标题', 'qiling' ); ?></label></th>
                         <td>
                             <input type="text" id="hero_title" name="<?php echo $this->option_name; ?>[hero_title]" 
-                                   value="<?php echo esc_attr( __( $options['hero_title'] ?? '加入我们', 'developer-starter' ) ); ?>" class="regular-text" />
-                            <p class="description"><?php esc_html_e( '招聘页面的主标题（如：招聘精英/加入我们）', 'developer-starter' ); ?></p>
+                                   value="<?php echo esc_attr( __( $options['hero_title'] ?? '加入我们', 'qiling' ) ); ?>" class="regular-text" />
+                            <p class="description"><?php esc_html_e( '招聘页面的主标题（如：招聘精英/加入我们）', 'qiling' ); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="hero_subtitle"><?php esc_html_e( 'Hero 副标题', 'developer-starter' ); ?></label></th>
+                        <th><label for="hero_subtitle"><?php esc_html_e( 'Hero 副标题', 'qiling' ); ?></label></th>
                         <td>
                             <textarea id="hero_subtitle" name="<?php echo $this->option_name; ?>[hero_subtitle]" 
                                       rows="2" class="large-text"><?php echo esc_textarea( $options['hero_subtitle'] ?? '' ); ?></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="hero_bg_color"><?php esc_html_e( 'Hero 背景颜色', 'developer-starter' ); ?></label></th>
+                        <th><label for="hero_bg_color"><?php esc_html_e( 'Hero 背景颜色', 'qiling' ); ?></label></th>
                         <td>
                             <input type="text" id="hero_bg_color" name="<?php echo $this->option_name; ?>[hero_bg_color]" 
                                    value="<?php echo esc_attr( $options['hero_bg_color'] ?? '' ); ?>" class="regular-text" 
-                                   placeholder="<?php esc_attr_e( '如: linear-gradient(135deg, #2563eb 0%, #0891b2 50%, #10b981 100%)', 'developer-starter' ); ?>" />
-                            <p class="description"><?php esc_html_e( '支持渐变色，留空使用默认渐变（蓝→青→绿）', 'developer-starter' ); ?></p>
+                                   placeholder="<?php esc_attr_e( '如: linear-gradient(135deg, #2563eb 0%, #0891b2 50%, #10b981 100%)', 'qiling' ); ?>" />
+                            <p class="description"><?php esc_html_e( '支持渐变色，留空使用默认渐变（蓝→青→绿）', 'qiling' ); ?></p>
                         </td>
                     </tr>
                 </table>
                 
-                <h2 class="title"><?php esc_html_e( '统计数据', 'developer-starter' ); ?></h2>
+                <h2 class="title"><?php esc_html_e( '统计数据', 'qiling' ); ?></h2>
                 <table class="form-table">
                     <tr>
-                        <th><?php esc_html_e( '统计项 1', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '统计项 1', 'qiling' ); ?></th>
                         <td>
                             <input type="text" name="<?php echo $this->option_name; ?>[stat_1_number]" 
                                    value="<?php echo esc_attr( $options['stat_1_number'] ?? '50+' ); ?>" 
-                                   placeholder="<?php esc_attr_e( '数字', 'developer-starter' ); ?>" style="width: 100px;" />
+                                   placeholder="<?php esc_attr_e( '数字', 'qiling' ); ?>" style="width: 100px;" />
                             <input type="text" name="<?php echo $this->option_name; ?>[stat_1_label]" 
-                                   value="<?php echo esc_attr( __( $options['stat_1_label'] ?? '团队成员', 'developer-starter' ) ); ?>" 
-                                   placeholder="<?php esc_attr_e( '标签', 'developer-starter' ); ?>" style="width: 150px;" />
+                                   value="<?php echo esc_attr( __( $options['stat_1_label'] ?? '团队成员', 'qiling' ) ); ?>" 
+                                   placeholder="<?php esc_attr_e( '标签', 'qiling' ); ?>" style="width: 150px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th><?php esc_html_e( '统计项 2', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '统计项 2', 'qiling' ); ?></th>
                         <td>
                             <input type="text" name="<?php echo $this->option_name; ?>[stat_2_number]" 
                                    value="<?php echo esc_attr( $options['stat_2_number'] ?? '10+' ); ?>" 
-                                   placeholder="<?php esc_attr_e( '数字', 'developer-starter' ); ?>" style="width: 100px;" />
+                                   placeholder="<?php esc_attr_e( '数字', 'qiling' ); ?>" style="width: 100px;" />
                             <input type="text" name="<?php echo $this->option_name; ?>[stat_2_label]" 
-                                   value="<?php echo esc_attr( __( $options['stat_2_label'] ?? '开放职位', 'developer-starter' ) ); ?>" 
-                                   placeholder="<?php esc_attr_e( '标签', 'developer-starter' ); ?>" style="width: 150px;" />
+                                   value="<?php echo esc_attr( __( $options['stat_2_label'] ?? '开放职位', 'qiling' ) ); ?>" 
+                                   placeholder="<?php esc_attr_e( '标签', 'qiling' ); ?>" style="width: 150px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th><?php esc_html_e( '统计项 3', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '统计项 3', 'qiling' ); ?></th>
                         <td>
                             <input type="text" name="<?php echo $this->option_name; ?>[stat_3_number]" 
                                    value="<?php echo esc_attr( $options['stat_3_number'] ?? '5个' ); ?>" 
-                                   placeholder="<?php esc_attr_e( '数字', 'developer-starter' ); ?>" style="width: 100px;" />
+                                   placeholder="<?php esc_attr_e( '数字', 'qiling' ); ?>" style="width: 100px;" />
                             <input type="text" name="<?php echo $this->option_name; ?>[stat_3_label]" 
-                                   value="<?php echo esc_attr( __( $options['stat_3_label'] ?? '办公城市', 'developer-starter' ) ); ?>" 
-                                   placeholder="<?php esc_attr_e( '标签', 'developer-starter' ); ?>" style="width: 150px;" />
+                                   value="<?php echo esc_attr( __( $options['stat_3_label'] ?? '办公城市', 'qiling' ) ); ?>" 
+                                   placeholder="<?php esc_attr_e( '标签', 'qiling' ); ?>" style="width: 150px;" />
                         </td>
                     </tr>
                 </table>
                 
-                <h2 class="title"><?php esc_html_e( '公司福利', 'developer-starter' ); ?></h2>
+                <h2 class="title"><?php esc_html_e( '公司福利', 'qiling' ); ?></h2>
                 <div id="benefits-container" style="margin-bottom: 20px;">
                     <?php 
                     $benefits = isset( $options['benefits'] ) && is_array( $options['benefits'] ) ? $options['benefits'] : array();
                     $icon_options = array(
-                        'money' => __( '💰 薪资', 'developer-starter' ),
-                        'shield' => __( '🛡️ 保险', 'developer-starter' ),
-                        'book' => __( '📚 培训', 'developer-starter' ),
-                        'calendar' => __( '📅 假期', 'developer-starter' ),
-                        'users' => __( '👥 团队', 'developer-starter' ),
-                        'trending' => __( '📈 晋升', 'developer-starter' ),
-                        'heart' => __( '❤️ 关怀', 'developer-starter' ),
-                        'star' => __( '⭐ 福利', 'developer-starter' ),
+                        'money' => __( '薪资', 'qiling' ),
+                        'shield' => __( '保险', 'qiling' ),
+                        'book' => __( '培训', 'qiling' ),
+                        'calendar' => __( '假期', 'qiling' ),
+                        'users' => __( '团队', 'qiling' ),
+                        'trending' => __( '晋升', 'qiling' ),
+                        'heart' => __( '关怀', 'qiling' ),
+                        'star' => __( '福利', 'qiling' ),
                     );
                     $icon_options_markup = '';
                     foreach ( $icon_options as $val => $label ) {
@@ -520,9 +545,9 @@ class Careers_Manager {
                     }
                     foreach ( $benefits as $idx => $benefit ) : ?>
                         <div class="benefit-item" style="background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd; position: relative;">
-                            <a href="#" class="remove-benefit" style="position: absolute; top: 5px; right: 10px; color: #a00; text-decoration: none;"><?php esc_html_e( '删除', 'developer-starter' ); ?></a>
+                            <a href="#" class="remove-benefit" style="position: absolute; top: 5px; right: 10px; color: #a00; text-decoration: none;"><?php esc_html_e( '删除', 'qiling' ); ?></a>
                             <p style="margin: 0 0 10px;">
-                                <label><strong><?php esc_html_e( '图标', 'developer-starter' ); ?></strong></label><br>
+                                <label><strong><?php esc_html_e( '图标', 'qiling' ); ?></strong></label><br>
                                 <select name="<?php echo esc_attr( $this->option_name ); ?>[benefits][<?php echo absint( $idx ); ?>][icon]" style="width: 150px;">
                                     <?php foreach ( $icon_options as $val => $label ) : ?>
                                         <option value="<?php echo esc_attr( $val ); ?>" <?php selected( $benefit['icon'] ?? '', $val ); ?>><?php echo esc_html( $label ); ?></option>
@@ -530,67 +555,67 @@ class Careers_Manager {
                                 </select>
                             </p>
                             <p style="margin: 0 0 10px;">
-                                <label><strong><?php esc_html_e( '标题', 'developer-starter' ); ?></strong></label><br>
+                                <label><strong><?php esc_html_e( '标题', 'qiling' ); ?></strong></label><br>
                                 <input type="text" name="<?php echo esc_attr( $this->option_name ); ?>[benefits][<?php echo absint( $idx ); ?>][title]" 
                                        value="<?php echo esc_attr( $benefit['title'] ?? '' ); ?>" style="width: 100%;" />
                             </p>
                             <p style="margin: 0;">
-                                <label><strong><?php esc_html_e( '描述', 'developer-starter' ); ?></strong></label><br>
+                                <label><strong><?php esc_html_e( '描述', 'qiling' ); ?></strong></label><br>
                                 <input type="text" name="<?php echo esc_attr( $this->option_name ); ?>[benefits][<?php echo absint( $idx ); ?>][desc]" 
                                        value="<?php echo esc_attr( $benefit['desc'] ?? '' ); ?>" style="width: 100%;" />
                             </p>
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <button type="button" id="add-benefit" class="button"><?php esc_html_e( '+ 添加福利项', 'developer-starter' ); ?></button>
+                <button type="button" id="add-benefit" class="button"><?php esc_html_e( '+ 添加福利项', 'qiling' ); ?></button>
                 
-                <h2 class="title" style="margin-top: 30px;"><?php esc_html_e( 'HR 联系方式', 'developer-starter' ); ?></h2>
+                <h2 class="title" style="margin-top: 30px;"><?php esc_html_e( 'HR 联系方式', 'qiling' ); ?></h2>
                 <table class="form-table">
                     <tr>
-                        <th><label for="hr_phone"><?php esc_html_e( 'HR 电话', 'developer-starter' ); ?></label></th>
+                        <th><label for="hr_phone"><?php esc_html_e( 'HR 电话', 'qiling' ); ?></label></th>
                         <td>
                             <input type="text" id="hr_phone" name="<?php echo $this->option_name; ?>[hr_phone]" 
                                    value="<?php echo esc_attr( $options['hr_phone'] ?? '' ); ?>" class="regular-text" />
-                            <p class="description"><?php esc_html_e( '留空则使用主题设置中的公司电话', 'developer-starter' ); ?></p>
+                            <p class="description"><?php esc_html_e( '留空则使用主题设置中的公司电话', 'qiling' ); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="hr_email"><?php esc_html_e( 'HR 邮箱', 'developer-starter' ); ?></label></th>
+                        <th><label for="hr_email"><?php esc_html_e( 'HR 邮箱', 'qiling' ); ?></label></th>
                         <td>
                             <input type="email" id="hr_email" name="<?php echo $this->option_name; ?>[hr_email]" 
                                    value="<?php echo esc_attr( $options['hr_email'] ?? '' ); ?>" class="regular-text" />
-                            <p class="description"><?php esc_html_e( '留空则使用主题设置中的公司邮箱', 'developer-starter' ); ?></p>
+                            <p class="description"><?php esc_html_e( '留空则使用主题设置中的公司邮箱', 'qiling' ); ?></p>
                         </td>
                     </tr>
                 </table>
                 
-                <h2 class="title"><?php esc_html_e( '功能开关', 'developer-starter' ); ?></h2>
+                <h2 class="title"><?php esc_html_e( '功能开关', 'qiling' ); ?></h2>
                 <table class="form-table">
                     <tr>
-                        <th><?php esc_html_e( '招聘模块', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '招聘模块', 'qiling' ); ?></th>
                         <td>
                             <label>
                                 <input type="checkbox" name="<?php echo $this->option_name; ?>[module_enabled]" value="1"
                                        <?php checked( $options['module_enabled'] ?? '1', '1' ); ?> />
-                                <?php esc_html_e( '启用招聘模块', 'developer-starter' ); ?>
+                                <?php esc_html_e( '启用招聘模块', 'qiling' ); ?>
                             </label>
-                            <p class="description"><?php esc_html_e( '关闭后，前台普通请求不会初始化招聘管理器，站点其他页面也不再额外加载招聘相关钩子。', 'developer-starter' ); ?></p>
+                            <p class="description"><?php esc_html_e( '关闭后，前台普通请求不会初始化招聘管理器，站点其他页面也不再额外加载招聘相关钩子。', 'qiling' ); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th><?php esc_html_e( '在线申请', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '在线申请', 'qiling' ); ?></th>
                         <td>
                             <label>
                                 <input type="checkbox" name="<?php echo $this->option_name; ?>[enable_application]" value="1" 
                                        <?php checked( $options['enable_application'] ?? '1', '1' ); ?> />
-                                <?php esc_html_e( '启用在线申请功能', 'developer-starter' ); ?>
+                                <?php esc_html_e( '启用在线申请功能', 'qiling' ); ?>
                             </label>
-                            <p class="description"><?php esc_html_e( '关闭后，招聘页面将不显示申请表单', 'developer-starter' ); ?></p>
+                            <p class="description"><?php esc_html_e( '关闭后，招聘页面将不显示申请表单', 'qiling' ); ?></p>
                         </td>
                     </tr>
                 </table>
                 
-                <?php submit_button( __( '保存设置', 'developer-starter' ) ); ?>
+                <?php submit_button( __( '保存设置', 'qiling' ) ); ?>
             </form>
         </div>
         
@@ -600,14 +625,14 @@ class Careers_Manager {
             
             $('#add-benefit').on('click', function() {
                 var html = '<div class="benefit-item" style="background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd; position: relative;">' +
-                    '<a href="#" class="remove-benefit" style="position: absolute; top: 5px; right: 10px; color: #a00; text-decoration: none;"><?php echo esc_js( __( '删除', 'developer-starter' ) ); ?></a>' +
-                    '<p style="margin: 0 0 10px;"><label><strong><?php echo esc_js( __( '图标', 'developer-starter' ) ); ?></strong></label><br>' +
+                    '<a href="#" class="remove-benefit" style="position: absolute; top: 5px; right: 10px; color: #a00; text-decoration: none;"><?php echo esc_js( __( '删除', 'qiling' ) ); ?></a>' +
+                    '<p style="margin: 0 0 10px;"><label><strong><?php echo esc_js( __( '图标', 'qiling' ) ); ?></strong></label><br>' +
                     '<select name="<?php echo esc_js( $this->option_name ); ?>[benefits][' + benefitIndex + '][icon]" style="width: 150px;">' +
                     <?php echo wp_json_encode( $icon_options_markup ); ?> +
                     '</select></p>' +
-                    '<p style="margin: 0 0 10px;"><label><strong><?php echo esc_js( __( '标题', 'developer-starter' ) ); ?></strong></label><br>' +
+                    '<p style="margin: 0 0 10px;"><label><strong><?php echo esc_js( __( '标题', 'qiling' ) ); ?></strong></label><br>' +
                     '<input type="text" name="<?php echo esc_js( $this->option_name ); ?>[benefits][' + benefitIndex + '][title]" style="width: 100%;" /></p>' +
-                    '<p style="margin: 0;"><label><strong><?php echo esc_js( __( '描述', 'developer-starter' ) ); ?></strong></label><br>' +
+                    '<p style="margin: 0;"><label><strong><?php echo esc_js( __( '描述', 'qiling' ) ); ?></strong></label><br>' +
                     '<input type="text" name="<?php echo esc_js( $this->option_name ); ?>[benefits][' + benefitIndex + '][desc]" style="width: 100%;" /></p>' +
                     '</div>';
                 $('#benefits-container').append(html);
@@ -637,17 +662,17 @@ class Careers_Manager {
         if ( $action === 'delete' && $id && isset( $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'delete_position_' . $id ) ) {
             // 权限检查
             if ( ! current_user_can( 'manage_options' ) ) {
-                wp_die( __( '您没有权限执行此操作', 'developer-starter' ) );
+                wp_die( __( '您没有权限执行此操作', 'qiling' ) );
             }
             $wpdb->delete( $this->positions_table, array( 'id' => $id ), array( '%d' ) );
-            echo '<div class="notice notice-success"><p>' . __( '职位已删除', 'developer-starter' ) . '</p></div>';
+            echo '<div class="notice notice-success"><p>' . __( '职位已删除', 'qiling' ) . '</p></div>';
         }
         
         // 保存操作
         if ( isset( $_POST['save_position'] ) && isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'save_position' ) ) {
             // 权限检查
             if ( ! current_user_can( 'manage_options' ) ) {
-                wp_die( __( '您没有权限执行此操作', 'developer-starter' ) );
+                wp_die( __( '您没有权限执行此操作', 'qiling' ) );
             }
             $data = array(
                 'title' => sanitize_text_field( wp_unslash( $_POST['title'] ?? '' ) ),
@@ -666,60 +691,60 @@ class Careers_Manager {
             
             if ( $edit_id > 0 ) {
                 $wpdb->update( $this->positions_table, $data, array( 'id' => $edit_id ) );
-                echo '<div class="notice notice-success"><p>' . __( '职位已更新', 'developer-starter' ) . '</p></div>';
+                echo '<div class="notice notice-success"><p>' . __( '职位已更新', 'qiling' ) . '</p></div>';
             } else {
                 $wpdb->insert( $this->positions_table, $data );
-                echo '<div class="notice notice-success"><p>' . __( '职位已添加', 'developer-starter' ) . '</p></div>';
+                echo '<div class="notice notice-success"><p>' . __( '职位已添加', 'qiling' ) . '</p></div>';
             }
             $action = ''; // 重置为列表视图
         }
         
         // 编辑模式
         if ( $action === 'edit' || $action === 'add' ) {
-            $position = $action === 'edit' && $id ? $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$this->positions_table} WHERE id = %d", $id ) ) : null;
+            $position = $action === 'edit' && $id ? $wpdb->get_row( $wpdb->prepare( "SELECT id, title, department, location, job_type, salary, category, description, requirements, sort_order, status, created_at, updated_at FROM {$this->positions_table} WHERE id = %d", $id ) ) : null;
             $this->render_position_form( $position );
             return;
         }
         
         // 列表视图
-        $positions = $wpdb->get_results( "SELECT * FROM {$this->positions_table} ORDER BY sort_order ASC, id DESC" );
+        $positions = $wpdb->get_results( "SELECT id, title, department, location, job_type, salary, category, description, requirements, sort_order, status, created_at, updated_at FROM {$this->positions_table} ORDER BY sort_order ASC, id DESC" );
         ?>
         <div class="wrap">
             <h1>
-                <?php esc_html_e( '职位管理', 'developer-starter' ); ?>
-                <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-careers-positions&action=add' ) ); ?>" class="page-title-action"><?php esc_html_e( '添加新职位', 'developer-starter' ); ?></a>
+                <?php esc_html_e( '职位管理', 'qiling' ); ?>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-careers-positions&action=add' ) ); ?>" class="page-title-action"><?php esc_html_e( '添加新职位', 'qiling' ); ?></a>
             </h1>
             
             <table class="wp-list-table widefat fixed striped">
                 <thead>
                     <tr>
-                        <th style="width: 50px;"><?php esc_html_e( 'ID', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '职位名称', 'developer-starter' ); ?></th>
-                        <th style="width: 100px;"><?php esc_html_e( '部门', 'developer-starter' ); ?></th>
-                        <th style="width: 80px;"><?php esc_html_e( '地点', 'developer-starter' ); ?></th>
-                        <th style="width: 80px;"><?php esc_html_e( '类型', 'developer-starter' ); ?></th>
-                        <th style="width: 100px;"><?php esc_html_e( '薪资', 'developer-starter' ); ?></th>
-                        <th style="width: 80px;"><?php esc_html_e( '分类', 'developer-starter' ); ?></th>
-                        <th style="width: 60px;"><?php esc_html_e( '排序', 'developer-starter' ); ?></th>
-                        <th style="width: 60px;"><?php esc_html_e( '状态', 'developer-starter' ); ?></th>
-                        <th style="width: 120px;"><?php esc_html_e( '操作', 'developer-starter' ); ?></th>
+                        <th style="width: 50px;"><?php esc_html_e( 'ID', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '职位名称', 'qiling' ); ?></th>
+                        <th style="width: 100px;"><?php esc_html_e( '部门', 'qiling' ); ?></th>
+                        <th style="width: 80px;"><?php esc_html_e( '地点', 'qiling' ); ?></th>
+                        <th style="width: 80px;"><?php esc_html_e( '类型', 'qiling' ); ?></th>
+                        <th style="width: 100px;"><?php esc_html_e( '薪资', 'qiling' ); ?></th>
+                        <th style="width: 80px;"><?php esc_html_e( '分类', 'qiling' ); ?></th>
+                        <th style="width: 60px;"><?php esc_html_e( '排序', 'qiling' ); ?></th>
+                        <th style="width: 60px;"><?php esc_html_e( '状态', 'qiling' ); ?></th>
+                        <th style="width: 120px;"><?php esc_html_e( '操作', 'qiling' ); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if ( empty( $positions ) ) : ?>
-                        <tr><td colspan="10" style="text-align: center; padding: 40px;"><?php esc_html_e( '暂无职位，请添加', 'developer-starter' ); ?></td></tr>
+                        <tr><td colspan="10" style="text-align: center; padding: 40px;"><?php esc_html_e( '暂无职位，请添加', 'qiling' ); ?></td></tr>
                     <?php else : ?>
                         <?php 
                         $job_types = array( 
-                            'fulltime' => __( '全职', 'developer-starter' ), 
-                            'parttime' => __( '兼职', 'developer-starter' ), 
-                            'intern'   => __( '实习', 'developer-starter' ) 
+                            'fulltime' => __( '全职', 'qiling' ), 
+                            'parttime' => __( '兼职', 'qiling' ), 
+                            'intern'   => __( '实习', 'qiling' ) 
                         );
                         $categories = array( 
-                            'tech'    => __( '技术', 'developer-starter' ), 
-                            'product' => __( '产品', 'developer-starter' ), 
-                            'market'  => __( '市场', 'developer-starter' ), 
-                            'admin'   => __( '职能', 'developer-starter' ) 
+                            'tech'    => __( '技术', 'qiling' ), 
+                            'product' => __( '产品', 'qiling' ), 
+                            'market'  => __( '市场', 'qiling' ), 
+                            'admin'   => __( '职能', 'qiling' ) 
                         );
                         foreach ( $positions as $pos ) : ?>
                             <tr>
@@ -733,15 +758,15 @@ class Careers_Manager {
                                 <td><?php echo esc_html( $pos->sort_order ); ?></td>
                                 <td>
                                     <?php if ( $pos->status ) : ?>
-                                        <span style="color: #22c55e;"><?php esc_html_e( '启用', 'developer-starter' ); ?></span>
+                                        <span style="color: #22c55e;"><?php esc_html_e( '启用', 'qiling' ); ?></span>
                                     <?php else : ?>
-                                        <span style="color: #94a3b8;"><?php esc_html_e( '禁用', 'developer-starter' ); ?></span>
+                                        <span style="color: #94a3b8;"><?php esc_html_e( '禁用', 'qiling' ); ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-careers-positions&action=edit&id=' . absint( $pos->id ) ) ); ?>"><?php esc_html_e( '编辑', 'developer-starter' ); ?></a> |
+                                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-careers-positions&action=edit&id=' . absint( $pos->id ) ) ); ?>"><?php esc_html_e( '编辑', 'qiling' ); ?></a> |
                                     <a href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?page=developer-starter-careers-positions&action=delete&id=' . absint( $pos->id ) ), 'delete_position_' . absint( $pos->id ) ) ); ?>" 
-                                       onclick="return confirm('<?php echo esc_js( __( '确定删除此职位？', 'developer-starter' ) ); ?>');" style="color: #dc2626;"><?php esc_html_e( '删除', 'developer-starter' ); ?></a>
+                                       onclick="return confirm('<?php echo esc_js( __( '确定删除此职位？', 'qiling' ) ); ?>');" style="color: #dc2626;"><?php esc_html_e( '删除', 'qiling' ); ?></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -759,7 +784,7 @@ class Careers_Manager {
         $is_edit = $position !== null;
         ?>
         <div class="wrap">
-            <h1><?php echo $is_edit ? __( '编辑职位', 'developer-starter' ) : __( '添加新职位', 'developer-starter' ); ?></h1>
+            <h1><?php echo $is_edit ? __( '编辑职位', 'qiling' ) : __( '添加新职位', 'qiling' ); ?></h1>
             
             <form method="post">
                 <?php wp_nonce_field( 'save_position' ); ?>
@@ -769,90 +794,90 @@ class Careers_Manager {
                 
                 <table class="form-table">
                     <tr>
-                        <th><label for="title"><?php esc_html_e( '职位名称', 'developer-starter' ); ?> <span style="color: red;">*</span></label></th>
+                        <th><label for="title"><?php esc_html_e( '职位名称', 'qiling' ); ?> <span style="color: red;">*</span></label></th>
                         <td>
                             <input type="text" id="title" name="title" 
                                    value="<?php echo esc_attr( $position->title ?? '' ); ?>" class="regular-text" required />
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="department"><?php esc_html_e( '部门', 'developer-starter' ); ?></label></th>
+                        <th><label for="department"><?php esc_html_e( '部门', 'qiling' ); ?></label></th>
                         <td>
                             <input type="text" id="department" name="department" 
                                    value="<?php echo esc_attr( $position->department ?? '' ); ?>" class="regular-text" />
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="location"><?php esc_html_e( '工作地点', 'developer-starter' ); ?></label></th>
+                        <th><label for="location"><?php esc_html_e( '工作地点', 'qiling' ); ?></label></th>
                         <td>
                             <input type="text" id="location" name="location" 
                                    value="<?php echo esc_attr( $position->location ?? '' ); ?>" class="regular-text" />
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="job_type"><?php esc_html_e( '工作类型', 'developer-starter' ); ?></label></th>
+                        <th><label for="job_type"><?php esc_html_e( '工作类型', 'qiling' ); ?></label></th>
                         <td>
                             <select id="job_type" name="job_type">
-                                <option value="fulltime" <?php selected( $position->job_type ?? '', 'fulltime' ); ?>><?php esc_html_e( '全职', 'developer-starter' ); ?></option>
-                                <option value="parttime" <?php selected( $position->job_type ?? '', 'parttime' ); ?>><?php esc_html_e( '兼职', 'developer-starter' ); ?></option>
-                                <option value="intern" <?php selected( $position->job_type ?? '', 'intern' ); ?>><?php esc_html_e( '实习', 'developer-starter' ); ?></option>
+                                <option value="fulltime" <?php selected( $position->job_type ?? '', 'fulltime' ); ?>><?php esc_html_e( '全职', 'qiling' ); ?></option>
+                                <option value="parttime" <?php selected( $position->job_type ?? '', 'parttime' ); ?>><?php esc_html_e( '兼职', 'qiling' ); ?></option>
+                                <option value="intern" <?php selected( $position->job_type ?? '', 'intern' ); ?>><?php esc_html_e( '实习', 'qiling' ); ?></option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="salary"><?php esc_html_e( '薪资范围', 'developer-starter' ); ?></label></th>
+                        <th><label for="salary"><?php esc_html_e( '薪资范围', 'qiling' ); ?></label></th>
                         <td>
                             <input type="text" id="salary" name="salary" 
-                                   value="<?php echo esc_attr( $position->salary ?? '' ); ?>" placeholder="<?php esc_attr_e( '如：15-25K', 'developer-starter' ); ?>" style="width: 150px;" />
+                                   value="<?php echo esc_attr( $position->salary ?? '' ); ?>" placeholder="<?php esc_attr_e( '如：15-25K', 'qiling' ); ?>" style="width: 150px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="category"><?php esc_html_e( '分类标签', 'developer-starter' ); ?></label></th>
+                        <th><label for="category"><?php esc_html_e( '分类标签', 'qiling' ); ?></label></th>
                         <td>
                             <select id="category" name="category">
-                                <option value="tech" <?php selected( $position->category ?? '', 'tech' ); ?>><?php esc_html_e( '技术研发', 'developer-starter' ); ?></option>
-                                <option value="product" <?php selected( $position->category ?? '', 'product' ) ;?>><?php esc_html_e( '产品设计', 'developer-starter' ); ?></option>
-                                <option value="market" <?php selected( $position->category ?? '', 'market' ); ?>><?php esc_html_e( '市场运营', 'developer-starter' ); ?></option>
-                                <option value="admin" <?php selected( $position->category ?? '', 'admin' ); ?>><?php esc_html_e( '职能管理', 'developer-starter' ); ?></option>
+                                <option value="tech" <?php selected( $position->category ?? '', 'tech' ); ?>><?php esc_html_e( '技术研发', 'qiling' ); ?></option>
+                                <option value="product" <?php selected( $position->category ?? '', 'product' ) ;?>><?php esc_html_e( '产品设计', 'qiling' ); ?></option>
+                                <option value="market" <?php selected( $position->category ?? '', 'market' ); ?>><?php esc_html_e( '市场运营', 'qiling' ); ?></option>
+                                <option value="admin" <?php selected( $position->category ?? '', 'admin' ); ?>><?php esc_html_e( '职能管理', 'qiling' ); ?></option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="description"><?php esc_html_e( '职位描述', 'developer-starter' ); ?></label></th>
+                        <th><label for="description"><?php esc_html_e( '职位描述', 'qiling' ); ?></label></th>
                         <td>
                             <textarea id="description" name="description" rows="6" class="large-text"><?php echo esc_textarea( $position->description ?? '' ); ?></textarea>
-                            <p class="description"><?php esc_html_e( '每行一条，将显示为列表', 'developer-starter' ); ?></p>
+                            <p class="description"><?php esc_html_e( '每行一条，将显示为列表', 'qiling' ); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="requirements"><?php esc_html_e( '任职要求', 'developer-starter' ); ?></label></th>
+                        <th><label for="requirements"><?php esc_html_e( '任职要求', 'qiling' ); ?></label></th>
                         <td>
                             <textarea id="requirements" name="requirements" rows="6" class="large-text"><?php echo esc_textarea( $position->requirements ?? '' ); ?></textarea>
-                            <p class="description"><?php esc_html_e( '每行一条，将显示为列表', 'developer-starter' ); ?></p>
+                            <p class="description"><?php esc_html_e( '每行一条，将显示为列表', 'qiling' ); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="sort_order"><?php esc_html_e( '排序', 'developer-starter' ); ?></label></th>
+                        <th><label for="sort_order"><?php esc_html_e( '排序', 'qiling' ); ?></label></th>
                         <td>
                             <input type="number" id="sort_order" name="sort_order" 
                                    value="<?php echo esc_attr( $position->sort_order ?? 0 ); ?>" style="width: 80px;" />
-                            <p class="description"><?php esc_html_e( '数字越小越靠前', 'developer-starter' ); ?></p>
+                            <p class="description"><?php esc_html_e( '数字越小越靠前', 'qiling' ); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th><?php esc_html_e( '状态', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '状态', 'qiling' ); ?></th>
                         <td>
                             <label>
                                 <input type="checkbox" name="status" value="1" <?php checked( $position->status ?? 1, 1 ); ?> />
-                                <?php esc_html_e( '启用此职位', 'developer-starter' ); ?>
+                                <?php esc_html_e( '启用此职位', 'qiling' ); ?>
                             </label>
                         </td>
                     </tr>
                 </table>
                 
                 <p class="submit">
-                    <input type="submit" name="save_position" class="button button-primary" value="<?php esc_attr_e( '保存职位', 'developer-starter' ); ?>" />
-                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-careers-positions' ) ); ?>" class="button"><?php esc_html_e( '返回列表', 'developer-starter' ); ?></a>
+                    <input type="submit" name="save_position" class="button button-primary" value="<?php esc_attr_e( '保存职位', 'qiling' ); ?>" />
+                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-careers-positions' ) ); ?>" class="button"><?php esc_html_e( '返回列表', 'qiling' ); ?></a>
                 </p>
             </form>
         </div>
@@ -872,7 +897,7 @@ class Careers_Manager {
         if ( isset( $_GET['action'] ) && isset( $_GET['id'] ) && isset( $_GET['_wpnonce'] ) ) {
             // 权限检查
             if ( ! current_user_can( 'manage_options' ) ) {
-                wp_die( __( '您没有权限执行此操作', 'developer-starter' ) );
+                wp_die( __( '您没有权限执行此操作', 'qiling' ) );
             }
             $id = absint( wp_unslash( $_GET['id'] ) );
             $action = sanitize_key( wp_unslash( $_GET['action'] ) );
@@ -895,32 +920,32 @@ class Careers_Manager {
         $offset = ( $paged - 1 ) * $per_page;
         $applications = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM {$this->applications_table} ORDER BY created_at DESC LIMIT %d OFFSET %d",
+                "SELECT id, name, phone, email, position_id, position_title, message, ip_address, user_agent, is_read, created_at FROM {$this->applications_table} ORDER BY created_at DESC LIMIT %d OFFSET %d",
                 $per_page,
                 $offset
             )
         );
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e( '求职申请管理', 'developer-starter' ); ?></h1>
+            <h1><?php esc_html_e( '求职申请管理', 'qiling' ); ?></h1>
             
             <table class="wp-list-table widefat fixed striped">
                 <thead>
                     <tr>
-                        <th style="width: 50px;"><?php esc_html_e( 'ID', 'developer-starter' ); ?></th>
-                        <th style="width: 80px;"><?php esc_html_e( '姓名', 'developer-starter' ); ?></th>
-                        <th style="width: 120px;"><?php esc_html_e( '电话', 'developer-starter' ); ?></th>
-                        <th style="width: 150px;"><?php esc_html_e( '邮箱', 'developer-starter' ); ?></th>
-                        <th style="width: 150px;"><?php esc_html_e( '应聘职位', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '自我介绍', 'developer-starter' ); ?></th>
-                        <th style="width: 150px;"><?php esc_html_e( '申请时间', 'developer-starter' ); ?></th>
-                        <th style="width: 60px;"><?php esc_html_e( '状态', 'developer-starter' ); ?></th>
-                        <th style="width: 120px;"><?php esc_html_e( '操作', 'developer-starter' ); ?></th>
+                        <th style="width: 50px;"><?php esc_html_e( 'ID', 'qiling' ); ?></th>
+                        <th style="width: 80px;"><?php esc_html_e( '姓名', 'qiling' ); ?></th>
+                        <th style="width: 120px;"><?php esc_html_e( '电话', 'qiling' ); ?></th>
+                        <th style="width: 150px;"><?php esc_html_e( '邮箱', 'qiling' ); ?></th>
+                        <th style="width: 150px;"><?php esc_html_e( '应聘职位', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '自我介绍', 'qiling' ); ?></th>
+                        <th style="width: 150px;"><?php esc_html_e( '申请时间', 'qiling' ); ?></th>
+                        <th style="width: 60px;"><?php esc_html_e( '状态', 'qiling' ); ?></th>
+                        <th style="width: 120px;"><?php esc_html_e( '操作', 'qiling' ); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if ( empty( $applications ) ) : ?>
-                        <tr><td colspan="9" style="text-align: center; padding: 40px;"><?php esc_html_e( '暂无求职申请', 'developer-starter' ); ?></td></tr>
+                        <tr><td colspan="9" style="text-align: center; padding: 40px;"><?php esc_html_e( '暂无求职申请', 'qiling' ); ?></td></tr>
                     <?php else : ?>
                         <?php foreach ( $applications as $app ) : ?>
                             <tr style="<?php echo $app->is_read ? '' : 'background: #fff9e6;'; ?>">
@@ -933,9 +958,9 @@ class Careers_Manager {
                                 <td><?php echo esc_html( $app->created_at ); ?></td>
                                 <td>
                                     <?php if ( $app->is_read ) : ?>
-                                        <span style="color: #22c55e;"><?php esc_html_e( '已读', 'developer-starter' ); ?></span>
+                                        <span style="color: #22c55e;"><?php esc_html_e( '已读', 'qiling' ); ?></span>
                                     <?php else : ?>
-                                        <span style="color: #f59e0b; font-weight: bold;"><?php esc_html_e( '未读', 'developer-starter' ); ?></span>
+                                        <span style="color: #f59e0b; font-weight: bold;"><?php esc_html_e( '未读', 'qiling' ); ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
@@ -953,7 +978,7 @@ class Careers_Manager {
                                             'application_action'
                                         );
                                         ?>
-                                        <a href="<?php echo esc_url( $mark_read_url ); ?>"><?php esc_html_e( '标记已读', 'developer-starter' ); ?></a> |
+                                        <a href="<?php echo esc_url( $mark_read_url ); ?>"><?php esc_html_e( '标记已读', 'qiling' ); ?></a> |
                                     <?php endif; ?>
                                     <?php
                                     $delete_url = wp_nonce_url(
@@ -969,7 +994,7 @@ class Careers_Manager {
                                     );
                                     ?>
                                     <a href="<?php echo esc_url( $delete_url ); ?>" 
-                                       onclick="return confirm('<?php echo esc_js( __( '确定删除此申请？', 'developer-starter' ) ); ?>');" style="color: #dc2626;"><?php esc_html_e( '删除', 'developer-starter' ); ?></a>
+                                       onclick="return confirm('<?php echo esc_js( __( '确定删除此申请？', 'qiling' ) ); ?>');" style="color: #dc2626;"><?php esc_html_e( '删除', 'qiling' ); ?></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -1008,22 +1033,22 @@ class Careers_Manager {
         // 验证 nonce
         $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
         if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'ds_careers_application_nonce' ) ) {
-            wp_send_json_error( array( 'message' => __( '安全验证失败', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '安全验证失败', 'qiling' ) ) );
         }
         
         // 检查是否启用申请
         $options = get_option( $this->option_name, array() );
         if ( empty( $options['enable_application'] ) ) {
-            wp_send_json_error( array( 'message' => __( '在线申请已关闭', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '在线申请已关闭', 'qiling' ) ) );
         }
         if ( ! self::is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '招聘模块已关闭', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '招聘模块已关闭', 'qiling' ) ) );
         }
         
         // 频率限制
         $ip = developer_starter_get_client_ip();
         if ( $this->is_rate_limited( $ip ) ) {
-            wp_send_json_error( array( 'message' => __( '提交过于频繁，请稍后再试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '提交过于频繁，请稍后再试', 'qiling' ) ) );
         }
         
         // 清理输入
@@ -1036,10 +1061,10 @@ class Careers_Manager {
         
         // 验证必填
         if ( empty( $name ) ) {
-            wp_send_json_error( array( 'message' => __( '请填写姓名', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请填写姓名', 'qiling' ) ) );
         }
         if ( empty( $phone ) && empty( $email ) ) {
-            wp_send_json_error( array( 'message' => __( '请填写联系电话或邮箱', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请填写联系电话或邮箱', 'qiling' ) ) );
         }
         $position_title = '';
         $selected_position = $position_id > 0 ? self::get_position( $position_id ) : null;
@@ -1048,7 +1073,7 @@ class Careers_Manager {
             $position_title = sanitize_text_field( (string) $selected_position->title );
         } else {
             $matched_position = $this->get_active_position_by_title( $raw_position_title );
-            $other_position_label = __( '其他职位', 'developer-starter' );
+            $other_position_label = __( '其他职位', 'qiling' );
             if ( $matched_position && ! empty( $matched_position->title ) ) {
                 $position_id = (int) $matched_position->id;
                 $position_title = sanitize_text_field( (string) $matched_position->title );
@@ -1059,7 +1084,7 @@ class Careers_Manager {
         }
 
         if ( '' === $position_title ) {
-            wp_send_json_error( array( 'message' => __( '请选择有效的应聘职位', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请选择有效的应聘职位', 'qiling' ) ) );
         }
         
         // 插入数据库
@@ -1082,7 +1107,7 @@ class Careers_Manager {
         );
         
         if ( $result === false ) {
-            wp_send_json_error( array( 'message' => __( '提交失败，请稍后重试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '提交失败，请稍后重试', 'qiling' ) ) );
         }
 
         $this->send_application_notification(
@@ -1097,7 +1122,7 @@ class Careers_Manager {
             )
         );
         
-        wp_send_json_success( array( 'message' => __( '申请已提交！我们会尽快与您联系', 'developer-starter' ) ) );
+        wp_send_json_success( array( 'message' => __( '申请已提交！我们会尽快与您联系', 'qiling' ) ) );
     }
 
     /**
@@ -1124,7 +1149,7 @@ class Careers_Manager {
 
         $site_name = get_bloginfo( 'name' );
         $subject = sprintf(
-            __( '[%1$s] 新求职申请：%2$s', 'developer-starter' ),
+            __( '[%1$s] 新求职申请：%2$s', 'qiling' ),
             $site_name,
             $application['position_title']
         );
@@ -1136,31 +1161,31 @@ class Careers_Manager {
                 $to = get_option( 'admin_email' );
             }
 
-            $mail_message  = __( "您收到一条新的求职申请：\n\n", 'developer-starter' );
-            $mail_message .= __( '姓名', 'developer-starter' ) . ': ' . $application['name'] . "\n";
-            $mail_message .= __( '电话', 'developer-starter' ) . ': ' . $application['phone'] . "\n";
-            $mail_message .= __( '邮箱', 'developer-starter' ) . ': ' . $application['email'] . "\n";
-            $mail_message .= __( '职位', 'developer-starter' ) . ': ' . $application['position_title'] . "\n";
-            $mail_message .= __( '自我介绍', 'developer-starter' ) . ': ' . $application['message'] . "\n";
-            $mail_message .= __( '提交时间', 'developer-starter' ) . ': ' . current_time( 'Y-m-d H:i:s' ) . "\n";
-            $mail_message .= __( 'IP 地址', 'developer-starter' ) . ': ' . $application['ip_address'] . "\n";
+            $mail_message  = __( "您收到一条新的求职申请：\n\n", 'qiling' );
+            $mail_message .= __( '姓名', 'qiling' ) . ': ' . $application['name'] . "\n";
+            $mail_message .= __( '电话', 'qiling' ) . ': ' . $application['phone'] . "\n";
+            $mail_message .= __( '邮箱', 'qiling' ) . ': ' . $application['email'] . "\n";
+            $mail_message .= __( '职位', 'qiling' ) . ': ' . $application['position_title'] . "\n";
+            $mail_message .= __( '自我介绍', 'qiling' ) . ': ' . $application['message'] . "\n";
+            $mail_message .= __( '提交时间', 'qiling' ) . ': ' . current_time( 'Y-m-d H:i:s' ) . "\n";
+            $mail_message .= __( 'IP 地址', 'qiling' ) . ': ' . $application['ip_address'] . "\n";
 
             wp_mail( $to, $subject, $mail_message, array( 'Content-Type: text/plain; charset=UTF-8' ) );
         }
 
         if ( $should_send_push && function_exists( 'developer_starter_send_push_message' ) ) {
             $push_lines = array(
-                __( '姓名', 'developer-starter' ) => $application['name'],
-                __( '电话', 'developer-starter' ) => $application['phone'],
-                __( '邮箱', 'developer-starter' ) => $application['email'],
-                __( '职位', 'developer-starter' ) => $application['position_title'],
-                __( '自我介绍', 'developer-starter' ) => $application['message'],
-                __( '提交时间', 'developer-starter' ) => current_time( 'Y-m-d H:i:s' ),
-                __( 'IP 地址', 'developer-starter' ) => $application['ip_address'],
+                __( '姓名', 'qiling' ) => $application['name'],
+                __( '电话', 'qiling' ) => $application['phone'],
+                __( '邮箱', 'qiling' ) => $application['email'],
+                __( '职位', 'qiling' ) => $application['position_title'],
+                __( '自我介绍', 'qiling' ) => $application['message'],
+                __( '提交时间', 'qiling' ) => current_time( 'Y-m-d H:i:s' ),
+                __( 'IP 地址', 'qiling' ) => $application['ip_address'],
             );
             developer_starter_send_push_message(
                 'careers',
-                __( '新求职申请通知', 'developer-starter' ),
+                __( '新求职申请通知', 'qiling' ),
                 $push_lines,
                 array(
                     'args' => array(

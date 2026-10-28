@@ -17,7 +17,7 @@ class Video_Ranking_Module extends Module_Base {
     public function __construct() {
         $this->category    = 'content';
         $this->icon        = 'dashicons-awards';
-        $this->description = __( '按分类、发布时间、更新时间、评论或浏览量展示影视榜单，播放器不可用时自动降级为普通文章排行。', 'developer-starter' );
+        $this->description = __( '按分类、发布时间、更新时间、评论或浏览量展示影视榜单，播放器不可用时自动降级为普通文章排行。', 'qiling' );
 
         add_filter( 'posts_join', array( $this, 'filter_video_query_join' ), 20, 2 );
         add_filter( 'posts_where', array( $this, 'filter_video_query_where' ), 20, 2 );
@@ -28,78 +28,78 @@ class Video_Ranking_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '影视排行榜', 'developer-starter' );
+        return __( '影视排行榜', 'qiling' );
     }
 
     public function get_fields() {
-        $category_options = array( '0' => __( '全部分类', 'developer-starter' ) );
+        $category_options = array( '0' => __( '全部分类', 'qiling' ) );
         foreach ( get_categories( array( 'hide_empty' => false ) ) as $category ) {
             $category_options[ (string) $category->term_id ] = $category->name;
         }
 
         $source_options = array(
-            'latest'   => __( '最新发布', 'developer-starter' ),
-            'modified' => __( '最近更新', 'developer-starter' ),
-            'comments' => __( '评论最多', 'developer-starter' ),
-            'category' => __( '指定分类', 'developer-starter' ),
-            'manual'   => __( '手工指定', 'developer-starter' ),
+            'latest'   => __( '最新发布', 'qiling' ),
+            'modified' => __( '最近更新', 'qiling' ),
+            'comments' => __( '评论最多', 'qiling' ),
+            'category' => __( '指定分类', 'qiling' ),
+            'manual'   => __( '手工指定', 'qiling' ),
         );
         if ( $this->views_available() ) {
-            $source_options['views'] = __( '浏览最多', 'developer-starter' );
+            $source_options['views'] = __( '浏览最多', 'qiling' );
         }
 
         return array(
-            array( 'id' => 'vr_title', 'type' => 'text', 'label' => __( '模块标题', 'developer-starter' ), 'default' => __( '影视排行榜', 'developer-starter' ) ),
-            array( 'id' => 'vr_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ), 'description' => __( '留空时跟随当前页面主题。', 'developer-starter' ) ),
-            array( 'id' => 'vr_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ), 'default' => __( '发现值得观看的热门内容', 'developer-starter' ) ),
-            array( 'id' => 'vr_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ), 'description' => __( '留空时使用与模块背景匹配的辅助文字颜色。', 'developer-starter' ) ),
-            array( 'id' => 'vr_bg_color', 'type' => 'color', 'label' => __( '模块背景颜色', 'developer-starter' ), 'description' => __( '留空时跟随当前页面主题。', 'developer-starter' ) ),
-            array( 'id' => 'vr_more_text', 'type' => 'text', 'label' => __( '查看更多文字', 'developer-starter' ), 'default' => __( '查看更多', 'developer-starter' ) ),
-            array( 'id' => 'vr_more_url', 'type' => 'text', 'label' => __( '查看更多链接', 'developer-starter' ), 'description' => __( '填写完整排行榜页面或影视分类页地址；留空时不显示“查看更多”按钮。', 'developer-starter' ) ),
-            array( 'id' => 'vr_count', 'type' => 'number', 'label' => __( '默认显示数量', 'developer-starter' ), 'default' => '10', 'description' => __( '允许 3-20 条。', 'developer-starter' ) ),
-            array( 'id' => 'vr_source', 'type' => 'select', 'label' => __( '默认数据来源', 'developer-starter' ), 'options' => $source_options, 'default' => 'latest' ),
-            array( 'id' => 'vr_category', 'type' => 'select', 'label' => __( '默认指定分类', 'developer-starter' ), 'options' => $category_options, 'default' => '0' ),
-            array( 'id' => 'vr_manual_ids', 'type' => 'text', 'label' => __( '默认手工文章 ID', 'developer-starter' ), 'description' => __( '使用逗号分隔，手工来源按填写顺序显示。', 'developer-starter' ) ),
+            array( 'id' => 'vr_title', 'type' => 'text', 'label' => __( '模块标题', 'qiling' ), 'default' => __( '影视排行榜', 'qiling' ) ),
+            array( 'id' => 'vr_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ), 'description' => __( '留空时跟随当前页面主题。', 'qiling' ) ),
+            array( 'id' => 'vr_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ), 'default' => __( '发现值得观看的热门内容', 'qiling' ) ),
+            array( 'id' => 'vr_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ), 'description' => __( '留空时使用与模块背景匹配的辅助文字颜色。', 'qiling' ) ),
+            array( 'id' => 'vr_bg_color', 'type' => 'color', 'label' => __( '模块背景颜色', 'qiling' ), 'description' => __( '留空时跟随当前页面主题。', 'qiling' ) ),
+            array( 'id' => 'vr_more_text', 'type' => 'text', 'label' => __( '查看更多文字', 'qiling' ), 'default' => __( '查看更多', 'qiling' ) ),
+            array( 'id' => 'vr_more_url', 'type' => 'text', 'label' => __( '查看更多链接', 'qiling' ), 'description' => __( '填写完整排行榜页面或影视分类页地址；留空时不显示“查看更多”按钮。', 'qiling' ) ),
+            array( 'id' => 'vr_count', 'type' => 'number', 'label' => __( '默认显示数量', 'qiling' ), 'default' => '10', 'description' => __( '允许 3-20 条。', 'qiling' ) ),
+            array( 'id' => 'vr_source', 'type' => 'select', 'label' => __( '默认数据来源', 'qiling' ), 'options' => $source_options, 'default' => 'latest' ),
+            array( 'id' => 'vr_category', 'type' => 'select', 'label' => __( '默认指定分类', 'qiling' ), 'options' => $category_options, 'default' => '0' ),
+            array( 'id' => 'vr_manual_ids', 'type' => 'text', 'label' => __( '默认手工文章 ID', 'qiling' ), 'description' => __( '使用逗号分隔，手工来源按填写顺序显示。', 'qiling' ) ),
             array(
                 'id'      => 'vr_layout',
                 'type'    => 'select',
-                'label'   => __( '布局', 'developer-starter' ),
+                'label'   => __( '布局', 'qiling' ),
                 'options' => array(
-                    'featured'  => __( '前三名突出榜', 'developer-starter' ),
-                    'compact'   => __( '紧凑文字榜', 'developer-starter' ),
-                    'poster'    => __( '海报榜', 'developer-starter' ),
-                    'two_column'=> __( '左右双栏榜', 'developer-starter' ),
+                    'featured'  => __( '前三名突出榜', 'qiling' ),
+                    'compact'   => __( '紧凑文字榜', 'qiling' ),
+                    'poster'    => __( '海报榜', 'qiling' ),
+                    'two_column'=> __( '左右双栏榜', 'qiling' ),
                 ),
                 'default' => 'featured',
             ),
             array(
                 'id'            => 'vr_boards',
                 'type'          => 'repeater',
-                'label'         => __( '排行榜标签', 'developer-starter' ),
-                'description'   => __( '最多使用前 5 个榜单；不添加时使用上面的默认数据设置。', 'developer-starter' ),
-                'add_button'    => __( '添加榜单', 'developer-starter' ),
+                'label'         => __( '排行榜标签', 'qiling' ),
+                'description'   => __( '最多使用前 5 个榜单；不添加时使用上面的默认数据设置。', 'qiling' ),
+                'add_button'    => __( '添加榜单', 'qiling' ),
                 'fields'        => array(
-                    array( 'id' => 'label', 'type' => 'text', 'label' => __( '标签名称', 'developer-starter' ), 'default' => __( '总榜', 'developer-starter' ) ),
-                    array( 'id' => 'category', 'type' => 'select', 'label' => __( '指定分类', 'developer-starter' ), 'options' => $category_options, 'default' => '0' ),
-                    array( 'id' => 'source', 'type' => 'select', 'label' => __( '排序方式', 'developer-starter' ), 'options' => $source_options, 'default' => 'latest' ),
-                    array( 'id' => 'count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '10' ),
-                    array( 'id' => 'manual_ids', 'type' => 'text', 'label' => __( '手工文章 ID', 'developer-starter' ), 'description' => __( '仅手工指定来源使用，逗号分隔。', 'developer-starter' ) ),
+                    array( 'id' => 'label', 'type' => 'text', 'label' => __( '标签名称', 'qiling' ), 'default' => __( '总榜', 'qiling' ) ),
+                    array( 'id' => 'category', 'type' => 'select', 'label' => __( '指定分类', 'qiling' ), 'options' => $category_options, 'default' => '0' ),
+                    array( 'id' => 'source', 'type' => 'select', 'label' => __( '排序方式', 'qiling' ), 'options' => $source_options, 'default' => 'latest' ),
+                    array( 'id' => 'count', 'type' => 'number', 'label' => __( '显示数量', 'qiling' ), 'default' => '10' ),
+                    array( 'id' => 'manual_ids', 'type' => 'text', 'label' => __( '手工文章 ID', 'qiling' ), 'description' => __( '仅手工指定来源使用，逗号分隔。', 'qiling' ) ),
                 ),
                 'default_items' => array(),
             ),
-            array( 'id' => 'vr_show_rating', 'type' => 'select', 'label' => __( '显示评分', 'developer-starter' ), 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'vr_show_quality', 'type' => 'select', 'label' => __( '显示清晰度', 'developer-starter' ), 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'vr_show_episodes', 'type' => 'select', 'label' => __( '显示集数', 'developer-starter' ), 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'vr_show_category', 'type' => 'select', 'label' => __( '显示分类', 'developer-starter' ), 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'yes' ),
-            array( 'id' => 'vr_show_date', 'type' => 'select', 'label' => __( '显示发布日期', 'developer-starter' ), 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
-            array( 'id' => 'vr_show_views', 'type' => 'select', 'label' => __( '显示浏览量', 'developer-starter' ), 'options' => array( 'yes' => __( '显示', 'developer-starter' ), 'no' => __( '隐藏', 'developer-starter' ) ), 'default' => 'no' ),
+            array( 'id' => 'vr_show_rating', 'type' => 'select', 'label' => __( '显示评分', 'qiling' ), 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'vr_show_quality', 'type' => 'select', 'label' => __( '显示清晰度', 'qiling' ), 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'vr_show_episodes', 'type' => 'select', 'label' => __( '显示集数', 'qiling' ), 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'vr_show_category', 'type' => 'select', 'label' => __( '显示分类', 'qiling' ), 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'yes' ),
+            array( 'id' => 'vr_show_date', 'type' => 'select', 'label' => __( '显示发布日期', 'qiling' ), 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'no' ),
+            array( 'id' => 'vr_show_views', 'type' => 'select', 'label' => __( '显示浏览量', 'qiling' ), 'options' => array( 'yes' => __( '显示', 'qiling' ), 'no' => __( '隐藏', 'qiling' ) ), 'default' => 'no' ),
         );
     }
 
     public function render( $data = array() ) {
-        $title     = isset( $data['vr_title'] ) ? sanitize_text_field( (string) $data['vr_title'] ) : __( '影视排行榜', 'developer-starter' );
+        $title     = isset( $data['vr_title'] ) ? sanitize_text_field( (string) $data['vr_title'] ) : __( '影视排行榜', 'qiling' );
         $subtitle  = isset( $data['vr_subtitle'] ) ? sanitize_text_field( (string) $data['vr_subtitle'] ) : '';
-        $more_text = isset( $data['vr_more_text'] ) ? sanitize_text_field( (string) $data['vr_more_text'] ) : __( '查看更多', 'developer-starter' );
+        $more_text = isset( $data['vr_more_text'] ) ? sanitize_text_field( (string) $data['vr_more_text'] ) : __( '查看更多', 'qiling' );
         $more_url  = isset( $data['vr_more_url'] ) ? esc_url_raw( (string) $data['vr_more_url'] ) : '';
         if ( in_array( trim( $more_url ), array( '#', '#0' ), true ) ) {
             $more_url = '';
@@ -152,7 +152,7 @@ class Video_Ranking_Module extends Module_Base {
                 </header>
 
                 <?php if ( count( $boards ) > 1 ) : ?>
-                    <div class="qvr-tabs" role="tablist" aria-label="<?php esc_attr_e( '选择排行榜', 'developer-starter' ); ?>">
+                    <div class="qvr-tabs" role="tablist" aria-label="<?php esc_attr_e( '选择排行榜', 'qiling' ); ?>">
                         <?php foreach ( $boards as $index => $board ) : ?>
                             <button type="button" class="qvr-tab<?php echo 0 === $index ? ' is-active' : ''; ?>" role="tab" aria-selected="<?php echo 0 === $index ? 'true' : 'false'; ?>" aria-controls="<?php echo esc_attr( $uid . '-panel-' . $index ); ?>" data-qvr-tab="<?php echo esc_attr( $index ); ?>"><?php echo esc_html( $board['label'] ); ?></button>
                         <?php endforeach; ?>
@@ -180,7 +180,7 @@ class Video_Ranking_Module extends Module_Base {
         $raw_boards = isset( $data['vr_boards'] ) && is_array( $data['vr_boards'] ) ? array_slice( $data['vr_boards'], 0, 5 ) : array();
         if ( empty( $raw_boards ) ) {
             $raw_boards[] = array(
-                'label'      => isset( $data['vr_title'] ) ? $data['vr_title'] : __( '总榜', 'developer-starter' ),
+                'label'      => isset( $data['vr_title'] ) ? $data['vr_title'] : __( '总榜', 'qiling' ),
                 'category'   => isset( $data['vr_category'] ) ? $data['vr_category'] : 0,
                 'source'     => isset( $data['vr_source'] ) ? $data['vr_source'] : 'latest',
                 'count'      => isset( $data['vr_count'] ) ? $data['vr_count'] : 10,
@@ -203,7 +203,7 @@ class Video_Ranking_Module extends Module_Base {
             }
             $label = isset( $raw['label'] ) ? sanitize_text_field( (string) $raw['label'] ) : '';
             $boards[] = array(
-                'label'      => '' !== $label ? $label : sprintf( __( '榜单 %d', 'developer-starter' ), $index + 1 ),
+                'label'      => '' !== $label ? $label : sprintf( __( '榜单 %d', 'qiling' ), $index + 1 ),
                 'category'   => isset( $raw['category'] ) ? absint( $raw['category'] ) : 0,
                 'source'     => $source,
                 'count'      => max( 3, min( 20, isset( $raw['count'] ) ? absint( $raw['count'] ) : 10 ) ),
@@ -302,7 +302,7 @@ class Video_Ranking_Module extends Module_Base {
         $category   = ! empty( $categories ) ? $categories[0]->name : '';
         return array(
             'id'       => $post_id,
-            'title'    => get_the_title( $post_id ) ?: __( '（无标题）', 'developer-starter' ),
+            'title'    => get_the_title( $post_id ) ?: __( '（无标题）', 'qiling' ),
             'url'      => get_permalink( $post_id ),
             'poster'   => $poster,
             'rating'   => $video_meta && is_numeric( $video_meta->rating ) ? (float) $video_meta->rating : 0,
@@ -336,7 +336,7 @@ class Video_Ranking_Module extends Module_Base {
             <a class="qvr-item-link" href="<?php echo esc_url( $item['url'] ); ?>">
                 <span class="qvr-rank"><?php echo esc_html( sprintf( '%02d', $rank ) ); ?></span>
                 <span class="qvr-poster<?php echo $has_poster ? '' : ' is-placeholder'; ?>">
-                    <?php if ( $has_poster ) : ?><img src="<?php echo esc_url( $item['poster'] ); ?>" alt="<?php echo esc_attr( $item['title'] ); ?>" width="240" height="360" loading="lazy" decoding="async" /><?php else : ?><span><?php esc_html_e( '暂无封面', 'developer-starter' ); ?></span><?php endif; ?>
+                    <?php if ( $has_poster ) : ?><img src="<?php echo esc_url( $item['poster'] ); ?>" alt="<?php echo esc_attr( $item['title'] ); ?>" width="240" height="360" loading="lazy" decoding="async" /><?php else : ?><span><?php esc_html_e( '暂无封面', 'qiling' ); ?></span><?php endif; ?>
                 </span>
                 <span class="qvr-item-body">
                     <span class="qvr-item-title"><?php echo esc_html( $item['title'] ); ?></span>
@@ -344,11 +344,11 @@ class Video_Ranking_Module extends Module_Base {
                         <?php if ( $show['category'] && '' !== $item['category'] ) : ?><span><?php echo esc_html( $item['category'] ); ?></span><?php endif; ?>
                         <?php if ( $show['date'] ) : ?><span><?php echo esc_html( $item['date'] ); ?></span><?php endif; ?>
                         <?php if ( $show['quality'] && '' !== $item['quality'] ) : ?><span><?php echo esc_html( $item['quality'] ); ?></span><?php endif; ?>
-                        <?php if ( $show['episodes'] && $item['episodes'] > 0 ) : ?><span><?php echo esc_html( sprintf( __( '%d 集', 'developer-starter' ), $item['episodes'] ) ); ?></span><?php endif; ?>
-                        <?php if ( $show['views'] && $item['views'] > 0 ) : ?><span><?php echo esc_html( sprintf( __( '%s 浏览', 'developer-starter' ), number_format_i18n( $item['views'] ) ) ); ?></span><?php endif; ?>
+                        <?php if ( $show['episodes'] && $item['episodes'] > 0 ) : ?><span><?php echo esc_html( sprintf( __( '%d 集', 'qiling' ), $item['episodes'] ) ); ?></span><?php endif; ?>
+                        <?php if ( $show['views'] && $item['views'] > 0 ) : ?><span><?php echo esc_html( sprintf( __( '%s 浏览', 'qiling' ), number_format_i18n( $item['views'] ) ) ); ?></span><?php endif; ?>
                     </span>
                 </span>
-                <?php if ( $show['rating'] && $item['rating'] > 0 ) : ?><span class="qvr-rating"><strong><?php echo esc_html( number_format_i18n( $item['rating'], 1 ) ); ?></strong><small><?php esc_html_e( '评分', 'developer-starter' ); ?></small></span><?php endif; ?>
+                <?php if ( $show['rating'] && $item['rating'] > 0 ) : ?><span class="qvr-rating"><strong><?php echo esc_html( number_format_i18n( $item['rating'], 1 ) ); ?></strong><small><?php esc_html_e( '评分', 'qiling' ); ?></small></span><?php endif; ?>
             </a>
         </article>
         <?php

@@ -65,7 +65,7 @@ if ( $search_result_show_thumb && function_exists( 'update_post_thumbnail_cache'
 
                 $result_title = trim( get_the_title() );
                 if ( '' === $result_title ) {
-                    $result_title = __( '（无标题）', 'developer-starter' );
+                    $result_title = __( '（无标题）', 'qiling' );
                 }
 
                 $result_type_label = '';

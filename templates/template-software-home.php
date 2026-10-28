@@ -15,8 +15,8 @@
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-software-home',
-        DEVELOPER_STARTER_ASSETS . '/css/software-home.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/software-home.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 }, 20 );
@@ -40,20 +40,26 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
             <!-- 没有模块时显示提示 -->
             <section class="section-padding software-home-empty-state">
                 <div class="container text-center">
-                    <div class="software-home-empty-state__icon">📦</div>
-                    <h2 class="software-home-empty-state__title"><?php esc_html_e( '软件下载站首页', 'developer-starter' ); ?></h2>
+                    <div class="software-home-empty-state__icon">
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h2 class="software-home-empty-state__title"><?php esc_html_e( '软件下载站首页', 'qiling' ); ?></h2>
                     <p class="software-home-empty-state__desc">
-                        <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+                        <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
                     </p>
                     <div class="software-home-empty-state__actions">
                         <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                             <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary btn-lg software-home-empty-state__button">
-                                <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                                <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                             </a>
                         <?php endif; ?>
                     </div>
                     <p class="software-home-empty-state__hint">
-                        <?php esc_html_e( '💡 提示：需要先安装并激活「启灵App」插件才能显示软件数据', 'developer-starter' ); ?>
+                        <?php esc_html_e( '提示：需要先安装并激活「启灵App」插件才能显示软件数据', 'qiling' ); ?>
                     </p>
                 </div>
             </section>

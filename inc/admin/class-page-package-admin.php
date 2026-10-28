@@ -41,9 +41,9 @@ class Page_Package_Admin {
      */
     public function register_submenu_page() {
         add_submenu_page(
-            'developer-starter-settings',
-            __( '页面包/整站包', 'developer-starter' ),
-            __( '页面包/整站包', 'developer-starter' ),
+            'qiling-settings',
+            __( '页面包/整站包', 'qiling' ),
+            __( '页面包/整站包', 'qiling' ),
             'manage_options',
             $this->page_slug,
             array( $this, 'render_page' )
@@ -57,7 +57,7 @@ class Page_Package_Admin {
      */
     public function render_page() {
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( '权限不足', 'developer-starter' ) );
+            wp_die( esc_html__( '权限不足', 'qiling' ) );
         }
 
         $this->manager->cleanup_expired_preview_pages();
@@ -77,9 +77,9 @@ class Page_Package_Admin {
         $import_history       = $this->manager->get_import_history( 20 );
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e( '页面包/整站包', 'developer-starter' ); ?></h1>
+            <h1><?php esc_html_e( '页面包/整站包', 'qiling' ); ?></h1>
             <p class="description">
-                <?php esc_html_e( '用于本地导入和导出启灵模块装修页、全局样式、内容模型、导航菜单和站点基础信息。', 'developer-starter' ); ?>
+                <?php esc_html_e( '用于本地导入和导出启灵模块装修页、全局样式、内容模型、导航菜单和站点基础信息。', 'qiling' ); ?>
             </p>
 
             <style>
@@ -311,8 +311,8 @@ class Page_Package_Admin {
             <?php endif; ?>
 
             <div class="ds-package-panel ds-package-upload">
-                <h2><?php esc_html_e( '导入页面包/整站包', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '可以上传 JSON 文件，也可以直接粘贴本地包内容。这里只处理启灵主题自己的模块装修页；导入会按“先预检 → 生成临时预览 → 执行导入”的流程进行，整站设置默认不会写入，必须在预检后手动勾选。', 'developer-starter' ); ?></p>
+                <h2><?php esc_html_e( '导入页面包/整站包', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '可以上传 JSON 文件，也可以直接粘贴本地包内容。这里只处理启灵主题自己的模块装修页；导入会按“先预检 → 生成临时预览 → 执行导入”的流程进行，整站设置默认不会写入，必须在预检后手动勾选。', 'qiling' ); ?></p>
 
                 <form method="post" enctype="multipart/form-data">
                     <?php wp_nonce_field( 'developer_starter_site_package_action', 'developer_starter_site_package_nonce' ); ?>
@@ -321,20 +321,20 @@ class Page_Package_Admin {
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-file"><?php esc_html_e( '上传 JSON 文件', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-file"><?php esc_html_e( '上传 JSON 文件', 'qiling' ); ?></label></th>
                                 <td>
                                     <input type="file" id="developer-starter-site-package-file" name="developer_starter_site_package_file" accept=".json,application/json" />
-                                    <p class="description"><?php echo esc_html( sprintf( __( '单个数据包最大 %s。', 'developer-starter' ), size_format( Page_Package_Manager::MAX_PACKAGE_BYTES ) ) ); ?></p>
+                                    <p class="description"><?php echo esc_html( sprintf( __( '单个数据包最大 %s。', 'qiling' ), size_format( Page_Package_Manager::MAX_PACKAGE_BYTES ) ) ); ?></p>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-json"><?php esc_html_e( '或直接粘贴 JSON', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-json"><?php esc_html_e( '或直接粘贴 JSON', 'qiling' ); ?></label></th>
                                 <td>
-                                    <textarea id="developer-starter-site-package-json" name="developer_starter_site_package_json" placeholder="<?php esc_attr_e( '把页面包或整站包 JSON 粘贴到这里…', 'developer-starter' ); ?>"><?php echo esc_textarea( $state['raw_json'] ); ?></textarea>
+                                    <textarea id="developer-starter-site-package-json" name="developer_starter_site_package_json" placeholder="<?php esc_attr_e( '把页面包或整站包 JSON 粘贴到这里…', 'qiling' ); ?>"><?php echo esc_textarea( $state['raw_json'] ); ?></textarea>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row"><?php esc_html_e( 'URL 冲突策略', 'developer-starter' ); ?></th>
+                                <th scope="row"><?php esc_html_e( 'URL 冲突策略', 'qiling' ); ?></th>
                                 <td>
                                     <div class="ds-package-radio-grid">
                                         <?php foreach ( $conflict_strategies as $strategy_key => $strategy_config ) : ?>
@@ -353,52 +353,52 @@ class Page_Package_Admin {
                     </table>
 
                     <div class="ds-package-actions">
-                        <button type="submit" class="button button-primary"><?php esc_html_e( '预检数据包', 'developer-starter' ); ?></button>
-                        <span class="description"><?php esc_html_e( '预检会检查模板、模块、系统保留页、URL 冲突、站点设置和占位链接是否可解析。', 'developer-starter' ); ?></span>
+                        <button type="submit" class="button button-primary"><?php esc_html_e( '预检数据包', 'qiling' ); ?></button>
+                        <span class="description"><?php esc_html_e( '预检会检查模板、模块、系统保留页、URL 冲突、站点设置和占位链接是否可解析。', 'qiling' ); ?></span>
                     </div>
                 </form>
             </div>
 
             <div class="ds-package-panel">
-                <h2><?php esc_html_e( '本地包能力说明', 'developer-starter' ); ?></h2>
+                <h2><?php esc_html_e( '本地包能力说明', 'qiling' ); ?></h2>
                 <div class="ds-package-grid">
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '当前支持', 'developer-starter' ); ?></strong>
-                        <div><?php esc_html_e( '页面包支持启灵模块装修页；整站包可额外携带全局样式、内容模型、菜单、首页/文章页映射和站点标题。', 'developer-starter' ); ?></div>
+                        <strong><?php esc_html_e( '当前支持', 'qiling' ); ?></strong>
+                        <div><?php esc_html_e( '页面包支持启灵模块装修页；整站包可额外携带全局样式、内容模型、菜单、首页/文章页映射和站点标题。', 'qiling' ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '当前不支持', 'developer-starter' ); ?></strong>
-                        <div><?php esc_html_e( '登录、注册、找回密码、个人中心等系统保留页会被拦截；第三方插件页面是否可迁移取决于插件自身能力。', 'developer-starter' ); ?></div>
+                        <strong><?php esc_html_e( '当前不支持', 'qiling' ); ?></strong>
+                        <div><?php esc_html_e( '登录、注册、找回密码、个人中心等系统保留页会被拦截；第三方插件页面是否可迁移取决于插件自身能力。', 'qiling' ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '冲突策略', 'developer-starter' ); ?></strong>
-                        <div><?php esc_html_e( '支持跳过、自动生成新 URL、仅更新同一数据包历史页面 3 种策略。', 'developer-starter' ); ?></div>
+                        <strong><?php esc_html_e( '冲突策略', 'qiling' ); ?></strong>
+                        <div><?php esc_html_e( '支持跳过、自动生成新 URL、仅更新同一数据包历史页面 3 种策略。', 'qiling' ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '占位链接', 'developer-starter' ); ?></strong>
-                        <div><?php esc_html_e( '支持 qiling://page/页面标识 和 qiling://system/login 这类引用；可解析的占位链接会自动转成真实链接，未解析项会保留原样并提示。', 'developer-starter' ); ?></div>
+                        <strong><?php esc_html_e( '占位链接', 'qiling' ); ?></strong>
+                        <div><?php esc_html_e( '支持 qiling://page/页面标识 和 qiling://system/login 这类引用；可解析的占位链接会自动转成真实链接，未解析项会保留原样并提示。', 'qiling' ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '包信息', 'developer-starter' ); ?></strong>
-                        <div><?php esc_html_e( '支持作者、描述、封面、分类、标签、依赖插件等元信息预览。', 'developer-starter' ); ?></div>
+                        <strong><?php esc_html_e( '包信息', 'qiling' ); ?></strong>
+                        <div><?php esc_html_e( '支持作者、描述、封面、分类、标签、依赖插件等元信息预览。', 'qiling' ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '本地导出', 'developer-starter' ); ?></strong>
-                        <div><?php esc_html_e( '支持从当前主题页面中勾选多个装修页，导出页面包；也可选择整站包并附带全局配置清单。', 'developer-starter' ); ?></div>
+                        <strong><?php esc_html_e( '本地导出', 'qiling' ); ?></strong>
+                        <div><?php esc_html_e( '支持从当前主题页面中勾选多个装修页，导出页面包；也可选择整站包并附带全局配置清单。', 'qiling' ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '明确不包含', 'developer-starter' ); ?></strong>
-                        <div><?php esc_html_e( '不包含装修市场、远程上架、购买、在线分发或第三方模板源。', 'developer-starter' ); ?></div>
+                        <strong><?php esc_html_e( '明确不包含', 'qiling' ); ?></strong>
+                        <div><?php esc_html_e( '不包含装修市场、远程上架、购买、在线分发或第三方模板源。', 'qiling' ); ?></div>
                     </div>
                 </div>
 
-                <h3><?php esc_html_e( '系统保留页', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '系统保留页', 'qiling' ); ?></h3>
                 <table class="ds-package-table">
                     <thead>
                         <tr>
-                            <th><?php esc_html_e( '页面用途', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '保留 URL', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '保留模板', 'developer-starter' ); ?></th>
+                            <th><?php esc_html_e( '页面用途', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '保留 URL', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '保留模板', 'qiling' ); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -414,8 +414,8 @@ class Page_Package_Admin {
             </div>
 
             <div class="ds-package-panel">
-                <h2><?php esc_html_e( '导出页面包/整站包', 'developer-starter' ); ?></h2>
-                <p><?php esc_html_e( '导出启灵主题模块装修页；整站包可附带全局样式、内容模型、菜单和站点基础信息。', 'developer-starter' ); ?></p>
+                <h2><?php esc_html_e( '导出页面包/整站包', 'qiling' ); ?></h2>
+                <p><?php esc_html_e( '导出启灵主题模块装修页；整站包可附带全局样式、内容模型、菜单和站点基础信息。', 'qiling' ); ?></p>
 
                 <form method="post">
                     <?php wp_nonce_field( 'developer_starter_site_package_action', 'developer_starter_site_package_nonce' ); ?>
@@ -424,11 +424,11 @@ class Page_Package_Admin {
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-title"><?php esc_html_e( '数据包标题', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-title"><?php esc_html_e( '数据包标题', 'qiling' ); ?></label></th>
                                 <td><input type="text" class="regular-text" id="developer-starter-site-package-export-title" name="developer_starter_site_package_export_title" value="<?php echo esc_attr( $state['export_form']['title'] ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><?php esc_html_e( '导出类型', 'developer-starter' ); ?></th>
+                                <th scope="row"><?php esc_html_e( '导出类型', 'qiling' ); ?></th>
                                 <td>
                                     <div class="ds-package-radio-grid">
                                         <?php foreach ( $package_scope_choices as $scope_key => $scope_config ) : ?>
@@ -444,60 +444,60 @@ class Page_Package_Admin {
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-id"><?php esc_html_e( '数据包 ID', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-id"><?php esc_html_e( '数据包 ID', 'qiling' ); ?></label></th>
                                 <td><input type="text" class="regular-text" id="developer-starter-site-package-export-id" name="developer_starter_site_package_export_package_id" value="<?php echo esc_attr( $state['export_form']['package_id'] ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-min-version"><?php esc_html_e( '最低主题版本', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-min-version"><?php esc_html_e( '最低主题版本', 'qiling' ); ?></label></th>
                                 <td><input type="text" class="regular-text" id="developer-starter-site-package-export-min-version" name="developer_starter_site_package_export_min_theme_version" value="<?php echo esc_attr( $state['export_form']['min_theme_version'] ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-author"><?php esc_html_e( '作者名称', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-author"><?php esc_html_e( '作者名称', 'qiling' ); ?></label></th>
                                 <td><input type="text" class="regular-text" id="developer-starter-site-package-export-author" name="developer_starter_site_package_export_author_name" value="<?php echo esc_attr( $state['export_form']['author_name'] ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-author-url"><?php esc_html_e( '作者链接', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-author-url"><?php esc_html_e( '作者链接', 'qiling' ); ?></label></th>
                                 <td><input type="url" class="regular-text" id="developer-starter-site-package-export-author-url" name="developer_starter_site_package_export_author_url" value="<?php echo esc_attr( $state['export_form']['author_url'] ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-cover"><?php esc_html_e( '封面图 URL', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-cover"><?php esc_html_e( '封面图 URL', 'qiling' ); ?></label></th>
                                 <td><input type="url" class="regular-text" id="developer-starter-site-package-export-cover" name="developer_starter_site_package_export_cover" value="<?php echo esc_attr( $state['export_form']['cover'] ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-categories"><?php esc_html_e( '分类标签', 'developer-starter' ); ?></label></th>
-                                <td><input type="text" class="regular-text" id="developer-starter-site-package-export-categories" name="developer_starter_site_package_export_categories" value="<?php echo esc_attr( $state['export_form']['categories'] ); ?>" placeholder="<?php esc_attr_e( '用英文逗号分隔', 'developer-starter' ); ?>" /></td>
+                                <th scope="row"><label for="developer-starter-site-package-export-categories"><?php esc_html_e( '分类标签', 'qiling' ); ?></label></th>
+                                <td><input type="text" class="regular-text" id="developer-starter-site-package-export-categories" name="developer_starter_site_package_export_categories" value="<?php echo esc_attr( $state['export_form']['categories'] ); ?>" placeholder="<?php esc_attr_e( '用英文逗号分隔', 'qiling' ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-tags"><?php esc_html_e( '关键词标签', 'developer-starter' ); ?></label></th>
-                                <td><input type="text" class="regular-text" id="developer-starter-site-package-export-tags" name="developer_starter_site_package_export_tags" value="<?php echo esc_attr( $state['export_form']['tags'] ); ?>" placeholder="<?php esc_attr_e( '用英文逗号分隔', 'developer-starter' ); ?>" /></td>
+                                <th scope="row"><label for="developer-starter-site-package-export-tags"><?php esc_html_e( '关键词标签', 'qiling' ); ?></label></th>
+                                <td><input type="text" class="regular-text" id="developer-starter-site-package-export-tags" name="developer_starter_site_package_export_tags" value="<?php echo esc_attr( $state['export_form']['tags'] ); ?>" placeholder="<?php esc_attr_e( '用英文逗号分隔', 'qiling' ); ?>" /></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-dependencies"><?php esc_html_e( '依赖插件', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-dependencies"><?php esc_html_e( '依赖插件', 'qiling' ); ?></label></th>
                                 <td>
-                                    <textarea class="large-text" rows="4" id="developer-starter-site-package-export-dependencies" name="developer_starter_site_package_export_dependency_plugins" placeholder="<?php esc_attr_e( "每行一个插件标识，例如 qiling-forms/qiling-forms.php", 'developer-starter' ); ?>"><?php echo esc_textarea( $state['export_form']['dependency_plugins'] ); ?></textarea>
+                                    <textarea class="large-text" rows="4" id="developer-starter-site-package-export-dependencies" name="developer_starter_site_package_export_dependency_plugins" placeholder="<?php esc_attr_e( "每行一个插件标识，例如 qiling-forms/qiling-forms.php", 'qiling' ); ?>"><?php echo esc_textarea( $state['export_form']['dependency_plugins'] ); ?></textarea>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row"><label for="developer-starter-site-package-export-description"><?php esc_html_e( '数据包描述', 'developer-starter' ); ?></label></th>
+                                <th scope="row"><label for="developer-starter-site-package-export-description"><?php esc_html_e( '数据包描述', 'qiling' ); ?></label></th>
                                 <td><textarea class="large-text" rows="4" id="developer-starter-site-package-export-description" name="developer_starter_site_package_export_description"><?php echo esc_textarea( $state['export_form']['description'] ); ?></textarea></td>
                             </tr>
                             <tr>
-                                <th scope="row"><?php esc_html_e( '整站包附加内容', 'developer-starter' ); ?></th>
+                                <th scope="row"><?php esc_html_e( '整站包附加内容', 'qiling' ); ?></th>
                                 <td>
-                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_design_system" value="1" <?php checked( ! empty( $state['export_form']['include_design_system'] ) ); ?> /> <?php esc_html_e( '全局样式', 'developer-starter' ); ?></label><br />
-                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_content_models" value="1" <?php checked( ! empty( $state['export_form']['include_content_models'] ) ); ?> /> <?php esc_html_e( '内容模型中心配置', 'developer-starter' ); ?></label><br />
-                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_navigation" value="1" <?php checked( ! empty( $state['export_form']['include_navigation'] ) ); ?> /> <?php esc_html_e( '当前菜单结构（仅导出所选页面和自定义链接）', 'developer-starter' ); ?></label><br />
-                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_site_identity" value="1" <?php checked( ! empty( $state['export_form']['include_site_identity'] ) ); ?> /> <?php esc_html_e( '站点标题与副标题', 'developer-starter' ); ?></label><br />
-                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_site_assets" value="1" <?php checked( ! empty( $state['export_form']['include_site_assets'] ) ); ?> /> <?php esc_html_e( '主题资源清单', 'developer-starter' ); ?></label>
-                                    <p class="description"><?php esc_html_e( '这些内容只在导出类型为“整站包”时生效；站点设置仍需手动勾选后写入。', 'developer-starter' ); ?></p>
+                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_design_system" value="1" <?php checked( ! empty( $state['export_form']['include_design_system'] ) ); ?> /> <?php esc_html_e( '全局样式', 'qiling' ); ?></label><br />
+                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_content_models" value="1" <?php checked( ! empty( $state['export_form']['include_content_models'] ) ); ?> /> <?php esc_html_e( '内容模型中心配置', 'qiling' ); ?></label><br />
+                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_navigation" value="1" <?php checked( ! empty( $state['export_form']['include_navigation'] ) ); ?> /> <?php esc_html_e( '当前菜单结构（仅导出所选页面和自定义链接）', 'qiling' ); ?></label><br />
+                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_site_identity" value="1" <?php checked( ! empty( $state['export_form']['include_site_identity'] ) ); ?> /> <?php esc_html_e( '站点标题与副标题', 'qiling' ); ?></label><br />
+                                    <label><input type="checkbox" name="developer_starter_site_package_export_include_site_assets" value="1" <?php checked( ! empty( $state['export_form']['include_site_assets'] ) ); ?> /> <?php esc_html_e( '主题资源清单', 'qiling' ); ?></label>
+                                    <p class="description"><?php esc_html_e( '这些内容只在导出类型为“整站包”时生效；站点设置仍需手动勾选后写入。', 'qiling' ); ?></p>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row"><?php esc_html_e( '选择页面', 'developer-starter' ); ?></th>
+                                <th scope="row"><?php esc_html_e( '选择页面', 'qiling' ); ?></th>
                                 <td>
                                     <div class="ds-package-page-picker">
                                         <?php if ( empty( $exportable_pages ) ) : ?>
-                                            <p><?php esc_html_e( '当前没有可导出的启灵模块装修页。', 'developer-starter' ); ?></p>
+                                            <p><?php esc_html_e( '当前没有可导出的启灵模块装修页。', 'qiling' ); ?></p>
                                         <?php else : ?>
                                             <?php foreach ( $exportable_pages as $page_item ) : ?>
                                                 <label>
@@ -508,7 +508,7 @@ class Page_Package_Admin {
                                                             <code><?php echo esc_html( $page_item['slug'] ); ?></code>
                                                             · <?php echo esc_html( $page_item['template_label'] ); ?>
                                                             · <?php echo esc_html( $page_item['post_status'] ); ?>
-                                                            · <?php echo esc_html( sprintf( __( '%d 个模块', 'developer-starter' ), isset( $page_item['module_count'] ) ? absint( $page_item['module_count'] ) : 0 ) ); ?>
+                                                            · <?php echo esc_html( sprintf( __( '%d 个模块', 'qiling' ), isset( $page_item['module_count'] ) ? absint( $page_item['module_count'] ) : 0 ) ); ?>
                                                         </span>
                                                     </span>
                                                 </label>
@@ -521,14 +521,14 @@ class Page_Package_Admin {
                     </table>
 
                     <div class="ds-package-actions">
-                        <button type="submit" class="button button-secondary"><?php esc_html_e( '生成本地包 JSON', 'developer-starter' ); ?></button>
-                        <span class="description"><?php esc_html_e( '导出时会自动过滤系统页和非模块页，并尽量保留已存在的数据包页面标识。', 'developer-starter' ); ?></span>
+                        <button type="submit" class="button button-secondary"><?php esc_html_e( '生成本地包 JSON', 'qiling' ); ?></button>
+                        <span class="description"><?php esc_html_e( '导出时会自动过滤系统页和非模块页，并尽量保留已存在的数据包页面标识。', 'qiling' ); ?></span>
                     </div>
                 </form>
             </div>
 
             <div class="ds-package-panel">
-                <h2><?php esc_html_e( '推荐 JSON 结构', 'developer-starter' ); ?></h2>
+                <h2><?php esc_html_e( '推荐 JSON 结构', 'qiling' ); ?></h2>
                 <div class="ds-package-snippet"><pre><?php echo esc_html( $this->get_example_json_snippet() ); ?></pre></div>
             </div>
 
@@ -568,10 +568,10 @@ class Page_Package_Admin {
      */
     private function get_default_export_form() {
         return array(
-            'title'                  => __( '未命名页面包', 'developer-starter' ),
+            'title'                  => __( '未命名页面包', 'qiling' ),
             'scope'                  => Page_Package_Manager::PACKAGE_SCOPE_PAGE,
             'package_id'             => '',
-            'min_theme_version'      => defined( 'DEVELOPER_STARTER_VERSION' ) ? (string) DEVELOPER_STARTER_VERSION : '',
+            'min_theme_version'      => defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '',
             'author_name'            => '',
             'author_url'             => '',
             'description'            => '',
@@ -600,7 +600,7 @@ class Page_Package_Admin {
 
         $action = isset( $_POST['developer_starter_site_package_action'] ) ? sanitize_key( wp_unslash( (string) $_POST['developer_starter_site_package_action'] ) ) : '';
         if ( ! in_array( $action, array( 'preview', 'import', 'create_preview', 'export', 'download_export', 'clear_preview', 'rollback_import' ), true ) ) {
-            $state['request_error'] = __( '请求动作无效。', 'developer-starter' );
+            $state['request_error'] = __( '请求动作无效。', 'qiling' );
             return $state;
         }
 
@@ -612,7 +612,7 @@ class Page_Package_Admin {
             $deleted_count = $this->manager->cleanup_user_preview_pages( get_current_user_id() );
             $state['request_notice'] = sprintf(
                 /* translators: %d: preview pages count */
-                __( '已清理 %d 个临时预览页面。', 'developer-starter' ),
+                __( '已清理 %d 个临时预览页面。', 'qiling' ),
                 absint( $deleted_count )
             );
             return $state;
@@ -624,7 +624,7 @@ class Page_Package_Admin {
                 : '';
 
             if ( ! $this->manager->acquire_import_lock( get_current_user_id() ) ) {
-                $state['request_error'] = __( '当前已有导入/回滚任务正在执行，请稍后再试。', 'developer-starter' );
+                $state['request_error'] = __( '当前已有导入/回滚任务正在执行，请稍后再试。', 'qiling' );
                 return $state;
             }
 
@@ -637,7 +637,7 @@ class Page_Package_Admin {
 
             $state['request_notice'] = sprintf(
                 /* translators: 1: restored pages, 2: deleted pages */
-                __( '回滚完成：已恢复 %1$d 个更新页面，已删除 %2$d 个新建页面。', 'developer-starter' ),
+                __( '回滚完成：已恢复 %1$d 个更新页面，已删除 %2$d 个新建页面。', 'qiling' ),
                 isset( $rollback_result['restored_pages'] ) ? absint( $rollback_result['restored_pages'] ) : 0,
                 isset( $rollback_result['deleted_pages'] ) ? absint( $rollback_result['deleted_pages'] ) : 0
             );
@@ -674,7 +674,7 @@ class Page_Package_Admin {
             }
 
             if ( empty( $analysis['can_import'] ) || empty( $analysis['prepared_package'] ) ) {
-                $state['request_error'] = __( '当前数据包未通过预检，暂时不能导入。', 'developer-starter' );
+                $state['request_error'] = __( '当前数据包未通过预检，暂时不能导入。', 'qiling' );
                 return $state;
             }
 
@@ -686,7 +686,7 @@ class Page_Package_Admin {
 
             $prepared_package = $this->filter_prepared_package_by_selected_pages( $analysis['prepared_package'], $selected_page_keys );
             if ( empty( $prepared_package['pages'] ) || ! is_array( $prepared_package['pages'] ) ) {
-                $state['request_error'] = __( '请至少勾选一个要导入的页面。', 'developer-starter' );
+                $state['request_error'] = __( '请至少勾选一个要导入的页面。', 'qiling' );
                 return $state;
             }
 
@@ -696,13 +696,13 @@ class Page_Package_Admin {
                 : '';
 
             if ( 'import' === $action && $apply_site_options && '' !== $front_page_key && ! $this->has_confirmed_front_page_change_from_request() ) {
-                $state['request_error'] = __( '你已勾选“应用站点设置”，请再勾选“我已确认替换当前首页”后再执行导入。', 'developer-starter' );
+                $state['request_error'] = __( '你已勾选“应用站点设置”，请再勾选“我已确认替换当前首页”后再执行导入。', 'qiling' );
                 return $state;
             }
 
             if ( 'create_preview' === $action ) {
                 if ( ! $this->manager->acquire_import_lock( get_current_user_id() ) ) {
-                    $state['request_error'] = __( '当前已有导入/预览任务正在执行，请稍后再试。', 'developer-starter' );
+                    $state['request_error'] = __( '当前已有导入/预览任务正在执行，请稍后再试。', 'qiling' );
                     return $state;
                 }
 
@@ -723,7 +723,7 @@ class Page_Package_Admin {
                 $binding_token = $this->create_preview_binding_token( $raw_json, $selected_page_keys, $state['selected_conflict_strategy'] );
                 if ( '' !== $binding_token ) {
                     $state['preview_binding_token'] = $binding_token;
-                    $state['request_notice'] = __( '预览已生成，页面选择已保存。', 'developer-starter' );
+                    $state['request_notice'] = __( '预览已生成，页面选择已保存。', 'qiling' );
                 }
                 return $state;
             }
@@ -742,7 +742,7 @@ class Page_Package_Admin {
             }
 
             if ( ! $this->manager->acquire_import_lock( get_current_user_id() ) ) {
-                $state['request_error'] = __( '当前已有导入任务正在执行，请稍后再试。', 'developer-starter' );
+                $state['request_error'] = __( '当前已有导入任务正在执行，请稍后再试。', 'qiling' );
                 return $state;
             }
 
@@ -764,7 +764,7 @@ class Page_Package_Admin {
             // 导入成功后清空预检与原 JSON，避免误触二次导入。
             $state['analysis']       = null;
             $state['raw_json']       = '';
-            $state['request_notice'] = __( '导入已完成，已自动清空预检缓存。若需再次导入，请重新上传或粘贴 JSON 后再预检。', 'developer-starter' );
+            $state['request_notice'] = __( '导入已完成，已自动清空预检缓存。若需再次导入，请重新上传或粘贴 JSON 后再预检。', 'qiling' );
             return $state;
         }
 
@@ -796,12 +796,12 @@ class Page_Package_Admin {
             $file = $_FILES['developer_starter_site_package_file'];
             if ( isset( $file['error'] ) && (int) $file['error'] !== UPLOAD_ERR_NO_FILE ) {
                 if ( (int) $file['error'] !== UPLOAD_ERR_OK ) {
-                    return new \WP_Error( 'upload_error', __( 'JSON 文件上传失败，请重新选择文件。', 'developer-starter' ) );
+                    return new \WP_Error( 'upload_error', __( 'JSON 文件上传失败，请重新选择文件。', 'qiling' ) );
                 }
 
                 $filename = isset( $file['name'] ) ? sanitize_file_name( (string) $file['name'] ) : '';
                 if ( '' !== $filename && substr( strtolower( $filename ), -5 ) !== '.json' ) {
-                    return new \WP_Error( 'invalid_file_type', __( '请上传 .json 格式的数据包文件。', 'developer-starter' ) );
+                    return new \WP_Error( 'invalid_file_type', __( '请上传 .json 格式的数据包文件。', 'qiling' ) );
                 }
 
                 $file_size = isset( $file['size'] ) ? absint( $file['size'] ) : 0;
@@ -810,7 +810,7 @@ class Page_Package_Admin {
                         'upload_too_large',
                         sprintf(
                             /* translators: %s: max size */
-                            __( '上传文件超过安全上限（最大 %s），请拆分数据包后再导入。', 'developer-starter' ),
+                            __( '上传文件超过安全上限（最大 %s），请拆分数据包后再导入。', 'qiling' ),
                             size_format( Page_Package_Manager::MAX_PACKAGE_BYTES )
                         )
                     );
@@ -818,20 +818,20 @@ class Page_Package_Admin {
 
                 $tmp_name = isset( $file['tmp_name'] ) ? (string) $file['tmp_name'] : '';
                 if ( '' === $tmp_name || ! file_exists( $tmp_name ) || ! is_uploaded_file( $tmp_name ) ) {
-                    return new \WP_Error( 'missing_upload_file', __( '上传文件不存在，请重试。', 'developer-starter' ) );
+                    return new \WP_Error( 'missing_upload_file', __( '上传文件不存在，请重试。', 'qiling' ) );
                 }
 
                 if ( function_exists( 'wp_check_filetype_and_ext' ) ) {
                     $checked_type = wp_check_filetype_and_ext( $tmp_name, $filename );
                     $checked_ext  = isset( $checked_type['ext'] ) ? (string) $checked_type['ext'] : '';
                     if ( '' !== $checked_ext && 'json' !== strtolower( $checked_ext ) ) {
-                        return new \WP_Error( 'invalid_file_type', __( '上传文件未通过 JSON 类型校验，请重新选择有效的数据包文件。', 'developer-starter' ) );
+                        return new \WP_Error( 'invalid_file_type', __( '上传文件未通过 JSON 类型校验，请重新选择有效的数据包文件。', 'qiling' ) );
                     }
                 }
 
                 $raw_json = file_get_contents( $tmp_name );
                 if ( ! is_string( $raw_json ) || '' === trim( $raw_json ) ) {
-                    return new \WP_Error( 'empty_upload_file', __( '上传的 JSON 文件内容为空。', 'developer-starter' ) );
+                    return new \WP_Error( 'empty_upload_file', __( '上传的 JSON 文件内容为空。', 'qiling' ) );
                 }
 
                 return $raw_json;
@@ -841,7 +841,7 @@ class Page_Package_Admin {
         $raw_json = isset( $_POST['developer_starter_site_package_json'] ) ? wp_unslash( (string) $_POST['developer_starter_site_package_json'] ) : '';
         $raw_json = trim( $raw_json );
         if ( '' === $raw_json ) {
-            return new \WP_Error( 'missing_json', __( '请先上传 JSON 文件，或把数据包内容粘贴到文本框中。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_json', __( '请先上传 JSON 文件，或把数据包内容粘贴到文本框中。', 'qiling' ) );
         }
 
         return $raw_json;
@@ -923,7 +923,7 @@ class Page_Package_Admin {
         $selected_keys = array_values( array_unique( array_intersect( $selected_keys, $selectable_keys ) ) );
 
         if ( $selection_present && empty( $selected_keys ) ) {
-            return new \WP_Error( 'missing_selected_pages', __( '请至少勾选一个要导入的页面。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_selected_pages', __( '请至少勾选一个要导入的页面。', 'qiling' ) );
         }
 
         if ( empty( $selected_keys ) ) {
@@ -1081,24 +1081,24 @@ class Page_Package_Admin {
      */
     private function validate_preview_binding_token( $token, $raw_json, $selected_page_keys, $strategy ) {
         if ( '' === $token ) {
-            return new \WP_Error( 'missing_preview_binding', __( '执行导入前请先点击“生成临时预览”，并保持同一批勾选页面。', 'developer-starter' ) );
+            return new \WP_Error( 'missing_preview_binding', __( '执行导入前请先点击“生成临时预览”，并保持同一批勾选页面。', 'qiling' ) );
         }
 
         $stored = get_transient( $this->get_preview_binding_transient_key( $token ) );
         if ( ! is_array( $stored ) || empty( $stored['hash'] ) ) {
-            return new \WP_Error( 'expired_preview_binding', __( '预览绑定已过期，请重新生成临时预览后再导入。', 'developer-starter' ) );
+            return new \WP_Error( 'expired_preview_binding', __( '预览绑定已过期，请重新生成临时预览后再导入。', 'qiling' ) );
         }
 
         $expected_hash = $this->build_preview_binding_package_hash( $raw_json, $strategy, $selected_page_keys );
         $stored_hash   = sanitize_text_field( (string) $stored['hash'] );
         if ( '' === $expected_hash || $stored_hash !== $expected_hash ) {
-            return new \WP_Error( 'preview_binding_mismatch', __( '导入内容或勾选页面与预览不一致，请重新生成临时预览后再导入。', 'developer-starter' ) );
+            return new \WP_Error( 'preview_binding_mismatch', __( '导入内容或勾选页面与预览不一致，请重新生成临时预览后再导入。', 'qiling' ) );
         }
 
         $stored_user_id  = isset( $stored['user_id'] ) ? absint( $stored['user_id'] ) : 0;
         $current_user_id = get_current_user_id() ? absint( get_current_user_id() ) : 1;
         if ( $stored_user_id > 0 && $stored_user_id !== $current_user_id ) {
-            return new \WP_Error( 'preview_binding_owner_mismatch', __( '该预览绑定不属于当前登录用户，请重新生成临时预览。', 'developer-starter' ) );
+            return new \WP_Error( 'preview_binding_owner_mismatch', __( '该预览绑定不属于当前登录用户，请重新生成临时预览。', 'qiling' ) );
         }
 
         return true;
@@ -1226,7 +1226,7 @@ class Page_Package_Admin {
         $json = isset( $_POST['developer_starter_site_package_export_json'] ) ? wp_unslash( (string) $_POST['developer_starter_site_package_export_json'] ) : '';
         $json = trim( $json );
         if ( '' === $json ) {
-            wp_die( esc_html__( '没有可下载的数据包内容。', 'developer-starter' ) );
+            wp_die( esc_html__( '没有可下载的数据包内容。', 'qiling' ) );
         }
 
         $filename = isset( $_POST['developer_starter_site_package_export_filename'] ) ? sanitize_file_name( wp_unslash( (string) $_POST['developer_starter_site_package_export_filename'] ) ) : 'site-package.json';
@@ -1261,94 +1261,94 @@ class Page_Package_Admin {
         $package_scope    = isset( $meta['scope'] ) ? sanitize_key( (string) $meta['scope'] ) : Page_Package_Manager::PACKAGE_SCOPE_PAGE;
         $selectable_keys  = $this->get_selectable_import_page_keys_from_analysis( $analysis );
         $conflict_map     = $this->manager->get_conflict_strategies();
-        $strategy_label   = isset( $conflict_map[ $selected_conflict_strategy ]['label'] ) ? $conflict_map[ $selected_conflict_strategy ]['label'] : __( '未知策略', 'developer-starter' );
+        $strategy_label   = isset( $conflict_map[ $selected_conflict_strategy ]['label'] ) ? $conflict_map[ $selected_conflict_strategy ]['label'] : __( '未知策略', 'qiling' );
         ?>
         <div class="ds-package-panel">
-            <h2><?php esc_html_e( '预检结果', 'developer-starter' ); ?></h2>
+            <h2><?php esc_html_e( '预检结果', 'qiling' ); ?></h2>
 
             <div class="ds-package-grid">
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '包类型', 'developer-starter' ); ?></strong>
-                    <div><?php echo esc_html( Page_Package_Manager::PACKAGE_SCOPE_SITE === $package_scope ? __( '整站包', 'developer-starter' ) : __( '页面包', 'developer-starter' ) ); ?></div>
+                    <strong><?php esc_html_e( '包类型', 'qiling' ); ?></strong>
+                    <div><?php echo esc_html( Page_Package_Manager::PACKAGE_SCOPE_SITE === $package_scope ? __( '整站包', 'qiling' ) : __( '页面包', 'qiling' ) ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '总页面数', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '总页面数', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['total_pages'] ) ? (string) absint( $stats['total_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '可执行页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '可执行页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['ready_pages'] ) ? (string) absint( $stats['ready_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '新建页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '新建页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['create_pages'] ) ? (string) absint( $stats['create_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '自动新 URL', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '自动新 URL', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['duplicate_pages'] ) ? (string) absint( $stats['duplicate_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '更新页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '更新页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['update_pages'] ) ? (string) absint( $stats['update_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '将跳过页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '将跳过页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['skipped_pages'] ) ? (string) absint( $stats['skipped_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '已拦截页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '已拦截页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['blocked_pages'] ) ? (string) absint( $stats['blocked_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '样式预警页数', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '样式预警页数', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['style_warning_pages'] ) ? (string) absint( $stats['style_warning_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '样式预警总数', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '样式预警总数', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['style_warning_count'] ) ? (string) absint( $stats['style_warning_count'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '安全预警页数', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '安全预警页数', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['security_warning_pages'] ) ? (string) absint( $stats['security_warning_pages'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '安全预警总数', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '安全预警总数', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['security_warning_count'] ) ? (string) absint( $stats['security_warning_count'] ) : '0' ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '当前策略', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '当前策略', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( $strategy_label ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '整站设置组', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '整站设置组', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( isset( $stats['site_setting_groups'] ) ? (string) absint( $stats['site_setting_groups'] ) : '0' ); ?></div>
                 </div>
             </div>
 
             <?php if ( ! empty( $meta ) ) : ?>
-                <h3><?php esc_html_e( '数据包信息', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '数据包信息', 'qiling' ); ?></h3>
                 <div class="ds-package-grid">
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '标题 / ID', 'developer-starter' ); ?></strong>
+                        <strong><?php esc_html_e( '标题 / ID', 'qiling' ); ?></strong>
                         <div><?php echo esc_html( isset( $meta['title'] ) ? (string) $meta['title'] : '' ); ?></div>
                         <code><?php echo esc_html( isset( $meta['package_id'] ) ? (string) $meta['package_id'] : '' ); ?></code>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '主题要求', 'developer-starter' ); ?></strong>
+                        <strong><?php esc_html_e( '主题要求', 'qiling' ); ?></strong>
                         <div><?php echo esc_html( isset( $meta['theme'] ) ? (string) $meta['theme'] : 'qiling' ); ?></div>
-                        <div><?php echo esc_html( sprintf( __( '最低版本：%s', 'developer-starter' ), isset( $meta['min_theme_version'] ) && '' !== (string) $meta['min_theme_version'] ? (string) $meta['min_theme_version'] : __( '未声明', 'developer-starter' ) ) ); ?></div>
+                        <div><?php echo esc_html( sprintf( __( '最低版本：%s', 'qiling' ), isset( $meta['min_theme_version'] ) && '' !== (string) $meta['min_theme_version'] ? (string) $meta['min_theme_version'] : __( '未声明', 'qiling' ) ) ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '作者', 'developer-starter' ); ?></strong>
+                        <strong><?php esc_html_e( '作者', 'qiling' ); ?></strong>
                         <div><?php echo wp_kses_post( $this->format_author_html( isset( $meta['author'] ) ? $meta['author'] : array() ) ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '协议版本', 'developer-starter' ); ?></strong>
+                        <strong><?php esc_html_e( '协议版本', 'qiling' ); ?></strong>
                         <div><?php echo esc_html( isset( $meta['version'] ) ? (string) absint( $meta['version'] ) : '1' ); ?></div>
                     </div>
                     <div class="ds-package-card">
-                        <strong><?php esc_html_e( '导入作用域', 'developer-starter' ); ?></strong>
-                        <div><?php echo esc_html( Page_Package_Manager::PACKAGE_SCOPE_SITE === $package_scope ? __( '整站包', 'developer-starter' ) : __( '页面包', 'developer-starter' ) ); ?></div>
+                        <strong><?php esc_html_e( '导入作用域', 'qiling' ); ?></strong>
+                        <div><?php echo esc_html( Page_Package_Manager::PACKAGE_SCOPE_SITE === $package_scope ? __( '整站包', 'qiling' ) : __( '页面包', 'qiling' ) ); ?></div>
                     </div>
                 </div>
 
@@ -1363,10 +1363,10 @@ class Page_Package_Admin {
                 <?php if ( ! empty( $meta['categories'] ) || ! empty( $meta['tags'] ) ) : ?>
                     <div class="ds-package-badges">
                         <?php foreach ( isset( $meta['categories'] ) && is_array( $meta['categories'] ) ? $meta['categories'] : array() as $category ) : ?>
-                            <span class="ds-package-badge"><?php echo esc_html( sprintf( __( '分类：%s', 'developer-starter' ), $category ) ); ?></span>
+                            <span class="ds-package-badge"><?php echo esc_html( sprintf( __( '分类：%s', 'qiling' ), $category ) ); ?></span>
                         <?php endforeach; ?>
                         <?php foreach ( isset( $meta['tags'] ) && is_array( $meta['tags'] ) ? $meta['tags'] : array() as $tag ) : ?>
-                            <span class="ds-package-badge"><?php echo esc_html( sprintf( __( '标签：%s', 'developer-starter' ), $tag ) ); ?></span>
+                            <span class="ds-package-badge"><?php echo esc_html( sprintf( __( '标签：%s', 'qiling' ), $tag ) ); ?></span>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
@@ -1377,18 +1377,18 @@ class Page_Package_Admin {
             <?php endif; ?>
 
             <?php if ( $has_site_options ) : ?>
-                <h3><?php esc_html_e( '整站设置摘要', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '整站设置摘要', 'qiling' ); ?></h3>
                 <?php $this->render_site_options_summary( $site_options ); ?>
             <?php endif; ?>
 
             <?php if ( ! empty( $analysis['errors'] ) && empty( $analysis['can_import'] ) ) : ?>
-                <div class="notice notice-error inline"><p><?php esc_html_e( '当前数据包存在阻断问题，而且没有可执行的页面，暂时不能导入。', 'developer-starter' ); ?></p></div>
+                <div class="notice notice-error inline"><p><?php esc_html_e( '当前数据包存在阻断问题，而且没有可执行的页面，暂时不能导入。', 'qiling' ); ?></p></div>
             <?php elseif ( ! empty( $analysis['errors'] ) ) : ?>
-                <div class="notice notice-warning inline"><p><?php esc_html_e( '当前数据包有部分页面被拦截，但其余通过预检的页面仍可导入。', 'developer-starter' ); ?></p></div>
+                <div class="notice notice-warning inline"><p><?php esc_html_e( '当前数据包有部分页面被拦截，但其余通过预检的页面仍可导入。', 'qiling' ); ?></p></div>
             <?php elseif ( empty( $analysis['can_import'] ) ) : ?>
-                <div class="notice notice-warning inline"><p><?php esc_html_e( '当前数据包没有可执行的页面，暂时不能继续导入。', 'developer-starter' ); ?></p></div>
+                <div class="notice notice-warning inline"><p><?php esc_html_e( '当前数据包没有可执行的页面，暂时不能继续导入。', 'qiling' ); ?></p></div>
             <?php else : ?>
-                <div class="notice notice-success inline"><p><?php esc_html_e( '预检通过：可继续生成临时预览，然后执行导入。', 'developer-starter' ); ?></p></div>
+                <div class="notice notice-success inline"><p><?php esc_html_e( '预检通过：可继续生成临时预览，然后执行导入。', 'qiling' ); ?></p></div>
             <?php endif; ?>
 
             <?php if ( '' !== $front_page_key ) : ?>
@@ -1398,7 +1398,7 @@ class Page_Package_Admin {
                         echo esc_html(
                             sprintf(
                                 /* translators: %s: page key */
-                                __( '当前数据包声明了首页映射（front_page=%s）。勾选该首页映射页并启用“应用站点设置”时，会替换当前站点首页。', 'developer-starter' ),
+                                __( '当前数据包声明了首页映射（front_page=%s）。勾选该首页映射页并启用“应用站点设置”时，会替换当前站点首页。', 'qiling' ),
                                 $front_page_key
                             )
                         );
@@ -1413,7 +1413,7 @@ class Page_Package_Admin {
                         echo esc_html(
                             sprintf(
                                 /* translators: %s: page key */
-                                __( '当前数据包声明了文章列表页映射（posts_page=%s）。勾选该页面并启用“应用整站设置”时，会替换当前站点文章列表页。', 'developer-starter' ),
+                                __( '当前数据包声明了文章列表页映射（posts_page=%s）。勾选该页面并启用“应用整站设置”时，会替换当前站点文章列表页。', 'qiling' ),
                                 $posts_page_key
                             )
                         );
@@ -1423,7 +1423,7 @@ class Page_Package_Admin {
             <?php endif; ?>
 
             <?php if ( ! empty( $analysis['errors'] ) ) : ?>
-                <h3><?php esc_html_e( '阻断问题', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '阻断问题', 'qiling' ); ?></h3>
                 <ul class="ds-package-list">
                     <?php foreach ( $analysis['errors'] as $error_message ) : ?>
                         <li><?php echo esc_html( $error_message ); ?></li>
@@ -1432,7 +1432,7 @@ class Page_Package_Admin {
             <?php endif; ?>
 
             <?php if ( ! empty( $analysis['warnings'] ) ) : ?>
-                <h3><?php esc_html_e( '预警信息', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '预警信息', 'qiling' ); ?></h3>
                 <ul class="ds-package-list">
                     <?php foreach ( $analysis['warnings'] as $warning_message ) : ?>
                         <li><?php echo esc_html( $warning_message ); ?></li>
@@ -1441,9 +1441,9 @@ class Page_Package_Admin {
             <?php endif; ?>
 
             <?php if ( ! empty( $analysis['style_warnings'] ) ) : ?>
-                <h3><?php esc_html_e( '样式提醒', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '样式提醒', 'qiling' ); ?></h3>
                 <div class="ds-package-note">
-                    <?php esc_html_e( '这些提示不会阻断导入，但代表导入后建议重点复查页面视觉表现。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '这些提示不会阻断导入，但代表导入后建议重点复查页面视觉表现。', 'qiling' ); ?>
                 </div>
                 <ul class="ds-package-list">
                     <?php foreach ( $analysis['style_warnings'] as $style_warning_message ) : ?>
@@ -1453,9 +1453,9 @@ class Page_Package_Admin {
             <?php endif; ?>
 
             <?php if ( ! empty( $analysis['security_warnings'] ) ) : ?>
-                <h3><?php esc_html_e( '安全风控预警', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '安全风控预警', 'qiling' ); ?></h3>
                 <div class="ds-package-note">
-                    <?php esc_html_e( '这些提示不会直接阻断导入，但代表当前数据包含有高风险输入或体积偏大的内容，建议仅在可信来源和测试环境下继续操作。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '这些提示不会直接阻断导入，但代表当前数据包含有高风险输入或体积偏大的内容，建议仅在可信来源和测试环境下继续操作。', 'qiling' ); ?>
                 </div>
                 <ul class="ds-package-list">
                     <?php foreach ( $analysis['security_warnings'] as $security_warning_message ) : ?>
@@ -1485,7 +1485,7 @@ class Page_Package_Admin {
                 }
             }
             ?>
-            <h3><?php esc_html_e( '导入影响清单（Diff）', 'developer-starter' ); ?></h3>
+            <h3><?php esc_html_e( '导入影响清单（Diff）', 'qiling' ); ?></h3>
             <div class="ds-package-grid">
                 <?php foreach ( array( 'create', 'duplicate', 'update', 'skip', 'blocked' ) as $impact_key ) : ?>
                     <?php $impact_rows = isset( $impact_groups[ $impact_key ] ) ? $impact_groups[ $impact_key ] : array(); ?>
@@ -1506,16 +1506,16 @@ class Page_Package_Admin {
                 <?php endforeach; ?>
             </div>
 
-            <h3><?php esc_html_e( '页面检查明细', 'developer-starter' ); ?></h3>
+            <h3><?php esc_html_e( '页面检查明细', 'qiling' ); ?></h3>
             <table class="ds-package-table">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e( '页面标识', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '标题 / URL', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '模板', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '模块数', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '处理结果', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '说明', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '页面标识', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '标题 / URL', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '模板', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '模块数', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '处理结果', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '说明', 'qiling' ); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1531,16 +1531,16 @@ class Page_Package_Admin {
                                 <code><?php echo esc_html( isset( $page_report['slug'] ) ? (string) $page_report['slug'] : '' ); ?></code>
                                 <?php if ( '' !== $front_page_key && isset( $page_report['page_key'] ) && sanitize_key( (string) $page_report['page_key'] ) === $front_page_key ) : ?>
                                     <br />
-                                    <span class="ds-package-homepage-flag"><?php esc_html_e( '首页映射页（可能替换当前首页）', 'developer-starter' ); ?></span>
+                                    <span class="ds-package-homepage-flag"><?php esc_html_e( '首页映射页（可能替换当前首页）', 'qiling' ); ?></span>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $page_report['target_slug'] ) && $page_report['target_slug'] !== $page_report['slug'] ) : ?>
                                     <br />
-                                    <span class="description"><?php echo esc_html( sprintf( __( '导入目标 URL：%s', 'developer-starter' ), (string) $page_report['target_slug'] ) ); ?></span>
+                                    <span class="description"><?php echo esc_html( sprintf( __( '导入目标 URL：%s', 'qiling' ), (string) $page_report['target_slug'] ) ); ?></span>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $page_report['existing_page_id'] ) ) : ?>
                                     <br />
                                     <a href="<?php echo esc_url( get_edit_post_link( (int) $page_report['existing_page_id'], 'raw' ) ); ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php esc_html_e( '查看已存在页面', 'developer-starter' ); ?>
+                                        <?php esc_html_e( '查看已存在页面', 'qiling' ); ?>
                                     </a>
                                 <?php endif; ?>
                             </td>
@@ -1563,7 +1563,7 @@ class Page_Package_Admin {
                                     </ul>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $page_report['style_warnings'] ) ) : ?>
-                                    <div class="description"><strong><?php esc_html_e( '样式提醒：', 'developer-starter' ); ?></strong></div>
+                                    <div class="description"><strong><?php esc_html_e( '样式提醒：', 'qiling' ); ?></strong></div>
                                     <ul class="ds-package-list">
                                         <?php foreach ( $page_report['style_warnings'] as $style_warning_message ) : ?>
                                             <li><?php echo esc_html( $style_warning_message ); ?></li>
@@ -1571,7 +1571,7 @@ class Page_Package_Admin {
                                     </ul>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $page_report['security_warnings'] ) ) : ?>
-                                    <div class="description"><strong><?php esc_html_e( '安全风控：', 'developer-starter' ); ?></strong></div>
+                                    <div class="description"><strong><?php esc_html_e( '安全风控：', 'qiling' ); ?></strong></div>
                                     <ul class="ds-package-list">
                                         <?php foreach ( $page_report['security_warnings'] as $security_warning_message ) : ?>
                                             <li><?php echo esc_html( $security_warning_message ); ?></li>
@@ -1586,7 +1586,7 @@ class Page_Package_Admin {
 
             <?php if ( ! empty( $analysis['can_import'] ) ) : ?>
                 <div class="ds-package-note">
-                    <?php echo esc_html( sprintf( __( '导入会按“预检 → 临时预览 → 导入”的方式执行，并使用当前选择的策略：%s。', 'developer-starter' ), $strategy_label ) ); ?>
+                    <?php echo esc_html( sprintf( __( '导入会按“预检 → 临时预览 → 导入”的方式执行，并使用当前选择的策略：%s。', 'qiling' ), $strategy_label ) ); ?>
                 </div>
 
                 <form method="post">
@@ -1596,10 +1596,10 @@ class Page_Package_Admin {
                     <input type="hidden" name="developer_starter_site_package_preview_binding_token" value="<?php echo esc_attr( $preview_binding_token ); ?>" />
                     <textarea class="ds-package-hidden" name="developer_starter_site_package_json"><?php echo esc_textarea( $raw_json ); ?></textarea>
 
-                    <h3><?php esc_html_e( '选择要导入的页面', 'developer-starter' ); ?></h3>
+                    <h3><?php esc_html_e( '选择要导入的页面', 'qiling' ); ?></h3>
                     <div class="ds-package-page-picker">
                         <?php if ( empty( $selectable_keys ) ) : ?>
-                            <p><?php esc_html_e( '当前没有可执行导入的页面。', 'developer-starter' ); ?></p>
+                            <p><?php esc_html_e( '当前没有可执行导入的页面。', 'qiling' ); ?></p>
                         <?php else : ?>
                             <?php foreach ( $analysis['pages'] as $page_report ) : ?>
                                 <?php
@@ -1615,10 +1615,10 @@ class Page_Package_Admin {
                                         <strong><?php echo esc_html( isset( $page_report['title'] ) ? (string) $page_report['title'] : $page_key ); ?></strong>
                                         <span class="ds-package-page-meta">
                                             <code><?php echo esc_html( isset( $page_report['slug'] ) ? (string) $page_report['slug'] : '' ); ?></code>
-                                            · <?php echo esc_html( sprintf( __( '%d 个模块', 'developer-starter' ), isset( $page_report['module_count'] ) ? absint( $page_report['module_count'] ) : 0 ) ); ?>
+                                            · <?php echo esc_html( sprintf( __( '%d 个模块', 'qiling' ), isset( $page_report['module_count'] ) ? absint( $page_report['module_count'] ) : 0 ) ); ?>
                                             · <?php echo esc_html( $this->get_analysis_status_display( $page_action )['label'] ); ?>
                                             <?php if ( '' !== $front_page_key && $page_key === $front_page_key ) : ?>
-                                                · <?php esc_html_e( '首页映射页（可能替换当前首页）', 'developer-starter' ); ?>
+                                                · <?php esc_html_e( '首页映射页（可能替换当前首页）', 'qiling' ); ?>
                                             <?php endif; ?>
                                         </span>
                                     </span>
@@ -1629,11 +1629,11 @@ class Page_Package_Admin {
 
                     <?php if ( '' !== $preview_binding_token ) : ?>
                         <div class="notice notice-success inline" style="margin-top:12px;">
-                            <p><?php esc_html_e( '已绑定当前临时预览。只要不改 JSON、冲突策略和勾选页面，就可以直接执行导入。', 'developer-starter' ); ?></p>
+                            <p><?php esc_html_e( '已绑定当前临时预览。只要不改 JSON、冲突策略和勾选页面，就可以直接执行导入。', 'qiling' ); ?></p>
                         </div>
                     <?php else : ?>
                         <div class="notice notice-warning inline" style="margin-top:12px;">
-                            <p><?php esc_html_e( '为了防止误导入，请先点击“生成临时预览”，再执行正式导入。', 'developer-starter' ); ?></p>
+                            <p><?php esc_html_e( '为了防止误导入，请先点击“生成临时预览”，再执行正式导入。', 'qiling' ); ?></p>
                         </div>
                     <?php endif; ?>
 
@@ -1641,16 +1641,16 @@ class Page_Package_Admin {
                         <p style="margin-top:12px;">
                             <label>
                                 <input type="checkbox" name="developer_starter_site_package_apply_site_options" value="1" />
-                                <?php esc_html_e( '应用整站设置', 'developer-starter' ); ?>
+                                <?php esc_html_e( '应用整站设置', 'qiling' ); ?>
                             </label>
                             <br />
-                            <span class="description"><?php esc_html_e( '默认不应用整站设置，避免误改当前站点标题、首页、文章页、全局样式、内容模型或菜单。', 'developer-starter' ); ?></span>
+                            <span class="description"><?php esc_html_e( '默认不应用整站设置，避免误改当前站点标题、首页、文章页、全局样式、内容模型或菜单。', 'qiling' ); ?></span>
                         </p>
                         <?php if ( '' !== $front_page_key ) : ?>
                             <p>
                                 <label>
                                     <input type="checkbox" name="developer_starter_site_package_confirm_front_page_change" value="1" />
-                                    <?php esc_html_e( '我已确认：导入后可能替换当前默认首页。', 'developer-starter' ); ?>
+                                    <?php esc_html_e( '我已确认：导入后可能替换当前默认首页。', 'qiling' ); ?>
                                 </label>
                             </p>
                         <?php endif; ?>
@@ -1658,14 +1658,14 @@ class Page_Package_Admin {
 
                     <p>
                         <button type="submit" name="developer_starter_site_package_action" value="create_preview" class="button">
-                            <?php esc_html_e( '生成临时预览', 'developer-starter' ); ?>
+                            <?php esc_html_e( '生成临时预览', 'qiling' ); ?>
                         </button>
                         <button type="submit" name="developer_starter_site_package_action" value="import" class="button button-primary">
-                            <?php esc_html_e( '执行导入', 'developer-starter' ); ?>
+                            <?php esc_html_e( '执行导入', 'qiling' ); ?>
                         </button>
                     </p>
                     <p class="description">
-                        <?php esc_html_e( '临时预览会创建草稿页，仅用于预览效果；系统会自动覆盖你的旧预览并在到期后清理。', 'developer-starter' ); ?>
+                        <?php esc_html_e( '临时预览会创建草稿页，仅用于预览效果；系统会自动覆盖你的旧预览并在到期后清理。', 'qiling' ); ?>
                     </p>
                 </form>
             <?php endif; ?>
@@ -1685,24 +1685,24 @@ class Page_Package_Admin {
         $expires_at    = isset( $preview_result['expires_at'] ) ? absint( $preview_result['expires_at'] ) : 0;
         ?>
         <div class="ds-package-panel">
-            <h2><?php esc_html_e( '临时预览已生成', 'developer-starter' ); ?></h2>
+            <h2><?php esc_html_e( '临时预览已生成', 'qiling' ); ?></h2>
             <div class="ds-package-grid">
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '预览页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '预览页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) $created_count ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '错误数量', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '错误数量', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) $error_count ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '到期时间', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '到期时间', 'qiling' ); ?></strong>
                     <div>
                         <?php
                         echo esc_html(
                             $expires_at > 0
                                 ? wp_date( 'Y-m-d H:i:s', $expires_at )
-                                : __( '未设置', 'developer-starter' )
+                                : __( '未设置', 'qiling' )
                         );
                         ?>
                     </div>
@@ -1710,14 +1710,14 @@ class Page_Package_Admin {
             </div>
 
             <?php if ( ! empty( $preview_result['results'] ) && is_array( $preview_result['results'] ) ) : ?>
-                <h3><?php esc_html_e( '预览页面链接', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '预览页面链接', 'qiling' ); ?></h3>
                 <table class="ds-package-table">
                     <thead>
                         <tr>
-                            <th><?php esc_html_e( '页面标识', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '页面标题', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '打开预览', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '说明', 'developer-starter' ); ?></th>
+                            <th><?php esc_html_e( '页面标识', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '页面标题', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '打开预览', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '说明', 'qiling' ); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1727,9 +1727,9 @@ class Page_Package_Admin {
                                 <td><?php echo esc_html( isset( $row['title'] ) ? (string) $row['title'] : '' ); ?></td>
                                 <td>
                                     <?php if ( ! empty( $row['url'] ) ) : ?>
-                                        <a href="<?php echo esc_url( (string) $row['url'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( '打开预览', 'developer-starter' ); ?></a>
+                                        <a href="<?php echo esc_url( (string) $row['url'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( '打开预览', 'qiling' ); ?></a>
                                     <?php else : ?>
-                                        <span class="description"><?php esc_html_e( '无可用链接', 'developer-starter' ); ?></span>
+                                        <span class="description"><?php esc_html_e( '无可用链接', 'qiling' ); ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td><?php echo esc_html( isset( $row['message'] ) ? (string) $row['message'] : '' ); ?></td>
@@ -1742,9 +1742,9 @@ class Page_Package_Admin {
             <form method="post" style="margin-top:12px;">
                 <?php wp_nonce_field( 'developer_starter_site_package_action', 'developer_starter_site_package_nonce' ); ?>
                 <button type="submit" name="developer_starter_site_package_action" value="clear_preview" class="button">
-                    <?php esc_html_e( '清理我的临时预览', 'developer-starter' ); ?>
+                    <?php esc_html_e( '清理我的临时预览', 'qiling' ); ?>
                 </button>
-                <span class="description" style="margin-left:8px;"><?php esc_html_e( '会删除你当前生成的临时预览草稿页，不影响正式导入页面。', 'developer-starter' ); ?></span>
+                <span class="description" style="margin-left:8px;"><?php esc_html_e( '会删除你当前生成的临时预览草稿页，不影响正式导入页面。', 'qiling' ); ?></span>
             </form>
         </div>
         <?php
@@ -1764,7 +1764,7 @@ class Page_Package_Admin {
             return;
         }
         ?>
-        <h3><?php esc_html_e( '依赖声明', 'developer-starter' ); ?></h3>
+        <h3><?php esc_html_e( '依赖声明', 'qiling' ); ?></h3>
         <div class="ds-package-badges">
             <?php foreach ( $plugins as $plugin ) : ?>
                 <?php if ( is_array( $plugin ) && ! empty( $plugin['slug'] ) ) : ?>
@@ -1811,49 +1811,49 @@ class Page_Package_Admin {
         if ( ! empty( $site_options['front_page'] ) ) {
             $items[] = sprintf(
                 /* translators: %s: page key */
-                __( '首页映射：%s', 'developer-starter' ),
+                __( '首页映射：%s', 'qiling' ),
                 sanitize_key( (string) $site_options['front_page'] )
             );
         }
         if ( ! empty( $site_options['posts_page'] ) ) {
             $items[] = sprintf(
                 /* translators: %s: page key */
-                __( '文章列表页：%s', 'developer-starter' ),
+                __( '文章列表页：%s', 'qiling' ),
                 sanitize_key( (string) $site_options['posts_page'] )
             );
         }
         if ( ! empty( $site_options['site_title'] ) ) {
             $items[] = sprintf(
                 /* translators: %s: site title */
-                __( '站点标题：%s', 'developer-starter' ),
+                __( '站点标题：%s', 'qiling' ),
                 sanitize_text_field( (string) $site_options['site_title'] )
             );
         }
         if ( array_key_exists( 'tagline', $site_options ) ) {
             $items[] = sprintf(
                 /* translators: %s: tagline */
-                __( '站点副标题：%s', 'developer-starter' ),
+                __( '站点副标题：%s', 'qiling' ),
                 sanitize_text_field( (string) $site_options['tagline'] )
             );
         }
         if ( ! empty( $site_options['design_options'] ) && is_array( $site_options['design_options'] ) ) {
             $items[] = sprintf(
                 /* translators: %d: setting count */
-                __( '全局样式：%d 个设置字段', 'developer-starter' ),
+                __( '全局样式：%d 个设置字段', 'qiling' ),
                 count( $site_options['design_options'] )
             );
         }
         if ( ! empty( $site_options['content_model_options'] ) && is_array( $site_options['content_model_options'] ) ) {
             $items[] = sprintf(
                 /* translators: %d: setting count */
-                __( '内容模型中心：%d 个设置字段', 'developer-starter' ),
+                __( '内容模型中心：%d 个设置字段', 'qiling' ),
                 count( $site_options['content_model_options'] )
             );
         }
         if ( ! empty( $site_options['navigation']['menus'] ) && is_array( $site_options['navigation']['menus'] ) ) {
             $items[] = sprintf(
                 /* translators: %d: menu count */
-                __( '导航菜单：%d 个菜单', 'developer-starter' ),
+                __( '导航菜单：%d 个菜单', 'qiling' ),
                 count( $site_options['navigation']['menus'] )
             );
         }
@@ -1867,7 +1867,7 @@ class Page_Package_Admin {
                 <span class="ds-package-badge"><?php echo esc_html( $item ); ?></span>
             <?php endforeach; ?>
         </div>
-        <div class="ds-package-note"><?php esc_html_e( '整站设置只有在正式导入时勾选“应用整站设置”才会写入当前站点；临时预览不会修改这些设置。', 'developer-starter' ); ?></div>
+        <div class="ds-package-note"><?php esc_html_e( '整站设置只有在正式导入时勾选“应用整站设置”才会写入当前站点；临时预览不会修改这些设置。', 'qiling' ); ?></div>
         <?php
     }
 
@@ -1880,38 +1880,38 @@ class Page_Package_Admin {
     private function render_import_result( $import_result ) {
         ?>
         <div class="ds-package-panel">
-            <h2><?php esc_html_e( '导入完成', 'developer-starter' ); ?></h2>
+            <h2><?php esc_html_e( '导入完成', 'qiling' ); ?></h2>
             <div class="ds-package-grid">
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '新建页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '新建页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) absint( isset( $import_result['created_count'] ) ? $import_result['created_count'] : 0 ) ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '副本页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '副本页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) absint( isset( $import_result['duplicate_count'] ) ? $import_result['duplicate_count'] : 0 ) ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '更新页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '更新页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) absint( isset( $import_result['updated_count'] ) ? $import_result['updated_count'] : 0 ) ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '跳过页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '跳过页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) absint( isset( $import_result['skipped_count'] ) ? $import_result['skipped_count'] : 0 ) ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '导入错误', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '导入错误', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) absint( isset( $import_result['error_count'] ) ? $import_result['error_count'] : 0 ) ); ?></div>
                 </div>
                 <?php if ( ! empty( $import_result['import_run_id'] ) ) : ?>
                     <div class="ds-package-card ds-package-run-id">
-                        <strong><?php esc_html_e( '导入批次 ID', 'developer-starter' ); ?></strong>
+                        <strong><?php esc_html_e( '导入批次 ID', 'qiling' ); ?></strong>
                         <div><code><?php echo esc_html( (string) $import_result['import_run_id'] ); ?></code></div>
                     </div>
                 <?php endif; ?>
             </div>
 
             <?php if ( ! empty( $import_result['site_option_messages'] ) ) : ?>
-                <h3><?php esc_html_e( '站点设置结果', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '站点设置结果', 'qiling' ); ?></h3>
                 <ul class="ds-package-list">
                     <?php foreach ( $import_result['site_option_messages'] as $site_option_message ) : ?>
                         <li><?php echo esc_html( $site_option_message ); ?></li>
@@ -1920,7 +1920,7 @@ class Page_Package_Admin {
             <?php endif; ?>
 
             <?php if ( ! empty( $import_result['link_resolution_messages'] ) ) : ?>
-                <h3><?php esc_html_e( '链接解析结果', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '链接解析结果', 'qiling' ); ?></h3>
                 <ul class="ds-package-list">
                     <?php foreach ( $import_result['link_resolution_messages'] as $link_resolution_message ) : ?>
                         <li><?php echo esc_html( $link_resolution_message ); ?></li>
@@ -1928,14 +1928,14 @@ class Page_Package_Admin {
                 </ul>
             <?php endif; ?>
 
-            <h3><?php esc_html_e( '页面导入明细', 'developer-starter' ); ?></h3>
+            <h3><?php esc_html_e( '页面导入明细', 'qiling' ); ?></h3>
             <table class="ds-package-table">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e( '页面标识', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '标题 / URL', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '结果', 'developer-starter' ); ?></th>
-                        <th><?php esc_html_e( '说明', 'developer-starter' ); ?></th>
+                        <th><?php esc_html_e( '页面标识', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '标题 / URL', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '结果', 'qiling' ); ?></th>
+                        <th><?php esc_html_e( '说明', 'qiling' ); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1949,11 +1949,11 @@ class Page_Package_Admin {
                                 <?php if ( ! empty( $row['page_id'] ) ) : ?>
                                     <br />
                                     <a href="<?php echo esc_url( get_edit_post_link( (int) $row['page_id'], 'raw' ) ); ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                                        <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                                     </a>
                                     |
                                     <a href="<?php echo esc_url( get_permalink( (int) $row['page_id'] ) ); ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php esc_html_e( '查看页面', 'developer-starter' ); ?>
+                                        <?php esc_html_e( '查看页面', 'qiling' ); ?>
                                     </a>
                                 <?php endif; ?>
                             </td>
@@ -1979,20 +1979,20 @@ class Page_Package_Admin {
         }
         ?>
         <div class="ds-package-panel">
-            <h2><?php esc_html_e( '导入历史中心', 'developer-starter' ); ?></h2>
-            <p class="description"><?php esc_html_e( '保留最近导入记录，可查看每次导入影响，并回滚未回滚的记录。', 'developer-starter' ); ?></p>
+            <h2><?php esc_html_e( '导入历史中心', 'qiling' ); ?></h2>
+            <p class="description"><?php esc_html_e( '保留最近导入记录，可查看每次导入影响，并回滚未回滚的记录。', 'qiling' ); ?></p>
 
             <?php if ( empty( $import_history ) ) : ?>
-                <p><?php esc_html_e( '当前暂无导入历史。', 'developer-starter' ); ?></p>
+                <p><?php esc_html_e( '当前暂无导入历史。', 'qiling' ); ?></p>
             <?php else : ?>
                 <table class="ds-package-table">
                     <thead>
                         <tr>
-                            <th><?php esc_html_e( '执行时间', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '数据包', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '统计', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '状态', 'developer-starter' ); ?></th>
-                            <th><?php esc_html_e( '操作', 'developer-starter' ); ?></th>
+                            <th><?php esc_html_e( '执行时间', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '数据包', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '统计', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '状态', 'qiling' ); ?></th>
+                            <th><?php esc_html_e( '操作', 'qiling' ); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -2028,30 +2028,30 @@ class Page_Package_Admin {
                                         echo esc_html(
                                             $created_at > 0
                                                 ? wp_date( 'Y-m-d H:i:s', $created_at )
-                                                : __( '未知', 'developer-starter' )
+                                                : __( '未知', 'qiling' )
                                         );
                                         ?>
                                     </strong>
                                     <br />
-                                    <code><?php echo esc_html( '' !== $run_id ? $run_id : __( '未记录', 'developer-starter' ) ); ?></code>
+                                    <code><?php echo esc_html( '' !== $run_id ? $run_id : __( '未记录', 'qiling' ) ); ?></code>
                                 </td>
                                 <td>
-                                    <strong><?php echo esc_html( '' !== $package_title ? $package_title : __( '未命名数据包', 'developer-starter' ) ); ?></strong>
+                                    <strong><?php echo esc_html( '' !== $package_title ? $package_title : __( '未命名数据包', 'qiling' ) ); ?></strong>
                                     <br />
-                                    <code><?php echo esc_html( '' !== $package_id ? $package_id : __( '未记录', 'developer-starter' ) ); ?></code>
+                                    <code><?php echo esc_html( '' !== $package_id ? $package_id : __( '未记录', 'qiling' ) ); ?></code>
                                     <br />
                                     <span class="description">
-                                        <?php echo esc_html( Page_Package_Manager::PACKAGE_SCOPE_SITE === $scope ? __( '整站包', 'developer-starter' ) : __( '页面包', 'developer-starter' ) ); ?>
+                                        <?php echo esc_html( Page_Package_Manager::PACKAGE_SCOPE_SITE === $scope ? __( '整站包', 'qiling' ) : __( '页面包', 'qiling' ) ); ?>
                                     </span>
                                     <?php if ( '' !== $front_page_key ) : ?>
                                         <br />
                                         <span class="ds-package-homepage-flag">
-                                            <?php echo esc_html( sprintf( __( '首页映射：%s', 'developer-starter' ), $front_page_key ) ); ?>
+                                            <?php echo esc_html( sprintf( __( '首页映射：%s', 'qiling' ), $front_page_key ) ); ?>
                                         </span>
                                     <?php endif; ?>
                                     <br />
                                     <span class="description">
-                                        <?php echo esc_html( $apply_options ? __( '已应用站点设置', 'developer-starter' ) : __( '未应用站点设置', 'developer-starter' ) ); ?>
+                                        <?php echo esc_html( $apply_options ? __( '已应用站点设置', 'qiling' ) : __( '未应用站点设置', 'qiling' ) ); ?>
                                     </span>
                                     <?php if ( '' !== $operator_name ) : ?>
                                         <br />
@@ -2060,7 +2060,7 @@ class Page_Package_Admin {
                                             echo esc_html(
                                                 sprintf(
                                                     /* translators: %s: user display name */
-                                                    __( '执行人：%s', 'developer-starter' ),
+                                                    __( '执行人：%s', 'qiling' ),
                                                     $operator_name
                                                 )
                                             );
@@ -2069,19 +2069,19 @@ class Page_Package_Admin {
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <span><?php echo esc_html( sprintf( __( '新建 %d', 'developer-starter' ), absint( isset( $stats['created_count'] ) ? $stats['created_count'] : 0 ) ) ); ?></span>
+                                    <span><?php echo esc_html( sprintf( __( '新建 %d', 'qiling' ), absint( isset( $stats['created_count'] ) ? $stats['created_count'] : 0 ) ) ); ?></span>
                                     <br />
-                                    <span><?php echo esc_html( sprintf( __( '副本 %d', 'developer-starter' ), absint( isset( $stats['duplicate_count'] ) ? $stats['duplicate_count'] : 0 ) ) ); ?></span>
+                                    <span><?php echo esc_html( sprintf( __( '副本 %d', 'qiling' ), absint( isset( $stats['duplicate_count'] ) ? $stats['duplicate_count'] : 0 ) ) ); ?></span>
                                     <br />
-                                    <span><?php echo esc_html( sprintf( __( '更新 %d', 'developer-starter' ), absint( isset( $stats['updated_count'] ) ? $stats['updated_count'] : 0 ) ) ); ?></span>
+                                    <span><?php echo esc_html( sprintf( __( '更新 %d', 'qiling' ), absint( isset( $stats['updated_count'] ) ? $stats['updated_count'] : 0 ) ) ); ?></span>
                                     <br />
-                                    <span><?php echo esc_html( sprintf( __( '跳过 %d', 'developer-starter' ), absint( isset( $stats['skipped_count'] ) ? $stats['skipped_count'] : 0 ) ) ); ?></span>
+                                    <span><?php echo esc_html( sprintf( __( '跳过 %d', 'qiling' ), absint( isset( $stats['skipped_count'] ) ? $stats['skipped_count'] : 0 ) ) ); ?></span>
                                     <br />
-                                    <span><?php echo esc_html( sprintf( __( '错误 %d', 'developer-starter' ), absint( isset( $stats['error_count'] ) ? $stats['error_count'] : 0 ) ) ); ?></span>
+                                    <span><?php echo esc_html( sprintf( __( '错误 %d', 'qiling' ), absint( isset( $stats['error_count'] ) ? $stats['error_count'] : 0 ) ) ); ?></span>
                                 </td>
                                 <td>
                                     <?php if ( $rolled_back_at > 0 ) : ?>
-                                        <span class="ds-status ds-status-skip"><?php esc_html_e( '已回滚', 'developer-starter' ); ?></span>
+                                        <span class="ds-status ds-status-skip"><?php esc_html_e( '已回滚', 'qiling' ); ?></span>
                                         <br />
                                         <span class="description"><?php echo esc_html( wp_date( 'Y-m-d H:i:s', $rolled_back_at ) ); ?></span>
                                         <?php if ( ! empty( $rollback_result ) ) : ?>
@@ -2091,7 +2091,7 @@ class Page_Package_Admin {
                                                 echo esc_html(
                                                     sprintf(
                                                         /* translators: 1: restored pages, 2: deleted pages */
-                                                        __( '页面恢复 %1$d / 删除 %2$d', 'developer-starter' ),
+                                                        __( '页面恢复 %1$d / 删除 %2$d', 'qiling' ),
                                                         absint( isset( $rollback_result['restored_pages'] ) ? $rollback_result['restored_pages'] : 0 ),
                                                         absint( isset( $rollback_result['deleted_pages'] ) ? $rollback_result['deleted_pages'] : 0 )
                                                     )
@@ -2100,7 +2100,7 @@ class Page_Package_Admin {
                                             </span>
                                         <?php endif; ?>
                                     <?php else : ?>
-                                        <span class="ds-status ds-status-ready"><?php esc_html_e( '可回滚', 'developer-starter' ); ?></span>
+                                        <span class="ds-status ds-status-ready"><?php esc_html_e( '可回滚', 'qiling' ); ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
@@ -2109,10 +2109,10 @@ class Page_Package_Admin {
                                             <?php wp_nonce_field( 'developer_starter_site_package_action', 'developer_starter_site_package_nonce' ); ?>
                                             <input type="hidden" name="developer_starter_site_package_action" value="rollback_import" />
                                             <input type="hidden" name="developer_starter_site_package_import_run_id" value="<?php echo esc_attr( $run_id ); ?>" />
-                                            <button type="submit" class="button"><?php esc_html_e( '回滚本次导入', 'developer-starter' ); ?></button>
+                                            <button type="submit" class="button"><?php esc_html_e( '回滚本次导入', 'qiling' ); ?></button>
                                         </form>
                                     <?php else : ?>
-                                        <span class="description"><?php esc_html_e( '无需操作', 'developer-starter' ); ?></span>
+                                        <span class="description"><?php esc_html_e( '无需操作', 'qiling' ); ?></span>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -2133,24 +2133,24 @@ class Page_Package_Admin {
     private function render_export_result( $export_result ) {
         ?>
         <div class="ds-package-panel">
-            <h2><?php esc_html_e( '导出完成', 'developer-starter' ); ?></h2>
+            <h2><?php esc_html_e( '导出完成', 'qiling' ); ?></h2>
             <div class="ds-package-grid">
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '选中页面', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '选中页面', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) absint( isset( $export_result['selected_count'] ) ? $export_result['selected_count'] : 0 ) ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '成功导出', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '成功导出', 'qiling' ); ?></strong>
                     <div><?php echo esc_html( (string) absint( isset( $export_result['exported_count'] ) ? $export_result['exported_count'] : 0 ) ); ?></div>
                 </div>
                 <div class="ds-package-card">
-                    <strong><?php esc_html_e( '导出类型', 'developer-starter' ); ?></strong>
-                    <div><?php echo esc_html( isset( $export_result['scope'] ) && Page_Package_Manager::PACKAGE_SCOPE_SITE === $export_result['scope'] ? __( '整站包', 'developer-starter' ) : __( '页面包', 'developer-starter' ) ); ?></div>
+                    <strong><?php esc_html_e( '导出类型', 'qiling' ); ?></strong>
+                    <div><?php echo esc_html( isset( $export_result['scope'] ) && Page_Package_Manager::PACKAGE_SCOPE_SITE === $export_result['scope'] ? __( '整站包', 'qiling' ) : __( '页面包', 'qiling' ) ); ?></div>
                 </div>
             </div>
 
             <?php if ( ! empty( $export_result['warnings'] ) ) : ?>
-                <h3><?php esc_html_e( '导出预警', 'developer-starter' ); ?></h3>
+                <h3><?php esc_html_e( '导出预警', 'qiling' ); ?></h3>
                 <ul class="ds-package-list">
                     <?php foreach ( $export_result['warnings'] as $warning ) : ?>
                         <li><?php echo esc_html( $warning ); ?></li>
@@ -2158,7 +2158,7 @@ class Page_Package_Admin {
                 </ul>
             <?php endif; ?>
 
-            <h3><?php esc_html_e( 'JSON 数据', 'developer-starter' ); ?></h3>
+            <h3><?php esc_html_e( 'JSON 数据', 'qiling' ); ?></h3>
             <textarea class="ds-package-export-json" readonly><?php echo esc_textarea( isset( $export_result['json'] ) ? (string) $export_result['json'] : '' ); ?></textarea>
 
             <form method="post" class="ds-package-download">
@@ -2166,7 +2166,7 @@ class Page_Package_Admin {
                 <input type="hidden" name="developer_starter_site_package_action" value="download_export" />
                 <textarea class="ds-package-hidden" name="developer_starter_site_package_export_json"><?php echo esc_textarea( isset( $export_result['json'] ) ? (string) $export_result['json'] : '' ); ?></textarea>
                 <input type="hidden" name="developer_starter_site_package_export_filename" value="<?php echo esc_attr( isset( $export_result['filename'] ) ? (string) $export_result['filename'] : 'site-package.json' ); ?>" />
-                <button type="submit" class="button button-secondary"><?php esc_html_e( '下载 JSON 文件', 'developer-starter' ); ?></button>
+                <button type="submit" class="button button-secondary"><?php esc_html_e( '下载 JSON 文件', 'qiling' ); ?></button>
             </form>
         </div>
         <?php
@@ -2183,27 +2183,27 @@ class Page_Package_Admin {
             case 'create':
                 return array(
                     'class' => 'ds-status-ready',
-                    'label' => __( '可新建', 'developer-starter' ),
+                    'label' => __( '可新建', 'qiling' ),
                 );
             case 'duplicate':
                 return array(
                     'class' => 'ds-status-ready',
-                    'label' => __( '将建副本', 'developer-starter' ),
+                    'label' => __( '将建副本', 'qiling' ),
                 );
             case 'update':
                 return array(
                     'class' => 'ds-status-update',
-                    'label' => __( '可更新', 'developer-starter' ),
+                    'label' => __( '可更新', 'qiling' ),
                 );
             case 'skip':
                 return array(
                     'class' => 'ds-status-skip',
-                    'label' => __( '将跳过', 'developer-starter' ),
+                    'label' => __( '将跳过', 'qiling' ),
                 );
             default:
                 return array(
                     'class' => 'ds-status-blocked',
-                    'label' => __( '已拦截', 'developer-starter' ),
+                    'label' => __( '已拦截', 'qiling' ),
                 );
         }
     }
@@ -2219,27 +2219,27 @@ class Page_Package_Admin {
             case 'create':
                 return array(
                     'class' => 'ds-status-create',
-                    'label' => __( '已创建', 'developer-starter' ),
+                    'label' => __( '已创建', 'qiling' ),
                 );
             case 'duplicate':
                 return array(
                     'class' => 'ds-status-create',
-                    'label' => __( '已建副本', 'developer-starter' ),
+                    'label' => __( '已建副本', 'qiling' ),
                 );
             case 'update':
                 return array(
                     'class' => 'ds-status-update',
-                    'label' => __( '已更新', 'developer-starter' ),
+                    'label' => __( '已更新', 'qiling' ),
                 );
             case 'skip':
                 return array(
                     'class' => 'ds-status-skip',
-                    'label' => __( '已跳过', 'developer-starter' ),
+                    'label' => __( '已跳过', 'qiling' ),
                 );
             default:
                 return array(
                     'class' => 'ds-status-error',
-                    'label' => __( '失败', 'developer-starter' ),
+                    'label' => __( '失败', 'qiling' ),
                 );
         }
     }
@@ -2259,7 +2259,7 @@ class Page_Package_Admin {
         $url  = isset( $author['url'] ) ? esc_url( (string) $author['url'] ) : '';
 
         if ( '' === $name ) {
-            return __( '未填写', 'developer-starter' );
+            return __( '未填写', 'qiling' );
         }
 
         if ( '' === $url ) {

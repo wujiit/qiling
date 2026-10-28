@@ -49,7 +49,7 @@ if ( ! function_exists( 'developer_starter_comment_callback' ) ) {
                             <span class="comment-floor">
                                 <?php
                                 /* translators: %d: Floor number */
-                                printf( esc_html__( '%d楼', 'developer-starter' ), $floor_number );
+                                printf( esc_html__( '%d楼', 'qiling' ), $floor_number );
                                 ?>
                             </span>
                         <?php endif; ?>
@@ -62,10 +62,10 @@ if ( ! function_exists( 'developer_starter_comment_callback' ) ) {
                         }
                         ?>
                         <?php if ( $comment_ip_location ) : ?>
-                            <span class="comment-ip-location"><?php printf( esc_html__( '地区：%s', 'developer-starter' ), esc_html( $comment_ip_location ) ); ?></span>
+                            <span class="comment-ip-location"><?php printf( esc_html__( '地区：%s', 'qiling' ), esc_html( $comment_ip_location ) ); ?></span>
                         <?php endif; ?>
                         <?php if ( $comment->comment_approved == '0' ) : ?>
-                            <span class="comment-awaiting"><?php esc_html_e( '待审核', 'developer-starter' ); ?></span>
+                            <span class="comment-awaiting"><?php esc_html_e( '待审核', 'qiling' ); ?></span>
                         <?php endif; ?>
                     </div>
                     <div class="comment-text">
@@ -84,9 +84,9 @@ if ( ! function_exists( 'developer_starter_comment_callback' ) ) {
                         );
                         ?>
                         <?php if ( $comment_speech_enabled ) : ?>
-                            <button type="button" class="qiling-comment-speech-trigger" data-comment-id="<?php echo esc_attr( (int) $comment->comment_ID ); ?>" aria-label="<?php esc_attr_e( '朗读这条评论', 'developer-starter' ); ?>">
+                            <button type="button" class="qiling-comment-speech-trigger" data-comment-id="<?php echo esc_attr( (int) $comment->comment_ID ); ?>" aria-label="<?php esc_attr_e( '朗读这条评论', 'qiling' ); ?>">
                                 <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"></path><path d="M16 9.5c.8.7 1.2 1.5 1.2 2.5s-.4 1.8-1.2 2.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M18.5 7c1.4 1.3 2.1 3 2.1 5s-.7 3.7-2.1 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
-                                <span><?php esc_html_e( '朗读', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '朗读', 'qiling' ); ?></span>
                             </button>
                         <?php endif; ?>
                     </div>
@@ -175,7 +175,7 @@ if ( ! function_exists( 'developer_starter_filter_reply_title' ) ) {
     function developer_starter_filter_reply_title( $defaults ) {
         $privacy_enabled = developer_starter_get_option( 'comment_username_privacy', '' );
         if ( $privacy_enabled ) {
-            $defaults['title_reply_to'] = __( '回复 %s', 'developer-starter' );
+            $defaults['title_reply_to'] = __( '回复 %s', 'qiling' );
         }
         return $defaults;
     }

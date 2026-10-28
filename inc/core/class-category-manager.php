@@ -23,19 +23,19 @@ class Category_Manager {
      */
     public function __construct() {
         $this->layout_options = array(
-            'card'     => __( '卡片布局', 'developer-starter' ),
-            'list'     => __( '列表布局', 'developer-starter' ),
-            'grid'     => __( '网格布局', 'developer-starter' ),
-            'magazine' => __( '杂志布局', 'developer-starter' ),
+            'card'     => __( '卡片布局', 'qiling' ),
+            'list'     => __( '列表布局', 'qiling' ),
+            'grid'     => __( '网格布局', 'qiling' ),
+            'magazine' => __( '杂志布局', 'qiling' ),
         );
         $this->blog_preset_options = class_exists( '\Developer_Starter\Core\Blog_Visual_Manager' )
             ? \Developer_Starter\Core\Blog_Visual_Manager::get_module_preset_choices()
             : array(
-                'inherit'   => __( '继承全局博客风格', 'developer-starter' ),
-                'default'   => __( '默认企业内容', 'developer-starter' ),
-                'developer' => __( '技术开发者', 'developer-starter' ),
-                'minimal'   => __( '极简', 'developer-starter' ),
-                'artist'    => __( '艺术家', 'developer-starter' ),
+                'inherit'   => __( '继承全局博客风格', 'qiling' ),
+                'default'   => __( '默认企业内容', 'qiling' ),
+                'developer' => __( '技术开发者', 'qiling' ),
+                'minimal'   => __( '极简', 'qiling' ),
+                'artist'    => __( '艺术家', 'qiling' ),
             );
         // 分类编辑页面添加字段
         add_action( 'category_add_form_fields', array( $this, 'add_category_fields' ) );
@@ -63,165 +63,165 @@ class Category_Manager {
         ?>
         <input type="hidden" name="ds_category_fields_submitted" value="1" />
         <div class="form-field">
-            <label for="ds_category_layout"><?php esc_html_e( '文章列表布局', 'developer-starter' ); ?></label>
+            <label for="ds_category_layout"><?php esc_html_e( '文章列表布局', 'qiling' ); ?></label>
             <select name="ds_category_layout" id="ds_category_layout">
                 <?php foreach ( $this->layout_options as $value => $label ) : ?>
                     <option value="<?php echo esc_attr( $value ); ?>"><?php echo esc_html( $label ); ?></option>
                 <?php endforeach; ?>
             </select>
-            <p class="description"><?php esc_html_e( '选择该分类下文章列表的显示布局', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '选择该分类下文章列表的显示布局', 'qiling' ); ?></p>
         </div>
 
         <div class="form-field">
-            <label for="ds_category_blog_visual_preset"><?php esc_html_e( '博客视觉风格', 'developer-starter' ); ?></label>
+            <label for="ds_category_blog_visual_preset"><?php esc_html_e( '博客视觉风格', 'qiling' ); ?></label>
             <select name="ds_category_blog_visual_preset" id="ds_category_blog_visual_preset">
                 <?php foreach ( $this->blog_preset_options as $value => $label ) : ?>
                     <option value="<?php echo esc_attr( $value ); ?>" <?php selected( 'inherit', $value ); ?>><?php echo esc_html( $label ); ?></option>
                 <?php endforeach; ?>
             </select>
-            <p class="description"><?php esc_html_e( '该分类可以单独覆盖全局博客风格。适合把教程、随笔、作品集分别切成不同风格。', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '该分类可以单独覆盖全局博客风格。适合把教程、随笔、作品集分别切成不同风格。', 'qiling' ); ?></p>
         </div>
 
         <div class="form-field">
-            <label for="ds_category_video_category"><?php esc_html_e( '视频分类', 'developer-starter' ); ?></label>
+            <label for="ds_category_video_category"><?php esc_html_e( '视频分类', 'qiling' ); ?></label>
             <label style="display: inline-flex; align-items: center; gap: 6px;">
                 <input type="checkbox" name="ds_category_video_category" id="ds_category_video_category" value="1" />
-                <strong><?php esc_html_e( '启用视频分类模式', 'developer-starter' ); ?></strong>
+                <strong><?php esc_html_e( '启用视频分类模式', 'qiling' ); ?></strong>
             </label>
-            <p class="description"><?php esc_html_e( '开启后，该分类页将按电影风格展示启灵播放器的视频模式内容', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '开启后，该分类页将按电影风格展示启灵播放器的视频模式内容', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label for="ds_category_hide_breadcrumb"><?php esc_html_e( '隐藏头部元素', 'developer-starter' ); ?></label>
+            <label for="ds_category_hide_breadcrumb"><?php esc_html_e( '隐藏头部元素', 'qiling' ); ?></label>
             <label style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 5px;">
                 <input type="checkbox" name="ds_category_hide_header" id="ds_category_hide_header" value="1" />
-                <strong><?php esc_html_e( '隐藏整个分类页头部 (包含大标题和描述)', 'developer-starter' ); ?></strong>
+                <strong><?php esc_html_e( '隐藏整个分类页头部 (包含大标题和描述)', 'qiling' ); ?></strong>
             </label>
             <label style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 5px;">
                 <input type="checkbox" name="ds_category_hide_breadcrumb" id="ds_category_hide_breadcrumb" value="1" />
-                <strong><?php esc_html_e( '不显示分类目录面包屑', 'developer-starter' ); ?></strong>
+                <strong><?php esc_html_e( '不显示分类目录面包屑', 'qiling' ); ?></strong>
             </label>
             <label style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 5px;">
                 <input type="checkbox" name="ds_category_hide_count" id="ds_category_hide_count" value="1" />
-                <strong><?php esc_html_e( '不显示分类文章数量统计', 'developer-starter' ); ?></strong>
+                <strong><?php esc_html_e( '不显示分类文章数量统计', 'qiling' ); ?></strong>
             </label>
-            <p class="description"><?php esc_html_e( '开启后，将覆盖主题的全局设置', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '开启后，将覆盖主题的全局设置', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label for="ds_category_bg_color"><?php esc_html_e( '头部背景颜色', 'developer-starter' ); ?></label>
+            <label for="ds_category_bg_color"><?php esc_html_e( '头部背景颜色', 'qiling' ); ?></label>
             <input type="text" name="ds_category_bg_color" id="ds_category_bg_color" class="ds-color-picker" value="" />
-            <p class="description"><?php esc_html_e( '分类页面头部区域的背景颜色，留空使用默认主题色', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '分类页面头部区域的背景颜色，留空使用默认主题色', 'qiling' ); ?></p>
         </div>
 
         <div class="form-field">
-            <label for="ds_category_breadcrumb_color"><?php esc_html_e( '面包屑文字颜色', 'developer-starter' ); ?></label>
+            <label for="ds_category_breadcrumb_color"><?php esc_html_e( '面包屑文字颜色', 'qiling' ); ?></label>
             <input type="text" name="ds_category_breadcrumb_color" id="ds_category_breadcrumb_color" class="ds-color-picker" value="" />
-            <p class="description"><?php esc_html_e( '分类页面头部面包屑文字颜色，留空使用默认样式', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '分类页面头部面包屑文字颜色，留空使用默认样式', 'qiling' ); ?></p>
         </div>
 
         <div class="form-field">
-            <label for="ds_category_header_padding"><?php esc_html_e( '头部高度 (Padding)', 'developer-starter' ); ?></label>
+            <label for="ds_category_header_padding"><?php esc_html_e( '头部高度 (Padding)', 'qiling' ); ?></label>
             <input type="text" name="ds_category_header_padding" id="ds_category_header_padding" value="" placeholder="100px 0 60px" />
-            <p class="description"><?php esc_html_e( '设置头部内边距控制高度。默认：100px 0 60px (上 左右 下)', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '设置头部内边距控制高度。默认：100px 0 60px (上 左右 下)', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label for="ds_category_icon"><?php esc_html_e( '分类图标', 'developer-starter' ); ?></label>
+            <label for="ds_category_icon"><?php esc_html_e( '分类图标', 'qiling' ); ?></label>
             <input type="text" name="ds_category_icon" id="ds_category_icon" value="" />
-            <p class="description"><?php esc_html_e( '输入emoji表情或图标图片URL，显示在分类名称前面（选填）', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '输入emoji表情或图标图片URL，显示在分类名称前面（选填）', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label for="ds_category_columns"><?php esc_html_e( '每行列数', 'developer-starter' ); ?></label>
+            <label for="ds_category_columns"><?php esc_html_e( '每行列数', 'qiling' ); ?></label>
             <select name="ds_category_columns" id="ds_category_columns">
-                <option value=""><?php esc_html_e( '默认 (3列)', 'developer-starter' ); ?></option>
-                <option value="2"><?php esc_html_e( '2列', 'developer-starter' ); ?></option>
-                <option value="3"><?php esc_html_e( '3列', 'developer-starter' ); ?></option>
-                <option value="4"><?php esc_html_e( '4列', 'developer-starter' ); ?></option>
+                <option value=""><?php esc_html_e( '默认 (3列)', 'qiling' ); ?></option>
+                <option value="2"><?php esc_html_e( '2列', 'qiling' ); ?></option>
+                <option value="3"><?php esc_html_e( '3列', 'qiling' ); ?></option>
+                <option value="4"><?php esc_html_e( '4列', 'qiling' ); ?></option>
             </select>
-            <p class="description"><?php esc_html_e( '卡片/网格布局时每行显示的文章数量', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '卡片/网格布局时每行显示的文章数量', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label for="ds_category_posts_per_page"><?php esc_html_e( '每页显示数量', 'developer-starter' ); ?></label>
+            <label for="ds_category_posts_per_page"><?php esc_html_e( '每页显示数量', 'qiling' ); ?></label>
             <input type="number" name="ds_category_posts_per_page" id="ds_category_posts_per_page" value="" min="1" max="100" />
-            <p class="description"><?php esc_html_e( '该分类页面每页显示的文章数量，留空使用默认设置', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '该分类页面每页显示的文章数量，留空使用默认设置', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label for="ds_category_thumb_height"><?php esc_html_e( '缩略图高度(px)', 'developer-starter' ); ?></label>
+            <label for="ds_category_thumb_height"><?php esc_html_e( '缩略图高度(px)', 'qiling' ); ?></label>
             <input type="number" name="ds_category_thumb_height" id="ds_category_thumb_height" value="" min="50" max="500" />
-            <p class="description"><?php esc_html_e( '文章列表缩略图高度，留空使用默认值 200px', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '文章列表缩略图高度，留空使用默认值 200px', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label for="ds_category_excerpt_length"><?php esc_html_e( '摘要字数', 'developer-starter' ); ?></label>
+            <label for="ds_category_excerpt_length"><?php esc_html_e( '摘要字数', 'qiling' ); ?></label>
             <input type="number" name="ds_category_excerpt_length" id="ds_category_excerpt_length" value="" min="0" max="500" />
-            <p class="description"><?php esc_html_e( '文章摘要显示字数，留空使用默认值 40', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '文章摘要显示字数，留空使用默认值 40', 'qiling' ); ?></p>
         </div>
         
         <div class="form-field">
-            <label><?php esc_html_e( '隐藏选项', 'developer-starter' ); ?></label>
+            <label><?php esc_html_e( '隐藏选项', 'qiling' ); ?></label>
             <fieldset style="margin-top: 5px;">
                 <label style="display: block; margin-bottom: 5px;">
                     <input type="checkbox" name="ds_category_hide_thumb" value="1" />
-                    <?php esc_html_e( '隐藏缩略图', 'developer-starter' ); ?>
+                    <?php esc_html_e( '隐藏缩略图', 'qiling' ); ?>
                 </label>
                 <label style="display: block; margin-bottom: 5px;">
                     <input type="checkbox" name="ds_category_hide_excerpt" value="1" />
-                    <?php esc_html_e( '隐藏摘要', 'developer-starter' ); ?>
+                    <?php esc_html_e( '隐藏摘要', 'qiling' ); ?>
                 </label>
                 <label style="display: block; margin-bottom: 5px;">
                     <input type="checkbox" name="ds_category_hide_date" value="1" />
-                    <?php esc_html_e( '隐藏日期', 'developer-starter' ); ?>
+                    <?php esc_html_e( '隐藏日期', 'qiling' ); ?>
                 </label>
                 <label style="display: block; margin-bottom: 5px;">
                     <input type="checkbox" name="ds_category_hide_category" value="1" />
-                    <?php esc_html_e( '隐藏分类标签', 'developer-starter' ); ?>
+                    <?php esc_html_e( '隐藏分类标签', 'qiling' ); ?>
                 </label>
                 <label style="display: block; margin-bottom: 5px;">
                     <input type="checkbox" name="ds_category_hide_author" value="1" />
-                    <?php esc_html_e( '隐藏作者', 'developer-starter' ); ?>
+                    <?php esc_html_e( '隐藏作者', 'qiling' ); ?>
                 </label>
             </fieldset>
-            <p class="description"><?php esc_html_e( '选择要在文章列表中隐藏的元素', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '选择要在文章列表中隐藏的元素', 'qiling' ); ?></p>
         </div>
 
         <div class="form-field">
-            <label for="ds_category_seo_title"><?php esc_html_e( 'SEO标题', 'developer-starter' ); ?></label>
+            <label for="ds_category_seo_title"><?php esc_html_e( 'SEO标题', 'qiling' ); ?></label>
             <input type="text" name="ds_category_seo_title" id="ds_category_seo_title" value="" />
-            <p class="description"><?php esc_html_e( '留空默认：分类名称 + 网站名称', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '留空默认：分类名称 + 网站名称', 'qiling' ); ?></p>
         </div>
 
         <div class="form-field">
-            <label for="ds_category_seo_keywords"><?php esc_html_e( 'SEO关键词', 'developer-starter' ); ?></label>
+            <label for="ds_category_seo_keywords"><?php esc_html_e( 'SEO关键词', 'qiling' ); ?></label>
             <input type="text" name="ds_category_seo_keywords" id="ds_category_seo_keywords" value="" />
-            <p class="description"><?php esc_html_e( '留空默认：分类名称，多个关键词用英文逗号分隔', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '留空默认：分类名称，多个关键词用英文逗号分隔', 'qiling' ); ?></p>
         </div>
 
         <div class="form-field">
-            <label for="ds_category_seo_description"><?php esc_html_e( 'SEO描述', 'developer-starter' ); ?></label>
+            <label for="ds_category_seo_description"><?php esc_html_e( 'SEO描述', 'qiling' ); ?></label>
             <textarea name="ds_category_seo_description" id="ds_category_seo_description" rows="3"></textarea>
-            <p class="description"><?php esc_html_e( '留空默认：分类描述', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '留空默认：分类描述', 'qiling' ); ?></p>
         </div>
         
         <!-- 高级分类筛选设置 -->
         <div class="form-field" style="background: #f0f6fc; padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid #c8e1ff;">
-            <h3 style="margin: 0 0 15px; font-size: 14px; color: #0366d6;"><?php esc_html_e( '🔖 高级分类筛选设置', 'developer-starter' ); ?></h3>
+            <h3 style="margin: 0 0 15px; font-size: 14px; color: #0366d6;"><?php esc_html_e( '高级分类筛选设置', 'qiling' ); ?></h3>
             
             <div style="margin-bottom: 15px;">
                 <label for="ds_adv_filter_enabled" style="display: flex; align-items: center; cursor: pointer;">
                     <input type="checkbox" name="ds_adv_filter_enabled" id="ds_adv_filter_enabled" value="1" style="margin-right: 8px;" />
-                    <strong><?php esc_html_e( '启用高级分类筛选', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '启用高级分类筛选', 'qiling' ); ?></strong>
                 </label>
-                <p class="description" style="margin-top: 5px; color: #666;"><?php esc_html_e( '开启后，此分类页面将显示高级筛选按钮，用户可按多层级进行筛选', 'developer-starter' ); ?></p>
+                <p class="description" style="margin-top: 5px; color: #666;"><?php esc_html_e( '开启后，此分类页面将显示高级筛选按钮，用户可按多层级进行筛选', 'qiling' ); ?></p>
             </div>
             
             <div style="margin-top: 15px;">
-                <label for="ds_adv_custom_levels"><?php esc_html_e( '自定义筛选层级', 'developer-starter' ); ?></label>
-                <textarea name="ds_adv_custom_levels" id="ds_adv_custom_levels" rows="4" style="width: 100%;" placeholder="<?php esc_attr_e( '例如：&#10;平台: Windows,Mac,Linux&#10;类型: 免费,收费,开源', 'developer-starter' ); ?>"></textarea>
-                <p class="description"><?php esc_html_e( '每行一个层级，格式：层级名称: 选项1,选项2,选项3', 'developer-starter' ); ?></p>
+                <label for="ds_adv_custom_levels"><?php esc_html_e( '自定义筛选层级', 'qiling' ); ?></label>
+                <textarea name="ds_adv_custom_levels" id="ds_adv_custom_levels" rows="4" style="width: 100%;" placeholder="<?php esc_attr_e( '例如：&#10;平台: Windows,Mac,Linux&#10;类型: 免费,收费,开源', 'qiling' ); ?>"></textarea>
+                <p class="description"><?php esc_html_e( '每行一个层级，格式：层级名称: 选项1,选项2,选项3', 'qiling' ); ?></p>
             </div>
         </div>
         <?php
@@ -281,7 +281,7 @@ class Category_Manager {
         ?>
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_layout"><?php esc_html_e( '文章列表布局', 'developer-starter' ); ?></label>
+                <label for="ds_category_layout"><?php esc_html_e( '文章列表布局', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="hidden" name="ds_category_fields_submitted" value="1" />
@@ -290,13 +290,13 @@ class Category_Manager {
                         <option value="<?php echo esc_attr( $value ); ?>" <?php selected( $layout, $value ); ?>><?php echo esc_html( $label ); ?></option>
                     <?php endforeach; ?>
                 </select>
-                <p class="description"><?php esc_html_e( '选择该分类下文章列表的显示布局', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '选择该分类下文章列表的显示布局', 'qiling' ); ?></p>
             </td>
         </tr>
 
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_blog_visual_preset"><?php esc_html_e( '博客视觉风格', 'developer-starter' ); ?></label>
+                <label for="ds_category_blog_visual_preset"><?php esc_html_e( '博客视觉风格', 'qiling' ); ?></label>
             </th>
             <td>
                 <select name="ds_category_blog_visual_preset" id="ds_category_blog_visual_preset" style="width: 220px;">
@@ -304,77 +304,77 @@ class Category_Manager {
                         <option value="<?php echo esc_attr( $value ); ?>" <?php selected( $blog_visual_preset ?: 'inherit', $value ); ?>><?php echo esc_html( $label ); ?></option>
                     <?php endforeach; ?>
                 </select>
-                <p class="description"><?php esc_html_e( '该分类可以单独覆盖全局博客风格。适合把教程、随笔、作品集分别切成不同风格。', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '该分类可以单独覆盖全局博客风格。适合把教程、随笔、作品集分别切成不同风格。', 'qiling' ); ?></p>
             </td>
         </tr>
 
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_video_category"><?php esc_html_e( '视频分类', 'developer-starter' ); ?></label>
+                <label for="ds_category_video_category"><?php esc_html_e( '视频分类', 'qiling' ); ?></label>
             </th>
             <td>
                 <label style="display: inline-flex; align-items: center; gap: 6px;">
                     <input type="checkbox" name="ds_category_video_category" id="ds_category_video_category" value="1" <?php checked( $video_category_enabled, '1' ); ?> />
-                    <strong><?php esc_html_e( '启用视频分类模式', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '启用视频分类模式', 'qiling' ); ?></strong>
                 </label>
-                <p class="description"><?php esc_html_e( '开启后，该分类页将按电影风格展示启灵播放器的视频模式内容', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '开启后，该分类页将按电影风格展示启灵播放器的视频模式内容', 'qiling' ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_hide_breadcrumb"><?php esc_html_e( '隐藏头部元素', 'developer-starter' ); ?></label>
+                <label for="ds_category_hide_breadcrumb"><?php esc_html_e( '隐藏头部元素', 'qiling' ); ?></label>
             </th>
             <td>
                 <label style="display: block; margin-bottom: 8px;">
                     <input type="checkbox" name="ds_category_hide_header" id="ds_category_hide_header" value="1" <?php checked( $hide_header, '1' ); ?> />
-                    <strong><?php esc_html_e( '隐藏整个分类页头部 (包含大标题和描述)', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '隐藏整个分类页头部 (包含大标题和描述)', 'qiling' ); ?></strong>
                 </label>
                 <label style="display: block; margin-bottom: 8px;">
                     <input type="checkbox" name="ds_category_hide_breadcrumb" id="ds_category_hide_breadcrumb" value="1" <?php checked( $hide_breadcrumb, '1' ); ?> />
-                    <strong><?php esc_html_e( '不显示分类目录面包屑', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '不显示分类目录面包屑', 'qiling' ); ?></strong>
                 </label>
                 <label style="display: block; margin-bottom: 8px;">
                     <input type="checkbox" name="ds_category_hide_count" id="ds_category_hide_count" value="1" <?php checked( $hide_count, '1' ); ?> />
-                    <strong><?php esc_html_e( '不显示分类文章数量统计', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '不显示分类文章数量统计', 'qiling' ); ?></strong>
                 </label>
-                <p class="description"><?php esc_html_e( '开启后，将覆盖主题全局的分类页头部设置。', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '开启后，将覆盖主题全局的分类页头部设置。', 'qiling' ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_bg_color"><?php esc_html_e( '头部背景颜色', 'developer-starter' ); ?></label>
+                <label for="ds_category_bg_color"><?php esc_html_e( '头部背景颜色', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="text" name="ds_category_bg_color" id="ds_category_bg_color" class="ds-color-picker" value="<?php echo esc_attr( $bg_color ); ?>" />
-                <p class="description"><?php esc_html_e( '分类页面头部区域的背景颜色，留空使用默认主题色', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '分类页面头部区域的背景颜色，留空使用默认主题色', 'qiling' ); ?></p>
             </td>
         </tr>
 
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_breadcrumb_color"><?php esc_html_e( '面包屑文字颜色', 'developer-starter' ); ?></label>
+                <label for="ds_category_breadcrumb_color"><?php esc_html_e( '面包屑文字颜色', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="text" name="ds_category_breadcrumb_color" id="ds_category_breadcrumb_color" class="ds-color-picker" value="<?php echo esc_attr( $breadcrumb_color ); ?>" />
-                <p class="description"><?php esc_html_e( '分类页面头部面包屑文字颜色，留空使用默认样式', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '分类页面头部面包屑文字颜色，留空使用默认样式', 'qiling' ); ?></p>
             </td>
         </tr>
 
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_header_padding"><?php esc_html_e( '头部高度 (Padding)', 'developer-starter' ); ?></label>
+                <label for="ds_category_header_padding"><?php esc_html_e( '头部高度 (Padding)', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="text" name="ds_category_header_padding" id="ds_category_header_padding" value="<?php echo esc_attr( $header_padding ); ?>" placeholder="100px 0 60px" style="width: 300px;" />
-                <p class="description"><?php echo wp_kses_post( __( '设置分类顶部的内边距，控制面包屑区域高度。<br>格式：上内边距 左右内边距 下内边距<br>默认值：100px 0 60px', 'developer-starter' ) ); ?></p>
+                <p class="description"><?php echo wp_kses_post( __( '设置分类顶部的内边距，控制面包屑区域高度。<br>格式：上内边距 左右内边距 下内边距<br>默认值：100px 0 60px', 'qiling' ) ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_icon"><?php esc_html_e( '分类图标', 'developer-starter' ); ?></label>
+                <label for="ds_category_icon"><?php esc_html_e( '分类图标', 'qiling' ); ?></label>
             </th>
             <td>
                 <div style="display: flex; align-items: center; gap: 10px;">
@@ -389,113 +389,113 @@ class Category_Manager {
                         </span>
                     <?php endif; ?>
                 </div>
-                <p class="description"><?php esc_html_e( '输入emoji表情（如 📚）或图标图片URL，显示在分类名称前面（选填）', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '输入图标类名（如 icon-book）或图标图片URL，显示在分类名称前面（选填）', 'qiling' ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_columns"><?php esc_html_e( '每行列数', 'developer-starter' ); ?></label>
+                <label for="ds_category_columns"><?php esc_html_e( '每行列数', 'qiling' ); ?></label>
             </th>
             <td>
                 <select name="ds_category_columns" id="ds_category_columns" style="width: 200px;">
-                    <option value="" <?php selected( $columns, '' ); ?>><?php esc_html_e( '默认 (3列)', 'developer-starter' ); ?></option>
-                    <option value="2" <?php selected( $columns, '2' ); ?>><?php esc_html_e( '2列', 'developer-starter' ); ?></option>
-                    <option value="3" <?php selected( $columns, '3' ); ?>><?php esc_html_e( '3列', 'developer-starter' ); ?></option>
-                    <option value="4" <?php selected( $columns, '4' ); ?>><?php esc_html_e( '4列', 'developer-starter' ); ?></option>
+                    <option value="" <?php selected( $columns, '' ); ?>><?php esc_html_e( '默认 (3列)', 'qiling' ); ?></option>
+                    <option value="2" <?php selected( $columns, '2' ); ?>><?php esc_html_e( '2列', 'qiling' ); ?></option>
+                    <option value="3" <?php selected( $columns, '3' ); ?>><?php esc_html_e( '3列', 'qiling' ); ?></option>
+                    <option value="4" <?php selected( $columns, '4' ); ?>><?php esc_html_e( '4列', 'qiling' ); ?></option>
                 </select>
-                <p class="description"><?php esc_html_e( '卡片/网格布局时每行显示的文章数量', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '卡片/网格布局时每行显示的文章数量', 'qiling' ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_posts_per_page"><?php esc_html_e( '每页显示数量', 'developer-starter' ); ?></label>
+                <label for="ds_category_posts_per_page"><?php esc_html_e( '每页显示数量', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="number" name="ds_category_posts_per_page" id="ds_category_posts_per_page" value="<?php echo esc_attr( $posts_per_page ); ?>" min="1" max="100" style="width: 100px;" />
-                <p class="description"><?php esc_html_e( '该分类页面每页显示的文章数量，留空使用默认设置', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '该分类页面每页显示的文章数量，留空使用默认设置', 'qiling' ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_thumb_height"><?php esc_html_e( '缩略图高度(px)', 'developer-starter' ); ?></label>
+                <label for="ds_category_thumb_height"><?php esc_html_e( '缩略图高度(px)', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="number" name="ds_category_thumb_height" id="ds_category_thumb_height" value="<?php echo esc_attr( $thumb_height ); ?>" min="50" max="500" style="width: 100px;" />
-                <p class="description"><?php esc_html_e( '文章列表缩略图高度，留空使用默认值 200px', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '文章列表缩略图高度，留空使用默认值 200px', 'qiling' ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_excerpt_length"><?php esc_html_e( '摘要字数', 'developer-starter' ); ?></label>
+                <label for="ds_category_excerpt_length"><?php esc_html_e( '摘要字数', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="number" name="ds_category_excerpt_length" id="ds_category_excerpt_length" value="<?php echo esc_attr( $excerpt_length ); ?>" min="0" max="500" style="width: 100px;" />
-                <p class="description"><?php esc_html_e( '文章摘要显示字数，留空使用默认值 40', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '文章摘要显示字数，留空使用默认值 40', 'qiling' ); ?></p>
             </td>
         </tr>
         
         <tr class="form-field">
             <th scope="row">
-                <label><?php esc_html_e( '隐藏选项', 'developer-starter' ); ?></label>
+                <label><?php esc_html_e( '隐藏选项', 'qiling' ); ?></label>
             </th>
             <td>
                 <fieldset>
                     <label style="display: block; margin-bottom: 8px;">
                         <input type="checkbox" name="ds_category_hide_thumb" value="1" <?php checked( $hide_thumb, '1' ); ?> />
-                        <?php esc_html_e( '隐藏缩略图', 'developer-starter' ); ?>
+                        <?php esc_html_e( '隐藏缩略图', 'qiling' ); ?>
                     </label>
                     <label style="display: block; margin-bottom: 8px;">
                         <input type="checkbox" name="ds_category_hide_excerpt" value="1" <?php checked( $hide_excerpt, '1' ); ?> />
-                        <?php esc_html_e( '隐藏摘要', 'developer-starter' ); ?>
+                        <?php esc_html_e( '隐藏摘要', 'qiling' ); ?>
                     </label>
                     <label style="display: block; margin-bottom: 8px;">
                         <input type="checkbox" name="ds_category_hide_date" value="1" <?php checked( $hide_date, '1' ); ?> />
-                        <?php esc_html_e( '隐藏日期', 'developer-starter' ); ?>
+                        <?php esc_html_e( '隐藏日期', 'qiling' ); ?>
                     </label>
                     <label style="display: block; margin-bottom: 8px;">
                         <input type="checkbox" name="ds_category_hide_category" value="1" <?php checked( $hide_category, '1' ); ?> />
-                        <?php esc_html_e( '隐藏分类标签', 'developer-starter' ); ?>
+                        <?php esc_html_e( '隐藏分类标签', 'qiling' ); ?>
                     </label>
                     <label style="display: block; margin-bottom: 8px;">
                         <input type="checkbox" name="ds_category_hide_author" value="1" <?php checked( $hide_author, '1' ); ?> />
-                        <?php esc_html_e( '隐藏作者', 'developer-starter' ); ?>
+                        <?php esc_html_e( '隐藏作者', 'qiling' ); ?>
                     </label>
                 </fieldset>
-                <p class="description"><?php esc_html_e( '选择要在文章列表中隐藏的元素', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '选择要在文章列表中隐藏的元素', 'qiling' ); ?></p>
             </td>
         </tr>
 
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_seo_title"><?php esc_html_e( 'SEO标题', 'developer-starter' ); ?></label>
+                <label for="ds_category_seo_title"><?php esc_html_e( 'SEO标题', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="text" name="ds_category_seo_title" id="ds_category_seo_title" value="<?php echo esc_attr( $seo_title ); ?>" style="width: 320px;" />
-                <p class="description"><?php esc_html_e( '留空默认：分类名称 + 网站名称', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '留空默认：分类名称 + 网站名称', 'qiling' ); ?></p>
             </td>
         </tr>
 
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_seo_keywords"><?php esc_html_e( 'SEO关键词', 'developer-starter' ); ?></label>
+                <label for="ds_category_seo_keywords"><?php esc_html_e( 'SEO关键词', 'qiling' ); ?></label>
             </th>
             <td>
                 <input type="text" name="ds_category_seo_keywords" id="ds_category_seo_keywords" value="<?php echo esc_attr( $seo_keywords ); ?>" style="width: 320px;" />
-                <p class="description"><?php esc_html_e( '留空默认：分类名称，多个关键词用英文逗号分隔', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '留空默认：分类名称，多个关键词用英文逗号分隔', 'qiling' ); ?></p>
             </td>
         </tr>
 
         <tr class="form-field">
             <th scope="row">
-                <label for="ds_category_seo_description"><?php esc_html_e( 'SEO描述', 'developer-starter' ); ?></label>
+                <label for="ds_category_seo_description"><?php esc_html_e( 'SEO描述', 'qiling' ); ?></label>
             </th>
             <td>
                 <textarea name="ds_category_seo_description" id="ds_category_seo_description" rows="4" style="width: 360px;"><?php echo esc_textarea( $seo_description ); ?></textarea>
-                <p class="description"><?php esc_html_e( '留空默认：分类描述', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '留空默认：分类描述', 'qiling' ); ?></p>
             </td>
         </tr>
         
@@ -503,20 +503,20 @@ class Category_Manager {
         <tr class="form-field">
             <th colspan="2" style="padding: 0;">
                 <div style="background: #f0f6fc; padding: 20px; border-radius: 8px; margin: 15px 0; border: 1px solid #c8e1ff;">
-                    <h3 style="margin: 0 0 15px; font-size: 14px; color: #0366d6;"><?php esc_html_e( '🔖 高级分类筛选设置', 'developer-starter' ); ?></h3>
+                    <h3 style="margin: 0 0 15px; font-size: 14px; color: #0366d6;"><?php esc_html_e( '高级分类筛选设置', 'qiling' ); ?></h3>
                     
                     <div style="margin-bottom: 15px;">
                         <label for="ds_adv_filter_enabled" style="display: flex; align-items: center; cursor: pointer;">
                             <input type="checkbox" name="ds_adv_filter_enabled" id="ds_adv_filter_enabled" value="1" <?php checked( $adv_filter_enabled, '1' ); ?> style="margin-right: 8px;" />
-                            <strong><?php esc_html_e( '启用高级分类筛选', 'developer-starter' ); ?></strong>
+                            <strong><?php esc_html_e( '启用高级分类筛选', 'qiling' ); ?></strong>
                         </label>
-                        <p class="description" style="margin-top: 5px; color: #666;"><?php esc_html_e( '开启后，此分类页面将显示高级筛选按钮，用户可按多层级进行筛选', 'developer-starter' ); ?></p>
+                        <p class="description" style="margin-top: 5px; color: #666;"><?php esc_html_e( '开启后，此分类页面将显示高级筛选按钮，用户可按多层级进行筛选', 'qiling' ); ?></p>
                     </div>
                     
                     <div style="padding: 10px 0;">
-                        <label for="ds_adv_custom_levels" style="display: block; margin-bottom: 5px; font-weight: 600;"><?php esc_html_e( '自定义筛选层级', 'developer-starter' ); ?></label>
-                        <textarea name="ds_adv_custom_levels" id="ds_adv_custom_levels" rows="5" style="width: 100%;" placeholder="<?php esc_attr_e( '例如：&#10;平台: Windows,Mac,Linux&#10;类型: 免费,收费,开源', 'developer-starter' ); ?>"><?php echo esc_textarea( $adv_custom_levels_text ); ?></textarea>
-                        <p class="description" style="margin-top: 5px;"><?php esc_html_e( '每行一个层级，格式：层级名称: 选项1,选项2,选项3', 'developer-starter' ); ?></p>
+                        <label for="ds_adv_custom_levels" style="display: block; margin-bottom: 5px; font-weight: 600;"><?php esc_html_e( '自定义筛选层级', 'qiling' ); ?></label>
+                        <textarea name="ds_adv_custom_levels" id="ds_adv_custom_levels" rows="5" style="width: 100%;" placeholder="<?php esc_attr_e( '例如：&#10;平台: Windows,Mac,Linux&#10;类型: 免费,收费,开源', 'qiling' ); ?>"><?php echo esc_textarea( $adv_custom_levels_text ); ?></textarea>
+                        <p class="description" style="margin-top: 5px;"><?php esc_html_e( '每行一个层级，格式：层级名称: 选项1,选项2,选项3', 'qiling' ); ?></p>
                     </div>
                 </div>
             </th>
@@ -843,9 +843,9 @@ class Category_Manager {
         foreach ( $columns as $key => $value ) {
             $new_columns[ $key ] = $value;
             if ( $key === 'name' ) {
-                $new_columns['ds_layout'] = __( '布局', 'developer-starter' );
-                $new_columns['ds_blog_preset'] = __( '博客风格', 'developer-starter' );
-                $new_columns['ds_icon'] = __( '图标', 'developer-starter' );
+                $new_columns['ds_layout'] = __( '布局', 'qiling' );
+                $new_columns['ds_blog_preset'] = __( '博客风格', 'qiling' );
+                $new_columns['ds_icon'] = __( '图标', 'qiling' );
             }
         }
         return $new_columns;
@@ -864,7 +864,7 @@ class Category_Manager {
         if ( $column_name === 'ds_blog_preset' ) {
             $preset = get_term_meta( $term_id, 'ds_category_blog_visual_preset', true );
             if ( empty( $preset ) || 'inherit' === $preset ) {
-                return isset( $this->blog_preset_options['inherit'] ) ? $this->blog_preset_options['inherit'] : __( '继承全局博客风格', 'developer-starter' );
+                return isset( $this->blog_preset_options['inherit'] ) ? $this->blog_preset_options['inherit'] : __( '继承全局博客风格', 'qiling' );
             }
 
             return isset( $this->blog_preset_options[ $preset ] ) ? $this->blog_preset_options[ $preset ] : '-';

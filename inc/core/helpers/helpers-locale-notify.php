@@ -38,22 +38,22 @@ if ( ! function_exists( 'developer_starter_translate_theme_option_text' ) ) {
             return $text;
         }
 
-        $translated = translate( $text, 'developer-starter' );
+        $translated = translate( $text, 'qiling' );
         if ( is_string( $translated ) && '' !== $translated ) {
             $text = $translated;
         }
 
         // 对包含片段的组合文案（如版权信息）做短语级替换。
         $phrase_map = array(
-            '关于我们' => __( '关于我们', 'developer-starter' ),
-            '快速链接' => __( '快速链接', 'developer-starter' ),
-            '联系方式' => __( '联系方式', 'developer-starter' ),
-            '关注我们' => __( '关注我们', 'developer-starter' ),
-            '扫码关注公众号' => __( '扫码关注公众号', 'developer-starter' ),
-            '扫码关注抖音' => __( '扫码关注抖音', 'developer-starter' ),
-            '友情链接：' => __( '友情链接：', 'developer-starter' ),
-            '版权所有' => __( '版权所有', 'developer-starter' ),
-            '专业的企业服务提供商，致力于为客户提供优质的产品与服务。' => __( '专业的企业服务提供商，致力于为客户提供优质的产品与服务。', 'developer-starter' ),
+            '关于我们' => __( '关于我们', 'qiling' ),
+            '快速链接' => __( '快速链接', 'qiling' ),
+            '联系方式' => __( '联系方式', 'qiling' ),
+            '关注我们' => __( '关注我们', 'qiling' ),
+            '扫码关注公众号' => __( '扫码关注公众号', 'qiling' ),
+            '扫码关注抖音' => __( '扫码关注抖音', 'qiling' ),
+            '友情链接：' => __( '友情链接：', 'qiling' ),
+            '版权所有' => __( '版权所有', 'qiling' ),
+            '专业的企业服务提供商，致力于为客户提供优质的产品与服务。' => __( '专业的企业服务提供商，致力于为客户提供优质的产品与服务。', 'qiling' ),
         );
 
         return strtr( $text, $phrase_map );
@@ -302,7 +302,7 @@ if ( ! function_exists( 'developer_starter_build_html_email_template' ) ) {
         $site_name = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
         $title     = trim( wp_strip_all_tags( (string) $args['title'] ) );
         if ( $title === '' ) {
-            $title = $site_name !== '' ? $site_name : __( '站点通知', 'developer-starter' );
+            $title = $site_name !== '' ? $site_name : __( '站点通知', 'qiling' );
         }
 
         $email_color_text         = developer_starter_get_email_design_css_value( '--color-text', 'darkslategray' );
@@ -387,7 +387,7 @@ if ( ! function_exists( 'developer_starter_build_html_email_template' ) ) {
         $button_html = '';
         if ( $button_url !== '' && wp_http_validate_url( $button_url ) ) {
             if ( $button_text === '' ) {
-                $button_text = __( '查看详情', 'developer-starter' );
+                $button_text = __( '查看详情', 'qiling' );
             }
             $button_html  = '<p style="margin:0 0 ' . esc_attr( $email_space_16 ) . '; text-align:center;">';
             $button_html .= '<a href="' . esc_url( $button_url ) . '" style="display:inline-block; background:' . esc_attr( $email_color_primary ) . '; color:' . esc_attr( $email_color_surface ) . '; text-decoration:none; font-weight:600; font-size:' . esc_attr( $email_text_14 ) . '; padding:' . esc_attr( $email_space_12 ) . ' ' . esc_attr( $email_space_24 ) . '; border-radius:' . esc_attr( $email_radius_10 ) . ';">' . esc_html( $button_text ) . '</a>';
@@ -402,10 +402,10 @@ if ( ! function_exists( 'developer_starter_build_html_email_template' ) ) {
 
         $footer_text = trim( (string) $args['footer_text'] );
         if ( $footer_text === '' ) {
-            $footer_text = sprintf( __( '此邮件由 %s 自动发送', 'developer-starter' ), $site_name );
+            $footer_text = sprintf( __( '此邮件由 %s 自动发送', 'qiling' ), $site_name );
         }
 
-        $send_time = sprintf( __( '发送时间：%s', 'developer-starter' ), current_time( 'Y-m-d H:i:s' ) );
+        $send_time = sprintf( __( '发送时间：%s', 'qiling' ), current_time( 'Y-m-d H:i:s' ) );
 
         $html  = '<!DOCTYPE html><html><head><meta charset="' . esc_attr( get_bloginfo( 'charset' ) ) . '"></head>';
         $html .= '<body style="margin:0; padding:0; background:' . esc_attr( $email_color_page_bg ) . '; font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;">';
@@ -517,12 +517,12 @@ if ( ! function_exists( 'developer_starter_site_notify_enabled' ) ) {
 if ( ! function_exists( 'developer_starter_send_push_message' ) ) {
     function developer_starter_send_push_message( $scene, $title, $lines = array(), $context = array() ) {
         if ( ! function_exists( 'qilinghook_send' ) ) {
-            return new \WP_Error( 'developer_starter_push_plugin_missing', __( '未检测到启灵推送插件。', 'developer-starter' ) );
+            return new \WP_Error( 'developer_starter_push_plugin_missing', __( '未检测到启灵推送插件。', 'qiling' ) );
         }
 
         $channel_ids = developer_starter_get_push_channels( $scene );
         if ( empty( $channel_ids ) ) {
-            return new \WP_Error( 'developer_starter_push_channel_missing', __( '未配置推送通道。', 'developer-starter' ) );
+            return new \WP_Error( 'developer_starter_push_channel_missing', __( '未配置推送通道。', 'qiling' ) );
         }
 
         $site_name = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
@@ -585,7 +585,7 @@ if ( ! function_exists( 'developer_starter_send_push_message' ) ) {
         if ( $success_count === 0 ) {
             return new \WP_Error(
                 'developer_starter_push_all_failed',
-                __( '所有推送通道发送失败。', 'developer-starter' ),
+                __( '所有推送通道发送失败。', 'qiling' ),
                 array(
                     'total'        => count( $channel_ids ),
                     'success_count'=> 0,

@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
     private function render_design_tokens_preview_field( $options ) {
-        echo '<tr id="setting-row-design_tokens_preview" data-setting-id="design_tokens_preview"><th scope="row">' . esc_html__( '当前样式预览', 'developer-starter' ) . '</th><td>';
+        echo '<tr id="setting-row-design_tokens_preview" data-setting-id="design_tokens_preview"><th scope="row">' . esc_html__( '当前样式预览', 'qiling' ) . '</th><td>';
 
         if ( ! class_exists( '\Developer_Starter\Core\Design_Tokens' ) ) {
-            echo '<p class="description">' . esc_html__( '全局样式服务未加载。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '全局样式服务未加载。', 'qiling' ) . '</p>';
             echo '</td></tr>';
             return;
         }
@@ -154,24 +154,24 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
         $component_diff_count  = $count_nested_difference( $component_styles, $preset_components );
 
         $swatches = array(
-            'primary'       => __( '品牌主色', 'developer-starter' ),
-            'primary_hover' => __( '主色悬停', 'developer-starter' ),
-            'secondary'     => __( '辅助色', 'developer-starter' ),
-            'accent'        => __( '点缀色', 'developer-starter' ),
-            'success'       => __( '成功色', 'developer-starter' ),
-            'info'          => __( '信息色', 'developer-starter' ),
-            'warning'       => __( '警告色', 'developer-starter' ),
-            'error'         => __( '错误色', 'developer-starter' ),
-            'text'          => __( '正文', 'developer-starter' ),
-            'heading'       => __( '标题', 'developer-starter' ),
-            'background'    => __( '页面背景', 'developer-starter' ),
-            'surface'       => __( '卡片背景', 'developer-starter' ),
-            'surface_alt'   => __( '浅色区块', 'developer-starter' ),
-            'border'        => __( '边框', 'developer-starter' ),
-            'dark_bg'       => __( '暗色背景', 'developer-starter' ),
-            'dark_surface'  => __( '暗色表面', 'developer-starter' ),
-            'dark_text'     => __( '暗色正文', 'developer-starter' ),
-            'dark_border'   => __( '暗色边框', 'developer-starter' ),
+            'primary'       => __( '品牌主色', 'qiling' ),
+            'primary_hover' => __( '主色悬停', 'qiling' ),
+            'secondary'     => __( '辅助色', 'qiling' ),
+            'accent'        => __( '点缀色', 'qiling' ),
+            'success'       => __( '成功色', 'qiling' ),
+            'info'          => __( '信息色', 'qiling' ),
+            'warning'       => __( '警告色', 'qiling' ),
+            'error'         => __( '错误色', 'qiling' ),
+            'text'          => __( '正文', 'qiling' ),
+            'heading'       => __( '标题', 'qiling' ),
+            'background'    => __( '页面背景', 'qiling' ),
+            'surface'       => __( '卡片背景', 'qiling' ),
+            'surface_alt'   => __( '浅色区块', 'qiling' ),
+            'border'        => __( '边框', 'qiling' ),
+            'dark_bg'       => __( '暗色背景', 'qiling' ),
+            'dark_surface'  => __( '暗色表面', 'qiling' ),
+            'dark_text'     => __( '暗色正文', 'qiling' ),
+            'dark_border'   => __( '暗色边框', 'qiling' ),
         );
         $swatch_items = array();
         foreach ( $swatches as $key => $label ) {
@@ -181,16 +181,16 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 'label'   => $label,
                 'value'   => $current_value,
                 'preview' => $resolve_style_value( $current_value ),
-                'source'  => $build_source_badge( $current_value, $base_value, __( '跟随预设', 'developer-starter' ), __( '本站单独设置', 'developer-starter' ) ),
+                'source'  => $build_source_badge( $current_value, $base_value, __( '跟随预设', 'qiling' ), __( '本站单独设置', 'qiling' ) ),
             );
         }
 
         $typography_items = array();
         foreach ( array(
-            'body'   => __( 'Body 正文', 'developer-starter' ),
-            'lead'   => __( 'Lead 导语', 'developer-starter' ),
-            'menu'   => __( 'Menu 导航', 'developer-starter' ),
-            'button' => __( 'Button 按钮', 'developer-starter' ),
+            'body'   => __( 'Body 正文', 'qiling' ),
+            'lead'   => __( 'Lead 导语', 'qiling' ),
+            'menu'   => __( 'Menu 导航', 'qiling' ),
+            'button' => __( 'Button 按钮', 'qiling' ),
             'h1'     => 'H1',
             'h2'     => 'H2',
         ) as $style_key => $label ) {
@@ -200,13 +200,13 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 'label'   => $label,
                 'desktop' => isset( $current_style['desktop'] ) && is_array( $current_style['desktop'] ) ? $current_style['desktop'] : array(),
                 'mobile'  => isset( $current_style['mobile'] ) && is_array( $current_style['mobile'] ) ? $current_style['mobile'] : array(),
-                'source'  => $build_count_badge( $count_nested_difference( $current_style, $base_style ), __( '主题默认', 'developer-starter' ), __( '本站单独设置', 'developer-starter' ) ),
+                'source'  => $build_count_badge( $count_nested_difference( $current_style, $base_style ), __( '主题默认', 'qiling' ), __( '本站单独设置', 'qiling' ) ),
             );
         }
 
         $layout_items = array(
             array(
-                'label'  => __( '容器宽度', 'developer-starter' ),
+                'label'  => __( '容器宽度', 'qiling' ),
                 'value'  => implode( ' / ', array_filter( array(
                     isset( $layout_system['container_width']['desktop'] ) ? (string) $layout_system['container_width']['desktop'] : '',
                     isset( $layout_system['container_width']['tablet'] ) ? (string) $layout_system['container_width']['tablet'] : '',
@@ -214,12 +214,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 ) ) ),
                 'source' => $build_count_badge(
                     $count_nested_difference( $layout_system['container_width'] ?? array(), $preset_layout['container_width'] ?? array() ),
-                    __( '主题默认', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '主题默认', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'  => __( '区块间距', 'developer-starter' ),
+                'label'  => __( '区块间距', 'qiling' ),
                 'value'  => implode( ' / ', array_filter( array(
                     isset( $layout_system['section_spacing']['desktop'] ) ? (string) $layout_system['section_spacing']['desktop'] : '',
                     isset( $layout_system['section_spacing']['tablet'] ) ? (string) $layout_system['section_spacing']['tablet'] : '',
@@ -227,12 +227,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 ) ) ),
                 'source' => $build_count_badge(
                     $count_nested_difference( $layout_system['section_spacing'] ?? array(), $preset_layout['section_spacing'] ?? array() ),
-                    __( '主题默认', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '主题默认', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'  => __( '栅格间距', 'developer-starter' ),
+                'label'  => __( '栅格间距', 'qiling' ),
                 'value'  => implode( ' / ', array_filter( array(
                     isset( $layout_system['grid_gap']['desktop'] ) ? (string) $layout_system['grid_gap']['desktop'] : '',
                     isset( $layout_system['grid_gap']['tablet'] ) ? (string) $layout_system['grid_gap']['tablet'] : '',
@@ -240,37 +240,37 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                 ) ) ),
                 'source' => $build_count_badge(
                     $count_nested_difference( $layout_system['grid_gap'] ?? array(), $preset_layout['grid_gap'] ?? array() ),
-                    __( '主题默认', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '主题默认', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'  => __( '断点', 'developer-starter' ),
+                'label'  => __( '断点', 'qiling' ),
                 'value'  => implode( ' / ', array_filter( array(
                     isset( $layout_system['breakpoints']['tablet'] ) ? 'Tablet ' . (string) $layout_system['breakpoints']['tablet'] : '',
                     isset( $layout_system['breakpoints']['mobile'] ) ? 'Mobile ' . (string) $layout_system['breakpoints']['mobile'] : '',
                 ) ) ),
                 'source' => $build_count_badge(
                     $count_nested_difference( $layout_system['breakpoints'] ?? array(), $preset_layout['breakpoints'] ?? array() ),
-                    __( '主题默认', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '主题默认', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'  => __( '布局模式', 'developer-starter' ),
+                'label'  => __( '布局模式', 'qiling' ),
                 'value'  => isset( $layout_system['layout_mode'] ) ? (string) $layout_system['layout_mode'] : '',
                 'source' => $build_source_badge(
                     isset( $layout_system['layout_mode'] ) ? (string) $layout_system['layout_mode'] : '',
                     isset( $preset_layout['layout_mode'] ) ? (string) $preset_layout['layout_mode'] : '',
-                    __( '主题默认', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '主题默认', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
         );
 
         $component_cards = array(
             array(
-                'label'   => __( '页头 / 文字 Logo / 桌面导航 / 电话按钮', 'developer-starter' ),
+                'label'   => __( '页头 / 文字 Logo / 桌面导航 / 电话按钮', 'qiling' ),
                 'bg'      => $resolve_style_value( $component_styles['header_bg'] ?? '' ),
                 'text'    => $resolve_style_value( $component_styles['nav_link'] ?? '' ),
                 'meta'    => isset( $component_styles['header_logo_scrolled_fill'] ) ? (string) $component_styles['header_logo_scrolled_fill'] : '',
@@ -295,12 +295,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             'header_phone_text'            => $preset_components['header_phone_text'] ?? '',
                         )
                     ),
-                    __( '跟随全局', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '跟随全局', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'   => __( '按钮', 'developer-starter' ),
+                'label'   => __( '按钮', 'qiling' ),
                 'bg'      => $resolve_style_value( $component_styles['button_bg'] ?? '' ),
                 'text'    => $resolve_style_value( $component_styles['button_text'] ?? '' ),
                 'meta'    => isset( $component_styles['button_padding'] ) ? (string) $component_styles['button_padding'] : '',
@@ -317,12 +317,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             'button_padding' => $preset_components['button_padding'] ?? '',
                         )
                     ),
-                    __( '跟随全局', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '跟随全局', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'   => __( '卡片 / 文章卡片', 'developer-starter' ),
+                'label'   => __( '卡片 / 文章卡片', 'qiling' ),
                 'bg'      => $resolve_style_value( $component_styles['post_card_bg'] ?? '' ),
                 'text'    => $resolve_style_value( $component_styles['post_card_title_color'] ?? '' ),
                 'meta'    => isset( $component_styles['post_card_meta_color'] ) ? (string) $component_styles['post_card_meta_color'] : '',
@@ -339,12 +339,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             'post_card_meta_color'  => $preset_components['post_card_meta_color'] ?? '',
                         )
                     ),
-                    __( '跟随全局', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '跟随全局', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'   => __( '表单', 'developer-starter' ),
+                'label'   => __( '表单', 'qiling' ),
                 'bg'      => $resolve_style_value( $component_styles['form_input_bg'] ?? '' ),
                 'text'    => $resolve_style_value( $component_styles['form_input_text'] ?? '' ),
                 'meta'    => isset( $component_styles['form_input_border'] ) ? (string) $component_styles['form_input_border'] : '',
@@ -361,12 +361,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             'form_input_border' => $preset_components['form_input_border'] ?? '',
                         )
                     ),
-                    __( '跟随全局', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '跟随全局', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'   => __( '移动导航', 'developer-starter' ),
+                'label'   => __( '移动导航', 'qiling' ),
                 'bg'      => $resolve_style_value( $component_styles['mobile_nav_bg'] ?? '' ),
                 'text'    => $resolve_style_value( $component_styles['mobile_nav_link'] ?? '' ),
                 'meta'    => isset( $component_styles['mobile_nav_hover_bg'] ) ? (string) $component_styles['mobile_nav_hover_bg'] : '',
@@ -383,12 +383,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             'mobile_nav_hover_bg' => $preset_components['mobile_nav_hover_bg'] ?? '',
                         )
                     ),
-                    __( '跟随全局', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '跟随全局', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
             array(
-                'label'   => __( '页脚 / Woo 卡片', 'developer-starter' ),
+                'label'   => __( '页脚 / Woo 卡片', 'qiling' ),
                 'bg'      => $resolve_style_value( $component_styles['footer_bg'] ?? '' ),
                 'text'    => $resolve_style_value( $component_styles['footer_text'] ?? '' ),
                 'meta'    => isset( $component_styles['woo_card_price'] ) ? (string) $component_styles['woo_card_price'] : '',
@@ -405,8 +405,8 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             'woo_card_price'  => $preset_components['woo_card_price'] ?? '',
                         )
                     ),
-                    __( '跟随全局', 'developer-starter' ),
-                    __( '本站单独设置', 'developer-starter' )
+                    __( '跟随全局', 'qiling' ),
+                    __( '本站单独设置', 'qiling' )
                 ),
             ),
         );
@@ -426,111 +426,111 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
         $page_layout_field_count  = isset( $page_design_defs['layout']['fields'] ) && is_array( $page_design_defs['layout']['fields'] ) ? count( $page_design_defs['layout']['fields'] ) : 0;
         $page_typography_style_count = isset( $page_design_defs['typography']['styles'] ) && is_array( $page_design_defs['typography']['styles'] ) ? count( $page_design_defs['typography']['styles'] ) : 0;
         $diagnostic_summary       = isset( $diagnostics['summary'] ) && is_array( $diagnostics['summary'] ) ? $diagnostics['summary'] : array();
-        $preset_source_label      = 'custom' === $preset_source ? __( '自定义预设', 'developer-starter' ) : __( '系统预设', 'developer-starter' );
+        $preset_source_label      = 'custom' === $preset_source ? __( '自定义预设', 'qiling' ) : __( '系统预设', 'qiling' );
         $typography_summary_config = array(
-            'body'   => __( 'Body 正文', 'developer-starter' ),
-            'lead'   => __( 'Lead 导语', 'developer-starter' ),
-            'menu'   => __( 'Menu 导航', 'developer-starter' ),
-            'button' => __( 'Button 按钮', 'developer-starter' ),
+            'body'   => __( 'Body 正文', 'qiling' ),
+            'lead'   => __( 'Lead 导语', 'qiling' ),
+            'menu'   => __( 'Menu 导航', 'qiling' ),
+            'button' => __( 'Button 按钮', 'qiling' ),
             'h1'     => 'H1',
             'h2'     => 'H2',
         );
         $component_summary_config = array(
             array(
-                'label'       => __( '页头 / 文字 Logo / 桌面导航 / 电话按钮', 'developer-starter' ),
+                'label'       => __( '页头 / 文字 Logo / 桌面导航 / 电话按钮', 'qiling' ),
                 'bgKey'       => 'header_bg',
                 'textKey'     => 'nav_link',
                 'metaKey'     => 'header_logo_scrolled_fill',
                 'sourceKeys'  => array( 'header_bg', 'nav_link', 'nav_hover_bg', 'header_logo_transparent_fill', 'header_logo_scrolled_fill', 'header_phone_bg', 'header_phone_text', 'header_phone_transparent_bg', 'header_phone_transparent_text' ),
-                'inheritLabel'=> __( '跟随全局', 'developer-starter' ),
-                'overrideLabel' => __( '本站单独设置', 'developer-starter' ),
+                'inheritLabel'=> __( '跟随全局', 'qiling' ),
+                'overrideLabel' => __( '本站单独设置', 'qiling' ),
             ),
             array(
-                'label'       => __( '按钮', 'developer-starter' ),
+                'label'       => __( '按钮', 'qiling' ),
                 'bgKey'       => 'button_bg',
                 'textKey'     => 'button_text',
                 'metaKey'     => 'button_padding',
                 'sourceKeys'  => array( 'button_bg', 'button_text', 'button_padding' ),
-                'inheritLabel'=> __( '跟随全局', 'developer-starter' ),
-                'overrideLabel' => __( '本站单独设置', 'developer-starter' ),
+                'inheritLabel'=> __( '跟随全局', 'qiling' ),
+                'overrideLabel' => __( '本站单独设置', 'qiling' ),
             ),
             array(
-                'label'       => __( '卡片 / 文章卡片', 'developer-starter' ),
+                'label'       => __( '卡片 / 文章卡片', 'qiling' ),
                 'bgKey'       => 'post_card_bg',
                 'textKey'     => 'post_card_title_color',
                 'metaKey'     => 'post_card_meta_color',
                 'sourceKeys'  => array( 'post_card_bg', 'post_card_title_color', 'post_card_meta_color' ),
-                'inheritLabel'=> __( '跟随全局', 'developer-starter' ),
-                'overrideLabel' => __( '本站单独设置', 'developer-starter' ),
+                'inheritLabel'=> __( '跟随全局', 'qiling' ),
+                'overrideLabel' => __( '本站单独设置', 'qiling' ),
             ),
             array(
-                'label'       => __( '表单', 'developer-starter' ),
+                'label'       => __( '表单', 'qiling' ),
                 'bgKey'       => 'form_input_bg',
                 'textKey'     => 'form_input_text',
                 'metaKey'     => 'form_input_border',
                 'sourceKeys'  => array( 'form_input_bg', 'form_input_text', 'form_input_border' ),
-                'inheritLabel'=> __( '跟随全局', 'developer-starter' ),
-                'overrideLabel' => __( '本站单独设置', 'developer-starter' ),
+                'inheritLabel'=> __( '跟随全局', 'qiling' ),
+                'overrideLabel' => __( '本站单独设置', 'qiling' ),
             ),
             array(
-                'label'       => __( '移动导航', 'developer-starter' ),
+                'label'       => __( '移动导航', 'qiling' ),
                 'bgKey'       => 'mobile_nav_bg',
                 'textKey'     => 'mobile_nav_link',
                 'metaKey'     => 'mobile_nav_hover_bg',
                 'sourceKeys'  => array( 'mobile_nav_bg', 'mobile_nav_link', 'mobile_nav_hover_bg' ),
-                'inheritLabel'=> __( '跟随全局', 'developer-starter' ),
-                'overrideLabel' => __( '本站单独设置', 'developer-starter' ),
+                'inheritLabel'=> __( '跟随全局', 'qiling' ),
+                'overrideLabel' => __( '本站单独设置', 'qiling' ),
             ),
             array(
-                'label'       => __( '页脚 / Woo 卡片', 'developer-starter' ),
+                'label'       => __( '页脚 / Woo 卡片', 'qiling' ),
                 'bgKey'       => 'footer_bg',
                 'textKey'     => 'footer_text',
                 'metaKey'     => 'woo_card_price',
                 'sourceKeys'  => array( 'footer_bg', 'footer_text', 'footer_heading', 'footer_heading_size', 'woo_card_price' ),
-                'inheritLabel'=> __( '跟随全局', 'developer-starter' ),
-                'overrideLabel' => __( '本站单独设置', 'developer-starter' ),
+                'inheritLabel'=> __( '跟随全局', 'qiling' ),
+                'overrideLabel' => __( '本站单独设置', 'qiling' ),
             ),
         );
         $contrast_diagnostic_config = array(
             array(
                 'key'   => 'text_background',
-                'label' => __( '正文 / 页面背景', 'developer-starter' ),
+                'label' => __( '正文 / 页面背景', 'qiling' ),
                 'fg'    => array( 'type' => 'token', 'key' => 'text' ),
                 'bg'    => array( 'type' => 'token', 'key' => 'background' ),
             ),
             array(
                 'key'   => 'heading_background',
-                'label' => __( '标题 / 页面背景', 'developer-starter' ),
+                'label' => __( '标题 / 页面背景', 'qiling' ),
                 'fg'    => array( 'type' => 'token', 'key' => 'heading' ),
                 'bg'    => array( 'type' => 'token', 'key' => 'background' ),
             ),
             array(
                 'key'   => 'button_primary',
-                'label' => __( '主按钮文字 / 背景', 'developer-starter' ),
+                'label' => __( '主按钮文字 / 背景', 'qiling' ),
                 'fg'    => array( 'type' => 'component', 'key' => 'button_text' ),
                 'bg'    => array( 'type' => 'component', 'key' => 'button_bg' ),
             ),
             array(
                 'key'   => 'form_input',
-                'label' => __( '输入框文字 / 背景', 'developer-starter' ),
+                'label' => __( '输入框文字 / 背景', 'qiling' ),
                 'fg'    => array( 'type' => 'component', 'key' => 'form_input_text' ),
                 'bg'    => array( 'type' => 'component', 'key' => 'form_input_bg' ),
             ),
             array(
                 'key'   => 'dropdown_layer',
-                'label' => __( '下拉层文字 / 背景', 'developer-starter' ),
+                'label' => __( '下拉层文字 / 背景', 'qiling' ),
                 'fg'    => array( 'type' => 'component', 'key' => 'dropdown_link' ),
                 'bg'    => array( 'type' => 'component', 'key' => 'dropdown_bg' ),
             ),
             array(
                 'key'   => 'footer_main',
-                'label' => __( '页脚文字 / 页脚背景', 'developer-starter' ),
+                'label' => __( '页脚文字 / 页脚背景', 'qiling' ),
                 'fg'    => array( 'type' => 'component', 'key' => 'footer_text' ),
                 'bg'    => array( 'type' => 'component', 'key' => 'footer_bg' ),
             ),
             array(
                 'key'   => 'dark_text_background',
-                'label' => __( '暗色正文 / 暗色背景', 'developer-starter' ),
+                'label' => __( '暗色正文 / 暗色背景', 'qiling' ),
                 'fg'    => array( 'type' => 'token', 'key' => 'dark_text' ),
                 'bg'    => array( 'type' => 'token', 'key' => 'dark_bg' ),
             ),
@@ -547,7 +547,7 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
             array( 'light' => 'post_card_title_color', 'dark' => 'dark_post_card_title_color' ),
             array( 'light' => 'post_card_meta_color', 'dark' => 'dark_post_card_meta_color' ),
         );
-        $focus_base_url = admin_url( 'admin.php?page=developer-starter-settings&tab=design' );
+        $focus_base_url = admin_url( 'admin.php?page=qiling-settings&tab=design' );
         $workbench_seed = array(
             'payload' => $payload,
             'defaults' => array(
@@ -566,72 +566,72 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
             'contrastDiagnostics'    => $contrast_diagnostic_config,
             'darkModeDiagnostics'    => $dark_mode_diagnostic_config,
             'messages'               => array(
-                'enabled'            => __( '全局设计已启用', 'developer-starter' ),
-                'disabled'           => __( '全局设计未启用', 'developer-starter' ),
-                'systemPreset'       => __( '系统预设', 'developer-starter' ),
-                'customPreset'       => __( '自定义预设', 'developer-starter' ),
-                'contrastNormal'     => __( '对比度基线正常', 'developer-starter' ),
-                'contrastReview'     => __( '存在对比度待复核', 'developer-starter' ),
-                'presetInherit'      => __( '跟随预设', 'developer-starter' ),
-                'siteOverride'       => __( '本站单独设置', 'developer-starter' ),
-                'baseDefault'        => __( '主题默认', 'developer-starter' ),
-                'varInherit'         => __( '跟随全局', 'developer-starter' ),
-                'defaultInherit'     => __( '默认跟随', 'developer-starter' ),
-                'diffCount'          => __( '%d 处调整', 'developer-starter' ),
-                'overviewBreakdown'  => __( '色板 %1$d / 排版 %2$d / 布局 %3$d / 组件 %4$d', 'developer-starter' ),
-                'contrastCount'      => __( '%d 项', 'developer-starter' ),
-                'unknownValue'       => __( '-', 'developer-starter' ),
-                'desktopPrefix'      => __( 'Desktop: ', 'developer-starter' ),
-                'mobilePrefix'       => __( 'Mobile: ', 'developer-starter' ),
-                'containerPrefix'    => __( '容器 ', 'developer-starter' ),
-                'spacingPrefix'      => __( '区块 ', 'developer-starter' ),
-                'gapPrefix'          => __( '栅格 ', 'developer-starter' ),
-                'tabletPrefix'       => __( 'Tablet ', 'developer-starter' ),
-                'mobileLabel'        => __( 'Mobile ', 'developer-starter' ),
-                'manualReview'       => __( '待人工复核', 'developer-starter' ),
-                'contrastPass'       => __( '对比度通过 WCAG AA 正文建议值。', 'developer-starter' ),
-                'contrastWarning'    => __( '对比度低于 4.5，建议提升文字与背景反差。', 'developer-starter' ),
-                'contrastUnknown'    => __( '包含渐变或复杂变量，当前工作台只对纯色对比度做快速检测。', 'developer-starter' ),
-                'hardcodedClean'     => __( '可忽略', 'developer-starter' ),
-                'hardcodedWarn'      => __( '可忽略', 'developer-starter' ),
-                'darkPass'           => __( '可忽略', 'developer-starter' ),
-                'darkWarning'        => __( '可忽略', 'developer-starter' ),
-                'darkPassMessage'    => __( '可忽略', 'developer-starter' ),
-                'darkWarningMessage' => __( '可忽略', 'developer-starter' ),
-                'darkLiteralWarning' => __( '可忽略', 'developer-starter' ),
-                'overrideCount'      => __( '%d 处覆盖', 'developer-starter' ),
-                'overridePalette'    => __( '色板单独设置', 'developer-starter' ),
-                'overrideTypography' => __( '排版单独设置', 'developer-starter' ),
-                'overrideLayout'     => __( '布局单独设置', 'developer-starter' ),
-                'overrideComponent'  => __( '组件单独设置', 'developer-starter' ),
-                'overrideCurrent'    => __( '当前：', 'developer-starter' ),
-                'overrideBase'       => __( '基准：', 'developer-starter' ),
-                'overrideGroupClean' => __( '当前分组还在跟随全局。', 'developer-starter' ),
-                'overrideMore'       => __( '其余 %d 项可在对应设置区继续查看。', 'developer-starter' ),
-                'missingClean'       => __( '当前关键字段没有发现明显缺项。', 'developer-starter' ),
-                'missingWarn'        => __( '建议完善', 'developer-starter' ),
-                'missingPaletteScope' => __( '全局色板', 'developer-starter' ),
-                'missingTypographyScope' => __( '响应式排版', 'developer-starter' ),
-                'missingLayoutScope' => __( '响应式布局', 'developer-starter' ),
-                'missingDetail'      => __( '当前为空，建议完善后再观察联动效果。', 'developer-starter' ),
-                'focusField'         => __( '定位设置', 'developer-starter' ),
+                'enabled'            => __( '全局设计已启用', 'qiling' ),
+                'disabled'           => __( '全局设计未启用', 'qiling' ),
+                'systemPreset'       => __( '系统预设', 'qiling' ),
+                'customPreset'       => __( '自定义预设', 'qiling' ),
+                'contrastNormal'     => __( '对比度基线正常', 'qiling' ),
+                'contrastReview'     => __( '存在对比度待复核', 'qiling' ),
+                'presetInherit'      => __( '跟随预设', 'qiling' ),
+                'siteOverride'       => __( '本站单独设置', 'qiling' ),
+                'baseDefault'        => __( '主题默认', 'qiling' ),
+                'varInherit'         => __( '跟随全局', 'qiling' ),
+                'defaultInherit'     => __( '默认跟随', 'qiling' ),
+                'diffCount'          => __( '%d 处调整', 'qiling' ),
+                'overviewBreakdown'  => __( '色板 %1$d / 排版 %2$d / 布局 %3$d / 组件 %4$d', 'qiling' ),
+                'contrastCount'      => __( '%d 项', 'qiling' ),
+                'unknownValue'       => __( '-', 'qiling' ),
+                'desktopPrefix'      => __( 'Desktop: ', 'qiling' ),
+                'mobilePrefix'       => __( 'Mobile: ', 'qiling' ),
+                'containerPrefix'    => __( '容器 ', 'qiling' ),
+                'spacingPrefix'      => __( '区块 ', 'qiling' ),
+                'gapPrefix'          => __( '栅格 ', 'qiling' ),
+                'tabletPrefix'       => __( 'Tablet ', 'qiling' ),
+                'mobileLabel'        => __( 'Mobile ', 'qiling' ),
+                'manualReview'       => __( '待人工复核', 'qiling' ),
+                'contrastPass'       => __( '对比度通过 WCAG AA 正文建议值。', 'qiling' ),
+                'contrastWarning'    => __( '对比度低于 4.5，建议提升文字与背景反差。', 'qiling' ),
+                'contrastUnknown'    => __( '包含渐变或复杂变量，当前工作台只对纯色对比度做快速检测。', 'qiling' ),
+                'hardcodedClean'     => __( '可忽略', 'qiling' ),
+                'hardcodedWarn'      => __( '可忽略', 'qiling' ),
+                'darkPass'           => __( '可忽略', 'qiling' ),
+                'darkWarning'        => __( '可忽略', 'qiling' ),
+                'darkPassMessage'    => __( '可忽略', 'qiling' ),
+                'darkWarningMessage' => __( '可忽略', 'qiling' ),
+                'darkLiteralWarning' => __( '可忽略', 'qiling' ),
+                'overrideCount'      => __( '%d 处覆盖', 'qiling' ),
+                'overridePalette'    => __( '色板单独设置', 'qiling' ),
+                'overrideTypography' => __( '排版单独设置', 'qiling' ),
+                'overrideLayout'     => __( '布局单独设置', 'qiling' ),
+                'overrideComponent'  => __( '组件单独设置', 'qiling' ),
+                'overrideCurrent'    => __( '当前：', 'qiling' ),
+                'overrideBase'       => __( '基准：', 'qiling' ),
+                'overrideGroupClean' => __( '当前分组还在跟随全局。', 'qiling' ),
+                'overrideMore'       => __( '其余 %d 项可在对应设置区继续查看。', 'qiling' ),
+                'missingClean'       => __( '当前关键字段没有发现明显缺项。', 'qiling' ),
+                'missingWarn'        => __( '建议完善', 'qiling' ),
+                'missingPaletteScope' => __( '全局色板', 'qiling' ),
+                'missingTypographyScope' => __( '响应式排版', 'qiling' ),
+                'missingLayoutScope' => __( '响应式布局', 'qiling' ),
+                'missingDetail'      => __( '当前为空，建议完善后再观察联动效果。', 'qiling' ),
+                'focusField'         => __( '定位设置', 'qiling' ),
                 'focusBaseUrl'       => $focus_base_url,
-                'impactHigh'         => __( '高影响', 'developer-starter' ),
-                'impactMedium'       => __( '中影响', 'developer-starter' ),
-                'impactLow'          => __( '低影响', 'developer-starter' ),
-                'riskAllLabel'       => __( '查看全部', 'developer-starter' ),
-                'riskAllHint'        => __( '当前正在查看全部入口，下面会一起显示所有调整和提醒。', 'developer-starter' ),
-                'riskFilterHint'     => __( '当前聚焦：%s，下面列表已按该主流程分区筛选。', 'developer-starter' ),
-                'riskHeaderNav'      => __( '页头 / 导航关注点', 'developer-starter' ),
-                'riskHeaderNavDescription' => __( '重点检查页头、桌面导航和下拉主入口。', 'developer-starter' ),
-                'riskMobile'         => __( '移动端关注点', 'developer-starter' ),
-                'riskMobileDescription' => __( '重点检查手机排版、移动导航和断点联动。', 'developer-starter' ),
-                'riskDark'           => __( '暗色提醒', 'developer-starter' ),
-                'riskDarkDescription' => __( '用于检查暗色风格的显示效果，普通使用可以先忽略。', 'developer-starter' ),
-                'riskBreakdown'      => __( '覆盖 %1$d / 缺项 %2$d / 诊断 %3$d', 'developer-starter' ),
-                'riskEmpty'          => __( '当前分区没有对应项目：%s。', 'developer-starter' ),
-                'ratioPrefix'        => __( 'Ratio ', 'developer-starter' ),
-                'coverageCommand'    => __( '可在下方查看详细检查结果。', 'developer-starter' ),
+                'impactHigh'         => __( '高影响', 'qiling' ),
+                'impactMedium'       => __( '中影响', 'qiling' ),
+                'impactLow'          => __( '低影响', 'qiling' ),
+                'riskAllLabel'       => __( '查看全部', 'qiling' ),
+                'riskAllHint'        => __( '当前正在查看全部入口，下面会一起显示所有调整和提醒。', 'qiling' ),
+                'riskFilterHint'     => __( '当前聚焦：%s，下面列表已按该主流程分区筛选。', 'qiling' ),
+                'riskHeaderNav'      => __( '页头 / 导航关注点', 'qiling' ),
+                'riskHeaderNavDescription' => __( '重点检查页头、桌面导航和下拉主入口。', 'qiling' ),
+                'riskMobile'         => __( '移动端关注点', 'qiling' ),
+                'riskMobileDescription' => __( '重点检查手机排版、移动导航和断点联动。', 'qiling' ),
+                'riskDark'           => __( '暗色提醒', 'qiling' ),
+                'riskDarkDescription' => __( '用于检查暗色风格的显示效果，普通使用可以先忽略。', 'qiling' ),
+                'riskBreakdown'      => __( '覆盖 %1$d / 缺项 %2$d / 诊断 %3$d', 'qiling' ),
+                'riskEmpty'          => __( '当前分区没有对应项目：%s。', 'qiling' ),
+                'ratioPrefix'        => __( 'Ratio ', 'qiling' ),
+                'coverageCommand'    => __( '可在下方查看详细检查结果。', 'qiling' ),
             ),
         );
 
@@ -641,72 +641,72 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
             <script type="application/json" data-ds-design-workbench-seed="1"><?php echo wp_json_encode( $workbench_seed ); ?></script>
             <div class="ds-design-workbench__head">
                 <div class="ds-design-workbench__head-copy">
-                    <span class="ds-design-workbench__eyebrow"><?php echo esc_html__( '全局设计工作台', 'developer-starter' ); ?></span>
-                    <h3 data-ds-workbench-title="1"><?php echo esc_html( sprintf( __( '当前预设：%s', 'developer-starter' ), $preset_label ) ); ?></h3>
-                    <p><?php echo esc_html__( '集中展示全站预设、本站单独设置、页面单独设置和模块单独设置，用于判断当前生效来源。', 'developer-starter' ); ?></p>
+                    <span class="ds-design-workbench__eyebrow"><?php echo esc_html__( '全局设计工作台', 'qiling' ); ?></span>
+                    <h3 data-ds-workbench-title="1"><?php echo esc_html( sprintf( __( '当前预设：%s', 'qiling' ), $preset_label ) ); ?></h3>
+                    <p><?php echo esc_html__( '集中展示全站预设、本站单独设置、页面单独设置和模块单独设置，用于判断当前生效来源。', 'qiling' ); ?></p>
                 </div>
                 <div class="ds-design-workbench__head-badges">
-                    <span class="ds-design-workbench__badge <?php echo esc_attr( ! empty( $payload['enabled'] ) ? 'is-info' : 'is-warning' ); ?>" data-ds-workbench-enabled-badge="1"><?php echo esc_html( ! empty( $payload['enabled'] ) ? __( '全局设计已启用', 'developer-starter' ) : __( '全局设计未启用', 'developer-starter' ) ); ?></span>
+                    <span class="ds-design-workbench__badge <?php echo esc_attr( ! empty( $payload['enabled'] ) ? 'is-info' : 'is-warning' ); ?>" data-ds-workbench-enabled-badge="1"><?php echo esc_html( ! empty( $payload['enabled'] ) ? __( '全局设计已启用', 'qiling' ) : __( '全局设计未启用', 'qiling' ) ); ?></span>
                     <span class="ds-design-workbench__badge is-info" data-ds-workbench-preset-source-badge="1"><?php echo esc_html( $preset_source_label ); ?></span>
-                    <span class="ds-design-workbench__badge <?php echo esc_attr( ! empty( $diagnostic_summary['contrastWarnings'] ) ? 'is-warning' : 'is-success' ); ?>" data-ds-workbench-contrast-badge="1"><?php echo esc_html( ! empty( $diagnostic_summary['contrastWarnings'] ) ? __( '存在对比度待复核', 'developer-starter' ) : __( '对比度基线正常', 'developer-starter' ) ); ?></span>
+                    <span class="ds-design-workbench__badge <?php echo esc_attr( ! empty( $diagnostic_summary['contrastWarnings'] ) ? 'is-warning' : 'is-success' ); ?>" data-ds-workbench-contrast-badge="1"><?php echo esc_html( ! empty( $diagnostic_summary['contrastWarnings'] ) ? __( '存在对比度待复核', 'qiling' ) : __( '对比度基线正常', 'qiling' ) ); ?></span>
                 </div>
             </div>
 
             <div class="ds-design-workbench__overview">
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '设置层级', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '全局预设 → 本站单独设置 → 页面单独设置 → 模块单独设置', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '设置层级', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '全局预设 → 本站单独设置 → 页面单独设置 → 模块单独设置', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__inheritance">
                         <article class="ds-design-workbench__inherit-step">
                             <span class="ds-design-workbench__badge is-info" data-ds-workbench-preset-source-badge="1"><?php echo esc_html( $preset_source_label ); ?></span>
-                            <strong><?php echo esc_html__( '全局预设', 'developer-starter' ); ?></strong>
+                            <strong><?php echo esc_html__( '全局预设', 'qiling' ); ?></strong>
                             <p data-ds-workbench-preset-label="1"><?php echo esc_html( $preset_label ); ?></p>
-                            <code><?php echo esc_html__( '作为整站色板和基础氛围的起点。', 'developer-starter' ); ?></code>
+                            <code><?php echo esc_html__( '作为整站色板和基础氛围的起点。', 'qiling' ); ?></code>
                         </article>
                         <article class="ds-design-workbench__inherit-step">
-                            <span class="ds-design-workbench__badge <?php echo esc_attr( $palette_diff_count + $typography_diff_count + $layout_diff_count + $component_diff_count > 0 ? 'is-warning' : 'is-success' ); ?>" data-ds-workbench-site-diff-badge="1"><?php echo esc_html( sprintf( __( '%d 处调整', 'developer-starter' ), $palette_diff_count + $typography_diff_count + $layout_diff_count + $component_diff_count ) ); ?></span>
-                            <strong><?php echo esc_html__( '本站单独设置', 'developer-starter' ); ?></strong>
-                            <p data-ds-workbench-site-diff-copy="1"><?php echo esc_html( sprintf( __( '色板 %1$d / 排版 %2$d / 布局 %3$d / 组件 %4$d', 'developer-starter' ), $palette_diff_count, $typography_diff_count, $layout_diff_count, $component_diff_count ) ); ?></p>
-                            <code><?php echo esc_html__( '只有和当前预设不一样的值，才会记在这里。', 'developer-starter' ); ?></code>
+                            <span class="ds-design-workbench__badge <?php echo esc_attr( $palette_diff_count + $typography_diff_count + $layout_diff_count + $component_diff_count > 0 ? 'is-warning' : 'is-success' ); ?>" data-ds-workbench-site-diff-badge="1"><?php echo esc_html( sprintf( __( '%d 处调整', 'qiling' ), $palette_diff_count + $typography_diff_count + $layout_diff_count + $component_diff_count ) ); ?></span>
+                            <strong><?php echo esc_html__( '本站单独设置', 'qiling' ); ?></strong>
+                            <p data-ds-workbench-site-diff-copy="1"><?php echo esc_html( sprintf( __( '色板 %1$d / 排版 %2$d / 布局 %3$d / 组件 %4$d', 'qiling' ), $palette_diff_count, $typography_diff_count, $layout_diff_count, $component_diff_count ) ); ?></p>
+                            <code><?php echo esc_html__( '只有和当前预设不一样的值，才会记在这里。', 'qiling' ); ?></code>
                         </article>
                         <article class="ds-design-workbench__inherit-step">
-                            <span class="ds-design-workbench__badge is-info"><?php echo esc_html( sprintf( __( '色板 %1$d / 排版 %2$d / 布局 %3$d', 'developer-starter' ), $page_palette_field_count, $page_typography_style_count, $page_layout_field_count ) ); ?></span>
-                            <strong><?php echo esc_html__( '页面单独设置', 'developer-starter' ); ?></strong>
-                            <p><?php echo esc_html__( '装修器中的“页面设计覆盖”只作用于当前页面。', 'developer-starter' ); ?></p>
-                            <code><?php echo esc_html__( '在“页面装修 -> 页面设置”里单独维护。', 'developer-starter' ); ?></code>
+                            <span class="ds-design-workbench__badge is-info"><?php echo esc_html( sprintf( __( '色板 %1$d / 排版 %2$d / 布局 %3$d', 'qiling' ), $page_palette_field_count, $page_typography_style_count, $page_layout_field_count ) ); ?></span>
+                            <strong><?php echo esc_html__( '页面单独设置', 'qiling' ); ?></strong>
+                            <p><?php echo esc_html__( '装修器中的“页面设计覆盖”只作用于当前页面。', 'qiling' ); ?></p>
+                            <code><?php echo esc_html__( '在“页面装修 -> 页面设置”里单独维护。', 'qiling' ); ?></code>
                         </article>
                         <article class="ds-design-workbench__inherit-step">
-                            <span class="ds-design-workbench__badge is-info"><?php echo esc_html__( '默认跟随', 'developer-starter' ); ?></span>
-                            <strong><?php echo esc_html__( '模块单独设置', 'developer-starter' ); ?></strong>
-                            <p><?php echo esc_html__( '模块默认跟随页面和全局样式；这里的调整只影响当前模块。', 'developer-starter' ); ?></p>
-                            <code><?php echo esc_html__( '适合局部高亮、区块差异化和少量局部样式调整。', 'developer-starter' ); ?></code>
+                            <span class="ds-design-workbench__badge is-info"><?php echo esc_html__( '默认跟随', 'qiling' ); ?></span>
+                            <strong><?php echo esc_html__( '模块单独设置', 'qiling' ); ?></strong>
+                            <p><?php echo esc_html__( '模块默认跟随页面和全局样式；这里的调整只影响当前模块。', 'qiling' ); ?></p>
+                            <code><?php echo esc_html__( '适合局部高亮、区块差异化和少量局部样式调整。', 'qiling' ); ?></code>
                         </article>
                     </div>
                 </section>
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '样式提示', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '快速检测当前样式是否存在明显风险。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '样式提示', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '快速检测当前样式是否存在明显风险。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__summary-grid">
                         <article class="ds-design-workbench__summary-card">
-                            <strong><?php echo esc_html__( '对比度复核', 'developer-starter' ); ?></strong>
-                            <span class="<?php echo esc_attr( ! empty( $diagnostic_summary['contrastWarnings'] ) ? 'is-warning' : 'is-success' ); ?>" data-ds-workbench-summary-card="contrastWarnings"><?php echo esc_html( sprintf( __( '%d 项', 'developer-starter' ), isset( $diagnostic_summary['contrastWarnings'] ) ? absint( $diagnostic_summary['contrastWarnings'] ) : 0 ) ); ?></span>
+                            <strong><?php echo esc_html__( '对比度复核', 'qiling' ); ?></strong>
+                            <span class="<?php echo esc_attr( ! empty( $diagnostic_summary['contrastWarnings'] ) ? 'is-warning' : 'is-success' ); ?>" data-ds-workbench-summary-card="contrastWarnings"><?php echo esc_html( sprintf( __( '%d 项', 'qiling' ), isset( $diagnostic_summary['contrastWarnings'] ) ? absint( $diagnostic_summary['contrastWarnings'] ) : 0 ) ); ?></span>
                         </article>
                         <article class="ds-design-workbench__summary-card">
-                            <strong><?php echo esc_html__( '颜色写法', 'developer-starter' ); ?></strong>
-                            <span class="is-info" data-ds-workbench-summary-card="hardcodedCount"><?php echo esc_html( sprintf( __( '%d 项', 'developer-starter' ), isset( $diagnostic_summary['hardcodedCount'] ) ? absint( $diagnostic_summary['hardcodedCount'] ) : 0 ) ); ?></span>
+                            <strong><?php echo esc_html__( '颜色写法', 'qiling' ); ?></strong>
+                            <span class="is-info" data-ds-workbench-summary-card="hardcodedCount"><?php echo esc_html( sprintf( __( '%d 项', 'qiling' ), isset( $diagnostic_summary['hardcodedCount'] ) ? absint( $diagnostic_summary['hardcodedCount'] ) : 0 ) ); ?></span>
                         </article>
                         <article class="ds-design-workbench__summary-card">
-                            <strong><?php echo esc_html__( '暗色提醒', 'developer-starter' ); ?></strong>
-                            <span class="is-info" data-ds-workbench-summary-card="darkModeWarnings"><?php echo esc_html( sprintf( __( '%d 项', 'developer-starter' ), isset( $diagnostic_summary['darkModeWarnings'] ) ? absint( $diagnostic_summary['darkModeWarnings'] ) : 0 ) ); ?></span>
+                            <strong><?php echo esc_html__( '暗色提醒', 'qiling' ); ?></strong>
+                            <span class="is-info" data-ds-workbench-summary-card="darkModeWarnings"><?php echo esc_html( sprintf( __( '%d 项', 'qiling' ), isset( $diagnostic_summary['darkModeWarnings'] ) ? absint( $diagnostic_summary['darkModeWarnings'] ) : 0 ) ); ?></span>
                         </article>
                         <article class="ds-design-workbench__summary-card">
-                            <strong><?php echo esc_html__( '深入检查', 'developer-starter' ); ?></strong>
-                            <span><?php echo esc_html__( '查看下方详细检查结果', 'developer-starter' ); ?></span>
+                            <strong><?php echo esc_html__( '深入检查', 'qiling' ); ?></strong>
+                            <span><?php echo esc_html__( '查看下方详细检查结果', 'qiling' ); ?></span>
                         </article>
                     </div>
                 </section>
@@ -715,8 +715,8 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
             <div class="ds-design-workbench__studio">
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '桌面工作台快照', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '同时看页头、Hero、卡片、表单、标签页和页脚。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '桌面工作台快照', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '同时看页头、Hero、卡片、表单、标签页和页脚。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__canvas <?php echo esc_attr( isset( $layout_system['layout_mode'] ) && 'boxed' === (string) $layout_system['layout_mode'] ? 'is-boxed' : '' ); ?>" data-ds-preview-node="desktopCanvas" style="<?php echo esc_attr( $build_style_attr( array(
                         'background' => $resolve_style_value( $tokens['background'] ?? '#ffffff' ),
@@ -735,12 +735,12 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                 'letter-spacing'=> isset( $desktop_menu['letter_spacing'] ) ? (string) $desktop_menu['letter_spacing'] : '',
                             ) ) ); ?>">Qiling</strong>
                             <nav>
-                                <span data-ds-preview-node="desktopNavHome" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '首页', 'developer-starter' ); ?></span>
+                                <span data-ds-preview-node="desktopNavHome" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '首页', 'qiling' ); ?></span>
                                 <span data-ds-preview-node="desktopNavActive" style="<?php echo esc_attr( $build_style_attr( array(
                                     'background' => $resolve_style_value( $component_styles['nav_hover_bg'] ?? '' ),
                                     'color'      => $resolve_style_value( $component_styles['nav_hover_text'] ?? '' ),
-                                ) ) ); ?>"><?php echo esc_html__( '服务', 'developer-starter' ); ?></span>
-                                <span data-ds-preview-node="desktopNavCase" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '案例', 'developer-starter' ); ?></span>
+                                ) ) ); ?>"><?php echo esc_html__( '服务', 'qiling' ); ?></span>
+                                <span data-ds-preview-node="desktopNavCase" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '案例', 'qiling' ); ?></span>
                             </nav>
                             <span class="ds-design-workbench__mini-badge" data-ds-preview-node="desktopPhone" style="<?php echo esc_attr( $build_style_attr( array(
                                 'background'      => $resolve_style_value( $component_styles['header_phone_bg'] ?? '' ),
@@ -749,11 +749,11 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                 'line-height'     => isset( $desktop_menu['line_height'] ) ? (string) $desktop_menu['line_height'] : '',
                                 'font-weight'     => isset( $desktop_menu['font_weight'] ) ? (string) $desktop_menu['font_weight'] : '',
                                 'letter-spacing'  => isset( $desktop_menu['letter_spacing'] ) ? (string) $desktop_menu['letter_spacing'] : '',
-                            ) ) ); ?>"><?php echo esc_html__( '400-123-4567', 'developer-starter' ); ?></span>
+                            ) ) ); ?>"><?php echo esc_html__( '400-123-4567', 'qiling' ); ?></span>
                             <span class="ds-design-workbench__mini-badge" data-ds-preview-node="desktopMiniBadge" style="<?php echo esc_attr( $build_style_attr( array(
                                 'background' => $resolve_style_value( $component_styles['badge_bg'] ?? '' ),
                                 'color'      => $resolve_style_value( $component_styles['badge_text'] ?? '' ),
-                            ) ) ); ?>"><?php echo esc_html__( 'Global', 'developer-starter' ); ?></span>
+                            ) ) ); ?>"><?php echo esc_html__( 'Global', 'qiling' ); ?></span>
                         </div>
                         <div class="ds-design-workbench__canvas-hero" data-ds-preview-node="desktopHero" style="<?php echo esc_attr( $build_style_attr( array(
                             'padding-top'    => isset( $layout_system['section_spacing']['desktop'] ) ? (string) $layout_system['section_spacing']['desktop'] : '',
@@ -765,14 +765,14 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                 'line-height'    => isset( $desktop_h1['line_height'] ) ? (string) $desktop_h1['line_height'] : '',
                                 'font-weight'    => isset( $desktop_h1['font_weight'] ) ? (string) $desktop_h1['font_weight'] : '',
                                 'letter-spacing' => isset( $desktop_h1['letter_spacing'] ) ? (string) $desktop_h1['letter_spacing'] : '',
-                            ) ) ); ?>"><?php echo esc_html__( '工作台预览会同时反映标题、正文、布局和组件样式。', 'developer-starter' ); ?></h4>
+                            ) ) ); ?>"><?php echo esc_html__( '工作台预览会同时反映标题、正文、布局和组件样式。', 'qiling' ); ?></h4>
                             <p data-ds-preview-node="desktopHeroLead" style="<?php echo esc_attr( $build_style_attr( array(
                                 'color'          => $resolve_style_value( $tokens['text_muted'] ?? '' ),
                                 'font-size'      => isset( $desktop_lead['font_size'] ) ? (string) $desktop_lead['font_size'] : '',
                                 'line-height'    => isset( $desktop_lead['line_height'] ) ? (string) $desktop_lead['line_height'] : '',
                                 'font-weight'    => isset( $desktop_lead['font_weight'] ) ? (string) $desktop_lead['font_weight'] : '',
                                 'letter-spacing' => isset( $desktop_lead['letter_spacing'] ) ? (string) $desktop_lead['letter_spacing'] : '',
-                            ) ) ); ?>"><?php echo esc_html__( '调整全局样式后，可以看到主流程界面的整体变化。', 'developer-starter' ); ?></p>
+                            ) ) ); ?>"><?php echo esc_html__( '调整全局样式后，可以看到主流程界面的整体变化。', 'qiling' ); ?></p>
                             <button type="button" data-ds-preview-node="desktopButton" style="<?php echo esc_attr( $build_style_attr( array(
                                 'background'      => $resolve_style_value( $component_styles['button_bg'] ?? '' ),
                                 'color'           => $resolve_style_value( $component_styles['button_text'] ?? '' ),
@@ -783,7 +783,7 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                 'line-height'     => isset( $desktop_button['line_height'] ) ? (string) $desktop_button['line_height'] : '',
                                 'font-weight'     => isset( $desktop_button['font_weight'] ) ? (string) $desktop_button['font_weight'] : '',
                                 'letter-spacing'  => isset( $desktop_button['letter_spacing'] ) ? (string) $desktop_button['letter_spacing'] : '',
-                            ) ) ); ?>"><?php echo esc_html__( '立即预览', 'developer-starter' ); ?></button>
+                            ) ) ); ?>"><?php echo esc_html__( '立即预览', 'qiling' ); ?></button>
                         </div>
                         <div class="ds-design-workbench__canvas-grid" data-ds-preview-node="desktopGrid" style="<?php echo esc_attr( $build_style_attr( array(
                             'gap' => isset( $layout_system['grid_gap']['desktop'] ) ? (string) $layout_system['grid_gap']['desktop'] : '',
@@ -793,37 +793,37 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                 'border-color' => $resolve_style_value( $component_styles['card_border'] ?? '' ),
                                 'box-shadow'   => $resolve_style_value( $component_styles['card_shadow'] ?? '' ),
                             ) ) ); ?>">
-                                <strong data-ds-preview-node="desktopCardPrimaryTitle" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['post_card_title_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '文章卡片', 'developer-starter' ); ?></strong>
+                                <strong data-ds-preview-node="desktopCardPrimaryTitle" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['post_card_title_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '文章卡片', 'qiling' ); ?></strong>
                                 <p data-ds-preview-node="desktopCardPrimaryBody" style="<?php echo esc_attr( $build_style_attr( array(
                                     'color'          => $resolve_style_value( $tokens['text'] ?? '' ),
                                     'font-size'      => isset( $desktop_body['font_size'] ) ? (string) $desktop_body['font_size'] : '',
                                     'line-height'    => isset( $desktop_body['line_height'] ) ? (string) $desktop_body['line_height'] : '',
                                     'font-weight'    => isset( $desktop_body['font_weight'] ) ? (string) $desktop_body['font_weight'] : '',
                                     'letter-spacing' => isset( $desktop_body['letter_spacing'] ) ? (string) $desktop_body['letter_spacing'] : '',
-                                ) ) ); ?>"><?php echo esc_html__( '预览卡片背景、标题层级和正文节奏。', 'developer-starter' ); ?></p>
-                                <span data-ds-preview-node="desktopCardPrimaryMeta" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['post_card_meta_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '2026-04-20 · 全局设计', 'developer-starter' ); ?></span>
+                                ) ) ); ?>"><?php echo esc_html__( '预览卡片背景、标题层级和正文节奏。', 'qiling' ); ?></p>
+                                <span data-ds-preview-node="desktopCardPrimaryMeta" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['post_card_meta_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '2026-04-20 · 全局设计', 'qiling' ); ?></span>
                             </article>
                             <article class="ds-design-workbench__canvas-card" data-ds-preview-node="desktopCardSecondary" style="<?php echo esc_attr( $build_style_attr( array(
                                 'background'   => $resolve_style_value( $tokens['surface_alt'] ?? '' ),
                                 'border-color' => $resolve_style_value( $component_styles['tabs_border'] ?? '' ),
                             ) ) ); ?>">
                                 <div class="ds-design-workbench__canvas-tabs">
-                                    <span><?php echo esc_html__( '概览', 'developer-starter' ); ?></span>
+                                    <span><?php echo esc_html__( '概览', 'qiling' ); ?></span>
                                     <span data-ds-preview-node="desktopTabActive" style="<?php echo esc_attr( $build_style_attr( array(
                                         'background'   => $resolve_style_value( $component_styles['tabs_active_bg'] ?? '' ),
                                         'color'        => $resolve_style_value( $component_styles['tabs_active_text'] ?? '' ),
                                         'border-color' => $resolve_style_value( $component_styles['tabs_active_border'] ?? '' ),
-                                    ) ) ); ?>"><?php echo esc_html__( '跟随', 'developer-starter' ); ?></span>
-                                    <span><?php echo esc_html__( '诊断', 'developer-starter' ); ?></span>
+                                    ) ) ); ?>"><?php echo esc_html__( '跟随', 'qiling' ); ?></span>
+                                    <span><?php echo esc_html__( '诊断', 'qiling' ); ?></span>
                                 </div>
                                 <div class="ds-design-workbench__canvas-alert" data-ds-preview-node="desktopAlert" style="<?php echo esc_attr( $build_style_attr( array(
                                     'background'   => $resolve_style_value( $component_styles['alert_bg'] ?? '' ),
                                     'border-color' => $resolve_style_value( $component_styles['alert_border'] ?? '' ),
                                     'color'        => $resolve_style_value( $component_styles['alert_text'] ?? '' ),
                                 ) ) ); ?>">
-                                    <?php echo esc_html__( '若预览不协调，可优先检查全局样式。', 'developer-starter' ); ?>
+                                    <?php echo esc_html__( '若预览不协调，可优先检查全局样式。', 'qiling' ); ?>
                                 </div>
-                                <input type="text" value="<?php echo esc_attr__( '输入关键词，观察表单状态', 'developer-starter' ); ?>" readonly data-ds-preview-node="desktopInput" style="<?php echo esc_attr( $build_style_attr( array(
+                                <input type="text" value="<?php echo esc_attr__( '输入关键词，观察表单状态', 'qiling' ); ?>" readonly data-ds-preview-node="desktopInput" style="<?php echo esc_attr( $build_style_attr( array(
                                     'background'      => $resolve_style_value( $component_styles['form_input_bg'] ?? '' ),
                                     'color'           => $resolve_style_value( $component_styles['form_input_text'] ?? '' ),
                                     'border-color'    => $resolve_style_value( $component_styles['form_input_border'] ?? '' ),
@@ -841,18 +841,18 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             <span data-ds-preview-node="desktopFooterHeading" style="<?php echo esc_attr( $build_style_attr( array(
                                 'color'     => $resolve_style_value( $component_styles['footer_heading'] ?? '' ),
                                 'font-size' => $resolve_style_value( $component_styles['footer_heading_size'] ?? '' ),
-                            ) ) ); ?>"><?php echo esc_html__( '页脚标题', 'developer-starter' ); ?></span>
-                            <span><?php echo esc_html__( '页脚区域', 'developer-starter' ); ?></span>
-                            <span data-ds-preview-node="desktopFooterLink" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['footer_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '政策条款', 'developer-starter' ); ?></span>
-                            <span data-ds-preview-node="desktopFooterPrice" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['woo_card_price'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '￥299', 'developer-starter' ); ?></span>
+                            ) ) ); ?>"><?php echo esc_html__( '页脚标题', 'qiling' ); ?></span>
+                            <span><?php echo esc_html__( '页脚区域', 'qiling' ); ?></span>
+                            <span data-ds-preview-node="desktopFooterLink" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['footer_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '政策条款', 'qiling' ); ?></span>
+                            <span data-ds-preview-node="desktopFooterPrice" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['woo_card_price'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '￥299', 'qiling' ); ?></span>
                         </div>
                     </div>
                 </section>
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '手机与暗色快照', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '重点看移动导航、底部导航和暗色可读性。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '手机与暗色快照', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '重点看移动导航、底部导航和暗色可读性。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__side-stack">
                         <div class="ds-design-workbench__phone" data-ds-preview-node="mobilePhone" style="<?php echo esc_attr( $build_style_attr( array(
@@ -863,14 +863,14 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                 'background'   => $resolve_style_value( $component_styles['mobile_nav_bg'] ?? '' ),
                                 'border-color' => $resolve_style_value( $component_styles['mobile_nav_border'] ?? '' ),
                             ) ) ); ?>">
-                                <span><?php echo esc_html__( '启灵', 'developer-starter' ); ?></span>
+                                <span><?php echo esc_html__( '启灵', 'qiling' ); ?></span>
                                 <strong data-ds-preview-node="mobilePhoneMenu" style="<?php echo esc_attr( $build_style_attr( array(
                                     'color'          => $resolve_style_value( $component_styles['mobile_nav_link'] ?? '' ),
                                     'font-size'      => isset( $mobile_menu['font_size'] ) ? (string) $mobile_menu['font_size'] : '',
                                     'line-height'    => isset( $mobile_menu['line_height'] ) ? (string) $mobile_menu['line_height'] : '',
                                     'font-weight'    => isset( $mobile_menu['font_weight'] ) ? (string) $mobile_menu['font_weight'] : '',
                                     'letter-spacing' => isset( $mobile_menu['letter_spacing'] ) ? (string) $mobile_menu['letter_spacing'] : '',
-                                ) ) ); ?>"><?php echo esc_html__( '移动导航', 'developer-starter' ); ?></strong>
+                                ) ) ); ?>"><?php echo esc_html__( '移动导航', 'qiling' ); ?></strong>
                             </div>
                             <div class="ds-design-workbench__phone-body">
                                 <h5 data-ds-preview-node="mobilePhoneTitle" style="<?php echo esc_attr( $build_style_attr( array(
@@ -879,25 +879,25 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                     'line-height'    => isset( $mobile_h2['line_height'] ) ? (string) $mobile_h2['line_height'] : '',
                                     'font-weight'    => isset( $mobile_h2['font_weight'] ) ? (string) $mobile_h2['font_weight'] : '',
                                     'letter-spacing' => isset( $mobile_h2['letter_spacing'] ) ? (string) $mobile_h2['letter_spacing'] : '',
-                                ) ) ); ?>"><?php echo esc_html__( '移动端会先暴露布局和字号问题。', 'developer-starter' ); ?></h5>
+                                ) ) ); ?>"><?php echo esc_html__( '移动端会先暴露布局和字号问题。', 'qiling' ); ?></h5>
                                 <p data-ds-preview-node="mobilePhoneBody" style="<?php echo esc_attr( $build_style_attr( array(
                                     'color'          => $resolve_style_value( $tokens['text_muted'] ?? '' ),
                                     'font-size'      => isset( $mobile_body['font_size'] ) ? (string) $mobile_body['font_size'] : '',
                                     'line-height'    => isset( $mobile_body['line_height'] ) ? (string) $mobile_body['line_height'] : '',
                                     'font-weight'    => isset( $mobile_body['font_weight'] ) ? (string) $mobile_body['font_weight'] : '',
                                     'letter-spacing' => isset( $mobile_body['letter_spacing'] ) ? (string) $mobile_body['letter_spacing'] : '',
-                                ) ) ); ?>"><?php echo esc_html__( '手机字号、间距和底部导航状态会单独展示。', 'developer-starter' ); ?></p>
+                                ) ) ); ?>"><?php echo esc_html__( '手机字号、间距和底部导航状态会单独展示。', 'qiling' ); ?></p>
                             </div>
                             <div class="ds-design-workbench__phone-bottom" data-ds-preview-node="mobilePhoneBottom" style="<?php echo esc_attr( $build_style_attr( array(
                                 'background'   => $resolve_style_value( $component_styles['mobile_nav_bg'] ?? '' ),
                                 'border-color' => $resolve_style_value( $component_styles['mobile_nav_border'] ?? '' ),
                             ) ) ); ?>">
-                                <span data-ds-preview-node="mobilePhoneBottomHome" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['mobile_nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '首页', 'developer-starter' ); ?></span>
+                                <span data-ds-preview-node="mobilePhoneBottomHome" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['mobile_nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '首页', 'qiling' ); ?></span>
                                 <span data-ds-preview-node="mobilePhoneBottomActive" style="<?php echo esc_attr( $build_style_attr( array(
                                     'background' => $resolve_style_value( $component_styles['mobile_nav_hover_bg'] ?? '' ),
                                     'color'      => $resolve_style_value( $component_styles['mobile_nav_hover_text'] ?? '' ),
-                                ) ) ); ?>"><?php echo esc_html__( '导航', 'developer-starter' ); ?></span>
-                                <span data-ds-preview-node="mobilePhoneBottomMine" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['mobile_nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '我的', 'developer-starter' ); ?></span>
+                                ) ) ); ?>"><?php echo esc_html__( '导航', 'qiling' ); ?></span>
+                                <span data-ds-preview-node="mobilePhoneBottomMine" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['mobile_nav_link'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '我的', 'qiling' ); ?></span>
                             </div>
                         </div>
 
@@ -906,22 +906,22 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                             'color'      => $resolve_style_value( $tokens['dark_text'] ?? '' ),
                             'border-color' => $resolve_style_value( $tokens['dark_border'] ?? '' ),
                         ) ) ); ?>">
-                            <strong><?php echo esc_html__( '暗色模式快照', 'developer-starter' ); ?></strong>
+                            <strong><?php echo esc_html__( '暗色模式快照', 'qiling' ); ?></strong>
                             <p data-ds-preview-node="darkPreviewBody" style="<?php echo esc_attr( $build_style_attr( array(
                                 'color'          => $resolve_style_value( $tokens['dark_text_muted'] ?? '' ),
                                 'font-size'      => isset( $dark_body['font_size'] ) ? (string) $dark_body['font_size'] : '',
                                 'line-height'    => isset( $dark_body['line_height'] ) ? (string) $dark_body['line_height'] : '',
                                 'font-weight'    => isset( $dark_body['font_weight'] ) ? (string) $dark_body['font_weight'] : '',
                                 'letter-spacing' => isset( $dark_body['letter_spacing'] ) ? (string) $dark_body['letter_spacing'] : '',
-                            ) ) ); ?>"><?php echo esc_html__( '这里优先观察暗色正文、暗色卡片、暗色表单是否仍然清晰。', 'developer-starter' ); ?></p>
+                            ) ) ); ?>"><?php echo esc_html__( '这里优先观察暗色正文、暗色卡片、暗色表单是否仍然清晰。', 'qiling' ); ?></p>
                             <div class="ds-design-workbench__dark-card" data-ds-preview-node="darkCard" style="<?php echo esc_attr( $build_style_attr( array(
                                 'background'   => $resolve_style_value( $component_styles['dark_post_card_bg'] ?? '' ),
                                 'border-color' => $resolve_style_value( $component_styles['dark_post_card_border'] ?? '' ),
                             ) ) ); ?>">
-                                <strong data-ds-preview-node="darkCardTitle" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['dark_post_card_title_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '暗色文章卡片', 'developer-starter' ); ?></strong>
-                                <span data-ds-preview-node="darkCardMeta" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['dark_post_card_meta_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( 'Meta / 时间 / 标签', 'developer-starter' ); ?></span>
+                                <strong data-ds-preview-node="darkCardTitle" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['dark_post_card_title_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( '暗色文章卡片', 'qiling' ); ?></strong>
+                                <span data-ds-preview-node="darkCardMeta" style="<?php echo esc_attr( $build_style_attr( array( 'color' => $resolve_style_value( $component_styles['dark_post_card_meta_color'] ?? '' ) ) ) ); ?>"><?php echo esc_html__( 'Meta / 时间 / 标签', 'qiling' ); ?></span>
                             </div>
-                            <input type="text" value="<?php echo esc_attr__( '暗色表单输入', 'developer-starter' ); ?>" readonly data-ds-preview-node="darkInput" style="<?php echo esc_attr( $build_style_attr( array(
+                            <input type="text" value="<?php echo esc_attr__( '暗色表单输入', 'qiling' ); ?>" readonly data-ds-preview-node="darkInput" style="<?php echo esc_attr( $build_style_attr( array(
                                 'background'   => $resolve_style_value( $component_styles['dark_form_input_bg'] ?? '' ),
                                 'color'        => $resolve_style_value( $component_styles['dark_form_input_text'] ?? '' ),
                                 'border-color' => $resolve_style_value( $component_styles['dark_form_input_border'] ?? '' ),
@@ -934,8 +934,8 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
             <div class="ds-design-workbench__meta">
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '色板与来源', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '色板默认跟随预设，只有不一样的值才算本站单独设置。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '色板与来源', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '色板默认跟随预设，只有不一样的值才算本站单独设置。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__swatches" data-ds-workbench-swatches="1">
                         <?php foreach ( $swatch_items as $item ) : ?>
@@ -953,8 +953,8 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '排版体系摘要', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '看桌面 / 手机是否都在同一个层级体系里。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '排版体系摘要', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '看桌面 / 手机是否都在同一个层级体系里。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__metric-list" data-ds-workbench-typography-summary="1">
                         <?php foreach ( $typography_items as $item ) : ?>
@@ -972,8 +972,8 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '布局尺度摘要', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '容器、间距、断点和 boxed / wide 的联动状态。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '布局尺度摘要', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '容器、间距、断点和 boxed / wide 的联动状态。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__metric-list" data-ds-workbench-layout-summary="1">
                         <?php foreach ( $layout_items as $item ) : ?>
@@ -990,8 +990,8 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '公共组件摘要', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '检查组件是否仍然走 token，而不是局部写死。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '公共组件摘要', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '检查组件是否仍然走 token，而不是局部写死。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__components" data-ds-workbench-component-summary="1">
                         <?php foreach ( $component_cards as $component ) : ?>
@@ -1014,20 +1014,20 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
             <div class="ds-design-workbench__diagnostics">
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '重点检查区域', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '按站点主流程分区展示关键检查项。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '重点检查区域', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '按站点主流程分区展示关键检查项。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__risk-toolbar">
-                        <button type="button" class="ds-design-workbench__risk-pill is-active" data-ds-workbench-risk-zone="all"><?php echo esc_html__( '查看全部', 'developer-starter' ); ?></button>
-                        <p class="ds-design-workbench__risk-status" data-ds-workbench-risk-status="1"><?php echo esc_html__( '当前查看全部入口，下面的覆盖、缺项和诊断列表会一起联动。', 'developer-starter' ); ?></p>
+                        <button type="button" class="ds-design-workbench__risk-pill is-active" data-ds-workbench-risk-zone="all"><?php echo esc_html__( '查看全部', 'qiling' ); ?></button>
+                        <p class="ds-design-workbench__risk-status" data-ds-workbench-risk-status="1"><?php echo esc_html__( '当前查看全部入口，下面的覆盖、缺项和诊断列表会一起联动。', 'qiling' ); ?></p>
                     </div>
                     <div class="ds-design-workbench__risk-zones" data-ds-workbench-risk-zones="1"></div>
                 </section>
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '对比度诊断', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '优先检查文字 / 背景这类最影响体验的组合。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '对比度诊断', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '优先检查文字 / 背景这类最影响体验的组合。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__diagnostic-list" data-ds-workbench-contrast-list="1">
                         <?php foreach ( array_slice( isset( $diagnostics['contrast'] ) && is_array( $diagnostics['contrast'] ) ? $diagnostics['contrast'] : array(), 0, 8 ) as $item ) : ?>
@@ -1039,7 +1039,7 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
                                         if ( isset( $item['ratio'] ) && is_numeric( $item['ratio'] ) ) {
                                             echo esc_html( 'Ratio ' . number_format_i18n( (float) $item['ratio'], 2 ) );
                                         } else {
-                                            echo esc_html__( '待人工复核', 'developer-starter' );
+                                            echo esc_html__( '待人工复核', 'qiling' );
                                         }
                                         ?>
                                     </span>
@@ -1052,20 +1052,20 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '颜色写法', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '可忽略', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '颜色写法', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '可忽略', 'qiling' ); ?></span>
                     </div>
                     <?php $hardcoded_components = isset( $diagnostics['hardcodedComponents'] ) && is_array( $diagnostics['hardcodedComponents'] ) ? $diagnostics['hardcodedComponents'] : array(); ?>
                     <div data-ds-workbench-hardcoded-body="1">
                     <?php if ( empty( $hardcoded_components ) ) : ?>
-                        <p class="ds-design-workbench__empty"><?php echo esc_html__( '可忽略', 'developer-starter' ); ?></p>
+                        <p class="ds-design-workbench__empty"><?php echo esc_html__( '可忽略', 'qiling' ); ?></p>
                     <?php else : ?>
                         <div class="ds-design-workbench__diagnostic-list">
                             <?php foreach ( array_slice( $hardcoded_components, 0, 8 ) as $item ) : ?>
                                 <article class="ds-design-workbench__diagnostic-card">
                                     <div class="ds-design-workbench__metric-head">
                                         <strong><?php echo esc_html( isset( $item['label'] ) ? (string) $item['label'] : '' ); ?></strong>
-                                        <span class="ds-design-workbench__badge is-info"><?php echo esc_html__( '可忽略', 'developer-starter' ); ?></span>
+                                        <span class="ds-design-workbench__badge is-info"><?php echo esc_html__( '可忽略', 'qiling' ); ?></span>
                                     </div>
                                     <code><?php echo esc_html( isset( $item['value'] ) ? (string) $item['value'] : '' ); ?></code>
                                 </article>
@@ -1077,15 +1077,15 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '暗色提醒', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '可忽略', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '暗色提醒', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '可忽略', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__diagnostic-list" data-ds-workbench-dark-list="1">
                         <?php foreach ( array_slice( isset( $diagnostics['darkMode'] ) && is_array( $diagnostics['darkMode'] ) ? $diagnostics['darkMode'] : array(), 0, 8 ) as $item ) : ?>
                             <article class="ds-design-workbench__diagnostic-card">
                                 <div class="ds-design-workbench__metric-head">
                                     <strong><?php echo esc_html( isset( $item['label'] ) ? (string) $item['label'] : '' ); ?></strong>
-                                    <span class="ds-design-workbench__badge is-info"><?php echo esc_html__( '可忽略', 'developer-starter' ); ?></span>
+                                    <span class="ds-design-workbench__badge is-info"><?php echo esc_html__( '可忽略', 'qiling' ); ?></span>
                                 </div>
                                 <p><?php echo esc_html( isset( $item['message'] ) ? (string) $item['message'] : '' ); ?></p>
                             </article>
@@ -1095,27 +1095,27 @@ trait Admin_Settings_Field_Render_Design_Tokens_Trait {
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '覆盖明细', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '直接看哪些字段正在改写预设或主题默认，避免只看总数。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '覆盖明细', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '直接看哪些字段正在改写预设或主题默认，避免只看总数。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__audit-groups" data-ds-workbench-override-groups="1"></div>
                 </section>
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '缺项与空值提醒', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '关键颜色、排版和布局为空时会在这里提示。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '缺项与空值提醒', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '关键颜色、排版和布局为空时会在这里提示。', 'qiling' ); ?></span>
                     </div>
                     <div data-ds-workbench-missing-body="1"></div>
                 </section>
 
                 <section class="ds-design-workbench__panel">
                     <div class="ds-design-workbench__panel-head">
-                        <strong><?php echo esc_html__( '样式详细检查', 'developer-starter' ); ?></strong>
-                        <span><?php echo esc_html__( '用于进一步检查样式一致性和潜在显示问题。', 'developer-starter' ); ?></span>
+                        <strong><?php echo esc_html__( '样式详细检查', 'qiling' ); ?></strong>
+                        <span><?php echo esc_html__( '用于进一步检查样式一致性和潜在显示问题。', 'qiling' ); ?></span>
                     </div>
                     <div class="ds-design-workbench__script-box">
-                        <p><?php echo esc_html__( '请结合上方对比度、覆盖明细和空值提醒逐项检查。', 'developer-starter' ); ?></p>
+                        <p><?php echo esc_html__( '请结合上方对比度、覆盖明细和空值提醒逐项检查。', 'qiling' ); ?></p>
                     </div>
                 </section>
             </div>

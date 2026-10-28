@@ -12,8 +12,8 @@
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'developer-starter-product-template-skins',
-        DEVELOPER_STARTER_ASSETS . '/css/product-template-skins.css',
-        array( 'developer-starter-main' ),
+        QILING_ASSETS . '/css/product-template-skins.css',
+        array( 'qiling-main' ),
         developer_starter_get_assets_version()
     );
 }, 20 );
@@ -33,13 +33,13 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
         <section class="section-padding qiling-resource-empty-state">
             <div class="container text-center">
                 <div class="qiling-resource-empty-state__icon">IMG</div>
-                <h2 class="qiling-resource-empty-state__title"><?php esc_html_e( 'AI 图像处理官网页', 'developer-starter' ); ?></h2>
+                <h2 class="qiling-resource-empty-state__title"><?php esc_html_e( 'AI 图像处理官网页', 'qiling' ); ?></h2>
                 <p class="qiling-resource-empty-state__desc">
-                    <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
                 </p>
                 <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                     <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary qiling-resource-empty-state__button">
-                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                        <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                     </a>
                 <?php endif; ?>
             </div>

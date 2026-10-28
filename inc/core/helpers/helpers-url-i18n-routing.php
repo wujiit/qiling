@@ -301,7 +301,7 @@ if ( ! function_exists( 'developer_starter_get_third_party_asset_registry' ) ) {
      * @return array<string,array<string,mixed>>
      */
     function developer_starter_get_third_party_asset_registry() {
-        $assets_base = defined( 'DEVELOPER_STARTER_ASSETS' ) ? DEVELOPER_STARTER_ASSETS : '';
+        $assets_base = defined( 'QILING_ASSETS' ) ? QILING_ASSETS : '';
 
         $registry = array(
             'swiper_css' => array(
@@ -1133,7 +1133,7 @@ if ( ! function_exists( 'developer_starter_collect_theme_option_domain_risk_rows
         if ( '' !== $direct_relative && $direct_relative !== $value ) {
             $rows[] = array(
                 'path'      => $path,
-                'risk_type' => __( '站内绝对地址', 'developer-starter' ),
+                'risk_type' => __( '站内绝对地址', 'qiling' ),
                 'current'   => $value,
                 'suggested' => $direct_relative,
             );
@@ -1144,7 +1144,7 @@ if ( ! function_exists( 'developer_starter_collect_theme_option_domain_risk_rows
         if ( $replaced_value !== $value ) {
             $rows[] = array(
                 'path'      => $path,
-                'risk_type' => __( '文本/HTML 内嵌站内绝对地址', 'developer-starter' ),
+                'risk_type' => __( '文本/HTML 内嵌站内绝对地址', 'qiling' ),
                 'current'   => $value,
                 'suggested' => $replaced_value,
             );
@@ -1396,7 +1396,16 @@ if ( ! function_exists( 'developer_starter_get_date_time_format' ) ) {
             $time_format = 'H:i';
         }
 
-        return trim( $date_format . ' ' . $time_format );
+        // 中文环境下：如果使用了 12 小时制（带 a/A/g/h），WordPress 会将凌晨 0 点直译为“上午12点”，
+        // 极易引起中国用户误会（误以为是中午 12 点）。因此在中文环境下默认自动优化为标准的 24 小时制 H:i。
+        if ( function_exists( 'developer_starter_is_chinese_locale' ) && developer_starter_is_chinese_locale() ) {
+            if ( preg_match( '/[gha]/i', $time_format ) ) {
+                $time_format = 'H:i';
+            }
+        }
+
+        $format = trim( $date_format . ' ' . $time_format );
+        return (string) apply_filters( 'developer_starter_date_time_format', $format, $include_time );
     }
 }
 
@@ -1440,13 +1449,13 @@ if ( ! function_exists( 'developer_starter_get_multilingual_languages' ) ) {
         if ( empty( $languages ) || ! is_array( $languages ) ) {
             $languages = array(
                 array(
-                    'name'   => __( '简体中文', 'developer-starter' ),
+                    'name'   => __( '简体中文', 'qiling' ),
                     'code'   => 'zh',
                     'locale' => 'zh_CN',
                     'icon'   => 'CN',
                 ),
                 array(
-                    'name'   => __( '繁体中文', 'developer-starter' ),
+                    'name'   => __( '繁体中文', 'qiling' ),
                     'code'   => 'zh-tw',
                     'locale' => 'zh_TW',
                     'icon'   => 'TW',
@@ -1458,31 +1467,31 @@ if ( ! function_exists( 'developer_starter_get_multilingual_languages' ) ) {
                     'icon'   => 'US',
                 ),
                 array(
-                    'name'   => __( '日文', 'developer-starter' ),
+                    'name'   => __( '日文', 'qiling' ),
                     'code'   => 'jp',
                     'locale' => 'ja_JP',
                     'icon'   => 'JP',
                 ),
                 array(
-                    'name'   => __( '韩文', 'developer-starter' ),
+                    'name'   => __( '韩文', 'qiling' ),
                     'code'   => 'ko',
                     'locale' => 'ko_KR',
                     'icon'   => 'KR',
                 ),
                 array(
-                    'name'   => __( '法文', 'developer-starter' ),
+                    'name'   => __( '法文', 'qiling' ),
                     'code'   => 'fr',
                     'locale' => 'fr_FR',
                     'icon'   => 'FR',
                 ),
                 array(
-                    'name'   => __( '德文', 'developer-starter' ),
+                    'name'   => __( '德文', 'qiling' ),
                     'code'   => 'de',
                     'locale' => 'de_DE',
                     'icon'   => 'DE',
                 ),
                 array(
-                    'name'   => __( '西班牙文', 'developer-starter' ),
+                    'name'   => __( '西班牙文', 'qiling' ),
                     'code'   => 'es',
                     'locale' => 'es_ES',
                     'icon'   => 'ES',

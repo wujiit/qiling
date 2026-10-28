@@ -34,8 +34,8 @@ class Template_Manager {
     public function register_post_type() {
         register_post_type( self::POST_TYPE, array(
             'labels' => array(
-                'name' => __( '从模块库', 'developer-starter' ),
-                'singular_name' => __( '模块模版', 'developer-starter' ),
+                'name' => __( '从模块库', 'qiling' ),
+                'singular_name' => __( '模块模版', 'qiling' ),
             ),
             'public' => false,
             'show_ui' => false, // Hidden from admin menu
@@ -129,7 +129,7 @@ class Template_Manager {
         check_ajax_referer( 'developer_starter_modules_nonce', 'nonce' );
 
         if ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $title = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : '';
@@ -138,7 +138,7 @@ class Template_Manager {
         $raw_data = isset( $_POST['raw_data'] ) ? wp_unslash( $_POST['raw_data'] ) : '';
 
         if ( empty( $title ) || empty( $type ) ) {
-            wp_send_json_error( __( '信息不完整', 'developer-starter' ) );
+            wp_send_json_error( __( '信息不完整', 'qiling' ) );
         }
 
         // 处理原始序列化表单数据
@@ -161,13 +161,13 @@ class Template_Manager {
         }
 
         if ( empty( $data_json ) ) {
-            wp_send_json_error( __( '数据为空', 'developer-starter' ) );
+            wp_send_json_error( __( '数据为空', 'qiling' ) );
         }
 
         // 验证 JSON
         $data = json_decode( $data_json, true );
         if ( json_last_error() !== JSON_ERROR_NONE ) {
-            wp_send_json_error( __( '数据格式错误', 'developer-starter' ) );
+            wp_send_json_error( __( '数据格式错误', 'qiling' ) );
         }
 
         $post_data = array(
@@ -187,7 +187,7 @@ class Template_Manager {
             wp_send_json_error( $post_id->get_error_message() );
         }
 
-        wp_send_json_success( array( 'id' => $post_id, 'message' => __( '模版保存成功', 'developer-starter' ) ) );
+        wp_send_json_success( array( 'id' => $post_id, 'message' => __( '模版保存成功', 'qiling' ) ) );
     }
 
     /**
@@ -210,7 +210,7 @@ class Template_Manager {
         check_ajax_referer( 'developer_starter_modules_nonce', 'nonce' );
 
         if ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $args = self::build_visible_template_query_args();
@@ -249,29 +249,29 @@ class Template_Manager {
         check_ajax_referer( 'developer_starter_modules_nonce', 'nonce' );
 
         if ( ! current_user_can( 'delete_posts' ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $id = isset( $_POST['id'] ) ? absint( wp_unslash( $_POST['id'] ) ) : 0;
         if ( ! $id ) {
-            wp_send_json_error( __( 'ID无效', 'developer-starter' ) );
+            wp_send_json_error( __( 'ID无效', 'qiling' ) );
         }
 
         $template = self::get_template_post( $id );
         if ( ! $template ) {
-            wp_send_json_error( __( '无此模版', 'developer-starter' ) );
+            wp_send_json_error( __( '无此模版', 'qiling' ) );
         }
 
         if ( ! self::current_user_can_access_template_post( $template, 'delete_post' ) ) {
-            wp_send_json_error( __( '权限不足', 'developer-starter' ) );
+            wp_send_json_error( __( '权限不足', 'qiling' ) );
         }
 
         $result = wp_delete_post( $template->ID, true );
 
         if ( $result ) {
-            wp_send_json_success( __( '删除成功', 'developer-starter' ) );
+            wp_send_json_success( __( '删除成功', 'qiling' ) );
         } else {
-            wp_send_json_error( __( '删除失败', 'developer-starter' ) );
+            wp_send_json_error( __( '删除失败', 'qiling' ) );
         }
     }
 }

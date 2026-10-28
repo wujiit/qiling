@@ -19,20 +19,24 @@ if ( ! defined( 'QILING_VIDEO_PORTAL_PAGE' ) ) {
 add_action(
     'wp_enqueue_scripts',
     static function () {
-        $css_file = DEVELOPER_STARTER_DIR . '/assets/css/video-ranking-page.css';
+        $fallback_version = function_exists( 'developer_starter_get_assets_version' )
+            ? developer_starter_get_assets_version()
+            : QILING_VERSION;
+
+        $css_file = QILING_DIR . '/assets/css/video-ranking-page.css';
         wp_enqueue_style(
             'developer-starter-video-ranking-page',
-            DEVELOPER_STARTER_ASSETS . '/css/video-ranking-page.css',
-            array( 'developer-starter-main' ),
-            file_exists( $css_file ) ? (string) filemtime( $css_file ) : DEVELOPER_STARTER_VERSION
+            QILING_ASSETS . '/css/video-ranking-page.css',
+            array( 'qiling-main' ),
+            file_exists( $css_file ) ? (string) filemtime( $css_file ) : $fallback_version
         );
 
-        $footer_css_file = DEVELOPER_STARTER_DIR . '/assets/css/modules-split/footer_suite.css';
+        $footer_css_file = QILING_DIR . '/assets/css/modules-split/footer_suite.css';
         wp_enqueue_style(
             'developer-starter-footer-suite-module',
-            DEVELOPER_STARTER_ASSETS . '/css/modules-split/footer_suite.css',
+            QILING_ASSETS . '/css/modules-split/footer_suite.css',
             array( 'developer-starter-video-ranking-page' ),
-            file_exists( $footer_css_file ) ? (string) filemtime( $footer_css_file ) : DEVELOPER_STARTER_VERSION
+            file_exists( $footer_css_file ) ? (string) filemtime( $footer_css_file ) : $fallback_version
         );
     },
     20
@@ -76,7 +80,7 @@ foreach ( is_array( $portal_modules ) ? $portal_modules : array() as $portal_mod
 }
 
 if ( empty( $footer_suite_data ) ) {
-    $package_file = DEVELOPER_STARTER_DIR . '/inc/template-center/official/video-portal.json';
+    $package_file = QILING_DIR . '/inc/template-center/official/video-portal.json';
     $package_data = is_readable( $package_file ) ? json_decode( (string) file_get_contents( $package_file ), true ) : array();
     foreach ( isset( $package_data['modules'] ) && is_array( $package_data['modules'] ) ? $package_data['modules'] : array() as $package_module ) {
         if ( is_array( $package_module ) && isset( $package_module['type'] ) && 'footer_suite' === sanitize_key( (string) $package_module['type'] ) ) {
@@ -147,14 +151,14 @@ get_header();
         <div class="container video-ranking-page__hero-inner">
             <div class="video-ranking-page__eyebrow">
                 <span aria-hidden="true"></span>
-                <?php esc_html_e( 'QILING CHARTS', 'developer-starter' ); ?>
+                <?php esc_html_e( 'QILING CHARTS', 'qiling' ); ?>
             </div>
-            <h1><?php echo esc_html( get_the_title( $page_id ) ?: __( '影视排行榜', 'developer-starter' ) ); ?></h1>
-            <p><?php esc_html_e( '聚合最新上线、热度趋势与真实互动数据，快速发现当下值得观看的影视内容。', 'developer-starter' ); ?></p>
-            <div class="video-ranking-page__meta" aria-label="<?php esc_attr_e( '榜单说明', 'developer-starter' ); ?>">
-                <span><?php esc_html_e( '实时更新', 'developer-starter' ); ?></span>
-                <span><?php esc_html_e( '多维排序', 'developer-starter' ); ?></span>
-                <span><?php esc_html_e( '电影 · 剧集 · 动漫 · 综艺', 'developer-starter' ); ?></span>
+            <h1><?php echo esc_html( get_the_title( $page_id ) ?: __( '影视排行榜', 'qiling' ) ); ?></h1>
+            <p><?php esc_html_e( '聚合最新上线、热度趋势与真实互动数据，快速发现当下值得观看的影视内容。', 'qiling' ); ?></p>
+            <div class="video-ranking-page__meta" aria-label="<?php esc_attr_e( '榜单说明', 'qiling' ); ?>">
+                <span><?php esc_html_e( '实时更新', 'qiling' ); ?></span>
+                <span><?php esc_html_e( '多维排序', 'qiling' ); ?></span>
+                <span><?php esc_html_e( '电影 · 剧集 · 动漫 · 综艺', 'qiling' ); ?></span>
             </div>
         </div>
     </header>
@@ -165,9 +169,9 @@ get_header();
         <?php elseif ( current_user_can( 'edit_pages' ) ) : ?>
             <div class="container">
                 <div class="video-ranking-page__empty">
-                    <strong><?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?></strong>
-                    <p><?php esc_html_e( '暂无内容。', 'developer-starter' ); ?></p>
-                    <a href="<?php echo esc_url( get_edit_post_link( $page_id ) ); ?>"><?php esc_html_e( '编辑页面', 'developer-starter' ); ?></a>
+                    <strong><?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?></strong>
+                    <p><?php esc_html_e( '暂无内容。', 'qiling' ); ?></p>
+                    <a href="<?php echo esc_url( get_edit_post_link( $page_id ) ); ?>"><?php esc_html_e( '编辑页面', 'qiling' ); ?></a>
                 </div>
             </div>
         <?php endif; ?>

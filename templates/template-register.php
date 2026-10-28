@@ -100,8 +100,8 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                         <h1><?php bloginfo( 'name' ); ?></h1>
                     <?php endif; ?>
                 </div>
-                <h2 class="auth-title"><?php esc_html_e( '创建账户', 'developer-starter' ); ?></h2>
-                <p class="auth-subtitle"><?php esc_html_e( '加入我们，开启精彩之旅', 'developer-starter' ); ?></p>
+                <h2 class="auth-title"><?php esc_html_e( '创建账户', 'qiling' ); ?></h2>
+                <p class="auth-subtitle"><?php esc_html_e( '加入我们，开启精彩之旅', 'qiling' ); ?></p>
             </div>
             
             <?php if ( $phone_register_only ) : ?>
@@ -111,15 +111,15 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="reg-phone">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                     </label>
-                    <input type="tel" id="reg-phone" name="phone" placeholder="<?php esc_attr_e( '请输入手机号', 'developer-starter' ); ?>" required autocomplete="tel" maxlength="11" />
+                    <input type="tel" id="reg-phone" name="phone" placeholder="<?php esc_attr_e( '请输入手机号', 'qiling' ); ?>" required autocomplete="tel" maxlength="11" />
                 </div>
                 
                 <div class="form-group sms-code-group">
                     <label for="reg-code">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     </label>
-                    <input type="text" id="reg-code" name="code" placeholder="<?php esc_attr_e( '请输入验证码', 'developer-starter' ); ?>" required maxlength="6" autocomplete="one-time-code" />
-                    <button type="button" class="sms-send-btn" id="reg-send-btn"><?php esc_html_e( '获取验证码', 'developer-starter' ); ?></button>
+                    <input type="text" id="reg-code" name="code" placeholder="<?php esc_attr_e( '请输入验证码', 'qiling' ); ?>" required maxlength="6" autocomplete="one-time-code" />
+                    <button type="button" class="sms-send-btn" id="reg-send-btn"><?php esc_html_e( '获取验证码', 'qiling' ); ?></button>
                 </div>
 
                 <?php if ( $register_code_enabled ) : ?>
@@ -127,7 +127,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="phone-registration-code">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg>
                     </label>
-                    <input type="text" id="phone-registration-code" name="registration_code" placeholder="<?php esc_attr_e( '请输入注册码（新用户必填）', 'developer-starter' ); ?>" autocomplete="off" />
+                    <input type="text" id="phone-registration-code" name="registration_code" placeholder="<?php esc_attr_e( '请输入注册码（新用户必填）', 'qiling' ); ?>" autocomplete="off" />
                 </div>
                 <?php if ( $register_code_obtain_enabled ) : ?>
                 <p class="email-whitelist-tip register-code-obtain-tip">
@@ -135,7 +135,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                         <span><?php echo esc_html( $register_code_obtain_link['tip_text'] ); ?></span>
                     <?php endif; ?>
                     <a href="<?php echo esc_url( $register_code_obtain_link['url'] ); ?>" target="_blank" rel="noopener noreferrer nofollow">
-                        <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'developer-starter' ) ); ?>
+                        <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'qiling' ) ); ?>
                     </a>
                 </p>
                 <?php endif; ?>
@@ -149,7 +149,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                             </div>
                             <div class="captcha-progress"></div>
-                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'developer-starter' ); ?></span>
+                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'qiling' ); ?></span>
                         </div>
                     </div>
                     <input type="hidden" name="captcha_verified" value="false" class="captcha-verified-input" />
@@ -159,8 +159,8 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 <?php 
                 $agreement_enable = developer_starter_get_option( 'register_agreement_enable', '' );
                 if ( $agreement_enable ) :
-                    $agreement_text = developer_starter_get_option( 'register_agreement_text', __( '我已阅读并同意', 'developer-starter' ) );
-                    $agreement_link_text = developer_starter_get_option( 'register_agreement_link_text', __( '《用户服务协议》', 'developer-starter' ) );
+                    $agreement_text = developer_starter_get_option( 'register_agreement_text', __( '我已阅读并同意', 'qiling' ) );
+                    $agreement_link_text = developer_starter_get_option( 'register_agreement_link_text', __( '《用户服务协议》', 'qiling' ) );
                     $agreement_url = developer_starter_get_option( 'register_agreement_url', '' );
                 ?>
                 <div class="form-group agreement-group">
@@ -182,7 +182,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 <div class="form-message" id="phone-form-message"></div>
                 
                 <button type="submit" class="auth-submit" id="phone-submit-btn">
-                    <span class="btn-text"><?php esc_html_e( '立即注册', 'developer-starter' ); ?></span>
+                    <span class="btn-text"><?php esc_html_e( '立即注册', 'qiling' ); ?></span>
                     <span class="btn-loading">
                         <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>
                     </span>
@@ -204,18 +204,18 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="username">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </label>
-                    <input type="text" id="username" name="username" placeholder="<?php esc_attr_e( '用户名（至少3个字符）', 'developer-starter' ); ?>" required autocomplete="username" />
+                    <input type="text" id="username" name="username" placeholder="<?php esc_attr_e( '用户名（至少3个字符）', 'qiling' ); ?>" required autocomplete="username" />
                 </div>
                 
                 <div class="form-group">
                     <label for="email">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </label>
-                    <input type="email" id="email" name="email" placeholder="<?php esc_attr_e( '邮箱地址', 'developer-starter' ); ?>" required autocomplete="email" />
+                    <input type="email" id="email" name="email" placeholder="<?php esc_attr_e( '邮箱地址', 'qiling' ); ?>" required autocomplete="email" />
                 </div>
                 <?php if ( $email_domain_whitelist_text !== '' ) : ?>
                 <p class="email-whitelist-tip">
-                    <?php echo esc_html( sprintf( __( '仅支持以下邮箱后缀：%s', 'developer-starter' ), $email_domain_whitelist_text ) ); ?>
+                    <?php echo esc_html( sprintf( __( '仅支持以下邮箱后缀：%s', 'qiling' ), $email_domain_whitelist_text ) ); ?>
                 </p>
                 <?php endif; ?>
                 <?php if ( $register_email_code_enabled ) : ?>
@@ -223,11 +223,11 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="email_code">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                     </label>
-                    <input type="text" id="email_code" name="email_code" placeholder="<?php esc_attr_e( '请输入邮箱验证码', 'developer-starter' ); ?>" required maxlength="6" autocomplete="one-time-code" inputmode="numeric" />
-                    <button type="button" class="sms-send-btn" id="email-send-btn"><?php esc_html_e( '获取验证码', 'developer-starter' ); ?></button>
+                    <input type="text" id="email_code" name="email_code" placeholder="<?php esc_attr_e( '请输入邮箱验证码', 'qiling' ); ?>" required maxlength="6" autocomplete="one-time-code" inputmode="numeric" />
+                    <button type="button" class="sms-send-btn" id="email-send-btn"><?php esc_html_e( '获取验证码', 'qiling' ); ?></button>
                 </div>
                 <p class="email-whitelist-tip">
-                    <?php echo esc_html( sprintf( __( '验证码有效期 %d 分钟', 'developer-starter' ), (int) $register_email_code_expire_minutes ) ); ?>
+                    <?php echo esc_html( sprintf( __( '验证码有效期 %d 分钟', 'qiling' ), (int) $register_email_code_expire_minutes ) ); ?>
                 </p>
                 <?php endif; ?>
                 
@@ -235,7 +235,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="password">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     </label>
-                    <input type="password" id="password" name="password" placeholder="<?php esc_attr_e( '密码', 'developer-starter' ); ?>" required autocomplete="new-password" />
+                    <input type="password" id="password" name="password" placeholder="<?php esc_attr_e( '密码', 'qiling' ); ?>" required autocomplete="new-password" />
                     <button type="button" class="toggle-password" tabindex="-1">
                         <svg class="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                         <svg class="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
@@ -248,20 +248,20 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 </div>
 
                 <div class="password-check-list" id="password-check-list">
-                    <p><?php esc_html_e( '密码必须满足以下条件：', 'developer-starter' ); ?></p>
+                    <p><?php esc_html_e( '密码必须满足以下条件：', 'qiling' ); ?></p>
                     <ul class="requirements-list">
                         <?php if ( $password_strength === 'weak' ) : ?>
-                            <li data-rule="min-6" class="pending"><span class="icon">○</span> <?php esc_html_e( '至少6个字符', 'developer-starter' ); ?></li>
+                            <li data-rule="min-6" class="pending"><span class="icon">○</span> <?php esc_html_e( '至少6个字符', 'qiling' ); ?></li>
                         <?php elseif ( $password_strength === 'medium' ) : ?>
-                            <li data-rule="min-8" class="pending"><span class="icon">○</span> <?php esc_html_e( '至少8个字符', 'developer-starter' ); ?></li>
-                            <li data-rule="letter" class="pending"><span class="icon">○</span> <?php esc_html_e( '包含字母', 'developer-starter' ); ?></li>
-                            <li data-rule="number" class="pending"><span class="icon">○</span> <?php esc_html_e( '包含数字', 'developer-starter' ); ?></li>
+                            <li data-rule="min-8" class="pending"><span class="icon">○</span> <?php esc_html_e( '至少8个字符', 'qiling' ); ?></li>
+                            <li data-rule="letter" class="pending"><span class="icon">○</span> <?php esc_html_e( '包含字母', 'qiling' ); ?></li>
+                            <li data-rule="number" class="pending"><span class="icon">○</span> <?php esc_html_e( '包含数字', 'qiling' ); ?></li>
                         <?php elseif ( $password_strength === 'strong' ) : ?>
-                            <li data-rule="min-10" class="pending"><span class="icon">○</span> <?php esc_html_e( '至少10个字符', 'developer-starter' ); ?></li>
-                            <li data-rule="upper" class="pending"><span class="icon">○</span> <?php esc_html_e( '大写字母', 'developer-starter' ); ?></li>
-                            <li data-rule="lower" class="pending"><span class="icon">○</span> <?php esc_html_e( '小写字母', 'developer-starter' ); ?></li>
-                            <li data-rule="number" class="pending"><span class="icon">○</span> <?php esc_html_e( '数字', 'developer-starter' ); ?></li>
-                            <li data-rule="special" class="pending"><span class="icon">○</span> <?php esc_html_e( '特殊字符', 'developer-starter' ); ?></li>
+                            <li data-rule="min-10" class="pending"><span class="icon">○</span> <?php esc_html_e( '至少10个字符', 'qiling' ); ?></li>
+                            <li data-rule="upper" class="pending"><span class="icon">○</span> <?php esc_html_e( '大写字母', 'qiling' ); ?></li>
+                            <li data-rule="lower" class="pending"><span class="icon">○</span> <?php esc_html_e( '小写字母', 'qiling' ); ?></li>
+                            <li data-rule="number" class="pending"><span class="icon">○</span> <?php esc_html_e( '数字', 'qiling' ); ?></li>
+                            <li data-rule="special" class="pending"><span class="icon">○</span> <?php esc_html_e( '特殊字符', 'qiling' ); ?></li>
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -270,7 +270,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="password_confirm">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </label>
-                    <input type="password" id="password_confirm" name="password_confirm" placeholder="<?php esc_attr_e( '确认密码', 'developer-starter' ); ?>" required autocomplete="new-password" />
+                    <input type="password" id="password_confirm" name="password_confirm" placeholder="<?php esc_attr_e( '确认密码', 'qiling' ); ?>" required autocomplete="new-password" />
                 </div>
 
                 <?php if ( $register_code_enabled ) : ?>
@@ -278,7 +278,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                     <label for="registration_code">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg>
                     </label>
-                    <input type="text" id="registration_code" name="registration_code" placeholder="<?php esc_attr_e( '请输入注册码', 'developer-starter' ); ?>" autocomplete="off" />
+                    <input type="text" id="registration_code" name="registration_code" placeholder="<?php esc_attr_e( '请输入注册码', 'qiling' ); ?>" autocomplete="off" />
                 </div>
                 <?php if ( $register_code_obtain_enabled ) : ?>
                 <p class="email-whitelist-tip register-code-obtain-tip">
@@ -286,7 +286,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                         <span><?php echo esc_html( $register_code_obtain_link['tip_text'] ); ?></span>
                     <?php endif; ?>
                     <a href="<?php echo esc_url( $register_code_obtain_link['url'] ); ?>" target="_blank" rel="noopener noreferrer nofollow">
-                        <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'developer-starter' ) ); ?>
+                        <?php echo esc_html( ! empty( $register_code_obtain_link['link_text'] ) ? $register_code_obtain_link['link_text'] : __( '注册码获取', 'qiling' ) ); ?>
                     </a>
                 </p>
                 <?php endif; ?>
@@ -300,7 +300,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                             </div>
                             <div class="captcha-progress"></div>
-                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'developer-starter' ); ?></span>
+                            <span class="captcha-text"><?php esc_html_e( '向右滑动完成验证', 'qiling' ); ?></span>
                         </div>
                     </div>
                     <input type="hidden" name="captcha_verified" value="false" class="captcha-verified-input" />
@@ -310,8 +310,8 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 <?php 
                 $agreement_enable = developer_starter_get_option( 'register_agreement_enable', '' );
                 if ( $agreement_enable ) :
-                    $agreement_text = developer_starter_get_option( 'register_agreement_text', __( '我已阅读并同意', 'developer-starter' ) );
-                    $agreement_link_text = developer_starter_get_option( 'register_agreement_link_text', __( '《用户服务协议》', 'developer-starter' ) );
+                    $agreement_text = developer_starter_get_option( 'register_agreement_text', __( '我已阅读并同意', 'qiling' ) );
+                    $agreement_link_text = developer_starter_get_option( 'register_agreement_link_text', __( '《用户服务协议》', 'qiling' ) );
                     $agreement_url = developer_starter_get_option( 'register_agreement_url', '' );
                 ?>
                 <div class="form-group agreement-group">
@@ -333,7 +333,7 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
                 <div class="form-message" id="form-message"></div>
                 
                 <button type="submit" class="auth-submit" id="submit-btn">
-                    <span class="btn-text"><?php esc_html_e( '立即注册', 'developer-starter' ); ?></span>
+                    <span class="btn-text"><?php esc_html_e( '立即注册', 'qiling' ); ?></span>
                     <span class="btn-loading">
                         <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg>
                     </span>
@@ -350,13 +350,13 @@ $auth_page_sms_nonce = wp_create_nonce( 'sms_nonce' );
             </form>
             <?php else : ?>
             <div class="form-message error">
-                <?php esc_html_e( '当前注册方式未启用邮箱或手机号注册，请通过微信登录或联系管理员调整设置。', 'developer-starter' ); ?>
+                <?php esc_html_e( '当前注册方式未启用邮箱或手机号注册，请通过微信登录或联系管理员调整设置。', 'qiling' ); ?>
             </div>
             <?php endif; ?>
             
             <?php if ( $login_page_id ) : ?>
             <div class="auth-footer">
-                <p><?php esc_html_e( '已有账户？', 'developer-starter' ); ?><a href="<?php echo esc_url( get_permalink( $login_page_id ) ); ?>"><?php esc_html_e( '立即登录', 'developer-starter' ); ?></a></p>
+                <p><?php esc_html_e( '已有账户？', 'qiling' ); ?><a href="<?php echo esc_url( get_permalink( $login_page_id ) ); ?>"><?php esc_html_e( '立即登录', 'qiling' ); ?></a></p>
             </div>
             <?php endif; ?>
         </div>
@@ -377,23 +377,23 @@ $auth_page_config = array(
     'authNonce'                 => wp_create_nonce( 'developer_starter_auth' ),
     'smsNonce'                  => $auth_page_sms_nonce,
     'i18n'                      => array(
-        'sendCode'                 => __( '获取验证码', 'developer-starter' ),
-        'sending'                  => __( '发送中...', 'developer-starter' ),
-        'phoneInvalid'             => __( '请输入正确的手机号', 'developer-starter' ),
-        'smsCodeInvalid'           => __( '请输入6位验证码', 'developer-starter' ),
-        'emailInvalid'             => __( '请输入正确的邮箱地址', 'developer-starter' ),
-        'emailWhitelistPrefix'     => __( '当前仅支持以下邮箱后缀：', 'developer-starter' ),
-        'emailNotAllowed'          => __( '当前邮箱后缀不在允许范围内', 'developer-starter' ),
-        'emailCodeInvalid'         => __( '请输入6位邮箱验证码', 'developer-starter' ),
-        'registrationCodeRequired' => __( '请输入注册码', 'developer-starter' ),
-        'usernameChineseDisallowed' => __( '用户名不支持中文，请使用字母、数字或下划线', 'developer-starter' ),
-        'captchaRequired'          => __( '请先完成验证，再获取验证码', 'developer-starter' ),
-        'sendFailed'               => __( '发送失败，请稍后重试', 'developer-starter' ),
-        'networkErrorShort'        => __( '网络错误', 'developer-starter' ),
-        'networkErrorText'         => __( '网络错误，请稍后再试', 'developer-starter' ),
-        'passwordPerfect'          => __( '完美', 'developer-starter' ),
-        'passwordMedium'           => __( '一般', 'developer-starter' ),
-        'passwordWeak'             => __( '太弱', 'developer-starter' ),
+        'sendCode'                 => __( '获取验证码', 'qiling' ),
+        'sending'                  => __( '发送中...', 'qiling' ),
+        'phoneInvalid'             => __( '请输入正确的手机号', 'qiling' ),
+        'smsCodeInvalid'           => __( '请输入6位验证码', 'qiling' ),
+        'emailInvalid'             => __( '请输入正确的邮箱地址', 'qiling' ),
+        'emailWhitelistPrefix'     => __( '当前仅支持以下邮箱后缀：', 'qiling' ),
+        'emailNotAllowed'          => __( '当前邮箱后缀不在允许范围内', 'qiling' ),
+        'emailCodeInvalid'         => __( '请输入6位邮箱验证码', 'qiling' ),
+        'registrationCodeRequired' => __( '请输入注册码', 'qiling' ),
+        'usernameChineseDisallowed' => __( '用户名不支持中文，请使用字母、数字或下划线', 'qiling' ),
+        'captchaRequired'          => __( '请先完成验证，再获取验证码', 'qiling' ),
+        'sendFailed'               => __( '发送失败，请稍后重试', 'qiling' ),
+        'networkErrorShort'        => __( '网络错误', 'qiling' ),
+        'networkErrorText'         => __( '网络错误，请稍后再试', 'qiling' ),
+        'passwordPerfect'          => __( '完美', 'qiling' ),
+        'passwordMedium'           => __( '一般', 'qiling' ),
+        'passwordWeak'             => __( '太弱', 'qiling' ),
     ),
 );
 $auth_page_config_json = wp_json_encode( $auth_page_config, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT );

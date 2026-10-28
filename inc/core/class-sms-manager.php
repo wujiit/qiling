@@ -311,7 +311,7 @@ class SMS_Manager {
         $locked_until = (int) get_transient( $keys['lock'] );
         if ( $locked_until > time() ) {
             return sprintf(
-                __( '验证码输入错误过多，请 %s 后再试', 'developer-starter' ),
+                __( '验证码输入错误过多，请 %s 后再试', 'qiling' ),
                 human_time_diff( time(), $locked_until )
             );
         }
@@ -338,13 +338,13 @@ class SMS_Manager {
             delete_transient( $keys['attempts'] );
 
             return sprintf(
-                __( '验证码输入错误过多，请 %s 后再试', 'developer-starter' ),
+                __( '验证码输入错误过多，请 %s 后再试', 'qiling' ),
                 human_time_diff( time(), $locked_until )
             );
         }
 
         set_transient( $keys['attempts'], $attempts, self::VERIFY_WINDOW );
-        return __( '验证码错误或已过期', 'developer-starter' );
+        return __( '验证码错误或已过期', 'qiling' );
     }
 
     /**
@@ -494,7 +494,7 @@ class SMS_Manager {
         if ( ! $this->load_sdk() ) {
             return array(
                 'success' => false,
-                'message' => __( '短信服务环境不可用（需 PHP 8.1 或更高版本）', 'developer-starter' ),
+                'message' => __( '短信服务环境不可用（需 PHP 8.1 或更高版本）', 'qiling' ),
             );
         }
 
@@ -511,7 +511,7 @@ class SMS_Manager {
             );
             return array(
                 'success' => false,
-                'message' => __( '短信服务配置不完整', 'developer-starter' ),
+                'message' => __( '短信服务配置不完整', 'qiling' ),
             );
         }
 
@@ -537,7 +537,7 @@ class SMS_Manager {
             if ( $body->code === 'OK' ) {
                 return array(
                     'success' => true,
-                    'message' => __( '短信发送成功', 'developer-starter' ),
+                    'message' => __( '短信发送成功', 'qiling' ),
                 );
             } else {
                 developer_starter_log(
@@ -558,7 +558,7 @@ class SMS_Manager {
             developer_starter_log( 'sms', 'Custom send exception.', array( 'exception' => $e ), 'error' );
             return array(
                 'success' => false,
-                'message' => __( '短信发送失败，请稍后重试', 'developer-starter' ),
+                'message' => __( '短信发送失败，请稍后重试', 'qiling' ),
             );
         }
     }
@@ -571,7 +571,7 @@ class SMS_Manager {
         if ( ! $this->load_sdk() ) {
             return array(
                 'success' => false,
-                'message' => __( '短信服务环境不可用（需 PHP 8.1 或更高版本）', 'developer-starter' ),
+                'message' => __( '短信服务环境不可用（需 PHP 8.1 或更高版本）', 'qiling' ),
             );
         }
 
@@ -584,7 +584,7 @@ class SMS_Manager {
             developer_starter_log( 'sms', 'Configuration incomplete.', array(), 'warning' );
             return array(
                 'success' => false,
-                'message' => __( '短信服务配置不完整', 'developer-starter' ),
+                'message' => __( '短信服务配置不完整', 'qiling' ),
             );
         }
 
@@ -610,7 +610,7 @@ class SMS_Manager {
             if ( $body->code === 'OK' ) {
                 return array(
                     'success' => true,
-                    'message' => __( '验证码发送成功', 'developer-starter' ),
+                    'message' => __( '验证码发送成功', 'qiling' ),
                 );
             } else {
                 developer_starter_log(
@@ -631,7 +631,7 @@ class SMS_Manager {
             developer_starter_log( 'sms', 'Send exception.', array( 'exception' => $e ), 'error' );
             return array(
                 'success' => false,
-                'message' => __( '短信发送失败，请稍后重试', 'developer-starter' ),
+                'message' => __( '短信发送失败，请稍后重试', 'qiling' ),
             );
         }
     }
@@ -641,14 +641,14 @@ class SMS_Manager {
      */
     private function get_error_message( $code ) {
         $messages = array(
-            'isv.BUSINESS_LIMIT_CONTROL' => __( '发送频率过快，请稍后重试', 'developer-starter' ),
-            'isv.MOBILE_NUMBER_ILLEGAL' => __( '手机号格式错误', 'developer-starter' ),
-            'isv.SMS_SIGNATURE_SCENE_ILLEGAL' => __( '签名和模板类型不一致', 'developer-starter' ),
-            'isv.TEMPLATE_MISSING_PARAMETERS' => __( '模板参数缺失', 'developer-starter' ),
-            'isv.INVALID_PARAMETERS' => __( '参数错误', 'developer-starter' ),
-            'isv.AMOUNT_NOT_ENOUGH' => __( '账户余额不足', 'developer-starter' ),
+            'isv.BUSINESS_LIMIT_CONTROL' => __( '发送频率过快，请稍后重试', 'qiling' ),
+            'isv.MOBILE_NUMBER_ILLEGAL' => __( '手机号格式错误', 'qiling' ),
+            'isv.SMS_SIGNATURE_SCENE_ILLEGAL' => __( '签名和模板类型不一致', 'qiling' ),
+            'isv.TEMPLATE_MISSING_PARAMETERS' => __( '模板参数缺失', 'qiling' ),
+            'isv.INVALID_PARAMETERS' => __( '参数错误', 'qiling' ),
+            'isv.AMOUNT_NOT_ENOUGH' => __( '账户余额不足', 'qiling' ),
         );
-        return isset( $messages[ $code ] ) ? $messages[ $code ] : sprintf( __( '短信发送失败（%s）', 'developer-starter' ), $code );
+        return isset( $messages[ $code ] ) ? $messages[ $code ] : sprintf( __( '短信发送失败（%s）', 'qiling' ), $code );
     }
 
     /**
@@ -658,14 +658,14 @@ class SMS_Manager {
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! self::is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'qiling' ) ) );
         }
 
         // 游客场景：先消费验证码 token，确保任意失败后都必须重新验证
         if ( developer_starter_get_option( 'auth_captcha_enable', '' ) && ! is_user_logged_in() ) {
             $captcha = isset( $_POST['captcha_verified'] ) ? sanitize_text_field( wp_unslash( $_POST['captcha_verified'] ) ) : '';
             if ( ! $this->consume_captcha_token( $captcha ) ) {
-                wp_send_json_error( array( 'message' => __( '请完成滑动验证', 'developer-starter' ) ) );
+                wp_send_json_error( array( 'message' => __( '请完成滑动验证', 'qiling' ) ) );
             }
         }
 
@@ -673,24 +673,24 @@ class SMS_Manager {
         $phone = self::validate_phone( $phone );
 
         if ( ! $phone ) {
-            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'qiling' ) ) );
         }
 
         $ip = developer_starter_get_client_ip();
         $device_fingerprint = $this->get_device_fingerprint();
 
         if ( ! self::can_send( $phone, $device_fingerprint ) ) {
-            wp_send_json_error( array( 'message' => __( '发送过于频繁，请稍后重试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '发送过于频繁，请稍后重试', 'qiling' ) ) );
         }
 
         // 检查IP限制
         if ( ! $this->check_ip_limit( $ip ) ) {
-            wp_send_json_error( array( 'message' => __( '今日发送次数已达上限，请明天再试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '今日发送次数已达上限，请明天再试', 'qiling' ) ) );
         }
 
         // 检查设备限制
         if ( ! $this->check_device_limit( $device_fingerprint ) ) {
-            wp_send_json_error( array( 'message' => __( '当前设备今日发送次数已达上限，请明天再试', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '当前设备今日发送次数已达上限，请明天再试', 'qiling' ) ) );
         }
 
         $code = self::generate_code();
@@ -701,7 +701,7 @@ class SMS_Manager {
             self::set_send_lock( $phone, $device_fingerprint );
             $this->increment_ip_count( $ip ); // 增加IP计数
             $this->increment_device_count( $device_fingerprint );
-            wp_send_json_success( array( 'message' => __( '验证码已发送', 'developer-starter' ) ) );
+            wp_send_json_success( array( 'message' => __( '验证码已发送', 'qiling' ) ) );
         } else {
             wp_send_json_error( array( 'message' => $result['message'] ) );
         }
@@ -714,7 +714,7 @@ class SMS_Manager {
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! self::is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'qiling' ) ) );
         }
 
         $phone = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
@@ -723,11 +723,11 @@ class SMS_Manager {
         $phone = self::validate_phone( $phone );
 
         if ( ! $phone ) {
-            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'qiling' ) ) );
         }
 
         if ( empty( $code ) ) {
-            wp_send_json_error( array( 'message' => __( '请输入验证码', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入验证码', 'qiling' ) ) );
         }
 
         $verify_result = $this->verify_code_with_rate_limit( $phone, $code, 'phone_login' );
@@ -743,11 +743,11 @@ class SMS_Manager {
 
         if ( ! $user ) {
             if ( ! self::is_phone_registration_allowed() ) {
-                wp_send_json_error( array( 'message' => __( '当前站点未开启手机号注册', 'developer-starter' ) ) );
+                wp_send_json_error( array( 'message' => __( '当前站点未开启手机号注册', 'qiling' ) ) );
             }
 
             if ( ! get_option( 'users_can_register' ) ) {
-                wp_send_json_error( array( 'message' => __( '网站已关闭注册功能，请使用已注册账号登录', 'developer-starter' ) ) );
+                wp_send_json_error( array( 'message' => __( '网站已关闭注册功能，请使用已注册账号登录', 'qiling' ) ) );
             }
 
             // 自动注册新用户
@@ -767,7 +767,7 @@ class SMS_Manager {
         $redirect_to = wp_validate_redirect( $redirect_to, home_url() );
 
         wp_send_json_success( array(
-            'message' => __( '登录成功', 'developer-starter' ),
+            'message' => __( '登录成功', 'qiling' ),
             'redirect' => $redirect_to,
         ) );
     }
@@ -779,14 +779,14 @@ class SMS_Manager {
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! self::is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'qiling' ) ) );
         }
         if ( ! self::is_phone_registration_allowed() ) {
-            wp_send_json_error( array( 'message' => __( '当前站点未开启手机号注册', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '当前站点未开启手机号注册', 'qiling' ) ) );
         }
 
         if ( ! get_option( 'users_can_register' ) ) {
-            wp_send_json_error( array( 'message' => __( '注册功能已关闭', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '注册功能已关闭', 'qiling' ) ) );
         }
 
         $phone = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
@@ -795,7 +795,7 @@ class SMS_Manager {
         $phone = self::validate_phone( $phone );
 
         if ( ! $phone ) {
-            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'qiling' ) ) );
         }
 
         $verify_result = $this->verify_code_with_rate_limit( $phone, $code, 'phone_register' );
@@ -805,7 +805,7 @@ class SMS_Manager {
 
         // 检查手机号是否已注册
         if ( $this->get_user_by_phone( $phone ) ) {
-            wp_send_json_error( array( 'message' => __( '该手机号已注册，请直接登录', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '该手机号已注册，请直接登录', 'qiling' ) ) );
         }
 
         // 删除验证码
@@ -827,7 +827,7 @@ class SMS_Manager {
         $redirect_to = wp_validate_redirect( $redirect_to, home_url() );
 
         wp_send_json_success( array(
-            'message' => __( '注册成功', 'developer-starter' ),
+            'message' => __( '注册成功', 'qiling' ),
             'redirect' => $redirect_to,
         ) );
     }
@@ -839,7 +839,7 @@ class SMS_Manager {
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! self::is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'qiling' ) ) );
         }
 
         $phone = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
@@ -849,7 +849,7 @@ class SMS_Manager {
         $phone = self::validate_phone( $phone );
 
         if ( ! $phone ) {
-            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'qiling' ) ) );
         }
 
         $verify_result = $this->verify_code_with_rate_limit( $phone, $code, 'phone_reset_password' );
@@ -858,12 +858,12 @@ class SMS_Manager {
         }
 
         if ( strlen( $new_password ) < 6 ) {
-            wp_send_json_error( array( 'message' => __( '密码长度至少6位', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '密码长度至少6位', 'qiling' ) ) );
         }
 
         $user = $this->get_user_by_phone( $phone );
         if ( ! $user ) {
-            wp_send_json_error( array( 'message' => __( '该手机号未绑定任何账户', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '该手机号未绑定任何账户', 'qiling' ) ) );
         }
 
         // 删除验证码
@@ -876,7 +876,7 @@ class SMS_Manager {
         $sessions = \WP_Session_Tokens::get_instance( $user->ID );
         $sessions->destroy_all();
 
-        wp_send_json_success( array( 'message' => __( '密码重置成功，请使用新密码登录', 'developer-starter' ) ) );
+        wp_send_json_success( array( 'message' => __( '密码重置成功，请使用新密码登录', 'qiling' ) ) );
     }
 
     /**
@@ -886,11 +886,11 @@ class SMS_Manager {
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! is_user_logged_in() ) {
-            wp_send_json_error( array( 'message' => __( '请先登录', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先登录', 'qiling' ) ) );
         }
 
         if ( ! self::is_enabled() ) {
-            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '短信服务未启用', 'qiling' ) ) );
         }
 
         $phone = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
@@ -898,7 +898,7 @@ class SMS_Manager {
         $phone = self::validate_phone( $phone );
 
         if ( ! $phone ) {
-            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请输入正确的手机号', 'qiling' ) ) );
         }
 
         $verify_result = $this->verify_code_with_rate_limit( $phone, $code, 'bind_phone' );
@@ -909,7 +909,7 @@ class SMS_Manager {
         // 检查手机号是否被其他用户绑定
         $existing_user = $this->get_user_by_phone( $phone );
         if ( $existing_user && $existing_user->ID !== get_current_user_id() ) {
-            wp_send_json_error( array( 'message' => __( '该手机号已被其他账户绑定', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '该手机号已被其他账户绑定', 'qiling' ) ) );
         }
 
         // 删除验证码
@@ -930,7 +930,7 @@ class SMS_Manager {
             );
         }
 
-        wp_send_json_success( array( 'message' => __( '手机号绑定成功', 'developer-starter' ) ) );
+        wp_send_json_success( array( 'message' => __( '手机号绑定成功', 'qiling' ) ) );
     }
 
     /**
@@ -940,19 +940,19 @@ class SMS_Manager {
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! is_user_logged_in() ) {
-            wp_send_json_error( array( 'message' => __( '请先登录', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '请先登录', 'qiling' ) ) );
         }
 
         // 安全验证：需要密码确认
         // 密码需要按原文校验，只做 wp_unslash()，不要做文本 sanitize。
         $password = isset( $_POST['password'] ) && ! is_array( $_POST['password'] ) ? (string) wp_unslash( $_POST['password'] ) : '';
         if ( empty( $password ) ) {
-            wp_send_json_error( array( 'message' => __( '为了您的账户安全，请输入密码进行验证', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '为了您的账户安全，请输入密码进行验证', 'qiling' ) ) );
         }
 
         $user = wp_get_current_user();
         if ( ! wp_check_password( $password, $user->user_pass, $user->ID ) ) {
-            wp_send_json_error( array( 'message' => __( '密码错误，无法解绑', 'developer-starter' ) ) );
+            wp_send_json_error( array( 'message' => __( '密码错误，无法解绑', 'qiling' ) ) );
         }
 
         $user_id = $user->ID;
@@ -962,7 +962,7 @@ class SMS_Manager {
             developer_starter_clear_user_phone_location_meta( $user_id );
         }
 
-        wp_send_json_success( array( 'message' => __( '手机号已解绑', 'developer-starter' ) ) );
+        wp_send_json_success( array( 'message' => __( '手机号已解绑', 'qiling' ) ) );
     }
 
     /**
@@ -986,20 +986,20 @@ class SMS_Manager {
         // 注册码校验（新用户创建前）
         if ( function_exists( 'qilingshop_registration_code_is_enabled' ) && qilingshop_registration_code_is_enabled() ) {
             if ( empty( $registration_code ) ) {
-                return new \WP_Error( 'registration_code_required', __( '请输入注册码', 'developer-starter' ) );
+                return new \WP_Error( 'registration_code_required', __( '请输入注册码', 'qiling' ) );
             }
 
             if ( ! function_exists( 'qilingshop_registration_code_consume_for_registration' ) ) {
-                return new \WP_Error( 'registration_code_service_missing', __( '注册码服务未加载，请联系管理员', 'developer-starter' ) );
+                return new \WP_Error( 'registration_code_service_missing', __( '注册码服务未加载，请联系管理员', 'qiling' ) );
             }
 
             $consume = qilingshop_registration_code_consume_for_registration( $registration_code, array(
                 'register_source' => sanitize_key( $register_source ),
-                'message'         => __( '手机号注册流程预占用', 'developer-starter' ),
+                'message'         => __( '手机号注册流程预占用', 'qiling' ),
             ) );
 
             if ( empty( $consume['success'] ) ) {
-                $msg = ! empty( $consume['message'] ) ? $consume['message'] : __( '注册码校验失败', 'developer-starter' );
+                $msg = ! empty( $consume['message'] ) ? $consume['message'] : __( '注册码校验失败', 'qiling' );
                 return new \WP_Error( 'registration_code_invalid', $msg );
             }
 
@@ -1025,7 +1025,7 @@ class SMS_Manager {
 
         if ( is_wp_error( $user_id ) ) {
             if ( $registration_code_log_id > 0 && function_exists( 'qilingshop_registration_code_rollback_consumption' ) ) {
-                qilingshop_registration_code_rollback_consumption( $registration_code_log_id, __( '手机号注册失败，注册码已回滚', 'developer-starter' ) );
+                qilingshop_registration_code_rollback_consumption( $registration_code_log_id, __( '手机号注册失败，注册码已回滚', 'qiling' ) );
             }
             return $user_id;
         }
@@ -1053,7 +1053,7 @@ class SMS_Manager {
         ) );
 
         if ( $registration_code_log_id > 0 && function_exists( 'qilingshop_registration_code_confirm_consumption' ) ) {
-            qilingshop_registration_code_confirm_consumption( $registration_code_log_id, $user_id, __( '手机号注册成功，注册码生效', 'developer-starter' ) );
+            qilingshop_registration_code_confirm_consumption( $registration_code_log_id, $user_id, __( '手机号注册成功，注册码生效', 'qiling' ) );
         }
 
         return $user_id;

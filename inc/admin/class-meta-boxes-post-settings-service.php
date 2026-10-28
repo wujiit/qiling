@@ -41,66 +41,66 @@ class Meta_Boxes_Post_Settings_Service {
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
                     <div style="display: flex; align-items: center; gap: 6px;">
                         <span class="dashicons dashicons-admin-home" style="color: #2271b1; font-size: 18px; width: 18px; height: 18px;"></span>
-                        <strong style="font-size: 13px; color: #1d2327;"><?php esc_html_e( '此页面当前已被设置为【网站静态首页】', 'developer-starter' ); ?></strong>
+                        <strong style="font-size: 13px; color: #1d2327;"><?php esc_html_e( '此页面当前已被设置为【网站静态首页】', 'qiling' ); ?></strong>
                     </div>
-                    <span style="background: #2271b1; color: #fff; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px;"><?php esc_html_e( '全站首页生效中', 'developer-starter' ); ?></span>
+                    <span style="background: #2271b1; color: #fff; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px;"><?php esc_html_e( '全站首页生效中', 'qiling' ); ?></span>
                 </div>
                 <p style="margin: 0 0 8px; font-size: 12px; line-height: 1.6; color: #3c434a;">
-                    <?php esc_html_e( '启灵主题支持首页专属定制：页面模版内置预设或您在下方填写的 SEO 标题、描述与关键词将直接生效于网站首页，优先级高于主题后台的默认配置。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '启灵主题支持首页专属定制：页面模版内置预设或您在下方填写的 SEO 标题、描述与关键词将直接生效于网站首页，优先级高于主题后台的默认配置。', 'qiling' ); ?>
                 </p>
                 <div style="background: #fff; border: 1px dashed #cbd5e1; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #475569; line-height: 1.6;">
                     <span class="dashicons dashicons-info" style="color: #2271b1; font-size: 15px; width: 15px; height: 15px; vertical-align: -2px; margin-right: 2px;"></span>
-                    <strong><?php esc_html_e( '全站回退提示：', 'developer-starter' ); ?></strong>
-                    <?php esc_html_e( '若您希望该首页采用【主题设置 - 高级 - SEO 设置】中的全站统一默认配置，只需将下方对应字段清空留空保存即可，系统将自动无缝回退。', 'developer-starter' ); ?>
-                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=developer-starter-settings#tab-advanced' ) ); ?>" target="_blank" style="margin-left: 4px; text-decoration: none;"><?php esc_html_e( '查看全站 SEO 设置 &rarr;', 'developer-starter' ); ?></a>
+                    <strong><?php esc_html_e( '全站回退提示：', 'qiling' ); ?></strong>
+                    <?php esc_html_e( '若您希望该首页采用【主题设置 - 高级 - SEO 设置】中的全站统一默认配置，只需将下方对应字段清空留空保存即可，系统将自动无缝回退。', 'qiling' ); ?>
+                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=qiling-settings#tab-advanced' ) ); ?>" target="_blank" style="margin-left: 4px; text-decoration: none;"><?php esc_html_e( '查看全站 SEO 设置 &rarr;', 'qiling' ); ?></a>
                 </div>
             </div>
         <?php elseif ( $is_posts_page ) : ?>
             <div class="qiling-seo-postspage-notice" style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #0ea5e9; border-radius: 6px; padding: 12px 14px; margin-bottom: 16px;">
                 <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
                     <span class="dashicons dashicons-welcome-write-blog" style="color: #0ea5e9; font-size: 18px; width: 18px; height: 18px;"></span>
-                    <strong style="font-size: 13px; color: #1d2327;"><?php esc_html_e( '此页面当前已被设置为【文章列表页】', 'developer-starter' ); ?></strong>
+                    <strong style="font-size: 13px; color: #1d2327;"><?php esc_html_e( '此页面当前已被设置为【文章列表页】', 'qiling' ); ?></strong>
                 </div>
                 <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #475569;">
-                    <?php esc_html_e( '您在此处配置的 SEO 标题、描述与关键词将作用于博客文章列表归档页。留空时将自动采用全站默认配置。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '您在此处配置的 SEO 标题、描述与关键词将作用于博客文章列表归档页。留空时将自动采用全站默认配置。', 'qiling' ); ?>
                 </p>
             </div>
         <?php endif; ?>
         <p>
-            <label><strong><?php esc_html_e( 'SEO标题', 'developer-starter' ); ?></strong></label>
+            <label><strong><?php esc_html_e( 'SEO标题', 'qiling' ); ?></strong></label>
             <?php if ( $is_front_page && ! empty( $theme_default_title ) ) : ?>
-                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局标题: %s', 'developer-starter' ), $theme_default_title ) ); ?>)</span>
+                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局标题: %s', 'qiling' ), $theme_default_title ) ); ?>)</span>
             <?php endif; ?>
             <br>
             <input type="text" name="seo_title" value="<?php echo esc_attr( $t ); ?>" class="large-text" placeholder="<?php echo $is_front_page && ! empty( $theme_default_title ) ? esc_attr( $theme_default_title ) : ''; ?>"/>
         </p>
         <p>
-            <label><strong><?php esc_html_e( 'SEO描述', 'developer-starter' ); ?></strong></label>
+            <label><strong><?php esc_html_e( 'SEO描述', 'qiling' ); ?></strong></label>
             <?php if ( $is_front_page && ! empty( $theme_default_desc ) ) : ?>
-                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局描述: %s', 'developer-starter' ), mb_substr( $theme_default_desc, 0, 30 ) . ( mb_strlen( $theme_default_desc ) > 30 ? '...' : '' ) ) ); ?>)</span>
+                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局描述: %s', 'qiling' ), mb_substr( $theme_default_desc, 0, 30 ) . ( mb_strlen( $theme_default_desc ) > 30 ? '...' : '' ) ) ); ?>)</span>
             <?php endif; ?>
             <br>
             <textarea name="seo_description" rows="2" class="large-text" placeholder="<?php echo $is_front_page && ! empty( $theme_default_desc ) ? esc_attr( $theme_default_desc ) : ''; ?>"><?php echo esc_textarea( $d ); ?></textarea>
         </p>
         <p>
-            <label><strong><?php esc_html_e( 'SEO关键词', 'developer-starter' ); ?></strong></label>
+            <label><strong><?php esc_html_e( 'SEO关键词', 'qiling' ); ?></strong></label>
             <?php if ( $is_front_page && ! empty( $theme_default_kw ) ) : ?>
-                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局关键词: %s', 'developer-starter' ), $theme_default_kw ) ); ?>)</span>
+                <span class="description" style="margin-left: 6px; font-size: 12px; color: #64748b;">(<?php echo esc_html( sprintf( __( '留空自动使用主题全局关键词: %s', 'qiling' ), $theme_default_kw ) ); ?>)</span>
             <?php endif; ?>
             <br>
             <input type="text" name="seo_keywords" value="<?php echo esc_attr( $k ); ?>" class="large-text" placeholder="<?php echo $is_front_page && ! empty( $theme_default_kw ) ? esc_attr( $theme_default_kw ) : ''; ?>"/>
         </p>
         <hr style="margin: 16px 0;">
-        <p><label><strong><?php esc_html_e( 'Canonical URL（可选）', 'developer-starter' ); ?></strong></label><br><input type="url" name="seo_canonical" value="<?php echo esc_url( $canonical ); ?>" class="large-text" placeholder="https://example.com/custom-canonical/" /></p>
+        <p><label><strong><?php esc_html_e( 'Canonical URL（可选）', 'qiling' ); ?></strong></label><br><input type="url" name="seo_canonical" value="<?php echo esc_url( $canonical ); ?>" class="large-text" placeholder="https://example.com/custom-canonical/" /></p>
         <p>
-            <label style="margin-right: 20px;"><input type="checkbox" name="seo_noindex" value="1" <?php checked( $noindex, '1' ); ?> /> <?php esc_html_e( '该页面设置为 noindex', 'developer-starter' ); ?></label>
-            <label><input type="checkbox" name="seo_nofollow" value="1" <?php checked( $nofollow, '1' ); ?> /> <?php esc_html_e( '该页面设置为 nofollow', 'developer-starter' ); ?></label>
+            <label style="margin-right: 20px;"><input type="checkbox" name="seo_noindex" value="1" <?php checked( $noindex, '1' ); ?> /> <?php esc_html_e( '该页面设置为 noindex', 'qiling' ); ?></label>
+            <label><input type="checkbox" name="seo_nofollow" value="1" <?php checked( $nofollow, '1' ); ?> /> <?php esc_html_e( '该页面设置为 nofollow', 'qiling' ); ?></label>
         </p>
-        <p class="description"><?php esc_html_e( '用于专题页、活动页等精细化SEO控制。', 'developer-starter' ); ?></p>
+        <p class="description"><?php esc_html_e( '用于专题页、活动页等精细化SEO控制。', 'qiling' ); ?></p>
         <hr style="margin: 16px 0;">
-        <p><label><strong><?php esc_html_e( 'Open Graph 标题（可覆盖）', 'developer-starter' ); ?></strong></label><br><input type="text" name="og_title" value="<?php echo esc_attr( $og_title ); ?>" class="large-text"/></p>
-        <p><label><strong><?php esc_html_e( 'Open Graph 描述（可覆盖）', 'developer-starter' ); ?></strong></label><br><textarea name="og_description" rows="2" class="large-text"><?php echo esc_textarea( $og_desc ); ?></textarea></p>
-        <p><label><strong><?php esc_html_e( 'Open Graph 图片URL（可覆盖）', 'developer-starter' ); ?></strong></label><br><input type="url" name="og_image" value="<?php echo esc_url( $og_image ); ?>" class="large-text" placeholder="https://example.com/cover.jpg" /></p>
+        <p><label><strong><?php esc_html_e( 'Open Graph 标题（可覆盖）', 'qiling' ); ?></strong></label><br><input type="text" name="og_title" value="<?php echo esc_attr( $og_title ); ?>" class="large-text"/></p>
+        <p><label><strong><?php esc_html_e( 'Open Graph 描述（可覆盖）', 'qiling' ); ?></strong></label><br><textarea name="og_description" rows="2" class="large-text"><?php echo esc_textarea( $og_desc ); ?></textarea></p>
+        <p><label><strong><?php esc_html_e( 'Open Graph 图片URL（可覆盖）', 'qiling' ); ?></strong></label><br><input type="url" name="og_image" value="<?php echo esc_url( $og_image ); ?>" class="large-text" placeholder="https://example.com/cover.jpg" /></p>
         <?php
         $this->render_seo_basic_score( $post );
         $this->render_multilingual_seo_status_matrix( $post );
@@ -146,8 +146,8 @@ class Meta_Boxes_Post_Settings_Service {
         </style>';
         echo '<div class="qiling-seo-basic-score__head">';
         echo '<span class="qiling-seo-basic-score__badge is-' . esc_attr( $tone ) . '">' . esc_html( (string) $value ) . '</span>';
-        echo '<div><h4 style="margin:0;">' . esc_html__( 'SEO 基础评分', 'developer-starter' ) . '</h4>';
-        echo '<p class="description" style="margin:3px 0 0;">' . esc_html( sprintf( __( '%s。基于规则检查，不调用 AI，不保存额外数据。', 'developer-starter' ), $grade ) ) . '</p></div>';
+        echo '<div><h4 style="margin:0;">' . esc_html__( 'SEO 基础评分', 'qiling' ) . '</h4>';
+        echo '<p class="description" style="margin:3px 0 0;">' . esc_html( sprintf( __( '%s。基于规则检查，不调用 AI，不保存额外数据。', 'qiling' ), $grade ) ) . '</p></div>';
         echo '</div>';
 
         $checks = isset( $score['checks'] ) && is_array( $score['checks'] ) ? $score['checks'] : array();
@@ -186,10 +186,10 @@ class Meta_Boxes_Post_Settings_Service {
 
         echo '<hr style="margin: 18px 0;">';
         echo '<div class="qiling-ml-seo-matrix">';
-        echo '<h4>' . esc_html__( '多语言 SEO 状态矩阵', 'developer-starter' ) . '</h4>';
+        echo '<h4>' . esc_html__( '多语言 SEO 状态矩阵', 'qiling' ) . '</h4>';
 
         if ( ! function_exists( 'xb_aifanyi_get_post_seo_diagnostics' ) ) {
-            echo '<p class="description">' . esc_html__( '未检测到启灵AI多语言插件；当前仅显示主题本页 SEO 设置。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '未检测到启灵AI多语言插件；当前仅显示主题本页 SEO 设置。', 'qiling' ) . '</p>';
             echo '</div>';
             return;
         }
@@ -200,22 +200,22 @@ class Meta_Boxes_Post_Settings_Service {
             : array();
 
         if ( empty( $languages ) ) {
-            echo '<p class="description">' . esc_html__( '启灵AI多语言暂未提供语言诊断数据。', 'developer-starter' ) . '</p>';
+            echo '<p class="description">' . esc_html__( '启灵AI多语言暂未提供语言诊断数据。', 'qiling' ) . '</p>';
             echo '</div>';
             return;
         }
 
-        echo '<p class="description">' . esc_html__( 'canonical 与 hreflang 按启灵AI多语言 URL 规则判断；OG image、noindex 和 nofollow 默认继承原页面，不计入译文缺失项。', 'developer-starter' ) . '</p>';
+        echo '<p class="description">' . esc_html__( 'canonical 与 hreflang 按启灵AI多语言 URL 规则判断；OG image、noindex 和 nofollow 默认继承原页面，不计入译文缺失项。', 'qiling' ) . '</p>';
         echo '<div class="qiling-ml-seo-matrix__scroll">';
         echo '<table class="widefat striped qiling-ml-seo-matrix__table">';
         echo '<thead><tr>';
-        echo '<th>' . esc_html__( '语言', 'developer-starter' ) . '</th>';
-        echo '<th>' . esc_html__( '译文状态', 'developer-starter' ) . '</th>';
-        echo '<th>' . esc_html__( 'SEO 状态', 'developer-starter' ) . '</th>';
-        echo '<th>' . esc_html__( 'OG 状态', 'developer-starter' ) . '</th>';
-        echo '<th>' . esc_html__( 'canonical', 'developer-starter' ) . '</th>';
-        echo '<th>' . esc_html__( 'hreflang', 'developer-starter' ) . '</th>';
-        echo '<th>' . esc_html__( '前台查看', 'developer-starter' ) . '</th>';
+        echo '<th>' . esc_html__( '语言', 'qiling' ) . '</th>';
+        echo '<th>' . esc_html__( '译文状态', 'qiling' ) . '</th>';
+        echo '<th>' . esc_html__( 'SEO 状态', 'qiling' ) . '</th>';
+        echo '<th>' . esc_html__( 'OG 状态', 'qiling' ) . '</th>';
+        echo '<th>' . esc_html__( 'canonical', 'qiling' ) . '</th>';
+        echo '<th>' . esc_html__( 'hreflang', 'qiling' ) . '</th>';
+        echo '<th>' . esc_html__( '前台查看', 'qiling' ) . '</th>';
         echo '</tr></thead><tbody>';
 
         foreach ( $languages as $language ) {
@@ -237,12 +237,12 @@ class Meta_Boxes_Post_Settings_Service {
 
             echo '<tr>';
             echo '<td><strong>' . esc_html( $name ) . '</strong><br><span>' . esc_html( $code . ' / ' . $locale ) . '</span></td>';
-            echo '<td>' . $this->get_multilingual_seo_matrix_badge( $is_default || $has_public_translation ? 'pass' : 'warning', $is_default ? __( '原文', 'developer-starter' ) : ( $has_public_translation ? __( '已公开', 'developer-starter' ) : __( '缺失', 'developer-starter' ) ) ) . '</td>';
+            echo '<td>' . $this->get_multilingual_seo_matrix_badge( $is_default || $has_public_translation ? 'pass' : 'warning', $is_default ? __( '原文', 'qiling' ) : ( $has_public_translation ? __( '已公开', 'qiling' ) : __( '缺失', 'qiling' ) ) ) . '</td>';
             echo '<td>' . wp_kses_post( $this->get_multilingual_seo_status_label( $seo, array( 'title', 'description', 'keywords' ) ) ) . '</td>';
             echo '<td>' . wp_kses_post( $this->get_multilingual_seo_status_label( $og, array( 'title', 'description' ) ) ) . '</td>';
-            echo '<td>' . ( '' !== $canonical_url ? '<a href="' . esc_url( $canonical_url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $this->truncate_multilingual_seo_url( $canonical_url ) ) . '</a>' : esc_html__( '未生成', 'developer-starter' ) ) . '</td>';
-            echo '<td><code>' . esc_html( $hreflang ) . '</code><br>' . ( '' !== $hreflang_url ? '<a href="' . esc_url( $hreflang_url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $this->truncate_multilingual_seo_url( $hreflang_url ) ) . '</a>' : esc_html__( '未生成', 'developer-starter' ) ) . '</td>';
-            echo '<td>' . ( '' !== $url ? '<a class="button button-small" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( '查看', 'developer-starter' ) . '</a>' : '-' ) . '</td>';
+            echo '<td>' . ( '' !== $canonical_url ? '<a href="' . esc_url( $canonical_url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $this->truncate_multilingual_seo_url( $canonical_url ) ) . '</a>' : esc_html__( '未生成', 'qiling' ) ) . '</td>';
+            echo '<td><code>' . esc_html( $hreflang ) . '</code><br>' . ( '' !== $hreflang_url ? '<a href="' . esc_url( $hreflang_url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $this->truncate_multilingual_seo_url( $hreflang_url ) ) . '</a>' : esc_html__( '未生成', 'qiling' ) ) . '</td>';
+            echo '<td>' . ( '' !== $url ? '<a class="button button-small" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( '查看', 'qiling' ) . '</a>' : '-' ) . '</td>';
             echo '</tr>';
         }
 
@@ -326,17 +326,17 @@ class Meta_Boxes_Post_Settings_Service {
         }
 
         if ( $filled >= $total ) {
-            return $this->get_multilingual_seo_matrix_badge( 'pass', __( '完整', 'developer-starter' ) )
-                . '<span class="qiling-ml-seo-status-detail">' . esc_html( sprintf( __( '%1$d/%2$d 已填写', 'developer-starter' ), $filled, $total ) ) . '</span>';
+            return $this->get_multilingual_seo_matrix_badge( 'pass', __( '完整', 'qiling' ) )
+                . '<span class="qiling-ml-seo-status-detail">' . esc_html( sprintf( __( '%1$d/%2$d 已填写', 'qiling' ), $filled, $total ) ) . '</span>';
         }
 
         if ( $filled > 0 ) {
-            return $this->get_multilingual_seo_matrix_badge( 'warning', __( '部分', 'developer-starter' ) )
-                . '<span class="qiling-ml-seo-status-detail">' . esc_html( sprintf( __( '%1$d/%2$d 已填写', 'developer-starter' ), $filled, $total ) ) . '</span>';
+            return $this->get_multilingual_seo_matrix_badge( 'warning', __( '部分', 'qiling' ) )
+                . '<span class="qiling-ml-seo-status-detail">' . esc_html( sprintf( __( '%1$d/%2$d 已填写', 'qiling' ), $filled, $total ) ) . '</span>';
         }
 
-        return $this->get_multilingual_seo_matrix_badge( 'warning', __( '缺失', 'developer-starter' ) )
-            . '<span class="qiling-ml-seo-status-detail">' . esc_html( sprintf( __( '%1$d/%2$d 已填写', 'developer-starter' ), $filled, $total ) ) . '</span>';
+        return $this->get_multilingual_seo_matrix_badge( 'warning', __( '缺失', 'qiling' ) )
+            . '<span class="qiling-ml-seo-status-detail">' . esc_html( sprintf( __( '%1$d/%2$d 已填写', 'qiling' ), $filled, $total ) ) . '</span>';
     }
 
     /**
@@ -391,11 +391,11 @@ class Meta_Boxes_Post_Settings_Service {
 
         echo '<hr style="margin: 18px 0;">';
         echo '<div class="qiling-schema-override">';
-        echo '<h4>' . esc_html__( '页面级 Schema 覆盖', 'developer-starter' ) . '</h4>';
-        echo '<p class="description">' . esc_html__( '页面设置会合并到同一份 Schema 结构化数据中，不会重复输出 JSON-LD。留空字段会优先使用当前页面标题、描述、特色图或站点组织信息。', 'developer-starter' ) . '</p>';
+        echo '<h4>' . esc_html__( '页面级 Schema 覆盖', 'qiling' ) . '</h4>';
+        echo '<p class="description">' . esc_html__( '页面设置会合并到同一份 Schema 结构化数据中，不会重复输出 JSON-LD。留空字段会优先使用当前页面标题、描述、特色图或站点组织信息。', 'qiling' ) . '</p>';
 
-        echo '<p><label><input type="checkbox" name="qiling_schema_override[enabled]" value="1" ' . checked( $enabled, true, false ) . '> ' . esc_html__( '启用当前页面 Schema 覆盖', 'developer-starter' ) . '</label></p>';
-        echo '<p><label><strong>' . esc_html__( '页面主类型', 'developer-starter' ) . '</strong></label><br>';
+        echo '<p><label><input type="checkbox" name="qiling_schema_override[enabled]" value="1" ' . checked( $enabled, true, false ) . '> ' . esc_html__( '启用当前页面 Schema 覆盖', 'qiling' ) . '</label></p>';
+        echo '<p><label><strong>' . esc_html__( '页面主类型', 'qiling' ) . '</strong></label><br>';
         echo '<select name="qiling_schema_override[type]" class="widefat">';
         foreach ( $choices as $choice => $label ) {
             echo '<option value="' . esc_attr( $choice ) . '" ' . selected( $type, $choice, false ) . '>' . esc_html( $label ) . '</option>';
@@ -403,53 +403,53 @@ class Meta_Boxes_Post_Settings_Service {
         echo '</select></p>';
 
         echo '<div class="qiling-schema-override__grid">';
-        $this->render_schema_override_text_input( 'name', __( '名称 / name', 'developer-starter' ), $data, __( '产品名、课程名、服务名等。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'headline', __( '标题 / headline', 'developer-starter' ), $data, __( 'Article、JobPosting 可使用。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'image', __( '图片 URL', 'developer-starter' ), $data, __( '用于当前主实体 image。', 'developer-starter' ), 'url' );
-        $this->render_schema_override_text_input( 'url', __( '实体 URL', 'developer-starter' ), $data, __( '留空使用 canonical URL。', 'developer-starter' ), 'url' );
+        $this->render_schema_override_text_input( 'name', __( '名称 / name', 'qiling' ), $data, __( '产品名、课程名、服务名等。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'headline', __( '标题 / headline', 'qiling' ), $data, __( 'Article、JobPosting 可使用。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'image', __( '图片 URL', 'qiling' ), $data, __( '用于当前主实体 image。', 'qiling' ), 'url' );
+        $this->render_schema_override_text_input( 'url', __( '实体 URL', 'qiling' ), $data, __( '留空使用 canonical URL。', 'qiling' ), 'url' );
         echo '</div>';
 
-        $this->render_schema_override_textarea( 'description', __( '描述 / description', 'developer-starter' ), $data, __( 'Article 摘要、Product 说明、Service 介绍、Review 正文等。', 'developer-starter' ), 2 );
-
-        echo '<div class="qiling-schema-override__grid">';
-        $this->render_schema_override_text_input( 'price', __( '价格', 'developer-starter' ), $data, __( 'Product / Service 使用，数字会生成 Offer。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'currency', __( '币种', 'developer-starter' ), $data, __( '三位 ISO 代码，如 USD、JPY。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'brand', __( '品牌', 'developer-starter' ), $data, __( 'Product 可选。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'sku', 'SKU', $data, __( 'Product 可选。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'rating_value', __( '评分', 'developer-starter' ), $data, __( '1-5，Product / Review 使用。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'rating_count', __( '评分数量', 'developer-starter' ), $data, __( 'Product aggregateRating 使用。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'item_name', __( '评价对象', 'developer-starter' ), $data, __( 'Review 使用。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'author_name', __( '作者 / 评价人', 'developer-starter' ), $data, __( 'Article / Review 使用。', 'developer-starter' ) );
-        echo '</div>';
+        $this->render_schema_override_textarea( 'description', __( '描述 / description', 'qiling' ), $data, __( 'Article 摘要、Product 说明、Service 介绍、Review 正文等。', 'qiling' ), 2 );
 
         echo '<div class="qiling-schema-override__grid">';
-        $this->render_schema_override_text_input( 'course_provider', __( '课程提供方', 'developer-starter' ), $data, __( 'Course 使用，留空回退站点组织。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'service_area', __( '服务区域', 'developer-starter' ), $data, __( 'Service 使用。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'start_date', __( '活动开始时间', 'developer-starter' ), $data, __( 'Event 使用，建议 ISO 日期时间。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'end_date', __( '活动结束时间', 'developer-starter' ), $data, __( 'Event 可选。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'location_name', __( '地点名称', 'developer-starter' ), $data, __( 'Event 使用。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'event_status', __( '活动状态 URL', 'developer-starter' ), $data, __( '如 https://schema.org/EventScheduled。', 'developer-starter' ) );
+        $this->render_schema_override_text_input( 'price', __( '价格', 'qiling' ), $data, __( 'Product / Service 使用，数字会生成 Offer。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'currency', __( '币种', 'qiling' ), $data, __( '三位 ISO 代码，如 USD、JPY。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'brand', __( '品牌', 'qiling' ), $data, __( 'Product 可选。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'sku', 'SKU', $data, __( 'Product 可选。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'rating_value', __( '评分', 'qiling' ), $data, __( '1-5，Product / Review 使用。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'rating_count', __( '评分数量', 'qiling' ), $data, __( 'Product aggregateRating 使用。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'item_name', __( '评价对象', 'qiling' ), $data, __( 'Review 使用。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'author_name', __( '作者 / 评价人', 'qiling' ), $data, __( 'Article / Review 使用。', 'qiling' ) );
         echo '</div>';
-        $this->render_schema_override_textarea( 'location_address', __( '地点地址', 'developer-starter' ), $data, __( 'Event 使用。', 'developer-starter' ), 2 );
 
         echo '<div class="qiling-schema-override__grid">';
-        $this->render_schema_override_text_input( 'title', __( '职位标题', 'developer-starter' ), $data, __( 'JobPosting 使用。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'date_posted', __( '职位发布日期', 'developer-starter' ), $data, __( 'JobPosting 使用，建议 YYYY-MM-DD。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'valid_through', __( '职位截止日期', 'developer-starter' ), $data, __( 'JobPosting 可选。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'employment_type', __( '雇佣类型', 'developer-starter' ), $data, __( '如 FULL_TIME、CONTRACTOR。', 'developer-starter' ) );
-        $this->render_schema_override_text_input( 'hiring_organization', __( '招聘组织', 'developer-starter' ), $data, __( 'JobPosting 使用。', 'developer-starter' ) );
+        $this->render_schema_override_text_input( 'course_provider', __( '课程提供方', 'qiling' ), $data, __( 'Course 使用，留空回退站点组织。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'service_area', __( '服务区域', 'qiling' ), $data, __( 'Service 使用。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'start_date', __( '活动开始时间', 'qiling' ), $data, __( 'Event 使用，建议 ISO 日期时间。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'end_date', __( '活动结束时间', 'qiling' ), $data, __( 'Event 可选。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'location_name', __( '地点名称', 'qiling' ), $data, __( 'Event 使用。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'event_status', __( '活动状态 URL', 'qiling' ), $data, __( '如 https://schema.org/EventScheduled。', 'qiling' ) );
         echo '</div>';
-        $this->render_schema_override_textarea( 'job_location', __( '工作地点', 'developer-starter' ), $data, __( 'JobPosting 使用。', 'developer-starter' ), 2 );
+        $this->render_schema_override_textarea( 'location_address', __( '地点地址', 'qiling' ), $data, __( 'Event 使用。', 'qiling' ), 2 );
+
+        echo '<div class="qiling-schema-override__grid">';
+        $this->render_schema_override_text_input( 'title', __( '职位标题', 'qiling' ), $data, __( 'JobPosting 使用。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'date_posted', __( '职位发布日期', 'qiling' ), $data, __( 'JobPosting 使用，建议 YYYY-MM-DD。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'valid_through', __( '职位截止日期', 'qiling' ), $data, __( 'JobPosting 可选。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'employment_type', __( '雇佣类型', 'qiling' ), $data, __( '如 FULL_TIME、CONTRACTOR。', 'qiling' ) );
+        $this->render_schema_override_text_input( 'hiring_organization', __( '招聘组织', 'qiling' ), $data, __( 'JobPosting 使用。', 'qiling' ) );
+        echo '</div>';
+        $this->render_schema_override_textarea( 'job_location', __( '工作地点', 'qiling' ), $data, __( 'JobPosting 使用。', 'qiling' ), 2 );
 
         $faq_text = $this->format_schema_override_faq_text( isset( $data['faq_items'] ) && is_array( $data['faq_items'] ) ? $data['faq_items'] : array() );
-        echo '<p><label><strong>' . esc_html__( 'FAQ 问答', 'developer-starter' ) . '</strong></label><br>';
-        echo '<textarea name="qiling_schema_override[data][faq_items_text]" rows="4" class="large-text" placeholder="' . esc_attr__( '每行一组：问题 | 答案', 'developer-starter' ) . '">' . esc_textarea( $faq_text ) . '</textarea>';
-        echo '<span class="description">' . esc_html__( 'FAQPage 使用；FAQ 模块仍会自动生成 FAQPage，这里可手动覆盖当前页面主 FAQ。', 'developer-starter' ) . '</span></p>';
+        echo '<p><label><strong>' . esc_html__( 'FAQ 问答', 'qiling' ) . '</strong></label><br>';
+        echo '<textarea name="qiling_schema_override[data][faq_items_text]" rows="4" class="large-text" placeholder="' . esc_attr__( '每行一组：问题 | 答案', 'qiling' ) . '">' . esc_textarea( $faq_text ) . '</textarea>';
+        echo '<span class="description">' . esc_html__( 'FAQPage 使用；FAQ 模块仍会自动生成 FAQPage，这里可手动覆盖当前页面主 FAQ。', 'qiling' ) . '</span></p>';
 
         $howto_text = $this->format_schema_override_howto_text( isset( $data['howto_steps'] ) && is_array( $data['howto_steps'] ) ? $data['howto_steps'] : array() );
         echo '<p><label><strong>HowTo</strong></label><br>';
-        echo '<textarea name="qiling_schema_override[data][howto_steps_text]" rows="4" class="large-text" placeholder="' . esc_attr__( '每行一个步骤', 'developer-starter' ) . '">' . esc_textarea( $howto_text ) . '</textarea>';
-        echo '<span class="description">' . esc_html__( 'HowTo 使用，系统会按行生成 HowToStep。', 'developer-starter' ) . '</span></p>';
+        echo '<textarea name="qiling_schema_override[data][howto_steps_text]" rows="4" class="large-text" placeholder="' . esc_attr__( '每行一个步骤', 'qiling' ) . '">' . esc_textarea( $howto_text ) . '</textarea>';
+        echo '<span class="description">' . esc_html__( 'HowTo 使用，系统会按行生成 HowToStep。', 'qiling' ) . '</span></p>';
 
         $this->render_schema_override_diagnostics( $diagnostics );
         echo '</div>';
@@ -504,9 +504,9 @@ class Meta_Boxes_Post_Settings_Service {
     private function render_schema_override_diagnostics( $diagnostics ) {
         $issues = isset( $diagnostics['issues'] ) && is_array( $diagnostics['issues'] ) ? $diagnostics['issues'] : array();
         echo '<div class="qiling-schema-override__diagnostics">';
-        echo '<strong>' . esc_html__( 'Schema 可视化诊断', 'developer-starter' ) . '</strong>';
+        echo '<strong>' . esc_html__( 'Schema 可视化诊断', 'qiling' ) . '</strong>';
         if ( empty( $issues ) ) {
-            echo '<p class="is-success">' . esc_html__( '当前页面未发现 Schema 冲突或关键缺失项。', 'developer-starter' ) . '</p>';
+            echo '<p class="is-success">' . esc_html__( '当前页面未发现 Schema 冲突或关键缺失项。', 'qiling' ) . '</p>';
         } else {
             echo '<ul>';
             foreach ( $issues as $issue ) {
@@ -514,7 +514,7 @@ class Meta_Boxes_Post_Settings_Service {
                     continue;
                 }
                 $severity = isset( $issue['severity'] ) ? sanitize_html_class( (string) $issue['severity'] ) : 'warning';
-                $label = isset( $issue['label'] ) ? (string) $issue['label'] : __( '诊断项', 'developer-starter' );
+                $label = isset( $issue['label'] ) ? (string) $issue['label'] : __( '诊断项', 'qiling' );
                 $message = isset( $issue['message'] ) ? (string) $issue['message'] : '';
                 echo '<li class="is-' . esc_attr( $severity ) . '"><strong>' . esc_html( $label ) . '</strong><span>' . esc_html( $message ) . '</span></li>';
             }
@@ -652,23 +652,23 @@ class Meta_Boxes_Post_Settings_Service {
             <p>
                 <label>
                     <input type="checkbox" name="qiling_hide_page_header" value="1" <?php checked( $hide_header, '1' ); ?> />
-                    <?php esc_html_e( '隐藏页面头部面包屑', 'developer-starter' ); ?>
+                    <?php esc_html_e( '隐藏页面头部面包屑', 'qiling' ); ?>
                 </label>
             </p>
             <p class="description" style="color: #666; font-size: 12px; margin-top: 8px;">
-                <?php esc_html_e( '勾选后将不显示页面顶部的标题横幅区域。', 'developer-starter' ); ?><br>
-                <?php esc_html_e( '此设置也支持与第三方插件协同控制。', 'developer-starter' ); ?>
+                <?php esc_html_e( '勾选后将不显示页面顶部的标题横幅区域。', 'qiling' ); ?><br>
+                <?php esc_html_e( '此设置也支持与第三方插件协同控制。', 'qiling' ); ?>
             </p>
 
             <p style="margin-top: 15px; border-top: 1px dashed #eee; padding-top: 15px;">
                 <label>
                     <input type="checkbox" name="qiling_transparent_header" value="1" <?php checked( get_post_meta( $post->ID, '_qiling_transparent_header', true ), '1' ); ?> />
-                    <?php esc_html_e( '顶部菜单栏首屏透明', 'developer-starter' ); ?>
+                    <?php esc_html_e( '顶部菜单栏首屏透明', 'qiling' ); ?>
                 </label>
             </p>
             <p class="description" style="color: #666; font-size: 12px; margin-top: 8px;">
-                <?php esc_html_e( '开启后，首屏覆盖在 Banner/首屏模块上，滚动后恢复常规背景。系统会按首屏标题明暗自动选择深色或白色菜单文字。', 'developer-starter' ); ?><br>
-                <strong><?php esc_html_e( '需要手动指定时：', 'developer-starter' ); ?></strong> <?php esc_html_e( '请在“页面视觉风格 → 顶部菜单栏 → 首屏透明状态文字色”填写颜色；该值优先于自动判断。', 'developer-starter' ); ?>
+                <?php esc_html_e( '开启后，首屏覆盖在 Banner/首屏模块上，滚动后恢复常规背景。系统会按首屏标题明暗自动选择深色或白色菜单文字。', 'qiling' ); ?><br>
+                <strong><?php esc_html_e( '需要手动指定时：', 'qiling' ); ?></strong> <?php esc_html_e( '请在“页面视觉风格 → 顶部菜单栏 → 首屏透明状态文字色”填写颜色；该值优先于自动判断。', 'qiling' ); ?>
             </p>
         </div>
         <?php
@@ -699,7 +699,7 @@ class Meta_Boxes_Post_Settings_Service {
                 }
                 $footer_presets[ sanitize_key( (string) $footer_preset_key ) ] = sprintf(
                     /* translators: %s: user-created visual preset label */
-                    __( '我的预设：%s', 'developer-starter' ),
+                    __( '我的预设：%s', 'qiling' ),
                     ! empty( $footer_preset['label'] ) ? (string) $footer_preset['label'] : (string) $footer_preset_key
                 );
             }
@@ -740,101 +740,101 @@ class Meta_Boxes_Post_Settings_Service {
             <textarea hidden readonly data-qiling-page-visual-preview-data><?php echo esc_textarea( $preview_json ); ?></textarea>
             <input type="hidden" name="qiling_page_visual_style_json" value="" data-qiling-page-visual-style-json>
             <div class="qiling-page-visual-style__intro">
-                <p><?php esc_html_e( '页面风格管家会先告诉你当前页面正在使用什么风格、哪些区域被单独改过，以及可以怎么恢复。', 'developer-starter' ); ?></p>
+                <p><?php esc_html_e( '页面风格管家会先告诉你当前页面正在使用什么风格、哪些区域被单独改过，以及可以怎么恢复。', 'qiling' ); ?></p>
             </div>
 
             <?php $this->render_page_visual_style_manager( $manager_state ); ?>
 
             <div class="qiling-page-visual-style__top">
                 <div class="qiling-page-visual-style__section-head">
-                    <strong><?php esc_html_e( '快捷操作', 'developer-starter' ); ?></strong>
-                    <span><?php esc_html_e( '先选操作，再保存页面；会覆盖当前页面的风格设置。', 'developer-starter' ); ?></span>
+                    <strong><?php esc_html_e( '快捷操作', 'qiling' ); ?></strong>
+                    <span><?php esc_html_e( '先选操作，再保存页面；会覆盖当前页面的风格设置。', 'qiling' ); ?></span>
                 </div>
                 <p>
-                    <label for="qiling-page-visual-style-mode"><strong><?php esc_html_e( '当前页面来源模式', 'developer-starter' ); ?></strong></label>
+                    <label for="qiling-page-visual-style-mode"><strong><?php esc_html_e( '当前页面来源模式', 'qiling' ); ?></strong></label>
                     <select id="qiling-page-visual-style-mode" name="qiling_page_visual_style[mode]" class="widefat" data-qiling-page-visual-style-mode>
-                        <option value="inherit" <?php selected( $mode, 'inherit' ); ?>><?php esc_html_e( '跟随页面模板预设', 'developer-starter' ); ?></option>
-                        <option value="global" <?php selected( $mode, 'global' ); ?>><?php esc_html_e( '强制跟随全站默认', 'developer-starter' ); ?></option>
-                        <option value="custom" <?php selected( $mode, 'custom' ); ?>><?php esc_html_e( '启用当前页面自定义', 'developer-starter' ); ?></option>
+                        <option value="inherit" <?php selected( $mode, 'inherit' ); ?>><?php esc_html_e( '跟随页面模板预设', 'qiling' ); ?></option>
+                        <option value="global" <?php selected( $mode, 'global' ); ?>><?php esc_html_e( '强制跟随全站默认', 'qiling' ); ?></option>
+                        <option value="custom" <?php selected( $mode, 'custom' ); ?>><?php esc_html_e( '启用当前页面自定义', 'qiling' ); ?></option>
                     </select>
                 </p>
 
                 <p>
-                    <label for="qiling-page-visual-style-preset"><strong><?php esc_html_e( '套用行业/我的预设', 'developer-starter' ); ?></strong></label>
+                    <label for="qiling-page-visual-style-preset"><strong><?php esc_html_e( '套用行业/我的预设', 'qiling' ); ?></strong></label>
                     <select id="qiling-page-visual-style-preset" name="qiling_page_visual_style[preset]" class="widefat">
-                        <option value=""><?php esc_html_e( '按当前页面模板自动匹配', 'developer-starter' ); ?></option>
+                        <option value=""><?php esc_html_e( '按当前页面模板自动匹配', 'qiling' ); ?></option>
                         <?php foreach ( $presets as $preset_key => $preset_label ) : ?>
                             <option value="<?php echo esc_attr( $preset_key ); ?>" <?php selected( $preset, $preset_key ); ?>><?php echo esc_html( $preset_label ); ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <button type="submit" class="button button-secondary qiling-page-visual-style__inline-action" name="qiling_page_visual_style_action" value="apply_preset"><?php esc_html_e( '应用所选预设', 'developer-starter' ); ?></button>
+                    <button type="submit" class="button button-secondary qiling-page-visual-style__inline-action" name="qiling_page_visual_style_action" value="apply_preset"><?php esc_html_e( '应用所选预设', 'qiling' ); ?></button>
                 </p>
 
                 <p>
-                    <label for="qiling-page-visual-style-copy-from"><strong><?php esc_html_e( '复制页面风格', 'developer-starter' ); ?></strong></label>
-                    <input id="qiling-page-visual-style-copy-from" type="number" name="qiling_page_visual_style_copy_from" value="" class="widefat" min="1" step="1" placeholder="<?php esc_attr_e( '填写页面ID，保存时复制', 'developer-starter' ); ?>">
-                    <span class="description"><?php esc_html_e( '填写后，本页会复制该页面的视觉风格设置；留空则保存下面的当前设置。', 'developer-starter' ); ?></span>
+                    <label for="qiling-page-visual-style-copy-from"><strong><?php esc_html_e( '复制页面风格', 'qiling' ); ?></strong></label>
+                    <input id="qiling-page-visual-style-copy-from" type="number" name="qiling_page_visual_style_copy_from" value="" class="widefat" min="1" step="1" placeholder="<?php esc_attr_e( '填写页面ID，保存时复制', 'qiling' ); ?>">
+                    <span class="description"><?php esc_html_e( '填写后，本页会复制该页面的视觉风格设置；留空则保存下面的当前设置。', 'qiling' ); ?></span>
                 </p>
 
                 <p>
-                    <label for="qiling-page-visual-style-save-preset"><strong><?php esc_html_e( '保存为我的预设', 'developer-starter' ); ?></strong></label>
-                    <input id="qiling-page-visual-style-save-preset" type="text" name="qiling_page_visual_style_save_preset_name" value="" class="widefat" placeholder="<?php esc_attr_e( '例如：我的科技蓝绿风格', 'developer-starter' ); ?>">
-                    <span class="description"><?php esc_html_e( '填写名称并保存页面，会把当前基础预设和细调颜色保存到“基础预设”下拉框，之后其它页面可直接套用。', 'developer-starter' ); ?></span>
+                    <label for="qiling-page-visual-style-save-preset"><strong><?php esc_html_e( '保存为我的预设', 'qiling' ); ?></strong></label>
+                    <input id="qiling-page-visual-style-save-preset" type="text" name="qiling_page_visual_style_save_preset_name" value="" class="widefat" placeholder="<?php esc_attr_e( '例如：我的科技蓝绿风格', 'qiling' ); ?>">
+                    <span class="description"><?php esc_html_e( '填写名称并保存页面，会把当前基础预设和细调颜色保存到“基础预设”下拉框，之后其它页面可直接套用。', 'qiling' ); ?></span>
                 </p>
 
                 <p class="qiling-page-visual-style__actions">
-                    <button type="submit" class="button" name="qiling_page_visual_style_action" value="restore_template"><?php esc_html_e( '恢复导入模板默认风格', 'developer-starter' ); ?></button>
-                    <button type="submit" class="button" name="qiling_page_visual_style_action" value="restore_global"><?php esc_html_e( '恢复全站默认风格', 'developer-starter' ); ?></button>
-                    <button type="submit" class="button button-link-delete" name="qiling_page_visual_style_action" value="clear_custom"><?php esc_html_e( '清除当前页面自定义', 'developer-starter' ); ?></button>
+                    <button type="submit" class="button" name="qiling_page_visual_style_action" value="restore_template"><?php esc_html_e( '恢复导入模板默认风格', 'qiling' ); ?></button>
+                    <button type="submit" class="button" name="qiling_page_visual_style_action" value="restore_global"><?php esc_html_e( '恢复全站默认风格', 'qiling' ); ?></button>
+                    <button type="submit" class="button button-link-delete" name="qiling_page_visual_style_action" value="clear_custom"><?php esc_html_e( '清除当前页面自定义', 'qiling' ); ?></button>
                 </p>
             </div>
 
             <div class="qiling-page-visual-style__top" data-qiling-page-footer-settings>
                 <div class="qiling-page-visual-style__section-head">
-                    <strong><?php esc_html_e( '当前页页脚策略', 'developer-starter' ); ?></strong>
-                    <span><?php esc_html_e( '先决定页脚来源，再在“底部和波浪”中做当前页的显式覆盖。', 'developer-starter' ); ?></span>
+                    <strong><?php esc_html_e( '当前页页脚策略', 'qiling' ); ?></strong>
+                    <span><?php esc_html_e( '先决定页脚来源，再在“底部和波浪”中做当前页的显式覆盖。', 'qiling' ); ?></span>
                 </div>
                 <p>
-                    <label><strong><?php esc_html_e( '页脚来源', 'developer-starter' ); ?></strong></label>
+                    <label><strong><?php esc_html_e( '页脚来源', 'qiling' ); ?></strong></label>
                     <select class="widefat" name="qiling_page_footer[mode]" data-qiling-page-footer-mode>
-                        <option value="inherit" <?php selected( $footer_settings['mode'], 'inherit' ); ?>><?php esc_html_e( '完整跟随全局页脚', 'developer-starter' ); ?></option>
-                        <option value="page_skin" <?php selected( $footer_settings['mode'], 'page_skin' ); ?>><?php esc_html_e( '使用当前页面皮肤页脚', 'developer-starter' ); ?></option>
-                        <option value="preset" <?php selected( $footer_settings['mode'], 'preset' ); ?>><?php esc_html_e( '使用指定页脚预设', 'developer-starter' ); ?></option>
-                        <option value="hidden" <?php selected( $footer_settings['mode'], 'hidden' ); ?>><?php esc_html_e( '当前页隐藏网站页脚', 'developer-starter' ); ?></option>
+                        <option value="inherit" <?php selected( $footer_settings['mode'], 'inherit' ); ?>><?php esc_html_e( '完整跟随全局页脚', 'qiling' ); ?></option>
+                        <option value="page_skin" <?php selected( $footer_settings['mode'], 'page_skin' ); ?>><?php esc_html_e( '使用当前页面皮肤页脚', 'qiling' ); ?></option>
+                        <option value="preset" <?php selected( $footer_settings['mode'], 'preset' ); ?>><?php esc_html_e( '使用指定页脚预设', 'qiling' ); ?></option>
+                        <option value="hidden" <?php selected( $footer_settings['mode'], 'hidden' ); ?>><?php esc_html_e( '当前页隐藏网站页脚', 'qiling' ); ?></option>
                     </select>
                 </p>
                 <p data-qiling-page-footer-preset-row>
-                    <label><strong><?php esc_html_e( '指定页脚预设', 'developer-starter' ); ?></strong></label>
+                    <label><strong><?php esc_html_e( '指定页脚预设', 'qiling' ); ?></strong></label>
                     <select class="widefat" name="qiling_page_footer[preset]">
-                        <option value=""><?php esc_html_e( '请选择页脚预设', 'developer-starter' ); ?></option>
+                        <option value=""><?php esc_html_e( '请选择页脚预设', 'qiling' ); ?></option>
                         <?php foreach ( $footer_presets as $footer_preset_key => $footer_preset_label ) : ?>
                             <option value="<?php echo esc_attr( $footer_preset_key ); ?>" <?php selected( $footer_settings['preset'], $footer_preset_key ); ?>><?php echo esc_html( $footer_preset_label ); ?></option>
                         <?php endforeach; ?>
                     </select>
                 </p>
                 <p data-qiling-page-footer-wave-row>
-                    <label><strong><?php esc_html_e( '波浪衔接', 'developer-starter' ); ?></strong></label>
+                    <label><strong><?php esc_html_e( '波浪衔接', 'qiling' ); ?></strong></label>
                     <select class="widefat" name="qiling_page_footer[wave]">
-                        <option value="inherit" <?php selected( $footer_settings['wave'], 'inherit' ); ?>><?php esc_html_e( '跟随所选页脚', 'developer-starter' ); ?></option>
-                        <option value="on" <?php selected( $footer_settings['wave'], 'on' ); ?>><?php esc_html_e( '当前页开启', 'developer-starter' ); ?></option>
-                        <option value="off" <?php selected( $footer_settings['wave'], 'off' ); ?>><?php esc_html_e( '当前页关闭', 'developer-starter' ); ?></option>
+                        <option value="inherit" <?php selected( $footer_settings['wave'], 'inherit' ); ?>><?php esc_html_e( '跟随所选页脚', 'qiling' ); ?></option>
+                        <option value="on" <?php selected( $footer_settings['wave'], 'on' ); ?>><?php esc_html_e( '当前页开启', 'qiling' ); ?></option>
+                        <option value="off" <?php selected( $footer_settings['wave'], 'off' ); ?>><?php esc_html_e( '当前页关闭', 'qiling' ); ?></option>
                     </select>
                 </p>
                 <p data-qiling-page-footer-inherit-row>
-                    <label><input type="checkbox" name="qiling_page_footer[inherit_skin_colors]" value="1" <?php checked( ! empty( $footer_settings['inherit_skin_colors'] ) ); ?>> <?php esc_html_e( '保留全局页脚结构，但使用当前页面皮肤配色', 'developer-starter' ); ?></label>
+                    <label><input type="checkbox" name="qiling_page_footer[inherit_skin_colors]" value="1" <?php checked( ! empty( $footer_settings['inherit_skin_colors'] ) ); ?>> <?php esc_html_e( '保留全局页脚结构，但使用当前页面皮肤配色', 'qiling' ); ?></label>
                 </p>
-                <p class="description"><?php esc_html_e( '“完整跟随全局”不会被模板自动改色；只有选择页面皮肤、指定预设或启用皮肤配色时才带入当前页面色系。', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '“完整跟随全局”不会被模板自动改色；只有选择页面皮肤、指定预设或启用皮肤配色时才带入当前页面色系。', 'qiling' ); ?></p>
             </div>
 
             <div class="qiling-page-visual-style__assistant" data-qiling-page-visual-audit>
                 <div class="qiling-page-visual-style__assistant-head">
                     <div>
-                        <strong><?php esc_html_e( '防改乱系统', 'developer-starter' ); ?></strong>
-                        <span><?php esc_html_e( '实时检查顶部、搜索、电话、按钮、CTA、底部波浪和模块卡片，避免颜色改乱后看不清。', 'developer-starter' ); ?></span>
+                        <strong><?php esc_html_e( '防改乱系统', 'qiling' ); ?></strong>
+                        <span><?php esc_html_e( '实时检查顶部、搜索、电话、按钮、CTA、底部波浪和模块卡片，避免颜色改乱后看不清。', 'qiling' ); ?></span>
                     </div>
                     <div class="qiling-page-visual-style__assistant-actions">
-                        <button type="button" class="button button-secondary" data-qiling-page-visual-auto-text><?php esc_html_e( '只修复文字色', 'developer-starter' ); ?></button>
-                        <button type="button" class="button button-primary" data-qiling-page-visual-fix-all><?php esc_html_e( '一键修复全部', 'developer-starter' ); ?></button>
+                        <button type="button" class="button button-secondary" data-qiling-page-visual-auto-text><?php esc_html_e( '只修复文字色', 'qiling' ); ?></button>
+                        <button type="button" class="button button-primary" data-qiling-page-visual-fix-all><?php esc_html_e( '一键修复全部', 'qiling' ); ?></button>
                     </div>
                 </div>
                 <div class="qiling-page-visual-style__audit-summary" data-qiling-page-visual-audit-summary></div>
@@ -862,43 +862,43 @@ class Meta_Boxes_Post_Settings_Service {
 
             <div class="qiling-page-visual-style__toolbox">
                 <div>
-                    <strong><?php esc_html_e( '智能配色', 'developer-starter' ); ?></strong>
-                    <span><?php esc_html_e( '根据页面主色自动生成顶部、搜索、按钮、底部和波浪颜色。', 'developer-starter' ); ?></span>
+                    <strong><?php esc_html_e( '智能配色', 'qiling' ); ?></strong>
+                    <span><?php esc_html_e( '根据页面主色自动生成顶部、搜索、按钮、底部和波浪颜色。', 'qiling' ); ?></span>
                 </div>
-                <button type="button" class="button button-secondary" data-qiling-page-visual-generate-palette><?php esc_html_e( '根据主色生成整套搭配', 'developer-starter' ); ?></button>
+                <button type="button" class="button button-secondary" data-qiling-page-visual-generate-palette><?php esc_html_e( '根据主色生成整套搭配', 'qiling' ); ?></button>
             </div>
 
             <div class="qiling-page-visual-style__preview" data-qiling-page-visual-preview>
                 <div class="qiling-page-visual-style__preview-head">
-                    <strong><?php esc_html_e( '实时小样预览', 'developer-starter' ); ?></strong>
-                    <span><?php esc_html_e( '展示顶部、搜索、电话、按钮、底部和波浪的大致搭配。', 'developer-starter' ); ?></span>
+                    <strong><?php esc_html_e( '实时小样预览', 'qiling' ); ?></strong>
+                    <span><?php esc_html_e( '展示顶部、搜索、电话、按钮、底部和波浪的大致搭配。', 'qiling' ); ?></span>
                 </div>
                 <div class="qiling-page-visual-style__preview-surface" data-qiling-page-visual-preview-surface>
                     <div class="qiling-page-visual-style__preview-header" data-qiling-page-visual-preview-header>
-                        <strong data-qiling-page-visual-preview-logo><?php esc_html_e( '启灵', 'developer-starter' ); ?></strong>
+                        <strong data-qiling-page-visual-preview-logo><?php esc_html_e( '启灵', 'qiling' ); ?></strong>
                         <div class="qiling-page-visual-style__preview-nav" data-qiling-page-visual-preview-nav>
-                            <span><?php esc_html_e( '首页', 'developer-starter' ); ?></span>
-                            <span><?php esc_html_e( '服务', 'developer-starter' ); ?></span>
-                            <span><?php esc_html_e( '案例', 'developer-starter' ); ?></span>
+                            <span><?php esc_html_e( '首页', 'qiling' ); ?></span>
+                            <span><?php esc_html_e( '服务', 'qiling' ); ?></span>
+                            <span><?php esc_html_e( '案例', 'qiling' ); ?></span>
                         </div>
-                        <div class="qiling-page-visual-style__preview-search" data-qiling-page-visual-preview-search><?php esc_html_e( '搜索关键词', 'developer-starter' ); ?></div>
+                        <div class="qiling-page-visual-style__preview-search" data-qiling-page-visual-preview-search><?php esc_html_e( '搜索关键词', 'qiling' ); ?></div>
                         <div class="qiling-page-visual-style__preview-phone" data-qiling-page-visual-preview-phone>18888888888</div>
                     </div>
                     <div class="qiling-page-visual-style__preview-main" data-qiling-page-visual-preview-main>
                         <div class="qiling-page-visual-style__preview-copy">
-                            <span><?php esc_html_e( '页面内容', 'developer-starter' ); ?></span>
-                            <h4><?php esc_html_e( '页面主视觉', 'developer-starter' ); ?></h4>
-                            <p><?php esc_html_e( '这里模拟正文区域、按钮和模块卡片的搭配。', 'developer-starter' ); ?></p>
+                            <span><?php esc_html_e( '页面内容', 'qiling' ); ?></span>
+                            <h4><?php esc_html_e( '页面主视觉', 'qiling' ); ?></h4>
+                            <p><?php esc_html_e( '这里模拟正文区域、按钮和模块卡片的搭配。', 'qiling' ); ?></p>
                             <div class="qiling-page-visual-style__preview-buttons">
-                                <button type="button" class="qiling-page-visual-style__preview-button-normal" data-qiling-page-visual-preview-button-normal><?php esc_html_e( '普通按钮', 'developer-starter' ); ?></button>
-                                <button type="button" class="qiling-page-visual-style__preview-button-cta" data-qiling-page-visual-preview-button-cta><?php esc_html_e( '立即咨询', 'developer-starter' ); ?></button>
+                                <button type="button" class="qiling-page-visual-style__preview-button-normal" data-qiling-page-visual-preview-button-normal><?php esc_html_e( '普通按钮', 'qiling' ); ?></button>
+                                <button type="button" class="qiling-page-visual-style__preview-button-cta" data-qiling-page-visual-preview-button-cta><?php esc_html_e( '立即咨询', 'qiling' ); ?></button>
                             </div>
                         </div>
                         <div class="qiling-page-visual-style__preview-card" data-qiling-page-visual-preview-card>
-                            <span><?php esc_html_e( '模块卡片', 'developer-starter' ); ?></span>
-                            <strong data-qiling-page-visual-preview-card-title><?php esc_html_e( '服务亮点', 'developer-starter' ); ?></strong>
-                            <p data-qiling-page-visual-preview-card-text><?php esc_html_e( '卡片背景、边框和文字会跟随页面基础色变化。', 'developer-starter' ); ?></p>
-                            <button type="button" data-qiling-page-visual-preview-card-button><?php esc_html_e( '查看详情', 'developer-starter' ); ?></button>
+                            <span><?php esc_html_e( '模块卡片', 'qiling' ); ?></span>
+                            <strong data-qiling-page-visual-preview-card-title><?php esc_html_e( '服务亮点', 'qiling' ); ?></strong>
+                            <p data-qiling-page-visual-preview-card-text><?php esc_html_e( '卡片背景、边框和文字会跟随页面基础色变化。', 'qiling' ); ?></p>
+                            <button type="button" data-qiling-page-visual-preview-card-button><?php esc_html_e( '查看详情', 'qiling' ); ?></button>
                         </div>
                     </div>
                     <div class="qiling-page-visual-style__preview-footer" data-qiling-page-visual-preview-footer>
@@ -906,8 +906,8 @@ class Meta_Boxes_Post_Settings_Service {
                             <span data-qiling-page-visual-preview-wave-layer></span>
                             <span data-qiling-page-visual-preview-wave></span>
                         </div>
-                        <strong><?php esc_html_e( '底部信息', 'developer-starter' ); ?></strong>
-                        <p><?php esc_html_e( '这里模拟页脚文字和链接颜色。', 'developer-starter' ); ?></p>
+                        <strong><?php esc_html_e( '底部信息', 'qiling' ); ?></strong>
+                        <p><?php esc_html_e( '这里模拟页脚文字和链接颜色。', 'qiling' ); ?></p>
                     </div>
                 </div>
             </div>
@@ -916,70 +916,70 @@ class Meta_Boxes_Post_Settings_Service {
                 <div class="qiling-page-visual-style__live-preview" data-qiling-page-visual-live-preview>
                     <div class="qiling-page-visual-style__live-head">
                         <div>
-                            <strong><?php esc_html_e( '真实页面预览', 'developer-starter' ); ?></strong>
-                            <span><?php esc_html_e( '加载当前页面，并把未保存的颜色变量临时同步到预览窗口。', 'developer-starter' ); ?></span>
+                            <strong><?php esc_html_e( '真实页面预览', 'qiling' ); ?></strong>
+                            <span><?php esc_html_e( '加载当前页面，并把未保存的颜色变量临时同步到预览窗口。', 'qiling' ); ?></span>
                         </div>
                         <div class="qiling-page-visual-style__live-actions">
-                            <button type="button" class="button button-secondary" data-qiling-page-visual-live-refresh><?php esc_html_e( '刷新预览', 'developer-starter' ); ?></button>
-                            <button type="button" class="button button-primary" data-qiling-page-visual-live-sync><?php esc_html_e( '同步当前颜色', 'developer-starter' ); ?></button>
+                            <button type="button" class="button button-secondary" data-qiling-page-visual-live-refresh><?php esc_html_e( '刷新预览', 'qiling' ); ?></button>
+                            <button type="button" class="button button-primary" data-qiling-page-visual-live-sync><?php esc_html_e( '同步当前颜色', 'qiling' ); ?></button>
                         </div>
                     </div>
-                    <iframe title="<?php esc_attr_e( '页面视觉真实预览', 'developer-starter' ); ?>" loading="lazy" src="<?php echo esc_url( $frontend_preview_url ); ?>" data-qiling-page-visual-live-frame></iframe>
+                    <iframe title="<?php esc_attr_e( '页面视觉真实预览', 'qiling' ); ?>" loading="lazy" src="<?php echo esc_url( $frontend_preview_url ); ?>" data-qiling-page-visual-live-frame></iframe>
                 </div>
             <?php endif; ?>
 
             <div class="qiling-page-visual-style__package">
                 <div class="qiling-page-visual-style__package-col">
                     <div class="qiling-page-visual-style__package-head">
-                        <strong><?php esc_html_e( '导出当前风格', 'developer-starter' ); ?></strong>
-                        <button type="button" class="button button-secondary" data-qiling-page-visual-copy-export><?php esc_html_e( '复制风格 JSON', 'developer-starter' ); ?></button>
+                        <strong><?php esc_html_e( '导出当前风格', 'qiling' ); ?></strong>
+                        <button type="button" class="button button-secondary" data-qiling-page-visual-copy-export><?php esc_html_e( '复制风格 JSON', 'qiling' ); ?></button>
                     </div>
                     <textarea class="widefat code" rows="8" readonly data-qiling-page-visual-export><?php echo esc_textarea( $export_json ); ?></textarea>
                 </div>
                 <div class="qiling-page-visual-style__package-col">
-                    <label for="qiling-page-visual-style-import"><strong><?php esc_html_e( '导入风格 JSON', 'developer-starter' ); ?></strong></label>
-                    <textarea id="qiling-page-visual-style-import" class="widefat code" rows="8" name="qiling_page_visual_style_import_json" placeholder="<?php esc_attr_e( '粘贴页面视觉风格 JSON，保存页面后应用。', 'developer-starter' ); ?>"></textarea>
-                    <span class="description"><?php esc_html_e( '支持直接粘贴导出的风格 JSON，也支持粘贴包含 visual_style 字段的完整页面包 JSON。', 'developer-starter' ); ?></span>
+                    <label for="qiling-page-visual-style-import"><strong><?php esc_html_e( '导入风格 JSON', 'qiling' ); ?></strong></label>
+                    <textarea id="qiling-page-visual-style-import" class="widefat code" rows="8" name="qiling_page_visual_style_import_json" placeholder="<?php esc_attr_e( '粘贴页面视觉风格 JSON，保存页面后应用。', 'qiling' ); ?>"></textarea>
+                    <span class="description"><?php esc_html_e( '支持直接粘贴导出的风格 JSON，也支持粘贴包含 visual_style 字段的完整页面包 JSON。', 'qiling' ); ?></span>
                 </div>
             </div>
 
             <div class="qiling-page-visual-style__ops">
                 <div class="qiling-page-visual-style__ops-card">
-                    <strong><?php esc_html_e( '批量应用到页面', 'developer-starter' ); ?></strong>
-                    <label for="qiling-page-visual-style-bulk-source"><span class="screen-reader-text"><?php esc_html_e( '选择批量应用的风格来源', 'developer-starter' ); ?></span></label>
+                    <strong><?php esc_html_e( '批量应用到页面', 'qiling' ); ?></strong>
+                    <label for="qiling-page-visual-style-bulk-source"><span class="screen-reader-text"><?php esc_html_e( '选择批量应用的风格来源', 'qiling' ); ?></span></label>
                     <select id="qiling-page-visual-style-bulk-source" class="widefat" name="qiling_page_visual_style_bulk_source">
-                        <option value="current"><?php esc_html_e( '当前页面风格', 'developer-starter' ); ?></option>
-                        <option value="inherit"><?php esc_html_e( '恢复到导入模板时的默认风格', 'developer-starter' ); ?></option>
-                        <option value="global"><?php esc_html_e( '全站默认风格', 'developer-starter' ); ?></option>
+                        <option value="current"><?php esc_html_e( '当前页面风格', 'qiling' ); ?></option>
+                        <option value="inherit"><?php esc_html_e( '恢复到导入模板时的默认风格', 'qiling' ); ?></option>
+                        <option value="global"><?php esc_html_e( '全站默认风格', 'qiling' ); ?></option>
                         <?php if ( ! empty( $presets ) ) : ?>
-                            <optgroup label="<?php esc_attr_e( '套用行业/我的预设', 'developer-starter' ); ?>">
+                            <optgroup label="<?php esc_attr_e( '套用行业/我的预设', 'qiling' ); ?>">
                                 <?php foreach ( $presets as $bulk_preset_key => $bulk_preset_label ) : ?>
                                     <option value="<?php echo esc_attr( 'preset:' . sanitize_key( (string) $bulk_preset_key ) ); ?>"><?php echo esc_html( (string) $bulk_preset_label ); ?></option>
                                 <?php endforeach; ?>
                             </optgroup>
                         <?php endif; ?>
                     </select>
-                    <textarea class="widefat" rows="3" name="qiling_page_visual_style_bulk_page_ids" placeholder="<?php esc_attr_e( '填写页面ID，多个ID用逗号、空格或换行分隔', 'developer-starter' ); ?>"></textarea>
-                    <span class="description"><?php esc_html_e( '点击下方按钮后，会把所选风格保存到这些页面。当前页面本身仍会正常保存上方设置。', 'developer-starter' ); ?></span>
-                    <p><button type="submit" class="button button-secondary" name="qiling_page_visual_style_action" value="bulk_apply"><?php esc_html_e( '批量应用所选风格', 'developer-starter' ); ?></button></p>
+                    <textarea class="widefat" rows="3" name="qiling_page_visual_style_bulk_page_ids" placeholder="<?php esc_attr_e( '填写页面ID，多个ID用逗号、空格或换行分隔', 'qiling' ); ?>"></textarea>
+                    <span class="description"><?php esc_html_e( '点击下方按钮后，会把所选风格保存到这些页面。当前页面本身仍会正常保存上方设置。', 'qiling' ); ?></span>
+                    <p><button type="submit" class="button button-secondary" name="qiling_page_visual_style_action" value="bulk_apply"><?php esc_html_e( '批量应用所选风格', 'qiling' ); ?></button></p>
                 </div>
 
                 <div class="qiling-page-visual-style__ops-card">
-                    <strong><?php esc_html_e( '我的预设管理', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '我的预设管理', 'qiling' ); ?></strong>
                     <?php if ( ! empty( $custom_presets ) ) : ?>
                         <select class="widefat" name="qiling_page_visual_custom_preset_key">
-                            <option value=""><?php esc_html_e( '选择我的预设', 'developer-starter' ); ?></option>
+                            <option value=""><?php esc_html_e( '选择我的预设', 'qiling' ); ?></option>
                             <?php foreach ( $custom_presets as $custom_preset_key => $custom_preset ) : ?>
                                 <option value="<?php echo esc_attr( $custom_preset_key ); ?>"><?php echo esc_html( isset( $custom_preset['label'] ) ? (string) $custom_preset['label'] : (string) $custom_preset_key ); ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <input type="text" class="widefat" name="qiling_page_visual_custom_preset_label" value="" placeholder="<?php esc_attr_e( '新名称，留空则只删除', 'developer-starter' ); ?>">
+                        <input type="text" class="widefat" name="qiling_page_visual_custom_preset_label" value="" placeholder="<?php esc_attr_e( '新名称，留空则只删除', 'qiling' ); ?>">
                         <p class="qiling-page-visual-style__ops-actions">
-                            <button type="submit" class="button button-secondary" name="qiling_page_visual_style_action" value="rename_custom_preset"><?php esc_html_e( '重命名预设', 'developer-starter' ); ?></button>
-                            <button type="submit" class="button button-link-delete" name="qiling_page_visual_style_action" value="delete_custom_preset"><?php esc_html_e( '删除预设', 'developer-starter' ); ?></button>
+                            <button type="submit" class="button button-secondary" name="qiling_page_visual_style_action" value="rename_custom_preset"><?php esc_html_e( '重命名预设', 'qiling' ); ?></button>
+                            <button type="submit" class="button button-link-delete" name="qiling_page_visual_style_action" value="delete_custom_preset"><?php esc_html_e( '删除预设', 'qiling' ); ?></button>
                         </p>
                     <?php else : ?>
-                        <span class="description"><?php esc_html_e( '还没有保存过“我的预设”。', 'developer-starter' ); ?></span>
+                        <span class="description"><?php esc_html_e( '还没有保存过“我的预设”。', 'qiling' ); ?></span>
                     <?php endif; ?>
                 </div>
             </div>
@@ -1020,7 +1020,7 @@ class Meta_Boxes_Post_Settings_Service {
                                             <input type="number" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $field_value ); ?>" class="widefat" min="0" max="1" step="0.01" placeholder="<?php echo esc_attr( isset( $field['placeholder'] ) ? (string) $field['placeholder'] : '' ); ?>" data-qiling-page-visual-input data-qiling-page-visual-group="<?php echo esc_attr( $group_key ); ?>" data-qiling-page-visual-key="<?php echo esc_attr( $field_key ); ?>">
                                         <?php elseif ( 'select' === $field_type && ! empty( $field['options'] ) && is_array( $field['options'] ) ) : ?>
                                             <select name="<?php echo esc_attr( $input_name ); ?>" class="widefat" data-qiling-page-visual-input data-qiling-page-visual-group="<?php echo esc_attr( $group_key ); ?>" data-qiling-page-visual-key="<?php echo esc_attr( $field_key ); ?>">
-                                                <option value=""><?php esc_html_e( '跟随默认', 'developer-starter' ); ?></option>
+                                                <option value=""><?php esc_html_e( '跟随默认', 'qiling' ); ?></option>
                                                 <?php foreach ( $field['options'] as $option_value => $option_label ) : ?>
                                                     <option value="<?php echo esc_attr( (string) $option_value ); ?>" <?php selected( $field_value, (string) $option_value ); ?>><?php echo esc_html( (string) $option_label ); ?></option>
                                                 <?php endforeach; ?>
@@ -2930,7 +2930,7 @@ class Meta_Boxes_Post_Settings_Service {
                     'key'    => 'preset:' . $preset_key,
                     'type'   => 'custom_preset',
                     'label'  => $this->get_page_visual_preset_label( $preset_key, $presets, $custom_presets ),
-                    'detail' => __( '我的风格，可再次套用或批量应用。', 'developer-starter' ),
+                    'detail' => __( '我的风格，可再次套用或批量应用。', 'qiling' ),
                 )
             );
         }
@@ -3034,8 +3034,8 @@ class Meta_Boxes_Post_Settings_Service {
             return array(
                 'key'    => 'global',
                 'type'   => 'global',
-                'label'  => __( '全站默认风格', 'developer-starter' ),
-                'detail' => __( '页面强制跟随全站默认。', 'developer-starter' ),
+                'label'  => __( '全站默认风格', 'qiling' ),
+                'detail' => __( '页面强制跟随全站默认。', 'qiling' ),
             );
         }
 
@@ -3045,7 +3045,7 @@ class Meta_Boxes_Post_Settings_Service {
                 'key'    => 'preset:' . $preset,
                 'type'   => isset( $custom_presets[ $preset ] ) ? 'custom_preset' : 'preset',
                 'label'  => $this->get_page_visual_preset_label( $preset, $presets, $custom_presets ),
-                'detail' => $has_field_values ? __( '基于该预设做了页面细调。', 'developer-starter' ) : __( '直接套用该预设。', 'developer-starter' ),
+                'detail' => $has_field_values ? __( '基于该预设做了页面细调。', 'qiling' ) : __( '直接套用该预设。', 'qiling' ),
             );
         }
 
@@ -3055,10 +3055,10 @@ class Meta_Boxes_Post_Settings_Service {
                 'type'   => 'page_custom',
                 'label'  => sprintf(
                     /* translators: %s: page title */
-                    __( '页面自定义：%s', 'developer-starter' ),
-                    $post_id > 0 ? get_the_title( $post_id ) : __( '当前页面', 'developer-starter' )
+                    __( '页面自定义：%s', 'qiling' ),
+                    $post_id > 0 ? get_the_title( $post_id ) : __( '当前页面', 'qiling' )
                 ),
-                'detail' => __( '该页面有单独颜色，未保存成我的风格。', 'developer-starter' ),
+                'detail' => __( '该页面有单独颜色，未保存成我的风格。', 'qiling' ),
             );
         }
 
@@ -3086,7 +3086,7 @@ class Meta_Boxes_Post_Settings_Service {
             : null;
         $label = is_array( $skin ) && ! empty( $skin['label'] )
             ? (string) $skin['label']
-            : __( '模板默认风格', 'developer-starter' );
+            : __( '模板默认风格', 'qiling' );
         $skin_key = is_array( $skin ) && ! empty( $skin['key'] )
             ? sanitize_key( (string) $skin['key'] )
             : '';
@@ -3099,10 +3099,10 @@ class Meta_Boxes_Post_Settings_Service {
             'type'   => 'template',
             'label'  => sprintf(
                 /* translators: %s: template visual style label */
-                __( '模板默认：%s', 'developer-starter' ),
+                __( '模板默认：%s', 'qiling' ),
                 $label
             ),
-            'detail' => __( '恢复到导入模板时的默认风格会回到这一组。', 'developer-starter' ),
+            'detail' => __( '恢复到导入模板时的默认风格会回到这一组。', 'qiling' ),
         );
     }
 
@@ -3136,21 +3136,21 @@ class Meta_Boxes_Post_Settings_Service {
         $state = is_array( $state ) ? $state : array();
         $cards = isset( $state['cards'] ) && is_array( $state['cards'] ) ? $state['cards'] : array();
         ?>
-        <section class="qiling-page-visual-style__usage" aria-label="<?php esc_attr_e( '风格使用情况', 'developer-starter' ); ?>">
+        <section class="qiling-page-visual-style__usage" aria-label="<?php esc_attr_e( '风格使用情况', 'qiling' ); ?>">
             <div class="qiling-page-visual-style__usage-head">
                 <div>
-                    <strong><?php esc_html_e( '风格使用情况', 'developer-starter' ); ?></strong>
-                    <span><?php esc_html_e( '查看当前风格、我的风格和已被页面使用的风格，快速判断批量修改会影响哪些页面。', 'developer-starter' ); ?></span>
+                    <strong><?php esc_html_e( '风格使用情况', 'qiling' ); ?></strong>
+                    <span><?php esc_html_e( '查看当前风格、我的风格和已被页面使用的风格，快速判断批量修改会影响哪些页面。', 'qiling' ); ?></span>
                 </div>
             </div>
             <div class="qiling-page-visual-style__usage-grid">
                 <?php if ( empty( $cards ) ) : ?>
                     <div class="qiling-page-visual-style__usage-card">
                         <div class="qiling-page-visual-style__usage-card-head">
-                            <strong><?php esc_html_e( '暂无使用数据', 'developer-starter' ); ?></strong>
+                            <strong><?php esc_html_e( '暂无使用数据', 'qiling' ); ?></strong>
                             <span class="qiling-page-visual-style__usage-count">0</span>
                         </div>
-                        <span class="description"><?php esc_html_e( '还没有页面保存过页面风格设置。', 'developer-starter' ); ?></span>
+                        <span class="description"><?php esc_html_e( '还没有页面保存过页面风格设置。', 'qiling' ); ?></span>
                     </div>
                 <?php endif; ?>
 
@@ -3168,11 +3168,11 @@ class Meta_Boxes_Post_Settings_Service {
                                     <span class="description"><?php echo esc_html( (string) $card['detail'] ); ?></span>
                                 <?php endif; ?>
                             </div>
-                            <span class="qiling-page-visual-style__usage-count"><?php echo esc_html( sprintf( __( '%d 个页面', 'developer-starter' ), $count ) ); ?></span>
+                            <span class="qiling-page-visual-style__usage-count"><?php echo esc_html( sprintf( __( '%d 个页面', 'qiling' ), $count ) ); ?></span>
                         </div>
                         <div class="qiling-page-visual-style__usage-pages">
                             <?php if ( empty( $pages ) ) : ?>
-                                <span><?php esc_html_e( '暂无页面使用', 'developer-starter' ); ?></span>
+                                <span><?php esc_html_e( '暂无页面使用', 'qiling' ); ?></span>
                             <?php else : ?>
                                 <?php foreach ( array_slice( $pages, 0, 10 ) as $page_item ) : ?>
                                     <?php
@@ -3186,7 +3186,7 @@ class Meta_Boxes_Post_Settings_Service {
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                                 <?php if ( $count > 10 ) : ?>
-                                    <span><?php echo esc_html( sprintf( __( '另有 %d 个', 'developer-starter' ), $count - 10 ) ); ?></span>
+                                    <span><?php echo esc_html( sprintf( __( '另有 %d 个', 'qiling' ), $count - 10 ) ); ?></span>
                                 <?php endif; ?>
                             <?php endif; ?>
                         </div>
@@ -3260,8 +3260,8 @@ class Meta_Boxes_Post_Settings_Service {
         return array(
             'current_style'   => $current_style,
             'current_source'  => $current_source,
-            'template_label'  => '' !== $template_label ? $template_label : __( '未匹配模板预设', 'developer-starter' ),
-            'preset_label'    => '' !== $preset_label ? $preset_label : __( '未选择基础预设', 'developer-starter' ),
+            'template_label'  => '' !== $template_label ? $template_label : __( '未匹配模板预设', 'qiling' ),
+            'preset_label'    => '' !== $preset_label ? $preset_label : __( '未选择基础预设', 'qiling' ),
             'area_sources'    => array(
                 'header_menu' => $this->resolve_page_visual_area_source(
                     $settings,
@@ -3306,24 +3306,24 @@ class Meta_Boxes_Post_Settings_Service {
         $module_items   = isset( $state['module_overrides'] ) && is_array( $state['module_overrides'] ) ? $state['module_overrides'] : array();
 
         $source_type  = isset( $current_source['type'] ) ? sanitize_html_class( (string) $current_source['type'] ) : 'global';
-        $source_label = isset( $current_source['label'] ) ? (string) $current_source['label'] : __( '全站默认', 'developer-starter' );
+        $source_label = isset( $current_source['label'] ) ? (string) $current_source['label'] : __( '全站默认', 'qiling' );
         ?>
-        <section class="qiling-page-style-manager" aria-label="<?php esc_attr_e( '页面风格管家', 'developer-starter' ); ?>">
+        <section class="qiling-page-style-manager" aria-label="<?php esc_attr_e( '页面风格管家', 'qiling' ); ?>">
             <div class="qiling-page-style-manager__head">
                 <div>
-                    <h3><?php esc_html_e( '页面风格管家', 'developer-starter' ); ?></h3>
-                    <p><?php esc_html_e( '先看清当前来源和覆盖项，再决定要套用、复制、保存或恢复。', 'developer-starter' ); ?></p>
+                    <h3><?php esc_html_e( '页面风格管家', 'qiling' ); ?></h3>
+                    <p><?php esc_html_e( '先看清当前来源和覆盖项，再决定要套用、复制、保存或恢复。', 'qiling' ); ?></p>
                 </div>
                 <span class="qiling-page-style-manager__badge qiling-page-style-manager__badge--<?php echo esc_attr( $source_type ); ?>"><?php echo esc_html( $source_label ); ?></span>
             </div>
 
             <div class="qiling-page-style-manager__grid">
                 <div class="qiling-page-style-manager__card">
-                    <span><?php esc_html_e( '当前页面风格', 'developer-starter' ); ?></span>
-                    <strong><?php echo esc_html( isset( $current_style['label'] ) ? (string) $current_style['label'] : __( '全站默认', 'developer-starter' ) ); ?></strong>
+                    <span><?php esc_html_e( '当前页面风格', 'qiling' ); ?></span>
+                    <strong><?php echo esc_html( isset( $current_style['label'] ) ? (string) $current_style['label'] : __( '全站默认', 'qiling' ) ); ?></strong>
                 </div>
                 <div class="qiling-page-style-manager__card">
-                    <span><?php esc_html_e( '当前来源', 'developer-starter' ); ?></span>
+                    <span><?php esc_html_e( '当前来源', 'qiling' ); ?></span>
                     <strong><?php echo esc_html( $source_label ); ?></strong>
                     <?php if ( ! empty( $current_source['detail'] ) ) : ?>
                         <span><?php echo esc_html( (string) $current_source['detail'] ); ?></span>
@@ -3334,17 +3334,17 @@ class Meta_Boxes_Post_Settings_Service {
             <div class="qiling-page-style-manager__sources">
                 <?php
                 $source_labels = array(
-                    'header_menu' => __( '顶部菜单来源', 'developer-starter' ),
-                    'search'      => __( '搜索框来源', 'developer-starter' ),
-                    'footer_wave' => __( '底部波浪来源', 'developer-starter' ),
-                    'buttons'     => __( '按钮来源', 'developer-starter' ),
+                    'header_menu' => __( '顶部菜单来源', 'qiling' ),
+                    'search'      => __( '搜索框来源', 'qiling' ),
+                    'footer_wave' => __( '底部波浪来源', 'qiling' ),
+                    'buttons'     => __( '按钮来源', 'qiling' ),
                 );
                 foreach ( $source_labels as $source_key => $source_title ) :
                     $source = isset( $area_sources[ $source_key ] ) && is_array( $area_sources[ $source_key ] ) ? $area_sources[ $source_key ] : array();
                     ?>
                     <div class="qiling-page-style-manager__source">
                         <span><?php echo esc_html( $source_title ); ?></span>
-                        <strong><?php echo esc_html( isset( $source['label'] ) ? (string) $source['label'] : __( '全站默认', 'developer-starter' ) ); ?></strong>
+                        <strong><?php echo esc_html( isset( $source['label'] ) ? (string) $source['label'] : __( '全站默认', 'qiling' ) ); ?></strong>
                         <?php if ( ! empty( $source['detail'] ) ) : ?>
                             <span><?php echo esc_html( (string) $source['detail'] ); ?></span>
                         <?php endif; ?>
@@ -3353,17 +3353,17 @@ class Meta_Boxes_Post_Settings_Service {
             </div>
 
             <div class="qiling-page-style-manager__overrides">
-                <span><?php esc_html_e( '模块级单独覆盖', 'developer-starter' ); ?></span>
+                <span><?php esc_html_e( '模块级单独覆盖', 'qiling' ); ?></span>
                 <?php if ( empty( $module_items ) ) : ?>
-                    <strong><?php esc_html_e( '没有发现单独覆盖，模块会跟随页面风格。', 'developer-starter' ); ?></strong>
+                    <strong><?php esc_html_e( '没有发现单独覆盖，模块会跟随页面风格。', 'qiling' ); ?></strong>
                 <?php else : ?>
-                    <strong><?php echo esc_html( sprintf( __( '发现 %d 个模块单独覆盖了页面风格', 'developer-starter' ), count( $module_items ) ) ); ?></strong>
+                    <strong><?php echo esc_html( sprintf( __( '发现 %d 个模块单独覆盖了页面风格', 'qiling' ), count( $module_items ) ) ); ?></strong>
                     <div class="qiling-page-style-manager__override-list">
                         <?php foreach ( array_slice( $module_items, 0, 12 ) as $module_item ) : ?>
                             <span class="qiling-page-style-manager__override-item"><?php echo esc_html( isset( $module_item['label'] ) ? (string) $module_item['label'] : '' ); ?></span>
                         <?php endforeach; ?>
                         <?php if ( count( $module_items ) > 12 ) : ?>
-                            <span class="qiling-page-style-manager__override-item"><?php echo esc_html( sprintf( __( '另有 %d 个', 'developer-starter' ), count( $module_items ) - 12 ) ); ?></span>
+                            <span class="qiling-page-style-manager__override-item"><?php echo esc_html( sprintf( __( '另有 %d 个', 'qiling' ), count( $module_items ) - 12 ) ); ?></span>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -3391,7 +3391,7 @@ class Meta_Boxes_Post_Settings_Service {
         if ( isset( $custom_presets[ $preset_key ]['label'] ) && is_scalar( $custom_presets[ $preset_key ]['label'] ) ) {
             return sprintf(
                 /* translators: %s: custom preset label */
-                __( '我的：%s', 'developer-starter' ),
+                __( '我的：%s', 'qiling' ),
                 (string) $custom_presets[ $preset_key ]['label']
             );
         }
@@ -3450,8 +3450,8 @@ class Meta_Boxes_Post_Settings_Service {
         if ( 'global' === (string) $mode ) {
             return array(
                 'type'   => 'global',
-                'label'  => __( '全站默认', 'developer-starter' ),
-                'detail' => __( '当前页面强制使用全站设计设置。', 'developer-starter' ),
+                'label'  => __( '全站默认', 'qiling' ),
+                'detail' => __( '当前页面强制使用全站设计设置。', 'qiling' ),
             );
         }
 
@@ -3459,38 +3459,38 @@ class Meta_Boxes_Post_Settings_Service {
             if ( $has_field_values ) {
                 return array(
                     'type'   => 'custom',
-                    'label'  => __( '页面自定义', 'developer-starter' ),
-                    'detail' => '' !== $preset_label ? sprintf( __( '基于 %s 细调。', 'developer-starter' ), $preset_label ) : __( '没有选择基础预设。', 'developer-starter' ),
+                    'label'  => __( '页面自定义', 'qiling' ),
+                    'detail' => '' !== $preset_label ? sprintf( __( '基于 %s 细调。', 'qiling' ), $preset_label ) : __( '没有选择基础预设。', 'qiling' ),
                 );
             }
 
             if ( '' !== (string) $preset_key ) {
                 return array(
                     'type'   => 'preset',
-                    'label'  => $is_my_preset ? __( '我的预设', 'developer-starter' ) : __( '模板预设', 'developer-starter' ),
+                    'label'  => $is_my_preset ? __( '我的预设', 'qiling' ) : __( '模板预设', 'qiling' ),
                     'detail' => '' !== $preset_label ? $preset_label : (string) $preset_key,
                 );
             }
 
             return array(
                 'type'   => 'custom',
-                'label'  => __( '页面自定义', 'developer-starter' ),
-                'detail' => __( '尚未填写细调字段；保存后仍会保持当前页面自定义模式。', 'developer-starter' ),
+                'label'  => __( '页面自定义', 'qiling' ),
+                'detail' => __( '尚未填写细调字段；保存后仍会保持当前页面自定义模式。', 'qiling' ),
             );
         }
 
         if ( '' !== (string) $template_label ) {
             return array(
                 'type'   => 'preset',
-                'label'  => __( '模板预设', 'developer-starter' ),
+                'label'  => __( '模板预设', 'qiling' ),
                 'detail' => (string) $template_label,
             );
         }
 
         return array(
             'type'   => 'global',
-            'label'  => __( '全站默认', 'developer-starter' ),
-            'detail' => __( '当前页面没有匹配模板预设或页面自定义。', 'developer-starter' ),
+            'label'  => __( '全站默认', 'qiling' ),
+            'detail' => __( '当前页面没有匹配模板预设或页面自定义。', 'qiling' ),
         );
     }
 
@@ -3499,7 +3499,7 @@ class Meta_Boxes_Post_Settings_Service {
      */
     private function resolve_page_visual_current_style_label( $mode, $preset_key, $preset_label, $template_label, $has_field_values ) {
         if ( 'global' === (string) $mode ) {
-            return array( 'label' => __( '全站默认', 'developer-starter' ) );
+            return array( 'label' => __( '全站默认', 'qiling' ) );
         }
 
         if ( 'custom' === (string) $mode ) {
@@ -3508,17 +3508,17 @@ class Meta_Boxes_Post_Settings_Service {
             }
 
             if ( $has_field_values ) {
-                return array( 'label' => __( '自定义', 'developer-starter' ) );
+                return array( 'label' => __( '自定义', 'qiling' ) );
             }
 
-            return array( 'label' => __( '自定义', 'developer-starter' ) );
+            return array( 'label' => __( '自定义', 'qiling' ) );
         }
 
         if ( '' !== (string) $template_label ) {
             return array( 'label' => (string) $template_label );
         }
 
-        return array( 'label' => __( '全站默认', 'developer-starter' ) );
+        return array( 'label' => __( '全站默认', 'qiling' ) );
     }
 
     /**
@@ -3532,8 +3532,8 @@ class Meta_Boxes_Post_Settings_Service {
         $mode = isset( $context['mode'] ) ? (string) $context['mode'] : 'inherit';
         if ( 'custom' === $mode && $this->page_visual_style_group_has_values( $settings, $group_key, $field_keys ) ) {
             return array(
-                'label'  => __( '页面自定义', 'developer-starter' ),
-                'detail' => __( '此区域有单独字段覆盖。', 'developer-starter' ),
+                'label'  => __( '页面自定义', 'qiling' ),
+                'detail' => __( '此区域有单独字段覆盖。', 'qiling' ),
             );
         }
 
@@ -3544,28 +3544,28 @@ class Meta_Boxes_Post_Settings_Service {
 
         if ( 'global' === $mode ) {
             return array(
-                'label'  => __( '全站默认', 'developer-starter' ),
-                'detail' => __( '跟随全站设计设置。', 'developer-starter' ),
+                'label'  => __( '全站默认', 'qiling' ),
+                'detail' => __( '跟随全站设计设置。', 'qiling' ),
             );
         }
 
         if ( 'custom' === $mode && '' !== $preset_key ) {
             return array(
-                'label'  => $is_my_preset ? __( '我的预设', 'developer-starter' ) : __( '模板预设', 'developer-starter' ),
+                'label'  => $is_my_preset ? __( '我的预设', 'qiling' ) : __( '模板预设', 'qiling' ),
                 'detail' => '' !== $preset_label ? $preset_label : $preset_key,
             );
         }
 
         if ( '' !== $template_label ) {
             return array(
-                'label'  => __( '模板预设', 'developer-starter' ),
+                'label'  => __( '模板预设', 'qiling' ),
                 'detail' => $template_label,
             );
         }
 
         return array(
-            'label'  => __( '全站默认', 'developer-starter' ),
-            'detail' => __( '没有页面或模板级覆盖。', 'developer-starter' ),
+            'label'  => __( '全站默认', 'qiling' ),
+            'detail' => __( '没有页面或模板级覆盖。', 'qiling' ),
         );
     }
 
@@ -3610,7 +3610,7 @@ class Meta_Boxes_Post_Settings_Service {
                 'type'  => $type,
                 'label' => sprintf(
                     /* translators: 1: module label, 2: module sequence number */
-                    __( '%1$s #%2$d', 'developer-starter' ),
+                    __( '%1$s #%2$d', 'qiling' ),
                     $module_label,
                     absint( $index ) + 1
                 ),
@@ -3651,7 +3651,7 @@ class Meta_Boxes_Post_Settings_Service {
     private function get_page_visual_module_label( $type ) {
         $type = sanitize_key( (string) $type );
         if ( '' === $type ) {
-            return __( '未知模块', 'developer-starter' );
+            return __( '未知模块', 'qiling' );
         }
 
         if ( class_exists( '\Developer_Starter\Modules\Module_Manager' ) ) {
@@ -3715,11 +3715,11 @@ class Meta_Boxes_Post_Settings_Service {
             <p>
                 <label>
                     <input type="checkbox" name="qiling_gallery_mode" value="1" <?php checked( $gallery_mode, '1' ); ?> />
-                    <?php esc_html_e( '当前文章为相册模式', 'developer-starter' ); ?>
+                    <?php esc_html_e( '当前文章为相册模式', 'qiling' ); ?>
                 </label>
             </p>
             <p class="description" style="color: #666; font-size: 12px; margin-top: 8px;">
-                <?php esc_html_e( '勾选后，前台文章页面将以相册模式展示（一页一张图片，左右翻页）。', 'developer-starter' ); ?>
+                <?php esc_html_e( '勾选后，前台文章页面将以相册模式展示（一页一张图片，左右翻页）。', 'qiling' ); ?>
             </p>
         </div>
         <?php
@@ -3734,11 +3734,11 @@ class Meta_Boxes_Post_Settings_Service {
             <p>
                 <label>
                     <input type="checkbox" name="qiling_full_width_mode" value="1" <?php checked( $full_width_mode, '1' ); ?> />
-                    <?php esc_html_e( '文章页面全宽', 'developer-starter' ); ?>
+                    <?php esc_html_e( '文章页面全宽', 'qiling' ); ?>
                 </label>
             </p>
             <p class="description" style="color: #666; font-size: 12px; margin-top: 8px;">
-                <?php esc_html_e( '开启后，该文章前台页面将全宽显示，不加载侧边栏小工具。', 'developer-starter' ); ?>
+                <?php esc_html_e( '开启后，该文章前台页面将全宽显示，不加载侧边栏小工具。', 'qiling' ); ?>
             </p>
         </div>
         <?php
@@ -3751,7 +3751,7 @@ class Meta_Boxes_Post_Settings_Service {
         <p>
             <input type="url" name="developer_starter_featured_image_url" value="<?php echo esc_url( $value ); ?>" class="widefat" placeholder="https://example.com/image.jpg" />
         </p>
-        <p class="description"><?php esc_html_e( '填写后将优先使用该URL作为特色图', 'developer-starter' ); ?></p>
+        <p class="description"><?php esc_html_e( '填写后将优先使用该URL作为特色图', 'qiling' ); ?></p>
         <?php
     }
 

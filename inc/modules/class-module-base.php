@@ -82,7 +82,7 @@ abstract class Module_Base {
         if ( function_exists( 'developer_starter_locate_child_aware_template' ) ) {
             $template_path = developer_starter_locate_child_aware_template( $relative_template );
         } else {
-            $template_path = DEVELOPER_STARTER_DIR . '/' . $relative_template;
+            $template_path = QILING_DIR . '/' . $relative_template;
         }
 
         $template_path = apply_filters(
@@ -183,9 +183,9 @@ abstract class Module_Base {
         return array_merge( array(
             'id'          => $id,
             'type'        => 'color',
-            'label'       => $label ? $label : __( '按钮边框颜色', 'developer-starter' ),
+            'label'       => $label ? $label : __( '按钮边框颜色', 'qiling' ),
             'default'     => '',
-            'description' => $description ? $description : __( '留空时跟随按钮背景色；没有单独背景色时跟随全局按钮边框。', 'developer-starter' ),
+            'description' => $description ? $description : __( '留空时跟随按钮背景色；没有单独背景色时跟随全局按钮边框。', 'qiling' ),
         ), is_array( $extra ) ? $extra : array() );
     }
 

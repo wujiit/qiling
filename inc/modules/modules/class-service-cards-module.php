@@ -21,7 +21,7 @@ class Service_Cards_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-grid-view';
-        $this->description = __( '图标卡片，左侧图标右侧标题描述', 'developer-starter' );
+        $this->description = __( '图标卡片，左侧图标右侧标题描述', 'qiling' );
     }
 
     public function get_id() {
@@ -29,7 +29,7 @@ class Service_Cards_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '服务标签卡片', 'developer-starter' );
+        return __( '服务标签卡片', 'qiling' );
     }
 
     public function get_fields() {
@@ -38,31 +38,31 @@ class Service_Cards_Module extends Module_Base {
             array(
                 'id'      => 'sc_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'sc_subtitle',
                 'type'    => 'text',
-                'label'   => __( '模块副标题', 'developer-starter' ),
+                'label'   => __( '模块副标题', 'qiling' ),
                 'default' => '',
             ),
-            array( 'id' => 'sc_heading_color', 'type' => 'color', 'label' => __( '模块标题颜色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'sc_subtitle_color', 'type' => 'color', 'label' => __( '模块副标题颜色', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'sc_heading_color', 'type' => 'color', 'label' => __( '模块标题颜色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'sc_subtitle_color', 'type' => 'color', 'label' => __( '模块副标题颜色', 'qiling' ), 'default' => '' ),
             array(
                 'id'      => 'sc_bg_color',
                 'type'    => 'text',
-                'label'   => __( '模块背景颜色(支持渐变)', 'developer-starter' ),
+                'label'   => __( '模块背景颜色(支持渐变)', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'sc_padding',
                 'type'    => 'select',
-                'label'   => __( '上下内边距', 'developer-starter' ),
+                'label'   => __( '上下内边距', 'qiling' ),
                 'options' => array(
                     '20'  => '20px',
                     '40'  => '40px',
-                    '60'  => __( '60px（推荐）', 'developer-starter' ),
+                    '60'  => __( '60px（推荐）', 'qiling' ),
                     '80'  => '80px',
                 ),
                 'default' => '60',
@@ -70,18 +70,18 @@ class Service_Cards_Module extends Module_Base {
             array(
                 'id'      => 'sc_columns',
                 'type'    => 'select',
-                'label'   => __( '每行显示数量', 'developer-starter' ),
+                'label'   => __( '每行显示数量', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2个', 'developer-starter' ),
-                    '3' => __( '3个', 'developer-starter' ),
-                    '4' => __( '4个（推荐）', 'developer-starter' ),
+                    '2' => __( '2个', 'qiling' ),
+                    '3' => __( '3个', 'qiling' ),
+                    '4' => __( '4个（推荐）', 'qiling' ),
                 ),
                 'default' => '4',
             ),
             array(
                 'id'      => 'sc_gap',
                 'type'    => 'text',
-                'label'   => __( '卡片间距', 'developer-starter' ),
+                'label'   => __( '卡片间距', 'qiling' ),
                 'default' => '20px',
             ),
             
@@ -89,31 +89,31 @@ class Service_Cards_Module extends Module_Base {
             array(
                 'id'      => 'sc_card_bg',
                 'type'    => 'text',
-                'label'   => __( '卡片背景颜色(支持rgba透明度)', 'developer-starter' ),
+                'label'   => __( '卡片背景颜色(支持rgba透明度)', 'qiling' ),
                 'default' => 'var(--qiling-color-rgba-255-255-255-09)',
             ),
             array(
                 'id'      => 'sc_card_radius',
                 'type'    => 'text',
-                'label'   => __( '卡片圆角', 'developer-starter' ),
+                'label'   => __( '卡片圆角', 'qiling' ),
                 'default' => '12px',
             ),
             array(
                 'id'      => 'sc_card_shadow',
                 'type'    => 'select',
-                'label'   => __( '卡片阴影', 'developer-starter' ),
+                'label'   => __( '卡片阴影', 'qiling' ),
                 'options' => array(
-                    'none'   => __( '无阴影', 'developer-starter' ),
-                    'light'  => __( '轻微阴影', 'developer-starter' ),
-                    'medium' => __( '中等阴影（推荐）', 'developer-starter' ),
-                    'strong' => __( '明显阴影', 'developer-starter' ),
+                    'none'   => __( '无阴影', 'qiling' ),
+                    'light'  => __( '轻微阴影', 'qiling' ),
+                    'medium' => __( '中等阴影（推荐）', 'qiling' ),
+                    'strong' => __( '明显阴影', 'qiling' ),
                 ),
                 'default' => 'medium',
             ),
             array(
                 'id'      => 'sc_card_border',
                 'type'    => 'text',
-                'label'   => __( '卡片边框(如: 1px solid var(--color-neutral-200))', 'developer-starter' ),
+                'label'   => __( '卡片边框(如: 1px solid var(--color-neutral-200))', 'qiling' ),
                 'default' => '',
             ),
             
@@ -121,19 +121,19 @@ class Service_Cards_Module extends Module_Base {
             array(
                 'id'      => 'sc_icon_size',
                 'type'    => 'text',
-                'label'   => __( '图标大小', 'developer-starter' ),
+                'label'   => __( '图标大小', 'qiling' ),
                 'default' => '48px',
             ),
             array(
                 'id'      => 'sc_icon_bg',
                 'type'    => 'text',
-                'label'   => __( '图标背景颜色(支持渐变)', 'developer-starter' ),
+                'label'   => __( '图标背景颜色(支持渐变)', 'qiling' ),
                 'default' => 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--qiling-color-10b981) 100%)',
             ),
             array(
                 'id'      => 'sc_icon_radius',
                 'type'    => 'text',
-                'label'   => __( '图标圆角', 'developer-starter' ),
+                'label'   => __( '图标圆角', 'qiling' ),
                 'default' => '12px',
             ),
             
@@ -141,26 +141,26 @@ class Service_Cards_Module extends Module_Base {
             array(
                 'id'      => 'sc_title_color',
                 'type'    => 'text',
-                'label'   => __( '标题颜色', 'developer-starter' ),
+                'label'   => __( '标题颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-800)',
             ),
             array(
                 'id'      => 'sc_badge_bg',
                 'type'    => 'text',
-                'label'   => __( '标签按钮渐变背景', 'developer-starter' ),
+                'label'   => __( '标签按钮渐变背景', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ),
+                'desc'    => __( '留空时跟随页面预设/全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'sc_badge_text',
                 'type'    => 'color',
-                'label'   => __( '标签文字颜色', 'developer-starter' ),
+                'label'   => __( '标签文字颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'sc_desc_color',
                 'type'    => 'text',
-                'label'   => __( '描述文字颜色', 'developer-starter' ),
+                'label'   => __( '描述文字颜色', 'qiling' ),
                 'default' => 'var(--color-text-muted)',
             ),
             
@@ -168,46 +168,46 @@ class Service_Cards_Module extends Module_Base {
             array(
                 'id'         => 'sc_cards',
                 'type'       => 'repeater',
-                'label'      => __( '服务卡片', 'developer-starter' ),
-                'add_button' => __( '添加卡片', 'developer-starter' ),
+                'label'      => __( '服务卡片', 'qiling' ),
+                'add_button' => __( '添加卡片', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'    => 'icon',
                         'type'  => 'text',
-                        'label' => __( '图标(emoji或Symbol类名)', 'developer-starter' ),
+                        'label' => __( '图标(emoji或Symbol类名)', 'qiling' ),
                     ),
                     array(
                         'id'    => 'icon_image',
                         'type'  => 'image',
-                        'label' => __( '图标图片(优先使用，留空则用上方图标)', 'developer-starter' ),
+                        'label' => __( '图标图片(优先使用，留空则用上方图标)', 'qiling' ),
                     ),
                     array(
                         'id'    => 'title',
                         'type'  => 'text',
-                        'label' => __( '标题', 'developer-starter' ),
+                        'label' => __( '标题', 'qiling' ),
                     ),
                     array(
                         'id'    => 'badge',
                         'type'  => 'text',
-                        'label' => __( '标签文字(如: 优惠、热门、留空不显示)', 'developer-starter' ),
+                        'label' => __( '标签文字(如: 优惠、热门、留空不显示)', 'qiling' ),
                     ),
                     array(
                         'id'    => 'description',
                         'type'  => 'text',
-                        'label' => __( '描述', 'developer-starter' ),
+                        'label' => __( '描述', 'qiling' ),
                     ),
                     array(
                         'id'    => 'url',
                         'type'  => 'text',
-                        'label' => __( '链接地址', 'developer-starter' ),
+                        'label' => __( '链接地址', 'qiling' ),
                     ),
                     array(
                         'id'      => 'target',
                         'type'    => 'select',
-                        'label'   => __( '打开方式', 'developer-starter' ),
+                        'label'   => __( '打开方式', 'qiling' ),
                         'options' => array(
-                            '_self'  => __( '当前窗口', 'developer-starter' ),
-                            '_blank' => __( '新窗口', 'developer-starter' ),
+                            '_self'  => __( '当前窗口', 'qiling' ),
+                            '_blank' => __( '新窗口', 'qiling' ),
                         ),
                     ),
                 ),
@@ -286,7 +286,7 @@ class Service_Cards_Module extends Module_Base {
                                         <?php elseif ( ! empty( $card['icon'] ) ) : ?>
                                             <?php echo developer_starter_get_icon_html( trim( $card['icon'] ) ); ?>
                                         <?php else : ?>
-                                            <span class="sc-icon-emoji">📦</span>
+                                            <span class="sc-icon-emoji"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></span>
                                         <?php endif; ?>
                                     </div>
                                     <div class="sc-content">
@@ -312,8 +312,10 @@ class Service_Cards_Module extends Module_Base {
                     </div>
                 <?php else : ?>
                     <div class="sc-empty" style="text-align: center; padding: var(--qiling-space-60) var(--qiling-space-20); background: var(--color-neutral-50); border-radius: 12px;">
-                        <span style="font-size: var(--qiling-text-rem-3); display: block; margin-bottom: var(--qiling-space-16);">📦</span>
-                        <p style="color: var(--color-text-muted);"><?php esc_html_e( '请添加服务卡片', 'developer-starter' ); ?></p>
+                        <span style="display: block; margin: 0 auto var(--qiling-space-16); width: 48px; height: 48px; color: var(--color-primary);" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </span>
+                        <p style="color: var(--color-text-muted);"><?php esc_html_e( '请添加服务卡片', 'qiling' ); ?></p>
                     </div>
                 <?php endif; ?>
             </div>

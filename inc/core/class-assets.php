@@ -81,17 +81,16 @@ class Assets {
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_comments_styles' ), 30 );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_assets' ) );
-        add_action( 'wp_enqueue_scripts', array( $this, 'optimize_woocommerce_scripts' ), 100 );
     }
     
     /**
      * 获取资源版本号
      */
     private function get_version() {
-        $version = (string) DEVELOPER_STARTER_VERSION;
+        $version = (string) QILING_VERSION;
 
         if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-            $main_css = DEVELOPER_STARTER_DIR . '/assets/css/main.css';
+            $main_css = QILING_DIR . '/assets/css/main.css';
             if ( file_exists( $main_css ) ) {
                 $version = (string) filemtime( $main_css );
             }
@@ -108,21 +107,21 @@ class Assets {
      * 获取主题内置 Swiper 样式地址
      */
     private function get_default_swiper_style_url() {
-        return DEVELOPER_STARTER_ASSETS . '/css/vendor/swiper-bundle.min.css';
+        return QILING_ASSETS . '/css/vendor/swiper-bundle.min.css';
     }
 
     /**
      * 获取主题内置 Swiper 脚本地址
      */
     private function get_default_swiper_script_url() {
-        return DEVELOPER_STARTER_ASSETS . '/js/vendor/swiper-bundle.min.js';
+        return QILING_ASSETS . '/js/vendor/swiper-bundle.min.js';
     }
 
     /**
      * 获取主题内置 Chart.js 地址
      */
     private function get_default_chart_script_url() {
-        return DEVELOPER_STARTER_ASSETS . '/js/vendor/chart.min.js';
+        return QILING_ASSETS . '/js/vendor/chart.min.js';
     }
 
     /**
@@ -325,7 +324,7 @@ class Assets {
      */
     private function enqueue_custom_js_option( $custom_js ) {
         $fragments = $this->parse_custom_script_fragments( $custom_js );
-        $last_handle = 'developer-starter-main';
+        $last_handle = 'qiling-main';
 
         foreach ( $fragments['external'] as $index => $script_data ) {
             $src = isset( $script_data['src'] ) ? $this->normalize_allowed_asset_url( (string) $script_data['src'] ) : '';
@@ -435,7 +434,7 @@ class Assets {
         }
 
         wp_add_inline_script(
-            'developer-starter-main',
+            'qiling-main',
             'window.developerStarterData=Object.assign(window.developerStarterData||{},' . $json . ');',
             'after'
         );
@@ -452,13 +451,13 @@ class Assets {
      */
     private function enqueue_main_feature_script( $slug, $file, $version, $deps = array() ) {
         $file = ltrim( (string) $file, '/\\' );
-        $path = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/js/' . $file;
+        $path = trailingslashit( QILING_DIR ) . 'assets/js/' . $file;
         if ( ! file_exists( $path ) ) {
             return;
         }
 
         $deps = is_array( $deps ) ? $deps : array( $deps );
-        array_unshift( $deps, 'developer-starter-main' );
+        array_unshift( $deps, 'qiling-main' );
         $deps = array_values(
             array_unique(
                 array_filter(
@@ -470,7 +469,7 @@ class Assets {
 
         wp_enqueue_script(
             'developer-starter-feature-' . sanitize_key( $slug ),
-            DEVELOPER_STARTER_ASSETS . '/js/' . $file,
+            QILING_ASSETS . '/js/' . $file,
             $deps,
             (string) filemtime( $path ),
             true
@@ -486,24 +485,25 @@ class Assets {
         $use_min = developer_starter_get_option( 'css_minify_enable', '' );
         do_action( 'developer_starter_before_enqueue_styles', $version, $use_min );
         
-        $main_css = DEVELOPER_STARTER_ASSETS . '/css/main.css';
-        if ( $use_min && file_exists( DEVELOPER_STARTER_DIR . '/assets/css/main.min.css' ) ) {
-            $main_css = DEVELOPER_STARTER_ASSETS . '/css/main.min.css';
+        $main_css = QILING_ASSETS . '/css/main.css';
+        if ( $use_min && file_exists( QILING_DIR . '/assets/css/main.min.css' ) ) {
+            $main_css = QILING_ASSETS . '/css/main.min.css';
         }
         $main_css = apply_filters( 'developer_starter_main_css_url', $main_css, $version, $use_min );
 
         // 主样式 (不使用Google Fonts，使用系统字体)
-        wp_enqueue_style( 'developer-starter-main', $main_css, array(), $version );
+        wp_enqueue_style( 'qiling-main', $main_css, array(), $version );
+        wp_register_style( 'developer-starter-main', false, array( 'qiling-main' ), $version ); // Backwards-compatible alias
     
         // 功能模块样式（支持整包 / 按需两种加载方式）
         if ( $needs_modules ) {
             $this->enqueue_modules_styles( $version, (bool) $use_min );
-            $advanced_css_file = DEVELOPER_STARTER_DIR . '/assets/css/module-advanced-styles.css';
+            $advanced_css_file = QILING_DIR . '/assets/css/module-advanced-styles.css';
             if ( file_exists( $advanced_css_file ) ) {
                 wp_enqueue_style(
                     'developer-starter-module-advanced-styles',
-                    DEVELOPER_STARTER_ASSETS . '/css/module-advanced-styles.css',
-                    array( 'developer-starter-main' ),
+                    QILING_ASSETS . '/css/module-advanced-styles.css',
+                    array( 'qiling-main' ),
                     (string) filemtime( $advanced_css_file )
                 );
             }
@@ -552,13 +552,13 @@ class Assets {
         }
 
         // 动态 CSS（只包含真正动态的变量）
-        wp_add_inline_style( 'developer-starter-main', $this->get_dynamic_css() );
+        wp_add_inline_style( 'qiling-main', $this->get_dynamic_css() );
 
         if ( function_exists( 'developer_starter_lazy_load_placeholder_enabled' ) && developer_starter_lazy_load_placeholder_enabled() ) {
             wp_enqueue_style(
                 'developer-starter-lazy-image-placeholder',
-                DEVELOPER_STARTER_ASSETS . '/css/lazy-image-placeholder.css',
-                array( 'developer-starter-main' ),
+                QILING_ASSETS . '/css/lazy-image-placeholder.css',
+                array( 'qiling-main' ),
                 $version
             );
         }
@@ -567,15 +567,15 @@ class Assets {
         $custom_css = developer_starter_get_option( 'custom_css', '' );
         $custom_css = apply_filters( 'developer_starter_custom_css', $custom_css, $version );
         if ( ! empty( $custom_css ) ) {
-            wp_add_inline_style( 'developer-starter-main', $custom_css );
+            wp_add_inline_style( 'qiling-main', $custom_css );
         }
         
         // Iconfont 资源
         $iconfont_js = developer_starter_get_option( 'iconfont_js_url', '' );
         $iconfont_js = $this->normalize_allowed_asset_url( $iconfont_js );
         if ( ! empty( $iconfont_js ) ) {
-            wp_add_inline_style( 'developer-starter-main', $this->get_iconfont_inline_css() );
-            wp_enqueue_script( 'iconfont', $iconfont_js, array(), DEVELOPER_STARTER_VERSION, true );
+            wp_add_inline_style( 'qiling-main', $this->get_iconfont_inline_css() );
+            wp_enqueue_script( 'iconfont', $iconfont_js, array(), $version, true );
         }
 
         // 认证页面样式（按需加载）
@@ -584,7 +584,7 @@ class Assets {
             if ( is_page_template( 'templates/template-login.php' ) || 
                  is_page_template( 'templates/template-register.php' ) || 
                  is_page_template( 'templates/template-forgot-password.php' ) ) {
-                wp_enqueue_style( 'developer-starter-auth', DEVELOPER_STARTER_ASSETS . '/css/auth.css', array(), $version );
+                wp_enqueue_style( 'developer-starter-auth', QILING_ASSETS . '/css/auth.css', array(), $version );
                 if ( function_exists( 'developer_starter_get_auth_page_background_css' ) ) {
                     $auth_page_background_css = developer_starter_get_auth_page_background_css();
                     if ( '' !== $auth_page_background_css ) {
@@ -596,7 +596,7 @@ class Assets {
         
         // FAQ页面样式（按需加载）
         if ( is_page_template( 'templates/template-faq.php' ) ) {
-            wp_enqueue_style( 'developer-starter-faq', DEVELOPER_STARTER_ASSETS . '/css/faq.css', array(), $version );
+            wp_enqueue_style( 'developer-starter-faq', QILING_ASSETS . '/css/faq.css', array(), $version );
         }
 
         if ( function_exists( 'developer_starter_enqueue_current_page_visual_skin_styles' ) ) {
@@ -605,7 +605,7 @@ class Assets {
         
         // 侧边栏样式（精确加载 - 仅在启用侧边栏的文章页）
         if ( $this->needs_sidebar() ) {
-            wp_enqueue_style( 'developer-starter-sidebar', DEVELOPER_STARTER_ASSETS . '/css/sidebar.css', array(), $version );
+            wp_enqueue_style( 'developer-starter-sidebar', QILING_ASSETS . '/css/sidebar.css', array(), $version );
         }
 
         if ( $this->needs_blog_presets() ) {
@@ -613,24 +613,24 @@ class Assets {
         }
 
         if ( is_search() ) {
-            $search_page_css_file = DEVELOPER_STARTER_DIR . '/assets/css/search-page.css';
+            $search_page_css_file = QILING_DIR . '/assets/css/search-page.css';
             if ( file_exists( $search_page_css_file ) ) {
                 wp_enqueue_style(
                     'developer-starter-search-page',
-                    DEVELOPER_STARTER_ASSETS . '/css/search-page.css',
-                    array( 'developer-starter-main' ),
+                    QILING_ASSETS . '/css/search-page.css',
+                    array( 'qiling-main' ),
                     (string) filemtime( $search_page_css_file )
                 );
             }
         }
 
         if ( is_404() ) {
-            $error_404_css_file = DEVELOPER_STARTER_DIR . '/assets/css/error-404.css';
+            $error_404_css_file = QILING_DIR . '/assets/css/error-404.css';
             if ( file_exists( $error_404_css_file ) ) {
                 wp_enqueue_style(
                     'developer-starter-error-404',
-                    DEVELOPER_STARTER_ASSETS . '/css/error-404.css',
-                    array( 'developer-starter-main' ),
+                    QILING_ASSETS . '/css/error-404.css',
+                    array( 'qiling-main' ),
                     (string) filemtime( $error_404_css_file )
                 );
             }
@@ -638,7 +638,7 @@ class Assets {
 
         // 左侧导航样式（仅在配置且设置了左侧菜单时加载）
         if ( $this->needs_left_nav() ) {
-            wp_enqueue_style( 'developer-starter-left-nav', DEVELOPER_STARTER_ASSETS . '/css/left-nav.css', array(), $version );
+            wp_enqueue_style( 'developer-starter-left-nav', QILING_ASSETS . '/css/left-nav.css', array(), $version );
         }
 
         do_action( 'developer_starter_after_enqueue_styles', $version );
@@ -657,8 +657,8 @@ class Assets {
 
         wp_enqueue_style(
             'developer-starter-comments',
-            DEVELOPER_STARTER_ASSETS . '/css/comments.css',
-            array( 'developer-starter-main' ),
+            QILING_ASSETS . '/css/comments.css',
+            array( 'qiling-main' ),
             $this->get_version()
         );
     }
@@ -733,10 +733,11 @@ class Assets {
             $main_deps[] = 'swiper';
         }
         $main_deps = apply_filters( 'developer_starter_main_script_deps', $main_deps, $needs_swiper );
-        $main_script = apply_filters( 'developer_starter_main_script_url', DEVELOPER_STARTER_ASSETS . '/js/main.js', $version );
+        $main_script = apply_filters( 'developer_starter_main_script_url', QILING_ASSETS . '/js/main.js', $version );
         // $main_deps = $needs_swiper ? array( 'jquery', 'swiper' ) : array( 'jquery' );
-        wp_enqueue_script( 'developer-starter-main', $main_script, 
+        wp_enqueue_script( 'qiling-main', $main_script, 
             $main_deps, $version, true );
+        wp_register_script( 'developer-starter-main', false, array( 'qiling-main' ), $version, true ); // Backwards-compatible alias
 
         $search_captcha_enabled = (bool) developer_starter_get_option( 'search_captcha_enable', '' );
         $search_captcha_lazy_load = $search_captcha_enabled;
@@ -789,7 +790,7 @@ class Assets {
         $translate_enabled = ( 'translate_js' === $language_switch_mode );
         $translate_js_url = '';
         if ( $translate_enabled ) {
-            $default_translate_js_url    = DEVELOPER_STARTER_URI . '/translate/translate.js';
+            $default_translate_js_url    = QILING_URI . '/translate/translate.js';
             $configured_translate_js_url = trim( (string) developer_starter_get_option( 'translate_js_url', '' ) );
             $translate_js_url            = '' === $configured_translate_js_url ? $default_translate_js_url : $configured_translate_js_url;
             $translate_js_url            = $this->normalize_allowed_asset_url( $translate_js_url );
@@ -799,7 +800,7 @@ class Assets {
             if ( '' !== $translate_js_url ) {
                 $translate_js_url = add_query_arg(
                     'ver',
-                    rawurlencode( (string) DEVELOPER_STARTER_VERSION ),
+                    rawurlencode( (string) QILING_VERSION ),
                     $translate_js_url
                 );
             }
@@ -873,7 +874,7 @@ class Assets {
             'nonce'     => wp_create_nonce( 'developer_starter_nonce' ),
             'authNonce' => wp_create_nonce( 'developer_starter_auth' ),
             'homeUrl'   => $frontend_home_url,
-            'themeUrl'  => DEVELOPER_STARTER_URI,
+            'themeUrl'  => QILING_URI,
         );
 
         if ( $login_modal_setting_enabled || $should_enqueue_header_auth ) {
@@ -895,17 +896,17 @@ class Assets {
                 'style' => add_query_arg(
                     'ver',
                     rawurlencode( (string) $version ),
-                    DEVELOPER_STARTER_ASSETS . '/css/login-modal.css'
+                    QILING_ASSETS . '/css/login-modal.css'
                 ),
                 'authFlowScript' => add_query_arg(
                     'ver',
                     rawurlencode( (string) $version ),
-                    DEVELOPER_STARTER_ASSETS . '/js/auth-flow.js'
+                    QILING_ASSETS . '/js/auth-flow.js'
                 ),
                 'script' => add_query_arg(
                     'ver',
                     rawurlencode( (string) $version ),
-                    DEVELOPER_STARTER_ASSETS . '/js/login-modal.js'
+                    QILING_ASSETS . '/js/login-modal.js'
                 ),
                 'fallbackUrl' => wp_login_url(),
             );
@@ -917,17 +918,17 @@ class Assets {
                     'captchaChallengeAction' => 'developer_starter_captcha_challenge',
                     'captchaVerifyAction'    => 'developer_starter_captcha_verify',
                     'i18n'                   => array(
-                        'captchaInitFailedText' => __( '验证初始化失败，请重试', 'developer-starter' ),
-                        'dragText'              => __( '向右滑动完成验证', 'developer-starter' ),
-                        'networkErrorShort'     => __( '网络错误', 'developer-starter' ),
-                        'networkErrorText'      => __( '网络错误，请稍后再试', 'developer-starter' ),
-                        'sendCodeText'          => __( '获取验证码', 'developer-starter' ),
+                        'captchaInitFailedText' => __( '验证初始化失败，请重试', 'qiling' ),
+                        'dragText'              => __( '向右滑动完成验证', 'qiling' ),
+                        'networkErrorShort'     => __( '网络错误', 'qiling' ),
+                        'networkErrorText'      => __( '网络错误，请稍后再试', 'qiling' ),
+                        'sendCodeText'          => __( '获取验证码', 'qiling' ),
                     ),
                 ),
                 'captchaProviderScript' => add_query_arg(
                     'ver',
                     rawurlencode( (string) $version ),
-                    DEVELOPER_STARTER_ASSETS . '/js/captcha-provider.js'
+                    QILING_ASSETS . '/js/captcha-provider.js'
                 ),
                 'captcha' => array(
                     'provider' => $captcha_provider,
@@ -939,13 +940,13 @@ class Assets {
                     'sceneAuth' => $captcha_aliyun_scene_auth,
                     'sceneSearch' => $captcha_aliyun_scene_search,
                     'i18n' => array(
-                        'configErrorText' => __( '验证码配置不完整', 'developer-starter' ),
-                        'waitingText' => __( '点击完成验证', 'developer-starter' ),
-                        'successText' => __( '验证成功', 'developer-starter' ),
-                        'failedText' => __( '验证失败，请重试', 'developer-starter' ),
-                        'verifyingText' => __( '正在验证...', 'developer-starter' ),
-                        'buttonText' => __( '点击验证', 'developer-starter' ),
-                        'loadFailedText' => __( '验证码脚本加载失败，请检查网络', 'developer-starter' ),
+                        'configErrorText' => __( '验证码配置不完整', 'qiling' ),
+                        'waitingText' => __( '点击完成验证', 'qiling' ),
+                        'successText' => __( '验证成功', 'qiling' ),
+                        'failedText' => __( '验证失败，请重试', 'qiling' ),
+                        'verifyingText' => __( '正在验证...', 'qiling' ),
+                        'buttonText' => __( '点击验证', 'qiling' ),
+                        'loadFailedText' => __( '验证码脚本加载失败，请检查网络', 'qiling' ),
                     ),
                 ),
             );
@@ -956,7 +957,7 @@ class Assets {
             $script_data['searchOverlayScript'] = add_query_arg(
                 'ver',
                 rawurlencode( (string) $version ),
-                DEVELOPER_STARTER_ASSETS . '/js/search-overlay.js'
+                QILING_ASSETS . '/js/search-overlay.js'
             );
         }
 
@@ -966,12 +967,12 @@ class Assets {
                 'style' => add_query_arg(
                     'ver',
                     rawurlencode( (string) $version ),
-                    DEVELOPER_STARTER_ASSETS . '/css/search-captcha.css'
+                    QILING_ASSETS . '/css/search-captcha.css'
                 ),
                 'script' => add_query_arg(
                     'ver',
                     rawurlencode( (string) $version ),
-                    DEVELOPER_STARTER_ASSETS . '/js/search-captcha.js'
+                    QILING_ASSETS . '/js/search-captcha.js'
                 ),
                 'jquery' => add_query_arg(
                     'ver',
@@ -1001,14 +1002,14 @@ class Assets {
                     'currentQuery' => is_search() ? rawurldecode( (string) get_search_query( false ) ) : '',
                     'currentScope' => function_exists( 'developer_starter_get_current_search_scope' ) ? developer_starter_get_current_search_scope() : 'all',
                     'strings' => array(
-                        'suggestionsTitle' => __( '搜索建议', 'developer-starter' ),
-                        'historyTitle' => __( '搜索历史', 'developer-starter' ),
-                        'clearHistory' => __( '清空', 'developer-starter' ),
-                        'emptyHistory' => __( '暂无搜索历史', 'developer-starter' ),
-                        'loading' => __( '正在搜索...', 'developer-starter' ),
-                        'noResults' => __( '没有找到相关内容', 'developer-starter' ),
-                        'networkError' => __( '搜索加载失败，请稍后再试', 'developer-starter' ),
-                        'viewAll' => __( '查看全部结果', 'developer-starter' ),
+                        'suggestionsTitle' => __( '搜索建议', 'qiling' ),
+                        'historyTitle' => __( '搜索历史', 'qiling' ),
+                        'clearHistory' => __( '清空', 'qiling' ),
+                        'emptyHistory' => __( '暂无搜索历史', 'qiling' ),
+                        'loading' => __( '正在搜索...', 'qiling' ),
+                        'noResults' => __( '没有找到相关内容', 'qiling' ),
+                        'networkError' => __( '搜索加载失败，请稍后再试', 'qiling' ),
+                        'viewAll' => __( '查看全部结果', 'qiling' ),
                     ),
                 ),
             );
@@ -1018,14 +1019,14 @@ class Assets {
 
         if ( $needs_contact_form_config ) {
             $script_data['strings'] = array(
-                'sending'        => __( '发送中...', 'developer-starter' ),
-                'contactSuccess' => __( '感谢您的留言，我们会尽快与您联系！', 'developer-starter' ),
-                'contactNameRequired' => __( '请填写姓名', 'developer-starter' ),
-                'contactMessageRequired' => __( '请填写留言内容', 'developer-starter' ),
-                'contactPhoneOrEmailRequired' => __( '请填写联系电话或邮箱', 'developer-starter' ),
-                'contactLoginNow' => __( '立即登录', 'developer-starter' ),
-                'error'          => __( '网络错误，请稍后再试', 'developer-starter' ),
-                'dateRangeInvalid' => __( '结束日期不能早于开始日期', 'developer-starter' ),
+                'sending'        => __( '发送中...', 'qiling' ),
+                'contactSuccess' => __( '感谢您的留言，我们会尽快与您联系！', 'qiling' ),
+                'contactNameRequired' => __( '请填写姓名', 'qiling' ),
+                'contactMessageRequired' => __( '请填写留言内容', 'qiling' ),
+                'contactPhoneOrEmailRequired' => __( '请填写联系电话或邮箱', 'qiling' ),
+                'contactLoginNow' => __( '立即登录', 'qiling' ),
+                'error'          => __( '网络错误，请稍后再试', 'qiling' ),
+                'dateRangeInvalid' => __( '结束日期不能早于开始日期', 'qiling' ),
             );
         }
 
@@ -1038,17 +1039,17 @@ class Assets {
                 'aliyunPrefix' => $captcha_aliyun_prefix,
                 'aliyunRegion' => $captcha_aliyun_client_region,
                 'sceneSearch' => $captcha_aliyun_scene_search,
-                'closeLabel' => __( '关闭', 'developer-starter' ),
-                'title' => __( '安全验证', 'developer-starter' ),
-                'dragText' => __( '按住滑块 拖动到最右侧', 'developer-starter' ),
-                'successText' => __( '验证通过', 'developer-starter' ),
-                'aliyunWaitingText' => __( '点击完成验证', 'developer-starter' ),
-                'aliyunButtonText' => __( '点击验证', 'developer-starter' ),
-                'aliyunVerifyingText' => __( '正在验证...', 'developer-starter' ),
-                'aliyunFailedText' => __( '验证失败，请重试', 'developer-starter' ),
-                'aliyunConfigErrorText' => __( '验证码配置不完整，请联系管理员', 'developer-starter' ),
+                'closeLabel' => __( '关闭', 'qiling' ),
+                'title' => __( '安全验证', 'qiling' ),
+                'dragText' => __( '按住滑块 拖动到最右侧', 'qiling' ),
+                'successText' => __( '验证通过', 'qiling' ),
+                'aliyunWaitingText' => __( '点击完成验证', 'qiling' ),
+                'aliyunButtonText' => __( '点击验证', 'qiling' ),
+                'aliyunVerifyingText' => __( '正在验证...', 'qiling' ),
+                'aliyunFailedText' => __( '验证失败，请重试', 'qiling' ),
+                'aliyunConfigErrorText' => __( '验证码配置不完整，请联系管理员', 'qiling' ),
                 'waitSeconds' => $search_captcha_wait,
-                'waitText' => __( '请稍候 %d 秒', 'developer-starter' ),
+                'waitText' => __( '请稍候 %d 秒', 'qiling' ),
             );
         }
 
@@ -1084,11 +1085,13 @@ class Assets {
                 'script' => add_query_arg(
                     'ver',
                     rawurlencode( (string) $version ),
-                    DEVELOPER_STARTER_ASSETS . '/js/mobile-menu.js'
+                    QILING_ASSETS . '/js/mobile-menu.js'
                 ),
                 'breakpoint' => 992,
             );
         }
+
+        $script_data['traceId'] = function_exists( 'developer_starter_get_trace_id' ) ? developer_starter_get_trace_id() : '';
 
         $script_data = apply_filters( 'developer_starter_main_script_data', $script_data );
         $core_script_keys = array_fill_keys(
@@ -1100,6 +1103,7 @@ class Assets {
                 'ipLookupNonce',
                 'homeUrl',
                 'themeUrl',
+                'traceId',
             ),
             true
         );
@@ -1107,7 +1111,8 @@ class Assets {
         $runtime_script_data = array_diff_key( $script_data, $core_script_keys );
         $runtime_script_data = apply_filters( 'developer_starter_main_script_runtime_data', $runtime_script_data, $script_data );
 
-        wp_localize_script( 'developer-starter-main', 'developerStarterData', $core_script_data );
+        wp_localize_script( 'qiling-main', 'qilingData', $core_script_data );
+            wp_localize_script( 'qiling-main', 'developerStarterData', $core_script_data ); // Backwards-compatible object
         $this->add_main_script_data_fragment( $runtime_script_data );
 
         if ( $needs_search_enhance_script ) {
@@ -1143,15 +1148,15 @@ class Assets {
         if ( $should_enqueue_header_auth ) {
             wp_enqueue_script(
                 'developer-starter-auth-flow',
-                DEVELOPER_STARTER_ASSETS . '/js/auth-flow.js',
-                array( 'developer-starter-main' ),
+                QILING_ASSETS . '/js/auth-flow.js',
+                array( 'qiling-main' ),
                 $version,
                 true
             );
 
             wp_enqueue_script(
                 'developer-starter-auth-pages',
-                DEVELOPER_STARTER_ASSETS . '/js/auth-pages.js',
+                QILING_ASSETS . '/js/auth-pages.js',
                 array( 'developer-starter-auth-flow' ),
                 $version,
                 true
@@ -1161,8 +1166,8 @@ class Assets {
         if ( $should_enqueue_header_auth || $header_account_enabled ) {
             wp_enqueue_script(
                 'developer-starter-header-auth',
-                DEVELOPER_STARTER_ASSETS . '/js/header-auth.js',
-                $should_enqueue_header_auth ? array( 'developer-starter-auth-pages' ) : array( 'developer-starter-main' ),
+                QILING_ASSETS . '/js/header-auth.js',
+                $should_enqueue_header_auth ? array( 'developer-starter-auth-pages' ) : array( 'qiling-main' ),
                 $version,
                 true
             );
@@ -1173,7 +1178,7 @@ class Assets {
         if ( $this->needs_left_nav() ) {
             wp_enqueue_script(
                 'developer-starter-left-nav',
-                DEVELOPER_STARTER_ASSETS . '/js/left-nav.js',
+                QILING_ASSETS . '/js/left-nav.js',
                 array(),
                 $version,
                 true
@@ -1181,10 +1186,10 @@ class Assets {
         }
 
         if ( is_404() ) {
-            $error_404_js_file = DEVELOPER_STARTER_DIR . '/assets/js/error-404.js';
+            $error_404_js_file = QILING_DIR . '/assets/js/error-404.js';
             wp_enqueue_script(
                 'developer-starter-error-404',
-                DEVELOPER_STARTER_ASSETS . '/js/error-404.js',
+                QILING_ASSETS . '/js/error-404.js',
                 array(),
                 file_exists( $error_404_js_file ) ? (string) filemtime( $error_404_js_file ) : $version,
                 true
@@ -1203,7 +1208,7 @@ class Assets {
         if ( $needs_post_enhance ) {
             wp_enqueue_script(
                 'developer-starter-post-enhance',
-                DEVELOPER_STARTER_ASSETS . '/js/post-enhance.js',
+                QILING_ASSETS . '/js/post-enhance.js',
                 array(),
                 $version,
                 true
@@ -1213,8 +1218,8 @@ class Assets {
         if ( function_exists( 'developer_starter_lazy_load_placeholder_enabled' ) && developer_starter_lazy_load_placeholder_enabled() ) {
             wp_enqueue_script(
                 'developer-starter-lazy-image-placeholder',
-                DEVELOPER_STARTER_ASSETS . '/js/lazy-image-placeholder.js',
-                array( 'developer-starter-main' ),
+                QILING_ASSETS . '/js/lazy-image-placeholder.js',
+                array( 'qiling-main' ),
                 $version,
                 true
             );
@@ -1233,15 +1238,15 @@ class Assets {
         // 页脚动画特效脚本
         $effect_enabled = developer_starter_get_option( 'footer_effect_enable', '' );
         if ( $effect_enabled ) {
-            wp_enqueue_script( 'developer-starter-footer-effects', DEVELOPER_STARTER_ASSETS . '/js/footer-effects.js', 
-                array(), DEVELOPER_STARTER_VERSION, true );
+            wp_enqueue_script( 'developer-starter-footer-effects', QILING_ASSETS . '/js/footer-effects.js', 
+                array(), $version, true );
         }
 
         if ( is_singular() && comments_open() ) {
-            $comments_js_file = DEVELOPER_STARTER_DIR . '/assets/js/comments.js';
+            $comments_js_file = QILING_DIR . '/assets/js/comments.js';
             wp_enqueue_script(
                 'developer-starter-comments',
-                DEVELOPER_STARTER_ASSETS . '/js/comments.js',
+                QILING_ASSETS . '/js/comments.js',
                 array(),
                 file_exists( $comments_js_file ) ? (string) filemtime( $comments_js_file ) : $version,
                 true
@@ -1256,15 +1261,17 @@ class Assets {
     }
 
     public function admin_assets( $hook ) {
-        $is_theme_settings_page = strpos( (string) $hook, 'developer-starter' ) !== false;
+        $is_theme_settings_page = strpos( (string) $hook, 'qiling' ) !== false || strpos( (string) $hook, 'developer-starter' ) !== false;
 
         if ( ! $is_theme_settings_page ) {
             return;
         }
 
         $version = $this->get_version();
-        wp_enqueue_style( 'developer-starter-admin', DEVELOPER_STARTER_ASSETS . '/css/admin.css',
-            array(), $version );
+        wp_enqueue_style( 'qiling-admin', QILING_ASSETS . '/css/admin.css', array(), $version );
+        wp_register_style( 'developer-starter-admin', false, array( 'qiling-admin' ), $version );
+
+
 
         // admin.css 只服务启灵主题后台页，不注入文章/页面编辑器。
     }
@@ -1393,8 +1400,8 @@ class Assets {
 
             wp_enqueue_style(
                 $handle,
-                DEVELOPER_STARTER_ASSETS . $style_files[ $preset ],
-                array( 'developer-starter-main' ),
+                QILING_ASSETS . $style_files[ $preset ],
+                array( 'qiling-main' ),
                 $version
             );
             $loaded_handles[] = $handle;
@@ -1590,9 +1597,9 @@ class Assets {
      * @return void
      */
     private function enqueue_modules_single_style( $version, $use_min ) {
-        $modules_css = DEVELOPER_STARTER_ASSETS . '/css/modules.css';
-        if ( $use_min && file_exists( DEVELOPER_STARTER_DIR . '/assets/css/modules.min.css' ) ) {
-            $modules_css = DEVELOPER_STARTER_ASSETS . '/css/modules.min.css';
+        $modules_css = QILING_ASSETS . '/css/modules.css';
+        if ( $use_min && file_exists( QILING_DIR . '/assets/css/modules.min.css' ) ) {
+            $modules_css = QILING_ASSETS . '/css/modules.min.css';
         }
         $modules_css = apply_filters( 'developer_starter_modules_css_url', $modules_css, $version, $use_min );
         wp_enqueue_style( 'developer-starter-modules', $modules_css, array(), $version );
@@ -1606,12 +1613,12 @@ class Assets {
      * @return void
      */
     private function enqueue_modules_hero_style( $version, $use_min ) {
-        $hero_file = DEVELOPER_STARTER_DIR . '/assets/css/modules-hero.css';
-        $hero_css  = DEVELOPER_STARTER_ASSETS . '/css/modules-hero.css';
+        $hero_file = QILING_DIR . '/assets/css/modules-hero.css';
+        $hero_css  = QILING_ASSETS . '/css/modules-hero.css';
 
-        if ( $use_min && file_exists( DEVELOPER_STARTER_DIR . '/assets/css/modules-hero.min.css' ) ) {
-            $hero_file = DEVELOPER_STARTER_DIR . '/assets/css/modules-hero.min.css';
-            $hero_css  = DEVELOPER_STARTER_ASSETS . '/css/modules-hero.min.css';
+        if ( $use_min && file_exists( QILING_DIR . '/assets/css/modules-hero.min.css' ) ) {
+            $hero_file = QILING_DIR . '/assets/css/modules-hero.min.css';
+            $hero_css  = QILING_ASSETS . '/css/modules-hero.min.css';
         }
 
         if ( ! file_exists( $hero_file ) ) {
@@ -1634,8 +1641,8 @@ class Assets {
             return false;
         }
 
-        $split_dir = trailingslashit( DEVELOPER_STARTER_DIR ) . 'assets/css/modules-split/';
-        $split_uri = trailingslashit( DEVELOPER_STARTER_ASSETS ) . 'css/modules-split/';
+        $split_dir = trailingslashit( QILING_DIR ) . 'assets/css/modules-split/';
+        $split_uri = trailingslashit( QILING_ASSETS ) . 'css/modules-split/';
         if ( ! is_dir( $split_dir ) ) {
             return false;
         }
@@ -1960,45 +1967,7 @@ class Assets {
         return (bool) apply_filters( 'developer_starter_module_needs_jquery', $needs_jquery, $type, $module );
     }
 
-    /**
-     * WooCommerce 商店首页 Banner 是否需要 Swiper
-     *
-     * @return bool
-     */
-    private function has_wc_shop_banner_swiper() {
-        if ( ! class_exists( 'WooCommerce' ) || ! function_exists( 'is_shop' ) || ! is_shop() ) {
-            return false;
-        }
-
-        $options = function_exists( 'developer_starter_get_wc_options' )
-            ? developer_starter_get_wc_options()
-            : array();
-        if ( ! is_array( $options ) ) {
-            $options = array();
-        }
-        $slide_count = 0;
-
-        for ( $i = 1; $i <= 3; $i++ ) {
-            $url_key = 'wc_shop_banner_url_' . $i;
-            $url = isset( $options[ $url_key ] ) ? trim( (string) $options[ $url_key ] ) : '';
-            if ( '' !== $url ) {
-                $slide_count++;
-            }
-        }
-
-        return $slide_count > 1;
-    }
-
-    /**
-     * 检测 WooCommerce 场景是否需要 Swiper
-     *
-     * @return bool
-     */
-    private function needs_swiper_for_woocommerce() {
-        $needs_swiper = $this->has_wc_shop_banner_swiper();
-        return (bool) apply_filters( 'developer_starter_wc_needs_swiper', $needs_swiper );
-    }
-
+    
     /**
      * 检测模块场景是否需要 Swiper
      *
@@ -2036,9 +2005,7 @@ class Assets {
             $needs_swiper = $this->needs_swiper_for_modules( $modules );
         }
 
-        if ( ! $needs_swiper ) {
-            $needs_swiper = $this->needs_swiper_for_woocommerce();
-        }
+
 
         $this->needs_swiper_cache = (bool) apply_filters( 'developer_starter_needs_swiper', $needs_swiper, $modules, $post );
         return (bool) $this->needs_swiper_cache;
@@ -2137,40 +2104,7 @@ class Assets {
         return (bool) $this->needs_left_nav_cache;
     }
 
-    /**
-     * 优化 WooCommerce 资源加载
-     * 仅在 WooCommerce 相关页面加载特定脚本
-     */
-    public function optimize_woocommerce_scripts() {
-        // 如果 WooCommerce 未激活，无需处理
-        if ( ! class_exists( 'WooCommerce' ) ) {
-            return;
-        }
-
-        // 定义 WooCommerce 标准页面
-        // is_woocommerce() 包含商店、分类、标签、单个产品页面
-        $is_woo_page = is_woocommerce() || 
-                       is_cart() || 
-                       is_checkout() || 
-                       is_account_page() || 
-                       is_add_payment_method_page() || 
-                       ( function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url() );
-
-        // 检查非标准页面的短代码或内容
-        if ( ! $is_woo_page && is_singular() ) {
-            global $post;
-            if ( $post && is_a( $post, 'WP_Post' ) && strpos( $post->post_content, 'woocommerce' ) !== false ) {
-                $is_woo_page = true;
-            }
-        }
-
-        // 如果不是 WooCommerce 页面，移除跟踪脚本
-        if ( ! $is_woo_page ) {
-            wp_dequeue_script( 'wc-order-attribution' );
-            wp_dequeue_script( 'sourcebuster-js' );
-        }
-    }
-
+    
     private function get_dynamic_css() {
         $css = '';
         if ( class_exists( __NAMESPACE__ . '\\Design_Tokens' ) ) {

@@ -21,7 +21,7 @@ class Product_Showcase_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-cart';
-        $this->description = __( '左图右文产品展示，支持图片视频轮播', 'developer-starter' );
+        $this->description = __( '左图右文产品展示，支持图片视频轮播', 'qiling' );
     }
 
     public function get_id() {
@@ -29,7 +29,7 @@ class Product_Showcase_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '图文视频轮播', 'developer-starter' );
+        return __( '图文视频轮播', 'qiling' );
     }
 
     public function get_fields() {
@@ -38,17 +38,17 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ps_bg_color',
                 'type'    => 'text',
-                'label'   => __( '背景颜色(支持渐变)', 'developer-starter' ),
+                'label'   => __( '背景颜色(支持渐变)', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'ps_padding',
                 'type'    => 'select',
-                'label'   => __( '上下内边距', 'developer-starter' ),
+                'label'   => __( '上下内边距', 'qiling' ),
                 'options' => array(
                     '40'  => '40px',
                     '60'  => '60px',
-                    '80'  => __( '80px（推荐）', 'developer-starter' ),
+                    '80'  => __( '80px（推荐）', 'qiling' ),
                     '100' => '100px',
                     '120' => '120px',
                 ),
@@ -57,10 +57,10 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ps_layout',
                 'type'    => 'select',
-                'label'   => __( '布局方向', 'developer-starter' ),
+                'label'   => __( '布局方向', 'qiling' ),
                 'options' => array(
-                    'left'  => __( '图片在左（默认）', 'developer-starter' ),
-                    'right' => __( '图片在右', 'developer-starter' ),
+                    'left'  => __( '图片在左（默认）', 'qiling' ),
+                    'right' => __( '图片在右', 'qiling' ),
                 ),
                 'default' => 'left',
             ),
@@ -69,45 +69,45 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'         => 'ps_media_items',
                 'type'       => 'repeater',
-                'label'      => __( '轮播媒体（图片或视频）', 'developer-starter' ),
-                'add_button' => __( '添加图片/视频', 'developer-starter' ),
+                'label'      => __( '轮播媒体（图片或视频）', 'qiling' ),
+                'add_button' => __( '添加图片/视频', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'      => 'type',
                         'type'    => 'select',
-                        'label'   => __( '类型', 'developer-starter' ),
+                        'label'   => __( '类型', 'qiling' ),
                         'options' => array(
-                            'image' => __( '图片', 'developer-starter' ),
-                            'video' => __( '视频', 'developer-starter' ),
+                            'image' => __( '图片', 'qiling' ),
+                            'video' => __( '视频', 'qiling' ),
                         ),
                     ),
                     array(
                         'id'    => 'image',
                         'type'  => 'image',
-                        'label' => __( '图片（图片类型时使用）', 'developer-starter' ),
+                        'label' => __( '图片（图片类型时使用）', 'qiling' ),
                     ),
                     array(
                         'id'    => 'video_url',
                         'type'  => 'text',
-                        'label' => __( '视频URL（视频类型时使用）', 'developer-starter' ),
+                        'label' => __( '视频URL（视频类型时使用）', 'qiling' ),
                     ),
                     array(
                         'id'    => 'video_poster',
                         'type'  => 'image',
-                        'label' => __( '视频封面（可选）', 'developer-starter' ),
+                        'label' => __( '视频封面（可选）', 'qiling' ),
                     ),
                 ),
             ),
             array(
                 'id'      => 'ps_media_height',
                 'type'    => 'text',
-                'label' => __( '媒体区域高度', 'developer-starter' ),
+                'label' => __( '媒体区域高度', 'qiling' ),
                 'default' => '450px',
             ),
             array(
                 'id'      => 'ps_media_radius',
                 'type'    => 'text',
-                'label' => __( '媒体区域圆角', 'developer-starter' ),
+                'label' => __( '媒体区域圆角', 'qiling' ),
                 'default' => '16px',
             ),
             
@@ -115,31 +115,31 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'         => 'ps_left_buttons',
                 'type'       => 'repeater',
-                'label'      => __( '轮播下方小按钮', 'developer-starter' ),
-                'add_button' => __( '添加按钮', 'developer-starter' ),
+                'label'      => __( '轮播下方小按钮', 'qiling' ),
+                'add_button' => __( '添加按钮', 'qiling' ),
                 'fields'     => array(
                     array(
                         'id'    => 'text',
                         'type'  => 'text',
-                        'label' => __( '按钮文字', 'developer-starter' ),
+                        'label' => __( '按钮文字', 'qiling' ),
                     ),
                     array(
                         'id'    => 'url',
                         'type'  => 'text',
-                        'label' => __( '按钮链接', 'developer-starter' ),
+                        'label' => __( '按钮链接', 'qiling' ),
                     ),
                     array(
                         'id'    => 'icon',
                         'type'  => 'text',
-                        'label' => __( '按钮图标（emoji或留空）', 'developer-starter' ),
+                        'label' => __( '按钮图标（emoji或留空）', 'qiling' ),
                     ),
                     array(
                         'id'      => 'target',
                         'type'    => 'select',
-                        'label'   => __( '打开方式', 'developer-starter' ),
+                        'label'   => __( '打开方式', 'qiling' ),
                         'options' => array(
-                            '_self'  => __( '当前窗口', 'developer-starter' ),
-                            '_blank' => __( '新窗口', 'developer-starter' ),
+                            '_self'  => __( '当前窗口', 'qiling' ),
+                            '_blank' => __( '新窗口', 'qiling' ),
                         ),
                     ),
                 ),
@@ -149,25 +149,25 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ps_title',
                 'type'    => 'text',
-                'label'   => __( '大标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题', 'Qiling Theme' ) : __( '启灵主题', 'developer-starter' ),
+                'label'   => __( '大标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '启灵主题', 'Qiling Theme' ) : __( '启灵主题', 'qiling' ),
             ),
             array(
                 'id'      => 'ps_title_color',
                 'type'    => 'text',
-                'label'   => __( '大标题颜色', 'developer-starter' ),
+                'label'   => __( '大标题颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'ps_subtitle',
                 'type'    => 'text',
-                'label'   => __( '副标题', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '开源模块化主题', 'An open modular theme for modern websites' ) : __( '开源模块化主题', 'developer-starter' ),
+                'label'   => __( '副标题', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '开源模块化主题', 'An open modular theme for modern websites' ) : __( '开源模块化主题', 'qiling' ),
             ),
             array(
                 'id'      => 'ps_subtitle_color',
                 'type'    => 'text',
-                'label'   => __( '副标题颜色', 'developer-starter' ),
+                'label'   => __( '副标题颜色', 'qiling' ),
                 'default' => '',
             ),
             
@@ -175,29 +175,29 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ps_show_price',
                 'type'    => 'select',
-                'label'   => __( '显示价格', 'developer-starter' ),
+                'label'   => __( '显示价格', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '是', 'developer-starter' ),
-                    'no'  => __( '否', 'developer-starter' ),
+                    'yes' => __( '是', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'ps_price',
                 'type'    => 'text',
-                'label'   => __( '优惠价格', 'developer-starter' ),
+                'label'   => __( '优惠价格', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 199 ) : '¥199',
             ),
             array(
                 'id'      => 'ps_price_color',
                 'type'    => 'text',
-                'label'   => __( '优惠价颜色', 'developer-starter' ),
+                'label'   => __( '优惠价颜色', 'qiling' ),
                 'default' => '',
             ),
             array(
                 'id'      => 'ps_original_price',
                 'type'    => 'text',
-                'label'   => __( '原价（有删除线）', 'developer-starter' ),
+                'label'   => __( '原价（有删除线）', 'qiling' ),
                 'default' => function_exists( 'developer_starter_get_demo_price_text' ) ? developer_starter_get_demo_price_text( 299 ) : '¥299',
             ),
             
@@ -205,35 +205,35 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ps_cta_text',
                 'type'    => 'text',
-                'label'   => __( 'CTA按钮文字', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '前往购买', 'Buy Now' ) : __( '前往购买', 'developer-starter' ),
+                'label'   => __( 'CTA按钮文字', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '前往购买', 'Buy Now' ) : __( '前往购买', 'qiling' ),
             ),
             array(
                 'id'      => 'ps_cta_url',
                 'type'    => 'text',
-                'label'   => __( 'CTA按钮链接', 'developer-starter' ),
+                'label'   => __( 'CTA按钮链接', 'qiling' ),
                 'default' => '#',
             ),
             array(
                 'id'      => 'ps_cta_bg',
                 'type'    => 'text',
-                'label'   => __( 'CTA按钮背景色(支持渐变)', 'developer-starter' ),
+                'label'   => __( 'CTA按钮背景色(支持渐变)', 'qiling' ),
                 'default' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)',
             ),
             array(
                 'id'      => 'ps_cta_color',
                 'type'    => 'text',
-                'label'   => __( 'CTA按钮文字颜色', 'developer-starter' ),
+                'label'   => __( 'CTA按钮文字颜色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
-            $this->get_button_border_color_field( 'ps_cta_border_color', __( 'CTA按钮边框颜色', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'ps_cta_border_color', __( 'CTA按钮边框颜色', 'qiling' ) ),
             array(
                 'id'      => 'ps_cta_target',
                 'type'    => 'select',
-                'label'   => __( 'CTA按钮打开方式', 'developer-starter' ),
+                'label'   => __( 'CTA按钮打开方式', 'qiling' ),
                 'options' => array(
-                    '_self'  => __( '当前窗口', 'developer-starter' ),
-                    '_blank' => __( '新窗口', 'developer-starter' ),
+                    '_self'  => __( '当前窗口', 'qiling' ),
+                    '_blank' => __( '新窗口', 'qiling' ),
                 ),
                 'default' => '_self',
             ),
@@ -242,13 +242,13 @@ class Product_Showcase_Module extends Module_Base {
             array(
                 'id'      => 'ps_description',
                 'type'    => 'textarea',
-                'label'   => __( '描述信息（支持换行，每行一条）', 'developer-starter' ),
-                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新", "Latest version: V2.5\nUpdated: 2026-01-01\nWP support: 6.0-6.9, latest recommended\nPHP support: 7.4+, 8.0 recommended\nLicense: lifetime access with free updates" ) : __( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新", 'developer-starter' ),
+                'label'   => __( '描述信息（支持换行，每行一条）', 'qiling' ),
+                'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新", "Latest version: V2.5\nUpdated: 2026-01-01\nWP support: 6.0-6.9, latest recommended\nPHP support: 7.4+, 8.0 recommended\nLicense: lifetime access with free updates" ) : __( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新", 'qiling' ),
             ),
             array(
                 'id'      => 'ps_desc_color',
                 'type'    => 'text',
-                'label'   => __( '描述文字颜色', 'developer-starter' ),
+                'label'   => __( '描述文字颜色', 'qiling' ),
                 'default' => '',
             ),
         );
@@ -257,10 +257,10 @@ class Product_Showcase_Module extends Module_Base {
     public function render( $data = array() ) {
         $default_title = function_exists( 'developer_starter_get_locale_text' )
             ? developer_starter_get_locale_text( '启灵主题', 'Qiling Theme' )
-            : __( '启灵主题', 'developer-starter' );
+            : __( '启灵主题', 'qiling' );
         $default_subtitle = function_exists( 'developer_starter_get_locale_text' )
             ? developer_starter_get_locale_text( '开源模块化主题', 'An open modular theme for modern websites' )
-            : __( '开源模块化主题', 'developer-starter' );
+            : __( '开源模块化主题', 'qiling' );
         $default_price = function_exists( 'developer_starter_get_demo_price_text' )
             ? developer_starter_get_demo_price_text( 199 )
             : '¥199';
@@ -269,13 +269,13 @@ class Product_Showcase_Module extends Module_Base {
             : '¥299';
         $default_cta_text = function_exists( 'developer_starter_get_locale_text' )
             ? developer_starter_get_locale_text( '前往购买', 'Buy Now' )
-            : __( '前往购买', 'developer-starter' );
+            : __( '前往购买', 'qiling' );
         $default_description = function_exists( 'developer_starter_get_locale_text' )
             ? developer_starter_get_locale_text(
                 "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新",
                 "Latest version: V2.5\nUpdated: 2026-01-01\nWP support: 6.0-6.9, latest recommended\nPHP support: 7.4+, 8.0 recommended\nLicense: lifetime access with free updates"
             )
-            : __( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新", 'developer-starter' );
+            : __( "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新", 'qiling' );
 
         $legacy_layout = isset( $data['ps_layout'] ) ? (string) $data['ps_layout'] : 'left';
         if ( 'left_media' === $legacy_layout ) {
@@ -387,8 +387,8 @@ class Product_Showcase_Module extends Module_Base {
                                 <?php $this->render_media_item( $media_items[0] ); ?>
                             <?php else : ?>
                                 <div class="ps-media-placeholder">
-                                    <span>📷</span>
-                                    <p><?php esc_html_e( '请添加图片或视频', 'developer-starter' ); ?></p>
+                                    <span><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span>
+                                    <p><?php esc_html_e( '请添加图片或视频', 'qiling' ); ?></p>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -519,7 +519,7 @@ class Product_Showcase_Module extends Module_Base {
                 ?>
                     <?php $embed_url = $this->convert_video_embed_url( $video_url ); ?>
                     <div class="ds-lazy-embed ds-lazy-embed-product" data-src="<?php echo esc_url( $embed_url ); ?>" data-autoplay="1">
-                        <button type="button" class="ds-lazy-embed-trigger" aria-label="<?php esc_attr_e( '播放视频', 'developer-starter' ); ?>">
+                        <button type="button" class="ds-lazy-embed-trigger" aria-label="<?php esc_attr_e( '播放视频', 'qiling' ); ?>">
                             <?php if ( $poster ) : ?>
                                 <img src="<?php echo esc_url( $poster ); ?>" alt="" class="ds-lazy-embed-poster" loading="lazy" />
                             <?php endif; ?>

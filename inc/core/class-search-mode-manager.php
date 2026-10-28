@@ -42,20 +42,20 @@ class Search_Mode_Manager {
     public function get_modes( $available_only = false ) {
         $modes = array(
             'all'   => array(
-                'label'        => __( '综合搜索', 'developer-starter' ),
-                'description'  => __( '搜索文章和页面等现有内容', 'developer-starter' ),
+                'label'        => __( '综合搜索', 'qiling' ),
+                'description'  => __( '搜索文章和页面等现有内容', 'qiling' ),
                 'available'    => true,
                 'result_style' => 'default',
             ),
             'post'  => array(
-                'label'        => __( '文章搜索', 'developer-starter' ),
-                'description'  => __( '只搜索普通文章', 'developer-starter' ),
+                'label'        => __( '文章搜索', 'qiling' ),
+                'description'  => __( '只搜索普通文章', 'qiling' ),
                 'available'    => true,
                 'result_style' => 'default',
             ),
             'video' => array(
-                'label'        => __( '影视搜索', 'developer-starter' ),
-                'description'  => __( '只搜索启用了视频模式的影视文章', 'developer-starter' ),
+                'label'        => __( '影视搜索', 'qiling' ),
+                'description'  => __( '只搜索启用了视频模式的影视文章', 'qiling' ),
                 'available'    => $this->is_video_mode_available(),
                 'result_style' => 'video',
             ),

@@ -24,13 +24,13 @@ $has_modules = ! empty( $modules ) && is_array( $modules );
         <section class="section-padding" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 48%, #f59e0b 100%);">
             <div class="container text-center">
                 <div style="font-size: 3rem; margin-bottom: 20px; color: #ffffff; font-weight: 700; letter-spacing: 0;">AUTO</div>
-                <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '工业机器人/自动化官网页', 'developer-starter' ); ?></h2>
+                <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px;"><?php esc_html_e( '工业机器人/自动化官网页', 'qiling' ); ?></h2>
                 <p style="color: rgba(255,255,255,0.85); margin-bottom: 24px; font-size: 1.05rem;">
-                    <?php esc_html_e( '暂无可展示内容。', 'developer-starter' ); ?>
+                    <?php esc_html_e( '暂无可展示内容。', 'qiling' ); ?>
                 </p>
                 <?php if ( current_user_can( 'edit_pages' ) ) : ?>
                     <a href="<?php echo esc_url( get_edit_post_link() ); ?>" class="btn btn-primary" style="background: #ffffff; color: #1d4ed8; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                        <?php esc_html_e( '编辑页面', 'developer-starter' ); ?>
+                        <?php esc_html_e( '编辑页面', 'qiling' ); ?>
                     </a>
                 <?php endif; ?>
             </div>

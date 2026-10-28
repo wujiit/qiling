@@ -11,12 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return array(
             'desktop' => array(
-                'label' => __( '桌面端', 'developer-starter' ),
+                'label' => __( '桌面端', 'qiling' ),
             ),
             'tablet'  => array(
-                'label' => __( '平板端', 'developer-starter' ),
+                'label' => __( '平板端', 'qiling' ),
             ),
             'mobile'  => array(
-                'label' => __( '手机端', 'developer-starter' ),
+                'label' => __( '手机端', 'qiling' ),
             ),
         );

@@ -129,7 +129,7 @@ class Homepage_Creator {
         // 检查是否已存在标题为"首页"的页面
         $pages = get_posts( array(
             'post_type'      => 'page',
-            'title'          => __( '首页', 'developer-starter' ),
+            'title'          => __( '首页', 'qiling' ),
             'post_status'    => 'publish',
             'posts_per_page' => 1,
         ) );
@@ -153,7 +153,7 @@ class Homepage_Creator {
 
         // 创建新首页
         $page_data = array(
-            'post_title'   => __( '首页', 'developer-starter' ),
+            'post_title'   => __( '首页', 'qiling' ),
             'post_name'    => self::PAGE_SLUG,
             'post_content' => '',
             'post_status'  => 'publish',
@@ -303,13 +303,13 @@ class Homepage_Creator {
 
         if ( $notice_type === 'created' ) {
             $message = sprintf(
-                __( '🎉 <strong>启灵主题</strong> 已自动为您创建了模块化首页！<a href="%s">编辑首页</a> | <a href="%s">查看网站</a>', 'developer-starter' ),
+                __( '🎉 <strong>启灵主题</strong> 已自动为您创建了模块化首页！<a href="%s">编辑首页</a> | <a href="%s">查看网站</a>', 'qiling' ),
                 admin_url( 'post.php?post=' . $page_id . '&action=edit' ),
                 home_url( '/' )
             );
         } else {
             $message = sprintf(
-                __( '✅ <strong>启灵主题</strong> 已将现有首页设置为网站主页！<a href="%s">编辑首页</a> | <a href="%s">查看网站</a>', 'developer-starter' ),
+                __( '✅ <strong>启灵主题</strong> 已将现有首页设置为网站主页！<a href="%s">编辑首页</a> | <a href="%s">查看网站</a>', 'qiling' ),
                 admin_url( 'post.php?post=' . $page_id . '&action=edit' ),
                 home_url( '/' )
             );
@@ -317,7 +317,7 @@ class Homepage_Creator {
 
         echo '<div class="notice notice-success is-dismissible" style="padding: 12px 15px;">';
         echo wp_kses_post( $message );
-        echo ' <a href="' . esc_url( $dismiss_url ) . '" style="margin-left: 15px; color: #666;">' . __( '不再显示', 'developer-starter' ) . '</a>';
+        echo ' <a href="' . esc_url( $dismiss_url ) . '" style="margin-left: 15px; color: #666;">' . __( '不再显示', 'qiling' ) . '</a>';
         echo '</div>';
     }
 

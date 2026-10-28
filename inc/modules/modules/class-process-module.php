@@ -18,7 +18,7 @@ class Process_Module extends Module_Base {
     public function __construct() {
         $this->category = 'homepage';
         $this->icon = 'dashicons-randomize';
-        $this->description = __( '展示合作流程步骤', 'developer-starter' );
+        $this->description = __( '展示合作流程步骤', 'qiling' );
     }
 
     public function get_id() {
@@ -26,74 +26,74 @@ class Process_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '合作流程', 'developer-starter' );
+        return __( '合作流程', 'qiling' );
     }
 
     public function get_fields() {
         return array(
-            array( 'id' => 'process_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作流程', 'Our Process' ) : __( '合作流程', 'developer-starter' ) ),
-            array( 'id' => 'process_title_size', 'type' => 'text', 'label' => __( '标题字体大小', 'developer-starter' ), 'desc' => __( '如 2rem 或 32px', 'developer-starter' ) ),
-            array( 'id' => 'process_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'process_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作流程', 'Our Process' ) : __( '合作流程', 'qiling' ) ),
+            array( 'id' => 'process_title_size', 'type' => 'text', 'label' => __( '标题字体大小', 'qiling' ), 'desc' => __( '如 2rem 或 32px', 'qiling' ) ),
+            array( 'id' => 'process_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
             
-            array( 'id' => 'process_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
-            array( 'id' => 'process_subtitle_size', 'type' => 'text', 'label' => __( '副标题字体大小', 'developer-starter' ), 'desc' => __( '如 1rem 或 16px', 'developer-starter' ) ),
-            array( 'id' => 'process_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'process_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
+            array( 'id' => 'process_subtitle_size', 'type' => 'text', 'label' => __( '副标题字体大小', 'qiling' ), 'desc' => __( '如 1rem 或 16px', 'qiling' ) ),
+            array( 'id' => 'process_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ) ),
             array(
                 'id'      => 'process_mode',
                 'type'    => 'select',
-                'label'   => __( '流程样式', 'developer-starter' ),
+                'label'   => __( '流程样式', 'qiling' ),
                 'options' => array(
-                    'standard'   => __( '标准流程', 'developer-starter' ),
-                    'industrial' => __( '工业流程', 'developer-starter' ),
+                    'standard'   => __( '标准流程', 'qiling' ),
+                    'industrial' => __( '工业流程', 'qiling' ),
                 ),
                 'default' => 'standard',
             ),
             
-            array( 'id' => 'process_desc_color', 'type' => 'color', 'label' => __( '步骤描述文字颜色', 'developer-starter' ) ),
-            array( 'id' => 'process_card_bg', 'type' => 'text', 'label' => __( '步骤卡片背景', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'process_card_border', 'type' => 'color', 'label' => __( '步骤卡片边框', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'process_card_hover_border', 'type' => 'color', 'label' => __( '卡片悬停边框', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'process_arrow_color', 'type' => 'color', 'label' => __( '步骤连接线颜色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'process_icon_color', 'type' => 'color', 'label' => __( '步骤图标文字颜色', 'developer-starter' ), 'default' => '' ),
-            array( 'id' => 'process_badge_text', 'type' => 'color', 'label' => __( '阶段标签文字颜色', 'developer-starter' ), 'default' => '' ),
+            array( 'id' => 'process_desc_color', 'type' => 'color', 'label' => __( '步骤描述文字颜色', 'qiling' ) ),
+            array( 'id' => 'process_card_bg', 'type' => 'text', 'label' => __( '步骤卡片背景', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'process_card_border', 'type' => 'color', 'label' => __( '步骤卡片边框', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'process_card_hover_border', 'type' => 'color', 'label' => __( '卡片悬停边框', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'process_arrow_color', 'type' => 'color', 'label' => __( '步骤连接线颜色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'process_icon_color', 'type' => 'color', 'label' => __( '步骤图标文字颜色', 'qiling' ), 'default' => '' ),
+            array( 'id' => 'process_badge_text', 'type' => 'color', 'label' => __( '阶段标签文字颜色', 'qiling' ), 'default' => '' ),
             array(
                 'id'      => 'process_badge_bg',
                 'type'    => 'color',
-                'label'   => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'   => __( '标签/徽章背景颜色', 'qiling' ),
                 'default' => '',
-                'desc'    => __( '控制阶段标签和工业流程信息徽章，留空时跟随页面预设/全局徽章颜色。', 'developer-starter' ),
+                'desc'    => __( '控制阶段标签和工业流程信息徽章，留空时跟随页面预设/全局徽章颜色。', 'qiling' ),
             ),
             
             array(
                 'id' => 'module_bg_type',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array(
                 'id' => 'module_bg_color',
-                'label' => __( '背景颜色', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ),
                 'type' => 'color',
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'default' => '',
                 'dependency' => array( 'module_bg_type', '==', 'color' ),
             ),
             array(
                 'id' => 'module_bg_image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'type' => 'image',
                 'dependency' => array( 'module_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'module_bg_overlay',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -110,66 +110,66 @@ class Process_Module extends Module_Base {
             
             array(
                 'id' => 'module_padding_top',
-                'label' => __( '上边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '上边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
             array(
                 'id' => 'module_padding_bottom',
-                'label' => __( '下边距 (如 60px)', 'developer-starter' ),
+                'label' => __( '下边距 (如 60px)', 'qiling' ),
                 'type' => 'text',
                 'default' => '60px',
             ),
 
-            array( 'id' => 'process_items', 'type' => 'repeater', 'label' => __( '流程步骤', 'developer-starter' ), 'fields' => array(
-                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标(emoji或Symbol类名)', 'developer-starter' ) ),
-                array( 'id' => 'title', 'type' => 'text', 'label' => __( '步骤标题', 'developer-starter' ) ),
-                array( 'id' => 'stage_tag', 'type' => 'text', 'label' => __( '阶段标签(可选)', 'developer-starter' ) ),
-                array( 'id' => 'title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
-                array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '描述', 'developer-starter' ) ),
-                array( 'id' => 'duration', 'type' => 'text', 'label' => __( '预计周期(可选)', 'developer-starter' ) ),
-                array( 'id' => 'metric', 'type' => 'text', 'label' => __( '产能/指标(可选)', 'developer-starter' ) ),
-                array( 'id' => 'quality_checkpoint', 'type' => 'text', 'label' => __( '质检点(可选)', 'developer-starter' ) ),
-                array( 'id' => 'deliverable', 'type' => 'text', 'label' => __( '交付物(可选)', 'developer-starter' ) ),
-                array( 'id' => 'image', 'type' => 'image', 'label' => __( '工序图片(工业流程推荐)', 'developer-starter' ) ),
-                array( 'id' => 'icon_bg', 'type' => 'color', 'label' => __( '图标背景色', 'developer-starter' ) ),
+            array( 'id' => 'process_items', 'type' => 'repeater', 'label' => __( '流程步骤', 'qiling' ), 'fields' => array(
+                array( 'id' => 'icon', 'type' => 'text', 'label' => __( '图标(emoji或Symbol类名)', 'qiling' ) ),
+                array( 'id' => 'title', 'type' => 'text', 'label' => __( '步骤标题', 'qiling' ) ),
+                array( 'id' => 'stage_tag', 'type' => 'text', 'label' => __( '阶段标签(可选)', 'qiling' ) ),
+                array( 'id' => 'title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
+                array( 'id' => 'desc', 'type' => 'textarea', 'label' => __( '描述', 'qiling' ) ),
+                array( 'id' => 'duration', 'type' => 'text', 'label' => __( '预计周期(可选)', 'qiling' ) ),
+                array( 'id' => 'metric', 'type' => 'text', 'label' => __( '产能/指标(可选)', 'qiling' ) ),
+                array( 'id' => 'quality_checkpoint', 'type' => 'text', 'label' => __( '质检点(可选)', 'qiling' ) ),
+                array( 'id' => 'deliverable', 'type' => 'text', 'label' => __( '交付物(可选)', 'qiling' ) ),
+                array( 'id' => 'image', 'type' => 'image', 'label' => __( '工序图片(工业流程推荐)', 'qiling' ) ),
+                array( 'id' => 'icon_bg', 'type' => 'color', 'label' => __( '图标背景色', 'qiling' ) ),
             ),
             'default_items' => array(
                 array( 
                     'icon' => '01', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '需求沟通', 'Discovery Call' ) : __( '需求沟通', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深入了解您的业务需求和目标。', 'Understand your goals, audience, and project requirements.' ) : __( '深入了解您的业务需求和目标。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '需求沟通', 'Discovery Call' ) : __( '需求沟通', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深入了解您的业务需求和目标。', 'Understand your goals, audience, and project requirements.' ) : __( '深入了解您的业务需求和目标。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)'
                 ),
                 array( 
                     'icon' => '02', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '方案设计', 'Solution Planning' ) : __( '方案设计', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '根据需求制定专属解决方案。', 'Shape a tailored plan with structure, milestones, and deliverables.' ) : __( '根据需求制定专属解决方案。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '方案设计', 'Solution Planning' ) : __( '方案设计', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '根据需求制定专属解决方案。', 'Shape a tailored plan with structure, milestones, and deliverables.' ) : __( '根据需求制定专属解决方案。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-error) 100%)'
                 ),
                 array( 
                     'icon' => '03', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '开发实施', 'Production' ) : __( '开发实施', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队高效执行项目开发。', 'Build and refine the project with efficient execution and reviews.' ) : __( '专业团队高效执行项目开发。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '开发实施', 'Production' ) : __( '开发实施', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队高效执行项目开发。', 'Build and refine the project with efficient execution and reviews.' ) : __( '专业团队高效执行项目开发。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-info) 100%)'
                 ),
                 array( 
                     'icon' => '04', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '交付上线', 'Launch & Support' ) : __( '交付上线', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '严格测试后交付，并提供持续支持。', 'Launch after testing and keep the experience supported over time.' ) : __( '严格测试后交付，并提供持续支持。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '交付上线', 'Launch & Support' ) : __( '交付上线', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '严格测试后交付，并提供持续支持。', 'Launch after testing and keep the experience supported over time.' ) : __( '严格测试后交付，并提供持续支持。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-success) 0%, var(--color-info) 100%)'
                 ),
             ) ),
             array(
                 'id' => 'enable_staggered_animation',
-                'label' => __( '开启列表逐个显示动画', 'developer-starter' ),
+                'label' => __( '开启列表逐个显示动画', 'qiling' ),
                 'type' => 'select',
                 'options' => array(
-                    'yes' => __( '开启', 'developer-starter' ),
-                    'no' => __( '关闭', 'developer-starter' ),
+                    'yes' => __( '开启', 'qiling' ),
+                    'no' => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
-                'description' => __( '开启后，流程步骤将依次延迟显示，形成阶梯视觉效果', 'developer-starter' ),
+                'description' => __( '开启后，流程步骤将依次延迟显示，形成阶梯视觉效果', 'qiling' ),
             ),
         );
     }
@@ -182,13 +182,13 @@ class Process_Module extends Module_Base {
 
         $title = isset( $data['process_title'] ) && $data['process_title'] !== ''
             ? $data['process_title']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作流程', 'Our Process' ) : __( '合作流程', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '合作流程', 'Our Process' ) : __( '合作流程', 'qiling' ) );
         $title_size = isset( $data['process_title_size'] ) && $data['process_title_size'] !== '' ? $data['process_title_size'] : '';
         $title_color = isset( $data['process_title_color'] ) && ! empty( $data['process_title_color'] ) ? $data['process_title_color'] : '';
         
         $subtitle = isset( $data['process_subtitle'] )
             ? $data['process_subtitle']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '简单四步，开启合作之旅', 'Four clear steps to launch the collaboration.' ) : __( '简单四步，开启合作之旅', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '简单四步，开启合作之旅', 'Four clear steps to launch the collaboration.' ) : __( '简单四步，开启合作之旅', 'qiling' ) );
         $subtitle_size = isset( $data['process_subtitle_size'] ) && $data['process_subtitle_size'] !== '' ? $data['process_subtitle_size'] : '';
         $subtitle_color = isset( $data['process_subtitle_color'] ) && ! empty( $data['process_subtitle_color'] ) ? $data['process_subtitle_color'] : '';
         
@@ -215,26 +215,26 @@ class Process_Module extends Module_Base {
             $items = array(
                 array( 
                     'icon' => '01', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '需求沟通', 'Discovery Call' ) : __( '需求沟通', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深入了解您的业务需求和目标。', 'Understand your goals, audience, and project requirements.' ) : __( '深入了解您的业务需求和目标。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '需求沟通', 'Discovery Call' ) : __( '需求沟通', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '深入了解您的业务需求和目标。', 'Understand your goals, audience, and project requirements.' ) : __( '深入了解您的业务需求和目标。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-primary) 0%, var(--qiling-color-764ba2) 100%)'
                 ),
                 array( 
                     'icon' => '02', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '方案设计', 'Solution Planning' ) : __( '方案设计', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '根据需求制定专属解决方案。', 'Shape a tailored plan with structure, milestones, and deliverables.' ) : __( '根据需求制定专属解决方案。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '方案设计', 'Solution Planning' ) : __( '方案设计', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '根据需求制定专属解决方案。', 'Shape a tailored plan with structure, milestones, and deliverables.' ) : __( '根据需求制定专属解决方案。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-error) 100%)'
                 ),
                 array( 
                     'icon' => '03', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '开发实施', 'Production' ) : __( '开发实施', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队高效执行项目开发。', 'Build and refine the project with efficient execution and reviews.' ) : __( '专业团队高效执行项目开发。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '开发实施', 'Production' ) : __( '开发实施', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业团队高效执行项目开发。', 'Build and refine the project with efficient execution and reviews.' ) : __( '专业团队高效执行项目开发。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-info) 100%)'
                 ),
                 array( 
                     'icon' => '04', 
-                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '交付上线', 'Launch & Support' ) : __( '交付上线', 'developer-starter' ),
-                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '严格测试后交付，并提供持续支持。', 'Launch after testing and keep the experience supported over time.' ) : __( '严格测试后交付，并提供持续支持。', 'developer-starter' ),
+                    'title' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '交付上线', 'Launch & Support' ) : __( '交付上线', 'qiling' ),
+                    'desc' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '严格测试后交付，并提供持续支持。', 'Launch after testing and keep the experience supported over time.' ) : __( '严格测试后交付，并提供持续支持。', 'qiling' ),
                     'icon_bg' => 'linear-gradient(135deg, var(--color-success) 0%, var(--color-info) 100%)'
                 ),
             );
@@ -368,10 +368,10 @@ class Process_Module extends Module_Base {
 
                                 <?php if ( $process_mode === 'industrial' && ( $duration || $metric || $quality_checkpoint || $deliverable ) ) : ?>
                                     <div class="process-meta">
-                                        <?php if ( $duration ) : ?><span class="process-chip"><?php esc_html_e( '周期', 'developer-starter' ); ?>: <?php echo esc_html( $duration ); ?></span><?php endif; ?>
-                                        <?php if ( $metric ) : ?><span class="process-chip"><?php esc_html_e( '指标', 'developer-starter' ); ?>: <?php echo esc_html( $metric ); ?></span><?php endif; ?>
-                                        <?php if ( $quality_checkpoint ) : ?><span class="process-chip"><?php esc_html_e( '质检', 'developer-starter' ); ?>: <?php echo esc_html( $quality_checkpoint ); ?></span><?php endif; ?>
-                                        <?php if ( $deliverable ) : ?><span class="process-chip"><?php esc_html_e( '交付', 'developer-starter' ); ?>: <?php echo esc_html( $deliverable ); ?></span><?php endif; ?>
+                                        <?php if ( $duration ) : ?><span class="process-chip"><?php esc_html_e( '周期', 'qiling' ); ?>: <?php echo esc_html( $duration ); ?></span><?php endif; ?>
+                                        <?php if ( $metric ) : ?><span class="process-chip"><?php esc_html_e( '指标', 'qiling' ); ?>: <?php echo esc_html( $metric ); ?></span><?php endif; ?>
+                                        <?php if ( $quality_checkpoint ) : ?><span class="process-chip"><?php esc_html_e( '质检', 'qiling' ); ?>: <?php echo esc_html( $quality_checkpoint ); ?></span><?php endif; ?>
+                                        <?php if ( $deliverable ) : ?><span class="process-chip"><?php esc_html_e( '交付', 'qiling' ); ?>: <?php echo esc_html( $deliverable ); ?></span><?php endif; ?>
                                     </div>
                                 <?php endif; ?>
                             </div>

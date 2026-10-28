@@ -106,7 +106,7 @@ if ( ! function_exists( 'developer_starter_extract_menu_icon_from_title' ) ) {
      *
      * 支持的格式：
      * - [icon-home]首页
-     * - [<span>🔥</span>]首页
+     * - [<span class="badge">Hot</span>]首页
      * - icon-home|首页
      *
      * @param string $title Menu title.

@@ -93,7 +93,7 @@ if ( '1' === get_term_meta( $cat_id, 'ds_category_hide_count', true ) ) {
 
 $category_count_label = isset( $theme_options['category_count_label'] ) ? trim( wp_strip_all_tags( (string) $theme_options['category_count_label'] ) ) : '';
 if ( '' === $category_count_label ) {
-    $category_count_label = __( '%s 篇文章', 'developer-starter' );
+    $category_count_label = __( '%s 篇文章', 'qiling' );
 }
 
 // 视频封面设置（全局设置）
@@ -141,11 +141,11 @@ $adv_filter_enabled = ! empty( $settings['adv_filter_enabled'] );
 $category_sort_options = function_exists( 'developer_starter_get_category_sort_options' )
     ? developer_starter_get_category_sort_options( $theme_options )
     : array(
-        'latest'   => __( '最新', 'developer-starter' ),
-        'random'   => __( '随机', 'developer-starter' ),
-        'hot'      => __( '热门', 'developer-starter' ),
-        'like'     => __( '点赞', 'developer-starter' ),
-        'favorite' => __( '收藏', 'developer-starter' ),
+        'latest'   => __( '最新', 'qiling' ),
+        'random'   => __( '随机', 'qiling' ),
+        'hot'      => __( '热门', 'qiling' ),
+        'like'     => __( '点赞', 'qiling' ),
+        'favorite' => __( '收藏', 'qiling' ),
     );
 $category_default_sort = function_exists( 'developer_starter_get_category_default_sort' )
     ? developer_starter_get_category_default_sort( $theme_options, $category_sort_options )
@@ -168,7 +168,9 @@ $active_layout = $layout;
 $layout_classes = isset( $layout_class_map[ $active_layout ] ) ? $layout_class_map[ $active_layout ] : $layout_class_map['card'];
 
 // 加载分类页面专属CSS
-$assets_version = ! empty( $theme_options['assets_version'] ) ? $theme_options['assets_version'] : DEVELOPER_STARTER_VERSION;
+$assets_version = function_exists( 'developer_starter_get_assets_version' )
+    ? developer_starter_get_assets_version()
+    : ( ! empty( $theme_options['assets_version'] ) ? $theme_options['assets_version'] : QILING_VERSION );
 wp_enqueue_style( 'developer-starter-category', get_template_directory_uri() . '/assets/css/category.css', array(), $assets_version );
 
 // 高级分类筛选设置
@@ -219,14 +221,14 @@ if ( empty( $adv_levels ) ) {
     if ( ! empty( $adv_major_cats ) ) {
         $adv_levels[] = array(
             'key' => 'level_0',
-            'label' => __( '大分类', 'developer-starter' ),
+            'label' => __( '大分类', 'qiling' ),
             'options' => $adv_major_cats,
         );
     }
     if ( ! empty( $adv_minor_cats ) ) {
         $adv_levels[] = array(
             'key' => 'level_1',
-            'label' => __( '小分类', 'developer-starter' ),
+            'label' => __( '小分类', 'qiling' ),
             'options' => $adv_minor_cats,
         );
     }
@@ -249,11 +251,11 @@ if ( $archive_infinite_enabled ) {
         'developer-starter-infinite-scroll',
         'qilingInfiniteScrollI18n',
         array(
-            'loadMore' => __( '加载更多', 'developer-starter' ),
-            'loading'  => __( '正在加载...', 'developer-starter' ),
-            'done'     => __( '已经到底了', 'developer-starter' ),
-            'error'    => __( '加载失败，请稍后再试', 'developer-starter' ),
-            'retry'    => __( '重试加载', 'developer-starter' ),
+            'loadMore' => __( '加载更多', 'qiling' ),
+            'loading'  => __( '正在加载...', 'qiling' ),
+            'done'     => __( '已经到底了', 'qiling' ),
+            'error'    => __( '加载失败，请稍后再试', 'qiling' ),
+            'retry'    => __( '重试加载', 'qiling' ),
         )
     );
 }
@@ -338,8 +340,8 @@ get_header();
     <div class="container">
         <!-- 面包屑导航 -->
         <?php if ( $category_breadcrumb_enabled && apply_filters( 'qiling_show_breadcrumb', true, 'category' ) ) : ?>
-        <nav class="category-breadcrumb" aria-label="<?php esc_attr_e( '面包屑导航', 'developer-starter' ); ?>">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '首页', 'developer-starter' ); ?></a>
+        <nav class="category-breadcrumb" aria-label="<?php esc_attr_e( '面包屑导航', 'qiling' ); ?>">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( '首页', 'qiling' ); ?></a>
             <span class="breadcrumb-separator">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -406,7 +408,7 @@ get_header();
             <span class="adv-filter-label"><?php echo esc_html( $level['label'] ); ?>：</span>
             <div class="adv-filter-buttons">
                 <button type="button" class="adv-filter-btn active" data-filter-key="<?php echo esc_attr( $level['key'] ); ?>" data-filter-value="">
-                    <?php esc_html_e( '全部', 'developer-starter' ); ?>
+                    <?php esc_html_e( '全部', 'qiling' ); ?>
                 </button>
                 <?php foreach ( $level['options'] as $option ) : ?>
                 <button type="button" class="adv-filter-btn" data-filter-key="<?php echo esc_attr( $level['key'] ); ?>" data-filter-value="<?php echo esc_attr( $option ); ?>">
@@ -418,7 +420,7 @@ get_header();
         <?php endforeach; ?>
         <?php if ( $category_sort_row_enabled ) : ?>
         <div class="adv-filter-row">
-            <span class="adv-filter-label"><?php esc_html_e( '排序：', 'developer-starter' ); ?></span>
+            <span class="adv-filter-label"><?php esc_html_e( '排序：', 'qiling' ); ?></span>
             <div class="adv-filter-buttons">
                 <?php foreach ( $category_sort_options as $sort_key => $sort_label ) : ?>
                 <button type="button" class="adv-filter-btn<?php echo $current_sort === (string) $sort_key ? ' active' : ''; ?>" data-sort-value="<?php echo esc_attr( $sort_key ); ?>">
@@ -627,12 +629,12 @@ get_header();
             </div>
             
             <!-- 分页 -->
-            <nav class="ds-pagination<?php echo $archive_infinite_enabled ? ' qiling-infinite-pagination-fallback' : ''; ?>" role="navigation" aria-label="<?php esc_attr_e( '文章分页导航', 'developer-starter' ); ?>">
+            <nav class="ds-pagination<?php echo $archive_infinite_enabled ? ' qiling-infinite-pagination-fallback' : ''; ?>" role="navigation" aria-label="<?php esc_attr_e( '文章分页导航', 'qiling' ); ?>">
                 <?php
                 echo paginate_links( array(
                     'mid_size'  => 2,
-                    'prev_text' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg><span>' . __( '上一页', 'developer-starter' ) . '</span>',
-                    'next_text' => '<span>' . __( '下一页', 'developer-starter' ) . '</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>',
+                    'prev_text' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg><span>' . __( '上一页', 'qiling' ) . '</span>',
+                    'next_text' => '<span>' . __( '下一页', 'qiling' ) . '</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>',
                     'type'      => 'list',
                 ) );
                 ?>
@@ -640,20 +642,27 @@ get_header();
 
             <?php if ( $archive_infinite_enabled ) : ?>
                 <div class="qiling-infinite-control" data-qiling-infinite-control>
-                    <button type="button" class="qiling-infinite-load-more" data-qiling-infinite-load-more><?php esc_html_e( '加载更多', 'developer-starter' ); ?></button>
-                    <span class="qiling-infinite-status qiling-infinite-status--loading"><span class="qiling-infinite-spinner" aria-hidden="true"></span><?php esc_html_e( '正在加载...', 'developer-starter' ); ?></span>
-                    <span class="qiling-infinite-status qiling-infinite-status--done"><?php esc_html_e( '已经到底了', 'developer-starter' ); ?></span>
-                    <span class="qiling-infinite-status qiling-infinite-status--error"><?php esc_html_e( '加载失败，请稍后再试', 'developer-starter' ); ?></span>
+                    <button type="button" class="qiling-infinite-load-more" data-qiling-infinite-load-more><?php esc_html_e( '加载更多', 'qiling' ); ?></button>
+                    <span class="qiling-infinite-status qiling-infinite-status--loading"><span class="qiling-infinite-spinner" aria-hidden="true"></span><?php esc_html_e( '正在加载...', 'qiling' ); ?></span>
+                    <span class="qiling-infinite-status qiling-infinite-status--done"><?php esc_html_e( '已经到底了', 'qiling' ); ?></span>
+                    <span class="qiling-infinite-status qiling-infinite-status--error"><?php esc_html_e( '加载失败，请稍后再试', 'qiling' ); ?></span>
                 </div>
             <?php endif; ?>
             
         <?php else : ?>
-            <div class="no-posts">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                <p><?php esc_html_e( '该分类下暂无文章', 'developer-starter' ); ?></p>
+            <div class="no-posts qiling-empty-state">
+                <div class="qiling-empty-state__visual" aria-hidden="true">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+                <h3 class="qiling-empty-state__title"><?php esc_html_e( '该分类下暂无文章', 'qiling' ); ?></h3>
+                <p class="qiling-empty-state__desc"><?php esc_html_e( '作者正在准备内容，先去其他分类看看吧。', 'qiling' ); ?></p>
+                <div class="qiling-empty-state__actions">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-outline"><?php esc_html_e( '返回首页', 'qiling' ); ?></a>
+                </div>
             </div>
         <?php endif; ?>
     </div>

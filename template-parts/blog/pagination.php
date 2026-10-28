@@ -37,8 +37,8 @@ if ( $current <= 0 ) {
                 'current'   => $current,
                 'total'     => max( 1, (int) $query->max_num_pages ),
                 'mid_size'  => 2,
-                'prev_text' => sprintf( '&laquo; %s', __( '上一页', 'developer-starter' ) ),
-                'next_text' => sprintf( '%s &raquo;', __( '下一页', 'developer-starter' ) ),
+                'prev_text' => sprintf( '&laquo; %s', __( '上一页', 'qiling' ) ),
+                'next_text' => sprintf( '%s &raquo;', __( '下一页', 'qiling' ) ),
             )
         );
 
@@ -51,8 +51,8 @@ if ( $current <= 0 ) {
         the_posts_pagination(
             array(
                 'mid_size'  => 2,
-                'prev_text' => sprintf( '&laquo; %s', __( '上一页', 'developer-starter' ) ),
-                'next_text' => sprintf( '%s &raquo;', __( '下一页', 'developer-starter' ) ),
+                'prev_text' => sprintf( '&laquo; %s', __( '上一页', 'qiling' ) ),
+                'next_text' => sprintf( '%s &raquo;', __( '下一页', 'qiling' ) ),
             )
         );
         ?>

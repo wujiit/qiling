@@ -21,7 +21,7 @@ class Software_Ranking_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-chart-bar';
-        $this->description = __( '展示软件下载/好评/热门排行榜', 'developer-starter' );
+        $this->description = __( '展示软件下载/好评/热门排行榜', 'qiling' );
     }
 
     public function get_id() {
@@ -29,51 +29,51 @@ class Software_Ranking_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '软件排行榜', 'developer-starter' );
+        return __( '软件排行榜', 'qiling' );
     }
 
     public function get_fields() {
         return array(
             // 标题设置
-            array( 'id' => 'sr_title', 'type' => 'text', 'label' => __( '标题', 'developer-starter' ) ),
-            array( 'id' => 'sr_title_size', 'type' => 'text', 'label' => __( '标题字体大小', 'developer-starter' ), 'desc' => __( '如 2rem 或 36px，留空默认', 'developer-starter' ) ),
-            array( 'id' => 'sr_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'sr_title', 'type' => 'text', 'label' => __( '标题', 'qiling' ) ),
+            array( 'id' => 'sr_title_size', 'type' => 'text', 'label' => __( '标题字体大小', 'qiling' ), 'desc' => __( '如 2rem 或 36px，留空默认', 'qiling' ) ),
+            array( 'id' => 'sr_title_color', 'type' => 'color', 'label' => __( '标题颜色', 'qiling' ) ),
             
             // 副标题设置
-            array( 'id' => 'sr_subtitle', 'type' => 'text', 'label' => __( '副标题', 'developer-starter' ) ),
-            array( 'id' => 'sr_subtitle_size', 'type' => 'text', 'label' => __( '副标题字体大小', 'developer-starter' ), 'desc' => __( '如 1.1rem 或 18px，留空默认', 'developer-starter' ) ),
-            array( 'id' => 'sr_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'developer-starter' ) ),
+            array( 'id' => 'sr_subtitle', 'type' => 'text', 'label' => __( '副标题', 'qiling' ) ),
+            array( 'id' => 'sr_subtitle_size', 'type' => 'text', 'label' => __( '副标题字体大小', 'qiling' ), 'desc' => __( '如 1.1rem 或 18px，留空默认', 'qiling' ) ),
+            array( 'id' => 'sr_subtitle_color', 'type' => 'color', 'label' => __( '副标题颜色', 'qiling' ) ),
 
             // 背景设置
             array(
                 'id' => 'sr_bg_type',
                 'type' => 'select',
-                'label' => __( '背景类型', 'developer-starter' ),
+                'label' => __( '背景类型', 'qiling' ),
                 'options' => array(
-                    'color' => __( '纯色/渐变背景', 'developer-starter' ),
-                    'image' => __( '图片背景', 'developer-starter' ),
+                    'color' => __( '纯色/渐变背景', 'qiling' ),
+                    'image' => __( '图片背景', 'qiling' ),
                 ),
                 'default' => 'color',
             ),
             array( 
                 'id' => 'sr_bg_color', 
                 'type' => 'color', 
-                'label' => __( '背景颜色', 'developer-starter' ), 
-                'desc' => __( '支持CSS颜色值或渐变代码', 'developer-starter' ),
+                'label' => __( '背景颜色', 'qiling' ), 
+                'desc' => __( '支持CSS颜色值或渐变代码', 'qiling' ),
                 'dependency' => array( 'sr_bg_type', '==', 'color' )
             ),
             array(
                 'id' => 'sr_bg_image',
                 'type' => 'image',
-                'label' => __( '背景图片', 'developer-starter' ),
+                'label' => __( '背景图片', 'qiling' ),
                 'dependency' => array( 'sr_bg_type', '==', 'image' ),
             ),
             array(
                 'id' => 'sr_bg_overlay',
                 'type' => 'select',
-                'label' => __( '背景遮罩浓度', 'developer-starter' ),
+                'label' => __( '背景遮罩浓度', 'qiling' ),
                 'options' => array(
-                    '0' => __( '无遮罩', 'developer-starter' ),
+                    '0' => __( '无遮罩', 'qiling' ),
                     '0.1' => '10%',
                     '0.2' => '20%',
                     '0.3' => '30%',
@@ -89,79 +89,79 @@ class Software_Ranking_Module extends Module_Base {
             ),
 
             // 间距设置
-            array( 'id' => 'sr_padding_top', 'type' => 'text', 'label' => __( '上边距', 'developer-starter' ), 'default' => '60px' ),
-            array( 'id' => 'sr_padding_bottom', 'type' => 'text', 'label' => __( '下边距', 'developer-starter' ), 'default' => '60px' ),
+            array( 'id' => 'sr_padding_top', 'type' => 'text', 'label' => __( '上边距', 'qiling' ), 'default' => '60px' ),
+            array( 'id' => 'sr_padding_bottom', 'type' => 'text', 'label' => __( '下边距', 'qiling' ), 'default' => '60px' ),
             
             // 布局设置
-            array( 'id' => 'sr_layout', 'type' => 'select', 'label' => __( '布局方式', 'developer-starter' ), 'options' => array( 
-                'list' => __( '列表榜单', 'developer-starter' ), 
-                'cards' => __( '卡片榜单(Top3突出)', 'developer-starter' ), 
-                'numbered' => __( '数字榜单', 'developer-starter' ), 
-                'multi_column' => __( '多列榜单', 'developer-starter' ) 
+            array( 'id' => 'sr_layout', 'type' => 'select', 'label' => __( '布局方式', 'qiling' ), 'options' => array( 
+                'list' => __( '列表榜单', 'qiling' ), 
+                'cards' => __( '卡片榜单(Top3突出)', 'qiling' ), 
+                'numbered' => __( '数字榜单', 'qiling' ), 
+                'multi_column' => __( '多列榜单', 'qiling' ) 
             ), 'default' => 'list' ),
-            array( 'id' => 'sr_columns', 'type' => 'number', 'label' => __( '列数 (多列模式)', 'developer-starter' ), 'default' => '2' ),
+            array( 'id' => 'sr_columns', 'type' => 'number', 'label' => __( '列数 (多列模式)', 'qiling' ), 'default' => '2' ),
             
             // 数据设置
-            array( 'id' => 'sr_ranking_type', 'type' => 'select', 'label' => __( '排行依据', 'developer-starter' ), 'options' => array( 
-                'downloads' => __( '下载量', 'developer-starter' ), 
-                'views' => __( '浏览量', 'developer-starter' ), 
-                'latest' => __( '最近更新', 'developer-starter' ), 
-                'newest' => __( '最新发布', 'developer-starter' ) 
+            array( 'id' => 'sr_ranking_type', 'type' => 'select', 'label' => __( '排行依据', 'qiling' ), 'options' => array( 
+                'downloads' => __( '下载量', 'qiling' ), 
+                'views' => __( '浏览量', 'qiling' ), 
+                'latest' => __( '最近更新', 'qiling' ), 
+                'newest' => __( '最新发布', 'qiling' ) 
             ), 'default' => 'downloads' ),
-            array( 'id' => 'sr_categories', 'type' => 'text', 'label' => __( '软件分类ID (逗号分隔)', 'developer-starter' ) ),
-            array( 'id' => 'sr_count', 'type' => 'number', 'label' => __( '显示数量', 'developer-starter' ), 'default' => '10' ),
+            array( 'id' => 'sr_categories', 'type' => 'text', 'label' => __( '软件分类ID (逗号分隔)', 'qiling' ) ),
+            array( 'id' => 'sr_count', 'type' => 'number', 'label' => __( '显示数量', 'qiling' ), 'default' => '10' ),
             
             // 样式设置
-            array( 'id' => 'sr_card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'developer-starter' ), 'default' => 'var(--color-neutral-0)' ),
+            array( 'id' => 'sr_card_bg', 'type' => 'color', 'label' => __( '卡片背景色', 'qiling' ), 'default' => 'var(--color-neutral-0)' ),
             array(
                 'id'          => 'sr_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
-                'description' => __( '控制排行类型、版本与排名徽章背景；留空时保留原有排行语义色并跟随全局标签风格。', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
+                'description' => __( '控制排行类型、版本与排名徽章背景；留空时保留原有排行语义色并跟随全局标签风格。', 'qiling' ),
             ),
-            array( 'id' => 'sr_icon_size', 'type' => 'text', 'label' => __( '图标大小', 'developer-starter' ), 'default' => '48px' ),
+            array( 'id' => 'sr_icon_size', 'type' => 'text', 'label' => __( '图标大小', 'qiling' ), 'default' => '48px' ),
             
             // 显示设置
-            array( 'id' => 'sr_show_rank_badge', 'type' => 'select', 'label' => __( '显示排名徽章', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
-            array( 'id' => 'sr_show_stats', 'type' => 'select', 'label' => __( '显示统计数值', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
-            array( 'id' => 'sr_show_version', 'type' => 'select', 'label' => __( '显示版本', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '1' ),
+            array( 'id' => 'sr_show_rank_badge', 'type' => 'select', 'label' => __( '显示排名徽章', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
+            array( 'id' => 'sr_show_stats', 'type' => 'select', 'label' => __( '显示统计数值', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
+            array( 'id' => 'sr_show_version', 'type' => 'select', 'label' => __( '显示版本', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '1' ),
             
-            array( 'id' => 'sr_show_btn', 'type' => 'select', 'label' => __( '显示按钮', 'developer-starter' ), 'options' => array( '1' => __( '是', 'developer-starter' ), '0' => __( '否', 'developer-starter' ) ), 'default' => '0' ),
-            array( 'id' => 'sr_btn_text', 'type' => 'text', 'label' => __( '按钮文字', 'developer-starter' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'developer-starter' ) ),
-            array( 'id' => 'sr_btn_link', 'type' => 'text', 'label' => __( '按钮链接', 'developer-starter' ) ),
+            array( 'id' => 'sr_show_btn', 'type' => 'select', 'label' => __( '显示按钮', 'qiling' ), 'options' => array( '1' => __( '是', 'qiling' ), '0' => __( '否', 'qiling' ) ), 'default' => '0' ),
+            array( 'id' => 'sr_btn_text', 'type' => 'text', 'label' => __( '按钮文字', 'qiling' ), 'default' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'qiling' ) ),
+            array( 'id' => 'sr_btn_link', 'type' => 'text', 'label' => __( '按钮链接', 'qiling' ) ),
             array(
                 'id'          => 'sr_btn_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label'       => __( '按钮背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'          => 'sr_btn_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'label'       => __( '按钮文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             $this->get_button_border_color_field( 'sr_btn_border_color' ),
             array(
                 'id'          => 'sr_btn_hover_bg_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停背景颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '按钮悬停背景颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'          => 'sr_btn_hover_text_color',
                 'type'        => 'color',
-                'label'       => __( '按钮悬停文字颜色', 'developer-starter' ),
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'label'       => __( '按钮悬停文字颜色', 'qiling' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'sr_btn_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景颜色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'sr_btn_hover_border_color', __( '按钮悬停边框颜色', 'qiling' ), __( '留空时跟随按钮悬停背景颜色。', 'qiling' ) ),
         );
     }
 
     public function render( $data = array() ) {
         if ( ! function_exists( 'developer_starter_qiapp_is_available' ) ) {
-            $helper_file = defined( 'DEVELOPER_STARTER_INC' )
-                ? DEVELOPER_STARTER_INC . '/core/helpers/helpers-qiapp-theme.php'
+            $helper_file = defined( 'QILING_INC' )
+                ? QILING_INC . '/core/helpers/helpers-qiapp-theme.php'
                 : get_template_directory() . '/inc/core/helpers/helpers-qiapp-theme.php';
             if ( is_string( $helper_file ) && file_exists( $helper_file ) ) {
                 require_once $helper_file;
@@ -265,7 +265,7 @@ class Software_Ranking_Module extends Module_Base {
         $show_btn = isset( $data['sr_show_btn'] ) && $data['sr_show_btn'] === '1';
         $btn_text = isset( $data['sr_btn_text'] ) && ! empty( $data['sr_btn_text'] )
             ? sanitize_text_field( $data['sr_btn_text'] )
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'qiling' ) );
         $btn_link = ! empty( $data['sr_btn_link'] ) ? esc_url_raw( $data['sr_btn_link'] ) : developer_starter_qiapp_get_archive_link();
         $btn_bg_color = $this->sanitize_css_color_value(
             isset( $data['sr_btn_bg_color'] ) ? $data['sr_btn_bg_color'] : '',
@@ -379,10 +379,10 @@ class Software_Ranking_Module extends Module_Base {
         
         // 获取排行类型标签
         $ranking_labels = array(
-            'downloads' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载量', 'Downloads' ) : __( '下载量', 'developer-starter' ),
-            'views' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '浏览量', 'Views' ) : __( '浏览量', 'developer-starter' ),
-            'latest' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '最新更新', 'Recently Updated' ) : __( '最新更新', 'developer-starter' ),
-            'newest' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '最新发布', 'Newest Releases' ) : __( '最新发布', 'developer-starter' ),
+            'downloads' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '下载量', 'Downloads' ) : __( '下载量', 'qiling' ),
+            'views' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '浏览量', 'Views' ) : __( '浏览量', 'qiling' ),
+            'latest' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '最新更新', 'Recently Updated' ) : __( '最新更新', 'qiling' ),
+            'newest' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '最新发布', 'Newest Releases' ) : __( '最新发布', 'qiling' ),
         );
         $ranking_label = isset( $ranking_labels[ $ranking_type ] ) ? $ranking_labels[ $ranking_type ] : '';
         
@@ -468,7 +468,7 @@ class Software_Ranking_Module extends Module_Base {
         $show_btn = isset( $data['sr_show_btn'] ) && $data['sr_show_btn'] === '1';
         $btn_text = isset( $data['sr_btn_text'] ) && ! empty( $data['sr_btn_text'] )
             ? $data['sr_btn_text']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'qiling' ) );
         $btn_link = ! empty( $data['sr_btn_link'] ) ? $data['sr_btn_link'] : developer_starter_qiapp_get_archive_link();
         ?>
         <section class="module module-software-ranking layout-list" id="<?php echo esc_attr( $unique_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
@@ -538,7 +538,7 @@ class Software_Ranking_Module extends Module_Base {
         $show_btn = isset( $data['sr_show_btn'] ) && $data['sr_show_btn'] === '1';
         $btn_text = isset( $data['sr_btn_text'] ) && ! empty( $data['sr_btn_text'] )
             ? $data['sr_btn_text']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'qiling' ) );
         $btn_link = ! empty( $data['sr_btn_link'] ) ? $data['sr_btn_link'] : developer_starter_qiapp_get_archive_link();
         
         // 分离TOP3和其他
@@ -633,7 +633,7 @@ class Software_Ranking_Module extends Module_Base {
         $show_btn = isset( $data['sr_show_btn'] ) && $data['sr_show_btn'] === '1';
         $btn_text = isset( $data['sr_btn_text'] ) && ! empty( $data['sr_btn_text'] )
             ? $data['sr_btn_text']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'qiling' ) );
         $btn_link = ! empty( $data['sr_btn_link'] ) ? $data['sr_btn_link'] : developer_starter_qiapp_get_archive_link();
         ?>
         <section class="module module-software-ranking layout-numbered" id="<?php echo esc_attr( $unique_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
@@ -700,7 +700,7 @@ class Software_Ranking_Module extends Module_Base {
         $show_btn = isset( $data['sr_show_btn'] ) && $data['sr_show_btn'] === '1';
         $btn_text = isset( $data['sr_btn_text'] ) && ! empty( $data['sr_btn_text'] )
             ? $data['sr_btn_text']
-            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'developer-starter' ) );
+            : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '查看完整榜单', 'View Full Ranking' ) : __( '查看完整榜单', 'qiling' ) );
         $btn_link = ! empty( $data['sr_btn_link'] ) ? $data['sr_btn_link'] : developer_starter_qiapp_get_archive_link();
         
         // 将items分成多列
@@ -1013,10 +1013,10 @@ class Software_Ranking_Module extends Module_Base {
 
         // 排行类型配置
         $stat_labels = array(
-            'downloads' => __( '下载', 'developer-starter' ),
-            'views'     => __( '浏览', 'developer-starter' ),
-            'latest'    => __( '更新', 'developer-starter' ),
-            'newest'    => __( '发布', 'developer-starter' ),
+            'downloads' => __( '下载', 'qiling' ),
+            'views'     => __( '浏览', 'qiling' ),
+            'latest'    => __( '更新', 'qiling' ),
+            'newest'    => __( '发布', 'qiling' ),
         );
         $stat_label = isset( $stat_labels[ $ranking_type ] ) ? $stat_labels[ $ranking_type ] : '';
         
@@ -1107,9 +1107,11 @@ class Software_Ranking_Module extends Module_Base {
             text-align: center;
             margin: var(--qiling-space-20) 0;
         ">
-            <span style="font-size: var(--qiling-text-rem-2p5); display: block; margin-bottom: var(--qiling-space-12);">⚠️</span>
-            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--qiling-color-92400e);"><?php esc_html_e( '请先安装启灵软件库插件', 'developer-starter' ); ?></h3>
-            <p style="margin: 0; color: var(--qiling-color-a16207);"><?php esc_html_e( '软件排行榜模块需要启灵软件库插件（qilingapp）的支持，请先安装并激活该插件。', 'developer-starter' ); ?></p>
+            <span style="display: block; margin: 0 auto var(--qiling-space-12); width: 40px; height: 40px; color: var(--qiling-color-92400e);" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </span>
+            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--qiling-color-92400e);"><?php esc_html_e( '请先安装启灵软件库插件', 'qiling' ); ?></h3>
+            <p style="margin: 0; color: var(--qiling-color-a16207);"><?php esc_html_e( '软件排行榜模块需要启灵软件库插件（qilingapp）的支持，请先安装并激活该插件。', 'qiling' ); ?></p>
         </div>
         <?php
     }
@@ -1130,9 +1132,11 @@ class Software_Ranking_Module extends Module_Base {
             text-align: center;
             margin: var(--qiling-space-20) 0;
         ">
-            <span style="font-size: var(--qiling-text-rem-2p5); display: block; margin-bottom: var(--qiling-space-12);">📊</span>
-            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--color-neutral-600);"><?php esc_html_e( '暂无排行数据', 'developer-starter' ); ?></h3>
-            <p style="margin: 0; color: var(--color-text-muted);"><?php esc_html_e( '请先在启灵软件库插件中添加软件数据，或选择包含软件数据的分类。', 'developer-starter' ); ?></p>
+            <span style="display: block; margin: 0 auto var(--qiling-space-12); width: 40px; height: 40px; color: var(--color-neutral-600);" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </span>
+            <h3 style="margin: 0 0 var(--qiling-space-8); color: var(--color-neutral-600);"><?php esc_html_e( '暂无排行数据', 'qiling' ); ?></h3>
+            <p style="margin: 0; color: var(--color-text-muted);"><?php esc_html_e( '请先在启灵软件库插件中添加软件数据，或选择包含软件数据的分类。', 'qiling' ); ?></p>
         </div>
         <?php
     }

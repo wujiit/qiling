@@ -60,7 +60,6 @@ export async function run() {
     'assets/css/account.css',
     'assets/css/modules.css',
     'assets/css/modules-split/_manifest.txt',
-    'assets/css/woocommerce.css',
     'dev/tools/audit-design-token-coverage.mjs',
     'dev/tools/audit-module-design-surfaces.mjs',
   ].forEach((file) => {
@@ -178,7 +177,6 @@ export async function run() {
     'footer_bg',
     'footer_heading',
     'footer_heading_size',
-    'woo_card_bg',
     'build_root_css',
     'sanitize_options',
     'developer_starter_design_token_presets',
@@ -257,7 +255,6 @@ export async function run() {
     "'design_component_footer_bg'",
     "'design_component_footer_heading'",
     "'design_component_footer_heading_size'",
-    "'design_component_woo_card_bg'",
     "'design_dark_surface'",
   ].forEach((needle) => {
     assertContains(configPhp, needle, `Admin design settings contract changed unexpectedly: ${needle}`);
@@ -666,7 +663,6 @@ export async function run() {
     'assets/css/modules-hero.css',
     'assets/css/frontend-builder.css',
     'assets/css/main.css',
-    'assets/css/woocommerce.css',
     'assets/css/article-enhance.css',
     'templates/template-account.php',
     'assets/css/login-modal.css',

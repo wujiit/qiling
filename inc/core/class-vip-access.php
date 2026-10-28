@@ -101,16 +101,16 @@ class VIP_Access {
         ?>
         <p class="description description-wide">
             <label for="ds_menu_vip_level_<?php echo esc_attr( $item_id ); ?>">
-                <?php esc_html_e( '要求最低 VIP 等级', 'developer-starter' ); ?><br/>
+                <?php esc_html_e( '要求最低 VIP 等级', 'qiling' ); ?><br/>
                 <select id="ds_menu_vip_level_<?php echo esc_attr( $item_id ); ?>" name="ds_menu_vip_level[<?php echo esc_attr( $item_id ); ?>]" style="width: 100%;">
-                    <option value="0"><?php esc_html_e( '不限制', 'developer-starter' ); ?></option>
+                    <option value="0"><?php esc_html_e( '不限制', 'qiling' ); ?></option>
                     <?php foreach ( $levels as $level ) : ?>
                         <option value="<?php echo esc_attr( $level->id ); ?>" <?php selected( $current_level, $level->id ); ?>>
                             <?php echo esc_html( $level->level_name ); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <span class="description"><?php esc_html_e( '仅对该级别及以上的 VIP 用户显示此菜单项。此项拥有更高优先级。', 'developer-starter' ); ?></span>
+                <span class="description"><?php esc_html_e( '仅对该级别及以上的 VIP 用户显示此菜单项。此项拥有更高优先级。', 'qiling' ); ?></span>
             </label>
         </p>
         <?php
@@ -179,16 +179,16 @@ class VIP_Access {
         }
         ?>
         <div class="form-field">
-            <label for="ds_vip_level_required"><?php esc_html_e( '要求最低 VIP 等级', 'developer-starter' ); ?></label>
+            <label for="ds_vip_level_required"><?php esc_html_e( '要求最低 VIP 等级', 'qiling' ); ?></label>
             <select name="ds_vip_level_required" id="ds_vip_level_required">
-                <option value="0"><?php esc_html_e( '不限制', 'developer-starter' ); ?></option>
+                <option value="0"><?php esc_html_e( '不限制', 'qiling' ); ?></option>
                 <?php foreach ( $levels as $level ) : ?>
                     <option value="<?php echo esc_attr( $level->id ); ?>">
                         <?php echo esc_html( $level->level_name ); ?>
                     </option>
                 <?php endforeach; ?>
             </select>
-            <p class="description"><?php esc_html_e( '仅允许该级别及以上 VIP 用户访问该分类及其文章。', 'developer-starter' ); ?></p>
+            <p class="description"><?php esc_html_e( '仅允许该级别及以上 VIP 用户访问该分类及其文章。', 'qiling' ); ?></p>
         </div>
         <?php
     }
@@ -204,17 +204,17 @@ class VIP_Access {
         $current_level = get_term_meta( $term->term_id, '_ds_vip_level_required', true );
         ?>
         <tr class="form-field">
-            <th scope="row"><label for="ds_vip_level_required"><?php esc_html_e( '要求最低 VIP 等级', 'developer-starter' ); ?></label></th>
+            <th scope="row"><label for="ds_vip_level_required"><?php esc_html_e( '要求最低 VIP 等级', 'qiling' ); ?></label></th>
             <td>
                 <select name="ds_vip_level_required" id="ds_vip_level_required">
-                    <option value="0"><?php esc_html_e( '不限制', 'developer-starter' ); ?></option>
+                    <option value="0"><?php esc_html_e( '不限制', 'qiling' ); ?></option>
                     <?php foreach ( $levels as $level ) : ?>
                         <option value="<?php echo esc_attr( $level->id ); ?>" <?php selected( $current_level, $level->id ); ?>>
                             <?php echo esc_html( $level->level_name ); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <p class="description"><?php esc_html_e( '仅允许该级别及以上 VIP 用户访问该分类及其文章。', 'developer-starter' ); ?></p>
+                <p class="description"><?php esc_html_e( '仅允许该级别及以上 VIP 用户访问该分类及其文章。', 'qiling' ); ?></p>
             </td>
         </tr>
         <?php
@@ -344,9 +344,9 @@ class VIP_Access {
         status_header( 200 );
         nocache_headers();
 
-        $title = developer_starter_get_option( 'vip_denied_prompt_title', __( '该内容仅限 VIP 会员查看', 'developer-starter' ) );
-        $desc = developer_starter_get_option( 'vip_denied_prompt_desc', __( '您的权限不足，请开通或升级 VIP 后继续浏览', 'developer-starter' ) );
-        $btn_text = developer_starter_get_option( 'vip_denied_btn_text', __( '立即升级 VIP', 'developer-starter' ) );
+        $title = developer_starter_get_option( 'vip_denied_prompt_title', __( '该内容仅限 VIP 会员查看', 'qiling' ) );
+        $desc = developer_starter_get_option( 'vip_denied_prompt_desc', __( '您的权限不足，请开通或升级 VIP 后继续浏览', 'qiling' ) );
+        $btn_text = developer_starter_get_option( 'vip_denied_btn_text', __( '立即升级 VIP', 'qiling' ) );
         $btn_url = developer_starter_get_option( 'vip_denied_btn_url', '' );
 
         // 尝试自动获取商城的 VIP 开通地址
@@ -359,7 +359,7 @@ class VIP_Access {
         <div class="guest-access-section">
             <div class="container">
                 <div class="guest-access-card">
-                    <div class="guest-access-icon">👑</div>
+                    <div class="guest-access-icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14v2H5v-2z"></path></svg></div>
                     <h2 class="guest-access-title"><?php echo esc_html( $title ); ?></h2>
                     <p class="guest-access-desc"><?php echo esc_html( $desc ); ?></p>
                     <div class="guest-access-actions">
@@ -367,7 +367,7 @@ class VIP_Access {
                             <?php echo esc_html( $btn_text ); ?>
                         </a>
                         <a class="guest-access-btn guest-access-btn-ghost" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <?php esc_html_e( '返回首页', 'developer-starter' ); ?>
+                            <?php esc_html_e( '返回首页', 'qiling' ); ?>
                         </a>
                     </div>
                 </div>

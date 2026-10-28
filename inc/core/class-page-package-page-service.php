@@ -94,12 +94,12 @@ class Page_Package_Page_Service {
 
         if ( isset( $site_options['site_title'] ) && '' !== (string) $site_options['site_title'] ) {
             update_option( 'blogname', sanitize_text_field( (string) $site_options['site_title'] ) );
-            $messages[] = __( '已应用站点标题。', 'developer-starter' );
+            $messages[] = __( '已应用站点标题。', 'qiling' );
         }
 
         if ( array_key_exists( 'tagline', $site_options ) ) {
             update_option( 'blogdescription', sanitize_text_field( (string) $site_options['tagline'] ) );
-            $messages[] = __( '已应用站点副标题。', 'developer-starter' );
+            $messages[] = __( '已应用站点副标题。', 'qiling' );
         }
 
         $has_design_system_v2 = ! empty( $site_options['design_system_v2'] ) && is_array( $site_options['design_system_v2'] );
@@ -151,7 +151,7 @@ class Page_Package_Page_Service {
                 class_exists( '\Developer_Starter\Core\Design_Tokens' )
                     ? array( '\Developer_Starter\Core\Design_Tokens', 'sanitize_options' )
                     : null,
-                __( '已应用全局样式设置。', 'developer-starter' )
+                __( '已应用全局样式设置。', 'qiling' )
             );
             if ( '' !== $design_message ) {
                 $messages[] = $design_message;
@@ -173,7 +173,7 @@ class Page_Package_Page_Service {
                 class_exists( '\Developer_Starter\Core\Content_Model_Center' )
                     ? array( '\Developer_Starter\Core\Content_Model_Center', 'sanitize_options' )
                     : null,
-                __( '已应用内容模型中心设置。', 'developer-starter' )
+                __( '已应用内容模型中心设置。', 'qiling' )
             );
             if ( '' !== $content_model_message ) {
                 $messages[] = $content_model_message;
@@ -206,19 +206,19 @@ class Page_Package_Page_Service {
         $messages = array();
         $front_page_key = sanitize_key( (string) $front_page_key );
         if ( '' === $front_page_key || ! isset( $page_key_map[ $front_page_key ] ) ) {
-            $messages[] = __( '首页设置未生效：数据包中未找到对应页面。', 'developer-starter' );
+            $messages[] = __( '首页设置未生效：数据包中未找到对应页面。', 'qiling' );
             return $messages;
         }
 
         $front_page_id = absint( $page_key_map[ $front_page_key ] );
         $front_page    = get_post( $front_page_id );
         if ( ! $front_page instanceof \WP_Post || $front_page->post_type !== 'page' ) {
-            $messages[] = __( '首页设置未生效：目标页面不存在。', 'developer-starter' );
+            $messages[] = __( '首页设置未生效：目标页面不存在。', 'qiling' );
             return $messages;
         }
 
         if ( $front_page->post_status !== 'publish' ) {
-            $messages[] = __( '首页设置未生效：目标页面不是已发布状态。', 'developer-starter' );
+            $messages[] = __( '首页设置未生效：目标页面不是已发布状态。', 'qiling' );
             return $messages;
         }
 
@@ -227,7 +227,7 @@ class Page_Package_Page_Service {
 
         $messages[] = sprintf(
             /* translators: %s: page title */
-            __( '已将“%s”设置为首页。', 'developer-starter' ),
+            __( '已将“%s”设置为首页。', 'qiling' ),
             get_the_title( $front_page_id )
         );
         return $messages;
@@ -244,14 +244,14 @@ class Page_Package_Page_Service {
         $messages       = array();
         $posts_page_key = sanitize_key( (string) $posts_page_key );
         if ( '' === $posts_page_key || ! isset( $page_key_map[ $posts_page_key ] ) ) {
-            $messages[] = __( '文章列表页设置未生效：数据包中未找到对应页面。', 'developer-starter' );
+            $messages[] = __( '文章列表页设置未生效：数据包中未找到对应页面。', 'qiling' );
             return $messages;
         }
 
         $posts_page_id = absint( $page_key_map[ $posts_page_key ] );
         $posts_page    = get_post( $posts_page_id );
         if ( ! $posts_page instanceof \WP_Post || $posts_page->post_type !== 'page' ) {
-            $messages[] = __( '文章列表页设置未生效：目标页面不存在。', 'developer-starter' );
+            $messages[] = __( '文章列表页设置未生效：目标页面不存在。', 'qiling' );
             return $messages;
         }
 
@@ -262,7 +262,7 @@ class Page_Package_Page_Service {
 
         $messages[] = sprintf(
             /* translators: %s: page title */
-            __( '已将“%s”设置为文章列表页。', 'developer-starter' ),
+            __( '已将“%s”设置为文章列表页。', 'qiling' ),
             get_the_title( $posts_page_id )
         );
         return $messages;
@@ -435,7 +435,7 @@ class Page_Package_Page_Service {
         $stored = is_array( $stored ) ? $stored : array();
         update_option( 'developer_starter_options', array_merge( $stored, $normalized ) );
 
-        return '' !== $success_message ? $success_message : __( '已应用主题设置。', 'developer-starter' );
+        return '' !== $success_message ? $success_message : __( '已应用主题设置。', 'qiling' );
     }
 
     /**
@@ -476,7 +476,7 @@ class Page_Package_Page_Service {
         }
 
         update_option( 'developer_starter_options', array_merge( $stored, $sanitized ) );
-        return __( '已应用完整 design_system_v2 设计系统。', 'developer-starter' );
+        return __( '已应用完整 design_system_v2 设计系统。', 'qiling' );
     }
 
     /**
@@ -645,12 +645,12 @@ class Page_Package_Page_Service {
                 continue;
             }
 
-            $menu_name = ! empty( $menu['name'] ) ? sanitize_text_field( (string) $menu['name'] ) : __( '导入菜单', 'developer-starter' );
+            $menu_name = ! empty( $menu['name'] ) ? sanitize_text_field( (string) $menu['name'] ) : __( '导入菜单', 'qiling' );
             $menu_id   = $this->create_unique_nav_menu( $menu_name );
             if ( $menu_id <= 0 ) {
                 $messages[] = sprintf(
                     /* translators: %s: menu name */
-                    __( '菜单“%s”创建失败，已跳过。', 'developer-starter' ),
+                    __( '菜单“%s”创建失败，已跳过。', 'qiling' ),
                     $menu_name
                 );
                 continue;
@@ -676,7 +676,7 @@ class Page_Package_Page_Service {
 
             $messages[] = sprintf(
                 /* translators: 1: menu name 2: item count */
-                __( '已创建菜单“%1$s”，包含 %2$d 个菜单项。', 'developer-starter' ),
+                __( '已创建菜单“%1$s”，包含 %2$d 个菜单项。', 'qiling' ),
                 $menu_name,
                 $created_items
             );
@@ -694,7 +694,7 @@ class Page_Package_Page_Service {
     private function create_unique_nav_menu( $menu_name ) {
         $base_name = sanitize_text_field( (string) $menu_name );
         if ( '' === $base_name ) {
-            $base_name = __( '导入菜单', 'developer-starter' );
+            $base_name = __( '导入菜单', 'qiling' );
         }
 
         $candidate_name = $base_name;
@@ -919,7 +919,7 @@ class Page_Package_Page_Service {
     public function get_template_label( $template ) {
         $template = $this->normalize_page_template( $template );
         if ( 'default' === $template ) {
-            return __( '默认模板', 'developer-starter' );
+            return __( '默认模板', 'qiling' );
         }
 
         $templates = wp_get_theme()->get_page_templates( null, 'page' );
@@ -1154,7 +1154,7 @@ class Page_Package_Page_Service {
                 continue;
             }
 
-            $page_title = isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '未命名页面', 'developer-starter' );
+            $page_title = isset( $page['title'] ) ? sanitize_text_field( (string) $page['title'] ) : __( '未命名页面', 'qiling' );
             $references = array();
 
             $this->collect_placeholder_references( $page['modules'], $references );
@@ -1170,7 +1170,7 @@ class Page_Package_Page_Service {
                 if ( $reference['type'] === 'page' && ! isset( $known_page_keys[ $reference['target'] ] ) ) {
                     $warnings[] = sprintf(
                         /* translators: 1: page title 2: page key */
-                        __( '页面“%1$s”引用了不存在的页面标识：%2$s。导入后该占位链接会保留原样。', 'developer-starter' ),
+                        __( '页面“%1$s”引用了不存在的页面标识：%2$s。导入后该占位链接会保留原样。', 'qiling' ),
                         $page_title,
                         $reference['target']
                     );
@@ -1179,7 +1179,7 @@ class Page_Package_Page_Service {
                 if ( $reference['type'] === 'system' && ! isset( $system_url_map[ $reference['target'] ] ) ) {
                     $warnings[] = sprintf(
                         /* translators: 1: page title 2: system target */
-                        __( '页面“%1$s”引用了未就绪的系统入口：%2$s。导入后该占位链接会保留原样。', 'developer-starter' ),
+                        __( '页面“%1$s”引用了未就绪的系统入口：%2$s。导入后该占位链接会保留原样。', 'qiling' ),
                         $page_title,
                         $reference['target']
                     );
@@ -1223,7 +1223,7 @@ class Page_Package_Page_Service {
 
             $messages[] = sprintf(
                 /* translators: %s: page key */
-                __( '页面 %s 的包内链接已自动解析。', 'developer-starter' ),
+                __( '页面 %s 的包内链接已自动解析。', 'qiling' ),
                 sanitize_key( (string) $page_key )
             );
         }

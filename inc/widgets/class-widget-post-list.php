@@ -19,9 +19,9 @@ class Widget_Post_List extends \WP_Widget {
     public function __construct() {
         parent::__construct(
             'developer_starter_post_list',
-            __( '启灵文章展示', 'developer-starter' ),
+            __( '启灵文章展示', 'qiling' ),
             array(
-                'description' => __( '显示最新、热门或随机文章，可选缩略图、日期、排行序号并支持排除分类。', 'developer-starter' ),
+                'description' => __( '显示最新、热门或随机文章，可选缩略图、日期、排行序号并支持排除分类。', 'qiling' ),
             )
         );
     }
@@ -51,7 +51,7 @@ class Widget_Post_List extends \WP_Widget {
         ?>
         <div class="<?php echo esc_attr( implode( ' ', $widget_classes ) ); ?>">
             <?php if ( empty( $post_ids ) ) : ?>
-                <p class="ds-post-list-widget__empty"><?php esc_html_e( '暂无可显示的文章。', 'developer-starter' ); ?></p>
+                <p class="ds-post-list-widget__empty"><?php esc_html_e( '暂无可显示的文章。', 'qiling' ); ?></p>
             <?php else : ?>
                 <ul class="ds-post-list-widget__list">
                     <?php foreach ( $post_ids as $index => $post_id ) : ?>
@@ -110,43 +110,43 @@ class Widget_Post_List extends \WP_Widget {
         $instance = $this->normalize_instance( $instance );
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( '标题:', 'developer-starter' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( '标题:', 'qiling' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>">
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>"><?php esc_html_e( '文章来源:', 'developer-starter' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>"><?php esc_html_e( '文章来源:', 'qiling' ); ?></label>
             <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'source' ) ); ?>">
-                <option value="latest" <?php selected( $instance['source'], 'latest' ); ?>><?php esc_html_e( '最新文章', 'developer-starter' ); ?></option>
-                <option value="popular" <?php selected( $instance['source'], 'popular' ); ?>><?php esc_html_e( '热门文章', 'developer-starter' ); ?></option>
-                <option value="random" <?php selected( $instance['source'], 'random' ); ?>><?php esc_html_e( '随机文章', 'developer-starter' ); ?></option>
+                <option value="latest" <?php selected( $instance['source'], 'latest' ); ?>><?php esc_html_e( '最新文章', 'qiling' ); ?></option>
+                <option value="popular" <?php selected( $instance['source'], 'popular' ); ?>><?php esc_html_e( '热门文章', 'qiling' ); ?></option>
+                <option value="random" <?php selected( $instance['source'], 'random' ); ?>><?php esc_html_e( '随机文章', 'qiling' ); ?></option>
             </select>
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>"><?php esc_html_e( '显示数量:', 'developer-starter' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>"><?php esc_html_e( '显示数量:', 'qiling' ); ?></label>
             <input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'posts_per_page' ) ); ?>" type="number" min="1" max="12" step="1" value="<?php echo esc_attr( $instance['posts_per_page'] ); ?>">
         </p>
 
         <p>
             <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'show_thumbnail' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_thumbnail' ) ); ?>" value="1" <?php checked( $instance['show_thumbnail'], '1' ); ?>>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'show_thumbnail' ) ); ?>"><?php esc_html_e( '显示缩略图', 'developer-starter' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'show_thumbnail' ) ); ?>"><?php esc_html_e( '显示缩略图', 'qiling' ); ?></label>
         </p>
 
         <p>
             <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_date' ) ); ?>" value="1" <?php checked( $instance['show_date'], '1' ); ?>>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"><?php esc_html_e( '显示日期', 'developer-starter' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"><?php esc_html_e( '显示日期', 'qiling' ); ?></label>
         </p>
 
         <p>
             <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'show_rank' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_rank' ) ); ?>" value="1" <?php checked( $instance['show_rank'], '1' ); ?>>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'show_rank' ) ); ?>"><?php esc_html_e( '显示排行序号', 'developer-starter' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'show_rank' ) ); ?>"><?php esc_html_e( '显示排行序号', 'qiling' ); ?></label>
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'exclude_categories' ) ); ?>"><?php esc_html_e( '排除分类 ID:', 'developer-starter' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'exclude_categories' ) ); ?>"><?php esc_html_e( '排除分类 ID:', 'qiling' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'exclude_categories' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'exclude_categories' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['exclude_categories'] ); ?>">
-            <small><?php esc_html_e( '多个分类 ID 用逗号分隔，例如：3,8,15', 'developer-starter' ); ?></small>
+            <small><?php esc_html_e( '多个分类 ID 用逗号分隔，例如：3,8,15', 'qiling' ); ?></small>
         </p>
         <?php
     }
@@ -177,7 +177,7 @@ class Widget_Post_List extends \WP_Widget {
 
     protected function normalize_instance( $instance ) {
         $defaults = array(
-            'title'              => __( '文章展示', 'developer-starter' ),
+            'title'              => __( '文章展示', 'qiling' ),
             'source'             => 'latest',
             'posts_per_page'     => 5,
             'show_thumbnail'     => '1',

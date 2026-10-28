@@ -72,7 +72,7 @@ class Setup_Wizard_Cleanup_Service {
      */
     public function cleanup( $args ) {
         if ( ! current_user_can( 'manage_options' ) ) {
-            return $this->result_with_error( 'forbidden', __( '权限不足，无法执行向导清理。', 'developer-starter' ) );
+            return $this->result_with_error( 'forbidden', __( '权限不足，无法执行向导清理。', 'qiling' ) );
         }
 
         $args = is_array( $args ) ? $args : array();
@@ -87,12 +87,12 @@ class Setup_Wizard_Cleanup_Service {
         );
 
         if ( empty( $args['confirm'] ) ) {
-            $result['errors']['confirm_required'] = __( '请先勾选确认，再执行清理。', 'developer-starter' );
+            $result['errors']['confirm_required'] = __( '请先勾选确认，再执行清理。', 'qiling' );
             return $result;
         }
 
         if ( empty( $args['trash_pages'] ) && empty( $args['delete_menus'] ) && empty( $args['reset_tracking'] ) && empty( $args['delete_draft'] ) ) {
-            $result['errors']['empty_action'] = __( '请至少选择一个清理动作。', 'developer-starter' );
+            $result['errors']['empty_action'] = __( '请至少选择一个清理动作。', 'qiling' );
             return $result;
         }
 
@@ -114,7 +114,7 @@ class Setup_Wizard_Cleanup_Service {
                     $removed_page_ids[] = $page_id;
                 } else {
                     $result['skipped_pages']++;
-                    $result['errors'][ 'page_' . $page_id ] = sprintf( __( '页面 #%d 移入回收站失败。', 'developer-starter' ), $page_id );
+                    $result['errors'][ 'page_' . $page_id ] = sprintf( __( '页面 #%d 移入回收站失败。', 'qiling' ), $page_id );
                 }
             }
         }
@@ -136,7 +136,7 @@ class Setup_Wizard_Cleanup_Service {
                     $result['skipped_menus']++;
                     $result['errors'][ 'menu_' . $menu_id ] = is_wp_error( $deleted )
                         ? $deleted->get_error_message()
-                        : sprintf( __( '菜单 #%d 删除失败。', 'developer-starter' ), $menu_id );
+                        : sprintf( __( '菜单 #%d 删除失败。', 'qiling' ), $menu_id );
                 }
             }
         }
@@ -175,13 +175,13 @@ class Setup_Wizard_Cleanup_Service {
         );
 
         if ( $page_id <= 0 ) {
-            $base['reason'] = __( '页面 ID 无效。', 'developer-starter' );
+            $base['reason'] = __( '页面 ID 无效。', 'qiling' );
             return $base;
         }
 
         $post = get_post( $page_id );
         if ( ! $post || 'page' !== $post->post_type ) {
-            $base['reason'] = __( '页面不存在，或已不是页面类型。', 'developer-starter' );
+            $base['reason'] = __( '页面不存在，或已不是页面类型。', 'qiling' );
             return $base;
         }
 
@@ -189,28 +189,28 @@ class Setup_Wizard_Cleanup_Service {
         $base['status'] = get_post_status( $page_id );
 
         if ( 'trash' === $base['status'] ) {
-            $base['reason'] = __( '页面已经在回收站。', 'developer-starter' );
+            $base['reason'] = __( '页面已经在回收站。', 'qiling' );
             return $base;
         }
 
         if ( absint( get_option( 'page_on_front', 0 ) ) === $page_id ) {
-            $base['reason'] = __( '当前静态首页受保护，请先手动更换首页后再清理。', 'developer-starter' );
+            $base['reason'] = __( '当前静态首页受保护，请先手动更换首页后再清理。', 'qiling' );
             return $base;
         }
 
         if ( '1' !== (string) get_post_meta( $page_id, '_qiling_setup_wizard_created', true ) ) {
-            $base['reason'] = __( '缺少向导创建标记，已跳过。', 'developer-starter' );
+            $base['reason'] = __( '缺少向导创建标记，已跳过。', 'qiling' );
             return $base;
         }
 
         $page_run_id = (string) get_post_meta( $page_id, '_qiling_setup_wizard_run_id', true );
         if ( '' !== $run_id && $page_run_id !== $run_id ) {
-            $base['reason'] = __( '页面批次与最近一次向导记录不一致，已跳过。', 'developer-starter' );
+            $base['reason'] = __( '页面批次与最近一次向导记录不一致，已跳过。', 'qiling' );
             return $base;
         }
 
         $base['eligible'] = true;
-        $base['reason']   = __( '可移入回收站。', 'developer-starter' );
+        $base['reason']   = __( '可移入回收站。', 'qiling' );
 
         return $base;
     }
@@ -233,13 +233,13 @@ class Setup_Wizard_Cleanup_Service {
         );
 
         if ( $menu_id <= 0 ) {
-            $base['reason'] = __( '菜单 ID 无效。', 'developer-starter' );
+            $base['reason'] = __( '菜单 ID 无效。', 'qiling' );
             return $base;
         }
 
         $menu = wp_get_nav_menu_object( $menu_id );
         if ( ! $menu || is_wp_error( $menu ) ) {
-            $base['reason'] = __( '菜单不存在。', 'developer-starter' );
+            $base['reason'] = __( '菜单不存在。', 'qiling' );
             return $base;
         }
 
@@ -247,7 +247,7 @@ class Setup_Wizard_Cleanup_Service {
         $base['title']      = isset( $menu->name ) ? (string) $menu->name : '';
         $base['item_count'] = is_array( $items ) ? count( $items ) : 0;
         $base['eligible']   = true;
-        $base['reason']     = __( '可删除该向导创建的菜单。', 'developer-starter' );
+        $base['reason']     = __( '可删除该向导创建的菜单。', 'qiling' );
 
         return $base;
     }

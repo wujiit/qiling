@@ -11,14 +11,14 @@ class Widget_Site_Owner extends \WP_Widget {
     public function __construct() {
         parent::__construct(
             'developer_starter_site_owner',
-            __( '站长信息', 'developer-starter' ),
-            array( 'description' => __( '展示站长头像、简介、社交媒体和网站统计', 'developer-starter' ) )
+            __( '站长信息', 'qiling' ),
+            array( 'description' => __( '展示站长头像、简介、社交媒体和网站统计', 'qiling' ) )
         );
     }
 
     public function widget( $args, $instance ) {
         $defaults = array(
-            'title' => __( '站长信息', 'developer-starter' ),
+            'title' => __( '站长信息', 'qiling' ),
             'user_id' => 0,
             'show_avatar' => '1',
             'show_name' => '1',
@@ -62,28 +62,28 @@ class Widget_Site_Owner extends \WP_Widget {
         if ( ! empty( $instance['show_stats_posts'] ) ) {
             $post_count = wp_count_posts( 'post' );
             $stats[] = array(
-                'label' => __( '文章', 'developer-starter' ),
+                'label' => __( '文章', 'qiling' ),
                 'value' => isset( $post_count->publish ) ? (int) $post_count->publish : 0,
             );
         }
         if ( ! empty( $instance['show_stats_comments'] ) && $comments_feature_enabled ) {
             $comment_count = wp_count_comments();
             $stats[] = array(
-                'label' => __( '评论', 'developer-starter' ),
+                'label' => __( '评论', 'qiling' ),
                 'value' => isset( $comment_count->approved ) ? (int) $comment_count->approved : 0,
             );
         }
         if ( ! empty( $instance['show_stats_categories'] ) ) {
             $category_count = wp_count_terms( array( 'taxonomy' => 'category' ) );
             $stats[] = array(
-                'label' => __( '分类', 'developer-starter' ),
+                'label' => __( '分类', 'qiling' ),
                 'value' => is_wp_error( $category_count ) ? 0 : (int) $category_count,
             );
         }
         if ( ! empty( $instance['show_stats_tags'] ) ) {
             $tag_count = wp_count_terms( array( 'taxonomy' => 'post_tag' ) );
             $stats[] = array(
-                'label' => __( '标签', 'developer-starter' ),
+                'label' => __( '标签', 'qiling' ),
                 'value' => is_wp_error( $tag_count ) ? 0 : (int) $tag_count,
             );
         }
@@ -136,7 +136,7 @@ class Widget_Site_Owner extends \WP_Widget {
 
     public function form( $instance ) {
         $defaults = array(
-            'title' => __( '站长信息', 'developer-starter' ),
+            'title' => __( '站长信息', 'qiling' ),
             'user_id' => 0,
             'show_avatar' => '1',
             'show_name' => '1',
@@ -152,13 +152,13 @@ class Widget_Site_Owner extends \WP_Widget {
         $users = get_users( array( 'role__in' => array( 'administrator', 'editor' ) ) );
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( '标题:', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( '标题:', 'qiling' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>">
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'user_id' ); ?>"><?php esc_html_e( '站长用户:', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'user_id' ); ?>"><?php esc_html_e( '站长用户:', 'qiling' ); ?></label>
             <select class="widefat" id="<?php echo $this->get_field_id( 'user_id' ); ?>" name="<?php echo $this->get_field_name( 'user_id' ); ?>">
-                <option value="0"><?php esc_html_e( '自动选择管理员', 'developer-starter' ); ?></option>
+                <option value="0"><?php esc_html_e( '自动选择管理员', 'qiling' ); ?></option>
                 <?php foreach ( $users as $user ) : ?>
                     <option value="<?php echo esc_attr( $user->ID ); ?>" <?php selected( $instance['user_id'], $user->ID ); ?>>
                         <?php echo esc_html( $user->display_name ); ?>
@@ -168,39 +168,39 @@ class Widget_Site_Owner extends \WP_Widget {
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_avatar' ); ?>" name="<?php echo $this->get_field_name( 'show_avatar' ); ?>" value="1" <?php checked( $instance['show_avatar'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_avatar' ); ?>"><?php esc_html_e( '显示头像', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_avatar' ); ?>"><?php esc_html_e( '显示头像', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_name' ); ?>" name="<?php echo $this->get_field_name( 'show_name' ); ?>" value="1" <?php checked( $instance['show_name'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_name' ); ?>"><?php esc_html_e( '显示管理员名称', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_name' ); ?>"><?php esc_html_e( '显示管理员名称', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_bio' ); ?>" name="<?php echo $this->get_field_name( 'show_bio' ); ?>" value="1" <?php checked( $instance['show_bio'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_bio' ); ?>"><?php esc_html_e( '显示简介', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_bio' ); ?>"><?php esc_html_e( '显示简介', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_social' ); ?>" name="<?php echo $this->get_field_name( 'show_social' ); ?>" value="1" <?php checked( $instance['show_social'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_social' ); ?>"><?php esc_html_e( '显示社交媒体', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_social' ); ?>"><?php esc_html_e( '显示社交媒体', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_stats' ); ?>" name="<?php echo $this->get_field_name( 'show_stats' ); ?>" value="1" <?php checked( $instance['show_stats'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_stats' ); ?>"><?php esc_html_e( '显示网站统计', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_stats' ); ?>"><?php esc_html_e( '显示网站统计', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_stats_posts' ); ?>" name="<?php echo $this->get_field_name( 'show_stats_posts' ); ?>" value="1" <?php checked( $instance['show_stats_posts'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_stats_posts' ); ?>"><?php esc_html_e( '统计文章', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_stats_posts' ); ?>"><?php esc_html_e( '统计文章', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_stats_comments' ); ?>" name="<?php echo $this->get_field_name( 'show_stats_comments' ); ?>" value="1" <?php checked( $instance['show_stats_comments'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_stats_comments' ); ?>"><?php esc_html_e( '统计评论', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_stats_comments' ); ?>"><?php esc_html_e( '统计评论', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_stats_categories' ); ?>" name="<?php echo $this->get_field_name( 'show_stats_categories' ); ?>" value="1" <?php checked( $instance['show_stats_categories'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_stats_categories' ); ?>"><?php esc_html_e( '统计分类', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_stats_categories' ); ?>"><?php esc_html_e( '统计分类', 'qiling' ); ?></label>
         </p>
         <p>
             <input type="checkbox" id="<?php echo $this->get_field_id( 'show_stats_tags' ); ?>" name="<?php echo $this->get_field_name( 'show_stats_tags' ); ?>" value="1" <?php checked( $instance['show_stats_tags'], '1' ); ?>>
-            <label for="<?php echo $this->get_field_id( 'show_stats_tags' ); ?>"><?php esc_html_e( '统计标签', 'developer-starter' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'show_stats_tags' ); ?>"><?php esc_html_e( '统计标签', 'qiling' ); ?></label>
         </p>
         <?php
     }

@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const themeRoot = path.resolve(__dirname, '../..');
 const languagesDir = path.join(themeRoot, 'languages');
-const sourcePo = path.join(languagesDir, 'developer-starter-zh_CN.po');
-const targetPo = path.join(languagesDir, 'developer-starter-zh_TW.po');
+const sourcePo = path.join(languagesDir, 'qiling-zh_CN.po');
+const targetPo = path.join(languagesDir, 'qiling-zh_TW.po');
 
 const phrasePairs = [
   ['启灵', '啟靈'],

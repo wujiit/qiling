@@ -66,13 +66,36 @@
     padding: 0;
     color: var(--color-neutral-500);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 10;
+}
+
+.announcement-close svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+    stroke: currentColor;
+    pointer-events: none;
+    flex-shrink: 0;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .announcement-close:hover {
     background: rgba(var(--qiling-rgb-0-0-0), 0.2);
     color: var(--color-neutral-800);
+}
+
+.announcement-close:hover svg {
+    transform: scale(1.1);
+}
+
+.announcement-close:active {
+    transform: scale(0.92);
+}
+
+.announcement-close:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .announcement-body {

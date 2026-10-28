@@ -62,7 +62,7 @@ class Setup_Wizard_Import_Service {
      */
     public function generate_pages( $args ) {
         if ( ! current_user_can( 'manage_options' ) ) {
-            return $this->result_with_error( 'forbidden', __( '权限不足，无法生成页面。', 'developer-starter' ) );
+            return $this->result_with_error( 'forbidden', __( '权限不足，无法生成页面。', 'qiling' ) );
         }
 
         $args = is_array( $args ) ? $args : array();
@@ -110,7 +110,7 @@ class Setup_Wizard_Import_Service {
 
         foreach ( $selected_pages as $page_key ) {
             if ( ! isset( $page_catalog[ $page_key ] ) ) {
-                $result['skipped_pages'][ $page_key ] = __( '页面预设不存在。', 'developer-starter' );
+                $result['skipped_pages'][ $page_key ] = __( '页面预设不存在。', 'qiling' );
                 continue;
             }
 
@@ -291,7 +291,7 @@ class Setup_Wizard_Import_Service {
      */
     private function merge_page_result( $result, $page_key, $page_result ) {
         if ( ! is_array( $page_result ) || empty( $page_result['status'] ) ) {
-            $result['skipped_pages'][ $page_key ] = __( '页面处理结果为空。', 'developer-starter' );
+            $result['skipped_pages'][ $page_key ] = __( '页面处理结果为空。', 'qiling' );
             return $result;
         }
 
@@ -303,9 +303,9 @@ class Setup_Wizard_Import_Service {
         } elseif ( 'reused' === $page_result['status'] ) {
             $result['reused_pages'][ $page_key ] = $page_result;
         } elseif ( 'error' === $page_result['status'] ) {
-            $result['errors'][ $page_key ] = isset( $page_result['message'] ) ? (string) $page_result['message'] : __( '创建失败。', 'developer-starter' );
+            $result['errors'][ $page_key ] = isset( $page_result['message'] ) ? (string) $page_result['message'] : __( '创建失败。', 'qiling' );
         } else {
-            $result['skipped_pages'][ $page_key ] = isset( $page_result['message'] ) ? (string) $page_result['message'] : __( '已跳过。', 'developer-starter' );
+            $result['skipped_pages'][ $page_key ] = isset( $page_result['message'] ) ? (string) $page_result['message'] : __( '已跳过。', 'qiling' );
         }
 
         return $result;
@@ -348,19 +348,19 @@ class Setup_Wizard_Import_Service {
     private function get_auth_page_definitions() {
         return array(
             'login'    => array(
-                'title'    => __( '用户登录', 'developer-starter' ),
+                'title'    => __( '用户登录', 'qiling' ),
                 'slug'     => 'login',
                 'template' => 'templates/template-login.php',
                 'strict_template_reuse' => true,
             ),
             'register' => array(
-                'title'    => __( '用户注册', 'developer-starter' ),
+                'title'    => __( '用户注册', 'qiling' ),
                 'slug'     => 'register',
                 'template' => 'templates/template-register.php',
                 'strict_template_reuse' => true,
             ),
             'account'  => array(
-                'title'    => __( '个人中心', 'developer-starter' ),
+                'title'    => __( '个人中心', 'qiling' ),
                 'slug'     => 'account-center',
                 'template' => 'templates/template-account.php',
                 'strict_template_reuse' => true,
@@ -478,7 +478,7 @@ class Setup_Wizard_Import_Service {
         $key = str_replace( array( '_', '-' ), ' ', (string) $key );
         $key = trim( $key );
 
-        return '' !== $key ? ucwords( $key ) : __( '未命名', 'developer-starter' );
+        return '' !== $key ? ucwords( $key ) : __( '未命名', 'qiling' );
     }
 
     /**

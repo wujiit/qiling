@@ -47,12 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     try {
                         data = JSON.parse(normalized);
                     } catch (err) {
-                        alert('<?php echo esc_js( __( '响应解析失败：', 'developer-starter' ) ); ?>' + normalized);
+                        alert('<?php echo esc_js( __( '响应解析失败：', 'qiling' ) ); ?>' + normalized);
                         return;
                     }
                 }
                 if (!data || !data.success) {
-                    var message = data && data.data && data.data.message ? data.data.message : '<?php echo esc_js( __( '操作失败', 'developer-starter' ) ); ?>';
+                    var message = data && data.data && data.data.message ? data.data.message : '<?php echo esc_js( __( '操作失败', 'qiling' ) ); ?>';
                     alert(message);
                     return;
                 }
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(function() {
-                alert('<?php echo esc_js( __( '网络错误，请稍后再试', 'developer-starter' ) ); ?>');
+                alert('<?php echo esc_js( __( '网络错误，请稍后再试', 'qiling' ) ); ?>');
             });
         });
     });

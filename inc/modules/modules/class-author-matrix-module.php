@@ -18,7 +18,7 @@ class Author_Matrix_Module extends Module_Base {
     public function __construct() {
         $this->category = 'content';
         $this->icon = 'dashicons-admin-users';
-        $this->description = __( '按作者聚合与排名展示专栏作者', 'developer-starter' );
+        $this->description = __( '按作者聚合与排名展示专栏作者', 'qiling' );
     }
 
     public function get_id() {
@@ -26,7 +26,7 @@ class Author_Matrix_Module extends Module_Base {
     }
 
     public function get_name() {
-        return __( '作者矩阵/专栏页', 'developer-starter' );
+        return __( '作者矩阵/专栏页', 'qiling' );
     }
 
     public function get_fields() {
@@ -34,175 +34,175 @@ class Author_Matrix_Module extends Module_Base {
             array(
                 'id'      => 'am_title',
                 'type'    => 'text',
-                'label'   => __( '模块标题', 'developer-starter' ),
-                'default' => __( '作者矩阵', 'developer-starter' ),
+                'label'   => __( '模块标题', 'qiling' ),
+                'default' => __( '作者矩阵', 'qiling' ),
             ),
             array(
                 'id'      => 'am_subtitle',
                 'type'    => 'text',
-                'label'   => __( '模块副标题', 'developer-starter' ),
-                'default' => __( '精选专栏作者与内容创作者', 'developer-starter' ),
+                'label'   => __( '模块副标题', 'qiling' ),
+                'default' => __( '精选专栏作者与内容创作者', 'qiling' ),
             ),
             array(
                 'id'      => 'am_source_mode',
                 'type'    => 'select',
-                'label'   => __( '来源模式', 'developer-starter' ),
+                'label'   => __( '来源模式', 'qiling' ),
                 'options' => array(
-                    'auto' => __( '自动聚合', 'developer-starter' ),
-                    'manual' => __( '手动作者ID', 'developer-starter' ),
+                    'auto' => __( '自动聚合', 'qiling' ),
+                    'manual' => __( '手动作者ID', 'qiling' ),
                 ),
                 'default' => 'auto',
             ),
             array(
                 'id'    => 'am_user_ids',
                 'type'  => 'text',
-                'label' => __( '作者ID (逗号分隔，手动模式)', 'developer-starter' ),
+                'label' => __( '作者ID (逗号分隔，手动模式)', 'qiling' ),
             ),
             array(
                 'id'    => 'am_roles',
                 'type'  => 'text',
-                'label' => __( '角色白名单 (逗号分隔，可选)', 'developer-starter' ),
+                'label' => __( '角色白名单 (逗号分隔，可选)', 'qiling' ),
             ),
             array(
                 'id'      => 'am_limit',
                 'type'    => 'number',
-                'label'   => __( '显示数量', 'developer-starter' ),
+                'label'   => __( '显示数量', 'qiling' ),
                 'default' => '8',
             ),
             array(
                 'id'      => 'am_columns',
                 'type'    => 'select',
-                'label'   => __( '每行列数', 'developer-starter' ),
+                'label'   => __( '每行列数', 'qiling' ),
                 'options' => array(
-                    '2' => __( '2列', 'developer-starter' ),
-                    '3' => __( '3列', 'developer-starter' ),
-                    '4' => __( '4列', 'developer-starter' ),
+                    '2' => __( '2列', 'qiling' ),
+                    '3' => __( '3列', 'qiling' ),
+                    '4' => __( '4列', 'qiling' ),
                 ),
                 'default' => '4',
             ),
             array(
                 'id'      => 'am_rank_by',
                 'type'    => 'select',
-                'label'   => __( '排名依据', 'developer-starter' ),
+                'label'   => __( '排名依据', 'qiling' ),
                 'options' => array(
-                    'posts' => __( '发文量', 'developer-starter' ),
-                    'views' => __( '总阅读量', 'developer-starter' ),
-                    'comments' => __( '总评论量', 'developer-starter' ),
-                    'latest' => __( '最近活跃', 'developer-starter' ),
+                    'posts' => __( '发文量', 'qiling' ),
+                    'views' => __( '总阅读量', 'qiling' ),
+                    'comments' => __( '总评论量', 'qiling' ),
+                    'latest' => __( '最近活跃', 'qiling' ),
                 ),
                 'default' => 'posts',
             ),
             array(
                 'id'      => 'am_order',
                 'type'    => 'select',
-                'label'   => __( '排序方向', 'developer-starter' ),
+                'label'   => __( '排序方向', 'qiling' ),
                 'options' => array(
-                    'DESC' => __( '降序', 'developer-starter' ),
-                    'ASC' => __( '升序', 'developer-starter' ),
+                    'DESC' => __( '降序', 'qiling' ),
+                    'ASC' => __( '升序', 'qiling' ),
                 ),
                 'default' => 'DESC',
             ),
             array(
                 'id'      => 'am_min_posts',
                 'type'    => 'number',
-                'label'   => __( '最小发文数过滤', 'developer-starter' ),
+                'label'   => __( '最小发文数过滤', 'qiling' ),
                 'default' => '1',
             ),
             array(
                 'id'      => 'am_show_bio',
                 'type'    => 'select',
-                'label'   => __( '显示作者简介', 'developer-starter' ),
+                'label'   => __( '显示作者简介', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no' => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no' => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'am_show_stats',
                 'type'    => 'select',
-                'label'   => __( '显示统计信息', 'developer-starter' ),
+                'label'   => __( '显示统计信息', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no' => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no' => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'am_show_latest',
                 'type'    => 'select',
-                'label'   => __( '显示最近活跃时间', 'developer-starter' ),
+                'label'   => __( '显示最近活跃时间', 'qiling' ),
                 'options' => array(
-                    'yes' => __( '显示', 'developer-starter' ),
-                    'no' => __( '隐藏', 'developer-starter' ),
+                    'yes' => __( '显示', 'qiling' ),
+                    'no' => __( '隐藏', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
             array(
                 'id'      => 'am_button_text',
                 'type'    => 'text',
-                'label'   => __( '按钮文案', 'developer-starter' ),
-                'default' => __( '查看专栏', 'developer-starter' ),
+                'label'   => __( '按钮文案', 'qiling' ),
+                'default' => __( '查看专栏', 'qiling' ),
             ),
             array(
                 'id'      => 'am_button_bg_color',
                 'type'    => 'color',
-                'label'   => __( '按钮背景颜色', 'developer-starter' ),
+                'label'   => __( '按钮背景颜色', 'qiling' ),
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             array(
                 'id'      => 'am_button_text_color',
                 'type'    => 'color',
-                'label'   => __( '按钮文字颜色', 'developer-starter' ),
+                'label'   => __( '按钮文字颜色', 'qiling' ),
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮样式', 'qiling' ),
             ),
             $this->get_button_border_color_field( 'am_button_border_color' ),
             array(
                 'id'      => 'am_button_hover_bg_color',
                 'type'    => 'color',
-                'label'   => __( '按钮悬停背景颜色', 'developer-starter' ),
+                'label'   => __( '按钮悬停背景颜色', 'qiling' ),
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
             array(
                 'id'      => 'am_button_hover_text_color',
                 'type'    => 'color',
-                'label'   => __( '按钮悬停文字颜色', 'developer-starter' ),
+                'label'   => __( '按钮悬停文字颜色', 'qiling' ),
                 'default' => '',
-                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'developer-starter' ),
+                'description' => __( '留空时跟随全局设计里的按钮悬停样式', 'qiling' ),
             ),
-            $this->get_button_border_color_field( 'am_button_hover_border_color', __( '按钮悬停边框颜色', 'developer-starter' ), __( '留空时跟随按钮悬停背景色。', 'developer-starter' ) ),
+            $this->get_button_border_color_field( 'am_button_hover_border_color', __( '按钮悬停边框颜色', 'qiling' ), __( '留空时跟随按钮悬停背景色。', 'qiling' ) ),
             array(
                 'id'      => 'am_card_bg',
                 'type'    => 'color',
-                'label'   => __( '卡片背景色', 'developer-starter' ),
+                'label'   => __( '卡片背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-0)',
             ),
             array(
                 'id'          => 'am_badge_bg',
                 'type'        => 'color',
-                'label'       => __( '标签/徽章背景颜色', 'developer-starter' ),
+                'label'       => __( '标签/徽章背景颜色', 'qiling' ),
                 'default'     => '',
-                'description' => __( '控制排名徽章背景，留空时跟随页面预设风格或全局徽章颜色。', 'developer-starter' ),
+                'description' => __( '控制排名徽章背景，留空时跟随页面预设风格或全局徽章颜色。', 'qiling' ),
             ),
             array(
                 'id'      => 'am_bg_color',
                 'type'    => 'color',
-                'label'   => __( '模块背景色', 'developer-starter' ),
+                'label'   => __( '模块背景色', 'qiling' ),
                 'default' => 'var(--color-neutral-50)',
             ),
             array(
                 'id'      => 'module_padding_top',
                 'type'    => 'text',
-                'label'   => __( '上边距', 'developer-starter' ),
+                'label'   => __( '上边距', 'qiling' ),
                 'default' => '60px',
             ),
             array(
                 'id'      => 'module_padding_bottom',
                 'type'    => 'text',
-                'label'   => __( '下边距', 'developer-starter' ),
+                'label'   => __( '下边距', 'qiling' ),
                 'default' => '60px',
             ),
         );
@@ -213,13 +213,13 @@ class Author_Matrix_Module extends Module_Base {
             $value = trim( wp_strip_all_tags( (string) $value ) );
             return str_replace( array( ';', '{', '}' ), '', $value );
         };
-        $title = isset( $data['am_title'] ) && $data['am_title'] !== '' ? $data['am_title'] : __( '作者矩阵', 'developer-starter' );
+        $title = isset( $data['am_title'] ) && $data['am_title'] !== '' ? $data['am_title'] : __( '作者矩阵', 'qiling' );
         $subtitle = isset( $data['am_subtitle'] ) ? $data['am_subtitle'] : '';
         $columns = isset( $data['am_columns'] ) ? max( 2, min( 4, intval( $data['am_columns'] ) ) ) : 4;
         $show_bio = ! isset( $data['am_show_bio'] ) || $data['am_show_bio'] === 'yes';
         $show_stats = ! isset( $data['am_show_stats'] ) || $data['am_show_stats'] === 'yes';
         $show_latest = ! isset( $data['am_show_latest'] ) || $data['am_show_latest'] === 'yes';
-        $button_text = isset( $data['am_button_text'] ) && $data['am_button_text'] !== '' ? $data['am_button_text'] : __( '查看专栏', 'developer-starter' );
+        $button_text = isset( $data['am_button_text'] ) && $data['am_button_text'] !== '' ? $data['am_button_text'] : __( '查看专栏', 'qiling' );
         $button_bg_color = isset( $data['am_button_bg_color'] ) ? $clean_css_value( $data['am_button_bg_color'] ) : '';
         $button_text_color = isset( $data['am_button_text_color'] ) ? $clean_css_value( $data['am_button_text_color'] ) : '';
         $button_border_color = isset( $data['am_button_border_color'] ) ? $clean_css_value( $data['am_button_border_color'] ) : '';
@@ -315,16 +315,16 @@ class Author_Matrix_Module extends Module_Base {
 
                             <?php if ( $show_stats ) : ?>
                                 <div class="am-stats">
-                                    <span><?php printf( esc_html__( '%d 篇文章', 'developer-starter' ), $post_count ); ?></span>
-                                    <span><?php printf( esc_html__( '%d 阅读', 'developer-starter' ), $views ); ?></span>
+                                    <span><?php printf( esc_html__( '%d 篇文章', 'qiling' ), $post_count ); ?></span>
+                                    <span><?php printf( esc_html__( '%d 阅读', 'qiling' ), $views ); ?></span>
                                     <?php if ( $comments_feature_enabled ) : ?>
-                                        <span><?php printf( esc_html__( '%d 评论', 'developer-starter' ), $comments ); ?></span>
+                                        <span><?php printf( esc_html__( '%d 评论', 'qiling' ), $comments ); ?></span>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
 
                             <?php if ( $show_latest && $latest_text !== '' ) : ?>
-                                <div class="am-latest"><?php echo esc_html__( '最近活跃：', 'developer-starter' ) . esc_html( $latest_text ); ?></div>
+                                <div class="am-latest"><?php echo esc_html__( '最近活跃：', 'qiling' ) . esc_html( $latest_text ); ?></div>
                             <?php endif; ?>
 
                             <a class="am-btn" href="<?php echo esc_url( $author_url ); ?>"><?php echo esc_html( $button_text ); ?></a>

@@ -33,7 +33,7 @@ function developer_starter_remove_version_query( $src ) {
 
     $allowed_remove_versions = array(
         get_bloginfo( 'version' ),
-        defined( 'DEVELOPER_STARTER_VERSION' ) ? DEVELOPER_STARTER_VERSION : '',
+        defined( 'QILING_VERSION' ) ? QILING_VERSION : '',
     );
     if ( function_exists( 'developer_starter_get_assets_version' ) ) {
         $allowed_remove_versions[] = (string) developer_starter_get_assets_version();
