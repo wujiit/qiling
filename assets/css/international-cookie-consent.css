@@ -1,0 +1,237 @@
+.qiling-cookie-consent {
+    position: fixed;
+    z-index: 99999;
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    width: min(760px, calc(100vw - 48px));
+    margin: 0 auto;
+    padding: var(--qiling-space-18);
+    color: var(--color-text);
+    background: var(--color-neutral-0);
+    border: 1px solid rgba(var(--qiling-rgb-15-23-42), 0.12);
+    border-radius: 8px;
+    box-shadow: 0 18px 46px rgba(var(--qiling-rgb-15-23-42), 0.18);
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    line-height: 1.6;
+}
+
+.qiling-cookie-consent[data-hidden="1"] {
+    display: none;
+}
+
+.qiling-cookie-consent[data-position="bottom_left"] {
+    right: auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.qiling-cookie-consent[data-position="bottom_right"] {
+    left: auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.qiling-cookie-consent__main {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-18);
+}
+
+.qiling-cookie-consent__content {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.qiling-cookie-consent__text {
+    margin: 0;
+}
+
+.qiling-cookie-consent__link {
+    display: inline-flex;
+    margin-top: var(--qiling-space-6);
+    color: var(--qiling-color-0f766e);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.qiling-cookie-consent__link:hover,
+.qiling-cookie-consent__link:focus {
+    color: var(--color-secondary, var(--qiling-color-0f766e));
+    text-decoration: underline;
+}
+
+.qiling-cookie-consent__actions,
+.qiling-cookie-consent__settings-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--qiling-space-8);
+}
+
+.qiling-cookie-consent__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: var(--qiling-space-8) var(--qiling-space-14);
+    border: 1px solid rgba(var(--qiling-rgb-15-23-42), 0.16);
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.qiling-cookie-consent__button:hover,
+.qiling-cookie-consent__button:focus {
+    transform: translateY(-1px);
+}
+
+.qiling-cookie-consent__button--primary {
+    color: var(--color-neutral-0);
+    background: var(--qiling-color-0f766e);
+    border-color: var(--qiling-color-0f766e);
+}
+
+.qiling-cookie-consent__button--primary:hover,
+.qiling-cookie-consent__button--primary:focus {
+    background: var(--color-secondary, var(--qiling-color-0f766e));
+    border-color: var(--color-secondary, var(--qiling-color-0f766e));
+}
+
+.qiling-cookie-consent__button--ghost {
+    color: var(--color-neutral-700);
+    background: var(--color-neutral-0);
+}
+
+.qiling-cookie-consent__button--ghost:hover,
+.qiling-cookie-consent__button--ghost:focus {
+    background: var(--color-neutral-50);
+    border-color: rgba(var(--qiling-rgb-15-23-42), 0.28);
+}
+
+.qiling-cookie-consent__settings {
+    margin-top: var(--qiling-space-16);
+    padding-top: var(--qiling-space-16);
+    border-top: 1px solid rgba(var(--qiling-rgb-15-23-42), 0.1);
+}
+
+.qiling-cookie-consent__category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--qiling-space-18);
+    min-height: 54px;
+    padding: var(--qiling-space-10) 0;
+    border-bottom: 1px solid rgba(var(--qiling-rgb-15-23-42), 0.08);
+}
+
+.qiling-cookie-consent__category:last-of-type {
+    border-bottom: 0;
+}
+
+.qiling-cookie-consent__category span {
+    display: grid;
+    gap: var(--qiling-space-2);
+    min-width: 0;
+}
+
+.qiling-cookie-consent__category strong {
+    display: block;
+    color: var(--color-neutral-900);
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    font-weight: 700;
+}
+
+.qiling-cookie-consent__category em {
+    display: block;
+    color: var(--color-neutral-500);
+    font-size: calc(var(--qiling-font-size-base) * 0.8125);
+    font-style: normal;
+}
+
+.qiling-cookie-consent__category input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--qiling-color-0f766e);
+}
+
+.qiling-cookie-consent__category input:disabled {
+    cursor: not-allowed;
+}
+
+.qiling-cookie-consent__settings-actions {
+    margin-top: var(--qiling-space-14);
+}
+
+.qiling-cookie-settings-footer {
+    display: flex;
+    justify-content: center;
+    padding: var(--qiling-space-12) var(--qiling-space-16);
+    color: inherit;
+    background: rgba(var(--qiling-rgb-15-23-42), 0.04);
+}
+
+.qiling-cookie-settings-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: var(--qiling-space-7) var(--qiling-space-12);
+    border: 1px solid rgba(var(--qiling-rgb-15-23-42), 0.18);
+    border-radius: 6px;
+    color: var(--color-neutral-700);
+    background: var(--color-neutral-0);
+    cursor: pointer;
+    font: inherit;
+    font-size: calc(var(--qiling-font-size-base) * 0.8125);
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.qiling-cookie-settings-button:hover,
+.qiling-cookie-settings-button:focus {
+    color: var(--qiling-color-0f766e);
+    background: var(--color-neutral-50);
+    border-color: rgba(var(--qiling-rgb-15-118-110), 0.42);
+}
+
+@media (max-width: var(--qiling-measure-680)) {
+    .qiling-cookie-consent {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        width: auto;
+        padding: var(--qiling-space-14);
+    }
+
+    .qiling-cookie-consent__main {
+        display: grid;
+        gap: var(--qiling-space-14);
+    }
+
+    .qiling-cookie-consent__actions,
+    .qiling-cookie-consent__settings-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .qiling-cookie-consent__button {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .qiling-cookie-consent__category {
+        align-items: flex-start;
+        gap: var(--qiling-space-12);
+    }
+}

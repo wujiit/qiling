@@ -1,0 +1,71 @@
+/**
+ * Progressive placeholders for native lazy-loaded images.
+ *
+ * Loaded only when image lazy loading and progressive placeholders are enabled.
+ */
+
+body.qiling-lazy-image-placeholders img.qiling-progressive-image {
+    background-color: var(--color-neutral-100);
+    background-image: linear-gradient(
+        90deg,
+        rgba(var(--color-neutral-400-rgb), 0.16) 0%,
+        rgba(var(--qiling-rgb-255-255-255), 0.72) 42%,
+        rgba(var(--color-neutral-400-rgb), 0.16) 78%
+    );
+    background-size: 240% 100%;
+    transition: opacity 0.34s ease, filter 0.34s ease, transform 0.34s ease, background-color 0.34s ease;
+}
+
+body.qiling-lazy-image-placeholders img.qiling-progressive-image.qiling-image-pending {
+    animation: qiling-lazy-image-shimmer 1.24s ease-in-out infinite;
+    opacity: 0.68;
+    filter: blur(10px);
+    transform: scale(1.01);
+}
+
+body.qiling-lazy-image-placeholders img.qiling-progressive-image.qiling-image-loaded,
+body.qiling-lazy-image-placeholders img.qiling-progressive-image.qiling-image-error {
+    animation: none;
+    background-color: transparent;
+    background-image: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+}
+
+body.qiling-lazy-image-placeholders img.qiling-progressive-image.qiling-image-error {
+    background-color: rgba(var(--color-error-rgb), 0.08);
+}
+
+html.dark-mode body.qiling-lazy-image-placeholders img.qiling-progressive-image,
+html[data-theme="dark"] body.qiling-lazy-image-placeholders img.qiling-progressive-image,
+body.qiling-lazy-image-placeholders[data-theme="dark"] img.qiling-progressive-image,
+body.qiling-lazy-image-placeholders .dark-mode img.qiling-progressive-image {
+    background-color: rgba(var(--qiling-rgb-51-65-85), 0.66);
+    background-image: linear-gradient(
+        90deg,
+        rgba(var(--qiling-rgb-71-85-105), 0.3) 0%,
+        rgba(var(--color-neutral-400-rgb), 0.22) 42%,
+        rgba(var(--qiling-rgb-71-85-105), 0.3) 78%
+    );
+}
+
+@keyframes qiling-lazy-image-shimmer {
+    0% {
+        background-position: 120% 0;
+    }
+
+    100% {
+        background-position: -120% 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.qiling-lazy-image-placeholders img.qiling-progressive-image {
+        transition: none;
+    }
+
+    body.qiling-lazy-image-placeholders img.qiling-progressive-image.qiling-image-pending {
+        animation: none;
+    }
+}

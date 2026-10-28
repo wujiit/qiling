@@ -1,0 +1,302 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 2,
+  "title": "独立游戏工作室官网",
+  "page_template": "templates/template-game-studio.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#f59e0b",
+      "accent": "#ec4899",
+      "background": "#0b0c15",
+      "text": "#f8fafc"
+    },
+    "header": {
+      "transparent_text": "#ffffff"
+    },
+    "footer": {
+      "background": "#0b0c15",
+      "text": "rgba(255,255,255,0.85)",
+      "friend_background": "#080910",
+      "friend_text": "rgba(255,255,255,0.65)",
+      "bottom_background": "#05060a",
+      "bottom_text": "rgba(255,255,255,0.55)"
+    }
+  },
+  "footer": {
+    "mode": "page_skin",
+    "wave": "off",
+    "preset": "technology_company",
+    "inherit_skin_colors": true
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "game-studio",
+    "label": "独立游戏工作室官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "game_studio",
+    "industry_label": "游戏发行",
+    "scenario": "世界观、实机展示、愿望单预约、路线图",
+    "description": "适合独立游戏开发团队、游戏发行商、二次元/动作/单机游戏与动漫 IP 官网，内置沉浸式大作首屏、发售倒计时、核心玩法系统、角色原画画廊、Roadmap 与多端发行下载。",
+    "badges": [
+      "游戏发行",
+      "原画画廊",
+      "愿望单预约"
+    ],
+    "order": 472,
+    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "独立游戏工作室官网模板 - 游戏世界观与愿望单预约",
+    "description": "专为独立游戏开发团队与发行商打造的高品质史诗暗黑风官网页面，包含实机展示首屏、发售倒计时、角色设定原画、开发路线图与社群预约入口。",
+    "keywords": "游戏工作室官网,独立游戏官网,Steam愿望单,游戏发行官网,角色原画,启灵游戏",
+    "og_title": "独立游戏工作室官网",
+    "og_description": "沉浸式独立游戏与游戏发行官方页面模板。"
+  },
+  "modules": [
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "gradient",
+        "bb_bg_gradient": "linear-gradient(135deg, #07080f 0%, #171829 45%, #31133f 100%)",
+        "bb_title": "斩破虚空宿命 · <strong>重塑失落纪元</strong>",
+        "bb_title_size_max": "68px",
+        "bb_title_color": "#ffffff",
+        "bb_title_effect": "gradient",
+        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #f59e0b 50%, #ec4899 100%)",
+        "bb_subtitle": "虚幻引擎 5 打造 · 次世代暗黑高沉浸动作冒险独立游戏《虚空之刃》",
+        "bb_desc": "在被深渊永夜笼罩的失落大陆，手握双生魔刃，在绝境与抉择中探寻世界的终极真相。首支实机战斗预告现已全球震撼公开。",
+        "bb_text_color": "rgba(248, 250, 252, 0.88)",
+        "bb_buttons": [
+          {
+            "text": "Steam 加入愿望单",
+            "url": "#steam",
+            "style": "primary",
+            "icon": "🎮"
+          },
+          {
+            "text": "观看首发 PV 预告",
+            "url": "#trailer",
+            "style": "outline",
+            "icon": "▶"
+          }
+        ]
+      }
+    },
+    {
+      "type": "countdown",
+      "data": {
+        "countdown_title": "全球公测与抢先体验倒计时",
+        "countdown_subtitle": "锁定公测倒计时，抢先解锁独家限量封测专属绝版主角外观与纪念徽章",
+        "countdown_date": "2026-10-31 20:00:00",
+        "countdown_btn_text": "预约抢先体验资格",
+        "countdown_btn_link": "#reserve",
+        "countdown_bg_color": "linear-gradient(135deg, #0e101c 0%, #1c1430 100%)",
+        "countdown_title_color": "#ffffff",
+        "countdown_subtitle_color": "rgba(248, 250, 252, 0.8)",
+        "countdown_timer_bg": "rgba(255, 255, 255, 0.08)",
+        "countdown_timer_color": "#fbbf24",
+        "countdown_btn_bg": "#f59e0b",
+        "countdown_btn_text_color": "#000000"
+      }
+    },
+    {
+      "type": "visual_tabs",
+      "data": {
+        "visual_tabs_title": "核心玩法与游戏特色",
+        "visual_tabs_subtitle": "突破传统的战斗系统与宏大沉浸的叙事设计，带给你前所未有的视听震撼",
+        "visual_tabs_title_color": "#ffffff",
+        "visual_tabs_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "visual_tabs_card_bg": "#121422",
+        "visual_tabs_card_active_bg": "#1e1b4b",
+        "visual_tabs_panel_bg": "#121422",
+        "visual_tabs_btn_bg_color": "#f59e0b",
+        "visual_tabs_btn_text_color": "#000000",
+        "module_bg_color": "transparent",
+        "visual_tabs_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+            "title": "高速双刃连击系统",
+            "tag": "硬核战斗",
+            "desc": "无锁定流畅连招，刀刀入肉的打击反馈与极限弹反机制。",
+            "detail_title": "极限博弈，指尖上的刀尖起舞",
+            "detail_desc": "超过 40 种武器派生连招，支持在滞空连段中即时切换双刃形态，无论是面对蜂拥而至的怪物群还是庞大的世界 BOSS，皆可打出华丽绝伦的终结技。",
+            "detail_image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+            "detail_button_text": "查看战斗实机演示",
+            "detail_button_url": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+            "title": "无缝庞大开放世界",
+            "tag": "自由探索",
+            "desc": "数百平方公里瑰丽地图，遍布神秘古代遗迹与隐藏地牢。",
+            "detail_title": "沉浸呼吸感世界，每一寸土地皆有故事",
+            "detail_desc": "从云雾缭绕的浮空遗迹，到深邃幽闭的地下熔岩矿脉，无缝大地图带来极致自由的立体探索体验。动态天气系统与昼夜交替将深度影响怪物的行为与生态。",
+            "detail_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+            "detail_button_text": "探索世界观设定",
+            "detail_button_url": "#"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+            "title": "命运多结局分支",
+            "tag": "深度叙事",
+            "desc": "玩家的每一次关键抉择，都将深刻改写不同阵营NPC与大陆的终局走向。",
+            "detail_title": "你的每一次选择，都在塑造历史",
+            "detail_desc": "没有非黑即白的善恶判定，数百万字沉浸剧情文本，伴随全流程顶级电影级过场动画。是彻底毁灭被诅咒的旧秩序，还是拥抱深渊重建新生？一切皆由你裁决。",
+            "detail_image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+            "detail_button_text": "阅读前传故事",
+            "detail_button_url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "角色立绘全景与世界观原画",
+        "gallery_subtitle": "点击查看原画高清大图，领略美术团队匠心手绘的角色与场景设定",
+        "gallery_title_color": "#ffffff",
+        "gallery_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "gallery_columns": "3",
+        "module_bg_color": "transparent",
+        "gallery_style": "grid",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=800&q=80",
+            "title": "主角 · 虚空行者「雷恩」",
+            "category": "主角立绘",
+            "desc": "失落王国的唯一幸存皇子，右臂寄宿着吞噬一切的魔刃之魂。"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+            "title": "月影大祭司「艾莉亚」",
+            "category": "重要角色",
+            "desc": "守护古老圣泉的最后神职者，掌控着治愈与破晓星光的禁忌秘术。"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+            "title": "旧王都沉沦废墟原画",
+            "category": "场景概念",
+            "desc": "数百年前深渊降临之地的概念设定图，被水晶晶簇刺穿的宏伟皇宫。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "timeline",
+      "data": {
+        "timeline_title": "游戏开发与版本路线图 (Roadmap)",
+        "timeline_title_color": "#ffffff",
+        "module_bg_color": "transparent",
+        "timeline_items": [
+          {
+            "year": "2026 Q1",
+            "title": "封闭内测与全球首秀 Demo",
+            "desc": "首度开放前三章剧情试玩，在 Steam 新品节斩获超过 20 万份愿望单关注。"
+          },
+          {
+            "year": "2026 Q3",
+            "title": "Steam 抢先体验版 (Early Access)",
+            "desc": "开放 5 个完整大区探索、30+ 种武器装备与 15 场极具挑战性的 Boss 战。"
+          },
+          {
+            "year": "2026 Q4",
+            "title": "多人联机对战与共斗副本实装",
+            "desc": "更新 4 人组队深渊讨伐模式与跨服天梯 PVP 竞技场，全平台跨端联机互通。"
+          },
+          {
+            "year": "2027 Q2",
+            "title": "首部大型剧情扩展资料片《永恒残响》",
+            "desc": "开放极北冰封大陆新地图，新增两名可操作角色与进阶觉醒职业树。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title_color": "#ffffff",
+        "testimonials_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "module_bg_color": "transparent",
+        "testimonials_items": [
+          {
+            "content": "惊艳绝伦的打击感与视听冲击力！很难相信这是一家独立工作室交出的答卷，《虚空之刃》的战斗设计足以比肩一线大作。",
+            "author": "IGN China",
+            "company": "权威游戏媒体 · 9.2/10 评分推荐",
+            "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+            "rating": 5
+          },
+          {
+            "content": "美术风格极具特色，角色立绘与场景氛围塑造令人惊叹。动作系统硬核而不失爽快，是我今年最期待的独立动作游戏！",
+            "author": "GameSpot 评测编辑",
+            "company": "全球资深游戏媒体人",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+            "rating": 5
+          }
+        ],
+        "testimonials_title": "权威媒体与抢先试玩口碑",
+        "testimonials_subtitle": "来自全球游戏媒体与核心试玩硬核玩家的真实赞誉"
+      }
+    },
+    {
+      "type": "app_hero",
+      "data": {
+        "hero_title": "跨平台同步发行与客户端支持",
+        "hero_desc": "《虚空之刃》将同步登陆全球主流数字发行平台与次世代主机，支持云存档与手柄震动深度适配。",
+        "hero_image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+        "module_bg_color": "transparent",
+        "hero_buttons": [
+          {
+            "btn_type": "windows",
+            "btn_text": "Steam 商店页面",
+            "btn_link": "#steam",
+            "btn_style": "dark"
+          },
+          {
+            "btn_type": "windows",
+            "btn_text": "Epic Games 商店",
+            "btn_link": "#epic",
+            "btn_style": "outline"
+          }
+        ]
+      }
+    },
+    {
+      "type": "about_me_card",
+      "data": {
+        "about_title": "制作人致玩家的一封信",
+        "about_subtitle": "心怀对动作游戏的热爱，历时 1200 个日夜打造的初心之作",
+        "about_name": "启灵游戏工作室主创团队",
+        "about_role": "独立游戏研发与发行团队",
+        "about_avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+        "about_card_bg": "#121422",
+        "about_bg_color": "transparent",
+        "about_text_color": "#f8fafc",
+        "about_accent_color": "#f59e0b",
+        "about_intro": "我们是一群伴随动作单机与 RPG 游戏长大的狂热爱好者。三年前，几个志同道合的开发者辞职创立了启灵工作室，只为了做出心目中真正拥有极致打击感与动人故事的纯粹游戏。感谢每一位在内测中给予我们建议的玩家朋友，没有你们的支持，《虚空之刃》绝无法走到今天！",
+        "about_now": "🚀 正在全力冲刺版本公测优化中",
+        "about_website": "#community",
+        "about_website_text": "加入官方玩家社群"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "立即预约 · 成为首批虚空探索者",
+        "cta_subtitle": "加入官方 Discord 与 QQ 玩家交流群，第一时间获取内测激活码、主创面对面访谈与限定皮肤外观礼包！",
+        "cta_button_text": "立即加入官方社区",
+        "cta_button_url": "#discord",
+        "cta_bg_type": "color",
+        "cta_bg_color": "linear-gradient(135deg, #130f26 0%, #3b145a 50%, #f59e0b 100%)"
+      }
+    }
+  ]
+}

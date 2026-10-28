@@ -1,0 +1,47 @@
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+    - phpstan-baseline.neon
+
+parameters:
+    level: 3
+    tmpDir: .cache/phpstan
+    reportUnmatchedIgnoredErrors: false
+    treatPhpDocTypesAsCertain: false
+
+    bootstrapFiles:
+        - phpstan/bootstrap.php
+
+    paths:
+        - ../404.php
+        - ../archive.php
+        - ../archive-qiapp_software.php
+        - ../author.php
+        - ../category.php
+        - ../comments.php
+        - ../functions.php
+        - ../header.php
+        - ../footer.php
+        - ../home.php
+        - ../index.php
+        - ../page.php
+        - ../search.php
+        - ../sidebar.php
+        - ../single.php
+        - ../single-qiapp_software.php
+        - ../taxonomy-qiapp_software_category.php
+        - ../taxonomy-qiapp_software_tag.php
+        - ../inc
+        - ../template-parts
+        - ../templates
+
+    excludePaths:
+        analyse:
+            - ../assets/*
+            - ../dev/vendor/*
+            - ../dev/node_modules/*
+            - ../dist/*
+            - ../docs/*
+            - ../inc/vendor/*
+            - ../languages/*
+            - ../sms/vendor/*
+            - ../translate/*

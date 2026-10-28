@@ -1,0 +1,113 @@
+/**
+ * 资源搜索页面专用样式
+ * 资源搜索页面样式 (Resource Search Page Styles)
+ * 
+ * @package Developer_Starter
+ */
+
+/* ============================================
+   首屏搜索区域增强
+   ============================================ */
+.template-resource-search .module-hero-search {
+    position: relative;
+    z-index: 1;
+    /* 增加底部padding，让服务卡片有空间覆盖 */
+    padding-bottom: calc(var(--qiling-space-100) + var(--qiling-space-20)) !important;
+}
+
+/* ============================================
+   服务卡片覆盖效果
+   ============================================ */
+.template-resource-search .module-spacing-wrapper {
+    position: relative;
+}
+
+/* 服务卡片wrapper需要更高的z-index */
+.template-resource-search .module-service-cards,
+.template-resource-search .module-spacing-wrapper:nth-child(2) {
+    position: relative;
+    z-index: 10;
+}
+
+/* ============================================
+   博客布局增强
+   ============================================ */
+.template-resource-search .module-blog .blog-card {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.template-resource-search .module-blog .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(var(--qiling-rgb-0-0-0), 0.1);
+}
+
+.template-resource-search .module-blog .blog-card .blog-image img {
+    transition: transform 0.4s ease;
+}
+
+.template-resource-search .module-blog .blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   统计模块增强
+   ============================================ */
+.template-resource-search .module-stats {
+    background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-primary-dark) 100%);
+}
+
+.template-resource-search .module-stats .stat-item .stat-number {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--qiling-color-10b981) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: var(--qiling-text-rem-3);
+}
+
+/* ============================================
+   CTA增强
+   ============================================ */
+.template-resource-search .module-cta {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--qiling-color-10b981) 100%);
+}
+
+/* ============================================
+   暗黑模式适配
+   ============================================ */
+html.dark-mode .template-resource-search .module-service-cards .sc-card {
+    background: var(--color-neutral-800);
+}
+
+html.dark-mode .template-resource-search .module-service-cards .sc-title {
+    color: var(--color-neutral-100);
+}
+
+html.dark-mode .template-resource-search .module-service-cards .sc-desc {
+    color: var(--color-neutral-400);
+}
+
+html.dark-mode .template-resource-search .module-blog .blog-card {
+    background: var(--color-neutral-800);
+}
+
+/* ============================================
+   响应式设计
+   ============================================ */
+@media (max-width: 992px) {
+    .template-resource-search .module-hero-search {
+        padding-bottom: var(--qiling-space-100) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .template-resource-search .module-hero-search {
+        padding-bottom: var(--qiling-space-80) !important;
+    }
+
+    /* 移动端减小负间距 */
+    .template-resource-search .module-spacing-wrapper:nth-child(2) {
+        margin-top: calc(var(--qiling-space-50) * -1) !important;
+    }
+}

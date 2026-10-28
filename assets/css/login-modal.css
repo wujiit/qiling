@@ -1,0 +1,1418 @@
+/* ========================================
+   Login Modal Styles
+   ======================================== */
+
+/* ----------------------------------------
+   Base Layout & Form Styles (From main.css)
+   ---------------------------------------- */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--qiling-color-rgba-0-0-0-05);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.login-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-modal {
+    --qiling-auth-action-bg: var(--qiling-component-auth-action-bg, linear-gradient(135deg, var(--color-primary, var(--color-info)) 0%, var(--color-primary-hover, var(--color-primary-dark, var(--color-primary, var(--color-info)))) 100%));
+    --qiling-auth-action-text: var(--qiling-component-auth-action-text, var(--color-neutral-0, var(--qiling-color-ffffff)));
+    --qiling-auth-action-shadow: 0 8px 25px rgba(var(--color-primary-rgb, 37, 99, 235), 0.34);
+    --qiling-auth-code-bg: var(--qiling-component-auth-code-bg, linear-gradient(135deg, var(--color-primary, var(--color-info)) 0%, var(--color-accent, var(--color-primary-hover, var(--color-primary, var(--color-info)))) 100%));
+    --qiling-auth-code-text: var(--qiling-component-auth-code-text, var(--color-neutral-0, var(--qiling-color-ffffff)));
+    --qiling-auth-code-shadow: 0 2px 6px rgba(var(--color-primary-rgb, 37, 99, 235), 0.3);
+    --qiling-auth-slider-track-bg: var(--qiling-component-auth-slider-track-bg, linear-gradient(to right, var(--color-neutral-200, var(--qiling-color-e2e8f0)), var(--color-neutral-100, var(--qiling-color-f1f5f9))));
+    --qiling-auth-slider-handle-bg: var(--qiling-component-auth-slider-handle-bg, var(--qiling-auth-action-bg));
+    --qiling-auth-slider-handle-shadow: 0 4px 15px rgba(var(--color-primary-rgb, 37, 99, 235), 0.34);
+    --qiling-auth-slider-progress-bg: var(--qiling-component-auth-slider-progress-bg, rgba(var(--color-primary-rgb, 37, 99, 235), 0.12));
+    --qiling-auth-verified-color: var(--qiling-component-auth-verified-color, var(--color-success, var(--qiling-color-10b981)));
+    --qiling-auth-verified-bg: var(--qiling-component-auth-verified-color, var(--color-success, var(--qiling-color-10b981)));
+    --qiling-auth-verified-progress-bg: rgba(var(--color-success-rgb, 22, 163, 74), 0.12);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: var(--qiling-measure-400);
+    max-height: calc(100vh - 24px);
+    background: var(--color-neutral-0);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--qiling-color-rgba-0-0-0-02);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.login-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.login-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--qiling-space-12);
+    padding: var(--qiling-space-8) var(--qiling-space-18) var(--qiling-space-10);
+    border-bottom: 1px solid var(--qiling-color-neutral-400-alpha-018);
+    position: relative;
+}
+
+.login-modal-header.has-corner-toggle {
+    padding-right: var(--qiling-space-70);
+}
+
+.login-modal-header h3 {
+    margin: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: var(--qiling-text-rem-1p125);
+    font-weight: 600;
+    color: var(--color-neutral-800);
+    line-height: 1.4;
+}
+
+.login-modal-body {
+    padding: var(--qiling-space-20) var(--qiling-space-22);
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.login-modal.with-side-media {
+    max-width: min(var(--qiling-measure-vw-92), var(--qiling-measure-920));
+}
+
+.login-modal-body.has-side-media {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.88fr);
+    padding: 0;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.login-modal-body.has-side-media > * {
+    min-width: 0;
+}
+
+.login-modal-side-media {
+    position: relative;
+    min-height: clamp(420px, 62vh, 620px);
+    height: 100%;
+    background: var(--color-neutral-900);
+    overflow: hidden;
+}
+
+.login-modal-side-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, var(--qiling-color-rgba-2-6-23-025) 0%, var(--qiling-color-rgba-6-182-212-014) 100%);
+    pointer-events: none;
+}
+
+.login-modal-side-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: translateZ(0);
+}
+
+.login-modal-content {
+    min-width: 0;
+    min-height: 0;
+}
+
+.login-modal-body.has-side-media .login-modal-content {
+    padding: var(--qiling-space-20) var(--qiling-space-22);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.login-modal.with-side-media .login-modal-body.has-side-media .login-modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+.login-modal.with-side-media .login-modal-body.has-side-media .login-modal-content > * {
+    width: 100%;
+}
+
+.login-modal-form .modal-form-group {
+    margin-bottom: var(--qiling-space-14);
+}
+
+.login-modal-form input[type="text"],
+.login-modal-form input[type="password"],
+.login-modal-form input[type="tel"],
+.login-modal-form input[type="email"] {
+    width: 100%;
+    padding: var(--qiling-space-12) var(--qiling-space-14);
+    border: 2px solid var(--color-neutral-200);
+    border-radius: 10px;
+    font-size: var(--qiling-text-rem-0p96);
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.login-modal-form input:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-info));
+    box-shadow: 0 0 0 4px var(--qiling-color-info-alpha-01);
+}
+
+.modal-form-message {
+    padding: var(--qiling-space-8) var(--qiling-space-12);
+    border-radius: 8px;
+    font-size: var(--qiling-text-rem-0p84);
+    margin-bottom: var(--qiling-space-12);
+    display: none;
+}
+
+.modal-form-message:not(:empty) {
+    display: block;
+}
+
+.modal-form-message.success {
+    background: var(--qiling-color-ecfdf5);
+    color: var(--qiling-color-059669);
+}
+
+.modal-form-message.error {
+    background: var(--qiling-color-fef2f2);
+    color: var(--color-error);
+}
+
+.login-modal-submit {
+    width: 100%;
+    padding: var(--qiling-space-12);
+    background: var(--qiling-auth-action-bg);
+    color: var(--qiling-auth-action-text);
+    border: none;
+    border-radius: 10px;
+    font-size: var(--qiling-text-rem-0p96);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-modal-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--qiling-auth-action-shadow);
+}
+
+.login-modal-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.login-modal .hidden {
+    display: none !important;
+}
+
+.login-modal .login-modal-panel-hidden {
+    display: none;
+}
+
+.login-modal .modal-btn-loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.login-modal .modal-btn-loading::before {
+    content: none !important;
+    display: none !important;
+}
+
+.login-modal .modal-btn-loading .modal-spinner {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    float: none !important;
+}
+
+.login-modal .auth-custom-notice {
+    margin-top: var(--qiling-space-15);
+    font-size: var(--qiling-text-13);
+    color: var(--qiling-color-666666);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.login-modal .modal-remember-group {
+    margin-bottom: var(--qiling-space-10);
+}
+
+.login-modal .modal-remember-label {
+    display: flex;
+    align-items: center;
+    font-size: var(--qiling-text-rem-0p875);
+    color: var(--qiling-color-666666);
+    cursor: pointer;
+}
+
+.login-modal .modal-remember-checkbox {
+    width: auto;
+    margin-right: var(--qiling-space-6);
+}
+
+.login-modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: var(--qiling-space-16);
+    margin-top: var(--qiling-space-6);
+    padding-top: var(--qiling-space-8);
+    border-top: 1px solid var(--color-neutral-200);
+}
+
+.login-modal-footer a {
+    color: var(--color-primary, var(--color-info));
+    text-decoration: none;
+    font-size: var(--qiling-text-rem-0p9);
+    transition: opacity 0.3s;
+}
+
+.login-modal-footer a:hover {
+    opacity: 0.8;
+}
+#weixin-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--qiling-space-8) var(--qiling-space-14);
+    border-radius: 10px;
+    border: 1px solid var(--qiling-color-c7d2fe);
+    background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--qiling-color-eef2ff) 100%);
+    color: var(--qiling-color-1e3a8a);
+    font-weight: 600;
+    text-decoration: none;
+}
+#weixin-back-btn:hover {
+    opacity: 1;
+    background: linear-gradient(135deg, var(--qiling-color-eef2ff) 0%, var(--qiling-color-e0e7ff) 100%);
+    border-color: var(--qiling-color-93c5fd);
+}
+
+/* 微信登录 (Weixin Login) */
+.login-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+    padding-right: 0;
+}
+.login-weixin-toggle {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    background: var(--qiling-color-transparent);
+    cursor: pointer;
+    padding: 0;
+    z-index: 2;
+}
+.login-weixin-toggle::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 52px solid var(--qiling-color-22c55e);
+    border-left: 52px solid var(--qiling-color-transparent);
+}
+.login-weixin-toggle::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 52px solid var(--qiling-color-rgba-255-255-255-016);
+    border-left: 52px solid var(--qiling-color-transparent);
+    transform: translate(-6px, 6px);
+}
+.login-weixin-toggle .corner-icon {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: var(--color-neutral-0);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+}
+.login-weixin-toggle .weixin-icon {
+    box-shadow: inset 0 0 0 2px var(--color-success);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2316a34a'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3Crect x='14' y='14' width='3' height='3'/%3E%3Crect x='18' y='14' width='3' height='3'/%3E%3Crect x='14' y='18' width='3' height='3'/%3E%3Crect x='18' y='18' width='3' height='3'/%3E%3C/svg%3E");
+}
+.login-weixin-toggle .pc-icon {
+    display: none;
+    box-shadow: inset 0 0 0 2px var(--color-neutral-900);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f172a'%3E%3Crect x='3' y='4' width='18' height='12' rx='1'/%3E%3Crect x='8' y='18' width='8' height='2'/%3E%3Crect x='6' y='20' width='12' height='2'/%3E%3C/svg%3E");
+}
+.login-modal.weixin-active .login-weixin-toggle::before {
+    border-top-color: var(--color-neutral-400);
+}
+.login-modal.weixin-active .login-weixin-toggle .weixin-icon {
+    display: none;
+}
+.login-modal.weixin-active .login-weixin-toggle .pc-icon {
+    display: block;
+}
+.login-modal-social {
+    margin-top: var(--qiling-space-8);
+    padding-top: var(--qiling-space-8);
+    border-top: 1px dashed var(--color-neutral-200);
+    text-align: center;
+}
+.login-modal-social .social-title {
+    font-size: var(--qiling-text-12);
+    color: var(--color-neutral-400);
+    margin-bottom: var(--qiling-space-10);
+}
+.login-modal-social .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-8) var(--qiling-space-14);
+    border-radius: 20px;
+    border: 1px solid var(--qiling-color-bbf7d0);
+    background: var(--qiling-color-ecfdf3);
+    color: var(--color-success);
+    font-size: var(--qiling-text-13);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+.login-modal-social .social-login-buttons {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-8);
+}
+.login-modal-social .social-login-buttons + .social-btn {
+    margin-left: var(--qiling-space-8);
+}
+.login-modal-social .qs-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+.login-modal-social .social-btn:hover {
+    background: var(--qiling-color-dcfce7);
+}
+.login-modal-social .social-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--qiling-color-22c55e);
+    position: relative;
+}
+.login-modal-social .social-icon::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-neutral-0);
+    right: 3px;
+    top: 4px;
+}
+.login-modal-social .social-login-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+.login-modal-social .social-icon-img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+.login-modal-social .social-btn.social-qq {
+    border-color: var(--qiling-color-bfdbfe);
+    background: var(--qiling-color-eff6ff);
+    color: var(--qiling-color-1d4ed8);
+}
+.login-modal-social .social-btn.social-qq:hover {
+    background: var(--qiling-color-dbeafe);
+}
+.login-modal-social .social-icon.social-icon-qq {
+    background: var(--qiling-color-0ea5e9);
+}
+.login-modal-social .social-icon.social-icon-qq::after {
+    content: 'Q';
+    width: auto;
+    height: auto;
+    top: 50%;
+    right: auto;
+    left: 50%;
+    color: var(--color-neutral-0);
+    background: transparent;
+    border-radius: 0;
+    font-size: var(--qiling-text-10);
+    font-weight: 700;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+}
+.login-modal-social .social-btn.social-github {
+    border-color: var(--color-neutral-300);
+    background: var(--color-neutral-0);
+    color: var(--color-neutral-900);
+}
+.login-modal-social .social-btn.social-github:hover {
+    background: var(--color-neutral-100);
+}
+.login-modal-social .social-icon.social-icon-github {
+    background: var(--color-neutral-900);
+}
+.login-modal-social .social-icon.social-icon-github::after {
+    content: 'GH';
+    width: auto;
+    height: auto;
+    top: 50%;
+    right: auto;
+    left: 50%;
+    color: var(--color-neutral-0);
+    background: transparent;
+    border-radius: 0;
+    font-size: var(--qiling-text-7p2);
+    font-weight: 800;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+}
+.login-modal-social .social-btn.social-google {
+    border-color: var(--qiling-color-fecaca);
+    background: var(--qiling-color-fef2f2);
+    color: var(--color-error-dark);
+}
+.login-modal-social .social-btn.social-google:hover {
+    background: var(--qiling-color-fee2e2);
+}
+.login-modal-social .social-icon.social-icon-google {
+    background: var(--color-error);
+}
+.login-modal-social .social-icon.social-icon-google::after {
+    content: 'G';
+    width: auto;
+    height: auto;
+    top: 50%;
+    right: auto;
+    left: 50%;
+    color: var(--color-neutral-0);
+    background: transparent;
+    border-radius: 0;
+    font-size: var(--qiling-text-10);
+    font-weight: 800;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+}
+
+.login-modal .weixin-login-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.login-modal .qiling-weixin-box {
+    width: 100%;
+    max-width: var(--qiling-measure-300);
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background: var(--qiling-color-transparent);
+    box-shadow: none;
+    text-align: center;
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-qr-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--qiling-space-14);
+    padding: var(--qiling-space-12);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 18px;
+    background: var(--color-neutral-0);
+    box-shadow: 0 16px 34px var(--qiling-color-rgba-15-23-42-01);
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-qr-img {
+    width: min(220px, 72vw);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--qiling-space-8);
+    align-items: center;
+    width: 100%;
+    margin: var(--qiling-space-10) auto;
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-input {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    padding: 0 var(--qiling-space-14);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 999px;
+    background: var(--color-neutral-0);
+    color: var(--color-neutral-800);
+    font-size: var(--qiling-text-rem-0p9);
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-input:focus {
+    border-color: var(--color-primary, var(--color-info));
+    box-shadow: 0 0 0 4px var(--qiling-color-info-alpha-01);
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--qiling-measure-90);
+    height: 42px;
+    padding: 0 var(--qiling-space-15);
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--qiling-color-22c55e) 0%, var(--qiling-color-059669) 100%);
+    color: var(--color-neutral-0);
+    font-size: var(--qiling-text-13);
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 10px 22px rgba(var(--qiling-rgb-34-197-94), 0.24);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(var(--qiling-rgb-34-197-94), 0.28);
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-tips {
+    margin: var(--qiling-space-6) auto 0;
+    color: var(--color-text-muted);
+    font-size: var(--qiling-text-13);
+    line-height: 1.6;
+}
+
+.login-modal .qiling-weixin-box .qiling-weixin-error {
+    min-height: 18px;
+    margin-top: var(--qiling-space-6);
+    color: var(--color-error);
+    font-size: var(--qiling-text-12);
+    line-height: 1.5;
+}
+
+@media (max-width: 1440px), (max-height: 900px) {
+    .login-modal {
+        max-width: var(--qiling-measure-348);
+        max-height: calc(100vh - 16px);
+        border-radius: 12px;
+    }
+    .login-modal.with-side-media {
+        max-width: min(var(--qiling-measure-vw-92), var(--qiling-measure-800));
+    }
+    .login-modal.with-side-media .login-modal-body.has-side-media {
+        padding: 0;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    }
+    .login-modal-header {
+        padding: var(--qiling-space-6) var(--qiling-space-14) var(--qiling-space-8);
+    }
+    .login-modal-header.has-corner-toggle {
+        padding-right: var(--qiling-space-60);
+    }
+    .login-modal-body {
+        padding: var(--qiling-space-14) var(--qiling-space-16);
+    }
+    .login-modal-form .modal-form-group {
+        margin-bottom: var(--qiling-space-10);
+    }
+    .login-modal-form input[type="text"],
+    .login-modal-form input[type="password"],
+    .login-modal-form input[type="tel"],
+    .login-modal-form input[type="email"] {
+        padding: var(--qiling-space-10) var(--qiling-space-12);
+        font-size: var(--qiling-text-rem-0p9);
+        border-radius: 8px;
+        border-width: 1.5px;
+    }
+    .login-modal-submit {
+        padding: var(--qiling-space-10);
+        font-size: var(--qiling-text-rem-0p9);
+        border-radius: 8px;
+    }
+    .login-modal-footer {
+        margin-top: var(--qiling-space-4);
+        padding-top: var(--qiling-space-8);
+        gap: var(--qiling-space-12);
+    }
+    .login-modal-footer a {
+        font-size: var(--qiling-text-rem-0p82);
+    }
+    .modal-sms-btn {
+        padding: var(--qiling-space-5) var(--qiling-space-10);
+        font-size: var(--qiling-text-11);
+    }
+    .modal-captcha .captcha-track {
+        height: 36px;
+    }
+    .modal-captcha .captcha-slider {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+    }
+    .modal-captcha .captcha-progress {
+        width: 36px;
+    }
+    .modal-captcha .captcha-text {
+        font-size: var(--qiling-text-12);
+    }
+    .login-modal-social {
+        margin-top: var(--qiling-space-4);
+        padding-top: var(--qiling-space-4);
+    }
+    .login-modal-social .social-btn {
+        padding: var(--qiling-space-5) var(--qiling-space-10);
+        font-size: var(--qiling-text-11);
+    }
+    .auth-custom-notice {
+        margin-top: var(--qiling-space-10) !important;
+        font-size: var(--qiling-text-12) !important;
+        line-height: 1.35 !important;
+    }
+    .login-modal .qiling-weixin-box .qiling-weixin-qr-img {
+        width: min(200px, 66vw);
+    }
+}
+
+@media (max-width: 1024px) {
+    .login-modal.with-side-media {
+        max-width: min(var(--qiling-measure-vw-94), var(--qiling-measure-520));
+    }
+
+    .login-modal-body.has-side-media {
+        display: block;
+        padding: 0;
+    }
+
+    .login-modal-body.has-side-media .login-modal-side-media {
+        display: none;
+    }
+
+    .login-modal-body.has-side-media .login-modal-content {
+        padding: var(--qiling-space-20) var(--qiling-space-22);
+    }
+
+    .login-modal.with-side-media .login-modal-body.has-side-media .login-modal-content {
+        display: block;
+        min-height: 0;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .login-modal.with-side-media {
+        max-width: min(var(--qiling-measure-vw-94), var(--qiling-measure-520));
+    }
+
+    .login-modal-body.has-side-media {
+        display: block;
+        padding: 0;
+    }
+
+    .login-modal-body.has-side-media .login-modal-side-media {
+        display: none;
+    }
+
+    .login-modal-body.has-side-media .login-modal-content {
+        padding: var(--qiling-space-20) var(--qiling-space-22);
+    }
+
+    .login-modal.with-side-media .login-modal-body.has-side-media .login-modal-content {
+        display: block;
+        min-height: 0;
+    }
+}
+
+@media (max-height: 760px) {
+    .login-modal.with-side-media .login-modal-body.has-side-media .login-modal-content {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    .login-modal-overlay {
+        background: var(--qiling-color-rgba-2-6-23-058);
+        backdrop-filter: blur(3px);
+    }
+
+    .login-modal {
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: none;
+        max-height: calc(100vh - 8px);
+        max-height: calc(100dvh - 8px);
+        border-radius: 22px 22px 0 0;
+        box-shadow: 0 -12px 36px var(--qiling-color-rgba-15-23-42-022);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    .login-modal.active {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .login-modal.with-side-media {
+        max-width: none;
+    }
+
+    .login-modal-header {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        padding: var(--qiling-space-10) var(--qiling-space-16) var(--qiling-space-10);
+        background: inherit;
+    }
+
+    .login-modal-header.has-corner-toggle {
+        padding-right: var(--qiling-space-68);
+    }
+
+    .login-modal-header h3 {
+        font-size: var(--qiling-text-rem-1);
+    }
+
+    .login-modal-body {
+        padding: var(--qiling-space-12) var(--qiling-space-16) var(--qiling-space-18);
+        padding-bottom: calc(var(--qiling-space-18) + env(safe-area-inset-bottom));
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .login-modal-body.has-side-media {
+        display: block;
+        padding: 0;
+    }
+
+    .login-modal-body.has-side-media .login-modal-side-media {
+        display: none;
+    }
+
+    .login-modal-body.has-side-media .login-modal-content {
+        padding: var(--qiling-space-12) var(--qiling-space-16) var(--qiling-space-18);
+        padding-bottom: calc(var(--qiling-space-18) + env(safe-area-inset-bottom));
+    }
+
+    .login-modal.with-side-media .login-modal-body.has-side-media .login-modal-content {
+        display: block;
+        min-height: 0;
+    }
+
+    .modal-login-tabs {
+        margin-bottom: var(--qiling-space-12);
+        border-radius: 10px;
+    }
+
+    .modal-tab {
+        min-height: 40px;
+        font-size: var(--qiling-text-13);
+    }
+
+    .login-modal-form .modal-form-group {
+        margin-bottom: var(--qiling-space-10);
+    }
+
+    .login-modal-form input[type="text"],
+    .login-modal-form input[type="password"],
+    .login-modal-form input[type="tel"],
+    .login-modal-form input[type="email"] {
+        padding: var(--qiling-space-11) var(--qiling-space-12);
+        font-size: var(--qiling-text-16);
+        border-radius: 12px;
+    }
+
+    .login-modal .modal-sms-group {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: var(--qiling-space-8);
+        align-items: stretch;
+    }
+
+    .login-modal .modal-sms-group input {
+        padding-right: var(--qiling-space-12) !important;
+    }
+
+    .login-modal .modal-sms-btn {
+        position: static;
+        transform: none;
+        min-height: 46px;
+        padding: 0 var(--qiling-space-12);
+        border-radius: 10px;
+        font-size: var(--qiling-text-12);
+        white-space: nowrap;
+    }
+
+    .login-modal .modal-sms-btn:hover:not(:disabled) {
+        transform: none;
+    }
+
+    .login-modal-submit {
+        min-height: 46px;
+        border-radius: 12px;
+    }
+
+    .modal-captcha .captcha-track {
+        height: 42px;
+    }
+
+    .modal-captcha .captcha-slider {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .modal-captcha .captcha-progress {
+        width: 42px;
+    }
+
+    .modal-captcha .captcha-text {
+        font-size: var(--qiling-text-12);
+    }
+
+    .login-modal-social {
+        margin-top: var(--qiling-space-10);
+        padding-top: var(--qiling-space-10);
+    }
+
+    .login-modal-social .social-btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 12px;
+        font-size: var(--qiling-text-13);
+    }
+
+    .login-modal-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--qiling-space-10) var(--qiling-space-14);
+        margin-top: var(--qiling-space-10);
+        padding-top: var(--qiling-space-10);
+    }
+
+    .login-modal-footer a,
+    #weixin-back-btn {
+        font-size: var(--qiling-text-rem-0p92);
+        text-align: center;
+    }
+
+    #weixin-back-btn {
+        width: 100%;
+    }
+
+    .login-modal .qiling-weixin-box .qiling-weixin-form {
+        grid-template-columns: 1fr;
+    }
+
+    .login-modal .qiling-weixin-box .qiling-weixin-btn {
+        width: 100%;
+    }
+
+    .auth-custom-notice {
+        margin-top: var(--qiling-space-12) !important;
+        font-size: var(--qiling-text-12) !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* ----------------------------------------
+   Component Styles (From inline CSS)
+   ---------------------------------------- */
+
+/* 选项卡 (Tabs) */
+.modal-login-tabs {
+    display: flex;
+    gap: var(--qiling-space-8);
+    margin-bottom: var(--qiling-space-16);
+    padding: var(--qiling-space-3);
+    background: var(--bg-secondary, var(--qiling-color-f5f5f5));
+    border-radius: 6px;
+}
+
+.modal-tab {
+    flex: 1;
+    padding: var(--qiling-space-8);
+    border: none;
+    background: var(--qiling-color-transparent);
+    color: var(--text-secondary, var(--qiling-color-666666));
+    font-size: var(--qiling-text-13);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-tab.active {
+    background: var(--bg-primary, var(--color-neutral-0));
+    color: var(--color-primary, var(--color-primary));
+    box-shadow: 0 1px 2px var(--qiling-color-rgba-0-0-0-008);
+}
+
+.login-modal-form.hidden {
+    display: none;
+}
+
+/* 短信验证码组 (SMS Code Group) */
+.modal-sms-group {
+    position: relative;
+}
+
+.modal-sms-group input {
+    padding-right: var(--qiling-space-110) !important;
+}
+
+.modal-sms-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: var(--qiling-space-7) var(--qiling-space-14);
+    border: none;
+    background: var(--qiling-auth-code-bg);
+    color: var(--qiling-auth-code-text);
+    font-size: var(--qiling-text-12);
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: var(--qiling-auth-code-shadow);
+    transition: all 0.3s;
+}
+
+.modal-sms-btn:hover:not(:disabled) {
+    transform: translateY(-50%) scale(1.02);
+    box-shadow: 0 3px 10px rgba(var(--color-primary-rgb, 37, 99, 235), 0.4);
+}
+
+.modal-sms-btn:disabled {
+    background: linear-gradient(135deg, var(--qiling-color-9ca3af) 0%, var(--qiling-color-6b7280) 100%);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* 协议复选框 (Agreement Checkbox) */
+.modal-agreement-group {
+    margin-top: var(--qiling-space-8);
+}
+
+.modal-agreement-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--qiling-space-8);
+    cursor: pointer;
+    font-size: var(--qiling-text-12);
+    color: var(--text-secondary, var(--qiling-color-666666));
+}
+
+.modal-agreement-label input[type="checkbox"] {
+    display: none;
+}
+
+.modal-checkmark {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border-color, var(--qiling-color-dddddd));
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: var(--qiling-space-1);
+    transition: all 0.2s;
+    position: relative;
+}
+
+.modal-agreement-label input[type="checkbox"]:checked+.modal-checkmark {
+    background: var(--color-primary, var(--color-primary));
+    border-color: var(--color-primary, var(--color-primary));
+}
+
+.modal-agreement-label input[type="checkbox"]:checked+.modal-checkmark::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid var(--color-neutral-0);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.modal-agreement-text a {
+    color: var(--color-primary, var(--color-primary));
+}
+
+.email-whitelist-tip {
+    margin: calc(var(--qiling-space-6) * -1) 0 var(--qiling-space-10) var(--qiling-space-2);
+    font-size: var(--qiling-text-rem-0p75);
+    color: var(--qiling-color-6b7280);
+}
+
+.register-code-obtain-tip a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-code-obtain-tip a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------
+   Slider Captcha (Moved from main.css)
+   ---------------------------------------- */
+.modal-captcha .captcha-track {
+    height: 44px;
+    background: var(--qiling-auth-slider-track-bg);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.modal-captcha .captcha-slider {
+    width: 44px;
+    height: 44px;
+    background: var(--qiling-auth-slider-handle-bg);
+    box-shadow: var(--qiling-auth-slider-handle-shadow);
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-neutral-0);
+    cursor: pointer;
+    z-index: 2;
+    transition: left 0.3s;
+}
+
+.modal-captcha .captcha-slider:active {
+    transform: scale(0.95);
+}
+
+.modal-captcha .captcha-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 44px;
+    background: var(--qiling-auth-slider-progress-bg);
+    z-index: 1;
+    transition: width 0.3s;
+}
+
+.modal-captcha .captcha-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--qiling-text-rem-0p9);
+    color: var(--color-neutral-400);
+    z-index: 0;
+}
+
+.modal-captcha.verified .captcha-slider {
+    background: var(--qiling-auth-verified-bg);
+    box-shadow: 0 4px 15px var(--qiling-color-rgba-16-185-129-04);
+    cursor: default;
+}
+
+.modal-captcha.verified .captcha-progress {
+    background: var(--qiling-auth-verified-progress-bg);
+}
+
+.modal-captcha.verified .captcha-text {
+    color: var(--qiling-auth-verified-color);
+}
+
+.modal-captcha.ds-captcha-provider-aliyun .ds-aliyun-captcha-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+}
+
+.modal-captcha.ds-captcha-provider-aliyun .ds-aliyun-captcha-button {
+    min-width: var(--qiling-measure-96);
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--qiling-color-bfdbfe);
+    background: var(--qiling-color-eff6ff);
+    color: var(--color-primary-hover);
+    font-size: var(--qiling-text-13);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-captcha.ds-captcha-provider-aliyun .ds-aliyun-captcha-button:hover {
+    background: var(--qiling-color-dbeafe);
+}
+
+.modal-captcha.ds-captcha-provider-aliyun .ds-aliyun-captcha-status {
+    flex: 1;
+    min-width: 0;
+    color: var(--color-neutral-500);
+    font-size: var(--qiling-text-13);
+    line-height: 1.4;
+}
+
+.modal-captcha.ds-captcha-provider-aliyun.verified .ds-aliyun-captcha-status {
+    color: var(--qiling-color-059669);
+    font-weight: 600;
+}
+
+/* ----------------------------------------
+   Dark Mode Support
+   ---------------------------------------- */
+html.dark-mode .login-modal {
+    background: var(--dm-bg-card, var(--color-neutral-800));
+}
+
+html.dark-mode .login-modal-side-media {
+    background: var(--qiling-color-020617);
+}
+
+html.dark-mode .login-modal-header {
+    border-bottom-color: var(--dm-border, var(--color-neutral-700));
+}
+
+html.dark-mode .login-modal-header h3 {
+    color: var(--dm-text, var(--color-neutral-100));
+}
+
+html.dark-mode .login-modal-form input {
+    background: var(--dm-bg, var(--color-neutral-900));
+    border-color: var(--dm-border, var(--color-neutral-700));
+    color: var(--dm-text, var(--color-neutral-100));
+}
+
+html.dark-mode .login-modal-footer {
+    border-top-color: var(--dm-border, var(--color-neutral-700));
+}
+
+html.dark-mode .login-modal-social {
+    border-top-color: var(--dm-border, var(--color-neutral-700));
+}
+
+html.dark-mode .login-modal-social .social-btn.social-qq {
+    background: rgba(var(--qiling-rgb-14-165-233), 0.12);
+    border-color: rgba(var(--qiling-rgb-14-165-233), 0.28);
+    color: var(--qiling-color-93c5fd);
+}
+
+html.dark-mode .login-modal-social .social-btn.social-qq:hover {
+    background: rgba(var(--qiling-rgb-14-165-233), 0.18);
+}
+
+html.dark-mode .login-modal-social .social-btn.social-github {
+    background: var(--qiling-color-rgba-255-255-255-008);
+    border-color: var(--qiling-color-rgba-255-255-255-018);
+    color: var(--dm-text, var(--color-neutral-100));
+}
+
+html.dark-mode .login-modal-social .social-btn.social-github:hover {
+    background: var(--qiling-color-rgba-255-255-255-012);
+}
+
+html.dark-mode .login-modal-social .social-icon.social-icon-github {
+    background: var(--color-neutral-0);
+}
+
+html.dark-mode .login-modal-social .social-icon.social-icon-github::after {
+    color: var(--color-neutral-900);
+}
+
+html.dark-mode .login-modal-social .social-btn.social-google {
+    background: rgba(var(--color-error-rgb), 0.12);
+    border-color: rgba(var(--color-error-rgb), 0.32);
+    color: var(--qiling-color-fca5a5);
+}
+
+html.dark-mode .login-modal-social .social-btn.social-google:hover {
+    background: rgba(var(--color-error-rgb), 0.18);
+}
+
+html.dark-mode .modal-login-tabs {
+    background: var(--dm-bg, var(--color-neutral-900));
+}
+
+html.dark-mode .modal-tab {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+html.dark-mode .modal-tab.active {
+    background: var(--dm-bg-card, var(--color-neutral-800));
+    color: var(--color-primary);
+}
+
+html.dark-mode .modal-agreement-label {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+html.dark-mode .modal-captcha .captcha-track {
+    background: var(--dm-bg, var(--color-neutral-900));
+}
+
+html.dark-mode .login-modal .qiling-weixin-box .qiling-weixin-qr-wrap,
+html.dark-mode .login-modal .qiling-weixin-box .qiling-weixin-input {
+    background: rgba(var(--qiling-rgb-15-23-42), 0.82);
+    border-color: var(--dm-border, var(--color-neutral-700));
+    color: var(--dm-text, var(--color-neutral-200));
+}
+
+html.dark-mode .login-modal .qiling-weixin-box .qiling-weixin-tips {
+    color: var(--dm-text-muted, var(--color-neutral-400));
+}
+
+@media (max-width: 767px) {
+    .login-modal-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 2;
+        align-items: center;
+        gap: var(--qiling-space-10);
+        margin-top: var(--qiling-space-14);
+        padding: var(--qiling-space-12);
+        padding-bottom: calc(var(--qiling-space-12) + env(safe-area-inset-bottom));
+        border-top: 0;
+        border-radius: 18px;
+        background: var(--qiling-color-rgba-248-250-252-092);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        box-shadow: inset 0 0 0 1px var(--qiling-color-rgba-226-232-240-092), 0 12px 28px var(--qiling-color-rgba-15-23-42-008);
+    }
+
+    .login-modal-footer a,
+    #weixin-back-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 44px;
+        border-radius: 14px;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+
+    .login-modal-register-link,
+    #show-login-panel,
+    #show-login-inline-panel,
+    #weixin-back-btn {
+        order: 1;
+        padding: 0 var(--qiling-space-16);
+        border: 1px solid var(--qiling-color-rgba-186-230-253-096);
+        background: linear-gradient(180deg, var(--qiling-color-rgba-255-255-255-098) 0%, var(--qiling-color-rgba-240-249-255-095) 100%);
+        color: var(--color-neutral-900);
+        font-size: var(--qiling-text-rem-0p96);
+        font-weight: 600;
+        box-shadow: 0 6px 18px var(--qiling-color-info-alpha-008);
+    }
+
+    .login-modal-forgot-link {
+        order: 2;
+        min-height: 22px;
+        padding: var(--qiling-space-2) 0 0;
+        background: var(--qiling-color-transparent);
+        color: var(--color-neutral-500);
+        font-size: var(--qiling-text-rem-0p84);
+        font-weight: 500;
+        box-shadow: none;
+    }
+
+    .login-modal-register-link:hover,
+    #show-login-panel:hover,
+    #show-login-inline-panel:hover,
+    #weixin-back-btn:hover {
+        opacity: 1;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px var(--qiling-color-info-alpha-012);
+    }
+
+    .login-modal-forgot-link:hover {
+        opacity: 1;
+        transform: none;
+        text-decoration: underline;
+    }
+
+    html.dark-mode .login-modal-footer {
+        background: var(--qiling-color-rgba-15-23-42-092);
+        box-shadow: inset 0 0 0 1px var(--qiling-color-rgba-51-65-85-096), 0 12px 28px var(--qiling-color-rgba-2-6-23-036);
+    }
+
+    html.dark-mode .login-modal-register-link,
+    html.dark-mode #show-login-panel,
+    html.dark-mode #show-login-inline-panel,
+    html.dark-mode #weixin-back-btn {
+        border-color: var(--qiling-color-rgba-51-65-85-096);
+        background: linear-gradient(180deg, var(--qiling-color-rgba-30-41-59-098) 0%, var(--qiling-color-rgba-15-23-42-098) 100%);
+        color: var(--color-neutral-200);
+        box-shadow: 0 10px 24px var(--qiling-color-rgba-2-6-23-022);
+    }
+
+    html.dark-mode .login-modal-forgot-link {
+        color: var(--color-neutral-400);
+    }
+}

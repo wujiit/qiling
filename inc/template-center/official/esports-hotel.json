@@ -1,0 +1,373 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 2,
+  "title": "电竞酒店与场馆官网",
+  "page_template": "templates/template-esports-hotel.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#06b6d4",
+      "accent": "#3b82f6",
+      "background": "#0b101b",
+      "text": "#f8fafc"
+    },
+    "header": {
+      "transparent_text": "#ffffff"
+    },
+    "footer": {
+      "background": "#0b101b",
+      "text": "rgba(255,255,255,0.85)",
+      "friend_background": "#080c14",
+      "friend_text": "rgba(255,255,255,0.65)",
+      "bottom_background": "#05080f",
+      "bottom_text": "rgba(255,255,255,0.55)"
+    }
+  },
+  "footer": {
+    "mode": "page_skin",
+    "wave": "off",
+    "preset": "technology_company",
+    "inherit_skin_colors": true
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "esports-hotel",
+    "label": "电竞酒店与场馆官网",
+    "category": "industry",
+    "category_label": "行业官网",
+    "industry": "esports_hotel",
+    "industry_label": "电竞酒店",
+    "scenario": "在线订房、硬核外设、包房房型、开黑套餐",
+    "description": "适合高端电竞酒店、沉浸式开黑馆、电竞网咖与赛事对战馆，内置全景动态首屏、房型展示、4090顶级硬件配置、开黑套餐、实景画廊、水友赛与门店导航。",
+    "badges": [
+      "电竞酒店",
+      "在线订房",
+      "硬核外设"
+    ],
+    "order": 471,
+    "thumbnail": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "电竞酒店与场馆官网模板 - 4090顶级配置与在线订房",
+    "description": "专为高端电竞酒店与沉浸式竞技场馆打造的暗黑极客风官网页面，支持在线选房、房型展示、硬件配置清单、通宵包夜特惠与门店导航。",
+    "keywords": "电竞酒店官网,电竞馆官网,开黑房预订,RTX4090电竞房,电竞网咖,启灵电竞酒店",
+    "og_title": "电竞酒店与场馆官网",
+    "og_description": "高端电竞酒店与专业对战馆官方页面模板。"
+  },
+  "modules": [
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "85vh",
+        "db_bg_type": "gradient",
+        "db_bg_gradient": "linear-gradient(135deg, #060913 0%, #0f172a 50%, #083344 100%)",
+        "db_title_prefix": "启灵极客电竞酒店",
+        "db_typing_mode": "loop",
+        "db_typing_text": "全系搭载 RTX 4090 顶级水冷主机\n240Hz OLED 职业级高刷电竞屏\n专线独立光纤 · 极低网络延迟",
+        "db_highlight_color": "#22d3ee",
+        "db_title_color": "#f8fafc",
+        "db_subtitle": "专为极致开黑而生的沉浸式电竞生活空间 · 5人战队套房 · 双人闺蜜/情侣电竞房 · 24h贴心服务",
+        "db_desc": "配备人体工学专业座驾、全套定制赛睿外设、静音独立新风排烟系统与乳胶护脊床垫，畅享无间断开黑狂欢。",
+        "db_text_color": "rgba(248, 250, 252, 0.85)",
+        "db_buttons": [
+          {
+            "text": "立即选房预订",
+            "link": "#booking",
+            "style": "primary",
+            "icon": "🎮"
+          },
+          {
+            "text": "查看房型配置",
+            "link": "#rooms",
+            "style": "outline",
+            "icon": "⚡"
+          }
+        ]
+      }
+    },
+    {
+      "type": "hotel-amenities",
+      "data": {
+        "amenity_title": "职业级电竞硬件与奢华配套",
+        "amenity_subtitle": "每一个硬件细节都为电竞发烧友深度定制，告别卡顿与掉帧",
+        "amenity_title_color": "#ffffff",
+        "amenity_columns": "4",
+        "amenity_layout": "card",
+        "module_bg_color": "transparent",
+        "amenity_items": [
+          {
+            "icon": "🖥️",
+            "title": "RTX 4090 水冷主机",
+            "desc": "i9 顶配处理器 + 32G DDR5 高频内存，满血输出流畅畅玩 3A 大作。"
+          },
+          {
+            "icon": "⚡",
+            "title": "240Hz OLED 电竞屏",
+            "desc": "0.03ms 极限响应速度，G-Sync 防撕裂，带来丝滑顺畅的视觉捕捉。"
+          },
+          {
+            "icon": "🪑",
+            "title": "人体工学电竞椅",
+            "desc": "电竞战队同款零重力支撑椅，长时间高强度开黑舒适不累腰。"
+          },
+          {
+            "icon": "🌐",
+            "title": "千兆独享光纤专线",
+            "desc": "电竞专线独立 IP 双路由备份，游戏内延迟稳定保持 5ms 以内。"
+          },
+          {
+            "icon": "🎧",
+            "title": "7.1 声道全包降噪耳机",
+            "desc": "听声辨位精准无误，高清无噪麦克风，开黑沟通指令清晰传达。"
+          },
+          {
+            "icon": "🥤",
+            "title": "24h 零食能量吧台",
+            "desc": "精酿冷饮、现磨冰美式、特调能量饮料与热食宵夜客房直通配送。"
+          },
+          {
+            "icon": "💨",
+            "title": "独立排烟新风系统",
+            "desc": "大功率无感换气，时刻保持客房空气清新，开黑环境舒适清爽。"
+          },
+          {
+            "icon": "🛏️",
+            "title": "五星级乳胶护脊床垫",
+            "desc": "战斗归来秒入深度睡眠，干湿分离卫浴与定制洗漱备品一应俱全。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "room-showcase",
+      "data": {
+        "room_title": "特色电竞房型展示",
+        "room_subtitle": "从双人羁绊到五人战队开黑，总有一款专属房间适合你和队友",
+        "room_title_color": "#ffffff",
+        "room_columns": "3",
+        "room_card_style": "standard",
+        "module_bg_color": "transparent",
+        "room_items": [
+          {
+            "name": "极客五人开黑战队套房",
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+            "area": "68㎡",
+            "bed_type": "5台 4090电脑 + 3张豪华单人床",
+            "guests": "5人",
+            "price": "¥888",
+            "price_unit": "/晚",
+            "btn_text": "预订房型",
+            "btn_url": "#booking",
+            "amenities": "独立战队对战长桌, 4090顶级水冷, 100寸观赛投影, 独立双卫浴"
+          },
+          {
+            "name": "浪漫情侣/双人开黑豪华大床房",
+            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+            "area": "42㎡",
+            "bed_type": "2台 4080电脑 + 1.8m乳胶大床",
+            "guests": "2人",
+            "price": "¥468",
+            "price_unit": "/晚",
+            "btn_text": "预订房型",
+            "btn_url": "#booking",
+            "amenities": "双人并排电竞台, 氛围流光RGB, 巨幕高清影院, 智能客控"
+          },
+          {
+            "name": "沉浸式三人开黑先锋套房",
+            "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80",
+            "area": "52㎡",
+            "bed_type": "3台 4080Super电脑 + 3张单人床",
+            "guests": "3人",
+            "price": "¥628",
+            "price_unit": "/晚",
+            "btn_text": "预订房型",
+            "btn_url": "#booking",
+            "amenities": "U型无阻开黑连座, 独立新风排烟, 免费能量饮品, 24h前台管家"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ticket-showcase",
+      "data": {
+        "ticket_title": "通宵开黑特惠与会员权益卡",
+        "ticket_subtitle": "灵活时段选择，无论是通宵血战还是周末连住均享超值折扣",
+        "ticket_title_color": "#ffffff",
+        "ticket_columns": "3",
+        "ticket_card_style": "featured",
+        "module_bg_color": "transparent",
+        "ticket_items": [
+          {
+            "name": "通宵畅玩包夜体验券",
+            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+            "original_price": "¥220",
+            "price": "¥129",
+            "price_unit": "/张",
+            "tag": "热销",
+            "desc": "适用时段：每日 22:00 至次日 10:00，畅玩 12 小时赠现磨咖啡 1 杯。",
+            "btn_text": "立即抢购",
+            "btn_url": "#",
+            "valid_time": "购买后 30 天内有效"
+          },
+          {
+            "name": "周末战队开黑 3天2晚连住套餐",
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+            "original_price": "¥2188",
+            "price": "¥1588",
+            "price_unit": "/套",
+            "tag": "超值推荐",
+            "desc": "五人开黑战队房周末连住 2 晚，赠送 5 人能量宵夜大礼包与无限续杯饮品。",
+            "btn_text": "立即预订",
+            "btn_url": "#",
+            "valid_time": "需提前 1 天预约锁定房态"
+          },
+          {
+            "name": "VIP 黑金会员储值特权卡",
+            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+            "original_price": "¥1000",
+            "price": "¥800",
+            "price_unit": "/张",
+            "tag": "充值优惠",
+            "desc": "充值 800 得 1000 元房费额度，专享房型免费升级与免费延迟退房至 14:00。",
+            "btn_text": "立即开卡",
+            "btn_url": "#",
+            "valid_time": "永久有效 · 全国门店通用"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "竞技空间实景画廊",
+        "gallery_subtitle": "流光溢彩的电竞氛围与科技感美学，实地探访每一个酷炫角落",
+        "gallery_title_color": "#ffffff",
+        "gallery_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "gallery_columns": "3",
+        "module_bg_color": "transparent",
+        "gallery_style": "grid",
+        "gallery_images": [
+          {
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+            "title": "五人战队对战连座区",
+            "category": "战队套房",
+            "desc": "宽敞操作台面与隐藏式理线，极佳电竞视觉氛围。"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+            "title": "公共赛事观赛巨幕大厅",
+            "category": "公共区域",
+            "desc": "数百平米电竞文化社交场，百寸激光投影同步直播顶级联赛。"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+            "title": "情侣开黑双人间氛围灯光",
+            "category": "情侣套房",
+            "desc": "支持多模式色彩律动，打造私密沉浸式二人开黑世界。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "promotion",
+      "data": {
+        "ql_promo_title": "近期同城水友赛与观赛活动",
+        "ql_promo_subtitle": "加入电竞发烧友社区，赢取千元奖金与免费住宿券",
+        "ql_promo_title_color": "#ffffff",
+        "ql_promo_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "ql_promo_layout": "cards",
+        "ql_promo_columns": "2",
+        "ql_promo_show_countdown": "no",
+        "module_bg_color": "transparent",
+        "ql_promo_items": [
+          {
+            "name": "启灵杯·英雄联盟同城战队挑战赛",
+            "desc": "冠军奖金 5000 元 + 全队免费入住体验！报名无需门槛，5人组队即可参赛。",
+            "original_price": "¥100",
+            "price": "免费报名",
+            "badge": "奖金丰厚",
+            "btn_text": "立即组队报名",
+            "btn_url": "#",
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            "name": "全球总决赛决战之夜线下观赛狂欢",
+            "desc": "现场啤酒炸鸡免费畅饮，抽奖赠送 4080 显卡与电竞外设盲盒！",
+            "original_price": "¥99",
+            "price": "会员免费入场",
+            "badge": "热门活动",
+            "btn_text": "锁定入场席位",
+            "btn_url": "#",
+            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "入住与开黑常见疑问",
+        "faq_subtitle": "了解入住流程、硬件设施与相关服务细则",
+        "faq_title_color": "#ffffff",
+        "faq_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "faq_card_bg": "#111827",
+        "faq_question_color": "#ffffff",
+        "faq_answer_color": "rgba(248, 250, 252, 0.75)",
+        "faq_card_border": "rgba(255, 255, 255, 0.08)",
+        "module_bg_color": "transparent",
+        "faq_items": [
+          {
+            "question": "可以自带自己习惯的鼠标、键盘或耳机吗？",
+            "answer": "完全可以！每个机位均预留了便捷的前置 USB 3.2 拓展接口，即插即用，您可以随时接入自己的专属外设装备。"
+          },
+          {
+            "question": "酒店客房电脑有安装游戏吗？能否自行下载？",
+            "answer": "我们内置了主流无盘电竞系统，预装了百余款热门网游与 Steam/Epic 平台 3A 大作。若需要下载新游戏，千兆光纤专线可在数分钟内快速下载安装完毕。"
+          },
+          {
+            "question": "可以点外卖配送到房间吗？前台提供宵夜吗？",
+            "answer": "可以！外卖可直接送达或由前台机器人配送至房门。前台 24 小时零食吧也提供热腾腾的泡面炸鸡、能量饮料、现磨咖啡与冰淇淋。"
+          },
+          {
+            "question": "预订房间是否需要押金？退房时间是几点？",
+            "answer": "入住无需额外押金，支持快速免押入住。常规退房时间为次日中午 12:00，黑金会员可免费延迟至 14:00 退房。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "场馆位置与交通导航",
+        "branches_subtitle": "地处城市核心商圈，交通极其便利，下楼即是美食街与地铁站",
+        "branches_title_color": "#ffffff",
+        "branches_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "module_bg_color": "transparent",
+        "branches_list": [
+          {
+            "name": "启灵电竞酒店（旗舰总店）",
+            "address": "市中心核心商圈科技创新大道 88 号电竞数码广场 5-8 层",
+            "phone": "010-88886666",
+            "email": "hotel@qilingesports.com",
+            "hours": "24小时前台服务 · 全天候营业",
+            "tag": "旗舰旗舰店",
+            "map_link": "#"
+          },
+          {
+            "name": "启灵电竞馆（大学城分店）",
+            "address": "大学城青年文创街区 A 座 3 层（地铁 2 号线直达）",
+            "phone": "010-88887777",
+            "email": "campus@qilingesports.com",
+            "hours": "24小时营业 · 学生专享优惠",
+            "tag": "大学城分店",
+            "map_link": "#"
+          }
+        ]
+      }
+    }
+  ]
+}

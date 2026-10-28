@@ -1,0 +1,244 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "图片素材壁纸站",
+  "page_template": "templates/template-qiling-wallpaper-gallery.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "photography_company",
+    "colors": {
+      "primary": "#e11d48",
+      "accent": "#6366f1",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": false,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "qiling-wallpaper-gallery",
+    "label": "图片素材壁纸站",
+    "category": "content",
+    "category_label": "内容/媒体",
+    "industry": "photography",
+    "industry_label": "摄影图片",
+    "scenario": "壁纸图库、摄影素材、设计配图、图片资源聚合",
+    "description": "适合用普通文章搭建高清壁纸、摄影作品、设计配图和图片素材门户，内置视觉轮播、图片搜索、热门标签、精选推荐、内容统计和最新图片流。",
+    "badges": [
+      "图片素材",
+      "高清壁纸",
+      "响应式图库"
+    ],
+    "order": 155,
+    "thumbnail": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+  },
+  "seo": {
+    "title": "图片素材壁纸站模板 - 启灵官方页面包",
+    "description": "适合高清壁纸、摄影作品、设计配图和图片素材聚合的官方页面模板，使用普通文章持续更新图片内容。",
+    "keywords": "图片素材站,高清壁纸,摄影图库,设计配图,图片资源,壁纸模板",
+    "og_title": "图片素材壁纸站",
+    "og_description": "用明亮可检视的图片轮播、搜索与分类内容流搭建图片素材门户。"
+  },
+  "modules": [
+    {
+      "type": "double_column_carousel",
+      "data": {
+        "dcc_layout": "3",
+        "dcc_height": "500",
+        "dcc_gap": "12",
+        "dcc_slides": [
+          {
+            "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85",
+            "url": "",
+            "title": "山野与湖泊壁纸精选"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1600&q=85",
+            "url": "",
+            "title": "自然植物高清素材"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85",
+            "url": "",
+            "title": "旅行与生活方式图片"
+          }
+        ],
+        "dcc_right_1_image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85",
+        "dcc_right_1_url": "",
+        "dcc_right_2_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+        "dcc_right_2_url": "",
+        "dcc_right_3_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85",
+        "dcc_right_3_url": ""
+      }
+    },
+    {
+      "type": "hero_search",
+      "data": {
+        "hs_height": "500px",
+        "hs_width_mode": "container",
+        "hs_custom_width": "1400px",
+        "hs_border_radius": "medium",
+        "hs_custom_radius": "16px",
+        "hs_overlay_color": "rgba(15, 23, 42, 0.65)",
+        "hs_content_align": "center",
+        "hs_bg_items": [
+          {
+            "type": "image",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85",
+            "video_url": ""
+          }
+        ],
+        "hs_bg_autoplay": "no",
+        "hs_bg_interval": "5000",
+        "hs_title": "找到适合每一块屏幕的好图片",
+        "hs_title_color": "#ffffff",
+        "hs_title_size": "3.2rem",
+        "hs_subtitle": "搜索高清壁纸、摄影作品、自然风景与设计配图，打开文章即可查看完整图片信息。",
+        "hs_subtitle_color": "rgba(255,255,255,0.9)",
+        "hs_show_search": "yes",
+        "hs_search_mode": "post",
+        "hs_search_placeholder": "搜索风景、建筑、人物、植物或色彩",
+        "hs_search_btn_text": "搜索图片",
+        "hs_search_btn_bg": "#e43d30",
+        "hs_search_btn_text_color": "#ffffff",
+        "hs_search_btn_hover_bg": "#bf2f25",
+        "hs_search_btn_hover_text_color": "#ffffff",
+        "hs_search_width": "720px",
+        "hs_tags_label": "热门灵感：",
+        "hs_tags": [
+          {
+            "text": "自然风景"
+          },
+          {
+            "text": "城市建筑"
+          },
+          {
+            "text": "手机壁纸"
+          },
+          {
+            "text": "极简背景"
+          }
+        ]
+      }
+    },
+    {
+      "type": "category_tabs",
+      "data": {
+        "tabs_title": "按灵感浏览图片",
+        "tabs_subtitle": "自动读取站内热门文章标签，内容越丰富，图片频道越完整",
+        "tabs_source_mode": "auto_hot_tags",
+        "tabs_auto_tag_count": "8",
+        "tabs_auto_min_count": "1",
+        "columns": "4",
+        "post_count": "12",
+        "image_aspect_ratio": "4:3",
+        "card_style": "wallpaper",
+        "show_date": "no",
+        "show_author": "no",
+        "show_views": "yes",
+        "show_category_badge": "no",
+        "show_image_dimensions": "yes",
+        "show_image_format": "yes",
+        "show_resource_badges": "yes",
+        "show_resource_price": "yes",
+        "show_download_button": "yes",
+        "download_button_text": "获取图片",
+        "padding_top": "76px",
+        "padding_bottom": "84px",
+        "more_btn_type": "ajax",
+        "more_ajax_text": "加载更多图片",
+        "bg_color": "#ffffff"
+      }
+    },
+    {
+      "type": "qiling_universal_recommend",
+      "data": {
+        "qur_title": "本周精选图片",
+        "qur_subtitle": "从普通文章中自动选取近期更新的高质量视觉内容",
+        "qur_show_topics": "no",
+        "qur_source_mode": "auto",
+        "qur_total_count": "8",
+        "qur_category_ids": "",
+        "qur_layout": "grid",
+        "qur_columns": "4",
+        "qur_gap": "18px",
+        "qur_image_ratio": "3:4",
+        "qur_show_image": "yes",
+        "qur_show_excerpt": "no",
+        "qur_show_date": "no",
+        "qur_show_category": "yes",
+        "qur_show_badge": "yes",
+        "qur_bg_color": "#f8fafc",
+        "qur_accent_color": "#e43d30",
+        "qur_card_bg": "#ffffff",
+        "qur_card_radius": "6px",
+        "qur_card_border": "#dfe4e8",
+        "qur_card_shadow": "none",
+        "qur_padding_top": "82px",
+        "qur_padding_bottom": "82px",
+        "qur_more_text": ""
+      }
+    },
+    {
+      "type": "resource_stats",
+      "data": {
+        "rs_title": "持续生长的图片收藏",
+        "rs_subtitle": "统计直接读取站内普通文章、用户与网站运行数据",
+        "rs_bg_color": "#ffffff",
+        "rs_padding_top": "68px",
+        "rs_padding_bottom": "68px",
+        "rs_stats_list": [
+          {
+            "stat_label": "图片文章",
+            "stat_icon": "dashicons-format-image",
+            "data_source": "total_posts",
+            "source_id": "",
+            "virtual_num": "0",
+            "show_plus": "no"
+          },
+          {
+            "stat_label": "收藏用户",
+            "stat_icon": "dashicons-groups",
+            "data_source": "total_users",
+            "source_id": "",
+            "virtual_num": "0",
+            "show_plus": "no"
+          },
+          {
+            "stat_label": "稳定更新",
+            "stat_icon": "dashicons-calendar-alt",
+            "data_source": "site_days",
+            "source_id": "",
+            "virtual_num": "0",
+            "show_plus": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "blog",
+      "data": {
+        "blog_title": "最新图片素材",
+        "blog_subtitle": "发布带特色图片的普通文章后，最新内容会自动出现在这里",
+        "blog_bg_color": "#f4f7f8",
+        "blog_page_layout": "full",
+        "blog_layout_style": "card",
+        "blog_columns": "4",
+        "blog_data_source": "latest",
+        "blog_count": "12",
+        "blog_orderby": "date",
+        "blog_show_image": "yes",
+        "blog_image_height": "240px",
+        "blog_show_excerpt": "no",
+        "blog_show_author": "no",
+        "blog_show_date": "yes",
+        "blog_show_category": "yes",
+        "blog_show_tags": "yes",
+        "blog_read_more_text": "查看图片",
+        "blog_enable_pagination": "yes"
+      }
+    }
+  ]
+}

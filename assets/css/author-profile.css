@@ -1,0 +1,707 @@
+/**
+ * 作者个人主页样式
+ *
+ * @package Developer_Starter
+ * @since 2.10.2
+ */
+
+/* ===== 页面容器 ===== */
+.author-profile-page {
+    min-height: 60vh;
+}
+
+/* ===== 头部区域 ===== */
+.author-profile-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    padding: var(--qiling-space-80) 0 var(--qiling-space-60);
+    color: var(--color-neutral-0);
+    position: relative;
+    overflow: hidden;
+}
+
+.author-profile-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 6px 6px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px),
+        radial-gradient(circle at 36px 36px, rgba(var(--qiling-rgb-255-255-255), 0.05) 0 2px, transparent 3px);
+    background-size: 60px 60px;
+    opacity: 0.3;
+}
+
+.author-profile-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== 主信息区域 ===== */
+.author-profile-main {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-30);
+    margin-bottom: var(--qiling-space-30);
+}
+
+/* 头像 */
+.author-profile-avatar {
+    flex-shrink: 0;
+}
+
+.author-profile-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid rgba(var(--qiling-rgb-255-255-255), 0.3);
+    box-shadow: 0 8px 32px rgba(var(--qiling-rgb-0-0-0), 0.2);
+    object-fit: cover;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+}
+
+/* 用户信息 */
+.author-profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.author-profile-name {
+    font-size: calc(var(--qiling-font-size-base) * 2);
+    font-weight: 700;
+    margin: 0 0 var(--qiling-space-10);
+    color: var(--color-neutral-0);
+    line-height: 1.2;
+}
+
+.author-profile-bio {
+    font-size: var(--qiling-font-size-base);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+    max-width: var(--qiling-measure-500);
+}
+
+.author-profile-bio-empty {
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* 操作按钮 */
+.author-profile-actions {
+    display: flex;
+    gap: var(--qiling-space-12);
+    flex-shrink: 0;
+}
+
+.author-follow-btn,
+.author-message-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-12) var(--qiling-space-24);
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    font-weight: 600;
+    border: 2px solid rgba(var(--qiling-rgb-255-255-255), 0.3);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: rgba(var(--qiling-rgb-255-255-255), 0.15);
+    color: var(--color-neutral-0);
+    backdrop-filter: blur(10px);
+}
+
+.author-follow-btn:hover,
+.author-message-btn:hover {
+    background: rgba(var(--qiling-rgb-255-255-255), 0.25);
+    border-color: rgba(var(--qiling-rgb-255-255-255), 0.5);
+    transform: translateY(-2px);
+}
+
+.author-follow-btn.is-following {
+    background: rgba(var(--qiling-rgb-255-255-255), 0.9);
+    color: var(--color-primary);
+    border-color: transparent;
+}
+
+.author-follow-btn.is-following:hover {
+    background: rgba(var(--color-error-rgb), 0.9);
+    color: var(--color-neutral-0);
+}
+
+.author-follow-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* ===== 社交链接区域 ===== */
+.author-profile-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--qiling-space-12);
+    margin-bottom: var(--qiling-space-30);
+    padding-bottom: var(--qiling-space-30);
+    border-bottom: 1px solid rgba(var(--qiling-rgb-255-255-255), 0.15);
+}
+
+.author-profile-social .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-6);
+    padding: var(--qiling-space-8) var(--qiling-space-16);
+    background: rgba(var(--qiling-rgb-255-255-255), 0.1);
+    border-radius: 50px;
+    color: var(--color-neutral-0);
+    text-decoration: none;
+    font-size: calc(var(--qiling-font-size-base) * 0.8125);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.author-profile-social .social-link:hover {
+    background: rgba(var(--qiling-rgb-255-255-255), 0.2);
+    transform: translateY(-2px);
+}
+
+.author-profile-social .social-link svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.author-profile-social .social-label {
+    font-weight: 500;
+}
+
+/* 微信二维码弹出 */
+.author-profile-social .social-wechat-qr {
+    position: relative;
+    cursor: pointer;
+}
+
+.author-profile-social .wechat-qr-popup {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-neutral-0);
+    padding: var(--qiling-space-12);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(var(--qiling-rgb-0-0-0), 0.3);
+    z-index: 100;
+}
+
+.author-profile-social .social-wechat-qr:hover .wechat-qr-popup {
+    display: block;
+}
+
+.author-profile-social .wechat-qr-popup img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.author-profile-social .wechat-qr-popup::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--color-neutral-0);
+}
+
+/* ===== 统计信息 ===== */
+.author-profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--qiling-space-60);
+}
+
+.author-stat-item {
+    text-align: center;
+}
+
+.author-stat-value {
+    display: block;
+    font-size: calc(var(--qiling-font-size-base) * 1.75);
+    font-weight: 700;
+    color: var(--color-neutral-0);
+    line-height: 1.2;
+    margin-bottom: var(--qiling-space-4);
+}
+
+.author-stat-label {
+    display: block;
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    opacity: 0.8;
+}
+
+/* ===== 文章列表区域 ===== */
+.author-posts-section {
+    background: var(--color-bg-light, var(--color-neutral-50));
+}
+
+.author-posts-title {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-10);
+    font-size: calc(var(--qiling-font-size-base) * 1.5);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--qiling-space-30);
+}
+
+.author-posts-title svg {
+    color: var(--color-primary);
+}
+
+.author-posts-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--qiling-space-20);
+    margin-bottom: var(--qiling-space-30);
+}
+
+.author-posts-heading .author-posts-title {
+    margin: 0;
+}
+
+.author-posts-summary {
+    margin: 0;
+    color: var(--color-text-muted, var(--color-neutral-500));
+    font-size: var(--qiling-text-rem-0p875);
+}
+
+.author-posts-section .qiling-native-blog-grid-author {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.author-posts-section .qiling-blog-pagination {
+    margin-top: var(--qiling-space-50);
+}
+
+/* 文章网格 */
+.author-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--qiling-space-30);
+}
+
+/* 文章卡片 */
+.author-post-card {
+    background: var(--color-neutral-0);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(var(--qiling-rgb-0-0-0), 0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.author-post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(var(--qiling-rgb-0-0-0), 0.12);
+}
+
+/* 封面图 */
+.author-post-thumb {
+    display: block;
+    position: relative;
+    padding-top: var(--qiling-space-pct-56p25);
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-neutral-200) 0%, var(--color-neutral-300) 100%);
+}
+
+.author-post-thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.author-post-card:hover .author-post-thumb img {
+    transform: scale(1.08);
+}
+
+/* 文章内容 */
+.author-post-content {
+    padding: var(--qiling-space-24);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.author-post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--qiling-space-16);
+    font-size: calc(var(--qiling-font-size-base) * 0.8125);
+    color: var(--color-text-muted, var(--color-neutral-500));
+    margin-bottom: var(--qiling-space-12);
+}
+
+.author-post-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-4);
+}
+
+.author-post-meta svg {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+}
+
+.author-post-title {
+    font-size: calc(var(--qiling-font-size-base) * 1.125);
+    font-weight: 600;
+    margin: 0 0 var(--qiling-space-12);
+    line-height: 1.4;
+}
+
+.author-post-title a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.author-post-title a:hover {
+    color: var(--color-primary);
+}
+
+.author-post-excerpt {
+    font-size: calc(var(--qiling-font-size-base) * 0.9375);
+    line-height: 1.7;
+    color: var(--color-text-secondary, var(--color-neutral-600));
+    margin: 0 0 var(--qiling-space-16);
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.author-post-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-6);
+    font-size: calc(var(--qiling-font-size-base) * 0.875);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.author-post-readmore:hover {
+    gap: var(--qiling-space-10);
+}
+
+.author-post-readmore svg {
+    transition: transform 0.3s ease;
+}
+
+.author-post-readmore:hover svg {
+    transform: translateX(4px);
+}
+
+/* 空状态 */
+.author-posts-empty {
+    text-align: center;
+    padding: var(--qiling-space-80) var(--qiling-space-20);
+    color: var(--color-text-muted, var(--color-neutral-500));
+}
+
+.author-posts-empty svg {
+    margin-bottom: var(--qiling-space-20);
+    opacity: 0.4;
+}
+
+.author-posts-empty p {
+    font-size: var(--qiling-font-size-base);
+    margin: 0;
+}
+
+/* ===== 分页 ===== */
+.author-pagination {
+    margin-top: var(--qiling-space-50);
+    text-align: center;
+}
+
+.author-pagination .nav-links {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qiling-space-8);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.author-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--qiling-space-44);
+    height: 44px;
+    padding: 0 var(--qiling-space-16);
+    background: var(--color-neutral-0);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(var(--qiling-rgb-0-0-0), 0.06);
+}
+
+.author-pagination .page-numbers:hover {
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(var(--color-primary-rgb, 99, 102, 241), 0.3);
+}
+
+.author-pagination .page-numbers.current {
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+.author-pagination .page-numbers.dots {
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+}
+
+.author-pagination .page-numbers.dots:hover {
+    transform: none;
+    color: var(--color-text);
+}
+
+.author-pagination .prev,
+.author-pagination .next {
+    gap: var(--qiling-space-6);
+}
+
+/* ===== 响应式布局 ===== */
+@media (max-width: 1024px) {
+    .author-posts-section .qiling-native-blog-grid-author {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .author-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--qiling-space-24);
+    }
+
+    .author-profile-stats {
+        gap: var(--qiling-space-40);
+    }
+}
+
+@media (max-width: 768px) {
+    .author-posts-section .qiling-native-blog-grid-author {
+        grid-template-columns: 1fr;
+    }
+
+    .author-profile-header {
+        padding: var(--qiling-space-60) 0 var(--qiling-space-50);
+    }
+
+    .author-profile-main {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--qiling-space-20);
+    }
+
+    .author-profile-avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .author-profile-name {
+        font-size: calc(var(--qiling-font-size-base) * 1.5);
+    }
+
+    .author-profile-bio {
+        max-width: var(--qiling-measure-pct-100);
+    }
+
+    .author-profile-actions {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .author-follow-btn,
+    .author-message-btn {
+        flex: 1;
+        max-width: var(--qiling-measure-140);
+        justify-content: center;
+        padding: var(--qiling-space-10) var(--qiling-space-20);
+    }
+
+    .author-profile-social {
+        justify-content: center;
+    }
+
+    .author-profile-stats {
+        flex-wrap: wrap;
+        gap: var(--qiling-space-24) var(--qiling-space-40);
+    }
+
+    .author-stat-value {
+        font-size: calc(var(--qiling-font-size-base) * 1.5);
+    }
+
+    .author-posts-grid {
+        grid-template-columns: 1fr;
+        gap: var(--qiling-space-20);
+    }
+
+    .author-post-card {
+        flex-direction: row;
+    }
+
+    .author-post-thumb {
+        width: 120px;
+        min-width: var(--qiling-measure-120);
+        padding-top: 0;
+        height: auto;
+    }
+
+    .author-post-thumb img {
+        position: static;
+        width: 120px;
+        height: 100%;
+    }
+
+    .author-post-content {
+        padding: var(--qiling-space-16);
+    }
+
+    .author-post-title {
+        font-size: var(--qiling-font-size-base);
+    }
+
+    .author-post-excerpt {
+        display: none;
+    }
+
+    .author-post-meta {
+        font-size: calc(var(--qiling-font-size-base) * 0.75);
+        gap: var(--qiling-space-12);
+    }
+}
+
+@media (max-width: 480px) {
+    .author-profile-header {
+        padding: var(--qiling-space-50) 0 var(--qiling-space-40);
+    }
+
+    .author-profile-avatar img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .author-profile-name {
+        font-size: calc(var(--qiling-font-size-base) * 1.25);
+    }
+
+    .author-profile-bio {
+        font-size: calc(var(--qiling-font-size-base) * 0.875);
+    }
+
+    .author-follow-btn,
+    .author-message-btn {
+        padding: var(--qiling-space-8) var(--qiling-space-16);
+        font-size: calc(var(--qiling-font-size-base) * 0.8125);
+    }
+
+    .author-profile-stats {
+        gap: var(--qiling-space-16) var(--qiling-space-30);
+    }
+
+    .author-stat-value {
+        font-size: calc(var(--qiling-font-size-base) * 1.25);
+    }
+
+    .author-stat-label {
+        font-size: calc(var(--qiling-font-size-base) * 0.75);
+    }
+
+    .author-posts-title {
+        font-size: calc(var(--qiling-font-size-base) * 1.25);
+        margin-bottom: var(--qiling-space-20);
+    }
+
+    .author-posts-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--qiling-space-8);
+        margin-bottom: var(--qiling-space-20);
+    }
+
+    .author-post-thumb {
+        width: 100px;
+        min-width: var(--qiling-space-100);
+    }
+
+    .author-post-thumb img {
+        width: 100px;
+    }
+
+    .author-pagination .page-numbers {
+        min-width: var(--qiling-space-40);
+        height: 40px;
+        padding: 0 var(--qiling-space-12);
+        font-size: calc(var(--qiling-font-size-base) * 0.875);
+    }
+}
+
+/* ===== 暗色模式支持 ===== */
+
+
+/* 主题暗色模式类支持 */
+[data-theme="dark"] .author-posts-section,
+.dark-mode .author-posts-section {
+    background: var(--color-bg-dark, var(--color-neutral-900));
+}
+
+[data-theme="dark"] .author-post-card,
+.dark-mode .author-post-card {
+    background: var(--color-card-dark, var(--color-neutral-800));
+}
+
+[data-theme="dark"] .author-pagination .page-numbers,
+.dark-mode .author-pagination .page-numbers {
+    background: var(--color-card-dark, var(--color-neutral-800));
+    color: var(--color-text-light, var(--color-neutral-200));
+}
+
+[data-theme="dark"] .author-pagination .page-numbers:hover,
+.dark-mode .author-pagination .page-numbers:hover {
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+}
+
+/* 头部暗黑模式支持 (Header Dark Mode Support) */
+[data-theme="dark"] .author-profile-header,
+.dark-mode .author-profile-header {
+    background: var(--color-bg-dark, var(--color-neutral-900)) !important;
+    background-image: none !important;
+}
+
+[data-theme="dark"] .author-profile-header::before,
+.dark-mode .author-profile-header::before {
+    opacity: 0.1;
+}

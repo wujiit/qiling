@@ -1,0 +1,33 @@
+/* @qiling-keep-standalone-split: GitHub Activity owns this stylesheet. */
+.module-github-activity .qga-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.module-github-activity .qga-kicker{display:inline-flex;margin-bottom:10px;color:#0369a1;font-size:12px;font-weight:700;letter-spacing:0;text-transform:uppercase}
+.module-github-activity .qga-title{margin:0;color:#0f172a;font-size:clamp(28px,4vw,44px);line-height:1.15;letter-spacing:0}
+.module-github-activity .qga-subtitle{max-width:720px;margin:12px 0 0;color:#475569;font-size:16px;line-height:1.75}
+.module-github-activity .qga-repo-link{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid #cbd5e1;border-radius:8px;color:#0f172a;background:#fff;text-decoration:none;font-weight:700}
+.module-github-activity .qga-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;align-items:stretch}
+.module-github-activity .qga-main{display:grid;gap:16px}
+.module-github-activity .qga-repo-card,.module-github-activity .qga-release,.module-github-activity .qga-commits,.module-github-activity .qga-stat{border:1px solid #e2e8f0;border-radius:8px;background:#fff;box-shadow:0 16px 40px rgba(15,23,42,.06)}
+.module-github-activity .qga-repo-card{padding:24px}
+.module-github-activity .qga-repo-name{color:#0f172a;font-size:20px;font-weight:800;line-height:1.3}
+.module-github-activity .qga-repo-desc{margin:10px 0 0;color:#475569;line-height:1.7}
+.module-github-activity .qga-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.module-github-activity .qga-pills span{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;background:#f1f5f9;color:#334155;font-size:12px;font-weight:700}
+.module-github-activity .qga-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.module-github-activity .qga-stat{padding:20px}
+.module-github-activity .qga-stat-value{color:#0f172a;font-size:30px;font-weight:850;line-height:1}
+.module-github-activity .qga-stat-label{margin-top:8px;color:#64748b;font-size:13px;font-weight:700}
+.module-github-activity .qga-release{padding:24px;display:flex;flex-direction:column;justify-content:center}
+.module-github-activity .qga-card-label{color:#0369a1;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0;margin-bottom:12px}
+.module-github-activity .qga-release-version{color:#0f172a;text-decoration:none;font-size:28px;font-weight:850;line-height:1.15;word-break:break-word}
+.module-github-activity .qga-release-name{margin-top:10px;color:#334155;font-weight:700}
+.module-github-activity .qga-muted{color:#64748b;font-size:14px;line-height:1.6}
+.module-github-activity .qga-commits{margin-top:16px;padding:8px}
+.module-github-activity .qga-commits>.qga-card-label{padding:14px 16px 4px}
+.module-github-activity .qga-commit{display:grid;grid-template-columns:80px minmax(0,1fr) 190px;gap:14px;align-items:center;padding:14px 16px;border-radius:6px;color:#0f172a;text-decoration:none}
+.module-github-activity .qga-commit:hover{background:#f8fafc}
+.module-github-activity .qga-commit-sha{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#0369a1;font-weight:800}
+.module-github-activity .qga-commit-message{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}
+.module-github-activity .qga-commit-meta{color:#64748b;font-size:13px;text-align:right;white-space:nowrap}
+.module-github-activity .qga-admin-note,.module-github-activity .qga-empty{margin-top:16px;padding:12px 14px;border:1px solid #fde68a;border-radius:8px;background:#fffbeb;color:#92400e;font-size:14px}
+@media (max-width:900px){.module-github-activity .qga-header{display:block}.module-github-activity .qga-repo-link{margin-top:18px}.module-github-activity .qga-layout{grid-template-columns:1fr}.module-github-activity .qga-commit{grid-template-columns:68px minmax(0,1fr)}.module-github-activity .qga-commit-meta{grid-column:2;text-align:left}}
+@media (max-width:640px){.module-github-activity .qga-stats{grid-template-columns:1fr}.module-github-activity .qga-title{font-size:28px}.module-github-activity .qga-commit{grid-template-columns:1fr;gap:6px}.module-github-activity .qga-commit-meta{grid-column:auto}}

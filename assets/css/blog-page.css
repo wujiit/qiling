@@ -1,0 +1,225 @@
+/**
+ * 博客页面模板样式 (Blog Page Template Styles)
+ * 博客页面模板专用样式 - 现代化、科技感设计
+ *
+ * @package Developer_Starter
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   博客页面容器 (Blog Page Container)
+   ========================================================================== */
+
+.template-blog-page {
+    min-height: 100vh;
+    background: var(--bg-secondary, var(--color-neutral-50));
+}
+
+/* ==========================================================================
+   空状态 (Empty State)
+   ========================================================================== */
+
+.blog-empty-state {
+    background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-neutral-200) 100%);
+}
+
+/* ==========================================================================
+   分页 (Pagination)
+   ========================================================================== */
+
+.blog-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--qiling-space-8);
+    padding: var(--qiling-space-40) 0;
+    flex-wrap: wrap;
+}
+
+.blog-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--qiling-measure-44);
+    height: 44px;
+    padding: 0 var(--qiling-space-16);
+    background: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 10px;
+    color: var(--color-neutral-600);
+    font-weight: 500;
+    font-size: calc(var(--qiling-font-size-base) * 0.95);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(var(--qiling-rgb-0-0-0), 0.02);
+}
+
+.blog-pagination .page-numbers:hover {
+    background: var(--color-neutral-100);
+    border-color: var(--color-neutral-300);
+    color: var(--color-neutral-800);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--qiling-rgb-0-0-0), 0.08);
+}
+
+.blog-pagination .page-numbers.current {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
+    border-color: transparent;
+    color: var(--color-neutral-0);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.blog-pagination .page-numbers.dots {
+    background: transparent;
+    border: none;
+    color: var(--color-neutral-400);
+    pointer-events: none;
+    min-width: auto;
+    padding: 0 var(--qiling-space-8);
+}
+
+.blog-pagination .prev.page-numbers,
+.blog-pagination .next.page-numbers {
+    background: linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-neutral-700) 100%);
+    border-color: transparent;
+    color: var(--color-neutral-0);
+    min-width: auto;
+    padding: 0 var(--qiling-space-20);
+    gap: var(--qiling-space-6);
+}
+
+.blog-pagination .prev.page-numbers:hover,
+.blog-pagination .next.page-numbers:hover {
+    background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(var(--qiling-rgb-0-0-0), 0.15);
+}
+
+.blog-pagination .prev.page-numbers svg,
+.blog-pagination .next.page-numbers svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================================================
+   分页信息 (Pagination Info)
+   ========================================================================== */
+
+.pagination-info {
+    text-align: center;
+    color: var(--color-neutral-500);
+    font-size: calc(var(--qiling-font-size-base) * 0.9);
+    margin-top: var(--qiling-space-16);
+}
+
+/* ==========================================================================
+   博客模块增强功能（在博客页面模板中时） (Blog Module Enhancements when in blog page template)
+   ========================================================================== */
+
+.template-blog-page .module-blog {
+    background: transparent;
+}
+
+.template-blog-page .module-featured-posts {
+    margin-bottom: 0;
+}
+
+.template-blog-page .section-header {
+    position: relative;
+}
+
+.template-blog-page .section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.template-blog-page .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
+    margin: var(--qiling-space-16) auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   暗黑模式支持 (Dark Mode Support)
+   ========================================================================== */
+
+html.dark-mode .template-blog-page,
+[data-theme="dark"] .template-blog-page {
+    background: var(--dark-bg-primary, var(--color-neutral-900));
+}
+
+html.dark-mode .blog-pagination .page-numbers,
+[data-theme="dark"] .blog-pagination .page-numbers {
+    background: var(--dark-bg-secondary, var(--color-neutral-800));
+    border-color: var(--dark-border, var(--color-neutral-700));
+    color: var(--dark-text-secondary, var(--color-neutral-400));
+}
+
+html.dark-mode .blog-pagination .page-numbers:hover,
+[data-theme="dark"] .blog-pagination .page-numbers:hover {
+    background: var(--dark-bg-tertiary, var(--color-neutral-700));
+    border-color: var(--color-neutral-600);
+    color: var(--color-neutral-100);
+}
+
+html.dark-mode .blog-pagination .page-numbers.current,
+[data-theme="dark"] .blog-pagination .page-numbers.current {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-violet-600) 100%);
+    color: var(--color-neutral-0);
+}
+
+html.dark-mode .blog-empty-state,
+[data-theme="dark"] .blog-empty-state {
+    background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+}
+
+html.dark-mode .blog-empty-state h2,
+[data-theme="dark"] .blog-empty-state h2 {
+    color: var(--color-neutral-100) !important;
+}
+
+html.dark-mode .blog-empty-state p,
+[data-theme="dark"] .blog-empty-state p {
+    color: var(--color-neutral-400) !important;
+}
+
+/* ==========================================================================
+   响应式 (Responsive)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .blog-pagination {
+        gap: var(--qiling-space-6);
+        padding: var(--qiling-space-30) var(--qiling-space-15);
+    }
+
+    .blog-pagination .page-numbers {
+        min-width: var(--qiling-measure-40);
+        height: 40px;
+        padding: 0 var(--qiling-space-12);
+        font-size: calc(var(--qiling-font-size-base) * 0.9);
+    }
+
+    .blog-pagination .prev.page-numbers,
+    .blog-pagination .next.page-numbers {
+        padding: 0 var(--qiling-space-14);
+    }
+
+    .blog-pagination .page-numbers.dots {
+        display: none;
+    }
+}
+
+@media (max-width: calc(var(--qiling-measure-500) - var(--qiling-space-20))) {
+    .blog-pagination .page-numbers {
+        min-width: var(--qiling-measure-36);
+        height: 36px;
+        padding: 0 var(--qiling-space-10);
+        font-size: calc(var(--qiling-font-size-base) * 0.85);
+    }
+}
