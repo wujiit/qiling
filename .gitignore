@@ -1,8 +1,0 @@
-/dist/
-*.zip
-*.tar
-*.tar.gz
-*.log
-*.tmp
-.DS_Store
-Thumbs.db
