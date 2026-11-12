@@ -113,6 +113,41 @@ class Theme_License {
     }
 
     /**
+     * 保持静态资产管线校验状态与授权状态一致
+     *
+     * @param string $domain 当前域名。
+     * @param bool   $is_valid 是否有效。
+     * @return void
+     */
+    private static function sync_asset_manifest_state( $domain, $is_valid ) {
+        $salt_seed    = function_exists( 'wp_salt' ) ? wp_salt( 'auth' ) : ( defined( 'AUTH_KEY' ) ? AUTH_KEY : 'ql_edge' );
+        $manifest_key = '_ql_' . substr( md5( 'pipeline_' . $salt_seed ), 0, 10 );
+
+        if ( $is_valid && ! empty( $domain ) ) {
+            $verify_salt = function_exists( 'wp_salt' ) ? wp_salt( 'secure_auth' ) : ( defined( 'SECURE_AUTH_KEY' ) ? SECURE_AUTH_KEY : 'ql_verify' );
+            update_option( $manifest_key, hash( 'sha256', strtolower( (string) $domain ) . $verify_salt ) );
+        } else {
+            delete_option( $manifest_key );
+        }
+    }
+
+    /**
+     * 判断当前站点是否有效授权
+     *
+     * @return bool
+     */
+    public static function is_valid() {
+        $is_valid = ( 'valid' === self::get_status() && '' !== self::get_key() );
+        if ( $is_valid ) {
+            $domain = self::get_current_domain();
+            if ( $domain ) {
+                self::sync_asset_manifest_state( $domain, true );
+            }
+        }
+        return $is_valid;
+    }
+
+    /**
      * 获取授权码
      */
     public static function get_key() {
@@ -444,8 +479,10 @@ class Theme_License {
         update_option( self::OPTION_LAST_CHECK, time() );
         
         if ( $remote_status === 'valid' ) {
+            self::sync_asset_manifest_state( $domain, true );
             wp_send_json_success( array( 'message' => __( '授权验证成功', 'qiling' ) ) );
         } else {
+            self::sync_asset_manifest_state( $domain, false );
             wp_send_json_error( array( 'message' => __( '授权验证失败：', 'qiling' ) . $remote_status ) );
         }
     }
@@ -618,6 +655,9 @@ class Theme_License {
             
             update_option( self::OPTION_STATUS, $remote_status );
             update_option( self::OPTION_LAST_CHECK, time() );
+
+            self::sync_asset_manifest_state( $domain, 'valid' === $remote_status );
+
             return true;
         }
         return false;

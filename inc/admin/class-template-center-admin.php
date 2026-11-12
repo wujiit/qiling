@@ -81,6 +81,9 @@ class Template_Center_Admin {
         $industry_choices = $this->get_industry_choices( $catalog );
         $industry_coverage = $this->get_industry_coverage_data( $catalog );
         $stats = $this->get_catalog_stats( $catalog, $industry_coverage );
+        $demo_data_count = class_exists( '\Developer_Starter\Admin\Template_Demo_Data_Service' )
+            ? \Developer_Starter\Admin\Template_Demo_Data_Service::get_demo_data_count()
+            : 0;
 
         ?>
         <div class="wrap qiling-template-center">
@@ -120,6 +123,19 @@ class Template_Center_Admin {
                 <div class="qtc-summary-card">
                     <strong><?php echo esc_html( number_format_i18n( count( $category_choices ) - 1 ) ); ?></strong>
                     <span><?php esc_html_e( '分组数量', 'qiling' ); ?></span>
+                </div>
+                <div class="qtc-summary-card qtc-summary-demo-card" style="border-left: 3px solid <?php echo $demo_data_count > 0 ? '#f59e0b' : '#10b981'; ?>;">
+                    <strong style="color: <?php echo $demo_data_count > 0 ? '#b45309' : '#059669'; ?>;"><?php echo esc_html( number_format_i18n( $demo_data_count ) ); ?></strong>
+                    <span><?php esc_html_e( '全站演示数据', 'qiling' ); ?></span>
+                    <?php if ( $demo_data_count > 0 ) : ?>
+                        <form method="post" style="margin-top: 6px;" onsubmit="return confirm('<?php echo esc_js( __( '确定要一键彻底删除全站所有行业模版演示数据吗？此操作不可逆。', 'qiling' ) ); ?>');">
+                            <?php wp_nonce_field( 'developer_starter_template_center_clear_demo' ); ?>
+                            <input type="hidden" name="qiling_template_center_action" value="clear_demo_data" />
+                            <button type="submit" class="button button-small" style="color: #dc2626; border-color: #fca5a5; background: #fef2f2; font-size: 11px; padding: 1px 6px; line-height: 1.6; cursor: pointer;">
+                                🗑️ <?php esc_html_e( '一键清空演示数据', 'qiling' ); ?>
+                            </button>
+                        </form>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -189,6 +205,30 @@ class Template_Center_Admin {
      */
     private function handle_create_request() {
         $action = sanitize_key( $this->get_request_value( $_POST, 'qiling_template_center_action' ) );
+
+        if ( 'clear_demo_data' === $action ) {
+            check_admin_referer( 'developer_starter_template_center_clear_demo' );
+
+            if ( ! current_user_can( 'manage_options' ) ) {
+                wp_die( esc_html__( '权限不足', 'qiling' ) );
+            }
+
+            $cleared_count = 0;
+            if ( class_exists( '\Developer_Starter\Admin\Template_Demo_Data_Service' ) ) {
+                $cleared_count = \Developer_Starter\Admin\Template_Demo_Data_Service::clear_all_demo_data();
+            }
+
+            $redirect = add_query_arg(
+                array(
+                    'page'         => $this->page_slug,
+                    'demo_cleared' => absint( $cleared_count ),
+                ),
+                admin_url( 'admin.php' )
+            );
+            wp_safe_redirect( $redirect );
+            exit;
+        }
+
         if ( 'create_page' !== $action ) {
             return;
         }
@@ -308,12 +348,19 @@ class Template_Center_Admin {
             update_post_meta( $post_id, '_qiling_template_center_ai_localization_status', is_wp_error( $localization_result ) ? 'failed' : 'completed' );
         }
 
+        $generate_demo_data = '1' === $this->get_request_value( $_POST, 'generate_demo_data' );
+        $demo_posts_count   = 0;
+        if ( $generate_demo_data && class_exists( '\Developer_Starter\Admin\Template_Demo_Data_Service' ) ) {
+            $demo_posts_count = \Developer_Starter\Admin\Template_Demo_Data_Service::generate_demo_data_for_template( $template, $post_id, $title );
+        }
+
         $redirect = add_query_arg(
             array(
                 'page'             => $this->page_slug,
                 'template_created' => '1',
                 'post_id'          => absint( $post_id ),
                 'modules_filled'   => $filled ? '1' : '0',
+                'demo_created'     => absint( $demo_posts_count ),
                 'template_localized'=> is_array( $localization_result ) ? '1' : '0',
                 'template_localization_error' => is_wp_error( $localization_result ) ? $localization_result->get_error_message() : '',
             ),
@@ -329,6 +376,19 @@ class Template_Center_Admin {
      * @return void
      */
     private function render_notice() {
+        if ( '' !== $this->get_request_value( $_GET, 'demo_cleared' ) ) {
+            $cleared = absint( $this->get_request_value( $_GET, 'demo_cleared' ) );
+            ?>
+            <div class="notice notice-success is-dismissible">
+                <p>
+                    <strong><?php esc_html_e( '🧹 演示数据清理成功：', 'qiling' ); ?></strong>
+                    <?php echo esc_html( sprintf( __( '已彻底清除 %d 篇官方模版配套演示数据，数据库已恢复纯净状态。', 'qiling' ), $cleared ) ); ?>
+                </p>
+            </div>
+            <?php
+            return;
+        }
+
         if ( '' !== $this->get_request_value( $_GET, 'template_error' ) ) {
             $message = sanitize_text_field( $this->get_request_value( $_GET, 'template_error' ) );
             ?>
@@ -352,10 +412,16 @@ class Template_Center_Admin {
         $filled = '1' === $this->get_request_value( $_GET, 'modules_filled' );
         $localized = '1' === $this->get_request_value( $_GET, 'template_localized' );
         $localization_error = sanitize_text_field( $this->get_request_value( $_GET, 'template_localization_error' ) );
+        $demo_created = absint( $this->get_request_value( $_GET, 'demo_created' ) );
         ?>
         <div class="notice notice-success is-dismissible">
             <p>
                 <?php echo esc_html( $filled ? __( '页面已创建，官方预设模块已填充。', 'qiling' ) : __( '页面已创建，但没有填充到模块；请进入页面检查模板或手动装修。', 'qiling' ) ); ?>
+                <?php if ( $demo_created > 0 ) : ?>
+                    <span style="font-weight: 600; color: #047857; margin-left: 6px;">
+                        <?php echo esc_html( sprintf( __( '📦 已同步生成 %d 篇配套行业演示数据（可在文章列表编辑或随时在上方一键清空）。', 'qiling' ), $demo_created ) ); ?>
+                    </span>
+                <?php endif; ?>
                 <?php if ( $localized ) : ?>
                     <?php esc_html_e( '已同步生成对应语言页面。', 'qiling' ); ?>
                 <?php elseif ( '' !== $localization_error ) : ?>
@@ -521,6 +587,7 @@ class Template_Center_Admin {
 					'label'          => $label,
                     'source'         => 'official',
                     'source_label'   => __( '启灵官方', 'qiling' ),
+                    'modules_count'  => is_array( $config ) ? count( $config ) : 0,
                     'created_pages'  => isset( $usage_data[ $template ]['count'] ) ? absint( $usage_data[ $template ]['count'] ) : 0,
                     'usage_pages'    => isset( $usage_data[ $template ]['pages'] ) && is_array( $usage_data[ $template ]['pages'] ) ? $usage_data[ $template ]['pages'] : array(),
                 ),
@@ -631,6 +698,7 @@ class Template_Center_Admin {
 		$scenario = isset( $template['scenario'] ) ? (string) $template['scenario'] : '';
 		$usage_count = isset( $template['created_pages'] ) ? absint( $template['created_pages'] ) : 0;
 		$usage_pages = isset( $template['usage_pages'] ) && is_array( $template['usage_pages'] ) ? $template['usage_pages'] : array();
+		$modules_count = isset( $template['modules_count'] ) ? absint( $template['modules_count'] ) : 0;
 		$defer_thumbnail = '' !== $thumbnail && $card_index >= 6;
 		$thumbnail_src = $defer_thumbnail ? 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' : $thumbnail;
 		$thumbnail_class = $defer_thumbnail ? ' qtc-thumb-lazy' : ' is-loaded';
@@ -662,6 +730,9 @@ class Template_Center_Admin {
 				<span class="qtc-source"><?php echo esc_html( $source_label ); ?></span>
 				<span class="qtc-category"><?php echo esc_html( $category_label ); ?></span>
 				<span class="qtc-usage-pill"><?php echo esc_html( $usage_count > 0 ? sprintf( __( '使用中 %s', 'qiling' ), number_format_i18n( $usage_count ) ) : __( '未使用', 'qiling' ) ); ?></span>
+                <?php if ( $modules_count > 0 ) : ?>
+                    <span class="qtc-modules-badge" style="margin-left: auto; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600;">🧩 <?php echo esc_html( sprintf( __( '%d 模块', 'qiling' ), $modules_count ) ); ?></span>
+                <?php endif; ?>
             </div>
             <h2><?php echo esc_html( $label ); ?></h2>
             <p><?php echo esc_html( $description ); ?></p>
@@ -755,6 +826,10 @@ class Template_Center_Admin {
                 <label class="qtc-checkbox">
                     <input type="checkbox" name="template_localization_enable" value="1" />
                     <span><?php esc_html_e( '创建后生成对应语言页面', 'qiling' ); ?></span>
+                </label>
+                <label class="qtc-checkbox" style="font-weight: 500; color: #1d2327;">
+                    <input type="checkbox" name="generate_demo_data" value="1" checked />
+                    <span><?php esc_html_e( '📦 自动导入配套行业演示数据 (可在模版中心一键彻底清空)', 'qiling' ); ?></span>
                 </label>
                 <button type="submit" class="button button-primary"><?php esc_html_e( '创建页面', 'qiling' ); ?></button>
             </form>

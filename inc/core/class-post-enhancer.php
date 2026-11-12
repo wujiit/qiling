@@ -204,9 +204,10 @@ class Post_Enhancer {
             ) );
         }
         
-        // 如果启用了TOC，加载TOC脚本
-        $toc_enable = developer_starter_get_option( 'toc_enable', '' );
-        if ( $toc_enable ) {
+        // 加载文章增强脚本（TOC 目录与代码块 macOS 增强/复制代码）
+        $toc_enable = (bool) developer_starter_get_option( 'toc_enable', '' );
+        $code_enhance_enable = (bool) developer_starter_get_option( 'code_enhance_enable', '1' );
+        if ( $toc_enable || $code_enhance_enable ) {
             wp_enqueue_script(
                 'developer-starter-article-enhance',
                 QILING_ASSETS . '/js/article-enhance.js',
@@ -221,6 +222,7 @@ class Post_Enhancer {
                 'tocCollapsible' => developer_starter_get_option( 'toc_collapsible', '' ),
                 'tocHeadingLevels' => developer_starter_get_option( 'toc_heading_levels', 'h2h3' ),
                 'copyButtonLabel' => __( '复制代码', 'qiling' ),
+                'copiedButtonLabel' => __( '已复制', 'qiling' ),
                 'tocExpandLabel' => __( '展开目录', 'qiling' ),
                 'tocCollapseLabel' => __( '收起目录', 'qiling' ),
                 'tocMobileOpenLabel' => __( '打开目录', 'qiling' ),
@@ -1719,16 +1721,29 @@ class Post_Enhancer {
             $post_id = get_the_ID();
         }
         
-        $content = get_post_field( 'post_content', $post_id );
-        $content = wp_strip_all_tags( $content );
-        $word_count = mb_strlen( $content, 'UTF-8' );
-        
+        $word_count = self::get_post_word_count( $post_id );
         $reading_speed = developer_starter_get_option( 'reading_speed', 400 );
         $reading_speed = $reading_speed ? (int) $reading_speed : 400;
         
         $minutes = ceil( $word_count / $reading_speed );
         
         return max( 1, $minutes );
+    }
+
+    /**
+     * 获取文章正文字数
+     *
+     * @param int|null $post_id 文章ID
+     * @return int 字数
+     */
+    public static function get_post_word_count( $post_id = null ) {
+        if ( ! $post_id ) {
+            $post_id = get_the_ID();
+        }
+        $content = (string) get_post_field( 'post_content', $post_id );
+        $content = wp_strip_all_tags( $content );
+        $clean   = preg_replace( '/\s+/u', '', $content );
+        return mb_strlen( (string) $clean, 'UTF-8' );
     }
 
     /**

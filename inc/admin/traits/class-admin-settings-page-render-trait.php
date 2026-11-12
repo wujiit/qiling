@@ -105,6 +105,11 @@ trait Admin_Settings_Page_Render_Trait {
         <div class="wrap ds-settings-wrap" data-current-tab="<?php echo esc_attr( $current_tab ); ?>" data-search-enabled="<?php echo $show_search ? '1' : '0'; ?>" data-settings-locked="<?php echo $settings_broken ? '1' : '0'; ?>">
             <div class="ds-settings-head">
                 <h1><?php esc_html_e( '企业主题设置', 'qiling' ); ?></h1>
+                <div class="ds-settings-head-actions" style="display: flex; align-items: center; gap: 10px;">
+                    <button type="button" class="button ds-doctor-trigger-btn" id="ds-open-theme-doctor" style="display: inline-flex; align-items: center; gap: 5px; font-weight: 600; color: #0284c7; border-color: #bae6fd; background: #f0f9ff;">
+                        <span class="dashicons dashicons-heart" style="font-size: 16px; width: 16px; height: 16px; line-height: 16px;"></span>
+                        <?php esc_html_e( '主题健康自检', 'qiling' ); ?>
+                    </button>
                 <button type="button" class="button ds-theme-toggle" aria-pressed="false" aria-label="<?php esc_attr_e( '切换暗黑模式', 'qiling' ); ?>" title="<?php esc_attr_e( '切换暗黑模式', 'qiling' ); ?>">
                     <span class="ds-theme-toggle-icon ds-theme-icon-sun" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -125,6 +130,7 @@ trait Admin_Settings_Page_Render_Trait {
                         </svg>
                     </span>
                 </button>
+                </div>
             </div>
             <?php settings_errors(); ?>
             <?php if ( $settings_broken ) : ?>
@@ -203,15 +209,73 @@ trait Admin_Settings_Page_Render_Trait {
             <?php endif; ?>
             
             <hr style="margin: 40px 0 20px;" />
-            <h2><?php esc_html_e( '恢复默认设置', 'qiling' ); ?></h2>
-            <p class="description"><?php esc_html_e( '如果设置出现问题，可以一键恢复所有主题设置为默认值。', 'qiling' ); ?></p>
-            <form method="post" style="margin-top: 15px;">
-                <?php wp_nonce_field( 'ds_reset_action', 'ds_reset_nonce' ); ?>
-                <button type="submit" name="ds_reset_settings" class="button button-secondary" 
-                        onclick="return confirm('<?php esc_html_e( '确定要恢复所有主题设置为默认值吗？此操作不可撤销！', 'qiling' ); ?>');">
-                    <?php esc_html_e( '恢复默认设置', 'qiling' ); ?>
-                </button>
-            </form>
+            <h2 style="font-size: 16px; margin-bottom: 12px;"><?php esc_html_e( '设置重置中心', 'qiling' ); ?></h2>
+            <div class="ds-reset-section-group" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; max-width: 900px;">
+                <div class="ds-reset-card" style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <h3 style="margin-top: 0; color: #1e293b; font-size: 14px;"><?php printf( esc_html__( '仅重置当前【%s】设置', 'qiling' ), esc_html( $tabs[ $current_tab ] ?? $current_tab ) ); ?></h3>
+                    <p class="description" style="margin-bottom: 12px;"><?php esc_html_e( '仅将当前选项卡内的配置项恢复为默认值，全站其他 20 多个选项卡的配置完全保留不变。', 'qiling' ); ?></p>
+                    <form method="post">
+                        <?php wp_nonce_field( 'ds_reset_tab_action', 'ds_reset_tab_nonce' ); ?>
+                        <input type="hidden" name="ds_reset_tab_name" value="<?php echo esc_attr( $current_tab ); ?>" />
+                        <button type="submit" name="ds_reset_tab_settings" class="button button-secondary" 
+                                onclick="return confirm('<?php printf( esc_attr__( '确定要仅恢复【%s】选项卡为默认值吗？其他选项卡不会被重置。', 'qiling' ), esc_attr( $tabs[ $current_tab ] ?? $current_tab ) ); ?>');">
+                            <?php printf( esc_html__( '恢复【%s】默认值', 'qiling' ), esc_html( $tabs[ $current_tab ] ?? $current_tab ) ); ?>
+                        </button>
+                    </form>
+                </div>
+                <div class="ds-reset-card" style="padding: 16px; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px;">
+                    <h3 style="margin-top: 0; color: #9f1239; font-size: 14px;"><?php esc_html_e( '恢复全站所有默认设置', 'qiling' ); ?></h3>
+                    <p class="description" style="margin-bottom: 12px;"><?php esc_html_e( '将全站所有 23 个选项卡的主题设置完全重置为初始状态，请谨慎操作！', 'qiling' ); ?></p>
+                    <form method="post">
+                        <?php wp_nonce_field( 'ds_reset_action', 'ds_reset_nonce' ); ?>
+                        <button type="submit" name="ds_reset_settings" class="button" style="color: #b91c1c; border-color: #fca5a5;" 
+                                onclick="return confirm('<?php esc_attr_e( '高风险操作：此操作将清空所有选项卡设置！确定要恢复全部设置为默认值吗？此操作不可撤销！', 'qiling' ); ?>');">
+                            <?php esc_html_e( '恢复全站默认设置', 'qiling' ); ?>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- 启灵主题健康自检助手模态弹窗 -->
+        <div id="ds-theme-doctor-modal" class="ds-doctor-modal-backdrop" style="display: none;">
+            <div class="ds-doctor-modal-dialog">
+                <div class="ds-doctor-modal-header">
+                    <div class="ds-doctor-modal-title">
+                        <span class="dashicons dashicons-heart" style="color: #0284c7; margin-right: 6px; font-size: 20px;"></span>
+                        <h3 style="margin: 0; font-size: 16px; font-weight: 600;"><?php esc_html_e( '启灵主题全站健康体检助手', 'qiling' ); ?></h3>
+                    </div>
+                    <button type="button" class="ds-doctor-close-btn" aria-label="<?php esc_attr_e( '关闭', 'qiling' ); ?>">&times;</button>
+                </div>
+                <div class="ds-doctor-modal-body">
+                    <div class="ds-doctor-loading" style="text-align: center; padding: 40px 20px;">
+                        <span class="spinner is-active" style="float: none; margin: 0 auto 12px auto; display: block;"></span>
+                        <p style="color: #64748b; font-size: 14px;"><?php esc_html_e( '正在对 PHP环境、SMTP发信、WebP驱动、合规与性能进行全面体检...', 'qiling' ); ?></p>
+                    </div>
+                    <div class="ds-doctor-content" style="display: none;">
+                        <div class="ds-doctor-score-card">
+                            <div class="ds-doctor-score-circle">
+                                <span class="ds-doctor-score-num">100</span>
+                                <span class="ds-doctor-score-unit"><?php esc_html_e( '分', 'qiling' ); ?></span>
+                            </div>
+                            <div class="ds-doctor-score-meta">
+                                <div class="ds-doctor-level-title"></div>
+                                <div class="ds-doctor-checked-time"></div>
+                                <div class="ds-doctor-counts">
+                                    <span class="ds-badge ds-badge-ok"></span>
+                                    <span class="ds-badge ds-badge-warn"></span>
+                                    <span class="ds-badge ds-badge-err"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ds-doctor-checklist"></div>
+                    </div>
+                </div>
+                <div class="ds-doctor-modal-footer">
+                    <button type="button" class="button button-primary ds-doctor-recheck-btn"><?php esc_html_e( '重新体检', 'qiling' ); ?></button>
+                    <button type="button" class="button ds-doctor-close-btn"><?php esc_html_e( '关闭', 'qiling' ); ?></button>
+                </div>
+            </div>
         </div>
         <?php
     }

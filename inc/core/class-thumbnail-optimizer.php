@@ -151,7 +151,40 @@ class Thumbnail_Optimizer {
      * @param string $url 图片 URL。
      * @return string
      */
+    /**
+     * 判断当前环境与后台配置是否支持生成并输出 WebP 格式缩略图。
+     *
+     * @return bool
+     */
+    private function is_webp_output_enabled() {
+        if ( ! developer_starter_get_option( 'thumbnail_webp_enable', '1' ) ) {
+            return false;
+        }
+
+        static $supported = null;
+        if ( null !== $supported ) {
+            return $supported;
+        }
+
+        $supported = false;
+        if ( function_exists( 'imagewebp' ) ) {
+            $supported = true;
+        } elseif ( class_exists( 'Imagick' ) && method_exists( 'Imagick', 'queryFormats' ) ) {
+            try {
+                $supported = in_array( 'WEBP', \Imagick::queryFormats( 'WEBP' ), true );
+            } catch ( \Exception $e ) {
+                $supported = false;
+            }
+        }
+
+        return $supported;
+    }
+
     private function resolve_cache_extension( $url ) {
+        if ( $this->is_webp_output_enabled() ) {
+            return 'webp';
+        }
+
         $extension = pathinfo( (string) parse_url( (string) $url, PHP_URL_PATH ), PATHINFO_EXTENSION );
         $extension = strtolower( trim( (string) $extension ) );
         if ( ! preg_match( '/^[a-z0-9]{2,6}$/', $extension ) ) {
@@ -252,6 +285,7 @@ class Thumbnail_Optimizer {
 
         // 获取裁剪重心点
         $gravity = $this->get_cdn_gravity( $crop_position, $cdn_type );
+        $webp_enabled = (bool) developer_starter_get_option( 'thumbnail_webp_enable', '1' );
 
         switch ( $cdn_type ) {
             case 'aliyun_oss':
@@ -262,21 +296,33 @@ class Thumbnail_Optimizer {
                     $params .= "/crop,w_{$width},h_{$height},g_{$gravity}";
                 }
                 $params .= "/quality,q_{$quality}";
+                if ( $webp_enabled ) {
+                    $params .= '/format,webp';
+                }
                 break;
 
             case 'tencent_cos':
                 // 腾讯云COS图片处理
                 $params = "imageMogr2/thumbnail/{$width}x{$height}!/crop/{$width}x{$height}/gravity/{$gravity}/quality/{$quality}";
+                if ( $webp_enabled ) {
+                    $params .= '/format/webp';
+                }
                 break;
 
             case 'qiniu':
                 // 七牛云图片处理
                 $params = "imageView2/1/w/{$width}/h/{$height}/q/{$quality}";
+                if ( $webp_enabled ) {
+                    $params .= '/format/webp';
+                }
                 break;
 
             case 'upyun':
                 // 又拍云图片处理
                 $params = "/fw/{$width}/fh/{$height}/fwfh/sq/quality/{$quality}";
+                if ( $webp_enabled ) {
+                    $params .= '/format/webp';
+                }
                 break;
 
             default:
@@ -586,6 +632,10 @@ class Thumbnail_Optimizer {
 
         // 保存
         $saved = $editor->save( $dest_path );
+        if ( is_wp_error( $saved ) && 'webp' === pathinfo( $dest_path, PATHINFO_EXTENSION ) ) {
+            $fallback_path = preg_replace( '/\.webp$/i', '.jpg', $dest_path );
+            $saved = $editor->save( $fallback_path );
+        }
 
         return ! is_wp_error( $saved );
     }

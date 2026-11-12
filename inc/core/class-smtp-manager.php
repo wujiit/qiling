@@ -469,15 +469,16 @@ class SMTP_Manager {
     }
 
     public function configure_smtp( $phpmailer ) {
-        $smtp_host = developer_starter_get_option( 'smtp_host', '' );
+        $smtp_host = trim( (string) developer_starter_get_option( 'smtp_host', '' ) );
         
         if ( empty( $smtp_host ) ) {
             return;
         }
         
-        $smtp_port = developer_starter_get_option( 'smtp_port', '465' );
-        $smtp_secure = developer_starter_get_option( 'smtp_secure', 'ssl' );
-        $smtp_username = developer_starter_get_option( 'smtp_username', '' );
+        $smtp_port = trim( (string) developer_starter_get_option( 'smtp_port', '465' ) );
+        $smtp_secure = trim( (string) developer_starter_get_option( 'smtp_secure', 'ssl' ) );
+        $smtp_username = trim( (string) developer_starter_get_option( 'smtp_username', '' ) );
+        $smtp_sender_name = trim( (string) developer_starter_get_option( 'smtp_sender_name', '' ) );
         $smtp_password_encrypted = developer_starter_get_option( 'smtp_password', '' );
 
         $smtp_password_upgraded = self::maybe_upgrade_password( $smtp_password_encrypted );
@@ -495,15 +496,24 @@ class SMTP_Manager {
         $phpmailer->Username = $smtp_username;
         $phpmailer->Password = $smtp_password;
         $phpmailer->CharSet = 'UTF-8';
+
+        // 强制信封对齐与发件人统一，防止 QQ/163/企业邮因发件人头不一致拒收（553/554 Data not accepted）
+        if ( ! empty( $smtp_username ) ) {
+            $phpmailer->Sender = $smtp_username;
+            $phpmailer->From   = $smtp_username;
+        }
+        if ( ! empty( $smtp_sender_name ) ) {
+            $phpmailer->FromName = $smtp_sender_name;
+        }
     }
 
     public function set_from_email( $email ) {
-        $smtp_username = developer_starter_get_option( 'smtp_username', '' );
+        $smtp_username = trim( (string) developer_starter_get_option( 'smtp_username', '' ) );
         return ! empty( $smtp_username ) ? $smtp_username : $email;
     }
 
     public function set_from_name( $name ) {
-        $sender_name = developer_starter_get_option( 'smtp_sender_name', '' );
+        $sender_name = trim( (string) developer_starter_get_option( 'smtp_sender_name', '' ) );
         return ! empty( $sender_name ) ? $sender_name : $name;
     }
 }

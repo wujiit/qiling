@@ -214,9 +214,13 @@ class Meta_Boxes_Editor_Service {
             <?php
         endforeach;
         ?>
-        <button type="button" class="dsm-add-btn dsm-btn-templates">
-            <?php esc_html_e( '我的模版库', 'qiling' ); ?>
+        <button type="button" class="dsm-add-btn dsm-btn-templates" title="<?php echo esc_attr__( '查看已保存的常用模块预设与模板', 'qiling' ); ?>">
+            ⭐ <?php esc_html_e( '我的模版预设库', 'qiling' ); ?>
         </button>
+        <button type="button" class="dsm-add-btn dsm-btn-paste-clipboard" title="<?php echo esc_attr__( '从浏览器剪贴板粘贴已复制的模块到当前页面底部', 'qiling' ); ?>" style="background: rgba(16, 185, 129, 0.35); border-color: rgba(16, 185, 129, 0.6);">
+            📋 <?php esc_html_e( '从剪贴板粘贴模块', 'qiling' ); ?>
+        </button>
+
         <?php if ( $ai_builder_available ) : ?>
         <button type="button" class="dsm-add-btn dsm-btn-ai-decorate">
             <?php esc_html_e( 'AI装修', 'qiling' ); ?>

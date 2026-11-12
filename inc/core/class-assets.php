@@ -1520,8 +1520,8 @@ class Assets {
      * @return string
      */
     private function get_modules_css_load_mode() {
-        $mode = sanitize_key( (string) developer_starter_get_option( 'module_css_load_mode', 'single' ) );
-        return in_array( $mode, array( 'single', 'split' ), true ) ? $mode : 'single';
+        $mode = sanitize_key( (string) developer_starter_get_option( 'module_css_load_mode', 'split' ) );
+        return in_array( $mode, array( 'single', 'split' ), true ) ? $mode : 'split';
     }
 
     /**

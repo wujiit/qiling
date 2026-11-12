@@ -531,38 +531,6 @@ class Meta_Boxes {
             'side',
             'default'
         );
-
-        add_meta_box(
-            'qiling_post_comments_settings',
-            __( '评论设置', 'qiling' ),
-            array( $this, 'render_post_comments_meta_box' ),
-            'post',
-            'side',
-            'default'
-        );
-    }
-
-    /**
-     * 渲染单篇文章评论可见性控制开关。
-     *
-     * @param \WP_Post $post Current post.
-     * @return void
-     */
-    public function render_post_comments_meta_box( $post ) {
-        wp_nonce_field( 'qiling_post_comments_settings', 'qiling_post_comments_nonce' );
-        $setting = get_post_meta( $post->ID, '_qiling_comments_enabled', true );
-        $global_closed = 'closed' === get_option( 'default_comment_status', 'open' );
-        ?>
-        <p>
-            <label>
-                <input type="checkbox" name="qiling_comments_enabled" value="1" <?php checked( '1', (string) $setting ); ?> />
-                <?php esc_html_e( '允许此文章显示并接收评论', 'qiling' ); ?>
-            </label>
-        </p>
-        <p class="description">
-            <?php echo esc_html( $global_closed ? __( '全站默认已关闭评论；勾选后仅此文章开启评论。', 'qiling' ) : __( '未勾选时沿用 WordPress 的文章评论状态。', 'qiling' ) ); ?>
-        </p>
-        <?php
     }
 
     public function render_modules_meta_box( $post ) {
@@ -721,13 +689,27 @@ class Meta_Boxes {
             }
         }
 
+        $module_data = array();
+        if ( ! empty( $_POST['module_data'] ) ) {
+            $raw_data = wp_unslash( $_POST['module_data'] );
+            if ( is_string( $raw_data ) ) {
+                $decoded = json_decode( $raw_data, true );
+                if ( is_array( $decoded ) ) {
+                    $module_data = $decoded;
+                }
+            } elseif ( is_array( $raw_data ) ) {
+                $module_data = $raw_data;
+            }
+        }
+        $use_defaults = empty( $module_data );
+
         $html = $this->get_editor_service()->render_module_item_html(
             $idx,
             $type,
-            array(),
+            $module_data,
             $this->module_fields,
             $this->get_module_renderer(),
-            true
+            $use_defaults
         );
         if ( is_wp_error( $html ) ) {
             wp_send_json_error( $html->get_error_message() );
@@ -968,14 +950,6 @@ class Meta_Boxes {
     public function save_meta_boxes( $post_id ) {
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
         if ( ! current_user_can( 'edit_post', $post_id ) ) return;
-
-        if ( 'post' === get_post_type( $post_id ) && isset( $_POST['qiling_post_comments_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['qiling_post_comments_nonce'] ) ), 'qiling_post_comments_settings' ) ) {
-            if ( isset( $_POST['qiling_comments_enabled'] ) && '1' === wp_unslash( (string) $_POST['qiling_comments_enabled'] ) ) {
-                update_post_meta( $post_id, '_qiling_comments_enabled', '1' );
-            } else {
-                update_post_meta( $post_id, '_qiling_comments_enabled', '0' );
-            }
-        }
 
         $this->get_modules_save_service()->handle_modules_save(
             $post_id,

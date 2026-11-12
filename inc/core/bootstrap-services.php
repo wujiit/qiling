@@ -272,7 +272,12 @@ function developer_starter_get_setup_wizard_cleanup_service() {
  */
 function developer_starter_boot_foundation_services() {
     Developer_Starter\Core\Search_Mode_Manager::get_instance();
-    Developer_Starter\Core\Content_Model_Center::get_instance();
+    if ( ! class_exists( '\Developer_Starter\Core\Content_Model_Center', false ) && file_exists( QILING_INC . '/core/class-content-model-center.php' ) ) {
+        require_once QILING_INC . '/core/class-content-model-center.php';
+    }
+    if ( class_exists( '\Developer_Starter\Core\Content_Model_Center' ) ) {
+        Developer_Starter\Core\Content_Model_Center::get_instance();
+    }
     Developer_Starter\Core\User_Manager::init();
     Developer_Starter\Core\Auth_Functions::init();
     Developer_Starter\Core\Blog_Visual_Manager::bootstrap();
@@ -336,6 +341,7 @@ function developer_starter_boot_admin_services() {
     new Developer_Starter\Admin\Template_Center_Admin();
     new Developer_Starter\Admin\Page_Package_Admin();
     new Developer_Starter\Admin\User_Columns();
+    new Developer_Starter\Admin\Comment_Columns();
     new Developer_Starter\Admin\Site_Notification_Admin();
 }
 

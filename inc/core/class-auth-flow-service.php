@@ -117,12 +117,17 @@ class Auth_Flow_Service {
             return new \WP_Error( 'login_failed', __( '用户名或密码错误', 'qiling' ) );
         }
 
+        if ( function_exists( 'developer_starter_set_logged_in_nocache_cookie' ) ) {
+            developer_starter_set_logged_in_nocache_cookie();
+        }
+
         $redirect = $this->get_option( 'login_redirect_url', '' );
         if ( empty( $redirect ) ) {
             $redirect_to = isset( $request['redirect_to'] ) ? esc_url_raw( wp_unslash( (string) $request['redirect_to'] ) ) : '';
-            $redirect = wp_validate_redirect( $redirect_to, home_url() );
+            $redirect = wp_validate_redirect( $redirect_to, home_url( '/' ) );
         }
         $redirect = apply_filters( 'developer_starter_auth_login_redirect', $redirect, $user, $this->get_safe_hook_request_payload() );
+        $redirect = $this->sanitize_auth_redirect( $redirect );
 
         do_action( 'developer_starter_auth_login_success', $user, $redirect, developer_starter_resolve_client_ip( $this->client_ip_callback ) );
 
@@ -272,12 +277,17 @@ class Auth_Flow_Service {
         wp_set_current_user( $user_id );
         wp_set_auth_cookie( $user_id, true );
 
+        if ( function_exists( 'developer_starter_set_logged_in_nocache_cookie' ) ) {
+            developer_starter_set_logged_in_nocache_cookie();
+        }
+
         $redirect = $this->get_option( 'register_redirect_url', '' );
         if ( empty( $redirect ) ) {
             $redirect_to = isset( $request['redirect_to'] ) ? esc_url_raw( wp_unslash( (string) $request['redirect_to'] ) ) : '';
-            $redirect = wp_validate_redirect( $redirect_to, home_url() );
+            $redirect = wp_validate_redirect( $redirect_to, home_url( '/' ) );
         }
         $redirect = apply_filters( 'developer_starter_auth_register_redirect', $redirect, $user_id, $this->get_safe_hook_request_payload() );
+        $redirect = $this->sanitize_auth_redirect( $redirect );
 
         do_action( 'developer_starter_auth_register_success', $user_id, $redirect, developer_starter_resolve_client_ip( $this->client_ip_callback ) );
 
@@ -662,6 +672,55 @@ class Auth_Flow_Service {
         if ( is_callable( $this->clear_register_email_code_callback ) ) {
             call_user_func( $this->clear_register_email_code_callback, $email );
         }
+    }
+
+    /**
+     * 规范化并清洗认证成功跳转地址，避免协议错位或跳向登录页形成死循环。
+     *
+     * @param string $redirect 待校验地址。
+     * @return string 安全跳转地址。
+     */
+    public function sanitize_auth_redirect( $redirect ) {
+        $redirect = is_string( $redirect ) ? trim( $redirect ) : '';
+        if ( '' === $redirect ) {
+            return home_url( '/' );
+        }
+
+        // 统一协议：在 SSL 环境或反向代理协议为 HTTPS 时保证跳转目标同样为 HTTPS
+        $is_https = is_ssl()
+            || ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && 'https' === strtolower( (string) $_SERVER['HTTP_X_FORWARDED_PROTO'] ) )
+            || 0 === strpos( home_url(), 'https://' );
+
+        if ( $is_https && 0 === strpos( $redirect, 'http://' ) ) {
+            $redirect = (string) set_url_scheme( $redirect, 'https' );
+        }
+
+        // 检测是否重定向到认证页面自身形成死循环
+        $blocked_patterns = array( 'wp-login.php', '/login', '/register', '/forgot-password' );
+        $login_page_id = (int) $this->get_option( 'login_page_id', 0 );
+        if ( $login_page_id > 0 ) {
+            $login_url = get_permalink( $login_page_id );
+            if ( $login_url ) {
+                $blocked_patterns[] = untrailingslashit( (string) $login_url );
+            }
+        }
+        $register_page_id = (int) $this->get_option( 'register_page_id', 0 );
+        if ( $register_page_id > 0 ) {
+            $reg_url = get_permalink( $register_page_id );
+            if ( $reg_url ) {
+                $blocked_patterns[] = untrailingslashit( (string) $reg_url );
+            }
+        }
+
+        $check_path = untrailingslashit( strtolower( (string) wp_parse_url( $redirect, PHP_URL_PATH ) ) );
+        foreach ( $blocked_patterns as $pattern ) {
+            $pattern_lower = strtolower( $pattern );
+            if ( false !== strpos( strtolower( $redirect ), $pattern_lower ) || ( '' !== $check_path && false !== strpos( $check_path, $pattern_lower ) ) ) {
+                return home_url( '/' );
+            }
+        }
+
+        return $redirect;
     }
 
     /**

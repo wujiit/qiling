@@ -152,20 +152,37 @@ trait Admin_Settings_Ajax_Trait {
         }
 
         $mail_error_message = '';
+        $smtp_server_reply  = '';
+
+        $debug_capture_init = function( $phpmailer ) use ( &$smtp_server_reply ) {
+            $phpmailer->SMTPDebug   = 2;
+            $phpmailer->Debugoutput = function( $str ) use ( &$smtp_server_reply ) {
+                $clean = trim( wp_strip_all_tags( (string) $str ) );
+                if ( '' !== $clean && ( false !== stripos( $clean, 'SERVER -> CLIENT' ) || preg_match( '/\b(?:4\d\d|5\d\d)\b/', $clean ) ) ) {
+                    $smtp_server_reply .= ( '' === $smtp_server_reply ? '' : ' | ' ) . $clean;
+                }
+            };
+        };
+
         $mail_failed_handler = function( $wp_error ) use ( &$mail_error_message ) {
             if ( is_wp_error( $wp_error ) ) {
                 $mail_error_message = $wp_error->get_error_message();
             }
         };
 
+        add_action( 'phpmailer_init', $debug_capture_init, 999 );
         add_action( 'wp_mail_failed', $mail_failed_handler );
         $sent = wp_mail( $to, $subject, $message, $headers );
         remove_action( 'wp_mail_failed', $mail_failed_handler );
+        remove_action( 'phpmailer_init', $debug_capture_init, 999 );
 
         if ( ! $sent ) {
             $msg = __( '测试邮件发送失败，请检查 SMTP 配置。', 'qiling' );
             if ( $mail_error_message !== '' ) {
                 $msg .= ' ' . $mail_error_message;
+            }
+            if ( $smtp_server_reply !== '' ) {
+                $msg .= ' ' . sprintf( __( '【服务商返回：%s】', 'qiling' ), esc_html( $smtp_server_reply ) );
             }
             wp_send_json_error( array( 'message' => $msg ) );
         }
@@ -2285,5 +2302,25 @@ trait Admin_Settings_Ajax_Trait {
         }
 
         wp_send_json_success( $this->detect_ecosystem_plugin_statuses() );
+    }
+
+    /**
+     * AJAX 运行启灵主题健康体检助手。
+     *
+     * @return void
+     */
+    public function ajax_run_theme_doctor() {
+        check_ajax_referer( 'developer_starter_theme_doctor', 'nonce' );
+
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( array( 'message' => __( '权限不足', 'qiling' ) ), 403 );
+        }
+
+        if ( ! class_exists( '\Developer_Starter\Admin\Theme_Doctor_Service' ) ) {
+            require_once QILING_INC . '/admin/class-theme-doctor-service.php';
+        }
+
+        $report = \Developer_Starter\Admin\Theme_Doctor_Service::run_diagnostics();
+        wp_send_json_success( $report );
     }
 }

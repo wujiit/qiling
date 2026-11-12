@@ -1498,9 +1498,125 @@ trait Admin_Settings_Admin_Trait {
                 }
             });
 
+
+            // 启灵主题健康自检助手
+            function initThemeDoctor() {
+                var modal = $('#ds-theme-doctor-modal');
+                var loading = modal.find('.ds-doctor-loading');
+                var content = modal.find('.ds-doctor-content');
+                var checklist = modal.find('.ds-doctor-checklist');
+                var scoreNum = modal.find('.ds-doctor-score-num');
+                var scoreCard = modal.find('.ds-doctor-score-card');
+                var levelTitle = modal.find('.ds-doctor-level-title');
+                var checkedTime = modal.find('.ds-doctor-checked-time');
+                var pillOk = modal.find('.pill-ok, .ds-badge-ok');
+                var pillWarn = modal.find('.pill-warn, .ds-badge-warn');
+                var pillErr = modal.find('.pill-err, .ds-badge-err');
+                var doctorNonce = <?php echo wp_json_encode( wp_create_nonce( 'developer_starter_theme_doctor' ) ); ?>;
+
+                function openModal() {
+                    modal.fadeIn(180);
+                    runDoctorCheck();
+                }
+
+                function closeModal() {
+                    modal.fadeOut(150);
+                }
+
+                function runDoctorCheck() {
+                    loading.show();
+                    content.hide();
+
+                    $.ajax({
+                        url: dsAjaxUrl,
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            action: 'developer_starter_run_theme_doctor',
+                            nonce: doctorNonce
+                        },
+                        success: function(res) {
+                            loading.hide();
+                            if (res && res.success && res.data) {
+                                renderReport(res.data);
+                                content.fadeIn(150);
+                            } else {
+                                var errMsg = (res && res.data && res.data.message) ? res.data.message : '<?php echo esc_js( __( '体检请求失败，请稍后重试。', 'qiling' ) ); ?>';
+                                checklist.html('<div class="notice notice-error"><p>' + errMsg + '</p></div>');
+                                content.fadeIn(150);
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            loading.hide();
+                            checklist.html('<div class="notice notice-error"><p><?php echo esc_js( __( '网络请求异常，无法连接体检诊断接口: ', 'qiling' ) ); ?>' + error + '</p></div>');
+                            content.fadeIn(150);
+                        }
+                    });
+                }
+
+                function renderReport(data) {
+                    scoreNum.text(data.score);
+                    scoreCard.removeClass('level-danger level-warning');
+                    if (data.level === 'danger') {
+                        scoreCard.addClass('level-danger');
+                    } else if (data.level === 'warning') {
+                        scoreCard.addClass('level-warning');
+                    }
+
+                    levelTitle.text(data.level_text + ' (' + data.score + '/100)');
+                    checkedTime.text('<?php echo esc_js( __( '检查完成时间: ', 'qiling' ) ); ?>' + data.checked_at);
+                    pillOk.text('<?php echo esc_js( __( '正常: ', 'qiling' ) ); ?>' + data.ok_count);
+                    pillWarn.text('<?php echo esc_js( __( '优化项: ', 'qiling' ) ); ?>' + data.warning_count);
+                    pillErr.text('<?php echo esc_js( __( '需修复: ', 'qiling' ) ); ?>' + data.error_count);
+
+                    checklist.empty();
+                    if (data.checks && data.checks.length) {
+                        data.checks.forEach(function(item) {
+                            var statusClass = 'item-' + item.status;
+                            var actionHtml = '';
+                            if (item.action_url && item.action_label) {
+                                actionHtml = '<div class="ds-doctor-item-action"><a href="' + item.action_url + '" class="ds-doctor-action-link">' + item.action_label + '</a></div>';
+                            }
+                            var itemHtml = '<div class="ds-doctor-item ' + statusClass + '">' +
+                                '<div class="ds-doctor-item-main">' +
+                                    '<div class="ds-doctor-item-head">' +
+                                        '<span class="ds-doctor-item-title">' + item.title + '</span>' +
+                                        (item.category ? '<span class="ds-doctor-item-cat">' + item.category + '</span>' : '') +
+                                    '</div>' +
+                                    '<div class="ds-doctor-item-desc">' + item.desc + '</div>' +
+                                '</div>' +
+                                actionHtml +
+                            '</div>';
+                            checklist.append(itemHtml);
+                        });
+                    }
+                }
+
+                $(document).on('click', '#ds-open-theme-doctor', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
+
+                modal.on('click', '.ds-doctor-close-btn', function(e) {
+                    e.preventDefault();
+                    closeModal();
+                });
+
+                modal.on('click', '.ds-doctor-recheck-btn', function(e) {
+                    e.preventDefault();
+                    runDoctorCheck();
+                });
+
+                modal.on('click', function(e) {
+                    if ($(e.target).is(modal)) {
+                        closeModal();
+                    }
+                });
+            }
             initFavorites();
             initThemeToggle();
             initSettingsSearch();
+            initThemeDoctor();
         });
         </script>
         <?php
@@ -1517,7 +1633,34 @@ trait Admin_Settings_Admin_Trait {
             $reset_nonce = sanitize_text_field( wp_unslash( $_POST['ds_reset_nonce'] ) );
             if ( wp_verify_nonce( $reset_nonce, 'ds_reset_action' ) && current_user_can( 'manage_options' ) ) {
                 delete_option( $this->option_name );
-                add_settings_error( 'developer_starter_settings', 'reset', __( '主题设置已恢复默认！', 'qiling' ), 'updated' );
+                add_settings_error( 'developer_starter_settings', 'reset', __( '全站主题设置已恢复为初始默认值！', 'qiling' ), 'updated' );
+            }
+        }
+
+        if ( isset( $_POST['ds_reset_tab_settings'] ) && isset( $_POST['ds_reset_tab_nonce'] ) ) {
+            $reset_nonce = sanitize_text_field( wp_unslash( $_POST['ds_reset_tab_nonce'] ) );
+            $tab = sanitize_key( wp_unslash( $_POST['ds_reset_tab_name'] ?? '' ) );
+            if ( wp_verify_nonce( $reset_nonce, 'ds_reset_tab_action' ) && current_user_can( 'manage_options' ) && ! empty( $tab ) ) {
+                $options = get_option( $this->option_name, array() );
+                if ( is_array( $options ) ) {
+                    $config = $this->get_fields_config();
+                    if ( isset( $config[ $tab ] ) && is_array( $config[ $tab ] ) ) {
+                        foreach ( $config[ $tab ] as $field ) {
+                            if ( isset( $field['id'] ) ) {
+                                $field_id = $field['id'];
+                                if ( isset( $field['default'] ) ) {
+                                    $options[ $field_id ] = $field['default'];
+                                } else {
+                                    unset( $options[ $field_id ] );
+                                }
+                            }
+                        }
+                        update_option( $this->option_name, $options );
+                        $tabs = $this->get_tabs();
+                        $tab_label = isset( $tabs[ $tab ] ) ? $tabs[ $tab ] : $tab;
+                        add_settings_error( 'developer_starter_settings', 'reset_tab', sprintf( __( '当前【%s】选项卡设置已成功恢复为默认值！其他选项卡设置保持完好。', 'qiling' ), $tab_label ), 'updated' );
+                    }
+                }
             }
         }
     }

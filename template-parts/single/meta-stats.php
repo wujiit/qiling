@@ -94,10 +94,18 @@ if ( ! $has_meta_items ) {
         </span>
     <?php endif; ?>
 
-    <?php if ( $args['reading_time_enable'] ) : ?>
-        <span class="meta-stat">
+    <?php if ( $args['reading_time_enable'] ) : 
+        $word_count = class_exists( '\Developer_Starter\Core\Post_Enhancer' ) ? \Developer_Starter\Core\Post_Enhancer::get_post_word_count( (int) $args['post_id'] ) : 0;
+    ?>
+        <span class="meta-stat" title="<?php printf( esc_attr__( '全文共 %s 字，预计阅读 %d 分钟', 'qiling' ), esc_attr( number_format_i18n( $word_count ) ), absint( $args['reading_time'] ) ); ?>">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <?php printf( esc_html__( '%d 分钟阅读', 'qiling' ), absint( $args['reading_time'] ) ); ?>
+            <?php 
+            if ( $word_count > 0 ) {
+                printf( esc_html__( '%d 分钟阅读 · %s 字', 'qiling' ), absint( $args['reading_time'] ), esc_html( number_format_i18n( $word_count ) ) );
+            } else {
+                printf( esc_html__( '%d 分钟阅读', 'qiling' ), absint( $args['reading_time'] ) );
+            }
+            ?>
         </span>
     <?php endif; ?>
 

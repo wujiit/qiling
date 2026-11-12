@@ -143,6 +143,7 @@ if ( ! function_exists( 'developer_starter_should_boot_admin_settings' ) ) {
                 'developer_starter_seo_health_scan',
                 'developer_starter_seo_health_clear',
                 'developer_starter_detect_ecosystem_plugins',
+                'developer_starter_run_theme_doctor',
                 'developer_starter_reset_ip_usermeta',
                 'developer_starter_cleanup_duplicate_auth_pages',
             );

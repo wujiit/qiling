@@ -360,9 +360,27 @@
         },
 
         addCopyButtons: function () {
-            document.querySelectorAll('pre[class*="language-"], .wp-block-code pre').forEach(function (pre) {
+            document.querySelectorAll('pre[class*="language-"], .wp-block-code pre, .entry-content pre').forEach(function (pre) {
                 if (pre.querySelector('.code-copy-btn')) {
                     return;
+                }
+
+                // 添加 macOS 窗口红黄绿三色胶囊圆点与语言徽标
+                if (!pre.querySelector('.code-mac-header')) {
+                    var lang = '';
+                    var m = (pre.className || '').match(/language-([a-z0-9_-]+)/i);
+                    if (!m && pre.querySelector('code')) {
+                        m = (pre.querySelector('code').className || '').match(/language-([a-z0-9_-]+)/i);
+                    }
+                    if (m && m[1]) {
+                        lang = m[1].toUpperCase();
+                    }
+
+                    var header = document.createElement('div');
+                    header.className = 'code-mac-header';
+                    header.innerHTML = '<div class="code-mac-dots"><span class="code-mac-dot dot-red"></span><span class="code-mac-dot dot-yellow"></span><span class="code-mac-dot dot-green"></span></div>'
+                        + (lang ? '<span class="code-mac-lang">' + lang + '</span>' : '');
+                    pre.insertBefore(header, pre.firstChild);
                 }
 
                 var button = document.createElement('button');
@@ -377,11 +395,12 @@
 
                 button.addEventListener('click', function () {
                     var code = pre.querySelector('code');
-                    if (!code || !navigator.clipboard) {
+                    var textToCopy = code ? (code.textContent || '') : (pre.textContent || '');
+                    if (!textToCopy || !navigator.clipboard) {
                         return;
                     }
 
-                    navigator.clipboard.writeText(code.textContent || '').then(function () {
+                    navigator.clipboard.writeText(textToCopy).then(function () {
                         button.classList.add('copied');
                         button.innerHTML = CHECK_ICON;
 
@@ -420,33 +439,72 @@
             + 'visibility: hidden !important;'
             + 'pointer-events: none !important;'
             + '}'
+            + '.code-mac-header {'
+            + 'display: flex;'
+            + 'align-items: center;'
+            + 'justify-content: space-between;'
+            + 'height: 34px;'
+            + 'margin: -1.2em -1.2em 0.8em -1.2em;'
+            + 'padding: 0 14px;'
+            + 'background: rgba(0, 0, 0, 0.28);'
+            + 'border-bottom: 1px solid rgba(255, 255, 255, 0.08);'
+            + 'border-top-left-radius: 8px;'
+            + 'border-top-right-radius: 8px;'
+            + 'user-select: none;'
+            + '}'
+            + '.code-mac-dots {'
+            + 'display: flex;'
+            + 'align-items: center;'
+            + 'gap: 6px;'
+            + '}'
+            + '.code-mac-dot {'
+            + 'width: 10px;'
+            + 'height: 10px;'
+            + 'border-radius: 50%;'
+            + 'display: inline-block;'
+            + '}'
+            + '.code-mac-dot.dot-red { background: #ff5f56; }'
+            + '.code-mac-dot.dot-yellow { background: #ffbd2e; }'
+            + '.code-mac-dot.dot-green { background: #27c93f; }'
+            + '.code-mac-lang {'
+            + 'font-size: 11px;'
+            + 'font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;'
+            + 'font-weight: 600;'
+            + 'letter-spacing: 0.05em;'
+            + 'color: rgba(255, 255, 255, 0.45);'
+            + 'margin-right: 36px;'
+            + '}'
             + '.code-copy-btn {'
             + 'position: absolute;'
-            + 'top: 10px;'
-            + 'right: 10px;'
-            + 'padding: 8px 10px;'
-            + 'background: rgba(255, 255, 255, 0.15);'
-            + 'border: none;'
-            + 'border-radius: 8px;'
+            + 'top: 4px;'
+            + 'right: 8px;'
+            + 'padding: 6px 8px;'
+            + 'background: transparent;'
+            + 'border: 1px solid transparent;'
+            + 'border-radius: 6px;'
             + 'cursor: pointer;'
-            + 'color: rgba(255, 255, 255, 0.7);'
-            + 'transition: all 0.2s;'
-            + 'z-index: 100;'
+            + 'color: rgba(255, 255, 255, 0.65);'
+            + 'transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);'
+            + 'z-index: 10;'
             + 'display: flex;'
             + 'align-items: center;'
             + 'justify-content: center;'
             + '}'
             + '.code-copy-btn:hover {'
-            + 'background: rgba(255, 255, 255, 0.25);'
+            + 'background: rgba(255, 255, 255, 0.15);'
             + 'color: #fff;'
+            + 'border-color: rgba(255, 255, 255, 0.1);'
             + '}'
             + '.code-copy-btn.copied {'
             + 'background: #10b981;'
             + 'color: #fff;'
             + '}'
             + 'pre[class*="language-"],'
-            + '.wp-block-code pre {'
+            + '.wp-block-code pre,'
+            + '.entry-content pre {'
             + 'position: relative !important;'
+            + 'padding-top: 1.2em !important;'
+            + 'border-radius: 8px;'
             + '}';
 
         document.head.appendChild(style);

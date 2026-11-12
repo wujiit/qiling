@@ -614,6 +614,7 @@ class Auth_Manager {
      * AJAX 登录
      */
     public function ajax_login() {
+        $this->send_no_store_ajax_headers();
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
         $result = $this->get_flow_service()->handle_login( $_POST );
@@ -717,6 +718,7 @@ class Auth_Manager {
      * AJAX 注册
      */
     public function ajax_register() {
+        $this->send_no_store_ajax_headers();
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
         $result = $this->get_flow_service()->handle_register( $_POST );
@@ -731,6 +733,7 @@ class Auth_Manager {
      * AJAX 找回密码
      */
     public function ajax_forgot_password() {
+        $this->send_no_store_ajax_headers();
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
         $result = $this->get_flow_service()->handle_forgot_password( $_POST );
@@ -745,6 +748,7 @@ class Auth_Manager {
      * AJAX 重置密码
      */
     public function ajax_reset_password() {
+        $this->send_no_store_ajax_headers();
         check_ajax_referer( 'developer_starter_auth', 'nonce' );
 
         $result = $this->get_flow_service()->handle_reset_password( $_POST );

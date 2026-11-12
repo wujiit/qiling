@@ -49,6 +49,19 @@
     });
 
     document.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+            var tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : '';
+            var isEditing = tag === 'textarea' || (tag === 'input' && e.target.type !== 'search') || (e.target && e.target.isContentEditable);
+            if (!isEditing) {
+                e.preventDefault();
+                if (searchOverlay.classList.contains('active')) {
+                    closeOverlay();
+                } else {
+                    openOverlay();
+                }
+            }
+        }
+
         if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
             closeOverlay();
         }

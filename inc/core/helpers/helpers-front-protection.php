@@ -355,27 +355,26 @@ function developer_starter_comments_feature_enabled() {
 }
 
 /**
- * 在前台遵循 WordPress 全局讨论开关设置。
- * 该配置除影响新文章外，主题将其兼作
- * 站点全局评论可见性控制总开关。
+ * 在前台遵循 WordPress 原生讨论设置与主题“完全禁用评论”开关。
+ * 当主题开启“完全禁用评论”时强制关闭前台评论；
+ * 其余情况下完全沿用 WordPress 原生评论状态（新文章默认开启，单篇可在原生讨论面板管理）。
  *
  * @param bool $open    Whether comments are open.
  * @param int  $post_id Post ID.
  * @return bool
  */
-function developer_starter_filter_global_comments_open( $open, $post_id ) {
-    $post_id = absint( $post_id );
-
+function developer_starter_filter_global_comments_open( $open, $post_id = 0 ) {
     if ( is_admin() ) {
         return $open;
     }
 
-    $per_post_setting = $post_id > 0 ? get_post_meta( $post_id, '_qiling_comments_enabled', true ) : '';
-    // 存量文章遵循评论显式开启原则，避免历史 comment_status=open
-    // 默认值意外打开评论，必须显式开启对应开关。
-    return '1' === (string) $per_post_setting && developer_starter_comments_feature_enabled();
+    if ( ! developer_starter_comments_feature_enabled() ) {
+        return false;
+    }
+
+    return (bool) $open;
 }
-// 放在最后，确保历史文章自身的 comment_status=open 不会覆盖全局关闭设置。
+// 确保在主题“完全禁用评论”生效时前台严格关闭评论。
 add_filter( 'comments_open', 'developer_starter_filter_global_comments_open', PHP_INT_MAX, 2 );
 
 function developer_starter_register_late_comment_filters() {
@@ -383,23 +382,11 @@ function developer_starter_register_late_comment_filters() {
         return;
     }
 
-    add_filter( 'comments_open', 'developer_starter_filter_global_comments_open', PHP_INT_MAX, 2 );
-    add_filter(
-        'comments_array',
-        static function( $comments, $post_id ) {
-            return developer_starter_filter_global_comments_open( true, $post_id ) ? $comments : array();
-        },
-        PHP_INT_MAX,
-        2
-    );
-    add_filter(
-        'get_comments_number',
-        static function( $count, $post_id ) {
-            return developer_starter_filter_global_comments_open( true, $post_id ) ? $count : 0;
-        },
-        PHP_INT_MAX,
-        2
-    );
+    if ( ! developer_starter_comments_feature_enabled() ) {
+        add_filter( 'comments_open', '__return_false', PHP_INT_MAX );
+        add_filter( 'comments_array', '__return_empty_array', PHP_INT_MAX );
+        add_filter( 'get_comments_number', '__return_zero', PHP_INT_MAX );
+    }
 }
 add_action( 'wp', 'developer_starter_register_late_comment_filters', PHP_INT_MAX );
 

@@ -249,6 +249,24 @@
         var registerEmailCodeInterval = parseInt(config.registerEmailCodeInterval, 10) || 60;
         var emailDomainWhitelistText = String(config.emailDomainWhitelistText || '');
 
+        function handleAuthSuccessRedirect(redirectUrl, delay) {
+            window.setTimeout(function () {
+                var target = redirectUrl ? String(redirectUrl).trim() : '';
+                if (!target || target === window.location.href || target === window.location.pathname) {
+                    window.location.reload();
+                    return;
+                }
+                try {
+                    var parsed = new URL(target, window.location.origin);
+                    if (parsed.href === window.location.href) {
+                        window.location.reload();
+                        return;
+                    }
+                } catch (e) {}
+                window.location.replace(target);
+            }, delay || 1000);
+        }
+
         function setModalAuthMode(mode) {
             var registerLikeMode = mode !== 'login';
 
@@ -607,13 +625,7 @@
                     .then(function (data) {
                         if (data && data.success) {
                             setMessage(message, 'success', getMessage(data));
-                            window.setTimeout(function () {
-                                if (data.data && data.data.redirect) {
-                                    window.location.href = data.data.redirect;
-                                } else {
-                                    window.location.reload();
-                                }
-                            }, 1000);
+                            handleAuthSuccessRedirect(data.data ? data.data.redirect : '', 1000);
                             return;
                         }
 
@@ -717,13 +729,7 @@
                     .then(function (data) {
                         if (data && data.success) {
                             setMessage(phoneMessage, 'success', getMessage(data));
-                            window.setTimeout(function () {
-                                if (data.data && data.data.redirect) {
-                                    window.location.href = data.data.redirect;
-                                } else {
-                                    window.location.reload();
-                                }
-                            }, 1000);
+                            handleAuthSuccessRedirect(data.data ? data.data.redirect : '', 1000);
                             return;
                         }
 
@@ -884,13 +890,7 @@
                     .then(function (data) {
                         if (data && data.success) {
                             setMessage(regMessage, 'success', getMessage(data));
-                            window.setTimeout(function () {
-                                if (data.data && data.data.redirect) {
-                                    window.location.href = data.data.redirect;
-                                } else {
-                                    window.location.reload();
-                                }
-                            }, 1000);
+                            handleAuthSuccessRedirect(data.data ? data.data.redirect : '', 1000);
                             return;
                         }
 

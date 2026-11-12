@@ -931,3 +931,116 @@ function developer_starter_autosave_interval_control() {
     } );
 }
 add_action( 'init', 'developer_starter_autosave_interval_control', 1 );
+
+/**
+ * 输出自定义 WOFF2 字体关键资源预加载
+ */
+function developer_starter_output_custom_font_preload() {
+    if ( is_admin() || is_feed() ) {
+        return;
+    }
+
+    if ( ! developer_starter_get_option( 'custom_font_enable', '' ) ) {
+        return;
+    }
+
+    $woff2_url = trim( (string) developer_starter_get_option( 'custom_font_woff2_url', '' ) );
+    if ( '' === $woff2_url ) {
+        return;
+    }
+
+    if ( 0 === strpos( $woff2_url, '/' ) && function_exists( 'home_url' ) ) {
+        $woff2_url = home_url( $woff2_url );
+    }
+
+    echo '<link rel="preload" href="' . esc_url( $woff2_url ) . '" as="font" type="font/woff2" crossorigin="anonymous">' . "\n";
+}
+add_action( 'wp_head', 'developer_starter_output_custom_font_preload', 1 );
+
+/**
+ * W3C 标准推测性即时预渲染 (Speculation Rules) 与 0ms 秒开悬停预取
+ */
+function developer_starter_output_speculation_rules() {
+    if ( is_admin() || is_feed() ) {
+        return;
+    }
+
+    if ( ( function_exists( 'wp_doing_ajax' ) && wp_doing_ajax() ) || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+        return;
+    }
+
+    if ( ! developer_starter_get_option( 'speculative_prerender_enable', '1' ) ) {
+        return;
+    }
+
+    // 排除模式：后台、登录、带参动态操作、预览、登出
+    $rules = array(
+        'prerender' => array(
+            array(
+                'source' => 'document',
+                'where'  => array(
+                    'and' => array(
+                        array( 'href_matches' => '/*' ),
+                        array(
+                            'not' => array(
+                                'href_matches' => array(
+                                    '/wp-admin/*',
+                                    '/wp-login.php*',
+                                    '/*logout*',
+                                    '/*add-to-cart*',
+                                    '/*action=*',
+                                    '/*preview=*',
+                                    '/*.pdf',
+                                    '/*.zip',
+                                    '/*.rar',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+                'eagerness' => 'moderate',
+            ),
+        ),
+    );
+
+    $rules_json = wp_json_encode( $rules, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+    if ( ! $rules_json ) {
+        return;
+    }
+
+    echo '<script type="speculationrules">' . $rules_json . '</script>' . "\n";
+    ?>
+    <script>
+    (function(){
+        if(HTMLScriptElement.supports&&HTMLScriptElement.supports('speculationrules')){return;}
+        var p=new Set(),t=null;
+        var ex=[/\/wp-admin\//,/\/wp-login\.php/,/logout/,/add-to-cart/,/action=/,/preview=/,\.pdf$/i,\.zip$/i];
+        function shouldPrefetch(u){
+            if(!u||p.has(u)||p.size>15)return false;
+            try{
+                var l=new URL(u,location.href);
+                if(l.origin!==location.origin||l.pathname===location.pathname)return false;
+                for(var i=0;i<ex.length;i++){if(ex[i].test(l.href))return false;}
+                return true;
+            }catch(e){return false;}
+        }
+        function prefetch(u){
+            if(!shouldPrefetch(u))return;
+            p.add(u);
+            var link=document.createElement('link');
+            link.rel='prefetch';
+            link.href=u;
+            document.head.appendChild(link);
+        }
+        document.addEventListener('pointerover',function(e){
+            var a=e.target&&e.target.closest?e.target.closest('a'):null;
+            if(!a||!a.href)return;
+            clearTimeout(t);
+            t=setTimeout(function(){prefetch(a.href);},65);
+        },{passive:true});
+        document.addEventListener('pointerout',function(){clearTimeout(t);},{passive:true});
+    })();
+    </script>
+    <?php
+}
+add_action( 'wp_head', 'developer_starter_output_speculation_rules', 99 );

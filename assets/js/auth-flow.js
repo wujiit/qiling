@@ -156,6 +156,16 @@
         }
     }
 
+    function isBlockedRedirectUrl(url, blockedPathParts) {
+        if (!url) {
+            return false;
+        }
+        var target = String(url).toLowerCase();
+        return blockedPathParts.some(function (part) {
+            return target.indexOf(String(part).toLowerCase()) !== -1;
+        });
+    }
+
     function getRedirectTo(blockedPathParts) {
         var redirectTo = '';
         blockedPathParts = Array.isArray(blockedPathParts) && blockedPathParts.length
@@ -164,12 +174,18 @@
 
         try {
             var urlParams = new URLSearchParams(window.location.search);
-            redirectTo = urlParams.get('redirect_to') || '';
+            var queryRedirect = urlParams.get('redirect_to') || '';
+            if (queryRedirect && !isBlockedRedirectUrl(queryRedirect, blockedPathParts)) {
+                redirectTo = queryRedirect;
+            }
         } catch (error) {}
 
         if (!redirectTo) {
             try {
-                redirectTo = window.localStorage.getItem('auth_redirect_to') || '';
+                var storedRedirect = window.localStorage.getItem('auth_redirect_to') || '';
+                if (storedRedirect && !isBlockedRedirectUrl(storedRedirect, blockedPathParts)) {
+                    redirectTo = storedRedirect;
+                }
             } catch (error) {}
         }
 
@@ -178,10 +194,7 @@
                 var referrerUrl = new URL(document.referrer);
                 if (referrerUrl.hostname === window.location.hostname) {
                     var path = referrerUrl.pathname.toLowerCase();
-                    var blocked = blockedPathParts.some(function (part) {
-                        return path.indexOf(String(part).toLowerCase()) !== -1;
-                    });
-                    if (!blocked) {
+                    if (!isBlockedRedirectUrl(path, blockedPathParts)) {
                         redirectTo = document.referrer;
                     }
                 }

@@ -2001,7 +2001,7 @@ trait Admin_Settings_Config_Trait {
                 array( 'id' => 'module_css_load_mode', 'type' => 'select', 'label' => __( '功能模块 CSS 加载方式', 'qiling' ), 'choices' => array(
                     'single' => __( '单文件模式（modules.css 整包，默认）', 'qiling' ),
                     'split'  => __( '按需模式（当前页面独立模块）', 'qiling' ),
-                ), 'default' => 'single', 'desc' => __( '两种模式使用同一批模块独立作用域样式：单文件模式加载合并后的 modules.css；按需模式只加载当前页面对应的 modules-split 模块文件。', 'qiling' ) ),
+                ), 'default' => 'split', 'desc' => __( '按需模式只加载当前页面使用到的模块独立 CSS 文件，极致精简首屏体积；单文件模式合并加载完整 modules.css。', 'qiling' ) ),
                 array( 'type' => 'note', 'content' => __( '开启前请先点击下方按钮生成压缩文件，如果已经有了就不用再次生成。生成的压缩文件位于 assets/css/ 目录下。', 'qiling' ) ),
                 array( 'type' => 'custom', 'callback' => array( $this, 'render_generate_min_css_field' ) ),
                 array( 'type' => 'custom', 'callback' => array( $this, 'render_split_css_integrity_field' ) ),
@@ -2029,6 +2029,8 @@ trait Admin_Settings_Config_Trait {
                     'custom'   => __( '使用自定义图片 URL', 'qiling' ),
                 ), 'default' => 'featured' ),
                 array( 'id' => 'lcp_preload_custom_url', 'type' => 'text', 'label' => __( 'LCP 自定义图片 URL', 'qiling' ), 'desc' => __( '当上方选择“自定义图片 URL”时生效', 'qiling' ), 'attrs' => array( 'placeholder' => 'https://example.com/hero.jpg' ) ),
+                array( 'id' => 'speculative_prerender_enable', 'type' => 'checkbox', 'label' => __( '启用即时预渲染 (0ms秒开)', 'qiling' ), 'default' => '1', 'desc' => __( '利用现代浏览器 W3C Speculation Rules 原生规范与推测性预取技术，当鼠标悬停在链接上时静默预载目标页面，使点击跳转达到 0ms 秒开。已自动排除后台、登录页及动态操作链接。', 'qiling' ) ),
+                array( 'id' => 'thumbnail_webp_enable', 'type' => 'checkbox', 'label' => __( '启用缩略图 WebP 格式', 'qiling' ), 'default' => '1', 'desc' => __( '开启后，本地动态缩略图与云存储（阿里云/腾讯云/七牛云/又拍云）将自动转换为高压缩比 WebP 格式输出，图片体积直降 40%~65%。', 'qiling' ) ),
 
                 array( 'type' => 'section', 'title' => __( '页面资源与质量审计', 'qiling' ), 'desc' => __( '为管理员生成当前页面资源清单，并检查 LCP、图片、移动端溢出、颜色对比度、标题层级、表单可访问性和 CLS 风险。', 'qiling' ) ),
                 array( 'id' => 'page_quality_audit_enable', 'type' => 'checkbox', 'label' => __( '启用页面质量审计', 'qiling' ), 'desc' => __( '仅管理员前台访问时运行，不影响普通访客；也可在前台 URL 添加 ?qiling_page_audit=1 临时查看。', 'qiling' ), 'default' => '1' ),

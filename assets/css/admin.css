@@ -2011,3 +2011,243 @@ tr.ds-favorite .ds-favorite-toggle::before {
         width: 100%;
     }
 }
+
+/* ==========================================================================
+   启灵主题健康自检助手 (Theme Doctor) & 极简/专家双视图模式
+   ========================================================================== */
+
+/* 主题健康自检模态弹窗 */
+.ds-doctor-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 100050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.ds-doctor-modal-dialog {
+    background: #ffffff;
+    width: 100%;
+    max-width: 680px;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: dsDoctorFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes dsDoctorFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+.ds-doctor-modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+}
+.ds-doctor-modal-title {
+    display: flex;
+    align-items: center;
+}
+.ds-doctor-close-btn {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    line-height: 1;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+}
+.ds-doctor-close-btn:hover {
+    color: #0f172a;
+}
+.ds-doctor-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+.ds-doctor-modal-footer {
+    padding: 14px 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    background: #f8fafc;
+}
+
+/* 体检得分卡片 */
+.ds-doctor-score-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+    border: 1px solid #bbf7d0;
+    margin-bottom: 20px;
+}
+.ds-doctor-score-card.level-danger {
+    background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+    border-color: #fecaca;
+}
+.ds-doctor-score-card.level-warning {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border-color: #fde68a;
+}
+.ds-doctor-score-circle {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.ds-doctor-score-num {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+    color: #16a34a;
+}
+.level-danger .ds-doctor-score-num {
+    color: #dc2626;
+}
+.level-warning .ds-doctor-score-num {
+    color: #d97706;
+}
+.ds-doctor-score-unit {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+.ds-doctor-score-meta {
+    flex: 1;
+}
+.ds-doctor-level-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+.ds-doctor-checked-time {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+.ds-doctor-counts {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+}
+.ds-badge {
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.ds-badge-ok {
+    background: #dcfce7;
+    color: #15803d;
+}
+.ds-badge-warn {
+    background: #fef3c7;
+    color: #b45309;
+}
+.ds-badge-err {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* 检查清单项 */
+.ds-doctor-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    background: #ffffff;
+    transition: border-color 0.2s ease;
+}
+.ds-doctor-item:hover {
+    border-color: #cbd5e1;
+}
+.ds-doctor-item.item-error {
+    border-left: 4px solid #ef4444;
+}
+.ds-doctor-item.item-warning {
+    border-left: 4px solid #f59e0b;
+}
+.ds-doctor-item.item-ok {
+    border-left: 4px solid #10b981;
+}
+.ds-doctor-item-main {
+    flex: 1;
+}
+.ds-doctor-item-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+.ds-doctor-item-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+}
+.ds-doctor-item-cat {
+    font-size: 11px;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+.ds-doctor-item-desc {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.5;
+}
+.ds-doctor-item-action {
+    flex-shrink: 0;
+    align-self: center;
+}
+.ds-doctor-action-link {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0284c7;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.ds-doctor-action-link:hover {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+}

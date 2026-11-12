@@ -167,7 +167,32 @@ if ( ! defined( 'ABSPATH' ) ) {
             }
             .dsm-toggle { margin-left: 4px; color: #787c82; }
             .dsm-save-template { margin-right: 0; color: #2271b1; text-decoration: none; font-size: 16px; padding: 4px 8px; display: none; }
+            .dsm-copy-module-action,
+            .dsm-paste-module-action {
+                margin-right: 0;
+                color: #2271b1;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 4px 6px;
+                display: none;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                line-height: 1;
+                vertical-align: middle;
+            }
+            .dsm-item:hover .dsm-copy-module-action,
+            .dsm-item:hover .dsm-paste-module-action,
             .dsm-item:hover .dsm-save-template { display: inline-block; }
+            .dsm-copy-module-action:hover,
+            .dsm-paste-module-action:hover {
+                background: #e0f2fe;
+                color: #0284c7;
+                border-radius: 4px;
+            }
+            .dsm-copy-module-action.is-copied {
+                color: #16a34a !important;
+            }
             .dsm-save-template:hover { background: #eef; border-radius: 3px; }
             
             .dsm-remove { color: #b32d2e; text-decoration: none; font-size: 16px; padding: 4px 8px; }
@@ -1547,8 +1572,187 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             // 折叠/展开模块
             $(document).on('click', '.dsm-item-header', function(e){
-                if($(e.target).closest('.dsm-remove, .dsm-save-template, .dsm-toggle-hidden').length) return;
+                if($(e.target).closest('.dsm-remove, .dsm-save-template, .dsm-toggle-hidden, .dsm-copy-module-action, .dsm-paste-module-action').length) return;
                 $(this).closest('.dsm-item').toggleClass('open');
+            });
+            // 提取单个模块的所有输入数据
+            function extractModuleData($item) {
+                var type = $item.data('type');
+                var raw = {};
+                var formArray = $item.find(':input').serializeArray();
+
+                formArray.forEach(function(field) {
+                    var name = field.name;
+                    var match = name.match(/^modules\[\d+\](.*)$/);
+                    if (!match || !match[1]) return;
+                    
+                    var pathStr = match[1];
+                    var keys = pathStr.match(/\[([^\]]*)\]/g);
+                    if (!keys) return;
+
+                    keys = keys.map(function(k) { return k.replace(/[\[\]]/g, ''); });
+                    if (keys[0] === 'type') return;
+
+                    var target = raw;
+                    for (var i = 0; i < keys.length - 1; i++) {
+                        var k = keys[i];
+                        var nextK = keys[i + 1];
+                        if (!target[k]) {
+                            target[k] = (nextK === '' || /^\d+$/.test(nextK)) ? [] : {};
+                        }
+                        target = target[k];
+                    }
+                    var lastKey = keys[keys.length - 1];
+                    if (lastKey === '') {
+                        if (Array.isArray(target)) target.push(field.value);
+                    } else {
+                        target[lastKey] = field.value;
+                    }
+                });
+
+                var finalData = raw.data || raw;
+                return {
+                    type: type,
+                    title: $item.find('.dsm-title').first().text().trim(),
+                    data: finalData
+                };
+            }
+
+            // 1. 复制模块配置
+            $(document).on('click', '.dsm-copy-module-action', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var $btn = $(this);
+                var $item = $btn.closest('.dsm-item');
+                var moduleObj = extractModuleData($item);
+
+                try {
+                    localStorage.setItem('qiling_copied_module', JSON.stringify(moduleObj));
+                } catch(err) {}
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(JSON.stringify(moduleObj, null, 2)).catch(function(){});
+                }
+
+                $btn.addClass('is-copied').html('<span class="dashicons dashicons-yes" style="color:#16a34a;" aria-hidden="true"></span>');
+                var originalTitle = $btn.attr('title');
+                $btn.attr('title', '<?php echo esc_js( __( '已复制！可跨页面粘贴', 'qiling' ) ); ?>');
+
+                setTimeout(function() {
+                    $btn.removeClass('is-copied').html('<span class="dashicons dashicons-admin-page" aria-hidden="true"></span>').attr('title', originalTitle);
+                }, 2000);
+            });
+
+            // 2. 从剪贴板粘贴为新模块 (顶部工具栏)
+            $(document).on('click', '.dsm-btn-paste-clipboard', function(e) {
+                e.preventDefault();
+                var copiedJson = localStorage.getItem('qiling_copied_module');
+                if (!copiedJson) {
+                    alert('<?php echo esc_js( __( '剪贴板中暂无已复制的模块！请先在任意页面的模块右上角点击“复制”按钮。', 'qiling' ) ); ?>');
+                    return;
+                }
+
+                var moduleObj = null;
+                try {
+                    moduleObj = JSON.parse(copiedJson);
+                } catch(err) {
+                    alert('<?php echo esc_js( __( '剪贴板模块数据解析失败。', 'qiling' ) ); ?>');
+                    return;
+                }
+
+                if (!moduleObj || !moduleObj.type) {
+                    alert('<?php echo esc_js( __( '未检测到有效的模块类型。', 'qiling' ) ); ?>');
+                    return;
+                }
+
+                var $btn = $(this);
+                var origHtml = $btn.html();
+                $btn.prop('disabled', true).text('<?php echo esc_js( __( '正在粘贴模块...', 'qiling' ) ); ?>');
+
+                $.ajax({
+                    url: ajaxurl,
+                    type: 'POST',
+                    data: {
+                        action: 'qiling_render_module_item',
+                        nonce: $('#modules_nonce').val(),
+                        type: moduleObj.type,
+                        idx: idx,
+                        module_data: JSON.stringify(moduleObj.data || {})
+                    },
+                    success: function(res) {
+                        $btn.prop('disabled', false).html(origHtml);
+                        if (res && res.success && res.data) {
+                            var $item = $(res.data);
+                            $item.addClass('open');
+                            $('#dsm-list').append($item);
+                            idx++;
+                            renumberModuleInputs();
+                            $('html, body').animate({ scrollTop: $item.offset().top - 100 }, 300);
+                            setTimeout(checkDependencies, 100);
+                        } else {
+                            alert(res && res.data ? res.data : '<?php echo esc_js( __( '模块粘贴失败', 'qiling' ) ); ?>');
+                        }
+                    },
+                    error: function() {
+                        $btn.prop('disabled', false).html(origHtml);
+                        alert('<?php echo esc_js( __( '网络错误，请稍后重试。', 'qiling' ) ); ?>');
+                    }
+                });
+            });
+
+            // 3. 粘贴覆盖当前模块
+            $(document).on('click', '.dsm-paste-module-action', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var $targetItem = $(this).closest('.dsm-item');
+                var copiedJson = localStorage.getItem('qiling_copied_module');
+
+                if (!copiedJson) {
+                    alert('<?php echo esc_js( __( '剪贴板中暂无已复制的模块数据！请先复制其他模块。', 'qiling' ) ); ?>');
+                    return;
+                }
+
+                var moduleObj = null;
+                try {
+                    moduleObj = JSON.parse(copiedJson);
+                } catch(err) {
+                    alert('<?php echo esc_js( __( '剪贴板模块数据无效。', 'qiling' ) ); ?>');
+                    return;
+                }
+
+                var targetType = $targetItem.data('type');
+                var confirmMsg = (moduleObj.type === targetType)
+                    ? '<?php echo esc_js( __( '确定要用剪贴板中的模块数据覆盖当前模块吗？当前未保存的修改将被覆盖。', 'qiling' ) ); ?>'
+                    : '<?php echo esc_js( __( '剪贴板中的模块类型与当前模块不同，确定要替换为剪贴板中的模块吗？', 'qiling' ) ); ?>';
+
+                if (!confirm(confirmMsg)) return;
+
+                var targetIdx = $targetItem.index();
+                $.ajax({
+                    url: ajaxurl,
+                    type: 'POST',
+                    data: {
+                        action: 'qiling_render_module_item',
+                        nonce: $('#modules_nonce').val(),
+                        type: moduleObj.type,
+                        idx: targetIdx,
+                        module_data: JSON.stringify(moduleObj.data || {})
+                    },
+                    success: function(res) {
+                        if (res && res.success && res.data) {
+                            var $newItem = $(res.data);
+                            $newItem.addClass('open');
+                            $targetItem.replaceWith($newItem);
+                            renumberModuleInputs();
+                            setTimeout(checkDependencies, 100);
+                        } else {
+                            alert(res && res.data ? res.data : '<?php echo esc_js( __( '覆盖失败', 'qiling' ) ); ?>');
+                        }
+                    },
+                    error: function() {
+                        alert('<?php echo esc_js( __( '请求失败，请稍后重试。', 'qiling' ) ); ?>');
+                    }
+                });
             });
 
             // 移除模块

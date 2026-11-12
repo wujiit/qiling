@@ -792,6 +792,11 @@ trait Admin_Settings_Sanitize_Trait {
         if ( isset( $sanitized['pinyin_slug_max_length'] ) ) {
             $sanitized['pinyin_slug_max_length'] = (string) min( 200, absint( $sanitized['pinyin_slug_max_length'] ) );
         }
+        foreach ( array( 'speculative_prerender_enable', 'thumbnail_webp_enable' ) as $perf_checkbox_field ) {
+            if ( isset( $sanitized[ $perf_checkbox_field ] ) ) {
+                $sanitized[ $perf_checkbox_field ] = ( '1' === (string) $sanitized[ $perf_checkbox_field ] ) ? '1' : '';
+            }
+        }
         if ( isset( $sanitized['enable_gutenberg_editor_style'] ) ) {
             $sanitized['enable_gutenberg_editor_style'] = ( '1' === (string) $sanitized['enable_gutenberg_editor_style'] ) ? '1' : '';
         }

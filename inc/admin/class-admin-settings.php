@@ -73,6 +73,7 @@ class Admin_Settings {
         add_action( 'wp_ajax_developer_starter_seo_health_scan', array( $this, 'ajax_seo_health_scan' ) );
         add_action( 'wp_ajax_developer_starter_seo_health_clear', array( $this, 'ajax_seo_health_clear' ) );
         add_action( 'wp_ajax_developer_starter_detect_ecosystem_plugins', array( $this, 'ajax_detect_ecosystem_plugins' ) );
+        add_action( 'wp_ajax_developer_starter_run_theme_doctor', array( $this, 'ajax_run_theme_doctor' ) );
         add_action( 'wp_ajax_developer_starter_cleanup_duplicate_auth_pages', array( $this, 'ajax_cleanup_duplicate_auth_pages' ) );
 
         // 备份与恢复

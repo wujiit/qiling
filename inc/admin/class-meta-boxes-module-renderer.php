@@ -59,7 +59,9 @@ class Meta_Boxes_Module_Renderer {
                 <?php if ( $module_is_hidden ) : ?><span class="dsm-hidden-badge"><?php esc_html_e( '已隐藏', 'qiling' ); ?></span><?php endif; ?>
                 <span class="dsm-toggle">v</span>
                 <span class="dsm-item-actions">
-                    <a href="#" class="dsm-save-template" title="<?php echo esc_attr__( '保存为模版', 'qiling' ); ?>"><span class="dashicons dashicons-saved" aria-hidden="true"></span></a>
+                    <button type="button" class="button-link dsm-copy-module-action" title="<?php echo esc_attr__( '复制模块配置', 'qiling' ); ?>" aria-label="<?php echo esc_attr__( '复制模块配置', 'qiling' ); ?>"><span class="dashicons dashicons-admin-page" aria-hidden="true"></span></button>
+                    <button type="button" class="button-link dsm-paste-module-action" title="<?php echo esc_attr__( '粘贴覆盖当前模块', 'qiling' ); ?>" aria-label="<?php echo esc_attr__( '粘贴覆盖', 'qiling' ); ?>"><span class="dashicons dashicons-download" aria-hidden="true"></span></button>
+                    <a href="#" class="dsm-save-template" title="<?php echo esc_attr__( '存为常用预设模版', 'qiling' ); ?>"><span class="dashicons dashicons-star-filled" aria-hidden="true"></span></a>
                     <button type="button" class="button-link dsm-toggle-hidden" title="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'qiling' ) : __( '暂时隐藏', 'qiling' ) ); ?>" aria-label="<?php echo esc_attr( $module_is_hidden ? __( '恢复显示', 'qiling' ) : __( '暂时隐藏', 'qiling' ) ); ?>" aria-pressed="<?php echo $module_is_hidden ? 'true' : 'false'; ?>" data-hidden-label="<?php echo esc_attr__( '暂时隐藏', 'qiling' ); ?>" data-show-label="<?php echo esc_attr__( '恢复显示', 'qiling' ); ?>"><span class="dashicons <?php echo $module_is_hidden ? 'dashicons-visibility' : 'dashicons-hidden'; ?>" aria-hidden="true"></span></button>
                     <a href="#" class="dsm-remove" title="<?php echo esc_attr__( '删除模块', 'qiling' ); ?>">x</a>
                 </span>

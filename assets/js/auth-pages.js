@@ -357,9 +357,21 @@
             .then(function (payload) {
                 if (payload && payload.success) {
                     setMessage(message, 'success', getMessage(payload));
-                    if (options.redirectDelay !== false && payload.data && payload.data.redirect) {
+                    if (options.redirectDelay !== false) {
+                        var targetUrl = payload.data && payload.data.redirect ? String(payload.data.redirect).trim() : '';
                         window.setTimeout(function () {
-                            window.location.href = payload.data.redirect;
+                            if (!targetUrl || targetUrl === window.location.href || targetUrl === window.location.pathname) {
+                                window.location.reload();
+                                return;
+                            }
+                            try {
+                                var parsed = new URL(targetUrl, window.location.origin);
+                                if (parsed.href === window.location.href) {
+                                    window.location.reload();
+                                    return;
+                                }
+                            } catch (e) {}
+                            window.location.replace(targetUrl);
                         }, options.redirectDelay || 1000);
                         return;
                     }

@@ -711,6 +711,7 @@ class SMS_Manager {
      * AJAX: 手机号登录
      */
     public function ajax_phone_login() {
+        nocache_headers();
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! self::is_enabled() ) {
@@ -761,10 +762,16 @@ class SMS_Manager {
         // 登录用户
         wp_set_current_user( $user->ID );
         wp_set_auth_cookie( $user->ID, true );
+        if ( function_exists( 'developer_starter_set_logged_in_nocache_cookie' ) ) {
+            developer_starter_set_logged_in_nocache_cookie();
+        }
         do_action( 'wp_login', $user->user_login, $user );
 
         $redirect_to = isset( $_POST['redirect_to'] ) ? esc_url_raw( wp_unslash( $_POST['redirect_to'] ) ) : '';
-        $redirect_to = wp_validate_redirect( $redirect_to, home_url() );
+        $redirect_to = wp_validate_redirect( $redirect_to, home_url( '/' ) );
+        if ( class_exists( '\Developer_Starter\Core\Auth_Flow_Service' ) ) {
+            $redirect_to = ( new \Developer_Starter\Core\Auth_Flow_Service() )->sanitize_auth_redirect( $redirect_to );
+        }
 
         wp_send_json_success( array(
             'message' => __( '登录成功', 'qiling' ),
@@ -776,6 +783,7 @@ class SMS_Manager {
      * AJAX: 手机号注册
      */
     public function ajax_phone_register() {
+        nocache_headers();
         check_ajax_referer( 'sms_nonce', 'nonce' );
 
         if ( ! self::is_enabled() ) {
