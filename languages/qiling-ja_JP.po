@@ -38548,3 +38548,5930 @@ msgstr "WordPress 虚拟输出"
 #: inc/admin/traits/field-render/class-admin-settings-field-render-tools-trait.php:294
 msgid "wp-cron.php 文件可用，且未检测到 DISABLE_WP_CRON=true。"
 msgstr "wp-cron.php 文件可用，且未检测到 DISABLE_WP_CRON=true。"
+
+#: inc\core\class-open-source-devtools-page-creator.php:217
+msgid "GitHub Stars"
+msgstr "GitHub スター"
+
+#: inc/modules/modules/class-features-module.php:157 inc/modules/modules/class-services-module.php:99 inc/modules/modules/class-columns-module.php:98
+msgid "卡片悬停边框颜色"
+msgstr "カードのホバー境界線の色"
+
+#: inc/modules/modules/class-features-module.php:158 inc/modules/modules/class-columns-module.php:99
+msgid "卡片标题颜色"
+msgstr "カードタイトルの色"
+
+#: inc/modules/modules/class-features-module.php:159
+msgid "卡片描述颜色"
+msgstr "カード説明の色"
+
+#: inc/modules/modules/class-services-module.php:97 inc/modules/modules/class-columns-module.php:96
+msgid "卡片背景颜色"
+msgstr "カードの背景色"
+
+#: inc/modules/modules/class-services-module.php:100
+msgid "项目标题颜色"
+msgstr "プロジェクトタイトルの色"
+
+#: inc/modules/modules/class-services-module.php:101
+msgid "项目描述颜色"
+msgstr "項目 説明 カラー"
+
+#: inc/modules/modules/class-services-module.php:102
+msgid "图标文字颜色"
+msgstr "アイコンの文字色"
+
+#: inc/modules/modules/class-services-module.php:103
+msgid "图标背景颜色"
+msgstr "アイコンの背景色"
+
+#: inc/modules/modules/class-services-module.php:104
+msgid "顶部强调色"
+msgstr "トップのアクセントカラー"
+
+#: inc/modules/modules/class-pricing-module.php:114
+msgid "方案布局模式"
+msgstr "スキームレイアウトモード"
+
+#: inc/modules/modules/class-pricing-module.php:116
+msgid "跟随原有样式"
+msgstr "オリジナルのスタイルを踏襲"
+
+#: inc/modules/modules/class-pricing-module.php:117
+msgid "连体方案"
+msgstr "シャム計画"
+
+#: inc/modules/modules/class-pricing-module.php:118
+msgid "独立卡片"
+msgstr "スタンドアロンカード"
+
+#: inc/modules/modules/class-pricing-module.php:121
+msgid "连体方案使用一个共同外框，方案之间没有空白；独立卡片让每个方案单独成卡并保留间距。"
+msgstr "結合されたプランは共通の外枠を使用し、プラン間にスペースはありません。独立したカードにより、各プランをカードに分離し、間隔を保つことができます。"
+
+#: inc/modules/modules/class-pricing-module.php:144
+msgid "留空时跟随页面预设/全局徽章颜色。"
+msgstr "空白のままにした場合、ページのデフォルト/グローバルバッジの色に従います。"
+
+#: inc/modules/modules/class-faq-module.php:101
+msgid "问题卡片背景"
+msgstr "質問カードの背景"
+
+#: inc/modules/modules/class-faq-module.php:102
+msgid "问题卡片边框"
+msgstr "質問カードの枠線"
+
+#: inc/modules/modules/class-faq-module.php:104
+msgid "问题文字颜色"
+msgstr "質問のテキストの色"
+
+#: inc/modules/modules/class-faq-module.php:105
+msgid "回答文字颜色"
+msgstr "答えの文字の色"
+
+#: inc/modules/modules/class-process-module.php:53
+msgid "步骤卡片背景"
+msgstr "ステップカードの背景"
+
+#: inc/modules/modules/class-process-module.php:54
+msgid "步骤卡片边框"
+msgstr "ステップカードの枠線"
+
+msgid "卡片悬停背景"
+msgstr "カードホバー背景"
+
+#: inc/modules/modules/class-faq-module.php:103 inc/modules/modules/class-process-module.php:55
+msgid "卡片悬停边框"
+msgstr "カードのホバー境界線"
+
+msgid "序号文字颜色"
+msgstr "シリアル番号の文字色"
+
+msgid "序号背景颜色"
+msgstr "シリアル番号の背景色"
+
+msgid "步骤标题颜色"
+msgstr "ステップタイトルの色"
+
+msgid "步骤描述颜色"
+msgstr "ステップの説明の色"
+
+#: inc/modules/modules/class-banner-module.php:150
+msgid "单卡片背景"
+msgstr "シングルカードの背景"
+
+#: inc/modules/modules/class-banner-module.php:151
+msgid "单卡片边框"
+msgstr "シングルカードの枠線"
+
+msgid "微件背景颜色"
+msgstr "ウィジェットの背景色"
+
+msgid "微件边框颜色"
+msgstr "ウィジェットの境界線の色"
+
+msgid "微件主色调"
+msgstr "ウィジェットのメインカラー"
+
+msgid "微件辅色调"
+msgstr "ウィジェットの二次色"
+
+msgid "微件文字颜色"
+msgstr "ウィジェットのテキストの色"
+
+msgid "微件数字颜色"
+msgstr "ウィジェット番号の色"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:351 inc/modules/modules/class-interact-hero-module.php:91
+msgid "主按钮边框颜色"
+msgstr "メインボタンの枠線の色"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:364
+msgid "主按钮悬停边框颜色"
+msgstr "メインボタンのホバー境界線の色"
+
+msgid "次按钮边框颜色"
+msgstr "二次ボタンの境界線の色"
+
+msgid "次按钮悬停边框颜色"
+msgstr "二次ボタンのホバー境界線の色"
+
+msgid "统计数字颜色"
+msgstr "統計の色"
+
+msgid "统计标签颜色"
+msgstr "統計ラベルの色"
+
+msgid "卡片悬停上移距离 (px)"
+msgstr "カードのホバー距離 (px)"
+
+msgid "单卡片背景颜色"
+msgstr "シングルカードの背景色"
+
+msgid "单卡片边框颜色"
+msgstr "シングルカードの枠線の色"
+
+msgid "留空时跟随项目标题颜色。"
+msgstr "空白の場合は項目タイトルの色に従います。"
+
+msgid "留空时跟随项目描述颜色。"
+msgstr "項目説明の色に従う場合は、空白のままにします。"
+
+msgid "留空时跟随主按钮背景颜色。"
+msgstr "空のままにした場合、メイン ボタンの背景色に従います。"
+
+msgid "留空时跟随主按钮文字颜色。"
+msgstr "空のままにした場合、メイン ボタンのテキストの色に従います。"
+
+msgid "留空时跟随主按钮边框颜色。"
+msgstr "空のままにした場合、メインボタンの境界線の色に従います。"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:364
+msgid "留空时跟随主按钮悬停背景颜色。"
+msgstr "空のままにした場合、メイン ボタンのホバー背景色に従います。"
+
+msgid "留空时跟随主按钮悬停文字颜色。"
+msgstr "空のままにした場合は、メイン ボタンのホバー テキストの色に従います。"
+
+msgid "留空时跟随主按钮悬停边框颜色。"
+msgstr "空のままにした場合、メインボタンのホバー境界線の色に従います。"
+
+#: inc/modules/modules/class-downloads-module.php:95
+msgid "下载按钮边框颜色"
+msgstr "ダウンロードボタンの枠線の色"
+
+#: inc/modules/modules/class-downloads-module.php:110
+msgid "下载按钮悬停边框颜色"
+msgstr "ダウンロード ボタンのホバー境界線の色"
+
+#: inc/modules/modules/class-promotion-module.php:262
+msgid "活动按钮边框颜色"
+msgstr "アクティビティボタンの境界線の色"
+
+#: inc/modules/modules/class-promotion-module.php:277
+msgid "活动按钮悬停边框颜色"
+msgstr "アクティビティ ボタンのホバー境界線の色"
+
+#: inc/modules/modules/class-room-showcase-module.php:276
+msgid "预订按钮边框颜色"
+msgstr "予約ボタンの枠線の色"
+
+#: inc/modules/modules/class-room-showcase-module.php:291
+msgid "预订按钮悬停边框颜色"
+msgstr "予約ボタンのホバー境界線の色"
+
+#: inc/modules/modules/class-ticket-showcase-module.php:271
+msgid "购票按钮边框颜色"
+msgstr "チケット購入ボタンの枠線の色"
+
+#: inc/modules/modules/class-ticket-showcase-module.php:286
+msgid "购票按钮悬停边框颜色"
+msgstr "チケット購入ボタンのホバー枠の色"
+
+#: inc/modules/modules/class-visual-tabs-module.php:139
+msgid "面板按钮边框颜色"
+msgstr "パネルボタンの枠線の色"
+
+#: inc/modules/modules/class-visual-tabs-module.php:154
+msgid "面板按钮悬停边框颜色"
+msgstr "パネルボタンのホバー境界線の色"
+
+#: inc/modules/modules/class-contact-module.php:110
+msgid "内置表单提交按钮背景颜色"
+msgstr "組み込みフォーム送信ボタンの背景色"
+
+#: inc/modules/modules/class-contact-module.php:111
+msgid "内置表单提交按钮文字颜色"
+msgstr "組み込みフォーム送信ボタンのテキストの色"
+
+#: inc/modules/modules/class-contact-module.php:112
+msgid "内置表单提交按钮边框颜色"
+msgstr "組み込みフォーム送信ボタンの境界線の色"
+
+#: inc/modules/modules/class-contact-module.php:113
+msgid "内置表单提交按钮悬停背景颜色"
+msgstr "組み込みフォーム送信ボタンのホバー背景色"
+
+#: inc/modules/modules/class-contact-module.php:114
+msgid "内置表单提交按钮悬停文字颜色"
+msgstr "組み込みフォーム送信ボタンのホバーテキストの色"
+
+#: inc/modules/modules/class-contact-module.php:115
+msgid "内置表单提交按钮悬停边框颜色"
+msgstr "組み込みフォーム送信ボタンのホバー境界線の色"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:377
+msgid "浅色按钮边框颜色"
+msgstr "ライトボタンの境界線の色"
+
+#: inc/modules/modules/class-brand-banner-pro-module.php:390
+msgid "浅色按钮悬停边框颜色"
+msgstr "ライトボタンのホバー境界線の色"
+
+msgid "操作按钮背景颜色"
+msgstr "アクションボタンの背景色"
+
+msgid "操作按钮文字颜色"
+msgstr "アクションボタンのテキストの色"
+
+#: inc/modules/modules/class-compliance-trust-module.php:124
+msgid "操作按钮边框颜色"
+msgstr "アクションボタンの境界線の色"
+
+msgid "操作按钮悬停背景颜色"
+msgstr "アクション ボタンのホバー背景色"
+
+msgid "操作按钮悬停文字颜色"
+msgstr "アクションボタンのホバーテキストの色"
+
+msgid "操作按钮悬停边框颜色"
+msgstr "アクションボタンのホバー境界線の色"
+
+#: inc/modules/modules/class-cases-module.php:42
+msgid "案例列表 (手动版)"
+msgstr "症例一覧（マニュアル版）"
+
+msgid "如果配置了此列表，将优先展示这里设置的案例；若为空则自动展示文章/案例分类。"
+msgstr "このリストが設定されている場合、ここで設定されたケースが最初に表示されます。空の場合は、記事/ケースのカテゴリが自動的に表示されます。"
+
+#: inc/modules/modules/class-cases-module.php:45
+msgid "案例图片"
+msgstr "症例写真"
+
+#: inc/modules/modules/class-cases-module.php:46
+msgid "案例标题"
+msgstr "事件のタイトル"
+
+#: inc/modules/modules/class-cases-module.php:47
+msgid "案例描述"
+msgstr "事例の説明"
+
+msgid "案例链接"
+msgstr "症例リンク"
+
+msgid "案例分类/标签"
+msgstr "ケースの分類/ラベル"
+
+msgid "例如：Web前端 / UI设计"
+msgstr "例: Web フロントエンド/UI デザイン"
+
+msgid "专属联系页面"
+msgstr "専用お問い合わせページ"
+
+msgid "选择预设的联系页面（例如联系我们页面），用户点击联系卡片或更多方式时将跳转至此页面。"
+msgstr "ユーザーが連絡先カードなどをクリックしたときにリダイレクトされる、事前に設定された連絡先ページ (「お問い合わせ」ページなど) を選択します。"
+
+msgid "选择联系页面..."
+msgstr "お問い合わせページを選択してください..."
+
+msgid "徽章背景颜色"
+msgstr "バッジの背景色"
+
+#: archive.php:62
+msgid "Y年n月"
+msgstr "Y年n月"
+
+#: archive.php:64
+msgid "Y年"
+msgstr "Y年"
+
+#: category.php:662
+msgid "作者正在准备内容，先去其他分类看看吧。"
+msgstr "作者がコンテンツを準備中ですので、まずは他のカテゴリをチェックしてください。"
+
+#: search.php:77 inc\admin\traits\class-admin-settings-config-trait.php:295 inc\core\class-search-mode-manager.php:45 inc\modules\modules\class-hero-search-module.php:220 inc\modules\modules\class-video-portal-hero-module.php:114
+msgid "综合搜索"
+msgstr "総合検索"
+
+#: search.php:178
+msgid "切换搜索模式"
+msgstr "検索モードを切り替える"
+
+#: search.php:197 inc\modules\modules\class-video-portal-hero-module.php:399
+msgid "热门搜索"
+msgstr "人気の検索"
+
+#: search.php:232 inc\modules\modules\class-hero-search-module.php:215 inc\modules\modules\class-video-portal-hero-module.php:108
+msgid "搜索模式"
+msgstr "検索モード"
+
+#: search.php:331
+msgid "切换到综合搜索"
+msgstr "総合検索に切り替える"
+
+#: search.php:343
+msgid "没有找到相关影视内容"
+msgstr "関連する映画やテレビのコンテンツが見つかりませんでした"
+
+#: search.php:346
+msgid "请检查关键词是否正确，或尝试搜索演员、导演或影片名称。"
+msgstr "キーワードが正しいか確認するか、俳優、監督、映画タイトルで検索してみてください。"
+
+#: search.php:175
+msgid "%s 条结果"
+msgstr "%s の結果"
+
+#: inc\back-compat.php:74
+msgid "【启灵主题】运行环境不满足核心安全要求："
+msgstr "[Qiling Theme] 動作環境は次の主要なセキュリティ要件を満たしていません。"
+
+#: inc\back-compat.php:78
+msgid "检测到当前服务器 PHP 版本为 %1$s，未达到防范 PHP 核心高危漏洞（PHP2Shell: CVE-2026-109618 / CVE-2026-109619，CVSS 9.2~9.8 远程代码执行）的最低安全补丁版本要求。启灵主题要求最低运行版本为 PHP %2$s。"
+msgstr "現在のサーバー PHP バージョンが %1$s であることが検出されました。これは、重大度の高い PHP コアの脆弱性 (PHP2Shell: CVE-2026-109618 / CVE-2026-109619、CVSS 9.2 ～ 9.8 リモート コード実行) を防ぐためのセキュリティ パッチの最小バージョン要件を満たしていません。 Qiling テーマには、PHP %2$s の最小実行バージョンが必要です。"
+
+#: inc\back-compat.php:84
+msgid "为防止网站后台瘫痪及服务器面临严重被黑风险，主题已自动安全停用并切回可用主题。"
+msgstr "Web サイトのバックエンドが麻痺し、サーバーがハッキングされるという重大なリスクに直面するのを防ぐために、テーマは自動的かつ安全に非アクティブ化され、利用可能なテーマに戻されました。"
+
+#: inc\back-compat.php:86
+msgid "请立即在主机控制面板（如宝塔面板、1Panel、cPanel 等）中将 PHP 升级至 8.2.35 / 8.3.36 或以上安全补丁版本后再启用本主题。"
+msgstr "このテーマを有効にする前に、ホスト コントロール パネル (Pagoda パネル、1Panel、cPanel など) で PHP を直ちに 8.2.35 / 8.3.36 以降のセキュリティ パッチ バージョンにアップグレードしてください。"
+
+#: inc\back-compat.php:121
+msgid "启灵主题需要 PHP %1$s 安全版本（防范 PHP2Shell 核心 RCE 高危漏洞）。当前服务器版本为 %2$s，请升级 PHP 环境后再试。"
+msgstr "Qiling テーマには、安全なバージョンの PHP %1$s が必要です (高リスクの PHP2Shell コア RCE 脆弱性を防ぐため)。現在のサーバーのバージョンは %2$s です。PHP 環境をアップグレードして再試行してください。"
+
+#: inc\back-compat.php:147
+msgid "站点核心安全防护拦截"
+msgstr "サイトコアのセキュリティ保護インターセプト"
+
+#: inc\back-compat.php:150
+msgid "当前网站主题需要 PHP %1$s 安全版本才能运行（当前服务器版本为 %2$s）。请网站管理员在主机控制面板中将 PHP 升级至最新安全补丁版本（PHP 8.2.35+ / 8.3.36+）。"
+msgstr "現在の Web サイトのテーマを実行するには、安全なバージョンの PHP %1$s が必要です (現在のサーバーのバージョンは %2$s)。 Web サイト管理者は、ホスティング コントロール パネルで PHP を最新のセキュリティ パッチ バージョン (PHP 8.2.35+ / 8.3.36+) にアップグレードするように求められます。"
+
+#: inc\back-compat.php:154
+msgid "安全背景说明：针对近期披露的 PHP 核心高危漏洞（PHP2Shell: CVE-2026-109618 / CVE-2026-109619，CVSS 9.2~9.8 严重未授权远程代码执行），启灵主题已开启主动安全守护，防止未打补丁的服务器被黑客提权入侵挂马。"
+msgstr "セキュリティの背景説明: 最近明らかになった高リスクの PHP コアの脆弱性 (PHP2Shell: CVE-2026-109618 / CVE-2026-109619、CVSS 9.2 ～ 9.8 での深刻な不正リモート コード実行) に対応して、Qiling Theme は、パッチが適用されていないサーバーがハッカーによってハッキングされて特権を昇格させ、マルウェアを引き起こすことを防ぐアクティブなセキュリティ保護を有効にしました。"
+
+#: inc\back-compat.php:156
+msgid "PHP 核心安全补丁版本不兼容"
+msgstr "PHP コア セキュリティ パッチのバージョンに互換性がありません"
+
+#: inc\admin\class-advanced-category-metabox.php:33
+msgid "高级分类设置"
+msgstr "高度な分類設定"
+
+#: inc\admin\class-builder-revision-manager.php:38 inc\admin\class-builder-revision-manager.php:76 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:48
+msgid "页面装修修订管理"
+msgstr "ページ装飾リビジョン管理"
+
+#: inc\admin\class-builder-revision-manager.php:39 inc\admin\class-builder-revision-manager.php:93 inc\admin\traits\class-admin-settings-config-trait.php:160
+msgid "装修修订"
+msgstr "装飾改訂"
+
+#: inc\admin\class-builder-revision-manager.php:77
+msgid "这里统一管理前台装修器在每次保存前自动创建的快照。每个页面最多保留 10 份，旧快照会自动滚动淘汰。"
+msgstr "ここでは、各保存前にフロントエンド デコレータによって自動的に作成されるスナップショットが均一に管理されます。各ページの最大 10 個のコピーが保持され、古いスナップショットが自動的にロールアウトされます。"
+
+#: inc\admin\class-builder-revision-manager.php:78
+msgid "装修修订保存在页面元数据 _qiling_frontend_builder_snapshots 中，不属于 WordPress 的文章修订。数据库清理里的“文章修订版本”不会管理这里的数据。"
+msgstr "改修リビジョンはページ メタデータ _qiling_frontend_builder_snapshots に保存され、WordPress ではポスト リビジョンとみなされません。データベースのクリーンアップにおける「記事の改訂」では、ここでのデータは管理されません。"
+
+#: inc\admin\class-builder-revision-manager.php:83
+msgid "当前没有页面装修修订。页面使用前台装修器保存后，这里会自动出现记录。"
+msgstr "現在、ページ装飾の改訂はありません。フロントエンド デコレータを使用してページを保存すると、レコードがここに自動的に表示されます。"
+
+#: inc\admin\class-builder-revision-manager.php:85
+msgid "确定清空所选页面的全部装修修订吗？此操作不可恢复。"
+msgstr "選択したページのすべての装飾リビジョンをクリアしてもよろしいですか?この操作は元に戻すことができません。"
+
+#: inc\admin\class-builder-revision-manager.php:112
+msgid "%d 份"
+msgstr "%d 部"
+
+#: inc\admin\class-builder-revision-manager.php:119
+msgid "进入装修器恢复"
+msgstr "デコレーターのリカバリーに入る"
+
+#: inc\admin\class-builder-revision-manager.php:126
+msgid "清空所选页面修订"
+msgstr "選択したページのリビジョンをクリアします"
+
+#: inc\admin\class-builder-revision-manager.php:189
+msgid "确定删除这一条装修修订吗？"
+msgstr "この装飾リビジョンを削除してもよろしいですか?"
+
+#: inc\admin\class-builder-revision-manager.php:201
+msgid "确定清空这个页面的全部装修修订吗？"
+msgstr "このページのすべての装飾リビジョンをクリアしてもよろしいですか?"
+
+#: inc\admin\class-builder-revision-manager.php:206
+msgid "清空本页修订"
+msgstr "このページの改訂をクリアします"
+
+#: inc\admin\class-builder-revision-manager.php:256
+msgid "装修修订管理操作完成，处理了 %d 项。"
+msgstr "デコレーション リビジョン管理操作が完了し、%d 個のアイテムが処理されました。"
+
+#: inc\admin\class-comment-columns.php:59 inc\admin\class-comment-columns.php:64
+msgid "设备 / 归属地"
+msgstr "設備・住宅"
+
+#: inc\admin\class-comment-columns.php:108
+msgid "客户端指纹 (User-Agent): %s"
+msgstr "クライアント フィンガープリント (ユーザー エージェント): %s"
+
+#: inc\admin\class-comment-columns.php:109
+msgid "未记录客户端 User-Agent 数据"
+msgstr "クライアント ユーザー エージェント データがログに記録されない"
+
+#: inc\admin\class-comment-columns.php:135
+msgid "终端设备与合规指纹 (网络安全留存)"
+msgstr "端末デバイスとコンプライアンス フィンガープリンティング (ネットワーク セキュリティ保持)"
+
+#: inc\admin\class-comment-columns.php:159
+msgid "终端与系统"
+msgstr "端末とシステム"
+
+#: inc\admin\class-comment-columns.php:169
+msgid "原始 User-Agent"
+msgstr "元のユーザーエージェント"
+
+#: inc\admin\class-comment-columns.php:171
+msgid "（空）"
+msgstr "(空)"
+
+#: inc\admin\class-comment-columns.php:172
+msgid "依据《网络安全法》与《互联网跟帖评论服务管理规定》，该客户端指纹用于审计核查与发帖溯源。"
+msgstr "「ネットワークセキュリティ法」および「インターネットコメントサービス管理規定」に従い、クライアントのフィンガープリントは監査検証および事後トレーサビリティに使用されます。"
+
+#: inc\admin\class-comment-columns.php:219
+msgid "未知系统"
+msgstr "未知のシステム"
+
+#: inc\admin\class-comment-columns.php:220
+msgid "未知客户端"
+msgstr "不明なクライアント"
+
+#: inc\admin\class-comment-columns.php:222
+msgid "未知设备"
+msgstr "不明なデバイス"
+
+#: inc\admin\class-comment-columns.php:233
+msgid "网络爬虫"
+msgstr "ウェブクローラー"
+
+#: inc\admin\class-comment-columns.php:236
+msgid "爬虫机器人 (%s)"
+msgstr "爬虫類ロボット (%s)"
+
+#: inc\admin\class-comment-columns.php:306
+msgid "其它设备"
+msgstr "その他の設備"
+
+#: inc\admin\class-comment-columns.php:314
+msgid "微信内置浏览器"
+msgstr "WeChat内蔵ブラウザ"
+
+#: inc\admin\class-comment-columns.php:317
+msgid "支付宝客户端"
+msgstr "Alipayクライアント"
+
+#: inc\admin\class-comment-columns.php:322
+msgid "百度APP"
+msgstr "百度アプリ"
+
+#: inc\admin\class-comment-columns.php:325
+msgid "夸克浏览器"
+msgstr "クオークブラウザ"
+
+#: inc\admin\class-comment-columns.php:328
+msgid "UC浏览器"
+msgstr "UCブラウザ"
+
+#: inc\admin\class-comment-columns.php:331
+msgid "QQ浏览器"
+msgstr "QQブラウザ"
+
+#: inc\admin\class-comment-columns.php:343
+msgid "标准浏览器"
+msgstr "標準ブラウザ"
+
+#: inc\admin\class-meta-boxes-editor-service.php:217
+msgid "查看已保存的常用模块预设与模板"
+msgstr "保存された共通モジュールのプリセットとテンプレートを表示する"
+
+#: inc\admin\class-meta-boxes-editor-service.php:218
+msgid "我的模版预设库"
+msgstr "私のテンプレートライブラリ"
+
+#: inc\admin\class-meta-boxes-editor-service.php:220
+msgid "从浏览器剪贴板粘贴已复制的模块到当前页面底部"
+msgstr "コピーしたモジュールをブラウザのクリップボードから現在のページの下部に貼り付けます"
+
+#: inc\admin\class-meta-boxes-editor-service.php:221
+msgid "从剪贴板粘贴模块"
+msgstr "クリップボードからモジュールを貼り付けます"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:59 inc\admin\views\modules-meta-box.php:1529
+msgid "已隐藏"
+msgstr "隠された"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:62 inc\admin\class-meta-boxes-module-renderer.php:62
+msgid "复制模块配置"
+msgstr "モジュール構成のコピー"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:63
+msgid "粘贴覆盖当前模块"
+msgstr "貼り付けは現在のモジュールを上書きします"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:63
+msgid "粘贴覆盖"
+msgstr "オーバーレイを貼り付ける"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:64
+msgid "存为常用预设模版"
+msgstr "よく使うデフォルトのテンプレートとして保存"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65
+msgid "恢复显示"
+msgstr "表示を元に戻す"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65
+msgid "暂时隐藏"
+msgstr "一時的に非表示"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:66
+msgid "删除模块"
+msgstr "モジュールの削除"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:44
+msgid "此页面当前已被设置为【网站静态首页】"
+msgstr "このページは現在[Webサイトの静的ホームページ]として設定されています"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:46
+msgid "全站首页生效中"
+msgstr "サイト全体のトップページが完成しました"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:49
+msgid "启灵主题支持首页专属定制：页面模版内置预设或您在下方填写的 SEO 标题、描述与关键词将直接生效于网站首页，优先级高于主题后台的默认配置。"
+msgstr "Qiling テーマは、ホームページの独占的なカスタマイズをサポートしています。ページ テンプレート内の組み込みプリセット、または以下に入力する SEO タイトル、説明、キーワードは、テーマの背景のデフォルト設定よりも高い優先順位で、Web サイトのホームページに直接有効になります。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:53
+msgid "全站回退提示："
+msgstr "サイト全体のロールバックのヒント:"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:54
+msgid "若您希望该首页采用【主题设置 - 高级 - SEO 设置】中的全站统一默认配置，只需将下方对应字段清空留空保存即可，系统将自动无缝回退。"
+msgstr "[テーマ設定 - 詳細設定 - SEO 設定] でこのホームページにサイト全体の統一されたデフォルト設定を適用したい場合は、以下の対応するフィールドをクリアして保存するだけで、システムは自動的かつシームレスにロールバックします。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:55
+msgid "查看全站 SEO 设置 &rarr;"
+msgstr "フルサイトの SEO 設定を表示 →"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:62
+msgid "此页面当前已被设置为【文章列表页】"
+msgstr "現在このページは【記事一覧ページ】となっております。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:65
+msgid "您在此处配置的 SEO 标题、描述与关键词将作用于博客文章列表归档页。留空时将自动采用全站默认配置。"
+msgstr "ここで設定した SEO タイトル、説明、キーワードは、ブログ投稿リストのアーカイブ ページに適用されます。空白のままにすると、サイト全体のデフォルト設定が自動的に採用されます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:72
+msgid "留空自动使用主题全局标题: %s"
+msgstr "テーマのグローバル タイトルを自動的に使用するには、空白のままにします: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:80
+msgid "留空自动使用主题全局描述: %s"
+msgstr "テーマのグローバル説明を自動的に使用するには、空白のままにします: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:88
+msgid "留空自动使用主题全局关键词: %s"
+msgstr "トピックのグローバル キーワードを自動的に使用するには、空白のままにします: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:203
+msgid "启灵AI多语言暂未提供语言诊断数据。"
+msgstr "Qiling AI Multilingual はまだ言語診断データを提供していません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:208
+msgid "canonical 与 hreflang 按启灵AI多语言 URL 规则判断；OG image、noindex 和 nofollow 默认继承原页面，不计入译文缺失项。"
+msgstr "Canonical と hreflang は、Qiling AI の多言語 URL ルールに従って判断されます。 OG 画像、noindex、nofollow はデフォルトで元のページから継承され、翻訳で欠落している項目は含まれません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:395
+msgid "页面设置会合并到同一份 Schema 结构化数据中，不会重复输出 JSON-LD。留空字段会优先使用当前页面标题、描述、特色图或站点组织信息。"
+msgstr "ページ設定は同じ Schema 構造化データにマージされ、JSON-LD が繰り返し出力されることはありません。フィールドを空白のままにすると、現在のページのタイトル、説明、注目の画像、またはサイトの組織情報よりも優先されます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:660
+msgid "此设置也支持与第三方插件协同控制。"
+msgstr "この設定では、サードパーティのプラグインとの連携制御もサポートされます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:670
+msgid "开启后，首屏覆盖在 Banner/首屏模块上，滚动后恢复常规背景。系统会按首屏标题明暗自动选择深色或白色菜单文字。"
+msgstr "オンにすると、最初の画面がバナー/最初の画面モジュールを覆い、スクロールした後は通常の背景に戻ります。システムは、最初の折りタイトルの明るさに応じて、暗いメニュー テキストまたは白いメニュー テキストを自動的に選択します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:671
+msgid "需要手动指定时："
+msgstr "手動で指定する必要がある場合:"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:671
+msgid "请在“页面视觉风格 → 顶部菜单栏 → 首屏透明状态文字色”填写颜色；该值优先于自动判断。"
+msgstr "「ページのビジュアルスタイル→トップメニューバー→最初の画面の透明ステータステキストの色」に色を入力してください。この値は自動判定よりも優先されます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:702 inc\core\class-frontend-builder.php:1069
+msgid "我的预设：%s"
+msgstr "私のデフォルト: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:743
+msgid "页面风格管家会先告诉你当前页面正在使用什么风格、哪些区域被单独改过，以及可以怎么恢复。"
+msgstr "ページ スタイル マネージャーは、まず、現在のページでどのようなスタイルが使用されているか、どの領域が個別に変更されているか、およびそれを復元する方法を通知します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:750
+msgid "快捷操作"
+msgstr "素早い操作"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:751
+msgid "先选操作，再保存页面；会覆盖当前页面的风格设置。"
+msgstr "最初に操作を選択してからページを保存します。現在のページのスタイル設定は上書きされます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:754
+msgid "当前页面来源模式"
+msgstr "現在のページのソースモード"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:756 inc\core\class-frontend-builder.php:628
+msgid "跟随页面模板预设"
+msgstr "ページテンプレートのプリセットに従う"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:757 inc\core\class-frontend-builder.php:629
+msgid "强制跟随全站默认"
+msgstr "サイト全体のデフォルトに従うことを強制される"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:758
+msgid "启用当前页面自定义"
+msgstr "現在のページのカスタマイズを有効にする"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:763 inc\admin\class-meta-boxes-post-settings-service.php:955
+msgid "套用行业/我的预设"
+msgstr "業界/私のデフォルトを適用"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:765 inc\core\class-frontend-builder.php:624 inc\core\class-frontend-builder.php:1083
+msgid "按当前页面模板自动匹配"
+msgstr "現在のページテンプレートに従って自動的に一致します"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:770
+msgid "应用所选预设"
+msgstr "選択したプリセットを適用する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:774
+msgid "复制页面风格"
+msgstr "ページスタイルをコピーする"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:775
+msgid "填写页面ID，保存时复制"
+msgstr "ページIDを入力し、保存時にコピーします。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:776
+msgid "填写后，本页会复制该页面的视觉风格设置；留空则保存下面的当前设置。"
+msgstr "入力後、このページはページの視覚スタイル設定をコピーします。空白のままにすると、現在の設定が以下に保存されます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:780
+msgid "保存为我的预设"
+msgstr "プリセットとして保存"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:781
+msgid "例如：我的科技蓝绿风格"
+msgstr "例: 私のテックブルーとグリーンのスタイル"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:782
+msgid "填写名称并保存页面，会把当前基础预设和细调颜色保存到“基础预设”下拉框，之后其它页面可直接套用。"
+msgstr "名前を入力してページを保存します。現在の基本プリセットと微調整された色は「基本プリセット」ドロップダウン ボックスに保存され、他のページに直接適用できます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:786
+msgid "恢复导入模板默认风格"
+msgstr "インポートしたテンプレートのデフォルトのスタイルを復元する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:787
+msgid "恢复全站默认风格"
+msgstr "サイト全体のデフォルトのスタイルを復元する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:788
+msgid "清除当前页面自定义"
+msgstr "現在のページのカスタマイズをクリアします"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:794
+msgid "当前页页脚策略"
+msgstr "現在のページのフッター戦略"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:795
+msgid "先决定页脚来源，再在“底部和波浪”中做当前页的显式覆盖。"
+msgstr "まずフッターのソースを決定し、次に「Bottom and Wave」で現在のページを明示的にオーバーライドします。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:798
+msgid "页脚来源"
+msgstr "フッターソース"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:800
+msgid "完整跟随全局页脚"
+msgstr "グローバルフッターを完全にフォローしてください"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:801
+msgid "使用当前页面皮肤页脚"
+msgstr "現在のページのスキン フッターを使用する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:802
+msgid "使用指定页脚预设"
+msgstr "特定のフッター プリセットを使用する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:803
+msgid "当前页隐藏网站页脚"
+msgstr "現在のページの Web サイトのフッターを非表示にする"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:807
+msgid "指定页脚预设"
+msgstr "フッターのデフォルトを指定する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:809
+msgid "请选择页脚预设"
+msgstr "フッターのデフォルトを選択してください"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:816
+msgid "波浪衔接"
+msgstr "波のつながり"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:818
+msgid "跟随所选页脚"
+msgstr "選択したフッターをフォローする"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:819
+msgid "当前页开启"
+msgstr "現在のページが開いています"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:820
+msgid "当前页关闭"
+msgstr "現在のページが閉じます"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:824
+msgid "保留全局页脚结构，但使用当前页面皮肤配色"
+msgstr "グローバルフッター構造を維持しますが、現在のページのスキンカラーを使用します"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:826
+msgid "“完整跟随全局”不会被模板自动改色；只有选择页面皮肤、指定预设或启用皮肤配色时才带入当前页面色系。"
+msgstr "「グローバルに完全に従う」はテンプレートによって自動的に変更されません。現在のページ カラー システムは、ページ スキンが選択されている場合、プリセットが指定されている場合、またはスキン カラー マッチングが有効になっている場合にのみ適用されます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:832
+msgid "防改乱系统"
+msgstr "改ざん防止システム"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:833
+msgid "实时检查顶部、搜索、电话、按钮、CTA、底部波浪和模块卡片，避免颜色改乱后看不清。"
+msgstr "上部、検索、電話、ボタン、CTA、下部のウェーブ、モジュールカードをリアルタイムでチェックし、色の変更後の視認性の不明瞭さを防ぎます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:836
+msgid "只修复文字色"
+msgstr "文字の色のみを修正する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:837
+msgid "一键修复全部"
+msgstr "ワンクリックですべて修復します"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:865
+msgid "智能配色"
+msgstr "スマートなカラーマッチング"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:866
+msgid "根据页面主色自动生成顶部、搜索、按钮、底部和波浪颜色。"
+msgstr "ページのメインカラーに基づいて、トップ、検索、ボタン、ボトム、ウェーブのカラーを自動的に生成します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:868
+msgid "根据主色生成整套搭配"
+msgstr "メインカラーに基づいて完全な一致セットを生成します"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:873
+msgid "实时小样预览"
+msgstr "リアルタイムデモプレビュー"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:874
+msgid "展示顶部、搜索、电话、按钮、底部和波浪的大致搭配。"
+msgstr "トップ、検索、電話、ボタン、ボトム、ウェーブの大まかな組み合わせを表示します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:889
+msgid "页面内容"
+msgstr "ページコンテンツ"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:890
+msgid "页面主视觉"
+msgstr "ページのメインビジュアル"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:891
+msgid "这里模拟正文区域、按钮和模块卡片的搭配。"
+msgstr "これは、テキストエリア、ボタン、モジュールカードの組み合わせをシミュレートします。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:893
+msgid "普通按钮"
+msgstr "通常ボタン"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:898
+msgid "模块卡片"
+msgstr "モジュールカード"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:899
+msgid "服务亮点"
+msgstr "サービスのハイライト"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:900
+msgid "卡片背景、边框和文字会跟随页面基础色变化。"
+msgstr "カードの背景、枠線、テキストはページのベースカラーに応じて変わります。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:909
+msgid "底部信息"
+msgstr "底情報"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:910
+msgid "这里模拟页脚文字和链接颜色。"
+msgstr "これにより、フッター テキストとリンクの色がシミュレートされます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:919
+msgid "真实页面预览"
+msgstr "実際のページのプレビュー"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:920
+msgid "加载当前页面，并把未保存的颜色变量临时同步到预览窗口。"
+msgstr "現在のページをロードし、未保存のカラー変数をプレビュー ウィンドウに一時的に同期します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:923
+msgid "刷新预览"
+msgstr "プレビューを更新する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:924
+msgid "同步当前颜色"
+msgstr "現在の色を同期する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:927
+msgid "页面视觉真实预览"
+msgstr "ページの実際の視覚的なプレビュー"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:934
+msgid "导出当前风格"
+msgstr "現在のスタイルをエクスポートする"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:935
+msgid "复制风格 JSON"
+msgstr "スタイル JSON をコピー"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:940
+msgid "导入风格 JSON"
+msgstr "インポートスタイル JSON"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:941
+msgid "粘贴页面视觉风格 JSON，保存页面后应用。"
+msgstr "ページのビジュアル スタイル JSON を貼り付け、ページを保存した後に適用します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:942
+msgid "支持直接粘贴导出的风格 JSON，也支持粘贴包含 visual_style 字段的完整页面包 JSON。"
+msgstr "エクスポートされたスタイル JSON の直接貼り付けをサポートし、visual_style フィールドを含む完全なページ パッケージ JSON の貼り付けもサポートします。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:948
+msgid "批量应用到页面"
+msgstr "ページにバッチで適用する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:949
+msgid "选择批量应用的风格来源"
+msgstr "バッチアプリケーションのスタイルソースを選択してください"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:951 inc\admin\class-meta-boxes-post-settings-service.php:3322
+msgid "当前页面风格"
+msgstr "現在のページのスタイル"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:952
+msgid "恢复到导入模板时的默认风格"
+msgstr "テンプレートをインポートするときにデフォルトのスタイルに戻す"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:953 inc\admin\class-meta-boxes-post-settings-service.php:3037
+msgid "全站默认风格"
+msgstr "サイト全体のデフォルトのスタイル"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:962
+msgid "填写页面ID，多个ID用逗号、空格或换行分隔"
+msgstr "ページ ID を入力し、複数の ID をカンマ、スペース、または改行で区切ります。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:963
+msgid "点击下方按钮后，会把所选风格保存到这些页面。当前页面本身仍会正常保存上方设置。"
+msgstr "下のボタンをクリックすると、選択したスタイルがこれらのページに保存されます。現在のページ自体には上記の設定が通常どおり保存されます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:964
+msgid "批量应用所选风格"
+msgstr "選択したスタイルをバッチで適用する"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:968
+msgid "我的预设管理"
+msgstr "私のデフォルトの管理"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:971
+msgid "选择我的预设"
+msgstr "プリセットを選択してください"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:976
+msgid "新名称，留空则只删除"
+msgstr "新しい名前。削除のみを行う場合は空白のままにします"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:978
+msgid "重命名预设"
+msgstr "プリセット名の変更"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:979
+msgid "删除预设"
+msgstr "プリセットの削除"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:982
+msgid "还没有保存过“我的预设”。"
+msgstr "「マイ プリセット」はまだ保存されていません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:1023
+msgid "跟随默认"
+msgstr "デフォルトに従ってください"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:2933
+msgid "我的风格，可再次套用或批量应用。"
+msgstr "私のスタイルは再度適用することも、一括で適用することもできます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3038
+msgid "页面强制跟随全站默认。"
+msgstr "ページはサイト全体のデフォルトに強制的に従うようになります。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3048
+msgid "基于该预设做了页面细调。"
+msgstr "ページはこのプリセットに基づいて微調整されました。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3048
+msgid "直接套用该预设。"
+msgstr "このプリセットを直接適用します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3058
+msgid "页面自定义：%s"
+msgstr "ページのカスタマイズ: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3059 inc\admin\views\modules-meta-box.php:582
+msgid "当前页面"
+msgstr "現在のページ"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3061
+msgid "该页面有单独颜色，未保存成我的风格。"
+msgstr "このページには別の色があり、マイ スタイルとして保存されません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3089
+msgid "模板默认风格"
+msgstr "テンプレートのデフォルトのスタイル"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3102
+msgid "模板默认：%s"
+msgstr "テンプレートのデフォルト: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3105
+msgid "恢复到导入模板时的默认风格会回到这一组。"
+msgstr "テンプレートをインポートするときにデフォルトのスタイルに戻すと、このグループに戻ります。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3139 inc\admin\class-meta-boxes-post-settings-service.php:3142
+msgid "风格使用情况"
+msgstr "スタイルの使用法"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3143
+msgid "查看当前风格、我的风格和已被页面使用的风格，快速判断批量修改会影响哪些页面。"
+msgstr "現在のスタイル、自分のスタイル、およびページですでに使用されているスタイルを表示し、バッチ変更の影響を受けるページをすぐに判断します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3150
+msgid "暂无使用数据"
+msgstr "使用状況データはまだありません"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3153
+msgid "还没有页面保存过页面风格设置。"
+msgstr "ページ スタイル設定を保存しているページはまだありません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3171
+msgid "%d 个页面"
+msgstr "%d ページ"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3175
+msgid "暂无页面使用"
+msgstr "現在使用中のページはありません"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3189 inc\admin\class-meta-boxes-post-settings-service.php:3366
+msgid "另有 %d 个"
+msgstr "さらに%d個"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3263
+msgid "未匹配模板预设"
+msgstr "一致しないテンプレート プリセット"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3264
+msgid "未选择基础预设"
+msgstr "基本プリセットが選択されていません"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3309 inc\admin\class-meta-boxes-post-settings-service.php:3323 inc\admin\class-meta-boxes-post-settings-service.php:3347 inc\admin\class-meta-boxes-post-settings-service.php:3453 inc\admin\class-meta-boxes-post-settings-service.php:3492
+msgid "全站默认"
+msgstr "サイト全体のデフォルト"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3311 inc\admin\class-meta-boxes-post-settings-service.php:3314
+msgid "页面风格管家"
+msgstr "ページスタイルマネージャー"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3315
+msgid "先看清当前来源和覆盖项，再决定要套用、复制、保存或恢复。"
+msgstr "適用、コピー、保存、または復元するかどうかを決定する前に、現在のソースとオーバーライドを確認してください。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3326
+msgid "当前来源"
+msgstr "電流源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3337
+msgid "顶部菜单来源"
+msgstr "トップメニューソース"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3338
+msgid "搜索框来源"
+msgstr "検索ボックスのソース"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3339
+msgid "底部波浪来源"
+msgstr "底部波源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3340
+msgid "按钮来源"
+msgstr "ボタンソース"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3356
+msgid "模块级单独覆盖"
+msgstr "モジュールレベルの個別対応範囲"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3358
+msgid "没有发现单独覆盖，模块会跟随页面风格。"
+msgstr "個別のオーバーライドは見つかりません。モジュールはページ スタイルに従います。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3360
+msgid "发现 %d 个模块单独覆盖了页面风格"
+msgstr "ページ スタイルを個別にカバーする %d 個のモジュールが見つかりました"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3394 inc\core\helpers\helpers-page-skins.php:1904
+msgid "我的：%s"
+msgstr "私のもの: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3454
+msgid "当前页面强制使用全站设计设置。"
+msgstr "現在のページでは、完全なサイト デザイン設定が強制されます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3462 inc\admin\class-meta-boxes-post-settings-service.php:3477 inc\admin\class-meta-boxes-post-settings-service.php:3535
+msgid "页面自定义"
+msgstr "ページのカスタマイズ"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3463
+msgid "基于 %s 细调。"
+msgstr "%s に基づいて微調整します。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3463
+msgid "没有选择基础预设。"
+msgstr "基本プリセットが選択されていません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3470 inc\admin\class-meta-boxes-post-settings-service.php:3554
+msgid "我的预设"
+msgstr "私のデフォルト"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3470 inc\admin\class-meta-boxes-post-settings-service.php:3485 inc\admin\class-meta-boxes-post-settings-service.php:3554 inc\admin\class-meta-boxes-post-settings-service.php:3561
+msgid "模板预设"
+msgstr "テンプレートのプリセット"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3478
+msgid "尚未填写细调字段；保存后仍会保持当前页面自定义模式。"
+msgstr "絞り込みフィールドが入力されていません。現在のページのカスタマイズ モードは保存時に残ります。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3493
+msgid "当前页面没有匹配模板预设或页面自定义。"
+msgstr "現在のページには、一致するテンプレート プリセットまたはページ カスタマイズがありません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3536
+msgid "此区域有单独字段覆盖。"
+msgstr "この領域は別のフィールドでカバーされます。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3548
+msgid "跟随全站设计设置。"
+msgstr "サイトの完全なデザイン設定に従います。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3568
+msgid "没有页面或模板级覆盖。"
+msgstr "ページまたはテンプレート レベルの範囲はありません。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3613
+msgid "%1$s #%2$d"
+msgstr "%1$s #%2$d"
+
+#: inc\admin\class-meta-boxes.php:495
+msgid "页面视觉风格"
+msgstr "ページのビジュアルスタイル"
+
+#: inc\admin\class-page-package-admin.php:726
+msgid "预览已生成，页面选择已保存。"
+msgstr "プレビューが生成され、ページ選択が保存されます。"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:34
+msgid "当前页顶部与底部装修"
+msgstr "現在のページの上部と下部を装飾します"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:61
+msgid "每个区域都可以跟随全站设置、使用一个独立装修页面，或者仅在当前页隐藏。只想改背景和文字颜色时，不需要挂载装修页面，请直接使用“页面视觉风格”中的对应区域配色。"
+msgstr "各領域は、サイト全体の設定に従うことも、個別の装飾ページを使用することも、現在のページでのみ非表示にすることもできます。背景と文字色のみを変更したい場合は、デコレーションページを実装する必要はありません。 「ページビジュアルスタイル」の該当領域のカラーマッチングを直接ご利用ください。"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:65
+msgid "页面区域"
+msgstr "ページエリア"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:66
+msgid "当前页处理方式"
+msgstr "現在のページの処理方法"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:67
+msgid "装修内容来源"
+msgstr "装飾コンテンツのソース"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:77
+msgid "跟随全站设置"
+msgstr "サイト全体の設定に従います"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:78
+msgid "使用指定装修页面"
+msgstr "指定されたデコレーションページを使用する"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:79
+msgid "仅在当前页隐藏"
+msgstr "現在のページでのみ非表示にする"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:84
+msgid "请选择已完成装修的页面"
+msgstr "装飾されたページを選択してください"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:95
+msgid "优先级：当前页指定装修 > 当前页隐藏 > 全站装修 > 主题默认结构。装修源页面不能选择当前页面自身，以免循环加载。"
+msgstr "優先順位: 現在のページの指定された装飾 > 現在のページを非表示 > サイト全体の装飾 > テーマのデフォルト構造。装飾ソース ページは、ループ読み込みを避けるために現在のページ自体を選択できません。"
+
+#: inc\admin\class-setup-wizard-admin.php:418
+msgid "可随时调整"
+msgstr "いつでも調整可能"
+
+#: inc\admin\class-setup-wizard-admin.php:418
+msgid "所有设置都能在主题设置、页面和菜单中单独修改。"
+msgstr "すべての設定は、テーマ設定、ページ、メニューで個別に変更できます。"
+
+#: inc\admin\class-setup-wizard-admin.php:419
+msgid "已有首页、页面和菜单会优先复用。"
+msgstr "既存のホームページ、ページ、メニューが最初に再利用されます。"
+
+#: inc\admin\class-setup-wizard-admin.php:420
+msgid "启灵生态插件、积分商城、微信登录等只检测状态，不安装不配置。"
+msgstr "Qiling Ecology プラグイン、ポイント モール、WeChat ログインなどはステータスを検出するだけで、インストールや設定は行いません。"
+
+#: inc\admin\class-setup-wizard-admin.php:527
+msgid "默认优先复用已有页面，网址别名、标题或模板相同的页面不会重复创建；只有缺失的页面才会新建。"
+msgstr "デフォルトでは、既存のページが最初に再利用されます。同じ URL エイリアス、タイトル、またはテンプレートを持つページは再作成されません。不足しているページのみが作成されます。"
+
+#: inc\admin\class-setup-wizard-admin.php:576
+msgid "创建缺少的登录、注册和个人中心页面"
+msgstr "欠落しているログイン、登録、パーソナル センター ページを作成する"
+
+#: inc\admin\class-setup-wizard-admin.php:589
+msgid "生成页面不会创建菜单、写入品牌、SEO 或页脚设置，也不会覆盖已有页面内容。菜单和基础信息可在下一步配置。"
+msgstr "ページの生成では、メニューの作成、ブランディング、SEO、フッター設定の作成、既存のページ コンテンツの上書きは行われません。メニューと基本情報は次のステップで設定できます。"
+
+#: inc\admin\class-setup-wizard-admin.php:622
+msgid "此步骤可创建或绑定主菜单，并保存品牌、联系、页脚和 SEO 基础信息；默认只填写尚未设置的内容。"
+msgstr "このステップでは、メイン メニューを作成またはバインドし、ブランド、連絡先、フッター、および SEO の基本情報を保存します。デフォルトでは、設定されていない内容のみが入力されます。"
+
+#: inc\admin\class-setup-wizard-admin.php:779
+msgid "下面这些不是当前方案必需项，仅显示安装状态，供扩展站点功能时参考。"
+msgstr "以下は現在のソリューションには必須ではなく、サイトの機能を拡張する際の参考としてインストール ステータスを示すだけです。"
+
+#: inc\admin\class-setup-wizard-admin.php:789
+msgid "检测只读取插件的安装和启用状态；向导不会安装、启用或停用插件，也不会更改启灵生态插件、微信登录或表单插件的配置。"
+msgstr "検出では、プラグインのインストールとアクティベーションのステータスのみが読み取られます。ウィザードはプラグインのインストール、有効化、非アクティブ化を行いません。また、Qiling Ecology プラグイン、WeChat ログイン、またはフォーム プラグインの構成を変更することもありません。"
+
+#: inc\admin\class-setup-wizard-admin.php:945
+msgid "这里汇总本次向导的配置结果和常用管理入口。点击完成只记录向导完成状态；第三方插件仍然只检测和提示，不会安装、启用或配置。"
+msgstr "このウィザードの構成結果と共通の管理入り口の概要を次に示します。 「完了」をクリックすると、ウィザードの完了ステータスのみが記録されます。サードパーティのプラグインは、引き続き検出してプロンプトを表示するだけで、インストール、有効化、構成は行いません。"
+
+#: inc\admin\class-setup-wizard-admin.php:983
+msgid "配置结果"
+msgstr "設定結果"
+
+#: inc\admin\class-setup-wizard-admin.php:1011
+msgid "可选插件状态"
+msgstr "オプションのプラグインのステータス"
+
+#: inc\admin\class-setup-wizard-admin.php:1016
+msgid "已启用 %1$d 项，已安装未启用 %2$d 项，未安装 %3$d 项。向导不会更改第三方插件配置。"
+msgstr "%1$d 個の項目は有効ですが、%2$d 個の項目は無効で、%3$d 個の項目はインストールされていません。ウィザードはサードパーティのプラグイン構成を変更しません。"
+
+#: inc\admin\class-setup-wizard-admin.php:1054
+msgid "常用管理入口"
+msgstr "共用管理入口"
+
+#: inc\admin\class-setup-wizard-admin.php:1392
+msgid "继续导入或替换页面模板。"
+msgstr "ページ テンプレートのインポートまたは置換を続行します。"
+
+#: inc\admin\class-setup-wizard-admin.php:1455
+msgid "向导仅检测并提示这些插件的状态，不会安装、启用或配置它们。"
+msgstr "ウィザードは、これらのプラグインのステータスを検出してプロンプトを表示するだけです。それらをインストール、有効化、または構成することはありません。"
+
+#: inc\admin\class-template-center-admin.php:117
+msgid "暂无模板行业"
+msgstr "テンプレート業界はまだありません"
+
+#: inc\admin\class-template-center-admin.php:129
+msgid "全站演示数据"
+msgstr "完全なサイトデモデータ"
+
+#: inc\admin\class-template-center-admin.php:131
+msgid "确定要一键彻底删除全站所有行业模版演示数据吗？此操作不可逆。"
+msgstr "ワンクリックでサイト全体のすべての業界テンプレートのデモ データを完全に削除してもよろしいですか?この操作は元に戻すことができません。"
+
+#: inc\admin\class-template-center-admin.php:135
+msgid "一键清空演示数据"
+msgstr "ワンクリックでデモデータをクリア"
+
+#: inc\admin\class-template-center-admin.php:384
+msgid "🧹 演示数据清理成功："
+msgstr "🧹 デモデータのクリーンアップが成功しました:"
+
+#: inc\admin\class-template-center-admin.php:385
+msgid "已彻底清除 %d 篇官方模版配套演示数据，数据库已恢复纯净状态。"
+msgstr "%d 記事の公式テンプレートをサポートするデモ データは完全に消去され、データベースは純粋な状態に復元されました。"
+
+#: inc\admin\class-template-center-admin.php:422
+msgid "📦 已同步生成 %d 篇配套行业演示数据（可在文章列表编辑或随时在上方一键清空）。"
+msgstr "📦 %d 個のサポート産業デモンストレーション データが同期され、生成されました (いつでも記事リストで編集したり、上のワンクリックでクリアしたりできます)。"
+
+#: inc\admin\class-template-center-admin.php:734
+msgid "%d 模块"
+msgstr "%d モジュール"
+
+#: inc\admin\class-template-center-admin.php:760
+msgid "启灵官方页面模板"
+msgstr "Qiling 公式ページのテンプレート"
+
+#: inc\admin\class-template-center-admin.php:832
+msgid "📦 自动导入配套行业演示数据 (可在模版中心一键彻底清空)"
+msgstr "📦 サポート業界のデモンストレーション データを自動的にインポート (テンプレート センターでワンクリックで完全にクリアできます)"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "影视门户首页"
+msgstr "映画とテレビのポータル ホームページ"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "适用于电影、电视剧、动漫、综艺等视频内容门户。"
+msgstr "映画、テレビシリーズ、アニメーション、バラエティ番組などのビデオ コンテンツ ポータルに適しています。"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "娱乐"
+msgstr "エンターテイメント"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "门户"
+msgstr "ポータル"
+
+#: inc\admin\class-template-center-admin.php:915 inc\modules\modules\class-video-ranking-module.php:31 inc\modules\modules\class-video-ranking-module.php:52 inc\modules\modules\class-video-ranking-module.php:100
+msgid "影视排行榜"
+msgstr "映画やテレビのランキング"
+
+#: inc\admin\class-template-center-admin.php:915
+msgid "影视站专用的深色全宽排行榜页面，适合总榜、电影榜、剧集榜与动漫榜。"
+msgstr "総合ランキング・映画ランキング・ドラマランキング・アニメランキングに最適な、映画・テレビ局専門のダーク全角ランキングページです。"
+
+#: inc\admin\class-template-center-admin.php:915
+msgid "排行榜"
+msgstr "ランキング一覧"
+
+#: inc\admin\class-template-center-admin.php:922 inc\core\class-setup-wizard-presets.php:385 inc\core\helpers\helpers-page-skins.php:186
+msgid "云主机SaaS官网（一体式）"
+msgstr "クラウドホストSaaS公式サイト（オールインワン）"
+
+#: inc\admin\class-template-center-admin.php:922
+msgid "适合云主机、虚拟主机、企业托管、CDN 加速和主机套餐转化的一体式官网。"
+msgstr "クラウド ホスティング、仮想ホスティング、エンタープライズ ホスティング、CDN アクセラレーション、ホスティング パッケージ変換に適したオールインワンの公式 Web サイトです。"
+
+#: inc\admin\class-template-center-admin.php:922 inc\admin\class-template-center-admin.php:934 inc\admin\class-template-center-admin.php:935
+msgid "一体式视觉"
+msgstr "オールインワンのビジョン"
+
+#: inc\admin\class-template-center-admin.php:922
+msgid "Hosting"
+msgstr "ホスティング"
+
+#: inc\admin\class-template-center-admin.php:922 inc\admin\class-template-center-admin.php:934
+msgid "云服务"
+msgstr "クラウドサービス"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "图片素材壁纸站"
+msgstr "写真素材・壁紙サイト"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "适合高清壁纸、摄影作品、设计配图和图片素材聚合站。"
+msgstr "高解像度の壁紙、写真、デザインイラスト、写真素材の集約サイトに最適です。"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "图片素材"
+msgstr "写真素材"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "高清壁纸"
+msgstr "HDの壁紙"
+
+#: inc\admin\class-template-center-admin.php:934 inc\core\helpers\helpers-page-skins.php:22
+msgid "一体式官网"
+msgstr "オールインワン公式サイト"
+
+#: inc\admin\class-template-center-admin.php:934
+msgid "适合云服务、SaaS、对象存储和技术产品官网，强调整页连续画布视觉。"
+msgstr "クラウド サービス、SaaS、オブジェクト ストレージ、テクノロジー製品の公式 Web サイトに適しており、ページ上の視覚的な連続キャンバスを強調します。"
+
+#: inc\admin\class-template-center-admin.php:935 inc\core\helpers\helpers-page-skins.php:102
+msgid "科技公司官网（一体式）"
+msgstr "テクノロジー企業公式サイト（オールインワン）"
+
+#: inc\admin\class-template-center-admin.php:935
+msgid "适合 AI、云计算、数据平台、研发服务和技术咨询公司官网，用连续画布组合首屏、能力、方案、流程、套餐和转化入口。"
+msgstr "AI、クラウド コンピューティング、データ プラットフォーム、研究開発サービス、テクノロジー コンサルティング会社の公式 Web サイトに適しており、連続キャンバスを使用して最初の画面、機能、ソリューション、プロセス、パッケージ、変換ポータルを組み合わせます。"
+
+#: inc\admin\class-template-center-admin.php:935 inc\core\helpers\helpers-page-skins.php:457
+msgid "科技公司"
+msgstr "テクノロジー企業"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "健康保健用品官网"
+msgstr "ヘルスケア製品公式サイト"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "营养补充、日常保健用品、合规信息和产品咨询。"
+msgstr "栄養補助食品、日常の健康製品、コンプライアンス情報、製品に関するアドバイス。"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "健康用品"
+msgstr "健康用品"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "合规展示"
+msgstr "コンプライアンス表示"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "情趣用品商城"
+msgstr "大人のおもちゃモール"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "成人情趣用品、材质说明、隐私配送和清洁养护。"
+msgstr "大人の大人のおもちゃ、材料の説明書、個人配送、クリーニングとメンテナンス。"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "18+ 成人适用"
+msgstr "18 歳以上の大人に適しています"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "隐私配送"
+msgstr "プライバシーの提供"
+
+#: inc\admin\class-template-center-admin.php:959
+msgid "服装品牌官网"
+msgstr "アパレルブランド公式サイト"
+
+#: inc\admin\class-template-center-admin.php:959
+msgid "服装品牌、当季系列、搭配画册、精选单品和品牌服务。"
+msgstr "衣料品ブランド、シーズンコレクション、マッチングアルバム、セレクトアイテム、ブランドサービス。"
+
+#: inc\admin\class-template-center-admin.php:959 inc\modules\class-module-standards.php:336
+msgid "服装时尚"
+msgstr "衣類ファッション"
+
+#: inc\admin\class-template-center-admin.php:1199
+msgid "按行业查看官方模板覆盖情况。已有模板的行业可直接点击筛选，暂无模板的行业会清晰标注。"
+msgstr "業界ごとの公式テンプレートの範囲を表示します。既存のテンプレートがある業界は直接クリックしてフィルタリングできますが、テンプレートのない業界は明確にマークされます。"
+
+#: inc\admin\class-template-center-admin.php:1203
+msgid "已覆盖 %1$s / %2$s，暂无模板 %3$s"
+msgstr "%1$s / %2$s はカバーされていますが、テンプレート %3$s はまだありません"
+
+#: inc\admin\class-template-center-admin.php:1235
+msgid "暂无模板"
+msgstr "まだテンプレートがありません"
+
+#: inc\admin\class-template-demo-data-service.php:87
+msgid "行业精选案例"
+msgstr "業界が厳選した事例"
+
+#: inc\admin\class-template-demo-data-service.php:258
+msgid "企业核心业务"
+msgstr "企業のコア事業"
+
+#: inc\admin\class-theme-doctor-service.php:55
+msgid "健康状态优秀"
+msgstr "優れた健康状態"
+
+#: inc\admin\class-theme-doctor-service.php:58
+msgid "存在安全或可用性隐患"
+msgstr "セキュリティまたはユーザビリティのリスクがある"
+
+#: inc\admin\class-theme-doctor-service.php:61
+msgid "良好，仍有优化空间"
+msgstr "そうですね、まだ最適化の余地があります"
+
+#: inc\admin\class-theme-doctor-service.php:89 inc\admin\class-theme-doctor-service.php:102
+msgid "PHP 运行环境与安全基线"
+msgstr "PHP の動作環境とセキュリティ ベースライン"
+
+#: inc\admin\class-theme-doctor-service.php:91 inc\admin\class-theme-doctor-service.php:104
+msgid "系统环境"
+msgstr "システム環境"
+
+#: inc\admin\class-theme-doctor-service.php:94
+msgid "当前 PHP 版本为 %s，完全满足主题既定的安全基线要求（PHP 8.2 ≥ 8.2.35 或 8.3 ≥ 8.3.36）。"
+msgstr "現在の PHP バージョンは %s で、テーマの確立されたセキュリティ ベースライン要件 (PHP 8.2 ≥ 8.2.35 または 8.3 ≥ 8.3.36) を完全に満たしています。"
+
+#: inc\admin\class-theme-doctor-service.php:107
+msgid "当前 PHP 版本 (%s) 低于安全基线要求，容易受到已知远程漏洞威胁。建议尽快升级至 PHP 8.2.35+ 或 8.3.36+。"
+msgstr "現在の PHP バージョン (%s) はセキュリティのベースライン要件を下回っており、既知のリモートの脆弱性に対して脆弱です。できるだけ早く PHP 8.2.35 以降または 8.3.36 以降にアップグレードすることをお勧めします。"
+
+#: inc\admin\class-theme-doctor-service.php:126 inc\admin\class-theme-doctor-service.php:142 inc\admin\class-theme-doctor-service.php:153
+msgid "SMTP 邮件发信服务"
+msgstr "SMTPメール送信サービス"
+
+#: inc\admin\class-theme-doctor-service.php:129
+msgid "当前未启用 SMTP 发信功能。访客找回密码、管理员接收订单及表单提醒邮件将可能无法正常送达。"
+msgstr "SMTP メッセージングは現在有効になっていません。訪問者のパスワードの取得、管理者の注文の受信、およびフォームのリマインダーメールが正常に配信されない場合があります。"
+
+#: inc\admin\class-theme-doctor-service.php:131
+msgid "前往配置 SMTP"
+msgstr "SMTPの設定に進みます。"
+
+#: inc\admin\class-theme-doctor-service.php:145
+msgid "已开启 SMTP 开关，但服务器地址或发信账号未完整填写。"
+msgstr "SMTP スイッチはオンになっていますが、サーバー アドレスまたは送信アカウントが完全に入力されていません。"
+
+#: inc\admin\class-theme-doctor-service.php:147
+msgid "补充发信配置"
+msgstr "補足的な送信設定"
+
+#: inc\admin\class-theme-doctor-service.php:158
+msgid "SMTP 邮件服务已启用并就绪（服务器: %1$s，发信账户: %2$s），信封发件人已自动保护对齐。"
+msgstr "SMTP メール サービスは有効で準備が整っており (サーバー: %1$s、送信アカウント: %2$s)、エンベロープ送信者は自動的に保護され、調整されています。"
+
+#: inc\admin\class-theme-doctor-service.php:191 inc\admin\class-theme-doctor-service.php:201 inc\admin\class-theme-doctor-service.php:212
+msgid "WebP 图像极速处理引擎"
+msgstr "WebP 画像超高速処理エンジン"
+
+#: inc\admin\class-theme-doctor-service.php:193 inc\admin\class-theme-doctor-service.php:203 inc\admin\class-theme-doctor-service.php:214
+msgid "性能与媒体"
+msgstr "パフォーマンスとメディア"
+
+#: inc\admin\class-theme-doctor-service.php:194
+msgid "服务器当前 PHP 未检测到 GD 或 Imagick 的 WebP 编码支持。主题已自动启用平滑回退，但建议安装 php-gd / php-imagick 以享受 50% 图片体积减小。"
+msgstr "サーバー 現在の PHP は、GD または Imagick の WebP エンコーディング サポートを検出しません。テーマではスムーズ フォールバックが自動的に有効になっていますが、画像サイズを 50% 削減するには php-gd / php-imagick をインストールすることをお勧めします。"
+
+#: inc\admin\class-theme-doctor-service.php:204
+msgid "服务器已具备 WebP 编码能力，但主题设置中已关闭 WebP 缩略图生成。建议开启以节省带宽。"
+msgstr "サーバーにはすでに WebP エンコード機能がありますが、WebP サムネイルの生成はテーマ設定でオフになっています。帯域幅を節約するためにオンにすることをお勧めします。"
+
+#: inc\admin\class-theme-doctor-service.php:206
+msgid "开启 WebP 压缩"
+msgstr "WebP 圧縮をオンにする"
+
+#: inc\admin\class-theme-doctor-service.php:215
+msgid "WebP 引擎正常工作。前台缩略图已实现自动化 WebP 转换，并适配阿里云 OSS、腾讯云 COS 云端转码。"
+msgstr "WebP エンジンは正常に動作しています。フロントエンドのサムネイルは自動的に WebP に変換され、Alibaba Cloud OSS および Tencent Cloud COS のクラウド コード変換に適応されます。"
+
+#: inc\admin\class-theme-doctor-service.php:232 inc\admin\class-theme-doctor-service.php:241
+msgid "W3C 推测性预渲染 (0秒瞬开)"
+msgstr "W3C 投機的プリレンダリング (0 秒即時オン)"
+
+#: inc\admin\class-theme-doctor-service.php:235
+msgid "推测性预渲染已开启。访客鼠标悬停链接时后台自动预载，呈现类似单页应用（SPA）的无缝秒开体验。"
+msgstr "投機的なプリレンダリングがオンになっています。訪問者がリンク上にマウスを置くと背景が自動的にプリロードされ、シングル ページ アプリケーション (SPA) と同様のシームレスなインスタント オープニング エクスペリエンスが提供されます。"
+
+#: inc\admin\class-theme-doctor-service.php:244
+msgid "推测性预渲染当前处于关闭状态。建议在优化设置中开启，体验 0ms 网页切换效果。"
+msgstr "投機的プリレンダリングは現在オフになっています。 0ms の Web ページ切り替え効果を体験するには、最適化設定でオンにすることをお勧めします。"
+
+#: inc\admin\class-theme-doctor-service.php:246
+msgid "开启预渲染"
+msgstr "プリレンダリングをオンにする"
+
+#: inc\admin\class-theme-doctor-service.php:263 inc\admin\class-theme-doctor-service.php:274
+msgid "ICP 网站备案号合规展示"
+msgstr "ICP Webサイト登録番号準拠表示"
+
+#: inc\admin\class-theme-doctor-service.php:265 inc\admin\class-theme-doctor-service.php:276
+msgid "合规运营"
+msgstr "コンプライアンス業務"
+
+#: inc\admin\class-theme-doctor-service.php:266
+msgid "未检测到 ICP 备案编号。面向中国大陆境内公开运行的商业或企业站点，需在页脚公示合规备案号。"
+msgstr "ICP ファイリング番号が検出されませんでした。中国本土で公的に運営されている商用または企業の Web サイトの場合、コンプライアンス登録番号をフッターに公開する必要があります。"
+
+#: inc\admin\class-theme-doctor-service.php:268
+msgid "填写备案号"
+msgstr "登録番号を入力してください"
+
+#: inc\admin\class-theme-doctor-service.php:279
+msgid "已正确配置 ICP 备案信息：%s。"
+msgstr "ICP ファイリング情報は正しく構成されました: %s。"
+
+#: inc\admin\class-theme-doctor-service.php:296 inc\admin\class-theme-doctor-service.php:307
+msgid "搜索引擎友好度 (固定链接)"
+msgstr "検索エンジンへのフレンドリーさ (固定リンク)"
+
+#: inc\admin\class-theme-doctor-service.php:298 inc\admin\class-theme-doctor-service.php:309
+msgid "SEO 优化"
+msgstr "SEOの最適化"
+
+#: inc\admin\class-theme-doctor-service.php:299
+msgid "当前站点正在使用朴素动态链接（如 ?p=123），对百度、Google 等搜索引擎收录极不友好。强烈建议调整为伪静态结构（如 /%post_id%.html）。"
+msgstr "現在のサイトは単純なダイナミック リンク (?p=123 など) を使用しており、Baidu や Google などの検索エンジンにとって非常に不親切です。擬似静的構造 (/%post_id%.html など) に調整することを強くお勧めします。"
+
+#: inc\admin\class-theme-doctor-service.php:301
+msgid "配置伪静态"
+msgstr "擬似静的を構成する"
+
+#: inc\admin\class-theme-doctor-service.php:310
+msgid "固定链接伪静态规则已正常生效，有利于搜索引擎收录与抓取。"
+msgstr "固定リンクの擬似静的ルールは正常に有効になり、これは検索エンジンの組み込みとクローリングに有益です。"
+
+#: inc\admin\class-theme-doctor-service.php:327 inc\admin\class-theme-doctor-service.php:341 inc\admin\class-theme-doctor-service.php:352
+msgid "自定义企业字体配置"
+msgstr "カスタム企業フォント構成"
+
+#: inc\admin\class-theme-doctor-service.php:329 inc\admin\class-theme-doctor-service.php:343 inc\admin\class-theme-doctor-service.php:354
+msgid "视觉与资产"
+msgstr "ビジョンと資産"
+
+#: inc\admin\class-theme-doctor-service.php:330
+msgid "未启用自定义字体，站点正使用高性能系统级原生字体族（-apple-system / BlinkMacSystemFont）。"
+msgstr "カスタム フォントが有効になっておらず、サイトでは高性能のシステム レベルのネイティブ フォント ファミリ (-apple-system/BlinkMacSystemFont) が使用されています。"
+
+#: inc\admin\class-theme-doctor-service.php:344
+msgid "已开启自定义字体开关，但未提供 WOFF2 字体文件地址，将导致字体加载失败并影响页面排版。"
+msgstr "カスタム フォント スイッチがオンになっていますが、WOFF2 フォント ファイルのアドレスが指定されていないため、フォントの読み込みに失敗し、ページ レイアウトに影響を与えます。"
+
+#: inc\admin\class-theme-doctor-service.php:346
+msgid "上传字体文件"
+msgstr "フォントファイルをアップロードする"
+
+#: inc\admin\class-theme-doctor-service.php:355
+msgid "已配置 WOFF2 字体文件，且头部关键预加载通道已激活，有效消除字体闪烁 (FOUT)。"
+msgstr "WOFF2 フォント ファイルが設定され、ヘッダー クリティカル プリロード チャネルがアクティブ化され、フォント フリッカー (FOUT) が効果的に排除されています。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:748
+msgid "正在处理，请稍候..."
+msgstr "処理中です。お待ちください..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:754
+msgid "操作完成"
+msgstr "操作が完了しました"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:762 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:32
+msgid "清空全部缓存"
+msgstr "すべてのキャッシュをクリア"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:762 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:31
+msgid "扫描并清理未使用缓存"
+msgstr "未使用のキャッシュをスキャンしてクリーンアップする"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:771
+msgid "确定清空全部缩略图缓存吗？前台访问时会重新生成。"
+msgstr "すべてのサムネイル キャッシュをクリアしてもよろしいですか?フォアグラウンドからアクセスすると再生成されます。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:774
+msgid "确定扫描并删除未使用的缩略图缓存吗？"
+msgstr "未使用のサムネイル キャッシュをスキャンして削除してもよろしいですか?"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:774
+msgid "扫描中..."
+msgstr "スキャン中..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:877
+msgid "确定要清理 IP 缓存吗？此操作只会删除主题 IP 归属地临时缓存文件。"
+msgstr "IP キャッシュをクリアしてもよろしいですか?この操作では、トピック IP ホームの一時キャッシュ ファイルのみが削除されます。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:901 inc\admin\traits\class-admin-settings-admin-trait.php:905 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:239 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:241
+msgid "清理 IP 接口缓存"
+msgstr "IP インターフェイス キャッシュをクリアする"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:911
+msgid "确定要重置用户 IP 归属地数据吗？\\n\\n此操作不会删除用户账号，只会清空已保存的旧 IP 归属地，用户下次访问时重新获取并写入数据库。"
+msgstr "ユーザーの IP アドレス データをリセットしてもよろしいですか? \\n\\nこの操作ではユーザー アカウントは削除されません。保存されている古い IP アドレスが消去されるだけで、次回ユーザーがアクセスしたときにその IP アドレスが再取得されてデータベースに書き込まれます。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:918
+msgid "重置中..."
+msgstr "リセット中..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:919
+msgid "正在重置数据库中的遗留 IP 数据..."
+msgstr "データベース内のレガシー IP データをリセットしています..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:933
+msgid "重置失败: "
+msgstr "リセットに失敗しました:"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:935 inc\admin\traits\class-admin-settings-admin-trait.php:939 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:248 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:250
+msgid "重置用户 IP 归属地数据"
+msgstr "ユーザーのIP位置データをリセットする"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1544
+msgid "体检请求失败，请稍后重试。"
+msgstr "身体検査のリクエストは失敗しました。後でもう一度試してください。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1551
+msgid "网络请求异常，无法连接体检诊断接口: "
+msgstr "ネットワーク要求が異常であるため、健康診断診断インターフェイスに接続できません:"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1567
+msgid "检查完成时间: "
+msgstr "完了時間を確認します:"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1568
+msgid "正常: "
+msgstr "通常:"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1569
+msgid "优化项: "
+msgstr "最適化項目:"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1570
+msgid "需修复: "
+msgstr "修正が必要:"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1636
+msgid "全站主题设置已恢复为初始默认值！"
+msgstr "サイト全体のテーマ設定が初期のデフォルト値に復元されました。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1661
+msgid "当前【%s】选项卡设置已成功恢复为默认值！其他选项卡设置保持完好。"
+msgstr "現在の [%s] タブの設定はデフォルト値に正常に復元されました。他のタブの設定はそのまま残ります。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:29 inc\admin\traits\class-admin-settings-ajax-trait.php:41 inc\admin\traits\class-admin-settings-ajax-trait.php:59
+msgid "缩略图服务未加载"
+msgstr "サムネイル サービスが読み込まれない"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:45
+msgid "已删除 %1$s 个缓存文件，释放 %2$s。"
+msgstr "%1$s キャッシュ ファイルを削除し、%2$s を解放しました。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:47 inc\admin\traits\class-admin-settings-ajax-trait.php:65
+msgid "%s 个文件删除失败，请检查目录权限。"
+msgstr "%s ファイルの削除に失敗しました。ディレクトリのアクセス許可を確認してください。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:63
+msgid "扫描完成，已清理 %1$s 个未使用缓存，释放 %2$s。"
+msgstr "スキャンが完了し、%1$s の未使用キャッシュがクリアされ、%2$s が解放されました。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:185
+msgid "【服务商返回：%s】"
+msgstr "[サービスプロバイダーが返します: %s]"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:1863
+msgid "数据库操作失败"
+msgstr "データベース操作に失敗しました"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:1866
+msgid "成功清除了 %d 条用户 IP 归属地遗留数据"
+msgstr "%d ユーザー IP アドレスのレガシー データが正常にクリアされました"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2022
+msgid "缺少源文件 assets/css/modules.source.css。"
+msgstr "ソースファイルassets/css/modules.source.cssがありません。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2024
+msgid "源文件 modules.source.css 不可读。"
+msgstr "ソース ファイル modules.source.css を読み取ることができません。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2153
+msgid "modules.source.css 已变化：manifest source_bytes=%1$d，当前=%2$d。建议重新执行拆分脚本。"
+msgstr "modules.source.css が変更されました: マニフェスト source_bytes=%1$d、現在=%2$d。分割スクリプトを再実行することをお勧めします。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2159
+msgid "modules.source.css 与 manifest source_bytes 一致。"
+msgstr "modules.source.css はマニフェスト source_bytes と一致しています。"
+
+#: inc\admin\traits\class-admin-settings-backup-trait.php:17
+msgid "您可以导出当前主题核心设置，或导入之前备份的设置文件。当前备份包含主题核心设置与扩展配置。"
+msgstr "現在のテーマのコア設定をエクスポートしたり、以前にバックアップした設定ファイルをインポートしたりできます。現在のバックアップには、テーマのコア設定と拡張構成が含まれています。"
+
+#: inc\admin\traits\class-admin-settings-backup-trait.php:26
+msgid "导出包含主题设置和招聘设置的 JSON 文件，可用于备份或恢复。"
+msgstr "バックアップまたは復元に使用できるテーマ設定と募集設定を含む JSON ファイルをエクスポートします。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:157
+msgid "主题说明"
+msgstr "トピックの説明"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:158
+msgid "插件推荐"
+msgstr "プラグインのおすすめ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:159
+msgid "备份恢复"
+msgstr "バックアップと復元"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:186 inc\core\helpers\helpers-footer-visual.php:70
+msgid "自动跟随当前页面"
+msgstr "現在のページを自動的にたどります"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:187 inc\core\helpers\helpers-footer-visual.php:77
+msgid "清亮蓝色"
+msgstr "クリアブルー"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:188 inc\core\helpers\helpers-footer-visual.php:87
+msgid "暖橙营销"
+msgstr "温かみのあるオレンジ色のマーケティング"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:189 inc\core\helpers\helpers-footer-visual.php:97
+msgid "清新绿色"
+msgstr "新緑"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:190 inc\core\helpers\helpers-footer-visual.php:107
+msgid "红粉活动"
+msgstr "ピンクのアクティビティ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:191 inc\core\helpers\helpers-footer-visual.php:117
+msgid "柔紫科技"
+msgstr "ロウジテクノロジー"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:295 inc\core\class-search-mode-manager.php:51 inc\modules\modules\class-hero-search-module.php:220 inc\modules\modules\class-video-portal-hero-module.php:114
+msgid "文章搜索"
+msgstr "記事検索"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:406
+msgid "认证组件（登录/注册）"
+msgstr "認証コンポーネント（ログイン/登録）"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:407 inc\core\design-tokens\component-style-definitions.php:44
+msgid "认证主按钮背景"
+msgstr "認証メインボタンの背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:407
+msgid "控制全局所有登录/注册大按钮的背景颜色。"
+msgstr "すべての大きなログイン/登録ボタンの背景色をグローバルに制御します。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:408 inc\core\design-tokens\component-style-definitions.php:45
+msgid "认证主按钮文字"
+msgstr "認証メインボタンのテキスト"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:409 inc\core\design-tokens\component-style-definitions.php:46
+msgid "验证码按钮背景"
+msgstr "認証コードボタンの背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:410 inc\core\design-tokens\component-style-definitions.php:47
+msgid "验证码按钮文字"
+msgstr "確認コードボタンのテキスト"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:411 inc\core\design-tokens\component-style-definitions.php:48
+msgid "滑动轨道背景"
+msgstr "スライディングトラックの背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:412 inc\core\design-tokens\component-style-definitions.php:49
+msgid "滑块按钮背景"
+msgstr "スライダーボタンの背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:413 inc\core\design-tokens\component-style-definitions.php:50
+msgid "滑动进度背景"
+msgstr "スライド進行状況の背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:414 inc\core\design-tokens\component-style-definitions.php:51
+msgid "验证成功颜色"
+msgstr "検証成功の色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:414
+msgid "滑块验证成功后的绿色提示状态。"
+msgstr "スライダーが正常に検証された後の緑色のプロンプト ステータス。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:504
+msgid "统一管理服务、产品、案例、团队、资源、课程和活动等内容，供页面装修、AI 装修及内容接口使用。"
+msgstr "ページ装飾、AI 装飾、コンテンツ インターフェイスで使用するサービス、製品、ケース、チーム、リソース、コース、アクティビティ、およびその他のコンテンツの統合管理。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:563
+msgid "显示个人中心"
+msgstr "パーソナルセンターを表示"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:563
+msgid "开启后，用户登录后在顶部显示个人中心头像入口；与“显示登录按钮”相互独立。"
+msgstr "オンにすると、ユーザーがログインした後、パーソナル センター アバターの入り口が上部に表示されます。 「ログインボタンを表示」とは独立しています。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:613
+msgid "这里主要决定哪一个装修页面接管页脚，以及接管范围；页脚颜色、波浪和三段背景在下方“页脚三段式视觉装修”里调整。"
+msgstr "ここでの主な決定は、どの装飾ページがフッターを引き継ぐか、および引き継ぎの範囲です。フッターの色、波形、3段階の背景は、以下の「3段階のフッタービジュアル装飾」で調整できます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:623 inc\admin\traits\class-admin-settings-page-render-trait.php:396
+msgid "页脚独立区域装修"
+msgstr "フッター独立領域の装飾"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:623
+msgid "三个区域可同时选择不同的装修页面。设置后优先于上方单页面替换配置；留空的区域继续使用主题默认内容或旧配置。"
+msgstr "3つのエリアで異なるデコレーションページを同時に選択できます。設定後は、上記の単一ページ置換設定よりも優先されます。空白の領域では、テーマのデフォルトのコンテンツまたは古い設定が引き続き使用されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:624
+msgid "关于我们/联系区域装修页面"
+msgstr "会社概要・お問い合わせ エリアリノベーションページ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:625
+msgid "友情链接区域装修页面"
+msgstr "フレンドリーリンクエリアの装飾ページ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:625
+msgid "该区域仍仅在首页显示。"
+msgstr "このエリアは依然としてホームページにのみ表示されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:626
+msgid "版权/ICP 备案区域装修页面"
+msgstr "著作権・ICP登録エリア装飾ページ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:626
+msgid "选择后完全替换默认版权、ICP 备案和公安备案输出。"
+msgstr "デフォルトの著作権、ICP ファイリング、および公安ファイリングの出力を完全に置き換える場合に選択します。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:627
+msgid "页脚三段式视觉装修"
+msgstr "フッターの3段階のビジュアル装飾"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:627
+msgid "分别控制上方信息区、中间友情链接区和底部版权备案区的背景、文字、波浪衔接与动画范围。颜色字段支持 #fff、rgba(...)、var(...) 和 linear-gradient(...)。"
+msgstr "上部の情報エリア、中央のフレンドリーリンクエリア、下部の著作権登録エリアの背景、テキスト、ウェーブ接続、およびアニメーション範囲をそれぞれ制御します。カラー フィールドは、#fff、rgba(...)、var(...)、および Linear-gradient(...) をサポートします。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:628
+msgid "信息主板块背景"
+msgstr "情報メインセクションの背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:629
+msgid "信息主板块文字"
+msgstr "情報本文本文"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:630
+msgid "信息主板块标题"
+msgstr "情報メインセクションのタイトル"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:631
+msgid "信息主板块链接"
+msgstr "情報メインセクションリンク"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:632
+msgid "信息主板块链接悬停"
+msgstr "情報メインセクションリンクホバー"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:633
+msgid "信息主板块上间距"
+msgstr "メイン情報パネルの間隔"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:634
+msgid "信息主板块下间距"
+msgstr "メイン情報セクションの下のスペース"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:635
+msgid "友情链接背景跟随信息区"
+msgstr "フレンドリーリンク背景フォロー情報エリア"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:636
+msgid "友情链接板块背景"
+msgstr "フレンドリー リンク セクションの背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:637
+msgid "友情链接板块文字"
+msgstr "フレンドリーリンクセクションのテキスト"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:638
+msgid "友情链接板块链接"
+msgstr "フレンドリーリンクセクションのリンク"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:639
+msgid "友情链接板块链接悬停"
+msgstr "フレンドリーリンクセクションのリンクホバー"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:640
+msgid "友情链接上下间距"
+msgstr "フレンドリーリンクの上下の間隔"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:641
+msgid "备案版权板块背景"
+msgstr "著作権登録セクションの背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:642
+msgid "备案版权板块文字"
+msgstr "著作権ブロックテキストを記録する"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:643
+msgid "备案版权板块链接"
+msgstr "登録著作権セクションのリンク"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:644
+msgid "备案版权链接悬停"
+msgstr "登録著作権リンクにマウスを置きます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:645
+msgid "备案版权分割线"
+msgstr "登録著作権分割線"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:646
+msgid "备案版权上下间距"
+msgstr "著作権登録の上下の間隔"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:647
+msgid "启用顶部波浪衔接"
+msgstr "トップウェーブトランジションを有効にする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:649
+msgid "单层波浪"
+msgstr "単層波"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:650
+msgid "双层波浪"
+msgstr "ダブルウェーブ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:651
+msgid "柔和大曲线"
+msgstr "柔らかく大きな曲線"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:652
+msgid "斜切过渡"
+msgstr "面取り遷移"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:654
+msgid "波浪配色方案"
+msgstr "波の配色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:654
+msgid "作为波浪背景、主副波浪和柔化过渡的默认搭配；下方手动颜色留空时生效。"
+msgstr "ウェーブバックグラウンド、メインウェーブとセカンダリウェーブ、ソフトトランジションのデフォルトの組み合わせとして。以下の手動カラーが空白のままの場合に有効になります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:655 inc\core\helpers\helpers-page-skins.php:1646
+msgid "波浪上方背景"
+msgstr "背景の上の波"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:656 inc\core\helpers\helpers-page-skins.php:1651
+msgid "波浪柔化起始色"
+msgstr "ウェーブソフト開始色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:657 inc\core\helpers\helpers-page-skins.php:1656
+msgid "波浪柔化高度"
+msgstr "波軟化高さ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:659 inc\core\helpers\helpers-page-skins.php:1666
+msgid "主波浪颜色"
+msgstr "メインウェーブカラー"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:660 inc\core\helpers\helpers-page-skins.php:1671
+msgid "副波浪颜色"
+msgstr "二次波の色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:661 inc\core\helpers\helpers-page-skins.php:1676
+msgid "副波浪透明度"
+msgstr "二次波の透過性"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:661
+msgid "请输入 0 到 1 之间的任意小数，例如 0.35、0.37 或 0.4；超出范围的值会被限制到有效范围。"
+msgstr "0.35、0.37、0.4 など、0 から 1 までの任意の 10 進数を入力してください。範囲外の値は有効な範囲にクランプされます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:721
+msgid "特效作用范围"
+msgstr "特殊効果範囲"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:722
+msgid "只作用于信息主板块"
+msgstr "メイン情報セクションにのみ適用されます"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:723
+msgid "覆盖整个页脚"
+msgstr "フッター全体を覆う"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:724
+msgid "作为整段背景装饰层"
+msgstr "背景装飾レイヤー全体として"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:799
+msgid "控制后台左侧菜单里的可选业务入口，适合精简后台。"
+msgstr "バックエンドの左側のメニューでオプションのビジネス エントランスを制御します。これは、バックエンドの効率化に適しています。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:806
+msgid "灵简IP API Key"
+msgstr "Lingjian IP API キー"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:806
+msgid "用于调用灵简IP归属地查询接口（api.jingxialai.com）。请在官网申请并填写 X-API-Key。不填则可能无法查询国内IP归属地。"
+msgstr "Lingjian IP ロケーション クエリ インターフェイス (api.jingxialai.com) を呼び出すために使用されます。公式サイトよりX-API-Keyを入力して申請してください。空白のままだと国内IPアドレスの問い合わせができない場合があります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:816
+msgid "全站首页默认标题。在最新文章模式下直接生效；若使用静态页面作为首页且页面未单独设置 SEO 标题时，作为全局回退标题生效。"
+msgstr "サイト全体のホームページのデフォルトのタイトル。最新記事モードで直接有効になります。静的ページがホームページとして使用され、そのページに別の SEO タイトルがない場合、そのページはグローバル フォールバック タイトルとして有効になります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:822
+msgid "全站首页默认描述。最新文章模式直接生效；静态首页在页面未单独填写 SEO 描述时自动回退使用此处内容。"
+msgstr "サイト全体のホームページのデフォルトの説明。最新記事モードは直接有効になります。 SEO の説明がページに個別に入力されていない場合、静的ホームページは自動的にここのコンテンツの使用に戻ります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:828
+msgid "全站首页默认关键词。最新文章模式直接生效；静态首页在页面未单独填写 SEO 关键词时自动回退使用此处内容。"
+msgstr "サイト全体のホームページのデフォルトのキーワード。最新記事モードは直接有効になります。 SEO キーワードがページ上で個別に入力されていない場合、静的ホームページは自動的にここのコンテンツの使用に戻ります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:954
+msgid "系统认证页面修复与去重"
+msgstr "システム認証ページの修復と重複排除"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:954
+msgid "检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。"
+msgstr "高い同時実行性や異常な重複によって生成される「ユーザー ログイン/ユーザー登録/パスワード取得/パーソナル センター」ページをワンクリックで検出しクリーンアップします。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1563
+msgid "提示：Google Analytics、GTM、Google Ads、Meta Pixel、TikTok Pixel 等可直接粘贴对应平台提供的代码。验证码、支付、短信和邮件服务请在各自设置中配置。"
+msgstr "ヒント: Google Analytics、GTM、Google Ads、Meta Pixel、TikTok Pixel などは、対応するプラットフォームが提供するコードを直接貼り付けることができます。確認コード、支払い、SMS、メールサービスをそれぞれの設定で構成してください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1570 inc\admin\traits\class-admin-settings-config-trait.php:1577 inc\admin\traits\class-admin-settings-config-trait.php:1584 inc\admin\traits\class-admin-settings-config-trait.php:1591 inc\admin\traits\class-admin-settings-config-trait.php:1598
+msgid "访客同意后加载"
+msgstr "訪問者の同意後にロード"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1570 inc\admin\traits\class-admin-settings-config-trait.php:1577 inc\admin\traits\class-admin-settings-config-trait.php:1598
+msgid "非必要分类会等待访客授权，实际规则以上方 Cookie 分类为准。"
+msgstr "必須ではないカテゴリは訪問者の承認を待ちます。実際のルールは、上記の Cookie カテゴリの影響を受けます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1584
+msgid "统计代码默认归入统计分类，并按 Cookie 分类授权执行。"
+msgstr "統計コードはデフォルトで統計カテゴリに分類され、Cookie カテゴリに従って実行が許可されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1591
+msgid "广告代码默认归入广告分类，并按 Cookie 分类授权执行。"
+msgstr "広告コードはデフォルトで広告カテゴリに分類され、Cookie カテゴリに従って実行が許可されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1844
+msgid "留空使用当前页面/模板预设的公告配色；无预设时使用明亮红色系兜底，支持纯色或渐变色"
+msgstr "現在のページ/テンプレートのプリセットアナウンスカラーを使用するには、空白のままにします。プリセットがない場合は、明るい赤のベースを使用し、単色またはグラデーションカラーをサポートします"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1844
+msgid "如: linear-gradient(135deg, #ef4444 0%, #f43f5e 100%)"
+msgstr "例: Linear-gradient(135deg, #ef4444 0%, #f43f5e 100%)"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1846
+msgid "留空跟随当前页面/模板预设；无预设时使用醒目的红色 #dc2626"
+msgstr "現在のページ/テンプレートのプリセットに従いたい場合は、空白のままにします。プリセットがない場合は目を引く赤を使用します #dc2626"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1846
+msgid "如: #dc2626"
+msgstr "例: #dc2626"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1882
+msgid "提示：开启后所有访客均可见！调试完毕后请立即关闭"
+msgstr "ヒント: オンにすると、すべての訪問者に表示されるようになります。デバッグ後はすぐに閉じてください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1890
+msgid "兼容提示：如果小程序、区块编辑器、第三方插件或外部 API 客户端异常，先开启“兼容回滚模式”并保存，即可快速恢复 WordPress 默认行为。"
+msgstr "互換性のヒント: ミニ プログラム、ブロック エディター、サードパーティのプラグイン、または外部 API クライアントに異常がある場合は、まず「互換性ロールバック モード」を有効にして保存し、WordPress のデフォルトの動作をすぐに復元します。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1895
+msgid "仅允许登录用户访问 REST API；可能影响小程序、区块编辑器、站点健康和外部 API 客户端，请先配置白名单。"
+msgstr "ログインしたユーザーのみが REST API にアクセスできます。ミニ プログラム、ブロック エディター、サイトの健全性、外部 API クライアントに影響を与える可能性があります。最初にホワイトリストを設定してください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1904
+msgid "禁用区块编辑器并恢复经典编辑器；如需保留某些文章类型，请在下方白名单中添加。"
+msgstr "ブロックエディターを無効にして、クラシックエディターを復元します。特定の投稿タイプを保持したい場合は、以下のホワイトリストに追加してください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1905
+msgid "禁用 WP 7.0 原生 AI"
+msgstr "WP 7.0 ネイティブ AI を無効にする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1905
+msgid "彻底禁用 WordPress 7.0 核心自带的 AI 功能并拦截对应的 Connectors 后台页面，提升后台访问速度。"
+msgstr "WordPress 7.0 コアに付属する AI 機能を完全に無効にし、対応するコネクタのバックエンド ページをインターセプトして、バックエンドのアクセス速度を向上させます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1907
+msgid "每行一个允许继续使用区块编辑器的上下文。可填写 post_type:product、post_type:page、post_type:* 或 widgets。留空时文章和页面也会使用经典编辑器。"
+msgstr "1 行に 1 つのコンテキストがあり、ブロック エディターを継続して使用できます。 post_type:product、post_type:page、post_type:*、またはウィジェットを入力できます。空白のままにした場合、投稿とページでもクラシック エディターが使用されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1911 inc\admin\traits\class-admin-settings-config-trait.php:1976
+msgid "启用后自动刷新固定链接规则，有利于 SEO 优化"
+msgstr "有効にした後、固定リンク ルールを自動的に更新します。これは SEO の最適化に役立ちます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1914
+msgid "默认搜索模式"
+msgstr "デフォルトの検索モード"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1914
+msgid "影视搜索仅在启灵播放器及视频元数据表可用时显示；能力失效后自动回退到综合搜索。"
+msgstr "映画とテレビの検索は、Qiling プレーヤーとビデオ メタデータ テーブルが利用可能な場合にのみ表示されます。機能が失敗すると、自動的に包括的な検索に戻ります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1915
+msgid "允许访客切换搜索模式"
+msgstr "訪問者が検索モードを切り替えられるようにする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1915
+msgid "开启后，搜索结果页允许访客在管理员启用的模式之间切换。"
+msgstr "検索結果ページをオンにすると、訪問者は管理者有効モードを切り替えることができます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1916
+msgid "前台可用搜索模式"
+msgstr "フロントデスクで利用できる検索モード"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1916
+msgid "插件注册的新搜索模式会自动加入候选列表；至少保留一种可用模式。"
+msgstr "プラグインによって登録された新しい検索モードは、候補リストに自動的に追加されます。少なくとも 1 つのモードが利用可能な状態のままです。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 12 条"
+msgstr "1 ページあたり 12 項目"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 18 条"
+msgstr "1 ページあたり 18 項目"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 24 条"
+msgstr "1 ページあたり 24 項目"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 30 条"
+msgstr "1 ページあたり 30 項目"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1918
+msgid "热门搜索词"
+msgstr "人気の検索語"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1918
+msgid "热播电影,最新电视剧,热门动漫"
+msgstr "人気の映画、最新のテレビシリーズ、人気のアニメ"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1918
+msgid "使用半角或全角逗号分隔，供搜索结果和影视搜索模块调用。"
+msgstr "検索結果と動画検索モジュールを半角または全角のカンマで区切ります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1923
+msgid "存在产品类型（product）时，实时结果中包含产品。"
+msgstr "製品タイプ（製品）が存在する場合、その製品はリアルタイム結果に含まれます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1926
+msgid "产品结果显示价格文本；无产品价格元数据时自动忽略。"
+msgstr "商品結果には価格テキストが表示されます。製品価格のメタデータがない場合は自動的に無視されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1934
+msgid "移除前端块样式；可能导致区块内容或第三方区块样式缺失，请用白名单保留关键样式。"
+msgstr "フロントエンドのブロック スタイルを削除します。これにより、ブロック コンテンツやサードパーティのブロック スタイルが欠落する可能性があります。キーのスタイルを保持するには、ホワイトリストを使用してください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1991
+msgid "每行一个保留规则：core:minor、core:*、plugin:my-plugin、theme:twentytwentysix、translation:zh_cn。仅在上方禁用项开启时生效。"
+msgstr "1 行に 1 つの保持ルール: core:minor、core:*、plugin:my-plugin、theme:twentytwentysix、translation:zh_cn。上記の無効な項目が有効な場合にのみ有効になります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2000
+msgid "提示：实验性功能：可能影响内联 JS/CSS，如遇问题请关闭此选项"
+msgstr "ヒント: 実験的な機能: インライン JS/CSS に影響を与える可能性があります。問題が発生した場合は、このオプションをオフにしてください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2003
+msgid "按需模式（当前页面独立模块）"
+msgstr "オンデマンド モード (現在のページの独立したモジュール)"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2004
+msgid "按需模式只加载当前页面使用到的模块独立 CSS 文件，极致精简首屏体积；单文件模式合并加载完整 modules.css。"
+msgstr "オンデマンド モードでは、現在のページで使用されているモジュールの独立した CSS ファイルのみがロードされるため、最初の画面のサイズが大幅に削減されます。単一ファイル モードでは、完全な modules.css がマージされ、ロードされます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2032
+msgid "启用即时预渲染 (0ms秒开)"
+msgstr "インスタント プリレンダリングを有効にする (0ms オン)"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2032
+msgid "利用现代浏览器 W3C Speculation Rules 原生规范与推测性预取技术，当鼠标悬停在链接上时静默预载目标页面，使点击跳转达到 0ms 秒开。已自动排除后台、登录页及动态操作链接。"
+msgstr "W3C 投機ルールのネイティブ仕様と最新のブラウザの投機的プリフェッチ テクノロジを利用して、マウスがリンク上にあるときにターゲット ページがサイレントにプリロードされ、クリック ジャンプが 0 ミリ秒に達することが可能になります。バックエンド、ログイン ページ、および動的アクションのリンクは自動的に除外されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2033
+msgid "启用缩略图 WebP 格式"
+msgstr "サムネイル WebP 形式を有効にする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2033
+msgid "开启后，本地动态缩略图与云存储（阿里云/腾讯云/七牛云/又拍云）将自动转换为高压缩比 WebP 格式输出，图片体积直降 40%~65%。"
+msgstr "オンにすると、ローカルの動的サムネイルとクラウド ストレージ (Alibaba Cloud/Tencent Cloud/Qiniu Cloud/Youpai Cloud) が自動的に高圧縮率の WebP 形式に変換されて出力され、画像サイズが 40% ～ 65% 削減されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2060
+msgid "服务器支持 WebP（GD 库已启用）"
+msgstr "サーバーは WebP をサポートします (GD ライブラリが有効)"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2060
+msgid "提示：服务器不支持 WebP，请安装 GD 库的 WebP 模块"
+msgstr "ヒント: サーバーは WebP をサポートしていません。GD ライブラリの WebP モジュールをインストールしてください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2066
+msgid "提示：启用后新上传的图片只保留原图，可能影响依赖特定尺寸的功能"
+msgstr "ヒント: 有効にすると、新しくアップロードされた画像は元の画像のみを保持するため、特定のサイズに依存する機能に影響を与える可能性があります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2102
+msgid "本土化与白标"
+msgstr "ローカリゼーションとホワイトラベリング"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2102
+msgid "隐藏后台中的 WordPress 品牌标识，打造更干净的管理界面。所有隐藏仅为视觉层面，不影响任何功能和权限。"
+msgstr "バックエンドで WordPress のブランドを非表示にして、管理インターフェイスをすっきりさせます。すべての非表示は視覚的な目的のみであり、機能や権限には影響しません。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2103
+msgid "启用后台白标"
+msgstr "背景の白ラベルを有効にする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2103
+msgid "开启后可逐项控制下方各隐藏选项；关闭则全部恢复默认。"
+msgstr "オンにすると、以下の隠しオプションを 1 つずつ制御できます。オフにすると、すべてがデフォルトに戻ります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2104
+msgid "移除后台标题 WP 后缀"
+msgstr "背景タイトルの WP サフィックスを削除する"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2104
+msgid "移除浏览器标签页标题末尾的 \" — WordPress\" 字样。"
+msgstr "ブラウザーのタブのタイトルの末尾から「 — WordPress」という単語を削除します。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2105
+msgid "隐藏左上角 WP Logo"
+msgstr "左上隅の WP ロゴを非表示にします"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2105
+msgid "移除全局 Admin Bar 左上角的 WordPress 标志及其下拉菜单。"
+msgstr "グローバル管理バーの左上隅にある WordPress ロゴとそのドロップダウン メニューを削除しました。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2106
+msgid "隐藏底部版权与版本号"
+msgstr "下部の著作権とバージョン番号を非表示にする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2106
+msgid "清空后台页面底部的 WordPress 感谢语（左下角）和版本号（右下角）。"
+msgstr "背景ページの下部にある WordPress の感謝状 (左下隅) とバージョン番号 (右下隅) を消去します。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2107
+msgid "移除工具与更新菜单"
+msgstr "ツールを削除してメニューを更新する"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2107
+msgid "从侧边栏移除\"工具\"顶级菜单和\"仪表盘 → 更新\"子菜单。页面本身仍可通过 URL 直接访问。"
+msgstr "「ツール」トップメニューと「ダッシュボード→アップデート」サブメニューをサイドバーから削除しました。ページ自体には、URL 経由で直接アクセスできます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2108
+msgid "隐藏安装按钮与帮助面板"
+msgstr "インストールボタンとヘルプパネルを非表示にする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2108
+msgid "纯 CSS 隐藏主题/插件页面的\"安装\"按钮、顶部更新横幅和右上角\"帮助\"选项卡。"
+msgstr "Pure CSS は、テーマ/プラグイン ページの「インストール」ボタン、上部の更新バナー、右上の「ヘルプ」タブを非表示にします。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2165
+msgid "启用默认弹窗登录"
+msgstr "デフォルトのポップアップ ログイン ウィンドウを有効にする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2165
+msgid "开启后，评论、内容限制、投稿等位置的登录入口使用弹窗登录；与“显示登录按钮”相互独立。"
+msgstr "これをオンにすると、コメント、コンテンツ制限、投稿などのログイン ポータルは、ポップアップ ウィンドウを使用してログインします。 「ログインボタンを表示」とは独立しています。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2171
+msgid "微信登录需要启用对应插件；QQ、GitHub 和 Google 登录可在下方分别配置。"
+msgstr "WeChat ログインには、対応するプラグインを有効にする必要があります。 QQ、GitHub、Google ログインは以下で個別に設定できます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2189
+msgid "独立页背景模式"
+msgstr "独立したページの背景モード"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2190
+msgid "自动：有图优先，无图用颜色"
+msgstr "自動：写真がある場合は写真を優先し、写真がない場合はカラーを使用します。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2191
+msgid "跟随主题风格预设"
+msgstr "テーマスタイルのプリセットに従う"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2192
+msgid "仅使用自定义背景色"
+msgstr "カスタムの背景色のみを使用する"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2193
+msgid "优先使用自定义背景图"
+msgstr "カスタム背景画像の使用を優先する"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2194
+msgid "默认自动模式：填写背景图时显示图片，未填写图片时使用背景色，二者都为空时继续跟随主题风格预设。"
+msgstr "デフォルトの自動モード: 背景画像を塗りつぶすときは画像を表示し、画像を塗りつぶさないときは背景色を使用し、両方が空の場合はプリセットされたテーマ スタイルに従い続けます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2195
+msgid "独立页背景色"
+msgstr "独立したページの背景色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2195
+msgid "用于登录、注册、找回密码独立页面的整页背景；留空时使用当前主题风格预设背景。"
+msgstr "ログイン、登録、パスワード取得用の個別のページのフルページ背景。空白のままにすると、現在のテーマ スタイルのデフォルトの背景が使用されます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2196
+msgid "独立页背景图"
+msgstr "独立したページの背景画像"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2196
+msgid "用于登录、注册、找回密码独立页面的整页背景。推荐尺寸：1920×1200 px 或更高。"
+msgstr "ログイン、登録、パスワード取得用の個別のページのフルページの背景。推奨サイズ：1920×1200px以上。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2197
+msgid "背景图透明度"
+msgstr "背景画像の透明度"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2197
+msgid "仅在显示背景图时生效；数值越低，底下的背景色或预设渐变越明显。"
+msgstr "これは背景画像が表示されている場合にのみ有効です。値が低いほど、その下の背景色またはプリセットのグラデーションがより明確になります。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2244
+msgid "提示：开启后，未完成实名认证的登录用户将被强制跳转到个人中心实名认证页面"
+msgstr "ヒント: 有効にすると、実名認証を完了していないログイン ユーザーは、パーソナル センターの実名認証ページに強制的にジャンプします。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2281
+msgid "VIP 访问控制"
+msgstr "VIPアクセス制御"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2281
+msgid "处理设置了最低 VIP 权限的分类和内容，当权限不足时的处理动作"
+msgstr "最小限の VIP 権限セットによるカテゴリとコンテンツの処理、および権限が不十分な場合のアクションの処理"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "拦截处理方式"
+msgstr "傍受処理方法"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "当 VIP 权限不足时的响应方式"
+msgstr "VIP権限が不十分な場合の対処方法"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "显示提示界面"
+msgstr "プロンプトインターフェイスを表示"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "跳转指定页面"
+msgstr "指定したページにジャンプします"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2283
+msgid "拦截跳转链接"
+msgstr "リダイレクトリンクをブロックする"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2283
+msgid "仅在选择\"跳转指定页面\"时有效，请填写带 http 的完整网址"
+msgstr "「指定ページへジャンプする」を選択した場合のみ有効です。 http を含む完全な URL を入力してください"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2284 inc\core\class-vip-access.php:347
+msgid "该内容仅限 VIP 会员查看"
+msgstr "このコンテンツはVIP会員のみが利用できます"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2285 inc\core\class-vip-access.php:348
+msgid "您的权限不足，请开通或升级 VIP 后继续浏览"
+msgstr "権限が不十分です。 VIP をアクティブ化またはアップグレードして、閲覧を続けてください。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2286
+msgid "升级按钮文字"
+msgstr "アップグレードボタンのテキスト"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2286 inc\core\class-vip-access.php:349
+msgid "立即升级 VIP"
+msgstr "今すぐVIPをアップグレードしてください"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2287
+msgid "升级按钮链接"
+msgstr "アップグレードボタンのリンク"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2287
+msgid "默认自动识别商城 VIP 开通页，您也可在此处自定义填写"
+msgstr "モール VIP アクティベーション ページはデフォルトで自動的に認識され、ここでカスタマイズすることもできます。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2318
+msgid "提示：开启后，用户只能使用手机号登录，无法使用用户名/邮箱密码登录，管理员一定要先绑定手机号！"
+msgstr "ヒント: これをオンにすると、ユーザーは携帯電話番号を使用してのみログインでき、ユーザー名/電子メール パスワードを使用してログインすることはできません。管理者は最初に携帯電話番号をバインドする必要があります。"
+
+#: inc\admin\traits\class-admin-settings-domain-trait.php:207
+msgid "域名依赖项（%d 项）"
+msgstr "ドメイン名の依存関係 (%d 項目)"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:102
+msgid "主题健康自检"
+msgstr "テーマは健康自己診断"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:203
+msgid "设置重置中心"
+msgstr "リセットセンターを設置する"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:206
+msgid "仅重置当前【%s】设置"
+msgstr "現在の [%s] 設定のみをリセットします"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:207
+msgid "仅将当前选项卡内的配置项恢复为默认值，全站其他 20 多个选项卡的配置完全保留不变。"
+msgstr "現在のタブの設定項目のみがデフォルト値に復元され、サイト全体の 20 を超えるタブの設定は完全に変更されません。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:212
+msgid "确定要仅恢复【%s】选项卡为默认值吗？其他选项卡不会被重置。"
+msgstr "[%s] タブのみをデフォルト値に戻してもよろしいですか?他のタブはリセットされません。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:213
+msgid "恢复【%s】默认值"
+msgstr "【%s】をデフォルト値に戻す"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:218
+msgid "恢复全站所有默认设置"
+msgstr "サイト全体のすべてのデフォルト設定を復元します"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:219
+msgid "将全站所有 23 个选项卡的主题设置完全重置为初始状态，请谨慎操作！"
+msgstr "サイト上の 23 個のタブすべてのテーマ設定が元の状態に完全にリセットされます。注意して続行してください。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:223
+msgid "高风险操作：此操作将清空所有选项卡设置！确定要恢复全部设置为默认值吗？此操作不可撤销！"
+msgstr "危険性の高い操作: この操作により、すべてのタブの設定がクリアされます。すべての設定をデフォルトに戻してもよろしいですか?この操作は元に戻せません。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:224
+msgid "恢复全站默认设置"
+msgstr "サイト全体のデフォルト設定を復元する"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:237
+msgid "启灵主题全站健康体检助手"
+msgstr "斉陵をテーマにした全サイト健康診断アシスタント"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:244
+msgid "正在对 PHP环境、SMTP发信、WebP驱动、合规与性能进行全面体检..."
+msgstr "私たちは、PHP 環境、SMTP 送信、WebP ドライバー、コンプライアンス、パフォーマンスなどの包括的な物理検査を実施しています。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:266
+msgid "重新体检"
+msgstr "再検査"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:393
+msgid "确认页脚各区域接管方式"
+msgstr "各エリアの引き継ぎ方法はフッターで確認"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:394
+msgid "关于联系、友情链接、版权备案可分别选择装修页面，未接管区域继续使用默认内容。"
+msgstr "連絡先、フレンドリーリンク、著作権登録に関しては、それぞれページを装飾することを選択でき、未取得の領域ではデフォルトのコンテンツを引き続き使用できます。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:395
+msgid "定位到独立区域装修"
+msgstr "装飾用の独立したエリアを見つける"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:999
+msgid "技术支持与服务凭证"
+msgstr "テクニカルサポートとサービス証明書"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:999
+msgid "启灵主题全功能核心免费开放使用。如果您购买了官方商业技术支持或定制服务，请在此保存您的专属服务密钥（Support Key）；未设置密钥亦不影响主题任何核心配置与前台正常建站。"
+msgstr "Qiling Theme のフル機能のコアは無料で自由に使用できます。公式の商用テクニカル サポートまたはカスタマイズ サービスを購入した場合は、専用のサービス キー (サポート キー) をここに保存してください。キーを設定しない場合、テーマのコア構成や通常のフロントエンド Web サイト構築には影響しません。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1005 inc\admin\traits\class-admin-settings-page-render-trait.php:1081
+msgid "商业正版授权 (VIP)"
+msgstr "商用正規ライセンス（VIP）"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1007 inc\admin\traits\class-admin-settings-page-render-trait.php:1090
+msgid "已激活商业正版授权，享有全功能商业运营许可与官方专属一对一技术支持。"
+msgstr "商用正規認証が有効化されており、フル機能の商用運用ライセンスと公式の独占的な 1 対 1 の技術サポートをお楽しみいただけます。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1010 inc\admin\traits\class-admin-settings-page-render-trait.php:1094
+msgid "非商用免费版"
+msgstr "非商用の無料版"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1012 inc\admin\traits\class-admin-settings-page-render-trait.php:1103
+msgid "仅限 教育机构、公益组织与个人学习使用，不得商用。如用于企业或商业营利性网站，请联系官方购买商业正版授权。"
+msgstr "教育機関、公共福祉団体、個人の学習用途に限定されており、商用利用はできません。企業または営利目的の Web サイトで使用する場合は、公式に連絡して商用の正規ライセンスを購入してください。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1020
+msgid "适用范围："
+msgstr "適用範囲:"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1027
+msgid "支持服务密钥"
+msgstr "サポートサービスキー"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1029
+msgid "请输入您的官方技术支持密钥（可选）"
+msgstr "公式テクニカル サポート キーを入力してください (オプション)"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1030
+msgid "提示：密钥仅用于向官方获取一对一工单答疑与增值技术服务，纯本地安全保存，不依赖远程网络连通性。"
+msgstr "ヒント: このキーは、担当者から 1 対 1 の作業指示の回答と付加価値のある技術サービスを取得するためにのみ使用されます。純粋にローカルで安全に保存され、リモート ネットワーク接続に依存しません。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1034
+msgid "服务凭证操作"
+msgstr "サービス券の運用"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1036
+msgid "保存服务密钥"
+msgstr "サービスキーの保存"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1037
+msgid "清除密钥"
+msgstr "クリアキー"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1042
+msgid "授权许可规范"
+msgstr "ライセンス仕様"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1044
+msgid "1. 免费授权范围："
+msgstr "1.無償認可の範囲："
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1044
+msgid "启灵主题对 教育机构、公益组织 永久免费开放使用；个人用户仅限本地测试或个人非商业性学习研究使用。"
+msgstr "Qiling テーマは、教育機関および公共福祉団体に永久に無料で公開されています。個人ユーザーは、ローカル テストまたは個人的な非営利学習および研究に限定されます。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1045
+msgid "2. 商业使用限制："
+msgstr "2. 商用利用の制限:"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1045
+msgid "严禁任何企业、商业组织或个人将未授权版本用于任何商业营利性网站或商业运营；商业使用须购买正版商业授权。"
+msgstr "いかなる企業、営利組織、個人も、営利目的の Web サイトや商業運営に未承認バージョンを使用することは固く禁じられています。商用利用するには、正規の商用ライセンスを購入する必要があります。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1046
+msgid "3. 商业正版权益："
+msgstr "3. 商業著作権:"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1046
+msgid "购买商业授权后可填入商业服务密钥，享有正式商用合法授权、纯净规范构建指纹以及官方一对一工单答疑与技术支持保障。"
+msgstr "商用認証を購入した後、商用サービス キーを入力すると、正式な商用法的認証、純粋で標準化された指紋構築、および正式な 1 対 1 の作業指示応答と技術サポートの保証を受けることができます。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1047
+msgid "4. 纯本地保存："
+msgstr "4. 純粋なローカルストレージ:"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1047
+msgid "密钥保存完全在本地秒级生效，即使开启高防 CDN、WAF 防火墙或海外服务器也绝不报错。"
+msgstr "キーの保存は数秒以内にローカルで有効になり、高防御性の CDN、WAF ファイアウォール、または海外サーバーがオンになっている場合でも、エラーは報告されません。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1065
+msgid "正在保存..."
+msgstr "保存中..."
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1108
+msgid "保存失败"
+msgstr "保存に失敗しました"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1114
+msgid "保存异常，请直接在页面底部点击“保存更改”"
+msgstr "例外を保存します。ページの下部にある [変更を保存] を直接クリックしてください。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1148
+msgid "站内消息通知 - 存储系统通知、私信、动态提醒"
+msgstr "サイトメッセージ通知 - ストレージシステム通知、プライベートメッセージ、および動的リマインダー"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1183
+msgid "缓存/CDN 说明（会员网站）"
+msgstr "キャッシュ/CDN の手順 (メンバー サイト)"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1217
+msgid "主题使用的数据表"
+msgstr "テーマが使用するデータテーブル"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1219
+msgid "以下是本主题创建的自定义数据表。全部统一采用前缀 wp_qiling_*。如果卸载主题后不再使用这些功能，可以手动删除对应的数据表清理数据。"
+msgstr "以下は、このトピックによって作成されたカスタム データ テーブルです。すべては接頭辞 wp_qiling_* を使用します。テーマのアンインストール後にこれらの機能を使用しなくなった場合は、対応するデータ テーブルを手動で削除してデータをクリーンアップできます。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1258
+msgid "正常运行中"
+msgstr "通常動作時"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1277
+msgid "二次开发与文档"
+msgstr "二次開発とドキュメント化"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1280
+msgid "启灵主题全面遵循现代 WordPress 与 PHP 8.2+ 工程规范。如需在子主题（qiling-child）或插件中进行二次开发，所有核心常量、公共 API 函数、动作与过滤器钩子、自建数据表及配置字段说明均已整理在独立开发文档与主题 README.md 中。"
+msgstr "Qiling テーマは、最新の WordPress および PHP 8.2 以降のエンジニアリング仕様に完全に準拠しています。子テーマ (qiling-child) またはプラグインで二次開発を実行する必要がある場合、すべてのコア定数、パブリック API 関数、アクションとフィルターのフック、自己構築のデータ テーブル、および構成フィールドの説明が、独立した開発ドキュメントとテーマの README.md にまとめられています。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1284
+msgid "查阅完整开发者文档 →"
+msgstr "完全な開発者ドキュメントを確認してください →"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1287
+msgid "（亦可直接查阅主题根目录下的 README.md 开发者指南章节）"
+msgstr "(テーマのルート ディレクトリにある README.md 開発者ガイドの章を直接確認することもできます)"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1294
+msgid "性能优化建议"
+msgstr "パフォーマンスの最適化に関する提案"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1297
+msgid "开启对象缓存（Redis/Memcached）可提升后台与核心查询性能（主题自带 qiling_run_cached_query 机制）。"
+msgstr "オブジェクト キャッシュ (Redis/Memcached) を有効にすると、バックグラウンドおよびコア クエリのパフォーマンスが向上します (テーマには qiling_run_cached_query メカニズムが付属しています)。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1298
+msgid "开启全页静态化缓存（如 LiteSpeed Cache / Nginx fastcgi_cache）显著提高首屏速度。"
+msgstr "フルページの静的キャッシュ (LiteSpeed Cache / Nginx fastcgi_cache など) をオンにすると、最初の画面の速度が大幅に向上します。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1299
+msgid "图片建议开启 WebP 格式化压缩，主题内置响应式图片与原生懒加载。"
+msgstr "画像の WebP 形式の圧縮を有効にすることをお勧めします。このテーマには、レスポンシブ画像とネイティブの遅延読み込みが組み込まれています。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1300
+msgid "主题设置中包含模块 CSS 按需拆分，有效削减移动端首屏样式体积。"
+msgstr "テーマ設定には、オンデマンドでのモジュール CSS 分割が含まれており、モバイル ファースト スクリーン スタイルのサイズを効果的に削減します。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1306
+msgid "关于作者"
+msgstr "著者について"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1359
+msgid "启灵产品生态 · 全景导图"
+msgstr "啓陵製品生態・パノラママップ"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1364
+msgid "查看生态全景图官网"
+msgstr "エコロジカル・パノラマの公式ウェブサイトを見る"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:51
+msgid "用于检测并修复因直接替换数据库域名导致的主题设置数据损坏。"
+msgstr "データベースのドメイン名を直接置き換えることによって引き起こされるテーマ設定データの破損を検出して修復するために使用されます。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:143
+msgid "当前会扫描主题页面模块和启灵积分商城页面装修数据。"
+msgstr "現在、テーマ ページ モジュールと Qiling Points モール ページの装飾データがスキャンされます。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:460
+msgid "系统认证页面状态"
+msgstr "システム認証ページのステータス"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:462
+msgid "检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。系统会自动保留最早创建的主页面，将多余的重复项安全移至回收站并重新校准设置绑定。"
+msgstr "高い同時実行性や異常な重複によって生成される「ユーザー ログイン/ユーザー登録/パスワード取得/パーソナル センター」ページをワンクリックで検出しクリーンアップします。システムは、作成された最も古いマスター ページを自動的に保持し、冗長な重複をゴミ箱に安全に移動し、設定のバインドを再調整します。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:468
+msgid "检测到 %d 个冗余重复的系统认证页面"
+msgstr "%d 個の冗長な重複システム認証ページが検出されました"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:473
+msgid "一键清理冗余重复页面"
+msgstr "ワンクリックで冗長なページや重複したページをクリーンアップ"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:476
+msgid "注意：清理操作会将多余的重复页面移入 WordPress 回收站，不会彻底物理删除，如有需要随时可从回收站恢复。"
+msgstr "注: クリーニング操作では、冗長な重複ページが WordPress のごみ箱に移動され、完全に物理的に削除されるわけではありません。必要に応じていつでもごみ箱から復元できます。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:481
+msgid "系统认证页面状态正常，未检测到重复页面"
+msgstr "システム認証ページのステータスは正常であり、重複ページは検出されません。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:485
+msgid "重新扫描并校准认证页面"
+msgstr "認証ページを再スキャンして調整します"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:566
+msgid "认证服务类未加载"
+msgstr "認証サービスクラスがロードされていません"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:575
+msgid "清理失败，请重试"
+msgstr "クリーンアップに失敗しました。もう一度お試しください。"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:814
+msgid "禁用嵌入内容"
+msgstr "埋め込みコンテンツを無効にする"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:817
+msgid "限制 REST API 敏感接口"
+msgstr "REST API に依存するインターフェイスを制限する"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:818
+msgid "限制 REST API 用户信息"
+msgstr "REST APIのユーザー情報を制限する"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:824
+msgid "禁用更新通知邮件"
+msgstr "更新通知メールを無効にする"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:825
+msgid "禁用 Gutenberg 编辑器"
+msgstr "Gutenberg エディターを無効にする"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:832
+msgid "禁用 WordPress AI"
+msgstr "WordPress AI を無効にする"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:858 inc\admin\traits\class-admin-settings-sanitize-trait.php:862
+msgid "区块编辑器/小工具白名单"
+msgstr "ブロックエディター/ウィジェットのホワイトリスト"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:907
+msgid "已启用 %1$d 个可能影响兼容性的运行优化：%2$s。%3$s"
+msgstr "互換性に影響を与える可能性のある %1$d 個のランタイム最適化が有効になっています: %2$s。 %3$s"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:911
+msgid "相关白名单状态："
+msgstr "関連するホワイトリストのステータス:"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:912
+msgid "这些设置没有对应的白名单配置，无需额外填写。"
+msgstr "これらの設定には対応するホワイトリスト構成がないため、追加で入力する必要はありません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:612
+msgid "建议完善"
+msgstr "改善のための提案"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:616
+msgid "当前为空，建议完善后再观察联动效果。"
+msgstr "現在は空です。改善後に連携効果を観察することをお勧めします。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:630
+msgid "用于检查暗色风格的显示效果，普通使用可以先忽略。"
+msgstr "ダークスタイルの表示効果を確認するために使用されますが、通常の使用では無視できます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:634
+msgid "可在下方查看详细检查结果。"
+msgstr "詳細な検査結果は以下からご覧いただけます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:709
+msgid "查看下方详细检查结果"
+msgstr "詳細な検査結果は以下をご覧ください"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:1114
+msgid "样式详细检查"
+msgstr "スタイル詳細検査"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:1115
+msgid "用于进一步检查样式一致性和潜在显示问题。"
+msgstr "スタイルの一貫性と潜在的な表示の問題をさらにチェックするために使用されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:1118
+msgid "请结合上方对比度、覆盖明细和空值提醒逐项检查。"
+msgstr "上記のコントラスト比、カバレッジの詳細、Null 値のリマインダーに基づいて各項目を確認してください。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:97
+msgid "如需当前页单独覆盖，三段背景、文字颜色、顶部波浪和动画范围可在下方 <strong>页脚三段式视觉装修</strong> 中调整。留空时继续跟随全局组件样式。"
+msgstr "現在のページを個別にカバーする必要がある場合は、以下の<strong>フッターの 3 つのセクションの視覚的な装飾</strong>で、3 つのセクションの背景、テキストの色、上部の波形、およびアニメーションの範囲を調整できます。グローバル コンポーネント スタイルに従い続けるには、空のままにしておきます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:100
+msgid "调整信息区背景"
+msgstr "インフォメーションエリアの背景を調整する"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:102
+msgid "开启顶部波浪"
+msgstr "トップウェーブを開始する"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:59
+msgid "当前已独立装修 %d 个页脚区域，独立区域优先；其余区域继续使用默认内容或旧替换配置。"
+msgstr "現在、%d 個のフッター領域が独立して装飾されており、独立した領域が優先されます。残りの領域では、デフォルトのコンテンツまたは古い置換構成が引き続き使用されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:28
+msgid "配置概览"
+msgstr "構成の概要"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:201
+msgid "启灵AI多语言已接入，可读取多语言 SEO 诊断。"
+msgstr "Qiling AI多言語接続されており、多言語SEO診断を読むことができます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:210
+msgid "尚未启用多语言内容模式或配置 hreflang 来源。"
+msgstr "多言語コンテンツ モードが有効になっていない、または hreflang ソースが設定されていません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:218
+msgid "多语言服务：%s"
+msgstr "多言語サービス: %s"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:246
+msgid "Schema 功能已开启，建议完善企业名称和 Logo。"
+msgstr "スキーマ機能がオンになっています。社名やロゴを改善することをお勧めします。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:32
+msgid "此处提供后台只读快照，便于核对配置和排查问题；不会向前台输出任何新内容。"
+msgstr "構成の検証とトラブルシューティングを容易にするために、バックエンドの読み取り専用スナップショットがここに提供されます。新しいコンテンツはフロントエンドに出力されません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:629
+msgid "国际化检查只读取和汇总相关配置，不会改动百度统计、阿里云验证码、备案、隐私提示、语言切换或现有 SEO 输出。"
+msgstr "国際化チェックでは、関連する設定を読み取って要約するだけであり、Baidu 統計、Alibaba Cloud 検証コード、提出書類、プライバシーに関するヒント、言語の切り替え、または既存の SEO 出力は変更されません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:829
+msgid "此代码尚未明确 Cookie 分类，建议重新确认。"
+msgstr "このコードはまだ Cookie を明確に分類していません。再確認することをお勧めします。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1248
+msgid "SEO 数据来源"
+msgstr "SEO データソース"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1335
+msgid "通过启灵AI多语言汇总各公开页面及语言的 SEO、OG、hreflang、x-default 与 sitemap 缺失项。"
+msgstr "Qiling AI 多言語を使用して、各公開ページと言語の SEO、OG、hreflang、x-default、サイトマップの不足している項目を要約します。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1338
+msgid "扫描服务不可用"
+msgstr "スキャンサービスは利用できません"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1349
+msgid "启灵AI多语言的全站扫描功能当前不可用。基础检查仍可使用；增强扫描、批量生成和报告导出需要启用并更新启灵AI多语言插件。"
+msgstr "Qiling AI の多言語サイト全体のスキャン機能は現在利用できません。基本的なチェックは引き続き使用できます。拡張スキャン、バッチ生成、レポートのエクスポートを行うには、Qiling AI 多言語プラグインを有効にして更新する必要があります。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1477
+msgid "启灵AI多语言报告服务不可用。"
+msgstr "Qiling AI の多言語レポート サービスは利用できません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1594
+msgid "已检测到启灵AI多语言，可读取译文、URL、hreflang、canonical 和 sitemap 状态；SEO 标签仍由主题统一输出。"
+msgstr "Qiling AI の多言語が検出され、翻訳、URL、hreflang、正規およびサイトマップのステータスを読み取ることができます。 SEO タグはテーマごとに一律に出力されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1595
+msgid "未检测到启灵AI多语言，当前仅检查主题自身的语言配置。"
+msgstr "Qiling AI の多言語は検出されておらず、現在はテーマ自体の言語構成のみがチェックされています。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1596
+msgid "已连接"
+msgstr "接続済み"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1596
+msgid "基础检查"
+msgstr "基本的なチェック"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1672
+msgid "启灵AI多语言 sitemap 已接入：%s。"
+msgstr "Qiling AI 多言語サイトマップが接続されました: %s。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1673
+msgid "已检测到启灵AI多语言，但 sitemap 功能当前不可用或 WordPress 原生 sitemap 未启用。"
+msgstr "Qiling AI 多言語は検出されましたが、サイトマップ機能は現在利用できないか、WordPress ネイティブ サイトマップが有効になっていません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:2117
+msgid "预览根据当前已保存的 Schema 配置生成，前台由主题统一输出。"
+msgstr "プレビューは現在保存されているスキーマ構成に基づいて生成され、フロントエンドはテーマによって均一に出力されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:33
+msgid "首页 SEO 生效状态"
+msgstr "ホームページSEO効果状況"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:39
+msgid "无标题页面 #%d"
+msgstr "無題のページ #%d"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:55
+msgid "当前首页：静态页面定制模式"
+msgstr "現在のホームページ: 静的ページカスタマイズモード"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:56
+msgid "页面独立定制优先"
+msgstr "独立したページのカスタマイズが推奨されます"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:58
+msgid "首页页面 ID: %d"
+msgstr "ホームページ ID: %d"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:63
+msgid "网站当前已将页面【<strong>%s</strong>】设为站点首页。启灵主题自带的 100+ 页面模版及自定义页面均支持<strong>专属的独立 SEO 设置</strong>，因此前台访问首页时将<strong>优先读取该页面中配置的 SEO 标题、描述与关键词</strong>。"
+msgstr "現在、Web サイトにはページ [<strong>%s</strong>] がサイトのホームページとして設定されています。 Qiling Theme に付属する 100 以上のページ テンプレートとカスタム ページはすべて<strong>独自の独立した SEO 設定</strong>をサポートしているため、フロント デスクがホームページにアクセスすると<strong>ページ内に設定されている SEO タイトル、説明、 キーワードを優先的に読み取る</strong>ことができます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:69
+msgid "当前首页三大要素生效状态："
+msgstr "現在のホームページの 3 つの主要な要素が有効です。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:76 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:88 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:100
+msgid "页面已单独定制"
+msgstr "ページは個別にカスタマイズされています"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:79
+msgid "生效下方全站默认标题"
+msgstr "以下のサイト全体のデフォルトのタイトルが有効になります"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:80 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:92 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:104
+msgid "（页面字段留空）"
+msgstr "(ページフィールドは空白のままにしておきます)"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:91
+msgid "生效下方全站默认描述"
+msgstr "以下のサイト全体のデフォルトの説明が有効になります。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:103
+msgid "生效下方全站默认关键词"
+msgstr "以下のサイト全体のデフォルトのキーワードが有効です"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:112
+msgid "如何选择配置方式？"
+msgstr "設定方法はどのように選択すればよいですか?"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:113
+msgid "个性化定制首页"
+msgstr "パーソナライズされたカスタマイズされたホームページ"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:113
+msgid "点击下方按钮前往该页面编辑，在底部【SEO 设置】面板中直接填写您期望的首页标题、描述与关键词。"
+msgstr "下のボタンをクリックして編集ページに移動し、下部の[SEO設定]パネルに希望のホームページのタイトル、説明、キーワードを直接入力します。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:114
+msgid "统一采用全站设置"
+msgstr "サイト全体の設定を統一して使用する"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:114
+msgid "若您希望直接使用下方配置的内容，只需前往该页面编辑，将对应 SEO 字段清空留空保存即可，系统将自动无缝回退！"
+msgstr "以下で設定したコンテンツを直接使用したい場合は、編集するページに移動し、対応する SEO フィールドをクリアして保存するだけで、システムが自動的かつシームレスにロールバックします。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:119
+msgid "前往编辑首页专属 SEO"
+msgstr "独占的な SEO については編集者のホームページにアクセスしてください"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:122
+msgid "预览全站首页"
+msgstr "サイトのホームページ全体をプレビューする"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:130
+msgid "当前首页：最新文章模式（全局控制）"
+msgstr "現在のホームページ: 最新記事モード (グローバル コントロール)"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:131
+msgid "全局 SEO 直接生效"
+msgstr "グローバル SEO は直接効果を発揮します"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:133
+msgid "当前站点未指定静态首页页面（使用默认最新文章模式），下方配置的【默认标题】、【默认描述】与【默认关键词】将直接作为全站首页的完整 SEO 元标签对外输出。"
+msgstr "現在のサイトは静的ホームページを指定していません (デフォルトの最新記事モードを使用)。以下で設定した[デフォルトのタイトル]、[デフォルトの説明]、[デフォルトのキーワード]は、サイト全体のホームページの完全なSEOメタタグとして直接出力されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:22
+msgid "缩略图缓存管理"
+msgstr "サムネイルキャッシュ管理"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:25
+msgid "缓存文件"
+msgstr "キャッシュファイル"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:35
+msgid "未使用扫描会保留当前文章、页面及其他内容类型引用过的特色图、自定义封面和正文首图缓存；清空后会在前台访问时按需重新生成。"
+msgstr "未使用のスキャンは、現在の記事、ページ、およびその他のコンテンツ タイプによって参照される注目の画像、カスタム カバー、テキストの最初の画像のキャッシュを保持します。クリア後​​、フロントエンド アクセス中にオンデマンドで再生成されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:36
+msgid "这里只清理服务器本地 uploads/thumbnail-cache。对象存储中的历史文件不会自动删除，避免误删其他站点或旧配置共用的对象。"
+msgstr "ここでは、サーバーのローカルアップロード/サムネイルキャッシュのみがクリアされます。他のサイトや古い構成で共有されているオブジェクトを誤って削除しないように、オブジェクト ストレージ内の履歴ファイルは自動的に削除されません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:49
+msgid "统一查看所有页面前台装修器生成的保存快照。"
+msgstr "すべてのページのフロントエンド デコレータによって生成された保存済みスナップショットを統合します。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:50
+msgid "管理入口"
+msgstr "管理入口"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:51
+msgid "可以按页面查看修订时间、操作者和模块数量，也可以删除单条修订、清空某个页面或批量清理。恢复操作会打开对应页面的前台装修器，由你确认后执行。"
+msgstr "リビジョン時間、オペレーターの数、モジュールをページごとに表示でき、単一のリビジョンを削除したり、ページをクリアしたり、バッチでクリーンアップしたりすることもできます。復元操作により、対応するページのフロントエンド デコレーターが開き、確認後に実行されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:52
+msgid "打开装修修订管理"
+msgstr "装飾リビジョン管理を開く"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:243
+msgid "清理 uploads/cache/developer-starter/ip-location 内的 IP 归属地临时缓存文件。"
+msgstr "Uploads/cache/developer-starter/ip-location にある IP アドレスの一時キャッシュ ファイルをクリアします。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:252
+msgid "此操作不会删除用户账号，只会清空已保存的旧 IP 归属地，用户下次访问时重新获取并写入数据库。"
+msgstr "この操作ではユーザー アカウントは削除されませんが、保存されている古い IP アドレスが消去されるだけで、次回ユーザーがアクセスしたときにその IP アドレスが再取得されてデータベースに書き込まれます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:292
+msgid "点击后生成前台所需的 CSS 压缩文件，可用于更新正式环境中的样式资源；原始样式文件不会被修改。"
+msgstr "クリックすると、フロントエンドに必要な CSS 圧縮ファイルが生成されます。これは、正式な環境でスタイル リソースを更新するために使用できます。元のスタイル ファイルは変更されません。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:301
+msgid "检查拆分后的 CSS 资源是否完整一致，可快速发现文件缺失、内容过期或空文件。"
+msgstr "分割された CSS リソースが完全で一貫性があるかどうかを確認すると、不足しているファイル、期限切れのコンテンツ、または空のファイルをすぐに見つけることができます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:376
+msgid "管理员可在此直接执行清理，无需配置外部任务。"
+msgstr "管理者は、外部タスクを構成せずに、ここで直接クリーンアップを実行できます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:393
+msgid "当前访问密钥："
+msgstr "現在のアクセスキー:"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:396
+msgid "支持自动清理、全部清理、修订记录和其他临时数据等范围。"
+msgstr "自動クリーニング、すべてのクリーニング、改訂記録、その他の一時データをサポートします。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:480
+msgid "过期 Transients"
+msgstr "期限切れのトランジェント"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:482
+msgid "文章浏览量记录"
+msgstr "記事閲覧記録"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:484
+msgid "数据包页面"
+msgstr "パケットページ"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:512
+msgid "注意：此操作不可逆，请确保已备份数据库！"
+msgstr "注: この操作は元に戻すことができません。データベースをバックアップしていることを確認してください。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:513
+msgid "清空全站文章浏览量会删除所有文章的浏览量统计记录。"
+msgstr "サイト上のすべての記事のページビューをクリアすると、すべての記事のページビュー統計が削除されます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:514
+msgid "数据包页面只统计和处理由站点数据包创建的页面。彻底删除回收站中的数据包页面时，对应页面模块数据也会一并清理。"
+msgstr "データ パッケージ ページは、サイト データ パッケージによって作成されたページのみをカウントし、処理します。ごみ箱内のデータ パッケージ ページが完全に削除されると、対応するページ モジュール データもクリアされます。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:527
+msgid "已生成海报"
+msgstr "ポスターが生成されました"
+
+#: inc\admin\views\modules-meta-box.php:20
+msgid "保存时应用所选页面模板的默认装修"
+msgstr "保存時に選択したページテンプレートのデフォルトの装飾を適用します"
+
+#: inc\admin\views\modules-meta-box.php:22
+msgid "仅在需要替换当前模块时勾选。原装修会先备份；不勾选时，切换页面模板只改变模板外壳并保留现有模块。"
+msgstr "現在のモジュールを交換する必要があるかどうかのみを確認してください。元の装飾が最初にバックアップされます。チェックを外した場合、ページ テンプレートを切り替えるとテンプレート シェルのみが変更され、既存のモジュールは保持されます。"
+
+#: inc\admin\views\modules-meta-box.php:477
+msgid "AI 局部辅助"
+msgstr "AI による現地支援"
+
+#: inc\admin\views\modules-meta-box.php:489
+msgid "当前 AI 只辅助当前页面；单页草稿属于高级入口，保存页面前不会正式生效。"
+msgstr "現在の AI は現在のページを支援するだけです。単一ページの下書きは事前エントリーであり、ページが保存されるまで正式に有効になりません。"
+
+#: inc\admin\views\modules-meta-box.php:566
+msgid "高级单页草稿：建议勾选 1-%d 个候选模块。生成后会先预览摘要，确认后才导入当前模块列表。"
+msgstr "高度な単一ページのドラフト: 1-%d 個の候補モジュールをチェックすることをお勧めします。生成後、まず概要がプレビューされ、確認後に現在のモジュールリストがインポートされます。"
+
+#: inc\admin\views\modules-meta-box.php:575
+msgid "撤回本次导入"
+msgstr "このインポートを取り消します"
+
+#: inc\admin\views\modules-meta-box.php:581
+msgid "AI 草稿待确认"
+msgstr "AIドラフトは確認予定"
+
+#: inc\admin\views\modules-meta-box.php:584
+msgid "请先查看摘要；确认后才会导入当前模块列表。保存页面前不会正式生效。"
+msgstr "まず概要を確認してください。現在のモジュールリストは確認後にインポートされます。ページが保存されるまで有効になりません。"
+
+#: inc\admin\views\modules-meta-box.php:587
+msgid "确认应用草稿"
+msgstr "アプリのドラフトを確認する"
+
+#: inc\admin\views\modules-meta-box.php:588
+msgid "放弃草稿"
+msgstr "ドラフトを放棄する"
+
+#: inc\admin\views\modules-meta-box.php:641
+msgid ""
+"检测到页面模板已切换。是否在保存时用新模板的默认装修替换当前模块？\n"
+"\n"
+"选择“确定”会先备份当前装修再替换；选择“取消”则只切换模板外壳并保留当前模块。"
+msgstr ""
+"ページ テンプレートのスイッチが検出されました。保存時に現在のモジュールを新しいテンプレートのデフォルトの装飾に置き換えますか?\n"
+"\n"
+"「OK」を選択すると、まず現在の装飾がバックアップされ、次に置き換えられます。 「キャンセル」を選択すると、テンプレート シェルのみが切り替わり、現在のモジュールが保持されます。"
+
+#: inc\admin\views\modules-meta-box.php:1057
+msgid "页面标题："
+msgstr "ページタイトル:"
+
+#: inc\admin\views\modules-meta-box.php:1064
+msgid "模块预览："
+msgstr "モジュールのプレビュー:"
+
+#: inc\admin\views\modules-meta-box.php:1067
+msgid "包含页面风格：是"
+msgstr "ページスタイルを含める: はい"
+
+#: inc\admin\views\modules-meta-box.php:1070
+msgid "包含 SEO 建议：是"
+msgstr "SEO の推奨事項を含む: はい"
+
+#: inc\admin\views\modules-meta-box.php:1073
+msgid "包含页脚设置：是"
+msgstr "フッター設定を含める: はい"
+
+#: inc\admin\views\modules-meta-box.php:1076
+msgid "草稿已生成，请确认后应用到当前页面模块列表。"
+msgstr "ドラフトが生成されました。確認して、現在のページのモジュール リストに適用してください。"
+
+#: inc\admin\views\modules-meta-box.php:1087
+msgid "AI 草稿已生成，请查看摘要后确认应用。"
+msgstr "AIドラフトが生成されましたので、概要を確認して申請を確定してください。"
+
+#: inc\admin\views\modules-meta-box.php:1154
+msgid "AI 生成超时，请稍后重试，或减少候选模块数量。"
+msgstr "AI 生成がタイムアウトしました。後で再試行するか、候補モジュールの数を減らしてください。"
+
+#: inc\admin\views\modules-meta-box.php:1639
+msgid "已复制！可跨页面粘贴"
+msgstr "コピーしました！ページをまたいで貼り付けることができます"
+
+#: inc\admin\views\modules-meta-box.php:1651
+msgid "剪贴板中暂无已复制的模块！请先在任意页面的模块右上角点击“复制”按钮。"
+msgstr "クリップボードにコピーされたモジュールはありません。まず、いずれかのページのモジュールの右上隅にある「コピー」ボタンをクリックしてください。"
+
+#: inc\admin\views\modules-meta-box.php:1659
+msgid "剪贴板模块数据解析失败。"
+msgstr "クリップボード モジュール データの解析に失敗しました。"
+
+#: inc\admin\views\modules-meta-box.php:1664
+msgid "未检测到有效的模块类型。"
+msgstr "有効なモジュール タイプが検出されませんでした。"
+
+#: inc\admin\views\modules-meta-box.php:1670
+msgid "正在粘贴模块..."
+msgstr "モジュールを貼り付けています..."
+
+#: inc\admin\views\modules-meta-box.php:1693
+msgid "模块粘贴失败"
+msgstr "モジュールの貼り付けに失敗しました"
+
+#: inc\admin\views\modules-meta-box.php:1711
+msgid "剪贴板中暂无已复制的模块数据！请先复制其他模块。"
+msgstr "コピーされたモジュール データがクリップボードにありません。最初に他のモジュールをコピーしてください。"
+
+#: inc\admin\views\modules-meta-box.php:1719
+msgid "剪贴板模块数据无效。"
+msgstr "クリップボードモジュールのデータが無効です。"
+
+#: inc\admin\views\modules-meta-box.php:1725
+msgid "确定要用剪贴板中的模块数据覆盖当前模块吗？当前未保存的修改将被覆盖。"
+msgstr "現在のモジュールをクリップボード内のモジュール データで上書きしてもよろしいですか?現在保存されていない変更は上書きされます。"
+
+#: inc\admin\views\modules-meta-box.php:1726
+msgid "剪贴板中的模块类型与当前模块不同，确定要替换为剪贴板中的模块吗？"
+msgstr "クリップボード内のモジュール タイプが現在のモジュールと異なります。クリップボード内のモジュールと置き換えてもよろしいですか?"
+
+#: inc\admin\views\modules-meta-box.php:1749
+msgid "覆盖失败"
+msgstr "上書きに失敗しました"
+
+#: inc\admin\views\modules-meta-box.php:1753
+msgid "请求失败，请稍后重试。"
+msgstr "リクエストは失敗しました。後でもう一度試してください。"
+
+#: inc\admin\views\modules-meta-box.php:1981
+msgid "AI 草稿待确认，请查看摘要后应用或放弃。"
+msgstr "AI ドラフトは確認される予定です。申請または破棄する前に概要を確認してください。"
+
+#: inc\admin\views\modules-meta-box.php:2044
+msgid "这是高级单页草稿入口。生成后会先预览摘要；确认应用时才替换当前模块列表，保存页面前不会正式生效。是否继续？"
+msgstr "これは、高度な 1 ページのドラフトへの入り口です。生成後、最初に概要がプレビューされます。現在のモジュール リストはアプリケーションが確認された場合にのみ置き換えられ、ページが保存されるまで正式には有効になりません。続く？"
+
+#: inc\admin\views\modules-meta-box.php:2068
+msgid "没有可应用的 AI 草稿，请重新生成。"
+msgstr "利用可能な AI ドラフトがありません。再生成してください。"
+
+#: inc\admin\views\modules-meta-box.php:2077
+msgid "已放弃本次 AI 草稿，页面未被改动。"
+msgstr "この AI ドラフトは破棄され、ページは変更されていません。"
+
+#: inc\admin\views\modules-meta-box.php:2083
+msgid "没有可撤回的 AI 导入。"
+msgstr "取り消し可能な AI インポートはありません。"
+
+#: inc\admin\views\modules-meta-box.php:2089
+msgid "已撤回本次 AI 导入，页面恢复到导入前状态。"
+msgstr "この AI インポートは取り消され、ページはインポート前の状態に復元されました。"
+
+#: inc\core\class-account-deletion-manager.php:603
+msgid "申请记录已移至回收站。"
+msgstr "申請記録はゴミ箱に移動されました。"
+
+#: inc\core\class-account-deletion-manager.php:605
+msgid "申请记录已从回收站成功还原。"
+msgstr "アプリケーション レコードがごみ箱から正常に復元されました。"
+
+#: inc\core\class-account-deletion-manager.php:607
+msgid "申请记录已永久粉碎删除。"
+msgstr "アプリケーションの記録は完全にシュレッダーにかけられ、削除されました。"
+
+#: inc\core\class-account-deletion-manager.php:609
+msgid "回收站已成功清空。"
+msgstr "ごみ箱は正常に空になりました。"
+
+#: inc\core\class-account-deletion-manager.php:630
+msgid "回收站：%d"
+msgstr "ごみ箱: %d"
+
+#: inc\core\class-account-deletion-manager.php:637
+msgid "全部正常状态"
+msgstr "全て通常状態"
+
+#: inc\core\class-account-deletion-manager.php:642
+msgid "回收站 (%d)"
+msgstr "ごみ箱 (%d)"
+
+#: inc\core\class-account-deletion-manager.php:662
+msgid "确定清空回收站吗？所有处于回收站中的记录都将被彻底物理删除，不可恢复！"
+msgstr "ごみ箱を空にしてもよろしいですか?ごみ箱内のすべてのレコードは物理的に完全に削除され、復元できなくなります。"
+
+#: inc\core\class-account-deletion-manager.php:662
+msgid "清空回收站"
+msgstr "ごみ箱を空にする"
+
+#: inc\core\class-account-deletion-manager.php:760
+msgid "还原"
+msgstr "復元する"
+
+#: inc\core\class-account-deletion-manager.php:762
+msgid "确定要永久粉碎删除此记录吗？此操作无法撤销！"
+msgstr "このレコードを完全に削除してもよろしいですか?この操作は元に戻すことはできません。"
+
+#: inc\core\class-account-deletion-manager.php:762
+msgid "永久删除"
+msgstr "完全に削除"
+
+#: inc\core\class-account-deletion-manager.php:824
+msgid "确定将此记录移至回收站吗？"
+msgstr "このレコードをゴミ箱に移動してもよろしいですか?"
+
+#: inc\core\class-account-deletion-manager.php:824
+msgid "移至回收站"
+msgstr "ゴミ箱に移動"
+
+#: inc\core\class-ai-decorator.php:157
+msgid "高级设置可保持默认，无需额外填写。"
+msgstr "詳細設定はデフォルトのままにすることができ、追加の入力は必要ありません。"
+
+#: inc\core\class-ai-decorator.php:310
+msgid "本次仅优化文字内容，布局、样式、图片、图标、链接和数据连接保持不变。"
+msgstr "今回はテキストコンテンツのみが最適化され、レイアウト、スタイル、画像、アイコン、リンク、データ接続は変更されません。"
+
+#: inc\core\class-ai-decorator.php:1490 inc\core\class-ai-decorator.php:1539
+msgid "未找到需要同步的内容。"
+msgstr "同期されているコンテンツが見つかりませんでした。"
+
+#: inc\core\class-ai-decorator.php:1521 inc\core\class-ai-decorator.php:1568
+msgid "多语言服务暂时无法完成同步，请稍后重试。"
+msgstr "多言語サービスは一時的に同期を完了できません。後でもう一度お試しください。"
+
+#: inc\core\class-ai-product-brand-page-creator.php:102
+msgid ""
+"icon-android|多模型接入|统一接入主流大模型，支持策略路由与回退\n"
+"🧩|Prompt工程|提示词版本化管理，支持灰度与A/B测试\n"
+"icon-settings|工具调用|函数调用与外部系统连接，打通业务流程"
+msgstr ""
+"icon-android|マルチモデル アクセス|主流の大規模モデルへの統合アクセス、ポリシー ルーティングとフォールバックのサポート\n"
+"🧩|プロンプトプロジェクト|プロンプトワードのバージョン管理、グレースケールとA/Bテストをサポート\n"
+"icon-settings|ツール呼び出し|外部システムに接続してビジネス プロセスを開くための関数呼び出し"
+
+#: inc\core\class-ai-product-brand-page-creator.php:108
+msgid ""
+"icon-book|知识库检索|文档切片、向量检索与语义召回一体化\n"
+"icon-lock|权限隔离|按组织、部门、角色进行数据访问控制\n"
+"🧹|数据治理|内容清洗、标注与更新策略可配置"
+msgstr ""
+"icon-book|ナレッジベースの検索|ドキュメントのスライス、ベクトル検索、セマンティックリコールの統合\n"
+"icon-lock|権限の分離|組織、部門、役割によるデータ アクセス制御\n"
+"🧹|データ ガバナンス|構成可能なコンテンツのクリーニング、注釈、更新戦略"
+
+#: inc\core\class-ai-product-brand-page-creator.php:114
+msgid ""
+"icon-chart|调用监控|时延、成本、成功率实时可视化\n"
+"icon-shield|安全防护|敏感词过滤、越权检测与审计追踪\n"
+"icon-rocket|弹性伸缩|高峰流量自动扩容，保障稳定交付"
+msgstr ""
+"icon-chart|通話モニタリング|遅延、コスト、成功率のリアルタイム視覚化\n"
+"icon-shield|セキュリティ保護|機密ワードのフィルタリング、不正な検出および監査追跡\n"
+"icon-rocket|Elastic Scaling|安定した配信を確保するためのピークトラフィックの自動拡張"
+
+#: inc\core\class-app-download-landing-page-creator.php:161
+msgid ""
+"👥|团队共享空间|统一任务视图，协作更顺畅\n"
+"icon-bell|实时通知|重要节点及时提醒，减少延误\n"
+"📎|多格式附件|文档、图片、音视频统一管理"
+msgstr ""
+"👥|チーム共有スペース|スムーズなコラボレーションのための統合タスクビュー\n"
+"icon-bell|リアルタイム通知|遅延を減らすための重要なノードのタイムリーなリマインダー\n"
+"📎|複数形式の添付ファイル|ドキュメント、写真、オーディオ、ビデオの統合管理"
+
+#: inc\core\class-app-download-landing-page-creator.php:167
+msgid ""
+"🔐|账号安全策略|支持多层校验和风险防护\n"
+"☁️|云端备份|历史数据可追溯，误删可恢复\n"
+"icon-chart|稳定运行|高并发场景下保持流畅使用"
+msgstr ""
+"🔐|アカウントセキュリティポリシー|多層検証とリスク保護をサポート\n"
+"☁️|クラウドバックアップ|履歴データを追跡し、誤って削除したデータを復元できます\n"
+"icon-chart|安定した操作|高同時実行シナリオでもスムーズな使用を維持"
+
+#: inc\core\class-auth-pages-service.php:615
+msgid "清理完成！共将 %d 个多余的重复页面移入回收站，系统已自动保留主页面并绑定好对应设置。"
+msgstr "クリーンアップ完了！合計 %d 個の冗長な重複ページがごみ箱に移動され、システムはメイン ページを自動的に保持し、対応する設定をバインドしました。"
+
+#: inc\core\class-careers-manager.php:530
+msgid "保险"
+msgstr "保険"
+
+#: inc\core\class-careers-manager.php:531
+msgid "培训"
+msgstr "トレーニング"
+
+#: inc\core\class-careers-manager.php:532
+msgid "假期"
+msgstr "休暇"
+
+#: inc\core\class-careers-manager.php:534
+msgid "晋升"
+msgstr "プロモーション"
+
+#: inc\core\class-careers-manager.php:535
+msgid "关怀"
+msgstr "思いやりのある"
+
+#: inc\core\class-careers-manager.php:536
+msgid "福利"
+msgstr "福利厚生"
+
+#: inc\core\class-category-manager.php:95 inc\core\class-category-manager.php:326
+msgid "隐藏头部元素"
+msgstr "ヘッダー要素を非表示にする"
+
+#: inc\core\class-category-manager.php:98 inc\core\class-category-manager.php:331
+msgid "隐藏整个分类页头部 (包含大标题和描述)"
+msgstr "カテゴリ ページのヘッダー全体 (タイトルと説明を含む) を非表示にします。"
+
+#: inc\core\class-category-manager.php:106 inc\core\class-category-manager.php:339
+msgid "不显示分类文章数量统计"
+msgstr "カテゴリ商品番号の統計を表示しません"
+
+#: inc\core\class-category-manager.php:108
+msgid "开启后，将覆盖主题的全局设置"
+msgstr "オンにすると、テーマのグローバル設定が上書きされます。"
+
+#: inc\core\class-category-manager.php:211 inc\core\class-category-manager.php:506
+msgid "高级分类筛选设置"
+msgstr "高度なカテゴリフィルタリング設定"
+
+#: inc\core\class-category-manager.php:341
+msgid "开启后，将覆盖主题全局的分类页头部设置。"
+msgstr "オンにすると、テーマのグローバル カテゴリ ページ ヘッダー設定が上書きされます。"
+
+#: inc\core\class-category-manager.php:392
+msgid "输入图标类名（如 icon-book）或图标图片URL，显示在分类名称前面（选填）"
+msgstr "カテゴリ名の前に表示されるアイコン クラス名 (icon-book など) またはアイコン画像の URL を入力します (オプション)"
+
+#: inc\core\class-category-tabs-ajax.php:189 inc\core\class-category-tabs-ajax.php:305 inc\modules\modules\class-category-tabs-module.php:170 inc\modules\modules\class-category-tabs-module.php:303
+msgid "获取图片"
+msgstr "写真を取得する"
+
+#: inc\core\class-content-restriction.php:322
+msgid "全文登录可见"
+msgstr "ログインすると全文が表示されます"
+
+#: inc\core\class-content-restriction.php:332
+msgid "全文回复可见"
+msgstr "返信の全文が表示されます"
+
+#: inc\core\class-cybersecurity-brand-page-creator.php:107
+msgid ""
+"📡|日志分析|集中采集终端、网络与应用日志\n"
+"icon-android|异常识别|行为建模发现异常操作与潜在攻击\n"
+"icon-bell|实时告警|多通道通知，保障关键事件可达"
+msgstr ""
+"📡|ログ分析|端末、ネットワーク、アプリケーションのログを一元的に収集\n"
+"icon-android|異常の特定|異常な操作と潜在的な攻撃を発見するための動作モデリング\n"
+"icon-bell|リアルタイム アラーム|重要なイベントに確実に到達できるようにするマルチチャネル通知"
+
+#: inc\core\class-cybersecurity-brand-page-creator.php:113
+msgid ""
+"🧩|自动化剧本|一键联动封禁、隔离与溯源动作\n"
+"icon-tool|应急支持|专家团队介入，缩短处置时间\n"
+"📘|复盘改进|攻击路径复盘，持续优化防护策略"
+msgstr ""
+"🧩|自動化されたスクリプト|禁止、隔離、トレーサビリティのアクションをワンクリックで連携\n"
+"icon-tool|緊急サポート|専門家チームが介入して処理時間を短縮します\n"
+"📘|改善の見直し|攻撃経路の見直しと保護戦略の継続的な最適化"
+
+#: inc\core\class-data-intelligence-bi-page-creator.php:156
+msgid ""
+"🧹|数据清洗|异常值处理、规则校验与质量监控\n"
+"📚|指标体系|统一口径管理，避免跨团队认知偏差\n"
+"icon-shield|权限控制|按组织角色精细化授权与审计追踪"
+msgstr ""
+"🧹|データクリーニング|異常値の処理、ルール検証、品質監視\n"
+"📚|指標システム|チーム間の認知バイアスを回避するための統合管理\n"
+"icon-shield|権限制御|組織の役割に応じた洗練された権限と監査証跡"
+
+#: inc\core\class-data-intelligence-bi-page-creator.php:162
+msgid ""
+"icon-chart|自助看板|拖拽式搭建分析报表，快速交付业务洞察\n"
+"icon-android|智能预警|阈值与异常模式触发自动告警\n"
+"🤝|协同决策|跨团队共享指标与洞察结论"
+msgstr ""
+"icon-chart|セルフサービス ダッシュボード|ドラッグ アンド ドロップで分析レポートを作成し、ビジネスに関する洞察を迅速に提供します\n"
+"icon-android|インテリジェントな早期警告|しきい値と異常モードにより自動アラームがトリガーされます\n"
+"🤝|協調的な意思決定|チーム間で指標と洞察を共有"
+
+#: inc\core\class-features-showcase-page-creator.php:49
+msgid ""
+"icon-target|横幅模块|支持轮播、视频背景的Banner展示，多种动画效果可选\n"
+"icon-box|产品中心|分类展示产品，自动获取封面图，多种布局风格\n"
+"icon-briefcase|成功案例|客户案例展示，支持多种卡片风格切换\n"
+"📰|新闻动态|自动获取文章列表，多布局展示新闻资讯\n"
+"💰|价格套餐|可定制的定价表模块，支持渐变色和特性列表\n"
+"icon-clipboard|功能清单|Tab切换的功能卡片展示，现代化设计\n"
+"🔄|流程展示|时间线/步骤式流程展示，多种样式可选\n"
+"🎥|视频模块|支持本地视频 and B站视频嵌入播放\n"
+"💬|客户评价|多种样式的客户见证模块，增强可信度"
+msgstr ""
+"icon-target|バナー モジュール|カルーセルとビデオ背景のバナー表示をサポートし、オプションで複数のアニメーション効果を使用できます。\n"
+"icon-box|プロダクト センター|カテゴリ表示製品、カバー画像の自動取得、複数のレイアウト スタイル\n"
+"icon-briefcase|成功事例|顧客事例の表示、複数のカード スタイルの切り替えをサポート\n"
+"📰|ニュース|記事のリストを自動的に取得し、ニュース情報を複数のレイアウトで表示します\n"
+"💰|価格パッケージ|カスタマイズ可能な価格表モジュール、グラデーションカラーと機能リストをサポート\n"
+"icon-clipboard|機能一覧|タブ切り替え機能カード表示、モダンなデザイン\n"
+"🔄|プロセス表示|タイムライン/ステッププロセス表示、複数のスタイルが利用可能\n"
+"🎥|ビデオモジュール|ローカルビデオおよびBステーションビデオの埋め込み再生をサポート\n"
+"💬|顧客の声|信頼性を高めるためのさまざまな顧客の声モジュール"
+
+#: inc\core\class-features-showcase-page-creator.php:56
+msgid ""
+"🔐|登录注册|完整的用户认证系统，支持邮箱验证\n"
+"👤|会员中心|个人资料管理，头像上传，密码修改\n"
+"🔑|密码找回|邮件验证重置密码，安全可靠\n"
+"📧|邮件系统|SMTP邮件发送支持，加密存储凭证\n"
+"icon-shield|表单验证|前后端双重验证，防止恶意提交\n"
+"⏱️|频率限制|防止暴力破解，保护用户账户安全"
+msgstr ""
+"🔐|ログインして登録|完全なユーザー認証システム、メール認証をサポート\n"
+"👤|メンバーセンター|個人情報管理、アバターアップロード、パスワード変更\n"
+"🔑|パスワードの取得|メール認証によるパスワードのリセット、安全で信頼性の高い\n"
+"📧|メール システム|SMTP 電子メール送信サポート、暗号化されたストレージ認証情報\n"
+"icon-shield|フォーム検証|フロントエンドとバックエンドの二重検証により悪意のある送信を防止します\n"
+"⏱️|頻度制限|ブルートフォースクラッキングを防止し、ユーザーアカウントのセキュリティを保護します"
+
+#: inc\core\class-features-showcase-page-creator.php:63
+msgid ""
+"icon-palette|主题色定制|一键切换主题色，支持渐变色配置\n"
+"🌙|暗黑模式|完整的深色主题支持，自动适配所有模块\n"
+"📱|悬浮工具栏|可定制的悬浮按钮，联系方式快捷入口\n"
+"📢|公告系统|多类型公告展示，文字/图文/弹窗模式\n"
+"🖼️|Logo定制|支持普通/暗色模式双Logo配置\n"
+"📐|页脚配置|多栏页脚布局，社交媒体图标，动画效果"
+msgstr ""
+"icon-palette|テーマカラーのカスタマイズ|ワンクリックでテーマカラーを切り替え、グラデーションカラー設定をサポート\n"
+"🌙|ダークモード|完全なダークテーマのサポート、すべてのモジュールに自動的に適応\n"
+"📱|一時停止ツールバー|カスタマイズ可能なフローティング ボタン、連絡先情報への素早いアクセス\n"
+"📢|アナウンスシステム|複数種類のアナウンス表示、テキスト/グラフィック/ポップアップモード\n"
+"🖼️|ロゴのカスタマイズ|ノーマル/ダークモードのデュアルロゴ構成をサポート\n"
+"📐|フッター構成|複数列のフッター レイアウト、ソーシャル メディア アイコン、アニメーション効果"
+
+#: inc\core\class-features-showcase-page-creator.php:70
+msgid ""
+"icon-flash|性能优化|图片懒加载，资源按需加载，极速体验\n"
+"icon-shield|安全防护|XSS防护，数据转义，安全输出\n"
+"icon-chart|后台管理|简洁直观的设置面板，分组配置项\n"
+"🔧|模块管理|拖拽可视化配置，实时预览效果\n"
+"📱|响应式设计|完美适配各种屏幕尺寸，移动端优化\n"
+"🔍|SEO优化|语义化标签，结构化数据，搜索引擎友好"
+msgstr ""
+"icon-flash|パフォーマンスの最適化|画像の遅延読み込み、リソースのオンデマンド読み込み、非常に高速なエクスペリエンス\n"
+"icon-shield|セキュリティ保護|XSS 保護、データエスケープ、安全な出力\n"
+"icon-chart|バックエンド管理|シンプルで直感的な設定パネル、グループ化された構成項目\n"
+"🔧|モジュール管理|ドラッグアンドドロップのビジュアル構成、リアルタイムプレビュー効果\n"
+"📱|レスポンシブデザイン|さまざまな画面サイズに完全に適応し、モバイルに最適化\n"
+"🔍|SEO 最適化|セマンティック タグ、構造化データ、検索エンジンに優しい"
+
+#: inc\core\class-features-showcase-page-creator.php:132
+msgid "选择需要展示的功能模块并填写内容即可，支持调整顺序和实时预览。"
+msgstr "表示する必要がある機能モジュールを選択し、内容を入力するだけです。注文調整とリアルタイムプレビューをサポートします。"
+
+#: inc\core\class-frontend-builder-modules-service.php:297 inc\modules\class-module-manager.php:1040
+msgid "当前模块已暂时隐藏，点击可编辑并恢复显示。"
+msgstr "現在のモジュールは一時的に非表示になっています。クリックして表示を編集および復元します。"
+
+#: inc\core\class-frontend-builder-snapshot-service.php:158
+msgid "装修修订参数无效。"
+msgstr "装飾リビジョンパラメータが無効です。"
+
+#: inc\core\class-frontend-builder-snapshot-service.php:171
+msgid "未找到该装修修订。"
+msgstr "改修リビジョンは見つかりませんでした。"
+
+#: inc\core\class-frontend-builder.php:562
+msgid "快速颜色选择"
+msgstr "素早い色の選択"
+
+#: inc\core\class-frontend-builder.php:563
+msgid "已选择快捷颜色"
+msgstr "クイックカラーが選択されました"
+
+#: inc\core\class-frontend-builder.php:592
+msgid "调整当前模块的内容和外观，不会影响其他页面。"
+msgstr "他のページに影響を与えずに、現在のモジュールのコンテンツと外観を調整します。"
+
+#: inc\core\class-frontend-builder.php:595
+msgid "管理当前页面的模板、页头和专属风格。"
+msgstr "現在のページのテンプレート、ヘッダー、および専用スタイルを管理します。"
+
+#: inc\core\class-frontend-builder.php:598 inc\core\class-frontend-builder.php:1037
+msgid "不指定预设"
+msgstr "デフォルトは指定されていません"
+
+#: inc\core\class-frontend-builder.php:601
+msgid "首屏覆盖在 Banner 上，系统会按首屏明暗自动选择菜单文字色；也可在页面视觉预设中手动指定。"
+msgstr "最初の画面がバナーにオーバーレイされると、システムは最初の画面の明るさに応じてメニューのテキストの色を自動的に選択します。ページのビジュアル プリセットで手動で指定することもできます。"
+
+#: inc\core\class-frontend-builder.php:611
+msgid "设置仅对当前页面生效，留空则使用全站样式。"
+msgstr "この設定は現在のページにのみ有効で、空白のままにするとサイト全体のスタイルが使用されます。"
+
+#: inc\core\class-frontend-builder.php:612
+msgid "设置仅在当前页面的暗色模式下生效，留空则使用全站方案。"
+msgstr "この設定は、現在のページのダーク モードでのみ有効です。サイト全体のソリューションを使用するには、空白のままにします。"
+
+#: inc\core\class-frontend-builder.php:613
+msgid "设置当前页面的圆角和动效，留空则使用全站方案。"
+msgstr "現在のページの角丸とアニメーションを設定します。空白のままにした場合は、フルサイト ソリューションを使用します。"
+
+#: inc\core\class-frontend-builder.php:622
+msgid "已清空当前分组，保存后将使用全站样式。"
+msgstr "現在のグループはクリアされており、保存後はサイト全体のスタイルが使用されます。"
+
+#: inc\core\class-frontend-builder.php:625
+msgid "页面视觉预设"
+msgstr "ページのビジュアルデフォルト"
+
+#: inc\core\class-frontend-builder.php:626
+msgid "这里控制当前页顶部、底部、波浪和按钮的基础搭配；下方字段可直接在前台细调。"
+msgstr "これは、現在のページの上部、下部、ウェーブ、ボタンの基本的な組み合わせを制御します。以下のフィールドはフロントデスクで直接微調整できます。"
+
+#: inc\core\class-frontend-builder.php:627
+msgid "视觉模式"
+msgstr "視覚的なパターン"
+
+#: inc\core\class-frontend-builder.php:630
+msgid "启用当前页面视觉预设"
+msgstr "現在のページのビジュアル プリセットを有効にする"
+
+#: inc\core\class-frontend-builder.php:631
+msgid "基础预设"
+msgstr "基本プリセット"
+
+#: inc\core\class-frontend-builder.php:632
+msgid "填充预设值"
+msgstr "デフォルト値を入力します"
+
+#: inc\core\class-frontend-builder.php:633
+msgid "清空细调"
+msgstr "明確な微調整"
+
+#: inc\core\class-frontend-builder.php:634
+msgid "当前预设值"
+msgstr "現在のデフォルト値"
+
+#: inc\core\class-frontend-builder.php:635
+msgid "页面视觉风格已同步到当前预览，保存后会正式生效。"
+msgstr "ページの視覚スタイルは現在のプレビューと同期されており、保存後に正式に有効になります。"
+
+#: inc\core\class-frontend-builder.php:636
+msgid "请先选择一个基础预设，再填充预设值。"
+msgstr "最初に基本プリセットを選択し、次にプリセット値を入力してください。"
+
+#: inc\core\class-frontend-builder.php:637
+msgid "留空则使用全站设置"
+msgstr "サイト全体の設定を使用するには空白のままにします"
+
+#: inc\core\class-frontend-builder.php:638
+msgid "设置当前页面的正文、标题、按钮和导航排版，留空则使用全站设置。"
+msgstr "現在のページのテキスト、タイトル、ボタン、ナビゲーションのレイアウトを設定します。サイト全体の設定を使用するには、空白のままにします。"
+
+#: inc\core\class-frontend-builder.php:640
+msgid "调整当前页面的组件外观，不会影响全站设置。"
+msgstr "現在のページのコンポーネントの外観を調整しても、サイト設定全体には影響しません。"
+
+#: inc\core\class-frontend-builder.php:646
+msgid "设置仅对当前页面生效，留空则使用全站设置。"
+msgstr "設定は現在のページにのみ有効です。空白のままにすると、サイト全体の設定が使用されます。"
+
+#: inc\core\class-frontend-builder.php:650
+msgid "当前页面的专属风格会应用到此模块。"
+msgstr "現在のページの一意のスタイルがこのモジュールに適用されます。"
+
+#: inc\core\class-frontend-builder.php:652
+msgid "留空则使用当前页面和全站设置。"
+msgstr "現在のページとサイト全体の設定を使用するには、空白のままにします。"
+
+#: inc\core\class-frontend-builder.php:653
+msgid "当前模块的公共样式设置集中在此面板。"
+msgstr "現在のモジュールのパブリック スタイル設定は、このパネルに集中しています。"
+
+#: inc\core\class-frontend-builder.php:654
+msgid "设置仅影响当前模块；留空字段则使用页面或全站设置。"
+msgstr "設定は現在のモジュールにのみ影響します。フィールドを空白のままにすると、ページまたはサイト全体の設定が使用されます。"
+
+#: inc\core\class-frontend-builder.php:655
+msgid "用于图标、标签、链接和局部高亮，不是标题文字颜色。"
+msgstr "タイトルのテキストの色ではなく、アイコン、ラベル、リンク、ローカルのハイライトに使用されます。"
+
+#: inc\core\class-frontend-builder.php:656
+msgid "用于第二强调色和部分悬停状态。"
+msgstr "二次アクセントカラーと部分的なホバー状態に使用されます。"
+
+#: inc\core\class-frontend-builder.php:657 inc\core\class-module-visual-style-service.php:293
+msgid "控制整个当前模块区块的背景。"
+msgstr "現在のモジュール ブロック全体の背景を制御します。"
+
+#: inc\core\class-frontend-builder.php:659 inc\core\class-module-visual-style-service.php:299
+msgid "控制当前模块主标题和兼容的标题链接。"
+msgstr "現在のモジュールのメイン タイトルと互換性のあるタイトル リンクを制御します。"
+
+#: inc\core\class-frontend-builder.php:661 inc\core\class-module-visual-style-service.php:305
+msgid "控制主标题下方的副标题和说明。"
+msgstr "メインタイトルの下にあるサブタイトルと説明を制御します。"
+
+#: inc\core\class-frontend-builder.php:663 inc\core\class-module-visual-style-service.php:311
+msgid "控制普通段落、列表和摘要文字。"
+msgstr "通常の段落、リスト、概要テキストを制御します。"
+
+#: inc\core\class-frontend-builder.php:664 inc\core\class-module-visual-style-service.php:317
+msgid "控制当前模块实心主按钮的背景。"
+msgstr "現在のモジュールのソリッドメインボタンの背景を制御します。"
+
+#: inc\core\class-frontend-builder.php:666 inc\core\class-module-visual-style-service.php:323
+msgid "控制主按钮正常状态的文字颜色。"
+msgstr "メインボタンの通常状態のテキストの色を制御します。"
+
+#: inc\core\class-frontend-builder.php:667 inc\core\class-module-visual-style-service.php:329
+msgid "控制鼠标移到主按钮上时的背景。"
+msgstr "マウスをメインボタン上に移動したときのメインボタンの背景を制御します。"
+
+#: inc\core\class-frontend-builder.php:669 inc\core\class-module-visual-style-service.php:335
+msgid "控制鼠标移到主按钮上时的文字颜色。"
+msgstr "マウスをメインボタン上に移動したときのテキストの色を制御します。"
+
+#: inc\core\class-frontend-builder.php:670
+msgid "控制当前模块内卡片的背景。"
+msgstr "現在のモジュールのカードの背景を制御します。"
+
+#: inc\core\class-frontend-builder.php:671
+msgid "控制当前模块内卡片的边框。"
+msgstr "現在のモジュール内のカードの境界線を制御します。"
+
+#: inc\core\class-frontend-builder.php:672
+msgid "清空模块视觉"
+msgstr "明確なモジュールビジョン"
+
+#: inc\core\class-frontend-builder.php:673
+msgid "已清空当前模块视觉设置，保存后将使用页面样式。"
+msgstr "現在のモジュールのビジュアル設定はクリアされ、保存後にページ スタイルが使用されます。"
+
+#: inc\core\class-frontend-builder.php:675
+msgid "支持优化当前页面、所选模块和 SEO 信息。"
+msgstr "現在のページ、選択したモジュール、SEO 情報の最適化をサポートします。"
+
+#: inc\core\class-frontend-builder.php:688
+msgid "快捷需求已添加。"
+msgstr "クイック要件が追加されました。"
+
+#: inc\core\class-frontend-builder.php:698
+msgid "仅优化当前模块，保留信息结构，强化标题、描述、按钮文案和视觉节奏。"
+msgstr "現在のモジュールのみを最適化し、情報構造を保持し、タイトル、説明、ボタンのコピー、および視覚的なリズムを強化します。"
+
+#: inc\core\class-frontend-builder.php:1055
+msgid "%s页脚"
+msgstr "%sフッター"
+
+#: inc\core\class-frontend-builder.php:1382
+msgid "该历史版本与当前页面不匹配，无法恢复。"
+msgstr "この履歴バージョンは現在のページと一致しないため、復元できません。"
+
+#: inc\core\class-interactive-product-launch-page-creator.php:206
+msgid ""
+"🎛️|全新交互界面|页面信息分层更清晰，关键操作路径更短\n"
+"icon-flash|加载体验优化|关键首屏资源按需加载，打开更流畅\n"
+"📱|移动端细节优化|触控反馈和布局适配更符合移动习惯"
+msgstr ""
+"🎛️|新しいインタラクティブなインターフェイス|ページ情報がより明確に階層化され、キー操作パスが短くなりました\n"
+"icon-flash|読み込みエクスペリエンスの最適化|主要な最初の画面リソースがオンデマンドで読み込まれ、よりスムーズに開きます\n"
+"📱|モバイル端末の詳細の最適化|タッチフィードバックとレイアウトの適応がモバイルの習慣により適合します"
+
+#: inc\core\class-mega-menu-manager.php:441
+msgid "例如: icon-home、icon-fire 或 SVG 代码"
+msgstr "例: icon-home、icon-fire、または SVG コード"
+
+#: inc\core\class-module-advanced-style-service.php:62 inc\core\class-module-advanced-style-service.php:224
+msgid "模块显隐"
+msgstr "モジュールの表示と非表示"
+
+#: inc\core\class-module-advanced-style-service.php:63
+msgid "可以暂时隐藏整个模块，也可以按桌面、平板、手机分别控制显示。"
+msgstr "モジュール全体を一時的に非表示にしたり、デスクトップ、タブレット、携帯電話ごとに表示を個別に制御したりできます。"
+
+#: inc\core\class-module-advanced-style-service.php:121
+msgid "模块主标题"
+msgstr "モジュールのメインタイトル"
+
+#: inc\core\class-module-advanced-style-service.php:123
+msgid "模块正文"
+msgstr "モジュールテキスト"
+
+#: inc\core\class-module-advanced-style-service.php:124
+msgid "模块行动按钮文字"
+msgstr "モジュールアクションボタンのテキスト"
+
+#: inc\core\class-module-advanced-style-service.php:231
+msgid "模块状态"
+msgstr "モジュールステータス"
+
+#: inc\core\class-module-advanced-style-service.php:236
+msgid "暂时隐藏（保留全部设置）"
+msgstr "一時的に非表示 (すべての設定を保持)"
+
+#: inc\core\class-module-advanced-style-service.php:741
+msgid "悬停文字颜色"
+msgstr "ホバーテキストの色"
+
+#: inc\core\class-module-visual-style-service.php:55
+msgid "模块视觉风格"
+msgstr "モジュールのビジュアルスタイル"
+
+#: inc\core\class-module-visual-style-service.php:56
+msgid "只影响当前模块，优先级高于当前页面视觉风格。"
+msgstr "現在のモジュールにのみ影響し、現在のページの表示スタイルよりも優先されます。"
+
+#: inc\core\class-module-visual-style-service.php:69
+msgid "控制当前模块主色、辅助色和背景。"
+msgstr "現在のモジュールのメインカラー、セカンダリカラー、背景を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:72 inc\core\class-module-visual-style-service.php:398
+msgid "简单模式"
+msgstr "シンプルモード"
+
+#: inc\core\class-module-visual-style-service.php:75
+msgid "跟随页面风格"
+msgstr "ページのスタイルに従ってください"
+
+#: inc\core\class-module-visual-style-service.php:76
+msgid "使用浅色模块"
+msgstr "ライトモジュールを使用する"
+
+#: inc\core\class-module-visual-style-service.php:77
+msgid "使用深色模块"
+msgstr "ダークモジュールを使用する"
+
+#: inc\core\class-module-visual-style-service.php:78
+msgid "使用强调色模块"
+msgstr "アクセントカラーモジュールを使用する"
+
+#: inc\core\class-module-visual-style-service.php:83
+msgid "继承页面主色"
+msgstr "ページのメインカラーを継承します"
+
+#: inc\core\class-module-visual-style-service.php:86
+msgid "继承"
+msgstr "継承"
+
+#: inc\core\class-module-visual-style-service.php:87
+msgid "不继承"
+msgstr "継承されない"
+
+#: inc\core\class-module-visual-style-service.php:91
+msgid "模块主色"
+msgstr "モジュールのメインカラー"
+
+#: inc\core\class-module-visual-style-service.php:94
+msgid "用于当前模块的强调元素，例如图标、标签、链接和局部高亮；不是标题文字颜色。"
+msgstr "アイコン、ラベル、リンク、ローカル ハイライトなど、現在のモジュールの強調要素に使用されます。タイトルの文字色ではありません。"
+
+#: inc\core\class-module-visual-style-service.php:97
+msgid "模块辅助色"
+msgstr "モジュール補助色"
+
+#: inc\core\class-module-visual-style-service.php:100
+msgid "用于当前模块的第二强调色和悬停状态，与模块主色搭配使用。"
+msgstr "現在のモジュールの 2 番目のアクセント カラーとホバー状態に使用され、モジュールのメイン カラーと組み合わせて使用されます。"
+
+#: inc\core\class-module-visual-style-service.php:103
+msgid "模块背景"
+msgstr "モジュールの背景"
+
+#: inc\core\class-module-visual-style-service.php:106
+msgid "控制整个当前模块区块的背景颜色或渐变。"
+msgstr "現在のモジュール ブロック全体の背景色またはグラデーションを制御します。"
+
+#: inc\core\class-module-visual-style-service.php:111
+msgid "文字"
+msgstr "テキスト"
+
+#: inc\core\class-module-visual-style-service.php:112
+msgid "控制当前模块中的标题、副标题和正文文字。"
+msgstr "現在のモジュールのタイトル、サブタイトル、本文テキストを制御します。"
+
+#: inc\core\class-module-visual-style-service.php:118
+msgid "控制模块主标题；兼容模块内使用标准标题类的标题链接。"
+msgstr "モジュールのメイン タイトルを制御します。互換性のあるモジュール内のタイトル リンクは、標準のタイトル クラスを使用します。"
+
+#: inc\core\class-module-visual-style-service.php:124
+msgid "控制模块主标题下方的说明、副标题和描述文字。"
+msgstr "モジュールのメイン タイトルの下にある説明、サブタイトル、説明テキストを制御します。"
+
+#: inc\core\class-module-visual-style-service.php:130
+msgid "控制当前模块中的普通段落、列表和摘要文字。"
+msgstr "現在のモジュールの通常の段落、リスト、概要テキストを制御します。"
+
+#: inc\core\class-module-visual-style-service.php:136
+msgid "覆盖当前模块里的按钮和链接按钮。"
+msgstr "現在のモジュールのボタンをオーバーライドし、ボタンをリンクします。"
+
+#: inc\core\class-module-visual-style-service.php:142
+msgid "控制当前模块实心主按钮的正常背景颜色。"
+msgstr "現在のモジュールの実色のメイン ボタンの通常の背景色を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:148
+msgid "控制当前模块主按钮正常状态的文字颜色。"
+msgstr "通常の状態での現在のモジュールのメイン ボタンのテキストの色を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:154
+msgid "控制鼠标移到当前模块主按钮上时的背景颜色。"
+msgstr "マウスを現在のモジュールのメイン ボタン上に移動したときの背景色を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:160
+msgid "控制鼠标移到当前模块主按钮上时的文字颜色。"
+msgstr "マウスが現在のモジュールのメインボタン上に移動したときのテキストの色を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:166
+msgid "统一控制当前模块内重复卡片的文字、背景、边框、圆角、间距和图片。"
+msgstr "現在のモジュールで繰り返されるカードのテキスト、背景、境界線、丸い角、間隔、および画像の統合制御。"
+
+#: inc\core\class-module-visual-style-service.php:169
+msgid "卡片布局模式"
+msgstr "カードレイアウトモード"
+
+#: inc\core\class-module-visual-style-service.php:172
+msgid "跟随模块原生样式"
+msgstr "モジュールのネイティブ スタイルに従う"
+
+#: inc\core\class-module-visual-style-service.php:173
+msgid "连体内容"
+msgstr "シャムコンテンツ"
+
+#: inc\core\class-module-visual-style-service.php:176
+msgid "默认保留模块原来的设计。选择“独立卡片”后，才会启用下面的卡片分离和视觉设置。"
+msgstr "モジュールの元の設計はデフォルトで保持されます。以下のカードの分離と視覚的な設定は、「カードを分離」が選択されている場合にのみ有効になります。"
+
+#: inc\core\class-module-visual-style-service.php:192
+msgid "控制当前模块内卡片的背景颜色。"
+msgstr "現在のモジュールのカードの背景色を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:198
+msgid "控制当前模块内卡片的边框颜色。"
+msgstr "現在のモジュール内のカードの境界線の色を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:204
+msgid "控制当前模块内卡片的阴影；填写 none 可关闭阴影。"
+msgstr "現在のモジュール内のカードのシャドウを制御します。影をオフにするには、何も入力しません。"
+
+#: inc\core\class-module-visual-style-service.php:217 inc\core\class-module-visual-style-service.php:374
+msgid "组件间距"
+msgstr "コンポーネントの間隔"
+
+#: inc\core\class-module-visual-style-service.php:220
+msgid "控制卡片网格、列表项或重复组件之间的距离。"
+msgstr "カード グリッド、リスト項目、または繰り返しコンポーネント間の距離を制御します。"
+
+#: inc\core\class-module-visual-style-service.php:223 inc\core\class-module-visual-style-service.php:379
+msgid "卡片图片圆角"
+msgstr "カード画像の角が丸い"
+
+#: inc\core\class-module-visual-style-service.php:280
+msgid "当前模块跟随页面风格。"
+msgstr "現在のモジュールはページ スタイルに従います。"
+
+#: inc\core\class-module-visual-style-service.php:282
+msgid "已选择自定义，请在高级设置里填写字段后生效。"
+msgstr "カスタマイズが選択されました。有効にするには、詳細設定のフィールドに入力してください。"
+
+#: inc\core\class-module-visual-style-service.php:284
+msgid "当前模块正在覆盖页面风格。"
+msgstr "現在のモジュールはページ スタイルをオーバーライドしています。"
+
+#: inc\core\class-module-visual-style-service.php:291
+msgid "背景色"
+msgstr "背景色"
+
+#: inc\core\class-module-visual-style-service.php:315
+msgid "按钮色"
+msgstr "ボタンの色"
+
+#: inc\core\class-module-visual-style-service.php:394
+msgid "模块视觉风格（页面级覆盖）"
+msgstr "モジュールの視覚スタイル (ページレベルのカバレッジ)"
+
+#: inc\core\class-module-visual-style-service.php:395
+msgid "这里的设置只影响当前模块，并优先于当前页面风格。留空字段会继续继承页面或全站。"
+msgstr "ここでの設定は現在のモジュールにのみ影響し、現在のページ スタイルよりも優先されます。フィールドを空白のままにすると、ページまたはサイト全体が引き続き継承されます。"
+
+#: inc\core\class-module-visual-style-service.php:408
+msgid "恢复跟随页面"
+msgstr "フォローページを復元する"
+
+#: inc\core\class-module-visual-style-service.php:409
+msgid "同步页面主色"
+msgstr "ページのメインカラーを同期する"
+
+#: inc\core\class-open-source-devtools-page-creator.php:132
+msgid ""
+"icon-tool|本地调试|热更新与断点调试能力完整\n"
+"📚|模板脚手架|内置多场景模板快速起步\n"
+"🔍|智能提示|命令提示与错误定位更清晰"
+msgstr ""
+"icon-tool|ローカル デバッグ|完全なホット アップデートおよびブレークポイント デバッグ機能\n"
+"📚|テンプレート足場|クイックスタートのための組み込みのマルチシーンテンプレート\n"
+"🔍|スマート プロンプト|より明確なコマンド プロンプトとエラーの場所"
+
+#: inc\core\class-open-source-devtools-page-creator.php:138
+msgid ""
+"🧪|自动测试|集成单测与冒烟测试流程\n"
+"🧹|代码规范|内置 lint/format 保障代码一致性\n"
+"icon-shield|安全检查|依赖漏洞检测与修复建议"
+msgstr ""
+"🧪|自動テスト|統合された単一テストおよびスモークテストプロセス\n"
+"🧹|コード仕様|組み込みの lint/フォーマットによりコードの一貫性が保証されます\n"
+"icon-shield|セキュリティチェック|依存関係の脆弱性の検出と修復の提案"
+
+#: inc\core\class-open-source-devtools-page-creator.php:144
+msgid ""
+"🔄|CI/CD 集成|支持主流流水线平台接入\n"
+"icon-box|版本管理|语义化版本与变更日志自动生成\n"
+"icon-globe|多环境部署|测试、预发、生产环境统一管理"
+msgstr ""
+"🔄|CI/CD統合|主流のパイプラインプラットフォームへのアクセスをサポート\n"
+"icon-box|バージョン管理|セマンティックバージョンと変更ログの自動生成\n"
+"icon-globe|複数環境の展開|テスト環境、プレリリース環境、実稼働環境の統合管理"
+
+#: inc\core\class-open-source-devtools-page-creator.php:217
+msgid "GitHub Stars"
+msgstr "GitHub スター"
+
+#: inc\core\class-page-package-diagnostics-service.php:662
+msgid "当前站点启用了拆包模块样式，但这些模块缺少独立 CSS：%s。前台会自动使用完整模块样式文件，通常不会影响显示效果。"
+msgstr "現在のサイトではアンパックされたモジュール スタイルが有効になっていますが、これらのモジュールにはスタンドアロン CSS: %s がありません。フロントエンドは完全なモジュール スタイル ファイルを自動的に使用しますが、これは通常、表示効果には影響しません。"
+
+#: inc\core\class-page-region-decoration.php:28
+msgid "网站顶部菜单区域"
+msgstr "ウェブサイトのトップメニューエリア"
+
+#: inc\core\class-page-region-decoration.php:29
+msgid "底部关于我们/联系区域"
+msgstr "私たちについて/お問い合わせエリアは下部にあります"
+
+#: inc\core\class-page-region-decoration.php:30
+msgid "底部友情链接区域（仅首页）"
+msgstr "下部のフレンドリーリンクエリア (ホームページのみ)"
+
+#: inc\core\class-page-region-decoration.php:31
+msgid "底部版权/ICP 备案区域"
+msgstr "下部の著作権/ICP 登録エリア"
+
+#: inc\core\class-resources-page-creator.php:61
+msgid "移动端 APP"
+msgstr "モバイルアプリ"
+
+#: inc\core\class-resources-page-creator.php:109
+msgid "icon-laptop 桌面客户端"
+msgstr "アイコン-ラップトップデスクトップクライアント"
+
+#: inc\core\class-resources-page-creator.php:157
+msgid "企业资料与文档"
+msgstr "会社情報と資料"
+
+#: inc\core\class-saas-pricing-page-creator.php:109
+msgid ""
+"icon-rocket|快速上线|内置模块化页面结构，按需组合即可发布\n"
+"icon-target|转化追踪|支持关键行为埋点与渠道成效分析\n"
+"💳|灵活付费|支持月付/年付与优惠活动配置"
+msgstr ""
+"icon-rocket|クイックオンライン|組み込みのモジュール式ページ構造、オンデマンドで組み合わせて公開可能\n"
+"icon-target|コンバージョン追跡|主要な行動追跡とチャネル効果分析をサポート\n"
+"💳|柔軟な支払い|月次/年次支払いとプロモーション設定をサポート"
+
+#: inc\core\class-saas-pricing-page-creator.php:115
+msgid ""
+"👥|多角色权限|支持管理员、运营、客服等多角色协作\n"
+"📂|工作流管理|从线索到成交的流程可视化追踪\n"
+"icon-bell|通知机制|关键操作实时提醒，避免信息遗漏"
+msgstr ""
+"👥|複数の役割の権限|管理者、運用、顧客サービスなどの複数の役割のコラボレーションをサポートします。\n"
+"📂|ワークフロー管理|リードから取引までのプロセスの視覚的な追跡\n"
+"icon-bell|通知メカニズム|情報の欠落を防ぐための主要な操作のリアルタイムのリマインダー"
+
+#: inc\core\class-saas-pricing-page-creator.php:121
+msgid ""
+"🔐|数据隔离|租户级数据隔离，确保业务安全\n"
+"icon-flash|高可用架构|弹性扩展，应对业务高峰流量\n"
+"🧰|运维支持|监控告警与故障处理机制完善"
+msgstr ""
+"🔐|データ分離|ビジネスのセキュリティを確保するためのテナントレベルのデータ分離\n"
+"icon-flash|高可用性アーキテクチャ|ビジネスのピークトラフィックに対処するための柔軟な拡張\n"
+"🧰|運用および保守サポート|完璧な監視、アラーム、障害処理メカニズム"
+
+#: inc\core\class-search-mode-manager.php:46
+msgid "搜索文章和页面等现有内容"
+msgstr "記事やページなどの既存のコンテンツを検索します"
+
+#: inc\core\class-search-mode-manager.php:52
+msgid "只搜索普通文章"
+msgstr "よくある記事だけを検索する"
+
+#: inc\core\class-search-mode-manager.php:57
+msgid "影视搜索"
+msgstr "映画とテレビの検索"
+
+#: inc\core\class-search-mode-manager.php:58
+msgid "只搜索启用了视频模式的影视文章"
+msgstr "ビデオモードが有効になっている映画とテレビの記事のみを検索します"
+
+#: inc\core\class-setup-wizard-presets.php:520
+msgid "启灵商城"
+msgstr "啓陵モール"
+
+#: inc\core\class-setup-wizard-presets.php:520
+msgid "可增强积分兑换、付费资源和会员权益。只提示，不安装不配置。"
+msgstr "ポイント引き換え、有料リソース、メンバーシップ特典を強化できます。プロンプトのみが表示され、インストールや構成は行われません。"
+
+#: inc\core\class-sms-manager.php:497 inc\core\class-sms-manager.php:574
+msgid "短信服务环境不可用（需 PHP 8.1 或更高版本）"
+msgstr "SMSサービス環境が利用できない（PHP 8.1以上が必要）"
+
+#: inc\core\class-software-home-page-creator.php:91
+msgid "icon-star 精选推荐"
+msgstr "icon-star 注目のおすすめ"
+
+#: inc\core\class-software-home-page-creator.php:110
+msgid "icon-laptop 热门软件"
+msgstr "icon-laptop 人気のあるソフトウェア"
+
+#: inc\core\class-software-home-page-creator.php:150
+msgid "icon-trophy 下载排行榜"
+msgstr "アイコントロフィーダウンロードランキング"
+
+#: inc\core\class-software-home-page-creator.php:195
+msgid "icon-box 更多软件"
+msgstr "アイコンボックス その他のソフトウェア"
+
+#: inc\core\class-software-intro-page-creator.php:68
+msgid ""
+"最新版本：V2.5\n"
+"更新时间：2026-01-01\n"
+"兼容 WP：6.0-6.9，推荐最新版本\n"
+"兼容PHP：8.1及以上，推荐8.1/8.2版本\n"
+"授权时间：永久授权使用，免费更新"
+msgstr ""
+"最新バージョン：V2.5\n"
+"更新時間: 2026-01-01\n"
+"WP との互換性: 6.0 ～ 6.9、最新バージョンを推奨します\n"
+"PHP との互換性: 8.1 以降、バージョン 8.1/8.2 を推奨\n"
+"認証時間: 永久認証、無料アップデート"
+
+#: inc\core\class-software-intro-page-creator.php:224
+msgid "选择需要展示的内容模块并填写内容即可，也可以调整模块顺序。"
+msgstr "表示する必要があるコンテンツ モジュールを選択し、コンテンツを入力するだけです。モジュールの順序を調整することもできます。"
+
+#: inc\core\class-solutions-page-creator.php:55
+msgid "智能分析"
+msgstr "インテリジェントな分析"
+
+#: inc\core\class-solutions-page-creator.php:60
+msgid "icon-flash 高效协同"
+msgstr "アイコンフラッシュの効率的なコラボレーション"
+
+#: inc\core\class-solutions-page-creator.php:65
+msgid "icon-shield 安全可靠"
+msgstr "アイコンシールドの安全性と信頼性"
+
+#: inc\core\class-theme-license.php:413
+msgid "服务密钥已清空（当前为非商用版：仅限教育机构、公益组织与个人学习使用，不得商用）"
+msgstr "サービスキーがクリアされています（現在非商用版：教育機関、公共福祉団体、個人の学習用途のみ、商用利用不可）"
+
+#: inc\core\class-theme-license.php:425
+msgid "商业授权密钥已在本地保存！已激活商业正版授权与专属技术支持。"
+msgstr "商用ライセンス キーがローカルに保存されました。商用正規認証と独占的な技術サポートが有効化されています。"
+
+#: inc\core\class-video-hero-page-creator.php:73
+msgid "icon-fire 立即购买"
+msgstr "icon-fire 今すぐ購入"
+
+#: inc\core\class-vip-access.php:104 inc\core\class-vip-access.php:182 inc\core\class-vip-access.php:207
+msgid "要求最低 VIP 等级"
+msgstr "最低限必要な VIP レベル"
+
+#: inc\core\class-vip-access.php:106 inc\core\class-vip-access.php:184 inc\core\class-vip-access.php:210
+msgid "不限制"
+msgstr "制限なし"
+
+#: inc\core\class-vip-access.php:113
+msgid "仅对该级别及以上的 VIP 用户显示此菜单项。此项拥有更高优先级。"
+msgstr "このメニュー項目は、このレベル以上の VIP ユーザーにのみ表示されます。この項目の方が優先されます。"
+
+#: inc\core\class-vip-access.php:191 inc\core\class-vip-access.php:217
+msgid "仅允许该级别及以上 VIP 用户访问该分类及其文章。"
+msgstr "このレベル以上の VIP ユーザーのみが、このカテゴリとその記事にアクセスできます。"
+
+#: inc\core\ai\class-generation-orchestrator.php:228 inc\core\ai\class-response-parser.php:277 inc\core\ai\class-response-parser.php:360
+msgid "当前内容暂时无法生成，请刷新后重试。"
+msgstr "現在のコンテンツは一時的に生成できません。更新して再試行してください。"
+
+#: inc\core\ai\class-response-parser.php:860
+msgid "部分不支持的内容已忽略。"
+msgstr "サポートされていないコンテンツの一部は無視されています。"
+
+#: inc\core\design-tokens\component-group-labels.php:15
+msgid "边框强调组件"
+msgstr "ボーダーアクセントコンポーネント"
+
+#: inc\core\design-tokens\component-group-labels.php:18
+msgid "模块标题/表头/高亮组件"
+msgstr "モジュールのタイトル/ヘッダー/ハイライトコンポーネント"
+
+#: inc\core\design-tokens\component-group-labels.php:20
+msgid "认证登录组件"
+msgstr "認証ログインコンポーネント"
+
+#: inc\core\design-tokens\component-style-definitions.php:24
+msgid "强调边框"
+msgstr "強調境界線"
+
+#: inc\core\design-tokens\component-style-definitions.php:30
+msgid "标题条背景"
+msgstr "タイトルストリップの背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:31
+msgid "标题条文字"
+msgstr "タイトルバーのテキスト"
+
+#: inc\core\design-tokens\component-style-definitions.php:32
+msgid "标题条边框"
+msgstr "タイトルバーの枠線"
+
+#: inc\core\design-tokens\component-style-definitions.php:33
+msgid "列表表头背景"
+msgstr "リストヘッダーの背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:34
+msgid "列表表头文字"
+msgstr "リストヘッダーテキスト"
+
+#: inc\core\design-tokens\component-style-definitions.php:35
+msgid "列表表头边框"
+msgstr "リストヘッダーの境界線"
+
+#: inc\core\design-tokens\component-style-definitions.php:36
+msgid "高亮块背景"
+msgstr "ブロックの背景を強調表示する"
+
+#: inc\core\design-tokens\component-style-definitions.php:37
+msgid "高亮块文字"
+msgstr "ブロックテキストを強調表示する"
+
+#: inc\core\design-tokens\component-style-definitions.php:38
+msgid "高亮块边框"
+msgstr "ブロックの境界線を強調表示する"
+
+#: inc\core\design-tokens\component-style-definitions.php:39
+msgid "高亮弱背景"
+msgstr "弱い背景を強調表示する"
+
+#: inc\core\design-tokens\component-style-definitions.php:89
+msgid "徽标边框"
+msgstr "ロゴの境界線"
+
+#: inc\core\design-tokens\component-style-definitions.php:113
+msgid "营销公告背景"
+msgstr "マーケティング発表の背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:114
+msgid "营销公告按钮文字"
+msgstr "マーケティング告知ボタンのテキスト"
+
+#: inc\core\helpers\helpers-page-skins.php:437 inc\modules\class-module-standards.php:374
+msgid "影视娱乐"
+msgstr "映画とテレビのエンターテイメント"
+
+#: inc\core\helpers\helpers-page-skins.php:506
+msgid "食品餐饮"
+msgstr "ケータリング"
+
+#: inc\core\helpers\helpers-page-skins.php:528
+msgid "装修设计"
+msgstr "装飾デザイン"
+
+#: inc\core\helpers\helpers-page-skins.php:606
+msgid "法律咨询"
+msgstr "法的アドバイス"
+
+#: inc\core\helpers\helpers-page-skins.php:627
+msgid "美业护肤"
+msgstr "美容業界のスキンケア"
+
+#: inc\core\helpers\helpers-page-skins.php:651
+msgid "工业制造"
+msgstr "工業生産"
+
+#: inc\core\helpers\helpers-page-skins.php:684
+msgid "财税金融"
+msgstr "財務、税務、金融"
+
+#: inc\core\helpers\helpers-page-skins.php:706
+msgid "摄影设计"
+msgstr "写真デザイン"
+
+#: inc\core\helpers\helpers-page-skins.php:1481
+msgid "页面基础色"
+msgstr "ページのベースカラー"
+
+#: inc\core\helpers\helpers-page-skins.php:1482
+msgid "控制当前页面主色、辅助色和基础背景。"
+msgstr "現在のページのメインカラー、セカンダリカラー、基本背景を制御します。"
+
+#: inc\core\helpers\helpers-page-skins.php:1500
+msgid "页面文字色"
+msgstr "ページのテキストの色"
+
+#: inc\core\helpers\helpers-page-skins.php:1507
+msgid "页面连续画布"
+msgstr "ページ連続キャンバス"
+
+#: inc\core\helpers\helpers-page-skins.php:1508
+msgid "控制正文模块之间以及正文与页脚之间的整体衔接。标准分区保持各模块原有布局；连续画布适合一体化页面。"
+msgstr "本文モジュール間および本文とフッター間の全体的な接続を制御します。標準パーティションは、各モジュールの元のレイアウトを維持します。連続キャンバスは統合ページに適しています。"
+
+#: inc\core\helpers\helpers-page-skins.php:1511
+msgid "画布模式"
+msgstr "キャンバスモード"
+
+#: inc\core\helpers\helpers-page-skins.php:1514
+msgid "标准分区"
+msgstr "標準パーティション"
+
+#: inc\core\helpers\helpers-page-skins.php:1515
+msgid "一体化连续画布"
+msgstr "統合された連続キャンバス"
+
+#: inc\core\helpers\helpers-page-skins.php:1519
+msgid "画布背景"
+msgstr "キャンバスの背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1524
+msgid "正文到页脚衔接色"
+msgstr "テキストとフッターの接続色"
+
+#: inc\core\helpers\helpers-page-skins.php:1531
+msgid "顶部菜单栏"
+msgstr "トップメニューバー"
+
+#: inc\core\helpers\helpers-page-skins.php:1532
+msgid "分别控制常规/滚动状态和首屏透明状态。透明状态文字留空时，会根据首屏标题明暗自动选择深色或白色。"
+msgstr "通常/スクロール状態と最初の画面の透明状態をそれぞれ制御します。透明状態テキストを空白にすると、最初の画面タイトルの明るさを基準に、ダークまたはホワイトが自動的に選択されます。"
+
+#: inc\core\helpers\helpers-page-skins.php:1535
+msgid "常规/滚动顶部背景"
+msgstr "通常/スクロールトップの背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1540
+msgid "菜单文字色"
+msgstr "メニューの文字色"
+
+#: inc\core\helpers\helpers-page-skins.php:1545
+msgid "首屏透明状态文字色"
+msgstr "最初の画面の透明ステータスの文字色"
+
+#: inc\core\helpers\helpers-page-skins.php:1550
+msgid "菜单悬停背景"
+msgstr "メニューのホバー背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1555
+msgid "菜单悬停文字"
+msgstr "メニューのホバーテキスト"
+
+#: inc\core\helpers\helpers-page-skins.php:1560
+msgid "搜索框背景"
+msgstr "検索ボックスの背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1565
+msgid "搜索框文字"
+msgstr "検索ボックスのテキスト"
+
+#: inc\core\helpers\helpers-page-skins.php:1570
+msgid "搜索占位文案"
+msgstr "プレースホルダーのコピーを検索"
+
+#: inc\core\helpers\helpers-page-skins.php:1575
+msgid "搜索图标颜色"
+msgstr "検索アイコンの色"
+
+#: inc\core\helpers\helpers-page-skins.php:1580
+msgid "联系电话背景"
+msgstr "連絡先番号の背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1585
+msgid "联系电话文字"
+msgstr "連絡先番号のテキスト"
+
+#: inc\core\helpers\helpers-page-skins.php:1592
+msgid "底部和波浪"
+msgstr "底と波"
+
+#: inc\core\helpers\helpers-page-skins.php:1593
+msgid "这里是当前页显式覆盖，优先于全局页脚和所选页面皮肤；留空则按“页脚策略”继承。"
+msgstr "ここでは、現在のページの明示的なオーバーライドを示します。これは、グローバル フッターおよび選択されたページ スキンよりも優先されます。空白のままにした場合、「フッター戦略​​」に従って継承されます。"
+
+#: inc\core\helpers\helpers-page-skins.php:1596
+msgid "关于我们/联系区域背景"
+msgstr "私たちについて/お問い合わせ 地域の背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1601
+msgid "关于我们/联系区域文字"
+msgstr "私たちについて/お問い合わせエリアのテキスト"
+
+#: inc\core\helpers\helpers-page-skins.php:1611
+msgid "友情链接区域背景"
+msgstr "フレンドリーリンクエリアの背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1616
+msgid "友情链接区域文字"
+msgstr "フレンドリーリンクエリアのテキスト"
+
+#: inc\core\helpers\helpers-page-skins.php:1621
+msgid "版权/ICP 备案区域背景"
+msgstr "著作権/ICP登録の地域的背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1626
+msgid "版权/ICP 备案文案颜色"
+msgstr "著作権/ICP 出願コピーの色"
+
+#: inc\core\helpers\helpers-page-skins.php:1631
+msgid "ICP/公安备案链接颜色"
+msgstr "ICP/公安登録リンクの色"
+
+#: inc\core\helpers\helpers-page-skins.php:1636
+msgid "备案链接悬停颜色"
+msgstr "ファイリングリンクのホバーカラー"
+
+#: inc\core\helpers\helpers-page-skins.php:1641
+msgid "版权/备案区域分隔线"
+msgstr "著作権/登録領域区切り線"
+
+#: inc\core\helpers\helpers-page-skins.php:1684
+msgid "按钮和筛选项"
+msgstr "ボタンとフィルター"
+
+#: inc\core\helpers\helpers-page-skins.php:1685
+msgid "控制当前页面通用按钮、tab/cat/filter 按钮。"
+msgstr "現在のページの共通ボタンとタブ/猫/フィルター ボタンを制御します。"
+
+#: inc\core\helpers\helpers-runtime-optimizations.php:826
+msgid "该功能已被系统优化模块禁用，以保障访问速度与合规安全。"
+msgstr "この機能は、アクセス速度とコンプライアンスのセキュリティを確保するために、システム最適化モジュールによって無効にされています。"
+
+#: inc\modules\class-module-base.php:188
+msgid "留空时跟随按钮背景色；没有单独背景色时跟随全局按钮边框。"
+msgstr "空のままにすると、ボタンの背景色に従います。個別の背景色がない場合は、グローバル ボタンの境界線に従います。"
+
+#: inc\modules\class-module-standards.php:317
+msgid "健康保健用品"
+msgstr "ヘルスケア製品"
+
+#: inc\modules\class-module-standards.php:318
+msgid "情趣用品"
+msgstr "大人のおもちゃ"
+
+#: inc\modules\class-module-standards.php:357
+msgid "电竞赛事/战队"
+msgstr "eスポーツイベント/チーム"
+
+#: inc\modules\class-module-standards.php:358
+msgid "电竞酒店/场馆"
+msgstr "E スポーツ ホテル/会場"
+
+#: inc\modules\class-module-standards.php:359
+msgid "游戏研发/发行"
+msgstr "ゲーム開発・出版"
+
+#: inc\modules\class-module-standards.php:376
+msgid "摄影图片"
+msgstr "写真の写真"
+
+#: inc\modules\class-module-standards.php:378
+msgid "活动会展"
+msgstr "イベントと展示会"
+
+#: inc\modules\modules\class-about-me-card-module.php:94
+msgid "个人网站文案"
+msgstr "個人ウェブサイトのコピーライティング"
+
+#: inc\modules\modules\class-about-me-card-module.php:118
+msgid "图标 (Symbol类名/SVG/Emoji，可选)"
+msgstr "アイコン (シンボルクラス名/SVG/絵文字、オプション)"
+
+#: inc\modules\modules\class-about-me-card-module.php:167 inc\modules\modules\class-author-matrix-module.php:186 inc\modules\modules\class-blog-module.php:52 inc\modules\modules\class-branches-module.php:96 inc\modules\modules\class-certificate-honors-module.php:77
+msgid "标签/徽章背景颜色"
+msgstr "ラベル/バッジの背景色"
+
+#: inc\modules\modules\class-about-me-card-module.php:169
+msgid "控制 Now 标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "Now ラベルの背景を制御します。空白のままにすると、ページのデフォルト スタイルまたはグローバル バッジの色に従います。"
+
+#: inc\modules\modules\class-accordion-module.php:75 inc\modules\modules\class-tabs-module.php:83
+msgid "图标 (留空或Symbol类名)"
+msgstr "アイコン (空白またはシンボルクラス名)"
+
+#: inc\modules\modules\class-app-hero-module.php:84 inc\modules\modules\class-author-matrix-module.php:176 inc\modules\modules\class-cta-module.php:97 inc\modules\modules\class-image-text-module.php:102 inc\modules\modules\class-software-carousel-module.php:121
+msgid "按钮悬停边框颜色"
+msgstr "ボタンホバー境界線の色"
+
+#: inc\modules\modules\class-app-hero-module.php:84
+msgid "留空时跟随按钮边框颜色。"
+msgstr "空のままにした場合、ボタンの境界線の色に従います。"
+
+#: inc\modules\modules\class-author-matrix-module.php:176
+msgid "留空时跟随按钮悬停背景色。"
+msgstr "空のままにした場合は、ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-author-matrix-module.php:188
+msgid "控制排名徽章背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "ランキングバッジの背景を制御します。空白のままにすると、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-banner-module.php:114
+msgid "数据条背景颜色"
+msgstr "データバーの背景色"
+
+#: inc\modules\modules\class-banner-module.php:117
+msgid "留空则跟随当前模块视觉风格；可填写 HEX、rgba 或渐变等 CSS 背景值。"
+msgstr "現在のモジュールの表示スタイルに従う場合は、空白のままにします。 HEX、rgba、グラデーションなどの CSS 背景値を入力できます。"
+
+#: inc\modules\modules\class-banner-module.php:122
+msgid "数据项布局"
+msgstr "データ項目のレイアウト"
+
+#: inc\modules\modules\class-banner-module.php:125
+msgid "连体数据条"
+msgstr "結合されたデータストリップ"
+
+#: inc\modules\modules\class-banner-module.php:126
+msgid "独立数据卡片"
+msgstr "独立したデータカード"
+
+#: inc\modules\modules\class-banner-module.php:133
+msgid "独立卡片间距"
+msgstr "独立したカード間隔"
+
+#: inc\modules\modules\class-banner-module.php:136
+msgid "如 12px、16px、24px，仅独立数据卡片生效。"
+msgstr "たとえば、12px、16px、24px、独立したデータ カードのみが有効です。"
+
+#: inc\modules\modules\class-banner-module.php:149
+msgid "描述文本颜色"
+msgstr "説明文の色"
+
+#: inc\modules\modules\class-banner-module.php:152
+msgid "单卡片圆角"
+msgstr "シングルカードの角が丸い"
+
+#: inc\modules\modules\class-banner-module.php:152
+msgid "填写 0px 为直角，填写 12px、20px 等为圆角。"
+msgstr "直角の場合は 0px を入力し、丸い角の場合は 12px、20px などを入力します。"
+
+#: inc\modules\modules\class-banner-module.php:153
+msgid "单卡片内边距"
+msgstr "シングルカードのパディング"
+
+#: inc\modules\modules\class-banner-module.php:153
+msgid "如 12px、16px、24px。"
+msgstr "12px、16px、24pxなど。"
+
+#: inc\modules\modules\class-banner-module.php:154
+msgid "单卡片阴影"
+msgstr "シングルカードのシャドウ"
+
+#: inc\modules\modules\class-banner-module.php:154
+msgid "如 0 12px 30px rgba(15,23,42,.12)，填写 none 可关闭。"
+msgstr "たとえば、0 12px 30px rgba(15,23,42,.12)、何も入力しないと閉じます。"
+
+#: inc\modules\modules\class-banner-module.php:184
+msgid "注意：必须与下方模块背景色一致，否则会出现横线"
+msgstr "注: 以下のモジュールの背景色と一致している必要があります。そうでない場合は、水平線が表示されます。"
+
+#: inc\modules\modules\class-blog-module.php:52
+msgid "控制分类、文章标签和资源徽章，留空时跟随页面预设/全局徽章颜色。"
+msgstr "カテゴリ、記事タグ、リソース バッジを制御します。空白のままにした場合は、ページのデフォルト/グローバル バッジの色に従います。"
+
+#: inc\modules\modules\class-blog-module.php:59
+msgid "侧边栏内容来源"
+msgstr "サイドバーのコンテンツソース"
+
+#: inc\modules\modules\class-blog-module.php:60
+msgid "WordPress 小工具侧边栏"
+msgstr "WordPress ウィジェット サイドバー"
+
+#: inc\modules\modules\class-blog-module.php:61
+msgid "模块内置侧边栏"
+msgstr "モジュール内蔵サイドバー"
+
+#: inc\modules\modules\class-blog-module.php:136
+msgid "阅读更多按钮背景颜色"
+msgstr "続きを読むボタンの背景色"
+
+#: inc\modules\modules\class-blog-module.php:137
+msgid "阅读更多按钮文字颜色"
+msgstr "続きを読むボタンの文字色"
+
+#: inc\modules\modules\class-blog-module.php:138
+msgid "阅读更多按钮悬停背景颜色"
+msgstr "続きを読むボタンのホバー背景色"
+
+#: inc\modules\modules\class-blog-module.php:139
+msgid "阅读更多按钮悬停文字颜色"
+msgstr "続きを読むボタンのホバーテキストの色"
+
+#: inc\modules\modules\class-branches-module.php:99
+msgid "控制服务标签和营业状态徽章，留空时保留状态默认色并跟随全局徽章颜色"
+msgstr "サービスラベルとビジネスステータスバッジを制御します。空白のままにした場合、ステータスのデフォルトの色を維持し、グローバル バッジの色に従います。"
+
+#: inc\modules\modules\class-branches-module.php:131
+msgid "导航按钮边框颜色"
+msgstr "ナビゲーション ボタンの境界線の色"
+
+#: inc\modules\modules\class-branches-module.php:146
+msgid "导航按钮悬停边框颜色"
+msgstr "ナビゲーション ボタンのホバー境界線の色"
+
+#: inc\modules\modules\class-branches-module.php:146
+msgid "留空时跟随导航按钮悬停背景颜色。"
+msgstr "空のままにした場合は、ナビゲーション ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-branches-module.php:170
+msgid "预约按钮边框颜色"
+msgstr "予約ボタンの枠線の色"
+
+#: inc\modules\modules\class-branches-module.php:187
+msgid "预约按钮悬停边框颜色"
+msgstr "予約ボタンのホバー境界線の色"
+
+#: inc\modules\modules\class-branches-module.php:187
+msgid "留空时跟随预约按钮悬停背景颜色。"
+msgstr "空のままにした場合は、予定ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-brand-banner-pro-module.php:390
+msgid "留空时跟随浅色按钮悬停背景颜色。"
+msgstr "空のままにした場合、ライト ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-cases-module.php:43
+msgid "填写后优先展示自定义案例列表；留空时自动读取案例文章。"
+msgstr "入力後、最初にカスタムケースのリストが表示されます。空白のままにすると、ケース記事が自動的に読み込まれます。"
+
+#: inc\modules\modules\class-cases-module.php:63
+msgid "卡片查看详情文案"
+msgstr "カードビューの詳細コピー"
+
+#: inc\modules\modules\class-category-tabs-module.php:138
+msgid "默认文章卡片"
+msgstr "デフォルトの記事カード"
+
+#: inc\modules\modules\class-category-tabs-module.php:139
+msgid "图片素材卡片"
+msgstr "写真素材カード"
+
+#: inc\modules\modules\class-category-tabs-module.php:143
+msgid "显示标题"
+msgstr "番組タイトル"
+
+#: inc\modules\modules\class-category-tabs-module.php:144
+msgid "显示图片尺寸"
+msgstr "画像サイズを表示"
+
+#: inc\modules\modules\class-category-tabs-module.php:145
+msgid "显示图片格式"
+msgstr "画像フォーマットを表示"
+
+#: inc\modules\modules\class-category-tabs-module.php:148
+msgid "显示商城资源角标"
+msgstr "モールリソースアイコンを表示"
+
+#: inc\modules\modules\class-category-tabs-module.php:152
+msgid "仅在文章配置了启灵商城资源且全局角标已启用时显示；普通图片文章不受影响。"
+msgstr "これは、記事が Qiling Mall リソースで構成されており、グローバル アイコンが有効になっている場合にのみ表示されます。通常の画像記事は影響を受けません。"
+
+#: inc\modules\modules\class-category-tabs-module.php:156
+msgid "显示商城价格"
+msgstr "モールの価格を表示"
+
+#: inc\modules\modules\class-category-tabs-module.php:160
+msgid "价格只读取启灵商城资源状态，不需要商城的普通文章会自动忽略。"
+msgstr "価格はQiling Mallのリソースステータスのみを読み取り、モールを必要としない通常の記事は自動的に無視されます。"
+
+#: inc\modules\modules\class-category-tabs-module.php:164
+msgid "显示获取图片按钮"
+msgstr "画像取得ボタンを表示"
+
+#: inc\modules\modules\class-category-tabs-module.php:168
+msgid "按钮进入文章详情；如文章使用启灵商城，购买和下载权限仍由商城在详情页处理。"
+msgstr "記事の詳細を入力するボタン。記事が Qiling Mall を使用している場合でも、購入とダウンロードの許可は詳細ページでモールによって処理されます。"
+
+#: inc\modules\modules\class-category-tabs-module.php:170
+msgid "获取图片按钮文案"
+msgstr "画像ボタンのコピーを取得"
+
+#: inc\modules\modules\class-category-tabs-module.php:171
+msgid "获取图片按钮背景颜色"
+msgstr "画像ボタンの背景色を取得"
+
+#: inc\modules\modules\class-category-tabs-module.php:172
+msgid "获取图片按钮文字颜色"
+msgstr "画像ボタンの文字色を取得"
+
+#: inc\modules\modules\class-category-tabs-module.php:173
+msgid "获取图片按钮边框颜色"
+msgstr "画像ボタンの枠線の色を取得します"
+
+#: inc\modules\modules\class-category-tabs-module.php:174
+msgid "获取图片按钮悬停背景颜色"
+msgstr "画像ボタンのホバー背景色を取得"
+
+#: inc\modules\modules\class-category-tabs-module.php:175
+msgid "获取图片按钮悬停文字颜色"
+msgstr "画像ボタンのホバーテキストの色を取得する"
+
+#: inc\modules\modules\class-category-tabs-module.php:176
+msgid "获取图片按钮悬停边框颜色"
+msgstr "画像ボタンのホバー境界線の色を取得します"
+
+#: inc\modules\modules\class-category-tabs-module.php:177
+msgid "分类标识背景颜色"
+msgstr "分類ロゴの背景色"
+
+#: inc\modules\modules\class-category-tabs-module.php:177
+msgid "控制封面分类标识，留空时跟随页面预设/全局徽章颜色。"
+msgstr "カバー カテゴリのロゴを制御します。空白のままにすると、ページのデフォルト/グローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-category-tabs-module.php:205 inc\modules\modules\class-news-module.php:45
+msgid "查看更多按钮文案"
+msgstr "「もっと見る」ボタンのコピー"
+
+#: inc\modules\modules\class-category-tabs-module.php:206
+msgid "加载更多按钮文案"
+msgstr "さらに読み込むボタンのコピー"
+
+#: inc\modules\modules\class-category-tabs-module.php:211 inc\modules\modules\class-qiling-universal-recommend-module.php:316
+msgid "底部按钮边框颜色"
+msgstr "一番下のボタンの枠線の色"
+
+#: inc\modules\modules\class-category-tabs-module.php:212 inc\modules\modules\class-qiling-universal-recommend-module.php:331
+msgid "底部按钮悬停边框颜色"
+msgstr "一番下のボタンのホバー境界線の色"
+
+#: inc\modules\modules\class-category-tabs-module.php:212
+msgid "留空时跟随悬停背景颜色。"
+msgstr "空のままにした場合は、ホバーの背景色に従います。"
+
+#: inc\modules\modules\class-certificate-honors-module.php:67
+msgid "查看证书按钮文案"
+msgstr "証明書ボタンのコピーを表示"
+
+#: inc\modules\modules\class-certificate-honors-module.php:79
+msgid "留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "ページのデフォルトのスタイルまたはグローバルバッジの色に従うには、空白のままにします。"
+
+#: inc\modules\modules\class-clients-module.php:61
+msgid "卡片文字颜色"
+msgstr "カードの文字色"
+
+#: inc\modules\modules\class-clients-module.php:61
+msgid "控制占位文字与客户名称颜色，支持深浅色自主设置"
+msgstr "プレースホルダーのテキストと顧客名の色を制御し、暗い色と明るい色の独立した設定をサポートします"
+
+#: inc\modules\modules\class-comparison-module.php:136
+msgid "推荐表头背景"
+msgstr "推奨ヘッダー背景"
+
+#: inc\modules\modules\class-comparison-module.php:139
+msgid "支持纯色或渐变，留空时使用全局品牌渐变。"
+msgstr "単色またはグラデーションをサポートし、空白のままにした場合はグローバル ブランドのグラデーションが使用されます。"
+
+#: inc\modules\modules\class-comparison-module.php:141
+msgid "推荐表头文字颜色"
+msgstr "推奨されるヘッダーテキストの色"
+
+#: inc\modules\modules\class-comparison-module.php:142
+msgid "推荐标签背景颜色"
+msgstr "推奨されるラベルの背景色"
+
+#: inc\modules\modules\class-comparison-module.php:143
+msgid "推荐标签文字颜色"
+msgstr "推奨されるラベルの文字色"
+
+#: inc\modules\modules\class-comparison-module.php:146
+msgid "推荐列内容背景"
+msgstr "推奨コラム内容の背景"
+
+#: inc\modules\modules\class-comparison-module.php:149 inc\modules\modules\class-comparison-module.php:156
+msgid "支持十六进制、rgb 或 rgba 颜色。"
+msgstr "16 進数、rgb または rgba カラーをサポートします。"
+
+#: inc\modules\modules\class-comparison-module.php:153
+msgid "推荐列悬停背景"
+msgstr "推奨される列ホバー背景"
+
+#: inc\modules\modules\class-contact-module.php:78
+msgid "当前页面专属电话，留空时使用主题设置中的公司电话"
+msgstr "現在のページ専用の電話番号。空白のままにした場合、テーマ設定で会社の電話番号を使用します。"
+
+#: inc\modules\modules\class-contact-module.php:84
+msgid "当前页面专属邮箱，留空时使用主题设置中的公司邮箱"
+msgstr "現在のページ専用の電子メール アドレス。空白のままにした場合、テーマ設定で会社の電子メール アドレスを使用します。"
+
+#: inc\modules\modules\class-contact-module.php:90
+msgid "当前页面专属地址，留空时使用主题设置中的公司地址"
+msgstr "現在のページの専用アドレス。空白のままにした場合、テーマ設定で会社の住所を使用します。"
+
+#: inc\modules\modules\class-contact-module.php:109
+msgid "内置表单提交按钮文案"
+msgstr "組み込みのフォーム送信ボタンのコピーライティング"
+
+#: inc\modules\modules\class-contact-module.php:109
+msgid "只控制主题内置在线留言，不影响启灵表单插件。"
+msgstr "テーマの組み込みオンライン メッセージのみが制御され、Qiling フォーム プラグインは影響を受けません。"
+
+#: inc\modules\modules\class-contact-module.php:115
+msgid "留空时跟随内置提交按钮悬停背景颜色。"
+msgstr "空のままにした場合、組み込みの送信ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-cta-module.php:97 inc\modules\modules\class-image-text-module.php:102 inc\modules\modules\class-news-module.php:50 inc\modules\modules\class-software-carousel-module.php:121 inc\modules\modules\class-software-category-module.php:122
+msgid "留空时跟随按钮悬停背景颜色。"
+msgstr "空のままにした場合は、ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-cta-module.php:136
+msgid "板块样式"
+msgstr "セクションスタイル"
+
+#: inc\modules\modules\class-cta-module.php:139
+msgid "标准通栏"
+msgstr "標準バナー"
+
+#: inc\modules\modules\class-cta-module.php:141
+msgid "衔接底部波浪"
+msgstr "下の波を接続します"
+
+#: inc\modules\modules\class-cta-module.php:147
+msgid "底部衔接方式"
+msgstr "底面接続方式"
+
+#: inc\modules\modules\class-cta-module.php:151
+msgid "强制衔接页脚"
+msgstr "フッター接続を強制する"
+
+#: inc\modules\modules\class-cta-module.php:152
+msgid "不衔接"
+msgstr "接続されていません"
+
+#: inc\modules\modules\class-cta-module.php:155
+msgid "放在页脚上方时，建议选择“强制衔接页脚”，避免和底部波浪断层。"
+msgstr "フッターの上に配置する場合は、下からの波状の切断を避けるために「フッターを強制的に接続する」を選択することをお勧めします。"
+
+#: inc\modules\modules\class-cta-module.php:159
+msgid "底部衔接重叠量"
+msgstr "下部接続オーバーラップ量"
+
+#: inc\modules\modules\class-cta-module.php:162
+msgid "如 2px、4px。控制与底部波浪的重叠像素，值越大越不容易出现白线。留空使用默认(2px)。"
+msgstr "2px、4pxなど。下の波と重なるピクセルを制御します。値が大きいほど白スジが出にくくなります。デフォルト (2px) を使用する場合は空白のままにします。"
+
+#: inc\modules\modules\class-cta-module.php:166
+msgid "板块圆角"
+msgstr "プレートフィレット"
+
+#: inc\modules\modules\class-cta-module.php:169
+msgid "如 0、18px、28px。留空跟随板块样式。"
+msgstr "0、18px、28pxなど。セクションのスタイルに従う場合は、空白のままにします。"
+
+#: inc\modules\modules\class-cta-module.php:176
+msgid "如 760px、980px。留空使用默认。"
+msgstr "760px、980pxなど。デフォルトを使用するには空白のままにします。"
+
+#: inc\modules\modules\class-cta-module.php:184
+msgid "胶囊按钮"
+msgstr "カプセルボタン"
+
+#: inc\modules\modules\class-cta-module.php:185
+msgid "柔和按钮"
+msgstr "ソフトボタン"
+
+#: inc\modules\modules\class-curriculum-module.php:63
+msgid "控制章节元信息标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "章のメタ情報ラベルの背景を制御します。空白のままにすると、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:72
+msgid "左侧内容来源"
+msgstr "左側のコンテンツソース"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:74
+msgid "自定义图片"
+msgstr "カスタム画像"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:77
+msgid "指定文章ID"
+msgstr "記事IDを指定してください"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:84
+msgid "读取文章数量"
+msgstr "読まれた記事数"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:86
+msgid "用于最新文章和随机文章，建议填写 2-10。"
+msgstr "最新記事やランダム記事の場合は2～10まで記入することをお勧めします。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:91
+msgid "排除分类 ID"
+msgstr "カテゴリIDを除外する"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:92
+msgid "仅用于随机文章，多个分类 ID 用英文逗号分隔，例如：3,8,15。"
+msgstr "ランダムな記事、英語のカンマで区切られた複数のカテゴリ ID (例: 3、8、15) にのみ使用されます。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:99
+msgid "仅用于指定文章ID，多个ID用英文逗号分隔，并按填写顺序展示。"
+msgstr "記事IDを指定するためにのみ使用されます。複数のIDはカンマ区切りで入力順に表示されます。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:104
+msgid "自定义左侧轮播图"
+msgstr "左側のカルーセル画像をカスタマイズする"
+
+#: inc\modules\modules\class-downloads-module.php:110
+msgid "留空时跟随下载按钮悬停背景颜色。"
+msgstr "空のままにした場合は、ダウンロード ボタンのホバー背景色に従ってください。"
+
+#: inc\modules\modules\class-downloads-module.php:116
+msgid "控制文件格式等标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "ファイル形式などのラベルの背景を制御し、空白のままにした場合はページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-dynamic-banner-module.php:84
+msgid "0-1 之间的小数，留空不添加遮罩。"
+msgstr "0 ～ 1 の 10 進数。マスクを追加しない場合は空白のままにします。"
+
+#: inc\modules\modules\class-dynamic-banner-module.php:147
+msgid "描述文案颜色"
+msgstr "説明コピーの色"
+
+#: inc\modules\modules\class-dynamic-banner-module.php:236 inc\modules\modules\class-resource-hero-pro-module.php:393
+msgid "留空时跟随次按钮悬停背景颜色。"
+msgstr "空のままにした場合は、ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-experience-timeline-module.php:156
+msgid "控制时间段徽章与经历标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "期間バッジとエクスペリエンス ラベルの背景を制御します。空白のままにした場合、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-experience-timeline-module.php:180
+msgid "分组1 图标 (留空或 icon-xxx)"
+msgstr "グループ 1 アイコン (空白のままにするか、icon-xxx)"
+
+#: inc\modules\modules\class-experience-timeline-module.php:233
+msgid "分组2 图标 (留空或 icon-xxx)"
+msgstr "グループ 2 アイコン (空白のままにするか、icon-xxx)"
+
+#: inc\modules\modules\class-faq-module.php:106
+msgid "展开图标背景"
+msgstr "アイコンの背景を展開します"
+
+#: inc\modules\modules\class-faq-module.php:107
+msgid "展开图标颜色"
+msgstr "アイコンの色を展開します"
+
+#: inc\modules\modules\class-featured-posts-module.php:266
+msgid "角标背景颜色"
+msgstr "マーカーの背景色"
+
+#: inc\modules\modules\class-featured-posts-module.php:268
+msgid "留空时跟随全局徽章颜色。"
+msgstr "空のままにした場合、グローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-features-list-module.php:75
+msgid "标签栏背景"
+msgstr "タブバーの背景"
+
+#: inc\modules\modules\class-features-list-module.php:77
+msgid "激活标签背景"
+msgstr "ラベルの背景をアクティブにする"
+
+#: inc\modules\modules\class-features-list-module.php:78
+msgid "激活标签文字"
+msgstr "ラベルテキストをアクティブにする"
+
+#: inc\modules\modules\class-features-list-module.php:79
+msgid "功能卡片背景"
+msgstr "機能カードの背景"
+
+#: inc\modules\modules\class-features-list-module.php:80
+msgid "功能卡片边框"
+msgstr "機能カードの枠線"
+
+#: inc\modules\modules\class-features-list-module.php:81
+msgid "功能标题颜色"
+msgstr "特集タイトルの色"
+
+#: inc\modules\modules\class-features-list-module.php:82
+msgid "功能描述颜色"
+msgstr "機能説明の色"
+
+#: inc\modules\modules\class-features-list-module.php:83
+msgid "功能图标背景"
+msgstr "機能アイコンの背景"
+
+#: inc\modules\modules\class-features-list-module.php:84
+msgid "功能图标颜色"
+msgstr "機能アイコンの色"
+
+#: inc\modules\modules\class-footer-suite-module.php:62
+msgid "经典页脚"
+msgstr "クラシックフッター"
+
+#: inc\modules\modules\class-footer-suite-module.php:63
+msgid "深色影院"
+msgstr "暗い映画"
+
+#: inc\modules\modules\class-footer-suite-module.php:168
+msgid "显示二维码"
+msgstr "QRコードを表示"
+
+#: inc\modules\modules\class-footer-suite-module.php:253
+msgid "联系标签背景颜色"
+msgstr "連絡先ラベルの背景色"
+
+#: inc\modules\modules\class-footer-suite-module.php:255
+msgid "控制联系内容前的小标签，留空时跟随页面预设/全局徽章颜色。"
+msgstr "連絡先コンテンツの前の小さなラベルを制御し、空のままにした場合はページのデフォルト/グローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-friendly-links-module.php:167
+msgid "控制友链标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "フレンドリンクラベルの背景を制御します。空白のままにすると、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-fullscreen-video-module.php:75
+msgid "支持图标类名 (如 icon-rocket、icon-home) 或 SVG 代码"
+msgstr "アイコン クラス名 (icon-rocket、icon-home など) または SVG コードをサポート"
+
+#: inc\modules\modules\class-hero-search-module.php:55
+msgid "前台显示宽度"
+msgstr "前景表示幅"
+
+#: inc\modules\modules\class-hero-search-module.php:57
+msgid "浏览器全屏宽度"
+msgstr "ブラウザの全画面幅"
+
+#: inc\modules\modules\class-hero-search-module.php:58
+msgid "跟随页面内容宽度"
+msgstr "ページコンテンツの幅に従う"
+
+#: inc\modules\modules\class-hero-search-module.php:59
+msgid "自定义最大宽度"
+msgstr "カスタム最大幅"
+
+#: inc\modules\modules\class-hero-search-module.php:62
+msgid "只控制模块整体宽度，不影响下方搜索框最大宽度设置。"
+msgstr "これはモジュール全体の幅のみを制御し、下の検索ボックスの最大幅設定には影響しません。"
+
+#: inc\modules\modules\class-hero-search-module.php:67
+msgid "模块自定义最大宽度"
+msgstr "モジュールのカスタム最大幅"
+
+#: inc\modules\modules\class-hero-search-module.php:69
+msgid "例如 1400px、90vw 或 80rem。移动端会自动保留安全边距。"
+msgstr "たとえば、1400px、90vw、80remなどです。モバイル版では安全マージンが自動的に保持されます。"
+
+#: inc\modules\modules\class-hero-search-module.php:75
+msgid "模块图片/视频圆角"
+msgstr "モジュールの画像/ビデオの角が丸い"
+
+#: inc\modules\modules\class-hero-search-module.php:78
+msgid "小圆角（8px）"
+msgstr "小さな丸い角 (8px)"
+
+#: inc\modules\modules\class-hero-search-module.php:79
+msgid "中圆角（16px）"
+msgstr "中程度の丸い角 (16px)"
+
+#: inc\modules\modules\class-hero-search-module.php:80
+msgid "大圆角（24px）"
+msgstr "大きな丸い角 (24px)"
+
+#: inc\modules\modules\class-hero-search-module.php:81
+msgid "自定义圆角"
+msgstr "カスタムの丸い角"
+
+#: inc\modules\modules\class-hero-search-module.php:84
+msgid "背景图片、背景视频和遮罩会随整个模块一起裁切。"
+msgstr "背景画像、背景ビデオ、マスクはモジュール全体とともにトリミングされます。"
+
+#: inc\modules\modules\class-hero-search-module.php:89
+msgid "自定义圆角大小"
+msgstr "カスタムフィレットサイズ"
+
+#: inc\modules\modules\class-hero-search-module.php:91
+msgid "例如 12px、1rem 或 2vw。"
+msgstr "たとえば、12px、1rem、2vwなどです。"
+
+#: inc\modules\modules\class-hero-search-module.php:105
+msgid "填写 0-100，设置遮罩颜色时以颜色值为准。"
+msgstr "0 ～ 100 を入力すると、マスク カラーを設定するときにカラー値が優先されます。"
+
+#: inc\modules\modules\class-hero-search-module.php:130
+msgid "图片 (image)"
+msgstr "画像"
+
+#: inc\modules\modules\class-hero-search-module.php:131
+msgid "视频 (video)"
+msgstr "ビデオ"
+
+#: inc\modules\modules\class-hero-search-module.php:217 inc\modules\modules\class-video-portal-hero-module.php:111
+msgid "跟随主题设置"
+msgstr "テーマ設定に従ってください"
+
+#: inc\modules\modules\class-hero-search-module.php:242
+msgid "搜索按钮边框颜色"
+msgstr "検索ボタンの枠線の色"
+
+#: inc\modules\modules\class-hero-search-module.php:255
+msgid "搜索按钮悬停边框颜色"
+msgstr "検索ボタンのホバー境界線の色"
+
+#: inc\modules\modules\class-hero-search-module.php:255
+msgid "留空时跟随搜索按钮悬停背景色。"
+msgstr "空のままにした場合は、検索ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-image-comparison-module.php:87
+msgid "控制 Before/After 标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "ページのデフォルト スタイルまたは空白のままにした場合のグローバル バッジの色に従って、ラベルの前後の背景を制御します。"
+
+#: inc\modules\modules\class-interact-hero-module.php:71
+msgid "支持图标类名(如 icon-download)或SVG代码"
+msgstr "アイコン クラス名 (icon-download など) または SVG コードをサポート"
+
+#: inc\modules\modules\class-interact-hero-module.php:89
+msgid "留空则使用主按钮默认白色"
+msgstr "メインボタンのデフォルトの白色を使用するには、空白のままにします。"
+
+#: inc\modules\modules\class-interact-hero-module.php:186
+msgid "图标类名或SVG代码"
+msgstr "アイコンクラス名またはSVGコード"
+
+#: inc\modules\modules\class-interact-hero-module.php:187
+msgid "例如: icon-weibo、icon-rocket 或 SVG 代码"
+msgstr "例: icon-weibo、icon-rocket、または SVG コード"
+
+#: inc\modules\modules\class-itinerary-module.php:113
+msgid "控制 Day 徽章与景点标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "曜日バッジとアトラクション ラベルの背景を制御します。空白のままにした場合、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-lookbook-module.php:62
+msgid "单品1 按钮边框颜色"
+msgstr "項目 1 のボタンの境界線の色"
+
+#: inc\modules\modules\class-lookbook-module.php:75
+msgid "单品2 按钮边框颜色"
+msgstr "項目 2 のボタンの境界線の色"
+
+#: inc\modules\modules\class-lookbook-module.php:88
+msgid "单品3 按钮边框颜色"
+msgstr "項目 3 ボタンの境界線の色"
+
+#: inc\modules\modules\class-lookbook-module.php:101
+msgid "单品4 按钮边框颜色"
+msgstr "項目4のボタン枠色"
+
+#: inc\modules\modules\class-lookbook-module.php:114
+msgid "单品5 按钮边框颜色"
+msgstr "項目5のボタン枠色"
+
+#: inc\modules\modules\class-magic-layout-module.php:42
+msgid "一个模块可添加多个容器段，并分别设置列数、列宽、面板风格和元素归属。"
+msgstr "モジュールは複数のコンテナ セグメントを追加し、列数、列幅、パネル スタイル、要素の所有権をそれぞれ設定できます。"
+
+#: inc\modules\modules\class-magic-layout-module.php:176
+msgid "其他布局设置"
+msgstr "その他のレイアウト設定"
+
+#: inc\modules\modules\class-magic-layout-module.php:177
+msgid "设置模块的列数、列宽、间距、对齐方式和容器样式。"
+msgstr "モジュールの列数、列幅、間隔、配置、およびコンテナーのスタイルを設定します。"
+
+#: inc\modules\modules\class-main-category-content-module.php:36
+msgid "请选择影视分类"
+msgstr "映画とテレビのカテゴリを選択してください"
+
+#: inc\modules\modules\class-main-category-content-module.php:47
+msgid "尚未选择影视分类时，请在下方选择该模块要展示的分类。模块会自动获取所选分类下的子分类链接。"
+msgstr "映画とテレビのカテゴリを選択していない場合は、以下のこのモジュールに表示するカテゴリを選択してください。モジュールは、選択したカテゴリの下のサブカテゴリ リンクを自動的に取得します。"
+
+#: inc\modules\modules\class-main-category-content-module.php:78
+msgid "“查看更多”按钮边框颜色"
+msgstr "「もっと見る」ボタンの枠線の色"
+
+#: inc\modules\modules\class-main-category-content-module.php:79
+msgid "“查看更多”按钮悬停边框颜色"
+msgstr "「もっと見る」ボタンのホバー境界線の色"
+
+#: inc\modules\modules\class-main-category-content-module.php:79
+msgid "留空时跟随全局按钮悬停背景色。"
+msgstr "空のままにした場合、グローバル ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-main-category-content-module.php:191
+msgid "尚未选择影视分类"
+msgstr "映画とテレビのカテゴリがまだ選択されていません"
+
+#: inc\modules\modules\class-main-category-content-module.php:191
+msgid "请在模块设置中选择该模块要展示的分类。"
+msgstr "モジュール設定で表示するカテゴリを選択してください。"
+
+#: inc\modules\modules\class-media-list-module.php:88
+msgid "详情链接文案"
+msgstr "詳細リンクのコピー"
+
+#: inc\modules\modules\class-media-list-module.php:212
+msgid "控制类型标签和状态徽章，留空时保留状态默认色并跟随全局徽章颜色。"
+msgstr "タイプラベルとステータスバッジを制御します。空のままにすると、ステータスのデフォルトの色が保持され、グローバル バッジの色に従います。"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:61
+msgid "外部链接文案"
+msgstr "外部リンクのコピーライティング"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:86
+msgid "心情 / 状态"
+msgstr "気分/状態"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:234
+msgid "动态"
+msgstr "ダイナミック"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:243
+msgid "随笔"
+msgstr "エッセイ"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:252
+msgid "日志"
+msgstr "ログ"
+
+#: inc\modules\modules\class-news-module.php:36
+msgid "控制“新闻动态”等模块顶部主标题的颜色；留空时跟随页面标题颜色。"
+msgstr "「ニュース更新」などのモジュールの上部にあるメイン タイトルの色を制御します。空白のままにした場合は、ページ タイトルの色に従います。"
+
+#: inc\modules\modules\class-news-module.php:37
+msgid "新闻标题颜色"
+msgstr "ニュースタイトルの色"
+
+#: inc\modules\modules\class-news-module.php:37
+msgid "控制每张新闻卡片内文章标题及标题链接的颜色。"
+msgstr "各ニュース カードの記事タイトルとタイトル リンクの色を制御します。"
+
+#: inc\modules\modules\class-news-module.php:44
+msgid "查看更多按钮背景颜色"
+msgstr "ボタンの背景色をもっと見る"
+
+#: inc\modules\modules\class-news-module.php:44
+msgid "留空时跟随当前页面的主按钮颜色。"
+msgstr "空のままにすると、現在のページの主なボタンの色に従います。"
+
+#: inc\modules\modules\class-news-module.php:46
+msgid "查看更多按钮文字颜色"
+msgstr "ボタンのテキストの色をもっと見る"
+
+#: inc\modules\modules\class-news-module.php:46
+msgid "控制按钮正常状态的文字颜色。"
+msgstr "ボタンの通常状態のテキストの色を制御します。"
+
+#: inc\modules\modules\class-news-module.php:47
+msgid "查看更多按钮悬停背景颜色"
+msgstr "「もっと見る」ボタンのホバー背景色"
+
+#: inc\modules\modules\class-news-module.php:48
+msgid "查看更多按钮悬停文字颜色"
+msgstr "「もっと見る」ボタンのホバーテキストの色"
+
+#: inc\modules\modules\class-news-module.php:49
+msgid "查看更多按钮边框颜色"
+msgstr "ボタンの枠線の色をもっと見る"
+
+#: inc\modules\modules\class-news-module.php:50
+msgid "查看更多按钮悬停边框颜色"
+msgstr "ボタンのホバー境界線の色をもっと見る"
+
+#: inc\modules\modules\class-pet-profile-module.php:80
+msgid "控制状态徽章与特点标签背景；留空时保留状态语义色并跟随全局标签风格。"
+msgstr "ステータスバッジと機能ラベルの背景を制御します。空のままにすると、ステータス セマンティック カラーが保持され、グローバル ラベル スタイルに従います。"
+
+#: inc\modules\modules\class-process-module.php:56
+msgid "步骤连接线颜色"
+msgstr "ステップコネクタの色"
+
+#: inc\modules\modules\class-process-module.php:57
+msgid "步骤图标文字颜色"
+msgstr "ステップアイコンの文字色"
+
+#: inc\modules\modules\class-process-module.php:58
+msgid "阶段标签文字颜色"
+msgstr "ステージラベルの文字色"
+
+#: inc\modules\modules\class-process-module.php:64
+msgid "控制阶段标签和工业流程信息徽章，留空时跟随页面预设/全局徽章颜色。"
+msgstr "空のままにした場合のページのデフォルト/グローバルバッジの色に従って、ステージラベルと工業プロセス情報バッジを制御します。"
+
+#: inc\modules\modules\class-product-showcase-module.php:229
+msgid "CTA按钮边框颜色"
+msgstr "CTAボタンの枠線の色"
+
+#: inc\modules\modules\class-products-module.php:118
+msgid "弹窗咨询按钮边框颜色"
+msgstr "ポップアップウィンドウの相談ボタンの枠線の色"
+
+#: inc\modules\modules\class-products-module.php:131
+msgid "弹窗咨询按钮悬停边框颜色"
+msgstr "ポップアップ ウィンドウの相談ボタンのホバー境界線の色"
+
+#: inc\modules\modules\class-products-module.php:131
+msgid "留空时跟随弹窗咨询按钮悬停背景颜色。"
+msgstr "空白のままにした場合は、ポップアップ ウィンドウに従ってボタン ホバーの背景色を確認します。"
+
+#: inc\modules\modules\class-products-module.php:249
+msgid "关闭产品详情"
+msgstr "商品詳細を閉じる"
+
+#: inc\modules\modules\class-promotion-module.php:277
+msgid "留空时跟随活动按钮悬停背景颜色。"
+msgstr "空のままにした場合、アクティブなボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:90
+msgid "文章分类 ID"
+msgstr "記事カテゴリID"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:92
+msgid "填写要推荐的文章分类 ID；多个 ID 用英文逗号分隔。留空时显示全部分类的最新文章。"
+msgstr "推奨する記事カテゴリの ID を入力します。複数の ID はカンマで区切ります。空白にすると、すべてのカテゴリの最新記事が表示されます。"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:256
+msgid "控制专题角标与推荐卡片角标背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "テーマバッジと推奨カードバッジの背景を制御します。空白のままにした場合、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:331
+msgid "留空时跟随底部按钮悬停背景颜色。"
+msgstr "空のままにした場合は、下部ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-room-showcase-module.php:291
+msgid "留空时跟随预订按钮悬停背景颜色。"
+msgstr "空のままにした場合は、予約ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-service-cards-module.php:51
+msgid "模块副标题颜色"
+msgstr "モジュールのサブタイトルの色"
+
+#: inc\modules\modules\class-software-carousel-module.php:88
+msgid "控制版本标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "バージョンラベルの背景を制御します。空白のままにすると、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-software-category-module.php:108
+msgid "控制版本等标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "バージョンなどのラベルの背景を制御します。空白のままにした場合、ページのデフォルトのスタイルまたはグローバルバッジの色に従います。"
+
+#: inc\modules\modules\class-software-ranking-module.php:120
+msgid "控制排行类型、版本与排名徽章背景；留空时保留原有排行语义色并跟随全局标签风格。"
+msgstr "ランキングの種類、バージョン、ランキングバッジの背景を制御します。空白のままにすると、元のランキング セマンティック カラーが保持され、グローバル ラベル スタイルに従います。"
+
+#: inc\modules\modules\class-tabbed-carousel-module.php:46
+msgid "支持图标类名 (如 icon-home、icon-fire) 或 SVG 代码"
+msgstr "アイコン クラス名 (icon-home、icon-fire など) または SVG コードをサポート"
+
+#: inc\modules\modules\class-testimonials-module.php:130
+msgid "控制评价来源与认证徽章，留空时保留来源默认色并跟随全局徽章颜色。"
+msgstr "評価ソースと認定バッジを制御します。空白のままにすると、ソースのデフォルトの色が保持され、グローバル バッジの色に従います。"
+
+#: inc\modules\modules\class-ticket-showcase-module.php:286
+msgid "留空时跟随购票按钮悬停背景颜色。"
+msgstr "空のままにした場合は、購入ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:65
+msgid "影视标题文字颜色"
+msgstr "映画タイトルの文字色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:65
+msgid "仅用于纯文字标题；留空时使用视频门户默认标题颜色。"
+msgstr "テキストのみのタイトルのみ。空白のままにすると、Video Portal のデフォルトのタイトル色が使用されます。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:77
+msgid "封面角标背景颜色"
+msgstr "表紙コーナーロゴの背景色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:77
+msgid "留空时使用视频门户默认角标颜色。"
+msgstr "空白のままにした場合、ビデオ ポータルのデフォルトのバッジの色が使用されます。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:88
+msgid "影视搜索入口"
+msgstr "映画とテレビの検索ポータル"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:90
+msgid "搜索框显示在影片信息与右侧缩略图导航之间。旧页面默认关闭，不会改变现有布局。"
+msgstr "検索ボックスは、映画情報と右側のサムネイル ナビゲーションの間に表示されます。古いページはデフォルトで閉じられ、既存のレイアウトは変更されません。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:94
+msgid "Banner 内容来源"
+msgstr "バナーコンテンツソース"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:96
+msgid "手工幻灯片"
+msgstr "手作りのスライド"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:101
+msgid "显示影视搜索框"
+msgstr "映画とテレビの検索ボックスを表示する"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:120
+msgid "搜索框占位文字"
+msgstr "検索ボックスのプレースホルダー テキスト"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:122 inc\modules\modules\class-video-portal-hero-module.php:274 inc\modules\modules\class-video-portal-hero-module.php:276
+msgid "搜索影片、演员或导演"
+msgstr "映画、俳優、監督を検索する"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:132
+msgid "显示热门关键词"
+msgstr "人気のキーワードを表示"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:139
+msgid "热门关键词"
+msgstr "人気のキーワード"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:142
+msgid "使用半角或全角逗号分隔；留空时不输出热门词区域。"
+msgstr "半角または全角のカンマで区切ってください。空白の場合、ホットワード領域は出力されません。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:146
+msgid "搜索框样式"
+msgstr "検索ボックスのスタイル"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:149
+msgid "深色通透"
+msgstr "暗くて透明"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:150
+msgid "明亮实体"
+msgstr "明るい存在"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:151
+msgid "紧凑模式"
+msgstr "コンパクトモード"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:152
+msgid "影院搜索台"
+msgstr "シネマ検索デスク"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:175
+msgid "角标自定义背景颜色"
+msgstr "コーナーマークのカスタマイズされた背景色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:175
+msgid "填写后优先于红/橙/蓝预设。"
+msgstr "入力後は、赤/オレンジ/青のデフォルトよりも優先されます。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:216
+msgid "播放按钮边框颜色"
+msgstr "再生ボタンの枠線の色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:217
+msgid "播放按钮悬停边框颜色"
+msgstr "再生ボタンのホバー境界線の色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:217
+msgid "留空时跟随播放按钮边框颜色。"
+msgstr "空のままにした場合は、再生ボタンの境界線の色に従います。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:390
+msgid "搜索影视内容"
+msgstr "映画やテレビのコンテンツを検索する"
+
+#: inc\modules\modules\class-video-ranking-module.php:20
+msgid "按分类、发布时间、更新时间、评论或浏览量展示影视榜单，播放器不可用时自动降级为普通文章排行。"
+msgstr "カテゴリ、公開時間、更新時間、コメントまたは視聴回数ごとに映画やテレビのランキングを表示します。プレーヤーが利用できない場合は、自動的に通常の記事ランキングに格下げされます。"
+
+#: inc\modules\modules\class-video-ranking-module.php:43
+msgid "评论最多"
+msgstr "ほとんどのコメント"
+
+#: inc\modules\modules\class-video-ranking-module.php:45
+msgid "手工指定"
+msgstr "手動で指定"
+
+#: inc\modules\modules\class-video-ranking-module.php:48
+msgid "浏览最多"
+msgstr "最も閲覧された"
+
+#: inc\modules\modules\class-video-ranking-module.php:53 inc\modules\modules\class-video-ranking-module.php:56
+msgid "留空时跟随当前页面主题。"
+msgstr "現在のページのテーマに従いたい場合は、空白のままにします。"
+
+#: inc\modules\modules\class-video-ranking-module.php:54
+msgid "发现值得观看的热门内容"
+msgstr "注目すべき人気コンテンツを発見する"
+
+#: inc\modules\modules\class-video-ranking-module.php:55
+msgid "留空时使用与模块背景匹配的辅助文字颜色。"
+msgstr "空白のままにすると、モジュールの背景に一致する 2 番目のテキストの色が使用されます。"
+
+#: inc\modules\modules\class-video-ranking-module.php:56
+msgid "模块背景颜色"
+msgstr "モジュールの背景色"
+
+#: inc\modules\modules\class-video-ranking-module.php:57
+msgid "查看更多文字"
+msgstr "さらにテキストを表示"
+
+#: inc\modules\modules\class-video-ranking-module.php:58
+msgid "查看更多链接"
+msgstr "さらにリンクを表示"
+
+#: inc\modules\modules\class-video-ranking-module.php:58
+msgid "填写完整排行榜页面或影视分类页地址；留空时不显示“查看更多”按钮。"
+msgstr "完全なランキング ページまたは映画とテレビのカテゴリ ページのアドレスを入力します。空白のままにすると、「もっと見る」ボタンは表示されません。"
+
+#: inc\modules\modules\class-video-ranking-module.php:59
+msgid "默认显示数量"
+msgstr "デフォルトの表示数量"
+
+#: inc\modules\modules\class-video-ranking-module.php:59
+msgid "允许 3-20 条。"
+msgstr "3 ～ 20 まで許可されます。"
+
+#: inc\modules\modules\class-video-ranking-module.php:60
+msgid "默认数据来源"
+msgstr "デフォルトのデータソース"
+
+#: inc\modules\modules\class-video-ranking-module.php:61
+msgid "默认指定分类"
+msgstr "デフォルトで割り当てられるカテゴリ"
+
+#: inc\modules\modules\class-video-ranking-module.php:62
+msgid "默认手工文章 ID"
+msgstr "デフォルトのマニュアル記事 ID"
+
+#: inc\modules\modules\class-video-ranking-module.php:62
+msgid "使用逗号分隔，手工来源按填写顺序显示。"
+msgstr "カンマで区切ると、手動ソースが入力された順序で表示されます。"
+
+#: inc\modules\modules\class-video-ranking-module.php:68
+msgid "前三名突出榜"
+msgstr "上位 3 つのハイライト"
+
+#: inc\modules\modules\class-video-ranking-module.php:69
+msgid "紧凑文字榜"
+msgstr "コンパクトなテキストリスト"
+
+#: inc\modules\modules\class-video-ranking-module.php:70
+msgid "海报榜"
+msgstr "ポスターリスト"
+
+#: inc\modules\modules\class-video-ranking-module.php:71
+msgid "左右双栏榜"
+msgstr "左右2列リスト"
+
+#: inc\modules\modules\class-video-ranking-module.php:78
+msgid "排行榜标签"
+msgstr "リーダーボードタグ"
+
+#: inc\modules\modules\class-video-ranking-module.php:79
+msgid "最多使用前 5 个榜单；不添加时使用上面的默认数据设置。"
+msgstr "上位 5 つのリストまでを使用します。追加されない場合は、上記のデフォルトのデータ設定を使用します。"
+
+#: inc\modules\modules\class-video-ranking-module.php:80
+msgid "添加榜单"
+msgstr "リストを追加"
+
+#: inc\modules\modules\class-video-ranking-module.php:82
+msgid "标签名称"
+msgstr "タグ名"
+
+#: inc\modules\modules\class-video-ranking-module.php:82 inc\modules\modules\class-video-ranking-module.php:183
+msgid "总榜"
+msgstr "全体リスト"
+
+#: inc\modules\modules\class-video-ranking-module.php:86
+msgid "手工文章 ID"
+msgstr "マニュアル記事ID"
+
+#: inc\modules\modules\class-video-ranking-module.php:86
+msgid "仅手工指定来源使用，逗号分隔。"
+msgstr "カンマで区切って手動で指定したソースにのみ使用されます。"
+
+#: inc\modules\modules\class-video-ranking-module.php:90
+msgid "显示评分"
+msgstr "評価を表示する"
+
+#: inc\modules\modules\class-video-ranking-module.php:91
+msgid "显示清晰度"
+msgstr "表示の鮮明さ"
+
+#: inc\modules\modules\class-video-ranking-module.php:92
+msgid "显示集数"
+msgstr "話数を表示"
+
+#: inc\modules\modules\class-video-ranking-module.php:94
+msgid "显示发布日期"
+msgstr "発売日を表示"
+
+#: inc\modules\modules\class-video-ranking-module.php:155
+msgid "选择排行榜"
+msgstr "リーダーボードを選択"
+
+#: inc\modules\modules\class-video-ranking-module.php:206
+msgid "榜单 %d"
+msgstr "リスト %d"
+
+#: inc\modules\modules\class-video-ranking-module.php:347
+msgid "%d 集"
+msgstr "%d セット"
+
+#: inc\modules\modules\class-video-ranking-module.php:348
+msgid "%s 浏览"
+msgstr "%s 参照"
+
+#: inc\modules\modules\class-visual-tabs-module.php:154
+msgid "留空时跟随面板按钮悬停背景颜色。"
+msgstr "空のままにした場合、パネル ボタンのホバー背景色に従います。"
+
+#: inc\modules\modules\class-work-detail-module.php:144
+msgid "外链按钮默认文案"
+msgstr "外部リンクボタンのデフォルトのコピー"
+
+#: inc\modules\modules\class-work-detail-module.php:144
+msgid "作品数据没有单独按钮文案时使用。"
+msgstr "作品データに別のボタンのコピーがない場合に使用されます。"
+
+#: inc\modules\modules\class-work-library-module.php:186
+msgid "控制作品类型和分类标签，留空时跟随页面预设/全局徽章颜色。"
+msgstr "作品タイプとカテゴリタグを制御し、空白のままにした場合はページのデフォルト/グローバルバッジの色に従います。"
+
+#: template-parts\content\content-none.php:21
+msgid "未找到相关结果"
+msgstr "関連する結果が見つかりませんでした"
+
+#: template-parts\content\content-none.php:22
+msgid "抱歉，没有找到匹配的内容。请尝试更换关键词或返回首页。"
+msgstr "申し訳ありませんが、一致するものが見つかりませんでした。キーワードを変更するか、トップページに戻ってみてください。"
+
+#: template-parts\content\content-none.php:28
+msgid "此处暂无发布内容，请稍后再来查看。"
+msgstr "ここにはまだ公開されたコンテンツがありません。後でもう一度確認してください。"
+
+#: template-parts\header\search-overlay.php:36
+msgid "关闭搜索"
+msgstr "検索を閉じる"
+
+#: template-parts\search\results-video.php:88
+msgid "全 %d 集"
+msgstr "すべての %d セット"
+
+#: template-parts\single\meta-stats.php:100
+msgid "全文共 %s 字，预计阅读 %d 分钟"
+msgstr "全文には %s 単語が含まれており、推定読了時間は %d 分です"
+
+#: template-parts\single\meta-stats.php:104
+msgid "%d 分钟阅读 · %s 字"
+msgstr "%d 分間の読書 · %s 単語"
+
+#: templates\template-account.php:686
+msgid "GIF 动图大小不能超过 2MB"
+msgstr "GIF サイズは 2MB を超えることはできません"
+
+#: templates\template-account.php:692
+msgid "图片过大，请选择小于 30MB 的图片"
+msgstr "画像が大きすぎます。30MB 未満の画像を選択してください"
+
+#: templates\template-account.php:696
+msgid "正在优化图片..."
+msgstr "画像を最適化しています..."
+
+#: templates\template-account.php:757
+msgid "图片处理失败，请重试"
+msgstr "画像処理に失敗しました。もう一度お試しください。"
+
+#: templates\template-blog.php:77
+msgid "暂无内容。"
+msgstr "まだコンテンツはありません。"
+
+#: inc/admin/class-setup-wizard-admin.php:1809 inc/admin/class-template-center-admin.php:448
+msgid "语言与适用场景提示"
+msgstr "言語と適用可能なシーンのヒント"
+
+#: inc/admin/class-setup-wizard-admin.php:1810 inc/admin/class-template-center-admin.php:449
+msgid "主题内置的 100+ 套行业模板及向导推荐页面主要针对中文建站场景设计（演示数据、栏目结构及文案均为中文）。如果您正在搭建外贸站、出海或多语言站点，仍可自由使用主题全部排版能力，但建议跳过预设导入，根据业务自行创建页面或按需替换文案。"
+msgstr "テーマに組み込まれている 100 を超える業界テンプレートとウィザードの推奨ページは、主に中国の Web サイト構築シナリオ向けに設計されています (デモ データ、列構造、コピーライティングはすべて中国語です)。外国貿易 Web サイト、海外 Web サイト、または多言語 Web サイトを構築している場合は、テーマのすべてのレイアウト機能を自由に使用できますが、デフォルトのインポートをスキップして、ビジネスに応じて独自のページを作成するか、必要に応じてコピーを置き換えることをお勧めします。"
+
+#: inc/admin/class-setup-wizard-admin.php:1833
+msgid "提示：推荐模板与页面结构预设均为中文内容。"
+msgstr "ヒント: 推奨されるテンプレートとページ構造のデフォルトはすべて中国語です。"
+
+msgid "展示启灵实物商城的商品，支持横向轮播、副图切换与状态角标"
+msgstr "Qiling Physical Mall の商品を表示し、水平カルーセル、サブ画像切り替え、ステータス アイコンをサポートします。"
+
+msgid "启灵商品展示 (轮播版)"
+msgstr "Qiling製品の展示（カルーセルバージョン）"
+
+msgid "显示商品状态角标"
+msgstr "製品ステータスバッジを表示する"
+
+msgid "是 (自动识别 HOT / NEW / SALE)"
+msgstr "あり（HOT/NEW/SALEを自動認識）"
+
+msgid "悬浮切换第二张细节图"
+msgstr "フロートして 2 番目の詳細画像に切り替えます"
+
+msgid "开启 (有副图时平滑渐变)"
+msgstr "オン（サブ画像がある場合の滑らかなグラデーション）"
+
+msgid "HOT"
+msgstr "ホット"
+
+msgid "NEW"
+msgstr "新しい"
+
+msgid "SALE"
+msgstr "セール"
+
+msgid "查看商品"
+msgstr "製品を見る"
+
+msgid "多分类 Tab 实时无刷新切换、3/4列网格排版、大牌悬浮副图与快速加购"
+msgstr "更新なしのマルチカテゴリタブのリアルタイム切り替え、3/4列グリッドレイアウト、有名なフローティングサブ画像、クイック購入"
+
+msgid "启灵商城商品矩阵"
+msgstr "啓陵モールの製品マトリックス"
+
+msgid "全宽容器"
+msgstr "全幅コンテナ"
+
+msgid "全系产品矩阵"
+msgstr "完全な製品マトリックス"
+
+msgid "探索官方精选全系列产品，享全球无忧质保与极速配送"
+msgstr "公式に選ばれた製品の全範囲を探索し、グローバルな安心保証と迅速な配達をお楽しみください"
+
+msgid "3 列 (大画幅/质感更强)"
+msgstr "3カラム（大きいフォーマット/より強力なテクスチャ）"
+
+msgid "4 列 (经典独立站电商/密度适中)"
+msgstr "4カラム（古典的な独立系電子商取引サイト/中程度の密度）"
+
+msgid "启用分类 Tab 切换"
+msgstr "カテゴリタブ切り替えを有効にする"
+
+msgid "开启 (自动读取商城前 6 个热门分类)"
+msgstr "有効にする (モール内で人気のトップ 6 カテゴリを自動的に読み取ります)"
+
+msgid "关闭 (仅平铺展示全部商品)"
+msgstr "閉じる (タイル内のすべての製品のみを表示)"
+
+msgid "每分类展示商品数量"
+msgstr "カテゴリごとに表示されるアイテムの数"
+
+msgid "建议填 6 或 8"
+msgstr "6または8を入力することをお勧めします"
+
+msgid "商品排序方式"
+msgstr "商品の仕分け方法"
+
+msgid "销量优先 (畅销爆款)"
+msgstr "販売優先（ベストセラーモデル）"
+
+msgid "最新发布 (新品推荐)"
+msgstr "最新リリース (新製品の推奨事項)"
+
+msgid "显示状态角标"
+msgstr "ステータスバッジを表示"
+
+msgid "开启 (自动识别 HOT / NEW / SALE)"
+msgstr "有効にする（HOT/NEW/SALEを自動識別）"
+
+msgid "悬浮平滑切换副图"
+msgstr "サブ画像のフローティングかつスムーズな切り替え"
+
+msgid "开启 (有相册副图时平滑展示)"
+msgstr "有効（アルバムサブ画像がある場合にスムーズに表示されます）"
+
+msgid "显示加购胶囊按钮"
+msgstr "カプセルを追加するボタンを表示します"
+
+msgid "底部显示“查看全部”按钮"
+msgstr "下部にある「すべて表示」ボタン"
+
+msgid "查看全部按钮文字"
+msgstr "すべてのボタンのテキストを表示"
+
+msgid "探索全部商品 →"
+msgstr "すべての製品を詳しく見る →"
+
+msgid "查看全部跳转链接"
+msgstr "すべてのジャンプリンクを表示"
+
+msgid "留空则自动跳转启灵商城商品主目录"
+msgstr "空白のままにすると、自動的に Qiling Mall のメイン製品カタログにジャンプします。"
+
+msgid "提示：未找到启灵商城数据表 (%s)，请确保插件已安装并激活。"
+msgstr "ヒント: Qiling Mall データ テーブル (%s) が見つかりませんでした。プラグインがインストールされ、アクティブ化されていることを確認してください。"
+
+msgid "全部精选"
+msgstr "すべての特集"
+
+msgid "立即加购"
+msgstr "今すぐ購入"
+
+msgid "选购"
+msgstr "ショップ"
+
+msgid "大品牌机皇主打款单品聚焦展台，巨幅渲染图、黑科技参数芯片与双购买行动号召"
+msgstr "大手ブランド Jihuang の主力製品がブースに集中しており、巨大なレンダリング、ブラック テクノロジー パラメータ チップ、二重購入アクション コールが展示されています。"
+
+msgid "启灵旗舰产品展台"
+msgstr "啓陵主力製品ブース"
+
+msgid "展台视觉主题"
+msgstr "ブースビジュアルテーマ"
+
+msgid "暗黑科技巨幕 (Dark Pro · 推荐)"
+msgstr "ダークテクノロジージャイアントスクリーン（ダークプロ・推奨）"
+
+msgid "极简典雅纯白 (Clean Light)"
+msgstr "ミニマルでエレガントな純白（クリーンライト）"
+
+msgid "流光渐变深邃 (Ambient Glow)"
+msgstr "アンビエントグロー"
+
+msgid "展台排版布局"
+msgstr "ブースレイアウト"
+
+msgid "大牌经典：左图右文"
+msgstr "有名なクラシック: 左側に写真、右側にテキスト"
+
+msgid "反向布局：左文右图"
+msgstr "逆レイアウト: 左側にテキスト、右側に画像"
+
+msgid "居中聚焦：巨幕沉浸式"
+msgstr "集中フォーカス: 巨大スクリーンへの没入感"
+
+msgid "上下留白尺寸"
+msgstr "上下の余白サイズ"
+
+msgid "120px (大牌气场推荐)"
+msgstr "120px (有名人のオーラに推奨)"
+
+msgid "关联商城商品 ID 或 Slug"
+msgstr "関連するモールの商品 ID またはスラッグ"
+
+msgid "输入商城商品 ID（例如 1）或别名，将自动同步读取真实售价、主图与购买链接"
+msgstr "モールの商品ID（例：1）またはエイリアスを入力すると、実際の販売価格、メイン画像、購入リンクが同時に自動で読み込まれます"
+
+msgid "顶部亮点角标"
+msgstr "トップハイライトコーナーマーク"
+
+msgid "FLAGSHIP · 全新旗舰"
+msgstr "FLAGSHIP・真新しいフラッグシップ"
+
+msgid "旗舰产品主标题"
+msgstr "主力商品メインタイトル"
+
+msgid "TITANIUM X PRO · 旗舰定义者"
+msgstr "TITANIUM X PRO・フラッグシップディファイナー"
+
+msgid "产品核心设计标语/副标题"
+msgstr "製品コアデザインのスローガン/サブタイトル"
+
+msgid "极致工艺，为专业而生。全自研低功耗处理核心与航天级精密机身，重新突破便携性能想象边界。"
+msgstr "プロ意識のために生まれた究極のクラフトマンシップ。完全に自社開発された低電力処理コアと航空宇宙グレードの高精度ボディは、ポータブル パフォーマンスの想像力の限界を再び打ち破ります。"
+
+msgid "自定义产品高清渲染图"
+msgstr "カスタム製品の高解像度レンダリング"
+
+msgid "建议上传透明底 PNG 渲染大图，留空则自动读取关联商品主图"
+msgstr "背景が透明な大きな PNG レンダリングをアップロードすることをお勧めします。空白のままにすると、関連商品のメイン画像が自動的に読み込まれます。"
+
+msgid "自定义价格文本"
+msgstr "カスタム価格テキスト"
+
+msgid "留空自动显示关联商品真实售价，如填 “起售价 $999”"
+msgstr "空白のままにすると、関連商品の実際の販売価格が自動的に表示されます。 「開始価格 $999」と記入すると"
+
+msgid "参数 1 数值/亮点"
+msgstr "パラメータ 1 の値/ハイライト"
+
+msgid "参数 1 说明"
+msgstr "パラメータ 1 説明"
+
+msgid "先进制程自研核心"
+msgstr "先進プロセス自社開発コア"
+
+msgid "参数 2 数值/亮点"
+msgstr "パラメータ 2 の値/ハイライト"
+
+msgid "参数 2 说明"
+msgstr "パラメータ 2 説明"
+
+msgid "深度抗水防尘"
+msgstr "深い防水性と防塵性"
+
+msgid "参数 3 数值/亮点"
+msgstr "パラメータ 3 の値/ハイライト"
+
+msgid "参数 3 说明"
+msgstr "パラメータ 3 説明"
+
+msgid "长效全天候续航"
+msgstr "一日中長持ちするバッテリー寿命"
+
+msgid "参数 4 数值/亮点"
+msgstr "パラメータ 4 値/ハイライト"
+
+msgid "参数 4 说明"
+msgstr "パラメータ 4 説明"
+
+msgid "户外超感峰值视界"
+msgstr "屋外用スーパーセンシング ピーク ビジョン"
+
+msgid "立即选购"
+msgstr "今すぐ購入"
+
+msgid "主按钮跳转链接"
+msgstr "メインボタンのジャンプリンク"
+
+msgid "留空自动跳转关联商品详情页"
+msgstr "これを空白のままにすると、関連する製品の詳細ページに自動的にジャンプします。"
+
+msgid "了解设计亮点 →"
+msgstr "デザインのハイライトについてはこちら→"
+
+msgid "次按钮跳转链接"
+msgstr "ボタンジャンプリンク"
+
+msgid "大品牌DTC独立商城"
+msgstr "ビッグブランドDTC独立モール"
+
+msgid "暂无可展示内容。请在后台为该页面添加商品与品牌模块，或从模板中心一键导入预设。"
+msgstr "現在、表示するコンテンツはありません。バックグラウンドでこのページに製品およびブランド モジュールを追加するか、ワンクリックでテンプレート センターからプリセットをインポートしてください。"
+
+msgid "编辑页面 / 装修模块"
+msgstr "ページ編集/装飾モジュール"
+
+msgid "外贸出海独立商城"
+msgstr "貿易海外独立モール"
+
+msgid "暂无可展示内容。请在后台为该页面添加商品与出海模块，或从模板中心一键导入预设。"
+msgstr "現在、表示するコンテンツはありません。バックグラウンドで製品および海外モジュールをこのページに追加するか、ワンクリックでテンプレート センターからプリセットをインポートしてください。"
+
+msgid "无权访问模板预览。请先登录管理员账号。"
+msgstr "テンプレートのプレビューにアクセスできません。最初に管理者アカウントにログインしてください。"
+
+msgid "安全校验失败，预览链接已失效，请在模板中心重新点击预览。"
+msgstr "セキュリティ検証に失敗し、プレビュー リンクの有効期限が切れました。テンプレート センターでもう一度 [プレビュー] をクリックしてください。"
+
+msgid "未指定有效的模板标识。"
+msgstr "有効なテンプレート ID が指定されていません。"
+
+msgid "该模板没有可预览的官方页面包。"
+msgstr "このテンプレートのプレビューに利用できる公式ページ パックはありません。"
+
+msgid "该模板包暂无可渲染的模块内容。"
+msgstr "このテンプレート パッケージには現在、レンダリングするモジュール コンテンツがありません。"
+
+msgid "模板预览"
+msgstr "テンプレートのプレビュー"
+
+msgid "实时预览"
+msgstr "ライブプレビュー"
+
+msgid "模板实时虚拟预览"
+msgstr "テンプレートのリアルタイム仮想プレビュー"
+
+msgid "桌面宽幅视口"
+msgstr "デスクトップワイドビューポート"
+
+msgid "平板视口 (768px)"
+msgstr "タブレット ビューポート (768px)"
+
+msgid "手机视口 (375px)"
+msgstr "モバイルビューポート (375px)"
+
+msgid "在新标签页全屏打开"
+msgstr "新しいタブで全画面で開く"
+
+msgid "新窗口打开"
+msgstr "新しいウィンドウが開きます"
+
+msgid "使用此模板"
+msgstr "このテンプレートを使用してください"
+
+msgid "关闭 (Esc)"
+msgstr "閉じる (Esc)"
+
+msgid "正在从官方页面包实时虚拟渲染，请稍候..."
+msgstr "公式ページからリアルタイム仮想レンダリングを梱包中です。お待ちください..."

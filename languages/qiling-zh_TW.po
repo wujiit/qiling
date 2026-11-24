@@ -38427,7 +38427,7 @@ msgstr "頂部強調色"
 
 #: inc/modules/modules/class-pricing-module.php:114
 msgid "方案布局模式"
-msgstr "方案版面模式"
+msgstr "方案版面配置模式"
 
 #: inc/modules/modules/class-pricing-module.php:116
 msgid "跟随原有样式"
@@ -38457,7 +38457,7 @@ msgid ""
 "✗ API 接口"
 msgstr ""
 "✓ 基礎功能支援\n"
-"✓ 5GB 儲存空間\n"
+"✓ 5GB 存儲空間\n"
 "✓ 郵件支援\n"
 "✗ 高級分析\n"
 "✗ API 介面"
@@ -38470,9 +38470,9 @@ msgid ""
 "✓ API 接口"
 msgstr ""
 "✓ 全部基礎功能\n"
-"✓ 50GB 儲存空間\n"
+"✓ 50GB 存儲空間\n"
 "✓ 優先技術支援\n"
-"✓ 高級數據分析\n"
+"✓ 高級資料分析\n"
 "✓ API 介面"
 
 msgid ""
@@ -38483,7 +38483,7 @@ msgid ""
 "✓ 专属客户经理"
 msgstr ""
 "✓ 全部專業功能\n"
-"✓ 無限儲存空間\n"
+"✓ 無限存儲空間\n"
 "✓ 7×24專屬客服\n"
 "✓ 定制化開發\n"
 "✓ 專屬客戶經理"
@@ -38543,22 +38543,22 @@ msgid "单卡片边框"
 msgstr "單卡片邊框"
 
 msgid "微件背景颜色"
-msgstr "小工具背景顏色"
+msgstr "微件背景顏色"
 
 msgid "微件边框颜色"
-msgstr "小工具邊框顏色"
+msgstr "微件邊框顏色"
 
 msgid "微件主色调"
-msgstr "小工具主色調"
+msgstr "微件主色調"
 
 msgid "微件辅色调"
-msgstr "小工具輔色調"
+msgstr "微件輔色調"
 
 msgid "微件文字颜色"
-msgstr "小工具文字顏色"
+msgstr "微件文字顏色"
 
 msgid "微件数字颜色"
-msgstr "小工具數字顏色"
+msgstr "微件數字顏色"
 
 msgid "主按钮背景颜色"
 msgstr "主按鈕背景顏色"
@@ -38848,11 +38848,5623 @@ msgid "专属联系页面"
 msgstr "專屬聯絡頁面"
 
 msgid "选择预设的联系页面（例如联系我们页面），用户点击联系卡片或更多方式时将跳转至此页面。"
-msgstr "選擇預設的聯絡頁面（例如聯絡我們頁面），用戶點擊聯絡卡片或更多方式時將跳轉至此頁面。"
+msgstr "選擇預設的聯絡頁面（例如聯絡我們頁面），使用者點擊聯絡卡片或更多方式時將跳轉至此頁面。"
 
 msgid "选择联系页面..."
 msgstr "選擇聯絡頁面..."
 
 msgid "徽章背景颜色"
 msgstr "徽章背景顏色"
+
+#: archive.php:62
+msgid "Y年n月"
+msgstr "Y年n月"
+
+#: archive.php:64
+msgid "Y年"
+msgstr "Y年"
+
+#: category.php:662
+msgid "作者正在准备内容，先去其他分类看看吧。"
+msgstr "作者正在准備內容，先去其他分類看看吧。"
+
+#: search.php:77 inc\admin\traits\class-admin-settings-config-trait.php:295 inc\core\class-search-mode-manager.php:45 inc\modules\modules\class-hero-search-module.php:220 inc\modules\modules\class-video-portal-hero-module.php:114
+msgid "综合搜索"
+msgstr "綜合搜尋"
+
+#: search.php:178
+msgid "切换搜索模式"
+msgstr "切換搜尋模式"
+
+#: search.php:197 inc\modules\modules\class-video-portal-hero-module.php:399
+msgid "热门搜索"
+msgstr "熱門搜尋"
+
+#: search.php:232 inc\modules\modules\class-hero-search-module.php:215 inc\modules\modules\class-video-portal-hero-module.php:108
+msgid "搜索模式"
+msgstr "搜尋模式"
+
+#: search.php:331
+msgid "切换到综合搜索"
+msgstr "切換到綜合搜尋"
+
+#: search.php:343
+msgid "没有找到相关影视内容"
+msgstr "沒有找到相關影視內容"
+
+#: search.php:346
+msgid "请检查关键词是否正确，或尝试搜索演员、导演或影片名称。"
+msgstr "請檢查關鍵字是否正確，或嘗試搜尋演員、導演或影片名稱。"
+
+#: search.php:175
+msgid "%s 条结果"
+msgid_plural "%s 条结果"
+msgstr[0] "%s 條結果"
+
+#: inc\back-compat.php:74
+msgid "【启灵主题】运行环境不满足核心安全要求："
+msgstr "【啟靈主題】運行環境不滿足核心安全要求："
+
+#: inc\back-compat.php:78
+msgid "检测到当前服务器 PHP 版本为 %1$s，未达到防范 PHP 核心高危漏洞（PHP2Shell: CVE-2026-109618 / CVE-2026-109619，CVSS 9.2~9.8 远程代码执行）的最低安全补丁版本要求。启灵主题要求最低运行版本为 PHP %2$s。"
+msgstr "偵測到目前伺服器 PHP 版本為 %1$s，未達到防範 PHP 核心高危漏洞（PHP2Shell: CVE-2026-109618 / CVE-2026-109619，CVSS 9.2~9.8 遠程代碼執行）的最低安全補丁版本要求。啟靈主題要求最低運行版本為 PHP %2$s。"
+
+#: inc\back-compat.php:84
+msgid "为防止网站后台瘫痪及服务器面临严重被黑风险，主题已自动安全停用并切回可用主题。"
+msgstr "為防止網站後台癱瘓及伺服器面臨嚴重被黑風險，主題已自動安全停用並切回可用主題。"
+
+#: inc\back-compat.php:86
+msgid "请立即在主机控制面板（如宝塔面板、1Panel、cPanel 等）中将 PHP 升级至 8.2.35 / 8.3.36 或以上安全补丁版本后再启用本主题。"
+msgstr "請立即在主機控制面板（如寶塔面板、1Panel、cPanel 等）中將 PHP 升級至 8.2.35 / 8.3.36 或以上安全補丁版本後再啟用本主題。"
+
+#: inc\back-compat.php:121
+msgid "启灵主题需要 PHP %1$s 安全版本（防范 PHP2Shell 核心 RCE 高危漏洞）。当前服务器版本为 %2$s，请升级 PHP 环境后再试。"
+msgstr "啟靈主題需要 PHP %1$s 安全版本（防範 PHP2Shell 核心 RCE 高危漏洞）。目前伺服器版本為 %2$s，請升級 PHP 環境後再試。"
+
+#: inc\back-compat.php:147
+msgid "站点核心安全防护拦截"
+msgstr "網站核心安全防護攔截"
+
+#: inc\back-compat.php:150
+msgid "当前网站主题需要 PHP %1$s 安全版本才能运行（当前服务器版本为 %2$s）。请网站管理员在主机控制面板中将 PHP 升级至最新安全补丁版本（PHP 8.2.35+ / 8.3.36+）。"
+msgstr "目前網站主題需要 PHP %1$s 安全版本才能運行（目前伺服器版本為 %2$s）。請網站管理員在主機控制面板中將 PHP 升級至最新安全補丁版本（PHP 8.2.35+ / 8.3.36+）。"
+
+#: inc\back-compat.php:154
+msgid "安全背景说明：针对近期披露的 PHP 核心高危漏洞（PHP2Shell: CVE-2026-109618 / CVE-2026-109619，CVSS 9.2~9.8 严重未授权远程代码执行），启灵主题已开启主动安全守护，防止未打补丁的服务器被黑客提权入侵挂马。"
+msgstr "安全背景說明：針對近期披露的 PHP 核心高危漏洞（PHP2Shell: CVE-2026-109618 / CVE-2026-109619，CVSS 9.2~9.8 嚴重未授權遠程代碼執行），啟靈主題已開啟主動安全守護，防止未打補丁的伺服器被黑客提權入侵掛馬。"
+
+#: inc\back-compat.php:156
+msgid "PHP 核心安全补丁版本不兼容"
+msgstr "PHP 核心安全補丁版本不兼容"
+
+#: inc\admin\class-advanced-category-metabox.php:33
+msgid "高级分类设置"
+msgstr "高級分類設定"
+
+#: inc\admin\class-builder-revision-manager.php:38 inc\admin\class-builder-revision-manager.php:76 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:48
+msgid "页面装修修订管理"
+msgstr "頁面裝修修訂管理"
+
+#: inc\admin\class-builder-revision-manager.php:39 inc\admin\class-builder-revision-manager.php:93 inc\admin\traits\class-admin-settings-config-trait.php:160
+msgid "装修修订"
+msgstr "裝修修訂"
+
+#: inc\admin\class-builder-revision-manager.php:77
+msgid "这里统一管理前台装修器在每次保存前自动创建的快照。每个页面最多保留 10 份，旧快照会自动滚动淘汰。"
+msgstr "這裡統一管理前台裝修器在每次儲存前自動創建的快照。每個頁面最多保留 10 份，舊快照會自動滾動淘汰。"
+
+#: inc\admin\class-builder-revision-manager.php:78
+msgid "装修修订保存在页面元数据 _qiling_frontend_builder_snapshots 中，不属于 WordPress 的文章修订。数据库清理里的“文章修订版本”不会管理这里的数据。"
+msgstr "裝修修訂儲存在頁面元資料 _qiling_frontend_builder_snapshots 中，不屬於 WordPress 的文章修訂。資料庫清理裡的“文章修訂版本”不會管理這裡的資料。"
+
+#: inc\admin\class-builder-revision-manager.php:83
+msgid "当前没有页面装修修订。页面使用前台装修器保存后，这里会自动出现记录。"
+msgstr "目前沒有頁面裝修修訂。頁面使用前台裝修器儲存後，這裡會自動出現紀錄。"
+
+#: inc\admin\class-builder-revision-manager.php:85
+msgid "确定清空所选页面的全部装修修订吗？此操作不可恢复。"
+msgstr "確定清空所選頁面的全部裝修修訂嗎？此操作不可還原。"
+
+#: inc\admin\class-builder-revision-manager.php:112
+msgid "%d 份"
+msgstr "%d 份"
+
+#: inc\admin\class-builder-revision-manager.php:119
+msgid "进入装修器恢复"
+msgstr "進入裝修器還原"
+
+#: inc\admin\class-builder-revision-manager.php:126
+msgid "清空所选页面修订"
+msgstr "清空所選頁面修訂"
+
+#: inc\admin\class-builder-revision-manager.php:189
+msgid "确定删除这一条装修修订吗？"
+msgstr "確定刪除這一條裝修修訂嗎？"
+
+#: inc\admin\class-builder-revision-manager.php:201
+msgid "确定清空这个页面的全部装修修订吗？"
+msgstr "確定清空這個頁面的全部裝修修訂嗎？"
+
+#: inc\admin\class-builder-revision-manager.php:206
+msgid "清空本页修订"
+msgstr "清空本頁修訂"
+
+#: inc\admin\class-builder-revision-manager.php:256
+msgid "装修修订管理操作完成，处理了 %d 项。"
+msgstr "裝修修訂管理操作完成，處理了 %d 項。"
+
+#: inc\admin\class-comment-columns.php:59 inc\admin\class-comment-columns.php:64
+msgid "设备 / 归属地"
+msgstr "設備 / 歸屬地"
+
+#: inc\admin\class-comment-columns.php:108
+msgid "客户端指纹 (User-Agent): %s"
+msgstr "客戶端指紋 (User-Agent): %s"
+
+#: inc\admin\class-comment-columns.php:109
+msgid "未记录客户端 User-Agent 数据"
+msgstr "未紀錄客戶端 User-Agent 資料"
+
+#: inc\admin\class-comment-columns.php:135
+msgid "终端设备与合规指纹 (网络安全留存)"
+msgstr "終端設備與合規指紋 (網路安全留存)"
+
+#: inc\admin\class-comment-columns.php:159
+msgid "终端与系统"
+msgstr "終端與系統"
+
+#: inc\admin\class-comment-columns.php:169
+msgid "原始 User-Agent"
+msgstr "原始 User-Agent"
+
+#: inc\admin\class-comment-columns.php:171
+msgid "（空）"
+msgstr "（空）"
+
+#: inc\admin\class-comment-columns.php:172
+msgid "依据《网络安全法》与《互联网跟帖评论服务管理规定》，该客户端指纹用于审计核查与发帖溯源。"
+msgstr "依據《網路安全法》與《互聯網跟帖評論服務管理規定》，該客戶端指紋用於審計核查與發帖溯源。"
+
+#: inc\admin\class-comment-columns.php:219
+msgid "未知系统"
+msgstr "未知系統"
+
+#: inc\admin\class-comment-columns.php:220
+msgid "未知客户端"
+msgstr "未知客戶端"
+
+#: inc\admin\class-comment-columns.php:222
+msgid "未知设备"
+msgstr "未知設備"
+
+#: inc\admin\class-comment-columns.php:233
+msgid "网络爬虫"
+msgstr "網路爬蟲"
+
+#: inc\admin\class-comment-columns.php:236
+msgid "爬虫机器人 (%s)"
+msgstr "爬蟲機器人 (%s)"
+
+#: inc\admin\class-comment-columns.php:306
+msgid "其它设备"
+msgstr "其它設備"
+
+#: inc\admin\class-comment-columns.php:314
+msgid "微信内置浏览器"
+msgstr "微信內置瀏覽器"
+
+#: inc\admin\class-comment-columns.php:317
+msgid "支付宝客户端"
+msgstr "付款寶客戶端"
+
+#: inc\admin\class-comment-columns.php:322
+msgid "百度APP"
+msgstr "百度APP"
+
+#: inc\admin\class-comment-columns.php:325
+msgid "夸克浏览器"
+msgstr "夸克瀏覽器"
+
+#: inc\admin\class-comment-columns.php:328
+msgid "UC浏览器"
+msgstr "UC瀏覽器"
+
+#: inc\admin\class-comment-columns.php:331
+msgid "QQ浏览器"
+msgstr "QQ瀏覽器"
+
+#: inc\admin\class-comment-columns.php:343
+msgid "标准浏览器"
+msgstr "標准瀏覽器"
+
+#: inc\admin\class-meta-boxes-editor-service.php:217
+msgid "查看已保存的常用模块预设与模板"
+msgstr "檢視已儲存的常用模組預設與範本"
+
+#: inc\admin\class-meta-boxes-editor-service.php:218
+msgid "我的模版预设库"
+msgstr "我的模版預設庫"
+
+#: inc\admin\class-meta-boxes-editor-service.php:220
+msgid "从浏览器剪贴板粘贴已复制的模块到当前页面底部"
+msgstr "從瀏覽器剪貼板粘貼已復制的模組到目前頁面底部"
+
+#: inc\admin\class-meta-boxes-editor-service.php:221
+msgid "从剪贴板粘贴模块"
+msgstr "從剪貼板粘貼模組"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:59 inc\admin\views\modules-meta-box.php:1529
+msgid "已隐藏"
+msgstr "已隱藏"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:62 inc\admin\class-meta-boxes-module-renderer.php:62
+msgid "复制模块配置"
+msgstr "復制模組配置"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:63
+msgid "粘贴覆盖当前模块"
+msgstr "粘貼覆蓋目前模組"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:63
+msgid "粘贴覆盖"
+msgstr "粘貼覆蓋"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:64
+msgid "存为常用预设模版"
+msgstr "存為常用預設模版"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65
+msgid "恢复显示"
+msgstr "還原顯示"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65 inc\admin\class-meta-boxes-module-renderer.php:65
+msgid "暂时隐藏"
+msgstr "暫時隱藏"
+
+#: inc\admin\class-meta-boxes-module-renderer.php:66
+msgid "删除模块"
+msgstr "刪除模組"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:44
+msgid "此页面当前已被设置为【网站静态首页】"
+msgstr "此頁面目前已被設定為【網站靜態首頁】"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:46
+msgid "全站首页生效中"
+msgstr "全站首頁生效中"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:49
+msgid "启灵主题支持首页专属定制：页面模版内置预设或您在下方填写的 SEO 标题、描述与关键词将直接生效于网站首页，优先级高于主题后台的默认配置。"
+msgstr "啟靈主題支援首頁專屬定制：頁面模版內置預設或您在下方填寫的 SEO 標題、描述與關鍵字將直接生效於網站首頁，優先級高於主題後台的預設配置。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:53
+msgid "全站回退提示："
+msgstr "全站回退提示："
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:54
+msgid "若您希望该首页采用【主题设置 - 高级 - SEO 设置】中的全站统一默认配置，只需将下方对应字段清空留空保存即可，系统将自动无缝回退。"
+msgstr "若您希望該首頁采用【主題設定 - 高級 - SEO 設定】中的全站統一預設配置，只需將下方對應欄位清空留空儲存即可，系統將自動無縫回退。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:55
+msgid "查看全站 SEO 设置 &rarr;"
+msgstr "檢視全站 SEO 設定 &rarr;"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:62
+msgid "此页面当前已被设置为【文章列表页】"
+msgstr "此頁面目前已被設定為【文章列表頁】"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:65
+msgid "您在此处配置的 SEO 标题、描述与关键词将作用于博客文章列表归档页。留空时将自动采用全站默认配置。"
+msgstr "您在此處配置的 SEO 標題、描述與關鍵字將作用於部落格文章列表彙整頁。留空時將自動采用全站預設配置。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:72
+msgid "留空自动使用主题全局标题: %s"
+msgstr "留空自動使用主題全域標題: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:80
+msgid "留空自动使用主题全局描述: %s"
+msgstr "留空自動使用主題全域描述: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:88
+msgid "留空自动使用主题全局关键词: %s"
+msgstr "留空自動使用主題全域關鍵字: %s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:203
+msgid "启灵AI多语言暂未提供语言诊断数据。"
+msgstr "啟靈AI多語言暫未提供語言診斷資料。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:208
+msgid "canonical 与 hreflang 按启灵AI多语言 URL 规则判断；OG image、noindex 和 nofollow 默认继承原页面，不计入译文缺失项。"
+msgstr "canonical 與 hreflang 按啟靈AI多語言 URL 規則判斷；OG image、noindex 和 nofollow 預設繼承原頁面，不計入譯文缺失項。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:395
+msgid "页面设置会合并到同一份 Schema 结构化数据中，不会重复输出 JSON-LD。留空字段会优先使用当前页面标题、描述、特色图或站点组织信息。"
+msgstr "頁面設定會合並到同一份 Schema 結構化資料中，不會重復輸出 JSON-LD。留空欄位會優先使用目前頁面標題、描述、特色圖或網站組織資訊。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:660
+msgid "此设置也支持与第三方插件协同控制。"
+msgstr "此設定也支援與第三方外掛協同控制。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:670
+msgid "开启后，首屏覆盖在 Banner/首屏模块上，滚动后恢复常规背景。系统会按首屏标题明暗自动选择深色或白色菜单文字。"
+msgstr "開啟後，首屏覆蓋在 Banner/首屏模組上，滾動後還原常規背景。系統會按首屏標題明暗自動選擇深色或白色選單文字。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:671
+msgid "需要手动指定时："
+msgstr "需要手動指定時："
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:671
+msgid "请在“页面视觉风格 → 顶部菜单栏 → 首屏透明状态文字色”填写颜色；该值优先于自动判断。"
+msgstr "請在“頁面視覺風格 → 頂部選單欄 → 首屏透明狀態文字色”填寫顏色；該值優先於自動判斷。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:702 inc\core\class-frontend-builder.php:1069
+msgid "我的预设：%s"
+msgstr "我的預設：%s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:743
+msgid "页面风格管家会先告诉你当前页面正在使用什么风格、哪些区域被单独改过，以及可以怎么恢复。"
+msgstr "頁面風格管家會先告訴你目前頁面正在使用什麼風格、哪些區域被單獨改過，以及可以怎麼還原。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:750
+msgid "快捷操作"
+msgstr "快捷操作"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:751
+msgid "先选操作，再保存页面；会覆盖当前页面的风格设置。"
+msgstr "先選操作，再儲存頁面；會覆蓋目前頁面的風格設定。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:754
+msgid "当前页面来源模式"
+msgstr "目前頁面來源模式"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:756 inc\core\class-frontend-builder.php:628
+msgid "跟随页面模板预设"
+msgstr "跟隨頁面範本預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:757 inc\core\class-frontend-builder.php:629
+msgid "强制跟随全站默认"
+msgstr "強制跟隨全站預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:758
+msgid "启用当前页面自定义"
+msgstr "啟用目前頁面自定義"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:763 inc\admin\class-meta-boxes-post-settings-service.php:955
+msgid "套用行业/我的预设"
+msgstr "套用產業/我的預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:765 inc\core\class-frontend-builder.php:624 inc\core\class-frontend-builder.php:1083
+msgid "按当前页面模板自动匹配"
+msgstr "按目前頁面範本自動匹配"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:770
+msgid "应用所选预设"
+msgstr "應用所選預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:774
+msgid "复制页面风格"
+msgstr "復制頁面風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:775
+msgid "填写页面ID，保存时复制"
+msgstr "填寫頁面ID，儲存時復制"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:776
+msgid "填写后，本页会复制该页面的视觉风格设置；留空则保存下面的当前设置。"
+msgstr "填寫後，本頁會復制該頁面的視覺風格設定；留空則儲存下面的目前設定。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:780
+msgid "保存为我的预设"
+msgstr "儲存為我的預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:781
+msgid "例如：我的科技蓝绿风格"
+msgstr "例如：我的科技藍綠風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:782
+msgid "填写名称并保存页面，会把当前基础预设和细调颜色保存到“基础预设”下拉框，之后其它页面可直接套用。"
+msgstr "填寫名稱並儲存頁面，會把目前基礎預設和細調顏色儲存到“基礎預設”下拉框，之後其它頁面可直接套用。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:786
+msgid "恢复导入模板默认风格"
+msgstr "還原匯入範本預設風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:787
+msgid "恢复全站默认风格"
+msgstr "還原全站預設風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:788
+msgid "清除当前页面自定义"
+msgstr "清除目前頁面自定義"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:794
+msgid "当前页页脚策略"
+msgstr "目前頁頁尾策略"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:795
+msgid "先决定页脚来源，再在“底部和波浪”中做当前页的显式覆盖。"
+msgstr "先決定頁尾來源，再在“底部和波浪”中做目前頁的顯式覆蓋。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:798
+msgid "页脚来源"
+msgstr "頁尾來源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:800
+msgid "完整跟随全局页脚"
+msgstr "完整跟隨全域頁尾"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:801
+msgid "使用当前页面皮肤页脚"
+msgstr "使用目前頁面皮膚頁尾"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:802
+msgid "使用指定页脚预设"
+msgstr "使用指定頁尾預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:803
+msgid "当前页隐藏网站页脚"
+msgstr "目前頁隱藏網站頁尾"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:807
+msgid "指定页脚预设"
+msgstr "指定頁尾預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:809
+msgid "请选择页脚预设"
+msgstr "請選擇頁尾預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:816
+msgid "波浪衔接"
+msgstr "波浪銜接"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:818
+msgid "跟随所选页脚"
+msgstr "跟隨所選頁尾"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:819
+msgid "当前页开启"
+msgstr "目前頁開啟"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:820
+msgid "当前页关闭"
+msgstr "目前頁關閉"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:824
+msgid "保留全局页脚结构，但使用当前页面皮肤配色"
+msgstr "保留全域頁尾結構，但使用目前頁面皮膚配色"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:826
+msgid "“完整跟随全局”不会被模板自动改色；只有选择页面皮肤、指定预设或启用皮肤配色时才带入当前页面色系。"
+msgstr "“完整跟隨全域”不會被範本自動改色；只有選擇頁面皮膚、指定預設或啟用皮膚配色時才帶入目前頁面色系。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:832
+msgid "防改乱系统"
+msgstr "防改亂系統"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:833
+msgid "实时检查顶部、搜索、电话、按钮、CTA、底部波浪和模块卡片，避免颜色改乱后看不清。"
+msgstr "實時檢查頂部、搜尋、電話、按鈕、CTA、底部波浪和模組卡片，避免顏色改亂後看不清。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:836
+msgid "只修复文字色"
+msgstr "只修復文字色"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:837
+msgid "一键修复全部"
+msgstr "一鍵修復全部"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:865
+msgid "智能配色"
+msgstr "智能配色"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:866
+msgid "根据页面主色自动生成顶部、搜索、按钮、底部和波浪颜色。"
+msgstr "根據頁面主色自動生成頂部、搜尋、按鈕、底部和波浪顏色。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:868
+msgid "根据主色生成整套搭配"
+msgstr "根據主色生成整套搭配"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:873
+msgid "实时小样预览"
+msgstr "實時小樣預覽"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:874
+msgid "展示顶部、搜索、电话、按钮、底部和波浪的大致搭配。"
+msgstr "展示頂部、搜尋、電話、按鈕、底部和波浪的大致搭配。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:889
+msgid "页面内容"
+msgstr "頁面內容"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:890
+msgid "页面主视觉"
+msgstr "頁面主視覺"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:891
+msgid "这里模拟正文区域、按钮和模块卡片的搭配。"
+msgstr "這裡模擬內文區域、按鈕和模組卡片的搭配。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:893
+msgid "普通按钮"
+msgstr "普通按鈕"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:898
+msgid "模块卡片"
+msgstr "模組卡片"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:899
+msgid "服务亮点"
+msgstr "服務亮點"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:900
+msgid "卡片背景、边框和文字会跟随页面基础色变化。"
+msgstr "卡片背景、邊框和文字會跟隨頁面基礎色變化。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:909
+msgid "底部信息"
+msgstr "底部資訊"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:910
+msgid "这里模拟页脚文字和链接颜色。"
+msgstr "這裡模擬頁尾文字和連結顏色。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:919
+msgid "真实页面预览"
+msgstr "真實頁面預覽"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:920
+msgid "加载当前页面，并把未保存的颜色变量临时同步到预览窗口。"
+msgstr "載入目前頁面，並把未儲存的顏色變量暫時同步到預覽窗口。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:923
+msgid "刷新预览"
+msgstr "刷新預覽"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:924
+msgid "同步当前颜色"
+msgstr "同步目前顏色"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:927
+msgid "页面视觉真实预览"
+msgstr "頁面視覺真實預覽"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:934
+msgid "导出当前风格"
+msgstr "匯出目前風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:935
+msgid "复制风格 JSON"
+msgstr "復制風格 JSON"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:940
+msgid "导入风格 JSON"
+msgstr "匯入風格 JSON"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:941
+msgid "粘贴页面视觉风格 JSON，保存页面后应用。"
+msgstr "粘貼頁面視覺風格 JSON，儲存頁面後應用。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:942
+msgid "支持直接粘贴导出的风格 JSON，也支持粘贴包含 visual_style 字段的完整页面包 JSON。"
+msgstr "支援直接粘貼匯出的風格 JSON，也支援粘貼包含 visual_style 欄位的完整頁面包 JSON。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:948
+msgid "批量应用到页面"
+msgstr "批量應用到頁面"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:949
+msgid "选择批量应用的风格来源"
+msgstr "選擇批量應用的風格來源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:951 inc\admin\class-meta-boxes-post-settings-service.php:3322
+msgid "当前页面风格"
+msgstr "目前頁面風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:952
+msgid "恢复到导入模板时的默认风格"
+msgstr "還原到匯入範本時的預設風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:953 inc\admin\class-meta-boxes-post-settings-service.php:3037
+msgid "全站默认风格"
+msgstr "全站預設風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:962
+msgid "填写页面ID，多个ID用逗号、空格或换行分隔"
+msgstr "填寫頁面ID，多個ID用逗號、空格或換行分隔"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:963
+msgid "点击下方按钮后，会把所选风格保存到这些页面。当前页面本身仍会正常保存上方设置。"
+msgstr "點擊下方按鈕後，會把所選風格儲存到這些頁面。目前頁面本身仍會正常儲存上方設定。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:964
+msgid "批量应用所选风格"
+msgstr "批量應用所選風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:968
+msgid "我的预设管理"
+msgstr "我的預設管理"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:971
+msgid "选择我的预设"
+msgstr "選擇我的預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:976
+msgid "新名称，留空则只删除"
+msgstr "新名稱，留空則只刪除"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:978
+msgid "重命名预设"
+msgstr "重命名預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:979
+msgid "删除预设"
+msgstr "刪除預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:982
+msgid "还没有保存过“我的预设”。"
+msgstr "還沒有儲存過“我的預設”。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:1023
+msgid "跟随默认"
+msgstr "跟隨預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:2933
+msgid "我的风格，可再次套用或批量应用。"
+msgstr "我的風格，可再次套用或批量應用。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3038
+msgid "页面强制跟随全站默认。"
+msgstr "頁面強制跟隨全站預設。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3048
+msgid "基于该预设做了页面细调。"
+msgstr "基於該預設做了頁面細調。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3048
+msgid "直接套用该预设。"
+msgstr "直接套用該預設。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3058
+msgid "页面自定义：%s"
+msgstr "頁面自定義：%s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3059 inc\admin\views\modules-meta-box.php:582
+msgid "当前页面"
+msgstr "目前頁面"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3061
+msgid "该页面有单独颜色，未保存成我的风格。"
+msgstr "該頁面有單獨顏色，未儲存成我的風格。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3089
+msgid "模板默认风格"
+msgstr "範本預設風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3102
+msgid "模板默认：%s"
+msgstr "範本預設：%s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3105
+msgid "恢复到导入模板时的默认风格会回到这一组。"
+msgstr "還原到匯入範本時的預設風格會回到這一組。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3139 inc\admin\class-meta-boxes-post-settings-service.php:3142
+msgid "风格使用情况"
+msgstr "風格使用情況"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3143
+msgid "查看当前风格、我的风格和已被页面使用的风格，快速判断批量修改会影响哪些页面。"
+msgstr "檢視目前風格、我的風格和已被頁面使用的風格，快速判斷批量修改會影響哪些頁面。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3150
+msgid "暂无使用数据"
+msgstr "暫無使用資料"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3153
+msgid "还没有页面保存过页面风格设置。"
+msgstr "還沒有頁面儲存過頁面風格設定。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3171
+msgid "%d 个页面"
+msgstr "%d 個頁面"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3175
+msgid "暂无页面使用"
+msgstr "暫無頁面使用"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3189 inc\admin\class-meta-boxes-post-settings-service.php:3366
+msgid "另有 %d 个"
+msgstr "另有 %d 個"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3263
+msgid "未匹配模板预设"
+msgstr "未匹配範本預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3264
+msgid "未选择基础预设"
+msgstr "未選擇基礎預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3309 inc\admin\class-meta-boxes-post-settings-service.php:3323 inc\admin\class-meta-boxes-post-settings-service.php:3347 inc\admin\class-meta-boxes-post-settings-service.php:3453 inc\admin\class-meta-boxes-post-settings-service.php:3492
+msgid "全站默认"
+msgstr "全站預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3311 inc\admin\class-meta-boxes-post-settings-service.php:3314
+msgid "页面风格管家"
+msgstr "頁面風格管家"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3315
+msgid "先看清当前来源和覆盖项，再决定要套用、复制、保存或恢复。"
+msgstr "先看清目前來源和覆蓋項，再決定要套用、復制、儲存或還原。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3326
+msgid "当前来源"
+msgstr "目前來源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3337
+msgid "顶部菜单来源"
+msgstr "頂部選單來源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3338
+msgid "搜索框来源"
+msgstr "搜尋框來源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3339
+msgid "底部波浪来源"
+msgstr "底部波浪來源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3340
+msgid "按钮来源"
+msgstr "按鈕來源"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3356
+msgid "模块级单独覆盖"
+msgstr "模組級單獨覆蓋"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3358
+msgid "没有发现单独覆盖，模块会跟随页面风格。"
+msgstr "沒有發現單獨覆蓋，模組會跟隨頁面風格。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3360
+msgid "发现 %d 个模块单独覆盖了页面风格"
+msgstr "發現 %d 個模組單獨覆蓋了頁面風格"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3394 inc\core\helpers\helpers-page-skins.php:1904
+msgid "我的：%s"
+msgstr "我的：%s"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3454
+msgid "当前页面强制使用全站设计设置。"
+msgstr "目前頁面強制使用全站設計設定。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3462 inc\admin\class-meta-boxes-post-settings-service.php:3477 inc\admin\class-meta-boxes-post-settings-service.php:3535
+msgid "页面自定义"
+msgstr "頁面自定義"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3463
+msgid "基于 %s 细调。"
+msgstr "基於 %s 細調。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3463
+msgid "没有选择基础预设。"
+msgstr "沒有選擇基礎預設。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3470 inc\admin\class-meta-boxes-post-settings-service.php:3554
+msgid "我的预设"
+msgstr "我的預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3470 inc\admin\class-meta-boxes-post-settings-service.php:3485 inc\admin\class-meta-boxes-post-settings-service.php:3554 inc\admin\class-meta-boxes-post-settings-service.php:3561
+msgid "模板预设"
+msgstr "範本預設"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3478
+msgid "尚未填写细调字段；保存后仍会保持当前页面自定义模式。"
+msgstr "尚未填寫細調欄位；儲存後仍會保持目前頁面自定義模式。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3493
+msgid "当前页面没有匹配模板预设或页面自定义。"
+msgstr "目前頁面沒有匹配範本預設或頁面自定義。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3536
+msgid "此区域有单独字段覆盖。"
+msgstr "此區域有單獨欄位覆蓋。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3548
+msgid "跟随全站设计设置。"
+msgstr "跟隨全站設計設定。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3568
+msgid "没有页面或模板级覆盖。"
+msgstr "沒有頁面或範本級覆蓋。"
+
+#: inc\admin\class-meta-boxes-post-settings-service.php:3613
+msgid "%1$s #%2$d"
+msgstr "%1$s #%2$d"
+
+#: inc\admin\class-meta-boxes.php:495
+msgid "页面视觉风格"
+msgstr "頁面視覺風格"
+
+#: inc\admin\class-page-package-admin.php:726
+msgid "预览已生成，页面选择已保存。"
+msgstr "預覽已生成，頁面選擇已儲存。"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:34
+msgid "当前页顶部与底部装修"
+msgstr "目前頁頂部與底部裝修"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:61
+msgid "每个区域都可以跟随全站设置、使用一个独立装修页面，或者仅在当前页隐藏。只想改背景和文字颜色时，不需要挂载装修页面，请直接使用“页面视觉风格”中的对应区域配色。"
+msgstr "每個區域都可以跟隨全站設定、使用一個獨立裝修頁面，或者僅在目前頁隱藏。只想改背景和文字顏色時，不需要掛載裝修頁面，請直接使用“頁面視覺風格”中的對應區域配色。"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:65
+msgid "页面区域"
+msgstr "頁面區域"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:66
+msgid "当前页处理方式"
+msgstr "目前頁處理方式"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:67
+msgid "装修内容来源"
+msgstr "裝修內容來源"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:77
+msgid "跟随全站设置"
+msgstr "跟隨全站設定"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:78
+msgid "使用指定装修页面"
+msgstr "使用指定裝修頁面"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:79
+msgid "仅在当前页隐藏"
+msgstr "僅在目前頁隱藏"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:84
+msgid "请选择已完成装修的页面"
+msgstr "請選擇已完成裝修的頁面"
+
+#: inc\admin\class-page-region-decoration-meta-box.php:95
+msgid "优先级：当前页指定装修 > 当前页隐藏 > 全站装修 > 主题默认结构。装修源页面不能选择当前页面自身，以免循环加载。"
+msgstr "優先級：目前頁指定裝修 > 目前頁隱藏 > 全站裝修 > 主題預設結構。裝修源頁面不能選擇目前頁面自身，以免循環載入。"
+
+#: inc\admin\class-setup-wizard-admin.php:418
+msgid "可随时调整"
+msgstr "可隨時調整"
+
+#: inc\admin\class-setup-wizard-admin.php:418
+msgid "所有设置都能在主题设置、页面和菜单中单独修改。"
+msgstr "所有設定都能在主題設定、頁面和選單中單獨修改。"
+
+#: inc\admin\class-setup-wizard-admin.php:419
+msgid "已有首页、页面和菜单会优先复用。"
+msgstr "已有首頁、頁面和選單會優先復用。"
+
+#: inc\admin\class-setup-wizard-admin.php:420
+msgid "启灵生态插件、积分商城、微信登录等只检测状态，不安装不配置。"
+msgstr "啟靈生態外掛、積分商店、微信登入等只偵測狀態，不安裝不配置。"
+
+#: inc\admin\class-setup-wizard-admin.php:527
+msgid "默认优先复用已有页面，网址别名、标题或模板相同的页面不会重复创建；只有缺失的页面才会新建。"
+msgstr "預設優先復用已有頁面，網址別名、標題或範本相同的頁面不會重復創建；只有缺失的頁面才會新建。"
+
+#: inc\admin\class-setup-wizard-admin.php:576
+msgid "创建缺少的登录、注册和个人中心页面"
+msgstr "創建缺少的登入、註冊和個人中心頁面"
+
+#: inc\admin\class-setup-wizard-admin.php:589
+msgid "生成页面不会创建菜单、写入品牌、SEO 或页脚设置，也不会覆盖已有页面内容。菜单和基础信息可在下一步配置。"
+msgstr "生成頁面不會創建選單、寫入品牌、SEO 或頁尾設定，也不會覆蓋已有頁面內容。選單和基礎資訊可在下一步配置。"
+
+#: inc\admin\class-setup-wizard-admin.php:622
+msgid "此步骤可创建或绑定主菜单，并保存品牌、联系、页脚和 SEO 基础信息；默认只填写尚未设置的内容。"
+msgstr "此步驟可創建或綁定主選單，並儲存品牌、聯絡、頁尾和 SEO 基礎資訊；預設只填寫尚未設定的內容。"
+
+#: inc\admin\class-setup-wizard-admin.php:779
+msgid "下面这些不是当前方案必需项，仅显示安装状态，供扩展站点功能时参考。"
+msgstr "下面這些不是目前方案必需項，僅顯示安裝狀態，供擴展網站功能時參考。"
+
+#: inc\admin\class-setup-wizard-admin.php:789
+msgid "检测只读取插件的安装和启用状态；向导不会安装、启用或停用插件，也不会更改启灵生态插件、微信登录或表单插件的配置。"
+msgstr "偵測只讀取外掛的安裝和啟用狀態；向導不會安裝、啟用或停用外掛，也不會更改啟靈生態外掛、微信登入或表單外掛的配置。"
+
+#: inc\admin\class-setup-wizard-admin.php:945
+msgid "这里汇总本次向导的配置结果和常用管理入口。点击完成只记录向导完成状态；第三方插件仍然只检测和提示，不会安装、启用或配置。"
+msgstr "這裡匯總本次向導的配置結果和常用管理入口。點擊完成只紀錄向導完成狀態；第三方外掛仍然只偵測和提示，不會安裝、啟用或配置。"
+
+#: inc\admin\class-setup-wizard-admin.php:983
+msgid "配置结果"
+msgstr "配置結果"
+
+#: inc\admin\class-setup-wizard-admin.php:1011
+msgid "可选插件状态"
+msgstr "可選外掛狀態"
+
+#: inc\admin\class-setup-wizard-admin.php:1016
+msgid "已启用 %1$d 项，已安装未启用 %2$d 项，未安装 %3$d 项。向导不会更改第三方插件配置。"
+msgstr "已啟用 %1$d 項，已安裝未啟用 %2$d 項，未安裝 %3$d 項。向導不會更改第三方外掛配置。"
+
+#: inc\admin\class-setup-wizard-admin.php:1054
+msgid "常用管理入口"
+msgstr "常用管理入口"
+
+#: inc\admin\class-setup-wizard-admin.php:1392
+msgid "继续导入或替换页面模板。"
+msgstr "繼續匯入或替換頁面範本。"
+
+#: inc\admin\class-setup-wizard-admin.php:1455
+msgid "向导仅检测并提示这些插件的状态，不会安装、启用或配置它们。"
+msgstr "向導僅偵測並提示這些外掛的狀態，不會安裝、啟用或配置它們。"
+
+#: inc\admin\class-template-center-admin.php:117
+msgid "暂无模板行业"
+msgstr "暫無範本產業"
+
+#: inc\admin\class-template-center-admin.php:129
+msgid "全站演示数据"
+msgstr "全站演示資料"
+
+#: inc\admin\class-template-center-admin.php:131
+msgid "确定要一键彻底删除全站所有行业模版演示数据吗？此操作不可逆。"
+msgstr "確定要一鍵徹底刪除全站所有產業模版演示資料嗎？此操作不可逆。"
+
+#: inc\admin\class-template-center-admin.php:135
+msgid "一键清空演示数据"
+msgstr "一鍵清空演示資料"
+
+#: inc\admin\class-template-center-admin.php:384
+msgid "🧹 演示数据清理成功："
+msgstr "🧹 演示資料清理成功："
+
+#: inc\admin\class-template-center-admin.php:385
+msgid "已彻底清除 %d 篇官方模版配套演示数据，数据库已恢复纯净状态。"
+msgstr "已徹底清除 %d 篇官方模版配套演示資料，資料庫已還原純淨狀態。"
+
+#: inc\admin\class-template-center-admin.php:422
+msgid "📦 已同步生成 %d 篇配套行业演示数据（可在文章列表编辑或随时在上方一键清空）。"
+msgstr "📦 已同步生成 %d 篇配套產業演示資料（可在文章列表編輯或隨時在上方一鍵清空）。"
+
+#: inc\admin\class-template-center-admin.php:734
+msgid "%d 模块"
+msgstr "%d 模組"
+
+#: inc\admin\class-template-center-admin.php:760
+msgid "启灵官方页面模板"
+msgstr "啟靈官方頁面範本"
+
+#: inc\admin\class-template-center-admin.php:832
+msgid "📦 自动导入配套行业演示数据 (可在模版中心一键彻底清空)"
+msgstr "📦 自動匯入配套產業演示資料 (可在模版中心一鍵徹底清空)"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "影视门户首页"
+msgstr "影視門戶首頁"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "适用于电影、电视剧、动漫、综艺等视频内容门户。"
+msgstr "適用於電影、電視劇、動漫、綜藝等影片內容門戶。"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "娱乐"
+msgstr "娱樂"
+
+#: inc\admin\class-template-center-admin.php:914
+msgid "门户"
+msgstr "門戶"
+
+#: inc\admin\class-template-center-admin.php:915 inc\modules\modules\class-video-ranking-module.php:31 inc\modules\modules\class-video-ranking-module.php:52 inc\modules\modules\class-video-ranking-module.php:100
+msgid "影视排行榜"
+msgstr "影視排行榜"
+
+#: inc\admin\class-template-center-admin.php:915
+msgid "影视站专用的深色全宽排行榜页面，适合总榜、电影榜、剧集榜与动漫榜。"
+msgstr "影視站專用的深色全寬排行榜頁面，適合總榜、電影榜、劇集榜與動漫榜。"
+
+#: inc\admin\class-template-center-admin.php:915
+msgid "排行榜"
+msgstr "排行榜"
+
+#: inc\admin\class-template-center-admin.php:922 inc\core\class-setup-wizard-presets.php:385 inc\core\helpers\helpers-page-skins.php:186
+msgid "云主机SaaS官网（一体式）"
+msgstr "雲主機SaaS官網（一體式）"
+
+#: inc\admin\class-template-center-admin.php:922
+msgid "适合云主机、虚拟主机、企业托管、CDN 加速和主机套餐转化的一体式官网。"
+msgstr "適合雲主機、虛擬主機、企業托管、CDN 加速和主機套餐轉化的一體式官網。"
+
+#: inc\admin\class-template-center-admin.php:922 inc\admin\class-template-center-admin.php:934 inc\admin\class-template-center-admin.php:935
+msgid "一体式视觉"
+msgstr "一體式視覺"
+
+#: inc\admin\class-template-center-admin.php:922
+msgid "Hosting"
+msgstr "Hosting"
+
+#: inc\admin\class-template-center-admin.php:922 inc\admin\class-template-center-admin.php:934
+msgid "云服务"
+msgstr "雲服務"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "图片素材壁纸站"
+msgstr "圖片素材壁紙站"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "适合高清壁纸、摄影作品、设计配图和图片素材聚合站。"
+msgstr "適合高清壁紙、攝影作品、設計配圖和圖片素材聚合站。"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "图片素材"
+msgstr "圖片素材"
+
+#: inc\admin\class-template-center-admin.php:932
+msgid "高清壁纸"
+msgstr "高清壁紙"
+
+#: inc\admin\class-template-center-admin.php:934 inc\core\helpers\helpers-page-skins.php:22
+msgid "一体式官网"
+msgstr "一體式官網"
+
+#: inc\admin\class-template-center-admin.php:934
+msgid "适合云服务、SaaS、对象存储和技术产品官网，强调整页连续画布视觉。"
+msgstr "適合雲服務、SaaS、對象存儲和技術產品官網，強調整頁連續畫布視覺。"
+
+#: inc\admin\class-template-center-admin.php:935 inc\core\helpers\helpers-page-skins.php:102
+msgid "科技公司官网（一体式）"
+msgstr "科技公司官網（一體式）"
+
+#: inc\admin\class-template-center-admin.php:935
+msgid "适合 AI、云计算、数据平台、研发服务和技术咨询公司官网，用连续画布组合首屏、能力、方案、流程、套餐和转化入口。"
+msgstr "適合 AI、雲計算、資料平台、研發服務和技術諮詢公司官網，用連續畫布組合首屏、能力、方案、流程、套餐和轉化入口。"
+
+#: inc\admin\class-template-center-admin.php:935 inc\core\helpers\helpers-page-skins.php:457
+msgid "科技公司"
+msgstr "科技公司"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "健康保健用品官网"
+msgstr "健康保健用品官網"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "营养补充、日常保健用品、合规信息和产品咨询。"
+msgstr "營養補充、日常保健用品、合規資訊和產品諮詢。"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "健康用品"
+msgstr "健康用品"
+
+#: inc\admin\class-template-center-admin.php:957
+msgid "合规展示"
+msgstr "合規展示"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "情趣用品商城"
+msgstr "情趣用品商店"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "成人情趣用品、材质说明、隐私配送和清洁养护。"
+msgstr "成人情趣用品、材質說明、隱私配送和清潔養護。"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "18+ 成人适用"
+msgstr "18+ 成人適用"
+
+#: inc\admin\class-template-center-admin.php:958
+msgid "隐私配送"
+msgstr "隱私配送"
+
+#: inc\admin\class-template-center-admin.php:959
+msgid "服装品牌官网"
+msgstr "服裝品牌官網"
+
+#: inc\admin\class-template-center-admin.php:959
+msgid "服装品牌、当季系列、搭配画册、精选单品和品牌服务。"
+msgstr "服裝品牌、當季系列、搭配畫冊、精選單品和品牌服務。"
+
+#: inc\admin\class-template-center-admin.php:959 inc\modules\class-module-standards.php:336
+msgid "服装时尚"
+msgstr "服裝時尚"
+
+#: inc\admin\class-template-center-admin.php:1199
+msgid "按行业查看官方模板覆盖情况。已有模板的行业可直接点击筛选，暂无模板的行业会清晰标注。"
+msgstr "按產業檢視官方範本覆蓋情況。已有範本的產業可直接點擊篩選，暫無範本的產業會清晰標注。"
+
+#: inc\admin\class-template-center-admin.php:1203
+msgid "已覆盖 %1$s / %2$s，暂无模板 %3$s"
+msgstr "已覆蓋 %1$s / %2$s，暫無範本 %3$s"
+
+#: inc\admin\class-template-center-admin.php:1235
+msgid "暂无模板"
+msgstr "暫無範本"
+
+#: inc\admin\class-template-demo-data-service.php:87
+msgid "行业精选案例"
+msgstr "產業精選案例"
+
+#: inc\admin\class-template-demo-data-service.php:258
+msgid "企业核心业务"
+msgstr "企業核心業務"
+
+#: inc\admin\class-theme-doctor-service.php:55
+msgid "健康状态优秀"
+msgstr "健康狀態優秀"
+
+#: inc\admin\class-theme-doctor-service.php:58
+msgid "存在安全或可用性隐患"
+msgstr "存在安全或可用性隱患"
+
+#: inc\admin\class-theme-doctor-service.php:61
+msgid "良好，仍有优化空间"
+msgstr "良好，仍有最佳化空間"
+
+#: inc\admin\class-theme-doctor-service.php:89 inc\admin\class-theme-doctor-service.php:102
+msgid "PHP 运行环境与安全基线"
+msgstr "PHP 運行環境與安全基線"
+
+#: inc\admin\class-theme-doctor-service.php:91 inc\admin\class-theme-doctor-service.php:104
+msgid "系统环境"
+msgstr "系統環境"
+
+#: inc\admin\class-theme-doctor-service.php:94
+msgid "当前 PHP 版本为 %s，完全满足主题既定的安全基线要求（PHP 8.2 ≥ 8.2.35 或 8.3 ≥ 8.3.36）。"
+msgstr "目前 PHP 版本為 %s，完全滿足主題既定的安全基線要求（PHP 8.2 ≥ 8.2.35 或 8.3 ≥ 8.3.36）。"
+
+#: inc\admin\class-theme-doctor-service.php:107
+msgid "当前 PHP 版本 (%s) 低于安全基线要求，容易受到已知远程漏洞威胁。建议尽快升级至 PHP 8.2.35+ 或 8.3.36+。"
+msgstr "目前 PHP 版本 (%s) 低於安全基線要求，容易受到已知遠程漏洞威脅。建議盡快升級至 PHP 8.2.35+ 或 8.3.36+。"
+
+#: inc\admin\class-theme-doctor-service.php:126 inc\admin\class-theme-doctor-service.php:142 inc\admin\class-theme-doctor-service.php:153
+msgid "SMTP 邮件发信服务"
+msgstr "SMTP 郵件發信服務"
+
+#: inc\admin\class-theme-doctor-service.php:129
+msgid "当前未启用 SMTP 发信功能。访客找回密码、管理员接收订单及表单提醒邮件将可能无法正常送达。"
+msgstr "目前未啟用 SMTP 發信功能。訪客找回密碼、管理員接收訂單及表單提醒郵件將可能無法正常送達。"
+
+#: inc\admin\class-theme-doctor-service.php:131
+msgid "前往配置 SMTP"
+msgstr "前往配置 SMTP"
+
+#: inc\admin\class-theme-doctor-service.php:145
+msgid "已开启 SMTP 开关，但服务器地址或发信账号未完整填写。"
+msgstr "已開啟 SMTP 開關，但伺服器位址或發信帳號未完整填寫。"
+
+#: inc\admin\class-theme-doctor-service.php:147
+msgid "补充发信配置"
+msgstr "補充發信配置"
+
+#: inc\admin\class-theme-doctor-service.php:158
+msgid "SMTP 邮件服务已启用并就绪（服务器: %1$s，发信账户: %2$s），信封发件人已自动保护对齐。"
+msgstr "SMTP 郵件服務已啟用並就緒（伺服器: %1$s，發信帳戶: %2$s），信封發件人已自動保護對齊。"
+
+#: inc\admin\class-theme-doctor-service.php:191 inc\admin\class-theme-doctor-service.php:201 inc\admin\class-theme-doctor-service.php:212
+msgid "WebP 图像极速处理引擎"
+msgstr "WebP 圖像極速處理引擎"
+
+#: inc\admin\class-theme-doctor-service.php:193 inc\admin\class-theme-doctor-service.php:203 inc\admin\class-theme-doctor-service.php:214
+msgid "性能与媒体"
+msgstr "性能與媒體"
+
+#: inc\admin\class-theme-doctor-service.php:194
+msgid "服务器当前 PHP 未检测到 GD 或 Imagick 的 WebP 编码支持。主题已自动启用平滑回退，但建议安装 php-gd / php-imagick 以享受 50% 图片体积减小。"
+msgstr "伺服器目前 PHP 未偵測到 GD 或 Imagick 的 WebP 編碼支援。主題已自動啟用平滑回退，但建議安裝 php-gd / php-imagick 以享受 50% 圖片體積減小。"
+
+#: inc\admin\class-theme-doctor-service.php:204
+msgid "服务器已具备 WebP 编码能力，但主题设置中已关闭 WebP 缩略图生成。建议开启以节省带宽。"
+msgstr "伺服器已具備 WebP 編碼能力，但主題設定中已關閉 WebP 縮略圖生成。建議開啟以節省帶寬。"
+
+#: inc\admin\class-theme-doctor-service.php:206
+msgid "开启 WebP 压缩"
+msgstr "開啟 WebP 壓縮"
+
+#: inc\admin\class-theme-doctor-service.php:215
+msgid "WebP 引擎正常工作。前台缩略图已实现自动化 WebP 转换，并适配阿里云 OSS、腾讯云 COS 云端转码。"
+msgstr "WebP 引擎正常工作。前台縮略圖已實現自動化 WebP 轉換，並適配阿裡雲 OSS、騰訊雲 COS 雲端轉碼。"
+
+#: inc\admin\class-theme-doctor-service.php:232 inc\admin\class-theme-doctor-service.php:241
+msgid "W3C 推测性预渲染 (0秒瞬开)"
+msgstr "W3C 推測性預渲染 (0秒瞬開)"
+
+#: inc\admin\class-theme-doctor-service.php:235
+msgid "推测性预渲染已开启。访客鼠标悬停链接时后台自动预载，呈现类似单页应用（SPA）的无缝秒开体验。"
+msgstr "推測性預渲染已開啟。訪客鼠標懸停連結時後台自動預載，呈現類似單頁應用（SPA）的無縫秒開體驗。"
+
+#: inc\admin\class-theme-doctor-service.php:244
+msgid "推测性预渲染当前处于关闭状态。建议在优化设置中开启，体验 0ms 网页切换效果。"
+msgstr "推測性預渲染目前處於關閉狀態。建議在最佳化設定中開啟，體驗 0ms 網頁切換效果。"
+
+#: inc\admin\class-theme-doctor-service.php:246
+msgid "开启预渲染"
+msgstr "開啟預渲染"
+
+#: inc\admin\class-theme-doctor-service.php:263 inc\admin\class-theme-doctor-service.php:274
+msgid "ICP 网站备案号合规展示"
+msgstr "ICP 網站備案號合規展示"
+
+#: inc\admin\class-theme-doctor-service.php:265 inc\admin\class-theme-doctor-service.php:276
+msgid "合规运营"
+msgstr "合規運營"
+
+#: inc\admin\class-theme-doctor-service.php:266
+msgid "未检测到 ICP 备案编号。面向中国大陆境内公开运行的商业或企业站点，需在页脚公示合规备案号。"
+msgstr "未偵測到 ICP 備案編號。面向中國大陸境內公開運行的商業或企業網站，需在頁尾公示合規備案號。"
+
+#: inc\admin\class-theme-doctor-service.php:268
+msgid "填写备案号"
+msgstr "填寫備案號"
+
+#: inc\admin\class-theme-doctor-service.php:279
+msgid "已正确配置 ICP 备案信息：%s。"
+msgstr "已正確配置 ICP 備案資訊：%s。"
+
+#: inc\admin\class-theme-doctor-service.php:296 inc\admin\class-theme-doctor-service.php:307
+msgid "搜索引擎友好度 (固定链接)"
+msgstr "搜尋引擎友好度 (固定連結)"
+
+#: inc\admin\class-theme-doctor-service.php:298 inc\admin\class-theme-doctor-service.php:309
+msgid "SEO 优化"
+msgstr "SEO 最佳化"
+
+#: inc\admin\class-theme-doctor-service.php:299
+msgid "当前站点正在使用朴素动态链接（如 ?p=123），对百度、Google 等搜索引擎收录极不友好。强烈建议调整为伪静态结构（如 /%post_id%.html）。"
+msgstr "目前網站正在使用樸素動態連結（如 ?p=123），對百度、Google 等搜尋引擎收錄極不友好。強烈建議調整為偽靜態結構（如 /%post_id%.html）。"
+
+#: inc\admin\class-theme-doctor-service.php:301
+msgid "配置伪静态"
+msgstr "配置偽靜態"
+
+#: inc\admin\class-theme-doctor-service.php:310
+msgid "固定链接伪静态规则已正常生效，有利于搜索引擎收录与抓取。"
+msgstr "固定連結偽靜態規則已正常生效，有利於搜尋引擎收錄與抓取。"
+
+#: inc\admin\class-theme-doctor-service.php:327 inc\admin\class-theme-doctor-service.php:341 inc\admin\class-theme-doctor-service.php:352
+msgid "自定义企业字体配置"
+msgstr "自定義企業字體配置"
+
+#: inc\admin\class-theme-doctor-service.php:329 inc\admin\class-theme-doctor-service.php:343 inc\admin\class-theme-doctor-service.php:354
+msgid "视觉与资产"
+msgstr "視覺與資產"
+
+#: inc\admin\class-theme-doctor-service.php:330
+msgid "未启用自定义字体，站点正使用高性能系统级原生字体族（-apple-system / BlinkMacSystemFont）。"
+msgstr "未啟用自定義字體，網站正使用高性能系統級原生字體族（-apple-system / BlinkMacSystemFont）。"
+
+#: inc\admin\class-theme-doctor-service.php:344
+msgid "已开启自定义字体开关，但未提供 WOFF2 字体文件地址，将导致字体加载失败并影响页面排版。"
+msgstr "已開啟自定義字體開關，但未提供 WOFF2 字體檔案位址，將導致字體載入失敗並影響頁面排版。"
+
+#: inc\admin\class-theme-doctor-service.php:346
+msgid "上传字体文件"
+msgstr "上傳字體檔案"
+
+#: inc\admin\class-theme-doctor-service.php:355
+msgid "已配置 WOFF2 字体文件，且头部关键预加载通道已激活，有效消除字体闪烁 (FOUT)。"
+msgstr "已配置 WOFF2 字體檔案，且頁首關鍵預載入通道已激活，有效消除字體閃爍 (FOUT)。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:748
+msgid "正在处理，请稍候..."
+msgstr "正在處理，請稍候..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:754
+msgid "操作完成"
+msgstr "操作完成"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:762 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:32
+msgid "清空全部缓存"
+msgstr "清空全部快取"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:762 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:31
+msgid "扫描并清理未使用缓存"
+msgstr "掃描並清理未使用快取"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:771
+msgid "确定清空全部缩略图缓存吗？前台访问时会重新生成。"
+msgstr "確定清空全部縮略圖快取嗎？前台存取時會重新生成。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:774
+msgid "确定扫描并删除未使用的缩略图缓存吗？"
+msgstr "確定掃描並刪除未使用的縮略圖快取嗎？"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:774
+msgid "扫描中..."
+msgstr "掃描中..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:877
+msgid "确定要清理 IP 缓存吗？此操作只会删除主题 IP 归属地临时缓存文件。"
+msgstr "確定要清理 IP 快取嗎？此操作只會刪除主題 IP 歸屬地暫時快取檔案。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:901 inc\admin\traits\class-admin-settings-admin-trait.php:905 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:239 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:241
+msgid "清理 IP 接口缓存"
+msgstr "清理 IP 介面快取"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:911
+msgid "确定要重置用户 IP 归属地数据吗？\\n\\n此操作不会删除用户账号，只会清空已保存的旧 IP 归属地，用户下次访问时重新获取并写入数据库。"
+msgstr "確定要重設使用者 IP 歸屬地資料嗎？\\n\\n此操作不會刪除使用者帳號，只會清空已儲存的舊 IP 歸屬地，使用者下次存取時重新獲取並寫入資料庫。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:918
+msgid "重置中..."
+msgstr "重設中..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:919
+msgid "正在重置数据库中的遗留 IP 数据..."
+msgstr "正在重設資料庫中的遺留 IP 資料..."
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:933
+msgid "重置失败: "
+msgstr "重設失敗: "
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:935 inc\admin\traits\class-admin-settings-admin-trait.php:939 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:248 inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:250
+msgid "重置用户 IP 归属地数据"
+msgstr "重設使用者 IP 歸屬地資料"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1544
+msgid "体检请求失败，请稍后重试。"
+msgstr "體檢請求失敗，請稍後重試。"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1551
+msgid "网络请求异常，无法连接体检诊断接口: "
+msgstr "網路請求異常，無法連接體檢診斷介面: "
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1567
+msgid "检查完成时间: "
+msgstr "檢查完成時間: "
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1568
+msgid "正常: "
+msgstr "正常: "
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1569
+msgid "优化项: "
+msgstr "最佳化項: "
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1570
+msgid "需修复: "
+msgstr "需修復: "
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1636
+msgid "全站主题设置已恢复为初始默认值！"
+msgstr "全站主題設定已還原為初始預設值！"
+
+#: inc\admin\traits\class-admin-settings-admin-trait.php:1661
+msgid "当前【%s】选项卡设置已成功恢复为默认值！其他选项卡设置保持完好。"
+msgstr "目前【%s】選項卡設定已成功還原為預設值！其他選項卡設定保持完好。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:29 inc\admin\traits\class-admin-settings-ajax-trait.php:41 inc\admin\traits\class-admin-settings-ajax-trait.php:59
+msgid "缩略图服务未加载"
+msgstr "縮略圖服務未載入"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:45
+msgid "已删除 %1$s 个缓存文件，释放 %2$s。"
+msgstr "已刪除 %1$s 個快取檔案，釋放 %2$s。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:47 inc\admin\traits\class-admin-settings-ajax-trait.php:65
+msgid "%s 个文件删除失败，请检查目录权限。"
+msgstr "%s 個檔案刪除失敗，請檢查目錄權限。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:63
+msgid "扫描完成，已清理 %1$s 个未使用缓存，释放 %2$s。"
+msgstr "掃描完成，已清理 %1$s 個未使用快取，釋放 %2$s。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:185
+msgid "【服务商返回：%s】"
+msgstr "【服務商返回：%s】"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:1863
+msgid "数据库操作失败"
+msgstr "資料庫操作失敗"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:1866
+msgid "成功清除了 %d 条用户 IP 归属地遗留数据"
+msgstr "成功清除了 %d 條使用者 IP 歸屬地遺留資料"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2022
+msgid "缺少源文件 assets/css/modules.source.css。"
+msgstr "缺少源檔案 assets/css/modules.source.css。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2024
+msgid "源文件 modules.source.css 不可读。"
+msgstr "源檔案 modules.source.css 不可讀。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2153
+msgid "modules.source.css 已变化：manifest source_bytes=%1$d，当前=%2$d。建议重新执行拆分脚本。"
+msgstr "modules.source.css 已變化：manifest source_bytes=%1$d，目前=%2$d。建議重新執行拆分腳本。"
+
+#: inc\admin\traits\class-admin-settings-ajax-trait.php:2159
+msgid "modules.source.css 与 manifest source_bytes 一致。"
+msgstr "modules.source.css 與 manifest source_bytes 一致。"
+
+#: inc\admin\traits\class-admin-settings-backup-trait.php:17
+msgid "您可以导出当前主题核心设置，或导入之前备份的设置文件。当前备份包含主题核心设置与扩展配置。"
+msgstr "您可以匯出目前主題核心設定，或匯入之前備份的設定檔案。目前備份包含主題核心設定與擴展配置。"
+
+#: inc\admin\traits\class-admin-settings-backup-trait.php:26
+msgid "导出包含主题设置和招聘设置的 JSON 文件，可用于备份或恢复。"
+msgstr "匯出包含主題設定和招募設定的 JSON 檔案，可用於備份或還原。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:157
+msgid "主题说明"
+msgstr "主題說明"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:158
+msgid "插件推荐"
+msgstr "外掛推薦"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:159
+msgid "备份恢复"
+msgstr "備份還原"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:186 inc\core\helpers\helpers-footer-visual.php:70
+msgid "自动跟随当前页面"
+msgstr "自動跟隨目前頁面"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:187 inc\core\helpers\helpers-footer-visual.php:77
+msgid "清亮蓝色"
+msgstr "清亮藍色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:188 inc\core\helpers\helpers-footer-visual.php:87
+msgid "暖橙营销"
+msgstr "暖橙營銷"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:189 inc\core\helpers\helpers-footer-visual.php:97
+msgid "清新绿色"
+msgstr "清新綠色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:190 inc\core\helpers\helpers-footer-visual.php:107
+msgid "红粉活动"
+msgstr "紅粉活動"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:191 inc\core\helpers\helpers-footer-visual.php:117
+msgid "柔紫科技"
+msgstr "柔紫科技"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:295 inc\core\class-search-mode-manager.php:51 inc\modules\modules\class-hero-search-module.php:220 inc\modules\modules\class-video-portal-hero-module.php:114
+msgid "文章搜索"
+msgstr "文章搜尋"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:406
+msgid "认证组件（登录/注册）"
+msgstr "認證組件（登入/註冊）"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:407 inc\core\design-tokens\component-style-definitions.php:44
+msgid "认证主按钮背景"
+msgstr "認證主按鈕背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:407
+msgid "控制全局所有登录/注册大按钮的背景颜色。"
+msgstr "控制全域所有登入/註冊大按鈕的背景顏色。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:408 inc\core\design-tokens\component-style-definitions.php:45
+msgid "认证主按钮文字"
+msgstr "認證主按鈕文字"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:409 inc\core\design-tokens\component-style-definitions.php:46
+msgid "验证码按钮背景"
+msgstr "驗證碼按鈕背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:410 inc\core\design-tokens\component-style-definitions.php:47
+msgid "验证码按钮文字"
+msgstr "驗證碼按鈕文字"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:411 inc\core\design-tokens\component-style-definitions.php:48
+msgid "滑动轨道背景"
+msgstr "滑動軌道背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:412 inc\core\design-tokens\component-style-definitions.php:49
+msgid "滑块按钮背景"
+msgstr "滑塊按鈕背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:413 inc\core\design-tokens\component-style-definitions.php:50
+msgid "滑动进度背景"
+msgstr "滑動進度背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:414 inc\core\design-tokens\component-style-definitions.php:51
+msgid "验证成功颜色"
+msgstr "驗證成功顏色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:414
+msgid "滑块验证成功后的绿色提示状态。"
+msgstr "滑塊驗證成功後的綠色提示狀態。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:504
+msgid "统一管理服务、产品、案例、团队、资源、课程和活动等内容，供页面装修、AI 装修及内容接口使用。"
+msgstr "統一管理服務、產品、案例、團隊、資源、課程和活動等內容，供頁面裝修、AI 裝修及內容介面使用。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:563
+msgid "显示个人中心"
+msgstr "顯示個人中心"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:563
+msgid "开启后，用户登录后在顶部显示个人中心头像入口；与“显示登录按钮”相互独立。"
+msgstr "開啟後，使用者登入後在頂部顯示個人中心頭像入口；與“顯示登入按鈕”相互獨立。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:613
+msgid "这里主要决定哪一个装修页面接管页脚，以及接管范围；页脚颜色、波浪和三段背景在下方“页脚三段式视觉装修”里调整。"
+msgstr "這裡主要決定哪一個裝修頁面接管頁尾，以及接管範圍；頁尾顏色、波浪和三段背景在下方“頁尾三段式視覺裝修”裡調整。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:623 inc\admin\traits\class-admin-settings-page-render-trait.php:396
+msgid "页脚独立区域装修"
+msgstr "頁尾獨立區域裝修"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:623
+msgid "三个区域可同时选择不同的装修页面。设置后优先于上方单页面替换配置；留空的区域继续使用主题默认内容或旧配置。"
+msgstr "三個區域可同時選擇不同的裝修頁面。設定後優先於上方單頁面替換配置；留空的區域繼續使用主題預設內容或舊配置。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:624
+msgid "关于我们/联系区域装修页面"
+msgstr "關於我們/聯絡區域裝修頁面"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:625
+msgid "友情链接区域装修页面"
+msgstr "友情連結區域裝修頁面"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:625
+msgid "该区域仍仅在首页显示。"
+msgstr "該區域仍僅在首頁顯示。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:626
+msgid "版权/ICP 备案区域装修页面"
+msgstr "版權/ICP 備案區域裝修頁面"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:626
+msgid "选择后完全替换默认版权、ICP 备案和公安备案输出。"
+msgstr "選擇後完全替換預設版權、ICP 備案和公安備案輸出。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:627
+msgid "页脚三段式视觉装修"
+msgstr "頁尾三段式視覺裝修"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:627
+msgid "分别控制上方信息区、中间友情链接区和底部版权备案区的背景、文字、波浪衔接与动画范围。颜色字段支持 #fff、rgba(...)、var(...) 和 linear-gradient(...)。"
+msgstr "分別控制上方資訊區、中間友情連結區和底部版權備案區的背景、文字、波浪銜接與動畫範圍。顏色欄位支援 #fff、rgba(...)、var(...) 和 linear-gradient(...)。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:628
+msgid "信息主板块背景"
+msgstr "資訊主板塊背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:629
+msgid "信息主板块文字"
+msgstr "資訊主板塊文字"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:630
+msgid "信息主板块标题"
+msgstr "資訊主板塊標題"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:631
+msgid "信息主板块链接"
+msgstr "資訊主板塊連結"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:632
+msgid "信息主板块链接悬停"
+msgstr "資訊主板塊連結懸停"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:633
+msgid "信息主板块上间距"
+msgstr "資訊主板塊上間距"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:634
+msgid "信息主板块下间距"
+msgstr "資訊主板塊下間距"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:635
+msgid "友情链接背景跟随信息区"
+msgstr "友情連結背景跟隨資訊區"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:636
+msgid "友情链接板块背景"
+msgstr "友情連結板塊背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:637
+msgid "友情链接板块文字"
+msgstr "友情連結板塊文字"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:638
+msgid "友情链接板块链接"
+msgstr "友情連結板塊連結"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:639
+msgid "友情链接板块链接悬停"
+msgstr "友情連結板塊連結懸停"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:640
+msgid "友情链接上下间距"
+msgstr "友情連結上下間距"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:641
+msgid "备案版权板块背景"
+msgstr "備案版權板塊背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:642
+msgid "备案版权板块文字"
+msgstr "備案版權板塊文字"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:643
+msgid "备案版权板块链接"
+msgstr "備案版權板塊連結"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:644
+msgid "备案版权链接悬停"
+msgstr "備案版權連結懸停"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:645
+msgid "备案版权分割线"
+msgstr "備案版權分割線"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:646
+msgid "备案版权上下间距"
+msgstr "備案版權上下間距"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:647
+msgid "启用顶部波浪衔接"
+msgstr "啟用頂部波浪銜接"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:649
+msgid "单层波浪"
+msgstr "單層波浪"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:650
+msgid "双层波浪"
+msgstr "雙層波浪"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:651
+msgid "柔和大曲线"
+msgstr "柔和大麯線"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:652
+msgid "斜切过渡"
+msgstr "斜切過渡"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:654
+msgid "波浪配色方案"
+msgstr "波浪配色方案"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:654
+msgid "作为波浪背景、主副波浪和柔化过渡的默认搭配；下方手动颜色留空时生效。"
+msgstr "作為波浪背景、主副波浪和柔化過渡的預設搭配；下方手動顏色留空時生效。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:655 inc\core\helpers\helpers-page-skins.php:1646
+msgid "波浪上方背景"
+msgstr "波浪上方背景"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:656 inc\core\helpers\helpers-page-skins.php:1651
+msgid "波浪柔化起始色"
+msgstr "波浪柔化起始色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:657 inc\core\helpers\helpers-page-skins.php:1656
+msgid "波浪柔化高度"
+msgstr "波浪柔化高度"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:659 inc\core\helpers\helpers-page-skins.php:1666
+msgid "主波浪颜色"
+msgstr "主波浪顏色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:660 inc\core\helpers\helpers-page-skins.php:1671
+msgid "副波浪颜色"
+msgstr "副波浪顏色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:661 inc\core\helpers\helpers-page-skins.php:1676
+msgid "副波浪透明度"
+msgstr "副波浪透明度"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:661
+msgid "请输入 0 到 1 之间的任意小数，例如 0.35、0.37 或 0.4；超出范围的值会被限制到有效范围。"
+msgstr "請輸入 0 到 1 之間的任意小數，例如 0.35、0.37 或 0.4；超出範圍的值會被限制到有效範圍。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:721
+msgid "特效作用范围"
+msgstr "特效作用範圍"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:722
+msgid "只作用于信息主板块"
+msgstr "只作用於資訊主板塊"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:723
+msgid "覆盖整个页脚"
+msgstr "覆蓋整個頁尾"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:724
+msgid "作为整段背景装饰层"
+msgstr "作為整段背景裝飾層"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:799
+msgid "控制后台左侧菜单里的可选业务入口，适合精简后台。"
+msgstr "控制後台左側選單裡的可選業務入口，適合精簡後台。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:806
+msgid "灵简IP API Key"
+msgstr "靈簡IP API Key"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:806
+msgid "用于调用灵简IP归属地查询接口（api.jingxialai.com）。请在官网申请并填写 X-API-Key。不填则可能无法查询国内IP归属地。"
+msgstr "用於調用靈簡IP歸屬地查詢介面（api.jingxialai.com）。請在官網申請並填寫 X-API-Key。不填則可能無法查詢國內IP歸屬地。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:816
+msgid "全站首页默认标题。在最新文章模式下直接生效；若使用静态页面作为首页且页面未单独设置 SEO 标题时，作为全局回退标题生效。"
+msgstr "全站首頁預設標題。在最新文章模式下直接生效；若使用靜態頁面作為首頁且頁面未單獨設定 SEO 標題時，作為全域回退標題生效。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:822
+msgid "全站首页默认描述。最新文章模式直接生效；静态首页在页面未单独填写 SEO 描述时自动回退使用此处内容。"
+msgstr "全站首頁預設描述。最新文章模式直接生效；靜態首頁在頁面未單獨填寫 SEO 描述時自動回退使用此處內容。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:828
+msgid "全站首页默认关键词。最新文章模式直接生效；静态首页在页面未单独填写 SEO 关键词时自动回退使用此处内容。"
+msgstr "全站首頁預設關鍵字。最新文章模式直接生效；靜態首頁在頁面未單獨填寫 SEO 關鍵字時自動回退使用此處內容。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:954
+msgid "系统认证页面修复与去重"
+msgstr "系統認證頁面修復與去重"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:954
+msgid "检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。"
+msgstr "偵測並一鍵清理因高並發或異常重復生成的“使用者登入 / 使用者註冊 / 找回密碼 / 個人中心”頁面。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1563
+msgid "提示：Google Analytics、GTM、Google Ads、Meta Pixel、TikTok Pixel 等可直接粘贴对应平台提供的代码。验证码、支付、短信和邮件服务请在各自设置中配置。"
+msgstr "提示：Google Analytics、GTM、Google Ads、Meta Pixel、TikTok Pixel 等可直接粘貼對應平台提供的代碼。驗證碼、付款、簡訊和郵件服務請在各自設定中配置。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1570 inc\admin\traits\class-admin-settings-config-trait.php:1577 inc\admin\traits\class-admin-settings-config-trait.php:1584 inc\admin\traits\class-admin-settings-config-trait.php:1591 inc\admin\traits\class-admin-settings-config-trait.php:1598
+msgid "访客同意后加载"
+msgstr "訪客同意後載入"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1570 inc\admin\traits\class-admin-settings-config-trait.php:1577 inc\admin\traits\class-admin-settings-config-trait.php:1598
+msgid "非必要分类会等待访客授权，实际规则以上方 Cookie 分类为准。"
+msgstr "非必要分類會等待訪客授權，實際規則以上方 Cookie 分類為準。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1584
+msgid "统计代码默认归入统计分类，并按 Cookie 分类授权执行。"
+msgstr "統計代碼預設歸入統計分類，並按 Cookie 分類授權執行。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1591
+msgid "广告代码默认归入广告分类，并按 Cookie 分类授权执行。"
+msgstr "廣告代碼預設歸入廣告分類，並按 Cookie 分類授權執行。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1844
+msgid "留空使用当前页面/模板预设的公告配色；无预设时使用明亮红色系兜底，支持纯色或渐变色"
+msgstr "留空使用目前頁面/範本預設的公告配色；無預設時使用明亮紅色系備用，支援純色或漸變色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1844
+msgid "如: linear-gradient(135deg, #ef4444 0%, #f43f5e 100%)"
+msgstr "如: linear-gradient(135deg, #ef4444 0%, #f43f5e 100%)"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1846
+msgid "留空跟随当前页面/模板预设；无预设时使用醒目的红色 #dc2626"
+msgstr "留空跟隨目前頁面/範本預設；無預設時使用醒目的紅色 #dc2626"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1846
+msgid "如: #dc2626"
+msgstr "如: #dc2626"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1882
+msgid "提示：开启后所有访客均可见！调试完毕后请立即关闭"
+msgstr "提示：開啟後所有訪客均可見！調試完畢後請立即關閉"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1890
+msgid "兼容提示：如果小程序、区块编辑器、第三方插件或外部 API 客户端异常，先开启“兼容回滚模式”并保存，即可快速恢复 WordPress 默认行为。"
+msgstr "兼容提示：如果小程序、區塊編輯器、第三方外掛或外部 API 客戶端異常，先開啟“兼容回滾模式”並儲存，即可快速還原 WordPress 預設行為。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1895
+msgid "仅允许登录用户访问 REST API；可能影响小程序、区块编辑器、站点健康和外部 API 客户端，请先配置白名单。"
+msgstr "僅允許登入使用者存取 REST API；可能影響小程序、區塊編輯器、網站健康和外部 API 客戶端，請先配置白名單。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1904
+msgid "禁用区块编辑器并恢复经典编辑器；如需保留某些文章类型，请在下方白名单中添加。"
+msgstr "停用區塊編輯器並還原經典編輯器；如需保留某些文章類型，請在下方白名單中添加。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1905
+msgid "禁用 WP 7.0 原生 AI"
+msgstr "停用 WP 7.0 原生 AI"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1905
+msgid "彻底禁用 WordPress 7.0 核心自带的 AI 功能并拦截对应的 Connectors 后台页面，提升后台访问速度。"
+msgstr "徹底停用 WordPress 7.0 核心自帶的 AI 功能並攔截對應的 Connectors 後台頁面，提升後台存取速度。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1907
+msgid "每行一个允许继续使用区块编辑器的上下文。可填写 post_type:product、post_type:page、post_type:* 或 widgets。留空时文章和页面也会使用经典编辑器。"
+msgstr "每行一個允許繼續使用區塊編輯器的上下文。可填寫 post_type:product、post_type:page、post_type:* 或 widgets。留空時文章和頁面也會使用經典編輯器。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1911 inc\admin\traits\class-admin-settings-config-trait.php:1976
+msgid "启用后自动刷新固定链接规则，有利于 SEO 优化"
+msgstr "啟用後自動刷新固定連結規則，有利於 SEO 最佳化"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1914
+msgid "默认搜索模式"
+msgstr "預設搜尋模式"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1914
+msgid "影视搜索仅在启灵播放器及视频元数据表可用时显示；能力失效后自动回退到综合搜索。"
+msgstr "影視搜尋僅在啟靈播放器及影片元資料表可用時顯示；能力失效後自動回退到綜合搜尋。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1915
+msgid "允许访客切换搜索模式"
+msgstr "允許訪客切換搜尋模式"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1915
+msgid "开启后，搜索结果页允许访客在管理员启用的模式之间切换。"
+msgstr "開啟後，搜尋結果頁允許訪客在管理員啟用的模式之間切換。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1916
+msgid "前台可用搜索模式"
+msgstr "前台可用搜尋模式"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1916
+msgid "插件注册的新搜索模式会自动加入候选列表；至少保留一种可用模式。"
+msgstr "外掛註冊的新搜尋模式會自動加入候選列表；至少保留一種可用模式。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 12 条"
+msgstr "每頁 12 條"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 18 条"
+msgstr "每頁 18 條"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 24 条"
+msgstr "每頁 24 條"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1917
+msgid "每页 30 条"
+msgstr "每頁 30 條"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1918
+msgid "热门搜索词"
+msgstr "熱門搜尋詞"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1918
+msgid "热播电影,最新电视剧,热门动漫"
+msgstr "熱播電影,最新電視劇,熱門動漫"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1918
+msgid "使用半角或全角逗号分隔，供搜索结果和影视搜索模块调用。"
+msgstr "使用半角或全角逗號分隔，供搜尋結果和影視搜尋模組調用。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1923
+msgid "存在产品类型（product）时，实时结果中包含产品。"
+msgstr "存在產品類型（product）時，實時結果中包含產品。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1926
+msgid "产品结果显示价格文本；无产品价格元数据时自动忽略。"
+msgstr "產品結果顯示價格文本；無產品價格元資料時自動忽略。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1934
+msgid "移除前端块样式；可能导致区块内容或第三方区块样式缺失，请用白名单保留关键样式。"
+msgstr "移除前端塊樣式；可能導致區塊內容或第三方區塊樣式缺失，請用白名單保留關鍵樣式。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:1991
+msgid "每行一个保留规则：core:minor、core:*、plugin:my-plugin、theme:twentytwentysix、translation:zh_cn。仅在上方禁用项开启时生效。"
+msgstr "每行一個保留規則：core:minor、core:*、plugin:my-plugin、theme:twentytwentysix、translation:zh_cn。僅在上方停用項開啟時生效。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2000
+msgid "提示：实验性功能：可能影响内联 JS/CSS，如遇问题请关闭此选项"
+msgstr "提示：實驗性功能：可能影響內聯 JS/CSS，如遇問題請關閉此選項"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2003
+msgid "按需模式（当前页面独立模块）"
+msgstr "按需模式（目前頁面獨立模組）"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2004
+msgid "按需模式只加载当前页面使用到的模块独立 CSS 文件，极致精简首屏体积；单文件模式合并加载完整 modules.css。"
+msgstr "按需模式只載入目前頁面使用到的模組獨立 CSS 檔案，極致精簡首屏體積；單檔案模式合並載入完整 modules.css。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2032
+msgid "启用即时预渲染 (0ms秒开)"
+msgstr "啟用即時預渲染 (0ms秒開)"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2032
+msgid "利用现代浏览器 W3C Speculation Rules 原生规范与推测性预取技术，当鼠标悬停在链接上时静默预载目标页面，使点击跳转达到 0ms 秒开。已自动排除后台、登录页及动态操作链接。"
+msgstr "利用現代瀏覽器 W3C Speculation Rules 原生規範與推測性預取技術，當鼠標懸停在連結上時靜默預載目標頁面，使點擊跳轉達到 0ms 秒開。已自動排除後台、登入頁及動態操作連結。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2033
+msgid "启用缩略图 WebP 格式"
+msgstr "啟用縮略圖 WebP 格式"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2033
+msgid "开启后，本地动态缩略图与云存储（阿里云/腾讯云/七牛云/又拍云）将自动转换为高压缩比 WebP 格式输出，图片体积直降 40%~65%。"
+msgstr "開啟後，本機動態縮略圖與雲存儲（阿裡雲/騰訊雲/七牛雲/又拍雲）將自動轉換為高壓縮比 WebP 格式輸出，圖片體積直降 40%~65%。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2060
+msgid "服务器支持 WebP（GD 库已启用）"
+msgstr "伺服器支援 WebP（GD 庫已啟用）"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2060
+msgid "提示：服务器不支持 WebP，请安装 GD 库的 WebP 模块"
+msgstr "提示：伺服器不支援 WebP，請安裝 GD 庫的 WebP 模組"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2066
+msgid "提示：启用后新上传的图片只保留原图，可能影响依赖特定尺寸的功能"
+msgstr "提示：啟用後新上傳的圖片只保留原圖，可能影響依賴特定尺寸的功能"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2102
+msgid "本土化与白标"
+msgstr "本土化與白標"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2102
+msgid "隐藏后台中的 WordPress 品牌标识，打造更干净的管理界面。所有隐藏仅为视觉层面，不影响任何功能和权限。"
+msgstr "隱藏後台中的 WordPress 品牌標識，打造更乾淨的管理介面。所有隱藏僅為視覺層面，不影響任何功能和權限。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2103
+msgid "启用后台白标"
+msgstr "啟用後台白標"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2103
+msgid "开启后可逐项控制下方各隐藏选项；关闭则全部恢复默认。"
+msgstr "開啟後可逐項控制下方各隱藏選項；關閉則全部還原預設。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2104
+msgid "移除后台标题 WP 后缀"
+msgstr "移除後台標題 WP 後綴"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2104
+msgid "移除浏览器标签页标题末尾的 \" — WordPress\" 字样。"
+msgstr "移除瀏覽器標籤頁標題末尾的 \" — WordPress\" 字樣。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2105
+msgid "隐藏左上角 WP Logo"
+msgstr "隱藏左上角 WP Logo"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2105
+msgid "移除全局 Admin Bar 左上角的 WordPress 标志及其下拉菜单。"
+msgstr "移除全域 Admin Bar 左上角的 WordPress 標志及其下拉選單。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2106
+msgid "隐藏底部版权与版本号"
+msgstr "隱藏底部版權與版本號"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2106
+msgid "清空后台页面底部的 WordPress 感谢语（左下角）和版本号（右下角）。"
+msgstr "清空後台頁面底部的 WordPress 感謝語（左下角）和版本號（右下角）。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2107
+msgid "移除工具与更新菜单"
+msgstr "移除工具與更新選單"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2107
+msgid "从侧边栏移除\"工具\"顶级菜单和\"仪表盘 → 更新\"子菜单。页面本身仍可通过 URL 直接访问。"
+msgstr "從側邊欄移除\"工具\"頂級選單和\"儀表盤 → 更新\"子選單。頁面本身仍可通過 URL 直接存取。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2108
+msgid "隐藏安装按钮与帮助面板"
+msgstr "隱藏安裝按鈕與說明面板"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2108
+msgid "纯 CSS 隐藏主题/插件页面的\"安装\"按钮、顶部更新横幅和右上角\"帮助\"选项卡。"
+msgstr "純 CSS 隱藏主題/外掛頁面的\"安裝\"按鈕、頂部更新橫幅和右上角\"說明\"選項卡。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2165
+msgid "启用默认弹窗登录"
+msgstr "啟用預設彈窗登入"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2165
+msgid "开启后，评论、内容限制、投稿等位置的登录入口使用弹窗登录；与“显示登录按钮”相互独立。"
+msgstr "開啟後，評論、內容限制、投稿等位置的登入入口使用彈窗登入；與“顯示登入按鈕”相互獨立。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2171
+msgid "微信登录需要启用对应插件；QQ、GitHub 和 Google 登录可在下方分别配置。"
+msgstr "微信登入需要啟用對應外掛；QQ、GitHub 和 Google 登入可在下方分別配置。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2189
+msgid "独立页背景模式"
+msgstr "獨立頁背景模式"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2190
+msgid "自动：有图优先，无图用颜色"
+msgstr "自動：有圖優先，無圖用顏色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2191
+msgid "跟随主题风格预设"
+msgstr "跟隨主題風格預設"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2192
+msgid "仅使用自定义背景色"
+msgstr "僅使用自定義背景色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2193
+msgid "优先使用自定义背景图"
+msgstr "優先使用自定義背景圖"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2194
+msgid "默认自动模式：填写背景图时显示图片，未填写图片时使用背景色，二者都为空时继续跟随主题风格预设。"
+msgstr "預設自動模式：填寫背景圖時顯示圖片，未填寫圖片時使用背景色，二者都為空時繼續跟隨主題風格預設。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2195
+msgid "独立页背景色"
+msgstr "獨立頁背景色"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2195
+msgid "用于登录、注册、找回密码独立页面的整页背景；留空时使用当前主题风格预设背景。"
+msgstr "用於登入、註冊、找回密碼獨立頁面的整頁背景；留空時使用目前主題風格預設背景。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2196
+msgid "独立页背景图"
+msgstr "獨立頁背景圖"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2196
+msgid "用于登录、注册、找回密码独立页面的整页背景。推荐尺寸：1920×1200 px 或更高。"
+msgstr "用於登入、註冊、找回密碼獨立頁面的整頁背景。推薦尺寸：1920×1200 px 或更高。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2197
+msgid "背景图透明度"
+msgstr "背景圖透明度"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2197
+msgid "仅在显示背景图时生效；数值越低，底下的背景色或预设渐变越明显。"
+msgstr "僅在顯示背景圖時生效；數值越低，底下的背景色或預設漸變越明顯。"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2244
+msgid "提示：开启后，未完成实名认证的登录用户将被强制跳转到个人中心实名认证页面"
+msgstr "提示：開啟後，未完成實名認證的登入使用者將被強制跳轉到個人中心實名認證頁面"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2281
+msgid "VIP 访问控制"
+msgstr "VIP 存取控制"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2281
+msgid "处理设置了最低 VIP 权限的分类和内容，当权限不足时的处理动作"
+msgstr "處理設定了最低 VIP 權限的分類和內容，當權限不足時的處理動作"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "拦截处理方式"
+msgstr "攔截處理方式"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "当 VIP 权限不足时的响应方式"
+msgstr "當 VIP 權限不足時的回應方式"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "显示提示界面"
+msgstr "顯示提示介面"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2282
+msgid "跳转指定页面"
+msgstr "跳轉指定頁面"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2283
+msgid "拦截跳转链接"
+msgstr "攔截跳轉連結"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2283
+msgid "仅在选择\"跳转指定页面\"时有效，请填写带 http 的完整网址"
+msgstr "僅在選擇\"跳轉指定頁面\"時有效，請填寫帶 http 的完整網址"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2284 inc\core\class-vip-access.php:347
+msgid "该内容仅限 VIP 会员查看"
+msgstr "該內容僅限 VIP 會員檢視"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2285 inc\core\class-vip-access.php:348
+msgid "您的权限不足，请开通或升级 VIP 后继续浏览"
+msgstr "您的權限不足，請開通或升級 VIP 後繼續瀏覽"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2286
+msgid "升级按钮文字"
+msgstr "升級按鈕文字"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2286 inc\core\class-vip-access.php:349
+msgid "立即升级 VIP"
+msgstr "立即升級 VIP"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2287
+msgid "升级按钮链接"
+msgstr "升級按鈕連結"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2287
+msgid "默认自动识别商城 VIP 开通页，您也可在此处自定义填写"
+msgstr "預設自動識別商店 VIP 開通頁，您也可在此處自定義填寫"
+
+#: inc\admin\traits\class-admin-settings-config-trait.php:2318
+msgid "提示：开启后，用户只能使用手机号登录，无法使用用户名/邮箱密码登录，管理员一定要先绑定手机号！"
+msgstr "提示：開啟後，使用者只能使用手機號碼登入，無法使用使用者名/信箱密碼登入，管理員一定要先綁定手機號碼！"
+
+#: inc\admin\traits\class-admin-settings-domain-trait.php:207
+msgid "域名依赖项（%d 项）"
+msgstr "域名依賴項（%d 項）"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:102
+msgid "主题健康自检"
+msgstr "主題健康自檢"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:203
+msgid "设置重置中心"
+msgstr "設定重設中心"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:206
+msgid "仅重置当前【%s】设置"
+msgstr "僅重設目前【%s】設定"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:207
+msgid "仅将当前选项卡内的配置项恢复为默认值，全站其他 20 多个选项卡的配置完全保留不变。"
+msgstr "僅將目前選項卡內的配置項還原為預設值，全站其他 20 多個選項卡的配置完全保留不變。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:212
+msgid "确定要仅恢复【%s】选项卡为默认值吗？其他选项卡不会被重置。"
+msgstr "確定要僅還原【%s】選項卡為預設值嗎？其他選項卡不會被重設。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:213
+msgid "恢复【%s】默认值"
+msgstr "還原【%s】預設值"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:218
+msgid "恢复全站所有默认设置"
+msgstr "還原全站所有預設設定"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:219
+msgid "将全站所有 23 个选项卡的主题设置完全重置为初始状态，请谨慎操作！"
+msgstr "將全站所有 23 個選項卡的主題設定完全重設為初始狀態，請謹慎操作！"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:223
+msgid "高风险操作：此操作将清空所有选项卡设置！确定要恢复全部设置为默认值吗？此操作不可撤销！"
+msgstr "高風險操作：此操作將清空所有選項卡設定！確定要還原全部設定為預設值嗎？此操作不可撤銷！"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:224
+msgid "恢复全站默认设置"
+msgstr "還原全站預設設定"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:237
+msgid "启灵主题全站健康体检助手"
+msgstr "啟靈主題全站健康體檢助手"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:244
+msgid "正在对 PHP环境、SMTP发信、WebP驱动、合规与性能进行全面体检..."
+msgstr "正在對 PHP環境、SMTP發信、WebP驅動、合規與性能進行全面體檢..."
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:266
+msgid "重新体检"
+msgstr "重新體檢"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:393
+msgid "确认页脚各区域接管方式"
+msgstr "確認頁尾各區域接管方式"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:394
+msgid "关于联系、友情链接、版权备案可分别选择装修页面，未接管区域继续使用默认内容。"
+msgstr "關於聯絡、友情連結、版權備案可分別選擇裝修頁面，未接管區域繼續使用預設內容。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:395
+msgid "定位到独立区域装修"
+msgstr "定位到獨立區域裝修"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:999
+msgid "技术支持与服务凭证"
+msgstr "技術支援與服務憑證"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:999
+msgid "启灵主题全功能核心免费开放使用。如果您购买了官方商业技术支持或定制服务，请在此保存您的专属服务密钥（Support Key）；未设置密钥亦不影响主题任何核心配置与前台正常建站。"
+msgstr "啟靈主題全功能核心免費開放使用。如果您購買了官方商業技術支援或定制服務，請在此儲存您的專屬服務密鑰（Support Key）；未設定密鑰亦不影響主題任何核心配置與前台正常建站。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1005 inc\admin\traits\class-admin-settings-page-render-trait.php:1081
+msgid "商业正版授权 (VIP)"
+msgstr "商業正版授權 (VIP)"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1007 inc\admin\traits\class-admin-settings-page-render-trait.php:1090
+msgid "已激活商业正版授权，享有全功能商业运营许可与官方专属一对一技术支持。"
+msgstr "已激活商業正版授權，享有全功能商業運營授權與官方專屬一對一技術支援。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1010 inc\admin\traits\class-admin-settings-page-render-trait.php:1094
+msgid "非商用免费版"
+msgstr "非商用免費版"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1012 inc\admin\traits\class-admin-settings-page-render-trait.php:1103
+msgid "仅限 教育机构、公益组织与个人学习使用，不得商用。如用于企业或商业营利性网站，请联系官方购买商业正版授权。"
+msgstr "僅限 教育機構、公益組織與個人學習使用，不得商用。如用於企業或商業營利性網站，請聯絡官方購買商業正版授權。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1020
+msgid "适用范围："
+msgstr "適用範圍："
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1027
+msgid "支持服务密钥"
+msgstr "支援服務密鑰"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1029
+msgid "请输入您的官方技术支持密钥（可选）"
+msgstr "請輸入您的官方技術支援密鑰（可選）"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1030
+msgid "提示：密钥仅用于向官方获取一对一工单答疑与增值技术服务，纯本地安全保存，不依赖远程网络连通性。"
+msgstr "提示：密鑰僅用於向官方獲取一對一工單答疑與增值技術服務，純本機安全儲存，不依賴遠程網路連通性。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1034
+msgid "服务凭证操作"
+msgstr "服務憑證操作"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1036
+msgid "保存服务密钥"
+msgstr "儲存服務密鑰"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1037
+msgid "清除密钥"
+msgstr "清除密鑰"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1042
+msgid "授权许可规范"
+msgstr "授權授權規範"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1044
+msgid "1. 免费授权范围："
+msgstr "1. 免費授權範圍："
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1044
+msgid "启灵主题对 教育机构、公益组织 永久免费开放使用；个人用户仅限本地测试或个人非商业性学习研究使用。"
+msgstr "啟靈主題對 教育機構、公益組織 永久免費開放使用；個人使用者僅限本機測試或個人非商業性學習研究使用。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1045
+msgid "2. 商业使用限制："
+msgstr "2. 商業使用限制："
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1045
+msgid "严禁任何企业、商业组织或个人将未授权版本用于任何商业营利性网站或商业运营；商业使用须购买正版商业授权。"
+msgstr "嚴禁任何企業、商業組織或個人將未授權版本用於任何商業營利性網站或商業運營；商業使用須購買正版商業授權。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1046
+msgid "3. 商业正版权益："
+msgstr "3. 商業正版權益："
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1046
+msgid "购买商业授权后可填入商业服务密钥，享有正式商用合法授权、纯净规范构建指纹以及官方一对一工单答疑与技术支持保障。"
+msgstr "購買商業授權後可填入商業服務密鑰，享有正式商用合法授權、純淨規範構建指紋以及官方一對一工單答疑與技術支援保障。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1047
+msgid "4. 纯本地保存："
+msgstr "4. 純本機儲存："
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1047
+msgid "密钥保存完全在本地秒级生效，即使开启高防 CDN、WAF 防火墙或海外服务器也绝不报错。"
+msgstr "密鑰儲存完全在本機秒級生效，即使開啟高防 CDN、WAF 防火牆或海外伺服器也絕不報錯。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1065
+msgid "正在保存..."
+msgstr "正在儲存..."
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1108
+msgid "保存失败"
+msgstr "儲存失敗"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1114
+msgid "保存异常，请直接在页面底部点击“保存更改”"
+msgstr "儲存異常，請直接在頁面底部點擊“儲存更改”"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1148
+msgid "站内消息通知 - 存储系统通知、私信、动态提醒"
+msgstr "站內消息通知 - 存儲系統通知、私信、動態提醒"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1183
+msgid "缓存/CDN 说明（会员网站）"
+msgstr "快取/CDN 說明（會員網站）"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1217
+msgid "主题使用的数据表"
+msgstr "主題使用的資料表"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1219
+msgid "以下是本主题创建的自定义数据表。全部统一采用前缀 wp_qiling_*。如果卸载主题后不再使用这些功能，可以手动删除对应的数据表清理数据。"
+msgstr "以下是本主題創建的自定義資料表。全部統一采用前綴 wp_qiling_*。如果卸載主題後不再使用這些功能，可以手動刪除對應的資料表清理資料。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1258
+msgid "正常运行中"
+msgstr "正常運行中"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1277
+msgid "二次开发与文档"
+msgstr "二次開發與檔案"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1280
+msgid "启灵主题全面遵循现代 WordPress 与 PHP 8.2+ 工程规范。如需在子主题（qiling-child）或插件中进行二次开发，所有核心常量、公共 API 函数、动作与过滤器钩子、自建数据表及配置字段说明均已整理在独立开发文档与主题 README.md 中。"
+msgstr "啟靈主題全面遵循現代 WordPress 與 PHP 8.2+ 工程規範。如需在子主題（qiling-child）或外掛中進行二次開發，所有核心常量、公共 API 函數、動作與過濾器鉤子、自建資料表及配置欄位說明均已整理在獨立開發檔案與主題 README.md 中。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1284
+msgid "查阅完整开发者文档 →"
+msgstr "查閱完整開發者檔案 →"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1287
+msgid "（亦可直接查阅主题根目录下的 README.md 开发者指南章节）"
+msgstr "（亦可直接查閱主題根目錄下的 README.md 開發者指南章節）"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1294
+msgid "性能优化建议"
+msgstr "性能最佳化建議"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1297
+msgid "开启对象缓存（Redis/Memcached）可提升后台与核心查询性能（主题自带 qiling_run_cached_query 机制）。"
+msgstr "開啟對象快取（Redis/Memcached）可提升後台與核心查詢性能（主題自帶 qiling_run_cached_query 機制）。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1298
+msgid "开启全页静态化缓存（如 LiteSpeed Cache / Nginx fastcgi_cache）显著提高首屏速度。"
+msgstr "開啟全頁靜態化快取（如 LiteSpeed Cache / Nginx fastcgi_cache）顯著提高首屏速度。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1299
+msgid "图片建议开启 WebP 格式化压缩，主题内置响应式图片与原生懒加载。"
+msgstr "圖片建議開啟 WebP 格式化壓縮，主題內置回應式圖片與原生懶載入。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1300
+msgid "主题设置中包含模块 CSS 按需拆分，有效削减移动端首屏样式体积。"
+msgstr "主題設定中包含模組 CSS 按需拆分，有效削減移動端首屏樣式體積。"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1306
+msgid "关于作者"
+msgstr "關於作者"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1359
+msgid "启灵产品生态 · 全景导图"
+msgstr "啟靈產品生態 · 全景導圖"
+
+#: inc\admin\traits\class-admin-settings-page-render-trait.php:1364
+msgid "查看生态全景图官网"
+msgstr "檢視生態全景圖官網"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:51
+msgid "用于检测并修复因直接替换数据库域名导致的主题设置数据损坏。"
+msgstr "用於偵測並修復因直接替換資料庫域名導致的主題設定資料損壞。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:143
+msgid "当前会扫描主题页面模块和启灵积分商城页面装修数据。"
+msgstr "目前會掃描主題頁面模組和啟靈積分商店頁面裝修資料。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:460
+msgid "系统认证页面状态"
+msgstr "系統認證頁面狀態"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:462
+msgid "检测并一键清理因高并发或异常重复生成的“用户登录 / 用户注册 / 找回密码 / 个人中心”页面。系统会自动保留最早创建的主页面，将多余的重复项安全移至回收站并重新校准设置绑定。"
+msgstr "偵測並一鍵清理因高並發或異常重復生成的“使用者登入 / 使用者註冊 / 找回密碼 / 個人中心”頁面。系統會自動保留最早創建的主頁面，將多餘的重復項安全移至回收站並重新校准設定綁定。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:468
+msgid "检测到 %d 个冗余重复的系统认证页面"
+msgstr "偵測到 %d 個冗餘重復的系統認證頁面"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:473
+msgid "一键清理冗余重复页面"
+msgstr "一鍵清理冗餘重復頁面"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:476
+msgid "注意：清理操作会将多余的重复页面移入 WordPress 回收站，不会彻底物理删除，如有需要随时可从回收站恢复。"
+msgstr "注意：清理操作會將多餘的重復頁面移入 WordPress 回收站，不會徹底物理刪除，如有需要隨時可從回收站還原。"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:481
+msgid "系统认证页面状态正常，未检测到重复页面"
+msgstr "系統認證頁面狀態正常，未偵測到重復頁面"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:485
+msgid "重新扫描并校准认证页面"
+msgstr "重新掃描並校准認證頁面"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:566
+msgid "认证服务类未加载"
+msgstr "認證服務類未載入"
+
+#: inc\admin\traits\class-admin-settings-repair-trait.php:575
+msgid "清理失败，请重试"
+msgstr "清理失敗，請重試"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:814
+msgid "禁用嵌入内容"
+msgstr "停用嵌入內容"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:817
+msgid "限制 REST API 敏感接口"
+msgstr "限制 REST API 敏感介面"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:818
+msgid "限制 REST API 用户信息"
+msgstr "限制 REST API 使用者資訊"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:824
+msgid "禁用更新通知邮件"
+msgstr "停用更新通知郵件"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:825
+msgid "禁用 Gutenberg 编辑器"
+msgstr "停用 Gutenberg 編輯器"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:832
+msgid "禁用 WordPress AI"
+msgstr "停用 WordPress AI"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:858 inc\admin\traits\class-admin-settings-sanitize-trait.php:862
+msgid "区块编辑器/小工具白名单"
+msgstr "區塊編輯器/小工具白名單"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:907
+msgid "已启用 %1$d 个可能影响兼容性的运行优化：%2$s。%3$s"
+msgstr "已啟用 %1$d 個可能影響兼容性的運行最佳化：%2$s。%3$s"
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:911
+msgid "相关白名单状态："
+msgstr "相關白名單狀態："
+
+#: inc\admin\traits\class-admin-settings-sanitize-trait.php:912
+msgid "这些设置没有对应的白名单配置，无需额外填写。"
+msgstr "這些設定沒有對應的白名單配置，無需額外填寫。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:612
+msgid "建议完善"
+msgstr "建議完善"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:616
+msgid "当前为空，建议完善后再观察联动效果。"
+msgstr "目前為空，建議完善後再觀察聯動效果。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:630
+msgid "用于检查暗色风格的显示效果，普通使用可以先忽略。"
+msgstr "用於檢查暗色風格的顯示效果，普通使用可以先忽略。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:634
+msgid "可在下方查看详细检查结果。"
+msgstr "可在下方檢視詳細檢查結果。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:709
+msgid "查看下方详细检查结果"
+msgstr "檢視下方詳細檢查結果"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:1114
+msgid "样式详细检查"
+msgstr "樣式詳細檢查"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:1115
+msgid "用于进一步检查样式一致性和潜在显示问题。"
+msgstr "用於進一步檢查樣式一致性和潛在顯示問題。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-design-tokens-trait.php:1118
+msgid "请结合上方对比度、覆盖明细和空值提醒逐项检查。"
+msgstr "請結合上方對比度、覆蓋明細和空值提醒逐項檢查。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:97
+msgid "如需当前页单独覆盖，三段背景、文字颜色、顶部波浪和动画范围可在下方 <strong>页脚三段式视觉装修</strong> 中调整。留空时继续跟随全局组件样式。"
+msgstr "如需目前頁單獨覆蓋，三段背景、文字顏色、頂部波浪和動畫範圍可在下方 <strong>頁尾三段式視覺裝修</strong> 中調整。留空時繼續跟隨全域組件樣式。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:100
+msgid "调整信息区背景"
+msgstr "調整資訊區背景"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:102
+msgid "开启顶部波浪"
+msgstr "開啟頂部波浪"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-governance-trait.php:59
+msgid "当前已独立装修 %d 个页脚区域，独立区域优先；其余区域继续使用默认内容或旧替换配置。"
+msgstr "目前已獨立裝修 %d 個頁尾區域，獨立區域優先；其餘區域繼續使用預設內容或舊替換配置。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:28
+msgid "配置概览"
+msgstr "配置概覽"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:201
+msgid "启灵AI多语言已接入，可读取多语言 SEO 诊断。"
+msgstr "啟靈AI多語言已接入，可讀取多語言 SEO 診斷。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:210
+msgid "尚未启用多语言内容模式或配置 hreflang 来源。"
+msgstr "尚未啟用多語言內容模式或配置 hreflang 來源。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:218
+msgid "多语言服务：%s"
+msgstr "多語言服務：%s"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-center-trait.php:246
+msgid "Schema 功能已开启，建议完善企业名称和 Logo。"
+msgstr "Schema 功能已開啟，建議完善企業名稱和 Logo。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:32
+msgid "此处提供后台只读快照，便于核对配置和排查问题；不会向前台输出任何新内容。"
+msgstr "此處提供後台只讀快照，便於核對配置和排查問題；不會向前台輸出任何新內容。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:629
+msgid "国际化检查只读取和汇总相关配置，不会改动百度统计、阿里云验证码、备案、隐私提示、语言切换或现有 SEO 输出。"
+msgstr "國際化檢查只讀取和匯總相關配置，不會改動百度統計、阿裡雲驗證碼、備案、隱私提示、語言切換或現有 SEO 輸出。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:829
+msgid "此代码尚未明确 Cookie 分类，建议重新确认。"
+msgstr "此代碼尚未明確 Cookie 分類，建議重新確認。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1248
+msgid "SEO 数据来源"
+msgstr "SEO 資料來源"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1335
+msgid "通过启灵AI多语言汇总各公开页面及语言的 SEO、OG、hreflang、x-default 与 sitemap 缺失项。"
+msgstr "通過啟靈AI多語言匯總各公開頁面及語言的 SEO、OG、hreflang、x-default 與 sitemap 缺失項。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1338
+msgid "扫描服务不可用"
+msgstr "掃描服務不可用"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1349
+msgid "启灵AI多语言的全站扫描功能当前不可用。基础检查仍可使用；增强扫描、批量生成和报告导出需要启用并更新启灵AI多语言插件。"
+msgstr "啟靈AI多語言的全站掃描功能目前不可用。基礎檢查仍可使用；增強掃描、批量生成和報告匯出需要啟用並更新啟靈AI多語言外掛。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1477
+msgid "启灵AI多语言报告服务不可用。"
+msgstr "啟靈AI多語言報告服務不可用。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1594
+msgid "已检测到启灵AI多语言，可读取译文、URL、hreflang、canonical 和 sitemap 状态；SEO 标签仍由主题统一输出。"
+msgstr "已偵測到啟靈AI多語言，可讀取譯文、URL、hreflang、canonical 和 sitemap 狀態；SEO 標籤仍由主題統一輸出。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1595
+msgid "未检测到启灵AI多语言，当前仅检查主题自身的语言配置。"
+msgstr "未偵測到啟靈AI多語言，目前僅檢查主題自身的語言配置。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1596
+msgid "已连接"
+msgstr "已連接"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1596
+msgid "基础检查"
+msgstr "基礎檢查"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1672
+msgid "启灵AI多语言 sitemap 已接入：%s。"
+msgstr "啟靈AI多語言 sitemap 已接入：%s。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:1673
+msgid "已检测到启灵AI多语言，但 sitemap 功能当前不可用或 WordPress 原生 sitemap 未启用。"
+msgstr "已偵測到啟靈AI多語言，但 sitemap 功能目前不可用或 WordPress 原生 sitemap 未啟用。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-international-diagnostics-trait.php:2117
+msgid "预览根据当前已保存的 Schema 配置生成，前台由主题统一输出。"
+msgstr "預覽根據目前已儲存的 Schema 配置生成，前台由主題統一輸出。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:33
+msgid "首页 SEO 生效状态"
+msgstr "首頁 SEO 生效狀態"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:39
+msgid "无标题页面 #%d"
+msgstr "無標題頁面 #%d"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:55
+msgid "当前首页：静态页面定制模式"
+msgstr "目前首頁：靜態頁面定制模式"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:56
+msgid "页面独立定制优先"
+msgstr "頁面獨立定制優先"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:58
+msgid "首页页面 ID: %d"
+msgstr "首頁頁面 ID: %d"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:63
+msgid "网站当前已将页面【<strong>%s</strong>】设为站点首页。启灵主题自带的 100+ 页面模版及自定义页面均支持<strong>专属的独立 SEO 设置</strong>，因此前台访问首页时将<strong>优先读取该页面中配置的 SEO 标题、描述与关键词</strong>。"
+msgstr "網站目前已將頁面【<strong>%s</strong>】設為網站首頁。啟靈主題自帶的 100+ 頁面模版及自定義頁面均支援<strong>專屬的獨立 SEO 設定</strong>，因此前台存取首頁時將<strong>優先讀取該頁面中配置的 SEO 標題、描述與關鍵字</strong>。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:69
+msgid "当前首页三大要素生效状态："
+msgstr "目前首頁三大要素生效狀態："
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:76 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:88 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:100
+msgid "页面已单独定制"
+msgstr "頁面已單獨定制"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:79
+msgid "生效下方全站默认标题"
+msgstr "生效下方全站預設標題"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:80 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:92 inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:104
+msgid "（页面字段留空）"
+msgstr "（頁面欄位留空）"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:91
+msgid "生效下方全站默认描述"
+msgstr "生效下方全站預設描述"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:103
+msgid "生效下方全站默认关键词"
+msgstr "生效下方全站預設關鍵字"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:112
+msgid "如何选择配置方式？"
+msgstr "如何選擇配置方式？"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:113
+msgid "个性化定制首页"
+msgstr "個性化定制首頁"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:113
+msgid "点击下方按钮前往该页面编辑，在底部【SEO 设置】面板中直接填写您期望的首页标题、描述与关键词。"
+msgstr "點擊下方按鈕前往該頁面編輯，在底部【SEO 設定】面板中直接填寫您期望的首頁標題、描述與關鍵字。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:114
+msgid "统一采用全站设置"
+msgstr "統一采用全站設定"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:114
+msgid "若您希望直接使用下方配置的内容，只需前往该页面编辑，将对应 SEO 字段清空留空保存即可，系统将自动无缝回退！"
+msgstr "若您希望直接使用下方配置的內容，只需前往該頁面編輯，將對應 SEO 欄位清空留空儲存即可，系統將自動無縫回退！"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:119
+msgid "前往编辑首页专属 SEO"
+msgstr "前往編輯首頁專屬 SEO"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:122
+msgid "预览全站首页"
+msgstr "預覽全站首頁"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:130
+msgid "当前首页：最新文章模式（全局控制）"
+msgstr "目前首頁：最新文章模式（全域控制）"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:131
+msgid "全局 SEO 直接生效"
+msgstr "全域 SEO 直接生效"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-seo-health-trait.php:133
+msgid "当前站点未指定静态首页页面（使用默认最新文章模式），下方配置的【默认标题】、【默认描述】与【默认关键词】将直接作为全站首页的完整 SEO 元标签对外输出。"
+msgstr "目前網站未指定靜態首頁頁面（使用預設最新文章模式），下方配置的【預設標題】、【預設描述】與【預設關鍵字】將直接作為全站首頁的完整 SEO 元標籤對外輸出。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:22
+msgid "缩略图缓存管理"
+msgstr "縮略圖快取管理"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:25
+msgid "缓存文件"
+msgstr "快取檔案"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:35
+msgid "未使用扫描会保留当前文章、页面及其他内容类型引用过的特色图、自定义封面和正文首图缓存；清空后会在前台访问时按需重新生成。"
+msgstr "未使用掃描會保留目前文章、頁面及其他內容類型引用過的特色圖、自定義封面和內文首圖快取；清空後會在前台存取時按需重新生成。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:36
+msgid "这里只清理服务器本地 uploads/thumbnail-cache。对象存储中的历史文件不会自动删除，避免误删其他站点或旧配置共用的对象。"
+msgstr "這裡只清理伺服器本機 uploads/thumbnail-cache。對象存儲中的歷史檔案不會自動刪除，避免誤刪其他網站或舊配置共用的對象。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:49
+msgid "统一查看所有页面前台装修器生成的保存快照。"
+msgstr "統一檢視所有頁面前台裝修器生成的儲存快照。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:50
+msgid "管理入口"
+msgstr "管理入口"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:51
+msgid "可以按页面查看修订时间、操作者和模块数量，也可以删除单条修订、清空某个页面或批量清理。恢复操作会打开对应页面的前台装修器，由你确认后执行。"
+msgstr "可以按頁面檢視修訂時間、操作者和模組數量，也可以刪除單條修訂、清空某個頁面或批量清理。還原操作會打開對應頁面的前台裝修器，由你確認後執行。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:52
+msgid "打开装修修订管理"
+msgstr "打開裝修修訂管理"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:243
+msgid "清理 uploads/cache/developer-starter/ip-location 内的 IP 归属地临时缓存文件。"
+msgstr "清理 uploads/cache/developer-starter/ip-location 內的 IP 歸屬地暫時快取檔案。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:252
+msgid "此操作不会删除用户账号，只会清空已保存的旧 IP 归属地，用户下次访问时重新获取并写入数据库。"
+msgstr "此操作不會刪除使用者帳號，只會清空已儲存的舊 IP 歸屬地，使用者下次存取時重新獲取並寫入資料庫。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:292
+msgid "点击后生成前台所需的 CSS 压缩文件，可用于更新正式环境中的样式资源；原始样式文件不会被修改。"
+msgstr "點擊後生成前台所需的 CSS 壓縮檔案，可用於更新正式環境中的樣式資源；原始樣式檔案不會被修改。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:301
+msgid "检查拆分后的 CSS 资源是否完整一致，可快速发现文件缺失、内容过期或空文件。"
+msgstr "檢查拆分後的 CSS 資源是否完整一致，可快速發現檔案缺失、內容過期或空檔案。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:376
+msgid "管理员可在此直接执行清理，无需配置外部任务。"
+msgstr "管理員可在此直接執行清理，無需配置外部任務。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:393
+msgid "当前访问密钥："
+msgstr "目前存取密鑰："
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:396
+msgid "支持自动清理、全部清理、修订记录和其他临时数据等范围。"
+msgstr "支援自動清理、全部清理、修訂紀錄和其他暫時資料等範圍。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:480
+msgid "过期 Transients"
+msgstr "過期 Transients"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:482
+msgid "文章浏览量记录"
+msgstr "文章瀏覽量紀錄"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:484
+msgid "数据包页面"
+msgstr "資料包頁面"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:512
+msgid "注意：此操作不可逆，请确保已备份数据库！"
+msgstr "注意：此操作不可逆，請確保已備份資料庫！"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:513
+msgid "清空全站文章浏览量会删除所有文章的浏览量统计记录。"
+msgstr "清空全站文章瀏覽量會刪除所有文章的瀏覽量統計紀錄。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:514
+msgid "数据包页面只统计和处理由站点数据包创建的页面。彻底删除回收站中的数据包页面时，对应页面模块数据也会一并清理。"
+msgstr "資料包頁面只統計和處理由網站資料包創建的頁面。徹底刪除回收站中的資料包頁面時，對應頁面模組資料也會一並清理。"
+
+#: inc\admin\traits\field-render\class-admin-settings-field-render-tools-trait.php:527
+msgid "已生成海报"
+msgstr "已生成海報"
+
+#: inc\admin\views\modules-meta-box.php:20
+msgid "保存时应用所选页面模板的默认装修"
+msgstr "儲存時應用所選頁面範本的預設裝修"
+
+#: inc\admin\views\modules-meta-box.php:22
+msgid "仅在需要替换当前模块时勾选。原装修会先备份；不勾选时，切换页面模板只改变模板外壳并保留现有模块。"
+msgstr "僅在需要替換目前模組時勾選。原裝修會先備份；不勾選時，切換頁面範本只改變範本外殼並保留現有模組。"
+
+#: inc\admin\views\modules-meta-box.php:477
+msgid "AI 局部辅助"
+msgstr "AI 局部輔助"
+
+#: inc\admin\views\modules-meta-box.php:489
+msgid "当前 AI 只辅助当前页面；单页草稿属于高级入口，保存页面前不会正式生效。"
+msgstr "目前 AI 只輔助目前頁面；單頁草稿屬於高級入口，儲存頁面前不會正式生效。"
+
+#: inc\admin\views\modules-meta-box.php:566
+msgid "高级单页草稿：建议勾选 1-%d 个候选模块。生成后会先预览摘要，确认后才导入当前模块列表。"
+msgstr "高級單頁草稿：建議勾選 1-%d 個候選模組。生成後會先預覽摘要，確認後才匯入目前模組列表。"
+
+#: inc\admin\views\modules-meta-box.php:575
+msgid "撤回本次导入"
+msgstr "撤回本次匯入"
+
+#: inc\admin\views\modules-meta-box.php:581
+msgid "AI 草稿待确认"
+msgstr "AI 草稿待確認"
+
+#: inc\admin\views\modules-meta-box.php:584
+msgid "请先查看摘要；确认后才会导入当前模块列表。保存页面前不会正式生效。"
+msgstr "請先檢視摘要；確認後才會匯入目前模組列表。儲存頁面前不會正式生效。"
+
+#: inc\admin\views\modules-meta-box.php:587
+msgid "确认应用草稿"
+msgstr "確認應用草稿"
+
+#: inc\admin\views\modules-meta-box.php:588
+msgid "放弃草稿"
+msgstr "放棄草稿"
+
+#: inc\admin\views\modules-meta-box.php:641
+msgid ""
+"检测到页面模板已切换。是否在保存时用新模板的默认装修替换当前模块？\n"
+"\n"
+"选择“确定”会先备份当前装修再替换；选择“取消”则只切换模板外壳并保留当前模块。"
+msgstr ""
+"偵測到頁面範本已切換。是否在儲存時用新範本的預設裝修替換目前模組？\n"
+"\n"
+"選擇“確定”會先備份目前裝修再替換；選擇“取消”則只切換範本外殼並保留目前模組。"
+
+#: inc\admin\views\modules-meta-box.php:1057
+msgid "页面标题："
+msgstr "頁面標題："
+
+#: inc\admin\views\modules-meta-box.php:1064
+msgid "模块预览："
+msgstr "模組預覽："
+
+#: inc\admin\views\modules-meta-box.php:1067
+msgid "包含页面风格：是"
+msgstr "包含頁面風格：是"
+
+#: inc\admin\views\modules-meta-box.php:1070
+msgid "包含 SEO 建议：是"
+msgstr "包含 SEO 建議：是"
+
+#: inc\admin\views\modules-meta-box.php:1073
+msgid "包含页脚设置：是"
+msgstr "包含頁尾設定：是"
+
+#: inc\admin\views\modules-meta-box.php:1076
+msgid "草稿已生成，请确认后应用到当前页面模块列表。"
+msgstr "草稿已生成，請確認後應用到目前頁面模組列表。"
+
+#: inc\admin\views\modules-meta-box.php:1087
+msgid "AI 草稿已生成，请查看摘要后确认应用。"
+msgstr "AI 草稿已生成，請檢視摘要後確認應用。"
+
+#: inc\admin\views\modules-meta-box.php:1154
+msgid "AI 生成超时，请稍后重试，或减少候选模块数量。"
+msgstr "AI 生成超時，請稍後重試，或減少候選模組數量。"
+
+#: inc\admin\views\modules-meta-box.php:1639
+msgid "已复制！可跨页面粘贴"
+msgstr "已復制！可跨頁面粘貼"
+
+#: inc\admin\views\modules-meta-box.php:1651
+msgid "剪贴板中暂无已复制的模块！请先在任意页面的模块右上角点击“复制”按钮。"
+msgstr "剪貼板中暫無已復制的模組！請先在任意頁面的模組右上角點擊“復制”按鈕。"
+
+#: inc\admin\views\modules-meta-box.php:1659
+msgid "剪贴板模块数据解析失败。"
+msgstr "剪貼板模組資料解析失敗。"
+
+#: inc\admin\views\modules-meta-box.php:1664
+msgid "未检测到有效的模块类型。"
+msgstr "未偵測到有效的模組類型。"
+
+#: inc\admin\views\modules-meta-box.php:1670
+msgid "正在粘贴模块..."
+msgstr "正在粘貼模組..."
+
+#: inc\admin\views\modules-meta-box.php:1693
+msgid "模块粘贴失败"
+msgstr "模組粘貼失敗"
+
+#: inc\admin\views\modules-meta-box.php:1711
+msgid "剪贴板中暂无已复制的模块数据！请先复制其他模块。"
+msgstr "剪貼板中暫無已復制的模組資料！請先復制其他模組。"
+
+#: inc\admin\views\modules-meta-box.php:1719
+msgid "剪贴板模块数据无效。"
+msgstr "剪貼板模組資料無效。"
+
+#: inc\admin\views\modules-meta-box.php:1725
+msgid "确定要用剪贴板中的模块数据覆盖当前模块吗？当前未保存的修改将被覆盖。"
+msgstr "確定要用剪貼板中的模組資料覆蓋目前模組嗎？目前未儲存的修改將被覆蓋。"
+
+#: inc\admin\views\modules-meta-box.php:1726
+msgid "剪贴板中的模块类型与当前模块不同，确定要替换为剪贴板中的模块吗？"
+msgstr "剪貼板中的模組類型與目前模組不同，確定要替換為剪貼板中的模組嗎？"
+
+#: inc\admin\views\modules-meta-box.php:1749
+msgid "覆盖失败"
+msgstr "覆蓋失敗"
+
+#: inc\admin\views\modules-meta-box.php:1753
+msgid "请求失败，请稍后重试。"
+msgstr "請求失敗，請稍後重試。"
+
+#: inc\admin\views\modules-meta-box.php:1981
+msgid "AI 草稿待确认，请查看摘要后应用或放弃。"
+msgstr "AI 草稿待確認，請檢視摘要後應用或放棄。"
+
+#: inc\admin\views\modules-meta-box.php:2044
+msgid "这是高级单页草稿入口。生成后会先预览摘要；确认应用时才替换当前模块列表，保存页面前不会正式生效。是否继续？"
+msgstr "這是高級單頁草稿入口。生成後會先預覽摘要；確認應用時才替換目前模組列表，儲存頁面前不會正式生效。是否繼續？"
+
+#: inc\admin\views\modules-meta-box.php:2068
+msgid "没有可应用的 AI 草稿，请重新生成。"
+msgstr "沒有可應用的 AI 草稿，請重新生成。"
+
+#: inc\admin\views\modules-meta-box.php:2077
+msgid "已放弃本次 AI 草稿，页面未被改动。"
+msgstr "已放棄本次 AI 草稿，頁面未被改動。"
+
+#: inc\admin\views\modules-meta-box.php:2083
+msgid "没有可撤回的 AI 导入。"
+msgstr "沒有可撤回的 AI 匯入。"
+
+#: inc\admin\views\modules-meta-box.php:2089
+msgid "已撤回本次 AI 导入，页面恢复到导入前状态。"
+msgstr "已撤回本次 AI 匯入，頁面還原到匯入前狀態。"
+
+#: inc\core\class-account-deletion-manager.php:603
+msgid "申请记录已移至回收站。"
+msgstr "申請紀錄已移至回收站。"
+
+#: inc\core\class-account-deletion-manager.php:605
+msgid "申请记录已从回收站成功还原。"
+msgstr "申請紀錄已從回收站成功還原。"
+
+#: inc\core\class-account-deletion-manager.php:607
+msgid "申请记录已永久粉碎删除。"
+msgstr "申請紀錄已永久粉碎刪除。"
+
+#: inc\core\class-account-deletion-manager.php:609
+msgid "回收站已成功清空。"
+msgstr "回收站已成功清空。"
+
+#: inc\core\class-account-deletion-manager.php:630
+msgid "回收站：%d"
+msgstr "回收站：%d"
+
+#: inc\core\class-account-deletion-manager.php:637
+msgid "全部正常状态"
+msgstr "全部正常狀態"
+
+#: inc\core\class-account-deletion-manager.php:642
+msgid "回收站 (%d)"
+msgstr "回收站 (%d)"
+
+#: inc\core\class-account-deletion-manager.php:662
+msgid "确定清空回收站吗？所有处于回收站中的记录都将被彻底物理删除，不可恢复！"
+msgstr "確定清空回收站嗎？所有處於回收站中的紀錄都將被徹底物理刪除，不可還原！"
+
+#: inc\core\class-account-deletion-manager.php:662
+msgid "清空回收站"
+msgstr "清空回收站"
+
+#: inc\core\class-account-deletion-manager.php:760
+msgid "还原"
+msgstr "還原"
+
+#: inc\core\class-account-deletion-manager.php:762
+msgid "确定要永久粉碎删除此记录吗？此操作无法撤销！"
+msgstr "確定要永久粉碎刪除此紀錄嗎？此操作無法撤銷！"
+
+#: inc\core\class-account-deletion-manager.php:762
+msgid "永久删除"
+msgstr "永久刪除"
+
+#: inc\core\class-account-deletion-manager.php:824
+msgid "确定将此记录移至回收站吗？"
+msgstr "確定將此紀錄移至回收站嗎？"
+
+#: inc\core\class-account-deletion-manager.php:824
+msgid "移至回收站"
+msgstr "移至回收站"
+
+#: inc\core\class-ai-decorator.php:157
+msgid "高级设置可保持默认，无需额外填写。"
+msgstr "高級設定可保持預設，無需額外填寫。"
+
+#: inc\core\class-ai-decorator.php:310
+msgid "本次仅优化文字内容，布局、样式、图片、图标、链接和数据连接保持不变。"
+msgstr "本次僅最佳化文字內容，版面配置、樣式、圖片、圖標、連結和資料連接保持不變。"
+
+#: inc\core\class-ai-decorator.php:1490 inc\core\class-ai-decorator.php:1539
+msgid "未找到需要同步的内容。"
+msgstr "未找到需要同步的內容。"
+
+#: inc\core\class-ai-decorator.php:1521 inc\core\class-ai-decorator.php:1568
+msgid "多语言服务暂时无法完成同步，请稍后重试。"
+msgstr "多語言服務暫時無法完成同步，請稍後重試。"
+
+#: inc\core\class-ai-product-brand-page-creator.php:102
+msgid ""
+"icon-android|多模型接入|统一接入主流大模型，支持策略路由与回退\n"
+"🧩|Prompt工程|提示词版本化管理，支持灰度与A/B测试\n"
+"icon-settings|工具调用|函数调用与外部系统连接，打通业务流程"
+msgstr ""
+"icon-android|多模型接入|統一接入主流大模型，支援策略路由與回退\n"
+"🧩|Prompt工程|提示詞版本化管理，支援灰度與A/B測試\n"
+"icon-settings|工具調用|函數調用與外部系統連接，打通業務流程"
+
+#: inc\core\class-ai-product-brand-page-creator.php:108
+msgid ""
+"icon-book|知识库检索|文档切片、向量检索与语义召回一体化\n"
+"icon-lock|权限隔离|按组织、部门、角色进行数据访问控制\n"
+"🧹|数据治理|内容清洗、标注与更新策略可配置"
+msgstr ""
+"icon-book|知識庫檢索|檔案切片、向量檢索與語義召回一體化\n"
+"icon-lock|權限隔離|按組織、部門、角色進行資料存取控制\n"
+"🧹|資料治理|內容清洗、標注與更新策略可配置"
+
+#: inc\core\class-ai-product-brand-page-creator.php:114
+msgid ""
+"icon-chart|调用监控|时延、成本、成功率实时可视化\n"
+"icon-shield|安全防护|敏感词过滤、越权检测与审计追踪\n"
+"icon-rocket|弹性伸缩|高峰流量自动扩容，保障稳定交付"
+msgstr ""
+"icon-chart|調用監控|時延、成本、成功率實時可視化\n"
+"icon-shield|安全防護|敏感詞過濾、越權偵測與審計追蹤\n"
+"icon-rocket|彈性伸縮|高峰流量自動擴容，保障穩定交付"
+
+#: inc\core\class-app-download-landing-page-creator.php:161
+msgid ""
+"👥|团队共享空间|统一任务视图，协作更顺畅\n"
+"icon-bell|实时通知|重要节点及时提醒，减少延误\n"
+"📎|多格式附件|文档、图片、音视频统一管理"
+msgstr ""
+"👥|團隊共享空間|統一任務視圖，協作更順暢\n"
+"icon-bell|實時通知|重要節點及時提醒，減少延誤\n"
+"📎|多格式附件|檔案、圖片、音影片統一管理"
+
+#: inc\core\class-app-download-landing-page-creator.php:167
+msgid ""
+"🔐|账号安全策略|支持多层校验和风险防护\n"
+"☁️|云端备份|历史数据可追溯，误删可恢复\n"
+"icon-chart|稳定运行|高并发场景下保持流畅使用"
+msgstr ""
+"🔐|帳號安全策略|支援多層校驗和風險防護\n"
+"☁️|雲端備份|歷史資料可追溯，誤刪可還原\n"
+"icon-chart|穩定運行|高並發場景下保持流暢使用"
+
+#: inc\core\class-auth-pages-service.php:615
+msgid "清理完成！共将 %d 个多余的重复页面移入回收站，系统已自动保留主页面并绑定好对应设置。"
+msgstr "清理完成！共將 %d 個多餘的重復頁面移入回收站，系統已自動保留主頁面並綁定好對應設定。"
+
+#: inc\core\class-careers-manager.php:530
+msgid "保险"
+msgstr "保險"
+
+#: inc\core\class-careers-manager.php:531
+msgid "培训"
+msgstr "培訓"
+
+#: inc\core\class-careers-manager.php:532
+msgid "假期"
+msgstr "假期"
+
+#: inc\core\class-careers-manager.php:534
+msgid "晋升"
+msgstr "晉升"
+
+#: inc\core\class-careers-manager.php:535
+msgid "关怀"
+msgstr "關懷"
+
+#: inc\core\class-careers-manager.php:536
+msgid "福利"
+msgstr "福利"
+
+#: inc\core\class-category-manager.php:95 inc\core\class-category-manager.php:326
+msgid "隐藏头部元素"
+msgstr "隱藏頁首元素"
+
+#: inc\core\class-category-manager.php:98 inc\core\class-category-manager.php:331
+msgid "隐藏整个分类页头部 (包含大标题和描述)"
+msgstr "隱藏整個分類頁頁首 (包含大標題和描述)"
+
+#: inc\core\class-category-manager.php:106 inc\core\class-category-manager.php:339
+msgid "不显示分类文章数量统计"
+msgstr "不顯示分類文章數量統計"
+
+#: inc\core\class-category-manager.php:108
+msgid "开启后，将覆盖主题的全局设置"
+msgstr "開啟後，將覆蓋主題的全域設定"
+
+#: inc\core\class-category-manager.php:211 inc\core\class-category-manager.php:506
+msgid "高级分类筛选设置"
+msgstr "高級分類篩選設定"
+
+#: inc\core\class-category-manager.php:341
+msgid "开启后，将覆盖主题全局的分类页头部设置。"
+msgstr "開啟後，將覆蓋主題全域的分類頁頁首設定。"
+
+#: inc\core\class-category-manager.php:392
+msgid "输入图标类名（如 icon-book）或图标图片URL，显示在分类名称前面（选填）"
+msgstr "輸入圖標類名（如 icon-book）或圖標圖片URL，顯示在分類名稱前面（選填）"
+
+#: inc\core\class-category-tabs-ajax.php:189 inc\core\class-category-tabs-ajax.php:305 inc\modules\modules\class-category-tabs-module.php:170 inc\modules\modules\class-category-tabs-module.php:303
+msgid "获取图片"
+msgstr "獲取圖片"
+
+#: inc\core\class-content-restriction.php:322
+msgid "全文登录可见"
+msgstr "全文登入可見"
+
+#: inc\core\class-content-restriction.php:332
+msgid "全文回复可见"
+msgstr "全文回覆可見"
+
+#: inc\core\class-cybersecurity-brand-page-creator.php:107
+msgid ""
+"📡|日志分析|集中采集终端、网络与应用日志\n"
+"icon-android|异常识别|行为建模发现异常操作与潜在攻击\n"
+"icon-bell|实时告警|多通道通知，保障关键事件可达"
+msgstr ""
+"📡|日誌分析|集中采集終端、網路與應用日誌\n"
+"icon-android|異常識別|行為建模發現異常操作與潛在攻擊\n"
+"icon-bell|實時告警|多通道通知，保障關鍵事件可達"
+
+#: inc\core\class-cybersecurity-brand-page-creator.php:113
+msgid ""
+"🧩|自动化剧本|一键联动封禁、隔离与溯源动作\n"
+"icon-tool|应急支持|专家团队介入，缩短处置时间\n"
+"📘|复盘改进|攻击路径复盘，持续优化防护策略"
+msgstr ""
+"🧩|自動化劇本|一鍵聯動封禁、隔離與溯源動作\n"
+"icon-tool|應急支援|專家團隊介入，縮短處置時間\n"
+"📘|復盤改進|攻擊路徑復盤，持續最佳化防護策略"
+
+#: inc\core\class-data-intelligence-bi-page-creator.php:156
+msgid ""
+"🧹|数据清洗|异常值处理、规则校验与质量监控\n"
+"📚|指标体系|统一口径管理，避免跨团队认知偏差\n"
+"icon-shield|权限控制|按组织角色精细化授权与审计追踪"
+msgstr ""
+"🧹|資料清洗|異常值處理、規則校驗與質量監控\n"
+"📚|指標體系|統一口徑管理，避免跨團隊認知偏差\n"
+"icon-shield|權限控制|按組織角色精細化授權與審計追蹤"
+
+#: inc\core\class-data-intelligence-bi-page-creator.php:162
+msgid ""
+"icon-chart|自助看板|拖拽式搭建分析报表，快速交付业务洞察\n"
+"icon-android|智能预警|阈值与异常模式触发自动告警\n"
+"🤝|协同决策|跨团队共享指标与洞察结论"
+msgstr ""
+"icon-chart|自助看板|拖拽式搭建分析報表，快速交付業務洞察\n"
+"icon-android|智能預警|閾值與異常模式觸發自動告警\n"
+"🤝|協同決策|跨團隊共享指標與洞察結論"
+
+#: inc\core\class-features-showcase-page-creator.php:49
+msgid ""
+"icon-target|横幅模块|支持轮播、视频背景的Banner展示，多种动画效果可选\n"
+"icon-box|产品中心|分类展示产品，自动获取封面图，多种布局风格\n"
+"icon-briefcase|成功案例|客户案例展示，支持多种卡片风格切换\n"
+"📰|新闻动态|自动获取文章列表，多布局展示新闻资讯\n"
+"💰|价格套餐|可定制的定价表模块，支持渐变色和特性列表\n"
+"icon-clipboard|功能清单|Tab切换的功能卡片展示，现代化设计\n"
+"🔄|流程展示|时间线/步骤式流程展示，多种样式可选\n"
+"🎥|视频模块|支持本地视频 and B站视频嵌入播放\n"
+"💬|客户评价|多种样式的客户见证模块，增强可信度"
+msgstr ""
+"icon-target|橫幅模組|支援輪播、影片背景的Banner展示，多種動畫效果可選\n"
+"icon-box|產品中心|分類展示產品，自動獲取封面圖，多種版面配置風格\n"
+"icon-briefcase|成功案例|客戶案例展示，支援多種卡片風格切換\n"
+"📰|新聞動態|自動獲取文章列表，多版面配置展示新聞資訊\n"
+"💰|價格套餐|可定制的定價表模組，支援漸變色和特性列表\n"
+"icon-clipboard|功能清單|Tab切換的功能卡片展示，現代化設計\n"
+"🔄|流程展示|時間線/步驟式流程展示，多種樣式可選\n"
+"🎥|影片模組|支援本機影片 and B站影片嵌入播放\n"
+"💬|客戶評價|多種樣式的客戶見證模組，增強可信度"
+
+#: inc\core\class-features-showcase-page-creator.php:56
+msgid ""
+"🔐|登录注册|完整的用户认证系统，支持邮箱验证\n"
+"👤|会员中心|个人资料管理，头像上传，密码修改\n"
+"🔑|密码找回|邮件验证重置密码，安全可靠\n"
+"📧|邮件系统|SMTP邮件发送支持，加密存储凭证\n"
+"icon-shield|表单验证|前后端双重验证，防止恶意提交\n"
+"⏱️|频率限制|防止暴力破解，保护用户账户安全"
+msgstr ""
+"🔐|登入註冊|完整的使用者認證系統，支援信箱驗證\n"
+"👤|會員中心|個人資料管理，頭像上傳，密碼修改\n"
+"🔑|密碼找回|郵件驗證重設密碼，安全可靠\n"
+"📧|郵件系統|SMTP郵件發送支援，加密存儲憑證\n"
+"icon-shield|表單驗證|前後端雙重驗證，防止惡意提交\n"
+"⏱️|頻率限制|防止暴力破解，保護使用者帳戶安全"
+
+#: inc\core\class-features-showcase-page-creator.php:63
+msgid ""
+"icon-palette|主题色定制|一键切换主题色，支持渐变色配置\n"
+"🌙|暗黑模式|完整的深色主题支持，自动适配所有模块\n"
+"📱|悬浮工具栏|可定制的悬浮按钮，联系方式快捷入口\n"
+"📢|公告系统|多类型公告展示，文字/图文/弹窗模式\n"
+"🖼️|Logo定制|支持普通/暗色模式双Logo配置\n"
+"📐|页脚配置|多栏页脚布局，社交媒体图标，动画效果"
+msgstr ""
+"icon-palette|主題色定制|一鍵切換主題色，支援漸變色配置\n"
+"🌙|暗黑模式|完整的深色主題支援，自動適配所有模組\n"
+"📱|懸浮工具欄|可定制的懸浮按鈕，聯絡方式快捷入口\n"
+"📢|公告系統|多類型公告展示，文字/圖文/彈窗模式\n"
+"🖼️|Logo定制|支援普通/暗色模式雙Logo配置\n"
+"📐|頁尾配置|多欄頁尾版面配置，社交媒體圖標，動畫效果"
+
+#: inc\core\class-features-showcase-page-creator.php:70
+msgid ""
+"icon-flash|性能优化|图片懒加载，资源按需加载，极速体验\n"
+"icon-shield|安全防护|XSS防护，数据转义，安全输出\n"
+"icon-chart|后台管理|简洁直观的设置面板，分组配置项\n"
+"🔧|模块管理|拖拽可视化配置，实时预览效果\n"
+"📱|响应式设计|完美适配各种屏幕尺寸，移动端优化\n"
+"🔍|SEO优化|语义化标签，结构化数据，搜索引擎友好"
+msgstr ""
+"icon-flash|性能最佳化|圖片懶載入，資源按需載入，極速體驗\n"
+"icon-shield|安全防護|XSS防護，資料轉義，安全輸出\n"
+"icon-chart|後台管理|簡潔直觀的設定面板，分組配置項\n"
+"🔧|模組管理|拖拽可視化配置，實時預覽效果\n"
+"📱|回應式設計|完美適配各種螢幕尺寸，移動端最佳化\n"
+"🔍|SEO最佳化|語義化標籤，結構化資料，搜尋引擎友好"
+
+#: inc\core\class-features-showcase-page-creator.php:132
+msgid "选择需要展示的功能模块并填写内容即可，支持调整顺序和实时预览。"
+msgstr "選擇需要展示的功能模組並填寫內容即可，支援調整順序和實時預覽。"
+
+#: inc\core\class-frontend-builder-modules-service.php:297 inc\modules\class-module-manager.php:1040
+msgid "当前模块已暂时隐藏，点击可编辑并恢复显示。"
+msgstr "目前模組已暫時隱藏，點擊可編輯並還原顯示。"
+
+#: inc\core\class-frontend-builder-snapshot-service.php:158
+msgid "装修修订参数无效。"
+msgstr "裝修修訂參數無效。"
+
+#: inc\core\class-frontend-builder-snapshot-service.php:171
+msgid "未找到该装修修订。"
+msgstr "未找到該裝修修訂。"
+
+#: inc\core\class-frontend-builder.php:562
+msgid "快速颜色选择"
+msgstr "快速顏色選擇"
+
+#: inc\core\class-frontend-builder.php:563
+msgid "已选择快捷颜色"
+msgstr "已選擇快捷顏色"
+
+#: inc\core\class-frontend-builder.php:592
+msgid "调整当前模块的内容和外观，不会影响其他页面。"
+msgstr "調整目前模組的內容和外觀，不會影響其他頁面。"
+
+#: inc\core\class-frontend-builder.php:595
+msgid "管理当前页面的模板、页头和专属风格。"
+msgstr "管理目前頁面的範本、頁頭和專屬風格。"
+
+#: inc\core\class-frontend-builder.php:598 inc\core\class-frontend-builder.php:1037
+msgid "不指定预设"
+msgstr "不指定預設"
+
+#: inc\core\class-frontend-builder.php:601
+msgid "首屏覆盖在 Banner 上，系统会按首屏明暗自动选择菜单文字色；也可在页面视觉预设中手动指定。"
+msgstr "首屏覆蓋在 Banner 上，系統會按首屏明暗自動選擇選單文字色；也可在頁面視覺預設中手動指定。"
+
+#: inc\core\class-frontend-builder.php:611
+msgid "设置仅对当前页面生效，留空则使用全站样式。"
+msgstr "設定僅對目前頁面生效，留空則使用全站樣式。"
+
+#: inc\core\class-frontend-builder.php:612
+msgid "设置仅在当前页面的暗色模式下生效，留空则使用全站方案。"
+msgstr "設定僅在目前頁面的暗色模式下生效，留空則使用全站方案。"
+
+#: inc\core\class-frontend-builder.php:613
+msgid "设置当前页面的圆角和动效，留空则使用全站方案。"
+msgstr "設定目前頁面的圓角和動效，留空則使用全站方案。"
+
+#: inc\core\class-frontend-builder.php:622
+msgid "已清空当前分组，保存后将使用全站样式。"
+msgstr "已清空目前分組，儲存後將使用全站樣式。"
+
+#: inc\core\class-frontend-builder.php:625
+msgid "页面视觉预设"
+msgstr "頁面視覺預設"
+
+#: inc\core\class-frontend-builder.php:626
+msgid "这里控制当前页顶部、底部、波浪和按钮的基础搭配；下方字段可直接在前台细调。"
+msgstr "這裡控制目前頁頂部、底部、波浪和按鈕的基礎搭配；下方欄位可直接在前台細調。"
+
+#: inc\core\class-frontend-builder.php:627
+msgid "视觉模式"
+msgstr "視覺模式"
+
+#: inc\core\class-frontend-builder.php:630
+msgid "启用当前页面视觉预设"
+msgstr "啟用目前頁面視覺預設"
+
+#: inc\core\class-frontend-builder.php:631
+msgid "基础预设"
+msgstr "基礎預設"
+
+#: inc\core\class-frontend-builder.php:632
+msgid "填充预设值"
+msgstr "填充預設值"
+
+#: inc\core\class-frontend-builder.php:633
+msgid "清空细调"
+msgstr "清空細調"
+
+#: inc\core\class-frontend-builder.php:634
+msgid "当前预设值"
+msgstr "目前預設值"
+
+#: inc\core\class-frontend-builder.php:635
+msgid "页面视觉风格已同步到当前预览，保存后会正式生效。"
+msgstr "頁面視覺風格已同步到目前預覽，儲存後會正式生效。"
+
+#: inc\core\class-frontend-builder.php:636
+msgid "请先选择一个基础预设，再填充预设值。"
+msgstr "請先選擇一個基礎預設，再填充預設值。"
+
+#: inc\core\class-frontend-builder.php:637
+msgid "留空则使用全站设置"
+msgstr "留空則使用全站設定"
+
+#: inc\core\class-frontend-builder.php:638
+msgid "设置当前页面的正文、标题、按钮和导航排版，留空则使用全站设置。"
+msgstr "設定目前頁面的內文、標題、按鈕和導覽排版，留空則使用全站設定。"
+
+#: inc\core\class-frontend-builder.php:640
+msgid "调整当前页面的组件外观，不会影响全站设置。"
+msgstr "調整目前頁面的組件外觀，不會影響全站設定。"
+
+#: inc\core\class-frontend-builder.php:646
+msgid "设置仅对当前页面生效，留空则使用全站设置。"
+msgstr "設定僅對目前頁面生效，留空則使用全站設定。"
+
+#: inc\core\class-frontend-builder.php:650
+msgid "当前页面的专属风格会应用到此模块。"
+msgstr "目前頁面的專屬風格會應用到此模組。"
+
+#: inc\core\class-frontend-builder.php:652
+msgid "留空则使用当前页面和全站设置。"
+msgstr "留空則使用目前頁面和全站設定。"
+
+#: inc\core\class-frontend-builder.php:653
+msgid "当前模块的公共样式设置集中在此面板。"
+msgstr "目前模組的公共樣式設定集中在此面板。"
+
+#: inc\core\class-frontend-builder.php:654
+msgid "设置仅影响当前模块；留空字段则使用页面或全站设置。"
+msgstr "設定僅影響目前模組；留空欄位則使用頁面或全站設定。"
+
+#: inc\core\class-frontend-builder.php:655
+msgid "用于图标、标签、链接和局部高亮，不是标题文字颜色。"
+msgstr "用於圖標、標籤、連結和局部高亮，不是標題文字顏色。"
+
+#: inc\core\class-frontend-builder.php:656
+msgid "用于第二强调色和部分悬停状态。"
+msgstr "用於第二強調色和部分懸停狀態。"
+
+#: inc\core\class-frontend-builder.php:657 inc\core\class-module-visual-style-service.php:293
+msgid "控制整个当前模块区块的背景。"
+msgstr "控制整個目前模組區塊的背景。"
+
+#: inc\core\class-frontend-builder.php:659 inc\core\class-module-visual-style-service.php:299
+msgid "控制当前模块主标题和兼容的标题链接。"
+msgstr "控制目前模組主標題和兼容的標題連結。"
+
+#: inc\core\class-frontend-builder.php:661 inc\core\class-module-visual-style-service.php:305
+msgid "控制主标题下方的副标题和说明。"
+msgstr "控制主標題下方的副標題和說明。"
+
+#: inc\core\class-frontend-builder.php:663 inc\core\class-module-visual-style-service.php:311
+msgid "控制普通段落、列表和摘要文字。"
+msgstr "控制普通段落、列表和摘要文字。"
+
+#: inc\core\class-frontend-builder.php:664 inc\core\class-module-visual-style-service.php:317
+msgid "控制当前模块实心主按钮的背景。"
+msgstr "控制目前模組實心主按鈕的背景。"
+
+#: inc\core\class-frontend-builder.php:666 inc\core\class-module-visual-style-service.php:323
+msgid "控制主按钮正常状态的文字颜色。"
+msgstr "控制主按鈕正常狀態的文字顏色。"
+
+#: inc\core\class-frontend-builder.php:667 inc\core\class-module-visual-style-service.php:329
+msgid "控制鼠标移到主按钮上时的背景。"
+msgstr "控制鼠標移到主按鈕上時的背景。"
+
+#: inc\core\class-frontend-builder.php:669 inc\core\class-module-visual-style-service.php:335
+msgid "控制鼠标移到主按钮上时的文字颜色。"
+msgstr "控制鼠標移到主按鈕上時的文字顏色。"
+
+#: inc\core\class-frontend-builder.php:670
+msgid "控制当前模块内卡片的背景。"
+msgstr "控制目前模組內卡片的背景。"
+
+#: inc\core\class-frontend-builder.php:671
+msgid "控制当前模块内卡片的边框。"
+msgstr "控制目前模組內卡片的邊框。"
+
+#: inc\core\class-frontend-builder.php:672
+msgid "清空模块视觉"
+msgstr "清空模組視覺"
+
+#: inc\core\class-frontend-builder.php:673
+msgid "已清空当前模块视觉设置，保存后将使用页面样式。"
+msgstr "已清空目前模組視覺設定，儲存後將使用頁面樣式。"
+
+#: inc\core\class-frontend-builder.php:675
+msgid "支持优化当前页面、所选模块和 SEO 信息。"
+msgstr "支援最佳化目前頁面、所選模組和 SEO 資訊。"
+
+#: inc\core\class-frontend-builder.php:688
+msgid "快捷需求已添加。"
+msgstr "快捷需求已添加。"
+
+#: inc\core\class-frontend-builder.php:698
+msgid "仅优化当前模块，保留信息结构，强化标题、描述、按钮文案和视觉节奏。"
+msgstr "僅最佳化目前模組，保留資訊結構，強化標題、描述、按鈕文案和視覺節奏。"
+
+#: inc\core\class-frontend-builder.php:1055
+msgid "%s页脚"
+msgstr "%s頁尾"
+
+#: inc\core\class-frontend-builder.php:1382
+msgid "该历史版本与当前页面不匹配，无法恢复。"
+msgstr "該歷史版本與目前頁面不匹配，無法還原。"
+
+#: inc\core\class-interactive-product-launch-page-creator.php:206
+msgid ""
+"🎛️|全新交互界面|页面信息分层更清晰，关键操作路径更短\n"
+"icon-flash|加载体验优化|关键首屏资源按需加载，打开更流畅\n"
+"📱|移动端细节优化|触控反馈和布局适配更符合移动习惯"
+msgstr ""
+"🎛️|全新交互介面|頁面資訊分層更清晰，關鍵操作路徑更短\n"
+"icon-flash|載入體驗最佳化|關鍵首屏資源按需載入，打開更流暢\n"
+"📱|移動端細節最佳化|觸控反饋和版面配置適配更符合移動習慣"
+
+#: inc\core\class-mega-menu-manager.php:441
+msgid "例如: icon-home、icon-fire 或 SVG 代码"
+msgstr "例如: icon-home、icon-fire 或 SVG 代碼"
+
+#: inc\core\class-module-advanced-style-service.php:62 inc\core\class-module-advanced-style-service.php:224
+msgid "模块显隐"
+msgstr "模組顯隱"
+
+#: inc\core\class-module-advanced-style-service.php:63
+msgid "可以暂时隐藏整个模块，也可以按桌面、平板、手机分别控制显示。"
+msgstr "可以暫時隱藏整個模組，也可以按桌面、平板、手機分別控制顯示。"
+
+#: inc\core\class-module-advanced-style-service.php:121
+msgid "模块主标题"
+msgstr "模組主標題"
+
+#: inc\core\class-module-advanced-style-service.php:123
+msgid "模块正文"
+msgstr "模組內文"
+
+#: inc\core\class-module-advanced-style-service.php:124
+msgid "模块行动按钮文字"
+msgstr "模組行動按鈕文字"
+
+#: inc\core\class-module-advanced-style-service.php:231
+msgid "模块状态"
+msgstr "模組狀態"
+
+#: inc\core\class-module-advanced-style-service.php:236
+msgid "暂时隐藏（保留全部设置）"
+msgstr "暫時隱藏（保留全部設定）"
+
+#: inc\core\class-module-advanced-style-service.php:741
+msgid "悬停文字颜色"
+msgstr "懸停文字顏色"
+
+#: inc\core\class-module-visual-style-service.php:55
+msgid "模块视觉风格"
+msgstr "模組視覺風格"
+
+#: inc\core\class-module-visual-style-service.php:56
+msgid "只影响当前模块，优先级高于当前页面视觉风格。"
+msgstr "只影響目前模組，優先級高於目前頁面視覺風格。"
+
+#: inc\core\class-module-visual-style-service.php:69
+msgid "控制当前模块主色、辅助色和背景。"
+msgstr "控制目前模組主色、輔助色和背景。"
+
+#: inc\core\class-module-visual-style-service.php:72 inc\core\class-module-visual-style-service.php:398
+msgid "简单模式"
+msgstr "簡單模式"
+
+#: inc\core\class-module-visual-style-service.php:75
+msgid "跟随页面风格"
+msgstr "跟隨頁面風格"
+
+#: inc\core\class-module-visual-style-service.php:76
+msgid "使用浅色模块"
+msgstr "使用淺色模組"
+
+#: inc\core\class-module-visual-style-service.php:77
+msgid "使用深色模块"
+msgstr "使用深色模組"
+
+#: inc\core\class-module-visual-style-service.php:78
+msgid "使用强调色模块"
+msgstr "使用強調色模組"
+
+#: inc\core\class-module-visual-style-service.php:83
+msgid "继承页面主色"
+msgstr "繼承頁面主色"
+
+#: inc\core\class-module-visual-style-service.php:86
+msgid "继承"
+msgstr "繼承"
+
+#: inc\core\class-module-visual-style-service.php:87
+msgid "不继承"
+msgstr "不繼承"
+
+#: inc\core\class-module-visual-style-service.php:91
+msgid "模块主色"
+msgstr "模組主色"
+
+#: inc\core\class-module-visual-style-service.php:94
+msgid "用于当前模块的强调元素，例如图标、标签、链接和局部高亮；不是标题文字颜色。"
+msgstr "用於目前模組的強調元素，例如圖標、標籤、連結和局部高亮；不是標題文字顏色。"
+
+#: inc\core\class-module-visual-style-service.php:97
+msgid "模块辅助色"
+msgstr "模組輔助色"
+
+#: inc\core\class-module-visual-style-service.php:100
+msgid "用于当前模块的第二强调色和悬停状态，与模块主色搭配使用。"
+msgstr "用於目前模組的第二強調色和懸停狀態，與模組主色搭配使用。"
+
+#: inc\core\class-module-visual-style-service.php:103
+msgid "模块背景"
+msgstr "模組背景"
+
+#: inc\core\class-module-visual-style-service.php:106
+msgid "控制整个当前模块区块的背景颜色或渐变。"
+msgstr "控制整個目前模組區塊的背景顏色或漸變。"
+
+#: inc\core\class-module-visual-style-service.php:111
+msgid "文字"
+msgstr "文字"
+
+#: inc\core\class-module-visual-style-service.php:112
+msgid "控制当前模块中的标题、副标题和正文文字。"
+msgstr "控制目前模組中的標題、副標題和內文文字。"
+
+#: inc\core\class-module-visual-style-service.php:118
+msgid "控制模块主标题；兼容模块内使用标准标题类的标题链接。"
+msgstr "控制模組主標題；兼容模組內使用標准標題類的標題連結。"
+
+#: inc\core\class-module-visual-style-service.php:124
+msgid "控制模块主标题下方的说明、副标题和描述文字。"
+msgstr "控制模組主標題下方的說明、副標題和描述文字。"
+
+#: inc\core\class-module-visual-style-service.php:130
+msgid "控制当前模块中的普通段落、列表和摘要文字。"
+msgstr "控制目前模組中的普通段落、列表和摘要文字。"
+
+#: inc\core\class-module-visual-style-service.php:136
+msgid "覆盖当前模块里的按钮和链接按钮。"
+msgstr "覆蓋目前模組裡的按鈕和連結按鈕。"
+
+#: inc\core\class-module-visual-style-service.php:142
+msgid "控制当前模块实心主按钮的正常背景颜色。"
+msgstr "控制目前模組實心主按鈕的正常背景顏色。"
+
+#: inc\core\class-module-visual-style-service.php:148
+msgid "控制当前模块主按钮正常状态的文字颜色。"
+msgstr "控制目前模組主按鈕正常狀態的文字顏色。"
+
+#: inc\core\class-module-visual-style-service.php:154
+msgid "控制鼠标移到当前模块主按钮上时的背景颜色。"
+msgstr "控制鼠標移到目前模組主按鈕上時的背景顏色。"
+
+#: inc\core\class-module-visual-style-service.php:160
+msgid "控制鼠标移到当前模块主按钮上时的文字颜色。"
+msgstr "控制鼠標移到目前模組主按鈕上時的文字顏色。"
+
+#: inc\core\class-module-visual-style-service.php:166
+msgid "统一控制当前模块内重复卡片的文字、背景、边框、圆角、间距和图片。"
+msgstr "統一控制目前模組內重復卡片的文字、背景、邊框、圓角、間距和圖片。"
+
+#: inc\core\class-module-visual-style-service.php:169
+msgid "卡片布局模式"
+msgstr "卡片版面配置模式"
+
+#: inc\core\class-module-visual-style-service.php:172
+msgid "跟随模块原生样式"
+msgstr "跟隨模組原生樣式"
+
+#: inc\core\class-module-visual-style-service.php:173
+msgid "连体内容"
+msgstr "連體內容"
+
+#: inc\core\class-module-visual-style-service.php:176
+msgid "默认保留模块原来的设计。选择“独立卡片”后，才会启用下面的卡片分离和视觉设置。"
+msgstr "預設保留模組原來的設計。選擇“獨立卡片”後，才會啟用下面的卡片分離和視覺設定。"
+
+#: inc\core\class-module-visual-style-service.php:192
+msgid "控制当前模块内卡片的背景颜色。"
+msgstr "控制目前模組內卡片的背景顏色。"
+
+#: inc\core\class-module-visual-style-service.php:198
+msgid "控制当前模块内卡片的边框颜色。"
+msgstr "控制目前模組內卡片的邊框顏色。"
+
+#: inc\core\class-module-visual-style-service.php:204
+msgid "控制当前模块内卡片的阴影；填写 none 可关闭阴影。"
+msgstr "控制目前模組內卡片的陰影；填寫 none 可關閉陰影。"
+
+#: inc\core\class-module-visual-style-service.php:217 inc\core\class-module-visual-style-service.php:374
+msgid "组件间距"
+msgstr "組件間距"
+
+#: inc\core\class-module-visual-style-service.php:220
+msgid "控制卡片网格、列表项或重复组件之间的距离。"
+msgstr "控制卡片網格、列表項或重復組件之間的距離。"
+
+#: inc\core\class-module-visual-style-service.php:223 inc\core\class-module-visual-style-service.php:379
+msgid "卡片图片圆角"
+msgstr "卡片圖片圓角"
+
+#: inc\core\class-module-visual-style-service.php:280
+msgid "当前模块跟随页面风格。"
+msgstr "目前模組跟隨頁面風格。"
+
+#: inc\core\class-module-visual-style-service.php:282
+msgid "已选择自定义，请在高级设置里填写字段后生效。"
+msgstr "已選擇自定義，請在高級設定裡填寫欄位後生效。"
+
+#: inc\core\class-module-visual-style-service.php:284
+msgid "当前模块正在覆盖页面风格。"
+msgstr "目前模組正在覆蓋頁面風格。"
+
+#: inc\core\class-module-visual-style-service.php:291
+msgid "背景色"
+msgstr "背景色"
+
+#: inc\core\class-module-visual-style-service.php:315
+msgid "按钮色"
+msgstr "按鈕色"
+
+#: inc\core\class-module-visual-style-service.php:394
+msgid "模块视觉风格（页面级覆盖）"
+msgstr "模組視覺風格（頁面級覆蓋）"
+
+#: inc\core\class-module-visual-style-service.php:395
+msgid "这里的设置只影响当前模块，并优先于当前页面风格。留空字段会继续继承页面或全站。"
+msgstr "這裡的設定只影響目前模組，並優先於目前頁面風格。留空欄位會繼續繼承頁面或全站。"
+
+#: inc\core\class-module-visual-style-service.php:408
+msgid "恢复跟随页面"
+msgstr "還原跟隨頁面"
+
+#: inc\core\class-module-visual-style-service.php:409
+msgid "同步页面主色"
+msgstr "同步頁面主色"
+
+#: inc\core\class-open-source-devtools-page-creator.php:132
+msgid ""
+"icon-tool|本地调试|热更新与断点调试能力完整\n"
+"📚|模板脚手架|内置多场景模板快速起步\n"
+"🔍|智能提示|命令提示与错误定位更清晰"
+msgstr ""
+"icon-tool|本機調試|熱更新與斷點調試能力完整\n"
+"📚|範本腳手架|內置多場景範本快速起步\n"
+"🔍|智能提示|命令提示與錯誤定位更清晰"
+
+#: inc\core\class-open-source-devtools-page-creator.php:138
+msgid ""
+"🧪|自动测试|集成单测与冒烟测试流程\n"
+"🧹|代码规范|内置 lint/format 保障代码一致性\n"
+"icon-shield|安全检查|依赖漏洞检测与修复建议"
+msgstr ""
+"🧪|自動測試|集成單測與冒煙測試流程\n"
+"🧹|代碼規範|內置 lint/format 保障代碼一致性\n"
+"icon-shield|安全檢查|依賴漏洞偵測與修復建議"
+
+#: inc\core\class-open-source-devtools-page-creator.php:144
+msgid ""
+"🔄|CI/CD 集成|支持主流流水线平台接入\n"
+"icon-box|版本管理|语义化版本与变更日志自动生成\n"
+"icon-globe|多环境部署|测试、预发、生产环境统一管理"
+msgstr ""
+"🔄|CI/CD 集成|支援主流流水線平台接入\n"
+"icon-box|版本管理|語義化版本與變更日誌自動生成\n"
+"icon-globe|多環境部署|測試、預發、生產環境統一管理"
+
+#: inc\core\class-open-source-devtools-page-creator.php:217
+msgid "GitHub Stars"
+msgstr "GitHub Stars"
+
+#: inc\core\class-page-package-diagnostics-service.php:662
+msgid "当前站点启用了拆包模块样式，但这些模块缺少独立 CSS：%s。前台会自动使用完整模块样式文件，通常不会影响显示效果。"
+msgstr "目前網站啟用了拆包模組樣式，但這些模組缺少獨立 CSS：%s。前台會自動使用完整模組樣式檔案，通常不會影響顯示效果。"
+
+#: inc\core\class-page-region-decoration.php:28
+msgid "网站顶部菜单区域"
+msgstr "網站頂部選單區域"
+
+#: inc\core\class-page-region-decoration.php:29
+msgid "底部关于我们/联系区域"
+msgstr "底部關於我們/聯絡區域"
+
+#: inc\core\class-page-region-decoration.php:30
+msgid "底部友情链接区域（仅首页）"
+msgstr "底部友情連結區域（僅首頁）"
+
+#: inc\core\class-page-region-decoration.php:31
+msgid "底部版权/ICP 备案区域"
+msgstr "底部版權/ICP 備案區域"
+
+#: inc\core\class-resources-page-creator.php:61
+msgid "移动端 APP"
+msgstr "移動端 APP"
+
+#: inc\core\class-resources-page-creator.php:109
+msgid "icon-laptop 桌面客户端"
+msgstr "icon-laptop 桌面客戶端"
+
+#: inc\core\class-resources-page-creator.php:157
+msgid "企业资料与文档"
+msgstr "企業資料與檔案"
+
+#: inc\core\class-saas-pricing-page-creator.php:109
+msgid ""
+"icon-rocket|快速上线|内置模块化页面结构，按需组合即可发布\n"
+"icon-target|转化追踪|支持关键行为埋点与渠道成效分析\n"
+"💳|灵活付费|支持月付/年付与优惠活动配置"
+msgstr ""
+"icon-rocket|快速上線|內置模組化頁面結構，按需組合即可發佈\n"
+"icon-target|轉化追蹤|支援關鍵行為埋點與渠道成效分析\n"
+"💳|靈活付費|支援月付/年付與優惠活動配置"
+
+#: inc\core\class-saas-pricing-page-creator.php:115
+msgid ""
+"👥|多角色权限|支持管理员、运营、客服等多角色协作\n"
+"📂|工作流管理|从线索到成交的流程可视化追踪\n"
+"icon-bell|通知机制|关键操作实时提醒，避免信息遗漏"
+msgstr ""
+"👥|多角色權限|支援管理員、運營、客服等多角色協作\n"
+"📂|工作流管理|從線索到成交的流程可視化追蹤\n"
+"icon-bell|通知機制|關鍵操作實時提醒，避免資訊遺漏"
+
+#: inc\core\class-saas-pricing-page-creator.php:121
+msgid ""
+"🔐|数据隔离|租户级数据隔离，确保业务安全\n"
+"icon-flash|高可用架构|弹性扩展，应对业务高峰流量\n"
+"🧰|运维支持|监控告警与故障处理机制完善"
+msgstr ""
+"🔐|資料隔離|租戶級資料隔離，確保業務安全\n"
+"icon-flash|高可用架構|彈性擴展，應對業務高峰流量\n"
+"🧰|運維支援|監控告警與故障處理機制完善"
+
+#: inc\core\class-search-mode-manager.php:46
+msgid "搜索文章和页面等现有内容"
+msgstr "搜尋文章和頁面等現有內容"
+
+#: inc\core\class-search-mode-manager.php:52
+msgid "只搜索普通文章"
+msgstr "只搜尋普通文章"
+
+#: inc\core\class-search-mode-manager.php:57
+msgid "影视搜索"
+msgstr "影視搜尋"
+
+#: inc\core\class-search-mode-manager.php:58
+msgid "只搜索启用了视频模式的影视文章"
+msgstr "只搜尋啟用了影片模式的影視文章"
+
+#: inc\core\class-setup-wizard-presets.php:520
+msgid "启灵商城"
+msgstr "啟靈商店"
+
+#: inc\core\class-setup-wizard-presets.php:520
+msgid "可增强积分兑换、付费资源和会员权益。只提示，不安装不配置。"
+msgstr "可增強積分兌換、付費資源和會員權益。只提示，不安裝不配置。"
+
+#: inc\core\class-sms-manager.php:497 inc\core\class-sms-manager.php:574
+msgid "短信服务环境不可用（需 PHP 8.1 或更高版本）"
+msgstr "簡訊服務環境不可用（需 PHP 8.1 或更高版本）"
+
+#: inc\core\class-software-home-page-creator.php:91
+msgid "icon-star 精选推荐"
+msgstr "icon-star 精選推薦"
+
+#: inc\core\class-software-home-page-creator.php:110
+msgid "icon-laptop 热门软件"
+msgstr "icon-laptop 熱門軟體"
+
+#: inc\core\class-software-home-page-creator.php:150
+msgid "icon-trophy 下载排行榜"
+msgstr "icon-trophy 下載排行榜"
+
+#: inc\core\class-software-home-page-creator.php:195
+msgid "icon-box 更多软件"
+msgstr "icon-box 更多軟體"
+
+#: inc\core\class-software-intro-page-creator.php:68
+msgid ""
+"最新版本：V2.5\n"
+"更新时间：2026-01-01\n"
+"兼容 WP：6.0-6.9，推荐最新版本\n"
+"兼容PHP：8.1及以上，推荐8.1/8.2版本\n"
+"授权时间：永久授权使用，免费更新"
+msgstr ""
+"最新版本：V2.5\n"
+"更新時間：2026-01-01\n"
+"兼容 WP：6.0-6.9，推薦最新版本\n"
+"兼容PHP：8.1及以上，推薦8.1/8.2版本\n"
+"授權時間：永久授權使用，免費更新"
+
+#: inc\core\class-software-intro-page-creator.php:224
+msgid "选择需要展示的内容模块并填写内容即可，也可以调整模块顺序。"
+msgstr "選擇需要展示的內容模組並填寫內容即可，也可以調整模組順序。"
+
+#: inc\core\class-solutions-page-creator.php:55
+msgid "智能分析"
+msgstr "智能分析"
+
+#: inc\core\class-solutions-page-creator.php:60
+msgid "icon-flash 高效协同"
+msgstr "icon-flash 高效協同"
+
+#: inc\core\class-solutions-page-creator.php:65
+msgid "icon-shield 安全可靠"
+msgstr "icon-shield 安全可靠"
+
+#: inc\core\class-theme-license.php:413
+msgid "服务密钥已清空（当前为非商用版：仅限教育机构、公益组织与个人学习使用，不得商用）"
+msgstr "服務密鑰已清空（目前為非商用版：僅限教育機構、公益組織與個人學習使用，不得商用）"
+
+#: inc\core\class-theme-license.php:425
+msgid "商业授权密钥已在本地保存！已激活商业正版授权与专属技术支持。"
+msgstr "商業授權密鑰已在本機儲存！已激活商業正版授權與專屬技術支援。"
+
+#: inc\core\class-video-hero-page-creator.php:73
+msgid "icon-fire 立即购买"
+msgstr "icon-fire 立即購買"
+
+#: inc\core\class-vip-access.php:104 inc\core\class-vip-access.php:182 inc\core\class-vip-access.php:207
+msgid "要求最低 VIP 等级"
+msgstr "要求最低 VIP 等級"
+
+#: inc\core\class-vip-access.php:106 inc\core\class-vip-access.php:184 inc\core\class-vip-access.php:210
+msgid "不限制"
+msgstr "不限制"
+
+#: inc\core\class-vip-access.php:113
+msgid "仅对该级别及以上的 VIP 用户显示此菜单项。此项拥有更高优先级。"
+msgstr "僅對該級別及以上的 VIP 使用者顯示此選單項。此項擁有更高優先級。"
+
+#: inc\core\class-vip-access.php:191 inc\core\class-vip-access.php:217
+msgid "仅允许该级别及以上 VIP 用户访问该分类及其文章。"
+msgstr "僅允許該級別及以上 VIP 使用者存取該分類及其文章。"
+
+#: inc\core\ai\class-generation-orchestrator.php:228 inc\core\ai\class-response-parser.php:277 inc\core\ai\class-response-parser.php:360
+msgid "当前内容暂时无法生成，请刷新后重试。"
+msgstr "目前內容暫時無法生成，請刷新後重試。"
+
+#: inc\core\ai\class-response-parser.php:860
+msgid "部分不支持的内容已忽略。"
+msgstr "部分不支援的內容已忽略。"
+
+#: inc\core\design-tokens\component-group-labels.php:15
+msgid "边框强调组件"
+msgstr "邊框強調組件"
+
+#: inc\core\design-tokens\component-group-labels.php:18
+msgid "模块标题/表头/高亮组件"
+msgstr "模組標題/表頭/高亮組件"
+
+#: inc\core\design-tokens\component-group-labels.php:20
+msgid "认证登录组件"
+msgstr "認證登入組件"
+
+#: inc\core\design-tokens\component-style-definitions.php:24
+msgid "强调边框"
+msgstr "強調邊框"
+
+#: inc\core\design-tokens\component-style-definitions.php:30
+msgid "标题条背景"
+msgstr "標題條背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:31
+msgid "标题条文字"
+msgstr "標題條文字"
+
+#: inc\core\design-tokens\component-style-definitions.php:32
+msgid "标题条边框"
+msgstr "標題條邊框"
+
+#: inc\core\design-tokens\component-style-definitions.php:33
+msgid "列表表头背景"
+msgstr "列表表頭背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:34
+msgid "列表表头文字"
+msgstr "列表表頭文字"
+
+#: inc\core\design-tokens\component-style-definitions.php:35
+msgid "列表表头边框"
+msgstr "列表表頭邊框"
+
+#: inc\core\design-tokens\component-style-definitions.php:36
+msgid "高亮块背景"
+msgstr "高亮塊背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:37
+msgid "高亮块文字"
+msgstr "高亮塊文字"
+
+#: inc\core\design-tokens\component-style-definitions.php:38
+msgid "高亮块边框"
+msgstr "高亮塊邊框"
+
+#: inc\core\design-tokens\component-style-definitions.php:39
+msgid "高亮弱背景"
+msgstr "高亮弱背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:89
+msgid "徽标边框"
+msgstr "徽標邊框"
+
+#: inc\core\design-tokens\component-style-definitions.php:113
+msgid "营销公告背景"
+msgstr "營銷公告背景"
+
+#: inc\core\design-tokens\component-style-definitions.php:114
+msgid "营销公告按钮文字"
+msgstr "營銷公告按鈕文字"
+
+#: inc\core\helpers\helpers-page-skins.php:437 inc\modules\class-module-standards.php:374
+msgid "影视娱乐"
+msgstr "影視娱樂"
+
+#: inc\core\helpers\helpers-page-skins.php:506
+msgid "食品餐饮"
+msgstr "食品餐飲"
+
+#: inc\core\helpers\helpers-page-skins.php:528
+msgid "装修设计"
+msgstr "裝修設計"
+
+#: inc\core\helpers\helpers-page-skins.php:606
+msgid "法律咨询"
+msgstr "法律諮詢"
+
+#: inc\core\helpers\helpers-page-skins.php:627
+msgid "美业护肤"
+msgstr "美業護膚"
+
+#: inc\core\helpers\helpers-page-skins.php:651
+msgid "工业制造"
+msgstr "工業制造"
+
+#: inc\core\helpers\helpers-page-skins.php:684
+msgid "财税金融"
+msgstr "財稅金融"
+
+#: inc\core\helpers\helpers-page-skins.php:706
+msgid "摄影设计"
+msgstr "攝影設計"
+
+#: inc\core\helpers\helpers-page-skins.php:1481
+msgid "页面基础色"
+msgstr "頁面基礎色"
+
+#: inc\core\helpers\helpers-page-skins.php:1482
+msgid "控制当前页面主色、辅助色和基础背景。"
+msgstr "控制目前頁面主色、輔助色和基礎背景。"
+
+#: inc\core\helpers\helpers-page-skins.php:1500
+msgid "页面文字色"
+msgstr "頁面文字色"
+
+#: inc\core\helpers\helpers-page-skins.php:1507
+msgid "页面连续画布"
+msgstr "頁面連續畫布"
+
+#: inc\core\helpers\helpers-page-skins.php:1508
+msgid "控制正文模块之间以及正文与页脚之间的整体衔接。标准分区保持各模块原有布局；连续画布适合一体化页面。"
+msgstr "控制內文模組之間以及內文與頁尾之間的整體銜接。標准分區保持各模組原有版面配置；連續畫布適合一體化頁面。"
+
+#: inc\core\helpers\helpers-page-skins.php:1511
+msgid "画布模式"
+msgstr "畫布模式"
+
+#: inc\core\helpers\helpers-page-skins.php:1514
+msgid "标准分区"
+msgstr "標准分區"
+
+#: inc\core\helpers\helpers-page-skins.php:1515
+msgid "一体化连续画布"
+msgstr "一體化連續畫布"
+
+#: inc\core\helpers\helpers-page-skins.php:1519
+msgid "画布背景"
+msgstr "畫布背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1524
+msgid "正文到页脚衔接色"
+msgstr "內文到頁尾銜接色"
+
+#: inc\core\helpers\helpers-page-skins.php:1531
+msgid "顶部菜单栏"
+msgstr "頂部選單欄"
+
+#: inc\core\helpers\helpers-page-skins.php:1532
+msgid "分别控制常规/滚动状态和首屏透明状态。透明状态文字留空时，会根据首屏标题明暗自动选择深色或白色。"
+msgstr "分別控制常規/滾動狀態和首屏透明狀態。透明狀態文字留空時，會根據首屏標題明暗自動選擇深色或白色。"
+
+#: inc\core\helpers\helpers-page-skins.php:1535
+msgid "常规/滚动顶部背景"
+msgstr "常規/滾動頂部背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1540
+msgid "菜单文字色"
+msgstr "選單文字色"
+
+#: inc\core\helpers\helpers-page-skins.php:1545
+msgid "首屏透明状态文字色"
+msgstr "首屏透明狀態文字色"
+
+#: inc\core\helpers\helpers-page-skins.php:1550
+msgid "菜单悬停背景"
+msgstr "選單懸停背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1555
+msgid "菜单悬停文字"
+msgstr "選單懸停文字"
+
+#: inc\core\helpers\helpers-page-skins.php:1560
+msgid "搜索框背景"
+msgstr "搜尋框背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1565
+msgid "搜索框文字"
+msgstr "搜尋框文字"
+
+#: inc\core\helpers\helpers-page-skins.php:1570
+msgid "搜索占位文案"
+msgstr "搜尋占位文案"
+
+#: inc\core\helpers\helpers-page-skins.php:1575
+msgid "搜索图标颜色"
+msgstr "搜尋圖標顏色"
+
+#: inc\core\helpers\helpers-page-skins.php:1580
+msgid "联系电话背景"
+msgstr "聯絡電話背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1585
+msgid "联系电话文字"
+msgstr "聯絡電話文字"
+
+#: inc\core\helpers\helpers-page-skins.php:1592
+msgid "底部和波浪"
+msgstr "底部和波浪"
+
+#: inc\core\helpers\helpers-page-skins.php:1593
+msgid "这里是当前页显式覆盖，优先于全局页脚和所选页面皮肤；留空则按“页脚策略”继承。"
+msgstr "這裡是目前頁顯式覆蓋，優先於全域頁尾和所選頁面皮膚；留空則按“頁尾策略”繼承。"
+
+#: inc\core\helpers\helpers-page-skins.php:1596
+msgid "关于我们/联系区域背景"
+msgstr "關於我們/聯絡區域背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1601
+msgid "关于我们/联系区域文字"
+msgstr "關於我們/聯絡區域文字"
+
+#: inc\core\helpers\helpers-page-skins.php:1611
+msgid "友情链接区域背景"
+msgstr "友情連結區域背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1616
+msgid "友情链接区域文字"
+msgstr "友情連結區域文字"
+
+#: inc\core\helpers\helpers-page-skins.php:1621
+msgid "版权/ICP 备案区域背景"
+msgstr "版權/ICP 備案區域背景"
+
+#: inc\core\helpers\helpers-page-skins.php:1626
+msgid "版权/ICP 备案文案颜色"
+msgstr "版權/ICP 備案文案顏色"
+
+#: inc\core\helpers\helpers-page-skins.php:1631
+msgid "ICP/公安备案链接颜色"
+msgstr "ICP/公安備案連結顏色"
+
+#: inc\core\helpers\helpers-page-skins.php:1636
+msgid "备案链接悬停颜色"
+msgstr "備案連結懸停顏色"
+
+#: inc\core\helpers\helpers-page-skins.php:1641
+msgid "版权/备案区域分隔线"
+msgstr "版權/備案區域分隔線"
+
+#: inc\core\helpers\helpers-page-skins.php:1684
+msgid "按钮和筛选项"
+msgstr "按鈕和篩選項"
+
+#: inc\core\helpers\helpers-page-skins.php:1685
+msgid "控制当前页面通用按钮、tab/cat/filter 按钮。"
+msgstr "控制目前頁面通用按鈕、tab/cat/filter 按鈕。"
+
+#: inc\core\helpers\helpers-runtime-optimizations.php:826
+msgid "该功能已被系统优化模块禁用，以保障访问速度与合规安全。"
+msgstr "該功能已被系統最佳化模組停用，以保障存取速度與合規安全。"
+
+#: inc\modules\class-module-base.php:188
+msgid "留空时跟随按钮背景色；没有单独背景色时跟随全局按钮边框。"
+msgstr "留空時跟隨按鈕背景色；沒有單獨背景色時跟隨全域按鈕邊框。"
+
+#: inc\modules\class-module-standards.php:317
+msgid "健康保健用品"
+msgstr "健康保健用品"
+
+#: inc\modules\class-module-standards.php:318
+msgid "情趣用品"
+msgstr "情趣用品"
+
+#: inc\modules\class-module-standards.php:357
+msgid "电竞赛事/战队"
+msgstr "電競賽事/戰隊"
+
+#: inc\modules\class-module-standards.php:358
+msgid "电竞酒店/场馆"
+msgstr "電競酒店/場館"
+
+#: inc\modules\class-module-standards.php:359
+msgid "游戏研发/发行"
+msgstr "游戲研發/發行"
+
+#: inc\modules\class-module-standards.php:376
+msgid "摄影图片"
+msgstr "攝影圖片"
+
+#: inc\modules\class-module-standards.php:378
+msgid "活动会展"
+msgstr "活動會展"
+
+#: inc\modules\modules\class-about-me-card-module.php:94
+msgid "个人网站文案"
+msgstr "個人網站文案"
+
+#: inc\modules\modules\class-about-me-card-module.php:118
+msgid "图标 (Symbol类名/SVG/Emoji，可选)"
+msgstr "圖標 (Symbol類名/SVG/Emoji，可選)"
+
+#: inc\modules\modules\class-about-me-card-module.php:167 inc\modules\modules\class-author-matrix-module.php:186 inc\modules\modules\class-blog-module.php:52 inc\modules\modules\class-branches-module.php:96 inc\modules\modules\class-certificate-honors-module.php:77
+msgid "标签/徽章背景颜色"
+msgstr "標籤/徽章背景顏色"
+
+#: inc\modules\modules\class-about-me-card-module.php:169
+msgid "控制 Now 标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制 Now 標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-accordion-module.php:75 inc\modules\modules\class-tabs-module.php:83
+msgid "图标 (留空或Symbol类名)"
+msgstr "圖標 (留空或Symbol類名)"
+
+#: inc\modules\modules\class-app-hero-module.php:84 inc\modules\modules\class-author-matrix-module.php:176 inc\modules\modules\class-cta-module.php:97 inc\modules\modules\class-image-text-module.php:102 inc\modules\modules\class-software-carousel-module.php:121
+msgid "按钮悬停边框颜色"
+msgstr "按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-app-hero-module.php:84
+msgid "留空时跟随按钮边框颜色。"
+msgstr "留空時跟隨按鈕邊框顏色。"
+
+#: inc\modules\modules\class-author-matrix-module.php:176
+msgid "留空时跟随按钮悬停背景色。"
+msgstr "留空時跟隨按鈕懸停背景色。"
+
+#: inc\modules\modules\class-author-matrix-module.php:188
+msgid "控制排名徽章背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制排名徽章背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-banner-module.php:114
+msgid "数据条背景颜色"
+msgstr "資料條背景顏色"
+
+#: inc\modules\modules\class-banner-module.php:117
+msgid "留空则跟随当前模块视觉风格；可填写 HEX、rgba 或渐变等 CSS 背景值。"
+msgstr "留空則跟隨目前模組視覺風格；可填寫 HEX、rgba 或漸變等 CSS 背景值。"
+
+#: inc\modules\modules\class-banner-module.php:122
+msgid "数据项布局"
+msgstr "資料項版面配置"
+
+#: inc\modules\modules\class-banner-module.php:125
+msgid "连体数据条"
+msgstr "連體資料條"
+
+#: inc\modules\modules\class-banner-module.php:126
+msgid "独立数据卡片"
+msgstr "獨立資料卡片"
+
+#: inc\modules\modules\class-banner-module.php:133
+msgid "独立卡片间距"
+msgstr "獨立卡片間距"
+
+#: inc\modules\modules\class-banner-module.php:136
+msgid "如 12px、16px、24px，仅独立数据卡片生效。"
+msgstr "如 12px、16px、24px，僅獨立資料卡片生效。"
+
+#: inc\modules\modules\class-banner-module.php:149
+msgid "描述文本颜色"
+msgstr "描述文本顏色"
+
+#: inc\modules\modules\class-banner-module.php:152
+msgid "单卡片圆角"
+msgstr "單卡片圓角"
+
+#: inc\modules\modules\class-banner-module.php:152
+msgid "填写 0px 为直角，填写 12px、20px 等为圆角。"
+msgstr "填寫 0px 為直角，填寫 12px、20px 等為圓角。"
+
+#: inc\modules\modules\class-banner-module.php:153
+msgid "单卡片内边距"
+msgstr "單卡片內邊距"
+
+#: inc\modules\modules\class-banner-module.php:153
+msgid "如 12px、16px、24px。"
+msgstr "如 12px、16px、24px。"
+
+#: inc\modules\modules\class-banner-module.php:154
+msgid "单卡片阴影"
+msgstr "單卡片陰影"
+
+#: inc\modules\modules\class-banner-module.php:154
+msgid "如 0 12px 30px rgba(15,23,42,.12)，填写 none 可关闭。"
+msgstr "如 0 12px 30px rgba(15,23,42,.12)，填寫 none 可關閉。"
+
+#: inc\modules\modules\class-banner-module.php:184
+msgid "注意：必须与下方模块背景色一致，否则会出现横线"
+msgstr "注意：必須與下方模組背景色一致，否則會出現橫線"
+
+#: inc\modules\modules\class-blog-module.php:52
+msgid "控制分类、文章标签和资源徽章，留空时跟随页面预设/全局徽章颜色。"
+msgstr "控制分類、文章標籤和資源徽章，留空時跟隨頁面預設/全域徽章顏色。"
+
+#: inc\modules\modules\class-blog-module.php:59
+msgid "侧边栏内容来源"
+msgstr "側邊欄內容來源"
+
+#: inc\modules\modules\class-blog-module.php:60
+msgid "WordPress 小工具侧边栏"
+msgstr "WordPress 小工具側邊欄"
+
+#: inc\modules\modules\class-blog-module.php:61
+msgid "模块内置侧边栏"
+msgstr "模組內置側邊欄"
+
+#: inc\modules\modules\class-blog-module.php:136
+msgid "阅读更多按钮背景颜色"
+msgstr "閱讀更多按鈕背景顏色"
+
+#: inc\modules\modules\class-blog-module.php:137
+msgid "阅读更多按钮文字颜色"
+msgstr "閱讀更多按鈕文字顏色"
+
+#: inc\modules\modules\class-blog-module.php:138
+msgid "阅读更多按钮悬停背景颜色"
+msgstr "閱讀更多按鈕懸停背景顏色"
+
+#: inc\modules\modules\class-blog-module.php:139
+msgid "阅读更多按钮悬停文字颜色"
+msgstr "閱讀更多按鈕懸停文字顏色"
+
+#: inc\modules\modules\class-branches-module.php:99
+msgid "控制服务标签和营业状态徽章，留空时保留状态默认色并跟随全局徽章颜色"
+msgstr "控制服務標籤和營業狀態徽章，留空時保留狀態預設色並跟隨全域徽章顏色"
+
+#: inc\modules\modules\class-branches-module.php:131
+msgid "导航按钮边框颜色"
+msgstr "導覽按鈕邊框顏色"
+
+#: inc\modules\modules\class-branches-module.php:146
+msgid "导航按钮悬停边框颜色"
+msgstr "導覽按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-branches-module.php:146
+msgid "留空时跟随导航按钮悬停背景颜色。"
+msgstr "留空時跟隨導覽按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-branches-module.php:170
+msgid "预约按钮边框颜色"
+msgstr "預約按鈕邊框顏色"
+
+#: inc\modules\modules\class-branches-module.php:187
+msgid "预约按钮悬停边框颜色"
+msgstr "預約按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-branches-module.php:187
+msgid "留空时跟随预约按钮悬停背景颜色。"
+msgstr "留空時跟隨預約按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-brand-banner-pro-module.php:390
+msgid "留空时跟随浅色按钮悬停背景颜色。"
+msgstr "留空時跟隨淺色按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-cases-module.php:43
+msgid "填写后优先展示自定义案例列表；留空时自动读取案例文章。"
+msgstr "填寫後優先展示自定義案例列表；留空時自動讀取案例文章。"
+
+#: inc\modules\modules\class-cases-module.php:63
+msgid "卡片查看详情文案"
+msgstr "卡片檢視詳情文案"
+
+#: inc\modules\modules\class-category-tabs-module.php:138
+msgid "默认文章卡片"
+msgstr "預設文章卡片"
+
+#: inc\modules\modules\class-category-tabs-module.php:139
+msgid "图片素材卡片"
+msgstr "圖片素材卡片"
+
+#: inc\modules\modules\class-category-tabs-module.php:143
+msgid "显示标题"
+msgstr "顯示標題"
+
+#: inc\modules\modules\class-category-tabs-module.php:144
+msgid "显示图片尺寸"
+msgstr "顯示圖片尺寸"
+
+#: inc\modules\modules\class-category-tabs-module.php:145
+msgid "显示图片格式"
+msgstr "顯示圖片格式"
+
+#: inc\modules\modules\class-category-tabs-module.php:148
+msgid "显示商城资源角标"
+msgstr "顯示商店資源角標"
+
+#: inc\modules\modules\class-category-tabs-module.php:152
+msgid "仅在文章配置了启灵商城资源且全局角标已启用时显示；普通图片文章不受影响。"
+msgstr "僅在文章配置了啟靈商店資源且全域角標已啟用時顯示；普通圖片文章不受影響。"
+
+#: inc\modules\modules\class-category-tabs-module.php:156
+msgid "显示商城价格"
+msgstr "顯示商店價格"
+
+#: inc\modules\modules\class-category-tabs-module.php:160
+msgid "价格只读取启灵商城资源状态，不需要商城的普通文章会自动忽略。"
+msgstr "價格只讀取啟靈商店資源狀態，不需要商店的普通文章會自動忽略。"
+
+#: inc\modules\modules\class-category-tabs-module.php:164
+msgid "显示获取图片按钮"
+msgstr "顯示獲取圖片按鈕"
+
+#: inc\modules\modules\class-category-tabs-module.php:168
+msgid "按钮进入文章详情；如文章使用启灵商城，购买和下载权限仍由商城在详情页处理。"
+msgstr "按鈕進入文章詳情；如文章使用啟靈商店，購買和下載權限仍由商店在詳情頁處理。"
+
+#: inc\modules\modules\class-category-tabs-module.php:170
+msgid "获取图片按钮文案"
+msgstr "獲取圖片按鈕文案"
+
+#: inc\modules\modules\class-category-tabs-module.php:171
+msgid "获取图片按钮背景颜色"
+msgstr "獲取圖片按鈕背景顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:172
+msgid "获取图片按钮文字颜色"
+msgstr "獲取圖片按鈕文字顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:173
+msgid "获取图片按钮边框颜色"
+msgstr "獲取圖片按鈕邊框顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:174
+msgid "获取图片按钮悬停背景颜色"
+msgstr "獲取圖片按鈕懸停背景顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:175
+msgid "获取图片按钮悬停文字颜色"
+msgstr "獲取圖片按鈕懸停文字顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:176
+msgid "获取图片按钮悬停边框颜色"
+msgstr "獲取圖片按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:177
+msgid "分类标识背景颜色"
+msgstr "分類標識背景顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:177
+msgid "控制封面分类标识，留空时跟随页面预设/全局徽章颜色。"
+msgstr "控制封面分類標識，留空時跟隨頁面預設/全域徽章顏色。"
+
+#: inc\modules\modules\class-category-tabs-module.php:205 inc\modules\modules\class-news-module.php:45
+msgid "查看更多按钮文案"
+msgstr "檢視更多按鈕文案"
+
+#: inc\modules\modules\class-category-tabs-module.php:206
+msgid "加载更多按钮文案"
+msgstr "載入更多按鈕文案"
+
+#: inc\modules\modules\class-category-tabs-module.php:211 inc\modules\modules\class-qiling-universal-recommend-module.php:316
+msgid "底部按钮边框颜色"
+msgstr "底部按鈕邊框顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:212 inc\modules\modules\class-qiling-universal-recommend-module.php:331
+msgid "底部按钮悬停边框颜色"
+msgstr "底部按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-category-tabs-module.php:212
+msgid "留空时跟随悬停背景颜色。"
+msgstr "留空時跟隨懸停背景顏色。"
+
+#: inc\modules\modules\class-certificate-honors-module.php:67
+msgid "查看证书按钮文案"
+msgstr "檢視證書按鈕文案"
+
+#: inc\modules\modules\class-certificate-honors-module.php:79
+msgid "留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-clients-module.php:61
+msgid "卡片文字颜色"
+msgstr "卡片文字顏色"
+
+#: inc\modules\modules\class-clients-module.php:61
+msgid "控制占位文字与客户名称颜色，支持深浅色自主设置"
+msgstr "控制占位文字與客戶名稱顏色，支援深淺色自主設定"
+
+#: inc\modules\modules\class-comparison-module.php:136
+msgid "推荐表头背景"
+msgstr "推薦表頭背景"
+
+#: inc\modules\modules\class-comparison-module.php:139
+msgid "支持纯色或渐变，留空时使用全局品牌渐变。"
+msgstr "支援純色或漸變，留空時使用全域品牌漸變。"
+
+#: inc\modules\modules\class-comparison-module.php:141
+msgid "推荐表头文字颜色"
+msgstr "推薦表頭文字顏色"
+
+#: inc\modules\modules\class-comparison-module.php:142
+msgid "推荐标签背景颜色"
+msgstr "推薦標籤背景顏色"
+
+#: inc\modules\modules\class-comparison-module.php:143
+msgid "推荐标签文字颜色"
+msgstr "推薦標籤文字顏色"
+
+#: inc\modules\modules\class-comparison-module.php:146
+msgid "推荐列内容背景"
+msgstr "推薦列內容背景"
+
+#: inc\modules\modules\class-comparison-module.php:149 inc\modules\modules\class-comparison-module.php:156
+msgid "支持十六进制、rgb 或 rgba 颜色。"
+msgstr "支援十六進制、rgb 或 rgba 顏色。"
+
+#: inc\modules\modules\class-comparison-module.php:153
+msgid "推荐列悬停背景"
+msgstr "推薦列懸停背景"
+
+#: inc\modules\modules\class-contact-module.php:78
+msgid "当前页面专属电话，留空时使用主题设置中的公司电话"
+msgstr "目前頁面專屬電話，留空時使用主題設定中的公司電話"
+
+#: inc\modules\modules\class-contact-module.php:84
+msgid "当前页面专属邮箱，留空时使用主题设置中的公司邮箱"
+msgstr "目前頁面專屬信箱，留空時使用主題設定中的公司信箱"
+
+#: inc\modules\modules\class-contact-module.php:90
+msgid "当前页面专属地址，留空时使用主题设置中的公司地址"
+msgstr "目前頁面專屬位址，留空時使用主題設定中的公司位址"
+
+#: inc\modules\modules\class-contact-module.php:109
+msgid "内置表单提交按钮文案"
+msgstr "內置表單提交按鈕文案"
+
+#: inc\modules\modules\class-contact-module.php:109
+msgid "只控制主题内置在线留言，不影响启灵表单插件。"
+msgstr "只控制主題內置在線留言，不影響啟靈表單外掛。"
+
+#: inc\modules\modules\class-contact-module.php:115
+msgid "留空时跟随内置提交按钮悬停背景颜色。"
+msgstr "留空時跟隨內置提交按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-cta-module.php:97 inc\modules\modules\class-image-text-module.php:102 inc\modules\modules\class-news-module.php:50 inc\modules\modules\class-software-carousel-module.php:121 inc\modules\modules\class-software-category-module.php:122
+msgid "留空时跟随按钮悬停背景颜色。"
+msgstr "留空時跟隨按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-cta-module.php:136
+msgid "板块样式"
+msgstr "板塊樣式"
+
+#: inc\modules\modules\class-cta-module.php:139
+msgid "标准通栏"
+msgstr "標准通欄"
+
+#: inc\modules\modules\class-cta-module.php:141
+msgid "衔接底部波浪"
+msgstr "銜接底部波浪"
+
+#: inc\modules\modules\class-cta-module.php:147
+msgid "底部衔接方式"
+msgstr "底部銜接方式"
+
+#: inc\modules\modules\class-cta-module.php:151
+msgid "强制衔接页脚"
+msgstr "強制銜接頁尾"
+
+#: inc\modules\modules\class-cta-module.php:152
+msgid "不衔接"
+msgstr "不銜接"
+
+#: inc\modules\modules\class-cta-module.php:155
+msgid "放在页脚上方时，建议选择“强制衔接页脚”，避免和底部波浪断层。"
+msgstr "放在頁尾上方時，建議選擇“強制銜接頁尾”，避免和底部波浪斷層。"
+
+#: inc\modules\modules\class-cta-module.php:159
+msgid "底部衔接重叠量"
+msgstr "底部銜接重疊量"
+
+#: inc\modules\modules\class-cta-module.php:162
+msgid "如 2px、4px。控制与底部波浪的重叠像素，值越大越不容易出现白线。留空使用默认(2px)。"
+msgstr "如 2px、4px。控制與底部波浪的重疊像素，值越大越不容易出現白線。留空使用預設(2px)。"
+
+#: inc\modules\modules\class-cta-module.php:166
+msgid "板块圆角"
+msgstr "板塊圓角"
+
+#: inc\modules\modules\class-cta-module.php:169
+msgid "如 0、18px、28px。留空跟随板块样式。"
+msgstr "如 0、18px、28px。留空跟隨板塊樣式。"
+
+#: inc\modules\modules\class-cta-module.php:176
+msgid "如 760px、980px。留空使用默认。"
+msgstr "如 760px、980px。留空使用預設。"
+
+#: inc\modules\modules\class-cta-module.php:184
+msgid "胶囊按钮"
+msgstr "膠囊按鈕"
+
+#: inc\modules\modules\class-cta-module.php:185
+msgid "柔和按钮"
+msgstr "柔和按鈕"
+
+#: inc\modules\modules\class-curriculum-module.php:63
+msgid "控制章节元信息标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制章節元資訊標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:72
+msgid "左侧内容来源"
+msgstr "左側內容來源"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:74
+msgid "自定义图片"
+msgstr "自定義圖片"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:77
+msgid "指定文章ID"
+msgstr "指定文章ID"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:84
+msgid "读取文章数量"
+msgstr "讀取文章數量"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:86
+msgid "用于最新文章和随机文章，建议填写 2-10。"
+msgstr "用於最新文章和隨機文章，建議填寫 2-10。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:91
+msgid "排除分类 ID"
+msgstr "排除分類 ID"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:92
+msgid "仅用于随机文章，多个分类 ID 用英文逗号分隔，例如：3,8,15。"
+msgstr "僅用於隨機文章，多個分類 ID 用英文逗號分隔，例如：3,8,15。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:99
+msgid "仅用于指定文章ID，多个ID用英文逗号分隔，并按填写顺序展示。"
+msgstr "僅用於指定文章ID，多個ID用英文逗號分隔，並按填寫順序展示。"
+
+#: inc\modules\modules\class-double-column-carousel-module.php:104
+msgid "自定义左侧轮播图"
+msgstr "自定義左側輪播圖"
+
+#: inc\modules\modules\class-downloads-module.php:110
+msgid "留空时跟随下载按钮悬停背景颜色。"
+msgstr "留空時跟隨下載按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-downloads-module.php:116
+msgid "控制文件格式等标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制檔案格式等標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-dynamic-banner-module.php:84
+msgid "0-1 之间的小数，留空不添加遮罩。"
+msgstr "0-1 之間的小數，留空不添加遮罩。"
+
+#: inc\modules\modules\class-dynamic-banner-module.php:147
+msgid "描述文案颜色"
+msgstr "描述文案顏色"
+
+#: inc\modules\modules\class-dynamic-banner-module.php:236 inc\modules\modules\class-resource-hero-pro-module.php:393
+msgid "留空时跟随次按钮悬停背景颜色。"
+msgstr "留空時跟隨次按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-experience-timeline-module.php:156
+msgid "控制时间段徽章与经历标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制時間段徽章與經歷標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-experience-timeline-module.php:180
+msgid "分组1 图标 (留空或 icon-xxx)"
+msgstr "分組1 圖標 (留空或 icon-xxx)"
+
+#: inc\modules\modules\class-experience-timeline-module.php:233
+msgid "分组2 图标 (留空或 icon-xxx)"
+msgstr "分組2 圖標 (留空或 icon-xxx)"
+
+#: inc\modules\modules\class-faq-module.php:106
+msgid "展开图标背景"
+msgstr "展開圖標背景"
+
+#: inc\modules\modules\class-faq-module.php:107
+msgid "展开图标颜色"
+msgstr "展開圖標顏色"
+
+#: inc\modules\modules\class-featured-posts-module.php:266
+msgid "角标背景颜色"
+msgstr "角標背景顏色"
+
+#: inc\modules\modules\class-featured-posts-module.php:268
+msgid "留空时跟随全局徽章颜色。"
+msgstr "留空時跟隨全域徽章顏色。"
+
+#: inc\modules\modules\class-features-list-module.php:75
+msgid "标签栏背景"
+msgstr "標籤欄背景"
+
+#: inc\modules\modules\class-features-list-module.php:77
+msgid "激活标签背景"
+msgstr "激活標籤背景"
+
+#: inc\modules\modules\class-features-list-module.php:78
+msgid "激活标签文字"
+msgstr "激活標籤文字"
+
+#: inc\modules\modules\class-features-list-module.php:79
+msgid "功能卡片背景"
+msgstr "功能卡片背景"
+
+#: inc\modules\modules\class-features-list-module.php:80
+msgid "功能卡片边框"
+msgstr "功能卡片邊框"
+
+#: inc\modules\modules\class-features-list-module.php:81
+msgid "功能标题颜色"
+msgstr "功能標題顏色"
+
+#: inc\modules\modules\class-features-list-module.php:82
+msgid "功能描述颜色"
+msgstr "功能描述顏色"
+
+#: inc\modules\modules\class-features-list-module.php:83
+msgid "功能图标背景"
+msgstr "功能圖標背景"
+
+#: inc\modules\modules\class-features-list-module.php:84
+msgid "功能图标颜色"
+msgstr "功能圖標顏色"
+
+#: inc\modules\modules\class-footer-suite-module.php:62
+msgid "经典页脚"
+msgstr "經典頁尾"
+
+#: inc\modules\modules\class-footer-suite-module.php:63
+msgid "深色影院"
+msgstr "深色影院"
+
+#: inc\modules\modules\class-footer-suite-module.php:168
+msgid "显示二维码"
+msgstr "顯示二維碼"
+
+#: inc\modules\modules\class-footer-suite-module.php:253
+msgid "联系标签背景颜色"
+msgstr "聯絡標籤背景顏色"
+
+#: inc\modules\modules\class-footer-suite-module.php:255
+msgid "控制联系内容前的小标签，留空时跟随页面预设/全局徽章颜色。"
+msgstr "控制聯絡內容前的小標籤，留空時跟隨頁面預設/全域徽章顏色。"
+
+#: inc\modules\modules\class-friendly-links-module.php:167
+msgid "控制友链标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制友链標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-fullscreen-video-module.php:75
+msgid "支持图标类名 (如 icon-rocket、icon-home) 或 SVG 代码"
+msgstr "支援圖標類名 (如 icon-rocket、icon-home) 或 SVG 代碼"
+
+#: inc\modules\modules\class-hero-search-module.php:55
+msgid "前台显示宽度"
+msgstr "前台顯示寬度"
+
+#: inc\modules\modules\class-hero-search-module.php:57
+msgid "浏览器全屏宽度"
+msgstr "瀏覽器全屏寬度"
+
+#: inc\modules\modules\class-hero-search-module.php:58
+msgid "跟随页面内容宽度"
+msgstr "跟隨頁面內容寬度"
+
+#: inc\modules\modules\class-hero-search-module.php:59
+msgid "自定义最大宽度"
+msgstr "自定義最大寬度"
+
+#: inc\modules\modules\class-hero-search-module.php:62
+msgid "只控制模块整体宽度，不影响下方搜索框最大宽度设置。"
+msgstr "只控制模組整體寬度，不影響下方搜尋框最大寬度設定。"
+
+#: inc\modules\modules\class-hero-search-module.php:67
+msgid "模块自定义最大宽度"
+msgstr "模組自定義最大寬度"
+
+#: inc\modules\modules\class-hero-search-module.php:69
+msgid "例如 1400px、90vw 或 80rem。移动端会自动保留安全边距。"
+msgstr "例如 1400px、90vw 或 80rem。移動端會自動保留安全邊距。"
+
+#: inc\modules\modules\class-hero-search-module.php:75
+msgid "模块图片/视频圆角"
+msgstr "模組圖片/影片圓角"
+
+#: inc\modules\modules\class-hero-search-module.php:78
+msgid "小圆角（8px）"
+msgstr "小圓角（8px）"
+
+#: inc\modules\modules\class-hero-search-module.php:79
+msgid "中圆角（16px）"
+msgstr "中圓角（16px）"
+
+#: inc\modules\modules\class-hero-search-module.php:80
+msgid "大圆角（24px）"
+msgstr "大圓角（24px）"
+
+#: inc\modules\modules\class-hero-search-module.php:81
+msgid "自定义圆角"
+msgstr "自定義圓角"
+
+#: inc\modules\modules\class-hero-search-module.php:84
+msgid "背景图片、背景视频和遮罩会随整个模块一起裁切。"
+msgstr "背景圖片、背景影片和遮罩會隨整個模組一起裁切。"
+
+#: inc\modules\modules\class-hero-search-module.php:89
+msgid "自定义圆角大小"
+msgstr "自定義圓角大小"
+
+#: inc\modules\modules\class-hero-search-module.php:91
+msgid "例如 12px、1rem 或 2vw。"
+msgstr "例如 12px、1rem 或 2vw。"
+
+#: inc\modules\modules\class-hero-search-module.php:105
+msgid "填写 0-100，设置遮罩颜色时以颜色值为准。"
+msgstr "填寫 0-100，設定遮罩顏色時以顏色值為準。"
+
+#: inc\modules\modules\class-hero-search-module.php:130
+msgid "图片 (image)"
+msgstr "圖片 (image)"
+
+#: inc\modules\modules\class-hero-search-module.php:131
+msgid "视频 (video)"
+msgstr "影片 (video)"
+
+#: inc\modules\modules\class-hero-search-module.php:217 inc\modules\modules\class-video-portal-hero-module.php:111
+msgid "跟随主题设置"
+msgstr "跟隨主題設定"
+
+#: inc\modules\modules\class-hero-search-module.php:242
+msgid "搜索按钮边框颜色"
+msgstr "搜尋按鈕邊框顏色"
+
+#: inc\modules\modules\class-hero-search-module.php:255
+msgid "搜索按钮悬停边框颜色"
+msgstr "搜尋按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-hero-search-module.php:255
+msgid "留空时跟随搜索按钮悬停背景色。"
+msgstr "留空時跟隨搜尋按鈕懸停背景色。"
+
+#: inc\modules\modules\class-image-comparison-module.php:87
+msgid "控制 Before/After 标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制 Before/After 標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-interact-hero-module.php:71
+msgid "支持图标类名(如 icon-download)或SVG代码"
+msgstr "支援圖標類名(如 icon-download)或SVG代碼"
+
+#: inc\modules\modules\class-interact-hero-module.php:89
+msgid "留空则使用主按钮默认白色"
+msgstr "留空則使用主按鈕預設白色"
+
+#: inc\modules\modules\class-interact-hero-module.php:186
+msgid "图标类名或SVG代码"
+msgstr "圖標類名或SVG代碼"
+
+#: inc\modules\modules\class-interact-hero-module.php:187
+msgid "例如: icon-weibo、icon-rocket 或 SVG 代码"
+msgstr "例如: icon-weibo、icon-rocket 或 SVG 代碼"
+
+#: inc\modules\modules\class-itinerary-module.php:113
+msgid "控制 Day 徽章与景点标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制 Day 徽章與景點標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-lookbook-module.php:62
+msgid "单品1 按钮边框颜色"
+msgstr "單品1 按鈕邊框顏色"
+
+#: inc\modules\modules\class-lookbook-module.php:75
+msgid "单品2 按钮边框颜色"
+msgstr "單品2 按鈕邊框顏色"
+
+#: inc\modules\modules\class-lookbook-module.php:88
+msgid "单品3 按钮边框颜色"
+msgstr "單品3 按鈕邊框顏色"
+
+#: inc\modules\modules\class-lookbook-module.php:101
+msgid "单品4 按钮边框颜色"
+msgstr "單品4 按鈕邊框顏色"
+
+#: inc\modules\modules\class-lookbook-module.php:114
+msgid "单品5 按钮边框颜色"
+msgstr "單品5 按鈕邊框顏色"
+
+#: inc\modules\modules\class-magic-layout-module.php:42
+msgid "一个模块可添加多个容器段，并分别设置列数、列宽、面板风格和元素归属。"
+msgstr "一個模組可添加多個容器段，並分別設定列數、列寬、面板風格和元素歸屬。"
+
+#: inc\modules\modules\class-magic-layout-module.php:176
+msgid "其他布局设置"
+msgstr "其他版面配置設定"
+
+#: inc\modules\modules\class-magic-layout-module.php:177
+msgid "设置模块的列数、列宽、间距、对齐方式和容器样式。"
+msgstr "設定模組的列數、列寬、間距、對齊方式和容器樣式。"
+
+#: inc\modules\modules\class-main-category-content-module.php:36
+msgid "请选择影视分类"
+msgstr "請選擇影視分類"
+
+#: inc\modules\modules\class-main-category-content-module.php:47
+msgid "尚未选择影视分类时，请在下方选择该模块要展示的分类。模块会自动获取所选分类下的子分类链接。"
+msgstr "尚未選擇影視分類時，請在下方選擇該模組要展示的分類。模組會自動獲取所選分類下的子分類連結。"
+
+#: inc\modules\modules\class-main-category-content-module.php:78
+msgid "“查看更多”按钮边框颜色"
+msgstr "“檢視更多”按鈕邊框顏色"
+
+#: inc\modules\modules\class-main-category-content-module.php:79
+msgid "“查看更多”按钮悬停边框颜色"
+msgstr "“檢視更多”按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-main-category-content-module.php:79
+msgid "留空时跟随全局按钮悬停背景色。"
+msgstr "留空時跟隨全域按鈕懸停背景色。"
+
+#: inc\modules\modules\class-main-category-content-module.php:191
+msgid "尚未选择影视分类"
+msgstr "尚未選擇影視分類"
+
+#: inc\modules\modules\class-main-category-content-module.php:191
+msgid "请在模块设置中选择该模块要展示的分类。"
+msgstr "請在模組設定中選擇該模組要展示的分類。"
+
+#: inc\modules\modules\class-media-list-module.php:88
+msgid "详情链接文案"
+msgstr "詳情連結文案"
+
+#: inc\modules\modules\class-media-list-module.php:212
+msgid "控制类型标签和状态徽章，留空时保留状态默认色并跟随全局徽章颜色。"
+msgstr "控制類型標籤和狀態徽章，留空時保留狀態預設色並跟隨全域徽章顏色。"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:61
+msgid "外部链接文案"
+msgstr "外部連結文案"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:86
+msgid "心情 / 状态"
+msgstr "心情 / 狀態"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:234
+msgid "动态"
+msgstr "動態"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:243
+msgid "随笔"
+msgstr "隨筆"
+
+#: inc\modules\modules\class-micro-journal-stream-module.php:252
+msgid "日志"
+msgstr "日誌"
+
+#: inc\modules\modules\class-news-module.php:36
+msgid "控制“新闻动态”等模块顶部主标题的颜色；留空时跟随页面标题颜色。"
+msgstr "控制“新聞動態”等模組頂部主標題的顏色；留空時跟隨頁面標題顏色。"
+
+#: inc\modules\modules\class-news-module.php:37
+msgid "新闻标题颜色"
+msgstr "新聞標題顏色"
+
+#: inc\modules\modules\class-news-module.php:37
+msgid "控制每张新闻卡片内文章标题及标题链接的颜色。"
+msgstr "控制每張新聞卡片內文章標題及標題連結的顏色。"
+
+#: inc\modules\modules\class-news-module.php:44
+msgid "查看更多按钮背景颜色"
+msgstr "檢視更多按鈕背景顏色"
+
+#: inc\modules\modules\class-news-module.php:44
+msgid "留空时跟随当前页面的主按钮颜色。"
+msgstr "留空時跟隨目前頁面的主按鈕顏色。"
+
+#: inc\modules\modules\class-news-module.php:46
+msgid "查看更多按钮文字颜色"
+msgstr "檢視更多按鈕文字顏色"
+
+#: inc\modules\modules\class-news-module.php:46
+msgid "控制按钮正常状态的文字颜色。"
+msgstr "控制按鈕正常狀態的文字顏色。"
+
+#: inc\modules\modules\class-news-module.php:47
+msgid "查看更多按钮悬停背景颜色"
+msgstr "檢視更多按鈕懸停背景顏色"
+
+#: inc\modules\modules\class-news-module.php:48
+msgid "查看更多按钮悬停文字颜色"
+msgstr "檢視更多按鈕懸停文字顏色"
+
+#: inc\modules\modules\class-news-module.php:49
+msgid "查看更多按钮边框颜色"
+msgstr "檢視更多按鈕邊框顏色"
+
+#: inc\modules\modules\class-news-module.php:50
+msgid "查看更多按钮悬停边框颜色"
+msgstr "檢視更多按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-pet-profile-module.php:80
+msgid "控制状态徽章与特点标签背景；留空时保留状态语义色并跟随全局标签风格。"
+msgstr "控制狀態徽章與特點標籤背景；留空時保留狀態語義色並跟隨全域標籤風格。"
+
+#: inc\modules\modules\class-process-module.php:56
+msgid "步骤连接线颜色"
+msgstr "步驟連接線顏色"
+
+#: inc\modules\modules\class-process-module.php:57
+msgid "步骤图标文字颜色"
+msgstr "步驟圖標文字顏色"
+
+#: inc\modules\modules\class-process-module.php:58
+msgid "阶段标签文字颜色"
+msgstr "階段標籤文字顏色"
+
+#: inc\modules\modules\class-process-module.php:64
+msgid "控制阶段标签和工业流程信息徽章，留空时跟随页面预设/全局徽章颜色。"
+msgstr "控制階段標籤和工業流程資訊徽章，留空時跟隨頁面預設/全域徽章顏色。"
+
+#: inc\modules\modules\class-product-showcase-module.php:229
+msgid "CTA按钮边框颜色"
+msgstr "CTA按鈕邊框顏色"
+
+#: inc\modules\modules\class-products-module.php:118
+msgid "弹窗咨询按钮边框颜色"
+msgstr "彈窗諮詢按鈕邊框顏色"
+
+#: inc\modules\modules\class-products-module.php:131
+msgid "弹窗咨询按钮悬停边框颜色"
+msgstr "彈窗諮詢按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-products-module.php:131
+msgid "留空时跟随弹窗咨询按钮悬停背景颜色。"
+msgstr "留空時跟隨彈窗諮詢按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-products-module.php:249
+msgid "关闭产品详情"
+msgstr "關閉產品詳情"
+
+#: inc\modules\modules\class-promotion-module.php:277
+msgid "留空时跟随活动按钮悬停背景颜色。"
+msgstr "留空時跟隨活動按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:90
+msgid "文章分类 ID"
+msgstr "文章分類 ID"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:92
+msgid "填写要推荐的文章分类 ID；多个 ID 用英文逗号分隔。留空时显示全部分类的最新文章。"
+msgstr "填寫要推薦的文章分類 ID；多個 ID 用英文逗號分隔。留空時顯示全部分類的最新文章。"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:256
+msgid "控制专题角标与推荐卡片角标背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制專題角標與推薦卡片角標背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-qiling-universal-recommend-module.php:331
+msgid "留空时跟随底部按钮悬停背景颜色。"
+msgstr "留空時跟隨底部按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-room-showcase-module.php:291
+msgid "留空时跟随预订按钮悬停背景颜色。"
+msgstr "留空時跟隨預訂按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-service-cards-module.php:51
+msgid "模块副标题颜色"
+msgstr "模組副標題顏色"
+
+#: inc\modules\modules\class-software-carousel-module.php:88
+msgid "控制版本标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制版本標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-software-category-module.php:108
+msgid "控制版本等标签背景，留空时跟随页面预设风格或全局徽章颜色。"
+msgstr "控制版本等標籤背景，留空時跟隨頁面預設風格或全域徽章顏色。"
+
+#: inc\modules\modules\class-software-ranking-module.php:120
+msgid "控制排行类型、版本与排名徽章背景；留空时保留原有排行语义色并跟随全局标签风格。"
+msgstr "控制排行類型、版本與排名徽章背景；留空時保留原有排行語義色並跟隨全域標籤風格。"
+
+#: inc\modules\modules\class-tabbed-carousel-module.php:46
+msgid "支持图标类名 (如 icon-home、icon-fire) 或 SVG 代码"
+msgstr "支援圖標類名 (如 icon-home、icon-fire) 或 SVG 代碼"
+
+#: inc\modules\modules\class-testimonials-module.php:130
+msgid "控制评价来源与认证徽章，留空时保留来源默认色并跟随全局徽章颜色。"
+msgstr "控制評價來源與認證徽章，留空時保留來源預設色並跟隨全域徽章顏色。"
+
+#: inc\modules\modules\class-ticket-showcase-module.php:286
+msgid "留空时跟随购票按钮悬停背景颜色。"
+msgstr "留空時跟隨購票按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:65
+msgid "影视标题文字颜色"
+msgstr "影視標題文字顏色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:65
+msgid "仅用于纯文字标题；留空时使用视频门户默认标题颜色。"
+msgstr "僅用於純文字標題；留空時使用影片門戶預設標題顏色。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:77
+msgid "封面角标背景颜色"
+msgstr "封面角標背景顏色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:77
+msgid "留空时使用视频门户默认角标颜色。"
+msgstr "留空時使用影片門戶預設角標顏色。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:88
+msgid "影视搜索入口"
+msgstr "影視搜尋入口"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:90
+msgid "搜索框显示在影片信息与右侧缩略图导航之间。旧页面默认关闭，不会改变现有布局。"
+msgstr "搜尋框顯示在影片資訊與右側縮略圖導覽之間。舊頁面預設關閉，不會改變現有版面配置。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:94
+msgid "Banner 内容来源"
+msgstr "Banner 內容來源"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:96
+msgid "手工幻灯片"
+msgstr "手工幻燈片"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:101
+msgid "显示影视搜索框"
+msgstr "顯示影視搜尋框"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:120
+msgid "搜索框占位文字"
+msgstr "搜尋框占位文字"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:122 inc\modules\modules\class-video-portal-hero-module.php:274 inc\modules\modules\class-video-portal-hero-module.php:276
+msgid "搜索影片、演员或导演"
+msgstr "搜尋影片、演員或導演"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:132
+msgid "显示热门关键词"
+msgstr "顯示熱門關鍵字"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:139
+msgid "热门关键词"
+msgstr "熱門關鍵字"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:142
+msgid "使用半角或全角逗号分隔；留空时不输出热门词区域。"
+msgstr "使用半角或全角逗號分隔；留空時不輸出熱門詞區域。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:146
+msgid "搜索框样式"
+msgstr "搜尋框樣式"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:149
+msgid "深色通透"
+msgstr "深色通透"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:150
+msgid "明亮实体"
+msgstr "明亮實體"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:151
+msgid "紧凑模式"
+msgstr "緊湊模式"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:152
+msgid "影院搜索台"
+msgstr "影院搜尋台"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:175
+msgid "角标自定义背景颜色"
+msgstr "角標自定義背景顏色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:175
+msgid "填写后优先于红/橙/蓝预设。"
+msgstr "填寫後優先於紅/橙/藍預設。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:216
+msgid "播放按钮边框颜色"
+msgstr "播放按鈕邊框顏色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:217
+msgid "播放按钮悬停边框颜色"
+msgstr "播放按鈕懸停邊框顏色"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:217
+msgid "留空时跟随播放按钮边框颜色。"
+msgstr "留空時跟隨播放按鈕邊框顏色。"
+
+#: inc\modules\modules\class-video-portal-hero-module.php:390
+msgid "搜索影视内容"
+msgstr "搜尋影視內容"
+
+#: inc\modules\modules\class-video-ranking-module.php:20
+msgid "按分类、发布时间、更新时间、评论或浏览量展示影视榜单，播放器不可用时自动降级为普通文章排行。"
+msgstr "按分類、發佈時間、更新時間、評論或瀏覽量展示影視榜單，播放器不可用時自動降級為普通文章排行。"
+
+#: inc\modules\modules\class-video-ranking-module.php:43
+msgid "评论最多"
+msgstr "評論最多"
+
+#: inc\modules\modules\class-video-ranking-module.php:45
+msgid "手工指定"
+msgstr "手工指定"
+
+#: inc\modules\modules\class-video-ranking-module.php:48
+msgid "浏览最多"
+msgstr "瀏覽最多"
+
+#: inc\modules\modules\class-video-ranking-module.php:53 inc\modules\modules\class-video-ranking-module.php:56
+msgid "留空时跟随当前页面主题。"
+msgstr "留空時跟隨目前頁面主題。"
+
+#: inc\modules\modules\class-video-ranking-module.php:54
+msgid "发现值得观看的热门内容"
+msgstr "發現值得觀看的熱門內容"
+
+#: inc\modules\modules\class-video-ranking-module.php:55
+msgid "留空时使用与模块背景匹配的辅助文字颜色。"
+msgstr "留空時使用與模組背景匹配的輔助文字顏色。"
+
+#: inc\modules\modules\class-video-ranking-module.php:56
+msgid "模块背景颜色"
+msgstr "模組背景顏色"
+
+#: inc\modules\modules\class-video-ranking-module.php:57
+msgid "查看更多文字"
+msgstr "檢視更多文字"
+
+#: inc\modules\modules\class-video-ranking-module.php:58
+msgid "查看更多链接"
+msgstr "檢視更多連結"
+
+#: inc\modules\modules\class-video-ranking-module.php:58
+msgid "填写完整排行榜页面或影视分类页地址；留空时不显示“查看更多”按钮。"
+msgstr "填寫完整排行榜頁面或影視分類頁位址；留空時不顯示“檢視更多”按鈕。"
+
+#: inc\modules\modules\class-video-ranking-module.php:59
+msgid "默认显示数量"
+msgstr "預設顯示數量"
+
+#: inc\modules\modules\class-video-ranking-module.php:59
+msgid "允许 3-20 条。"
+msgstr "允許 3-20 條。"
+
+#: inc\modules\modules\class-video-ranking-module.php:60
+msgid "默认数据来源"
+msgstr "預設資料來源"
+
+#: inc\modules\modules\class-video-ranking-module.php:61
+msgid "默认指定分类"
+msgstr "預設指定分類"
+
+#: inc\modules\modules\class-video-ranking-module.php:62
+msgid "默认手工文章 ID"
+msgstr "預設手工文章 ID"
+
+#: inc\modules\modules\class-video-ranking-module.php:62
+msgid "使用逗号分隔，手工来源按填写顺序显示。"
+msgstr "使用逗號分隔，手工來源按填寫順序顯示。"
+
+#: inc\modules\modules\class-video-ranking-module.php:68
+msgid "前三名突出榜"
+msgstr "前三名突出榜"
+
+#: inc\modules\modules\class-video-ranking-module.php:69
+msgid "紧凑文字榜"
+msgstr "緊湊文字榜"
+
+#: inc\modules\modules\class-video-ranking-module.php:70
+msgid "海报榜"
+msgstr "海報榜"
+
+#: inc\modules\modules\class-video-ranking-module.php:71
+msgid "左右双栏榜"
+msgstr "左右雙欄榜"
+
+#: inc\modules\modules\class-video-ranking-module.php:78
+msgid "排行榜标签"
+msgstr "排行榜標籤"
+
+#: inc\modules\modules\class-video-ranking-module.php:79
+msgid "最多使用前 5 个榜单；不添加时使用上面的默认数据设置。"
+msgstr "最多使用前 5 個榜單；不添加時使用上面的預設資料設定。"
+
+#: inc\modules\modules\class-video-ranking-module.php:80
+msgid "添加榜单"
+msgstr "添加榜單"
+
+#: inc\modules\modules\class-video-ranking-module.php:82
+msgid "标签名称"
+msgstr "標籤名稱"
+
+#: inc\modules\modules\class-video-ranking-module.php:82 inc\modules\modules\class-video-ranking-module.php:183
+msgid "总榜"
+msgstr "總榜"
+
+#: inc\modules\modules\class-video-ranking-module.php:86
+msgid "手工文章 ID"
+msgstr "手工文章 ID"
+
+#: inc\modules\modules\class-video-ranking-module.php:86
+msgid "仅手工指定来源使用，逗号分隔。"
+msgstr "僅手工指定來源使用，逗號分隔。"
+
+#: inc\modules\modules\class-video-ranking-module.php:90
+msgid "显示评分"
+msgstr "顯示評分"
+
+#: inc\modules\modules\class-video-ranking-module.php:91
+msgid "显示清晰度"
+msgstr "顯示清晰度"
+
+#: inc\modules\modules\class-video-ranking-module.php:92
+msgid "显示集数"
+msgstr "顯示集數"
+
+#: inc\modules\modules\class-video-ranking-module.php:94
+msgid "显示发布日期"
+msgstr "顯示發佈日期"
+
+#: inc\modules\modules\class-video-ranking-module.php:155
+msgid "选择排行榜"
+msgstr "選擇排行榜"
+
+#: inc\modules\modules\class-video-ranking-module.php:206
+msgid "榜单 %d"
+msgstr "榜單 %d"
+
+#: inc\modules\modules\class-video-ranking-module.php:347
+msgid "%d 集"
+msgstr "%d 集"
+
+#: inc\modules\modules\class-video-ranking-module.php:348
+msgid "%s 浏览"
+msgstr "%s 瀏覽"
+
+#: inc\modules\modules\class-visual-tabs-module.php:154
+msgid "留空时跟随面板按钮悬停背景颜色。"
+msgstr "留空時跟隨面板按鈕懸停背景顏色。"
+
+#: inc\modules\modules\class-work-detail-module.php:144
+msgid "外链按钮默认文案"
+msgstr "外链按鈕預設文案"
+
+#: inc\modules\modules\class-work-detail-module.php:144
+msgid "作品数据没有单独按钮文案时使用。"
+msgstr "作品資料沒有單獨按鈕文案時使用。"
+
+#: inc\modules\modules\class-work-library-module.php:186
+msgid "控制作品类型和分类标签，留空时跟随页面预设/全局徽章颜色。"
+msgstr "控制作品類型和分類標籤，留空時跟隨頁面預設/全域徽章顏色。"
+
+#: template-parts\content\content-none.php:21
+msgid "未找到相关结果"
+msgstr "未找到相關結果"
+
+#: template-parts\content\content-none.php:22
+msgid "抱歉，没有找到匹配的内容。请尝试更换关键词或返回首页。"
+msgstr "抱歉，沒有找到匹配的內容。請嘗試更換關鍵字或返回首頁。"
+
+#: template-parts\content\content-none.php:28
+msgid "此处暂无发布内容，请稍后再来查看。"
+msgstr "此處暫無發佈內容，請稍後再來檢視。"
+
+#: template-parts\header\search-overlay.php:36
+msgid "关闭搜索"
+msgstr "關閉搜尋"
+
+#: template-parts\search\results-video.php:88
+msgid "全 %d 集"
+msgid_plural "全 %d 集"
+msgstr[0] "全 %d 集"
+
+#: template-parts\single\meta-stats.php:100
+msgid "全文共 %s 字，预计阅读 %d 分钟"
+msgstr "全文共 %s 字，預計閱讀 %d 分鐘"
+
+#: template-parts\single\meta-stats.php:104
+msgid "%d 分钟阅读 · %s 字"
+msgstr "%d 分鐘閱讀 · %s 字"
+
+#: templates\template-account.php:686
+msgid "GIF 动图大小不能超过 2MB"
+msgstr "GIF 動圖大小不能超過 2MB"
+
+#: templates\template-account.php:692
+msgid "图片过大，请选择小于 30MB 的图片"
+msgstr "圖片過大，請選擇小於 30MB 的圖片"
+
+#: templates\template-account.php:696
+msgid "正在优化图片..."
+msgstr "正在最佳化圖片..."
+
+#: templates\template-account.php:757
+msgid "图片处理失败，请重试"
+msgstr "圖片處理失敗，請重試"
+
+#: templates\template-blog.php:77
+msgid "暂无内容。"
+msgstr "暫無內容。"
+
+#: inc/admin/class-setup-wizard-admin.php:1809 inc/admin/class-template-center-admin.php:448
+msgid "语言与适用场景提示"
+msgstr "語言與適用場景提示"
+
+#: inc/admin/class-setup-wizard-admin.php:1810 inc/admin/class-template-center-admin.php:449
+msgid "主题内置的 100+ 套行业模板及向导推荐页面主要针对中文建站场景设计（演示数据、栏目结构及文案均为中文）。如果您正在搭建外贸站、出海或多语言站点，仍可自由使用主题全部排版能力，但建议跳过预设导入，根据业务自行创建页面或按需替换文案。"
+msgstr "主題內置的 100+ 套產業範本及向導推薦頁面主要針對中文建站場景設計（演示資料、欄目結構及文案均為中文）。如果您正在搭建外貿站、出海或多語言網站，仍可自由使用主題全部排版能力，但建議跳過預設匯入，根據業務自行創建頁面或按需替換文案。"
+
+#: inc/admin/class-setup-wizard-admin.php:1833
+msgid "提示：推荐模板与页面结构预设均为中文内容。"
+msgstr "提示：推薦範本與頁面結構預設均為中文內容。"
+
+
+msgid "展示启灵实物商城的商品，支持横向轮播、副图切换与状态角标"
+msgstr "展示啟靈實物商店的商品，支援橫向輪播、副圖切換與狀態角標"
+
+msgid "启灵商品展示 (轮播版)"
+msgstr "啟靈商品展示 (輪播版)"
+
+msgid "显示商品状态角标"
+msgstr "顯示商品狀態角標"
+
+msgid "是 (自动识别 HOT / NEW / SALE)"
+msgstr "是 (自動識別 HOT / NEW / SALE)"
+
+msgid "悬浮切换第二张细节图"
+msgstr "懸浮切換第二張細節圖"
+
+msgid "开启 (有副图时平滑渐变)"
+msgstr "開啟 (有副圖時平滑漸變)"
+
+msgid "HOT"
+msgstr "HOT"
+
+msgid "NEW"
+msgstr "NEW"
+
+msgid "SALE"
+msgstr "SALE"
+
+msgid "查看商品"
+msgstr "檢視商品"
+
+msgid "多分类 Tab 实时无刷新切换、3/4列网格排版、大牌悬浮副图与快速加购"
+msgstr "多分類 Tab 實時無刷新切換、3/4列網格排版、大牌懸浮副圖與快速加購"
+
+msgid "启灵商城商品矩阵"
+msgstr "啟靈商店商品矩陣"
+
+msgid "全宽容器"
+msgstr "全寬容器"
+
+msgid "全系产品矩阵"
+msgstr "全系產品矩陣"
+
+msgid "探索官方精选全系列产品，享全球无忧质保与极速配送"
+msgstr "探索官方精選全系列產品，享全球無憂質保與極速配送"
+
+msgid "3 列 (大画幅/质感更强)"
+msgstr "3 列 (大畫幅/質感更強)"
+
+msgid "4 列 (经典独立站电商/密度适中)"
+msgstr "4 列 (經典獨立站電商/密度適中)"
+
+msgid "启用分类 Tab 切换"
+msgstr "啟用分類 Tab 切換"
+
+msgid "开启 (自动读取商城前 6 个热门分类)"
+msgstr "開啟 (自動讀取商店前 6 個熱門分類)"
+
+msgid "关闭 (仅平铺展示全部商品)"
+msgstr "關閉 (僅平鋪展示全部商品)"
+
+msgid "每分类展示商品数量"
+msgstr "每分類展示商品數量"
+
+msgid "建议填 6 或 8"
+msgstr "建議填 6 或 8"
+
+msgid "商品排序方式"
+msgstr "商品排序方式"
+
+msgid "销量优先 (畅销爆款)"
+msgstr "銷量優先 (暢銷爆款)"
+
+msgid "最新发布 (新品推荐)"
+msgstr "最新發佈 (新品推薦)"
+
+msgid "显示状态角标"
+msgstr "顯示狀態角標"
+
+msgid "开启 (自动识别 HOT / NEW / SALE)"
+msgstr "開啟 (自動識別 HOT / NEW / SALE)"
+
+msgid "悬浮平滑切换副图"
+msgstr "懸浮平滑切換副圖"
+
+msgid "开启 (有相册副图时平滑展示)"
+msgstr "開啟 (有相冊副圖時平滑展示)"
+
+msgid "显示加购胶囊按钮"
+msgstr "顯示加購膠囊按鈕"
+
+msgid "底部显示“查看全部”按钮"
+msgstr "底部顯示“檢視全部”按鈕"
+
+msgid "查看全部按钮文字"
+msgstr "檢視全部按鈕文字"
+
+msgid "探索全部商品 →"
+msgstr "探索全部商品 →"
+
+msgid "查看全部跳转链接"
+msgstr "檢視全部跳轉連結"
+
+msgid "留空则自动跳转启灵商城商品主目录"
+msgstr "留空則自動跳轉啟靈商店商品主目錄"
+
+msgid "提示：未找到启灵商城数据表 (%s)，请确保插件已安装并激活。"
+msgstr "提示：未找到啟靈商店資料表 (%s)，請確保外掛已安裝並激活。"
+
+msgid "全部精选"
+msgstr "全部精選"
+
+msgid "立即加购"
+msgstr "立即加購"
+
+msgid "选购"
+msgstr "選購"
+
+msgid "大品牌机皇主打款单品聚焦展台，巨幅渲染图、黑科技参数芯片与双购买行动号召"
+msgstr "大品牌機皇主打款單品聚焦展台，巨幅渲染圖、黑科技參數芯片與雙購買行動號召"
+
+msgid "启灵旗舰产品展台"
+msgstr "啟靈旗艦產品展台"
+
+msgid "展台视觉主题"
+msgstr "展台視覺主題"
+
+msgid "暗黑科技巨幕 (Dark Pro · 推荐)"
+msgstr "暗黑科技巨幕 (Dark Pro · 推薦)"
+
+msgid "极简典雅纯白 (Clean Light)"
+msgstr "極簡典雅純白 (Clean Light)"
+
+msgid "流光渐变深邃 (Ambient Glow)"
+msgstr "流光漸變深邃 (Ambient Glow)"
+
+msgid "展台排版布局"
+msgstr "展台排版版面配置"
+
+msgid "大牌经典：左图右文"
+msgstr "大牌經典：左圖右文"
+
+msgid "反向布局：左文右图"
+msgstr "反向版面配置：左文右圖"
+
+msgid "居中聚焦：巨幕沉浸式"
+msgstr "居中聚焦：巨幕沉浸式"
+
+msgid "上下留白尺寸"
+msgstr "上下留白尺寸"
+
+msgid "120px (大牌气场推荐)"
+msgstr "120px (大牌氣場推薦)"
+
+msgid "关联商城商品 ID 或 Slug"
+msgstr "關聯商店商品 ID 或 Slug"
+
+msgid "输入商城商品 ID（例如 1）或别名，将自动同步读取真实售价、主图与购买链接"
+msgstr "輸入商店商品 ID（例如 1）或別名，將自動同步讀取真實售價、主圖與購買連結"
+
+msgid "顶部亮点角标"
+msgstr "頂部亮點角標"
+
+msgid "FLAGSHIP · 全新旗舰"
+msgstr "FLAGSHIP · 全新旗艦"
+
+msgid "旗舰产品主标题"
+msgstr "旗艦產品主標題"
+
+msgid "TITANIUM X PRO · 旗舰定义者"
+msgstr "TITANIUM X PRO · 旗艦定義者"
+
+msgid "产品核心设计标语/副标题"
+msgstr "產品核心設計標語/副標題"
+
+msgid "极致工艺，为专业而生。全自研低功耗处理核心与航天级精密机身，重新突破便携性能想象边界。"
+msgstr "極致工藝，為專業而生。全自研低功耗處理核心與航天級精密機身，重新突破便攜性能想象邊界。"
+
+msgid "自定义产品高清渲染图"
+msgstr "自定義產品高清渲染圖"
+
+msgid "建议上传透明底 PNG 渲染大图，留空则自动读取关联商品主图"
+msgstr "建議上傳透明底 PNG 渲染大圖，留空則自動讀取關聯商品主圖"
+
+msgid "自定义价格文本"
+msgstr "自定義價格文本"
+
+msgid "留空自动显示关联商品真实售价，如填 “起售价 $999”"
+msgstr "留空自動顯示關聯商品真實售價，如填 “起售價 $999”"
+
+msgid "参数 1 数值/亮点"
+msgstr "參數 1 數值/亮點"
+
+msgid "参数 1 说明"
+msgstr "參數 1 說明"
+
+msgid "先进制程自研核心"
+msgstr "先進制程自研核心"
+
+msgid "参数 2 数值/亮点"
+msgstr "參數 2 數值/亮點"
+
+msgid "参数 2 说明"
+msgstr "參數 2 說明"
+
+msgid "深度抗水防尘"
+msgstr "深度抗水防塵"
+
+msgid "参数 3 数值/亮点"
+msgstr "參數 3 數值/亮點"
+
+msgid "参数 3 说明"
+msgstr "參數 3 說明"
+
+msgid "长效全天候续航"
+msgstr "長效全天候續航"
+
+msgid "参数 4 数值/亮点"
+msgstr "參數 4 數值/亮點"
+
+msgid "参数 4 说明"
+msgstr "參數 4 說明"
+
+msgid "户外超感峰值视界"
+msgstr "戶外超感峰值視界"
+
+msgid "立即选购"
+msgstr "立即選購"
+
+msgid "主按钮跳转链接"
+msgstr "主按鈕跳轉連結"
+
+msgid "留空自动跳转关联商品详情页"
+msgstr "留空自動跳轉關聯商品詳情頁"
+
+msgid "了解设计亮点 →"
+msgstr "了解設計亮點 →"
+
+msgid "次按钮跳转链接"
+msgstr "次按鈕跳轉連結"
+
+msgid "大品牌DTC独立商城"
+msgstr "大品牌DTC獨立商店"
+
+msgid "暂无可展示内容。请在后台为该页面添加商品与品牌模块，或从模板中心一键导入预设。"
+msgstr "暫無可展示內容。請在後台為該頁面添加商品與品牌模組，或從範本中心一鍵匯入預設。"
+
+msgid "编辑页面 / 装修模块"
+msgstr "編輯頁面 / 裝修模組"
+
+msgid "外贸出海独立商城"
+msgstr "外貿出海獨立商店"
+
+msgid "暂无可展示内容。请在后台为该页面添加商品与出海模块，或从模板中心一键导入预设。"
+msgstr "暫無可展示內容。請在後台為該頁面添加商品與出海模組，或從範本中心一鍵匯入預設。"
+
+msgid "无权访问模板预览。请先登录管理员账号。"
+msgstr "無權存取範本預覽。請先登入管理員帳號。"
+
+msgid "安全校验失败，预览链接已失效，请在模板中心重新点击预览。"
+msgstr "安全校驗失敗，預覽連結已失效，請在範本中心重新點擊預覽。"
+
+msgid "未指定有效的模板标识。"
+msgstr "未指定有效的範本標識。"
+
+msgid "该模板没有可预览的官方页面包。"
+msgstr "該範本沒有可預覽的官方頁面包。"
+
+msgid "该模板包暂无可渲染的模块内容。"
+msgstr "該範本包暫無可渲染的模組內容。"
+
+msgid "模板预览"
+msgstr "範本預覽"
+
+msgid "实时预览"
+msgstr "實時預覽"
+
+msgid "模板实时虚拟预览"
+msgstr "範本實時虛擬預覽"
+
+msgid "桌面宽幅视口"
+msgstr "桌面寬幅視口"
+
+msgid "平板视口 (768px)"
+msgstr "平板視口 (768px)"
+
+msgid "手机视口 (375px)"
+msgstr "手機視口 (375px)"
+
+msgid "在新标签页全屏打开"
+msgstr "在新標籤頁全屏打開"
+
+msgid "新窗口打开"
+msgstr "新窗口打開"
+
+msgid "使用此模板"
+msgstr "使用此範本"
+
+msgid "关闭 (Esc)"
+msgstr "關閉 (Esc)"
+
+msgid "正在从官方页面包实时虚拟渲染，请稍候..."
+msgstr "正在從官方頁面包實時虛擬渲染，請稍候..."
 

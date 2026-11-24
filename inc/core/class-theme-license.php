@@ -515,7 +515,7 @@ class Theme_License {
             'blocking'  => true,
             'sslverify' => true,
         ) );
-        
+
         // 检查响应
         if ( ! is_wp_error( $response ) && wp_remote_retrieve_response_code( $response ) === 200 ) {
             // 成功：设置30天的 transient
