@@ -42,244 +42,208 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be123c 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "挚爱影像",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80",
-            "title": "记录那些只发生一次的瞬间",
-            "subtitle": "婚礼跟拍、婚纱旅拍、订婚仪式与家庭纪实，支持在线预约档期。",
-            "btn_text": "查询档期",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#be123c"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#magic_layout",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "800",
-            "number": "800+",
-            "label": "拍摄婚礼",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "12",
-            "number": "12城",
-            "label": "服务城市",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "新人评分",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "30",
-            "number": "30天",
-            "label": "交付周期",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#ec4899",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#ec4899",
+        "qhs_hover_bg": "rgba(236,72,153,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "fullscreen_video",
+      "data": {}
+    },
+    {
+      "type": "lookbook",
       "data": {
-        "services_title": "拍摄服务",
-        "services_subtitle": "按婚礼阶段和预算自由组合",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "lookbook_title": "2026 当季高定婚纱样片大赏 · 定格心动瞬间",
+        "lookbook_subtitle": "打破千篇一律的摆拍，捕捉眼神交汇时的微澜与真挚情感",
+        "lookbook_columns": "3",
+        "lookbook_items": [
           {
-            "icon": "01",
-            "title": "婚礼全天跟拍",
-            "desc": "从接亲、仪式到晚宴完整记录。",
-            "link": "#"
+            "cover_image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop&q=80",
+            "name": "法式复古庄园纪实",
+            "desc": "晨曦薄雾、古老回廊与手工刺绣重工蕾丝主纱，油画般质感。",
+            "btn_text": "欣赏完整客片"
           },
           {
-            "icon": "02",
-            "title": "婚纱旅拍",
-            "desc": "城市、海边和目的地主题拍摄。",
-            "link": "#"
+            "cover_image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&auto=format&fit=crop&q=80",
+            "name": "海风与礁石之誓",
+            "desc": "暮色四合中的海浪声，极简剪裁缎面礼服与随风扬起的头纱。",
+            "btn_text": "欣赏完整客片"
           },
           {
-            "icon": "03",
-            "title": "订婚仪式",
-            "desc": "轻量化记录仪式和亲友互动。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "婚礼短片",
-            "desc": "动态影像剪辑，适合现场和社媒发布。",
-            "link": "#"
+            "cover_image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&auto=format&fit=crop&q=80",
+            "name": "新中式东方美学嫁衣",
+            "desc": "苏绣金丝龙凤褂与重彩东方光影，含蓄温婉的东方浪漫。",
+            "btn_text": "欣赏完整客片"
           }
         ]
+      }
+    },
+    {
+      "type": "magic_layout",
+      "data": {
+        "magic_layout_notice": "浪漫美学",
+        "magic_layout_sections": []
       }
     },
     {
       "type": "gallery",
       "data": {
-        "gallery_title": "精选作品",
-        "gallery_subtitle": "用图片呈现风格、情绪和细节",
-        "gallery_columns": "3",
-        "gallery_style": "masonry",
-        "enable_filter": "yes",
-        "filter_categories": "仪式,婚纱,细节",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
-            "title": "户外仪式",
-            "desc": "自然光纪实",
-            "category": "仪式"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=80",
-            "title": "婚纱肖像",
-            "desc": "浪漫人物氛围",
-            "category": "婚纱"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=900&q=80",
-            "title": "婚礼细节",
-            "desc": "戒指、手捧花和布置",
-            "category": "细节"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
-            "title": "亲友瞬间",
-            "desc": "真实情绪记录",
-            "category": "仪式"
-          }
-        ],
-        "module_bg_color": "#fff1f2",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "gallery_title": "真实新人客片九宫格影展",
+        "gallery_subtitle": "素人出镜无修饰真实呈现，我们记录的是你们独一无二的爱情",
+        "columns": "3"
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "拍摄套餐",
-        "pricing_subtitle": "价格可按城市、摄影师级别和拍摄时长调整",
+        "pricing_title": "高定拍摄套系方案 · 全程透明零隐形消费",
+        "pricing_subtitle": "底片全送，无后期加价推销，包含国际一线婚纱礼服不分区任选",
         "pricing_columns": "3",
-        "module_bg_color": "#ffffff",
-        "pricing_items": [
+        "pricing_plans": [
           {
-            "name": "订婚记录",
-            "price": "¥2999",
-            "period": "/场",
-            "desc": "轻量仪式和亲友合影",
-            "features": "3小时拍摄\n精修 40 张\n电子相册",
-            "btn_text": "咨询档期",
-            "btn_link": "#",
-            "featured": ""
+            "name": "纯粹纪实单日外景套系",
+            "price": "¥6,999",
+            "period": "全包套餐",
+            "desc": "适合追求轻松自然、喜欢户外纪实风的新人",
+            "features": "总监摄影师+化妆师一对一全天跟拍\n拍摄底片不少于 200 张 (全部轻修全送)\n精修精调 45 张入册\n提供 3 套高定婚纱礼服与全套造型\n赠送 16 寸手工定制皮革相册一本",
+            "btn_text": "预约此套系",
+            "btn_link": "#booking"
           },
           {
-            "name": "婚礼全天",
-            "price": "¥8999",
-            "period": "/场",
-            "desc": "接亲到晚宴完整跟拍",
-            "features": "双机位拍摄\n精修 120 张\n快剪短片",
-            "btn_text": "咨询档期",
-            "btn_link": "#",
-            "featured": "1",
-            "featured_text": "热门",
-            "featured_bg": "linear-gradient(135deg, #be123c 0%, #f43f5e 100%)"
+            "name": "旗舰双城旅拍尊享套系",
+            "price": "¥12,800",
+            "period": "热销主推",
+            "desc": "摄影总监领衔团队跨城旅拍，定格绝美风光",
+            "features": "品牌创办人级别金牌摄化团队执机\n拍摄底片不少于 350 张全部赠送\n精修精调 65 张入册\n提供 5 套国际大牌婚纱礼服不限区任选\n赠送 18寸+12寸母子相册两本+微电影剪辑",
+            "btn_text": "抢定档期席位",
+            "btn_link": "#booking",
+            "featured": "1"
           },
           {
-            "name": "目的地旅拍",
-            "price": "按需报价",
-            "period": "",
-            "desc": "城市或海外定制拍摄",
-            "features": "路线策划\n造型建议\n多场景拍摄",
-            "btn_text": "定制咨询",
-            "btn_link": "#",
-            "featured": ""
+            "name": "私人高定无边界艺术套系",
+            "price": "¥23,800",
+            "period": "限量定制",
+            "desc": "从故事脚本策划到置景美术，量身创作爱情电影",
+            "features": "知名视觉艺术家全程艺术指导与导演\n定制专属电影感剧本置景与灯光方案\n胶片+数字双机位全画幅电影机拍摄\n精修精调 90 张入顶级实木皮雕大册\n赠送 4K 院线级爱情微电影正片",
+            "btn_text": "私享定制沟通",
+            "btn_link": "#booking"
           }
         ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "team",
       "data": {
-        "testimonials_title": "新人评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "2,600+",
-        "average_rating": "4.9",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "林女士",
-            "position": "婚礼跟拍",
-            "content": "摄影师很会抓情绪，交付照片比预期更自然。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "许先生",
-            "position": "订婚仪式",
-            "content": "沟通顺畅，现场不打扰流程，照片氛围很好。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "王女士",
-            "position": "旅拍",
-            "content": "路线建议很实用，成片风格和样片一致。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ],
-        "testimonials_bg_color": "#fff1f2"
+        "team_title": "主创摄影导师与明星化妆造型师团队",
+        "team_subtitle": "连续荣获 WPPI 国际婚礼摄影大奖，服务过众多名人婚礼",
+        "columns": "3"
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "查询档期",
-        "booking_subtitle": "提交婚期、城市和拍摄需求，我们会尽快确认是否可接档。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "档期提醒",
-        "sidebar_content": "热门日期建议提前 3-6 个月预约\n可在表单里备注喜欢的作品风格\n异地拍摄需确认交通住宿安排",
-        "contact_phone": "400-520-2026",
-        "contact_hours": "10:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#ffffff"
+        "title": "预约专属拍摄档期与到店试纱",
+        "subtitle": "每日仅接待 3 对新人深度试纱沟通，请提前预留心仪档期",
+        "btn_text": "提交档期预约申请"
       }
     },
     {
-      "type": "faq",
+      "type": "footer_suite",
       "data": {
-        "faq_title": "拍摄常见问题",
-        "module_bg_color": "#fff1f2",
-        "faq_items": [
-          {
-            "question": "多久可以交付照片？",
-            "answer": "可根据工作室流程调整，一般预告片 7 天内，完整精修 30-45 天。"
-          },
-          {
-            "question": "是否可以选择摄影师？",
-            "answer": "可以在档期允许时指定摄影师，价格和排期可单独配置。"
-          },
-          {
-            "question": "是否支持异地拍摄？",
-            "answer": "支持，需提前确认城市、交通、住宿和拍摄天数。"
-          }
-        ]
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f1118",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#ec4899",
+        "qfs_brand_title": "ETERNAL-LOVE · 启灵高端婚纱摄影",
+        "qfs_brand_desc": "用镜头记录爱情最初的炽热与永恒的承诺。全国连锁直营高端摄影品牌。",
+        "qfs_bottom_text": "© 2026 ETERNAL LOVE WEDDING. 保留所有肖像与影像权利"
       }
     }
   ]

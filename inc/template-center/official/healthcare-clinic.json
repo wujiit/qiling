@@ -42,220 +42,254 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.55",
-        "db_title_prefix": "让专业健康服务更好预约",
-        "db_typing_mode": "loop",
-        "db_typing_text": "专科门诊与健康管理\n体检筛查与长期随访\n清晰流程、安心就诊",
-        "db_highlight_color": "#67e8f9",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "面向患者、家庭和企业客户，展示科室服务、专家团队和预约流程。",
-        "db_desc": "适合门诊机构、体检中心、健康管理中心和专科医疗服务品牌。",
-        "db_text_color": "rgba(248,250,252,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "和康医疗",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "预约咨询",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看服务项目",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #083344 0%, #0e7490 52%, #059669 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线挂号",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#14b8a6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#14b8a6",
+        "qhs_hover_bg": "rgba(20,184,166,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "守护生命每一刻 · 国际标准全科全人健康管理",
+        "bb_subtitle": "JCI 国际认证医疗标准，配备德国西门子 3.0T 超导核磁与日本奥林巴斯 290 电子内窥镜，三甲名医提供 1对1 深度问诊与全周期慢病管理",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
+          {
+            "text": "预约全科全人专家门诊",
+            "url": "#booking",
+            "style": "primary"
+          },
+          {
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
+          }
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "核心健康服务",
-        "services_subtitle": "按人群、场景和就诊需求组织服务入口",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大重点专科诊疗中心",
+        "services_subtitle": "严循循证医学原则，以多学科联合会诊 (MDT) 提供一站式精准医疗解决方案",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "专科门诊",
-            "desc": "围绕常见疾病和专科问题提供诊疗建议。",
-            "link": "#"
+            "icon": "fas fa-stethoscope",
+            "title": "国际全科家庭医生门诊",
+            "desc": "每位患者享有 30 分钟以上充沛面诊时长，深入梳理既往病史，开具全人健康处方。"
           },
           {
-            "icon": "02",
-            "title": "健康体检",
-            "desc": "基础体检、专项筛查和企业体检方案。",
-            "link": "#"
+            "icon": "fas fa-heartbeat",
+            "title": "心脑血管与代谢慢病管理",
+            "desc": "针对高血压、高血脂、糖尿病及冠心病，结合穿戴式动态心电监测与定制生活方式医学干预。"
           },
           {
-            "icon": "03",
-            "title": "慢病管理",
-            "desc": "长期随访、指标监测和生活方式指导。",
-            "link": "#"
+            "icon": "fas fa-procedures",
+            "title": "无痛消化内窥镜微创中心",
+            "desc": "采用超细胃肠镜与静脉舒适化浅麻醉，早癌病灶高清染色放大精查，当日即可完成息肉切除。"
           },
           {
-            "icon": "04",
-            "title": "企业健康",
-            "desc": "员工体检、健康讲座和职业健康支持。",
-            "link": "#"
+            "icon": "fas fa-dna",
+            "title": "精准防癌与遗传基因筛查",
+            "desc": "基于循环肿瘤 DNA (ctDNA) 液体活检与多模态影像结合，将恶性肿瘤发现窗口期提前数年。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "stats",
+      "type": "team",
       "data": {
-        "stats_title": "机构服务数据",
-        "stats_subtitle": "用服务规模和响应效率建立初步信任",
-        "stats_text_align": "center",
-        "stats_items": [
+        "team_title": "三甲特聘主任医师与名医天团",
+        "team_subtitle": "全员具备公立三甲医院 20 年以上主诊经验，拥有博士学位或海外知名医学院研学经历",
+        "team_columns": "3",
+        "team_members": [
           {
-            "number": "30+",
-            "label": "专业医护团队",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+            "name": "陆景华 教授 (Prof. Lu)",
+            "position": "医疗总监 / 资深心血管内科主任医师",
+            "desc": "原省人民医院心内科科主任、中华医学会心血管病学分会委员，擅长冠心病、顽固性高血压及复杂心律失常的综合药物治疗。"
           },
           {
-            "number": "12项",
-            "label": "重点服务项目",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "avatar": "https://images.unsplash.com/photo-1594824813583-097576571991?auto=format&fit=crop&w=600&q=80",
+            "name": "方佩如 博士 (Dr. Fang)",
+            "position": "消化内科主任 / 内窥镜中心首席专家",
+            "desc": "日本国立癌症中心访问学者，累计完成无痛微创胃肠镜操作超 25000 例，专攻消化道早癌微创内镜黏膜下剥离术 (ESD)。"
           },
           {
-            "number": "48h",
-            "label": "报告解读响应",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "4.8",
-            "label": "服务满意评分",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+            "name": "韩梦泽 (Dr. Han)",
+            "position": "全科医疗科副主任 / 全人健康顾问",
+            "desc": "毕业于复旦大学上海医学院全科医学系，秉持“全人、全家、全生命周期”照护理念，擅长多重慢病共存患者的用药精简与生活方式处方。"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #083344 0%, #0e7490 55%, #059669 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "process",
+      "type": "certificate_honors",
       "data": {
-        "process_title": "预约就诊流程",
-        "process_subtitle": "让首次访问用户清楚知道下一步该做什么",
-        "process_items": [
+        "cert_title": "医疗资质与国际公信力认证",
+        "cert_subtitle": "以严苛的质控标准，筑牢医疗安全底线",
+        "cert_columns": "4",
+        "cert_items": [
           {
-            "icon": "01",
-            "title": "在线预约",
-            "desc": "选择服务项目、到诊时间和联系方式。",
-            "stage_tag": "预约"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "JCI 国际医疗机构认证",
+            "desc": "全球公认医疗质量管理与患者安全最高黄金准绳"
           },
           {
-            "icon": "02",
-            "title": "客服确认",
-            "desc": "确认医生档期、资料准备和注意事项。",
-            "stage_tag": "确认"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "CAP 美国病理学家协会认证",
+            "desc": "检验科医学实验室结果获全球主流医疗机构互认"
           },
           {
-            "icon": "03",
-            "title": "到院服务",
-            "desc": "按预约时间完成问诊、检查或咨询。",
-            "stage_tag": "服务"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "三甲医院绿色就医通道直联",
+            "desc": "重疾罕见病无缝转诊至复旦中山、瑞金等顶尖医院"
           },
           {
-            "icon": "04",
-            "title": "报告随访",
-            "desc": "提供报告解读、复诊建议和随访提醒。",
-            "stage_tag": "随访"
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "医疗执业许可证正规机构",
+            "desc": "卫健委严格审批持牌医疗机构，收费明码标价"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "患者与客户反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "1200+",
-        "average_rating": "4.8",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "刘女士",
-            "position": "体检客户",
-            "content": "预约和报告解读都比较清楚，复查建议也很具体。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "王先生",
-            "position": "企业行政负责人",
-            "content": "员工体检安排顺畅，现场引导和报告交付都比较稳定。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "陈女士",
-            "position": "健康管理客户",
-            "content": "随访提醒很及时，指标变化能被持续关注。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ],
-        "testimonials_bg_color": "#f0fdfa"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "常见预约问题",
-        "faq_subtitle": "提前说明就诊前最常见的信息",
-        "faq_items": [
-          {
-            "question": "是否需要提前预约？",
-            "answer": "建议提前预约，以便确认医生档期、服务项目和到诊时间。"
-          },
-          {
-            "question": "体检前需要注意什么？",
-            "answer": "不同项目要求不同，预约确认时会说明空腹、用药和资料准备事项。"
-          },
-          {
-            "question": "报告如何获取？",
-            "answer": "可按机构流程领取纸质报告或电子报告，并预约报告解读服务。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
+      "type": "branches",
+      "data": {}
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约健康咨询",
-        "booking_subtitle": "提交服务项目、期望时间和联系方式，顾问会确认预约安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约提示",
-        "sidebar_content": "请填写真实联系方式和期望时间\n如有既往报告可在表单备注说明\n具体诊疗以医生面诊意见为准",
-        "contact_phone": "400-168-2026",
-        "contact_hours": "08:30-18:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#f8fafc"
+        "booking_title": "预约全科与知名专家门诊专属就医通道",
+        "booking_subtitle": "私密独立诊室、先预约后就诊零排队，全流程专职护士陪诊引导。",
+        "booking_btn_text": "立即预约就诊挂号",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "免挂号费",
+        "booking_phone": "就医预约中心：020-8888-7777",
+        "booking_time": "急诊24小时开放，专家门诊 08:00 - 17:30"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#061a1e",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#14b8a6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "MEDIC-PLUS · 综合门诊与国际全科健康管理中心",
+        "qfs_brand_desc": "汇聚三甲名医与国际全科医生团队。提供深度精准体检、慢性病全周期管理、家庭医生签约与绿色名医就诊通道。",
+        "qfs_link_groups": [
+          {
+            "title": "特色诊疗科室 & 患者服务中心",
+            "links": "名医特需专家门诊|#\n心脑血管慢性病管理|#\n无痛胃肠镜体检中心|#\n中医与康复理疗特需|#\n线上预约挂号与排班表|#\n电子检验报告在线查询|#\n绿色转诊与住院协助|#\n涉外商业保险直付网络|#"
+          }
+        ],
+        "qfs_contact_title": "就医预约咨询",
+        "qfs_contact_items": "总机预约|400-920-2026|tel:4009202026\n客服邮箱|service@medic-plus.org|mailto:service@medic-plus.org\n院区地址|上海市静安区南京西路 1788 号国际医疗中心|#",
+        "qfs_social_title": "关注健康医学",
+        "qfs_social_links": "微信公众号|#\n健康科普视频号|#\n患者互助交流圈|#\n名医讲堂|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 MEDIC-PLUS HEALTHCARE. 保留所有权利 · 医疗机构执业许可证公示 · 严禁发布未经审批处方药信息",
+        "qfs_bottom_links": "医疗机构执业公示|#\n收费价格公示表|#\n隐私政策与健康数据安全|#\n就医须知|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

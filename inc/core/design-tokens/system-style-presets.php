@@ -346,7 +346,7 @@ return array(
 				'alert_bg'                           => '#fffbeb',
 				'alert_border'                       => '#fde68a',
 				'alert_text'                         => '#713f12',
-				'announcement_marketing_bg'          => 'linear-gradient(135deg, #2563eb 0%, #059669 100%)',
+				'announcement_marketing_bg'          => 'linear-gradient(135deg, #2563eb 0%, #0f766e 100%)',
 				'announcement_marketing_button_text' => '#1d4ed8',
 				'footer_bg'                          => '#172554',
 				'footer_bottom_bg'                   => '#0f172a',

@@ -136,6 +136,12 @@ class Official_Template_Package_Service {
 		'templates/template-esports-team.php'             => 'esports-team.json',
 		'templates/template-esports-hotel.php'            => 'esports-hotel.json',
 		'templates/template-game-studio.php'              => 'game-studio.json',
+		'templates/template-brand-dtc-store.php'          => 'brand-dtc-store.json',
+		'templates/template-foreign-trade-store.php'      => 'foreign-trade-store.json',
+		'templates/template-luxury-watch.php'             => 'luxury-watch.json',
+		'templates/template-sneakers-footwear.php'        => 'sneakers-footwear.json',
+		'templates/template-leather-bags.php'             => 'leather-bags.json',
+		'templates/template-fine-jewelry.php'             => 'fine-jewelry.json',
 	);
 
 	/**
@@ -294,6 +300,7 @@ class Official_Template_Package_Service {
 		update_post_meta( $post_id, '_qiling_template_center_template', $template );
 		update_post_meta( $post_id, '_qiling_template_center_package_id', $package_id );
 		update_post_meta( $post_id, '_qiling_official_package_version', max( 1, absint( $package['package_version'] ) ) );
+		clean_post_cache( $post_id );
 
 		return true;
 	}
@@ -333,12 +340,16 @@ class Official_Template_Package_Service {
 		$modules = is_array( $modules ) ? $modules : array();
 		$has_footer_suite = false;
 		$official_footer_module = null;
+		$has_header_suite = false;
+		$official_header_module = null;
 		if ( ! empty( $package['modules'] ) && is_array( $package['modules'] ) ) {
 			foreach ( $package['modules'] as $package_module ) {
 				$type = isset( $package_module['type'] ) ? sanitize_key( (string) $package_module['type'] ) : '';
 				if ( 'footer_suite' === $type ) {
 					$official_footer_module = $package_module;
-					break;
+				}
+				if ( 'header_suite' === $type ) {
+					$official_header_module = $package_module;
 				}
 			}
 		}
@@ -353,6 +364,12 @@ class Official_Template_Package_Service {
 					$module = $official_footer_module;
 				}
 			}
+			if ( 'header_suite' === $type ) {
+				$has_header_suite = true;
+				if ( $current_version < 3 && is_array( $official_header_module ) ) {
+					$module = $official_header_module;
+				}
+			}
 			if ( 'qiling_video_portal_hero' === $type && isset( $module['data'] ) && is_array( $module['data'] ) ) {
 				if ( $current_version < 3 ) {
 					$module['data']['search_style'] = 'cinema';
@@ -361,6 +378,9 @@ class Official_Template_Package_Service {
 		}
 		unset( $module );
 
+		if ( ! $has_header_suite && is_array( $official_header_module ) ) {
+			array_unshift( $modules, $official_header_module );
+		}
 		if ( ! $has_footer_suite && is_array( $official_footer_module ) ) {
 			$modules[] = $official_footer_module;
 		}

@@ -183,7 +183,7 @@ class Countdown_Module extends Module_Base {
         $btn_text = isset( $data['countdown_btn_text'] ) ? $data['countdown_btn_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '立即预约', 'Reserve Now' ) : __( '立即预约', 'qiling' ) );
         $btn_link = isset( $data['countdown_btn_link'] ) ? $data['countdown_btn_link'] : '#';
         $btn_bg = isset( $data['countdown_btn_bg'] ) && ! empty( $data['countdown_btn_bg'] ) ? $data['countdown_btn_bg'] : 'var(--color-primary)';
-        $btn_text_color = isset( $data['countdown_btn_text_color'] ) && ! empty( $data['countdown_btn_text_color'] ) ? $data['countdown_btn_text_color'] : '#ffffff';
+        $btn_text_color = isset( $data['countdown_btn_text_color'] ) && ! empty( $data['countdown_btn_text_color'] ) ? $data['countdown_btn_text_color'] : 'var(--color-text-inverse, #ffffff)';
         $btn_border_color = isset( $data['countdown_btn_border_color'] ) && ! empty( $data['countdown_btn_border_color'] ) ? $data['countdown_btn_border_color'] : $btn_bg;
         
         // 计算目标时间戳

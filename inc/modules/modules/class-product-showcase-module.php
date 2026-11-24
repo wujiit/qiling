@@ -251,6 +251,52 @@ class Product_Showcase_Module extends Module_Base {
                 'label'   => __( '描述文字颜色', 'qiling' ),
                 'default' => '',
             ),
+
+            // === 配色/材质色块切换联动 (Single Category / DTC Swatches) ===
+            array(
+                'id'      => 'ps_enable_swatches',
+                'type'    => 'select',
+                'label'   => __( '启用配色/材质色块联动', 'qiling' ),
+                'options' => array(
+                    'no'  => __( '不启用', 'qiling' ),
+                    'yes' => __( '启用', 'qiling' ),
+                ),
+                'default' => 'no',
+            ),
+            array(
+                'id'      => 'ps_swatches_title',
+                'type'    => 'text',
+                'label'   => __( '色块选项标题', 'qiling' ),
+                'default' => __( '可选款式/材质/配色', 'qiling' ),
+            ),
+            array(
+                'id'      => 'ps_swatches_list',
+                'type'    => 'repeater',
+                'label'   => __( '款式/配色列表', 'qiling' ),
+                'fields'  => array(
+                    array(
+                        'id'    => 'name',
+                        'type'  => 'text',
+                        'label' => __( '款式名称（如：星空灰 / 18K黄金 / 意式植鞣棕）', 'qiling' ),
+                    ),
+                    array(
+                        'id'      => 'color_code',
+                        'type'    => 'text',
+                        'label'   => __( '色值代码（如：#374151 或渐变CSS）', 'qiling' ),
+                        'default' => '#2563eb',
+                    ),
+                    array(
+                        'id'    => 'image',
+                        'type'  => 'image',
+                        'label' => __( '对应的主图/展示图（点击色块后切换到此图）', 'qiling' ),
+                    ),
+                    array(
+                        'id'    => 'price',
+                        'type'  => 'text',
+                        'label' => __( '款式价格（可选，不填默认展示主商品价格）', 'qiling' ),
+                    ),
+                ),
+            ),
         );
     }
 
@@ -348,6 +394,11 @@ class Product_Showcase_Module extends Module_Base {
 
         $description = isset( $data['ps_description'] ) && '' !== $data['ps_description'] ? $data['ps_description'] : $default_description;
         $desc_color = isset( $data['ps_desc_color'] ) ? $data['ps_desc_color'] : '';
+
+        // 配色/材质色块联动 (Swatches)
+        $enable_swatches = isset( $data['ps_enable_swatches'] ) && in_array( $data['ps_enable_swatches'], array( 'yes', 'no' ), true ) ? $data['ps_enable_swatches'] : 'no';
+        $swatches_title  = isset( $data['ps_swatches_title'] ) && '' !== trim( (string) $data['ps_swatches_title'] ) ? $data['ps_swatches_title'] : __( '可选款式/配色', 'qiling' );
+        $swatches_list   = isset( $data['ps_swatches_list'] ) && is_array( $data['ps_swatches_list'] ) ? $data['ps_swatches_list'] : array();
         
         $module_id = 'ps-' . uniqid();
         
@@ -364,6 +415,75 @@ class Product_Showcase_Module extends Module_Base {
         // 解析描述信息
         $desc_lines = array_filter( array_map( 'trim', explode( "\n", $description ) ) );
         ?>
+        <style>
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatches-section {
+                margin: 18px 0 22px;
+                padding: 12px 14px;
+                background: rgba(0, 0, 0, 0.02);
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                border-radius: 12px;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatches-label-bar {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+                font-size: 13px;
+                font-weight: 600;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatches-title {
+                color: var(--color-neutral-600, #475569);
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatches-selected {
+                color: var(--color-primary, #2563eb);
+                font-weight: 700;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatches-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatch-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 6px 14px 6px 8px;
+                background: var(--color-surface, #ffffff);
+                border: 1.5px solid var(--color-border, #e2e8f0);
+                border-radius: 9999px;
+                cursor: pointer;
+                font-size: 13px;
+                color: var(--color-text, #1e293b);
+                transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                outline: none;
+                user-select: none;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatch-btn:hover {
+                border-color: var(--color-border-hover, #94a3b8);
+                transform: translateY(-1px);
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatch-btn.is-active {
+                border-color: var(--color-primary, #2563eb);
+                background: color-mix(in srgb, var(--color-primary, #2563eb) 10%, transparent);
+                color: var(--color-primary, #2563eb);
+                box-shadow: 0 0 0 1px var(--color-primary, #2563eb);
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatch-color {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+                flex-shrink: 0;
+                display: inline-block;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-swatch-name {
+                font-weight: 600;
+                line-height: 1;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .ps-media-carousel img {
+                transition: opacity 0.25s ease-in-out;
+            }
+        </style>
         <section class="module module-product-showcase ps-fullwidth" id="<?php echo esc_attr( $module_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
             <div class="container">
                 <div class="ps-wrapper <?php echo $layout === 'right' ? 'ps-reverse' : ''; ?>">
@@ -437,6 +557,34 @@ class Product_Showcase_Module extends Module_Base {
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
+
+                        <?php if ( 'yes' === $enable_swatches && ! empty( $swatches_list ) ) : ?>
+                            <div class="ps-swatches-section">
+                                <div class="ps-swatches-label-bar">
+                                    <span class="ps-swatches-title"><?php echo esc_html( $swatches_title ); ?>：</span>
+                                    <span class="ps-swatches-selected" data-ps-selected-swatch><?php echo esc_html( $swatches_list[0]['name'] ?? '' ); ?></span>
+                                </div>
+                                <div class="ps-swatches-list" role="radiogroup" aria-label="<?php echo esc_attr( $swatches_title ); ?>">
+                                    <?php foreach ( $swatches_list as $s_idx => $swatch ) :
+                                        $s_name  = isset( $swatch['name'] ) ? sanitize_text_field( (string) $swatch['name'] ) : '';
+                                        $s_color = isset( $swatch['color_code'] ) && '' !== trim( (string) $swatch['color_code'] ) ? sanitize_text_field( (string) $swatch['color_code'] ) : '#2563eb';
+                                        $s_img   = isset( $swatch['image'] ) ? esc_url_raw( (string) $swatch['image'] ) : '';
+                                        $s_price = isset( $swatch['price'] ) ? sanitize_text_field( (string) $swatch['price'] ) : '';
+                                    ?>
+                                        <button type="button" 
+                                                class="ps-swatch-btn <?php echo 0 === $s_idx ? 'is-active' : ''; ?>"
+                                                data-swatch-name="<?php echo esc_attr( $s_name ); ?>"
+                                                data-swatch-img="<?php echo esc_url( $s_img ); ?>"
+                                                data-swatch-price="<?php echo esc_attr( $s_price ); ?>"
+                                                title="<?php echo esc_attr( $s_name ); ?>"
+                                                aria-label="<?php echo esc_attr( $s_name ); ?>">
+                                            <span class="ps-swatch-color" style="background: <?php echo esc_attr( $s_color ); ?>;"></span>
+                                            <span class="ps-swatch-name"><?php echo esc_html( $s_name ); ?></span>
+                                        </button>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                         
                         <?php if ( $cta_text ) : ?>
                             <div class="ps-cta-wrapper">
@@ -486,6 +634,41 @@ class Product_Showcase_Module extends Module_Base {
                         fadeEffect: {
                             crossFade: true
                         }
+                    });
+                }
+
+                // Swatches interaction
+                var swatchBtns = root.querySelectorAll('.ps-swatch-btn');
+                var selectedLabel = root.querySelector('[data-ps-selected-swatch]');
+                var priceEl = root.querySelector('.ps-price');
+                var mediaContainer = root.querySelector('.ps-media-carousel');
+
+                if (swatchBtns.length > 0) {
+                    swatchBtns.forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            swatchBtns.forEach(function(b) { b.classList.remove('is-active'); });
+                            btn.classList.add('is-active');
+                            var sName = btn.getAttribute('data-swatch-name') || '';
+                            var sPrice = btn.getAttribute('data-swatch-price') || '';
+                            var sImg = btn.getAttribute('data-swatch-img') || '';
+
+                            if (selectedLabel && sName) {
+                                selectedLabel.textContent = sName;
+                            }
+                            if (priceEl && sPrice) {
+                                priceEl.textContent = sPrice;
+                            }
+                            if (sImg && mediaContainer) {
+                                var mainImg = mediaContainer.querySelector('img');
+                                if (mainImg) {
+                                    mainImg.style.opacity = '0.35';
+                                    setTimeout(function() {
+                                        mainImg.src = sImg;
+                                        mainImg.style.opacity = '1';
+                                    }, 140);
+                                }
+                            }
+                        });
                     });
                 }
             }

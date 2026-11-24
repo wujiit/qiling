@@ -102,7 +102,7 @@ if ( ! function_exists( 'developer_starter_get_assets_version' ) ) {
         }
 
         $custom_version   = function_exists( 'developer_starter_get_option' ) ? developer_starter_get_option( 'assets_version', '' ) : '';
-        $fallback_version = defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1.0.0';
+        $fallback_version = class_exists( '\Developer_Starter\Core\Theme_License' ) ? \Developer_Starter\Core\Theme_License::get_theme_version() : ( defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1.0.0' );
         $version          = ! empty( $custom_version ) ? (string) $custom_version : $fallback_version;
 
         // 缓存清单未命中时追加热更新标记以穿透本地缓存
@@ -124,12 +124,14 @@ if ( ! function_exists( 'developer_starter_output_template_build_meta' ) ) {
             return;
         }
 
+        $base_version = class_exists( '\Developer_Starter\Core\Theme_License' ) ? \Developer_Starter\Core\Theme_License::get_theme_version() : ( defined( 'QILING_VERSION' ) ? (string) QILING_VERSION : '1.0.0' );
+
         if ( developer_starter_is_cdn_manifest_synced() ) {
+            echo '<meta name="template-build" content="' . esc_attr( $base_version ) . '" />' . "\n";
             return;
         }
 
-        $version = defined( 'QILING_VERSION' ) ? QILING_VERSION . '.1' : '1.0.1';
-        echo '<meta name="template-build" content="' . esc_attr( $version ) . '" />' . "\n";
+        echo '<meta name="template-build" content="' . esc_attr( $base_version . '.1' ) . '" />' . "\n";
     }
 }
 add_action( 'wp_head', 'developer_starter_output_template_build_meta', 2 );

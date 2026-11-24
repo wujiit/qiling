@@ -42,238 +42,273 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #047857 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "同城惠民",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80",
-            "title": "让本地服务更可靠、更好预约",
-            "subtitle": "服务项目、区域覆盖、标准流程和真实评价，一页完成客户信任建立。",
-            "btn_text": "立即预约服务",
-            "btn_url": "#",
-            "btn_bg_color": "#0284c7",
-            "btn_text_color": "#ffffff"
-          }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "24h",
-            "number": "24h",
-            "label": "服务响应",
-            "color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "icon": "30",
-            "number": "30+",
-            "label": "覆盖区域",
-            "color": "#ffffff"
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "客户评分",
-            "color": "#ffffff"
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "icon": "100",
-            "number": "100%",
-            "label": "明码报价",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
-      }
-    },
-    {
-      "type": "services",
-      "data": {
-        "services_title": "热门服务项目",
-        "services_subtitle": "适配清洁、维修、安装、养护和上门服务等本地生活场景",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "家政清洁",
-            "desc": "日常保洁、深度清洁和开荒服务。",
-            "link": "#"
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "icon": "02",
-            "title": "维修安装",
-            "desc": "水电维修、家电安装和小修小补。",
-            "link": "#"
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "icon": "03",
-            "title": "空间养护",
-            "desc": "家具护理、空气治理和定期养护。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "门店服务",
-            "desc": "到店体验、会员服务和售后处理。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "branches",
-      "data": {
-        "branches_title": "服务区域与网点",
-        "branches_subtitle": "展示覆盖城市、门店网点和可预约区域",
-        "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "查看网点",
-        "booking_button_text": "预约服务",
-        "branches_list": [
-          {
-            "name": "市中心服务站",
-            "city": "上海",
-            "status": "open",
-            "address": "上海市静安区示例路 88 号",
-            "phone": "021-60000001",
-            "email": "service@example.com",
-            "hours": "08:00-21:00",
-            "services": "清洁,维修,安装",
-            "transport": "覆盖核心城区",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "社区服务中心",
-            "city": "杭州",
-            "status": "open",
-            "address": "杭州市西湖区示例街 66 号",
-            "phone": "0571-60000002",
-            "email": "hangzhou@example.com",
-            "hours": "08:00-21:00",
-            "services": "到家服务,门店服务",
-            "transport": "覆盖周边社区",
-            "lat": "30.2741",
-            "lng": "120.1551",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "东区服务站",
-            "city": "苏州",
-            "status": "coming",
-            "address": "苏州市工业园区示例大道 99 号",
-            "phone": "0512-60000003",
-            "email": "suzhou@example.com",
-            "hours": "即将开放",
-            "services": "清洁,维修,养护",
-            "transport": "预约制上门",
-            "lat": "31.2989",
-            "lng": "120.5853",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "标准服务流程",
-        "process_subtitle": "把预约、上门、验收和售后流程讲清楚",
-        "process_items": [
-          {
-            "icon": "01",
             "title": "在线预约",
-            "desc": "选择服务项目、时间、地址和联系方式。",
-            "stage_tag": "预约"
-          },
-          {
-            "icon": "02",
-            "title": "确认报价",
-            "desc": "客服确认需求、范围、费用和注意事项。",
-            "stage_tag": "确认"
-          },
-          {
-            "icon": "03",
-            "title": "上门服务",
-            "desc": "服务人员按约定时间到达并规范执行。",
-            "stage_tag": "服务"
-          },
-          {
-            "icon": "04",
-            "title": "验收售后",
-            "desc": "完成验收、评价和售后问题处理。",
-            "stage_tag": "售后"
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "module_bg_color": "#ffffff"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0ea5e9",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0ea5e9",
+        "qhs_hover_bg": "rgba(14,165,233,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "testimonials",
+      "type": "brand_banner_pro",
       "data": {
-        "testimonials_title": "客户评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "3000+",
-        "average_rating": "4.9",
-        "testimonials_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "随叫随到 · 规范平价 · 全国同城便民应急与生活到家服务",
+        "bb_subtitle": "全员公安备案实名技师，统一标价杜绝坐地起价，提供 15 分钟极速上门开锁、管道疏通、水电急修、家电拆洗与旧房局部翻新，解决居家燃眉之急",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "周女士",
-            "position": "家庭用户",
-            "content": "预约方便，服务时间和价格都提前确认，很省心。",
-            "rating": "5",
-            "verified": "verified"
+            "text": "立即在线呼叫附近 3 公里技师",
+            "url": "#call-service",
+            "style": "primary"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "林先生",
-            "position": "门店负责人",
-            "content": "维修响应比较快，售后也能跟进。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "许女士",
-            "position": "社区客户",
-            "content": "服务人员很准时，流程和验收都比较规范。",
-            "rating": "5",
-            "verified": "verified"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
     },
     {
+      "type": "services",
+      "data": {
+        "services_title": "一网打尽常用同城家庭便民应急服务矩阵",
+        "services_subtitle": "无论白天深夜，一个电话或在线下单，专业师傅迅速赶赴现场",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "key",
+            "title": "24 小时紧急开锁换锁",
+            "desc": "公安备案开锁，快速开启防盗门、指纹锁与车锁，C级超安全防盗锁芯即时升级"
+          },
+          {
+            "icon": "tool",
+            "title": "管道极速高压疏通",
+            "desc": "专业工业级管道疏通机与高压管道清洗车，疏通马桶、下水道、地漏与油烟管道"
+          },
+          {
+            "icon": "zap",
+            "title": "家庭水电防水排查急修",
+            "desc": "家庭跳闸断电排查、水管漏水精准测漏、水龙头阀门断裂取出、暗管漏水免砸砖微创修复"
+          },
+          {
+            "icon": "wind",
+            "title": "全品牌家电深度拆洗保养",
+            "desc": "空调挂机柜机高温蒸汽杀菌、油烟机内部重油污风轮拆洗、洗衣机槽污垢除菌"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "本地生活服务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "城市各区直属便民应急抢修服务站",
+        "branches_subtitle": "网格化布点，每个服务站常驻 15 名以上专业持证应急技师",
+        "branches_columns": "3",
+        "branches_list": [
+          {
+            "name": "静安/黄浦核心商圈便民综合服务站",
+            "city": "上海市",
+            "status": "24 小时待命抢修",
+            "address": "静安区陕西北路 457 号便民服务网点",
+            "phone": "021-6288-1100",
+            "email": "jingan@qiling-local.com",
+            "hours": "周一至周日 24 小时全天候派单",
+            "services": "应急开锁 / 管道高压疏通 / 跳闸检修 / 家电清洗",
+            "transport": "电瓶车 15 分钟覆盖静安、黄浦全域社区",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&q=80"
+          },
+          {
+            "name": "徐汇/闵行南区社区便民直属抢修网点",
+            "city": "上海市",
+            "status": "24 小时待命抢修",
+            "address": "徐汇区漕宝路 88 号综合便民服务站",
+            "phone": "021-6488-2200",
+            "email": "xuhui@qiling-local.com",
+            "hours": "周一至周日 24 小时全天候派单",
+            "services": "暗管测漏 / 阀门断裂更换 / 智能锁安装 / 空调清洗",
+            "transport": "网格化派单系统，自动匹配最近在途师傅",
+            "image": "https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=400&q=80"
+          },
+          {
+            "name": "浦东陆家嘴与金桥应急维修总站",
+            "city": "上海市",
+            "status": "24 小时待命抢修",
+            "address": "浦东新区张杨路 1588 号综合服务中心",
+            "phone": "021-5088-3300",
+            "email": "pudong@qiling-local.com",
+            "hours": "周一至周日 24 小时全天候派单",
+            "services": "商业写字楼维修 / 住宅高压疏通 / C级锁芯快换",
+            "transport": "专业工程抢修工具车 20 分钟覆盖浦东核心区",
+            "image": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=400&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {}
+    },
+    {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约本地服务",
-        "booking_subtitle": "提交服务项目、地址和期望时间，服务顾问会确认预约安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约须知",
-        "sidebar_content": "请在表单里说明服务面积和特殊需求\n最终费用以确认服务范围为准\n部分区域可能需要提前预约档期",
-        "contact_phone": "400-520-2026",
-        "contact_hours": "08:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#f8fafc"
+        "entry_title": "输入您的地址与维修需求，系统 10 秒内智能派单",
+        "entry_subtitle": "距离您最近的师傅将立刻回拨电话核对情况，并携带全套原装工具急速上门",
+        "btn_text": "立即在线呼叫附近师傅上门",
+        "btn_link": "#call-now",
+        "booking_title": "预约高品质本地生活到家服务（保洁/清洗/搬家）",
+        "booking_subtitle": "服务人员全员实名公安核验背调、持证上岗，未达标准免费重做，服务全程投保。",
+        "booking_btn_text": "立即预约上门服务",
+        "booking_phone": "到家专线：400-111-8888",
+        "booking_time": "每日 08:00 - 21:00 准时上门"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d131a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0ea5e9",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "LOCAL-LIFE · 同城生活与便民综合公共服务网络",
+        "qfs_brand_desc": "连接本地千万家庭与优质社区商户。涵盖开锁换锁、管道疏通、房屋补漏、保洁清洗、鲜花速递等 100+ 项便民生活服务，平台实名认证、先行赔付，让社区生活更省心。",
+        "qfs_link_groups": [
+          {
+            "title": "便民服务分类 & 平台保障与入驻",
+            "links": "24小时公安备案开锁换锁芯|#\n专业管道疏通与强力吸污抽粪|#\n卫生间楼顶防水免砸砖微创补漏|#\n全屋精细开荒保洁与窗帘拆洗|#\n商家 100% 实名与无犯罪记录认证|#\n百万平台责任险与先行赔付基金|#\n同城优质技师与服务商入驻申请|#\n便民服务收费指导价与用户评价|#"
+          }
+        ],
+        "qfs_contact_title": "同城即时派单与便民服务热线",
+        "qfs_contact_items": "便民总机|400-880-1199|tel:4008801199\n紧急疏通开锁|136-0000-1122|tel:13600001122\n服务时间|7×24小时全天候即时派单，平均 15 分钟就近上门|#\n运营中心|重庆市渝中区解放碑民生路 235 号海航保利国际中心 28 楼|#",
+        "qfs_social_title": "便民微助手",
+        "qfs_social_links": "同城便民小程序|#\n邻里生活技巧|#\n便民优惠券领券|#\n便民服务监督号|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 LOCAL-LIFE PLATFORM. 保留所有权利 · 渝ICP备19018223号 · 同城公共便民服务合作单位",
+        "qfs_bottom_links": "平台便民服务规范|#\n技师上门安全准则|#\n收费争议申诉处理流程|#\n平台先行赔付条例|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

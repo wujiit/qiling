@@ -43,143 +43,173 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "鼎盛集成",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "免费试用",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "brand_banner_pro",
       "data": {
-        "bb_layout": "left_right",
+        "bb_layout": "overlay_center",
         "bb_style_mode": "glow",
         "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #090d1a 0%, #1e1b4b 50%, #0284c7 100%)",
-        "bb_title": "把企业系统、数据和流程<br><strong>集成成一张业务网</strong>",
-        "bb_title_size_max": "72px",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "融合异构系统 · 赋能大型企业数智跃迁",
+        "bb_subtitle": "具备涉密甲级与信息系统集成 CS4 资质，专注智能制造 ERP/MES/WMS 全流程拉通、大型集团混合云迁移与核心系统自主信创改造",
         "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #38bdf8 100%)",
-        "bb_subtitle": "企业软件定制、系统集成与数字化项目交付官网方案",
-        "bb_desc": "围绕 ERP、CRM、OA、数据中台、API 对接、低代码流程和私有化部署，把技术能力、行业方案、客户案例和项目咨询入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_text_align": "left",
+        "bb_text_color": "#cbd5e1",
         "bb_buttons": [
           {
-            "text": "提交项目需求",
-            "link": "#",
-            "style": "primary",
-            "icon": "项"
+            "text": "预约资深企业架构师 1对1 数字化系统诊断",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "text": "查看解决方案",
-            "link": "#",
-            "style": "light",
-            "icon": "案"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "bb_primary_btn_bg_color": "#2563eb",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#1d4ed8",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#eff6ff",
-        "bb_light_btn_hover_text_color": "#2563eb",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "glow",
-        "bb_media_radius": "18px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "1",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
+        ]
       }
     },
     {
-      "type": "features",
+      "type": "stats",
       "data": {
-        "features_title": "企业级集成能力",
-        "features_subtitle": "从业务流程、数据治理到系统对接，减少信息孤岛和重复建设",
-        "features_columns": "4",
-        "features_icon_position": "top",
-        "features_text_align": "left",
-        "features_bg_color": "#ffffff",
-        "features_card_style": "border",
-        "features_card_radius": "8px",
-        "features_icon_style": "square",
-        "features_icon_bg": "#dbeafe",
-        "features_icon_color": "#2563eb",
-        "features_items": [
+        "stats_title": "大型系统集成交付与可靠性战绩看板",
+        "stats_subtitle": "用严谨的工程能力攻克跨系统数据孤岛，确保复杂工业系统 7x24 小时永不停机",
+        "stats_items": [
           {
-            "icon": "流",
-            "title": "业务流程梳理",
-            "desc": "把销售、交付、财务、采购、仓储和售后流程拆成可配置、可审计的系统流程。",
-            "link": "#"
+            "number": "550+ 个",
+            "label": "大型央国企与工业制造业数字化交付项目"
           },
           {
-            "icon": "接",
-            "title": "系统接口集成",
-            "desc": "通过 API、Webhook、中间表和消息队列连接 ERP、CRM、OA、MES、WMS 和第三方平台。",
-            "link": "#"
+            "number": "40% 缩短",
+            "label": "异构系统全链路接口对接与开发周期"
           },
           {
-            "icon": "数",
-            "title": "数据治理与报表",
-            "desc": "统一主数据、指标口径和权限边界，让经营数据从报表走向可复盘决策。",
-            "link": "#"
+            "number": "99.99%",
+            "label": "跨系统清洗与数据割接实时一致性准确率"
           },
           {
-            "icon": "运",
-            "title": "私有化与运维",
-            "desc": "支持私有化部署、权限审计、日志监控、备份恢复、版本升级和长期技术支持。",
-            "link": "#"
+            "number": "120+ 人",
+            "label": "资深行业技术解决方案架构师团队"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "products",
+      "type": "services",
       "data": {
-        "products_title": "企业软件解决方案",
-        "products_subtitle": "SOFTWARE & INTEGRATION SOLUTIONS",
-        "columns": "4",
-        "modal_inquire_text": "咨询实施方案",
-        "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#2563eb",
-        "modal_inquire_btn_text_color": "#ffffff",
-        "modal_inquire_btn_hover_bg_color": "#1d4ed8",
-        "modal_inquire_btn_hover_text_color": "#ffffff",
-        "items": [
+        "services_title": "四大核心企业级系统集成方案",
+        "services_subtitle": "打通生产网、业务网与管理网，构建统一协同数字神经中枢",
+        "services_columns": "4",
+        "services_items": [
           {
-            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
-            "title": "ERP/进销存集成",
-            "desc": "围绕采购、库存、销售、财务和生产业务打通核心经营链路。",
-            "specs": "场景：多组织、多仓库、多渠道\n能力：订单、库存、采购、财务对账\n集成：电商、WMS、MES、财务系统\n交付：流程梳理、数据迁移、权限配置",
-            "post_id": "",
-            "btn_text": "查看方案"
+            "icon": "fas fa-industry",
+            "title": "智能制造 ERP + MES + WMS 一体化",
+            "desc": "从订单排产、工序下发、物料配送到质检入库，拉通从销售端到车间执行端全链路。"
           },
           {
-            "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80",
-            "title": "CRM/客户成功系统",
-            "desc": "沉淀线索、商机、合同、回款、服务和客户生命周期管理。",
-            "specs": "场景：销售团队、售前、客服、客户成功\n能力：线索分配、商机阶段、合同回款\n集成：官网表单、企微、呼叫中心、工单\n交付：字段建模、流程自动化、看板配置",
-            "post_id": "",
-            "btn_text": "咨询配置"
+            "icon": "fas fa-cloud",
+            "title": "大型集团微服务混合云架构迁移",
+            "desc": "平滑改造陈旧单体系统，容器化部署至私有云与专属云，业务弹性伸缩无缝扩容。"
           },
           {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-            "title": "数据中台与 BI 看板",
-            "desc": "统一数据口径，输出经营看板、部门报表和异常预警。",
-            "specs": "场景：老板驾驶舱、经营分析、项目复盘\n能力：ETL、指标口径、权限、报表订阅\n集成：数据库、SaaS、ERP、CRM、埋点数据\n交付：数据建模、看板设计、权限审计",
-            "post_id": "",
-            "btn_text": "看数据架构"
+            "icon": "fas fa-network-wired",
+            "title": "统一企业 API 网关与服务治理中台",
+            "desc": "统一身份认证、接口流控防刷、协议格式自动转换，让数十个存量老系统相互透明对话。"
           },
           {
-            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
-            "title": "开放平台/API 网关",
-            "desc": "为合作伙伴、内部系统和移动端提供统一接口与安全接入。",
-            "specs": "场景：生态接入、移动应用、上下游协同\n能力：鉴权、限流、Webhook、调用日志\n集成：订单、商品、客户、库存、支付接口\n交付：接口文档、沙箱联调、上线审核",
-            "post_id": "",
-            "btn_text": "查看接口"
+            "icon": "fas fa-shield-alt",
+            "title": "核心业务信创数据库平滑割接替换",
+            "desc": "从 Oracle / DB2 无感平滑热迁移至达梦、OceanBase 等国产信创数据库，数据 0 丢失。"
           }
         ]
       }
@@ -187,110 +217,104 @@
     {
       "type": "cases",
       "data": {
-        "cases_title": "企业数字化项目案例",
-        "cases_subtitle": "用行业、系统边界和交付结果说明集成价值",
-        "cases_columns": "3",
+        "cases_title": "经典重大工程系统集成标杆战例",
+        "cases_subtitle": "以卓越的技术攻坚实力，保障国家重大工程与大型制造企业关键系统无感切换",
+        "cases_columns": "4",
         "cases_items": [
           {
-            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
-            "title": "制造企业 ERP + WMS 集成",
-            "desc": "打通销售订单、生产计划、仓储出入库和财务对账，减少重复录入和库存差异。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "某千亿级重型装备集团智能制造一体化",
+            "desc": "横向打通 SAP 与自研 MES，生产周期缩短 35%，在制品积压减少 40%",
+            "link": "#case-detail"
           },
           {
-            "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80",
-            "title": "企业服务 CRM 项目",
-            "desc": "统一线索来源、销售阶段、合同回款和客户成功跟进，提升商机可视化管理。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "某大型股份制银行信创核心系统平滑割接",
+            "desc": "万亿级账户资产数据在 4 小时维护窗口内完成零误差校验与无缝切换上线",
+            "link": "#case-detail"
           },
           {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-            "title": "集团经营数据驾驶舱",
-            "desc": "整合多系统数据，形成经营指标、部门看板和异常预警机制。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "系统集成项目交付流程",
-        "process_subtitle": "从业务调研到上线运维，控制需求变更和交付风险",
-        "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "业务调研",
-            "desc": "梳理组织、角色、流程、数据、系统边界、接口清单和项目优先级。",
-            "stage_tag": "调研"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "跨国供应链跨 12 套异构 ERP 统一中台",
+            "desc": "将欧美日不同子公司异构软件整合至统一中台，全球库存资金周转提速 3 倍",
+            "link": "#case-detail"
           },
           {
-            "icon": "02",
-            "title": "蓝图设计",
-            "desc": "输出流程蓝图、字段模型、权限方案、接口方案、里程碑和验收口径。",
-            "stage_tag": "设计"
-          },
-          {
-            "icon": "03",
-            "title": "开发联调",
-            "desc": "完成配置开发、数据迁移、接口联调、测试环境验证和关键用户培训。",
-            "stage_tag": "实施"
-          },
-          {
-            "icon": "04",
-            "title": "上线运维",
-            "desc": "完成上线切换、问题响应、运行监控、版本迭代和阶段复盘。",
-            "stage_tag": "运维"
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "智慧交通枢纽数智孪生协同管控大平台",
+            "desc": "汇聚 20 万+ IoT 传感器点位与视频分析，实现机场高铁客流毫秒级安全调度",
+            "link": "#case-detail"
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "certificate_honors",
       "data": {
-        "faq_title": "企业软件集成常见问题",
-        "faq_subtitle": "提前说明需求边界、接口联调、数据迁移和运维责任",
-        "faq_items": [
+        "cert_title": "国家级行业最高资质与涉密安全认证",
+        "cert_subtitle": "严格遵循国家工程建设与安全保密规范，值得信赖的数字化总包商",
+        "cert_columns": "4",
+        "cert_items": [
           {
-            "question": "项目启动前需要准备哪些资料？",
-            "answer": "建议准备组织架构、业务流程、现有系统清单、账号权限、数据样例、接口文档、历史痛点、目标指标和预计上线时间。"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "信息系统建设和服务能力 CS4 级",
+            "desc": "国家电子信息行业联合会认证的系统集成最高级别资质之一"
           },
           {
-            "question": "系统集成项目怎么控制需求变更？",
-            "answer": "建议在蓝图阶段明确范围、流程、字段、权限、接口和验收标准。新增需求进入变更清单，评估工期、费用和影响后再排期。"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "国家涉密信息系统集成甲级资质",
+            "desc": "具备承接国家最高等级涉密工程与数据安全项目资质"
           },
           {
-            "question": "旧系统数据可以迁移吗？",
-            "answer": "可以。需要先确认数据来源、字段口径、数据质量、清洗规则和迁移批次，关键数据建议先做试迁移和业务抽检。"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "CMMI 5 级全球顶级软件能力成熟度",
+            "desc": "软件过程管理、系统集成交付与质量控制能力获国际最高认可"
           },
           {
-            "question": "上线后是否提供长期运维？",
-            "answer": "可以展示版本升级、接口监控、故障响应、权限审计、备份恢复和二次开发服务，正式承诺按服务等级协议或运维合同约定。"
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "国家级专精特新“小巨人”企业",
+            "desc": "工业和信息化部授予的工业软件系统集成与创新先锋荣誉"
           }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "提交企业软件集成需求",
-        "contact_subtitle": "填写行业、现有系统、集成目标、上线时间、预算范围和联系方式，解决方案顾问会协助判断实施路径。",
+        "contact_title": "商务洽谈与 企业软件/SI 集成商官网 采购询盘",
+        "contact_subtitle": "欢迎索取详细产品型录、工程图纸或申请免费样品试用，商务工程师 2 小时内响应。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "提交询盘采购单 (RFQ)"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "APEX-SYSTEM · 大型企业级数字化解决方案与系统集成商",
+        "qfs_brand_desc": "为大型政企与行业领军者提供端到端 IT 咨询与技术落地。涵盖信创云架构、微服务治理、ERP/MES 核心系统集成与全生命周期运维。",
+        "qfs_link_groups": [
+          {
+            "title": "核心集成能力 & 垂直行业方案",
+            "links": "国产信创云与中台架构演进|#\n全栈微服务治理与 API 网关|#\nERP / CRM / MES 深度定制开发|#\n企业旧系统无感平滑迁移方案|#\n智慧政务与数字政府建设|#\n大型央国企数字化转型全案|#\n新能源智能制造统一大脑|#\n智慧园区与能源管控系统|#\nCMMI 5 级与 ITSS 一级认证|#\n国家高新技术企业资质公示|#\n7x24H 驻场专家运维保障|#\n行业标杆信创成功案例库|#"
+          }
+        ],
+        "qfs_contact_title": "政企大客户事业部",
+        "qfs_contact_items": "商务总机|+86 010-8888-6688|tel:01088886688\n招投标对接|si-bidding@apex-system.com|mailto:si-bidding@apex-system.com\n总部基地|北京市海淀区中关村软件园二期集成创新大厦整栋|#",
+        "qfs_social_title": "关注数字化转型",
+        "qfs_social_links": "官方微信公众号|#\n信创联盟专栏|#\n企业领英官方|#\n行业白皮书下载|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 APEX-SYSTEM INTEGRATION GROUP. 保留所有权利 · 国家级系统集成一级资质企业",
+        "qfs_bottom_links": "供应商行为准则|#\n廉洁合规政策|#\n企业隐私政策|#\n网站地图|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

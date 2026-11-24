@@ -288,3 +288,12 @@ if ( ! function_exists( 'developer_starter_set_default_page_admin_order' ) ) {
     }
 }
 add_action( 'pre_get_posts', 'developer_starter_set_default_page_admin_order', 20 );
+
+/**
+ * 启动新手开箱建站引导与模板中心强力指引服务
+ */
+if ( is_admin() && file_exists( __DIR__ . '/class-onboarding-admin.php' ) ) {
+    require_once __DIR__ . '/class-onboarding-admin.php';
+    \Developer_Starter\Admin\Onboarding_Admin::get_instance();
+}
+

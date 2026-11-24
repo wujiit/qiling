@@ -42,178 +42,127 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #78350f 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "个人主页",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80",
-            "title": "把你的经验变成可被信任的个人品牌",
-            "subtitle": "适合顾问、讲师、创作者和自由职业者展示服务、作品与合作入口。",
-            "btn_text": "预约沟通",
-            "btn_url": "#",
-            "btn_bg_color": "#6366f1",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "关于本人",
+            "link": "#about_me_card",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "主创矩阵",
+            "link": "#author_matrix",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#reader_wall",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "10",
-            "number": "10年+",
-            "label": "专业经验",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "120",
-            "number": "120+",
-            "label": "服务案例",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "36",
-            "number": "36场",
-            "label": "公开分享",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "客户评分",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f59e0b",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f59e0b",
+        "qhs_hover_bg": "rgba(245,158,11,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "resume_hero",
       "data": {
-        "services_title": "我能提供什么",
-        "services_subtitle": "把能力拆成清晰服务，让访客快速判断是否合适",
-        "services_columns": "4",
-        "services_bg_color": "#ffffff",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "顾问咨询",
-            "desc": "围绕战略、增长、产品或个人品牌提供诊断建议。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "课程培训",
-            "desc": "面向企业团队或公开学员提供主题课程。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "项目陪跑",
-            "desc": "按阶段拆解目标、复盘进度并给出改进路径。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "内容合作",
-            "desc": "演讲、访谈、专栏、播客或品牌内容合作。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "rh_style_variant": "classic",
+        "rh_layout": "center",
+        "rh_height": "80vh",
+        "rh_bg_image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1800&q=80",
+        "rh_name": "林晨 · 资深全栈研发架构师",
+        "rh_titles": "分布式高并发系统专家\n开源技术布道师\n全栈架构咨询顾问",
+        "rh_bio": "十年以上大型互联网平台与分布式高并发架构实战经验，深度参与多个知名开源核心项目开发，专注高性能与高可靠系统。",
+        "rh_avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+        "rh_avatar_style": "circle",
+        "rh_typewriter": "1"
       }
     },
     {
-      "type": "cases",
+      "type": "about_me_card",
+      "data": {}
+    },
+    {
+      "type": "features_list",
       "data": {
-        "cases_title": "精选作品与案例",
-        "cases_subtitle": "用结果、过程和角色说明你的专业价值",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
-            "title": "品牌增长咨询",
-            "desc": "帮助新消费品牌梳理定位与内容增长路径。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
-            "title": "企业内训课程",
-            "desc": "为团队搭建从认知到执行的训练营体系。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
-            "title": "个人品牌陪跑",
-            "desc": "协助创始人沉淀内容资产和公开表达体系。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
       }
     },
     {
-      "type": "timeline",
-      "data": {
-        "timeline_title": "经历路径",
-        "timeline_items": [
-          {
-            "year": "2016",
-            "title": "进入行业一线",
-            "desc": "从项目执行开始，积累真实业务经验。"
-          },
-          {
-            "year": "2019",
-            "title": "负责核心项目",
-            "desc": "带领团队完成多个增长和品牌升级项目。"
-          },
-          {
-            "year": "2023",
-            "title": "开启顾问服务",
-            "desc": "面向企业和个人品牌提供咨询、课程和陪跑。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
+      "type": "author_matrix",
+      "data": {}
     },
     {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "客户反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "300+",
-        "average_rating": "4.9",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "王先生",
-            "position": "创业者",
-            "content": "沟通后方向更清楚，下一步执行动作也更具体。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "李女士",
-            "position": "品牌负责人",
-            "content": "课程内容能落到项目里，团队复盘效率明显提高。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "陈女士",
-            "position": "自由职业者",
-            "content": "个人品牌定位和作品表达终于顺起来了。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ]
-      }
+      "type": "reader_wall",
+      "data": {}
     },
     {
       "type": "contact",
@@ -226,6 +175,36 @@
         "contact_show_form": "1",
         "contact_form_id": "",
         "module_bg_color": "#f8fafc"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#121110",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f59e0b",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "CREATOR-PRO · 商业顾问与专家个人超级主页",
+        "qfs_brand_desc": "赋能创始人、行业专家与独立创作者打造极具辨识度的个人商业 IP。沉淀个人方法论、畅销著作、企业内训与深度咨询方案，实现个人影响力的商业价值倍增。",
+        "qfs_link_groups": [
+          {
+            "title": "咨询与赋能领域 & 个人作品集萃",
+            "links": "创始人商业认知与战略破局私董会|#\n企业高管领导力与组织增长内训|#\n年度商业观察与畅销著作专区|#\n闭门线下沙龙与高端人脉圈层|#\n全网百万赞商业深度专栏文章|#\nTED / 峰会商业主题演讲实录|#\n辅导上市及独角兽企业案例库|#\n个人传记与媒体深度专访特稿|#"
+          }
+        ],
+        "qfs_contact_title": "商务内训与私人咨询预约",
+        "qfs_contact_items": "助理专线|186-0000-8899|tel:18600008899\n顾问邮箱|expert@creator-pro.me|mailto:expert@creator-pro.me\n预约须知|私人深度咨询敬请提前两周预约|#\n工作室|上海市静安区华山路 1520 弄丁香花园工作室|#",
+        "qfs_social_title": "思想影响力",
+        "qfs_social_links": "导师个人公众号|#\n商业播客节目|#\n知识星球闭门社群|#\n视频号商业内参|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 CREATOR-PRO STUDIO. 保留所有权利 · 沪ICP备19002812号 · 知名商业导师版权所有",
+        "qfs_bottom_links": "咨询委托协议范本|#\n原创文章版权授权细则|#\n商务合作与演讲邀约须知|#\n个人隐私声明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

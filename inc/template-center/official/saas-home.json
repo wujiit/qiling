@@ -42,272 +42,179 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 52%, #312e81 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵云策",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
-            "title": "把团队增长装进一套在线系统",
-            "subtitle": "面向订阅产品、协作工具和企业 SaaS 的官网模板，清楚展示价值、场景、套餐和试用路径。",
-            "btn_text": "开始免费试用",
-            "btn_url": "#",
-            "btn_bg_color": "#3b82f6",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "能力轮盘",
+            "link": "#circle_wheel",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "场景方案",
+            "link": "#tabbed_carousel",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "方案对比",
+            "link": "#comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#accordion",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "99.9",
-            "number": "99.9%",
-            "label": "服务可用性",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "30",
-            "number": "30天",
-            "label": "试用周期",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "200",
-            "number": "200+",
-            "label": "客户团队",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "7x24",
-            "number": "7x24",
-            "label": "在线支持",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#6366f1",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#6366f1",
+        "qhs_hover_bg": "rgba(99,102,241,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "interact_hero",
+      "data": {
+        "hero_badge": "下一代企业级协同办公与项目交付 SaaS 云平台",
+        "hero_title": "释放团队生产力 · 让每一次任务交付都极致丝滑",
+        "hero_subtitle": "聚合任务看板、文档知识库、自动化工作流与敏捷甘特图。消除跨部门沟通内耗，交付周期缩短 45%。",
+        "hero_primary_btn_text": "免费开启 14 天全功能试用",
+        "hero_primary_btn_url": "#cta",
+        "hero_secondary_btn_text": "预约产品顾问演示",
+        "hero_secondary_btn_url": "#demo"
+      }
+    },
+    {
+      "type": "circle_wheel",
+      "data": {
+        "wheel_title": "360° 敏捷协同能力环 · 串联企业组织力",
+        "wheel_subtitle": "项目管理 · 流程自动化 · 资源负载 · 知识沉淀 · OKR 目标对齐"
+      }
+    },
+    {
+      "type": "tabbed_carousel",
+      "data": {
+        "tc_title": "多场景沉浸式协同体验 · 一套系统满足全员需求",
+        "tc_subtitle": "研发产研、市场运营、财务行政与高管驾驶舱全方位适配"
       }
     },
     {
       "type": "features",
       "data": {
-        "features_title": "SaaS 核心能力",
-        "features_subtitle": "围绕客户购买前最关心的问题组织信息",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "账户与权限",
-            "desc": "支持团队、角色、部门和项目维度的权限配置。"
-          },
-          {
-            "icon": "02",
-            "title": "流程自动化",
-            "desc": "把审批、提醒、分派和状态变更配置成标准流程。"
-          },
-          {
-            "icon": "03",
-            "title": "数据看板",
-            "desc": "集中展示使用数据、业务指标和团队效率变化。"
-          },
-          {
-            "icon": "04",
-            "title": "开放集成",
-            "desc": "通过 API、Webhook 和第三方插件连接现有系统。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "features_title": "开箱即用的企业级特性",
+        "features_subtitle": "从底层安全合规到顶层交互体验，无懈可击"
       }
     },
     {
-      "type": "services",
+      "type": "comparison",
       "data": {
-        "services_title": "适用业务场景",
-        "services_subtitle": "让客户快速找到自己所在的使用场景",
-        "services_columns": "4",
-        "services_bg_color": "#f8fafc",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "销售团队",
-            "desc": "管理线索、客户、跟进节奏和成交预测。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "运营团队",
-            "desc": "沉淀任务流程、活动执行和复盘数据。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "客户成功",
-            "desc": "追踪客户健康度、续费风险和服务进度。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "管理驾驶舱",
-            "desc": "把核心指标、团队状态和异常提醒汇总呈现。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "comparison_title": "传统分散工具 vs 启灵一体化 SaaS 平台",
+        "comparison_subtitle": "告别在 Slack、Trello、Notion、Excel 之间来回切换的割裂体验",
+        "columns": "2"
       }
     },
     {
-      "type": "process",
+      "type": "accordion",
       "data": {
-        "process_title": "从试用到上线",
-        "process_subtitle": "SaaS 官网需要把低门槛试用和正式上线路径讲清楚",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "创建试用账号",
-            "desc": "填写基础信息即可进入演示空间。",
-            "stage_tag": "试用"
-          },
-          {
-            "icon": "02",
-            "title": "导入示例数据",
-            "desc": "用样例数据理解流程、看板和权限。",
-            "stage_tag": "体验"
-          },
-          {
-            "icon": "03",
-            "title": "配置团队流程",
-            "desc": "按部门、角色和业务节点调整配置。",
-            "stage_tag": "配置"
-          },
-          {
-            "icon": "04",
-            "title": "正式上线运营",
-            "desc": "完成成员培训、数据迁移和客户成功交接。",
-            "stage_tag": "上线"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "accordion_title": "深度技术架构与安全合规详解",
+        "accordion_subtitle": "满足跨国企业与金融级别的高标准安全审查"
       }
     },
     {
-      "type": "pricing",
+      "type": "cases",
       "data": {
-        "pricing_title": "订阅套餐摘要",
-        "pricing_subtitle": "先给客户一个清晰价格锚点，详细权益可继续编辑",
-        "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
-        "pricing_items": [
-          {
-            "name": "启动版",
-            "price": "¥199",
-            "period": "/月",
-            "desc": "适合小团队试用",
-            "features": "5 个成员席位\n基础流程模板\n基础数据看板\n邮件支持",
-            "btn_text": "开始试用",
-            "btn_link": "#",
-            "featured": ""
-          },
-          {
-            "name": "增长版",
-            "price": "¥699",
-            "period": "/月",
-            "desc": "适合增长型团队",
-            "features": "30 个成员席位\n自动化流程\n高级权限\nAPI 集成\n在线优先支持",
-            "btn_text": "选择增长版",
-            "btn_link": "#",
-            "featured": "1",
-            "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)"
-          },
-          {
-            "name": "企业版",
-            "price": "联系销售",
-            "period": "",
-            "desc": "适合集团与定制部署",
-            "features": "不限成员席位\nSSO 与审计\n私有化部署选项\n专属客户成功\n定制集成",
-            "btn_text": "联系销售",
-            "btn_link": "#",
-            "featured": ""
-          }
-        ]
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "客户怎么评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "860+",
-        "average_rating": "4.8",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "运营负责人",
-            "position": "客户成功团队",
-            "content": "上线后，流程状态和客户风险比以前清楚很多。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "产品经理",
-            "position": "成长型 SaaS",
-            "content": "套餐、场景和试用入口放在一页里，转化路径更短。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "信息化主管",
-            "position": "集团企业",
-            "content": "权限和审计能力适合企业内部推广。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ],
-        "testimonials_bg_color": "#ffffff"
+        "cases_title": "各行业领跑企业的共同选择",
+        "cases_subtitle": "超过 10,000+ 创新团队每天在启灵云平台上高效协作",
+        "columns": "3"
       }
     },
     {
       "type": "faq",
       "data": {
-        "faq_title": "SaaS 常见问题",
-        "faq_subtitle": "回答客户在试用、采购和上线前最常见的问题",
-        "faq_items": [
-          {
-            "question": "可以先试用再购买吗？",
-            "answer": "可以，试用期内可体验核心流程、权限和看板能力，正式购买后保留配置。"
-          },
-          {
-            "question": "是否支持企业内部系统集成？",
-            "answer": "可以通过 API、Webhook 或导入导出方式连接 CRM、工单、财务和数据系统。"
-          },
-          {
-            "question": "套餐和权益能改成自己的价格吗？",
-            "answer": "可以，价格、权益、按钮链接和套餐说明都可以在装修器中编辑。"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        "faq_title": "SaaS 订阅与使用常见问题",
+        "faq_subtitle": "了解关于按席位计费、历史数据迁移与本地私有化部署的一切"
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "让客户从这一页开始试用",
-        "cta_subtitle": "替换成你的产品名称、核心场景和试用入口，就能快速搭建 SaaS 官网。",
-        "cta_button_text": "开始免费试用",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #312e81 100%)",
-        "cta_button_bg_color": "#3b82f6",
-        "cta_button_text_color": "#ffffff",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
+        "cta_title": "准备好让团队的协同效率倍增了吗？",
+        "cta_subtitle": "无需绑定信用卡，2分钟内即可邀请团队成员开启体验。",
+        "cta_btn_text": "立即免费创建工作区",
+        "cta_btn_link": "#register"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#6366f1",
+        "qfs_brand_title": "COLLAB-CLOUD · 启灵敏捷协同 SaaS",
+        "qfs_brand_desc": "简化协作，成就卓越。新一代数字化团队的高性能生产力工作台。",
+        "qfs_bottom_text": "© 2026 COLLAB CLOUD INC. 保留所有权利 · 京ICP备20230199号"
       }
     }
   ]

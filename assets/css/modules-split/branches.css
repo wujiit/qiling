@@ -136,8 +136,8 @@
 .qiling-module-scope-branches .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-branches /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-branches .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-branches .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-branches .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-branches /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-branches /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-branches /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-branches /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-branches .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-branches .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-branches .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-branches .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-branches /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -506,9 +516,8 @@
   );
   transform: translateY(-2px);
   box-shadow: var(--qiling-component-button-shadow);
-}.qiling-module-scope-branches /* 响应式 (Responsive) */
-@media (max-width: 1200px) {
-  .branches-grid.grid-cols-4 {
+}/* 响应式 (Responsive) */
+@media (max-width: 1200px){.qiling-module-scope-branches .branches-grid.grid-cols-4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }@media (max-width: 768px){.qiling-module-scope-branches .branches-grid,
@@ -529,36 +538,39 @@
     flex-direction: column;
   }
 }.qiling-module-scope-branches /* 暗黑模式 (Dark Mode) */
-html.dark-mode .module-branches {
-  background-color: var(--dm-bg);
-}html.dark-mode .qiling-module-scope-branches .module-branches .section-title {
-  color: var(--qiling-component-module-title-color-dark, var(--color-heading));
-}html.dark-mode .qiling-module-scope-branches .module-branches .section-subtitle {
-  color: var(--color-text-muted);
-}html.dark-mode .qiling-module-scope-branches .branch-card {
-  background: var(
-    --qiling-component-card-bg-dark,
-    var(--qiling-component-card-bg)
-  );
-  box-shadow: var(--qiling-component-card-shadow);
-  border: 1px solid
-    var(
-      --qiling-component-card-border-dark,
-      var(--qiling-component-card-border)
-    );
-}html.dark-mode .qiling-module-scope-branches .module-branches.module-branches .branches-grid .branch-card {
-  background: var(
-    --qiling-component-card-bg-dark,
-    var(--qiling-component-card-bg)
-  );
-  border-color: var(
-    --qiling-component-card-border-dark,
-    var(--qiling-component-card-border)
-  );
-}html.dark-mode .qiling-module-scope-branches .branch-name {
-  color: var(--color-heading);
-}html.dark-mode .qiling-module-scope-branches .branch-info-list {
-  color: var(--color-text-muted);
+html.dark-mode .module-branches,
+[data-theme='dark'] .module-branches {
+  background-color: var(--dm-bg, #0b0f19) !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}html.dark-mode .qiling-module-scope-branches .module-branches .section-title,
+[data-theme='dark'] .qiling-module-scope-branches .module-branches .section-title,
+html.dark-mode .module-branches .section-title,
+[data-theme='dark'] .module-branches .section-title {
+  color: var(--color-heading, #f8fafc) !important;
+}html.dark-mode .qiling-module-scope-branches .module-branches .section-subtitle,
+[data-theme='dark'] .qiling-module-scope-branches .module-branches .section-subtitle,
+html.dark-mode .module-branches .section-subtitle,
+[data-theme='dark'] .module-branches .section-subtitle {
+  color: var(--color-text-muted, #94a3b8) !important;
+}html.dark-mode .qiling-module-scope-branches .branch-card,
+[data-theme='dark'] .qiling-module-scope-branches .branch-card,
+html.dark-mode .module-branches .branch-card,
+[data-theme='dark'] .module-branches .branch-card {
+  background: var(--dm-bg-card, #1e293b) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}html.dark-mode .qiling-module-scope-branches .module-branches.module-branches .branches-grid .branch-card,
+[data-theme='dark'] .qiling-module-scope-branches .module-branches.module-branches .branches-grid .branch-card {
+  background: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}html.dark-mode .qiling-module-scope-branches .branch-name,
+[data-theme='dark'] .qiling-module-scope-branches .branch-name,
+html.dark-mode .module-branches .branch-name,
+[data-theme='dark'] .module-branches .branch-name {
+  color: var(--color-heading, #f8fafc) !important;
+}html.dark-mode .qiling-module-scope-branches .branch-info-list,
+[data-theme='dark'] .qiling-module-scope-branches .branch-info-list {
+  color: var(--color-text-muted, #94a3b8) !important;
 }html.dark-mode .qiling-module-scope-branches .branch-info-item a:hover {
   color: var(--color-primary-light, var(--qiling-color-60a5fa));
 }html.dark-mode .qiling-module-scope-branches .branches-city-btn {

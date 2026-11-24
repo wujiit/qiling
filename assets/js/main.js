@@ -522,6 +522,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (iconMoon) {
                 iconMoon.style.display = isDark ? 'inline-flex' : 'none';
             }
+
+            var allSuns = document.querySelectorAll('.icon-sun, .theme-toggle-icon--light');
+            var allMoons = document.querySelectorAll('.icon-moon, .theme-toggle-icon--dark');
+            allSuns.forEach(function (el) {
+                el.style.display = isDark ? 'none' : 'inline-flex';
+            });
+            allMoons.forEach(function (el) {
+                el.style.display = isDark ? 'inline-flex' : 'none';
+            });
         }
 
         function applyTheme(theme, source, persist) {
@@ -599,6 +608,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 scheduleAutoRefresh();
             });
         }
+
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('#darkmode-toggle, .darkmode-toggle, .theme-toggle-btn');
+            if (btn && btn !== darkModeToggle) {
+                var isDark = root.classList.contains('dark-mode');
+                applyTheme(isDark ? 'light' : 'dark', 'manual', true);
+                scheduleAutoRefresh();
+            }
+        });
     }
 
     // ===== 原生滚动动画（替代 AOS 库） =====

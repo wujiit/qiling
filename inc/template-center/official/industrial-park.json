@@ -42,194 +42,294 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #0f766e 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "智汇产园",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
-            "title": "为成长企业提供产业空间和服务",
-            "subtitle": "区位、载体、政策、服务和产业生态集中展示，提升招商转化效率。",
-            "btn_text": "预约招商顾问",
-            "btn_url": "#",
-            "btn_bg_color": "#1e3a8a",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#clients",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "汇聚全球创新动能 · 共筑现代化产业高地",
+        "bb_subtitle": "国家级高新技术产业开发区，坐拥海陆空立体交通枢纽，重点布局人工智能、生物医药与半导体硬科技，入驻尊享三免两减半与千万级研发专项扶持",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "50万",
-            "number": "50万㎡",
-            "label": "产业载体",
-            "color": "#ffffff"
+            "text": "预约招商专员 1对1 政策申报咨询与实地考察",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "300",
-            "number": "300+",
-            "label": "入驻企业",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "12",
-            "number": "12项",
-            "label": "企业服务",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "24h",
-            "number": "24h",
-            "label": "招商响应",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "国家级产业高地综合经济看板",
+        "stats_subtitle": "用澎湃的创新活力与产业集聚效应，托举高成长型企业腾飞",
+        "stats_items": [
+          {
+            "number": "860+ 家",
+            "label": "园区已入驻高新技术企业"
+          },
+          {
+            "number": "¥1,350 亿",
+            "label": "园区规上工业年总产值"
+          },
+          {
+            "number": "45 家",
+            "label": "园区自主孵化上市公司与独角兽"
+          },
+          {
+            "number": "38,000+ 人",
+            "label": "集聚海内外硕博高层次创新人才"
+          }
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "园区服务能力",
-        "services_subtitle": "围绕空间、政策、人才、融资和运营提供持续服务",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大特色主导产业集群载体",
+        "services_subtitle": "产业链、创新链、资金链与人才链四链深度融合",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "空间载体",
-            "desc": "办公、研发、中试、展示和配套空间。",
-            "link": "#"
+            "icon": "fas fa-brain",
+            "title": "新一代人工智能与数字经济港",
+            "desc": "重点招引大模型、具身智能、工业互联网与云计算领军企业，配建千卡智算算力中心。"
           },
           {
-            "icon": "02",
-            "title": "政策申报",
-            "desc": "产业政策、项目申报和资质辅导。",
-            "link": "#"
+            "icon": "fas fa-dna",
+            "title": "生物医药与高端医疗器械谷",
+            "desc": "建有公共 GLP 实验平台、实验动物中心与高规格蒸汽管网，直通省药监局审评绿色通道。"
           },
           {
-            "icon": "03",
-            "title": "企业服务",
-            "desc": "工商财税、人才招聘和融资对接。",
-            "link": "#"
+            "icon": "fas fa-microchip",
+            "title": "半导体集成电路与新材料基地",
+            "desc": "具备双回路高可靠用电、超纯水站与专业微震地基高标厂房，适配晶圆封测与芯片制造。"
           },
           {
-            "icon": "04",
-            "title": "产业生态",
-            "desc": "活动交流、供需对接和资源合作。",
-            "link": "#"
+            "icon": "fas fa-building",
+            "title": "跨国总部经济与研发设计大厦",
+            "desc": "LEED 金级认证 5A 甲级写字楼，为世界 500 强与区域总部提供高品质商务办公环境。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "cases",
+      "type": "branches",
       "data": {
-        "cases_title": "载体空间展示",
-        "cases_subtitle": "用真实空间和配套设施帮助企业判断适配度",
-        "cases_columns": "3",
-        "cases_items": [
+        "branches_title": "核心优质入驻载体与租售指南",
+        "branches_subtitle": "不同规模载体灵活租售组合，满足初创孵化、成长加速到规模量产全需求",
+        "branches_columns": "3",
+        "branches_list": [
           {
-            "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
-            "title": "总部办公空间",
-            "desc": "适合成长型企业总部、销售和运营团队。",
-            "link": "#"
+            "name": "硬科技智造加速标准化厂房",
+            "city": "产业园 · 东区智造基地",
+            "status": "open",
+            "address": "高新大道 888 号 · 智能制造产业园 3 期",
+            "phone": "021-5888-2999",
+            "email": "invest-east@hightech-park.gov.cn",
+            "hours": "首层层高 8 米，承重 2.0 吨/㎡",
+            "services": "双回路供电, 天然气入户, 5T货梯, 环评排污指标保障",
+            "transport": "紧靠 G15 高速出口 1.5 公里，距货运深水码头 15 分钟车程",
+            "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
           },
           {
-            "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
-            "title": "研发中试空间",
-            "desc": "支持研发办公、实验测试和样品展示。",
-            "link": "#"
+            "name": "人工智能总部科研独栋基地",
+            "city": "产业园 · 南区核心商务港",
+            "status": "open",
+            "address": "云栖路 66 号 · 数字经济产业港 A 栋",
+            "phone": "021-5888-3999",
+            "email": "invest-hq@hightech-park.gov.cn",
+            "hours": "整栋独立出让，面积 2500-5000㎡",
+            "services": "独立冠名权, 独栋屋顶花园, 万兆光纤, 千卡算力直连",
+            "transport": "地铁 2 号线高新站无缝直连上盖，30 分钟直达国际机场",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
           },
           {
-            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
-            "title": "产业服务中心",
-            "desc": "集中承载政策服务、会议活动和接待展示。",
-            "link": "#"
+            "name": "海归博士与领军人才众创空间",
+            "city": "产业园 · 创新孵化中心",
+            "status": "open",
+            "address": "科创一路 100 号 · 国家级众创空间大厦 5 层",
+            "phone": "021-5888-1999",
+            "email": "incubator@hightech-park.gov.cn",
+            "hours": "工位 50-300㎡ 灵活分割，拎包办公",
+            "services": "免租 6-12 个月, 免费前台接待, 共享会议室, 种子基金直投",
+            "transport": "园区穿梭免费新能源巴士接驳，周边配套商业街与人才食堂",
+            "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
       }
     },
     {
-      "type": "process",
+      "type": "certificate_honors",
       "data": {
-        "process_title": "企业入驻流程",
-        "process_subtitle": "从需求沟通到签约入驻，关键节点清晰可控",
-        "process_items": [
+        "cert_title": "重磅产业招商政策与扶持红利",
+        "cert_subtitle": "真金白银赋能企业成长，专班专员全程陪跑落地",
+        "cert_columns": "4",
+        "cert_items": [
           {
-            "icon": "01",
-            "title": "提交需求",
-            "desc": "说明行业、人数、面积、预算和入驻时间。",
-            "stage_tag": "需求"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "税收三免两减半政策",
+            "desc": "入驻企业地方留存税收前三年全额奖励返还"
           },
           {
-            "icon": "02",
-            "title": "匹配载体",
-            "desc": "匹配空间、政策和配套服务方案。",
-            "stage_tag": "匹配"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "最高 1000 万领军人才专项资助",
+            "desc": "国家级与省部级顶尖人才创业项目配套无偿资助"
           },
           {
-            "icon": "03",
-            "title": "现场看园",
-            "desc": "安排参观路线、载体介绍和政策沟通。",
-            "stage_tag": "看园"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "最高 5000 万设备投资研发补助",
+            "desc": "重大工业设备购置与技改投资按比例直接补贴"
           },
           {
-            "icon": "04",
-            "title": "签约入驻",
-            "desc": "完成合同、装修、入驻和企业服务对接。",
-            "stage_tag": "入驻"
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "政府引导基金领投跟投",
+            "desc": "百亿级产业发展母基金为成长型企业直接注资赋能"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "clients",
-      "data": {
-        "clients_title": "适合入驻企业",
-        "clients_columns": "4",
-        "clients_show_name": "1",
-        "clients_items": [
-          {
-            "name": "科技研发企业",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "智能制造团队",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "企业服务机构",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "区域总部项目",
-            "logo": "",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
+      "data": {}
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约园区招商顾问",
-        "contact_subtitle": "提交企业行业、团队人数、需求面积、预算和入驻时间，招商顾问会推荐合适载体。",
-        "contact_phone": "400-889-2026",
-        "contact_email": "park@example.com",
-        "contact_address": "示例产业园招商中心",
+        "contact_title": "商务洽谈与 产业园区/招商官网 采购询盘",
+        "contact_subtitle": "欢迎索取详细产品型录、工程图纸或申请免费样品试用，商务工程师 2 小时内响应。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交询盘采购单 (RFQ)"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d131f",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "INNO-PARK · 国际科创产业园与总部基地",
+        "qfs_brand_desc": "千亩高新科技与智能制造总部集聚基地。集独栋研发中心、标准无尘厂房、众创孵化空间与生活配套于一体，提供企业工商财税、政策申报及天使创投全周期赋能。",
+        "qfs_link_groups": [
+          {
+            "title": "园区载体空间 & 招商政策与服务",
+            "links": "企业总部独栋研发楼宇|#\n高标智能制造单层厂房|#\n精装共享办公与路演大厅|#\n高品质人才公寓与商业配套|#\n国家级产业政策扶持细则|#\n租金减免与购房补贴通道|#\n园区创投基金项目直通车|#\n企业入驻一站式行政审批代办|#"
+          }
+        ],
+        "qfs_contact_title": "招商入驻与参观接待",
+        "qfs_contact_items": "招商热线|0571-8899-6600|tel:057188996600\n政企服务|0571-8899-6611|tel:057188996611\n接待中心|周一至周日 9:00 - 18:00（提供班车接送）|#\n园区地址|浙江省杭州市余杭区未来科技城科创大道 99 号|#",
+        "qfs_social_title": "园区生态",
+        "qfs_social_links": "园区微门户|#\n政策申报直通车|#\n企服沙龙预约|#\n青年社群活动|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 INNO-PARK HIGH-TECH CAMPUS. 保留所有权利 · 浙ICP备17089102号 · 国家级高新技术产业园区",
+        "qfs_bottom_links": "入驻企业公约|#\n安全生产管理条例|#\n园区配套服务指南|#\n班车线路时刻表|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -414,6 +414,8 @@ class Setup_Wizard_Admin {
                 <p><?php esc_html_e( '当前向导会根据站点类型和行业给出模板、页面、内容模型建议；只有点击生成页面时才会创建缺失页面，不会安装或配置第三方插件。', 'qiling' ); ?></p>
             </div>
 
+            <?php $this->render_language_notice(); ?>
+
             <div class="qsw-feature-grid">
                 <div><strong><?php esc_html_e( '可随时调整', 'qiling' ); ?></strong><span><?php esc_html_e( '所有设置都能在主题设置、页面和菜单中单独修改。', 'qiling' ); ?></span></div>
                 <div><strong><?php esc_html_e( '默认不覆盖', 'qiling' ); ?></strong><span><?php esc_html_e( '已有首页、页面和菜单会优先复用。', 'qiling' ); ?></span></div>
@@ -1440,6 +1442,9 @@ class Setup_Wizard_Admin {
                     );
                     ?>
                 </p>
+                <p class="qsw-preview-language-tip" style="margin: -6px 0 12px; color: #b45309; font-size: 13px; font-weight: 500;">
+                    💡 <?php echo esc_html( $this->get_preview_language_tip() ); ?>
+                </p>
             </div>
 
             <div class="qsw-preview-grid">
@@ -1796,6 +1801,63 @@ class Setup_Wizard_Admin {
     }
 
     /**
+     * 获取语言与适用场景提示信息。
+     *
+     * @return array{title:string,content:string}
+     */
+    private function get_language_notice_data() {
+        $title   = __( '语言与适用场景提示', 'qiling' );
+        $content = __( '主题内置的 100+ 套行业模板及向导推荐页面主要针对中文建站场景设计（演示数据、栏目结构及文案均为中文）。如果您正在搭建外贸站、出海或多语言站点，仍可自由使用主题全部排版能力，但建议跳过预设导入，根据业务自行创建页面或按需替换文案。', 'qiling' );
+
+        if ( 0 !== strpos( get_user_locale(), 'zh' ) ) {
+            if ( '语言与适用场景提示' === $title ) {
+                $title = 'Language & Scenario Notice';
+            }
+            if ( 0 === strpos( $content, '主题内置' ) ) {
+                $content = 'The 100+ built-in industry templates and wizard starter presets are tailored for Chinese websites (demo content, sample articles, and layouts are in Chinese). If you are building an English, international, or multilingual website, you can still fully utilize all theme features and blocks, but we recommend creating your pages manually or translating the starter content to suit your needs.';
+            }
+        }
+
+        return array(
+            'title'   => $title,
+            'content' => $content,
+        );
+    }
+
+    /**
+     * 获取推荐预览语言提示。
+     *
+     * @return string
+     */
+    private function get_preview_language_tip() {
+        $tip = __( '提示：推荐模板与页面结构预设均为中文内容。', 'qiling' );
+        if ( 0 !== strpos( get_user_locale(), 'zh' ) && '提示：推荐模板与页面结构预设均为中文内容。' === $tip ) {
+            $tip = 'Notice: Recommended templates and starter structures are in Chinese.';
+        }
+        return $tip;
+    }
+
+    /**
+     * 渲染语言与适用场景提示横幅。
+     *
+     * @param string $extra_class 额外类名.
+     * @return void
+     */
+    private function render_language_notice( $extra_class = '' ) {
+        $notice = $this->get_language_notice_data();
+        $class  = 'qsw-language-notice' . ( '' !== $extra_class ? ' ' . esc_attr( $extra_class ) : '' );
+        ?>
+        <div class="<?php echo esc_attr( $class ); ?>">
+            <div class="qsw-language-notice__icon" aria-hidden="true">💡</div>
+            <div class="qsw-language-notice__body">
+                <strong><?php echo esc_html( $notice['title'] ); ?></strong>
+                <p><?php echo esc_html( $notice['content'] ); ?></p>
+            </div>
+        </div>
+        <?php
+    }
+
+    /**
      * 渲染提示消息通知。
      *
      * @return void
@@ -1803,6 +1865,10 @@ class Setup_Wizard_Admin {
     private function render_notices() {
         if ( ! empty( $_GET['from_activation'] ) ) {
             echo '<div class="notice notice-info is-dismissible"><p>' . esc_html__( '启灵主题已启用，你可以先通过建站向导完成基础配置；也可以跳过，之后随时重新进入。', 'qiling' ) . '</p></div>';
+            if ( 0 !== strpos( get_user_locale(), 'zh' ) ) {
+                $notice = $this->get_language_notice_data();
+                echo '<div class="notice notice-warning is-dismissible"><p><strong>💡 ' . esc_html( $notice['title'] ) . '：</strong> ' . esc_html( $notice['content'] ) . '</p></div>';
+            }
         }
         if ( ! empty( $_GET['saved'] ) ) {
             echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( '当前步骤已保存。', 'qiling' ) . '</p></div>';
@@ -2053,6 +2119,10 @@ class Setup_Wizard_Admin {
             .qsw-panel-head span { display: inline-flex; padding: 3px 8px; color: #135e96; background: #e7f5ff; border-radius: 6px; font-size: 12px; font-weight: 700; }
             .qsw-panel-head h2 { margin: 10px 0 8px; font-size: 24px; line-height: 1.25; }
             .qsw-panel-head p { max-width: 760px; margin: 0 0 18px; color: #50575e; line-height: 1.7; }
+            .qsw-language-notice { display: flex; align-items: flex-start; gap: 12px; margin: 16px 0; padding: 14px 16px; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 8px; background: #fffbeb; color: #92400e; }
+            .qsw-language-notice__icon { font-size: 20px; line-height: 1.2; flex-shrink: 0; }
+            .qsw-language-notice__body strong { display: block; margin-bottom: 4px; color: #78350f; font-size: 14px; font-weight: 700; }
+            .qsw-language-notice__body p { margin: 0; color: #92400e; font-size: 13px; line-height: 1.6; }
             .qsw-feature-grid, .qsw-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
             .qsw-feature-grid div, .qsw-summary-grid div, .qsw-existing, .qsw-note { padding: 14px; background: #f6f7f7; border: 1px solid #e2e4e7; border-radius: 8px; }
             .qsw-feature-grid strong, .qsw-summary-grid strong { display: block; margin-bottom: 5px; color: #1d2327; }

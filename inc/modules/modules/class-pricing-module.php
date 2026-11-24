@@ -226,7 +226,12 @@ class Pricing_Module extends Module_Base {
         $pb = isset( $data['module_padding_bottom'] ) && $data['module_padding_bottom'] !== '' ? $data['module_padding_bottom'] : '80px';
         
         $columns = isset( $data['pricing_columns'] ) && ! empty( $data['pricing_columns'] ) ? intval( $data['pricing_columns'] ) : 3;
-        $items = isset( $data['pricing_items'] ) ? $data['pricing_items'] : array();
+        $items = array();
+        if ( isset( $data['pricing_items'] ) && is_array( $data['pricing_items'] ) && ! empty( $data['pricing_items'] ) ) {
+            $items = $data['pricing_items'];
+        } elseif ( isset( $data['pricing_plans'] ) && is_array( $data['pricing_plans'] ) && ! empty( $data['pricing_plans'] ) ) {
+            $items = $data['pricing_plans'];
+        }
         $cards_mode = isset( $data['pricing_cards_mode'] )
             ? sanitize_key( (string) $data['pricing_cards_mode'] )
             : '';
@@ -238,7 +243,7 @@ class Pricing_Module extends Module_Base {
         }
         
         // 默认示例数据（仅在未配置该字段的初始状态下生效，用户主动清空时不强行注入假数据）
-        if ( empty( $items ) && ! isset( $data['pricing_items'] ) ) {
+        if ( empty( $items ) && ! isset( $data['pricing_items'] ) && ! isset( $data['pricing_plans'] ) ) {
             $items = array(
                 array( 
                     'name' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '基础版', 'Starter' ) : __( '基础版', 'qiling' ),
@@ -355,8 +360,11 @@ class Pricing_Module extends Module_Base {
                             if ( in_array( $normalized_card_bg, $light_card_backgrounds, true ) && in_array( $normalized_features_color, $white_text_colors, true ) ) {
                                 $features_color = 'var(--color-text, #334155)';
                             }
-                             $is_featured = isset( $item['featured'] ) && $item['featured'];
-                            $featured_text = isset( $item['featured_text'] ) && ! empty( $item['featured_text'] ) ? $item['featured_text'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'qiling' ) );
+                            $is_featured = ( isset( $item['featured'] ) && $item['featured'] )
+                                || ( isset( $item['is_featured'] ) && in_array( strtolower( (string) $item['is_featured'] ), array( 'yes', '1', 'true' ), true ) );
+                            $featured_text = isset( $item['featured_text'] ) && ! empty( $item['featured_text'] )
+                                ? $item['featured_text']
+                                : ( isset( $item['badge'] ) && ! empty( $item['badge'] ) ? $item['badge'] : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '推荐', 'Popular' ) : __( '推荐', 'qiling' ) ) );
                             $featured_bg = isset( $item['featured_bg'] ) && ! empty( $item['featured_bg'] ) ? $item['featured_bg'] : 'var(--qiling-component-badge-bg)';
                             
                             // 卡片背景样式
@@ -459,18 +467,25 @@ class Pricing_Module extends Module_Base {
                                 
                                 <!-- 按钮 -->
                                 <?php if ( $btn_text && $btn_link ) : 
-                                    // 按钮样式
+                                    // 检查是否包含历史遗留的灰底黑字默认配置（如官方行业模板批量注入），若未作独立自定义则清空以完整继承设计系统
+                                    if ( '#f1f5f9' === strtolower( trim( (string) $btn_bg ) ) && '#0f172a' === strtolower( trim( (string) $btn_text_color ) ) ) {
+                                        $btn_bg = '';
+                                        $btn_text_color = '';
+                                        $btn_border_color = '';
+                                    }
+
+                                    // 按钮样式：完全遵从后台自定义配置（支持背景色、文字颜色、边框色）
                                     $btn_style = '';
                                     if ( ! empty( $btn_bg ) ) {
                                         $btn_style .= strpos( $btn_bg, 'gradient' ) !== false ? "background: {$btn_bg};" : "background-color: {$btn_bg};";
                                     } elseif ( $is_featured ) {
-                                        $btn_style .= "background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);";
+                                        $btn_style .= "background: linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%);";
                                     }
-                                    
+
                                     if ( ! empty( $btn_text_color ) ) {
                                         $btn_style .= "color: {$btn_text_color};";
                                     } elseif ( $is_featured ) {
-                                        $btn_style .= "color: var(--color-neutral-0);";
+                                        $btn_style .= "color: var(--color-text-inverse, #ffffff);";
                                     }
 
                                     if ( ! empty( $btn_border_color ) ) {
@@ -478,10 +493,10 @@ class Pricing_Module extends Module_Base {
                                     } elseif ( ! empty( $btn_bg ) ) {
                                         $btn_style .= "border-color: {$btn_bg};";
                                     } elseif ( $is_featured ) {
-                                        $btn_style .= "border-color: var(--color-primary);";
+                                        $btn_style .= "border-color: transparent;";
                                     }
                                 ?>
-                                    <a href="<?php echo esc_url( $btn_link ); ?>" class="pricing-btn <?php echo $is_featured ? 'btn-featured' : ''; ?>" style="<?php echo esc_attr( $btn_style ); ?>">
+                                    <a href="<?php echo esc_url( $btn_link ); ?>" class="pricing-btn <?php echo $is_featured ? 'btn-featured' : ''; ?>"<?php echo $btn_style ? ' style="' . esc_attr( $btn_style ) . '"' : ''; ?>>
                                         <?php echo wp_kses_post( $btn_text ); ?>
                                     </a>
                                 <?php endif; ?>

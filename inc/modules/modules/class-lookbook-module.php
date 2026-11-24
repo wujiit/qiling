@@ -45,14 +45,26 @@ class Lookbook_Module extends Module_Base {
                     array( 'id' => 'name', 'label' => __( '搭配名称/编号', 'qiling' ), 'type' => 'text', 'default' => 'LOOK 01' ),
                     array( 'id' => 'desc', 'label' => __( '搭配描述', 'qiling' ), 'type' => 'textarea', 'rows' => 2 ),
                     array( 'id' => 'btn_text', 'label' => __( '按钮文案', 'qiling' ), 'type' => 'text', 'default' => __( '查看详情', 'qiling' ), 'description' => __( '默认为“查看详情”', 'qiling' ) ),
+                    array(
+                        'id'      => 'enable_shop_look',
+                        'label'   => __( '启用模特图同款打点标记 (Shop The Look)', 'qiling' ),
+                        'type'    => 'select',
+                        'options' => array(
+                            'no'  => __( '关闭', 'qiling' ),
+                            'yes' => __( '开启', 'qiling' ),
+                        ),
+                        'default' => 'no',
+                    ),
                     
-                    // 关联单品配置（最多支持 4 组单品信息）
+                    // 关联单品配置（最多支持 5 组单品信息）
                     
                     array( 'type' => 'header', 'label' => __( '单品 1', 'qiling' ) ),
                     array( 'id' => 'item_1_img', 'label' => __( '单品1 图片', 'qiling' ), 'type' => 'image' ),
                     array( 'id' => 'item_1_title', 'label' => __( '单品1 名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_1_price', 'label' => __( '单品1 价格', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_1_link', 'label' => __( '单品1 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_1_pin_x', 'label' => __( '单品1 模特图标记X百分比 (0-100，如 65)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_1_pin_y', 'label' => __( '单品1 模特图标记Y百分比 (0-100，如 42)', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_1_spec_name', 'label' => __( '单品1 主规格名', 'qiling' ), 'type' => 'text', 'description' => __( '例如：默认同款 / 黑色', 'qiling' ) ),
                     array( 'id' => 'item_1_spec_2_name', 'label' => __( '单品1 规格2名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_1_spec_2_img', 'label' => __( '单品1 规格2图片', 'qiling' ), 'type' => 'image' ),
@@ -66,6 +78,8 @@ class Lookbook_Module extends Module_Base {
                     array( 'id' => 'item_2_title', 'label' => __( '单品2 名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_2_price', 'label' => __( '单品2 价格', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_2_link', 'label' => __( '单品2 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_pin_x', 'label' => __( '单品2 模特图标记X百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_2_pin_y', 'label' => __( '单品2 模特图标记Y百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_2_spec_name', 'label' => __( '单品2 主规格名', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_2_spec_2_name', 'label' => __( '单品2 规格2名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_2_spec_2_img', 'label' => __( '单品2 规格2图片', 'qiling' ), 'type' => 'image' ),
@@ -79,6 +93,8 @@ class Lookbook_Module extends Module_Base {
                     array( 'id' => 'item_3_title', 'label' => __( '单品3 名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_3_price', 'label' => __( '单品3 价格', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_3_link', 'label' => __( '单品3 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_pin_x', 'label' => __( '单品3 模特图标记X百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_3_pin_y', 'label' => __( '单品3 模特图标记Y百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_3_spec_name', 'label' => __( '单品3 主规格名', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_3_spec_2_name', 'label' => __( '单品3 规格2名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_3_spec_2_img', 'label' => __( '单品3 规格2图片', 'qiling' ), 'type' => 'image' ),
@@ -92,6 +108,8 @@ class Lookbook_Module extends Module_Base {
                     array( 'id' => 'item_4_title', 'label' => __( '单品4 名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_4_price', 'label' => __( '单品4 价格', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_4_link', 'label' => __( '单品4 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_pin_x', 'label' => __( '单品4 模特图标记X百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_4_pin_y', 'label' => __( '单品4 模特图标记Y百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_4_spec_name', 'label' => __( '单品4 主规格名', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_4_spec_2_name', 'label' => __( '单品4 规格2名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_4_spec_2_img', 'label' => __( '单品4 规格2图片', 'qiling' ), 'type' => 'image' ),
@@ -105,6 +123,8 @@ class Lookbook_Module extends Module_Base {
                     array( 'id' => 'item_5_title', 'label' => __( '单品5 名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_5_price', 'label' => __( '单品5 价格', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_5_link', 'label' => __( '单品5 链接', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_pin_x', 'label' => __( '单品5 模特图标记X百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
+                    array( 'id' => 'item_5_pin_y', 'label' => __( '单品5 模特图标记Y百分比 (0-100)', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_5_spec_name', 'label' => __( '单品5 主规格名', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_5_spec_2_name', 'label' => __( '单品5 规格2名称', 'qiling' ), 'type' => 'text' ),
                     array( 'id' => 'item_5_spec_2_img', 'label' => __( '单品5 规格2图片', 'qiling' ), 'type' => 'image' ),
@@ -151,11 +171,135 @@ class Lookbook_Module extends Module_Base {
         $pt = isset( $data['module_padding_top'] ) ? $data['module_padding_top'] : '80px';
         $pb = isset( $data['module_padding_bottom'] ) ? $data['module_padding_bottom'] : '80px';
         
-        $style_vars = "background-color: {$bg_color}; padding-top: {$pt}; padding-bottom: {$pb};";
+        $bg_prop = strpos( $bg_color, 'gradient' ) !== false ? 'background' : 'background-color';
+        $style_vars = "{$bg_prop}: {$bg_color}; padding-top: {$pt}; padding-bottom: {$pb};";
         
         // 弹窗与网格样式
         ?>
-<section id="<?php echo esc_attr( $module_uid ); ?>" class="module module-lookbook" style="<?php echo esc_attr( $style_vars ); ?>">
+        <style>
+            #<?php echo esc_attr( $module_uid ); ?> .lookbook-cover-wrap {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 3/4;
+                overflow: hidden;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lookbook-cover-wrap .lookbook-cover,
+            #<?php echo esc_attr( $module_uid ); ?> .lookbook-cover-wrap .lookbook-video {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 3/4;
+                object-fit: cover;
+                display: block;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pins-overlay {
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                z-index: 5;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-shop-pin {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                width: 26px;
+                height: 26px;
+                pointer-events: auto;
+                cursor: pointer;
+                z-index: 8;
+                outline: none;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-pulse {
+                position: absolute;
+                inset: -4px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.65);
+                animation: lbPinPulse 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            @keyframes lbPinPulse {
+                0% { transform: scale(0.8); opacity: 0.9; }
+                70% { transform: scale(1.6); opacity: 0; }
+                100% { transform: scale(1.6); opacity: 0; }
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-dot {
+                position: absolute;
+                inset: 3px;
+                border-radius: 50%;
+                background: #ffffff;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+                transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-shop-pin:hover .lb-pin-dot,
+            #<?php echo esc_attr( $module_uid ); ?> .lb-shop-pin:focus .lb-pin-dot,
+            #<?php echo esc_attr( $module_uid ); ?> .lb-shop-pin.is-active .lb-pin-dot {
+                transform: scale(1.25);
+                background: var(--color-primary, #2563eb);
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-popover {
+                position: absolute;
+                bottom: calc(100% + 8px);
+                left: 50%;
+                transform: translateX(-50%) translateY(4px);
+                background: rgba(15, 23, 42, 0.92);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 8px;
+                padding: 8px 12px;
+                color: #ffffff;
+                font-size: 12px;
+                white-space: nowrap;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+                z-index: 20;
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                align-items: center;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-popover::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 5px solid transparent;
+                border-top-color: rgba(15, 23, 42, 0.92);
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-shop-pin:hover .lb-pin-popover,
+            #<?php echo esc_attr( $module_uid ); ?> .lb-shop-pin:focus .lb-pin-popover,
+            #<?php echo esc_attr( $module_uid ); ?> .lb-shop-pin.is-active .lb-pin-popover {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(0);
+                pointer-events: auto;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-name {
+                font-weight: 600;
+                color: #ffffff;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-price {
+                font-weight: 700;
+                color: #38bdf8;
+                font-size: 13px;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-btn {
+                display: inline-block;
+                padding: 3px 8px;
+                margin-top: 4px;
+                border-radius: 4px;
+                background: #2563eb;
+                color: #ffffff;
+                font-size: 11px;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            #<?php echo esc_attr( $module_uid ); ?> .lb-pin-btn:hover {
+                background: #1d4ed8;
+                color: #ffffff;
+            }
+        </style>
+        <section id="<?php echo esc_attr( $module_uid ); ?>" class="module module-lookbook" style="<?php echo esc_attr( $style_vars ); ?>">
             <div class="container">
                 <?php if ( $title ) : ?>
                     <div class="section-header text-center" style="margin-bottom: var(--qiling-space-40);">
@@ -227,6 +371,26 @@ class Lookbook_Module extends Module_Base {
                                     );
                                 }
                             }
+
+                            // 收集同款打点标注 (Shop The Look Pins)
+                            $enable_shop_look = isset( $item['enable_shop_look'] ) ? (string) $item['enable_shop_look'] : 'no';
+                            $shop_pins = array();
+                            if ( 'yes' === $enable_shop_look ) {
+                                for ( $p = 1; $p <= 5; $p++ ) {
+                                    $pin_x = isset( $item["item_{$p}_pin_x"] ) && '' !== trim( (string) $item["item_{$p}_pin_x"] ) ? floatval( $item["item_{$p}_pin_x"] ) : null;
+                                    $pin_y = isset( $item["item_{$p}_pin_y"] ) && '' !== trim( (string) $item["item_{$p}_pin_y"] ) ? floatval( $item["item_{$p}_pin_y"] ) : null;
+                                    $pin_title = isset( $item["item_{$p}_title"] ) ? sanitize_text_field( (string) $item["item_{$p}_title"] ) : '';
+                                    if ( null !== $pin_x && null !== $pin_y && '' !== $pin_title ) {
+                                        $shop_pins[] = array(
+                                            'x'     => $pin_x,
+                                            'y'     => $pin_y,
+                                            'title' => $pin_title,
+                                            'price' => isset( $item["item_{$p}_price"] ) ? sanitize_text_field( (string) $item["item_{$p}_price"] ) : '',
+                                            'link'  => isset( $item["item_{$p}_link"] ) ? esc_url_raw( (string) $item["item_{$p}_link"] ) : '',
+                                        );
+                                    }
+                                }
+                            }
                             
                             $json_data = htmlspecialchars( json_encode( array(
                                 'name' => $name,
@@ -244,11 +408,39 @@ class Lookbook_Module extends Module_Base {
                             }
                         ?>
                             <div class="lookbook-card" onclick="openLookbookModal(this, '<?php echo esc_js( $module_uid ); ?>')" data-look="<?php echo $json_data; ?>" <?php echo $anim_attr; ?>>
-                                <?php if ( $video ) : ?>
-                                    <video src="<?php echo esc_url( $video ); ?>" class="lookbook-video" autoplay muted loop playsinline></video>
-                                <?php elseif ( $cover ) : ?>
-                                    <img src="<?php echo esc_url( $cover ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="lookbook-cover">
-                                <?php endif; ?>
+                                <div class="lookbook-cover-wrap">
+                                    <?php if ( $video ) : ?>
+                                        <video src="<?php echo esc_url( $video ); ?>" class="lookbook-video" autoplay muted loop playsinline></video>
+                                    <?php elseif ( $cover ) : ?>
+                                        <img src="<?php echo esc_url( $cover ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="lookbook-cover">
+                                    <?php else : ?>
+                                        <div class="lookbook-cover lookbook-cover-placeholder">
+                                            <div class="lookbook-placeholder-inner">
+                                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lookbook-placeholder-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                                <span class="lookbook-placeholder-label"><?php echo esc_html( $name ? $name : __( '当季风尚画册', 'qiling' ) ); ?></span>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ( 'yes' === $enable_shop_look && ! empty( $shop_pins ) ) : ?>
+                                        <div class="lb-pins-overlay">
+                                            <?php foreach ( $shop_pins as $spin ) : ?>
+                                                <div class="lb-shop-pin" style="left: <?php echo esc_attr( $spin['x'] ); ?>%; top: <?php echo esc_attr( $spin['y'] ); ?>%;" onclick="event.stopPropagation();" tabindex="0">
+                                                    <span class="lb-pin-pulse"></span>
+                                                    <span class="lb-pin-dot"></span>
+                                                    <div class="lb-pin-popover">
+                                                        <span class="lb-pin-title"><?php echo esc_html( $spin['title'] ); ?></span>
+                                                        <?php if ( ! empty( $spin['price'] ) ) : ?>
+                                                            <span class="lb-pin-price"><?php echo esc_html( $spin['price'] ); ?></span>
+                                                        <?php endif; ?>
+                                                        <?php if ( ! empty( $spin['link'] ) && '#' !== $spin['link'] ) : ?>
+                                                            <a href="<?php echo esc_url( $spin['link'] ); ?>" class="lb-pin-btn" target="_blank"><?php esc_html_e( '购买同款', 'qiling' ); ?></a>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                                 <div class="lookbook-meta">
                                     <h3 class="lookbook-name"><?php echo esc_html( $name ); ?></h3>
                                     <?php if ( $desc ) : ?>

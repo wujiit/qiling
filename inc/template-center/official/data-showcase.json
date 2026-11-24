@@ -41,115 +41,333 @@
   },
   "modules": [
     {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "全景数据智能中枢 · 驱动企业精准敏捷商业决策",
+        "bb_subtitle": "百亿级异构多源数据毫秒级 OLAP 实时计算分析，全自研交互式敏捷 BI 可视化大屏与智能预警。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "申请企业级免费试用",
+        "bb_btn1_url": "#demo",
+        "bb_btn2_text": "预约行业解决方案演示",
+        "bb_btn2_url": "#contact"
+      }
+    },
+    {
       "type": "stats",
       "data": {
-        "stats_title": "关键数据总览",
+        "stats_title": "海量吞吐与高维实测 · 经受严苛极端业务验证",
+        "stats_subtitle": "在双十一万亿级电商交易、省级超大型智慧电网监控等超大型复杂场景稳定运行。",
         "stats_items": [
           {
-            "number": "500+",
-            "label": "服务客户",
-            "number_color": "#2563eb",
-            "label_color": "#475569"
+            "number": "100亿+",
+            "label": "日均吞吐处理高频业务事件流"
           },
           {
-            "number": "10+",
-            "label": "年行业经验",
-            "number_color": "#2563eb",
-            "label_color": "#475569"
+            "number": "280ms",
+            "label": "百亿规模数据多维钻取秒查响应"
           },
           {
-            "number": "99%",
-            "label": "客户满意度",
-            "number_color": "#2563eb",
-            "label_color": "#475569"
+            "number": "60 FPS",
+            "label": "复杂3D数字孪生园区满帧丝滑运行"
           },
           {
-            "number": "24/7",
-            "label": "在线支持",
-            "number_color": "#2563eb",
-            "label_color": "#475569"
-          }
-        ],
-        "stats_bg_type": "color",
-        "stats_title_color": "#0f172a"
-      }
-    },
-    {
-      "type": "chart",
-      "data": {
-        "chart_type": "bar",
-        "chart_title": "季度业绩增长 (2024)",
-        "chart_height": "400",
-        "chart_data": [
-          {
-            "label": "Q1",
-            "value": "1200",
-            "color": "#3b82f6"
-          },
-          {
-            "label": "Q2",
-            "value": "1900",
-            "color": "#8b5cf6"
-          },
-          {
-            "label": "Q3",
-            "value": "3000",
-            "color": "#10b981"
-          },
-          {
-            "label": "Q4",
-            "value": "5000",
-            "color": "#f59e0b"
+            "number": "99.999%",
+            "label": "核心大屏监控指挥中心不间断可用性"
           }
         ]
       }
     },
     {
-      "type": "chart",
+      "type": "services",
       "data": {
-        "chart_type": "pie",
-        "chart_title": "市场份额分布",
-        "chart_height": "400",
-        "chart_data": [
+        "title": "六维数据中台服务体系 · 赋能精准决策",
+        "subtitle": "提供从底层数据源接入清洗、建模分析到顶层高保真大屏展示的一揽子交钥匙方案。",
+        "columns": "3",
+        "services": [
           {
-            "label": "品牌 A",
-            "value": "300",
-            "color": "#ef4444"
+            "icon": "fa-database",
+            "title": "多源异构数据统一互联接入",
+            "desc": "内置对MySQL、Oracle、ClickHouse、Kafka、Elasticsearch及各类时序库的即插即用驱动。",
+            "badge": "数据孤岛打通"
           },
           {
-            "label": "品牌 B",
-            "value": "50",
-            "color": "#3b82f6"
+            "icon": "fa-brain",
+            "title": "AI驱动智能异常感知与预警",
+            "desc": "采用无监督时间序列异常检测算法，提前2小时预判服务器过载、供应链断货与资金异常风险。",
+            "badge": "智能预警"
           },
           {
-            "label": "品牌 C",
-            "value": "100",
-            "color": "#eab308"
+            "icon": "fa-vr-cardboard",
+            "title": "WebGL超清3D三维数字孪生",
+            "desc": "基于真实三维模型与BIM管线数据构建全息数字镜像，动态模拟产线工位运转与能耗分布。",
+            "badge": "数字孪生"
+          },
+          {
+            "icon": "fa-mobile-screen-button",
+            "title": "大屏·桌面·移动端多端联动",
+            "desc": "支持超高分巨幕自适应点对点无损拼接，同时支持高管手机端实时查看预警报表与一键批示。",
+            "badge": "多端全覆盖"
+          },
+          {
+            "icon": "fa-sliders",
+            "title": "零代码拖拽式大屏设计器",
+            "desc": "内置150余款专业科技感可视化组件、三维特效粒子与高级色彩预设，新手半小时快速出图。",
+            "badge": "敏捷搭建"
+          },
+          {
+            "icon": "fa-lock",
+            "title": "信创生态兼容与纯内网部署",
+            "desc": "全面适配国产CPU芯片、麒麟操作系统与达梦数据库，支持物理断网环境下稳定安全部署。",
+            "badge": "信创安全"
           }
         ]
       }
     },
     {
-      "type": "comparison",
+      "type": "process",
       "data": {
-        "comparison_title": "版本对比",
-        "comparison_subtitle": "选择最适合您的方案",
-        "comparison_features": "基础功能\n高级功能\n技术支持\nAPI接口\n数据导出\n自定义域名",
-        "comparison_products": [
+        "process_title": "数据展示标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
           {
-            "name": "基础版",
-            "values": "✓\n✗\n邮件支持\n✗\n✗\n✗"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "name": "专业版",
-            "values": "✓\n✓\n在线客服\n✓\n✓\n✗"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "name": "企业版",
-            "values": "✓\n✓\n7×24专属\n✓\n✓\n✓"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "国家级标杆大屏战例 · 赋能数字中国建设",
+        "cases_subtitle": "深度剖析启灵数据大屏如何在智慧城市、高端制造与能源中枢发挥关键指挥中枢作用。",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "title": "某特大省会城市一网统管智慧城市运行指挥大厅",
+            "desc": "实时汇聚32个委办局超500亿条数据，秒级联动处置突发交通拥堵与防汛应急指挥调度。",
+            "image": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800&auto=format&fit=crop&q=80",
+            "link": "#case1"
+          },
+          {
+            "title": "国家电网特高压全景输变电工程数字孪生监控大屏",
+            "desc": "千公里输电线路微气象环境与无人机巡检图像实时融合，设备故障早期预警准确率达99.4%。",
+            "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop&q=80",
+            "link": "#case2"
+          },
+          {
+            "title": "千亿级连锁商业集团全球供应链与全域零售指挥中枢",
+            "desc": "全国3,000家门店实时流水热力透视，商品动销周转天数减少22天，年化释放运营现金流数亿元。",
+            "image": "https://images.unsplash.com/photo-1556742049-0a67e557224f?w=800&auto=format&fit=crop&q=80",
+            "link": "#case3"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "大屏工程与实施套餐方案",
+        "pricing_subtitle": "从公有云轻量化BI订阅到超大型指挥调度中心私有化交钥匙工程，全面满足不同预算需求。",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "标准云端BI轻量版",
+            "name_color": "#0f172a",
+            "price": "¥4,999",
+            "price_color": "#0f172a",
+            "period": "每年 / SaaS订阅",
+            "desc": "适合中小型企业快速搭建经营分析、销售战报与日常监控看板",
+            "desc_color": "#64748b",
+            "features": "支持5个独立大屏工程与全量2D可视化组件\n支持主流关系型数据库直接连接与每日自动定时刷新\n支持手机高管移动看板与钉钉/企业微信自动推送\n工单及在线社群技术支持服务",
+            "features_color": "#334155",
+            "btn_text": "开通标准云端版",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "专业3D数字孪生旗舰版",
+            "name_color": "#0f172a",
+            "price": "¥18,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每年 / 私有化授权",
+            "desc": "解锁WebGL三维园区建模、GIS地理信息引擎与实时高频流数据接入",
+            "desc_color": "#64748b",
+            "features": "支持纯内网私有化单机或集群物理部署\n赠送1套标准高精度3D智慧园区/工厂三维模型资产\n支持毫秒级Kafka/MQTT流数据实时高频驱动刷新\n提供点对点超高分拼接大屏微调与色彩校正支持\n配备专属解决方案架构师一对一技术护航",
+            "features_color": "#334155",
+            "btn_text": "立即升级专业版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "企业指挥中心",
+            "badge": "企业指挥中心",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "国家级特大工程交钥匙全案",
+            "name_color": "#0f172a",
+            "price": "¥98,000起",
+            "price_color": "#0f172a",
+            "period": "定制专项工程",
+            "desc": "专为特大城市运营指挥中心、大型央企总部打造的端到端交钥匙系统",
+            "desc_color": "#64748b",
+            "features": "包含现场勘测、硬件大屏拼接方案设计与施工指导\n全定制超高精度无人机倾斜摄影实景三维建模\n深度联调打通跨部门数十个异构老旧遗留系统\n7×24小时现场技术保障与终身原厂软件版本维护",
+            "features_color": "#334155",
+            "btn_text": "联系方案总监",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "comparison_highlight": "2"
+        "pricing_items": [
+          {
+            "name": "标准云端BI轻量版",
+            "name_color": "#0f172a",
+            "price": "¥4,999",
+            "price_color": "#0f172a",
+            "period": "每年 / SaaS订阅",
+            "desc": "适合中小型企业快速搭建经营分析、销售战报与日常监控看板",
+            "desc_color": "#64748b",
+            "features": "支持5个独立大屏工程与全量2D可视化组件\n支持主流关系型数据库直接连接与每日自动定时刷新\n支持手机高管移动看板与钉钉/企业微信自动推送\n工单及在线社群技术支持服务",
+            "features_color": "#334155",
+            "btn_text": "开通标准云端版",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "专业3D数字孪生旗舰版",
+            "name_color": "#0f172a",
+            "price": "¥18,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每年 / 私有化授权",
+            "desc": "解锁WebGL三维园区建模、GIS地理信息引擎与实时高频流数据接入",
+            "desc_color": "#64748b",
+            "features": "支持纯内网私有化单机或集群物理部署\n赠送1套标准高精度3D智慧园区/工厂三维模型资产\n支持毫秒级Kafka/MQTT流数据实时高频驱动刷新\n提供点对点超高分拼接大屏微调与色彩校正支持\n配备专属解决方案架构师一对一技术护航",
+            "features_color": "#334155",
+            "btn_text": "立即升级专业版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "企业指挥中心",
+            "badge": "企业指挥中心",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "国家级特大工程交钥匙全案",
+            "name_color": "#0f172a",
+            "price": "¥98,000起",
+            "price_color": "#0f172a",
+            "period": "定制专项工程",
+            "desc": "专为特大城市运营指挥中心、大型央企总部打造的端到端交钥匙系统",
+            "desc_color": "#64748b",
+            "features": "包含现场勘测、硬件大屏拼接方案设计与施工指导\n全定制超高精度无人机倾斜摄影实景三维建模\n深度联调打通跨部门数十个异构老旧遗留系统\n7×24小时现场技术保障与终身原厂软件版本维护",
+            "features_color": "#334155",
+            "btn_text": "联系方案总监",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "与 数据展示 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "compact",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#070b14",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#0ea5e9",
+        "qfs_accent_color": "#0ea5e9",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "DATA-PULSE · 全景式数据可视化大屏与实时指标看板",
+        "qfs_brand_desc": "多端自适应的数据指挥中心。毫秒级数据流刷新，多维度地理信息图表联动，让复杂的业务数据转化为一目了然的视觉冲击力。",
+        "qfs_link_groups": [
+          {
+            "title": "大屏展示主题 & 开发与接入支持",
+            "links": "智慧城市与指挥中心大屏|#\n工业物联网实时监控看板|#\n电商双11实时交易大屏|#\n金融资产全球流向地图|#\n多源数据库直连组件|#\nRestful API / WebSocket 对接|#\n3D 空间地图与模型渲染|#\n私有化大屏投影适配方案|#"
+          }
+        ],
+        "qfs_contact_title": "大屏项目定制",
+        "qfs_contact_items": "定制专线|400-811-2026|tel:4008112026\n项目咨询|project@datapulse-view.com|mailto:project@datapulse-view.com\n设计工坊|工作日 9:00 - 18:00 提供专属原型设计|#",
+        "qfs_social_title": "关注可视化大屏",
+        "qfs_social_links": "微信公众号|#\n大屏模板案例库|#\n站酷主页|#\nUI/可视化设计论坛|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 DATA-PULSE VISUAL LAB. 保留所有权利 · 商业级大屏数据呈现专家",
+        "qfs_bottom_links": "项目保密协议|#\n知识产权声明|#\n隐私政策|#\n技术支持|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

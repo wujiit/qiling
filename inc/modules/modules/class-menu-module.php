@@ -150,7 +150,8 @@ class Menu_Module extends Module_Base {
         $items = isset( $data['menu_items'] ) ? $data['menu_items'] : array();
         
         // CSS 变量计算
-        $style_vars = "background-color: {$bg_color};";
+        $bg_prop = strpos( $bg_color, 'gradient' ) !== false ? 'background' : 'background-color';
+        $style_vars = "{$bg_prop}: {$bg_color};";
         $style_vars .= "--menu-accent: {$accent_color};";
         
         // 动画效果配置

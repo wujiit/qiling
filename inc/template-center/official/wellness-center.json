@@ -42,254 +42,302 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #022c22 0%, #065f46 50%, #047857 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "森泉疗愈",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80",
-            "title": "从一次评估开始管理长期健康",
-            "subtitle": "中医调理、康复理疗、睡眠管理与营养干预，形成持续跟踪服务。",
-            "btn_text": "预约健康评估",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#065f46"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "特色房型",
+            "link": "#room-showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "配套设施",
+            "link": "#hotel-amenities",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "精选菜单",
+            "link": "#menu",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "15",
-            "number": "15年+",
-            "label": "康养经验",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "40",
-            "number": "40+",
-            "label": "医护顾问",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "3",
-            "number": "3家",
-            "label": "服务中心",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "用户评价",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#10b981",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#10b981",
+        "qhs_hover_bg": "rgba(16,185,129,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "fullscreen_video",
+      "data": {}
+    },
+    {
+      "type": "room-showcase",
       "data": {
-        "services_title": "核心康养服务",
-        "services_subtitle": "围绕评估、干预、复评形成长期健康管理闭环",
-        "services_columns": "4",
-        "services_bg_color": "#ffffff",
-        "services_items": [
+        "room_title": "静谧山居 · 沉浸式自然栖息空间",
+        "room_subtitle": "全房引入山泉私汤，采用原生实木与天然棉麻，推窗即见竹海云海奇观",
+        "room_columns": "3",
+        "room_items": [
           {
-            "icon": "01",
-            "title": "中医调理",
-            "desc": "体质辨识、亚健康调理与周期性干预。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80",
+            "name": "云岫私汤 · 独栋森林疗愈木屋",
+            "area": "120㎡ (带 60㎡ 私家庭院)",
+            "bed_type": "2.2m 特大原木天然乳胶舒眠床",
+            "capacity": "2 人隐居",
+            "price": "¥2,680",
+            "original_price": "¥3,580",
+            "badge": "招牌私汤",
+            "amenities": "独立露天天然硫磺温泉池 / 颂钵冥想坐垫 / 智能地暖 / 胶囊咖啡机",
+            "desc": "独门独院，隐匿于茂密竹海之中，夜晚伴着虫鸣松涛浸泡私汤，遥望银河繁星",
+            "btn_text": "立即锁定客房",
+            "btn_link": "#book-wellness"
           },
           {
-            "icon": "02",
-            "title": "康复理疗",
-            "desc": "颈肩腰腿痛、术后康复与功能训练支持。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80",
+            "name": "松涛观星 · 全景山林套房",
+            "area": "88㎡",
+            "bed_type": "2.0m 慕思定制云端舒眠大床",
+            "capacity": "2-3 人",
+            "price": "¥1,880",
+            "original_price": "¥2,480",
+            "badge": "观景首选",
+            "amenities": "270度弧形全景落地窗 / 室内恒温水疗按摩泡池 / 戴森吹风机 / 纯棉浴袍",
+            "desc": "270度全景视野俯瞰整座山谷，配备全自动天窗，躺在床上即可静赏日落云霞",
+            "btn_text": "立即锁定客房",
+            "btn_link": "#book-wellness"
           },
           {
-            "icon": "03",
-            "title": "营养管理",
-            "desc": "按健康目标制定饮食建议与执行计划。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "睡眠干预",
-            "desc": "睡眠评估、行为调整与习惯建立方案。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+            "name": "归园禅居 · 双卧家庭康养独栋",
+            "area": "168㎡ (上下双层复式)",
+            "bed_type": "2.0m 大床 + 1.5m 双床",
+            "capacity": "4-5 人家庭",
+            "price": "¥3,880",
+            "original_price": "¥5,200",
+            "badge": "家族康养",
+            "amenities": "双独立卫浴双私汤 / 独立茶室 / 艾灸理疗室 / 家庭厨房 / 私家露台",
+            "desc": "非常适合三代同堂家庭慢享康养时光，配备独立茶室与私人中医师上门问诊服务",
+            "btn_text": "立即锁定客房",
+            "btn_link": "#book-wellness"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "team",
+      "type": "hotel-amenities",
       "data": {
-        "team_title": "康养专家团队",
-        "team_subtitle": "多学科协作，提供更稳定的长期健康管理体验",
-        "team_columns": "3",
-        "team_members": [
+        "amenity_title": "纯粹身心疗愈设施与专业服务",
+        "amenity_subtitle": "严选高品质天然矿泉与中医养生精粹，提供全方位生命力重构体验",
+        "amenity_items": [
           {
-            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
-            "name": "孙医生",
-            "position": "康复医学主任",
-            "desc": "擅长运动损伤康复与慢性疼痛管理。",
-            "email": "wellness1@example.com"
+            "icon": "thermometer",
+            "name": "地下 2,000 米天然高硅温泉",
+            "desc": "富含偏硅酸、硫磺与锶等 30 余种微量元素，有效软化角质、舒缓关节肌肉酸痛",
+            "time": "全天候循环活水"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
-            "name": "李医师",
-            "position": "中医调理师",
-            "desc": "长期服务亚健康与体质调理人群。",
-            "email": "wellness2@example.com"
+            "icon": "volume-2",
+            "name": "喜马拉雅颂钵音疗冥想工坊",
+            "desc": "国际认证音疗大师亲自敲击 7 种不同频率手工颂钵，深度共振调和体内脑电波",
+            "time": "每日 09:30 / 16:30"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
-            "name": "郑营养师",
-            "position": "营养管理顾问",
-            "desc": "聚焦体重管理与慢病膳食干预。",
-            "email": "wellness3@example.com"
+            "icon": "activity",
+            "name": "名中医脉诊与本草艾灸经络",
+            "desc": "老中医 1v1 望闻问切体质辨识，定制道地本草泥灸与督脉温灸，驱寒除湿排毒",
+            "time": "需提前 2 小时预约"
+          },
+          {
+            "icon": "utensils",
+            "name": "二十四节气有机药膳定制厨房",
+            "desc": "所有食材均来自自建高山有机农场，根据二十四节气阴阳调和古法精火慢炖",
+            "time": "三餐专享定制"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#f0fdf4"
+        ]
       }
     },
     {
       "type": "menu",
       "data": {
-        "menu_title": "康养套餐参考",
-        "menu_subtitle": "可按门店实际项目、周期和服务人群调整",
+        "menu_title": "二十四节气 · 高山田园有机药膳餐单",
+        "menu_subtitle": "不时不食，顺应天时，以食为药，每一道菜肴皆是温润身心的食疗艺术",
         "menu_layout": "grid",
-        "menu_accent_color": "#065f46",
+        "menu_accent_color": "#10b981",
         "menu_items": [
           {
-            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80",
-            "title": "基础评估包",
-            "desc": "体态/睡眠/饮食初评与报告解读",
-            "price": "¥299",
-            "badge": "新客推荐",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=400&q=80",
+            "title": "古法松茸石斛炖花胶原盅汤",
+            "desc": "深山鲜采野松茸配霍山铁皮石斛与深海黄花胶，文火慢炖 6 小时，滋阴润肺养颜",
+            "price": "¥198 / 位",
+            "badge": "招牌温补",
+            "link": "#order"
           },
           {
-            "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80",
-            "title": "康复理疗包",
-            "desc": "理疗、训练指导和周度复盘",
-            "price": "¥1680起",
-            "badge": "热门",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80",
+            "title": "高山黄精慢煨有机农家散养土鸡",
+            "desc": "自养 180 天林下飞鸡，佐以九蒸九晒九华山黄精与枸杞，汤清肉嫩、气血双补",
+            "price": "¥268 / 份",
+            "badge": "气血调和",
+            "link": "#order"
           },
           {
-            "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80",
-            "title": "中医调理月度包",
-            "desc": "辨证调理与周期跟踪建议",
-            "price": "¥1280起",
-            "badge": "慢病管理",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80",
+            "title": "清泉浸泡野荠菜鲜笋手工百叶包",
+            "desc": "春日第一道晨露鲜笋，手工包裹土猪肉馅，清泉滚沸慢烹，清甜爽口、清肝降火",
+            "price": "¥88 / 份",
+            "badge": "清润降燥",
+            "link": "#order"
           },
           {
-            "image": "https://images.unsplash.com/photo-1499728603263-13726abce5fd?auto=format&fit=crop&w=900&q=80",
-            "title": "睡眠修复计划",
-            "desc": "睡眠干预、行为训练和持续反馈",
-            "price": "¥980起",
-            "badge": "周期方案",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80",
+            "title": "五谷茯苓山药健脾益气养胃粥",
+            "desc": "怀山药、茯苓、芡实配有机胚芽米熬制至起米油，健运脾胃、改善睡眠质量",
+            "price": "¥58 / 位",
+            "badge": "调理脾胃",
+            "link": "#order"
           }
-        ],
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "process",
+      "type": "team",
       "data": {
-        "process_title": "服务流程",
-        "process_subtitle": "从初评到复评，全流程可视化管理",
-        "process_items": [
+        "team_title": "国医专家与国际身心疗愈大师团队",
+        "team_subtitle": "融汇传统中医学术精髓与现代功能医学身心整合疗愈体系",
+        "team_columns": "4",
+        "team_items": [
           {
-            "icon": "01",
-            "title": "健康评估",
-            "desc": "收集身体状态、作息与目标，建立个人档案。",
-            "stage_tag": "初评"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "钱伯仁 教授",
+            "role": "首席康养医学顾问 / 全国知名老中医",
+            "desc": "从医 40 余载，擅长运用经方辨证调理失眠、慢支气管炎、亚健康虚损与女性气血"
           },
           {
-            "icon": "02",
-            "title": "方案制定",
-            "desc": "由医师与顾问联合输出康养干预计划。",
-            "stage_tag": "计划"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "Maya Devi",
+            "role": "国际认证音疗导师 / 尼泊尔颂钵工坊传承人",
+            "desc": "师从加德满都古典音疗宗师，长年执教于瑞士与巴厘岛顶级静修度假中心"
           },
           {
-            "icon": "03",
-            "title": "执行干预",
-            "desc": "按周执行理疗、训练和营养建议。",
-            "stage_tag": "执行"
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "陆静秋",
+            "role": "资深中医推拿理疗师 / 经络正骨师",
+            "desc": "深谙十二经络点穴技法，擅长针对现代办公室人群颈椎病、腰椎间盘突出精准理顺"
           },
           {
-            "icon": "04",
-            "title": "阶段复评",
-            "desc": "评估效果并迭代下一阶段健康目标。",
-            "stage_tag": "复评"
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "主厨张云生",
+            "role": "中国药膳大师 / 国际养生美食评委",
+            "desc": "30 年专注节气药膳烹饪，将枯燥中药药性转化为令人垂涎欲滴的天然舌尖美味"
           }
-        ],
-        "module_bg_color": "#f0fdf4"
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "用户反馈",
-        "testimonials_subtitle": "长期康养效果来自持续执行与专业跟踪",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "2,300+",
-        "average_rating": "4.9",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "陈女士",
-            "position": "睡眠管理用户",
-            "content": "执行两个月后入睡更稳定，白天精神状态改善明显。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "林先生",
-            "position": "康复理疗用户",
-            "content": "腰背不适缓解明显，训练动作也有人持续纠正。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "吴女士",
-            "position": "营养管理用户",
-            "content": "饮食方案可执行性强，体重和作息都更可控。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ],
-        "testimonials_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约健康评估",
-        "booking_subtitle": "提交健康目标、主要困扰和期望时间，康养顾问会联系确认到店评估安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约须知",
-        "sidebar_content": "请在表单里描述主要困扰和健康目标\n如有检查报告可到店携带\n首次评估建议预留 60 分钟",
-        "contact_phone": "400-320-2026",
-        "contact_hours": "09:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#f0fdf4"
+        "entry_title": "今晚隐遁山野 · 在线预约尊享两天一夜康养深度疗愈套餐",
+        "entry_subtitle": "包含云岫私汤客房 1 晚 + 双人有机药膳早晚餐 + 脉诊体质辨识 + 60分钟全身经络艾灸调理",
+        "btn_text": "立即在线选房并锁定康养特惠",
+        "btn_link": "#wellness-booking",
+        "booking_title": "预约身心康养与中医体质辨识深度理疗",
+        "booking_subtitle": "国医名师学术传承团队，依据二十四节气为您量身制定草本调理与经络推拿方案。",
+        "booking_btn_text": "预约体质调理体验",
+        "booking_phone": "康养预约专线：0571-8888-5555",
+        "booking_time": "每日 09:30 - 21:00 恭候光临"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d1714",
+        "qfs_text_color": "#a7f3d0",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#10b981",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "SERENE-SANCTUARY · 高山森林温泉水疗与身心疗愈康养中心",
+        "qfs_brand_desc": "远离城市喧嚣，重获内在平衡。融合天然高山碳酸硫磺温泉、颂钵音疗、中医芳香经络调理与有机时令素食疗法。",
+        "qfs_link_groups": [
+          {
+            "title": "疗愈体验与入住与疗愈计划",
+            "links": "高山私汤天然碳酸温泉|#\n尼泊尔手工颂钵音波疗愈|#\n阿育吠陀草本精油芳疗|#\n森林冥想与正念徒步|#\n周末身心重置两日营|#\n深度睡眠障碍调理周期|#\n有机蔬食与排毒轻食餐|#\n尊享森林木屋套房预约|#"
+          }
+        ],
+        "qfs_contact_title": "疗愈礼遇预约",
+        "qfs_contact_items": "预约热线|400-882-7788|tel:4008827788\n管家微信|SERENE_CONCIERGE|#\n中心地址|浙江省湖州市安吉县天荒坪高山竹海深处 108 号|#",
+        "qfs_social_title": "关注疗愈美学",
+        "qfs_social_links": "小红书慢生活|#\n微信公众号|#\n正念音频订阅|#\n官方美图画册|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 SERENE-SANCTUARY WELLNESS. 保留所有权利 · 森林碳中和生态疗愈基地",
+        "qfs_bottom_links": "疗程须知|#\n健康安全守则|#\n隐私政策|#\n交通到访指引|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

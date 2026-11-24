@@ -43,284 +43,426 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 50%, #0284c7 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "舒心家政",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80",
-            "title": "让家政上门服务更好预约、更好交付",
-            "subtitle": "服务项目、门店覆盖、价格套餐、派单履约和客户回访，一页讲清家政服务闭环。",
-            "btn_text": "立即预约家政服务",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#059669"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f97316",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f97316",
+        "qhs_hover_bg": "rgba(249,115,22,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "严苛甄选 · 放心所托 · 全国连锁高端家庭管家与母婴月嫂服务",
+        "bb_subtitle": "全员公安联网六重身份背调，三甲医院健康体检报告齐全，提供金牌月嫂、专业育儿嫂、住家家庭管家与全屋深度蒸汽消杀保洁，支持线上视频面试与不满意全额免费更换",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "01",
-            "number": "8 类",
-            "label": "常用服务",
-            "color": "#ffffff"
+            "text": "免费在线视频面试精选金牌阿姨",
+            "url": "#match-helper",
+            "style": "primary"
           },
           {
-            "icon": "02",
-            "number": "24h",
-            "label": "预约响应",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "03",
-            "number": "3 步",
-            "label": "派单履约",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "04",
-            "number": "4.9",
-            "label": "客户评分",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "品质承诺 · 安全背调与服务口碑看板",
+        "stats_subtitle": "严把阿姨准入门槛，杜绝中介黑作坊，打造透明放心的高端家庭服务闭环",
+        "stats_items": [
+          {
+            "number": "100% 严查",
+            "label": "公安身份背景与司法征信六重背调"
+          },
+          {
+            "number": "99.4%",
+            "label": "雇主家庭服务满意度与续约推荐率"
+          },
+          {
+            "number": "120,000+",
+            "label": "累计服务中高端家庭与新生儿宝宝"
+          },
+          {
+            "number": "¥200 万",
+            "label": "太平洋保险承保单笔人身财产综合家政险"
+          }
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "热门家政服务",
-        "services_subtitle": "覆盖日常保洁、深度清洁、收纳整理、家电清洗和陪护照料等高频到家服务",
-        "services_bg_color": "#ffffff",
+        "services_title": "精细化家庭专业服务全案矩阵",
+        "services_subtitle": "针对不同阶段家庭需求，匹配持证上岗的资深专业阿姨与标准工具装备",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "日常保洁",
-            "desc": "家庭日常清洁、厨房卫生间清理和地面养护。",
-            "link": "#"
+            "icon": "baby",
+            "title": "金牌十星月嫂 (新生儿母婴护理)",
+            "desc": "新生儿科学喂养、黄疸监测排查、脐带消毒护理、产妇科学通乳与定制月子药膳餐"
           },
           {
-            "icon": "02",
-            "title": "深度清洁",
-            "desc": "开荒保洁、玻璃清洁、油污处理和全屋精细清洁。",
-            "link": "#"
+            "icon": "heart",
+            "title": "专业住家/白班育儿嫂",
+            "desc": "0-3 岁早期智力启蒙、感统训练、辅食科学添加、良好作息习惯培养与安全看护"
           },
           {
-            "icon": "03",
-            "title": "收纳整理",
-            "desc": "衣橱整理、储物规划和搬家前后空间复位。",
-            "link": "#"
+            "icon": "home",
+            "title": "涉外全能高端家庭管家",
+            "desc": "中西餐定制烹饪、高档衣物手洗熨烫养护、宴会茶会协助招待与日常精细收纳整理"
           },
           {
-            "icon": "04",
-            "title": "家电清洗",
-            "desc": "空调、油烟机、洗衣机和冰箱拆洗保养。",
-            "link": "#"
+            "icon": "sparkles",
+            "title": "全屋 140°C 高温蒸汽深度消杀",
+            "desc": "针对厨房重油污、卫生间水垢死角、全屋床褥除螨与空调家电深度拆洗去异味"
           }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "branches",
-      "data": {
-        "branches_title": "门店与服务区域",
-        "branches_subtitle": "展示可预约门店、服务片区和上门服务时间",
-        "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "查看门店",
-        "booking_button_text": "预约上门",
-        "branches_list": [
-          {
-            "name": "市中心家政服务站",
-            "city": "上海",
-            "status": "open",
-            "address": "上海市静安区示例路 88 号",
-            "phone": "021-61000001",
-            "email": "home@example.com",
-            "hours": "08:00-21:00",
-            "services": "日常保洁,深度清洁,收纳整理",
-            "transport": "覆盖核心城区",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "社区上门服务中心",
-            "city": "杭州",
-            "status": "open",
-            "address": "杭州市西湖区示例街 66 号",
-            "phone": "0571-61000002",
-            "email": "hangzhou-home@example.com",
-            "hours": "08:00-21:00",
-            "services": "家电清洗,保姆月嫂,老人陪护",
-            "transport": "覆盖周边社区",
-            "lat": "30.2741",
-            "lng": "120.1551",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "东区家政调度站",
-            "city": "苏州",
-            "status": "coming",
-            "address": "苏州市工业园区示例大道 99 号",
-            "phone": "0512-61000003",
-            "email": "suzhou-home@example.com",
-            "hours": "预约制上门",
-            "services": "周期保洁,企业保洁,搬家整理",
-            "transport": "预约制派单",
-            "lat": "31.2989",
-            "lng": "120.5853",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#f0fdf4"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "预约派单流程",
-        "process_subtitle": "把下单、确认、派单、上门和验收流程讲清楚",
+        "process_title": "家政服务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "选择服务",
-            "desc": "客户选择服务项目、面积、地址和期望上门时间。",
-            "stage_tag": "预约"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "确认订单",
-            "desc": "客服确认范围、报价、上门规则和特殊需求。",
-            "stage_tag": "确认"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "派单上门",
-            "desc": "系统或调度员安排服务人员按时上门履约。",
-            "stage_tag": "派单"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "验收回访",
-            "desc": "客户确认服务结果，平台沉淀评价和复购提醒。",
-            "stage_tag": "回访"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "服务套餐",
-        "pricing_subtitle": "可按城市、门店和服务时长自由调整价格",
+        "pricing_title": "透明标准化服务收费与无忧换人保障",
+        "pricing_subtitle": "一口价明码标价绝无中途加价，阿姨不满意 24 小时内免费调换到满意为止",
         "pricing_columns": "3",
-        "module_bg_color": "#f0fdf4",
+        "pricing_plans": [
+          {
+            "name": "全屋深度深度保洁消杀年卡 (4次)",
+            "name_color": "#0f172a",
+            "price": "¥1,280",
+            "price_color": "#0f172a",
+            "period": "/单次仅需 320 元 (4小时双人)",
+            "desc": "适合两居室/三居室每季度全屋除螨消毒与厨房卫生间重度清洁",
+            "desc_color": "#64748b",
+            "features": "自带全套德国卡赫高温蒸汽机消杀装备\\n免费包含全屋床褥专业紫外除螨一次\\n包含厨房油烟机表面及微波炉深度去油\\n承诺不达标现场免费返工重新打扫",
+            "features_color": "#334155",
+            "btn_text": "在线抢购消杀年卡",
+            "btn_link": "#apply-service",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "金牌十星级母婴月嫂套餐 (26天)",
+            "name_color": "#0f172a",
+            "price": "¥13,800 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/支持医院陪产与住家 26 天",
+            "desc": "5-8 年母婴护理经验，持双证上岗，累计带过 40 个以上新生儿宝宝",
+            "desc_color": "#64748b",
+            "features": "赠送产后专业催乳师开奶通乳服务 2 次\\n根据产妇身体体质定制 26 天排调补药膳餐\\n赠送 200 万元母婴人身财产双向综合险\\n试工 3 天不满意支持全额退换或退费",
+            "features_color": "#334155",
+            "btn_text": "免费在线视频挑阿姨",
+            "btn_link": "#apply-service",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "准妈妈爆款",
+            "badge": "准妈妈爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "高端住家育儿早教管家 (月度合约)",
+            "name_color": "#0f172a",
+            "price": "¥8,500 - 12,000",
+            "price_color": "#0f172a",
+            "period": "/按月结算 · 专人专管",
+            "desc": "大专及以上学历，掌握婴幼儿早教启蒙，负责一日三餐与宝宝起居",
+            "desc_color": "#64748b",
+            "features": "根据宝宝月龄科学制定每日早教启蒙计划\\n掌握辅食合理搭配与食物过敏源排查\\n支持中英双语简单日常对话与绘本伴读\\n专属家庭生活顾问每月定期回访监督服务",
+            "features_color": "#334155",
+            "btn_text": "匹配高端住家阿姨",
+            "btn_link": "#apply-service",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "日常保洁",
-            "price": "¥99",
-            "period": "/次起",
-            "desc": "适合常规家庭清洁",
-            "features": "2 小时起约\n厨房卫生间重点清洁\n服务完成后在线回访",
-            "btn_text": "预约保洁",
-            "btn_link": "#",
-            "featured": ""
+            "name": "全屋深度深度保洁消杀年卡 (4次)",
+            "name_color": "#0f172a",
+            "price": "¥1,280",
+            "price_color": "#0f172a",
+            "period": "/单次仅需 320 元 (4小时双人)",
+            "desc": "适合两居室/三居室每季度全屋除螨消毒与厨房卫生间重度清洁",
+            "desc_color": "#64748b",
+            "features": "自带全套德国卡赫高温蒸汽机消杀装备\\n免费包含全屋床褥专业紫外除螨一次\\n包含厨房油烟机表面及微波炉深度去油\\n承诺不达标现场免费返工重新打扫",
+            "features_color": "#334155",
+            "btn_text": "在线抢购消杀年卡",
+            "btn_link": "#apply-service",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "深度清洁",
-            "price": "¥399",
-            "period": "/次起",
-            "desc": "适合开荒和阶段性深清",
-            "features": "全屋精细清洁\n玻璃和顽固污渍处理\n可按面积确认报价",
-            "btn_text": "咨询深清",
-            "btn_link": "#",
+            "name": "金牌十星级母婴月嫂套餐 (26天)",
+            "name_color": "#0f172a",
+            "price": "¥13,800 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/支持医院陪产与住家 26 天",
+            "desc": "5-8 年母婴护理经验，持双证上岗，累计带过 40 个以上新生儿宝宝",
+            "desc_color": "#64748b",
+            "features": "赠送产后专业催乳师开奶通乳服务 2 次\\n根据产妇身体体质定制 26 天排调补药膳餐\\n赠送 200 万元母婴人身财产双向综合险\\n试工 3 天不满意支持全额退换或退费",
+            "features_color": "#334155",
+            "btn_text": "免费在线视频挑阿姨",
+            "btn_link": "#apply-service",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
-            "featured_text": "热门",
-            "featured_bg": "linear-gradient(135deg, #059669 0%, #0284c7 100%)"
+            "is_featured": "yes",
+            "featured_text": "准妈妈爆款",
+            "badge": "准妈妈爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "周期服务",
-            "price": "¥699",
-            "period": "/月起",
-            "desc": "适合固定家庭和企业保洁",
-            "features": "固定阿姨或服务团队\n周期排班提醒\n客户档案和复购跟进",
-            "btn_text": "咨询周期",
-            "btn_link": "#",
-            "featured": ""
+            "name": "高端住家育儿早教管家 (月度合约)",
+            "name_color": "#0f172a",
+            "price": "¥8,500 - 12,000",
+            "price_color": "#0f172a",
+            "period": "/按月结算 · 专人专管",
+            "desc": "大专及以上学历，掌握婴幼儿早教启蒙，负责一日三餐与宝宝起居",
+            "desc_color": "#64748b",
+            "features": "根据宝宝月龄科学制定每日早教启蒙计划\\n掌握辅食合理搭配与食物过敏源排查\\n支持中英双语简单日常对话与绘本伴读\\n专属家庭生活顾问每月定期回访监督服务",
+            "features_color": "#334155",
+            "btn_text": "匹配高端住家阿姨",
+            "btn_link": "#apply-service",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "branches",
       "data": {
-        "testimonials_title": "客户评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "3000+",
-        "average_rating": "4.9",
-        "testimonials_items": [
+        "branches_title": "全国直营连锁旗舰门店与阿姨实训基地",
+        "branches_subtitle": "支持客户随时到店实地面试阿姨，现场考核厨艺、婴儿抚触抱姿与收纳技能",
+        "branches_columns": "3",
+        "branches_list": [
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "周女士",
-            "position": "家庭保洁客户",
-            "content": "预约和上门时间都很明确，服务完成后还有回访。",
-            "rating": "5",
-            "verified": "verified"
+            "name": "上海徐家汇母婴管家中心",
+            "city": "上海市",
+            "status": "营业中 (支持现场试菜试工)",
+            "address": "徐汇区虹桥路 1 号港汇恒隆广场一座 18 层",
+            "phone": "021-6488-9922",
+            "email": "sh-xujiahui@qiling-house.com",
+            "hours": "周一至周日 9:00 - 20:00",
+            "services": "金牌月嫂面试室 / 育儿嫂实训厨房 / 阿姨档案查询",
+            "transport": "地铁 1/9/11 号线徐家汇站 12 号口直通港汇大堂",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "林先生",
-            "position": "办公室负责人",
-            "content": "周期保洁排班稳定，临时调整也能及时处理。",
-            "rating": "5",
-            "verified": "verified"
+            "name": "北京朝阳望京华彩概念旗舰店",
+            "city": "北京市",
+            "status": "营业中 (配备婴儿护理模拟舱)",
+            "address": "朝阳区望京广顺南大街 16 号院望京华彩商业中心 B 座 6 层",
+            "phone": "010-8899-7755",
+            "email": "bj-wangjing@qiling-house.com",
+            "hours": "周一至周日 9:00 - 20:00",
+            "services": "月嫂现场抚触实操考核 / 住家阿姨面试 / 家政险申报",
+            "transport": "地铁 14 号线阜通站 A 口步行 200 米",
+            "image": "https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "许女士",
-            "position": "深度清洁客户",
-            "content": "油污和玻璃清理得很仔细，验收流程也清楚。",
-            "rating": "5",
-            "verified": "verified"
+            "name": "深圳南山科技园直营服务中心",
+            "city": "深圳市",
+            "status": "营业中 (大湾区极速派单)",
+            "address": "南山区高新南道深投控高新大厦 1 层",
+            "phone": "0755-8666-8800",
+            "email": "sz-nanshan@qiling-house.com",
+            "hours": "周一至周日 9:00 - 20:00",
+            "services": "高端家庭管家 / 早教早教专职阿姨 / 蒸汽深度保洁派单",
+            "transport": "地铁 1 号线高新园站 C 口步行 150 米",
+            "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=400&q=80"
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "team",
       "data": {
-        "faq_title": "家政预约常见问题",
-        "module_bg_color": "#ffffff",
-        "faq_items": [
+        "team_title": "明星金牌月嫂与十星级管家阵容",
+        "team_subtitle": "持母婴护理师证、育婴师证、健康证与急救员证四证合一，好评如潮",
+        "team_columns": "4",
+        "team_items": [
           {
-            "question": "预约后会自动派单吗？",
-            "answer": "可根据门店和员工设置自动派单，也可以由调度员手动确认服务人员和上门时间。"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "张桂兰 阿姨 (月嫂工号 0812)",
+            "role": "金牌十星月嫂 / 9 年经验 / 累计护理 68 个宝宝",
+            "desc": "原妇幼保健院护士，擅长高危早产儿护理、无痛催乳开奶与产后科学收腹"
           },
           {
-            "question": "价格可以按城市和服务面积调整吗？",
-            "answer": "可以，页面展示的是示例套餐，正式上线时可在启灵家政服务插件中维护真实服务、时长和价格。"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "刘秀芬 阿姨 (育儿工号 1106)",
+            "role": "高级蒙氏早教育儿嫂 / 7 年经验 / 大专幼师",
+            "desc": "精通 0-3 岁儿童心理学，善于根据宝宝敏感期设计动手益智游戏与荤素辅食"
           },
           {
-            "question": "客户能查看订单进度吗？",
-            "answer": "启灵家政服务插件支持个人中心和匿名订单查询，客户可以跟进订单、改期、评价和售后反馈。"
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+            "name": "王小梅 (涉外管家工号 0058)",
+            "role": "涉外英式家庭管家 / 5 年经验 / 英语流利",
+            "desc": "曾服务多国外交官家庭，擅长西餐烘焙配菜、高级宴会礼仪接待与奢侈品箱包衣物养护"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "陈建国 师傅",
+            "role": "深度保洁与家电清洗技师总督导 / 12 年工龄",
+            "desc": "精通全品牌油烟机、洗衣机免拆洗与全屋除螨消杀，带教培养出逾百名金牌保洁员"
           }
         ]
       }
@@ -328,17 +470,45 @@
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约家政上门服务",
-        "booking_subtitle": "提交服务项目、上门地址和期望时间，客服会确认报价并安排服务人员。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约须知",
-        "sidebar_content": "请说明服务面积、重点清洁区域和特殊需求\n最终费用以服务范围和城市价格为准\n启用启灵家政服务插件后可承接真实下单和订单跟踪",
-        "contact_phone": "400-830-2026",
-        "contact_hours": "08:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#f0fdf4"
+        "entry_title": "免费在线视频面试 3 位阿姨 · 满意后再签约",
+        "entry_subtitle": "告诉我们您的预算与具体照护需求，专属家政顾问将在 10 分钟内为您智能匹配 3 位合适阿姨的档案与自荐视频",
+        "btn_text": "立即在线匹配并预约阿姨视频面试",
+        "btn_link": "#match-now",
+        "booking_title": "预约深度家庭保洁、家电清洗与收纳整理师",
+        "booking_subtitle": "六色进口保洁布分区作业，全套高温蒸汽消毒设备，打造一尘不染的洁净生活空间。",
+        "booking_btn_text": "立即预约专业保洁",
+        "booking_phone": "家政客服：400-222-9999",
+        "booking_time": "每日 08:00 - 20:00 提供上门服务"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#131110",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f97316",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "HOME-CARE · 启灵高端家政保洁与家庭管家服务",
+        "qfs_brand_desc": "员工制家政服务标杆。严选全员持证保洁师、育婴师与金牌月嫂，经过公安身份背调、三甲医院健康体检与 120 课时标准化带薪实训，提供安心放心的上门服务。",
+        "qfs_link_groups": [
+          {
+            "title": "热门家政服务 & 安全保障体系",
+            "links": "全屋深度精细日常保洁清洗|#\n新房拓荒精细保洁除甲醛|#\n金牌住家月嫂与科学新生儿护理|#\n高端家庭日式收纳整理全案|#\n阿姨三甲医院全套健康体检报告|#\n全国公安系统无犯罪背景审查|#\n平安保险百万家政雇主责任险|#\n服务不满意免费返工或全额退款|#"
+          }
+        ],
+        "qfs_contact_title": "预约阿姨与免费上门定制",
+        "qfs_contact_items": "预约热线|400-880-6633|tel:4008806633\n管家微信|189-1199-0022|tel:18911990022\n服务时间|7×24小时在线派单，最快 2 小时阿姨上门|#\n服务中心|广州市越秀区东风中路 410 号时代地产中心 18 层|#",
+        "qfs_social_title": "家政暖心服务",
+        "qfs_social_links": "选阿姨小程序|#\n家庭保洁技巧|#\n金牌月嫂日记|#\n家政体验官招募|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 HOME-CARE SERVICE. 保留所有权利 · 粤ICP备18002911号 · 全国百强员工制家政诚信示范企业",
+        "qfs_bottom_links": "家政三方服务合同示范文本|#\n家政服务员人身意外险保单|#\n收费指导价明码标价公示|#\n客户投诉快速处理时效承诺|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

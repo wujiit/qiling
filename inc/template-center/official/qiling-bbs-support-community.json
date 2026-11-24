@@ -43,6 +43,95 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵社区",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#knowledge_cards",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0ea5e9",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0ea5e9",
+        "qhs_hover_bg": "rgba(14,165,233,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "brand_banner_pro",
       "data": {
         "bb_layout": "left_right",
@@ -294,6 +383,36 @@
         "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
         "cta_button_bg_color": "#2563eb",
         "cta_button_text_color": "#ffffff"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#080d17",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0ea5e9",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "QILING-COMMUNITY · 启灵开发者社区与技术支持论坛",
+        "qfs_brand_desc": "数万名站长、独立开发者与企业运维人员的交流枢纽。汇集主题开发教程、WordPress 踩坑实录、官方最新补丁动态与一对一工单排错，携手构建开放的技术生态。",
+        "qfs_link_groups": [
+          {
+            "title": "社区版块导航 & 技术服务支持",
+            "links": "启灵主题官方交流与使用教程|#\n二次开发实战与钩子扩展指南|#\nBug 反馈与功能需求投票中心|#\n站长建站经验与优质案例展示|#\n商业授权用户 VIP 专属工单系统|#\n主题版本更新历史与修复补丁|#\n服务器环境兼容性检测脚本|#\n社区版主与技术专家招募通道|#"
+          }
+        ],
+        "qfs_contact_title": "社区管理与工单咨询",
+        "qfs_contact_items": "客服工单|通过后台直接发起工单支持|#\n官方 QQ 群|群号：16966111（加群请备注订单号）|#\n社区邮箱|bbs@qiling-theme.com|mailto:bbs@qiling-theme.com\n值班时间|工作日 9:00 - 21:00（工单通常在2小时内响应）|#",
+        "qfs_social_title": "开发者交流圈",
+        "qfs_social_links": "官方QQ千人群|#\n微信技术交流群|#\nB站开发教程空间|#\nGitHub 源码主页|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QILING DEVELOPER COMMUNITY. 保留所有权利 · 渝ICP备19018223号 · 启灵数智开发者联盟",
+        "qfs_bottom_links": "社区言论管理与发帖守则|#\n知识产权侵权投诉通道|#\n开源代码贡献协议|#\n用户隐私条款|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

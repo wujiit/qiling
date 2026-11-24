@@ -42,195 +42,423 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "极光应用",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "app_hero",
       "data": {
-        "hero_title": "把高频任务装进手机里",
-        "hero_desc": "适用于应用下载推广场景，支持 iOS / Android 双端引导、二维码直达和多卖点展示。",
-        "hero_buttons": [
-          {
-            "btn_type": "apple",
-            "btn_text": "App Store",
-            "btn_subtext": "Download on the",
-            "btn_link": "#",
-            "btn_style": "light"
-          },
-          {
-            "btn_type": "android",
-            "btn_text": "Google Play",
-            "btn_subtext": "GET IT ON",
-            "btn_link": "#",
-            "btn_style": "dark"
-          }
-        ],
-        "show_qr_card": "1",
-        "qr_icon": "APP",
-        "qr_sub": "扫码下载",
-        "qr_title": "手机快速安装",
-        "qr_desc": "免手动搜索，扫码即可直达下载页",
-        "qr_image": "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=600&q=80",
-        "media_type": "image",
-        "hero_image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
-        "bg_type": "color",
-        "bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 50%, #0284c7 100%)",
-        "padding_top": "100px",
-        "padding_bottom": "100px",
-        "btn_primary_bg": "#2563eb",
-        "btn_primary_color": "#ffffff"
-      }
-    },
-    {
-      "type": "features",
-      "data": {
-        "features_title": "核心功能",
-        "features_subtitle": "用清晰卖点解释为什么值得下载",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "智能首页",
-            "desc": "关键数据、待办和提醒在首页集中呈现。"
-          },
-          {
-            "icon": "02",
-            "title": "离线可用",
-            "desc": "弱网环境下也能继续处理核心任务。"
-          },
-          {
-            "icon": "03",
-            "title": "消息中心",
-            "desc": "重要通知、订单、进度和提醒不错过。"
-          },
-          {
-            "icon": "04",
-            "title": "多端同步",
-            "desc": "手机、网页和客户端数据保持一致。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "gallery",
-      "data": {
-        "gallery_title": "应用界面",
-        "gallery_subtitle": "展示关键页面，降低下载前的不确定感",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "enable_filter": "yes",
-        "filter_categories": "首页,任务,数据",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80",
-            "title": "智能首页",
-            "desc": "关键入口集中",
-            "category": "首页"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80",
-            "title": "任务看板",
-            "desc": "进度清晰",
-            "category": "任务"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
-            "title": "数据概览",
-            "desc": "状态可视化",
-            "category": "数据"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        "badge": "全新 4.0 架构升级 · 苹果App Store年度推荐",
+        "title": "掌控无界灵感：新一代个人生活与工作数字助手",
+        "subtitle": "深度整合多模态AI、端到端隐私加密与毫秒级多端云同步。无论在手机、平板还是智能手表，随时捕捉每一个闪耀想法。",
+        "primary_btn_text": "App Store 免费下载",
+        "primary_btn_link": "#download",
+        "secondary_btn_text": "Android APK 直接下载",
+        "secondary_btn_link": "#download",
+        "accent_color": "#2563eb",
+        "rating": "4.9",
+        "rating_count": "248,500+",
+        "app_version": "v4.2.0 最新正式版",
+        "app_size": "48.6 MB"
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "应用增长数据",
-        "stats_subtitle": "用真实运营指标强化下载信心",
-        "stats_text_align": "center",
+        "stats_title": "千万用户的共同选择 · 极致口碑印证",
+        "stats_subtitle": "每一次滑动、每一次记录，都有全球上千万用户的真实信赖与好评。",
         "stats_items": [
           {
-            "number": "300万+",
-            "label": "累计用户",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "1,500万+",
+            "label": "全球活跃安装与注册用户"
           },
           {
-            "number": "4.8",
-            "label": "应用评分",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "4.9 星",
+            "label": "全球应用商店综合口碑评分"
           },
           {
-            "number": "99.9%",
-            "label": "服务可用性",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "0.08 秒",
+            "label": "冷启动秒开与全局搜索响应速度"
           },
           {
-            "number": "12",
-            "label": "核心场景",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "100%",
+            "label": "端到端军工级AES-256本地加密"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0284c7 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "services",
       "data": {
-        "testimonials_title": "用户评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "86,000+",
-        "average_rating": "4.8",
-        "testimonials_items": [
+        "title": "核心功能亮点 · 为敏捷生活与高效创作而生",
+        "subtitle": "告别臃肿杂乱的传统APP，重拾纯粹、极速与愉悦的数字工具体验。",
+        "columns": "3",
+        "services": [
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "Mia",
-            "position": "日常用户",
-            "content": "首页信息很集中，常用功能不用来回找。",
-            "rating": "5",
-            "verified": "verified"
+            "icon": "fa-brain",
+            "title": "离线端侧轻量大模型",
+            "desc": "无需联网即可智能整理会议速记、润色待办与提炼长文重点，彻底消除隐私泄露隐患。",
+            "badge": "私密AI"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "Allen",
-            "position": "团队管理员",
-            "content": "消息提醒和多端同步让协作顺很多。",
-            "rating": "5",
-            "verified": "verified"
+            "icon": "fa-arrows-rotate",
+            "title": "跨平台毫秒级闪电同步",
+            "desc": "手机记录、电脑编辑、手表提醒，秒级无感同步体验，再也不用微信文件传输助手。",
+            "badge": "全端互联"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "Nina",
-            "position": "会员用户",
-            "content": "扫码下载入口明显，活动页转化路径很短。",
-            "rating": "5",
-            "verified": "verified"
+            "icon": "fa-wand-magic-sparkles",
+            "title": "智能分类与语义关联网络",
+            "desc": "自研轻量图数据库，根据语义自动将散落的灵感笔记编织为结构清晰的个人知识图谱。",
+            "badge": "知识图谱"
+          },
+          {
+            "icon": "fa-battery-full",
+            "title": "极简轻量 · 全天持久低功耗",
+            "desc": "采用原生Swift与Kotlin重构，内存占用降低65%，全天后台静默运行耗电仅1.2%。",
+            "badge": "超低功耗"
+          },
+          {
+            "icon": "fa-file-shield",
+            "title": "私密文件夹与生物识别锁",
+            "desc": "支持Face ID/指纹加密指定敏感日记与密码箱，即使他人借用手机也无法窥视半分。",
+            "badge": "隐私加锁"
+          },
+          {
+            "icon": "fa-plug",
+            "title": "开放数据导入与全量无损导出",
+            "desc": "支持Markdown、PDF、Notion、微信读书一键导入导出，数据完全归属于您自己。",
+            "badge": "数据自由"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "APP 下载落地页标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "会员计划方案 · 开启无限生产力",
+        "pricing_subtitle": "基础核心功能永久免费无广告，高级会员解锁无限云端多端扩容与高级AI特权。",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "永久免费基础版",
+            "name_color": "#0f172a",
+            "price": "¥0",
+            "price_color": "#0f172a",
+            "period": "永久免费",
+            "desc": "适合日常基础记录与轻度待办管理，支持3台常用设备同步",
+            "desc_color": "#64748b",
+            "features": "无限量本地灵感速记与待办列表\n跨iOS/Android/Mac最多3台设备同步\n基础端侧AI语音转文字速记\n终身无广告、无弹窗骚扰",
+            "features_color": "#334155",
+            "btn_text": "免费下载使用",
+            "btn_link": "#download",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "Pro 专业高级会员",
+            "name_color": "#0f172a",
+            "price": "¥18",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每月 (年付¥168)",
+            "desc": "全功能解锁，专为深度知识创作者、职场精英与重度研究者打造",
+            "desc_color": "#64748b",
+            "features": "全平台无限设备毫秒级多端实时同步\n无限量高精度AI知识图谱与长文档总结\n100GB多模态音视频无损附件云空间\n高级自定义主题与私密加密安全保险箱\n专属VIP内测功能抢先体验通道",
+            "features_color": "#334155",
+            "btn_text": "开启Pro特权",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "88%用户首选",
+            "badge": "88%用户首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "家庭共享与买断版",
+            "name_color": "#0f172a",
+            "price": "¥398",
+            "price_color": "#0f172a",
+            "period": "终身买断 / 最多5人",
+            "desc": "支持苹果家庭共享机制，全家共享独立安全空间与全部Pro高级特权",
+            "desc_color": "#64748b",
+            "features": "一次买断永久拥有，无后续隐形扣费\n支持最多5位家庭成员独立账号使用\n全员享有独立加密隔离的Pro高级权限\n赠送终身大版本无偿升级特权",
+            "features_color": "#334155",
+            "btn_text": "终身买断套餐",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "testimonials_bg_color": "#ffffff"
+        "pricing_items": [
+          {
+            "name": "永久免费基础版",
+            "name_color": "#0f172a",
+            "price": "¥0",
+            "price_color": "#0f172a",
+            "period": "永久免费",
+            "desc": "适合日常基础记录与轻度待办管理，支持3台常用设备同步",
+            "desc_color": "#64748b",
+            "features": "无限量本地灵感速记与待办列表\n跨iOS/Android/Mac最多3台设备同步\n基础端侧AI语音转文字速记\n终身无广告、无弹窗骚扰",
+            "features_color": "#334155",
+            "btn_text": "免费下载使用",
+            "btn_link": "#download",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "Pro 专业高级会员",
+            "name_color": "#0f172a",
+            "price": "¥18",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每月 (年付¥168)",
+            "desc": "全功能解锁，专为深度知识创作者、职场精英与重度研究者打造",
+            "desc_color": "#64748b",
+            "features": "全平台无限设备毫秒级多端实时同步\n无限量高精度AI知识图谱与长文档总结\n100GB多模态音视频无损附件云空间\n高级自定义主题与私密加密安全保险箱\n专属VIP内测功能抢先体验通道",
+            "features_color": "#334155",
+            "btn_text": "开启Pro特权",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "88%用户首选",
+            "badge": "88%用户首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "家庭共享与买断版",
+            "name_color": "#0f172a",
+            "price": "¥398",
+            "price_color": "#0f172a",
+            "period": "终身买断 / 最多5人",
+            "desc": "支持苹果家庭共享机制，全家共享独立安全空间与全部Pro高级特权",
+            "desc_color": "#64748b",
+            "features": "一次买断永久拥有，无后续隐形扣费\n支持最多5位家庭成员独立账号使用\n全员享有独立加密隔离的Pro高级权限\n赠送终身大版本无偿升级特权",
+            "features_color": "#334155",
+            "btn_text": "终身买断套餐",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "title": "核心产品研发团队 · 坚守工匠精神",
+        "subtitle": "由来自前苹果核心系统架构师、国际红点奖金奖得主与密码学研究专家联合打造。",
+        "columns": "3",
+        "members": [
+          {
+            "name": "林晓枫",
+            "title": "联合创始人 / 首席产品架构师",
+            "bio": "前知名硅谷效率工具设计总监，主导多款超千万级下载APP交互体系，深度人机工效学信仰者。",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80",
+            "tags": "人机交互 · 极简主义 · 苹果设计奖"
+          },
+          {
+            "name": "陈海生",
+            "title": "联合创始人 / 首席技术官 (CTO)",
+            "bio": "前顶级云计算大厂分布式数据库核心科学家，精通CRDT分布式同步协议与端侧小模型轻量化推理。",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80",
+            "tags": "端侧AI · 分布式计算 · 极速内核"
+          },
+          {
+            "name": "方语嫣",
+            "title": "首席信息安全与合规官",
+            "bio": "前国际顶级信息安全实验室密码学顾问，主导全套端到端本地加密算法与隐私合规架构审查。",
+            "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=80",
+            "tags": "端到端加密 · 零知识证明 · 隐私保护"
+          }
+        ]
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "现在下载，立即开始使用",
-        "cta_subtitle": "把高频任务、消息提醒和数据看板放进手机里。",
-        "cta_button_text": "立即下载",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #0284c7 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "开启 APP 下载落地页 数字化卓越体验",
+        "cta_subtitle": "无需漫长等待，立即注册即可解锁全部核心功能与极速支持保障。",
+        "cta_btn_text": "立即免费体验",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090e17",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "APP-STUDIO · 移动互联与下一代数字体验终端",
+        "qfs_brand_desc": "全场景跨端协同，支持 iOS、Android、macOS 及 Windows 客户端。采用端到端加密与极简交互架构，为全球数千万用户提供安全、丝滑的生产力体验。",
+        "qfs_link_groups": [
+          {
+            "title": "客户端下载与版本与支持",
+            "links": "iOS App Store 官方下载|#\nAndroid APK 官方高速通道|#\nmacOS Apple Silicon 架构版|#\nWindows 64位桌面版下载|#\n最新版本更新日志 Release Notes|#\n公测 TestFlight 资格申请|#\n常见使用问题与排错手册|#\n隐私安全保护与权限说明|#"
+          }
+        ],
+        "qfs_contact_title": "开发者联络与客户端反馈",
+        "qfs_contact_items": "开发者支持|support@app-mobile.com|mailto:support@app-mobile.com\n商务合作|bd@app-mobile.com|mailto:bd@app-mobile.com\n官方微信|订阅获取最新内测安装包|#\n办公地址|上海市徐汇区漕河泾高新技术开发区田林路 100 号|#",
+        "qfs_social_title": "关注应用生态",
+        "qfs_social_links": "iOS内测群|#\n安卓体验交流群|#\n产品经理在线|#\n更新速递公号|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 APP-STUDIO INC. 保留所有权利 · 沪ICP备20210088号 · 软件著作权登字第 2026SR088219 号",
+        "qfs_bottom_links": "用户服务协议|#\n个人信息隐私保护政策|#\n第三方 SDK 接入清单|#\n权限使用说明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -57,7 +57,7 @@ if ( ! developer_starter_is_php_secure() ) {
 /**
  * 启灵主题核心常量 (QiLing Constants)
  */
-define( 'QILING_VERSION', '2.7.0' );
+define( 'QILING_VERSION', '2.8.0' );
 define( 'QILING_DIR', get_template_directory() );
 define( 'QILING_URI', get_template_directory_uri() );
 define( 'QILING_INC', QILING_DIR . '/inc' );
@@ -66,7 +66,7 @@ if ( ! is_string( $qiling_assets_base ) || trim( $qiling_assets_base ) === '' ) 
     $qiling_assets_base = QILING_URI . '/assets';
 }
 define( 'QILING_ASSETS', rtrim( (string) $qiling_assets_base, '/' ) );
-define( 'QILING_DB_VERSION', '2.7.0' );
+define( 'QILING_DB_VERSION', '2.8.0' );
 
 /**
  * 历史常量向后兼容垫片（Backwards-Compatibility Shim）
@@ -141,6 +141,10 @@ require_once QILING_INC . '/widgets/class-widget-post-list.php';
 require_once QILING_INC . '/core/class-template-manager.php';
 require_once QILING_INC . '/core/class-builder-data-service.php';
 require_once QILING_INC . '/core/class-single-page-package-service.php';
+$developer_starter_page_package_manager_file = QILING_INC . '/core/class-page-package-manager.php';
+if ( file_exists( $developer_starter_page_package_manager_file ) ) {
+    require_once $developer_starter_page_package_manager_file;
+}
 $developer_starter_module_advanced_style_service_file = QILING_INC . '/core/class-module-advanced-style-service.php';
 if ( file_exists( $developer_starter_module_advanced_style_service_file ) ) {
     require_once $developer_starter_module_advanced_style_service_file;

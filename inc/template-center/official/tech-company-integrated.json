@@ -46,6 +46,95 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵科技",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "特色业务",
+            "link": "#service_cards",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "brand_banner_pro",
       "data": {
         "bb_layout": "left_right",
@@ -235,35 +324,137 @@
         "pricing_items": [
           {
             "name": "咨询诊断",
+            "name_color": "#0f172a",
             "price": "¥9,800",
+            "price_color": "#0f172a",
             "period": "起",
             "desc": "适合先明确方向",
+            "desc_color": "#64748b",
             "features": "业务场景梳理\n技术路线评估\n官网内容结构建议\n1 次方案复盘会",
+            "features_color": "#334155",
             "btn_text": "预约诊断",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
             "name": "项目交付",
+            "name_color": "#0f172a",
             "price": "按项目评估",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
             "period": "",
             "desc": "适合完整系统建设",
+            "desc_color": "#64748b",
             "features": "产品原型与视觉设计\n前后端开发与集成\n数据看板与权限体系\n上线培训与交付文档",
+            "features_color": "#334155",
             "btn_text": "沟通项目",
             "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
+            "is_featured": "yes",
             "featured_text": "推荐",
+            "badge": "推荐",
             "featured_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)"
           },
           {
             "name": "长期共创",
+            "name_color": "#0f172a",
             "price": "年度服务",
+            "price_color": "#0f172a",
             "period": "",
             "desc": "适合持续迭代团队",
+            "desc_color": "#64748b",
             "features": "专属技术顾问\n月度迭代计划\n稳定性与安全巡检\n增长数据复盘",
+            "features_color": "#334155",
             "btn_text": "了解共创",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_plans": [
+          {
+            "name": "咨询诊断",
+            "name_color": "#0f172a",
+            "price": "¥9,800",
+            "price_color": "#0f172a",
+            "period": "起",
+            "desc": "适合先明确方向",
+            "desc_color": "#64748b",
+            "features": "业务场景梳理\n技术路线评估\n官网内容结构建议\n1 次方案复盘会",
+            "features_color": "#334155",
+            "btn_text": "预约诊断",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "项目交付",
+            "name_color": "#0f172a",
+            "price": "按项目评估",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "",
+            "desc": "适合完整系统建设",
+            "desc_color": "#64748b",
+            "features": "产品原型与视觉设计\n前后端开发与集成\n数据看板与权限体系\n上线培训与交付文档",
+            "features_color": "#334155",
+            "btn_text": "沟通项目",
+            "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "推荐",
+            "badge": "推荐",
+            "featured_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)"
+          },
+          {
+            "name": "长期共创",
+            "name_color": "#0f172a",
+            "price": "年度服务",
+            "price_color": "#0f172a",
+            "period": "",
+            "desc": "适合持续迭代团队",
+            "desc_color": "#64748b",
+            "features": "专属技术顾问\n月度迭代计划\n稳定性与安全巡检\n增长数据复盘",
+            "features_color": "#334155",
+            "btn_text": "了解共创",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
@@ -304,6 +495,36 @@
         "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
         "cta_button_bg_color": "#2563eb",
         "cta_button_text_color": "#ffffff"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "NOVA HORIZON · 新一代前沿硬科技与智能系统领军者",
+        "qfs_brand_desc": "以自主可控的基础底层技术推动产业智能化变革。专注于自研高能效处理器架构、分布式机器人操作系统与边缘 AI 计算引擎。",
+        "qfs_link_groups": [
+          {
+            "title": "硬核技术版图 & 产业赋能应用",
+            "links": "自研高性能算力芯片架构|#\n分布式机器人实时操作系统|#\n智能感知多传感器融合|#\n全栈硬件方案参考设计|#\n智能汽车与辅助驾驶系统|#\n智慧工业与自动化立体仓储|#\n智能巡检与特种巡检装备|#\n前沿科研实验室联合研发|#\n核心科学家与研发团队背景|#\n全球技术专利与论文发表|#\n新闻动态与重大突破公告|#\n全球招贤纳士与校招通道|#"
+          }
+        ],
+        "qfs_contact_title": "战略合作部",
+        "qfs_contact_items": "集团总机|+86 010-8200-8800|tel:01082008800\n产学研合作|academic@nova-horizon.com|mailto:academic@nova-horizon.com\n全球研发中心|北京市海淀区知春路国家未来科技大厦 26-28 层|#",
+        "qfs_social_title": "关注硬核科技",
+        "qfs_social_links": "微信官方公众号|#\nIEEE / 顶会论文专栏|#\n领英全球主页|#\n官方前沿科技视频|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 NOVA HORIZON TECH GROUP. 保留所有权利 · 国家级专精特新“小巨人”企业",
+        "qfs_bottom_links": "投资者关系(IR)|#\n社会责任(ESG)|#\n全球合规与伦理|#\n隐私政策|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

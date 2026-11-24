@@ -41,278 +41,299 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "gradient",
-        "db_bg_gradient": "linear-gradient(135deg, #090e1a 0%, #1e40af 50%, #0284c7 100%)",
-        "db_title_prefix": "产品品牌官网",
-        "db_typing_mode": "loop",
-        "db_typing_text": "多场景 AI Agent 工作流\n企业级知识问答与自动化协作\n从 PoC 到生产快速落地",
-        "db_highlight_color": "#38bdf8",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "围绕增长、效率与稳定性，构建可持续迭代的 AI 产品体系。",
-        "db_desc": "该模板已内置品牌官网常用区块：能力介绍、实施流程、案例、客户评价、合规信任与转化入口。",
-        "db_text_color": "rgba(226,232,240,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "灵境视界",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "申请产品演示",
-            "link": "#contact-section",
-            "style": "primary",
-            "icon": "🚀"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看能力清单",
-            "link": "#features-section",
-            "style": "outline",
-            "icon": "🧠"
+            "title": "场景方案",
+            "link": "#tabbed_carousel",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#clients",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "方案对比",
+            "link": "#comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "",
-        "db_image_shadow": "soft",
-        "db_floating_cards": [
-          {
-            "content_type": "badge",
-            "title": "支持私有化部署",
-            "pos_top": "8%",
-            "pos_right": "-2%",
-            "animation": "float",
-            "delay": "0s"
-          },
-          {
-            "content_type": "badge",
-            "title": "分钟级迭代发布",
-            "pos_bottom": "10%",
-            "pos_left": "-4%",
-            "animation": "pulse",
-            "delay": "0.4s"
-          }
-        ]
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "interact_hero",
+      "data": {
+        "hero_badge": "2026 NEXT-GEN AI HARDWARE",
+        "hero_title_content": "灵境视界 · 新一代空间计算与全息交互终端",
+        "hero_subtitle_content": "打破物理与数字现实的次元隔阂。双眼 8K 微显示屏、毫秒级空间手势追踪与多模态大模型自然交互。",
+        "btn_primary_content": "即刻预约首批公测",
+        "btn_primary_link": "#reserve",
+        "btn_secondary_content": "观看技术白皮书",
+        "btn_secondary_link": "#whitepaper",
+        "media_type": "image",
+        "hero_image": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+        "enable_float_anim": "yes"
+      }
+    },
+    {
+      "type": "tabbed_carousel",
+      "data": {
+        "tabbed_title": "全场景业务解决方案",
+        "tabbed_subtitle": "针对不同业务形态与规模，提供灵活开箱即用方案"
       }
     },
     {
       "type": "features_list",
       "data": {
-        "title": "AI 核心能力矩阵",
-        "subtitle": "覆盖模型接入、数据治理、应用编排与运维保障",
-        "columns": "3",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "tabs": [
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "全球出海众筹与极客口碑数据看板",
+        "stats_subtitle": "斩获红点最佳设计奖与 CES 全球消费科技创新大奖",
+        "stats_items": [
           {
-            "tab_id": "ai_engine",
-            "tab_title": "AI 引擎",
-            "tab_icon": "🧠",
-            "features": "🤖|多模型接入|统一接入主流大模型，支持策略路由与回退\n🧩|Prompt工程|提示词版本化管理，支持灰度与A/B测试\n⚙️|工具调用|函数调用与外部系统连接，打通业务流程"
+            "number": "$450 万",
+            "label": "Kickstarter 全球众筹金额纪录"
           },
           {
-            "tab_id": "data_layer",
-            "tab_title": "数据层",
-            "tab_icon": "📚",
-            "features": "📖|知识库检索|文档切片、向量检索与语义召回一体化\n🔒|权限隔离|按组织、部门、角色进行数据访问控制\n🧹|数据治理|内容清洗、标注与更新策略可配置"
+            "number": "180,000+",
+            "label": "全球科技极客与商务精英预售台数"
           },
           {
-            "tab_id": "ops",
-            "tab_title": "可观测运维",
-            "tab_icon": "📈",
-            "features": "📊|调用监控|时延、成本、成功率实时可视化\n🛡️|安全防护|敏感词过滤、越权检测与审计追踪\n🚀|弹性伸缩|高峰流量自动扩容，保障稳定交付"
+            "number": "98.8%",
+            "label": "复杂嘈杂环境下语音转写准确率"
+          },
+          {
+            "number": "24 克",
+            "label": "极轻整机重量，无感随身佩戴"
           }
         ]
       }
     },
     {
-      "type": "service_cards",
+      "type": "clients",
+      "data": {}
+    },
+    {
+      "type": "comparison",
       "data": {
-        "sc_bg_color": "#f8fafc",
-        "sc_padding": "72",
-        "sc_columns": "4",
-        "sc_gap": "20px",
-        "sc_card_bg": "#ffffff",
-        "sc_icon_bg": "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
-        "sc_cards": [
+        "comparison_title": "多维实力对比",
+        "comparison_subtitle": "为什么众多客户首选我们，核心指标一目了然"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "先锋尝鲜版本与会员权益阶梯",
+        "pricing_subtitle": "硬件一次买断，终身赠送基础 AI 转写与摘要额度，支持无理由 7 天退换",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "icon": "🧪",
-            "title": "PoC快速验证",
-            "badge": "2-4周",
-            "description": "聚焦单场景验证价值，快速建立可量化成果。",
-            "url": "#",
-            "target": "_self"
+            "name": "先锋探索版 (Standard)",
+            "name_color": "#0f172a",
+            "price": "¥799",
+            "price_color": "#0f172a",
+            "period": "/台",
+            "desc": "适合学生党、初入职场白领与高频日常记事人群，轻巧易用",
+            "desc_color": "#64748b",
+            "features": "包含 AI 随身录硬件本体 + 磁吸背夹套件\n每月赠送 30 小时云端高速 AI 转写时长\n终身支持本地离线端侧高精录音\n支持 iOS 与 Android 双端 App 自动同步\n享全国 1 年免费换新质保服务承诺",
+            "features_color": "#334155",
+            "btn_text": "立即预定",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "icon": "🏗️",
-            "title": "平台化建设",
-            "badge": "标准化",
-            "description": "搭建统一AI中台，支持多业务线复用。",
-            "url": "#",
-            "target": "_self"
+            "name": "黑金 Pro 终身尊享版",
+            "name_color": "#0f172a",
+            "price": "¥1,299",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/台",
+            "desc": "包含便携无线充电仓、定制真皮挂绳与终身无限次 AI 高级摘要权益",
+            "desc_color": "#64748b",
+            "features": "包含硬件本体 + 72小时长续航无线充电盒\n赠送托斯卡纳植鞣皮革专属保护皮套\n终身享无限次多模态大模型思维导图提炼\n优先享有后续所有大模型算法固件空中升级 (OTA)\n支持企业专用私有知识库直连导出",
+            "features_color": "#334155",
+            "btn_text": "抢先抢购 Pro 版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "82% 极客首选",
+            "badge": "82% 极客首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "icon": "🔄",
-            "title": "业务流程自动化",
-            "badge": "高效率",
-            "description": "将高频任务转为自动执行，提升团队产能。",
-            "url": "#",
-            "target": "_self"
-          },
-          {
-            "icon": "🎯",
-            "title": "持续优化运营",
-            "badge": "闭环",
-            "description": "基于数据反馈持续优化模型效果与交互体验。",
-            "url": "#",
-            "target": "_self"
+            "name": "企业团队协作定制版",
+            "name_color": "#0f172a",
+            "price": "¥5,999",
+            "price_color": "#0f172a",
+            "period": "/5台装",
+            "desc": "为律所、投行、咨询公司与科研团队量身打造的私密协同解决方案",
+            "desc_color": "#64748b",
+            "features": "包含 5 台 Pro 硬件与多位集中充电底座\n企业级私有加密云端协同知识库空间\n企业团队多人多角色权限与跨部门纪要共享\n严格签署数据隐私不参与任何公共大模型训练协议\n配备专属大客户经理提供驻场技术培训支持",
+            "features_color": "#334155",
+            "btn_text": "申请企业试用",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
-        ]
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "项目落地流程",
-        "process_subtitle": "从业务目标到线上运营的标准化实施路径",
-        "process_mode": "standard",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "process_items": [
+        ],
+        "pricing_items": [
           {
-            "icon": "01",
-            "title": "业务诊断",
-            "stage_tag": "梳理",
-            "desc": "识别高价值场景、核心指标与现有流程瓶颈。"
+            "name": "先锋探索版 (Standard)",
+            "name_color": "#0f172a",
+            "price": "¥799",
+            "price_color": "#0f172a",
+            "period": "/台",
+            "desc": "适合学生党、初入职场白领与高频日常记事人群，轻巧易用",
+            "desc_color": "#64748b",
+            "features": "包含 AI 随身录硬件本体 + 磁吸背夹套件\n每月赠送 30 小时云端高速 AI 转写时长\n终身支持本地离线端侧高精录音\n支持 iOS 与 Android 双端 App 自动同步\n享全国 1 年免费换新质保服务承诺",
+            "features_color": "#334155",
+            "btn_text": "立即预定",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "icon": "02",
-            "title": "方案设计",
-            "stage_tag": "设计",
-            "desc": "完成模型策略、数据方案与交互流程设计。"
+            "name": "黑金 Pro 终身尊享版",
+            "name_color": "#0f172a",
+            "price": "¥1,299",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/台",
+            "desc": "包含便携无线充电仓、定制真皮挂绳与终身无限次 AI 高级摘要权益",
+            "desc_color": "#64748b",
+            "features": "包含硬件本体 + 72小时长续航无线充电盒\n赠送托斯卡纳植鞣皮革专属保护皮套\n终身享无限次多模态大模型思维导图提炼\n优先享有后续所有大模型算法固件空中升级 (OTA)\n支持企业专用私有知识库直连导出",
+            "features_color": "#334155",
+            "btn_text": "抢先抢购 Pro 版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "82% 极客首选",
+            "badge": "82% 极客首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "icon": "03",
-            "title": "开发集成",
-            "stage_tag": "实施",
-            "desc": "打通业务系统与AI能力，进行联调与压测。"
-          },
-          {
-            "icon": "04",
-            "title": "上线运营",
-            "stage_tag": "优化",
-            "desc": "按业务反馈持续优化效果、成本与稳定性。"
-          }
-        ]
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "AI 实战案例",
-        "cases_count": "6",
-        "cases_columns": "3",
-        "cases_show_image": "1",
-        "cases_image_height": "220px",
-        "cases_padding_top": "80px",
-        "cases_padding_bottom": "80px",
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "客户反馈",
-        "testimonials_subtitle": "来自产品、运营与技术团队的一线评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "120+",
-        "average_rating": "4.9",
-        "testimonials_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "testimonials_items": [
-          {
-            "avatar": "",
-            "name": "陈总监",
-            "position": "某零售品牌 · 数字化负责人",
-            "content": "上线 2 个月后，客服工单分流率和首响效率显著提升。",
-            "rating": "5",
-            "source": "企业客户"
-          },
-          {
-            "avatar": "",
-            "name": "吴经理",
-            "position": "某SaaS公司 · 产品经理",
-            "content": "模板化交付能力很强，内部多团队可以快速复用。",
-            "rating": "5",
-            "source": "SaaS 团队"
-          },
-          {
-            "avatar": "",
-            "name": "赵架构师",
-            "position": "某金融科技公司 · 技术负责人",
-            "content": "在稳定性和权限隔离方面达到了企业级要求。",
-            "rating": "5",
-            "source": "技术团队"
-          }
-        ]
-      }
-    },
-    {
-      "type": "compliance_trust",
-      "data": {
-        "ct_title": "安全与合规能力",
-        "ct_subtitle": "通过标准化控制体系与持续审计，确保企业数据安全与服务可靠。",
-        "ct_layout": "grid",
-        "ct_columns": "3",
-        "ct_enable_filter": "yes",
-        "ct_card_style": "solid",
-        "ct_accent_color": "#2563eb",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "ct_items": [
-          {
-            "icon": "🛡️",
-            "title": "SOC 2 Type II",
-            "short_name": "SOC2",
-            "category": "安全控制",
-            "status": "active",
-            "issuer": "第三方审计机构",
-            "scope": "平台应用与运维流程",
-            "valid_until": "年度滚动审计",
-            "description": "覆盖访问控制、变更管理和日志审计等关键控制项。",
-            "report_url": "#",
-            "report_text": "查看审计说明"
-          },
-          {
-            "icon": "🔐",
-            "title": "ISO/IEC 27001",
-            "short_name": "ISO27001",
-            "category": "信息安全",
-            "status": "active",
-            "issuer": "国际认证机构",
-            "scope": "信息安全管理体系",
-            "valid_until": "2028-12-31",
-            "description": "基于风险评估构建安全管理体系并持续改进。",
-            "report_url": "#",
-            "report_text": "查看认证范围"
-          },
-          {
-            "icon": "🌍",
-            "title": "GDPR",
-            "short_name": "GDPR",
-            "category": "隐私合规",
-            "status": "active",
-            "issuer": "法务与合规团队",
-            "scope": "欧盟用户数据处理流程",
-            "valid_until": "持续监测",
-            "description": "支持数据主体权利响应与跨境处理合规流程。",
-            "report_url": "#",
-            "report_text": "查看隐私承诺"
+            "name": "企业团队协作定制版",
+            "name_color": "#0f172a",
+            "price": "¥5,999",
+            "price_color": "#0f172a",
+            "period": "/5台装",
+            "desc": "为律所、投行、咨询公司与科研团队量身打造的私密协同解决方案",
+            "desc_color": "#64748b",
+            "features": "包含 5 台 Pro 硬件与多位集中充电底座\n企业级私有加密云端协同知识库空间\n企业团队多人多角色权限与跨部门纪要共享\n严格签署数据隐私不参与任何公共大模型训练协议\n配备专属大客户经理提供驻场技术培训支持",
+            "features_color": "#334155",
+            "btn_text": "申请企业试用",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
@@ -320,59 +341,61 @@
     {
       "type": "faq",
       "data": {
-        "faq_title": "常见问题",
-        "faq_subtitle": "关于部署、数据和计费的高频问题说明",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
         "faq_items": [
           {
-            "question": "是否支持私有化部署？",
-            "answer": "支持私有化和专有云部署，可根据企业安全策略定制方案。"
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
           },
           {
-            "question": "能否对接现有业务系统？",
-            "answer": "支持通过 API/Webhook 与 CRM、工单、OA 等系统集成。"
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
           },
           {
-            "question": "如何保障模型输出稳定性？",
-            "answer": "提供多模型路由、提示词版本管理、监控告警和回退机制。"
-          },
-          {
-            "question": "是否提供实施与培训服务？",
-            "answer": "提供从方案设计到上线运营的实施陪跑与团队培训。"
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
           }
         ]
       }
     },
     {
-      "type": "contact",
+      "type": "cta",
       "data": {
-        "contact_title": "预约 AI 方案咨询",
-        "contact_subtitle": "提交需求后，我们会在 1 个工作日内联系你。",
-        "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "cta_title": "开启 产品品牌官网 数字化卓越体验",
+        "cta_subtitle": "无需漫长等待，立即注册即可解锁全部核心功能与极速支持保障。",
+        "cta_btn_text": "立即免费体验",
+        "cta_btn_url": "#"
       }
     },
     {
-      "type": "cta",
+      "type": "footer_suite",
       "data": {
-        "cta_title": "准备把 AI 能力真正跑进业务？",
-        "cta_subtitle": "从场景诊断到上线运营，我们帮助你更快获得可量化增长。",
-        "cta_button_text": "立即预约演示",
-        "cta_button_url": "#contact-section",
-        "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #090e1a 0%, #1e3a8a 60%, #0284c7 100%)",
-        "module_padding_top": "96px",
-        "module_padding_bottom": "96px",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0e1a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "AURA TECH · 新一代智能硬件与空间计算",
+        "qfs_brand_desc": "以极简工业美学与边缘 AI 算力，重构人与数字世界的交互边界。感知更敏锐，陪伴更自然。",
+        "qfs_link_groups": [
+          {
+            "title": "智能产品线与支持与服务",
+            "links": "AURA Pro 智能眼镜|#\nAURA Hub 空间中枢|#\nAURA Sense 传感器阵列|#\n官方原装磁吸配件|#\n设备固件一键升级|#\n用户使用指南与手册|#\n官方 2 年延保服务|#\n全国售后网点查询|#\n开发者空间套件 SDK|#\n品牌设计故事与理念|#\n全球先锋体验官招募|#\n企业定制与采购通道|#"
+          }
+        ],
+        "qfs_contact_title": "全球客户中心",
+        "qfs_contact_items": "服务专线|400-828-2026|tel:4008282026\n商务合作|partner@aura-tech.com|mailto:partner@aura-tech.com\n体验中心|深圳市南山区万象天地品牌概念馆|#",
+        "qfs_social_title": "关注未来科技",
+        "qfs_social_links": "微信公众号|#\n官方微博|#\nBilibili 官方号|#\nInstagram @AuraTech|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 AURA TECH INC. 保留所有权利 · 极致工业美学与边缘人工智能 · 顺丰极速直达",
+        "qfs_bottom_links": "隐私权保护声明|#\n销售条款|#\n知识产权公示|#\n回收计划|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

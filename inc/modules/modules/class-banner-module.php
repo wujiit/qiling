@@ -210,16 +210,34 @@ class Banner_Module extends Module_Base {
         $image_position = isset( $data['banner_image_position'] ) ? $data['banner_image_position'] : 'right';
         $bg_color = isset( $data['banner_bg_color'] ) ? trim( $data['banner_bg_color'] ) : '';
         
-        if ( empty( $slides ) && ! isset( $data['banner_slides'] ) ) {
-            $slides = array(
-                array(
-                    'image'    => '',
-                    'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'qiling' ),
-                    'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型，提供一站式服务', 'Support digital growth with an end-to-end service approach.' ) : __( '助力企业数字化转型，提供一站式服务', 'qiling' ),
-                    'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ),
-                    'btn_url'  => '#',
-                ),
-            );
+        if ( empty( $slides ) ) {
+            $f_title = ! empty( $data['banner_title'] ) ? $data['banner_title'] : ( ! empty( $data['title'] ) ? $data['title'] : '' );
+            $f_sub   = ! empty( $data['banner_subtitle'] ) ? $data['banner_subtitle'] : ( ! empty( $data['subtitle'] ) ? $data['subtitle'] : '' );
+            $f_btn   = ! empty( $data['primary_btn_text'] ) ? $data['primary_btn_text'] : ( ! empty( $data['btn_text'] ) ? $data['btn_text'] : '' );
+            $f_url   = ! empty( $data['primary_btn_link'] ) ? $data['primary_btn_link'] : ( ! empty( $data['btn_url'] ) ? $data['btn_url'] : '#' );
+            $f_img   = ! empty( $data['banner_image'] ) ? $data['banner_image'] : ( ! empty( $data['image'] ) ? $data['image'] : '' );
+
+            if ( $f_title || $f_sub || $f_img ) {
+                $slides = array(
+                    array(
+                        'image'    => $f_img,
+                        'title'    => $f_title,
+                        'subtitle' => $f_sub,
+                        'btn_text' => $f_btn ? $f_btn : ( function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ) ),
+                        'btn_url'  => $f_url,
+                    ),
+                );
+            } else {
+                $slides = array(
+                    array(
+                        'image'    => '',
+                        'title'    => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '专业企业解决方案', 'Professional solutions for modern business' ) : __( '专业企业解决方案', 'qiling' ),
+                        'subtitle' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '助力企业数字化转型，提供一站式服务', 'Support digital growth with an end-to-end service approach.' ) : __( '助力企业数字化转型，提供一站式服务', 'qiling' ),
+                        'btn_text' => function_exists( 'developer_starter_get_locale_text' ) ? developer_starter_get_locale_text( '了解更多', 'Learn More' ) : __( '了解更多', 'qiling' ),
+                        'btn_url'  => '#',
+                    ),
+                );
+            }
         }
         
         $height_class = 'banner-height-' . $height;
@@ -261,7 +279,7 @@ class Banner_Module extends Module_Base {
 
         $module_id = 'banner-' . uniqid();
         ?>
-        <section class="module module-banner banner-slider <?php echo esc_attr( $height_class ); ?>" id="<?php echo esc_attr( $module_id ); ?>" style="height: <?php echo esc_attr( $height_value ); ?>; min-height: <?php echo esc_attr( $height_value ); ?>; position: relative; overflow: hidden;">
+        <section class="module module-banner banner-slider <?php echo esc_attr( $height_class ); ?>" id="<?php echo esc_attr( $module_id ); ?>" style="height: <?php echo esc_attr( $height_value ); ?>; min-height: <?php echo esc_attr( $height_value ); ?>; position: relative; overflow: hidden; background: var(--banner-bg, var(--color-surface, #0f172a));">
             <?php if ( $has_swiper ) : ?>
                 <div class="swiper banner-swiper" style="width: 100%; height: 100%;">
                     <div class="swiper-wrapper">
@@ -272,7 +290,7 @@ class Banner_Module extends Module_Base {
                         ?>
                             <div class="swiper-slide" style="position: relative; display: flex; align-items: center; justify-content: center;">
                                 <?php $this->render_slide_background( $slide, $media_type, $bg_color ); ?>
-                                <div class="banner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(var(--qiling-rgb-0-0-0), 0.4); z-index: 1;"></div>
+                                <div class="banner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.45) 100%); z-index: 1;"></div>
                                 <div class="container" style="position: relative; z-index: 2;">
                                     <div class="banner-content" style="text-align: center; color: var(--color-neutral-0); max-width: var(--qiling-measure-800); margin: 0 auto;">
                                         <?php if ( ! empty( $slide['title'] ) ) : ?>
@@ -287,8 +305,9 @@ class Banner_Module extends Module_Base {
                                                 $btn_bg_color = isset( $slide['btn_bg_color'] ) && ! empty( $slide['btn_bg_color'] ) ? $slide['btn_bg_color'] : 'var(--qiling-module-button-bg, var(--qiling-component-button-bg, var(--color-primary)))';
                                                 $btn_text_color = isset( $slide['btn_text_color'] ) && ! empty( $slide['btn_text_color'] ) ? $slide['btn_text_color'] : 'var(--qiling-module-button-text, var(--qiling-component-button-text, #ffffff))';
                                                 $btn_border_color = isset( $slide['btn_border_color'] ) && ! empty( $slide['btn_border_color'] ) ? $slide['btn_border_color'] : $btn_bg_color;
+                                                $btn_url = ! empty( $slide['btn_url'] ) ? $slide['btn_url'] : '#';
                                                 ?>
-                                                <a href="<?php echo esc_url( $slide['btn_url'] ?: '#' ); ?>" class="banner-cta-btn" style="background: <?php echo esc_attr( $btn_bg_color ); ?>; color: <?php echo esc_attr( $btn_text_color ); ?>; border-color: <?php echo esc_attr( $btn_border_color ); ?>;">
+                                                <a href="<?php echo esc_url( $btn_url ); ?>" class="banner-cta-btn" style="background: <?php echo esc_attr( $btn_bg_color ); ?>; color: <?php echo esc_attr( $btn_text_color ); ?>; border-color: <?php echo esc_attr( $btn_border_color ); ?>;">
                                                     <?php echo esc_html( $slide['btn_text'] ); ?>
                                                 </a>
                                             </div>
@@ -307,9 +326,9 @@ class Banner_Module extends Module_Base {
                 $media_type = isset( $slide['media_type'] ) ? $slide['media_type'] : 'image';
                 $title_align = $this->get_slide_title_align( $slide, 'center' );
             ?>
-                <div class="banner-single" style="width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center;">
+                <div class="banner-single" style="width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; background: var(--banner-bg, var(--color-surface, #0f172a));">
                     <?php $this->render_slide_background( $slide, $media_type, $bg_color ); ?>
-                    <div class="banner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(var(--qiling-rgb-0-0-0), 0.4); z-index: 1;"></div>
+                    <div class="banner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.45) 100%); z-index: 1;"></div>
                     <div class="container" style="position: relative; z-index: 2;">
                         <div class="banner-content" style="text-align: center; color: var(--color-neutral-0); max-width: var(--qiling-measure-800); margin: 0 auto;">
                             <?php if ( ! empty( $slide['title'] ) ) : ?>
@@ -324,8 +343,9 @@ class Banner_Module extends Module_Base {
                                      $btn_bg_color = isset( $slide['btn_bg_color'] ) && ! empty( $slide['btn_bg_color'] ) ? $slide['btn_bg_color'] : 'var(--qiling-module-button-bg, var(--qiling-component-button-bg, var(--color-primary)))';
                                      $btn_text_color = isset( $slide['btn_text_color'] ) && ! empty( $slide['btn_text_color'] ) ? $slide['btn_text_color'] : 'var(--qiling-module-button-text, var(--qiling-component-button-text, #ffffff))';
                                     $btn_border_color = isset( $slide['btn_border_color'] ) && ! empty( $slide['btn_border_color'] ) ? $slide['btn_border_color'] : $btn_bg_color;
+                                    $btn_url = ! empty( $slide['btn_url'] ) ? $slide['btn_url'] : '#';
                                     ?>
-                                    <a href="<?php echo esc_url( $slide['btn_url'] ?: '#' ); ?>" class="banner-cta-btn" style="background: <?php echo esc_attr( $btn_bg_color ); ?>; color: <?php echo esc_attr( $btn_text_color ); ?>; border-color: <?php echo esc_attr( $btn_border_color ); ?>;">
+                                    <a href="<?php echo esc_url( $btn_url ); ?>" class="banner-cta-btn" style="background: <?php echo esc_attr( $btn_bg_color ); ?>; color: <?php echo esc_attr( $btn_text_color ); ?>; border-color: <?php echo esc_attr( $btn_border_color ); ?>;">
                                         <?php echo esc_html( $slide['btn_text'] ); ?>
                                     </a>
                                 </div>
@@ -428,7 +448,7 @@ class Banner_Module extends Module_Base {
             <?php
         } elseif ( ! empty( $slide['image'] ) ) {
             ?>
-            <div class="banner-bg-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('<?php echo esc_url( $slide['image'] ); ?>'); background-size: cover; background-position: center; z-index: 0;"></div>
+            <div class="banner-bg-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('<?php echo esc_url( $slide['image'] ); ?>'); background-size: cover; background-position: center; background-color: var(--banner-bg, var(--color-surface, #0f172a)); z-index: 0;"></div>
             <?php
         } else {
             // 使用自定义背景色，如果未设置则使用主题主色调
@@ -501,8 +521,9 @@ class Banner_Module extends Module_Base {
                         <?php elseif ( ! empty( $image ) ) : ?>
                             <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" style="max-width: min(100%, var(--qiling-measure-800)); height: auto; border-radius: var(--qiling-space-12); box-shadow: 0 var(--qiling-space-20) var(--qiling-space-40) rgba(var(--qiling-rgb-0-0-0), 0.2);" />
                         <?php else : ?>
-                            <div style="aspect-ratio: 4/3; background: rgba(var(--qiling-rgb-255-255-255), 0.1); border-radius: var(--qiling-space-12); display: flex; align-items: center; justify-content: center; color: rgba(var(--qiling-rgb-255-255-255), 0.5);">
-                                <?php esc_html_e( '请上传图片或视频', 'qiling' ); ?>
+                            <div class="banner-media-card-fallback" style="aspect-ratio: 4/3; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--qiling-space-12); display: flex; flex-direction: column; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.85); gap: 12px; padding: 24px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7; stroke: #60a5fa;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                <span style="font-size: 15px; font-weight: 600; letter-spacing: 0.05em;"><?php echo esc_html( $title ? $title : __( '专业数字化解决方案', 'qiling' ) ); ?></span>
                             </div>
                         <?php endif; ?>
                         

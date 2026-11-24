@@ -136,8 +136,8 @@
 .qiling-module-scope-product_showcase .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-product_showcase /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-product_showcase .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-product_showcase .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-product_showcase .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-product_showcase /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-product_showcase /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-product_showcase /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-product_showcase /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-product_showcase .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-product_showcase .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-product_showcase .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-product_showcase .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-product_showcase /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -547,29 +557,98 @@ html.dark-mode .module-product-showcase .ps-title {
     --qiling-component-card-border-dark,
     var(--qiling-component-card-border)
   );
-}.qiling-module-scope-product_showcase /* 响应式 */
-@media (max-width: 992px) {
-  .module-product-showcase .ps-wrapper,
-  .module-product-showcase .ps-wrapper.ps-reverse {
-    flex-direction: column;
-    gap: var(--qiling-space-40);
-  }
-  .module-product-showcase .ps-media-carousel {
+}/* 响应式 */
+@media (max-width: 992px){.qiling-module-scope-product_showcase .module-product-showcase.ps-fullwidth {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-wrapper,
+.qiling-module-scope-product_showcase .module-product-showcase .ps-wrapper.ps-reverse {
+    flex-direction: column !important;
+    gap: var(--qiling-space-32);
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-media-side,
+.qiling-module-scope-product_showcase .module-product-showcase .ps-info-side {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-info-side {
+    padding-top: 0;
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-media-carousel {
     height: 320px !important;
-  }
-  .module-product-showcase .ps-title {
-    font-size: var(--qiling-text-rem-2);
-  }
-  .module-product-showcase .ps-price {
-    font-size: var(--qiling-text-rem-2);
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-title {
+    font-size: clamp(1.4rem, 4.5vw, 2rem) !important;
+    line-height: 1.25;
+    word-break: break-word;
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-subtitle {
+    font-size: 0.85rem !important;
+    padding: 6px 14px !important;
+    margin-bottom: var(--qiling-space-20);
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.35;
+    display: inline-block;
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-price {
+    font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-cta-btn {
+    padding: 12px 24px;
+  }.qiling-module-scope-product_showcase .module-product-showcase.module-product-showcase .ps-info-side .ps-description {
+    padding: var(--qiling-space-18) var(--qiling-space-20);
   }
 }@media (max-width: 576px){.qiling-module-scope-product_showcase .module-product-showcase .ps-media-carousel {
-    height: 260px !important;
+    height: 280px !important;
   }.qiling-module-scope-product_showcase .module-product-showcase .ps-title {
-    font-size: var(--qiling-text-rem-1p75);
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem) !important;
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-cta-wrapper {
+    width: 100%;
   }.qiling-module-scope-product_showcase .module-product-showcase .ps-cta-btn {
     display: block;
+    width: 100%;
     text-align: center;
+    box-sizing: border-box;
     padding: var(--qiling-space-14) var(--qiling-space-24);
+  }.qiling-module-scope-product_showcase .module-product-showcase .ps-left-buttons {
+    gap: var(--qiling-space-8);
+  }.qiling-module-scope-product_showcase .module-product-showcase.module-product-showcase .ps-left-buttons .ps-small-btn {
+    font-size: var(--qiling-text-12);
+    padding: 6px 12px;
   }
+}
+
+/* ===== Product Showcase 暗黑模式全量覆盖 ===== */
+html.dark-mode .module-product-showcase,
+[data-theme='dark'] .module-product-showcase {
+  background-color: var(--dm-bg, #0b0f19) !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}
+
+html.dark-mode .module-product-showcase .ps-title,
+[data-theme='dark'] .module-product-showcase .ps-title {
+  color: #f8fafc !important;
+}
+
+html.dark-mode .module-product-showcase .ps-description,
+[data-theme='dark'] .module-product-showcase .ps-description {
+  background: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+}
+
+html.dark-mode .module-product-showcase .ps-price,
+[data-theme='dark'] .module-product-showcase .ps-price {
+  color: #60a5fa !important;
+}
+
+html.dark-mode .module-product-showcase .ps-media-carousel,
+[data-theme='dark'] .module-product-showcase .ps-media-carousel {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode .module-product-showcase .ps-spec-item,
+[data-theme='dark'] .module-product-showcase .ps-spec-item {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #cbd5e1 !important;
 }

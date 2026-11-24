@@ -42,247 +42,245 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be123c 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "美妍医疗",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=80",
-            "title": "更专业地管理每一次变美期待",
-            "subtitle": "项目评估、医生面诊、术后随访与周期护理，用清晰流程建立信任。",
-            "btn_text": "预约面诊",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#be123c"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "效果对比",
+            "link": "#image_comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合规安全",
+            "link": "#compliance_trust",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线挂号",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f43f5e",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f43f5e",
+        "qhs_hover_bg": "rgba(244,63,94,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1512290900672-1f55b9a7106d?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "LUMINOUS-BEAUTY · 奢享轻医美与面部年轻化",
+        "bb_subtitle": "坚持“一人一针一头一药、假一赔十”的正品安全底线，三甲公立皮肤科名医常年主理，量身定制高级自然美感",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "12",
-            "number": "12年",
-            "label": "机构经验",
-            "color": "#ffffff"
+            "text": "预约 VISIA 皮肤检测",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "30",
-            "number": "30+",
-            "label": "医生顾问",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "40",
-            "number": "40+",
-            "label": "护理项目",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "用户评分",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "热门项目方向",
-        "services_subtitle": "按皮肤状态、改善目标和恢复周期选择项目",
+        "services_title": "四大核心医学美肤品类",
+        "services_title_size": "2.1rem",
+        "services_subtitle": "严选原厂进口正品仪器耗材，拒绝过度医疗，坚持“千人千面、原生自然”的美学设计哲学",
         "services_columns": "4",
-        "services_bg_color": "#ffffff",
         "services_items": [
           {
-            "icon": "01",
-            "title": "皮肤管理",
-            "desc": "清洁补水、舒缓修护、屏障管理。",
-            "link": "#"
+            "icon": "ri-flashlight-line",
+            "title": "半岛超声炮全脸抗衰",
+            "desc": "双波双头精准作用于筋膜层SMAS，不开刀不破皮，显著提拉下颌缘轮廓，改善法令纹与双下巴松弛。"
           },
           {
-            "icon": "02",
-            "title": "抗衰紧致",
-            "desc": "面部年轻化评估与周期护理方案。",
-            "link": "#"
+            "icon": "ri-drop-line",
+            "title": "III型胶原蛋白真皮直补",
+            "desc": "深层补充婴儿肌核心网状胶原纤维，改善眼周暗沉细纹、颈纹与面部干燥，恢复肌肤婴儿般Q弹润泽。"
           },
           {
-            "icon": "03",
-            "title": "轮廓管理",
-            "desc": "面部比例评估和个性化改善建议。",
-            "link": "#"
+            "icon": "ri-contrast-2-line",
+            "title": "美国赛诺秀超皮秒净肤",
+            "desc": "皮秒级光震波粉碎皮下顽固色斑黑色素，兼具收缩毛孔与嫩肤功效，恢复期极短，不结痂不出血。"
           },
           {
-            "icon": "04",
-            "title": "术后修护",
-            "desc": "恢复期护理、复诊提醒和随访记录。",
-            "link": "#"
+            "icon": "ri-heart-3-line",
+            "title": "面部美学微整塑形",
+            "desc": "乔雅登玻尿酸与肉毒素黄金比例注射，改善太阳穴凹陷、幼态脸轮廓打造与下巴精致度微调。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "menu",
+      "type": "image_comparison",
       "data": {
-        "menu_title": "项目咨询参考",
-        "menu_subtitle": "仅作为展示示例，实际项目以机构资质和面诊评估为准",
-        "menu_layout": "grid",
-        "menu_accent_color": "#be123c",
-        "menu_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
-            "title": "水光管理",
-            "desc": "补水提亮与肤质改善咨询",
-            "price": "咨询",
-            "badge": "皮肤管理",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80",
-            "title": "抗衰评估",
-            "desc": "松弛、皱纹与轮廓综合评估",
-            "price": "预约面诊",
-            "badge": "抗衰",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
-            "title": "痘肌管理",
-            "desc": "痘痘、痘印与屏障修护建议",
-            "price": "咨询",
-            "badge": "问题肌",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
-            "title": "恢复期护理",
-            "desc": "项目后修护与复诊提醒",
-            "price": "预约",
-            "badge": "随访",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#fff1f2"
+        "title": "真实验证交付 · 逆龄蜕变对比",
+        "subtitle": "拖动滑块查看真实案例：38岁女性 经过半岛超声炮提拉 + 胶原蛋白直补后的面部下颌线清晰度蜕变",
+        "image_before": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
+        "label_before": "抗衰前 · 下颌缘松弛伴随法令纹凹陷",
+        "image_after": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80",
+        "label_after": "疗程后 · 紧致上扬 V 脸饱满平滑",
+        "comparison_badge_bg": "#be123c",
+        "slider_color": "#ffffff",
+        "height": 520,
+        "initial_offset": 50
       }
     },
     {
       "type": "team",
       "data": {
-        "team_title": "医生与顾问团队",
-        "team_subtitle": "用专业背景、擅长方向和服务流程降低新客顾虑",
+        "team_title": "三甲公立名医 · 执业主治医师天团",
+        "team_title_size": "2.1rem",
+        "team_title_color": "#0f172a",
+        "team_subtitle": "严禁非执业医师与速成培训班技师操作，每一位主诊医生均在国家卫健委可公开查验执业资质",
         "team_columns": "3",
         "team_members": [
           {
+            "avatar": "https://images.unsplash.com/photo-1594824813629-1a48ff98090b?auto=format&fit=crop&w=600&q=80",
+            "name": "沈梦涵 副主任医师",
+            "position": "微创抗衰学科带头人 · 原三甲公立皮肤科副主任",
+            "desc": "拥有近20年光电抗衰与注射微整临床经验，超声炮/热玛吉官方指定带教培训导师，累计操作案例超万例。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+            "name": "陆家骏 主任医师 / 博士",
+            "position": "面部五官美学雕塑首席专家",
+            "desc": "毕业于复旦大学医学院，乔雅登全球认证注射讲师，擅长结合东方骨相特征进行轻量级自然微整塑形。"
+          },
+          {
             "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
-            "name": "林医生",
-            "position": "皮肤科医生",
-            "desc": "擅长问题肌、屏障修护和项目后管理。",
-            "email": "doctor1@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
-            "name": "周医生",
-            "position": "抗衰项目医生",
-            "desc": "专注面部年轻化评估与联合方案设计。",
-            "email": "doctor2@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
-            "name": "陈顾问",
-            "position": "美学咨询顾问",
-            "desc": "负责初诊沟通、档案管理和复诊提醒。",
-            "email": "consultant@example.com"
+            "name": "周婉莹 主治医师",
+            "position": "痤疮与色素性皮肤病学科专家",
+            "desc": "专注于复杂色斑、黄褐斑综合光电阶梯治疗及敏感肌屏障修复，以科学温和方案还原净白透亮肌底。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "process",
+      "type": "compliance_trust",
       "data": {
-        "process_title": "咨询服务流程",
-        "process_subtitle": "先评估、再方案、后随访，避免盲目决策",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "在线咨询",
-            "desc": "了解基础诉求、禁忌事项和期望效果。",
-            "stage_tag": "咨询"
-          },
-          {
-            "icon": "02",
-            "title": "到店面诊",
-            "desc": "医生面诊评估，确认适合项目和恢复周期。",
-            "stage_tag": "面诊"
-          },
-          {
-            "icon": "03",
-            "title": "项目执行",
-            "desc": "按机构标准执行，关键事项提前告知。",
-            "stage_tag": "执行"
-          },
-          {
-            "icon": "04",
-            "title": "复诊随访",
-            "desc": "记录恢复状态，提醒护理和复诊时间。",
-            "stage_tag": "随访"
-          }
-        ],
-        "module_bg_color": "#fff1f2"
-      }
-    },
-    {
-      "type": "gallery",
-      "data": {
-        "gallery_title": "环境与服务场景",
-        "gallery_subtitle": "展示机构空间、咨询室和护理环境",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "enable_filter": "yes",
-        "filter_categories": "环境,咨询,护理",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80",
-            "title": "咨询空间",
-            "desc": "独立沟通",
-            "category": "咨询"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
-            "title": "护理环境",
-            "desc": "舒适安心",
-            "category": "护理"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
-            "title": "专业评估",
-            "desc": "医生面诊",
-            "category": "咨询"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "compliance_title": "合规信誉与安全体系",
+        "compliance_subtitle": "严格遵从国家及国际行业安全标准，筑牢信赖基石"
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约项目咨询",
-        "booking_subtitle": "提交意向项目、既往项目和期望时间，顾问会确认预约安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "咨询提醒",
-        "sidebar_content": "未成年人需监护人陪同\n请在表单里说明既往项目和禁忌情况\n项目适应性以医生面诊意见为准",
-        "contact_phone": "400-915-2026",
-        "contact_hours": "10:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.58",
-        "module_bg_color": "#fff1f2"
+        "booking_title": "预约主任级皮肤科专家面诊与数字化美学设计",
+        "booking_subtitle": "正品光电仪器联盟认证机构，医生首诊制，拒绝过度医疗与公式化推销。",
+        "booking_btn_text": "立即预约专属面诊",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "每日限额15位",
+        "booking_phone": "医美私享专线：400-666-8888",
+        "booking_time": "每日 09:00 - 18:30 专席接待"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#160c18",
+        "qfs_text_color": "#e2d5e6",
+        "qfs_heading_color": "#fbcfe8",
+        "qfs_accent_color": "#f43f5e",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "BEAUTY-CLINIC · 医疗级轻医美与面部年轻化抗衰中心",
+        "qfs_brand_desc": "严选正规持牌主诊医生与官方正品仪器耗材。拒绝过度医疗，坚持“千人千面、自然高级”的美学设计哲学。",
+        "qfs_link_groups": [
+          {
+            "title": "核心美学项目 & 正品与安全承诺",
+            "links": "超声泡/热玛吉抗衰中心|#\n胶原蛋白与玻尿酸美塑|#\n皮秒/超皮秒净肤嫩肤|#\n轻量级微整塑形设计|#\n一盒一码厂家正品验真|#\n执业医师信息公示与资质|#\n独立层流无菌操作手术室|#\n术后维养与全周期随访|#"
+          }
+        ],
+        "qfs_contact_title": "美学私享顾问",
+        "qfs_contact_items": "美丽热线|400-888-9920|tel:4008889920\n专属微信顾问|BEAUTY_VIP_CARE|#\n会馆地址|杭州市上城区湖滨银泰 in77 奢美空间 5 层|#",
+        "qfs_social_title": "关注轻美生活",
+        "qfs_social_links": "微信公众号|#\n小红书探店案例|#\n微博认证主页|#\n官方视频号|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 BEAUTY-CLINIC AESTHETICS. 保留所有权利 · 医疗美容主诊医师带教机构 · 扫码查验药品仪器正品",
+        "qfs_bottom_links": "医疗广告审查证明文号|#\n不良反应告知书|#\n隐私保护承诺|#\n术后护理指南|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

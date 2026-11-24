@@ -42,250 +42,319 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.58",
-        "db_title_prefix": "让货物流转更稳定可控",
-        "db_typing_mode": "loop",
-        "db_typing_text": "全国运输与城市配送\n仓储管理与订单履约\n供应链方案与节点追踪",
-        "db_highlight_color": "#38bdf8",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "面向品牌、工厂、渠道和电商客户，展示仓配运输能力和服务网络。",
-        "db_desc": "适合综合物流、仓配一体、冷链运输、跨境物流和供应链服务企业。",
-        "db_text_color": "rgba(248,250,252,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "速达物流",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "获取物流报价",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看服务网络",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #0369a1 50%, #047857 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "全球通达 · 驱动跨境出海供应链飞轮",
+        "bb_subtitle": "覆盖美欧东南亚核心自营海外仓 35万㎡，与马士基、以星建立一级战略合作，自营美森快船限时达，延误必赔",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
+          {
+            "text": "实时查询空海运舱位与最新运价",
+            "url": "#booking",
+            "style": "primary"
+          },
+          {
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
+          }
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "履约服务数据",
-        "stats_subtitle": "用网络、时效和稳定性建立合作信任",
-        "stats_text_align": "center",
+        "stats_title": "全球自营运力与仓储网络看板",
+        "stats_subtitle": "数字驱动全球物流每一个流转节点，货物动向全程 GPS 毫米级可视化",
         "stats_items": [
           {
-            "number": "80+",
-            "label": "服务城市",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "350,000㎡",
+            "label": "欧美核心枢纽自营海外仓"
           },
           {
-            "number": "25万㎡",
-            "label": "仓储面积",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.4%",
+            "label": "自营快船全程准时到港率"
           },
           {
-            "number": "98%",
-            "label": "准时履约率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "12小时",
+            "label": "自营海关清关行平均放行时效"
           },
           {
-            "number": "24h",
-            "label": "异常响应",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "180,000+",
+            "label": "年承运海运集装箱标箱 (TEU)"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #0284c7 52%, #059669 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "供应链服务能力",
-        "services_subtitle": "覆盖入库、仓储、运输、配送和售后逆向物流",
-        "services_bg_color": "#ffffff",
+        "services_title": "跨境全链路四大物流专线",
+        "services_subtitle": "从国内集货拼箱、干线空海运到目的地清关派送，全流程自有团队闭环",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "干线运输",
-            "desc": "跨城运输、整车零担和时效路由规划。",
-            "link": "#"
+            "icon": "fas fa-ship",
+            "title": "美欧自营海运快船与限时达",
+            "desc": "美森加班船/正班船保舱保柜，盐田定提快线，开船后 11 天靠港，延误按天赔付。"
           },
           {
-            "icon": "02",
-            "title": "仓配一体",
-            "desc": "入库、分拣、包装、出库和末端配送。",
-            "link": "#"
+            "icon": "fas fa-plane",
+            "title": "全球直飞空运大包专线",
+            "desc": "深圳/香港/郑州直飞欧美包机航线，固定包板保舱位，支持带电带磁敏感货双清。"
           },
           {
-            "icon": "03",
-            "title": "冷链服务",
-            "desc": "温控仓储、冷链运输和节点记录。",
-            "link": "#"
+            "icon": "fas fa-warehouse",
+            "title": "自营海外仓一件代发与退换标",
+            "desc": "美东美西五大中心仓，WMS 智能分仓就近极速发货，提供中转调拨与退货质检重新上架。"
           },
           {
-            "icon": "04",
-            "title": "逆向物流",
-            "desc": "退换货、质检、重入库和售后协同。",
-            "link": "#"
+            "icon": "fas fa-train",
+            "title": "中欧班列铁路与亚欧卡航",
+            "desc": "途经阿拉山口出境直达德国汉堡与杜伊斯堡，性价比高出空运 60%，时效比海运快 15 天。"
           }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "branches",
-      "data": {
-        "branches_title": "仓配网络节点",
-        "branches_subtitle": "展示核心仓、转运中心和服务覆盖城市",
-        "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "查看网点",
-        "booking_button_text": "咨询报价",
-        "branches_list": [
-          {
-            "name": "华东中心仓",
-            "city": "上海",
-            "status": "open",
-            "address": "上海市浦东新区示例园区",
-            "phone": "021-70000001",
-            "email": "sh@example.com",
-            "hours": "全天候运营",
-            "services": "仓配,干线,城配",
-            "transport": "近高速与港口",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "华南转运中心",
-            "city": "广州",
-            "status": "open",
-            "address": "广州市黄埔区示例路",
-            "phone": "020-70000002",
-            "email": "gz@example.com",
-            "hours": "全天候运营",
-            "services": "干线,分拨,跨境",
-            "transport": "近港口与机场",
-            "lat": "23.1291",
-            "lng": "113.2644",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "西南配送中心",
-            "city": "成都",
-            "status": "open",
-            "address": "成都市新都区示例大道",
-            "phone": "028-70000003",
-            "email": "cd@example.com",
-            "hours": "全天候运营",
-            "services": "仓储,城配,逆向",
-            "transport": "覆盖西南区域",
-            "lat": "30.5728",
-            "lng": "104.0668",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "合作交付流程",
-        "process_subtitle": "从需求评估到日常履约，关键节点清晰可追踪",
+        "process_title": "物流供应链官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "需求评估",
-            "desc": "确认货品类型、线路、体量、时效和服务边界。",
-            "stage_tag": "评估"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "方案报价",
-            "desc": "输出仓储、运输、配送和异常处理方案。",
-            "stage_tag": "报价"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "系统对接",
-            "desc": "完成订单、库存、轨迹和回单数据协同。",
-            "stage_tag": "对接"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "履约复盘",
-            "desc": "按周期复盘时效、成本、异常和改进建议。",
-            "stage_tag": "复盘"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "cases",
+      "type": "branches",
       "data": {
-        "cases_title": "行业服务案例",
-        "cases_subtitle": "用场景、节点和结果说明供应链服务价值",
-        "cases_columns": "3",
-        "cases_items": [
+        "branches_title": "全球核心仓储与物流枢纽网络",
+        "branches_subtitle": "自营海外仓均配备高标立体货架、自主可控 WMS 系统与华人管理团队",
+        "branches_columns": "3",
+        "branches_list": [
           {
-            "image": "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=900&q=80",
-            "title": "电商仓配一体项目",
-            "desc": "旺季订单分拣、出库和末端配送稳定履约。",
-            "link": "#"
+            "name": "美西洛杉矶 1 号超级枢纽仓",
+            "city": "美国 · 洛杉矶 (LAX)",
+            "status": "open",
+            "address": "15200 E Don Julian Rd, City of Industry, CA 91745, USA",
+            "phone": "+1 (626) 888-2930",
+            "email": "us-west@global-logistics.com",
+            "hours": "周一至周日 08:00 - 22:00 (PST)",
+            "services": "海运拆箱, 一件代发, 亚马逊卡派, 托盘中转",
+            "transport": "紧靠 60 号与 605 号州际高速公路，距长滩港仅 25 英里",
+            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80"
           },
           {
-            "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80",
-            "title": "冷链门店配送",
-            "desc": "温控运输和城市配送保障鲜品品质。",
-            "link": "#"
+            "name": "欧洲德国汉堡物流中枢仓",
+            "city": "德国 · 汉堡 (Hamburg)",
+            "status": "open",
+            "address": "Altenwerder Hauptstraße 11, 21129 Hamburg, Germany",
+            "phone": "+49 (40) 790-1288",
+            "email": "eu-de@global-logistics.com",
+            "hours": "周一至周五 08:30 - 18:30 (CET)",
+            "services": "欧盟清关, 中欧班列接卸, 泛欧全境派送, 退运返修",
+            "transport": "毗邻汉堡集装箱自动化码头 CTA，直连 A7 联邦高速",
+            "image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80"
           },
           {
-            "image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80",
-            "title": "工厂全国干线运输",
-            "desc": "多仓调拨、路由规划和异常响应协同。",
-            "link": "#"
+            "name": "中国深圳全球集货调度中心",
+            "city": "中国 · 深圳 (SZX)",
+            "status": "open",
+            "address": "深圳市宝安区福永街道福围跨境物流园 A 栋整栋",
+            "phone": "+86 (755) 2888-6699",
+            "email": "sz-hub@global-logistics.com",
+            "hours": "全天候 24 小时不打烊收货验货",
+            "services": "上门提货, 自动化分拣, 贴标打托, 报关单证制作",
+            "transport": "距深圳宝安国际机场货站仅 3 公里，距盐田港 45 分钟车程",
+            "image": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=80"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "cert_title": "国际物流行业高级资质认证",
+        "cert_subtitle": "持有国际权威海陆空物流许可，确保货物通关顺畅无阻",
+        "cert_columns": "4",
+        "cert_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "海关 AEO 高级认证企业 (AEO Tier 1)",
+            "desc": "享受全球海关互认绿色通关通道，查验率降低 80%"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "WCA 世界货物运输联盟高级会员",
+            "desc": "全球最大货运代理人联盟全球信誉保函保障"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "IATA 国际航空运输协会一类资质",
+            "desc": "各大国际航司直接订舱代理权，旺季包板锁舱位"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "美国 FMC 联邦海事委员会 NVOCC 无船承运人",
+            "desc": "拥有自主提单出单资格与美线海运直接约价特权"
+          }
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "获取物流方案报价",
-        "contact_subtitle": "提交货品类型、发货地、目的地、月均体量和时效要求，顾问会评估合作方案。",
-        "contact_phone": "400-808-2026",
-        "contact_email": "logistics@example.com",
-        "contact_address": "全国多仓协同 / 支持远程沟通",
+        "contact_title": "商务洽谈与 物流供应链官网 采购询盘",
+        "contact_subtitle": "欢迎索取详细产品型录、工程图纸或申请免费样品试用，商务工程师 2 小时内响应。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交询盘采购单 (RFQ)"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#09121d",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "SPEED-LOGISTICS · 现代智慧物流与全球冷链供应链",
+        "qfs_brand_desc": "覆盖全国的高标准自动化立体仓储、冷链专线快运与干线整车集约运输平台。依托自研 TMS/WMS 智慧路由调度系统，为生鲜零售、医药与精密制造提供准时达保障。",
+        "qfs_link_groups": [
+          {
+            "title": "物流运输服务 & 仓储与数字化",
+            "links": "智能温控冷链干线直达|#\n多式联运大宗货物班列|#\n城市末端网点高频配送|#\n保税仓一件代发与跨境集货|#\n全国核心枢纽云仓租赁|#\nWMS 仓储库存实时看板|#\n货物在途 GPS 轨迹温湿度追踪|#\n大宗承运协议与月结授信申请|#"
+          }
+        ],
+        "qfs_contact_title": "货运下单与大客户签约",
+        "qfs_contact_items": "调度专线|400-880-9988|tel:4008809988\n大客户部|021-6899-7711|tel:02168997711\n调度中心|24小时发车调度与实时在途客服|#\n物流总部|上海市青浦区华新现代物流产业基地 58 号|#",
+        "qfs_social_title": "智慧供应链",
+        "qfs_social_links": "物流运单实时查|#\n车队调度小程序|#\n冷链运力大厅|#\n行业物流内参|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 SPEED-LOGISTICS SUPPLY CHAIN CO. 保留所有权利 · 沪ICP备18042188号 · 道路运输经营许可证",
+        "qfs_bottom_links": "货物保价赔偿标准|#\n承运禁运品名录|#\n服务协议与责任限度|#\n全国分拨网点一览|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

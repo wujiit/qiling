@@ -42,205 +42,197 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #450a0a 0%, #991b1b 50%, #ea580c 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "狂欢特惠",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1800&q=80",
-            "title": "限时会场，爆款直降",
-            "subtitle": "精选好物、满减叠加、限量秒杀，适合品牌大促和专题售卖。",
-            "btn_text": "立即抢购",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#dc2626"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "热销爆款",
+            "link": "#qiling_shop_hero_spotlight",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#promotion",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "限时特惠",
+            "link": "#countdown",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "商品矩阵",
+            "link": "#qiling_shop_grid",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "精选好物",
+            "link": "#qiling_shop_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "1200",
-            "number": "1200+",
-            "label": "活动商品",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "60",
-            "number": "60%",
-            "label": "最高直降",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "24",
-            "number": "24h",
-            "label": "限时抢购",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "0",
-            "number": "包邮",
-            "label": "指定专区",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "选购新品",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "products",
+      "type": "qiling_shop_hero_spotlight",
       "data": {
-        "products_title": "爆款商品专区",
-        "products_subtitle": "可替换为真实商品、优惠价和购买链接",
-        "columns": "4",
-        "modal_inquire_text": "立即购买",
-        "modal_inquire_url": "#",
-        "items": [
-          {
-            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
-            "title": "旗舰耳机 Pro",
-            "desc": "主动降噪与长续航",
-            "specs": "活动价：¥799\n原价：¥1299\n限时立减500",
-            "post_id": "",
-            "btn_text": "立即购买"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
-            "title": "智能手表 X",
-            "desc": "健康监测与 NFC",
-            "specs": "活动价：¥999\n赠送表带\n爆款 5 折起",
-            "post_id": "",
-            "btn_text": "立即购买"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
-            "title": "轻薄笔记本 Air",
-            "desc": "轻办公与高效续航",
-            "specs": "活动价：¥4699\n16GB 内存\n券后再减300",
-            "post_id": "",
-            "btn_text": "立即购买"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
-            "title": "运动鞋新品",
-            "desc": "轻量缓震与日常百搭",
-            "specs": "活动价：¥399\n第二件 8 折\n会员包邮",
-            "post_id": "",
-            "btn_text": "立即购买"
-          }
-        ],
-        "module_bg_color": "#ffffff",
-        "modal_inquire_btn_bg_color": "#dc2626",
-        "modal_inquire_btn_text_color": "#ffffff"
+        "qsh_bg_theme": "dark",
+        "qsh_badge_text": "年度年度旗舰特惠 · 限时首发直降",
+        "qsh_title": "极客旗舰降噪耳机 Pro Max · 沉浸纯粹原音",
+        "qsh_subtitle": "自研双核降噪芯片，48dB 深度主动降噪，40小时超长续航。限时首发领券立减300元。",
+        "qsh_price_override": "¥1,299",
+        "qsh_spec_1_val": "48dB 旗舰降噪",
+        "qsh_spec_2_val": "40h 超长续航",
+        "qsh_btn_primary_text": "立即领券购买",
+        "qsh_btn_primary_url": "#shop-grid",
+        "qsh_btn_secondary_text": "查看黑科技参数",
+        "qsh_btn_secondary_url": "#specs"
       }
     },
     {
-      "type": "features",
+      "type": "promotion",
       "data": {
-        "features_title": "活动权益",
-        "features_subtitle": "把优惠规则讲清楚，减少用户犹豫",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "限时直降",
-            "desc": "核心商品直接降价，价格信息清晰可见。"
-          },
-          {
-            "icon": "02",
-            "title": "满减叠加",
-            "desc": "跨品类满减、券包和会员权益可组合。"
-          },
-          {
-            "icon": "03",
-            "title": "快速发货",
-            "desc": "指定城市和仓库支持更快履约时效。"
-          },
-          {
-            "icon": "04",
-            "title": "售后无忧",
-            "desc": "活动商品同样支持退换和客服咨询。"
-          }
-        ],
-        "module_bg_color": "#fff1f2"
+        "ql_promo_title": "年中狂欢大促 · 爆款限时直降 5 折起",
+        "ql_promo_subtitle": "全场正品保价，满 300 减 50，叠加店铺无门槛红包，距离特惠结束仅剩：",
+        "ql_promo_show_countdown": "1",
+        "ql_promo_end_date": "2026-12-31",
+        "ql_promo_end_time": "23:59:59",
+        "ql_promo_layout": "banner"
+      }
+    },
+    {
+      "type": "countdown",
+      "data": {
+        "countdown_title": "新品发售倒计时 · 抢先锁定首批限量席位",
+        "countdown_subtitle": "前 500 名下单用户赠送价值 299 元定制收纳礼盒与延保一年服务",
+        "countdown_desc": "倒计时结束即刻恢复官方建议零售价 ¥1,599"
+      }
+    },
+    {
+      "type": "qiling_shop_grid",
+      "data": {
+        "qsg_title": "大促专区热卖爆款 · 精选好物分类直达",
+        "qsg_subtitle": "根据您的使用场景精挑细选，品质与口碑双重护航",
+        "qsg_columns": "4",
+        "qsg_show_tabs": "yes",
+        "qsg_limit": 8,
+        "qsg_show_badge": "yes"
+      }
+    },
+    {
+      "type": "qiling_shop_showcase",
+      "data": {
+        "qss_title": "口碑好物横向轮播 · 闭眼入人气榜单",
+        "qss_subtitle": "真实买家好评率 99.2% 以上的高复购率单品集锦",
+        "qss_limit": 6,
+        "qss_show_cart": "yes",
+        "qss_show_badge": "yes",
+        "qss_hover_image": "yes"
       }
     },
     {
       "type": "testimonials",
       "data": {
-        "testimonials_title": "买家反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "32,000+",
-        "average_rating": "4.8",
-        "testimonials_items": [
+        "testimonials_title": "千万真实买家口碑证言 · 听听他们的真实体验",
+        "testimonials_subtitle": "只收录真实成交用户的客观开箱与长期使用体验。",
+        "columns": "3",
+        "testimonials": [
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "小周",
-            "position": "会员用户",
-            "content": "活动价格清楚，凑单规则也比较好理解。",
-            "rating": "5",
-            "verified": "verified"
+            "name": "林晨",
+            "title": "资深数码发烧友",
+            "comment": "降噪效果超出预期，在高铁和飞机上戴上瞬间全世界安静了。音质层次丰富，低频下潜非常扎实。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "阿杰",
-            "position": "数码买家",
-            "content": "抢到耳机和手表，页面里的优惠入口很直接。",
-            "rating": "5",
-            "verified": "verified"
+            "name": "张婉晴",
+            "title": "时尚穿搭博主",
+            "comment": "外观设计非常高级，磨砂质感完全不输两千多的国际大牌，拍照佩戴出片率极高，大促价格太香了！"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "Lily",
-            "position": "零售用户",
-            "content": "商品图和卖点展示比较完整，适合活动专题。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ],
-        "testimonials_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "活动常见问题",
-        "module_bg_color": "#fff1f2",
-        "faq_items": [
-          {
-            "question": "活动商品能换成真实商品吗？",
-            "answer": "可以，商品图片、价格、规格和按钮都可以在装修器中替换。"
-          },
-          {
-            "question": "能不能用于新品发布？",
-            "answer": "可以，把大促文案调整为新品卖点、首发权益和预约购买即可。"
-          },
-          {
-            "question": "是否能接商城链接？",
-            "answer": "可以，按钮链接可填写站内商品页、外部商城或表单入口。"
+            "name": "陈志远",
+            "title": "软件研发工程师",
+            "comment": "佩戴一整天完全不夹头，耳罩亲肤透气，双设备无缝切换极其顺畅，办公利器！"
           }
         ]
       }
     },
     {
-      "type": "cta",
+      "type": "footer_suite",
       "data": {
-        "cta_title": "把活动流量导向成交",
-        "cta_subtitle": "一屏说明权益，一屏展示商品，一键进入购买路径。",
-        "cta_button_text": "进入活动会场",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #450a0a 0%, #991b1b 55%, #ea580c 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#ea580c",
-        "cta_button_text_color": "#ffffff"
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090b10",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_brand_title": "FLASH-BUY · 品牌官方特惠商城",
+        "qfs_brand_desc": "全场正品行货，顺丰闪电直达，7天无理由退换，30天价保承诺。让品质好物触手可及。",
+        "qfs_link_groups": [
+          {
+            "title": "购物指南与售后保障",
+            "links": "正品查询验证|#\n配送方式与时效|#\n7天无忧退换货|#\n30天价格保护政策|#"
+          }
+        ],
+        "qfs_contact_title": "官方客服热线",
+        "qfs_contact_items": "客服专线|400-888-9999|tel:4008889999\n服务时间|7x24小时全天候在线|#\n售后邮箱|support@flashbuy.com|mailto:support@flashbuy.com",
+        "qfs_bottom_text": "© 2026 FLASH-BUY MALL. 版权所有 · 正品保障 · 浙ICP备20240988号"
       }
     }
   ]

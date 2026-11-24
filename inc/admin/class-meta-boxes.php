@@ -185,6 +185,7 @@ class Meta_Boxes {
             'tabbed_carousel',
             'brand_banner_pro',
             'resource_hero_pro',
+            'header_suite',
             'footer_suite',
         );
 

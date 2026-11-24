@@ -42,217 +42,218 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.58",
-        "db_title_prefix": "让品牌传播更有结果",
-        "db_typing_mode": "loop",
-        "db_typing_text": "品牌战略咨询与定位升级\n整合营销传播与内容增长\n公关声量管理与口碑运营",
-        "db_highlight_color": "#a5b4fc",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "帮助品牌在竞争市场中获得持续关注、有效转化和长期资产沉淀。",
-        "db_desc": "适合营销、公关、品牌咨询和企业服务团队，用于展示服务、案例、流程和咨询入口。",
-        "db_text_color": "rgba(226,232,240,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "合信公关",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "预约策略沟通",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看项目案例",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#clients",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #090d1a 0%, #312e81 50%, #0369a1 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#c026d3",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#c026d3",
+        "qhs_hover_bg": "rgba(192,38,211,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "interact_hero",
+      "data": {
+        "hero_badge": "BRAND STRATEGY & GLOBAL PR",
+        "hero_title_content": "合信公关 · 数字时代的全整合品牌声誉与影响力传播中枢",
+        "hero_subtitle_content": "深度洞察商业趋势与大众情绪，打造现象级事件营销，重塑品牌在主流公众心智中的信任基石。",
+        "btn_primary_content": "查看年度现象级案例",
+        "btn_primary_link": "#cases",
+        "btn_secondary_content": "定制企业公关方案",
+        "btn_secondary_link": "#contact",
+        "media_type": "image",
+        "hero_image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
+        "enable_float_anim": "yes"
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "核心服务模块",
-        "services_subtitle": "覆盖战略、传播、执行到复盘的全链路营销服务",
-        "services_bg_color": "#ffffff",
+        "services_title": "全周期品牌心智占领与增长服务矩阵",
+        "services_subtitle": "从顶层战略顶层设计到底层内容执行，全链条无缝闭环操盘",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "品牌战略咨询",
-            "desc": "定位诊断、竞品分析与年度增长路线规划。",
-            "link": "#"
+            "icon": "target",
+            "title": "品牌战略定位与超级符号",
+            "desc": "精准提炼品牌核心购买理由，打造一眼辨识的品牌超级符号与战略话语体系"
           },
           {
-            "icon": "02",
-            "title": "整合营销传播",
-            "desc": "多平台协同传播，提升曝光、互动与线索转化。",
-            "link": "#"
+            "icon": "trending-up",
+            "title": "小红书/抖音全域种草矩阵",
+            "desc": "人群资产精准洞察、KOL/KOC分层科学采买与爆款内容模型沉淀，实现确定性转化"
           },
           {
-            "icon": "03",
-            "title": "内容创意制作",
-            "desc": "品牌内容策划、素材制作与传播节奏设计。",
-            "link": "#"
+            "icon": "sparkles",
+            "title": "现象级跨界联名大事件",
+            "desc": "跨行业 IP 资源强强联合、快闪艺术展与全网热搜话题策划，打造破圈社交货币"
           },
           {
-            "icon": "04",
-            "title": "公关传播管理",
-            "desc": "媒体关系维护、议题策划与舆情响应机制。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "项目合作流程",
-        "process_subtitle": "从诊断到复盘，减少沟通损耗和交付不确定性",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "业务诊断",
-            "desc": "梳理品牌现状、目标用户、渠道表现和增长瓶颈。",
-            "stage_tag": "诊断"
-          },
-          {
-            "icon": "02",
-            "title": "策略共创",
-            "desc": "明确传播主题、内容结构、渠道节奏和转化路径。",
-            "stage_tag": "策略"
-          },
-          {
-            "icon": "03",
-            "title": "执行落地",
-            "desc": "完成内容制作、投放协同、公关传播和活动执行。",
-            "stage_tag": "执行"
-          },
-          {
-            "icon": "04",
-            "title": "复盘优化",
-            "desc": "按数据和业务反馈调整下一阶段方案。",
-            "stage_tag": "复盘"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "代表项目案例",
-        "cases_subtitle": "用行业、目标、动作和结果说明服务价值",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
-            "title": "新消费品牌上市传播",
-            "desc": "围绕新品定位、内容种草和首发活动建立声量。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-            "title": "B2B 线索增长项目",
-            "desc": "搭建内容漏斗、投放路径和销售跟进素材。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80",
-            "title": "品牌年度传播规划",
-            "desc": "完成年度议题、内容资产和节点活动规划。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "clients",
-      "data": {
-        "clients_title": "服务客户类型",
-        "clients_columns": "4",
-        "clients_show_name": "1",
-        "clients_items": [
-          {
-            "name": "新消费品牌",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "企业服务",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "连锁门店",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "科技产品",
-            "logo": "",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "客户反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "260+",
-        "average_rating": "4.9",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "品牌负责人",
-            "position": "消费品牌",
-            "content": "策略、内容和活动能连起来，执行节奏比较稳定。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "市场总监",
-            "position": "企业服务",
-            "content": "线索质量和销售跟进素材都有明显改善。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "创始人",
-            "position": "初创公司",
-            "content": "品牌表达更清楚，内容选题也更容易持续输出。",
-            "rating": "5",
-            "verified": "verified"
+            "icon": "shield-alert",
+            "title": "企业声誉管理与危机公关",
+            "desc": "7x24 小时全网舆情监控预警、极速黄金 4 小时公关应对方案与媒体沟通阻断"
           }
         ]
       }
     },
     {
+      "type": "cases",
+      "data": {
+        "cases_title": "年度行业破圈操盘标杆经典战例",
+        "cases_subtitle": "斩获大中华区艾菲奖、金投赏与中国公关金旗奖全场大奖的实操操盘",
+        "cases_columns": "4",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=400&q=80",
+            "title": "新锐东方轻养生茶饮从 0 到 10 亿突破战",
+            "desc": "通过小红书高净值白领心智种草与全网联名，单季度线上线下销量暴涨 12 倍",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80",
+            "title": "硬科技清洁机器人品牌海外跨文化破圈营销",
+            "desc": "联合 20 位顶尖科技科技 YouTuber 深度实测，登顶美欧亚马逊同品类销量第一",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
+            "title": "某知名上市车企突发舆情危机公关 24h 逆转",
+            "desc": "敏锐洞察公众核心痛点，真诚透明回应与事实溯源，成功阻断恶意舆论发酵",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80",
+            "title": "B2B 工业软件独角兽品牌重塑与高端峰会引爆",
+            "desc": "打破传统工业严肃刻板印象，以未来极简美学吸引数百位跨国企业 CIO 现场参会",
+            "link": "#case-detail"
+          }
+        ]
+      }
+    },
+    {
+      "type": "clients",
+      "data": {}
+    },
+    {
+      "type": "team",
+      "data": {}
+    },
+    {
       "type": "contact",
       "data": {
-        "contact_title": "预约策略沟通",
-        "contact_subtitle": "提交品牌阶段、业务目标、预算范围和上线时间，我们会判断适合的合作方式。",
-        "contact_phone": "400-600-2026",
-        "contact_email": "strategy@example.com",
-        "contact_address": "支持远程沟通 / 可预约线下会议",
+        "contact_title": "与 营销公关机构官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#120818",
+        "qfs_text_color": "#d8b4fe",
+        "qfs_heading_color": "#fdf4ff",
+        "qfs_accent_color": "#c026d3",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "IMPACT-PR · 全整合数字营销、事件公关与品牌声誉传播机构",
+        "qfs_brand_desc": "让品牌声音掷地有声。深耕科技、快消与出海品牌，提供年度公关战略、社交裂变事件策划、危机公关应对与全球主流媒体发布。",
+        "qfs_link_groups": [
+          {
+            "title": "整合公关业务与创意与制作",
+            "links": "品牌战略定位与年度公关全案|#\n全网爆款破圈事件策划营销|#\n企业危机公关与舆情声誉管理|#\n全球 200+ 权威主流媒体分发|#\n品牌 TVC 与院线级宣传片制作|#\n视觉识别系统 (VI) 与包装升级|#\n大型全球新品发布会策划承办|#\n国际公关大奖入选案例作品库|#"
+          }
+        ],
+        "qfs_contact_title": "品牌合作通道",
+        "qfs_contact_items": "商务热线|400-888-2028|tel:4008882028\n比稿对接|pitch@impact-pr.com|mailto:pitch@impact-pr.com\n创意办公室|北京市朝阳区三里屯太古里北区红馆 4 层|#",
+        "qfs_social_title": "关注创意前沿",
+        "qfs_social_links": "微信公众号|#\n小红书营销干货|#\n数英网专栏|#\n广告门主页|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 IMPACT-PR CREATIVE GROUP. 保留所有权利 · 中国公共关系行业协会常务理事单位",
+        "qfs_bottom_links": "案例商用授权声明|#\n商业保密准则|#\n隐私政策|#\n关于我们|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

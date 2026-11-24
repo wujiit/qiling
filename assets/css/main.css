@@ -2267,15 +2267,136 @@ textarea {
     left: 0;
     right: 0;
     width: 100%;
-    background: var(--qiling-header-transparent-bg, var(--qiling-color-transparent));
+    background: var(--qiling-header-transparent-bg, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: none;
     margin-bottom: 0;
+    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.has-transparent-header-manual .site-header.header-transparent:not(.header-scrolled) {
-    --qiling-header-transparent-bg: transparent;
-    background: transparent !important;
-    box-shadow: none !important;
+/* 首页透明头部：自适应背景色与高对比度文字 */
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled),
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) {
+    background: var(--qiling-header-transparent-bg, linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.65) 65%, transparent 100%));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: none;
+}
+
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .site-title a,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .site-branding a,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .header-actions a,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .primary-navigation > ul > li > a,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .site-title a,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .site-branding a,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .header-actions a,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .search-toggle,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .translate-toggle,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .darkmode-toggle,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .mobile-menu-toggle {
+    color: var(--qiling-header-transparent-text, #0f172a);
+    text-shadow: none;
+}
+
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .search-toggle svg,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .translate-toggle svg,
+body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle svg,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .search-toggle svg,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .translate-toggle svg,
+.site-header.header-transparent.header-tone-light:not(.header-scrolled) .darkmode-toggle svg {
+    color: var(--qiling-header-transparent-text, #0f172a);
+}
+
+/* 深色模式：浅色调透明头部强制反转为高对比度白光文字与图标 */
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .site-title a,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .site-branding a,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .header-actions,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .header-actions a,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .primary-navigation > ul > li > a,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .site-title a,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .site-branding a,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .header-actions,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .header-actions a,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .search-toggle,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .translate-toggle,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .darkmode-toggle,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .mobile-menu-toggle,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .site-title a,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .site-branding a,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .header-actions,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .header-actions a,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .primary-navigation > ul > li > a,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .site-title a,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .site-branding a,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .header-actions,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .header-actions a,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .search-toggle,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .translate-toggle,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .darkmode-toggle,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .mobile-menu-toggle,
+body.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+body.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .primary-navigation > ul > li > a {
+    color: var(--dm-text, #f1f5f9) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .search-toggle svg,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .translate-toggle svg,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle svg,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .search-toggle svg,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .translate-toggle svg,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .darkmode-toggle svg,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .search-toggle svg,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .translate-toggle svg,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle svg,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .search-toggle svg,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .translate-toggle svg,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .darkmode-toggle svg {
+    color: var(--dm-text, #f1f5f9) !important;
+}
+
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled),
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) {
+    background: var(--qiling-header-transparent-bg, linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.35) 65%, transparent 100%));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: none;
+}
+
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .site-title a,
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .site-branding a,
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .header-actions a,
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+body.header-tone-dark .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .primary-navigation > ul > li > a,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .site-title a,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .site-branding a,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .header-actions a,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .search-toggle,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .translate-toggle,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .darkmode-toggle,
+.site-header.header-transparent.header-tone-dark:not(.header-scrolled) .mobile-menu-toggle {
+    color: var(--qiling-header-transparent-text, #ffffff);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75), 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* 透明头部 + 首模块为首屏模块：去掉模板外层默认 section-padding，确保首屏媒体贴在菜单下层。 */
@@ -2343,6 +2464,28 @@ body.has-transparent-header[class*="header-tone-"] .site-header.header-transpare
 body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
 body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle {
     color: var(--qiling-header-transparent-text) !important;
+}
+
+html.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+html.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .header-actions,
+html.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+html.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+html.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+html.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle,
+[data-theme="dark"] body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+[data-theme="dark"] body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .header-actions,
+[data-theme="dark"] body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+[data-theme="dark"] body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+[data-theme="dark"] body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+[data-theme="dark"] body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle,
+body.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+body.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .header-actions,
+body.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .search-toggle,
+body.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .translate-toggle,
+body.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .darkmode-toggle,
+body.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .mobile-menu-toggle {
+    color: var(--dm-text, #f1f5f9) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
 }
 
 body:not(.home) .site-header:not(.header-transparent),
@@ -5607,18 +5750,33 @@ html {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-html.dark-mode {
-    --dm-bg: var(--color-neutral-900);
-    --dm-bg-secondary: var(--color-neutral-800);
-    --dm-bg-card: var(--color-neutral-800);
-    --dm-text: var(--color-neutral-200);
-    --dm-text-muted: var(--color-neutral-400);
-    --dm-border: var(--color-neutral-700);
+html.dark-mode,
+[data-theme="dark"] {
+    --dm-bg: var(--color-neutral-900, #0b0f19);
+    --dm-bg-secondary: var(--color-neutral-800, #131b2e);
+    --dm-bg-card: var(--color-neutral-800, #1e293b);
+    --dm-text: var(--color-neutral-200, #cbd5e1);
+    --dm-text-muted: var(--color-neutral-400, #94a3b8);
+    --dm-border: var(--color-neutral-700, rgba(255, 255, 255, 0.08));
+    --color-neutral-0: #1e293b;
+    --color-neutral-50: #0b0f19;
+    --color-neutral-100: #131b2e;
+    --color-neutral-200: #1e293b;
+    --color-neutral-300: #334155;
+    --qiling-component-card-bg: #1e293b;
+    --qiling-component-card-bg-dark: #1e293b;
+    --qiling-component-card-border: rgba(255, 255, 255, 0.08);
+    --qiling-component-card-border-dark: rgba(255, 255, 255, 0.08);
+    --qiling-component-post-card-bg: #1e293b;
+    --qiling-component-post-card-bg-dark: #1e293b;
+    --qiling-component-post-card-border: rgba(255, 255, 255, 0.08);
+    --qiling-component-post-card-border-dark: rgba(255, 255, 255, 0.08);
 }
 
-html.dark-mode body {
-    background-color: var(--dm-bg);
-    color: var(--dm-text);
+html.dark-mode body,
+[data-theme="dark"] body {
+    background-color: var(--dm-bg, #0b0f19);
+    color: var(--dm-text, #cbd5e1);
 }
 
 html.qiling-theme-transitioning,
@@ -5673,6 +5831,29 @@ html.dark-mode.qiling-dark-image-dim .qiling-poster-preview img {
     }
 }
 
+/* 头部深色模式全局变量重置（强制覆写内联与页面级深色字变量） */
+html.dark-mode #masthead,
+[data-theme="dark"] #masthead,
+html.dark-mode .site-header,
+[data-theme="dark"] .site-header,
+body.dark-mode #masthead,
+body.dark-mode .site-header {
+    --qiling-header-transparent-text: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-transparent-nav-link: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-text: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-nav-link: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-scrolled-text: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-scrolled-nav-link: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-nav-current: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-text-current: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-nav-hover-current: var(--qiling-primary, #38bdf8) !important;
+    --qiling-header-phone-transparent-text: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-search-transparent-text: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-search-transparent-icon: var(--dm-text, #f1f5f9) !important;
+    --qiling-header-phone-transparent-bg: rgba(255, 255, 255, 0.08) !important;
+    --qiling-header-search-transparent-bg: rgba(255, 255, 255, 0.08) !important;
+}
+
 /* 头部 */
 html.dark-mode .site-header {
     background: var(--dm-bg-secondary) !important;
@@ -5688,17 +5869,41 @@ html.dark-mode .site-header.header-scrolled {
 }
 
 html.dark-mode .primary-navigation>ul>li>a,
+html.dark-mode .site-header .primary-navigation>ul>li>a,
+[data-theme="dark"] .primary-navigation>ul>li>a,
+[data-theme="dark"] .site-header .primary-navigation>ul>li>a,
+body.dark-mode .primary-navigation>ul>li>a,
+body.dark-mode .site-header .primary-navigation>ul>li>a,
 html.dark-mode .site-title-link,
 html.dark-mode .search-toggle,
 html.dark-mode .darkmode-toggle {
-    color: var(--dm-text);
+    color: var(--dm-text, #f1f5f9) !important;
 }
 
+/* 首页透明头部/独立配置/浅色调/各种组合在深色模式下的菜单文字终极覆盖 */
 html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a,
-[data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a {
-    color: var(--qiling-header-nav-current, var(--qiling-header-transparent-nav-link, var(--color-text-inverse))) !important;
+[data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a,
+body.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a,
+html.dark-mode body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+[data-theme="dark"] body.header-tone-light .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+html.dark-mode body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+[data-theme="dark"] body.has-transparent-header[class*="header-tone-"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation > ul > li > a,
+html.dark-mode .site-header.header-transparent.header-tone-light:not(.header-scrolled) .primary-navigation > ul > li > a,
+[data-theme="dark"] .site-header.header-transparent.header-tone-light:not(.header-scrolled) .primary-navigation > ul > li > a,
+html.dark-mode .site-header.header-transparent.header-tone-dark:not(.header-scrolled) .primary-navigation > ul > li > a,
+[data-theme="dark"] .site-header.header-transparent.header-tone-dark:not(.header-scrolled) .primary-navigation > ul > li > a {
+    color: var(--dm-text, #f1f5f9) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
 }
 
+html.dark-mode .site-header .primary-navigation>ul>li>a:hover,
+html.dark-mode .site-header .primary-navigation>ul>li>a:focus-visible,
+html.dark-mode .site-header .primary-navigation>ul>li.current-menu-item>a,
+html.dark-mode .site-header .primary-navigation>ul>li.current-menu-ancestor>a,
+html.dark-mode .site-header .primary-navigation>ul>li.current-menu-parent>a,
+html.dark-mode .site-header .primary-navigation>ul>li.current_page_item>a,
+html.dark-mode .site-header .primary-navigation>ul>li.current_page_parent>a,
+html.dark-mode .site-header .primary-navigation>ul>li.current_page_ancestor>a,
 html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a:hover,
 html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a:focus-visible,
 html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current-menu-item>a,
@@ -5707,6 +5912,14 @@ html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-na
 html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current_page_item>a,
 html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current_page_parent>a,
 html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current_page_ancestor>a,
+[data-theme="dark"] .site-header .primary-navigation>ul>li>a:hover,
+[data-theme="dark"] .site-header .primary-navigation>ul>li>a:focus-visible,
+[data-theme="dark"] .site-header .primary-navigation>ul>li.current-menu-item>a,
+[data-theme="dark"] .site-header .primary-navigation>ul>li.current-menu-ancestor>a,
+[data-theme="dark"] .site-header .primary-navigation>ul>li.current-menu-parent>a,
+[data-theme="dark"] .site-header .primary-navigation>ul>li.current_page_item>a,
+[data-theme="dark"] .site-header .primary-navigation>ul>li.current_page_parent>a,
+[data-theme="dark"] .site-header .primary-navigation>ul>li.current_page_ancestor>a,
 [data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a:hover,
 [data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li>a:focus-visible,
 [data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current-menu-item>a,
@@ -5715,7 +5928,46 @@ html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-na
 [data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current_page_item>a,
 [data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current_page_parent>a,
 [data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation>ul>li.current_page_ancestor>a {
-    color: var(--qiling-header-nav-hover-current, var(--qiling-header-nav-current, var(--color-text-inverse))) !important;
+    color: var(--qiling-primary, #38bdf8) !important;
+}
+
+/* 简洁下划线导航菜单在深色模式下的指示器颜色 */
+html.dark-mode .primary-navigation>ul>li>a::before,
+[data-theme="dark"] .primary-navigation>ul>li>a::before,
+body.dark-mode .primary-navigation>ul>li>a::before {
+    background-color: var(--qiling-primary, #38bdf8) !important;
+}
+
+/* 深色模式下的透明头部下拉子菜单 */
+html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation .sub-menu,
+[data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation .sub-menu {
+    background: var(--dm-bg-card, #1e293b) !important;
+    border: 1px solid var(--dm-border, rgba(255, 255, 255, 0.1)) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation .sub-menu li a,
+[data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation .sub-menu li a {
+    color: var(--dm-text-secondary, #cbd5e1) !important;
+}
+
+html.dark-mode .site-header.header-transparent:not(.header-scrolled) .primary-navigation .sub-menu li a:hover,
+[data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .primary-navigation .sub-menu li a:hover {
+    color: var(--qiling-primary, #38bdf8) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* 深色模式下透明头部的搜索框与电话入口 */
+html.dark-mode .site-header.header-transparent:not(.header-scrolled) .header-search-form-inline,
+[data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .header-search-form-inline {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-mode .site-header.header-transparent:not(.header-scrolled) .header-phone-link,
+[data-theme="dark"] .site-header.header-transparent:not(.header-scrolled) .header-phone-link {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #f1f5f9 !important;
 }
 
 html.dark-mode .header-search-mode-form .header-search-form-inline {
@@ -5861,32 +6113,86 @@ html.dark-mode .dropdown-divider {
     background: var(--dm-border);
 }
 
-/* 主内容 */
+/* 主内容与自定义装修模块全量适配 */
 html.dark-mode .site-main,
+[data-theme="dark"] .site-main,
 html.dark-mode .page-content,
-html.dark-mode .account-page {
-    background: var(--dm-bg);
+[data-theme="dark"] .page-content,
+html.dark-mode .account-page,
+[data-theme="dark"] .account-page,
+html.dark-mode .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+[data-theme="dark"] .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper) {
+    background: var(--dm-bg, #0b0f19) !important;
+    background-color: var(--dm-bg, #0b0f19) !important;
+    color: var(--dm-text, #cbd5e1) !important;
 }
 
-/* 卡片与板块 */
-html.dark-mode .about-intro,
-html.dark-mode .about-tabs-wrapper,
-html.dark-mode .account-section,
-html.dark-mode .account-nav,
-html.dark-mode .about-culture-card,
-html.dark-mode .about-gallery-item,
-html.dark-mode .team-member,
-html.dark-mode .timeline-content,
-html.dark-mode .news-card,
-html.dark-mode .product-card,
-html.dark-mode .case-card,
-html.dark-mode .faq-item,
-html.dark-mode .pricing-card,
-html.dark-mode .module-services .service-item,
-html.dark-mode .module-features .feature-item,
-html.dark-mode .module-contact form {
-    background: var(--dm-bg-card) !important;
-    color: var(--dm-text);
+/* 卡片与板块在暗黑模式下的表面质感 */
+html.dark-mode :is(
+    .about-intro,
+    .about-tabs-wrapper,
+    .account-section,
+    .account-nav,
+    .about-culture-card,
+    .about-gallery-item,
+    .team-member,
+    .timeline-content,
+    .news-card,
+    .product-card,
+    .case-card,
+    .faq-item,
+    .pricing-card,
+    .lookbook-card,
+    .branch-card,
+    .pm-card,
+    .feature-card,
+    .feature-item,
+    .service-card,
+    .service-item,
+    .testimonial-card,
+    .ql-testimonial-summary,
+    .qfs-qr-card,
+    .booking-card,
+    .ql-hotel-booking-form-box,
+    .module-services .service-item,
+    .module-features .feature-item,
+    .module-contact form
+),
+[data-theme="dark"] :is(
+    .about-intro,
+    .about-tabs-wrapper,
+    .account-section,
+    .account-nav,
+    .about-culture-card,
+    .about-gallery-item,
+    .team-member,
+    .timeline-content,
+    .news-card,
+    .product-card,
+    .case-card,
+    .faq-item,
+    .pricing-card,
+    .lookbook-card,
+    .branch-card,
+    .pm-card,
+    .feature-card,
+    .feature-item,
+    .service-card,
+    .service-item,
+    .testimonial-card,
+    .ql-testimonial-summary,
+    .qfs-qr-card,
+    .booking-card,
+    .ql-hotel-booking-form-box,
+    .module-services .service-item,
+    .module-features .feature-item,
+    .module-contact form
+) {
+    background: var(--dm-bg-card, #1e293b) !important;
+    background-color: var(--dm-bg-card, #1e293b) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: var(--dm-text, #cbd5e1) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* 文字颜色 */
@@ -7311,3 +7617,799 @@ html.dark-mode .qiling-empty-state__visual,
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* ==========================================================================
+   启灵装修系统：全场景全局智能暗黑模式引擎 (Universal Smart Dark Mode Engine)
+   支持任意用户在前台可视化装修中自定义背景、文字、卡片、表单等属性后的全自动暗黑适配
+   ========================================================================== */
+
+/* 1. 核心设计令牌映射 (Token Mapping) */
+html.dark-mode,
+[data-theme='dark'] {
+  --dm-bg: #0b0f19;
+  --dm-bg-secondary: #111827;
+  --dm-bg-card: #1e293b;
+  --dm-bg-card-hover: #26354a;
+  --dm-text: #cbd5e1;
+  --dm-text-heading: #f8fafc;
+  --dm-text-muted: #94a3b8;
+  --dm-border: rgba(255, 255, 255, 0.08);
+  --dm-border-hover: rgba(255, 255, 255, 0.16);
+  --color-neutral-0: #1e293b;
+  --color-neutral-50: #0b0f19;
+  --color-neutral-100: #111827;
+  --color-neutral-200: #1e293b;
+  --color-neutral-300: #334155;
+  --color-background: var(--dm-bg);
+  --color-surface: var(--dm-bg-card);
+  --color-surface-alt: var(--dm-bg-secondary);
+  --color-heading: var(--dm-text-heading);
+  --color-text: var(--dm-text);
+  --color-text-muted: var(--dm-text-muted);
+  --color-border: var(--dm-border);
+}
+
+/* 2. 前台装修自定义变量全面强力覆写 (Visual & Advanced Customizer CSS Variable Overrides) */
+html.dark-mode [data-qds-visual="1"],
+html.dark-mode [data-qds-advanced="1"],
+html.dark-mode .qds-visual-wrapper,
+html.dark-mode .module-wrapper,
+html.dark-mode .developer-starter-module-wrapper,
+html.dark-mode .qiling-module-scope,
+html.dark-mode .qiling-builder-module,
+[data-theme='dark'] [data-qds-visual="1"],
+[data-theme='dark'] [data-qds-advanced="1"],
+[data-theme='dark'] .qds-visual-wrapper,
+[data-theme='dark'] .module-wrapper,
+[data-theme='dark'] .developer-starter-module-wrapper,
+[data-theme='dark'] .qiling-module-scope,
+[data-theme='dark'] .qiling-builder-module {
+  --qds-background-color: var(--dm-bg, #0b0f19) !important;
+  --qds-hover-background-color: var(--dm-bg-secondary, #111827) !important;
+  --qds-border-color: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qds-hover-border-color: var(--dm-border-hover, rgba(255, 255, 255, 0.16)) !important;
+  --qds-title-color: var(--dm-text-heading, #f8fafc) !important;
+  --qds-hover-title-color: var(--color-primary, #60a5fa) !important;
+  --qds-subtitle-color: var(--dm-text-muted, #94a3b8) !important;
+  --qds-text-color: var(--dm-text, #cbd5e1) !important;
+  --qiling-module-bg: var(--dm-bg, #0b0f19) !important;
+  --qiling-page-bg: var(--dm-bg, #0b0f19) !important;
+  --color-background: var(--dm-bg, #0b0f19) !important;
+  --qiling-module-title: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-component-module-title-color: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-module-subtitle: var(--dm-text-muted, #94a3b8) !important;
+  --qiling-module-text: var(--dm-text, #cbd5e1) !important;
+  --qiling-module-muted: var(--dm-text-muted, #94a3b8) !important;
+  --qiling-module-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-component-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-module-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  --qiling-component-post-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-component-post-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-post-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  --qiling-module-card-title: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-module-card-text: var(--dm-text, #cbd5e1) !important;
+}
+
+/* 3. 模块容器背景自动智能暗黑置换 (Module Container Dark Mode Conversion) */
+html.dark-mode :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+),
+html.dark-mode :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+) > :is(.module, section[class*="module-"], .developer-starter-module):not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+html.dark-mode .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+[data-theme='dark'] :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+),
+[data-theme='dark'] :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+) > :is(.module, section[class*="module-"], .developer-starter-module):not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+[data-theme='dark'] .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper) {
+  background: var(--dm-bg, #0b0f19) !important;
+  background-color: var(--dm-bg, #0b0f19) !important;
+  background-image: none !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}
+
+/* 4. 全局标题与主文字自动高反差反转 (Auto Contrast Inversion for Titles & Headings) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]),
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+) > a,
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+) > a {
+  color: #f8fafc !important;
+}
+
+/* 5. 全局副标题与正文灰度文字可读性自适应 (Auto Readable Contrast for Subtitles & Body) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .subtitle, .section-subtitle, .module-subtitle, .section-desc, .module-desc,
+  [class*="-desc"], [class*="-subtitle"], [class*="-description"], [class*="-excerpt"],
+  p, li
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]):not([class*="-price"]):not([class*="-amount"]):not(.price):not(.amount),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .subtitle, .section-subtitle, .module-subtitle, .section-desc, .module-desc,
+  [class*="-desc"], [class*="-subtitle"], [class*="-description"], [class*="-excerpt"],
+  p, li
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]):not([class*="-price"]):not([class*="-amount"]):not(.price):not(.amount) {
+  color: #94a3b8 !important;
+}
+
+/* 6. 全局卡片、模块列表项、内容面板自适应深色立体质感 (Card & Panel Surface Upgrades) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"],
+  [class*="_card"],
+  .card,
+  .feature-item,
+  .service-item,
+  .testimonial-item,
+  .team-item,
+  .pricing-item,
+  .case-item,
+  .portfolio-item,
+  .gallery-item,
+  .timeline-item,
+  .branch-item,
+  .doctor-item,
+  .room-item,
+  .stat-item,
+  .metric-item,
+  .faq-item,
+  .contact-card,
+  .booking-card,
+  .blog-post-item,
+  .news-card,
+  .qw-lib-card,
+  .fp-list-item,
+  .cat-tab-post-item,
+  .ql-testimonial-summary,
+  .ql-hotel-booking-form-box,
+  .qfs-qr-card
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"],
+  [class*="_card"],
+  .card,
+  .feature-item,
+  .service-item,
+  .testimonial-item,
+  .team-item,
+  .pricing-item,
+  .case-item,
+  .portfolio-item,
+  .gallery-item,
+  .timeline-item,
+  .branch-item,
+  .doctor-item,
+  .room-item,
+  .stat-item,
+  .metric-item,
+  .faq-item,
+  .contact-card,
+  .booking-card,
+  .blog-post-item,
+  .news-card,
+  .qw-lib-card,
+  .fp-list-item,
+  .cat-tab-post-item,
+  .ql-testimonial-summary,
+  .ql-hotel-booking-form-box,
+  .qfs-qr-card
+) {
+  background: var(--dm-bg-card, #1e293b) !important;
+  background-color: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"]:hover,
+  [class*="_card"]:hover,
+  .card:hover,
+  .feature-item:hover,
+  .service-item:hover,
+  .case-item:hover,
+  .pricing-item:hover
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"]:hover,
+  [class*="_card"]:hover,
+  .card:hover,
+  .feature-item:hover,
+  .service-item:hover,
+  .case-item:hover,
+  .pricing-item:hover
+) {
+  background: var(--dm-bg-card-hover, #26354a) !important;
+  background-color: var(--dm-bg-card-hover, #26354a) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* 7. 表单与交互输入框暗黑自动适配 (Inputs, Textareas & Form Controls) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  textarea,
+  select
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  textarea,
+  select
+) {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):focus,
+  textarea:focus,
+  select:focus
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):focus,
+  textarea:focus,
+  select:focus
+) {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border-color: var(--color-primary, #60a5fa) !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) ::placeholder,
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) ::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+/* 8. 价格、高亮及核心转化元素保持高能醒目 (Vibrant Accents for Prices & Callouts) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .price, .amount, .plan-price, .ticket-price, .room-price, .salary-range,
+  [class*="-price"], [class*="-amount"]
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .price, .amount, .plan-price, .ticket-price, .room-price, .salary-range,
+  [class*="-price"], [class*="-amount"]
+) {
+  color: var(--color-primary, #38bdf8) !important;
+}
+
+/* 9. 按钮与交互组件保持主色与清晰白色文字 (Buttons & Actions) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn:not(.btn-outline):not(.btn-ghost):not(.btn-text),
+  [class*="-btn"]:not([class*="-outline"]):not([class*="-ghost"]):not([class*="-text"]):not([class*="-link"]),
+  .banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn,
+  .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn,
+  .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .countdown-btn,
+  .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link,
+  .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn,
+  .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn:not(.btn-outline):not(.btn-ghost):not(.btn-text),
+  [class*="-btn"]:not([class*="-outline"]):not([class*="-ghost"]):not([class*="-text"]):not([class*="-link"]),
+  .banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn,
+  .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn,
+  .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .countdown-btn,
+  .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link,
+  .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn,
+  .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn
+) {
+  color: #ffffff !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline,
+  [class*="-outline"]
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline,
+  [class*="-outline"]
+) {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #f8fafc !important;
+  background-color: transparent !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline:hover,
+  [class*="-outline"]:hover
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline:hover,
+  [class*="-outline"]:hover
+) {
+  border-color: var(--color-primary, #60a5fa) !important;
+  color: #ffffff !important;
+  background-color: var(--color-primary, #60a5fa) !important;
+}
+
+/* 10. 标签页与分类筛选控件暗黑自适应 (Tabs & Filter Controls) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):not(.active):not(.is-active):not([aria-selected="true"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):not(.active):not(.is-active):not([aria-selected="true"]) {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #94a3b8 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):is(.active, .is-active, [aria-selected="true"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):is(.active, .is-active, [aria-selected="true"]) {
+  background-color: var(--color-primary, #3b82f6) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* 11. 边框、分割线及次级徽章暗黑适配 (Borders, Dividers & Neutral Badges) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  hr, .divider, [class*="-divider"], .separator
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  hr, .divider, [class*="-divider"], .separator
+) {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .badge:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  .tag:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  [class*="-tag"]:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]):not(.badge)
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .badge:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  .tag:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  [class*="-tag"]:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]):not(.badge)
+) {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ==========================================================================
+   启灵主题：移动端侧边抽屉菜单高级定制样式 (Mobile Side Drawer Styles)
+   ========================================================================== */
+
+/* 1. 抽屉滑出方向与定位控制 */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 85%;
+    max-width: 360px;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--color-surface, #ffffff);
+    z-index: 10000;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 默认 / 左侧滑出 */
+.mobile-menu,
+.mobile-menu.mobile-menu--left {
+    left: -100%;
+    right: auto;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.15);
+    transition: left 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open,
+.mobile-menu.mobile-menu--left.is-open {
+    left: 0;
+    right: auto;
+}
+
+/* 右侧滑出 */
+.mobile-menu.mobile-menu--right {
+    right: -100%;
+    left: auto;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+    transition: right 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.mobile-menu--right.is-open {
+    right: 0;
+    left: auto;
+}
+
+/* 2. 抽屉顶部品牌与欢迎语 */
+.mobile-menu-brand-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.mobile-menu-welcome {
+    font-size: 12px;
+    color: var(--color-text-muted, #64748b);
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 3. 用户状态卡片 */
+.mobile-drawer-user-card {
+    padding: 12px 18px;
+    background: var(--color-surface-alt, #f8fafc);
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.mobile-user-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.mobile-user-avatar img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-surface, #ffffff);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.mobile-user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-heading, #1e293b);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mobile-user-sub {
+    font-size: 12px;
+    color: var(--color-primary, #3b82f6);
+    margin-top: 2px;
+}
+
+.mobile-user-guest {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-guest-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted, #64748b);
+}
+
+.mobile-guest-action {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mobile-guest-tip {
+    font-size: 11px;
+    color: var(--color-text-muted, #64748b);
+}
+
+.mobile-guest-login-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary, #3b82f6);
+    cursor: pointer;
+    text-align: left;
+}
+
+/* 4. 中间内容滚动区 */
+.mobile-drawer-scroll-body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* 5. 微信客服 / 二维码引流卡片 */
+.mobile-drawer-qrcode-card {
+    margin: 16px 18px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--color-surface-alt, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.mobile-qrcode-img-wrap {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-qrcode-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.mobile-qrcode-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.mobile-qrcode-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-heading, #1e293b);
+    margin-bottom: 3px;
+}
+
+.mobile-qrcode-desc {
+    font-size: 11px;
+    color: var(--color-text-muted, #64748b);
+    line-height: 1.4;
+    word-break: break-all;
+}
+
+/* 6. 行动转化大按钮 */
+.mobile-drawer-cta-wrap {
+    padding: 4px 18px 16px;
+}
+
+.mobile-drawer-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.mobile-drawer-cta--primary {
+    background: var(--color-primary, #3b82f6) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.28);
+}
+
+.mobile-drawer-cta--primary:hover {
+    background: var(--color-primary-hover, #2563eb) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.mobile-drawer-cta--outline {
+    background: transparent !important;
+    color: var(--color-primary, #3b82f6) !important;
+    border: 1.5px solid var(--color-primary, #3b82f6) !important;
+}
+
+.mobile-drawer-cta--outline:hover {
+    background: var(--color-primary, #3b82f6) !important;
+    color: #ffffff !important;
+}
+
+/* 7. 抽屉底部工具栏 */
+.mobile-menu-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 18px;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+    background: var(--color-surface, #ffffff);
+}
+
+.mobile-menu-footer .mobile-phone-btn {
+    flex: 1;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mobile-drawer-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-tool-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--color-border, #e2e8f0);
+    background: var(--color-surface-alt, #f8fafc);
+    color: var(--color-text-muted, #64748b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.mobile-tool-btn:hover {
+    border-color: var(--color-primary, #3b82f6);
+    color: var(--color-primary, #3b82f6);
+}
+
+/* 8. 暗黑模式完整适配 (Dark Mode) */
+html.dark-mode .mobile-menu,
+[data-theme='dark'] .mobile-menu {
+    background: #111827 !important;
+}
+
+html.dark-mode .mobile-menu.mobile-menu--left,
+[data-theme='dark'] .mobile-menu.mobile-menu--left {
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-mode .mobile-menu.mobile-menu--right,
+[data-theme='dark'] .mobile-menu.mobile-menu--right {
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-mode .mobile-menu-welcome,
+[data-theme='dark'] .mobile-menu-welcome {
+    color: #94a3b8 !important;
+}
+
+html.dark-mode .mobile-drawer-user-card,
+[data-theme='dark'] .mobile-drawer-user-card {
+    background: #1e293b !important;
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode .mobile-user-name,
+[data-theme='dark'] .mobile-user-name {
+    color: #f8fafc !important;
+}
+
+html.dark-mode .mobile-user-sub,
+[data-theme='dark'] .mobile-user-sub {
+    color: #60a5fa !important;
+}
+
+html.dark-mode .mobile-user-avatar img,
+[data-theme='dark'] .mobile-user-avatar img {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-mode .mobile-guest-avatar,
+[data-theme='dark'] .mobile-guest-avatar {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-mode .mobile-guest-tip,
+[data-theme='dark'] .mobile-guest-tip {
+    color: #94a3b8 !important;
+}
+
+html.dark-mode .mobile-guest-login-btn,
+[data-theme='dark'] .mobile-guest-login-btn {
+    color: #60a5fa !important;
+}
+
+html.dark-mode .mobile-drawer-qrcode-card,
+[data-theme='dark'] .mobile-drawer-qrcode-card {
+    background: #1e293b !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark-mode .mobile-qrcode-img-wrap,
+[data-theme='dark'] .mobile-qrcode-img-wrap {
+    background: #ffffff !important;
+}
+
+html.dark-mode .mobile-qrcode-title,
+[data-theme='dark'] .mobile-qrcode-title {
+    color: #f8fafc !important;
+}
+
+html.dark-mode .mobile-qrcode-desc,
+[data-theme='dark'] .mobile-qrcode-desc {
+    color: #94a3b8 !important;
+}
+
+html.dark-mode .mobile-drawer-cta--outline,
+[data-theme='dark'] .mobile-drawer-cta--outline {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    color: #f8fafc !important;
+}
+
+html.dark-mode .mobile-drawer-cta--outline:hover,
+[data-theme='dark'] .mobile-drawer-cta--outline:hover {
+    background: var(--color-primary, #60a5fa) !important;
+    border-color: var(--color-primary, #60a5fa) !important;
+    color: #ffffff !important;
+}
+
+html.dark-mode .mobile-menu-footer,
+[data-theme='dark'] .mobile-menu-footer {
+    background: #111827 !important;
+    border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode .mobile-tool-btn,
+[data-theme='dark'] .mobile-tool-btn {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-mode .mobile-tool-btn:hover,
+[data-theme='dark'] .mobile-tool-btn:hover {
+    border-color: #60a5fa !important;
+    color: #60a5fa !important;
+}

@@ -43,236 +43,331 @@
   },
   "modules": [
     {
-      "type": "resource_hero_pro",
+      "type": "header_suite",
       "data": {
-        "rh_layout": "top_bottom",
-        "rh_height": "auto",
-        "rh_bg_type": "gradient",
-        "rh_bg_image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80",
-        "rh_bg_overlay": "0.58",
-        "rh_style_preset": "premium",
-        "rh_enable_motion": "1",
-        "rh_motion_level": "soft",
-        "rh_badge": "启灵生态文档工具站",
-        "rh_title": "把 OCR 与 PDF 转换<br><strong>做成可商业化的文档平台</strong>",
-        "rh_subtitle": "启灵文档解析 + 启灵文档转换的官网入口方案",
-        "rh_desc": "围绕上传解析、URL 解析、MinerU 多格式解析、PDF 转 Word/PPT/Excel、文档转 PDF、额度限制、积分与会员权益，把工具能力包装成清晰可购买的产品页面。",
-        "rh_visual_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "智文速转",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
-            "link": "#",
-            "alt": "办公文档解析与转换"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-            "link": "#",
-            "alt": "在线文档工具界面"
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "方案对比",
+            "link": "#comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资料下载",
+            "link": "#downloads",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "rh_visual_position": "right",
-        "rh_visual_height": "360px",
-        "rh_visual_radius": "18px",
-        "rh_visual_fit": "cover",
-        "rh_visual_shadow": "glow",
-        "rh_visual_shine": "1",
-        "rh_visual_autoplay": "1",
-        "rh_visual_interval": "5",
-        "rh_visual_show_dots": "1",
-        "rh_visual_caption": "支持文档解析、结果预览、Markdown/ZIP 下载与 Office/PDF 转换入口。",
-        "rh_benefits": [
-          {
-            "text": "PaddleOCR 与 MinerU 两种解析路径"
-          },
-          {
-            "text": "PDF 转 Word/PPT/Excel 与文档转 PDF"
-          },
-          {
-            "text": "游客额度、登录额度、积分和 VIP 可组合运营"
-          }
-        ],
-        "rh_stats": [
-          {
-            "value": "2",
-            "label": "生态插件"
-          },
-          {
-            "value": "10+",
-            "label": "常用格式"
-          },
-          {
-            "value": "50MB+",
-            "label": "可配置大小"
-          }
-        ],
-        "rh_primary_text": "进入文档工具",
-        "rh_primary_link": "#",
-        "rh_primary_btn_bg_color": "#3b82f6",
-        "rh_primary_btn_text_color": "#ffffff",
-        "rh_primary_btn_hover_bg_color": "#2563eb",
-        "rh_primary_btn_hover_text_color": "#ffffff",
-        "rh_secondary_text": "查看套餐",
-        "rh_secondary_link": "#",
-        "rh_enable_feed": "0",
-        "rh_enable_bottom_strip": "0",
-        "rh_bg_gradient": "linear-gradient(135deg, #0f172a 0%, #1e40af 55%, #0369a1 100%)",
-        "rh_title_color": "#ffffff",
-        "rh_desc_color": "rgba(255, 255, 255, 0.82)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0284c7",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0284c7",
+        "qhs_hover_bg": "rgba(2,132,199,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "features",
+      "type": "app_hero",
       "data": {
-        "features_title": "真实可落地的文档处理能力",
-        "features_subtitle": "页面文案按 qilingdococr 与 qi-pdftwpe 的实际功能组织，导入后只需替换成你的真实入口",
-        "features_columns": "4",
-        "features_icon_position": "top",
-        "features_text_align": "left",
-        "features_bg_color": "#ffffff",
-        "features_card_style": "elevated",
-        "features_card_radius": "16px",
-        "features_icon_style": "square",
-        "features_icon_bg": "#eff6ff",
-        "features_items": [
+        "hero_title": "智文速转 · 99.8% 高精度文档解析与全格式智能转换中枢",
+        "hero_desc": "基于深度视觉神经算法，轻松识别复杂版面、多栏排版与手写公式。支持 PDF、Word、Excel、CAD 毫秒级极速互转。",
+        "hero_image": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80",
+        "hero_buttons": [
           {
-            "icon": "OCR",
-            "title": "PDF/图片解析",
-            "desc": "启灵文档解析支持 PDF、JPG、PNG、BMP、TIFF、WEBP 等上传解析，并可把结果沉淀为 Markdown。"
+            "btn_type": "windows",
+            "btn_text": "Windows 客户端下载",
+            "btn_subtext": "v3.2.0 · 64位",
+            "btn_link": "#download-win"
           },
           {
-            "icon": "VL",
-            "title": "MinerU 多格式解析",
-            "desc": "可开启 MinerU 路径处理 PDF、DOC、DOCX、PPT、PPTX 和图片，支持表格、公式与版面解析配置。"
-          },
-          {
-            "icon": "PDF",
-            "title": "PDF 转 Office",
-            "desc": "启灵文档转换提供 PDF 转 Word、PPT、Excel，并支持回调、轮询和统一前台转换表单。"
-          },
-          {
-            "icon": "DOC",
-            "title": "文档转 PDF",
-            "desc": "支持 Word、Excel、PPT、TXT 等办公文档转 PDF，适合做一站式办公文件处理入口。"
-          }
-        ],
-        "features_icon_color": "#2563eb"
-      }
-    },
-    {
-      "type": "downloads",
-      "data": {
-        "downloads_title": "结果与资料下载",
-        "downloads_subtitle": "把解析结果、转换结果和使用说明集中展示，客户更容易理解工具交付物",
-        "downloads_bg_color": "#f8fafc",
-        "downloads_columns": "3",
-        "downloads_btn_bg_color": "#2563eb",
-        "downloads_btn_text_color": "#ffffff",
-        "downloads_btn_hover_bg_color": "#1d4ed8",
-        "downloads_btn_hover_text_color": "#ffffff",
-        "downloads_items": [
-          {
-            "title": "OCR Markdown 示例",
-            "size": "MD",
-            "file": "#",
-            "format": "Markdown",
-            "date": "2026-04-24",
-            "btn_text": "查看示例",
-            "description": "展示 PDF/图片解析后的标题、段落、表格和可复制文本。"
-          },
-          {
-            "title": "MinerU 导出包示例",
-            "size": "ZIP",
-            "file": "#",
-            "format": "ZIP",
-            "date": "2026-04-24",
-            "btn_text": "查看示例",
-            "description": "用于说明 docx、html、latex 等额外导出格式的交付方式。"
-          },
-          {
-            "title": "PDF 转换结果示例",
-            "size": "Office",
-            "file": "#",
-            "format": "DOCX/PPTX/XLSX",
-            "date": "2026-04-24",
-            "btn_text": "查看示例",
-            "description": "用于展示 PDF 转 Word、PPT、Excel 或文档转 PDF 的下载结果。"
+            "btn_type": "mac",
+            "btn_text": "macOS 客户端下载",
+            "btn_subtext": "支持 Apple Silicon M系列",
+            "btn_link": "#download-mac"
           }
         ]
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "从上传到下载的处理路径",
-        "process_subtitle": "把两个插件的前台体验讲成一条用户能理解的流程",
-        "process_mode": "standard",
-        "module_bg_color": "#ffffff",
+        "process_title": "文档解析转换官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "选择解析或转换",
-            "desc": "用户进入文档工具入口，按 PDF/图片解析、MinerU 多格式解析、PDF 转 Office 或文档转 PDF 选择任务类型。",
-            "stage_tag": "选择"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "上传文件或提交 URL",
-            "desc": "按插件配置校验格式、大小、游客权限、登录额度、积分余额或 VIP 权益。",
-            "stage_tag": "提交"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "任务执行与轮询",
-            "desc": "远程服务处理任务，前台通过轮询或回调获取任务状态，减少用户刷新页面的成本。",
-            "stage_tag": "处理"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "预览、复制与下载",
-            "desc": "OCR 结果可预览和下载，转换结果可直接下载，后台继续沉淀使用统计和异常记录。",
-            "stage_tag": "交付"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
       }
     },
     {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "多维实力对比",
+        "comparison_subtitle": "为什么众多客户首选我们，核心指标一目了然"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "解析实力 · 准确度与转换效能看板",
+        "stats_subtitle": "拒绝乱码与格式错位，为财务、法务、科研与办公人员解放双手",
+        "stats_items": [
+          {
+            "number": "99.8%",
+            "label": "复杂印刷体与发票印章文本识别综合准确率"
+          },
+          {
+            "number": "120 种+",
+            "label": "支持全球常见主流语言与少数民族语言识别"
+          },
+          {
+            "number": "3 秒/页",
+            "label": "百页复杂财务财报 PDF 极速结构化解析用时"
+          },
+          {
+            "number": "100% 本地销毁",
+            "label": "转换完成后服务器端文件自动彻底粉碎防泄密"
+          }
+        ]
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "产品手册与资料中心",
+        "downloads_subtitle": "官方白皮书、选型手册与技术参数文档免费下载"
+      }
+    },
+    {
       "type": "pricing",
       "data": {
-        "pricing_title": "额度、积分与会员包装",
-        "pricing_subtitle": "价格为展示占位，可按实际站点的游客额度、积分单价、VIP 等级和企业服务改写",
+        "pricing_title": "高性价比个人会员与企业私有化授权方案",
+        "pricing_subtitle": "支持在线按次充值或包月无限转换，企业提供离线断网 SDK 部署保障涉密安全",
         "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
+        "pricing_plans": [
+          {
+            "name": "免费日常版 (个人轻量)",
+            "name_color": "#0f172a",
+            "price": "永久免费 $0",
+            "price_color": "#0f172a",
+            "period": "/每日赠送 5 次转换",
+            "desc": "适合学生作业、日常偶尔转换单页论文、证件拍照识别",
+            "desc_color": "#64748b",
+            "features": "单文件最大支持 20MB / 10 页\\n基础 PDF 转 Word / Excel 功能\\n标准无水印电子文件导出\\n支持网页端免安装即开即用",
+            "features_color": "#334155",
+            "btn_text": "免费在线使用",
+            "btn_link": "#free-tool",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "无限转换尊享会员 (办公必备)",
+            "name_color": "#0f172a",
+            "price": "¥29",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包年 ¥198 赠全套工具)",
+            "desc": "针对财务会计、法务律师、科研人员，批量超大文件不限页数快速转换",
+            "desc_color": "#64748b",
+            "features": "单文件支持高达 500MB / 1,000 页超长文档\\n批量同时并发转换 50 个复杂文档\\n独享超高精度复杂手写体与跨页表格识别\\n转换极速专属通道免排队，秒级完成",
+            "features_color": "#334155",
+            "btn_text": "开通尊享会员",
+            "btn_link": "#buy-vip",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "白领爆款",
+            "badge": "白领爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "企业级私有化离线 SDK 部署",
+            "name_color": "#0f172a",
+            "price": "定制专属方案",
+            "price_color": "#0f172a",
+            "period": "/一次性买断永久授权",
+            "desc": "面向涉密机构、政府机关、金融机构，纯离线局域网部署，数据绝不上云",
+            "desc_color": "#64748b",
+            "features": "纯离线 Docker / Linux / Windows 服务端部署\\n支持高并发多线程与微服务 API 接口无缝集成\\n提供全套 C++ / Python / Java 开发集成文档\\n包含第一年度免费算法更新与现场技术支持",
+            "features_color": "#334155",
+            "btn_text": "预约技术专家咨询",
+            "btn_link": "#contact-sdk",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "体验额度",
-            "price": "免费体验",
-            "period": "",
-            "desc": "适合游客和新用户试用",
-            "features": "游客每日额度\n基础 PDF/图片解析\n基础转换体验\n结果下载入口",
-            "btn_text": "开始体验",
-            "btn_link": "#",
-            "featured": ""
+            "name": "免费日常版 (个人轻量)",
+            "name_color": "#0f172a",
+            "price": "永久免费 $0",
+            "price_color": "#0f172a",
+            "period": "/每日赠送 5 次转换",
+            "desc": "适合学生作业、日常偶尔转换单页论文、证件拍照识别",
+            "desc_color": "#64748b",
+            "features": "单文件最大支持 20MB / 10 页\\n基础 PDF 转 Word / Excel 功能\\n标准无水印电子文件导出\\n支持网页端免安装即开即用",
+            "features_color": "#334155",
+            "btn_text": "免费在线使用",
+            "btn_link": "#free-tool",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "积分套餐",
-            "price": "按次扣费",
-            "period": "",
-            "desc": "适合常规工具站运营",
-            "features": "登录用户额度\n积分充值入口\nOCR 与转换共用包装\n使用记录统计\n失败任务可追踪",
-            "btn_text": "充值积分",
-            "btn_link": "#",
+            "name": "无限转换尊享会员 (办公必备)",
+            "name_color": "#0f172a",
+            "price": "¥29",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包年 ¥198 赠全套工具)",
+            "desc": "针对财务会计、法务律师、科研人员，批量超大文件不限页数快速转换",
+            "desc_color": "#64748b",
+            "features": "单文件支持高达 500MB / 1,000 页超长文档\\n批量同时并发转换 50 个复杂文档\\n独享超高精度复杂手写体与跨页表格识别\\n转换极速专属通道免排队，秒级完成",
+            "features_color": "#334155",
+            "btn_text": "开通尊享会员",
+            "btn_link": "#buy-vip",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
-            "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)"
+            "is_featured": "yes",
+            "featured_text": "白领爆款",
+            "badge": "白领爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "企业服务",
-            "price": "联系顾问",
-            "period": "",
-            "desc": "适合批量文档处理和私有部署",
-            "features": "更高文件大小限制\n专属格式配置\n处理流程定制\n会员权益设计\n交付与培训支持",
-            "btn_text": "预约演示",
-            "btn_link": "#",
-            "featured": ""
+            "name": "企业级私有化离线 SDK 部署",
+            "name_color": "#0f172a",
+            "price": "定制专属方案",
+            "price_color": "#0f172a",
+            "period": "/一次性买断永久授权",
+            "desc": "面向涉密机构、政府机关、金融机构，纯离线局域网部署，数据绝不上云",
+            "desc_color": "#64748b",
+            "features": "纯离线 Docker / Linux / Windows 服务端部署\\n支持高并发多线程与微服务 API 接口无缝集成\\n提供全套 C++ / Python / Java 开发集成文档\\n包含第一年度免费算法更新与现场技术支持",
+            "features_color": "#334155",
+            "btn_text": "预约技术专家咨询",
+            "btn_link": "#contact-sdk",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
@@ -280,44 +375,61 @@
     {
       "type": "faq",
       "data": {
-        "faq_title": "文档工具常见问题",
-        "faq_subtitle": "提前解释插件边界、支持格式和套餐逻辑，减少上线后的沟通成本",
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
         "faq_items": [
           {
-            "question": "这个模板必须安装启灵文档解析和启灵文档转换吗？",
-            "answer": "不必须。模板本身可以正常导入和展示；启用插件后，把按钮链接改成 [qilingocr] 页面、[xb_pdftwpe_convert_form] 页面或你自己的工具入口即可。"
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
           },
           {
-            "question": "OCR 解析和 PDF 转换是同一个插件吗？",
-            "answer": "不是。启灵文档解析负责 PDF/图片 OCR、MinerU 多格式解析和结果下载；启灵文档转换负责 PDF 转 Word/PPT/Excel 和文档转 PDF。"
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
           },
           {
-            "question": "游客能不能使用？",
-            "answer": "两个插件都提供游客相关配置。实际是否开放、每日额度、文件大小和格式白名单，需要在对应插件后台按运营策略配置。"
-          },
-          {
-            "question": "积分和 VIP 是主题模板直接处理吗？",
-            "answer": "不是。主题模板只负责展示和转化入口，积分扣费、VIP 权益、使用次数和日志统计由对应插件以及启灵商城能力处理。"
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "把文档处理入口升级成自己的产品官网",
-        "cta_subtitle": "替换为真实解析页、转换页、积分充值页和 VIP 套餐页，就能把工具能力变成可售卖、可解释、可运营的站点入口。",
-        "cta_button_text": "配置文档工具入口",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #0284c7 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#0284c7",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "开启 文档解析转换官网 数字化卓越体验",
+        "cta_subtitle": "无需漫长等待，立即注册即可解锁全部核心功能与极速支持保障。",
+        "cta_btn_text": "立即免费体验",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0284c7",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "DOC-FLOW · 智能文档解析、高精度 OCR 与多格式转换专家",
+        "qfs_brand_desc": "基于深度学习版面分析与大模型多模态理解。高精度提取复杂表格、印刷体与手写体，实现 PDF / Word / Excel / Markdown 完美双向互转。",
+        "qfs_link_groups": [
+          {
+            "title": "核心转换工具 & API 开发者中心",
+            "links": "PDF 转可编辑 Word / Excel|#\n高精度表格图片还原 Excel|#\n扫描件批量去阴影与增强|#\n多语言海外发票与凭证识别|#\n文档 OCR 识别云端 API 接入|#\n私有化高密文档脱敏服务|#\n大并发批量文档转换集群|#\n按量计费与开发者免费额度|#"
+          }
+        ],
+        "qfs_contact_title": "文档解决方案",
+        "qfs_contact_items": "技术热线|400-890-5566|tel:4008905566\n商务合作|doc-api@qiling-ocr.com|mailto:doc-api@qiling-ocr.com\n在线客服|7x12 小时技术顾问随时解答|#",
+        "qfs_social_title": "关注效率工具",
+        "qfs_social_links": "微信公众号|#\n办公技巧小红书|#\n知乎效率专栏|#\n产品反馈社区|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 DOC-FLOW OCR SYSTEMS. 保留所有权利 · 银行级文档加密传输 · 文件转换后 2 小时自动彻底粉碎",
+        "qfs_bottom_links": "文档安全与隐私保护条例|#\n服务协议|#\n企业私有化部署|#\nAPI 接入文档|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

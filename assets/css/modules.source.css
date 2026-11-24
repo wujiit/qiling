@@ -11427,32 +11427,78 @@ html.dark-mode
 
 /* 响应式 */
 @media (max-width: 992px) {
+  .module-product-showcase.ps-fullwidth {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+  }
   .module-product-showcase .ps-wrapper,
   .module-product-showcase .ps-wrapper.ps-reverse {
-    flex-direction: column;
-    gap: var(--qiling-space-40);
+    flex-direction: column !important;
+    gap: var(--qiling-space-32);
+  }
+  .module-product-showcase .ps-media-side,
+  .module-product-showcase .ps-info-side {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+  .module-product-showcase .ps-info-side {
+    padding-top: 0;
   }
   .module-product-showcase .ps-media-carousel {
     height: 320px !important;
   }
   .module-product-showcase .ps-title {
-    font-size: var(--qiling-text-rem-2);
+    font-size: clamp(1.4rem, 4.5vw, 2rem) !important;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  .module-product-showcase .ps-subtitle {
+    font-size: 0.85rem !important;
+    padding: 6px 14px !important;
+    margin-bottom: var(--qiling-space-20);
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.35;
+    display: inline-block;
   }
   .module-product-showcase .ps-price {
-    font-size: var(--qiling-text-rem-2);
+    font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+  }
+  .module-product-showcase .ps-cta-btn {
+    padding: 12px 24px;
+  }
+  .module-product-showcase.module-product-showcase .ps-info-side .ps-description {
+    padding: var(--qiling-space-18) var(--qiling-space-20);
   }
 }
 @media (max-width: 576px) {
   .module-product-showcase .ps-media-carousel {
-    height: 260px !important;
+    height: 280px !important;
   }
   .module-product-showcase .ps-title {
-    font-size: var(--qiling-text-rem-1p75);
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem) !important;
+  }
+  .module-product-showcase .ps-cta-wrapper {
+    width: 100%;
   }
   .module-product-showcase .ps-cta-btn {
     display: block;
+    width: 100%;
     text-align: center;
+    box-sizing: border-box;
     padding: var(--qiling-space-14) var(--qiling-space-24);
+  }
+  .module-product-showcase .ps-left-buttons {
+    gap: var(--qiling-space-8);
+  }
+  .module-product-showcase.module-product-showcase .ps-left-buttons .ps-small-btn {
+    font-size: var(--qiling-text-12);
+    padding: 6px 12px;
   }
 }
 
@@ -20025,6 +20071,61 @@ html.dark-mode .visual-tabs-panel-meta {
   padding: var(--qfs-pt, var(--qiling-space-64)) 0
     var(--qfs-pb, var(--qiling-space-28));
 }
+.module-footer-suite.qfs-tone-dark {
+  background-color: var(--qfs-bg, #080e1a) !important;
+  color: var(--qfs-text, #94a3b8) !important;
+}
+.module-footer-suite.qfs-tone-dark .qfs-brand-title,
+.module-footer-suite.qfs-tone-dark .qfs-section-title {
+  color: var(--qfs-heading, #ffffff) !important;
+}
+.module-footer-suite.qfs-tone-dark .qfs-brand-desc {
+  color: var(--qfs-muted, rgba(148, 163, 184, 0.75)) !important;
+}
+.module-footer-suite.qfs-tone-dark .qfs-link-list a,
+.module-footer-suite.qfs-tone-dark .qfs-contact-list a,
+.module-footer-suite.qfs-tone-dark .qfs-social-list a {
+  color: var(--qfs-text, #94a3b8) !important;
+}
+.module-footer-suite.qfs-tone-dark .qfs-link-list a:hover,
+.module-footer-suite.qfs-tone-dark .qfs-contact-list a:hover,
+.module-footer-suite.qfs-tone-dark .qfs-social-list a:hover {
+  color: var(--qfs-accent, var(--color-accent, #ffffff));
+}
+.module-footer-suite.qfs-tone-dark .qfs-bottom,
+.module-footer-suite.qfs-tone-dark .qfs-copyright,
+.module-footer-suite.qfs-tone-dark .qfs-bottom-links a {
+  color: var(--qfs-muted, #64748b);
+}
+.module-footer-suite.qfs-tone-light {
+  background-color: var(--qfs-bg, #f8fafc);
+  color: var(--qfs-text, #334155);
+}
+.module-footer-suite.qfs-tone-light .qfs-brand-title,
+.module-footer-suite.qfs-tone-light .qfs-section-title {
+  color: var(--qfs-heading, #0f172a);
+}
+.module-footer-suite.qfs-tone-light .qfs-brand-desc {
+  color: var(--qfs-muted, #64748b);
+}
+.module-footer-suite.qfs-tone-light .qfs-link-list a,
+.module-footer-suite.qfs-tone-light .qfs-contact-list a,
+.module-footer-suite.qfs-tone-light .qfs-social-list a {
+  color: var(--qfs-text, #475569);
+}
+.module-footer-suite.qfs-tone-light .qfs-link-list a:hover,
+.module-footer-suite.qfs-tone-light .qfs-contact-list a:hover,
+.module-footer-suite.qfs-tone-light .qfs-social-list a:hover {
+  color: var(--qfs-accent, #2563eb);
+}
+.module-footer-suite.qfs-tone-light .qfs-bottom,
+.module-footer-suite.qfs-tone-light .qfs-copyright,
+.module-footer-suite.qfs-tone-light .qfs-bottom-links a {
+  color: var(--qfs-muted, #64748b);
+}
+.module-footer-suite.qfs-variant-cinema {
+  background-color: var(--qfs-bg, #080e1a) !important;
+}
 
 .module-footer-suite,
 .module-footer-suite * {
@@ -20584,8 +20685,37 @@ html.dark-mode .visual-tabs-panel-meta {
   max-width: var(--qiling-measure-pct-100);
 }
 
-.module-pricing.module-pricing .pricing-btn {
-  color: var(--pricing-button-text, #ffffff);
+.module-pricing .pricing-btn:not(.btn-featured) {
+  background: var(--pricing-button-bg, var(--qiling-component-button-secondary-bg, color-mix(in srgb, var(--color-primary, #2563eb) 8%, transparent)));
+  color: var(--pricing-button-text, var(--qiling-component-button-secondary-text, var(--color-primary, #2563eb)));
+  border: 1px solid var(--pricing-button-border, var(--qiling-component-button-secondary-border, color-mix(in srgb, var(--color-primary, #2563eb) 20%, transparent)));
+}
+.module-pricing .pricing-btn:not(.btn-featured):hover {
+  background: var(--pricing-button-hover-bg, var(--qiling-component-button-hover-bg, var(--color-primary, #2563eb)));
+  color: var(--pricing-button-hover-text, var(--qiling-component-button-hover-text, var(--color-text-inverse, #ffffff)));
+  border-color: var(--pricing-button-hover-border, var(--qiling-component-button-border, var(--color-primary, #2563eb)));
+  transform: translateY(-2px);
+}
+.module-pricing .pricing-btn.btn-featured {
+  background: var(--pricing-button-featured-bg, var(--qiling-component-button-bg, var(--color-primary, #2563eb)));
+  color: var(--pricing-button-featured-text, var(--qiling-component-button-text, var(--color-text-inverse, #ffffff)));
+  border: 1px solid var(--pricing-button-featured-border, var(--qiling-component-button-border, var(--color-primary, #2563eb)));
+}
+.module-pricing .pricing-btn.btn-featured:hover {
+  filter: brightness(0.95);
+  background: var(--pricing-button-featured-hover-bg, var(--qiling-component-button-hover-bg, var(--color-primary, #2563eb)));
+  color: var(--pricing-button-featured-hover-text, var(--qiling-component-button-hover-text, var(--color-text-inverse, #ffffff)));
+  border-color: var(--pricing-button-featured-border, var(--qiling-component-button-border, var(--color-primary, #2563eb)));
+  transform: translateY(-2px);
+}
+html.dark-mode .module-pricing .pricing-btn:not(.btn-featured) {
+  background: var(--pricing-button-bg-dm, color-mix(in srgb, var(--color-surface, #ffffff) 8%, transparent));
+  color: var(--pricing-button-text-dm, var(--color-text-inverse, var(--color-neutral-100, #f1f5f9)));
+  border-color: var(--pricing-button-border-dm, color-mix(in srgb, var(--color-surface, #ffffff) 16%, transparent));
+}
+html.dark-mode .module-pricing .pricing-btn:not(.btn-featured):hover {
+  background: var(--pricing-button-hover-bg-dm, color-mix(in srgb, var(--color-surface, #ffffff) 16%, transparent));
+  color: var(--color-text-inverse, #ffffff);
 }
 
 .module-news.module-news .news-more-link {
@@ -22491,3 +22621,1278 @@ html.dark-mode .module-certificate-honors .ch-link { color: var(--ch-link-text, 
 .module-work-detail .qw-detail-cta:hover { color: var(--work-detail-cta-hover-text, #ffffff); }
 .module-magic-layout .qml-button-primary { color: var(--magic-layout-primary-btn-text, #ffffff); }
 .module-magic-layout .qml-button-primary:hover { color: var(--magic-layout-primary-btn-hover-text, #ffffff); }
+
+
+/* --- Header Suite Module --- */
+/* ==========================================================================
+   Header Suite Module Styles (顶部导航全功能套件)
+   ========================================================================== */
+
+.qhs-wrapper {
+  position: relative;
+  width: 100%;
+  height: var(--qhs-height, 72px);
+  background-color: var(--qhs-bg-color, #ffffff);
+  color: var(--qhs-text-color, #1e293b);
+  border-bottom: 1px solid var(--qhs-border-color, rgba(0, 0, 0, 0.06));
+  z-index: 990;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+/* 吸顶固定 */
+.qhs-wrapper.qhs-is-sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* 毛玻璃质感 */
+.qhs-wrapper.qhs-has-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* 首屏透明悬浮 */
+.qhs-wrapper.qhs-is-transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-nav-link,
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-brand-title,
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-brand-slogan,
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-phone-link,
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-action-btn,
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-mobile-toggle {
+  color: var(--qhs-trans-text, #ffffff);
+}
+
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-action-btn {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-phone-link {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-logo-dark {
+  display: inline-block;
+}
+
+.qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled):has(.qhs-logo-dark) .qhs-logo-default {
+  display: none;
+}
+
+.qhs-logo-dark {
+  display: none;
+}
+
+/* 滚动吸顶后的实色与阴影过渡 */
+.qhs-wrapper.qhs-is-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--qhs-bg-color, #ffffff) !important;
+  border-bottom-color: var(--qhs-border-color, rgba(0, 0, 0, 0.06)) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.qhs-wrapper.qhs-is-scrolled .qhs-nav-link,
+.qhs-wrapper.qhs-is-scrolled .qhs-brand-title,
+.qhs-wrapper.qhs-is-scrolled .qhs-brand-slogan,
+.qhs-wrapper.qhs-is-scrolled .qhs-phone-link,
+.qhs-wrapper.qhs-is-scrolled .qhs-action-btn,
+.qhs-wrapper.qhs-is-scrolled .qhs-mobile-toggle {
+  color: var(--qhs-text-color, #1e293b);
+}
+
+html:not(.dark-mode):not([data-theme='dark']) .qhs-wrapper.qhs-is-scrolled .qhs-logo-dark {
+  display: none !important;
+}
+
+html:not(.dark-mode):not([data-theme='dark']) .qhs-wrapper.qhs-is-scrolled .qhs-logo-default {
+  display: inline-block !important;
+}
+
+/* 内部结构与容器 */
+.qhs-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.qhs-container-contained {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.qhs-container-full {
+  width: 100%;
+  padding: 0 32px;
+}
+
+/* 品牌区 */
+.qhs-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.qhs-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.qhs-logo-link:hover {
+  opacity: 0.9;
+}
+
+.qhs-logo-img {
+  height: var(--qhs-logo-height, 40px);
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qhs-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.25;
+}
+
+.qhs-brand-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--qhs-text-color, #0f172a);
+  transition: color 0.2s ease;
+}
+
+.qhs-brand-slogan {
+  font-size: 12px;
+  color: var(--color-text-muted, #64748b);
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+/* 导航区 */
+.qhs-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.qhs-wrapper.qhs-align-left .qhs-nav {
+  margin-left: 36px;
+  margin-right: auto;
+}
+
+.qhs-wrapper.qhs-align-center .qhs-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qhs-wrapper.qhs-align-right .qhs-nav {
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.qhs-layout-center .qhs-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qhs-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 6px;
+  height: 100%;
+}
+
+.qhs-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.qhs-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--qhs-text-color, #1e293b);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.qhs-nav-link:hover,
+.qhs-nav-item.is-active .qhs-nav-link {
+  color: var(--qhs-hover-color, #2563eb);
+  background-color: var(--qhs-hover-bg, rgba(37, 99, 235, 0.06));
+}
+
+.qhs-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 99px;
+  color: #ffffff;
+  margin-left: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.qhs-arrow {
+  margin-left: 2px;
+  transition: transform 0.2s ease;
+}
+
+.qhs-nav-item:hover .qhs-arrow {
+  transform: rotate(180deg);
+}
+
+/* 下拉菜单 */
+.qhs-dropdown-menu {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 0;
+  min-width: 190px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.2s;
+  z-index: 1000;
+}
+
+.qhs-nav-item:hover .qhs-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.qhs-dropdown-item {
+  margin: 0;
+  padding: 0;
+}
+
+.qhs-dropdown-link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.qhs-dropdown-link:hover {
+  color: var(--qhs-hover-color, #2563eb);
+  background-color: var(--qhs-hover-bg, rgba(37, 99, 235, 0.06));
+}
+
+/* 功能部件与操作区 */
+.qhs-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.qhs-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.02);
+  color: var(--qhs-text-color, #1e293b);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.qhs-action-btn:hover {
+  border-color: var(--qhs-hover-color, #2563eb);
+  color: var(--qhs-hover-color, #2563eb);
+  background-color: var(--qhs-hover-bg, rgba(37, 99, 235, 0.06));
+  transform: translateY(-1px);
+}
+
+.qhs-user-avatar {
+  border-radius: 50%;
+  display: block;
+}
+
+/* 内嵌搜索框 */
+.qhs-search-inline {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 99px;
+  padding: 4px 6px 4px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.qhs-search-inline:focus-within {
+  background-color: #ffffff;
+  border-color: var(--qhs-hover-color, #2563eb);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.qhs-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: var(--qhs-text-color, #1e293b);
+  width: 140px;
+  transition: width 0.25s ease;
+}
+
+.qhs-search-input:focus {
+  width: 190px;
+}
+
+.qhs-search-submit {
+  border: none;
+  background: transparent;
+  padding: 4px;
+  color: #64748b;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.qhs-search-submit:hover {
+  color: var(--qhs-hover-color, #2563eb);
+}
+
+/* 服务电话 */
+.qhs-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--qhs-text-color, #1e293b);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.qhs-phone-link:hover {
+  color: var(--qhs-hover-color, #2563eb);
+  background-color: var(--qhs-hover-bg, rgba(37, 99, 235, 0.08));
+  border-color: var(--qhs-hover-color, #2563eb);
+}
+
+/* CTA 按钮 */
+.qhs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.qhs-cta-style-primary {
+  background-color: var(--qhs-cta-bg, var(--color-primary, #2563eb));
+  color: var(--qhs-cta-color, #ffffff) !important;
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+}
+
+.qhs-cta-style-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.4);
+}
+
+.qhs-cta-style-outline {
+  border: 1.5px solid var(--qhs-cta-bg, var(--color-primary, #2563eb));
+  color: var(--qhs-cta-bg, var(--color-primary, #2563eb)) !important;
+  background-color: transparent;
+}
+
+.qhs-cta-style-outline:hover {
+  background-color: var(--qhs-cta-bg, var(--color-primary, #2563eb));
+  color: #ffffff !important;
+  transform: translateY(-1.5px);
+}
+
+.qhs-cta-style-gradient {
+  background: linear-gradient(135deg, var(--qhs-cta-bg, #2563eb) 0%, #7c3aed 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+
+.qhs-cta-style-gradient:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.45);
+}
+
+.qhs-cta-btn--block {
+  width: 100%;
+}
+
+/* 移动端汉堡切换按钮 */
+.qhs-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--qhs-text-color, #1e293b);
+}
+
+.qhs-mobile-icon-bar {
+  width: 22px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+/* 移动端侧滑抽屉 */
+.qhs-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+.qhs-mobile-drawer.is-active {
+  visibility: visible;
+}
+
+.qhs-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.qhs-mobile-drawer.is-active .qhs-drawer-backdrop {
+  opacity: 1;
+}
+
+.qhs-drawer-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 310px;
+  max-width: 85vw;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+}
+
+.qhs-mobile-drawer.is-active .qhs-drawer-content {
+  transform: translateX(0);
+}
+
+.qhs-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.qhs-drawer-logo {
+  height: 32px;
+  width: auto;
+}
+
+.qhs-drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.qhs-drawer-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.qhs-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.qhs-mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.qhs-mobile-nav-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.qhs-mobile-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qhs-mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+  text-decoration: none;
+  flex: 1;
+}
+
+.qhs-mobile-expand-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #64748b;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.qhs-mobile-sub-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px 16px;
+}
+
+.qhs-mobile-nav-item.is-expanded .qhs-mobile-sub-list {
+  display: block;
+}
+
+.qhs-mobile-sub-list a {
+  display: block;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #475569;
+  text-decoration: none;
+}
+
+.qhs-drawer-footer {
+  padding: 18px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.qhs-drawer-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f1f5f9;
+}
+
+/* 响应式断点适配 */
+@media (max-width: 992px) {
+  .qhs-nav {
+    display: none !important;
+  }
+  .qhs-phone-link {
+    display: none !important;
+  }
+  .qhs-cta-btn:not(.qhs-cta-btn--block) {
+    display: none !important;
+  }
+  .qhs-mobile-toggle {
+    display: flex !important;
+  }
+}
+
+/* ==========================================================================
+   Header Suite 暗黑/夜间模式全量适配 (Dark Mode Complete Support)
+   ========================================================================== */
+html.dark-mode .qhs-wrapper:not(.qhs-is-transparent),
+[data-theme='dark'] .qhs-wrapper:not(.qhs-is-transparent),
+html.dark-mode .qhs-wrapper.qhs-is-transparent.qhs-is-scrolled,
+[data-theme='dark'] .qhs-wrapper.qhs-is-transparent.qhs-is-scrolled {
+  background-color: var(--qhs-dark-bg-color, var(--qiling-dark-surface, #0f172a)) !important;
+  color: var(--qhs-dark-text-color, #f8fafc) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 2px 6px -1px rgba(0, 0, 0, 0.2) !important;
+}
+
+html.dark-mode .qhs-brand-title,
+[data-theme='dark'] .qhs-brand-title,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled .qhs-brand-title,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled .qhs-brand-title {
+  color: var(--qhs-dark-text-color, #f8fafc) !important;
+}
+
+html.dark-mode .qhs-brand-slogan,
+[data-theme='dark'] .qhs-brand-slogan,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled .qhs-brand-slogan,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled .qhs-brand-slogan {
+  color: rgba(248, 250, 252, 0.65) !important;
+}
+
+/* 导航链接在深色模式下的颜色 */
+html.dark-mode .qhs-nav-link,
+[data-theme='dark'] .qhs-nav-link,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled .qhs-nav-link,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled .qhs-nav-link,
+html.dark-mode .qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-nav-link,
+[data-theme='dark'] .qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-nav-link,
+html.dark-mode .qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-brand-title,
+[data-theme='dark'] .qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-brand-title,
+html.dark-mode .qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-brand-slogan,
+[data-theme='dark'] .qhs-wrapper.qhs-is-transparent:not(.qhs-is-scrolled) .qhs-brand-slogan {
+  color: var(--qhs-dark-text-color, #e2e8f0) !important;
+}
+
+html.dark-mode .qhs-nav-link:hover,
+[data-theme='dark'] .qhs-nav-link:hover,
+html.dark-mode .qhs-nav-item.is-active .qhs-nav-link,
+[data-theme='dark'] .qhs-nav-item.is-active .qhs-nav-link {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--qhs-dark-hover-color, #60a5fa) !important;
+}
+
+/* 下拉菜单 */
+html.dark-mode .qhs-dropdown-menu,
+[data-theme='dark'] .qhs-dropdown-menu {
+  background-color: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark-mode .qhs-dropdown-link,
+[data-theme='dark'] .qhs-dropdown-link {
+  color: #cbd5e1 !important;
+}
+
+html.dark-mode .qhs-dropdown-link:hover,
+[data-theme='dark'] .qhs-dropdown-link:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #60a5fa !important;
+}
+
+/* 搜索框与按钮 */
+html.dark-mode .qhs-search-input,
+[data-theme='dark'] .qhs-search-input {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+
+html.dark-mode .qhs-search-input::placeholder,
+[data-theme='dark'] .qhs-search-input::placeholder {
+  color: rgba(248, 250, 252, 0.5) !important;
+}
+
+html.dark-mode .qhs-search-submit,
+[data-theme='dark'] .qhs-search-submit {
+  color: #cbd5e1 !important;
+}
+
+/* 电话链接 */
+html.dark-mode .qhs-phone-link,
+[data-theme='dark'] .qhs-phone-link,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled .qhs-phone-link,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled .qhs-phone-link {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #f8fafc !important;
+}
+
+html.dark-mode .qhs-phone-link:hover,
+[data-theme='dark'] .qhs-phone-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 功能操作按钮 */
+html.dark-mode .qhs-action-btn,
+[data-theme='dark'] .qhs-action-btn,
+html.dark-mode .qhs-mobile-toggle,
+[data-theme='dark'] .qhs-mobile-toggle,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled .qhs-action-btn,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled .qhs-action-btn,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled .qhs-mobile-toggle,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled .qhs-mobile-toggle {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+
+html.dark-mode .qhs-action-btn:hover,
+[data-theme='dark'] .qhs-action-btn:hover,
+html.dark-mode .qhs-mobile-toggle:hover,
+[data-theme='dark'] .qhs-mobile-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+/* Logo 显示切换 (深色模式优先显示暗色Logo) */
+html.dark-mode .qhs-wrapper:has(.qhs-logo-dark) .qhs-logo-default,
+[data-theme='dark'] .qhs-wrapper:has(.qhs-logo-dark) .qhs-logo-default,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled:has(.qhs-logo-dark) .qhs-logo-default,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled:has(.qhs-logo-dark) .qhs-logo-default {
+  display: none !important;
+}
+
+html.dark-mode .qhs-wrapper:has(.qhs-logo-dark) .qhs-logo-dark,
+[data-theme='dark'] .qhs-wrapper:has(.qhs-logo-dark) .qhs-logo-dark,
+html.dark-mode .qhs-wrapper.qhs-is-scrolled:has(.qhs-logo-dark) .qhs-logo-dark,
+[data-theme='dark'] .qhs-wrapper.qhs-is-scrolled:has(.qhs-logo-dark) .qhs-logo-dark {
+  display: inline-block !important;
+}
+
+/* 移动端侧边抽屉 */
+html.dark-mode .qhs-drawer-content,
+[data-theme='dark'] .qhs-drawer-content {
+  background-color: #0f172a !important;
+  border-right-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode .qhs-drawer-title,
+[data-theme='dark'] .qhs-drawer-title,
+html.dark-mode .qhs-mobile-nav-link,
+[data-theme='dark'] .qhs-mobile-nav-link {
+  color: #f8fafc !important;
+}
+
+html.dark-mode .qhs-mobile-sub-list a,
+[data-theme='dark'] .qhs-mobile-sub-list a {
+  color: #94a3b8 !important;
+}
+
+html.dark-mode .qhs-drawer-phone,
+[data-theme='dark'] .qhs-drawer-phone {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+/* 暗黑模式切换按钮与图标状态控制 */
+.qhs-action-btn.theme-toggle-btn,
+.qhs-action-btn.darkmode-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-icon,
+.theme-toggle-btn .icon-sun,
+.theme-toggle-btn .icon-moon,
+.darkmode-toggle .icon-sun,
+.darkmode-toggle .icon-moon {
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* 浅色/默认模式：显示白天图标，隐藏夜间图标 */
+.theme-toggle-icon--dark,
+.darkmode-toggle .icon-moon,
+.theme-toggle-btn .icon-moon {
+  display: none !important;
+}
+
+.theme-toggle-icon--light,
+.darkmode-toggle .icon-sun,
+.theme-toggle-btn .icon-sun {
+  display: inline-flex !important;
+}
+
+/* 深色模式：显示夜间月亮图标，隐藏白天太阳图标 */
+html.dark-mode .theme-toggle-icon--dark,
+html.dark-mode .darkmode-toggle .icon-moon,
+html.dark-mode .theme-toggle-btn .icon-moon,
+[data-theme='dark'] .theme-toggle-icon--dark,
+[data-theme='dark'] .darkmode-toggle .icon-moon,
+[data-theme='dark'] .theme-toggle-btn .icon-moon {
+  display: inline-flex !important;
+}
+
+html.dark-mode .theme-toggle-icon--light,
+html.dark-mode .darkmode-toggle .icon-sun,
+html.dark-mode .theme-toggle-btn .icon-sun,
+[data-theme='dark'] .theme-toggle-icon--light,
+[data-theme='dark'] .darkmode-toggle .icon-sun,
+[data-theme='dark'] .theme-toggle-btn .icon-sun {
+  display: none !important;
+}
+
+/* === header_suite.css end === */
+
+/* ==========================================================================
+   启灵装修系统：全场景全局智能暗黑模式引擎 (Universal Smart Dark Mode Engine)
+   支持任意用户在前台可视化装修中自定义背景、文字、卡片、表单等属性后的全自动暗黑适配
+   ========================================================================== */
+
+/* 1. 核心设计令牌映射 (Token Mapping) */
+html.dark-mode,
+[data-theme='dark'] {
+  --dm-bg: #0b0f19;
+  --dm-bg-secondary: #111827;
+  --dm-bg-card: #1e293b;
+  --dm-bg-card-hover: #26354a;
+  --dm-text: #cbd5e1;
+  --dm-text-heading: #f8fafc;
+  --dm-text-muted: #94a3b8;
+  --dm-border: rgba(255, 255, 255, 0.08);
+  --dm-border-hover: rgba(255, 255, 255, 0.16);
+  --color-neutral-0: #1e293b;
+  --color-neutral-50: #0b0f19;
+  --color-neutral-100: #111827;
+  --color-neutral-200: #1e293b;
+  --color-neutral-300: #334155;
+  --color-background: var(--dm-bg);
+  --color-surface: var(--dm-bg-card);
+  --color-surface-alt: var(--dm-bg-secondary);
+  --color-heading: var(--dm-text-heading);
+  --color-text: var(--dm-text);
+  --color-text-muted: var(--dm-text-muted);
+  --color-border: var(--dm-border);
+}
+
+/* 2. 前台装修自定义变量全面强力覆写 (Visual & Advanced Customizer CSS Variable Overrides) */
+html.dark-mode [data-qds-visual="1"],
+html.dark-mode [data-qds-advanced="1"],
+html.dark-mode .qds-visual-wrapper,
+html.dark-mode .module-wrapper,
+html.dark-mode .developer-starter-module-wrapper,
+html.dark-mode .qiling-module-scope,
+html.dark-mode .qiling-builder-module,
+[data-theme='dark'] [data-qds-visual="1"],
+[data-theme='dark'] [data-qds-advanced="1"],
+[data-theme='dark'] .qds-visual-wrapper,
+[data-theme='dark'] .module-wrapper,
+[data-theme='dark'] .developer-starter-module-wrapper,
+[data-theme='dark'] .qiling-module-scope,
+[data-theme='dark'] .qiling-builder-module {
+  --qds-background-color: var(--dm-bg, #0b0f19) !important;
+  --qds-hover-background-color: var(--dm-bg-secondary, #111827) !important;
+  --qds-border-color: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qds-hover-border-color: var(--dm-border-hover, rgba(255, 255, 255, 0.16)) !important;
+  --qds-title-color: var(--dm-text-heading, #f8fafc) !important;
+  --qds-hover-title-color: var(--color-primary, #60a5fa) !important;
+  --qds-subtitle-color: var(--dm-text-muted, #94a3b8) !important;
+  --qds-text-color: var(--dm-text, #cbd5e1) !important;
+  --qiling-module-bg: var(--dm-bg, #0b0f19) !important;
+  --qiling-page-bg: var(--dm-bg, #0b0f19) !important;
+  --color-background: var(--dm-bg, #0b0f19) !important;
+  --qiling-module-title: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-component-module-title-color: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-module-subtitle: var(--dm-text-muted, #94a3b8) !important;
+  --qiling-module-text: var(--dm-text, #cbd5e1) !important;
+  --qiling-module-muted: var(--dm-text-muted, #94a3b8) !important;
+  --qiling-module-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-component-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-module-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  --qiling-component-post-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-component-post-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-post-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  --qiling-module-card-title: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-module-card-text: var(--dm-text, #cbd5e1) !important;
+}
+
+/* 3. 模块容器背景自动智能暗黑置换 (Module Container Dark Mode Conversion) */
+html.dark-mode :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+),
+html.dark-mode :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+) > :is(.module, section[class*="module-"], .developer-starter-module):not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+html.dark-mode .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+[data-theme='dark'] :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+),
+[data-theme='dark'] :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+) > :is(.module, section[class*="module-"], .developer-starter-module):not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+[data-theme='dark'] .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper) {
+  background: var(--dm-bg, #0b0f19) !important;
+  background-color: var(--dm-bg, #0b0f19) !important;
+  background-image: none !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}
+
+/* 4. 全局标题与主文字自动高反差反转 (Auto Contrast Inversion for Titles & Headings) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]),
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+) > a,
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+) > a {
+  color: #f8fafc !important;
+}
+
+/* 5. 全局副标题与正文灰度文字可读性自适应 (Auto Readable Contrast for Subtitles & Body) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .subtitle, .section-subtitle, .module-subtitle, .section-desc, .module-desc,
+  [class*="-desc"], [class*="-subtitle"], [class*="-description"], [class*="-excerpt"],
+  p, li
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]):not([class*="-price"]):not([class*="-amount"]):not(.price):not(.amount),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .subtitle, .section-subtitle, .module-subtitle, .section-desc, .module-desc,
+  [class*="-desc"], [class*="-subtitle"], [class*="-description"], [class*="-excerpt"],
+  p, li
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]):not([class*="-price"]):not([class*="-amount"]):not(.price):not(.amount) {
+  color: #94a3b8 !important;
+}
+
+/* 6. 全局卡片、模块列表项、内容面板自适应深色立体质感 (Card & Panel Surface Upgrades) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"],
+  [class*="_card"],
+  .card,
+  .feature-item,
+  .service-item,
+  .testimonial-item,
+  .team-item,
+  .pricing-item,
+  .case-item,
+  .portfolio-item,
+  .gallery-item,
+  .timeline-item,
+  .branch-item,
+  .doctor-item,
+  .room-item,
+  .stat-item,
+  .metric-item,
+  .faq-item,
+  .contact-card,
+  .booking-card,
+  .blog-post-item,
+  .news-card,
+  .qw-lib-card,
+  .fp-list-item,
+  .cat-tab-post-item,
+  .ql-testimonial-summary,
+  .ql-hotel-booking-form-box,
+  .qfs-qr-card
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"],
+  [class*="_card"],
+  .card,
+  .feature-item,
+  .service-item,
+  .testimonial-item,
+  .team-item,
+  .pricing-item,
+  .case-item,
+  .portfolio-item,
+  .gallery-item,
+  .timeline-item,
+  .branch-item,
+  .doctor-item,
+  .room-item,
+  .stat-item,
+  .metric-item,
+  .faq-item,
+  .contact-card,
+  .booking-card,
+  .blog-post-item,
+  .news-card,
+  .qw-lib-card,
+  .fp-list-item,
+  .cat-tab-post-item,
+  .ql-testimonial-summary,
+  .ql-hotel-booking-form-box,
+  .qfs-qr-card
+) {
+  background: var(--dm-bg-card, #1e293b) !important;
+  background-color: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"]:hover,
+  [class*="_card"]:hover,
+  .card:hover,
+  .feature-item:hover,
+  .service-item:hover,
+  .case-item:hover,
+  .pricing-item:hover
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"]:hover,
+  [class*="_card"]:hover,
+  .card:hover,
+  .feature-item:hover,
+  .service-item:hover,
+  .case-item:hover,
+  .pricing-item:hover
+) {
+  background: var(--dm-bg-card-hover, #26354a) !important;
+  background-color: var(--dm-bg-card-hover, #26354a) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* 7. 表单与交互输入框暗黑自动适配 (Inputs, Textareas & Form Controls) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  textarea,
+  select
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  textarea,
+  select
+) {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):focus,
+  textarea:focus,
+  select:focus
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):focus,
+  textarea:focus,
+  select:focus
+) {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border-color: var(--color-primary, #60a5fa) !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) ::placeholder,
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) ::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+/* 8. 价格、高亮及核心转化元素保持高能醒目 (Vibrant Accents for Prices & Callouts) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .price, .amount, .plan-price, .ticket-price, .room-price, .salary-range,
+  [class*="-price"], [class*="-amount"]
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .price, .amount, .plan-price, .ticket-price, .room-price, .salary-range,
+  [class*="-price"], [class*="-amount"]
+) {
+  color: var(--color-primary, #38bdf8) !important;
+}
+
+/* 9. 按钮与交互组件保持主色与清晰白色文字 (Buttons & Actions) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn:not(.btn-outline):not(.btn-ghost):not(.btn-text),
+  [class*="-btn"]:not([class*="-outline"]):not([class*="-ghost"]):not([class*="-text"]):not([class*="-link"]),
+  .banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn,
+  .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn,
+  .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .countdown-btn,
+  .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link,
+  .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn,
+  .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn:not(.btn-outline):not(.btn-ghost):not(.btn-text),
+  [class*="-btn"]:not([class*="-outline"]):not([class*="-ghost"]):not([class*="-text"]):not([class*="-link"]),
+  .banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn,
+  .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn,
+  .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .countdown-btn,
+  .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link,
+  .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn,
+  .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn
+) {
+  color: #ffffff !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline,
+  [class*="-outline"]
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline,
+  [class*="-outline"]
+) {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #f8fafc !important;
+  background-color: transparent !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline:hover,
+  [class*="-outline"]:hover
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline:hover,
+  [class*="-outline"]:hover
+) {
+  border-color: var(--color-primary, #60a5fa) !important;
+  color: #ffffff !important;
+  background-color: var(--color-primary, #60a5fa) !important;
+}
+
+/* 10. 标签页与分类筛选控件暗黑自适应 (Tabs & Filter Controls) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):not(.active):not(.is-active):not([aria-selected="true"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):not(.active):not(.is-active):not([aria-selected="true"]) {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #94a3b8 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):is(.active, .is-active, [aria-selected="true"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):is(.active, .is-active, [aria-selected="true"]) {
+  background-color: var(--color-primary, #3b82f6) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* 11. 边框、分割线及次级徽章暗黑适配 (Borders, Dividers & Neutral Badges) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  hr, .divider, [class*="-divider"], .separator
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  hr, .divider, [class*="-divider"], .separator
+) {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .badge:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  .tag:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  [class*="-tag"]:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]):not(.badge)
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .badge:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  .tag:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  [class*="-tag"]:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]):not(.badge)
+) {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}

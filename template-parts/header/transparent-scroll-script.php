@@ -9,6 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+if ( function_exists( 'developer_starter_page_has_header_module' ) && developer_starter_page_has_header_module() ) {
+    return;
+}
+
 $args = wp_parse_args(
     is_array( $args ) ? $args : array(),
     array(

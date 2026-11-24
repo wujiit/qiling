@@ -42,241 +42,408 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 52%, #0d9488 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "德伦口腔",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1800&q=80",
-            "title": "数字化口腔诊疗中心",
-            "subtitle": "正畸、种植、修复与儿童齿科一站式诊疗，支持在线预约初诊。",
-            "btn_text": "预约初诊",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0284c7"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "效果对比",
+            "link": "#image_comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线挂号",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0ea5e9",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0ea5e9",
+        "qhs_hover_bg": "rgba(14,165,233,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "数字化精准微创齿科 · 重塑健康自信微笑",
+        "bb_subtitle": "引进德国卡瓦数字化全景CT与3D口扫黑科技，三甲公立专科特聘医师常年主诊，提供无痛微创舒适诊疗",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "10",
-            "number": "10年+",
-            "label": "临床经验",
-            "color": "#ffffff"
+            "text": "免费预约全景CT与面诊",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "20",
-            "number": "20+",
-            "label": "执业医生",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "患者评分",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "24",
-            "number": "24h",
-            "label": "预约响应",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "口腔诊疗项目",
-        "services_subtitle": "覆盖常见口腔问题，提供分阶段治疗与复诊跟踪",
-        "services_bg_color": "#ffffff",
-        "services_padding": "normal",
+        "services_title": "四大核心数字化诊疗中心",
+        "services_title_size": "2.1rem",
+        "services_subtitle": "以学术严谨性与现代数字化美学技术，保障全生命周期口腔健康",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "种植修复",
-            "desc": "数字化种植评估与修复，兼顾功能与美观。",
-            "link": "#"
+            "icon": "ri-magic-line",
+            "title": "数字化隐形美学正畸",
+            "desc": "iTero 5D口扫 3分钟预见矫正后3D效果，隐适美认证医师量身定制，悄然收齐牙列重塑面下1/3美学微笑线。"
           },
           {
-            "icon": "02",
-            "title": "牙齿正畸",
-            "desc": "金属托槽和隐形矫正方案，按阶段复诊调整。",
-            "link": "#"
+            "icon": "ri-shield-cross-line",
+            "title": "微创舒适即拔即种",
+            "desc": "3D手术导板精准定位，瑞士士卓曼/瑞典诺贝尔原厂植体，创口仅毫米级，当天种植当天戴牙正常进食。"
           },
           {
-            "icon": "03",
-            "title": "儿童齿科",
-            "desc": "涂氟、窝沟封闭与早期干预，关注成长发育。",
-            "link": "#"
+            "icon": "ri-sparkling-fill",
+            "title": "DSD 微笑美学超薄贴面",
+            "desc": "德国西诺德全瓷贴面，厚度薄至0.2mm无需大量磨牙，微米级闭合缝隙与着色牙，持久透光温润如玉。"
           },
           {
-            "icon": "04",
-            "title": "牙周治疗",
-            "desc": "基础治疗与维护计划，降低炎症复发风险。",
-            "link": "#"
+            "icon": "ri-heart-pulse-line",
+            "title": "儿童早期颜面咬合管理",
+            "desc": "ETA/罗慕咬合诱导，针对地包天、口呼吸及腺样体面容进行早期干预，引导颌骨与恒牙良性发育。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
+      }
+    },
+    {
+      "type": "image_comparison",
+      "data": {
+        "title": "真实交付效果 · 前后对比见证",
+        "subtitle": "拖动滑块直观对比：重度牙列拥挤错颌畸形 经过 16 个月隐适美数字化矫治后的完美蜕变",
+        "image_before": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80",
+        "label_before": "矫正前 · 严重牙列拥挤深覆合",
+        "image_after": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80",
+        "label_after": "矫正后 · 饱满弧度自然微笑线",
+        "comparison_badge_bg": "#0284c7",
+        "slider_color": "#ffffff",
+        "height": 520,
+        "initial_offset": 50
       }
     },
     {
       "type": "team",
       "data": {
-        "team_title": "核心医师团队",
-        "team_subtitle": "持证执业，分科协作，保障诊疗质量与沟通体验",
+        "team_title": "三甲特聘专家 · 博士医师天团",
+        "team_title_size": "2.1rem",
+        "team_title_color": "#0f172a",
+        "team_subtitle": "严苛准入标准，平均临床经验 15 年以上，专病专精，杜绝实习医生上手",
         "team_columns": "3",
         "team_members": [
           {
             "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
-            "name": "王主任",
-            "position": "种植中心负责人",
-            "desc": "擅长数字化种植和复杂修复方案设计。",
-            "email": "doctor1@example.com"
+            "name": "程建国 主任医师 / 博士",
+            "position": "首席正畸专家 · 原三甲口腔正畸科主任",
+            "desc": "中华口腔医学会正畸专委会委员，隐适美中国区白金认证讲师，完成复杂错颌畸形矫正案例超 3000 例。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1594824813629-1a48ff98090b?auto=format&fit=crop&w=600&q=80",
+            "name": "林雅婷 副主任医师 / 硕士",
+            "position": "数字化种植中心主任 · 国际种植学会(ITI)会员",
+            "desc": "擅长全口无牙颌 All-on-4/6 即刻负重种植、前牙美学区种植及骨增量疑难复杂术式。"
           },
           {
             "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
-            "name": "陈医生",
-            "position": "正畸医生",
-            "desc": "关注面型管理与隐形矫正长期稳定。",
-            "email": "doctor2@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
-            "name": "林医生",
-            "position": "儿童齿科医生",
-            "desc": "擅长儿童沟通、预防护理和早期干预。",
-            "email": "doctor3@example.com"
+            "name": "杜晓峰 主治医师",
+            "position": "美学修复与微创贴面首席专家",
+            "desc": "专注于德国 DSD 美学微笑曲线设计与显微根管治疗，以微米级精度重现原生牙釉质透光质感。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#f0f9ff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "process",
+      "type": "pricing",
       "data": {
-        "process_title": "初诊流程",
-        "process_subtitle": "从检查到方案确认，每一步都清楚可追踪",
-        "process_mode": "industrial",
-        "process_items": [
+        "pricing_title": "诊疗项目透明公示 · 拒绝隐形消费",
+        "pricing_title_size": "2.1rem",
+        "pricing_subtitle": "明码实价，术前签署知情同意书，费用包含全套耗材与复诊维护，无任何隐形附加费",
+        "pricing_columns": "3",
+        "pricing_items": [
           {
-            "icon": "01",
-            "title": "预约建档",
-            "desc": "登记基础信息，确认主诉和就诊时间。",
-            "stage_tag": "预约",
-            "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80"
+            "name": "数字化隐形美学正畸",
+            "name_color": "#0f172a",
+            "price": "19,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "起 / 全包疗程",
+            "desc": "包含全套3D口扫、方案设计、全副隐形矫治器及保持器2套",
+            "desc_color": "#64748b",
+            "features": "3D口扫方案可视化\n正畸博士全程亲诊\n赠送价值2000元洁牙抛光\n分期无息无压力",
+            "features_color": "#334155",
+            "btn_text": "预约口扫立减 ¥2000",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "人气首选",
+            "badge": "人气首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "icon": "02",
-            "title": "口腔检查",
-            "desc": "口扫、影像和牙周基础检查，形成诊断依据。",
-            "stage_tag": "检查",
-            "image": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80"
+            "name": "瑞士ITI 微创亲水种植牙",
+            "name_color": "#0f172a",
+            "price": "6,800",
+            "price_color": "#0f172a",
+            "period": "起 / 包含全冠",
+            "desc": "瑞士进口ITI亲水植体 + 原厂钛基台 + 德国纯全瓷冠",
+            "desc_color": "#64748b",
+            "features": "即拔即种创口毫米级\n终身原厂全球联保\n千级层流无菌手术室\n术后长期咬合维保",
+            "features_color": "#334155",
+            "btn_text": "免费拍片领名额",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "icon": "03",
-            "title": "方案沟通",
-            "desc": "解释治疗方案、周期、费用和复诊安排。",
-            "stage_tag": "方案",
-            "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80"
+            "name": "DSD 极薄全瓷美学贴面",
+            "name_color": "#0f172a",
+            "price": "2,200",
+            "price_color": "#0f172a",
+            "period": "颗 / 德国原装",
+            "desc": "厚度薄至0.2mm，无需大面积磨牙，一次就诊重焕大笑自信",
+            "desc_color": "#64748b",
+            "features": "微米级贴合抗崩瓷\n量身定制微笑曲线\n拒绝发黄变色尴尬\n5年原厂脱落质保",
+            "features_color": "#334155",
+            "btn_text": "预约美学贴面面诊",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff"
+        "pricing_plans": [
+          {
+            "name": "数字化隐形美学正畸",
+            "name_color": "#0f172a",
+            "price": "19,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "起 / 全包疗程",
+            "desc": "包含全套3D口扫、方案设计、全副隐形矫治器及保持器2套",
+            "desc_color": "#64748b",
+            "features": "3D口扫方案可视化\n正畸博士全程亲诊\n赠送价值2000元洁牙抛光\n分期无息无压力",
+            "features_color": "#334155",
+            "btn_text": "预约口扫立减 ¥2000",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "人气首选",
+            "badge": "人气首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "瑞士ITI 微创亲水种植牙",
+            "name_color": "#0f172a",
+            "price": "6,800",
+            "price_color": "#0f172a",
+            "period": "起 / 包含全冠",
+            "desc": "瑞士进口ITI亲水植体 + 原厂钛基台 + 德国纯全瓷冠",
+            "desc_color": "#64748b",
+            "features": "即拔即种创口毫米级\n终身原厂全球联保\n千级层流无菌手术室\n术后长期咬合维保",
+            "features_color": "#334155",
+            "btn_text": "免费拍片领名额",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "DSD 极薄全瓷美学贴面",
+            "name_color": "#0f172a",
+            "price": "2,200",
+            "price_color": "#0f172a",
+            "period": "颗 / 德国原装",
+            "desc": "厚度薄至0.2mm，无需大面积磨牙，一次就诊重焕大笑自信",
+            "desc_color": "#64748b",
+            "features": "微米级贴合抗崩瓷\n量身定制微笑曲线\n拒绝发黄变色尴尬\n5年原厂脱落质保",
+            "features_color": "#334155",
+            "btn_text": "预约美学贴面面诊",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "certificate_honors",
       "data": {
-        "testimonials_title": "患者评价",
-        "testimonials_subtitle": "真实就诊反馈，帮助新患者了解服务体验",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "6,800+",
-        "average_rating": "4.9",
-        "testimonials_items": [
+        "honors_title": "国际权威认证 · 无菌感控标准",
+        "honors_subtitle": "严格执行国际 JCI 医疗感控认证与一人一机一消毒十六步灭菌流程，杜绝交叉感染",
+        "honors_items": [
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "张女士",
-            "position": "正畸患者",
-            "content": "医生把矫正步骤讲得很清楚，复诊提醒也很及时。",
-            "rating": "5",
-            "source": "clinic",
-            "date": "2026-03-01",
-            "verified": "verified"
+            "title": "德国卡瓦数字化口腔影像认证中心",
+            "desc": "超低辐射全景三合一颌面锥形束 CT"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "刘先生",
-            "position": "种植修复",
-            "content": "方案和费用透明，术后跟踪比较放心。",
-            "rating": "5",
-            "source": "clinic",
-            "date": "2026-03-08",
-            "verified": "verified"
+            "title": "Invisalign 隐适美官方杰出认证中心",
+            "desc": "官方授牌正畸示范带教医疗机构"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "李妈妈",
-            "position": "儿童齿科",
-            "content": "小朋友第一次看牙没有太紧张，医生很有耐心。",
-            "rating": "5",
-            "source": "clinic",
-            "date": "2026-03-12",
-            "verified": "verified"
+            "title": "瑞士 Straumann 士卓曼种植临床基地",
+            "desc": "原厂直供可溯源一盒一码防伪验证"
+          },
+          {
+            "title": "国家千级层流感控消毒灭菌认证",
+            "desc": "高压蒸汽预真空灭菌器全流程监控记录"
           }
-        ],
-        "testimonials_bg_color": "#f8fafc"
+        ]
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约初诊",
-        "booking_subtitle": "提交基础信息、主诉和期望时间，诊所会确认预约安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "就诊准备",
-        "sidebar_content": "可在表单里填写症状、期望时间和联系方式\n携带既往片子或检查资料\n急性疼痛请电话优先联系",
-        "contact_phone": "400-120-2026",
-        "contact_hours": "09:00-20:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_padding_top": "90px",
-        "module_padding_bottom": "90px",
-        "module_bg_color": "#ffffff"
+        "booking_title": "预约资深口腔正畸/种植专家免费初诊检查",
+        "booking_subtitle": "提供全景口腔CT拍片、数字化口扫建模与个性化诊疗方案设计，全程舒适无痛。",
+        "booking_btn_text": "立即预约专家初诊",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "今日免挂号费",
+        "booking_phone": "门诊预约热线：021-8888-6666 (08:30 - 20:30)",
+        "booking_time": "周一至周日全天接诊，节假日无休"
       }
     },
     {
-      "type": "faq",
+      "type": "footer_suite",
       "data": {
-        "faq_title": "就诊常见问题",
-        "module_bg_color": "#f0f9ff",
-        "faq_items": [
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#091b24",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0ea5e9",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "DENTAL-CARE · 数字化微创口腔诊疗中心",
+        "qfs_brand_desc": "严格执行德国蓝十字感染控制标准。集隐形矫正、微创数字化种植、美学修复与儿童齿科为一体，守护全家口腔健康自信笑容。",
+        "qfs_link_groups": [
           {
-            "question": "初诊需要多长时间？",
-            "answer": "一般建议预留 30-60 分钟，用于检查、沟通方案和确认后续安排。"
-          },
-          {
-            "question": "是否可以医保或商保？",
-            "answer": "可根据当地政策和门店资质配置说明，具体以机构实际支持为准。"
-          },
-          {
-            "question": "治疗价格如何展示？",
-            "answer": "可在菜单或服务模块中补充项目价格区间，也可引导用户预约面诊后确认。"
+            "title": "诊疗项目与就诊服务指南",
+            "links": "隐适美隐形正畸中心|#\n微创即刻数字化种植|#\nDSD 数字化美学贴面|#\n舒适化儿童防龋齿科|#\n初诊全景片与CT检查预约|#\n医保定点报销政策说明|#\n一人一机一灭菌感控公示|#\n夜间急诊口腔值班通道|#"
           }
-        ]
+        ],
+        "qfs_contact_title": "爱牙预约与急诊",
+        "qfs_contact_items": "预约热线|400-880-6060|tel:4008806060\n急诊专线|188-6666-8800|tel:18866668800\n门诊时间|周一至周日 8:30 - 20:30（无假日门诊）|#\n门诊地址|成都市高新区天府大道北段 1199 号 2 层|#",
+        "qfs_social_title": "关注爱牙科普",
+        "qfs_social_links": "微信公众号|#\n小红书爱牙科普|#\n抖音护齿直播|#\n微博认证主页|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 DENTAL-CARE CLINIC. 保留所有权利 · 医疗机构执业许可证：PDY98234051010717D1522",
+        "qfs_bottom_links": "医疗广告审查证明|#\n消毒供应室信息公示|#\n患者隐私保护条例|#\n来院导航|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

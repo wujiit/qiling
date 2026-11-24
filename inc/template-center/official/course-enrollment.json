@@ -42,114 +42,172 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #0284c7 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "领航学社",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=80",
-            "title": "让学习成果可以被看见",
-            "subtitle": "系统课程、实战项目、导师辅导和阶段测评，帮助学员完成从报名到交付作品的闭环。",
-            "btn_text": "立即报名",
-            "btn_url": "#",
-            "btn_bg_color": "#4338ca",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "课程体系",
+            "link": "#curriculum",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "48",
-            "number": "48节",
-            "label": "系统课程",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "8",
-            "number": "8个",
-            "label": "实战项目",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "1v1",
-            "number": "1v1",
-            "label": "导师答疑",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "92",
-            "number": "92%",
-            "label": "完课率",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "预约试听",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "课程适合人群",
-        "services_subtitle": "用清晰人群定位降低报名决策成本",
-        "services_columns": "4",
-        "services_bg_color": "#ffffff",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "零基础入门",
-            "desc": "从基础概念、工具链和学习路径开始。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "职场提升",
-            "desc": "围绕岗位能力、项目经验和作品集提升。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "转行求职",
-            "desc": "配套项目实战、简历指导和面试复盘。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "团队内训",
-            "desc": "可按企业目标定制课程和考核任务。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "开拓认知视野 · 领跑前沿未来 · 数字化职场实战学院",
+        "bb_subtitle": "汇聚全球一线名师与大厂技术架构师，涵盖商业数据分析、AI 工具链落地与全栈技能进阶系统大课。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "免费领取 7 天试学课",
+        "bb_btn1_url": "#courses",
+        "bb_btn2_text": "查看最新课程大纲",
+        "bb_btn2_url": "#syllabus"
       }
     },
     {
       "type": "curriculum",
       "data": {
-        "curriculum_title": "课程大纲",
-        "curriculum_subtitle": "从基础到实战，按阶段建立可落地能力",
-        "curriculum_bg_color": "#eef2ff",
-        "curriculum_primary_color": "#4338ca",
+        "curriculum_title": "体系化实战教学大纲与进阶路径",
+        "curriculum_subtitle": "为期 16 周的硬核沉浸式训练，理论推导与产业级代码实战 1:2 深度配比",
         "curriculum_items": [
           {
-            "title": "阶段一：核心基础与工具链",
-            "meta": "第1-2周 | 8节",
-            "content": "<p>掌握核心概念、学习路径、工具使用和基础案例拆解。</p>",
+            "title": "第一阶段：算法底层原理与数学基石 (Foundations & Math)",
+            "meta": "第 1-4 周 · 理论攻坚 · 40 课时",
+            "content": "深入剖析线性代数、概率图模型与凸优化理论。手写反向传播求导引擎，彻底掌握现代神经网络梯度传递与张量计算底层机制。",
             "open": "yes"
           },
           {
-            "title": "阶段二：案例拆解与模块化实践",
-            "meta": "第3-5周 | 16节",
-            "content": "<p>围绕真实业务案例完成模块搭建、页面编排和数据配置。</p>",
+            "title": "第二阶段：大模型微调与 RAG 工业级知识库构建 (LLM Fine-tuning & RAG)",
+            "meta": "第 5-8 周 · 核心实战 · 50 课时",
+            "content": "LoRA / QLoRA 轻量化微调技术、混合精度训练分布式 DeepSpeed 优化，结合向量数据库与重排算法 (Re-ranking) 打造企业级防幻觉知识库。",
             "open": "no"
           },
           {
-            "title": "阶段三：项目实战与复盘优化",
-            "meta": "第6-8周 | 24节",
-            "content": "<p>完成结课项目，进行导师评审、问题复盘和作品打磨。</p>",
+            "title": "第三阶段：多智能体编排与自主任务决策 (Autonomous Multi-Agents)",
+            "meta": "第 9-12 周 · 进阶工程 · 50 课时",
+            "content": "基于 LangGraph / AutoGen 实现多 Agent 角色协作、工具自调用与反思纠错循环，实现复杂长流程业务自动拆解与无缝执行。",
             "open": "no"
+          },
+          {
+            "title": "第四阶段：产业级 Capstone 毕设项目路演与大厂内推 (Capstone Defense)",
+            "meta": "第 13-16 周 · 成果交付 · 30 课时",
+            "content": "在导师指导下独立完成可上线部署的真实商业级闭环项目，撰写架构白皮书，直接面向一线投资人与大厂技术 VP 进行结业答辩。",
+            "open": "no"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "四大前沿交叉学科进修方向",
+        "services_subtitle": "紧扣数字化时代核心技能需求，培养具备系统化思维的复合型工程领军人才",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "fas fa-brain",
+            "title": "生成式 AI 与 Agent 架构工程",
+            "desc": "从 Transformer 架构微调、大模型幻觉抑制到多智能体自主协同工作流生产落地。"
+          },
+          {
+            "icon": "fas fa-chart-line",
+            "title": "量化金融工程与高频交易算法",
+            "desc": "因子挖掘、多空对冲策略回测、低延迟 C++ 撮合执行系统及全球宏观风险量化建模。"
+          },
+          {
+            "icon": "fas fa-cube",
+            "title": "云原生全栈架构与分布式存储",
+            "desc": "Kubernetes 深度定制、微服务网格治理、高并发亿级流量容灾架构与云成本优化。"
+          },
+          {
+            "icon": "fas fa-graduation-cap",
+            "title": "国际学术科研与顶会论文进修",
+            "desc": "NeurIPS / ICML / CVPR 顶级顶会论文指导，手把手带做前沿实验，助力海外名校申请。"
           }
         ]
       }
@@ -157,105 +215,211 @@
     {
       "type": "team",
       "data": {
-        "team_title": "导师团队",
-        "team_subtitle": "用真实背景、授课方向和项目经验建立报名信任",
+        "team_title": "教研导师天团 · 顶尖学术与产业巨擘",
+        "team_subtitle": "汇聚知名高校终身教授与头部 AI 实验室首席科学家，全程小班导师制答疑指导",
         "team_columns": "3",
         "team_members": [
           {
-            "avatar": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
-            "name": "许老师",
-            "position": "课程负责人",
-            "desc": "多年课程研发和企业内训经验，负责学习路径设计。",
-            "email": "teacher1@example.com"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+            "name": "顾若涵 博士 (Dr. Ruohan Gu)",
+            "position": "首席科学家 / 兼职讲席教授",
+            "desc": "斯坦福大学计算机博士，前 Google Brain 高级研究员，在 NeurIPS、ICLR 发表顶级顶会论文 20 余篇，引用量超 8000 次。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+            "name": "郑宇哲 (Yuzhe Zheng)",
+            "position": "工程教学总监 · 资深首席架构师",
+            "desc": "前头部大厂分布式系统技术委员会主席，主导过多款亿级 DAU 产品的底层架构研发与数万张 GPU 集群算力调度优化。"
           },
           {
             "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-            "name": "林老师",
-            "position": "项目导师",
-            "desc": "专注项目实战、作品集打磨和问题诊断。",
-            "email": "teacher2@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-            "name": "周老师",
-            "position": "就业顾问",
-            "desc": "负责简历优化、面试准备和阶段复盘。",
-            "email": "teacher3@example.com"
+            "name": "林思曼 博士 (Dr. Siman Lin)",
+            "position": "量化金融学科带头人",
+            "desc": "哥伦比亚大学金融工程博士，曾任华尔街知名对冲基金量化研究总监，精通微观市场结构与统计套利算法。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "process",
+      "type": "pricing",
       "data": {
-        "process_title": "学习路径",
-        "process_subtitle": "从报名测评到作品交付，过程清晰可追踪",
-        "process_items": [
+        "pricing_title": "透明助学方案与奖学金计划",
+        "pricing_subtitle": "支持分期付款与企业对公报销，成绩优异者最高可享全额奖学金",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "icon": "01",
-            "title": "报名测评",
-            "desc": "了解基础水平、学习目标和时间安排。",
-            "stage_tag": "测评"
+            "name": "实战进修随行版",
+            "name_color": "#0f172a",
+            "price": "¥4,980",
+            "price_color": "#0f172a",
+            "period": "/期",
+            "desc": "适合具备一定开发基础、希望自主攻坚实战项目的在职工程师",
+            "desc_color": "#64748b",
+            "features": "全部 16 周高清课程回放与项目源码终身权限\n进入内部专业技术社群与助教日常答疑\n每周 1 次专属线上代码审查 (Code Review)\n全套云端 GPU 算力实训实验沙箱环境配额",
+            "features_color": "#334155",
+            "btn_text": "申请入学",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "icon": "02",
-            "title": "分班学习",
-            "desc": "按目标进入对应班型并完成阶段任务。",
-            "stage_tag": "学习"
+            "name": "领航者导师菁英班",
+            "name_color": "#0f172a",
+            "price": "¥9,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/期",
+            "desc": "小班制导师带教，深度辅导工业级 Capstone 毕设与名企求职直通",
+            "desc_color": "#64748b",
+            "features": "导师 1对1 专属每周深度学术/架构指导\nCapstone 真实产业闭环项目深度孵化\n名企内推绿色通道与猎头专属职位匹配\n全套模拟技术面试与简历针对性精修\n获得 IACET 国际认证权威结业学分证书\n享受结业优秀学员最高 5000 元奖学金返还",
+            "features_color": "#334155",
+            "btn_text": "申请菁英席位",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "85% 学员首选",
+            "badge": "85% 学员首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "icon": "03",
-            "title": "项目实战",
-            "desc": "完成真实项目演练和导师点评。",
-            "stage_tag": "实战"
-          },
-          {
-            "icon": "04",
-            "title": "作品交付",
-            "desc": "输出作品集、学习报告和后续提升建议。",
-            "stage_tag": "交付"
+            "name": "顶会论文与学者深造计划",
+            "name_color": "#0f172a",
+            "price": "¥26,800",
+            "price_color": "#0f172a",
+            "period": "/全案",
+            "desc": "针对计划申请北美/欧洲顶尖名校博士或发表国际顶会论文的青年学者",
+            "desc_color": "#64748b",
+            "features": "常春藤终身教授直接带组指导论文选题与实验\n全程指导论文撰写、润色与顶会投递冲刺\n表现优异学员可获导师极具分量海外推荐信\n全程配备充足 A100/H100 高性能计算集群\n全流程国际学术同行评审机制模拟答辩",
+            "features_color": "#334155",
+            "btn_text": "学术委员会初筛",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "module_bg_color": "#eef2ff"
+        "pricing_items": [
+          {
+            "name": "实战进修随行版",
+            "name_color": "#0f172a",
+            "price": "¥4,980",
+            "price_color": "#0f172a",
+            "period": "/期",
+            "desc": "适合具备一定开发基础、希望自主攻坚实战项目的在职工程师",
+            "desc_color": "#64748b",
+            "features": "全部 16 周高清课程回放与项目源码终身权限\n进入内部专业技术社群与助教日常答疑\n每周 1 次专属线上代码审查 (Code Review)\n全套云端 GPU 算力实训实验沙箱环境配额",
+            "features_color": "#334155",
+            "btn_text": "申请入学",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "领航者导师菁英班",
+            "name_color": "#0f172a",
+            "price": "¥9,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/期",
+            "desc": "小班制导师带教，深度辅导工业级 Capstone 毕设与名企求职直通",
+            "desc_color": "#64748b",
+            "features": "导师 1对1 专属每周深度学术/架构指导\nCapstone 真实产业闭环项目深度孵化\n名企内推绿色通道与猎头专属职位匹配\n全套模拟技术面试与简历针对性精修\n获得 IACET 国际认证权威结业学分证书\n享受结业优秀学员最高 5000 元奖学金返还",
+            "features_color": "#334155",
+            "btn_text": "申请菁英席位",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "85% 学员首选",
+            "badge": "85% 学员首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "顶会论文与学者深造计划",
+            "name_color": "#0f172a",
+            "price": "¥26,800",
+            "price_color": "#0f172a",
+            "period": "/全案",
+            "desc": "针对计划申请北美/欧洲顶尖名校博士或发表国际顶会论文的青年学者",
+            "desc_color": "#64748b",
+            "features": "常春藤终身教授直接带组指导论文选题与实验\n全程指导论文撰写、润色与顶会投递冲刺\n表现优异学员可获导师极具分量海外推荐信\n全程配备充足 A100/H100 高性能计算集群\n全流程国际学术同行评审机制模拟答辩",
+            "features_color": "#334155",
+            "btn_text": "学术委员会初筛",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
+    },
+    {
+      "type": "cases",
+      "data": {}
     },
     {
       "type": "booking-entry",
-      "data": {
-        "booking_title": "提交报名申请",
-        "booking_subtitle": "提交学习目标、基础情况和期望班型，课程顾问会确认班型和开课安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "报名须知",
-        "sidebar_content": "建议先完成入学测评\n企业内训可在表单里备注团队人数\n课程顾问会在工作时间内联系",
-        "contact_phone": "400-900-2026",
-        "contact_hours": "09:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#ffffff"
-      }
+      "data": {}
     },
     {
-      "type": "faq",
+      "type": "footer_suite",
       "data": {
-        "faq_title": "报名常见问题",
-        "module_bg_color": "#eef2ff",
-        "faq_items": [
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "TALENT-ACADEMY · 终身学习与职场前沿技能提升学院",
+        "qfs_brand_desc": "赋能每一位渴望卓越的终身学习者。汇聚清北及行业一线导师，研发 AI 生产力实战、产品经理、数字化运营与商业管理实战体系。",
+        "qfs_link_groups": [
           {
-            "question": "零基础可以报名吗？",
-            "answer": "可以，建议先完成入学测评，课程顾问会按基础推荐合适班型。"
-          },
-          {
-            "question": "是否支持企业内训？",
-            "answer": "支持，可根据企业业务目标定制课程、项目任务和考核方式。"
-          },
-          {
-            "question": "课程内容可以改吗？",
-            "answer": "可以，课程大纲、导师、报名表单和图片都可以在装修器中替换。"
+            "title": "热门实战课程 & 学员成长赋能",
+            "links": "AI 商业实战应用全景体系|#\n高阶商业增长与数字化运营|#\n全栈数据分析与商业决策课|#\n管理精进与领导力实战研修班|#\n1V1 导师答疑与作业代码精批|#\n独家实战项目案例源码库|#\n结业证书与学信技能认证|#\n知名大厂内推直通就业通道|#"
           }
-        ]
+        ],
+        "qfs_contact_title": "课程顾问与试听",
+        "qfs_contact_items": "招生热线|400-880-9980|tel:4008809980\n助教微信|ACADEMY_ASSIST|#\n学院总部|北京市海淀区中关村南大街未来教育创新中心 9 层|#",
+        "qfs_social_title": "加入学员社群",
+        "qfs_social_links": "微信公众号|#\nBilibili 公开课|#\n知乎职场专栏|#\n学员专属知识星球|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 TALENT-ACADEMY EDUCATION. 保留所有权利 · 具备民办学校办学许可资质",
+        "qfs_bottom_links": "办学许可证公示|#\n退费政策协议说明|#\n学员服务协议|#\n知识产权声明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

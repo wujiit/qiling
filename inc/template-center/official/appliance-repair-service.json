@@ -43,128 +43,321 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #d97706 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "快修到家",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1800&q=80",
-            "title": "让维修上门更快、更清楚、更放心",
-            "subtitle": "覆盖家电维修、水电快修、安装更换和紧急故障处理，用明码报价和区域覆盖提升客户信任。",
-            "btn_text": "立即预约上门",
-            "btn_url": "#",
-            "btn_bg_color": "#0284c7",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f59e0b",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f59e0b",
+        "qhs_hover_bg": "rgba(245,158,11,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "30分钟极速上门 · 先报价后维修 · 明码标价零套路",
+        "bb_subtitle": "全城 18 个直营网点服务车就近派工，全员持证上岗并签署背景背调协议，原厂正品配件质保长达 1 年，修不好不收任何维修费",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "30m",
-            "number": "30min",
-            "label": "快速响应",
-            "color": "#ffffff"
+            "text": "一键紧急报修，工程师最快 30 分钟抵达",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "20",
-            "number": "20+",
-            "label": "服务区域",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "客户评分",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "100",
-            "number": "100%",
-            "label": "明码报价",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "常见维修服务",
-        "services_subtitle": "适配空调、冰箱、洗衣机、热水器、水电线路和日常安装快修场景",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大金牌同城便民抢修专区",
+        "services_subtitle": "专业仪器精准定位故障根因，拒绝盲目换件增加开销",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "家电故障维修",
-            "desc": "空调、冰箱、洗衣机、热水器和厨电的常见故障检测与维修。",
-            "link": "#"
+            "icon": "fas fa-snowflake",
+            "title": "空调拆洗维修与加氟保压",
+            "desc": "不制冷制热、漏水异响、压缩机烧坏，全套高压高温蒸汽深度除菌拆洗。"
           },
           {
-            "icon": "02",
-            "title": "水电快修",
-            "desc": "跳闸断电、漏水渗水、开关插座和照明线路等家庭快修服务。",
-            "link": "#"
+            "icon": "fas fa-tint",
+            "title": "洗衣机脱水异响与电脑板维修",
+            "desc": "滚筒不进水、不排水、减震弹簧断裂与排水电机损坏，原厂主板现场速修。"
           },
           {
-            "icon": "03",
-            "title": "安装更换",
-            "desc": "家电安装、龙头花洒更换、灯具面板安装和小型五金更换。",
-            "link": "#"
+            "icon": "fas fa-temperature-low",
+            "title": "冰箱冷柜不制冷与管路补漏",
+            "desc": "变频压缩机启动异常、温控传感器失效、内漏精准打压测漏与环保冷媒重注。"
           },
           {
-            "icon": "04",
-            "title": "管道疏通与检测",
-            "desc": "厨房卫浴堵塞、排水异常和局部管道检测处理。",
-            "link": "#"
+            "icon": "fas fa-wrench",
+            "title": "厨卫暗管漏水内窥镜精准检测",
+            "desc": "高频音频探地仪+红外热成像仪精准定位渗水点，免砸砖微创修复水管。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "家电维修/水电维修官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "维修服务套餐",
-        "pricing_subtitle": "正式上线时可按城市、故障类型和材料成本替换成你的真实报价规则",
+        "pricing_title": "常见维修配件与工时透明价目公示表",
+        "pricing_subtitle": "严格执行先检测、后出示官方指导价格表、用户同意后再施工的原则，拒绝坐地起价",
         "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
+        "pricing_plans": [
+          {
+            "name": "家电基础深度拆洗保养",
+            "name_color": "#0f172a",
+            "price": "¥99",
+            "price_color": "#0f172a",
+            "period": "/台起",
+            "desc": "适合换季空调、油烟机、洗衣机深度杀菌去污，提高运行能效",
+            "desc_color": "#64748b",
+            "features": "140℃ 高温高压蒸汽全拆深度清洗消毒\n清洗后出风异味与内部霉菌清除率 99%\n免费提供整机电气线路安全与绝缘检测\n师傅自带防尘罩与防护地垫，施工完清洁地面\n清洗后享 30 天无异味运行质保承诺",
+            "features_color": "#334155",
+            "btn_text": "预约上门清洗",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "家电常规核心故障检修",
+            "name_color": "#0f172a",
+            "price": "¥150",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/项起",
+            "desc": "包含空调加氟、主板芯片级速修、电机启动电容更换等常见故障",
+            "desc_color": "#64748b",
+            "features": "30分钟就近快速派工上门快速检测\n原厂全新正品备件现场拆封当面更换\n出具正规企业电子工单与服务质保卡\n相同故障部位尊享 180 天超长原厂免费保修\n若经检测因缺件无法修复，全额免收人工维修费",
+            "features_color": "#334155",
+            "btn_text": "立即在线报修",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "高频抢修优选",
+            "badge": "高频抢修优选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "暗管漏水高精度无损微创测漏",
+            "name_color": "#0f172a",
+            "price": "¥480",
+            "price_color": "#0f172a",
+            "period": "/次起",
+            "desc": "针对墙面反潮、楼下渗水、水表自转，利用德国仪器免砸砖精确定位",
+            "desc_color": "#64748b",
+            "features": "德国高精声波测漏仪+红外热成像精准探测\n定位误差半径控制在 10cm 以内，拒绝盲目砸砖\n查出漏点后提供微创精准开槽管道热熔修复方案\n出具权威渗水检测报告，协助厘清邻里物业责任\n测不出漏点承诺分文不收，0 元退场",
+            "features_color": "#334155",
+            "btn_text": "预约紧急测漏",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "上门检测",
-            "price": "¥59",
-            "period": "/次起",
-            "desc": "适合先判断故障和维修范围",
-            "features": "技师上门检测\n基础故障判断\n确认维修方案\n报价后再决定是否维修",
-            "btn_text": "预约检测",
-            "btn_link": "#",
-            "featured": ""
+            "name": "家电基础深度拆洗保养",
+            "name_color": "#0f172a",
+            "price": "¥99",
+            "price_color": "#0f172a",
+            "period": "/台起",
+            "desc": "适合换季空调、油烟机、洗衣机深度杀菌去污，提高运行能效",
+            "desc_color": "#64748b",
+            "features": "140℃ 高温高压蒸汽全拆深度清洗消毒\n清洗后出风异味与内部霉菌清除率 99%\n免费提供整机电气线路安全与绝缘检测\n师傅自带防尘罩与防护地垫，施工完清洁地面\n清洗后享 30 天无异味运行质保承诺",
+            "features_color": "#334155",
+            "btn_text": "预约上门清洗",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "常规快修",
-            "price": "¥129",
-            "period": "/次起",
-            "desc": "适合常见家电与水电问题处理",
-            "features": "常见故障快速处理\n标准工时说明\n维修前确认价格\n支持售后回访",
-            "btn_text": "预约快修",
-            "btn_link": "#",
+            "name": "家电常规核心故障检修",
+            "name_color": "#0f172a",
+            "price": "¥150",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/项起",
+            "desc": "包含空调加氟、主板芯片级速修、电机启动电容更换等常见故障",
+            "desc_color": "#64748b",
+            "features": "30分钟就近快速派工上门快速检测\n原厂全新正品备件现场拆封当面更换\n出具正规企业电子工单与服务质保卡\n相同故障部位尊享 180 天超长原厂免费保修\n若经检测因缺件无法修复，全额免收人工维修费",
+            "features_color": "#334155",
+            "btn_text": "立即在线报修",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
-            "featured_text": "热门",
-            "featured_bg": "linear-gradient(135deg, #1d4ed8 0%, #0f766e 100%)"
+            "is_featured": "yes",
+            "featured_text": "高频抢修优选",
+            "badge": "高频抢修优选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "安装换新",
-            "price": "按项目报价",
-            "period": "",
-            "desc": "适合家电安装、线路整理和局部改造",
-            "features": "支持新装与更换\n材料与配件单独确认\n可预约指定时间\n适合家庭和门店场景",
-            "btn_text": "咨询安装",
-            "btn_link": "#",
-            "featured": ""
+            "name": "暗管漏水高精度无损微创测漏",
+            "name_color": "#0f172a",
+            "price": "¥480",
+            "price_color": "#0f172a",
+            "period": "/次起",
+            "desc": "针对墙面反潮、楼下渗水、水表自转，利用德国仪器免砸砖精确定位",
+            "desc_color": "#64748b",
+            "features": "德国高精声波测漏仪+红外热成像精准探测\n定位误差半径控制在 10cm 以内，拒绝盲目砸砖\n查出漏点后提供微创精准开槽管道热熔修复方案\n出具权威渗水检测报告，协助厘清邻里物业责任\n测不出漏点承诺分文不收，0 元退场",
+            "features_color": "#334155",
+            "btn_text": "预约紧急测漏",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
@@ -172,123 +365,45 @@
     {
       "type": "branches",
       "data": {
-        "branches_title": "服务区域与站点",
-        "branches_subtitle": "展示覆盖城市、门店站点和可上门区域，帮助客户快速匹配最近的维修师傅",
+        "branches_title": "全城直营服务网点与流动工程车分布",
+        "branches_subtitle": "覆盖全城主要行政区，GPS 智能派单至距离您最近的持证工程师",
         "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "查看位置",
-        "booking_button_text": "预约上门",
         "branches_list": [
           {
-            "name": "浦东维修服务站",
-            "city": "上海",
+            "name": "城西核心便民快修枢纽站",
+            "city": "全城 · 西区直营站",
             "status": "open",
-            "address": "上海市浦东新区示例路88号",
-            "phone": "021-62000001",
-            "email": "shanghai@example.com",
-            "hours": "08:00-21:00",
-            "services": "家电维修,水电快修,安装换新",
-            "transport": "覆盖浦东核心片区",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
+            "address": "西溪路 588 号 · 便民家电工程服务站",
+            "phone": "400-888-2930",
+            "email": "west-service@repair-pro.com",
+            "hours": "全天候 24 小时待命抢修",
+            "services": "空调加氟, 冰箱主板, 洗衣机脱水, 水管高压疏通",
+            "transport": "常驻 12 辆流动维修工程车，承诺 30 分钟内抵达上门",
+            "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
           },
           {
-            "name": "城西上门维修点",
-            "city": "杭州",
+            "name": "城东高端社区急修驻点站",
+            "city": "全城 · 东区直营站",
             "status": "open",
-            "address": "杭州市西湖区示例街66号",
-            "phone": "0571-62000002",
-            "email": "hangzhou@example.com",
-            "hours": "08:30-20:30",
-            "services": "水电快修,热水器维修,管道疏通",
-            "transport": "覆盖西湖与周边社区",
-            "lat": "30.2741",
-            "lng": "120.1551",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+            "address": "新业路 108 号 · 钱江国际工程部",
+            "phone": "400-888-2931",
+            "email": "east-service@repair-pro.com",
+            "hours": "周一至周日 07:30 - 23:00",
+            "services": "暗管测漏, 中央空调多联机维修, 燃气热水器打火, 电路跳闸排障",
+            "transport": "紧靠庆春路隧道口，辐射周边大型中高端住宅小区",
+            "image": "https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=600&q=80"
           },
           {
-            "name": "园区快修服务站",
-            "city": "苏州",
-            "status": "busy",
-            "address": "苏州市工业园区示例大道99号",
-            "phone": "0512-62000003",
-            "email": "suzhou@example.com",
-            "hours": "09:00-20:00",
-            "services": "空调维修,洗衣机维修,家居安装",
-            "transport": "预约制上门覆盖园区",
-            "lat": "31.2989",
-            "lng": "120.5853",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "上门维修流程",
-        "process_subtitle": "把预约、报价、上门、维修和回访流程讲清楚，减少客户等待和沟通成本",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "提交故障信息",
-            "desc": "填写故障现象、家电型号、所在区域和期望上门时间。",
-            "stage_tag": "预约"
-          },
-          {
-            "icon": "02",
-            "title": "客服确认与报价",
-            "desc": "确认故障范围、基础费用、上门规则和是否需要携带配件。",
-            "stage_tag": "确认"
-          },
-          {
-            "icon": "03",
-            "title": "技师上门处理",
-            "desc": "按约定时间到场检测维修，关键费用先确认再施工。",
-            "stage_tag": "上门"
-          },
-          {
-            "icon": "04",
-            "title": "验收与售后回访",
-            "desc": "客户确认维修结果，平台保留订单记录并进行售后回访。",
-            "stage_tag": "回访"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "维修预约常见问题",
-        "faq_subtitle": "提前说明上门费、材料费、夜间服务和售后范围，让客户咨询更顺畅",
-        "module_bg_color": "#ffffff",
-        "faq_items": [
-          {
-            "question": "上门检测后不维修会收费吗？",
-            "answer": "通常会收取基础上门检测费，正式上线时可以按城市和故障类型调整规则，并在页面中明确说明。"
-          },
-          {
-            "question": "维修材料和配件费用怎么算？",
-            "answer": "页面里的套餐只是示例锚点，真实费用通常需要根据故障、品牌型号和是否更换配件来确认。"
-          },
-          {
-            "question": "夜间或节假日可以预约吗？",
-            "answer": "可以根据门店排班和服务区域设置夜间或节假日档期，建议在页面和预约表单中写清楚服务时间。"
-          },
-          {
-            "question": "维修后有售后保障吗？",
-            "answer": "可以按服务项目设置售后说明、回访方式和再次上门规则，实际条款建议在后台和页面里同步明确。"
+            "name": "城北商圈工业水电快修部",
+            "city": "全城 · 北区直营站",
+            "status": "open",
+            "address": "莫干山路 960 号 · 工业物流配套中心",
+            "phone": "400-888-2932",
+            "email": "north-service@repair-pro.com",
+            "hours": "周一至周日 08:00 - 22:00",
+            "services": "商用冷库制冷机组, 工业排风电机, 饭店厨房油烟净化器, 动力电检修",
+            "transport": "配备专业登高作业车与重型管道疏通高压清洗车",
+            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80"
           }
         ]
       }
@@ -296,17 +411,43 @@
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约家电上门维修",
-        "booking_subtitle": "提交故障类型、地址和期望时间，客服会确认上门安排并给出初步处理建议。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约须知",
-        "sidebar_content": "请在表单中说明故障现象、品牌型号和所在区域\n最终费用以故障检测和配件确认结果为准\n启用本地服务或维修插件后可承接真实预约和订单跟踪",
-        "contact_phone": "400-620-2026",
-        "contact_hours": "08:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#f8fafc"
+        "booking_title": "预约专业师傅 30 分钟急速上门维修与清洗安装",
+        "booking_subtitle": "先报价后维修、透明统一收费标准、修不好不收费，原厂配件质保 180 天。",
+        "booking_btn_text": "立即预约师傅上门",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "极速上门",
+        "booking_phone": "全国报修热线：400-888-0114",
+        "booking_time": "7×24小时全天候应急响应派单"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#14120f",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f59e0b",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "QUICK-FIX · 全国连锁专业家电精修与清洗养护平台",
+        "qfs_brand_desc": "全国 300+ 城市 30 分钟上门精修。全员持国家高级维修电工证书上岗，专注中央空调/壁挂炉/冰箱/洗衣机/电视等故障维修、深度高温蒸汽清洗，价格透明无隐形消费。",
+        "qfs_link_groups": [
+          {
+            "title": "维修服务类目 & 养护与保障体系",
+            "links": "家用/商用中央空调故障快修|#\n燃气壁挂炉与热水器打火检修|#\n变频滚筒洗衣机不脱水漏水抢修|#\n双开门变频冰箱制冷故障排除|#\n140℃ 高温蒸汽杀菌深度拆洗|#\n原厂正品配件防伪溯源承诺|#\n全国统一收费标准与明码标价|#\n同类故障 90 天免费重修质保|#"
+          }
+        ],
+        "qfs_contact_title": "全城 30 分钟急速上门预约",
+        "qfs_contact_items": "维修热线|400-880-0099|tel:4008800099\n紧急抢修|188-0000-8811|tel:18800008811\n服务时效|7×24小时随时下单，早 7:00 至晚 23:00 上门服务|#\n全国中心|湖北省武汉市武昌区中北路知音广场 8 层|#",
+        "qfs_social_title": "家电管家",
+        "qfs_social_links": "一键上门维修小程序|#\n家电省电常识|#\n清洗效果对比视频|#\n收费明细查询|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QUICK-FIX APPLIANCE REPAIR. 保留所有权利 · 鄂ICP备18029110号 · 家用电器维修协会常务理事单位",
+        "qfs_bottom_links": "全国家电维修指导价目表|#\n技师上门安全与赔偿承诺|#\n质保凭证保修条款|#\n投诉与服务督查直通车|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

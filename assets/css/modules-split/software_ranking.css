@@ -136,8 +136,8 @@
 .qiling-module-scope-software_ranking .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-software_ranking /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-software_ranking .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-software_ranking .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-software_ranking .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-software_ranking /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-software_ranking /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-software_ranking /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-software_ranking /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-software_ranking .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-software_ranking .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-software_ranking .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-software_ranking .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-software_ranking /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -620,31 +630,20 @@ html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .s
 }html.dark-mode .qiling-module-scope-software_ranking .module-software-ranking .sr-rank-num {
   background: var(--qiling-component-surface-alt-bg, var(--color-neutral-700));
   color: var(--dm-text-muted);
-}.qiling-module-scope-software_ranking /* 响应式 (Responsive) */
-@media (max-width: 768px) {
-  .module-software-ranking .sr-header {
+}/* 响应式 (Responsive) */
+@media (max-width: 768px){.qiling-module-scope-software_ranking .module-software-ranking .sr-header {
     flex-direction: column;
     align-items: flex-start !important;
     gap: var(--qiling-space-12);
-  }
-
-  .module-software-ranking.layout-list .sr-item {
+  }.qiling-module-scope-software_ranking .module-software-ranking.layout-list .sr-item {
     padding: var(--qiling-space-12) var(--qiling-space-14) !important;
-  }
-
-  .module-software-ranking.layout-cards .sr-top3 {
+  }.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-top3 {
     grid-template-columns: 1fr !important;
-  }
-
-  .module-software-ranking.layout-cards .sr-others {
+  }.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-others {
     grid-template-columns: 1fr !important;
-  }
-
-  .module-software-ranking.layout-cards .sr-card-top1 {
+  }.qiling-module-scope-software_ranking .module-software-ranking.layout-cards .sr-card-top1 {
     transform: none !important;
-  }
-
-  .module-software-ranking.layout-multi-column .sr-multi-column {
+  }.qiling-module-scope-software_ranking .module-software-ranking.layout-multi-column .sr-multi-column {
     grid-template-columns: 1fr !important;
   }
 }.qiling-module-scope-software_ranking /* ===== 软件排行榜模块 (Module Software Ranking) ===== */

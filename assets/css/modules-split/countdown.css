@@ -136,8 +136,8 @@
 .qiling-module-scope-countdown .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-countdown /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-countdown .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-countdown .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-countdown .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-countdown /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-countdown /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-countdown /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-countdown /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-countdown .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-countdown .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-countdown .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-countdown .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-countdown /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -412,35 +422,22 @@
 }.qiling-module-scope-countdown .countdown-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px var(--qiling-color-rgba-0-0-0-03);
-}.qiling-module-scope-countdown /* 响应式 (Responsive) */
-@media (max-width: 992px) {
-  .countdown-wrapper {
+}/* 响应式 (Responsive) */
+@media (max-width: 992px){.qiling-module-scope-countdown .countdown-wrapper {
     flex-direction: column;
     text-align: center;
-  }
-
-  .countdown-image-col {
+  }.qiling-module-scope-countdown .countdown-image-col {
     max-width: var(--qiling-measure-pct-100);
-  }
-
-  .countdown-image-wrapper {
+  }.qiling-module-scope-countdown .countdown-image-wrapper {
     transform: none;
-  }
-
-  .countdown-image-col:hover .countdown-image-wrapper {
+  }.qiling-module-scope-countdown .countdown-image-col:hover .countdown-image-wrapper {
     transform: none;
-  }
-
-  .countdown-content-col {
+  }.qiling-module-scope-countdown .countdown-content-col {
     text-align: center;
-  }
-
-  .countdown-desc {
+  }.qiling-module-scope-countdown .countdown-desc {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .countdown-timer {
+  }.qiling-module-scope-countdown .countdown-timer {
     justify-content: center;
   }
 }@media (max-width: 576px){.qiling-module-scope-countdown .countdown-item {

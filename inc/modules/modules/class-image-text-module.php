@@ -121,6 +121,47 @@ class Image_Text_Module extends Module_Base {
                 'type' => 'text',
                 'default' => '60px',
             ),
+
+            // === 交互热点标记 (Interactive Hotspots for Tech Specs / Details) ===
+            array(
+                'id'      => 'image_text_enable_hotspots',
+                'type'    => 'select',
+                'label'   => __( '启用图片交互热点 (Hotspots)', 'qiling' ),
+                'options' => array(
+                    'no'  => __( '不启用', 'qiling' ),
+                    'yes' => __( '启用', 'qiling' ),
+                ),
+                'default' => 'no',
+            ),
+            array(
+                'id'      => 'image_text_hotspots',
+                'type'    => 'repeater',
+                'label'   => __( '图片热点标注列表', 'qiling' ),
+                'fields'  => array(
+                    array(
+                        'id'          => 'x',
+                        'type'        => 'text',
+                        'label'       => __( '水平位置百分比 (0-100，如 45)', 'qiling' ),
+                        'default'     => '50',
+                    ),
+                    array(
+                        'id'          => 'y',
+                        'type'        => 'text',
+                        'label'       => __( '垂直位置百分比 (0-100，如 30)', 'qiling' ),
+                        'default'     => '50',
+                    ),
+                    array(
+                        'id'          => 'title',
+                        'type'        => 'text',
+                        'label'       => __( '热点标题（如：蓝宝石水晶镜面 / 碳纤维抗扭片）', 'qiling' ),
+                    ),
+                    array(
+                        'id'          => 'desc',
+                        'type'        => 'textarea',
+                        'label'       => __( '热点详细说明（如：莫氏9级硬度，双面防眩光涂层）', 'qiling' ),
+                    ),
+                ),
+            ),
         );
     }
 
@@ -158,6 +199,11 @@ class Image_Text_Module extends Module_Base {
         
         // 动态样式计算
         $section_style = "padding-top: {$pt}; padding-bottom: {$pb};";
+        
+        // 交互热点 (Hotspots)
+        $enable_hotspots = isset( $data['image_text_enable_hotspots'] ) && in_array( $data['image_text_enable_hotspots'], array( 'yes', 'no' ), true ) ? $data['image_text_enable_hotspots'] : 'no';
+        $hotspots = isset( $data['image_text_hotspots'] ) && is_array( $data['image_text_hotspots'] ) ? $data['image_text_hotspots'] : array();
+        $module_id = 'it-' . uniqid();
         
         if ( $bg_color ) {
             $section_style .= strpos( $bg_color, 'gradient' ) !== false ? "background: {$bg_color};" : "background-color: {$bg_color};";
@@ -200,12 +246,149 @@ class Image_Text_Module extends Module_Base {
             $grid_class .= ' layout-right';
         }
         ?>
-        <section class="module module-image-text" style="<?php echo esc_attr( $section_style ); ?>">
+        <style>
+            #<?php echo esc_attr( $module_id ); ?> .it-media-stage {
+                position: relative;
+                display: block;
+                width: 100%;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-media-stage img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 12px;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspots-container {
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pin {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                width: 28px;
+                height: 28px;
+                pointer-events: auto;
+                cursor: pointer;
+                z-index: 10;
+                outline: none;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pulse {
+                position: absolute;
+                inset: -6px;
+                border-radius: 50%;
+                background: rgba(37, 99, 235, 0.35);
+                animation: itHotspotPulse 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            @keyframes itHotspotPulse {
+                0% { transform: scale(0.8); opacity: 0.8; }
+                70% { transform: scale(1.6); opacity: 0; }
+                100% { transform: scale(1.6); opacity: 0; }
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-dot {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: #2563eb;
+                color: #ffffff;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1;
+                box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+                transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pin:hover .it-hotspot-dot,
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pin:focus .it-hotspot-dot,
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pin.is-active .it-hotspot-dot {
+                transform: scale(1.15) rotate(45deg);
+                background: #1d4ed8;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-popover {
+                position: absolute;
+                bottom: calc(100% + 10px);
+                left: 50%;
+                transform: translateX(-50%) translateY(6px);
+                min-width: 180px;
+                max-width: 260px;
+                padding: 10px 14px;
+                background: rgba(15, 23, 42, 0.92);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 10px;
+                color: #ffffff;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 20;
+                text-align: left;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-popover::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 6px solid transparent;
+                border-top-color: rgba(15, 23, 42, 0.92);
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pin:hover .it-hotspot-popover,
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pin:focus .it-hotspot-popover,
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-pin.is-active .it-hotspot-popover {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(0);
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-title {
+                display: block;
+                font-size: 13px;
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 3px;
+            }
+            #<?php echo esc_attr( $module_id ); ?> .it-hotspot-desc {
+                font-size: 11px;
+                line-height: 1.5;
+                color: #cbd5e1;
+                margin: 0;
+            }
+        </style>
+        <section class="module module-image-text" id="<?php echo esc_attr( $module_id ); ?>" style="<?php echo esc_attr( $section_style ); ?>">
             <div class="container">
                 <div class="<?php echo esc_attr( $grid_class ); ?>">
                     <div class="image-text-image">
                         <?php if ( $image ) : ?>
-                            <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" />
+                            <div class="it-media-stage <?php echo ( 'yes' === $enable_hotspots && ! empty( $hotspots ) ) ? 'has-hotspots' : ''; ?>">
+                                <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" />
+                                <?php if ( 'yes' === $enable_hotspots && ! empty( $hotspots ) ) : ?>
+                                    <div class="it-hotspots-container">
+                                        <?php foreach ( $hotspots as $h_idx => $hp ) :
+                                            $hx = isset( $hp['x'] ) ? floatval( $hp['x'] ) : 50;
+                                            $hy = isset( $hp['y'] ) ? floatval( $hp['y'] ) : 50;
+                                            $htitle = isset( $hp['title'] ) ? sanitize_text_field( (string) $hp['title'] ) : '';
+                                            $hdesc  = isset( $hp['desc'] ) ? sanitize_textarea_field( (string) $hp['desc'] ) : '';
+                                            if ( empty( $htitle ) && empty( $hdesc ) ) continue;
+                                        ?>
+                                            <div class="it-hotspot-pin" style="left: <?php echo esc_attr( $hx ); ?>%; top: <?php echo esc_attr( $hy ); ?>%;" tabindex="0" role="button" aria-label="<?php echo esc_attr( $htitle ?: __( '热点标注', 'qiling' ) ); ?>">
+                                                <span class="it-hotspot-pulse"></span>
+                                                <span class="it-hotspot-dot">+</span>
+                                                <div class="it-hotspot-popover">
+                                                    <?php if ( $htitle ) : ?>
+                                                        <strong class="it-hotspot-title"><?php echo esc_html( $htitle ); ?></strong>
+                                                    <?php endif; ?>
+                                                    <?php if ( $hdesc ) : ?>
+                                                        <p class="it-hotspot-desc"><?php echo wp_kses_post( $hdesc ); ?></p>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         <?php else : ?>
                             <div class="placeholder-image"><?php esc_html_e( '请上传图片', 'qiling' ); ?></div>
                         <?php endif; ?>
@@ -232,6 +415,28 @@ class Image_Text_Module extends Module_Base {
                 </div>
             </div>
         </section>
+        <?php if ( 'yes' === $enable_hotspots && ! empty( $hotspots ) ) : ?>
+            <script>
+            (function() {
+                var itRoot = document.getElementById('<?php echo esc_js( $module_id ); ?>');
+                if (!itRoot) return;
+                var pins = itRoot.querySelectorAll('.it-hotspot-pin');
+                pins.forEach(function(pin) {
+                    pin.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        var wasActive = pin.classList.contains('is-active');
+                        pins.forEach(function(p) { p.classList.remove('is-active'); });
+                        if (!wasActive) {
+                            pin.classList.add('is-active');
+                        }
+                    });
+                });
+                document.addEventListener('click', function() {
+                    pins.forEach(function(p) { p.classList.remove('is-active'); });
+                });
+            })();
+            </script>
+        <?php endif; ?>
         <?php
     }
 }

@@ -42,188 +42,421 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.58",
-        "db_title_prefix": "让活动报名和招商更集中",
-        "db_typing_mode": "loop",
-        "db_typing_text": "行业峰会与品牌发布\n嘉宾议程与现场体验\n票务报名、赞助招商一页完成",
-        "db_highlight_color": "#fecdd3",
-        "db_title_color": "#f8fafc",
-        "db_subtitle": "适合峰会、展会、发布会、城市活动和行业大会的对外招商报名页面。",
-        "db_desc": "集中展示活动价值、参会人群、合作权益和报名路径。",
-        "db_text_color": "rgba(248,250,252,0.9)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "博览天下",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "立即报名",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "下载招商资料",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "免费试用",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "链接全球前沿科技与商业智慧 · 第十五届国际数字工业博览会",
+        "bb_subtitle": "120,000㎡ 展览面积，汇聚全球 2,500+ 顶尖参展品牌与 180,000+ 专业采购商，展位招商与国际采购对接全面启动",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
+          {
+            "text": "在线申请优质展位与赞助方案",
+            "url": "#booth",
+            "style": "primary"
+          },
+          {
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
+          }
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "活动规模亮点",
-        "stats_subtitle": "用参会、嘉宾、曝光和合作数据增强信任",
-        "stats_text_align": "center",
+        "stats_title": "全球盛会 · 历届博览会核心影响力数据",
+        "stats_subtitle": "不仅是展示前沿创新的国际窗口，更是达成数十亿美元商贸订单的顶级商务平台",
         "stats_items": [
           {
-            "number": "3000+",
-            "label": "预计参会人次",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "120,000㎡",
+            "label": "超大总展览面积与 8 大主题馆"
           },
           {
-            "number": "80+",
-            "label": "演讲嘉宾",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "2,500+ 家",
+            "label": "全球跨国企业与专精特新展商"
           },
           {
-            "number": "120+",
-            "label": "参展品牌",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "180,000+",
+            "label": "海内外精准专业采购商与买家"
           },
           {
-            "number": "20+",
-            "label": "媒体合作",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "$56.8 亿",
+            "label": "上一届展会现场意向商贸成交总额"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #78350f 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "参会与合作权益",
-        "services_subtitle": "面向观众、参展商、赞助商和媒体伙伴的权益说明",
-        "services_bg_color": "#ffffff",
+        "services_title": "八大核心展区规划与配套商贸服务",
+        "services_subtitle": "贯通上下游全产业链，精准对接全球买家与关键采购决策人",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "观众报名",
-            "desc": "议程参与、展区参观和社群交流。",
-            "link": "#"
+            "icon": "cpu",
+            "title": "工业互联网与高端芯片展区",
+            "desc": "工业软件、工业边缘计算、工业 5G 模组与工业安全芯片核心架构"
           },
           {
-            "icon": "02",
-            "title": "品牌参展",
-            "desc": "展位展示、产品体验和商务对接。",
-            "link": "#"
+            "icon": "bot",
+            "title": "智能制造与工业机器人专区",
+            "desc": "协作机器人、AGV 移动搬运车、精密数控机床与柔性自动化产线"
           },
           {
-            "icon": "03",
-            "title": "赞助合作",
-            "desc": "品牌露出、主题冠名和现场权益。",
-            "link": "#"
+            "icon": "briefcase",
+            "title": "1v1 国际买家闭门商贸配对会",
+            "desc": "特邀全球 500 强采购总监，根据供需清单开展精准 1v1 闭门洽谈"
           },
           {
-            "icon": "04",
-            "title": "媒体合作",
-            "desc": "内容报道、直播传播和联合推广。",
-            "link": "#"
+            "icon": "mic",
+            "title": "50+ 场国际平行峰会与院士论坛",
+            "desc": "聚集两院院士、跨国科技巨头 CEO 与行业标准制定者解读产业趋势"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "报名合作流程",
-        "process_subtitle": "把报名、确认、支付和现场权益交代清楚",
+        "process_title": "会展/活动平台招商页标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "提交意向",
-            "desc": "选择报名、参展或赞助合作类型。",
-            "stage_tag": "提交"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "顾问确认",
-            "desc": "确认参会资格、权益、席位和资料需求。",
-            "stage_tag": "确认"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "完成报名",
-            "desc": "完成费用、资料和参会凭证确认。",
-            "stage_tag": "报名"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "现场执行",
-            "desc": "按权益安排签到、布展、演讲或对接。",
-            "stage_tag": "现场"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
       }
     },
     {
-      "type": "cases",
+      "type": "pricing",
       "data": {
-        "cases_title": "活动现场与合作场景",
-        "cases_subtitle": "用图片和结果展示活动影响力",
-        "cases_columns": "3",
-        "cases_items": [
+        "pricing_title": "展位选型与全球战略赞助套餐",
+        "pricing_subtitle": "早鸟报名享受立减特惠，赞助商尊享主论坛发言席位与全媒体曝光",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80",
-            "title": "行业主题峰会",
-            "desc": "聚焦趋势分享、圆桌讨论和商务社交。",
-            "link": "#"
+            "name": "国际标准展位 (9㎡ / 3x3m)",
+            "name_color": "#0f172a",
+            "price": "¥18,800",
+            "price_color": "#0f172a",
+            "period": "/标准展期 (3天)",
+            "desc": "含标准铝合金隔板展架、中英文企业楣板、射灯、洽谈桌椅及 220V 电源",
+            "desc_color": "#64748b",
+            "features": "全套标准展位基础设施直接入驻\n会刊免费刊登 1/2 版企业中英文简介\n赠送 3 张展商胸卡及 100 张贵宾门票\n官方微信公众号展前企业推介一次",
+            "features_color": "#334155",
+            "btn_text": "立即在线预订标摊",
+            "btn_link": "#apply-booth",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80",
-            "title": "品牌展区体验",
-            "desc": "产品展示、客户互动和媒体曝光。",
-            "link": "#"
+            "name": "光地特装展位 (36㎡ 起租)",
+            "name_color": "#0f172a",
+            "price": "¥1,600",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/平方米 (36㎡起)",
+            "desc": "不含任何设施，由展商自主设计施工特装展台，全面彰显品牌独特工业实力",
+            "desc_color": "#64748b",
+            "features": "无柱开阔空间自主品牌特装创意\n会刊全彩整版广告及参展商索引特推\n优先安排 3 场国际采购团专场到展巡访\n赠送官方新闻中心媒体专访间使用权",
+            "features_color": "#334155",
+            "btn_text": "立即在线抢订光地",
+            "btn_link": "#apply-booth",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "特装热卖",
+            "badge": "特装热卖",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80",
-            "title": "城市路演活动",
-            "desc": "小规模精准邀约和项目对接。",
-            "link": "#"
+            "name": "博览会全球战略级赞助商",
+            "name_color": "#0f172a",
+            "price": "¥288,000",
+            "price_color": "#0f172a",
+            "period": "/席位 (仅限6席)",
+            "desc": "最高级别品牌露出，开幕式贵宾前排就座，主论坛 20 分钟主旨演讲席位",
+            "desc_color": "#64748b",
+            "features": "主论坛 20 分钟独立主题演讲席位\n展会门票、手提袋与胸卡挂绳独家联名标\n官方指定迎宾晚宴贵宾主桌 2 席\n海内外 100+ 主流财经科技媒体联播专访",
+            "features_color": "#334155",
+            "btn_text": "洽谈战略赞助合作",
+            "btn_link": "#apply-booth",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "module_bg_color": "#ffffff"
+        "pricing_items": [
+          {
+            "name": "国际标准展位 (9㎡ / 3x3m)",
+            "name_color": "#0f172a",
+            "price": "¥18,800",
+            "price_color": "#0f172a",
+            "period": "/标准展期 (3天)",
+            "desc": "含标准铝合金隔板展架、中英文企业楣板、射灯、洽谈桌椅及 220V 电源",
+            "desc_color": "#64748b",
+            "features": "全套标准展位基础设施直接入驻\n会刊免费刊登 1/2 版企业中英文简介\n赠送 3 张展商胸卡及 100 张贵宾门票\n官方微信公众号展前企业推介一次",
+            "features_color": "#334155",
+            "btn_text": "立即在线预订标摊",
+            "btn_link": "#apply-booth",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "光地特装展位 (36㎡ 起租)",
+            "name_color": "#0f172a",
+            "price": "¥1,600",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/平方米 (36㎡起)",
+            "desc": "不含任何设施，由展商自主设计施工特装展台，全面彰显品牌独特工业实力",
+            "desc_color": "#64748b",
+            "features": "无柱开阔空间自主品牌特装创意\n会刊全彩整版广告及参展商索引特推\n优先安排 3 场国际采购团专场到展巡访\n赠送官方新闻中心媒体专访间使用权",
+            "features_color": "#334155",
+            "btn_text": "立即在线抢订光地",
+            "btn_link": "#apply-booth",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "特装热卖",
+            "badge": "特装热卖",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "博览会全球战略级赞助商",
+            "name_color": "#0f172a",
+            "price": "¥288,000",
+            "price_color": "#0f172a",
+            "period": "/席位 (仅限6席)",
+            "desc": "最高级别品牌露出，开幕式贵宾前排就座，主论坛 20 分钟主旨演讲席位",
+            "desc_color": "#64748b",
+            "features": "主论坛 20 分钟独立主题演讲席位\n展会门票、手提袋与胸卡挂绳独家联名标\n官方指定迎宾晚宴贵宾主桌 2 席\n海内外 100+ 主流财经科技媒体联播专访",
+            "features_color": "#334155",
+            "btn_text": "洽谈战略赞助合作",
+            "btn_link": "#apply-booth",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
-      "type": "booking-entry",
+      "type": "team",
       "data": {
-        "booking_title": "提交报名或招商意向",
-        "booking_subtitle": "提交参与身份、公司信息和合作诉求，活动顾问会进行确认。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "报名提示",
-        "sidebar_content": "不同票种和权益以活动规则为准\n赞助、参展和团体报名可在表单里说明\n最终议程可能按现场安排调整",
-        "contact_phone": "400-700-2026",
-        "contact_hours": "09:00-20:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#f8fafc"
+        "team_title": "主旨论坛重磅演讲嘉宾与行业院士",
+        "team_subtitle": "汇聚全球顶尖科学大脑与万亿产业掌舵人，前瞻下一个十年的工业演进路线",
+        "team_columns": "4",
+        "team_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "张华荣 院士",
+            "role": "中国工程院院士 / 智能制造学科带头人",
+            "desc": "将在开幕式发表《工业人工智能大模型在精密装备制造中的关键突破》"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "Dr. Michael Vance",
+            "role": "德国工业 4.0 专家委员会执行理事",
+            "desc": "主讲《中欧工业制造数字化双胞胎协同标准与绿色供应链新格局》"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "陈建国",
+            "role": "国家级工业互联网产业联盟理事长",
+            "desc": "深度解读《制造业数字化转型攻坚路线图与百亿级专项扶持基金导向》"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "Elena Rostova",
+            "role": "全球国际博览会联盟 (UFI) 亚太区总监",
+            "desc": "主讲《新全球化变局下，跨国展会如何重构国际供应链买家黏性》"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "与 会展/活动平台招商页 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0b101c",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "EXPO-GLOBAL · 国际博览会与产业峰会官方中心",
+        "qfs_brand_desc": "主办国际高新技术成果博览会、全球数字经济峰会及跨国采购洽谈会。每年汇聚全球 80+ 国家和地区的参展展商与数十万专业观众，构建高规格产业合作桥梁。",
+        "qfs_link_groups": [
+          {
+            "title": "展会日程与导览 & 参会与招商服务",
+            "links": "2026 主论坛与分会场全日程|#\n参展企业名录与展位分布图|#\n重磅首发新品路演发布会|#\n跨国采购商一对一供需对接|#\n专业观众免费参观门票预约|#\n优质展位在线预订与特装申报|#\n展会官方合作酒店预订优惠|#\n媒体记者证件申请与新闻中心|#"
+          }
+        ],
+        "qfs_contact_title": "展位预订与商务赞助热线",
+        "qfs_contact_items": "招商热线|0755-8866-2211|tel:075588662211\n观众热线|400-880-7788|tel:4008807788\n组委会工作时间|周一至周五 9:00 - 17:30|#\n博览展馆|深圳市福田区福华三路深圳会展中心 1 号馆|#",
+        "qfs_social_title": "展会视界",
+        "qfs_social_links": "电子门票预约小程序|#\n云上展厅3D全景漫游|#\n峰会直播直通车|#\n展商供需对接平台|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 EXPO-GLOBAL CO., LTD. 保留所有权利 · 粤ICP备16082910号 · 国际展览业协会 (UFI) 认证成员",
+        "qfs_bottom_links": "展馆安全保卫与消防规范|#\n参展商知识产权保护规定|#\n观众入场守则与安检须知|#\n突发事件应急撤离路线图|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

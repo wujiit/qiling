@@ -9,6 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+$has_inpage_header = function_exists( 'developer_starter_page_has_header_module' ) && developer_starter_page_has_header_module();
+if ( $has_inpage_header ) {
+    // 页面内已包含专属页头套件（如 header_suite），自动静默屏蔽兜底页头，实现页面所见即所得一体化装修
+    do_action( 'developer_starter_before_site_header', $args );
+    do_action( 'developer_starter_after_site_header', $args );
+    return;
+}
+
 $args = wp_parse_args(
     is_array( $args ) ? $args : array(),
     array(

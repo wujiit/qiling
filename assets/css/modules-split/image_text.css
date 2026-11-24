@@ -136,8 +136,8 @@
 .qiling-module-scope-image_text .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-image_text /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-image_text .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-image_text .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-image_text .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-image_text /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-image_text /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-image_text /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-image_text /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-image_text .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-image_text .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-image_text .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-image_text .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-image_text /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -393,29 +403,20 @@ html.dark-mode .module-image-text {
     var(--qiling-component-card-border)
   );
   color: var(--color-text-muted);
-}.qiling-module-scope-image_text /* 响应式图文 (Responsive Image Text) */
-@media (max-width: 992px) {
-  .module-image-text .image-text-grid {
+}/* 响应式图文 (Responsive Image Text) */
+@media (max-width: 992px){.qiling-module-scope-image_text .module-image-text .image-text-grid {
     grid-template-columns: 1fr;
     gap: var(--qiling-space-40);
-  }
-
-  .module-image-text .image-text-grid.layout-right .image-text-image {
+  }.qiling-module-scope-image_text .module-image-text .image-text-grid.layout-right .image-text-image {
     order: unset;
     /* 如果我们希望图片始终在顶部，则在移动端还原顺序 (Revert order on mobile if we want image always top) */
     /* 或者保留顺序如果我们想保持特定的流 (Or keep order if we want to maintain the specific flow) */
-  }
-
-  .module-image-text .image-text-grid.layout-right .image-text-content {
+  }.qiling-module-scope-image_text .module-image-text .image-text-grid.layout-right .image-text-content {
     order: unset;
-  }
-
-  /* 标准做法：移动端图片在顶部 (Standard Practice: Image on Top for Mobile) */
+  }.qiling-module-scope-image_text /* 标准做法：移动端图片在顶部 (Standard Practice: Image on Top for Mobile) */
   .module-image-text .image-text-image {
     order: -1 !important;
-  }
-
-  .module-image-text .module-title {
+  }.qiling-module-scope-image_text .module-image-text .module-title {
     font-size: var(--qiling-text-rem-1p75);
   }
 }.qiling-module-scope-image_text .module-image-text .module-action .image-text-btn { color: var(--image-text-btn-text, #ffffff); }.qiling-module-scope-image_text .module-image-text .module-action .image-text-btn:hover { color: var(--image-text-btn-hover-text, #ffffff); }

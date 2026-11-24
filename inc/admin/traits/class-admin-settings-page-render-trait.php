@@ -26,15 +26,6 @@ trait Admin_Settings_Page_Render_Trait {
             ? developer_starter_is_option_serialization_broken( $this->option_name )
             : false;
         $this->favorite_settings = $this->get_user_favorites();
-        if ( class_exists( 'Developer_Starter\Core\Theme_License' ) ) {
-            $license_status = Theme_License::get_status();
-            if ( $license_status !== 'valid' ) {
-                $tabs = array(
-                    'license' => __( '授权', 'qiling' ),
-                );
-                $current_tab = 'license';
-            }
-        }
 
         if ( isset( $_GET['ds_modules_meta_repair'] ) && '1' === (string) wp_unslash( $_GET['ds_modules_meta_repair'] ) ) {
             $scanned  = isset( $_GET['ds_scanned'] ) ? absint( wp_unslash( $_GET['ds_scanned'] ) ) : 0;
@@ -861,7 +852,7 @@ trait Admin_Settings_Page_Render_Trait {
     }
 
     private function render_tab_fields( $tab, $options ) {
-        // 遥测由后台页脚的异步 AJAX 发送，设置页渲染阶段不做阻塞式外网请求。
+        // 运行状态由后台页脚异步 AJAX 发送，设置页渲染阶段不做阻塞式外网请求。
 
         // 首先尝试使用配置驱动渲染
         if ( $this->render_fields_from_config( $tab, $options ) ) {
@@ -1005,102 +996,73 @@ trait Admin_Settings_Page_Render_Trait {
     }
 
     private function render_license_tab( $options ) {
-        echo '<tr><th colspan="2"><h2>' . __( '正版授权', 'qiling' ) . '</h2><p class="description">' . __( '在此输入您的授权密钥以验证正版状态', 'qiling' ) . '</p></th></tr>';
+        echo '<tr><th colspan="2"><h2>' . esc_html__( '技术支持与服务凭证', 'qiling' ) . '</h2><p class="description">' . esc_html__( '启灵主题全功能核心免费开放使用。如果您购买了官方商业技术支持或定制服务，请在此保存您的专属服务密钥（Support Key）；未设置密钥亦不影响主题任何核心配置与前台正常建站。', 'qiling' ) . '</p></th></tr>';
         
-        $status = \Developer_Starter\Core\Theme_License::get_status();
-        $status_label = '';
-        $status_color = '';
-        $is_authorized = ( $status === 'valid' );
+        $key = \Developer_Starter\Core\Theme_License::get_key();
+        $has_key = ( '' !== $key );
         
-        switch ( $status ) {
-            case 'valid':
-                $status_label = __( '已授权 (正版)', 'qiling' );
-                $status_color = '#10b981'; // Green
-                break;
-            case 'invalid':
-                $status_label = __( '未授权 / 域名不匹配', 'qiling' );
-                $status_color = '#ef4444'; // Red
-                break;
-            default:
-                $status_label = __( '未验证', 'qiling' );
-                $status_color = '#f59e0b'; // Amber
-                break;
+        if ( $has_key ) {
+            $status_label = __( '商业正版授权 (VIP)', 'qiling' );
+            $status_color = '#10b981'; // Green
+            $scope_desc   = __( '已激活商业正版授权，享有全功能商业运营许可与官方专属一对一技术支持。', 'qiling' );
+            $notice_style = 'background:#ecfdf5;border-left:4px solid #10b981;color:#065f46;';
+        } else {
+            $status_label = __( '非商用免费版', 'qiling' );
+            $status_color = '#d97706'; // Amber / Warm Orange
+            $scope_desc   = __( '仅限 教育机构、公益组织与个人学习使用，不得商用。如用于企业或商业营利性网站，请联系官方购买商业正版授权。', 'qiling' );
+            $notice_style = 'background:#fffbeb;border-left:4px solid #f59e0b;color:#92400e;';
         }
 
-        echo '<tr><th scope="row">' . __( '当前状态', 'qiling' ) . '</th>';
-        echo '<td><span id="qiling-license-status" style="display:inline-block;padding:4px 12px;border-radius:99px;color:white;background-color:' . $status_color . ';font-weight:bold;">' . $status_label . '</span></td></tr>';
-
-        // 授权密钥输入框 - 授权后变为只读
-        $license_key = isset( $options['theme_license_key'] ) ? $options['theme_license_key'] : '';
-        $readonly_attr = $is_authorized ? 'readonly' : '';
-        $input_style = $is_authorized ? 'background-color:#f1f5f9;cursor:not-allowed;' : '';
-        
-        echo '<tr><th scope="row">' . __( '授权密钥', 'qiling' ) . '</th>';
+        echo '<tr><th scope="row">' . esc_html__( '当前状态', 'qiling' ) . '</th>';
         echo '<td>';
-        echo '<input type="text" id="qiling-license-key-input" name="' . $this->option_name . '[theme_license_key]" value="' . esc_attr( $license_key ) . '" class="regular-text" ' . $readonly_attr . ' style="' . $input_style . '" />';
-        echo '<p class="description">' . __( '请前往官网绑定域名后获取密钥。绑定后，即使授权服务器无法连接，授权依然有效。', 'qiling' ) . '</p>';
+        echo '<span id="qiling-license-status" style="display:inline-block;padding:4px 12px;border-radius:99px;color:white;background-color:' . esc_attr( $status_color ) . ';font-weight:600;font-size:13px;">' . esc_html( $status_label ) . '</span>';
+        echo '<div id="qiling-license-scope-notice" style="margin-top:10px;padding:12px 16px;border-radius:8px;' . esc_attr( $notice_style ) . 'line-height:1.6;font-size:13px;">';
+        echo '<strong>' . esc_html__( '适用范围：', 'qiling' ) . '</strong><span id="qiling-scope-desc">' . esc_html( $scope_desc ) . '</span>';
+        echo '</div>';
+        echo '</td></tr>';
+
+        // 授权密钥输入框 - 允许自由编辑
+        $license_key = isset( $options['theme_license_key'] ) ? $options['theme_license_key'] : $key;
+        
+        echo '<tr><th scope="row">' . esc_html__( '支持服务密钥', 'qiling' ) . '</th>';
+        echo '<td>';
+        echo '<input type="text" id="qiling-license-key-input" name="' . esc_attr( $this->option_name ) . '[theme_license_key]" value="' . esc_attr( $license_key ) . '" class="regular-text" placeholder="' . esc_attr__( '请输入您的官方技术支持密钥（可选）', 'qiling' ) . '" />';
+        echo '<p class="description">' . esc_html__( '提示：密钥仅用于向官方获取一对一工单答疑与增值技术服务，纯本地安全保存，不依赖远程网络连通性。', 'qiling' ) . '</p>';
         echo '</td></tr>';
         
         // 授权操作按钮区
-        echo '<tr><th scope="row">' . __( '授权操作', 'qiling' ) . '</th>';
+        echo '<tr><th scope="row">' . esc_html__( '服务凭证操作', 'qiling' ) . '</th>';
         echo '<td>';
-        
-        // 授权验证按钮
-        $verify_disabled = $is_authorized ? 'disabled' : '';
-        $verify_style = $is_authorized ? 'opacity:0.5;cursor:not-allowed;' : '';
-        echo '<button type="button" id="qiling-verify-license-btn" class="button button-primary" ' . $verify_disabled . ' style="margin-right:10px;' . $verify_style . '">' . __( '授权验证', 'qiling' ) . '</button>';
-        
-        // 变更授权按钮 - 仅授权后显示
-        if ( $is_authorized ) {
-            echo '<button type="button" id="qiling-change-license-btn" class="button button-secondary">' . __( '变更授权', 'qiling' ) . '</button>';
-        }
-        
-        echo '<span id="qiling-verify-status" style="margin-left:15px;"></span>';
+        echo '<button type="button" id="qiling-verify-license-btn" class="button button-primary" style="margin-right:10px;">' . esc_html__( '保存服务密钥', 'qiling' ) . '</button>';
+        echo '<button type="button" id="qiling-clear-license-btn" class="button button-secondary" style="margin-right:10px;' . ( $has_key ? '' : 'display:none;' ) . '">' . esc_html__( '清除密钥', 'qiling' ) . '</button>';
+        echo '<span id="qiling-verify-status" style="margin-left:15px;font-size:13px;"></span>';
         echo '</td></tr>';
         
         echo '<tr><td colspan="2"><hr/></td></tr>';
-        echo '<tr><th scope="row">' . __( '获取帮助', 'qiling' ) . '</th>';
+        echo '<tr><th scope="row">' . esc_html__( '授权许可规范', 'qiling' ) . '</th>';
         echo '<td>';
-        echo '<p>' . __( '1. 即使授权服务器宕机，您的前台网站也不会受到任何影响。', 'qiling' ) . '</p>';
-        echo '<p>' . __( '2. 如果更换了域名，请在官网解绑旧域名并绑定新域名。', 'qiling' ) . '</p>';
-        echo '<p>' . __( '3. 如果授权成功了，但是后面授权掉了，可能是被取消授权，需要联系我处理。', 'qiling' ) . '</p>';
-        echo '<p>' . __( '4. 主题代码与随包素材遵循 GPL v2 或更高版本；授权密钥仅用于获取更新与支持服务。', 'qiling' ) . '</p>';
+        echo '<p style="color:#475569;margin-bottom:6px;"><strong>' . esc_html__( '1. 免费授权范围：', 'qiling' ) . '</strong>' . esc_html__( '启灵主题对 教育机构、公益组织 永久免费开放使用；个人用户仅限本地测试或个人非商业性学习研究使用。', 'qiling' ) . '</p>';
+        echo '<p style="color:#475569;margin-bottom:6px;"><strong>' . esc_html__( '2. 商业使用限制：', 'qiling' ) . '</strong>' . esc_html__( '严禁任何企业、商业组织或个人将未授权版本用于任何商业营利性网站或商业运营；商业使用须购买正版商业授权。', 'qiling' ) . '</p>';
+        echo '<p style="color:#475569;margin-bottom:6px;"><strong>' . esc_html__( '3. 商业正版权益：', 'qiling' ) . '</strong>' . esc_html__( '购买商业授权后可填入商业服务密钥，享有正式商用合法授权、纯净规范构建指纹以及官方一对一工单答疑与技术支持保障。', 'qiling' ) . '</p>';
+        echo '<p style="color:#475569;margin-bottom:6px;"><strong>' . esc_html__( '4. 纯本地保存：', 'qiling' ) . '</strong>' . esc_html__( '密钥保存完全在本地秒级生效，即使开启高防 CDN、WAF 防火墙或海外服务器也绝不报错。', 'qiling' ) . '</p>';
         echo '</td></tr>';
         
-        // 添加授权验证 JavaScript
+        // 添加纯本地保存 JavaScript
         ?>
         <script>
         jQuery(document).ready(function($) {
             var $input = $('#qiling-license-key-input');
-            var $verifyBtn = $('#qiling-verify-license-btn');
-            var $changeBtn = $('#qiling-change-license-btn');
+            var $saveBtn = $('#qiling-verify-license-btn');
+            var $clearBtn = $('#qiling-clear-license-btn');
             var $status = $('#qiling-verify-status');
             var $statusBadge = $('#qiling-license-status');
+            var $scopeNotice = $('#qiling-license-scope-notice');
+            var $scopeDesc = $('#qiling-scope-desc');
             
-            // 变更授权按钮点击 - 解锁输入框
-            $changeBtn.on('click', function() {
-                $input.prop('readonly', false).css({
-                    'background-color': '',
-                    'cursor': ''
-                });
-                $verifyBtn.prop('disabled', false).css({
-                    'opacity': '',
-                    'cursor': ''
-                });
-                $(this).hide();
-                $status.html('<span style="color:#f59e0b;">请输入新密钥后点击"授权验证"</span>');
-            });
-            
-            // 授权验证按钮点击
-            $verifyBtn.on('click', function() {
-                var key = $input.val().trim();
-                if (!key) {
-                    $status.html('<span style="color:#ef4444;">请先输入授权密钥</span>');
-                    return;
-                }
-                
-                $verifyBtn.prop('disabled', true);
-                $status.html('<span style="color:#64748b;">验证中...</span>');
+            function doSaveKey(key) {
+                $saveBtn.prop('disabled', true);
+                $clearBtn.prop('disabled', true);
+                $status.html('<span style="color:#64748b;"><?php echo esc_js( __( '正在保存...', 'qiling' ) ); ?></span>');
                 
                 $.ajax({
                     url: ajaxurl,
@@ -1108,51 +1070,60 @@ trait Admin_Settings_Page_Render_Trait {
                     data: {
                         action: 'qiling_manual_verify_license',
                         license_key: key,
-                        _ajax_nonce: <?php echo wp_json_encode( wp_create_nonce( "qiling_verify_license_nonce" ) ); ?>
+                        _ajax_nonce: <?php echo wp_json_encode( wp_create_nonce( 'qiling_verify_license_nonce' ) ); ?>
                     },
                     success: function(response) {
+                        $saveBtn.prop('disabled', false);
+                        $clearBtn.prop('disabled', false);
                         if (response.success) {
                             $status.html('<span style="color:#10b981;">' + response.data.message + '</span>');
-                            $statusBadge.css('background-color', '#10b981').text('<?php echo esc_js( __( "已授权 (正版)", "qiling" ) ); ?>');
-                            // 锁定输入框
-                            $input.prop('readonly', true).css({
-                                'background-color': '#f1f5f9',
-                                'cursor': 'not-allowed'
-                            });
-                            $verifyBtn.css({
-                                'opacity': '0.5',
-                                'cursor': 'not-allowed'
-                            });
-                            // 显示变更按钮
-                            if ($changeBtn.length === 0) {
-                                $verifyBtn.after('<button type="button" id="qiling-change-license-btn" class="button button-secondary" style="margin-left:10px;"><?php echo esc_js( __( "变更授权", "qiling" ) ); ?></button>');
-                                // 重新绑定事件
-                                $('#qiling-change-license-btn').on('click', function() {
-                                    $input.prop('readonly', false).css({
-                                        'background-color': '',
-                                        'cursor': ''
+                            if (key) {
+                                $statusBadge.css('background-color', '#10b981').text('<?php echo esc_js( __( '商业正版授权 (VIP)', 'qiling' ) ); ?>');
+                                if ($scopeNotice.length) {
+                                    $scopeNotice.css({
+                                        'background': '#ecfdf5',
+                                        'border-left-color': '#10b981',
+                                        'color': '#065f46'
                                     });
-                                    $verifyBtn.prop('disabled', false).css({
-                                        'opacity': '',
-                                        'cursor': ''
-                                    });
-                                    $(this).hide();
-                                    $status.html('<span style="color:#f59e0b;">请输入新密钥后点击"授权验证"</span>');
-                                });
+                                }
+                                if ($scopeDesc.length) {
+                                    $scopeDesc.text('<?php echo esc_js( __( '已激活商业正版授权，享有全功能商业运营许可与官方专属一对一技术支持。', 'qiling' ) ); ?>');
+                                }
+                                $clearBtn.show();
                             } else {
-                                $changeBtn.show();
+                                $statusBadge.css('background-color', '#d97706').text('<?php echo esc_js( __( '非商用免费版', 'qiling' ) ); ?>');
+                                if ($scopeNotice.length) {
+                                    $scopeNotice.css({
+                                        'background': '#fffbeb',
+                                        'border-left-color': '#f59e0b',
+                                        'color': '#92400e'
+                                    });
+                                }
+                                if ($scopeDesc.length) {
+                                    $scopeDesc.text('<?php echo esc_js( __( '仅限 教育机构、公益组织与个人学习使用，不得商用。如用于企业或商业营利性网站，请联系官方购买商业正版授权。', 'qiling' ) ); ?>');
+                                }
+                                $clearBtn.hide();
                             }
                         } else {
-                            $status.html('<span style="color:#ef4444;">' + response.data.message + '</span>');
-                            $statusBadge.css('background-color', '#ef4444').text('<?php echo esc_js( __( "未授权 / 域名不匹配", "qiling" ) ); ?>');
-                            $verifyBtn.prop('disabled', false);
+                            $status.html('<span style="color:#ef4444;">' + (response.data ? response.data.message : '<?php echo esc_js( __( '保存失败', 'qiling' ) ); ?>') + '</span>');
                         }
                     },
                     error: function() {
-                        $status.html('<span style="color:#ef4444;">网络错误，请重试</span>');
-                        $verifyBtn.prop('disabled', false);
+                        $saveBtn.prop('disabled', false);
+                        $clearBtn.prop('disabled', false);
+                        $status.html('<span style="color:#ef4444;"><?php echo esc_js( __( '保存异常，请直接在页面底部点击“保存更改”', 'qiling' ) ); ?></span>');
                     }
                 });
+            }
+
+            $saveBtn.on('click', function() {
+                var key = $input.val().trim();
+                doSaveKey(key);
+            });
+
+            $clearBtn.on('click', function() {
+                $input.val('');
+                doSaveKey('');
             });
         });
         </script>

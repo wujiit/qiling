@@ -42,208 +42,211 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.6",
-        "db_title_prefix": "面向全球客户展示供应能力",
-        "db_typing_mode": "loop",
-        "db_typing_text": "多语言产品介绍与询盘转化\n出口资质、交期和包装标准展示\n从样品到批量订单的全球交付",
-        "db_highlight_color": "#60a5fa",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "适合出口工厂、跨境 B2B、品牌供应商和全球代理业务。",
-        "db_desc": "用清晰产品、可信资质和快速联系入口提升海外客户询盘质量。",
-        "db_text_color": "rgba(248,250,252,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "环球外贸",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "Request a Quote",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "View Capabilities",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "合规安全",
+            "link": "#compliance_trust",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #1e40af 50%, #047857 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "索取报价",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "出海服务能力",
-        "services_subtitle": "围绕产品、订单、物流和售后的外贸交付链路",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "产品目录",
-            "desc": "按品类、规格和应用场景组织产品信息。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "样品支持",
-            "desc": "提供样品、测试资料和包装建议。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "出口交付",
-            "desc": "配合贸易条款、报关资料和物流安排。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "售后协同",
-            "desc": "订单追踪、技术答疑和长期合作支持。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "全球工业品直供出海外贸制造基地 · 德国 TUV 与欧盟 CE 认证",
+        "bb_subtitle": "30 年工业五金模具与高精度机械配件自主研发生产，服务全球 80+ 跨国知名企业，支持全流程 OEM/ODM 定制。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "索取最新产品目录 (PDF)",
+        "bb_btn1_url": "#catalog",
+        "bb_btn2_text": "提交即时采购询盘",
+        "bb_btn2_url": "#inquiry"
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "全球业务数据",
-        "stats_subtitle": "用业务覆盖和交付表现增强海外客户信任",
-        "stats_text_align": "center",
+        "stats_title": "全球出海制造实力 · 经得起严苛国际验厂",
+        "stats_subtitle": "深耕精密外贸制造 20 年，为世界 500 强企业提供稳定 OEM 配套",
         "stats_items": [
           {
-            "number": "35+",
-            "label": "出口国家/地区",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "60+ 个",
+            "label": "产品畅销全球国家与地区"
           },
           {
-            "number": "7天",
-            "label": "样品交付周期",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "85,000 ㎡",
+            "label": "自建现代化恒温无尘智造车间"
           },
           {
-            "number": "96%",
-            "label": "订单准时出货率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "3,500 万件",
+            "label": "年出口欧美高精密配件总量"
           },
           {
-            "number": "24h",
-            "label": "询盘响应时效",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.96%",
+            "label": "出口批次海关与客户质检综合合格率"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #059669 100%)",
-        "stats_title_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "全球出口主打工业品类与零部件",
+        "products_subtitle": "符合欧盟 RoHS、REACH 及美国 UL 安全合规标准",
+        "columns": "4"
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "ct_title": "国际市场准入认证与权威检测报告",
+        "ct_subtitle": "德国莱茵 TUV 深度验厂认证 · SGS 原材料有害物质环保检测通过"
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "title": "国际专利证书与外贸百强资质荣誉",
+        "subtitle": "累计获得发明及实用新型专利 120 余项，国家级高新技术外向型企业"
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "询盘到交付流程",
-        "process_subtitle": "让海外客户快速理解合作步骤",
+        "process_title": "外贸/B2B 出海官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "Inquiry",
-            "desc": "确认产品、数量、目标市场和交付条款。",
-            "stage_tag": "询盘"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "Quotation",
-            "desc": "提供规格、价格、包装和交期建议。",
-            "stage_tag": "报价"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "Sample",
-            "desc": "样品确认、测试资料和订单条款确认。",
-            "stage_tag": "样品"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "Shipment",
-            "desc": "量产、质检、包装、出货和售后跟进。",
-            "stage_tag": "交付"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "全球合作案例",
-        "cases_subtitle": "展示出口市场、应用场景和交付价值",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80",
-            "title": "欧洲代理商年度供货",
-            "desc": "稳定产品规格、包装和备货节奏。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80",
-            "title": "北美工程客户定制",
-            "desc": "围绕项目参数完成样品和批量订单。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80",
-            "title": "东南亚渠道合作",
-            "desc": "配合渠道资料、售后支持和长期供货。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "常见询盘问题",
-        "faq_subtitle": "把客户下单前最关心的问题前置说明",
-        "faq_items": [
-          {
-            "question": "是否支持 OEM/ODM？",
-            "answer": "支持按图纸、样品、包装和品牌要求进行定制，具体以评估结果为准。"
-          },
-          {
-            "question": "可以提供哪些出口资料？",
-            "answer": "可根据订单需要提供装箱单、发票、检测报告和基础产品资料。"
-          },
-          {
-            "question": "最小起订量是多少？",
-            "answer": "不同产品的起订量不同，建议在询盘时说明型号、数量和目标市场。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "发送采购询盘",
-        "contact_subtitle": "提交产品型号、采购数量、目标国家和贸易条款，外贸顾问会尽快跟进。",
-        "contact_phone": "+86 400-900-2026",
-        "contact_email": "export@example.com",
-        "contact_address": "China Manufacturing Base",
+        "contact_title": "索取样品寄送与外贸 FOB / CIF 专属报价单",
+        "contact_subtitle": "上传您的图纸或规格需求，我们的资深外贸工程师将在 4 小时内出具详细 DFM 评估报告与报价。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#f8fafc"
+        "contact_submit_text": "提交询盘与图纸"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0d14",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_brand_title": "GLOBAL-PRECISION · 启灵外贸精密智造",
+        "qfs_brand_desc": "世界品质，中国智造。服务全球工业客户的一站式高精精密零部件供应链伙伴。",
+        "qfs_bottom_text": "© 2026 GLOBAL PRECISION MFG LTD. 海关出口进出口代码: 33029600XX"
       }
     }
   ]

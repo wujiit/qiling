@@ -43,222 +43,191 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #111827 0%, #2563eb 52%, #059669 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵出海",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1800&q=80",
-            "title": "把跨境店铺运营做成可持续增长系统",
-            "subtitle": "面向品牌出海、平台店铺、独立站和海外投放，集中展示平台入驻、店铺运营、广告优化、内容素材、履约协同和增长咨询能力。",
-            "btn_text": "提交店铺诊断",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#2563eb"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#tabs",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "01",
-            "number": "6+",
-            "label": "主流平台场景",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "02",
-            "number": "30天",
-            "label": "启动诊断周期",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "03",
-            "number": "ROI",
-            "label": "投放与转化复盘",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "04",
-            "number": "全链路",
-            "label": "运营到履约协同",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "选购新品",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "跨境电商增长服务",
-        "services_subtitle": "围绕平台、内容、投放、数据和履约的全链路服务矩阵",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "平台入驻与店铺搭建",
-            "desc": "支持亚马逊、Temu、TikTok Shop、Shopee、Lazada 等平台入驻资料、店铺设置、类目规划和基础装修。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "店铺运营与转化优化",
-            "desc": "围绕 Listing、关键词、定价、促销、评价、转化率和库存节奏进行持续运营。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "独立站与品牌出海",
-            "desc": "提供 Shopify/独立站搭建、品牌页面、商品内容、支付物流配置和站内转化路径优化。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "海外广告与内容素材",
-            "desc": "整合 Google、Meta、TikTok、达人内容和短视频素材测试，建立投放复盘机制。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "启灵跨境出海 · 让中国优质国货卖向全球 200+ 国家与地区",
+        "bb_subtitle": "亚马逊 Amazon、TikTok Shop、TEMU 全渠道代运营与官方认证 SPN 服务商，助力 300+ 工厂年销千万美金。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "免费申请出海品类调研",
+        "bb_btn1_url": "#contact",
+        "bb_btn2_text": "了解出海成功案例",
+        "bb_btn2_url": "#cases"
       }
     },
     {
-      "type": "process",
+      "type": "stats",
       "data": {
-        "process_title": "跨境增长合作流程",
-        "process_subtitle": "先诊断，再启动，按数据复盘持续优化",
-        "process_mode": "standard",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "process_items": [
+        "stats_title": "亿级出海操盘战绩 · 用销量与利润证言",
+        "stats_subtitle": "从 0 到 1 破局出海，打造长期高利润跨境自主品牌",
+        "stats_items": [
           {
-            "icon": "01",
-            "title": "店铺与品类诊断",
-            "desc": "梳理目标市场、平台规则、产品毛利、竞品价格、库存履约和当前流量数据。",
-            "stage_tag": "诊断"
+            "number": "300+ 家",
+            "label": "辅导年销破千万美金的制造业工厂"
           },
           {
-            "icon": "02",
-            "title": "增长方案共创",
-            "desc": "确定平台优先级、Listing 结构、内容素材、广告预算、促销节奏和履约协同方式。",
-            "stage_tag": "方案"
+            "number": "$1.8 亿+",
+            "label": "代运营店铺年度海外销售总流水"
           },
           {
-            "icon": "03",
-            "title": "运营执行上线",
-            "desc": "完成店铺配置、商品优化、广告投放、内容发布、活动提报和日常数据监控。",
-            "stage_tag": "执行"
+            "number": "Top 10",
+            "label": "打造 80+ 个细分品类亚马逊 Best Seller"
           },
           {
-            "icon": "04",
-            "title": "数据复盘迭代",
-            "desc": "按周/月复盘点击率、转化率、ACOS/ROAS、库存周转、退货和利润表现。",
-            "stage_tag": "复盘"
+            "number": "12 个",
+            "label": "美欧海外仓本地极速退换货节点"
           }
         ]
       }
     },
     {
-      "type": "comparison",
+      "type": "tabs",
       "data": {
-        "comparison_title": "跨境服务模式对比",
-        "comparison_subtitle": "帮助品牌按阶段选择代运营、独立站或全案陪跑",
-        "comparison_features": "适合阶段\n核心目标\n服务内容\n交付周期\n数据指标\n团队协作",
-        "comparison_products": [
-          {
-            "name": "平台代运营",
-            "values": "已有产品，准备入驻或提升店铺表现\n快速完成平台运营与转化提升\n入驻、Listing、广告、促销、评价与日常运营\n月度服务，可按季度复盘\n曝光、点击率、转化率、ACOS、订单量\n运营经理、广告优化师、设计/文案支持"
-          },
-          {
-            "name": "独立站增长",
-            "values": "希望沉淀品牌与私域用户\n搭建品牌站并建立站内转化路径\nShopify/独立站、页面内容、广告落地页、邮件与数据追踪\n建站期 + 月度优化\n访问量、加购率、转化率、客单价、ROAS\n建站、内容、投放、数据分析协同"
-          },
-          {
-            "name": "全案陪跑",
-            "values": "从 0 到 1 或多平台同时推进\n建立跨境业务增长系统\n市场诊断、平台策略、店铺运营、投放、内容、履约复盘\n3-6 个月阶段项目\n利润率、周转、复购、渠道贡献、现金流\n策略顾问、运营、投放、内容、供应链共同参与"
-          }
-        ],
-        "comparison_highlight": "3",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "tabs_title": "全渠道出海平台专业代运营与孵化矩阵",
+        "tabs_subtitle": "针对各主流海外电商平台的算法逻辑与流量机制，制定定制化打法"
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "title": "六维一体全托管出海赋能服务",
+        "subtitle": "研发选品、合规认证、视觉营销、站内广告、海外仓配到税务合规全链路贯通",
+        "columns": "3"
       }
     },
     {
       "type": "cases",
       "data": {
-        "cases_title": "跨境电商增长案例",
-        "cases_subtitle": "用平台、品类、动作和数据结果说明服务价值",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
-            "title": "家居品牌 Amazon 店铺优化",
-            "desc": "重构 Listing、关键词和广告分组，改善点击率、转化率和库存节奏。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-            "title": "消费电子独立站增长",
-            "desc": "完成 Shopify 页面、素材测试、落地页和邮件召回，建立站内数据追踪。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80",
-            "title": "服饰配件多平台履约协同",
-            "desc": "打通平台活动、海外仓备货、退换货和客服 SOP，降低旺季履约风险。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "cases_title": "传统外贸工厂成功转型跨境标杆战例",
+        "cases_subtitle": "从代工微利到自有品牌海外溢价，见证蜕变之路",
+        "columns": "3"
       }
     },
     {
-      "type": "faq",
+      "type": "pricing",
       "data": {
-        "faq_title": "跨境电商服务常见问题",
-        "faq_subtitle": "提前说明合作边界、数据口径、预算和履约协同",
-        "faq_items": [
-          {
-            "question": "服务前需要准备哪些资料？",
-            "answer": "建议准备产品目录、目标市场、平台账号状态、历史销售数据、广告数据、库存履约方式、毛利区间、可投放预算和品牌素材。"
-          },
-          {
-            "question": "代运营是否承诺销售额？",
-            "answer": "不建议承诺绝对销售额。更合理的方式是明确阶段目标、执行动作、数据口径和复盘周期，根据品类竞争、预算、供应链和平台规则共同优化。"
-          },
-          {
-            "question": "独立站和平台店铺应该先做哪个？",
-            "answer": "取决于产品、预算和团队阶段。平台适合更快验证需求，独立站适合沉淀品牌和用户资产；成熟品牌可并行推进，但需要更强内容和投放能力。"
-          },
-          {
-            "question": "海外仓、物流和客服是否包含在服务里？",
-            "answer": "可以作为协同模块展示。正式合作时应明确海外仓、头程、尾程、退换货、客服语言、时区响应和费用承担边界。"
-          }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "pricing_title": "共赢出海合作方案 · 基础服务费+销售阶梯提点",
+        "pricing_subtitle": "风险共担，利益绑定，与工厂并肩作战开拓海外新增长曲线",
+        "pricing_columns": "3"
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "提交跨境店铺诊断需求",
-        "contact_subtitle": "填写平台、品类、目标市场、月销售额、广告预算、当前问题和联系方式，跨境顾问会协助判断适合的增长服务模式。",
+        "contact_title": "免费获取《2026 跨境出海选品蓝海分析报告》",
+        "contact_subtitle": "告诉我们您的优势产品类目，跨境操盘专家将为您定制出海可行性评估与预期 ROI 模型。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "立即申请出海方案诊断"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_brand_title": "CROSS-BORDER · 启灵跨境出海服务",
+        "qfs_brand_desc": "赋能中国智造，扬帆品牌出海。亚马逊 SPN 认证服务商 · 官方直连通道。",
+        "qfs_bottom_text": "© 2026 CROSS BORDER GLOBAL INC. 浙ICP备2021008821号"
       }
     }
   ]

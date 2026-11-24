@@ -42,217 +42,246 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.58",
-        "db_title_prefix": "让制造实力更容易被客户看见",
-        "db_typing_mode": "loop",
-        "db_typing_text": "精密加工与稳定交付\n工业设备与零部件定制\n从打样到批量生产的全流程服务",
-        "db_highlight_color": "#fcd34d",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "面向采购、代理商和项目客户，展示工厂实力、产品能力和交付保障。",
-        "db_desc": "适合机械设备、五金加工、电子制造、工业材料和 OEM/ODM 工厂。",
-        "db_text_color": "rgba(248,250,252,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "精工智造",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "提交采购需求",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看产品能力",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #78350f 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "索取报价",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "国家级专精特新智能制造示范工厂 · 高精密模具部件制造专家",
+        "bb_subtitle": "50,000㎡ 现代化恒温智能生产基地，百台进口五轴加工中心，加工公差精度严苛控制在 ±0.002mm。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "预约实地验厂 / 索取报价",
+        "bb_btn1_url": "#factory",
+        "bb_btn2_text": "了解生产设备清单",
+        "bb_btn2_url": "#equipment"
       }
     },
     {
       "type": "stats",
-      "data": {
-        "stats_title": "工厂核心数据",
-        "stats_subtitle": "用生产、质检和交付数据建立采购信任",
-        "stats_text_align": "center",
-        "stats_items": [
-          {
-            "number": "12年",
-            "label": "行业制造经验",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "18条",
-            "label": "自动化产线",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "98.6%",
-            "label": "一次质检通过率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "36h",
-            "label": "快速报价响应",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #78350f 100%)",
-        "stats_title_color": "#ffffff"
-      }
+      "data": {}
     },
     {
-      "type": "services",
+      "type": "products",
       "data": {
-        "services_title": "产品与制造能力",
-        "services_subtitle": "围绕研发、打样、量产和售后的工业交付体系",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "products_title": "制造业/工厂官网 · 核心工业级产品与选型矩阵",
+        "products_subtitle": "INDUSTRIAL PRODUCT MATRIX",
+        "columns": "3",
+        "items": [
           {
-            "icon": "01",
-            "title": "标准产品供应",
-            "desc": "覆盖常用规格、配件和批量采购需求。",
-            "link": "#"
+            "title": "系列一：高性能工业级核心型号",
+            "desc": "通过严格全温区可靠性验证，满足连续高负荷运行要求",
+            "specs": "工作温度：-40℃ ~ +125℃\nMTBF：> 100,000 小时\n认证：CE / FCC / RoHS",
+            "btn_text": "规格参数"
           },
           {
-            "icon": "02",
-            "title": "定制加工",
-            "desc": "按图纸、样品和应用场景提供定制方案。",
-            "link": "#"
+            "title": "系列二：超低功耗微型化定制型号",
+            "desc": "集成度提升 50%，专为空间严苛与电池供电场景打造",
+            "specs": "待机功耗：< 10uA\n防护等级：IP67 工业级\n接口：标准工业总线",
+            "btn_text": "规格参数"
           },
           {
-            "icon": "03",
-            "title": "质量检测",
-            "desc": "关键尺寸、性能、外观和包装多环节检验。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "交付协同",
-            "desc": "排产、物流、验收和售后支持全程跟进。",
-            "link": "#"
+            "title": "系列三：重载高可靠性旗舰解决方案",
+            "desc": "具备全链路硬件容错与主动安全保护机制，杜绝意外停机",
+            "specs": "负载能力：业内领先\n响应延迟：微秒级闭环\n保修：5年工业级联保",
+            "btn_text": "规格参数"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "项目合作流程",
-        "process_subtitle": "让采购沟通、打样确认和批量交付更清晰",
+        "process_title": "制造业/工厂官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "需求评估",
-            "desc": "确认应用场景、规格参数、数量和交期目标。",
-            "stage_tag": "评估"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "方案报价",
-            "desc": "输出材料、工艺、包装、交付周期和报价。",
-            "stage_tag": "报价"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "打样确认",
-            "desc": "样品测试、尺寸确认和批量生产准备。",
-            "stage_tag": "打样"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "量产交付",
-            "desc": "排产、质检、出货和售后资料交付。",
-            "stage_tag": "交付"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "ch_title": "国际权威资质认证与核心发明专利",
+        "ch_subtitle": "国家级高新技术企业、ISO9001 质量认证与数十项PCT国际核心发明专利"
       }
     },
     {
       "type": "cases",
       "data": {
-        "cases_title": "行业应用案例",
-        "cases_subtitle": "用真实场景说明产品稳定性和交付能力",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=900&q=80",
-            "title": "自动化设备配套项目",
-            "desc": "为设备厂提供批量零部件和交付协同。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80",
-            "title": "出口订单质检方案",
-            "desc": "按出口标准完成生产检测和包装追溯。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=900&q=80",
-            "title": "OEM 定制开发",
-            "desc": "从样品优化到批量排产完成定制交付。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "cases_title": "全球500强与行业龙头企业配套落地案例",
+        "cases_subtitle": "数千家工业客户长达十年以上的共同信赖与严苛验证"
       }
     },
     {
-      "type": "clients",
+      "type": "downloads",
       "data": {
-        "clients_title": "服务客户类型",
-        "clients_columns": "4",
-        "clients_show_name": "1",
-        "clients_items": [
+        "downloads_title": "产品选型手册、Datasheet 与技术规格书",
+        "downloads_subtitle": "免费下载完整的 2D/3D CAD 模型、电气接线图与二次开发手册",
+        "downloads_items": [
           {
-            "name": "设备集成商",
-            "logo": "",
+            "title": "制造业/工厂官网 2026年度完整产品选型手册",
+            "desc": "包含全部型号电气参数、封装尺寸与引脚定义",
+            "badge": "PDF | 18.5MB",
             "link": "#"
           },
           {
-            "name": "海外采购商",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "工程承包商",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "品牌 OEM 客户",
-            "logo": "",
+            "title": "系统集成工程设计指南与典型应用拓扑图",
+            "desc": "手把手指导电气工程师与系统集成商极速落地",
+            "badge": "PDF | 9.2MB",
             "link": "#"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "获取产品报价",
-        "contact_subtitle": "提交产品规格、采购数量、应用场景和交付城市，工程顾问会给出初步建议。",
-        "contact_phone": "400-800-2026",
-        "contact_email": "sales@example.com",
-        "contact_address": "工业园区示例路 88 号",
+        "contact_title": "制造业/工厂官网 商务询盘与样品申请通道 (RFQ)",
+        "contact_subtitle": "资深应用工程师与大客户销售将在 2 小时内响应，为您出具详细报价与试机方案。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交采购询盘单"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0b1120",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "PRECISION-MFG · 智能重工与高精模具制造基地",
+        "qfs_brand_desc": "30年专注于高精度冲压模具、精密数控加工及汽车核心结构件智能制造。通过 IATF 16949 / ISO 9001 质量管理体系认证，为全球高端工业制造提供一站式代工与研发交付保障。",
+        "qfs_link_groups": [
+          {
+            "title": "制造与加工能力 & 品控与供应链",
+            "links": "五轴数控加工中心|#\n高精模具打样与量产|#\n钣金精密冲压与激光切割|#\n表面硬化与防腐工艺|#\nIATF 16949 质量认证证书|#\n全自动三坐标测量实验室|#\n原材料材质检测与追溯报告|#\n大宗采购与集采合作指南|#"
+          }
+        ],
+        "qfs_contact_title": "工业合作与验厂接待",
+        "qfs_contact_items": "商务专线|400-880-9922|tel:4008809922\n总工办热线|0512-8888-6611|tel:051288886611\n接待中心|周一至周六 8:00 - 18:00（支持预约验厂）|#\n工厂基地|江苏省苏州市工业园区高端制造产业园 88 号|#",
+        "qfs_social_title": "关注官方动态",
+        "qfs_social_links": "企业微信商务|#\n制造资讯公号|#\n工业短视频展|#\n官方领英主页|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 PRECISION HEAVY INDUSTRY CO., LTD. 保留所有权利 · 苏ICP备18002931号 · 工业制造许可 SC-88231",
+        "qfs_bottom_links": "质量保证条款|#\n验厂预约须知|#\n供应链合规准则|#\n工厂交通地图|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

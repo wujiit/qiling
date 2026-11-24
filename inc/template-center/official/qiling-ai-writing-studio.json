@@ -43,264 +43,331 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "灵笔工坊",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "场景方案",
+            "link": "#tabbed_carousel",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "方案对比",
+            "link": "#comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#8b5cf6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#8b5cf6",
+        "qhs_hover_bg": "rgba(139,92,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "app_hero",
       "data": {
-        "hero_title": "把选题、写作、排版和助手放进一个工作台",
-        "hero_desc": "面向内容团队、企业公众号、SEO 站点和创作者工具的 AI 写作官网模板，可承接启灵AI写作与启灵Ai助手的产品入口。",
-        "hero_buttons": [
-          {
-            "btn_type": "custom",
-            "btn_text": "进入写作工作台",
-            "btn_subtext": "Open Studio",
-            "btn_icon": "AI",
-            "btn_link": "#",
-            "btn_style": "light"
-          },
-          {
-            "btn_type": "custom",
-            "btn_text": "查看能力清单",
-            "btn_subtext": "Features",
-            "btn_icon": "DOC",
-            "btn_link": "#",
-            "btn_style": "outline"
-          }
-        ],
-        "show_qr_card": "1",
-        "qr_icon": "QL",
-        "qr_sub": "启灵生态适配",
-        "qr_title": "支持 AI 写作与 AI 助手插件",
-        "qr_desc": "未启用插件时使用占位入口，启用后可改为真实工作台链接",
-        "qr_image": "",
-        "media_type": "image",
-        "hero_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-        "floating_elements": [
-          {
-            "float_icon": "SEO",
-            "float_title": "SEO 草稿",
-            "float_desc": "标题与结构建议",
-            "float_pos": "top-left"
-          },
-          {
-            "float_icon": "WX",
-            "float_title": "公众号排版",
-            "float_desc": "一键整理格式",
-            "float_pos": "bottom-right"
-          }
-        ],
-        "bg_type": "color",
-        "bg_color": "linear-gradient(135deg, #0b0f19 0%, #2e1065 50%, #0f172a 100%)",
-        "padding_top": "110px",
-        "padding_bottom": "110px",
-        "btn_primary_bg": "#8b5cf6",
-        "btn_primary_color": "#ffffff",
-        "btn_secondary_bg": "rgba(255, 255, 255, 0.12)",
-        "btn_secondary_color": "#ffffff"
+        "ah_title": "灵感如泉 · 笔下生花 · 新一代专业级 AI 智能写作与内容营销工作台",
+        "ah_subtitle": "融合全球前沿大语言模型与专业营销文案方法论，深度赋能自媒体爆款创作、万字深度研报提炼、电商高转化带货文案与企业公关通稿撰写",
+        "ah_btn_text": "立即免费开启智能写作 (赠送 10,000 算力点)",
+        "ah_btn_url": "#start-free",
+        "ah_image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1800&q=80"
       }
     },
     {
-      "type": "features",
+      "type": "features_list",
       "data": {
-        "features_title": "AI 内容工作台能力",
-        "features_subtitle": "围绕真实写作链路组织卖点，不只展示一个聊天框",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "文章与文案生成",
-            "desc": "支持文章初稿、产品文案、活动文案和多版本改写。"
-          },
-          {
-            "icon": "02",
-            "title": "公众号排版",
-            "desc": "把长文整理成更适合公众号发布的标题、层级和样式。"
-          },
-          {
-            "icon": "03",
-            "title": "内容工具箱",
-            "desc": "覆盖润色、扩写、摘要、事实核查和选题辅助等高频任务。"
-          },
-          {
-            "icon": "04",
-            "title": "AI 助手与知识库",
-            "desc": "可承接对话助手、提示词库、知识库问答和文章生成入口。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
       }
     },
     {
-      "type": "product_showcase",
+      "type": "tabbed_carousel",
       "data": {
-        "ps_bg_color": "#f8fafc",
-        "ps_padding": "80",
-        "ps_layout": "left",
-        "ps_media_items": [
-          {
-            "type": "image",
-            "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-            "video_url": "",
-            "video_poster": ""
-          },
-          {
-            "type": "image",
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-            "video_url": "",
-            "video_poster": ""
-          },
-          {
-            "type": "image",
-            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-            "video_url": "",
-            "video_poster": ""
-          }
-        ],
-        "ps_media_height": "460px",
-        "ps_media_radius": "16px",
-        "ps_left_buttons": [
-          {
-            "text": "写作记录",
-            "url": "#",
-            "icon": "TXT",
-            "target": "_self"
-          },
-          {
-            "text": "文案广场",
-            "url": "#",
-            "icon": "DOC",
-            "target": "_self"
-          }
-        ],
-        "ps_title": "启灵 AI 内容套件",
-        "ps_subtitle": "把 qilingtxt 的写作、排版、工具箱能力与 wp-ai-chat 的助手、知识库、AI PPT 能力放在同一个产品故事里。",
-        "ps_show_price": "no",
-        "ps_price": "",
-        "ps_original_price": "",
-        "ps_cta_text": "配置工作台入口",
-        "ps_cta_url": "#",
-        "ps_cta_bg": "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
-        "ps_cta_color": "#ffffff",
-        "ps_cta_target": "_self",
-        "ps_description": "启灵AI写作：文章创作 / 文案广场 / 公众号排版\n启灵Ai助手：对话助手 / 提示词 / 知识库 / AI PPT\n站点入口：支持把工作台、套餐、教程放在同一官网页\n适配场景：内容团队、企业公众号、SEO 站点、创作者工具"
+        "tabbed_title": "全场景业务解决方案",
+        "tabbed_subtitle": "针对不同业务形态与规模，提供灵活开箱即用方案"
       }
     },
     {
-      "type": "process",
+      "type": "comparison",
       "data": {
-        "process_title": "从素材到发布的内容闭环",
-        "process_subtitle": "让访问者理解 AI 写作不是单次生成，而是一套可复用流程",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "输入选题与素材",
-            "desc": "沉淀关键词、产品资料、客户问题和参考资料。",
-            "stage_tag": "输入"
-          },
-          {
-            "icon": "02",
-            "title": "生成结构化初稿",
-            "desc": "按文章、文案、公众号或短内容场景生成可编辑草稿。",
-            "stage_tag": "生成"
-          },
-          {
-            "icon": "03",
-            "title": "润色与排版",
-            "desc": "进行扩写、摘要、事实核查、公众号排版和多平台适配。",
-            "stage_tag": "优化"
-          },
-          {
-            "icon": "04",
-            "title": "发布与复用",
-            "desc": "将历史记录、提示词和高质量文案沉淀为团队资产。",
-            "stage_tag": "沉淀"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "comparison_title": "多维实力对比",
+        "comparison_subtitle": "为什么众多客户首选我们，核心指标一目了然"
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "套餐与服务包装",
-        "pricing_subtitle": "价格只是占位，可按实际插件额度、会员权益或企业服务继续编辑",
+        "pricing_title": "极具性价比的创作者与团队订阅套餐",
+        "pricing_subtitle": "免费版永久可用，付费会员解锁无限高级算力模型与专属长文扩写",
         "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
+        "pricing_plans": [
+          {
+            "name": "免费尝鲜体验版 (个人入门)",
+            "name_color": "#0f172a",
+            "price": "¥0",
+            "price_color": "#0f172a",
+            "period": "/每月赠送 10,000 创作字数",
+            "desc": "适合自媒体新人、学生日常写作与轻度文案创作体验",
+            "desc_color": "#64748b",
+            "features": "全量体验 50+ 基础创作模板\\n支持基础润色、扩写与错别字纠错\\n导出为 TXT、Markdown 纯文本\\n社区常见问题答疑与教程",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "创作者尊享专业版 (爆款必备)",
+            "name_color": "#0f172a",
+            "price": "¥39",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包年立减 40% 仅需 ¥278)",
+            "desc": "针对小红书达人、微信公号博主、电商运营，无限制畅享高级算力",
+            "desc_color": "#64748b",
+            "features": "无限制使用顶级高阶推理与写作大模型\\n解锁 300+ 独家爆款长篇创作深度模型\\n支持万字长文智能续写与一键排版导出 Word\\n支持创建个人专属文风与私有素材知识库",
+            "features_color": "#334155",
+            "btn_text": "立即购买",
+            "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "创作者热卖",
+            "badge": "创作者热卖",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "企业营销团队协作版 (团队赋能)",
+            "name_color": "#0f172a",
+            "price": "¥198",
+            "price_color": "#0f172a",
+            "period": "/月 (支持 5 个独立团队座席)",
+            "desc": "针对广告公关公司、MCN 机构、品牌市场部，统一知识库协同",
+            "desc_color": "#64748b",
+            "features": "团队共享多座席与企业级算力资源池\\n统一沉淀企业品牌语调 (Tone of Voice) 知识库\\n团队成员创作内容协同批注与历史版本回滚\\n专属客户成功经理 (CSM) 1v1 提供工作流定制",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "体验版",
-            "price": "免费体验",
-            "period": "",
-            "desc": "适合个人试用",
-            "features": "基础写作模板\n历史记录\n公众号排版体验\n基础提示词",
-            "btn_text": "开始体验",
+            "name": "免费尝鲜体验版 (个人入门)",
+            "name_color": "#0f172a",
+            "price": "¥0",
+            "price_color": "#0f172a",
+            "period": "/每月赠送 10,000 创作字数",
+            "desc": "适合自媒体新人、学生日常写作与轻度文案创作体验",
+            "desc_color": "#64748b",
+            "features": "全量体验 50+ 基础创作模板\\n支持基础润色、扩写与错别字纠错\\n导出为 TXT、Markdown 纯文本\\n社区常见问题答疑与教程",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "团队版",
-            "price": "¥199",
-            "period": "/月起",
-            "desc": "适合内容团队",
-            "features": "更多生成额度\n文案广场\n工具箱能力\n知识库助手\n优先支持",
-            "btn_text": "选择团队版",
+            "name": "创作者尊享专业版 (爆款必备)",
+            "name_color": "#0f172a",
+            "price": "¥39",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包年立减 40% 仅需 ¥278)",
+            "desc": "针对小红书达人、微信公号博主、电商运营，无限制畅享高级算力",
+            "desc_color": "#64748b",
+            "features": "无限制使用顶级高阶推理与写作大模型\\n解锁 300+ 独家爆款长篇创作深度模型\\n支持万字长文智能续写与一键排版导出 Word\\n支持创建个人专属文风与私有素材知识库",
+            "features_color": "#334155",
+            "btn_text": "立即购买",
             "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
-            "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)"
+            "is_featured": "yes",
+            "featured_text": "创作者热卖",
+            "badge": "创作者热卖",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "企业版",
-            "price": "联系顾问",
-            "period": "",
-            "desc": "适合品牌与私有化",
-            "features": "企业知识库\n专属提示词\n工作台定制\n权限与审计\n培训交付",
-            "btn_text": "预约演示",
+            "name": "企业营销团队协作版 (团队赋能)",
+            "name_color": "#0f172a",
+            "price": "¥198",
+            "price_color": "#0f172a",
+            "period": "/月 (支持 5 个独立团队座席)",
+            "desc": "针对广告公关公司、MCN 机构、品牌市场部，统一知识库协同",
+            "desc_color": "#64748b",
+            "features": "团队共享多座席与企业级算力资源池\\n统一沉淀企业品牌语调 (Tone of Voice) 知识库\\n团队成员创作内容协同批注与历史版本回滚\\n专属客户成功经理 (CSM) 1v1 提供工作流定制",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
+      "type": "testimonials",
+      "data": {}
+    },
+    {
       "type": "faq",
       "data": {
-        "faq_title": "AI 写作常见问题",
-        "faq_subtitle": "提前回答客户关于插件、内容质量、发布流程和套餐的疑问",
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
         "faq_items": [
           {
-            "question": "这个模板必须安装启灵AI写作插件吗？",
-            "answer": "不必须。模板本身可以正常导入和展示，插件启用后再把 CTA 链接改成真实写作工作台、AI 助手或 AI PPT 页面即可。"
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
           },
           {
-            "question": "可以用于企业公众号和 SEO 内容站吗？",
-            "answer": "可以。页面文案已经覆盖选题、生成、润色、排版、发布和复用流程，适合企业公众号、SEO 站点和内容团队展示。"
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
           },
           {
-            "question": "套餐价格能否接入会员或积分体系？",
-            "answer": "可以把套餐按钮改为会员购买、积分充值或企业咨询入口。主题模板只负责展示和引流，不直接写订单或积分逻辑。"
-          },
-          {
-            "question": "是否支持知识库或多轮对话助手？",
-            "answer": "模板文案已预留启灵Ai助手的对话、提示词、知识库和文章生成入口，具体能力以插件实际配置为准。"
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "把 AI 写作入口做成自己的产品官网",
-        "cta_subtitle": "替换为你的插件页面、会员套餐和案例内容，就能把内容工具从功能入口升级成可转化的官网。",
-        "cta_button_text": "编辑工作台入口",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #2e1065 60%, #4c1d95 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#ec4899",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "开启 AI 写作工作台官网 数字化卓越体验",
+        "cta_subtitle": "无需漫长等待，立即注册即可解锁全部核心功能与极速支持保障。",
+        "cta_btn_text": "立即免费体验",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#8b5cf6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "WORD-GENIUS · 智能内容生成与新媒体写作工作台",
+        "qfs_brand_desc": "专为内容创作者、市场营销团队与新媒体运营打造的 AI 灵感生产力引擎。一键生成爆款文案、长篇深度文章与多平台分发矩阵。",
+        "qfs_link_groups": [
+          {
+            "title": "创作能力与工具与功能",
+            "links": "营销爆款文案生成|#\nSEO 深度长文创作|#\n小红书/公众号多维改写|#\n多语言精准本地化出海|#\nAI 润色与事实核查|#\n排版助手与一键导出|#\n企业团队协作知识库|#\n浏览器插件扩展安装|#"
+          }
+        ],
+        "qfs_contact_title": "内容创作者服务",
+        "qfs_contact_items": "客服热线|400-990-2026|tel:4009902026\n反馈邮箱|help@word-genius.ai|mailto:help@word-genius.ai\n企业版顾问|周一至周日 9:00 - 21:00 在线支持|#",
+        "qfs_social_title": "加入创作者社群",
+        "qfs_social_links": "官方微信公众号|#\n创作者专属微信群|#\n知乎写作指南|#\nB站创作实战教学|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 WORD-GENIUS AI STUDIO. 保留所有权利 · 百万内容创作者的 AI 生产力之选",
+        "qfs_bottom_links": "创作者服务协议|#\n内容版权声明|#\n隐私政策|#\n违规举报通道|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

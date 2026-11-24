@@ -42,238 +42,174 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 50%, #0d9488 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "极境旅行",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80",
-            "title": "把假期交给更懂目的地的人",
-            "subtitle": "精选线路、私家小团、亲子度假与企业团建，支持在线咨询定制。",
-            "btn_text": "咨询线路",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0284c7"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "定制路线",
+            "link": "#tour-package",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "行程规划",
+            "link": "#itinerary",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "景点门票",
+            "link": "#ticket-showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "80",
-            "number": "80+",
-            "label": "精选线路",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "12",
-            "number": "12年",
-            "label": "目的地经验",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "用户评分",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "24",
-            "number": "24h",
-            "label": "旅途响应",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0ea5e9",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0ea5e9",
+        "qhs_hover_bg": "rgba(14,165,233,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "dynamic_banner",
       "data": {
-        "services_title": "热门旅行主题",
-        "services_subtitle": "按人群、预算和出行目标快速选择合适线路",
-        "services_columns": "4",
-        "services_bg_color": "#ffffff",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "亲子度假",
-            "desc": "轻松节奏、亲子酒店和安全动线。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "私家小团",
-            "desc": "独立用车、灵活行程和专属向导。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "企业团建",
-            "desc": "会议、拓展、住宿和餐饮一站式安排。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "深度目的地",
-            "desc": "在地体验、摄影路线和文化探索。",
-            "link": "#"
-          }
-        ]
+        "db_height": "85vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.45",
+        "db_title": "极境旅行 · 探索世界的每一处隐秘仙境",
+        "db_subtitle": "专属私享定制向导、北极光极地探险、非洲旷野野奢帐篷营地与安第斯山脉徒步，记录不虚此行的人生旅程。",
+        "db_btn_text": "定制您的专属度假路线",
+        "db_btn_link": "#custom"
+      }
+    },
+    {
+      "type": "tour-package",
+      "data": {
+        "tour_title": "全球精选独家定制度假与深度探索线路",
+        "tour_subtitle": "从山川湖海到人文古迹，每一条路线均由资深旅行设计师亲历实测踩线"
       }
     },
     {
       "type": "itinerary",
       "data": {
-        "itinerary_title": "经典三日行程",
-        "itinerary_subtitle": "用清晰日程降低用户决策成本，可替换为任意目的地线路",
-        "itinerary_layout": "cards",
-        "itinerary_line_color": "#0284c7",
-        "itinerary_days": [
-          {
-            "day_number": "Day 1",
-            "day_title": "抵达目的地，入住海景酒店",
-            "day_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
-            "morning": "抵达机场后专车接机，前往酒店办理入住。",
-            "afternoon": "自由活动，熟悉周边海岸和商业区。",
-            "evening": "安排欢迎晚餐和行程说明。",
-            "meals": "晚餐",
-            "accommodation": "海景度假酒店",
-            "attractions": "海岸步道\n城市夜景"
-          },
-          {
-            "day_number": "Day 2",
-            "day_title": "核心景点与在地体验",
-            "day_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-            "morning": "前往核心景区，安排讲解和轻徒步。",
-            "afternoon": "体验在地手作或主题活动。",
-            "evening": "自由选择夜市或特色餐厅。",
-            "meals": "早餐/午餐",
-            "accommodation": "精选度假酒店",
-            "attractions": "自然公园\n在地工坊"
-          },
-          {
-            "day_number": "Day 3",
-            "day_title": "轻松返程与伴手礼采购",
-            "day_image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80",
-            "morning": "睡到自然醒，安排周边慢游。",
-            "afternoon": "伴手礼采购，专车送机。",
-            "evening": "结束愉快旅程。",
-            "meals": "早餐",
-            "accommodation": "返程",
-            "attractions": "海边咖啡\n伴手礼街区"
-          }
-        ],
-        "module_bg_color": "#f0f9ff"
+        "itinerary_title": "经典线路每日行程规划与时间节点全景",
+        "itinerary_subtitle": "节奏从容、私密独立成团，拒绝走马观花式赶路，让身心真正融入风景"
       }
     },
     {
-      "type": "gallery",
+      "type": "ticket-showcase",
       "data": {
-        "gallery_title": "目的地相册",
-        "gallery_subtitle": "用真实图片展示线路体验和目的地氛围",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "enable_filter": "yes",
-        "filter_categories": "海岛,自然,城市",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
-            "title": "海岛假期",
-            "desc": "慢节奏度假",
-            "category": "海岛"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-            "title": "自然路线",
-            "desc": "轻徒步体验",
-            "category": "自然"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80",
-            "title": "城市慢游",
-            "desc": "咖啡与街区",
-            "category": "城市"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "ticket_title": "热门景区门票与交通畅游通票",
+        "ticket_subtitle": "官方正规通道出票，扫码极速入园，出票无忧售后保障"
       }
     },
     {
       "type": "testimonials",
       "data": {
-        "testimonials_title": "旅行者反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "8,000+",
-        "average_rating": "4.9",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "赵女士",
-            "position": "亲子家庭",
-            "content": "节奏安排很适合孩子，酒店和用车都省心。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "许先生",
-            "position": "私家团",
-            "content": "行程可调整，向导很熟悉当地小众路线。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "林女士",
-            "position": "企业团建",
-            "content": "会议、住宿和团建活动衔接很顺，执行团队响应快。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ],
-        "testimonials_bg_color": "#f0f9ff"
-      }
-    },
-    {
-      "type": "booking-entry",
-      "data": {
-        "booking_title": "咨询旅行线路",
-        "booking_subtitle": "提交出行人数、时间和偏好，旅行顾问会给出初步方案。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "咨询须知",
-        "sidebar_content": "建议提前 15 天咨询旺季线路\n可在表单里备注亲子、摄影、团建等偏好\n最终报价以确认方案为准",
-        "contact_phone": "400-517-2026",
-        "contact_hours": "09:00-22:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#ffffff"
+        "testimonials_title": "真实旅友旅行札记与口碑评价",
+        "testimonials_subtitle": "记录每一段旅途中的感动瞬间与真诚回响"
       }
     },
     {
       "type": "faq",
       "data": {
-        "faq_title": "旅行咨询常见问题",
-        "module_bg_color": "#f0f9ff",
-        "faq_items": [
+        "faq_title": "旅游出行常见问答与出行须知",
+        "faq_subtitle": "涵盖签证办理、高原反应防范、儿童老人优惠与退改签政策"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {}
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d1319",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0ea5e9",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "WANDER-LUST · 极境探索 · 高端全球定制旅行与文旅度假",
+        "qfs_brand_desc": "拒绝走马观花，专注于小众深度旅行灵感定制。涵盖南北极极地科考探险、西藏青海朝圣自驾、瑞士阿尔卑斯滑雪及非洲塞伦盖蒂动物大迁徙，私人向导全程保障。",
+        "qfs_link_groups": [
           {
-            "question": "线路可以定制吗？",
-            "answer": "可以，用户可提交出行人数、预算和偏好，顾问会按需求调整行程。"
-          },
-          {
-            "question": "是否支持企业团建？",
-            "answer": "支持会议场地、住宿、餐饮、拓展活动和交通统筹。"
-          },
-          {
-            "question": "图片和行程可以替换吗？",
-            "answer": "可以，行程规划、相册、服务主题和预约文案都能在装修器中修改。"
+            "title": "深度主题路线 & 定制专属保障",
+            "links": "南极半岛庞洛邮轮探险破冰之旅|#\n冰岛蓝冰洞追光与超级越野自驾|#\n肯尼亚国家公园动物大迁徙营地|#\n川藏 318 景观大道定制越野车队|#\n1 对 1 资深旅行规划师定制路书|#\n全球百万元境外紧急救援与医疗险|#\n签证加急绿色通道与面签辅导|#\n全程五星奢华酒店与顶级向导配置|#"
           }
-        ]
+        ],
+        "qfs_contact_title": "定制规划师咨询与定制路书",
+        "qfs_contact_items": "定制咨询|400-880-6622|tel:4008806622\n行程策划师|186-0000-3377|tel:18600003377\n服务时间|周一至周日 9:00 - 22:00（提供视频行程规划沟通）|#\n旅舍总部|成都市武侯区交子大道中海国际中心 E 座 19 层|#",
+        "qfs_social_title": "远方探索",
+        "qfs_social_links": "环球旅行摄影展|#\n小众旅行路书库|#\n旅人分享俱乐部|#\n极地探险视频志|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 WANDER-LUST TRAVEL CO., LTD. 保留所有权利 · 蜀ICP备18009211号 · 旅行社业务经营许可证 L-SC-CJ00823",
+        "qfs_bottom_links": "出境旅游电子合同示范文本|#\n旅行安全须知与紧急救援指南|#\n不可抗力退改签协议|#\n旅行社责任险保单公示|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -111,8 +111,8 @@ for (const file of moduleFiles) {
   moduleCssPaths.push(cssPath);
 }
 
-if (moduleFiles.length !== 86 || ids.size !== 86) {
-  failures.push(`expected 86 independent modules, found files=${moduleFiles.length}, ids=${ids.size}`);
+if (moduleFiles.length !== 88 || ids.size !== 88) {
+  failures.push(`expected 88 independent modules, found files=${moduleFiles.length}, ids=${ids.size}`);
 }
 
 const expectedBundle = `${moduleCssPaths

@@ -43,201 +43,173 @@
   },
   "modules": [
     {
-      "type": "double_column_carousel",
+      "type": "header_suite",
       "data": {
-        "dcc_layout": "3",
-        "dcc_height": "500",
-        "dcc_gap": "12",
-        "dcc_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "风物壁纸",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85",
-            "url": "",
-            "title": "山野与湖泊壁纸精选"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "image": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1600&q=85",
-            "url": "",
-            "title": "自然植物高清素材"
+            "title": "核心板块",
+            "link": "#qiling_image_guide",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85",
-            "url": "",
-            "title": "旅行与生活方式图片"
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "资料下载",
+            "link": "#downloads",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "dcc_right_1_image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85",
-        "dcc_right_1_url": "",
-        "dcc_right_2_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
-        "dcc_right_2_url": "",
-        "dcc_right_3_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85",
-        "dcc_right_3_url": ""
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#8b5cf6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#8b5cf6",
+        "qhs_hover_bg": "rgba(139,92,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "hero_search",
+      "type": "qiling_image_guide",
       "data": {
-        "hs_height": "500px",
-        "hs_width_mode": "container",
-        "hs_custom_width": "1400px",
-        "hs_border_radius": "medium",
-        "hs_custom_radius": "16px",
-        "hs_overlay_color": "rgba(15, 23, 42, 0.65)",
-        "hs_content_align": "center",
-        "hs_bg_items": [
+        "qig_title": "灵感视觉探索 · 精选壁纸题材快速分流",
+        "qig_subtitle": "自然风光、赛博朋克、极简抽象、航拍秘境与宇宙天文全屏呈现"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "4K HDR 殿堂级壁纸画卷 · 视觉沉浸盛宴",
+        "lookbook_subtitle": "精选大师级摄影与数字艺术画作，支持 3840x2160 超清全屏点亮",
+        "lookbook_columns": "3",
+        "lookbook_items": [
           {
-            "type": "image",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85",
-            "video_url": ""
-          }
-        ],
-        "hs_bg_autoplay": "no",
-        "hs_bg_interval": "5000",
-        "hs_title": "找到适合每一块屏幕的好图片",
-        "hs_title_color": "#ffffff",
-        "hs_title_size": "3.2rem",
-        "hs_subtitle": "搜索高清壁纸、摄影作品、自然风景与设计配图，打开文章即可查看完整图片信息。",
-        "hs_subtitle_color": "rgba(255,255,255,0.9)",
-        "hs_show_search": "yes",
-        "hs_search_mode": "post",
-        "hs_search_placeholder": "搜索风景、建筑、人物、植物或色彩",
-        "hs_search_btn_text": "搜索图片",
-        "hs_search_btn_bg": "#e43d30",
-        "hs_search_btn_text_color": "#ffffff",
-        "hs_search_btn_hover_bg": "#bf2f25",
-        "hs_search_btn_hover_text_color": "#ffffff",
-        "hs_search_width": "720px",
-        "hs_tags_label": "热门灵感：",
-        "hs_tags": [
-          {
-            "text": "自然风景"
+            "cover_image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+            "name": "冰岛极光与冰河交响",
+            "desc": "摄于瓦特纳冰川国家公园，超长曝光捕捉欧若拉神秘光幔",
+            "btn_text": "查看原图与EXIF"
           },
           {
-            "text": "城市建筑"
+            "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
+            "name": "未来赛博都市霓虹之夜",
+            "desc": "数字三维空间艺术家打造的雨夜科幻未来街道全景",
+            "btn_text": "查看原图与EXIF"
           },
           {
-            "text": "手机壁纸"
-          },
-          {
-            "text": "极简背景"
+            "cover_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
+            "name": "深空猎户座星云微光",
+            "desc": "深空望远镜多光谱窄带合成，呈现恒星诞生的壮丽胚胎",
+            "btn_text": "查看原图与EXIF"
           }
         ]
       }
     },
     {
-      "type": "category_tabs",
+      "type": "visual_tabs",
       "data": {
-        "tabs_title": "按灵感浏览图片",
-        "tabs_subtitle": "自动读取站内热门文章标签，内容越丰富，图片频道越完整",
-        "tabs_source_mode": "auto_hot_tags",
-        "tabs_auto_tag_count": "8",
-        "tabs_auto_min_count": "1",
-        "columns": "4",
-        "post_count": "12",
-        "image_aspect_ratio": "4:3",
-        "card_style": "wallpaper",
-        "show_date": "no",
-        "show_author": "no",
-        "show_views": "yes",
-        "show_category_badge": "no",
-        "show_image_dimensions": "yes",
-        "show_image_format": "yes",
-        "show_resource_badges": "yes",
-        "show_resource_price": "yes",
-        "show_download_button": "yes",
-        "download_button_text": "获取图片",
-        "padding_top": "76px",
-        "padding_bottom": "84px",
-        "more_btn_type": "ajax",
-        "more_ajax_text": "加载更多图片",
-        "bg_color": "#ffffff"
+        "visual_tabs_title": "按设备与比例精准筛选壁纸",
+        "visual_tabs_subtitle": "桌面 16:9 / 21:9 带鱼屏，手机竖屏 9:16，平板 4:3 完美适配",
+        "visual_tabs_columns": "4"
       }
     },
     {
-      "type": "qiling_universal_recommend",
+      "type": "gallery",
       "data": {
-        "qur_title": "本周精选图片",
-        "qur_subtitle": "从普通文章中自动选取近期更新的高质量视觉内容",
-        "qur_show_topics": "no",
-        "qur_source_mode": "auto",
-        "qur_total_count": "8",
-        "qur_category_ids": "",
-        "qur_layout": "grid",
-        "qur_columns": "4",
-        "qur_gap": "18px",
-        "qur_image_ratio": "3:4",
-        "qur_show_image": "yes",
-        "qur_show_excerpt": "no",
-        "qur_show_date": "no",
-        "qur_show_category": "yes",
-        "qur_show_badge": "yes",
-        "qur_bg_color": "#f8fafc",
-        "qur_accent_color": "#e43d30",
-        "qur_card_bg": "#ffffff",
-        "qur_card_radius": "6px",
-        "qur_card_border": "#dfe4e8",
-        "qur_card_shadow": "none",
-        "qur_padding_top": "82px",
-        "qur_padding_bottom": "82px",
-        "qur_more_text": ""
+        "gallery_title": "每日精选瀑布流画廊",
+        "gallery_subtitle": "支持原比例无损点开大图、幻灯片轮播与色调提取",
+        "columns": "4"
       }
     },
     {
-      "type": "resource_stats",
+      "type": "downloads",
       "data": {
-        "rs_title": "持续生长的图片收藏",
-        "rs_subtitle": "统计直接读取站内普通文章、用户与网站运行数据",
-        "rs_bg_color": "#ffffff",
-        "rs_padding_top": "68px",
-        "rs_padding_bottom": "68px",
-        "rs_stats_list": [
+        "downloads_title": "原图无损高清壁纸打包下载",
+        "downloads_subtitle": "包含手机、平板、4K桌面全套分辨率与未压缩 RAW 格式",
+        "columns": "3",
+        "downloads": [
           {
-            "stat_label": "图片文章",
-            "stat_icon": "dashicons-format-image",
-            "data_source": "total_posts",
-            "source_id": "",
-            "virtual_num": "0",
-            "show_plus": "no"
+            "name": "2026 年度编辑精选 4K 壁纸合辑 (100张)",
+            "desc": "无水印、DCI-P3 广色域渲染，总计 100 张超高清壁纸",
+            "version": "4K HDR",
+            "size": "1.2 GB",
+            "btn_text": "高速下载"
           },
           {
-            "stat_label": "收藏用户",
-            "stat_icon": "dashicons-groups",
-            "data_source": "total_users",
-            "source_id": "",
-            "virtual_num": "0",
-            "show_plus": "no"
+            "name": "极简黑白艺术与航拍大地肌理精选",
+            "desc": "专为 OLED 屏幕深度优化的纯黑与高对比度构图",
+            "version": "Universal",
+            "size": "650 MB",
+            "btn_text": "高速下载"
           },
           {
-            "stat_label": "稳定更新",
-            "stat_icon": "dashicons-calendar-alt",
-            "data_source": "site_days",
-            "source_id": "",
-            "virtual_num": "0",
-            "show_plus": "no"
+            "name": "科幻机甲与赛博空间动态壁纸包",
+            "desc": "支持 Wallpaper Engine 与动态壁纸软件直接导入",
+            "version": "Dynamic 60FPS",
+            "size": "2.4 GB",
+            "btn_text": "高速下载"
           }
         ]
       }
     },
     {
-      "type": "blog",
+      "type": "footer_suite",
       "data": {
-        "blog_title": "最新图片素材",
-        "blog_subtitle": "发布带特色图片的普通文章后，最新内容会自动出现在这里",
-        "blog_bg_color": "#f4f7f8",
-        "blog_page_layout": "full",
-        "blog_layout_style": "card",
-        "blog_columns": "4",
-        "blog_data_source": "latest",
-        "blog_count": "12",
-        "blog_orderby": "date",
-        "blog_show_image": "yes",
-        "blog_image_height": "240px",
-        "blog_show_excerpt": "no",
-        "blog_show_author": "no",
-        "blog_show_date": "yes",
-        "blog_show_category": "yes",
-        "blog_show_tags": "yes",
-        "blog_read_more_text": "查看图片",
-        "blog_enable_pagination": "yes"
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#08090d",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#8b5cf6",
+        "qfs_brand_title": "PIXEL-VISION · 启灵高清画廊",
+        "qfs_brand_desc": "捕捉瞬息光影，点亮每一块屏幕。汇集全球顶级摄影师与数字艺术家的原创新作。",
+        "qfs_bottom_text": "© 2026 PIXEL-VISION GALLERY. 保留所有影像版权 · 沪ICP备18092110号"
       }
     }
   ]

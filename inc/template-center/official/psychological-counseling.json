@@ -43,154 +43,337 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "心屿心理",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "专业咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#38bdf8",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#38bdf8",
+        "qhs_hover_bg": "rgba(56,189,248,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #042f2e 0%, #0f766e 50%, #0d9488 100%)",
         "banner_slides": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1800&q=80",
-            "title": "让来访者在预约前先获得清晰和安全感",
-            "subtitle": "展示咨询方向、咨询师背景、预约流程、保密原则和咨询边界，适合心理咨询中心、心理工作室和家庭支持机构。",
-            "btn_text": "预约初谈",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0f766e"
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=80",
+            "title": "倾听内心的声音 · 疗愈疲惫的灵魂 · 专业私密心理咨询",
+            "subtitle": "国家注册心理咨询师与心理学硕士团队，专注情绪压力疏导、亲密关系修复、青少年成长探索与职场倦怠。",
+            "btn_text": "预约一对一深度测评",
+            "btn_url": "#booking"
           }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "01",
-            "number": "1v1",
-            "label": "个体咨询",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "02",
-            "number": "4类",
-            "label": "重点咨询方向",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "03",
-            "number": "严格",
-            "label": "隐私保密流程",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "04",
-            "number": "线上/线下",
-            "label": "灵活预约方式",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "心理咨询服务方向",
-        "services_subtitle": "按常见来访需求组织入口，帮助用户在首次咨询前判断适合的支持方向",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大核心心理咨询方向",
+        "services_subtitle": "融合精神分析、认知行为疗法 (CBT)、人本主义与家庭系统排列",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "情绪压力咨询",
-            "desc": "围绕焦虑、压力、低落、失眠和长期紧绷状态进行支持与梳理。",
-            "link": "#"
+            "icon": "fas fa-cloud-rain",
+            "title": "情绪困扰与抑郁焦虑疏导",
+            "desc": "接纳并识别广泛性焦虑、恐慌发作、抑郁情绪低谷与躯体化反应，找回情绪弹性。"
           },
           {
-            "icon": "02",
-            "title": "亲子与青少年支持",
-            "desc": "关注亲子沟通、学习压力、青春期困扰和家庭互动模式。",
-            "link": "#"
+            "icon": "fas fa-user-friends",
+            "title": "亲密关系与婚恋情感咨询",
+            "desc": "化解亲密关系冷暴力、不安全依恋模式、沟通障碍与背叛创伤，重建安全情感联结。"
           },
           {
-            "icon": "03",
-            "title": "伴侣与家庭关系",
-            "desc": "协助伴侣沟通、边界建立、关系冲突和家庭议题探索。",
-            "link": "#"
+            "icon": "fas fa-child",
+            "title": "青少年厌学与亲子沟通破局",
+            "desc": "针对青春期叛逆、手机游戏沉迷、社交恐惧与高考考前焦虑，改善家庭系统互动模式。"
           },
           {
-            "icon": "04",
-            "title": "职场心理支持",
-            "desc": "面对职业倦怠、转型压力、人际协作和自我效能议题。",
-            "link": "#"
+            "icon": "fas fa-briefcase",
+            "title": "职场倦怠高压与个人成长",
+            "desc": "应对中高层管理者职场高压枯竭 (Burnout)、讨好型人格、冒名顶替综合征与生命意义探索。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "team",
       "data": {
-        "team_title": "咨询师团队",
-        "team_subtitle": "展示受训背景、擅长方向和工作方式，让来访者更容易选择合适咨询师",
+        "team_title": "注册心理师与临床心理学博士天团",
+        "team_subtitle": "全员受训于国内外顶级心理学专业学府，累计个体咨询时长均超 3000 小时，长期接受一对一专业督导",
         "team_columns": "3",
         "team_members": [
           {
-            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
-            "name": "许老师",
-            "position": "个体咨询师",
-            "desc": "关注情绪压力、自我探索和亲密关系议题，重视稳定、尊重的咨询关系。",
-            "email": "counselor1@example.com"
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+            "name": "苏涵 博士 (Dr. Su Han)",
+            "position": "督导级心理师 / 中国心理学会注册心理师 (X-19-082)",
+            "desc": "北京大学临床心理学博士，前三甲精神卫生中心特约心理专家，从事心理咨询 15 年，专精精神动力学取向与复杂创伤疗愈。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+            "name": "沈墨 (Mo Shen)",
+            "position": "首席家庭治疗师 / 国际家庭治疗协会会员",
+            "desc": "专长萨提亚家庭治疗与青少年发展心理学，擅长在冲突激烈的家庭对话中搭建共情桥梁，累计帮助数百个厌学家庭化解心结。"
           },
           {
             "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-            "name": "林老师",
-            "position": "家庭咨询师",
-            "desc": "服务亲子沟通、青少年支持和家庭系统议题，擅长结构化访谈。",
-            "email": "counselor2@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
-            "name": "周老师",
-            "position": "职场心理顾问",
-            "desc": "关注职业压力、团队关系、倦怠恢复和个人成长规划。",
-            "email": "counselor3@example.com"
+            "name": "程微澜 (Weilan Cheng)",
+            "position": "资深认知行为疗法 (CBT) 咨询师 / 正念培训导师",
+            "desc": "中德高级认知行为治疗连续培训项目结业，擅长通过自动化思维记录与暴露反应阻断，高效改善惊恐发作与强迫反刍思维。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#f0fdfa",
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "预约与咨询流程",
-        "process_subtitle": "让首次来访知道每一步会发生什么，也清楚咨询服务的边界",
-        "process_mode": "standard",
-        "module_bg_color": "#ffffff",
+        "process_title": "心理咨询中心官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "提交初谈预约",
-            "desc": "填写主要困扰、期望时间、咨询方式和联系方式。",
-            "stage_tag": "预约"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "初步沟通与匹配",
-            "desc": "由顾问了解基本情况，匹配合适咨询方向和咨询师。",
-            "stage_tag": "匹配"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "首次咨询",
-            "desc": "围绕当前困扰、目标和咨询边界建立初步工作框架。",
-            "stage_tag": "初谈"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "阶段复盘",
-            "desc": "按咨询目标和实际进展定期复盘，必要时建议转介或就医评估。",
-            "stage_tag": "复盘"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "咨询服务与梯级费用公开公示",
+        "pricing_subtitle": "严格遵循行业收费准则，明码标价无任何多余加收，首次咨询享助理专业评估服务",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "资深心理咨询师个体咨询",
+            "name_color": "#0f172a",
+            "price": "¥500",
+            "price_color": "#0f172a",
+            "period": "/50分钟",
+            "desc": "适合轻中度情绪困扰、人际交往挫折、日常压力疏导的来访者",
+            "desc_color": "#64748b",
+            "features": "中国心理学会注册助理心理师级别\n个体咨询时长 2000-4000 小时积累\n严格签署一对一法律效力保密协议\n提供私密独立高隔音咨询室环境\n支持面对面线下咨询或加密线上视频",
+            "features_color": "#334155",
+            "btn_text": "预约此级别",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "注册心理师 / 督导级专家咨询",
+            "name_color": "#0f172a",
+            "price": "¥900",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/50分钟",
+            "desc": "针对长期顽固抑郁焦虑、复杂童年创伤、重度双相障碍缓解期深度心理工作",
+            "desc_color": "#64748b",
+            "features": "中国心理学会正式注册心理师 (CPS) 认证\n个体咨询时长 6000+ 小时以上资深学者\n长期接受国内外顶级精神分析督导师督导\n结合动力学测验与人格结构动力评估\n定制中长期深度心灵重构长程方案",
+            "features_color": "#334155",
+            "btn_text": "预约专家席位",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "复杂个案推荐",
+            "badge": "复杂个案推荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "伴侣婚恋 / 家庭联合咨询",
+            "name_color": "#0f172a",
+            "price": "¥1,400",
+            "price_color": "#0f172a",
+            "period": "/80分钟",
+            "desc": "适用于夫妻双方或父母与子女共同参与的系统性家庭沟通治疗",
+            "desc_color": "#64748b",
+            "features": "家庭治疗方向资深督导师主持\n单次时长充沛达 80 分钟深度剖析\n观察并重构家庭内部非言语权力与互动格局\n提供课后家庭行为契约作业与跟踪记录\n协助建立平等无伤害的深层沟通新通道",
+            "features_color": "#334155",
+            "btn_text": "预约家庭咨询",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_items": [
+          {
+            "name": "资深心理咨询师个体咨询",
+            "name_color": "#0f172a",
+            "price": "¥500",
+            "price_color": "#0f172a",
+            "period": "/50分钟",
+            "desc": "适合轻中度情绪困扰、人际交往挫折、日常压力疏导的来访者",
+            "desc_color": "#64748b",
+            "features": "中国心理学会注册助理心理师级别\n个体咨询时长 2000-4000 小时积累\n严格签署一对一法律效力保密协议\n提供私密独立高隔音咨询室环境\n支持面对面线下咨询或加密线上视频",
+            "features_color": "#334155",
+            "btn_text": "预约此级别",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "注册心理师 / 督导级专家咨询",
+            "name_color": "#0f172a",
+            "price": "¥900",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/50分钟",
+            "desc": "针对长期顽固抑郁焦虑、复杂童年创伤、重度双相障碍缓解期深度心理工作",
+            "desc_color": "#64748b",
+            "features": "中国心理学会正式注册心理师 (CPS) 认证\n个体咨询时长 6000+ 小时以上资深学者\n长期接受国内外顶级精神分析督导师督导\n结合动力学测验与人格结构动力评估\n定制中长期深度心灵重构长程方案",
+            "features_color": "#334155",
+            "btn_text": "预约专家席位",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "复杂个案推荐",
+            "badge": "复杂个案推荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "伴侣婚恋 / 家庭联合咨询",
+            "name_color": "#0f172a",
+            "price": "¥1,400",
+            "price_color": "#0f172a",
+            "period": "/80分钟",
+            "desc": "适用于夫妻双方或父母与子女共同参与的系统性家庭沟通治疗",
+            "desc_color": "#64748b",
+            "features": "家庭治疗方向资深督导师主持\n单次时长充沛达 80 分钟深度剖析\n观察并重构家庭内部非言语权力与互动格局\n提供课后家庭行为契约作业与跟踪记录\n协助建立平等无伤害的深层沟通新通道",
+            "features_color": "#334155",
+            "btn_text": "预约家庭咨询",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
@@ -198,89 +381,56 @@
     {
       "type": "faq",
       "data": {
-        "faq_title": "心理咨询常见问题",
-        "faq_subtitle": "提前说明咨询边界、保密原则、预约方式和危机情况处理建议",
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
         "faq_items": [
           {
-            "question": "心理咨询和精神科诊疗有什么区别？",
-            "answer": "心理咨询主要通过谈话工作支持情绪、关系和成长议题，不替代精神科诊断、处方和急危处理。如出现自伤他伤风险，请及时联系当地急救、精神专科或危机干预热线。"
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
           },
           {
-            "question": "咨询内容会被保密吗？",
-            "answer": "咨询服务通常遵循保密原则。涉及法律要求或自伤他伤等安全风险时，机构会按专业伦理和当地规定处理。"
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
           },
           {
-            "question": "第一次咨询前需要准备什么？",
-            "answer": "可以简单记录当前困扰、持续时间、近期变化、期待目标和可咨询时间。无需准备完整答案，咨询师会在初谈中共同梳理。"
-          },
-          {
-            "question": "线上咨询和线下咨询如何选择？",
-            "answer": "可根据所在城市、时间安排、隐私环境和议题需求选择。重要的是保证稳定网络、安静空间和不被打扰的时间。"
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
           }
-        ],
-        "module_bg_color": "#f0fdfa"
+        ]
       }
     },
     {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "来访者反馈",
-        "testimonials_subtitle": "反馈仅代表个人体验，正式页面请按机构合规要求展示并做好隐私脱敏",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "860+",
-        "average_rating": "4.8",
-        "testimonials_bg_color": "#ffffff",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "匿名来访者",
-            "position": "情绪压力咨询",
-            "content": "预约前就能看到流程和边界，第一次见面没有那么紧张。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-03-12",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "匿名家长",
-            "position": "亲子沟通咨询",
-            "content": "老师没有简单评判谁对谁错，而是帮我们看见沟通模式。",
-            "rating": "5",
-            "source": "google",
-            "date": "2026-02-20",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "匿名来访者",
-            "position": "职场压力支持",
-            "content": "阶段复盘很清楚，能看到自己在压力应对上的一些变化。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-01-26",
-            "verified": "verified"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
+      "type": "contact",
+      "data": {}
     },
     {
-      "type": "booking-entry",
+      "type": "footer_suite",
       "data": {
-        "booking_title": "预约心理咨询初谈",
-        "booking_subtitle": "提交主要困扰、咨询方式、期望时间和联系方式，咨询顾问会联系确认初谈安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约前请了解",
-        "sidebar_content": "心理咨询不替代精神科诊断和急危处理\n如有自伤他伤风险，请立即联系当地急救或精神专科\n请尽量选择安静、私密、不被打扰的咨询时间",
-        "contact_phone": "400-360-2026",
-        "contact_hours": "09:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.58",
-        "module_bg_color": "#f0fdfa"
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d141e",
+        "qfs_text_color": "#bae6fd",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#38bdf8",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "MIND-HARBOR · 专业心理健康与精神情绪成长支持中心",
+        "qfs_brand_desc": "在这里，所有情绪都被温柔倾听。严格遵循中国心理学会伦理守则与绝对隐私保密协议。由海内外名校背景资深督导级咨询师执业。",
+        "qfs_link_groups": [
+          {
+            "title": "咨询领域与来访者指南",
+            "links": "情绪困扰与抑郁焦虑缓解|#\n亲密关系与婚姻家庭咨询|#\n青少年情绪与厌学应对|#\n职场倦怠与人际关系赋能|#\n首次咨询流程与须知|#\n中国心理学会伦理守则|#\n知情同意书与隐私承诺|#\n危机干预与 24 小时热线|#"
+          }
+        ],
+        "qfs_contact_title": "心理助理与预约",
+        "qfs_contact_items": "预约热线|400-800-5250|tel:4008005250\n咨询助理微信|MIND_CARE_HELP|#\n咨询室地址|广州市天河区珠江新城广晟大厦 18 层静心空间|#",
+        "qfs_social_title": "关注心理科普",
+        "qfs_social_links": "微信公众号|#\n知乎心理专栏|#\n温暖播客电台|#\n心理测试互动|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 MIND-HARBOR PSYCHOLOGY. 保留所有权利 · 严守来访者隐私保密原则 · 危机干预热线: 400-161-9995",
+        "qfs_bottom_links": "专业伦理守则公示|#\n知情同意协议|#\n保密例外声明|#\n咨询师资质认证公示|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

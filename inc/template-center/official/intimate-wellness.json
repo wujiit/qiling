@@ -43,159 +43,171 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090d16 0%, #4a044e 50%, #831843 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "蜜意空间",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1800&q=80",
-            "title": "认真照顾每一份私密感受",
-            "title_align": "left",
-            "subtitle": "为年满 18 周岁的成年人提供克制、安心的健康用品选择。材质信息清晰，包装与配送注重隐私；产品不用于疾病诊断、治疗或预防。",
-            "btn_text": "了解产品与材质",
-            "btn_url": "#",
-            "btn_bg_color": "#be185d",
-            "btn_text_color": "#ffffff",
-            "btn_border_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_bar_bg_color": "rgba(18, 60, 58, 0.9)",
-        "stats_data": [
-          {
-            "icon": "18+",
-            "number": "18+",
-            "label": "仅限成年人",
-            "color": "#ffffff",
-            "label_color": "#d9eeeb"
-          },
-          {
-            "icon": "材",
-            "number": "透明",
-            "label": "材质与养护说明",
-            "color": "#ffffff",
-            "label_color": "#d9eeeb"
-          },
-          {
-            "icon": "隐",
-            "number": "无敏感字样",
-            "label": "外箱与面单",
-            "color": "#ffffff",
-            "label_color": "#d9eeeb"
-          },
-          {
-            "icon": "净",
-            "number": "清晰",
-            "label": "清洁收纳指引",
-            "color": "#ffffff",
-            "label_color": "#d9eeeb"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "选购新品",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#db2777",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#db2777",
+        "qhs_hover_bg": "rgba(219,39,119,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "products",
+      "type": "brand_banner_pro",
       "data": {
-        "products_title": "日常私密健康精选",
-        "products_subtitle": "INTIMATE WELLNESS ESSENTIALS · 18+",
-        "columns": "4",
-        "modal_inquire_text": "查看材质与使用说明",
-        "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#9d174d",
-        "modal_inquire_btn_text_color": "#ffffff",
-        "modal_inquire_btn_border_color": "#1f6f68",
-        "modal_inquire_btn_hover_bg_color": "#123c3a",
-        "modal_inquire_btn_hover_text_color": "#ffffff",
-        "modal_inquire_btn_hover_border_color": "#123c3a",
-        "items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "悦己生活 · 探索感官私享美学 · 德国医用亲肤液态硅胶",
+        "bb_subtitle": "全密闭静音降噪马达，磁吸极速快充与 IPX8 深度防水，全程私密无痕顺丰航空急速送达。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "进入私享品鉴专区",
+        "bb_btn1_url": "#products",
+        "bb_btn2_text": "了解安全认证背书",
+        "bb_btn2_url": "#cert"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "私享画报 · 探索身体的感官艺术",
+        "lookbook_subtitle": "融合极简北欧工业美学与极致微米级马达降噪工艺，为现代都市独立灵魂打造高尚雅致的亲密私品。",
+        "lookbook_columns": "3",
+        "lookbook_items": [
           {
-            "image": "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=900&q=80",
-            "title": "温和清洁护理液",
-            "desc": "用于可水洗用品的日常表面清洁，配方与适用范围以包装说明为准。",
-            "specs": "适用：年满 18 周岁的成年人\n使用：按标签说明稀释或直接使用\n提醒：先在小范围测试，出现不适请停用\n收纳：密封后置于阴凉干燥处",
-            "post_id": "",
-            "btn_text": "查看使用说明"
+            "cover_image": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop&q=80",
+            "name": "月见星芒 · 磁吸无线温控愉悦仪",
+            "desc": "双擎独立微振与42℃微感自发热，呼吸级静音控制在38分贝以下。",
+            "btn_text": "查看作品"
           },
           {
-            "image": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=80",
-            "title": "亲肤按摩器",
-            "desc": "简洁外观与易清洁设计，适合成年人的个人放松场景。",
-            "specs": "适用：年满 18 周岁的成年人\n材质：产品详情页标示的亲肤接触材质\n清洁：关机后按防水等级和说明书清洁\n收纳：完全干燥后单独存放，避免高温与挤压",
-            "post_id": "",
-            "btn_text": "查看材质信息"
+            "cover_image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80",
+            "name": "丝羽柔雾 · 仿生律动贴身伴侣",
+            "desc": "八维变频律动序列与天鹅绒级触感覆层，人体工学黄金承托弧度。",
+            "btn_text": "查看作品"
           },
           {
-            "image": "https://images.unsplash.com/photo-1607006483225-0d2fb72f6285?auto=format&fit=crop&w=900&q=80",
-            "title": "水溶性亲密凝露",
-            "desc": "关注顺滑体验与易清洁性，成分、禁忌与兼容性以产品标签为准。",
-            "specs": "适用：年满 18 周岁的成年人\n成分：购买前查看完整成分表\n使用：少量取用，避免接触破损皮肤\n提醒：敏感人群先做局部测试，不适时立即停用",
-            "post_id": "",
-            "btn_text": "查看成分说明"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80",
-            "title": "清洁收纳套装",
-            "desc": "将软布、清洁工具与独立收纳袋组合，帮助保持用品干燥整洁。",
-            "specs": "包含：清洁软布、专用刷、透气收纳袋\n清洁：不同用品分开处理，不与他人共用\n干燥：清洁后自然晾干，不带水收纳\n存放：远离儿童、宠物、阳光直射与热源",
-            "post_id": "",
-            "btn_text": "查看养护指南"
+            "cover_image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&auto=format&fit=crop&q=80",
+            "name": "纯净晨露 · 弱酸水性植物润滑精华",
+            "desc": "添加大马士革玫瑰纯露与透明质酸，微生态平衡免洗清爽配方。",
+            "btn_text": "查看作品"
           }
         ]
       }
     },
     {
-      "type": "features",
+      "type": "services",
       "data": {
-        "features_title": "把安全与隐私写在明处",
-        "features_subtitle": "从选择、收货到日常养护，每一步都有清晰信息",
-        "features_title_color": "#0f172a",
-        "features_subtitle_color": "#475569",
-        "features_columns": "4",
-        "features_icon_position": "top",
-        "features_text_align": "left",
-        "features_bg_color": "#ffffff",
-        "features_padding": "normal",
-        "features_card_style": "border",
-        "features_card_bg": "#ffffff",
-        "features_card_border": "#d5e3e0",
-        "features_card_hover_border": "#1f6f68",
-        "features_item_title_color": "#173332",
-        "features_item_desc_color": "#526967",
-        "features_card_radius": "8px",
-        "features_hover_effect": "lift",
-        "features_icon_style": "square",
-        "features_icon_size": "48px",
-        "features_icon_color": "#1f6f68",
-        "features_icon_bg": "#dcefeb",
-        "enable_staggered_animation": "yes",
-        "features_items": [
+        "title": "四重私域无忧守护 · 尊享安心保障",
+        "subtitle": "从选品研发、品质品控到物流交付与终身无忧售后，构筑牢不可破的私密信任防线。",
+        "columns": "4",
+        "services": [
           {
-            "icon": "材",
-            "title": "材质信息可查",
-            "desc": "明确展示主要接触材质、成分、适用范围与养护要求；购买和使用前请核对标签及说明书。",
-            "link": "#"
+            "icon": "fa-box-tissue",
+            "title": "全密闭零标识配送",
+            "desc": "标准五层瓦楞厚箱，快递面单品名仅显示日用品/文具配件，彻底杜绝尴尬。",
+            "badge": "绝对隐私"
           },
           {
-            "icon": "包",
-            "title": "克制的隐私包装",
-            "desc": "采用无敏感文字与图案的普通外箱，商品在箱内独立固定，减少运输途中暴露与磕碰。",
-            "link": "#"
+            "icon": "fa-certificate",
+            "title": "医研级生物相容认证",
+            "desc": "全系产品通过SGS欧盟RoHS、FDA双认证无毒抗菌材料，零塑化剂超安心体验。",
+            "badge": "安全合规"
           },
           {
-            "icon": "送",
-            "title": "注重隐私的配送",
-            "desc": "面单使用常规品类名称，不展示具体商品信息；物流节点以订单页实际服务为准。",
-            "link": "#"
+            "icon": "fa-volume-xmark",
+            "title": "图书馆级超低静音",
+            "desc": "静音磁悬浮无刷电机减震降噪，工作峰值低于35dB，在静谧深夜尽享纯净私乐。",
+            "badge": "微声降噪"
           },
           {
-            "icon": "护",
-            "title": "清洁收纳指引",
-            "desc": "按材质、防水等级和说明书分别清洁，充分干燥后独立收纳，避免共用、暴晒和高温。",
-            "link": "#"
+            "icon": "fa-arrow-rotate-left",
+            "title": "两年质保 · 顺丰换新",
+            "desc": "主机提供两年无忧原厂保修，非人为性能故障免费顺丰极速换新机，免除后顾之忧。",
+            "badge": "原厂质保"
           }
         ]
       }
@@ -203,127 +215,213 @@
     {
       "type": "process",
       "data": {
-        "process_title": "安心选择四步",
-        "process_subtitle": "先确认适用条件，再了解材质、配送与长期养护",
-        "process_title_color": "#0f172a",
-        "process_subtitle_color": "#475569",
-        "process_mode": "standard",
-        "process_desc_color": "#526967",
-        "process_card_bg": "#ffffff",
-        "process_card_border": "#d5e3e0",
-        "process_card_hover_border": "#d97757",
-        "process_arrow_color": "#9dbbb6",
-        "process_icon_color": "#ffffff",
-        "process_badge_text": "#7a3e2d",
-        "process_badge_bg": "#fbe6de",
-        "module_bg_type": "color",
-        "module_bg_color": "#fdf2f8",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes",
+        "process_title": "情趣用品商城标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "确认年龄与需求",
-            "stage_tag": "18+",
-            "title_color": "#173332",
-            "desc": "本页产品仅面向年满 18 周岁的成年人。结合个人需求、身体状况和产品禁忌谨慎选择。",
-            "icon_bg": "#1f6f68"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "核对材质与说明",
-            "stage_tag": "选择",
-            "title_color": "#173332",
-            "desc": "查看材质、成分、防水等级、兼容性与过敏提示，不确定时先咨询品牌客服或专业人士。",
-            "icon_bg": "#2f8178"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "隐私收货与验货",
-            "stage_tag": "配送",
-            "title_color": "#173332",
-            "desc": "普通外箱与克制面单发货。签收后先检查封装、产品状态和说明书，再决定是否启封使用。",
-            "icon_bg": "#d97757"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "清洁干燥后收纳",
-            "stage_tag": "养护",
-            "title_color": "#173332",
-            "desc": "按说明书清洁，待完全干燥后独立存放；定期检查表面、电池与配件状态，发现破损应停止使用。",
-            "icon_bg": "#b65f45"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "pricing",
       "data": {
-        "faq_title": "购买与养护常见问题",
-        "faq_subtitle": "关于年龄、材质、隐私配送、清洁和使用边界",
-        "faq_title_color": "#0f172a",
-        "faq_subtitle_color": "#475569",
-        "module_bg_color": "#ffffff",
-        "faq_card_bg": "#ffffff",
-        "faq_card_border": "#d5e3e0",
-        "faq_card_hover_border": "#1f6f68",
-        "faq_question_color": "#173332",
-        "faq_answer_color": "#526967",
-        "faq_icon_bg": "#dcefeb",
-        "faq_icon_color": "#1f6f68",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "faq_items": [
+        "pricing_title": "私享甄选礼遇 · 会员专属品鉴计划",
+        "pricing_subtitle": "成为启灵私享工坊VIP，专享每季私密甄选礼盒、专属私密闺蜜健康咨询与折上折尊贵特权。",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "question": "哪些人适合浏览和购买本页产品？",
-            "answer": "本页内容及产品仅面向年满 18 周岁的成年人。请根据个人情况阅读材质、成分、适用范围和禁忌说明；孕期、产后、存在过敏史或正在接受诊疗的人群，建议使用前咨询合格的专业人士。"
+            "name": "月度私享试炼",
+            "name_color": "#0f172a",
+            "price": "¥199",
+            "price_color": "#0f172a",
+            "period": "单次体验礼盒",
+            "desc": "包含基础款单品 + 便携洗护旅行装 + 顺丰隐私冷链速递",
+            "desc_color": "#64748b",
+            "features": "原装进口便携愉悦仪1件\n纯植物透明质酸润滑精粹60ml\n全封闭防拆保密包装\n顺丰特快48小时内隐匿送达",
+            "features_color": "#334155",
+            "btn_text": "立即开启私享",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "question": "如何判断材质是否适合自己？",
-            "answer": "购买前查看完整材质或成分表、接触部位、使用时长和清洁要求。敏感人群应先做小范围测试；若出现持续不适、红肿或其他异常，请立即停用并根据情况寻求专业帮助。"
+            "name": "年度尊荣黑金订阅",
+            "name_color": "#0f172a",
+            "price": "¥899",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "年度至尊礼遇",
+            "desc": "尊享价值2680元全套高端旗舰单品 + 终身私域1对1女性健康顾问",
+            "desc_color": "#64748b",
+            "features": "旗舰级温控微振仪正装1套\n四季时令私享护理大礼包\n专属女性高级健康私董顾问1v1\n顺丰自提柜/指定时段隐秘指派配送\n2年全免质保换新尊贵服务",
+            "features_color": "#334155",
+            "btn_text": "升级年度黑金",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "本季最热选",
+            "badge": "本季最热选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "question": "包裹会显示具体商品信息吗？",
-            "answer": "模板采用普通外箱、无敏感文字图案和常规面单品类名称的隐私方案。实际承运商、面单展示和配送范围应以商家订单页公布的服务为准。"
+            "name": "双人伴侣定制典藏",
+            "name_color": "#0f172a",
+            "price": "¥1299",
+            "price_color": "#0f172a",
+            "period": "浪漫限定礼盒",
+            "desc": "专为伴侣双向共鸣与心意升温定制，轻奢香氛蜡烛与奢华真丝收纳套盒",
+            "desc_color": "#64748b",
+            "features": "双人共振无线遥控伴侣套组\n法式植物精油调情按摩蜡烛\n意大利真丝束口隐匿收藏袋\nVIP专属加密私人定制刻字服务",
+            "features_color": "#334155",
+            "btn_text": "挑选伴侣礼盒",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_items": [
+          {
+            "name": "月度私享试炼",
+            "name_color": "#0f172a",
+            "price": "¥199",
+            "price_color": "#0f172a",
+            "period": "单次体验礼盒",
+            "desc": "包含基础款单品 + 便携洗护旅行装 + 顺丰隐私冷链速递",
+            "desc_color": "#64748b",
+            "features": "原装进口便携愉悦仪1件\n纯植物透明质酸润滑精粹60ml\n全封闭防拆保密包装\n顺丰特快48小时内隐匿送达",
+            "features_color": "#334155",
+            "btn_text": "立即开启私享",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "question": "用品应该怎样清洁和收纳？",
-            "answer": "先关机或断开电源，并严格按照材质、防水等级和说明书清洁。避免使用不兼容的酒精、强酸碱或磨蚀性清洁剂；彻底晾干后独立收纳，避免与他人共用，并远离儿童、宠物、高温和阳光直射。"
+            "name": "年度尊荣黑金订阅",
+            "name_color": "#0f172a",
+            "price": "¥899",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "年度至尊礼遇",
+            "desc": "尊享价值2680元全套高端旗舰单品 + 终身私域1对1女性健康顾问",
+            "desc_color": "#64748b",
+            "features": "旗舰级温控微振仪正装1套\n四季时令私享护理大礼包\n专属女性高级健康私董顾问1v1\n顺丰自提柜/指定时段隐秘指派配送\n2年全免质保换新尊贵服务",
+            "features_color": "#334155",
+            "btn_text": "升级年度黑金",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "本季最热选",
+            "badge": "本季最热选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "question": "这些产品能改善或治疗健康问题吗？",
-            "answer": "不能作此保证。本页产品属于日常健康与生活方式用品，不用于疾病诊断、治疗或预防，也不能替代医生建议。若有疼痛、出血、持续不适或其他健康疑虑，请停止使用并及时就医。"
+            "name": "双人伴侣定制典藏",
+            "name_color": "#0f172a",
+            "price": "¥1299",
+            "price_color": "#0f172a",
+            "period": "浪漫限定礼盒",
+            "desc": "专为伴侣双向共鸣与心意升温定制，轻奢香氛蜡烛与奢华真丝收纳套盒",
+            "desc_color": "#64748b",
+            "features": "双人共振无线遥控伴侣套组\n法式植物精油调情按摩蜡烛\n意大利真丝束口隐匿收藏袋\nVIP专属加密私人定制刻字服务",
+            "features_color": "#334155",
+            "btn_text": "挑选伴侣礼盒",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "cta",
+      "type": "contact",
       "data": {
-        "cta_title": "了解清楚，再安心选择",
-        "cta_subtitle": "查看材质、适用年龄、使用边界和清洁收纳说明。我们尊重每一份咨询，也重视每一次配送中的隐私。",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_text": "查看选购指南",
-        "cta_button_url": "#",
-        "cta_button_bg_color": "#be185d",
-        "cta_button_text_color": "#ffffff",
-        "cta_button_border_color": "#ffffff",
-        "cta_button_hover_bg_color": "#fbe6de",
-        "cta_button_hover_text_color": "#7a3e2d",
-        "cta_button_hover_border_color": "#fbe6de",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.72",
-        "cta_layout_mode": "standard",
-        "cta_footer_bridge": "off",
-        "cta_border_radius": "0",
-        "cta_content_max_width": "780px",
-        "cta_button_style": "soft",
-        "module_padding_top": "96px",
-        "module_padding_bottom": "96px",
-        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #4a044e 55%, #831843 100%)"
+        "contact_title": "品牌合作与 情趣用品商城 贵宾专属品鉴",
+        "contact_subtitle": "支持专享定制、商务大宗礼品采购与优质买手店联名入驻洽谈。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交合作意向"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#130a1c",
+        "qfs_text_color": "#e9d5ff",
+        "qfs_heading_color": "#fbcfe8",
+        "qfs_accent_color": "#db2777",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "EMBRACE · 私密健康与美好生活",
+        "qfs_brand_desc": "打破禁锢，回归舒适与美好。全线产品采用医用级液态硅胶与食品级亲肤材质，提供 100% 隐私无字保密包装与专业客服陪伴。",
+        "qfs_link_groups": [
+          {
+            "title": "健康生活系列 & 安心与隐私承诺",
+            "links": "亲肤水性天然润滑精华|#\n医疗级硅胶静音探索系列|#\n日常私护草本洁净泡沫|#\n情侣心动探索伴手礼盒|#\n100% 全程绝密无字外箱包装|#\n医用级材质安全检测标准|#\n清洗消毒与收纳养护说明|#\n18+ 成年人安心选购指南|#"
+          }
+        ],
+        "qfs_contact_title": "私密专属客服",
+        "qfs_contact_items": "私密关怀专线|400-888-5201|tel:4008885201\n专属客服邮箱|care@embrace-wellness.com|mailto:care@embrace-wellness.com\n服务时间|周一至周日 10:00 - 23:00|#",
+        "qfs_social_title": "关注私密美学",
+        "qfs_social_links": "微信公众号|#\n小红书健康生活|#\n女性友好播客社区|#\n官方微博|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 EMBRACE INTIMATE WELLNESS. 保留所有权利 · 严格隐私保密发货 · 本品仅供成年人选购",
+        "qfs_bottom_links": "隐私保护条例|#\n未成年人禁购声明|#\n退换货须知|#\n免责声明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

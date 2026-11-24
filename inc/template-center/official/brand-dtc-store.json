@@ -1,0 +1,294 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "大品牌DTC独立商城",
+  "page_template": "templates/template-brand-dtc-store.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#0ea5e9",
+      "secondary": "#0284c7"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "brand-dtc-store",
+    "label": "大品牌DTC独立商城",
+    "category": "ecommerce",
+    "category_label": "品牌商城",
+    "industry": "ecommerce",
+    "industry_label": "品牌独立站/DTC",
+    "scenario": "大品牌出海与DTC旗舰商城",
+    "badges": [
+      "DTC",
+      "大品牌",
+      "出海商城"
+    ],
+    "order": 120,
+    "thumbnail": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "品牌独立站",
+      "出海商城",
+      "DTC",
+      "旗舰爆款",
+      "外贸电商"
+    ],
+    "description": "专为高端硬件、消费电子、大品牌与出海独立站打造的旗舰商城首页。融合品牌巨幕、机皇焦点展台、全系多分类商品矩阵、工艺深度展示与全球信任背书。"
+  },
+  "seo": {
+    "title": "大品牌DTC独立商城 - 启灵官方旗舰模板",
+    "description": "融合高端品牌视觉与高转化在线商城的官方全套首页模板，适合科技硬件、消费电子、时尚轻奢与出海独立站。"
+  },
+  "modules": [
+    {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "极客臻品",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "热销爆款",
+            "link": "#qiling_shop_hero_spotlight",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品展示",
+            "link": "#product_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "选购新品",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "极客臻品 · 2026 旗舰数码先锋型录",
+        "lookbook_subtitle": "探索声学工程、人机工学与未来桌面美学的极致融合",
+        "lookbook_columns": "3",
+        "enable_staggered_animation": "yes",
+        "lookbook_items": [
+          {
+            "cover_image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "name": "空间音频 · 深度降噪旗舰头戴耳机",
+            "desc": "48dB 深度自适应主动降噪，40mm 镀钛振膜动圈单元，沉浸式空间音频体验。",
+            "btn_text": "查看旗舰参数",
+            "enable_shop_look": "yes",
+            "item_1_title": "ANC 旗舰无线头戴",
+            "item_1_price": "¥2,499",
+            "item_1_link": "#",
+            "item_1_pin_x": "50",
+            "item_1_pin_y": "50"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80",
+            "name": "极简桌面 · 铝合金人体工学多功能工作站",
+            "desc": "CNC 航空级一体化铝合金支架，雷电4全能扩展坞接口，释放桌面无限灵感。",
+            "btn_text": "查看旗舰参数",
+            "enable_shop_look": "yes",
+            "item_1_title": "铝合金极简工作台",
+            "item_1_price": "¥1,699",
+            "item_1_link": "#",
+            "item_1_pin_x": "52",
+            "item_1_pin_y": "48"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80",
+            "name": "沉浸声学 · Hi-Fi 发烧级桌面氛围音箱",
+            "desc": "无损高保真原声音质，全色域智能声光律动协同，打造私享音乐殿堂。",
+            "btn_text": "查看旗舰参数",
+            "enable_shop_look": "yes",
+            "item_1_title": "Hi-Fi 桌面原声音箱",
+            "item_1_price": "¥1,999",
+            "item_1_link": "#",
+            "item_1_pin_x": "48",
+            "item_1_pin_y": "52"
+          }
+        ]
+      }
+    },
+    {
+      "type": "qiling_shop_hero_spotlight",
+      "data": {
+        "qsh_bg_theme": "dark",
+        "qsh_layout": "split",
+        "qsh_padding": "100",
+        "qsh_badge_text": "NEW FLAGSHIP · 全球科技先锋首发",
+        "qsh_title": "VORTEX SONIC X1 · 声学艺术旗舰",
+        "qsh_subtitle": "自研 48dB 深度混合智能主动降噪，搭配定制铍金属复合振膜。无线 Hi-Res 金标认证，全天候 40 小时超长续航。",
+        "qsh_custom_image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+        "qsh_price_override": "旗舰售价 ¥2,499",
+        "qsh_spec_1_val": "48dB",
+        "qsh_spec_1_lbl": "混合深度主动降噪",
+        "qsh_spec_2_val": "40mm",
+        "qsh_spec_2_lbl": "定制镀铍振膜动圈",
+        "qsh_spec_3_val": "40h",
+        "qsh_spec_3_lbl": "超长续航急速闪充",
+        "qsh_spec_4_val": "Hi-Res",
+        "qsh_spec_4_lbl": "双金标无损音质认证",
+        "qsh_btn_primary_text": "即刻抢购旗舰",
+        "qsh_btn_primary_url": "#buy",
+        "qsh_btn_secondary_text": "探索声学实验室",
+        "qsh_btn_secondary_url": "#sound"
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "经典典藏单品与限定矩阵",
+        "products_subtitle": "HERITAGE COLLECTION",
+        "columns": "3",
+        "items": [
+          {
+            "title": "大品牌DTC独立商城 标志性经典款",
+            "desc": "纯手工大师级制作工艺，选用进口天然环保顶级材质",
+            "specs": "产地：欧洲工坊\n材质：顶级甄选\n工艺：手工研磨",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "大品牌DTC独立商城 限定胶囊系列",
+            "desc": "打破传统边界，融合现代极简美学与实用主义精神",
+            "specs": "限量：全球仅发售500件\n配饰：专属独立编号",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "大品牌DTC独立商城 尊享定制系列",
+            "desc": "为您量身打造专属刻字与微调服务，见证不凡品位",
+            "specs": "服务：一对一高级定制\n交付：顺丰特快保价",
+            "btn_text": "鉴赏细节"
+          }
+        ]
+      }
+    },
+    {
+      "type": "product_showcase",
+      "data": {}
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "卓越工艺 · 触手可及的奢华质感",
+        "features_subtitle": "每一道针脚、每一处倒角打磨，皆倾注工匠数十年专注心血"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "全球直营精品专柜与高级定制沙龙",
+        "branches_subtitle": "敬请莅临线下精品会所，尊享专席一对一鉴赏体验"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约 大品牌DTC独立商城 VIP专席鉴赏与定制服务",
+        "contact_subtitle": "资深品牌顾问将为您提前备齐典藏品目，提供专属私享导购体验。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交品鉴预约"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0f1d",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "VORTEX · 全球科技 DTC 官方旗舰",
+        "qfs_brand_desc": "专注于智能穿戴与先锋极客生活方式。以工业级设计与前沿微电子科技，赋能全球每一位追求极致的用户。",
+        "qfs_link_groups": [
+          {
+            "title": "热销旗舰与客户服务",
+            "links": "PRO 智能穿戴旗舰|#\nUltra 极限机能装备|#\n生态配件与充电坞|#\n官方翻新臻品|#\n订单极速查询与跟踪|#\n30 天无忧退换货条例|#\n全球 2 年联保申请|#\n固件升级与技术社区|#\n品牌设计哲学与故事|#\n全球线下体验中心|#\n可持续环保与材料回收|#\n企业大宗采购通道|#"
+          }
+        ],
+        "qfs_contact_title": "全球客户服务中心",
+        "qfs_contact_items": "客服专线|400-888-2026|tel:4008882026\n商务邮箱|business@vortex-dtc.com|mailto:business@vortex-dtc.com\n在线支持|周一至周日 9:00 - 22:00|#",
+        "qfs_social_title": "关注全球官方矩阵",
+        "qfs_social_links": "微信公众号|#\n抖音官方|#\nInstagram @VORTEX|#\nYouTube Channel|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 VORTEX GLOBAL DTC CO., LTD. 保留所有权利 · 顺丰 / DHL 全球极速发货通道",
+        "qfs_bottom_links": "隐私政策|#\n服务条款|#\n正品溯源声明|#\n安全支付保障|#",
+        "qfs_link_columns": "1"
+      }
+    }
+  ]
+}

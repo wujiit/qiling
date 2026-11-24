@@ -2182,22 +2182,21 @@
     }
 
     function renderDesignTokenPicker(fieldId, fieldType, scope) {
-        var suggestions = getQuickColorSuggestions(fieldId, fieldType, scope || 'field');
-        if (!suggestions.length) {
+        var suggestions = getQuickColorSuggestions(fieldId, fieldType, scope);
+        if (!suggestions || !suggestions.length) {
             return '';
         }
 
-        var html = '<div class="qfb-token-picker" data-token-scope="' + escapeHtml(scope || 'field') + '" data-token-field-id="' + escapeHtml(fieldId || '') + '">';
-        html += '<span class="qfb-token-picker-title">' + escapeHtml(getText('tokenApply', '快速颜色选择')) + '</span>';
+        var html = '<div class="qfb-token-picker" data-token-field-id="' + escapeHtml(fieldId) + '" data-token-scope="' + escapeHtml(scope || 'field') + '">';
+        html += '<div class="qfb-token-picker-label">' + escapeHtml(getText('tokenApply', '快速颜色选择')) + '</div>';
+        html += '<div class="qfb-token-chips">';
         suggestions.forEach(function(item) {
-            html += '<button type="button" class="qfb-token-chip" data-token-value="' + escapeHtml(item.value) + '" title="' + escapeHtml(item.value) + '">';
-            if (item.color) {
-                html += '<span class="qfb-token-dot" style="background:' + escapeHtml(item.color) + ';"></span>';
-            }
-            html += '<span>' + escapeHtml(item.label) + '</span>';
+            html += '<button type="button" class="qfb-token-chip" data-token-value="' + escapeHtml(item.value) + '" title="' + escapeHtml(item.label + ' ' + item.value) + '">';
+            html += '<span class="qfb-token-swatch" style="background-color:' + escapeHtml(item.value) + '"></span>';
+            html += '<span class="qfb-token-text">' + escapeHtml(item.label) + '</span>';
             html += '</button>';
         });
-        html += '</div>';
+        html += '</div></div>';
         return html;
     }
 
@@ -4215,6 +4214,17 @@
             html += '<label class="qfb-checkbox"><input class="qfb-repeater-input" type="checkbox" data-sub-field-id="' + escapeHtml(subId) + '" data-sub-field-type="checkbox"' + checked + ' /> ' + escapeHtml(getText('enabledLabel', '启用')) + '</label>';
         } else if (subType === 'gallery') {
             html += '<textarea class="qfb-repeater-input" data-sub-field-id="' + escapeHtml(subId) + '" data-sub-field-type="gallery" rows="2" placeholder="' + escapeHtml(getText('galleryPlaceholder', '多个URL用英文逗号分隔')) + '">' + escapeHtml(normalizeFieldValue(subValue)) + '</textarea>';
+        } else if (subType === 'color') {
+            var rawVal = normalizeFieldValue(subValue);
+            var hexVal = '#3b82f6';
+            if (rawVal && /^#[0-9a-fA-F]{3,8}$/.test(rawVal.trim())) {
+                var clean = rawVal.trim();
+                hexVal = clean.length === 4 ? ('#' + clean[1] + clean[1] + clean[2] + clean[2] + clean[3] + clean[3]) : clean.substring(0, 7);
+            }
+            html += '<div class="qfb-color-field-wrap">';
+            html += '<input type="color" class="qfb-color-swatch-native" value="' + escapeHtml(hexVal) + '" title="' + escapeHtml(getText('pickColor', '选择颜色')) + '" />';
+            html += '<input class="qfb-repeater-input qfb-color-text-input" type="text" data-sub-field-id="' + escapeHtml(subId) + '" data-sub-field-type="color" value="' + escapeHtml(rawVal) + '" placeholder="' + escapeHtml(getText('colorPlaceholder', '#ffffff 或 rgba(...)')) + '" />';
+            html += '</div>';
         } else {
             html += '<input class="qfb-repeater-input" type="text" data-sub-field-id="' + escapeHtml(subId) + '" data-sub-field-type="' + escapeHtml(subType) + '" value="' + escapeHtml(normalizeFieldValue(subValue)) + '" placeholder="' + escapeHtml(subField.placeholder || '') + '" />';
         }
@@ -4503,12 +4513,23 @@
         var html = '';
         html += '<div class="qfb-field">';
         html += '<label class="qfb-label">' + escapeHtml(label) + '</label>';
-        html += '<input class="qfb-input qfb-advanced-input" type="text" data-advanced-root="' + escapeHtml(rootId) + '" data-advanced-path="' + escapeHtml(path) + '" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(placeholder || '') + '" />';
+        if (advancedPathLooksLikeQuickColorTarget(path)) {
+            var rawVal = normalizeFieldValue(value);
+            var hexVal = '#3b82f6';
+            if (rawVal && /^#[0-9a-fA-F]{3,8}$/.test(rawVal.trim())) {
+                var clean = rawVal.trim();
+                hexVal = clean.length === 4 ? ('#' + clean[1] + clean[1] + clean[2] + clean[2] + clean[3] + clean[3]) : clean.substring(0, 7);
+            }
+            html += '<div class="qfb-color-field-wrap">';
+            html += '<input type="color" class="qfb-color-swatch-native" value="' + escapeHtml(hexVal) + '" title="' + escapeHtml(getText('pickColor', '选择颜色')) + '" />';
+            html += '<input class="qfb-input qfb-advanced-input qfb-color-text-input" type="text" data-advanced-root="' + escapeHtml(rootId) + '" data-advanced-path="' + escapeHtml(path) + '" value="' + escapeHtml(rawVal) + '" placeholder="' + escapeHtml(placeholder || '') + '" />';
+            html += '</div>';
+            html += renderDesignTokenPicker(path, 'color', 'advanced');
+        } else {
+            html += '<input class="qfb-input qfb-advanced-input" type="text" data-advanced-root="' + escapeHtml(rootId) + '" data-advanced-path="' + escapeHtml(path) + '" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(placeholder || '') + '" />';
+        }
         if (description) {
             html += '<p class="qfb-field-desc">' + escapeHtml(description) + '</p>';
-        }
-        if (advancedPathLooksLikeQuickColorTarget(path)) {
-            html += renderDesignTokenPicker(path, 'color', 'advanced');
         }
         html += '</div>';
         return html;
@@ -5032,7 +5053,16 @@
         } else if (fieldType === 'image' || fieldType === 'upload') {
             html += '<input class="qfb-input" type="text" data-field-id="' + escapeHtml(fieldId) + '" data-field-type="' + escapeHtml(fieldType) + '" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(getText('mediaUrlPlaceholder', '请输入媒体URL')) + '" />';
         } else if (fieldType === 'color') {
-            html += '<input class="qfb-input" type="text" data-field-id="' + escapeHtml(fieldId) + '" data-field-type="color" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(getText('colorPlaceholder', '#ffffff 或 linear-gradient(...)')) + '" />';
+            var rawVal = normalizeFieldValue(value);
+            var hexVal = '#3b82f6';
+            if (rawVal && /^#[0-9a-fA-F]{3,8}$/.test(rawVal.trim())) {
+                var clean = rawVal.trim();
+                hexVal = clean.length === 4 ? ('#' + clean[1] + clean[1] + clean[2] + clean[2] + clean[3] + clean[3]) : clean.substring(0, 7);
+            }
+            html += '<div class="qfb-color-field-wrap">';
+            html += '<input type="color" class="qfb-color-swatch-native" value="' + escapeHtml(hexVal) + '" title="' + escapeHtml(getText('pickColor', '选择颜色')) + '" />';
+            html += '<input class="qfb-input qfb-color-text-input" type="text" data-field-id="' + escapeHtml(fieldId) + '" data-field-type="color" value="' + escapeHtml(rawVal) + '" placeholder="' + escapeHtml(getText('colorPlaceholder', '#ffffff 或 rgba(...)')) + '" />';
+            html += '</div>';
         } else if (fieldType === 'gallery') {
             html += '<textarea class="qfb-input" data-field-id="' + escapeHtml(fieldId) + '" data-field-type="gallery" rows="3" placeholder="' + escapeHtml(getText('galleryPlaceholder', '多个URL用英文逗号分隔')) + '">' + escapeHtml(normalizeFieldValue(value)) + '</textarea>';
         } else {
@@ -5066,9 +5096,19 @@
     function renderPageTextControl(label, path, value, placeholder, fieldType, withTokenPicker) {
         var html = '<div class="qfb-field">';
         html += '<label class="qfb-label">' + escapeHtml(label) + '</label>';
-        html += '<input class="qfb-input qfb-page-setting-input" type="text" data-page-setting-path="' + escapeHtml(path) + '" data-page-setting-type="' + escapeHtml(fieldType || 'text') + '" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(placeholder || '') + '" />';
-        if (withTokenPicker) {
-            html += renderDesignTokenPicker(path, fieldType || 'text', 'page');
+        if (withTokenPicker || fieldType === 'color') {
+            var rawVal = normalizeFieldValue(value);
+            var hexVal = '#3b82f6';
+            if (rawVal && /^#[0-9a-fA-F]{3,8}$/.test(rawVal.trim())) {
+                var clean = rawVal.trim();
+                hexVal = clean.length === 4 ? ('#' + clean[1] + clean[1] + clean[2] + clean[2] + clean[3] + clean[3]) : clean.substring(0, 7);
+            }
+            html += '<div class="qfb-color-field-wrap">';
+            html += '<input type="color" class="qfb-color-swatch-native" value="' + escapeHtml(hexVal) + '" title="' + escapeHtml(getText('pickColor', '选择颜色')) + '" />';
+            html += '<input class="qfb-input qfb-page-setting-input qfb-color-text-input" type="text" data-page-setting-path="' + escapeHtml(path) + '" data-page-setting-type="' + escapeHtml(fieldType || 'text') + '" value="' + escapeHtml(rawVal) + '" placeholder="' + escapeHtml(placeholder || '') + '" />';
+            html += '</div>';
+        } else {
+            html += '<input class="qfb-input qfb-page-setting-input" type="text" data-page-setting-path="' + escapeHtml(path) + '" data-page-setting-type="' + escapeHtml(fieldType || 'text') + '" value="' + escapeHtml(normalizeFieldValue(value)) + '" placeholder="' + escapeHtml(placeholder || '') + '" />';
         }
         if (String(path || '').indexOf('design.') === 0) {
             html += '<p class="qfb-field-desc">' + escapeHtml(getText('pageSettingInherited', '留空就是继续跟着全局')) + '</p>';
@@ -8531,6 +8571,30 @@
                     return;
                 }
 
+                if (target.classList.contains('qfb-color-swatch-native')) {
+                    var pairedInput = target.parentNode ? target.parentNode.querySelector('.qfb-color-text-input') : null;
+                    if (pairedInput) {
+                        pairedInput.value = target.value;
+                        pairedInput.dispatchEvent(new Event('input', { bubbles: true }));
+                        pairedInput.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                    return;
+                }
+
+                if (target.classList.contains('qfb-color-text-input')) {
+                    var hexMatch = String(target.value || '').trim().match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/);
+                    if (hexMatch) {
+                        var normalizedHex = hexMatch[0];
+                        if (normalizedHex.length === 4) {
+                            normalizedHex = '#' + normalizedHex[1] + normalizedHex[1] + normalizedHex[2] + normalizedHex[2] + normalizedHex[3] + normalizedHex[3];
+                        }
+                        var pairedSwatch = target.parentNode ? target.parentNode.querySelector('.qfb-color-swatch-native') : null;
+                        if (pairedSwatch) {
+                            pairedSwatch.value = normalizedHex;
+                        }
+                    }
+                }
+
                 if (target.classList.contains('qfb-dynamic-select')) {
                     setDynamicBindingForField(target.getAttribute('data-dynamic-field-id') || '', target.value || '');
                     return;
@@ -8813,11 +8877,102 @@
         });
     }
 
+    function initPanelResizer() {
+        var resizer = document.getElementById('qfb-resizer-right');
+        if (!resizer) {
+            return;
+        }
+
+        function getAutoOptimalWidth() {
+            var winW = window.innerWidth;
+            if (winW >= 1920) return 410;
+            if (winW >= 1600) return 390;
+            if (winW >= 1366) return 370;
+            if (winW >= 1200) return 340;
+            return 320;
+        }
+
+        function applyPanelWidth(width) {
+            document.documentElement.style.setProperty('--qfb-settings-width', width + 'px');
+        }
+
+        var savedWidth = null;
+        try {
+            savedWidth = localStorage.getItem('qfb_settings_panel_width');
+        } catch (e) {}
+
+        if (savedWidth) {
+            var parsed = parseInt(savedWidth, 10);
+            if (!isNaN(parsed) && parsed >= 320 && parsed <= 700) {
+                applyPanelWidth(parsed);
+            } else {
+                applyPanelWidth(getAutoOptimalWidth());
+            }
+        } else {
+            applyPanelWidth(getAutoOptimalWidth());
+        }
+
+        window.addEventListener('resize', function() {
+            var currentCustom = null;
+            try { currentCustom = localStorage.getItem('qfb_settings_panel_width'); } catch (e) {}
+            if (!currentCustom) {
+                applyPanelWidth(getAutoOptimalWidth());
+            }
+        });
+
+        var isDragging = false;
+        var startX = 0;
+        var startWidth = 0;
+
+        resizer.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startX = e.clientX;
+            var currentWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--qfb-settings-width'), 10) || 380;
+            startWidth = currentWidth;
+            resizer.classList.add('is-dragging');
+            document.body.classList.add('qfb-resizing');
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            var delta = startX - e.clientX;
+            var newWidth = startWidth + delta;
+            var minWidth = 320;
+            var maxWidth = Math.max(minWidth, Math.min(650, window.innerWidth - 420));
+            newWidth = Math.max(minWidth, Math.min(maxWidth, newWidth));
+            applyPanelWidth(newWidth);
+        });
+
+        window.addEventListener('mouseup', function() {
+            if (!isDragging) return;
+            isDragging = false;
+            resizer.classList.remove('is-dragging');
+            document.body.classList.remove('qfb-resizing');
+            var finalWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--qfb-settings-width'), 10);
+            if (finalWidth) {
+                try {
+                    localStorage.setItem('qfb_settings_panel_width', finalWidth);
+                } catch (e) {}
+            }
+        });
+
+        resizer.addEventListener('dblclick', function() {
+            try {
+                localStorage.removeItem('qfb_settings_panel_width');
+            } catch (e) {}
+            applyPanelWidth(getAutoOptimalWidth());
+            setStatus(getText('panelResetAuto', '已恢复自适应最佳宽度'), 'success');
+        });
+    }
+
     function init() {
         initDomRefs();
         if (!els.root) {
             return;
         }
+
+        initPanelResizer();
 
         document.body.classList.add('qfb-builder-mode');
         document.body.classList.remove('qfb-builder-collapsed');

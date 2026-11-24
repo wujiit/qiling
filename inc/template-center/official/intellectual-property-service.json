@@ -43,120 +43,193 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #b45309 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "知守产权",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80",
-            "title": "从商标注册到专利布局，保护企业核心资产",
-            "subtitle": "商标查询、专利申请、版权登记、软著申请、品牌监测和侵权维权，帮助企业把名称、技术、作品和品牌权益管起来。",
-            "btn_text": "免费查询能否注册",
-            "btn_url": "#",
-            "btn_bg_color": "#1e3a8a",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0284c7",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0284c7",
+        "qhs_hover_bg": "rgba(2,132,199,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "国家备案资深商标专利代理机构 · 构筑企业高价值技术壁垒",
+        "bb_subtitle": "专精特新专利深度挖掘、国际马德里商标布局、商业秘密合规与知识产权维权诉讼全方位保驾护航。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "免费进行商标/专利检索",
+        "bb_btn1_url": "#search",
+        "bb_btn2_text": "咨询资深专利代理师",
+        "bb_btn2_url": "#contact"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "专业实力 · 知产战绩与风控硬核看板",
+        "stats_subtitle": "严谨处理每一项技术权利要求书撰写，连续 8 年高价值发明专利一次授权率位列行业第一梯队",
+        "stats_items": [
           {
-            "icon": "01",
-            "number": "12年+",
-            "label": "知识产权服务经验",
-            "color": "#ffffff"
+            "number": "92.6%",
+            "label": "高价值发明专利一次审查授权率"
           },
           {
-            "icon": "02",
-            "number": "3000+",
-            "label": "商标专利案例",
-            "color": "#ffffff"
+            "number": "160+ 国家",
+            "label": "覆盖 PCT 国际专利与马德里商标布局"
           },
           {
-            "icon": "03",
-            "number": "1v1",
-            "label": "顾问检索建议",
-            "color": "#ffffff"
+            "number": "¥18.5 亿",
+            "label": "累计为科技企业挽回与阻断侵权索赔"
           },
           {
-            "icon": "04",
-            "number": "全流程",
-            "label": "申请进度跟进",
-            "color": "#ffffff"
+            "number": "12,000+ 件",
+            "label": "累计服务高新技术企业专利与商标"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "知识产权服务范围",
-        "services_subtitle": "覆盖企业品牌、技术成果、内容作品和侵权风险的常见保护场景",
-        "services_bg_color": "#ffffff",
+        "services_title": "全链条高价值知识产权法律与布局矩阵",
+        "services_subtitle": "不仅是申请办证，更是协助企业构筑攻守兼备的战略级专利池与商业秘密屏障",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "商标注册",
-            "desc": "商标近似查询、类别建议、材料准备、提交申请和驳回复审咨询。",
-            "link": "#"
+            "icon": "shield",
+            "title": "高价值发明专利培育与布局",
+            "desc": "芯片半导体、AI大模型、生物医药等硬科技专利挖掘与权利要求书严谨撰写"
           },
           {
-            "icon": "02",
-            "title": "专利申请",
-            "desc": "发明、实用新型、外观专利申请，协助技术交底和布局建议。",
-            "link": "#"
+            "icon": "globe",
+            "title": "PCT 国际专利与海外商标维权",
+            "desc": "美欧日韩全球专利布局，针对海外恶意抢注快速发起无效宣告与异议答辩"
           },
           {
-            "icon": "03",
-            "title": "版权/软著登记",
-            "desc": "作品版权、软件著作权、内容版权登记和材料规范整理。",
-            "link": "#"
+            "icon": "gavel",
+            "title": "知识产权侵权诉讼与商业秘密",
+            "desc": "专利侵权侵权民事索赔、商业秘密被盗反击、海关知识产权保护备案扣留"
           },
           {
-            "icon": "04",
-            "title": "品牌监测与维权",
-            "desc": "商标监测、侵权线索梳理、证据固定、异议无效和维权策略建议。",
-            "link": "#"
+            "icon": "award",
+            "title": "国家高新与专精特新知产合规",
+            "desc": "科创板 IPO 上市前专利 FTO 侵权自由度检索排查与高新企业知产合规筑底"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "申请与保护流程",
-        "process_subtitle": "先做检索评估，再提交申请，后续持续跟进审查、补正和维护",
-        "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
+        "process_title": "知识产权/商标专利官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "需求诊断",
-            "desc": "确认企业名称、产品线、技术成果、作品类型和当前风险点。",
-            "stage_tag": "诊断"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "检索与方案",
-            "desc": "进行商标近似、专利新颖性或版权材料评估，给出类别和布局建议。",
-            "stage_tag": "检索"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "材料提交",
-            "desc": "整理主体资质、图样、技术交底、源代码或作品材料，并按流程提交。",
-            "stage_tag": "申请"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "审查跟进与维护",
-            "desc": "跟进受理、补正、审查意见、公告、授权和后续续展/年费/监测事项。",
-            "stage_tag": "维护"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
       }
@@ -164,99 +237,108 @@
     {
       "type": "cases",
       "data": {
-        "cases_title": "典型服务案例",
-        "cases_count": "6",
-        "cases_columns": "3",
-        "cases_show_image": "1",
-        "cases_image_height": "220px",
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "certificate_honors",
-      "data": {
-        "ch_title": "资质与专业背书",
-        "ch_subtitle": "知识产权服务强依赖专业资质、代理经验和流程规范，建议导入后替换为真实证书或荣誉",
-        "ch_columns": "3",
-        "ch_enable_filter": "yes",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "ch_items": [
+        "cases_title": "标杆业绩与重大知产维权胜诉战例",
+        "cases_subtitle": "以实战判例说话，多次入选最高人民法院知识产权法庭典型案例",
+        "cases_columns": "4",
+        "cases_items": [
           {
-            "image": "",
-            "title": "知识产权代理机构备案",
-            "category": "行业备案",
-            "badge": "专业备案",
-            "cert_no": "IPR-2026-001",
-            "issuer": "知识产权主管机构",
-            "issue_date": "2026-01-12",
-            "expiry_date": "年度更新",
-            "file_url": "#"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "某跨国巨头芯片结构发明专利侵权抗辩全胜案",
+            "desc": "成功宣告原告 3 项核心专利全部无效，为国内自主芯片龙头解除上市最大阻碍",
+            "link": "#case-detail"
           },
           {
-            "image": "",
-            "title": "商标代理服务规范认证",
-            "category": "服务认证",
-            "badge": "流程规范",
-            "cert_no": "TM-2026-108",
-            "issuer": "行业服务认证机构",
-            "issue_date": "2026-02-20",
-            "expiry_date": "2029-02-19",
-            "file_url": "#"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "高端智能装备商业秘密侵权获赔 4,800 万元案",
+            "desc": "运用司法取证保全手段阻断离职技术骨干侵权行为，创同类案件赔偿新高",
+            "link": "#case-detail"
           },
           {
-            "image": "",
-            "title": "中小企业品牌保护服务机构",
-            "category": "荣誉奖项",
-            "badge": "客户认可",
-            "cert_no": "BRAND-2026-036",
-            "issuer": "企业服务协会",
-            "issue_date": "2026-03-18",
-            "expiry_date": "",
-            "file_url": "#"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "出海知名消费品牌海外多国恶意抢注商标全胜案",
+            "desc": "历时 18 个月在马德里协约国成功追回驰名商标，解除全球海关扣押风险",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "生物医药核心靶点分子式专利维权全胜案",
+            "desc": "协助创新药企确认排他性专利权利要求范围，达成 3 亿元国际专利许可协议",
+            "link": "#case-detail"
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "team",
       "data": {
-        "faq_title": "知识产权服务常见问题",
-        "faq_subtitle": "把客户最关心的查询、周期、驳回和维护边界提前讲清楚",
-        "faq_items": [
+        "team_title": "前审查员与资深专利诉讼合伙人团队",
+        "team_subtitle": "兼具理工科工学硕士背景与国家法律职业资格的双证复合型精英",
+        "team_columns": "4",
+        "team_items": [
           {
-            "question": "商标查询通过就一定能注册成功吗？",
-            "answer": "不能保证。查询可以降低近似风险，但最终结果仍取决于审查规则、在先权利、显著性和公告异议等因素。"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "陆启成 主任",
+            "role": "管理合伙人 / 前国知局高级审查员",
+            "desc": "清华大学微电子工学硕士，18 年专利审查与重大专利无效宣告实战经验"
           },
           {
-            "question": "商标和专利申请周期大概多久？",
-            "answer": "不同业务周期差异很大。商标通常经历受理、审查、公告和注册；专利则根据发明、实用新型、外观类型和审查意见不同而变化。"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "顾若曦 律师",
+            "role": "知产诉讼部主管 / 资深出庭律师",
+            "desc": "中华全国律师协会知识产权专业委员会委员，代理多起最高法涉外知产大案"
           },
           {
-            "question": "企业应该先注册商标还是先申请专利？",
-            "answer": "通常品牌名称、产品名称和核心类别应尽早做商标布局；技术方案、结构设计或外观设计则按公开前后的保护要求尽快评估专利申请。"
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "David Steinberg",
+            "role": "涉外专利合伙人 / 美国专利代理师",
+            "desc": "美国加州执业律师，精通 USPTO 与 EPO 专利申请与跨国 337 调查应对"
           },
           {
-            "question": "申请完成后还需要维护吗？",
-            "answer": "需要。商标有续展、变更、监测和异议无效等后续事项；专利可能涉及年费、权利要求维护和侵权风险监测。"
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "周凌云",
+            "role": "生物医药专利总监 / 药学博士",
+            "desc": "中国科学院药物化学博士，主导过 20 余款国家一类新药的全球专利池架构"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约知识产权顾问评估",
-        "contact_subtitle": "提交品牌名称、产品类别、技术方向或作品类型，顾问会先做初步检索和保护路径建议。",
+        "contact_title": "与 知识产权/商标专利官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0284c7",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "IP-GUARDIAN · 国家专利商标代理与海外知识产权出海护航中枢",
+        "qfs_brand_desc": "国家知识产权局备案机构。专注于发明专利审查代理、商标国际马德里注册、软件著作权登记与专利侵权海外诉讼维权。",
+        "qfs_link_groups": [
+          {
+            "title": "知产代理服务与维权与诉讼",
+            "links": "国内外发明与实用新型专利|#\n商标国际注册(马德里/美欧)|#\n软件著作权加急登记办理|#\n企业专精特新知产战略布局|#\n海关知识产权保护备案|#\n电商平台侵权下架维权|#\n专利无效宣告与行政诉讼|#\n高价值专利培育与技术转移|#"
+          }
+        ],
+        "qfs_contact_title": "知产代理人咨询",
+        "qfs_contact_items": "业务专线|400-800-9918|tel:4008009918\n知产邮箱|ip@ip-guardian.com|mailto:ip@ip-guardian.com\n机构地址|北京市西城区三里河路中国国际知产创新大厦 11 层|#",
+        "qfs_social_title": "关注知识产权",
+        "qfs_social_links": "微信公众号|#\n知产快讯专栏|#\n专利工程师论坛|#\n商标监测平台|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 IP-GUARDIAN LAW & IP FIRM. 保留所有权利 · 国家知识产权局专利代理机构代码：11899",
+        "qfs_bottom_links": "专利代理机构执业许可证|#\n知产保密协议|#\n收费公示|#\n代理人信息|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

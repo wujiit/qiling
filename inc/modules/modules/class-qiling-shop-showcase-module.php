@@ -1,9 +1,8 @@
 <?php
 /**
- * 商城精选商品展示模块
+ * 商城精选商品展示模块（品牌大牌体验增强版）
  *
- * 展示启灵积分商城（实物商城）的商品
- * 支持自定义标题、数量、背景等，使用 Swiper 轮播展示
+ * 展示启灵实物商城商品，支持 Swiper 横向轮播、副图悬浮平滑变图、HOT/NEW/SALE 状态角标与多币种价格格式化
  *
  * @package Developer_Starter
  */
@@ -24,19 +23,17 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
     private const MODULE_ID_PLACEHOLDER = '__DS_QSS_MODULE_ID__';
 
     public function __construct() {
-        // 设置模块分类为 'shop' 或其他合适的分类，这里暂时用 'homepage' 保持一致
-        $this->category = 'homepage'; 
-        $this->icon = 'dashicons-store'; // 使用商店图标
-        $this->description = __( '展示启灵实物商城的商品，支持横向轮播', 'qiling' );
+        $this->category = 'homepage';
+        $this->icon = 'dashicons-store';
+        $this->description = __( '展示启灵实物商城的商品，支持横向轮播、副图切换与状态角标', 'qiling' );
     }
 
     public function get_id() {
-        // 唯一ID，确保不冲突
         return 'qiling_shop_showcase';
     }
 
     public function get_name() {
-        return __( '启灵商品展示', 'qiling' );
+        return __( '启灵商品展示 (轮播版)', 'qiling' );
     }
 
     public function get_fields() {
@@ -98,15 +95,15 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
                 'type'    => 'select',
                 'label'   => __( '排序方式', 'qiling' ),
                 'options' => array(
-                    'newest' => __( '最新发布', 'qiling' ),
-                    'sales'  => __( '销量最高', 'qiling' ),
-                    'price_asc' => __( '价格从低到高', 'qiling' ),
+                    'newest'     => __( '最新发布', 'qiling' ),
+                    'sales'      => __( '销量最高', 'qiling' ),
+                    'price_asc'  => __( '价格从低到高', 'qiling' ),
                     'price_desc' => __( '价格从高到低', 'qiling' ),
                 ),
                 'default' => 'newest',
             ),
-            
-            // === 样式设置 ===
+
+            // === 样式与交互设置 ===
             array(
                 'id'      => 'qss_show_cart',
                 'type'    => 'select',
@@ -114,6 +111,26 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
                 'options' => array(
                     'yes' => __( '是', 'qiling' ),
                     'no'  => __( '否', 'qiling' ),
+                ),
+                'default' => 'yes',
+            ),
+            array(
+                'id'      => 'qss_show_badge',
+                'type'    => 'select',
+                'label'   => __( '显示商品状态角标', 'qiling' ),
+                'options' => array(
+                    'yes' => __( '是 (自动识别 HOT / NEW / SALE)', 'qiling' ),
+                    'no'  => __( '否', 'qiling' ),
+                ),
+                'default' => 'yes',
+            ),
+            array(
+                'id'      => 'qss_hover_image',
+                'type'    => 'select',
+                'label'   => __( '悬浮切换第二张细节图', 'qiling' ),
+                'options' => array(
+                    'yes' => __( '开启 (有副图时平滑渐变)', 'qiling' ),
+                    'no'  => __( '关闭', 'qiling' ),
                 ),
                 'default' => 'yes',
             ),
@@ -185,6 +202,16 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
             $show_cart = 'yes';
         }
 
+        $show_badge = isset( $data['qss_show_badge'] ) ? sanitize_key( (string) $data['qss_show_badge'] ) : 'yes';
+        if ( ! in_array( $show_badge, array( 'yes', 'no' ), true ) ) {
+            $show_badge = 'yes';
+        }
+
+        $hover_image = isset( $data['qss_hover_image'] ) ? sanitize_key( (string) $data['qss_hover_image'] ) : 'yes';
+        if ( ! in_array( $hover_image, array( 'yes', 'no' ), true ) ) {
+            $hover_image = 'yes';
+        }
+
         return array(
             'bg_color'      => isset( $data['qss_bg_color'] ) ? (string) $data['qss_bg_color'] : 'var(--color-neutral-50)',
             'content_width' => $content_width,
@@ -194,6 +221,8 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
             'limit'         => $limit,
             'orderby'       => $orderby,
             'show_cart'     => $show_cart,
+            'show_badge'    => $show_badge,
+            'hover_image'   => $hover_image,
         );
     }
 
@@ -278,7 +307,7 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
             return $cached;
         }
 
-        $sql = "SELECT id, title, subtitle, slug, main_image, min_price, sales_count 
+        $sql = "SELECT id, title, subtitle, slug, main_image, gallery, min_price, max_price, sales_count, is_hot, created_at 
                 FROM {$table_products} 
                 WHERE status = 1 ";
 
@@ -340,35 +369,100 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
     }
 
     /**
-     * 解析商品主图 URL。
+     * 解析商品主图及副图 URL（用于悬浮平滑变图）。
      *
-     * @param string $main_image 原始图片字段
-     * @return string
+     * @param string $main_image 主图字段
+     * @param string $gallery    画册图字段
+     * @return array{primary:string,secondary:string}
      */
-    private function resolve_product_image_url( $main_image ) {
-        if ( '' === (string) $main_image ) {
-            return '';
+    private function resolve_product_images( $main_image, $gallery = '' ) {
+        $urls = array();
+
+        if ( '' !== (string) $main_image ) {
+            $img_data = json_decode( $main_image, true );
+            if ( is_array( $img_data ) ) {
+                foreach ( $img_data as $item ) {
+                    if ( is_string( $item ) && '' !== $item ) {
+                        $urls[] = $item;
+                    } elseif ( is_array( $item ) && isset( $item['url'] ) && is_string( $item['url'] ) ) {
+                        $urls[] = $item['url'];
+                    }
+                }
+                if ( empty( $urls ) && isset( $img_data['url'] ) && is_string( $img_data['url'] ) ) {
+                    $urls[] = $img_data['url'];
+                }
+            } elseif ( filter_var( $main_image, FILTER_VALIDATE_URL ) ) {
+                $urls[] = (string) $main_image;
+            }
         }
 
-        $img_data = json_decode( $main_image, true );
-        if ( is_array( $img_data ) ) {
-            if ( isset( $img_data['url'] ) && is_string( $img_data['url'] ) ) {
-                return $img_data['url'];
-            }
-
-            if ( isset( $img_data[0] ) ) {
-                if ( is_string( $img_data[0] ) ) {
-                    return $img_data[0];
+        if ( count( $urls ) < 2 && '' !== (string) $gallery ) {
+            $gal_data = json_decode( $gallery, true );
+            if ( is_array( $gal_data ) ) {
+                foreach ( $gal_data as $item ) {
+                    if ( is_string( $item ) && '' !== $item ) {
+                        $urls[] = $item;
+                    } elseif ( is_array( $item ) && isset( $item['url'] ) && is_string( $item['url'] ) ) {
+                        $urls[] = $item['url'];
+                    }
+                    if ( count( $urls ) >= 2 ) {
+                        break;
+                    }
                 }
-                if ( is_array( $img_data[0] ) && isset( $img_data[0]['url'] ) && is_string( $img_data[0]['url'] ) ) {
-                    return $img_data[0]['url'];
-                }
+            } elseif ( filter_var( $gallery, FILTER_VALIDATE_URL ) ) {
+                $urls[] = (string) $gallery;
             }
-        } elseif ( is_string( $img_data ) && '' !== $img_data ) {
-            return $img_data;
         }
 
-        return filter_var( $main_image, FILTER_VALIDATE_URL ) ? (string) $main_image : '';
+        $primary   = isset( $urls[0] ) ? $urls[0] : '';
+        $secondary = ( isset( $urls[1] ) && $urls[1] !== $primary ) ? $urls[1] : '';
+
+        return array(
+            'primary'   => $primary,
+            'secondary' => $secondary,
+        );
+    }
+
+    /**
+     * 计算商品状态角标。
+     *
+     * @param object $product 商品数据对象
+     * @return array{type:string,text:string}|null
+     */
+    private function get_product_badge( $product ) {
+        if ( ! empty( $product->is_hot ) ) {
+            return array(
+                'type' => 'hot',
+                'text' => __( 'HOT', 'qiling' ),
+            );
+        }
+
+        $sales = isset( $product->sales_count ) ? (int) $product->sales_count : 0;
+        if ( $sales >= 30 ) {
+            return array(
+                'type' => 'hot',
+                'text' => __( 'HOT', 'qiling' ),
+            );
+        }
+
+        $created = isset( $product->created_at ) ? strtotime( (string) $product->created_at ) : 0;
+        if ( $created > 0 && ( time() - $created ) < 30 * DAY_IN_SECONDS ) {
+            return array(
+                'type' => 'new',
+                'text' => __( 'NEW', 'qiling' ),
+            );
+        }
+
+        $min_p = isset( $product->min_price ) ? (float) $product->min_price : 0;
+        $max_p = isset( $product->max_price ) ? (float) $product->max_price : 0;
+        if ( $max_p > $min_p && $min_p > 0 ) {
+            return array(
+                'type' => 'sale',
+                'text' => __( 'SALE', 'qiling' ),
+            );
+        }
+
+        return null;
     }
 
     /**
@@ -381,16 +475,33 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
      * @return string
      */
     private function build_module_markup( $settings, $products, $product_base, $module_id ) {
-        $bg_color = (string) $settings['bg_color'];
+        $bg_color      = (string) $settings['bg_color'];
         $content_width = (string) $settings['content_width'];
-        $padding = (int) $settings['padding'];
-        $title = (string) $settings['title'];
-        $subtitle = (string) $settings['subtitle'];
-        $show_cart = (string) $settings['show_cart'];
+        $padding       = (int) $settings['padding'];
+        $title         = (string) $settings['title'];
+        $subtitle      = (string) $settings['subtitle'];
+        $show_cart     = (string) $settings['show_cart'];
+        $show_badge    = (string) $settings['show_badge'];
+        $hover_image   = (string) $settings['hover_image'];
 
         ob_start();
         ?>
         <section class="module module-qiling-shop-showcase" id="<?php echo esc_attr( $module_id ); ?>" style="padding: <?php echo esc_attr( $padding ); ?>px 0; background: <?php echo esc_attr( $bg_color ); ?>;">
+            <style>
+                #<?php echo esc_attr( $module_id ); ?> .qss-img-wrap { position: relative; overflow: hidden; }
+                #<?php echo esc_attr( $module_id ); ?> .qss-img-primary { transition: opacity 0.4s ease, transform 0.5s ease; }
+                #<?php echo esc_attr( $module_id ); ?> .qss-img-secondary { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease, transform 0.5s ease; }
+                #<?php echo esc_attr( $module_id ); ?> .qss-product-card:hover .qss-img-primary.has-secondary { opacity: 0; }
+                #<?php echo esc_attr( $module_id ); ?> .qss-product-card:hover .qss-img-secondary { opacity: 1; transform: scale(1.05); }
+                #<?php echo esc_attr( $module_id ); ?> .qss-badge { position: absolute; top: 12px; left: 12px; z-index: 3; display: inline-flex; align-items: center; justify-content: center; min-width: 42px; height: 22px; padding: 0 8px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; line-height: 1; pointer-events: none; }
+                #<?php echo esc_attr( $module_id ); ?> .qss-badge-hot { background: var(--color-error, #ef4444); color: var(--color-text-inverse, #ffffff); box-shadow: 0 4px 10px rgba(var(--color-error-rgb, 220, 38, 38), 0.35); }
+                #<?php echo esc_attr( $module_id ); ?> .qss-badge-new { background: var(--color-info, #0284c7); color: var(--color-text-inverse, #ffffff); box-shadow: 0 4px 10px rgba(var(--color-info-rgb, 14, 165, 233), 0.35); }
+                #<?php echo esc_attr( $module_id ); ?> .qss-badge-sale { background: var(--color-warning, #d97706); color: var(--color-text-inverse, #ffffff); box-shadow: 0 4px 10px rgba(var(--color-warning-rgb, 245, 158, 11), 0.35); }
+                #<?php echo esc_attr( $module_id ); ?> .qss-cart-btn { cursor: pointer; transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, color 0.2s; }
+                #<?php echo esc_attr( $module_id ); ?> .qss-cart-btn:hover { transform: scale(1.15); }
+                #<?php echo esc_attr( $module_id ); ?> .qss-price { font-feature-settings: "tnum"; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+            </style>
+
             <div class="<?php echo $content_width === 'full' ? 'container-fluid' : 'container'; ?>">
 
                 <?php if ( $title || $subtitle ) : ?>
@@ -414,13 +525,25 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
                                 $price_html = function_exists( 'developer_starter_format_currency_amount' )
                                     ? developer_starter_format_currency_amount( $product->min_price, $currency_code, 2 )
                                     : 'CNY ' . number_format_i18n( $product->min_price, 2 );
-                                $img_url = $this->resolve_product_image_url( isset( $product->main_image ) ? (string) $product->main_image : '' );
+                                $images = $this->resolve_product_images(
+                                    isset( $product->main_image ) ? (string) $product->main_image : '',
+                                    isset( $product->gallery ) ? (string) $product->gallery : ''
+                                );
+                                $badge = ( 'yes' === $show_badge ) ? $this->get_product_badge( $product ) : null;
+                                $has_secondary = ( 'yes' === $hover_image && ! empty( $images['secondary'] ) );
                                 ?>
                                 <div class="swiper-slide">
                                     <a href="<?php echo esc_url( $product_url ); ?>" class="qss-product-card" target="_blank">
                                         <div class="qss-img-wrap">
-                                            <?php if ( '' !== $img_url ) : ?>
-                                                <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $product->title ); ?>" class="qss-img" loading="lazy" decoding="async">
+                                            <?php if ( ! empty( $badge ) ) : ?>
+                                                <span class="qss-badge qss-badge-<?php echo esc_attr( $badge['type'] ); ?>"><?php echo esc_html( $badge['text'] ); ?></span>
+                                            <?php endif; ?>
+
+                                            <?php if ( '' !== $images['primary'] ) : ?>
+                                                <img src="<?php echo esc_url( $images['primary'] ); ?>" alt="<?php echo esc_attr( $product->title ); ?>" class="qss-img qss-img-primary<?php echo $has_secondary ? ' has-secondary' : ''; ?>" loading="lazy" decoding="async">
+                                                <?php if ( $has_secondary ) : ?>
+                                                    <img src="<?php echo esc_url( $images['secondary'] ); ?>" alt="<?php echo esc_attr( $product->title ); ?>" class="qss-img qss-img-secondary" loading="lazy" decoding="async">
+                                                <?php endif; ?>
                                             <?php else : ?>
                                                 <div class="qss-img-placeholder">
                                                     <span class="dashicons dashicons-format-image"></span>
@@ -438,7 +561,7 @@ class Qiling_Shop_Showcase_Module extends Module_Base {
                                                 <span class="qss-price"><?php echo esc_html( $price_html ); ?></span>
 
                                                 <?php if ( 'yes' === $show_cart ) : ?>
-                                                    <span class="qss-cart-btn">
+                                                    <span class="qss-cart-btn" aria-label="<?php esc_attr_e( '查看商品', 'qiling' ); ?>">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                             <circle cx="9" cy="21" r="1"></circle>
                                                             <circle cx="20" cy="21" r="1"></circle>

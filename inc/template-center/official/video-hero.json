@@ -43,77 +43,333 @@
     {
       "type": "fullscreen_video",
       "data": {
-        "fsv_title": "启灵主题 · <strong>超乎想象</strong>",
-        "fsv_subtitle": "极速开发 · 优雅设计 · 极致体验",
+        "fsv_video_url": "https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-sunset-26070-large.mp4",
+        "fsv_overlay_opacity": "0.45",
+        "fsv_title": "ATELIER CINEMA · <strong>电影工业级大片展映</strong>",
+        "fsv_subtitle": "摒弃千篇一律的模板化宣传片。以国际电影节水准视听语言与戏剧级光影叙事，铸造传世品牌史诗。",
+        "fsv_glow_color": "#eab308",
         "fsv_glow_intensity": "medium",
-        "fsv_overlay_opacity": "0.3",
         "fsv_nav_items": [
           {
-            "item_label": "快速入门",
-            "item_icon": "🚀",
+            "item_label": "展映作品",
+            "item_icon": "dashicons-video-alt3",
             "item_type": "link",
-            "item_link": "#"
+            "item_link": "#lookbook"
           },
           {
-            "item_label": "功能特性",
-            "item_icon": "⚡",
+            "item_label": "预约提案",
+            "item_icon": "dashicons-calendar-alt",
             "item_type": "link",
-            "item_link": "#"
+            "item_link": "#booking"
           },
           {
-            "item_label": "扫码体验",
-            "item_icon": "📱",
+            "item_label": "官方微信",
+            "item_icon": "dashicons-phone",
             "item_type": "qr",
-            "item_qr_desc": "扫码查看移动端",
-            "item_qr": ""
+            "item_qr": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400",
+            "item_qr_desc": "扫码直联主创导演"
+          }
+        ],
+        "fsv_show_controls": "1"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "视听穿透力与赫赫战绩 · 用影像缔造传奇",
+        "stats_subtitle": "每一次快门跳动、每一秒配乐升华，都在全球数亿观众心智中烙印无法磨灭的品牌震撼。",
+        "stats_items": [
+          {
+            "number": "3.5亿+",
+            "label": "主导商业大片全网累计跨平台播放量"
+          },
+          {
+            "number": "24座",
+            "label": "国内外顶级广告节与国际电影节金奖"
+          },
+          {
+            "number": "80+",
+            "label": "世界500强与行业龙头企业战略客户"
+          },
+          {
+            "number": "100%",
+            "label": "院线电影工业级制片标准全流程把控"
           }
         ]
       }
     },
     {
-      "type": "features",
+      "type": "services",
       "data": {
-        "features_title": "核心优势",
-        "features_subtitle": "为什么选择启灵主题？",
-        "features_columns": "4",
-        "features_items": [
+        "title": "全流程电影工业制片体系 · 精细苛求每一帧",
+        "subtitle": "从前期深度的品牌哲学提炼、剧本围读，到实景美术置景、电影拍摄与后期CGI特效音效全闭环。",
+        "columns": "4",
+        "services": [
           {
-            "icon": "⚡",
-            "title": "极致性能",
-            "desc": "底层代码优化，秒开体验"
+            "icon": "fa-clapperboard",
+            "title": "商业故事片与品牌微电影",
+            "desc": "深入挖掘企业创立初心的时代精神，将冷冰冰的企业数据升华为催人泪下、引发强烈社会共鸣的传世影像。",
+            "badge": "深度叙事"
           },
           {
-            "icon": "📱",
-            "title": "全端适配",
-            "desc": "完美兼容手机、平板和PC"
+            "icon": "fa-cube",
+            "title": "产品三维CGI高精度概念片",
+            "desc": "利用超写实三维渲染与爆炸图结构推演，将微米级精密硬件、流体动力学与机械美学展现得淋漓尽致。",
+            "badge": "超写实CGI"
           },
           {
-            "icon": "🛡️",
-            "title": "安全稳定",
-            "desc": "企业级安全防护标准"
+            "icon": "fa-globe",
+            "title": "全球TVC院线广告片拍摄",
+            "desc": "跨国选景与国际主创团队协作，打造符合欧美及全球主流文化审美的高雅商业大片，赋能出海跨国传播。",
+            "badge": "全球视界"
           },
           {
-            "icon": "🔄",
-            "title": "持续更新",
-            "desc": "源源不断的新功能支持"
+            "icon": "fa-music",
+            "title": "定制好莱坞交响乐配乐",
+            "desc": "联合维也纳或布达佩斯交响乐团实录大编制管弦乐，配合杜比全景声7.1.4混音，带来震撼身心的沉浸声场。",
+            "badge": "电影配乐"
+          }
+        ]
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "标杆作品选集 · 见证光影的力量",
+        "lookbook_subtitle": "点击浏览近年来为全球新能源汽车、科技巨头与百年奢侈品牌打造的史诗级商业视觉作品。",
+        "lookbook_columns": "3",
+        "lookbook_items": [
+          {
+            "cover_image": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&auto=format&fit=crop&q=80",
+            "name": "《逐光而生》· 某豪华新能源车企全球首发TVC",
+            "desc": "横跨阿尔卑斯雪山与青藏高原实景拍摄，荣获戛纳国际创意节工艺金狮奖肯定。",
+            "btn_text": "观看大片"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop&q=80",
+            "name": "《万象新生》· 跨国科技巨头二十周年品牌纪录电影",
+            "desc": "历时18个月全球跟拍，记录几代工程师矢志创新突破卡脖子技术的波澜壮阔征程。",
+            "btn_text": "观看大片"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
+            "name": "《星海之约》· 智能终端未来空间概念探索片",
+            "desc": "全自研UE5电影级虚拟制片管线，突破现实物理视效，全网引爆千万级破圈讨论。",
+            "btn_text": "观看大片"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "视频首屏页面标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "商业影像全案制片方案 · 敬畏每一束光",
+        "pricing_subtitle": "根据企业的传播诉求、出镜规格与分发渠道量身定制，每一分预算皆清晰透明转化为顶级画面质感。",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "产品三维CGI概念大片",
+            "name_color": "#0f172a",
+            "price": "¥18万起",
+            "price_color": "#0f172a",
+            "period": "纯三维特效 / 60-90秒",
+            "desc": "适合高端智能硬件、工业装备发布会首发亮相与官网首页沉浸式展示",
+            "desc_color": "#64748b",
+            "features": "高精度全三维CAD工业模型重新拓扑重建\n影视级光追材质贴图与复杂内部结构动态爆炸图\n好莱坞电子声效定制音效与高燃电影节奏剪辑\n交付4K 60FPS无损母带与多比例自适应竖屏版本",
+            "features_color": "#334155",
+            "btn_text": "洽谈CGI方案",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "品牌年度形象微电影",
+            "name_color": "#0f172a",
+            "price": "¥48万起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "全实景拍摄 / 3-5分钟",
+            "desc": "适合企业重大融资发布、上市敲钟庆典或品牌全球战略升级形象重塑",
+            "desc_color": "#64748b",
+            "features": "国家级获奖编剧亲自撰写深度人物访谈与戏剧脚本\n双机ARRI Alexa Mini LF大型电影机组实景拍摄\n专业电影美术指导团队专属搭建定制置景空间\n达芬奇全套电影级调色与维也纳交响乐团配乐授权",
+            "features_color": "#334155",
+            "btn_text": "预约主创提案",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "企业主推爆款",
+            "badge": "企业主推爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "全球院线TVC全案总集成",
+            "name_color": "#0f172a",
+            "price": "¥98万起",
+            "price_color": "#0f172a",
+            "period": "跨国制片 / 60秒TVC + 花絮",
+            "desc": "针对在央视总台、全球主流电视台、分众传媒与国际院线投放的最高规格大片",
+            "desc_color": "#64748b",
+            "features": "国际一线大导亲自执镜操刀，海内外多地跨国取景\n好莱坞资深特效团队把关全片视效与杜比全景声音效\n包含全媒体全球版权买断与代言人肖像合规把控\n提供全套院线DCP母盘制作与电视台审查备案全包",
+            "features_color": "#334155",
+            "btn_text": "联系制片人总监",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "features_bg_color": "#ffffff"
+        "pricing_items": [
+          {
+            "name": "产品三维CGI概念大片",
+            "name_color": "#0f172a",
+            "price": "¥18万起",
+            "price_color": "#0f172a",
+            "period": "纯三维特效 / 60-90秒",
+            "desc": "适合高端智能硬件、工业装备发布会首发亮相与官网首页沉浸式展示",
+            "desc_color": "#64748b",
+            "features": "高精度全三维CAD工业模型重新拓扑重建\n影视级光追材质贴图与复杂内部结构动态爆炸图\n好莱坞电子声效定制音效与高燃电影节奏剪辑\n交付4K 60FPS无损母带与多比例自适应竖屏版本",
+            "features_color": "#334155",
+            "btn_text": "洽谈CGI方案",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "品牌年度形象微电影",
+            "name_color": "#0f172a",
+            "price": "¥48万起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "全实景拍摄 / 3-5分钟",
+            "desc": "适合企业重大融资发布、上市敲钟庆典或品牌全球战略升级形象重塑",
+            "desc_color": "#64748b",
+            "features": "国家级获奖编剧亲自撰写深度人物访谈与戏剧脚本\n双机ARRI Alexa Mini LF大型电影机组实景拍摄\n专业电影美术指导团队专属搭建定制置景空间\n达芬奇全套电影级调色与维也纳交响乐团配乐授权",
+            "features_color": "#334155",
+            "btn_text": "预约主创提案",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "企业主推爆款",
+            "badge": "企业主推爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "全球院线TVC全案总集成",
+            "name_color": "#0f172a",
+            "price": "¥98万起",
+            "price_color": "#0f172a",
+            "period": "跨国制片 / 60秒TVC + 花絮",
+            "desc": "针对在央视总台、全球主流电视台、分众传媒与国际院线投放的最高规格大片",
+            "desc_color": "#64748b",
+            "features": "国际一线大导亲自执镜操刀，海内外多地跨国取景\n好莱坞资深特效团队把关全片视效与杜比全景声音效\n包含全媒体全球版权买断与代言人肖像合规把控\n提供全套院线DCP母盘制作与电视台审查备案全包",
+            "features_color": "#334155",
+            "btn_text": "联系制片人总监",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "准备好开始了吗？",
-        "cta_subtitle": "立即体验功能强大的企业级 WordPress 主题",
-        "cta_button_text": "🔥 立即购买",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #0284c7 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "解锁 视频首屏页面 精彩视界",
+        "cta_subtitle": "第一时间掌握重磅发布资讯、内测资格与官方社区专属特权。",
+        "cta_btn_text": "立即加入探索",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#06080d",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#e11d48",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "CINEMA-STUDIO · 视听震撼视觉品牌与沉浸式创意官网",
+        "qfs_brand_desc": "用世界级的电影级视听语言讲好品牌故事。深耕全球高端商业广告大片、院线级企业形象宣传片、4K HDR 实景航拍与 3D CG 视觉特效，让品牌魅力超乎想象。",
+        "qfs_link_groups": [
+          {
+            "title": "视听制作业务 & 获奖与设备阵容",
+            "links": "国际水准高端商业广告 TVC 拍摄|#\n集团企业品牌形象大片定制|#\n全球 4K/8K 极限风光航拍摄影|#\n三维 CG 动画与院线级视觉特效|#\n历年戛纳创意节与金狮奖作品展|#\nRED / ARRI 电影级摄影机器材库|#\n千平米无缝绿幕虚拟拍摄影棚|#\n调色棚与杜比全景声音效混录室|#"
+          }
+        ],
+        "qfs_contact_title": "影片拍摄委托与档期洽谈",
+        "qfs_contact_items": "监制热线|400-880-8811|tel:4008808811\n制片人直通|185-0011-8899|tel:18500118899\n接待须知|看片与技术探讨敬请提前一天预约|#\n制片基地|北京市朝阳区高碑店东亿国际传媒产业园 5 栋|#",
+        "qfs_social_title": "光影艺术馆",
+        "qfs_social_links": "4K作品集展映|#\n导演幕后花絮志|#\n电影调色解析课|#\n青年导演招募|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 CINEMA-STUDIO PRODUCTIONS. 保留所有权利 · 京ICP备16089201号 · 广播电视节目制作经营许可证 (京)字第08821号",
+        "qfs_bottom_links": "影视成片版权归属说明|#\n拍摄安全与意外保障协议|#\n演艺人员肖像权保护约定|#\n制作合同标准付款流程|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

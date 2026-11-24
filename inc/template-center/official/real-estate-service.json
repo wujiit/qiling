@@ -42,203 +42,444 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #78350f 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "置信地产",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=80",
-            "title": "找到更适合的空间与生活方式",
-            "subtitle": "项目亮点、空间图片、配套服务和看房咨询，一页完成核心信息展示。",
-            "btn_text": "预约看房",
-            "btn_url": "#",
-            "btn_bg_color": "#b45309",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "特色房型",
+            "link": "#room-showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "30",
-            "number": "30+",
-            "label": "在售/在租项目",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "12",
-            "number": "12城",
-            "label": "服务覆盖",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "98",
-            "number": "98%",
-            "label": "客户响应率",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "1v1",
-            "number": "1v1",
-            "label": "顾问服务",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#c084fc",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#c084fc",
+        "qhs_hover_bg": "rgba(192,132,252,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "服务场景",
-        "services_subtitle": "覆盖新房、二手房、租赁、商业空间和园区招商",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "云端天幕 · 临江藏品 · 城市地标级纯正大平层豪宅",
+        "bb_subtitle": "雄踞城市核心一线滨江中轴，270 度环幕江景视野，特邀国际大师操刀室内空间与私家园林，谨呈 128 席塔尖家族传世恒产",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "01",
-            "title": "新房项目",
-            "desc": "项目亮点、户型、配套和看房咨询。",
-            "link": "#"
+            "text": "预约贵宾专车到场品鉴样板间",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "02",
-            "title": "二手房服务",
-            "desc": "房源评估、带看、交易流程和贷款建议。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "租赁公寓",
-            "desc": "长租空间、配套服务和入住预约。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "商业招商",
-            "desc": "写字楼、商铺、园区和品牌招商咨询。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "精选空间展示",
-        "cases_subtitle": "用图片、位置和亮点快速建立项目印象",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
-            "title": "城市改善住宅",
-            "desc": "成熟配套、舒适户型和低密度社区。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=900&q=80",
-            "title": "核心商务办公",
-            "desc": "交通便利、灵活面积和品牌展示面。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
-            "title": "品质长租公寓",
-            "desc": "拎包入住、公共配套和管家服务。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#fefce8"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "看房服务流程",
-        "process_subtitle": "从需求沟通到实地看房，减少无效奔波",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "需求沟通",
-            "desc": "确认预算、区域、面积、用途和时间安排。",
-            "stage_tag": "沟通"
-          },
-          {
-            "icon": "02",
-            "title": "匹配项目",
-            "desc": "筛选合适房源或空间，发送项目资料。",
-            "stage_tag": "匹配"
-          },
-          {
-            "icon": "03",
-            "title": "预约带看",
-            "desc": "规划路线、确认时间并安排顾问陪同。",
-            "stage_tag": "带看"
-          },
-          {
-            "icon": "04",
-            "title": "方案跟进",
-            "desc": "协助比较项目、报价和后续手续。",
-            "stage_tag": "跟进"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "客户反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "500+",
-        "average_rating": "4.8",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "张女士",
-            "position": "改善购房客户",
-            "content": "顾问先筛了一轮项目，看房效率比自己找高很多。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "陈先生",
-            "position": "企业行政负责人",
-            "content": "办公空间信息整理清楚，比较和决策更快。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "李女士",
-            "position": "长租客户",
-            "content": "图片、配套和入住流程都能提前了解，沟通顺畅。",
-            "rating": "5",
-            "verified": "verified"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
     },
     {
-      "type": "booking-entry",
+      "type": "room-showcase",
       "data": {
-        "booking_title": "预约看房咨询",
-        "booking_subtitle": "提交意向区域、预算和看房时间，置业顾问会帮你匹配项目。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约提示",
-        "sidebar_content": "请在表单里填写真实预算和意向区域\n临时看房需以项目档期为准\n房源状态和价格以实时沟通为准",
-        "contact_phone": "400-618-2026",
-        "contact_hours": "09:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#fefce8"
+        "room_title": "传世空间 · 典藏主力户型鉴赏",
+        "room_subtitle": "全明南北通透格局，3.6米阔绰层高，专属电梯双向独立入户",
+        "room_columns": "3",
+        "room_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
+            "name": "天幕云邸 · 420㎡ 环幕天际平层",
+            "area": "420㎡",
+            "bed_type": "5 室 2 厅 6 卫 + 独立中西双厨",
+            "capacity": "大家族传世",
+            "price": "¥3,800 万起",
+            "original_price": "参考单价 ¥90,000/㎡",
+            "badge": "压轴席位",
+            "amenities": "22米南向巨幕面宽 / 独立保姆套间 / 私家电梯厅 / 恒温红酒雪茄室",
+            "desc": "俯瞰两岸繁华夜景，大师级社交双厅布局，主卧全套房配置独立步入式衣帽间",
+            "btn_text": "预约实地看房",
+            "btn_link": "#book-estate"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80",
+            "name": "林泉别院 · 580㎡ 临湖独栋院墅",
+            "area": "580㎡ (另赠 280㎡ 私家花园)",
+            "bed_type": "6 室 3 厅 7 卫 + 地下双层采光会所",
+            "capacity": "私密庄园",
+            "price": "¥5,200 万起",
+            "original_price": "参考单价 ¥89,000/㎡",
+            "badge": "独栋仅4席",
+            "amenities": "私家无边恒温泳池 / 挑空8米中空客厅 / 私家地下车库3车位 / 观光电梯",
+            "desc": "三面环湖，私享原生水岸林语，地下挑空多功能影音娱乐与收藏会所",
+            "btn_text": "预约实地看房",
+            "btn_link": "#book-estate"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=600&q=80",
+            "name": "江山澜境 · 280㎡ 精工奢雅大平层",
+            "area": "280㎡",
+            "bed_type": "4 室 2 厅 4 卫",
+            "capacity": "改善进阶首选",
+            "price": "¥2,500 万起",
+            "original_price": "参考单价 ¥89,500/㎡",
+            "badge": "热卖中",
+            "amenities": "全套嘉格纳顶级厨电 / 劳芬智能卫浴 / 大金全屋空气系统 / 隐形储物空间",
+            "desc": "四开间朝南设计，动静分区合理，专为现代精英家庭量身打造的舒适尺度",
+            "btn_text": "预约实地看房",
+            "btn_link": "#book-estate"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "塔尖圈层专属私享生活配套体系",
+        "services_subtitle": "严苛遵循国际超五星级奢华酒店标准，构筑尊崇无扰的生活主场",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "shield-check",
+            "title": "英式白金管家全天候值守",
+            "desc": "提供入户保洁保洁、私人家宴主厨预约、国际快递代收验真等 108 项贴心礼宾"
+          },
+          {
+            "icon": "waves",
+            "title": "3,000㎡ 地下私享圈层会所",
+            "desc": "四季恒温无边际泳池、泰诺健全套进口健身器材、私董会红酒雪茄雪茄吧"
+          },
+          {
+            "icon": "home",
+            "title": "德系百年品牌精装交付标准",
+            "desc": "嘉格纳整套厨电、当代龙头花洒、劳芬卫浴、瑞士智能全屋全屋声光电联控"
+          },
+          {
+            "icon": "lock",
+            "title": "军工级三重生物识别安防",
+            "desc": "社区周界红外微波安防、人脸虹膜无感通关、电梯精准自动指引至对应入户门"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "房地产/楼盘服务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "实景鉴赏 · 建筑立面与社区园林实景",
+        "gallery_subtitle": "全进口干挂天然石材配超白全景落地幕墙玻璃，历久弥新的现代经典美学",
+        "gallery_columns": "4",
+        "gallery_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
+            "title": "现代主义干挂石材建筑立面",
+            "desc": "极简挺拔线条，光影流转的城市天际线封面"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80",
+            "title": "沉浸式下沉庭院水景会所",
+            "desc": "叠水潺潺、青松挺秀的幽雅私密社交领地"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=600&q=80",
+            "title": "四季恒温室内无边际泳池",
+            "desc": "24小时循环铜银离子消毒，柔和自然采光天井"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+            "title": "地下光厅迎宾车库入户大堂",
+            "desc": "星空顶照明、环氧自流平地面与私家专属车牌识别"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "首发特惠单元与专属置业金融方案",
+        "pricing_subtitle": "限时限量推售精选特惠房源，尊享多重定制金融按揭与验资礼遇",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "高区开阔观景单元",
+            "name_color": "#0f172a",
+            "price": "首付 20% 起",
+            "price_color": "#0f172a",
+            "period": "/支持大额公积金及商贷",
+            "desc": "高区楼层视野开阔，享有江景最优视角，开盘即享总价 98 折优惠",
+            "desc_color": "#64748b",
+            "features": "赠送地下标准车位 2 个使用权\\n赠送价值 50 万元国际品牌软装抵扣券\\n尊享第一年度物业管理费全免福利\\n专属银行行长级大额按揭绿色通道",
+            "features_color": "#334155",
+            "btn_text": "索取详细一房一价表",
+            "btn_link": "#price-detail",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "低密花园独栋院墅",
+            "name_color": "#0f172a",
+            "price": "定制金融方案",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/支持家族信托及分期",
+            "desc": "仅存 4 席临湖独栋，配备超大面积赠送花园与地下多功能空间",
+            "desc_color": "#64748b",
+            "features": "赠送地下专属 3 联排超大独立车库\\n赠送私家庭院全案景观大师定制设计\\n尊享终身专属白金管家 1v1 私人服务\\n支持跨国资产配置与定制按揭分期协议",
+            "features_color": "#334155",
+            "btn_text": "预约验资并实地看房",
+            "btn_link": "#price-detail",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "传世珍藏",
+            "badge": "传世珍藏",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "顶层奢华复式天幕孤品",
+            "name_color": "#0f172a",
+            "price": "全球定向邀约",
+            "price_color": "#0f172a",
+            "period": "/验资 5,000 万元参访",
+            "desc": "整栋仅此一套，带顶层私家无边星空泳池与停机坪使用权",
+            "desc_color": "#64748b",
+            "features": "整层 360 度独揽城市天际线壮阔全景\\n顶层私家停机坪与星空恒温泳池独享\\n全套家具由欧洲百年工坊手工高级定制\\n赠送全套智慧安防安保与避险密室系统",
+            "features_color": "#334155",
+            "btn_text": "申请私密专属验资",
+            "btn_link": "#price-detail",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_items": [
+          {
+            "name": "高区开阔观景单元",
+            "name_color": "#0f172a",
+            "price": "首付 20% 起",
+            "price_color": "#0f172a",
+            "period": "/支持大额公积金及商贷",
+            "desc": "高区楼层视野开阔，享有江景最优视角，开盘即享总价 98 折优惠",
+            "desc_color": "#64748b",
+            "features": "赠送地下标准车位 2 个使用权\\n赠送价值 50 万元国际品牌软装抵扣券\\n尊享第一年度物业管理费全免福利\\n专属银行行长级大额按揭绿色通道",
+            "features_color": "#334155",
+            "btn_text": "索取详细一房一价表",
+            "btn_link": "#price-detail",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "低密花园独栋院墅",
+            "name_color": "#0f172a",
+            "price": "定制金融方案",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/支持家族信托及分期",
+            "desc": "仅存 4 席临湖独栋，配备超大面积赠送花园与地下多功能空间",
+            "desc_color": "#64748b",
+            "features": "赠送地下专属 3 联排超大独立车库\\n赠送私家庭院全案景观大师定制设计\\n尊享终身专属白金管家 1v1 私人服务\\n支持跨国资产配置与定制按揭分期协议",
+            "features_color": "#334155",
+            "btn_text": "预约验资并实地看房",
+            "btn_link": "#price-detail",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "传世珍藏",
+            "badge": "传世珍藏",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "顶层奢华复式天幕孤品",
+            "name_color": "#0f172a",
+            "price": "全球定向邀约",
+            "price_color": "#0f172a",
+            "period": "/验资 5,000 万元参访",
+            "desc": "整栋仅此一套，带顶层私家无边星空泳池与停机坪使用权",
+            "desc_color": "#64748b",
+            "features": "整层 360 度独揽城市天际线壮阔全景\\n顶层私家停机坪与星空恒温泳池独享\\n全套家具由欧洲百年工坊手工高级定制\\n赠送全套智慧安防安保与避险密室系统",
+            "features_color": "#334155",
+            "btn_text": "申请私密专属验资",
+            "btn_link": "#price-detail",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "与 房地产/楼盘服务官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#101217",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#c084fc",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "ESTATE-PRIME · 臻选豪宅置业与高端不动产综合顾问",
+        "qfs_brand_desc": "专注核心城市核心地段顶豪公寓、临湖独栋别墅及整栋商业办公物业的交易代理与资产配置。专业资深置业顾问团队提供严格隐私保护的一对一尊享置业服务。",
+        "qfs_link_groups": [
+          {
+            "title": "核心楼盘矩阵 & 资产顾问服务",
+            "links": "城市天际线江景顶豪大平层|#\n低密低容积率纯独栋别墅区|#\n核心 CBD 甲级写字楼整层资产|#\n海外黄金地段永久产权置业|#\n大额不动产抵押贷款与税费筹划|#\n不动产持有租售比与价值评估|#\n企业高管置业隐私保护通道|#\n签约交割专属法务团队全程陪同|#"
+          }
+        ],
+        "qfs_contact_title": "VIP 置业品鉴与专车看房",
+        "qfs_contact_items": "置业热线|400-880-8899|tel:4008808899\n私享专线|139-1188-9900|tel:13911889900\n接待时间|周一至周日 9:00 - 21:00（提供专车看房）|#\nVIP会所|上海市黄浦区外滩金融中心 BFC 南座 39 层|#",
+        "qfs_social_title": "豪宅图鉴",
+        "qfs_social_links": "顶豪VR全景云看房|#\n不动产价值研报|#\n城市规划前沿解读|#\n高端置业私享沙龙|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 ESTATE-PRIME REAL ESTATE. 保留所有权利 · 沪ICP备17009218号 · 房地产经纪机构一级资质备案",
+        "qfs_bottom_links": "购房资金监管须知|#\n购房资质核验政策|#\n买家隐私保密协议|#\n佣金公示与服务承诺|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -8,8 +8,8 @@
     "mode": "custom",
     "preset": "technology_company",
     "colors": {
-      "primary": "#2563eb",
-      "accent": "#059669",
+      "primary": "#1e40af",
+      "accent": "#0ea5e9",
       "background": "#ffffff",
       "text": "#0f172a"
     }
@@ -21,55 +21,142 @@
     "id": "solutions",
     "label": "解决方案",
     "category": "corporate",
-    "category_label": "官网通用",
+    "category_label": "企业/品牌/通用",
     "industry": "enterprise",
-    "scenario": "解决方案页",
-    "description": "适合行业方案、服务方案和客户问题解决路径展示。",
+    "scenario": "解决方案",
+    "description": "适合行业方案、业务方案、实施流程、对比优势和客户问题解决路径展示。",
     "badges": [
-      "服务",
-      "方案"
+      "解决方案",
+      "全场景覆盖",
+      "落地实践"
     ],
     "order": 20,
-    "thumbnail": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+    "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
   },
   "seo": {
     "title": "解决方案模板 - 启灵官方页面包",
-    "description": "适合行业方案、服务方案和客户问题解决路径展示。",
-    "keywords": "解决方案,解决方案页,服务,方案",
+    "description": "适合行业方案、业务方案、实施流程、对比优势和客户问题解决路径展示。",
+    "keywords": "解决方案,行业方案,数字化转型,落地实践,实施流程",
     "og_title": "解决方案",
-    "og_description": "适合行业方案、服务方案和客户问题解决路径展示。"
+    "og_description": "适合行业方案、业务方案、实施流程、对比优势和客户问题解决路径展示。"
   },
   "modules": [
     {
-      "type": "image_text",
+      "type": "brand_banner_pro",
       "data": {
-        "image_text_layout": "left",
-        "image_text_title": "全方位解决方案",
-        "image_text_content": "<p>我们提供专业、高效、定制化的解决方案，帮助企业应对数字化转型过程中的各种挑战。</p><p>基于多年行业经验和技术积累，我们的解决方案已成功服务于数百家企业，涵盖制造、金融、医疗、教育等多个领域。</p><ul><li>✓ 深度定制，贴合业务需求</li><li>✓ 快速部署，降低实施风险</li><li>✓ 持续迭代，保持技术领先</li></ul>",
-        "image_text_button": "了解详情",
-        "image_text_url": "#features",
-        "image_text_image": ""
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "80vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.6",
+        "bb_title": "全场景行业级数字化解决方案",
+        "bb_subtitle": "深度融合先进技术与行业业务纵深，驱动企业全链路数智化升级与业务倍增",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#e2e8f0",
+        "bb_buttons": [
+          {
+            "text": "探索行业方案",
+            "url": "#solutions-matrix",
+            "style": "primary"
+          },
+          {
+            "text": "申请架构师咨询",
+            "url": "#contact-section",
+            "style": "light"
+          }
+        ]
       }
     },
     {
-      "type": "columns",
+      "type": "services",
       "data": {
-        "columns_count": "3",
-        "columns_items": [
+        "title": "六大核心行业场景专精方案",
+        "subtitle": "精准击穿传统业务痛点，构建端到端的数智化闭环竞争力",
+        "columns": "3",
+        "services": [
           {
-            "title": "🔍 智能分析",
-            "content": "<p>利用AI和大数据技术，对业务数据进行深度分析，挖掘潜在价值，为决策提供数据支撑。</p><ul><li>实时数据监控</li><li>智能预警系统</li><li>可视化报表</li></ul>",
-            "image": ""
+            "icon": "fa-industry",
+            "title": "智能制造与供应链协同",
+            "desc": "打破数据孤岛，实现订单、生产、物料与质检全生命周期透明化实时流转。",
+            "badge": "先进制造"
           },
           {
-            "title": "⚡ 高效协同",
-            "content": "<p>打通部门壁垒，实现信息共享和流程协同，大幅提升团队协作效率和项目交付速度。</p><ul><li>跨部门协作</li><li>流程自动化</li><li>移动办公支持</li></ul>",
-            "image": ""
+            "icon": "fa-globe",
+            "title": "跨境出海全域增长方案",
+            "desc": "多语言高精度本地化、合规支付网关集成与全球 CDN 极速加速网络搭建。",
+            "badge": "跨境贸易"
           },
           {
-            "title": "🛡️ 安全可靠",
-            "content": "<p>采用企业级安全架构，多层防护机制确保数据安全，让您的业务运行无后忧之忧。</p><ul><li>数据加密存储</li><li>权限精细管理</li><li>灾备恢复机制</li></ul>",
-            "image": ""
+            "icon": "fa-brain",
+            "title": "企业私有化 AI 智能体工作台",
+            "desc": "基于专有业务知识库微调 Agent，赋能客服、研发与销售自动化提效。",
+            "badge": "人工智能"
+          },
+          {
+            "icon": "fa-hospital",
+            "title": "智慧医疗与健康管理",
+            "desc": "严苛符合三级等保与医疗数据安全规范，打通线上问诊、预约与健康档案。",
+            "badge": "医疗健康"
+          },
+          {
+            "icon": "fa-cart-shopping",
+            "title": "全渠道新零售与私域经营",
+            "desc": "统一管理多端小程序、APP 与线下门店资产，构建精准会员画像与积分闭环。",
+            "badge": "新零售"
+          },
+          {
+            "icon": "fa-shield",
+            "title": "金融级高可用安全运维",
+            "desc": "全链路压测、动态熔断降级与异地多活灾备，杜绝单点故障风险。",
+            "badge": "安全运维"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "title": "方案落地核心价值与差异化壁垒",
+        "features": [
+          {
+            "tab_name": "敏捷高效交付",
+            "items": [
+              {
+                "title": "组件化预装体系",
+                "desc": "88+ 原生功能模块开箱即用，实施周期比传统定制缩短 70% 以上。"
+              },
+              {
+                "title": "开箱即用标准化接口",
+                "desc": "完备的 RESTful API 规范，极速联通企业现有 ERP、CRM 与核心系统。"
+              }
+            ]
+          },
+          {
+            "tab_name": "自主可控安全",
+            "items": [
+              {
+                "title": "100% 源码私有部署",
+                "desc": "代码与核心业务数据完全归属企业自主掌控，杜绝第三方平台封禁风险。"
+              },
+              {
+                "title": "金融级安全加密",
+                "desc": "国密算法加持，严格执行RBAC最小权限原则与操作全量审计追踪。"
+              }
+            ]
+          },
+          {
+            "tab_name": "平滑弹性扩容",
+            "items": [
+              {
+                "title": "无状态云原生架构",
+                "desc": "微服务与无状态节点设计，轻松应对数十倍突发高并发流量冲击。"
+              },
+              {
+                "title": "跨云多活部署支撑",
+                "desc": "支持阿里云、腾讯云、华为云及私有专有集群灵活混合组网部署。"
+              }
+            ]
           }
         ]
       }
@@ -77,113 +164,141 @@
     {
       "type": "process",
       "data": {
-        "process_title": "解决方案实施流程",
-        "process_subtitle": "科学规范的实施流程，确保项目顺利落地",
-        "process_bg_color": "#f8fafc",
+        "process_title": "标准化方案实施与全周期交付流程",
+        "process_subtitle": "从需求调研、架构设计、灰度投产到长期运维保障的严谨闭环",
         "process_items": [
           {
-            "icon": "📋",
-            "title": "需求调研",
-            "desc": "深入了解企业现状和痛点，明确项目目标和范围",
-            "icon_bg": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            "title": "业务调研与痛点诊断",
+            "stage_tag": "阶段一",
+            "desc": "资深业务架构师深度驻场，剖析现状业务阻塞点，明确量化收益指标。"
           },
           {
-            "icon": "📐",
-            "title": "方案设计",
-            "desc": "根据调研结果，定制专属解决方案和实施计划",
-            "icon_bg": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+            "title": "目标架构设计与PoC验证",
+            "stage_tag": "阶段二",
+            "desc": "出具高保真技术拓扑图与原型，快速验证关键技术可行性与性能边界。"
           },
           {
-            "icon": "🔧",
-            "title": "开发部署",
-            "desc": "敏捷开发模式，快速迭代，分阶段交付成果",
-            "icon_bg": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+            "title": "敏捷迭代实施与系统集成",
+            "stage_tag": "阶段三",
+            "desc": "按双周敏捷周期推进功能开发，打通周边旧有系统API，实现数据平滑割接。"
           },
           {
-            "icon": "🚀",
-            "title": "培训上线",
-            "desc": "完善的培训体系和上线支持，确保平稳过渡",
-            "icon_bg": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+            "title": "灰度投产与持续护航",
+            "stage_tag": "阶段四",
+            "desc": "小流量灰度验证，专家团队7×24小时驻场护航，确保平稳投产上线。"
           }
         ]
       }
     },
     {
-      "type": "image_text",
+      "type": "cases",
       "data": {
-        "image_text_layout": "right",
-        "image_text_title": "领先的技术架构",
-        "image_text_content": "<p>采用微服务架构设计，具备高可用、高并发、易扩展的特性，支持私有化部署和混合云方案。</p><p><strong>技术亮点：</strong></p><ul><li>🔹 云原生架构，弹性伸缩</li><li>🔹 微服务设计，模块解耦</li><li>🔹 容器化部署，运维简便</li><li>🔹 多租户支持，资源隔离</li><li>🔹 开放API接口，无缝集成</li></ul>",
-        "image_text_button": "技术白皮书",
-        "image_text_url": "#",
-        "image_text_image": ""
-      }
-    },
-    {
-      "type": "features",
-      "data": {
-        "features_title": "为什么选择我们的解决方案",
-        "features_subtitle": "专业团队 + 成熟产品 + 优质服务 = 成功保障",
-        "features_items": [
+        "cases_title": "行业标杆客户实践与落地案例",
+        "cases_subtitle": "经由各行业头部企业实战检验的高可用解决方案",
+        "cases_columns": "3",
+        "cases_items": [
           {
-            "icon": "🏆",
-            "title": "行业领先",
-            "desc": "10+年行业深耕，服务500+企业客户"
+            "title": "某全球知名工业制造集团供应链数智化转型",
+            "desc": "协同全球 20+ 工厂与 500+ 一级供应商，物料周转率提升 38%，综合降本超千万。",
+            "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
+            "link": "#"
           },
           {
-            "icon": "👥",
-            "title": "专业团队",
-            "desc": "200+技术专家，提供全程专业支持"
+            "title": "头部跨境电商独角兽全球多语言内容分发",
+            "desc": "毫秒级翻译并分发覆盖 80+ 目标国家，海外独立站自然搜索流量翻番增长。",
+            "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop&q=80",
+            "link": "#"
           },
           {
-            "icon": "📈",
-            "title": "效果显著",
-            "desc": "平均提升30%运营效率，降低20%成本"
-          },
-          {
-            "icon": "🤝",
-            "title": "贴心服务",
-            "desc": "7×24小时响应，专属客户成功经理"
+            "title": "国家级专精特新医疗机构智慧医疗底座构建",
+            "desc": "打通千万级健康数据，高分通过三级等保与互联互通四级甲等权威认证。",
+            "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80",
+            "link": "#"
           }
         ]
       }
     },
     {
-      "type": "columns",
+      "type": "comparison",
       "data": {
-        "columns_count": "3",
-        "columns_items": [
+        "comparison_title": "启灵方案 vs 传统方案全维度对比",
+        "comparison_subtitle": "更短的实施周期、更低的综合 TCO、更高的业务敏捷性",
+        "comparison_features": "交付周期\n定制灵活度\n系统扩展性\n数据自主可控\n综合投入成本",
+        "comparison_products": [
           {
-            "title": "制造业数字化转型",
-            "content": "<p style=\"color: #64748b; font-size: 0.9rem;\">帮助某大型制造企业实现生产全流程数字化管理，生产效率提升35%，库存周转率提高28%。</p><a href=\"#\" style=\"color: var(--color-primary); font-weight: 500;\">查看详情 →</a>",
-            "image": ""
+            "name": "传统定制外包",
+            "values": "6~12个月\n极低(依赖乙方二次开发)\n差(烟囱式架构)\n部分受限\n极高"
           },
           {
-            "title": "金融风控系统升级",
-            "content": "<p style=\"color: #64748b; font-size: 0.9rem;\">为某银行打造智能风控平台，实现风险识别准确率98%，审批效率提升50%。</p><a href=\"#\" style=\"color: var(--color-primary); font-weight: 500;\">查看详情 →</a>",
-            "image": ""
+            "name": "通用SaaS公有云",
+            "values": "即开即用\n极低(仅可改配置)\n不支持二次开发\n数据在公网多租户\n持续高昂年费"
           },
           {
-            "title": "医疗信息化建设",
-            "content": "<p style=\"color: #64748b; font-size: 0.9rem;\">助力某三甲医院建设智慧医疗系统，患者等待时间减少60%，医疗差错率降低75%。</p><a href=\"#\" style=\"color: var(--color-primary); font-weight: 500;\">查看详情 →</a>",
-            "image": ""
+            "name": "启灵专属方案",
+            "values": "2~4周快速投产\n极高(完全组件化自研)\n优(微服务云原生)\n100%私有化自主可控\n综合TCO降低60%"
+          }
+        ],
+        "comparison_highlight": "3"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "解决方案常见问题解答",
+        "faq_subtitle": "解答关于架构兼容性、数据迁移、交付周期与运维支持的关键关切",
+        "faq_items": [
+          {
+            "question": "我们的现有遗留系统能否与启灵方案平滑集成？",
+            "answer": "可以。启灵方案内置丰富的适配器与高容错 API 网关，支持通过多种协议与遗留系统双向打通，确保旧数据零中断平滑迁移。"
+          },
+          {
+            "question": "方案交付后的知识转移与团队培训如何保障？",
+            "answer": "我们在项目交付阶段提供完整的架构文档、源码注解、运维 Runbook 以及为期 2 周的现场实操培训，确保甲方团队完全自主接管。"
+          },
+          {
+            "question": "系统上线后遭遇业务流量暴增如何应对？",
+            "answer": "方案底层采用云原生容器化与无状态设计，支持分钟级弹性水平扩容，配合多级缓存架构，轻松承载平时数十倍的突发流量。"
           }
         ]
       }
     },
     {
-      "type": "cta",
+      "type": "contact",
       "data": {
-        "cta_title": "开启您的数字化转型之旅",
-        "cta_subtitle": "立即联系我们，获取免费需求评估和专属解决方案",
-        "cta_button_text": "预约咨询",
-        "cta_button_url": "/contact/",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 55%, #059669 100%)",
-        "cta_bg_type": "color",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#059669",
-        "cta_button_text_color": "#ffffff"
+        "contact_title": "预约解决方案架构师一对一深度咨询",
+        "contact_subtitle": "告诉我们您的业务痛点与期望目标，架构师团队将在 1 个工作日内提供初版方案蓝图与评估建议",
+        "contact_show_form": "1",
+        "contact_submit_text": "申请架构师方案初谈"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#38bdf8",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "启灵数字化解决方案中枢",
+        "qfs_brand_desc": "将前沿工程实践转化为坚实的商业生产力，助力企业迈向数智化新范式。",
+        "qfs_link_groups": [
+          {
+            "title": "方案分类",
+            "links": "先进制造业方案|#\n跨境出海方案|#\nAI Agent 方案|#\n智慧医疗方案|#\n新零售私域方案|#\n高可用安全运维|#"
+          }
+        ],
+        "qfs_contact_title": "方案咨询专线",
+        "qfs_contact_items": "全国咨询热线|400-888-6666|tel:4008886666\n架构师直通邮箱|solutions@qiling.tech|mailto:solutions@qiling.tech",
+        "qfs_social_title": "关注启灵",
+        "qfs_social_links": "官方公众号|#\n知乎机构号|#\nGitHub 社区|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 启灵解决方案中心. 保留所有权利 · 全流程专业交付保障",
+        "qfs_bottom_links": "方案免责声明|#\n数据安全合规承诺|#\n隐私政策|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -43,326 +43,307 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "image_text",
-        "banner_height": "large",
-        "banner_image_position": "right",
-        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 55%, #d97706 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "康源草本",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=1800&q=80",
-            "title": "把每日健康选择，做得清楚一点",
-            "title_align": "left",
-            "subtitle": "从配料、含量、建议食用方法到不适宜人群，完整呈现产品信息，帮助消费者按自身需要理性选择。保健食品不能替代药物。",
-            "btn_text": "查看产品系列",
-            "btn_url": "#products",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#059669",
-            "btn_border_color": "#0f766e"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "0",
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "预约就诊",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#059669",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#059669",
+        "qhs_hover_bg": "rgba(5,150,105,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "products",
+      "type": "brand_banner_pro",
       "data": {
-        "products_title": "按日常需求选择",
-        "products_subtitle": "DAILY WELLNESS COLLECTION",
-        "columns": "4",
-        "modal_inquire_text": "咨询产品信息",
-        "modal_inquire_url": "#consult",
-        "modal_inquire_btn_bg_color": "#059669",
-        "modal_inquire_btn_text_color": "#ffffff",
-        "modal_inquire_btn_border_color": "#0f766e",
-        "modal_inquire_btn_hover_bg_color": "#115e59",
-        "modal_inquire_btn_hover_text_color": "#ffffff",
-        "modal_inquire_btn_hover_border_color": "#115e59",
-        "items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "源于全球严选天然 · 赋能现代人生命活力",
+        "bb_subtitle": "坚持全链路纯净配方与科学临床实证，拒绝人工色素与多余添加，为全家人构筑高品质细胞级营养防护网",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80",
-            "title": "基础营养补充系列",
-            "desc": "围绕日常膳食补充需求，清晰标注配料与每份含量。",
-            "specs": "品类：维生素、矿物质与复合营养补充剂\n信息：配料表、营养成分、每份含量\n选择：结合饮食结构与个人需要\n提示：按标签建议食用，不替代均衡饮食",
-            "post_id": "",
-            "btn_text": "查看产品信息"
+            "text": "探索全线纯净膳食营养补剂",
+            "url": "#products",
+            "style": "primary"
           },
           {
-            "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80",
-            "title": "睡眠支持系列",
-            "desc": "服务规律作息场景，重点展示原料、食用时间与注意事项。",
-            "specs": "场景：晚间日常营养支持\n信息：原料来源、建议食用方法\n配合：规律作息、减少睡前刺激\n提示：孕期、哺乳期及用药人群食用前先咨询专业人士",
-            "post_id": "",
-            "btn_text": "了解使用提示"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=80",
-            "title": "关节日常养护系列",
-            "desc": "面向运动与日常活动人群，提供成分透明的营养补充选择。",
-            "specs": "场景：运动与日常活动营养支持\n信息：核心原料、每份含量、食用周期\n配合：适量运动与体重管理\n提示：不用于疾病预防、诊断或治疗",
-            "post_id": "",
-            "btn_text": "查看成分说明"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=80",
-            "title": "日常健康管理系列",
-            "desc": "覆盖通勤、运动和家庭场景的便携健康用品与营养选择。",
-            "specs": "场景：通勤、运动、家庭日常\n选择：根据年龄、饮食与生活方式判断\n信息：规格、储存方法、保质期\n提示：阅读标签并遵循建议用量",
-            "post_id": "",
-            "btn_text": "浏览日常系列"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
     },
     {
-      "type": "features",
+      "type": "stats",
       "data": {
-        "features_title": "选购时，先看这些信息",
-        "features_subtitle": "不堆砌功效承诺，把消费者真正需要核对的内容放在前面",
-        "features_columns": "4",
-        "features_icon_position": "top",
-        "features_text_align": "left",
-        "features_bg_color": "#ffffff",
-        "features_padding": "normal",
-        "features_card_style": "border",
-        "features_card_bg": "#ffffff",
-        "features_card_border": "#dbe7e4",
-        "features_card_hover_border": "#0f766e",
-        "features_card_radius": "8px",
-        "features_hover_effect": "lift",
-        "features_icon_style": "square",
-        "features_icon_size": "48px",
-        "features_icon_color": "#0f766e",
-        "features_icon_bg": "#ccfbf1",
-        "features_items": [
+        "stats_title": "品质承诺 · 严苛标准数据印证",
+        "stats_subtitle": "严守国际临床营养标准，每批次产品均出具独立第三方 SGS 全项重金属与纯度检测报告",
+        "stats_items": [
           {
-            "icon": "01",
-            "title": "配料与含量",
-            "desc": "核对完整配料表、每份含量、规格和过敏原提示。",
-            "link": "#"
+            "number": "95%+",
+            "label": "超临界萃取高纯度 Omega-3 含量"
           },
           {
-            "icon": "02",
-            "title": "适宜与不适宜人群",
-            "desc": "根据年龄、孕哺状态、过敏史和正在使用的药物审慎选择。",
-            "link": "#"
+            "number": "100% 纯天然",
+            "label": "无转基因/无防腐剂/无过敏原认证"
           },
           {
-            "icon": "03",
-            "title": "食用方法",
-            "desc": "遵循标签建议的次数、用量与食用时间，不自行叠加同类成分。",
-            "link": "#"
+            "number": "68 项",
+            "label": "第三方重金属及塑化剂零残留检测"
           },
           {
-            "icon": "04",
-            "title": "标签与追溯",
-            "desc": "查看生产信息、保质期、储存条件和可查询的批次信息。",
-            "link": "#"
+            "number": "1,200,000+",
+            "label": "全球高净值家庭长期信赖的健康之选"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "compliance_trust",
+      "type": "services",
       "data": {
-        "ct_title": "信息透明与<span style=\"color:#0f766e\">合规表达</span>",
-        "ct_subtitle": "健康用品页面应以真实标签和实际资料为准，不使用疾病治疗、保证效果或绝对化表述。",
-        "ct_note": "以下为官网发布前的核验项目，不代表模板使用者已经取得任何许可或认证。请按产品实际类别、销售地区和现行法规，由专业人员审核后替换。",
-        "ct_layout": "grid",
-        "ct_columns": "4",
-        "ct_enable_filter": "yes",
-        "ct_card_style": "solid",
-        "ct_accent_color": "#059669",
-        "ct_status_chip_bg": "#fef3c7",
-        "ct_status_chip_text": "#92400e",
-        "ct_action_btn_bg": "#0f766e",
-        "ct_action_btn_text": "#ffffff",
-        "ct_action_btn_border": "#0f766e",
-        "module_bg_type": "color",
-        "module_bg_color": "#f0fdf4",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "ct_items": [
+        "services_title": "科学分龄精细化营养方案矩阵",
+        "services_subtitle": "针对不同生命周期的身体代谢特点，打造精准高效的细胞级营养补给",
+        "services_columns": "4",
+        "services_items": [
           {
-            "icon": "标",
-            "title": "产品标签核验",
-            "short_name": "LABEL",
-            "category": "产品信息",
-            "status": "planned",
-            "status_text": "上线前核验",
-            "issuer": "企业质量与法规负责人",
-            "scope": "产品名称、配料、含量、食用方法与不适宜人群",
-            "valid_until": "随产品版本复核",
-            "description": "页面信息应与实际包装标签和经审核的产品资料保持一致。",
-            "checklist": "标签版本一致\n配料与含量一致\n警示语完整\n储存条件清楚",
-            "report_url": "#",
-            "report_text": "查看核验说明",
-            "highlight": "yes"
+            "icon": "heart",
+            "title": "高纯深海鱼油软胶囊",
+            "desc": "挪威纯净峡湾野生小凤尾鱼原料，rTG 专利高吸收构型，强效守护心脑血管"
           },
           {
-            "icon": "宣",
-            "title": "宣传内容审核",
-            "short_name": "CLAIM",
-            "category": "宣传规范",
-            "status": "planned",
-            "status_text": "发布前审核",
-            "issuer": "企业法规与内容负责人",
-            "scope": "官网标题、详情、图片、问答与推广素材",
-            "valid_until": "每次发布复核",
-            "description": "不明示或暗示疾病预防、诊断、治疗作用，不以个案替代普遍结论。",
-            "checklist": "不承诺治疗疾病\n不使用保证性效果\n不夸大适用范围\n不伪造用户反馈",
-            "report_url": "#",
-            "report_text": "查看发布边界",
-            "highlight": "yes"
+            "icon": "shield",
+            "title": "还原型辅酶 Q10 焕活胶囊",
+            "desc": "日本钟渊天然酵母发酵高活性还原型 Q10，心肌泵血动力与抗疲劳首选"
           },
           {
-            "icon": "溯",
-            "title": "批次与来源追溯",
-            "short_name": "TRACE",
-            "category": "质量管理",
-            "status": "planned",
-            "status_text": "按实际配置",
-            "issuer": "企业供应链与质量负责人",
-            "scope": "原料来源、生产批次、检验资料与售后反馈",
-            "valid_until": "持续维护",
-            "description": "根据实际业务建立批次查询和问题反馈路径，不展示无法验证的信息。",
-            "checklist": "供应商资料留存\n生产批次可查\n检验资料匹配\n问题反馈有记录",
-            "report_url": "#",
-            "report_text": "查看追溯流程",
-            "highlight": "no"
+            "icon": "activity",
+            "title": "1,000 亿活性耐酸益生菌",
+            "desc": "专利微胶囊包埋技术，直达肠道，调节肠道微生态与免疫屏障功能"
           },
           {
-            "icon": "隐",
-            "title": "咨询信息保护",
-            "short_name": "PRIVACY",
-            "category": "用户权益",
-            "status": "planned",
-            "status_text": "按业务核验",
-            "issuer": "企业用户服务负责人",
-            "scope": "咨询表单、联系方式与健康相关描述",
-            "valid_until": "持续维护",
-            "description": "仅收集完成咨询所需的信息，明确用途并提供删除或更正渠道。",
-            "checklist": "最小必要收集\n用途清晰告知\n访问权限受控\n提供更正渠道",
-            "report_url": "#",
-            "report_text": "查看隐私说明",
-            "highlight": "no"
+            "icon": "sun",
+            "title": "高浓度脂质体复合维生素",
+            "desc": "脂质体微囊包裹技术，生物利用度提升 4.6 倍，全天候持续滋养元气"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "健康保健用品官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
       }
     },
     {
       "type": "certificate_honors",
       "data": {
-        "ch_title": "上线前应核验的资质材料",
-        "ch_subtitle": "本区域仅列出常见材料类别，不代表已取得相关许可；请根据经营范围上传真实、有效且可核验的文件。",
-        "ch_columns": "3",
-        "ch_enable_filter": "yes",
-        "ch_link_text": "查看真实文件",
-        "module_bg_color": "#ffffff",
-        "ch_badge_bg": "#dcfce7",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "ch_items": [
+        "cert_title": "全球权威认证与全链路质检背书",
+        "cert_subtitle": "跨越三大洲严格审计，为每一份送到您手中的营养保驾护航",
+        "cert_columns": "4",
+        "cert_items": [
           {
-            "image": "",
-            "title": "主体经营资质",
-            "category": "主体资质",
-            "badge": "按实际上传",
-            "cert_no": "",
-            "issuer": "以真实文件为准",
-            "issue_date": "",
-            "expiry_date": "",
-            "file_url": ""
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "美国 FDA cGMP 良好生产规范认证",
+            "issuer": "美国食品药品监督管理局 (FDA)"
           },
           {
-            "image": "",
-            "title": "食品或相关经营许可",
-            "category": "经营许可",
-            "badge": "按品类核验",
-            "cert_no": "",
-            "issuer": "以主管部门签发文件为准",
-            "issue_date": "",
-            "expiry_date": "",
-            "file_url": ""
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "IFOS 国际鱼油标准五星最高评级",
+            "issuer": "International Fish Oil Standards (IFOS)"
           },
           {
-            "image": "",
-            "title": "产品检验与质量资料",
-            "category": "产品资料",
-            "badge": "按批次匹配",
-            "cert_no": "",
-            "issuer": "以实际检验或质量文件为准",
-            "issue_date": "",
-            "expiry_date": "",
-            "file_url": ""
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "欧盟有机农业认证 (EU Organic)",
+            "issuer": "欧盟委员会农业与农村发展总司"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "国家市场监管总局保健食品备案蓝帽子",
+            "issuer": "国家市场监督管理总局"
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "team",
       "data": {
-        "faq_title": "健康用品选购常见问题",
-        "faq_subtitle": "先读标签，再结合个人情况做选择",
-        "faq_items": [
+        "team_title": "医学营养学术顾问委员会",
+        "team_subtitle": "由国际顶级医学院教授与临床营养学博士领衔，确保配方安全严谨",
+        "team_columns": "4",
+        "team_items": [
           {
-            "question": "保健食品可以代替药物吗？",
-            "answer": "不可以。保健食品不是药物，不能替代药物治疗疾病。正在接受治疗或使用药物的人群，应先咨询医生或药师。"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "Dr. Sarah Jenkins",
+            "role": "哈佛大学营养学博士 / 首席医学顾问",
+            "desc": "深耕心血管代谢与微量营养素干预领域 20 余年，发表 SCI 论文 60 余篇"
           },
           {
-            "question": "多种营养补充剂可以一起食用吗？",
-            "answer": "应先比较配料和每份含量，避免同类营养素重复叠加。儿童、老年人、孕期或哺乳期人群，以及有过敏史、慢性病或正在用药的人群，建议食用前咨询专业人士。"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "高铭远 教授",
+            "role": "三甲医院临床营养科主任 / 主任医师",
+            "desc": "中华医学会肠外肠内营养学分会委员，专注慢性病康复营养干预方案制定"
           },
           {
-            "question": "如何判断产品信息是否完整？",
-            "answer": "可重点查看产品名称、配料表、净含量、建议食用方法、适宜与不适宜人群、生产信息、保质期、储存条件和必要的警示语，并以实际包装标签为准。"
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "Dr. Hiroshi Tanaka",
+            "role": "日本东京大学药学博士 / 生物萃取总监",
+            "desc": "主导了超临界低温流体萃取技术的工程化应用，大幅保留天然植物活性多酚"
           },
           {
-            "question": "睡眠支持或关节养护产品多久能看到效果？",
-            "answer": "个体情况和生活方式存在差异，不应承诺固定时间或保证效果。产品仅用于标签说明范围内的日常营养支持；持续不适或症状加重时，应及时就医。"
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "沈曼宁",
+            "role": "注册临床营养师 (RD) / 营养咨询主管",
+            "desc": "中国营养学会注册营养师，累计为逾万名精英人士提供 1v1 定制营养膳食改善方案"
           }
-        ],
-        "module_bg_color": "#f8fafc",
-        "faq_card_bg": "#ffffff",
-        "faq_card_border": "#dbe7e4",
-        "faq_card_hover_border": "#0f766e",
-        "faq_icon_bg": "#ccfbf1",
-        "faq_icon_color": "#0f766e",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        ]
       }
     },
     {
-      "type": "cta",
+      "type": "contact",
       "data": {
-        "cta_title": "需要核对配料或选择产品？",
-        "cta_subtitle": "告诉我们关注的产品、年龄段、饮食偏好和需要避开的成分，客服将提供标签与规格信息。涉及疾病、用药或持续不适，请咨询医生或药师。",
-        "cta_button_text": "咨询产品信息",
-        "cta_button_url": "#consult",
-        "cta_button_bg_color": "#ffffff",
-        "cta_button_text_color": "#064e3b",
-        "cta_button_border_color": "#ffffff",
-        "cta_button_hover_bg_color": "#ecfdf5",
-        "cta_button_hover_text_color": "#115e59",
-        "cta_button_hover_border_color": "#ecfdf5",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.pexels.com/photos/3873146/pexels-photo-3873146.jpeg?auto=compress&cs=tinysrgb&w=1800",
-        "cta_bg_overlay": "0.68",
-        "cta_layout_mode": "standard",
-        "cta_footer_bridge": "off",
-        "cta_border_radius": "0",
-        "cta_content_max_width": "820px",
-        "cta_button_style": "soft",
-        "module_padding_top": "88px",
-        "module_padding_bottom": "88px",
-        "cta_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 60%, #047857 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
+        "contact_title": "品牌合作与 健康保健用品官网 贵宾专属品鉴",
+        "contact_subtitle": "支持专享定制、商务大宗礼品采购与优质买手店联名入驻洽谈。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交合作意向"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#062e24",
+        "qfs_text_color": "#a7f3d0",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#059669",
+        "qfs_border_color": "rgba(255,255,255,0.1)",
+        "qfs_brand_title": "NATURA HEALTH · 纯净天然营养与健康生活",
+        "qfs_brand_desc": "甄选全球原产地高纯活性原料，严格遵循 GMP 生产标准。以科学营养配方，守护每一位家庭成员的日常活力。",
+        "qfs_link_groups": [
+          {
+            "title": "健康营养系列 & 科学与品质溯源",
+            "links": "高纯度深海鱼油软胶囊|#\n活性益生菌全菌株组合|#\n有机植物复合维他命|#\n水解小分子胶原蛋白肽|#\n第三方 SGS 权威检测报告|#\n原料全球原产地透明溯源|#\n家庭科学营养配比指南|#\n保健食品标签合规指引|#"
+          }
+        ],
+        "qfs_contact_title": "家庭营养顾问",
+        "qfs_contact_items": "营养咨询热线|400-820-2026|tel:4008202026\n健康顾问邮箱|care@natura-health.com|mailto:care@natura-health.com\n服务时间|周一至周日 8:30 - 21:00|#",
+        "qfs_social_title": "关注健康生活",
+        "qfs_social_links": "微信公众号|#\n小红书营养学堂|#\n微博认证主页|#\n健康科普视频号|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 NATURA HEALTH LIFE CO. 保留所有权利 · 本品为膳食营养补充剂，不能替代药物治疗疾病",
+        "qfs_bottom_links": "合规免责声明|#\n原料检测信息公示|#\n隐私政策|#\n正品溯源|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

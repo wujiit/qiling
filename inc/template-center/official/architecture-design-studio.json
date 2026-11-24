@@ -43,206 +43,190 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "editorial",
-        "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #0a0a0c 0%, #1e293b 50%, #0a0a0c 100%)",
-        "bb_title_mode": "text",
-        "bb_title": "从城市界面到空间体验<br><strong>让建筑方案真正可落地</strong>",
-        "bb_title_size_max": "72px",
-        "bb_subtitle": "建筑设计事务所与空间顾问官网",
-        "bb_desc": "面向住宅、公建、商业、园区和城市更新项目，用清晰的设计逻辑、项目经验和交付流程，帮助业主在第一次沟通前看见事务所的专业边界。",
-        "bb_text_align": "left",
-        "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #fed7aa 100%)",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "筑境设计",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "预约方案沟通",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看代表项目",
-            "link": "#",
-            "style": "light",
-            "icon": ""
+            "title": "精选作品",
+            "link": "#work_library",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#magic_layout",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "效果对比",
+            "link": "#image_comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bb_primary_btn_bg_color": "#ffffff",
-        "bb_primary_btn_text_color": "#0f172a",
-        "bb_primary_btn_hover_bg_color": "#f1f5f9",
-        "bb_primary_btn_hover_text_color": "#0f172a",
-        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.15)",
-        "bb_light_btn_text_color": "#ffffff",
-        "bb_light_btn_hover_bg_color": "#fef3c7",
-        "bb_light_btn_hover_text_color": "#7c2d12",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "lifted",
-        "bb_media_radius": "10px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "0",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#d97706",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#d97706",
+        "qhs_hover_bg": "rgba(217,119,6,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "cases",
+      "type": "interact_hero",
       "data": {
-        "cases_title": "代表项目案例",
-        "cases_count": "6",
-        "cases_columns": "3",
-        "cases_show_image": "1",
-        "cases_image_height": "260px",
-        "cases_padding_top": "80px",
-        "cases_padding_bottom": "80px",
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#ffffff"
+        "hero_badge": "国际知名建筑与空间设计事务所 · RIBA 认证",
+        "hero_title": "凝固光影与秩序 · 构筑永恒的场所精神",
+        "hero_subtitle": "专注于文化地标、总部园区、精品度假酒店与当代豪宅全过程一体化创作。将场地文脉、气候特征与前沿材料工程完美融合。",
+        "hero_primary_btn_text": "探索精选建筑作品",
+        "hero_primary_btn_url": "#works",
+        "hero_secondary_btn_text": "预约设计委托洽谈",
+        "hero_secondary_btn_url": "#contact"
       }
     },
     {
-      "type": "image_text",
+      "type": "work_library",
       "data": {
-        "image_text_layout": "right",
-        "image_text_image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
-        "image_text_title": "把设计表达拆成可执行的交付系统",
-        "image_text_subtitle": "从场地关系、功能组织、形体策略到材料和施工配合，每个阶段都留下可沟通、可审阅、可推进的成果。",
-        "image_text_content": "<p>适合用来说明事务所的服务边界：规划咨询、概念方案、方案深化、报批配合、施工图协调、室内与景观协同。</p><p>页面上线后可继续补充项目类别、服务城市、主创履历和真实案例文章，让客户在提交咨询前完成第一轮判断。</p>",
-        "image_text_button": "了解设计服务",
-        "image_text_url": "#",
-        "image_text_btn_bg_color": "#1e293b",
-        "image_text_btn_text_color": "#ffffff",
-        "image_text_btn_hover_bg_color": "#365314",
-        "image_text_btn_hover_text_color": "#ffffff",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        "wl_title": "代表作工程与建筑作品馆",
+        "wl_subtitle": "已建成的标志性公共地标与私人庄园项目实景呈现",
+        "wl_columns": "3",
+        "wl_cover_ratio": "16-9",
+        "wl_show_excerpt": "yes",
+        "wl_show_price": "no"
+      }
+    },
+    {
+      "type": "magic_layout",
+      "data": {
+        "magic_layout_notice": "",
+        "magic_layout_sections": []
+      }
+    },
+    {
+      "type": "visual_tabs",
+      "data": {
+        "visual_tabs_title": "多业态空间建筑实践矩阵",
+        "visual_tabs_subtitle": "公共文化展馆 · 科技总部园区 · 奢华度假酒店 · 艺术私人住宅",
+        "visual_tabs_columns": "4"
+      }
+    },
+    {
+      "type": "image_comparison",
+      "data": {
+        "comparison_title": "场地生根 · 概念手稿与竣工实景对比",
+        "comparison_subtitle": "滑动查看从最初的草图构思到最终落成建筑的精准还原度",
+        "before_image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80",
+        "before_label": "设计概念手稿与三维渲染",
+        "after_image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop&q=80",
+        "after_label": "工程竣工落成实景"
       }
     },
     {
       "type": "team",
       "data": {
-        "team_title": "主创与项目团队",
-        "team_subtitle": "展示主持建筑师、方案主创和项目经理，让客户知道每个阶段由谁负责",
-        "team_columns": "3",
-        "team_members": [
+        "team_title": "主创建筑师与合伙人团队",
+        "team_subtitle": "毕业于哈佛GSD、苏黎世联邦理工与清华建筑学院，屡获普利兹克提名与世界建筑节(WAF)大奖。",
+        "columns": "3",
+        "team": [
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "周启明",
-            "position": "主持建筑师",
-            "desc": "负责建筑概念、总体策略和关键节点把控，关注城市界面与长期运营价值。"
+            "name": "马跃峰 (Yuefeng Ma)",
+            "title": "创始合伙人 / 首席主持建筑师",
+            "desc": "英国皇家建筑师学会(RIBA)特许建筑师，20余年专注于大型文化公共建筑与城市更新。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "林若溪",
-            "position": "方案主创",
-            "desc": "擅长住宅、公建与商业空间方案推演，重视平面效率、光环境和材料叙事。"
+            "name": "索菲亚·劳伦斯 (Sophia Laurent)",
+            "title": "设计合伙人 / 空间美学总监",
+            "desc": "曾任扎哈事务所主创建筑师，擅长流体几何学与参数化材料工程创新。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=300&q=80",
-            "name": "陈言",
-            "position": "项目经理",
-            "desc": "负责进度、沟通、资料提交和多专业协同，帮助设计成果顺利进入落地阶段。"
+            "name": "张维严 (Weiyan Zhang)",
+            "title": "技术合伙人 / 总工程师",
+            "desc": "国家一级注册建筑师，精通超高层复杂钢结构与绿建三星可持续低碳建筑设计。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "建筑设计服务流程",
-        "process_subtitle": "把前期判断、方案推演、深化协同和落地配合拆成清楚节点",
-        "process_mode": "industrial",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "场地与目标研判",
-            "desc": "梳理地块条件、功能诉求、投资边界、法规限制和运营目标。",
-            "stage_tag": "研判",
-            "deliverable": "需求简报 / 场地分析"
-          },
-          {
-            "icon": "02",
-            "title": "概念方案推演",
-            "desc": "形成多方向体量、动线、立面和空间体验方案，便于业主快速比较。",
-            "stage_tag": "概念",
-            "deliverable": "概念文本 / 体量模型"
-          },
-          {
-            "icon": "03",
-            "title": "方案深化协同",
-            "desc": "结合结构、机电、景观、室内和造价反馈，稳定关键设计决策。",
-            "stage_tag": "深化",
-            "deliverable": "深化图纸 / 材料建议"
-          },
-          {
-            "icon": "04",
-            "title": "报批与落地配合",
-            "desc": "配合报批、施工图交底、现场问题反馈和关键节点复盘。",
-            "stage_tag": "落地",
-            "deliverable": "汇报材料 / 配合记录"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "建筑设计咨询常见问题",
-        "faq_subtitle": "提前说明设计阶段、资料准备、费用边界和落地配合方式，减少首次沟通成本",
-        "faq_items": [
-          {
-            "question": "第一次咨询需要准备哪些资料？",
-            "answer": "建议准备项目位置、用地或房屋基础资料、面积规模、功能诉求、预算区间、时间节点和已有参考案例。资料不完整也可以先做初步判断。"
-          },
-          {
-            "question": "建筑方案和施工图是同一项服务吗？",
-            "answer": "不是。建筑方案更偏概念、空间和表达，施工图涉及更完整的技术图纸和专业协同。实际服务范围需要在合同里明确。"
-          },
-          {
-            "question": "是否可以只做概念方案或前期顾问？",
-            "answer": "可以。很多项目会先做场地研判、产品定位或概念方案，再决定是否进入深化、报批和施工配合。"
-          },
-          {
-            "question": "项目费用如何评估？",
-            "answer": "通常会结合项目类型、面积规模、阶段范围、出图深度、汇报次数和协同复杂度评估，页面可按事务所实际报价方式继续补充。"
-          }
-        ],
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约建筑方案沟通",
-        "contact_subtitle": "提交项目位置、建筑类型、面积规模、当前阶段和目标时间，我们会先判断设计服务范围与推进路径。",
+        "contact_title": "开启您的建筑设计委托与咨询",
+        "contact_subtitle": "无论是新建地标工程、城市存量更新或私宅定制，我们的主创合伙人将亲自与您深入探讨。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "contact_image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        "contact_submit_text": "提交项目设计委托意向"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0c0d10",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#d97706",
+        "qfs_brand_title": "ARCH-STUDIO · 启灵建筑设计事务所",
+        "qfs_brand_desc": "建筑不仅是物理空间的庇护，更是人类文明与场所精神的精神载体。",
+        "qfs_bottom_text": "© 2026 ARCH-STUDIO. 保留所有建筑版权 · 甲级建筑工程设计资质证书"
       }
     }
   ]

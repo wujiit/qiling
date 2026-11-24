@@ -60,84 +60,110 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "85vh",
-        "db_bg_type": "gradient",
-        "db_bg_gradient": "linear-gradient(135deg, #060913 0%, #0f172a 50%, #083344 100%)",
-        "db_title_prefix": "启灵极客电竞酒店",
-        "db_typing_mode": "loop",
-        "db_typing_text": "全系搭载 RTX 4090 顶级水冷主机\n240Hz OLED 职业级高刷电竞屏\n专线独立光纤 · 极低网络延迟",
-        "db_highlight_color": "#22d3ee",
-        "db_title_color": "#f8fafc",
-        "db_subtitle": "专为极致开黑而生的沉浸式电竞生活空间 · 5人战队套房 · 双人闺蜜/情侣电竞房 · 24h贴心服务",
-        "db_desc": "配备人体工学专业座驾、全套定制赛睿外设、静音独立新风排烟系统与乳胶护脊床垫，畅享无间断开黑狂欢。",
-        "db_text_color": "rgba(248, 250, 252, 0.85)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "竞界电竞",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "立即选房预订",
-            "link": "#booking",
-            "style": "primary",
-            "icon": "🎮"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看房型配置",
-            "link": "#rooms",
-            "style": "outline",
-            "icon": "⚡"
+            "title": "特色房型",
+            "link": "#room-showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "配套设施",
+            "link": "#hotel-amenities",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
-        ]
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "即刻预订",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#8b5cf6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#8b5cf6",
+        "qhs_hover_bg": "rgba(139,92,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "hotel-amenities",
+      "type": "brand_banner_pro",
       "data": {
-        "amenity_title": "职业级电竞硬件与奢华配套",
-        "amenity_subtitle": "每一个硬件细节都为电竞发烧友深度定制，告别卡顿与掉帧",
-        "amenity_title_color": "#ffffff",
-        "amenity_columns": "4",
-        "amenity_layout": "card",
-        "module_bg_color": "transparent",
-        "amenity_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "为硬核开黑而生的沉浸式赛博电竞酒店",
+        "bb_subtitle": "全房型标配 RTX 5090 顶配水冷主机、360Hz 职业赛事级电竞屏与独享万兆低延迟专线，让每一次团战都快人一步",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "🖥️",
-            "title": "RTX 4090 水冷主机",
-            "desc": "i9 顶配处理器 + 32G DDR5 高频内存，满血输出流畅畅玩 3A 大作。"
+            "text": "立即预订五人黑战队房",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "⚡",
-            "title": "240Hz OLED 电竞屏",
-            "desc": "0.03ms 极限响应速度，G-Sync 防撕裂，带来丝滑顺畅的视觉捕捉。"
-          },
-          {
-            "icon": "🪑",
-            "title": "人体工学电竞椅",
-            "desc": "电竞战队同款零重力支撑椅，长时间高强度开黑舒适不累腰。"
-          },
-          {
-            "icon": "🌐",
-            "title": "千兆独享光纤专线",
-            "desc": "电竞专线独立 IP 双路由备份，游戏内延迟稳定保持 5ms 以内。"
-          },
-          {
-            "icon": "🎧",
-            "title": "7.1 声道全包降噪耳机",
-            "desc": "听声辨位精准无误，高清无噪麦克风，开黑沟通指令清晰传达。"
-          },
-          {
-            "icon": "🥤",
-            "title": "24h 零食能量吧台",
-            "desc": "精酿冷饮、现磨冰美式、特调能量饮料与热食宵夜客房直通配送。"
-          },
-          {
-            "icon": "💨",
-            "title": "独立排烟新风系统",
-            "desc": "大功率无感换气，时刻保持客房空气清新，开黑环境舒适清爽。"
-          },
-          {
-            "icon": "🛏️",
-            "title": "五星级乳胶护脊床垫",
-            "desc": "战斗归来秒入深度睡眠，干湿分离卫浴与定制洗漱备品一应俱全。"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
@@ -145,228 +171,274 @@
     {
       "type": "room-showcase",
       "data": {
-        "room_title": "特色电竞房型展示",
-        "room_subtitle": "从双人羁绊到五人战队开黑，总有一款专属房间适合你和队友",
-        "room_title_color": "#ffffff",
+        "room_title": "战力全开 · 职业级电竞主题房型",
+        "room_subtitle": "针对开黑团战、情侣双排与职业战队集训定制设计，配备五星级床品与隔音私密空间",
         "room_columns": "3",
-        "room_card_style": "standard",
-        "module_bg_color": "transparent",
         "room_items": [
           {
-            "name": "极客五人开黑战队套房",
-            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+            "name": "无畏契约 · 五人黑豪华战队套房",
             "area": "68㎡",
-            "bed_type": "5台 4090电脑 + 3张豪华单人床",
-            "guests": "5人",
-            "price": "¥888",
-            "price_unit": "/晚",
-            "btn_text": "预订房型",
-            "btn_url": "#booking",
-            "amenities": "独立战队对战长桌, 4090顶级水冷, 100寸观赛投影, 独立双卫浴"
+            "bed_type": "2.0m 大床 + 4 独享太空舱单人床",
+            "capacity": "5-6 人",
+            "price": "¥688",
+            "original_price": "¥988",
+            "badge": "开黑首选",
+            "amenities": "RTX 5090 x5 / 360Hz 屏 / 傲风职业电竞椅 / 独立开黑水吧 / 隔音舱体",
+            "desc": "五机并排作战长桌，环绕 RGB 战意流光，配置独立高速淋浴间与零食补给仓",
+            "btn_text": "立即锁定房源",
+            "btn_link": "#book-room"
           },
           {
-            "name": "浪漫情侣/双人开黑豪华大床房",
-            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
-            "area": "42㎡",
-            "bed_type": "2台 4080电脑 + 1.8m乳胶大床",
-            "guests": "2人",
-            "price": "¥468",
-            "price_unit": "/晚",
-            "btn_text": "预订房型",
-            "btn_url": "#booking",
-            "amenities": "双人并排电竞台, 氛围流光RGB, 巨幕高清影院, 智能客控"
-          },
-          {
-            "name": "沉浸式三人开黑先锋套房",
-            "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80",
-            "area": "52㎡",
-            "bed_type": "3台 4080Super电脑 + 3张单人床",
-            "guests": "3人",
-            "price": "¥628",
-            "price_unit": "/晚",
-            "btn_text": "预订房型",
-            "btn_url": "#booking",
-            "amenities": "U型无阻开黑连座, 独立新风排烟, 免费能量饮品, 24h前台管家"
-          }
-        ]
-      }
-    },
-    {
-      "type": "ticket-showcase",
-      "data": {
-        "ticket_title": "通宵开黑特惠与会员权益卡",
-        "ticket_subtitle": "灵活时段选择，无论是通宵血战还是周末连住均享超值折扣",
-        "ticket_title_color": "#ffffff",
-        "ticket_columns": "3",
-        "ticket_card_style": "featured",
-        "module_bg_color": "transparent",
-        "ticket_items": [
-          {
-            "name": "通宵畅玩包夜体验券",
             "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
-            "original_price": "¥220",
-            "price": "¥129",
-            "price_unit": "/张",
-            "tag": "热销",
-            "desc": "适用时段：每日 22:00 至次日 10:00，畅玩 12 小时赠现磨咖啡 1 杯。",
-            "btn_text": "立即抢购",
-            "btn_url": "#",
-            "valid_time": "购买后 30 天内有效"
+            "name": "赛博霓虹 · 甜蜜情侣双人电竞房",
+            "area": "42㎡",
+            "bed_type": "2.0m 慕思定制舒眠大床",
+            "capacity": "2 人",
+            "price": "¥398",
+            "original_price": "¥528",
+            "badge": "情侣热卖",
+            "amenities": "RTX 4080Super x2 / 240Hz 2K 屏 / 100寸4K投影 / 巨幕观影床品 / 智能浴缸",
+            "desc": "浪漫赛博粉蓝光影，双人连座畅玩游戏与4K高清电影无缝切换",
+            "btn_text": "立即锁定房源",
+            "btn_link": "#book-room"
           },
           {
-            "name": "周末战队开黑 3天2晚连住套餐",
-            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
-            "original_price": "¥2188",
-            "price": "¥1588",
-            "price_unit": "/套",
-            "tag": "超值推荐",
-            "desc": "五人开黑战队房周末连住 2 晚，赠送 5 人能量宵夜大礼包与无限续杯饮品。",
-            "btn_text": "立即预订",
-            "btn_url": "#",
-            "valid_time": "需提前 1 天预约锁定房态"
-          },
-          {
-            "name": "VIP 黑金会员储值特权卡",
-            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "original_price": "¥1000",
-            "price": "¥800",
-            "price_unit": "/张",
-            "tag": "充值优惠",
-            "desc": "充值 800 得 1000 元房费额度，专享房型免费升级与免费延迟退房至 14:00。",
-            "btn_text": "立即开卡",
-            "btn_url": "#",
-            "valid_time": "永久有效 · 全国门店通用"
+            "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80",
+            "name": "职业集训 · 封闭式战队集训室",
+            "area": "85㎡",
+            "bed_type": "5 张专业运动员定制支撑床",
+            "capacity": "5 人",
+            "price": "¥888",
+            "original_price": "¥1288",
+            "badge": "战队集训",
+            "amenities": "职业选手专属键鼠外设 / 教练复盘大屏白板 / 万兆专属光纤 / 24h专职管家",
+            "desc": "多支英雄联盟与无畏契约职业青训队指定集训基地，支持整周整月长租协议",
+            "btn_text": "立即锁定房源",
+            "btn_link": "#book-room"
           }
         ]
       }
     },
     {
-      "type": "gallery",
+      "type": "hotel-amenities",
       "data": {
-        "gallery_title": "竞技空间实景画廊",
-        "gallery_subtitle": "流光溢彩的电竞氛围与科技感美学，实地探访每一个酷炫角落",
-        "gallery_title_color": "#ffffff",
-        "gallery_subtitle_color": "rgba(248, 250, 252, 0.75)",
-        "gallery_columns": "3",
-        "module_bg_color": "transparent",
-        "gallery_style": "grid",
-        "gallery_images": [
+        "amenity_title": "硬核硬件与五星级奢享服务保障",
+        "amenity_subtitle": "只用顶级品牌配件，杜绝杂牌缩水硬件，打造无可挑剔的竞技开黑体验",
+        "amenity_items": [
           {
-            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
-            "title": "五人战队对战连座区",
-            "category": "战队套房",
-            "desc": "宽敞操作台面与隐藏式理线，极佳电竞视觉氛围。"
+            "icon": "cpu",
+            "name": "全系 RTX 旗舰级独立显卡",
+            "desc": "全水冷散热系统，3A 大作 4K 极高画质稳定 144FPS 满帧运行",
+            "time": "24 小时恒温保障"
           },
           {
-            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
-            "title": "公共赛事观赛巨幕大厅",
-            "category": "公共区域",
-            "desc": "数百平米电竞文化社交场，百寸激光投影同步直播顶级联赛。"
+            "icon": "wifi",
+            "name": "双路企业级万兆专属光纤",
+            "desc": "三大运营商 BGP 自动智能调度，游戏延迟稳定控制在 5ms 以内",
+            "time": "全天候专线直连"
           },
           {
-            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
-            "title": "情侣开黑双人间氛围灯光",
-            "category": "情侣套房",
-            "desc": "支持多模式色彩律动，打造私密沉浸式二人开黑世界。"
+            "icon": "moon",
+            "name": "五星级慕思零压舒眠床垫",
+            "desc": "高品质高支亲肤纯棉床品与全房遮光降噪帘，激战后秒入深睡",
+            "time": "一客一换一消毒"
+          },
+          {
+            "icon": "coffee",
+            "name": "24h 能量补给站与深夜食堂",
+            "desc": "现磨精选咖啡、特调能量饮品与现煮深夜热食 15 分钟送达客房",
+            "time": "全时段送房服务"
           }
         ]
       }
     },
     {
-      "type": "promotion",
+      "type": "pricing",
       "data": {
-        "ql_promo_title": "近期同城水友赛与观赛活动",
-        "ql_promo_subtitle": "加入电竞发烧友社区，赢取千元奖金与免费住宿券",
-        "ql_promo_title_color": "#ffffff",
-        "ql_promo_subtitle_color": "rgba(248, 250, 252, 0.75)",
-        "ql_promo_layout": "cards",
-        "ql_promo_columns": "2",
-        "ql_promo_show_countdown": "no",
-        "module_bg_color": "transparent",
-        "ql_promo_items": [
+        "pricing_title": "超值畅玩卡与尊享会员特权",
+        "pricing_subtitle": "不管是通宵包夜还是周末连住，越玩越划算",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "name": "启灵杯·英雄联盟同城战队挑战赛",
-            "desc": "冠军奖金 5000 元 + 全队免费入住体验！报名无需门槛，5人组队即可参赛。",
-            "original_price": "¥100",
-            "price": "免费报名",
-            "badge": "奖金丰厚",
-            "btn_text": "立即组队报名",
-            "btn_url": "#",
-            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80"
+            "name": "通宵夜猫畅玩卡",
+            "name_color": "#0f172a",
+            "price": "¥168",
+            "price_color": "#0f172a",
+            "period": "/晚 (22:00-次日12:00)",
+            "desc": "限工作日双人房体验，含双人精选能量饮品与深夜小食",
+            "desc_color": "#64748b",
+            "features": "RTX 4080双人电竞房使用权\n赠送两瓶进口红牛与热食小吃\n延迟至次日中午 13:00 退房\n免费寄存行李与外设消毒",
+            "features_color": "#334155",
+            "btn_text": "立即抢购夜猫卡",
+            "btn_link": "#buy-ticket",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "全球总决赛决战之夜线下观赛狂欢",
-            "desc": "现场啤酒炸鸡免费畅饮，抽奖赠送 4080 显卡与电竞外设盲盒！",
-            "original_price": "¥99",
-            "price": "会员免费入场",
-            "badge": "热门活动",
-            "btn_text": "锁定入场席位",
-            "btn_url": "#",
-            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80"
+            "name": "五人战队周末通票",
+            "name_color": "#0f172a",
+            "price": "¥1,088",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/周末两晚 (五至日)",
+            "desc": "五人黑战队房专属两晚连住，平均每人每晚仅需 100 出头",
+            "desc_color": "#64748b",
+            "features": "五人黑战队套房整周末畅住\n赠送战队披萨炸鸡欢聚套餐一套\n赠送 5 杯特调能量冰饮\n尊享 14:00 延迟退房特权",
+            "features_color": "#334155",
+            "btn_text": "立即预订战队套票",
+            "btn_link": "#buy-ticket",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "超值热卖",
+            "badge": "超值热卖",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "至尊黑金年度 VIP 卡",
+            "name_color": "#0f172a",
+            "price": "¥1,999",
+            "price_color": "#0f172a",
+            "period": "/年卡 (内含充值与特权)",
+            "desc": "专属卡面，充值享 8 折订房特权，优先锁定所有赛事房源",
+            "desc_color": "#64748b",
+            "features": "账户内赠送 ¥2,400 订房消费金\n全年所有房型享 8 折预订特惠\n专属客服一对一优先锁房服务\n免费使用赛事复盘分析系统",
+            "features_color": "#334155",
+            "btn_text": "开通至尊黑金会员",
+            "btn_link": "#buy-ticket",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_items": [
+          {
+            "name": "通宵夜猫畅玩卡",
+            "name_color": "#0f172a",
+            "price": "¥168",
+            "price_color": "#0f172a",
+            "period": "/晚 (22:00-次日12:00)",
+            "desc": "限工作日双人房体验，含双人精选能量饮品与深夜小食",
+            "desc_color": "#64748b",
+            "features": "RTX 4080双人电竞房使用权\n赠送两瓶进口红牛与热食小吃\n延迟至次日中午 13:00 退房\n免费寄存行李与外设消毒",
+            "features_color": "#334155",
+            "btn_text": "立即抢购夜猫卡",
+            "btn_link": "#buy-ticket",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "五人战队周末通票",
+            "name_color": "#0f172a",
+            "price": "¥1,088",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/周末两晚 (五至日)",
+            "desc": "五人黑战队房专属两晚连住，平均每人每晚仅需 100 出头",
+            "desc_color": "#64748b",
+            "features": "五人黑战队套房整周末畅住\n赠送战队披萨炸鸡欢聚套餐一套\n赠送 5 杯特调能量冰饮\n尊享 14:00 延迟退房特权",
+            "features_color": "#334155",
+            "btn_text": "立即预订战队套票",
+            "btn_link": "#buy-ticket",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "超值热卖",
+            "badge": "超值热卖",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "至尊黑金年度 VIP 卡",
+            "name_color": "#0f172a",
+            "price": "¥1,999",
+            "price_color": "#0f172a",
+            "period": "/年卡 (内含充值与特权)",
+            "desc": "专属卡面，充值享 8 折订房特权，优先锁定所有赛事房源",
+            "desc_color": "#64748b",
+            "features": "账户内赠送 ¥2,400 订房消费金\n全年所有房型享 8 折预订特惠\n专属客服一对一优先锁房服务\n免费使用赛事复盘分析系统",
+            "features_color": "#334155",
+            "btn_text": "开通至尊黑金会员",
+            "btn_link": "#buy-ticket",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "booking-entry",
       "data": {
-        "faq_title": "入住与开黑常见疑问",
-        "faq_subtitle": "了解入住流程、硬件设施与相关服务细则",
-        "faq_title_color": "#ffffff",
-        "faq_subtitle_color": "rgba(248, 250, 252, 0.75)",
-        "faq_card_bg": "#111827",
-        "faq_question_color": "#ffffff",
-        "faq_answer_color": "rgba(248, 250, 252, 0.75)",
-        "faq_card_border": "rgba(255, 255, 255, 0.08)",
-        "module_bg_color": "transparent",
-        "faq_items": [
-          {
-            "question": "可以自带自己习惯的鼠标、键盘或耳机吗？",
-            "answer": "完全可以！每个机位均预留了便捷的前置 USB 3.2 拓展接口，即插即用，您可以随时接入自己的专属外设装备。"
-          },
-          {
-            "question": "酒店客房电脑有安装游戏吗？能否自行下载？",
-            "answer": "我们内置了主流无盘电竞系统，预装了百余款热门网游与 Steam/Epic 平台 3A 大作。若需要下载新游戏，千兆光纤专线可在数分钟内快速下载安装完毕。"
-          },
-          {
-            "question": "可以点外卖配送到房间吗？前台提供宵夜吗？",
-            "answer": "可以！外卖可直接送达或由前台机器人配送至房门。前台 24 小时零食吧也提供热腾腾的泡面炸鸡、能量饮料、现磨咖啡与冰淇淋。"
-          },
-          {
-            "question": "预订房间是否需要押金？退房时间是几点？",
-            "answer": "入住无需额外押金，支持快速免押入住。常规退房时间为次日中午 12:00，黑金会员可免费延迟至 14:00 退房。"
-          }
-        ]
+        "entry_title": "今晚立即开黑 · 在线预订尊享首住专属优惠",
+        "entry_subtitle": "新用户注册立领 ¥100 房费抵扣券，免费升级高阶外设套装与双倍积分",
+        "btn_text": "立即在线选房并锁定优惠",
+        "btn_link": "#booking-now",
+        "booking_title": "预订高端电竞套房与开黑主机设备体验",
+        "booking_subtitle": "全场配备 i9 + RTX 4090 顶配水冷主机、360Hz 电竞屏与人体工学电竞椅，千兆专线极速开黑。",
+        "booking_btn_text": "即时预订开黑房型",
+        "booking_phone": "电竞前台热线：027-8888-0000",
+        "booking_time": "24小时全天候营业开黑"
       }
     },
     {
-      "type": "branches",
+      "type": "footer_suite",
       "data": {
-        "branches_title": "场馆位置与交通导航",
-        "branches_subtitle": "地处城市核心商圈，交通极其便利，下楼即是美食街与地铁站",
-        "branches_title_color": "#ffffff",
-        "branches_subtitle_color": "rgba(248, 250, 252, 0.75)",
-        "module_bg_color": "transparent",
-        "branches_list": [
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0b12",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#8b5cf6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "GEEK-ESPORTS · 极客电竞酒店与潮玩沉浸空间",
+        "qfs_brand_desc": "全房型标配 RTX 5080/4090 显卡、360Hz 职业级电竞屏与傲风人体工学电竞椅。千兆光纤独享专线、零卡顿超低延迟，配备零食冷饮冰柜与沉浸式环绕音效。",
+        "qfs_link_groups": [
           {
-            "name": "启灵电竞酒店（旗舰总店）",
-            "address": "市中心核心商圈科技创新大道 88 号电竞数码广场 5-8 层",
-            "phone": "010-88886666",
-            "email": "hotel@qilingesports.com",
-            "hours": "24小时前台服务 · 全天候营业",
-            "tag": "旗舰旗舰店",
-            "map_link": "#"
-          },
-          {
-            "name": "启灵电竞馆（大学城分店）",
-            "address": "大学城青年文创街区 A 座 3 层（地铁 2 号线直达）",
-            "phone": "010-88887777",
-            "email": "campus@qilingesports.com",
-            "hours": "24小时营业 · 学生专享优惠",
-            "tag": "大学城分店",
-            "map_link": "#"
+            "title": "极客房型一览 & 赛事与潮玩配套",
+            "links": "五人黑并肩开黑轰趴套房|#\n双人情侣全景落地窗电竞房|#\n单人极客硬核静音训练舱|#\n全自动沉浸式赛博光影套房|#\n全国高校电竞杯选拔赛报名|#\n职业战队同款外设体验区|#\n深夜电竞食堂与冰镇能量饮|#\n开黑战绩兑换免费房券活动|#"
           }
-        ]
+        ],
+        "qfs_contact_title": "预订订房与电竞赛事咨询",
+        "qfs_contact_items": "订房前台|028-8666-8899|tel:02886668899\n管家微信|188-2800-9988|tel:18828009988\n营业时间|24小时前台值班与电脑硬件驻场维护|#\n酒店地址|成都市成华区建设路钻石广场 4 楼（地铁直达）|#",
+        "qfs_social_title": "电竞潮玩圈",
+        "qfs_social_links": "订房领券小程序|#\n战队组队开黑群|#\n赛事竞猜活动|#\n极客外设评测|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 GEEK-ESPORTS HOTEL. 保留所有权利 · 蜀ICP备19082312号 · 特种行业许可证 510108823901",
+        "qfs_bottom_links": "未成年人入住及上网限制提示|#\n客房设备损毁赔偿标准|#\n入住须知与押金政策|#\n网络安全与实名上网公示|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

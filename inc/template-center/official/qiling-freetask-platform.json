@@ -43,46 +43,118 @@
   },
   "modules": [
     {
-      "type": "hero_search",
+      "type": "header_suite",
       "data": {
-        "hs_height": "85vh",
-        "hs_overlay_color": "rgba(15, 23, 42, 0.72)",
-        "hs_content_align": "center",
-        "hs_bg_items": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "悬赏客",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "type": "image",
-            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80",
-            "video_url": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "hs_bg_autoplay": "yes",
-        "hs_bg_interval": "5000",
-        "hs_title": "发布任务、托管预算、按成果发奖",
-        "hs_title_color": "#ffffff",
-        "hs_title_size": "3.4rem",
-        "hs_subtitle": "适合悬赏任务、招标外包、创意征集和轻量众包场景，把任务审核、积分托管、方案投标、成果验收、奖励发放和争议仲裁放进一个清晰平台。",
-        "hs_subtitle_color": "rgba(255, 255, 255, 0.88)",
-        "hs_show_search": "yes",
-        "hs_search_placeholder": "搜索设计、开发、文案、数据、同城服务任务",
-        "hs_search_btn_text": "查找任务",
-        "hs_search_btn_bg": "linear-gradient(135deg, #2563eb 0%, #059669 100%)",
-        "hs_search_btn_text_color": "#ffffff",
-        "hs_search_btn_hover_bg": "linear-gradient(135deg, #6d28d9 0%, #0e7490 100%)",
-        "hs_search_btn_hover_text_color": "#ffffff",
-        "hs_search_width": "720px",
-        "hs_tags_label": "热门任务：",
-        "hs_tags": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "选购新品",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f59e0b",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f59e0b",
+        "qhs_hover_bg": "rgba(245,158,11,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "链接全球精英创作者 · 极速众包众测任务与数字灵活用工平台",
+        "bb_subtitle": "汇聚 150,000+ 顶尖远程程序员、UI设计师、AI数据标注员与软件测试专家，雇主发包 10 分钟快速响应，资金托管保障，支持合规企业灵活用工发票",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "text": "Logo 设计"
+            "text": "立即发布悬赏众包需求",
+            "url": "#post-task",
+            "style": "primary"
           },
           {
-            "text": "WordPress 二开"
-          },
-          {
-            "text": "短视频剪辑"
-          },
-          {
-            "text": "数据采集"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
@@ -90,204 +162,307 @@
     {
       "type": "stats",
       "data": {
-        "stats_title": "把任务交付数据放在台面上",
-        "stats_subtitle": "任务、投标、成果、奖励和手续费都有独立链路，方便平台持续运营",
-        "stats_text_align": "center",
+        "stats_title": "生态繁荣 · 交付效率与开发者生态看板",
+        "stats_subtitle": "以敏捷协同为纽带，让企业降低 60% 研发人力成本，让自由职业者足不出户赚取丰厚回报",
         "stats_items": [
           {
-            "number": "6",
-            "label": "前台短代码",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "150,000+",
+            "label": "经专业实名技能认证的自由工程师与创作者"
           },
           {
-            "number": "12",
-            "label": "二开事件钩子",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "¥2.8 亿",
+            "label": "平台累计发放任务赏金与项目佣金"
           },
           {
-            "number": "5",
-            "label": "后台审核入口",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "12 分钟",
+            "label": "企业发布悬赏任务后的平均首次接单响应"
           },
           {
-            "number": "100%",
-            "label": "预算托管记录",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.1%",
+            "label": "雇主对最终代码质量与交付满意度"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "多元化数字技能众包与企业用工解决方案",
+        "services_subtitle": "全品类数字任务覆盖，标准化工单驱动，全流程知识产权与源码归属保障",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "bug",
+            "title": "软件众测与安全漏洞挖掘",
+            "desc": "覆盖 1,000+ 款真实手机机型与系统版本，深度排查功能闪退、兼容性与安全漏洞"
+          },
+          {
+            "icon": "database",
+            "title": "AI 大模型数据标注与微调采集",
+            "desc": "海量文本语义标注、图像目标框选、多语种语音转录，提供高质量算法训练数据集"
+          },
+          {
+            "icon": "layout",
+            "title": "UI/UX 原型与交互设计外包",
+            "desc": "专业 Figma 矢量设计、多端自适应响应式规范、全套组件库与设计交付标准"
+          },
+          {
+            "icon": "file-text",
+            "title": "企业灵活用工合规与个税开票",
+            "desc": "解决自由职业者无法开票难题，平台代扣代缴个人所得税，合规开具 6% 增值税专票"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "灵活悬赏套餐与创作者会员方案",
+        "pricing_subtitle": "按需选配，透明费率，任务不满意支持免费重新匹配创作者",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "单任务急速悬赏包 (雇主首选)",
+            "name_color": "#0f172a",
+            "price": "自由定价 ¥100 起",
+            "price_color": "#0f172a",
+            "period": "/最快 1 小时收稿",
+            "desc": "适合 Logo 设计、小脚本编写、文案翻译、单页切图等短期轻量任务",
+            "desc_color": "#64748b",
+            "features": "资金全额托管至平台，验收通过才放款\\n自动推送给评分前 10% 的活跃专业创作者\\n支持设置多家比稿选优模式\\n免费提供平台标准版权转让电子协议",
+            "features_color": "#334155",
+            "btn_text": "发布轻量任务",
+            "btn_link": "#post-task",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "项目制专职团队外包 (按月/按里程碑)",
+            "name_color": "#0f172a",
+            "price": "¥8,000 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/专职远程团队深度交付",
+            "desc": "适合 App 开发、微信小程序全案、企业官网定制与系统架构重构",
+            "desc_color": "#64748b",
+            "features": "平台指派资深项目经理 (PM) 驻群督导推进\\n里程碑分阶段分批次冻结与验收放款\\n全套源码交付并通过自动化代码质量扫描\\n提供交付后 30 天免费 Bug 修复维护保障",
+            "features_color": "#334155",
+            "btn_text": "定制项目团队",
+            "btn_link": "#post-task",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "开发团队",
+            "badge": "开发团队",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "创作者金牌专业会员 (开发者/设计师)",
+            "name_color": "#0f172a",
+            "price": "¥98",
+            "price_color": "#0f172a",
+            "period": "/月 (包年立减 30%)",
+            "desc": "适合远程全职或兼职自由职业者，享受低佣金与优先派单特权",
+            "desc_color": "#64748b",
+            "features": "提现手续费立减 50% 专属特权\\n优质高额项目专享提前 2 小时抢单通道\\n主页获得“认证技术专家”金色尊享徽章\\n赠送企业级云端代码评审与测试辅助工具",
+            "features_color": "#334155",
+            "btn_text": "开通金牌创作者",
+            "btn_link": "#join-freelancer",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #1e1b4b 0%, #4338ca 52%, #0284c7 100%)",
-        "stats_title_color": "#ffffff",
-        "module_padding_top": "82px",
-        "module_padding_bottom": "82px",
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "features_list",
-      "data": {
-        "title": "悬赏任务平台能力",
-        "subtitle": "按招标人、服务者和平台管理员三类角色组织功能说明",
-        "columns": "3",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "82px",
-        "module_padding_bottom": "82px",
-        "tabs": [
+        "pricing_items": [
           {
-            "tab_id": "publisher",
-            "tab_title": "招标人",
-            "tab_icon": "发",
-            "features": "审|任务先审核|发布后进入平台审核，避免垃圾任务直接出现在大厅。\n托|预算积分托管|发布时扣除预算积分和手续费，预算进入托管池。\n选|单人/多人中标|可从投标方案中选择一个或多个中标人。\n验|成果审核|对文字、截图、附件、视频、联系方式或线下位置等成果进行审核。"
+            "name": "单任务急速悬赏包 (雇主首选)",
+            "name_color": "#0f172a",
+            "price": "自由定价 ¥100 起",
+            "price_color": "#0f172a",
+            "period": "/最快 1 小时收稿",
+            "desc": "适合 Logo 设计、小脚本编写、文案翻译、单页切图等短期轻量任务",
+            "desc_color": "#64748b",
+            "features": "资金全额托管至平台，验收通过才放款\\n自动推送给评分前 10% 的活跃专业创作者\\n支持设置多家比稿选优模式\\n免费提供平台标准版权转让电子协议",
+            "features_color": "#334155",
+            "btn_text": "发布轻量任务",
+            "btn_link": "#post-task",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "tab_id": "worker",
-            "tab_title": "服务者",
-            "tab_icon": "接",
-            "features": "投|提交投标方案|服务者可在任务详情页提交方案和报价说明。\n交|提交成果|中标后按任务要求提交成果资料和附件。\n奖|奖励发放|成果通过后由平台管理员统一发放任务积分。\n转|积分转余额|支持前台提交任务积分转换可提现余额申请。"
+            "name": "项目制专职团队外包 (按月/按里程碑)",
+            "name_color": "#0f172a",
+            "price": "¥8,000 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/专职远程团队深度交付",
+            "desc": "适合 App 开发、微信小程序全案、企业官网定制与系统架构重构",
+            "desc_color": "#64748b",
+            "features": "平台指派资深项目经理 (PM) 驻群督导推进\\n里程碑分阶段分批次冻结与验收放款\\n全套源码交付并通过自动化代码质量扫描\\n提供交付后 30 天免费 Bug 修复维护保障",
+            "features_color": "#334155",
+            "btn_text": "定制项目团队",
+            "btn_link": "#post-task",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "开发团队",
+            "badge": "开发团队",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "tab_id": "operator",
-            "tab_title": "平台运营",
-            "tab_icon": "管",
-            "features": "账|手续费台账|平台记录手续费收入逻辑项，并提供月度统计报表。\n裁|争议仲裁|成果驳回后可申诉，平台可维持驳回或做仲裁。\n通|站内通知|对接启灵主题通知中心，覆盖任务发布、审核、投标、选标和发奖。\n钩|二开钩子|提供任务创建、审核、投标、中标、成果、发奖、取消和争议事件。"
+            "name": "创作者金牌专业会员 (开发者/设计师)",
+            "name_color": "#0f172a",
+            "price": "¥98",
+            "price_color": "#0f172a",
+            "period": "/月 (包年立减 30%)",
+            "desc": "适合远程全职或兼职自由职业者，享受低佣金与优先派单特权",
+            "desc_color": "#64748b",
+            "features": "提现手续费立减 50% 专属特权\\n优质高额项目专享提前 2 小时抢单通道\\n主页获得“认证技术专家”金色尊享徽章\\n赠送企业级云端代码评审与测试辅助工具",
+            "features_color": "#334155",
+            "btn_text": "开通金牌创作者",
+            "btn_link": "#join-freelancer",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "process",
+      "type": "cases",
       "data": {
-        "process_title": "从发布任务到奖励发放",
-        "process_subtitle": "把预算、投标、成果、发奖和退款拆成可运营的流程",
-        "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
-        "process_items": [
+        "cases_title": "实战标杆 · 助力知名企业与创作者实现共赢",
+        "cases_subtitle": "以分布式协同重塑生产力，见证无数高质量项目的敏捷落地",
+        "cases_columns": "4",
+        "cases_items": [
           {
-            "icon": "01",
-            "title": "发布并审核任务",
-            "desc": "招标人填写任务需求、预算和交付标准，平台先审核再展示。",
-            "stage_tag": "发布"
+            "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80",
+            "title": "某知名短视频平台新版兼容性众测",
+            "desc": "300 位众测工程师 48 小时内提交 128 个高危兼容性 Bug，有力保障全国大版本首发平稳上线",
+            "link": "#case-detail"
           },
           {
-            "icon": "02",
-            "title": "扣除预算与手续费",
-            "desc": "发布时自动扣预算积分和手续费，预算积分进入托管池，手续费进入平台收入逻辑项。",
-            "stage_tag": "托管"
+            "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80",
+            "title": "医疗大模型 50 万条中英文对话问答精标",
+            "desc": "组织 80 位医学生与专业标注员，以高达 99.6% 的准确率交付高质量多轮问答标注数据集",
+            "link": "#case-detail"
           },
           {
-            "icon": "03",
-            "title": "投标、选标与交付",
-            "desc": "参与者提交投标方案，招标人选择中标人，中标人提交文字、截图、附件、视频或线下位置等成果。",
-            "stage_tag": "交付"
+            "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
+            "title": "跨境电商 SaaS 平台从原型到全套 UI 交付",
+            "desc": "由资深远程 UI 专家耗时 3 周完成超 200 个复杂交互页面设计，开发直接导入 Figma 设计稿",
+            "link": "#case-detail"
           },
           {
-            "icon": "04",
-            "title": "审核、发奖与仲裁",
-            "desc": "成果通过后后台统一发奖；驳回后可申诉，平台根据材料进行争议仲裁。",
-            "stage_tag": "结算"
+            "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80",
+            "title": "全栈独立开发者单月接单收入突破 8 万元",
+            "desc": "凭借过硬的 Golang 与前端全栈开发能力，承接多个企业海外爬虫与自动化测试定制项目",
+            "link": "#case-detail"
           }
         ]
       }
     },
     {
-      "type": "category_tabs",
+      "type": "team",
       "data": {
-        "tabs_title": "任务频道示例",
-        "tabs_subtitle": "导入后可把这些频道绑定到真实文章分类、任务专题或任务大厅筛选入口",
-        "tabs_source_mode": "manual",
-        "columns": "4",
-        "post_count": "8",
-        "image_aspect_ratio": "16:9",
-        "show_date": "yes",
-        "show_author": "no",
-        "show_views": "yes",
-        "show_category_badge": "yes",
-        "padding_top": "80px",
-        "padding_bottom": "80px",
-        "more_btn_type": "link",
-        "bg_color": "#ffffff",
-        "tabs_list": [
+        "team_title": "金牌认证开发者与创作者领军达人榜",
+        "team_subtitle": "通过严格代码评测与实操项目考核，综合评价星级在 4.95 以上的顶级远程专家",
+        "team_columns": "4",
+        "team_items": [
           {
-            "tab_name": "设计创意",
-            "source_type": "category",
-            "source_id": ""
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "Alex 柴工",
+            "role": "全栈架构师 / 前一线互联网大厂 P8",
+            "desc": "精通微服务、K8s与高并发分布式架构，累计在平台完成 60+ 复杂后端企业级项目交付"
           },
           {
-            "tab_name": "开发技术",
-            "source_type": "category",
-            "source_id": ""
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "梁晨晨",
+            "role": "资深安全测试总监 / 资深白帽黑客",
+            "desc": "CNVD 国家信息安全漏洞库专家，累计为 200+ 知名企业挖掘修补严重逻辑越权漏洞"
           },
           {
-            "tab_name": "内容运营",
-            "source_type": "category",
-            "source_id": ""
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+            "name": "Vivian 苏",
+            "role": "高级交互设计师 / 站酷千万人气设计师",
+            "desc": "善于将复杂金融与 B2B 工业业务逻辑转化为极简清爽的现代界面，作品多次入选 Dribbble 榜单"
           },
           {
-            "tab_name": "同城服务",
-            "source_type": "category",
-            "source_id": ""
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "马天佑",
+            "role": "AI 提示词工程与数据标注专家 / 语言学硕士",
+            "desc": "主导过多款主流大语言模型在多行业垂类的微调语料清洗与 Reinforcement Learning 标注"
           }
         ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "contact",
       "data": {
-        "testimonials_title": "平台用户反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "1200+",
-        "average_rating": "4.8",
-        "testimonials_items": [
+        "contact_title": "与 悬赏任务众包官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0e18",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f59e0b",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "FREETASK-HUB · 启灵众包任务与灵活用工协同平台",
+        "qfs_brand_desc": "连接百万优秀开发者、设计师、文案创作者与企业外包需求。通过预算托管、成果交付评审及自动化结算，让自由职业者无忧接单，企业降本增效灵活调配智力资源。",
+        "qfs_link_groups": [
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "任务发布方",
-            "position": "本地服务品牌",
-            "content": "预算先托管，投标方案集中看，交付审核也有记录。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "设计接单人",
-            "position": "自由职业者",
-            "content": "中标、交付、发奖节点清楚，任务积分转换也方便。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "平台运营",
-            "position": "众包平台管理员",
-            "content": "审核、手续费台账、争议仲裁这些后台入口很适合做平台治理。",
-            "rating": "5",
-            "verified": "verified"
+            "title": "任务大厅分类 & 雇主与接单保障",
+            "links": "软件开发与小程序网站定制|#\nUI/UX 界面设计与品牌视觉|#\n新媒体文案与商业软文撰写|#\n数据标注与人工智能训练采集|#\n雇主发包与预算托管安全流程|#\n服务商技能实名认证与段位体系|#\n不满意全额退款保障服务标准|#\n自由职业者个税合规代报代缴|#"
           }
         ],
-        "testimonials_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "cta",
-      "data": {
-        "cta_title": "把需求发布和人才交付做成一个闭环平台",
-        "cta_subtitle": "替换任务大厅、任务发布、我的任务、我的投标和积分转换页面链接，就能把启灵悬赏任务包装成可运营的众包官网。",
-        "cta_button_text": "配置任务大厅入口",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #1e1b4b 0%, #4338ca 60%, #312e81 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#4338ca",
-        "cta_button_text_color": "#ffffff"
+        "qfs_contact_title": "发包咨询与客服申诉直通",
+        "qfs_contact_items": "平台热线|400-880-2277|tel:4008802277\n纠纷申诉|dispute@freetask-hub.com|mailto:dispute@freetask-hub.com\n在线客服|周一至周日 8:30 - 22:30（急速受理仲裁）|#\n运营总部|北京市海淀区上地信息产业基地开拓路 1 号 4 层|#",
+        "qfs_social_title": "自由职业空间",
+        "qfs_social_links": "接单发包小程序|#\n自由职业者访谈|#\n高薪任务速递号|#\n技能变现训练营|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 FREETASK PLATFORM. 保留所有权利 · 京ICP备18012932号 · 增值电信业务经营许可证 B2-20260199",
+        "qfs_bottom_links": "灵活用工平台服务协议|#\n任务成果版权归属约定|#\n平台保证金与佣金规则|#\n违约惩处与信用黑名单|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

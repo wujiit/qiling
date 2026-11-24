@@ -303,13 +303,14 @@ function scopeCssBlock(blockText, scope) {
 
   const prelude = blockText.slice(0, openIndex).trim();
   const body = blockText.slice(openIndex + 1, closeIndex);
-  if (/^@(media|supports|container|layer|document)\b/i.test(prelude)) {
+  const cleanPrelude = prelude.replace(/\/\*[\s\S]*?\*\//g, '').trim();
+  if (/^@(media|supports|container|layer|document)\b/i.test(cleanPrelude)) {
     const nested = parseTopLevelBlocks(body)
       .map((nestedBlock) => scopeCssBlock(nestedBlock.text, scope))
       .join('');
     return `${prelude}{${nested}}`;
   }
-  if (/^@(keyframes|-webkit-keyframes|font-face|property|page)\b/i.test(prelude)) {
+  if (/^@(keyframes|-webkit-keyframes|font-face|property|page)\b/i.test(cleanPrelude)) {
     return blockText;
   }
 

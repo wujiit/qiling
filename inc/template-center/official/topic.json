@@ -41,65 +41,67 @@
   },
   "modules": [
     {
-      "type": "featured_posts",
-      "data": {
-        "fp_title": "专题导读",
-        "fp_layout": "magazine",
-        "fp_slider_ratio": "70",
-        "fp_slider_height": "440px",
-        "fp_autoplay": "yes",
-        "fp_interval": "5000",
-        "fp_effect": "fade",
-        "fp_show_arrows": "yes",
-        "fp_show_dots": "yes",
-        "fp_slider_source": "latest",
-        "fp_slider_count": "6",
-        "fp_list_source": "latest",
-        "fp_list_count": "6",
-        "fp_deduplicate": "yes",
-        "fp_badge_type": "featured",
-        "fp_show_category": "yes",
-        "fp_show_date": "yes",
-        "fp_show_excerpt": "yes",
-        "fp_show_views": "yes",
-        "fp_show_reading_time": "yes"
-      }
-    },
-    {
       "type": "category_tabs",
       "data": {
-        "tabs_title": "热门标签聚合",
-        "tabs_subtitle": "按标签快速切换浏览本专题内容",
-        "tabs_source_mode": "auto_hot_tags",
-        "tabs_auto_tag_count": "8",
-        "tabs_auto_min_count": "1",
-        "post_count": "8",
-        "columns": "4",
-        "show_date": "yes",
-        "show_author": "no",
-        "show_views": "yes",
-        "show_category_badge": "no",
-        "more_btn_type": "ajax"
+        "tabs_title": "重磅深度专题矩阵 · 聚焦时代命题",
+        "tabs_subtitle": "从人工智能、绿色双碳到高端制造，穿透产业底层逻辑与技术演进"
       }
     },
     {
-      "type": "blog",
+      "type": "featured_posts",
       "data": {
-        "blog_title": "专题文章流",
-        "blog_layout_style": "magazine",
-        "blog_columns": "3",
-        "blog_data_source": "latest",
-        "blog_count": "12",
-        "blog_orderby": "date",
-        "blog_show_image": "yes",
-        "blog_show_excerpt": "yes",
-        "blog_excerpt_length": "60",
-        "blog_show_category": "yes",
-        "blog_show_date": "yes",
-        "blog_show_views": "yes",
-        "blog_show_reading_time": "yes",
-        "blog_read_more_text": "继续阅读",
-        "blog_enable_pagination": "yes"
+        "title": "年度领航专题特刊 · 深度全景解构",
+        "subtitle": "汇聚顶尖产业科学家、投资合伙人与工程总架构师的系统化洞察"
+      }
+    },
+    {
+      "type": "qiling_main_category_content",
+      "data": {
+        "mcc_title": "前沿科技与颠覆性产业专题专区",
+        "mcc_subtitle": "包含上下游供应链图谱、核心专利拆解与真实战例分析",
+        "mcc_show_subcategories": "1",
+        "mcc_posts_per_page": 6
+      }
+    },
+    {
+      "type": "knowledge_cards",
+      "data": {
+        "title": "专题核心原理与知识拓扑图谱",
+        "subtitle": "拆解关键技术节点，建立结构化认知坐标系"
+      }
+    },
+    {
+      "type": "query_loop",
+      "data": {
+        "ql_title": "往期专题文献与深度研报档案库",
+        "ql_subtitle": "支持在线全文检索与关键论据引用",
+        "ql_count": 6,
+        "ql_columns": "3",
+        "ql_orderby": "date"
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "订阅启灵专题智库 · 把握产业先机",
+        "cta_subtitle": "每周向您的邮箱推送最新专题研究长文、独家访谈实录与高清产业链思维导图。",
+        "cta_btn_text": "免费订阅专题通讯",
+        "cta_btn_link": "#subscribe"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0e1017",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#eab308",
+        "qfs_brand_title": "TOPIC-RADAR · 深度专题策划与产业前瞻聚焦",
+        "qfs_brand_desc": "以宏大视野与精细颗粒度解构时代命题，为商业决策者提供不可替代的思想罗盘。",
+        "qfs_bottom_text": "© 2026 TOPIC-RADAR THINK TANK. 保留所有权利 · 京ICP备17098231号"
       }
     }
   ]

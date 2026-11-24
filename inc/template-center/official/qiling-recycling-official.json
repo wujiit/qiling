@@ -43,220 +43,367 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 50%, #0284c7 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "绿环回收",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1800&q=80",
-            "title": "让闲置物品回收更透明、更好预约",
-            "subtitle": "多品类估价、上门到店邮寄三种交付方式、复核结算和订单跟进，一页完成客户信任建立。",
-            "btn_text": "立即估价预约",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#059669"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#16a34a",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#16a34a",
+        "qhs_hover_bg": "rgba(22,163,74,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "闲置循环 · 点石成金 · 专业全品类数码与电子设备回收平台",
+        "bb_subtitle": "顺丰免费双向包邮取件，自主研发智能质检机器人与全流程录像验机，军工级彻底粉碎数据隐私，验机通过后 1 秒极速打款到账",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "01",
-            "number": "6 类",
-            "label": "热门回收品类",
-            "color": "#ffffff"
+            "text": "立即在线精准评估手机/电脑残值",
+            "url": "#evaluate",
+            "style": "primary"
           },
           {
-            "icon": "02",
-            "number": "30 分钟",
-            "label": "初步响应",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "03",
-            "number": "3 种",
-            "label": "交付方式",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "04",
-            "number": "100%",
-            "label": "明细报价",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "热门回收品类",
-        "services_subtitle": "覆盖数码、家电、奢品、金属和企业闲置资产等高频回收场景",
-        "services_bg_color": "#ffffff",
+        "services_title": "规范严谨的二手回收与数据安全保障矩阵",
+        "services_subtitle": "从在线一键精准估价到旧机环保拆解，全流程阳光透明可追溯",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "数码回收",
-            "desc": "手机、平板、电脑、相机和智能设备估价回收。",
-            "link": "#"
+            "icon": "search",
+            "title": "AI 智能多维度精准估价",
+            "desc": "结合各大手机官方折旧残值算法，仅需勾选成色选项即可获得行业公允真实报价"
           },
           {
-            "icon": "02",
-            "title": "家电回收",
-            "desc": "空调、冰箱、洗衣机、电视和厨电上门回收。",
-            "link": "#"
+            "icon": "truck",
+            "title": "顺丰上门免费取件保价",
+            "desc": "全国范围内顺丰小哥 1 小时上门取件，全程由顺丰高额保价，运输损坏全额赔付"
           },
           {
-            "icon": "03",
-            "title": "奢品回收",
-            "desc": "箱包、腕表、首饰和潮流单品鉴定回收。",
-            "link": "#"
+            "icon": "shield-check",
+            "title": "军工级数据多重粉碎抹除",
+            "desc": "专业写入全零覆写算法，杜绝二手手机恢复出厂设置后照片通信录被恶意恢复的风险"
           },
           {
-            "icon": "04",
-            "title": "企业闲置",
-            "desc": "办公设备、批量旧货和库存资产统一评估处理。",
-            "link": "#"
+            "icon": "building",
+            "title": "企业大宗 IT 资产阳光处置",
+            "desc": "针对公司闲置笔记本、服务器、办公打印机提供上门批量清点、资产残值评估与合规发票"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "标准回收流程",
-        "process_subtitle": "把估价、交付、复核和结算流程讲清楚，减少客户咨询成本",
+        "process_title": "回收服务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "在线估价",
-            "desc": "选择品类、品牌、型号和成色，获得初步参考价。",
-            "stage_tag": "估价"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "选择方式",
-            "desc": "支持上门、到店、邮寄和批量回收服务安排。",
-            "stage_tag": "预约"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "质检复核",
-            "desc": "门店或质检人员按标准核验外观、功能和配件。",
-            "stage_tag": "复核"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "确认结算",
-            "desc": "客户确认最终报价后完成结算，并同步订单状态。",
-            "stage_tag": "结算"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "限时加价福利券包与换新专属补贴",
+        "pricing_subtitle": "旧机抵扣换新立享大额加价特惠，最高可获额外 15% 现金补贴",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "单品旧机极速变现包 (手机/平板)",
+            "name_color": "#0f172a",
+            "price": "加价 10%",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/在线领券即享额外加价",
+            "desc": "适合各类苹果、华为、小米等品牌旧手机、平板电脑快速闲置变现",
+            "desc_color": "#64748b",
+            "features": "估价满 1,000 元自动叠加 100 元加价券\\n顺丰上门双向包邮无需支付任何运费\\n提供官方权威电子质检报告与清盘证书\\n验机不满意免费顺丰寄回原机不收费",
+            "features_color": "#334155",
+            "btn_text": "领取加价券并估价",
+            "btn_link": "#apply-coupon",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "用户最爱",
+            "badge": "用户最爱",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "硬核数码以旧换新套餐 (跨品类抵扣)",
+            "name_color": "#0f172a",
+            "price": "补贴 ¥300 起",
+            "price_color": "#0f172a",
+            "period": "/折抵新机差价补尾款",
+            "desc": "支持旧手机抵扣选购全新正品数码，差价补足即可闪电发货",
+            "desc_color": "#64748b",
+            "features": "专享品牌官方换新额外大额梯度补贴\\n新机支持 7 天无理由退换及全国联保\\n顺丰派送新机时现场完成旧机无缝交接\\n支持全品牌旧机残值跨品牌跨品类抵扣",
+            "features_color": "#334155",
+            "btn_text": "去以旧换新商城",
+            "btn_link": "#apply-coupon",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "企业批量 IT 资产处置服务",
+            "name_color": "#0f172a",
+            "price": "大宗高残值估价",
+            "price_color": "#0f172a",
+            "period": "/专人专车上门清点",
+            "desc": "适合科技公司、金融机构每年批量淘汰更新的 50 台以上办公电脑与服务器",
+            "desc_color": "#64748b",
+            "features": "资深质检工程师带队上门现场开机查验\\n出具国家认可的企业资产处置正规评估报告\\n现场出具数据安全销毁证书与环保资质报告\\n支持对公账户极速转账与全额增值税专用发票",
+            "features_color": "#334155",
+            "btn_text": "申请企业大宗评估",
+            "btn_link": "#apply-coupon",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "module_bg_color": "#f0fdf4"
+        "pricing_items": [
+          {
+            "name": "单品旧机极速变现包 (手机/平板)",
+            "name_color": "#0f172a",
+            "price": "加价 10%",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/在线领券即享额外加价",
+            "desc": "适合各类苹果、华为、小米等品牌旧手机、平板电脑快速闲置变现",
+            "desc_color": "#64748b",
+            "features": "估价满 1,000 元自动叠加 100 元加价券\\n顺丰上门双向包邮无需支付任何运费\\n提供官方权威电子质检报告与清盘证书\\n验机不满意免费顺丰寄回原机不收费",
+            "features_color": "#334155",
+            "btn_text": "领取加价券并估价",
+            "btn_link": "#apply-coupon",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "用户最爱",
+            "badge": "用户最爱",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "硬核数码以旧换新套餐 (跨品类抵扣)",
+            "name_color": "#0f172a",
+            "price": "补贴 ¥300 起",
+            "price_color": "#0f172a",
+            "period": "/折抵新机差价补尾款",
+            "desc": "支持旧手机抵扣选购全新正品数码，差价补足即可闪电发货",
+            "desc_color": "#64748b",
+            "features": "专享品牌官方换新额外大额梯度补贴\\n新机支持 7 天无理由退换及全国联保\\n顺丰派送新机时现场完成旧机无缝交接\\n支持全品牌旧机残值跨品牌跨品类抵扣",
+            "features_color": "#334155",
+            "btn_text": "去以旧换新商城",
+            "btn_link": "#apply-coupon",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "企业批量 IT 资产处置服务",
+            "name_color": "#0f172a",
+            "price": "大宗高残值估价",
+            "price_color": "#0f172a",
+            "period": "/专人专车上门清点",
+            "desc": "适合科技公司、金融机构每年批量淘汰更新的 50 台以上办公电脑与服务器",
+            "desc_color": "#64748b",
+            "features": "资深质检工程师带队上门现场开机查验\\n出具国家认可的企业资产处置正规评估报告\\n现场出具数据安全销毁证书与环保资质报告\\n支持对公账户极速转账与全额增值税专用发票",
+            "features_color": "#334155",
+            "btn_text": "申请企业大宗评估",
+            "btn_link": "#apply-coupon",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
       "type": "branches",
       "data": {
-        "branches_title": "服务网点与覆盖区域",
-        "branches_subtitle": "展示门店、上门城市和可承接的回收方式",
+        "branches_title": "全国直营质检检验中心与环保再生基地",
+        "branches_subtitle": "严选现代化工业园设立智能质检仓储中心，保障全国顺丰快件次日达即检",
         "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "查看网点",
-        "booking_button_text": "预约回收",
         "branches_list": [
           {
-            "name": "市中心回收门店",
-            "city": "上海",
-            "status": "open",
-            "address": "上海市静安区示例路 88 号",
-            "phone": "021-60000001",
-            "email": "recycle@example.com",
-            "hours": "09:00-20:00",
-            "services": "数码,奢品,到店回收",
-            "transport": "地铁 2 号线步行 8 分钟",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80"
+            "name": "华东智能质检总仓 (昆山环保产业园)",
+            "city": "昆山市",
+            "status": "运营中 (日处理 30,000 台)",
+            "address": "昆山高新区中华园西路 1888 号循环经济产业园 3 号仓",
+            "phone": "400-880-9966",
+            "email": "east-warehouse@qiling-recycle.com",
+            "hours": "全自动流水线 24 小时恒温质检",
+            "services": "顺丰快件接收 / 4K录像验机 / 数据军工级覆写清零",
+            "transport": "毗邻昆山高铁南站与顺丰华东枢纽",
+            "image": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "name": "社区上门服务站",
-            "city": "杭州",
-            "status": "open",
-            "address": "杭州市西湖区示例街 66 号",
-            "phone": "0571-60000002",
-            "email": "hangzhou@example.com",
-            "hours": "09:00-19:00",
-            "services": "家电,旧物,上门回收",
-            "transport": "覆盖主城区上门服务",
-            "lat": "30.2741",
-            "lng": "120.1551",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80"
+            "name": "华南深圳宝安前海数码流转基地",
+            "city": "深圳市",
+            "status": "运营中 (大湾区极速验机)",
+            "address": "宝安区福海街道桥和路中粮机器人智造产业园 B 栋",
+            "phone": "0755-8899-2233",
+            "email": "south-warehouse@qiling-recycle.com",
+            "hours": "全自动流水线 24 小时恒温质检",
+            "services": "华南数码回收 / 手机以旧换新 / 进出口保税拆解",
+            "transport": "地铁 11 号线福永站步行 600 米",
+            "image": "https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "name": "企业批量回收中心",
-            "city": "苏州",
-            "status": "coming",
-            "address": "苏州市工业园区示例大道 99 号",
-            "phone": "0512-60000003",
-            "email": "business@example.com",
-            "hours": "预约制服务",
-            "services": "办公设备,库存资产,批量回收",
-            "transport": "支持企业预约评估",
-            "lat": "31.2989",
-            "lng": "120.5853",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "客户评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "5000+",
-        "average_rating": "4.9",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "周女士",
-            "position": "数码回收客户",
-            "content": "估价和复核说明都很清楚，最终报价也有明细。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "林先生",
-            "position": "门店客户",
-            "content": "到店检测速度很快，订单状态能及时看到。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "许女士",
-            "position": "家电回收客户",
-            "content": "上门时间准，搬运和结算流程都比较规范。",
-            "rating": "5",
-            "verified": "verified"
+            "name": "华北北京亦庄绿色再制造示范基地",
+            "city": "北京市",
+            "status": "运营中 (企业IT资产清点中心)",
+            "address": "北京经济技术开发区经海四路 25 号院 8 号楼",
+            "phone": "010-8588-1122",
+            "email": "north-warehouse@qiling-recycle.com",
+            "hours": "周一至周五 9:00 - 18:00 (支持上门)",
+            "services": "企业旧电脑批量回收 / 服务器残值核定 / 涉密硬盘物理消磁",
+            "transport": "地铁亦庄线经海路站出站即达",
+            "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80"
           }
         ]
       }
@@ -264,38 +411,56 @@
     {
       "type": "faq",
       "data": {
-        "faq_title": "回收服务常见问题",
-        "module_bg_color": "#f0fdf4",
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
         "faq_items": [
           {
-            "question": "在线估价就是最终回收价吗？",
-            "answer": "在线估价是参考价，最终价格会根据实物成色、功能状态、配件和市场行情复核确认。"
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
           },
           {
-            "question": "支持上门、到店和邮寄三种方式吗？",
-            "answer": "可以按城市和品类配置不同交付方式，门店回收、预约上门和邮寄回收都可以在页面中承接。"
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
           },
           {
-            "question": "批量回收怎么处理？",
-            "answer": "企业闲置资产和批量旧货可先提交清单，服务顾问会安排专人评估、报价和交付计划。"
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
           }
         ]
       }
     },
     {
-      "type": "booking-entry",
+      "type": "contact",
+      "data": {}
+    },
+    {
+      "type": "footer_suite",
       "data": {
-        "booking_title": "预约回收估价",
-        "booking_subtitle": "提交回收品类、型号、成色和服务城市，回收顾问会确认估价与交付安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "服务承诺",
-        "sidebar_content": "估价明细透明可核对\n支持上门、到店和邮寄交付\n订单状态和结算记录可持续跟进",
-        "contact_phone": "400-620-2026",
-        "contact_hours": "09:00-20:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#ffffff"
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#081510",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#16a34a",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "GREEN-CYCLE · 启灵绿色资源回收与循环经济网络",
+        "qfs_brand_desc": "推动闲置资源与工业废旧物资绿色再生。提供企业旧服务器/废旧电脑批量回收、金属与塑料废料规范拆解、居民废旧家电上门有偿搬运，践行低碳零废城市理念。",
+        "qfs_link_groups": [
+          {
+            "title": "回收业务范围 & 环保资质与证明",
+            "links": "企业 IT 资产批量回收与数据销毁|#\n废旧中央空调与商用设备拆卸|#\n工业废铜废铝有色金属大宗回收|#\n居民废旧家电上门预约极速清运|#\n危废经营与规范拆解环保许可证|#\n涉密数据消磁粉碎权威销毁证明|#\n大宗物资电子过磅明细透明结算|#\n碳减排量核算证书发放通道|#"
+          }
+        ],
+        "qfs_contact_title": "大宗回收报价与上门看货预约",
+        "qfs_contact_items": "回收热线|400-880-5500|tel:4008805500\n大宗业务经理|138-0000-5522|tel:13800005522\n接单时间|周一至周日 7:30 - 19:30（全城即时上门）|#\n拆解基地|江苏省无锡市惠山区静脉产业园绿色循环路 8 号|#",
+        "qfs_social_title": "绿色低碳生活",
+        "qfs_social_links": "回收估价小程序|#\n环保碳积分商城|#\n低碳零废科普|#\n企业资产变现指南|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 GREEN-CYCLE RECYCLING. 保留所有权利 · 苏ICP备17039211号 · 废弃电器电子产品处理资格许可",
+        "qfs_bottom_links": "再生资源回收经营备案证书|#\n涉密硬盘数据永久清除协议|#\n安全拆解与防漏油环保规范|#\n大宗物资交割结算细则|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

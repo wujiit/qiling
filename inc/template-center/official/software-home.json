@@ -43,199 +43,145 @@
   },
   "modules": [
     {
-      "type": "hero_search",
+      "type": "header_suite",
       "data": {
-        "hs_height": "large",
-        "hs_title": "发现好用的软件和 App",
-        "hs_subtitle": "集中展示软件版本、适配平台、下载入口和更新内容",
-        "hs_bg_items": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵软件",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "type": "image",
-            "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
-            "video_url": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#software_carousel",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资料下载",
+            "link": "#downloads",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "立即行动",
+            "link": "#cta",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "hs_bg_overlay": "yes",
-        "hs_overlay_opacity": "62",
-        "hs_search_placeholder": "搜索软件名、平台、功能关键词...",
-        "hs_search_btn_bg": "linear-gradient(135deg, #2563eb 0%, #14b8a6 100%)",
-        "hs_tags": [
-          {
-            "text": "Windows"
-          },
-          {
-            "text": "macOS"
-          },
-          {
-            "text": "Android"
-          },
-          {
-            "text": "效率工具"
-          },
-          {
-            "text": "热门更新"
-          }
-        ],
-        "hs_title_color": "#ffffff",
-        "hs_subtitle_color": "rgba(255,255,255,0.82)",
-        "hs_tags_bg": "rgba(255,255,255,0.14)",
-        "hs_tags_color": "#ffffff",
-        "hs_overlay_color": "rgba(15, 23, 42, 0.72)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "免费试用",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
       "type": "software_carousel",
       "data": {
-        "software_carousel_title": "最新上架",
-        "software_carousel_subtitle": "自动调用启灵软件库中的软件数据，适合展示最新版本和重点软件",
-        "software_carousel_bg_type": "color",
-        "software_carousel_bg_color": "#f8fafc",
-        "software_carousel_title_color": "#0f172a",
-        "software_carousel_title_size": "2rem",
-        "software_carousel_subtitle_color": "#64748b",
-        "software_carousel_subtitle_size": "1rem",
-        "software_carousel_categories": "",
-        "software_carousel_count": "10",
-        "software_carousel_speed": "32",
-        "software_carousel_card_bg": "#ffffff",
-        "software_carousel_icon_size": "64px",
-        "software_carousel_show_btn": "1",
-        "software_carousel_btn_text": "查看全部软件",
-        "software_carousel_btn_link": "/software/"
+        "software_carousel_title": "热销正版专业工具与生产力软件推荐",
+        "software_carousel_subtitle": "精选设计、研发、音视频创作与系统运维必备利器，正版官方授权保障"
       }
     },
     {
       "type": "software_category",
       "data": {
-        "sc_title": "按分类浏览软件",
-        "sc_subtitle": "把工具、系统、插件、移动端应用按分类展示，降低用户查找成本",
-        "sc_bg_type": "color",
-        "sc_bg_color": "#ffffff",
-        "sc_title_color": "#0f172a",
-        "sc_title_size": "2rem",
-        "sc_subtitle_color": "#64748b",
-        "sc_subtitle_size": "1rem",
-        "sc_layout": "grid",
-        "sc_columns": "4",
-        "sc_categories": "",
-        "sc_count": "8",
-        "sc_orderby": "modified",
-        "sc_card_bg": "#ffffff",
-        "sc_icon_size": "58px",
-        "sc_show_version": "1",
-        "sc_show_date": "1",
-        "sc_show_downloads": "1",
-        "sc_show_desc": "1",
-        "sc_show_btn": "1",
-        "sc_btn_text": "进入软件库",
-        "sc_btn_link": "/software/"
+        "sc_title": "按分类探索全站软件库",
+        "sc_subtitle": "图形设计、开发工具、影音娱乐、系统优化、办公协作"
       }
     },
     {
       "type": "software_ranking",
       "data": {
-        "sr_title": "下载排行榜",
-        "sr_title_size": "2rem",
-        "sr_title_color": "#0f172a",
-        "sr_subtitle": "按下载量、浏览量或更新时间生成榜单，适合做资源站的高点击区域",
-        "sr_subtitle_size": "1rem",
-        "sr_subtitle_color": "#64748b",
-        "sr_bg_type": "color",
-        "sr_bg_color": "#f8fafc",
-        "sr_padding_top": "72px",
-        "sr_padding_bottom": "72px",
-        "sr_layout": "cards",
-        "sr_columns": "3",
-        "sr_ranking_type": "downloads",
-        "sr_categories": "",
-        "sr_count": "9",
-        "sr_card_bg": "#ffffff",
-        "sr_icon_size": "54px",
-        "sr_show_rank_badge": "1",
-        "sr_show_stats": "1",
-        "sr_show_version": "1",
-        "sr_show_btn": "1",
-        "sr_btn_text": "查看完整榜单",
-        "sr_btn_link": "/software/"
+        "sr_title": "年度下载排行榜与好评口碑榜",
+        "sr_subtitle": "数百万极客用户真实下载量与高评分口碑认证"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "安全纯净 · 我们的软件分发标准",
+        "features_subtitle": "100% 官方正版数字签名、零捆绑零广告插件、72小时多杀毒引擎云查杀"
       }
     },
     {
       "type": "downloads",
       "data": {
-        "downloads_title": "常用客户端下载",
-        "downloads_subtitle": "适合放置公开安装器、企业版客户端或引导下载；软件详情页仍由启灵软件库维护版本和下载源",
-        "downloads_columns": "3",
+        "downloads_title": "官方客户端全平台下载中心",
+        "downloads_subtitle": "支持 Windows 64位、macOS (Apple Silicon/Intel) 及 Linux 主流发行版",
         "downloads_items": [
           {
-            "title": "Windows 客户端",
-            "size": "128 MB",
-            "file": "#",
-            "icon": "WIN",
-            "format": "EXE",
-            "date": "2026-06-01",
-            "description": "公开安装包入口，详细版本记录建议在软件详情页维护。"
+            "title": "启灵软件中心 Windows 客户端",
+            "desc": "支持 Win10/11 64位系统",
+            "badge": "v4.2.0 | 68MB",
+            "link": "#"
           },
           {
-            "title": "macOS 客户端",
-            "size": "146 MB",
-            "file": "#",
-            "icon": "MAC",
-            "format": "DMG",
-            "date": "2026-06-01",
-            "description": "适合展示桌面端下载入口，可继续链接到软件详情页。"
+            "title": "启灵软件中心 macOS 客户端",
+            "desc": "原生兼容 M1/M2/M3 及 Intel 架构",
+            "badge": "v4.2.0 | 75MB",
+            "link": "#"
           },
           {
-            "title": "Android 安装包",
-            "size": "86 MB",
-            "file": "#",
-            "icon": "APK",
-            "format": "APK",
-            "date": "2026-06-01",
-            "description": "适合移动端应用官网或软件下载站的公开入口。"
-          }
-        ]
-      }
-    },
-    {
-      "type": "resource_stats",
-      "data": {
-        "rs_title": "软件站运营数据",
-        "rs_subtitle": "展示软件数量、用户规模和运行时间，强化资源站信任感",
-        "rs_bg_color": "#ffffff",
-        "rs_padding_top": "64px",
-        "rs_padding_bottom": "64px",
-        "rs_stats_list": [
-          {
-            "stat_label": "软件内容",
-            "stat_icon": "dashicons-desktop",
-            "data_source": "total_posts",
-            "source_id": "",
-            "virtual_num": "80",
-            "show_plus": "yes"
-          },
-          {
-            "stat_label": "注册用户",
-            "stat_icon": "dashicons-groups",
-            "data_source": "total_users",
-            "source_id": "",
-            "virtual_num": "900",
-            "show_plus": "yes"
-          },
-          {
-            "stat_label": "会员用户",
-            "stat_icon": "dashicons-star-filled",
-            "data_source": "vip_users",
-            "source_id": "",
-            "virtual_num": "120",
-            "show_plus": "yes"
-          },
-          {
-            "stat_label": "稳定运行",
-            "stat_icon": "dashicons-performance",
-            "data_source": "site_days",
-            "source_id": "",
-            "virtual_num": "0",
-            "show_plus": "no"
+            "title": "启灵软件中心 Linux 独立二进制包",
+            "desc": "支持 Ubuntu / Debian / Arch / Fedora",
+            "badge": "AppImage | 82MB",
+            "link": "#"
           }
         ]
       }
@@ -243,34 +189,47 @@
     {
       "type": "faq",
       "data": {
-        "faq_title": "软件库模板常见问题",
-        "faq_subtitle": "明确主题页面包和启灵软件库插件的分工",
-        "faq_items": [
-          {
-            "question": "软件版本和下载链接在哪里维护？",
-            "answer": "继续在启灵软件库插件里维护。主题页面包只调用软件库模块做展示，不会重复保存版本号、下载源、MD5 或下载统计。"
-          },
-          {
-            "question": "没有安装启灵软件库插件会怎样？",
-            "answer": "页面包可以导入，软件轮播、分类和排行榜模块会显示插件提示或空状态；安装并录入软件后会自动显示真实数据。"
-          },
-          {
-            "question": "这个软件首页会影响企业官网吗？",
-            "answer": "不会。它只绑定软件首页页面模板和对应页面包，普通企业官网模板仍保持原样。"
-          }
-        ]
+        "faq_title": "软件下载、激活与授权常见问题",
+        "faq_subtitle": "购买后激活码接收、跨设备重装迁移、发票开具与退款售后保障"
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "让软件下载站先有完整首页",
-        "cta_subtitle": "首页负责浏览和转化，软件详情页负责版本、平台、下载源和历史版本。",
-        "cta_button_text": "进入软件库",
-        "cta_button_url": "/software/",
-        "cta_bg_type": "image",
-        "cta_bg_image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.62"
+        "cta_title": "免费开启极致纯净的软件管理体验",
+        "cta_subtitle": "一键自动更新全机正版软件，告别弹窗流氓插件，享受清爽极速工作流。",
+        "cta_btn_text": "立即免费下载",
+        "cta_btn_url": "#downloads"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0f1d",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "QILING APP HUB · 启灵精选专业正版软件与工具库",
+        "qfs_brand_desc": "一站式发现全球优质正版生产力软件。100% 官方正版授权，极速直链下载，权威杀毒检测，尊享超值特惠与全生命周期激活售后保障。",
+        "qfs_link_groups": [
+          {
+            "title": "软件分类导航 & 正版保障承诺",
+            "links": "办公与协同生产力软件|#\n设计创意与音视频剪辑|#\n系统工具与效率增强|#\n开发者专属编程神器|#\n100% 官方正版授权码|#\n永久使用与一机一码绑定|#\n支持开具增值税专用发票|#\n专业客服远程激活协助|#\n今日限时特惠秒杀|#\n正版终身 VIP 会员权益|#\n学生与教育机构专属折扣|#\n正版软件分发加盟申请|#"
+          }
+        ],
+        "qfs_contact_title": "正版软件服务台",
+        "qfs_contact_items": "客服热线|400-999-2026|tel:4009992026\n商务邮箱|software@qiling-hub.com|mailto:software@qiling-hub.com\n在线客服|周一至周日 9:00 - 23:00 极速响应|#",
+        "qfs_social_title": "关注正版特惠",
+        "qfs_social_links": "微信公众号|#\n微信福利群|#\n知乎软件评测专栏|#\nB站好用软件推荐|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QILING SOFTWARE HUB. 保留所有权利 · 携手全球百家正版软件厂商共同护航",
+        "qfs_bottom_links": "正版软件授权许可协议|#\n退款与换码规则|#\n隐私政策|#\n知识产权保护投诉通道|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -6,11 +6,11 @@
   "page_template": "templates/template-blog.php",
   "visual_style": {
     "mode": "custom",
-    "preset": "technology_company",
+    "preset": "editorial",
     "colors": {
       "primary": "#2563eb",
-      "accent": "#d97706",
-      "background": "#ffffff",
+      "accent": "#0ea5e9",
+      "background": "#f8fafc",
       "text": "#0f172a"
     }
   },
@@ -24,74 +24,298 @@
     "category_label": "博客/杂志/内容",
     "industry": "blog",
     "scenario": "博客页面",
-    "description": "博客、专栏、知识库和内容营销入口。",
+    "description": "纯正文章与知识专栏页面，完全由置顶精选、分类流、博客文章流、作者矩阵、微动态与读者墙等内容模块驱动，无任何商业推广Banner干扰。",
     "badges": [
-      "博客",
-      "内容"
+      "深度专栏",
+      "杂志头条",
+      "原生文章流",
+      "读者墙"
     ],
     "order": 110,
     "thumbnail": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
   },
   "seo": {
-    "title": "博客页面模板 - 启灵官方页面包",
-    "description": "博客、专栏、知识库和内容营销入口。",
-    "keywords": "博客页面,博客页面,博客,内容",
-    "og_title": "博客页面",
-    "og_description": "博客、专栏、知识库和内容营销入口。"
+    "title": "博客页面 - 启灵深度技术与思想专栏",
+    "description": "深耕系统工程哲学、分布式架构设计与跨学科认知模型，聚合置顶长文、分类标签流、文章流与作者矩阵。",
+    "keywords": "技术博客,系统工程,分布式架构,深度长文,作者矩阵,读者墙",
+    "og_title": "博客页面 - 启灵深度技术与思想专栏",
+    "og_description": "深耕系统工程哲学、分布式架构设计与跨学科认知模型，聚合置顶长文、分类标签流、文章流与作者矩阵。"
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵专栏",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#breaking_news_ticker",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "深度文章",
+            "link": "#blog",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "主创矩阵",
+            "link": "#author_matrix",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "立即行动",
+            "link": "#cta",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#e2e8f0",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#e2e8f0",
+        "qhs_hover_bg": "rgba(226,232,240,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "breaking_news_ticker",
+      "data": {
+        "bn_title": "专栏快讯",
+        "bn_source": "latest",
+        "bn_count": "6"
+      }
+    },
+    {
       "type": "featured_posts",
       "data": {
-        "fp_title": "",
-        "fp_bg_color": "",
+        "fp_title": "编辑精选 · 深度研习长文",
         "fp_layout": "magazine",
-        "fp_slider_ratio": "70",
         "fp_slider_height": "420px",
-        "fp_autoplay": "yes",
-        "fp_interval": "5000",
-        "fp_effect": "fade",
-        "fp_show_arrows": "yes",
-        "fp_show_dots": "yes",
-        "fp_slider_source": "latest",
-        "fp_slider_count": "5",
-        "fp_list_source": "latest",
-        "fp_list_count": "6",
-        "fp_deduplicate": "yes",
-        "fp_badge_type": "recommend",
-        "fp_badge_position": "left",
-        "fp_show_category": "yes",
-        "fp_show_date": "yes",
-        "fp_show_excerpt": "yes",
-        "fp_show_views": "yes",
-        "fp_show_reading_time": "yes"
+        "fp_count": "5",
+        "fp_autoplay": "no"
+      }
+    },
+    {
+      "type": "category_tabs",
+      "data": {
+        "tabs_title": "专题探索 · 知识图谱",
+        "tabs_subtitle": "多维度透视软件工程、人工智能与商业系统底层逻辑",
+        "tabs_source_mode": "auto_hot_tags",
+        "tabs_auto_tag_count": "6",
+        "tabs_auto_min_count": "1"
       }
     },
     {
       "type": "blog",
       "data": {
-        "blog_title": "",
-        "blog_subtitle": "",
-        "blog_bg_color": "",
+        "blog_title": "最新专栏文章流",
+        "blog_subtitle": "按时间脉络沉淀经受时间考验的原创长文与工程实录",
+        "blog_layout_style": "card",
         "blog_page_layout": "full",
-        "blog_visual_preset": "inherit",
-        "blog_layout_style": "magazine",
         "blog_columns": "3",
-        "blog_data_source": "latest",
-        "blog_count": "12",
-        "blog_orderby": "date",
-        "blog_show_image": "yes",
-        "blog_image_height": "200px",
-        "blog_show_excerpt": "yes",
-        "blog_excerpt_length": "60",
-        "blog_show_author": "no",
-        "blog_show_date": "yes",
-        "blog_show_category": "yes",
-        "blog_show_tags": "no",
-        "blog_show_views": "yes",
-        "blog_show_reading_time": "yes",
-        "blog_read_more_text": "阅读全文",
-        "blog_enable_pagination": "yes"
+        "blog_count": "6",
+        "blog_show_pagination": "yes",
+        "blog_orderby": "date"
+      }
+    },
+    {
+      "type": "author_matrix",
+      "data": {
+        "am_title": "专栏作者与特邀顾问",
+        "am_subtitle": "汇聚资深架构师、高校学者与开源布道者的独立思考",
+        "am_source_mode": "auto",
+        "am_limit": "4"
+      }
+    },
+    {
+      "type": "knowledge_cards",
+      "data": {
+        "kc_title": "架构工程元法则 · 核心认知卡",
+        "kc_subtitle": "在复杂系统演进中反复验证的高可用设计哲学与工程军规",
+        "kc_columns": "3",
+        "kc_show_number": "yes",
+        "kc_items": [
+          {
+            "term": "高内聚低耦合",
+            "definition": "将强关联逻辑闭环于单一上下文，边界之外仅通过显式契约交互，降低跨域修改的涟漪效应。",
+            "importance": "high"
+          },
+          {
+            "term": "故障域隔离 (Blast Radius)",
+            "definition": "任意子系统或组件的崩溃绝不应在网络中引发雪崩，以舱壁模式与熔断机制坚守系统韧性。",
+            "importance": "critical"
+          },
+          {
+            "term": "状态机显式化",
+            "definition": "彻底抛弃离散脆弱的状态标志位，将业务生命周期建模为确定性有限状态机，根除并发状态幽灵。",
+            "importance": "high"
+          }
+        ]
+      }
+    },
+    {
+      "type": "micro_journal_stream",
+      "data": {
+        "mjs_title": "主理人微动态 · 闪念与研读札记",
+        "mjs_subtitle": "随时记录灵光一闪的工程感悟、阅读摘录与行业观察碎片",
+        "mjs_limit": "4",
+        "mjs_show_image": "yes",
+        "mjs_items": [
+          {
+            "date": "2026-11-20",
+            "time": "15:30",
+            "content": "好的架构从来不是凭空设计出来的，而是伴随业务规模与团队认知的边界自然生长演进出来的。过度设计的代价远高于适度重构。",
+            "author": "沈秋白"
+          },
+          {
+            "date": "2026-11-18",
+            "time": "21:10",
+            "content": "读《系统之美》有感：系统之所以产生意料之外的问题，往往是因为我们只见局部实体，而忽略了实体之间延迟反馈的网络回路。",
+            "author": "陆铭远"
+          }
+        ]
+      }
+    },
+    {
+      "type": "reader_wall",
+      "data": {
+        "rw_title": "读者精选互动 · 思想切磋墙",
+        "rw_subtitle": "感谢每一位在浮躁时代依然愿意沉下心来深度阅读与真诚交流的同行者",
+        "rw_source": "manual",
+        "rw_columns": "3",
+        "rw_manual_items": [
+          {
+            "author_name": "林晨 (某云计算大厂资深架构师)",
+            "comment_content": "《分布式高可用十二条黄金军规》这篇剖析实在太透彻了，特别是关于熔断降级与限流配额的推导，直接解答了我们双十一压测中的疑难杂症。",
+            "post_title": "分布式系统高可用架构"
+          },
+          {
+            "author_name": "苏晓棠 (独立开发者 / 极客书友会主理人)",
+            "comment_content": "在这个到处都是三分钟短视频的时代，还能读到如此克制、扎实、具有学术严谨度的长文专栏，真的非常感动，已全篇精读并赞助周刊！",
+            "post_title": "软件工艺之美"
+          },
+          {
+            "author_name": "赵天宇 (AI算法研究员)",
+            "comment_content": "关于Scaling Law边际效应递减的分析很有预见性，垂直场景下Agent协同架构确实正在取代无节制的巨型单体模型。",
+            "post_title": "大模型时代的冷思考"
+          }
+        ]
+      }
+    },
+    {
+      "type": "friendly_links",
+      "data": {
+        "fl_title": "推荐独立博客与技术专栏",
+        "fl_subtitle": "与优秀的中文独立思考者同行，互相砥砺，共同记录数字时代的思想轨迹",
+        "fl_columns": "4",
+        "fl_show_desc": "yes",
+        "fl_items": [
+          {
+            "name": "极客工程手记",
+            "url": "#",
+            "desc": "专注于底层内核、网络通信与分布式系统实战"
+          },
+          {
+            "name": "人文与数字设计",
+            "url": "#",
+            "desc": "探索现代界面美学、排版工艺与人机交互哲学"
+          },
+          {
+            "name": "商业模式思考录",
+            "url": "#",
+            "desc": "穿透企业财报，拆解硬科技公司商业护城河"
+          },
+          {
+            "name": "开源架构指南",
+            "url": "#",
+            "desc": "聚焦开源基础软件发展与技术委员会治理"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "订阅每周思想通讯（Insight Newsletter）",
+        "cta_subtitle": "每周日上午准时送达收件箱，精选万字长文与三本跨学科高分书评，远离碎片信息噪音。",
+        "cta_btn_text": "免费订阅周刊",
+        "cta_btn_url": "#subscribe"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f1115",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#e2e8f0",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "INSIGHT-JOURNAL · 启灵深度专栏",
+        "qfs_brand_desc": "记录技术前沿、系统工程、界面美学与跨学科思考。拒绝碎片信息噪音，输出具有长程生命力的深度长文。",
+        "qfs_link_groups": [
+          {
+            "title": "专栏分类与订阅",
+            "links": "系统工程哲学|#\n分布式架构实战|#\nAI与认知科学|#\n读书笔记与方法论|#\nNewsletter 订阅|#\nRSS 订阅源|#"
+          }
+        ],
+        "qfs_contact_title": "专栏互动与合作",
+        "qfs_contact_items": "读者邮箱|reader@insight-journal.me|mailto:reader@insight-journal.me\n投稿与建议|欢迎推荐优质选题与深度长文|#",
+        "qfs_social_title": "关注渠道",
+        "qfs_social_links": "RSS 订阅|#\n即刻动态|#\n知乎专栏|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 INSIGHT JOURNAL. 保留所有权利 · 遵循 CC BY-NC-ND 4.0 知识共享协议",
+        "qfs_bottom_links": "转载规范|#\n隐私政策|#\n赞赏作者|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

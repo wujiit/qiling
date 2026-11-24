@@ -17,7 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  */
 function qiling_autoloader( $class_name ) {
-    $is_qiling = strpos( $class_name, 'Qiling\\' ) === 0;
+    $class_name     = ltrim( $class_name, '\\' );
+    $is_qiling      = strpos( $class_name, 'Qiling\\' ) === 0;
     $is_dev_starter = strpos( $class_name, 'Developer_Starter\\' ) === 0;
 
     // 仅处理属于当前主题的类
@@ -43,6 +44,15 @@ function qiling_autoloader( $class_name ) {
     // 3. 添加 class- 前缀
     $filename = 'class-' . str_replace( '_', '-', strtolower( $final_class_name ) ) . '.php';
     
+    // 优先支持子主题在 inc/ 目录扩展或覆写类文件
+    if ( function_exists( 'is_child_theme' ) && is_child_theme() ) {
+        $child_path = get_stylesheet_directory() . '/inc/' . implode( '/', $path_parts ) . '/' . $filename;
+        if ( file_exists( $child_path ) ) {
+            require_once $child_path;
+            return;
+        }
+    }
+
     // 拼接完整文件路径（QILING_INC 在 functions.php 中定义）
     $path = QILING_INC . '/' . implode( '/', $path_parts ) . '/' . $filename;
     

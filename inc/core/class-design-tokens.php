@@ -4509,7 +4509,7 @@ class Design_Tokens {
         $button_outline_selector = ".btn-outline,.btn-outline-light";
         $card_selector = ".card,.news-card,.product-card,.case-card,.pricing-card,.faq-item,.team-member,.about-culture-card,.about-gallery-item,.timeline-content,.account-section,.search-result-item,.author-post-card";
         $post_card_selector = ".post-card,.module-blog .blog-post-item,.news-card,.author-post-card,.search-result-item";
-        $module_title_selector = ".section-title,.module-title,.block-title,.qfs-section-title";
+        $module_title_selector = ".section-title,.module-title,.block-title";
         $module_header_selector = ".module .section-header,.module .module-header,.module .block-header";
         $heading_selector = "h1,h2,h3,h4,h5,h6,.page-title,.entry-title,.post-title,.news-title,.search-result-title,.error-code," . $module_title_selector;
         $form_selector = "input:not(.header-search-input):not([data-qiling-search-input]):not([type='checkbox']):not([type='radio']):not([type='submit']):not([type='button']):not([type='reset']):not([type='range']):not([type='file']),select,textarea,.contact-form input,.contact-form textarea,.contact-form select,.comment-form input[type='text'],.comment-form input[type='email'],.comment-form textarea";
@@ -4526,7 +4526,7 @@ class Design_Tokens {
         $dropdown_link_selector = ".site-header .primary-navigation .sub-menu li a,.user-dropdown a";
         $dropdown_active_selector = ".site-header .primary-navigation .sub-menu li a:hover,.site-header .primary-navigation .sub-menu li.current-menu-item>a,.site-header .primary-navigation .sub-menu li.current-menu-ancestor>a,.site-header .primary-navigation .sub-menu li.current-menu-parent>a,.site-header .primary-navigation .sub-menu li.current_page_item>a,.site-header .primary-navigation .sub-menu li.current_page_parent>a,.site-header .primary-navigation .sub-menu li.current_page_ancestor>a,.user-dropdown a:hover";
         $badge_selector = ".header-user-badge,.pricing-badge,.module :is(.badge,.label,.pill,.tag,.status-badge,.category-badge,.post-category,.highlight-label)";
-        $title_bar_selector = ".module :is(.section-kicker,.section-eyebrow,.module-kicker,.module-eyebrow,.block-title-bar,.section-title-bar,.qfs-section-title)";
+        $title_bar_selector = ".module :is(.section-kicker,.section-eyebrow,.module-kicker,.module-eyebrow,.block-title-bar,.section-title-bar)";
         $list_header_selector = ".module :is(.list-header,.table-header,.ranking-header,.software-ranking-header,.ql-list-header,.ql-table-header),.comparison-table th";
         $border_accent_selector = ".pricing-card.pricing-featured,.module :is(.is-featured,.featured-card,.highlight-card)";
         $highlight_selector = ".comparison-table .th-product.is-highlight,.module :is(.highlight-card,.highlight-block,.highlight-banner),.module :is(.ct-card,.case-card,.service-item).is-highlight";
@@ -4591,8 +4591,8 @@ class Design_Tokens {
         $css .= $desktop_nav_link_selector . "{color:var(--qiling-component-nav-link);}\n";
         $css .= $desktop_nav_active_selector . "{background:var(--qiling-component-nav-hover-bg);color:var(--qiling-component-nav-hover-text);}\n";
         $css .= "html.dark-mode .site-header:not(.header-transparent),html.dark-mode .site-header.header-transparent.header-scrolled,[data-theme='dark'] .site-header:not(.header-transparent),[data-theme='dark'] .site-header.header-transparent.header-scrolled{background:var(--qiling-dark-surface);border-bottom-color:var(--qiling-dark-border);}\n";
-        $css .= "html.dark-mode .site-header .primary-navigation>ul>li>a,[data-theme='dark'] .site-header .primary-navigation>ul>li>a{color:var(--qiling-dark-text) !important;}\n";
-        $css .= "html.dark-mode .site-header .header-actions,html.dark-mode .site-header .search-toggle,html.dark-mode .site-header .translate-toggle,html.dark-mode .site-header .darkmode-toggle,[data-theme='dark'] .site-header .header-actions,[data-theme='dark'] .site-header .search-toggle,[data-theme='dark'] .site-header .translate-toggle,[data-theme='dark'] .site-header .darkmode-toggle{color:var(--qiling-dark-text) !important;}\n";
+        $css .= "html.dark-mode .site-header .primary-navigation>ul>li>a,html.dark-mode .site-header.header-transparent .primary-navigation>ul>li>a,[data-theme='dark'] .site-header .primary-navigation>ul>li>a,[data-theme='dark'] .site-header.header-transparent .primary-navigation>ul>li>a,html.dark-mode body[class*='header-tone-'] .site-header .primary-navigation>ul>li>a,[data-theme='dark'] body[class*='header-tone-'] .site-header .primary-navigation>ul>li>a{color:var(--qiling-dark-text, #f1f5f9) !important;}\n";
+        $css .= "html.dark-mode .site-header .header-actions,html.dark-mode .site-header .search-toggle,html.dark-mode .site-header .translate-toggle,html.dark-mode .site-header .darkmode-toggle,html.dark-mode body[class*='header-tone-'] .site-header .header-actions,[data-theme='dark'] .site-header .header-actions,[data-theme='dark'] .site-header .search-toggle,[data-theme='dark'] .site-header .translate-toggle,[data-theme='dark'] .site-header .darkmode-toggle,[data-theme='dark'] body[class*='header-tone-'] .site-header .header-actions{color:var(--qiling-dark-text, #f1f5f9) !important;}\n";
         $css .= $mobile_nav_shell_selector . "{background:var(--qiling-component-mobile-nav-bg);border-color:var(--qiling-component-mobile-nav-border);}\n";
         $css .= $mobile_nav_link_selector . "{color:var(--qiling-component-mobile-nav-link);}\n";
         $css .= $mobile_nav_active_selector . "{background:var(--qiling-component-mobile-nav-hover-bg);color:var(--qiling-component-mobile-nav-hover-text);}\n";

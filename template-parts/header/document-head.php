@@ -17,8 +17,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     <?php
     $dark_mode_config = function_exists( 'developer_starter_get_dark_mode_runtime_config' )
         ? developer_starter_get_dark_mode_runtime_config()
-        : array( 'enabled' => (bool) developer_starter_get_option( 'darkmode_enable', '' ) );
-    if ( ! empty( $dark_mode_config['enabled'] ) ) :
+        : array(
+            'enabled'          => (bool) developer_starter_get_option( 'darkmode_enable', '1' ),
+            'storageKey'       => 'qiling-theme-preference',
+            'legacyStorageKey' => 'theme',
+        );
+    if ( ! isset( $dark_mode_config['enabled'] ) || false !== $dark_mode_config['enabled'] ) :
         ?>
         <script>
         window.qilingDarkModeConfig = <?php echo wp_json_encode( $dark_mode_config ); ?>;

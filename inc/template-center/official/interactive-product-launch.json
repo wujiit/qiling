@@ -41,198 +41,179 @@
   },
   "modules": [
     {
-      "type": "interact_hero",
+      "type": "header_suite",
       "data": {
-        "badge_text": "NEW RELEASE",
-        "hero_title_content": "交互产品发布页<br><span style=\"color:#2563eb;\">全新交互体验</span>",
-        "hero_subtitle_content": "用于新品发布、版本发布和活动宣发，内置交互首屏结构，发布信息更清晰，转化路径更直接。",
-        "btn_primary_content": "立即预约演示",
-        "btn_primary_link": "#release-features",
-        "btn_secondary_content": "查看核心亮点",
-        "btn_secondary_link": "#wheel-features",
-        "media_type": "image",
-        "hero_image": "",
-        "enable_float_anim": "yes",
-        "feature_items": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "灵感发布",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "f_icon_type": "class",
-            "f_icon_class": "⚡",
-            "f_title_content": "快速发布",
-            "f_desc": "活动页与产品页一键组合",
-            "f_link": "#"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "f_icon_type": "class",
-            "f_icon_class": "🎨",
-            "f_title_content": "视觉统一",
-            "f_desc": "预设发布风格，保持品牌一致性",
-            "f_link": "#"
+            "title": "限时特惠",
+            "link": "#countdown",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "f_icon_type": "class",
-            "f_icon_class": "📈",
-            "f_title_content": "转化导向",
-            "f_desc": "强调 CTA 与功能亮点展示",
-            "f_link": "#"
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
           },
           {
-            "f_icon_type": "class",
-            "f_icon_class": "🧩",
-            "f_title_content": "模块可编辑",
-            "f_desc": "全部文案、按钮与布局均可修改",
-            "f_link": "#"
+            "title": "产品展示",
+            "link": "#product_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bg_color": "linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #0369a1 100%)",
-        "text_color": "#ffffff",
-        "highlight_color": "#38bdf8",
-        "padding_top": "96px",
-        "padding_bottom": "86px",
-        "btn_primary_bg_color": "#6366f1",
-        "btn_primary_text_color": "#ffffff"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#38bdf8",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#38bdf8",
+        "qhs_hover_bg": "rgba(56,189,248,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "circle_wheel",
+      "type": "dynamic_banner",
       "data": {
-        "wheel_title": "发布版本核心能力",
-        "wheel_subtitle": "通过 <span style=\"color:#4ffbdf;\">交互轮盘</span> 快速浏览每个核心亮点",
-        "wheel_bg_type": "color",
-        "wheel_bg_color": "#0a0f1d",
-        "wheel_bg_overlay": "0.75",
-        "highlight_color": "#38bdf8",
-        "wheel_padding_top": "96px",
-        "wheel_padding_bottom": "96px",
-        "wheel_items": [
-          {
-            "ring_title_desc": "实时协作",
-            "hover_title_desc": "多人实时协作",
-            "hover_desc": "支持跨团队在线协同编辑，变更实时同步，减少沟通成本。",
-            "highlight": "yes"
-          },
-          {
-            "ring_title_desc": "自动化流程",
-            "hover_title_desc": "自动化流程编排",
-            "hover_desc": "将高频重复操作配置为自动流程，显著提升执行效率。",
-            "highlight": "no"
-          },
-          {
-            "ring_title_desc": "洞察看板",
-            "hover_title_desc": "业务洞察看板",
-            "hover_desc": "关键指标一屏呈现，支持按团队、渠道、阶段进行多维分析。",
-            "highlight": "no"
-          },
-          {
-            "ring_title_desc": "开放接口",
-            "hover_title_desc": "开放 API 能力",
-            "hover_desc": "可与现有 CRM、工单系统和 BI 平台快速打通。",
-            "highlight": "no"
-          },
-          {
-            "ring_title_desc": "权限模型",
-            "hover_title_desc": "细粒度权限管理",
-            "hover_desc": "内置角色权限与操作审计机制，满足企业合规要求。",
-            "highlight": "no"
-          },
-          {
-            "ring_title_desc": "弹性扩容",
-            "hover_title_desc": "高并发弹性架构",
-            "hover_desc": "面对大流量活动发布场景，仍可保持稳定访问体验。",
-            "highlight": "no"
-          },
-          {
-            "ring_title_desc": "多端适配",
-            "hover_title_desc": "全端一致体验",
-            "hover_desc": "支持 PC、平板和移动端，确保核心信息在不同设备一致展示。",
-            "highlight": "no"
-          },
-          {
-            "ring_title_desc": "持续迭代",
-            "hover_title_desc": "持续迭代升级",
-            "hover_desc": "版本更新可平滑发布，支持灰度上线与快速回滚策略。",
-            "highlight": "no"
-          }
-        ]
+        "db_height": "80vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80",
+        "db_bg_overlay": "0.6",
+        "db_title": "灵感发布 · 2026 年度全球先锋创新产品发布盛典",
+        "db_subtitle": "全球百家主流科技媒体同步现场直播。见证下一代革新科技颠覆想象，开启全场景智慧互联未来。",
+        "db_btn_text": "立即预约线上直播",
+        "db_btn_link": "#live"
       }
     },
     {
-      "type": "double_column_carousel",
+      "type": "countdown",
       "data": {
-        "dcc_layout": "3",
-        "dcc_height": "500",
-        "dcc_gap": "16",
-        "dcc_slides": [
-          {
-            "image": "",
-            "url": "#",
-            "title": "发布会主视觉"
-          },
-          {
-            "image": "",
-            "url": "#",
-            "title": "产品能力展示"
-          },
-          {
-            "image": "",
-            "url": "#",
-            "title": "客户案例与数据"
-          }
-        ],
-        "dcc_right_1_image": "",
-        "dcc_right_1_url": "#",
-        "dcc_right_2_image": "",
-        "dcc_right_2_url": "#",
-        "dcc_right_3_image": "",
-        "dcc_right_3_url": "#"
+        "countdown_title": "当季限定 · 限时特惠倒计时",
+        "countdown_subtitle": "前 100 名专享超值赠礼，名额有限先到先得"
       }
     },
     {
-      "type": "features_list",
+      "type": "products",
+      "data": {}
+    },
+    {
+      "type": "product_showcase",
+      "data": {}
+    },
+    {
+      "type": "features",
+      "data": {}
+    },
+    {
+      "type": "faq",
       "data": {
-        "title": "发布版本能力地图",
-        "subtitle": "从用户体验、团队协作到运维安全，一页看全新版能力升级",
-        "columns": "3",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "tabs": [
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
+        "faq_items": [
           {
-            "tab_id": "experience",
-            "tab_title": "体验升级",
-            "tab_icon": "✨",
-            "features": "🎛️|全新交互界面|页面信息分层更清晰，关键操作路径更短\n⚡|加载体验优化|关键首屏资源按需加载，打开更流畅\n📱|移动端细节优化|触控反馈和布局适配更符合移动习惯"
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
           },
           {
-            "tab_id": "business",
-            "tab_title": "业务能力",
-            "tab_icon": "📊",
-            "features": "📈|数据看板升级|新增趋势分析和目标达成跟踪\n🧭|流程引导增强|支持关键任务分步引导，降低学习成本\n🔌|第三方集成|可对接常见企业工具和内部系统"
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
           },
           {
-            "tab_id": "reliability",
-            "tab_title": "稳定与安全",
-            "tab_icon": "🛡️",
-            "features": "🔐|权限体系强化|角色边界更清晰，支持审计追踪\n🧱|弹性架构支持|应对活动高峰，稳定承载大流量\n🚨|预警机制升级|异常行为和性能波动可提前感知"
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
           }
         ]
       }
     },
     {
       "type": "cta",
+      "data": {}
+    },
+    {
+      "type": "footer_suite",
       "data": {
-        "cta_title": "准备好发布你的下一代产品了吗？",
-        "cta_subtitle": "使用该模板快速搭建交互式产品发布页，聚焦亮点传达与转化。",
-        "cta_button_text": "预约演示",
-        "cta_button_url": "/contact/",
-        "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e1b4b 60%, #0369a1 100%)",
-        "module_padding_top": "96px",
-        "module_padding_bottom": "96px",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#07090e",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#38bdf8",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "NEXUS-REVEAL · 重磅新品发布会与全球首发体验",
+        "qfs_brand_desc": "突破想象的工业设计与硬核性能重塑。搭载全新自研架构与次世代感官体验，以极简先锋美学重新定义行业旗舰标准。即日起全球限量预定，尊享首发礼遇。",
+        "qfs_link_groups": [
+          {
+            "title": "重磅看点回顾 & 首发预定通道",
+            "links": "发布会全程 4K 60帧完整回放|#\n旗舰核心黑科技解构拆解|#\n全球媒体与科技博主首发测评|#\n官方高清图集与壁纸下载|#\n官方商城限量盲盒预订通道|#\n线下旗舰体验店首批试用预约|#\n老用户专属以旧换新置换补贴|#\n首发尊享 2 年官方碎屏联保|#"
+          }
+        ],
+        "qfs_contact_title": "新品体验与媒体联络",
+        "qfs_contact_items": "新品咨询|400-880-1100|tel:4008801100\n媒体公关|media@nexus-reveal.com|mailto:media@nexus-reveal.com\n首发专线|工作日 9:30 - 20:00|#\n新品展厅|深圳市南山区深圳湾科技生态园 1 栋全球旗舰店|#",
+        "qfs_social_title": "先锋科技潮",
+        "qfs_social_links": "新品预约小程序|#\n黑科技体验群|#\n极客拆解视频|#\n官方粉丝社区|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 NEXUS REVEAL INC. 保留所有权利 · 粤ICP备20220911号 · 全球首发专利保护中",
+        "qfs_bottom_links": "新品三包凭证与质保条款|#\n预售定金退还规则|#\n全国售后网点名录|#\n真伪鉴别与防伪查询|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

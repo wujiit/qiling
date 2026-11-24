@@ -136,8 +136,8 @@
 .qiling-module-scope-app_hero .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-app_hero /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-app_hero .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-app_hero .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-app_hero .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-app_hero /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-app_hero /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-app_hero /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-app_hero /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-app_hero .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-app_hero .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-app_hero .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-app_hero .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-app_hero /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -538,7 +548,9 @@
   border-radius: 50%;
   box-shadow: 0 10px 20px var(--qiling-color-rgba-0-0-0-01);
   animation: heroFloat 5s ease-in-out infinite reverse;
-}.qiling-module-scope-app_hero /* 动画 (Animations) */
+}
+
+/* 动画 (Animations) */
 @keyframes heroFloat {
   0%,
   100% {
@@ -548,33 +560,22 @@
   50% {
     transform: translateY(-20px) rotateY(-10deg);
   }
-}.qiling-module-scope-app_hero /* 响应式 (Responsive) */
-@media (max-width: 992px) {
-  .app-hero-grid {
+}/* 响应式 (Responsive) */
+@media (max-width: 992px){.qiling-module-scope-app_hero .app-hero-grid {
     grid-template-columns: 1fr;
     gap: var(--qiling-space-40);
     text-align: center;
-  }
-
-  .app-hero-content {
+  }.qiling-module-scope-app_hero .app-hero-content {
     max-width: var(--qiling-measure-pct-100);
     margin: 0 auto;
-  }
-
-  .hero-buttons {
+  }.qiling-module-scope-app_hero .hero-buttons {
     justify-content: center;
-  }
-
-  .hero-qr-card {
+  }.qiling-module-scope-app_hero .hero-qr-card {
     margin: 0 auto;
     text-align: left;
-  }
-
-  .app-hero-media {
+  }.qiling-module-scope-app_hero .app-hero-media {
     margin-top: var(--qiling-space-20);
-  }
-
-  .device-mockup {
+  }.qiling-module-scope-app_hero .device-mockup {
     transform: none;
     /* 在移动端简化 (Simplify on mobile) */
     animation: none;
@@ -680,7 +681,9 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero:not([style*="backg
   bottom: 25%;
   right: 0;
   animation-delay: 2.5s;
-}.qiling-module-scope-app_hero /* 特定的徽章动画 (Specific Badge Animations) */
+}
+
+/* 特定的徽章动画 (Specific Badge Animations) */
 @keyframes floatBadge {
   0%,
   100% {
@@ -701,39 +704,26 @@ html.dark-mode .qiling-module-scope-app_hero .module-app-hero:not([style*="backg
   50% {
     transform: translate(0, calc(-50% - 10px));
   }
-}.qiling-module-scope-app_hero /* 移动端：如果过于拥挤则调整或隐藏悬浮徽章 (Mobile: Adjust or hide floating badges if too crowded) */
-@media (max-width: 576px) {
-  .module-app-hero .floating-badge {
+}/* 移动端：如果过于拥挤则调整或隐藏悬浮徽章 (Mobile: Adjust or hide floating badges if too crowded) */
+@media (max-width: 576px){.qiling-module-scope-app_hero .module-app-hero .floating-badge {
     transform: scale(0.8) !important;
     /* 缩小缩放 (Scale down) */
     animation: none !important;
     /* 特定的动画可能重叠 (specific animation might overlap) */
-  }
-
-  .module-app-hero .floating-badge.pos-top-left {
+  }.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-top-left {
     left: 0;
     top: 0;
-  }
-
-  .module-app-hero .floating-badge.pos-top-right {
+  }.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-top-right {
     right: 0;
     top: 5%;
-  }
-
-  .module-app-hero .floating-badge.pos-center-left {
+  }.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-center-left {
     display: none;
-  }
-
-  /* 在移动端隐藏居中的部分 (Hide center ones on mobile) */
+  }.qiling-module-scope-app_hero /* 在移动端隐藏居中的部分 (Hide center ones on mobile) */
   .module-app-hero .floating-badge.pos-center-right {
     display: none;
-  }
-
-  .module-app-hero .floating-badge.pos-bottom-left {
+  }.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-bottom-left {
     display: none;
-  }
-
-  .module-app-hero .floating-badge.pos-bottom-right {
+  }.qiling-module-scope-app_hero .module-app-hero .floating-badge.pos-bottom-right {
     right: 0;
     bottom: 0;
   }

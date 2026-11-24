@@ -43,237 +43,412 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "glow",
-        "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #080f1d 0%, #0369a1 52%, #0f172a 100%)",
-        "bb_title": "附件上云、图床直链<br><strong>一套页面讲清楚</strong>",
-        "bb_title_size_max": "72px",
-        "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 52%, #67e8f9 100%)",
-        "bb_subtitle": "启灵生态云存储与图床入口",
-        "bb_desc": "围绕 WordPress 附件同步、阿里云 OSS、腾讯云 COS、历史媒体迁移、远端校验、主题 assets CDN、前台多图上传和直链复制，把技术配置包装成可交付、可运营的存储服务官网。",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_text_align": "left",
-        "bb_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "轻云存",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "配置云存储",
-            "link": "#",
-            "style": "primary",
-            "icon": "云"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "进入图床上传",
-            "link": "#",
-            "style": "light",
-            "icon": "图"
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bb_primary_btn_bg_color": "#0284c7",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#0369a1",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.12)",
-        "bb_light_btn_text_color": "#ffffff",
-        "bb_light_btn_hover_bg_color": "rgba(255, 255, 255, 0.22)",
-        "bb_light_btn_hover_text_color": "#ffffff",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "glow",
-        "bb_media_radius": "18px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "1",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "免费试用",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#38bdf8",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#38bdf8",
+        "qhs_hover_bg": "rgba(56,189,248,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "features",
+      "type": "brand_banner_pro",
       "data": {
-        "features_title": "从媒体库到图床的完整能力",
-        "features_subtitle": "页面文案按 qilingstorage 与 qiling-image-uploader 的实际功能组织，导入后替换成真实入口即可",
-        "features_columns": "4",
-        "features_icon_position": "top",
-        "features_text_align": "left",
-        "features_bg_color": "#ffffff",
-        "features_card_style": "border",
-        "features_card_radius": "8px",
-        "features_icon_style": "square",
-        "features_icon_bg": "#e0f2fe",
-        "features_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "轻量极速云端对象存储与全球 CDN 边缘加速图床中枢",
+        "bb_subtitle": "99.999999999% 数据持久性保障，智能 WebP 图像无损压缩与防盗链鉴权，海量资源秒级触达。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "免费领取 50GB 存储额度",
+        "bb_btn1_url": "#storage",
+        "bb_btn2_text": "查看开发者 API 文档",
+        "bb_btn2_url": "#api"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "存储指标 · 稳定性与全球低延迟看板",
+        "stats_subtitle": "为企业官网、独立站、移动 App 与个人博客打造高可靠、低成本的文件存储加速底座",
+        "stats_items": [
           {
-            "icon": "云",
-            "title": "阿里云 OSS / 腾讯云 COS",
-            "desc": "启灵云存储可在一个插件内切换云厂商，配置 bucket、地域、访问域名、CNAME 和密钥后接管附件同步。"
+            "number": "99.999999999%",
+            "label": "11 个 9 跨多可用区异地多活数据持久性设计"
           },
           {
-            "icon": "链",
-            "title": "附件 URL 自动改写",
-            "desc": "上传成功后同步对象存储，并改写 wp_get_attachment_url、图片 srcset 和文章媒体地址，适合做媒体 CDN 加速。"
+            "number": "< 20 ms",
+            "label": "全国主流城市及海外核心节点文件首包响应"
           },
           {
-            "icon": "迁",
-            "title": "历史附件迁移",
-            "desc": "支持已有 uploads 附件分批同步、断点续跑、远端一致性校验、缺失对象修复和 URL 替换预演。"
+            "number": "68 PB+",
+            "label": "平台稳定安全托管的全球图片与多媒体数据"
           },
           {
-            "icon": "图",
-            "title": "前台图床上传",
-            "desc": "启灵图床提供多图拖拽上传、格式和大小限制、游客文件夹、角色权限、直链/Markdown/BBCode 复制和我的图片管理。"
+            "number": "100% 兼容",
+            "label": "完美无缝兼容标准 AWS S3 / PicGo 客户端生态"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "一站式多媒体存储与智能处理引擎矩阵",
+        "services_subtitle": "不仅是静态文件存放，更是集成了边缘转码、安全防护与数据分发的综合加速体",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "database",
+            "title": "企业级 S3 兼容海量对象存储",
+            "desc": "标准存储、低频访问与深度归档分层计费，无缝平滑迁移 AWS、阿里云 OSS 与腾讯云 COS"
+          },
+          {
+            "icon": "zap",
+            "title": "边缘实时图片智能压缩与 WebP/AVIF",
+            "desc": "自动根据用户浏览器能力动态转码为下一代高效格式，体积缩减 75% 且肉眼画质无损"
+          },
+          {
+            "icon": "shield",
+            "title": "全维度防盗链与鉴权访问保护",
+            "desc": "支持 HTTP Referer 黑白名单、URL 时间戳防盗链签名与智能高频防恶意刷流量保护"
+          },
+          {
+            "icon": "tool",
+            "title": "PicGo 与主流写作软件原生集成",
+            "desc": "一键拖拽上传、自动生成 Markdown/HTML 链接，无缝适配 Typora、Notion 与 Obsidian"
+          }
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "上线云存储图床的标准流程",
-        "process_subtitle": "把对象存储配置、媒体迁移和前台图床运营拆成可执行步骤",
-        "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
+        "process_title": "云存储图床官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "选择云厂商与访问域名",
-            "desc": "在启灵云存储中选择阿里云 OSS 或腾讯云 COS，填写 bucket、地域、密钥和媒体访问域名，可按需要启用 CNAME。",
-            "stage_tag": "配置"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "上传自检与新附件同步",
-            "desc": "先执行云厂商连通与上传自检，确认对象可写可读；之后 WordPress 新上传附件会进入对象存储同步流程。",
-            "stage_tag": "自检"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "历史媒体迁移与 URL 替换",
-            "desc": "对已有附件分批同步，使用远端一致性校验确认对象存在，再把文章内容和元数据中的本地媒体 URL 替换为云端域名。",
-            "stage_tag": "迁移"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "开放图床上传入口",
-            "desc": "启用图片上传页和图片管理页，按游客、登录角色、格式白名单、文件大小和公告说明配置前台图床运营规则。",
-            "stage_tag": "运营"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
       }
     },
     {
-      "type": "comparison",
+      "type": "pricing",
       "data": {
-        "comparison_title": "两个插件的分工",
-        "comparison_subtitle": "云存储解决媒体底座，图床解决前台上传和直链分发",
-        "comparison_features": "核心定位\n主要入口\n云厂商/存储位置\n关键能力\n权限与运营\n适合场景",
-        "comparison_products": [
+        "pricing_title": "公道透明的按量存储与开发者尊享包",
+        "pricing_subtitle": "按实际用量阶梯计费，绝无隐形下行流量套路，首购用户立享超额补贴",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "name": "启灵云存储",
-            "values": "WordPress 附件上云与 CDN\n后台：设置 -> 启灵云存储\n阿里云 OSS、腾讯云 COS、媒体访问域名\n新附件同步、缩略图同步、URL 改写、srcset 改写、历史附件同步、远端校验、缺失修复、主题 assets CDN\n管理员配置，面向整站媒体链路\n媒体库迁移、图片加速、对象存储接入、站点交付"
+            "name": "个人开发者入门免费版",
+            "name_color": "#0f172a",
+            "price": "永久免费 $0",
+            "price_color": "#0f172a",
+            "period": "/每月 50GB 存储 + 20GB 流量",
+            "desc": "适合个人博客、开源项目文档、Markdown 图床与小型微信小程序",
+            "desc_color": "#64748b",
+            "features": "50GB 高速全闪 NVMe 对象存储空间\\n每月赠送 20GB 全球极速 CDN 流量\\n支持绑定 1 个自定义域名及免费 HTTPS 证书\\n标准 AWS S3 兼容 API 与 PicGo 插件支持",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "启灵图床",
-            "values": "前台图片上传与直链复制\n页面：[image_upload_form]、[image_manage_page]\nWordPress uploads，可与远程对象存储联动\n多图拖拽上传、进度提示、直链复制、Markdown/BBCode、我的图片、后台按用户查询和删除\n游客开关、游客文件夹、角色权限、格式白名单、最大上传大小、公告\n图片外链站、素材提交、论坛贴图、用户内容上传"
+            "name": "专业图床与网站加速包 (商业主力)",
+            "name_color": "#0f172a",
+            "price": "¥29",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包含 500GB 存储 + 200GB 流量)",
+            "desc": "面向高流量独立站、摄影分享社区、资讯门户与设计素材库托管",
+            "desc_color": "#64748b",
+            "features": "500GB 跨多可用区异地容灾存储空间\\n赠送每月 200GB Anycast 亚太极速网络流量\\n包含实时图片自适应压缩与 WebP 动态转码\\n支持自定义防盗链黑白名单与频率限制规则",
+            "features_color": "#334155",
+            "btn_text": "立即购买",
+            "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "站长热选",
+            "badge": "站长热选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "企业级大容量定制存储方案",
+            "name_color": "#0f172a",
+            "price": "定制阶梯单价",
+            "price_color": "#0f172a",
+            "period": "/PB 级存储按量折扣低至 0.08元/GB",
+            "desc": "面向短视频平台、海量用户 UGC 社区、金融合规海量归档备份需求",
+            "desc_color": "#64748b",
+            "features": "PB 级数据无感秒级平滑扩容保障\\n专属专线网络对接与混合云数据同步方案\\n提供 99.999% SLA 服务等级与全额赔偿承诺\\n配备 7x24 小时专属架构师巡检保障",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "comparison_highlight": "1",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
-      }
-    },
-    {
-      "type": "downloads",
-      "data": {
-        "downloads_title": "交付资料与配置清单",
-        "downloads_subtitle": "把技术配置变成客户能看懂、团队能执行的上线资料",
-        "downloads_bg_color": "#f8fafc",
-        "downloads_columns": "3",
-        "downloads_btn_bg_color": "#0284c7",
-        "downloads_btn_text_color": "#ffffff",
-        "downloads_btn_hover_bg_color": "#0369a1",
-        "downloads_btn_hover_text_color": "#ffffff",
-        "downloads_items": [
+        "pricing_items": [
           {
-            "title": "对象存储配置清单",
-            "size": "Checklist",
-            "file": "#",
-            "icon": "云",
-            "format": "清单",
-            "date": "2026-04-25",
-            "btn_text": "查看清单",
-            "description": "列出 bucket、地域、访问域名、CNAME、密钥权限、上传自检和回滚项。"
+            "name": "个人开发者入门免费版",
+            "name_color": "#0f172a",
+            "price": "永久免费 $0",
+            "price_color": "#0f172a",
+            "period": "/每月 50GB 存储 + 20GB 流量",
+            "desc": "适合个人博客、开源项目文档、Markdown 图床与小型微信小程序",
+            "desc_color": "#64748b",
+            "features": "50GB 高速全闪 NVMe 对象存储空间\\n每月赠送 20GB 全球极速 CDN 流量\\n支持绑定 1 个自定义域名及免费 HTTPS 证书\\n标准 AWS S3 兼容 API 与 PicGo 插件支持",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "title": "媒体迁移执行表",
-            "size": "Runbook",
-            "file": "#",
-            "icon": "迁",
-            "format": "流程",
-            "date": "2026-04-25",
-            "btn_text": "查看流程",
-            "description": "说明历史附件同步、远端校验、缺失修复、URL 替换预演和正式替换步骤。"
+            "name": "专业图床与网站加速包 (商业主力)",
+            "name_color": "#0f172a",
+            "price": "¥29",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包含 500GB 存储 + 200GB 流量)",
+            "desc": "面向高流量独立站、摄影分享社区、资讯门户与设计素材库托管",
+            "desc_color": "#64748b",
+            "features": "500GB 跨多可用区异地容灾存储空间\\n赠送每月 200GB Anycast 亚太极速网络流量\\n包含实时图片自适应压缩与 WebP 动态转码\\n支持自定义防盗链黑白名单与频率限制规则",
+            "features_color": "#334155",
+            "btn_text": "立即购买",
+            "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "站长热选",
+            "badge": "站长热选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "title": "图床运营说明",
-            "size": "Guide",
-            "file": "#",
-            "icon": "图",
-            "format": "说明",
-            "date": "2026-04-25",
-            "btn_text": "查看说明",
-            "description": "用于配置游客上传、角色权限、格式白名单、文件大小、公告和图片管理页。"
+            "name": "企业级大容量定制存储方案",
+            "name_color": "#0f172a",
+            "price": "定制阶梯单价",
+            "price_color": "#0f172a",
+            "period": "/PB 级存储按量折扣低至 0.08元/GB",
+            "desc": "面向短视频平台、海量用户 UGC 社区、金融合规海量归档备份需求",
+            "desc_color": "#64748b",
+            "features": "PB 级数据无感秒级平滑扩容保障\\n专属专线网络对接与混合云数据同步方案\\n提供 99.999% SLA 服务等级与全额赔偿承诺\\n配备 7x24 小时专属架构师巡检保障",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "team",
       "data": {
-        "faq_title": "云存储图床常见问题",
-        "faq_subtitle": "提前解释云存储、图床和对象存储迁移的边界，减少上线后的沟通成本",
-        "faq_items": [
+        "team_title": "分布式存储底层核心架构专家团队",
+        "team_subtitle": "深耕大规模分布式一致性协议与高并发对象存储系统 15 年以上",
+        "team_columns": "4",
+        "team_items": [
           {
-            "question": "这个模板必须安装启灵云存储和启灵图床吗？",
-            "answer": "不必须。模板本身可以正常导入和展示；启用插件后，把按钮链接改成云存储设置页、[image_upload_form] 上传页、[image_manage_page] 管理页或你自己的服务入口即可。"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "严立宏 架构师",
+            "role": "首席存储架构师 / 前顶级云厂商存储技术总监",
+            "desc": "精通 Raft 与 Paxos 分布式协议，主导设计了平台跨可用区多活元数据引擎"
           },
           {
-            "question": "启灵云存储和启灵图床是同一个功能吗？",
-            "answer": "不是。启灵云存储处理 WordPress 媒体库与对象存储/CDN 的底层链路；启灵图床处理前台用户上传、链接复制和图片管理。"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "Marcus Thorne",
+            "role": "全球网络优化总监 / Anycast BGP 路由专家",
+            "desc": "20 年互联网骨干网调度经验，持续优化跨国跨运营商边缘 CDN 智能路由"
           },
           {
-            "question": "历史附件能迁移到对象存储吗？",
-            "answer": "启灵云存储提供历史附件分批同步、断点状态、远端一致性校验和缺失修复。正式替换文章内容和元数据 URL 前，建议先使用预演方式检查命中范围。"
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "何晓晨",
+            "role": "图像算法专家 / 多媒体转码引擎主管",
+            "desc": "专注基于 GPU 硬件加速的图片并发压缩与智能画质修复算法工程化落地"
           },
           {
-            "question": "图床上传的图片能走云存储域名吗？",
-            "answer": "图床使用 WordPress 上传体系写入附件；如果站点同时启用云存储同步和媒体访问域名，上传后的附件 URL 可以由云存储插件统一改写为云端域名。"
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "苏泽宇",
+            "role": "生态集成负责人 / 开源工具链布道师",
+            "desc": "维护了包括 PicGo、VSCode 插件等数十个主流开发工具的高性能开源 SDK"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "把媒体加速和图床上传做成可交付服务",
-        "cta_subtitle": "替换真实云存储设置页、图床上传页、图片管理页和迁移服务说明，就能把对象存储配置从后台功能变成客户看得懂的产品官网。",
-        "cta_button_text": "配置云存储图床入口",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #080f1d 0%, #0369a1 60%, #0284c7 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "开启 云存储图床官网 数字化卓越体验",
+        "cta_subtitle": "无需漫长等待，立即注册即可解锁全部核心功能与极速支持保障。",
+        "cta_btn_text": "立即免费体验",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0b132b",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#38bdf8",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "SNAP-STORE · 高速对象云存储与专业图床托管",
+        "qfs_brand_desc": "专为开发者、设计师与跨境独立站量身定制的轻量级高速图床与大文件托管平台。全球 Edge CDN 多节点分发，极速加载，万象处理。",
+        "qfs_link_groups": [
+          {
+            "title": "存储与处理产品 & 开发者生态",
+            "links": "高速静态图床托管|#\n海量音视频大文件存储|#\n图片实时剪裁与 WebP 转换|#\n自动化防盗链与鉴权网关|#\n多语言 RESTful API|#\nPicGo 桌面端一键上传配置|#\nWordPress 官方无缝同步插件|#\n命令行 CLI 上传工具|#"
+          }
+        ],
+        "qfs_contact_title": "技术支持中心",
+        "qfs_contact_items": "开发者支持|support@snap-store.cloud|mailto:support@snap-store.cloud\n工单中心|后台 7x24 小时技术保障|#\n商务合作|bd@snap-store.cloud|mailto:bd@snap-store.cloud",
+        "qfs_social_title": "加入开发者群",
+        "qfs_social_links": "官方微信群|#\nGitHub 仓库|#\nTelegram 频道|#\n开发者论坛|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 SNAP-STORE CLOUD. 保留所有权利 · 99.999999999% (11个9) 数据持久性承诺",
+        "qfs_bottom_links": "存储协议|#\n合规与审核政策|#\n隐私政策|#\n全球 CDN 节点状态|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -136,8 +136,8 @@
 .qiling-module-scope-tabs .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-tabs /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-tabs .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-tabs .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-tabs .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-tabs /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-tabs /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-tabs /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-tabs /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-tabs .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-tabs .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-tabs .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-tabs .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-tabs /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -487,21 +497,16 @@ html.dark-mode .module-tabs.module-tabs .tabs-content {
   color: var(--qiling-component-tabs-active-text);
 }html.dark-mode .qiling-module-scope-tabs .module-tabs .tabs-style-boxed .tabs-content {
   border-color: var(--qiling-component-tabs-border);
-}.qiling-module-scope-tabs /* 响应式 (Responsive) */
-@media (max-width: 768px) {
-  .module-tabs .tabs-nav {
+}/* 响应式 (Responsive) */
+@media (max-width: 768px){.qiling-module-scope-tabs .module-tabs .tabs-nav {
     justify-content: center !important;
-  }
-
-  .module-tabs .tab-btn {
+  }.qiling-module-scope-tabs .module-tabs .tab-btn {
     padding: var(--qiling-space-10) var(--qiling-space-16) !important;
     font-size: var(--qiling-text-rem-0p85) !important;
     width: 100%;
     /* 可选：堆叠它们？或保持自动宽度 (Optional: stack them? Or keep auto width) */
     justify-content: center;
-  }
-
-  .module-tabs .tabs-content {
+  }.qiling-module-scope-tabs .module-tabs .tabs-content {
     padding: var(--qiling-space-25) !important;
   }
 }

@@ -1687,6 +1687,21 @@ class Assets {
             return false;
         }
 
+        $shared_file = $split_dir . '_shared.css';
+        $shared_deps = array( 'developer-starter-main' );
+        if ( file_exists( $shared_file ) && filesize( $shared_file ) > 0 ) {
+            $shared_ver = (string) filemtime( $shared_file );
+            wp_enqueue_style(
+                'developer-starter-modules-shared',
+                $split_uri . '_shared.css',
+                $shared_deps,
+                $shared_ver ? $shared_ver : $version
+            );
+            $module_deps = array( 'developer-starter-modules-shared' );
+        } else {
+            $module_deps = $shared_deps;
+        }
+
         foreach ( $module_files as $module_type => $file_path ) {
             $file_name = basename( $file_path );
             $file_ver = (string) filemtime( $file_path );
@@ -1695,11 +1710,10 @@ class Assets {
             wp_enqueue_style(
                 $handle,
                 $split_uri . $file_name,
-                array(),
+                $module_deps,
                 $file_ver ? $file_ver : $version
             );
         }
-
         return true;
     }
 
@@ -2185,6 +2199,29 @@ class Assets {
             .primary-navigation>ul>li.current_page_ancestor>a {
                 background: transparent !important;
                 color: var(--qiling-header-nav-hover-current, var(--qiling-component-nav-hover-text, #ffffff)) !important;
+            }
+            html.dark-mode .primary-navigation>ul>li>a::before,
+            [data-theme='dark'] .primary-navigation>ul>li>a::before,
+            body.dark-mode .primary-navigation>ul>li>a::before {
+                background-color: var(--qiling-primary, #38bdf8) !important;
+            }
+            html.dark-mode .primary-navigation>ul>li>a:hover,
+            html.dark-mode .primary-navigation>ul>li.current-menu-item>a,
+            html.dark-mode .primary-navigation>ul>li.current-menu-ancestor>a,
+            html.dark-mode .primary-navigation>ul>li.current-menu-parent>a,
+            html.dark-mode .primary-navigation>ul>li.current_page_item>a,
+            html.dark-mode .primary-navigation>ul>li.current_page_parent>a,
+            html.dark-mode .primary-navigation>ul>li.current_page_ancestor>a,
+            [data-theme='dark'] .primary-navigation>ul>li>a:hover,
+            [data-theme='dark'] .primary-navigation>ul>li.current-menu-item>a,
+            [data-theme='dark'] .primary-navigation>ul>li.current-menu-ancestor>a,
+            [data-theme='dark'] .primary-navigation>ul>li.current-menu-parent>a,
+            [data-theme='dark'] .primary-navigation>ul>li.current_page_item>a,
+            [data-theme='dark'] .primary-navigation>ul>li.current_page_parent>a,
+            [data-theme='dark'] .primary-navigation>ul>li.current_page_ancestor>a,
+            body.dark-mode .primary-navigation>ul>li>a:hover,
+            body.dark-mode .primary-navigation>ul>li.current-menu-item>a {
+                color: var(--qiling-primary, #38bdf8) !important;
             }";
         }
 

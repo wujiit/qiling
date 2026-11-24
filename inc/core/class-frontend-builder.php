@@ -927,6 +927,7 @@ class Frontend_Builder {
             </aside>
 
             <aside class="qfb-panel qfb-panel-right">
+                <div class="qfb-panel-resizer" id="qfb-resizer-right" title="<?php esc_attr_e( '左右拖拽调整宽度，双击恢复自适应默认', 'qiling' ); ?>"></div>
                 <header class="qfb-header qfb-settings-header">
                     <div class="qfb-header-title">
                         <strong id="qfb-right-title"><?php esc_html_e( '模块设置', 'qiling' ); ?></strong>

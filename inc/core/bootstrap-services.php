@@ -139,7 +139,7 @@ function developer_starter_should_init_sms_manager() {
 }
 
 /**
- * 检测当前请求是否需要初始化主题授权检查。
+ * 检测当前请求是否需要初始化主题支持服务。
  *
  * @return bool
  */
@@ -291,11 +291,28 @@ function developer_starter_boot_foundation_services() {
 
     new Developer_Starter\Core\Assets();
 
-    // 纯前台页面渲染组件：在常规后台管理请求中跳过初始化，节省内存与钩子开销
-    if ( ! is_admin() || wp_doing_ajax() ) {
-        new Developer_Starter\International\Third_Party_Code_Manager();
-        new Developer_Starter\International\Cookie_Consent_Manager();
-        new Developer_Starter\International\Typography_Engine();
+    // 纯前台页面渲染组件：在常规后台管理和 AJAX 请求中跳过初始化，节省内存与钩子开销
+    if ( ! is_admin() && ! wp_doing_ajax() ) {
+        if ( ! class_exists( '\Developer_Starter\International\Third_Party_Code_Manager', false ) && file_exists( QILING_INC . '/international/class-third-party-code-manager.php' ) ) {
+            require_once QILING_INC . '/international/class-third-party-code-manager.php';
+        }
+        if ( class_exists( '\Developer_Starter\International\Third_Party_Code_Manager' ) ) {
+            new Developer_Starter\International\Third_Party_Code_Manager();
+        }
+
+        if ( ! class_exists( '\Developer_Starter\International\Cookie_Consent_Manager', false ) && file_exists( QILING_INC . '/international/class-cookie-consent-manager.php' ) ) {
+            require_once QILING_INC . '/international/class-cookie-consent-manager.php';
+        }
+        if ( class_exists( '\Developer_Starter\International\Cookie_Consent_Manager' ) ) {
+            new Developer_Starter\International\Cookie_Consent_Manager();
+        }
+
+        if ( ! class_exists( '\Developer_Starter\International\Typography_Engine', false ) && file_exists( QILING_INC . '/international/class-typography-engine.php' ) ) {
+            require_once QILING_INC . '/international/class-typography-engine.php';
+        }
+        if ( class_exists( '\Developer_Starter\International\Typography_Engine' ) ) {
+            new Developer_Starter\International\Typography_Engine();
+        }
     }
 
     if ( developer_starter_should_init_weixin_manager() ) {
@@ -357,6 +374,7 @@ function developer_starter_boot_builder_services() {
 
     new Developer_Starter\Core\Frontend_Builder();
     Developer_Starter\Core\AI_Decorator::get_instance();
+    Developer_Starter\Core\Template_Preview_Service::get_instance();
 }
 
 /**
@@ -370,7 +388,9 @@ function developer_starter_boot_discovery_services() {
     // 纯前台 HTML 标签输出与页面性能审计：后台常规管理中免初始化
     if ( ! is_admin() || wp_doing_ajax() ) {
         new Developer_Starter\SEO\SEO_Manager();
-        Developer_Starter\Core\Page_Performance_A11y_Auditor::get_instance();
+        if ( class_exists( 'Developer_Starter\\Core\\Page_Performance_A11y_Auditor' ) ) {
+            Developer_Starter\Core\Page_Performance_A11y_Auditor::get_instance();
+        }
     }
 }
 
@@ -431,8 +451,9 @@ function developer_starter_boot_taxonomy_and_commerce_services() {
 
     require_once QILING_INC . '/core/class-category-tabs-ajax.php';
 
-
-    new Developer_Starter\Core\AJAX_Product_Loader();
+    if ( class_exists( 'Developer_Starter\\Core\\AJAX_Product_Loader' ) ) {
+        new Developer_Starter\Core\AJAX_Product_Loader();
+    }
 }
 
 /**

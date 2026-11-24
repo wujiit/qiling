@@ -42,254 +42,164 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #1c1917 0%, #44403c 50%, #92400e 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "栖云民宿",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80",
-            "title": "把假期交给一间舒服的房子",
-            "subtitle": "山景、庭院、亲子与情侣房型，支持在线查询和预订。",
-            "btn_text": "查看房型",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#b45309"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "特色房型",
+            "link": "#room-showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "配套设施",
+            "link": "#hotel-amenities",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "12",
-            "number": "12间",
-            "label": "精选客房",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4",
-            "number": "4类",
-            "label": "主题房型",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "住客评分",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "24",
-            "number": "24h",
-            "label": "管家响应",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "即刻预订",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#10b981",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#10b981",
+        "qhs_hover_bg": "rgba(16,185,129,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
+    },
+    {
+      "type": "fullscreen_video",
+      "data": {}
     },
     {
       "type": "room-showcase",
       "data": {
-        "room_title": "精选房型",
-        "room_subtitle": "按入住人数、景观和预算选择适合的房间",
-        "room_columns": "3",
-        "room_card_style": "standard",
-        "room_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
-            "name": "庭院大床房",
-            "area": "42㎡",
-            "bed_type": "king",
-            "capacity": "2人",
-            "price": "¥688",
-            "original_price": "¥888",
-            "badge": "recommend",
-            "amenities": "icon-wifi|免费 WiFi\nicon-coffee|早餐\nicon-parking|免费停车",
-            "desc": "独立庭院和舒适大床，适合情侣和短途度假。",
-            "btn_text": "立即预订",
-            "btn_link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
-            "name": "山景套房",
-            "area": "58㎡",
-            "bed_type": "king",
-            "capacity": "2-3人",
-            "price": "¥988",
-            "original_price": "¥1288",
-            "badge": "luxury",
-            "amenities": "icon-wifi|免费 WiFi\nicon-mountain|山景阳台\nicon-bath|浴缸",
-            "desc": "带山景阳台和独立浴缸，适合纪念日和慢旅行。",
-            "btn_text": "立即预订",
-            "btn_link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
-            "name": "亲子家庭房",
-            "area": "65㎡",
-            "bed_type": "family",
-            "capacity": "3-4人",
-            "price": "¥1188",
-            "original_price": "¥1488",
-            "badge": "recommend",
-            "amenities": "icon-wifi|免费 WiFi\nicon-kids|儿童用品\nicon-breakfast|早餐",
-            "desc": "多床布局和儿童用品，适合家庭出游。",
-            "btn_text": "立即预订",
-            "btn_link": "#"
-          }
-        ],
-        "module_bg_color": "#ffffff",
-        "room_btn_bg_color": "#b45309",
-        "room_btn_text_color": "#ffffff"
+        "room_title": "山野特色套房与独栋温泉院落展示",
+        "room_subtitle": "每间客房均配备全景落地观景窗、高星级乳胶床品与独立私汤温泉泡池"
       }
     },
     {
       "type": "hotel-amenities",
       "data": {
-        "amenity_title": "配套设施",
-        "amenity_subtitle": "让入住体验从到店前就更明确",
-        "amenity_columns": "4",
-        "amenity_layout": "card",
-        "amenity_items": [
-          {
-            "icon": "icon-breakfast",
-            "fallback_image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80",
-            "name": "在地早餐",
-            "desc": "每日提供本地食材早餐",
-            "time": "08:00-10:00"
-          },
-          {
-            "icon": "icon-coffee",
-            "fallback_image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
-            "name": "咖啡休息区",
-            "desc": "公共区域可阅读和休息",
-            "time": "全天"
-          },
-          {
-            "icon": "icon-parking",
-            "fallback_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80",
-            "name": "免费停车",
-            "desc": "自驾游客可提前预留车位",
-            "time": "全天"
-          },
-          {
-            "icon": "icon-service",
-            "fallback_image": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=600&q=80",
-            "name": "管家服务",
-            "desc": "路线、餐饮和活动建议",
-            "time": "09:00-22:00"
-          }
-        ],
-        "module_bg_color": "#fefce8"
+        "amenity_title": "原生态度假配套与休闲设施",
+        "amenity_subtitle": "山泉无边泳池、原木禅茶室、露天草坪烧烤与星空篝火晚会"
       }
     },
     {
       "type": "gallery",
       "data": {
-        "gallery_title": "民宿环境",
-        "gallery_subtitle": "从房间到公共空间，提前感受入住氛围",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "enable_filter": "yes",
-        "filter_categories": "客房,庭院,餐饮",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
-            "title": "庭院大床房",
-            "desc": "安静舒适",
-            "category": "客房"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-            "title": "户外庭院",
-            "desc": "自然景观",
-            "category": "庭院"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80",
-            "title": "在地早餐",
-            "desc": "本地食材",
-            "category": "餐饮"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "gallery_title": "民宿四季光影与慢生活实景实拍",
+        "gallery_subtitle": "春赏山花烂漫，夏享避暑清风，秋闻满山桂香，冬沐热气私汤"
       }
     },
     {
       "type": "testimonials",
       "data": {
-        "testimonials_title": "住客评价",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "5,600+",
-        "average_rating": "4.9",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "周女士",
-            "position": "亲子入住",
-            "content": "房间干净，管家推荐的周边路线很适合带孩子。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "林先生",
-            "position": "情侣度假",
-            "content": "山景房视野很好，晚上很安静。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "陈女士",
-            "position": "朋友出游",
-            "content": "公共空间舒服，早餐也很有当地特色。",
-            "rating": "5",
-            "verified": "verified"
-          }
-        ],
-        "testimonials_bg_color": "#fefce8"
+        "testimonials_title": "住客真挚点评与山居故事",
+        "testimonials_subtitle": "感谢每一位知音住客在山野留言簿上留下的美好回忆"
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "在线预订",
-        "booking_subtitle": "提交入住日期、人数和房型偏好，管家会确认可订情况。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预订须知",
-        "sidebar_content": "入住时间 14:00 后，退房时间 12:00 前\n节假日价格以确认结果为准\n可在表单里备注接送、早餐和亲子需求",
-        "contact_phone": "400-520-1314",
-        "contact_hours": "08:00-23:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#ffffff"
+        "booking_title": "查询山野温泉民宿客房档期与限时预订优惠",
+        "booking_subtitle": "推窗即景、私享山泉私汤，入住即享农家原生态管家早餐与欢迎下午茶。",
+        "booking_btn_text": "查询空房并即时预订",
+        "booking_phone": "管家直通电话：138-0000-8888",
+        "booking_time": "办理入住：14:00后 | 办理离店：12:00前"
       }
     },
     {
-      "type": "faq",
+      "type": "footer_suite",
       "data": {
-        "faq_title": "预订常见问题",
-        "module_bg_color": "#fefce8",
-        "faq_items": [
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#101412",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#10b981",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "MIST-RETREAT · 栖云隐野 · 悬崖林海野奢精品度假民宿",
+        "qfs_brand_desc": "隐匿于苍翠群山与晨雾云海之间。全景落地窗与露天恒温私汤泡池直面壮阔林海，私享山野竹林步道、管家手冲咖啡与地道山珍慢食，重寻久违的内心平静。",
+        "qfs_link_groups": [
           {
-            "question": "是否支持加床或亲子用品？",
-            "answer": "可在预订备注中说明，管家会根据房型和库存确认。"
-          },
-          {
-            "question": "价格会随节假日变化吗？",
-            "answer": "节假日和旺季价格可能调整，建议通过预订表单或电话确认。"
-          },
-          {
-            "question": "可以接入真实预订表单吗？",
-            "answer": "可以，预订入口模块可填写 qiling-forms 表单 ID，对接实际预约流程。"
+            "title": "隐世房型一览 & 宿野特色体验",
+            "links": "悬崖云端全景私汤独栋木屋|#\n观星天窗 LOFT 林海星空套房|#\n亲子森系探险庭院家庭套房|#\n全景无边恒温林海悬崖泳池|#\n晨曦山林徒步与瑜伽冥想指导|#\n私厨柴火土鸡与高山有机蔬食|#\n傍晚露天柴火营地电影与围炉煮茶|#\n免费高铁站专车接送管家预约|#"
           }
-        ]
+        ],
+        "qfs_contact_title": "订房咨询与客房预留",
+        "qfs_contact_items": "订房前台|0572-8888-7766|tel:057288887766\n宿野管家|187-5722-6688|tel:18757226688\n管家在线|7×24小时在线客房服务与路线指引|#\n隐野地址|浙江省湖州市安吉县天荒坪镇云上悬崖风景区 66 号|#",
+        "qfs_social_title": "山野画报",
+        "qfs_social_links": "小红书民宿打卡|#\n一键订房小程序|#\n云海慢直播|#\n四季山野日历|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 MIST-RETREAT RESORT. 保留所有权利 · 浙ICP备19034291号 · 国家甲级精品民宿认证",
+        "qfs_bottom_links": "住客入住须知与退订政策|#\n宠物友好入住公约|#\n自驾盘山公路交通指引|#\n特种行业许可证公示|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

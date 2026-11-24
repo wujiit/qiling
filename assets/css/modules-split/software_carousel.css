@@ -136,8 +136,8 @@
 .qiling-module-scope-software_carousel .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-software_carousel /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-software_carousel .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-software_carousel .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-software_carousel .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-software_carousel /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-software_carousel /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-software_carousel /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-software_carousel /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-software_carousel .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-software_carousel .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-software_carousel .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-software_carousel .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-software_carousel /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -467,15 +477,12 @@ html.dark-mode .module-software-carousel {
     rgba(var(--color-surface-rgb), 0.08)
   );
   border-color: rgba(var(--color-primary-rgb), 0.18);
-}.qiling-module-scope-software_carousel /* 响应式 (Responsive) */
-@media (max-width: 768px) {
-  .module-software-carousel .sc-header {
+}/* 响应式 (Responsive) */
+@media (max-width: 768px){.qiling-module-scope-software_carousel .module-software-carousel .sc-header {
     flex-direction: column;
     align-items: flex-start !important;
     gap: var(--qiling-space-16);
-  }
-
-  .module-software-carousel .sc-card {
+  }.qiling-module-scope-software_carousel .module-software-carousel .sc-card {
     min-width: var(--qiling-measure-148) !important;
     max-width: var(--qiling-measure-148) !important;
     padding: var(--qiling-space-20) var(--qiling-space-16) !important;

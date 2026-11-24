@@ -43,290 +43,262 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "快充能源",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0ea5e9",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0ea5e9",
+        "qhs_hover_bg": "rgba(14,165,233,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "brand_banner_pro",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "tech",
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
         "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #042f2e 0%, #0f766e 48%, #22c55e 100%)",
-        "bb_title_mode": "text",
-        "bb_title": "让停车场变成稳定收益的<br><strong>新能源补能站点</strong>",
-        "bb_title_size_max": "72px",
-        "bb_subtitle": "充电桩运营与场站建设服务官网",
-        "bb_desc": "面向园区、商超、酒店、社区、物流基地和公共停车场，提供选址评估、设备部署、平台运营、运维巡检和收益分成方案。",
-        "bb_text_align": "left",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "极速补能 · 构筑覆盖全国的新一代液冷超充网络",
+        "bb_subtitle": "单枪最大输出功率 600kW，“充电 5 分钟，续航 300 公里”，以光储充一体化智慧微电网驱动绿色零碳出行",
         "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #bbf7d0 52%, #67e8f9 100%)",
-        "bb_text_color": "rgba(240,253,244,0.92)",
+        "bb_text_color": "#cbd5e1",
         "bb_buttons": [
           {
-            "text": "提交场地评估",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "text": "查找附近极速超充站",
+            "url": "#stations",
+            "style": "primary"
           },
           {
-            "text": "查看建设方案",
-            "link": "#",
-            "style": "light",
-            "icon": ""
-          }
-        ],
-        "bb_primary_btn_bg_color": "#059669",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#86efac",
-        "bb_primary_btn_hover_text_color": "#052e16",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#dcfce7",
-        "bb_light_btn_hover_text_color": "#052e16",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "lifted",
-        "bb_media_radius": "12px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "0",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
-      }
-    },
-    {
-      "type": "stats",
-      "data": {
-        "stats_title": "用数据说明场站运营能力",
-        "stats_subtitle": "把已投运点位、平均响应、平台接入和运维覆盖放在首屏后，方便场地方快速判断合作价值。",
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #064e3b 0%, #059669 52%, #0284c7 100%)",
-        "stats_title_color": "#ffffff",
-        "stats_text_align": "center",
-        "stats_items": [
-          {
-            "number": "300+",
-            "label": "合作充电点位",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "7x24",
-            "label": "运维响应",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "99.5%",
-            "label": "平台在线率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "15天",
-            "label": "最快部署周期",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          }
-        ],
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "services",
-      "data": {
-        "services_title": "一站式充电场站服务",
-        "services_subtitle": "从场地评估到长期运营，减少业主、物业和运营方之间的信息差",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "场地评估",
-            "desc": "评估车流、人流、电容、动线、消防和收益模型，判断是否适合建设。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "设备部署",
-            "desc": "匹配快充、慢充、液冷超充和配电方案，完成施工协同。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "平台运营",
-            "desc": "接入小程序、支付、会员、优惠券、对账和订单管理能力。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "运维巡检",
-            "desc": "提供远程监控、故障响应、设备保养和运营数据复盘。",
-            "link": "#"
-          }
-        ],
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "场地合作流程",
-        "process_subtitle": "把从咨询到上线运营的关键节点讲清楚，降低招商和签约沟通成本",
-        "process_mode": "industrial",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "提交场地信息",
-            "desc": "提供位置、车位数量、用电条件、停车时长和业态类型。",
-            "stage_tag": "提交",
-            "deliverable": "场地信息表"
-          },
-          {
-            "icon": "02",
-            "title": "收益测算评估",
-            "desc": "结合客流、车流、周边补能密度和电价规则测算可行性。",
-            "stage_tag": "评估",
-            "deliverable": "测算报告"
-          },
-          {
-            "icon": "03",
-            "title": "方案设计施工",
-            "desc": "明确设备类型、施工范围、验收标准、平台接入和安全边界。",
-            "stage_tag": "建设",
-            "deliverable": "建设方案"
-          },
-          {
-            "icon": "04",
-            "title": "上线运营复盘",
-            "desc": "上线后持续关注使用率、故障率、用户反馈和活动转化。",
-            "stage_tag": "运营",
-            "deliverable": "运营月报"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "典型应用场景",
-        "cases_subtitle": "用场地类型和建设目标帮助客户快速对号入座",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80",
-            "title": "商超停车场快充站",
-            "desc": "提升停车场配套能力，联动餐饮、零售和会员权益。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=900&q=80",
-            "title": "园区员工慢充网络",
-            "desc": "满足员工长时停放补能需求，支持统一结算和权限管理。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80",
-            "title": "物流基地专用补能",
-            "desc": "围绕配送车辆、运营班次和峰谷电价设计专属充电方案。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "certificate_honors",
-      "data": {
-        "ch_title": "安全合规与资质背书",
-        "ch_subtitle": "展示施工、电气、安全、平台和运维相关资质，让场地方放心进入合作评估。",
-        "ch_columns": "3",
-        "ch_enable_filter": "yes",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "ch_items": [
-          {
-            "title": "充电设备检测报告",
-            "category": "设备合规",
-            "badge": "检测报告",
-            "cert_no": "EV-TEST-2026-001",
-            "issuer": "第三方检测机构",
-            "issue_date": "2026-01-18",
-            "expiry_date": "2029-01-17",
-            "file_url": "#"
-          },
-          {
-            "title": "电力施工合作资质",
-            "category": "施工资质",
-            "badge": "合作单位",
-            "cert_no": "POWER-2026-089",
-            "issuer": "施工合作单位",
-            "issue_date": "2026-03-05",
-            "expiry_date": "2029-03-04",
-            "file_url": "#"
-          },
-          {
-            "title": "平台数据安全承诺",
-            "category": "平台安全",
-            "badge": "运营规范",
-            "cert_no": "OPS-2026-021",
-            "issuer": "运营管理中心",
-            "issue_date": "2026-06-21",
-            "expiry_date": "",
-            "file_url": "#"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "stats",
       "data": {
-        "faq_title": "充电站合作常见问题",
-        "faq_subtitle": "提前说明场地条件、建设周期、收益模式和运维边界，减少首次咨询反复确认。",
-        "faq_items": [
+        "stats_title": "超充网络布局与运营效能看板",
+        "stats_subtitle": "以安全、稳定、高速为基石，服务千万级新能源车主日常出行与长途跨省补能",
+        "stats_items": [
           {
-            "question": "什么样的场地适合建设充电站？",
-            "answer": "通常需要稳定车流、合适停车时长、明确电容条件和可施工区域。商超、园区、酒店、社区、物流基地和公共停车场都可以先做初步评估。"
+            "number": "3,500+ 座",
+            "label": "自营与联营高功率超级充电场站"
           },
           {
-            "question": "场地方需要承担哪些成本？",
-            "answer": "可按自投、联营、租赁或收益分成等方式设计。实际成本取决于电力容量、设备类型、施工范围和合作周期。"
+            "number": "48,000+ 根",
+            "label": "在线运营快速与全液冷超充终端"
           },
           {
-            "question": "从评估到上线通常需要多久？",
-            "answer": "资料齐全且电力条件明确时，小型场站可在数周内完成方案、施工和平台接入；复杂场站需要结合报装、施工和验收周期评估。"
+            "number": "12.8 亿度",
+            "label": "年度累计为新能源汽车输送清洁电力"
           },
           {
-            "question": "上线后的故障和用户咨询谁处理？",
-            "answer": "模板默认按运营方负责平台监控、订单处理、设备巡检和故障响应，具体 SLA 与责任边界可在合作协议中明确。"
+            "number": "99.85%",
+            "label": "全网超充设备在线可用率与插枪成功率"
           }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "全栈式光储充一体化解决方案",
+        "services_subtitle": "从超充设备研发制造、场站勘测营建到智慧云平台运营，赋能物业与合伙人",
+        "services_columns": "3",
+        "services_items": [
+          {
+            "icon": "zap",
+            "title": "600kW 全液冷超充架构",
+            "desc": "极细轻量化液冷充电枪线，女车主单手轻松操作，告别传统笨重粗线与高发热"
+          },
+          {
+            "icon": "sun",
+            "title": "光储充放微电网智能协同",
+            "desc": "车棚屋顶光伏发电与梯次储能削峰填谷，显著缓解电网配电增容压力"
+          },
+          {
+            "icon": "server",
+            "title": "SaaS 智慧充电物联网云平台",
+            "desc": "支持即插即充、无感支付、动态功率柔性分配与电池健康状态实时云端诊断"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "核心枢纽示范超充场站一览",
+        "branches_subtitle": "覆盖高铁站、机场枢纽、高速服务区与核心高端商业综合体",
+        "branches_columns": "3",
+        "branches_list": [
+          {
+            "name": "上海虹桥枢纽超级液冷示范站",
+            "city": "上海市",
+            "status": "24 小时对外营业",
+            "address": "闵行区申昆路 1500 号虹桥综合交通枢纽 P9 停车场 B2 层",
+            "phone": "400-880-9911",
+            "email": "sh-hongqiao@hyper-charge.com",
+            "hours": "周一至周日 24 小时营运",
+            "services": "12 根 600kW 全液冷超充枪 / 24 根 250kW 快充枪 / 车主专属休息室",
+            "transport": "虹桥机场 T2 航站楼与虹桥高铁站出站通道直接连通",
+            "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=400&q=80"
+          },
+          {
+            "name": "北京大兴国际机场光储充枢纽站",
+            "city": "北京市",
+            "status": "24 小时对外营业",
+            "address": "大兴区礼贤镇大兴国际机场航站楼北侧停车楼 1 层",
+            "phone": "400-880-9922",
+            "email": "bj-daxing@hyper-charge.com",
+            "hours": "周一至周日 24 小时营运",
+            "services": "光伏顶棚车位 / 500kWh 储能调峰系统 / 16 根全液冷超充枪",
+            "transport": "大兴机场高速机场北线收费站出口直行 500 米",
+            "image": "https://images.unsplash.com/photo-1558441719-f14f55db4420?auto=format&fit=crop&w=400&q=80"
+          },
+          {
+            "name": "深圳湾科技生态园光储充微电网示范站",
+            "city": "深圳市",
+            "status": "24 小时对外营业",
+            "address": "南山区高新南九道深圳湾科技生态园 1 栋地下停车场 B1 层",
+            "phone": "400-880-9933",
+            "email": "sz-bay@hyper-charge.com",
+            "hours": "周一至周日 24 小时营运",
+            "services": "即插即充 / 自动识别降锁地锁 / 8 根 600kW 极速超充",
+            "transport": "地铁 9/11 号线红树湾南站出站步行 300 米",
+            "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80"
+          }
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "提交场地合作评估",
-        "contact_subtitle": "填写场地位置、车位数量、电力条件、业态类型和联系方式，运营顾问会先判断建设可行性。",
-        "contact_phone": "400-520-2026",
-        "contact_email": "ev@example.com",
-        "contact_address": "支持远程评估 / 可预约现场勘察",
+        "contact_title": "商务洽谈与 充电桩/新能源充电运营官网 采购询盘",
+        "contact_subtitle": "欢迎索取详细产品型录、工程图纸或申请免费样品试用，商务工程师 2 小时内响应。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交询盘采购单 (RFQ)"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a1520",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0ea5e9",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "POWER-CHARGE · 智能充电桩与超充站运营网络",
+        "qfs_brand_desc": "全功率兆瓦级液冷超充桩、交流慢充桩研发制造与智慧充电场站投资运营商。兼容 800V 高压超充平台，赋能商场停车场、高速服务区及公交客运枢纽。",
+        "qfs_link_groups": [
+          {
+            "title": "充电设备选型 & 投建与加盟合作",
+            "links": "600kW 全液冷超快充终端|#\n120kW/180kW 一体式双枪快充桩|#\n7kW/11kW 社区智能壁挂慢充桩|#\nV2G 车网互动双向充放电机|#\n城市合伙人场站建设计划|#\n商业综合体充电桩投资托管|#\n充电桩互联互通平台接入|#\n光储充放一体化示范站规划|#"
+          }
+        ],
+        "qfs_contact_title": "建站加盟与场站运维服务",
+        "qfs_contact_items": "商务热线|400-880-6677|tel:4008806677\n场站客服|400-111-2233|tel:4001112233\n服务保障|7×24小时全国充电桩故障远程救援|#\n运营总部|广东省广州市天河区珠江新城高德置地秋广场 22 层|#",
+        "qfs_social_title": "智慧超充",
+        "qfs_social_links": "车主充电小程序|#\n场站优惠券领取|#\n超充站寻桩地图|#\n车友交流论坛|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 POWER-CHARGE NETWORK. 保留所有权利 · 粤ICP备20083192号 · 新能源充换电运营特许经营许可证",
+        "qfs_bottom_links": "安全充电操作指南|#\n电费计价规则公示|#\n场站合作协议范本|#\n充电争议仲裁通道|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

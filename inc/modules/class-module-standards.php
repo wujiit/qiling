@@ -40,7 +40,7 @@ class Module_Standards {
             'query_loop' => '11011', 'featured_posts' => '10001', 'breaking_news_ticker' => '00000', 'author_matrix' => '11011',
             'about_me_card' => '11000', 'friendly_links' => '11001', 'media_list' => '11011', 'micro_journal_stream' => '11011',
             'reader_wall' => '11011', 'knowledge_cards' => '11011', 'double_column_carousel' => '00001', 'product_showcase' => '11110',
-            'hero_search' => '11010', 'service_cards' => '00001', 'magic_layout' => '10110', 'footer_suite' => '00101',
+            'hero_search' => '11010', 'service_cards' => '00001', 'magic_layout' => '10110', 'header_suite' => '00110', 'footer_suite' => '00101',
             'software_carousel' => '11011', 'software_category' => '11011', 'software_ranking' => '11011', 'github_activity' => '11011',
             'resume_hero' => '11110', 'skills' => '11001', 'experience_timeline' => '11001', 'qiling_image_guide' => '11001',
             'category_tabs' => '11011', 'resource_stats' => '11001', 'qiling_universal_recommend' => '11011', 'dynamic_banner' => '11111',

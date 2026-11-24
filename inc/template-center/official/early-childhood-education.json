@@ -43,263 +43,183 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "萌宝早教",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "课程体系",
+            "link": "#curriculum",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "配套设施",
+            "link": "#hotel-amenities",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f59e0b",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f59e0b",
+        "qhs_hover_bg": "rgba(245,158,11,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 50%, #d97706 100%)",
         "banner_slides": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=80",
-            "title": "把安全照护、分龄课程和成长反馈讲清楚",
-            "subtitle": "适合幼儿园、托育中心和早教机构展示园区环境、课程体系、师资团队与预约参观入口，让家长快速建立信任。",
-            "btn_text": "预约参观园区",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#0284c7"
+            "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1800&q=80",
+            "title": "蒙台梭利国际双语早教 · 激发每个孩子的无限潜能",
+            "subtitle": "沉浸式全英文探索环境，严选爱心持证外教与儿童心理学导师，陪伴宝贝快乐探索独立成长的第一步。",
+            "btn_text": "预约免费试听体验课",
+            "btn_url": "#booking"
           }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "01",
-            "number": "18月+",
-            "label": "托育启蒙覆盖",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "02",
-            "number": "1:6",
-            "label": "小班照护比例",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "03",
-            "number": "4类",
-            "label": "分龄课程体系",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "04",
-            "number": "每日",
-            "label": "成长反馈记录",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "curriculum",
       "data": {
-        "curriculum_title": "分龄成长课程",
-        "curriculum_subtitle": "从生活自理、语言表达、感统运动到探究学习，按年龄段安排成长目标",
-        "curriculum_bg_color": "#fffbeb",
-        "curriculum_primary_color": "#d97706",
-        "curriculum_items": [
-          {
-            "title": "托小班：安全适应与生活自理",
-            "meta": "18-30个月 | 托育启蒙",
-            "content": "<p>围绕入园适应、作息建立、情绪安抚、生活自理和基础社交进行温和过渡。</p>",
-            "open": "yes"
-          },
-          {
-            "title": "小班：感统运动与语言表达",
-            "meta": "2-3岁 | 早教基础",
-            "content": "<p>通过感统游戏、音乐律动、绘本共读和表达练习，帮助孩子建立参与感和表达意愿。</p>",
-            "open": "no"
-          },
-          {
-            "title": "中班：主题探究与同伴协作",
-            "meta": "3-4岁 | 主题课程",
-            "content": "<p>结合自然、艺术、科学和角色游戏，让孩子在观察、提问和协作中发展专注力。</p>",
-            "open": "no"
-          },
-          {
-            "title": "大班：幼小衔接与学习习惯",
-            "meta": "5-6岁 | 入学准备",
-            "content": "<p>关注任务意识、规则理解、表达展示、阅读兴趣和基础学习习惯，平稳衔接小学生活。</p>",
-            "open": "no"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "team",
-      "data": {
-        "team_title": "照护与教学团队",
-        "team_subtitle": "展示园长、主班老师和保育老师的经验背景，让家长看见稳定而专业的陪伴",
-        "team_columns": "3",
-        "team_members": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-            "name": "周园长",
-            "position": "园区负责人",
-            "desc": "负责课程体系、园区安全、师资培训和家园沟通机制。",
-            "email": "principal@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
-            "name": "林老师",
-            "position": "主班教师",
-            "desc": "擅长绘本阅读、语言表达和主题探究课程组织。",
-            "email": "teacher1@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
-            "name": "陈老师",
-            "position": "保育照护老师",
-            "desc": "关注日常照护、饮食午休、情绪安抚和安全细节。",
-            "email": "care@example.com"
-          }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "enable_staggered_animation": "yes"
+        "curriculum_title": "多元潜能探索与分龄特色课程体系",
+        "curriculum_subtitle": "蒙特梭利感官探索、STEAM科学启蒙、双语戏剧绘本与体能运动"
       }
     },
     {
       "type": "gallery",
       "data": {
-        "gallery_title": "园区环境与一日生活",
-        "gallery_subtitle": "用真实空间、活动场景和餐点午休展示，降低家长第一次到访前的不确定感",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "gallery_gap": "16",
-        "enable_filter": "yes",
-        "filter_categories": "活动室,户外活动,午休餐点,家园共育",
-        "gallery_lightbox": "1",
-        "show_counter": "yes",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80",
-            "title": "明亮活动室",
-            "desc": "低龄友好的阅读、桌面操作和主题活动空间。",
-            "category": "活动室"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80",
-            "title": "艺术涂鸦课",
-            "desc": "通过颜色、材料和手部动作训练表达与专注。",
-            "category": "活动室"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80",
-            "title": "户外探索",
-            "desc": "跑跳、攀爬、观察自然，培养身体协调和好奇心。",
-            "category": "户外活动"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=900&q=80",
-            "title": "同伴协作",
-            "desc": "小组游戏和任务合作，帮助孩子建立规则感。",
-            "category": "户外活动"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-            "title": "阅读角",
-            "desc": "安静的绘本角落，适合亲子阅读和晨间阅读。",
-            "category": "家园共育"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80",
-            "title": "课堂展示",
-            "desc": "定期展示主题作品和成长记录，方便家长了解过程。",
-            "category": "家园共育"
-          }
-        ],
-        "module_bg_color": "#fffbeb",
-        "enable_staggered_animation": "yes"
+        "gallery_title": "环保安全园区环境与日常探索实拍",
+        "gallery_subtitle": "全天候恒温新风系统、食品级环保游乐设施与户外生态百草园"
       }
     },
     {
-      "type": "testimonials",
+      "type": "team",
       "data": {
-        "testimonials_title": "家长反馈",
-        "testimonials_subtitle": "把安全感、沟通效率和孩子变化说具体",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "980+",
-        "average_rating": "4.9",
-        "testimonials_bg_color": "#ffffff",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "乐乐妈妈",
-            "position": "托育班家长",
-            "content": "每天能看到饮食、午休和活动反馈，刚入园那段时间老师沟通很细。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-03-18",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "小禾爸爸",
-            "position": "小班家长",
-            "content": "孩子从不愿表达，到现在会主动讲今天做了什么，变化很明显。",
-            "rating": "5",
-            "source": "google",
-            "date": "2026-02-26",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "安安妈妈",
-            "position": "幼小衔接家长",
-            "content": "课程没有只强调知识点，更多是习惯、表达和规则意识，比较放心。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-01-30",
-            "verified": "verified"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "title": "国际持证资深幼教专家与专业保育团队",
+        "subtitle": "100%全员持证上岗，师生比高达 1:4，用爱与专业滋养每个孩子的纯真童年"
+      }
+    },
+    {
+      "type": "hotel-amenities",
+      "data": {
+        "amenities_title": "专属配套与品质设施",
+        "amenities_subtitle": "完备便捷的硬件配套，全方位满足多元需求"
       }
     },
     {
       "type": "faq",
       "data": {
-        "faq_title": "家长常见问题",
-        "faq_subtitle": "提前说明入园适应、师生配比、餐点安全和请假沟通，让咨询更高效",
-        "faq_items": [
-          {
-            "question": "孩子第一次入园不适应怎么办？",
-            "answer": "建议先预约参观和短时体验，老师会根据孩子情绪、作息和分离焦虑情况制定过渡方案，并同步给家长反馈。"
-          },
-          {
-            "question": "托育班和早教体验课有什么区别？",
-            "answer": "托育更强调稳定照护、作息建立和日常陪伴；早教体验课更偏短时课程，适合亲子互动、感统启蒙和兴趣观察。"
-          },
-          {
-            "question": "如何了解孩子每天在园情况？",
-            "answer": "可通过成长记录、照片反馈、接送沟通和阶段观察报告了解饮食、午休、情绪、活动参与和课程表现。"
-          },
-          {
-            "question": "可以先参观再决定报名吗？",
-            "answer": "可以。建议先预约参观园区、了解班型名额、师资安排和入园流程，再根据孩子状态安排体验或试读。"
-          }
-        ],
-        "module_bg_color": "#fffbeb"
+        "faq_title": "入园托育常见问题与家长须知",
+        "faq_subtitle": "膳食营养配比、视频监控开放、入园分离焦虑适应期与班级划分说明"
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约参观或体验课",
-        "booking_subtitle": "提交孩子年龄、目标班型、期望到访时间和家长联系方式，园区老师会确认参观安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "到访前建议准备",
-        "sidebar_content": "说明孩子年龄、作息和入园计划\n如有过敏或特殊照护需求请提前备注\n建议家长带孩子一起参观体验",
-        "contact_phone": "400-930-2026",
-        "contact_hours": "09:00-20:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.5",
-        "module_bg_color": "#ffffff"
+        "booking_title": "预约早教中心/托育园区参观探校与免费试听课",
+        "booking_subtitle": "全天候新风系统、环保级游乐设施、双语外教互动游戏，让孩子在爱与探索中快乐起跑。",
+        "booking_btn_text": "立即预约亲子探园",
+        "booking_phone": "招生办专线：020-8888-1234",
+        "booking_time": "周二至周日 09:00 - 17:30 开放参观"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#18120c",
+        "qfs_text_color": "#fed7aa",
+        "qfs_heading_color": "#fef3c7",
+        "qfs_accent_color": "#f59e0b",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "JOYFUL-KIDS · 蒙台梭利国际双语早教与儿童探索中心",
+        "qfs_brand_desc": "给孩子一个充满爱与自然探索的童年。沉浸式外教双语环境、全环保芬兰进口木质教具、阳光恒温泳池与感统体能专业训练馆。",
+        "qfs_link_groups": [
+          {
+            "title": "特色成长体系 & 家园共育支持",
+            "links": "蒙特梭利全托双语班(2-6岁)|#\n亲子感统体能发展探索课程|#\n奥尔夫音乐与艺术创意启蒙|#\n科学营养配餐与明厨亮灶体系|#\n实时校园安全监控对家长开放|#\n儿童成长发育测评月度报告|#\n周末专家亲子育儿名师讲座|#\n开放日预约与校园实地探访|#"
+          }
+        ],
+        "qfs_contact_title": "入园预约与探访",
+        "qfs_contact_items": "招生专线|400-888-5151|tel:4008885151\n教务微信|JOYFUL_KIDS_ADMIT|#\n园区地址|杭州市西湖区求是路 8 号国际儿童探索园|#",
+        "qfs_social_title": "关注宝贝成长",
+        "qfs_social_links": "微信公众号|#\n小红书家长圈|#\n亲子手工分享|#\n校园开放日直播|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 JOYFUL-KIDS EARLY EDUCATION. 保留所有权利 · 教育局办学许可资质编号：1330106600021",
+        "qfs_bottom_links": "办学许可公示|#\n食品经营许可与每日食谱公示|#\n校园安全守则|#\n家长探视须知|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

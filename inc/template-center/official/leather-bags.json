@@ -1,0 +1,271 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "轻奢箱包与手工皮具站",
+  "page_template": "templates/template-leather-bags.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "business_classic",
+    "colors": {
+      "primary": "#b45309",
+      "secondary": "#78350f"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "leather-bags",
+    "label": "轻奢箱包与手工皮具站",
+    "category": "ecommerce",
+    "category_label": "品牌商城",
+    "industry": "ecommerce",
+    "industry_label": "箱包皮具/配饰",
+    "scenario": "手工皮具工坊与轻奢箱包独立站",
+    "badges": [
+      "单品独立站",
+      "手工皮具",
+      "搭配画册",
+      "同款购买"
+    ],
+    "order": 123,
+    "thumbnail": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "箱包",
+      "皮具",
+      "托特包",
+      "单品独立站",
+      "轻奢",
+      "DTC商城"
+    ],
+    "description": "专为手工皮具工坊、轻奢手袋、男士公文包及潮流箱包独立站打造的官方模板。配备搭配画册 (Lookbook) 模特同款打点购买、箱包内部空间分层热点解构及意式植鞣工艺溯源。"
+  },
+  "seo": {
+    "title": "轻奢箱包与手工皮具站 - 启灵官方独立站模板",
+    "description": "专为手工皮具、轻奢手袋与出海箱包品牌打造的单品垂直独立站，融合模特搭配画册同款购与皮料工艺溯源。"
+  },
+  "modules": [
+    {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "尚品皮具",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "产品展示",
+            "link": "#product_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "选购新品",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#d4af37",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#d4af37",
+        "qhs_hover_bg": "rgba(212,175,55,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "尚品皮具 · 2026 手工皮具型录画册",
+        "lookbook_subtitle": "传承欧洲百年马鞍双针纯手工缝制工艺，严选头层天然植鞣牛皮与实心黄铜五金",
+        "lookbook_columns": "3",
+        "enable_staggered_animation": "yes",
+        "lookbook_items": [
+          {
+            "cover_image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80",
+            "name": "托斯卡纳植鞣牛皮托特手袋",
+            "desc": "全手工法式暗针缝合，历经岁月自然包浆沉淀温润琥珀光泽，容量充沛伴您从容通勤。",
+            "btn_text": "品鉴皮具工艺",
+            "enable_shop_look": "yes",
+            "item_1_title": "经典植鞣托特包",
+            "item_1_price": "¥3,880",
+            "item_1_link": "#",
+            "item_1_pin_x": "50",
+            "item_1_pin_y": "50"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+            "name": "摩登都市 · 粒面小牛皮风琴马鞍包",
+            "desc": "甄选进口小牛皮，定制古董级纯黄铜锁扣，优雅从容切换日常出街与晚宴聚会。",
+            "btn_text": "品鉴皮具工艺",
+            "enable_shop_look": "yes",
+            "item_1_title": "粒面小牛皮马鞍包",
+            "item_1_price": "¥2,980",
+            "item_1_link": "#",
+            "item_1_pin_x": "52",
+            "item_1_pin_y": "48"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+            "name": "匠心商务 · 顶级摔纹皮双层公文包",
+            "desc": "科学多隔层收纳系统，高弹减震电脑内胆，为精英商务差旅提供体面安心守护。",
+            "btn_text": "品鉴皮具工艺",
+            "enable_shop_look": "yes",
+            "item_1_title": "商务真皮公文包",
+            "item_1_price": "¥4,200",
+            "item_1_link": "#",
+            "item_1_pin_x": "48",
+            "item_1_pin_y": "52"
+          }
+        ]
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "经典典藏单品与限定矩阵",
+        "products_subtitle": "HERITAGE COLLECTION",
+        "columns": "3",
+        "items": [
+          {
+            "title": "轻奢箱包与手工皮具站 标志性经典款",
+            "desc": "纯手工大师级制作工艺，选用进口天然环保顶级材质",
+            "specs": "产地：欧洲工坊\n材质：顶级甄选\n工艺：手工研磨",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "轻奢箱包与手工皮具站 限定胶囊系列",
+            "desc": "打破传统边界，融合现代极简美学与实用主义精神",
+            "specs": "限量：全球仅发售500件\n配饰：专属独立编号",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "轻奢箱包与手工皮具站 尊享定制系列",
+            "desc": "为您量身打造专属刻字与微调服务，见证不凡品位",
+            "specs": "服务：一对一高级定制\n交付：顺丰特快保价",
+            "btn_text": "鉴赏细节"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "卓越工艺 · 触手可及的奢华质感",
+        "features_subtitle": "每一道针脚、每一处倒角打磨，皆倾注工匠数十年专注心血"
+      }
+    },
+    {
+      "type": "product_showcase",
+      "data": {}
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "全球直营精品专柜与高级定制沙龙",
+        "branches_subtitle": "敬请莅临线下精品会所，尊享专席一对一鉴赏体验"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约 轻奢箱包与手工皮具站 VIP专席鉴赏与定制服务",
+        "contact_subtitle": "资深品牌顾问将为您提前备齐典藏品目，提供专属私享导购体验。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交品鉴预约"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "luxury",
+        "qfs_bg": "linear-gradient(180deg, #131118 0%, #08070b 100%)",
+        "qfs_text_color": "#cbd5e1",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#d4af37",
+        "qfs_border_color": "rgba(212, 175, 55, 0.22)",
+        "qfs_brand_title": "ATELIER CUIR · 意式手工皮具",
+        "qfs_brand_desc": "坚持托斯卡纳传统植鞣工艺与双针法式马鞍手工缝线。以时光沉淀自然包浆色泽，让每件皮具成为承载记忆的传世经典。",
+        "qfs_link_groups": [
+          {
+            "title": "匠作系列与工艺支持",
+            "links": "经典公文托特包|#flagship\n法式马鞍复古邮差包|#saddle\n头层植鞣皮短款钱夹|#wallet\n手工定制养护皮膏礼盒|#care\n法式双针手工缝线技法|#process\n免费高温烫金刻字定制|#custom\n植鞣皮革日常养护须知|#guide\n终身原厂补线固色维修|#repair"
+          }
+        ],
+        "qfs_contact_title": "工坊客户服务",
+        "qfs_contact_items": "工坊客服|400-882-1920|tel:4008821920\n定制咨询|atelier@cuir-studio.com|mailto:atelier@cuir-studio.com\n手工体验馆|广州市海珠区创客工坊 A3 栋 102 室|#",
+        "qfs_social_title": "关注皮革手作日常",
+        "qfs_social_links": "小红书工坊日常|#\n哔哩哔哩纪录片|#\n官方微信公众号|#\nPinterest图集|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 ATELIER CUIR STUDIO. 手工皮具工坊 · 保留所有权利 · 意大利托斯卡纳植鞣联盟认证皮料",
+        "qfs_bottom_links": "皮料溯源|#\n养护指南|#\n售后政策|#\n隐私条款|#",
+        "qfs_link_columns": "1"
+      }
+    }
+  ]
+}

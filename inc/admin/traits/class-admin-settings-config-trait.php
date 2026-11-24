@@ -583,6 +583,27 @@ trait Admin_Settings_Config_Trait {
                 array( 'id' => 'mobile_hide_cart', 'type' => 'checkbox', 'label' => __( '隐藏购物车图标 (积分插件)', 'qiling' ), 'row_class' => $header_secondary_row_class ),
                 array( 'id' => 'mobile_hide_history', 'type' => 'checkbox', 'label' => __( '隐藏播放记录 (播放器插件)', 'qiling' ), 'row_class' => $header_secondary_row_class ),
 
+                array( 'type' => 'section', 'title' => __( '移动端侧边抽屉菜单设置', 'qiling' ), 'desc' => __( '控制手机端点击汉堡菜单（三条杠）滑出的侧边抽屉面板，支持自定义滑出方向、客服微信二维码卡片与行动转化按钮。', 'qiling' ) ),
+                array( 'id' => 'mobile_drawer_direction', 'type' => 'select', 'label' => __( '抽屉滑出方向', 'qiling' ), 'default' => 'left', 'choices' => array(
+                    'left'  => __( '从屏幕左侧滑出（默认）', 'qiling' ),
+                    'right' => __( '从屏幕右侧滑出', 'qiling' ),
+                ) ),
+                array( 'id' => 'mobile_drawer_welcome_text', 'type' => 'text', 'label' => __( '抽屉顶部标语/欢迎语', 'qiling' ), 'desc' => __( '显示在抽屉 Logo 下方的简短品牌介绍或标语，留空则不显示。', 'qiling' ), 'attrs' => array( 'placeholder' => __( '专注高品质数字化解决方案', 'qiling' ) ) ),
+                array( 'id' => 'mobile_drawer_user_enable', 'type' => 'checkbox', 'label' => __( '显示用户状态卡片', 'qiling' ), 'default' => '1', 'desc' => __( '开启后，已登录显示头像、昵称及个人中心入口；未登录显示便捷登录按钮。', 'qiling' ) ),
+                array( 'id' => 'mobile_drawer_qrcode_enable', 'type' => 'checkbox', 'label' => __( '显示微信客服/公众号卡片', 'qiling' ), 'desc' => __( '开启后在抽屉菜单下方展示精美微信二维码引流卡片，便于手机用户长按识别。', 'qiling' ) ),
+                array( 'id' => 'mobile_drawer_qrcode_img', 'type' => 'image', 'label' => __( '客服/公众号二维码图片', 'qiling' ), 'desc' => __( '上传个人微信、企业微信或微信公众号二维码图片。', 'qiling' ) ),
+                array( 'id' => 'mobile_drawer_qrcode_title', 'type' => 'text', 'label' => __( '二维码卡片标题', 'qiling' ), 'default' => __( '添加官方微信', 'qiling' ), 'attrs' => array( 'placeholder' => __( '添加官方微信', 'qiling' ) ) ),
+                array( 'id' => 'mobile_drawer_qrcode_desc', 'type' => 'text', 'label' => __( '二维码卡片引导文案', 'qiling' ), 'default' => __( '长按二维码识别添加客服微信', 'qiling' ), 'attrs' => array( 'placeholder' => __( '长按二维码识别添加客服微信', 'qiling' ) ) ),
+                array( 'id' => 'mobile_drawer_cta_enable', 'type' => 'checkbox', 'label' => __( '显示快捷转化大按钮', 'qiling' ), 'desc' => __( '在抽屉底部展示色彩醒目的主转化按钮（如“在线咨询”或“预约看房”）。', 'qiling' ) ),
+                array( 'id' => 'mobile_drawer_cta_text', 'type' => 'text', 'label' => __( '转化按钮文字', 'qiling' ), 'default' => __( '立即在线咨询', 'qiling' ), 'attrs' => array( 'placeholder' => __( '立即在线咨询', 'qiling' ) ) ),
+                array( 'id' => 'mobile_drawer_cta_link', 'type' => 'text', 'label' => __( '转化按钮链接', 'qiling' ), 'attrs' => array( 'placeholder' => 'https://...' ) ),
+                array( 'id' => 'mobile_drawer_cta_style', 'type' => 'select', 'label' => __( '转化按钮样式', 'qiling' ), 'default' => 'primary', 'choices' => array(
+                    'primary' => __( '主题主色实底按钮（推荐）', 'qiling' ),
+                    'outline' => __( '高质感边框轮廓按钮', 'qiling' ),
+                ) ),
+                array( 'id' => 'mobile_drawer_show_phone', 'type' => 'checkbox', 'label' => __( '显示一键呼叫电话', 'qiling' ), 'default' => '1', 'desc' => __( '调用公司客服电话，手机访客点击直接调起拨号键盘。', 'qiling' ) ),
+                array( 'id' => 'mobile_drawer_show_tools', 'type' => 'checkbox', 'label' => __( '显示夜间模式与语言切换', 'qiling' ), 'default' => '1', 'desc' => __( '在抽屉底部工具栏展示夜间模式切换按钮和语言切换入口。', 'qiling' ) ),
+
                 array( 'type' => 'section', 'title' => __( '移动端底部菜单', 'qiling' ), 'row_class' => $header_secondary_section_class ),
                 array( 'id' => 'mobile_bottom_label_mode', 'type' => 'select', 'label' => __( '底部菜单显示方式', 'qiling' ), 'default' => 'icon_text', 'row_class' => $header_secondary_row_class, 'choices' => array(
                     'icon_text' => __( '图标 + 文字（默认）', 'qiling' ),

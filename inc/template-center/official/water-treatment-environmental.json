@@ -43,243 +43,200 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0369a1 50%, #047857 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "碧水环保",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.pexels.com/photos/4741970/pexels-photo-4741970.jpeg?auto=compress&cs=tinysrgb&w=1800",
-            "title": "让水处理工程从方案到验收更清晰",
-            "subtitle": "面向工业园区、制造工厂、市政配套和环保改造项目，集中展示工艺路线、设备能力、工程案例、资质证书和咨询入口。",
-            "btn_text": "提交项目需求",
-            "btn_url": "#",
-            "btn_bg_color": "#0284c7",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "效果对比",
+            "link": "#image_comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "01",
-            "number": "80+",
-            "label": "工程项目经验",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "02",
-            "number": "4类",
-            "label": "主流处理场景",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "03",
-            "number": "48h",
-            "label": "初步方案响应",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "04",
-            "number": "运维",
-            "label": "调试与长期托管",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "索取报价",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0284c7",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0284c7",
+        "qhs_hover_bg": "rgba(2,132,199,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "工业高浓度废水近零排放与超纯水制备环保工程总包服务",
+        "bb_subtitle": "MBR 高效膜生物反应器与反渗透浓缩减量化技术，已成功交付 200+ 重工及新能源企业环保达标工程。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "免费获取水质诊断与工艺方案",
+        "bb_btn1_url": "#water",
+        "bb_btn2_text": "查看环保工程业绩名录",
+        "bb_btn2_url": "#cases"
       }
     },
     {
       "type": "services",
-      "data": {
-        "services_title": "水处理与环保工程服务",
-        "services_subtitle": "围绕水质、排放、回用和运营成本设计可落地方案",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "工业废水处理",
-            "desc": "针对化工、电子、食品、印染、机械加工等行业废水，提供预处理、生化、深度处理和达标排放方案。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "市政污水治理",
-            "desc": "面向园区、乡镇、社区和公共设施，提供污水处理站建设、提标改造和运营托管服务。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "中水回用与零排放",
-            "desc": "结合膜处理、蒸发、结晶和回用系统，帮助企业降低新水消耗和排放压力。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "环保设备集成",
-            "desc": "提供一体化设备、加药系统、过滤系统、在线监测、自动控制和运维备件配置。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
+      "data": {}
     },
     {
-      "type": "process",
+      "type": "products",
       "data": {
-        "process_title": "环保工程实施流程",
-        "process_subtitle": "从水质诊断到调试验收，降低工程不确定性",
-        "process_mode": "standard",
-        "module_bg_color": "#f0f9ff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "process_items": [
+        "products_title": "水处理/环保工程官网 · 核心工业级产品与选型矩阵",
+        "products_subtitle": "INDUSTRIAL PRODUCT MATRIX",
+        "columns": "3",
+        "items": [
           {
-            "icon": "01",
-            "title": "现场勘察",
-            "desc": "采集水量、水质、排放标准、场地空间、原有设备和运营痛点。",
-            "stage_tag": "诊断"
+            "title": "系列一：高性能工业级核心型号",
+            "desc": "通过严格全温区可靠性验证，满足连续高负荷运行要求",
+            "specs": "工作温度：-40℃ ~ +125℃\nMTBF：> 100,000 小时\n认证：CE / FCC / RoHS",
+            "btn_text": "规格参数"
           },
           {
-            "icon": "02",
-            "title": "检测与方案",
-            "desc": "结合水样检测、工艺比选、设备清单、投资预算和运行成本测算。",
-            "stage_tag": "设计"
+            "title": "系列二：超低功耗微型化定制型号",
+            "desc": "集成度提升 50%，专为空间严苛与电池供电场景打造",
+            "specs": "待机功耗：< 10uA\n防护等级：IP67 工业级\n接口：标准工业总线",
+            "btn_text": "规格参数"
           },
           {
-            "icon": "03",
-            "title": "设备施工",
-            "desc": "完成设备制造、管线电控、土建配合、安装调试和安全交底。",
-            "stage_tag": "交付"
-          },
-          {
-            "icon": "04",
-            "title": "调试验收",
-            "desc": "开展联动调试、水质达标验证、操作培训、资料移交和运维复盘。",
-            "stage_tag": "验收"
+            "title": "系列三：重载高可靠性旗舰解决方案",
+            "desc": "具备全链路硬件容错与主动安全保护机制，杜绝意外停机",
+            "specs": "负载能力：业内领先\n响应延迟：微秒级闭环\n保修：5年工业级联保",
+            "btn_text": "规格参数"
           }
         ]
       }
     },
     {
+      "type": "image_comparison",
+      "data": {}
+    },
+    {
       "type": "cases",
       "data": {
-        "cases_title": "水处理与环保工程案例",
-        "cases_subtitle": "用行业场景、工艺路线和治理结果说明工程价值",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.pexels.com/photos/19517566/pexels-photo-19517566.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "工业园区污水处理站",
-            "desc": "围绕多企业混合废水完成预处理、生化系统和在线监测升级。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.pexels.com/photos/12726229/pexels-photo-12726229.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "食品工厂废水改造",
-            "desc": "通过气浮、厌氧、好氧和深度过滤组合降低排放波动。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.pexels.com/photos/36067239/pexels-photo-36067239.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "中水回用系统建设",
-            "desc": "用膜处理和自动控制系统提升回用率，减少新水采购和排放成本。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "cases_title": "全球500强与行业龙头企业配套落地案例",
+        "cases_subtitle": "数千家工业客户长达十年以上的共同信赖与严苛验证"
       }
     },
     {
       "type": "certificate_honors",
       "data": {
-        "ch_title": "资质证书与工程信任",
-        "ch_subtitle": "集中展示客户立项、采购和验收前关心的资质材料",
-        "ch_columns": "3",
-        "ch_enable_filter": "yes",
-        "module_bg_color": "#f0f9ff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "ch_items": [
-          {
-            "image": "",
-            "title": "环保工程专业承包资质",
-            "category": "工程资质",
-            "badge": "项目准入",
-            "cert_no": "HBGC-2026-001",
-            "issuer": "主管部门/资质机构",
-            "issue_date": "2026-01-18",
-            "expiry_date": "2031-01-17",
-            "file_url": "#"
-          },
-          {
-            "image": "",
-            "title": "安全生产许可证",
-            "category": "安全生产",
-            "badge": "施工安全",
-            "cert_no": "AQSC-2026-028",
-            "issuer": "主管部门",
-            "issue_date": "2026-03-06",
-            "expiry_date": "2029-03-05",
-            "file_url": "#"
-          },
-          {
-            "image": "",
-            "title": "ISO 9001 / 14001 体系认证",
-            "category": "体系认证",
-            "badge": "质量环境",
-            "cert_no": "ISO-QE-2026-12",
-            "issuer": "第三方认证机构",
-            "issue_date": "2026-04-25",
-            "expiry_date": "2029-04-24",
-            "file_url": "#"
-          }
-        ]
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "水处理项目常见问题",
-        "faq_subtitle": "提前说明水质检测、方案报价、施工验收和运维边界",
-        "faq_items": [
-          {
-            "question": "做方案前需要提供哪些资料？",
-            "answer": "建议提供行业类型、日均水量、峰值水量、现有工艺、水质检测报告、目标排放标准、场地尺寸、是否需要回用和预算范围。"
-          },
-          {
-            "question": "没有水质检测报告可以先咨询吗？",
-            "answer": "可以。可先根据行业和现有排放情况做初步判断，但正式工艺路线和报价需要结合水样检测、现场勘察和当地排放要求确认。"
-          },
-          {
-            "question": "环保工程报价通常包含哪些内容？",
-            "answer": "常见包含工艺设计、设备制造、土建或安装配合、电控系统、调试药剂、培训、验收资料和运维服务，具体边界应在合同中明确。"
-          },
-          {
-            "question": "能否提供后期运维和达标保障？",
-            "answer": "可以在官网展示运营托管、定期巡检、药剂耗材、在线监测、异常响应和水质复盘服务，正式承诺需按项目合同和实际运营条件约定。"
-          }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "ch_title": "国际权威资质认证与核心发明专利",
+        "ch_subtitle": "国家级高新技术企业、ISO9001 质量认证与数十项PCT国际核心发明专利"
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "提交水处理/环保工程需求",
-        "contact_subtitle": "填写行业、日处理水量、水质指标、排放标准、项目所在地和预算范围，工程顾问会协助判断工艺路线和初步配置。",
+        "contact_title": "水处理/环保工程官网 商务询盘与样品申请通道 (RFQ)",
+        "contact_subtitle": "资深应用工程师与大客户销售将在 2 小时内响应，为您出具详细报价与试机方案。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f0f9ff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "提交采购询盘单"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#081622",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0284c7",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "AQUA-CLEAR · 工业水处理与高难度污水资源化工程",
+        "qfs_brand_desc": "专注电镀、印染、化工高盐高 COD 废水零排放与市政中水回用工程。自主研发高通量耐污染反渗透膜系统、电催化氧化反应器，打造生态友好型水循环系统。",
+        "qfs_link_groups": [
+          {
+            "title": "水务工程解决方案 & 运营与运维",
+            "links": "高盐废水 MVR 蒸发结晶零排放|#\n电镀化工重金属废水深度处理|#\n市政污水提标改造超滤中水回用|#\n超纯水 EDI 电子半导体系统|#\n工业园区集中污水处理厂托管运营|#\n在线水质 COD/氨氮自动监测集成|#\n水处理药剂与耗材滤膜供应|#\n应急污染治理与快速排查|#"
+          }
+        ],
+        "qfs_contact_title": "水务工程与排污治理勘察",
+        "qfs_contact_items": "治理热线|400-880-9933|tel:4008809933\n技术总工|025-8888-1122|tel:02588881122\n现场勘测|支持 24 小时出具初步技术方案|#\n工程基地|江苏省南京市江北新区环保产业园水务楼 3 栋|#",
+        "qfs_social_title": "水务前沿",
+        "qfs_social_links": "治水案例专刊|#\n工业水循环指南|#\n净水技术公开课|#\n环保政策月刊|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 AQUA-CLEAR WATER TECH. 保留所有权利 · 苏ICP备15011982号 · 环保工程甲级资质",
+        "qfs_bottom_links": "水质排放标准白皮书|#\n水务设备运维保修|#\n排污许可公示|#\n应急响应方案|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

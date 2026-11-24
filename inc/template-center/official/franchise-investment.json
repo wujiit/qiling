@@ -43,271 +43,445 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "editorial",
-        "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #090e17 0%, #1e1b4b 50%, #78350f 100%)",
-        "bb_title_mode": "text",
-        "bb_title": "把品牌方法论复制到更多城市<br><strong>让加盟增长更快、更稳、更可落地</strong>",
-        "bb_title_size_max": "72px",
-        "bb_subtitle": "加盟招商与区域拓展官网",
-        "bb_desc": "适合连锁品牌、区域代理、城市合伙人和联营项目的招商页面，用合作模式、开店支持、样板店网络和咨询表单把意向客户先筛一轮。",
-        "bb_text_align": "left",
-        "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #fde68a 50%, #c7d2fe 100%)",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "创投盟",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "提交加盟意向",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看合作模式",
-            "link": "#",
-            "style": "light",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bb_primary_btn_bg_color": "#d97706",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#b45309",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#e0e7ff",
-        "bb_light_btn_hover_text_color": "#312e81",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "lifted",
-        "bb_media_radius": "10px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "0",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f59e0b",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f59e0b",
+        "qhs_hover_bg": "rgba(245,158,11,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "领跑万亿消费新赛道 · 全托管式品牌特许加盟招商",
+        "bb_subtitle": "千城万店数字化运营体系，大数据精准智能选址、统一品牌形象输出、冷链集中配送全方位扶持赋能。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "获取 2026 招商加盟手册",
+        "bb_btn1_url": "#franchise",
+        "bb_btn2_text": "预约总部实地考察",
+        "bb_btn2_url": "#visit"
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "加盟增长关键数据",
-        "stats_subtitle": "把品牌标准、样板店表现和城市拓展节奏说清楚，帮助意向客户快速判断合作匹配度",
-        "stats_text_align": "center",
+        "stats_title": "实力说话 · 2,800+ 加盟伙伴的共同信赖",
+        "stats_subtitle": "真实严谨的门店运营数据，为您的创业投资提供坚不可摧的安全护城河",
         "stats_items": [
           {
-            "number": "128+",
-            "label": "签约合作门店",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "2,800+ 家",
+            "label": "全国直营与特许加盟门店总数"
           },
           {
-            "number": "36城",
-            "label": "意向拓展城市",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "8.6 个月",
+            "label": "成熟门店平均初期投资回收周期"
           },
           {
-            "number": "45天",
-            "label": "平均筹建周期",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "68.5%",
+            "label": "核心产品综合毛利率空间"
           },
           {
-            "number": "92%",
-            "label": "开业三月达标率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "92.4%",
+            "label": "三年以上老加盟商二次开店与裂变率"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #1c1917 0%, #292524 50%, #78350f 100%)",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes",
-        "stats_title_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "保姆式全程扶持 · 从 0 到 1 打造爆款旺店",
+        "services_subtitle": "不用担心无经验，总部八大赋能体系护航开店每个环节",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "map-pin",
+            "title": "大数据精准选址与商圈评估",
+            "desc": "结合高德人流热力图与客群画像深度分析，严守黄金点位开店准则"
+          },
+          {
+            "icon": "layout",
+            "title": "统一标准化 SI 空间极速营建",
+            "desc": "总部提供全套施工图纸、模块化货架集中集采，最快 15 天快速开业"
+          },
+          {
+            "icon": "truck",
+            "title": "全国冷链仓配一体化供给",
+            "desc": "核心物料源头直采，全国 12 大中心仓次日直达门店，降低进货成本"
+          },
+          {
+            "icon": "users",
+            "title": "金牌店长下店 14 天带教实操",
+            "desc": "手把手传授标准化制作流程、员工排班管理、私域流量运营与外卖爆单"
+          }
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "加盟合作推进流程",
-        "process_subtitle": "从意向沟通到开业落地，把每一步需要的资料、支持和节奏提前说清楚",
-        "process_mode": "industrial",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
+        "process_title": "加盟招商官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "提交合作意向",
-            "desc": "填写意向城市、预算区间、资源背景和经营经验，招商顾问做第一轮沟通。",
-            "stage_tag": "意向",
-            "deliverable": "意向资料表"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "城市与资质评估",
-            "desc": "综合评估商圈基础、团队能力、门店资源、合作模式和可落地节奏。",
-            "stage_tag": "评估",
-            "deliverable": "评估建议 / 模式匹配"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "签约筹建启动",
-            "desc": "明确合作区域、开店计划、选址设计、物料清单和培训安排。",
-            "stage_tag": "筹建",
-            "deliverable": "签约文件 / 筹建计划"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "培训开业运营",
-            "desc": "完成门店培训、试营业、开业活动和首月经营陪跑，缩短爬坡周期。",
-            "stage_tag": "开业",
-            "deliverable": "培训记录 / 开业复盘"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "comparison",
+      "type": "pricing",
       "data": {
-        "comparison_title": "合作模式对比",
-        "comparison_subtitle": "用单店加盟、区域代理和联营合作三种模式，帮不同资源条件的投资人快速找到匹配路径",
-        "comparison_features": "适合对象\n适合阶段\n建店与设计支持\n培训与督导\n区域保护\n收益结构",
-        "comparison_products": [
+        "pricing_title": "灵活合作模式与阶段性加盟投资方案",
+        "pricing_subtitle": "针对不同投资预算与城市商圈，量身定制最适宜的盈利模型",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "name": "单店加盟",
-            "values": "门店经营者 / 创业团队\n成熟商圈与社区门店\n✓ 标准 SI、选址评估、开店物料\n✓ 店长店员培训与驻店辅导\n单店半径保护\n门店营业收益"
+            "name": "社区创业精选店 (30-50㎡)",
+            "name_color": "#0f172a",
+            "price": "¥88,000 起",
+            "price_color": "#0f172a",
+            "period": "/初始加盟投资",
+            "desc": "主打外带与高频外卖，高坪效低租金，适合夫妻创业或小资本试水",
+            "desc_color": "#64748b",
+            "features": "品牌特许经营授权与全套VI体系\n标准设备采购补贴 ¥20,000\n总部 7 天封闭式理论与实操培训\n赠送价值 ¥15,000 首批开业核心物料",
+            "features_color": "#334155",
+            "btn_text": "获取精选店收益测算",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "区域代理",
-            "values": "城市运营合伙人\n新城市拓展或多店布局\n✓ 样板店打造、筹建辅导、区域招商素材\n✓ 招商培训、巡店督导、经营复盘\n城市 / 区县授权保护\n区域加盟收益 + 门店收益"
+            "name": "商圈标准旗舰店 (80-120㎡)",
+            "name_color": "#0f172a",
+            "price": "¥168,000 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/初始加盟投资",
+            "desc": "购物中心与核心步行街旺铺，堂食与外卖双轮驱动，盈利天花板高",
+            "desc_color": "#64748b",
+            "features": "含精选店全部权益及专属大店赋能\n金牌督导免费驻店支持 14 天带教\n美团/饿了么外卖平台首月流量包扶持\n抖音本地生活团购专属投流补贴 ¥10,000",
+            "features_color": "#334155",
+            "btn_text": "获取旗舰店收益测算",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "最受欢迎",
+            "badge": "最受欢迎",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "联营合作",
-            "values": "资源型投资方 / 商业体合作\n重点商圈或大型项目\n✓ 联合选址、投资模型与项目共建\n✓ 驻场运营支持与阶段复盘\n项目级合作约定\n分成或保底 + 分成"
+            "name": "城市区域独家合伙人 (市级代理)",
+            "name_color": "#0f172a",
+            "price": "¥388,000 起",
+            "price_color": "#0f172a",
+            "period": "/独家区域授权",
+            "desc": "独享整座地级市拓展权益，享受下辖所有加盟店原料返点与加盟费分成",
+            "desc_color": "#64748b",
+            "features": "地级市行政区域独家排他经营特权\n享受区域内后续所有门店 50% 加盟分成\n享受区域所有门店供应链原料长期返点\n总部战略副总裁直属团队入驻协助建仓",
+            "features_color": "#334155",
+            "btn_text": "洽谈城市代理配额",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "comparison_highlight": "2",
-        "module_bg_type": "color",
-        "module_bg_color": "#fffbeb",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        "pricing_items": [
+          {
+            "name": "社区创业精选店 (30-50㎡)",
+            "name_color": "#0f172a",
+            "price": "¥88,000 起",
+            "price_color": "#0f172a",
+            "period": "/初始加盟投资",
+            "desc": "主打外带与高频外卖，高坪效低租金，适合夫妻创业或小资本试水",
+            "desc_color": "#64748b",
+            "features": "品牌特许经营授权与全套VI体系\n标准设备采购补贴 ¥20,000\n总部 7 天封闭式理论与实操培训\n赠送价值 ¥15,000 首批开业核心物料",
+            "features_color": "#334155",
+            "btn_text": "获取精选店收益测算",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "商圈标准旗舰店 (80-120㎡)",
+            "name_color": "#0f172a",
+            "price": "¥168,000 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/初始加盟投资",
+            "desc": "购物中心与核心步行街旺铺，堂食与外卖双轮驱动，盈利天花板高",
+            "desc_color": "#64748b",
+            "features": "含精选店全部权益及专属大店赋能\n金牌督导免费驻店支持 14 天带教\n美团/饿了么外卖平台首月流量包扶持\n抖音本地生活团购专属投流补贴 ¥10,000",
+            "features_color": "#334155",
+            "btn_text": "获取旗舰店收益测算",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "最受欢迎",
+            "badge": "最受欢迎",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "城市区域独家合伙人 (市级代理)",
+            "name_color": "#0f172a",
+            "price": "¥388,000 起",
+            "price_color": "#0f172a",
+            "period": "/独家区域授权",
+            "desc": "独享整座地级市拓展权益，享受下辖所有加盟店原料返点与加盟费分成",
+            "desc_color": "#64748b",
+            "features": "地级市行政区域独家排他经营特权\n享受区域内后续所有门店 50% 加盟分成\n享受区域所有门店供应链原料长期返点\n总部战略副总裁直属团队入驻协助建仓",
+            "features_color": "#334155",
+            "btn_text": "洽谈城市代理配额",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
       "type": "branches",
       "data": {
-        "branches_title": "样板店与签约城市",
-        "branches_subtitle": "展示直营样板店、重点签约城市和即将开业区域，提升品牌可信度",
+        "branches_title": "全国重点城市标杆样板门店（支持实地考察）",
+        "branches_subtitle": "真店、真客流、真数据，我们支持加盟商随时随机突击进店考察验真",
         "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "到店路线",
-        "booking_button_text": "预约考察",
         "branches_list": [
           {
-            "name": "上海品牌样板店",
-            "city": "上海",
-            "status": "open",
-            "address": "上海市静安区示例路168号",
-            "phone": "021-68880001",
-            "email": "shanghai@example.com",
-            "hours": "10:00-21:00",
-            "services": "品牌体验,样板店参观,加盟面谈",
-            "transport": "地铁站步行 6 分钟",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+            "name": "上海徐家汇美罗城标杆旗舰店",
+            "city": "上海市",
+            "status": "营业中 (单日翻台超12轮)",
+            "address": "徐汇区肇嘉浜路 1111 号美罗城 B1 层 B-22",
+            "phone": "021-6488-8866",
+            "email": "sh-metro@brand-franchise.com",
+            "hours": "周一至周日 10:00 - 22:00",
+            "services": "全系产品演示 / 实时后厨动线观摩 / 店长经营答疑",
+            "transport": "地铁 1/9/11 号线徐家汇站 9 号口出站即达",
+            "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "name": "成都城市运营中心",
-            "city": "成都",
-            "status": "open",
-            "address": "成都市锦江区示例街88号",
-            "phone": "028-68880002",
-            "email": "chengdu@example.com",
-            "hours": "09:30-20:00",
-            "services": "区域运营,加盟培训,样板店考察",
-            "transport": "商圈停车便利",
-            "lat": "30.5728",
-            "lng": "104.0668",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=900&q=80"
+            "name": "杭州湖滨银泰 in77 潮饮概念店",
+            "city": "杭州市",
+            "status": "营业中 (商圈饮品销量第一)",
+            "address": "上城区延安路 258 号湖滨银泰 in77 C 区 1 层",
+            "phone": "0571-8766-9911",
+            "email": "hz-in77@brand-franchise.com",
+            "hours": "周一至周日 10:00 - 22:30",
+            "services": "智能设备全自动出餐演示 / 现场试吃品鉴 / 动线讲解",
+            "transport": "地铁 1 号线定安路站 / 龙翔桥站步行 200 米",
+            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "name": "武汉筹建示范店",
-            "city": "武汉",
-            "status": "coming",
-            "address": "武汉市东湖高新区示例大道99号",
-            "phone": "027-68880003",
-            "email": "wuhan@example.com",
-            "hours": "即将开业",
-            "services": "签约筹建,城市考察,合作面谈",
-            "transport": "近主干道",
-            "lat": "30.5928",
-            "lng": "114.3055",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+            "name": "成都春熙路 IFS 核心商圈示范店",
+            "city": "成都市",
+            "status": "营业中 (周末排队超100号)",
+            "address": "锦江区红星路三段 1 号成都 IFS 国际金融中心负 2 层",
+            "phone": "028-8666-3399",
+            "email": "cd-ifs@brand-franchise.com",
+            "hours": "周一至周日 10:00 - 22:00",
+            "services": "外卖爆单操作全流程观摩 / 加盟商现场接待中心",
+            "transport": "地铁 2/3 号线春熙路站 C 口地下直接连通",
+            "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=80"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "faq",
       "data": {
-        "faq_title": "加盟合作常见问题",
-        "faq_subtitle": "先把费用、选址、区域政策和总部支持说清楚，减少无效沟通",
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
         "faq_items": [
           {
-            "question": "加盟费是否包含装修、设备和首批物料？",
-            "answer": "不同合作模式包含内容不同。页面建议先展示合作模式边界，正式沟通时再结合城市、店型和面积给出详细预算清单。"
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
           },
           {
-            "question": "没有行业经验也可以加盟吗？",
-            "answer": "可以，但通常需要更完整的培训和陪跑支持。总部会结合经营经验、团队配置和当地资源判断适合的合作模式。"
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
           },
           {
-            "question": "是否提供区域保护和城市授权？",
-            "answer": "会根据合作模式、城市等级、门店密度和开发计划设定保护政策，最终以合同和区域授权约定为准。"
-          },
-          {
-            "question": "开业后总部会继续提供哪些支持？",
-            "answer": "一般会提供开业活动支持、巡店督导、经营复盘、物料更新、培训迭代和会员营销建议，帮助门店缩短爬坡周期。"
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
           }
-        ],
-        "module_bg_color": "#fffbeb",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "提交加盟合作意向",
-        "contact_subtitle": "填写意向城市、预算区间、门店资源和过往经营经验，招商顾问会进行初步评估。",
+        "contact_title": "与 加盟招商官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "contact_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#17120a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f59e0b",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "FRANCHISE-HUB · 热门品牌特许招商与投资加盟中心",
+        "qfs_brand_desc": "甄选万亿赛道头部餐饮、零售与服务轻资产投资项目。单店回本周期模型透明，总部全程输出“选址+设计+建店+培训+引流”全托管保姆式扶持，助力创客稳健起步。",
+        "qfs_link_groups": [
+          {
+            "title": "投资项目精选 & 加盟扶持政策",
+            "links": "新中式鲜萃茶饮投资专区|#\n轻食咖啡简餐复合盈利模型|#\n社区零食量贩店整店输出项目|#\n儿童早教素质成长托管馆|#\n单店财务模型与回本测算工具|#\n商业商圈选址与人流大数据分析|#\n总部实操学院免费带薪培训政策|#\n首批开业物料补贴与营销扶持金|#"
+          }
+        ],
+        "qfs_contact_title": "创业顾问一对一解答投资规划",
+        "qfs_contact_items": "加盟热线|400-880-6688|tel:4008806688\n投资总监|186-1188-7766|tel:18611887766\n咨询时间|周一至周日 9:00 - 21:30（支持周末实地考察）|#\n招商中心|广东省深圳市南山区高新南九道航天科技大厦 15 层|#",
+        "qfs_social_title": "创客空间",
+        "qfs_social_links": "创业投资评测报告|#\n加盟商盈利专访|#\n项目路演视频号|#\n新店开业实况|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 FRANCHISE-HUB INVESTMENT. 保留所有权利 · 粤ICP备18063319号 · 国家商务部特许经营备案合规平台",
+        "qfs_bottom_links": "商务特许经营备案信息公示|#\n投资风险防范警示|#\n加盟合同标准化范本|#\n加盟商退出机制|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

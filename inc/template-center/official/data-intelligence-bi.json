@@ -42,193 +42,213 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #020617 0%, #1e3a8a 52%, #1e1b4b 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "数智洞察",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80",
-            "title": "把分散数据变成经营判断",
-            "subtitle": "统一指标、实时看板、智能分析和预警订阅，帮助团队更快发现问题。",
-            "btn_text": "预约演示",
-            "btn_url": "#",
-            "btn_bg_color": "#3b82f6",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "数据图表",
+            "link": "#chart",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "能力轮盘",
+            "link": "#circle_wheel",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "方案对比",
+            "link": "#comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "80",
-            "number": "80+",
-            "label": "指标模板",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "20",
-            "number": "20+",
-            "label": "数据连接器",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "5",
-            "number": "5分钟",
-            "label": "看板刷新",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "99.9",
-            "number": "99.9%",
-            "label": "服务可用性",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "免费试用",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "features",
+      "type": "interact_hero",
       "data": {
-        "features_title": "数据智能能力",
-        "features_subtitle": "从采集、治理、分析到行动闭环",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "多源接入",
-            "desc": "连接数据库、表格、业务系统和第三方平台。"
-          },
-          {
-            "icon": "02",
-            "title": "指标治理",
-            "desc": "统一口径、维度和权限，减少报表争议。"
-          },
-          {
-            "icon": "03",
-            "title": "可视化看板",
-            "desc": "拖拽式搭建经营看板和专题分析页。"
-          },
-          {
-            "icon": "04",
-            "title": "智能预警",
-            "desc": "关键指标异常时自动通知负责人。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "hero_badge": "新一代企业级实时智能数据湖仓与 BI 平台",
+        "hero_title": "统一数据底座 · 毫秒级洞察驱动智能商业决策",
+        "hero_subtitle": "基于自研向量化执行引擎与湖仓一体架构，打破企业数据孤岛。从 PB 级海量多源异构数据到高管实时大屏决策，速度提升 10 倍以上。",
+        "hero_primary_btn_text": "免费开通试用集群",
+        "hero_primary_btn_url": "#cta",
+        "hero_secondary_btn_text": "查看技术性能白皮书",
+        "hero_secondary_btn_url": "#chart"
       }
     },
     {
-      "type": "services",
+      "type": "chart",
       "data": {
-        "services_title": "典型应用场景",
-        "services_subtitle": "按业务团队常见需求组织页面内容",
-        "services_columns": "4",
-        "services_bg_color": "#f8fafc",
-        "services_items": [
+        "chart_type": "bar",
+        "chart_title": "典型复杂业务场景查询吞吐与延迟对比 (QPS/Latency)",
+        "chart_height": "400px",
+        "chart_data": [
           {
-            "icon": "01",
-            "title": "销售看板",
-            "desc": "线索、转化、回款和客户分层追踪。",
-            "link": "#"
+            "label": "10亿级明细多表关联",
+            "value": "120ms",
+            "color": "#3b82f6"
           },
           {
-            "icon": "02",
-            "title": "运营分析",
-            "desc": "活动效果、用户行为和留存变化分析。",
-            "link": "#"
+            "label": "实时流数据毫秒级聚合",
+            "value": "18ms",
+            "color": "#10b981"
           },
           {
-            "icon": "03",
-            "title": "财务指标",
-            "desc": "收入、成本、利润和预算执行监控。",
-            "link": "#"
+            "label": "高并发大屏即席查询",
+            "value": "35ms",
+            "color": "#6366f1"
           },
           {
-            "icon": "04",
-            "title": "供应链监控",
-            "desc": "库存、履约、交付和异常风险预警。",
-            "link": "#"
+            "label": "跨源联邦数据联合计算",
+            "value": "180ms",
+            "color": "#f59e0b"
           }
         ]
       }
     },
     {
-      "type": "process",
+      "type": "stats",
       "data": {
-        "process_title": "实施路径",
-        "process_subtitle": "数据项目先控口径，再做看板，最后进入行动闭环",
-        "process_items": [
+        "stats_title": "工业级强悍吞吐性能 · 经受千万级并发实战考验",
+        "stats_subtitle": "全球 500 强企业的核心生产系统严苛验证",
+        "stats_items": [
           {
-            "icon": "01",
-            "title": "数据盘点",
-            "desc": "梳理系统、数据表、指标和使用角色。",
-            "stage_tag": "盘点"
+            "number": "100 PB+",
+            "label": "单集群最大承载数据规模"
           },
           {
-            "icon": "02",
-            "title": "指标建模",
-            "desc": "统一指标口径，建立维度和权限规则。",
-            "stage_tag": "建模"
+            "number": "85,000+",
+            "label": "峰值查询 QPS 持续平稳无抖动"
           },
           {
-            "icon": "03",
-            "title": "看板搭建",
-            "desc": "按业务场景搭建可视化页面和筛选条件。",
-            "stage_tag": "看板"
+            "number": "99.999%",
+            "label": "金融级业务高可用保障 SLA"
           },
           {
-            "icon": "04",
-            "title": "预警闭环",
-            "desc": "配置异常提醒、负责人和处理流程。",
-            "stage_tag": "行动"
+            "number": "60%+",
+            "label": "相比传统大数据架构节省综合算力成本"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "circle_wheel",
+      "data": {
+        "wheel_title": "360° 全景数据能力轮盘 · 覆盖数据全生命周期",
+        "wheel_subtitle": "采集、湖仓存储、治理建模、指标中台、智能BI可视化全栈闭环"
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "features_title": "六大核心企业级技术创新",
+        "features_subtitle": "为现代数字化企业构建不可逾越的技术壁垒"
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "启灵数据智能引擎 vs 传统繁重开源大数据技术栈",
+        "comparison_subtitle": "无需组装 Hadoop / Spark / Presto / Flink 多套复杂集群，一键化开箱运维",
+        "columns": "2"
       }
     },
     {
       "type": "cases",
       "data": {
-        "cases_title": "数据应用案例",
-        "cases_subtitle": "展示不同部门如何通过数据看板提升效率",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-            "title": "经营驾驶舱",
-            "desc": "统一展示收入、利润、客户和库存指标。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
-            "title": "营销转化分析",
-            "desc": "拆解渠道投放、线索质量和成交路径。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=900&q=80",
-            "title": "供应链预警",
-            "desc": "监控库存周转、缺货风险和履约效率。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        "cases_title": "头部客户实战落地案例",
+        "cases_subtitle": "赋能银行金融、高端制造、新零售与跨境出海领军企业",
+        "columns": "3"
       }
     },
     {
-      "type": "contact",
+      "type": "cta",
       "data": {
-        "contact_title": "预约数据诊断",
-        "contact_subtitle": "提交当前数据系统、核心指标、团队角色和建设目标，顾问会给出初步建设建议。",
-        "contact_phone": "400-810-2026",
-        "contact_email": "bi@example.com",
-        "contact_address": "支持远程演示 / 可预约线下方案会",
-        "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "cta_title": "立即开启您的企业数据智能化之旅",
+        "cta_subtitle": "技术架构师团队为您免费提供 1 对 1 架构现状诊断与 PoC 验证环境。",
+        "cta_btn_text": "申请专属 PoC 测试环境",
+        "cta_btn_link": "#contact"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_brand_title": "DATA-IQ · 启灵数据智能平台",
+        "qfs_brand_desc": "用数据定义商业，用智能重塑决策。打造下一代企业级实时智能湖仓引擎。",
+        "qfs_bottom_text": "© 2026 DATA-IQ PLATFORM. 保留所有技术专利 · 京ICP备20251108号"
       }
     }
   ]

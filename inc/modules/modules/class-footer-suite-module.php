@@ -32,57 +32,36 @@ class Footer_Suite_Module extends Module_Base {
 
     public function get_fields() {
         return array(
+            // 品牌设置
             array(
-                'id'      => 'qfs_layout',
-                'type'    => 'select',
-                'label'   => __( '布局', 'qiling' ),
-                'options' => array(
-                    'balanced' => __( '品牌 + 链接 + 联系', 'qiling' ),
-                    'columns'  => __( '多列', 'qiling' ),
-                    'compact'  => __( '紧凑', 'qiling' ),
-                ),
-                'default' => 'balanced',
+                'id'          => 'qfs_logo',
+                'type'        => 'image',
+                'label'       => __( 'Logo', 'qiling' ),
+                'group'       => 'brand',
+                'group_label' => __( '品牌设置', 'qiling' ),
             ),
             array(
-                'id'      => 'qfs_width',
-                'type'    => 'select',
-                'label'   => __( '宽度', 'qiling' ),
-                'options' => array(
-                    'contained' => __( '常规', 'qiling' ),
-                    'wide'      => __( '宽屏', 'qiling' ),
-                    'full'      => __( '通栏', 'qiling' ),
-                ),
-                'default' => 'contained',
+                'id'          => 'qfs_brand_title',
+                'type'        => 'text',
+                'label'       => __( '品牌名称', 'qiling' ),
+                'group'       => 'brand',
+                'group_label' => __( '品牌设置', 'qiling' ),
             ),
             array(
-                'id'      => 'qfs_variant',
-                'type'    => 'select',
-                'label'   => __( '视觉风格', 'qiling' ),
-                'options' => array(
-                    'classic' => __( '经典页脚', 'qiling' ),
-                    'cinema'  => __( '深色影院', 'qiling' ),
-                ),
-                'default' => 'classic',
+                'id'          => 'qfs_brand_desc',
+                'type'        => 'textarea',
+                'label'       => __( '品牌简介', 'qiling' ),
+                'group'       => 'brand',
+                'group_label' => __( '品牌设置', 'qiling' ),
             ),
-            array(
-                'id'    => 'qfs_logo',
-                'type'  => 'image',
-                'label' => __( 'Logo', 'qiling' ),
-            ),
-            array(
-                'id'    => 'qfs_brand_title',
-                'type'  => 'text',
-                'label' => __( '品牌名称', 'qiling' ),
-            ),
-            array(
-                'id'    => 'qfs_brand_desc',
-                'type'  => 'textarea',
-                'label' => __( '品牌简介', 'qiling' ),
-            ),
+
+            // 链接分组设置
             array(
                 'id'            => 'qfs_link_groups',
                 'type'          => 'repeater',
                 'label'         => __( '链接分组', 'qiling' ),
+                'group'         => 'links',
+                'group_label'   => __( '链接分组设置', 'qiling' ),
                 'default_items' => array(
                     array(
                         'title' => __( '快速链接', 'qiling' ),
@@ -104,45 +83,82 @@ class Footer_Suite_Module extends Module_Base {
                 ),
             ),
             array(
-                'id'      => 'qfs_link_columns',
-                'type'    => 'select',
-                'label'   => __( '链接列数', 'qiling' ),
-                'options' => array(
+                'id'          => 'qfs_link_columns',
+                'type'        => 'select',
+                'label'       => __( '链接列数', 'qiling' ),
+                'group'       => 'links',
+                'group_label' => __( '链接分组设置', 'qiling' ),
+                'options'     => array(
                     '1' => '1',
                     '2' => '2',
                     '3' => '3',
                     '4' => '4',
                 ),
-                'default' => '2',
+                'default'     => '2',
             ),
+
+            // 联系方式设置
             array(
-                'id'      => 'qfs_contact_title',
-                'type'    => 'text',
-                'label'   => __( '联系标题', 'qiling' ),
-                'default' => __( '联系方式', 'qiling' ),
+                'id'          => 'qfs_contact_title',
+                'type'        => 'text',
+                'label'       => __( '联系标题', 'qiling' ),
+                'group'       => 'contact',
+                'group_label' => __( '联系方式设置', 'qiling' ),
+                'default'     => __( '联系方式', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_contact_items',
                 'type'        => 'textarea',
                 'label'       => __( '联系内容', 'qiling' ),
+                'group'       => 'contact',
+                'group_label' => __( '联系方式设置', 'qiling' ),
                 'description' => __( '每行：名称|内容|链接', 'qiling' ),
             ),
             array(
-                'id'      => 'qfs_social_title',
-                'type'    => 'text',
-                'label'   => __( '社交标题', 'qiling' ),
-                'default' => __( '关注我们', 'qiling' ),
+                'id'          => 'qfs_badge_bg',
+                'type'        => 'color',
+                'label'       => __( '联系标签背景颜色', 'qiling' ),
+                'group'       => 'contact',
+                'group_label' => __( '联系方式设置', 'qiling' ),
+                'default'     => '',
+                'description' => __( '控制联系内容前的小标签，留空时跟随页面预设/全局徽章颜色。', 'qiling' ),
+            ),
+
+            // 社交与互动设置
+            array(
+                'id'          => 'qfs_social_title',
+                'type'        => 'text',
+                'label'       => __( '社交标题', 'qiling' ),
+                'group'       => 'social',
+                'group_label' => __( '社交与互动设置', 'qiling' ),
+                'default'     => __( '关注我们', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_social_links',
                 'type'        => 'textarea',
                 'label'       => __( '社交链接', 'qiling' ),
+                'group'       => 'social',
+                'group_label' => __( '社交与互动设置', 'qiling' ),
                 'description' => __( '每行：文字|链接', 'qiling' ),
+            ),
+            array(
+                'id'          => 'qfs_show_qr',
+                'type'        => 'select',
+                'label'       => __( '显示二维码', 'qiling' ),
+                'group'       => 'social',
+                'group_label' => __( '社交与互动设置', 'qiling' ),
+                'options'     => array(
+                    'yes' => __( '显示', 'qiling' ),
+                    'no'  => __( '隐藏', 'qiling' ),
+                ),
+                'default'     => 'yes',
             ),
             array(
                 'id'            => 'qfs_qr_items',
                 'type'          => 'repeater',
-                'label'         => __( '二维码', 'qiling' ),
+                'label'         => __( '二维码列表', 'qiling' ),
+                'group'         => 'social',
+                'group_label'   => __( '社交与互动设置', 'qiling' ),
                 'default_items' => array(),
                 'fields'        => array(
                     array(
@@ -162,134 +178,230 @@ class Footer_Suite_Module extends Module_Base {
                     ),
                 ),
             ),
+
+            // 友情链接设置
             array(
-                'id'      => 'qfs_show_qr',
-                'type'    => 'select',
-                'label'   => __( '显示二维码', 'qiling' ),
-                'options' => array(
-                    'yes' => __( '显示', 'qiling' ),
-                    'no'  => __( '隐藏', 'qiling' ),
-                ),
-                'default' => 'yes',
-            ),
-            array(
-                'id'      => 'qfs_friend_mode',
-                'type'    => 'select',
-                'label'   => __( '友情链接', 'qiling' ),
-                'options' => array(
+                'id'          => 'qfs_friend_mode',
+                'type'        => 'select',
+                'label'       => __( '友情链接模式', 'qiling' ),
+                'group'       => 'friend',
+                'group_label' => __( '友情链接设置', 'qiling' ),
+                'options'     => array(
                     'theme_home'  => __( '使用主题友链，仅首页', 'qiling' ),
                     'custom_home' => __( '自定义，仅首页', 'qiling' ),
                     'custom_all'  => __( '自定义，全站', 'qiling' ),
                     'none'        => __( '不显示', 'qiling' ),
                 ),
-                'default' => 'theme_home',
+                'default'     => 'theme_home',
             ),
             array(
-                'id'      => 'qfs_friend_title',
-                'type'    => 'text',
-                'label'   => __( '友链标题', 'qiling' ),
-                'default' => __( '友情链接：', 'qiling' ),
+                'id'          => 'qfs_friend_title',
+                'type'        => 'text',
+                'label'       => __( '友链标题', 'qiling' ),
+                'group'       => 'friend',
+                'group_label' => __( '友情链接设置', 'qiling' ),
+                'default'     => __( '友情链接：', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_friend_links',
                 'type'        => 'textarea',
                 'label'       => __( '自定义友链', 'qiling' ),
+                'group'       => 'friend',
+                'group_label' => __( '友情链接设置', 'qiling' ),
                 'description' => __( '每行：文字|链接', 'qiling' ),
             ),
+
+            // 底部版权与备案
             array(
-                'id'    => 'qfs_bottom_text',
-                'type'  => 'editor',
-                'label' => __( '版权内容', 'qiling' ),
+                'id'          => 'qfs_bottom_text',
+                'type'        => 'editor',
+                'label'       => __( '版权内容', 'qiling' ),
+                'group'       => 'bottom',
+                'group_label' => __( '底部版权与备案', 'qiling' ),
             ),
             array(
                 'id'          => 'qfs_bottom_links',
                 'type'        => 'textarea',
                 'label'       => __( '底部链接', 'qiling' ),
+                'group'       => 'bottom',
+                'group_label' => __( '底部版权与备案', 'qiling' ),
                 'description' => __( '每行：文字|链接', 'qiling' ),
             ),
             array(
-                'id'      => 'qfs_show_filings',
-                'type'    => 'select',
-                'label'   => __( '显示备案', 'qiling' ),
-                'options' => array(
+                'id'          => 'qfs_show_filings',
+                'type'        => 'select',
+                'label'       => __( '显示备案', 'qiling' ),
+                'group'       => 'bottom',
+                'group_label' => __( '底部版权与备案', 'qiling' ),
+                'options'     => array(
                     'yes' => __( '显示', 'qiling' ),
                     'no'  => __( '隐藏', 'qiling' ),
                 ),
-                'default' => 'yes',
+                'default'     => 'yes',
+            ),
+
+            // 布局与外观样式
+            array(
+                'id'          => 'qfs_layout',
+                'type'        => 'select',
+                'label'       => __( '布局', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'options'     => array(
+                    'columns' => __( '全宽多栏横向平铺 (按板块数自动 3~5 栏自适应展开，推荐)', 'qiling' ),
+                    'compact' => __( '双栏紧凑极简', 'qiling' ),
+                ),
+                'default'     => 'columns',
             ),
             array(
-                'id'      => 'qfs_bg',
-                'type'    => 'color',
-                'label'   => __( '背景', 'qiling' ),
-                'default' => 'var(--qiling-color-111111)',
+                'id'          => 'qfs_width',
+                'type'        => 'select',
+                'label'       => __( '宽度', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'options'     => array(
+                    'contained' => __( '常规', 'qiling' ),
+                    'wide'      => __( '宽屏', 'qiling' ),
+                    'full'      => __( '通栏', 'qiling' ),
+                ),
+                'default'     => 'contained',
             ),
             array(
-                'id'      => 'qfs_text_color',
-                'type'    => 'color',
-                'label'   => __( '文字颜色', 'qiling' ),
-                'default' => '',
+                'id'          => 'qfs_variant',
+                'type'        => 'select',
+                'label'       => __( '视觉风格', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'options'     => array(
+                    'classic' => __( '经典沉稳 (标准商务与政务)', 'qiling' ),
+                    'cinema'  => __( '深色影院 (沉浸式深蓝)', 'qiling' ),
+                    'luxury'  => __( '黑金尊享 (Luxury Gold - 黑曜金与温润光晕)', 'qiling' ),
+                    'glass'   => __( '未来微光 (Cyber Glass - 赛博渐变与透光玻璃卡片)', 'qiling' ),
+                    'minimal' => __( '极简留白 (Minimal Atelier - 高级灰与克制线框)', 'qiling' ),
+                ),
+                'default'     => 'classic',
             ),
             array(
-                'id'      => 'qfs_muted_color',
-                'type'    => 'color',
-                'label'   => __( '辅助文字颜色', 'qiling' ),
-                'default' => '',
+                'id'          => 'qfs_bg',
+                'type'        => 'color',
+                'label'       => __( '背景颜色', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'default'     => 'var(--qiling-color-111111)',
             ),
             array(
-                'id'      => 'qfs_heading_color',
-                'type'    => 'color',
-                'label'   => __( '标题颜色', 'qiling' ),
-                'default' => '',
+                'id'          => 'qfs_border_color',
+                'type'        => 'color',
+                'label'       => __( '边线颜色', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'default'     => 'var(--qiling-color-rgba-255-255-255-014)',
             ),
             array(
-                'id'      => 'qfs_accent_color',
-                'type'    => 'color',
-                'label'   => __( '强调色', 'qiling' ),
-                'default' => '',
+                'id'          => 'qfs_heading_color',
+                'type'        => 'color',
+                'label'       => __( '标题颜色', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'default'     => '',
             ),
             array(
-                'id'      => 'qfs_badge_bg',
-                'type'    => 'color',
-                'label'   => __( '联系标签背景颜色', 'qiling' ),
-                'default' => '',
-                'description' => __( '控制联系内容前的小标签，留空时跟随页面预设/全局徽章颜色。', 'qiling' ),
+                'id'          => 'qfs_text_color',
+                'type'        => 'color',
+                'label'       => __( '正文文字颜色', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'default'     => '',
             ),
             array(
-                'id'      => 'qfs_border_color',
-                'type'    => 'color',
-                'label'   => __( '边线颜色', 'qiling' ),
-                'default' => 'var(--qiling-color-rgba-255-255-255-014)',
+                'id'          => 'qfs_muted_color',
+                'type'        => 'color',
+                'label'       => __( '辅助文字颜色', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'default'     => '',
             ),
             array(
-                'id'      => 'module_padding_top',
-                'type'    => 'text',
-                'label'   => __( '上边距', 'qiling' ),
-                'default' => '64px',
+                'id'          => 'qfs_accent_color',
+                'type'        => 'color',
+                'label'       => __( '强调色', 'qiling' ),
+                'group'       => 'style',
+                'group_label' => __( '布局与外观样式', 'qiling' ),
+                'default'     => '',
+            ),
+
+            // 间距与高级设置
+            array(
+                'id'          => 'module_padding_top',
+                'type'        => 'text',
+                'label'       => __( '上内边距 (Padding Top)', 'qiling' ),
+                'group'       => 'advanced',
+                'group_label' => __( '间距与高级设置', 'qiling' ),
+                'default'     => '64px',
+                'description' => __( '页脚模块内容与顶部边框的距离，支持 px/rem 等单位', 'qiling' ),
             ),
             array(
-                'id'      => 'module_padding_bottom',
-                'type'    => 'text',
-                'label'   => __( '下边距', 'qiling' ),
-                'default' => '28px',
+                'id'          => 'module_padding_bottom',
+                'type'        => 'text',
+                'label'       => __( '下内边距 (Padding Bottom)', 'qiling' ),
+                'group'       => 'advanced',
+                'group_label' => __( '间距与高级设置', 'qiling' ),
+                'default'     => '28px',
+                'description' => __( '页脚模块底部版权与底部的距离，支持 px/rem 等单位', 'qiling' ),
+            ),
+            array(
+                'id'          => 'module_margin_top',
+                'type'        => 'text',
+                'label'       => __( '上外边距 (Margin Top)', 'qiling' ),
+                'group'       => 'advanced',
+                'group_label' => __( '间距与高级设置', 'qiling' ),
+                'default'     => '0px',
+                'description' => __( '页脚与上方模块之间的间距，支持 px/rem 等单位', 'qiling' ),
+            ),
+            array(
+                'id'          => 'module_margin_bottom',
+                'type'        => 'text',
+                'label'       => __( '下外边距 (Margin Bottom)', 'qiling' ),
+                'group'       => 'advanced',
+                'group_label' => __( '间距与高级设置', 'qiling' ),
+                'default'     => '0px',
             ),
             array(
                 'id'          => 'qfs_custom_css',
                 'type'        => 'textarea',
                 'label'       => __( '自定义 CSS', 'qiling' ),
+                'group'       => 'advanced',
+                'group_label' => __( '间距与高级设置', 'qiling' ),
                 'description' => __( '可用 {{WRAPPER}} 表示当前模块', 'qiling' ),
             ),
         );
     }
 
+    private function get_color_luminance( $color ) {
+        $color = strtolower( trim( (string) $color ) );
+        if ( preg_match( '/^#([a-f0-9]{6})$/i', $color, $m ) ) {
+            $hex = $m[1];
+            return ( 0.2126 * hexdec( substr( $hex, 0, 2 ) ) + 0.7152 * hexdec( substr( $hex, 2, 2 ) ) + 0.0722 * hexdec( substr( $hex, 4, 2 ) ) ) / 255;
+        }
+        if ( preg_match( '/^#([a-f0-9]{3})$/i', $color, $m ) ) {
+            $hex = $m[1];
+            $r = hexdec( str_repeat( $hex[0], 2 ) );
+            $g = hexdec( str_repeat( $hex[1], 2 ) );
+            $b = hexdec( str_repeat( $hex[2], 2 ) );
+            return ( 0.2126 * $r + 0.7152 * $g + 0.0722 * $b ) / 255;
+        }
+        return null;
+    }
+
     public function render( $data = array() ) {
         $data = is_array( $data ) ? $data : array();
 
-        $layout = $this->sanitize_choice( $this->string_value( $data, 'qfs_layout', 'balanced' ), array( 'balanced', 'columns', 'compact' ), 'balanced' );
+        $layout = $this->sanitize_choice( $this->string_value( $data, 'qfs_layout', 'columns' ), array( 'columns', 'compact' ), 'columns' );
         $width  = $this->sanitize_choice( $this->string_value( $data, 'qfs_width', 'contained' ), array( 'contained', 'wide', 'full' ), 'contained' );
-        $variant = $this->sanitize_choice( $this->string_value( $data, 'qfs_variant', 'classic' ), array( 'classic', 'cinema' ), 'classic' );
+        $variant = $this->sanitize_choice( $this->string_value( $data, 'qfs_variant', 'classic' ), array( 'classic', 'cinema', 'luxury', 'glass', 'minimal' ), 'classic' );
         $is_video_portal = defined( 'QILING_VIDEO_PORTAL_PAGE' ) && QILING_VIDEO_PORTAL_PAGE;
         if ( $is_video_portal ) {
-            $layout  = 'balanced';
+            $layout  = 'columns';
             $width   = 'wide';
             $variant = 'cinema';
         }
@@ -309,9 +421,8 @@ class Footer_Suite_Module extends Module_Base {
             $logo = $this->resolve_media_url( $this->option( 'site_logo', '' ) );
         }
 
-        $link_columns  = max( 1, min( 4, absint( $this->string_value( $data, 'qfs_link_columns', '2' ) ) ) );
         $link_groups   = $this->get_link_groups( $data );
-        $link_groups = array_values(
+        $link_groups   = array_values(
             array_filter(
                 $link_groups,
                 static function ( $group ) {
@@ -320,9 +431,9 @@ class Footer_Suite_Module extends Module_Base {
                 }
             )
         );
-        if ( 'cinema' === $variant ) {
-            $link_columns = 1;
-        }
+        $groups_count  = count( $link_groups );
+        $default_cols  = $groups_count > 0 ? (string) min( 4, max( 1, $groups_count ) ) : '2';
+        $link_columns  = max( 1, min( 4, absint( $this->string_value( $data, 'qfs_link_columns', $default_cols ) ) ) );
         $contact_items = $this->get_contact_items( $data );
         $social_links  = $this->parse_link_lines( $this->string_value( $data, 'qfs_social_links', '' ) );
         $qr_items      = 'no' === $this->string_value( $data, 'qfs_show_qr', 'yes' ) ? array() : $this->get_qr_items( $data );
@@ -338,6 +449,34 @@ class Footer_Suite_Module extends Module_Base {
         $bottom_text   = $this->get_bottom_text( $data );
         $show_filings  = 'no' !== $this->string_value( $data, 'qfs_show_filings', 'yes' );
 
+        $raw_bg = $this->string_value( $data, 'qfs_bg', '#080e1a' );
+        if ( '' === trim( $raw_bg ) || 'transparent' === strtolower( trim( $raw_bg ) ) ) {
+            $raw_bg = '#080e1a';
+        }
+        $is_light_bg = false;
+        $clean_bg = strtolower( trim( $raw_bg ) );
+        if ( strpos( $clean_bg, 'gradient' ) !== false ) {
+            if ( preg_match_all( '/#([a-f0-9]{6})/i', $clean_bg, $bg_matches ) && ! empty( $bg_matches[1] ) ) {
+                $total_lum = 0;
+                foreach ( $bg_matches[1] as $hex ) {
+                    $total_lum += ( 0.2126 * hexdec( substr( $hex, 0, 2 ) ) + 0.7152 * hexdec( substr( $hex, 2, 2 ) ) + 0.0722 * hexdec( substr( $hex, 4, 2 ) ) ) / 255;
+                }
+                $is_light_bg = ( ( $total_lum / count( $bg_matches[1] ) ) > 0.55 );
+            }
+        } elseif ( preg_match( '/^#([a-f0-9]{6})$/i', $clean_bg, $bg_m ) ) {
+            $hex = $bg_m[1];
+            $lum = ( 0.2126 * hexdec( substr( $hex, 0, 2 ) ) + 0.7152 * hexdec( substr( $hex, 2, 2 ) ) + 0.0722 * hexdec( substr( $hex, 4, 2 ) ) ) / 255;
+            $is_light_bg = ( $lum > 0.55 );
+        } elseif ( preg_match( '/^#([a-f0-9]{3})$/i', $clean_bg, $bg_m ) ) {
+            $hex = $bg_m[1];
+            $r = hexdec( str_repeat( $hex[0], 2 ) );
+            $g = hexdec( str_repeat( $hex[1], 2 ) );
+            $b = hexdec( str_repeat( $hex[2], 2 ) );
+            $lum = ( 0.2126 * $r + 0.7152 * $g + 0.0722 * $b ) / 255;
+            $is_light_bg = ( $lum > 0.55 );
+        }
+        $tone_class = $is_light_bg ? 'qfs-tone-light' : 'qfs-tone-dark';
+
         $module_id = 'footer-suite-' . uniqid();
         $classes   = array(
             'module',
@@ -345,6 +484,7 @@ class Footer_Suite_Module extends Module_Base {
             'qfs-layout-' . $layout,
             'qfs-width-' . $width,
             'qfs-variant-' . $variant,
+            $tone_class,
         );
 
         $accent_color = $this->string_value( $data, 'qfs_accent_color', '' );
@@ -352,18 +492,171 @@ class Footer_Suite_Module extends Module_Base {
             $accent_color = 'var(--color-accent)';
         }
 
+        $has_brand          = (bool) ( $logo || $brand_title || $brand_desc );
+        $valid_link_groups  = array();
+        if ( is_array( $link_groups ) ) {
+            foreach ( $link_groups as $group ) {
+                $gt = isset( $group['title'] ) ? trim( (string) $group['title'] ) : '';
+                $gl = isset( $group['links'] ) ? $group['links'] : '';
+                if ( '' !== $gt || ! empty( $gl ) ) {
+                    $valid_link_groups[] = $group;
+                }
+            }
+        }
+        $link_cols_count    = count( $valid_link_groups );
+        $has_contact        = (bool) ( ! empty( $contact_items ) );
+        $has_social         = (bool) ( ! empty( $social_links ) );
+        $has_qr             = (bool) ( ! empty( $qr_items ) );
+        $has_social_col     = (bool) ( $has_social || $has_qr );
+
+        // 真实独立板块计数：有1个板块就1栏，有2个就2栏，有3个就3栏，有4个就4栏，有5个就5栏！每个板块独占一栏，绝不挤压重叠！
+        $total_cols = ( $has_brand ? 1 : 0 ) + $link_cols_count + ( $has_contact ? 1 : 0 ) + ( $has_social_col ? 1 : 0 );
+        $total_cols = max( 1, min( 6, $total_cols ) );
+
+        $grid_tracks = array();
+        if ( 'compact' === $layout ) {
+            // 双栏极简紧凑布局：品牌版权 + 快捷联络与导航
+            $grid_tracks = array(
+                'minmax(280px, 1.2fr)',
+                'minmax(240px, 1fr)',
+            );
+        } else {
+            // 严丝合缝的 1~5 栏自适应展开，每个板块独占一整栏
+            if ( 1 === $total_cols ) {
+                $grid_tracks[] = '1fr';
+            } elseif ( 2 === $total_cols ) {
+                $grid_tracks[] = 'minmax(280px, 1.3fr)';
+                $grid_tracks[] = 'minmax(240px, 1fr)';
+            } elseif ( 3 === $total_cols ) {
+                if ( $has_brand ) {
+                    $grid_tracks[] = 'minmax(260px, 1.4fr)';
+                }
+                for ( $i = 0; $i < $link_cols_count; $i++ ) {
+                    $grid_tracks[] = 'minmax(180px, 1fr)';
+                }
+                if ( $has_contact ) {
+                    $grid_tracks[] = 'minmax(220px, 1.15fr)';
+                }
+                if ( $has_social_col ) {
+                    $grid_tracks[] = 'minmax(180px, 1fr)';
+                }
+            } elseif ( 4 === $total_cols ) {
+                if ( $has_brand ) {
+                    $grid_tracks[] = 'minmax(260px, 1.35fr)';
+                }
+                for ( $i = 0; $i < $link_cols_count; $i++ ) {
+                    $grid_tracks[] = 'minmax(160px, 1fr)';
+                }
+                if ( $has_contact ) {
+                    $grid_tracks[] = 'minmax(220px, 1.15fr)';
+                }
+                if ( $has_social_col ) {
+                    $grid_tracks[] = 'minmax(180px, 1fr)';
+                }
+            } else {
+                if ( $has_brand ) {
+                    $grid_tracks[] = 'minmax(220px, 1.25fr)';
+                }
+                for ( $i = 0; $i < $link_cols_count; $i++ ) {
+                    $grid_tracks[] = 'minmax(140px, 1fr)';
+                }
+                if ( $has_contact ) {
+                    $grid_tracks[] = 'minmax(180px, 1.1fr)';
+                }
+                if ( $has_social_col ) {
+                    $grid_tracks[] = 'minmax(160px, 1fr)';
+                }
+            }
+        }
+        $grid_template = implode( ' ', $grid_tracks );
+
+        $fallback_text    = $is_light_bg ? '#334155' : '#94a3b8';
+        $fallback_muted   = $is_light_bg ? '#64748b' : 'rgba(148, 163, 184, 0.75)';
+        $fallback_heading = $is_light_bg ? '#0f172a' : '#ffffff';
+
+        $resolved_heading = $this->inherit_footer_color_value( $data, 'qfs_heading_color', $fallback_heading, array( '#ffffff', '#fef08a', '#fef3c7', 'var(--qiling-component-footer-heading)' ) );
+        $resolved_text    = $this->inherit_footer_color_value( $data, 'qfs_text_color', $fallback_text, array( '#f7f7f7', '#d6d3d1' ) );
+        $resolved_muted   = $this->inherit_footer_color_value( $data, 'qfs_muted_color', $fallback_muted, array( 'rgba(255,255,255,0.68)', 'rgba(255,255,255,0.6)' ) );
+
+        // 强对比度物理防御：浅色背景严禁白字/浅字，深色背景严禁纯黑/深黑字
+        $heading_lum = $this->get_color_luminance( $resolved_heading );
+        $text_lum    = $this->get_color_luminance( $resolved_text );
+        $muted_lum   = $this->get_color_luminance( $resolved_muted );
+
+        $white_like = array( '#fff', '#ffffff', 'white', '#f8fafc', '#f1f5f9', '#e2e8f0', '#f7f7f7', '#d6d3d1', '#cbd5e1', 'rgba(255,255,255,1)', 'rgb(255,255,255)' );
+        $dark_like  = array( '#000', '#000000', 'black', '#0f172a', '#1e293b', '#334155', '#475569', 'rgba(0,0,0,1)', 'rgb(0,0,0)' );
+
+        if ( $is_light_bg ) {
+            if ( ( null !== $heading_lum && $heading_lum > 0.55 ) || in_array( strtolower( trim( (string) $resolved_heading ) ), $white_like, true ) ) {
+                $resolved_heading = '#0f172a';
+            }
+            if ( ( null !== $text_lum && $text_lum > 0.55 ) || in_array( strtolower( trim( (string) $resolved_text ) ), $white_like, true ) ) {
+                $resolved_text = '#334155';
+            }
+            if ( ( null !== $muted_lum && $muted_lum > 0.55 ) || in_array( strtolower( trim( (string) $resolved_muted ) ), $white_like, true ) ) {
+                $resolved_muted = '#64748b';
+            }
+        } else {
+            if ( ( null !== $heading_lum && $heading_lum < 0.45 ) || in_array( strtolower( trim( (string) $resolved_heading ) ), $dark_like, true ) ) {
+                $resolved_heading = '#ffffff';
+            }
+            if ( ( null !== $text_lum && $text_lum < 0.45 ) || in_array( strtolower( trim( (string) $resolved_text ) ), $dark_like, true ) ) {
+                $resolved_text = '#cbd5e1';
+            }
+        }
+
+        $raw_pt = $this->string_value( $data, 'module_padding_top', '' );
+        if ( '' === $raw_pt ) {
+            $raw_pt = $this->string_value( $data, 'padding_top', '' );
+        }
+        if ( '' === $raw_pt ) {
+            $raw_pt = $this->string_value( $data, 'qfs_padding_top', '64px' );
+        }
+        $pt = $this->sanitize_spacing_value( $raw_pt, '64px' );
+
+        $raw_pb = $this->string_value( $data, 'module_padding_bottom', '' );
+        if ( '' === $raw_pb ) {
+            $raw_pb = $this->string_value( $data, 'padding_bottom', '' );
+        }
+        if ( '' === $raw_pb ) {
+            $raw_pb = $this->string_value( $data, 'qfs_padding_bottom', '28px' );
+        }
+        $pb = $this->sanitize_spacing_value( $raw_pb, '28px' );
+
+        $raw_mt = $this->string_value( $data, 'module_margin_top', '' );
+        if ( '' === $raw_mt ) {
+            $raw_mt = $this->string_value( $data, 'margin_top', '' );
+        }
+        $mt = '' !== $raw_mt ? $this->sanitize_spacing_value( $raw_mt, '0px' ) : '';
+
+        $raw_mb = $this->string_value( $data, 'module_margin_bottom', '' );
+        if ( '' === $raw_mb ) {
+            $raw_mb = $this->string_value( $data, 'margin_bottom', '' );
+        }
+        $mb = '' !== $raw_mb ? $this->sanitize_spacing_value( $raw_mb, '0px' ) : '';
+
+        $spacing_style = "padding-top: {$pt}; padding-bottom: {$pb};";
+        if ( '' !== $mt ) {
+            $spacing_style .= " margin-top: {$mt};";
+        }
+        if ( '' !== $mb ) {
+            $spacing_style .= " margin-bottom: {$mb};";
+        }
+
         $style_attr = $this->build_css_var_style(
             array(
-                '--qfs-bg'      => $this->sanitize_css_color_value( $this->string_value( $data, 'qfs_bg', 'var(--qiling-color-111111)' ), 'var(--qiling-color-111111)' ),
-                '--qfs-text'    => $this->sanitize_css_color_value( $this->inherit_footer_color_value( $data, 'qfs_text_color', 'var(--qiling-component-footer-text)', array( '#' . 'f7f7f7' ) ), 'var(--qiling-component-footer-text)' ),
-                '--qfs-muted'   => $this->sanitize_css_color_value( $this->inherit_footer_color_value( $data, 'qfs_muted_color', 'var(--qiling-component-footer-link)', array( 'rgba' . '(255,255,255,0.68)' ) ), 'var(--qiling-component-footer-link)' ),
-                '--qfs-heading' => $this->sanitize_css_color_value( $this->inherit_footer_color_value( $data, 'qfs_heading_color', 'var(--qiling-component-footer-heading)', array( '#' . 'ffffff' ) ), 'var(--qiling-component-footer-heading)' ),
-                '--qfs-accent'  => $this->sanitize_css_color_value( $accent_color, 'var(--color-accent)' ),
+                '--qfs-bg'            => $this->sanitize_css_color_value( $raw_bg, '#080e1a' ),
+                '--qfs-text'          => $this->sanitize_css_color_value( $resolved_text, $fallback_text ),
+                '--qfs-muted'         => $this->sanitize_css_color_value( $resolved_muted, $fallback_muted ),
+                '--qfs-heading'       => $this->sanitize_css_color_value( $resolved_heading, $fallback_heading ),
+                '--qfs-accent'        => $this->sanitize_css_color_value( $accent_color, 'var(--color-accent)' ),
                 '--qiling-component-badge-bg' => $this->sanitize_css_color_value( $this->string_value( $data, 'qfs_badge_bg', '' ), '' ),
-                '--qfs-border'  => $this->sanitize_css_color_value( $this->string_value( $data, 'qfs_border_color', 'var(--qiling-color-rgba-255-255-255-014)' ), 'var(--qiling-color-rgba-255-255-255-014)' ),
-                '--qfs-pt'      => $this->sanitize_spacing_value( $this->string_value( $data, 'module_padding_top', '64px' ), '64px' ),
-                '--qfs-pb'      => $this->sanitize_spacing_value( $this->string_value( $data, 'module_padding_bottom', '28px' ), '28px' ),
-                '--qfs-cols'    => (string) $link_columns,
+                '--qfs-border'        => $this->sanitize_css_color_value( $this->string_value( $data, 'qfs_border_color', $is_light_bg ? 'rgba(15, 23, 42, 0.08)' : 'rgba(255, 255, 255, 0.08)' ), 'rgba(255, 255, 255, 0.08)' ),
+                '--qfs-pt'            => $pt,
+                '--qfs-pb'            => $pb,
+                '--qfs-cols'          => (string) $link_cols_count,
+                '--qfs-total-cols'    => (string) $total_cols,
+                '--qfs-grid-template' => $grid_template,
             )
         );
 
@@ -371,12 +664,13 @@ class Footer_Suite_Module extends Module_Base {
         if ( '' !== $custom_css ) {
             echo '<style id="' . esc_attr( $module_id . '-css' ) . '">' . "\n" . $custom_css . "\n" . '</style>';
         }
+        $bg_style = strpos( $raw_bg, 'gradient' ) !== false ? "background: {$raw_bg};" : "background-color: {$raw_bg};";
         ?>
-        <section id="<?php echo esc_attr( $module_id ); ?>" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( $style_attr ); ?>">
+        <section id="<?php echo esc_attr( $module_id ); ?>" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( $spacing_style . ' ' . $bg_style ); ?> <?php echo esc_attr( $style_attr ); ?>">
             <div class="qfs-inner">
                 <div class="qfs-main">
-                    <?php if ( $logo || $brand_title || $brand_desc ) : ?>
-                        <div class="qfs-brand">
+                    <?php if ( $has_brand ) : ?>
+                        <div class="qfs-col qfs-col-brand qfs-brand">
                             <?php if ( $logo ) : ?>
                                 <a class="qfs-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                     <img class="qfs-logo" src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
@@ -391,59 +685,54 @@ class Footer_Suite_Module extends Module_Base {
                         </div>
                     <?php endif; ?>
 
-                    <?php if ( ! empty( $link_groups ) ) : ?>
-                        <div class="qfs-links-wrap">
-                            <?php foreach ( $link_groups as $group ) : ?>
-                                <?php
-                                $group_title = isset( $group['title'] ) ? (string) $group['title'] : '';
-                                $links       = isset( $group['links'] ) && is_array( $group['links'] ) ? $group['links'] : array();
-                                if ( '' === $group_title && empty( $links ) ) {
-                                    continue;
-                                }
-                                ?>
-                                <nav class="qfs-link-group"<?php echo $group_title ? ' aria-label="' . esc_attr( $group_title ) . '"' : ''; ?>>
-                                    <?php if ( $group_title ) : ?>
-                                        <h3 class="qfs-section-title"><?php echo esc_html( $group_title ); ?></h3>
-                                    <?php endif; ?>
-                                    <?php $this->render_link_list( $links, 'qfs-list qfs-link-list', '_self' ); ?>
-                                </nav>
-                            <?php endforeach; ?>
+                    <?php if ( ! empty( $valid_link_groups ) ) : ?>
+                        <?php foreach ( $valid_link_groups as $group_idx => $group ) : ?>
+                            <?php
+                            $group_title = isset( $group['title'] ) ? (string) $group['title'] : '';
+                            $links       = isset( $group['links'] ) ? $group['links'] : array();
+                            if ( '' === $group_title && empty( $links ) ) {
+                                continue;
+                            }
+                            ?>
+                            <nav class="qfs-col qfs-col-links qfs-link-group qfs-link-group-<?php echo esc_attr( $group_idx + 1 ); ?>"<?php echo $group_title ? ' aria-label="' . esc_attr( $group_title ) . '"' : ''; ?>>
+                                <?php if ( $group_title ) : ?>
+                                    <h3 class="qfs-section-title"><?php echo esc_html( $group_title ); ?></h3>
+                                <?php endif; ?>
+                                <?php $this->render_link_list( $links, 'qfs-list qfs-link-list', '_self' ); ?>
+                            </nav>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+                    <?php if ( $has_contact ) : ?>
+                        <div class="qfs-col qfs-col-contact qfs-connect-main">
+                            <?php if ( $contact_title ) : ?>
+                                <h3 class="qfs-section-title"><?php echo esc_html( $contact_title ); ?></h3>
+                            <?php endif; ?>
+                            <ul class="qfs-list qfs-contact-list">
+                                <?php foreach ( $contact_items as $item ) : ?>
+                                    <li>
+                                        <?php if ( ! empty( $item['label'] ) ) : ?>
+                                            <span class="qfs-contact-label"><?php echo esc_html( $item['label'] ); ?></span>
+                                        <?php endif; ?>
+                                        <?php if ( ! empty( $item['url'] ) ) : ?>
+                                            <a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['text'] ); ?></a>
+                                        <?php else : ?>
+                                            <span><?php echo esc_html( $item['text'] ); ?></span>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
                     <?php endif; ?>
 
-                    <?php if ( ! empty( $contact_items ) || ! empty( $social_links ) || ! empty( $qr_items ) ) : ?>
-                        <div class="qfs-connect">
-                            <?php if ( ! empty( $contact_items ) ) : ?>
-                                <div class="qfs-connect-section">
-                                    <?php if ( $contact_title ) : ?>
-                                        <h3 class="qfs-section-title"><?php echo esc_html( $contact_title ); ?></h3>
-                                    <?php endif; ?>
-                                    <ul class="qfs-list qfs-contact-list">
-                                        <?php foreach ( $contact_items as $item ) : ?>
-                                            <li>
-                                                <?php if ( ! empty( $item['label'] ) ) : ?>
-                                                    <span class="qfs-contact-label"><?php echo esc_html( $item['label'] ); ?></span>
-                                                <?php endif; ?>
-                                                <?php if ( ! empty( $item['url'] ) ) : ?>
-                                                    <a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['text'] ); ?></a>
-                                                <?php else : ?>
-                                                    <span><?php echo esc_html( $item['text'] ); ?></span>
-                                                <?php endif; ?>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
+                    <?php if ( $has_social_col ) : ?>
+                        <div class="qfs-col qfs-col-social qfs-connect-social">
+                            <?php if ( $social_title ) : ?>
+                                <h3 class="qfs-section-title"><?php echo esc_html( $social_title ); ?></h3>
                             <?php endif; ?>
-
                             <?php if ( ! empty( $social_links ) ) : ?>
-                                <div class="qfs-connect-section">
-                                    <?php if ( $social_title ) : ?>
-                                        <h3 class="qfs-section-title"><?php echo esc_html( $social_title ); ?></h3>
-                                    <?php endif; ?>
-                                    <?php $this->render_link_list( $social_links, 'qfs-list qfs-social-list', '_blank' ); ?>
-                                </div>
+                                <?php $this->render_link_list( $social_links, 'qfs-list qfs-social-list', '_blank' ); ?>
                             <?php endif; ?>
-
                             <?php if ( ! empty( $qr_items ) ) : ?>
                                 <div class="qfs-qr-grid">
                                     <?php foreach ( $qr_items as $item ) : ?>

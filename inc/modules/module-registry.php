@@ -178,6 +178,21 @@ return array(
             ),
         ),
     ),
+    'header' => array(
+        array(
+            'class'          => \Developer_Starter\Modules\Modules\Header_Suite_Module::class,
+            'keywords'       => array( 'header', 'nav', 'menu', '页头', '导航', '顶部菜单', '顶部导航', 'Logo', 'CTA', '搜索' ),
+            'industry_tags'  => array( 'general', 'enterprise', 'b2b', 'local_service', 'ecommerce', 'technology', 'blog' ),
+            'page_tags'      => array( 'header', 'home', 'site', 'landing' ),
+            'intent_tags'    => array( 'navigation', 'branding', 'conversion', 'search' ),
+            'content_models' => array( 'page' ),
+            'schema_types'   => array( 'SiteNavigationElement', 'WPHeader', 'Organization' ),
+            'ai_hints'       => array(
+                'summary'          => '用于独立自定义页面顶部导航，支持品牌Logo、完全独立的菜单项、搜索、电话、夜间模式、CTA按钮及专属配色。',
+                'content_guidance' => '配置清晰的导航层级、明确的CTA引导动作以及与页面色调协调的背景与文字颜色。',
+            ),
+        ),
+    ),
     'footer' => array(
         array(
             'class'          => \Developer_Starter\Modules\Modules\Footer_Suite_Module::class,
@@ -231,6 +246,8 @@ return array(
         \Developer_Starter\Modules\Modules\Video_Portal_Hero_Module::class,
         \Developer_Starter\Modules\Modules\Video_Ranking_Module::class,
         \Developer_Starter\Modules\Modules\Qiling_Shop_Showcase_Module::class,
+        \Developer_Starter\Modules\Modules\Qiling_Shop_Grid_Module::class,
+        \Developer_Starter\Modules\Modules\Qiling_Shop_Hero_Spotlight_Module::class,
     ),
     'industry' => array(
         \Developer_Starter\Modules\Modules\Menu_Module::class,

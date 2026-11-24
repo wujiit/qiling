@@ -1,0 +1,220 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "外贸出海独立商城",
+  "page_template": "templates/template-foreign-trade-store.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#2563eb",
+      "secondary": "#1d4ed8"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "foreign-trade-store",
+    "label": "外贸出海独立商城",
+    "category": "ecommerce",
+    "category_label": "品牌商城",
+    "industry": "trade",
+    "industry_label": "外贸出海/跨境电商",
+    "scenario": "外贸企业与跨境独立站官网",
+    "badges": [
+      "B2B & DTC",
+      "外贸出海",
+      "全球商贸"
+    ],
+    "order": 125,
+    "thumbnail": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "外贸独立站",
+      "出海商城",
+      "工贸一体",
+      "OEM/ODM",
+      "全球跨境"
+    ],
+    "description": "专为外贸制造企业、工贸一体出海及跨境独立站打造的高端官网商城模板。融合国际商务巨幕、出海合规资质、热销出口商品多分类矩阵、制造产能硬实力与在线询盘留言通道。"
+  },
+  "seo": {
+    "title": "Global Manufacturing & Export Store - Official Theme",
+    "description": "Premier international trade & eCommerce template for global manufacturers, wholesale suppliers, and cross-border brands."
+  },
+  "modules": [
+    {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "出海商城",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "热销爆款",
+            "link": "#qiling_shop_hero_spotlight",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品展示",
+            "link": "#product_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合规安全",
+            "link": "#compliance_trust",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "索取报价",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "qiling_shop_hero_spotlight",
+      "data": {
+        "qsh_bg_theme": "dark",
+        "qsh_layout": "split",
+        "qsh_padding": "100",
+        "qsh_badge_text": "GLOBAL B2B EXPORT · DIRECT MANUFACTURER",
+        "qsh_title": "SMART INDUSTRIAL GATEWAY PRO X9",
+        "qsh_subtitle": "Certified by CE, FCC, RoHS. Ultra-wide operating temperature (-40°C ~ +85°C), dual Gigabit Ethernet, redundant power supply. Worldwide shipping with factory-direct pricing.",
+        "qsh_custom_image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+        "qsh_price_override": "FOB $129 - $189 / Unit",
+        "qsh_spec_1_val": "CE/FCC",
+        "qsh_spec_1_lbl": "Global Certifications",
+        "qsh_spec_2_val": "-40~85°C",
+        "qsh_spec_2_lbl": "Industrial Grade Temp",
+        "qsh_spec_3_val": "10 Years",
+        "qsh_spec_3_lbl": "Guaranteed Lifecycle",
+        "qsh_spec_4_val": "OEM/ODM",
+        "qsh_spec_4_lbl": "Custom Branding Support",
+        "qsh_btn_primary_text": "Request Wholesale Quote",
+        "qsh_btn_primary_url": "#inquiry",
+        "qsh_btn_secondary_text": "Download Spec Sheet (PDF)",
+        "qsh_btn_secondary_url": "#specs"
+      }
+    },
+    {
+      "type": "products",
+      "data": {}
+    },
+    {
+      "type": "product_showcase",
+      "data": {}
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "compliance_title": "合规信誉与安全体系",
+        "compliance_subtitle": "严格遵从国家及国际行业安全标准，筑牢信赖基石"
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {}
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "品牌合作与 外贸出海独立商城 贵宾专属品鉴",
+        "contact_subtitle": "支持专享定制、商务大宗礼品采购与优质买手店联名入驻洽谈。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交合作意向"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#f8fafc",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "QILING GLOBAL TRADE CORP.",
+        "qfs_brand_desc": "Premier OEM/ODM manufacturer for industrial electronics and IoT edge gateways, serving clients across 60+ countries with certified ISO 9001 quality systems.",
+        "qfs_link_groups": [
+          {
+            "title": "Products & Solutions & Export Support",
+            "links": "Industrial IoT Gateways|#\nSmart Edge Controllers|#\nWireless Sensor Nodes|#\nCustom OEM/ODM Engineering|#\nRequest a Quote (RFQ)|#contact\nDownload Catalog (PDF)|#\nFOB/CIF Shipping Terms|#\nWarranty & RMA Policy|#\nISO 9001:2015 System|#\nCE & FCC Conformity|#\nRoHS & REACH Declarations|#\nSGS Factory Audit Report|#"
+          }
+        ],
+        "qfs_contact_title": "Global Sales Office",
+        "qfs_contact_items": "Tel / WhatsApp|+86 755 8888 6666|tel:+8675588886666\nSales Email|export@qiling-globaltrade.com|mailto:export@qiling-globaltrade.com\nFactory Address|High-Tech Industrial Zone, Shenzhen, Guangdong, China|#",
+        "qfs_social_title": "Follow Global Channel",
+        "qfs_social_links": "LinkedIn Company|#\nYouTube Channel|#\nTwitter / X @Qiling|#\nFacebook Business|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QILING GLOBAL TRADE CORP. All Rights Reserved. · Professional Industrial OEM / ODM Partner",
+        "qfs_bottom_links": "Privacy Policy|#\nTerms of Trade|#\nCompliance Notice|#\nSitemap|#",
+        "qfs_link_columns": "1"
+      }
+    }
+  ]
+}

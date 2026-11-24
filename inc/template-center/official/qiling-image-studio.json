@@ -43,260 +43,417 @@
   },
   "modules": [
     {
-      "type": "interact_hero",
+      "type": "header_suite",
       "data": {
-        "badge_text": "启灵生态 AI 图像工作台",
-        "hero_title_content": "修复、抠图、生图<br><span style=\"color:#0f766e\">一套图像工具官网讲清楚</span>",
-        "hero_subtitle_content": "面向照片修复、电商商品图、营销海报、AI 创意生成和设计工具站，把启灵图像处理、启灵抠图、启灵AI图像包装成可运营的产品入口。",
-        "btn_primary_content": "进入图像工具",
-        "btn_primary_link": "#",
-        "btn_primary_bg_color": "#a855f7",
-        "btn_primary_text_color": "#ffffff",
-        "btn_secondary_content": "查看效果案例",
-        "btn_secondary_link": "#",
-        "btn_secondary_bg_color": "rgba(255, 255, 255, 0.12)",
-        "btn_secondary_text_color": "#ffffff",
-        "media_type": "image",
-        "hero_image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-        "enable_float_anim": "yes",
-        "bg_color": "linear-gradient(135deg, #090d16 0%, #3b0764 50%, #0f172a 100%)",
-        "text_color": "#ffffff",
-        "highlight_color": "#c084fc",
-        "padding_top": "108px",
-        "padding_bottom": "88px",
-        "feature_items": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "灵图大师",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "f_icon_type": "class",
-            "f_icon_class": "01",
-            "f_title_content": "图像修复增强",
-            "f_desc": "老照片上色、去雾、清晰度、对比度、无损放大和去摩尔纹。",
-            "f_link": "#"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "f_icon_type": "class",
-            "f_icon_class": "02",
-            "f_title_content": "五种抠图模式",
-            "f_desc": "普通、高清、人体、食品、商品抠图，结果可下载透明 PNG。",
-            "f_link": "#"
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "f_icon_type": "class",
-            "f_icon_class": "03",
-            "f_title_content": "AI 创意生图",
-            "f_desc": "文生图、主图专版、图像编辑、多图融合和风格模板。",
-            "f_link": "#"
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "f_icon_type": "class",
-            "f_icon_class": "04",
-            "f_title_content": "积分/VIP 运营",
-            "f_desc": "免费次数、积分付费、VIP 等级额度和使用记录可组合配置。",
-            "f_link": "#"
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#ec4899",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#ec4899",
+        "qhs_hover_bg": "rgba(236,72,153,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "一键商品实景合成 · 4K 无损超分放大 · 商业级 AI 视觉创意设计工坊",
+        "bb_subtitle": "摆脱昂贵的商业棚拍与繁杂抠图，输入白底产品图秒级生成高定光影大片，支持真实 AI 模特试穿、智能扩图消除瑕疵、老照片无损画质修复",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
+          {
+            "text": "免费上传图片立即开始 AI 创作",
+            "url": "#create-image",
+            "style": "primary"
+          },
+          {
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
     },
     {
-      "type": "features",
+      "type": "stats",
       "data": {
-        "features_title": "三套插件组成完整图像能力",
-        "features_subtitle": "分别承接修复增强、抠图去背景和创意生成，不把所有能力混成一个黑盒",
-        "features_columns": "4",
-        "features_icon_position": "top",
-        "features_text_align": "left",
-        "features_bg_color": "#ffffff",
-        "features_card_style": "elevated",
-        "features_card_radius": "16px",
-        "features_icon_style": "square",
-        "features_icon_bg": "#faf5ff",
-        "features_items": [
+        "stats_title": "视觉实力 · 商业出图品质与降本看板",
+        "stats_subtitle": "以电影级写实渲染技术，助力电商卖家与设计团队降低 90% 商业摄影与修图成本",
+        "stats_items": [
           {
-            "icon": "FIX",
-            "title": "老照片与画质增强",
-            "desc": "启灵图像处理支持对比度增强、清晰度增强、无损放大、去雾、色彩增强、黑白上色、拉伸恢复和去摩尔纹。"
+            "number": "3 秒/张",
+            "label": "4K 电影级高光质感商业场景极速渲染"
           },
           {
-            "icon": "CUT",
-            "title": "智能抠图工作台",
-            "desc": "启灵抠图提供普通、高清、人体、食品、商品五种模式，并按格式、尺寸、免费次数、积分和 VIP 权益控制使用。"
+            "number": "90% 降本",
+            "label": "相比传统实景影棚模特租借费用综合节省"
           },
           {
-            "icon": "GEN",
-            "title": "AI 创意图像生成",
-            "desc": "启灵AI图像支持 OpenRouter、豆包、阿里通义等提供方，覆盖文生图、主图专版、图像编辑和多图融合。"
+            "number": "800 万+",
+            "label": "累计为全球电商卖家生成爆款商业海报"
           },
           {
-            "icon": "PUB",
-            "title": "作品展示与运营",
-            "desc": "支持风格模板、手办风格、海报风格、时光照相馆、结果下载、公众广场和使用统计，适合做工具站产品矩阵。"
+            "number": "100% 商用",
+            "label": "生成素材享有完全无忧的自主商业版权"
           }
-        ],
-        "features_icon_color": "#9333ea"
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "电商与商业视觉全链路 AI 图像处理矩阵",
+        "services_subtitle": "无需复杂提示词，一键点击预设专业摄影参数，新手也能做出 4A 级视觉大片",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "camera",
+            "title": "白底商品图一键实景融合",
+            "desc": "自动识别产品材质高光，智能融合天然大理石、晨光海滩、极简家居等高逼真光影场景"
+          },
+          {
+            "icon": "users",
+            "title": "AI 虚拟超模拟真试穿试戴",
+            "desc": "服饰、箱包、珠宝一键穿在欧美、东亚等多种肤色虚拟模特身上，省去万元外模费用"
+          },
+          {
+            "icon": "maximize",
+            "title": "4K / 8K 无损超分辨率放大",
+            "desc": "基于生成式扩散超分算法，智能修复低清模糊素材细节，边缘锐利如刀割般清晰"
+          },
+          {
+            "icon": "scissors",
+            "title": "发丝级发丝精细抠图与智能抹除",
+            "desc": "0.1秒秒级剥离复杂透明婚纱、飞舞发丝，圈选路人或水印一键天衣无缝智能填补"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "AI 图像处理官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
       }
     },
     {
       "type": "gallery",
       "data": {
-        "gallery_title": "图像效果展示",
-        "gallery_subtitle": "用真实视觉案例解释修复、抠图和创意生成的价值",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "gallery_gap": "18",
-        "enable_filter": "yes",
-        "filter_categories": "修复增强,抠图去背景,创意生图",
-        "gallery_lightbox": "1",
-        "show_counter": "yes",
-        "module_bg_color": "#f8fafc",
-        "gallery_images": [
+        "gallery_title": "商业作品鉴赏 · 每一张皆可直接商用投流",
+        "gallery_subtitle": "支持美妆护肤、服饰鞋包、3C数码、家居家装全品类渲染输出",
+        "gallery_columns": "4",
+        "gallery_items": [
           {
-            "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80",
-            "title": "旧照清晰增强",
-            "desc": "适合展示清晰度、对比度和色彩增强效果",
-            "category": "修复增强"
+            "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80",
+            "title": "高端奢宠精华液水波纹场景",
+            "desc": "晨曦露珠折射与清澈水波倒影交融"
           },
           {
-            "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
-            "title": "人物主体分割",
-            "desc": "适合人体抠图、透明背景和社媒头像处理",
-            "category": "抠图去背景"
+            "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+            "title": "山系机能跑鞋户外岩石光影",
+            "desc": "碎石泥泞与自然斜射暖阳高光质感"
           },
           {
-            "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
-            "title": "商品白底图",
-            "desc": "适合电商商品图、主图专版和商品抠图",
-            "category": "抠图去背景"
+            "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80",
+            "title": "欧美金发虚拟超模时装街拍",
+            "desc": "巴黎街景虚化自然，衣物褶皱自然贴合"
           },
           {
-            "image": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=900&q=80",
-            "title": "AI 风格海报",
-            "desc": "适合文生图、海报风格和创意投放素材",
-            "category": "创意生图"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=900&q=80",
-            "title": "品牌主图创作",
-            "desc": "适合商品主图、营销视觉和模板化出图",
-            "category": "创意生图"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80",
-            "title": "照片质感优化",
-            "desc": "适合去雾、色彩增强和素材二次加工",
-            "category": "修复增强"
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+            "title": "降噪无线耳机未来赛博微光",
+            "desc": "金属阳极氧化拉丝质感与暗夜微蓝冷光"
           }
         ]
-      }
-    },
-    {
-      "type": "comparison",
-      "data": {
-        "comparison_title": "三个图像插件的分工",
-        "comparison_subtitle": "让客户知道每个入口解决什么问题，后台也更容易配置套餐与权限",
-        "comparison_features": "核心定位\n输入方式\n主要能力\n适合场景\n计费/权益\n前台入口",
-        "comparison_products": [
-          {
-            "name": "启灵图像处理",
-            "values": "修复增强\n上传图片\n对比度、清晰度、无损放大、去雾、上色、拉伸恢复、去摩尔纹\n老照片修复、画质增强、素材优化\n免费次数、积分、VIP、步骤记录\n[qilingimage_tool]"
-          },
-          {
-            "name": "启灵抠图",
-            "values": "去背景与透明 PNG\n上传图片\n普通、高清、人体、食品、商品五种抠图模式\n电商商品图、人物头像、食品图、素材抠图\n游客试用、登录额度、积分、VIP\n[qilingcut]"
-          },
-          {
-            "name": "启灵AI图像",
-            "values": "AI 创意生成\n提示词、上传图片、多图\n文生图、主图专版、图像编辑、多图融合、风格模板、公众广场\n营销海报、商品主图、创意图片、风格玩法\n默认额度、VIP 免费次数、积分付费\n[xb_aicytxgj_form]"
-          }
-        ],
-        "comparison_highlight": "3",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "图像工具套餐包装",
-        "pricing_subtitle": "价格为展示占位，可按实际免费额度、积分单价、VIP 等级和企业服务继续编辑",
+        "pricing_title": "灵活充值点数与电商工作室包月特权",
+        "pricing_subtitle": "生成不满意支持免费微调重绘，所有付费用户享有商业商用授权证书",
         "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
+        "pricing_plans": [
+          {
+            "name": "新手尝鲜算力包 (按需充值)",
+            "name_color": "#0f172a",
+            "price": "¥29",
+            "price_color": "#0f172a",
+            "period": "/含 100 张高清商业图生成",
+            "desc": "适合小红书个人博主、单款新品主图测试，长期有效不过期",
+            "desc_color": "#64748b",
+            "features": "全品类场景一键极速合成\\n支持发丝级精细抠图与水印擦除\\n支持最高 4K 超分辨率画质导出\\n享有单张素材商用版权保障",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "电商爆款工作室年卡 (无限畅作)",
+            "name_color": "#0f172a",
+            "price": "¥98",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包年 ¥980 享受双倍算力)",
+            "desc": "面向淘宝、天猫、亚马逊、TikTok 卖家，高频大批量出图神器",
+            "desc_color": "#64748b",
+            "features": "每月赠送 1,200 张 4K 电影级高光渲染点数\\n解锁独家 AI 虚拟模特试穿与一键换装功能\\n专属极速 GPU 渲染通道，出图免排队等待\\n批量一键替换 50 张产品背景全自动导出",
+            "features_color": "#334155",
+            "btn_text": "立即购买",
+            "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "掌柜力荐",
+            "badge": "掌柜力荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "企业级大客户私有化 API 接入",
+            "name_color": "#0f172a",
+            "price": "定制企业合作",
+            "price_color": "#0f172a",
+            "period": "/按并发量或阶梯计费",
+            "desc": "面向大型跨境电商 ERP 系统、大型品牌设计部，API 自动化调用",
+            "desc_color": "#64748b",
+            "features": "提供毫秒级图像渲染 RESTful API 与 SDK\\n专属独立 GPU 算力集群支撑万级日并发\\n定制企业品牌专属摄影风格 LoRA 模型训练\\n提供企业级 SLA 协议与专属客户成功顾问",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "体验版",
-            "price": "免费试用",
-            "period": "",
-            "desc": "适合新用户体验",
-            "features": "基础图片上传\n少量免费处理\n基础抠图体验\n生图模板体验\n结果下载入口",
-            "btn_text": "开始体验",
+            "name": "新手尝鲜算力包 (按需充值)",
+            "name_color": "#0f172a",
+            "price": "¥29",
+            "price_color": "#0f172a",
+            "period": "/含 100 张高清商业图生成",
+            "desc": "适合小红书个人博主、单款新品主图测试，长期有效不过期",
+            "desc_color": "#64748b",
+            "features": "全品类场景一键极速合成\\n支持发丝级精细抠图与水印擦除\\n支持最高 4K 超分辨率画质导出\\n享有单张素材商用版权保障",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "创作者版",
-            "price": "积分付费",
-            "period": "",
-            "desc": "适合日常修图和内容创作",
-            "features": "更多处理额度\n积分充值入口\n修复/抠图/生图组合\n公众广场展示\n历史记录统计",
-            "btn_text": "充值积分",
+            "name": "电商爆款工作室年卡 (无限畅作)",
+            "name_color": "#0f172a",
+            "price": "¥98",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月 (包年 ¥980 享受双倍算力)",
+            "desc": "面向淘宝、天猫、亚马逊、TikTok 卖家，高频大批量出图神器",
+            "desc_color": "#64748b",
+            "features": "每月赠送 1,200 张 4K 电影级高光渲染点数\\n解锁独家 AI 虚拟模特试穿与一键换装功能\\n专属极速 GPU 渲染通道，出图免排队等待\\n批量一键替换 50 张产品背景全自动导出",
+            "features_color": "#334155",
+            "btn_text": "立即购买",
             "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
-            "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #a855f7 0%, #f43f5e 100%)"
+            "is_featured": "yes",
+            "featured_text": "掌柜力荐",
+            "badge": "掌柜力荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "工作室版",
-            "price": "联系顾问",
-            "period": "",
-            "desc": "适合团队工具站和私有化交付",
-            "features": "VIP 等级额度\n专属风格模板\n企业素材处理\n批量运营方案\n部署与培训支持",
-            "btn_text": "预约演示",
+            "name": "企业级大客户私有化 API 接入",
+            "name_color": "#0f172a",
+            "price": "定制企业合作",
+            "price_color": "#0f172a",
+            "period": "/按并发量或阶梯计费",
+            "desc": "面向大型跨境电商 ERP 系统、大型品牌设计部，API 自动化调用",
+            "desc_color": "#64748b",
+            "features": "提供毫秒级图像渲染 RESTful API 与 SDK\\n专属独立 GPU 算力集群支撑万级日并发\\n定制企业品牌专属摄影风格 LoRA 模型训练\\n提供企业级 SLA 协议与专属客户成功顾问",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "contact",
       "data": {
-        "faq_title": "AI 图像工具常见问题",
-        "faq_subtitle": "提前说明插件边界和运营方式，避免把修复、抠图、生图混成一个入口",
-        "faq_items": [
-          {
-            "question": "这个模板必须安装三个图像插件吗？",
-            "answer": "不必须。模板本身可以正常导入和展示；启用插件后，把按钮链接改成 [qilingimage_tool]、[qilingcut]、[xb_aicytxgj_form] 或公众广场页面即可。"
-          },
-          {
-            "question": "启灵图像处理和启灵AI图像有什么区别？",
-            "answer": "启灵图像处理偏向已有图片的修复增强，例如上色、去雾、清晰度和无损放大；启灵AI图像偏向创意生成和编辑，例如文生图、图像编辑、多图融合和风格模板。"
-          },
-          {
-            "question": "抠图结果能用于电商商品图吗？",
-            "answer": "启灵抠图包含商品抠图模式，并支持透明 PNG 结果下载，适合商品主图、详情页素材和营销图二次处理。实际可用格式、尺寸和大小以插件后台配置为准。"
-          },
-          {
-            "question": "积分和 VIP 是主题模板直接处理吗？",
-            "answer": "不是。主题模板负责展示、说明和引流；免费次数、积分扣费、VIP 等级额度、记录统计由对应插件和启灵商城能力处理。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "contact_title": "与 AI 图像处理官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
       }
     },
     {
-      "type": "cta",
+      "type": "footer_suite",
       "data": {
-        "cta_title": "把图像插件入口做成可售卖的工具平台官网",
-        "cta_subtitle": "替换真实工具页、公众广场、积分充值页和 VIP 套餐页，就能把修复、抠图、生图能力包装成一套可运营产品。",
-        "cta_button_text": "配置图像工具入口",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #3b0764 60%, #701a75 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#f43f5e",
-        "cta_button_text_color": "#ffffff"
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#ec4899",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "PIXEL-AI · 专业级 AI 图像处理与商业生图平台",
+        "qfs_brand_desc": "重塑数字视觉创意生产流。涵盖电商一键换模特、AI 商品背景替换、无损超分辨率放大与老照片智能修复。",
+        "qfs_link_groups": [
+          {
+            "title": "核心生图能力 & 开发者与企业",
+            "links": "电商商品图智能生图|#\n模特一键试衣与换背景|#\n4K/8K 智能超清画质修复|#\nAI 智能抠图与消除笔|#\n商业生图 API 接口接入|#\n电商批量生图自动化|#\n大客户私有化算力部署|#\n商用版权合规保障保障|#"
+          }
+        ],
+        "qfs_contact_title": "商业合作咨询",
+        "qfs_contact_items": "商务专线|400-880-5599|tel:4008805599\nAPI对接|api@pixel-ai.studio|mailto:api@pixel-ai.studio\n服务时间|工作日 9:30 - 18:30|#",
+        "qfs_social_title": "关注视觉前沿",
+        "qfs_social_links": "微信公众号|#\n小红书生图案例库|#\nDiscord 设计社区|#\nBehance 作品集|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 PIXEL-AI DIGITAL CREATIVE. 保留所有权利 · 生成式 AI 商业影像版权护航",
+        "qfs_bottom_links": "商用版权授权条款|#\n用户服务协议|#\n隐私保护声明|#\n算力状态监控|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

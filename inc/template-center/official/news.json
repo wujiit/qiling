@@ -24,68 +24,103 @@
     "category_label": "博客/杂志/内容",
     "industry": "media",
     "scenario": "新闻中心",
-    "description": "适合资讯、公告、企业动态和行业新闻栏目。",
+    "description": "适合企业新闻、资讯、公告、行业动态和媒体报道栏目。",
     "badges": [
-      "新闻",
-      "杂志"
+      "新闻中心",
+      "企业资讯",
+      "快讯"
     ],
     "order": 120,
-    "thumbnail": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
+    "thumbnail": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80"
   },
   "seo": {
     "title": "新闻中心模板 - 启灵官方页面包",
-    "description": "适合资讯、公告、企业动态和行业新闻栏目。",
-    "keywords": "新闻中心,新闻中心,新闻,杂志",
+    "description": "适合企业新闻、资讯、公告、行业动态和媒体报道栏目。",
+    "keywords": "新闻中心,企业动态,官方公告,行业资讯,媒体报道",
     "og_title": "新闻中心",
-    "og_description": "适合资讯、公告、企业动态和行业新闻栏目。"
+    "og_description": "适合企业新闻、资讯、公告、行业动态和媒体报道栏目。"
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "breaking_news_ticker",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "medium",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #0369a1 100%)",
-        "banner_slides": [
-          {
-            "media_type": "image",
-            "image": "",
-            "title": "新闻中心",
-            "subtitle": "聚合最新动态与行业洞察",
-            "btn_text": "查看最新",
-            "btn_url": "#",
-            "btn_bg_color": "#2563eb",
-            "btn_text_color": "#ffffff"
-          }
-        ]
+        "bn_title": "实时快讯",
+        "bn_source": "latest",
+        "bn_count": "8"
+      }
+    },
+    {
+      "type": "featured_posts",
+      "data": {
+        "fp_title": "头条焦点 · 权威发布",
+        "fp_layout": "magazine",
+        "fp_slider_height": "420px",
+        "fp_count": "5",
+        "fp_autoplay": "no"
+      }
+    },
+    {
+      "type": "category_tabs",
+      "data": {
+        "tabs_title": "资讯分类 · 动态聚焦",
+        "tabs_subtitle": "实时覆盖企业要闻、重大技术突破、战略合作与社会责任公告",
+        "tabs_source_mode": "auto_hot_tags",
+        "tabs_auto_tag_count": "6",
+        "tabs_auto_min_count": "1"
       }
     },
     {
       "type": "news",
       "data": {
-        "news_title": "最新新闻",
-        "news_count": "9",
-        "news_columns": "3",
-        "news_categories": "",
-        "news_show_image": "1",
-        "news_image_height": "220px",
-        "news_show_excerpt": "1",
-        "enable_staggered_animation": "yes"
+        "news_title": "最新企业动态与行业资讯",
+        "news_count": "6",
+        "news_columns": "3"
+      }
+    },
+    {
+      "type": "media_list",
+      "data": {
+        "ml_title": "权威主流媒体报道集锦",
+        "ml_subtitle": "记录国内外主流财经、科技与大众媒体对启灵生态的广泛审视与报道"
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "订阅我们的动态",
-        "cta_subtitle": "获取产品更新、活动与行业趋势",
-        "cta_button_text": "联系我们",
-        "cta_button_url": "/contact",
-        "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 60%, #0284c7 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "媒体采访与新闻通稿接洽",
+        "cta_subtitle": "如需官方品牌素材包、高管采访预约或通稿核实，请直接联系企业公关传播部。",
+        "cta_btn_text": "联系新闻发言人团队",
+        "cta_btn_url": "/contact"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#38bdf8",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "启灵新闻与公共事务中心",
+        "qfs_brand_desc": "秉承公开、透明与事实核查原则，面向公众与投资者提供即时、准确的企业动态与官方公告。",
+        "qfs_link_groups": [
+          {
+            "title": "新闻分类导航",
+            "links": "企业要闻|#\n产品发布|#\n行业洞察|#\n社会责任|#\n媒体资源库|#\n公告存档|#"
+          }
+        ],
+        "qfs_contact_title": "公关与媒体联络",
+        "qfs_contact_items": "媒体专线|pr@qiling.tech|mailto:pr@qiling.tech\n新闻发言人办公室|官方公关联络通道|#",
+        "qfs_social_title": "官方社媒矩阵",
+        "qfs_social_links": "官方微博|#\n官方微信公众号|#\n领英机构页|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 启灵新闻中心. 保留所有权利 · 严格遵守互联网新闻信息发布管理规范",
+        "qfs_bottom_links": "新闻发布声明|#\n版权与转载规范|#\n隐私政策|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

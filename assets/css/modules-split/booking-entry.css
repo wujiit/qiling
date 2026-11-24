@@ -136,8 +136,8 @@
 .qiling-module-scope-booking-entry .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-booking-entry /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-booking-entry .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-booking-entry .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-booking-entry .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-booking-entry /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-booking-entry /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-booking-entry /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-booking-entry /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-booking-entry .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-booking-entry .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-booking-entry .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-booking-entry .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-booking-entry /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -566,4 +576,28 @@ html.dark-mode .module-booking-entry .ql-hotel-booking-form {
   box-shadow: none;
 }html.dark-mode .qiling-module-scope-booking-entry .module-booking-entry .ql-hotel-contact-phone {
   color: var(--color-neutral-100) !important;
+}
+
+/* ===== Booking Entry 暗黑模式全量覆盖 ===== */
+html.dark-mode .module-booking-entry,
+[data-theme='dark'] .module-booking-entry {
+  background-color: var(--dm-bg, #0b0f19) !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}
+
+html.dark-mode .module-booking-entry .section-title,
+[data-theme='dark'] .module-booking-entry .section-title {
+  color: var(--color-heading, #f8fafc) !important;
+}
+
+html.dark-mode .module-booking-entry .section-subtitle,
+[data-theme='dark'] .module-booking-entry .section-subtitle {
+  color: var(--color-text-muted, #94a3b8) !important;
+}
+
+html.dark-mode .module-booking-entry .ql-hotel-booking-form,
+[data-theme='dark'] .module-booking-entry .ql-hotel-booking-form {
+  background: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
 }

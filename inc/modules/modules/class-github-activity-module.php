@@ -262,7 +262,7 @@ class GitHub_Activity_Module extends Module_Base {
      */
     private function render_empty_state() {
         ?>
-        <section class="module module-github-activity qiling-github-activity" style="padding:60px 0;background:#f8fafc;">
+        <section class="module module-github-activity qiling-github-activity" style="padding: var(--qiling-space-60, 60px) 0; background: var(--color-surface-alt, #f8fafc);">
             <div class="container">
                 <div class="qga-empty"><?php esc_html_e( '请在模块设置中填写 GitHub 仓库地址。', 'qiling' ); ?></div>
             </div>
@@ -275,7 +275,7 @@ class GitHub_Activity_Module extends Module_Base {
      */
     private function render_disabled_state() {
         ?>
-        <section class="module module-github-activity qiling-github-activity" style="padding:60px 0;background:#f8fafc;">
+        <section class="module module-github-activity qiling-github-activity" style="padding: var(--qiling-space-60, 60px) 0; background: var(--color-surface-alt, #f8fafc);">
             <div class="container">
                 <div class="qga-empty"><?php esc_html_e( 'GitHub 项目展示未启用；开启后才会访问 GitHub API 并生成本地缓存。', 'qiling' ); ?></div>
             </div>
@@ -292,7 +292,7 @@ class GitHub_Activity_Module extends Module_Base {
             return;
         }
         ?>
-        <section class="module module-github-activity qiling-github-activity" style="padding:60px 0;background:#f8fafc;">
+        <section class="module module-github-activity qiling-github-activity" style="padding: var(--qiling-space-60, 60px) 0; background: var(--color-surface-alt, #f8fafc);">
             <div class="container">
                 <div class="qga-empty"><?php echo esc_html( $message ? $message : __( 'GitHub 数据暂时无法加载。', 'qiling' ) ); ?></div>
             </div>

@@ -43,241 +43,431 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #be185d 50%, #f43f5e 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "良缘相亲",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80",
-            "title": "把本地相亲做得更真实、更克制、更安全",
-            "subtitle": "资料审核、互赞匹配、受限私信、认证中心、举报拉黑和运营看板，一页讲清婚恋平台的信任机制。",
-            "btn_text": "完善资料开始匹配",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#be185d"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f43f5e",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f43f5e",
+        "qhs_hover_bg": "rgba(244,63,94,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "严谨实名 · 纯粹真挚 · 专为都市高素质单身精英打造的脱单俱乐部",
+        "bb_subtitle": "全员公安身份证、学信网学历、民政单身承诺与个人征信四重闭环实名严查，拒绝酒托婚托，专业红娘 1v1 深度沟通，成就相伴一生的真爱姻缘",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "11",
-            "number": "11 张",
-            "label": "核心数据表",
-            "color": "#ffffff"
+            "text": "免费申请加入脱单会员俱乐部",
+            "url": "#join-club",
+            "style": "primary"
           },
           {
-            "icon": "20",
-            "number": "20 条",
-            "label": "默认私信上限",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "60%",
-            "number": "60%",
-            "label": "私信资料门槛",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "2",
-            "number": "2 套",
-            "label": "前台界面风格",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "平台把安全规则写进产品流程",
-        "stats_subtitle": "匹配前先审核，私信前有门槛，异常行为可举报、拉黑和治理",
-        "stats_text_align": "center",
+        "stats_title": "真爱实绩 · 真实会员画像与牵手看板",
+        "stats_subtitle": "以严谨真诚的态度对待每一颗渴望被爱的心，累计见证万千美好家庭诞生",
         "stats_items": [
           {
-            "number": "7",
-            "label": "REST 控制器",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "100% 严审",
+            "label": "学历/身份/未婚真实性严格线下验真"
           },
           {
-            "number": "4",
-            "label": "前台短代码页",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "86.4%",
+            "label": "深度 1v1 匹配会员半年内脱单成功率"
           },
           {
-            "number": "7",
-            "label": "后台权限能力",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "6,800+ 对",
+            "label": "在红娘见证下成功步入婚姻殿堂的新人"
           },
           {
-            "number": "90天",
-            "label": "运营看板窗口",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "1:1.05",
+            "label": "优质单身男女会员保持极佳平衡比例"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be185d 100%)",
-        "module_padding_top": "76px",
-        "module_padding_bottom": "76px",
-        "enable_staggered_animation": "yes",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "相亲婚恋核心服务",
-        "services_subtitle": "把启灵相亲的资料、匹配、私信、认证和安全中心组织成用户能理解的服务入口",
-        "services_bg_color": "#ffffff",
+        "services_title": "科学专业的严肃婚恋服务全流程闭环",
+        "services_subtitle": "拒绝盲目海选相亲，以价值观契合与生活方式共鸣为精准匹配原点",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "资料中心",
-            "desc": "用户可创建资料、上传图片、查看审核状态、访客记录和认证中心。",
-            "link": "#"
+            "icon": "shield-check",
+            "title": "严格六重实名背景核验",
+            "desc": "核查公安身份、学信网最高学历、名企在职证明、征信报告与无犯罪记录"
           },
           {
-            "icon": "02",
-            "title": "推荐匹配",
-            "desc": "支持性别、年龄、城市、学历和关键词筛选，互相喜欢后形成匹配。",
-            "link": "#"
+            "icon": "heart",
+            "title": "专属红娘 1v1 深度面谈剖析",
+            "desc": "深入沟通性格特征、原生家庭、生活习惯与对未来伴侣的真实核心期望"
           },
           {
-            "icon": "03",
-            "title": "受限私信",
-            "desc": "仅匹配用户可发私信，并受每日上限、冷却、首轮联系和资料完整度门槛限制。",
-            "link": "#"
+            "icon": "coffee",
+            "title": "私密浪漫环境一对一约会",
+            "desc": "专属预留高档艺术咖啡厅、静谧茶室私密雅座，红娘开场破冰化解尴尬"
           },
           {
-            "icon": "04",
-            "title": "安全中心",
-            "desc": "提供拉黑、举报、证据上传、举报记录和后台治理，保护正常用户体验。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "从资料审核到匹配沟通",
-        "process_subtitle": "相亲平台的核心不是无限聊天，而是把真实资料和安全边界先建立起来",
-        "process_mode": "standard",
-        "module_bg_color": "#fff1f2",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "完善资料并提交审核",
-            "desc": "填写昵称、城市、学历、介绍和择偶意向，资料保存后进入待审核。",
-            "stage_tag": "资料"
-          },
-          {
-            "icon": "02",
-            "title": "上传照片与认证材料",
-            "desc": "图片进入审核记录，认证中心可提交学历、职业、收入、房产或车辆材料。",
-            "stage_tag": "审核"
-          },
-          {
-            "icon": "03",
-            "title": "筛选推荐并互赞匹配",
-            "desc": "通过推荐筛选器发现用户，喜欢对方后等待回赞，匹配成功后双方收到通知。",
-            "stage_tag": "匹配"
-          },
-          {
-            "icon": "04",
-            "title": "受限私信与安全治理",
-            "desc": "匹配后才可私信；异常用户可拉黑或举报，后台支持举报审核和用户封禁。",
-            "stage_tag": "沟通"
+            "icon": "users",
+            "title": "精品主题圈层线下沙龙",
+            "desc": "飞盘露营、名酒品鉴、艺术烘焙、剧本围读，在自然轻松互动中发现心动"
           }
         ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "team",
       "data": {
-        "testimonials_title": "用户反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "2600+",
-        "average_rating": "4.8",
-        "testimonials_items": [
+        "team_title": "金牌红娘与国家级心理婚恋专家团队",
+        "team_subtitle": "融汇婚姻家庭咨询、两性心理学与沟通技巧，提供全生命周期情感赋能",
+        "team_columns": "4",
+        "team_items": [
           {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "陈女士",
-            "position": "本地用户",
-            "content": "资料审核和认证入口比较清楚，沟通前能先看对方信息完整度。",
-            "rating": "5",
-            "verified": "verified"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "苏婉清 老师",
+            "role": "首席红娘顾问 / 国家二级婚姻家庭咨询师",
+            "desc": "15 年高端婚恋经验，累计撮合 800+ 对新人结婚，以敏锐洞察两性心理见长"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "林先生",
-            "position": "匹配用户",
-            "content": "互赞之后才能私信，节奏比开放式聊天更舒服。",
-            "rating": "5",
-            "verified": "verified"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "程思远",
+            "role": "高净值海归事业部总监 / 心理学硕士",
+            "desc": "专注英美名校海归、投行律师与创业新贵圈层，擅长跨文化婚姻观调谐"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "平台审核员",
-            "position": "婚恋运营",
-            "content": "资料、图片、认证、举报和用户治理分开管理，运营动作很清晰。",
-            "rating": "5",
-            "verified": "verified"
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+            "name": "林静宜",
+            "role": "形象美学与约会礼仪指导总监",
+            "desc": "国际形象设计师，为会员提供穿搭发型优化、首次约会谈话技巧与肢体语言辅导"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "韩建华 律师",
+            "role": "家族财富与婚前合规法律顾问",
+            "desc": "中华全国律协会员，为高净值会员提供婚前财产协议、股权规划与隐私合规保障"
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "cases",
       "data": {
-        "faq_title": "相亲婚恋常见问题",
-        "faq_subtitle": "提前说明审核、私信、认证和安全治理边界",
-        "faq_items": [
+        "cases_title": "真实见证 · 在这里相遇是人生最美的注脚",
+        "cases_subtitle": "真实会员真实故事，每一张结婚登记证与婚纱照都是对我们最大的肯定",
+        "cases_columns": "4",
+        "cases_items": [
           {
-            "question": "资料保存后会直接展示吗？",
-            "answer": "不会。启灵相亲会把资料置为待审核，只有审核通过并上架的资料才会进入资料列表和匹配流。"
+            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80",
+            "title": "外科主治医生 & 高中英语教师的美满良缘",
+            "desc": "工作繁忙无暇社交，在红娘精准匹配下第一次见面便畅谈 4 小时，相识半年顺利领证",
+            "link": "#case-detail"
           },
           {
-            "question": "可以随便给陌生人发私信吗？",
-            "answer": "不可以。插件默认仅双方匹配后才能创建会话，并受每日发送上限、冷却时间、首次接触上限和资料完整度门槛限制。"
+            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80",
+            "title": "硅谷归国算法工程师与独立插画师的浪漫结合",
+            "desc": "看似生活节奏迥异，却因共同热爱户外徒步与猫咪一见钟情，如今迎来了他们的宝宝",
+            "link": "#case-detail"
           },
           {
-            "question": "实名认证是插件自己做的吗？",
-            "answer": "认证总览会复用启灵主题实名状态；插件侧还提供学历、职业、收入、房产、车辆等资料认证材料上传和审核记录。"
+            "image": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=400&q=80",
+            "title": "某知名律所高级合伙人与外企财务总监相伴",
+            "desc": "成熟理性的两个人，在俱乐部红酒品鉴沙龙相识，从思想同频到共建温馨家庭",
+            "link": "#case-detail"
           },
           {
-            "question": "如果遇到骚扰或虚假资料怎么办？",
-            "answer": "用户可拉黑或举报，并上传图片/PDF 证据。后台支持举报审核、用户封禁和封禁后自动下架资料。"
+            "image": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=400&q=80",
+            "title": "体制内青年骨干与三甲医院药剂师的纯真爱情",
+            "desc": "双方父母皆为知书达礼的知识分子，门当户对理念契合，收获双方长辈全票祝福",
+            "link": "#case-detail"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "纯净透明的脱单会员方案与红娘定制服务",
+        "pricing_subtitle": "无任何隐藏推销与诱导消费，根据您的实际交友诉求量身规划",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "单身青年入会破冰认证 (线上会员)",
+            "name_color": "#0f172a",
+            "price": "¥399",
+            "price_color": "#0f172a",
+            "period": "/年度实名认证会员",
+            "desc": "完成全套实名认证审核后，即可浏览官方脱单数据库并报名参加周末线下沙龙",
+            "desc_color": "#64748b",
+            "features": "公安与学历真实性六重核验入库\\n享有每周推荐 3 位优质实名嘉宾资料\\n尊享线下周末青年单身沙龙 8 折门票\\n加入同城高素质实名相亲微信专属社群",
+            "features_color": "#334155",
+            "btn_text": "申请实名入会",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "金牌红娘 1v1 定向精准推荐 (半年尊享)",
+            "name_color": "#0f172a",
+            "price": "¥6,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/6个月深度托管服务",
+            "desc": "资深红娘专人专管，根据个性化择偶条件定向寻访，全程陪伴约会指导",
+            "desc_color": "#64748b",
+            "features": "红娘 1v1 面对面深入沟通了解择偶需求\\n承诺半年内不少于 8 次高品质精准一对一约会\\n包含专业形象美学穿搭与谈吐技巧辅导\\n每次约会后由红娘进行双向回访与情感撮合",
+            "features_color": "#334155",
+            "btn_text": "预约金牌红娘",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "脱单爆款",
+            "badge": "脱单爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "高端精英终身牵手保障方案 (VIP 定制)",
+            "name_color": "#0f172a",
+            "price": "¥18,800",
+            "price_color": "#0f172a",
+            "period": "/不限时直到领证为止",
+            "desc": "针对企业高管、高净值家庭、名校海归量身定制，严格保密，直至领证结婚",
+            "desc_color": "#64748b",
+            "features": "首席红娘总监亲自带队成立 3v1 专属服务组\\n全城优质资源库优先定向邀约挑选\\n签署严格个人隐私与商业机密保密协议\\n享受婚前财产咨询与婚礼策划专属礼遇",
+            "features_color": "#334155",
+            "btn_text": "申请高端定制服务",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "module_bg_color": "#ffffff"
+        "pricing_items": [
+          {
+            "name": "单身青年入会破冰认证 (线上会员)",
+            "name_color": "#0f172a",
+            "price": "¥399",
+            "price_color": "#0f172a",
+            "period": "/年度实名认证会员",
+            "desc": "完成全套实名认证审核后，即可浏览官方脱单数据库并报名参加周末线下沙龙",
+            "desc_color": "#64748b",
+            "features": "公安与学历真实性六重核验入库\\n享有每周推荐 3 位优质实名嘉宾资料\\n尊享线下周末青年单身沙龙 8 折门票\\n加入同城高素质实名相亲微信专属社群",
+            "features_color": "#334155",
+            "btn_text": "申请实名入会",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "金牌红娘 1v1 定向精准推荐 (半年尊享)",
+            "name_color": "#0f172a",
+            "price": "¥6,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/6个月深度托管服务",
+            "desc": "资深红娘专人专管，根据个性化择偶条件定向寻访，全程陪伴约会指导",
+            "desc_color": "#64748b",
+            "features": "红娘 1v1 面对面深入沟通了解择偶需求\\n承诺半年内不少于 8 次高品质精准一对一约会\\n包含专业形象美学穿搭与谈吐技巧辅导\\n每次约会后由红娘进行双向回访与情感撮合",
+            "features_color": "#334155",
+            "btn_text": "预约金牌红娘",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "脱单爆款",
+            "badge": "脱单爆款",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "高端精英终身牵手保障方案 (VIP 定制)",
+            "name_color": "#0f172a",
+            "price": "¥18,800",
+            "price_color": "#0f172a",
+            "period": "/不限时直到领证为止",
+            "desc": "针对企业高管、高净值家庭、名校海归量身定制，严格保密，直至领证结婚",
+            "desc_color": "#64748b",
+            "features": "首席红娘总监亲自带队成立 3v1 专属服务组\\n全城优质资源库优先定向邀约挑选\\n签署严格个人隐私与商业机密保密协议\\n享受婚前财产咨询与婚礼策划专属礼遇",
+            "features_color": "#334155",
+            "btn_text": "申请高端定制服务",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "报名加入本地相亲匹配",
-        "booking_subtitle": "提交城市、年龄、择偶意向和当前资料状态，运营人员会引导你完善资料、认证和安全设置。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "报名说明",
-        "sidebar_content": "请优先完善真实资料和照片\n资料审核通过后才会进入推荐流\n启用启灵相亲后可承接资料中心、匹配页、消息页和安全中心",
-        "contact_phone": "400-520-2026",
-        "contact_hours": "10:00-22:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#fff1f2"
+        "entry_title": "免费预约资深红娘 1v1 深度面谈与择偶测评",
+        "entry_subtitle": "我们在温馨静谧的私密会客厅等您，备好暖心红茶，一起聊聊对未来伴侣的真实期待",
+        "btn_text": "立即在线预约红娘线下专属面聊",
+        "btn_link": "#apply-meeting",
+        "booking_title": "预约本地真实相亲婚恋红娘一对一专属初谈",
+        "booking_subtitle": "严格实名认证、学历工作房产多维核验，告别虚假婚托，真诚寻觅三观契合的优质伴侣。",
+        "booking_btn_text": "预约红娘面谈牵线",
+        "booking_phone": "幸福热线：021-8888-5200",
+        "booking_time": "每日 10:00 - 21:00 安排私密沟通"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#180e14",
+        "qfs_text_color": "#fed7aa",
+        "qfs_heading_color": "#fef3c7",
+        "qfs_accent_color": "#f43f5e",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "SWEET-MATCH · 实名认证本地高品质严肃婚恋交友平台",
+        "qfs_brand_desc": "让每一颗真心都不被辜负。严格公安实名认证、学历人脸三重审核。专属红娘 1 对 1 深度沟通，定期举办心动周末脱单派对。",
+        "qfs_link_groups": [
+          {
+            "title": "心动交友专区 & 安全与诚信体系",
+            "links": "优质单身嘉宾实名资料库|#\n专属红娘 1 对 1 精准牵线|#\n名校名企名医脱单专场|#\n周末轻户外浪漫心动露营派对|#\n公安人脸实名身份核验保障|#\n学信网学历与民政婚姻状况审核|#\n不良来访与涉诈用户全网拉黑|#\n隐私电话与免打扰保护设置|#"
+          }
+        ],
+        "qfs_contact_title": "专属红娘服务台",
+        "qfs_contact_items": "幸福热线|400-880-5200|tel:4008805200\n红娘微信|SWEET_MATCH_VIP|#\n相亲体验馆|成都市锦江区春熙路时代广场 A 座 12 楼|#",
+        "qfs_social_title": "关注脱单秘籍",
+        "qfs_social_links": "微信公众号|#\n小红书恋爱指南|#\n脱单成功故事|#\n官方交友直播间|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 SWEET-MATCH DATING. 保留所有权利 · 严肃婚恋交友 · 严厉打击网络交友诈骗行为",
+        "qfs_bottom_links": "实名认证承诺书|#\n防诈安全防范提示|#\n用户隐私保护条例|#\n婚恋服务协议|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

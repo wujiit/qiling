@@ -43,227 +43,392 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "glow",
-        "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #090d16 0%, #0369a1 52%, #0f172a 100%)",
-        "bb_title_mode": "text",
-        "bb_title": "AI 多语言出海<br><strong>让内容和 SEO 一起翻译</strong>",
-        "bb_title_size_max": "78px",
-        "bb_subtitle": "启灵主题专用的 AI 多语言官网方案",
-        "bb_desc": "围绕启灵主题页面模块、文章页面、SEO 元数据、多语言 URL 和 Sitemap 建立出海内容链路。插件只替换文字与提供 SEO 数据，页面结构仍由启灵主题稳定渲染。",
-        "bb_orbit_text": "AI TRANSLATION - MULTILINGUAL SEO - QILING -",
-        "bb_orbit_anchor": "title",
-        "bb_orbit_size": "112px",
-        "bb_orbit_color": "#a7f3d0",
-        "bb_orbit_center_type": "text",
-        "bb_orbit_center_symbol": "SEO",
-        "bb_text_align": "left",
-        "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵出海",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "查看出海方案",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "了解插件能力",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "方案对比",
+            "link": "#comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bb_primary_btn_bg_color": "#0284c7",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#0369a1",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "glow",
-        "bb_media_radius": "22px",
-        "bb_media_max_width": "560px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "1",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "96px",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #34d399 100%)",
-        "bb_light_btn_text_color": "#0f172a"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "features",
+      "type": "interact_hero",
       "data": {
-        "features_title": "启灵主题专用多语言能力",
-        "features_subtitle": "不做通用翻译平台，而是深度适配启灵页面、模块和 SEO 输出",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "文章与页面翻译",
-            "desc": "支持文章标题、摘要、正文，以及页面标题、正文和 SEO 文案翻译。"
-          },
-          {
-            "icon": "02",
-            "title": "模块文字提取",
-            "desc": "读取 _developer_starter_modules，只翻译可见文字，不改布局、图片、视频和结构。"
-          },
-          {
-            "icon": "03",
-            "title": "多语言 URL",
-            "desc": "默认语言保留原链接，非默认语言可使用 /en/、/jp/ 等语言前缀。"
-          },
-          {
-            "icon": "04",
-            "title": "SEO 数据协作",
-            "desc": "翻译标题、描述、关键词与 OG 文案，由启灵主题统一输出 canonical、hreflang 和 schema。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "hero_badge": "AI MULTILINGUAL SEO ENGINE",
+        "hero_title_content": "启灵出海 · AI 多语言独立站出海搜索引擎获客引擎",
+        "hero_subtitle_content": "支持 100+ 语言母语级本土化 SEO 内容自动生成与结构化 Schema 标记，精准占领谷歌搜索首页黄金位。",
+        "btn_primary_content": "免费进行多语言外贸网站诊断",
+        "btn_primary_link": "#audit",
+        "btn_secondary_content": "查看海外关键词排名案例",
+        "btn_secondary_link": "#rankings",
+        "media_type": "image",
+        "hero_image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+        "enable_float_anim": "yes"
       }
     },
     {
-      "type": "stats",
+      "type": "features_list",
       "data": {
-        "stats_title": "多语言出海先看这些指标",
-        "stats_subtitle": "把语言版本、内容对象、SEO 数据和收录入口讲清楚，客户更容易判断实施范围",
-        "stats_text_align": "center",
-        "stats_items": [
-          {
-            "number": "12+",
-            "label": "常用目标语言可规划",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "3类",
-            "label": "文章、页面、模块文字",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "SEO",
-            "label": "标题描述关键词译文",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "Sitemap",
-            "label": "多语言收录入口",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 60%, #059669 100%)",
-        "module_padding_top": "76px",
-        "module_padding_bottom": "76px",
-        "enable_staggered_animation": "yes",
-        "stats_title_color": "#ffffff"
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "从中文内容到多语言收录",
-        "process_subtitle": "把配置、翻译、发布和搜索引擎收录路径讲清楚",
+        "process_title": "AI 多语言出海官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "配置语言与 AI 平台",
-            "desc": "在启灵主题配置语言简码与 locale，在插件里配置 AI 平台和默认翻译模式。",
-            "stage_tag": "配置"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "翻译文章与页面",
-            "desc": "文章可批量翻译，页面回到编辑页处理模块文字、正文和 SEO 译文。",
-            "stage_tag": "翻译"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "生成语言 URL",
-            "desc": "按语言前缀或独立语言版本生成可访问链接，语言切换优先跳到对应版本。",
-            "stage_tag": "发布"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "同步 SEO 与 Sitemap",
-            "desc": "多语言 Sitemap 收录首页、文章、页面和已生成语言版本，主题统一输出 SEO 标签。",
-            "stage_tag": "收录"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "comparison",
       "data": {
-        "comparison_title": "为什么用启灵生态做多语言",
-        "comparison_subtitle": "和手工翻译、通用多语言插件相比，启灵AI多语言更适合启灵主题页面装修站",
-        "comparison_features": "启灵页面模块文字\n文章与页面内容翻译\nSEO 标题/描述/关键词/OG\n多语言 URL 和语言切换\n多语言 Sitemap\n只翻译文字不改结构",
-        "comparison_products": [
-          {
-            "name": "手工翻译",
-            "values": "人工逐项处理\n人工逐篇处理\n容易遗漏\n需要手动维护\n需要额外工具\n取决于执行人"
-          },
-          {
-            "name": "通用多语言插件",
-            "values": "不一定识别启灵模块\n通常可处理正文\n可能重复输出 SEO\n插件规则复杂\n依赖插件能力\n可能改动结构"
-          },
-          {
-            "name": "启灵AI多语言",
-            "values": "深度适配\n支持\n提供译文数据给主题\n支持\n基于 WP Sitemap\n坚持只替换文字"
-          }
-        ],
-        "comparison_highlight": "3",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "comparison_title": "多维实力对比",
+        "comparison_subtitle": "为什么众多客户首选我们，核心指标一目了然"
       }
     },
     {
-      "type": "faq",
+      "type": "stats",
       "data": {
-        "faq_title": "多语言出海常见问题",
-        "faq_subtitle": "提前解释插件边界，减少客户把它误解成通用翻译系统",
-        "faq_items": [
+        "stats_title": "出海战绩 · 流量增长与排名突破看板",
+        "stats_subtitle": "以真实海外自然搜索点击量与询盘转化率说话，摆脱昂贵的 Google PPC 竞价依赖",
+        "stats_items": [
           {
-            "question": "启灵AI多语言是 WPML 或 Polylang 的替代品吗？",
-            "answer": "不是。它的定位是启灵主题专用多语言能力，优先适配启灵主题的页面模块、SEO 数据、URL 规则和 Sitemap。"
+            "number": "120+ 种",
+            "label": "全球本土化语种深度算法建模与语义支持"
           },
           {
-            "question": "页面模块翻译会改变页面结构吗？",
-            "answer": "不会。插件读取启灵主题模块数据，只提取和替换可见文字，不修改模块结构、布局配置、图片、图标、视频或代码。"
+            "number": "86.4%",
+            "label": "目标长尾关键词 90 天内进入 Google 首页率"
           },
           {
-            "question": "SEO 标签由插件输出还是主题输出？",
-            "answer": "SEO 输出保留一套，以启灵主题为准。插件负责提供翻译后的 SEO 标题、描述、关键词和 OG 数据，主题负责输出 canonical、hreflang、og 和 schema。"
+            "number": "1,200%",
+            "label": "出海品牌独立站平均自然有机搜索流量平均增幅"
           },
           {
-            "question": "页面翻译在哪里操作？",
-            "answer": "页面翻译依赖启灵主题模块结构，应进入对应页面编辑页，在译文编辑区域处理页面正文、SEO 文案和模块文字。"
+            "number": "1,800+ 家",
+            "label": "中国优质出海跨境电商与 B2B 外贸制造企业"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "contact",
+      "type": "cases",
       "data": {
-        "contact_title": "规划多语言 SEO 出海方案",
-        "contact_subtitle": "提交目标语言、站点类型、内容规模和主要市场，评估 AI 翻译、URL 规则、SEO 数据和 Sitemap 的上线路径。",
-        "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "cases_title": "出海标杆 · 真实客户海外流量与海外订单爆发战例",
+        "cases_subtitle": "每一次技术的飞跃，都让中国优秀出海产品在海外市场赢得世界级美誉",
+        "cases_columns": "4",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
+            "title": "3C 储能电源独立站自然流量月破百万",
+            "desc": "布局德语、法语、西班牙语 800+ 长尾词，单月欧洲独立站出海销售额突破 180 万美元",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80",
+            "title": "激光切管机大型工业外贸获客询盘翻 6 倍",
+            "desc": "针对中东阿语与南美葡语建立工业图纸专业术语库，成功斩获沙特百万美元大单",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80",
+            "title": "高端丝绸时装品牌独立站客单价超 $400",
+            "desc": "精准对齐欧美高端中产小红书式穿搭心智，搜索转化率从 0.8% 飞升至 4.6%",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80",
+            "title": "SaaS 软件海外站从零到万订阅用户积累",
+            "desc": "全自动生成针对 50 款竞品的客观对比博客矩阵，自然搜索引流成本几乎为零",
+            "link": "#case-detail"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "出海企业按需订阅与长期增长方案",
+        "pricing_subtitle": "透明计费，支持按文章篇数或站点规模灵活订阅，支持开具增值税专用发票",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "新锐独立站出海尝鲜版 (单站)",
+            "name_color": "#0f172a",
+            "price": "¥2,800",
+            "price_color": "#0f172a",
+            "period": "/季度 (含 300 篇高质量文章)",
+            "desc": "适合初涉跨国出海的小型 Shopify / 独立站，主攻 3 个目标小语种市场",
+            "desc_color": "#64748b",
+            "features": "支持 3 个目标语种自动化翻译改写\\n智能长尾词拓词库 (每月 5,000 词)\\n自动配置 hreflang 与基础结构化数据\\n提供季度 Google 关键词排名追踪报告",
+            "features_color": "#334155",
+            "btn_text": "立即开启出海",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "全球多语种全矩阵增长版 (多站)",
+            "name_color": "#0f172a",
+            "price": "¥7,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/季度 (含 1,500 篇爆款内容)",
+            "desc": "适合中大型跨境电商与外贸 B2B 品牌，覆盖欧美日韩拉美主流小语种",
+            "desc_color": "#64748b",
+            "features": "支持 15 个主流全球本土语种深度本地化\\n包含行业高权重外链 (Backlinks) 资源协同\\n全自动内链网络拓扑与自动配图智能生成\\n配备专属出海 SEO 策略总监 1v1 方案辅导",
+            "features_color": "#334155",
+            "btn_text": "立即开启矩阵霸屏",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "爆款主力",
+            "badge": "爆款主力",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "跨国集团全案霸屏定制 (企业私有化)",
+            "name_color": "#0f172a",
+            "price": "定制专属方案",
+            "price_color": "#0f172a",
+            "period": "/年度深度全案代运营",
+            "desc": "面向年出海营收超千万元的大型制造外贸龙头，提供全托管保效果落地",
+            "desc_color": "#64748b",
+            "features": "承诺核心行业大词排进 Google 前 3 位\\n自建独立大模型本地化微调私有化语料库\\n支持全球多站点 API 自动化高并发集成\\n签署具备法律效力按排名效果付费对赌协议",
+            "features_color": "#334155",
+            "btn_text": "预约出海总监面谈",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_items": [
+          {
+            "name": "新锐独立站出海尝鲜版 (单站)",
+            "name_color": "#0f172a",
+            "price": "¥2,800",
+            "price_color": "#0f172a",
+            "period": "/季度 (含 300 篇高质量文章)",
+            "desc": "适合初涉跨国出海的小型 Shopify / 独立站，主攻 3 个目标小语种市场",
+            "desc_color": "#64748b",
+            "features": "支持 3 个目标语种自动化翻译改写\\n智能长尾词拓词库 (每月 5,000 词)\\n自动配置 hreflang 与基础结构化数据\\n提供季度 Google 关键词排名追踪报告",
+            "features_color": "#334155",
+            "btn_text": "立即开启出海",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "全球多语种全矩阵增长版 (多站)",
+            "name_color": "#0f172a",
+            "price": "¥7,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/季度 (含 1,500 篇爆款内容)",
+            "desc": "适合中大型跨境电商与外贸 B2B 品牌，覆盖欧美日韩拉美主流小语种",
+            "desc_color": "#64748b",
+            "features": "支持 15 个主流全球本土语种深度本地化\\n包含行业高权重外链 (Backlinks) 资源协同\\n全自动内链网络拓扑与自动配图智能生成\\n配备专属出海 SEO 策略总监 1v1 方案辅导",
+            "features_color": "#334155",
+            "btn_text": "立即开启矩阵霸屏",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "爆款主力",
+            "badge": "爆款主力",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "跨国集团全案霸屏定制 (企业私有化)",
+            "name_color": "#0f172a",
+            "price": "定制专属方案",
+            "price_color": "#0f172a",
+            "period": "/年度深度全案代运营",
+            "desc": "面向年出海营收超千万元的大型制造外贸龙头，提供全托管保效果落地",
+            "desc_color": "#64748b",
+            "features": "承诺核心行业大词排进 Google 前 3 位\\n自建独立大模型本地化微调私有化语料库\\n支持全球多站点 API 自动化高并发集成\\n签署具备法律效力按排名效果付费对赌协议",
+            "features_color": "#334155",
+            "btn_text": "预约出海总监面谈",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_title": "开启 AI 多语言出海官网 数字化卓越体验",
+        "cta_subtitle": "无需漫长等待，立即注册即可解锁全部核心功能与极速支持保障。",
+        "cta_btn_text": "立即免费体验",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "QILING GLOBAL SEO · 启灵 AI 多语言出海独立站引擎",
+        "qfs_brand_desc": "深度融合启灵主题页面装修体系，专为出海独立站打造的 AI 多语言与国际 SEO 解决方案。原生输出 hreflang、多语言地图与精准译文。",
+        "qfs_link_groups": [
+          {
+            "title": "多语言 SEO 矩阵 & 出海增长工具",
+            "links": "AI 页面模块翻译引擎|#\nGoogle 国际 SEO 规则配置|#\nHreflang 多语言地图集成|#\n结构化 Schema 标记自动化|#\n多语言出海独立站方案|#\n海外关键词搜索量诊断|#\n跨国服务器与 CDN 网络|#\n多语种本地化文案调优|#"
+          }
+        ],
+        "qfs_contact_title": "出海方案咨询",
+        "qfs_contact_items": "咨询热线|400-800-2026|tel:4008002026\n合作邮箱|global-seo@qiling-ai.com|mailto:global-seo@qiling-ai.com\n运营总部|北京市海淀区中关村前沿科技中心 12 层|#",
+        "qfs_social_title": "关注出海前沿",
+        "qfs_social_links": "微信公众号|#\n知乎出海专栏|#\nGitHub 开源社区|#\nTwitter @QilingAI|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QILING AI GLOBAL SEO. 保留所有权利 · 赋能中国品牌一键覆盖全球 50+ 语种市场",
+        "qfs_bottom_links": "隐私政策|#\n服务协议|#\n出海合规声明|#\nAPI 接入文档|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

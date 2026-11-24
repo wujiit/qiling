@@ -136,8 +136,8 @@
 .qiling-module-scope-category_tabs .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-category_tabs /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-category_tabs .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-category_tabs .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-category_tabs .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-category_tabs /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-category_tabs /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-category_tabs /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-category_tabs /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-category_tabs .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-category_tabs .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-category_tabs .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-category_tabs .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-category_tabs /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -577,10 +587,9 @@
   color: var(--color-text-muted);
   background: var(--color-surface-alt);
   border-radius: 8px;
-}.qiling-module-scope-category_tabs /* 响应式 (Responsive) */
-@media (max-width: 1024px) {
-  .module-category-tabs .cat-tabs-grid.grid-cols-5,
-  .module-category-tabs .cat-tabs-grid.grid-cols-4 {
+}/* 响应式 (Responsive) */
+@media (max-width: 1024px){.qiling-module-scope-category_tabs .module-category-tabs .cat-tabs-grid.grid-cols-5,
+.qiling-module-scope-category_tabs .module-category-tabs .cat-tabs-grid.grid-cols-4 {
     grid-template-columns: repeat(3, 1fr);
   }
 }@media (max-width: 768px){.qiling-module-scope-category_tabs .module-category-tabs .cat-tabs-grid.grid-cols-5,

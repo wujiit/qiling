@@ -41,205 +41,333 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "brand_banner_pro",
       "data": {
-        "banner_title": "落地页",
-        "banner_subtitle": "专业团队 · 定制方案 · 快速交付 · 全程服务",
-        "banner_btn_text": "立即咨询",
-        "banner_btn_url": "#contact-form",
-        "banner_btn2_text": "了解更多",
-        "banner_btn2_url": "#features",
-        "banner_bg_image": "",
-        "banner_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 50%, #047857 100%)",
-        "banner_height": "600"
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "下一代数字化业务增长引擎 · 赋能创新企业商业跃迁",
+        "bb_subtitle": "打通从公域流量精准获客、私域精细化运营沉淀到复购裂变的数字化增长闭环，助力效率倍增。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "即刻开启免费体验",
+        "bb_btn1_url": "#trial",
+        "bb_btn2_text": "查看客户增长案例",
+        "bb_btn2_url": "#cases"
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "",
-        "stats_subtitle": "",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #059669 100%)",
+        "stats_title": "硬核数据印证增长势能 · 头部企业的一致选择",
+        "stats_subtitle": "帮助超过1,200家全球高速成长企业重构数字化转化漏斗，实现确定性业绩飞跃。",
         "stats_items": [
           {
-            "number": "10+",
-            "label": "年行业经验",
-            "icon": "🏆",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "1,200+",
+            "label": "全球企业客户深度信赖"
           },
           {
-            "number": "500+",
-            "label": "成功案例",
-            "icon": "📈",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "218%",
+            "label": "平均线索转化率提升倍数"
           },
           {
-            "number": "98%",
-            "label": "客户满意度",
-            "icon": "⭐",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "350ms",
+            "label": "全球边缘节点毫秒级首屏加载"
           },
           {
-            "number": "24h",
-            "label": "响应时间",
-            "icon": "⚡",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.99%",
+            "label": "高可用服务不间断运行承诺"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "我们的核心优势",
-        "services_subtitle": "选择我们，就是选择专业与可靠",
-        "services_bg_color": "#ffffff",
-        "services_items": [
+        "title": "全维增长体系 · 打造不可复制的商业竞争壁垒",
+        "subtitle": "从流量获取到客户终身价值挖掘，每一模块皆经过数万次A/B实验与真实市场战火淬炼。",
+        "columns": "3",
+        "services": [
           {
-            "icon": "🎯",
-            "title": "精准定位",
-            "desc": "深入了解您的需求，提供量身定制的解决方案，确保每一分投入都能产生最大价值"
+            "icon": "fa-funnel-dollar",
+            "title": "智能转化漏斗与路径优化",
+            "desc": "实时捕捉访客跳出节点与决策犹豫期，动态下发个性化促销与信任证明，大幅挽回流失订单。",
+            "badge": "核心引擎"
           },
           {
-            "icon": "⚡",
-            "title": "高效执行",
-            "desc": "专业团队协同作业，标准化流程管理，确保项目按时高质量交付"
+            "icon": "fa-chart-pie",
+            "title": "全域实时BI行为多维看板",
+            "desc": "打通多渠道归因分析，从点击热力图到最终付款路径，精准穿透每一分市场预算的ROI回报。",
+            "badge": "数据归因"
           },
           {
-            "icon": "🛡️",
-            "title": "安全可靠",
-            "desc": "采用业界领先的安全技术和标准，全方位保障您的数据和业务安全"
+            "icon": "fa-wand-magic-sparkles",
+            "title": "AI驱动动态内容个性化呈现",
+            "desc": "千人千面呈现契合访客偏好的标题、产品配图与CTA行动口号，极大缩短新客户认知决策链路。",
+            "badge": "AI千人千面"
           },
           {
-            "icon": "🤝",
-            "title": "全程陪伴",
-            "desc": "从咨询到售后，专属客户经理一对一服务，让您全程无忧"
+            "icon": "fa-plug-circle-check",
+            "title": "一键集成企业现有IT系统",
+            "desc": "内置与主流CRM、ERP、企微、钉钉、飞书及主流支付渠道的无缝双向实时数据同步。",
+            "badge": "生态互联"
+          },
+          {
+            "icon": "fa-mobile-screen-button",
+            "title": "移动端与小程序全端原生适配",
+            "desc": "采用极致自适应渲染流水线，无论在桌面巨幕还是移动窄屏，均呈现教科书级的视觉张力。",
+            "badge": "全端覆盖"
+          },
+          {
+            "icon": "fa-headset",
+            "title": "资深增长黑客专家驻场辅导",
+            "desc": "官方配备专属增长顾问，定期交付行业竞品分析、漏斗审计报告与定制化落地调优策略。",
+            "badge": "专家陪跑"
           }
         ]
-      }
-    },
-    {
-      "type": "image_text",
-      "data": {
-        "image_text_layout": "left",
-        "image_text_title": "为什么选择我们？",
-        "image_text_content": "<p>我们不只是服务提供商，更是您的长期战略合作伙伴。凭借多年的行业积累和持续创新，我们已帮助数百家企业实现业务突破。</p><ul><li>✓ <strong>专业团队</strong> - 100+ 资深专家，平均从业经验 8 年以上</li><li>✓ <strong>技术领先</strong> - 持续研发投入，保持技术和方案的先进性</li><li>✓ <strong>服务保障</strong> - 7×24 小时技术支持，快速响应需求</li><li>✓ <strong>效果导向</strong> - 以客户成功为目标，用数据说话</li></ul>",
-        "image_text_button": "查看案例",
-        "image_text_url": "#cases",
-        "image_text_image": ""
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "合作流程",
-        "process_subtitle": "简单四步，开启您的成功之旅",
-        "process_bg_color": "#f8fafc",
+        "process_title": "落地页标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "📞",
-            "title": "免费咨询",
-            "desc": "联系我们，详细沟通您的需求 and 目标",
-            "icon_bg": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "📋",
-            "title": "方案制定",
-            "desc": "根据需求分析，制定专属解决方案",
-            "icon_bg": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "🚀",
-            "title": "快速落地",
-            "desc": "专业团队高效执行，按时高质交付",
-            "icon_bg": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "📈",
-            "title": "持续优化",
-            "desc": "定期复盘，持续优化，确保长期成功",
-            "icon_bg": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "pricing",
       "data": {
-        "testimonials_title": "客户好评",
-        "testimonials_subtitle": "听听他们怎么说",
-        "testimonials_bg_color": "#ffffff",
-        "testimonials_items": [
+        "pricing_title": "灵活透明商业定价 · 匹配不同阶段增长诉求",
+        "pricing_subtitle": "支持公有云SaaS快速开通，亦提供大型集团私有化独立部署与源码授权。",
+        "pricing_columns": "3",
+        "pricing_plans": [
           {
-            "content": "与他们合作是我们做过最正确的决定之一。专业的团队、高效的执行、贴心的服务，让我们的项目顺利上线并取得了超预期的效果。",
-            "author": "张总",
-            "company": "某科技公司 CEO",
-            "avatar": ""
+            "name": "创业起步版",
+            "name_color": "#0f172a",
+            "price": "¥2,999",
+            "price_color": "#0f172a",
+            "period": "每年 / 基础授权",
+            "desc": "适合月UV在10万以内的中小型初创团队快速验证产品",
+            "desc_color": "#64748b",
+            "features": "单站点商业授权与全量组件库\n每月最高支持20万PV流量承载\n基础A/B测试与多端自动适配\n工单及社群技术支持通道",
+            "features_color": "#334155",
+            "btn_text": "开通起步版",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "content": "他们不仅提供了优质的产品，更重要的是真正理解我们的业务需求。在整个合作过程中，沟通顺畅，响应及时，非常专业。",
-            "author": "李经理",
-            "company": "某制造企业 IT总监",
-            "avatar": ""
+            "name": "专业增长版",
+            "name_color": "#0f172a",
+            "price": "¥6,999",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每年 / 主流推荐",
+            "desc": "全功能开放，包含多变量AI千人千面引擎与高级归因分析看板",
+            "desc_color": "#64748b",
+            "features": "3个站点商业授权与无限子页面\n每月最高支持200万PV高并发流量\nAI动态标题配图多变量自寻优\n全域实时BI热力图与全链路归因\n专属客户成功经理1v1电话保障",
+            "features_color": "#334155",
+            "btn_text": "立即升级专业版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "最受企业欢迎",
+            "badge": "最受企业欢迎",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "content": "从前期咨询到后期维护，每一个环节都让人放心。特别是售后服务，有问题随时响应，真正做到了客户至上。",
-            "author": "王女士",
-            "company": "某电商平台 运营总监",
-            "avatar": ""
+            "name": "企业私有化旗舰",
+            "name_color": "#0f172a",
+            "price": "¥18,999",
+            "price_color": "#0f172a",
+            "period": "终身买断 / 私有部署",
+            "desc": "针对有严格商密与自主可控需求的大型政企、集团客户与出海品牌",
+            "desc_color": "#64748b",
+            "features": "支持纯内网私有化与混合多云部署\n提供全套前端后端开源源码授权\n定制化与企业内部CRM/ERP深度打通\n7×24小时驻场技术支持与应急SLA保障\n定期交付定制化企业增长审计报告",
+            "features_color": "#334155",
+            "btn_text": "联系专家定制",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_items": [
+          {
+            "name": "创业起步版",
+            "name_color": "#0f172a",
+            "price": "¥2,999",
+            "price_color": "#0f172a",
+            "period": "每年 / 基础授权",
+            "desc": "适合月UV在10万以内的中小型初创团队快速验证产品",
+            "desc_color": "#64748b",
+            "features": "单站点商业授权与全量组件库\n每月最高支持20万PV流量承载\n基础A/B测试与多端自动适配\n工单及社群技术支持通道",
+            "features_color": "#334155",
+            "btn_text": "开通起步版",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "专业增长版",
+            "name_color": "#0f172a",
+            "price": "¥6,999",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每年 / 主流推荐",
+            "desc": "全功能开放，包含多变量AI千人千面引擎与高级归因分析看板",
+            "desc_color": "#64748b",
+            "features": "3个站点商业授权与无限子页面\n每月最高支持200万PV高并发流量\nAI动态标题配图多变量自寻优\n全域实时BI热力图与全链路归因\n专属客户成功经理1v1电话保障",
+            "features_color": "#334155",
+            "btn_text": "立即升级专业版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "最受企业欢迎",
+            "badge": "最受企业欢迎",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "企业私有化旗舰",
+            "name_color": "#0f172a",
+            "price": "¥18,999",
+            "price_color": "#0f172a",
+            "period": "终身买断 / 私有部署",
+            "desc": "针对有严格商密与自主可控需求的大型政企、集团客户与出海品牌",
+            "desc_color": "#64748b",
+            "features": "支持纯内网私有化与混合多云部署\n提供全套前端后端开源源码授权\n定制化与企业内部CRM/ERP深度打通\n7×24小时驻场技术支持与应急SLA保障\n定期交付定制化企业增长审计报告",
+            "features_color": "#334155",
+            "btn_text": "联系专家定制",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "features",
+      "type": "cases",
       "data": {
-        "features_title": "我们的承诺",
-        "features_subtitle": "用专业 and 诚信赢得您的信任",
-        "features_bg_color": "#f8fafc",
-        "features_items": [
+        "cases_title": "标杆客户成功见证 · 用事实为增长背书",
+        "cases_subtitle": "深入了解不同行业领军企业如何通过启灵系统撬动爆发式商业业绩回报。",
+        "cases_columns": "3",
+        "cases_items": [
           {
-            "icon": "💯",
-            "title": "品质保证",
-            "desc": "严格的质量管控体系，确保交付物达到最高标准"
+            "title": "知名跨境电商SaaS单季度入驻商户增长340%",
+            "desc": "通过精准多语言分发与本地化结算引导，付费转化率从2.1%直接跃升至7.3%，获客成本腰斩。",
+            "image": "https://images.unsplash.com/photo-1556742049-0a67e557224f?w=800&auto=format&fit=crop&q=80",
+            "link": "#case1"
           },
           {
-            "icon": "💰",
-            "title": "透明报价",
-            "desc": "明确的价格体系，无隐藏费用，物超所值"
+            "title": "高端新能源车企线上预约试驾线索暴增2.8倍",
+            "desc": "3D全景选配与动态微交互体验，首屏跳出率大幅降低55%，有效预约到店试驾率达41%。",
+            "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&auto=format&fit=crop&q=80",
+            "link": "#case2"
           },
           {
-            "icon": "🔒",
-            "title": "保密协议",
-            "desc": "严格的保密措施，全方位保护您的商业机密"
-          },
-          {
-            "icon": "🎁",
-            "title": "增值服务",
-            "desc": "免费提供培训、文档等增值服务，助您快速上手"
+            "title": "企业协同办公平台付费席位扩容转化率提升190%",
+            "desc": "基于用户团队规模自适应下发定制版功能解构矩阵，大幅缩减企业IT采购决策周期至3天以内。",
+            "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80",
+            "link": "#case3"
           }
         ]
       }
     },
     {
-      "type": "cta",
+      "type": "contact",
       "data": {
-        "cta_title": "立即行动，抢占先机",
-        "cta_subtitle": "填写表单，我们的专家顾问将在 24 小时内与您联系，为您提供免费咨询服务",
-        "cta_button_text": "立即咨询",
-        "cta_button_url": "/contact/",
-        "cta_bg_color": "linear-gradient(135deg, #090d16 0%, #1e40af 60%, #059669 100%)",
-        "cta_bg_type": "color",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#059669",
-        "cta_button_text_color": "#ffffff"
+        "contact_title": "与 落地页 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0d14",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "CONVERT-MAX · 商业高转化营销落地页系统",
+        "qfs_brand_desc": "专为广告投放、获客线索沉淀与高价值线索转化设计的精益落地页。经过数万次 A/B 测试验证的转化路径，平均提升线索获取率 300%，助推企业业绩确定性增长。",
+        "qfs_link_groups": [
+          {
+            "title": "核心获客能力 & 转化保障与规范",
+            "links": "智能表单动态防刷与短信验证|#\nA/B 测试流量精准智能分流|#\n百度/巨量/腾讯广告线索秒级回传|#\n企业微信 SCRM 实时派单分配|#\n用户隐私保护与数据合规条例|#\n广告法合规词库自动智能审查|#\n移动端秒级急速加载加速网络|#\n高转化文案与排版最佳实践|#"
+          }
+        ],
+        "qfs_contact_title": "线索接入与广告效果优化",
+        "qfs_contact_items": "投放咨询|400-880-3300|tel:4008803300\n转化顾问|188-1122-8800|tel:18811228800\n响应时间|工作日 5 分钟内极速回访对接方案|#\n运营基地|广州市天河区珠江东路周大福金融中心 32 层|#",
+        "qfs_social_title": "效果营销前沿",
+        "qfs_social_links": "广告获客白皮书|#\n落地页拆解案例|#\nROI提升实操课|#\n流量增长俱乐部|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 CONVERT-MAX MARKETING. 保留所有权利 · 粤ICP备18032190号 · 互联网营销线索合规体系认证",
+        "qfs_bottom_links": "用户隐私协议与信息授权|#\n广告投放合规声明|#\n线索数据安全保障承诺|#\n退订与反骚扰政策|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

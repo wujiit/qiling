@@ -43,259 +43,424 @@
   },
   "modules": [
     {
-      "type": "hero_search",
+      "type": "header_suite",
       "data": {
-        "hs_height": "80vh",
-        "hs_overlay_color": "rgba(15, 23, 42, 0.72)",
-        "hs_content_align": "center",
-        "hs_bg_items": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "匠心职教",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "type": "image",
-            "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
-            "video_url": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "课程体系",
+            "link": "#curriculum",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "hs_bg_autoplay": "yes",
-        "hs_bg_interval": "5000",
-        "hs_title": "职业技能课程，报名到拿证一条线",
-        "hs_title_color": "#ffffff",
-        "hs_title_size": "3.3rem",
-        "hs_subtitle": "面向技能提升、考证备考、转岗就业和企业内训，集中展示热门课程、实操训练、班型费用、学习流程和报名咨询入口。",
-        "hs_subtitle_color": "rgba(255, 255, 255, 0.88)",
-        "hs_show_search": "yes",
-        "hs_search_placeholder": "搜索电工、会计、人力资源、新媒体、企业内训课程",
-        "hs_search_btn_text": "查找课程",
-        "hs_search_btn_bg": "linear-gradient(135deg, #2563eb 0%, #f59e0b 100%)",
-        "hs_search_btn_text_color": "#ffffff",
-        "hs_search_btn_hover_bg": "linear-gradient(135deg, #1d4ed8 0%, #d97706 100%)",
-        "hs_search_btn_hover_text_color": "#ffffff",
-        "hs_search_width": "720px",
-        "hs_tags_label": "热门方向：",
-        "hs_tags": [
-          {
-            "text": "电工培训"
-          },
-          {
-            "text": "会计实操"
-          },
-          {
-            "text": "人力资源"
-          },
-          {
-            "text": "新媒体运营"
-          }
-        ],
-        "hs_tags_bg": "rgba(255,255,255,0.16)",
-        "hs_tags_color": "#ffffff"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "预约试听",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#0284c7",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#0284c7",
+        "qhs_hover_bg": "rgba(2,132,199,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "curriculum",
+      "type": "brand_banner_pro",
       "data": {
-        "curriculum_title": "课程学习路径",
-        "curriculum_subtitle": "把报名测评、理论基础、实操训练、证书辅导和就业支持拆成清晰阶段",
-        "curriculum_bg_color": "#f8fafc",
-        "curriculum_primary_color": "#2563eb",
-        "curriculum_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "一技在手 · 一生无忧 · 国家级重点现代化高级技工培训学校",
+        "bb_subtitle": "人社部门正规办学许可，紧贴高薪紧缺产业需求，开设智能新能源汽修、工业机器人、全媒体运营与健康管理四大王牌专业，入学即签就业安置协议",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "title": "阶段一：入学测评与职业定位",
-            "meta": "第1周 | 基础评估",
-            "content": "<p>了解基础水平、目标岗位、学习时间和证书需求，匹配适合的班型和学习计划。</p>",
-            "open": "yes"
+            "text": "免费申领试听课与学费补贴名额",
+            "url": "#apply-study",
+            "style": "primary"
           },
           {
-            "title": "阶段二：理论基础与工具入门",
-            "meta": "第2-4周 | 系统课程",
-            "content": "<p>围绕岗位能力和考试要求梳理核心知识点、操作规范、工具流程和典型案例。</p>",
-            "open": "no"
-          },
-          {
-            "title": "阶段三：实操训练与项目演练",
-            "meta": "第5-8周 | 实训强化",
-            "content": "<p>通过实训设备、业务场景、模拟任务或项目作业，强化动手能力和问题处理能力。</p>",
-            "open": "no"
-          },
-          {
-            "title": "阶段四：考证冲刺与就业辅导",
-            "meta": "第9周起 | 拿证就业",
-            "content": "<p>安排题库训练、考前串讲、简历优化、面试演练和岗位推荐等延伸服务。</p>",
-            "open": "no"
-          }
-        ],
-        "module_margin_top": "80px",
-        "module_margin_bottom": "80px",
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "pricing",
-      "data": {
-        "pricing_title": "热门班型与费用",
-        "pricing_subtitle": "正式上线时替换成你的城市价格、开班周期和报名优惠",
-        "pricing_columns": "3",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "pricing_items": [
-          {
-            "name": "技能提升班",
-            "price": "¥1980",
-            "period": "/期起",
-            "desc": "适合已有基础、想补齐岗位技能的学员",
-            "features": "核心知识梳理\n线上录播回看\n阶段作业点评\n结课学习证明",
-            "btn_text": "咨询提升班",
-            "btn_link": "#",
-            "featured": ""
-          },
-          {
-            "name": "考证就业班",
-            "price": "¥3980",
-            "period": "/期起",
-            "desc": "适合目标明确、需要考证和就业辅导的学员",
-            "features": "理论课程\n实操训练\n题库冲刺\n简历与面试辅导\n证书报考提醒",
-            "btn_text": "咨询就业班",
-            "btn_link": "#",
-            "featured": "1",
-            "featured_text": "热门班型",
-            "featured_bg": "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)"
-          },
-          {
-            "name": "企业内训班",
-            "price": "按需报价",
-            "period": "",
-            "desc": "适合企业团队技能提升、转岗培训和岗位认证",
-            "features": "企业需求访谈\n定制课程大纲\n线下/线上混合授课\n阶段考核报告\n团队学习数据复盘",
-            "btn_text": "预约内训方案",
-            "btn_link": "#",
-            "featured": ""
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "从咨询到结课拿证",
-        "process_subtitle": "把招生、学习、实训、考证和就业辅导串成家长或学员能理解的路径",
-        "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "咨询测评",
-            "desc": "确认学习基础、目标岗位、证书需求、上课时间和预算范围。",
-            "stage_tag": "测评"
-          },
-          {
-            "icon": "02",
-            "title": "选择班型",
-            "desc": "根据目标匹配技能提升、考证就业、周末班、晚班或企业内训方案。",
-            "stage_tag": "班型"
-          },
-          {
-            "icon": "03",
-            "title": "理论与实训",
-            "desc": "完成课程学习、实操训练、阶段作业和老师点评，形成可追踪进度。",
-            "stage_tag": "学习"
-          },
-          {
-            "icon": "04",
-            "title": "考证就业支持",
-            "desc": "提供报考提醒、考前冲刺、简历优化、面试辅导和岗位推荐。",
-            "stage_tag": "转化"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "stats",
       "data": {
-        "testimonials_title": "学员反馈",
-        "testimonials_subtitle": "用真实学习目标、课程体验和结果反馈降低报名顾虑",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "2600+",
-        "average_rating": "4.8",
-        "testimonials_bg_color": "#ffffff",
-        "testimonials_items": [
+        "stats_title": "办学实力 · 就业保障与考证通过看板",
+        "stats_subtitle": "以理实一体化教学为基石，毕业即达熟练工水平，深受合作用人单位青睐",
+        "stats_items": [
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "王同学",
-            "position": "电工考证班",
-            "content": "实操课比自己看视频有效很多，老师会按考试要求拆动作细节。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-03-20",
-            "verified": "verified"
+            "number": "98.6%",
+            "label": "国家职业技能等级证书综合考取率"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "刘女士",
-            "position": "会计实操班",
-            "content": "从凭证到报表流程终于串起来了，结课后做账不再只会背概念。",
-            "rating": "5",
-            "source": "google",
-            "date": "2026-02-18",
-            "verified": "verified"
+            "number": "¥8,500+",
+            "label": "历届毕业学员首年平均综合就业起薪"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "赵先生",
-            "position": "企业内训负责人",
-            "content": "课程按岗位任务做了定制，培训后还给了团队学习报告。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-01-28",
-            "verified": "verified"
+            "number": "500+ 家",
+            "label": "校企合作定点对口用人直聘企业"
+          },
+          {
+            "number": "100%",
+            "label": "签订协议保障对口推荐专业就业"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "faq",
+      "type": "curriculum",
       "data": {
-        "faq_title": "报名常见问题",
-        "faq_subtitle": "提前说明报名条件、上课方式、证书报考和就业支持，让咨询更高效",
-        "faq_items": [
+        "curriculum_title": "核心高薪王牌专业与实训课程大纲",
+        "curriculum_subtitle": "70% 实操实训 + 30% 核心理论，一人一机一工位，名师手把手示范带教",
+        "curriculum_items": [
           {
-            "question": "零基础可以报名职业培训课程吗？",
-            "answer": "可以。建议先做入学测评，老师会根据基础、目标岗位和证书需求推荐适合的班型。"
+            "title": "新能源智能网联汽车检修工程班 (800课时)",
+            "meta": "学期 4 个月 · 国家中高级电工与智能网联汽修双证",
+            "content": "高压电安全操作规范、动力电池BMS管理系统检修、驱动电机控制器排查、车载 CAN 总线与激光雷达ADAS传感器标定。毕业直接输送蔚来、比亚迪等官方服务中心。",
+            "open": true
           },
           {
-            "question": "课程是线上还是线下？",
-            "answer": "可按机构实际情况配置。常见方式包括线下面授、线上直播、录播回看和实训基地集中训练。"
+            "title": "工业自动化与工业机器人集成编程 (600课时)",
+            "meta": "学期 3 个月 · 工业机器人系统操作员国家高级工证书",
+            "content": "ABB、KUKA、发那科六轴机器人示教编程、西门子 S7-1200/1500 PLC 逻辑控制、机器视觉识别检测与现代自动化柔性产线联调。年薪 12-18 万紧缺抢手岗位。",
+            "open": false
           },
           {
-            "question": "培训后一定能拿证或就业吗？",
-            "answer": "证书和就业结果受个人基础、学习投入、考试政策和岗位市场影响。官网建议说明辅导范围，不承诺无法保证的结果。"
+            "title": "短视频全媒体运营与直播电商操盘手 (480课时)",
+            "meta": "学期 2.5 个月 · 全媒体运营师国家职业资格证书",
+            "content": "从 0 到 1 打造爆款短视频脚本拆解、单反与专业灯光布光运镜、剪映与 PR 高阶特效剪辑、千川投流流速把控与直播间场控逼单话术实战。毕业包对口高薪 MCN 机构。",
+            "open": false
           },
           {
-            "question": "企业内训可以定制课程吗？",
-            "answer": "可以。可根据企业岗位能力模型、团队人数、培训周期和考核目标定制课程大纲与交付报告。"
+            "title": "现代中医康复理疗与母婴健康管理 (500课时)",
+            "meta": "学期 3 个月 · 中医康复理疗师证书 · 全国联网可查",
+            "content": "中医经络学说与十二正经循行、骨骼肌肉解剖学、正骨推拿调理、产后骨盆腹直肌闭合修复与体质辨识食疗药膳配方。创业开店或就职高端月子中心月薪轻松过万。",
+            "open": false
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
       }
     },
     {
-      "type": "cta",
+      "type": "team",
       "data": {
-        "cta_title": "先做一次课程测评，再决定适合哪种班型",
-        "cta_subtitle": "提交目标岗位、学习基础、可上课时间和证书需求，课程顾问会给出初步学习路径和班型建议。",
-        "cta_button_text": "预约课程测评",
-        "cta_button_url": "#",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "module_padding_top": "90px",
-        "module_padding_bottom": "90px",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #312e81 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)"
+        "team_title": "全国技术能手与国家一级技能大师团队",
+        "team_subtitle": "企业一线技术总工与工匠大师执教，拒绝空洞照本宣科",
+        "team_columns": "4",
+        "team_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "周海峰 大师",
+            "role": "新能源汽修学科带头人 / 全国五一劳动奖章获得者",
+            "desc": "25 年汽车诊断经验，获多项国家级故障诊断大赛冠军，主编多部行业核心教材"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "李振华 工程师",
+            "role": "自动化系主任 / 前 ABB 机器人高级系统工程师",
+            "desc": "曾主导多条国家级汽车焊接自动化生产线联调，擅长复杂 PLC 算法编程教学"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "程小曼",
+            "role": "全媒体运营金牌导师 / 前头部 MCN 机构运营总监",
+            "desc": "从 0 操盘孵化过多个百万粉丝垂直账号，独创“爆款结构拆解 5 步教学法”"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "黄济川 教授",
+            "role": "中医康复理疗名师 / 副主任中医师",
+            "desc": "出身中医世家，精通古典正骨手法与经络穴位调理，带教逾千名优秀理疗师"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "校园环境 · 万平现代化实操实训基地",
+        "gallery_subtitle": "高标准打造的工业级实训车间，环境对标大型现代化标杆企业一线车间",
+        "gallery_columns": "4",
+        "gallery_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80",
+            "title": "新能源整车检测实训中心",
+            "desc": "配备特斯拉、比亚迪等实训整车与高压电池解剖台"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+            "title": "工业机器人产线集成实训室",
+            "desc": "多台进口六轴关节机器人协同搬运与涂胶模拟产线"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
+            "title": "全景多机位带货直播实训舱",
+            "desc": "配备专业索尼导播台、补光灯光阵与独立隔音舱"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=600&q=80",
+            "title": "现代化公寓式学员宿舍与食堂",
+            "desc": "4人间空调上床下桌、独立卫浴、营养卫生员工大食堂"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {}
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "规范化收费标准与助学免息分期",
+        "pricing_subtitle": "一次性透明收费，中途绝无任何工具费、耗材费等二次隐形收费",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "技能考证速成强化班",
+            "name_color": "#0f172a",
+            "price": "¥3,800 起",
+            "price_color": "#0f172a",
+            "period": "/学期 1-2 个月",
+            "desc": "利用周末或晚间业余时间，针对考取国家技能证书定向突击",
+            "desc_color": "#64748b",
+            "features": "官方权威精准题库与实操模考指导\\n专业名师周末集中线下面授实训\\n考不过下一期免费跟班重学承诺\\n协助申报政府人社考证技能补贴",
+            "features_color": "#334155",
+            "btn_text": "咨询考证班名额",
+            "btn_link": "#apply-tuition",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "全日制高薪就业全能班",
+            "name_color": "#0f172a",
+            "price": "¥9,800 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/学期 3-4 个月 (包住宿)",
+            "desc": "针对零基础转行或应届生，70% 实操实训，包教包会包推荐就业",
+            "desc_color": "#64748b",
+            "features": "入学即签订具备法律效力就业协议\\n免费提供现代化空调独立卫浴学员公寓\\n包含全套原厂品牌实训工具箱及耗材\\n名企高管上门模拟面试与毕业对口直聘",
+            "features_color": "#334155",
+            "btn_text": "申请全能就业班",
+            "btn_link": "#apply-tuition",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "就业首选",
+            "badge": "就业首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "金牌技术创业孵化精英班",
+            "name_color": "#0f172a",
+            "price": "¥16,800 起",
+            "price_color": "#0f172a",
+            "period": "/学期 6 个月 (全案带教)",
+            "desc": "专为想开汽修厂、理疗养生馆、MCN 工作室的有志创业学员打造",
+            "desc_color": "#64748b",
+            "features": "不仅传授顶级技术，更传授门店经营管理\\n总部协助店铺精准选址与设备集采集运\\n赠送价值 20,000 元客源引流拓客系统\\n毕业后专职导师团队长期上门驻店辅导",
+            "features_color": "#334155",
+            "btn_text": "申请创业孵化名额",
+            "btn_link": "#apply-tuition",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_items": [
+          {
+            "name": "技能考证速成强化班",
+            "name_color": "#0f172a",
+            "price": "¥3,800 起",
+            "price_color": "#0f172a",
+            "period": "/学期 1-2 个月",
+            "desc": "利用周末或晚间业余时间，针对考取国家技能证书定向突击",
+            "desc_color": "#64748b",
+            "features": "官方权威精准题库与实操模考指导\\n专业名师周末集中线下面授实训\\n考不过下一期免费跟班重学承诺\\n协助申报政府人社考证技能补贴",
+            "features_color": "#334155",
+            "btn_text": "咨询考证班名额",
+            "btn_link": "#apply-tuition",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "全日制高薪就业全能班",
+            "name_color": "#0f172a",
+            "price": "¥9,800 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/学期 3-4 个月 (包住宿)",
+            "desc": "针对零基础转行或应届生，70% 实操实训，包教包会包推荐就业",
+            "desc_color": "#64748b",
+            "features": "入学即签订具备法律效力就业协议\\n免费提供现代化空调独立卫浴学员公寓\\n包含全套原厂品牌实训工具箱及耗材\\n名企高管上门模拟面试与毕业对口直聘",
+            "features_color": "#334155",
+            "btn_text": "申请全能就业班",
+            "btn_link": "#apply-tuition",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "就业首选",
+            "badge": "就业首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "金牌技术创业孵化精英班",
+            "name_color": "#0f172a",
+            "price": "¥16,800 起",
+            "price_color": "#0f172a",
+            "period": "/学期 6 个月 (全案带教)",
+            "desc": "专为想开汽修厂、理疗养生馆、MCN 工作室的有志创业学员打造",
+            "desc_color": "#64748b",
+            "features": "不仅传授顶级技术，更传授门店经营管理\\n总部协助店铺精准选址与设备集采集运\\n赠送价值 20,000 元客源引流拓客系统\\n毕业后专职导师团队长期上门驻店辅导",
+            "features_color": "#334155",
+            "btn_text": "申请创业孵化名额",
+            "btn_link": "#apply-tuition",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {}
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#0284c7",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "SKILL-COLLEGE · 高等现代职业技能与工匠实训专修学院",
+        "qfs_brand_desc": "产教深度融合，毕业即高质量就业。国家人社局批准设立，专注智能工业机器人编程、新能源汽车维修、跨境电商操盘与精密数控加工。",
+        "qfs_link_groups": [
+          {
+            "title": "国家重点专业 & 就业与考证保障",
+            "links": "工业机器人自动化编程运维|#\n新能源汽车三电技术与检测|#\n跨境电商综合实训运营班|#\n高阶五轴数控加工中心实操|#\n国家职业技能等级证书考点|#\n全国 300+ 知名合作签约企业|#\n订单班定向培养保底薪就业|#\n国家助学金与免学费政策申报|#"
+          }
+        ],
+        "qfs_contact_title": "招生办公室",
+        "qfs_contact_items": "招办热线|400-811-2026|tel:4008112026\n微信报名|SKILL_COLLEGE_OFFICE|#\n校区地址|江苏省常州市新北区现代职教园区 1 号院整区|#",
+        "qfs_social_title": "关注技能前沿",
+        "qfs_social_links": "微信公众号|#\n实训车间直播|#\n工匠技能大赛专栏|#\n毕业生风采录|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 SKILL-COLLEGE VOCATIONAL. 保留所有权利 · 中华人民共和国民办学校办学许可证：人社民32040030018号",
+        "qfs_bottom_links": "办学资质备案|#\n收费与退费管理细则|#\n国家资助政策公示|#\n校园地图|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

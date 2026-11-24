@@ -43,266 +43,283 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be185d 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "月之悦",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1800&q=80",
-            "title": "把母婴照护、房型套餐和产康服务讲清楚",
-            "subtitle": "适合月子中心、产康中心和母婴护理机构展示月子套房、护理团队、新生儿照护、月子餐、产后恢复和预约参观入口。",
-            "btn_text": "预约参观月子中心",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#be185d"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "特色房型",
+            "link": "#room-showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "配套设施",
+            "link": "#hotel-amenities",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "01",
-            "number": "24h",
-            "label": "母婴照护响应",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "02",
-            "number": "1对1",
-            "label": "入住顾问跟进",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "03",
-            "number": "每日",
-            "label": "宝宝护理记录",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "04",
-            "number": "多学科",
-            "label": "产康营养协作",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "预约就诊",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#fb7185",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#fb7185",
+        "qhs_hover_bg": "rgba(251,113,133,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "母婴照护服务",
-        "services_subtitle": "围绕妈妈恢复、宝宝照护、营养餐食和家属沟通形成入住服务闭环",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "诞生礼遇 · 予新生妈妈与宝贝最温柔的守护",
+        "bb_subtitle": "三甲妇产与新生儿科专家每周查房，1对1 资深执业护士 24 小时贴身照护，独栋庄园级私密湖景套房，开启 28 天无忧身心蜕变",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "01",
-            "title": "妈妈产后照护",
-            "desc": "关注休息恢复、伤口观察、情绪支持、哺乳协助和日常护理。",
-            "link": "#"
+            "text": "预约到店品鉴米其林月子餐",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "02",
-            "title": "新生儿护理",
-            "desc": "提供喂养记录、洗护、抚触、黄疸观察和宝宝作息反馈。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "产后康复服务",
-            "desc": "按评估结果安排基础体态、盆底、腹直肌和运动恢复建议。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "营养月子餐",
-            "desc": "结合阶段恢复、口味偏好和禁忌情况制定餐食搭配。",
-            "link": "#"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "room-showcase",
       "data": {
-        "room_title": "月子套房与套餐",
-        "room_subtitle": "按居住空间、护理深度和家庭预算展示适合的入住方案",
+        "room_title": "奢适静谧母婴月子套房展示",
+        "room_subtitle": "独立分区分户静音设计、进口戴森温控、电动哺乳沙发与婴儿恒温洗浴操作台",
         "room_columns": "3",
-        "room_card_style": "standard",
         "room_items": [
           {
-            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
-            "name": "温馨母婴房",
-            "area": "32㎡",
-            "bed_type": "queen",
-            "capacity": "妈妈+宝宝",
-            "price": "¥1280/天起",
-            "original_price": "",
-            "badge": "recommend",
-            "amenities": "icon-baby|宝宝照护\nicon-food|营养月子餐\nicon-call|护理呼叫",
-            "desc": "适合基础入住需求，兼顾休息、宝宝照护和日常护理记录。",
-            "btn_text": "预约参观",
-            "btn_link": "#"
+            "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80",
+            "name": "雅致园景母婴套房 (Deluxe Suite)",
+            "area": "68㎡",
+            "bed_type": "2米舒达天然乳胶大床",
+            "capacity": "妈妈+宝贝+1位家属",
+            "price": "¥48,800",
+            "original_price": "¥58,800",
+            "badge": "温馨舒适",
+            "amenities": "独立哺乳区, 全套戴森吹风机及空气净化器, 婴儿恒温洗澡操作台, 智能恒温马桶",
+            "desc": "超大景观飘窗采光充沛，独立干湿分离卫浴配备紧急呼叫键，营造私密舒适的恢复空间",
+            "btn_text": "预约参观套房",
+            "btn_link": "#booking"
           },
           {
-            "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
-            "name": "高阶产康套房",
-            "area": "45㎡",
-            "bed_type": "king",
-            "capacity": "妈妈+宝宝+陪护",
-            "price": "¥1880/天起",
-            "original_price": "",
-            "badge": "luxury",
-            "amenities": "icon-rehab|产康评估\nicon-nurse|专属护理\nicon-family|家属陪护",
-            "desc": "适合希望加入产后康复评估、护理跟进和家属陪护的家庭。",
-            "btn_text": "了解套餐",
-            "btn_link": "#"
+            "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+            "name": "尊享两室一厅伴宿套房 (Executive Suite)",
+            "area": "108㎡",
+            "bed_type": "主卧大床+次卧陪护床",
+            "capacity": "妈妈+宝贝+2位家属",
+            "price": "¥78,800",
+            "original_price": "¥92,800",
+            "badge": "全家陪护爆款",
+            "amenities": "双卫干湿分离, 独立会客客厅, 嵌入式医用级消毒柜, 专属护士 24 小时驻室",
+            "desc": "家属拥有独立次卧与会客空间，妈妈和宝贝享受不被打扰的静音安睡，全方位守护隐私",
+            "btn_text": "预约参观套房",
+            "btn_link": "#booking"
           },
           {
-            "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
-            "name": "家庭陪护套房",
-            "area": "58㎡",
-            "bed_type": "family",
-            "capacity": "2-3人陪护",
-            "price": "按需报价",
-            "original_price": "",
-            "badge": "garden",
-            "amenities": "icon-space|独立会客\nicon-food|定制餐食\nicon-safe|私密空间",
-            "desc": "适合重视家属陪伴、空间私密性和定制照护安排的家庭。",
-            "btn_text": "预约顾问",
-            "btn_link": "#"
+            "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+            "name": "湖景庄园独栋总统套房 (Presidential Villa)",
+            "area": "180㎡",
+            "bed_type": "奢华特大床+独立护士站",
+            "capacity": "双护士 24 小时 2对1",
+            "price": "¥138,800",
+            "original_price": "¥168,000",
+            "badge": "独栋私享",
+            "amenities": "270°环幕全景湖景, 专属私人产康理疗室, 独立婴儿游泳SPA房, 主厨定制专线配送",
+            "desc": "独门独院私享园林，双执业护士全程二对一白加黑守候，尽享顶奢母婴度假级休养体验",
+            "btn_text": "预约参观套房",
+            "btn_link": "#booking"
           }
-        ],
-        "room_btn_bg_color": "#be185d",
-        "room_btn_text_color": "#ffffff",
-        "module_bg_color": "#fff1f2",
-        "enable_staggered_animation": "yes"
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "四大母婴全维度休养关怀",
+        "services_subtitle": "医学严谨与五星级奢享体验交融，陪伴妈妈从容度过关键黄金月子期",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "fas fa-user-nurse",
+            "title": "三甲妇产儿科专家每周查房",
+            "desc": "妇产主任监测子宫复旧与恶露排出，儿科主任细致排查新生儿黄疸、脐带及体重生长曲线。"
+          },
+          {
+            "icon": "fas fa-baby-carriage",
+            "title": "24 小时纯护士 1对1 亲密照料",
+            "desc": "杜绝廉价社会月嫂，全员持有国家护士执业证，科学喂养拍嗝、新生儿抚触水疗与早早教。"
+          },
+          {
+            "icon": "fas fa-spa",
+            "title": "产后骨盆闭合与盆底肌修复",
+            "desc": "采用全套法国进口麦普泰格产康仪，专业手法闭合腹直肌分离与骨盆耻骨错位，重塑 S 曲线。"
+          },
+          {
+            "icon": "fas fa-shield-virus",
+            "title": "医用级独立新风层流感控消毒",
+            "desc": "全屋紫外线循环消杀，独立两道感控门禁与无死角空气质量监测，杜绝母婴交叉感染。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "hotel-amenities",
+      "data": {
+        "amenities_title": "专属配套与品质设施",
+        "amenities_subtitle": "完备便捷的硬件配套，全方位满足多元需求"
       }
     },
     {
       "type": "team",
       "data": {
-        "team_title": "母婴护理与产康团队",
-        "team_subtitle": "展示护理长、产康师、营养师和顾问团队，让家庭清楚服务由谁承接",
+        "team_title": "三甲妇幼专家与专业产康天团",
+        "team_subtitle": "多学科联合筑牢母婴健康防护墙，给妈妈和宝宝无微不至的专业呵护",
         "team_columns": "3",
         "team_members": [
           {
-            "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
-            "name": "周护理长",
-            "position": "母婴护理负责人",
-            "desc": "负责入住评估、宝宝护理记录、护理质控和家属沟通。",
-            "email": "postpartum1@example.com"
+            "avatar": "https://images.unsplash.com/photo-1594824813583-097576571991?auto=format&fit=crop&w=600&q=80",
+            "name": "林慧芬 主任 (Director Lin)",
+            "position": "名誉医疗院长 / 前三甲妇产科科主任",
+            "desc": "从事妇产科临床工作 32 年，处理过上万例高危产妇与顺剖产后恢复，亲自把控每一位入住妈妈的身体康复进程。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
-            "name": "林老师",
-            "position": "产后康复师",
-            "desc": "关注体态恢复、盆底训练、腹直肌评估和阶段运动建议。",
-            "email": "postpartum2@example.com"
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+            "name": "苏瑾 (Cathy Su)",
+            "position": "护理部总监 / 国际认证泌乳顾问 (IBCLC)",
+            "desc": "专研无痛乳腺疏通手法与新生儿生理性黄疸动态跟踪，帮助 98% 以上的入住宝妈实现轻松舒适母乳喂养。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-            "name": "陈营养师",
-            "position": "月子餐营养顾问",
-            "desc": "负责阶段餐单、饮食禁忌、口味偏好和恢复目标沟通。",
-            "email": "postpartum3@example.com"
+            "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+            "name": "陈若雪 (Roxanne Chen)",
+            "position": "首席产后修复总监 / 法国认证骨盆闭合师",
+            "desc": "深耕女性产后腹直肌闭合、盆底肌机能重建与骨盆假胯宽手法复位 10 年，帮助产后女性重塑紧致自信身姿。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "入住家庭反馈",
-        "testimonials_subtitle": "用真实照护体验、沟通效率和空间感受降低首次参观前的不确定感",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "1300+",
-        "average_rating": "4.9",
-        "testimonials_bg_color": "#fff1f2",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "安安妈妈",
-            "position": "28天入住家庭",
-            "content": "宝宝护理记录很细，喂养和睡眠情况每天都能同步到家属。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-03-16",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "可可爸爸",
-            "position": "家庭陪护套房",
-            "content": "参观时把房型、护理项目和费用拆得清楚，入住后沟通也比较稳定。",
-            "rating": "5",
-            "source": "google",
-            "date": "2026-02-22",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
-            "name": "小橙妈妈",
-            "position": "产康服务客户",
-            "content": "产康评估和训练建议比较循序渐进，没有一上来就推很多项目。",
-            "rating": "5",
-            "source": "dianping",
-            "date": "2026-01-29",
-            "verified": "verified"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "月子产康常见问题",
-        "faq_subtitle": "提前说明入住评估、费用构成、护理边界和医疗转诊，减少家属反复沟通",
-        "faq_items": [
-          {
-            "question": "月子中心是否可以替代医院诊疗？",
-            "answer": "月子中心主要提供生活照护、母婴护理、营养餐食和产康支持，不替代医院诊断、治疗和急危处理。妈妈或宝宝出现异常情况时应及时就医。"
-          },
-          {
-            "question": "入住前需要准备哪些信息？",
-            "answer": "建议准备预产期或生产日期、分娩方式、妈妈恢复情况、宝宝喂养方式、过敏禁忌和陪护需求，方便中心匹配房型和护理方案。"
-          },
-          {
-            "question": "产康项目是否所有人都适合？",
-            "answer": "不一定。产康项目需要结合生产方式、恢复阶段、医生建议和现场评估安排，正式页面建议按机构资质和服务边界清楚说明。"
-          },
-          {
-            "question": "费用一般包括哪些内容？",
-            "answer": "常见费用包括房间、月子餐、妈妈护理、宝宝护理、基础耗材和可选产康项目。正式价格应按机构实际套餐展示。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
+      "type": "pricing",
+      "data": {}
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约参观与入住评估",
-        "booking_subtitle": "提交预产期、期望入住时间、目标房型和照护需求，顾问会联系确认参观安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "参观前建议准备",
-        "sidebar_content": "说明预产期或生产日期、分娩方式和喂养计划\n如有饮食禁忌、过敏或特殊护理需求请提前备注\n建议家属一起参观房型、餐食和护理动线",
-        "contact_phone": "400-520-2026",
-        "contact_hours": "09:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.56",
-        "module_bg_color": "#fff1f2"
+        "booking_title": "预约月子会所尊享探院参观与产后调理品鉴",
+        "booking_subtitle": "独栋庭院式母婴休养空间、妇产儿科双专家每周查房、专业母婴护理师一对一照护。",
+        "booking_btn_text": "预约探院享万元礼包",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "免费试吃",
+        "booking_phone": "母婴关怀热线：400-999-5555",
+        "booking_time": "探院接待时间：每日 09:00 - 18:00"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#1a1012",
+        "qfs_text_color": "#fed7aa",
+        "qfs_heading_color": "#fef3c7",
+        "qfs_accent_color": "#fb7185",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "BEBE-MAMA · 独栋法式庭院母婴月子会所与产后康复中心",
+        "qfs_brand_desc": "妇产科专家、儿科医生与资深护理师多对一守护。五星级厨师定制阶段性药膳月子餐，给妈妈和宝宝最尊贵的初生礼遇。",
+        "qfs_link_groups": [
+          {
+            "title": "尊享月子套餐 & 产后身心康复",
+            "links": "独栋庭院尊享套房系列|#\n产科/新生儿科三甲医生巡诊|#\n24小时 N+1 护士母婴专护|#\n特级中药膳调养月子膳食|#\n骨盆修复与腹直肌闭合|#\n中药熏蒸与全身淋巴排毒|#\n产后心理疏导与睡眠调理|#\n新生儿抚触与早早教启蒙|#"
+          }
+        ],
+        "qfs_contact_title": "参观品鉴预约",
+        "qfs_contact_items": "会所尊享专线|400-890-5200|tel:4008905200\n接待微信|BEBEMAMA_VIP|#\n会所地址|北京市朝阳区温榆河畔生态独栋别墅庄园 1 号院|#",
+        "qfs_social_title": "关注母婴品质生活",
+        "qfs_social_links": "小红书月子日记|#\n微信公众号|#\n妈妈课堂直播|#\n微博认证主页|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 BEBE-MAMA CARE CENTER. 保留所有权利 · 全国母婴保健服务标准化示范基地",
+        "qfs_bottom_links": "食品安全公示|#\n消毒防疫标准手册|#\n合同服务条款|#\n预约探访须知|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

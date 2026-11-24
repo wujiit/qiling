@@ -42,263 +42,275 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #be185d 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "光珀美学",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80",
-            "title": "让每一次到店都值得期待",
-            "subtitle": "美容护理、发型设计、美甲美睫一站式服务，支持在线预约到店。",
-            "btn_text": "预约到店",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#be185d"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "精选菜单",
+            "link": "#menu",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "效果对比",
+            "link": "#image_comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "在线预约",
+            "link": "#booking-entry",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "30+",
-            "number": "30+",
-            "label": "服务项目",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "20+",
-            "number": "20+",
-            "label": "资深造型师",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "8",
-            "number": "8家",
-            "label": "城市门店",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "用户评分",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f43f5e",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f43f5e",
+        "qhs_hover_bg": "rgba(244,63,94,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "热门服务项目",
-        "services_subtitle": "覆盖日常护理、造型设计与节日焕新场景",
-        "services_bg_color": "#ffffff",
-        "services_padding": "normal",
-        "services_columns": "4",
-        "services_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "日式美甲美睫 · 奢享头皮深度 SPA 沙龙",
+        "bb_subtitle": "日本 JNA 认证高级美甲美睫导师主理，采用进口医用级树脂胶与天然植物头皮疗愈精油，指尖与青丝的精致悦己之选",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "01",
-            "title": "面部护理",
-            "desc": "清洁补水、舒缓修护与肌肤管理方案。",
-            "link": "#"
+            "text": "预约专属美疗时段",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "02",
-            "title": "发型设计",
-            "desc": "剪发、染烫、造型定制与日常打理建议。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "美甲美睫",
-            "desc": "款式设计、甲面护理与睫毛精细化服务。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "新娘妆造",
-            "desc": "妆发搭配与重要场景形象焕新。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "menu",
-      "data": {
-        "menu_title": "人气价目参考",
-        "menu_subtitle": "可按门店等级、造型师级别和活动档期自由调整",
-        "menu_layout": "grid",
-        "menu_accent_color": "#be185d",
-        "menu_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
-            "title": "基础洗剪吹",
-            "desc": "含头皮清洁与发型打理建议",
-            "price": "¥128",
-            "badge": "日常热门",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
-            "title": "染发护理套餐",
-            "desc": "发色定制 + 护理修护",
-            "price": "¥598起",
-            "badge": "形象升级",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
-            "title": "轻奢美甲套餐",
-            "desc": "款式设计 + 手部护理",
-            "price": "¥298起",
-            "badge": "节日推荐",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
-            "title": "面部深层护理",
-            "desc": "清洁补水 + 舒缓导入",
-            "price": "¥368",
-            "badge": "回购高",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#fff1f2"
-      }
-    },
-    {
-      "type": "team",
-      "data": {
-        "team_title": "明星造型团队",
-        "team_subtitle": "按风格和需求匹配造型师，提升到店体验与复购率",
-        "team_columns": "3",
-        "team_members": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
-            "name": "Mia",
-            "position": "发型总监",
-            "desc": "擅长轻奢染烫与脸型修饰设计。",
-            "email": "beauty1@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
-            "name": "Luna",
-            "position": "护肤顾问",
-            "desc": "专注敏感肌舒缓与周期护理管理。",
-            "email": "beauty2@example.com"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
-            "name": "Yuki",
-            "position": "美甲主理人",
-            "desc": "擅长节日和婚礼场景款式设计。",
-            "email": "beauty3@example.com"
-          }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "gallery",
-      "data": {
-        "gallery_title": "作品与空间",
-        "gallery_subtitle": "从服务结果到门店氛围，让新客更快建立信任",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "gallery_gap": "16",
-        "enable_filter": "yes",
-        "filter_categories": "发型,美甲,护理,空间",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80",
-            "title": "轻奢沙龙空间",
-            "desc": "舒适到店体验",
-            "category": "空间"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
-            "title": "节日款美甲",
-            "desc": "细节设计",
-            "category": "美甲"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80",
-            "title": "造型护理",
-            "desc": "发色与发质管理",
-            "category": "发型"
-          }
-        ],
-        "module_bg_color": "#fff1f2",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
-      }
-    },
-    {
-      "type": "booking-entry",
-      "data": {
-        "booking_title": "预约到店体验",
-        "booking_subtitle": "提交项目、门店和到店时间，顾问会确认预约安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约须知",
-        "sidebar_content": "可选择门店、服务项目和到店时间\n节假日建议提前 2 天预约\n如需指定造型师请在表单备注说明",
-        "contact_phone": "400-888-2026",
-        "contact_hours": "10:00-21:30",
-        "module_bg_image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_padding_top": "90px",
-        "module_padding_bottom": "90px",
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "预约常见问题",
-        "faq_subtitle": "先了解流程，再放心到店",
-        "module_bg_color": "#fff1f2",
-        "faq_items": [
-          {
-            "question": "可以指定造型师吗？",
-            "answer": "可以，在预约备注中填写偏好的造型师或风格，门店会二次确认排期。"
-          },
-          {
-            "question": "价格是否会浮动？",
-            "answer": "染烫、护理等项目会根据发量、发长、门店活动略有差异，到店前会先沟通确认。"
-          },
-          {
-            "question": "是否支持团购或会员卡？",
-            "answer": "支持门店活动、会员储值和次卡套餐，可在页面中替换为实际规则。"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
     },
     {
-      "type": "cta",
+      "type": "menu",
       "data": {
-        "cta_title": "准备换一个更适合你的状态？",
-        "cta_subtitle": "从发型、妆容到护理方案，给新客一个明确的第一步。",
-        "cta_button_text": "立即预约",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.55",
-        "module_padding_top": "90px",
-        "module_padding_bottom": "90px",
-        "cta_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 60%, #be185d 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#f43f5e",
-        "cta_button_text_color": "#ffffff"
+        "menu_title": "招牌沙龙服务 · 甄选项目价目表",
+        "menu_subtitle": "严格执行一人一套医用级独立灭菌器械包，全进口高阶耗材，拒绝任何低劣工业胶水",
+        "menu_layout": "grid",
+        "menu_accent_color": "#be185d",
+        "menu_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80",
+            "title": "日式高阶晕染手工手绘凝胶美甲",
+            "desc": "日本进口 Presto/Leafgel 纯植物凝胶 / 包含精致修死皮 / 60天不翘边不起翘",
+            "price": "¥368",
+            "badge": "招牌手绘",
+            "link": "#booking"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=800&q=80",
+            "title": "山茶花日式无感空气睫毛嫁接",
+            "desc": "韩国进口婴儿级无感抗菌毛 / 1对1量眼定制弧度 / 根根分明轻盈零负担",
+            "price": "¥428",
+            "badge": "轻盈无感",
+            "link": "#booking"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+            "title": "碳酸微气泡深层头皮排毒防脱 SPA",
+            "desc": "日本高压碳酸微气泡仪器 / 清除毛囊深层固化皮脂酸 / 配合头颈热石舒缓解压",
+            "price": "¥580",
+            "badge": "深度疗愈",
+            "link": "#booking"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+            "title": "高定新娘美甲美睫手足全案套组",
+            "desc": "定制法式施华洛世奇钻饰美甲 + 仿真眼型睫毛设计 + 深度手足蜜蜡润白护理",
+            "price": "¥980",
+            "badge": "婚礼限定",
+            "link": "#booking"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image_comparison",
+      "data": {
+        "title": "头皮微生态护理 · 显微镜下前后对比",
+        "subtitle": "拖动滑块查看真实效果：200倍专业头皮检测仪下 油脂堆积堵塞毛囊 经碳酸深层理疗后的惊人通透感",
+        "image_before": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+        "label_before": "护理前 · 固化油脂栓堵塞且发红发痒",
+        "image_after": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
+        "label_after": "理疗后 · 毛囊口呈漏斗状通透呼吸",
+        "comparison_badge_bg": "#be185d",
+        "slider_color": "#ffffff",
+        "height": 520,
+        "initial_offset": 50
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "日本 JNA 认证高级美疗师天团",
+        "team_title_size": "2.1rem",
+        "team_title_color": "#0f172a",
+        "team_subtitle": "全员持有国际权威美业资质认证，手法细腻温和，倾听每一位贵宾的个性化审美诉求",
+        "team_columns": "3",
+        "team_members": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+            "name": "佐佐木 希 (Nozomi)",
+            "position": "美甲艺术总监 · 日本 JNA 一级认证技师",
+            "desc": "旅日研学8年，擅长日系微晕染、立体浮雕与水彩手工彩绘，曾为多位演艺明星定制红毯美甲。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+            "name": "宋依晨",
+            "position": "美睫首席造型师 · 国际美业金奖得主",
+            "desc": "独创根据眼球凸度与眼皮下垂程度进行“多弧度分层混接”，打造睁眼有神、闭眼自然的母生感睫毛。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+            "name": "陈若雪",
+            "position": "资深头皮毛囊健康管理师",
+            "desc": "拥有临床护理学背景与芳香疗法国际认证，精准调配植物精油，改善脱发掉发、扁塌出油与顽固偏头痛。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "私密单人贵宾室 · 奢适静谧空间",
+        "gallery_subtitle": "配备电动多功能理疗沙发、全套戴森吸尘除螨与茶点饮品，享受不被打扰的惬意时光",
+        "gallery_columns": "3",
+        "gallery_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+            "title": "独立单人 VIP 护理包间",
+            "desc": "一人一间私密隔音，配备超静音香薰加湿机与定制羊毛毯"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+            "title": "碳酸水疗 SPA 头部冲洗床",
+            "desc": "符合人体工学电动仰卧躺床，全程温水水循环头皮舒压"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80",
+            "title": "医用级紫外线循环无菌消毒柜",
+            "desc": "每客一换独立封存器械包，当面启封使用安心无忧"
+          }
+        ]
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {
+        "booking_title": "预约尊享美业护肤与美睫美甲定制服务",
+        "booking_subtitle": "一对一专属高级美容师服务，采用进口一线院线温和护肤产品，无隐形消费。",
+        "booking_btn_text": "立即预约到店护理",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "赠手部水蜡",
+        "booking_phone": "美丽专线：010-8888-9999",
+        "booking_time": "营业时间：10:00 - 22:00 (敬请提前预约)"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#181115",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f43f5e",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "LUMINOUS-BEAUTY · 奢享轻医美与科技美肤定制连锁",
+        "qfs_brand_desc": "全线引进原装正品飞顿、半岛超声炮、热玛吉与科医人光子嫩肤仪器。坚持“一人一针一头一药、假一赔十”的医疗安全底线，由三甲公立皮肤科名医常年主理坐诊。",
+        "qfs_link_groups": [
+          {
+            "title": "核心美肤项目 & 医疗安全与正品",
+            "links": "半岛黄金超声炮抗衰紧致全脸|#\n科医人第七代 M22 AOPT 光子嫩肤|#\n嗨体颈纹与眼周泪沟精准胶原灌注|#\n水光微针深层水油平衡控痘管理|#\n四重正品扫码验真流程公示|#\n三甲皮肤科主治医师专家名录|#\n无菌千级层流手术室与留观病房|#\n术后专属皮肤医生 30 天追踪随访|#"
+          }
+        ],
+        "qfs_contact_title": "VISIA 皮肤检测预约与医师面诊",
+        "qfs_contact_items": "尊贵预约|400-880-7711|tel:4008807711\n美学顾问|188-2233-4455|tel:18822334455\n接诊时间|周一至周日 9:30 - 20:30（无节假日门诊）|#\n美学中心|上海市静安区南京西路 1266 号恒隆广场办公楼二座 36 层|#",
+        "qfs_social_title": "美肤美学",
+        "qfs_social_links": "美肤预约小程序|#\n皮肤科医生答疑群|#\n变美日记真实晒单|#\n小红书美学主页|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 LUMINOUS BEAUTY CLINIC. 保留所有权利 · 医疗机构执业许可证：PDY70921031010619D2162",
+        "qfs_bottom_links": "医疗广告审批文号公示|#\n轻医美耗材验真查询|#\n医疗知情同意书模板|#\n消费者隐私保护条款|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -247,7 +247,19 @@
   display: block;
   position: relative;
   overflow: hidden;
-}/* ===== 新闻模块 (Module News) ===== */
+}.mit-container.layout-right {
+  direction: rtl;
+}.mit-container.layout-right .mit-image-area,
+.mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}
+
+/* 响应式 (Responsive) */
+@media (max-width: 991px) {.mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}/* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -302,4 +314,393 @@
   animation:
     ql_ih_fadeLeft 1s ease-out 0.2s forwards,
     ql_ih_float 6s ease-in-out infinite 1.2s;
+}
+
+/* ==========================================================================
+   启灵装修系统：全场景全局智能暗黑模式引擎 (Universal Smart Dark Mode Engine)
+   支持任意用户在前台可视化装修中自定义背景、文字、卡片、表单等属性后的全自动暗黑适配
+   ========================================================================== */
+
+/* 1. 核心设计令牌映射 (Token Mapping) */
+html.dark-mode,
+[data-theme='dark'] {
+  --dm-bg: #0b0f19;
+  --dm-bg-secondary: #111827;
+  --dm-bg-card: #1e293b;
+  --dm-bg-card-hover: #26354a;
+  --dm-text: #cbd5e1;
+  --dm-text-heading: #f8fafc;
+  --dm-text-muted: #94a3b8;
+  --dm-border: rgba(255, 255, 255, 0.08);
+  --dm-border-hover: rgba(255, 255, 255, 0.16);
+  --color-neutral-0: #1e293b;
+  --color-neutral-50: #0b0f19;
+  --color-neutral-100: #111827;
+  --color-neutral-200: #1e293b;
+  --color-neutral-300: #334155;
+  --color-background: var(--dm-bg);
+  --color-surface: var(--dm-bg-card);
+  --color-surface-alt: var(--dm-bg-secondary);
+  --color-heading: var(--dm-text-heading);
+  --color-text: var(--dm-text);
+  --color-text-muted: var(--dm-text-muted);
+  --color-border: var(--dm-border);
+}
+
+/* 2. 前台装修自定义变量全面强力覆写 (Visual & Advanced Customizer CSS Variable Overrides) */
+html.dark-mode [data-qds-visual="1"],
+html.dark-mode [data-qds-advanced="1"],
+html.dark-mode .qds-visual-wrapper,
+html.dark-mode .module-wrapper,
+html.dark-mode .developer-starter-module-wrapper,
+html.dark-mode .qiling-module-scope,
+html.dark-mode .qiling-builder-module,
+[data-theme='dark'] [data-qds-visual="1"],
+[data-theme='dark'] [data-qds-advanced="1"],
+[data-theme='dark'] .qds-visual-wrapper,
+[data-theme='dark'] .module-wrapper,
+[data-theme='dark'] .developer-starter-module-wrapper,
+[data-theme='dark'] .qiling-module-scope,
+[data-theme='dark'] .qiling-builder-module {
+  --qds-background-color: var(--dm-bg, #0b0f19) !important;
+  --qds-hover-background-color: var(--dm-bg-secondary, #111827) !important;
+  --qds-border-color: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qds-hover-border-color: var(--dm-border-hover, rgba(255, 255, 255, 0.16)) !important;
+  --qds-title-color: var(--dm-text-heading, #f8fafc) !important;
+  --qds-hover-title-color: var(--color-primary, #60a5fa) !important;
+  --qds-subtitle-color: var(--dm-text-muted, #94a3b8) !important;
+  --qds-text-color: var(--dm-text, #cbd5e1) !important;
+  --qiling-module-bg: var(--dm-bg, #0b0f19) !important;
+  --qiling-page-bg: var(--dm-bg, #0b0f19) !important;
+  --color-background: var(--dm-bg, #0b0f19) !important;
+  --qiling-module-title: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-component-module-title-color: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-module-subtitle: var(--dm-text-muted, #94a3b8) !important;
+  --qiling-module-text: var(--dm-text, #cbd5e1) !important;
+  --qiling-module-muted: var(--dm-text-muted, #94a3b8) !important;
+  --qiling-module-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-component-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-module-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  --qiling-component-post-card-bg: var(--dm-bg-card, #1e293b) !important;
+  --qiling-component-post-card-border: var(--dm-border, rgba(255, 255, 255, 0.08)) !important;
+  --qiling-component-post-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  --qiling-module-card-title: var(--dm-text-heading, #f8fafc) !important;
+  --qiling-module-card-text: var(--dm-text, #cbd5e1) !important;
+}
+
+/* 3. 模块容器背景自动智能暗黑置换 (Module Container Dark Mode Conversion) */
+html.dark-mode :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+),
+html.dark-mode :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+) > :is(.module, section[class*="module-"], .developer-starter-module):not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+html.dark-mode .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+[data-theme='dark'] :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+),
+[data-theme='dark'] :is(
+  [data-qds-visual="1"],
+  [data-qds-advanced="1"],
+  .qds-visual-wrapper,
+  .module-wrapper,
+  .developer-starter-module-wrapper
+) > :is(.module, section[class*="module-"], .developer-starter-module):not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper),
+[data-theme='dark'] .module:not(.has-custom-dark-bg):not([class*="banner"]):not(.module-brand_banner_pro):not(.module-fullscreen_video):not(.qhs-wrapper) {
+  background: var(--dm-bg, #0b0f19) !important;
+  background-color: var(--dm-bg, #0b0f19) !important;
+  background-image: none !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}
+
+/* 4. 全局标题与主文字自动高反差反转 (Auto Contrast Inversion for Titles & Headings) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]),
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+) > a,
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .module-title, .block-title, .entry-title,
+  [class*="-title"], [class*="-heading"], [class*="-name"]
+) > a {
+  color: #f8fafc !important;
+}
+
+/* 5. 全局副标题与正文灰度文字可读性自适应 (Auto Readable Contrast for Subtitles & Body) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .subtitle, .section-subtitle, .module-subtitle, .section-desc, .module-desc,
+  [class*="-desc"], [class*="-subtitle"], [class*="-description"], [class*="-excerpt"],
+  p, li
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]):not([class*="-price"]):not([class*="-amount"]):not(.price):not(.amount),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .subtitle, .section-subtitle, .module-subtitle, .section-desc, .module-desc,
+  [class*="-desc"], [class*="-subtitle"], [class*="-description"], [class*="-excerpt"],
+  p, li
+):not(.btn):not([class*="-btn"]):not([class*="-badge"]):not([class*="-tag"]):not([class*="-price"]):not([class*="-amount"]):not(.price):not(.amount) {
+  color: #94a3b8 !important;
+}
+
+/* 6. 全局卡片、模块列表项、内容面板自适应深色立体质感 (Card & Panel Surface Upgrades) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"],
+  [class*="_card"],
+  .card,
+  .feature-item,
+  .service-item,
+  .testimonial-item,
+  .team-item,
+  .pricing-item,
+  .case-item,
+  .portfolio-item,
+  .gallery-item,
+  .timeline-item,
+  .branch-item,
+  .doctor-item,
+  .room-item,
+  .stat-item,
+  .metric-item,
+  .faq-item,
+  .contact-card,
+  .booking-card,
+  .blog-post-item,
+  .news-card,
+  .qw-lib-card,
+  .fp-list-item,
+  .cat-tab-post-item,
+  .ql-testimonial-summary,
+  .ql-hotel-booking-form-box,
+  .qfs-qr-card
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"],
+  [class*="_card"],
+  .card,
+  .feature-item,
+  .service-item,
+  .testimonial-item,
+  .team-item,
+  .pricing-item,
+  .case-item,
+  .portfolio-item,
+  .gallery-item,
+  .timeline-item,
+  .branch-item,
+  .doctor-item,
+  .room-item,
+  .stat-item,
+  .metric-item,
+  .faq-item,
+  .contact-card,
+  .booking-card,
+  .blog-post-item,
+  .news-card,
+  .qw-lib-card,
+  .fp-list-item,
+  .cat-tab-post-item,
+  .ql-testimonial-summary,
+  .ql-hotel-booking-form-box,
+  .qfs-qr-card
+) {
+  background: var(--dm-bg-card, #1e293b) !important;
+  background-color: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"]:hover,
+  [class*="_card"]:hover,
+  .card:hover,
+  .feature-item:hover,
+  .service-item:hover,
+  .case-item:hover,
+  .pricing-item:hover
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  [class*="-card"]:hover,
+  [class*="_card"]:hover,
+  .card:hover,
+  .feature-item:hover,
+  .service-item:hover,
+  .case-item:hover,
+  .pricing-item:hover
+) {
+  background: var(--dm-bg-card-hover, #26354a) !important;
+  background-color: var(--dm-bg-card-hover, #26354a) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* 7. 表单与交互输入框暗黑自动适配 (Inputs, Textareas & Form Controls) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  textarea,
+  select
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  textarea,
+  select
+) {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):focus,
+  textarea:focus,
+  select:focus
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):focus,
+  textarea:focus,
+  select:focus
+) {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border-color: var(--color-primary, #60a5fa) !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) ::placeholder,
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) ::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+/* 8. 价格、高亮及核心转化元素保持高能醒目 (Vibrant Accents for Prices & Callouts) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .price, .amount, .plan-price, .ticket-price, .room-price, .salary-range,
+  [class*="-price"], [class*="-amount"]
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .price, .amount, .plan-price, .ticket-price, .room-price, .salary-range,
+  [class*="-price"], [class*="-amount"]
+) {
+  color: var(--color-primary, #38bdf8) !important;
+}
+
+/* 9. 按钮与交互组件保持主色与清晰白色文字 (Buttons & Actions) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn:not(.btn-outline):not(.btn-ghost):not(.btn-text),
+  [class*="-btn"]:not([class*="-outline"]):not([class*="-ghost"]):not([class*="-text"]):not([class*="-link"]),
+  .banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn,
+  .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn,
+  .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .countdown-btn,
+  .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link,
+  .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn,
+  .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn:not(.btn-outline):not(.btn-ghost):not(.btn-text),
+  [class*="-btn"]:not([class*="-outline"]):not([class*="-ghost"]):not([class*="-text"]):not([class*="-link"]),
+  .banner-cta-btn, .image-text-btn, .ql-ur-more-btn, .btn-download, .contact-submit-btn,
+  .pricing-btn, .btn-load-more, .ps-cta-btn, .ps-small-btn, .pm-inquire-btn,
+  .branch-map-btn, .branch-book-btn, .visual-tabs-panel-cta, .countdown-btn,
+  .hs-search-btn, .qml-button, .sc-more-btn, .sr-more-btn, .qga-repo-link,
+  .rh-btn, .db-btn, .bbp-btn, .rhp-btn, .app-btn, .ql-ih-btn, .qmcc-more-btn,
+  .qvph-play-btn, .qvph-search-submit, .ql-promo-btn, .ql-travel-ticket-btn, .ql-hotel-room-btn
+) {
+  color: #ffffff !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline,
+  [class*="-outline"]
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline,
+  [class*="-outline"]
+) {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #f8fafc !important;
+  background-color: transparent !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline:hover,
+  [class*="-outline"]:hover
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .btn-outline:hover,
+  [class*="-outline"]:hover
+) {
+  border-color: var(--color-primary, #60a5fa) !important;
+  color: #ffffff !important;
+  background-color: var(--color-primary, #60a5fa) !important;
+}
+
+/* 10. 标签页与分类筛选控件暗黑自适应 (Tabs & Filter Controls) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):not(.active):not(.is-active):not([aria-selected="true"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):not(.active):not(.is-active):not([aria-selected="true"]) {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #94a3b8 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):is(.active, .is-active, [aria-selected="true"]),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .nav-tabs, .category-tabs, .visual-tabs-nav, .filter-nav, .tab-triggers
+) :is(button, a, .tab-item):is(.active, .is-active, [aria-selected="true"]) {
+  background-color: var(--color-primary, #3b82f6) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* 11. 边框、分割线及次级徽章暗黑适配 (Borders, Dividers & Neutral Badges) */
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  hr, .divider, [class*="-divider"], .separator
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  hr, .divider, [class*="-divider"], .separator
+) {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .badge:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  .tag:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  [class*="-tag"]:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]):not(.badge)
+),
+[data-theme='dark'] :is(.module, .qiling-module-scope, .qds-visual-wrapper, .module-wrapper, .developer-starter-module-wrapper) :is(
+  .badge:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  .tag:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]),
+  [class*="-tag"]:not([class*="-primary"]):not([class*="-danger"]):not([class*="-warning"]):not([class*="-success"]):not([class*="hot"]):not(.badge)
+) {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }

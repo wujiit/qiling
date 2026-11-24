@@ -9,7 +9,7 @@
     "preset": "technology_company",
     "colors": {
       "primary": "#2563eb",
-      "accent": "#06b6d4",
+      "accent": "#0ea5e9",
       "background": "#ffffff",
       "text": "#0f172a"
     }
@@ -21,41 +21,49 @@
     "id": "products",
     "label": "产品中心",
     "category": "product",
-    "category_label": "产品/SaaS/技术",
+    "category_label": "产品/服务/能力",
     "industry": "b2b",
     "scenario": "产品中心",
-    "description": "用于产品列表、产品矩阵和产品卖点集中展示。",
+    "description": "产品列表、产品矩阵、参数规格对照与产品选型咨询中心。",
     "badges": [
-      "产品",
-      "列表"
+      "产品矩阵",
+      "选型中心",
+      "技术参数"
     ],
     "order": 30,
-    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+    "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
   },
   "seo": {
     "title": "产品中心模板 - 启灵官方页面包",
-    "description": "用于产品列表、产品矩阵和产品卖点集中展示。",
-    "keywords": "产品中心,产品中心,产品,列表",
+    "description": "产品列表、产品矩阵、参数规格对照与产品选型咨询中心。",
+    "keywords": "产品中心,产品列表,产品矩阵,技术参数,选型咨询",
     "og_title": "产品中心",
-    "og_description": "用于产品列表、产品矩阵和产品卖点集中展示。"
+    "og_description": "产品列表、产品矩阵、参数规格对照与产品选型咨询中心。"
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "brand_banner_pro",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "medium",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 52%, #0284c7 100%)",
-        "banner_slides": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "75vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.6",
+        "bb_title": "核心产品矩阵 · 全栈工业级技术",
+        "bb_subtitle": "自研高性能基础架构、AI智能体工作台与多端企业级数字化软件套件",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#e2e8f0",
+        "bb_buttons": [
           {
-            "media_type": "image",
-            "image": "",
-            "title": "产品中心",
-            "subtitle": "精选产品与解决方案展示",
-            "btn_text": "获取报价",
-            "btn_url": "/contact",
-            "btn_bg_color": "#3b82f6",
-            "btn_text_color": "#ffffff"
+            "text": "查阅全部产品",
+            "url": "#products-matrix",
+            "style": "primary"
+          },
+          {
+            "text": "下载技术白皮书",
+            "url": "#downloads",
+            "style": "light"
           }
         ]
       }
@@ -63,61 +71,163 @@
     {
       "type": "products",
       "data": {
-        "products_title": "精选产品",
-        "products_subtitle": "PRODUCT CENTER",
+        "products_title": "核心产品与技术套件矩阵",
+        "products_subtitle": "ENTERPRISE PRODUCT MATRIX",
+        "columns": "3",
         "items": [
           {
-            "image": "",
-            "title": "启灵 Pro",
-            "desc": "企业级官网解决方案",
-            "specs": "定位：企业官网\n模块：60+\n支持：暗黑模式",
-            "post_id": "",
-            "btn_text": "查看详情"
+            "title": "启灵 AI Agent 企业工作台",
+            "desc": "多模型编排引擎，支持私有化知识库检索与复杂业务自动化。",
+            "specs": "部署模式：私有云 / 本地专有集群\n并发性能：万级 QPS 高并发低延迟\n合规认证：通过国家等保三级认证",
+            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+            "btn_text": "查看参数"
           },
           {
-            "image": "",
-            "title": "启灵 Commerce",
-            "desc": "营销转化与商品展示",
-            "specs": "定位：营销转化\n模块：产品弹窗\n支持：询盘按钮",
-            "post_id": "",
-            "btn_text": "查看详情"
+            "title": "启灵多语言全域出海中枢",
+            "desc": "面向跨境出海的高精度神经机器翻译、本地化合规与多语言 SEO 矩阵。",
+            "specs": "支持语言：全球 120+ 语种\n翻译引擎：垂直领域深度微调模型\n响应延迟：端到端平均 < 120ms",
+            "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+            "btn_text": "查看参数"
           },
           {
-            "image": "",
-            "title": "启灵 Cloud",
-            "desc": "SaaS 软件与下载中心",
-            "specs": "定位：软件介绍\n模块：下载/排行\n支持：多媒体",
-            "post_id": "",
-            "btn_text": "查看详情"
-          },
-          {
-            "image": "",
-            "title": "启灵 Studio",
-            "desc": "品牌视觉与案例展示",
-            "specs": "定位：品牌展示\n模块：案例/画廊\n支持：视频首屏",
-            "post_id": "",
-            "btn_text": "查看详情"
+            "title": "启灵云存储与资产托管系统",
+            "desc": "分布式多云对象存储容灾管理平台，毫秒级全球边缘 CDN 智能调度。",
+            "specs": "数据持久性：99.999999999%\n多云兼容：AWS S3 / 阿里云 OSS / 腾讯云 COS\n边缘节点：全球 2800+ 加速节点",
+            "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
+            "btn_text": "查看参数"
           }
-        ],
-        "columns": "4",
-        "modal_inquire_text": "立即咨询",
-        "modal_inquire_url": "/contact",
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "cta",
+      "type": "product_showcase",
       "data": {
-        "cta_title": "需要更详细的方案？",
-        "cta_subtitle": "告诉我们您的业务目标，我们将提供专属建议",
-        "cta_button_text": "预约演示",
-        "cta_button_url": "/contact",
-        "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #0284c7 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "ps_title": "旗舰产品图文深度展示",
+        "ps_subtitle": "从微观代码架构到宏观网络拓扑，直观展现产品的工程工匠细节",
+        "ps_media_type": "image",
+        "ps_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
+        "ps_badge": "旗舰工程实践",
+        "ps_item_title": "下一代工业级高可用架构体系",
+        "ps_desc": "历经双十一和千万级高并发流量锤炼，具备全链路压测、智能熔断降级与异地多活容灾能力，为核心交易保驾护航。"
+      }
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "核心产品架构与技术优势",
+        "features_subtitle": "以极致性能与严苛安全性赋能企业核心业务稳定运行",
+        "columns": "4",
+        "features": [
+          {
+            "icon": "fa-shield-halved",
+            "title": "金融级数据安全",
+            "desc": "国密算法端到端加密传输与静态落盘，全操作留痕可溯源审计。"
+          },
+          {
+            "icon": "fa-bolt",
+            "title": "微秒级响应延迟",
+            "desc": "采用高性能内存计算引擎与分布式缓存，吞吐量提升 400% 以上。"
+          },
+          {
+            "icon": "fa-cubes",
+            "title": "积木式模块编排",
+            "desc": "高内聚微服务解耦设计，支持无缝热插拔扩展与第三方系统集成。"
+          },
+          {
+            "icon": "fa-infinity",
+            "title": "99.999% 高可用",
+            "desc": "多机房多活架构，分钟级智能故障自愈，彻底杜绝单点故障风险。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "产品版本与选型对照",
+        "comparison_subtitle": "清晰透明的配置规格对比，精准匹配企业不同发展阶段需求",
+        "comparison_features": "私有化独立部署\n多模型协同路由\n高并发 SLA 保障\n7x24 小时专家支持\n专属定制化开发",
+        "comparison_products": [
+          {
+            "name": "标准版",
+            "values": "✓\n✓\n99.9%\n工单支持\n✗"
+          },
+          {
+            "name": "专业版",
+            "values": "✓\n✓\n99.99%\n专席支持\n可选"
+          },
+          {
+            "name": "旗舰尊享版",
+            "values": "✓\n✓\n99.999%\n驻场专线\n✓"
+          }
+        ],
+        "comparison_highlight": "2"
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "产品技术手册与选型白皮书",
+        "downloads_subtitle": "免费下载完整的产品架构拓扑图、接口规范与性能基准评测报告",
+        "downloads_items": [
+          {
+            "title": "《启灵 AI Agent 企业级部署指南 (2026版)》",
+            "desc": "详细包含硬件环境配置、模型量化推理调优及安全网关搭建步骤。",
+            "badge": "PDF 14.8MB",
+            "link": "#"
+          },
+          {
+            "title": "《多语言翻译中枢技术白皮书与 API 规范》",
+            "desc": "涵盖 RESTful / gRPC 接口契约、高并发流式输出与术语表微调文档。",
+            "badge": "PDF 8.6MB",
+            "link": "#"
+          },
+          {
+            "title": "《云原生存储安全与合规审计认证报告》",
+            "desc": "经由国家级权威检测机构出具的漏洞扫描与等保合规测试报告。",
+            "badge": "PDF 5.2MB",
+            "link": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "产品选型咨询与专属技术顾问洽谈",
+        "contact_subtitle": "资深解决方案架构师 2 小时内响应，为您出具针对性技术方案与试用授权",
+        "contact_show_form": "1",
+        "contact_submit_text": "申请产品免费试用"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#38bdf8",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "启灵产品技术中心",
+        "qfs_brand_desc": "专注打造高质量软件与云原生工程产品，致力于让每一家企业拥有自主可控的高效数字底座。",
+        "qfs_link_groups": [
+          {
+            "title": "核心产品矩阵",
+            "links": "AI Agent 工作台|#\n多语言翻译中枢|#\n云原生对象存储|#\n数字化安全运维|#\n技术文档库|#\n版本更新日志|#"
+          }
+        ],
+        "qfs_contact_title": "产品咨询与采购",
+        "qfs_contact_items": "产品咨询热线|400-888-9999|tel:4008889999\n售前技术支持|sales@qiling.tech|mailto:sales@qiling.tech",
+        "qfs_social_title": "技术社区",
+        "qfs_social_links": "GitHub 开源主页|#\n开发者论坛|#\n官方博客|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 启灵产品中心. 保留所有权利 · 致力于工程工艺极致追求",
+        "qfs_bottom_links": "选型免责声明|#\n服务等级协议(SLA)|#\n隐私政策|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

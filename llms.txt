@@ -1,0 +1,127 @@
+# 启灵主题与生态系统 LLM 开发者指引 (Qiling Theme & Ecosystem)
+
+> 启灵（Qiling）是面向中国及出海企业的全场景 WordPress 企业建站系统与生态套件。包含核心主题、子主题机制、119 套页面模板、105 套官方行业页面包、动态模块引擎、前台可视化装修器，以及涵盖商城、社区、小程序、安全审计在内的完整生态插件矩阵。
+
+本文档是专为大语言模型（LLM）与 AI 编程代理（Cursor、Windsurf、Claude Code、Cline、Copilot 等）编写的高密度技术全景地图。AI 在阅读或修改本项目代码前必须遵守本文档规范。
+
+---
+
+## 1. 工程事实与环境基线 (Engineering Baseline)
+
+- **主题目录**: `qiling/`
+- **子主题目录**: `qiling-child/` (所有二次开发、个性化代码与模板覆盖的唯一着陆点)
+- **文档目录**: `启灵主题文档/`
+- **WordPress 规范**: 5.8+ (已深度适配 WP 6.0 - 6.9)
+- **PHP 运行基线**: PHP 8.2+（最低安全版本 8.2.35，支持 PHP 8.2 / 8.3 / 8.4）。
+  - *安全硬防护说明*：系统内置核心安全守护（防范 PHP 核心高危漏洞 PHP2Shell: CVE-2026-109618 / CVE-2026-109619，CVSS 9.2~9.8），彻底淘汰 PHP < 8.2；低于 8.2.35 的环境将被主动阻断，以保障企业站点绝对安全；
+  - *现代语法支持*：代码全面基于 PHP 8.2+ 运行环境，可安全使用 match 表达式、构造函数属性提升、联合类型、Nullsafe 操作符等现代高健壮性语法。
+- **命名空间**: `Developer_Starter` (核心类)
+- **文本域 (Text Domain)**: `'qiling'` (国际化统一使用 `'qiling'`)
+- **主配置存储**: `wp_options.developer_starter_options`
+- **页面模块存储**: `wp_postmeta._developer_starter_modules` (JSON 数组序列化存储)
+
+---
+
+## 2. 启灵生态系统拓扑矩阵 (Ecosystem Topology)
+
+启灵由“母主题 + 子主题 + 专有生态插件矩阵”协作构成。**AI 在承接需求时，必须严格遵守单一职责原则，严禁在主题中重新造轮子！**
+
+### 2.1 核心驱动层
+- **`qiling` (母主题)**: 
+  - 核心视觉展现、响应式布局、119 套页面模板 (`templates/`)；
+  - 动态功能模块系统 (`inc/modules/`) 与模块注册表 (`module-registry.php`)；
+  - 前台可视化装修器 (`assets/js/frontend-builder.js` / `?qiling_builder=1`)；
+  - 暗黑模式引擎 (`_shared.css`, `module-advanced-styles.css`, CSS Tokens)；
+  - Header/Footer 套件与移动端全功能侧边抽屉；
+  - 模板中心与 AI/JSON 装修导入导出。
+- **`qiling-child` (子主题)**:
+  - **二次开发唯一指定区域**。严禁直接修改母主题核心文件！
+  - 采用“最小模板片段覆盖法”（如覆写 `template-parts/header/branding.php`），不得复制整个大文件，以保证母主题升级时无缝跟随。
+
+### 2.2 生态插件矩阵 (Companion Plugins)
+- **`qilingshop` (启灵商城)**: 商业化变现核心。提供积分兑换、虚拟商品交易、卡密发放、VIP 会员体系与订单结算。*AI 严禁在主题内自建支付或商品数据表，必须与 qilingshop 联动。*
+- **`qibbs-community` (启灵社区)**: 论坛系统、发帖互动、分类圈子与社区积分互动。
+- **`qilingminiapp` / `qilingminiapp-uniapp` (启灵小程序多端)**: 微信小程序服务端 API 桥接及基于 Uni-app 的跨端前端源码。
+- **`qilingsecurity` / `qilingcontentsecurity` (安全防护与内容合规)**: 网站防刷、暴力破解拦截、文本内容安全合规与敏感词实时过滤。
+- **`qiling-audit-log` (日志审计中心)**: 依照网安法 185 天滚动日志留存标准打造的零延迟异步审计系统（登录、修改、删除日志）。*AI 严禁在主题内自写数据库操作日志。*
+- **`qiling-stat` (数据统计中心)**: 独立访客分析、PV/UV 流量监控与业务统计大屏。
+- **`qiling-site-agent` (站点智能代理)**: 站点智能化运维与后台辅助。
+- **`qiling-demo-switcher` (演示切换器)**: 官方演示站多行业模板无刷新在线即时切换。
+- **`qilingverify` (验证与短信中心)**: 阿里云/腾讯云验证码与短信网关。
+- **`xb-aifanyi-translator` / `xb-aiwencre` (AI 翻译与创作)**: AI 多语言机翻与内容辅助生成。
+
+---
+
+## 3. 核心目录结构 (Directory Structure)
+
+```text
+qiling/
+├── functions.php              # 主题启动入口，调度核心引导
+├── header.php / footer.php    # 基础壳层，自动桥接 Header/Footer Suite
+├── style.css                  # 主题样式信息头
+├── inc/
+│   ├── admin/                 # 后台设置、Meta Box 编辑器、模板中心后台
+│   │   ├── admin-bootstrap.php
+│   │   ├── class-admin-settings.php
+│   │   ├── class-onboarding-admin.php    # 新手指引与仪表盘小工具
+│   │   ├── class-template-center-admin.php # 105套官方行业模板中心
+│   │   └── views/modules-meta-box.php    # 页面模块可视化拖拽与配置
+│   ├── core/                  # 主题核心能力
+│   │   ├── class-ai-decorator.php        # AI 装修服务门面
+│   │   ├── class-frontend-builder.php    # 前台可视化装修服务
+│   │   ├── class-single-page-package-service.php # 单页 JSON 数据包
+│   │   ├── class-page-package-manager.php # 多页面设计包
+│   │   └── ai/                # AI 编排器、提示词构建、容错解析、连接管理
+│   ├── modules/               # 模块系统核心
+│   │   ├── module-registry.php           # 模块登记清单
+│   │   ├── class-module-manager.php      # 模块索引与加载器
+│   │   ├── class-module-base.php         # 模块抽象基类
+│   │   └── modules/                      # 具体模块实现 (class-*-module.php)
+│   └── template-center/       # 官方预设 JSON 页面包目录
+├── template-parts/            # 可覆写的模块片段
+│   ├── header/                # 顶栏、移动端侧边抽屉、导航
+│   ├── footer/                # 页脚套件、版权备案、移动底部导航
+│   └── modules/               # 模块前台 HTML 渲染输出
+├── templates/                 # 119 个页面模板 (template-*.php)
+└── assets/                    # CSS/JS 静态资源
+    ├── css/                   # _shared.css, module-advanced-styles.css, main.css
+    └── js/                    # frontend-builder.js, ai-builder-service.js
+```
+
+---
+
+## 4. 模块系统开发规范 (Module Development)
+
+当需要新增或调整功能模块时，AI 必须严格执行以下四步闭环：
+
+1. **注册模块**：在 `qiling/inc/modules/module-registry.php` 中添加模块条目（包含 ID、分类、名称、默认数据）；
+2. **继承基类**：在 `qiling/inc/modules/modules/class-{id}-module.php` 创建模块类，继承 `\Developer_Starter\Modules\Module_Base`；
+3. **渲染模板**：在前台渲染逻辑 `render()` 中输出语义化 HTML，或委托到 `template-parts/modules/{id}.php`；
+4. **暗黑模式与样式对齐**：在 `assets/css/module-advanced-styles.css` 中添加类选择器，必须使用 CSS 变量。
+
+---
+
+## 5. 设计令牌与暗黑模式法则 (Design Tokens & Dark Mode)
+
+主题拥有完善的**全景智能暗黑模式引擎**，AI 编写任何 CSS 必须遵循以下铁律：
+
+- **严禁写死固定高亮颜色**：禁止直接使用 `#ffffff`、`#000000`、`#333333` 作为容器背景或正文文字色；
+- **必须使用系统级 CSS 变量**：
+  - 页面主背景：`var(--qiling-page-bg, #ffffff)`
+  - 卡片/模块容器背景：`var(--qiling-card-bg, #ffffff)`
+  - 主标题文字色：`var(--qiling-heading-color, #0f172a)`
+  - 正文次级文字色：`var(--qiling-text-color, #475569)`
+  - 边框分割线：`var(--qiling-border-color, #e2e8f0)`
+  - 品牌主题色：`var(--qiling-primary, #2563eb)`
+- **暗黑模式覆盖机制**：
+  - 主题通过 `html.dark`、`body.dark-mode`、`[data-theme="dark"]` 与 `@media (prefers-color-scheme: dark)` 多重驱动；
+  - 任何新组件的暗黑样式必须统一追加在对应样式表的暗黑区块中。
+
+---
+
+## 6. 开发者与 AI 协作红线 (Red Lines for AI)
+
+1. **严禁破坏更新通道**：用户业务定制需求一律引导到 `qiling-child`（子主题），不得为了图省事直接篡改母主题核心模板。
+2. **严禁硬编码测试数据**：所有动态内容必须从 `$data` 模块数据、WP Options 或 WordPress 标准文章/分类函数中获取，并执行严格的 `esc_html()`、`esc_attr()`、`esc_url()` 转义。
+3. **严禁绕过安全验证**：所有 AJAX 操作必须包含 `check_ajax_referer()` 和 `current_user_can()` 权限校验。
+4. **保持 JSON 协议一致性**：不得在未同步 Schema 的情况下随意修改现有模块字段名，否则将导致历史页面与 105 套官方模板中心数据解析错位。

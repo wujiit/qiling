@@ -151,7 +151,8 @@ class Pet_Profile_Module extends Module_Base {
         $columns = isset( $data['pet_columns'] ) ? intval( $data['pet_columns'] ) : 4;
         $items = isset( $data['pet_items'] ) ? $data['pet_items'] : array();
 
-        $style_vars = "background-color: {$bg_color};";
+        $bg_prop = strpos( $bg_color, 'gradient' ) !== false ? 'background' : 'background-color';
+        $style_vars = "{$bg_prop}: {$bg_color};";
         $style_vars .= "--pet-card-bg: {$card_bg};";
         if ( '' !== $primary_color ) {
             $style_vars .= "--pet-primary: {$primary_color};";

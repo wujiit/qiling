@@ -43,120 +43,163 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启途国际",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "预约试听",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #082f49 0%, #0284c7 50%, #b45309 100%)",
         "banner_slides": [
           {
             "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=80",
-            "title": "从升学规划到签证落地，给家庭一条清晰路径",
-            "subtitle": "覆盖英美澳加、新加坡、欧洲和中国香港等热门方向，提供背景评估、院校定位、文书申请、签证材料和海外衔接服务。",
-            "btn_text": "预约免费评估",
-            "btn_url": "#",
-            "btn_bg_color": "#0284c7",
-            "btn_text_color": "#ffffff"
+            "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80",
+            "title": "通往世界顶级名校殿堂 · 全球精英留学与海外身份规划",
+            "title_align": "center",
+            "subtitle": "前常春藤藤校招生官与资深外籍移民大律师领衔，深谙全球名校录取逻辑与跨国居留政策，助力学子与高净值家庭圆梦世界舞台",
+            "btn_text": "探索服务矩阵",
+            "btn_url": "#services"
           }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "辉煌战绩 · 录取成功率与公信力看板",
+        "stats_subtitle": "拒绝流水线套模板文书，每一份申请皆为 1v1 定制打磨的学术与人格杰作",
+        "stats_items": [
           {
-            "icon": "01",
-            "number": "12年+",
-            "label": "规划申请经验",
-            "color": "#ffffff"
+            "number": "98.5%",
+            "label": "全球 TOP 50 名校综合录取成功率"
           },
           {
-            "icon": "02",
-            "number": "30+",
-            "label": "热门国家/地区",
-            "color": "#ffffff"
+            "number": "320+ 枚",
+            "label": "累计斩获常春藤联盟与牛津剑桥 Offer"
           },
           {
-            "icon": "03",
-            "number": "1v1",
-            "label": "顾问跟进",
-            "color": "#ffffff"
+            "number": "100%",
+            "label": "欧洲黄金签证与全球投资移民获批率"
           },
           {
-            "icon": "04",
-            "number": "全流程",
-            "label": "材料进度管理",
-            "color": "#ffffff"
+            "number": "18 年",
+            "label": "深耕欧美主流留学与海外置业经验"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "热门留学移民服务",
-        "services_subtitle": "围绕家庭决策、申请材料、签证风险和海外适应，拆成可理解的服务模块",
-        "services_bg_color": "#ffffff",
+        "services_title": "全球全链条留学升学与身份规划矩阵",
+        "services_subtitle": "从学术背景提升、文书头脑风暴到海外生活落地，提供一站式陪伴保障",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "留学申请规划",
-            "desc": "背景评估、国家选择、院校定位、专业建议和申请时间线规划。",
-            "link": "#"
+            "icon": "graduation-cap",
+            "title": "常春藤与英美顶尖本研申博",
+            "desc": "哈佛、耶鲁、牛剑等世界名校全流程规划，涵盖早申策略、选校矩阵与套磁"
           },
           {
-            "icon": "02",
-            "title": "文书与材料指导",
-            "desc": "个人陈述、推荐信、简历、成绩材料和作品集方向协同准备。",
-            "link": "#"
+            "icon": "book-open",
+            "title": "学术背景提升与科研论文",
+            "desc": "常春藤教授 1v1 科研指导，国际顶级期刊论文发表与重量级海外名校推荐信"
           },
           {
-            "icon": "03",
-            "title": "签证与入境服务",
-            "desc": "签证材料清单、资金证明建议、面签辅导和入境前准备。",
-            "link": "#"
+            "icon": "passport",
+            "title": "全球投资移民与高精尖永居",
+            "desc": "希腊、葡萄牙、马耳他欧洲黄金居留卡，美国 EB-1A 杰出人才移民合规通道"
           },
           {
-            "icon": "04",
-            "title": "移民身份咨询",
-            "desc": "按家庭资产、职业背景、教育规划和长期居留目标评估路径。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "从评估到入学落地",
-        "process_subtitle": "把复杂申请拆成清楚节点，让学生和家长知道每一步要准备什么",
-        "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "背景评估",
-            "desc": "梳理成绩、语言、专业、预算、家庭目标和时间窗口。",
-            "stage_tag": "评估"
-          },
-          {
-            "icon": "02",
-            "title": "方案定位",
-            "desc": "确定国家地区、院校梯度、专业方向、申请批次和备选路径。",
-            "stage_tag": "方案"
-          },
-          {
-            "icon": "03",
-            "title": "材料递交",
-            "desc": "推进文书、推荐信、成绩单、作品集、申请表和费用缴纳等事项。",
-            "stage_tag": "申请"
-          },
-          {
-            "icon": "04",
-            "title": "签证与行前",
-            "desc": "准备签证材料、住宿、保险、机票、入境提醒和海外适应清单。",
-            "stage_tag": "落地"
+            "icon": "home",
+            "title": "海外置业安家与财税风控",
+            "desc": "海外学区房精选投资、落地接机开户、跨国税务规划与子女优质国际学校申请"
           }
         ]
       }
@@ -164,93 +207,252 @@
     {
       "type": "cases",
       "data": {
-        "cases_title": "申请案例与录取故事",
-        "cases_count": "6",
-        "cases_columns": "3",
-        "cases_show_image": "1",
-        "cases_image_height": "220px",
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#ffffff"
+        "cases_title": "真实案例 · 每一个 Offer 都是一段奋斗传奇",
+        "cases_subtitle": "打破常规不可能，以科学策略规划成就万千家庭的人生高光时刻",
+        "cases_columns": "4",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80",
+            "title": "普通双非本科逆袭剑桥大学计算机硕士",
+            "desc": "GPA 3.6 凭借顶尖学术论文与招生官文书重塑，击败众多 985 竞争者斩获全奖录取",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80",
+            "title": "国内普高学子直录斯坦福大学本科",
+            "desc": "从高一开始进行长线公益项目与物理创新竞赛孵化，ED 早申阶段一锤定音",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80",
+            "title": "创业企业家仅用 90 天获批欧洲永居绿卡",
+            "desc": "精选合规基金投资标的，律师团队全权代办无需登陆，全家三代同步享受欧洲顶尖医疗",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80",
+            "title": "文科转码成功斩获卡耐基梅隆大学录取",
+            "desc": "针对跨专业痛点定制顶尖实验室科研背景，成功跨界全美顶尖计算机学院",
+            "link": "#case-detail"
+          }
+        ]
       }
     },
     {
-      "type": "testimonials",
+      "type": "team",
       "data": {
-        "testimonials_title": "学生与家长反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "1600+",
-        "average_rating": "4.8",
-        "testimonials_items": [
+        "team_title": "前招生官与外籍移民律师导师团",
+        "team_subtitle": "拥有跨越中西的教育文化视野，亲身参与海外顶尖学府申请筛选评审",
+        "team_columns": "4",
+        "team_items": [
           {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "陈同学",
-            "position": "英国硕士申请",
-            "content": "顾问把院校梯度和时间线拆得很清楚，文书修改节奏也稳定。",
-            "rating": "5",
-            "verified": "verified"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "Sarah Montgomery",
+            "role": "首席升学顾问 / 前康奈尔大学高级招生官",
+            "desc": "历审逾万份常春藤申请档案，对中国学子文书盲区与破局亮点拥有独到前瞻见解"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "林女士",
-            "position": "本科家长",
-            "content": "签证材料和行前清单帮我们避开了很多细节问题。",
-            "rating": "5",
-            "verified": "verified"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "蒋天博 主任",
+            "role": "联合创始人 / 牛津大学政治学硕士",
+            "desc": "深耕英联邦高端升学 15 年，主导多项国际青年学者科研计划，被誉为“牛剑摇篮”"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "周先生",
-            "position": "移民咨询客户",
-            "content": "先评估家庭目标和预算，再讲可行路径，没有一上来就推项目。",
-            "rating": "5",
-            "verified": "verified"
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "Dimitris Papas",
+            "role": "欧洲移民法学专家 / 雅典执业出庭律师",
+            "desc": "希腊与塞浦路斯移民法案起草咨询委员会专家，主导办理逾千起欧洲黄金签证获批"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "苏敏敏 Melody",
+            "role": "背景提升总监 / 哥伦比亚大学教育学硕士",
+            "desc": "精通国际竞赛规划、科研论文辅导与领导力活动设计，赋能学子塑造独特申请人设"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "透明化名校申请套餐与移民规划方案",
+        "pricing_subtitle": "全程合同保密条款护航，未达目标按约全额退费承诺",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "全球英美名校进阶计划 (TOP 30)",
+            "name_color": "#0f172a",
+            "price": "¥48,000 起",
+            "price_color": "#0f172a",
+            "period": "/全流程 6-8 所选校",
+            "desc": "面向英美澳加等主流名校本研申请，资深文案与前招生官把关",
+            "desc_color": "#64748b",
+            "features": "前招生官深度模拟 1v1 英文面试辅导\\n外籍文书专家无限次深度头脑风暴润色\\n全程专属 4v1 服务群全天候响应答疑\\n包含签证申请办理与海外宿舍申请辅导",
+            "features_color": "#334155",
+            "btn_text": "获取名校规划方案",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "常春藤与牛剑顶峰尊享计划 (Ivy League)",
+            "name_color": "#0f172a",
+            "price": "¥128,000 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/仅限限额 20 席",
+            "desc": "专为冲刺全球 TOP 10 顶尖学府打造，整合教授科研与国际竞赛资源",
+            "desc_color": "#64748b",
+            "features": "藤校前招生官全程直通 1v1 亲自带教\\n包含 1 篇 SCI/EI 国际期刊署名论文辅导\\n海外名校名誉教授专属强力学术推荐信\\n未获前 30 名校录取全额退款兜底承诺",
+            "features_color": "#334155",
+            "btn_text": "预约前招生官评估",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "冲藤名校",
+            "badge": "冲藤名校",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "欧洲永居黄金身份全包方案",
+            "name_color": "#0f172a",
+            "price": "合规官方通道",
+            "price_color": "#0f172a",
+            "period": "/最快 3 个月获批批复",
+            "desc": "希腊、马耳他、葡萄牙等主流欧洲国家，一人申请全家三代获批欧洲绿卡",
+            "desc_color": "#64748b",
+            "features": "当地权威注册移民大律师 1v1 审核文件\\n直通欧洲央行合规资金通道安全无忧\\n自由畅行欧洲 29 个申根国无需签证\\n子女可回国参加华侨生联考直通国内名校",
+            "features_color": "#334155",
+            "btn_text": "索取移民法案细则",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "testimonials_bg_color": "#f8fafc"
+        "pricing_items": [
+          {
+            "name": "全球英美名校进阶计划 (TOP 30)",
+            "name_color": "#0f172a",
+            "price": "¥48,000 起",
+            "price_color": "#0f172a",
+            "period": "/全流程 6-8 所选校",
+            "desc": "面向英美澳加等主流名校本研申请，资深文案与前招生官把关",
+            "desc_color": "#64748b",
+            "features": "前招生官深度模拟 1v1 英文面试辅导\\n外籍文书专家无限次深度头脑风暴润色\\n全程专属 4v1 服务群全天候响应答疑\\n包含签证申请办理与海外宿舍申请辅导",
+            "features_color": "#334155",
+            "btn_text": "获取名校规划方案",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "常春藤与牛剑顶峰尊享计划 (Ivy League)",
+            "name_color": "#0f172a",
+            "price": "¥128,000 起",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/仅限限额 20 席",
+            "desc": "专为冲刺全球 TOP 10 顶尖学府打造，整合教授科研与国际竞赛资源",
+            "desc_color": "#64748b",
+            "features": "藤校前招生官全程直通 1v1 亲自带教\\n包含 1 篇 SCI/EI 国际期刊署名论文辅导\\n海外名校名誉教授专属强力学术推荐信\\n未获前 30 名校录取全额退款兜底承诺",
+            "features_color": "#334155",
+            "btn_text": "预约前招生官评估",
+            "btn_link": "#apply-plan",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "冲藤名校",
+            "badge": "冲藤名校",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "欧洲永居黄金身份全包方案",
+            "name_color": "#0f172a",
+            "price": "合规官方通道",
+            "price_color": "#0f172a",
+            "period": "/最快 3 个月获批批复",
+            "desc": "希腊、马耳他、葡萄牙等主流欧洲国家，一人申请全家三代获批欧洲绿卡",
+            "desc_color": "#64748b",
+            "features": "当地权威注册移民大律师 1v1 审核文件\\n直通欧洲央行合规资金通道安全无忧\\n自由畅行欧洲 29 个申根国无需签证\\n子女可回国参加华侨生联考直通国内名校",
+            "features_color": "#334155",
+            "btn_text": "索取移民法案细则",
+            "btn_link": "#apply-plan",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
-      "type": "faq",
+      "type": "contact",
       "data": {
-        "faq_title": "留学移民常见问题",
-        "faq_subtitle": "提前说明申请周期、材料准备、签证风险和服务边界，降低首次咨询成本",
-        "faq_items": [
+        "contact_title": "与 留学移民服务官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a1128",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "GLOBAL-PATHWAY · 全球名校升学规划与海外身份投资顾问",
+        "qfs_brand_desc": "20 年专注英美前 30 名校本硕博高端申请、加拿大/澳大利亚技术与商业移民、全球居留权配额与海外资产传承。",
+        "qfs_link_groups": [
           {
-            "question": "什么时候开始准备留学申请比较合适？",
-            "answer": "不同国家和阶段差异很大。一般建议至少提前 12 到 18 个月规划语言、成绩、活动、文书和资金证明等关键事项。"
-          },
-          {
-            "question": "没有明确目标国家怎么办？",
-            "answer": "可以先做背景评估，结合成绩、预算、专业目标、移民倾向和家庭偏好，筛选 2 到 3 条可比较路径。"
-          },
-          {
-            "question": "签证一定能通过吗？",
-            "answer": "任何机构都不能保证签证结果。专业服务能帮助你整理真实、完整、逻辑一致的材料，并提前识别资金、学习目的和入境风险。"
-          },
-          {
-            "question": "移民咨询和留学申请可以一起规划吗？",
-            "answer": "可以。很多家庭会把升学、毕业后工签、就业机会和长期居留路径一起评估，但需要按国家政策和个人背景动态调整。"
+            "title": "海外升学规划 & 全球身份投资",
+            "links": "英国 G5 / 罗素大学集团本硕申请|#\n美国常春藤盟校早申全案文书|#\n欧洲公立免学费大学直通车|#\n雅思/托福名师 1 对 1 提分营|#\n加拿大创新企业家移民(SUV)|#\n希腊/葡萄牙黄金居留权投资|#\n新加坡家族办公室资产搭建|#\n香港优秀人才/高才通计划|#"
           }
         ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "booking-entry",
-      "data": {
-        "booking_title": "预约留学移民初步评估",
-        "booking_subtitle": "提交目标国家、学历阶段、成绩背景、预算范围和计划时间，顾问会给出初步路径建议。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "评估前建议准备",
-        "sidebar_content": "请准备成绩单、语言成绩或目标考试计划\n说明目标国家、专业方向和预算范围\n如涉及移民，请同步说明家庭成员和长期居留目标",
-        "contact_phone": "400-920-2026",
-        "contact_hours": "09:00-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#f8fafc"
+        "qfs_contact_title": "资深规划师咨询",
+        "qfs_contact_items": "咨询热线|400-888-2029|tel:4008882029\n评估邮箱|info@global-pathway.cn|mailto:info@global-pathway.cn\n机构地址|北京市朝阳区建国门外大街 1 号国贸写字楼 2 座 19 层|#",
+        "qfs_social_title": "关注全球留学",
+        "qfs_social_links": "微信公众号|#\n小红书升学干货|#\n名校申请案例库|#\n前招生官专栏|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 GLOBAL-PATHWAY IMMIGRATION & STUDY. 保留所有权利 · 公安部出入境中介机构资质备案",
+        "qfs_bottom_links": "因私出入境中介资格认证|#\n资质公示与教育部备案|#\n客户权益保障书|#\n隐私政策|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

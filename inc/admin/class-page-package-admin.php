@@ -30,8 +30,28 @@ class Page_Package_Admin {
     private $page_slug = 'developer-starter-site-packages';
 
     public function __construct() {
-        $this->manager = new Page_Package_Manager();
+        $this->ensure_manager();
         add_action( 'admin_menu', array( $this, 'register_submenu_page' ), 20 );
+    }
+
+    /**
+     * 确保页面数据包管理器已初始化。
+     *
+     * @return Page_Package_Manager|null
+     */
+    private function ensure_manager() {
+        if ( null === $this->manager ) {
+            if ( ! class_exists( 'Developer_Starter\Core\Page_Package_Manager' ) ) {
+                $manager_file = dirname( __DIR__ ) . '/core/class-page-package-manager.php';
+                if ( file_exists( $manager_file ) ) {
+                    require_once $manager_file;
+                }
+            }
+            if ( class_exists( 'Developer_Starter\Core\Page_Package_Manager' ) ) {
+                $this->manager = new Page_Package_Manager();
+            }
+        }
+        return $this->manager;
     }
 
     /**
@@ -58,6 +78,11 @@ class Page_Package_Admin {
     public function render_page() {
         if ( ! current_user_can( 'manage_options' ) ) {
             wp_die( esc_html__( '权限不足', 'qiling' ) );
+        }
+
+        $this->ensure_manager();
+        if ( ! $this->manager ) {
+            wp_die( esc_html__( '页面数据包管理器未能成功初始化，请检查文件权限与完整性。', 'qiling' ) );
         }
 
         $this->manager->cleanup_expired_preview_pages();

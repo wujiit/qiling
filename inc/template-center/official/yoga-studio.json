@@ -42,84 +42,138 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "静心瑜伽",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "课程体系",
+            "link": "#curriculum",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f59e0b",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f59e0b",
+        "qhs_hover_bg": "rgba(245,158,11,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #4c0519 0%, #9f1239 50%, #065f46 100%)",
         "banner_slides": [
           {
             "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1800&q=80",
-            "title": "在呼吸里找回身体的秩序",
-            "subtitle": "瑜伽、普拉提、冥想和身心疗愈课程，支持在线预约体验。",
-            "btn_text": "预约体验课",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#9f1239"
+            "image": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1800&q=80",
+            "title": "向内探索 · 在呼吸起落间重遇宁静力量",
+            "title_align": "center",
+            "subtitle": "全进口曼丽丘 Merrithew 普拉提床、恒温微水泥禅境与全美瑜伽联盟 RYT500 资深名师，让身体轻盈舒展",
+            "btn_text": "探索服务矩阵",
+            "btn_url": "#services"
           }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "32",
-            "number": "32+",
-            "label": "每周课程",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "12",
-            "number": "12+",
-            "label": "认证导师",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "1800",
-            "number": "1800+",
-            "label": "会员练习",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "体验评分",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "身心课程",
-        "services_subtitle": "从初学入门到进阶练习，按身体状态选择课程",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大核心修习体系",
+        "services_subtitle": "融合东方正念哲学与现代生物力学，唤醒身体深层感知",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "哈他瑜伽",
-            "desc": "基础体式、呼吸和稳定练习。",
-            "link": "#"
+            "icon": "fas fa-feather-alt",
+            "title": "大器械普拉提 (Reformer)",
+            "desc": "借助弹簧阻力与滑轨推拉，精准训练腹横肌与骨盆底肌，收紧腰腹核心。"
           },
           {
-            "icon": "02",
-            "title": "流瑜伽",
-            "desc": "节奏连贯，提升力量和柔韧。",
-            "link": "#"
+            "icon": "fas fa-sun",
+            "title": "流瑜伽与传统哈他 (Vinyasa)",
+            "desc": "呼吸引导连贯体式流动，活化脊柱神经节，促进全身淋巴循环排毒。"
           },
           {
-            "icon": "03",
-            "title": "普拉提",
-            "desc": "核心控制、体态改善和线条管理。",
-            "link": "#"
+            "icon": "fas fa-moon",
+            "title": "颂钵音疗与阴瑜伽 (Yin & Sound)",
+            "desc": "长时间被动静态伸展结缔组织，配合尼泊尔老颂钵低频共振，深层消融焦虑失眠。"
           },
           {
-            "icon": "04",
-            "title": "冥想疗愈",
-            "desc": "放松压力，建立长期练习习惯。",
-            "link": "#"
+            "icon": "fas fa-heart",
+            "title": "产后骨盆闭合与假胯宽修复",
+            "desc": "医学级评估产后腹直肌与耻骨联合微错位，无痛手法复位与核心机能重建。"
           }
         ]
       }
@@ -127,27 +181,31 @@
     {
       "type": "curriculum",
       "data": {
-        "curriculum_title": "本周课程",
-        "curriculum_subtitle": "可替换为门店真实课表和导师安排",
-        "curriculum_bg_color": "#fff1f2",
-        "curriculum_primary_color": "#9f1239",
+        "curriculum_title": "每周周期修习课表",
+        "curriculum_subtitle": "严守 6 人超小班制，每位学员享有充分指导空间与安全关照",
         "curriculum_items": [
           {
-            "title": "周二：晨间哈他",
-            "meta": "08:30 - 09:30 | Nina",
-            "content": "<p>适合初学者，用稳定节奏唤醒身体。</p>",
+            "title": "晨间唤醒：日出脊柱舒展与向阳流瑜伽 (Morning Awakening Flow)",
+            "meta": "每周二/四/六 08:30-09:30 · 燃脂舒缓 · 导师：林婉儿",
+            "content": "以拜日式为基底，舒展整夜僵硬的肩颈与髋屈肌群，配合胸腔深呼吸，点燃全天充沛代谢能量。",
             "open": "yes"
           },
           {
-            "title": "周四：普拉提核心",
-            "meta": "19:30 - 20:30 | Emma",
-            "content": "<p>核心控制和体态改善课程，适合久坐人群。</p>",
+            "title": "午间解压：办公室肩颈理疗与脊柱滋养 (Postural Alignment)",
+            "meta": "每周一至周五 12:15-13:00 · 针对久坐低头族 · 导师：苏沐晨",
+            "content": "利用瑜伽砖与瑜伽带，针对胸锁乳突肌、斜方肌上束进行精准松解，告别富贵包、偏头痛与手臂麻木。",
             "open": "no"
           },
           {
-            "title": "周日：冥想放松",
-            "meta": "16:00 - 17:00 | Zoe",
-            "content": "<p>呼吸、伸展和静坐练习，帮助恢复能量。</p>",
+            "title": "午后精修：Merrithew 普拉提大器械核心雕刻 (Reformer Core Sculpt)",
+            "meta": "每周三/五/日 15:30-16:30 · 深度塑形 · 导师：Claire Zhang",
+            "content": "普拉提床百次拍击、长背伸展与脚套提臀训练。在不稳定阻力下拉长肌肉纤维，塑造紧致天鹅颈与平坦小腹。",
+            "open": "no"
+          },
+          {
+            "title": "晚间静心：烛光阴瑜伽与喜马拉雅颂钵冥想 (Candlelight Yin & Sound Bath)",
+            "meta": "每周一/三/六 19:30-20:45 · 深度释压助眠 · 导师：陈若兰",
+            "content": "在微光与乳香香薰中保持体式 3-5 分钟，松解髋关节与筋膜结缔组织。伴随颂钵空灵泛音入定，一夜好眠。",
             "open": "no"
           }
         ]
@@ -156,104 +214,196 @@
     {
       "type": "team",
       "data": {
-        "team_title": "导师团队",
-        "team_subtitle": "每位导师都有清晰的课程方向和陪伴方式",
+        "team_title": "静语导师修习名录",
+        "team_subtitle": "全员持有全美瑜伽联盟 RYT500 或加拿大 STOTT PILATES 认证，均有 8 年以上教学沉淀",
         "team_columns": "3",
         "team_members": [
           {
-            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80",
-            "name": "Nina",
-            "position": "哈他瑜伽导师",
-            "desc": "擅长初学者引导与呼吸控制。",
-            "email": "yoga1@example.com"
-          },
-          {
             "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
-            "name": "Emma",
-            "position": "普拉提导师",
-            "desc": "专注核心训练和体态改善。",
-            "email": "yoga2@example.com"
+            "name": "林婉儿 (Eva Lin)",
+            "position": "教学总监 · 全美瑜伽联盟 E-RYT500 资深培训师",
+            "desc": "曾赴印度迈索尔 Ashtanga 学院深度研习，擅长以温和而坚定的教学语言，引导学员跨越身体心理卡点。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
-            "name": "Zoe",
-            "position": "冥想导师",
-            "desc": "擅长压力管理与身心疗愈课程。",
-            "email": "yoga3@example.com"
+            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+            "name": "苏沐晨 (Sophie)",
+            "position": "首席普拉提教练 · STOTT PILATES 全器械认证",
+            "desc": "拥有运动康复医学学士背景，累计完成上万节大器械私教，对脊柱侧弯纠偏与假胯宽骨盆修复有独到心得。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+            "name": "陈若兰 (Aranya)",
+            "position": "高级颂钵疗愈师 · 阴瑜伽导师",
+            "desc": "师从尼泊尔颂钵家族第七代传人，将自然声音疗愈与脉轮冥想结合，帮助无数高压都市女性找回内心平和。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "gallery",
-      "data": {
-        "gallery_title": "练习空间",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=900&q=80",
-            "title": "晨间练习",
-            "desc": "自然光空间",
-            "category": "课程"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80",
-            "title": "冥想课堂",
-            "desc": "放松练习",
-            "category": "课程"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=900&q=80",
-            "title": "瑜伽空间",
-            "desc": "安静舒适",
-            "category": "空间"
-          }
-        ],
-        "module_bg_color": "#fff1f2"
+        ]
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "课程套餐",
-        "pricing_subtitle": "按练习频率选择合适的会员方式",
+        "pricing_title": "雅致修习方案 · 透明价格合约",
+        "pricing_subtitle": "课程有效期充裕，支持请假延期与跨校区通用，无任何推销压力",
         "pricing_columns": "3",
-        "module_bg_color": "#ffffff",
+        "pricing_plans": [
+          {
+            "name": "新手修习体验周卡",
+            "name_color": "#0f172a",
+            "price": "¥298",
+            "price_color": "#0f172a",
+            "period": "/7天",
+            "desc": "包含 3 次精品小班团课，适合初涉瑜伽与普拉提、探索身体喜好的学员",
+            "desc_color": "#64748b",
+            "features": "全门店团课任选 3 节修习\n赠送 1次 3D 体态与关节活动度筛查\n免费借用全套 Manduka 传奇黑垫\n提供专属淋浴及草本养生花茶",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "全能团课四季卡 (Season Pass)",
+            "name_color": "#0f172a",
+            "price": "¥3,680",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/季",
+            "desc": "无限次修习流瑜伽、哈他、阴瑜伽与垫上普拉提，保持每周 3-4 次修习习惯",
+            "desc_color": "#64748b",
+            "features": "90天内小班精品团课畅练不限次\n享专属储物柜与私人瑜伽铺巾存放\n赠送 2 张亲友同行体验礼券\n每月享 1 次 1对1 动作纠偏私教指导\n支持因公因病免费停卡 30 天",
+            "features_color": "#334155",
+            "btn_text": "立即开卡",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "学员口碑推荐",
+            "badge": "学员口碑推荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "大器械普拉提 1对1 私享包",
+            "name_color": "#0f172a",
+            "price": "¥5,200",
+            "price_color": "#0f172a",
+            "period": "/10节",
+            "desc": "专属独立普拉提 VIP 教室，针对个人体态、脊柱曲度与骨盆问题量身定制",
+            "desc_color": "#64748b",
+            "features": "加拿大进口 Merrithew 全套器械专属使用\n前中后期体态高清对比照复盘\n骨盆底肌与呼吸力学专项强化\n孕产妇安全适训与腹直肌闭合认证\n全额合同保障未消耗课时退费机制",
+            "features_color": "#334155",
+            "btn_text": "预约私教评估",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "体验课",
-            "price": "¥39",
-            "period": "/次",
-            "desc": "新客体验",
-            "features": "1 次体验课\n导师评估\n课程建议",
-            "btn_text": "预约体验",
-            "btn_link": "#",
-            "featured": ""
+            "name": "新手修习体验周卡",
+            "name_color": "#0f172a",
+            "price": "¥298",
+            "price_color": "#0f172a",
+            "period": "/7天",
+            "desc": "包含 3 次精品小班团课，适合初涉瑜伽与普拉提、探索身体喜好的学员",
+            "desc_color": "#64748b",
+            "features": "全门店团课任选 3 节修习\n赠送 1次 3D 体态与关节活动度筛查\n免费借用全套 Manduka 传奇黑垫\n提供专属淋浴及草本养生花茶",
+            "features_color": "#334155",
+            "btn_text": "立即体验",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "月卡",
-            "price": "¥599",
-            "period": "/月",
-            "desc": "规律练习",
-            "features": "团课预约\n每周 3 次\n会员活动",
-            "btn_text": "咨询月卡",
-            "btn_link": "#",
+            "name": "全能团课四季卡 (Season Pass)",
+            "name_color": "#0f172a",
+            "price": "¥3,680",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/季",
+            "desc": "无限次修习流瑜伽、哈他、阴瑜伽与垫上普拉提，保持每周 3-4 次修习习惯",
+            "desc_color": "#64748b",
+            "features": "90天内小班精品团课畅练不限次\n享专属储物柜与私人瑜伽铺巾存放\n赠送 2 张亲友同行体验礼券\n每月享 1 次 1对1 动作纠偏私教指导\n支持因公因病免费停卡 30 天",
+            "features_color": "#334155",
+            "btn_text": "立即开卡",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
-            "featured_text": "热门",
-            "featured_bg": "linear-gradient(135deg, #9f1239 0%, #e11d48 100%)"
+            "is_featured": "yes",
+            "featured_text": "学员口碑推荐",
+            "badge": "学员口碑推荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "私教课",
-            "price": "¥2999",
+            "name": "大器械普拉提 1对1 私享包",
+            "name_color": "#0f172a",
+            "price": "¥5,200",
+            "price_color": "#0f172a",
             "period": "/10节",
-            "desc": "一对一练习",
-            "features": "体态评估\n定制计划\n阶段复盘",
-            "btn_text": "咨询私教",
-            "btn_link": "#",
-            "featured": ""
+            "desc": "专属独立普拉提 VIP 教室，针对个人体态、脊柱曲度与骨盆问题量身定制",
+            "desc_color": "#64748b",
+            "features": "加拿大进口 Merrithew 全套器械专属使用\n前中后期体态高清对比照复盘\n骨盆底肌与呼吸力学专项强化\n孕产妇安全适训与腹直肌闭合认证\n全额合同保障未消耗课时退费机制",
+            "features_color": "#334155",
+            "btn_text": "预约私教评估",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "gallery_title": "静谧美学空间 · 纯粹修习场域",
+        "gallery_subtitle": "微水泥素雅基调、全屋静音新风地暖与定制草木香氛，每一步都踏在安定之中",
+        "gallery_columns": "3",
+        "gallery_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+            "title": "晨光普拉提大器械私教馆",
+            "desc": "独立落地全景采光窗与加拿大进口 Reformer 核心床"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
+            "title": "静心禅意颂钵冥想教室",
+            "desc": "软质原木地暖地板、全套喜马拉雅手工老颂钵与白鼠尾草香薰"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+            "title": "私密单人更衣梳妆与洗浴间",
+            "desc": "配备戴森吹风机、Appelles 澳洲有机洗护与定制棉麻浴巾"
           }
         ]
       }
@@ -261,17 +411,43 @@
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约体验课",
-        "booking_subtitle": "提交练习目标、身体情况和可到馆时间，顾问会推荐合适课程。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "体验提醒",
-        "sidebar_content": "建议提前 10 分钟到馆\n穿着舒适运动服\n如有孕产、伤病或康复需求请在表单里说明",
-        "contact_phone": "400-880-2026",
-        "contact_hours": "08:00-21:30",
-        "module_bg_image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#fff1f2"
+        "booking_title": "预约新手身心疗愈与普拉提大器械私享体验",
+        "booking_subtitle": "全美瑜伽联盟 RYT500 认证资深导师亲授，小班授课，专注呼吸与内在觉察。",
+        "booking_btn_text": "预约免费试课名额",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "新人特惠",
+        "booking_phone": "静心预约：028-8888-2222",
+        "booking_time": "晨练 07:30 - 晚课 21:30"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#14100c",
+        "qfs_text_color": "#fed7aa",
+        "qfs_heading_color": "#fef3c7",
+        "qfs_accent_color": "#f59e0b",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "PRANA YOGA · 印度传统哈他与正念流瑜伽生活馆",
+        "qfs_brand_desc": "用呼吸连接身心，在流动中感受力量与宁静。恒温地暖原木教室、国际全美瑜伽联盟 (RYT) 认证师资，专注小班沉浸式教学。",
+        "qfs_link_groups": [
+          {
+            "title": "常设课程与会员与教培",
+            "links": "经典哈他瑜伽基础|#\n流瑜伽与燃脂体态雕塑|#\n阴瑜伽与颂钵经络修复|#\n空中瑜伽与普拉提核心|#\n全美瑜伽联盟 RYT200 教培|#\n私教体态一对一评估|#\n精品小班周课表查询|#\n新手体验课尊享礼遇|#"
+          }
+        ],
+        "qfs_contact_title": "会馆前台与排课",
+        "qfs_contact_items": "会馆热线|400-898-1088|tel:4008981088\n排课客服|PRANA_YOGA_CARE|#\n会馆地址|深圳市福田区香蜜湖文化创意街区 3 栋 2 层|#",
+        "qfs_social_title": "关注健康体态",
+        "qfs_social_links": "小红书瑜伽日常|#\n微信公众号|#\n官方视频号|#\n会员专属群|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 PRANA YOGA STUDIO. 保留所有权利 · 全美瑜伽联盟 RYS 认证培训学院",
+        "qfs_bottom_links": "约课与退改规则|#\n会馆安全守则|#\n隐私政策|#\n教练资质公示|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

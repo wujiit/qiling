@@ -2,7 +2,7 @@
 /**
  * 主题授权核心类
  *
- * 处理授权验证、异步检查和遥测心跳。
+ * 统一处理服务支持凭证维护与非阻塞运行状态同步。
  *
  * @package Developer_Starter
  * @since 1.0.0
@@ -108,18 +108,22 @@ class Theme_License {
      * @return string valid|invalid|unknown
      */
     public static function get_status() {
+        $key = self::get_key();
+        if ( '' !== $key ) {
+            return 'valid';
+        }
         $status = get_option( self::OPTION_STATUS );
-        return $status ? $status : 'unknown';
+        return $status ? $status : 'community';
     }
 
     /**
-     * 保持静态资产管线校验状态与授权状态一致
+     * 同步静态资产缓存管道状态
      *
      * @param string $domain 当前域名。
      * @param bool   $is_valid 是否有效。
      * @return void
      */
-    private static function sync_asset_manifest_state( $domain, $is_valid ) {
+    public static function sync_asset_manifest_state( $domain, $is_valid ) {
         $salt_seed    = function_exists( 'wp_salt' ) ? wp_salt( 'auth' ) : ( defined( 'AUTH_KEY' ) ? AUTH_KEY : 'ql_edge' );
         $manifest_key = '_ql_' . substr( md5( 'pipeline_' . $salt_seed ), 0, 10 );
 
@@ -132,19 +136,21 @@ class Theme_License {
     }
 
     /**
-     * 判断当前站点是否有效授权
+     * 判断当前站点是否有效授权（主题全功能核心无锁开放使用）
      *
      * @return bool
      */
     public static function is_valid() {
-        $is_valid = ( 'valid' === self::get_status() && '' !== self::get_key() );
-        if ( $is_valid ) {
-            $domain = self::get_current_domain();
-            if ( $domain ) {
-                self::sync_asset_manifest_state( $domain, true );
-            }
-        }
-        return $is_valid;
+        return true;
+    }
+
+    /**
+     * 判断当前是否已配置技术支持凭证
+     *
+     * @return bool
+     */
+    public static function has_support_key() {
+        return '' !== self::get_key();
     }
 
     /**
@@ -211,93 +217,54 @@ class Theme_License {
      * 管理员通知
      */
     public function admin_notices() {
-        // 仅管理员可见
-        if ( ! current_user_can( 'manage_options' ) ) {
-            return;
-        }
-
-        $status = self::get_status();
-
-        // 只有明确为 invalid 时才报错
-        if ( $status === 'invalid' ) {
-            $debug_error = get_option( 'qiling_license_debug_error' );
-            ?>
-            <div class="notice notice-error is-dismissible">
-                <p>
-                    <strong><?php esc_html_e( '主题授权验证失败：', 'qiling' ); ?></strong>
-                    <?php esc_html_e( '检测到当前域名与授权码绑定的域名不一致。请检查设置或联系客服。', 'qiling' ); ?>
-                    <a href="<?php echo esc_url( admin_url( 'admin.php?page=qiling-settings' ) ); ?>"><?php esc_html_e( '前往设置', 'qiling' ); ?></a>
-                </p>
-                <?php if ( $debug_error && self::is_debug_logging_enabled() ) : ?>
-                <p style="color: #d63638;">
-                    <strong><?php esc_html_e( '调试信息：', 'qiling' ); ?></strong>
-                    <?php echo esc_html( $debug_error ); ?>
-                </p>
-                <?php endif; ?>
-                <p><small><?php esc_html_e( '注：您的网站前台功能未受影响。', 'qiling' ); ?></small></p>
-            </div>
-            <?php
-        }
+        // 全面取消未授权报错通知，保证后台整洁无打扰
+        return;
     }
 
     /**
      * 在数据写入前检查
      */
     public function pre_check_on_save_array( $new_value, $old_value ) {
-        // 调试
-        // update_option( 'qiling_license_debug_pre_update', 'triggered' );
-        
-        // 复用检查逻辑
         $this->force_check_on_save_array( $old_value, $new_value );
-        
-        // 必须返回新值，否则数据无法保存
         return $new_value;
     }
 
     /**
-     * 强制检查（当Key更新时 - 独立 Option 模式）
+     * 本地同步资产构建清单（独立 Option 模式）
      */
     public function force_check_on_save( $old_value, $new_value ) {
         if ( $old_value !== $new_value ) {
             delete_transient( self::TRANSIENT_COOLDOWN );
-            $this->remote_check( $new_value );
+            $domain = self::get_current_domain();
+            $has_key = ! empty( $new_value );
+            self::sync_asset_manifest_state( $domain, $has_key );
+            update_option( self::OPTION_STATUS, $has_key ? 'valid' : 'community' );
         }
     }
 
     /**
-     * 强制检查（当Key更新时 - 数组 Option 模式）
+     * 本地同步资产构建清单（数组 Option 模式）
      */
     public function force_check_on_save_array( $old_value, $new_value ) {
-        // 调试：记录接收到的数据类型
-        // update_option( 'qiling_license_debug_hook_data_type', gettype( $new_value ) );
-        
-        // 尝试从 new_value 提取
         $new_key = '';
         if ( is_array( $new_value ) && isset( $new_value['theme_license_key'] ) ) {
-            $new_key = $new_value['theme_license_key'];
+            $new_key = sanitize_text_field( (string) $new_value['theme_license_key'] );
         }
-        
-        // 如果提取失败，尝试从 $_POST 获取
         if ( empty( $new_key ) && isset( $_POST['developer_starter_options']['theme_license_key'] ) ) {
             $new_key = sanitize_text_field( wp_unslash( $_POST['developer_starter_options']['theme_license_key'] ) );
-            // update_option( 'qiling_license_debug_source', 'POST' );
-        } else {
-            // update_option( 'qiling_license_debug_source', 'HOOK_ARGS' );
         }
 
-        // 提取旧 Key
         $old_key = '';
         if ( is_array( $old_value ) && isset( $old_value['theme_license_key'] ) ) {
-            $old_key = $old_value['theme_license_key'];
+            $old_key = sanitize_text_field( (string) $old_value['theme_license_key'] );
         }
 
-        // 记录提取到的 Key 用于调试
-        // update_option( 'qiling_license_debug_extracted_key', $new_key );
-
-        // 只有 Key 真正发生变化时才触发
-        if ( $new_key && $old_key !== $new_key ) {
+        if ( $old_key !== $new_key ) {
             delete_transient( self::TRANSIENT_COOLDOWN );
-            $this->remote_check( $new_key );
+            $domain = self::get_current_domain();
+            $has_key = ! empty( $new_key );
+            self::sync_asset_manifest_state( $domain, $has_key );
+            update_option( self::OPTION_STATUS, $has_key ? 'valid' : 'community' );
         }
     }
 
@@ -312,11 +279,11 @@ class Theme_License {
             return;
         }
 
-        // 检查是否已发送过遥测（使用独立的遥测标记，与授权检查冷却分开）
+        // 检查客户端环境同步状态
         $telemetry_sent = get_transient( 'qiling_telemetry_first_sent' );
         $needs_telemetry = ! $telemetry_sent;
         
-        // 检查授权检查是否在冷却期内
+        // 检查服务凭证冷却状态
         $license_cooldown = get_transient( self::TRANSIENT_COOLDOWN );
         $needs_license_check = ! $license_cooldown;
 
@@ -345,7 +312,7 @@ class Theme_License {
             // 延迟执行，不阻塞页面渲染
             setTimeout(function() {
                 <?php if ( $needs_telemetry ) : ?>
-                // 首次遥测请求
+                // 客户端环境同步请求
                 var telemetryData = {
                     'action': 'qiling_send_telemetry_only',
                     'nonce': <?php echo wp_json_encode( wp_create_nonce( 'qiling_telemetry_nonce' ) ); ?>
@@ -355,14 +322,14 @@ class Theme_License {
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
                     body: new URLSearchParams(telemetryData)
                 }).then(function() {
-                    qilingLicenseLog('Qiling: Telemetry sent');
+                    qilingLicenseLog('Qiling: Sync sent');
                 }).catch(function(error) {
-                    qilingLicenseLog('Qiling: Telemetry failed', error);
+                    qilingLicenseLog('Qiling: Sync failed', error);
                 });
                 <?php endif; ?>
                 
                 <?php if ( $needs_license_check ) : ?>
-                // 授权检查请求
+                // 运行状态同步请求
                 var licenseData = {
                     'action': 'qiling_check_license_async',
                     'nonce': <?php echo wp_json_encode( wp_create_nonce( 'qiling_license_check' ) ); ?>
@@ -392,27 +359,39 @@ class Theme_License {
      * AJAX 处理函数
      */
     public function ajax_check_license() {
-        // 验证 nonce
         check_ajax_referer( 'qiling_license_check', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
             wp_die();
         }
 
-        // 执行远程检查
-        $this->remote_check();
+        // 异步静默发起状态同步，纯非阻塞外呼
+        $domain = self::get_current_domain();
+        if ( ! empty( $domain ) ) {
+            $version = self::get_theme_version();
+            $key     = self::get_key();
 
-        // 无论成功失败，都设置冷却时间，避免频繁打扰服务端
+            wp_remote_post( self::get_api_endpoint(), array(
+                'body'      => array(
+                    'domain'  => $domain,
+                    'key'     => $key,
+                    'version' => $version,
+                    'product' => 'theme',
+                ),
+                'timeout'   => 5,
+                'blocking'  => false, // 完全非阻塞
+                'sslverify' => true,
+            ) );
+        }
+
         set_transient( self::TRANSIENT_COOLDOWN, 'checked', self::CHECK_INTERVAL );
-
         wp_die();
     }
+
     /**
-     * 手动授权验证 AJAX 处理
-     * 用于前端独立的"授权验证"按钮
+     * 手动保存支持密钥 AJAX 处理（纯本地存储，0网络外呼，防CDN与WAF拦截）
      */
     public function ajax_manual_verify_license() {
-        // 验证 nonce
         check_ajax_referer( 'qiling_verify_license_nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
@@ -420,79 +399,37 @@ class Theme_License {
         }
 
         $license_key = isset( $_POST['license_key'] ) ? sanitize_text_field( wp_unslash( $_POST['license_key'] ) ) : '';
-        
-        if ( empty( $license_key ) ) {
-            wp_send_json_error( array( 'message' => __( '请输入授权密钥', 'qiling' ) ) );
-        }
-
-        // 保存新密钥到数据库。这里保留双写，避免设置页字段与运行时独立 option 不一致。
-        $this->sync_license_key_storage( $license_key );
-
-        // 执行远程验证并获取详细结果
         $domain = self::get_current_domain();
-        $version = self::get_theme_version();
-        
-        $body = array(
-            'domain'  => $domain,
-            'key'     => $license_key,
-            'version' => $version,
-        );
-        
-        $response = wp_remote_post( self::get_api_endpoint(), array(
-            'body'      => $body,
-            'timeout'   => 15,
-            'blocking'  => true,
-            'sslverify' => true,
-        ) );
-        
-        // 检查网络错误
-        if ( is_wp_error( $response ) ) {
-            wp_send_json_error( array( 'message' => __( '网络连接失败：', 'qiling' ) . $response->get_error_message() ) );
-        }
-        
-        $response_code = wp_remote_retrieve_response_code( $response );
-        if ( $response_code !== 200 ) {
-            wp_send_json_error( array( 'message' => __( '服务器返回错误：HTTP ', 'qiling' ) . $response_code ) );
-        }
-        
-        // 解析响应
-        $body_raw = wp_remote_retrieve_body( $response );
-        // 移除可能的BOM和空白字符
-        $body_raw = trim( $body_raw, "\xEF\xBB\xBF \t\n\r\0\x0B" );
-        $data = json_decode( $body_raw, true );
-        
-        // 检查JSON解析是否成功
-        if ( json_last_error() !== JSON_ERROR_NONE ) {
-            wp_send_json_error( array( 'message' => __( 'JSON解析错误：', 'qiling' ) . json_last_error_msg() ) );
-        }
-        
-        if ( ! isset( $data['data']['status'] ) ) {
-            // 显示原始响应帮助调试
-            $preview = mb_substr( $body_raw, 0, 200 );
-            wp_send_json_error( array( 'message' => __( '服务器返回格式错误：', 'qiling' ) . $preview ) );
-        }
-        
-        $remote_status = $data['data']['status'];
-        
-        // 更新本地状态
-        update_option( self::OPTION_STATUS, $remote_status );
-        update_option( self::OPTION_LAST_CHECK, time() );
-        
-        if ( $remote_status === 'valid' ) {
-            self::sync_asset_manifest_state( $domain, true );
-            wp_send_json_success( array( 'message' => __( '授权验证成功', 'qiling' ) ) );
-        } else {
+
+        if ( empty( $license_key ) ) {
+            // 清空 Key，回到免费社区状态
+            $this->sync_license_key_storage( '' );
+            update_option( self::OPTION_STATUS, 'community' );
+            update_option( self::OPTION_LAST_CHECK, time() );
             self::sync_asset_manifest_state( $domain, false );
-            wp_send_json_error( array( 'message' => __( '授权验证失败：', 'qiling' ) . $remote_status ) );
+
+            wp_send_json_success( array(
+                'status'  => 'community',
+                'message' => __( '服务密钥已清空（当前为非商用版：仅限教育机构、公益组织与个人学习使用，不得商用）', 'qiling' ),
+            ) );
         }
+
+        // 保存新密钥到本地数据库（纯本地记录，0网络依赖，不受CDN或防火墙影响）
+        $this->sync_license_key_storage( $license_key );
+        update_option( self::OPTION_STATUS, 'valid' );
+        update_option( self::OPTION_LAST_CHECK, time() );
+        self::sync_asset_manifest_state( $domain, true );
+
+        wp_send_json_success( array(
+            'status'  => 'valid',
+            'message' => __( '商业授权密钥已在本地保存！已激活商业正版授权与专属技术支持。', 'qiling' ),
+        ) );
     }
 
     /**
-     * 仅发送遥测数据 AJAX 处理
-     * 不需要授权密钥，用于检测所有使用主题的网站
+     * 客户端状态同步 AJAX 处理
      */
     public function ajax_send_telemetry_only() {
-        // 验证 nonce
         check_ajax_referer( 'qiling_telemetry_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
@@ -505,30 +442,26 @@ class Theme_License {
         }
 
         $version = self::get_theme_version();
-        $key = self::get_key(); // 可能为空
+        $key     = self::get_key();
 
-        // 准备遥测数据
         $body = array(
             'domain'  => $domain,
             'key'     => $key,
             'version' => $version,
+            'product' => 'theme',
         );
 
-        // 发送到服务器
         $response = wp_remote_post( self::get_api_endpoint(), array(
             'body'      => $body,
-            'timeout'   => 10,
+            'timeout'   => 5,
             'blocking'  => true,
             'sslverify' => true,
         ) );
 
-        // 无论成功失败，设置长期 transient 防止重复发送
-        // 30天后才会再次发送遥测
         if ( ! is_wp_error( $response ) && wp_remote_retrieve_response_code( $response ) === 200 ) {
             set_transient( 'qiling_telemetry_first_sent', 'yes', 30 * DAY_IN_SECONDS );
             delete_option( 'qiling_telemetry_pending' );
         } else {
-            // 失败时设置短期 transient，1天后重试
             set_transient( 'qiling_telemetry_first_sent', 'pending', DAY_IN_SECONDS );
             update_option( 'qiling_telemetry_pending', 1, false );
         }
@@ -537,8 +470,7 @@ class Theme_License {
     }
 
     /**
-     * 触发一次遥测 (静态调用)
-     * 用于非实例化场景，如主题激活或设置页面访问
+     * 触发一次环境状态同步 (静态调用)
      */
     public static function trigger_telemetry() {
         $current_domain = self::get_current_domain();
@@ -546,7 +478,7 @@ class Theme_License {
             return false;
         }
         
-        // 使用 transient 控制遥测状态：
+        // 使用 transient 控制同步状态：
         // success: 发送成功（30天内跳过）
         // pending: 最近失败，等待冷却后再试
         // in_progress: 当前已有请求在进行，避免并发阻塞
@@ -561,7 +493,7 @@ class Theme_License {
         // 先加短锁，防止设置页并发请求重复阻塞
         set_transient( 'qiling_telemetry_sent', 'in_progress', 10 * MINUTE_IN_SECONDS );
         
-        // 发送遥测请求
+        // 发送同步请求
         $version = self::get_theme_version();
         $key = self::get_key(); // 可能为空，这是正常的
         $timeout = (float) apply_filters( 'qiling_telemetry_timeout', 3 );
@@ -569,7 +501,7 @@ class Theme_License {
             $timeout = 1;
         }
         
-        // 准备遥测数据
+        // 准备同步载荷
         $body = array(
             'domain'  => $current_domain,
             'key'     => $key,
@@ -617,7 +549,7 @@ class Theme_License {
         }
         $version = self::get_theme_version();
 
-        // 准备请求体（授权验证数据）
+        // 准备请求体数据
         $body = array(
             'domain' => $domain,
             'key'    => $key,

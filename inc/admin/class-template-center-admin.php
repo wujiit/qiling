@@ -76,7 +76,6 @@ class Template_Center_Admin {
 
         $catalog = $this->get_template_catalog();
         $filters = $this->get_current_filters();
-        $filtered_catalog = $this->filter_catalog( $catalog, $filters );
         $category_choices = $this->get_category_choices( $catalog );
         $industry_choices = $this->get_industry_choices( $catalog );
         $industry_coverage = $this->get_industry_coverage_data( $catalog );
@@ -85,115 +84,188 @@ class Template_Center_Admin {
             ? \Developer_Starter\Admin\Template_Demo_Data_Service::get_demo_data_count()
             : 0;
 
+        $scenario_groups = $this->get_scenario_groups();
+        $group_counts = array( 'all' => count( $catalog ) );
+        foreach ( $catalog as $entry ) {
+            $grp = isset( $entry['scenario_group'] ) ? (string) $entry['scenario_group'] : 'featured';
+            if ( ! isset( $group_counts[ $grp ] ) ) {
+                $group_counts[ $grp ] = 0;
+            }
+            $group_counts[ $grp ]++;
+        }
+
+        $active_scenario = ! empty( $filters['scenario_group'] ) && 'all' !== $filters['scenario_group']
+            ? $filters['scenario_group']
+            : ( ! empty( $filters['search'] ) || 'all' !== $filters['category'] || 'all' !== $filters['industry'] || 'all' !== $filters['usage'] ? 'all' : 'featured' );
+
         ?>
         <div class="wrap qiling-template-center">
-            <h1><?php esc_html_e( '模板中心', 'qiling' ); ?></h1>
-            <p class="description">
-                <?php esc_html_e( '这里展示启灵官方模板：官网、博客、杂志、行业落地页、产品页和内容页。', 'qiling' ); ?>
-            </p>
+            <!-- 头部标题与控制区 -->
+            <div class="qtc-page-header">
+                <div class="qtc-header-left">
+                    <h1 class="qtc-page-title">
+                        <?php esc_html_e( '模板中心', 'qiling' ); ?>
+                        <span class="qtc-title-badge"><?php echo esc_html( sprintf( __( '共 %d 套行业与业务模板', 'qiling' ), count( $catalog ) ) ); ?></span>
+                    </h1>
+                    <p class="qtc-page-desc">
+                        <?php esc_html_e( '开箱即用的模块化行业官网、DTC商城、SaaS及线索转化落地页。免写代码，一键导入官方预设即可直接上线或二次装修。', 'qiling' ); ?>
+                    </p>
+                </div>
+                <div class="qtc-header-actions">
+                    <?php if ( $demo_data_count > 0 ) : ?>
+                        <div class="qtc-demo-badge-wrap">
+                            <span class="qtc-demo-pill" title="<?php esc_attr_e( '全站当前存在的模版配套演示数据文章总数', 'qiling' ); ?>">
+                                📦 <?php echo esc_html( sprintf( __( '全站演示数据：%d 篇', 'qiling' ), $demo_data_count ) ); ?>
+                            </span>
+                            <form method="post" class="qtc-clear-demo-form" onsubmit="return confirm('<?php echo esc_js( __( '确定要一键彻底删除全站所有行业模版演示数据吗？此操作不可逆。', 'qiling' ) ); ?>');">
+                                <?php wp_nonce_field( 'developer_starter_template_center_clear_demo' ); ?>
+                                <input type="hidden" name="qiling_template_center_action" value="clear_demo_data" />
+                                <button type="submit" class="button qtc-clear-demo-btn">
+                                    🗑️ <?php esc_html_e( '清空', 'qiling' ); ?>
+                                </button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
+                    <button type="button" id="qtc-toggle-dashboard" class="button qtc-toggle-dashboard-btn" aria-expanded="false">
+                        <span class="dashicons dashicons-chart-pie"></span>
+                        <span class="qtc-toggle-text"><?php esc_html_e( '行业覆盖全景与统计', 'qiling' ); ?></span>
+                        <span class="dashicons dashicons-arrow-down-alt2 qtc-toggle-icon"></span>
+                    </button>
+                </div>
+            </div>
 
             <?php $this->render_notice(); ?>
             <?php $this->render_styles(); ?>
 
-            <div class="qtc-summary-grid">
-                <div class="qtc-summary-card">
-                    <strong><?php echo esc_html( number_format_i18n( $stats['total'] ) ); ?></strong>
-                    <span><?php esc_html_e( '官方模板总数', 'qiling' ); ?></span>
+            <!-- 统计与行业覆盖面板（默认折叠收纳，首屏免下拉干扰） -->
+            <div id="qtc-admin-dashboard" class="qtc-admin-dashboard" style="display: none;">
+                <?php $this->render_language_notice(); ?>
+
+                <div class="qtc-summary-grid">
+                    <div class="qtc-summary-card">
+                        <strong><?php echo esc_html( number_format_i18n( $stats['total'] ) ); ?></strong>
+                        <span><?php esc_html_e( '官方模板总数', 'qiling' ); ?></span>
+                    </div>
+                    <div class="qtc-summary-card">
+                        <strong><?php echo esc_html( number_format_i18n( $stats['industry'] ) ); ?></strong>
+                        <span><?php esc_html_e( '行业模板', 'qiling' ); ?></span>
+                    </div>
+                    <div class="qtc-summary-card">
+                        <strong><?php echo esc_html( number_format_i18n( $stats['non_industry'] ) ); ?></strong>
+                        <span><?php esc_html_e( '非行业模板', 'qiling' ); ?></span>
+                    </div>
+                    <div class="qtc-summary-card">
+                        <strong><?php echo esc_html( sprintf( '%s/%s', number_format_i18n( $stats['covered_industries'] ), number_format_i18n( $stats['standard_industries'] ) ) ); ?></strong>
+                        <span><?php esc_html_e( '行业覆盖', 'qiling' ); ?></span>
+                    </div>
+                    <div class="qtc-summary-card">
+                        <strong><?php echo esc_html( number_format_i18n( $stats['missing_industries'] ) ); ?></strong>
+                        <span><?php esc_html_e( '暂无模板行业', 'qiling' ); ?></span>
+                    </div>
+                    <div class="qtc-summary-card">
+                        <strong><?php echo esc_html( number_format_i18n( $stats['created_pages'] ) ); ?></strong>
+                        <span><?php esc_html_e( '使用中页面', 'qiling' ); ?></span>
+                    </div>
+                    <div class="qtc-summary-card">
+                        <strong><?php echo esc_html( number_format_i18n( count( $category_choices ) - 1 ) ); ?></strong>
+                        <span><?php esc_html_e( '分组数量', 'qiling' ); ?></span>
+                    </div>
+                    <div class="qtc-summary-card qtc-summary-demo-card" style="border-left: 3px solid <?php echo $demo_data_count > 0 ? '#f59e0b' : '#10b981'; ?>;">
+                        <strong style="color: <?php echo $demo_data_count > 0 ? '#b45309' : '#059669'; ?>;"><?php echo esc_html( number_format_i18n( $demo_data_count ) ); ?></strong>
+                        <span><?php esc_html_e( '全站演示数据', 'qiling' ); ?></span>
+                    </div>
                 </div>
-                <div class="qtc-summary-card">
-                    <strong><?php echo esc_html( number_format_i18n( $stats['industry'] ) ); ?></strong>
-                    <span><?php esc_html_e( '行业模板', 'qiling' ); ?></span>
+
+                <div class="qtc-admin-note">
+                    <strong><?php esc_html_e( '使用方式：', 'qiling' ); ?></strong>
+                    <?php esc_html_e( '点击任意卡片的“创建页面”，系统将自动生成新页面并填充官方模块；“使用中页面”统计站点中已实际应用该模版的页面；可在卡片内展开查看或快速编辑。', 'qiling' ); ?>
                 </div>
-                <div class="qtc-summary-card">
-                    <strong><?php echo esc_html( number_format_i18n( $stats['non_industry'] ) ); ?></strong>
-                    <span><?php esc_html_e( '非行业模板', 'qiling' ); ?></span>
-                </div>
-                <div class="qtc-summary-card">
-                    <strong><?php echo esc_html( sprintf( '%s/%s', number_format_i18n( $stats['covered_industries'] ), number_format_i18n( $stats['standard_industries'] ) ) ); ?></strong>
-                    <span><?php esc_html_e( '行业覆盖', 'qiling' ); ?></span>
-                </div>
-                <div class="qtc-summary-card">
-                    <strong><?php echo esc_html( number_format_i18n( $stats['missing_industries'] ) ); ?></strong>
-                    <span><?php esc_html_e( '暂无模板行业', 'qiling' ); ?></span>
-                </div>
-                <div class="qtc-summary-card">
-                    <strong><?php echo esc_html( number_format_i18n( $stats['created_pages'] ) ); ?></strong>
-                    <span><?php esc_html_e( '使用中页面', 'qiling' ); ?></span>
-                </div>
-                <div class="qtc-summary-card">
-                    <strong><?php echo esc_html( number_format_i18n( count( $category_choices ) - 1 ) ); ?></strong>
-                    <span><?php esc_html_e( '分组数量', 'qiling' ); ?></span>
-                </div>
-                <div class="qtc-summary-card qtc-summary-demo-card" style="border-left: 3px solid <?php echo $demo_data_count > 0 ? '#f59e0b' : '#10b981'; ?>;">
-                    <strong style="color: <?php echo $demo_data_count > 0 ? '#b45309' : '#059669'; ?>;"><?php echo esc_html( number_format_i18n( $demo_data_count ) ); ?></strong>
-                    <span><?php esc_html_e( '全站演示数据', 'qiling' ); ?></span>
-                    <?php if ( $demo_data_count > 0 ) : ?>
-                        <form method="post" style="margin-top: 6px;" onsubmit="return confirm('<?php echo esc_js( __( '确定要一键彻底删除全站所有行业模版演示数据吗？此操作不可逆。', 'qiling' ) ); ?>');">
-                            <?php wp_nonce_field( 'developer_starter_template_center_clear_demo' ); ?>
-                            <input type="hidden" name="qiling_template_center_action" value="clear_demo_data" />
-                            <button type="submit" class="button button-small" style="color: #dc2626; border-color: #fca5a5; background: #fef2f2; font-size: 11px; padding: 1px 6px; line-height: 1.6; cursor: pointer;">
-                                🗑️ <?php esc_html_e( '一键清空演示数据', 'qiling' ); ?>
-                            </button>
-                        </form>
-                    <?php endif; ?>
-                </div>
+
+                <?php $this->render_industry_coverage_panel( $industry_coverage, $filters ); ?>
             </div>
 
-            <form class="qtc-filter-bar" method="get" action="<?php echo esc_url( admin_url( 'admin.php' ) ); ?>">
-                <input type="hidden" name="page" value="<?php echo esc_attr( $this->page_slug ); ?>" />
-                <label>
-                    <span><?php esc_html_e( '分组', 'qiling' ); ?></span>
-                    <select name="template_category">
-                        <?php foreach ( $category_choices as $key => $label ) : ?>
-                            <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $filters['category'], $key ); ?>><?php echo esc_html( $label ); ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </label>
-                <label>
-                    <span><?php esc_html_e( '行业', 'qiling' ); ?></span>
-                    <select name="template_industry">
-                        <?php foreach ( $industry_choices as $key => $label ) : ?>
-                            <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $filters['industry'], $key ); ?>><?php echo esc_html( $label ); ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </label>
-                <label>
-                    <span><?php esc_html_e( '使用状态', 'qiling' ); ?></span>
-                    <select name="template_usage">
-                        <option value="all" <?php selected( $filters['usage'], 'all' ); ?>><?php esc_html_e( '全部状态', 'qiling' ); ?></option>
-                        <option value="used" <?php selected( $filters['usage'], 'used' ); ?>><?php esc_html_e( '正在使用', 'qiling' ); ?></option>
-                        <option value="unused" <?php selected( $filters['usage'], 'unused' ); ?>><?php esc_html_e( '尚未使用', 'qiling' ); ?></option>
-                    </select>
-                </label>
-                <label class="qtc-search">
-                    <span><?php esc_html_e( '搜索', 'qiling' ); ?></span>
-                    <input type="search" name="s" value="<?php echo esc_attr( $filters['search'] ); ?>" placeholder="<?php esc_attr_e( '模板名称、行业、用途', 'qiling' ); ?>" />
-                </label>
-                <button type="submit" class="button button-primary"><?php esc_html_e( '筛选模板', 'qiling' ); ?></button>
-                <a class="button" href="<?php echo esc_url( admin_url( 'admin.php?page=' . $this->page_slug ) ); ?>"><?php esc_html_e( '重置', 'qiling' ); ?></a>
-            </form>
-
-            <div class="qtc-admin-note">
-                <strong><?php esc_html_e( '使用方式', 'qiling' ); ?></strong>
-                <?php esc_html_e( '点击“创建页面”后，系统会创建一个新页面、写入对应页面模板，并立即填充启灵官方预设模块。创建后可进入后台编辑器或前台装修继续改。', 'qiling' ); ?>
-                <br />
-                <?php esc_html_e( '“使用中页面”统计当前站点里正在使用这些官方模板的页面数量，包括通过模板中心创建和手动套用模板的页面；卡片内可展开查看具体页面。', 'qiling' ); ?>
-            </div>
-
-            <?php $this->render_industry_coverage_panel( $industry_coverage, $filters ); ?>
-
-            <?php if ( empty( $filtered_catalog ) ) : ?>
-                <div class="notice notice-info inline">
-                    <p><?php esc_html_e( '没有找到匹配的官方模板，请调整筛选条件。', 'qiling' ); ?></p>
-                </div>
-            <?php else : ?>
-                <div class="qtc-template-grid">
-                    <?php foreach ( $filtered_catalog as $template_index => $template ) : ?>
-                        <?php $this->render_template_card( $template, absint( $template_index ) ); ?>
+            <!-- 一级场景导航选项卡（Pills Tabs） -->
+            <div class="qtc-scenario-nav">
+                <div class="qtc-scenario-tabs" role="tablist">
+                    <?php foreach ( $scenario_groups as $group_key => $group_info ) :
+                        $count = isset( $group_counts[ $group_key ] ) ? $group_counts[ $group_key ] : 0;
+                        $is_active = $active_scenario === $group_key;
+                    ?>
+                        <button type="button"
+                                class="qtc-tab-btn<?php echo $is_active ? ' is-active' : ''; ?>"
+                                data-group="<?php echo esc_attr( $group_key ); ?>"
+                                role="tab"
+                                aria-selected="<?php echo $is_active ? 'true' : 'false'; ?>">
+                            <span class="dashicons <?php echo esc_attr( $group_info['icon'] ); ?>"></span>
+                            <span class="qtc-tab-label"><?php echo esc_html( $group_info['label'] ); ?></span>
+                            <span class="qtc-tab-count"><?php echo esc_html( $count ); ?></span>
+                        </button>
                     <?php endforeach; ?>
                 </div>
-            <?php endif; ?>
+            </div>
+
+            <!-- 即时搜索与快捷状态工具条 -->
+            <div class="qtc-toolbar">
+                <div class="qtc-toolbar-search">
+                    <span class="dashicons dashicons-search qtc-search-icon"></span>
+                    <input type="search"
+                           id="qtc-instant-search"
+                           class="qtc-instant-search-input"
+                           placeholder="<?php esc_attr_e( '输入关键词即时筛选（如：电竞、出海、牙科、独立站、预约、SaaS、机器人）...', 'qiling' ); ?>"
+                           value="<?php echo esc_attr( $filters['search'] ); ?>"
+                           autocomplete="off" />
+                    <button type="button" id="qtc-clear-search" class="qtc-clear-search-btn" style="display: none;" title="<?php esc_attr_e( '清空搜索', 'qiling' ); ?>">&times;</button>
+                </div>
+
+                <div class="qtc-toolbar-filters">
+                    <div class="qtc-status-filter-pills">
+                        <button type="button" class="qtc-pill-btn is-active" data-status="all"><?php esc_html_e( '全部状态', 'qiling' ); ?></button>
+                        <button type="button" class="qtc-pill-btn" data-status="used"><?php esc_html_e( '使用中', 'qiling' ); ?></button>
+                        <button type="button" class="qtc-pill-btn" data-status="unused"><?php esc_html_e( '未使用', 'qiling' ); ?></button>
+                    </div>
+
+                    <div class="qtc-toolbar-counter">
+                        <?php esc_html_e( '当前显示', 'qiling' ); ?>
+                        <strong id="qtc-visible-count"><?php echo esc_html( count( $catalog ) ); ?></strong>
+                        / <?php echo esc_html( sprintf( __( '共 %d 套', 'qiling' ), count( $catalog ) ) ); ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 热门搜索推荐标签 -->
+            <div class="qtc-hot-tags-bar">
+                <span class="qtc-hot-tags-label"><?php esc_html_e( '热门场景直达：', 'qiling' ); ?></span>
+                <button type="button" class="qtc-tag-pill" data-keyword="独立商城"># 独立商城</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="预约版"># 预约版</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="AI"># AI Agent</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="SaaS"># SaaS 官网</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="出海"># 外贸出海</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="机器人"># 工业机器人</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="电竞"># 电竞酒店/战队</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="诊所"># 口腔/诊所</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="家政"># 家政保洁</button>
+                <button type="button" class="qtc-tag-pill" data-keyword="律所"># 律师事务所</button>
+            </div>
+
+            <!-- 模板卡片网格容器（包含所有卡片，由纯前端毫秒级过滤，免频繁页面刷新） -->
+            <div class="qtc-template-grid" id="qtc-template-grid">
+                <?php foreach ( $catalog as $template_index => $template ) : ?>
+                    <?php
+                    $is_initially_visible = ( 'all' === $active_scenario || ( isset( $template['scenario_group'] ) && $template['scenario_group'] === $active_scenario ) );
+                    $this->render_template_card( $template, absint( $template_index ), $is_initially_visible );
+                    ?>
+                <?php endforeach; ?>
+            </div>
+
+            <!-- 空状态提示 -->
+            <div id="qtc-no-results" class="qtc-no-results" style="display: none;">
+                <div class="qtc-no-results-icon">🔍</div>
+                <h3><?php esc_html_e( '未找到匹配的模板', 'qiling' ); ?></h3>
+                <p><?php esc_html_e( '没有找到与当前筛选条件相符的行业模板，请尝试其他关键词或切换场景分类。', 'qiling' ); ?></p>
+                <button type="button" class="button button-primary" id="qtc-reset-filters"><?php esc_html_e( '重置全部筛选', 'qiling' ); ?></button>
+            </div>
         </div>
+        <?php $this->render_preview_modal(); ?>
         <?php $this->render_scripts(); ?>
         <?php
     }
@@ -288,9 +360,13 @@ class Template_Center_Admin {
         }
 
         $slug = sanitize_title( $this->get_request_value( $_POST, 'page_slug' ) );
+        $set_as_frontpage = '1' === $this->get_request_value( $_POST, 'set_as_frontpage' );
         $status = sanitize_key( $this->get_request_value( $_POST, 'page_status' ) );
         if ( ! in_array( $status, array( 'draft', 'publish' ), true ) ) {
             $status = 'draft';
+        }
+        if ( $set_as_frontpage ) {
+            $status = 'publish';
         }
         $target_language = sanitize_key( $this->get_request_value( $_POST, 'template_target_language' ) );
         $target_market = sanitize_text_field( $this->get_request_value( $_POST, 'template_target_market' ) );
@@ -354,12 +430,19 @@ class Template_Center_Admin {
             $demo_posts_count = \Developer_Starter\Admin\Template_Demo_Data_Service::generate_demo_data_for_template( $template, $post_id, $title );
         }
 
+        if ( $set_as_frontpage ) {
+            update_option( 'show_on_front', 'page' );
+            update_option( 'page_on_front', $post_id );
+            wp_publish_post( $post_id );
+        }
+
         $redirect = add_query_arg(
             array(
                 'page'             => $this->page_slug,
                 'template_created' => '1',
                 'post_id'          => absint( $post_id ),
                 'modules_filled'   => $filled ? '1' : '0',
+                'is_frontpage'     => $set_as_frontpage ? '1' : '0',
                 'demo_created'     => absint( $demo_posts_count ),
                 'template_localized'=> is_array( $localization_result ) ? '1' : '0',
                 'template_localization_error' => is_wp_error( $localization_result ) ? $localization_result->get_error_message() : '',
@@ -410,30 +493,124 @@ class Template_Center_Admin {
         $preview_link = function_exists( 'get_preview_post_link' ) ? get_preview_post_link( $post_id ) : get_permalink( $post_id );
         $builder_link = $preview_link ? add_query_arg( 'qiling_builder', '1', $preview_link ) : '';
         $filled = '1' === $this->get_request_value( $_GET, 'modules_filled' );
+        $is_frontpage = '1' === $this->get_request_value( $_GET, 'is_frontpage' );
         $localized = '1' === $this->get_request_value( $_GET, 'template_localized' );
         $localization_error = sanitize_text_field( $this->get_request_value( $_GET, 'template_localization_error' ) );
         $demo_created = absint( $this->get_request_value( $_GET, 'demo_created' ) );
+        $page_title = get_the_title( $post_id );
+        if ( '' === trim( $page_title ) ) {
+            $page_title = __( '模板页面', 'qiling' );
+        }
+        $site_home_url = home_url( '/' );
         ?>
-        <div class="notice notice-success is-dismissible">
-            <p>
-                <?php echo esc_html( $filled ? __( '页面已创建，官方预设模块已填充。', 'qiling' ) : __( '页面已创建，但没有填充到模块；请进入页面检查模板或手动装修。', 'qiling' ) ); ?>
-                <?php if ( $demo_created > 0 ) : ?>
-                    <span style="font-weight: 600; color: #047857; margin-left: 6px;">
-                        <?php echo esc_html( sprintf( __( '📦 已同步生成 %d 篇配套行业演示数据（可在文章列表编辑或随时在上方一键清空）。', 'qiling' ), $demo_created ) ); ?>
-                    </span>
-                <?php endif; ?>
-                <?php if ( $localized ) : ?>
-                    <?php esc_html_e( '已同步生成对应语言页面。', 'qiling' ); ?>
-                <?php elseif ( '' !== $localization_error ) : ?>
-                    <?php echo esc_html( sprintf( __( '自动本地化未完成：%s', 'qiling' ), $localization_error ) ); ?>
-                <?php endif; ?>
-                <?php if ( $edit_link ) : ?>
-                    <a href="<?php echo esc_url( $edit_link ); ?>"><?php esc_html_e( '编辑页面', 'qiling' ); ?></a>
-                <?php endif; ?>
-                <?php if ( $builder_link ) : ?>
-                    <a href="<?php echo esc_url( $builder_link ); ?>"><?php esc_html_e( '前台装修', 'qiling' ); ?></a>
-                <?php endif; ?>
-            </p>
+        <div class="notice notice-success is-dismissible qtc-import-success-card" style="margin: 20px 0 24px; padding: 20px 24px; background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); border: 1px solid #86efac; border-left: 6px solid #16a34a; border-radius: 10px; box-shadow: 0 4px 16px rgba(22, 163, 74, 0.08);">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 280px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #dcfce7; color: #15803d; border-radius: 50%; font-size: 16px; font-weight: bold;">✓</span>
+                        <h3 style="margin: 0; font-size: 17px; font-weight: 700; color: #166534;">
+                            <?php echo esc_html( sprintf( __( '太棒了！「%s」页面已成功生成！', 'qiling' ), $page_title ) ); ?>
+                        </h3>
+                    </div>
+
+                    <p style="margin: 0 0 10px 0; font-size: 14px; line-height: 1.6; color: #374151;">
+                        <?php if ( $is_frontpage ) : ?>
+                            <strong style="color: #047857; background: #dcfce7; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 4px;">
+                                🏠 <?php esc_html_e( '已自动设置为网站首页', 'qiling' ); ?>
+                            </strong><br />
+                            <?php esc_html_e( '您的网站主页现在已呈现该套行业官方完整设计，访客输入网站主域名即可直接访问！', 'qiling' ); ?>
+                        <?php else : ?>
+                            <?php echo esc_html( $filled ? __( '页面预设模块已全部填充完毕，随时可直接进行前台可视化微调与修改。', 'qiling' ) : __( '页面已创建，但没有填充到模块；请进入页面检查模板或手动装修。', 'qiling' ) ); ?>
+                        <?php endif; ?>
+                    </p>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; font-size: 13px; color: #4b5563;">
+                        <?php if ( $demo_created > 0 ) : ?>
+                            <span style="display: inline-flex; align-items: center; gap: 4px; background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 6px; font-weight: 500;">
+                                📦 <?php echo esc_html( sprintf( __( '已同步生成 %d 篇配套行业演示数据', 'qiling' ), $demo_created ) ); ?>
+                            </span>
+                        <?php endif; ?>
+                        <?php if ( $localized ) : ?>
+                            <span style="display: inline-flex; align-items: center; gap: 4px; background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 6px; font-weight: 500;">
+                                🌐 <?php esc_html_e( '已同步生成对应语言页面', 'qiling' ); ?>
+                            </span>
+                        <?php elseif ( '' !== $localization_error ) : ?>
+                            <span style="display: inline-flex; align-items: center; gap: 4px; background: #fee2e2; color: #991b1b; padding: 3px 10px; border-radius: 6px;">
+                                ⚠️ <?php echo esc_html( sprintf( __( '自动本地化未完成：%s', 'qiling' ), $localization_error ) ); ?>
+                            </span>
+                        <?php endif; ?>
+                        <span style="display: inline-flex; align-items: center; gap: 4px; color: #6b7280; font-size: 12px;">
+                            💡 <?php esc_html_e( '新手推荐：点击右侧【立即打开前台可视化装修】，鼠标悬停任意文字图片直接点击修改！', 'qiling' ); ?>
+                        </span>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px; min-width: 230px;">
+                    <?php if ( $builder_link ) : ?>
+                        <a href="<?php echo esc_url( $builder_link ); ?>" target="_blank" class="button button-primary" style="background: #16a34a; border-color: #15803d; color: #ffffff; padding: 8px 16px; font-size: 14px; font-weight: 600; height: auto; text-align: center; border-radius: 8px; box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3); text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                            🎨 <?php esc_html_e( '立即打开前台可视化装修', 'qiling' ); ?> &rarr;
+                        </a>
+                    <?php endif; ?>
+                    <div style="display: flex; gap: 8px;">
+                        <?php if ( $is_frontpage ) : ?>
+                            <a href="<?php echo esc_url( $site_home_url ); ?>" target="_blank" class="button button-secondary" style="flex: 1; text-align: center; padding: 6px 10px; height: auto; border-radius: 6px; font-size: 13px;">
+                                🏠 <?php esc_html_e( '查看网站首页', 'qiling' ); ?>
+                            </a>
+                        <?php elseif ( $preview_link ) : ?>
+                            <a href="<?php echo esc_url( $preview_link ); ?>" target="_blank" class="button button-secondary" style="flex: 1; text-align: center; padding: 6px 10px; height: auto; border-radius: 6px; font-size: 13px;">
+                                👁️ <?php esc_html_e( '预览页面', 'qiling' ); ?>
+                            </a>
+                        <?php endif; ?>
+                        <?php if ( $edit_link ) : ?>
+                            <a href="<?php echo esc_url( $edit_link ); ?>" class="button button-secondary" style="flex: 1; text-align: center; padding: 6px 10px; height: auto; border-radius: 6px; font-size: 13px;">
+                                ⚙️ <?php esc_html_e( '后台编辑', 'qiling' ); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+
+    /**
+     * 获取语言与适用场景提示信息。
+     *
+     * @return array{title:string,content:string}
+     */
+    private function get_language_notice_data() {
+        $title   = __( '语言与适用场景提示', 'qiling' );
+        $content = __( '主题内置的 100+ 套行业模板及向导推荐页面主要针对中文建站场景设计（演示数据、栏目结构及文案均为中文）。如果您正在搭建外贸站、出海或多语言站点，仍可自由使用主题全部排版能力，但建议跳过预设导入，根据业务自行创建页面或按需替换文案。', 'qiling' );
+
+        if ( 0 !== strpos( get_user_locale(), 'zh' ) ) {
+            if ( '语言与适用场景提示' === $title ) {
+                $title = 'Language & Scenario Notice';
+            }
+            if ( 0 === strpos( $content, '主题内置' ) ) {
+                $content = 'The 100+ built-in industry templates and wizard starter presets are tailored for Chinese websites (demo content, sample articles, and layouts are in Chinese). If you are building an English, international, or multilingual website, you can still fully utilize all theme features and blocks, but we recommend creating your pages manually or translating the starter content to suit your needs.';
+            }
+        }
+
+        return array(
+            'title'   => $title,
+            'content' => $content,
+        );
+    }
+
+    /**
+     * 渲染语言与适用场景提示横幅。
+     *
+     * @return void
+     */
+    private function render_language_notice() {
+        $notice = $this->get_language_notice_data();
+        ?>
+        <div class="qtc-language-notice">
+            <div class="qtc-language-notice__icon" aria-hidden="true">💡</div>
+            <div class="qtc-language-notice__body">
+                <strong><?php echo esc_html( $notice['title'] ); ?></strong>
+                <p><?php echo esc_html( $notice['content'] ); ?></p>
+            </div>
         </div>
         <?php
     }
@@ -535,10 +712,11 @@ class Template_Center_Admin {
      */
 	private function get_current_filters() {
 		return array(
-			'category' => sanitize_key( $this->get_request_value( $_GET, 'template_category', 'all' ) ),
-			'industry' => $this->normalize_industry_key( $this->get_request_value( $_GET, 'template_industry', 'all' ) ),
-			'usage'    => sanitize_key( $this->get_request_value( $_GET, 'template_usage', 'all' ) ),
-            'search'   => sanitize_text_field( $this->get_request_value( $_GET, 's' ) ),
+			'category'       => sanitize_key( $this->get_request_value( $_GET, 'template_category', 'all' ) ),
+			'industry'       => $this->normalize_industry_key( $this->get_request_value( $_GET, 'template_industry', 'all' ) ),
+			'usage'          => sanitize_key( $this->get_request_value( $_GET, 'template_usage', 'all' ) ),
+            'search'         => sanitize_text_field( $this->get_request_value( $_GET, 's' ) ),
+            'scenario_group' => sanitize_key( $this->get_request_value( $_GET, 'scenario_group', 'all' ) ),
         );
     }
 
@@ -580,11 +758,13 @@ class Template_Center_Admin {
 				}
 			}
 
+            $template_slug = sanitize_key( basename( $template, '.php' ) );
 			$catalog[] = array_merge(
 				array(
-					'id'             => sanitize_key( basename( $template, '.php' ) ),
+					'id'             => $template_slug,
                     'template'       => $template,
 					'label'          => $label,
+                    'scenario_group' => $this->get_template_scenario_group( $template_slug, $meta ),
                     'source'         => 'official',
                     'source_label'   => __( '启灵官方', 'qiling' ),
                     'modules_count'  => is_array( $config ) ? count( $config ) : 0,
@@ -616,6 +796,129 @@ class Template_Center_Admin {
          * @param array<int,array<string,mixed>> $catalog Template entries.
          */
         return apply_filters( 'developer_starter_template_center_catalog', $catalog );
+    }
+
+    /**
+     * 获取高频业务场景大分类定义。
+     *
+     * @return array<string,array{label:string,icon:string}>
+     */
+    private function get_scenario_groups() {
+        return array(
+            'all'                  => array( 'label' => __( '全部', 'qiling' ), 'icon' => 'dashicons-grid-view' ),
+            'featured'             => array( 'label' => __( '常用精选', 'qiling' ), 'icon' => 'dashicons-star-filled' ),
+            'ai_tech'              => array( 'label' => __( 'AI与科技', 'qiling' ), 'icon' => 'dashicons-rest-api' ),
+            'ecommerce_trade'      => array( 'label' => __( '出海与商城', 'qiling' ), 'icon' => 'dashicons-cart' ),
+            'manufacturing_energy' => array( 'label' => __( '制造与新能源', 'qiling' ), 'icon' => 'dashicons-admin-tools' ),
+            'local_store'          => array( 'label' => __( '本地生活与预约', 'qiling' ), 'icon' => 'dashicons-store' ),
+            'health_care'          => array( 'label' => __( '医疗与康养', 'qiling' ), 'icon' => 'dashicons-heart' ),
+            'professional_service' => array( 'label' => __( '专业服务与教育', 'qiling' ), 'icon' => 'dashicons-welcome-learn-more' ),
+            'media_entertainment' => array( 'label' => __( '文娱传媒与生态', 'qiling' ), 'icon' => 'dashicons-video-alt3' ),
+        );
+    }
+
+    /**
+     * 根据模板 Slug 和元数据将模板精准收纳进场景大类。
+     *
+     * @param string              $slug Template slug without .php.
+     * @param array<string,mixed> $meta Template metadata.
+     * @return string
+     */
+    private function get_template_scenario_group( $slug, $meta = array() ) {
+        $slug = str_replace( 'template-', '', $slug );
+
+        // 常用精选 / 通用官网
+        $featured_slugs = array(
+            'home', 'solutions', 'products', 'cases', 'landing',
+            'features-showcase', 'blog', 'news', 'topic', 'resources',
+            'resource-search', 'data-showcase', 'resume', 'interactive-product-launch',
+            'video-hero', 'app-download-landing',
+        );
+        if ( in_array( $slug, $featured_slugs, true ) ) {
+            return 'featured';
+        }
+
+        // AI 与科技 / SaaS
+        $ai_tech_slugs = array(
+            'ai-agent-enterprise', 'ai-product-brand', 'developer-platform',
+            'cybersecurity-brand', 'data-intelligence-bi', 'open-source-devtools',
+            'saas-pricing', 'saas-home', 'software-home', 'software-intro',
+            'hosting-saas-home', 'tech-company-integrated', 'enterprise-software-integrator',
+            'qiling-cloud-canvas', 'qiling-doc-ocr-converter', 'qiling-image-studio',
+            'qiling-ai-writing-studio', 'qiling-ai-multilingual-seo',
+        );
+        if ( in_array( $slug, $ai_tech_slugs, true ) || false !== strpos( $slug, 'ai' ) ) {
+            return 'ai_tech';
+        }
+
+        // 跨境出海与独立商城
+        $ecommerce_slugs = array(
+            'brand-dtc-store', 'foreign-trade-store', 'foreign-trade-b2b',
+            'cross-border-ecommerce-service', 'overseas-warehouse-supply-chain',
+            'fashion-brand', 'intimate-wellness', 'ecommerce-promo',
+            'luxury-watch', 'sneakers-footwear', 'leather-bags', 'fine-jewelry',
+        );
+        if ( in_array( $slug, $ecommerce_slugs, true ) || false !== strpos( $slug, 'trade' ) || false !== strpos( $slug, 'ecommerce' ) ) {
+            return 'ecommerce_trade';
+        }
+
+        // 实体制造、先进工业与新能源环保
+        $manufacturing_slugs = array(
+            'industrial-automation-robotics', 'semiconductor-electronics', 'solar-storage-equipment',
+            'ev-charging-station', 'water-treatment-environmental', 'energy-environment',
+            'manufacturing-factory', 'industrial-park', 'lab-instrument', 'medical-device',
+            'agriculture-food',
+        );
+        if ( in_array( $slug, $manufacturing_slugs, true ) ) {
+            return 'manufacturing_energy';
+        }
+
+        // 本地生活、到店预约与线下门店
+        $local_store_slugs = array(
+            'beauty-salon', 'auto-service', 'homestay', 'restaurant', 'gym-fitness',
+            'yoga-studio', 'pet', 'appliance-repair-service', 'qiling-housekeeping-official',
+            'qiling-recycling-official', 'wedding-photography', 'chain-store-official',
+            'local-service-official', 'real-estate-service', 'renovation-construction', 'travel',
+        );
+        if ( in_array( $slug, $local_store_slugs, true ) ) {
+            return 'local_store';
+        }
+
+        // 医疗健康与民生康养
+        $health_slugs = array(
+            'dental-clinic', 'healthcare-clinic', 'medical-beauty', 'psychological-counseling',
+            'senior-care-center', 'postpartum-care-center', 'wellness-center', 'health-supplements',
+        );
+        if ( in_array( $slug, $health_slugs, true ) ) {
+            return 'health_care';
+        }
+
+        // 专业服务与教育咨询
+        $professional_slugs = array(
+            'law-firm', 'accounting-tax-service', 'intellectual-property-service',
+            'finance-consulting', 'recruitment-hr-service', 'marketing-pr-agency',
+            'mcn-live-commerce', 'course-enrollment', 'early-childhood-education',
+            'vocational-training-school', 'study-abroad-immigration', 'architecture-design-studio',
+            'interior-soft-decoration', 'landscape-garden-design', 'conference-event-service',
+            'franchise-investment', 'property-management', 'logistics-supply-chain',
+            'government-public-service', 'nonprofit-organization',
+        );
+        if ( in_array( $slug, $professional_slugs, true ) ) {
+            return 'professional_service';
+        }
+
+        // 文娱传媒与启灵生态应用
+        $media_slugs = array(
+            'video-portal', 'video-ranking', 'game-studio', 'esports-team', 'esports-hotel',
+            'qiling-wallpaper-gallery', 'qiling-bbs-support-community', 'qiling-escrow-platform',
+            'qiling-freetask-platform', 'qiling-friends-matchmaking', 'qiling-cloud-storage-hosting',
+            'qiling-security-ops', 'personal-ip-home', 'event-exhibition',
+        );
+        if ( in_array( $slug, $media_slugs, true ) ) {
+            return 'media_entertainment';
+        }
+
+        return 'featured';
     }
 
     /**
@@ -683,9 +986,10 @@ class Template_Center_Admin {
      *
      * @param array<string,mixed> $template Template entry.
      * @param int                 $card_index Card index in the current result set.
+     * @param bool                $is_visible Initial visibility state.
      * @return void
      */
-	private function render_template_card( $template, $card_index = 0 ) {
+	private function render_template_card( $template, $card_index = 0, $is_visible = true ) {
 		$label = isset( $template['label'] ) ? (string) $template['label'] : '';
 		$template_file = isset( $template['template'] ) ? (string) $template['template'] : '';
         $template_variant = isset( $template['template_variant'] ) ? sanitize_key( (string) $template['template_variant'] ) : '';
@@ -702,8 +1006,21 @@ class Template_Center_Admin {
 		$defer_thumbnail = '' !== $thumbnail && $card_index >= 6;
 		$thumbnail_src = $defer_thumbnail ? 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' : $thumbnail;
 		$thumbnail_class = $defer_thumbnail ? ' qtc-thumb-lazy' : ' is-loaded';
+		$preview_url = \Developer_Starter\Core\Template_Preview_Service::get_preview_url( $template_file );
+
+        $scenario_group = isset( $template['scenario_group'] ) ? (string) $template['scenario_group'] : 'featured';
+        $category = isset( $template['category'] ) ? (string) $template['category'] : '';
+        $industry = isset( $template['industry'] ) ? (string) $template['industry'] : '';
+        $search_terms = mb_strtolower( $label . ' ' . $description . ' ' . $scenario . ' ' . $industry_label . ' ' . $category_label . ' ' . implode( ' ', $badges ) . ' ' . $template_file );
+        $style_attr = $is_visible ? '' : ' style="display: none;"';
 		?>
-		<article class="qtc-template-card<?php echo $usage_count > 0 ? ' is-used' : ' is-unused'; ?>">
+		<article class="qtc-template-card<?php echo $usage_count > 0 ? ' is-used' : ' is-unused'; ?>"
+                 data-scenario-group="<?php echo esc_attr( $scenario_group ); ?>"
+                 data-category="<?php echo esc_attr( $category ); ?>"
+                 data-industry="<?php echo esc_attr( $industry ); ?>"
+                 data-used="<?php echo $usage_count > 0 ? '1' : '0'; ?>"
+                 data-title="<?php echo esc_attr( mb_strtolower( $label ) ); ?>"
+                 data-search="<?php echo esc_attr( $search_terms ); ?>"<?php echo $style_attr; ?>>
 			<div class="qtc-card-thumb<?php echo '' === $thumbnail ? ' qtc-card-thumb-placeholder' : ''; ?><?php echo $defer_thumbnail ? ' is-deferred' : ''; ?>">
 				<?php if ( '' !== $thumbnail ) : ?>
 					<img
@@ -725,6 +1042,9 @@ class Template_Center_Admin {
 				<?php else : ?>
 					<span><?php echo esc_html( '' !== $category_label ? $category_label : __( '官方模板', 'qiling' ) ); ?></span>
 				<?php endif; ?>
+				<button type="button" class="qtc-thumb-preview-overlay qtc-preview-trigger" data-preview-url="<?php echo esc_url( $preview_url ); ?>" data-title="<?php echo esc_attr( $label ); ?>" data-category="<?php echo esc_attr( $category_label ); ?>" data-template="<?php echo esc_attr( $template_file ); ?>">
+					<span class="dashicons dashicons-visibility"></span> <span><?php esc_html_e( '实时预览', 'qiling' ); ?></span>
+				</button>
 			</div>
 			<div class="qtc-card-head">
 				<span class="qtc-source"><?php echo esc_html( $source_label ); ?></span>
@@ -827,11 +1147,20 @@ class Template_Center_Admin {
                     <input type="checkbox" name="template_localization_enable" value="1" />
                     <span><?php esc_html_e( '创建后生成对应语言页面', 'qiling' ); ?></span>
                 </label>
+                <label class="qtc-checkbox" style="font-weight: 600; color: #1d4ed8; background: #eff6ff; padding: 6px 10px; border-radius: 6px; border: 1px dashed #93c5fd; margin: 4px 0 8px 0; display: flex; align-items: center; gap: 6px;">
+                    <input type="checkbox" name="set_as_frontpage" value="1" checked />
+                    <span><?php esc_html_e( '🏠 直接设为网站首页并立即发布 (推荐新手建站)', 'qiling' ); ?></span>
+                </label>
                 <label class="qtc-checkbox" style="font-weight: 500; color: #1d2327;">
                     <input type="checkbox" name="generate_demo_data" value="1" checked />
                     <span><?php esc_html_e( '📦 自动导入配套行业演示数据 (可在模版中心一键彻底清空)', 'qiling' ); ?></span>
                 </label>
-                <button type="submit" class="button button-primary"><?php esc_html_e( '创建页面', 'qiling' ); ?></button>
+                <div class="qtc-card-form-actions">
+                    <button type="button" class="button button-secondary qtc-card-preview-btn qtc-preview-trigger" data-preview-url="<?php echo esc_url( $preview_url ); ?>" data-title="<?php echo esc_attr( $label ); ?>" data-category="<?php echo esc_attr( $category_label ); ?>" data-template="<?php echo esc_attr( $template_file ); ?>">
+                        <span class="dashicons dashicons-visibility"></span> <span><?php esc_html_e( '实时预览', 'qiling' ); ?></span>
+                    </button>
+                    <button type="submit" class="button button-primary"><?php esc_html_e( '创建页面', 'qiling' ); ?></button>
+                </div>
             </form>
         </article>
         <?php
@@ -1002,6 +1331,8 @@ class Template_Center_Admin {
             'templates/template-enterprise-software-integrator.php' => $this->meta( 'industry', 'enterprise_software_integrator', __( '企业软件/SI 集成商官网', 'qiling' ), __( '适合企业软件公司、SI 系统集成商、数字化转型服务商、ERP/CRM/OA 实施团队和数据中台服务商官网。', 'qiling' ), array( __( '企业软件', 'qiling' ), __( '系统集成', 'qiling' ) ), 728 ),
             'templates/template-ai-agent-enterprise.php' => $this->meta( 'industry', 'ai_agent_enterprise', __( '企业 AI Agent 官网', 'qiling' ), __( '适合企业 AI Agent 平台、智能助手、知识库问答、流程自动化和私有化大模型应用官网。', 'qiling' ), array( __( 'AI Agent', 'qiling' ), __( '企业智能体', 'qiling' ) ), 729 ),
             'templates/template-personal-ip-home.php' => $this->meta( 'personal', 'personal', __( '个人 IP 主页', 'qiling' ), __( '适合创始人、顾问、讲师、博主和自由职业个人品牌。', 'qiling' ), array( __( '个人品牌', 'qiling' ), __( '作品', 'qiling' ) ), 510 ),
+            'templates/template-brand-dtc-store.php' => $this->meta( 'conversion', 'ecommerce', __( '大品牌出海与DTC旗舰商城', 'qiling' ), __( '专为高端硬件、消费电子、大品牌与出海独立站打造的旗舰商城首页。融合品牌巨幕、机皇焦点展台、全系多分类商品矩阵、工艺深度展示与全球信任背书。', 'qiling' ), array( __( 'DTC', 'qiling' ), __( '大品牌', 'qiling' ), __( '出海商城', 'qiling' ) ), 120 ),
+            'templates/template-foreign-trade-store.php' => $this->meta( 'conversion', 'trade', __( '外贸企业与跨境独立站官网', 'qiling' ), __( '专为外贸制造企业、工贸一体出海及跨境独立站打造的高端官网商城模板。融合国际商务巨幕、出海合规资质、热销出口商品多分类矩阵、制造产能硬实力与在线询盘留言通道。', 'qiling' ), array( __( 'B2B & DTC', 'qiling' ), __( '外贸出海', 'qiling' ), __( '全球商贸', 'qiling' ) ), 125 ),
         );
     }
 
@@ -1572,7 +1903,8 @@ class Template_Center_Admin {
         <style>
             .wrap.qiling-template-center {
                 max-width: 1600px;
-                margin-right: 24px;
+                margin: 10px 20px 20px 2px;
+                box-sizing: border-box;
             }
             .qiling-template-center *,
             .qiling-template-center *::before,
@@ -1582,6 +1914,36 @@ class Template_Center_Admin {
             .qiling-template-center .description {
                 max-width: 980px;
                 line-height: 1.7;
+            }
+            .qtc-language-notice {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                margin: 16px 0 20px;
+                padding: 14px 16px;
+                border: 1px solid #fde68a;
+                border-left: 4px solid #f59e0b;
+                border-radius: 8px;
+                background: #fffbeb;
+                color: #92400e;
+            }
+            .qtc-language-notice__icon {
+                font-size: 20px;
+                line-height: 1.2;
+                flex-shrink: 0;
+            }
+            .qtc-language-notice__body strong {
+                display: block;
+                margin-bottom: 4px;
+                color: #78350f;
+                font-size: 14px;
+                font-weight: 700;
+            }
+            .qtc-language-notice__body p {
+                margin: 0;
+                color: #92400e;
+                font-size: 13px;
+                line-height: 1.6;
             }
             .qtc-summary-grid {
                 display: grid;
@@ -1605,18 +1967,415 @@ class Template_Center_Admin {
             .qtc-summary-card span {
                 color: #646970;
             }
-            .qtc-filter-bar {
+            /* 页面头部与操作区 */
+            .qtc-page-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 16px;
+                margin: 16px 0 20px;
+                padding-bottom: 16px;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            .qtc-header-left {
+                flex: 1 1 auto;
+                min-width: 0;
+            }
+            .qtc-page-title {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin: 0 0 6px !important;
+                font-size: 24px !important;
+                font-weight: 700 !important;
+                color: #0f172a;
+            }
+            .qtc-title-badge {
+                display: inline-flex;
+                align-items: center;
+                padding: 3px 10px;
+                background: #eff6ff;
+                border: 1px solid #bfdbfe;
+                color: #1d4ed8;
+                border-radius: 999px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .qtc-page-desc {
+                margin: 0;
+                color: #64748b;
+                font-size: 13px;
+                line-height: 1.6;
+            }
+            .qtc-header-actions {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                margin-left: auto;
+            }
+            .qtc-demo-badge-wrap {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 0 10px;
+                height: 38px;
+                background: #fffbeb;
+                border: 1px solid #fde68a;
+                border-radius: 8px;
+                box-sizing: border-box;
+            }
+            .qtc-demo-pill {
+                font-size: 12px;
+                font-weight: 600;
+                color: #b45309;
+            }
+            .qtc-clear-demo-form {
+                margin: 0;
+            }
+            .qtc-clear-demo-btn {
+                background: #fef2f2 !important;
+                border-color: #fca5a5 !important;
+                color: #dc2626 !important;
+                font-size: 11px !important;
+                padding: 1px 8px !important;
+                line-height: 1.6 !important;
+                height: auto !important;
+                border-radius: 4px !important;
+                cursor: pointer;
+            }
+            .wp-core-ui .qtc-toggle-dashboard-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 8px !important;
+                height: 38px !important;
+                line-height: 1 !important;
+                padding: 0 16px !important;
+                background: #ffffff !important;
+                border: 1px solid #cbd5e1 !important;
+                border-radius: 8px !important;
+                color: #1e293b !important;
+                font-size: 13px !important;
+                font-weight: 600 !important;
+                vertical-align: middle !important;
+                box-sizing: border-box !important;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+                cursor: pointer !important;
+                transition: all 0.2s ease !important;
+            }
+            .wp-core-ui .qtc-toggle-dashboard-btn:hover {
+                background: #f8fafc !important;
+                border-color: #94a3b8 !important;
+                color: #0f172a !important;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+            }
+            .wp-core-ui .qtc-toggle-dashboard-btn .dashicons {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 18px !important;
+                height: 18px !important;
+                font-size: 18px !important;
+                line-height: 18px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                vertical-align: middle !important;
+                color: #2563eb !important;
+            }
+            .wp-core-ui .qtc-toggle-dashboard-btn .qtc-toggle-text {
+                display: inline-block !important;
+                line-height: 18px !important;
+                height: 18px !important;
+                vertical-align: middle !important;
+                color: #1e293b !important;
+            }
+            .wp-core-ui .qtc-toggle-dashboard-btn .qtc-toggle-icon {
+                width: 14px !important;
+                height: 14px !important;
+                font-size: 14px !important;
+                line-height: 14px !important;
+                margin-left: 2px !important;
+                vertical-align: middle !important;
+                color: #64748b !important;
+                transition: transform 0.2s ease !important;
+            }
+            .wp-core-ui .qtc-toggle-dashboard-btn.is-expanded {
+                background: #eff6ff !important;
+                border-color: #93c5fd !important;
+                color: #1d4ed8 !important;
+            }
+            .wp-core-ui .qtc-toggle-dashboard-btn.is-expanded .qtc-toggle-icon {
+                transform: rotate(180deg) !important;
+            }
+
+            /* 折叠收纳仪表盘 */
+            .qtc-admin-dashboard {
+                margin-bottom: 24px;
+                padding: 16px 20px;
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                animation: qtcFadeIn 0.25s ease;
+            }
+            @keyframes qtcFadeIn {
+                from { opacity: 0; transform: translateY(-6px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* 场景一级导航 Tabs */
+            .qtc-scenario-nav {
+                margin: 0 0 16px;
+            }
+            .qtc-scenario-tabs {
                 display: flex;
                 flex-wrap: wrap;
-                align-items: end;
-                gap: 12px;
-                margin: 16px 0;
-                padding: 16px;
-                background: #fff;
-                border: 1px solid #dcdcde;
-                border-radius: 8px;
+                gap: 8px;
             }
-            .qtc-filter-bar label,
+            .qtc-tab-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 6px !important;
+                height: 36px !important;
+                line-height: 1 !important;
+                padding: 0 14px !important;
+                background: #ffffff !important;
+                border: 1px solid #e2e8f0 !important;
+                border-radius: 20px !important;
+                color: #334155 !important;
+                font-size: 13px !important;
+                font-weight: 600 !important;
+                cursor: pointer !important;
+                outline: none !important;
+                box-sizing: border-box !important;
+                vertical-align: middle !important;
+                transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+            }
+            .qtc-tab-btn:hover {
+                background: #f8fafc !important;
+                border-color: #cbd5e1 !important;
+                color: #0f172a !important;
+                transform: translateY(-1px) !important;
+            }
+            .qtc-tab-btn .dashicons {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 16px !important;
+                width: 16px !important;
+                height: 16px !important;
+                line-height: 16px !important;
+                vertical-align: middle !important;
+                color: #64748b !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                transition: color 0.18s ease !important;
+            }
+            .qtc-tab-btn:hover .dashicons {
+                color: #2563eb !important;
+            }
+            .qtc-tab-btn .qtc-tab-label {
+                display: inline-block !important;
+                line-height: 16px !important;
+                height: 16px !important;
+                vertical-align: middle !important;
+            }
+            .qtc-tab-btn .qtc-tab-count {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                min-width: 18px !important;
+                height: 18px !important;
+                padding: 0 6px !important;
+                border-radius: 10px !important;
+                background: #f1f5f9 !important;
+                color: #64748b !important;
+                font-size: 11px !important;
+                font-weight: 700 !important;
+                line-height: 1 !important;
+                vertical-align: middle !important;
+            }
+            .qtc-tab-btn.is-active {
+                background: #2563eb !important;
+                border-color: #2563eb !important;
+                color: #ffffff !important;
+                box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3) !important;
+                transform: translateY(-1px) !important;
+            }
+            .qtc-tab-btn.is-active .dashicons {
+                color: #ffffff !important;
+            }
+            .qtc-tab-btn.is-active .qtc-tab-count {
+                background: rgba(255, 255, 255, 0.25) !important;
+                color: #ffffff !important;
+            }
+
+            /* 即时搜索与过滤工具栏 */
+            .qtc-toolbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 12px 16px;
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 10px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+            }
+            .qtc-toolbar-search {
+                position: relative;
+                flex: 1 1 360px;
+                max-width: 580px;
+            }
+            .qtc-search-icon {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #94a3b8;
+                font-size: 18px;
+                pointer-events: none;
+            }
+            .qtc-instant-search-input {
+                width: 100% !important;
+                height: 38px !important;
+                padding: 0 32px 0 34px !important;
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                border-radius: 8px !important;
+                font-size: 13px !important;
+                color: #0f172a !important;
+                transition: all 0.18s ease !important;
+            }
+            .qtc-instant-search-input:focus {
+                background: #ffffff !important;
+                border-color: #2563eb !important;
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+                outline: none !important;
+            }
+            .qtc-clear-search-btn {
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                border: none;
+                background: #cbd5e1;
+                color: #475569;
+                border-radius: 50%;
+                font-size: 14px;
+                line-height: 1;
+                cursor: pointer;
+                transition: all 0.15s ease;
+            }
+            .qtc-clear-search-btn:hover {
+                background: #94a3b8;
+                color: #ffffff;
+            }
+            .qtc-toolbar-filters {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+            .qtc-status-filter-pills {
+                display: inline-flex;
+                padding: 3px;
+                background: #f1f5f9;
+                border-radius: 8px;
+                gap: 2px;
+            }
+            .qtc-pill-btn {
+                border: none;
+                background: transparent;
+                padding: 5px 12px;
+                border-radius: 6px;
+                font-size: 12px;
+                font-weight: 600;
+                color: #64748b;
+                cursor: pointer;
+                transition: all 0.15s ease;
+            }
+            .qtc-pill-btn:hover {
+                color: #0f172a;
+            }
+            .qtc-pill-btn.is-active {
+                background: #ffffff;
+                color: #0f172a;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            }
+            .qtc-toolbar-counter {
+                color: #64748b;
+                font-size: 13px;
+            }
+            .qtc-toolbar-counter strong {
+                color: #2563eb;
+                font-weight: 700;
+            }
+
+            /* 热门场景快捷标签 */
+            .qtc-hot-tags-bar {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin: 12px 0 18px;
+                padding: 0 4px;
+            }
+            .qtc-hot-tags-label {
+                font-size: 12px;
+                color: #64748b;
+                font-weight: 600;
+            }
+            .qtc-tag-pill {
+                border: 1px dashed #cbd5e1;
+                background: #ffffff;
+                color: #475569;
+                font-size: 12px;
+                padding: 3px 10px;
+                border-radius: 12px;
+                cursor: pointer;
+                transition: all 0.15s ease;
+            }
+            .qtc-tag-pill:hover {
+                border-color: #2563eb;
+                background: #eff6ff;
+                color: #1d4ed8;
+            }
+
+            /* 空状态提示 */
+            .qtc-no-results {
+                padding: 60px 20px;
+                text-align: center;
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                margin: 20px 0;
+            }
+            .qtc-no-results-icon {
+                font-size: 40px;
+                margin-bottom: 12px;
+            }
+            .qtc-no-results h3 {
+                margin: 0 0 8px;
+                font-size: 18px;
+                color: #0f172a;
+            }
+            .qtc-no-results p {
+                margin: 0 0 18px;
+                color: #64748b;
+                font-size: 14px;
+            }
+
             .qtc-create-form label {
                 display: grid;
                 gap: 5px;
@@ -1624,23 +2383,11 @@ class Template_Center_Admin {
                 color: #50575e;
                 font-size: 12px;
             }
-            .qtc-filter-bar label:not(.qtc-search) {
-                flex: 0 1 190px;
-            }
-            .qtc-filter-bar .qtc-search {
-                flex: 1 1 280px;
-                min-width: 220px;
-            }
-            .qtc-filter-bar select,
-            .qtc-filter-bar input[type="search"],
             .qtc-create-form input,
             .qtc-create-form select {
                 width: 100%;
                 max-width: 100%;
                 min-width: 0;
-            }
-            .qtc-filter-bar .button {
-                min-height: 32px;
             }
             .qtc-admin-note {
                 margin: 16px 0;
@@ -2084,6 +2831,269 @@ class Template_Center_Admin {
                     min-width: 0;
                 }
             }
+
+            /* 模板中心卡片缩略图悬浮预览遮罩 */
+            .qtc-card-thumb {
+                position: relative;
+                overflow: hidden;
+            }
+            .qtc-thumb-preview-overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(15, 23, 42, 0.76);
+                backdrop-filter: blur(4px);
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                font-size: 14px;
+                font-weight: 700;
+                opacity: 0;
+                border: none;
+                cursor: pointer;
+                transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 3;
+            }
+            .qtc-card-thumb:hover .qtc-thumb-preview-overlay {
+                opacity: 1;
+            }
+            .wp-core-ui .qtc-card-form-actions {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 8px !important;
+                align-items: center !important;
+                margin-top: 12px !important;
+            }
+            .wp-core-ui .qtc-card-form-actions .button {
+                flex: 1 1 50% !important;
+                min-width: 0 !important;
+                display: inline-flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 6px !important;
+                height: 36px !important;
+                line-height: 1 !important;
+                padding: 0 8px !important;
+                font-size: 13px !important;
+                font-weight: 600 !important;
+                white-space: nowrap !important;
+                vertical-align: middle !important;
+                box-sizing: border-box !important;
+            }
+            .wp-core-ui .qtc-card-form-actions .button .dashicons {
+                display: inline-block !important;
+                width: 16px !important;
+                height: 16px !important;
+                font-size: 16px !important;
+                line-height: 16px !important;
+                vertical-align: middle !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                flex-shrink: 0 !important;
+            }
+            .wp-core-ui .qtc-card-form-actions .button span {
+                display: inline-block !important;
+                vertical-align: middle !important;
+                line-height: 1 !important;
+                white-space: nowrap !important;
+            }
+            .qtc-card-preview-btn {
+                color: #1e40af !important;
+                border-color: #bfdbfe !important;
+                background: #eff6ff !important;
+            }
+            .qtc-card-preview-btn:hover {
+                background: #dbeafe !important;
+                border-color: #93c5fd !important;
+                color: #1d4ed8 !important;
+            }
+
+            /* 全屏虚拟预览模态框 */
+            .qtc-preview-modal {
+                position: fixed;
+                inset: 0;
+                z-index: 100050;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .qtc-preview-backdrop {
+                position: absolute;
+                inset: 0;
+                background: rgba(15, 23, 42, 0.85);
+                backdrop-filter: blur(12px);
+            }
+            .qtc-preview-dialog {
+                position: relative;
+                z-index: 1;
+                width: calc(100vw - 48px);
+                height: calc(100vh - 48px);
+                max-width: 1720px;
+                background: #0f172a;
+                border-radius: 16px;
+                box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .qtc-preview-header {
+                height: 60px;
+                background: #1e293b;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px;
+                flex-shrink: 0;
+            }
+            .qtc-preview-header-meta {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .qtc-preview-badge {
+                background: rgba(37, 99, 235, 0.25);
+                color: #60a5fa;
+                border: 1px solid rgba(96, 165, 250, 0.3);
+                padding: 3px 10px;
+                border-radius: 999px;
+                font-size: 11px;
+                font-weight: 700;
+            }
+            .qtc-preview-title {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 700;
+                color: #ffffff;
+            }
+            .qtc-preview-category {
+                font-size: 12px;
+                color: #94a3b8;
+                background: rgba(255, 255, 255, 0.06);
+                padding: 2px 8px;
+                border-radius: 4px;
+            }
+            .qtc-preview-device-switcher {
+                display: flex;
+                align-items: center;
+                background: rgba(15, 23, 42, 0.6);
+                padding: 3px;
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                gap: 4px;
+            }
+            .qtc-device-btn {
+                background: transparent;
+                border: none;
+                color: #94a3b8;
+                padding: 5px 12px;
+                border-radius: 6px;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: all 0.15s ease;
+            }
+            .qtc-device-btn:hover {
+                color: #ffffff;
+                background: rgba(255, 255, 255, 0.06);
+            }
+            .qtc-device-btn.is-active {
+                background: #2563eb;
+                color: #ffffff;
+                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+            }
+            .qtc-device-btn .dashicons {
+                font-size: 16px;
+                width: 16px;
+                height: 16px;
+            }
+            .qtc-preview-header-actions {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .qtc-preview-close-btn {
+                background: rgba(255, 255, 255, 0.08);
+                border: none;
+                color: #94a3b8;
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 16px;
+                transition: all 0.15s ease;
+            }
+            .qtc-preview-close-btn:hover {
+                background: rgba(239, 68, 68, 0.2);
+                color: #f87171;
+            }
+            .qtc-preview-body {
+                flex: 1;
+                position: relative;
+                background: #090d16;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                padding: 16px;
+            }
+            .qtc-preview-loading {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: #090d16;
+                z-index: 2;
+                color: #94a3b8;
+                gap: 16px;
+            }
+            .qtc-preview-spinner {
+                width: 44px;
+                height: 44px;
+                border: 3px solid rgba(37, 99, 235, 0.2);
+                border-top-color: #38bdf8;
+                border-radius: 50%;
+                animation: qtcSpin 0.8s linear infinite;
+            }
+            @keyframes qtcSpin {
+                to { transform: rotate(360deg); }
+            }
+            .qtc-preview-viewport {
+                height: 100%;
+                background: #ffffff;
+                transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.3s ease, box-shadow 0.3s ease;
+                overflow: hidden;
+            }
+            .qtc-preview-viewport.is-desktop {
+                width: 100%;
+                border-radius: 8px;
+            }
+            .qtc-preview-viewport.is-tablet {
+                width: 768px;
+                border-radius: 16px;
+                box-shadow: 0 0 0 10px #1e293b, 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            }
+            .qtc-preview-viewport.is-mobile {
+                width: 375px;
+                border-radius: 28px;
+                box-shadow: 0 0 0 10px #1e293b, 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            }
+            .qtc-preview-viewport iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+            }
         </style>
         <?php
     }
@@ -2093,6 +3103,62 @@ class Template_Center_Admin {
      *
      * @return void
      */
+    /**
+     * 渲染免存库模板实时预览模态框。
+     *
+     * @return void
+     */
+    private function render_preview_modal() {
+        ?>
+        <div id="qtc-preview-modal" class="qtc-preview-modal" style="display: none;" aria-hidden="true">
+            <div class="qtc-preview-backdrop"></div>
+            <div class="qtc-preview-dialog">
+                <header class="qtc-preview-header">
+                    <div class="qtc-preview-header-meta">
+                        <span class="qtc-preview-badge">✨ <?php esc_html_e( '模板实时虚拟预览', 'qiling' ); ?></span>
+                        <h3 id="qtc-preview-title" class="qtc-preview-title"></h3>
+                        <span id="qtc-preview-category" class="qtc-preview-category"></span>
+                    </div>
+
+                    <div class="qtc-preview-device-switcher">
+                        <button type="button" class="qtc-device-btn is-active" data-device="desktop" title="<?php esc_attr_e( '桌面宽幅视口', 'qiling' ); ?>">
+                            <span class="dashicons dashicons-desktop"></span> <span><?php esc_html_e( '桌面端', 'qiling' ); ?></span>
+                        </button>
+                        <button type="button" class="qtc-device-btn" data-device="tablet" title="<?php esc_attr_e( '平板视口 (768px)', 'qiling' ); ?>">
+                            <span class="dashicons dashicons-tablet"></span> <span><?php esc_html_e( '平板端', 'qiling' ); ?></span>
+                        </button>
+                        <button type="button" class="qtc-device-btn" data-device="mobile" title="<?php esc_attr_e( '手机视口 (375px)', 'qiling' ); ?>">
+                            <span class="dashicons dashicons-smartphone"></span> <span><?php esc_html_e( '手机端', 'qiling' ); ?></span>
+                        </button>
+                    </div>
+
+                    <div class="qtc-preview-header-actions">
+                        <a id="qtc-preview-newtab" href="#" target="_blank" rel="noopener noreferrer" class="button button-secondary" title="<?php esc_attr_e( '在新标签页全屏打开', 'qiling' ); ?>">
+                            <span class="dashicons dashicons-external"></span> <?php esc_html_e( '新窗口打开', 'qiling' ); ?>
+                        </a>
+                        <button type="button" id="qtc-preview-use-btn" class="button button-primary">
+                            ✨ <?php esc_html_e( '使用此模板', 'qiling' ); ?>
+                        </button>
+                        <button type="button" id="qtc-preview-close" class="qtc-preview-close-btn" title="<?php esc_attr_e( '关闭 (Esc)', 'qiling' ); ?>">
+                            ✕
+                        </button>
+                    </div>
+                </header>
+
+                <div class="qtc-preview-body">
+                    <div id="qtc-preview-loading" class="qtc-preview-loading">
+                        <div class="qtc-preview-spinner"></div>
+                        <p><?php esc_html_e( '正在从官方页面包实时虚拟渲染，请稍候...', 'qiling' ); ?></p>
+                    </div>
+                    <div id="qtc-preview-viewport" class="qtc-preview-viewport is-desktop">
+                        <iframe id="qtc-preview-iframe" src="" frameborder="0" title="Template Preview Frame"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+
     private function render_scripts() {
         ?>
         <script>
@@ -2145,6 +3211,332 @@ class Template_Center_Admin {
                 images.forEach(loadImage);
             }, 1200);
         }());
+
+        // 模板中心分类、即时检索与折叠面板控制器
+        (function() {
+            var tabs = document.querySelectorAll('.qtc-tab-btn');
+            var statusPills = document.querySelectorAll('.qtc-status-filter-pills .qtc-pill-btn');
+            var searchInput = document.getElementById('qtc-instant-search');
+            var clearSearchBtn = document.getElementById('qtc-clear-search');
+            var tagPills = document.querySelectorAll('.qtc-tag-pill');
+            var cards = Array.prototype.slice.call(document.querySelectorAll('.qtc-template-card'));
+            var countEl = document.getElementById('qtc-visible-count');
+            var noResultsEl = document.getElementById('qtc-no-results');
+            var resetBtn = document.getElementById('qtc-reset-filters');
+            var toggleDashboardBtn = document.getElementById('qtc-toggle-dashboard');
+            var dashboardEl = document.getElementById('qtc-admin-dashboard');
+
+            var currentGroup = 'featured';
+            var currentStatus = 'all';
+            var currentKeyword = '';
+
+            // 读取 URL 查询参数或默认值
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('scenario_group')) {
+                currentGroup = urlParams.get('scenario_group');
+            } else if (urlParams.get('s') || urlParams.get('template_category') || urlParams.get('template_industry')) {
+                currentGroup = 'all';
+            }
+
+            if (urlParams.get('s')) {
+                currentKeyword = urlParams.get('s').toLowerCase().trim();
+                if (searchInput) searchInput.value = currentKeyword;
+            }
+
+            // 折叠面板切换逻辑
+            if (toggleDashboardBtn && dashboardEl) {
+                var isExpanded = false;
+                try {
+                    isExpanded = localStorage.getItem('qtc_dashboard_expanded') === '1';
+                } catch(e) {}
+
+                function setDashboardState(expanded) {
+                    dashboardEl.style.display = expanded ? 'block' : 'none';
+                    toggleDashboardBtn.classList.toggle('is-expanded', expanded);
+                    toggleDashboardBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                    var icon = toggleDashboardBtn.querySelector('.qtc-toggle-icon');
+                    if (icon) {
+                        icon.className = expanded ? 'dashicons dashicons-arrow-up-alt2 qtc-toggle-icon' : 'dashicons dashicons-arrow-down-alt2 qtc-toggle-icon';
+                    }
+                    try {
+                        localStorage.setItem('qtc_dashboard_expanded', expanded ? '1' : '0');
+                    } catch(e) {}
+                }
+
+                if (isExpanded) {
+                    setDashboardState(true);
+                }
+
+                toggleDashboardBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var isOpen = dashboardEl.style.display !== 'none';
+                    setDashboardState(!isOpen);
+                });
+            }
+
+            // 核心卡片毫秒级过滤渲染
+            function filterCards() {
+                var visibleCount = 0;
+                var kw = currentKeyword.toLowerCase().trim();
+
+                if (clearSearchBtn) {
+                    clearSearchBtn.style.display = kw ? 'inline-flex' : 'none';
+                }
+
+                cards.forEach(function(card) {
+                    var cardGroup = card.getAttribute('data-scenario-group');
+                    var cardUsed = card.getAttribute('data-used');
+                    var cardSearch = (card.getAttribute('data-search') || '').toLowerCase();
+
+                    var matchGroup = (currentGroup === 'all' || cardGroup === currentGroup);
+                    var matchStatus = (currentStatus === 'all') ||
+                                      (currentStatus === 'used' && cardUsed === '1') ||
+                                      (currentStatus === 'unused' && cardUsed === '0');
+                    var matchKeyword = true;
+
+                    if (kw) {
+                        // 有搜索词时在当前卡片中全文检索
+                        matchKeyword = cardSearch.indexOf(kw) !== -1;
+                    }
+
+                    if (matchGroup && matchStatus && matchKeyword) {
+                        card.style.display = '';
+                        visibleCount++;
+
+                        // 立即激活刚刚变为可见的延迟加载图片
+                        var lazyImg = card.querySelector('img[data-qtc-src]');
+                        if (lazyImg) {
+                            var src = lazyImg.getAttribute('data-qtc-src');
+                            if (src) {
+                                lazyImg.removeAttribute('data-qtc-src');
+                                lazyImg.src = src;
+                                lazyImg.classList.add('is-loaded');
+                            }
+                        }
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (countEl) countEl.textContent = visibleCount;
+                if (noResultsEl) noResultsEl.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+
+            // Tabs 切换事件
+            tabs.forEach(function(tab) {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    tabs.forEach(function(t) { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+                    tab.classList.add('is-active');
+                    tab.setAttribute('aria-selected', 'true');
+                    currentGroup = tab.getAttribute('data-group') || 'all';
+                    filterCards();
+                });
+            });
+
+            // 使用状态筛选胶囊事件
+            statusPills.forEach(function(pill) {
+                pill.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    statusPills.forEach(function(p) { p.classList.remove('is-active'); });
+                    pill.classList.add('is-active');
+                    currentStatus = pill.getAttribute('data-status') || 'all';
+                    filterCards();
+                });
+            });
+
+            // 即时防抖搜索输入事件
+            var searchTimer = null;
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    clearTimeout(searchTimer);
+                    searchTimer = setTimeout(function() {
+                        currentKeyword = searchInput.value;
+                        // 若用户在特定分类下搜索未找到结果，自动切到全部分类以便全局匹配
+                        filterCards();
+                    }, 120);
+                });
+
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        searchInput.value = '';
+                        currentKeyword = '';
+                        filterCards();
+                    }
+                });
+            }
+
+            // 清空搜索按钮
+            if (clearSearchBtn) {
+                clearSearchBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (searchInput) {
+                        searchInput.value = '';
+                        searchInput.focus();
+                    }
+                    currentKeyword = '';
+                    filterCards();
+                });
+            }
+
+            // 热门推荐标签点击
+            tagPills.forEach(function(tag) {
+                tag.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var kw = tag.getAttribute('data-keyword') || '';
+                    if (searchInput) {
+                        searchInput.value = kw;
+                    }
+                    currentKeyword = kw;
+
+                    // 自动切换至“全部”大类进行全局搜索
+                    tabs.forEach(function(t) {
+                        var isAll = t.getAttribute('data-group') === 'all';
+                        t.classList.toggle('is-active', isAll);
+                        t.setAttribute('aria-selected', isAll ? 'true' : 'false');
+                    });
+                    currentGroup = 'all';
+
+                    filterCards();
+                });
+            });
+
+            // 空状态重置按钮
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentGroup = 'featured';
+                    currentStatus = 'all';
+                    currentKeyword = '';
+                    if (searchInput) searchInput.value = '';
+
+                    tabs.forEach(function(t) {
+                        var isFeat = t.getAttribute('data-group') === 'featured';
+                        t.classList.toggle('is-active', isFeat);
+                        t.setAttribute('aria-selected', isFeat ? 'true' : 'false');
+                    });
+
+                    statusPills.forEach(function(p) {
+                        p.classList.toggle('is-active', p.getAttribute('data-status') === 'all');
+                    });
+
+                    filterCards();
+                });
+            }
+
+            // 初始状态同步与激活
+            tabs.forEach(function(t) {
+                var isMatch = t.getAttribute('data-group') === currentGroup;
+                t.classList.toggle('is-active', isMatch);
+                t.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+            });
+            filterCards();
+        })();
+
+        // 模板中心免存库实时虚拟预览控制器
+        (function() {
+            var modal = document.getElementById('qtc-preview-modal');
+            if (!modal) return;
+
+            var iframe = document.getElementById('qtc-preview-iframe');
+            var viewport = document.getElementById('qtc-preview-viewport');
+            var loading = document.getElementById('qtc-preview-loading');
+            var titleEl = document.getElementById('qtc-preview-title');
+            var catEl = document.getElementById('qtc-preview-category');
+            var newTabBtn = document.getElementById('qtc-preview-newtab');
+            var useBtn = document.getElementById('qtc-preview-use-btn');
+            var closeBtn = document.getElementById('qtc-preview-close');
+            var backdrop = modal.querySelector('.qtc-preview-backdrop');
+            var deviceBtns = modal.querySelectorAll('.qtc-device-btn');
+            var currentTemplate = '';
+
+            function openPreview(btn) {
+                var url = btn.getAttribute('data-preview-url');
+                var title = btn.getAttribute('data-title') || '';
+                var category = btn.getAttribute('data-category') || '';
+                currentTemplate = btn.getAttribute('data-template') || '';
+
+                if (!url) return;
+
+                titleEl.textContent = title;
+                catEl.textContent = category;
+                newTabBtn.href = url;
+
+                // 呈现加载态
+                loading.style.display = 'flex';
+
+                var hideLoading = function() {
+                    loading.style.display = 'none';
+                };
+
+                // 核心修复：必须在设置 src 之前绑定 load 与 error 事件
+                iframe.onload = hideLoading;
+                iframe.onerror = hideLoading;
+
+                // 超时兜底：2.5 秒无论网络快慢必然隐藏遮罩，杜绝死锁转圈
+                if (window.qtcPreviewTimer) {
+                    clearTimeout(window.qtcPreviewTimer);
+                }
+                window.qtcPreviewTimer = setTimeout(hideLoading, 2500);
+
+                iframe.src = url;
+
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePreview() {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+                iframe.src = '';
+                document.body.style.overflow = '';
+            }
+
+            document.addEventListener('click', function(e) {
+                var trigger = e.target.closest('.qtc-preview-trigger');
+                if (trigger) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openPreview(trigger);
+                }
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closePreview);
+            if (backdrop) backdrop.addEventListener('click', closePreview);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display !== 'none') {
+                    closePreview();
+                }
+            });
+
+            deviceBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    deviceBtns.forEach(function(b) { b.classList.remove('is-active'); });
+                    btn.classList.add('is-active');
+                    var device = btn.getAttribute('data-device');
+                    viewport.className = 'qtc-preview-viewport is-' + device;
+                });
+            });
+
+            if (useBtn) {
+                useBtn.addEventListener('click', function() {
+                    closePreview();
+                    if (!currentTemplate) return;
+                    var inputEl = document.querySelector('input[name="template"][value="' + currentTemplate + '"]');
+                    if (inputEl && inputEl.closest('form')) {
+                        var form = inputEl.closest('form');
+                        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        var titleInput = form.querySelector('input[name="page_title"]');
+                        if (titleInput) {
+                            titleInput.focus();
+                            titleInput.select();
+                        }
+                    }
+                });
+            }
+        })();
         </script>
         <?php
     }

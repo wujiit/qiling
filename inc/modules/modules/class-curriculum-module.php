@@ -117,7 +117,8 @@ class Curriculum_Module extends Module_Base {
         $badge_bg = str_replace( array( ';', '{', '}' ), '', $badge_bg );
         $items = isset( $data['curriculum_items'] ) ? $data['curriculum_items'] : array();
         
-        $style_vars = "background-color: {$bg_color};";
+        $bg_prop = strpos( $bg_color, 'gradient' ) !== false ? 'background' : 'background-color';
+        $style_vars = "{$bg_prop}: {$bg_color};";
 
         $style_vars .= "--curr-primary: {$primary_color};";
         if ( '' !== $badge_bg ) {

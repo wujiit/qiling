@@ -5274,12 +5274,18 @@ html.dark-mode .module-resume-hero.style-card .rh-card-fact-label {
 }
 
 .module-brand-banner-pro .bbp-btn-primary {
-  background: var(--bbp-primary-btn-bg, var(--bbp-primary-btn-default-bg));
-  color: var(--bbp-primary-btn-text, var(--bbp-primary-btn-default-text));
-  border-color: var(
-    --bbp-primary-btn-border,
-    var(--bbp-primary-btn-default-border)
-  );
+  background: var(--bbp-primary-btn-bg, var(--color-primary, #059669));
+  color: var(--bbp-primary-btn-text, var(--color-text-inverse, #ffffff));
+  border: 1px solid var(--bbp-primary-btn-border, var(--color-primary, #059669));
+}
+.module-brand-banner-pro .bbp-btn-primary:hover {
+  background: var(--bbp-primary-btn-hover-bg, var(--color-primary-hover, #047857));
+  color: var(--bbp-primary-btn-hover-text, var(--color-text-inverse, #ffffff));
+}
+.module-brand-banner-pro .bbp-btn-light {
+  background: var(--bbp-light-btn-bg, var(--bbp-light-btn-default-bg, #ffffff));
+  color: var(--bbp-light-btn-text, var(--bbp-light-btn-default-text, var(--color-primary, #0f172a)));
+  border: 1.5px solid var(--bbp-light-btn-border, var(--bbp-light-btn-default-border, rgba(var(--color-primary-rgb, 5, 150, 105), 0.35)));
 }
 
 .module-brand-banner-pro .bbp-btn-light {

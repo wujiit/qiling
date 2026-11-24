@@ -136,8 +136,8 @@
 .qiling-module-scope-fullscreen_video .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-fullscreen_video /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-fullscreen_video .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-fullscreen_video .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-fullscreen_video .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-fullscreen_video /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-fullscreen_video /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-fullscreen_video /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-fullscreen_video /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-fullscreen_video .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-fullscreen_video .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-fullscreen_video .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-fullscreen_video .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-fullscreen_video /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -502,56 +512,40 @@
   width: 12px;
   height: 12px;
   background: var(--color-surface);
-}.qiling-module-scope-fullscreen_video /* 响应式 */
-@media (max-width: 768px) {
-  .fsv-title {
+}/* 响应式 */
+@media (max-width: 768px){.qiling-module-scope-fullscreen_video .fsv-title {
     font-size: var(--qiling-text-rem-3);
-  }
-
-  .fsv-subtitle {
+  }.qiling-module-scope-fullscreen_video .fsv-subtitle {
     font-size: var(--qiling-text-rem-1);
-  }
-
-  .fsv-controls {
+  }.qiling-module-scope-fullscreen_video .fsv-controls {
     top: 20px;
     right: 20px;
-  }
-
-  .fsv-bottom-nav {
+  }.qiling-module-scope-fullscreen_video .fsv-bottom-nav {
     width: 90%;
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 20px;
     bottom: 30px;
-  }
-
-  .fsv-nav-link {
+  }.qiling-module-scope-fullscreen_video .fsv-nav-link {
     padding: var(--qiling-space-10) var(--qiling-space-15);
     font-size: var(--qiling-text-rem-0p85);
   }
-}.qiling-module-scope-fullscreen_video /* 全屏视频首屏：移动端控制按钮下移，避免压住顶部菜单操作区 */
-@media (max-width: 992px) {
-  .module-fullscreen-video .fsv-controls {
+}/* 全屏视频首屏：移动端控制按钮下移，避免压住顶部菜单操作区 */
+@media (max-width: 992px){.qiling-module-scope-fullscreen_video .module-fullscreen-video .fsv-controls {
     top: calc(env(safe-area-inset-top, 0px) + 76px);
     right: calc(env(safe-area-inset-right, 0px) + 14px);
     gap: var(--qiling-space-10);
-  }
-
-  .module-fullscreen-video .fsv-ctrl-btn {
+  }.qiling-module-scope-fullscreen_video .module-fullscreen-video .fsv-ctrl-btn {
     width: 36px;
     height: 36px;
     font-size: var(--qiling-text-16);
-  }
-
-  body.page-template-template-video-hero
+  }.qiling-module-scope-fullscreen_video body.page-template-template-video-hero
     .module-fullscreen-video
     .fsv-controls {
     top: calc(env(safe-area-inset-top, 0px) + 76px);
     right: calc(env(safe-area-inset-right, 0px) + 14px);
     gap: var(--qiling-space-10);
-  }
-
-  body.page-template-template-video-hero
+  }.qiling-module-scope-fullscreen_video body.page-template-template-video-hero
     .module-fullscreen-video
     .fsv-ctrl-btn {
     width: 36px;

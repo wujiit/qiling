@@ -43,208 +43,202 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "glow",
-        "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #78350f 100%)",
-        "bb_title": "从单机机器人到整线集成<br><strong>让产线更稳定</strong>",
-        "bb_title_size_max": "72px",
-        "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #fcd34d 100%)",
-        "bb_subtitle": "工业机器人与自动化集成官网方案",
-        "bb_desc": "围绕上下料、焊接、搬运、码垛、视觉检测、柔性输送和整线改造，把设备能力、调试经验、项目案例和方案咨询入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_text_align": "left",
-        "bb_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "工创智能",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "提交产线需求",
-            "link": "#",
-            "style": "primary",
-            "icon": "臂"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看设备选型",
-            "link": "#",
-            "style": "light",
-            "icon": "线"
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品展示",
+            "link": "#product_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bb_primary_btn_bg_color": "#1d4ed8",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#1e40af",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#eff6ff",
-        "bb_light_btn_hover_text_color": "#1d4ed8",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "bb_media_shadow": "glow",
-        "bb_media_radius": "18px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "1",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "索取报价",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#06b6d4",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#06b6d4",
+        "qhs_hover_bg": "rgba(6,182,212,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "interact_hero",
+      "data": {
+        "hero_badge": "INDUSTRY 4.0 ROBOTICS",
+        "hero_title_content": "工创智能 · 高速六轴工业机器人与智能产线集成",
+        "hero_subtitle_content": "毫秒级高速伺服驱动控制算法，重复定位精度达 ±0.01mm，广泛应用于汽车制造、3C电子与光伏精密装配。",
+        "btn_primary_content": "索取工业自动化方案",
+        "btn_primary_link": "#solutions",
+        "btn_secondary_content": "预约产线现场考察",
+        "btn_secondary_link": "#contact",
+        "media_type": "image",
+        "hero_image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+        "enable_float_anim": "yes"
       }
     },
     {
       "type": "products",
       "data": {
-        "products_title": "机器人与自动化产品线",
-        "products_subtitle": "ROBOTICS CATALOG",
-        "columns": "4",
-        "modal_inquire_text": "咨询设备选型",
-        "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#1d4ed8",
-        "modal_inquire_btn_text_color": "#ffffff",
-        "modal_inquire_btn_hover_bg_color": "#1e40af",
-        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "products_title": "工业机器人/自动化官网 · 核心工业级产品与选型矩阵",
+        "products_subtitle": "INDUSTRIAL PRODUCT MATRIX",
+        "columns": "3",
         "items": [
           {
-            "image": "https://images.pexels.com/photos/34207359/pexels-photo-34207359.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "六轴工业机器人",
-            "desc": "适用于搬运、上下料、焊接、打磨和装配等标准工位。",
-            "specs": "负载：6kg / 12kg / 25kg\n臂展：900mm ~ 1800mm\n重复定位：±0.03mm\n交付：本体、控制柜、夹具与调试服务",
-            "post_id": "",
-            "btn_text": "查看型号"
+            "title": "系列一：高性能工业级核心型号",
+            "desc": "通过严格全温区可靠性验证，满足连续高负荷运行要求",
+            "specs": "工作温度：-40℃ ~ +125℃\nMTBF：> 100,000 小时\n认证：CE / FCC / RoHS",
+            "btn_text": "规格参数"
           },
           {
-            "image": "https://images.pexels.com/photos/34194567/pexels-photo-34194567.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "高速分拣机器人",
-            "desc": "面向食品、医药、3C 和轻工包装的高速抓取与分拣。",
-            "specs": "结构：Delta / SCARA\n节拍：最高 120 次/分钟\n识别：视觉定位与来料追踪\n接口：PLC、MES、扫码系统联动",
-            "post_id": "",
-            "btn_text": "获取方案"
+            "title": "系列二：超低功耗微型化定制型号",
+            "desc": "集成度提升 50%，专为空间严苛与电池供电场景打造",
+            "specs": "待机功耗：< 10uA\n防护等级：IP67 工业级\n接口：标准工业总线",
+            "btn_text": "规格参数"
           },
           {
-            "image": "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "机器视觉检测单元",
-            "desc": "用于尺寸检测、缺陷识别、字符读取和装配防错。",
-            "specs": "相机：面阵 / 线扫 / 3D\n光源：环形、条形、背光、同轴\n算法：定位、测量、缺陷分类\n输出：OK/NG、报表、追溯图片",
-            "post_id": "",
-            "btn_text": "看检测项"
-          },
-          {
-            "image": "https://images.pexels.com/photos/34207359/pexels-photo-34207359.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "柔性自动化工作站",
-            "desc": "围绕工装夹具、输送、机器人和安全围栏配置可复制工位。",
-            "specs": "组成：机器人、输送线、夹具、传感器\n控制：PLC、HMI、伺服、气动\n安全：光栅、门锁、急停、围栏\n服务：设计、装配、调试、验收",
-            "post_id": "",
-            "btn_text": "咨询工位"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "image_text",
-      "data": {
-        "image_text_layout": "right",
-        "image_text_image": "https://images.pexels.com/photos/34194567/pexels-photo-34194567.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "image_text_title": "从单机设备到整线自动化集成",
-        "image_text_subtitle": "先理解现场节拍、工艺和良率，再配置机器人、视觉、输送和控制系统。",
-        "image_text_content": "<p>工业自动化项目不是简单堆设备。页面默认按客户最关心的产能、节拍、占地、人员替代、良率提升和回本周期组织说明。</p><ul><li>现场评估：梳理工艺流程、瓶颈工位、来料状态和上下游接口。</li><li>方案设计：输出设备布局、节拍测算、安全边界、预算和实施周期。</li><li>交付验收：完成装配调试、试运行、培训、备件清单和验收文档。</li></ul>",
-        "image_text_button": "预约现场评估",
-        "image_text_url": "#",
-        "image_text_btn_bg_color": "#1d4ed8",
-        "image_text_btn_text_color": "#ffffff",
-        "image_text_btn_hover_bg_color": "#1e40af",
-        "image_text_btn_hover_text_color": "#ffffff",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "自动化项目案例",
-        "cases_count": "6",
-        "cases_columns": "3",
-        "cases_show_image": "1",
-        "cases_image_height": "220px",
-        "cases_padding_top": "80px",
-        "cases_padding_bottom": "80px",
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "video",
-      "data": {
-        "video_title": "产线调试与设备运行视频",
-        "video_subtitle": "用运行画面展示机器人节拍、动作稳定性和安全边界",
-        "video_bg_color": "#ffffff",
-        "video_width": "100%",
-        "video_height": "520px",
-        "video_url": "https://videos.pexels.com/video-files/32386522/13814785_3840_2160_50fps.mp4",
-        "video_poster": "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
-      }
-    },
-    {
-      "type": "downloads",
-      "data": {
-        "downloads_title": "方案资料与评估清单",
-        "downloads_subtitle": "把设备选型、现场评估和项目验收资料集中给客户下载",
-        "downloads_bg_color": "#f8fafc",
-        "downloads_columns": "3",
-        "downloads_btn_bg_color": "#1d4ed8",
-        "downloads_btn_text_color": "#ffffff",
-        "downloads_btn_hover_bg_color": "#1e40af",
-        "downloads_btn_hover_text_color": "#ffffff",
-        "downloads_items": [
-          {
-            "title": "工业机器人选型手册",
-            "size": "Catalog",
-            "file": "#",
-            "icon": "臂",
-            "format": "PDF",
-            "date": "2026-04-25",
-            "btn_text": "下载手册",
-            "description": "按负载、臂展、重复定位、应用场景和末端夹具整理常见型号选型口径。"
-          },
-          {
-            "title": "产线自动化评估表",
-            "size": "Checklist",
-            "file": "#",
-            "icon": "表",
-            "format": "XLSX",
-            "date": "2026-04-25",
-            "btn_text": "查看评估表",
-            "description": "用于收集产能、节拍、人员、良率、场地、供电气源、安全要求和预算范围。"
-          },
-          {
-            "title": "项目验收与培训清单",
-            "size": "Runbook",
-            "file": "#",
-            "icon": "验",
-            "format": "DOC",
-            "date": "2026-04-25",
-            "btn_text": "获取清单",
-            "description": "包含 FAT/SAT、试运行、备件、操作培训、维护计划和交付文档目录。"
+            "title": "系列三：重载高可靠性旗舰解决方案",
+            "desc": "具备全链路硬件容错与主动安全保护机制，杜绝意外停机",
+            "specs": "负载能力：业内领先\n响应延迟：微秒级闭环\n保修：5年工业级联保",
+            "btn_text": "规格参数"
           }
         ]
       }
     },
     {
+      "type": "product_showcase",
+      "data": {
+        "ps_title": "精密智能制造车间与严苛品控实录",
+        "ps_subtitle": "万级无尘洁净车间、自动化光学检测 (AOI) 与全程质量溯源系统"
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "全球500强与行业龙头企业配套落地案例",
+        "cases_subtitle": "数千家工业客户长达十年以上的共同信赖与严苛验证"
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "ch_title": "国际权威资质认证与核心发明专利",
+        "ch_subtitle": "国家级高新技术企业、ISO9001 质量认证与数十项PCT国际核心发明专利"
+      }
+    },
+    {
       "type": "contact",
       "data": {
-        "contact_title": "提交产线自动化需求",
-        "contact_subtitle": "填写行业、工艺流程、当前产能、目标节拍、现场空间和预算范围，工程顾问会给出初步改造建议。",
+        "contact_title": "工业机器人/自动化官网 商务询盘与样品申请通道 (RFQ)",
+        "contact_subtitle": "资深应用工程师与大客户销售将在 2 小时内响应，为您出具详细报价与试机方案。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "提交采购询盘单"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0a0f1d",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#06b6d4",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "ROBOTIX · 工业机器人与智能无人产线解决方案",
+        "qfs_brand_desc": "面向半导体、新能源电池、3C制造及汽车装配行业，提供六轴机械臂、AGV/AMR智能搬运车及整厂工业4.0数字孪生控制系统，助力制造企业实现熄灯生产。",
+        "qfs_link_groups": [
+          {
+            "title": "核心产品生态 & 行业整厂方案",
+            "links": "重载工业六轴机器人|#\n协作机械臂与末端夹爪|#\nAMR/AGV 自主移动底盘|#\nMOM/MES 产线协同中控系统|#\n锂电电芯高速叠片工站|#\n汽车白车身柔性焊装产线|#\n3C 高精度点胶检测系统|#\n立体智能仓储与物流集成|#"
+          }
+        ],
+        "qfs_contact_title": "项目技术立项与方案咨询",
+        "qfs_contact_items": "技术咨询|400-880-7766|tel:4008807766\n售后支持|186-2211-9988|tel:18622119988\n技术响应|7×24小时驻厂应急支援通道|#\n研发总部|上海市浦东新区张江高科技园区机器人谷 6 栋|#",
+        "qfs_social_title": "智造前沿",
+        "qfs_social_links": "机器人开发者社群|#\n技术白皮书订阅|#\n自动化视频号|#\n工业开源社区|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 ROBOTIX AUTOMATION CORP. 保留所有权利 · 沪ICP备19082733号 · 高新技术企业认定证书",
+        "qfs_bottom_links": "知识产权声明|#\n产线验收规范|#\n质保与售后条款|#\n合作伙伴招募|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

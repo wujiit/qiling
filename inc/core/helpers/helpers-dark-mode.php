@@ -35,7 +35,7 @@ if ( ! function_exists( 'developer_starter_get_dark_mode_runtime_config' ) ) {
      * @return array<string,mixed>
      */
     function developer_starter_get_dark_mode_runtime_config() {
-        $darkmode_enabled = (bool) developer_starter_get_option( 'darkmode_enable', '' );
+        $darkmode_enabled = (bool) developer_starter_get_option( 'darkmode_enable', '1' );
         $auto_enabled     = $darkmode_enabled && (bool) developer_starter_get_option( 'darkmode_auto_enable', '' );
 
         $mode = sanitize_key( (string) developer_starter_get_option( 'darkmode_auto_mode', 'system_schedule' ) );

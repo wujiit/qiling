@@ -159,24 +159,74 @@ class Frontend_Builder_Modules_Service {
      * @return array<int,array<string,mixed>>
      */
     private function sort_builder_module_fields( $fields, $module_id ) {
-        $groups = array();
-        $order  = array();
+        $groups       = array();
+        $order        = array();
+        $group_labels = array();
+
         foreach ( $fields as $index => $field ) {
             $field_id = isset( $field['id'] ) ? strtolower( (string) $field['id'] ) : '';
             $group    = $this->get_builder_field_group( $field_id, $field, $module_id );
             if ( ! isset( $groups[ $group ] ) ) {
                 $groups[ $group ] = array();
-                $order[] = $group;
+                $order[]          = $group;
+            }
+            if ( ! isset( $group_labels[ $group ] ) ) {
+                if ( ! empty( $field['group_label'] ) ) {
+                    $group_labels[ $group ] = (string) $field['group_label'];
+                } elseif ( ! empty( $field['builderGroupLabel'] ) ) {
+                    $group_labels[ $group ] = (string) $field['builderGroupLabel'];
+                }
             }
             $groups[ $group ][] = array( 'field' => $field, 'index' => $index );
         }
 
+        // 统一卡片渲染权重优先级（确保“首屏/标题/内容”在上，“样式/背景”在中，“高级/间距”在下）
+        $priority_map = array(
+            ':hero'        => 10,
+            ':header'      => 15,
+            ':main_title'  => 16,
+            ':typing_title'=> 17,
+            ':title'       => 18,
+            ':subtitle'    => 19,
+            ':slides'      => 20,
+            ':content'     => 25,
+            ':components'  => 28,
+            ':stats'       => 30,
+            ':buttons'     => 32,
+            ':brand'       => 35,
+            ':links'       => 36,
+            ':contact'     => 37,
+            ':social'      => 38,
+            ':friend'      => 39,
+            ':bottom'      => 40,
+            ':style'       => 50,
+            ':layout'      => 52,
+            ':wave'        => 55,
+            ':background'  => 60,
+            ':other'       => 70,
+            ':advanced'    => 90,
+        );
+
+        usort( $order, function( $a, $b ) use ( $priority_map ) {
+            $p_a = 50;
+            $p_b = 50;
+            foreach ( $priority_map as $sfx => $val ) {
+                if ( substr( $a, -strlen( $sfx ) ) === $sfx ) { $p_a = $val; break; }
+            }
+            foreach ( $priority_map as $sfx => $val ) {
+                if ( substr( $b, -strlen( $sfx ) ) === $sfx ) { $p_b = $val; break; }
+            }
+            return $p_a - $p_b;
+        } );
+
         $sorted = array();
         foreach ( $order as $group ) {
+            $custom_label = isset( $group_labels[ $group ] ) ? $group_labels[ $group ] : '';
+            $group_label  = $this->get_builder_field_group_label( $group, $custom_label );
             foreach ( $groups[ $group ] as $item ) {
-                $item['field']['builderGroup'] = $group;
-                $item['field']['builderGroupLabel'] = $this->get_builder_field_group_label( $group );
-                $sorted[] = $item['field'];
+                $item['field']['builderGroup']      = $group;
+                $item['field']['builderGroupLabel'] = $group_label;
+                $sorted[]                           = $item['field'];
             }
         }
         return $sorted;
@@ -187,6 +237,82 @@ class Frontend_Builder_Modules_Service {
             return $module_id . ':other';
         }
 
+        // 1. 字段若显式指定 group，直接尊重字段分组
+        if ( ! empty( $field['group'] ) ) {
+            $grp = sanitize_key( (string) $field['group'] );
+            return strpos( $grp, ':' ) !== false ? $grp : ( $module_id . ':' . $grp );
+        }
+
+        // 2. 顶部导航套件 (header_suite) 专属业务逻辑分组
+        if ( 'header_suite' === $module_id || 'header-suite' === $module_id ) {
+            if ( in_array( $field_id, array( 'qhs_logo', 'qhs_logo_dark', 'qhs_logo_height', 'qhs_brand_title', 'qhs_brand_slogan', 'qhs_brand_url' ), true ) ) {
+                return 'header_suite:brand';
+            }
+            if ( in_array( $field_id, array( 'qhs_menu_source', 'qhs_menu_id', 'qhs_nav_items', 'qhs_menu_align' ), true ) ) {
+                return 'header_suite:nav';
+            }
+            if ( in_array( $field_id, array( 'qhs_show_search', 'qhs_search_mode', 'qhs_search_placeholder', 'qhs_show_phone', 'qhs_phone_number', 'qhs_phone_link', 'qhs_show_theme_toggle', 'qhs_show_user_action' ), true ) ) {
+                return 'header_suite:actions';
+            }
+            if ( in_array( $field_id, array( 'qhs_show_cta', 'qhs_cta_text', 'qhs_cta_link', 'qhs_cta_target', 'qhs_cta_style', 'qhs_cta_bg', 'qhs_cta_color' ), true ) ) {
+                return 'header_suite:cta';
+            }
+            if ( in_array( $field_id, array( 'qhs_layout', 'qhs_container_width', 'qhs_height', 'qhs_sticky', 'qhs_sticky_blur', 'qhs_transparent', 'qhs_bg_color', 'qhs_text_color', 'qhs_hover_color', 'qhs_hover_bg', 'qhs_border_color', 'qhs_transparent_text_color' ), true ) ) {
+                return 'header_suite:style';
+            }
+            if ( in_array( $field_id, array( 'qhs_custom_class', 'qhs_custom_css' ), true ) ) {
+                return 'header_suite:advanced';
+            }
+        }
+
+        // 2.1 页脚风格模块 (footer_suite) 专属业务逻辑分组
+        if ( 'footer_suite' === $module_id || 'footer-suite' === $module_id ) {
+            if ( in_array( $field_id, array( 'qfs_logo', 'qfs_brand_title', 'qfs_brand_desc' ), true ) ) {
+                return 'footer_suite:brand';
+            }
+            if ( in_array( $field_id, array( 'qfs_link_groups', 'qfs_link_columns' ), true ) ) {
+                return 'footer_suite:links';
+            }
+            if ( in_array( $field_id, array( 'qfs_contact_title', 'qfs_contact_items', 'qfs_badge_bg' ), true ) ) {
+                return 'footer_suite:contact';
+            }
+            if ( in_array( $field_id, array( 'qfs_social_title', 'qfs_social_links', 'qfs_show_qr', 'qfs_qr_items' ), true ) ) {
+                return 'footer_suite:social';
+            }
+            if ( in_array( $field_id, array( 'qfs_friend_mode', 'qfs_friend_title', 'qfs_friend_links' ), true ) ) {
+                return 'footer_suite:friend';
+            }
+            if ( in_array( $field_id, array( 'qfs_bottom_text', 'qfs_bottom_links', 'qfs_show_filings' ), true ) ) {
+                return 'footer_suite:bottom';
+            }
+            if ( in_array( $field_id, array( 'qfs_layout', 'qfs_width', 'qfs_variant', 'qfs_bg', 'qfs_border_color', 'qfs_heading_color', 'qfs_text_color', 'qfs_muted_color', 'qfs_accent_color' ), true ) ) {
+                return 'footer_suite:style';
+            }
+            if ( in_array( $field_id, array( 'module_padding_top', 'module_padding_bottom', 'qfs_custom_css' ), true ) ) {
+                return 'footer_suite:advanced';
+            }
+        }
+
+        // 3. 首屏 Banner 模块 (banner) 专属业务逻辑分组（确保首屏参数与数据条各自连贯）
+        if ( 'banner' === $module_id ) {
+            if ( preg_match( '/^banner_(layout|height|image_position|bg_color)$/', $field_id ) ) {
+                return 'banner:hero';
+            }
+            if ( 'banner_slides' === $field_id ) {
+                return 'banner:slides';
+            }
+            if ( preg_match( '/^(heading_stats|show_stats_bar|stats_bar_bg_color|stats_items_layout|stats_items_gap|stats_data)$/', $field_id ) ) {
+                return 'banner:stats';
+            }
+            if ( preg_match( '/^banner_wave_/', $field_id ) ) {
+                return 'banner:wave';
+            }
+            if ( preg_match( '/^(module_padding_|qfb_custom_css|_ds_)/', $field_id ) ) {
+                return 'banner:advanced';
+            }
+        }
+
+        // 4. 动态 Banner 模块
         if ( 'dynamic_banner' === $module_id ) {
             if ( preg_match( '/^db_title_prefix$|^db_title_color$/', $field_id ) ) return 'dynamic_banner:main_title';
             if ( preg_match( '/^db_typing_|^db_highlight_color$/', $field_id ) ) return 'dynamic_banner:typing_title';
@@ -198,25 +324,73 @@ class Frontend_Builder_Modules_Service {
             if ( preg_match( '/^db_bg_/', $field_id ) ) return 'dynamic_banner:background';
         }
 
-        $field_id = preg_replace( '/_(?:size|font|color|effect|gradient|stroke|weight|line_height|letter_spacing|radius|shadow|border|hover|bg|background|overlay|padding|margin|width|height|opacity|animation|delay)$/', '', $field_id );
-        if ( preg_match( '/(?:^|_)(?:bg|background|overlay|padding|margin|radius|shadow|border|width|height|opacity)$/', $field_id ) ) {
+        // 5. 通用模块：保证各板块设置上下因果连贯（标题与对应字号颜色一体、背景属性一体、列表项一体）
+        $clean_id = preg_replace( '/_(?:size|font|color|effect|gradient|stroke|weight|line_height|letter_spacing|radius|shadow|border|hover|bg|background|overlay|padding|margin|width|height|opacity|animation|delay)$/', '', $field_id );
+
+        // 5.1 间距与高级设置（上下内边距、外边距、动效、自定义 CSS）
+        if ( preg_match( '/(?:^|_)(padding|margin|spacing|css|custom_css|animation|delay|staggered)(?:_|$)/', $field_id ) ) {
+            return $module_id . ':advanced';
+        }
+
+        // 5.2 模块背景独立分组（避免背景类型、背景图片与背景颜色被撕裂在不同区域）
+        if ( preg_match( '/(?:^|_)(module_bg|bg_type|bg_image|bg_color|bg_overlay)(?:_|$)/', $field_id ) ) {
             return $module_id . ':background';
         }
-        if ( preg_match( '/(?:^|_)(title|heading)$/', $field_id ) ) return $module_id . ':title';
-        if ( preg_match( '/(?:^|_)subtitle$/', $field_id ) ) return $module_id . ':subtitle';
-        if ( preg_match( '/(?:^|_)(desc|description|content|text|excerpt|intro|summary|note)$/', $field_id ) ) return $module_id . ':description';
-        if ( preg_match( '/(?:^|_)(button|buttons|url|link|action|cta)$/', $field_id ) ) return $module_id . ':buttons';
-        if ( 'repeater' === ( isset( $field['type'] ) ? $field['type'] : '' ) || preg_match( '/(?:^|_)(items|cards|tabs|data)$/', $field_id ) ) return $module_id . ':components';
-        if ( preg_match( '/(?:^|_)(layout|mode|style|type|template|media|image|video|orientation|position|columns?)$/', $field_id ) ) return $module_id . ':layout';
-        return $module_id . ':other';
+
+        // 5.3 模块标题与文案设置（标题文本、标题大小、标题颜色、副标题、副标题颜色紧密相连，不被分散）
+        if ( preg_match( '/(?:^|_)(title|subtitle|sub_title|heading|desc|description|intro)(?:_size|_font|_color|_align)?$/', $field_id ) &&
+             ! preg_match( '/(?:^|_)(card|item|tab|badge|icon|btn|button)(?:_|$)/', $field_id ) ) {
+            return $module_id . ':header';
+        }
+
+        // 5.4 布局与外观样式（布局模式、列数、网格对齐、卡片外观边框阴影）
+        if (
+            preg_match( '/(?:^|_)(layout|mode|columns?|grid|align|orientation|position)$/', $clean_id ) ||
+            preg_match( '/(?:^|_)(radius|shadow|border|width|height|opacity)$/', $clean_id ) ||
+            preg_match( '/(?:^|_)(badge_bg|card_bg|card_border|icon_bg|icon_color|accent_color)$/', $field_id )
+        ) {
+            return $module_id . ':style';
+        }
+
+        // 5.5 核心内容与数据列表（数据列表、卡片列表、按钮、媒体等）
+        return $module_id . ':content';
     }
 
-    private function get_builder_field_group_label( $group ) {
+    private function get_builder_field_group_label( $group, $custom_label = '' ) {
+        if ( ! empty( $custom_label ) ) {
+            return $custom_label;
+        }
+
         $labels = array(
-            ':main_title' => '主标题设置', ':typing_title' => '打字标题设置', ':title' => '标题设置',
-            ':subtitle' => '副标题设置', ':description' => '描述文案设置', ':buttons' => '按钮设置',
-            ':floating_cards' => '悬浮卡片设置', ':media' => '媒体设置', ':components' => '组件设置',
-            ':layout' => '模板与布局设置', ':background' => '模块背景设置', ':other' => '其他设置',
+            ':hero'           => '首屏布局与背景',
+            ':slides'         => '幻灯片轮播内容',
+            ':stats'          => '数据展示条设置',
+            ':wave'           => '底部波浪效果',
+            ':header'         => '模块标题与文案设置',
+            ':content'        => '核心内容与数据列表',
+            ':brand'          => '品牌设置',
+            ':nav'            => '导航菜单设置',
+            ':actions'        => '功能部件设置',
+            ':cta'            => '行动按钮设置',
+            ':links'          => '链接分组设置',
+            ':contact'        => '联系方式设置',
+            ':social'         => '社交与互动设置',
+            ':friend'         => '友情链接设置',
+            ':bottom'         => '底部版权与备案',
+            ':style'          => '布局与外观样式',
+            ':background'     => '模块背景设置',
+            ':advanced'       => '间距与高级设置',
+            ':main_title'     => '主标题设置',
+            ':typing_title'   => '打字标题设置',
+            ':title'          => '标题设置',
+            ':subtitle'       => '副标题设置',
+            ':description'    => '描述文案设置',
+            ':buttons'        => '按钮与操作设置',
+            ':floating_cards' => '悬浮卡片设置',
+            ':media'          => '媒体展示设置',
+            ':components'     => '内容与卡片组件',
+            ':layout'         => '模板与布局设置',
+            ':other'          => '其他设置',
         );
         foreach ( $labels as $suffix => $label ) {
             if ( substr( $group, -strlen( $suffix ) ) === $suffix ) return $label;
@@ -385,7 +559,7 @@ class Frontend_Builder_Modules_Service {
                 $item['dependency'] = $field['dependency'];
             }
 
-            foreach ( array( 'group', 'required', 'sanitize', 'max_items', 'maxItems', 'placeholder', 'rows', 'add_button', 'item_label', 'item_title' ) as $schema_key ) {
+            foreach ( array( 'group', 'group_label', 'builderGroupLabel', 'required', 'sanitize', 'max_items', 'maxItems', 'placeholder', 'rows', 'add_button', 'item_label', 'item_title' ) as $schema_key ) {
                 if ( isset( $field[ $schema_key ] ) && is_scalar( $field[ $schema_key ] ) ) {
                     $item[ $schema_key ] = (string) $field[ $schema_key ];
                 }

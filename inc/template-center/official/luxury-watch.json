@@ -1,0 +1,271 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "奢华腕表与名表旗舰站",
+  "page_template": "templates/template-luxury-watch.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#d97706",
+      "secondary": "#b45309"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "luxury-watch",
+    "label": "奢华腕表与名表旗舰站",
+    "category": "ecommerce",
+    "category_label": "品牌商城",
+    "industry": "ecommerce",
+    "industry_label": "奢华腕表/钟表",
+    "scenario": "奢华钟表与机械名表旗舰独立站",
+    "badges": [
+      "单品独立站",
+      "瑞士名表",
+      "工艺解构",
+      "材质切换"
+    ],
+    "order": 121,
+    "thumbnail": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "腕表",
+      "名表",
+      "单品独立站",
+      "机械表",
+      "轻奢",
+      "DTC商城"
+    ],
+    "description": "专为瑞士制表、高端机械腕表与典藏时计独立站打造的旗舰模板。配备多材质/表带即时色块联动、机芯微距精密热点解构、昼夜夜光滑动对比与VIP私享鉴赏预约。"
+  },
+  "seo": {
+    "title": "奢华腕表与名表旗舰站 - 启灵官方独立站模板",
+    "description": "专为高端腕表、机械时计与瑞士制表品牌打造的单品垂直独立站，融合精密机芯热点解构与表带材质联动体验。"
+  },
+  "modules": [
+    {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "天穹腕表",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#timeline",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#d4af37",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#d4af37",
+        "qhs_hover_bg": "rgba(212,175,55,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "天穹腕表 · 2026 高级制表典藏鉴赏",
+        "lookbook_subtitle": "融合日内瓦顶级手工打磨工艺与先锋微机械架构，记录精准无误的人生高光时刻",
+        "lookbook_columns": "3",
+        "enable_staggered_animation": "yes",
+        "lookbook_items": [
+          {
+            "cover_image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+            "name": "深海探索者 · 300米天文台认证潜水表",
+            "desc": "904L 航空精钢表壳，单向旋转陶瓷表圈，瑞士官方天文台 COSC 顶级精度认证。",
+            "btn_text": "鉴赏腕表细节",
+            "enable_shop_look": "yes",
+            "item_1_title": "深潜计时腕表",
+            "item_1_price": "¥85,000",
+            "item_1_link": "#",
+            "item_1_pin_x": "50",
+            "item_1_pin_y": "48"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+            "name": "星空漫游 · 镂空陀飞轮月相大师腕表",
+            "desc": "自产高振频手动机械机芯，双面防眩蓝宝石水晶透底，手工倒角雕刻日内瓦波纹。",
+            "btn_text": "鉴赏腕表细节",
+            "enable_shop_look": "yes",
+            "item_1_title": "镂空陀飞轮",
+            "item_1_price": "¥168,000",
+            "item_1_link": "#",
+            "item_1_pin_x": "51",
+            "item_1_pin_y": "52"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80",
+            "name": "典雅传承 · 18K玫瑰金超薄正装表",
+            "desc": "仅 6.8mm 极致纤薄机身，路易斯安那手工缝制短吻鳄鱼皮表带，商务正装首选之作。",
+            "btn_text": "鉴赏腕表细节",
+            "enable_shop_look": "yes",
+            "item_1_title": "超薄正装腕表",
+            "item_1_price": "¥92,000",
+            "item_1_link": "#",
+            "item_1_pin_x": "49",
+            "item_1_pin_y": "46"
+          }
+        ]
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "经典典藏单品与限定矩阵",
+        "products_subtitle": "HERITAGE COLLECTION",
+        "columns": "3",
+        "items": [
+          {
+            "title": "奢华腕表与名表旗舰站 标志性经典款",
+            "desc": "纯手工大师级制作工艺，选用进口天然环保顶级材质",
+            "specs": "产地：欧洲工坊\n材质：顶级甄选\n工艺：手工研磨",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "奢华腕表与名表旗舰站 限定胶囊系列",
+            "desc": "打破传统边界，融合现代极简美学与实用主义精神",
+            "specs": "限量：全球仅发售500件\n配饰：专属独立编号",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "奢华腕表与名表旗舰站 尊享定制系列",
+            "desc": "为您量身打造专属刻字与微调服务，见证不凡品位",
+            "specs": "服务：一对一高级定制\n交付：顺丰特快保价",
+            "btn_text": "鉴赏细节"
+          }
+        ]
+      }
+    },
+    {
+      "type": "timeline",
+      "data": {
+        "timeline_title": "品牌发展历程",
+        "timeline_subtitle": "每一步坚实足迹，铸就今日卓越品质"
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {}
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "全球直营精品专柜与高级定制沙龙",
+        "branches_subtitle": "敬请莅临线下精品会所，尊享专席一对一鉴赏体验"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "预约 奢华腕表与名表旗舰站 VIP专席鉴赏与定制服务",
+        "contact_subtitle": "资深品牌顾问将为您提前备齐典藏品目，提供专属私享导购体验。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交品鉴预约"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "luxury",
+        "qfs_bg": "linear-gradient(180deg, #101216 0%, #060709 100%)",
+        "qfs_text_color": "#cbd5e1",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#d4af37",
+        "qfs_border_color": "rgba(212, 175, 55, 0.22)",
+        "qfs_brand_title": "CHRONOS MASTER · 瑞士制表世家",
+        "qfs_brand_desc": "百年瑞士制表传统，严苛遵循日内瓦印记制表标准。集超精密复杂机械机芯、大师手工倒角打磨与传世艺术于一身。",
+        "qfs_link_groups": [
+          {
+            "title": "臻选腕表系列 & 腕表尊享支持",
+            "links": "陀飞轮高级复杂时计|#\n经典潜水计时码表|#\n超薄商务正装腕表|#\n碳纤维限量概念表|#\n全球原厂 5 年联保|#\n瑞士天文台精准检测|#\n机械机芯深度洗油维护|#\n表冠表带定制升级|#"
+          }
+        ],
+        "qfs_contact_title": "贵宾客户服务",
+        "qfs_contact_items": "VIP专线|400-880-1868|tel:4008801868\n鉴赏预约|concierge@chronos-master.ch|mailto:concierge@chronos-master.ch\n官方旗舰沙龙|上海市静安区南京西路 1266 号恒隆广场 1 期 3 层|#",
+        "qfs_social_title": "探索钟表艺术",
+        "qfs_social_links": "微信官方沙龙|#\n小红书官方号|#\nInstagram @Chronos|#\nYouTube 纪录片|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 CHRONOS MASTER HAUTE HORLOGERIE S.A. 瑞士日内瓦制表协会会员",
+        "qfs_bottom_links": "日内瓦印记背书|#\n保修防伪验证|#\n隐私安全协议|#\n全球专卖店索引|#",
+        "qfs_link_columns": "1"
+      }
+    }
+  ]
+}

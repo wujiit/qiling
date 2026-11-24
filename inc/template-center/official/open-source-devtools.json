@@ -42,214 +42,231 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #064e3b 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "极客开源",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
-            "title": "给开发团队一套更顺手的工具链",
-            "subtitle": "开源、可扩展、文档清晰，适合展示框架、SDK、CLI 和技术社区。",
-            "btn_text": "查看文档",
-            "btn_url": "#",
-            "btn_bg_color": "#6366f1",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "开源动态",
+            "link": "#github_activity",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "资料下载",
+            "link": "#downloads",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#timeline",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "18k",
-            "number": "18k+",
-            "label": "GitHub 星标",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "120",
-            "number": "120+",
-            "label": "贡献者",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "6",
-            "number": "6种",
-            "label": "安装方式",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "MIT",
-            "number": "MIT",
-            "label": "开源协议",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f59e0b",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f59e0b",
+        "qhs_hover_bg": "rgba(245,158,11,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "features",
+      "type": "hero_search",
       "data": {
-        "features_title": "工具能力",
-        "features_subtitle": "突出开发者真正关心的效率、扩展和稳定性",
-        "features_columns": "4",
-        "features_items": [
+        "hs_height": "70vh",
+        "hs_title": "极客开源 · 高性能现代开发者工具与类库全景搜索",
+        "hs_subtitle": "汇聚全球顶尖开源项目、极速 CLI 命令行工具、高质量代码片段与前沿框架中文文档。",
+        "hs_search_placeholder": "搜索开源工具、库、CLI 命令或语言框架...",
+        "hs_bg_items": [
           {
-            "icon": "01",
-            "title": "快速初始化",
-            "desc": "一条命令完成项目脚手架和基础配置。"
-          },
-          {
-            "icon": "02",
-            "title": "插件扩展",
-            "desc": "通过插件机制扩展构建、发布和检查流程。"
-          },
-          {
-            "icon": "03",
-            "title": "类型友好",
-            "desc": "提供完整类型提示和示例，减少接入成本。"
-          },
-          {
-            "icon": "04",
-            "title": "CI 适配",
-            "desc": "可接入主流 CI/CD 流程和团队规范。"
+            "bg_type": "image",
+            "bg_image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1800&q=80"
           }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "三步开始使用",
-        "process_subtitle": "让新开发者最快跑通第一个示例",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "安装工具",
-            "desc": "通过 npm、pnpm、composer 或二进制包安装。",
-            "stage_tag": "Install"
-          },
-          {
-            "icon": "02",
-            "title": "初始化项目",
-            "desc": "选择模板和功能，生成项目基础结构。",
-            "stage_tag": "Init"
-          },
-          {
-            "icon": "03",
-            "title": "运行示例",
-            "desc": "启动开发服务，检查示例页面和 API。",
-            "stage_tag": "Run"
-          },
-          {
-            "icon": "04",
-            "title": "接入发布",
-            "desc": "根据文档接入构建、测试和发布流程。",
-            "stage_tag": "Ship"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "downloads",
-      "data": {
-        "downloads_title": "资源下载",
-        "downloads_subtitle": "集中提供文档、示例和版本包",
-        "downloads_items": [
-          {
-            "title": "快速开始文档",
-            "size": "PDF",
-            "file": "#",
-            "format": "PDF",
-            "date": "2026-04-16",
-            "btn_text": "下载"
-          },
-          {
-            "title": "示例项目源码",
-            "size": "ZIP",
-            "file": "#",
-            "format": "ZIP",
-            "date": "2026-04-16",
-            "btn_text": "下载"
-          },
-          {
-            "title": "CLI 二进制包",
-            "size": "Release",
-            "file": "#",
-            "format": "Release",
-            "date": "2026-04-16",
-            "btn_text": "下载"
-          }
-        ],
-        "module_bg_color": "#ffffff",
-        "downloads_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "github_activity",
       "data": {
-        "gha_title": "GitHub 项目动态",
-        "gha_subtitle": "填入公开仓库地址后，自动展示 Star、Fork、最新 Release 与最近 Commit。",
-        "gha_enable": "no",
-        "gha_repository_url": "",
-        "gha_show_stats": "yes",
-        "gha_show_release": "yes",
-        "gha_show_commits": "yes",
-        "gha_commit_count": "5",
-        "gha_cache_hours": "6",
-        "gha_bg_color": "#f8fafc",
-        "gha_padding_top": "80px",
-        "gha_padding_bottom": "80px"
+        "gha_title": "GitHub 开源仓库实时动态看板",
+        "gha_subtitle": "实时展示公开仓库的 Stars、Forks、最新 Release 版本和近期 Commits",
+        "gha_enable": "1",
+        "gha_repository_url": "https://github.com/qiling/devtools",
+        "gha_commit_count": "5"
       }
     },
     {
-      "type": "cases",
+      "type": "features_list",
       "data": {
-        "cases_title": "社区实践",
-        "cases_subtitle": "展示工具在真实项目里的使用方式",
-        "cases_columns": "3",
-        "cases_items": [
+        "title": "开发者工具链核心特性全景清单",
+        "features": [
           {
-            "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
-            "title": "前端工程化",
-            "desc": "统一脚手架、检查、构建和发布流程。",
+            "tab_name": "极致性能",
+            "items": [
+              {
+                "title": "Rust 底层重构核心",
+                "desc": "启动耗时 < 5ms，内存占用降低 80% 以上"
+              },
+              {
+                "title": "并行异步 I/O 引擎",
+                "desc": "充分利用多核 CPU，万级文件扫描秒级完成"
+              }
+            ]
+          },
+          {
+            "tab_name": "现代体验",
+            "items": [
+              {
+                "title": "现代化丰富 CLI 交互",
+                "desc": "自适应高对比色彩排版，支持进度条与交互问答"
+              },
+              {
+                "title": "零配置开箱即用",
+                "desc": "内置最佳实践模板，一条命令极速初始化项目"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "downloads",
+      "data": {
+        "downloads_title": "CLI 独立二进制工具极速下载",
+        "downloads_subtitle": "无须复杂运行环境依赖，解压即用或通过 Homebrew / Cargo / NPM 一键安装",
+        "downloads_items": [
+          {
+            "title": "Linux x86_64 二进制",
+            "desc": "静态编译无依赖版本",
+            "badge": "tar.gz | 12MB",
             "link": "#"
           },
           {
-            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
-            "title": "SDK 示例库",
-            "desc": "帮助开发者快速理解核心 API 使用方式。",
+            "title": "macOS Universal 二进制",
+            "desc": "支持 Apple Silicon & Intel",
+            "badge": "tar.gz | 14MB",
             "link": "#"
           },
           {
-            "image": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=900&q=80",
-            "title": "团队规范落地",
-            "desc": "把代码规范和发布流程沉淀为可复用工具。",
+            "title": "Windows x64 二进制",
+            "desc": "单文件便携绿色版",
+            "badge": "zip | 11MB",
             "link": "#"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "timeline",
+      "data": {
+        "timeline_title": "品牌发展历程",
+        "timeline_subtitle": "每一步坚实足迹，铸就今日卓越品质"
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "开源贡献与社区常见问题",
+        "faq_subtitle": "Apache 2.0 开源协议说明、Issue 反馈规范、PR 合并流程与赞助渠道"
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "加入开源社区",
-        "cta_subtitle": "提交 Issue、贡献插件或把你的实践案例加入文档。",
-        "cta_button_text": "前往 GitHub",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #312e81 60%, #064e3b 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#6366f1",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "在 GitHub 上为项目点赞 Star 关注演进",
+        "cta_subtitle": "加入全球 5,000+ 开发者开源社区，共同打造下一代高性能工程工具链。",
+        "cta_btn_text": "前往 GitHub 仓库",
+        "cta_btn_url": "https://github.com"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#09090b",
+        "qfs_text_color": "#a1a1aa",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f59e0b",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "FORGE-DEV · 极客纯粹的高性能开源开发者工具链",
+        "qfs_brand_desc": "专为追求极致效率的工程师设计。完全开源透明，原生跨平台支持，轻量无冗余依赖，让编码与调试重归行云流水。",
+        "qfs_link_groups": [
+          {
+            "title": "工具矩阵与开源社区",
+            "links": "Core CLI 命令行终端套件|#\nVS Code / JetBrains 扩展插件|#\n本地性能调优与火焰图分析|#\n智能 Mock 与接口自动化测试|#\nGitHub 源码与 Release 下载|#\n开源贡献者指引与规范|#\n功能规划路线图 (Roadmap)|#\n技术架构设计白皮书|#"
+          }
+        ],
+        "qfs_contact_title": "开源社区维护组",
+        "qfs_contact_items": "社区邮箱|maintainers@forge-dev.org|mailto:maintainers@forge-dev.org\nIssue 追踪|GitHub Issues 实时响应|#\n赞助支持|GitHub Sponsors / OpenCollective|#",
+        "qfs_social_title": "关注开源进展",
+        "qfs_social_links": "GitHub ⭐ Star 支持|#\nDiscord 极客交流区|#\nTwitter @ForgeDevTools|#\n技术周刊邮件订阅|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 FORGE-DEV PROJECT. 基于 MIT 开源协议发布 · 由全球开发者社区共同维护与驱动",
+        "qfs_bottom_links": "MIT 许可证文本|#\n社区行为准则|#\n贡献者协议(CLA)|#\n隐私说明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

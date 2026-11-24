@@ -42,208 +42,245 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.56",
-        "db_title_prefix": "让企业决策更稳妥",
-        "db_typing_mode": "loop",
-        "db_typing_text": "财税筹划与合规顾问\n企业金融服务与风险评估\n从咨询到执行的长期陪伴",
-        "db_highlight_color": "#fcd34d",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "面向成长型企业、门店品牌和高净值客户，提供清晰、可信、可执行的专业服务。",
-        "db_desc": "适合财税、金融、保险、企业咨询和合规服务团队。",
-        "db_text_color": "rgba(248,250,252,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "华盛资本",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "预约顾问沟通",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看服务范围",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "数据图表",
+            "link": "#chart",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合规安全",
+            "link": "#compliance_trust",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #064e3b 50%, #78350f 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#d97706",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#d97706",
+        "qhs_hover_bg": "rgba(217,119,6,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "banner",
       "data": {
-        "services_title": "专业服务范围",
-        "services_subtitle": "围绕企业经营、资金规划和合规管理提供持续支持",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_slides": [
           {
-            "icon": "01",
-            "title": "财税顾问",
-            "desc": "账务规范、税务筹划和申报事项支持。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "金融规划",
-            "desc": "融资建议、资金结构和风险评估。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "保险配置",
-            "desc": "企业保障、员工福利和家庭保障建议。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "合规咨询",
-            "desc": "合同、流程、资质和经营风险梳理。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
+            "title": "卓越商业洞察 · 护航企业资本价值稳健跃升",
+            "subtitle": "专注于高成长企业并购重组、股权架构顶层设计、私募股权投融资与商业尽调评估顾问服务。",
+            "btn_text": "预约资深合伙人面谈",
+            "btn_url": "#contact"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
+      }
+    },
+    {
+      "type": "chart",
+      "data": {
+        "chart_type": "line",
+        "chart_title": "核心财富管理组合跨周期稳健复合收益表现 (%)",
+        "chart_height": "380px",
+        "chart_data": [
+          {
+            "label": "2021",
+            "value": "14.2%",
+            "color": "#2563eb"
+          },
+          {
+            "label": "2022",
+            "value": "9.8%",
+            "color": "#2563eb"
+          },
+          {
+            "label": "2023",
+            "value": "11.5%",
+            "color": "#2563eb"
+          },
+          {
+            "label": "2024",
+            "value": "13.1%",
+            "color": "#2563eb"
+          },
+          {
+            "label": "2025",
+            "value": "15.6%",
+            "color": "#2563eb"
+          }
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "服务信任数据",
-        "stats_subtitle": "用经验、响应和续约表现建立专业信任",
-        "stats_text_align": "center",
+        "stats_title": "受托管理的专业底蕴与荣誉见证",
+        "stats_subtitle": "恪守受托人信义义务，穿越多轮宏观经济牛熊周期",
         "stats_items": [
           {
-            "number": "800+",
-            "label": "服务企业客户",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "¥380 亿+",
+            "label": "累计受托管理与咨询资产规模"
           },
           {
-            "number": "15年",
-            "label": "团队专业经验",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "18 年",
+            "label": "中国顶尖家族办公室持续运营沉淀"
           },
           {
-            "number": "2h",
-            "label": "顾问响应时效",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.4%",
+            "label": "超高净值委托客户长期留存率"
           },
           {
-            "number": "92%",
-            "label": "年度续约率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "0 违约",
+            "label": "成立以来全部资本运作项目零合规违约"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #064e3b 0%, #047857 50%, #78350f 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "process",
+      "type": "services",
       "data": {
-        "process_title": "咨询服务流程",
-        "process_subtitle": "先判断问题，再确定服务边界和执行节奏",
-        "process_items": [
+        "title": "四大核心金融业务板块",
+        "subtitle": "兼顾财富安全传承与资本跨越式增值",
+        "columns": "4",
+        "services": [
           {
-            "icon": "01",
-            "title": "需求沟通",
-            "desc": "了解企业阶段、经营目标和当前风险点。",
-            "stage_tag": "沟通"
+            "title": "全球家族信托与代际传承",
+            "desc": "隔离婚姻与企业经营债务风险，量身设计跨代传承分配信托架构与家族宪章。",
+            "icon": "fa-shield-halved"
           },
           {
-            "icon": "02",
-            "title": "资料诊断",
-            "desc": "梳理账务、合同、流程和历史资料。",
-            "stage_tag": "诊断"
+            "title": "企业资本运作与境内外并购",
+            "desc": "从产业协同标的尽调、估值建模、交易结构设计到监管部门审批全程护航。",
+            "icon": "fa-chart-pie"
           },
           {
-            "icon": "03",
-            "title": "方案确认",
-            "desc": "明确服务范围、时间表和交付资料。",
-            "stage_tag": "方案"
+            "title": "跨周期宏观资产配置方案",
+            "desc": "涵盖大类资产轮动、头部美元/人民币私募基金、黄金对冲与海外生息资产。",
+            "icon": "fa-globe"
           },
           {
-            "icon": "04",
-            "title": "执行复盘",
-            "desc": "按节点推进事项，并持续跟踪优化。",
-            "stage_tag": "执行"
+            "title": "跨境税务合规与反避税规划",
+            "desc": "深入研判 CRS、FATCA 与离岸信托税务穿透规则，确保全球税务合规透明。",
+            "icon": "fa-file-invoice-dollar"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "ct_title": "牌照资质与合规风控堡垒",
+        "ct_subtitle": "严格受中国证监会、中国证券投资基金业协会及香港证监会(SFC)全面监管"
       }
     },
     {
       "type": "cases",
       "data": {
-        "cases_title": "典型服务案例",
-        "cases_subtitle": "用企业阶段和结果说明专业服务价值",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-            "title": "连锁品牌财务规范",
-            "desc": "统一门店账务流程和经营数据口径。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=900&q=80",
-            "title": "成长企业融资准备",
-            "desc": "梳理报表、合同和融资材料基础。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
-            "title": "企业合规体检",
-            "desc": "识别合同、资质和流程中的关键风险。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        "cases_title": "经典财富规划与资本运作战例",
+        "cases_subtitle": "在复杂多变的市场环境中，为客户守护基业长青",
+        "columns": "3"
       }
     },
     {
-      "type": "faq",
+      "type": "team",
       "data": {
-        "faq_title": "常见咨询问题",
-        "faq_subtitle": "降低初次沟通前的信息不确定性",
-        "faq_items": [
-          {
-            "question": "是否适合初创企业？",
-            "answer": "适合，服务会根据企业阶段拆分为基础合规、财税规范和经营支持。"
-          },
-          {
-            "question": "能否远程服务？",
-            "answer": "多数资料诊断和顾问沟通支持远程完成，重要事项可预约线下会议。"
-          },
-          {
-            "question": "如何保护客户资料？",
-            "answer": "资料只用于服务评估和执行，具体保密边界会在服务协议中明确。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "team_title": "合伙人与首席投资官阵容",
+        "team_subtitle": "前高盛、中金公司保荐代表人与资深信托架构律师倾力护航",
+        "columns": "3"
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约专业顾问",
-        "contact_subtitle": "提交企业阶段、主要问题、期望目标和沟通时间，顾问会安排初步沟通。",
-        "contact_phone": "400-188-2026",
-        "contact_email": "consult@example.com",
-        "contact_address": "支持线上会议 / 可预约线下沟通",
+        "contact_title": "预约私享一对一闭门咨询",
+        "contact_subtitle": "资深合伙人将严格签署保密协议，为您提供针对性的财富诊断建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#f8fafc"
+        "contact_submit_text": "申请专属闭门会晤"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0b0f19",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#d97706",
+        "qfs_brand_title": "WEALTH-CONSULTING · 启灵财富咨询",
+        "qfs_brand_desc": "恪守信托责任，守护家族世代基业。专业合规的综合金融咨询服务机构。",
+        "qfs_bottom_text": "© 2026 WEALTH CONSULTING GROUP. 保留所有权利 · 京ICP备16039912号"
       }
     }
   ]

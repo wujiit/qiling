@@ -105,6 +105,14 @@ if ( $global_footer_hidden && ! $has_page_footer_override ) {
     do_action( 'developer_starter_after_site_footer', $args );
     return;
 }
+
+$has_inpage_footer = function_exists( 'developer_starter_page_has_footer_module' ) && developer_starter_page_has_footer_module();
+if ( $has_inpage_footer && ! $has_page_footer_override && ! $footer_builder_enabled ) {
+    // 页面内已包含专属页脚模块（如 footer_suite），自动静默屏蔽兜底页脚，实现所见即所得一体化装修
+    do_action( 'developer_starter_before_site_footer', $args );
+    do_action( 'developer_starter_after_site_footer', $args );
+    return;
+}
 if ( ! empty( $footer_visual_config['classes'] ) && is_array( $footer_visual_config['classes'] ) ) {
     $footer_classes = array_merge( $footer_classes, $footer_visual_config['classes'] );
 }

@@ -42,194 +42,283 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #0f172a 50%, #064e3b 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "天网卫士",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1800&q=80",
-            "title": "让企业安全从被动响应变成持续防护",
-            "subtitle": "覆盖资产识别、风险检测、合规整改和安全运营的完整方案。",
-            "btn_text": "预约安全评估",
-            "btn_url": "#",
-            "btn_bg_color": "#059669",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合规安全",
+            "link": "#compliance_trust",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#00f2fe",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#00f2fe",
+        "qhs_hover_bg": "rgba(0,242,254,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "构筑无懈可击的数字疆界 · 企业级零信任安全防御中枢",
+        "bb_subtitle": "连续 6 年护航国家级重大重保活动 0 沦陷，专注零信任动态访问控制 (ZTNA)、XDR 勒索病毒自动化防御与云原生容器安全闭环",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "7x24",
-            "number": "7x24",
-            "label": "监控响应",
-            "color": "#ffffff"
+            "text": "申请 14 天企业外部攻击面免费安全体检",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "300",
-            "number": "300+",
-            "label": "企业客户",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "99.9",
-            "number": "99.9%",
-            "label": "平台可用性",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "ISO",
-            "number": "ISO",
-            "label": "合规体系",
-            "color": "#ffffff"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
+      }
+    },
+    {
+      "type": "features_list",
+      "data": {
+        "features_list_title": "核心特性与功能矩阵",
+        "features_list_subtitle": "专为高标准业务量身定制，驱动业务全面增长"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "实战化网络攻防对抗战绩看板",
+        "stats_subtitle": "以真实攻防实战检验防御有效性，让企业每一次业务创新都坚如磐石",
+        "stats_items": [
+          {
+            "number": "15亿+ 次",
+            "label": "年均拦截勒索病毒与高级持续性威胁 (APT)"
+          },
+          {
+            "number": "< 90秒",
+            "label": "未知 0Day 漏洞威胁自动阻断响应时效"
+          },
+          {
+            "number": "650+ 家",
+            "label": "服务大型金融机构、能源央企与政企客户"
+          },
+          {
+            "number": "100%",
+            "label": "重大实战攻防演练防守方 0 破防纪录"
+          }
+        ]
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "compliance_title": "合规信誉与安全体系",
+        "compliance_subtitle": "严格遵从国家及国际行业安全标准，筑牢信赖基石"
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "安全服务能力",
-        "services_subtitle": "从风险发现到持续运营，覆盖企业核心安全需求",
+        "services_title": "四大下一代网络安全防御阵线",
+        "services_subtitle": "从边界防御走向以身份为中心、以数据为核心的持续自适应验证",
         "services_columns": "4",
-        "services_bg_color": "#ffffff",
         "services_items": [
           {
-            "icon": "01",
-            "title": "资产与风险识别",
-            "desc": "梳理公网资产、系统边界和高危暴露点。",
-            "link": "#"
+            "icon": "fas fa-user-shield",
+            "title": "零信任网络访问 (ZTNA) 与微隔离",
+            "desc": "持续身份认证与设备合规动态评分，隐藏内部资产端口，彻底终结黑客内网横向移动。"
           },
           {
-            "icon": "02",
-            "title": "威胁检测响应",
-            "desc": "持续监控攻击行为、异常登录和风险事件。",
-            "link": "#"
+            "icon": "fas fa-bug",
+            "title": "扩展威胁检测与自动化响应 (XDR)",
+            "desc": "跨终端、网络、云原生工作负载多源关联分析，AI 自动判定攻击链并毫秒级隔离受感染主机。"
           },
           {
-            "icon": "03",
-            "title": "数据安全治理",
-            "desc": "识别敏感数据、权限风险和合规缺口。",
-            "link": "#"
+            "icon": "fas fa-database",
+            "title": "企业数据防泄漏与密态计算 (DLP)",
+            "desc": "敏感数据自动分级分类打标、动态加水印脱敏、外发审批与端点 USB 防拷贝，符合数据安全法。"
           },
           {
-            "icon": "04",
-            "title": "等保合规整改",
-            "desc": "围绕测评要求输出整改计划和落地支持。",
-            "link": "#"
+            "icon": "fas fa-chess-knight",
+            "title": "实战化红蓝对抗渗透与代码审计",
+            "desc": "由国家级攻防名将团队实施模拟黑客攻击渗透，在黑产动手前精准排除深层逻辑漏洞。"
           }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "安全评估流程",
-        "process_subtitle": "先发现真实风险，再制定可执行整改路径",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "资产盘点",
-            "desc": "确认业务系统、云资源、账号和公网入口。",
-            "stage_tag": "盘点"
-          },
-          {
-            "icon": "02",
-            "title": "风险检测",
-            "desc": "扫描漏洞、配置、权限和异常行为线索。",
-            "stage_tag": "检测"
-          },
-          {
-            "icon": "03",
-            "title": "方案输出",
-            "desc": "按风险等级生成整改清单和优先级建议。",
-            "stage_tag": "方案"
-          },
-          {
-            "icon": "04",
-            "title": "持续运营",
-            "desc": "建立监控、响应、复盘和周期巡检机制。",
-            "stage_tag": "运营"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "features",
-      "data": {
-        "features_title": "合规与信任",
-        "features_subtitle": "面向企业采购需要的安全背书",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "等保支持",
-            "desc": "支持等保测评准备、整改和复核流程。"
-          },
-          {
-            "icon": "02",
-            "title": "审计记录",
-            "desc": "关键操作和风险处置过程可追踪。"
-          },
-          {
-            "icon": "03",
-            "title": "数据加密",
-            "desc": "支持传输加密、密钥管理和访问控制。"
-          },
-          {
-            "icon": "04",
-            "title": "应急响应",
-            "desc": "提供安全事件响应、溯源和复盘建议。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "cases",
+      "data": {}
+    },
+    {
+      "type": "certificate_honors",
       "data": {
-        "cases_title": "安全服务案例",
-        "cases_subtitle": "覆盖云上业务、数据平台和集团化系统",
-        "cases_columns": "3",
-        "cases_items": [
+        "cert_title": "国家级安全资质与权威机构认可",
+        "cert_subtitle": "严守国家网络安全战略基石，数据具备最高法定合规效力",
+        "cert_columns": "4",
+        "cert_items": [
           {
-            "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=900&q=80",
-            "title": "云上资产风险治理",
-            "desc": "统一发现公网暴露资产和高危配置问题。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "国家信息安全漏洞库 CNNVD 技术支撑",
+            "desc": "国家级网络安全核心漏洞研判一级支撑单位"
           },
           {
-            "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80",
-            "title": "数据安全合规整改",
-            "desc": "梳理敏感数据流转和访问权限缺口。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "公安部计算机信息系统专用产品销售许可",
+            "desc": "国家法定网络安全软硬件销售最高资质准入"
           },
           {
-            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
-            "title": "安全运营中心建设",
-            "desc": "建立告警、响应、复盘和运营报表机制。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "CNCERT 网络安全应急服务支撑单位",
+            "desc": "国家计算机网络应急技术处理协调中心甲级支撑"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "国家信息系统安全等保四级测评资质",
+            "desc": "具备支撑国家重要基础设施安全防护与测评能力"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "常见问题解答 (FAQ)",
+        "faq_subtitle": "快速了解您关心的核心事项与合作细节",
+        "faq_items": [
+          {
+            "question": "服务从开始到上线通常需要多久？",
+            "answer": "标准项目通常 3-7 个工作日完成首期交付，复杂定制需求按排期推进。"
+          },
+          {
+            "question": "是否支持后期维护与功能扩展？",
+            "answer": "支持全生命周期升级维护，提供专属售后沟通群与技术支持。"
+          },
+          {
+            "question": "付款流程与合同保障如何进行？",
+            "answer": "签订正规法律效力合同，支持对公转账与正规发票，阶段性验收付款。"
+          }
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约安全评估",
-        "contact_subtitle": "提交系统规模、云环境、合规目标和安全痛点，安全顾问会给出初步评估建议。",
-        "contact_phone": "400-119-2026",
-        "contact_email": "security@example.com",
-        "contact_address": "支持远程评估 / 可预约线下方案会",
+        "contact_title": "与 网络安全品牌官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#050b14",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#00f2fe",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "CYBER-SHIELD · 新一代零信任自适应网络安全防护",
+        "qfs_brand_desc": "构筑数字时代的不可破之盾。提供云原生应用安全、企业级零信任访问网关、智能威胁情报预警与勒索病毒全周期主动防御。",
+        "qfs_link_groups": [
+          {
+            "title": "安全产品矩阵 & 安全解决方案",
+            "links": "零信任身份与访问管理(IAM)|#\n下一代智能 Web 防火墙(WAF)|#\n终端检测与主动响应(EDR)|#\nDDoS 弹性高防与流量清洗|#\n金融级等保三级合规建设|#\n云原生微服务容器安全防护|#\n远程办公安全准入方案|#\n安全威胁狩猎与渗透测试|#\n全球实时网络威胁态势大屏|#\nCVE 漏洞即时分析与通告|#\n网络攻防演练白皮书|#\n应急响应 24 小时快速通道|#"
+          }
+        ],
+        "qfs_contact_title": "安全应急响应中心",
+        "qfs_contact_items": "7x24H 应急专线|400-888-9110|tel:4008889110\n安全报送|soc@cyber-shield.com|mailto:soc@cyber-shield.com\n安服总部|北京市朝阳区国家网络安全产业园区 A 座|#",
+        "qfs_social_title": "关注网络安全",
+        "qfs_social_links": "微信公众号|#\n先知安全技术社区|#\nFreeBuf 专栏|#\n国家安全应急信息源|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 CYBER-SHIELD SECURITY CORP. 保留所有权利 · 国家网络安全等级保护测评合规专家",
+        "qfs_bottom_links": "漏洞报告奖励计划(Bounty)|#\n免责与合规声明|#\n隐私政策|#\n安全认证证书|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

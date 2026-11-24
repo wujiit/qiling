@@ -42,275 +42,218 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵连锁",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#multi_image_text",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#ea580c",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#ea580c",
+        "qhs_hover_bg": "rgba(234,88,12,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #b45309 100%)",
         "banner_slides": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=80",
-            "title": "把标准化服务带到更多城市",
-            "subtitle": "全国门店网络、统一会员体系和加盟支持，让品牌增长更可复制。",
-            "btn_text": "查看附近门店",
-            "btn_url": "#",
-            "btn_bg_color": "#d97706",
-            "btn_text_color": "#ffffff"
-          }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "128",
-            "number": "128",
-            "label": "全国门店",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "50",
-            "number": "50万+",
-            "label": "会员用户",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "综合评分",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "30",
-            "number": "30分钟",
-            "label": "平均响应",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
-      }
-    },
-    {
-      "type": "stats",
-      "data": {
-        "stats_title": "连锁运营关键数据",
-        "stats_subtitle": "标准化运营与本地化服务，持续提升到店与复购表现",
-        "stats_text_align": "center",
-        "stats_items": [
-          {
-            "number": "95%",
-            "label": "门店标准执行率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "82%",
-            "label": "老客复购率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "24h",
-            "label": "售后闭环时效",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "200+",
-            "label": "城市服务网络",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #1c1917 0%, #292524 50%, #78350f 100%)",
-        "stats_title_color": "#ffffff"
-      }
-    },
-    {
-      "type": "services",
-      "data": {
-        "services_title": "品牌核心支持",
-        "services_subtitle": "围绕开店、运营、获客和复购的全链路能力",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "选址评估",
-            "desc": "商圈、人流、竞品和门店模型建议。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "标准培训",
-            "desc": "产品、服务、运营和人员管理体系。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "营销支持",
-            "desc": "开业活动、会员运营和本地获客素材。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "供应链协同",
-            "desc": "统一采购、库存建议和履约支持。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "branches",
-      "data": {
-        "branches_title": "全国门店网络",
-        "branches_subtitle": "展示直营网点、加盟店和即将开业城市",
-        "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "导航到店",
-        "booking_button_text": "预约咨询",
-        "branches_list": [
-          {
-            "name": "上海旗舰店",
-            "city": "上海",
-            "status": "open",
-            "address": "上海市静安区示例路168号",
-            "phone": "021-68880001",
-            "email": "shanghai@example.com",
-            "hours": "10:00-22:00",
-            "services": "旗舰体验,会员服务,加盟参观",
-            "transport": "地铁站步行 5 分钟",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "成都太古里店",
-            "city": "成都",
-            "status": "open",
-            "address": "成都市锦江区示例街88号",
-            "phone": "028-68880002",
-            "email": "chengdu@example.com",
-            "hours": "10:00-22:00",
-            "services": "城市样板店,新品体验",
-            "transport": "商圈停车便利",
-            "lat": "30.5728",
-            "lng": "104.0668",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "武汉光谷店",
-            "city": "武汉",
-            "status": "coming",
-            "address": "武汉市东湖高新区示例大道99号",
-            "phone": "027-68880003",
-            "email": "wuhan@example.com",
-            "hours": "即将开业",
-            "services": "加盟样板,区域服务",
-            "transport": "近主干道",
-            "lat": "30.5928",
-            "lng": "114.3055",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#fffbeb"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "加盟合作流程",
-        "process_subtitle": "从咨询到开业，关键节点清晰可控",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "提交意向",
-            "desc": "填写城市、预算和资源基础，顾问初步沟通。",
-            "stage_tag": "咨询"
-          },
-          {
-            "icon": "02",
-            "title": "资格评估",
-            "desc": "评估商圈、资金、团队和合作模式。",
-            "stage_tag": "评估"
-          },
-          {
-            "icon": "03",
-            "title": "签约筹建",
-            "desc": "完成合同、选址、设计和开业计划。",
-            "stage_tag": "筹建"
-          },
-          {
-            "icon": "04",
-            "title": "培训开业",
-            "desc": "团队培训、物料到位和开业活动执行。",
-            "stage_tag": "开业"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "合作伙伴反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "600+",
-        "average_rating": "4.8",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "王先生",
-            "position": "华东加盟商",
-            "content": "开业物料、培训和活动节奏都有模板，落地效率很高。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "李女士",
-            "position": "城市合伙人",
-            "content": "总部的会员运营和供应链支持帮门店降低了试错成本。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "陈女士",
-            "position": "区域代理",
-            "content": "门店复制模型清晰，新团队培训也比较好推进。",
-            "rating": "5",
-            "verified": "verified"
+            "image": "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1800&q=80",
+            "title": "全国千店直营连锁 · 开启品质生活新篇章",
+            "subtitle": "数字化供应链协同赋能，标准标准化门店运营管理体系，让每一次消费体验都安心如一。",
+            "btn_text": "查找附近门店",
+            "btn_url": "#stores"
           }
         ]
       }
     },
     {
-      "type": "booking-entry",
+      "type": "stats",
       "data": {
-        "booking_title": "提交加盟咨询",
-        "booking_subtitle": "提交意向城市、投资预算和经营经验，招商顾问会进行初步沟通。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "咨询须知",
-        "sidebar_content": "请在表单里填写真实意向城市和投资预算\n不同城市合作政策可能不同\n正式合作以合同和资质审核为准",
-        "contact_phone": "400-777-2026",
-        "contact_hours": "09:00-20:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#fffbeb"
+        "stats_title": "实力品牌见证 · 用规模与坪效说话",
+        "stats_subtitle": "标准化复制，让普通创业者也能轻松掌舵高回报实体生意",
+        "stats_items": [
+          {
+            "number": "2,800+",
+            "label": "全国一二三线城市直营与加盟门店"
+          },
+          {
+            "number": "1.5 亿人次",
+            "label": "年度全国门店线下消费客流"
+          },
+          {
+            "number": "8-10 个月",
+            "label": "标准化门店平均投资回收周期"
+          },
+          {
+            "number": "96.2%",
+            "label": "加盟商持续续约与多店开店率"
+          }
+        ]
+      }
+    },
+    {
+      "type": "multi_image_text",
+      "data": {
+        "mit_title": "全程保姆式扶持体系 · 零经验也能顺利开店",
+        "mit_subtitle": "七大职能部门全链路赋能，打造门店核心竞争力"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "全国门店网络与旗舰店矩阵",
+        "branches_subtitle": "遍布全国核心商圈与地标购物中心，支持线上预约考察",
+        "columns": "3"
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "加盟投资方案与预算明细",
+        "pricing_subtitle": "清晰透明无套路，支持根据商圈面积灵活选择店型",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "标准外卖档口店 (20-35㎡)",
+            "price": "¥9.8万",
+            "period": "整店投资起",
+            "desc": "适合社区高人流街区与外卖聚合商圈，启动快",
+            "features": "品牌终身授权与商圈保护\n全套智能后厨标准化设备清单\n总部7天封闭式实操手把手培训\n外卖双平台新店冷启动代运营扶持",
+            "btn_text": "申请名额",
+            "btn_link": "#contact"
+          },
+          {
+            "name": "商场标准体验店 (50-80㎡)",
+            "price": "¥16.8万",
+            "period": "旗舰主推",
+            "desc": "堂食与外卖并重，品牌形象好，日均翻台率高",
+            "features": "专业空间设计师免费出全套施工图\n全套智能POS与收银会员裂变系统\n开业督导驻店带店指导7天\n全国统一冷链物流直配至门店",
+            "btn_text": "抢先开通",
+            "btn_link": "#contact",
+            "featured": "1"
+          },
+          {
+            "name": "城市区域合伙人代理",
+            "price": "面议",
+            "period": "区域独家",
+            "desc": "享有整个地级市独家拓展权与分润权益",
+            "features": "享有地级市全境门店发展收益分成\n总部定向投放区域高铁与分众电梯广告\n区域仓储与供应链集采中心协同建设\n总部高层战略合伙人季度闭门会",
+            "btn_text": "洽谈合作",
+            "btn_link": "#contact"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "优秀加盟商创富经验分享",
+        "testimonials_subtitle": "听听从普通上班族到手握数家门店的老板们的真实故事",
+        "columns": "3"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "免费索取《2026 连锁加盟投资白皮书与盈利测算表》",
+        "contact_subtitle": "留下您的意向开店城市与联系方式，区域招商总监将尽快联系您并预留商圈独家保护名额。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交加盟考察申请"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#ea580c",
+        "qfs_brand_title": "CHAIN-HEADQUARTERS · 启灵连锁加盟总部",
+        "qfs_brand_desc": "标准化餐饮供应链与数字化连锁运营领航者。让天下没有难开的实体店。",
+        "qfs_bottom_text": "© 2026 CHAIN HEADQUARTERS. 商务部特许经营备案号: 01102008129881"
       }
     }
   ]

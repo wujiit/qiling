@@ -419,6 +419,36 @@
         "module_padding_top": "88px",
         "module_padding_bottom": "104px"
       }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0b0f19",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "QILING-ENTERPRISE · 启灵企业数字化旗舰基座",
+        "qfs_brand_desc": "集模块化可视化装修、全域数据资产集成、高性能独立站矩阵与多语言出海能力于一体。助力中国企业与全球出海品牌打造兼具极致视觉与强劲转化的官方商业枢纽。",
+        "qfs_link_groups": [
+          {
+            "title": "解决方案总览与生态与资源",
+            "links": "实体制造业数字化营销门户|#\nAI 与高新科技品牌旗舰官网|#\n跨境电商 DTC 单品独立站|#\n专业现代医疗法务企业官网|#\n114 套行业专属模板库全景|#\n88 套可视化功能模块组件库|#\nWordPress 企业主题授权购买|#\n开发者开放平台与 API 文档|#"
+          }
+        ],
+        "qfs_contact_title": "商务咨询与定制方案",
+        "qfs_contact_items": "咨询热线|400-880-8800|tel:4008808800\n企业微信客服|扫描二维码添加专业顾问|#\n服务时间|周一至周日 9:00 - 21:00（提供即时售前演示）|#\n总部地址|上海市黄浦区南京西路明天广场 28 层|#",
+        "qfs_social_title": "启灵官方矩阵",
+        "qfs_social_links": "官方公众号|#\n技术更新周报|#\n演示站即时体验|#\n主题授权中心|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QILING THEME ENTERPRISE. 保留所有权利 · 沪ICP备2024018892号 · 启灵商业通用旗舰版",
+        "qfs_bottom_links": "软件著作权认证证书|#\n商业版授权使用许可协议|#\n隐私安全与合规保护条例|#\n售后支持服务保障承诺|#",
+        "qfs_link_columns": "1"
+      }
     }
   ]
 }

@@ -43,128 +43,161 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "启灵财税",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "专业咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#10b981",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#10b981",
+        "qhs_hover_bg": "rgba(16,185,129,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #047857 100%)",
         "banner_slides": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80",
-            "title": "让企业账税更规范，经营更安心",
-            "subtitle": "代理记账、纳税申报、工商变更、税务筹划和财税顾问一站式服务，适合中小企业、门店品牌和创业团队。",
-            "btn_text": "预约财税顾问",
-            "btn_url": "#",
-            "btn_bg_color": "#1e3a8a",
-            "btn_text_color": "#ffffff"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1800&q=80",
+            "title": "专业财税合规管家 · 助力企业行稳致远",
+            "subtitle": "资深注册会计师与税务师领衔团队，提供代理记账、税务筹划、财务审计及出口退税全流程一站式企业服务。",
+            "btn_text": "免费咨询财税顾问",
+            "btn_url": "#contact"
           }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "十余年财税沉淀 · 值得信赖的数字资产账房",
+        "stats_subtitle": "严谨守护每一张凭证，让企业账目清清楚楚、财税合规无忧",
+        "stats_items": [
           {
-            "icon": "01",
-            "number": "800+",
-            "label": "服务企业客户",
-            "color": "#ffffff"
+            "number": "5,000+",
+            "label": "长期稳定委托代理记账企业"
           },
           {
-            "icon": "02",
-            "number": "15年",
-            "label": "财税服务经验",
-            "color": "#ffffff"
+            "number": "¥1.2 亿+",
+            "label": "累计为合规企业合法节税总额"
           },
           {
-            "icon": "03",
-            "number": "每月",
-            "label": "账税节点提醒",
-            "color": "#ffffff"
+            "number": "100%",
+            "label": "按期纳税申报率与准时度"
           },
           {
-            "icon": "04",
-            "number": "1v1",
-            "label": "专属顾问跟进",
-            "color": "#ffffff"
+            "number": "AAAAA",
+            "label": "全国涉税专业服务机构最高等级评定"
           }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "企业常用财税服务",
-        "services_subtitle": "围绕注册、记账、申报、筹划和合规，把企业日常账税事项交付清楚",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "title": "全方位企业财税服务矩阵",
+        "subtitle": "从初创注册做账到拟上市财税合规辅导全覆盖",
+        "columns": "4",
+        "services": [
           {
-            "icon": "01",
-            "title": "代理记账",
-            "desc": "原始凭证整理、账务处理、月度报表、经营数据口径梳理。",
-            "link": "#"
+            "title": "智能代理记账与纳税申报",
+            "desc": "票据一键拍照识别，智能记账凭证，按月精准完成增值税与企业所得税申报。",
+            "icon": "fa-calculator"
           },
           {
-            "icon": "02",
-            "title": "纳税申报",
-            "desc": "增值税、附加税、企业所得税、个税等常规申报节点提醒与处理。",
-            "link": "#"
+            "title": "企业合规税务筹划与节税",
+            "desc": "运用区域产业扶持政策与研发加计扣除，合法降低企业与高管税负成本。",
+            "icon": "fa-receipt"
           },
           {
-            "icon": "03",
-            "title": "工商税务变更",
-            "desc": "公司注册、地址/法人/经营范围变更、税务登记和银行开户协同。",
-            "link": "#"
+            "title": "专项审计验资与清算报告",
+            "desc": "出具正规防伪条形码年度会计报表审计报告、高企专项审计与资产评估。",
+            "icon": "fa-file-signature"
           },
           {
-            "icon": "04",
-            "title": "财税顾问",
-            "desc": "账务规范、票据风险、税负测算、政策解读和经营合规建议。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "pricing",
-      "data": {
-        "pricing_title": "代理记账套餐",
-        "pricing_subtitle": "按企业阶段、票据量和服务深度配置，正式上线时替换成你的城市价格",
-        "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
-        "pricing_items": [
-          {
-            "name": "小规模基础版",
-            "price": "¥199",
-            "period": "/月起",
-            "desc": "适合初创企业和轻票量门店",
-            "features": "月度记账\n基础纳税申报\n财税节点提醒\n电子凭证归档",
-            "btn_text": "咨询基础版",
-            "btn_link": "#",
-            "featured": ""
-          },
-          {
-            "name": "一般纳税人标准版",
-            "price": "¥499",
-            "period": "/月起",
-            "desc": "适合票据量稳定的经营企业",
-            "features": "进销项票据处理\n月度账务报表\n纳税申报\n发票风险提醒\n专属会计对接",
-            "btn_text": "咨询标准版",
-            "btn_link": "#",
-            "featured": "1",
-            "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #1e3a8a 0%, #059669 100%)"
-          },
-          {
-            "name": "财税顾问版",
-            "price": "按需报价",
-            "period": "",
-            "desc": "适合多门店、多主体和合规需求较高企业",
-            "features": "多主体账税梳理\n税负测算\n票据流程规范\n季度经营复盘\n专项咨询支持",
-            "btn_text": "预约顾问",
-            "btn_link": "#",
-            "featured": ""
+            "title": "进出口退税与跨境财税",
+            "desc": "外贸企业退免税备案申报、收汇核销与跨境电商跨境税务合规架构梳理。",
+            "icon": "fa-earth-asia"
           }
         ]
       }
@@ -172,122 +205,107 @@
     {
       "type": "process",
       "data": {
-        "process_title": "服务交付流程",
-        "process_subtitle": "从资料交接到申报复盘，每个节点都可被客户理解和追踪",
-        "process_mode": "standard",
-        "module_bg_color": "#ffffff",
+        "process_title": "代理记账/会计税务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "需求沟通",
-            "desc": "确认公司类型、纳税人身份、票据量、人员规模和当前账税痛点。",
-            "stage_tag": "沟通"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "资料交接",
-            "desc": "建立凭证、发票、银行流水、合同和申报材料的交接清单。",
-            "stage_tag": "交接"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "记账申报",
-            "desc": "按月完成凭证处理、账务核对、税务申报和报表输出。",
-            "stage_tag": "交付"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "风险提醒与复盘",
-            "desc": "针对票据、税负、异常申报和经营数据变化提供提醒与改进建议。",
-            "stage_tag": "复盘"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "透明明码标价套餐 · 满足不同发展阶段需求",
+        "pricing_subtitle": "年付立享赠送税控盘托管与首年账本免费打印装订",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "小规模纳税人代账",
+            "price": "¥200",
+            "period": "每月起",
+            "desc": "适合月开票量不大、初创小微企业",
+            "features": "月度代理记账与建账\n每季度增值税与企业所得税申报\n协助税控开票申请与远程辅导\n提供年度企业所得税汇算清缴",
+            "btn_text": "立即办理",
+            "btn_link": "#contact"
+          },
+          {
+            "name": "一般纳税人标准代账",
+            "price": "¥500",
+            "period": "每月起",
+            "desc": "适合规模型企业、月度开票进项抵扣",
+            "features": "月度进项发票勾选认证与抵扣\n月度全套财务报表出具\n每月按时进行增值税进销项申报\n赠送年度企业所得税汇算清缴+防伪印章",
+            "btn_text": "立即办理",
+            "btn_link": "#contact",
+            "featured": "1"
+          },
+          {
+            "name": "财税合规与税务顾问年卡",
+            "price": "¥1,500",
+            "period": "每月起",
+            "desc": "适合高成长企业、规避税收处罚风险",
+            "features": "全套财税外包与现场盘点辅导\n高管个税与股权分红税务筹划\n重大商业合同涉税条款把关\n应对税务局自查与实地核查全程陪同",
+            "btn_text": "立即办理",
+            "btn_link": "#contact"
+          }
+        ]
+      }
+    },
+    {
+      "type": "team",
+      "data": {
+        "team_title": "注册会计师与高级税务师专家团队",
+        "team_subtitle": "人均具备 10 年以上大中型企业财税实操经验，懂政策更懂实务",
+        "columns": "3"
       }
     },
     {
       "type": "certificate_honors",
       "data": {
-        "ch_title": "资质与服务信任",
-        "ch_subtitle": "用执业资质、行业备案和服务荣誉降低客户首次咨询顾虑",
-        "ch_columns": "3",
-        "ch_enable_filter": "yes",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "ch_items": [
-          {
-            "image": "",
-            "title": "代理记账许可证",
-            "category": "执业资质",
-            "badge": "核心资质",
-            "cert_no": "DLJZ-2026-001",
-            "issuer": "财政主管部门",
-            "issue_date": "2026-01-10",
-            "expiry_date": "持续有效",
-            "file_url": "#"
-          },
-          {
-            "image": "",
-            "title": "会计服务机构备案",
-            "category": "行业备案",
-            "badge": "合规备案",
-            "cert_no": "KJBA-2026-018",
-            "issuer": "行业主管机构",
-            "issue_date": "2026-02-18",
-            "expiry_date": "年度更新",
-            "file_url": "#"
-          },
-          {
-            "image": "",
-            "title": "中小企业服务优秀机构",
-            "category": "荣誉奖项",
-            "badge": "客户认可",
-            "cert_no": "SME-2026-120",
-            "issuer": "企业服务协会",
-            "issue_date": "2026-03-15",
-            "expiry_date": "",
-            "file_url": "#"
-          }
-        ]
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "代理记账常见问题",
-        "faq_subtitle": "把客户最关心的费用、资料、申报和责任边界提前说明",
-        "faq_items": [
-          {
-            "question": "代理记账套餐价格固定吗？",
-            "answer": "页面价格是示例锚点，实际报价通常取决于纳税人类型、票据量、行业复杂度、是否多主体和是否需要专项顾问服务。"
-          },
-          {
-            "question": "每个月需要给会计哪些资料？",
-            "answer": "通常需要发票、银行流水、费用凭证、工资社保信息、合同或收入确认资料。上线时建议把资料清单整理成固定交接表。"
-          },
-          {
-            "question": "零申报企业也需要记账吗？",
-            "answer": "需要。零申报不等于不用做账，企业仍应按规定保存账簿、凭证和申报记录，避免后续年报、注销或税务检查时资料缺失。"
-          },
-          {
-            "question": "财税顾问和代理记账有什么区别？",
-            "answer": "代理记账偏日常账务和申报交付；财税顾问更关注账务规范、票据风险、税负测算、政策适配和经营决策支持。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "title": "官方执业资质证书与荣誉",
+        "subtitle": "财政局正规审批代理记账许可证 · 注册会计师协会团体会员"
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约一次免费账税诊断",
-        "contact_subtitle": "提交公司类型、纳税人身份、票据量、当前问题和联系方式，财税顾问会评估适合的服务套餐。",
+        "contact_title": "免费获取企业财税现状体检与节税方案",
+        "contact_subtitle": "资深会计师将在 15 分钟内与您电话沟通，解答您的做账报税疑问。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "立即预约财税咨询"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#10b981",
+        "qfs_brand_title": "ACCOUNT-PRO · 启灵会计财税服务",
+        "qfs_brand_desc": "用严谨数字守护企业成长。专业、合规、高效的企业财税管家。",
+        "qfs_bottom_text": "© 2026 ACCOUNT PRO. 代理记账许可机构代码: 91110108MA00XXXXXX"
       }
     }
   ]

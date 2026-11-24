@@ -42,267 +42,416 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #1d4ed8 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "车道精修",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80",
-            "title": "让每一次用车都更安心",
-            "subtitle": "新车咨询、维修保养、钣喷美容与道路救援一站式服务。",
-            "btn_text": "预约到店",
-            "btn_url": "#",
-            "btn_bg_color": "#1d4ed8",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "5000",
-            "number": "5000+",
-            "label": "服务车主",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "40",
-            "number": "40+",
-            "label": "认证技师",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "12",
-            "number": "12家",
-            "label": "直营网点",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.8",
-            "number": "4.8",
-            "label": "车主评分",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f97316",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f97316",
+        "qhs_hover_bg": "rgba(249,115,22,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "products",
+      "type": "brand_banner_pro",
       "data": {
-        "products_title": "热门车型与服务包",
-        "products_subtitle": "从新车到售后，覆盖车主核心用车场景",
-        "columns": "4",
-        "modal_inquire_text": "预约咨询",
-        "modal_inquire_url": "#",
-        "items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "德系豪车专修 · 顶级车衣改色与精洗中心",
+        "bb_subtitle": "原厂诊断电脑检测编程，无尘恒温封闭车间与国际大师级贴膜工艺，为您的爱车提供赛道级专业维保",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80",
-            "title": "城市SUV 2026款",
-            "desc": "智能辅助驾驶与高效动力组合",
-            "specs": "排量：2.0T\n变速箱：8AT\n质保：3年/10万公里",
-            "post_id": "",
-            "btn_text": "查看详情"
+            "text": "预约到店专属工位",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80",
-            "title": "年度保养套餐",
-            "desc": "基础保养、全车检测与耗材更换",
-            "specs": "机油机滤更换\n刹车系统检查\n空调滤芯检测",
-            "post_id": "",
-            "btn_text": "查看详情"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80",
-            "title": "事故钣喷修复",
-            "desc": "快速评估、车漆匹配与交付质检",
-            "specs": "钣金修复\n局部补漆\n保险协助",
-            "post_id": "",
-            "btn_text": "查看详情"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80",
-            "title": "道路救援服务",
-            "desc": "拖车、搭电、换胎与故障应急",
-            "specs": "24小时接入\n同城就近派单\n进度实时通知",
-            "post_id": "",
-            "btn_text": "查看详情"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "门店服务项目",
-        "services_subtitle": "透明报价、标准流程、关键节点可追踪",
-        "services_bg_color": "#f8fafc",
+        "services_title": "四大核心车房工场服务矩阵",
+        "services_title_size": "2.1rem",
+        "services_subtitle": "严选原厂配件与国际一线品牌耗材，工程师团队均持有德系主机厂认证资质",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "新车销售",
-            "desc": "车型讲解、金融方案与试驾服务。",
-            "link": "#"
+            "icon": "ri-tools-fill",
+            "title": "德系豪车专修与大保",
+            "desc": "专精保时捷、奔驰、宝马、奥迪原厂级别检测编程，解决底盘异响、发动机烧机油及变速箱疑难故障。"
           },
           {
-            "icon": "02",
-            "title": "维修保养",
-            "desc": "标准维保流程，关键项目透明报价。",
-            "link": "#"
+            "icon": "ri-shield-flash-fill",
+            "title": "进口 TPU 隐形车衣施工",
+            "desc": "独家恒温降尘裁膜车间，微水微痕专车专用包边技法，8mil 高韧性防刮蹭抗黄变，终身原厂质保。"
           },
           {
-            "icon": "03",
-            "title": "钣喷美容",
-            "desc": "事故修复、局部补漆与精细美容养护。",
-            "link": "#"
+            "icon": "ri-contrast-drop-2-line",
+            "title": "漆面深度抛光与镜面还原",
+            "desc": "采用德国进口 ROUPES 抛光机与水性研磨剂，纯物理精抛彻底去除太阳纹发丝痕，重现原厂出厂级镜面透亮。"
           },
           {
-            "icon": "04",
-            "title": "道路救援",
-            "desc": "拖车、电瓶应急和故障到场处理支持。",
-            "link": "#"
+            "icon": "ri-sound-module-fill",
+            "title": "原厂配置升级与性能调校",
+            "desc": "原厂电吸门、360全景影像、ACC自适应巡航无损原装位加装升级，特调避震刹车与轻量化锻造轮毂。"
           }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "branches",
-      "data": {
-        "branches_title": "门店网点",
-        "branches_subtitle": "支持城市筛选与导航到店，快速匹配最近服务点",
-        "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "导航到店",
-        "booking_button_text": "预约服务",
-        "branches_list": [
-          {
-            "name": "上海浦东旗舰店",
-            "city": "上海",
-            "status": "open",
-            "address": "上海市浦东新区示例路88号",
-            "phone": "021-69990001",
-            "email": "shanghai@example.com",
-            "hours": "周一至周日 09:00-20:00",
-            "services": "新车销售,维保,钣喷",
-            "transport": "地铁站步行约8分钟",
-            "lat": "31.2304",
-            "lng": "121.4737",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "杭州城西服务店",
-            "city": "杭州",
-            "status": "open",
-            "address": "杭州市西湖区示例路66号",
-            "phone": "0571-89990002",
-            "email": "hangzhou@example.com",
-            "hours": "周一至周日 09:00-19:30",
-            "services": "维保,事故快修,保险代办",
-            "transport": "高架出口 5 分钟",
-            "lat": "30.2741",
-            "lng": "120.1551",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "苏州园区体验店",
-            "city": "苏州",
-            "status": "busy",
-            "address": "苏州市工业园区示例大道188号",
-            "phone": "0512-89990003",
-            "email": "suzhou@example.com",
-            "hours": "周一至周日 09:30-19:00",
-            "services": "试驾,美容,精品加装",
-            "transport": "停车位充足",
-            "lat": "31.2989",
-            "lng": "120.5853",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "服务流程",
-        "process_subtitle": "从预约到交付，每一步都有明确节点",
+        "process_title": "汽车服务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "在线预约",
-            "desc": "提交车型、里程与服务需求，门店确认时段。",
-            "stage_tag": "预约"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "到店检测",
-            "desc": "技师完成基础检测并同步报价方案。",
-            "stage_tag": "检测"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "维修施工",
-            "desc": "按标准流程执行维修保养，关键节点可追踪。",
-            "stage_tag": "施工"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "质检交付",
-            "desc": "完成复检、清洁和使用建议后交付。",
-            "stage_tag": "交付"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "booking-entry",
-      "data": {
-        "booking_title": "预约汽车服务",
-        "booking_subtitle": "提交车型、里程和服务需求，门店顾问会确认服务安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约须知",
-        "sidebar_content": "保养请在表单里填写车型和当前里程\n事故维修建议备注问题位置和照片说明\n试驾需携带有效驾驶证",
-        "contact_phone": "400-808-2026",
-        "contact_hours": "09:00-20:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "汽车服务常见问题",
-        "module_bg_color": "#f8fafc",
-        "faq_items": [
-          {
-            "question": "可以在线估价吗？",
-            "answer": "可以先提交车型、里程和项目需求，门店会给出初步报价，到店检测后确认最终方案。"
-          },
-          {
-            "question": "是否支持保险理赔协助？",
-            "answer": "支持，可在预约时说明保险公司和事故情况，门店会协助准备理赔资料。"
-          },
-          {
-            "question": "门店信息可以换成真实地址吗？",
-            "answer": "可以，门店机构模块支持城市、电话、地址、地图坐标和预约链接配置。"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "养护施工透明套餐 · 价格一目了然",
+        "pricing_title_size": "2.1rem",
+        "pricing_subtitle": "配件真伪一物一码直查，工时费用明码标价，杜绝汽修行业暴利宰客与随意加项",
+        "pricing_columns": "3",
+        "pricing_items": [
+          {
+            "name": "全车深度蒸汽精洗与养护年卡",
+            "name_color": "#0f172a",
+            "price": "1,980",
+            "price_color": "#0f172a",
+            "period": "年 / 包含 12 次深度精洗",
+            "desc": "进口中性洗车香波 + 轮毂铁粉去除 + 蒸汽发动机舱清洗 + 内饰除螨杀菌",
+            "desc_color": "#64748b",
+            "features": "纯手工双桶洗车不伤漆\n全车漆面收水吹风缝隙处理\n真皮座椅滋养护理\n赠送4次纳米水晶镀膜",
+            "features_color": "#334155",
+            "btn_text": "立即开通年卡",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "全车进口 TPU 隐形车衣全包",
+            "name_color": "#0f172a",
+            "price": "8,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "起 / 包含施工与10年质保",
+            "desc": "8mil 厚度高透亮 TPU 材质，微距划痕遇热秒自愈，抗击碎石飞溅刮伤",
+            "desc_color": "#64748b",
+            "features": "专车专用微水电脑精准裁膜\n恒温无尘降尘车间施工\n全包边无接缝不翘边\n电子质保卡全国连锁联保",
+            "features_color": "#334155",
+            "btn_text": "预约车间专属工位",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "车友推荐",
+            "badge": "车友推荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "德系原厂全合成机油小保养",
+            "name_color": "#0f172a",
+            "price": "680",
+            "price_color": "#0f172a",
+            "period": "次 / 豪车专享配方",
+            "desc": "原装进口金美孚1号 / 壳牌灰喜力全合成机油 + 曼牌机滤 + 全车36项安全体检",
+            "desc_color": "#64748b",
+            "features": "原厂诊断电脑全车故障码排查\n底盘悬挂胶套与制动液检测\n免工时费与免费洗车\n旧件当面归还透明维保",
+            "features_color": "#334155",
+            "btn_text": "预约机油保养",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_plans": [
+          {
+            "name": "全车深度蒸汽精洗与养护年卡",
+            "name_color": "#0f172a",
+            "price": "1,980",
+            "price_color": "#0f172a",
+            "period": "年 / 包含 12 次深度精洗",
+            "desc": "进口中性洗车香波 + 轮毂铁粉去除 + 蒸汽发动机舱清洗 + 内饰除螨杀菌",
+            "desc_color": "#64748b",
+            "features": "纯手工双桶洗车不伤漆\n全车漆面收水吹风缝隙处理\n真皮座椅滋养护理\n赠送4次纳米水晶镀膜",
+            "features_color": "#334155",
+            "btn_text": "立即开通年卡",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "全车进口 TPU 隐形车衣全包",
+            "name_color": "#0f172a",
+            "price": "8,800",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "起 / 包含施工与10年质保",
+            "desc": "8mil 厚度高透亮 TPU 材质，微距划痕遇热秒自愈，抗击碎石飞溅刮伤",
+            "desc_color": "#64748b",
+            "features": "专车专用微水电脑精准裁膜\n恒温无尘降尘车间施工\n全包边无接缝不翘边\n电子质保卡全国连锁联保",
+            "features_color": "#334155",
+            "btn_text": "预约车间专属工位",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "车友推荐",
+            "badge": "车友推荐",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "德系原厂全合成机油小保养",
+            "name_color": "#0f172a",
+            "price": "680",
+            "price_color": "#0f172a",
+            "period": "次 / 豪车专享配方",
+            "desc": "原装进口金美孚1号 / 壳牌灰喜力全合成机油 + 曼牌机滤 + 全车36项安全体检",
+            "desc_color": "#64748b",
+            "features": "原厂诊断电脑全车故障码排查\n底盘悬挂胶套与制动液检测\n免工时费与免费洗车\n旧件当面归还透明维保",
+            "features_color": "#334155",
+            "btn_text": "预约机油保养",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "直营工场服务网点",
+        "branches_title_size": "2rem",
+        "branches_items": [
+          {
+            "name": "虹桥国际工场 · 豪车综合专修中心",
+            "address": "上海市闵行区申长路 1588 号汽车科技园 A1 栋",
+            "tel": "021-6488-8833",
+            "hours": "周一至周日 08:30 - 20:30 (夜间提供24小时紧急救援拖车)",
+            "features": "18 个专业举升机工位 · 2 间百级无尘贴膜车间 · 专属贵宾休息茶室"
+          },
+          {
+            "name": "浦东张江店 · 漆面车衣与精细养护工场",
+            "address": "上海市浦东新区张江高科纳贤路 800 号园区",
+            "tel": "021-5088-6622",
+            "hours": "周一至周日 09:00 - 19:30",
+            "features": "专车专修快速通道 · 3M/XPEL官方授权认证工位 · 免费同城上门取送车"
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "testimonials_title": "车友俱乐部口碑反馈",
+        "testimonials_title_size": "2rem",
+        "testimonials_subtitle": "超 10,000+ 位保时捷、宝马 M、奔驰 AMG 车主长年信赖托付的选择",
+        "testimonials_columns": "3",
+        "testimonials_items": [
+          {
+            "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+            "name": "陆先生 (保时捷 911 GT3 车主)",
+            "role": "天马赛车场会员",
+            "content": "全车车衣贴得毫无瑕疵，包边处理得非常完美。上周去跑赛道被前车带起的小石头弹到前杠，撕开膜一看车漆一点事都没有！"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=200&q=80",
+            "name": "陈总 (奔驰 S450L 车主)",
+            "role": "企业合伙人",
+            "content": "一直在他们家做定期大保养，师傅比4S店还要仔细，原厂电脑读码非常专业，价格比4S店省了一半，取送车服务也很省心。"
+          },
+          {
+            "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
+            "name": "高女士 (宝马 X5 车主)",
+            "role": "自驾摄影师",
+            "content": "黑色的车跑了三年全是太阳纹，做完三级镜面抛光之后简直跟刚提新车一样反光透亮，内饰蒸汽清洗后车里连一点异味都没有了！"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact",
+      "data": {
+        "contact_title": "与 汽车服务官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#111317",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f97316",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "AUTO-PRO · 德系精修连锁与汽车后市场综合体验中心",
+        "qfs_brand_desc": "拥有博世官方认证检测线与无尘恒温烤漆车间。涵盖汽车常规保养、机械故障精修、底盘调校、事故理赔直赔及原厂升级改装，为车主提供透明平价的 4S 级养车服务。",
+        "qfs_link_groups": [
+          {
+            "title": "养车维修项目 & 会员权益与保障",
+            "links": "博世电脑 128 项全车深度体检|#\n全合成机油小保养极速换|#\n变速箱与发动机总成深度大修|#\n无尘环保高温水性漆钣金喷漆|#\n全城 24 小时道路紧急救援|#\n各大保险公司直赔与理赔代办|#\n养车配件真品防伪溯源承诺|#\n二手车置换评估与权威认证|#"
+          }
+        ],
+        "qfs_contact_title": "养车预约与道路救援",
+        "qfs_contact_items": "预约热线|400-880-5511|tel:4008805511\n全天救援|138-0000-9988|tel:13800009988\n营业时间|周一至周日 8:00 - 21:00（夜间急修值班）|#\n旗舰店址|北京市朝阳区姚家园路金港汽车公园 F 区 12 号|#",
+        "qfs_social_title": "车主俱乐部",
+        "qfs_social_links": "微信养车预约|#\n车主保养手册|#\n改装案例实拍|#\n自驾游车队群|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 AUTO-PRO CAR SERVICE. 保留所有权利 · 京ICP备16010922号 · 一类汽车维修经营资质",
+        "qfs_bottom_links": "工时与配件价目表|#\n维修质保卡说明|#\n免费代步车协议|#\n车主维权投诉通道|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

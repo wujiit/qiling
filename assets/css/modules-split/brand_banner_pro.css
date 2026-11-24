@@ -136,8 +136,8 @@
 .qiling-module-scope-brand_banner_pro .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-brand_banner_pro /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-brand_banner_pro .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-brand_banner_pro .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-brand_banner_pro .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-brand_banner_pro /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-brand_banner_pro /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-brand_banner_pro /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-brand_banner_pro /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-brand_banner_pro .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-brand_banner_pro .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-brand_banner_pro .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-brand_banner_pro .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-brand_banner_pro /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -428,53 +438,31 @@
   justify-content: center;
   font-size: var(--qiling-text-em-1p05);
 }.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-primary {
-  background: var(--bbp-primary-btn-bg, var(--bbp-primary-btn-default-bg));
-  color: var(--bbp-primary-btn-text, var(--bbp-primary-btn-default-text));
-  border-color: var(
-    --bbp-primary-btn-border,
-    var(--bbp-primary-btn-default-border)
+  background: var(--bbp-primary-btn-bg, var(--color-primary, #059669));
+  color: var(--bbp-primary-btn-text, #ffffff);
+  border: 1px solid var(--bbp-primary-btn-border, var(--color-primary, #059669));
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-primary:hover {
+  background: var(--bbp-primary-btn-hover-bg, var(--color-primary-hover, #047857));
+  color: var(--bbp-primary-btn-hover-text, #ffffff);
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-light {
+  background: var(--bbp-light-btn-bg, #ffffff);
+  color: var(--bbp-light-btn-text, #0f172a);
+  border: 1.5px solid var(--bbp-light-btn-border, #cbd5e1);
+  box-shadow: var(
+    --qiling-component-card-shadow,
+    0 18px 34px var(--qiling-color-rgba-15-23-42-01)
   );
-  box-shadow: 0 18px 34px -18px var(--qiling-color-rgba-11-108-255-08);
-}.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-primary:hover {
-  transform: translateY(-2px);
-  background: var(
-    --bbp-primary-btn-hover-bg,
-    var(--bbp-primary-btn-bg, var(--bbp-primary-btn-default-bg))
-  );
-  color: var(
-    --bbp-primary-btn-hover-text,
-    var(--bbp-primary-btn-text, var(--bbp-primary-btn-default-text))
-  );
-  border-color: var(
-    --bbp-primary-btn-hover-border,
-    var(--bbp-primary-btn-border, var(--bbp-primary-btn-default-border))
-  );
-  box-shadow: 0 24px 38px -18px var(--qiling-color-rgba-11-108-255-09);
-}.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-light {
-  background: var(--bbp-light-btn-bg, var(--bbp-light-btn-default-bg));
-  color: var(--bbp-light-btn-text, var(--bbp-light-btn-default-text));
-  border-color: var(
-    --bbp-light-btn-border,
-    var(--bbp-light-btn-default-border)
-  );
-}.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-light:hover {
-  background: var(
-    --bbp-light-btn-hover-bg,
-    var(--bbp-light-btn-bg, var(--bbp-light-btn-default-bg))
-  );
-  color: var(
-    --bbp-light-btn-hover-text,
-    var(--bbp-light-btn-text, var(--bbp-light-btn-default-text))
-  );
-  border-color: var(
-    --bbp-light-btn-hover-border,
-    var(--bbp-light-btn-border, var(--bbp-light-btn-default-border))
-  );
-  transform: translateY(-2px);
-}.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-outline {
-  background: var(--qiling-color-transparent);
-  color: var(--bbp-title-color, var(--color-neutral-900));
-  border-color: var(--qiling-color-neutral-400-alpha-045);
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-light:hover {
+  background: var(--bbp-light-btn-hover-bg, #f1f5f9);
+  color: var(--bbp-light-btn-hover-text, #0f172a);
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-outline {
+  background: transparent;
+  color: var(--bbp-title-color, var(--color-primary, #0f172a));
+  border: 1.5px solid var(--bbp-title-color, var(--color-primary, #059669));
 }.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-outline:hover {
   background: var(--qiling-color-rgba-255-255-255-02);
   transform: translateY(-2px);
@@ -909,23 +897,31 @@
     0 18px 34px var(--qiling-color-rgba-15-23-42-012)
   );
 }.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-primary {
-  background: var(--bbp-primary-btn-bg, var(--bbp-primary-btn-default-bg));
-  color: var(--bbp-primary-btn-text, var(--bbp-primary-btn-default-text));
-  border-color: var(
-    --bbp-primary-btn-border,
-    var(--bbp-primary-btn-default-border)
-  );
-}.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-light {
-  background: var(--bbp-light-btn-bg, var(--bbp-light-btn-default-bg));
-  color: var(--bbp-light-btn-text, var(--bbp-light-btn-default-text));
-  border-color: var(
-    --bbp-light-btn-border,
-    var(--bbp-light-btn-default-border)
-  );
+  background: var(--bbp-primary-btn-bg, var(--color-primary, #059669));
+  color: var(--bbp-primary-btn-text, var(--color-text-inverse, #ffffff));
+  border: 1px solid var(--bbp-primary-btn-border, var(--color-primary, #059669));
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-primary:hover {
+  background: var(--bbp-primary-btn-hover-bg, var(--color-primary-hover, #047857));
+  color: var(--bbp-primary-btn-hover-text, var(--color-text-inverse, #ffffff));
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-light {
+  background: var(--bbp-light-btn-bg, var(--color-surface, #ffffff));
+  color: var(--bbp-light-btn-text, var(--color-primary, #0f172a));
+  border: 1.5px solid var(--bbp-light-btn-border, rgba(var(--color-primary-rgb, 5, 150, 105), 0.35));
   box-shadow: var(
     --qiling-component-card-shadow,
     0 18px 34px var(--qiling-color-rgba-15-23-42-01)
   );
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-light:hover {
+  background: var(--bbp-light-btn-hover-bg, var(--color-surface-alt, #f1f5f9));
+  color: var(--bbp-light-btn-hover-text, var(--color-primary, #0f172a));
+}
+.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-btn-outline {
+  background: transparent !important;
+  color: var(--bbp-title-color, var(--color-primary, #0f172a)) !important;
+  border: 1.5px solid var(--bbp-title-color, var(--color-primary, #059669)) !important;
 }.qiling-module-scope-brand_banner_pro .module-brand-banner-pro .bbp-media-wrap {
   border: 1px solid var(--qiling-color-rgba-255-255-255-02);
   box-shadow: 0 30px 70px var(--qiling-color-rgba-15-23-42-022);

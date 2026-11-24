@@ -46,7 +46,96 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "云图智绘",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "特色业务",
+            "link": "#service_cards",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#6366f1",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#6366f1",
+        "qhs_hover_bg": "rgba(99,102,241,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "interact_hero",
       "data": {
         "bb_layout": "left_right",
         "bb_style_mode": "minimal",
@@ -235,35 +324,137 @@
         "pricing_items": [
           {
             "name": "启动版",
+            "name_color": "#0f172a",
             "price": "¥199",
+            "price_color": "#0f172a",
             "period": "/月",
             "desc": "适合轻量工具站",
+            "desc_color": "#64748b",
             "features": "基础页面模板\n基础模块组合\n单站点部署\n邮件支持",
+            "features_color": "#334155",
             "btn_text": "开始体验",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
             "name": "增长版",
+            "name_color": "#0f172a",
             "price": "¥699",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
             "period": "/月",
             "desc": "适合成长型产品官网",
+            "desc_color": "#64748b",
             "features": "一体式视觉模板\n高级模块组合\n数据与转化区块\n优先技术支持",
+            "features_color": "#334155",
             "btn_text": "选择增长版",
             "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
+            "is_featured": "yes",
             "featured_text": "推荐",
+            "badge": "推荐",
             "featured_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)"
           },
           {
             "name": "企业版",
+            "name_color": "#0f172a",
             "price": "联系销售",
+            "price_color": "#0f172a",
             "period": "",
             "desc": "适合定制化交付",
+            "desc_color": "#64748b",
             "features": "品牌视觉定制\n多页面模板体系\n私有化交付支持\n专属实施服务",
+            "features_color": "#334155",
             "btn_text": "预约演示",
             "btn_link": "#",
-            "featured": ""
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
+        "pricing_plans": [
+          {
+            "name": "启动版",
+            "name_color": "#0f172a",
+            "price": "¥199",
+            "price_color": "#0f172a",
+            "period": "/月",
+            "desc": "适合轻量工具站",
+            "desc_color": "#64748b",
+            "features": "基础页面模板\n基础模块组合\n单站点部署\n邮件支持",
+            "features_color": "#334155",
+            "btn_text": "开始体验",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "增长版",
+            "name_color": "#0f172a",
+            "price": "¥699",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/月",
+            "desc": "适合成长型产品官网",
+            "desc_color": "#64748b",
+            "features": "一体式视觉模板\n高级模块组合\n数据与转化区块\n优先技术支持",
+            "features_color": "#334155",
+            "btn_text": "选择增长版",
+            "btn_link": "#",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "推荐",
+            "badge": "推荐",
+            "featured_bg": "linear-gradient(135deg, #4f7dff 0%, #38c9a6 100%)"
+          },
+          {
+            "name": "企业版",
+            "name_color": "#0f172a",
+            "price": "联系销售",
+            "price_color": "#0f172a",
+            "period": "",
+            "desc": "适合定制化交付",
+            "desc_color": "#64748b",
+            "features": "品牌视觉定制\n多页面模板体系\n私有化交付支持\n专属实施服务",
+            "features_color": "#334155",
+            "btn_text": "预约演示",
+            "btn_link": "#",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
@@ -291,6 +482,13 @@
       }
     },
     {
+      "type": "comparison",
+      "data": {
+        "comparison_title": "云画布架构对比",
+        "comparison_subtitle": "新一代敏捷可视化平台核心优势"
+      }
+    },
+    {
       "type": "cta",
       "data": {
         "cta_title": "把产品官网做成连续画布",
@@ -304,6 +502,36 @@
         "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
         "cta_button_bg_color": "#2563eb",
         "cta_button_text_color": "#ffffff"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#080d19",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#6366f1",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "CLOUD-CANVAS · 启灵云端无限画布与白板协作系统",
+        "qfs_brand_desc": "把思维导图、架构图、流程设计与多人实时音视频协同融入一张无边际的动态画布。支持百万图元流畅缩放，打造跨团队、跨地域的高效视觉化头脑风暴空间。",
+        "qfs_link_groups": [
+          {
+            "title": "画布协同能力 & 开发者与集成",
+            "links": "系统架构图与技术拓扑设计|#\n敏捷开发 Scrum 任务看板白板|#\n用户体验旅程与线框原型绘制|#\n企业战略头脑风暴实时协作|#\n开放 REST API 与 Webhook 接入|#\n飞书 / 企微 / 钉钉机器人集成|#\n矢量 SVG 与高清 PDF/PNG 导出|#\n私有化集群部署与 LDAP 单点登录|#"
+          }
+        ],
+        "qfs_contact_title": "企业版试用与技术支持",
+        "qfs_contact_items": "企业版咨询|400-880-7700|tel:4008807700\n技术支持|support@cloud-canvas.io|mailto:support@cloud-canvas.io\n服务响应|工作日 9:00 - 19:00（提供远程协同演示）|#\n研发总部|杭州市余杭区奥克斯未来中心 A 座 25 层|#",
+        "qfs_social_title": "视觉协同圈",
+        "qfs_social_links": "画布模版社区|#\n产品协同公开课|#\n设计系统研讨群|#\n效率工具精选|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 CLOUD-CANVAS INC. 保留所有权利 · 浙ICP备20210891号 · 软件产品评估证书",
+        "qfs_bottom_links": "云端数据安全白皮书|#\n团队版使用许可协议|#\nSLA 服务可用性承诺|#\n数据自动备份机制说明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

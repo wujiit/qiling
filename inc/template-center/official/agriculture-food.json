@@ -42,185 +42,298 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.55",
-        "db_title_prefix": "把好产地和好产品讲清楚",
-        "db_typing_mode": "loop",
-        "db_typing_text": "基地种植与源头供应\n食品加工与质量检测\n面向渠道和采购的品牌官网",
-        "db_highlight_color": "#bbf7d0",
-        "db_title_color": "#f8fafc",
-        "db_subtitle": "展示产地、品控、产品和渠道合作能力，让采购客户更快建立信任。",
-        "db_desc": "适合农场基地、农产品品牌、食品加工企业和区域公用品牌。",
-        "db_text_color": "rgba(248,250,252,0.9)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "丰收农业",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "提交采购需求",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看产品目录",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#16a34a",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#16a34a",
+        "qhs_hover_bg": "rgba(22,163,74,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "顺应四时节气 · 孕育纯净原生态自然甘美",
+        "bb_subtitle": "自建 12,000 亩雪山融水灌溉有机生态基地，坚持 0 化学农药、0 人工化肥、0 转基因种植，通过中欧双有机权威认证，全程冷链 24 小时直达餐桌",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
+          {
+            "text": "预约领取当季有机时令鲜蔬品鉴礼盒",
+            "url": "#booking",
+            "style": "primary"
+          },
+          {
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
+          }
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "产地与供应数据",
-        "stats_subtitle": "用规模、检测和交付表现建立采购信任",
-        "stats_text_align": "center",
+        "stats_title": "生态种植基地与绿色溯源看板",
+        "stats_subtitle": "恪守对土地的敬畏与承诺，用纯净数据见证生态农业力量",
         "stats_items": [
           {
-            "number": "3000亩",
-            "label": "标准化基地",
-            "number_color": "#15803d",
-            "label_color": "#475569"
+            "number": "12,000+ 亩",
+            "label": "高山雪山活水自营有机示范基地"
           },
           {
-            "number": "12项",
-            "label": "质量检测节点",
-            "number_color": "#15803d",
-            "label_color": "#475569"
+            "number": "100% 零检出",
+            "label": "280 项农药残留与重金属指标检测"
           },
           {
-            "number": "48h",
-            "label": "采购响应时效",
-            "number_color": "#15803d",
-            "label_color": "#475569"
+            "number": "24 小时",
+            "label": "从田间采摘冷链保鲜直达家庭餐桌"
           },
           {
-            "number": "60+",
-            "label": "渠道合作客户",
-            "number_color": "#15803d",
-            "label_color": "#475569"
+            "number": "8,500 吨",
+            "label": "年供高端高标准有机果蔬与谷物"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc",
-        "stats_title_color": "#0f172a"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "核心供应能力",
-        "services_subtitle": "从种植、加工、包装到渠道履约的完整链路",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大核心原生有机农产矩阵",
+        "services_subtitle": "严选地理标志保护产区，每一口都是大自然的原汁原味",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "产地直供",
-            "desc": "基地种植、采收分级和稳定供货。",
-            "link": "#"
+            "icon": "fas fa-seedling",
+            "title": "高山冷水富硒有机大米",
+            "desc": "黑土地休耕轮作，引长白山天然山泉灌溉，生长期长达 158 天，米香浓郁油亮弹牙。"
           },
           {
-            "icon": "02",
-            "title": "食品加工",
-            "desc": "清洗、分拣、包装和初加工服务。",
-            "link": "#"
+            "icon": "fas fa-egg",
+            "title": "生态林下散养土鸡与富硒初生蛋",
+            "desc": "林下自由觅食草籽昆虫，饮山间原生态溪水，鸡肉紧致醇香，蛋黄饱满金黄无蛋腥味。"
           },
           {
-            "icon": "03",
-            "title": "质量溯源",
-            "desc": "批次记录、检测报告和源头追踪。",
-            "link": "#"
+            "icon": "fas fa-leaf",
+            "title": "高山云雾明前有机古树茶",
+            "desc": "海拔 1200 米常年云雾缭绕茶山，纯手工古法柴火杀青，茶汤清澈回甘持久。"
           },
           {
-            "icon": "04",
-            "title": "渠道配送",
-            "desc": "商超、团餐、电商和社区渠道供货。",
-            "link": "#"
+            "icon": "fas fa-apple-alt",
+            "title": "树上自然成熟有机时令鲜果",
+            "desc": "不打膨大剂与防腐甜蜜素，坚持枝头自然完全成熟后手工采摘，糖酸比极佳。"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "采购合作流程",
-        "process_subtitle": "把询价、样品、签约和交付流程讲清楚",
+        "process_title": "农业/食品品牌官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "需求沟通",
-            "desc": "确认品类、规格、包装、数量和交期。",
-            "stage_tag": "沟通"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "样品确认",
-            "desc": "提供样品、检测资料和报价方案。",
-            "stage_tag": "样品"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "订单排期",
-            "desc": "确定采收、加工、包装和物流计划。",
-            "stage_tag": "排期"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "交付复盘",
-            "desc": "跟踪收货反馈、损耗和复购计划。",
-            "stage_tag": "交付"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "cases",
+      "type": "gallery",
       "data": {
-        "cases_title": "渠道合作案例",
-        "cases_subtitle": "展示产品进入不同渠道的合作方式",
-        "cases_columns": "3",
-        "cases_items": [
+        "gallery_title": "纯净生态基地四季农耕实景画廊",
+        "gallery_subtitle": "远离工业污染，土壤富含腐殖质，呼吸之间尽是森林泥土芬芳",
+        "gallery_columns": "3",
+        "gallery_items": [
           {
-            "image": "https://images.unsplash.com/photo-1498579397066-22750a3cb424?auto=format&fit=crop&w=900&q=80",
-            "title": "商超生鲜供应",
-            "desc": "按周排产、分级包装和门店配送。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
+            "title": "雪山融水灌溉万亩有机生态梯田",
+            "desc": "晨雾缭绕的有机水稻梯田，杜绝化学农药，利用稻田养鸭除草灭虫"
           },
           {
-            "image": "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=900&q=80",
-            "title": "团餐食材合作",
-            "desc": "稳定供货、批次检测和配送协同。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=800&q=80",
+            "title": "现代智能温控避雨日光大棚",
+            "desc": "自动化水肥一体微滴灌与防虫网物理隔离，培育优质无公害有机番茄"
           },
           {
-            "image": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=900&q=80",
-            "title": "电商品牌包装",
-            "desc": "定制包装、溯源码和售后反馈机制。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
+            "title": "基地采摘与 0-4℃ 气调冷链分拣中心",
+            "desc": "清晨带露水采摘，预冷锁鲜后采用可降解玉米淀粉环保包装发运"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "cert_title": "权威双有机认证与地理标志保护",
+        "cert_subtitle": "全程一物一码质量追溯，让每一口食物都经得起严苛质检考验",
+        "cert_columns": "4",
+        "cert_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "中国有机产品认证证书 (Organic)",
+            "desc": "国家认证认可监督管理委员会权威有机全项认证"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "欧盟有机农业认证 (EU Organic)",
+            "desc": "符合欧洲严苛生态农业法规，允许出口欧美高端市场"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "国家地理标志保护产品认定",
+            "desc": "特定高山气候与不可复制的水土微环境官方保护"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "SGS 280 项农残未检出检测报告",
+            "desc": "全球权威第三方质检机构全项农药重金属检测合格"
+          }
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "获取采购报价",
-        "contact_subtitle": "提交采购品类、数量、交付城市、包装要求和合作周期，供应顾问会进行初步沟通。",
-        "contact_phone": "400-518-2026",
-        "contact_email": "supply@example.com",
-        "contact_address": "农业示范基地 / 支持渠道合作沟通",
+        "contact_title": "与 农业/食品品牌官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#f0fdf4"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d1711",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#16a34a",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "NATURE-HARVEST · 生态现代农业示范园与有机食品基地",
+        "qfs_brand_desc": "万亩富硒有机生态农场与国家级现代农业示范基地。坚持零化学农药、零化肥使用与天然山泉水灌溉，构建从田间地头到万千家庭餐桌的全程可追溯绿色鲜食直供链路。",
+        "qfs_link_groups": [
+          {
+            "title": "绿色生鲜物产 & 现代农旅与溯源",
+            "links": "有机认证富硒越光大米基地|#\n露天自然熟高原脆甜红富士苹果|#\n散养慢生长期走地土鸡与富硒鲜蛋|#\n冷榨纯初榨压榨高山山茶籽油|#\n一物一码区块链有机质量安全溯源|#\n家庭认养一亩良田与丰收直达配送|#\n周末亲子有机果蔬采摘研学基地|#\n政企单位绿色有机员工食堂年货集采|#"
+          }
+        ],
+        "qfs_contact_title": "大宗生鲜集采与农场采摘预约",
+        "qfs_contact_items": "集采专线|400-880-3388|tel:4008803388\n农场接待|0731-8899-7722|tel:073188997722\n采摘开园|周二至周日 8:30 - 17:30（支持自提与冷链配送）|#\n示范园址|湖南省长沙市望城区国家现代农业科技园茶亭基地 1 号|#",
+        "qfs_social_title": "丰收时节",
+        "qfs_social_links": "农场生鲜直邮商城|#\n二十四节气农事日志|#\n农田24小时慢直播|#\n有机健康菜谱|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 NATURE-HARVEST AGRICULTURE. 保留所有权利 · 湘ICP备16078219号 · 国家级有机农产品认证证书",
+        "qfs_bottom_links": "有机产品认证证书查询|#\n农药残留批批检测报告|#\n生鲜冷链破损即赔协议|#\n生态采摘安全须知|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

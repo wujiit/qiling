@@ -593,9 +593,29 @@ class Brand_Banner_Pro_Module extends Module_Base {
 
         $buttons = isset( $data['bb_buttons'] ) && is_array( $data['bb_buttons'] )
             ? $data['bb_buttons']
-            : ( ! isset( $data['bb_buttons'] ) ? $this->get_default_buttons() : array() );
-        if ( empty( $buttons ) && ! isset( $data['bb_buttons'] ) ) {
-            $buttons = $this->get_default_buttons();
+            : array();
+        if ( empty( $buttons ) ) {
+            if ( ! empty( $data['bb_btn1_text'] ) || ! empty( $data['bb_btn2_text'] ) ) {
+                $buttons = array();
+                if ( ! empty( $data['bb_btn1_text'] ) ) {
+                    $buttons[] = array(
+                        'text'  => (string) $data['bb_btn1_text'],
+                        'link'  => isset( $data['bb_btn1_url'] ) ? (string) $data['bb_btn1_url'] : '#',
+                        'style' => 'primary',
+                        'icon'  => '',
+                    );
+                }
+                if ( ! empty( $data['bb_btn2_text'] ) ) {
+                    $buttons[] = array(
+                        'text'  => (string) $data['bb_btn2_text'],
+                        'link'  => isset( $data['bb_btn2_url'] ) ? (string) $data['bb_btn2_url'] : '#',
+                        'style' => 'light',
+                        'icon'  => '',
+                    );
+                }
+            } else {
+                $buttons = $this->get_default_buttons();
+            }
         }
 
         $primary_btn_bg_color         = $this->sanitize_color_value( isset( $data['bb_primary_btn_bg_color'] ) ? $data['bb_primary_btn_bg_color'] : '', '' );
@@ -841,12 +861,12 @@ class Brand_Banner_Pro_Module extends Module_Base {
             .module-brand-banner-pro {
                 position: relative;
                 overflow: hidden;
-                --bbp-primary-btn-default-bg: var(--qiling-component-button-bg, var(--qiling-color-0b6cff));
-                --bbp-primary-btn-default-text: var(--qiling-component-button-text, var(--color-text-inverse));
-                --bbp-primary-btn-default-border: var(--qiling-component-button-border, transparent);
-                --bbp-light-btn-default-bg: var(--qiling-component-card-bg, rgba(var(--qiling-rgb-255-255-255), 0.88));
-                --bbp-light-btn-default-text: var(--color-neutral-900);
-                --bbp-light-btn-default-border: var(--qiling-component-card-border, rgba(var(--qiling-rgb-148-163-184), 0.32));
+                --bbp-primary-btn-default-bg: var(--color-primary, #059669);
+                --bbp-primary-btn-default-text: var(--color-text-inverse, #ffffff);
+                --bbp-primary-btn-default-border: var(--color-primary, #059669);
+                --bbp-light-btn-default-bg: var(--color-surface, #ffffff);
+                --bbp-light-btn-default-text: var(--color-text, #0f172a);
+                --bbp-light-btn-default-border: var(--color-border, #cbd5e1);
             }
 
             .module-brand-banner-pro .bbp-stage {
@@ -980,8 +1000,8 @@ class Brand_Banner_Pro_Module extends Module_Base {
             .module-brand-banner-pro .bbp-btn-primary {
                 background: var(--bbp-primary-btn-bg, var(--bbp-primary-btn-default-bg));
                 color: var(--bbp-primary-btn-text, var(--bbp-primary-btn-default-text));
-                border-color: var(--bbp-primary-btn-border, var(--bbp-primary-btn-default-border));
-                box-shadow: 0 var(--qiling-space-18) var(--qiling-space-34) calc(var(--qiling-space-18) * -1) rgba(var(--qiling-rgb-11-108-255), 0.8);
+                border: 1px solid var(--bbp-primary-btn-border, var(--bbp-primary-btn-default-border));
+                box-shadow: 0 var(--qiling-space-18) var(--qiling-space-34) calc(var(--qiling-space-18) * -1) rgba(var(--color-primary-rgb, 11, 108, 255), 0.5);
             }
 
             .module-brand-banner-pro .bbp-btn-primary:hover {
@@ -989,30 +1009,31 @@ class Brand_Banner_Pro_Module extends Module_Base {
                 background: var(--bbp-primary-btn-hover-bg, var(--bbp-primary-btn-bg, var(--bbp-primary-btn-default-bg)));
                 color: var(--bbp-primary-btn-hover-text, var(--bbp-primary-btn-text, var(--bbp-primary-btn-default-text)));
                 border-color: var(--bbp-primary-btn-hover-border, var(--bbp-primary-btn-border, var(--bbp-primary-btn-default-border)));
-                box-shadow: 0 var(--qiling-space-24) var(--qiling-space-38) calc(var(--qiling-space-18) * -1) rgba(var(--qiling-rgb-11-108-255), 0.9);
+                box-shadow: 0 var(--qiling-space-24) var(--qiling-space-38) calc(var(--qiling-space-18) * -1) rgba(var(--color-primary-rgb, 11, 108, 255), 0.65);
             }
 
             .module-brand-banner-pro .bbp-btn-light {
-                background: var(--bbp-light-btn-bg, var(--bbp-light-btn-default-bg));
-                color: var(--bbp-light-btn-text, var(--bbp-light-btn-default-text));
-                border-color: var(--bbp-light-btn-border, var(--bbp-light-btn-default-border));
+                background: var(--bbp-light-btn-bg, var(--bbp-light-btn-default-bg, var(--color-surface, #ffffff)));
+                color: var(--bbp-light-btn-text, var(--bbp-light-btn-default-text, var(--color-text, #0f172a)));
+                border: 1.5px solid var(--bbp-light-btn-border, var(--bbp-light-btn-default-border, var(--color-border, #cbd5e1)));
             }
 
             .module-brand-banner-pro .bbp-btn-light:hover {
-                background: var(--bbp-light-btn-hover-bg, var(--bbp-light-btn-bg, var(--bbp-light-btn-default-bg)));
-                color: var(--bbp-light-btn-hover-text, var(--bbp-light-btn-text, var(--bbp-light-btn-default-text)));
-                border-color: var(--bbp-light-btn-hover-border, var(--bbp-light-btn-border, var(--bbp-light-btn-default-border)));
+                background: var(--bbp-light-btn-hover-bg, var(--color-surface-alt, #f1f5f9));
+                color: var(--bbp-light-btn-hover-text, var(--bbp-light-btn-text, var(--color-text, #0f172a)));
+                border-color: var(--bbp-light-btn-hover-border, var(--color-border-hover, #94a3b8));
                 transform: translateY(-2px);
             }
 
             .module-brand-banner-pro .bbp-btn-outline {
                 background: transparent;
-                color: var(--bbp-title-color, var(--color-neutral-900));
-                border-color: rgba(var(--qiling-rgb-148-163-184), 0.45);
+                color: var(--bbp-title-color, var(--color-primary, #0f172a));
+                border: 1.5px solid var(--bbp-title-color, var(--color-primary, #059669));
             }
 
             .module-brand-banner-pro .bbp-btn-outline:hover {
-                background: rgba(var(--qiling-rgb-255-255-255), 0.2);
+                background: rgba(var(--color-primary-rgb, 5, 150, 105), 0.12);
+                color: var(--color-primary, #0f172a);
                 transform: translateY(-2px);
             }
 

@@ -43,252 +43,190 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "聚星传媒",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#double_column_carousel",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "选购新品",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#f43f5e",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#f43f5e",
+        "qhs_hover_bg": "rgba(244,63,94,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "dynamic_banner",
       "data": {
-        "db_height": "80vh",
-        "db_bg_type": "gradient",
-        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #4c0519 50%, #3b0764 100%)",
-        "db_title_prefix": "让内容和直播",
-        "db_typing_mode": "loop",
-        "db_typing_text": "从曝光走向成交\n从达人走向矩阵\n从单场爆发走向稳定增长",
-        "db_highlight_color": "#fb7185",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "MCN 机构与直播电商代运营官网",
-        "db_desc": "覆盖达人孵化、直播间代运营、短视频内容、品牌投放和店铺转化，让品牌方在首次沟通前看见团队能力与合作边界。",
-        "db_text_color": "rgba(255,255,255,0.88)",
-        "db_buttons": [
-          {
-            "text": "预约商务沟通",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
-          },
-          {
-            "text": "查看增长案例",
-            "link": "#",
-            "style": "secondary",
-            "icon": ""
-          }
-        ],
-        "db_primary_btn_bg_color": "#f97316",
-        "db_primary_btn_text_color": "#ffffff",
-        "db_primary_btn_hover_bg_color": "#fb923c",
-        "db_primary_btn_hover_text_color": "#ffffff",
-        "db_secondary_btn_bg_color": "#ffffff",
-        "db_secondary_btn_text_color": "#7f1d1d",
-        "db_secondary_btn_hover_bg_color": "#ccfbf1",
-        "db_secondary_btn_hover_text_color": "#0f766e",
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80",
-        "db_image_shadow": "strong",
-        "db_floating_cards": [
-          {
-            "content_type": "badge",
-            "title": "月度 GMV 3.2亿+",
-            "pos_top": "8%",
-            "pos_right": "6%",
-            "animation": "float"
-          },
-          {
-            "content_type": "icon_text",
-            "icon": "01",
-            "title": "达人矩阵",
-            "subtitle": "120+ 签约达人",
-            "pos_bottom": "12%",
-            "pos_left": "4%",
-            "animation": "pulse"
-          },
-          {
-            "content_type": "badge",
-            "title": "直播间转化提升",
-            "pos_bottom": "4%",
-            "pos_right": "12%",
-            "animation": "float"
-          }
-        ]
-      }
-    },
-    {
-      "type": "services",
-      "data": {
-        "services_title": "直播电商服务矩阵",
-        "services_subtitle": "从内容、达人、直播间到投放和复盘，打通品牌增长链路",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "达人孵化与签约",
-            "desc": "达人定位、账号诊断、内容选题、商业报价和长期成长规划。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "直播间代运营",
-            "desc": "货盘规划、脚本话术、场控排班、主播培训和单场复盘。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "短视频内容制作",
-            "desc": "种草视频、品牌素材、达人共创和平台内容节奏设计。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "投流与成交转化",
-            "desc": "投放策略、流量承接、店铺转化、数据看板和 ROI 复盘。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "直播增长案例",
-        "cases_subtitle": "用品牌目标、内容动作和转化结果说明服务价值",
-        "cases_count": "6",
-        "cases_columns": "3",
-        "cases_show_image": "1",
-        "cases_image_height": "240px",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
-            "title": "美妆品牌新品首发",
-            "desc": "达人种草、直播承接和私域复购联动，完成新品心智建立。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=900&q=80",
-            "title": "食品品牌月度直播",
-            "desc": "优化货盘结构和场控节奏，提升整月直播间成交稳定性。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-            "title": "家清品牌内容投放",
-            "desc": "短视频素材测试、达人分层投放和店铺承接路径优化。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#fdf2f8"
+        "banner_title": "启灵传媒 MCN · 头部直播电商与红人商业化孵化器",
+        "banner_subtitle": "签约全网粉丝量超 2 亿的头部红人主播矩阵。单场最高带货 GMV 突破 1.8 亿元，合作品牌超 500 家。",
+        "primary_btn_text": "洽谈品牌货盘商务合作",
+        "primary_btn_link": "#contact",
+        "secondary_btn_text": "浏览签约主播矩阵",
+        "secondary_btn_link": "#team"
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "运营能力数据",
-        "stats_subtitle": "用可量化的团队能力和项目表现，帮助品牌方快速评估合作基础",
-        "stats_text_align": "center",
+        "stats_title": "硬核商业转化战报 · 用数字见证爆发力",
+        "stats_subtitle": "全链路直播操盘、智能精准投流与百人专业选品质检体系",
         "stats_items": [
           {
-            "number": "120+",
-            "label": "签约/合作达人",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "2.4 亿+",
+            "label": "全平台矩阵签约红人粉丝总量"
           },
           {
-            "number": "3000+",
-            "label": "累计直播场次",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "¥38 亿+",
+            "label": "年度全渠道直播带货总 GMV"
           },
           {
-            "number": "28个",
-            "label": "服务细分品类",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "500+ 家",
+            "label": "国内外一线美妆食品数码合作品牌"
           },
           {
-            "number": "48h",
-            "label": "复盘报告交付",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.4%",
+            "label": "直播间正品保障与物流履约满意度"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #4c0519 0%, #831843 50%, #3b0764 100%)",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes",
-        "stats_title_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "double_column_carousel",
+      "data": {
+        "dcc_layout": "carousel_left",
+        "dcc_height": "460px",
+        "dcc_gap": "20px",
+        "dcc_slide_source": "custom",
+        "dcc_slides": [
+          {
+            "title": "年度美妆狂欢夜：单场突破 8,500 万 GMV",
+            "desc": "头部国潮美妆品牌首发专场，秒杀库存瞬间售罄",
+            "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&auto=format&fit=crop&q=80",
+            "url": "#"
+          },
+          {
+            "title": "智能数码超级新品周：斩获品类带货榜冠军",
+            "desc": "头部科技数码主播联袂呈现，深度开箱评测带货",
+            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&auto=format&fit=crop&q=80",
+            "url": "#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "video",
+      "data": {
+        "video_title": "直播间高光切片剪辑 · 燃爆全场的带货感染力",
+        "video_subtitle": "专业的直播话术、节奏把控与场景化沉浸式演示",
+        "video_url": "https://www.w3schools.com/html/mov_bbb.mp4"
       }
     },
     {
       "type": "team",
       "data": {
-        "team_title": "核心运营团队",
-        "team_subtitle": "展示商务、内容、直播和投放负责人，让客户知道项目由谁推进",
-        "team_columns": "3",
-        "team_members": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "林若溪",
-            "position": "直播运营负责人",
-            "desc": "负责直播间货盘、脚本、主播排班和单场复盘，关注成交效率和复购承接。"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "周启明",
-            "position": "内容策略负责人",
-            "desc": "负责账号定位、短视频选题、达人共创和平台内容节奏，擅长新品种草。"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "陈言",
-            "position": "投流增长顾问",
-            "desc": "负责投放测试、素材迭代、流量承接和 ROI 复盘，让内容资产转化为增长数据。"
-          }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px",
-        "enable_staggered_animation": "yes"
+        "team_title": "签约顶流主播与金牌选品操盘手",
+        "team_subtitle": "多位抖音、快手、小红书千万级头部达人坐镇",
+        "columns": "3"
       }
     },
     {
-      "type": "faq",
+      "type": "clients",
       "data": {
-        "faq_title": "直播电商合作常见问题",
-        "faq_subtitle": "把品牌方关心的合作周期、费用边界、素材归属和数据复盘提前讲清楚",
-        "faq_items": [
-          {
-            "question": "你们更适合品牌自播还是达人带货？",
-            "answer": "两类都可以承接。品牌自播更适合长期稳定运营，达人带货更适合新品种草、节点爆发和内容测试，具体会结合品类、预算和货盘判断。"
-          },
-          {
-            "question": "合作前需要准备哪些资料？",
-            "answer": "建议准备品牌介绍、目标品类、主推商品、价格体系、历史直播数据、素材资产、预算范围和目标节点。"
-          },
-          {
-            "question": "是否能保证 GMV 或 ROI？",
-            "answer": "直播电商受货盘、价格、内容、主播、平台流量和履约体验共同影响。可以约定过程指标、复盘机制和阶段目标，但不建议承诺绝对结果。"
-          },
-          {
-            "question": "短视频素材和直播脚本归谁所有？",
-            "answer": "素材、脚本、账号数据和授权边界需要在合同里明确。页面导入后建议补充真实合作条款和素材使用规则。"
-          }
-        ],
-        "module_bg_color": "#fdf2f8",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        "clients_title": "长期战略合作品牌阵容",
+        "clients_subtitle": "联合五百强消费品企业打造多个破亿爆品神话"
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约直播电商方案沟通",
-        "contact_subtitle": "提交品牌品类、主推货盘、预算范围和目标节点，我们会先判断适合的内容、达人和直播运营组合。",
+        "contact_title": "品牌商务合作与货盘入驻咨询",
+        "contact_subtitle": "拥有优质品牌货盘或供应链货源，欢迎与我们的商务总监快速对接排期。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "contact_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "84px",
-        "module_padding_bottom": "84px"
+        "contact_submit_text": "提交品牌货盘资料"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0e0b14",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#f43f5e",
+        "qfs_brand_title": "MCN-MEDIA · 启灵传媒机构",
+        "qfs_brand_desc": "驱动红人经济，赋能品牌增长。中国领先的数字营销与电商直播 MCN。",
+        "qfs_bottom_text": "© 2026 MCN MEDIA GROUP. 广播电视节目制作经营许可证 (浙) 字第04981号"
       }
     }
   ]

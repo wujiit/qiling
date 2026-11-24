@@ -136,8 +136,8 @@
 .qiling-module-scope-lookbook .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-lookbook /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-lookbook .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-lookbook .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-lookbook .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-lookbook /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-lookbook /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-lookbook /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-lookbook /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-lookbook .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-lookbook .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-lookbook .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-lookbook .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-lookbook /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -327,6 +337,34 @@
   object-fit: cover;
   display: block;
   pointer-events: none;
+}
+.qiling-module-scope-lookbook .module-lookbook .lookbook-cover-placeholder,
+.module-lookbook .lookbook-cover-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #94a3b8;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.lookbook-placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+.lookbook-placeholder-icon {
+  opacity: 0.5;
+  stroke: #60a5fa;
+}
+.lookbook-placeholder-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
 }.qiling-module-scope-lookbook .module-lookbook .lookbook-meta {
   padding: var(--qiling-space-16) var(--qiling-space-16) var(--qiling-space-18);
   text-align: center;
@@ -595,3 +633,74 @@ html.dark-mode .qiling-module-scope-lookbook .lb-spec-item.active {
     grid-template-columns: 1fr;
   }
 }.qiling-module-scope-lookbook .module-lookbook .lb-item-btn { color: var(--lookbook-item-btn-text, #ffffff); }.qiling-module-scope-lookbook .module-lookbook .lb-item-btn:hover { color: var(--lookbook-item-btn-hover-text, #ffffff); }
+
+/* ===== Lookbook 暗黑模式全量覆盖 ===== */
+html.dark-mode .module-lookbook,
+[data-theme='dark'] .module-lookbook {
+  background-color: var(--dm-bg, #0b0f19) !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}
+
+html.dark-mode .module-lookbook .section-title,
+[data-theme='dark'] .module-lookbook .section-title,
+html.dark-mode .module-lookbook .lookbook-title,
+[data-theme='dark'] .module-lookbook .lookbook-title {
+  color: #f8fafc !important;
+}
+
+html.dark-mode .module-lookbook .lookbook-card,
+[data-theme='dark'] .module-lookbook .lookbook-card {
+  background: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-mode .module-lookbook .lookbook-name,
+[data-theme='dark'] .module-lookbook .lookbook-name {
+  color: #f8fafc !important;
+}
+
+html.dark-mode .module-lookbook .lookbook-desc,
+[data-theme='dark'] .module-lookbook .lookbook-desc {
+  color: #94a3b8 !important;
+}
+
+html.dark-mode .lb-modal-content,
+[data-theme='dark'] .lb-modal-content,
+html.dark-mode .lb-left,
+[data-theme='dark'] .lb-left {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html.dark-mode .lb-look-name,
+[data-theme='dark'] .lb-look-name,
+html.dark-mode .lb-item-title,
+[data-theme='dark'] .lb-item-title,
+html.dark-mode .lb-close,
+[data-theme='dark'] .lb-close {
+  color: #f8fafc !important;
+}
+
+html.dark-mode .lb-look-desc,
+[data-theme='dark'] .lb-look-desc,
+html.dark-mode .lb-spec-item,
+[data-theme='dark'] .lb-spec-item {
+  color: #94a3b8 !important;
+}
+
+html.dark-mode .lb-item,
+[data-theme='dark'] .lb-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode .lb-item:hover,
+[data-theme='dark'] .lb-item:hover,
+html.dark-mode .lb-item.active,
+[data-theme='dark'] .lb-item.active {
+  background: #1e293b !important;
+  border-color: rgba(96, 165, 250, 0.4) !important;
+}

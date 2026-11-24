@@ -136,8 +136,8 @@
 .qiling-module-scope-products .module-decor svg rect {
   transform-origin: center;
   transition: all 1s ease;
-}.qiling-module-scope-products /* 响应式隐藏 (Responsive Hide) */
-@media (max-width: 1024px) {.module-decor {
+}/* 响应式隐藏 (Responsive Hide) */
+@media (max-width: 1024px){.qiling-module-scope-products .module-decor {
     opacity: 0.05 !important;
     transform: translateY(-50%) scale(0.7);
   }}@media (max-width: 768px){.qiling-module-scope-products .module-decor {
@@ -180,11 +180,11 @@
     gap: var(--qiling-space-20);
   }}.qiling-module-scope-products .ql-hotel-booking-form .btn-submit {
   width: 100%;
-}.qiling-module-scope-products /* ========================================
+}/* ========================================
  * 响应式布局
  * ======================================== */
 
-@media (max-width: 1024px) {/* 房型展示 */
+@media (max-width: 1024px){.qiling-module-scope-products /* 房型展示 */
   .ql-hotel-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }}@media (max-width: 768px){.qiling-module-scope-products /* 房型展示 */
@@ -233,7 +233,17 @@
   display: block;
   position: relative;
   overflow: hidden;
-}.qiling-module-scope-products /* ===== 新闻模块 (Module News) ===== */
+}.qiling-module-scope-products .mit-container.layout-right {
+  direction: rtl;
+}.qiling-module-scope-products .mit-container.layout-right .mit-image-area,
+.qiling-module-scope-products .mit-container.layout-right .mit-text-area {
+  direction: ltr;
+}/* 响应式 (Responsive) */
+@media (max-width: 991px){.qiling-module-scope-products .mit-container.layout-right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--qiling-space-40);
+  }}.qiling-module-scope-products /* ===== 新闻模块 (Module News) ===== */
 .qiling-module-admin-notice.notice.notice-warning {
   margin: var(--qiling-space-12) 0;
   padding: var(--qiling-space-12) var(--qiling-space-14);
@@ -312,7 +322,7 @@
   position: relative;
   padding-top: var(--qiling-space-pct-75);
   overflow: hidden;
-  background: var(--qiling-component-surface-alt-bg, var(--color-neutral-100));
+  background: var(--qiling-component-surface-alt-bg, var(--color-surface-alt, #f8fafc));
 }.qiling-module-scope-products .pm-bg {
   position: absolute;
   top: 0;
@@ -497,7 +507,7 @@
   border: 1px solid var(--qiling-component-card-border);
 }.qiling-module-scope-products .pm-mh-specs li {
   padding: var(--qiling-space-10) var(--qiling-space-15);
-  border-bottom: 1px solid var(--color-neutral-100);
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
   font-size: var(--qiling-text-13);
   color: var(--color-text-muted);
   display: flex;
@@ -564,13 +574,10 @@
   border-top-color: var(--color-primary);
   border-radius: 50%;
   animation: pmSpin 0.8s linear infinite;
-}.qiling-module-scope-products /* 响应式 (Responsive) */
-@media (max-width: 992px) {
-  .pm-grid.cols-4 {
+}/* 响应式 (Responsive) */
+@media (max-width: 992px){.qiling-module-scope-products .pm-grid.cols-4 {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pm-modal-sidebar {
+  }.qiling-module-scope-products .pm-modal-sidebar {
     width: 300px;
     padding: var(--qiling-space-20);
   }
@@ -630,3 +637,62 @@
     var(--qiling-component-button-hover-bg)
   );
 }.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn { color: var(--products-inquire-btn-text, #ffffff) !important; }.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn:hover { color: var(--products-inquire-btn-hover-text, #ffffff) !important; }.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn { color: var(--products-inquire-btn-text, #ffffff); }.qiling-module-scope-products .module-products-manual.module-products-manual .pm-inquire-btn:hover { color: var(--products-inquire-btn-hover-text, #ffffff); }
+
+/* ===== Products 暗黑模式全量覆盖 ===== */
+html.dark-mode .module-products-manual,
+[data-theme='dark'] .module-products-manual {
+  background-color: var(--dm-bg, #0b0f19) !important;
+  color: var(--dm-text, #cbd5e1) !important;
+}
+
+html.dark-mode .module-products-manual .section-title,
+[data-theme='dark'] .module-products-manual .section-title {
+  color: var(--color-heading, #f8fafc) !important;
+}
+
+html.dark-mode .module-products-manual .section-subtitle,
+[data-theme='dark'] .module-products-manual .section-subtitle {
+  color: var(--color-text-muted, #94a3b8) !important;
+}
+
+html.dark-mode .module-products-manual .pm-card,
+[data-theme='dark'] .module-products-manual .pm-card {
+  background: var(--dm-bg-card, #1e293b) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-mode .module-products-manual .pm-title,
+[data-theme='dark'] .module-products-manual .pm-title {
+  color: #f8fafc !important;
+}
+
+html.dark-mode .module-products-manual .pm-desc,
+[data-theme='dark'] .module-products-manual .pm-desc {
+  color: #94a3b8 !important;
+}
+
+html.dark-mode .module-products-manual .pm-price,
+[data-theme='dark'] .module-products-manual .pm-price {
+  color: #60a5fa !important;
+}
+
+html.dark-mode .module-products-manual .pm-modal-box,
+[data-theme='dark'] .module-products-manual .pm-modal-box {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html.dark-mode .module-products-manual .pm-modal-sidebar,
+[data-theme='dark'] .module-products-manual .pm-modal-sidebar {
+  border-right-color: rgba(255, 255, 255, 0.08) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-mode .module-products-manual .pm-spec-chip,
+[data-theme='dark'] .module-products-manual .pm-spec-chip {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e2e8f0 !important;
+}

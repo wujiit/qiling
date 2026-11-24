@@ -41,226 +41,341 @@
   },
   "modules": [
     {
-      "type": "product_showcase",
+      "type": "app_hero",
       "data": {
-        "ps_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 55%, #0284c7 100%)",
-        "ps_padding": "80",
-        "ps_layout": "left",
-        "ps_title": "启灵主题",
-        "ps_subtitle": "专业级WordPress企业主题",
-        "ps_media_items": [
+        "hero_title": "软件介绍 · 极速强大的数字化专业工具",
+        "hero_desc": "专为高效工作流打造，跨平台无缝同步，毫秒级响应速度，赋能卓越生产力。",
+        "hero_buttons": [
           {
-            "type": "image",
-            "image": "",
-            "video_url": "",
-            "video_poster": ""
+            "btn_type": "apple",
+            "btn_text": "App Store",
+            "btn_subtext": "Download on the",
+            "btn_link": "#"
+          },
+          {
+            "btn_type": "android",
+            "btn_text": "Google Play",
+            "btn_subtext": "GET IT ON",
+            "btn_link": "#"
+          },
+          {
+            "btn_type": "windows",
+            "btn_text": "Windows 64",
+            "btn_subtext": "Direct Download",
+            "btn_link": "#"
           }
-        ],
-        "ps_media_height": "450px",
-        "ps_media_radius": "16px",
-        "ps_show_price": "yes",
-        "ps_price": "¥399",
-        "ps_original_price": "¥299",
-        "ps_cta_text": "前往购买",
-        "ps_cta_url": "#",
-        "ps_cta_bg": "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
-        "ps_cta_color": "#ffffff",
-        "ps_cta_target": "_self",
-        "ps_description": "最新版本：V2.5\n更新时间：2026-01-01\n兼容 WP：6.0-6.9，推荐最新版本\n兼用PHP：7.4及以上，推荐8.0版本\n授权时间：永久授权使用，免费更新"
-      }
-    },
-    {
-      "type": "service_cards",
-      "data": {
-        "sc_bg_color": "#ffffff",
-        "sc_padding": "60",
-        "sc_columns": "4",
-        "sc_gap": "20px",
-        "sc_card_bg": "#ffffff",
-        "sc_card_radius": "16px",
-        "sc_card_shadow": "medium",
-        "sc_icon_size": "48px",
-        "sc_icon_bg": "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
-        "sc_icon_radius": "12px",
-        "sc_badge_bg": "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
-        "sc_cards": [
-          {
-            "icon": "📦",
-            "icon_image": "",
-            "title": "50+ 功能模块",
-            "badge": "",
-            "description": "开箱即用的页面构建模块",
-            "url": "#features",
-            "target": "_self"
-          },
-          {
-            "icon": "🎨",
-            "icon_image": "",
-            "title": "高度自定义",
-            "badge": "Hot",
-            "description": "每个模块都支持深度定制",
-            "url": "#customize",
-            "target": "_self"
-          },
-          {
-            "icon": "⚡",
-            "icon_image": "",
-            "title": "极致性能",
-            "badge": "",
-            "description": "优化加载，秒开体验",
-            "url": "#performance",
-            "target": "_self"
-          },
-          {
-            "icon": "🔒",
-            "icon_image": "",
-            "title": "安全可靠",
-            "badge": "",
-            "description": "代码规范，安全防护",
-            "url": "#security",
-            "target": "_self"
-          }
-        ],
-        "module_margin_top": "-60px",
-        "module_margin_bottom": ""
-      }
-    },
-    {
-      "type": "features_list",
-      "data": {
-        "title": "强大的功能特性",
-        "subtitle": "50+ 内置模块，覆盖企业网站建设的各个方面",
-        "bg_color": "",
-        "columns": "3",
-        "tabs": [
-          {
-            "tab_id": "modules",
-            "tab_title": "页面模块",
-            "tab_icon": "📦",
-            "features": "🎯|横幅模块|支持轮播、视频背景的Banner展示\n📦|图文视频轮播|左右布局展示产品，支持视频媒体\n💼|服务标签卡片|快速导航入口，图标+标题+描述\n📰|博客布局|自动获取文章，多种布局风格\n💰|价格套餐|可定制的定价表，支持渐变色\n📋|功能清单|Tab切换的功能卡片展示"
-          },
-          {
-            "tab_id": "user",
-            "tab_title": "用户系统",
-            "tab_icon": "👤",
-            "features": "🔐|登录注册|完整的用户认证系统，支持弹窗登录\n👤|会员中心|个人资料管理，头像上传\n🔑|密码找回|邮件验证重置密码\n📧|邮件系统|SMTP邮件发送支持\n🛡️|表单验证|前后端双重验证\n⏱️|滑块验证|防止恶意提交，保护安全"
-          },
-          {
-            "tab_id": "customize",
-            "tab_title": "个性化定制",
-            "tab_icon": "🎨",
-            "features": "🎨|主题色定制|一建立切换主题色，支持渐变色\n🌙|暗黑模式|完整的深色主题支持\n📱|悬浮工具栏|可定制的悬浮按钮\n📢|公告系统|多类型公告展示\n🖼️|Logo定制|支持双Logo配置\n📐|模块间距|每个模块可自定义间距"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_bg_image": "",
-        "stats_text_align": "center",
+        "stats_title": "全球专业用户的共同选择 · 经得起最严苛的检验",
+        "stats_subtitle": "服务于全球顶尖动画制片厂、汽车工程设计室与高端科技企业的日常生产流。",
         "stats_items": [
           {
-            "number": "50+",
-            "label": "功能模块",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "200万+",
+            "label": "全球专业活跃设计师与工程师"
           },
           {
-            "number": "30+",
-            "label": "页面模板",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.98%",
+            "label": "高负荷长时间渲染零崩溃率"
           },
           {
-            "number": "100%",
-            "label": "响应式",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "400%",
+            "label": "相比传统软件多核性能吞吐提升"
           },
           {
-            "number": "24/7",
-            "label": "技术支持",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "120+",
+            "label": "全球顶尖专业媒体与机构高度赞誉"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #0284c7 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "multi_image_text",
+      "type": "services",
       "data": {
-        "multi_image_text_title": "为什么选择我们？",
-        "multi_image_text_subtitle": "精心设计的每一个细节，只为给您最好的体验",
-        "multi_image_text_layout": "left",
-        "multi_image_text_items": [
+        "title": "六大核心技术突破 · 重塑专业级工作流",
+        "subtitle": "每一个像素、每一次快捷键响应都经过精密人机工效调优，让工作体验如同行云流水。",
+        "columns": "3",
+        "services": [
           {
-            "icon": "🧩",
-            "title": "模块化设计",
-            "desc": "50+ 可复用模块，拖拽式页面构建，无需编码即可创建专业网站",
-            "image": "",
-            "link": ""
+            "icon": "fa-microchip",
+            "title": "自研多核并发计算核心",
+            "desc": "深度挖掘现代多核处理器潜力，无论是超大规模物理模拟还是批量渲染均能全核满血释放。",
+            "badge": "澎湃动力"
           },
           {
-            "icon": "🎯",
-            "title": "响应式布局",
-            "desc": "完美适配桌面、平板、手机等各种设备，确保最佳浏览体验",
-            "image": "",
-            "link": ""
+            "icon": "fa-sliders",
+            "title": "节点式无损编辑工作台",
+            "desc": "自由连接逻辑节点，支持无限层级嵌套与随时参数调整，彻底摆脱传统破坏性编辑约束。",
+            "badge": "自由创作"
           },
           {
-            "icon": "🌙",
-            "title": "暗黑模式",
-            "desc": "内置智能暗黑模式切换，保护用户眼睛，提升夜间浏览舒适度",
-            "image": "",
-            "link": ""
+            "icon": "fa-eye-dropper",
+            "title": "电影工业级精准色彩管理",
+            "desc": "内置ACES与ICC全色彩科学流水线，确保从屏幕预览到最终成片印刷色彩始终如一、精准无差。",
+            "badge": "精准色彩"
+          },
+          {
+            "icon": "fa-diagram-project",
+            "title": "智能资产版本树与时光机",
+            "desc": "工程文件的每一次调整均被微增量记录，支持多人分支并行开发与智能差异合并。",
+            "badge": "无忧版本"
+          },
+          {
+            "icon": "fa-terminal",
+            "title": "强大的Python与Lua脚本扩展",
+            "desc": "提供高度完整的开放API文档，允许工作室定制专属自动化管线与批量任务处理工具。",
+            "badge": "无限扩展"
+          },
+          {
+            "icon": "fa-shield-halved",
+            "title": "高密安全沙箱与离线运行",
+            "desc": "绝不强制上传用户工程资产，支持完全离线单机运行与企业级数据物理隔离防护。",
+            "badge": "资产安全"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "faq",
+      "type": "process",
       "data": {
-        "faq_title": "常见问题",
-        "faq_items": [
+        "process_title": "软件介绍标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
           {
-            "question": "主题购买后包含哪些服务？",
-            "answer": "购买后您将获得：完整源代码、详细使用文档、终身免费更新、以及专业的技术支持服务。"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "question": "如何自定义页面模块？",
-            "answer": "在后台编辑页面时，找到「页面模块配置」区域，点击「添加模块」选择需要的模块，然后填写内容即可。支持拖拽排序。"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "question": "主题支持多少个功能模块？",
-            "answer": "主题内置50+功能模块，包括：横幅、服务、产品、案例、新闻、价格表、视频、客户评价等，覆盖企业网站的各个需求。"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "question": "是否支持暗黑模式？",
-            "answer": "是的，主题内置完整的暗黑模式支持，用户可以手动切换或跟随系统设置自动切换。"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "大师之选 · 见证行业传世佳作的诞生",
+        "cases_subtitle": "看看全球顶级创意先锋如何借助启灵专业软件突破想象力的边界。",
+        "cases_columns": "3",
+        "cases_items": [
+          {
+            "title": "好莱坞科幻巨制视觉特效与概念设计全流程",
+            "desc": "在超大规模复杂场景构建中，整体概念迭代效率提升3倍，为影片呈现前所未有的震撼异星奇观。",
+            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
+            "link": "#case1"
+          },
+          {
+            "title": "知名豪华超跑全新一代空气动力学曲面造型",
+            "desc": "毫米级高阶连续曲率数学拟合，设计周期缩减40%，完美兼顾艺术张力与严苛赛道性能要求。",
+            "image": "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&auto=format&fit=crop&q=80",
+            "link": "#case2"
+          },
+          {
+            "title": "全球顶尖建筑事务所未来生态地标方案推演",
+            "desc": "超万名居民日照与风场实时参数化仿真，方案一次性通过国际严苛低碳建筑与结构工程评审。",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80",
+            "link": "#case3"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "data": {
+        "pricing_title": "灵活授权许可方案 · 敬畏每一份专业创造",
+        "pricing_subtitle": "支持个人终身单机买断，亦提供团队弹性按需订阅与企业私有化浮动许可。",
+        "pricing_columns": "3",
+        "pricing_plans": [
+          {
+            "name": "个人专业单机版",
+            "name_color": "#0f172a",
+            "price": "¥899",
+            "price_color": "#0f172a",
+            "period": "永久买断 / 单台授权",
+            "desc": "适合自由职业设计师、工程师与独立创作者个人使用",
+            "desc_color": "#64748b",
+            "features": "单台电脑终身买断商业授权\n全量核心工具集与全色彩空间支持\n首年大版本免费更新与终身补丁\n专属官方技术社区支持通道",
+            "features_color": "#334155",
+            "btn_text": "立即永久买断",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "团队协同专业版",
+            "name_color": "#0f172a",
+            "price": "¥168",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每月 / 每席位",
+            "desc": "解锁多人实时协同、跨平台项目同步与团队资产库统一管理",
+            "desc_color": "#64748b",
+            "features": "支持跨Windows/macOS两台设备激活\n多人实时协同与多版本分支时光机\n团队共享资产库与权限分级中枢\n优先高级技术客服响应通道",
+            "features_color": "#334155",
+            "btn_text": "开通团队版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "工作室首选",
+            "badge": "工作室首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "企业级浮动集群授权",
+            "name_color": "#0f172a",
+            "price": "¥28,000",
+            "price_color": "#0f172a",
+            "period": "企业年度许可",
+            "desc": "专为大中型企业、制作公司与高校实验室打造的集中授权管理方案",
+            "desc_color": "#64748b",
+            "features": "支持本地局域网浮动许可服务器管理\n提供完整的Python管线API接入支持\n支持内网离线激活与企业级安全审计\n提供上门培训与专属解决方案工程师",
+            "features_color": "#334155",
+            "btn_text": "联系企业顾问",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ],
-        "module_bg_color": "#f8fafc"
+        "pricing_items": [
+          {
+            "name": "个人专业单机版",
+            "name_color": "#0f172a",
+            "price": "¥899",
+            "price_color": "#0f172a",
+            "period": "永久买断 / 单台授权",
+            "desc": "适合自由职业设计师、工程师与独立创作者个人使用",
+            "desc_color": "#64748b",
+            "features": "单台电脑终身买断商业授权\n全量核心工具集与全色彩空间支持\n首年大版本免费更新与终身补丁\n专属官方技术社区支持通道",
+            "features_color": "#334155",
+            "btn_text": "立即永久买断",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "团队协同专业版",
+            "name_color": "#0f172a",
+            "price": "¥168",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "每月 / 每席位",
+            "desc": "解锁多人实时协同、跨平台项目同步与团队资产库统一管理",
+            "desc_color": "#64748b",
+            "features": "支持跨Windows/macOS两台设备激活\n多人实时协同与多版本分支时光机\n团队共享资产库与权限分级中枢\n优先高级技术客服响应通道",
+            "features_color": "#334155",
+            "btn_text": "开通团队版",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "工作室首选",
+            "badge": "工作室首选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "企业级浮动集群授权",
+            "name_color": "#0f172a",
+            "price": "¥28,000",
+            "price_color": "#0f172a",
+            "period": "企业年度许可",
+            "desc": "专为大中型企业、制作公司与高校实验室打造的集中授权管理方案",
+            "desc_color": "#64748b",
+            "features": "支持本地局域网浮动许可服务器管理\n提供完整的Python管线API接入支持\n支持内网离线激活与企业级安全审计\n提供上门培训与专属解决方案工程师",
+            "features_color": "#334155",
+            "btn_text": "联系企业顾问",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ]
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "准备好开始了吗？",
-        "cta_subtitle": "立即体验专业级WordPress企业主题",
-        "cta_button_text": "立即购买",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #0284c7 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "开启 软件介绍 数字化卓越体验",
+        "cta_subtitle": "无需漫长等待，立即注册即可解锁全部核心功能与极速支持保障。",
+        "cta_btn_text": "立即免费体验",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "compact",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#0ea5e9",
+        "qfs_accent_color": "#0ea5e9",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "专业级产品特性详解与用户使用手册",
+        "qfs_brand_desc": "全方位解析架构设计、核心技术优势与系统要求。支持一键快速下载官方安装包并获取 30 天无限制全功能试用许可。",
+        "qfs_link_groups": [
+          {
+            "title": "产品导览与新手与进阶支持",
+            "links": "核心功能与亮点全景清单|#\n最低与推荐系统配置要求|#\n与其他同类软件对比分析|#\n历史版本更新日志(Release)|#\n5 分钟快速上手操作视频|#\n常见报错排查与 FAQ 解决|#\n官方快捷键备忘速查表|#\n官方技术论坛与用户社群|#"
+          }
+        ],
+        "qfs_contact_title": "技术支持协助",
+        "qfs_contact_items": "技术热线|400-880-2211|tel:4008802211\n反馈邮箱|tech@qiling-software.com|mailto:tech@qiling-software.com\n在线支持|工作日 9:00 - 18:00|#",
+        "qfs_social_title": "关注最新教程",
+        "qfs_social_links": "微信公众号|#\n视频教程专辑|#\n开发者社群|#\n官方微博|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QILING SOFTWARE CO., LTD. 保留所有权利 · 专注极致软件工程与流畅交互",
+        "qfs_bottom_links": "用户最终许可协议(EULA)|#\n隐私政策|#\n安装安全声明|#\n防伪查验|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

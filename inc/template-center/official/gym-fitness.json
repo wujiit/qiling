@@ -42,84 +42,145 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "动力工场",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "课程体系",
+            "link": "#curriculum",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#e11d48",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#e11d48",
+        "qhs_hover_bg": "rgba(225,29,72,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e293b 50%, #c2410c 100%)",
         "banner_slides": [
           {
             "media_type": "image",
             "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80",
-            "title": "从第一次训练开始，看到改变",
-            "subtitle": "团课、私教、体测和训练计划一体化，支持预约体验课。",
-            "btn_text": "预约体验课",
-            "btn_url": "#",
-            "btn_bg_color": "#ea580c",
-            "btn_text_color": "#ffffff"
+            "title": "突破界限 · 科学唤醒身体终极潜能",
+            "title_align": "center",
+            "subtitle": "严选顶级悍马 Hammer Strength 全套力量矩阵与 NSCA-CSCS 国际体能专家，拒绝盲目推销，以数据定义蜕变",
+            "btn_text": "探索服务矩阵",
+            "btn_url": "#services"
           }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "40",
-            "number": "40+",
-            "label": "周课程",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "18",
-            "number": "18+",
-            "label": "认证教练",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "3000",
-            "number": "3000+",
-            "label": "活跃会员",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "体验评分",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        ]
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "heading_title": "专业力量 · 见证蜕变",
+        "heading_subtitle": "1000+ 会员共同见证的健康生活方式"
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "训练项目",
-        "services_subtitle": "从新手入门到进阶塑形，匹配不同阶段目标",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大科学训练中心",
+        "services_subtitle": "针对不同阶段身体机能与运动目标，定制差异化科学进阶路径",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "私教训练",
-            "desc": "体测评估、动作纠正和阶段计划。",
-            "link": "#"
+            "icon": "fas fa-dumbbell",
+            "title": "CrossFit 极限燃脂与爆发力",
+            "desc": "结合体操、举重与代谢心肺综合训练，全面提升心肺耐力、敏捷性与核心稳定性。"
           },
           {
-            "icon": "02",
-            "title": "燃脂团课",
-            "desc": "HIIT、搏击、有氧操等高互动课程。",
-            "link": "#"
+            "icon": "fas fa-shield-alt",
+            "title": "无伤抗阻与健力力量举",
+            "desc": "深蹲、卧推、硬拉三大项动力学轨迹纠正，强化骨密度，安全打造肌肉线条。"
           },
           {
-            "icon": "03",
-            "title": "力量塑形",
-            "desc": "器械训练、核心力量和线条管理。",
-            "link": "#"
+            "icon": "fas fa-user-md",
+            "title": "运动康复与骨盆体态纠偏",
+            "desc": "针对久坐圆肩驼背、骨盆前倾、膝踝关节损伤，通过肌筋膜松解与离心力量恢复功能。"
           },
           {
-            "icon": "04",
-            "title": "运动康复",
-            "desc": "姿态评估、拉伸放松与功能训练。",
-            "link": "#"
+            "icon": "fas fa-bolt",
+            "title": "搏击散打与敏捷体能",
+            "desc": "泰拳与现代拳击手靶实战对抗，极速宣泄压力，每小时高效消耗 800+ 大卡热量。"
           }
         ]
       }
@@ -127,27 +188,31 @@
     {
       "type": "curriculum",
       "data": {
-        "curriculum_title": "本周课程安排",
-        "curriculum_subtitle": "可替换为门店真实课表或体验课排期",
-        "curriculum_bg_color": "#fff7ed",
-        "curriculum_primary_color": "#ea580c",
+        "curriculum_title": "每周精品团课与特训日程",
+        "curriculum_subtitle": "小班化教学限额 8 人，教练全程观察动作细节，确保安全高效",
         "curriculum_items": [
           {
-            "title": "周一：燃脂 HIIT",
-            "meta": "19:00 - 20:00 | Alex",
-            "content": "<p>高强度间歇训练，适合有基础的燃脂用户。</p>",
+            "title": "周一 / 周四：下肢动力链构建与臀腿爆发 (Lower Body Power)",
+            "meta": "60分钟 · 燃烧 650 kcal · 难度 ★★★★☆",
+            "content": "动作涵盖六角杠铃硬拉、保加利亚单腿蹲、弹力带离心抗阻。针对下肢核心薄弱环节进行渐进式超负荷轰炸，提升蹬地发力传导效率。",
             "open": "yes"
           },
           {
-            "title": "周三：力量入门",
-            "meta": "20:00 - 21:00 | Ken",
-            "content": "<p>学习深蹲、硬拉、推举等基础动作模式。</p>",
+            "title": "周二 / 周五：上肢推拉平衡与肩袖稳定性 (Upper Body Hypertrophy)",
+            "meta": "60分钟 · 燃烧 500 kcal · 难度 ★★★☆☆",
+            "content": "哑铃地雷管推举、反握引体向上、面拉与YTWL肩胛激活。告别翼状肩胛与圆肩，塑造倒三角挺拔身姿与饱满肩峰。",
             "open": "no"
           },
           {
-            "title": "周六：体态改善",
-            "meta": "10:00 - 11:00 | Mia",
-            "content": "<p>肩颈、髋部和核心稳定训练，适合久坐人群。</p>",
+            "title": "周三 / 周六：HIIT 代谢冲击与核心战绳 (Metabolic Burn)",
+            "meta": "45分钟 · 燃烧 750 kcal · 难度 ★★★★★",
+            "content": "战绳交叉波浪、划船机 500m 间歇冲刺、箱式跳跃与风阻单车冲刺。高强度间歇维持 48 小时运动后过量氧耗 (EPOC)。",
+            "open": "no"
+          },
+          {
+            "title": "周日：泡沫轴肌筋膜深度松解与主动拉伸 (Myofascial Release)",
+            "meta": "60分钟 · 身心排毒与恢复 · 难度 ★★☆☆☆",
+            "content": "结合震动筋膜枪、网球痛点按压与 PNF 本体感觉神经肌肉促进法拉伸，彻底消除深层肌肉酸痛结节，预防运动损伤。",
             "open": "no"
           }
         ]
@@ -156,75 +221,171 @@
     {
       "type": "team",
       "data": {
-        "team_title": "认证教练团队",
-        "team_subtitle": "按训练目标匹配教练和计划",
+        "team_title": "全明星教练与体能专家天团",
+        "team_subtitle": "全员持有 NSCA-CSCS、ACE-CPT 或国家一级运动员认证，从业 6 年以上",
         "team_columns": "3",
         "team_members": [
           {
-            "avatar": "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=600&q=80",
-            "name": "Alex",
-            "position": "力量训练教练",
-            "desc": "擅长增肌、体态和基础动作纠正。",
-            "email": "coach1@example.com"
+            "avatar": "https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=600&q=80",
+            "name": "高博文 (Bowen)",
+            "position": "教学总监 · NSCA-CSCS 认证体能专家",
+            "desc": "前省田径队体能教练，累计指导私教课时超 8000 小时，擅长力量举三项力学诊断与极限运动体能规划。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=600&q=80",
-            "name": "Ken",
-            "position": "功能训练教练",
-            "desc": "擅长减脂、体能和运动表现提升。",
-            "email": "coach2@example.com"
+            "avatar": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=600&q=80",
+            "name": "沈梦琪 (Maggie)",
+            "position": "首席女性体态雕刻导师 · ACE-CPT",
+            "desc": "专研女性减脂期生理激素调控、产后腹直肌分离闭合与马甲线打造，学员好评率长期保持 99.8%。"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1609899537878-88d5ba429bdb?auto=format&fit=crop&w=600&q=80",
-            "name": "Mia",
-            "position": "体态改善教练",
-            "desc": "专注久坐人群姿态与灵活性训练。",
-            "email": "coach3@example.com"
+            "avatar": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+            "name": "雷诺 (Leo)",
+            "position": "运动康复主管 · 物理治疗硕士",
+            "desc": "毕业于北京体育大学运动人体科学专业，精通关节错位手法复位、肩峰撞击综合征与下交叉综合征纠偏。"
           }
-        ],
-        "module_bg_type": "color",
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "会员套餐",
-        "pricing_subtitle": "可按门店价格和权益自由调整",
+        "pricing_title": "明码标价 · 零推销会籍与私教方案",
+        "pricing_subtitle": "全场无任何隐形消费，支持按月灵活停卡，教练薪资与业绩不挂钩，全心专注教学",
         "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
+        "pricing_plans": [
+          {
+            "name": "畅练月卡 (Flex Pass)",
+            "name_color": "#0f172a",
+            "price": "¥399",
+            "price_color": "#0f172a",
+            "period": "/月",
+            "desc": "适合短期出差、备赛冲刺或初步体验健身房硬件的自律健身客群",
+            "desc_color": "#64748b",
+            "features": "全场器械全时段不限次使用\n免费配备专属密码更衣柜\n全天候恒温独立淋浴与桑拿\n赠送 InBody 770 体测一次",
+            "features_color": "#334155",
+            "btn_text": "立即开卡体验",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "黑金年度专属卡 (Black Gold)",
+            "name_color": "#0f172a",
+            "price": "¥3,280",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/年",
+            "desc": "折合每天仅需 8.9 元，尊享所有精品团课免预约与嘉宾特权",
+            "desc_color": "#64748b",
+            "features": "365天全门店自由通行通练\n全年精品小班团课免费预约\n每年享 60 天免费停卡特权\n赠送 3 节 1对1 资深私教规划课\n每月赠送 2 次深度体成分复查",
+            "features_color": "#334155",
+            "btn_text": "立即开通年卡",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "78% 会员甄选",
+            "badge": "78% 会员甄选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "1对1 身材蜕变私教包",
+            "name_color": "#0f172a",
+            "price": "¥4,800",
+            "price_color": "#0f172a",
+            "period": "/12节",
+            "desc": "专属总监级教练全程跟练，定制营养餐单，签订减脂增肌保障协议",
+            "desc_color": "#64748b",
+            "features": "三维体态筛查与关节机能评估\n专属个性化运动与每日膳食追踪\n心率带实时监测运动代谢心率\n每节课课后精准肌筋膜拉伸复原\n未达目标无理由退还未消课时",
+            "features_color": "#334155",
+            "btn_text": "预约首节评估",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "体验课",
-            "price": "¥49",
-            "period": "/次",
-            "desc": "新客体测和课程体验",
-            "features": "基础体测\n1 次团课\n训练建议",
-            "btn_text": "预约体验",
-            "btn_link": "#",
-            "featured": ""
-          },
-          {
-            "name": "月卡",
-            "price": "¥699",
+            "name": "畅练月卡 (Flex Pass)",
+            "name_color": "#0f172a",
+            "price": "¥399",
+            "price_color": "#0f172a",
             "period": "/月",
-            "desc": "适合规律训练会员",
-            "features": "不限次入场\n团课预约\n储物柜权益",
-            "btn_text": "咨询月卡",
-            "btn_link": "#",
-            "featured": "1",
-            "featured_text": "热门",
-            "featured_bg": "linear-gradient(135deg, #ea580c 0%, #f97316 100%)"
+            "desc": "适合短期出差、备赛冲刺或初步体验健身房硬件的自律健身客群",
+            "desc_color": "#64748b",
+            "features": "全场器械全时段不限次使用\n免费配备专属密码更衣柜\n全天候恒温独立淋浴与桑拿\n赠送 InBody 770 体测一次",
+            "features_color": "#334155",
+            "btn_text": "立即开卡体验",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "私教包",
-            "price": "¥3999",
-            "period": "/10节",
-            "desc": "一对一目标训练",
-            "features": "体测评估\n训练计划\n动作纠正",
-            "btn_text": "咨询私教",
-            "btn_link": "#",
-            "featured": ""
+            "name": "黑金年度专属卡 (Black Gold)",
+            "name_color": "#0f172a",
+            "price": "¥3,280",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/年",
+            "desc": "折合每天仅需 8.9 元，尊享所有精品团课免预约与嘉宾特权",
+            "desc_color": "#64748b",
+            "features": "365天全门店自由通行通练\n全年精品小班团课免费预约\n每年享 60 天免费停卡特权\n赠送 3 节 1对1 资深私教规划课\n每月赠送 2 次深度体成分复查",
+            "features_color": "#334155",
+            "btn_text": "立即开通年卡",
+            "btn_link": "#booking",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "78% 会员甄选",
+            "badge": "78% 会员甄选",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "1对1 身材蜕变私教包",
+            "name_color": "#0f172a",
+            "price": "¥4,800",
+            "price_color": "#0f172a",
+            "period": "/12节",
+            "desc": "专属总监级教练全程跟练，定制营养餐单，签订减脂增肌保障协议",
+            "desc_color": "#64748b",
+            "features": "三维体态筛查与关节机能评估\n专属个性化运动与每日膳食追踪\n心率带实时监测运动代谢心率\n每节课课后精准肌筋膜拉伸复原\n未达目标无理由退还未消课时",
+            "features_color": "#334155",
+            "btn_text": "预约首节评估",
+            "btn_link": "#booking",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
@@ -232,46 +393,68 @@
     {
       "type": "gallery",
       "data": {
-        "gallery_title": "训练空间",
+        "gallery_title": "工业美学空间 · 顶级器械矩阵",
+        "gallery_subtitle": "占地 2600㎡，配备新风双循环除醛系统与进口减震地胶，挥洒汗水无拘无束",
         "gallery_columns": "3",
-        "gallery_style": "grid",
-        "gallery_images": [
+        "gallery_items": [
           {
-            "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80",
-            "title": "自由力量区",
-            "desc": "器械完善",
-            "category": "场馆"
+            "image": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80",
+            "title": "Hammer Strength 重力量自由训练区",
+            "desc": "配备4台重型深蹲架与 ELEIKO 竞赛级杠铃片，满足极限抗阻需求"
           },
           {
-            "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80",
-            "title": "有氧训练区",
-            "desc": "燃脂课程",
-            "category": "场馆"
+            "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80",
+            "title": "Life Fitness 智能有氧与心肺冲刺区",
+            "desc": "自带触控影音互动的跑步机、风阻划船器与无动力履带跑台"
           },
           {
-            "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80",
-            "title": "团课空间",
-            "desc": "高互动训练",
-            "category": "课程"
+            "image": "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=800&q=80",
+            "title": "独立干湿分离淋浴间与健康水吧",
+            "desc": "戴森吹风机标配、无硅油洗护用品与现调鲜榨乳清蛋白饮品"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "booking-entry",
       "data": {
-        "booking_title": "预约体验课",
-        "booking_subtitle": "提交训练目标、基础情况和可到店时间，顾问会匹配体验课程。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "体验须知",
-        "sidebar_content": "首次体验请提前 10 分钟到店\n建议穿运动服和训练鞋\n如有伤病史请在表单里提前说明",
-        "contact_phone": "400-900-2026",
-        "contact_hours": "08:00-22:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#fff7ed"
+        "booking_title": "预约资深教练一对一体能测评与免费私教体验课",
+        "booking_subtitle": "包含 InBody 人体成分分析、体态动作筛查与定制化科学减脂增肌周期计划。",
+        "booking_btn_text": "免费领取私教体验课",
+        "booking_btn_link": "#booking-modal",
+        "booking_badge_text": "每日限额10名",
+        "booking_phone": "健身活力热线：0755-8888-3333",
+        "booking_time": "07:00 - 23:00 随时开启训练"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#121214",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#e11d48",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "IRON-FIT · 尊享智能健身中心与私教训练营",
+        "qfs_brand_desc": "配备全套意大利泰诺健 Technogym 智能运动器械、恒温天幕泳池与高温瑜伽房。汇聚国际 ACE / NASM 认证明星私教，提供减脂塑形、力量举增肌与体态康复训练。",
+        "qfs_link_groups": [
+          {
+            "title": "健身课程生态 & 尊享会籍服务",
+            "links": "一对一专属私教减脂塑形训练|#\n莱美全系列国际动感团操课|#\n四季恒温无氯臭臭氧泳池教学|#\n运动损伤康复与普拉提大器械|#\n全国通兑黑金会员卡权益说明|#\n德国 InBody 人体成分深度检测|#\n独立干湿分离卫浴与桑拿汗蒸|#\n新会员 3 天无理由全额退款承诺|#"
+          }
+        ],
+        "qfs_contact_title": "免费体测预约与私教体验课",
+        "qfs_contact_items": "咨询热线|400-880-5533|tel:4008805533\n客服经理|185-1100-2299|tel:18511002299\n营业时间|周一至周日 6:00 - 24:00（365天全年无休）|#\n旗舰馆址|北京市朝阳区三里屯太古里北区下沉广场 B1 层|#",
+        "qfs_social_title": "热汗生活",
+        "qfs_social_links": "团课预约小程序|#\n每日健身打卡社群|#\n私教燃脂食谱|#\n健美赛事直播|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 IRON-FIT CLUB. 保留所有权利 · 京ICP备17082390号 · 体育健身行业规范化标杆俱乐部",
+        "qfs_bottom_links": "会员入会合同细则|#\n场馆安全器械使用守则|#\n私教退费与停卡管理规定|#\n自动体外除颤器(AED)配备公示|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

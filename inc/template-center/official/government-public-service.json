@@ -42,257 +42,290 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #991b1b 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "阳光政务",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80",
-            "title": "让公共服务更清晰、更便捷",
-            "subtitle": "机构介绍、服务事项、办理流程和联系方式集中展示，降低公众查询成本。",
-            "btn_text": "查看服务事项",
-            "btn_url": "#",
-            "btn_bg_color": "#1e3a8a",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "24h",
-            "number": "24h",
-            "label": "线上咨询",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "30",
-            "number": "30+",
-            "label": "服务事项",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "6",
-            "number": "6类",
-            "label": "服务对象",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "1",
-            "number": "一站式",
-            "label": "流程指引",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#dc2626",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#dc2626",
+        "qhs_hover_bg": "rgba(220,38,38,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "常用服务事项",
-        "services_subtitle": "按公众、企业、机构和园区用户组织服务入口",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "阳光政务 · 数字赋能 · 一网通办便民利企政务服务平台",
+        "bb_subtitle": "深化“放管服”改革，推动政务服务从“能办”向“好办、易办”全面转变，实现 98% 常用政务民生事项“零跑动、掌上办”",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "01",
-            "title": "业务咨询",
-            "desc": "提供政策、流程和材料准备说明。",
-            "link": "#"
+            "text": "进入一网通办事项办事大厅",
+            "url": "#services",
+            "style": "primary"
           },
           {
-            "icon": "02",
-            "title": "事项办理",
-            "desc": "展示办理条件、材料清单和办理方式。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "园区服务",
-            "desc": "企业入驻、空间申请和配套服务指引。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "公开信息",
-            "desc": "机构动态、公开文件和联系方式汇总。",
-            "link": "#"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "事项办理流程",
-        "process_subtitle": "把准备材料、提交方式和办理反馈讲清楚",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "查看指南",
-            "desc": "确认服务对象、办理条件和材料清单。",
-            "stage_tag": "指南"
-          },
-          {
-            "icon": "02",
-            "title": "提交材料",
-            "desc": "按线上或线下要求提交申请资料。",
-            "stage_tag": "提交"
-          },
-          {
-            "icon": "03",
-            "title": "受理审核",
-            "desc": "工作人员按事项规则进行受理和反馈。",
-            "stage_tag": "审核"
-          },
-          {
-            "icon": "04",
-            "title": "结果反馈",
-            "desc": "获取办理结果、补正意见或后续指引。",
-            "stage_tag": "反馈"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "服务运行数据",
-        "stats_subtitle": "用公开数据说明服务范围和响应效率",
-        "stats_text_align": "center",
+        "stats_title": "数字政务效能与便民服务实绩",
+        "stats_subtitle": "以群众和企业获得感为标尺，打造高效协同的现代数字政府服务枢纽",
         "stats_items": [
           {
-            "number": "30+",
-            "label": "服务事项",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "1,860+ 项",
+            "label": "实现全流程网上不见面审批事项"
           },
           {
-            "number": "12个",
-            "label": "服务窗口",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.2%",
+            "label": "群众办件好评率与政务服务满意度"
           },
           {
-            "number": "3日",
-            "label": "平均反馈周期",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "85.4%",
+            "label": "企业开办与不动产登记提速率"
           },
           {
-            "number": "98%",
-            "label": "咨询响应率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "3,200 万件",
+            "label": "年度累计为市民与企业办理便民业务"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #090e17 0%, #1e3a8a 50%, #991b1b 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "faq",
+      "type": "services",
       "data": {
-        "faq_title": "常见事项问题",
-        "faq_subtitle": "集中回答公众和企业常见疑问",
-        "faq_items": [
+        "services_title": "一网通办核心民生与企业服务专区",
+        "services_subtitle": "清晰分类、按需速达，让数据多跑路、群众少跑腿",
+        "services_columns": "4",
+        "services_items": [
           {
-            "question": "办理事项需要哪些材料？",
-            "answer": "不同事项材料不同，建议先查看对应事项指南，再按清单准备。"
+            "icon": "users",
+            "title": "个人户籍与社保医保",
+            "desc": "新生儿出生一件事、养老金测算、医保跨省异地就医直接备案一键办理"
           },
           {
-            "question": "是否支持线上咨询？",
-            "answer": "可通过页面表单、电话或指定线上渠道提交咨询，具体以机构安排为准。"
+            "icon": "building",
+            "title": "企业开办与营商赋能",
+            "desc": "营业执照申领、企业刻章、税票申领、银行开户“一表申请、半天办结”"
           },
           {
-            "question": "办理进度如何查询？",
-            "answer": "请保留申请编号或联系方式，工作人员会按事项流程反馈办理进度。"
+            "icon": "graduation-cap",
+            "title": "人才落户与安居补贴",
+            "desc": "高层次人才认定、高校毕业生租房补贴申请、子女入学积分阳光申报"
+          },
+          {
+            "icon": "home",
+            "title": "不动产登记与住房公积金",
+            "desc": "二手房转移登记“带押过户”、公积金提取还贷与无房租房提取秒级到账"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "branches",
       "data": {
-        "branches_title": "服务窗口与联系点",
-        "branches_subtitle": "展示线下窗口、办公时间和服务范围",
+        "branches_title": "全市政务综合服务大厅与 24 小时便民微网点",
+        "branches_subtitle": "线上线下无缝融合，提供周末轮休延时窗口与 24 小时自助政务一体机服务",
         "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "查看位置",
-        "booking_button_text": "咨询事项",
         "branches_list": [
           {
-            "name": "综合服务窗口",
-            "city": "主城区",
-            "status": "open",
-            "address": "示例大道 100 号公共服务中心",
-            "phone": "010-60000001",
-            "email": "service@example.gov",
-            "hours": "09:00-17:00",
-            "services": "咨询,受理,反馈",
-            "transport": "公共交通便利",
-            "lat": "39.9042",
-            "lng": "116.4074",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80"
+            "name": "市民中心综合政务大厅",
+            "city": "市本级",
+            "status": "开放中 (工作日 9:00-17:00 / 周末延时)",
+            "address": "市民大道 1 号市民中心东塔 1-3 层综合办事大厅",
+            "phone": "021-12345",
+            "email": "service@gov-online.cn",
+            "hours": "周一至周五 9:00 - 17:00 (中午不打烊)",
+            "services": "不动产登记 / 交通违章处理 / 结婚登记 / 24小时自助制证",
+            "transport": "地铁 2 号线市民中心站 3 号口直通政务大厅地下连廊",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "name": "企业服务窗口",
-            "city": "园区",
-            "status": "open",
-            "address": "示例园区服务中心 2 楼",
-            "phone": "010-60000002",
-            "email": "business@example.gov",
-            "hours": "09:00-17:00",
-            "services": "企业咨询,入驻服务",
-            "transport": "近园区主路",
-            "lat": "39.9841",
-            "lng": "116.3074",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+            "name": "高新开发区企业服务中心",
+            "city": "高新区",
+            "status": "开放中 (免申即享企业绿色通道)",
+            "address": "科技创新走廊 88 号高新管委会大厦 1 层",
+            "phone": "021-8899-6611",
+            "email": "gaoxin-corp@gov-online.cn",
+            "hours": "周一至周五 9:00 - 17:00",
+            "services": "高新企业申报辅导 / 知识产权质押融资 / 涉税政务通办",
+            "transport": "有轨电车 1 号线软件园站步行 150 米",
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80"
           },
           {
-            "name": "便民服务点",
-            "city": "社区",
-            "status": "open",
-            "address": "示例社区党群服务中心",
-            "phone": "010-60000003",
-            "email": "community@example.gov",
-            "hours": "09:00-17:00",
-            "services": "便民咨询,资料指引",
-            "transport": "社区步行可达",
-            "lat": "39.9142",
-            "lng": "116.3974",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+            "name": "滨江新区 24 小时智慧微政务无人驿站",
+            "city": "滨江区",
+            "status": "24 小时全天候开放",
+            "address": "滨江大道 500 号江滩公园便民服务驿站",
+            "phone": "021-12345",
+            "email": "binjiang@gov-online.cn",
+            "hours": "全天 24 小时刷身份证或电子社保卡进入",
+            "services": "身份证临时证明打印 / 社保证明打印 / 驾驶证换证体检机",
+            "transport": "公交 82 路、583 路滨江大道站",
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
+      }
+    },
+    {
+      "type": "certificate_honors",
+      "data": {
+        "cert_title": "政务数字化示范荣誉与群众满意度认证",
+        "cert_subtitle": "严格遵循国家电子政务与网络数据安全保护标准，连续多年获评标杆",
+        "cert_columns": "4",
+        "cert_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "全国数字政府建设示范优秀创新案例",
+            "issuer": "国务院办公厅电子政务办公室"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "政务信息系统网络安全等级保护三级认证",
+            "issuer": "公安部网络安全保卫局"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "全省营商环境评价政务服务指标第一名",
+            "issuer": "省发展和改革委员会 / 省政务服务管理办公室"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "12345 政务服务便民热线全国金牌热线",
+            "issuer": "中国行政管理学会"
+          }
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "联系公共服务窗口",
-        "contact_subtitle": "提交咨询事项、服务对象、所在区域和联系方式，工作人员会按流程反馈。",
-        "contact_phone": "010-6000-2026",
-        "contact_email": "service@example.gov",
-        "contact_address": "示例大道 100 号公共服务中心",
+        "contact_title": "与 政务/公共机构官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d131f",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#dc2626",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "CIVIC-SERVICE · 政务民生与阳光公共事务服务门户",
+        "qfs_brand_desc": "推进“一网通办、一次办好”数字政务改革。汇聚社保医保查询、企业开办登记、公积金提取、不动产登记及民生诉求直通车，让政务服务更有温度、更具效率。",
+        "qfs_link_groups": [
+          {
+            "title": "常用政务直通车 & 阳光政务公开",
+            "links": "社保参保证明与医保报销查询|#\n企业设立与营业执照秒批通道|#\n住房公积金在线提取与还贷|#\n不动产登记与产调证明打印|#\n政府信息公开与政策法规库|#\n重大行政决策意见征集栏目|#\n财政预决算与政府采购公告|#\n政务服务窗口办事指南白皮书|#"
+          }
+        ],
+        "qfs_contact_title": "12345政务服务便民热线",
+        "qfs_contact_items": "便民热线|12345|tel:12345\n监督投诉|010-8899-0011|tel:01088990011\n服务时间|7×24小时全天候接听群众诉求|#\n市民之家|北京市通州区宏普路政务服务大厦 1-3 层|#",
+        "qfs_social_title": "掌上政务",
+        "qfs_social_links": "一网通办小程序|#\n政务微信公众号|#\n政务公开微博|#\n政策解读短视频|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 CIVIC PUBLIC SERVICE. 版权所有 · 京ICP备05000001号 · 政府网站标识码 1100000021",
+        "qfs_bottom_links": "网站无障碍声明|#\n政务网站版权说明|#\n个人信息隐私保护措施|#\n网站地图与导航|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

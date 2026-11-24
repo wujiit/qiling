@@ -43,229 +43,220 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "glow",
-        "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #090d16 0%, #075985 50%, #0f172a 100%)",
-        "bb_title": "把仪器参数、资料下载<br><strong>变成采购线索</strong>",
-        "bb_title_size_max": "72px",
-        "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 52%, #34d399 100%)",
-        "bb_subtitle": "实验室设备与科研仪器官网方案",
-        "bb_desc": "面向高校实验室、科研院所、第三方检测机构和企业研发中心，把仪器型号、核心参数、应用场景、资料下载和采购询盘入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_text_align": "left",
-        "bb_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "科仪创新",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "提交采购需求",
-            "link": "#",
-            "style": "primary",
-            "icon": "采"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "下载选型资料",
-            "link": "#",
-            "style": "light",
-            "icon": "表"
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品展示",
+            "link": "#product_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "方案对比",
+            "link": "#comparison",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资料下载",
+            "link": "#downloads",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bb_primary_btn_bg_color": "#0284c7",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#0369a1",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#ecfeff",
-        "bb_light_btn_hover_text_color": "#0e7490",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.pexels.com/photos/8325755/pexels-photo-8325755.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "bb_media_shadow": "glow",
-        "bb_media_radius": "18px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "1",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "索取报价",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "brand_banner_pro",
+      "data": {
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "尖端实验室高精度分析仪器与科研生命科学整体解决方案",
+        "bb_subtitle": "超高效液相色谱、四极杆质谱仪、纳米级粒度分析与超低温冷冻保存系统，CNAS 权威计量溯源。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "申请科研样机免费试用",
+        "bb_btn1_url": "#lab",
+        "bb_btn2_text": "索取仪器配置技术方案",
+        "bb_btn2_url": "#contact"
       }
     },
     {
       "type": "products",
       "data": {
-        "products_title": "科研仪器与实验室设备",
-        "products_subtitle": "LAB INSTRUMENT CATALOG",
-        "columns": "4",
-        "modal_inquire_text": "咨询型号与报价",
-        "modal_inquire_url": "#",
-        "modal_inquire_btn_bg_color": "#0284c7",
-        "modal_inquire_btn_text_color": "#ffffff",
-        "modal_inquire_btn_hover_bg_color": "#155e75",
-        "modal_inquire_btn_hover_text_color": "#ffffff",
+        "products_title": "实验室设备/科研仪器官网 · 核心工业级产品与选型矩阵",
+        "products_subtitle": "INDUSTRIAL PRODUCT MATRIX",
+        "columns": "3",
         "items": [
           {
-            "image": "https://images.pexels.com/photos/24293768/pexels-photo-24293768.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "高精度分析仪器",
-            "desc": "用于成分分析、浓度检测、光谱测量和实验数据采集的核心仪器。",
-            "specs": "应用：科研实验、质量检测、第三方检测\n指标：高灵敏度、低噪声、稳定重复性\n数据：本地导出、软件报表、接口扩展\n服务：安装调试、方法培训、年度校准",
-            "post_id": "",
-            "btn_text": "查看参数"
+            "title": "系列一：高性能工业级核心型号",
+            "desc": "通过严格全温区可靠性验证，满足连续高负荷运行要求",
+            "specs": "工作温度：-40℃ ~ +125℃\nMTBF：> 100,000 小时\n认证：CE / FCC / RoHS",
+            "btn_text": "规格参数"
           },
           {
-            "image": "https://images.pexels.com/photos/4033019/pexels-photo-4033019.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "样本前处理设备",
-            "desc": "覆盖离心、混匀、加热、萃取和自动化样本前处理流程。",
-            "specs": "类型：离心、振荡、均质、消解、移液\n容量：小批量到多通道高通量\n安全：防护盖、过温保护、异常报警\n交付：设备、耗材、方法包、培训资料",
-            "post_id": "",
-            "btn_text": "获取方案"
+            "title": "系列二：超低功耗微型化定制型号",
+            "desc": "集成度提升 50%，专为空间严苛与电池供电场景打造",
+            "specs": "待机功耗：< 10uA\n防护等级：IP67 工业级\n接口：标准工业总线",
+            "btn_text": "规格参数"
           },
           {
-            "image": "https://images.pexels.com/photos/8539810/pexels-photo-8539810.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "恒温培养与环境控制",
-            "desc": "用于细胞培养、微生物实验、稳定性测试和环境模拟。",
-            "specs": "温控：恒温、恒湿、CO2、光照可选\n空间：台式、立式、组合式配置\n记录：温湿度曲线、报警日志、数据导出\n验证：IQ/OQ/PQ 文件可按需配置",
-            "post_id": "",
-            "btn_text": "咨询配置"
-          },
-          {
-            "image": "https://images.pexels.com/photos/8325755/pexels-photo-8325755.jpeg?auto=compress&cs=tinysrgb&w=900",
-            "title": "实验室基础设备",
-            "desc": "适配高校、企业研发、检验检测和生产质控实验室的常用设备。",
-            "specs": "品类：纯水、冷藏、通风、天平、移液\n场景：新实验室建设、设备替换、扩容采购\n资料：选型表、安装条件、验收清单\n售后：备件耗材、维保计划、远程支持",
-            "post_id": "",
-            "btn_text": "查看清单"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "downloads",
-      "data": {
-        "downloads_title": "产品资料与选型文件",
-        "downloads_subtitle": "把客户采购前最需要的参数表、安装条件和验收资料集中展示",
-        "downloads_bg_color": "#f8fafc",
-        "downloads_columns": "3",
-        "downloads_btn_bg_color": "#0284c7",
-        "downloads_btn_text_color": "#ffffff",
-        "downloads_btn_hover_bg_color": "#155e75",
-        "downloads_btn_hover_text_color": "#ffffff",
-        "downloads_items": [
-          {
-            "title": "产品选型手册",
-            "size": "Catalog",
-            "file": "#",
-            "icon": "册",
-            "format": "PDF",
-            "date": "2026-04-25",
-            "btn_text": "下载手册",
-            "description": "按仪器类型、核心指标、适用场景、扩展模块和售后服务整理常见选型口径。"
-          },
-          {
-            "title": "技术参数表",
-            "size": "Specification",
-            "file": "#",
-            "icon": "参",
-            "format": "XLSX",
-            "date": "2026-04-25",
-            "btn_text": "查看参数",
-            "description": "用于展示型号、量程、精度、通量、数据接口、安装条件和可选配置。"
-          },
-          {
-            "title": "安装验收清单",
-            "size": "Checklist",
-            "file": "#",
-            "icon": "验",
-            "format": "DOC",
-            "date": "2026-04-25",
-            "btn_text": "获取清单",
-            "description": "包含到货验收、安装环境、电源气源、培训记录、校准报告和维护计划。"
+            "title": "系列三：重载高可靠性旗舰解决方案",
+            "desc": "具备全链路硬件容错与主动安全保护机制，杜绝意外停机",
+            "specs": "负载能力：业内领先\n响应延迟：微秒级闭环\n保修：5年工业级联保",
+            "btn_text": "规格参数"
           }
         ]
       }
     },
     {
+      "type": "product_showcase",
+      "data": {
+        "ps_title": "精密智能制造车间与严苛品控实录",
+        "ps_subtitle": "万级无尘洁净车间、自动化光学检测 (AOI) 与全程质量溯源系统"
+      }
+    },
+    {
       "type": "comparison",
       "data": {
-        "comparison_title": "常用型号选型对比",
-        "comparison_subtitle": "帮助采购和实验室负责人快速判断型号差异",
-        "comparison_features": "适合场景\n核心指标\n通量/容量\n数据导出\n校准与验证\n售后支持",
-        "comparison_products": [
-          {
-            "name": "基础型",
-            "values": "教学实验、常规检测\n标准精度\n小通量\nUSB/CSV\n出厂校准\n远程指导"
-          },
-          {
-            "name": "标准型",
-            "values": "科研实验、日常检测\n高精度\n中等通量\nUSB/CSV/软件\n年度校准\n工程师安装培训"
-          },
-          {
-            "name": "专业型",
-            "values": "重点实验室、第三方检测\n高精度与高稳定性\n高通量\nLIMS/软件/API\nIQ/OQ/PQ 验证\n专属技术支持"
-          }
-        ],
-        "comparison_highlight": "2",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "comparison_title": "多维实力对比",
+        "comparison_subtitle": "为什么众多客户首选我们，核心指标一目了然"
       }
     },
     {
-      "type": "cases",
+      "type": "certificate_honors",
       "data": {
-        "cases_title": "科研与检测应用案例",
-        "cases_count": "6",
-        "cases_columns": "3",
-        "cases_show_image": "1",
-        "cases_image_height": "220px",
-        "cases_padding_top": "80px",
-        "cases_padding_bottom": "80px",
-        "enable_staggered_animation": "yes",
-        "module_bg_color": "#f8fafc"
+        "ch_title": "国际权威资质认证与核心发明专利",
+        "ch_subtitle": "国家级高新技术企业、ISO9001 质量认证与数十项PCT国际核心发明专利"
       }
     },
     {
-      "type": "faq",
+      "type": "downloads",
       "data": {
-        "faq_title": "实验室设备采购常见问题",
-        "faq_subtitle": "提前说明选型资料、安装条件、校准验证和售后服务",
-        "faq_items": [
+        "downloads_title": "产品选型手册、Datasheet 与技术规格书",
+        "downloads_subtitle": "免费下载完整的 2D/3D CAD 模型、电气接线图与二次开发手册",
+        "downloads_items": [
           {
-            "question": "采购前需要提供哪些实验需求？",
-            "answer": "建议提供样本类型、检测指标、通量要求、精度要求、实验室环境、预算范围和是否需要软件或 LIMS 对接，便于判断型号和配置。"
+            "title": "实验室设备/科研仪器官网 2026年度完整产品选型手册",
+            "desc": "包含全部型号电气参数、封装尺寸与引脚定义",
+            "badge": "PDF | 18.5MB",
+            "link": "#"
           },
           {
-            "question": "资料下载里的参数可以直接用于招投标吗？",
-            "answer": "模板中的文件为占位示例。正式上线时应替换为企业真实产品彩页、技术参数表、安装条件、验收清单和项目要求的文件版本。"
-          },
-          {
-            "question": "仪器安装验收通常包含哪些内容？",
-            "answer": "常见内容包括到货检查、安装环境确认、电源气源连接、空载运行、样品测试、人员培训、验收记录、校准报告和维护计划。"
-          },
-          {
-            "question": "是否支持校准、验证和年度维保？",
-            "answer": "可以在官网明确展示出厂校准、年度校准、IQ/OQ/PQ 验证、备件耗材、远程诊断和工程师上门服务等能力，具体承诺应按实际服务范围填写。"
+            "title": "系统集成工程设计指南与典型应用拓扑图",
+            "desc": "手把手指导电气工程师与系统集成商极速落地",
+            "badge": "PDF | 9.2MB",
+            "link": "#"
           }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        ]
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "提交实验室设备采购需求",
-        "contact_subtitle": "填写仪器类型、应用场景、样本数量、目标指标、安装环境和预算范围，产品顾问会协助确认型号、资料和报价。",
+        "contact_title": "实验室设备/科研仪器官网 商务询盘与样品申请通道 (RFQ)",
+        "contact_subtitle": "资深应用工程师与大客户销售将在 2 小时内响应，为您出具详细报价与试机方案。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "提交采购询盘单"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0c1424",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "LAB-PRECISION · 科学精密仪器与分析检测系统",
+        "qfs_brand_desc": "服务于生物医药、材料工程、环境保护与科研高校。自主研发超高效液相色谱仪、质谱联用仪、高精度电子显微镜及实验室纯水系统，保障科研数据的绝对可信。",
+        "qfs_link_groups": [
+          {
+            "title": "精密仪器系列与售后与校准",
+            "links": "超高效液相色谱仪 UHPLC|#\n三重四极杆质谱仪 LC-MS|#\n全自动凯氏定氮仪|#\n超纯水制备与分发工作站|#\n仪器安装调试与培训|#\n国家法定计量检测与校准|#\n备品备件与耗材商城|#\n3Q 认证与合规验证服务|#"
+          }
+        ],
+        "qfs_contact_title": "售前选型与实验室方案",
+        "qfs_contact_items": "选型热线|400-880-3355|tel:4008803355\n计量工程师|010-8899-2233|tel:01088992233\n服务热线|周一至周五 8:30 - 17:30|#\n仪器展厅|北京市海淀区中关村生命科学园科研楼 A 座|#",
+        "qfs_social_title": "科学实验室",
+        "qfs_social_links": "分析仪器月刊|#\n科研方案合集|#\n实验视频教程|#\n高校仪器合作网|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 LAB-PRECISION INSTRUMENT. 保留所有权利 · 京ICP备17032190号 · 计量认证证书 (CMA)",
+        "qfs_bottom_links": "计量检定资质|#\n保修服务政策|#\n耗材配件防伪|#\n实验室安全规程|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

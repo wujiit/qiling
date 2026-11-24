@@ -42,185 +42,279 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.52",
-        "db_title_prefix": "让绿色方案更容易落地",
-        "db_typing_mode": "loop",
-        "db_typing_text": "新能源项目建设与运维\n节能降碳和环保工程服务\n从评估到交付的一体化方案",
-        "db_highlight_color": "#a7f3d0",
-        "db_title_color": "#f8fafc",
-        "db_subtitle": "展示方案、数据、案例和服务流程，帮助企业判断合作价值。",
-        "db_desc": "适合新能源、环保工程、节能改造、双碳咨询和绿色科技服务企业。",
-        "db_text_color": "rgba(248,250,252,0.9)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "绿能环保",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "预约方案评估",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看项目案例",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合规安全",
+            "link": "#compliance_trust",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "索取报价",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#059669",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#059669",
+        "qhs_hover_bg": "rgba(5,150,105,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "brand_banner_pro",
       "data": {
-        "services_title": "绿色解决方案",
-        "services_subtitle": "围绕能源、环保、节能和碳管理的综合服务",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "以硬核科技驱动绿色工业变革 · 综合节能环保与双碳解决方案",
+        "bb_subtitle": "国家高新技术企业与专精特新“小巨人”，专注工业烟气深度净化、工业高盐废水零排放与智慧微电网综合能效管理",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_buttons": [
           {
-            "icon": "01",
-            "title": "新能源建设",
-            "desc": "光伏、储能、充电和能源站方案。",
-            "link": "#"
+            "text": "免费获取园区能效与环保治理升级方案",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "icon": "02",
-            "title": "节能改造",
-            "desc": "能耗诊断、设备改造和运营优化。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "环保工程",
-            "desc": "废气、污水、固废和环境治理项目。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "碳管理咨询",
-            "desc": "碳盘查、减排路径和绿色认证支持。",
-            "link": "#"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "项目交付数据",
-        "stats_subtitle": "用真实指标呈现节能、减排和运行价值",
-        "stats_text_align": "center",
+        "stats_title": "工业减碳治理实效与工程战绩",
+        "stats_subtitle": "以量化数据说话，切实帮助高能耗工业企业达成超低排放与节能增效双重目标",
         "stats_items": [
           {
-            "number": "120+",
-            "label": "项目经验",
-            "number_color": "#047857",
-            "label_color": "#475569"
+            "number": "1,280 万吨",
+            "label": "累计助力企业消减二氧化碳排放"
           },
           {
-            "number": "18%",
-            "label": "平均节能优化",
-            "number_color": "#047857",
-            "label_color": "#475569"
+            "number": "360+ 个",
+            "label": "国家级与省级大型工业治理总包工程"
           },
           {
-            "number": "30天",
-            "label": "方案评估周期",
-            "number_color": "#047857",
-            "label_color": "#475569"
+            "number": "32.6%",
+            "label": "平均综合用能成本与碳税支出降幅"
           },
           {
-            "number": "7x24",
-            "label": "运维响应",
-            "number_color": "#047857",
-            "label_color": "#475569"
+            "number": "100%",
+            "label": "环保在线监测超低排放连续达标率"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "#f8fafc",
-        "stats_title_color": "#0f172a"
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "工业全生命周期绿色低碳工程矩阵",
+        "services_subtitle": "涵盖废气、废水、固废与能源梯级利用，提供 EPC 总包与 BOT 运营一体化支撑",
+        "services_columns": "3",
+        "services_items": [
+          {
+            "icon": "wind",
+            "title": "工业烟气超低排放治理",
+            "desc": "脱硫脱硝、VOCs 蓄热催化燃烧（RTO/CO）、超低粉尘电袋复合除尘一体化工程"
+          },
+          {
+            "icon": "droplets",
+            "title": "高难度工业废水零排放",
+            "desc": "高盐高 COD 浓盐水纳滤反渗透膜浓缩与 MVR 机械蒸汽再压缩结晶分盐回用系统"
+          },
+          {
+            "icon": "zap",
+            "title": "园区级源网荷储微电网",
+            "desc": "分布式光伏、工商业储能调峰调频、工业余热废压综合梯级发电与能效闭环优化"
+          }
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "项目实施流程",
-        "process_subtitle": "从现场评估到运营复盘，降低项目不确定性",
+        "process_title": "能源/环保服务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "现场评估",
-            "desc": "采集能耗、设备、场地和运营数据。",
-            "stage_tag": "评估"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "方案测算",
-            "desc": "输出技术路线、投资测算和收益评估。",
-            "stage_tag": "测算"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "项目交付",
-            "desc": "完成设计、施工、验收和上线运行。",
-            "stage_tag": "交付"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "运营优化",
-            "desc": "持续监测指标并进行阶段复盘优化。",
-            "stage_tag": "运维"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
-        ],
-        "module_bg_color": "#f0fdf4"
+        ]
       }
     },
     {
       "type": "cases",
       "data": {
-        "cases_title": "代表项目案例",
-        "cases_subtitle": "用场景、方案和结果说明服务价值",
-        "cases_columns": "3",
+        "cases_title": "国家级行业重大绿色标杆工程",
+        "cases_subtitle": "在钢铁、化工、热电与有色金属行业树立绿色环保治理新标杆",
+        "cases_columns": "4",
         "cases_items": [
           {
-            "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80",
-            "title": "园区光伏能源项目",
-            "desc": "屋顶光伏、储能和用能优化组合方案。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80",
+            "title": "特大型钢铁集团烧结烟气脱硫脱硝工程",
+            "desc": "总投资 3.8 亿元，颗粒物排放浓度控制在 5mg/m³ 以下，达国际先进水平",
+            "link": "#case-detail"
           },
           {
-            "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80",
-            "title": "工厂节能改造",
-            "desc": "设备诊断、能耗监控和运营策略优化。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80",
+            "title": "精细化工园区高盐有机废水零排放项目",
+            "desc": "日处理 12,000 吨工业浓盐水，产水回用率超 96%，副产高纯度工业氯化钠",
+            "link": "#case-detail"
           },
           {
-            "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80",
-            "title": "环保治理工程",
-            "desc": "现场勘测、方案设计和验收交付闭环。",
-            "link": "#"
+            "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=400&q=80",
+            "title": "国家级汽车产业园 50MW 分布式光储微电网",
+            "desc": "年产清洁绿电 5,800 万度，节约标煤 1.8 万吨，显著提升绿电绿证消纳占比",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=400&q=80",
+            "title": "大型热电厂工业余热跨区域民用供暖工程",
+            "desc": "回收低品位循环水余热，实现 600 万平方米城区清洁集中供热替代",
+            "link": "#case-detail"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "compliance_title": "合规信誉与安全体系",
+        "compliance_subtitle": "严格遵从国家及国际行业安全标准，筑牢信赖基石"
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "预约绿色方案评估",
-        "contact_subtitle": "提交项目类型、场地规模、目标诉求和当前能耗情况，顾问会安排初步评估。",
-        "contact_phone": "400-860-2026",
-        "contact_email": "green@example.com",
-        "contact_address": "支持远程评估 / 可预约现场勘测",
+        "contact_title": "商务洽谈与 能源/环保服务官网 采购询盘",
+        "contact_subtitle": "欢迎索取详细产品型录、工程图纸或申请免费样品试用，商务工程师 2 小时内响应。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#f0fdf4"
+        "contact_submit_text": "提交询盘采购单 (RFQ)"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#071714",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#059669",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "ECO-ENERGY · 清洁能源与环保减碳科技",
+        "qfs_brand_desc": "聚焦风能、生物质能、地热利用与工业碳捕集（CCUS）全产业链。通过先进工程技术和碳资产数字化管理，协助重排放工业企业实现碳达峰与碳中和合规转型。",
+        "qfs_link_groups": [
+          {
+            "title": "绿色能源业务 & 碳管理与认证",
+            "links": "分布式风力发电装备|#\n生物质清洁气化利用|#\n工业烟气碳捕集与封存 (CCUS)|#\n地源热泵工业级冷热联供|#\n企业碳盘查与碳足迹核算|#\n绿色电力与绿证交易辅导|#\nESG 报告与合规披露支持|#\n碳中和示范工厂规划|#"
+          }
+        ],
+        "qfs_contact_title": "零碳综合能源工程咨询",
+        "qfs_contact_items": "咨询专线|400-880-2211|tel:4008802211\n工程指挥|021-5888-9900|tel:02158889900\n接待时间|工作日 9:00 - 18:00|#\n总部地址|上海市杨浦区创智天地节能环保中心 7 楼|#",
+        "qfs_social_title": "绿色低碳",
+        "qfs_social_links": "双碳前沿解读|#\n环保示范项目|#\n碳中和公开课|#\nESG 实践指南|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 ECO-ENERGY GROUP. 保留所有权利 · 沪ICP备16029811号 · 国家环保工程专业承包一级资质",
+        "qfs_bottom_links": "环境影响评价公告|#\n工程验收标准|#\n排污许可公示|#\n安全生产责任书|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -42,208 +42,217 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.55",
-        "db_title_prefix": "让每一次善意都有清晰去向",
-        "db_typing_mode": "loop",
-        "db_typing_text": "公益项目展示与行动记录\n影响力数据与透明公开\n志愿者、伙伴和支持者参与入口",
-        "db_highlight_color": "#fda4af",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "用清楚的项目、数据和公开信息，建立公益组织的长期信任。",
-        "db_desc": "适合基金会、社会服务组织、公益项目和公共倡议团队。",
-        "db_text_color": "rgba(248,250,252,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "益童公益",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "参与公益行动",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看项目进展",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#timeline",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "联系咨询",
+            "link": "#contact",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #090d16 0%, #881337 50%, #047857 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#10b981",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#10b981",
+        "qhs_hover_bg": "rgba(16,185,129,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "banner",
+      "data": {
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_slides": [
+          {
+            "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80",
+            "title": "点亮微光 · 汇聚温暖 · 让爱与希望照亮每一个角落",
+            "subtitle": "专注于山区儿童助学、乡村图书室援建与生态自然环境保护。善款 100% 透明公开公示，接受全社会监督。",
+            "btn_text": "参与爱心月捐计划",
+            "btn_url": "#donate"
+          }
+        ]
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "公益影响力数据",
-        "stats_subtitle": "用可理解的数据说明项目覆盖和行动结果",
-        "stats_text_align": "center",
+        "stats_title": "善念生花 · 每一份爱心都有回响",
+        "stats_subtitle": "严守最高公信力准则，财务账目每季度由毕马威会计师事务所完成独立合规审计",
         "stats_items": [
           {
-            "number": "36",
-            "label": "公益项目",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "100%",
+            "label": "善款接收与支出明细完全公开透明"
           },
           {
-            "number": "12城",
-            "label": "服务覆盖",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "48,600+",
+            "label": "乡村困境学子获得全额助学金与营养包"
           },
           {
-            "number": "8万+",
-            "label": "受益人次",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "¥1.68 亿",
+            "label": "累计投入大病救助与突发灾害救援"
           },
           {
-            "number": "2600+",
-            "label": "志愿者参与",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "120,000+",
+            "label": "注册在册长期活跃的爱心志愿者"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #4c0519 0%, #9f1239 50%, #047857 100%)",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "项目行动方向",
-        "services_subtitle": "按议题、对象和行动方式组织公益项目信息",
-        "services_bg_color": "#ffffff",
+        "services_title": "四大核心公益项目行动矩阵",
+        "services_subtitle": "深耕教育公平、生命健康与绿水青山，让每一分善款精准落地见效",
         "services_columns": "4",
         "services_items": [
           {
-            "icon": "01",
-            "title": "儿童关怀",
-            "desc": "围绕教育、陪伴和成长支持开展项目。",
-            "link": "#"
+            "icon": "book-open",
+            "title": "乡村教育·烛光助学计划",
+            "desc": "为偏远山区学校援建多媒体云课堂、配备图书室，资助困境儿童完成高中学业"
           },
           {
-            "icon": "02",
-            "title": "社区服务",
-            "desc": "社区互助、老年关怀和基层支持行动。",
-            "link": "#"
+            "icon": "heart-pulse",
+            "title": "儿童大病·生命守护工程",
+            "desc": "针对白血病、先天性心脏病患儿提供医疗兜底资金资助与温馨小家免费住宿"
           },
           {
-            "icon": "03",
-            "title": "环境保护",
-            "desc": "公众倡导、绿色行动和志愿活动。",
-            "link": "#"
+            "icon": "trees",
+            "title": "生态绿洲·荒漠植树造林",
+            "desc": "在腾格里沙漠锁边种植梭梭树与柠条，构筑防风固沙绿色生态屏障"
           },
           {
-            "icon": "04",
-            "title": "应急援助",
-            "desc": "物资协调、救助支持和灾后恢复项目。",
-            "link": "#"
+            "icon": "life-buoy",
+            "title": "突发灾害·紧急驰援行动",
+            "desc": "24 小时应急救援专业队随时待命，在地震、洪涝发生时第一时间送达救灾物资"
           }
-        ],
-        "enable_staggered_animation": "yes"
+        ]
       }
     },
     {
-      "type": "cases",
+      "type": "timeline",
       "data": {
-        "cases_title": "代表公益项目",
-        "cases_subtitle": "展示项目目标、行动过程和阶段成果",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80",
-            "title": "乡村儿童阅读计划",
-            "desc": "建设阅读角、组织志愿陪伴和阅读活动。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=900&q=80",
-            "title": "社区长者关怀",
-            "desc": "开展探访、健康提醒和社区互助活动。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=80",
-            "title": "城市环保志愿行动",
-            "desc": "组织公众参与清洁、回收和绿色倡导。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#fff1f2"
+        "timeline_title": "品牌发展历程",
+        "timeline_subtitle": "每一步坚实足迹，铸就今日卓越品质"
       }
     },
     {
-      "type": "process",
-      "data": {
-        "process_title": "参与公益的方式",
-        "process_subtitle": "把志愿者、伙伴和支持者的参与路径讲清楚",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "了解项目",
-            "desc": "查看项目目标、服务对象和阶段进展。",
-            "stage_tag": "了解"
-          },
-          {
-            "icon": "02",
-            "title": "提交意向",
-            "desc": "选择志愿服务、机构合作或资源支持方式。",
-            "stage_tag": "报名"
-          },
-          {
-            "icon": "03",
-            "title": "参与行动",
-            "desc": "按项目安排完成培训、活动和记录。",
-            "stage_tag": "行动"
-          },
-          {
-            "icon": "04",
-            "title": "查看反馈",
-            "desc": "通过公开信息了解项目进展和影响力结果。",
-            "stage_tag": "反馈"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
+      "type": "gallery",
+      "data": {}
     },
     {
-      "type": "faq",
-      "data": {
-        "faq_title": "常见参与问题",
-        "faq_subtitle": "让支持者提前了解参与规则",
-        "faq_items": [
-          {
-            "question": "如何成为志愿者？",
-            "answer": "可提交报名信息，项目负责人会根据活动排期和服务要求进行沟通。"
-          },
-          {
-            "question": "项目信息如何公开？",
-            "answer": "可通过项目进展、阶段数据和公开报告展示项目执行情况。"
-          },
-          {
-            "question": "企业可以参与合作吗？",
-            "answer": "可以，可围绕资源支持、员工志愿、联合项目等方式沟通合作。"
-          }
-        ],
-        "module_bg_color": "#fff1f2"
-      }
+      "type": "testimonials",
+      "data": {}
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "联系公益项目团队",
-        "contact_subtitle": "提交参与方式、所在城市、可投入时间和联系方式，项目团队会与你沟通。",
-        "contact_phone": "400-119-2026",
-        "contact_email": "impact@example.org",
-        "contact_address": "公益服务中心 / 支持线上沟通",
+        "contact_title": "与 公益组织官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0c1a16",
+        "qfs_text_color": "#a7f3d0",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#10b981",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "HOPE-FOUNDATION · 守护童年与生态绿色的公益慈善基金会",
+        "qfs_brand_desc": "每一笔善款，都清晰可查；每一份爱心，都温暖世界。专注于乡村儿童营养午餐计划、山村图书馆援建与濒危湿地生态保护。",
+        "qfs_link_groups": [
+          {
+            "title": "公益救助项目 & 阳光透明公示",
+            "links": "山村儿童爱心营养午餐计划|#\n筑梦希望乡村图书角援建|#\n长江源高原湿地守护行动|#\n重大自然灾害紧急人道救援|#\n年度财务审计与支出明细报告|#\n实时善款捐赠公示与电子收据|#\n志愿者招募与服务时长记录|#\n企业 CSR 战略共建合作|#"
+          }
+        ],
+        "qfs_contact_title": "基金会秘书处",
+        "qfs_contact_items": "爱心热线|400-800-1999|tel:4008001999\n秘书处邮箱|contact@hope-foundation.org|mailto:contact@hope-foundation.org\n基金会地址|北京市西城区德胜门东滨河路 11 号公益创新园|#",
+        "qfs_social_title": "关注公益行动",
+        "qfs_social_links": "微信公众号|#\n志愿者微社区|#\n救助项目实时动态|#\n慈善公益周刊|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 HOPE FOUNDATION. 具有公募资质的慈善组织 · 统一社会信用代码：53100000500300189X",
+        "qfs_bottom_links": "慈善组织登记证书|#\n公募资格证书公示|#\n善款去向实时查询|#\n免责声明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

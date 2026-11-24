@@ -42,223 +42,269 @@
   },
   "modules": [
     {
-      "type": "dynamic_banner",
+      "type": "header_suite",
       "data": {
-        "db_height": "82vh",
-        "db_bg_type": "image",
-        "db_bg_image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80",
-        "db_bg_overlay": "0.56",
-        "db_title_prefix": "帮企业更快找到合适的人",
-        "db_typing_mode": "loop",
-        "db_typing_text": "中高端人才寻访\n批量招聘与交付管理\n组织诊断与用工方案",
-        "db_highlight_color": "#a5b4fc",
-        "db_title_color": "#ffffff",
-        "db_subtitle": "围绕岗位画像、候选人触达、面试协同和入职跟进提升招聘效率。",
-        "db_desc": "适合招聘机构、猎头顾问、人力资源外包和灵活用工服务团队。",
-        "db_text_color": "rgba(248,250,252,0.88)",
-        "db_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "锐聘人力",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "发布招聘需求",
-            "link": "#",
-            "style": "primary",
-            "icon": ""
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看服务流程",
-            "link": "#",
-            "style": "outline",
-            "icon": ""
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#clients",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "db_media_type": "image",
-        "db_main_image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
-        "db_bg_gradient": "linear-gradient(135deg, #090d1a 0%, #312e81 50%, #047857 100%)"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#2563eb",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#2563eb",
+        "qhs_hover_bg": "rgba(37,99,235,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "banner",
       "data": {
-        "services_title": "人才服务范围",
-        "services_subtitle": "覆盖招聘、用工、组织和雇主品牌等关键场景",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
+        "banner_layout": "slider",
+        "banner_height": "large",
+        "banner_slides": [
           {
-            "icon": "01",
-            "title": "猎头寻访",
-            "desc": "中高端岗位画像、候选人触达和面试推动。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "批量招聘",
-            "desc": "门店、销售、客服和蓝领岗位规模化交付。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "灵活用工",
-            "desc": "短期项目、人力外包和周期性用工支持。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "人才咨询",
-            "desc": "组织诊断、薪酬调研和招聘流程优化。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "stats",
-      "data": {
-        "stats_title": "招聘交付数据",
-        "stats_subtitle": "用速度、覆盖和留存表现说明服务能力",
-        "stats_text_align": "center",
-        "stats_items": [
-          {
-            "number": "60+",
-            "label": "覆盖城市",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "14天",
-            "label": "平均推荐周期",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "85%",
-            "label": "面试到场率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          },
-          {
-            "number": "6月",
-            "label": "入职跟进周期",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
-          }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #1e1b4b 0%, #3730a3 50%, #059669 100%)",
-        "stats_title_color": "#ffffff"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "招聘交付流程",
-        "process_subtitle": "岗位、候选人、面试和入职每一步都有清晰节点",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "岗位诊断",
-            "desc": "确认岗位职责、候选人画像、薪酬和面试流程。",
-            "stage_tag": "诊断"
-          },
-          {
-            "icon": "02",
-            "title": "人才触达",
-            "desc": "多渠道搜索、沟通意向和初步筛选。",
-            "stage_tag": "触达"
-          },
-          {
-            "icon": "03",
-            "title": "面试协同",
-            "desc": "推进面试安排、反馈收集和 offer 沟通。",
-            "stage_tag": "面试"
-          },
-          {
-            "icon": "04",
-            "title": "入职跟进",
-            "desc": "跟进入职、试用期反馈和岗位复盘。",
-            "stage_tag": "入职"
-          }
-        ],
-        "module_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "cases",
-      "data": {
-        "cases_title": "企业招聘案例",
-        "cases_subtitle": "展示行业、岗位和交付结果",
-        "cases_columns": "3",
-        "cases_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
-            "title": "连锁门店批量招聘",
-            "desc": "围绕开店节奏完成多城市岗位交付。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80",
-            "title": "技术团队关键岗位",
-            "desc": "为成长型企业补齐研发和产品负责人。",
-            "link": "#"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80",
-            "title": "销售团队搭建",
-            "desc": "从岗位画像到面试节奏建立招聘漏斗。",
-            "link": "#"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "testimonials_title": "客户反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "300+",
-        "average_rating": "4.8",
-        "testimonials_items": [
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "HRD",
-            "position": "科技公司",
-            "content": "岗位理解比较快，候选人质量和反馈节奏都稳定。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "运营负责人",
-            "position": "连锁品牌",
-            "content": "批量招聘节点清晰，开店前人员到位率高。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "创始人",
-            "position": "创业公司",
-            "content": "关键岗位推荐很精准，也帮我们调整了岗位表达。",
-            "rating": "5",
-            "verified": "verified"
+            "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
+            "title": "精准链接全球精英人才 · 赋能组织高韧性业务增长",
+            "subtitle": "覆盖中高端猎头寻聘、RPO 招聘流程外包、灵活用工与薪酬社保合规代办一揽子人力资源解决方案。",
+            "btn_text": "发布企业招聘需求",
+            "btn_url": "#contact"
           }
         ]
       }
     },
     {
+      "type": "stats",
+      "data": {
+        "stats_title": "专业战绩 · 交付效率与人才厚度看板",
+        "stats_subtitle": "以严谨的行业Mapping、敏锐的人才雷达与超高保密机制，守护企业核心战略人才底座",
+        "stats_items": [
+          {
+            "number": "91.8%",
+            "label": "年薪百万级高管岗位一次交付成功率"
+          },
+          {
+            "number": "18 天",
+            "label": "首批精准候选人推荐报告平均周期"
+          },
+          {
+            "number": "850,000+",
+            "label": "全球中高端与硬核科研人才专家库"
+          },
+          {
+            "number": "680+ 家",
+            "label": "服务跨国龙头企业与瞪羚独角兽"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "全方位人力资本战略寻访服务矩阵",
+        "services_subtitle": "不只是简历推荐，更是对标行业头部组织架构、薪酬体系与竞业策略的深度顾问",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "users",
+            "title": "C-Level 核心高管猎聘",
+            "desc": "针对 CEO、CTO、CFO、研发副总裁等战略决策岗位开展全球闭门精准挖角"
+          },
+          {
+            "icon": "globe",
+            "title": "海外顶尖科学家引智工程",
+            "desc": "依托欧美日韩海外人才联络站，为企业定向引进国家级领军学术与工程专家"
+          },
+          {
+            "icon": "layers",
+            "title": "研发建制团队整体组建 (RPO)",
+            "desc": "在 1-3 个月内快速为新业务线搭建从总监、架构师到核心骨干的完整研发团队"
+          },
+          {
+            "icon": "bar-chart",
+            "title": "行业薪酬调研与组织诊断",
+            "desc": "出具细分行业真实薪酬分位值、期权股权激励设计与高管离职竞业合规避险"
+          }
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "人力资源/招聘服务官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cases",
+      "data": {
+        "cases_title": "标杆业绩 · 改变企业命运的战略级寻访战例",
+        "cases_subtitle": "每一次关键人才的成功就位，都是推动企业跨越周期腾飞的转折点",
+        "cases_columns": "4",
+        "cases_items": [
+          {
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "某知名头部造车新势力自动驾驶 CTO 寻访",
+            "desc": "历时 28 天成功从硅谷知名实验室引渡顶级科学家回国加盟，带领团队攻克端到端大模型",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+            "title": "百亿级创新药企全球临床研发副总裁到任",
+            "desc": "协调解决跨国竞业限制与股权交割难题，协助企业在 6 个月内完成多项海外临床试验推进",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "硬科技半导体晶圆厂 12 人先锋核心团队整建制",
+            "desc": "在 45 天内全员就位，实现首条 12 英寸高端工艺产线如期点亮并一次性投产成功",
+            "link": "#case-detail"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80",
+            "title": "跨国消费巨头大中华区首位本土总裁任命",
+            "desc": "打破外籍高管空降惯例，通过多轮胜任力评估引荐实战派操盘手，单年扭亏为盈增长 40%",
+            "link": "#case-detail"
+          }
+        ]
+      }
+    },
+    {
+      "type": "clients",
+      "data": {}
+    },
+    {
       "type": "contact",
       "data": {
-        "contact_title": "提交招聘需求",
-        "contact_subtitle": "提交岗位、城市、预算、招聘数量和期望到岗时间，顾问会评估交付方式。",
-        "contact_phone": "400-366-2026",
-        "contact_email": "talent@example.com",
-        "contact_address": "支持远程沟通 / 可预约企业拜访",
+        "contact_title": "与 人力资源/招聘服务官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_color": "#ffffff"
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#090d16",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#2563eb",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "TALENT-FORCE · 高端猎头寻聘与灵活用工人力资源综合服务商",
+        "qfs_brand_desc": "连接高价值人才与全球领军企业。拥有百万级高管与硬科技人才库，提供高端人才猎寻、RPO 招聘流程外包与外籍专家入职合规。",
+        "qfs_link_groups": [
+          {
+            "title": "企业雇主服务 & 求职候选人专区",
+            "links": "核心高管与硬科技专家猎聘|#\nRPO 招聘流程规模化外包|#\n灵活用工与合规薪税统筹|#\n海外本地化人才雇佣 EOR|#\n年薪50万+ 热门高管职位|#\n百万年薪职业规划咨询|#\n匿名简历投递与评估|#\n各行业人才薪酬趋势报告|#"
+          }
+        ],
+        "qfs_contact_title": "雇主合作热线",
+        "qfs_contact_items": "合作专线|400-880-5151|tel:4008805151\n简历投递|cv@talent-force.cn|mailto:cv@talent-force.cn\n总部地址|上海市静安区延安中路 1228 号嘉里中心二座 28 楼|#",
+        "qfs_social_title": "关注职场动态",
+        "qfs_social_links": "微信公众号|#\n猎头私享会|#\n领英官方主页|#\n脉脉企业号|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 TALENT-FORCE HR GROUP. 保留所有权利 · 人力资源服务许可证：31010620180052",
+        "qfs_bottom_links": "人力资源许可证公示|#\n劳务派遣经营许可证|#\n求职者隐私保护|#\n合规政策|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

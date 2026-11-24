@@ -43,189 +43,118 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "环球仓储",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合规安全",
+            "link": "#compliance_trust",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#3b82f6",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#3b82f6",
+        "qhs_hover_bg": "rgba(59,130,246,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "brand_banner_pro",
       "data": {
-        "bb_layout": "left_right",
+        "bb_layout": "overlay_center",
         "bb_style_mode": "glow",
         "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #090d16 0%, #0369a1 50%, #047857 100%)",
-        "bb_title": "把海外仓履约节点<br><strong>变成可追踪服务</strong>",
-        "bb_title_size_max": "72px",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_bg_gradient": "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%)",
+        "bb_title": "仓通四海 · 赋能跨境卖家决胜海外本土履约",
+        "bb_subtitle": "美欧日核心自营高标海外仓 420,000㎡，自主研发 WMS/OMS 系统与主流平台无缝打通，提供一件代发、FBA 中转、退货换标与大件卡派一站式闭环",
         "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #34d399 100%)",
-        "bb_subtitle": "海外仓、FBA 头程、一件代发与跨境供应链官网方案",
-        "bb_desc": "面向跨境卖家、品牌出海团队和平台店铺，把海外仓节点、入库上架、订单履约、退换货处理、头程协同和报价入口组织成客户能快速判断的官网页面。",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_text_align": "left",
+        "bb_text_color": "#cbd5e1",
         "bb_buttons": [
           {
-            "text": "获取仓配报价",
-            "link": "#",
-            "style": "primary",
-            "icon": "仓"
+            "text": "申请海外仓入仓测算与前 30 天免仓租大礼包",
+            "url": "#booking",
+            "style": "primary"
           },
           {
-            "text": "查看海外仓网点",
-            "link": "#",
-            "style": "light",
-            "icon": "点"
-          }
-        ],
-        "bb_primary_btn_bg_color": "#0284c7",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#115e59",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "#ffffff",
-        "bb_light_btn_text_color": "#0f172a",
-        "bb_light_btn_hover_bg_color": "#ecfeff",
-        "bb_light_btn_hover_text_color": "#0f766e",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "glow",
-        "bb_media_radius": "18px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "1",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
-      }
-    },
-    {
-      "type": "services",
-      "data": {
-        "services_title": "跨境仓配与供应链服务",
-        "services_subtitle": "覆盖头程、入仓、库存、订单、退换货和异常处理",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "FBA 头程与备货",
-            "desc": "支持海运、空运、卡派、预约送仓、标签换标、箱规核对和入仓异常跟进。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "海外仓一件代发",
-            "desc": "提供收货、质检、上架、拣货、包装、发货和轨迹回传，适配多平台订单履约。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "退换货与维修检测",
-            "desc": "承接退货签收、质检分级、重新上架、换标换包、维修检测和销毁处理。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "库存与系统协同",
-            "desc": "对接 ERP、店铺、WMS 和物流渠道，提供库存预警、费用报表和异常工单。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
-      }
-    },
-    {
-      "type": "branches",
-      "data": {
-        "branches_title": "海外仓与服务节点",
-        "branches_subtitle": "展示核心海外仓、退换货中心和头程协同节点",
-        "branches_columns": "3",
-        "enable_city_filter": "yes",
-        "map_provider": "gaode",
-        "show_booking_button": "yes",
-        "navigation_button_text": "查看仓点",
-        "booking_button_text": "咨询报价",
-        "branches_list": [
-          {
-            "name": "美西洛杉矶仓",
-            "city": "Los Angeles",
-            "status": "open",
-            "address": "Los Angeles, CA, United States",
-            "phone": "+1 000-7000-1001",
-            "email": "lax@example.com",
-            "hours": "Mon-Fri 09:00-18:00",
-            "services": "FBA中转,一件代发,退货处理",
-            "transport": "覆盖美西港口与快递渠道",
-            "lat": "34.0522",
-            "lng": "-118.2437",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "德国法兰克福仓",
-            "city": "Frankfurt",
-            "status": "open",
-            "address": "Frankfurt am Main, Germany",
-            "phone": "+49 000-7000-1002",
-            "email": "fra@example.com",
-            "hours": "Mon-Fri 09:00-18:00",
-            "services": "欧盟仓配,换标,退换货",
-            "transport": "辐射德国、法国、荷兰和周边市场",
-            "lat": "50.1109",
-            "lng": "8.6821",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80"
-          },
-          {
-            "name": "英国伯明翰退货中心",
-            "city": "Birmingham",
-            "status": "open",
-            "address": "Birmingham, United Kingdom",
-            "phone": "+44 000-7000-1003",
-            "email": "bhx@example.com",
-            "hours": "Mon-Fri 09:00-18:00",
-            "services": "退货签收,质检,重入库",
-            "transport": "支持英国本地派送和退换货处理",
-            "lat": "52.4862",
-            "lng": "-1.8904",
-            "map_url": "",
-            "booking_url": "#",
-            "image": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=80"
-          }
-        ],
-        "module_bg_color": "#f8fafc"
-      }
-    },
-    {
-      "type": "process",
-      "data": {
-        "process_title": "海外仓履约流程",
-        "process_subtitle": "从头程入仓到订单出库，关键节点清晰可追踪",
-        "process_mode": "standard",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "需求与渠道评估",
-            "desc": "确认国家、平台、SKU、体积重量、月单量、时效、退货率和系统对接方式。",
-            "stage_tag": "评估"
-          },
-          {
-            "icon": "02",
-            "title": "头程与入仓计划",
-            "desc": "规划发货批次、箱规标签、清关资料、预约入仓和上架质检标准。",
-            "stage_tag": "入仓"
-          },
-          {
-            "icon": "03",
-            "title": "订单履约出库",
-            "desc": "同步订单、拣货复核、包装发货、渠道分配、轨迹回传和异常工单处理。",
-            "stage_tag": "履约"
-          },
-          {
-            "icon": "04",
-            "title": "库存与费用复盘",
-            "desc": "按周期复盘库存周转、仓储费、尾程成本、退货原因和补货建议。",
-            "stage_tag": "复盘"
+            "text": "预约专家一对一方案定制",
+            "url": "#booking",
+            "style": "light"
           }
         ]
       }
@@ -233,81 +162,177 @@
     {
       "type": "stats",
       "data": {
-        "stats_title": "跨境履约服务数据",
-        "stats_subtitle": "用仓网、时效、库存和异常响应建立服务信任",
-        "stats_text_align": "center",
+        "stats_title": "全球自营海外仓实力与履约数据",
+        "stats_subtitle": "全自研仓储算法驱动库位最优调度，保障大促黑五网一 0 爆仓",
         "stats_items": [
           {
-            "number": "8+",
-            "label": "海外仓服务节点",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "420,000㎡",
+            "label": "欧美日核心自营海外仓总面积"
           },
           {
-            "number": "48h",
-            "label": "入库上架时效",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "99.8%",
+            "label": "订单 24 小时内出库并上网扫描率"
           },
           {
-            "number": "99%",
-            "label": "订单轨迹回传率",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "38万+ 单",
+            "label": "黑五网一大促单日峰值处理包裹"
           },
           {
-            "number": "24h",
-            "label": "异常工单响应",
-            "number_color": "#ffffff",
-            "label_color": "rgba(255, 255, 255, 0.85)"
+            "number": "0.01%",
+            "label": "仓库盘点库存差异率极限控制"
           }
-        ],
-        "stats_bg_type": "color",
-        "stats_bg_color": "linear-gradient(135deg, #0f172a 0%, #0284c7 52%, #059669 100%)",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px",
-        "stats_title_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "faq",
+      "type": "services",
       "data": {
-        "faq_title": "海外仓服务常见问题",
-        "faq_subtitle": "提前说明入仓要求、费用口径、系统对接和退换货边界",
-        "faq_items": [
+        "services_title": "四大自营海外仓核心业务矩阵",
+        "services_subtitle": "全面覆盖 B2C 一件代发与 B2B 大宗仓储转运全场景",
+        "services_columns": "4",
+        "services_items": [
           {
-            "question": "报价前需要提供哪些信息？",
-            "answer": "建议提供目的国家、平台类型、SKU 数量、货品尺寸重量、月单量、入仓批次、尾程渠道、是否需要退货处理和系统对接方式。"
+            "icon": "fas fa-box-open",
+            "title": "B2C 一件代发 (Dropshipping)",
+            "desc": "API 直连 Amazon, TikTok Shop, Shopify, 沃尔玛，24小时极速出库，运费低至 2.8 折。"
           },
           {
-            "question": "海外仓费用通常包含哪些项目？",
-            "answer": "常见包含入库费、上架费、仓储费、拣货打包费、尾程运费、换标换包、退货质检、销毁和增值服务费，具体以仓点报价表为准。"
+            "icon": "fas fa-truck-moving",
+            "title": "FBA 中转补仓与自营整车卡派",
+            "desc": "全美各大亚马逊 FBA 仓库定期定点卡车专线，旺季保预约入仓，告别断货惩罚。"
           },
           {
-            "question": "可以对接 ERP 或店铺系统吗？",
-            "answer": "可以按服务能力展示订单、库存、轨迹、费用和工单接口。正式对接前需要确认平台、ERP、字段口径、数据频率和异常处理机制。"
+            "icon": "fas fa-redo-alt",
+            "title": "退货质检、重新贴标与翻新重新上架",
+            "desc": "海外本土退件专业验货测试、拍照取证、更换全新彩盒包装与重新贴标，挽回巨额货损。"
           },
           {
-            "question": "退换货是否可以重新上架？",
-            "answer": "可按货品状态做质检分级，符合标准的商品可换标、换包并重新上架，不符合标准的可维修、退回、销毁或按客户要求处理。"
+            "icon": "fas fa-couch",
+            "title": "超大件家具与中重型货物专业仓",
+            "desc": "专业重型悬臂货架与电动升降叉车，配备尾板卡车双人送货入室，专攻大件出海。"
           }
-        ],
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        ]
+      }
+    },
+    {
+      "type": "process",
+      "data": {
+        "process_title": "海外仓/跨境供应链官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
+        "process_items": [
+          {
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
+          },
+          {
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
+          },
+          {
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
+          },
+          {
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "全球核心自营海外仓网点布局",
+        "branches_subtitle": "所有仓库均配备自动化分拣流水线、全景高清无死角安防与华人专业现场管理",
+        "branches_columns": "3",
+        "branches_list": [
+          {
+            "name": "美西洛杉矶 1 号超级旗舰枢纽仓",
+            "city": "美国 · 洛杉矶安大略 (LAX)",
+            "status": "open",
+            "address": "4200 E Francis St, Ontario, CA 91761, USA",
+            "phone": "+1 (909) 888-6699",
+            "email": "us-la@global-warehouse.com",
+            "hours": "周一至周日 07:00 - 23:00 (PST)",
+            "services": "一件代发, FBA卡派, 大件家具仓储, 码头提柜",
+            "transport": "紧靠 I-10、I-15 州际高速公路互通立交，距长滩港 40 分钟车程",
+            "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            "name": "美东新泽西 2 号全能配送中心仓",
+            "city": "美国 · 新泽西 (EWR)",
+            "status": "open",
+            "address": "1000 Logistics Way, Cranbury, NJ 08512, USA",
+            "phone": "+1 (732) 999-2818",
+            "email": "us-nj@global-warehouse.com",
+            "hours": "周一至周六 08:00 - 20:00 (EST)",
+            "services": "东部一件代发, 沃尔玛中转, 敏感品带电仓, 退件翻新",
+            "transport": "辐射全美 60% 人口 1-2 天极速达商圈，直连新泽西纽瓦克港",
+            "image": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            "name": "欧洲德国法兰克福泛欧中枢仓",
+            "city": "德国 · 法兰克福 (FRA)",
+            "status": "open",
+            "address": "Am Prime Parc 15, 65479 Raunheim, Germany",
+            "phone": "+49 (69) 880-1299",
+            "email": "eu-de@global-warehouse.com",
+            "hours": "周一至周五 08:30 - 18:30 (CET)",
+            "services": "欧盟保税仓储, 泛欧全境卡派, 托盘中转, 本地销毁",
+            "transport": "距法兰克福国际机场货站仅 12 公里，直连 A3 / A67 泛欧高速",
+            "image": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "type": "compliance_trust",
+      "data": {
+        "compliance_title": "合规信誉与安全体系",
+        "compliance_subtitle": "严格遵从国家及国际行业安全标准，筑牢信赖基石"
       }
     },
     {
       "type": "contact",
       "data": {
-        "contact_title": "获取海外仓履约报价",
-        "contact_subtitle": "填写目的国家、平台、SKU、月单量、货品尺寸重量、是否需要退换货和系统对接，供应链顾问会协助确认仓点和报价方案。",
+        "contact_title": "商务洽谈与 海外仓/跨境供应链官网 采购询盘",
+        "contact_subtitle": "欢迎索取详细产品型录、工程图纸或申请免费样品试用，商务工程师 2 小时内响应。",
         "contact_show_form": "1",
-        "contact_form_id": "",
-        "module_bg_type": "color",
-        "module_bg_color": "#f8fafc",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
+        "contact_submit_text": "提交询盘采购单 (RFQ)"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0b132b",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#3b82f6",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "GLOBAL HUB · 跨境海外仓与智慧物流供应链",
+        "qfs_brand_desc": "美欧自营保税海外仓网络。提供 FBA 中转、一件代发、退换货质检二次上架、头程海空运与 WMS/ERP 系统无缝直连。",
+        "qfs_link_groups": [
+          {
+            "title": "自营海外仓节点 & 增值仓储服务",
+            "links": "美西洛杉矶海外仓（LAX）|#\n美东新泽西海外仓（EWR）|#\n德国汉堡/杜伊斯堡欧线仓|#\n英国伯明翰保税中转仓|#\nFBA 一件代发与快速贴标|#\n退换货质检翻新重入库|#\n大宗海关报关与关税代缴|#\nWMS/ERP 系统 API 接口|#"
+          }
+        ],
+        "qfs_contact_title": "仓配调度中心",
+        "qfs_contact_items": "调度专线|400-830-2026|tel:4008302026\n商务报价|quote@globalhub-logistics.com|mailto:quote@globalhub-logistics.com\n运营总部|上海市浦东新区陆家嘴航运大厦 22 层|#",
+        "qfs_social_title": "关注全球物流动态",
+        "qfs_social_links": "微信公众号|#\nLinkedIn 官方主页|#\n航运头条资讯|#\n实时轨迹查询平台|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 GLOBAL HUB SUPPLY CHAIN CO., LTD. 保留所有权利 · 全球多国自营保税仓储与物流网络",
+        "qfs_bottom_links": "仓储服务协议|#\n货损理赔声明|#\n隐私政策|#\n网站地图|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

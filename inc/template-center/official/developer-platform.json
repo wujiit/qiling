@@ -42,198 +42,176 @@
   },
   "modules": [
     {
-      "type": "banner",
+      "type": "header_suite",
       "data": {
-        "banner_layout": "slider",
-        "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #090e17 0%, #064e3b 50%, #0c4a6e 100%)",
-        "banner_slides": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "开发者云",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
-            "title": "把核心能力开放给更多开发者",
-            "subtitle": "API、SDK、Webhook 和文档中心，帮助合作伙伴更快完成集成。",
-            "btn_text": "查看文档",
-            "btn_url": "#",
-            "btn_bg_color": "#059669",
-            "btn_text_color": "#ffffff"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "开源动态",
+            "link": "#github_activity",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "功能特性",
+            "link": "#features_list",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "资料下载",
+            "link": "#downloads",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "常见问题",
+            "link": "#faq",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "立即行动",
+            "link": "#cta",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "99.9",
-            "number": "99.9%",
-            "label": "API 可用性",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "80",
-            "number": "80+",
-            "label": "开放接口",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "12",
-            "number": "12种",
-            "label": "SDK 示例",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "24",
-            "number": "24h",
-            "label": "技术支持",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "免费试用",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#06b6d4",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#06b6d4",
+        "qhs_hover_bg": "rgba(6,182,212,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "services",
+      "type": "hero_search",
       "data": {
-        "services_title": "平台能力",
-        "services_subtitle": "按开发者接入路径组织核心能力",
-        "services_columns": "4",
-        "services_bg_color": "#ffffff",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "REST API",
-            "desc": "覆盖核心数据、业务动作和查询能力。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "Webhook",
-            "desc": "实时推送订单、事件、任务和状态变化。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "SDK 示例",
-            "desc": "提供多语言示例，降低接入和调试成本。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "权限与审计",
-            "desc": "支持密钥、角色、配额和调用记录管理。",
-            "link": "#"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "search_title": "启灵开发者开放平台 · 构建下一代数字应用",
+        "search_subtitle": "快速检索 RESTful API、SDK 客户端、GraphQL 端点与 Webhook 事件规范。",
+        "search_placeholder": "例如：OAuth 2.0 鉴权、支付回调处理、批量异步调用..."
       }
     },
     {
-      "type": "process",
+      "type": "github_activity",
       "data": {
-        "process_title": "接入流程",
-        "process_subtitle": "从申请到上线，开发团队有清晰路径",
-        "process_items": [
-          {
-            "icon": "01",
-            "title": "创建应用",
-            "desc": "申请开发者账号，创建应用并获取测试密钥。",
-            "stage_tag": "申请"
-          },
-          {
-            "icon": "02",
-            "title": "阅读文档",
-            "desc": "按业务场景选择接口、SDK 和回调方式。",
-            "stage_tag": "开发"
-          },
-          {
-            "icon": "03",
-            "title": "联调测试",
-            "desc": "使用沙箱环境验证鉴权、数据和异常处理。",
-            "stage_tag": "测试"
-          },
-          {
-            "icon": "04",
-            "title": "审核上线",
-            "desc": "通过安全审核后切换生产环境。",
-            "stage_tag": "上线"
-          }
-        ],
-        "module_bg_color": "#f0fdfa"
+        "ga_title": "开源生态与提交动态热力流",
+        "ga_subtitle": "完全拥抱开源，查看官方 SDK 仓库实时提交与社区 PR 进展"
       }
     },
     {
-      "type": "features",
+      "type": "features_list",
       "data": {
-        "features_title": "开发者体验",
-        "features_subtitle": "让 API 不只可用，也更容易被正确使用",
-        "features_columns": "4",
-        "features_items": [
-          {
-            "icon": "01",
-            "title": "在线调试",
-            "desc": "在文档页直接构造请求并查看响应。"
-          },
-          {
-            "icon": "02",
-            "title": "错误码手册",
-            "desc": "错误原因、修复建议和重试策略清楚可查。"
-          },
-          {
-            "icon": "03",
-            "title": "沙箱数据",
-            "desc": "提供稳定测试数据，避免影响生产环境。"
-          },
-          {
-            "icon": "04",
-            "title": "状态订阅",
-            "desc": "服务异常、版本更新和接口变更及时通知。"
-          }
-        ],
-        "module_bg_color": "#ffffff"
+        "features_title": "为极致开发体验而生的技术特性",
+        "features_subtitle": "高吞吐、毫秒级响应、强类型 SDK 与完善的沙箱测试网"
       }
     },
     {
-      "type": "cases",
+      "type": "downloads",
       "data": {
-        "cases_title": "生态接入案例",
-        "cases_subtitle": "展示平台能力在不同业务中的应用",
-        "cases_columns": "3",
-        "cases_items": [
+        "downloads_title": "全语言 SDK 客户端与脚手架离线包下载",
+        "downloads_subtitle": "全面覆盖主流后端与前端语言，支持 npm / pip / composer / maven 一键安装",
+        "columns": "3",
+        "downloads": [
           {
-            "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
-            "title": "企业系统集成",
-            "desc": "通过 API 打通 CRM、订单和售后系统。",
-            "link": "#"
+            "name": "Qiling Python SDK v3.4",
+            "desc": "完整支持异步 AsyncIO、类型注解与自动重试机制",
+            "version": "v3.4.1",
+            "size": "2.1 MB",
+            "btn_text": "pip install"
           },
           {
-            "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
-            "title": "移动应用接入",
-            "desc": "SDK 支持移动端快速接入账号和消息能力。",
-            "link": "#"
+            "name": "Qiling TypeScript / Node.js SDK",
+            "desc": "原生 TypeScript 类型定义，支持 Next.js / Nuxt.js SSR",
+            "version": "v4.0.0",
+            "size": "1.8 MB",
+            "btn_text": "npm i"
           },
           {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-            "title": "数据同步服务",
-            "desc": "Webhook 推送关键事件，减少轮询和延迟。",
-            "link": "#"
+            "name": "Postman 接口测试工程集合",
+            "desc": "包含 200+ 接口预设用例与自动化鉴权环境变量脚本",
+            "version": "Collection v2.1",
+            "size": "520 KB",
+            "btn_text": "一键导入"
           }
-        ],
-        "module_bg_color": "#f8fafc"
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "faq_title": "开发者常见疑问与调用限制说明",
+        "faq_subtitle": "关于免费配额、QPS 限制、私有化网关与商业 SLA 的详细解答"
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "准备开始接入？",
-        "cta_subtitle": "从沙箱环境开始，把第一个接口跑通。",
-        "cta_button_text": "创建开发者应用",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #090e17 0%, #064e3b 60%, #0c4a6e 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "cta_title": "立即获取您的免费开发者 API Key",
+        "cta_subtitle": "个人开发者每月赠送 50,000 次免费调用额度，开箱即用无门槛。",
+        "cta_btn_text": "前往控制台生成密钥",
+        "cta_btn_link": "#console"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0f172a",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#06b6d4",
+        "qfs_brand_title": "DEV-PLATFORM · 启灵开发者平台",
+        "qfs_brand_desc": "代码即力量。为全球数十万开发者提供稳定可靠的 API 基础设施。",
+        "qfs_bottom_text": "© 2026 DEV PLATFORM. 服务条款 · 隐私规范 · API 协议"
       }
     }
   ]

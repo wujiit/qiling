@@ -43,237 +43,171 @@
   },
   "modules": [
     {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "宠爱时光",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "萌宠档案",
+            "link": "#pet_profile",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户案例",
+            "link": "#cases",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "客户评价",
+            "link": "#testimonials",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#d97706",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#d97706",
+        "qhs_hover_bg": "rgba(217,119,6,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
       "type": "banner",
       "data": {
         "banner_layout": "slider",
         "banner_height": "large",
-        "banner_bg_color": "linear-gradient(135deg, #78350f 0%, #d97706 50%, #059669 100%)",
         "banner_slides": [
           {
-            "media_type": "image",
-            "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1800&q=80",
-            "title": "给毛孩子一个更安心的照顾方式",
-            "subtitle": "宠物美容、寄养、医疗咨询与领养档案展示，支持在线预约。",
-            "btn_text": "预约服务",
-            "btn_url": "#",
-            "btn_bg_color": "#ffffff",
-            "btn_text_color": "#d97706"
+            "image": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1800&q=80",
+            "title": "像家人一样呵护每一只毛孩子 · 专业宠物医疗与精致洗护",
+            "subtitle": "进口数字化影像设备，24 小时急诊手术支持，猫犬分区低应激就诊环境，为爱宠全生命周期健康保驾护航。",
+            "btn_text": "预约免排队洗护/体检",
+            "btn_url": "#booking"
           }
-        ],
-        "show_stats_bar": "1",
-        "stats_data": [
-          {
-            "icon": "1200",
-            "number": "1200+",
-            "label": "服务宠物",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "18",
-            "number": "18+",
-            "label": "护理项目",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "4.9",
-            "number": "4.9",
-            "label": "主人评分",
-            "color": "#ffffff"
-          },
-          {
-            "icon": "7",
-            "number": "7天",
-            "label": "寄养服务",
-            "color": "#ffffff"
-          }
-        ],
-        "banner_wave_enable": "0"
+        ]
       }
     },
     {
       "type": "pet_profile",
       "data": {
-        "pet_title": "等待回家的小伙伴",
-        "pet_subtitle": "每一只都经过健康检查和性格评估，可替换为门店宠物、领养档案或种猫种犬展示。",
-        "pet_columns": "3",
-        "pet_bg_color": "#fffbeb",
-        "pet_card_bg": "#ffffff",
-        "pet_primary_color": "#d97706",
-        "pet_items": [
-          {
-            "image": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80",
-            "name": "布丁",
-            "breed": "金毛犬",
-            "gender": "female",
-            "age": "8个月",
-            "status": "available",
-            "tags": "亲人, 已疫苗, 会握手",
-            "price": "咨询"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80",
-            "name": "汤圆",
-            "breed": "布偶猫",
-            "gender": "female",
-            "age": "4个月",
-            "status": "reserved",
-            "tags": "粘人, 爆毛, 会用猫砂",
-            "price": "已预订"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80",
-            "name": "奥利奥",
-            "breed": "边境牧羊犬",
-            "gender": "male",
-            "age": "3个月",
-            "status": "available",
-            "tags": "聪明, 活泼, 训练中",
-            "price": "咨询"
-          }
-        ],
-        "enable_staggered_animation": "yes"
+        "pet_title": "可领养萌宠与健康纯种幼犬幼猫档案",
+        "pet_subtitle": "每一只萌宠均完成疫苗接种与体内外驱虫，签署正规领养健康保障协议"
       }
     },
     {
       "type": "services",
       "data": {
-        "services_title": "宠物服务",
-        "services_subtitle": "从日常护理到短期寄养，覆盖主人高频需求",
-        "services_bg_color": "#ffffff",
-        "services_columns": "4",
-        "services_items": [
-          {
-            "icon": "01",
-            "title": "宠物美容",
-            "desc": "洗护、修剪、造型和基础皮毛护理。",
-            "link": "#"
-          },
-          {
-            "icon": "02",
-            "title": "短期寄养",
-            "desc": "独立空间、定时喂养和日常观察记录。",
-            "link": "#"
-          },
-          {
-            "icon": "03",
-            "title": "健康咨询",
-            "desc": "疫苗、驱虫、营养和基础健康建议。",
-            "link": "#"
-          },
-          {
-            "icon": "04",
-            "title": "领养服务",
-            "desc": "档案展示、适配沟通和回访跟踪。",
-            "link": "#"
-          }
-        ]
+        "title": "四大专业毛孩子专属呵护板块",
+        "subtitle": "以专业与爱心守护爱宠健康快乐的每一个成长阶段"
       }
     },
     {
-      "type": "gallery",
-      "data": {
-        "gallery_title": "宠物相册",
-        "gallery_subtitle": "用真实照片展示服务结果和宠物状态",
-        "gallery_columns": "3",
-        "gallery_style": "grid",
-        "enable_filter": "yes",
-        "filter_categories": "狗狗,猫咪,护理",
-        "gallery_images": [
-          {
-            "image": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80",
-            "title": "金毛犬",
-            "desc": "亲人活泼",
-            "category": "狗狗"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80",
-            "title": "布偶猫",
-            "desc": "温顺粘人",
-            "category": "猫咪"
-          },
-          {
-            "image": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=900&q=80",
-            "title": "洗护服务",
-            "desc": "干净舒适",
-            "category": "护理"
-          }
-        ],
-        "module_bg_color": "#fffbeb"
-      }
+      "type": "cases",
+      "data": {}
+    },
+    {
+      "type": "team",
+      "data": {}
     },
     {
       "type": "testimonials",
       "data": {
-        "testimonials_title": "主人反馈",
-        "testimonials_layout": "grid",
-        "testimonials_columns": "3",
-        "show_rating_summary": "yes",
-        "total_reviews": "3,200+",
-        "average_rating": "4.9",
-        "testimonials_items": [
+        "testimonials_title": "铲屎官们的真心信赖与好评",
+        "testimonials_subtitle": "万千养宠家庭选择把家庭成员放心托付给我们的理由"
+      }
+    },
+    {
+      "type": "contact",
+      "data": {}
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "balanced",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#1c1917",
+        "qfs_text_color": "#d6d3d1",
+        "qfs_heading_color": "#fef3c7",
+        "qfs_accent_color": "#d97706",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "PAW-PARK · 萌宠乐园与专业宠物生活馆",
+        "qfs_brand_desc": "用专业与爱心陪伴每一个毛孩子健康成长。提供日系精细洗护SPA、独立阳光寄养公寓、健康体检与爱心领养公益服务。",
+        "qfs_link_groups": [
           {
-            "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
-            "name": "小米妈妈",
-            "position": "宠物美容",
-            "content": "洗护后毛发很蓬松，店员还提醒了皮肤护理注意事项。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-            "name": "豆豆爸爸",
-            "position": "短期寄养",
-            "content": "每天都有照片反馈，出差时安心很多。",
-            "rating": "5",
-            "verified": "verified"
-          },
-          {
-            "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80",
-            "name": "花花姐姐",
-            "position": "领养咨询",
-            "content": "沟通很细，领养前把性格和注意事项讲得很清楚。",
-            "rating": "5",
-            "verified": "verified"
+            "title": "萌宠专属服务 & 主粮与严选用品",
+            "links": "日系精细洗护SPA|#\n独立阳光寄养公寓|#\n健康体检与驱虫疫苗|#\n爱心领养公益计划|#\n鲜肉低温烘焙全价主粮|#\n天然冻干原肉零食系列|#\n全自动除臭智能猫砂盆|#\n出游航空箱与安全牵引绳|#"
           }
         ],
-        "testimonials_bg_color": "#ffffff"
-      }
-    },
-    {
-      "type": "booking-entry",
-      "data": {
-        "booking_title": "预约宠物服务",
-        "booking_subtitle": "提交宠物类型、体重和服务需求，门店会确认服务安排。",
-        "form_id": "",
-        "booking_layout": "sidebar",
-        "sidebar_title": "预约提醒",
-        "sidebar_content": "美容服务请在表单里说明毛发情况\n寄养需确认疫苗和驱虫记录\n领养咨询建议先预约到店沟通",
-        "contact_phone": "400-168-2026",
-        "contact_hours": "09:30-21:00",
-        "module_bg_image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1600&q=80",
-        "bg_overlay": "0.55",
-        "module_bg_color": "#fffbeb"
-      }
-    },
-    {
-      "type": "faq",
-      "data": {
-        "faq_title": "宠物服务常见问题",
-        "module_bg_color": "#ffffff",
-        "faq_items": [
-          {
-            "question": "宠物寄养需要准备什么？",
-            "answer": "建议准备疫苗记录、常吃粮食、牵引绳或熟悉的小物件，降低环境变化压力。"
-          },
-          {
-            "question": "美容服务需要多久？",
-            "answer": "根据体型、毛量和服务项目不同，一般 1-3 小时，可在预约确认时说明。"
-          },
-          {
-            "question": "宠物档案可以改成商品展示吗？",
-            "answer": "可以，宠物档案模块可替换图片、标签和状态，用于猫舍犬舍或领养机构展示。"
-          }
-        ]
+        "qfs_contact_title": "爱宠管家热线",
+        "qfs_contact_items": "预约专线|400-168-2026|tel:4001682026\n萌宠急诊|188-9999-2026|tel:18899992026\n生活馆地址|北京市朝阳区高碑店爱宠文创园 B 栋 1 层|#",
+        "qfs_social_title": "关注萌宠日常",
+        "qfs_social_links": "抖音萌宠日常|#\n小红书养宠干货|#\n微信萌宠社群|#\n哔哩哔哩宠物vlog|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 PAW-PARK PET CARE. 萌宠乐园生活馆 · 保留所有权利 · 用爱陪伴每一个毛孩子",
+        "qfs_bottom_links": "寄养免责须知|#\n到店服务流程|#\n隐私政策|#\n会员章程|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

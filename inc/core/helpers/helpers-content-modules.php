@@ -1638,6 +1638,36 @@ if ( ! function_exists( 'developer_starter_get_page_template_default_modules_map
                 'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
                 'method' => 'apply_package_to_page',
             ),
+            'templates/template-brand-dtc-store.php'    => array(
+                'flag'   => '_brand_dtc_store_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
+            'templates/template-foreign-trade-store.php' => array(
+                'flag'   => '_foreign_trade_store_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
+            'templates/template-luxury-watch.php'       => array(
+                'flag'   => '_luxury_watch_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
+            'templates/template-sneakers-footwear.php'  => array(
+                'flag'   => '_sneakers_footwear_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
+            'templates/template-leather-bags.php'       => array(
+                'flag'   => '_leather_bags_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
+            'templates/template-fine-jewelry.php'       => array(
+                'flag'   => '_fine_jewelry_modules_filled',
+                'class'  => '\Developer_Starter\Core\Official_Template_Package_Service',
+                'method' => 'apply_package_to_page',
+            ),
         );
     }
 }
@@ -2098,6 +2128,11 @@ if ( ! function_exists( 'developer_starter_get_page_modules_data' ) ) {
      * @return mixed
      */
     function developer_starter_get_page_modules_data( $post_id = null ) {
+        $pre = apply_filters( 'developer_starter_pre_get_page_modules_data', null, $post_id );
+        if ( is_array( $pre ) ) {
+            return $pre;
+        }
+
         $post = get_post( $post_id );
         if ( ! $post instanceof WP_Post ) {
             return array();
@@ -2112,6 +2147,40 @@ if ( ! function_exists( 'developer_starter_get_page_modules_data' ) ) {
             if ( is_string( $template ) && '' !== $template && 'default' !== $template ) {
                 developer_starter_maybe_fill_default_modules_for_page_template( $post->ID, $template );
                 $modules = developer_starter_get_raw_page_modules_meta( $post->ID );
+            }
+        }
+
+        // 🌟 核心智能兼容补齐：如果数据库中保存的模块列表尚未包含页脚模块，且当前页面属于官方行业模板，
+        // 自动将该行业模板的专属 footer_suite 补齐至模块列表末尾，让历史已建演示页面无需重新生成也能即刻展现新页脚。
+        if ( is_array( $modules ) && ! empty( $modules ) ) {
+            $has_header = false;
+            $has_footer = false;
+            foreach ( $modules as $m ) {
+                $mtype = isset( $m['type'] ) ? $m['type'] : '';
+                if ( in_array( $mtype, array( 'header_suite', 'header' ), true ) ) {
+                    $has_header = true;
+                }
+                if ( in_array( $mtype, array( 'footer_suite', 'footer' ), true ) ) {
+                    $has_footer = true;
+                }
+            }
+            $template = function_exists( 'get_page_template_slug' ) ? get_page_template_slug( $post->ID ) : '';
+            if ( ! is_string( $template ) || '' === trim( $template ) ) {
+                $template = get_post_meta( $post->ID, '_wp_page_template', true );
+            }
+            if ( is_string( $template ) && '' !== $template && 'default' !== $template ) {
+                if ( ! $has_header ) {
+                    $official_header = developer_starter_get_official_template_header_module( $template );
+                    if ( ! empty( $official_header ) ) {
+                        array_unshift( $modules, $official_header );
+                    }
+                }
+                if ( ! $has_footer ) {
+                    $official_footer = developer_starter_get_official_template_footer_module( $template );
+                    if ( ! empty( $official_footer ) ) {
+                        $modules[] = $official_footer;
+                    }
+                }
             }
         }
         if ( function_exists( 'xb_aifanyi_get_frontend_translated_modules' ) ) {
@@ -2249,3 +2318,242 @@ if ( ! function_exists( 'developer_starter_render_builder_template_page' ) ) {
         return true;
     }
 }
+
+if ( ! function_exists( 'developer_starter_get_official_template_header_module' ) ) {
+    /**
+     * 获取指定页面模板对应的官方专属页头模块（从 official/*.json 动态加载首个 header_suite）。
+     *
+     * @param string $template_path 模板路径，如 templates/template-fine-jewelry.php。
+     * @return array|null
+     */
+    function developer_starter_get_official_template_header_module( $template_path ) {
+        static $header_cache = array();
+
+        if ( empty( $template_path ) || ! is_string( $template_path ) ) {
+            return null;
+        }
+
+        $template_path = str_replace( '\\', '/', $template_path );
+        if ( isset( $header_cache[ $template_path ] ) ) {
+            return $header_cache[ $template_path ];
+        }
+
+        $slug = sanitize_key( basename( $template_path, '.php' ) );
+        $slug = str_replace( 'template-', '', $slug );
+        if ( empty( $slug ) ) {
+            $header_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $theme_dir = defined( 'QILING_DIR' ) ? QILING_DIR : ( function_exists( 'get_template_directory' ) ? get_template_directory() : '' );
+        if ( empty( $theme_dir ) ) {
+            $header_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $json_file = trailingslashit( $theme_dir ) . 'inc/template-center/official/' . $slug . '.json';
+        if ( ! file_exists( $json_file ) || ! is_readable( $json_file ) ) {
+            $header_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $raw = file_get_contents( $json_file );
+        if ( empty( $raw ) ) {
+            $header_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $decoded = json_decode( $raw, true );
+        if ( ! is_array( $decoded ) || empty( $decoded['modules'] ) || ! is_array( $decoded['modules'] ) ) {
+            $header_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $first_module = reset( $decoded['modules'] );
+        if ( is_array( $first_module ) && isset( $first_module['type'] ) && 'header_suite' === $first_module['type'] ) {
+            $header_cache[ $template_path ] = $first_module;
+            return $first_module;
+        }
+
+        $header_cache[ $template_path ] = null;
+        return null;
+    }
+}
+
+if ( ! function_exists( 'developer_starter_get_official_template_footer_module' ) ) {
+    /**
+     * 获取指定页面模板对应的官方专属页脚模块（从 official/*.json 动态加载）。
+     *
+     * @param string $template_path 模板路径，如 templates/template-luxury-watch.php。
+     * @return array|null
+     */
+    function developer_starter_get_official_template_footer_module( $template_path ) {
+        static $footer_cache = array();
+
+        if ( empty( $template_path ) || ! is_string( $template_path ) ) {
+            return null;
+        }
+
+        $template_path = str_replace( '\\', '/', $template_path );
+        if ( isset( $footer_cache[ $template_path ] ) ) {
+            return $footer_cache[ $template_path ];
+        }
+
+        $slug = sanitize_key( basename( $template_path, '.php' ) );
+        $slug = str_replace( 'template-', '', $slug );
+        if ( empty( $slug ) ) {
+            $footer_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $theme_dir = defined( 'QILING_DIR' ) ? QILING_DIR : ( function_exists( 'get_template_directory' ) ? get_template_directory() : '' );
+        if ( empty( $theme_dir ) ) {
+            $footer_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $json_file = trailingslashit( $theme_dir ) . 'inc/template-center/official/' . $slug . '.json';
+        if ( ! file_exists( $json_file ) || ! is_readable( $json_file ) ) {
+            $footer_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $raw = file_get_contents( $json_file );
+        if ( empty( $raw ) ) {
+            $footer_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $decoded = json_decode( $raw, true );
+        if ( ! is_array( $decoded ) || empty( $decoded['modules'] ) || ! is_array( $decoded['modules'] ) ) {
+            $footer_cache[ $template_path ] = null;
+            return null;
+        }
+
+        $last_module = end( $decoded['modules'] );
+        if ( is_array( $last_module ) && isset( $last_module['type'] ) && 'footer_suite' === $last_module['type'] ) {
+            $footer_cache[ $template_path ] = $last_module;
+            return $last_module;
+        }
+
+        $footer_cache[ $template_path ] = null;
+        return null;
+    }
+}
+
+if ( ! function_exists( 'developer_starter_page_has_footer_module' ) ) {
+    /**
+     * 检测指定页面是否已在模块列表中包含页脚模块（如 footer_suite）。
+     * 用于智能屏蔽全站深蓝老旧兜底页脚，实现页面所见即所得一体化页脚装修。
+     *
+     * @param int|null $post_id 页面 ID，默认当前查询对象 ID。
+     * @return bool
+     */
+    function developer_starter_page_has_footer_module( $post_id = null ) {
+        if ( null === $post_id ) {
+            $post_id = function_exists( 'get_queried_object_id' ) ? absint( get_queried_object_id() ) : 0;
+            if ( $post_id <= 0 && function_exists( 'get_the_ID' ) ) {
+                $post_id = absint( get_the_ID() );
+            }
+        }
+        $post_id = absint( $post_id );
+        if ( $post_id <= 0 ) {
+            return false;
+        }
+
+        $modules = function_exists( 'developer_starter_get_page_modules_data' )
+            ? developer_starter_get_page_modules_data( $post_id )
+            : get_post_meta( $post_id, '_developer_starter_modules', true );
+
+        if ( empty( $modules ) || ! is_array( $modules ) ) {
+            return false;
+        }
+
+        foreach ( $modules as $module ) {
+            $type = isset( $module['type'] ) ? sanitize_key( (string) $module['type'] ) : '';
+            if ( in_array( $type, array( 'footer_suite', 'footer' ), true ) ) {
+                return (bool) apply_filters( 'developer_starter_page_has_footer_module', true, $post_id, $module );
+            }
+        }
+
+        return (bool) apply_filters( 'developer_starter_page_has_footer_module', false, $post_id, null );
+    }
+}
+
+if ( ! function_exists( 'developer_starter_page_has_header_module' ) ) {
+    /**
+     * 检测指定页面是否已在模块列表中包含页头导航模块（如 header_suite）。
+     * 用于智能屏蔽全局默认兜底页头，实现页面所见即所得独立页头装修。
+     *
+     * @param int|null $post_id 页面 ID，默认当前查询对象 ID。
+     * @return bool
+     */
+    function developer_starter_page_has_header_module( $post_id = null ) {
+        if ( null === $post_id ) {
+            $post_id = function_exists( 'get_queried_object_id' ) ? absint( get_queried_object_id() ) : 0;
+            if ( $post_id <= 0 && function_exists( 'get_the_ID' ) ) {
+                $post_id = absint( get_the_ID() );
+            }
+        }
+        $post_id = absint( $post_id );
+        if ( $post_id <= 0 ) {
+            return false;
+        }
+
+        $modules = function_exists( 'developer_starter_get_page_modules_data' )
+            ? developer_starter_get_page_modules_data( $post_id )
+            : get_post_meta( $post_id, '_developer_starter_modules', true );
+
+        if ( empty( $modules ) || ! is_array( $modules ) ) {
+            return false;
+        }
+
+        foreach ( $modules as $module ) {
+            $type = isset( $module['type'] ) ? sanitize_key( (string) $module['type'] ) : '';
+            if ( in_array( $type, array( 'header_suite', 'header' ), true ) ) {
+                return (bool) apply_filters( 'developer_starter_page_has_header_module', true, $post_id, $module );
+            }
+        }
+
+        return (bool) apply_filters( 'developer_starter_page_has_header_module', false, $post_id, null );
+    }
+}
+
+if ( ! function_exists( 'developer_starter_get_page_header_module' ) ) {
+    /**
+     * 获取指定页面中的页头导航模块（如 header_suite）数据。
+     *
+     * @param int|null $post_id 页面 ID，默认当前查询对象 ID。
+     * @return array|null
+     */
+    function developer_starter_get_page_header_module( $post_id = null ) {
+        if ( null === $post_id ) {
+            $post_id = function_exists( 'get_queried_object_id' ) ? absint( get_queried_object_id() ) : 0;
+            if ( $post_id <= 0 && function_exists( 'get_the_ID' ) ) {
+                $post_id = absint( get_the_ID() );
+            }
+        }
+        $post_id = absint( $post_id );
+        if ( $post_id <= 0 ) {
+            return null;
+        }
+
+        $modules = function_exists( 'developer_starter_get_page_modules_data' )
+            ? developer_starter_get_page_modules_data( $post_id )
+            : get_post_meta( $post_id, '_developer_starter_modules', true );
+
+        if ( empty( $modules ) || ! is_array( $modules ) ) {
+            return null;
+        }
+
+        foreach ( $modules as $module ) {
+            $type = isset( $module['type'] ) ? sanitize_key( (string) $module['type'] ) : '';
+            if ( in_array( $type, array( 'header_suite', 'header' ), true ) ) {
+                return $module;
+            }
+        }
+
+        return null;
+    }
+}
+

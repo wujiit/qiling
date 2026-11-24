@@ -43,235 +43,408 @@
   },
   "modules": [
     {
-      "type": "brand_banner_pro",
+      "type": "header_suite",
       "data": {
-        "bb_layout": "left_right",
-        "bb_style_mode": "glow",
-        "bb_height": "85vh",
-        "bb_bg_type": "gradient",
-        "bb_bg_gradient": "linear-gradient(135deg, #090e18 0%, #064e3b 50%, #0f172a 100%)",
-        "bb_title": "交易先托管<br><strong>确认无误再放款</strong>",
-        "bb_title_size_max": "72px",
-        "bb_title_color": "#ffffff",
-        "bb_title_effect": "gradient",
-        "bb_title_gradient": "linear-gradient(135deg, #ffffff 0%, #34d399 50%, #60a5fa 100%)",
-        "bb_subtitle": "启灵生态担保交易平台",
-        "bb_desc": "围绕卖家发布担保单、买家托管支付、双方确认、自动放款、争议举证、平台仲裁、手续费和对账补偿，把积分商城支付能力包装成可运营的中介担保交易入口。",
-        "bb_text_color": "rgba(255, 255, 255, 0.82)",
-        "bb_text_align": "left",
-        "bb_buttons": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "安心担保",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "text": "发布担保单",
-            "link": "#",
-            "style": "primary",
-            "icon": "单"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "text": "查看交易流程",
-            "link": "#",
-            "style": "light",
-            "icon": "流"
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "服务项目",
+            "link": "#services",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "合作流程",
+            "link": "#process",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "收费方案",
+            "link": "#pricing",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           }
         ],
-        "bb_primary_btn_bg_color": "#059669",
-        "bb_primary_btn_text_color": "#ffffff",
-        "bb_primary_btn_hover_bg_color": "#047857",
-        "bb_primary_btn_hover_text_color": "#ffffff",
-        "bb_light_btn_bg_color": "rgba(255, 255, 255, 0.12)",
-        "bb_light_btn_text_color": "#ffffff",
-        "bb_light_btn_hover_bg_color": "rgba(255, 255, 255, 0.22)",
-        "bb_light_btn_hover_text_color": "#ffffff",
-        "bb_media_type": "image",
-        "bb_main_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-        "bb_media_shadow": "glow",
-        "bb_media_radius": "18px",
-        "bb_media_max_width": "720px",
-        "bb_intro_anim": "fade_up",
-        "bb_media_anim": "float",
-        "bb_show_glow": "1",
-        "bb_padding_top": "96px",
-        "bb_padding_bottom": "88px"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "免费试用",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#10b981",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#10b981",
+        "qhs_hover_bg": "rgba(16,185,129,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
       }
     },
     {
-      "type": "features",
+      "type": "brand_banner_pro",
       "data": {
-        "features_title": "把交易信任拆成可执行节点",
-        "features_subtitle": "页面文案按 qilingescrow 与 qilingshop 的实际能力组织，导入后替换成真实担保首页和个人中心入口即可",
-        "features_columns": "4",
-        "features_icon_position": "top",
-        "features_text_align": "left",
-        "features_bg_color": "#ffffff",
-        "features_card_style": "border",
-        "features_card_radius": "8px",
-        "features_icon_style": "square",
-        "features_icon_bg": "#ecfdf5",
-        "features_items": [
+        "bb_layout": "overlay_center",
+        "bb_style_mode": "glow",
+        "bb_height": "85vh",
+        "bb_bg_type": "image",
+        "bb_bg_image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1800&q=80",
+        "bb_bg_overlay": "0.55",
+        "bb_title": "银行级资金合规存管 · 互联网大宗交易安全担保中枢",
+        "bb_subtitle": "双向人脸风控实名核验，验货无误安全划款，专业法务团队全程在线纠纷调解与法律见证。",
+        "bb_title_color": "#ffffff",
+        "bb_text_color": "#cbd5e1",
+        "bb_btn1_text": "发起安全担保交易",
+        "bb_btn1_url": "#escrow",
+        "bb_btn2_text": "了解担保交易流程",
+        "bb_btn2_url": "#process"
+      }
+    },
+    {
+      "type": "stats",
+      "data": {
+        "stats_title": "信赖之选 · 资金安全与撮合交割看板",
+        "stats_subtitle": "严防网络交易诈骗与单方跑路，实现买方放心付款、卖方安心交割的双向共赢",
+        "stats_items": [
           {
-            "icon": "托",
-            "title": "托管支付",
-            "desc": "买家通过启灵积分商城支付能力完成托管，担保单从 pending_payment 流转到 funded，资金进入托管链路。"
+            "number": "¥128 亿",
+            "label": "平台累计安全担保交割资产与交易总额"
           },
           {
-            "icon": "认",
-            "title": "双方确认放款",
-            "desc": "卖家和买家都确认无误后，系统计算手续费和卖家应得金额，放款到可提现余额。"
+            "number": "0 资金损失",
+            "label": "在银行专户存管体系下保持零资金差错"
           },
           {
-            "icon": "证",
-            "title": "证据与争议",
-            "desc": "交易双方可上传图片、PDF、文档等证据；争议状态下由平台在后台查看证据和操作日志后裁决。"
+            "number": "100% 具备效力",
+            "label": "国家授时中心时间戳与司法链电子签约"
           },
           {
-            "icon": "巡",
-            "title": "对账补偿",
-            "desc": "支付回跳和定时巡检会补偿已支付未入托管、放款失败、退款失败等异常状态，降低资金状态不一致风险。"
+            "number": "15 分钟",
+            "label": "买卖双方确认交割后资金秒级提现出账"
           }
-        ],
-        "features_icon_color": "#059669"
+        ]
+      }
+    },
+    {
+      "type": "services",
+      "data": {
+        "services_title": "四大核心大宗数字资产担保交易应用场景",
+        "services_subtitle": "针对不同数字资产确权难度，定制标准化审查交割与双向放款规则",
+        "services_columns": "4",
+        "services_items": [
+          {
+            "icon": "globe",
+            "title": "高价值域名与数字资产过户",
+            "desc": "顶级拼音/双字域名、短字符资产过户。平台协助双方在注册商完成转移并锁定所有权"
+          },
+          {
+            "icon": "shopping-cart",
+            "title": "电商网店与新媒体账号交割",
+            "desc": "天猫、京东旗舰店公司整体股权转让，抖音快手百万元级账号实名无缝换绑交接"
+          },
+          {
+            "icon": "code",
+            "title": "大型软件定制开发分阶段托管",
+            "desc": "按原型确认、UI交付、前后端联调、源码验收四大里程碑分阶段冻结与按期放款"
+          },
+          {
+            "icon": "shield",
+            "title": "高价值商标专利版权技术转让",
+            "desc": "国家知识产权局官方过户期间资金在银行专户安全留存，拿到核准证明后结算"
+          }
+        ]
       }
     },
     {
       "type": "process",
       "data": {
-        "process_title": "担保交易标准流程",
-        "process_subtitle": "让买卖双方清楚知道每一步钱在哪里、谁确认、平台什么时候介入",
-        "process_mode": "standard",
-        "module_bg_color": "#f8fafc",
+        "process_title": "担保交易平台官网标准化服务流程",
+        "process_subtitle": "从需求沟通到高质量交付，全程高效透明可追溯",
         "process_items": [
           {
-            "icon": "01",
-            "title": "卖家发布担保单",
-            "desc": "填写标题、金额、交易说明和公开范围，可生成固定详情链接发给交易对方。",
-            "stage_tag": "发布"
+            "step": "01",
+            "title": "需求对接与诊断",
+            "desc": "专业顾问一对一沟通，深度明确目标与交付边界。"
           },
           {
-            "icon": "02",
-            "title": "买家托管支付",
-            "desc": "买家确认服务协议后发起托管支付，支付完成后订单进入托管中状态。",
-            "stage_tag": "托管"
+            "step": "02",
+            "title": "定制方案规划",
+            "desc": "资深专家团队出具高性价比实施规划与工期排期。"
           },
           {
-            "icon": "03",
-            "title": "双方确认或发起争议",
-            "desc": "无争议时双方确认自动放款；有问题时提交证据并进入平台仲裁。",
-            "stage_tag": "确认"
+            "step": "03",
+            "title": "精细落地实施",
+            "desc": "严格执行行业最高技术标准与多重质检把关。"
           },
           {
-            "icon": "04",
-            "title": "放款、退款与对账",
-            "desc": "平台按状态机完成放款或退款，定时任务持续处理超时、补偿和异常账务。",
-            "stage_tag": "结算"
+            "step": "04",
+            "title": "交付与长效护航",
+            "desc": "完善交付文档、人员培训与全天候售后保障。"
           }
         ]
-      }
-    },
-    {
-      "type": "comparison",
-      "data": {
-        "comparison_title": "担保交易和直接转账的区别",
-        "comparison_subtitle": "把用户最关心的资金安全、证据留存和平台介入讲明白",
-        "comparison_features": "付款时机\n资金去向\n交易确认\n争议处理\n证据留存\n适合场景",
-        "comparison_products": [
-          {
-            "name": "启灵担保交易",
-            "values": "买家先托管支付，确认后再放款\n资金进入托管链路，未确认前不直接给卖家\n买卖双方都可在订单详情确认或发起争议\n平台后台可查看证据与日志，裁决放款或退款\n支持交易证据上传、操作日志和争议 SLA\n适合虚拟服务、二手交易、项目交付、线下撮合"
-          },
-          {
-            "name": "普通直接转账",
-            "values": "双方自行约定付款时间\n资金直接到对方账户，平台难以追踪\n确认过程依赖聊天记录或人工沟通\n发生纠纷后平台证据不足，处理成本高\n证据分散在聊天、网盘或线下材料里\n适合高度信任、金额低、无需平台介入的交易"
-          }
-        ],
-        "comparison_highlight": "1",
-        "module_bg_color": "#ffffff",
-        "module_padding_top": "80px",
-        "module_padding_bottom": "80px"
       }
     },
     {
       "type": "pricing",
       "data": {
-        "pricing_title": "平台服务费说明",
-        "pricing_subtitle": "示例费率可按后台 qles_fee_rate、最低金额和最高金额继续调整",
+        "pricing_title": "公开透明的阶梯担保服务费率标准",
+        "pricing_subtitle": "买卖双方可协商分摊手续费，大额资产交易享受专属费率折扣与法务协助",
         "pricing_columns": "3",
-        "module_bg_color": "#f8fafc",
+        "pricing_plans": [
+          {
+            "name": "小微数字资产担保 (单笔 10 万以内)",
+            "name_color": "#0f172a",
+            "price": "费率 1.5%",
+            "price_color": "#0f172a",
+            "period": "/单笔交易最低 50 元起",
+            "desc": "适合中小域名、自媒体账号、小型独立站源码与小额设计开发交割",
+            "desc_color": "#64748b",
+            "features": "银行存管账户自动划转记账\\n标准 CA 电子印章合同签署\\n技术专家提供常规过户指导\\n支持支付宝、微信、网银极速收付款",
+            "features_color": "#334155",
+            "btn_text": "发起小额担保",
+            "btn_link": "#create-order",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          },
+          {
+            "name": "大宗商业资产担保 (10 万 - 100 万)",
+            "name_color": "#0f172a",
+            "price": "阶梯费率 0.8% - 1.0%",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/大额资金专属绿色通道",
+            "desc": "适合天猫旗舰店公司转让、优质双拼域名、成套工业软件系统交付",
+            "desc_color": "#64748b",
+            "features": "专职高级交易经纪人 1v1 驻场协助\\n提供标准公司股权转让协议模板及法务审查\\n分阶段分批次安全放款自定义规则设置\\n重大争议仲裁专家委员会 24 小时极速裁决",
+            "features_color": "#334155",
+            "btn_text": "发起大额担保",
+            "btn_link": "#create-order",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
+            "featured": "1",
+            "is_featured": "yes",
+            "featured_text": "平台主力",
+            "badge": "平台主力",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
+          },
+          {
+            "name": "千万级重大战略资产公证交割 (100万+)",
+            "name_color": "#0f172a",
+            "price": "大宗封顶优惠费率",
+            "price_color": "#0f172a",
+            "period": "/支持线下公证处现场见证",
+            "desc": "适合高价值驰名商标、成套发明专利池、大型互联网科技平台资产转让",
+            "desc_color": "#64748b",
+            "features": "公证处公证员现场监督电子签约与交割\\n资深知识产权律师团队全程把关资产归属\\n支持跨币种离岸账户结算与大额税务合规方案\\n专属企业风控总监 1v1 直通服务保障",
+            "features_color": "#334155",
+            "btn_text": "预约大客户总监",
+            "btn_link": "#create-order",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
+          }
+        ],
         "pricing_items": [
           {
-            "name": "轻量撮合",
-            "price": "1%",
-            "period": "服务费",
-            "desc": "适合低频交易和早期冷启动",
-            "features": "公开/私密担保单\n托管支付\n双方确认放款\n基础争议处理",
-            "btn_text": "创建担保单",
-            "btn_link": "#",
-            "featured": ""
+            "name": "小微数字资产担保 (单笔 10 万以内)",
+            "name_color": "#0f172a",
+            "price": "费率 1.5%",
+            "price_color": "#0f172a",
+            "period": "/单笔交易最低 50 元起",
+            "desc": "适合中小域名、自媒体账号、小型独立站源码与小额设计开发交割",
+            "desc_color": "#64748b",
+            "features": "银行存管账户自动划转记账\\n标准 CA 电子印章合同签署\\n技术专家提供常规过户指导\\n支持支付宝、微信、网银极速收付款",
+            "features_color": "#334155",
+            "btn_text": "发起小额担保",
+            "btn_link": "#create-order",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           },
           {
-            "name": "标准担保",
-            "price": "3%",
-            "period": "服务费",
-            "desc": "适合常规交易平台运营",
-            "features": "证据上传\n争议 SLA\n后台裁决\n对账巡检\n站内通知提醒",
-            "btn_text": "使用标准担保",
-            "btn_link": "#",
+            "name": "大宗商业资产担保 (10 万 - 100 万)",
+            "name_color": "#0f172a",
+            "price": "阶梯费率 0.8% - 1.0%",
+            "price_color": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "period": "/大额资金专属绿色通道",
+            "desc": "适合天猫旗舰店公司转让、优质双拼域名、成套工业软件系统交付",
+            "desc_color": "#64748b",
+            "features": "专职高级交易经纪人 1v1 驻场协助\\n提供标准公司股权转让协议模板及法务审查\\n分阶段分批次安全放款自定义规则设置\\n重大争议仲裁专家委员会 24 小时极速裁决",
+            "features_color": "#334155",
+            "btn_text": "发起大额担保",
+            "btn_link": "#create-order",
+            "btn_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)",
+            "btn_text_color": "#ffffff",
+            "btn_border_color": "transparent",
+            "card_bg": "#ffffff",
             "featured": "1",
-            "featured_text": "推荐",
-            "featured_bg": "linear-gradient(135deg, #059669 0%, #2563eb 100%)"
+            "is_featured": "yes",
+            "featured_text": "平台主力",
+            "badge": "平台主力",
+            "featured_bg": "linear-gradient(135deg, var(--color-primary, #2563eb) 0%, var(--color-accent, #0ea5e9) 100%)"
           },
           {
-            "name": "行业定制",
-            "price": "联系平台",
-            "period": "",
-            "desc": "适合行业撮合和高客单项目",
-            "features": "协议模板\n风控关键词\n频率限制\n运营报表\n定制流程说明",
-            "btn_text": "咨询方案",
-            "btn_link": "#",
-            "featured": ""
+            "name": "千万级重大战略资产公证交割 (100万+)",
+            "name_color": "#0f172a",
+            "price": "大宗封顶优惠费率",
+            "price_color": "#0f172a",
+            "period": "/支持线下公证处现场见证",
+            "desc": "适合高价值驰名商标、成套发明专利池、大型互联网科技平台资产转让",
+            "desc_color": "#64748b",
+            "features": "公证处公证员现场监督电子签约与交割\\n资深知识产权律师团队全程把关资产归属\\n支持跨币种离岸账户结算与大额税务合规方案\\n专属企业风控总监 1v1 直通服务保障",
+            "features_color": "#334155",
+            "btn_text": "预约大客户总监",
+            "btn_link": "#create-order",
+            "btn_bg": "",
+            "btn_text_color": "",
+            "btn_border_color": "",
+            "card_bg": "#ffffff",
+            "featured": "",
+            "is_featured": "no",
+            "featured_text": "",
+            "badge": "",
+            "featured_bg": ""
           }
         ]
       }
     },
     {
-      "type": "faq",
+      "type": "certificate_honors",
       "data": {
-        "faq_title": "担保交易常见问题",
-        "faq_subtitle": "提前说明支付依赖、确认规则和争议边界",
-        "faq_items": [
+        "cert_title": "国家金融科技资质与等保合规认证",
+        "cert_subtitle": "严格遵循人民银行大额资金存管法规与公安部网络安全等级保护标准",
+        "cert_columns": "4",
+        "cert_items": [
           {
-            "question": "这个模板必须安装启灵担保交易吗？",
-            "answer": "不必须。模板本身可以正常导入和展示；启用 qilingescrow 后，把按钮链接改成担保首页、担保单发布页或个人中心订单页即可。"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "国有大型商业银行资金存管合作协议",
+            "issuer": "中国工商银行股份有限公司上海分行"
           },
           {
-            "question": "为什么还需要启灵积分商城？",
-            "answer": "担保交易的支付和可提现余额能力依赖启灵积分商城。若积分商城未启用，插件仍可加载，但发布、支付和发放等核心操作会被拦截并提示。"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "信息系统安全等级保护三级认证 (等保三级)",
+            "issuer": "公安部网络安全保卫局"
           },
           {
-            "question": "双方都确认后一定会自动放款吗？",
-            "answer": "插件会进入 releasing 临时状态并计算手续费，余额入账成功后变为 released；若入账失败，会回滚到待处理状态并由补偿任务重试。"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "电子认证服务资质 (国家密码管理局 CA)",
+            "issuer": "国家密码管理局 / 中国金融认证中心 (CFCA)"
           },
           {
-            "question": "争议时平台能看到什么？",
-            "answer": "后台订单详情可查看争议证据、状态流转和操作日志，并按实际情况裁决放款给卖家或退款给买家。"
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "中国互联网金融协会数字交易诚信示范平台",
+            "issuer": "中国互联网协会"
           }
-        ],
-        "module_bg_color": "#ffffff"
+        ]
       }
     },
     {
-      "type": "cta",
+      "type": "contact",
       "data": {
-        "cta_title": "把交易信任做成平台能力",
-        "cta_subtitle": "替换真实担保首页、发布页、个人中心和服务协议链接，就能把启灵担保交易从后台功能变成用户看得懂的托管交易入口。",
-        "cta_button_text": "配置担保交易入口",
-        "cta_button_url": "#",
-        "cta_bg_type": "color",
-        "cta_bg_image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80",
-        "cta_bg_overlay": "0.58",
-        "cta_bg_color": "linear-gradient(135deg, #090e18 0%, #064e3b 60%, #0f172a 100%)",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.85)",
-        "cta_button_bg_color": "#2563eb",
-        "cta_button_text_color": "#ffffff"
+        "contact_title": "与 担保交易平台官网 资深专家团队建立联系",
+        "contact_subtitle": "告诉我您的项目需求与预期目标，专业顾问将尽快为您提供详尽的方案与报价建议。",
+        "contact_show_form": "1",
+        "contact_submit_text": "提交咨询留言"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#070e17",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#10b981",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "QILING-ESCROW · 启灵数智担保与企业资金托管平台",
+        "qfs_brand_desc": "银行级资金存管、双向实名认证与智能合约履约分阶段放款。针对大额企业采购、软件外包定制及商业交易，提供透明可信的资金安全屏障与专业仲裁护航。",
+        "qfs_link_groups": [
+          {
+            "title": "担保交易流程 & 平台保障与资信",
+            "links": "采购资金银行专属账户存管|#\n项目里程碑节点确认与分期放款|#\n全流程电子合同与电子签章签署|#\n交易纠纷第三方专家法务仲裁|#\n中国人民银行合规备付金存管说明|#\n大额交易反洗钱与实名审查规范|#\n平台交易安全保障与赔偿承诺|#\n企业商户入驻开户与资质审核|#"
+          }
+        ],
+        "qfs_contact_title": "资金安全与大额托管咨询",
+        "qfs_contact_items": "资金客服|400-880-8833|tel:4008808833\n风控法务专线|021-6888-3355|tel:02168883355\n服务保障|7×24小时银行清算通道与实时到账监控|#\n总部地址|上海市浦东新区陆家嘴环路 1000 号恒生银行大厦 21 层|#",
+        "qfs_social_title": "安全交易保障",
+        "qfs_social_links": "交易担保小程序|#\n资金存管证明查询|#\n履约纠纷仲裁案例|#\n企业风控合规月刊|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 QILING ESCROW FINANCIAL TECH. 保留所有权利 · 沪ICP备19001920号 · 资金银行存管安全认证",
+        "qfs_bottom_links": "资金托管服务协议|#\n交易纠纷在线仲裁规则|#\n反洗钱合规审查指南|#\n银行存管对账说明|#",
+        "qfs_link_columns": "1"
       }
     }
   ]

@@ -1,0 +1,266 @@
+{
+  "package_type": "developer_starter_page_package",
+  "schema": "qiling-official-page-template",
+  "version": 1,
+  "title": "高级珠宝与设计师配饰站",
+  "page_template": "templates/template-fine-jewelry.php",
+  "visual_style": {
+    "mode": "custom",
+    "preset": "technology_company",
+    "colors": {
+      "primary": "#d97706",
+      "secondary": "#b45309"
+    }
+  },
+  "hide_page_header": true,
+  "transparent_header": true,
+  "enable_scroll_reveal": true,
+  "metadata": {
+    "id": "fine-jewelry",
+    "label": "高级珠宝与设计师配饰站",
+    "category": "ecommerce",
+    "category_label": "品牌商城",
+    "industry": "ecommerce",
+    "industry_label": "高级珠宝/首饰",
+    "scenario": "高级珠宝婚戒与设计师首饰独立站",
+    "badges": [
+      "单品独立站",
+      "高级珠宝",
+      "切工解构",
+      "贵金属定制"
+    ],
+    "order": 124,
+    "thumbnail": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "珠宝",
+      "首饰",
+      "钻戒",
+      "单品独立站",
+      "轻奢",
+      "DTC商城"
+    ],
+    "description": "专为高级珠宝、轻奢首饰、婚嫁钻戒及设计师饰品品牌独立站打造的官方旗舰模板。提供18K金多材质即时色块联动、火彩微距切工热点解构、高定光影画廊与GIA钻石双证书权威背书。"
+  },
+  "seo": {
+    "title": "高级珠宝与设计师配饰站 - 启灵官方独立站模板",
+    "description": "专为高端珠宝、设计师首饰与婚嫁定制打造的单品垂直独立站，融合贵金属材质色块切换与八心八箭切工解构。"
+  },
+  "modules": [
+    {
+      "type": "header_suite",
+      "data": {
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "极光珠宝",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
+          {
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
+          },
+          {
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品中心",
+            "link": "#products",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
+          },
+          {
+            "title": "产品展示",
+            "link": "#product_showcase",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心特色",
+            "link": "#features",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "网点分布",
+            "link": "#branches",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          }
+        ],
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#d97706",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#d97706",
+        "qhs_hover_bg": "rgba(217,119,6,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "lookbook",
+      "data": {
+        "lookbook_title": "极光珠宝 · 2026 当季风尚搭配画册",
+        "lookbook_subtitle": "探索高级手工微镶与独立设计师先锋美学，为您呈现奢华与品位交融的佩戴灵感",
+        "lookbook_columns": "3",
+        "enable_staggered_animation": "yes",
+        "lookbook_items": [
+          {
+            "cover_image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
+            "name": "星芒交响 · 八心八箭高定婚戒",
+            "desc": "甄选 GIA 认证 D 色极白裸钻，经典六爪倒角微镶，凝固永恒璀璨火彩。",
+            "btn_text": "鉴赏搭配细节",
+            "enable_shop_look": "yes",
+            "item_1_title": "克拉婚戒",
+            "item_1_price": "¥68,000",
+            "item_1_link": "#",
+            "item_1_pin_x": "50",
+            "item_1_pin_y": "45"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+            "name": "浮光月影 · 18K金天然祖母绿项链",
+            "desc": "天然哥伦比亚稀世艳绿宝石，融合古典镂空雕金工艺，流转雍容华贵之美。",
+            "btn_text": "鉴赏搭配细节",
+            "enable_shop_look": "yes",
+            "item_1_title": "祖母绿吊坠",
+            "item_1_price": "¥32,800",
+            "item_1_link": "#",
+            "item_1_pin_x": "52",
+            "item_1_pin_y": "55"
+          },
+          {
+            "cover_image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
+            "name": "极地晨曦 · 大溪地天然金珠耳坠",
+            "desc": "深海孕育的自然奇迹，冷光珍珠与璀璨副钻交相辉映，衬托温润从容气质。",
+            "btn_text": "鉴赏搭配细节",
+            "enable_shop_look": "yes",
+            "item_1_title": "南洋金珠耳饰",
+            "item_1_price": "¥18,600",
+            "item_1_link": "#",
+            "item_1_pin_x": "48",
+            "item_1_pin_y": "40"
+          }
+        ]
+      }
+    },
+    {
+      "type": "products",
+      "data": {
+        "products_title": "经典典藏单品与限定矩阵",
+        "products_subtitle": "HERITAGE COLLECTION",
+        "columns": "3",
+        "items": [
+          {
+            "title": "高级珠宝与设计师配饰站 标志性经典款",
+            "desc": "纯手工大师级制作工艺，选用进口天然环保顶级材质",
+            "specs": "产地：欧洲工坊\n材质：顶级甄选\n工艺：手工研磨",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "高级珠宝与设计师配饰站 限定胶囊系列",
+            "desc": "打破传统边界，融合现代极简美学与实用主义精神",
+            "specs": "限量：全球仅发售500件\n配饰：专属独立编号",
+            "btn_text": "鉴赏细节"
+          },
+          {
+            "title": "高级珠宝与设计师配饰站 尊享定制系列",
+            "desc": "为您量身打造专属刻字与微调服务，见证不凡品位",
+            "specs": "服务：一对一高级定制\n交付：顺丰特快保价",
+            "btn_text": "鉴赏细节"
+          }
+        ]
+      }
+    },
+    {
+      "type": "product_showcase",
+      "data": {}
+    },
+    {
+      "type": "features",
+      "data": {
+        "features_title": "卓越工艺 · 触手可及的奢华质感",
+        "features_subtitle": "每一道针脚、每一处倒角打磨，皆倾注工匠数十年专注心血"
+      }
+    },
+    {
+      "type": "branches",
+      "data": {
+        "branches_title": "全球直营精品专柜与高级定制沙龙",
+        "branches_subtitle": "敬请莅临线下精品会所，尊享专席一对一鉴赏体验"
+      }
+    },
+    {
+      "type": "booking-entry",
+      "data": {}
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "luxury",
+        "qfs_bg": "linear-gradient(180deg, #16121a 0%, #09060c 100%)",
+        "qfs_text_color": "#cbd5e1",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#d97706",
+        "qfs_border_color": "rgba(217, 119, 6, 0.22)",
+        "qfs_brand_title": "AURORA JEWELRY · 高级珠宝与设计师配饰",
+        "qfs_brand_desc": "甄选 GIA 认证高品质彩宝与钻石，融合高级手工微镶与独立设计师先锋美学，记录爱与永恒的人生高光时刻。",
+        "qfs_link_groups": [
+          {
+            "title": "高级珠宝甄选 & 珠宝定制支持",
+            "links": "八心八箭克拉婚戒|#\n18K金微镶设计项链|#\n天然彩宝定制手镯|#\n巴洛克异形珍珠耳饰|#\nGIA 双权威证书验真|#\n3D 戒圈手寸终身微调|#\n贵金属免费超声波养护|#\n旧金改制与宝石重镶|#"
+          }
+        ],
+        "qfs_contact_title": "高级珠宝定制顾问",
+        "qfs_contact_items": "定制专线|400-889-5200|tel:4008895200\n设计师邮箱|vip@aurora-jewelry.com|mailto:vip@aurora-jewelry.com\n高定工坊沙龙|深圳市罗湖区水贝珠宝总部大厦 18 楼 VIP 室|#",
+        "qfs_social_title": "关注火彩光影日常",
+        "qfs_social_links": "小红书火彩日常|#\n微信高定私享会|#\nInstagram @Aurora|#\n抖音官方直播|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 AURORA HIGH JEWELRY. 保留所有权利 · NGTC / GIA 国家珠宝玉石检测认证",
+        "qfs_bottom_links": "钻石溯源验真|#\n手寸测量指南|#\n终身保修细则|#\n隐私安全承诺|#",
+        "qfs_link_columns": "1"
+      }
+    }
+  ]
+}

@@ -60,75 +60,126 @@
   },
   "modules": [
     {
-      "type": "fullscreen_video",
+      "type": "header_suite",
       "data": {
-        "fsv_video_url": "",
-        "fsv_overlay_opacity": "0.45",
-        "fsv_title": "追逐巅峰荣耀 · <strong>共赴传奇之战</strong>",
-        "fsv_subtitle": "启灵电子竞技俱乐部（QILING ESPORTS）· 2026 赛季出征阵容与全球赛程公布",
-        "fsv_glow_color": "#8b5cf6",
-        "fsv_glow_intensity": "high",
-        "fsv_nav_items": [
+        "qhs_logo": "",
+        "qhs_logo_height": "40",
+        "qhs_brand_title": "极竞战队",
+        "qhs_brand_slogan": "",
+        "qhs_brand_url": "/",
+        "qhs_menu_source": "custom",
+        "qhs_nav_items": [
           {
-            "item_label": "选手名单",
-            "item_icon": "⚡",
-            "item_type": "link",
-            "item_link": "#roster"
+            "title": "首页",
+            "link": "/",
+            "icon": "",
+            "badge": "",
+            "badge_color": "#2563eb",
+            "target": "_self"
           },
           {
-            "item_label": "赛程安排",
-            "item_icon": "🏆",
-            "item_type": "link",
-            "item_link": "#schedule"
+            "title": "实力数据",
+            "link": "#stats",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "item_label": "战队商城",
-            "item_icon": "🛒",
-            "item_type": "link",
-            "item_link": "#merch"
+            "title": "专业团队",
+            "link": "#team",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
           },
           {
-            "item_label": "青训招募",
-            "item_icon": "🚀",
-            "item_type": "link",
-            "item_link": "#recruit"
+            "title": "资质荣誉",
+            "link": "#certificate_honors",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "核心板块",
+            "link": "#gallery",
+            "icon": "",
+            "badge": "",
+            "badge_color": "",
+            "target": "_self"
+          },
+          {
+            "title": "风尚画册",
+            "link": "#lookbook",
+            "icon": "",
+            "badge": "HOT",
+            "badge_color": "#ef4444",
+            "target": "_self"
           }
         ],
-        "fsv_show_controls": "1"
+        "qhs_menu_align": "left",
+        "qhs_show_search": "1",
+        "qhs_search_mode": "popup",
+        "qhs_search_placeholder": "搜索关键词...",
+        "qhs_show_phone": "1",
+        "qhs_phone_number": "400-888-8888",
+        "qhs_phone_link": "tel:4008888888",
+        "qhs_show_theme_toggle": "1",
+        "qhs_show_user_action": "1",
+        "qhs_show_cta": "1",
+        "qhs_cta_text": "在线咨询",
+        "qhs_cta_link": "#contact",
+        "qhs_cta_target": "_self",
+        "qhs_cta_style": "primary",
+        "qhs_cta_bg": "#ec4899",
+        "qhs_cta_color": "#ffffff",
+        "qhs_layout": "default",
+        "qhs_container_width": "contained",
+        "qhs_height": "72",
+        "qhs_sticky": "1",
+        "qhs_sticky_blur": "1",
+        "qhs_transparent": "0",
+        "qhs_bg_color": "#ffffff",
+        "qhs_text_color": "#0f172a",
+        "qhs_hover_color": "#ec4899",
+        "qhs_hover_bg": "rgba(236,72,153,0.06)",
+        "qhs_border_color": "rgba(0,0,0,0.06)",
+        "qhs_transparent_text_color": "#0f172a"
+      }
+    },
+    {
+      "type": "dynamic_banner",
+      "data": {
+        "db_height": "80vh",
+        "db_bg_type": "image",
+        "db_bg_image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80",
+        "db_title_prefix": "DISCOVER · 电竞战队俱乐部官网 · ",
+        "db_typing_text": "超越极限\n燃动赛场\n引领风潮",
+        "db_highlight_color": "#2563eb"
       }
     },
     {
       "type": "stats",
       "data": {
-        "stats_title": "赛场实力与荣誉见证",
-        "stats_subtitle": "以纯粹竞技精神，书写属于我们的冠军时代",
-        "stats_bg_type": "color",
-        "stats_bg_color": "transparent",
-        "stats_title_color": "#ffffff",
+        "stats_title": "俱乐部荣誉勋章与辉煌赛绩看板",
+        "stats_subtitle": "十年征程，无数个令人热血沸腾的夺冠之夜",
         "stats_items": [
           {
-            "number": "12+",
-            "label": "座职业联赛总冠军奖杯",
-            "number_color": "#a78bfa",
-            "label_color": "#e2e8f0"
+            "number": "2 座",
+            "label": "全球总决赛世界冠军召唤师奖杯"
           },
           {
-            "number": "85.6%",
-            "label": "历史常规赛累计胜率",
-            "number_color": "#38bdf8",
-            "label_color": "#e2e8f0"
+            "number": "8 座",
+            "label": "国内顶级职业联赛总决赛冠军奖杯"
           },
           {
-            "number": "6",
-            "label": "大顶级职业电竞竞技分部",
-            "number_color": "#a78bfa",
-            "label_color": "#e2e8f0"
+            "number": "78.5%",
+            "label": "本赛季常规赛综合大场胜率"
           },
           {
-            "number": "500W+",
-            "label": "全球注册粉丝俱乐部成员",
-            "number_color": "#38bdf8",
-            "label_color": "#e2e8f0"
+            "number": "4,200 万+",
+            "label": "全球忠实战队粉丝与社区关注者"
           }
         ]
       }
@@ -136,226 +187,162 @@
     {
       "type": "team",
       "data": {
-        "team_title": "主力选手阵容 (Roster)",
-        "team_subtitle": "顶尖操作、极致默契与钢铁意志凝聚的冠军之师",
-        "team_title_color": "#ffffff",
-        "team_subtitle_color": "rgba(248, 250, 252, 0.75)",
+        "team_title": "现役一线主力战队阵容",
+        "team_subtitle": "顶尖竞技水准与无懈可击的团队默契，由冠军教头执教",
         "team_columns": "4",
-        "module_bg_type": "color",
-        "module_bg_color": "transparent",
-        "team_members": [
+        "team_items": [
           {
-            "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=600&q=80",
-            "name": "Sky / 陆云天",
-            "position": "队长 · 首发中路 (MID)",
-            "desc": "场均 KDA 6.8，擅长刺客突进与节奏掌控，联赛两届常规赛 MVP。",
-            "social": "#"
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+            "name": "Thunder · 林子枫",
+            "role": "队长 / 上单 (Top Lane)",
+            "desc": "本赛季 MVP 领跑者，招牌剑魔与鳄鱼多次在团战中以一敌三逆转战局"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-            "name": "Viper / 林彻",
-            "position": "首发下路核心 (ADC)",
-            "desc": "反应速度 140ms，后期团战终极输出核心，团战伤害转化率达 185%。",
-            "social": "#"
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+            "name": "Vortex · 陈逸",
+            "role": "打野 (Jungle)",
+            "desc": "野区绝对掌控者，控龙率高达 82%，以鬼魅般的先手开团节奏著称"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-            "name": "Ghost / 叶寻",
-            "position": "首发野区游走 (JUG)",
-            "desc": "极具侵略性的野区开团手，野区控图率与一血参与率均位列赛区前茅。",
-            "social": "#"
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+            "name": "Aero · 陆浩",
+            "role": "中单 (Mid Lane)",
+            "desc": "操作天花板，对线压制力极强，曾创下单届国际赛单杀 24 次历史纪录"
           },
           {
-            "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=600&q=80",
-            "name": "Titan / 赵烈",
-            "position": "首发对抗路磐石 (TOP)",
-            "desc": "团战铜墙铁壁，兼备重装坦克与单带战士绝活，抗伤占比高达 34%。",
-            "social": "#"
+            "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+            "name": "Nova · 郑天泽",
+            "role": "射手 (ADC)",
+            "desc": "输出机器，极佳的团战走位与反应极限，职业生涯总击杀突破 2,000 大关"
           }
         ]
       }
     },
     {
-      "type": "timeline",
+      "type": "certificate_honors",
       "data": {
-        "timeline_title": "赛季征程与焦点对决",
-        "timeline_title_color": "#ffffff",
-        "module_bg_color": "transparent",
-        "timeline_items": [
+        "cert_title": "冠军荣誉殿堂 · 世界赛登顶时刻",
+        "cert_subtitle": "铭刻在电竞历史长河中的每一座重磅荣誉",
+        "cert_columns": "4",
+        "cert_items": [
           {
-            "year": "2026.03.15",
-            "title": "春季赛常规赛揭幕战 vs FLG",
-            "desc": "比分 2:0 完胜。Sky 选出招牌阿卡丽斩获全场最高击杀，赢得开门红。"
+            "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80",
+            "title": "2023 全球总决赛世界总冠军",
+            "issuer": "拳头游戏官方世界总决赛组委会"
           },
           {
-            "year": "2026.04.28",
-            "title": "季后赛半决赛 BO5 vs T1G",
-            "desc": "鏖战五局 3:2 逆转晋级！决胜局远古巨龙团战 Viper 豪取四杀锁定胜局。"
+            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80",
+            "title": "2024 春季职业联赛常规赛与总决赛双料冠军",
+            "issuer": "职业联赛官方赛事委员会"
           },
           {
-            "year": "2026.05.10",
-            "title": "春季总决赛巅峰之夜 vs NOVA",
-            "desc": "以 3:1 绝对优势捧起冠军银龙奖杯，成功斩获全球季中冠军赛门票！"
+            "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80",
+            "title": "2023 年度全球最佳电竞俱乐部",
+            "issuer": "The Game Awards (TGA) 组委会"
           },
           {
-            "year": "2026.07.01",
-            "title": "MSI 全球季中冠军赛小组赛",
-            "desc": "即将代表赛区出征伦敦，敬请锁定官方直播间为启灵战队助威！"
+            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+            "title": "无畏契约国际大师赛冠军",
+            "issuer": "VALORANT Champions Tour (VCT)"
           }
         ]
       }
     },
     {
-      "type": "features_list",
+      "type": "gallery",
       "data": {
-        "title": "俱乐部全竞技分部",
-        "subtitle": "多项目协同作战，构建全方位职业电竞生态",
-        "title_color": "#ffffff",
-        "subtitle_color": "rgba(248, 250, 252, 0.75)",
-        "fl_tabs_bg": "rgba(255, 255, 255, 0.08)",
-        "fl_tab_text": "rgba(255, 255, 255, 0.75)",
-        "fl_tab_active_bg": "#7c3aed",
-        "fl_tab_active_text": "#ffffff",
-        "fl_card_bg": "#111726",
-        "fl_card_border": "rgba(255, 255, 255, 0.1)",
-        "fl_item_title": "#ffffff",
-        "fl_item_desc": "rgba(248, 250, 252, 0.7)",
-        "fl_icon_bg": "rgba(124, 58, 237, 0.18)",
-        "fl_icon_color": "#a78bfa",
-        "module_bg_color": "transparent",
-        "columns": "3",
-        "tabs": [
+        "gallery_title": "征战纪录 · 热血与泪水交织的高光瞬间",
+        "gallery_subtitle": "记录每一个金色的雨落下、捧起冠军奖杯的经典历史时刻",
+        "gallery_columns": "4",
+        "gallery_items": [
           {
-            "tab_id": "lol",
-            "tab_title": "英雄联盟分部",
-            "features": "⚔️ | 一队 LPL 顶级阵容 | 征战顶级联赛，连续四年晋级全球总决赛并斩获冠军殊荣。\n🛡️ | LDL 发展联赛青训队 | 标准化青训造血体系，为顶级赛事源源不断输送新星选手。\n📊 | 专业数据分析与教练组 | 包含韩国外教、战术分析师与心理理疗团队，全方位保障竞技状态。"
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+            "title": "世界赛决赛五杀翻盘奇迹",
+            "desc": "决胜局落后一万经济下的惊天大龙团完美配合"
           },
           {
-            "tab_id": "val",
-            "tab_title": "无畏契约分部",
-            "features": "🎯 | VCT 职业联赛先锋队 | 以精准枪法与协同战术著称，赛区大师赛冠军队伍。\n🔥 | 战术枪法研发室 | 全系搭载 360Hz 顶级外设，专属特训地图全天候数据记录。\n🌐 | 国际邀请赛常客 | 屡次代表赛区出战东京大师赛与首尔全球冠军赛。"
+            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+            "title": "鸟巢体育馆全场金色雨落下",
+            "desc": "八万名现场观众齐声呼喊战队名字的震撼瞬间"
           },
           {
-            "tab_id": "honor",
-            "tab_title": "移动电竞分部",
-            "features": "📱 | KPL 席位战队 | 快节奏抱团与野区运营打法，赛区胜率名列前茅。\n👑 | 全国挑战者杯四强 | 新生代移动电竞主力军，拥有极高人气与粉丝基础。\n🌟 | 电竞创作者孵化中心 | 战队退役元老与人气主播矩阵，全网短视频曝光超百亿。"
+            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+            "title": "赛后更衣室战术复盘时刻",
+            "desc": "每一个看似随意的决策背后都是上千局的严苛训练"
+          },
+          {
+            "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80",
+            "title": "年度全球粉丝见面嘉年华",
+            "desc": "与数千名从世界各地奔赴而来的铁杆粉丝零距离互动"
           }
         ]
       }
     },
     {
-      "type": "video",
+      "type": "lookbook",
       "data": {
-        "video_title": "赛场高光与队内纪录片",
-        "video_subtitle": "聆听队内语音 Mic Check，感受最真实的赛场搏杀与热血团魂",
-        "video_title_color": "#ffffff",
-        "video_subtitle_color": "rgba(248, 250, 252, 0.75)",
-        "video_url": "",
-        "video_bg_color": "transparent",
-        "video_poster": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80"
-      }
-    },
-    {
-      "type": "products",
-      "data": {
-        "products_title": "战队正品周边与应援装备",
-        "products_subtitle": "OFFICIAL MERCHANDISE",
-        "module_bg_color": "transparent",
-        "columns": "3",
-        "items": [
+        "lookbook_title": "俱乐部官方战袍与周边装备",
+        "lookbook_subtitle": "与国际顶尖运动品牌联合打造，搭载吸湿速干透气面料与战队专属印记",
+        "lookbook_columns": "3",
+        "lookbook_items": [
           {
-            "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
-            "title": "2026 赛季选手同款主场出征队服",
-            "desc": "吸汗速干透气面料，立体修身剪裁，胸前烫金冠军徽章。",
-            "specs": "尺码：S / M / L / XL / 2XL",
-            "price": "¥299",
-            "btn_text": "立即选购",
-            "btn_link": "#"
+            "cover_image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80",
+            "name": "2024 世界赛出征版职业战队服",
+            "desc": "刺绣双星世界冠军徽标，轻量化防静电科技面料",
+            "btn_text": "官方商城选购"
           },
           {
-            "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
-            "title": "启灵联名 RGB 磁轴电竞机械键盘",
-            "desc": "RT 快速触发，8K 回报率，战队专属客制化紫青键帽配色。",
-            "specs": "轴体：磁力霍尔轴 | 键位：75% 配列",
-            "price": "¥699",
-            "btn_text": "立即选购",
-            "btn_link": "#"
+            "cover_image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80",
+            "name": "俱乐部经典黑金连帽卫衣",
+            "desc": "加绒保暖，背后印有全员夺冠誓言涂鸦艺术字",
+            "btn_text": "官方商城选购"
           },
           {
-            "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
-            "title": "夺冠纪念微操控超大电竞鼠标垫",
-            "desc": "粗面微绒乱纹纹理，包边高密度锁线，底面天然防滑橡胶。",
-            "specs": "尺寸：900mm x 400mm x 4mm",
-            "price": "¥99",
-            "btn_text": "立即选购",
-            "btn_link": "#"
+            "cover_image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80",
+            "name": "战队联名限定款职业电竞外设",
+            "desc": "超轻量化无线鼠标与定制轴体机械键盘套装",
+            "btn_text": "官方商城选购"
           }
         ]
-      }
-    },
-    {
-      "type": "clients",
-      "data": {
-        "clients_title": "赞助商与品牌战略伙伴",
-        "clients_subtitle": "感谢全球顶尖品牌对启灵电竞的鼎力支持与携手前行",
-        "clients_title_color": "#ffffff",
-        "clients_subtitle_color": "rgba(248, 250, 252, 0.75)",
-        "clients_card_bg": "rgba(255, 255, 255, 0.04)",
-        "clients_bg_color": "transparent",
-        "clients_columns": "6",
-        "clients_auto_scroll": "1",
-        "clients_scroll_speed": 25,
-        "clients_items": [
-          {
-            "name": "NVIDIA GeForce",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "Logitech G",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "Intel Core",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "Secretlab",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "Razer",
-            "logo": "",
-            "link": "#"
-          },
-          {
-            "name": "Red Bull",
-            "logo": "",
-            "link": "#"
-          }
-        ],
-        "clients_card_text_color": "#ffffff",
-        "clients_show_name": "1"
       }
     },
     {
       "type": "cta",
       "data": {
-        "cta_title": "加入启灵电竞 · 开启你的职业征途",
-        "cta_subtitle": "启灵青训营常年面向全国天梯顶尖高玩开放试训通道，粉丝俱乐部专享选手独家签名照与赛事内场赠票！",
-        "cta_title_color": "#ffffff",
-        "cta_subtitle_color": "rgba(255, 255, 255, 0.9)",
-        "cta_button_text": "投递试训简历",
-        "cta_button_url": "#recruit",
-        "cta_button_bg_color": "#ffffff",
-        "cta_button_text_color": "#7c3aed",
-        "cta_button_hover_bg_color": "#f1f5f9",
-        "cta_button_hover_text_color": "#6d28d9",
-        "cta_bg_type": "color",
-        "cta_bg_color": "linear-gradient(135deg, #18112e 0%, #7c3aed 50%, #06b6d4 100%)"
+        "cta_title": "解锁 电竞战队俱乐部官网 精彩视界",
+        "cta_subtitle": "第一时间掌握重磅发布资讯、内测资格与官方社区专属特权。",
+        "cta_btn_text": "立即加入探索",
+        "cta_btn_url": "#"
+      }
+    },
+    {
+      "type": "footer_suite",
+      "data": {
+        "qfs_layout": "columns",
+        "qfs_width": "contained",
+        "qfs_variant": "cinema",
+        "qfs_bg": "#0d0d14",
+        "qfs_text_color": "#94a3b8",
+        "qfs_heading_color": "#ffffff",
+        "qfs_accent_color": "#ec4899",
+        "qfs_border_color": "rgba(255,255,255,0.08)",
+        "qfs_brand_title": "TITAN-ESPORTS · 泰坦职业电子竞技俱乐部",
+        "qfs_brand_desc": "征战全球英雄联盟、无畏契约与王者荣耀职业联赛。多次斩获赛区总冠军与世界赛最高荣誉，秉持永不言弃的竞逐信念，打造热血与荣耀的电竞殿堂。",
+        "qfs_link_groups": [
+          {
+            "title": "战队分部阵容 & 粉丝与周边商城",
+            "links": "英雄联盟 LPL 职业分部|#\n无畏契约 VCT 冠军分部|#\n王者荣耀 KPL 职业分部|#\n泰坦青训基地与明日之星|#\n2026 赛季选手官方同款队服|#\n俱乐部限量冠军签名周边|#\n线下主场观赛应援购票通道|#\n粉丝俱乐部专属会员特权|#"
+          }
+        ],
+        "qfs_contact_title": "俱乐部商务与试训招募",
+        "qfs_contact_items": "商务赞助|sponsor@titan-esports.gg|mailto:sponsor@titan-esports.gg\n青训试训|scout@titan-esports.gg|mailto:scout@titan-esports.gg\n媒体采访|敬请提前邮件预约主教练及选手专访|#\n俱乐部基地|上海市静安区灵石路珠江创意中心 3 号楼|#",
+        "qfs_social_title": "为荣耀而战",
+        "qfs_social_links": "官方微博实时赛报|#\nB站赛后语音节目|#\n抖音选手高光集锦|#\n微信粉丝同好群|#",
+        "qfs_show_qr": "no",
+        "qfs_friend_mode": "none",
+        "qfs_bottom_text": "© 2026 TITAN ESPORTS CLUB. 保留所有权利 · 沪ICP备18039211号 · 电子竞技职业联盟理事单位",
+        "qfs_bottom_links": "商标与队标知识产权声明|#\n粉丝应援守则与反黄牛公告|#\n青训选手招募公约|#\n选手身心健康保护条例|#",
+        "qfs_link_columns": "1"
       }
     }
   ]
